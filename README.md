@@ -31,6 +31,8 @@ Documentation - troubleshooting: List of known and user-reported problems
 
 EoflaOE: Owner of Kernel Simulator
 
+Paomedia: Icon creator
+
 ## |---------------+--> _License - GNU GPL_ <--+---------------|
 
     Kernel Simulator - Simulates our future planned Kernel
