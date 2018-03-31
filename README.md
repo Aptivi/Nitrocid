@@ -19,6 +19,8 @@ Please note that dates mentioned here is for development date changes only.
 
 **3/16/2018 - 0.0.1.1:** Added "showmotd", changed a message and better checking for integer overflow on Beep Frequency.
 
+**3/31/2018 - 0.0.2:** Code re-design, more commands, implemented basic Internet, argument system, changing password, and more changes.
+
 ## |---------------+--> _Manual pages_ <--+---------------|
 
 Documentation - main page: Information about Kernel Simulator, this page
