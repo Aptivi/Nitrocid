@@ -6,12 +6,13 @@ INFO: This kernel simulator is not a final planned version of Kernel, since it w
 	  It can only be Console at the moment, while we are developing a GUI for this simulator.
 
 Kernel Simulator lets you simulate a very early access for our future Kernel. It provides the built-in hardware
-detector, log-in manager (Just adduser), and the shell.
+detector, log-in manager (Just adduser and chpwd), and the shell.
 
 |---------------+--> History <--+---------------|
 
+4/??/2018 - 0.0.2: Code re-design, more commands, implemented basic Internet, argument system, changing password, and more changes.
 3/16/2018 - 0.0.1.1: Added "showmotd", changed a message and better checking for integer overflow on Beep Frequency.
-2/22/2018 - 0.0.1:   Initial release, normally, for Windows.
+2/22/2018 - 0.0.1: Initial release, normally, for Windows.
 
 |---------------+--> Manual pages <--+---------------|
 
@@ -23,6 +24,8 @@ Documentation - troubleshooting: List of known and user-reported problems
 |---------------+--> Contributors <--+---------------|
 
 EoflaOE: Owner of Kernel Simulator
+
+Paomedia: Creator of icon
 
 |---------------+--> License - GNU GPL <--+---------------|
 

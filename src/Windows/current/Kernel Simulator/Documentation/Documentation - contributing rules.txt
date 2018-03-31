@@ -49,14 +49,13 @@ your issue. Screenshots are optional.
 
 |---------------+--> To-do list for adding into Kernel Simulator <--+---------------|
 
+If some of the ideas disappeared, then it is either done or cancelled.
+
 1. The asynchronous Time/Date on the top of the console
-2. More colors, including Quiet/Normal mode
-3. Simulated kernel arguments
-4. Until full, bootable version, interactive host system file manager
-5. Implement changing directory, listing other directories, and reading file contents
-6. Full shell, password change and full parsing
-7. Basic implementation of Internet Connection, check Internet on boot using "chkn=1" kernel argument. If your Internet connection is weak, then
-   expect delays.
-8. Help database using SQL database, help for commands
+2. Until full, bootable version, interactive host system file manager
+3. Implement changing directory, listing other directories, and reading file contents
+4. Full shell and full parsing
+5. Help database using SQL database, help for commands
+6. Group management system for users
 
 (If you have ideas, edit this section by inserting your idea.)
