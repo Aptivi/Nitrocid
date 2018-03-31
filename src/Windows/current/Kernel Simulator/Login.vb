@@ -18,35 +18,44 @@
 
 Module Login
 
-    Public usernamelist As New List(Of String)
-    Public passwordlist As New List(Of String)
-    Public userword As New Dictionary(Of String, String)()
-    Public answeruser
-    Public answerpass
-    Public password As String
-    Public signedinusrnm As String
+    'TODO: Re-write login system, removing unnecessary variables
+    'Variables
+    Public usernamelist As New List(Of String)                  'Temporary
+    Public passwordlist As New List(Of String)                  'Temporary
+    Public userword As New Dictionary(Of String, String)()      'List of usernames and passwords
+    Public answeruser                                           'Input of username
+    Public answerpass                                           'Input of password
+    Public password As String                                   'Password for user we're logging in to
+    Public signedinusrnm As String                              'Username that is signed in
+    Public LoginFlag As Boolean                                 'Flag for log-in
 
     Sub initializeMainUsers()
 
+        'Main users will be initialized
         usernamelist.Add("root")
         usernamelist.Add("useradd")
 
+        'Main passwords will be initialized
         passwordlist.Add("toor")
         passwordlist.Add("")
 
         My.Settings.Passwords.Add("toor")
         My.Settings.Passwords.Add("")
 
+        'Print each main user initialized, if quiet mode wasn't passed
         For Each users As String In usernamelist
-            System.Console.Write(users + " ")
+            If (Quiet = True) Then
+                'Do nothing
+            Else
+                System.Console.Write(users + " ")
+            End If
         Next
 
     End Sub
 
-    Public LoginFlag As Boolean
-
     Sub makeUserDatabase()
 
+        'Mandatory. Don't remove
         For i As Integer = 0 To usernamelist.Count - 1
             If (userword.TryGetValue(usernamelist(i), passwordlist(i)) = False) Then
                 userword.Add(usernamelist(i), My.Settings.Passwords(i))
@@ -54,8 +63,10 @@ Module Login
         Next
 
     End Sub
-    Sub initializeUsers()                                                                               'Do not confuse with initializeUser. It loads users.
+    Sub initializeUsers()
 
+        'Do not confuse with initializeUser. It loads users.
+        'Initializing users and prompts to log-in if the login flag is true
         For Each setUsers As String In My.Settings.Usernames
             usernamelist.Add(setUsers)
         Next
@@ -63,7 +74,13 @@ Module Login
             passwordlist.Add(setPassword)
         Next
         For Each initUsers As String In usernamelist
-            System.Console.Write("usrmgr: User " + initUsers + " has been successfully loaded." + vbNewLine)
+            If (Quiet = True) Then
+                'Do nothing
+            Else
+                If (LoginFlag = True) Then
+                    System.Console.WriteLine("usrmgr: User {0} has been successfully loaded.", initUsers)
+                End If
+            End If
         Next
         makeUserDatabase()
         If (LoginFlag = True) Then
@@ -72,25 +89,32 @@ Module Login
 
     End Sub
 
-    Sub initializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")            'Do not confuse with initializeUsers. It initializes user.
+    Sub initializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")
 
-        System.Console.Write(uninitUser)
+        'Do not confuse with initializeUsers. It initializes user.
+        If (Quiet = True) Then
+            'Do nothing
+        Else
+            System.Console.WriteLine("usrmgr: Username {0} created.", uninitUser)
+        End If
         passwordlist.Add(unpassword)
         usernamelist.Add(uninitUser)
-        My.Settings.Usernames.Add(uninitUser)
         If (unpassword = "") Then
             My.Settings.Passwords.Add("")
         Else
             My.Settings.Passwords.Add(unpassword)
         End If
-        System.Console.Write(" created." + vbNewLine)
 
     End Sub
 
     Sub adduser(ByVal newUser As String, Optional ByVal newPassword As String = "")
 
-        System.Console.Write("usrmgr: " + newUser + " not found. Creating..." + vbNewLine)
-        System.Console.Write("usrmgr: Username ")
+        'Adds users
+        If (Quiet = True) Then
+            'Do nothing
+        Else
+            System.Console.WriteLine("usrmgr: {0} not found. Creating...", newUser)
+        End If
         If (newPassword = Nothing) Then
             initializeUser(newUser)
         Else
@@ -101,22 +125,113 @@ Module Login
 
     Sub LoginPrompt()
 
-        System.Console.Write(vbNewLine + vbNewLine + My.Settings.MOTD + vbNewLine + vbNewLine + "login: ")
+        'Prompts user to log-in
+        System.Console.Write(vbNewLine + My.Settings.MOTD + vbNewLine + vbNewLine + "Username: ")
+        System.Console.ForegroundColor = ConsoleColor.White
         answeruser = System.Console.ReadLine()
-        showPasswordPrompt(answeruser)
+        System.Console.ResetColor()
+        If InStr(answeruser, " ") > 0 Then
+            System.Console.WriteLine("Spaces are not allowed.")
+            LoginPrompt()
+        ElseIf (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+            System.Console.WriteLine("Special characters are not allowed.")
+            LoginPrompt()
+        Else
+            showPasswordPrompt(answeruser)
+        End If
+
+    End Sub
+
+    Sub changePassword()
+
+        'Prompts user to enter current password
+        On Error Resume Next
+        password = userword.Item(answeruser)
+
+        'Checks if there is a password
+        If Not (password = Nothing) Then
+            System.Console.Write("Current password: ")
+            System.Console.ForegroundColor = ConsoleColor.White
+            answerpass = System.Console.ReadLine()
+            System.Console.ResetColor()
+            If InStr(answerpass, " ") > 0 Then
+                System.Console.WriteLine("Spaces are not allowed.")
+                changePassword()
+            ElseIf (answerpass.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+                System.Console.WriteLine("Special characters are not allowed.")
+                changePassword()
+            Else
+                If userword.TryGetValue(answeruser, password) AndAlso password = answerpass Then
+                    changePasswordPrompt(answeruser)
+                Else
+                    System.Console.WriteLine(vbNewLine + "Wrong password.")
+                    changePassword()
+                End If
+            End If
+        Else
+            changePasswordPrompt(answeruser)
+        End If
+
+    End Sub
+
+    Sub changePasswordPrompt(ByVal usernamerequestedChange As String)
+
+        'Prompts user to enter new password
+        System.Console.Write("New password: ")
+        System.Console.ForegroundColor = ConsoleColor.White
+        Dim answernewpass = System.Console.ReadLine()
+        System.Console.ResetColor()
+        If InStr(answernewpass, " ") > 0 Then
+            System.Console.WriteLine("Spaces are not allowed.")
+            changePassword()
+        ElseIf (answernewpass.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+            System.Console.WriteLine("Special characters are not allowed.")
+            changePassword()
+        Else
+            'TODO: Implement password confirmation
+            userword.Item(answeruser) = answernewpass
+        End If
 
     End Sub
 
     Sub showPasswordPrompt(ByVal usernamerequested As String)
 
+        'Prompts user to enter a user's password
+        Dim DoneFlag As Boolean = False
         On Error Resume Next
-        System.Console.Write(vbNewLine + "password for " + usernamerequested + ": ")
-        answerpass = System.Console.ReadLine()
-        password = userword.Item(usernamerequested)
-        If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
-            signIn(usernamerequested)
-        Else
-            System.Console.Write(vbNewLine + "Wrong username or password." + vbNewLine)
+        For Each availableUsers As String In usernamelist
+            If availableUsers = answeruser Then
+                DoneFlag = True
+                password = userword.Item(usernamerequested)
+
+                'Check if there's the password
+                If Not (password = Nothing) Then
+                    System.Console.Write("Password for {0}: ", usernamerequested)
+                    System.Console.ForegroundColor = ConsoleColor.White
+                    answerpass = System.Console.ReadLine()
+                    System.Console.ResetColor()
+                    If InStr(answerpass, " ") > 0 Then
+                        System.Console.WriteLine("Spaces are not allowed.")
+                        LoginPrompt()
+                    ElseIf (answerpass.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+                        System.Console.WriteLine("Special characters are not allowed.")
+                        LoginPrompt()
+                    Else
+                        If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
+                            signIn(usernamerequested)
+                        Else
+                            System.Console.WriteLine(vbNewLine + "Wrong password.")
+                            LoginPrompt()
+                        End If
+                    End If
+                Else
+                    'Log-in instantly
+                    signIn(usernamerequested)
+                End If
+            End If
+        Next
+        If DoneFlag = False Then
+            System.Console.WriteLine(vbNewLine + "Wrong username.")
             LoginPrompt()
         End If
 
@@ -124,7 +239,8 @@ Module Login
 
     Sub signIn(ByVal signedInUser As String)
 
-        System.Console.Write(vbNewLine + "Logged in successfully as " + signedInUser + "!" + vbNewLine)
+        'Initialize shell, and sign in to user.
+        System.Console.WriteLine(vbNewLine + "Logged in successfully as {0}!", signedInUser)
         signedinusrnm = signedInUser
         Shell.initializeShell()
 

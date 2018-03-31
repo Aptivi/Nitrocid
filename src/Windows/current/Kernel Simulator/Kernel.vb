@@ -1,5 +1,4 @@
-﻿
-'    This file is part of Kernel Simulator
+﻿'    This file is part of Kernel Simulator
 '
 '    Kernel Simulator is free software: you can redistribute it and/or modify
 '    it under the terms of the GNU General Public License as published by
@@ -21,31 +20,35 @@ Imports System.Reflection
 Module Kernel
 
     'Variables
-    Public KernelVersion As String
-    Public Hddsize As String
-    Public Dsize As String
-    Public Hddmodel As String
-    Public Cpuname As String
-    Public Cpuspeed As String
-    Public SysMem As String
-    Public BIOSCaption As String
-    Public BIOSMan As String
-    Public BIOSStatus As String
-    Public StopPanicAndGoToDoublePanic As Boolean
+    Public Hddsize As String                                                            'The size of simulated Hard Drive
+    Public Dsize As String                                                              'Same as above, but in bytes
+    Public Hddmodel As String                                                           'Model of hard drive
+    Public Cpuname As String                                                            'CPU name
+    Public Cpuspeed As String                                                           'CPU Clock Speed
+    Public SysMem As String                                                             'Memory of simulated system
+    Public BIOSCaption As String                                                        'BIOS Caption
+    Public BIOSMan As String                                                            'BIOS Manufacturer
+    Public StopPanicAndGoToDoublePanic As Boolean                                       'Double panic mode in kernel error
+    Public KernelVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString() 'Kernel version (reserved)
+    Public BootArgs() As String                                                         'Array for boot arguments
+    Public AvailableArgs() As String = {"motd", "nohwprobe", "chkn=1", "preadduser", _
+                                        "hostname", "quiet"}                            'Available arguments.
+    Public ProbeFlag As Boolean = False                                                 'Check to see if the hardware can be probed
+    Public Quiet As Boolean = False                                                     'Quiet mode
 
     'Sleep sub
-    Declare Sub Sleep Lib "kernel32" (ByVal milliseconds As Integer)
+    Declare Sub Sleep Lib "kernel32" (ByVal milliseconds As Integer)                    'Enable sleep (Mandatory, don't remove)
 
     'Hardware probing functions
     Function Hddinfo()
-        Dim HDDSet As Object                                                                            'Sets of hard drive
-        Dim Hdd As Object                                                                               'Needed to get model and size of hard drive.
-        HDDSet = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_DiskDrive")                      'it gets Winmgmts: to SELECT * FROM Win32_DiskDrive
+        Dim HDDSet As Object                                                            'Sets of hard drive
+        Dim Hdd As Object                                                               'Needed to get model and size of hard drive.
+        HDDSet = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_DiskDrive")      'it gets Winmgmts: to SELECT * FROM Win32_DiskDrive
         For Each Hdd In HDDSet
             Hddmodel = CStr(Hdd.Model)
             Dsize = CStr(Hdd.Size)
         Next
-        Hddsize = Dsize / 1024 / 1024 / 1024
+        Hddsize = Dsize / 1024 / 1024 / 1024                                            'Calculate size of Hard Drive in GB
         If (Hddsize = Nothing) Then
             KernelError("F", True, 15, "Machine Check Exception while trying to get hard drive size.")
         ElseIf (Hddmodel = Nothing) Then
@@ -55,12 +58,12 @@ Module Kernel
     End Function
 
     Function Cpuinfo()
-        Dim CPUSet As Object                                                                            'Sets of CPU
-        Dim CPU As Object                                                                               'Needed to get name and clock speed of CPU
-        CPUSet = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_Processor")                      'it gets Winmgmts: to SELECT * FROM Win32_Processor
+        Dim CPUSet As Object                                                            'Sets of CPU
+        Dim CPU As Object                                                               'Needed to get name and clock speed of CPU
+        CPUSet = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_Processor")      'it gets Winmgmts: to SELECT * FROM Win32_Processor
         For Each CPU In CPUSet
-            Cpuname = CStr(CPU.Name)
-            Cpuspeed = CStr(CPU.CurrentClockSpeed)
+            Cpuname = CStr(CPU.Name)                                                    'Get name of CPU
+            Cpuspeed = CStr(CPU.CurrentClockSpeed)                                      'Get name of clock speed
         Next
         If (Cpuname = Nothing) Then
             KernelError("F", True, 15, "Machine Check Exception while trying to get CPU name.")
@@ -76,9 +79,9 @@ Module Kernel
         Dim dRam As Double
         colInstances = GetObject("winmgmts:").ExecQuery("SELECT * FROM Win32_PhysicalMemory")
         For Each oInstance In colInstances
-            dRam = dRam + oInstance.Capacity
+            dRam = dRam + oInstance.Capacity                                            'Calculate RAM in bytes
         Next
-        SysMem = dRam / 1024 / 1024 & "MB"
+        SysMem = dRam / 1024 / 1024 & "MB"                                              'Calculate RAM in MB
         If (dRam = Nothing) Then
             KernelError("F", True, 15, "Machine Check Exception while trying to get RAM size.")
         End If
@@ -94,14 +97,11 @@ Module Kernel
         For Each BiosInfoSpec In Items
             BIOSCaption = BiosInfoSpec.Caption
             BIOSMan = BiosInfoSpec.Manufacturer
-            BIOSStatus = BiosInfoSpec.Status
         Next
         If (BIOSCaption = Nothing) Then
             KernelError("F", True, 15, "Machine Check Exception while trying to get BIOS version.")
         ElseIf (BIOSMan = Nothing) Then
             KernelError("F", True, 15, "Machine Check Exception while trying to get BIOS manufacturer.")
-        ElseIf (BIOSStatus = Nothing) Then
-            KernelError("F", True, 15, "Machine Check Exception while trying to get BIOS status.")
         End If
         Return True
     End Function
@@ -113,37 +113,46 @@ Module Kernel
         'Description As String: Optional. Explanation of what happened when it errored.
         If (ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D") Then
             If (ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5) Then
+                'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
+                'generate a second kernel error stating that there is something wrong with the reboot time.
                 KernelError("D", True, 5, "DOUBLE PANIC: Reboot Time exceeds maximum allowed " + CStr(ErrorType) + " error reboot time. You found a kernel bug.")
                 StopPanicAndGoToDoublePanic = True
             ElseIf (ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False) Then
-                System.Console.WriteLine("[" + ErrorType + "] panic: Reboot enabled due to error level being " + ErrorType + ".")
+                'If the error type is unrecoverable, or double, and the rebooting is false where it should
+                'not be false, then it can deal with this issue by enabling reboot.
+                System.Console.WriteLine("[{0}] panic: Reboot enabled due to error level being {0}.", ErrorType)
                 Reboot = True
             End If
             If (RebootTime > 3600) Then
-                System.Console.WriteLine("[" + ErrorType + "] panic: Time to reboot: " + CStr(RebootTime) + " seconds, exceeds 1 hour. Set to at least 1 minute.")
+                'If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
+                System.Console.WriteLine("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.", ErrorType, CStr(RebootTime))
                 RebootTime = 60
             End If
         Else
+            'If the error type is other than D/F/U/S, then it will generate a second error.
             KernelError("D", True, 5, "DOUBLE PANIC: Error Type " + CStr(ErrorType) + " invalid.")
             StopPanicAndGoToDoublePanic = True
         End If
         If (Description.Contains("DOUBLE PANIC: ") And ErrorType = "D") Then
-            System.Console.WriteLine("[" + ErrorType + "] panic: " + CStr(Description) + " -- Rebooting in " + CStr(RebootTime) + " seconds...")
+            'If the description has a double panic tag and the error type is Double
+            System.Console.WriteLine("[{0}] panic: {1} -- Rebooting in {2} seconds...", ErrorType, CStr(Description), CStr(RebootTime))
             Sleep(RebootTime * 1000)
-            System.Console.Write("[" + ErrorType + "] panic: Rebooting now..." + vbNewLine)
+            System.Console.WriteLine("[{0}] panic: Rebooting now...", ErrorType)
             System.Console.Clear()
             Main()                                  'Restart kernel
         ElseIf (StopPanicAndGoToDoublePanic = True) Then
             Return "DoublePanic"
             Exit Function
         ElseIf (Reboot = False And ErrorType <> "D") Then
-            System.Console.WriteLine("[" + ErrorType + "] panic: " + CStr(Description) + " -- Press any key to shutdown.")
-            System.Console.Read()
+            'If rebooting is disabled and the error type does not equal Double
+            System.Console.WriteLine("[{0}] panic: {1} -- Press any key to shutdown.", ErrorType, CStr(Description))
+            Dim answerpanic = System.Console.ReadKey.KeyChar            'Edited to press any key instantly without having to press ENTER
             Environment.Exit(0)
         Else
-            System.Console.WriteLine("[" + ErrorType + "] panic: " + CStr(Description) + " -- Rebooting in " + CStr(RebootTime) + " seconds...")
+            'Everything else.
+            System.Console.WriteLine("[{0}] panic: {1} -- Rebooting in {2} seconds...", ErrorType, CStr(Description), CStr(RebootTime))
             Sleep(RebootTime * 1000)
-            System.Console.Write("[" + ErrorType + "] panic: Rebooting now..." + vbNewLine)
+            System.Console.WriteLine("[{0}] panic: Rebooting now...", ErrorType)
             System.Console.Clear()
             Main()                                  'Restart kernel
         End If
@@ -152,35 +161,85 @@ Module Kernel
 
     Sub Main()
 
-        'Setting variables (mostly version of kernel)
-        KernelVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()
-
         'Main class
-        'About this kernel: THIS KERNEL IS NOT FINAL! Final kernel will be developed through another language, .ASM included. depending on system.
-        My.Settings.Usernames = New System.Collections.Specialized.StringCollection
-        My.Settings.Passwords = New System.Collections.Specialized.StringCollection
-        System.Console.Write("-+---> Welcome to Eofla Kernel! Version " + KernelVersion + " <---+-")
+        'About this kernel: THIS KERNEL IS NOT FINAL! Final kernel will be developed through another language, ASM included, depending on system.
+        My.Settings.Usernames = New System.Collections.Specialized.StringCollection     'Temporary
+        My.Settings.Passwords = New System.Collections.Specialized.StringCollection     'Temporary
+        ProbeFlag = True
+        System.Console.Write("-+---> Welcome to Eofla Kernel! Version {0} <---+-", KernelVersion)
+
+        'License used. Do not remove.
+        System.Console.ForegroundColor = ConsoleColor.White
         System.Console.WriteLine(vbNewLine + vbNewLine + "    Kernel Simulator  Copyright (C) 2018  EoflaOE" + vbNewLine + _
-                                                         "    This program comes with ABSOLUTELY NO WARRANTY, not even MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine + _
+                                                         "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine + _
+                                                         "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine + _
                                                          "    This is free software, and you are welcome to redistribute it" + vbNewLine + _
                                                          "    under certain conditions; See COPYING file in source code." + vbNewLine)
-        System.Console.WriteLine("hwprobe: Your hardware will be probed. Please wait...")
-        Cpuinfo()
-        System.Console.Write("hwprobe: CPU: " + Cpuname + " " + Cpuspeed + "MHz" + vbNewLine)
-        SysMemory()
-        System.Console.Write("hwprobe: RAM: " + SysMem + vbNewLine)
-        Hddinfo()
-        System.Console.Write("hwprobe: HDD: " + Hddmodel + " " + FormatNumber(Hddsize, 2) + "GB" + vbNewLine)
-        System.Console.Write("hwprobe: Your BIOS will be probed. Please wait..." + vbNewLine)
-        BiosInformation()
-        System.Console.Write("hwprobe: BIOS: " + BIOSMan + " " + BIOSCaption + " | Status: " + BIOSStatus + vbNewLine)
-        System.Console.Write("usrmgr: System Usernames: ")
-        Login.initializeMainUsers()
-        System.Console.Write("created." + vbNewLine)
-        Login.initializeUsers()
-        Login.adduser("demo")
-        LoginFlag = True
-        Login.initializeUsers()
+        System.Console.ResetColor()
+
+        'Phase 0: Prompt and check for boot arguments, then initialize time and check for quietness
+        ArgumentPrompt.PromptArgs()
+        If (argsFlag = True) Then
+            ArgumentParse.ParseArguments()
+        End If
+        InitializeTimeDate()
+        If (Quiet = True) Then
+            'Continue the kernel, and don't print messages
+            'Phase 1: Probe hardware if nohwprobe is not passed
+            If (ProbeFlag = True) Then
+                Cpuinfo()
+                SysMemory()
+                Hddinfo()
+            End If
+
+            'Phase 2: Probe BIOS
+            BiosInformation()
+
+            'Phase 3: Username management
+            Login.initializeMainUsers()
+            Login.initializeUsers()
+            Login.adduser("demo")
+            LoginFlag = True
+
+            'Phase 4: Check for pre-user making and log-in
+            If (CruserFlag = True) Then
+                adduser(arguser, argword)
+            End If
+            Login.initializeUsers()
+        Else
+            'Continue the kernel
+            'Phase 1: Probe hardware if nohwprobe is not passed
+            If (ProbeFlag = True) Then
+                System.Console.WriteLine("hwprobe: Your hardware will be probed. Please wait...")
+                Cpuinfo()
+                System.Console.WriteLine("hwprobe: CPU: {0} {1}MHz", Cpuname, Cpuspeed)
+                SysMemory()
+                System.Console.WriteLine("hwprobe: RAM: {0}", SysMem)
+                Hddinfo()
+                System.Console.WriteLine("hwprobe: HDD: {0} {1}GB", Hddmodel, FormatNumber(Hddsize, 2))
+            Else
+                System.Console.WriteLine("hwprobe: Hardware is not probed. Probe using 'hwprobe'")
+            End If
+
+            'Phase 2: Probe BIOS
+            System.Console.WriteLine("hwprobe: Your BIOS will be probed. Please wait...")
+            BiosInformation()
+            System.Console.WriteLine("hwprobe: BIOS: {0} {1}", BIOSMan, BIOSCaption)
+
+            'Phase 3: Username management
+            System.Console.Write("usrmgr: System usernames: ")
+            Login.initializeMainUsers()
+            System.Console.WriteLine("created.")
+            Login.initializeUsers()
+            Login.adduser("demo")
+            LoginFlag = True
+
+            'Phase 4: Check for pre-user making and log-in
+            If (CruserFlag = True) Then
+                adduser(arguser, argword)
+            End If
+            Login.initializeUsers()
+        End If
 
     End Sub
 

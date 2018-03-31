@@ -18,31 +18,54 @@
 
 Module Shell
 
-    Public strcommand As String
+    'Available Commands (availableCommands())
+    Public ueshversion As String = "0.0.2.0"                'Current shell version
+    Public strcommand As String                             'Written Command
     Public availableCommands() As String = {"help", "logout", "version", "currentdir", "list", "changedir", "cdir", "ls", "chdir", "read", "echo", "choice", _
                                             "lsdrivers", "shutdown", "reboot", "disco", "future-eyes-destroyer", "beep", "annoying-sound", "adduser", "chmotd", _
-                                            "chhostname", "showmotd"}
+                                            "chhostname", "showmotd", "fed", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo"}
+    'For contributors: For each added command, you should also add a command in availableCommands array so there is no problems detecting your new command.
 
     Sub initializeShell()
 
+        'Initialize Shell
         If signedinusrnm = "root" Then
-            System.Console.Write(vbNewLine + "[" + signedinusrnm + "@" + My.Settings.HostName + "] #: ")
+            System.Console.Write("[")
+            System.Console.ForegroundColor = ConsoleColor.Green
+            System.Console.Write(signedinusrnm)
+            System.Console.ResetColor()
+            System.Console.Write("@")
+            System.Console.ForegroundColor = ConsoleColor.DarkGreen
+            System.Console.Write(My.Settings.HostName)
+            System.Console.ResetColor()
+            System.Console.Write("] # ")
         Else
-            System.Console.Write(vbNewLine + "[" + signedinusrnm + "@" + My.Settings.HostName + "] $: ")
+            System.Console.Write("[")
+            System.Console.ForegroundColor = ConsoleColor.Green
+            System.Console.Write(signedinusrnm)
+            System.Console.ResetColor()
+            System.Console.Write("@")
+            System.Console.ForegroundColor = ConsoleColor.DarkGreen
+            System.Console.Write(My.Settings.HostName)
+            System.Console.ResetColor()
+            System.Console.Write("] $ ")
         End If
+        System.Console.ForegroundColor = ConsoleColor.White
         strcommand = System.Console.ReadLine()
+        System.Console.ResetColor()
         getLine()
 
     End Sub
 
     Sub getLine()
 
+        'Reads command written by user
         For i As Integer = 0 To availableCommands.Count - 1
             If (availableCommands.Contains(strcommand)) Then
                 GetCommand.ExecuteCommand(strcommand)
                 initializeShell()
             Else
-                System.Console.Write("Shell message: The requested command " + strcommand + " is not found.")
+                System.Console.Write("Shell message: The requested command {0} is not found.", strcommand)
                 initializeShell()
             End If
         Next
