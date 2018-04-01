@@ -1,4 +1,4 @@
-# |-----+--> Kernel Simulator <--+-----|
+# |---+-> Kernel Simulator <-+---|
 
 INFO: This kernel simulator simulates our **future** kernel that is planned by us.
 
