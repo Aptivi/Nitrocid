@@ -1,4 +1,4 @@
-# |---------------+--> Kernel Simulator <--+---------------|
+# |-----+--> Kernel Simulator <--+-----|
 
 INFO: This kernel simulator simulates our **future** kernel that is planned by us.
 
@@ -11,7 +11,7 @@ NOTE: It can only be Console at the moment, while we are developing a GUI for th
 Kernel Simulator lets you simulate a _very_ early access for our **future** Kernel. It provides the built-in hardware
 detector, log-in manager (Just adduser), and the shell.
 
-## |---------------+--> _History_ <--+---------------|
+## |-----+--> _History_ <--+-----|
 
 Please note that dates mentioned here is for development date changes only.
 
@@ -21,23 +21,25 @@ Please note that dates mentioned here is for development date changes only.
 
 **3/31/2018 - 0.0.2:** Code re-design, more commands, implemented basic Internet, argument system, changing password, and more changes.
 
-## |---------------+--> _Manual pages_ <--+---------------|
+## |-----+--> _Manual pages_ <--+-----|
 
-Documentation - main page: Information about Kernel Simulator, this page
+The documentations can be found in source code of kernel simulator in `src/<platform>/<version>/Kernel Simulator/Documentation`
 
-Documentation - faq: Frequently Asked Questions for Kernel Simulator
+**Documentation - main page:** Information about Kernel Simulator, this page
 
-Documentation - contributing rules: Conditions for contributing Kernel Simulator
+**Documentation - faq:** Frequently Asked Questions for Kernel Simulator
 
-Documentation - troubleshooting: List of known and user-reported problems
+**Documentation - contributing rules:** Conditions for contributing Kernel Simulator
 
-## |---------------+--> _Contributors_ <--+---------------|
+**Documentation - troubleshooting:** List of known and user-reported problems
 
-EoflaOE: Owner of Kernel Simulator
+## |-----+--> _Contributors_ <--+-----|
 
-Paomedia: Icon creator
+**EoflaOE:** Owner of Kernel Simulator
 
-## |---------------+--> _License - GNU GPL_ <--+---------------|
+**Paomedia:** Icon creator
+
+## |-----+--> _License - GNU GPL_ <--+-----|
 
     Kernel Simulator - Simulates our future planned Kernel
     Copyright (C) 2018  EoflaOE
