@@ -23,7 +23,7 @@ Please note that dates mentioned here is for development date changes only.
 
 ## |-----+--> _Manual pages_ <--+-----|
 
-The documentations can be found in source code of kernel simulator in `src/<platform>/<version>/Kernel Simulator/Documentation`
+The documentations can be found in source code of kernel simulator in `src/<platform>/Kernel Simulator/Documentation`
 
 **Documentation - main page:** Information about Kernel Simulator, this page
 
