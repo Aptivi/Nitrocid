@@ -11,6 +11,12 @@ NOTE: It can only be Console at the moment, while we are developing a GUI for th
 Kernel Simulator lets you simulate a _very_ early access for our **future** Kernel. It provides the built-in hardware
 detector, log-in manager (Just adduser and chpwd), and the shell.
 
+## |-----+--> _Download_ <--+-----|
+
+You can download the binary and the source code here: https://github.com/EoflaOE/Kernel-Simulator/releases
+
+Build inatructions coming aoon.
+
 ## |-----+--> _History_ <--+-----|
 
 Please note that dates mentioned here is for development date changes only. If you want to access the old versions, see `archive` branch.
