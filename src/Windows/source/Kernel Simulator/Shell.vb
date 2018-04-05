@@ -65,7 +65,7 @@ Module Shell
                 GetCommand.ExecuteCommand(strcommand)
                 initializeShell()
             Else
-                System.Console.Write("Shell message: The requested command {0} is not found.", strcommand)
+                System.Console.WriteLine("Shell message: The requested command {0} is not found.", strcommand)  'Fix bug
                 initializeShell()
             End If
         Next

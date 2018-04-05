@@ -268,47 +268,55 @@ panic:
 
         ElseIf (requestedCommand = "chhostname") Then
 
-            'Change host-name to custom name
-            System.Console.Write("Write a new host name: ")
-            Dim newhost As String
-            System.Console.ForegroundColor = ConsoleColor.White
-            newhost = System.Console.ReadLine()
-            System.Console.ResetColor()
-            If (newhost = "") Then
-                System.Console.WriteLine("Blank host name.")
-            ElseIf (newhost.Length <= 3) Then
-                System.Console.WriteLine("The host name length must be at least 4 characters.")
-            ElseIf InStr(newhost, " ") > 0 Then
-                System.Console.WriteLine("Spaces are not allowed.")
-            ElseIf (newhost.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                System.Console.WriteLine("Special characters are not allowed.")
+            If (answeruser = "root") Then
+                'Change host-name to custom name
+                System.Console.Write("Write a new host name: ")
+                Dim newhost As String
+                System.Console.ForegroundColor = ConsoleColor.White
+                newhost = System.Console.ReadLine()
+                System.Console.ResetColor()
+                If (newhost = "") Then
+                    System.Console.WriteLine("Blank host name.")
+                ElseIf (newhost.Length <= 3) Then
+                    System.Console.WriteLine("The host name length must be at least 4 characters.")
+                ElseIf InStr(newhost, " ") > 0 Then
+                    System.Console.WriteLine("Spaces are not allowed.")
+                ElseIf (newhost.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+                    System.Console.WriteLine("Special characters are not allowed.")
+                Else
+                    System.Console.Write("Changing from: ")
+                    System.Console.ForegroundColor = ConsoleColor.White
+                    System.Console.Write(My.Settings.HostName)
+                    System.Console.ResetColor()
+                    System.Console.Write(" to ")
+                    System.Console.ForegroundColor = ConsoleColor.White
+                    System.Console.Write(newhost)
+                    System.Console.ResetColor()
+                    System.Console.WriteLine("...")
+                    My.Settings.HostName = newhost
+                End If
             Else
-                System.Console.Write("Changing from: ")
-                System.Console.ForegroundColor = ConsoleColor.White
-                System.Console.Write(My.Settings.HostName)
-                System.Console.ResetColor()
-                System.Console.Write(" to ")
-                System.Console.ForegroundColor = ConsoleColor.White
-                System.Console.Write(newhost)
-                System.Console.ResetColor()
-                System.Console.WriteLine("...")
-                My.Settings.HostName = newhost
+                System.Console.WriteLine("You don't have permission to use this command")
             End If
 
         ElseIf (requestedCommand = "chmotd") Then
 
-            'New message of the day
-            System.Console.Write("Write a new Message Of The Day: ")
-            Dim newmotd As String
-            System.Console.ForegroundColor = ConsoleColor.White
-            newmotd = System.Console.ReadLine()
-            System.Console.ResetColor()
-            If (newmotd = "") Then
-                System.Console.WriteLine("Blank message of the day.")       'Fixed the message being wrong
+            If (answeruser = "root") Then
+                'New message of the day
+                System.Console.Write("Write a new Message Of The Day: ")
+                Dim newmotd As String
+                System.Console.ForegroundColor = ConsoleColor.White
+                newmotd = System.Console.ReadLine()
+                System.Console.ResetColor()
+                If (newmotd = "") Then
+                    System.Console.WriteLine("Blank message of the day.")       'Fixed the message being wrong
+                Else
+                    System.Console.Write("Changing MOTD...")
+                    My.Settings.MOTD = newmotd
+                    System.Console.WriteLine(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes")
+                End If
             Else
-                System.Console.Write("Changing MOTD...")
-                My.Settings.MOTD = newmotd
-                System.Console.WriteLine(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes")
+                System.Console.WriteLine("You don't have permission to use this command")
             End If
 
         ElseIf (requestedCommand = "choice") Then
@@ -471,7 +479,7 @@ panic:
             'Shows current kernel version
             System.Console.WriteLine("Version: {0}", KernelVersion)
 
-        End If
+            End If
 
     End Sub
 
