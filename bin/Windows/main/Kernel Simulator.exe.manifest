@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Paomedia-Small-N-Flat-Terminal.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Kernel Simulator" version="0.0.2.1" publicKeyToken="F1ADA6CDEBD13A7F" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="Kernel Simulator" version="0.0.2.2" publicKeyToken="F1ADA6CDEBD13A7F" language="neutral" processorArchitecture="x86" />
     <commandLine file="Kernel Simulator.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kernel Simulator.exe" size="209408">
-      <assemblyIdentity name="Kernel Simulator" version="0.0.2.1" publicKeyToken="F1ADA6CDEBD13A7F" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kernel Simulator.exe" size="209920">
+      <assemblyIdentity name="Kernel Simulator" version="0.0.2.2" publicKeyToken="F1ADA6CDEBD13A7F" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>nJLqfGiJR+50kqE0UBaSD18GTM0=</dsig:DigestValue>
+        <dsig:DigestValue>6dhzaKIqQF+hHebXwVvspcNwD/8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -72,13 +72,13 @@
       <dsig:DigestValue>v0fy4jbbI8pGrLyeH4cxMX6foKw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Documentation\Documentation - main page.txt" size="2402">
+  <file name="Documentation\Documentation - main page.txt" size="2536">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>kxhtfJKZ0935YThH4a1iEXHF8t4=</dsig:DigestValue>
+      <dsig:DigestValue>CN/9PVjk/PwNWODf3bgQKdERaEs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Documentation\Documentation - troubleshooting.txt" size="1508">
