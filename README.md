@@ -15,13 +15,11 @@ detector, log-in manager (Just adduser and chpwd), and the shell.
 
 You can download the binary and the source code here: https://github.com/EoflaOE/Kernel-Simulator/releases
 
-Build inatructions coming aoon.
+Build instructions coming soon.
 
 ## |-----+--> _History_ <--+-----|
 
 Please note that dates mentioned here is for development date changes only. If you want to access the old versions, see `archive` branch.
-
-**4/9/2018 - 0.0.2.2:** Fix bug for network list where double PC names show up on both listing ways, Error handling on listing networks.
 
 **2/22/2018 - 0.0.1:** Initial release, normally, for Windows.
 
@@ -30,6 +28,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **3/31/2018 - 0.0.2:** Code re-design, more commands, implemented basic Internet, argument system, changing password, and more changes.
 
 **4/5/2018 - 0.0.2.1:** Fix bug for "Command Not Found" message, and added forgotten checking for root in "chhostname" and "chmotd".
+
+**4/9/2018 - 0.0.2.2:** Fix bug for network list where double PC names show up on both listing ways, Error handling on listing networks.
 
 ## |-----+--> _Manual pages_ <--+-----|
 
