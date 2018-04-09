@@ -29,6 +29,8 @@ Module NetworkList
 
     Sub ListHostsInNetwork()
 
+        On Error GoTo ErrorNetwork1
+
         'Fetch all computers
         GetNetworkComputers()
 
@@ -47,7 +49,7 @@ Module NetworkList
             HostNameFromDNS = cmp
             IPHostEntry = Dns.GetHostEntry(HostNameFromDNS)
             For Each ipheal In IPHostEntry.AddressList
-                System.Console.WriteLine(cmp + ": " + ipheal.ToString)
+                System.Console.WriteLine("{0}: {1}", cmp, ipheal.ToString)
             Next
         Next
 
@@ -70,6 +72,11 @@ Module NetworkList
             Next
         Next
 
+        Exit Sub
+
+ErrorNetwork1:
+        System.Console.WriteLine("Error on network: {0}", Err.Description)
+
     End Sub
 
     Sub GetNetworkComputers()
@@ -77,6 +84,9 @@ Module NetworkList
         'Variables
         Dim alWorkGroups As New ArrayList
         Dim de As New DirectoryEntry
+
+        'Clear "Computers" variable for cleanup
+        Computers = Nothing
 
         'Get workgroups and domain
         de.Path = "WinNT:"
@@ -99,6 +109,8 @@ Module NetworkList
     End Sub
 
     Sub ListHostsInTree()
+
+        On Error GoTo ErrorNetwork2
 
         'Variables
         Dim HostNameFromDNS As String = Dns.GetHostName()
@@ -127,9 +139,14 @@ Module NetworkList
             HostNameFromDNS = cmp
             IPHostEntry = Dns.GetHostEntry(HostNameFromDNS)
             For Each ipheal As Net.IPAddress In IPHostEntry.AddressList
-                System.Console.WriteLine("|-> " + ipheal.ToString)
+                System.Console.WriteLine("|-> {0}: {1}", cmp, ipheal.ToString)
             Next
         Next
+
+        Exit Sub
+
+ErrorNetwork2:
+        System.Console.WriteLine("Error on network: {0}", Err.Description)
 
     End Sub
 
