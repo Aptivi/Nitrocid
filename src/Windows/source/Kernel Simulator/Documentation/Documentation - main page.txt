@@ -10,6 +10,7 @@ detector, log-in manager (Just adduser and chpwd), and the shell.
 
 |---------------+--> History <--+---------------|
 
+4/9/2018 - 0.0.2.2: Fix bug for network list where double PC names show up on both listing ways, Error handling on listing networks.
 4/5/2018 - 0.0.2.1: Fix bug for "Command Not Found" message, and added forgotten checking for root in "chhostname" and "chmotd".
 3/31/2018 - 0.0.2: Code re-design, more commands, implemented basic Internet, argument system, changing password, and more changes.
 3/16/2018 - 0.0.1.1: Added "showmotd", changed a message and better checking for integer overflow on Beep Frequency.
