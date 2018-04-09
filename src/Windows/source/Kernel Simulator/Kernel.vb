@@ -111,6 +111,7 @@ Module Kernel
         'Reboot As Boolean: Optional. Specifies whether to reboot on panic or to show the message to press any key to shut down
         'RebootTime As Long: Optional. Specifies seconds before reboot. 0 is instant. Negative numbers not allowed.
         'Description As String: Optional. Explanation of what happened when it errored.
+        On Error GoTo bug
         If (ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D") Then
             If (ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5) Then
                 'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
@@ -157,6 +158,9 @@ Module Kernel
             Main()                                  'Restart kernel
         End If
         Return ErrorType
+        Exit Function
+bug:
+        KernelError("D", True, 5, "DOUBLE PANIC: Kernel bug: " + Err.Description)
     End Function
 
     Sub Main()
