@@ -25,6 +25,9 @@ Module ArgumentParse
 
     Sub ParseArguments()
 
+        'Clean up
+        BootArgs = Nothing
+
         'Check for the arguments written by the user
         BootArgs = answerargs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
         For i As Integer = 0 To BootArgs.Count - 1
