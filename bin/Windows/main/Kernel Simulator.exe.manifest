@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Paomedia-Small-N-Flat-Terminal.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Kernel Simulator" version="0.0.2.2" publicKeyToken="F1ADA6CDEBD13A7F" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="Kernel Simulator" version="0.0.2.3" publicKeyToken="F1ADA6CDEBD13A7F" language="neutral" processorArchitecture="x86" />
     <commandLine file="Kernel Simulator.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kernel Simulator.exe" size="209920">
-      <assemblyIdentity name="Kernel Simulator" version="0.0.2.2" publicKeyToken="F1ADA6CDEBD13A7F" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kernel Simulator.exe" size="210432">
+      <assemblyIdentity name="Kernel Simulator" version="0.0.2.3" publicKeyToken="F1ADA6CDEBD13A7F" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6dhzaKIqQF+hHebXwVvspcNwD/8=</dsig:DigestValue>
+        <dsig:DigestValue>BXGsqz48OxlS4Fe0oSzLOSLMjjs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
