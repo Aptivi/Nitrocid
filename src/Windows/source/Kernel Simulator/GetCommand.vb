@@ -64,7 +64,7 @@ Module GetCommand
     End Sub
     Sub BeepSystem()
 
-        System.Console.Write("Beep Time in seconds that has the limit of 1-3600: ")
+        System.Console.Write(vbNewLine + "Beep Time in seconds that has the limit of 1-3600: ")
         System.Console.ForegroundColor = ConsoleColor.White
         answerbeepms = System.Console.ReadLine()
         System.Console.ResetColor()
@@ -350,9 +350,10 @@ panic:
                     Dim answerchoices() As String = sets.Split("/")
                     For Each choiceset In answerchoices
                         If (answerchoice = choiceset) Then
-                            System.Console.WriteLine(vbNewLine + "Choice {0} selected.", answerchoice)
+                            System.Console.Write(vbNewLine + "Choice {0} selected.", answerchoice)
                         End If
                     Next
+                    System.Console.WriteLine()
                 End If
             End If
 
@@ -381,18 +382,7 @@ panic:
 
         ElseIf (requestedCommand = "hwprobe") Then
 
-            If (ProbeFlag = False) Then
-                System.Console.WriteLine("hwprobe: Your hardware will be probed. Please wait...")
-                Cpuinfo()
-                System.Console.WriteLine("hwprobe: CPU: {0} {1}MHz", Cpuname, Cpuspeed)
-                SysMemory()
-                System.Console.WriteLine("hwprobe: RAM: {0}", SysMem)
-                Hddinfo()
-                System.Console.WriteLine("hwprobe: HDD: {0} {1}GB", Hddmodel, FormatNumber(Hddsize, 2))
-                ProbeFlag = True
-            Else
-                System.Console.WriteLine("hwprobe: Hardware already probed.")
-            End If
+            HardwareProbe.ProbeHW()
 
         ElseIf (requestedCommand = "ls" Or requestedCommand = "list") Then
 

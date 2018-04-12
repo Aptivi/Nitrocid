@@ -122,6 +122,7 @@
     <Compile Include="Arguments\ArgumentParse.vb" />
     <Compile Include="Arguments\ArgumentPrompt.vb" />
     <Compile Include="GetCommand.vb" />
+    <Compile Include="Hardware\HardwareProbe.vb" />
     <Compile Include="Kernel.vb" />
     <Compile Include="Login.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

@@ -28,28 +28,31 @@ Module Login
     Public password As String                                   'Password for user we're logging in to
     Public signedinusrnm As String                              'Username that is signed in
     Public LoginFlag As Boolean                                 'Flag for log-in
+    Public MainUserDone As Boolean                              'Main users initialization is done
 
     Sub initializeMainUsers()
+        'Check if the process is done, then do nothing if it is done.
+        If (MainUserDone = False) Then
 
-        'Main users will be initialized
-        usernamelist.Add("root")
-        usernamelist.Add("useradd")
+            'Main users will be initialized
+            usernamelist.Add("root")
+            usernamelist.Add("useradd")
 
-        'Main passwords will be initialized
-        passwordlist.Add("toor")
-        passwordlist.Add("")
+            'Main passwords will be initialized
+            passwordlist.Add("toor")
+            passwordlist.Add("")
 
-        My.Settings.Passwords.Add("toor")
-        My.Settings.Passwords.Add("")
+            My.Settings.Passwords.Add("toor")
+            My.Settings.Passwords.Add("")
 
-        'Print each main user initialized, if quiet mode wasn't passed
-        For Each users As String In usernamelist
-            If (Quiet = True) Then
-                'Do nothing
-            Else
-                System.Console.Write(users + " ")
+            'Print each main user initialized, if quiet mode wasn't passed
+            If (Quiet = False) Then
+                System.Console.WriteLine("usrmgr: System usernames: {0}", String.Join(", ", usernamelist))
             End If
-        Next
+
+            'Send signal to kernel that this function is done
+            MainUserDone = True
+        End If
 
     End Sub
 
@@ -73,18 +76,14 @@ Module Login
         For Each setPassword As String In My.Settings.Passwords
             passwordlist.Add(setPassword)
         Next
-        For Each initUsers As String In usernamelist
-            If (Quiet = True) Then
-                'Do nothing
-            Else
-                If (LoginFlag = True) Then
-                    System.Console.WriteLine("usrmgr: User {0} has been successfully loaded.", initUsers)
-                End If
-            End If
-        Next
-        makeUserDatabase()
         If (LoginFlag = True) Then
-            Login.LoginPrompt()
+            If (Quiet = False) Then
+                System.Console.WriteLine("usrmgr: Users {0} has been successfully loaded", String.Join(", ", usernamelist))
+            End If
+            makeUserDatabase()
+            If (LoginFlag = True) Then
+                Login.LoginPrompt()
+            End If
         End If
 
     End Sub
@@ -92,9 +91,7 @@ Module Login
     Sub initializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")
 
         'Do not confuse with initializeUsers. It initializes user.
-        If (Quiet = True) Then
-            'Do nothing
-        Else
+        If (Quiet = False) Then
             System.Console.WriteLine("usrmgr: Username {0} created.", uninitUser)
         End If
         passwordlist.Add(unpassword)
@@ -110,9 +107,7 @@ Module Login
     Sub adduser(ByVal newUser As String, Optional ByVal newPassword As String = "")
 
         'Adds users
-        If (Quiet = True) Then
-            'Do nothing
-        Else
+        If (Quiet = False) Then
             System.Console.WriteLine("usrmgr: {0} not found. Creating...", newUser)
         End If
         If (newPassword = Nothing) Then

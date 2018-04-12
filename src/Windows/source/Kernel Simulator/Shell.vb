@@ -64,6 +64,8 @@ Module Shell
             If (availableCommands.Contains(strcommand)) Then
                 GetCommand.ExecuteCommand(strcommand)
                 initializeShell()
+            ElseIf (strcommand = Nothing) Then
+                initializeShell()
             Else
                 System.Console.WriteLine("Shell message: The requested command {0} is not found.", strcommand)  'Fix bug
                 initializeShell()

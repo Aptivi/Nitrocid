@@ -33,8 +33,9 @@ Module Kernel
     Public BootArgs() As String                                                         'Array for boot arguments
     Public AvailableArgs() As String = {"motd", "nohwprobe", "chkn=1", "preadduser", _
                                         "hostname", "quiet"}                            'Available arguments.
-    Public ProbeFlag As Boolean = False                                                 'Check to see if the hardware can be probed
+    Public ProbeFlag As Boolean = True                                                  'Check to see if the hardware can be probed
     Public Quiet As Boolean = False                                                     'Quiet mode
+    Public TimeDateIsSet As Boolean = False                                             'To fix a bug after reboot
 
     'Sleep sub
     Declare Sub Sleep Lib "kernel32" (ByVal milliseconds As Integer)                    'Enable sleep (Mandatory, don't remove)
@@ -169,7 +170,6 @@ bug:
         'About this kernel: THIS KERNEL IS NOT FINAL! Final kernel will be developed through another language, ASM included, depending on system.
         My.Settings.Usernames = New System.Collections.Specialized.StringCollection     'Temporary
         My.Settings.Passwords = New System.Collections.Specialized.StringCollection     'Temporary
-        ProbeFlag = True
         System.Console.Write("-+---> Welcome to Eofla Kernel! Version {0} <---+-", KernelVersion)
 
         'License used. Do not remove.
@@ -186,18 +186,20 @@ bug:
         If (argsFlag = True) Then
             ArgumentParse.ParseArguments()
         End If
-        InitializeTimeDate()
+
+        'Fixed a bug in boot arguments
+        If (TimeDateIsSet = False) Then
+            InitializeTimeDate()
+            TimeDateIsSet = True
+        End If
+
         If (Quiet = True) Then
             'Continue the kernel, and don't print messages
             'Phase 1: Probe hardware if nohwprobe is not passed
-            If (ProbeFlag = True) Then
-                Cpuinfo()
-                SysMemory()
-                Hddinfo()
-            End If
+            HardwareProbe.ProbeHW(True, "K")
 
             'Phase 2: Probe BIOS
-            BiosInformation()
+            HardwareProbe.ProbeBIOS(True)
 
             'Phase 3: Username management
             Login.initializeMainUsers()
@@ -213,27 +215,13 @@ bug:
         Else
             'Continue the kernel
             'Phase 1: Probe hardware if nohwprobe is not passed
-            If (ProbeFlag = True) Then
-                System.Console.WriteLine("hwprobe: Your hardware will be probed. Please wait...")
-                Cpuinfo()
-                System.Console.WriteLine("hwprobe: CPU: {0} {1}MHz", Cpuname, Cpuspeed)
-                SysMemory()
-                System.Console.WriteLine("hwprobe: RAM: {0}", SysMem)
-                Hddinfo()
-                System.Console.WriteLine("hwprobe: HDD: {0} {1}GB", Hddmodel, FormatNumber(Hddsize, 2))
-            Else
-                System.Console.WriteLine("hwprobe: Hardware is not probed. Probe using 'hwprobe'")
-            End If
+            HardwareProbe.ProbeHW(False, "K")
 
             'Phase 2: Probe BIOS
-            System.Console.WriteLine("hwprobe: Your BIOS will be probed. Please wait...")
-            BiosInformation()
-            System.Console.WriteLine("hwprobe: BIOS: {0} {1}", BIOSMan, BIOSCaption)
+            HardwareProbe.ProbeBIOS(False)
 
             'Phase 3: Username management
-            System.Console.Write("usrmgr: System usernames: ")
             Login.initializeMainUsers()
-            System.Console.WriteLine("created.")
             Login.initializeUsers()
             Login.adduser("demo")
             LoginFlag = True
