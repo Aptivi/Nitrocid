@@ -61,9 +61,7 @@ Module TimeDate
 
     Sub ShowTimeQuiet()
 
-        If (Quiet = True) Then
-            'Do nothing
-        Else
+        If (Quiet = False) Then
             ShowTime()
         End If
 
