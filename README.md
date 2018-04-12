@@ -31,6 +31,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **4/9/2018 - 0.0.2.2:** Fix bug for network list where double PC names show up on both listing ways, Error handling on listing networks.
 
+**4/11/2018 - 0.0.2.3:** Fix crash on arguments after reboot, fix bugs, and more.
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `src/<platform>/Kernel Simulator/Documentation`
