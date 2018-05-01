@@ -9,13 +9,37 @@ INFO: This kernel simulator is not a final planned version of Kernel, since it w
 NOTE: It can only be Console at the moment, while we are developing a GUI for this simulator.
 
 Kernel Simulator lets you simulate a _very_ early access for our **future** Kernel. It provides the built-in hardware
-detector, log-in manager (Just adduser and chpwd), and the shell.
+detector, log-in manager, and the shell.
+
+Cannot log-in to Kernel Simulator on **root** account? The password is the _backwards_ of **root**.
+
+## |-----+--> _0.0.3 Changes_ <--+-----|
+
+We have removed _bin_ folder and made the source code store directly in the _root_ folder of Kernel Simulator files to manage _releases_.
 
 ## |-----+--> _Download_ <--+-----|
 
 You can download the binary and the source code here: https://github.com/EoflaOE/Kernel-Simulator/releases
 
-Build instructions coming soon.
+## |-----+--> _Prerequisites_ <--+-----|
+
+[Microsoft .NET Framework 4.0](https://download.microsoft.com/download/1/B/E/1BE39E79-7E39-46A3-96FF-047F95396215/dotNetFx40_Full_setup.exe) is **important and required** for Kernel Simulator to work fully. If you have Windows 8 or later, you might already have this version of Microsoft .NET Framework 4.0.
+
+## |-----+--> _Build Instructions_ <--+-----|
+
+1. Install [Microsoft Visual Basic Express 2010](https://visual-basic-express.soft32.com/old-version/386190/2010.express/) or [Visual Studio 2010](https://www.visualstudio.com/vs/older-downloads/ "Sign-in required"), or higher.
+
+2. After installation, extract the source code, and open Microsoft Visual Basic / Studio 2010, and click on **Open Project...**
+
+3. Go to the source directory, and double-click the solution file
+
+4. Right click on the project on the right, and select **Properties**
+
+5. Go to **Compile**, click **Browse...** on **Build output path:**, and select your build path. When you're finished, click on **OK** button.
+
+6. Click on the **Build** menu bar, and click on **Build Kernel Simulator**
+
+7. In **Windows Explorer**, go to the build directory and then double-click on the executable file.
 
 ## |-----+--> _History_ <--+-----|
 
@@ -33,9 +57,11 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **4/11/2018 - 0.0.2.3:** Fix crash on arguments after reboot, fix bugs, and more.
 
+**4/30/2018 - 0.0.3:** Fix bugs, Log-in system rewritten, added commands, added arguments, added permission system, custom colors, and more.
+
 ## |-----+--> _Manual pages_ <--+-----|
 
-The documentations can be found in source code of kernel simulator in `src/<platform>/Kernel Simulator/Documentation`
+The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`
 
 **Documentation - main page:** Information about Kernel Simulator, this page
 
