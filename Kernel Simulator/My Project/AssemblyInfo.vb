@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Kernel Simulator")> 
-<Assembly: AssemblyDescription("Simulates a kernel in console. No GUI implemented yet.")> 
+<Assembly: AssemblyDescription("Simulates a kernel in console. No GUI implemented yet. Upcoming Big release: 0.0.4")> 
 <Assembly: AssemblyCompany("EoflaOE... Linux, MC, and more...")> 
 <Assembly: AssemblyProduct("Kernel Simulator")> 
 <Assembly: AssemblyCopyright("Copyright © EoflaOE 2018")> 
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.0.3.0")> 
-<Assembly: AssemblyFileVersion("1.0.3.0")> 
+<Assembly: AssemblyVersion("0.0.3.1")> 
+<Assembly: AssemblyFileVersion("1.0.3.1")> 
 
 <Assembly: NeutralResourcesLanguageAttribute("en-US")> 

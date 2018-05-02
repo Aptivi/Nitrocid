@@ -45,6 +45,8 @@ Module UserManagement
 
         'Do not confuse with initializeUsers. It initializes user.
         userword.Add(uninitUser, unpassword)
+        Groups.permission("Admin", False, uninitUser, "Add", True)
+        Groups.permission("Disabled", False, uninitUser, "Add", True)
 
     End Sub
 
@@ -230,44 +232,46 @@ Module UserManagement
         System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
         Dim answerrmuser = System.Console.ReadLine()
         System.Console.ResetColor()
-        For Each usersRemove As String In userword.Keys.ToArray
-            If InStr(answerrmuser, " ") > 0 Then
-                System.Console.WriteLine("Spaces are not allowed.")
-                removeUser()
-                answerrmuser = Nothing
-            ElseIf (answerrmuser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                System.Console.WriteLine("Special characters are not allowed.")
-                removeUser()
-                answerrmuser = Nothing
-            ElseIf (answerrmuser = Nothing) Then
-                System.Console.WriteLine("Blank username.")
-                removeUser()
-                answerrmuser = Nothing
-            ElseIf (answerrmuser = "q") Then
-                DoneFlag = "Cancelled"
-                answerrmuser = Nothing
-            ElseIf (usersRemove = answerrmuser And answerrmuser = "root") Then
-                System.Console.WriteLine("User {0} isn't allowed to be removed.", answerrmuser)
-                removeUser()
-                answerrmuser = Nothing
-            ElseIf (usersRemove = answerrmuser And usersRemove = signedinusrnm) Then
-                System.Console.WriteLine("User {0} is already logged in. Logout and login as root.", answerrmuser)
-                removeUser()
-                answerrmuser = Nothing
-            ElseIf (usersRemove = answerrmuser And answerrmuser <> "root") Then
-                Groups.permission("Admin", False, answerrmuser, "Remove")
-                Groups.permission("Disabled", False, answerrmuser, "Remove")
-                userword.Remove(answerrmuser)
-                System.Console.WriteLine("User {0} removed.", answerrmuser)
-                DoneFlag = "Yes"
-                answerrmuser = Nothing
-            End If
-        Next
-        If DoneFlag = "No" Then
+        If InStr(answerrmuser, " ") > 0 Then
+            System.Console.WriteLine("Spaces are not allowed.")
+            removeUser()
+            answerrmuser = Nothing
+        ElseIf (answerrmuser = "q") Then
+            DoneFlag = "Cancelled"
+            answerrmuser = Nothing
+        ElseIf (answerrmuser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+            System.Console.WriteLine("Special characters are not allowed.")
+            removeUser()
+            answerrmuser = Nothing
+        ElseIf (answerrmuser = Nothing) Then
+            System.Console.WriteLine("Blank username.")
+            removeUser()
+            answerrmuser = Nothing
+        ElseIf userword.ContainsKey(answerrmuser) = False Then
             System.Console.WriteLine("User {0} not found.", answerrmuser)
             removeUser()
             answerrmuser = Nothing
+        Else
+            For Each usersRemove As String In userword.Keys.ToArray
+                If (usersRemove = answerrmuser And answerrmuser = "root") Then
+                    System.Console.WriteLine("User {0} isn't allowed to be removed.", answerrmuser)
+                    removeUser()
+                    answerrmuser = Nothing
+                ElseIf (answerrmuser = usersRemove And usersRemove = signedinusrnm) Then
+                    System.Console.WriteLine("User {0} is already logged in. Log-out and log-in as another admin.", answerrmuser)
+                    removeUser()
+                    answerrmuser = Nothing
+                ElseIf (usersRemove = answerrmuser And answerrmuser <> "root") Then
+                    Groups.permission("Admin", False, answerrmuser, "Remove")
+                    Groups.permission("Disabled", False, answerrmuser, "Remove")
+                    userword.Remove(answerrmuser)
+                    System.Console.WriteLine("User {0} removed.", answerrmuser)
+                    DoneFlag = "Yes"
+                    answerrmuser = Nothing
+                End If
+            Next
         End If
+
 
     End Sub
 

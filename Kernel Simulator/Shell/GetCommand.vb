@@ -166,11 +166,11 @@ Module GetCommand
                                      "chmotd: Changes MOTD, the Message Of The Day (Admins only)" + vbNewLine + _
                                      "choice: Makes user choices" + vbNewLine + _
                                      "chpwd: Changes password for current user" + vbNewLine + _
-                                     "chusrname: Changes user name" + vbNewLine + _
+                                     "chusrname: Changes user name (Admins Only)" + vbNewLine + _
                                      "cls: Clears the screen" + vbNewLine + _
                                      "disco: A disco effect! (press ENTER to quit)" + vbNewLine + _
                                      "echo: Writes a text into a console" + vbNewLine + _
-                                     "editperm: Edit permissions for user" + vbNewLine + _
+                                     "editperm: Edit permissions for user (Admins Only)" + vbNewLine + _
                                      "future-eyes-destroyer (Alias: fed): Like disco, but black/white version." + vbNewLine + _
                                      "help: Help page" + vbNewLine + _
                                      "hwprobe: Probe hardware manually (One time in 'nohwprobe' kernel)" + vbNewLine + _
@@ -183,7 +183,7 @@ Module GetCommand
                                      "ping: Check to see if specified address is available" + vbNewLine + _
                                      "read: Writes file contents to the console" + vbNewLine + _
                                      "reboot: Restarts your computer (WARNING: No syncing, because it is not a final kernel)" + vbNewLine + _
-                                     "rmuser: Removes a user from the list" + vbNewLine + _
+                                     "rmuser: Removes a user from the list (Admins Only)" + vbNewLine + _
                                      "showmotd: Shows message of the day set by user or kernel" + vbNewLine + _
                                      "showtd: Shows date and time" + vbNewLine + _
                                      "shutdown: The kernel will be shut down" + vbNewLine + _

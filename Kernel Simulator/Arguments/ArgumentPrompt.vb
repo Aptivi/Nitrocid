@@ -23,6 +23,8 @@ Module ArgumentPrompt
     Public argsFlag As Boolean                                                      'A flag for checking for an argument later
     Public argsInjected As Boolean                                                  'A flag for checking for an argument on reboot
 
+    'TODO: Add "debug" argument to increase verbosity on the kernel, and possibly include the line and file when there is a serious error.
+
     Sub PromptArgs(Optional ByVal InjMode As Boolean = False)
 
         'Checks if the arguments are injected

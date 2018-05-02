@@ -227,8 +227,6 @@ bug:
             UserManagement.initializeMainUsers()
             UserManagement.adduser("demo")
             LoginFlag = True
-            Groups.permission("Admin", False, "demo", "Add", True)
-            Groups.permission("Disabled", False, "demo", "Add", True)
 
             'Phase 4: Check for pre-user making and log-in
             If (CruserFlag = True) Then
