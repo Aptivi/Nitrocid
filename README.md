@@ -13,6 +13,8 @@ detector, log-in manager, and the shell.
 
 Cannot log-in to Kernel Simulator on **root** account? The password is the _backwards_ of **root**.
 
+Next Big Release: **0.0.4** _(Coming in May 20)_
+
 ## |-----+--> _0.0.3 Changes_ <--+-----|
 
 We have removed _bin_ folder and made the source code store directly in the _root_ folder of Kernel Simulator files to manage _releases_.
@@ -58,6 +60,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **4/11/2018 - 0.0.2.3:** Fix crash on arguments after reboot, fix bugs, and more.
 
 **4/30/2018 - 0.0.3:** Fix bugs, Log-in system rewritten, added commands, added arguments, added permission system, custom colors, and more.
+
+**5/2/2018 - 0.0.3.1:** Shell title edited in preparation for the big release, fix bugs with removing users, fix blank command, and added admin checking.
 
 ## |-----+--> _Manual pages_ <--+-----|
 
