@@ -16,21 +16,20 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module ChangeMOTD
+Imports System.IO
 
-    Sub ChangeMessage()
+Module DebugWriter
 
-        'New message of the day
-        W("Write a new Message Of The Day: ", "input")
-        Dim newmotd As String = System.Console.ReadLine()
-        If (newmotd = "") Then
-            Wln("Blank message of the day.", "neutralText")
-        ElseIf (newmotd = "q") Then
-            Wln("MOTD changing has been cancelled.", "neutralText")
-        Else
-            W("Changing MOTD...", "neutralText")
-            My.Settings.MOTD = newmotd
-            Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
+    Public dbgWriter As New StreamWriter(Environ("USERPROFILE") + "\kernelDbg.log")
+
+    Sub Wdbg(ByVal text As String, ByVal line As Boolean, ByVal ParamArray vars() As Object)
+
+        If (DebugMode = True) Then
+            If (line = False) Then
+                dbgWriter.Write(FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortDate) + " " + FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortTime) + ": " + text, vars)
+            ElseIf (line = True) Then
+                dbgWriter.WriteLine(FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortDate) + " " + FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortTime) + ": " + text, vars)
+            End If
         End If
 
     End Sub

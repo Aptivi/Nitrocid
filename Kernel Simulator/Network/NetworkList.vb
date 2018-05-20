@@ -38,9 +38,9 @@ Module NetworkList
             Dim ComputerNames() = Computers.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
 
             'Display infromation
-            System.Console.WriteLine("net: Your computer name on network is {0}", My.Computer.Name)
-            System.Console.WriteLine("net: Your host name is {0}", My.Settings.HostName)
-            System.Console.WriteLine("net: It appears that your computers is connected below:")
+            Wln("net: Your computer name on network is {0}" + vbNewLine + _
+                "net: Your host name is {1}" + vbNewLine + _
+                "net: It appears that your computers is connected below:", "neutralText", My.Computer.Name, My.Settings.HostName)
 
             'List IP addresses of computers
             For Each cmp In ComputerNames
@@ -50,13 +50,13 @@ Module NetworkList
                 For Each ipheal In IPHostEntry.AddressList
                     Dim reply = p.Send(ipheal, 100)
                     If (reply.Status = IPStatus.Success) Then
-                        System.Console.WriteLine("net: {0}: {1}", cmp, ipheal)
+                        Wln("net: {0}: {1}", "neutralText", cmp, ipheal)
                     End If
                 Next
             Next
 
             'Get router address
-            System.Console.Write("net: Router Address: ")
+            W("net: Router Address: ", "neutralText")
             HostNameFromDNS = Dns.GetHostName()
             IPHostEntry = Dns.GetHostEntry(HostNameFromDNS)
             For Each ip In IPHostEntry.AddressList
@@ -66,7 +66,7 @@ Module NetworkList
                             If ip.Equals(UnicastIPAI.Address) Then
                                 Dim adapterProperties As IPInterfaceProperties = router.GetIPProperties()
                                 For Each gateway As GatewayIPAddressInformation In adapterProperties.GatewayAddresses
-                                    System.Console.WriteLine(gateway.Address.ToString())
+                                    Wln(gateway.Address.ToString(), "neutralText")
                                 Next
                             End If
                         End If
@@ -74,11 +74,11 @@ Module NetworkList
                 Next
             Next
 
-            Else
+        Else
 
-                System.Console.WriteLine("net: WiFi or Ethernet is disconnected.")
+            Wln("net: WiFi or Ethernet is disconnected.", "neutralText")
 
-            End If
+        End If
 
     End Sub
 
@@ -132,7 +132,7 @@ Module NetworkList
                             If ip.Equals(UnicastIPAI.Address) Then
                                 Dim adapterProperties As IPInterfaceProperties = router.GetIPProperties()
                                 For Each gateway As GatewayIPAddressInformation In adapterProperties.GatewayAddresses
-                                    System.Console.WriteLine(gateway.Address.ToString())
+                                    Wln(gateway.Address.ToString(), "neutralText")
                                 Next
                             End If
                         End If
@@ -148,14 +148,14 @@ Module NetworkList
                 For Each ipheal In IPHostEntry.AddressList
                     Dim reply = p.Send(ipheal, 100)
                     If (reply.Status = IPStatus.Success) Then
-                        System.Console.WriteLine("|-> {0}: {1}", cmp, ipheal)
+                        Wln("|-> {0}: {1}", "neutralText", cmp, ipheal)
                     End If
                 Next
             Next
 
         Else
 
-            System.Console.WriteLine("net: WiFi or Ethernet is disconnected.")
+            Wln("net: WiFi or Ethernet is disconnected.", "neutralText")
 
         End If
 

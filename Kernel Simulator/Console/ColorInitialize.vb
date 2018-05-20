@@ -19,22 +19,17 @@
 Module ColorInitialize
 
     'Variables for colors used by previous versions of Kernel.
-    'If a variable ends with -Def, it is a default color.
     Public inputColor As Object = ConsoleColor.White
-    Public inputColorDef As Object = inputColor
     Public licenseColor As Object = ConsoleColor.White
-    Public licenseColorDef As Object = licenseColor
     Public contKernelErrorColor As Object = ConsoleColor.Yellow
-    Public contKernelErrorColorDef As Object = contKernelErrorColor
     Public uncontKernelErrorColor As Object = ConsoleColor.Red
-    Public uncontKernelErrorColorDef As Object = uncontKernelErrorColor
     Public hostNameShellColor As Object = ConsoleColor.DarkGreen
-    Public hostNameShellColorDef As Object = hostNameShellColor
     Public userNameShellColor As Object = ConsoleColor.Green
-    Public userNameShellColorDef As Object = userNameShellColor
+    Public backgroundColor As Object = ConsoleColor.Black
+    Public neutralTextColor As Object = ConsoleColor.Gray
 
     'Array for available colors
     Public availableColors() As String = {"White", "Gray", "DarkGray", "DarkRed", "Red", "DarkYellow", "Yellow", "DarkGreen", "Green", _
-                                          "DarkCyan", "Cyan", "DarkBlue", "Blue", "DarkMagenta", "Magenta", "RESET"}
+                                          "DarkCyan", "Cyan", "DarkBlue", "Blue", "DarkMagenta", "Magenta", "RESET", "THEME"}
 
 End Module

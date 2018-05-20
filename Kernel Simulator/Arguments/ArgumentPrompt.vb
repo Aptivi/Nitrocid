@@ -20,10 +20,6 @@ Module ArgumentPrompt
 
     'Variables
     Public answerargs As String                                                     'Input for arguments
-    Public argsFlag As Boolean                                                      'A flag for checking for an argument later
-    Public argsInjected As Boolean                                                  'A flag for checking for an argument on reboot
-
-    'TODO: Add "debug" argument to increase verbosity on the kernel, and possibly include the line and file when there is a serious error.
 
     Sub PromptArgs(Optional ByVal InjMode As Boolean = False)
 
@@ -32,23 +28,18 @@ Module ArgumentPrompt
             argsInjected = False
             ArgumentParse.ParseArguments()
         Else
-            'Shows available arguments
-            System.Console.Write("Available arguments: {0}", String.Join(", ", AvailableArgs))
-
-            'Prompts user to write arguments
-            System.Console.Write(vbNewLine + "Boot arguments: ")
-            System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+            'Shows available arguments and prompts for it
+            W("Available arguments: {0}" + vbNewLine + "Arguments ('help' for help): ", "input", String.Join(", ", AvailableArgs))
             answerargs = System.Console.ReadLine()
-            System.Console.ResetColor()
 
             'Make a kernel check for arguments later if anything is entered
             If (answerargs <> Nothing And InjMode = False) Then
                 argsFlag = True
             ElseIf (answerargs <> Nothing And InjMode = True) Then
                 argsInjected = True
-                System.Console.WriteLine("Injected arguments will be scheduled to run at next reboot.")
+                Wln("Injected arguments will be scheduled to run at next reboot.", "neutralText")
             ElseIf (answerargs = "q" And InjMode = True) Then
-                System.Console.WriteLine("Argument Injection has been cancelled.")
+                Wln("Argument Injection has been cancelled.", "neutralText")
             End If
         End If
 

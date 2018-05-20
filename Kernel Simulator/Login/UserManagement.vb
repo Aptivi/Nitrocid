@@ -20,19 +20,25 @@
 
 Module UserManagement
 
+    'TODO: Merge initializeMainUsers to adduser
     Sub initializeMainUsers()
 
         'Check if the process is done, then do nothing if it is done.
         If (MainUserDone = False) Then
 
             'Main users will be initialized
-            userword.Add("root", "toor")
-            Groups.permission("Admin", True, "root", "Add", True)
-            Groups.permission("Disabled", False, "root", "Add", True)
+            If (setRootPasswd = True) Then
+                userword.Add("root", RootPasswd)
+            Else
+                userword.Add("root", "toor")
+            End If
+            Wdbg("Dictionary {0}.userword has been added, result: userword = {1}", True, userword, String.Join(", ", userword.ToArray))
+            adminList.Add("root", True)
+            disabledList.Add("root", False)
 
             'Print each main user initialized, if quiet mode wasn't passed
             If (Quiet = False) Then
-                System.Console.WriteLine("usrmgr: System usernames: {0}", String.Join(", ", userword.Keys.ToArray))
+                Wln("usrmgr: System usernames: {0}", "neutralText", String.Join(", ", userword.Keys.ToArray))
             End If
 
             'Send signal to kernel that this function is done
@@ -44,9 +50,20 @@ Module UserManagement
     Sub initializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")
 
         'Do not confuse with initializeUsers. It initializes user.
-        userword.Add(uninitUser, unpassword)
-        Groups.permission("Admin", False, uninitUser, "Add", True)
-        Groups.permission("Disabled", False, uninitUser, "Add", True)
+        Try
+            userword.Add(uninitUser, unpassword)
+            Wdbg("userword = {1}", True, userword, String.Join(", ", userword.ToArray))
+            adminList.Add(uninitUser, False)
+            disabledList.Add(uninitUser, False)
+        Catch ex As Exception
+            If (DebugMode = True) Then
+                Wln("Error trying to add username." + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText", _
+                    Err.Number, Err.Description, ex.StackTrace)
+                Wdbg(ex.StackTrace, True)
+            Else
+                Wln("Error trying to add username." + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description)
+            End If
+        End Try
 
     End Sub
 
@@ -54,7 +71,7 @@ Module UserManagement
 
         'Adds users
         If (Quiet = False) Then
-            System.Console.WriteLine("usrmgr: Creating username {0}...", newUser)
+            Wln("usrmgr: Creating username {0}...", "neutralText", newUser)
         End If
         If (newPassword = Nothing) Then
             initializeUser(newUser)
@@ -67,10 +84,8 @@ Module UserManagement
     Sub resetUsers()
 
         'Resets users and permissions
-        For Each rmuser As String In userword.Keys.ToArray
-            Groups.permission("Admin", False, rmuser, "Remove", True)
-            Groups.permission("Disabled", False, rmuser, "Remove", True)
-        Next
+        adminList.Clear()
+        disabledList.Clear()
         userword.Clear()
 
         'Resets outputs
@@ -97,53 +112,55 @@ Module UserManagement
         On Error Resume Next
 
         'Prompts user to enter a new username
-        System.Console.Write("Username to be changed: ")
-        System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+        W("Username to be changed: ", "input")
         Dim answernuser = System.Console.ReadLine()
-        System.Console.ResetColor()
         If InStr(CStr(answernuser), " ") > 0 Then
-            System.Console.WriteLine("Spaces are not allowed.")
+            Wln("Spaces are not allowed.", "neutralText")
             changePassword()
         ElseIf (answernuser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-            System.Console.WriteLine("Special characters are not allowed.")
+            Wln("Special characters are not allowed.", "neutralText")
             changePassword()
         ElseIf (answernuser = "q") Then
-            System.Console.WriteLine("Username changing has been cancelled.")
+            Wln("Username changing has been cancelled.", "neutralText")
         Else
             For Each user As String In userword.Keys.ToArray
                 If (user = answernuser) Then
                     DoneFlag = True
-                    System.Console.Write("Username to change to: ")
+                    W("Username to change to: ", "input")
                     System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
                     Dim answerNewUserTemp = System.Console.ReadLine()
-                    System.Console.ResetColor()
                     If InStr(CStr(answerNewUserTemp), " ") > 0 Then
-                        System.Console.WriteLine("Spaces are not allowed.")
+                        Wln("Spaces are not allowed.", "neutralText")
                         changePassword()
                     ElseIf (answerNewUserTemp.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                        System.Console.WriteLine("Special characters are not allowed.")
+                        Wln("Special characters are not allowed.", "neutralText")
                         changePassword()
                     ElseIf (answerNewUserTemp = "q") Then
-                        System.Console.WriteLine("Username changing has been cancelled.")
+                        Wln("Username changing has been cancelled.", "neutralText")
                     ElseIf (userword.ContainsKey(answernuser) = True) Then
                         If Not (userword.ContainsKey(answerNewUserTemp) = True) Then
                             Dim temporary As String = userword(answernuser)
+                            Wdbg("userword.ToBeRemoved = {0}", True, String.Join(", ", userword(answernuser).ToArray))
                             userword.Remove(answernuser)
                             userword.Add(answerNewUserTemp, temporary)
+                            Wdbg("userword.Added = {0}", True, userword(answerNewUserTemp))
                             Groups.permissionEditForNewUser(answernuser, answerNewUserTemp)
-                            System.Console.WriteLine("Username has been changed to {0}!", answerNewUserTemp)
+                            Wln("Username has been changed to {0}!", "neutralText", answerNewUserTemp)
                             If (answernuser = signedinusrnm) Then
+                                Wdbg("{0}.Logout.Execute(because ASSERT({0} = {1}) = True)", True, answernuser, signedinusrnm)
                                 LoginPrompt()
                             End If
                         Else
-                            System.Console.WriteLine("The new name you entered is already found.")
+                            Wdbg("ASSERT(userwordDict.Cont({0})) = True", True, answerNewUserTemp)
+                            Wln("The new name you entered is already found.", "neutralText")
                         End If
                     End If
                 End If
             Next
         End If
         If (DoneFlag = False) Then
-            System.Console.WriteLine("User {0} not found.", answernuser)
+            Wdbg("ASSERT(isFound({0})) = False", True, answernuser)
+            Wln("User {0} not found.", "neutralText", answernuser)
             changePassword()
         End If
 
@@ -157,23 +174,21 @@ Module UserManagement
 
         'Checks if there is a password
         If Not (password = Nothing) Then
-            System.Console.Write("Current password: ")
-            System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+            W("Current password: ", "input")
             answerpass = System.Console.ReadLine()
-            System.Console.ResetColor()
             If InStr(CStr(answerpass), " ") > 0 Then
-                System.Console.WriteLine("Spaces are not allowed.")
+                Wln("Spaces are not allowed.", "neutralText")
                 changePassword()
             ElseIf (answerpass.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                System.Console.WriteLine("Special characters are not allowed.")
+                Wln("Special characters are not allowed.", "neutralText")
                 changePassword()
             ElseIf (answerpass = "q") Then
-                System.Console.WriteLine("Password changing has been cancelled.")
+                Wln("Password changing has been cancelled.", "neutralText")
             Else
                 If userword.TryGetValue(CStr(answeruser), password) AndAlso password = answerpass Then
                     changePasswordPrompt(CStr(answeruser))
                 Else
-                    System.Console.WriteLine(vbNewLine + "Wrong password.")
+                    Wln(vbNewLine + "Wrong password.", "neutralText")
                     changePassword()
                 End If
             End If
@@ -186,35 +201,31 @@ Module UserManagement
     Sub changePasswordPrompt(ByVal usernamerequestedChange As String)
 
         'Prompts user to enter new password
-        System.Console.Write("New password: ")
-        System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+        W("New password: ", "input")
         Dim answernewpass = System.Console.ReadLine()
-        System.Console.ResetColor()
         If InStr(answernewpass, " ") > 0 Then
-            System.Console.WriteLine("Spaces are not allowed.")
+            Wln("Spaces are not allowed.", "neutralText")
             changePasswordPrompt(usernamerequestedChange)
         ElseIf (answernewpass.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-            System.Console.WriteLine("Special characters are not allowed.")
+            Wln("Special characters are not allowed.", "neutralText")
             changePasswordPrompt(usernamerequestedChange)
         ElseIf (answernewpass = "q") Then
-            System.Console.WriteLine("Password changing has been cancelled.")
+            Wln("Password changing has been cancelled.", "neutralText")
         Else
-            System.Console.Write("Confirm: ")
-            System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+            W("Confirm: ", "input")
             Dim answernewpassconfirm = System.Console.ReadLine()
-            System.Console.ResetColor()
             If InStr(answernewpassconfirm, " ") > 0 Then
-                System.Console.WriteLine("Spaces are not allowed.")
+                Wln("Spaces are not allowed.", "neutralText")
                 changePasswordPrompt(usernamerequestedChange)
             ElseIf (answernewpassconfirm.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                System.Console.WriteLine("Special characters are not allowed.")
+                Wln("Special characters are not allowed.", "neutralText")
                 changePasswordPrompt(usernamerequestedChange)
             ElseIf (answernewpassconfirm = "q") Then
-                System.Console.WriteLine("Password changing has been cancelled.")
+                Wln("Password changing has been cancelled.", "neutralText")
             ElseIf (answernewpassconfirm = answernewpass) Then
                 userword.Item(usernamerequestedChange) = answernewpass
             ElseIf (answernewpassconfirm <> answernewpass) Then
-                System.Console.WriteLine("Passwords doesn't match.")
+                Wln("Passwords doesn't match.", "neutralText")
                 changePasswordPrompt(usernamerequestedChange)
             End If
         End If
@@ -223,54 +234,81 @@ Module UserManagement
 
     Sub removeUser()
 
-        'Variables for removeUser()
-        Dim DoneFlag As String = "No"
-        On Error Resume Next
-
         'Removes user from the username and password list
-        System.Console.Write("Username to be removed: ")
-        System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+        W("Username to be removed: ", "input")
         Dim answerrmuser = System.Console.ReadLine()
-        System.Console.ResetColor()
-        If InStr(answerrmuser, " ") > 0 Then
-            System.Console.WriteLine("Spaces are not allowed.")
-            removeUser()
-            answerrmuser = Nothing
-        ElseIf (answerrmuser = "q") Then
-            DoneFlag = "Cancelled"
-            answerrmuser = Nothing
-        ElseIf (answerrmuser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-            System.Console.WriteLine("Special characters are not allowed.")
-            removeUser()
-            answerrmuser = Nothing
-        ElseIf (answerrmuser = Nothing) Then
-            System.Console.WriteLine("Blank username.")
-            removeUser()
-            answerrmuser = Nothing
-        ElseIf userword.ContainsKey(answerrmuser) = False Then
-            System.Console.WriteLine("User {0} not found.", answerrmuser)
-            removeUser()
-            answerrmuser = Nothing
-        Else
-            For Each usersRemove As String In userword.Keys.ToArray
-                If (usersRemove = answerrmuser And answerrmuser = "root") Then
-                    System.Console.WriteLine("User {0} isn't allowed to be removed.", answerrmuser)
+        removeUserFromDatabase(answerrmuser)
+
+    End Sub
+
+    'This sub is an accomplice of in-shell command arguments.
+    Friend Sub removeUserFromDatabase(ByVal user As String)
+
+        Try
+            Dim DoneFlag As String = "No"
+            If InStr(user, " ") > 0 Then
+                Wln("Spaces are not allowed.", "neutralText")
+                If (strcommand = "rmuser") Then
                     removeUser()
-                    answerrmuser = Nothing
-                ElseIf (answerrmuser = usersRemove And usersRemove = signedinusrnm) Then
-                    System.Console.WriteLine("User {0} is already logged in. Log-out and log-in as another admin.", answerrmuser)
-                    removeUser()
-                    answerrmuser = Nothing
-                ElseIf (usersRemove = answerrmuser And answerrmuser <> "root") Then
-                    Groups.permission("Admin", False, answerrmuser, "Remove")
-                    Groups.permission("Disabled", False, answerrmuser, "Remove")
-                    userword.Remove(answerrmuser)
-                    System.Console.WriteLine("User {0} removed.", answerrmuser)
-                    DoneFlag = "Yes"
-                    answerrmuser = Nothing
                 End If
-            Next
-        End If
+                user = Nothing
+            ElseIf (user = "q") Then
+                DoneFlag = "Cancelled"
+                user = Nothing
+            ElseIf (user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+                Wln("Special characters are not allowed.", "neutralText")
+                If (strcommand = "rmuser") Then
+                    removeUser()
+                End If
+                user = Nothing
+            ElseIf (user = Nothing) Then
+                Wln("Blank username.", "neutralText")
+                If (strcommand = "rmuser") Then
+                    removeUser()
+                End If
+                user = Nothing
+            ElseIf userword.ContainsKey(user) = False Then
+                Wdbg("ASSERT(isFound({0})) = False", True, user)
+                Wln("User {0} not found.", "neutralText", user)
+                If (strcommand = "rmuser") Then
+                    removeUser()
+                End If
+                user = Nothing
+            Else
+                For Each usersRemove As String In userword.Keys.ToArray
+                    If (usersRemove = user And user = "root") Then
+                        Wln("User {0} isn't allowed to be removed.", "neutralText", user)
+                        If (strcommand = "rmuser") Then
+                            removeUser()
+                        End If
+                        user = Nothing
+                    ElseIf (user = usersRemove And usersRemove = signedinusrnm) Then
+                        Wln("User {0} is already logged in. Log-out and log-in as another admin.", "neutralText", user)
+                        Wdbg("ASSERT({0}.isLoggedIn(ASSERT({0} = {1}) = True)) = True", True, user, signedinusrnm)
+                        If (strcommand = "rmuser") Then
+                            removeUser()
+                        End If
+                        user = Nothing
+                    ElseIf (usersRemove = user And user <> "root") Then
+                        adminList.Remove(user)
+                        disabledList.Remove(user)
+                        Wdbg("userword.ToBeRemoved = {0}", True, String.Join(", ", userword(user).ToArray))
+                        userword.Remove(user)
+                        Wln("User {0} removed.", "neutralText", user)
+                        DoneFlag = "Yes"
+                        user = Nothing
+                    End If
+                Next
+            End If
+        Catch ex As Exception
+            If (DebugMode = True) Then
+                Wln("Error trying to add username." + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText", _
+                    Err.Number, Err.Description, ex.StackTrace)
+                Wdbg(ex.StackTrace, True)
+            Else
+                Wln("Error trying to add username." + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description)
+            End If
+        End Try
 
 
     End Sub
@@ -278,43 +316,43 @@ Module UserManagement
     Sub addUser()
 
         'Prompt user to write username to be added
-        System.Console.Write("Write username: ")
-        System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+        W("Write username: ", "input")
         answernewuser = System.Console.ReadLine()
-        System.Console.ResetColor()
         If InStr(answernewuser, " ") > 0 Then
-            System.Console.WriteLine("Spaces are not allowed.")
+            Wln("Spaces are not allowed.", "neutralText")
         ElseIf (answernewuser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-            System.Console.WriteLine("Special characters are not allowed.")
+            Wln("Special characters are not allowed.", "neutralText")
         ElseIf (answernewuser = "q") Then
-            System.Console.WriteLine("Username creation has been cancelled.")
+            Wln("Username creation has been cancelled.", "neutralText")
         Else
-            System.Console.Write("Write password: ")
-            System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
-            answerpassword = System.Console.ReadLine()
-            System.Console.ResetColor()
-            If InStr(answerpassword, " ") > 0 Then
-                System.Console.WriteLine("Spaces are not allowed.")
-            ElseIf (answerpassword.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                System.Console.WriteLine("Special characters are not allowed.")
-            ElseIf (answerpassword = "q") Then
-                System.Console.WriteLine("Username creation has been cancelled.")
-            Else
-                System.Console.Write("Confirm: ")
-                System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
-                Dim answerpasswordconfirm As String = System.Console.ReadLine()
-                System.Console.ResetColor()
-                If InStr(answerpasswordconfirm, " ") > 0 Then
-                    System.Console.WriteLine("Spaces are not allowed.")
-                ElseIf (answerpasswordconfirm.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                    System.Console.WriteLine("Special characters are not allowed.")
-                ElseIf (answerpasswordconfirm = "q") Then
-                    System.Console.WriteLine("Username creation has been cancelled.")
-                ElseIf (answerpassword = answerpasswordconfirm) Then
-                    adduser(answernewuser, answerpassword)
-                ElseIf (answerpassword <> answerpasswordconfirm) Then
-                    System.Console.WriteLine("Password doesn't match.")
-                End If
+            newPassword(answernewuser)
+        End If
+
+    End Sub
+
+    Sub newPassword(ByVal user As String)
+
+        W("Write password: ", "input")
+        answerpassword = System.Console.ReadLine()
+        If InStr(answerpassword, " ") > 0 Then
+            Wln("Spaces are not allowed.", "neutralText")
+        ElseIf (answerpassword.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+            Wln("Special characters are not allowed.", "neutralText")
+        ElseIf (answerpassword = "q") Then
+            Wln("Username creation has been cancelled.", "neutralText")
+        Else
+            W("Confirm: ", "input")
+            Dim answerpasswordconfirm As String = System.Console.ReadLine()
+            If InStr(answerpasswordconfirm, " ") > 0 Then
+                Wln("Spaces are not allowed.", "neutralText")
+            ElseIf (answerpasswordconfirm.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+                Wln("Special characters are not allowed.", "neutralText")
+            ElseIf (answerpasswordconfirm = "q") Then
+                Wln("Username creation has been cancelled.", "neutralText")
+            ElseIf (answerpassword = answerpasswordconfirm) Then
+                adduser(user, answerpassword)
+            ElseIf (answerpassword <> answerpasswordconfirm) Then
+                Wln("Password doesn't match.", "neutralText")
             End If
         End If
 

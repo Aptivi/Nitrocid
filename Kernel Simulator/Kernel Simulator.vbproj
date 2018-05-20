@@ -62,6 +62,7 @@
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -105,14 +106,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -127,14 +124,32 @@
   <ItemGroup>
     <Compile Include="Arguments\ArgumentParse.vb" />
     <Compile Include="Arguments\ArgumentPrompt.vb" />
+    <Compile Include="Arguments\CommandLineArgsParse.vb" />
     <Compile Include="Console\ColorInitialize.vb" />
     <Compile Include="Console\ColorSet.vb" />
+    <Compile Include="Console\LoadBackground.vb" />
+    <Compile Include="Console\Templates.vb" />
+    <Compile Include="Console\TemplateSet.vb" />
+    <Compile Include="Files\CurrentDir.vb" />
     <Compile Include="Files\FileContents.vb" />
+    <Compile Include="Files\InitializeDirectoryFile.vb" />
     <Compile Include="Files\ListFolders.vb" />
+    <Compile Include="Kernel\Flags.vb" />
+    <Compile Include="Kernel\KernelTools.vb" />
+    <Compile Include="Misc\Beep.vb" />
+    <Compile Include="Misc\Calculator\sciCalc.vb" />
+    <Compile Include="Misc\Calculator\stdCalc.vb" />
+    <Compile Include="Misc\Calculator\unitConv.vb" />
     <Compile Include="Misc\ChangeMOTD.vb" />
+    <Compile Include="Misc\Config.vb" />
+    <Compile Include="Misc\Writers\DebugWriter.vb" />
+    <Compile Include="Misc\DisposeExit.vb" />
+    <Compile Include="Misc\PanicSim.vb" />
+    <Compile Include="Misc\Writers\TextWriterColor.vb" />
+    <Compile Include="Network\NetworkTools.vb" />
     <Compile Include="Shell\GetCommand.vb" />
     <Compile Include="Hardware\HardwareProbe.vb" />
-    <Compile Include="Kernel.vb" />
+    <Compile Include="Kernel\Kernel.vb" />
     <Compile Include="Login\Groups.vb" />
     <Compile Include="Login\Login.vb" />
     <Compile Include="Login\UserManagement.vb" />
@@ -156,6 +171,7 @@
     <Compile Include="Network\HostName.vb" />
     <Compile Include="Network\Network.vb" />
     <Compile Include="Network\NetworkList.vb" />
+    <Compile Include="Shell\HelpSystem.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />
   </ItemGroup>

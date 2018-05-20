@@ -53,14 +53,14 @@ If some of the ideas disappeared, then it is either done or cancelled.
 
 1. The asynchronous Time/Date on the top of the console
 2. Interactive host system file manager (Planned in the bootable version)
-3. Implement changing directory (Planned in 0.0.4)
-4. Full shell and full parsing (Planned in 0.0.4)
-5. Help for commands (Planned in 0.0.4)
-7. Templates like (Default, RedConsole, Bluespire, Hacker, LinuxUncolored, LinuxColoredDef) (Planned in 0.0.4)
-8. Live Mode color change (Planned in 0.0.4)
-9. Calculators and scientific calculators
-10. Backgrounds (Planned in 0.0.4)
-11. More networking features
-12. Kernel Simulator Configuration Tool (separate program)
+3. Multiple command running (Planned in 0.0.4.5)
+4. Deprecation of prompts
+5. GUI Command Prompt
+6. "uiprompt" real command-line argument launches GUI command prompt
+7. User-made modifications and commands in (<modname>.m)
+8. Improvements of Help (Planned in 0.0.4.5)
+9. Improvements of Kernel Error including {0}, {1}, etc. support (Planned in 0.0.4.5)
+10. Finish debugging logging to cover the whole application (Planned in 0.0.4.5)
+11. Time zones
 
 (If you have ideas, edit this section by inserting your idea.)

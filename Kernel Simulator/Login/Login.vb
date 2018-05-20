@@ -24,21 +24,24 @@ Module Login
     Public answerpass As String                                 'Input of password
     Public password As String                                   'Password for user we're logging in to
     Public signedinusrnm As String                              'Username that is signed in
-    Public LoginFlag As Boolean                                 'Flag for log-in
-    Public MainUserDone As Boolean                              'Main users initialization is done
 
     Sub LoginPrompt()
 
         'Prompts user to log-in
-        System.Console.Write(vbNewLine + My.Settings.MOTD + vbNewLine + vbNewLine + "Username: ")
-        System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+        If (clsOnLogin = True) Then
+            System.Console.Clear()
+        End If
+        If (showMOTD = False) Then
+            W(vbNewLine + "Username: ", "input")
+        Else
+            W(vbNewLine + My.Settings.MOTD + vbNewLine + vbNewLine + "Username: ", "input")
+        End If
         answeruser = System.Console.ReadLine()
-        System.Console.ResetColor()
         If InStr(CStr(answeruser), " ") > 0 Then
-            System.Console.WriteLine("Spaces are not allowed.")
+            Wln("Spaces are not allowed.", "neutralText")
             LoginPrompt()
         ElseIf (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-            System.Console.WriteLine("Special characters are not allowed.")
+            Wln("Special characters are not allowed.", "neutralText")
             LoginPrompt()
         Else
             showPasswordPrompt(CStr(answeruser))
@@ -55,26 +58,38 @@ Module Login
         'Prompts user to enter a user's password
         For Each availableUsers As String In userword.Keys.ToArray
             If availableUsers = answeruser And disabledList(availableUsers) = False Then
+                Wdbg("ASSERT({0} = {1}, {2} = False) = True, True", True, availableUsers, answeruser, disabledList(availableUsers))
                 DoneFlag = True
                 password = userword.Item(usernamerequested)
                 'Check if there's the password
                 If Not (password = Nothing) Then
-                    System.Console.Write("{0}'s password: ", usernamerequested)
-                    System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+                    W("{0}'s password: ", "input", usernamerequested)
                     answerpass = System.Console.ReadLine()
-                    System.Console.ResetColor()
                     If InStr(CStr(answerpass), " ") > 0 Then
-                        System.Console.WriteLine("Spaces are not allowed.")
-                        LoginPrompt()
+                        Wln("Spaces are not allowed.", "neutralText")
+                        If (maintenance = False) Then
+                            LoginPrompt()
+                        Else
+                            showPasswordPrompt(usernamerequested)
+                        End If
                     ElseIf (answerpass.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                        System.Console.WriteLine("Special characters are not allowed.")
-                        LoginPrompt()
+                        Wln("Special characters are not allowed.", "neutralText")
+                        If (maintenance = False) Then
+                            LoginPrompt()
+                        Else
+                            showPasswordPrompt(usernamerequested)
+                        End If
                     Else
                         If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
+                            Wdbg("ASSERT(Parse({0}, {1})) = True | ASSERT({1} = {2}) = True", True, usernamerequested, password, answerpass)
                             signIn(usernamerequested)
                         Else
-                            System.Console.WriteLine(vbNewLine + "Wrong password.")
-                            LoginPrompt()
+                            Wln(vbNewLine + "Wrong password.", "neutralText")
+                            If (maintenance = False) Then
+                                LoginPrompt()
+                            Else
+                                showPasswordPrompt(usernamerequested)
+                            End If
                         End If
                     End If
                 Else
@@ -82,12 +97,12 @@ Module Login
                     signIn(usernamerequested)
                 End If
             ElseIf (availableUsers = answeruser And disabledList(availableUsers) = True) Then
-                System.Console.WriteLine("User is disabled.")
+                Wln("User is disabled.", "neutralText")
                 LoginPrompt()
             End If
         Next
         If DoneFlag = False Then
-            System.Console.WriteLine(vbNewLine + "Wrong username.")
+            Wln(vbNewLine + "Wrong username.", "neutralText")
             LoginPrompt()
         End If
 
@@ -96,7 +111,7 @@ Module Login
     Sub signIn(ByVal signedInUser As String)
 
         'Initialize shell, and sign in to user.
-        System.Console.WriteLine(vbNewLine + "Logged in successfully as {0}!", signedInUser)
+        Wln(vbNewLine + "Logged in successfully as {0}!", "neutralText", signedInUser)
         signedinusrnm = signedInUser
         Shell.initializeShell()
 

@@ -22,4 +22,4 @@ A: It works only for PCs with the motherboard speaker installed on it. Your PC m
 
 - Known bugs
 
-(No known bugs found.)
+1. When setting "Colored Shell" to False, you will see that input color is white instead of gray.

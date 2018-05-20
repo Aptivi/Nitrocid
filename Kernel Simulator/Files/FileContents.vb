@@ -24,7 +24,7 @@ Module FileContents
 
         If (filename = "loader") Then
 
-            System.Console.WriteLine("Boot_Version = {0}", KernelVersion)
+            Wln("Boot_Version = {0}", "neutralText", KernelVersion)
 
         ElseIf (filename = "hdpack") Then
 
@@ -32,26 +32,26 @@ Module FileContents
 
         ElseIf (filename = "libuesh.elb") Then
 
-            System.Console.WriteLine("[startelb]=ueshlib-<UESH Library Version 0.0.3>-")
+            Wln("[startelb]=ueshlib-<UESH Library Version 0.0.3>-", "neutralText")
 
         ElseIf (filename = "kernel") Then
 
-            System.Console.WriteLine("Kernel process PID: 1" + vbNewLine + _
+            Wln("Kernel process PID: 1" + vbNewLine + _
                                      "Priority: High" + vbNewLine + _
-                                     "Importance: High, and shouldn't be killed.")
+                                     "Importance: High, and shouldn't be killed.", "neutralText")
 
         ElseIf (filename = "login") Then
 
-            System.Console.WriteLine("Login process PID: 2" + vbNewLine + _
+            Wln("Login process PID: 2" + vbNewLine + _
                                      "Priority: Normal" + vbNewLine + _
-                                     "Importance: High, and shouldn't be killed.")
+                                     "Importance: High, and shouldn't be killed.", "neutralText")
 
         ElseIf (filename = "uesh") Then
 
-            System.Console.WriteLine("UESH process PID: 3" + vbNewLine + _
+            Wln("UESH process PID: 3" + vbNewLine + _
                                      "Priority: Normal" + vbNewLine + _
                                      "Importance: Normal." + vbNewLine + _
-                                     "Short For: Unified Eofla SHell")
+                                     "Short For: Unified Eofla SHell", "neutralText")
 
         End If
 

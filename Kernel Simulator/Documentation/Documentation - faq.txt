@@ -25,12 +25,14 @@ A: It is handled by supressing it. It is optional that you will see this error o
 
 Q: I accidentally made a typo in my username while creating. Can I change it?
 A: The name changing feature will be included in the future. From now, just create another username with your correct name in it.
+   EDIT: You can change your name since 0.0.3.
 
 
 - Commands
 
 Q: I cannot execute a command with arguments. Is there something wrong?
 A: The command system is incomplete, it does not support arguments.
+   EDIT: The command system is now complete and supports arguments.
 
 Q: Is it interactive?
 A: Now, it is not interactive, Possibly, on the bootable version of Kernel, it will include the interactive shell.

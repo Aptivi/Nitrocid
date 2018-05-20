@@ -16,22 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module ChangeMOTD
+Imports System.Diagnostics.Process
 
-    Sub ChangeMessage()
+Module DisposeExit
 
-        'New message of the day
-        W("Write a new Message Of The Day: ", "input")
-        Dim newmotd As String = System.Console.ReadLine()
-        If (newmotd = "") Then
-            Wln("Blank message of the day.", "neutralText")
-        ElseIf (newmotd = "q") Then
-            Wln("MOTD changing has been cancelled.", "neutralText")
-        Else
-            W("Changing MOTD...", "neutralText")
-            My.Settings.MOTD = newmotd
-            Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
+    Private Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal hProcess As IntPtr, ByVal dwMinimumWorkingSetSize As Int32, ByVal dwMaximumWorkingSetSize As Int32) As Int32
+
+    Sub DisposeAll()
+
+        On Error GoTo RAMError
+
+        GC.Collect()
+        GC.WaitForPendingFinalizers()
+        If (Environment.OSVersion.Platform = PlatformID.Win32NT) Then
+            SetProcessWorkingSetSize(GetCurrentProcess().Handle, -1, -1)
         End If
+        Exit Sub
+RAMError:
+        Wln("Error trying to free RAM: {0} - Continuing...", "neutralText", Err.Description)
+        Resume Next
 
     End Sub
 

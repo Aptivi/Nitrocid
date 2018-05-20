@@ -16,22 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module ChangeMOTD
+Module InitializeDirectoryFile
 
-    Sub ChangeMessage()
+    Sub Init()
 
-        'New message of the day
-        W("Write a new Message Of The Day: ", "input")
-        Dim newmotd As String = System.Console.ReadLine()
-        If (newmotd = "") Then
-            Wln("Blank message of the day.", "neutralText")
-        ElseIf (newmotd = "q") Then
-            Wln("MOTD changing has been cancelled.", "neutralText")
-        Else
-            W("Changing MOTD...", "neutralText")
-            My.Settings.MOTD = newmotd
-            Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
-        End If
+        AvailableDirs.AddRange({"boot", "bin", "dev", "etc", "lib", "proc", "usr", "var"})
 
     End Sub
 

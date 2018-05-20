@@ -21,19 +21,17 @@ Module Network
     Sub CheckNetworkKernel()
 
         If System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() Then
-            System.Console.WriteLine("net: Network available.")
-            System.Console.WriteLine("net: Checking for connectivity...")
-            System.Console.Write("net: Write address, or URL: ")
-            System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+            W("net: Network available." + vbNewLine + _
+                                 "net: Checking for connectivity..." + vbNewLine + _
+                                 "net: Write address, or URL: ", "input")
             Dim AnswerPing As String = System.Console.ReadLine()
-            System.Console.ResetColor()
             If (AnswerPing <> "q") Then
                 PingTargetKernel(AnswerPing)
             Else
-                System.Console.WriteLine("Network checking has been cancelled.")
+                Wln("Network checking has been cancelled.", "neutralText")
             End If
         Else
-            System.Console.WriteLine("net: Network not available.")
+            Wln("net: Network not available.", "neutralText")
         End If
 
     End Sub
@@ -41,17 +39,15 @@ Module Network
     Sub CheckNetworkCommand()
 
         If System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() Then
-            System.Console.Write("net: Write address, or URL: ")
-            System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+            W("net: Write address, or URL: ", "input")
             Dim AnswerPing As String = System.Console.ReadLine()
-            System.Console.ResetColor()
             If (AnswerPing <> "q") Then
                 PingTarget(AnswerPing)
             Else
-                System.Console.WriteLine("Network checking has been cancelled.")
+                Wln("Network checking has been cancelled.", "neutralText")
             End If
         Else
-            System.Console.WriteLine("net: Network not available.")
+            Wln("net: Network not available.", "neutralText")
         End If
 
     End Sub
@@ -60,26 +56,36 @@ Module Network
 
         On Error GoTo PingError
         If My.Computer.Network.Ping(Address) Then
-            System.Console.WriteLine("net: Connection is ready.")
+            Wln("net: Connection is ready.", "neutralText")
         End If
         Exit Sub
 PingError:
-        System.Console.WriteLine("net: Connection is not ready, server error, or connection problem.")
+        Wln("net: Connection is not ready, server error, or connection problem.", "neutralText")
 
     End Sub
 
-    Sub PingTarget(ByVal Address As String)
+    Sub PingTarget(ByVal Address As String, Optional ByVal repeatTimes As Int16 = 3)
 
         On Error GoTo PingError1
         Dim s As New Stopwatch
-        s.Start()
-        If My.Computer.Network.Ping(Address) Then
-            System.Console.WriteLine("net: Got response in {0} ms", s.ElapsedMilliseconds.ToString)
+        If (repeatTimes <> 1) And Not (repeatTimes < 0) Then
+            For i As Int16 = 1 To repeatTimes
+                s.Start()
+                If My.Computer.Network.Ping(Address) Then
+                    Wln("{0}/{1} {2}: {3} ms", "neutralText", repeatTimes, i, Address, s.ElapsedMilliseconds.ToString)
+                End If
+                s.Reset()
+            Next
+        ElseIf (repeatTimes = 1) Then
+            s.Start()
+            If My.Computer.Network.Ping(Address) Then
+                Wln("net: Got response from {0} in {1} ms", "neutralText", Address, s.ElapsedMilliseconds.ToString)
+            End If
+            s.Stop()
         End If
-        s.Stop()
         Exit Sub
 PingError1:
-        System.Console.WriteLine("net: Site was down, isn't reachable, server error or connection problem.")
+        Wln("net: Site was down, isn't reachable, server error or connection problem.", "neutralText")
 
     End Sub
 

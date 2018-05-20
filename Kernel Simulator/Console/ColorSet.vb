@@ -25,9 +25,7 @@ Module ColorSet
     Private i As Integer
 
     'Variables
-    Public answersColor(5) As String
-
-    'TODO: Templates like (Default, RedConsole, Bluespire, Hacker, LinuxUncolored, LinuxColoredDef) comes in the future.
+    Public answersColor(7) As String
 
     Sub UseDefaults()
         'Use default settings in current step.
@@ -43,6 +41,10 @@ Module ColorSet
             answersColor(i) = "DarkGreen"
         ElseIf (i = 5) Then
             answersColor(i) = "Green"
+        ElseIf (i = 6) Then
+            answersColor(i) = "Black"
+        ElseIf (i = 7) Then
+            answersColor(i) = "Gray"
         End If
     End Sub
 
@@ -53,35 +55,55 @@ Module ColorSet
         Dim DoneFlag As Boolean = False
 
         'Actual code
-        For i As Integer = 0 To 6
-            If (i = 6) Then
-                'Print summary of what is being changed.
-                System.Console.WriteLine("Input Color: {0}" + vbNewLine + _
-                                         "License Color: {1}" + vbNewLine + _
-                                         "Cont. Kernel Error Color: {2}" + vbNewLine + _
-                                         "Uncont. Kernel Error Color: {3}" + vbNewLine + _
-                                         "Hostname Shell Color: {4}" + vbNewLine + _
-                                         "Username Shell Color: {5}", _
-                                         answersColor(0), answersColor(1), answersColor(2), _
-                                         answersColor(3), answersColor(4), answersColor(5))
+        For i As Integer = 0 To 8
+            If (i = 8) Then
+                'Print summary of what is being changed, and evaluate "Live Mode"
+                inputColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(0)), ConsoleColor)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(1)), ConsoleColor)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(2)), ConsoleColor)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(3)), ConsoleColor)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(4)), ConsoleColor)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(5)), ConsoleColor)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(6)), ConsoleColor)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(7)), ConsoleColor)
+                LoadBackground.Load()
+                Wln("Input Color: {0}" + vbNewLine + "License Color: {1}" + vbNewLine + "Cont. Kernel Error Color: {2}" + vbNewLine + _
+                    "Uncont. Kernel Error Color: {3}" + vbNewLine + "Hostname Shell Color: {4}" + vbNewLine + "Username Shell Color: {5}" + vbNewLine + _
+                    "Background Color: {6}" + vbNewLine + "Text Color: {7}", "neutralText", answersColor(0), answersColor(1), answersColor(2), _
+                    answersColor(3), answersColor(4), answersColor(5), answersColor(6), answersColor(7))
             End If
 
             'Write current step message
-            System.Console.Write(currentStepMessage)
-            System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+            W(currentStepMessage, "input")
             answerColor = System.Console.ReadLine()
-            System.Console.ResetColor()
 
             'Checks the user input if colors exist, and then try to put it into a temporary array. 
             'TODO: "Live Mode" will come in the future.
-            If (i <> 6) Then
+            If (i <> 8) Then
                 If (answerColor = "RESET") Then
                     'Give a signal to the command that the colors are resetting. 
-                    'TODO: "Confirmation" will also come in the future.
-                    ResetFlag = True
-                    Exit For
+                    W("Are you sure that you want to reset your colors to the defaults? <y/n> ", "input")
+                    Dim answerreset As String = System.Console.ReadKey.KeyChar
+                    If (answerreset = "y") Then
+                        System.Console.WriteLine()
+                        ResetFlag = True
+                        Exit For
+                    ElseIf (answerreset = "n") Then
+                        System.Console.WriteLine()
+                    ElseIf (answerreset = "q") Then
+                        Wln(vbNewLine + "Color changing has been cancelled.", "neutralText")
+                        Exit Sub
+                    End If
+                ElseIf (answerColor = "THEME") Then
+                    TemplateSet.TemplatePrompt()
+                    If (templateSetExitFlag = True) Then
+                        Wln("Theme changed.", "neutralText")
+                        Exit Sub
+                    Else
+                        Exit For
+                    End If
                 ElseIf (answerColor = "q") Then
-                    System.Console.WriteLine("Color changing has been cancelled.")
+                    Wln("Color changing has been cancelled.", "neutralText")
                     Exit Sub
                 ElseIf (availableColors.Contains(answerColor)) Then
                     answersColor(i) = answerColor
@@ -91,28 +113,21 @@ Module ColorSet
                     UseDefaults()
                     advanceStep()
                 Else
-                    System.Console.WriteLine("The {0} color is not found. Your answers is case-sensitive.", answerColor)
+                    Wln("The {0} color is not found. Your answers is case-sensitive.", "neutralText", answerColor)
                     UseDefaults()
                     advanceStep()
                 End If
-            ElseIf (i = 6) Then
+            ElseIf (i = 8) Then
                 If answerColor = "y" Then
-                    'Set all colors into user-written settings (actual)
-                    'The CType([Enum].Parse...) code is the only way to change colors in Visual Basic language.
                     DoneFlag = True
-                    inputColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(0)), ConsoleColor)
-                    licenseColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(1)), ConsoleColor)
-                    contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(2)), ConsoleColor)
-                    uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(3)), ConsoleColor)
-                    hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(4)), ConsoleColor)
-                    userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), answersColor(5)), ConsoleColor)
-                    System.Console.WriteLine("Colors changed.")
+                    Wln("Colors changed.", "neutralText")
                 ElseIf answerColor = "n" Then
+                    ResetColors()
                     stepCurrent = 0
                     currentStepMessage = "Color for input: "
                     Exit For
                 Else
-                    System.Console.WriteLine("System colors are not changed because you wrote an invalid choice.")
+                    Wln("System colors are not changed because you wrote an invalid choice.", "neutralText")
                     Exit Sub
                 End If
             End If
@@ -121,13 +136,8 @@ Module ColorSet
             SetColorSteps()
         ElseIf (ResetFlag = True) Then
             'Reset every color to their default settings and exit.
-            inputColor = inputColorDef
-            licenseColor = licenseColorDef
-            contKernelErrorColor = contKernelErrorColorDef
-            uncontKernelErrorColor = uncontKernelErrorColorDef
-            hostNameShellColor = hostNameShellColorDef
-            userNameShellColor = userNameShellColorDef
-            System.Console.WriteLine("Everything is reset to normal settings.")
+            ResetColors()
+            Wln("Everything is reset to normal settings.", "neutralText")
             stepCurrent = 0
             currentStepMessage = "Color for input: "
         End If
@@ -149,9 +159,25 @@ Module ColorSet
         ElseIf (stepCurrent = 5) Then
             currentStepMessage = "Color for username on shell prompt: "
         ElseIf (stepCurrent = 6) Then
+            currentStepMessage = "Color for background: "
+        ElseIf (stepCurrent = 7) Then
+            currentStepMessage = "Color for texts: "
+        ElseIf (stepCurrent = 8) Then
             currentStepMessage = "Is this information correct? <y/n> "
         End If
 
+    End Sub
+
+    Sub ResetColors()
+        inputColor = CType([Enum].Parse(GetType(ConsoleColor), inputColorDef), ConsoleColor)
+        licenseColor = CType([Enum].Parse(GetType(ConsoleColor), licenseColorDef), ConsoleColor)
+        contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), contKernelErrorColorDef), ConsoleColor)
+        uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), uncontKernelErrorColorDef), ConsoleColor)
+        hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), hostNameShellColorDef), ConsoleColor)
+        userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), userNameShellColorDef), ConsoleColor)
+        backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), backgroundColorDef), ConsoleColor)
+        neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColorDef), ConsoleColor)
+        LoadBackground.Load()
     End Sub
 
 End Module

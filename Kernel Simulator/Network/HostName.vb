@@ -21,23 +21,20 @@ Module HostName
     Sub ChangeHostName()
 
         'Change host-name to custom name
-        System.Console.Write("Write a new host name: ")
-        Dim newhost As String
-        System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
-        newhost = System.Console.ReadLine()
-        System.Console.ResetColor()
+        W("Write a new host name: ", "input")
+        Dim newhost As String = System.Console.ReadLine()
         If (newhost = "") Then
-            System.Console.WriteLine("Blank host name.")
+            Wln("Blank host name.", "neutralText")
         ElseIf (newhost.Length <= 3) Then
-            System.Console.WriteLine("The host name length must be at least 4 characters.")
+            Wln("The host name length must be at least 4 characters.", "neutralText")
         ElseIf InStr(newhost, " ") > 0 Then
-            System.Console.WriteLine("Spaces are not allowed.")
+            Wln("Spaces are not allowed.", "neutralText")
         ElseIf (newhost.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-            System.Console.WriteLine("Special characters are not allowed.")
+            Wln("Special characters are not allowed.", "neutralText")
         ElseIf (newhost = "q") Then
-            System.Console.WriteLine("Host name changing has been cancelled.")
+            Wln("Host name changing has been cancelled.", "neutralText")
         Else
-            System.Console.WriteLine("Changing from: {0} to {1}...", My.Settings.HostName, newhost)
+            Wln("Changing from: {0} to {1}...", "neutralText", My.Settings.HostName, newhost)
             My.Settings.HostName = newhost
         End If
 

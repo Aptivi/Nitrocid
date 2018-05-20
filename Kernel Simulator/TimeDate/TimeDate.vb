@@ -36,16 +36,9 @@ Module TimeDate
                 KernelDateTime = Date.Now
                 strKernelTimeDate = Date.Now.ToString
             End If
-            Sleep(100)
+            Sleep(500)
 
         Loop
-
-    End Sub
-
-    Sub ResetTimeDate()
-
-        KernelDateTime = Nothing
-        strKernelTimeDate = Nothing
 
     End Sub
 
@@ -61,8 +54,8 @@ Module TimeDate
 
     Sub ShowTime()
 
-        System.Console.WriteLine("datetime: Time is {0}", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongTime))
-        System.Console.WriteLine("datetime: Today is {0}", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongDate))
+        Wln("datetime: Time is {0}", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongTime))
+        Wln("datetime: Today is {0}", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongDate))
 
     End Sub
 
