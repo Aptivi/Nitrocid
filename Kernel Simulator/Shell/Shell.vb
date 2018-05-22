@@ -22,12 +22,12 @@ Module Shell
     'Admin-Only commands (strictCmds())
     Public ueshversion As String = "0.0.4"                  'Current shell version
     Public strcommand As String                             'Written Command
-    Public availableCommands() As String = {"help", "logout", "version", "currentdir", "list", "changedir", "cdir", "ls", "chdir", "read", "echo", "choice", _
+    Public availableCommands() As String = {"help", "logout", "version", "currentdir", "list", "changedir", "cdir", "ls", "chdir", "cd", "read", "echo", "choice", _
                                             "lsdrivers", "shutdown", "reboot", "disco", "future-eyes-destroyer", "beep", "annoying-sound", "adduser", "chmotd", _
                                             "chhostname", "showmotd", "fed", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", _
                                             "panicsim", "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical", "unitconv", _
-                                            "md", "mkdir", "rd", "rmdir", "debuglog"}
-    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog"}
+                                            "md", "mkdir", "rd", "rmdir", "debuglog", "reloadconfig"}
+    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", "reloadconfig"}
 
     'For contributors: For each added command, you should also add a command in availableCommands array so there is no problems detecting your new command.
     '                  For each added admin command, you should also add a command in strictCmds array after performing above procedure so there is no problems 

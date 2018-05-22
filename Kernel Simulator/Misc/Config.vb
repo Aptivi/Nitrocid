@@ -66,6 +66,26 @@ Module Config
         End Try
     End Sub
 
+    Sub checkForUpgrade()
+        Try
+            Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
+            If (lns(0).Contains("Kernel Version = ") And lns(0).Replace("Kernel Version = ", "") <> KernelVersion) Then
+                If (lns.Length > 0) AndAlso (lns(0).StartsWith("Kernel Version = ")) Then
+                    Wln("An upgrade from {0} to {1} was detected. Updating configuration file...", "neutralText", lns(0).Replace("Kernel Version = ", ""), KernelVersion)
+                    lns(0) = "Kernel Version = " + KernelVersion
+                    IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
+                End If
+            End If
+        Catch ex As Exception
+            If (DebugMode = True) Then
+                Wdbg(ex.StackTrace, True)
+                Wln("There is an error trying to update configuration: {0}." + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
+            Else
+                Wln("There is an error trying to update configuration.", "neutralText")
+            End If
+        End Try
+    End Sub
+
     Sub readConfig()
         Try
             Dim line As String = configReader.ReadLine
@@ -164,6 +184,8 @@ Module Config
                 End If
                 line = configReader.ReadLine
             Loop
+            configReader.Close()
+            configReader.Dispose()
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wdbg(ex.StackTrace, True)

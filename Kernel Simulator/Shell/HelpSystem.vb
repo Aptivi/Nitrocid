@@ -30,7 +30,7 @@ Module HelpSystem
                                                      "arginj: Injects arguments to the kernel (reboot required, admins only)" + vbNewLine + _
                                                      "calc: Simple calculator (No prompt)" + vbNewLine + _
                                                      "cdir (Alias: currentdir): Shows current directory" + vbNewLine + _
-                                                     "changedir (Alias: chdir): Changes directory" + vbNewLine + _
+                                                     "changedir (Aliases: chdir, cd): Changes directory" + vbNewLine + _
                                                      "chhostname: Changes host name (Admins only)" + vbNewLine + _
                                                      "chmotd: Changes MOTD, the Message Of The Day (Admins only)" + vbNewLine + _
                                                      "choice: Makes user choices" + vbNewLine + _
@@ -55,6 +55,7 @@ Module HelpSystem
                                                      "ping: Check to see if specified address is available" + vbNewLine + _
                                                      "read: Writes file contents to the console" + vbNewLine + _
                                                      "reboot: Restarts your computer (WARNING: No syncing, because it is not a final kernel)" + vbNewLine + _
+                                                     "reloadconfig: Reloads configuration file that is edited." + vbNewLine + _
                                                      "rd (Alias: rmdir): Removes a directory (No prompt)" + vbNewLine + _
                                                      "rmuser: Removes a user from the list (Admins Only)" + vbNewLine + _
                                                      "scical: Scientific calculator. The unit converter is separated to another command (No prompt)" + vbNewLine + _
@@ -93,9 +94,9 @@ Module HelpSystem
 
             Wln("Usage: cdir/currentdir: to get current directory", "neutralText")
 
-        ElseIf (command.Contains("changedir") Or command.Contains("chdir")) Then
+        ElseIf (command.Contains("changedir") Or command.Contains("chdir") Or command.StartsWith("cd")) Then
 
-            Wln("Usage: chdir/changedir {<directory> OR ..}", "neutralText")
+            Wln("Usage: chdir/changedir/cd <directory> OR ..", "neutralText")
 
         ElseIf (command.Contains("chhostname")) Then
 
@@ -202,6 +203,11 @@ Module HelpSystem
 
             Wln("Usage: reboot: Restarts your simulated computer." + vbNewLine + _
                 "       Friends of reboot: shutdown, logout", "neutralText")
+
+        ElseIf (command.Contains("reloadconfig")) Then
+
+            Wln("Usage: reloadconfig: Reloads the configuration that is changed by the end-user or by tool." + vbNewLine + _
+                "       Colors doesn't require a restart, but most of the settings require you to restart.", "neutralText")
 
         ElseIf (command.Contains("rmuser")) Then
 

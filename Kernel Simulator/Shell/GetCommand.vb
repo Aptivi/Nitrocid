@@ -217,7 +217,7 @@ Module GetCommand
                 'Current directory
                 Wln("Current directory: {0}", "neutralText", currDir)
 
-            ElseIf (requestedCommand.Substring(0, index) = "chdir" Or requestedCommand.Substring(0, index) = "changedir") Then
+            ElseIf (requestedCommand.Substring(0, index) = "cd" Or requestedCommand.Substring(0, index) = "chdir" Or requestedCommand.Substring(0, index) = "changedir") Then
 
                 Dim words = requestedCommand.Split({" "c})
                 Dim c As Integer
@@ -227,7 +227,7 @@ Module GetCommand
                 Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
                 Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                 If (args.Count - 1 = 0) Then
-                    If (AvailableDirs.Contains(args(0))) Then
+                    If (AvailableDirs.Contains(args(0)) And currDir = "/") Then
                         CurrentDir.setCurrDir(args(0))
                     ElseIf (args(0) = "..") Then
                         CurrentDir.setCurrDir("")
@@ -235,7 +235,7 @@ Module GetCommand
                         Wln("Directory {0} not found", "neutralText", args(0))
                     End If
                 Else
-                    Wln("Usage: chdir/changedir {<directory> OR ..}", "neutralText")
+                    Wln("Usage: chdir/changedir/cd <directory> OR ..", "neutralText")
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "chhostname") Then
@@ -635,6 +635,18 @@ Module GetCommand
                             "       read: to get prompted about reading file contents.", "neutralText")
                     End If
                 End If
+
+            ElseIf (requestedCommand = "reloadconfig") Then
+
+                'Reload configuration
+                If (File.Exists(Environ("USERPROFILE") + "\kernelConfig.ini") = True) Then
+                    configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
+                Else
+                    Config.createConfig(False)
+                    configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
+                End If
+                Config.readConfig()
+                Wln("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", "neutralText")
 
             ElseIf (requestedCommand = "reboot") Then
 

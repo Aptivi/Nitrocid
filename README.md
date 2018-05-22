@@ -1,5 +1,7 @@
 # |---+-> Kernel Simulator <-+---|
 
+The build is currently [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master)
+
 INFO: This kernel simulator simulates our **future** kernel that is planned by us.
 
 NOTE: This kernel simulator _will_ continue to be developed, even if we made the real PC version of Kernel.
@@ -62,6 +64,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **5/2/2018 - 0.0.3.1:** Shell title edited in preparation for the big release, fix bugs with removing users, fix blank command, and added admin checking.
 
 **5/20/2018 - 0.0.4:** Change of startup text, customizable settings, Themes, Command-line arguments, Command argument and full parsing, Actual directory system (alpha), more commands, calculator, debugging with stack trace, debugging logs (unfinished), no RAM leak, fix bugs, and more.
+
+**5/22/2018 - 0.0.4.1:** Fix bugs in changing directory, Fix bugs in "help chdir", added alias for changing directory named "cd", and config update.
 
 ## |-----+--> _Manual pages_ <--+-----|
 

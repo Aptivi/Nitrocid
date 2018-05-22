@@ -55,7 +55,8 @@ Module Kernel
                 CommandLineArgsParse.parseCMDArguments(argu)
             Next
 
-            'Create config file if there is no config file, and then read it.
+            'Create config file and then read it
+            Config.checkForUpgrade()
             If (File.Exists(Environ("USERPROFILE") + "\kernelConfig.ini") = True) Then
                 configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
             Else
