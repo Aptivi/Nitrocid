@@ -22,18 +22,19 @@ Module KernelTools
     ''' Indicates that there's something wrong with the kernel.
     ''' </summary>
     ''' <param name="ErrorType">Specifies whether the error is serious, fatal, unrecoverable, or double panic. C/S/D/F/U</param>
-    ''' <param name="Reboot">Optional. Specifies whether to reboot on panic or to show the message to press any key to shut down</param>
-    ''' <param name="RebootTime">Optional. Specifies seconds before reboot. 0 is instant. Negative numbers not allowed.</param>
-    ''' <param name="Description">Optional. Explanation of what happened when it errored.</param>
+    ''' <param name="Reboot">Specifies whether to reboot on panic or to show the message to press any key to shut down</param>
+    ''' <param name="RebootTime">Specifies seconds before reboot. 0 is instant. Negative numbers are not allowed.</param>
+    ''' <param name="Description">Explanation of what happened when it errored.</param>
+    ''' <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
     ''' <remarks></remarks>
-    Sub KernelError(ByVal ErrorType As Char, Optional ByVal Reboot As Boolean = True, Optional ByVal RebootTime As Long = 30, Optional ByVal Description As String = "General kernel error.")
+    Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal ParamArray Variables() As Object)
         Try
             'Check error types and its capabilities
             If (ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C") Then
                 If (ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5) Then
                     'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                     'generate a second kernel error stating that there is something wrong with the reboot time.
-                    KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Reboot Time exceeds maximum allowed " + CStr(ErrorType) + " error reboot time. You found a kernel bug.")
+                    KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.", CStr(ErrorType))
                     StopPanicAndGoToDoublePanic = True
                 ElseIf (ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False) Then
                     'If the error type is unrecoverable, or double, and the rebooting is false where it should
@@ -48,9 +49,14 @@ Module KernelTools
                 End If
             Else
                 'If the error type is other than D/F/C/U/S, then it will generate a second error.
-                KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Error Type " + CStr(ErrorType) + " invalid.")
+                KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Error Type {0} invalid.", CStr(ErrorType))
                 StopPanicAndGoToDoublePanic = True
             End If
+
+            'Parse variables ({0}, {1}, ...) in the "Description" string variable
+            For v As Integer = 0 To Variables.Length - 1
+                Description = Description.Replace("{" + CStr(v) + "}", Variables(v))
+            Next
 
             'Check error capabilities
             If (Description.Contains("DOUBLE PANIC: ") And ErrorType = "D") Then
@@ -88,9 +94,9 @@ Module KernelTools
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
-                KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Kernel bug: " + Err.Description)
+                KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Kernel bug: {0}", Err.Description)
             Else
-                KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Kernel bug: " + Err.Description)
+                KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Kernel bug: {0}", Err.Description)
             End If
         End Try
 
@@ -116,6 +122,7 @@ Module KernelTools
         slotsUsedName = Nothing
         slotsUsedNum = 0
         totalSlots = 0
+        AvailableDirs.Clear()
         Wdbg("General variables reset", True)
 
         'Reset users

@@ -51,16 +51,15 @@ your issue. Screenshots are optional.
 
 If some of the ideas disappeared, then it is either done or cancelled.
 
-1. The asynchronous Time/Date on the top of the console
-2. Interactive host system file manager (Planned in the bootable version)
-3. Multiple command running (Planned in 0.0.4.5)
-4. Deprecation of prompts
-5. GUI Command Prompt
-6. "uiprompt" real command-line argument launches GUI command prompt
-7. User-made modifications and commands in (<modname>.m)
-8. Improvements of Help (Planned in 0.0.4.5)
-9. Improvements of Kernel Error including {0}, {1}, etc. support (Planned in 0.0.4.5)
-10. Finish debugging logging to cover the whole application (Planned in 0.0.4.5)
-11. Time zones
+1. Interactive host system file manager (Planned in the bootable version)
+2. GUI Command Prompt
+3. "uiprompt" real command-line argument launches GUI command prompt
+4. User-made modifications and commands in (<modname>.m)
+5. Finish debugging logging to cover the whole application (Delayed to 0.0.5)
+6. Time zones
+7. Move every single documentation to Wiki in repository (Planned in 0.0.6)
+8. Error handlers in unit conversion (Planned in 0.0.5)
+9. Languages (Planned in 0.0.5 or 0.0.6)
+10. Allow special characters on passwords (Planned in 0.0.4.9 (the alpha version of 0.0.5))
 
 (If you have ideas, edit this section by inserting your idea.)

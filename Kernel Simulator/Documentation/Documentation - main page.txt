@@ -12,6 +12,7 @@ Cannot log-in to Kernel Simulator on "root" account? The password is the backwar
 
 |---------------+--> History <--+---------------|
 
+7/15/2018 - 0.0.4.5: (Delayed 2 months because of hard drive failure) - Fix bugs when any probers failed to probe hardware, added more details in probers, Help system improved, Fix bugs in color prompts, Prompts deprecated, and more.
 5/22/2018 - 0.0.4.1: Fix bugs in changing directory, Fix bugs in "help chdir", added alias for changing directory named "cd", and config update.
 5/20/2018 - 0.0.4: Change of startup text, customizable settings, Themes, Command-line arguments, Command argument and full parsing, Actual directory system (alpha), more commands, calculator, debugging with stack trace, debugging logs (unfinished), no RAM leak, fix bugs, and more.
 5/2/2018 - 0.0.3.1: Shell title edited in preparation for the big release, fix bugs with removing users, fix blank command, and added admin checking.

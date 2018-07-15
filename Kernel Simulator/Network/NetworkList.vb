@@ -40,7 +40,7 @@ Module NetworkList
             'Display infromation
             Wln("net: Your computer name on network is {0}" + vbNewLine + _
                 "net: Your host name is {1}" + vbNewLine + _
-                "net: It appears that your computers is connected below:", "neutralText", My.Computer.Name, My.Settings.HostName)
+                "net: It appears that your computers is connected below:", "neutralText", My.Computer.Name, HName)
 
             'List IP addresses of computers
             For Each cmp In ComputerNames

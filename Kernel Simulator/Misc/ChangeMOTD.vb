@@ -29,7 +29,10 @@ Module ChangeMOTD
             Wln("MOTD changing has been cancelled.", "neutralText")
         Else
             W("Changing MOTD...", "neutralText")
-            My.Settings.MOTD = newmotd
+            MOTDMessage = newmotd
+            Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
+            lns(23) = "MOTD = " + newmotd
+            IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
             Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
         End If
 

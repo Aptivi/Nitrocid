@@ -116,19 +116,90 @@ Module unitConv
             resultVal = value * 100000
         ElseIf (sourceUnit = "km" And targetUnit = "m") Then
             resultVal = value * 1000
-            'TODO: Add more uncommon temperatures (Reaumur, Delisle, Romer, and Rankine)
         ElseIf (sourceUnit = "Celsius" And targetUnit = "Fahrenheit") Then '... then to temperature ...
             resultVal = value * 9 / 5 + 32
         ElseIf (sourceUnit = "Celsius" And targetUnit = "Kelvin") Then
             resultVal = value + 273.15
+        ElseIf (sourceUnit = "Celsius" And targetUnit = "Reaumur") Then
+            resultVal = value * 4 / 5
+        ElseIf (sourceUnit = "Celsius" And targetUnit = "Delisle") Then
+            resultVal = (100 - value) * 3 / 2
+        ElseIf (sourceUnit = "Celsius" And targetUnit = "Romer") Then
+            resultVal = value * 21 / 40 + 7.5
+        ElseIf (sourceUnit = "Celsius" And targetUnit = "Rankine") Then
+            resultVal = (value + 273.15) * 9 / 5
         ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Celsius") Then
             resultVal = (value - 32) * 5 / 9
         ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Kelvin") Then
             resultVal = (value + 459.67) * 5 / 9
+        ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Reaumur") Then
+            resultVal = (value - 32) * 4 / 9
+        ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Delisle") Then
+            resultVal = (212 - value) * 5 / 6
+        ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Romer") Then
+            resultVal = (value - 32) * 7 / 24 + 7.5
+        ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Rankine") Then
+            resultVal = value + 459.67
         ElseIf (sourceUnit = "Kelvin" And targetUnit = "Celsius") Then
             resultVal = value - 273.15
         ElseIf (sourceUnit = "Kelvin" And targetUnit = "Fahrenheit") Then
             resultVal = value * 9 / 5 - 459.67
+        ElseIf (sourceUnit = "Kelvin" And targetUnit = "Reaumur") Then
+            resultVal = (value - 273.15) * 4 / 5
+        ElseIf (sourceUnit = "Kelvin" And targetUnit = "Delisle") Then
+            resultVal = (373.15 - value) * 3 / 2
+        ElseIf (sourceUnit = "Kelvin" And targetUnit = "Romer") Then
+            resultVal = (value - 273.15) * 21 / 40 + 7.5
+        ElseIf (sourceUnit = "Kelvin" And targetUnit = "Rankine") Then
+            resultVal = value * 9 / 5
+        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Celsius") Then
+            resultVal = value * 5 / 4
+        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Fahrenheit") Then
+            resultVal = value * 9 / 4 + 32
+        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Kelvin") Then
+            resultVal = value * 5 / 4 + 273.15
+        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Delisle") Then
+            resultVal = (80 - value) * 15 / 8
+        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Romer") Then
+            resultVal = value * 21 / 32 + 7.5
+        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Rankine") Then
+            resultVal = value * 9 / 4 + 491.67
+        ElseIf (sourceUnit = "Delisle" And targetUnit = "Celsius") Then
+            resultVal = 100 - value * 2 / 3
+        ElseIf (sourceUnit = "Delisle" And targetUnit = "Fahrenheit") Then
+            resultVal = 212 - value * 6 / 5
+        ElseIf (sourceUnit = "Delisle" And targetUnit = "Kelvin") Then
+            resultVal = 373.15 - (value * 2 / 3)
+        ElseIf (sourceUnit = "Delisle" And targetUnit = "Reaumur") Then
+            resultVal = 80 - value * 8 / 15
+        ElseIf (sourceUnit = "Delisle" And targetUnit = "Romer") Then
+            resultVal = 60 - value * 7 / 20
+        ElseIf (sourceUnit = "Delisle" And targetUnit = "Rankine") Then
+            resultVal = 671.67 - value * 6 / 5
+        ElseIf (sourceUnit = "Romer" And targetUnit = "Celsius") Then
+            resultVal = (value - 7.5) * 40 / 21
+        ElseIf (sourceUnit = "Romer" And targetUnit = "Fahrenheit") Then
+            resultVal = (value - 7.5) * 24 / 7 + 32
+        ElseIf (sourceUnit = "Romer" And targetUnit = "Kelvin") Then
+            resultVal = (value - 7.5) * 40 / 21 + 273.15
+        ElseIf (sourceUnit = "Romer" And targetUnit = "Delisle") Then
+            resultVal = (60 - value) * 20 / 7
+        ElseIf (sourceUnit = "Romer" And targetUnit = "Reaumur") Then
+            resultVal = (value - 7.5) * 32 / 21
+        ElseIf (sourceUnit = "Romer" And targetUnit = "Rankine") Then
+            resultVal = (value - 7.5) * 24 / 7 + 491.67
+        ElseIf (sourceUnit = "Rankine" And targetUnit = "Celsius") Then
+            resultVal = (value - 491.67) * 5 / 9
+        ElseIf (sourceUnit = "Rankine" And targetUnit = "Fahrenheit") Then
+            resultVal = value - 459.67
+        ElseIf (sourceUnit = "Rankine" And targetUnit = "Kelvin") Then
+            resultVal = value * 5 / 9
+        ElseIf (sourceUnit = "Rankine" And targetUnit = "Delisle") Then
+            resultVal = (671.67 - value) * 5 / 6
+        ElseIf (sourceUnit = "Rankine" And targetUnit = "Romer") Then
+            resultVal = (value - 491.67) * 7 / 24 + 7.5
+        ElseIf (sourceUnit = "Rankine" And targetUnit = "Reaumur") Then
+            resultVal = (value - 491.67) * 4 / 9
         ElseIf (sourceUnit = "j" And targetUnit = "kj") Then '... then to energy ...
             resultVal = value / 1000
         ElseIf (sourceUnit = "kj" And targetUnit = "j") Then

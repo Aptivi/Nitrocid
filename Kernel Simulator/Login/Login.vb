@@ -34,7 +34,7 @@ Module Login
         If (showMOTD = False) Then
             W(vbNewLine + "Username: ", "input")
         Else
-            W(vbNewLine + My.Settings.MOTD + vbNewLine + vbNewLine + "Username: ", "input")
+            W(vbNewLine + MOTDMessage + vbNewLine + vbNewLine + "Username: ", "input")
         End If
         answeruser = System.Console.ReadLine()
         If InStr(CStr(answeruser), " ") > 0 Then

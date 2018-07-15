@@ -34,8 +34,11 @@ Module HostName
         ElseIf (newhost = "q") Then
             Wln("Host name changing has been cancelled.", "neutralText")
         Else
-            Wln("Changing from: {0} to {1}...", "neutralText", My.Settings.HostName, newhost)
-            My.Settings.HostName = newhost
+            Wln("Changing from: {0} to {1}...", "neutralText", HName, newhost)
+            HName = newhost
+            Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
+            lns(24) = "Host Name = " + newhost
+            IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
         End If
 
     End Sub

@@ -48,7 +48,10 @@ Module ArgumentParse
                                 Wln("MOTD changing has been cancelled.", "neutralText")
                             Else
                                 W("Changing MOTD...", "neutralText")
-                                My.Settings.MOTD = newmotd
+                                MOTDMessage = newmotd
+                                Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
+                                lns(23) = "MOTD = " + newmotd
+                                IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
                                 Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
                             End If
                         End If
@@ -117,8 +120,11 @@ Module ArgumentParse
                             ElseIf (newhost = "q") Then
                                 Wln("Host name changing has been cancelled.", "neutralText")
                             Else
-                                Wln("Changing from: {0} to {1}...", "neutralText", My.Settings.HostName, newhost)
-                                My.Settings.HostName = newhost
+                                Wln("Changing from: {0} to {1}...", "neutralText", HName, newhost)
+                                HName = newhost
+                                Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
+                                lns(24) = "Host Name = " + newhost
+                                IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
                             End If
                         End If
 
@@ -135,7 +141,7 @@ Module ArgumentParse
                         'Command Injector argument
                         If (BootArgs(i) = "cmdinject") Then
                             W("Available commands: {0}" + vbNewLine + "Write command: ", "input", String.Join(", ", availableCommands))
-                            argcmds = System.Console.ReadLine().Split({":"c}, StringSplitOptions.RemoveEmptyEntries)
+                            argcmds = System.Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                             argcommands = String.Join(", ", argcmds)
                             If (argcommands <> "q") Then
                                 CommandFlag = True
@@ -143,20 +149,23 @@ Module ArgumentParse
                                 Wln("Command injection has been cancelled.", "neutralText")
                             End If
                         Else
-                            argcmds = BootArgs(i).Substring(10).Split({":"c}, StringSplitOptions.RemoveEmptyEntries)
+                            argcmds = BootArgs(i).Substring(10).Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                             argcommands = String.Join(", ", argcmds)
                             CommandFlag = True
                         End If
 
                     ElseIf (BootArgs(i) = "debug") Then
 
-                        DebugMode = True
-                        dbgWriter.AutoFlush = True
+                        DebugMode = True : dbgWriter.AutoFlush = True
+
+                    ElseIf (BootArgs(i) = "maintenance") Then
+
+                        maintenance = True
 
                     ElseIf (BootArgs(i) = "help") Then
 
                         Wln("Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe'" + vbNewLine + _
-                            "Separate commands on 'cmdinject' with colons without spaces, for example, 'cmdinject setthemes Hacker:beep 1024 0.5'" + vbNewLine + _
+                            "Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5'" + vbNewLine + _
                             "Note that the 'debug' argument does not fully cover the kernel.", "neutralText")
                         answerargs = "" : argsFlag = False : argsInjected = False
                         ArgumentPrompt.PromptArgs()

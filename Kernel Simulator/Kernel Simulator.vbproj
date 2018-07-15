@@ -57,7 +57,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>C:\Misc\visual basic projects\VB2010\Kernel Simulator\</OutputPath>
+    <OutputPath>..\..\..\..\My Files\Misc\visual basic projects\VB2010\Kernel Simulator\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <WarningsAsErrors>
@@ -102,7 +102,7 @@
     <ManifestKeyFile>Kernel Simulator_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -172,6 +172,7 @@
     <Compile Include="Network\HostName.vb" />
     <Compile Include="Network\Network.vb" />
     <Compile Include="Network\NetworkList.vb" />
+    <Compile Include="Shell\HelpDefinitions.vb" />
     <Compile Include="Shell\HelpSystem.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />

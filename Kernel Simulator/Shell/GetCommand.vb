@@ -28,42 +28,15 @@ Module GetCommand
     Public answerbeepms As String                                                                           'Input for beep milliseconds
     Public key As Double
     Public colors() As ConsoleColor = CType(ConsoleColor.GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
-    Public WithEvents backgroundWorker1 As New System.ComponentModel.BackgroundWorker                       'Black / White disco
+    Public WithEvents ColoredDisco As New System.ComponentModel.BackgroundWorker                            '16-bit colored disco
     Public answerecho As String                                                                             'Input for printing string
-    Public WithEvents backgroundWorker2 As New System.ComponentModel.BackgroundWorker                       '16-bit Colored Disco
 
-    Sub backgroundWorker2_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles backgroundWorker2.DoWork
-
-        Dim ColorConsole As String = "Black"
-        Do While True
-            Sleep(50)
-            If (backgroundWorker2.CancellationPending = True) Then
-                e.Cancel = True
-                Console.ResetColor()
-                Console.Clear()
-                Shell.commandPromptWrite()
-                System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
-                Exit Do
-            End If
-            If (ColorConsole = "White") Then
-                Console.BackgroundColor = ConsoleColor.Black
-                ColorConsole = "Black"
-                Console.Clear()
-            ElseIf (ColorConsole = "Black") Then
-                Console.BackgroundColor = ConsoleColor.White
-                ColorConsole = "White"
-                Console.Clear()
-            End If
-        Loop
-
-    End Sub
-
-    Sub backgroundWorker1_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles backgroundWorker1.DoWork
+    Sub ColoredDisco_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles ColoredDisco.DoWork
 
         Do While True
             For Each color In colors
                 Sleep(250)
-                If (backgroundWorker1.CancellationPending = True) Then
+                If (ColoredDisco.CancellationPending = True) Then
                     e.Cancel = True
                     Console.ResetColor()
                     Console.Clear()
@@ -79,20 +52,12 @@ Module GetCommand
 
     End Sub
 
-    Sub DiscoSystem(Optional ByVal BlackWhite As Boolean = False)
+    Sub DiscoSystem()
 
-        If (BlackWhite = False) Then
-            backgroundWorker1.WorkerSupportsCancellation = True
-            backgroundWorker1.RunWorkerAsync()
-            If (Console.ReadKey(True).Key = ConsoleKey.Enter) Then
-                backgroundWorker1.CancelAsync()
-            End If
-        ElseIf (BlackWhite = True) Then
-            backgroundWorker2.WorkerSupportsCancellation = True
-            backgroundWorker2.RunWorkerAsync()
-            If (Console.ReadKey(True).Key = ConsoleKey.Enter) Then
-                backgroundWorker2.CancelAsync()
-            End If
+        ColoredDisco.WorkerSupportsCancellation = True
+        ColoredDisco.RunWorkerAsync()
+        If (Console.ReadKey(True).Key = ConsoleKey.Enter) Then
+            ColoredDisco.CancelAsync()
         End If
 
     End Sub
@@ -127,9 +92,8 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "adduser") Then
 
                 If (requestedCommand = "adduser") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     UserManagement.addUser()
-                    Wln("Tip: You can add permissions to new users by using 'addperm' and then writing their username." + vbNewLine + _
-                        "     You can also edit permissions for existing usernames by using 'editperm'.", "neutralText")
                 Else
                     Dim words = requestedCommand.Split({" "c})
                     Dim c As Integer
@@ -152,6 +116,7 @@ Module GetCommand
 
                 'Beep system initialization
                 If (requestedCommand = "annoying-sound" Or requestedCommand = "beep") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     BeepFreq()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -173,6 +138,7 @@ Module GetCommand
 
                 'Argument Injection
                 If (requestedCommand = "arginj") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     answerargs = ""
                     ArgumentPrompt.PromptArgs(True)
                 Else
@@ -241,6 +207,7 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "chhostname") Then
 
                 If (requestedCommand = "chhostname") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     HostName.ChangeHostName()
                 Else
                     Dim newhost As String = requestedCommand.Substring(11)
@@ -263,14 +230,18 @@ Module GetCommand
                     ElseIf (newhost = "q") Then
                         Wln("Host name changing has been cancelled.", "neutralText")
                     Else
-                        Wln("Changing from: {0} to {1}...", "neutralText", My.Settings.HostName, newhost)
-                        My.Settings.HostName = newhost
+                        Wln("Changing from: {0} to {1}...", "neutralText", HName, newhost)
+                        HName = newhost
+                        Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
+                        lns(24) = "Host Name = " + newhost
+                        IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
                     End If
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "chmotd") Then
 
                 If (requestedCommand = "chmotd") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     ChangeMessage()
                 Else
                     Dim newmotd = requestedCommand.Substring(7)
@@ -280,7 +251,10 @@ Module GetCommand
                         Wln("MOTD changing has been cancelled.", "neutralText")
                     Else
                         W("Changing MOTD...", "neutralText")
-                        My.Settings.MOTD = newmotd
+                        MOTDMessage = newmotd
+                        Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
+                        lns(23) = "MOTD = " + newmotd
+                        IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
                         Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
                     End If
                 End If
@@ -288,6 +262,7 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "choice") Then
 
                 If (requestedCommand = "choice") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     W("Write a question: ", "input")
                     Dim question As String = System.Console.ReadLine()
                     If (question = "") Then
@@ -345,11 +320,13 @@ Module GetCommand
 
             ElseIf (requestedCommand = "chpwd") Then
 
+                Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                 changePassword()
 
             ElseIf (requestedCommand.Substring(0, index) = "chusrname") Then
 
                 If (requestedCommand = "chusrname") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     UserManagement.changeName()
                 Else
                     Dim DoneFlag As Boolean = False
@@ -414,6 +391,7 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "echo") Then
 
                 If (requestedCommand = "echo") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     W("Write any text: ", "input")
                     answerecho = System.Console.ReadLine()
                     If (answerecho = "q") Then
@@ -436,11 +414,6 @@ Module GetCommand
                             "       echo: to be prompted about text printing.", "neutralText")
                     End If
                 End If
-
-            ElseIf (requestedCommand = "future-eyes-destroyer" Or requestedCommand = "fed") Then
-
-                'Disco system, in monochrome
-                DiscoSystem(True)
 
             ElseIf (requestedCommand = "hwprobe") Then
 
@@ -521,6 +494,7 @@ Module GetCommand
 
                 'Kernel panic simulator
                 If (requestedCommand = "panicsim") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     PanicSim.panicPrompt()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -563,6 +537,7 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "perm") Then
 
                 If (requestedCommand = "perm") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     Groups.permissionPrompt()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -583,6 +558,7 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "ping") Then
 
                 If (requestedCommand = "ping") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     Network.CheckNetworkCommand()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -605,6 +581,7 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "read") Then
 
                 If (requestedCommand = "read") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     W("Write a file (directories will be scanned): ", "input")
                     Dim readfile As String = System.Console.ReadLine()
                     If (readfile = "") Then
@@ -679,6 +656,7 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "rmuser") Then
 
                 If (requestedCommand = "rmuser") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     UserManagement.removeUser()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -722,6 +700,7 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "setcolors") Then
 
                 If (requestedCommand = "setcolors") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     Wln("Available Colors: {0}" + vbNewLine + _
                         "Press ENTER only on questions and defaults will be used.", "neutralText", String.Join(", ", availableColors))
                     ColorSet.SetColorSteps()
@@ -789,6 +768,7 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "setthemes") Then
 
                 If (requestedCommand = "setthemes") Then
+                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     TemplateSet.TemplatePrompt()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -814,7 +794,7 @@ Module GetCommand
             ElseIf (requestedCommand = "showmotd") Then
 
                 'Show changes to MOTD, or current
-                Wln(My.Settings.MOTD, "neutralText")
+                Wln(MOTDMessage, "neutralText")
 
             ElseIf (requestedCommand = "shutdown") Then
 

@@ -23,10 +23,10 @@ Module Shell
     Public ueshversion As String = "0.0.4"                  'Current shell version
     Public strcommand As String                             'Written Command
     Public availableCommands() As String = {"help", "logout", "version", "currentdir", "list", "changedir", "cdir", "ls", "chdir", "cd", "read", "echo", "choice", _
-                                            "lsdrivers", "shutdown", "reboot", "disco", "future-eyes-destroyer", "beep", "annoying-sound", "adduser", "chmotd", _
-                                            "chhostname", "showmotd", "fed", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", _
-                                            "panicsim", "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical", "unitconv", _
-                                            "md", "mkdir", "rd", "rmdir", "debuglog", "reloadconfig"}
+                                            "lsdrivers", "shutdown", "reboot", "disco", "beep", "annoying-sound", "adduser", "chmotd", "chhostname", "showmotd", _
+                                            "fed", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", _
+                                            "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical", "unitconv", "md", "mkdir", "rd", "rmdir", "debuglog", _
+                                            "reloadconfig"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", "reloadconfig"}
 
     'For contributors: For each added command, you should also add a command in availableCommands array so there is no problems detecting your new command.
@@ -47,15 +47,15 @@ Module Shell
 
     Sub commandPromptWrite()
 
-            If adminList(signedinusrnm) = True Then
-                W("[", "def") : W("{0}", "userName", signedinusrnm)
-                W("@", "def") : W("{0}", "hostName", My.Settings.HostName)
-                W("]{0} # ", "def", currDir)
-            Else
-                W("[", "def") : W("{0}", "userName", signedinusrnm)
-                W("@", "def") : W("{0}", "hostName", My.Settings.HostName)
-                W("]{0} $ ", "def", currDir)
-            End If
+        If adminList(signedinusrnm) = True Then
+            W("[", "def") : W("{0}", "userName", signedinusrnm)
+            W("@", "def") : W("{0}", "hostName", HName)
+            W("]{0} # ", "def", currDir)
+        Else
+            W("[", "def") : W("{0}", "userName", signedinusrnm)
+            W("@", "def") : W("{0}", "hostName", HName)
+            W("]{0} $ ", "def", currDir)
+        End If
 
     End Sub
 
@@ -67,7 +67,7 @@ Module Shell
                 If (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
                     initializeShell()
                 Else
-                    Dim groupCmds() As String = strcommand.Split({":"c}, StringSplitOptions.RemoveEmptyEntries)
+                    Dim groupCmds() As String = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                     For Each cmd In groupCmds
                         Dim indexCmd As Integer = cmd.IndexOf(" ")
                         If (indexCmd = -1) Then

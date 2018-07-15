@@ -24,20 +24,30 @@ Module TimeDate
     Public strKernelTimeDate As String
     Public KernelDateTime As New Date
     Public WithEvents TimeDateChange As New BackgroundWorker
+    Private originalRow As Integer
+    Private originalCol As Integer
 
     Sub TimeDateChange_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles TimeDateChange.DoWork
 
         Do While True
-
             If (TimeDateChange.CancellationPending = True) Then
                 e.Cancel = True
                 Exit Do
             Else
                 KernelDateTime = Date.Now
                 strKernelTimeDate = Date.Now.ToString
-            End If
-            Sleep(500)
 
+                'We're sorry, but this is the only way of writing text on the corner, so some lines in runtime might be out of position...
+                'We also have to slow down calling this function every second.
+                originalRow = Console.CursorTop
+                originalCol = Console.CursorLeft
+                If (CornerTD = True) Then
+                    Console.SetCursorPosition(64, Console.WindowTop)
+                    Wln("{0} {1}", "neutralText", FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortTime), FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortDate))
+                    Console.SetCursorPosition(originalCol, originalRow)
+                End If
+            End If
+            Sleep(1000)
         Loop
 
     End Sub
@@ -48,22 +58,16 @@ Module TimeDate
         strKernelTimeDate = Date.Now.ToString
         TimeDateChange.WorkerSupportsCancellation = True
         TimeDateChange.RunWorkerAsync()
-        ShowTimeQuiet()
+        If (Quiet = False) Then
+            ShowTime()
+        End If
 
     End Sub
 
     Sub ShowTime()
 
-        Wln("datetime: Time is {0}", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongTime))
-        Wln("datetime: Today is {0}", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongDate))
-
-    End Sub
-
-    Sub ShowTimeQuiet()
-
-        If (Quiet = False) Then
-            ShowTime()
-        End If
+        Wln("datetime: Time is {0}", "neutralText", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongTime))
+        Wln("datetime: Today is {0}", "neutralText", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongDate))
 
     End Sub
 

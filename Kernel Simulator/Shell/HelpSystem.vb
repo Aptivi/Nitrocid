@@ -22,51 +22,26 @@ Module HelpSystem
 
         If (command = "") Then
 
-            'TODO: Convert (All Commands) help system from plain text to dictionaries
+            'TODO: Color the help system.
+            'TODO: Modification Parser for mods with commands (Help, Commands, and everything).
             If (simHelp = False) Then
-                Wln("Help commands:" + vbNewLine + vbNewLine + _
-                                                     "adduser: Adds users (Only admins can access this command)" + vbNewLine + _
-                                                     "annoying-sound (Alias: beep): Console will beep in Hz and time in milliseconds" + vbNewLine + _
-                                                     "arginj: Injects arguments to the kernel (reboot required, admins only)" + vbNewLine + _
-                                                     "calc: Simple calculator (No prompt)" + vbNewLine + _
-                                                     "cdir (Alias: currentdir): Shows current directory" + vbNewLine + _
-                                                     "changedir (Aliases: chdir, cd): Changes directory" + vbNewLine + _
-                                                     "chhostname: Changes host name (Admins only)" + vbNewLine + _
-                                                     "chmotd: Changes MOTD, the Message Of The Day (Admins only)" + vbNewLine + _
-                                                     "choice: Makes user choices" + vbNewLine + _
-                                                     "chpwd: Changes password for current user" + vbNewLine + _
-                                                     "chusrname: Changes user name (Admins Only)" + vbNewLine + _
-                                                     "cls: Clears the screen" + vbNewLine + _
-                                                     "debuglog: Shows debug logs (Admins Only)" + vbNewLine + _
-                                                     "disco: A disco effect! (press ENTER to quit)" + vbNewLine + _
-                                                     "echo: Writes a text into a console" + vbNewLine + _
-                                                     "future-eyes-destroyer (Alias: fed): Like disco, but black/white version." + vbNewLine + _
-                                                     "help: Help page" + vbNewLine + _
-                                                     "hwprobe: Probe hardware manually (One time in 'nohwprobe' kernel)" + vbNewLine + _
-                                                     "list (Alias: ls): List file/folder contents in current folder" + vbNewLine + _
-                                                     "logout: Logs you out." + vbNewLine + _
-                                                     "lsdrivers: Lists drivers that is recognized by the kernel." + vbNewLine + _
-                                                     "lsnet: Lists all network addresses on host" + vbNewLine + _
-                                                     "lsnettree: Lists all network addresses on host using the tree" + vbNewLine + _
-                                                     "md (Alias: mkdir): Creates a directory (No prompt)" + vbNewLine + _
-                                                     "netinfo: Lists information about all available interfaces" + vbNewLine + _
-                                                     "panicsim: Kernel Panic Simulator (real)" + vbNewLine + _
-                                                     "perm: Manage permissions for users (Only admins can access this command)" + vbNewLine + _
-                                                     "ping: Check to see if specified address is available" + vbNewLine + _
-                                                     "read: Writes file contents to the console" + vbNewLine + _
-                                                     "reboot: Restarts your computer (WARNING: No syncing, because it is not a final kernel)" + vbNewLine + _
-                                                     "reloadconfig: Reloads configuration file that is edited." + vbNewLine + _
-                                                     "rd (Alias: rmdir): Removes a directory (No prompt)" + vbNewLine + _
-                                                     "rmuser: Removes a user from the list (Admins Only)" + vbNewLine + _
-                                                     "scical: Scientific calculator. The unit converter is separated to another command (No prompt)" + vbNewLine + _
-                                                     "setcolors: Sets up kernel colors" + vbNewLine + _
-                                                     "setthemes: Sets up kernel themes" + vbNewLine + _
-                                                     "showmotd: Shows message of the day set by user or kernel" + vbNewLine + _
-                                                     "showtd: Shows date and time" + vbNewLine + _
-                                                     "shutdown: The kernel will be shut down" + vbNewLine + _
-                                                     "sysinfo: System information" + vbNewLine + _
-                                                     "unitconv: Unit converter that is separated from scicalc." + vbNewLine + _
-                                                     "version: Shows kernel version", "neutralText")
+                'It is messy. It will actually be converted to dictionary in 0.0.5.
+                Wln("- adduser: {0}" + vbNewLine + "- annoying-sound (Alias: beep): {1}" + vbNewLine + "- arginj: {2}" + vbNewLine + "- calc: {3}" + vbNewLine + _
+                    "- cdir (Alias: currentdir): {4}" + vbNewLine + "- changedir (Aliases: chdir, cd): {5}" + vbNewLine + "- chhostname: {6}" + vbNewLine + _
+                    "- chmotd: {7}" + vbNewLine + "- choice: {8}" + vbNewLine + "- chpwd: {9}" + vbNewLine + "- chusrname: {10}" + vbNewLine + "- cls: {11}" + vbNewLine + _
+                    "- debuglog: {12}" + vbNewLine + "- disco: {13}" + vbNewLine + "- echo: {14}" + vbNewLine + "- help: {15}" + vbNewLine + "- hwprobe: {16}" + vbNewLine + _
+                    "- list (Alias: ls): {17}" + vbNewLine + "- logout: {18}" + vbNewLine + "- lsdrivers: {19}" + vbNewLine + "- lsnet: {20}" + vbNewLine + _
+                    "- lsnettree: {21}" + vbNewLine + "- md (Alias: mkdir): {22}" + vbNewLine + "- netinfo: {23}" + vbNewLine + "- panicsim: {24}" + vbNewLine + _
+                    "- perm: {25}" + vbNewLine + "- ping: {26}" + vbNewLine + "- read: {27}" + vbNewLine + "- reboot: {28}" + vbNewLine + "- reloadconfig: {29}" + vbNewLine + _
+                    "- rd (Alias: rmdir): {30}" + vbNewLine + "- rmuser: {31}" + vbNewLine + "- scical: {32}" + vbNewLine + "- setcolors: {33}" + vbNewLine + _
+                    "- setthemes: {34}" + vbNewLine + "- showmotd: {35}" + vbNewLine + "- showtd: {36}" + vbNewLine + "- shutdown: {37}" + vbNewLine + _
+                    "- sysinfo: {38}" + vbNewLine + "- unitconv: {39}" + vbNewLine + "- version: {40}" + vbNewLine + vbNewLine + _
+                    "* You can use multiple commands at the same time using the colon between commands.", "neutralText", _
+                    adduserCmdDesc, annoyingSoundCmdDesc, argInjCmdDesc, calcCmdDesc, currentDirCmdDesc, changeDirCmdDesc, chHostNameCmdDesc, chMotdCmdDesc, _
+                    choiceCmdDesc, chPwdCmdDesc, chUsrNameCmdDesc, clsCmdDesc, debugLogCmdDesc, discoCmdDesc, echoCmdDesc, helpCmdDesc, hwProbeCmdDesc, listCmdDesc, _
+                    logoutCmdDesc, lsDriversCmdDesc, lsnetCmdDesc, lsNetByTreeCmdDesc, makeDirectoryCmdDesc, netInfoCmdDesc, panicSimCmdDesc, permCmdDesc, pingCmdDesc, _
+                    readCmdDesc, rebootCmdDesc, reloadConfigCmdDesc, rmDirCmdDesc, rmUserCmdDesc, sciCalCmdDesc, setColorsCmdDesc, setThemesCmdDesc, showMotdCmdDesc, _
+                    showTdCmdDesc, shutdownCmdDesc, sysInfoCmdDesc, unitConvCmdDesc, versionCmdDesc)
             Else
                 Wln(String.Join(", ", availableCommands), "neutralText")
             End If
@@ -74,17 +49,17 @@ Module HelpSystem
         ElseIf (command.Contains("adduser")) Then
 
             Wln("Usage: adduser <userName> [password] [confirm]" + vbNewLine + _
-                "       adduser: to be prompted about new username and password", "neutralText")
+                "       adduser: to be prompted about new username and password. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("annoying-sound") Or command.Contains("beep")) Then
 
             Wln("Usage: annoying-sound/beep <Frequency:Hz> <Time:Seconds>" + vbNewLine + _
-                "       annoying-sound/beep: to be prompted about beeping.", "neutralText")
+                "       annoying-sound/beep: to be prompted about beeping. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("arginj")) Then
 
             Wln("Usage: arginj [Arguments separated by commas]" + vbNewLine + _
-                "       arginj: to be prompted about boot arguments.", "neutralText")
+                "       arginj: to be prompted about boot arguments. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("calc")) Then
 
@@ -101,7 +76,7 @@ Module HelpSystem
         ElseIf (command.Contains("chhostname")) Then
 
             Wln("Usage: chhostname <HostName>" + vbNewLine + _
-                "       chhostname: to be prompted about changing host name.", "neutralText")
+                "       chhostname: to be prompted about changing host name. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("chmotd")) Then
 
@@ -110,16 +85,16 @@ Module HelpSystem
         ElseIf (command.Contains("choice")) Then
 
             Wln("Usage: choice <Question> <sets>" + vbNewLine + _
-                "       choice: to be prompted about choices.", "neutralText")
+                "       choice: to be prompted about choices. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("chpwd")) Then
 
-            Wln("Usage: chpwd: to be prompted about changing passwords.", "neutralText")
+            Wln("Usage: chpwd: to be prompted about changing passwords. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("chusrname")) Then
 
             Wln("Usage: chusrname <oldUserName> <newUserName>" + vbNewLine + _
-                "       chusrname: to be prompted about changing usernames.", "neutralText")
+                "       chusrname: to be prompted about changing usernames. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("cls")) Then
 
@@ -136,11 +111,7 @@ Module HelpSystem
         ElseIf (command.Contains("echo")) Then
 
             Wln("Usage: echo <text>" + vbNewLine + _
-                "       echo: to be prompted about text printing.", "neutralText")
-
-        ElseIf (command.Contains("fed") Or command.Contains("future-eyes-destroyer")) Then
-
-            Wln("Usage: fed/future-eyes-destroyer: It will be removed in the future. Simulates a monochrome disco.", "neutralText")
+                "       echo: to be prompted about text printing. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("hwprobe")) Then
 
@@ -178,17 +149,17 @@ Module HelpSystem
         ElseIf (command.Contains("panicsim")) Then
 
             Wln("Usage: panicsim <message> [S/F/D/[C]/U] [RebootTime:Seconds]" + vbNewLine + _
-                "       panicsim: to be prompted about panic simulator options.", "neutralText")
+                "       panicsim: to be prompted about panic simulator options. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("perm")) Then
 
             Wln("Usage: perm <userName> <Admin/Disabled> <Allow/Disallow>" + vbNewLine + _
-                "       perm: to be prompted about permission setting.", "neutralText")
+                "       perm: to be prompted about permission setting. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("ping")) Then
 
             Wln("Usage: ping <Address> [repeatTimes]" + vbNewLine + _
-                "       ping: to get prompted about writing address.", "neutralText")
+                "       ping: to get prompted about writing address. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("rmdir") Or command.Contains("rd")) Then
 
@@ -197,7 +168,7 @@ Module HelpSystem
         ElseIf (command.Contains("read")) Then
 
             Wln("Usage: read <file>" + vbNewLine + _
-                "       read: to get prompted about reading file contents.", "neutralText")
+                "       read: to get prompted about reading file contents. (deprecated)", "neutralText")
 
         ElseIf (command.Contains("reboot")) Then
 
@@ -222,13 +193,13 @@ Module HelpSystem
         ElseIf (command.Contains("setcolors")) Then
 
             Wln("Usage: setcolors <inputColor/def> <licenseColor/def> <contKernelErrorColor/def> <uncontKernelErrorColor/def> <hostNameShellColor/def> <userNameShellColor/def> <backgroundColor/def> <neutralTextColor/def>" + vbNewLine + _
-                "       setcolors: to get prompted about setting colors." + vbNewLine + _
+                "       setcolors: to get prompted about setting colors. (deprecated)" + vbNewLine + _
                 "       Friends of setcolors: setthemes", "neutralText")
 
         ElseIf (command.Contains("setthemes")) Then
 
             Wln("Usage: setthemes <Theme>" + vbNewLine + _
-                "       setthemes: to get prompted about setting themes." + vbNewLine + _
+                "       setthemes: to get prompted about setting themes. (deprecated)" + vbNewLine + _
                 "       Friends of setthemes: setcolors", "neutralText")
 
         ElseIf (command.Contains("showmotd")) Then
@@ -253,9 +224,9 @@ Module HelpSystem
 
             Wln("Usage: unitconv <sourceUnit> <targetUnit> <value>" + vbNewLine + _
                 "Units: B, KB, MB, GB, TB, Bits, Octal, Binary, Decimal, Hexadecimal, mm, cm, m, km, Fahrenheit, Celsius, Kelvin, " + _
-                "j, kj, m/s, km/h, cm/ms, Kilograms, Grams, Tons, Kilotons, Megatons, kn, n, Hz, kHz, MHz, GHz, Number (source only), " + _
-                "Money (target only), Percent (target only), Centivolts, Volts, Kilovolts, Watts, Kilowatts, Milliliters, Liters, " + _
-                "Kiloliters, Gallons, Ounces, Feet, Inches, Yards and Miles.", "neutralText")
+                "Reaumur, Romer, Delisle, Rankine, j, kj, m/s, km/h, cm/ms, Kilograms, Grams, Tons, Kilotons, Megatons, kn, n, Hz, kHz, MHz, " + _
+                "GHz, Number (source only), Money (target only), Percent (target only), Centivolts, Volts, Kilovolts, Watts, Kilowatts, " + _
+                "Milliliters, Liters, Kiloliters, Gallons, Ounces, Feet, Inches, Yards and Miles.", "neutralText")
 
         ElseIf (command.Contains("version")) Then
 

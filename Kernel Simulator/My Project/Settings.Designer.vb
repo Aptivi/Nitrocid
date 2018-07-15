@@ -53,30 +53,6 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Welcome to Kernel!")>  _
-        Public Property MOTD() As String
-            Get
-                Return CType(Me("MOTD"),String)
-            End Get
-            Set
-                Me("MOTD") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("kernel")>  _
-        Public Property HostName() As String
-            Get
-                Return CType(Me("HostName"),String)
-            End Get
-            Set
-                Me("HostName") = value
-            End Set
-        End Property
     End Class
 End Namespace
 

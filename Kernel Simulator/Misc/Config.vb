@@ -44,8 +44,11 @@ Module Config
                              "Quiet Probe = False" + vbNewLine + _
                              "Probe GPU = False" + vbNewLine + _
                              "Background Color = {7}" + vbNewLine + _
-                             "Input Color = {8}", KernelVersion, userNameShellColor, hostNameShellColor, contKernelErrorColor, _
-                                                uncontKernelErrorColor, neutralTextColor, licenseColor, backgroundColor, inputColor)
+                             "Input Color = {8}" + vbNewLine + _
+                             "Show Time/Date on Corner = False" + vbNewLine + _
+                             "MOTD = Welcome to Kernel!" + vbNewLine + _
+                             "Host Name = kernel", KernelVersion, userNameShellColor, hostNameShellColor, contKernelErrorColor, _
+                                           uncontKernelErrorColor, neutralTextColor, licenseColor, backgroundColor, inputColor)
             writer.Close()
             writer.Dispose()
             If (CmdArg = True) Then
@@ -74,6 +77,12 @@ Module Config
                     Wln("An upgrade from {0} to {1} was detected. Updating configuration file...", "neutralText", lns(0).Replace("Kernel Version = ", ""), KernelVersion)
                     lns(0) = "Kernel Version = " + KernelVersion
                     IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
+                    Dim writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                    writer.WriteLine("Show Time/Date on Corner = False" + vbNewLine + _
+                                     "MOTD = Welcome to Kernel!" + vbNewLine + _
+                                     "Host Name = kernel")
+                    writer.Close()
+                    writer.Dispose()
                 End If
             End If
         Catch ex As Exception
@@ -181,6 +190,16 @@ Module Config
                     ElseIf (line.Replace("Probe GPU = ", "") = "False") Then
                         GPUProbeFlag = False
                     End If
+                ElseIf (line.Contains("Show Time/Date on Corner = ")) Then
+                    If (line.Replace("Show Time/Date on Corner = ", "") = "True") Then
+                        CornerTD = True
+                    ElseIf (line.Replace("Show Time/Date on Corner = ", "") = "False") Then
+                        CornerTD = False
+                    End If
+                ElseIf (line.Contains("MOTD = ")) Then
+                    MOTDMessage = line.Replace("MOTD = ", "")
+                ElseIf (line.Contains("Host Name = ")) Then
+                    HName = line.Replace("Host Name = ", "")
                 End If
                 line = configReader.ReadLine
             Loop
