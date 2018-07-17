@@ -24,7 +24,7 @@ Module Shell
     Public strcommand As String                             'Written Command
     Public availableCommands() As String = {"help", "logout", "version", "currentdir", "list", "changedir", "cdir", "ls", "chdir", "cd", "read", "echo", "choice", _
                                             "lsdrivers", "shutdown", "reboot", "disco", "beep", "annoying-sound", "adduser", "chmotd", "chhostname", "showmotd", _
-                                            "fed", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", _
+                                            "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", _
                                             "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical", "unitconv", "md", "mkdir", "rd", "rmdir", "debuglog", _
                                             "reloadconfig"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", "reloadconfig"}

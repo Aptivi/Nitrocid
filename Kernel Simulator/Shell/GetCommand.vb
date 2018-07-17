@@ -64,6 +64,13 @@ Module GetCommand
 
     Sub ExecuteCommand(ByVal requestedCommand As String)
 
+        'NOTE: If it reads: 
+        '
+        '   If (requestedCommand.Substring(0, index) = <cmd>) Then
+        '       Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
+        '   End If
+        '
+        'then the pre-defined aliases will be removed. A warning message will appear. They are here for preparation for 0.0.4.9.
         Try
             Dim index As Integer = requestedCommand.IndexOf(" ")
             If (index = -1) Then
@@ -116,6 +123,9 @@ Module GetCommand
 
                 'Beep system initialization
                 If (requestedCommand = "annoying-sound" Or requestedCommand = "beep") Then
+                    If (requestedCommand = "beep") Then
+                        Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
+                    End If
                     Wln("Prompts are now deprecated and removed in future release.", "neutralText")
                     BeepFreq()
                 Else
@@ -124,6 +134,9 @@ Module GetCommand
                     For arg = 1 To words.Count - 1
                         c = c + words(arg).Count + 1
                     Next
+                    If (words(0) = "beep") Then
+                        Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
+                    End If
                     Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
                     Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 1) Then
@@ -181,10 +194,16 @@ Module GetCommand
             ElseIf (requestedCommand = "cdir" Or requestedCommand = "currentdir") Then
 
                 'Current directory
+                If (requestedCommand = "currentdir") Then
+                    Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
+                End If
                 Wln("Current directory: {0}", "neutralText", currDir)
 
             ElseIf (requestedCommand.Substring(0, index) = "cd" Or requestedCommand.Substring(0, index) = "chdir" Or requestedCommand.Substring(0, index) = "changedir") Then
 
+                If (requestedCommand.Substring(0, index) = "cd" Or requestedCommand.Substring(0, index) = "chdir") Then
+                    Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
+                End If
                 Dim words = requestedCommand.Split({" "c})
                 Dim c As Integer
                 For arg = 1 To words.Count - 1
@@ -422,6 +441,9 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "ls" Or requestedCommand.Substring(0, index) = "list") Then
 
                 'Lists folders and files
+                If (requestedCommand.Substring(0, index) = "ls") Then
+                    Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
+                End If
                 If (requestedCommand = "ls" Or requestedCommand = "list") Then
                     If (currDir = "/") Then
                         Wln(String.Join(", ", AvailableDirs), "neutralText")
@@ -473,6 +495,9 @@ Module GetCommand
 
             ElseIf (requestedCommand.Substring(0, index) = "mkdir" Or requestedCommand.Substring(0, index) = "md") Then
 
+                If (requestedCommand.Substring(0, index) = "mkdir") Then
+                    Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
+                End If
                 If (requestedCommand <> "mkdir" Or requestedCommand <> "md") Then
                     Dim words = requestedCommand.Split({" "c})
                     Dim c As Integer
@@ -636,6 +661,9 @@ Module GetCommand
 
             ElseIf (requestedCommand.Substring(0, index) = "rmdir" Or requestedCommand.Substring(0, index) = "rd") Then
 
+                If (requestedCommand.Substring(0, index) = "rmdir") Then
+                    Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
+                End If
                 If (requestedCommand <> "rmdir" Or requestedCommand <> "rd") Then
                     Dim words = requestedCommand.Split({" "c})
                     Dim c As Integer

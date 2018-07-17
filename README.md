@@ -67,6 +67,10 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **5/22/2018 - 0.0.4.1:** Fix bugs in changing directory, Fix bugs in "help chdir", added alias for changing directory named "cd", and config update.
 
+**7/15/2018 - 0.0.4.5:** Fix bugs when any probers failed to probe hardware, added more details in probers, Help system improved, Fix bugs in color prompts, Prompts deprecated, and more.
+
+**7/16/2018 - 0.0.4.6:** Removed extraneous "fed" that stands as the removed command in 0.0.4.5, Preparation for 0.0.5's custom substitutions.
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`
@@ -75,7 +79,7 @@ The documentations can be found in source code of kernel simulator in `Kernel Si
 
 **Documentation - faq:** Frequently Asked Questions for Kernel Simulator
 
-**Documentation - contributing rules:** Conditions for contributing Kernel Simulator
+**Documentation - contributing rules:** Conditions for contributing to Kernel Simulator
 
 **Documentation - troubleshooting:** List of known and user-reported problems
 

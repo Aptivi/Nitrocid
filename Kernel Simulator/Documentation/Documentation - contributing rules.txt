@@ -61,5 +61,7 @@ If some of the ideas disappeared, then it is either done or cancelled.
 8. Error handlers in unit conversion (Planned in 0.0.5)
 9. Languages (Planned in 0.0.5 or 0.0.6)
 10. Allow special characters on passwords (Planned in 0.0.4.9 (the alpha version of 0.0.5))
+11. Custom aliases for commands (Temp. in 0.0.4.9, Perm. in 0.0.6)
+12. Remove all prompts (0.0.5)
 
 (If you have ideas, edit this section by inserting your idea.)

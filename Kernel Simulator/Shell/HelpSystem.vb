@@ -36,7 +36,8 @@ Module HelpSystem
                     "- rd (Alias: rmdir): {30}" + vbNewLine + "- rmuser: {31}" + vbNewLine + "- scical: {32}" + vbNewLine + "- setcolors: {33}" + vbNewLine + _
                     "- setthemes: {34}" + vbNewLine + "- showmotd: {35}" + vbNewLine + "- showtd: {36}" + vbNewLine + "- shutdown: {37}" + vbNewLine + _
                     "- sysinfo: {38}" + vbNewLine + "- unitconv: {39}" + vbNewLine + "- version: {40}" + vbNewLine + vbNewLine + _
-                    "* You can use multiple commands at the same time using the colon between commands.", "neutralText", _
+                    "* You can use multiple commands at the same time using the colon between commands." + vbNewLine + _
+                    "* Pre-defined aliases will be removed in 0.0.5.", "neutralText", _
                     adduserCmdDesc, annoyingSoundCmdDesc, argInjCmdDesc, calcCmdDesc, currentDirCmdDesc, changeDirCmdDesc, chHostNameCmdDesc, chMotdCmdDesc, _
                     choiceCmdDesc, chPwdCmdDesc, chUsrNameCmdDesc, clsCmdDesc, debugLogCmdDesc, discoCmdDesc, echoCmdDesc, helpCmdDesc, hwProbeCmdDesc, listCmdDesc, _
                     logoutCmdDesc, lsDriversCmdDesc, lsnetCmdDesc, lsNetByTreeCmdDesc, makeDirectoryCmdDesc, netInfoCmdDesc, panicSimCmdDesc, permCmdDesc, pingCmdDesc, _
