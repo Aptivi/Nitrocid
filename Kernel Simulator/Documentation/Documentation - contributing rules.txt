@@ -63,5 +63,6 @@ If some of the ideas disappeared, then it is either done or cancelled.
 10. Allow special characters on passwords (Planned in 0.0.4.9 (the alpha version of 0.0.5))
 11. Custom aliases for commands (Temp. in 0.0.4.9, Perm. in 0.0.6)
 12. Remove all prompts (0.0.5)
+13. Make Kernel Simulator single-instance (0.0.4.9)
 
 (If you have ideas, edit this section by inserting your idea.)

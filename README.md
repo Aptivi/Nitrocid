@@ -71,6 +71,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **7/16/2018 - 0.0.4.6:** Removed extraneous "fed" that stands as the removed command in 0.0.4.5, Preparation for 0.0.5's custom substitutions.
 
+**7/17/2018 - 0.0.4.7:** Better Error Handling for "ping" command, Fixed "unitconv" usage message
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`

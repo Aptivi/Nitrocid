@@ -12,6 +12,7 @@ Cannot log-in to Kernel Simulator on "root" account? The password is the backwar
 
 |---------------+--> History <--+---------------|
 
+7/17/2018 - 0.0.4.7: Better Error Handling for "ping" command, Fixed "unitconv" usage message
 7/16/2018 - 0.0.4.6: Removed extraneous "fed" that stands as the removed command in 0.0.4.5, Preparation for 0.0.5's custom substitutions
 7/15/2018 - 0.0.4.5: (Delayed 2 months because of hard drive failure) - Fix bugs when any probers failed to probe hardware, added more details in probers, Help system improved, Fix bugs in color prompts, Prompts deprecated, and more.
 5/22/2018 - 0.0.4.1: Fix bugs in changing directory, Fix bugs in "help chdir", added alias for changing directory named "cd", and config update.
