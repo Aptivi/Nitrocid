@@ -72,13 +72,6 @@ Module Login
                         Else
                             showPasswordPrompt(usernamerequested)
                         End If
-                    ElseIf (answerpass.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                        Wln("Special characters are not allowed.", "neutralText")
-                        If (maintenance = False) Then
-                            LoginPrompt()
-                        Else
-                            showPasswordPrompt(usernamerequested)
-                        End If
                     Else
                         If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
                             Wdbg("ASSERT(Parse({0}, {1})) = True | ASSERT({1} = {2}) = True", True, usernamerequested, password, answerpass)
@@ -111,7 +104,10 @@ Module Login
     Sub signIn(ByVal signedInUser As String)
 
         'Initialize shell, and sign in to user.
-        Wln(vbNewLine + "Logged in successfully as {0}!", "neutralText", signedInUser)
+        If (MAL.Contains("<user>")) Then
+            MAL = MAL.Replace("<user>", signedInUser)
+        End If
+        Wln(vbNewLine + MAL, "neutralText")
         signedinusrnm = signedInUser
         Shell.initializeShell()
 

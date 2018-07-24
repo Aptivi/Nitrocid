@@ -136,6 +136,7 @@
     <Compile Include="Files\InitializeDirectoryFile.vb" />
     <Compile Include="Files\ListFolders.vb" />
     <Compile Include="Kernel\Flags.vb" />
+    <Compile Include="Kernel\InstanceCheck.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Misc\Beep.vb" />
     <Compile Include="Misc\Calculator\sciCalc.vb" />
@@ -148,6 +149,8 @@
     <Compile Include="Misc\PanicSim.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Network\NetworkTools.vb" />
+    <Compile Include="Shell\AliasManager.vb" />
+    <Compile Include="Shell\GetAlias.vb" />
     <Compile Include="Shell\GetCommand.vb" />
     <Compile Include="Hardware\HardwareProbe.vb" />
     <Compile Include="Kernel\Kernel.vb" />
@@ -176,6 +179,7 @@
     <Compile Include="Shell\HelpSystem.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />
+    <Compile Include="TimeDate\TimeZones.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

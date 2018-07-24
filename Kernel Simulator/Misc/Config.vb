@@ -47,8 +47,9 @@ Module Config
                              "Input Color = {8}" + vbNewLine + _
                              "Show Time/Date on Corner = False" + vbNewLine + _
                              "MOTD = Welcome to Kernel!" + vbNewLine + _
-                             "Host Name = kernel", KernelVersion, userNameShellColor, hostNameShellColor, contKernelErrorColor, _
-                                           uncontKernelErrorColor, neutralTextColor, licenseColor, backgroundColor, inputColor)
+                             "Host Name = kernel" + vbNewLine + _
+                             "MOTD After Login = Logged in successfully as <user>!", KernelVersion, userNameShellColor, hostNameShellColor, contKernelErrorColor, _
+                                                                                   uncontKernelErrorColor, neutralTextColor, licenseColor, backgroundColor, inputColor)
             writer.Close()
             writer.Dispose()
             If (CmdArg = True) Then
@@ -77,12 +78,7 @@ Module Config
                     Wln("An upgrade from {0} to {1} was detected. Updating configuration file...", "neutralText", lns(0).Replace("Kernel Version = ", ""), KernelVersion)
                     lns(0) = "Kernel Version = " + KernelVersion
                     IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
-                    Dim writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
-                    writer.WriteLine("Show Time/Date on Corner = False" + vbNewLine + _
-                                     "MOTD = Welcome to Kernel!" + vbNewLine + _
-                                     "Host Name = kernel")
-                    writer.Close()
-                    writer.Dispose()
+                    updateConfig()
                 End If
             End If
         Catch ex As Exception
@@ -93,6 +89,36 @@ Module Config
                 Wln("There is an error trying to update configuration.", "neutralText")
             End If
         End Try
+    End Sub
+
+    Sub updateConfig()
+
+        Dim cfghash As New HashSet(Of String)(File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini"))
+        If Not (cfghash(22).Contains("Show Time/Date on Corner =")) Then
+            Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                writer.WriteLine("Show Time/Date on Corner = False")
+                writer.Close() : writer.Dispose()
+            End Using
+        End If
+        If Not (cfghash(23).Contains("MOTD =")) Then
+            Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                writer.WriteLine("MOTD = Welcome to Kernel!")
+                writer.Close() : writer.Dispose()
+            End Using
+        End If
+        If Not (cfghash(24).Contains("Host Name =")) Then
+            Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                writer.WriteLine("Host Name = kernel")
+                writer.Close() : writer.Dispose()
+            End Using
+        End If
+        If Not (cfghash(25).Contains("MOTD After Login =")) Then
+            Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                writer.WriteLine("MOTD After Login = Logged in successfully as <user>!")
+                writer.Close() : writer.Dispose()
+            End Using
+        End If
+
     End Sub
 
     Sub readConfig()
@@ -200,6 +226,8 @@ Module Config
                     MOTDMessage = line.Replace("MOTD = ", "")
                 ElseIf (line.Contains("Host Name = ")) Then
                     HName = line.Replace("Host Name = ", "")
+                ElseIf (line.Contains("MOTD After Login = ")) Then
+                    MAL = line.Replace("MOTD After Login = ", "")
                 End If
                 line = configReader.ReadLine
             Loop

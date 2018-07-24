@@ -46,6 +46,7 @@ Module Kernel
     Public MOTDMessage As String                                                        'Message of the MOTD
     Public HName As String                                                              'Host Name of the kernel
     Public StatusesRAM As String                                                        'Status of all memory chips
+    Public MAL As String                                                                'MOTD After Login
     Declare Sub Sleep Lib "kernel32" (ByVal milliseconds As Integer)                    'Enable sleep (Mandatory, don't remove)
 
     Sub Main()
@@ -77,7 +78,9 @@ Module Kernel
                             "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine + _
                             "    This is free software, and you are welcome to redistribute it" + vbNewLine + _
                             "    under certain conditions; See COPYING file in source code." + vbNewLine, "license")
+            InstanceCheck.MultiInstance()
 
+            'Check arguments, initialize date and files, and continue.
             If (argsOnBoot = True) Then
                 ArgumentPrompt.PromptArgs()
                 If (argsFlag = True) Then

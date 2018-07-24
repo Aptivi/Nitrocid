@@ -36,6 +36,7 @@ Module TimeDate
             Else
                 KernelDateTime = Date.Now
                 strKernelTimeDate = Date.Now.ToString
+                initTimesInZones()
 
                 'We're sorry, but this is the only way of writing text on the corner, so some lines in runtime might be out of position...
                 'We also have to slow down calling this function every second.
@@ -68,6 +69,7 @@ Module TimeDate
 
         Wln("datetime: Time is {0}", "neutralText", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongTime))
         Wln("datetime: Today is {0}", "neutralText", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongDate))
+        Wln("datetime: Time Zone: {0}", "neutralText", TimeZone.CurrentTimeZone.StandardName)
 
     End Sub
 

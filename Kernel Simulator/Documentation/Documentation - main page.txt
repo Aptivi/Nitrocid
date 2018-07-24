@@ -12,6 +12,7 @@ Cannot log-in to Kernel Simulator on "root" account? The password is the backwar
 
 |---------------+--> History <--+---------------|
 
+7/21/2018 - 0.0.4.9: Better Error Handling for "unitconv" command, Added temporary aliases (not final because there is no "showaliases" command), fix some bugs, added time zones ("showtdzone", and show current time zone in "showtd"), Added "alias", "chmal", and "showmal", Made MOTD after login customizable, Allowed special characters on passwords to ensure security, Made Kernel Simulator single-instance to avoid interferences, and more.
 7/17/2018 - 0.0.4.7: Better Error Handling for "ping" command, Fixed "unitconv" usage message
 7/16/2018 - 0.0.4.6: Removed extraneous "fed" that stands as the removed command in 0.0.4.5, Preparation for 0.0.5's custom substitutions
 7/15/2018 - 0.0.4.5: (Delayed 2 months because of hard drive failure) - Fix bugs when any probers failed to probe hardware, added more details in probers, Help system improved, Fix bugs in color prompts, Prompts deprecated, and more.

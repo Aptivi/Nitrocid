@@ -24,328 +24,329 @@ Module unitConv
 
         'TODO: Add currency conversion (might require Internet)
         'Begin with size conversion first...
-        If (sourceUnit = "B" And targetUnit = "TB") Then
+        If (sourceUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1099511627776
-        ElseIf (sourceUnit = "B" And targetUnit = "GB") Then
+        ElseIf (sourceUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("GB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1073741824
-        ElseIf (sourceUnit = "B" And targetUnit = "MB") Then
+        ElseIf (sourceUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("MB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1048576
-        ElseIf (sourceUnit = "B" And targetUnit = "KB") Then
+        ElseIf (sourceUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("KB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1024
-        ElseIf (sourceUnit = "B" And targetUnit = "Bits") Then
+        ElseIf (sourceUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Bits", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 8
-        ElseIf (sourceUnit = "KB" And targetUnit = "TB") Then
+        ElseIf (sourceUnit.IndexOf("KB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1073741824
-        ElseIf (sourceUnit = "KB" And targetUnit = "GB") Then
+        ElseIf (sourceUnit.IndexOf("KB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("GB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1048576
-        ElseIf (sourceUnit = "KB" And targetUnit = "MB") Then
+        ElseIf (sourceUnit.IndexOf("KB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("MB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1024
-        ElseIf (sourceUnit = "KB" And targetUnit = "B") Then
+        ElseIf (sourceUnit.IndexOf("KB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1024
-        ElseIf (sourceUnit = "KB" And targetUnit = "Bits") Then
+        ElseIf (sourceUnit.IndexOf("KB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Bits", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 8192
-        ElseIf (sourceUnit = "MB" And targetUnit = "TB") Then
+        ElseIf (sourceUnit.IndexOf("MB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1048576
-        ElseIf (sourceUnit = "MB" And targetUnit = "GB") Then
+        ElseIf (sourceUnit.IndexOf("MB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("GB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1024
-        ElseIf (sourceUnit = "MB" And targetUnit = "KB") Then
+        ElseIf (sourceUnit.IndexOf("MB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("KB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1024
-        ElseIf (sourceUnit = "MB" And targetUnit = "B") Then
+        ElseIf (sourceUnit.IndexOf("MB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1048576
-        ElseIf (sourceUnit = "MB" And targetUnit = "Bits") Then
+        ElseIf (sourceUnit.IndexOf("MB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Bits", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 8388608
-        ElseIf (sourceUnit = "GB" And targetUnit = "TB") Then
+        ElseIf (sourceUnit.IndexOf("GB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1024
-        ElseIf (sourceUnit = "GB" And targetUnit = "MB") Then
+        ElseIf (sourceUnit.IndexOf("GB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("MB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1024
-        ElseIf (sourceUnit = "GB" And targetUnit = "KB") Then
+        ElseIf (sourceUnit.IndexOf("GB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("KB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1048576
-        ElseIf (sourceUnit = "GB" And targetUnit = "B") Then
+        ElseIf (sourceUnit.IndexOf("GB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1073741824
-        ElseIf (sourceUnit = "GB" And targetUnit = "Bits") Then
+        ElseIf (sourceUnit.IndexOf("GB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Bits", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 8589934592
-        ElseIf (sourceUnit = "TB" And targetUnit = "GB") Then
+        ElseIf (sourceUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("GB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1024
-        ElseIf (sourceUnit = "TB" And targetUnit = "MB") Then
+        ElseIf (sourceUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("MB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1048576
-        ElseIf (sourceUnit = "TB" And targetUnit = "KB") Then
+        ElseIf (sourceUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("KB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1073741824
-        ElseIf (sourceUnit = "TB" And targetUnit = "B") Then
+        ElseIf (sourceUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1099511627776
-        ElseIf (sourceUnit = "TB" And targetUnit = "Bits") Then
+        ElseIf (sourceUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Bits", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 8796093022208
-        ElseIf (sourceUnit = "Bits" And targetUnit = "TB") Then
+        ElseIf (sourceUnit.IndexOf("Bits", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 8796093022208
-        ElseIf (sourceUnit = "Bits" And targetUnit = "GB") Then
+        ElseIf (sourceUnit.IndexOf("Bits", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("GB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 8589934592
-        ElseIf (sourceUnit = "Bits" And targetUnit = "MB") Then
+        ElseIf (sourceUnit.IndexOf("Bits", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("MB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 8388608
-        ElseIf (sourceUnit = "Bits" And targetUnit = "KB") Then
+        ElseIf (sourceUnit.IndexOf("Bits", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("KB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 8192
-        ElseIf (sourceUnit = "Bits" And targetUnit = "B") Then
+        ElseIf (sourceUnit.IndexOf("Bits", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 8
-        ElseIf (sourceUnit = "Octal" And targetUnit = "Binary") Then '... then to binaries ...
+        ElseIf (sourceUnit.IndexOf("Octal", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Binary", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to binaries ...
             resultVal = Convert.ToString(Convert.ToInt64(value), 2)
-        ElseIf (sourceUnit = "Binary" And targetUnit = "Octal") Or (sourceUnit = "Decimal" And targetUnit = "Octal") Then
+        ElseIf (sourceUnit.IndexOf("Binary", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Octal", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Or (sourceUnit.IndexOf("Decimal", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Octal", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = Oct(value)
-        ElseIf (sourceUnit = "Decimal" And targetUnit = "Hexadecimal") Or (sourceUnit = "Binary" And targetUnit = "Hexadecimal") Or (sourceUnit = "Octal" And targetUnit = "Hexadecimal") Then '... then to decimals ...
+        ElseIf (sourceUnit.IndexOf("Decimal", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Hexadecimal", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Or (sourceUnit.IndexOf("Binary", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Hexadecimal", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Or (sourceUnit.IndexOf("Octal", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Hexadecimal", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to decimals ...
             resultVal = Hex(value)
-        ElseIf (sourceUnit = "Hexadecimal" And targetUnit = "Decimal") Then
+        ElseIf (sourceUnit.IndexOf("Hexadecimal", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Decimal", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = Val("&H" & value)
-        ElseIf (sourceUnit = "mm" And targetUnit = "cm") Then '... then to measurements ...
+        ElseIf (sourceUnit.IndexOf("mm", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("cm", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to measurements ...
             resultVal = value / 10
-        ElseIf (sourceUnit = "mm" And targetUnit = "m") Then
+        ElseIf (sourceUnit.IndexOf("mm", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("m", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000
-        ElseIf (sourceUnit = "mm" And targetUnit = "km") Then
+        ElseIf (sourceUnit.IndexOf("mm", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("km", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000000
-        ElseIf (sourceUnit = "cm" And targetUnit = "mm") Then
+        ElseIf (sourceUnit.IndexOf("cm", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("mm", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 10
-        ElseIf (sourceUnit = "cm" And targetUnit = "m") Then
+        ElseIf (sourceUnit.IndexOf("cm", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("m", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 100
-        ElseIf (sourceUnit = "cm" And targetUnit = "km") Then
+        ElseIf (sourceUnit.IndexOf("cm", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("km", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 100000
-        ElseIf (sourceUnit = "m" And targetUnit = "mm") Then
+        ElseIf (sourceUnit.IndexOf("m", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("mm", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "m" And targetUnit = "cm") Then
+        ElseIf (sourceUnit.IndexOf("m", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("cm", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 100
-        ElseIf (sourceUnit = "m" And targetUnit = "km") Then
+        ElseIf (sourceUnit.IndexOf("m", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("km", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000
-        ElseIf (sourceUnit = "km" And targetUnit = "mm") Then
+        ElseIf (sourceUnit.IndexOf("km", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("mm", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000000
-        ElseIf (sourceUnit = "km" And targetUnit = "cm") Then
+        ElseIf (sourceUnit.IndexOf("km", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("cm", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 100000
-        ElseIf (sourceUnit = "km" And targetUnit = "m") Then
+        ElseIf (sourceUnit.IndexOf("km", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("m", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Celsius" And targetUnit = "Fahrenheit") Then '... then to temperature ...
+        ElseIf (sourceUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to temperature ...
             resultVal = value * 9 / 5 + 32
-        ElseIf (sourceUnit = "Celsius" And targetUnit = "Kelvin") Then
+        ElseIf (sourceUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value + 273.15
-        ElseIf (sourceUnit = "Celsius" And targetUnit = "Reaumur") Then
+        ElseIf (sourceUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 4 / 5
-        ElseIf (sourceUnit = "Celsius" And targetUnit = "Delisle") Then
+        ElseIf (sourceUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (100 - value) * 3 / 2
-        ElseIf (sourceUnit = "Celsius" And targetUnit = "Romer") Then
+        ElseIf (sourceUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 21 / 40 + 7.5
-        ElseIf (sourceUnit = "Celsius" And targetUnit = "Rankine") Then
+        ElseIf (sourceUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value + 273.15) * 9 / 5
-        ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Celsius") Then
+        ElseIf (sourceUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 32) * 5 / 9
-        ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Kelvin") Then
+        ElseIf (sourceUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value + 459.67) * 5 / 9
-        ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Reaumur") Then
+        ElseIf (sourceUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 32) * 4 / 9
-        ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Delisle") Then
+        ElseIf (sourceUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (212 - value) * 5 / 6
-        ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Romer") Then
+        ElseIf (sourceUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 32) * 7 / 24 + 7.5
-        ElseIf (sourceUnit = "Fahrenheit" And targetUnit = "Rankine") Then
+        ElseIf (sourceUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value + 459.67
-        ElseIf (sourceUnit = "Kelvin" And targetUnit = "Celsius") Then
+        ElseIf (sourceUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value - 273.15
-        ElseIf (sourceUnit = "Kelvin" And targetUnit = "Fahrenheit") Then
+        ElseIf (sourceUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 9 / 5 - 459.67
-        ElseIf (sourceUnit = "Kelvin" And targetUnit = "Reaumur") Then
+        ElseIf (sourceUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 273.15) * 4 / 5
-        ElseIf (sourceUnit = "Kelvin" And targetUnit = "Delisle") Then
+        ElseIf (sourceUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (373.15 - value) * 3 / 2
-        ElseIf (sourceUnit = "Kelvin" And targetUnit = "Romer") Then
+        ElseIf (sourceUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 273.15) * 21 / 40 + 7.5
-        ElseIf (sourceUnit = "Kelvin" And targetUnit = "Rankine") Then
+        ElseIf (sourceUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 9 / 5
-        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Celsius") Then
+        ElseIf (sourceUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 5 / 4
-        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Fahrenheit") Then
+        ElseIf (sourceUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 9 / 4 + 32
-        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Kelvin") Then
+        ElseIf (sourceUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 5 / 4 + 273.15
-        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Delisle") Then
+        ElseIf (sourceUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (80 - value) * 15 / 8
-        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Romer") Then
+        ElseIf (sourceUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 21 / 32 + 7.5
-        ElseIf (sourceUnit = "Reaumur" And targetUnit = "Rankine") Then
+        ElseIf (sourceUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 9 / 4 + 491.67
-        ElseIf (sourceUnit = "Delisle" And targetUnit = "Celsius") Then
+        ElseIf (sourceUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = 100 - value * 2 / 3
-        ElseIf (sourceUnit = "Delisle" And targetUnit = "Fahrenheit") Then
+        ElseIf (sourceUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = 212 - value * 6 / 5
-        ElseIf (sourceUnit = "Delisle" And targetUnit = "Kelvin") Then
+        ElseIf (sourceUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = 373.15 - (value * 2 / 3)
-        ElseIf (sourceUnit = "Delisle" And targetUnit = "Reaumur") Then
+        ElseIf (sourceUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = 80 - value * 8 / 15
-        ElseIf (sourceUnit = "Delisle" And targetUnit = "Romer") Then
+        ElseIf (sourceUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = 60 - value * 7 / 20
-        ElseIf (sourceUnit = "Delisle" And targetUnit = "Rankine") Then
+        ElseIf (sourceUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = 671.67 - value * 6 / 5
-        ElseIf (sourceUnit = "Romer" And targetUnit = "Celsius") Then
+        ElseIf (sourceUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 7.5) * 40 / 21
-        ElseIf (sourceUnit = "Romer" And targetUnit = "Fahrenheit") Then
+        ElseIf (sourceUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 7.5) * 24 / 7 + 32
-        ElseIf (sourceUnit = "Romer" And targetUnit = "Kelvin") Then
+        ElseIf (sourceUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 7.5) * 40 / 21 + 273.15
-        ElseIf (sourceUnit = "Romer" And targetUnit = "Delisle") Then
+        ElseIf (sourceUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (60 - value) * 20 / 7
-        ElseIf (sourceUnit = "Romer" And targetUnit = "Reaumur") Then
+        ElseIf (sourceUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 7.5) * 32 / 21
-        ElseIf (sourceUnit = "Romer" And targetUnit = "Rankine") Then
+        ElseIf (sourceUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 7.5) * 24 / 7 + 491.67
-        ElseIf (sourceUnit = "Rankine" And targetUnit = "Celsius") Then
+        ElseIf (sourceUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Celsius", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 491.67) * 5 / 9
-        ElseIf (sourceUnit = "Rankine" And targetUnit = "Fahrenheit") Then
+        ElseIf (sourceUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Fahrenheit", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value - 459.67
-        ElseIf (sourceUnit = "Rankine" And targetUnit = "Kelvin") Then
+        ElseIf (sourceUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kelvin", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 5 / 9
-        ElseIf (sourceUnit = "Rankine" And targetUnit = "Delisle") Then
+        ElseIf (sourceUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Delisle", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (671.67 - value) * 5 / 6
-        ElseIf (sourceUnit = "Rankine" And targetUnit = "Romer") Then
+        ElseIf (sourceUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Romer", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 491.67) * 7 / 24 + 7.5
-        ElseIf (sourceUnit = "Rankine" And targetUnit = "Reaumur") Then
+        ElseIf (sourceUnit.IndexOf("Rankine", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Reaumur", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = (value - 491.67) * 4 / 9
-        ElseIf (sourceUnit = "j" And targetUnit = "kj") Then '... then to energy ...
+        ElseIf (sourceUnit.IndexOf("j", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("kj", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to energy ...
             resultVal = value / 1000
-        ElseIf (sourceUnit = "kj" And targetUnit = "j") Then
+        ElseIf (sourceUnit.IndexOf("kj", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("j", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "m/s" And targetUnit = "km/h") Then
+        ElseIf (sourceUnit.IndexOf("m/s", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("km/h", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 3.6
-        ElseIf (sourceUnit = "m/s" And targetUnit = "cm/ms") Then 'Note that cm/ms is Centimeters per Millisecond
+        ElseIf (sourceUnit.IndexOf("m/s", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("cm/ms", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then 'Note that cm/ms is Centimeters per Millisecond
             resultVal = value / 10
-        ElseIf (sourceUnit = "cm/ms" And targetUnit = "km/h") Then
+        ElseIf (sourceUnit.IndexOf("cm/ms", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("km/h", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 36
-        ElseIf (sourceUnit = "cm/ms" And targetUnit = "m/s") Then
+        ElseIf (sourceUnit.IndexOf("cm/ms", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("m/s", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 10
-        ElseIf (sourceUnit = "km/h" And targetUnit = "m/s") Then
+        ElseIf (sourceUnit.IndexOf("km/h", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("m/s", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 3.6
-        ElseIf (sourceUnit = "km/h" And targetUnit = "cm/ms") Then
+        ElseIf (sourceUnit.IndexOf("km/h", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("cm/ms", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 36
-        ElseIf (sourceUnit = "Grams" And targetUnit = "Kilograms") Then '... then to mass ...
+        ElseIf (sourceUnit.IndexOf("Grams", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilograms", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to mass ...
             resultVal = value / 1000
-        ElseIf (sourceUnit = "Grams" And targetUnit = "Tons") Then
+        ElseIf (sourceUnit.IndexOf("Grams", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Tons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000
-        ElseIf (sourceUnit = "Grams" And targetUnit = "Kilotons") Then
+        ElseIf (sourceUnit.IndexOf("Grams", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilotons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000 / 1000
-        ElseIf (sourceUnit = "Grams" And targetUnit = "Megatons") Then
+        ElseIf (sourceUnit.IndexOf("Grams", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Megatons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000 / 1000 / 1000
-        ElseIf (sourceUnit = "Kilograms" And targetUnit = "Grams") Then
+        ElseIf (sourceUnit.IndexOf("Kilograms", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Grams", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Kilograms" And targetUnit = "Tons") Then
+        ElseIf (sourceUnit.IndexOf("Kilograms", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Tons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000
-        ElseIf (sourceUnit = "Kilograms" And targetUnit = "Kilotons") Then
+        ElseIf (sourceUnit.IndexOf("Kilograms", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilotons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000
-        ElseIf (sourceUnit = "Kilograms" And targetUnit = "Megatons") Then
+        ElseIf (sourceUnit.IndexOf("Kilograms", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Megatons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000 / 1000
-        ElseIf (sourceUnit = "Tons" And targetUnit = "Grams") Then
+        ElseIf (sourceUnit.IndexOf("Tons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Grams", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000
-        ElseIf (sourceUnit = "Tons" And targetUnit = "Kilograms") Then
+        ElseIf (sourceUnit.IndexOf("Tons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilograms", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Tons" And targetUnit = "Kilotons") Then
+        ElseIf (sourceUnit.IndexOf("Tons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilotons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000
-        ElseIf (sourceUnit = "Tons" And targetUnit = "Megatons") Then
+        ElseIf (sourceUnit.IndexOf("Tons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Megatons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000
-        ElseIf (sourceUnit = "Kilotons" And targetUnit = "Grams") Then
+        ElseIf (sourceUnit.IndexOf("Kilotons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Grams", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000 * 1000
-        ElseIf (sourceUnit = "Kilotons" And targetUnit = "Kilograms") Then
+        ElseIf (sourceUnit.IndexOf("Kilotons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilograms", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000
-        ElseIf (sourceUnit = "Kilotons" And targetUnit = "Tons") Then
+        ElseIf (sourceUnit.IndexOf("Kilotons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Tons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Kilotons" And targetUnit = "Megatons") Then
+        ElseIf (sourceUnit.IndexOf("Kilotons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Megatons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000
-        ElseIf (sourceUnit = "Megatons" And targetUnit = "Grams") Then
+        ElseIf (sourceUnit.IndexOf("Megatons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Grams", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000 * 1000 * 1000
-        ElseIf (sourceUnit = "Megatons" And targetUnit = "Kilograms") Then
+        ElseIf (sourceUnit.IndexOf("Megatons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilograms", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000 * 1000
-        ElseIf (sourceUnit = "Megatons" And targetUnit = "Tons") Then
+        ElseIf (sourceUnit.IndexOf("Megatons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Tons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000
-        ElseIf (sourceUnit = "Megatons" And targetUnit = "Kilotons") Then
+        ElseIf (sourceUnit.IndexOf("Megatons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilotons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "n" And targetUnit = "kn") Then '... then to force ... | Note: kn is Kilonewtons
+        ElseIf (sourceUnit.IndexOf("n", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("kn", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to force ... | Note: kn is Kilonewtons
             resultVal = value / 1000
-        ElseIf (sourceUnit = "kn" And targetUnit = "n") Then
+        ElseIf (sourceUnit.IndexOf("kn", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("n", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Hz" And targetUnit = "kHz") Then '... then to frequency ...
+        ElseIf (sourceUnit.IndexOf("Hz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("kHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to frequency ...
             resultVal = value / 1000
-        ElseIf (sourceUnit = "Hz" And targetUnit = "MHz") Then
+        ElseIf (sourceUnit.IndexOf("Hz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("MHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000
-        ElseIf (sourceUnit = "Hz" And targetUnit = "GHz") Then
+        ElseIf (sourceUnit.IndexOf("Hz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("GHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000 / 1000
-        ElseIf (sourceUnit = "kHz" And targetUnit = "Hz") Then
+        ElseIf (sourceUnit.IndexOf("kHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Hz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "kHz" And targetUnit = "MHz") Then
+        ElseIf (sourceUnit.IndexOf("kHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("MHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000
-        ElseIf (sourceUnit = "kHz" And targetUnit = "GHz") Then
+        ElseIf (sourceUnit.IndexOf("kHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("GHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000
-        ElseIf (sourceUnit = "MHz" And targetUnit = "Hz") Then
+        ElseIf (sourceUnit.IndexOf("MHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Hz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000
-        ElseIf (sourceUnit = "MHz" And targetUnit = "kHz") Then
+        ElseIf (sourceUnit.IndexOf("MHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("kHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "MHz" And targetUnit = "GHz") Then
+        ElseIf (sourceUnit.IndexOf("MHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("GHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000
-        ElseIf (sourceUnit = "GHz" And targetUnit = "Hz") Then
+        ElseIf (sourceUnit.IndexOf("GHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Hz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000 * 1000
-        ElseIf (sourceUnit = "GHz" And targetUnit = "kHz") Then
+        ElseIf (sourceUnit.IndexOf("GHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("kHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000
-        ElseIf (sourceUnit = "GHz" And targetUnit = "MHz") Then
+        ElseIf (sourceUnit.IndexOf("GHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("MHz", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Number" And targetUnit = "Money") Then '... then to number types ...
+        ElseIf (sourceUnit.IndexOf("Number", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Money", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to number types ...
             resultVal = FormatCurrency(value, 2)
-        ElseIf (sourceUnit = "Number" And targetUnit = "Percent") Then
+        ElseIf (sourceUnit.IndexOf("Number", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Percent", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = FormatPercent(value, 2)
-        ElseIf (sourceUnit = "Centivolts" And targetUnit = "Volts") Then '... then to electricity ...
+        ElseIf (sourceUnit.IndexOf("Centivolts", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Volts", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to electricity ...
             resultVal = value / 1000
-        ElseIf (sourceUnit = "Centivolts" And targetUnit = "Kilovolts") Then
+        ElseIf (sourceUnit.IndexOf("Centivolts", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilovolts", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000
-        ElseIf (sourceUnit = "Volts" And targetUnit = "Centivolts") Then
+        ElseIf (sourceUnit.IndexOf("Volts", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Centivolts", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Volts" And targetUnit = "Kilovolts") Then
+        ElseIf (sourceUnit.IndexOf("Volts", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilovolts", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000
-        ElseIf (sourceUnit = "Kilovolts" And targetUnit = "Centivolts") Then
+        ElseIf (sourceUnit.IndexOf("Kilovolts", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Centivolts", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000
-        ElseIf (sourceUnit = "Kilovolts" And targetUnit = "Volts") Then
+        ElseIf (sourceUnit.IndexOf("Kilovolts", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Volts", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Watts" And targetUnit = "Kilowatts") Then '... then to electricity's wattage ...
+        ElseIf (sourceUnit.IndexOf("Watts", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kilowatts", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to electricity's wattage ...
             resultVal = value / 1000
-        ElseIf (sourceUnit = "Kilowatts" And targetUnit = "Watts") Then
+        ElseIf (sourceUnit.IndexOf("Kilowatts", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Watts", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Milliliters" And targetUnit = "Liters") Then '... then to liquid's volume ...
+        ElseIf (sourceUnit.IndexOf("Milliliters", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Liters", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to liquid's volume ...
             resultVal = value / 1000
-        ElseIf (sourceUnit = "Milliliters" And targetUnit = "Kiloliters") Then
+        ElseIf (sourceUnit.IndexOf("Milliliters", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kiloliters", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000 / 1000
-        ElseIf (sourceUnit = "Liters" And targetUnit = "Milliliters") Then
+        ElseIf (sourceUnit.IndexOf("Liters", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Milliliters", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Liters" And targetUnit = "Kiloliters") Then
+        ElseIf (sourceUnit.IndexOf("Liters", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Kiloliters", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1000
-        ElseIf (sourceUnit = "Kiloliters" And targetUnit = "Milliliters") Then
+        ElseIf (sourceUnit.IndexOf("Kiloliters", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Milliliters", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000 * 1000
-        ElseIf (sourceUnit = "Kiloliters" And targetUnit = "Liters") Then
+        ElseIf (sourceUnit.IndexOf("Kiloliters", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Liters", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1000
-        ElseIf (sourceUnit = "Ounces" And targetUnit = "Gallons") Then '... then to more liquid's volume ...
+        ElseIf (sourceUnit.IndexOf("Ounces", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Gallons", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then to more liquid's volume ...
             resultVal = value * 0.0078125
-        ElseIf (sourceUnit = "Gallons" And targetUnit = "Ounces") Then
+        ElseIf (sourceUnit.IndexOf("Gallons", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Ounces", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 128.0
-        ElseIf (sourceUnit = "Feet" And targetUnit = "Inches") Then '... then finally to more measurements.
+        ElseIf (sourceUnit.IndexOf("Feet", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Inches", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then '... then finally to more measurements.
             resultVal = value * 12
-        ElseIf (sourceUnit = "Feet" And targetUnit = "Yards") Then
+        ElseIf (sourceUnit.IndexOf("Feet", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Yards", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 0.3333333333
-        ElseIf (sourceUnit = "Feet" And targetUnit = "Miles") Then
+        ElseIf (sourceUnit.IndexOf("Feet", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Miles", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 0.0001893939
-        ElseIf (sourceUnit = "Inches" And targetUnit = "Feet") Then
+        ElseIf (sourceUnit.IndexOf("Inches", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Feet", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 0.0833333333
-        ElseIf (sourceUnit = "Inches" And targetUnit = "Yards") Then
+        ElseIf (sourceUnit.IndexOf("Inches", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Yards", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 0.0277777778
-        ElseIf (sourceUnit = "Inches" And targetUnit = "Miles") Then
+        ElseIf (sourceUnit.IndexOf("Inches", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Miles", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 0.0000157828
-        ElseIf (sourceUnit = "Yards" And targetUnit = "Feet") Then
+        ElseIf (sourceUnit.IndexOf("Yards", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Feet", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 3
-        ElseIf (sourceUnit = "Yards" And targetUnit = "Inches") Then
+        ElseIf (sourceUnit.IndexOf("Yards", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Inches", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 36
-        ElseIf (sourceUnit = "Yards" And targetUnit = "Miles") Then
+        ElseIf (sourceUnit.IndexOf("Yards", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Miles", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 0.0005681818
-        ElseIf (sourceUnit = "Miles" And targetUnit = "Feet") Then
+        ElseIf (sourceUnit.IndexOf("Miles", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Feet", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 5280
-        ElseIf (sourceUnit = "Miles" And targetUnit = "Inches") Then
+        ElseIf (sourceUnit.IndexOf("Miles", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Inches", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 63360
-        ElseIf (sourceUnit = "Miles" And targetUnit = "Yards") Then
+        ElseIf (sourceUnit.IndexOf("Miles", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Yards", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1760
         Else
-            Wln("{0} cannot be converted to {1}.", "neutralText")
+            Wln("{0} cannot be converted to {1}.", "neutralText", sourceUnit, targetUnit)
+            Exit Sub
         End If
         Wln("{0} to {1}: {2}", "neutralText", sourceUnit, targetUnit, resultVal)
 

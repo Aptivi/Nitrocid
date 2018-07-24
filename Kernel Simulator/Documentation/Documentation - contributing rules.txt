@@ -56,13 +56,12 @@ If some of the ideas disappeared, then it is either done or cancelled.
 3. "uiprompt" real command-line argument launches GUI command prompt
 4. User-made modifications and commands in (<modname>.m)
 5. Finish debugging logging to cover the whole application (Delayed to 0.0.5)
-6. Time zones
-7. Move every single documentation to Wiki in repository (Planned in 0.0.6)
-8. Error handlers in unit conversion (Planned in 0.0.5)
-9. Languages (Planned in 0.0.5 or 0.0.6)
-10. Allow special characters on passwords (Planned in 0.0.4.9 (the alpha version of 0.0.5))
-11. Custom aliases for commands (Temp. in 0.0.4.9, Perm. in 0.0.6)
-12. Remove all prompts (0.0.5)
-13. Make Kernel Simulator single-instance (0.0.4.9)
+6. Move every single documentation to Wiki in repository (Planned in 0.0.6)
+7. Languages (Planned in 0.0.5 or 0.0.6)
+8. Custom aliases for commands (Perm. in 0.0.6)
+9. Remove all prompts (0.0.5)
+10. Remove pre-defined aliases (0.0.5)
+11. More placeholders for MAL and MOTD (0.0.5.5)
+12. Un-aliasable list (0.0.5.5)
 
 (If you have ideas, edit this section by inserting your idea.)

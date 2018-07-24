@@ -73,6 +73,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **7/17/2018 - 0.0.4.7:** Better Error Handling for "ping" command, Fixed "unitconv" usage message
 
+**7/21/2018 - 0.0.4.9:** Better Error Handling for "unitconv" command, Added temporary aliases (not final because there is no "showaliases" command), fix some bugs, added time zones ("showtdzone", and show current time zone in "showtd"), Added "alias", "chmal", and "showmal", Made MOTD after login customizable, Allowed special characters on passwords to ensure security, Made Kernel Simulator single-instance to avoid interferences, and more.
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`

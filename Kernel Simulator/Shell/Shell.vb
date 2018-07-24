@@ -26,8 +26,9 @@ Module Shell
                                             "lsdrivers", "shutdown", "reboot", "disco", "beep", "annoying-sound", "adduser", "chmotd", "chhostname", "showmotd", _
                                             "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", _
                                             "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical", "unitconv", "md", "mkdir", "rd", "rmdir", "debuglog", _
-                                            "reloadconfig"}
-    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", "reloadconfig"}
+                                            "reloadconfig", "showtdzone", "alias", "chmal", "showmal"}
+    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", "reloadconfig", "alias", _
+                                     "chmal"}
 
     'For contributors: For each added command, you should also add a command in availableCommands array so there is no problems detecting your new command.
     '                  For each added admin command, you should also add a command in strictCmds array after performing above procedure so there is no problems 
@@ -36,25 +37,34 @@ Module Shell
     Sub initializeShell()
 
         'Initialize Shell
+        Dim DoneFlag As Boolean = False
         getLine(True)
         commandPromptWrite()
         DisposeExit.DisposeAll()
         System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
         strcommand = System.Console.ReadLine()
-        getLine()
+        If (aliases.Count - 1 <> -1) Then
+            For Each a As String In aliases.Keys
+                If (strcommand.Contains(a)) Then
+                    DoneFlag = True
+                    GetAlias.ExecuteAlias(a)
+                End If
+            Next
+        End If
+        If (DoneFlag = False) Then
+            getLine()
+        Else
+            initializeShell()
+        End If
 
     End Sub
 
     Sub commandPromptWrite()
 
         If adminList(signedinusrnm) = True Then
-            W("[", "def") : W("{0}", "userName", signedinusrnm)
-            W("@", "def") : W("{0}", "hostName", HName)
-            W("]{0} # ", "def", currDir)
+            W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} # ", "def", currDir)
         Else
-            W("[", "def") : W("{0}", "userName", signedinusrnm)
-            W("@", "def") : W("{0}", "hostName", HName)
-            W("]{0} $ ", "def", currDir)
+            W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} $ ", "def", currDir)
         End If
 
     End Sub

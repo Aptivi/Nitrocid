@@ -179,9 +179,6 @@ Module UserManagement
             If InStr(CStr(answerpass), " ") > 0 Then
                 Wln("Spaces are not allowed.", "neutralText")
                 changePassword()
-            ElseIf (answerpass.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                Wln("Special characters are not allowed.", "neutralText")
-                changePassword()
             ElseIf (answerpass = "q") Then
                 Wln("Password changing has been cancelled.", "neutralText")
             Else
@@ -206,9 +203,6 @@ Module UserManagement
         If InStr(answernewpass, " ") > 0 Then
             Wln("Spaces are not allowed.", "neutralText")
             changePasswordPrompt(usernamerequestedChange)
-        ElseIf (answernewpass.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-            Wln("Special characters are not allowed.", "neutralText")
-            changePasswordPrompt(usernamerequestedChange)
         ElseIf (answernewpass = "q") Then
             Wln("Password changing has been cancelled.", "neutralText")
         Else
@@ -216,9 +210,6 @@ Module UserManagement
             Dim answernewpassconfirm = System.Console.ReadLine()
             If InStr(answernewpassconfirm, " ") > 0 Then
                 Wln("Spaces are not allowed.", "neutralText")
-                changePasswordPrompt(usernamerequestedChange)
-            ElseIf (answernewpassconfirm.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                Wln("Special characters are not allowed.", "neutralText")
                 changePasswordPrompt(usernamerequestedChange)
             ElseIf (answernewpassconfirm = "q") Then
                 Wln("Password changing has been cancelled.", "neutralText")
@@ -302,11 +293,11 @@ Module UserManagement
             End If
         Catch ex As Exception
             If (DebugMode = True) Then
-                Wln("Error trying to add username." + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText", _
+                Wln("Error trying to remove username." + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText", _
                     Err.Number, Err.Description, ex.StackTrace)
                 Wdbg(ex.StackTrace, True)
             Else
-                Wln("Error trying to add username." + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description)
+                Wln("Error trying to remove username." + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description)
             End If
         End Try
 
@@ -336,8 +327,6 @@ Module UserManagement
         answerpassword = System.Console.ReadLine()
         If InStr(answerpassword, " ") > 0 Then
             Wln("Spaces are not allowed.", "neutralText")
-        ElseIf (answerpassword.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-            Wln("Special characters are not allowed.", "neutralText")
         ElseIf (answerpassword = "q") Then
             Wln("Username creation has been cancelled.", "neutralText")
         Else
@@ -345,8 +334,6 @@ Module UserManagement
             Dim answerpasswordconfirm As String = System.Console.ReadLine()
             If InStr(answerpasswordconfirm, " ") > 0 Then
                 Wln("Spaces are not allowed.", "neutralText")
-            ElseIf (answerpasswordconfirm.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                Wln("Special characters are not allowed.", "neutralText")
             ElseIf (answerpasswordconfirm = "q") Then
                 Wln("Username creation has been cancelled.", "neutralText")
             ElseIf (answerpassword = answerpasswordconfirm) Then

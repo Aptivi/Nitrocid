@@ -91,15 +91,14 @@ Module GetCommand
                     If (args.Count - 1 = 0) Then
                         HelpSystem.ShowHelp(args(0))
                     Else
-                        Wln("Usage: help [command]" + vbNewLine + _
-                            "       help: to get all commands", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "adduser") Then
 
                 If (requestedCommand = "adduser") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     UserManagement.addUser()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -114,9 +113,31 @@ Module GetCommand
                     ElseIf (args.Count - 1 = 2) Then
                         adduser(args(0), args(1))
                     Else
-                        Wln("Usage: adduser <userName> [password] [confirm]" + vbNewLine + _
-                            "       adduser: to be prompted about new username and password", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
+                End If
+
+            ElseIf (requestedCommand.Substring(0, index) = "alias") Then
+
+                If (requestedCommand <> "alias") Then
+                    Dim words = requestedCommand.Split({" "c})
+                    Dim c As Integer
+                    For arg = 1 To words.Count - 1
+                        c = c + words(arg).Count + 1
+                    Next
+                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
+                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                    If (args.Count - 1 > 1) Then
+                        If (args(0) = "add" Or args(0) = "rem") Then
+                            manageAlias(args(0), args(1), args(2))
+                        Else
+                            HelpSystem.ShowHelp(words(0))
+                        End If
+                    Else
+                        HelpSystem.ShowHelp(words(0))
+                    End If
+                Else
+                    HelpSystem.ShowHelp("alias")
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "annoying-sound" Or requestedCommand.Substring(0, index) = "beep") Then
@@ -126,7 +147,7 @@ Module GetCommand
                     If (requestedCommand = "beep") Then
                         Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
                     End If
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     BeepFreq()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -142,8 +163,7 @@ Module GetCommand
                     If (args.Count - 1 = 1) Then
                         Beep.Beep(CInt(args(0)), CDbl(args(1)))
                     Else
-                        Wln("Usage: annoying-sound/beep <Frequency:Hz> <Time:Seconds>" + vbNewLine + _
-                            "       annoying-sound/beep: to be prompted about beeping.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
@@ -151,7 +171,7 @@ Module GetCommand
 
                 'Argument Injection
                 If (requestedCommand = "arginj") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     answerargs = ""
                     ArgumentPrompt.PromptArgs(True)
                 Else
@@ -167,8 +187,7 @@ Module GetCommand
                         argsInjected = True
                         Wln("Injected arguments, {0}, will be scheduled to run at next reboot.", "neutralText", answerargs)
                     Else
-                        Wln("Usage: arginj [Arguments sep. by commas]" + vbNewLine + _
-                            "       arginj: to be prompted about boot arguments.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
@@ -185,10 +204,10 @@ Module GetCommand
                     If (args.Count - 1 > 1) Then
                         stdCalc.expressionCalculate(args)
                     Else
-                        Wln("Usage: calc <expression> ...", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 Else
-                    Wln("Usage: calc <expression> ...", "neutralText")
+                    HelpSystem.ShowHelp("calc")
                 End If
 
             ElseIf (requestedCommand = "cdir" Or requestedCommand = "currentdir") Then
@@ -220,32 +239,28 @@ Module GetCommand
                         Wln("Directory {0} not found", "neutralText", args(0))
                     End If
                 Else
-                    Wln("Usage: chdir/changedir/cd <directory> OR ..", "neutralText")
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "chhostname") Then
 
                 If (requestedCommand = "chhostname") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     HostName.ChangeHostName()
                 Else
                     Dim newhost As String = requestedCommand.Substring(11)
                     If (newhost = "") Then
                         Wln("Blank host name.", "neutralText")
-                        Wln("Usage: chhostname <HostName>" + vbNewLine + _
-                            "       chhostname: to be prompted about changing host name.", "neutralText")
+                        HelpSystem.ShowHelp(requestedCommand.Substring(0, 9))
                     ElseIf (newhost.Length <= 3) Then
                         Wln("The host name length must be at least 4 characters.", "neutralText")
-                        Wln("Usage: chhostname <HostName>" + vbNewLine + _
-                            "       chhostname: to be prompted about changing host name.", "neutralText")
+                        HelpSystem.ShowHelp(requestedCommand.Substring(0, 9))
                     ElseIf InStr(newhost, " ") > 0 Then
                         Wln("Spaces are not allowed.", "neutralText")
-                        Wln("Usage: chhostname <HostName>" + vbNewLine + _
-                            "       chhostname: to be prompted about changing host name.", "neutralText")
+                        HelpSystem.ShowHelp(requestedCommand.Substring(0, 9))
                     ElseIf (newhost.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
                         Wln("Special characters are not allowed.", "neutralText")
-                        Wln("Usage: chhostname <HostName>" + vbNewLine + _
-                            "       chhostname: to be prompted about changing host name.", "neutralText")
+                        HelpSystem.ShowHelp(requestedCommand.Substring(0, 9))
                     ElseIf (newhost = "q") Then
                         Wln("Host name changing has been cancelled.", "neutralText")
                     Else
@@ -260,14 +275,12 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "chmotd") Then
 
                 If (requestedCommand = "chmotd") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     ChangeMessage()
                 Else
                     Dim newmotd = requestedCommand.Substring(7)
                     If (newmotd = "") Then
                         Wln("Blank message of the day.", "neutralText")
-                    ElseIf (newmotd = "q") Then
-                        Wln("MOTD changing has been cancelled.", "neutralText")
                     Else
                         W("Changing MOTD...", "neutralText")
                         MOTDMessage = newmotd
@@ -278,10 +291,28 @@ Module GetCommand
                     End If
                 End If
 
+            ElseIf (requestedCommand.Substring(0, index) = "chmal") Then
+
+                If (requestedCommand <> "chmal") Then
+                    Dim newmal = requestedCommand.Substring(6)
+                    If (newmal = "") Then
+                        Wln("Blank MAL After Login.", "neutralText")
+                    Else
+                        W("Changing MAL...", "neutralText")
+                        MAL = newmal
+                        Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
+                        lns(25) = "MOTD After Login = " + newmal
+                        IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
+                        Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmal' to see the changes", "neutralText")
+                    End If
+                Else
+                    HelpSystem.ShowHelp("chmal")
+                End If
+
             ElseIf (requestedCommand.Substring(0, index) = "choice") Then
 
                 If (requestedCommand = "choice") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     W("Write a question: ", "input")
                     Dim question As String = System.Console.ReadLine()
                     If (question = "") Then
@@ -332,20 +363,19 @@ Module GetCommand
                             End If
                         Next
                     Else
-                        Wln("Usage: choice <Question> <sets>" + vbNewLine + _
-                            "       choice: to be prompted about choices.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
             ElseIf (requestedCommand = "chpwd") Then
 
-                Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                 changePassword()
 
             ElseIf (requestedCommand.Substring(0, index) = "chusrname") Then
 
                 If (requestedCommand = "chusrname") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     UserManagement.changeName()
                 Else
                     Dim DoneFlag As Boolean = False
@@ -378,8 +408,7 @@ Module GetCommand
                             changePassword()
                         End If
                     Else
-                        Wln("Usage: chusrname <oldUserName> <newUserName>" + vbNewLine + _
-                            "       chusrname: to be prompted about changing usernames.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
@@ -410,7 +439,7 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "echo") Then
 
                 If (requestedCommand = "echo") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     W("Write any text: ", "input")
                     answerecho = System.Console.ReadLine()
                     If (answerecho = "q") Then
@@ -429,8 +458,7 @@ Module GetCommand
                     If (args.Count - 1 >= 0) Then
                         Wln(String.Join(" ", args), "neutralText")
                     Else
-                        Wln("Usage: echo <text>" + vbNewLine + _
-                            "       echo: to be prompted about text printing.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
@@ -465,8 +493,7 @@ Module GetCommand
                             Wln("Directory {0} not found", "neutralText", args(0))
                         End If
                     Else
-                        Wln("Usage: ls/list [oneDirectory]" + vbNewLine + _
-                            "       ls/list: to get current directory.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
@@ -509,17 +536,17 @@ Module GetCommand
                     If (args.Count - 1 = 0) Then
                         AvailableDirs.Add(args(0))
                     Else
-                        Wln("Usage: md/mkdir <anything>", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 Else
-                    Wln("Usage: md/mkdir <anything>", "neutralText")
+                    HelpSystem.ShowHelp("mkdir")
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "panicsim") Then
 
                 'Kernel panic simulator
                 If (requestedCommand = "panicsim") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     PanicSim.panicPrompt()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -539,8 +566,7 @@ Module GetCommand
                         ElseIf (args(1) = "D") Then
                             KernelError(CChar(args(1)), True, 5, args(0))
                         Else
-                            Wln("Usage: panicsim <message> [S/F/D/[C]/U] [RebootTime:Seconds]" + vbNewLine + _
-                                "       panicsim: to be prompted about panic simulator options.", "neutralText")
+                            HelpSystem.ShowHelp(words(0))
                         End If
                     ElseIf (args.Count - 1 = 2) Then
                         If (CDbl(args(2)) <= 3600 And (args(1) <> "C" Or args(1) <> "D")) Then
@@ -550,19 +576,17 @@ Module GetCommand
                         ElseIf (CDbl(args(2)) <= 5 And args(1) = "D") Then
                             KernelError(CChar(args(1)), True, CLng(args(2)), args(0))
                         Else
-                            Wln("Usage: panicsim <message> [S/F/D/[C]/U] [RebootTime:Seconds]" + vbNewLine + _
-                                "       panicsim: to be prompted about panic simulator options.", "neutralText")
+                            HelpSystem.ShowHelp(words(0))
                         End If
                     Else
-                        Wln("Usage: panicsim <message> [S/F/D/[C]/U] [RebootTime:Seconds]" + vbNewLine + _
-                            "       panicsim: to be prompted about panic simulator options.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "perm") Then
 
                 If (requestedCommand = "perm") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     Groups.permissionPrompt()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -575,15 +599,14 @@ Module GetCommand
                     If (args.Count - 1 = 2) Then
                         permission(args(1), args(0), args(2))
                     Else
-                        Wln("Usage: perm <userName> <Admin/Disabled> <Allow/Disallow>" + vbNewLine + _
-                            "       perm: to be prompted about permission setting.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "ping") Then
 
                 If (requestedCommand = "ping") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     Network.CheckNetworkCommand()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -598,15 +621,14 @@ Module GetCommand
                     ElseIf (args.Count - 1 = 1) Then
                         Network.PingTarget(args(0), args(1))
                     Else
-                        Wln("Usage: ping <Address> [repeatTimes]" + vbNewLine + _
-                            "       ping: to get prompted about writing address.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "read") Then
 
                 If (requestedCommand = "read") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     W("Write a file (directories will be scanned): ", "input")
                     Dim readfile As String = System.Console.ReadLine()
                     If (readfile = "") Then
@@ -633,8 +655,7 @@ Module GetCommand
                             Wln("{0} is not found.", "neutralText", args(0))
                         End If
                     Else
-                        Wln("Usage: read <file>" + vbNewLine + _
-                            "       read: to get prompted about reading file contents.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
@@ -675,16 +696,16 @@ Module GetCommand
                     If (args.Count - 1 = 0) Then
                         AvailableDirs.Remove(args(0))
                     Else
-                        Wln("Usage: rd/rmdir <directory>", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 Else
-                    Wln("Usage: rd/rmdir <directory>", "neutralText")
+                    HelpSystem.ShowHelp("rmdir")
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "rmuser") Then
 
                 If (requestedCommand = "rmuser") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     UserManagement.removeUser()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -697,8 +718,7 @@ Module GetCommand
                     If (args.Count - 1 = 0) Then
                         UserManagement.removeUserFromDatabase(args(0))
                     Else
-                        Wln("Usage: rmuser <Username>" + vbNewLine + _
-                            "       rmuser: to get prompted about removing usernames.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
@@ -717,18 +737,16 @@ Module GetCommand
                     ElseIf ((args(0) = "sqrt" Or args(0) = "tan" Or args(0) = "sin" Or args(0) = "cos" Or args(0) = "floor" Or args(0) = "ceiling" Or args(0) = "abs") And args.Count - 1 = 1) Then
                         sciCalc.expressionCalculate(True, args)
                     Else
-                        Wln("Usage: scical <expression1|pi|e> <+|-|*|/|%> <expression2|pi|e> ..." + vbNewLine + _
-                            "       scical <sqrt|tan|sin|cos> <number>", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 Else
-                    Wln("Usage: scical <expression1|pi|e> <+|-|*|/|%> <expression2|pi|e> ..." + vbNewLine + _
-                        "       scical <sqrt|tan|sin|cos> <number>", "neutralText")
+                    HelpSystem.ShowHelp("scical")
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "setcolors") Then
 
                 If (requestedCommand = "setcolors") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     Wln("Available Colors: {0}" + vbNewLine + _
                         "Press ENTER only on questions and defaults will be used.", "neutralText", String.Join(", ", availableColors))
                     ColorSet.SetColorSteps()
@@ -787,16 +805,14 @@ Module GetCommand
                             Wln("One or more of the colors is invalid.", "neutralText")
                         End If
                     Else
-                        Wln("Usage: setcolors <inputColor/def> <licenseColor/def> <contKernelErrorColor/def> <uncontKernelErrorColor/def> <hostNameShellColor/def> <userNameShellColor/def> <backgroundColor/def> <neutralTextColor/def>" + vbNewLine + _
-                            "       setcolors: to get prompted about setting colors." + vbNewLine + _
-                            "       Friends of setcolors: setthemes", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "setthemes") Then
 
                 If (requestedCommand = "setthemes") Then
-                    Wln("Prompts are now deprecated and removed in future release.", "neutralText")
+                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     TemplateSet.TemplatePrompt()
                 Else
                     Dim words = requestedCommand.Split({" "c})
@@ -809,9 +825,7 @@ Module GetCommand
                     If (args.Count - 1 = 0) Then
                         TemplateSet.templateSet(args(0))
                     Else
-                        Wln("Usage: setthemes <Theme>" + vbNewLine + _
-                            "       setthemes: to get prompted about setting themes." + vbNewLine + _
-                            "       Friends of setthemes: setcolors", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 End If
 
@@ -819,10 +833,45 @@ Module GetCommand
 
                 TimeDate.ShowTime()
 
+            ElseIf (requestedCommand.Substring(0, index) = "showtdzone") Then
+
+                If (requestedCommand <> "showtdzone") Then
+                    Dim words = requestedCommand.Split({" "c})
+                    Dim c As Integer
+                    For arg = 1 To words.Count - 1
+                        c = c + words(arg).Count + 1
+                    Next
+                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c) : strArgs = strArgs.Substring(1, c - 1)
+                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                    Dim DoneFlag As Boolean = False
+                    For Each zoneName In zoneTimes.Keys
+                        If (zoneName = strArgs) Then
+                            DoneFlag = True : TimeZones.showTimesInZones(strArgs)
+                        End If
+                    Next
+                    If (DoneFlag = False) Then
+                        If (args(0) = "all") Then
+                            TimeZones.showTimesInZones()
+                        Else
+                            HelpSystem.ShowHelp(words(0))
+                        End If
+                    End If
+                Else
+                    HelpSystem.ShowHelp("showtdzone")
+                End If
+
             ElseIf (requestedCommand = "showmotd") Then
 
                 'Show changes to MOTD, or current
                 Wln(MOTDMessage, "neutralText")
+
+            ElseIf (requestedCommand = "showmal") Then
+
+                'Show changes to MAL, or current
+                If (MAL.Contains("<user>")) Then
+                    MAL = MAL.Replace("<user>", signedinusrnm)
+                End If
+                Wln(MAL, "neutralText")
 
             ElseIf (requestedCommand = "shutdown") Then
 
@@ -855,18 +904,10 @@ Module GetCommand
                     If (args.Count - 1 = 2) Then
                         unitConv.Converter(args(0), args(1), args(2))
                     Else
-                        Wln("Usage: unitconv <sourceUnit> <targetUnit> <value>" + vbNewLine + _
-                            "Units: B, KB, MB, GB, TB, Bits, Octal, Binary, Decimal, Hexadecimal, mm, cm, m, km, Fahrenheit, Celsius, Kelvin, " + _
-                            "Reaumur, Romer, Delisle, Rankine, j, kj, m/s, km/h, cm/ms, Kilograms, Grams, Tons, Kilotons, Megatons, kn, n, Hz, kHz, MHz, " + _
-                            "GHz, Number (source only), Money (target only), Percent (target only), Centivolts, Volts, Kilovolts, Watts, Kilowatts, " + _
-                            "Milliliters, Liters, Kiloliters, Gallons, Ounces, Feet, Inches, Yards and Miles.", "neutralText")
+                        HelpSystem.ShowHelp(words(0))
                     End If
                 Else
-                    Wln("Usage: unitconv <sourceUnit> <targetUnit> <value>" + vbNewLine + _
-                        "Units: B, KB, MB, GB, TB, Bits, Octal, Binary, Decimal, Hexadecimal, mm, cm, m, km, Fahrenheit, Celsius, Kelvin, " + _
-                        "Reaumur, Romer, Delisle, Rankine, j, kj, m/s, km/h, cm/ms, Kilograms, Grams, Tons, Kilotons, Megatons, kn, n, Hz, kHz, MHz, " + _
-                        "GHz, Number (source only), Money (target only), Percent (target only), Centivolts, Volts, Kilovolts, Watts, Kilowatts, " + _
-                        "Milliliters, Liters, Kiloliters, Gallons, Ounces, Feet, Inches, Yards and Miles.", "neutralText")
+                    HelpSystem.ShowHelp("unitconv")
                 End If
 
             ElseIf (requestedCommand = "version") Then
