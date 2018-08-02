@@ -16,11 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module AliasManager
+Public Module AliasManager
 
     Public aliases As New Dictionary(Of String, String)
 
-    Sub manageAlias(ByVal mode As String, ByVal aliasTBA As String, ByVal cmd As String)
+    Public Sub manageAlias(ByVal mode As String, ByVal aliasTBA As String, ByVal cmd As String)
 
         If (mode = "add") Then
             If (aliasTBA = cmd) Then

@@ -18,7 +18,7 @@
 
 Imports System.ComponentModel
 
-Module TimeDate
+Public Module TimeDate
 
     'Variables
     Public strKernelTimeDate As String
@@ -65,7 +65,7 @@ Module TimeDate
 
     End Sub
 
-    Sub ShowTime()
+    Public Sub ShowTime()
 
         Wln("datetime: Time is {0}", "neutralText", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongTime))
         Wln("datetime: Today is {0}", "neutralText", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongDate))

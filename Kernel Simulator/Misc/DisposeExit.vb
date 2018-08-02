@@ -18,11 +18,11 @@
 
 Imports System.Diagnostics.Process
 
-Module DisposeExit
+Public Module DisposeExit
 
     Private Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal hProcess As IntPtr, ByVal dwMinimumWorkingSetSize As Int32, ByVal dwMaximumWorkingSetSize As Int32) As Int32
 
-    Sub DisposeAll()
+    Public Sub DisposeAll()
 
         On Error GoTo RAMError
 

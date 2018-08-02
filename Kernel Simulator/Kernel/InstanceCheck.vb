@@ -29,6 +29,7 @@ Module InstanceCheck
         If (ksOwner = False) Then
             KernelError(CChar("F"), False, 0, "Another instance of Kernel Simulator is running. Shutting down in case of interference.")
         End If
+        instanceChecked = True
 
     End Sub
 

@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module ColorSet
+Public Module ColorSet
 
     'Private variables
     Private answerColor As String
@@ -27,7 +27,7 @@ Module ColorSet
     'Variables
     Public answersColor(7) As String
 
-    Sub UseDefaults()
+    Public Sub UseDefaults()
         'Use default settings in current step.
         If (stepCurrent = 0) Then
             answersColor(0) = "White"
@@ -178,7 +178,7 @@ Module ColorSet
 
     End Sub
 
-    Sub ResetColors()
+    Public Sub ResetColors()
         inputColor = CType([Enum].Parse(GetType(ConsoleColor), inputColorDef), ConsoleColor)
         licenseColor = CType([Enum].Parse(GetType(ConsoleColor), licenseColorDef), ConsoleColor)
         contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), contKernelErrorColorDef), ConsoleColor)

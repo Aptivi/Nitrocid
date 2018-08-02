@@ -18,11 +18,11 @@
 
 Imports System.IO
 
-Module DebugWriter
+Public Module DebugWriter
 
     Public dbgWriter As New StreamWriter(Environ("USERPROFILE") + "\kernelDbg.log")
 
-    Sub Wdbg(ByVal text As String, ByVal line As Boolean, ByVal ParamArray vars() As Object)
+    Public Sub Wdbg(ByVal text As String, ByVal line As Boolean, ByVal ParamArray vars() As Object)
 
         If (DebugMode = True) Then
             If (line = False) Then

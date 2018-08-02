@@ -2,22 +2,15 @@
 
 The build is currently [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master)
 
-INFO: This kernel simulator simulates our **future** kernel that is planned by us.
+INFO: This kernel simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal.
 
 NOTE: This kernel simulator _will_ continue to be developed, even if we made the real PC version of Kernel.
 
-INFO: This kernel simulator is not a final planned version of Kernel, since it was minimal.
-
 NOTE: It can only be Console at the moment, while we are developing a GUI for this simulator.
 
-Kernel Simulator lets you simulate a _very_ early access for our **future** Kernel. It provides the built-in hardware
-detector, log-in manager, and the shell.
+Kernel Simulator lets you simulate a _very_ early access for our **future** Kernel.
 
 Cannot log-in to Kernel Simulator on **root** account? The password is the _backwards_ of **root**.
-
-## |-----+--> _0.0.3 Changes_ <--+-----|
-
-We have removed _bin_ folder and made the source code store directly in the _root_ folder of Kernel Simulator files to manage _releases_.
 
 ## |-----+--> _Download_ <--+-----|
 
@@ -25,11 +18,12 @@ You can download the binary and the source code here: https://github.com/EoflaOE
 
 ## |-----+--> _Prerequisites_ <--+-----|
 
-[Microsoft .NET Framework 4.0](https://download.microsoft.com/download/1/B/E/1BE39E79-7E39-46A3-96FF-047F95396215/dotNetFx40_Full_setup.exe) is **important and required** for Kernel Simulator to work fully. If you have Windows 8 or later, you might already have this version of Microsoft .NET Framework 4.0.
+- Windows XP or higher
+- [Microsoft .NET Framework 4.0](https://download.microsoft.com/download/1/B/E/1BE39E79-7E39-46A3-96FF-047F95396215/dotNetFx40_Full_setup.exe) or higher is **important and required** for Kernel Simulator to work fully. If you have Windows 8 or later, you might already have this version of Microsoft .NET Framework 4.0.
 
 ## |-----+--> _Build Instructions_ <--+-----|
 
-1. Install [Microsoft Visual Basic Express 2010](https://visual-basic-express.soft32.com/old-version/386190/2010.express/) or [Visual Studio 2010](https://www.visualstudio.com/vs/older-downloads/ "Sign-in required"), or higher.
+1. Install [Microsoft Visual Basic Express 2010](https://visual-basic-express.soft32.com/old-version/386190/2010.express/) or Visual Studio 2010, or higher.
 
 2. After installation, extract the source code, and open Microsoft Visual Basic / Studio 2010, and click on **Open Project...**
 
@@ -74,6 +68,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **7/17/2018 - 0.0.4.7:** Better Error Handling for "ping" command, Fixed "unitconv" usage message
 
 **7/21/2018 - 0.0.4.9:** Better Error Handling for "unitconv" command, Added temporary aliases (not final because there is no "showaliases" command), fix some bugs, added time zones ("showtdzone", and show current time zone in "showtd"), Added "alias", "chmal", and "showmal", Made MOTD after login customizable, Allowed special characters on passwords to ensure security, Made Kernel Simulator single-instance to avoid interferences, and more.
+
+**8/1/2018 - 0.0.4.10:** Fused "sysinfo" with "lsdrivers", Improved Help definition (used dictionary for preparation for modding), added "lscomp" which can list all online and offline computers by names only, Added error handler for "lsnet" and "lsnettree", fixed grammatical mistakes in "lsnet" and "lsnettree", added mods (commands not implemented yet - <modname>.m), added screensavers, changed the behavior of showing MOTD, fixed bug where instance checking after reboot of the kernel would say that it has more than one instance and should close, and more.
 
 ## |-----+--> _Manual pages_ <--+-----|
 

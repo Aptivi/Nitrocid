@@ -16,9 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module InitializeDirectoryFile
+Public Module InitializeDirectoryFile
 
-    Sub Init()
+    Public Sub Init()
 
         AvailableDirs.AddRange({"boot", "bin", "dev", "etc", "lib", "proc", "usr", "var"})
 

@@ -20,7 +20,7 @@ Imports System
 Imports System.IO
 Imports System.Reflection
 
-Module Kernel
+Public Module Kernel
 
     'Variables
     Public Hddsize As String                                                            'The size of simulated Hard Drive
@@ -46,7 +46,8 @@ Module Kernel
     Public MOTDMessage As String                                                        'Message of the MOTD
     Public HName As String                                                              'Host Name of the kernel
     Public StatusesRAM As String                                                        'Status of all memory chips
-    Public MAL As String                                                                'MOTD After Login
+    Public MAL As String                                                                'MOTD After Login.
+    Public instanceChecked As Boolean = False                                           'To fix bug of checking instance.
     Declare Sub Sleep Lib "kernel32" (ByVal milliseconds As Integer)                    'Enable sleep (Mandatory, don't remove)
 
     Sub Main()
@@ -78,14 +79,12 @@ Module Kernel
                             "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine + _
                             "    This is free software, and you are welcome to redistribute it" + vbNewLine + _
                             "    under certain conditions; See COPYING file in source code." + vbNewLine, "license")
-            InstanceCheck.MultiInstance()
+            If (instanceChecked = False) Then InstanceCheck.MultiInstance()
 
             'Check arguments, initialize date and files, and continue.
             If (argsOnBoot = True) Then
                 ArgumentPrompt.PromptArgs()
-                If (argsFlag = True) Then
-                    ArgumentParse.ParseArguments()
-                End If
+                If (argsFlag = True) Then ArgumentParse.ParseArguments()
             End If
             If (argsInjected = True) Then
                 ArgumentParse.ParseArguments()
@@ -110,18 +109,19 @@ Module Kernel
 
             'Phase 2: Username management
             UserManagement.initializeMainUsers()
-            If (enableDemo = True) Then
-                UserManagement.addUser("demo")
-            End If
+            If (enableDemo = True) Then UserManagement.addUser("demo")
             LoginFlag = True
 
             'Phase 3: Check for pre-user making
-            If (CruserFlag = True) Then
-                adduser(arguser, argword)
-            End If
+            If (CruserFlag = True) Then adduser(arguser, argword)
 
-            'Phase 4: Free unused RAM and log-in
+            'Phase 4: Parse Mods
+            ModParser.ParseMods()
+
+            'Phase 5: Free unused RAM
             DisposeExit.DisposeAll()
+
+            'Phase 6: Log-in
             If (LoginFlag = True And maintenance = False) Then
                 Login.LoginPrompt()
             ElseIf (LoginFlag = True And maintenance = True) Then

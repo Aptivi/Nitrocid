@@ -47,7 +47,7 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
   </PropertyGroup>
@@ -59,7 +59,7 @@
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\..\My Files\Misc\visual basic projects\VB2010\Kernel Simulator\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
     <DebugSymbols>true</DebugSymbols>
@@ -144,10 +144,12 @@
     <Compile Include="Misc\Calculator\unitConv.vb" />
     <Compile Include="Misc\ChangeMOTD.vb" />
     <Compile Include="Misc\Config.vb" />
+    <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\Writers\DebugWriter.vb" />
     <Compile Include="Misc\DisposeExit.vb" />
     <Compile Include="Misc\PanicSim.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
+    <Compile Include="Modifications\ModParser.vb" />
     <Compile Include="Network\NetworkTools.vb" />
     <Compile Include="Shell\AliasManager.vb" />
     <Compile Include="Shell\GetAlias.vb" />

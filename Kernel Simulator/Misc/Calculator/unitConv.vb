@@ -16,11 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module unitConv
+Public Module unitConv
 
     Private resultVal As Object
 
-    Sub Converter(ByVal sourceUnit As String, ByVal targetUnit As String, ByVal value As Object)
+    Public Sub Converter(ByVal sourceUnit As String, ByVal targetUnit As String, ByVal value As Object)
 
         'TODO: Add currency conversion (might require Internet)
         'Begin with size conversion first...

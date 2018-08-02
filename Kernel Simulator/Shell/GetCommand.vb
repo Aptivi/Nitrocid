@@ -19,7 +19,7 @@
 Imports System.ComponentModel
 Imports System.IO
 
-Module GetCommand
+Public Module GetCommand
 
     'Variables
     Public answernewuser As String                                                                          'Input for new user name
@@ -28,20 +28,23 @@ Module GetCommand
     Public answerbeepms As String                                                                           'Input for beep milliseconds
     Public key As Double
     Public colors() As ConsoleColor = CType(ConsoleColor.GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
-    Public WithEvents ColoredDisco As New System.ComponentModel.BackgroundWorker                            '16-bit colored disco
+    Public WithEvents ColoredDisco As New BackgroundWorker                                                  '16-bit colored disco
     Public answerecho As String                                                                             'Input for printing string
 
     Sub ColoredDisco_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles ColoredDisco.DoWork
 
+        Console.CursorVisible = False
         Do While True
             For Each color In colors
                 Sleep(250)
                 If (ColoredDisco.CancellationPending = True) Then
                     e.Cancel = True
-                    Console.ResetColor()
                     Console.Clear()
                     Shell.commandPromptWrite()
                     System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+                    System.Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
+                    LoadBackground.Load()
+                    Console.CursorVisible = True
                     Exit Do
                 Else
                     Console.BackgroundColor = color
@@ -62,7 +65,7 @@ Module GetCommand
 
     End Sub
 
-    Sub ExecuteCommand(ByVal requestedCommand As String)
+    Public Sub ExecuteCommand(ByVal requestedCommand As String)
 
         'NOTE: If it reads: 
         '
@@ -70,24 +73,19 @@ Module GetCommand
         '       Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
         '   End If
         '
-        'then the pre-defined aliases will be removed. A warning message will appear. They are here for preparation for 0.0.4.9.
+        'then the pre-defined aliases will be removed in 0.0.4.11
+        Dim index As Integer = requestedCommand.IndexOf(" ")
+        If (index = -1) Then index = requestedCommand.Length
+        Dim words = requestedCommand.Split({" "c})
+        Dim strArgs As String = requestedCommand.Substring(index)
+        If Not (index = requestedCommand.Length) Then strArgs = strArgs.Substring(1)
+        Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
         Try
-            Dim index As Integer = requestedCommand.IndexOf(" ")
-            If (index = -1) Then
-                index = requestedCommand.Length
-            End If
             If (requestedCommand.Substring(0, index) = "help") Then
 
                 If (requestedCommand = "help") Then
                     HelpSystem.ShowHelp()
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 0) Then
                         HelpSystem.ShowHelp(args(0))
                     Else
@@ -101,13 +99,6 @@ Module GetCommand
                     Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     UserManagement.addUser()
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 0) Then
                         newPassword(args(0))
                     ElseIf (args.Count - 1 = 2) Then
@@ -120,13 +111,6 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "alias") Then
 
                 If (requestedCommand <> "alias") Then
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 > 1) Then
                         If (args(0) = "add" Or args(0) = "rem") Then
                             manageAlias(args(0), args(1), args(2))
@@ -144,22 +128,15 @@ Module GetCommand
 
                 'Beep system initialization
                 If (requestedCommand = "annoying-sound" Or requestedCommand = "beep") Then
-                    If (requestedCommand = "beep") Then
+                    If (requestedCommand = "annoying-sound") Then
                         Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
                     End If
                     Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     BeepFreq()
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    If (words(0) = "beep") Then
+                    If (words(0) = "annoying-sound") Then
                         Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
                     End If
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 1) Then
                         Beep.Beep(CInt(args(0)), CDbl(args(1)))
                     Else
@@ -175,13 +152,6 @@ Module GetCommand
                     answerargs = ""
                     ArgumentPrompt.PromptArgs(True)
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" ") + 1, c - 1)
-                    Dim args() As String = strArgs.Split({","c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 >= 0) Then
                         answerargs = String.Join(",", args)
                         argsInjected = True
@@ -194,13 +164,6 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "calc") Then
 
                 If (requestedCommand <> "calc") Then
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 > 1) Then
                         stdCalc.expressionCalculate(args)
                     Else
@@ -223,13 +186,6 @@ Module GetCommand
                 If (requestedCommand.Substring(0, index) = "cd" Or requestedCommand.Substring(0, index) = "chdir") Then
                     Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
                 End If
-                Dim words = requestedCommand.Split({" "c})
-                Dim c As Integer
-                For arg = 1 To words.Count - 1
-                    c = c + words(arg).Count + 1
-                Next
-                Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                 If (args.Count - 1 = 0) Then
                     If (AvailableDirs.Contains(args(0)) And currDir = "/") Then
                         CurrentDir.setCurrDir(args(0))
@@ -344,13 +300,6 @@ Module GetCommand
                         End If
                     End If
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 1) Then
                         W("{0} <{1}> ", "input", args(0), args(1))
                         Dim answerchoice As String = System.Console.ReadKey.KeyChar
@@ -379,13 +328,6 @@ Module GetCommand
                     UserManagement.changeName()
                 Else
                     Dim DoneFlag As Boolean = False
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 1) Then
                         If (userword.ContainsKey(args(0)) = True) Then
                             If Not (userword.ContainsKey(args(1)) = True) Then
@@ -448,13 +390,6 @@ Module GetCommand
                         Wln(answerecho, "neutralText")
                     End If
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 >= 0) Then
                         Wln(String.Join(" ", args), "neutralText")
                     Else
@@ -465,6 +400,24 @@ Module GetCommand
             ElseIf (requestedCommand = "hwprobe") Then
 
                 HardwareProbe.ProbeHW()
+
+            ElseIf (requestedCommand.Substring(0, index) = "loadsaver") Then
+
+                If (requestedCommand <> "loadsaver") Then
+                    If (args.Count - 1 >= 0) Then
+                        Screensaver.compileCustom(strArgs)
+                    Else
+                        HelpSystem.ShowHelp(words(0))
+                    End If
+                Else
+                    HelpSystem.ShowHelp("loadsaver")
+                End If
+
+            ElseIf (requestedCommand = "lockscreen") Then
+
+                LockMode = True
+                Screensaver.ShowSavers(defSaverName)
+                showPasswordPrompt(signedinusrnm)
 
             ElseIf (requestedCommand.Substring(0, index) = "ls" Or requestedCommand.Substring(0, index) = "list") Then
 
@@ -479,13 +432,6 @@ Module GetCommand
                         ListFolders.list(currDir.Substring(1))
                     End If
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 0) Then
                         If (AvailableDirs.Contains(args(0)) Or args(0) = ".." Or args(0) = "/" Or (AvailableDirs.Contains(args(0).Substring(1)) And (args(0).StartsWith("/") Or args(0).StartsWith("..")))) Then
                             ListFolders.list(args(0))
@@ -497,9 +443,10 @@ Module GetCommand
                     End If
                 End If
 
-            ElseIf (requestedCommand = "lsdrivers") Then
+            ElseIf (requestedCommand = "lscomp") Then
 
-                HardwareProbe.ListDrivers()
+                NetworkList.GetNetworkComputers()
+                NetworkList.ListOnlineAndOfflineHosts()
 
             ElseIf (requestedCommand = "lsnet") Then
 
@@ -526,13 +473,6 @@ Module GetCommand
                     Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
                 End If
                 If (requestedCommand <> "mkdir" Or requestedCommand <> "md") Then
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 0) Then
                         AvailableDirs.Add(args(0))
                     Else
@@ -549,13 +489,6 @@ Module GetCommand
                     Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     PanicSim.panicPrompt()
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 0) Then
                         KernelError(CChar("C"), False, 0, args(0))
                     ElseIf (args.Count - 1 = 1) Then
@@ -589,13 +522,6 @@ Module GetCommand
                     Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     Groups.permissionPrompt()
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 2) Then
                         permission(args(1), args(0), args(2))
                     Else
@@ -609,13 +535,6 @@ Module GetCommand
                     Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     Network.CheckNetworkCommand()
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 0) Then
                         Network.PingTarget(args(0), 1)
                     ElseIf (args.Count - 1 = 1) Then
@@ -641,13 +560,6 @@ Module GetCommand
                         Wln("{0} is not found.", "neutralText", readfile)
                     End If
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 0) Then
                         If (AvailableFiles.Contains(args(0))) Then
                             FileContents.readContents(args(0))
@@ -686,13 +598,6 @@ Module GetCommand
                     Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
                 End If
                 If (requestedCommand <> "rmdir" Or requestedCommand <> "rd") Then
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 0) Then
                         AvailableDirs.Remove(args(0))
                     Else
@@ -708,13 +613,6 @@ Module GetCommand
                     Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     UserManagement.removeUser()
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 0) Then
                         UserManagement.removeUserFromDatabase(args(0))
                     Else
@@ -722,16 +620,13 @@ Module GetCommand
                     End If
                 End If
 
+            ElseIf (requestedCommand = "savescreen") Then
+
+                Screensaver.ShowSavers(defSaverName)
+
             ElseIf (requestedCommand.Substring(0, index) = "scical") Then
 
                 If (requestedCommand <> "scical") Then
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If ((args(0) <> "sqrt" And args(0) <> "tan" And args(0) <> "sin" And args(0) <> "cos" And args(0) <> "floor" And args(0) <> "ceiling" And args(0) <> "abs") And args.Count - 1 > 1) Then
                         sciCalc.expressionCalculate(False, args)
                     ElseIf ((args(0) = "sqrt" Or args(0) = "tan" Or args(0) = "sin" Or args(0) = "cos" Or args(0) = "floor" Or args(0) = "ceiling" Or args(0) = "abs") And args.Count - 1 = 1) Then
@@ -751,13 +646,6 @@ Module GetCommand
                         "Press ENTER only on questions and defaults will be used.", "neutralText", String.Join(", ", availableColors))
                     ColorSet.SetColorSteps()
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 7) Then
                         If (availableColors.Contains(args(0)) And availableColors.Contains(args(1)) And availableColors.Contains(args(2)) And _
                             availableColors.Contains(args(3)) And availableColors.Contains(args(4)) And availableColors.Contains(args(5)) And _
@@ -809,19 +697,33 @@ Module GetCommand
                     End If
                 End If
 
+            ElseIf (requestedCommand.Substring(0, index) = "setsaver") Then
+
+                Dim modPath As String = Environ("USERPROFILE") + "\KSMods\"
+                If (requestedCommand <> "setsaver") Then
+                    If (args.Count >= 0) Then
+                        If (strArgs = "colorMix" Or strArgs = "matrix") Then
+                            Screensaver.setDefaultScreensaver(strArgs)
+                        Else
+                            If (FileIO.FileSystem.FileExists(modPath + strArgs)) Then
+                                Screensaver.setDefaultScreensaver(strArgs)
+                            Else
+                                Wln("Screensaver {0} not found.", "neutralText", strArgs)
+                            End If
+                        End If
+                    Else
+                        HelpSystem.ShowHelp(words(0))
+                    End If
+                Else
+                    HelpSystem.ShowHelp("setsaver")
+                End If
+
             ElseIf (requestedCommand.Substring(0, index) = "setthemes") Then
 
                 If (requestedCommand = "setthemes") Then
                     Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     TemplateSet.TemplatePrompt()
                 Else
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 0) Then
                         TemplateSet.templateSet(args(0))
                     Else
@@ -836,13 +738,6 @@ Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "showtdzone") Then
 
                 If (requestedCommand <> "showtdzone") Then
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c) : strArgs = strArgs.Substring(1, c - 1)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     Dim DoneFlag As Boolean = False
                     For Each zoneName In zoneTimes.Keys
                         If (zoneName = strArgs) Then
@@ -887,20 +782,12 @@ Module GetCommand
             ElseIf (requestedCommand = "sysinfo") Then
 
                 'Shows system information
-                Wln("Kernel Version: {0}" + vbNewLine + _
-                    "Shell (uesh) version: {1}" + vbNewLine + vbNewLine + _
-                    "Look at hardware information using 'lsdrivers'", "neutralText", KernelVersion, ueshversion)
+                Wln("Kernel Version: {0}", "neutralText", KernelVersion)
+                HardwareProbe.ListDrivers()
 
             ElseIf (requestedCommand.Substring(0, index) = "unitconv") Then
 
                 If (requestedCommand <> "unitconv") Then
-                    Dim words = requestedCommand.Split({" "c})
-                    Dim c As Integer
-                    For arg = 1 To words.Count - 1
-                        c = c + words(arg).Count + 1
-                    Next
-                    Dim strArgs As String = requestedCommand.Substring(requestedCommand.IndexOf(" "), c)
-                    Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                     If (args.Count - 1 = 2) Then
                         unitConv.Converter(args(0), args(1), args(2))
                     Else
@@ -918,11 +805,11 @@ Module GetCommand
             End If
         Catch ex As Exception
             If (DebugMode = True) Then
-                Wln("Error trying to execute command." + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText", _
-                    Err.Number, Err.Description, ex.StackTrace)
+                Wln("Error trying to execute command {3}." + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText", _
+                    Err.Number, Err.Description, ex.StackTrace, words(0))
                 Wdbg(ex.StackTrace, True)
             Else
-                Wln("Error trying to execute command." + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description)
+                Wln("Error trying to execute command {2}." + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description, words(0))
             End If
         End Try
 

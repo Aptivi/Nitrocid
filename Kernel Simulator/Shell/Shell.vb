@@ -16,25 +16,24 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module Shell
+Public Module Shell
 
     'Available Commands (availableCommands())
     'Admin-Only commands (strictCmds())
-    Public ueshversion As String = "0.0.4"                  'Current shell version
     Public strcommand As String                             'Written Command
     Public availableCommands() As String = {"help", "logout", "version", "currentdir", "list", "changedir", "cdir", "ls", "chdir", "cd", "read", "echo", "choice", _
-                                            "lsdrivers", "shutdown", "reboot", "disco", "beep", "annoying-sound", "adduser", "chmotd", "chhostname", "showmotd", _
+                                            "shutdown", "reboot", "disco", "beep", "annoying-sound", "adduser", "chmotd", "chhostname", "showmotd", "lscomp", _
                                             "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", _
                                             "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical", "unitconv", "md", "mkdir", "rd", "rmdir", "debuglog", _
-                                            "reloadconfig", "showtdzone", "alias", "chmal", "showmal"}
+                                            "reloadconfig", "showtdzone", "alias", "chmal", "showmal", "savescreen", "lockscreen", "setsaver", "loadsaver"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", "reloadconfig", "alias", _
-                                     "chmal"}
+                                     "chmal", "setsaver", "loadsaver"}
 
     'For contributors: For each added command, you should also add a command in availableCommands array so there is no problems detecting your new command.
     '                  For each added admin command, you should also add a command in strictCmds array after performing above procedure so there is no problems 
     '                  checking if user has Admin permission to use your new admin command.
 
-    Sub initializeShell()
+    Public Sub initializeShell()
 
         'Initialize Shell
         Dim DoneFlag As Boolean = False
@@ -59,7 +58,7 @@ Module Shell
 
     End Sub
 
-    Sub commandPromptWrite()
+    Public Sub commandPromptWrite()
 
         If adminList(signedinusrnm) = True Then
             W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} # ", "def", currDir)
@@ -69,7 +68,7 @@ Module Shell
 
     End Sub
 
-    Sub getLine(Optional ByVal ArgsMode As Boolean = False)
+    Public Sub getLine(Optional ByVal ArgsMode As Boolean = False)
 
         'Reads command written by user
         Try

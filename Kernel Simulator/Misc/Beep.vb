@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module Beep
+Public Module Beep
 
     Sub BeepFreq()
 
@@ -65,7 +65,7 @@ Module Beep
 
     End Sub
 
-    Sub Beep(ByVal freq As Integer, ByVal s As Double)
+    Public Sub Beep(ByVal freq As Integer, ByVal s As Double)
 
         If (freq <= 36 Or freq >= 32768) Then
             Wln("Invalid value for beep frequency.", "neutralText")

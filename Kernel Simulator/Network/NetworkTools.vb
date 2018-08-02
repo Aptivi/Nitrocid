@@ -18,11 +18,11 @@
 
 Imports System.Net.NetworkInformation
 
-Module NetworkTools
+Public Module NetworkTools
 
     Public adapterNumber As Long
 
-    Sub getProperties()
+    Public Sub getProperties()
 
         Dim proper As IPGlobalProperties = IPGlobalProperties.GetIPGlobalProperties
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces

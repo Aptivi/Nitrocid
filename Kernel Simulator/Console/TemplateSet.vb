@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module TemplateSet
+Public Module TemplateSet
 
     Sub TemplatePrompt()
 
@@ -26,7 +26,7 @@ Module TemplateSet
 
     End Sub
 
-    Friend Sub templateSet(ByVal theme As String)
+    Public Sub templateSet(ByVal theme As String)
 
         If colorTemplates.Contains(theme) = True Then
             If theme = "Default" Then

@@ -19,7 +19,7 @@
 Imports System.Console
 
 'This module is very important to reduce line numbers when there is color.
-Module TextWriterColor
+Public Module TextWriterColor
 
     ''' <summary>
     ''' Outputs the text into the terminal prompt, and sets colors as needed.
@@ -28,7 +28,7 @@ Module TextWriterColor
     ''' <param name="colorType">A type of colors that will be changed. Any of neutralText, input, contError, uncontError, hostName, userName, def, or license.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     ''' <remarks>This is used to reduce number of lines containing "System.Console.ForegroundColor = " and "System.Console.ResetColor()" text.</remarks>
-    Sub W(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
+    Public Sub W(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
 
         On Error GoTo bug
         If (colorType = "neutralText") Then
@@ -70,7 +70,7 @@ bug:
     ''' <param name="colorType">A type of colors that will be changed.  Any of neutralText, input, contError, uncontError, hostName, userName, def, or license.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     ''' <remarks>This is used to reduce number of lines containing "System.Console.ForegroundColor = " and "System.Console.ResetColor()" text.</remarks>
-    Sub Wln(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
+    Public Sub Wln(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
 
         On Error GoTo bug
         If (colorType = "neutralText") Then

@@ -16,9 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module sciCalc
+Public Module sciCalc
 
-    Sub expressionCalculate(ByVal sciMode As Boolean, ByVal ParamArray exps() As Object)
+    Public Sub expressionCalculate(ByVal sciMode As Boolean, ByVal ParamArray exps() As Object)
 
         Try
             If (sciMode = False) Then

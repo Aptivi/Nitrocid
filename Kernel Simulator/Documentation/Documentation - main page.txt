@@ -5,13 +5,13 @@ NOTE: This kernel simulator will continue to be developed, even if we made the r
 INFO: This kernel simulator is not a final planned version of Kernel, since it was minimal.
 	  It can only be Console at the moment, while we are developing a GUI for this simulator.
 
-Kernel Simulator lets you simulate a very early access for our future Kernel. It provides the built-in hardware
-detector, log-in manager, and the shell.
+Kernel Simulator lets you simulate a very early access for our future Kernel.
 
 Cannot log-in to Kernel Simulator on "root" account? The password is the backwards of "root"
 
 |---------------+--> History <--+---------------|
 
+8/2/2018 - 0.0.4.10: Fused "sysinfo" with "lsdrivers", Improved Help definition (used dictionary for preparation for modding), added "lscomp" which can list all online and offline computers by names only, Added error handler for "lsnet" and "lsnettree", fixed grammatical mistakes in "lsnet" and "lsnettree", added mods (commands not implemented yet - <modname>.m), added screensavers, changed the behavior of showing MOTD, fixed bug where instance checking after reboot of the kernel would say that it has more than one instance and should close, and more.
 7/21/2018 - 0.0.4.9: Better Error Handling for "unitconv" command, Added temporary aliases (not final because there is no "showaliases" command), fix some bugs, added time zones ("showtdzone", and show current time zone in "showtd"), Added "alias", "chmal", and "showmal", Made MOTD after login customizable, Allowed special characters on passwords to ensure security, Made Kernel Simulator single-instance to avoid interferences, and more.
 7/17/2018 - 0.0.4.7: Better Error Handling for "ping" command, Fixed "unitconv" usage message
 7/16/2018 - 0.0.4.6: Removed extraneous "fed" that stands as the removed command in 0.0.4.5, Preparation for 0.0.5's custom substitutions

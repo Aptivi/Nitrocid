@@ -16,13 +16,13 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module Groups
+Public Module Groups
 
     'Variables
     Public adminList As New Dictionary(Of String, Boolean)()         'Users that are allowed to have administrative access.
     Public disabledList As New Dictionary(Of String, Boolean)()      'Users that are unable to login
 
-    Sub permission(ByVal type As String, ByVal username As String, ByVal mode As String, Optional ByVal quiet As Boolean = False)
+    Public Sub permission(ByVal type As String, ByVal username As String, ByVal mode As String, Optional ByVal quiet As Boolean = False)
 
         'Variables
         Dim DoneFlag As Boolean = False
@@ -108,7 +108,7 @@ Module Groups
 
     End Sub
 
-    Sub permissionEditForNewUser(ByVal oldName As String, ByVal username As String)
+    Public Sub permissionEditForNewUser(ByVal oldName As String, ByVal username As String)
 
         'Edit username (continuation for changeName() sub)
         Try

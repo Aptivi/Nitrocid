@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module HardwareProbe
+Public Module HardwareProbe
 
     'These are used to check to see if probing specific hardware is done.
     Private CPUDone As Boolean = False
@@ -26,7 +26,7 @@ Module HardwareProbe
     Private BIOSDone As Boolean = False
 
     'TODO: Re-write in Beta
-    Sub ProbeHW(Optional ByVal QuietHWProbe As Boolean = False, Optional ByVal KernelUser As Char = CChar("U"))
+    Public Sub ProbeHW(Optional ByVal QuietHWProbe As Boolean = False, Optional ByVal KernelUser As Char = CChar("U"))
 
         Wdbg("QuietHWProbe = {0}, KernelUser = {1}, ProbeFlag = {2}.", True, QuietHWProbe, KernelUser, ProbeFlag)
         If (QuietHWProbe = False) Then
@@ -138,7 +138,7 @@ Module HardwareProbe
 
     End Sub
 
-    Sub ListDrivers()
+    Public Sub ListDrivers()
 
         Wln("CPU: {0} {1}MHz", "neutralText", Cpuname, Cpuspeed)
         Wln("RAM: Used slots (by names): {0}", "neutralText", slotsUsedName)
@@ -153,7 +153,7 @@ Module HardwareProbe
 
     'TODO: Re-organize parsers as one sub.
 
-    Sub ProbeGPU(Optional ByVal KernelMode As Boolean = True, Optional ByVal QuietMode As Boolean = False)
+    Public Sub ProbeGPU(Optional ByVal KernelMode As Boolean = True, Optional ByVal QuietMode As Boolean = False)
 
         Try
             If ProbeFlag = True And GPUProbeFlag = True Then
@@ -182,7 +182,7 @@ Module HardwareProbe
 
     End Sub
 
-    Sub Hddinfo(Optional ByVal QuietMode As Boolean = False, Optional ByVal KernelMode As Boolean = True)
+    Public Sub Hddinfo(Optional ByVal QuietMode As Boolean = False, Optional ByVal KernelMode As Boolean = True)
         Try
             HDDDone = True
             Dim HDDSet As Object                                                            'Sets of hard drive
@@ -241,7 +241,7 @@ Module HardwareProbe
 
     End Sub
 
-    Sub Cpuinfo()
+    Public Sub Cpuinfo()
         Try
             CPUDone = True
             Dim CPUSet As Object                                                            'Sets of CPU
@@ -261,7 +261,7 @@ Module HardwareProbe
         End Try
     End Sub
 
-    Sub SysMemory(Optional ByVal QuietMode As Boolean = False)
+    Public Sub SysMemory(Optional ByVal QuietMode As Boolean = False)
         Try
             RAMDone = True
             Dim oInstance As Object
@@ -314,7 +314,7 @@ Module HardwareProbe
         End Try
     End Sub
 
-    Sub BiosInformation()
+    Public Sub BiosInformation()
         Try
             BIOSDone = True
             Dim BiosInfoSpec As Object

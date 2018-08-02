@@ -16,34 +16,21 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module HelpSystem
+Public Module HelpSystem
 
-    Sub ShowHelp(Optional ByVal command As String = "")
+    Public Sub ShowHelp(Optional ByVal command As String = "")
 
         If (command = "") Then
 
             'TODO: Color the help system. (0.0.5)
             'TODO: Modification Parser for mods with commands (Help, Commands, and everything).
             If (simHelp = False) Then
-                'It is messy. It will actually be converted to dictionary in 0.0.5.
-                Wln("- adduser: {0}" + vbNewLine + "- alias: {42}" + "- annoying-sound (Alias: beep): {1}" + vbNewLine + "- arginj: {2}" + vbNewLine + "- calc: {3}" + vbNewLine + _
-                    "- cdir (Alias: currentdir): {4}" + vbNewLine + "- changedir (Aliases: chdir, cd): {5}" + vbNewLine + "- chmal: {43}" + vbNewLine + "- chhostname: {6}" + vbNewLine + _
-                    "- chmotd: {7}" + vbNewLine + "- choice: {8}" + vbNewLine + "- chpwd: {9}" + vbNewLine + "- chusrname: {10}" + vbNewLine + "- cls: {11}" + vbNewLine + _
-                    "- debuglog: {12}" + vbNewLine + "- disco: {13}" + vbNewLine + "- echo: {14}" + vbNewLine + "- help: {15}" + vbNewLine + "- hwprobe: {16}" + vbNewLine + _
-                    "- list (Alias: ls): {17}" + vbNewLine + "- logout: {18}" + vbNewLine + "- lsdrivers: {19}" + vbNewLine + "- lsnet: {20}" + vbNewLine + _
-                    "- lsnettree: {21}" + vbNewLine + "- md (Alias: mkdir): {22}" + vbNewLine + "- netinfo: {23}" + vbNewLine + "- panicsim: {24}" + vbNewLine + _
-                    "- perm: {25}" + vbNewLine + "- ping: {26}" + vbNewLine + "- read: {27}" + vbNewLine + "- reboot: {28}" + vbNewLine + "- reloadconfig: {29}" + vbNewLine + _
-                    "- rd (Alias: rmdir): {30}" + vbNewLine + "- rmuser: {31}" + vbNewLine + "- scical: {32}" + vbNewLine + "- setcolors: {33}" + vbNewLine + _
-                    "- setthemes: {34}" + vbNewLine + "- showmotd: {35}" + vbNewLine + "- showmal: {44}" + vbNewLine + "- showtd: {36}" + vbNewLine + "- showtdzone: {37}" + vbNewLine + "- shutdown: {38}" + vbNewLine + _
-                    "- sysinfo: {39}" + vbNewLine + "- unitconv: {40}" + vbNewLine + "- version: {41}" + vbNewLine + vbNewLine + _
-                    "* You can use multiple commands at the same time using the colon between commands." + vbNewLine + _
-                    "* Pre-defined aliases will be removed in 0.0.5." + vbNewLine + _
-                    "* Aliases will be shown in ""showaliases"" on 0.0.5.", "neutralText", _
-                    adduserCmdDesc, annoyingSoundCmdDesc, argInjCmdDesc, calcCmdDesc, currentDirCmdDesc, changeDirCmdDesc, chHostNameCmdDesc, chMotdCmdDesc, _
-                    choiceCmdDesc, chPwdCmdDesc, chUsrNameCmdDesc, clsCmdDesc, debugLogCmdDesc, discoCmdDesc, echoCmdDesc, helpCmdDesc, hwProbeCmdDesc, listCmdDesc, _
-                    logoutCmdDesc, lsDriversCmdDesc, lsnetCmdDesc, lsNetByTreeCmdDesc, makeDirectoryCmdDesc, netInfoCmdDesc, panicSimCmdDesc, permCmdDesc, pingCmdDesc, _
-                    readCmdDesc, rebootCmdDesc, reloadConfigCmdDesc, rmDirCmdDesc, rmUserCmdDesc, sciCalCmdDesc, setColorsCmdDesc, setThemesCmdDesc, showMotdCmdDesc, _
-                    showTdCmdDesc, showTdZoneCmdDesc, shutdownCmdDesc, sysInfoCmdDesc, unitConvCmdDesc, versionCmdDesc, aliasCmdDesc, chMalCmdDesc, showMalCmdDesc)
+                For Each cmd As String In definitions.Keys
+                    W("- {0}: ", "neutralText", cmd) : W("{0}", "neutralText", definitions(cmd)) : Console.WriteLine()
+                Next
+                Wln("* You can use multiple commands using the colon between commands." + vbNewLine + _
+                    "* Pre-defined aliases will be removed in 0.0.4.11." + vbNewLine + _
+                    "* Aliases will be shown in ""showaliases"" on 0.0.5.", "neutralText")
             Else
                 Wln(String.Join(", ", availableCommands), "neutralText")
             End If
@@ -132,9 +119,6 @@ Module HelpSystem
             If (command = "ls" Or command = "list") Then
                 Wln("Usage: ls/list [oneDirectory]" + vbNewLine + _
                     "       ls/list: to get current directory.", "neutralText")
-            ElseIf (command = "lsdrivers") Then
-                Wln("Usage: lsdrivers: Lists probed drivers." + vbNewLine + _
-                    "       Friends of lsdrivers: sysinfo, version", "neutralText")
             ElseIf (command = "lsnet") Then
                 Wln("Usage: lsnet: Lists network information, as well as every computer connected to a network." + vbNewLine + _
                     "       Friends of lsnet: lsnettree", "neutralText")
@@ -142,6 +126,15 @@ Module HelpSystem
                 Wln("Usage: lsnettree: Lists network information, as well as every computer connected to a network, in a tree form." + vbNewLine + _
                     "       Friends of lsnettree: lsnet", "neutralText")
             End If
+
+        ElseIf (command = "loadsaver") Then
+
+            Wln("Usage: loadsaver <modNameSS.m>", "neutralText")
+
+        ElseIf (command = "lockscreen") Then
+
+            Wln("Usage: lockscreen: Locks your screen with the password." + vbNewLine + _
+                "       Friends of lockscreen: savescreen", "neutralText")
 
         ElseIf (command = "logout") Then
 
@@ -195,6 +188,11 @@ Module HelpSystem
             Wln("Usage: rmuser <Username>" + vbNewLine + _
                 "       rmuser: to get prompted about removing usernames.", "neutralText")
 
+        ElseIf (command = "savescreen") Then
+
+            Wln("Usage: savescreen: shows you a selected screensaver, while protecting your screen from burn outs." + vbNewLine + _
+                "       Friends of savescreen: lockscreen", "neutralText")
+
         ElseIf (command = "scical") Then
 
             Wln("Usage: scical <expression1|pi|e> <+|-|*|/|%> <expression2|pi|e> ..." + vbNewLine + _
@@ -205,6 +203,10 @@ Module HelpSystem
             Wln("Usage: setcolors <inputColor/def> <licenseColor/def> <contKernelErrorColor/def> <uncontKernelErrorColor/def> <hostNameShellColor/def> <userNameShellColor/def> <backgroundColor/def> <neutralTextColor/def>" + vbNewLine + _
                 "       setcolors: to get prompted about setting colors. (deprecated)" + vbNewLine + _
                 "       Friends of setcolors: setthemes", "neutralText")
+
+        ElseIf (command = "setsaver") Then
+
+            Wln("Usage: setsaver <modNameSS.m>", "neutralText")
 
         ElseIf (command = "setthemes") Then
 
@@ -232,7 +234,7 @@ Module HelpSystem
         ElseIf (command = "sysinfo") Then
 
             Wln("Usage: sysinfo: Shows system information and versions." + vbNewLine + _
-                "       Friends of sysinfo: lsdrivers, version", "neutralText")
+                "       Friends of sysinfo: version", "neutralText")
 
         ElseIf (command = "unitconv") Then
 
@@ -245,7 +247,7 @@ Module HelpSystem
         ElseIf (command = "version") Then
 
             Wln("Usage: version: Shows kernel version." + vbNewLine + _
-                "       Friends of version: lsdrivers, sysinfo", "neutralText")
+                "       Friends of version: sysinfo", "neutralText")
 
         End If
 

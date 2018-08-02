@@ -16,9 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module stdCalc
+Public Module stdCalc
 
-    Sub expressionCalculate(ByVal ParamArray exps() As String)
+    Public Sub expressionCalculate(ByVal ParamArray exps() As String)
 
         Try
             If (exps.Count >= 3) Then

@@ -16,9 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module LoadBackground
+Public Module LoadBackground
 
-    Sub Load()
+    Public Sub Load()
 
         System.Console.BackgroundColor = backgroundColor
         System.Console.Clear()

@@ -22,15 +22,44 @@ Imports System.Net.NetworkInformation.NetworkInterface
 Imports System.DirectoryServices
 Imports System.Net.Sockets.AddressFamily
 
-Module NetworkList
+Public Module NetworkList
 
     'Variables
     Public Computers As String
 
-    Sub ListHostsInNetwork()
+    Public Sub ListOnlineAndOfflineHosts()
 
         'Check if main network is available
-        If (My.Computer.Network.IsAvailable = True) Then
+        If My.Computer.Network.IsAvailable Then
+
+            'Variables
+            Dim ComputerNames() = Computers.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+
+            'Display information
+            Wln("net: Your computer name on network is {0}" + vbNewLine + _
+                "net: Your host name is {1}" + vbNewLine + _
+                "net: It appears that computers are in the domain or workgroup:", "neutralText", My.Computer.Name, HName)
+
+            'List online and offline computers
+            For Each cmp In ComputerNames
+                Wln("net: {0}", "neutralText", cmp)
+            Next
+
+        Else
+
+            Wln("net: WiFi or Ethernet is disconnected.", "neutralText")
+
+        End If
+
+    End Sub
+
+    Public Sub ListHostsInNetwork()
+
+        'Error Handler
+        On Error Resume Next
+
+        'Check if main network is available
+        If My.Computer.Network.IsAvailable Then
 
             'Variables
             Dim HostNameFromDNS As String
@@ -40,7 +69,7 @@ Module NetworkList
             'Display infromation
             Wln("net: Your computer name on network is {0}" + vbNewLine + _
                 "net: Your host name is {1}" + vbNewLine + _
-                "net: It appears that your computers is connected below:", "neutralText", My.Computer.Name, HName)
+                "net: It appears that computers are connected below:", "neutralText", My.Computer.Name, HName)
 
             'List IP addresses of computers
             For Each cmp In ComputerNames
@@ -82,7 +111,7 @@ Module NetworkList
 
     End Sub
 
-    Sub GetNetworkComputers()
+    Public Sub GetNetworkComputers()
 
         'Error Handler
         On Error Resume Next
@@ -114,10 +143,13 @@ Module NetworkList
 
     End Sub
 
-    Sub ListHostsInTree()
+    Public Sub ListHostsInTree()
+
+        'Error Handler
+        On Error Resume Next
 
         'Check if main network is available
-        If My.Computer.Network.IsAvailable = True Then
+        If My.Computer.Network.IsAvailable Then
 
             'Variables
             Dim HostNameFromDNS As String = Dns.GetHostName()

@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module Login
+Public Module Login
 
     'Variables
     Public userword As New Dictionary(Of String, String)()      'List of usernames and passwords
@@ -24,6 +24,9 @@ Module Login
     Public answerpass As String                                 'Input of password
     Public password As String                                   'Password for user we're logging in to
     Public signedinusrnm As String                              'Username that is signed in
+    Private showMOTDOnceFlag As Boolean = True                  'Show MOTD every LoginPrompt() session
+
+    'TODO: Re-write in the final release of 0.0.5
 
     Sub LoginPrompt()
 
@@ -31,11 +34,12 @@ Module Login
         If (clsOnLogin = True) Then
             System.Console.Clear()
         End If
-        If (showMOTD = False) Then
+        If (showMOTD = False) Or (showMOTDOnceFlag = False) Then
             W(vbNewLine + "Username: ", "input")
-        Else
+        ElseIf (showMOTDOnceFlag = True And showMOTD = True) Then
             W(vbNewLine + MOTDMessage + vbNewLine + vbNewLine + "Username: ", "input")
         End If
+        showMOTDOnceFlag = False
         answeruser = System.Console.ReadLine()
         If InStr(CStr(answeruser), " ") > 0 Then
             Wln("Spaces are not allowed.", "neutralText")
@@ -68,7 +72,11 @@ Module Login
                     If InStr(CStr(answerpass), " ") > 0 Then
                         Wln("Spaces are not allowed.", "neutralText")
                         If (maintenance = False) Then
-                            LoginPrompt()
+                            If (LockMode = True) Then
+                                showPasswordPrompt(usernamerequested)
+                            Else
+                                LoginPrompt()
+                            End If
                         Else
                             showPasswordPrompt(usernamerequested)
                         End If
@@ -77,9 +85,13 @@ Module Login
                             Wdbg("ASSERT(Parse({0}, {1})) = True | ASSERT({1} = {2}) = True", True, usernamerequested, password, answerpass)
                             signIn(usernamerequested)
                         Else
-                            Wln(vbNewLine + "Wrong password.", "neutralText")
+                            Wln("Wrong password.", "neutralText")
                             If (maintenance = False) Then
-                                LoginPrompt()
+                                If (LockMode = True) Then
+                                    showPasswordPrompt(usernamerequested)
+                                Else
+                                    LoginPrompt()
+                                End If
                             Else
                                 showPasswordPrompt(usernamerequested)
                             End If
@@ -95,20 +107,24 @@ Module Login
             End If
         Next
         If DoneFlag = False Then
-            Wln(vbNewLine + "Wrong username.", "neutralText")
+            Wln("Wrong username.", "neutralText")
             LoginPrompt()
         End If
 
     End Sub
 
-    Sub signIn(ByVal signedInUser As String)
+    Public Sub signIn(ByVal signedInUser As String)
 
         'Initialize shell, and sign in to user.
-        If (MAL.Contains("<user>")) Then
-            MAL = MAL.Replace("<user>", signedInUser)
+        If (LockMode = False) Then
+            If (MAL.Contains("<user>")) Then
+                MAL = MAL.Replace("<user>", signedInUser)
+            End If
+            Wln(vbNewLine + MAL, "neutralText")
         End If
-        Wln(vbNewLine + MAL, "neutralText")
+        If LockMode = True Then LockMode = False
         signedinusrnm = signedInUser
+        showMOTDOnceFlag = True
         Shell.initializeShell()
 
     End Sub

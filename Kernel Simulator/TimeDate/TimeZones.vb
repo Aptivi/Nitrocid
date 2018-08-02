@@ -19,14 +19,14 @@
 Imports Microsoft.Win32
 Imports System.TimeZoneInfo
 
-Module TimeZones
+Public Module TimeZones
 
     'Time Zones in an array
     Private zoneReg As RegistryKey = Registry.LocalMachine.OpenSubKey("Software\Microsoft\Windows NT\CurrentVersion\Time Zones")
     Private zones As String() = zoneReg.GetSubKeyNames()
     Public zoneTimes As New Dictionary(Of String, DateTime)
 
-    Sub initTimesInZones()
+    Public Sub initTimesInZones()
 
         'Run a cleanup in the list
         zoneTimes.Clear()
@@ -38,7 +38,7 @@ Module TimeZones
 
     End Sub
 
-    Sub showTimesInZones(Optional ByVal zone As String = "all")
+    Public Sub showTimesInZones(Optional ByVal zone As String = "all")
 
         If (zones.Contains(zone)) Then
             Wln("- Time of {0}: {1}", "neutralText", zone, zoneTimes(zone).ToString())

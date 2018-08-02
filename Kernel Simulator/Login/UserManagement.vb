@@ -18,7 +18,7 @@
 
 'We have separated below subs from Login.vb for easy management of user tools.
 
-Module UserManagement
+Public Module UserManagement
 
     'TODO: Merge initializeMainUsers to adduser
     Sub initializeMainUsers()
@@ -47,7 +47,7 @@ Module UserManagement
 
     End Sub
 
-    Sub initializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")
+    Public Sub initializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")
 
         'Do not confuse with initializeUsers. It initializes user.
         Try
@@ -67,7 +67,7 @@ Module UserManagement
 
     End Sub
 
-    Sub adduser(ByVal newUser As String, Optional ByVal newPassword As String = "")
+    Public Sub adduser(ByVal newUser As String, Optional ByVal newPassword As String = "")
 
         'Adds users
         If (Quiet = False) Then
@@ -81,7 +81,7 @@ Module UserManagement
 
     End Sub
 
-    Sub resetUsers()
+    Public Sub resetUsers()
 
         'Resets users and permissions
         adminList.Clear()
@@ -233,7 +233,7 @@ Module UserManagement
     End Sub
 
     'This sub is an accomplice of in-shell command arguments.
-    Friend Sub removeUserFromDatabase(ByVal user As String)
+    Public Sub removeUserFromDatabase(ByVal user As String)
 
         Try
             Dim DoneFlag As String = "No"

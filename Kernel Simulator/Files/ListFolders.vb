@@ -16,11 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module ListFolders
+Public Module ListFolders
 
     Public AvailableDirs As New List(Of String)
 
-    Sub list(ByVal folder As String)
+    Public Sub list(ByVal folder As String)
 
         If (folder = "bin" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "bin") Then
 

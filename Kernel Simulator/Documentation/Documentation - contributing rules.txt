@@ -54,13 +54,13 @@ If some of the ideas disappeared, then it is either done or cancelled.
 1. Interactive host system file manager (Planned in the bootable version)
 2. GUI Command Prompt
 3. "uiprompt" real command-line argument launches GUI command prompt
-4. User-made modifications and commands in (<modname>.m)
-5. Finish debugging logging to cover the whole application (Delayed to 0.0.5)
+4. Implementation for user-made commands in (<modname>.m) (0.0.5)
+5. Finish debugging logging to cover the whole application (Cancelled, reason: ExecuteCommand(<cmd>) has a built-in error handler with the debugger on exception)
 6. Move every single documentation to Wiki in repository (Planned in 0.0.6)
 7. Languages (Planned in 0.0.5 or 0.0.6)
 8. Custom aliases for commands (Perm. in 0.0.6)
 9. Remove all prompts (0.0.5)
-10. Remove pre-defined aliases (0.0.5)
+10. Remove pre-defined aliases (0.0.4.11)
 11. More placeholders for MAL and MOTD (0.0.5.5)
 12. Un-aliasable list (0.0.5.5)
 

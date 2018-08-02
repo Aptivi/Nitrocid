@@ -16,11 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module FileContents
+Public Module FileContents
 
     Public AvailableFiles() As String = {"loader", "hdpack", "libuesh.elb", "kernel", "login", "uesh"}
 
-    Sub readContents(ByVal filename As String)
+    Public Sub readContents(ByVal filename As String)
 
         If (filename = "loader") Then
 
@@ -32,7 +32,7 @@ Module FileContents
 
         ElseIf (filename = "libuesh.elb") Then
 
-            Wln("[startelb]=ueshlib-<UESH Library Version 0.0.3>-", "neutralText")
+            Wln("[startelb]=ueshlib-<UESH Library Version {0}>-", "neutralText", KernelVersion)
 
         ElseIf (filename = "kernel") Then
 

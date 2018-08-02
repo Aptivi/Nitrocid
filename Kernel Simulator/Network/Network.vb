@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module Network
+Public Module Network
 
     Sub CheckNetworkKernel()
 
@@ -63,7 +63,7 @@ Module Network
 
     End Sub
 
-    Sub PingTarget(ByVal Address As String, Optional ByVal repeatTimes As Int16 = 3)
+    Public Sub PingTarget(ByVal Address As String, Optional ByVal repeatTimes As Int16 = 3)
 
         Dim i As Int16 = 1
         Do

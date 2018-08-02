@@ -18,9 +18,9 @@
 
 Imports System.IO
 
-Module Config
+Public Module Config
 
-    Sub createConfig(ByVal CmdArg As Boolean)
+    Public Sub createConfig(ByVal CmdArg As Boolean)
         Try
             Dim writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini")
             writer.WriteLine("Kernel Version = {0}" + vbNewLine + _
@@ -70,7 +70,7 @@ Module Config
         End Try
     End Sub
 
-    Sub checkForUpgrade()
+    Public Sub checkForUpgrade()
         Try
             Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
             If (lns(0).Contains("Kernel Version = ") And lns(0).Replace("Kernel Version = ", "") <> KernelVersion) Then
@@ -91,7 +91,7 @@ Module Config
         End Try
     End Sub
 
-    Sub updateConfig()
+    Public Sub updateConfig()
 
         Dim cfghash As New HashSet(Of String)(File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini"))
         If Not (cfghash(22).Contains("Show Time/Date on Corner =")) Then
@@ -121,7 +121,7 @@ Module Config
 
     End Sub
 
-    Sub readConfig()
+    Public Sub readConfig()
         Try
             Dim line As String = configReader.ReadLine
             Do While line <> ""

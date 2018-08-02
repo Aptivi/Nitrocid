@@ -16,12 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module CurrentDir
+Public Module CurrentDir
 
     'Variables
     Public currDir As String = "/"
 
-    Sub setCurrDir(ByVal dir As String)
+    Public Sub setCurrDir(ByVal dir As String)
 
         If (AvailableDirs.Contains(dir)) Then
             currDir = "/" + dir

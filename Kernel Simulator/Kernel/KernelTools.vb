@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module KernelTools
+Public Module KernelTools
 
     ''' <summary>
     ''' Indicates that there's something wrong with the kernel.
@@ -27,7 +27,7 @@ Module KernelTools
     ''' <param name="Description">Explanation of what happened when it errored.</param>
     ''' <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
     ''' <remarks></remarks>
-    Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal ParamArray Variables() As Object)
+    Public Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal ParamArray Variables() As Object)
         Try
             'Check error types and its capabilities
             If (ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C") Then
