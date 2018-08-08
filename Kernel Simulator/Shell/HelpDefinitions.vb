@@ -34,7 +34,7 @@ Public Module HelpDefinitions
                                                                   {"choice", "Makes user choices"}, _
                                                                   {"cls", "Clears the screen"}, _
                                                                   {"debuglog", "Shows debug logs (Admins Only)"}, _
-                                                                  {"disco", "A disco effect! (press ENTER to quit)"}, _
+                                                                  {"disco", "A disco effect! (press ENTER to quit - Disco command will be removed and replaced with a screensaver in 0.0.4.12)"}, _
                                                                   {"echo", "Writes a text into a console"}, _
                                                                   {"help", "Help page"}, _
                                                                   {"hwprobe", "Probe hardware manually (One time in 'nohwprobe' kernel)"}, _

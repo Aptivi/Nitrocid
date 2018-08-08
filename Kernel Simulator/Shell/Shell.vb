@@ -18,14 +18,16 @@
 
 Public Module Shell
 
+    'TODO: In 0.0.5, prepare for mod commands
     'Available Commands (availableCommands())
     'Admin-Only commands (strictCmds())
+    Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
-    Public availableCommands() As String = {"help", "logout", "version", "currentdir", "list", "changedir", "cdir", "ls", "chdir", "cd", "read", "echo", "choice", _
-                                            "shutdown", "reboot", "disco", "beep", "annoying-sound", "adduser", "chmotd", "chhostname", "showmotd", "lscomp", _
-                                            "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", _
-                                            "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical", "unitconv", "md", "mkdir", "rd", "rmdir", "debuglog", _
-                                            "reloadconfig", "showtdzone", "alias", "chmal", "showmal", "savescreen", "lockscreen", "setsaver", "loadsaver"}
+    Public availableCommands() As String = {"help", "logout", "version", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot", "disco", "beep", _
+                                            "adduser", "chmotd", "chhostname", "showmotd", "lscomp", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", _
+                                            "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", _
+                                            "scical", "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "showmal", "savescreen", _
+                                            "lockscreen", "setsaver", "loadsaver"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", "reloadconfig", "alias", _
                                      "chmal", "setsaver", "loadsaver"}
 
@@ -40,7 +42,7 @@ Public Module Shell
         getLine(True)
         commandPromptWrite()
         DisposeExit.DisposeAll()
-        System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+        If (ColoredShell = True) Then System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
         strcommand = System.Console.ReadLine()
         If (aliases.Count - 1 <> -1) Then
             For Each a As String In aliases.Keys

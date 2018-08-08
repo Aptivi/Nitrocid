@@ -11,6 +11,7 @@ Cannot log-in to Kernel Simulator on "root" account? The password is the backwar
 
 |---------------+--> History <--+---------------|
 
+8/3/2018 - 0.0.4.11: Removed pre-defined aliases, Fixed known bug that is mentioned.
 8/2/2018 - 0.0.4.10: Fused "sysinfo" with "lsdrivers", Improved Help definition (used dictionary for preparation for modding), added "lscomp" which can list all online and offline computers by names only, Added error handler for "lsnet" and "lsnettree", fixed grammatical mistakes in "lsnet" and "lsnettree", added mods (commands not implemented yet - <modname>.m), added screensavers, changed the behavior of showing MOTD, fixed bug where instance checking after reboot of the kernel would say that it has more than one instance and should close, and more.
 7/21/2018 - 0.0.4.9: Better Error Handling for "unitconv" command, Added temporary aliases (not final because there is no "showaliases" command), fix some bugs, added time zones ("showtdzone", and show current time zone in "showtd"), Added "alias", "chmal", and "showmal", Made MOTD after login customizable, Allowed special characters on passwords to ensure security, Made Kernel Simulator single-instance to avoid interferences, and more.
 7/17/2018 - 0.0.4.7: Better Error Handling for "ping" command, Fixed "unitconv" usage message

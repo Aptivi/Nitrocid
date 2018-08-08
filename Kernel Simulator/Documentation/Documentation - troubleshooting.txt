@@ -2,9 +2,6 @@
 
 - Troubleshooting
 
-Q: Why can't I use arguments?
-A: Because the argument system is not complete.
-
 Q: Why can't I use big frequencies on beep command?
 A: You can only hear from 20Hz to 20,000Hz, while the beep has 37Hz to 32,767 Hz, which the maximum frequency is
    higher than the human can hear. If you exceeded 20,000Hz, your ear-drums might damage, or explode, because it
@@ -22,4 +19,4 @@ A: It works only for PCs with the motherboard speaker installed on it. Your PC m
 
 - Known bugs
 
-1. When setting "Colored Shell" to False, you will see that input color is white instead of gray.
+(No known bugs in the current version)

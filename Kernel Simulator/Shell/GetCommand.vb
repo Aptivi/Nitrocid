@@ -19,6 +19,7 @@
 Imports System.ComponentModel
 Imports System.IO
 
+'TODO: Make Disco Effect a screensaver
 Public Module GetCommand
 
     'Variables
@@ -67,13 +68,6 @@ Public Module GetCommand
 
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
 
-        'NOTE: If it reads: 
-        '
-        '   If (requestedCommand.Substring(0, index) = <cmd>) Then
-        '       Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
-        '   End If
-        '
-        'then the pre-defined aliases will be removed in 0.0.4.11
         Dim index As Integer = requestedCommand.IndexOf(" ")
         If (index = -1) Then index = requestedCommand.Length
         Dim words = requestedCommand.Split({" "c})
@@ -124,19 +118,13 @@ Public Module GetCommand
                     HelpSystem.ShowHelp("alias")
                 End If
 
-            ElseIf (requestedCommand.Substring(0, index) = "annoying-sound" Or requestedCommand.Substring(0, index) = "beep") Then
+            ElseIf (requestedCommand.Substring(0, index) = "beep") Then
 
                 'Beep system initialization
-                If (requestedCommand = "annoying-sound" Or requestedCommand = "beep") Then
-                    If (requestedCommand = "annoying-sound") Then
-                        Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
-                    End If
+                If (requestedCommand = "beep") Then
                     Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
                     BeepFreq()
                 Else
-                    If (words(0) = "annoying-sound") Then
-                        Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
-                    End If
                     If (args.Count - 1 = 1) Then
                         Beep.Beep(CInt(args(0)), CDbl(args(1)))
                     Else
@@ -173,19 +161,13 @@ Public Module GetCommand
                     HelpSystem.ShowHelp("calc")
                 End If
 
-            ElseIf (requestedCommand = "cdir" Or requestedCommand = "currentdir") Then
+            ElseIf (requestedCommand = "cdir") Then
 
                 'Current directory
-                If (requestedCommand = "currentdir") Then
-                    Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
-                End If
                 Wln("Current directory: {0}", "neutralText", currDir)
 
-            ElseIf (requestedCommand.Substring(0, index) = "cd" Or requestedCommand.Substring(0, index) = "chdir" Or requestedCommand.Substring(0, index) = "changedir") Then
+            ElseIf (requestedCommand.Substring(0, index) = "chdir") Then
 
-                If (requestedCommand.Substring(0, index) = "cd" Or requestedCommand.Substring(0, index) = "chdir") Then
-                    Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
-                End If
                 If (args.Count - 1 = 0) Then
                     If (AvailableDirs.Contains(args(0)) And currDir = "/") Then
                         CurrentDir.setCurrDir(args(0))
@@ -419,13 +401,10 @@ Public Module GetCommand
                 Screensaver.ShowSavers(defSaverName)
                 showPasswordPrompt(signedinusrnm)
 
-            ElseIf (requestedCommand.Substring(0, index) = "ls" Or requestedCommand.Substring(0, index) = "list") Then
+            ElseIf (requestedCommand.Substring(0, index) = "list") Then
 
                 'Lists folders and files
-                If (requestedCommand.Substring(0, index) = "ls") Then
-                    Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
-                End If
-                If (requestedCommand = "ls" Or requestedCommand = "list") Then
+                If (requestedCommand = "list") Then
                     If (currDir = "/") Then
                         Wln(String.Join(", ", AvailableDirs), "neutralText")
                     Else
@@ -467,19 +446,16 @@ Public Module GetCommand
 
                 NetworkTools.getProperties()
 
-            ElseIf (requestedCommand.Substring(0, index) = "mkdir" Or requestedCommand.Substring(0, index) = "md") Then
+            ElseIf (requestedCommand.Substring(0, index) = "md") Then
 
-                If (requestedCommand.Substring(0, index) = "mkdir") Then
-                    Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
-                End If
-                If (requestedCommand <> "mkdir" Or requestedCommand <> "md") Then
+                If (requestedCommand <> "md") Then
                     If (args.Count - 1 = 0) Then
                         AvailableDirs.Add(args(0))
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
                 Else
-                    HelpSystem.ShowHelp("mkdir")
+                    HelpSystem.ShowHelp("md")
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "panicsim") Then
@@ -592,19 +568,16 @@ Public Module GetCommand
                 System.Console.Clear()
                 Main()
 
-            ElseIf (requestedCommand.Substring(0, index) = "rmdir" Or requestedCommand.Substring(0, index) = "rd") Then
+            ElseIf (requestedCommand.Substring(0, index) = "rd") Then
 
-                If (requestedCommand.Substring(0, index) = "rmdir") Then
-                    Wln("Pre-defined aliases will be removed and replaced with custom-usermade substitutions.", "neutralText")
-                End If
-                If (requestedCommand <> "rmdir" Or requestedCommand <> "rd") Then
+                If (requestedCommand <> "rd") Then
                     If (args.Count - 1 = 0) Then
                         AvailableDirs.Remove(args(0))
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
                 Else
-                    HelpSystem.ShowHelp("rmdir")
+                    HelpSystem.ShowHelp("rd")
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "rmuser") Then
@@ -641,56 +614,64 @@ Public Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "setcolors") Then
 
                 If (requestedCommand = "setcolors") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    Wln("Available Colors: {0}" + vbNewLine + _
-                        "Press ENTER only on questions and defaults will be used.", "neutralText", String.Join(", ", availableColors))
-                    ColorSet.SetColorSteps()
+                    If (ColoredShell = True) Then
+                        Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
+                        Wln("Available Colors: {0}" + vbNewLine + _
+                            "Press ENTER only on questions and defaults will be used.", "neutralText", String.Join(", ", availableColors))
+                        ColorSet.SetColorSteps()
+                    Else
+                        Wln("Colors are not available. Turn on colored shell in the kernel config.", "neutralText")
+                    End If
                 Else
                     If (args.Count - 1 = 7) Then
-                        If (availableColors.Contains(args(0)) And availableColors.Contains(args(1)) And availableColors.Contains(args(2)) And _
-                            availableColors.Contains(args(3)) And availableColors.Contains(args(4)) And availableColors.Contains(args(5)) And _
-                            availableColors.Contains(args(6)) And availableColors.Contains(args(7))) Then
-                            inputColor = CType([Enum].Parse(GetType(ConsoleColor), args(0)), ConsoleColor)
-                            licenseColor = CType([Enum].Parse(GetType(ConsoleColor), args(1)), ConsoleColor)
-                            contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(2)), ConsoleColor)
-                            uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(3)), ConsoleColor)
-                            hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(4)), ConsoleColor)
-                            userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(5)), ConsoleColor)
-                            backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), args(6)), ConsoleColor)
-                            neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), args(7)), ConsoleColor)
-                            LoadBackground.Load()
-                        ElseIf (args.Contains("def")) Then
-                            If (Array.IndexOf(args, "") = 0) Then
-                                args(0) = "White"
+                        If (ColoredShell = True) Then
+                            If (availableColors.Contains(args(0)) And availableColors.Contains(args(1)) And availableColors.Contains(args(2)) And _
+                                availableColors.Contains(args(3)) And availableColors.Contains(args(4)) And availableColors.Contains(args(5)) And _
+                                availableColors.Contains(args(6)) And availableColors.Contains(args(7))) Then
                                 inputColor = CType([Enum].Parse(GetType(ConsoleColor), args(0)), ConsoleColor)
-                            ElseIf (Array.IndexOf(args, "") = 1) Then
-                                args(1) = "White"
                                 licenseColor = CType([Enum].Parse(GetType(ConsoleColor), args(1)), ConsoleColor)
-                            ElseIf (Array.IndexOf(args, "") = 2) Then
-                                args(2) = "Yellow"
                                 contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(2)), ConsoleColor)
-                            ElseIf (Array.IndexOf(args, "") = 3) Then
-                                args(3) = "Red"
                                 uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(3)), ConsoleColor)
-                            ElseIf (Array.IndexOf(args, "") = 4) Then
-                                args(4) = "DarkGreen"
                                 hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(4)), ConsoleColor)
-                            ElseIf (Array.IndexOf(args, "") = 5) Then
-                                args(5) = "Green"
                                 userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(5)), ConsoleColor)
-                            ElseIf (Array.IndexOf(args, "") = 6) Then
-                                args(6) = "Black"
                                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), args(6)), ConsoleColor)
-                                LoadBackground.Load()
-                            ElseIf (Array.IndexOf(args, "") = 7) Then
-                                args(7) = "Gray"
                                 neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), args(7)), ConsoleColor)
+                                LoadBackground.Load()
+                            ElseIf (args.Contains("def")) Then
+                                If (Array.IndexOf(args, "") = 0) Then
+                                    args(0) = "White"
+                                    inputColor = CType([Enum].Parse(GetType(ConsoleColor), args(0)), ConsoleColor)
+                                ElseIf (Array.IndexOf(args, "") = 1) Then
+                                    args(1) = "White"
+                                    licenseColor = CType([Enum].Parse(GetType(ConsoleColor), args(1)), ConsoleColor)
+                                ElseIf (Array.IndexOf(args, "") = 2) Then
+                                    args(2) = "Yellow"
+                                    contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(2)), ConsoleColor)
+                                ElseIf (Array.IndexOf(args, "") = 3) Then
+                                    args(3) = "Red"
+                                    uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(3)), ConsoleColor)
+                                ElseIf (Array.IndexOf(args, "") = 4) Then
+                                    args(4) = "DarkGreen"
+                                    hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(4)), ConsoleColor)
+                                ElseIf (Array.IndexOf(args, "") = 5) Then
+                                    args(5) = "Green"
+                                    userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(5)), ConsoleColor)
+                                ElseIf (Array.IndexOf(args, "") = 6) Then
+                                    args(6) = "Black"
+                                    backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), args(6)), ConsoleColor)
+                                    LoadBackground.Load()
+                                ElseIf (Array.IndexOf(args, "") = 7) Then
+                                    args(7) = "Gray"
+                                    neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), args(7)), ConsoleColor)
+                                End If
+                            ElseIf (args.Contains("RESET")) Then
+                                ResetColors()
+                                Wln("Everything is reset to normal settings.", "neutralText")
+                            Else
+                                Wln("One or more of the colors is invalid.", "neutralText")
                             End If
-                        ElseIf (args.Contains("RESET")) Then
-                            ResetColors()
-                            Wln("Everything is reset to normal settings.", "neutralText")
                         Else
-                            Wln("One or more of the colors is invalid.", "neutralText")
+                            Wln("Colors are not available. Turn on colored shell in the kernel config.", "neutralText")
                         End If
                     Else
                         HelpSystem.ShowHelp(words(0))
@@ -721,11 +702,15 @@ Public Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "setthemes") Then
 
                 If (requestedCommand = "setthemes") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    TemplateSet.TemplatePrompt()
+                    If (ColoredShell = True) Then
+                        Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
+                        TemplateSet.TemplatePrompt()
+                    Else
+                        Wln("Colors are not available. Turn on colored shell in the kernel config.", "neutralText")
+                    End If
                 Else
                     If (args.Count - 1 = 0) Then
-                        TemplateSet.templateSet(args(0))
+                        If (ColoredShell = True) Then TemplateSet.templateSet(args(0)) Else Wln("Colors are not available. Turn on colored shell in the kernel config.", "neutralText")
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If

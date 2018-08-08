@@ -29,7 +29,6 @@ Public Module HelpSystem
                     W("- {0}: ", "neutralText", cmd) : W("{0}", "neutralText", definitions(cmd)) : Console.WriteLine()
                 Next
                 Wln("* You can use multiple commands using the colon between commands." + vbNewLine + _
-                    "* Pre-defined aliases will be removed in 0.0.4.11." + vbNewLine + _
                     "* Aliases will be shown in ""showaliases"" on 0.0.5.", "neutralText")
             Else
                 Wln(String.Join(", ", availableCommands), "neutralText")
@@ -44,10 +43,10 @@ Public Module HelpSystem
 
             Wln("Usage: alias <rem/add> <alias> <cmd>", "neutralText")
 
-        ElseIf (command = "annoying-sound") Or (command = "beep") Then
+        ElseIf (command = "beep") Then
 
-            Wln("Usage: annoying-sound/beep <Frequency:Hz> <Time:Seconds>" + vbNewLine + _
-                "       annoying-sound/beep: to be prompted about beeping. (deprecated)", "neutralText")
+            Wln("Usage: beep <Frequency:Hz> <Time:Seconds>" + vbNewLine + _
+                "       beep: to be prompted about beeping. (deprecated)", "neutralText")
 
         ElseIf (command = "arginj") Then
 
@@ -58,13 +57,13 @@ Public Module HelpSystem
 
             Wln("Usage: calc <expression> ...", "neutralText")
 
-        ElseIf (command = "cdir") Or (command = "currentdir") Then
+        ElseIf (command = "cdir") Then
 
-            Wln("Usage: cdir/currentdir: to get current directory", "neutralText")
+            Wln("Usage: cdir: to get current directory", "neutralText")
 
-        ElseIf (command = "changedir") Or (command = "chdir") Or (command = "cd") Then
+        ElseIf (command = "chdir") Then
 
-            Wln("Usage: chdir/changedir/cd <directory> OR ..", "neutralText")
+            Wln("Usage: chdir <directory> OR ..", "neutralText")
 
         ElseIf (command = "chhostname") Then
 
@@ -114,18 +113,17 @@ Public Module HelpSystem
 
             Wln("Usage: hwprobe: Probes hardware (Only works when the hardware is not probed and hwprobe is not executed).", "neutralText")
 
-        ElseIf (command.Contains("ls") Or command.Contains("list")) Then
+        ElseIf (command = "list") Then
+            Wln("Usage: list [oneDirectory]" + vbNewLine + _
+                "       list: to get current directory.", "neutralText")
 
-            If (command = "ls" Or command = "list") Then
-                Wln("Usage: ls/list [oneDirectory]" + vbNewLine + _
-                    "       ls/list: to get current directory.", "neutralText")
-            ElseIf (command = "lsnet") Then
-                Wln("Usage: lsnet: Lists network information, as well as every computer connected to a network." + vbNewLine + _
-                    "       Friends of lsnet: lsnettree", "neutralText")
-            ElseIf (command = "lsnettree") Then
-                Wln("Usage: lsnettree: Lists network information, as well as every computer connected to a network, in a tree form." + vbNewLine + _
-                    "       Friends of lsnettree: lsnet", "neutralText")
-            End If
+        ElseIf (command = "lsnet") Then
+            Wln("Usage: lsnet: Lists network information, as well as every computer connected to a network." + vbNewLine + _
+                "       Friends of lsnet: lsnettree", "neutralText")
+
+        ElseIf (command = "lsnettree") Then
+            Wln("Usage: lsnettree: Lists network information, as well as every computer connected to a network, in a tree form." + vbNewLine + _
+                "       Friends of lsnettree: lsnet", "neutralText")
 
         ElseIf (command = "loadsaver") Then
 
@@ -141,9 +139,9 @@ Public Module HelpSystem
             Wln("Usage: logout: Logs you out of the user." + vbNewLine + _
                 "       Friends of logout: reboot, shutdown", "neutralText")
 
-        ElseIf (command = "mkdir") Or (command = "md") Then
+        ElseIf (command = "md") Then
 
-            Wln("Usage: md/mkdir <anything>", "neutralText")
+            Wln("Usage: md <anything>", "neutralText")
 
         ElseIf (command = "netinfo") Then
 
@@ -164,90 +162,90 @@ Public Module HelpSystem
             Wln("Usage: ping <Address> [repeatTimes]" + vbNewLine + _
                 "       ping: to get prompted about writing address. (deprecated)", "neutralText")
 
-        ElseIf (command = "rmdir") Or (command = "rd") Then
+        ElseIf (command = "rd") Then
 
-            Wln("Usage: rd/rmdir <directory>", "neutralText")
+            Wln("Usage: rd <directory>", "neutralText")
 
         ElseIf (command = "read") Then
 
-            Wln("Usage: read <file>" + vbNewLine + _
-                "       read: to get prompted about reading file contents. (deprecated)", "neutralText")
+        Wln("Usage: read <file>" + vbNewLine + _
+            "       read: to get prompted about reading file contents. (deprecated)", "neutralText")
 
         ElseIf (command = "reboot") Then
 
-            Wln("Usage: reboot: Restarts your simulated computer." + vbNewLine + _
-                "       Friends of reboot: shutdown, logout", "neutralText")
+        Wln("Usage: reboot: Restarts your simulated computer." + vbNewLine + _
+            "       Friends of reboot: shutdown, logout", "neutralText")
 
         ElseIf (command = "reloadconfig") Then
 
-            Wln("Usage: reloadconfig: Reloads the configuration that is changed by the end-user or by tool." + vbNewLine + _
-                "       Colors doesn't require a restart, but most of the settings require you to restart.", "neutralText")
+        Wln("Usage: reloadconfig: Reloads the configuration that is changed by the end-user or by tool." + vbNewLine + _
+            "       Colors doesn't require a restart, but most of the settings require you to restart.", "neutralText")
 
         ElseIf (command = "rmuser") Then
 
-            Wln("Usage: rmuser <Username>" + vbNewLine + _
-                "       rmuser: to get prompted about removing usernames.", "neutralText")
+        Wln("Usage: rmuser <Username>" + vbNewLine + _
+            "       rmuser: to get prompted about removing usernames.", "neutralText")
 
         ElseIf (command = "savescreen") Then
 
-            Wln("Usage: savescreen: shows you a selected screensaver, while protecting your screen from burn outs." + vbNewLine + _
-                "       Friends of savescreen: lockscreen", "neutralText")
+        Wln("Usage: savescreen: shows you a selected screensaver, while protecting your screen from burn outs." + vbNewLine + _
+            "       Friends of savescreen: lockscreen", "neutralText")
 
         ElseIf (command = "scical") Then
 
-            Wln("Usage: scical <expression1|pi|e> <+|-|*|/|%> <expression2|pi|e> ..." + vbNewLine + _
-                "       scical <sqrt|tan|sin|cos> <number>", "neutralText")
+        Wln("Usage: scical <expression1|pi|e> <+|-|*|/|%> <expression2|pi|e> ..." + vbNewLine + _
+            "       scical <sqrt|tan|sin|cos> <number>", "neutralText")
 
         ElseIf (command = "setcolors") Then
 
-            Wln("Usage: setcolors <inputColor/def> <licenseColor/def> <contKernelErrorColor/def> <uncontKernelErrorColor/def> <hostNameShellColor/def> <userNameShellColor/def> <backgroundColor/def> <neutralTextColor/def>" + vbNewLine + _
-                "       setcolors: to get prompted about setting colors. (deprecated)" + vbNewLine + _
-                "       Friends of setcolors: setthemes", "neutralText")
+        Wln("Usage: setcolors <inputColor/def> <licenseColor/def> <contKernelErrorColor/def> <uncontKernelErrorColor/def> <hostNameShellColor/def> <userNameShellColor/def> <backgroundColor/def> <neutralTextColor/def>" + vbNewLine + _
+            "       setcolors: to get prompted about setting colors. (deprecated)" + vbNewLine + _
+            "       Friends of setcolors: setthemes", "neutralText")
 
         ElseIf (command = "setsaver") Then
 
-            Wln("Usage: setsaver <modNameSS.m>", "neutralText")
+        Wln("Usage: setsaver <modNameSS.m>", "neutralText")
 
         ElseIf (command = "setthemes") Then
 
-            Wln("Usage: setthemes <Theme>" + vbNewLine + _
-                "       setthemes: to get prompted about setting themes. (deprecated)" + vbNewLine + _
-                "       Friends of setthemes: setcolors", "neutralText")
+        Wln("Usage: setthemes <Theme>" + vbNewLine + _
+            "       setthemes: to get prompted about setting themes. (deprecated)" + vbNewLine + _
+            "       Friends of setthemes: setcolors", "neutralText")
 
         ElseIf (command = "showmotd") Then
 
-            Wln("Usage: showmotd: Shows your current Message Of The Day.", "neutralText")
+        Wln("Usage: showmotd: Shows your current Message Of The Day.", "neutralText")
 
         ElseIf (command = "showtd") Then
 
-            Wln("Usage: showtd: Shows the date and time.", "neutralText")
+        Wln("Usage: showtd: Shows the date and time.", "neutralText")
 
         ElseIf (command = "showtdzone") Then
 
-            Wln("Usage: showtdzone: Shows the date and time in zones.", "neutralText")
+        Wln("Usage: showtdzone: Shows the date and time in zones.", "neutralText")
 
         ElseIf (command = "shutdown") Then
 
-            Wln("Usage: shutdown: Shuts down your simulated computer." + vbNewLine + _
-                "       Friends of shutdown: reboot, logout", "neutralText")
+        Wln("Usage: shutdown: Shuts down your simulated computer." + vbNewLine + _
+            "       Friends of shutdown: reboot, logout", "neutralText")
 
         ElseIf (command = "sysinfo") Then
 
-            Wln("Usage: sysinfo: Shows system information and versions." + vbNewLine + _
-                "       Friends of sysinfo: version", "neutralText")
+        Wln("Usage: sysinfo: Shows system information and versions." + vbNewLine + _
+            "       Friends of sysinfo: version", "neutralText")
 
         ElseIf (command = "unitconv") Then
 
-            Wln("Usage: unitconv <sourceUnit> <targetUnit> <value>" + vbNewLine + _
-                "Units: B, KB, MB, GB, TB, Bits, Octal, Binary, Decimal, Hexadecimal, mm, cm, m, km, Fahrenheit, Celsius, Kelvin, " + _
-                "Reaumur, Romer, Delisle, Rankine, j, kj, m/s, km/h, cm/ms, Kilograms, Grams, Tons, Kilotons, Megatons, kn, n, Hz, kHz, MHz, " + _
-                "GHz, Number (source only), Money (target only), Percent (target only), Centivolts, Volts, Kilovolts, Watts, Kilowatts, " + _
-                "Milliliters, Liters, Kiloliters, Gallons, Ounces, Feet, Inches, Yards and Miles.", "neutralText")
+        Wln("Usage: unitconv <sourceUnit> <targetUnit> <value>" + vbNewLine + _
+            "Units: B, KB, MB, GB, TB, Bits, Octal, Binary, Decimal, Hexadecimal, mm, cm, m, km, Fahrenheit, Celsius, Kelvin, " + _
+            "Reaumur, Romer, Delisle, Rankine, j, kj, m/s, km/h, cm/ms, Kilograms, Grams, Tons, Kilotons, Megatons, kn, n, Hz, kHz, MHz, " + _
+            "GHz, Number (source only), Money (target only), Percent (target only), Centivolts, Volts, Kilovolts, Watts, Kilowatts, " + _
+            "Milliliters, Liters, Kiloliters, Gallons, Ounces, Feet, Inches, Yards and Miles.", "neutralText")
 
         ElseIf (command = "version") Then
 
-            Wln("Usage: version: Shows kernel version." + vbNewLine + _
-                "       Friends of version: sysinfo", "neutralText")
+        Wln("Usage: version: Shows kernel version." + vbNewLine + _
+            "       Friends of version: sysinfo", "neutralText")
 
         End If
 

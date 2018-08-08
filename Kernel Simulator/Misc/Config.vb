@@ -197,6 +197,7 @@ Public Module Config
                 ElseIf (line.Contains("Colored Shell = ")) Then
                     If (line.Replace("Colored Shell = ", "") = "False") Then
                         TemplateSet.templateSet("LinuxUncolored")
+                        ColoredShell = False
                     End If
                 ElseIf (line.Contains("Probe Slots = ")) Then
                     If (line.Replace("Probe Slots = ", "") = "True") Then

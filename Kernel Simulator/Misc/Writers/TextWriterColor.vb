@@ -30,36 +30,30 @@ Public Module TextWriterColor
     ''' <remarks>This is used to reduce number of lines containing "System.Console.ForegroundColor = " and "System.Console.ResetColor()" text.</remarks>
     Public Sub W(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
 
-        On Error GoTo bug
-        If (colorType = "neutralText") Then
-            ForegroundColor = neutralTextColor
-        ElseIf (colorType = "input") Then
-            ForegroundColor = neutralTextColor
-        ElseIf (colorType = "contError") Then
-            ForegroundColor = contKernelErrorColor
-        ElseIf (colorType = "uncontError") Then
-            ForegroundColor = uncontKernelErrorColor
-        ElseIf (colorType = "hostName") Then
-            ForegroundColor = hostNameShellColor
-        ElseIf (colorType = "userName") Then
-            ForegroundColor = userNameShellColor
-        ElseIf (colorType = "license") Then
-            ForegroundColor = licenseColor
-        ElseIf (colorType = "def") Then
-            ForegroundColor = ConsoleColor.Gray
-        Else
-            Exit Sub
-        End If
-        Write(text, vars)
-        If (Console.BackgroundColor = ConsoleColor.Black) Then
-            ResetColor()
-        End If
-        If (colorType = "input") Then
-            ForegroundColor = inputColor
-        End If
-        Exit Sub
-bug:
-        KernelError(CChar("C"), False, 0, "There is a serious error when printing text.")
+        Try
+            If (colorType = "neutralText" Or colorType = "input") Then
+                ForegroundColor = neutralTextColor
+            ElseIf (colorType = "contError") Then
+                ForegroundColor = contKernelErrorColor
+            ElseIf (colorType = "uncontError") Then
+                ForegroundColor = uncontKernelErrorColor
+            ElseIf (colorType = "hostName") Then
+                ForegroundColor = hostNameShellColor
+            ElseIf (colorType = "userName") Then
+                ForegroundColor = userNameShellColor
+            ElseIf (colorType = "license") Then
+                ForegroundColor = licenseColor
+            ElseIf (colorType = "def") Then
+                ForegroundColor = ConsoleColor.Gray
+            Else
+                Exit Sub
+            End If
+            Write(text, vars)
+            If (Console.BackgroundColor = ConsoleColor.Black) Then ResetColor()
+            If (colorType = "input" And ColoredShell = True) Then ForegroundColor = inputColor
+        Catch ex As Exception
+            KernelError(CChar("C"), False, 0, "There is a serious error when printing text.")
+        End Try
 
     End Sub
 
@@ -72,36 +66,30 @@ bug:
     ''' <remarks>This is used to reduce number of lines containing "System.Console.ForegroundColor = " and "System.Console.ResetColor()" text.</remarks>
     Public Sub Wln(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
 
-        On Error GoTo bug
-        If (colorType = "neutralText") Then
-            ForegroundColor = neutralTextColor
-        ElseIf (colorType = "input") Then
-            ForegroundColor = neutralTextColor
-        ElseIf (colorType = "contError") Then
-            ForegroundColor = contKernelErrorColor
-        ElseIf (colorType = "uncontError") Then
-            ForegroundColor = uncontKernelErrorColor
-        ElseIf (colorType = "hostName") Then
-            ForegroundColor = hostNameShellColor
-        ElseIf (colorType = "userName") Then
-            ForegroundColor = userNameShellColor
-        ElseIf (colorType = "license") Then
-            ForegroundColor = licenseColor
-        ElseIf (colorType = "def") Then
-            ForegroundColor = ConsoleColor.Gray
-        Else
-            Exit Sub
-        End If
-        WriteLine(text, vars)
-        If (Console.BackgroundColor = ConsoleColor.Black) Then
-            ResetColor()
-        End If
-        If (colorType = "input") Then
-            ForegroundColor = inputColor
-        End If
-        Exit Sub
-bug:
-        KernelError(CChar("C"), False, 0, "There is a serious error when printing text.")
+        Try
+            If (colorType = "neutralText" Or colorType = "input") Then
+                ForegroundColor = neutralTextColor
+            ElseIf (colorType = "contError") Then
+                ForegroundColor = contKernelErrorColor
+            ElseIf (colorType = "uncontError") Then
+                ForegroundColor = uncontKernelErrorColor
+            ElseIf (colorType = "hostName") Then
+                ForegroundColor = hostNameShellColor
+            ElseIf (colorType = "userName") Then
+                ForegroundColor = userNameShellColor
+            ElseIf (colorType = "license") Then
+                ForegroundColor = licenseColor
+            ElseIf (colorType = "def") Then
+                ForegroundColor = ConsoleColor.Gray
+            Else
+                Exit Sub
+            End If
+            WriteLine(text, vars)
+            If (Console.BackgroundColor = ConsoleColor.Black) Then ResetColor()
+            If (colorType = "input") Then ForegroundColor = inputColor
+        Catch ex As Exception
+            KernelError(CChar("C"), False, 0, "There is a serious error when printing text.")
+        End Try
 
     End Sub
 
