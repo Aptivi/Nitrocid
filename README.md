@@ -73,6 +73,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **8/3/2018 - 0.0.4.11:** Removed pre-defined aliases, Fixed known bug that is mentioned.
 
+**8/16/2018 - 0.0.4.12:** Replaced disco command with a screensaver. It seems like 0.0.5 will be released because it looks stable, but we have some remaining changes before the final release.
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`

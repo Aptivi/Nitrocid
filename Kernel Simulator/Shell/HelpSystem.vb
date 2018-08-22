@@ -100,10 +100,6 @@ Public Module HelpSystem
 
             Wln("Usage: debuglog: Shows you debug logs so you can send the log to us.", "neutralText")
 
-        ElseIf (command = "disco") Then
-
-            Wln("Usage: disco: to get a disco effect on the console. True color support will come with GUI console.", "neutralText")
-
         ElseIf (command = "echo") Then
 
             Wln("Usage: echo <text>" + vbNewLine + _

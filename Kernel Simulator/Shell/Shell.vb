@@ -23,7 +23,7 @@ Public Module Shell
     'Admin-Only commands (strictCmds())
     Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
-    Public availableCommands() As String = {"help", "logout", "version", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot", "disco", "beep", _
+    Public availableCommands() As String = {"help", "logout", "version", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot", "beep", _
                                             "adduser", "chmotd", "chhostname", "showmotd", "lscomp", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", _
                                             "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", _
                                             "scical", "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "showmal", "savescreen", _

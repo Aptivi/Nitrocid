@@ -26,10 +26,12 @@ Public Module Screensaver
     'Variables and Interface
     Public LockMode As Boolean = False
     Public defSaverName As String = "matrix" 'Permanent screensavers will be added in 0.0.6. Currently, it has been set to matrix
-    Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}}
+    Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"disco", False}}
     Public WithEvents colorMix As New BackgroundWorker
     Public WithEvents matrix As New BackgroundWorker
+    Public WithEvents disco As New BackgroundWorker
     Public WithEvents custom As New BackgroundWorker
+    Public colors() As ConsoleColor = CType(ConsoleColor.GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
     Private execCustomSaver As CompilerResults
     Private finalSaver As ICustomSaver
     Private DoneFlag As Boolean = False
@@ -113,6 +115,29 @@ Public Module Screensaver
 
     End Sub
 
+    Sub disco_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles disco.DoWork
+
+        Console.CursorVisible = False
+        Do While True
+            For Each color In colors
+                Sleep(100)
+                If (disco.CancellationPending = True) Then
+                    e.Cancel = True
+                    Console.Clear()
+                    System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+                    System.Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
+                    LoadBackground.Load()
+                    Console.CursorVisible = True
+                    Exit Do
+                Else
+                    Console.BackgroundColor = color
+                    Console.Clear()
+                End If
+            Next
+        Loop
+
+    End Sub
+
     Sub ShowSavers(ByVal saver As String)
 
         If (saver = "colorMix") Then
@@ -127,6 +152,12 @@ Public Module Screensaver
             Console.ReadKey()
             matrix.CancelAsync()
             Sleep(50)
+        ElseIf (saver = "disco") Then
+            disco.WorkerSupportsCancellation = True
+            disco.RunWorkerAsync()
+            Console.ReadKey()
+            disco.CancelAsync()
+            Sleep(150)
         ElseIf (ScrnSvrdb.ContainsKey(saver)) Then
             'Only one custom screensaver can be used.
             custom.WorkerSupportsCancellation = True

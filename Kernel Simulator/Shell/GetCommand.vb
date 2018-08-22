@@ -19,7 +19,6 @@
 Imports System.ComponentModel
 Imports System.IO
 
-'TODO: Make Disco Effect a screensaver
 Public Module GetCommand
 
     'Variables
@@ -28,43 +27,7 @@ Public Module GetCommand
     Public answerbeep As String                                                                             'Input for beep frequency
     Public answerbeepms As String                                                                           'Input for beep milliseconds
     Public key As Double
-    Public colors() As ConsoleColor = CType(ConsoleColor.GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
-    Public WithEvents ColoredDisco As New BackgroundWorker                                                  '16-bit colored disco
     Public answerecho As String                                                                             'Input for printing string
-
-    Sub ColoredDisco_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles ColoredDisco.DoWork
-
-        Console.CursorVisible = False
-        Do While True
-            For Each color In colors
-                Sleep(250)
-                If (ColoredDisco.CancellationPending = True) Then
-                    e.Cancel = True
-                    Console.Clear()
-                    Shell.commandPromptWrite()
-                    System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
-                    System.Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
-                    LoadBackground.Load()
-                    Console.CursorVisible = True
-                    Exit Do
-                Else
-                    Console.BackgroundColor = color
-                    Console.Clear()
-                End If
-            Next
-        Loop
-
-    End Sub
-
-    Sub DiscoSystem()
-
-        ColoredDisco.WorkerSupportsCancellation = True
-        ColoredDisco.RunWorkerAsync()
-        If (Console.ReadKey(True).Key = ConsoleKey.Enter) Then
-            ColoredDisco.CancelAsync()
-        End If
-
-    End Sub
 
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
 
@@ -354,11 +317,6 @@ Public Module GetCommand
                 Else
                     Wln("Debugging not enabled.", "neutralText")
                 End If
-
-            ElseIf (requestedCommand = "disco") Then
-
-                'The disco system.
-                DiscoSystem()
 
             ElseIf (requestedCommand.Substring(0, index) = "echo") Then
 
@@ -683,7 +641,7 @@ Public Module GetCommand
                 Dim modPath As String = Environ("USERPROFILE") + "\KSMods\"
                 If (requestedCommand <> "setsaver") Then
                     If (args.Count >= 0) Then
-                        If (strArgs = "colorMix" Or strArgs = "matrix") Then
+                        If (strArgs = "colorMix" Or strArgs = "matrix" Or strArgs = "disco") Then
                             Screensaver.setDefaultScreensaver(strArgs)
                         Else
                             If (FileIO.FileSystem.FileExists(modPath + strArgs)) Then
