@@ -2,15 +2,15 @@
 
 The build is currently [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master)
 
-INFO: This kernel simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal.
+This kernel simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal. Cannot log-in to Kernel Simulator on **root** account? The password is the _backwards_ of **root**.
 
-NOTE: This kernel simulator _will_ continue to be developed, even if we made the real PC version of Kernel.
+## |-----+--> _Notes_ <--+-----|
 
-NOTE: It can only be Console at the moment, while we are developing a GUI for this simulator.
+- This kernel simulator _will_ continue to be developed, even if we made the real PC version of Kernel.
 
-Kernel Simulator lets you simulate a _very_ early access for our **future** Kernel.
+- It can only be Console at the moment, while we are developing a GUI for this simulator.
 
-Cannot log-in to Kernel Simulator on **root** account? The password is the _backwards_ of **root**.
+- The version of Firefox was old and so we cannot upload binary into release page. You have to build from source to use, or use an [archive](https://github.com/EoflaOE/Kernel-Simulator/tree/archive/bin/Windows).
 
 ## |-----+--> _Download_ <--+-----|
 
