@@ -11,6 +11,7 @@ Cannot log-in to Kernel Simulator on "root" account? The password is the backwar
 
 |---------------+--> History <--+---------------|
 
+9/6/2018 - 0.0.5.1: Follow-up release removed unused code, improved behavior of debugging logs, and improved readability of a debug message while probing mods with commands without definitions.
 9/4/2018 - 0.0.5.0: Removed prompts, fixed MAL username probing, added "showaliases", fixed alias parsing, removed the requirement to provide command to remove alias, and implementation of user-made commands in mods
 8/16/2018 - 0.0.4.12: Replaced disco command with a screensaver. It seems like 0.0.5 will be released because it looks stable, but we have some remaining changes before the final release.
 8/3/2018 - 0.0.4.11: Removed pre-defined aliases, Fixed known bug that is mentioned.

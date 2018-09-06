@@ -60,7 +60,7 @@ Public Module Kernel
             InitEverything()
 
             'Show introduction. Don't remove license.
-            Wln("---===+++> Welcome to the kernel, version {0} <+++===---", "neutralText", KernelVersion)
+            Wln("---===+++> Welcome to the kernel | Version {0} <+++===---", "neutralText", KernelVersion)
             Wln(vbNewLine + "    Kernel Simulator  Copyright (C) 2018  EoflaOE" + vbNewLine + _
                             "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine + _
                             "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine + _
@@ -112,6 +112,11 @@ Public Module Kernel
 
     Sub InitEverything()
 
+        'Parse real command-line arguments
+        For Each argu In Environment.GetCommandLineArgs
+            CommandLineArgsParse.parseCMDArguments(argu)
+        Next
+
         'Check arguments, initialize date and files, and continue.
         If (argsOnBoot = True) Then
             ArgumentPrompt.PromptArgs()
@@ -122,16 +127,15 @@ Public Module Kernel
             answerargs = ""
             argsInjected = False
         End If
+        If (DebugMode = True) Then
+            dbgWriter = New StreamWriter(Environ("USERPROFILE") + "\kernelDbg.log", True)
+            dbgWriter.AutoFlush = True
+        End If
         If (TimeDateIsSet = False) Then
             InitializeTimeDate()
             TimeDateIsSet = True
         End If
         InitializeDirectoryFile.Init()
-
-        'Parse real command-line arguments
-        For Each argu In Environment.GetCommandLineArgs
-            CommandLineArgsParse.parseCMDArguments(argu)
-        Next
 
         'Create config file and then read it
         Config.checkForUpgrade()

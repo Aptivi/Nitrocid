@@ -26,7 +26,7 @@ Public Module Login
     Public signedinusrnm As String                              'Username that is signed in
     Private showMOTDOnceFlag As Boolean = True                  'Show MOTD every LoginPrompt() session
 
-    'TODO: Re-write in the final release of 0.0.5
+    'TODO: Re-write in the final release of 0.0.6 (delayed)
 
     Sub LoginPrompt()
 

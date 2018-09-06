@@ -69,7 +69,7 @@ Module ArgumentParse
 
                     ElseIf (BootArgs(i) = "debug") Then
 
-                        DebugMode = True : dbgWriter.AutoFlush = True
+                        DebugMode = True
 
                     ElseIf (BootArgs(i) = "maintenance") Then
 

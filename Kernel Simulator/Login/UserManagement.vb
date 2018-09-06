@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-'We have separated below subs from Login.vb for easy management of user tools.
-
 Public Module UserManagement
 
     'TODO: Merge initializeMainUsers to adduser

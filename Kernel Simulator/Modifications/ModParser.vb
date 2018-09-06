@@ -83,7 +83,7 @@ Public Module ModParser
                     modcmnds.Add(script.Cmd)
                     If (script.Def = "") Then
                         Wln("No definition for command {0}.", "neutralText", script.Cmd)
-                        Wdbg("{0}.Def = ({1} = """"), {0}.Def = ""Command defined by mod""", True, script.Cmd, script.Def)
+                        Wdbg("{0}.Def = (""{1}"" = """"), {0}.Def = ""Command defined by mod""", True, script.Cmd, script.Def)
                         script.Def = "Command defined by mod"
                     End If
                     moddefs.Add(script.Cmd, script.Def)
