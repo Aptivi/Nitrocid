@@ -59,9 +59,6 @@ Public Module TimeDate
         strKernelTimeDate = Date.Now.ToString
         TimeDateChange.WorkerSupportsCancellation = True
         TimeDateChange.RunWorkerAsync()
-        If (Quiet = False) Then
-            ShowTime()
-        End If
 
     End Sub
 

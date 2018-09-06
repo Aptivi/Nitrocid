@@ -11,6 +11,7 @@ Cannot log-in to Kernel Simulator on "root" account? The password is the backwar
 
 |---------------+--> History <--+---------------|
 
+9/4/2018 - 0.0.5.0: Removed prompts, fixed MAL username probing, added "showaliases", fixed alias parsing, removed the requirement to provide command to remove alias, and implementation of user-made commands in mods
 8/16/2018 - 0.0.4.12: Replaced disco command with a screensaver. It seems like 0.0.5 will be released because it looks stable, but we have some remaining changes before the final release.
 8/3/2018 - 0.0.4.11: Removed pre-defined aliases, Fixed known bug that is mentioned.
 8/2/2018 - 0.0.4.10: Fused "sysinfo" with "lsdrivers", Improved Help definition (used dictionary for preparation for modding), added "lscomp" which can list all online and offline computers by names only, Added error handler for "lsnet" and "lsnettree", fixed grammatical mistakes in "lsnet" and "lsnettree", added mods (commands not implemented yet - <modname>.m), added screensavers, changed the behavior of showing MOTD, fixed bug where instance checking after reboot of the kernel would say that it has more than one instance and should close, and more.

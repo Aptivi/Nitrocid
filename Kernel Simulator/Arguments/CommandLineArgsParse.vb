@@ -29,9 +29,7 @@ Module CommandLineArgsParse
                     Config.createConfig(True)
                 ElseIf (arg = "promptArgs") Then
                     ArgumentPrompt.PromptArgs()
-                    If (argsFlag = True) Then
-                        ArgumentParse.ParseArguments()
-                    End If
+                    If (argsFlag = True) Then ArgumentParse.ParseArguments()
                 End If
             End If
         Catch ex As Exception

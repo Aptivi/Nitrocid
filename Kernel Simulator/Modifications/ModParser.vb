@@ -26,7 +26,11 @@ Public Module ModParser
     Public Interface IScript
         Sub StartMod()
         Sub StopMod()
+        Property Cmd As String
+        Property Def As String
+        Sub PerformCmd(Optional ByVal args As String = "")
     End Interface
+    Public scripts As New Dictionary(Of String, IScript)
 
     Private Function GenMod(ByVal code As String) As IScript
         Using provider As New VBCodeProvider()
@@ -74,6 +78,16 @@ Public Module ModParser
             Else
                 Dim script As IScript = GenMod(IO.File.ReadAllText(modPath + modFile))
                 If (DoneFlag = True) Then script.StartMod()
+                If (script.Cmd <> "") Then
+                    scripts.Add(script.Cmd, script)
+                    modcmnds.Add(script.Cmd)
+                    If (script.Def = "") Then
+                        Wln("No definition for command {0}.", "neutralText", script.Cmd)
+                        Wdbg("{0}.Def = ({1} = """"), {0}.Def = ""Command defined by mod""", True, script.Cmd, script.Def)
+                        script.Def = "Command defined by mod"
+                    End If
+                    moddefs.Add(script.Cmd, script.Def)
+                End If
             End If
         Next
 

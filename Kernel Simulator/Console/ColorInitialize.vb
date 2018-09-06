@@ -27,9 +27,11 @@ Module ColorInitialize
     Public userNameShellColor As Object = ConsoleColor.Green
     Public backgroundColor As Object = ConsoleColor.Black
     Public neutralTextColor As Object = ConsoleColor.Gray
+    Public cmdListColor As Object = ConsoleColor.DarkYellow
+    Public cmdDefColor As Object = ConsoleColor.DarkGray
 
     'Array for available colors
-    Public availableColors() As String = {"White", "Gray", "DarkGray", "DarkRed", "Red", "DarkYellow", "Yellow", "DarkGreen", "Green", _
+    Public availableColors() As String = {"White", "Black", "Gray", "DarkGray", "DarkRed", "Red", "DarkYellow", "Yellow", "DarkGreen", "Green", _
                                           "DarkCyan", "Cyan", "DarkBlue", "Blue", "DarkMagenta", "Magenta", "RESET", "THEME"}
 
 End Module

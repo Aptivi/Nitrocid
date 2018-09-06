@@ -25,7 +25,7 @@ Public Module TextWriterColor
     ''' Outputs the text into the terminal prompt, and sets colors as needed.
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="colorType">A type of colors that will be changed. Any of neutralText, input, contError, uncontError, hostName, userName, def, or license.</param>
+    ''' <param name="colorType">A type of colors that will be changed. Any of neutralText, input, contError, uncontError, hostName, userName, def, helpCmd, helpDef, or license.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     ''' <remarks>This is used to reduce number of lines containing "System.Console.ForegroundColor = " and "System.Console.ResetColor()" text.</remarks>
     Public Sub W(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
@@ -45,6 +45,10 @@ Public Module TextWriterColor
                 ForegroundColor = licenseColor
             ElseIf (colorType = "def") Then
                 ForegroundColor = ConsoleColor.Gray
+            ElseIf (colorType = "helpDef") Then
+                ForegroundColor = cmdDefColor
+            ElseIf (colorType = "helpCmd") Then
+                ForegroundColor = cmdListColor
             Else
                 Exit Sub
             End If
@@ -61,7 +65,7 @@ Public Module TextWriterColor
     ''' Outputs the text into the terminal prompt, sets colors as needed, and returns a new line.
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="colorType">A type of colors that will be changed.  Any of neutralText, input, contError, uncontError, hostName, userName, def, or license.</param>
+    ''' <param name="colorType">A type of colors that will be changed.  Any of neutralText, input, contError, uncontError, hostName, userName, def, helpCmd, helpDef, or license.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     ''' <remarks>This is used to reduce number of lines containing "System.Console.ForegroundColor = " and "System.Console.ResetColor()" text.</remarks>
     Public Sub Wln(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
@@ -81,6 +85,10 @@ Public Module TextWriterColor
                 ForegroundColor = licenseColor
             ElseIf (colorType = "def") Then
                 ForegroundColor = ConsoleColor.Gray
+            ElseIf (colorType = "helpDef") Then
+                ForegroundColor = cmdDefColor
+            ElseIf (colorType = "helpCmd") Then
+                ForegroundColor = cmdListColor
             Else
                 Exit Sub
             End If

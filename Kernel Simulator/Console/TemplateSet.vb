@@ -18,14 +18,6 @@
 
 Public Module TemplateSet
 
-    Sub TemplatePrompt()
-
-        W("Available templates: {0}" + vbNewLine + "Template: ", "input", String.Join(", ", colorTemplates))
-        Dim answertemplate As String = System.Console.ReadLine()
-        templateSet(answertemplate)
-
-    End Sub
-
     Public Sub templateSet(ByVal theme As String)
 
         If colorTemplates.Contains(theme) = True Then
@@ -41,6 +33,8 @@ Public Module TemplateSet
                 userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), userNameShellColorRC), ConsoleColor)
                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), backgroundColorRC), ConsoleColor)
                 neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColorRC), ConsoleColor)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), cmdListColorRC), ConsoleColor)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), cmdDefColorRC), ConsoleColor)
                 LoadBackground.Load()
                 templateSetExitFlag = True
             ElseIf theme = "Bluespire" Then
@@ -52,6 +46,8 @@ Public Module TemplateSet
                 userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), userNameShellColorBS), ConsoleColor)
                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), backgroundColorBS), ConsoleColor)
                 neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColorBS), ConsoleColor)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), cmdListColorBS), ConsoleColor)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), cmdDefColorBS), ConsoleColor)
                 LoadBackground.Load()
                 templateSetExitFlag = True
             ElseIf theme = "Hacker" Then
@@ -63,6 +59,8 @@ Public Module TemplateSet
                 userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), userNameShellColorHckr), ConsoleColor)
                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), backgroundColorHckr), ConsoleColor)
                 neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColorHckr), ConsoleColor)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), cmdListColorHckr), ConsoleColor)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), cmdDefColorHckr), ConsoleColor)
                 LoadBackground.Load()
                 templateSetExitFlag = True
             ElseIf theme = "LinuxUncolored" Then
@@ -74,6 +72,8 @@ Public Module TemplateSet
                 userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), userNameShellColorLUnc), ConsoleColor)
                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), backgroundColorLUnc), ConsoleColor)
                 neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColorLUnc), ConsoleColor)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), cmdListColorLUnc), ConsoleColor)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), cmdDefColorLUnc), ConsoleColor)
                 LoadBackground.Load()
                 templateSetExitFlag = True
             ElseIf theme = "LinuxColoredDef" Then
@@ -85,12 +85,32 @@ Public Module TemplateSet
                 userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), userNameShellColorLcDef), ConsoleColor)
                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), backgroundColorLcDef), ConsoleColor)
                 neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColorLcDef), ConsoleColor)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), cmdListColorLcDef), ConsoleColor)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), cmdDefColorLcDef), ConsoleColor)
                 LoadBackground.Load()
                 templateSetExitFlag = True
             End If
+            MakePermanent()
         Else
             Wln("Invalid color template {0}", "neutralText", theme)
         End If
+
+    End Sub
+
+    Public Sub MakePermanent()
+
+        Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
+        lns(2) = "User Name Shell Color = " + userNameShellColor.ToString
+        lns(3) = "Host Name Shell Color = " + hostNameShellColor.ToString
+        lns(4) = "Continuable Kernel Error Color = " + contKernelErrorColor.ToString
+        lns(5) = "Uncontinuable Kernel Error Color = " + uncontKernelErrorColor.ToString
+        lns(6) = "Text Color = " + neutralTextColor.ToString
+        lns(7) = "License Color = " + licenseColor.ToString
+        lns(20) = "Background Color = " + backgroundColor.ToString
+        lns(21) = "Input Color = " + inputColor.ToString
+        lns(26) = "Listed command in Help Color = " + cmdListColor.ToString
+        lns(27) = "Definition of command in Help Color = " + cmdDefColor.ToString
+        IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
 
     End Sub
 

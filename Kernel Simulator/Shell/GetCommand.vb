@@ -22,12 +22,7 @@ Imports System.IO
 Public Module GetCommand
 
     'Variables
-    Public answernewuser As String                                                                          'Input for new user name
-    Public answerpassword As String                                                                         'Input for new password
-    Public answerbeep As String                                                                             'Input for beep frequency
-    Public answerbeepms As String                                                                           'Input for beep milliseconds
     Public key As Double
-    Public answerecho As String                                                                             'Input for printing string
 
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
 
@@ -52,25 +47,28 @@ Public Module GetCommand
 
             ElseIf (requestedCommand.Substring(0, index) = "adduser") Then
 
-                If (requestedCommand = "adduser") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    UserManagement.addUser()
-                Else
-                    If (args.Count - 1 = 0) Then
-                        newPassword(args(0))
-                    ElseIf (args.Count - 1 = 2) Then
+                If (requestedCommand <> "adduser") Then
+                    If (args.Count - 1 = 2) Then
                         adduser(args(0), args(1))
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "alias") Then
 
                 If (requestedCommand <> "alias") Then
                     If (args.Count - 1 > 1) Then
-                        If (args(0) = "add" Or args(0) = "rem") Then
+                        If (args(0) = "add") Then
                             manageAlias(args(0), args(1), args(2))
+                        Else
+                            HelpSystem.ShowHelp(words(0))
+                        End If
+                    ElseIf (args.Count - 1 = 1) Then
+                        If (args(0) = "rem") Then
+                            manageAlias(args(0), args(1))
                         Else
                             HelpSystem.ShowHelp(words(0))
                         End If
@@ -78,31 +76,26 @@ Public Module GetCommand
                         HelpSystem.ShowHelp(words(0))
                     End If
                 Else
-                    HelpSystem.ShowHelp("alias")
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "beep") Then
 
                 'Beep system initialization
-                If (requestedCommand = "beep") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    BeepFreq()
-                Else
+                If (requestedCommand <> "beep") Then
                     If (args.Count - 1 = 1) Then
                         Beep.Beep(CInt(args(0)), CDbl(args(1)))
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "arginj") Then
 
                 'Argument Injection
-                If (requestedCommand = "arginj") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    answerargs = ""
-                    ArgumentPrompt.PromptArgs(True)
-                Else
+                If (requestedCommand <> "arginj") Then
                     If (args.Count - 1 >= 0) Then
                         answerargs = String.Join(",", args)
                         argsInjected = True
@@ -110,6 +103,8 @@ Public Module GetCommand
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "calc") Then
@@ -121,7 +116,7 @@ Public Module GetCommand
                         HelpSystem.ShowHelp(words(0))
                     End If
                 Else
-                    HelpSystem.ShowHelp("calc")
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand = "cdir") Then
@@ -145,23 +140,20 @@ Public Module GetCommand
 
             ElseIf (requestedCommand.Substring(0, index) = "chhostname") Then
 
-                If (requestedCommand = "chhostname") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    HostName.ChangeHostName()
-                Else
+                If (requestedCommand <> "chhostname") Then
                     Dim newhost As String = requestedCommand.Substring(11)
                     If (newhost = "") Then
                         Wln("Blank host name.", "neutralText")
-                        HelpSystem.ShowHelp(requestedCommand.Substring(0, 9))
+                        HelpSystem.ShowHelp(words(0))
                     ElseIf (newhost.Length <= 3) Then
                         Wln("The host name length must be at least 4 characters.", "neutralText")
-                        HelpSystem.ShowHelp(requestedCommand.Substring(0, 9))
+                        HelpSystem.ShowHelp(words(0))
                     ElseIf InStr(newhost, " ") > 0 Then
                         Wln("Spaces are not allowed.", "neutralText")
-                        HelpSystem.ShowHelp(requestedCommand.Substring(0, 9))
+                        HelpSystem.ShowHelp(words(0))
                     ElseIf (newhost.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
                         Wln("Special characters are not allowed.", "neutralText")
-                        HelpSystem.ShowHelp(requestedCommand.Substring(0, 9))
+                        HelpSystem.ShowHelp(words(0))
                     ElseIf (newhost = "q") Then
                         Wln("Host name changing has been cancelled.", "neutralText")
                     Else
@@ -171,14 +163,13 @@ Public Module GetCommand
                         lns(24) = "Host Name = " + newhost
                         IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "chmotd") Then
 
-                If (requestedCommand = "chmotd") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    ChangeMessage()
-                Else
+                If (requestedCommand <> "chmotd") Then
                     Dim newmotd = requestedCommand.Substring(7)
                     If (newmotd = "") Then
                         Wln("Blank message of the day.", "neutralText")
@@ -190,6 +181,8 @@ Public Module GetCommand
                         IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
                         Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "chmal") Then
@@ -212,39 +205,7 @@ Public Module GetCommand
 
             ElseIf (requestedCommand.Substring(0, index) = "choice") Then
 
-                If (requestedCommand = "choice") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    W("Write a question: ", "input")
-                    Dim question As String = System.Console.ReadLine()
-                    If (question = "") Then
-                        Wln("Blank question. Try again.", "neutralText")
-                    ElseIf (question = "q") Then
-                        Wln("Choice creation has been cancelled.", "neutralText")
-                    Else
-                        W("Write choice sets, Ex. Y/N/M/D/F/...: ", "input")
-                        Dim sets As String = System.Console.ReadLine()
-                        If (sets = "") Then
-                            Wln("Blank choice sets. Try again.", "neutralText")
-                        ElseIf Not (sets.Contains("/")) And Not (sets.Length - 1 = 0) Then
-                            Wln("Cease using choice sets that is, Ex. YNMDF, Y,N,M,D,F, etc.", "neutralText")
-                        ElseIf (sets.Length - 1 = 0) Then
-                            Wln("One choice set. Try again.", "neutralText")
-                        ElseIf (sets = "q") Then
-                            Wln("Choice creation has been cancelled.", "neutralText")
-                        Else
-                            W("{0} <{1}> ", "input", question, sets)
-                            Dim answerchoice As String = System.Console.ReadKey.KeyChar
-                            Dim answerchoices() As String = sets.Split(CChar("/"))
-                            For Each choiceset In answerchoices
-                                If (answerchoice = choiceset) Then
-                                    Wln(vbNewLine + "Choice {0} selected.", "neutralText", answerchoice)
-                                ElseIf (answerchoice = "q") Then
-                                    Wln(vbNewLine + "Choice has been cancelled.", "neutralText")
-                                End If
-                            Next
-                        End If
-                    End If
-                Else
+                If (requestedCommand <> "choice") Then
                     If (args.Count - 1 = 1) Then
                         W("{0} <{1}> ", "input", args(0), args(1))
                         Dim answerchoice As String = System.Console.ReadKey.KeyChar
@@ -259,19 +220,36 @@ Public Module GetCommand
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
-            ElseIf (requestedCommand = "chpwd") Then
+            ElseIf (requestedCommand.Substring(0, index) = "chpwd") Then
 
-                Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                changePassword()
+                If (requestedCommand <> "chpwd") Then
+                    If (args.Count - 1 = 3) Then
+                        If InStr(args(3), " ") > 0 Then
+                            Wln("Spaces are not allowed.", "neutralText")
+                        ElseIf (args(3) = args(2)) Then
+                            If (args(1) = userword(args(0))) Then
+                                userword.Item(args(0)) = args(2)
+                            Else
+                                Wln("Wrong user password.", "neutralText")
+                            End If
+                        ElseIf (args(3) <> args(2)) Then
+                            Wln("Passwords doesn't match.", "neutralText")
+                        End If
+                    Else
+                        HelpSystem.ShowHelp(words(0))
+                    End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
+                End If
+
 
             ElseIf (requestedCommand.Substring(0, index) = "chusrname") Then
 
-                If (requestedCommand = "chusrname") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    UserManagement.changeName()
-                Else
+                If (requestedCommand <> "chusrname") Then
                     Dim DoneFlag As Boolean = False
                     If (args.Count - 1 = 1) Then
                         If (userword.ContainsKey(args(0)) = True) Then
@@ -292,11 +270,12 @@ Public Module GetCommand
                         End If
                         If (DoneFlag = False) Then
                             Wln("User {0} not found.", "neutralText", args(0))
-                            changePassword()
                         End If
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+
                 End If
 
             ElseIf (requestedCommand = "cls") Then
@@ -320,21 +299,14 @@ Public Module GetCommand
 
             ElseIf (requestedCommand.Substring(0, index) = "echo") Then
 
-                If (requestedCommand = "echo") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    W("Write any text: ", "input")
-                    answerecho = System.Console.ReadLine()
-                    If (answerecho = "q") Then
-                        Wln("Text printing has been cancelled.", "neutralText")
-                    Else
-                        Wln(answerecho, "neutralText")
-                    End If
-                Else
-                    If (args.Count - 1 >= 0) Then
-                        Wln(String.Join(" ", args), "neutralText")
+                If (requestedCommand <> "echo") Then
+                    If (strArgs <> "") Then
+                        Wln(strArgs, "neutralText")
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand = "hwprobe") Then
@@ -419,10 +391,7 @@ Public Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "panicsim") Then
 
                 'Kernel panic simulator
-                If (requestedCommand = "panicsim") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    PanicSim.panicPrompt()
-                Else
+                If (requestedCommand <> "panicsim") Then
                     If (args.Count - 1 = 0) Then
                         KernelError(CChar("C"), False, 0, args(0))
                     ElseIf (args.Count - 1 = 1) Then
@@ -448,27 +417,25 @@ Public Module GetCommand
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "perm") Then
 
-                If (requestedCommand = "perm") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    Groups.permissionPrompt()
-                Else
+                If (requestedCommand <> "perm") Then
                     If (args.Count - 1 = 2) Then
                         permission(args(1), args(0), args(2))
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "ping") Then
 
-                If (requestedCommand = "ping") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    Network.CheckNetworkCommand()
-                Else
+                If (requestedCommand <> "ping") Then
                     If (args.Count - 1 = 0) Then
                         Network.PingTarget(args(0), 1)
                     ElseIf (args.Count - 1 = 1) Then
@@ -476,24 +443,13 @@ Public Module GetCommand
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "read") Then
 
-                If (requestedCommand = "read") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    W("Write a file (directories will be scanned): ", "input")
-                    Dim readfile As String = System.Console.ReadLine()
-                    If (readfile = "") Then
-                        Wln(String.Join(", ", AvailableDirs), "neutralText")
-                    ElseIf (readfile = "q") Then
-                        Wln("Listing has been cancelled.", "neutralText")
-                    ElseIf (AvailableFiles.Contains(readfile)) Then
-                        FileContents.readContents(readfile)
-                    Else
-                        Wln("{0} is not found.", "neutralText", readfile)
-                    End If
-                Else
+                If (requestedCommand <> "read") Then
                     If (args.Count - 1 = 0) Then
                         If (AvailableFiles.Contains(args(0))) Then
                             FileContents.readContents(args(0))
@@ -503,6 +459,8 @@ Public Module GetCommand
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand = "reloadconfig") Then
@@ -540,15 +498,14 @@ Public Module GetCommand
 
             ElseIf (requestedCommand.Substring(0, index) = "rmuser") Then
 
-                If (requestedCommand = "rmuser") Then
-                    Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                    UserManagement.removeUser()
-                Else
+                If (requestedCommand <> "rmuser") Then
                     If (args.Count - 1 = 0) Then
                         UserManagement.removeUserFromDatabase(args(0))
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand = "savescreen") Then
@@ -566,26 +523,18 @@ Public Module GetCommand
                         HelpSystem.ShowHelp(words(0))
                     End If
                 Else
-                    HelpSystem.ShowHelp("scical")
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "setcolors") Then
 
-                If (requestedCommand = "setcolors") Then
-                    If (ColoredShell = True) Then
-                        Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                        Wln("Available Colors: {0}" + vbNewLine + _
-                            "Press ENTER only on questions and defaults will be used.", "neutralText", String.Join(", ", availableColors))
-                        ColorSet.SetColorSteps()
-                    Else
-                        Wln("Colors are not available. Turn on colored shell in the kernel config.", "neutralText")
-                    End If
-                Else
-                    If (args.Count - 1 = 7) Then
+                If (requestedCommand <> "setcolors") Then
+                    If (args.Count - 1 = 9) Then
                         If (ColoredShell = True) Then
                             If (availableColors.Contains(args(0)) And availableColors.Contains(args(1)) And availableColors.Contains(args(2)) And _
                                 availableColors.Contains(args(3)) And availableColors.Contains(args(4)) And availableColors.Contains(args(5)) And _
-                                availableColors.Contains(args(6)) And availableColors.Contains(args(7))) Then
+                                availableColors.Contains(args(6)) And availableColors.Contains(args(7)) And availableColors.Contains(args(8)) And _
+                                availableColors.Contains(args(9))) Then
                                 inputColor = CType([Enum].Parse(GetType(ConsoleColor), args(0)), ConsoleColor)
                                 licenseColor = CType([Enum].Parse(GetType(ConsoleColor), args(1)), ConsoleColor)
                                 contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(2)), ConsoleColor)
@@ -594,6 +543,8 @@ Public Module GetCommand
                                 userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(5)), ConsoleColor)
                                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), args(6)), ConsoleColor)
                                 neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), args(7)), ConsoleColor)
+                                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), args(8)), ConsoleColor)
+                                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), args(9)), ConsoleColor)
                                 LoadBackground.Load()
                             ElseIf (args.Contains("def")) Then
                                 If (Array.IndexOf(args, "") = 0) Then
@@ -621,6 +572,12 @@ Public Module GetCommand
                                 ElseIf (Array.IndexOf(args, "") = 7) Then
                                     args(7) = "Gray"
                                     neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), args(7)), ConsoleColor)
+                                ElseIf (Array.IndexOf(args, "") = 8) Then
+                                    args(8) = "DarkYellow"
+                                    cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), args(8)), ConsoleColor)
+                                ElseIf (Array.IndexOf(args, "") = 9) Then
+                                    args(9) = "DarkGray"
+                                    cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), args(9)), ConsoleColor)
                                 End If
                             ElseIf (args.Contains("RESET")) Then
                                 ResetColors()
@@ -628,12 +585,15 @@ Public Module GetCommand
                             Else
                                 Wln("One or more of the colors is invalid.", "neutralText")
                             End If
+                            MakePermanent()
                         Else
                             Wln("Colors are not available. Turn on colored shell in the kernel config.", "neutralText")
                         End If
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "setsaver") Then
@@ -659,91 +619,104 @@ Public Module GetCommand
 
             ElseIf (requestedCommand.Substring(0, index) = "setthemes") Then
 
-                If (requestedCommand = "setthemes") Then
-                    If (ColoredShell = True) Then
-                        Wln("Prompts will be removed in the release of 0.0.5.", "neutralText")
-                        TemplateSet.TemplatePrompt()
-                    Else
-                        Wln("Colors are not available. Turn on colored shell in the kernel config.", "neutralText")
-                    End If
-                Else
+                If (requestedCommand <> "setthemes") Then
                     If (args.Count - 1 = 0) Then
                         If (ColoredShell = True) Then TemplateSet.templateSet(args(0)) Else Wln("Colors are not available. Turn on colored shell in the kernel config.", "neutralText")
                     Else
                         HelpSystem.ShowHelp(words(0))
                     End If
+                Else
+                    HelpSystem.ShowHelp(words(0))
+                End If
+
+            ElseIf (requestedCommand = "showaliases") Then
+
+                If (aliases.Count <> 0) Then
+                    Dim aliasValues As New ArrayList
+                    Dim aliasKeys As New ArrayList
+                    For Each a As String In aliases.Values
+                        aliasValues.Add(a)
+                    Next
+                    For Each a As String In aliases.Keys
+                        aliasKeys.Add(a)
+                    Next
+                    For a As Integer = 0 To aliasKeys.Count - 1
+                        Wln("{2}: {0} is an alias to {1}", "neutralText", aliasKeys(a), aliasValues(a), a + 1)
+                    Next
+                Else
+                    Wln("No aliases to list. Create one by ""alias add <alias> <cmd>.""", "neutralText")
                 End If
 
             ElseIf (requestedCommand = "showtd") Then
 
-                TimeDate.ShowTime()
+                    TimeDate.ShowTime()
 
             ElseIf (requestedCommand.Substring(0, index) = "showtdzone") Then
 
-                If (requestedCommand <> "showtdzone") Then
-                    Dim DoneFlag As Boolean = False
-                    For Each zoneName In zoneTimes.Keys
-                        If (zoneName = strArgs) Then
-                            DoneFlag = True : TimeZones.showTimesInZones(strArgs)
+                    If (requestedCommand <> "showtdzone") Then
+                        Dim DoneFlag As Boolean = False
+                        For Each zoneName In zoneTimes.Keys
+                            If (zoneName = strArgs) Then
+                                DoneFlag = True : TimeZones.showTimesInZones(strArgs)
+                            End If
+                        Next
+                        If (DoneFlag = False) Then
+                            If (args(0) = "all") Then
+                                TimeZones.showTimesInZones()
+                            Else
+                                HelpSystem.ShowHelp(words(0))
+                            End If
                         End If
-                    Next
-                    If (DoneFlag = False) Then
-                        If (args(0) = "all") Then
-                            TimeZones.showTimesInZones()
-                        Else
-                            HelpSystem.ShowHelp(words(0))
-                        End If
+                    Else
+                        HelpSystem.ShowHelp("showtdzone")
                     End If
-                Else
-                    HelpSystem.ShowHelp("showtdzone")
-                End If
 
             ElseIf (requestedCommand = "showmotd") Then
 
-                'Show changes to MOTD, or current
-                Wln(MOTDMessage, "neutralText")
+                    'Show changes to MOTD, or current
+                    Wln(MOTDMessage, "neutralText")
 
             ElseIf (requestedCommand = "showmal") Then
 
-                'Show changes to MAL, or current
-                If (MAL.Contains("<user>")) Then
-                    MAL = MAL.Replace("<user>", signedinusrnm)
-                End If
-                Wln(MAL, "neutralText")
+                    'Show changes to MAL, or current
+                    If (MAL.Contains("<user>")) Then
+                        MAL = MAL.Replace("<user>", signedinusrnm)
+                    End If
+                    Wln(MAL, "neutralText")
 
             ElseIf (requestedCommand = "shutdown") Then
 
-                'Shuts down the simulated system
-                Wln("Shutting down...", "neutralText")
-                System.Console.Beep(870, 250)
-                KernelTools.ResetEverything()
-                dbgWriter.Close()
-                dbgWriter.Dispose()
-                System.Console.Clear()
-                Environment.Exit(0)
+                    'Shuts down the simulated system
+                    Wln("Shutting down...", "neutralText")
+                    System.Console.Beep(870, 250)
+                    KernelTools.ResetEverything()
+                    dbgWriter.Close()
+                    dbgWriter.Dispose()
+                    System.Console.Clear()
+                    Environment.Exit(0)
 
             ElseIf (requestedCommand = "sysinfo") Then
 
-                'Shows system information
-                Wln("Kernel Version: {0}", "neutralText", KernelVersion)
-                HardwareProbe.ListDrivers()
+                    'Shows system information
+                    Wln("Kernel Version: {0}", "neutralText", KernelVersion)
+                    HardwareProbe.ListDrivers()
 
             ElseIf (requestedCommand.Substring(0, index) = "unitconv") Then
 
-                If (requestedCommand <> "unitconv") Then
-                    If (args.Count - 1 = 2) Then
-                        unitConv.Converter(args(0), args(1), args(2))
+                    If (requestedCommand <> "unitconv") Then
+                        If (args.Count - 1 = 2) Then
+                            unitConv.Converter(args(0), args(1), args(2))
+                        Else
+                            HelpSystem.ShowHelp(words(0))
+                        End If
                     Else
-                        HelpSystem.ShowHelp(words(0))
+                        HelpSystem.ShowHelp("unitconv")
                     End If
-                Else
-                    HelpSystem.ShowHelp("unitconv")
-                End If
 
             ElseIf (requestedCommand = "version") Then
 
-                'Shows current kernel version
-                Wln("Version: {0}", "neutralText", KernelVersion)
+                    'Shows current kernel version
+                    Wln("Version: {0}", "neutralText", KernelVersion)
 
             End If
         Catch ex As Exception

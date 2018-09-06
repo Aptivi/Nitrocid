@@ -27,9 +27,10 @@ Public Module Shell
                                             "adduser", "chmotd", "chhostname", "showmotd", "lscomp", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", _
                                             "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", _
                                             "scical", "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "showmal", "savescreen", _
-                                            "lockscreen", "setsaver", "loadsaver"}
+                                            "lockscreen", "setsaver", "loadsaver", "showaliases"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", "reloadconfig", "alias", _
                                      "chmal", "setsaver", "loadsaver"}
+    Public modcmnds As New ArrayList
 
     'For contributors: For each added command, you should also add a command in availableCommands array so there is no problems detecting your new command.
     '                  For each added admin command, you should also add a command in strictCmds array after performing above procedure so there is no problems 
@@ -46,9 +47,18 @@ Public Module Shell
         strcommand = System.Console.ReadLine()
         If (aliases.Count - 1 <> -1) Then
             For Each a As String In aliases.Keys
-                If (strcommand.Contains(a)) Then
+                If (strcommand.StartsWith(a)) Then
                     DoneFlag = True
                     GetAlias.ExecuteAlias(a)
+                End If
+            Next
+        End If
+        If (modcmnds.Count - 1 <> -1) Then
+            For Each c As String In modcmnds
+                Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                If (Parts(0) = c And strcommand.StartsWith(Parts(0))) Then
+                    DoneFlag = True
+                    GetModCommand.ExecuteModCommand(strcommand)
                 End If
             Next
         End If

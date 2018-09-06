@@ -23,7 +23,7 @@ Public Module HelpDefinitions
                                                                   {"alias", "Adds aliases to commands (Only admins can access this command)"}, _
                                                                   {"arginj", "Injects arguments to the kernel (reboot required, admins only)"}, _
                                                                   {"beep", "Console will beep in Hz and time in milliseconds"}, _
-                                                                  {"calc", "Simple calculator (No prompt)"}, _
+                                                                  {"calc", "Simple calculator"}, _
                                                                   {"cdir", "Shows current directory"}, _
                                                                   {"changedir", "Changes directory"}, _
                                                                   {"chhostname", "Changes host name (Admins only)"}, _
@@ -44,7 +44,7 @@ Public Module HelpDefinitions
                                                                   {"lscomp", "Lists all network devices who is online (and offline in domains)"}, _
                                                                   {"lsnet", "Lists all network addresses on host"}, _
                                                                   {"lsnettree", "Lists all network addresses on host using the tree"}, _
-                                                                  {"md", "Creates a directory (No prompt)"}, _
+                                                                  {"md", "Creates a directory"}, _
                                                                   {"netinfo", "Lists information about all available interfaces"}, _
                                                                   {"panicsim", "Kernel Panic Simulator (real)"}, _
                                                                   {"perm", "Manage permissions for users (Only admins can access this command)"}, _
@@ -52,10 +52,10 @@ Public Module HelpDefinitions
                                                                   {"read", "Writes file contents to the console"}, _
                                                                   {"reboot", "Restarts your computer (WARNING: No syncing, because it is not a final kernel)"}, _
                                                                   {"reloadconfig", "Reloads configuration file that is edited."}, _
-                                                                  {"rd", "Removes a directory (No prompt)"}, _
+                                                                  {"rd", "Removes a directory"}, _
                                                                   {"rmuser", "Removes a user from the list (Admins Only)"}, _
                                                                   {"savescreen", "Saves your screen from burn outs"}, _
-                                                                  {"scical", "Scientific calculator. The unit converter is separated to another command (No prompt)"}, _
+                                                                  {"scical", "Scientific calculator. The unit converter is separated to another command"}, _
                                                                   {"setcolors", "Sets up kernel colors"}, _
                                                                   {"setsaver", "Sets up kernel screensavers"}, _
                                                                   {"setthemes", "Sets up kernel themes"}, _
@@ -67,5 +67,6 @@ Public Module HelpDefinitions
                                                                   {"sysinfo", "System information"}, _
                                                                   {"unitconv", "Unit converter that is separated from scicalc."}, _
                                                                   {"version", "Shows kernel version"}}
+    Public moddefs As New Dictionary(Of String, String)
 
 End Module

@@ -20,7 +20,7 @@ Public Module AliasManager
 
     Public aliases As New Dictionary(Of String, String)
 
-    Public Sub manageAlias(ByVal mode As String, ByVal aliasTBA As String, ByVal cmd As String)
+    Public Sub manageAlias(ByVal mode As String, ByVal aliasTBA As String, Optional ByVal cmd As String = "")
 
         If (mode = "add") Then
             If (aliasTBA = cmd) Then
@@ -36,6 +36,7 @@ Public Module AliasManager
             End If
         ElseIf (mode = "rem") Then
             If (aliases.ContainsKey(aliasTBA)) Then
+                cmd = aliases(aliasTBA)
                 Wdbg("aliases({0}) is found", True, aliasTBA)
                 aliases.Remove(aliasTBA)
                 Wln("You can no longer use ""{0}"" as a command ""{1}"".", "neutralText", aliasTBA, cmd)

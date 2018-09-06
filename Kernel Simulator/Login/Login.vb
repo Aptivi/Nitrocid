@@ -116,12 +116,14 @@ Public Module Login
     Public Sub signIn(ByVal signedInUser As String)
 
         'Initialize shell, and sign in to user.
+        Dim oldMAL As String = MAL
         If (LockMode = False) Then
             If (MAL.Contains("<user>")) Then
                 MAL = MAL.Replace("<user>", signedInUser)
             End If
             Wln(vbNewLine + MAL, "neutralText")
         End If
+        MAL = oldMAL
         If LockMode = True Then LockMode = False
         signedinusrnm = signedInUser
         showMOTDOnceFlag = True

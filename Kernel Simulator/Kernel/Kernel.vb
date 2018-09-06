@@ -35,8 +35,7 @@ Public Module Kernel
     Public BIOSVersion As String                                                        'BIOS Version (some AMI BIOSes output "AMIINT - 10") 
     Public KernelVersion As String = Assembly.GetExecutingAssembly().GetName().Version.ToString()
     Public BootArgs() As String                                                         'Array for boot arguments
-    Public AvailableArgs() As String = {"motd", "nohwprobe", "chkn=1", "preadduser", "hostname", "quiet", "gpuprobe", "cmdinject", "debug", _
-                                        "maintenance", "help"}
+    Public AvailableArgs() As String = {"nohwprobe", "quiet", "gpuprobe", "cmdinject", "debug", "maintenance", "help"}
     Public availableCMDLineArgs() As String = {"createConf", "promptArgs"}              'Array for available command-line arguments
     Public slotsUsedName As String                                                      'Lists slots by names
     Public slotsUsedNum As Integer                                                      'Lists slots by numbers
@@ -57,20 +56,8 @@ Public Module Kernel
 
         'TODO: Re-write the whole kernel in Beta
         Try
-            'Parse real command-line arguments
-            For Each argu In Environment.GetCommandLineArgs
-                CommandLineArgsParse.parseCMDArguments(argu)
-            Next
-
-            'Create config file and then read it
-            Config.checkForUpgrade()
-            If (File.Exists(Environ("USERPROFILE") + "\kernelConfig.ini") = True) Then
-                configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
-            Else
-                Config.createConfig(False)
-                configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
-            End If
-            Config.readConfig()
+            'Initialize everything
+            InitEverything()
 
             'Show introduction. Don't remove license.
             Wln("---===+++> Welcome to the kernel, version {0} <+++===---", "neutralText", KernelVersion)
@@ -80,23 +67,6 @@ Public Module Kernel
                             "    This is free software, and you are welcome to redistribute it" + vbNewLine + _
                             "    under certain conditions; See COPYING file in source code." + vbNewLine, "license")
             If (instanceChecked = False) Then InstanceCheck.MultiInstance()
-
-            'Check arguments, initialize date and files, and continue.
-            If (argsOnBoot = True) Then
-                ArgumentPrompt.PromptArgs()
-                If (argsFlag = True) Then ArgumentParse.ParseArguments()
-            End If
-            If (argsInjected = True) Then
-                ArgumentParse.ParseArguments()
-                answerargs = ""
-                argsInjected = False
-            End If
-            If (TimeDateIsSet = False) Then
-                InitializeTimeDate()
-                TimeDateIsSet = True
-            End If
-            InitializeDirectoryFile.Init()
-            Wdbg("Kernel initialized, version {0}.", True, KernelVersion)
             If (Quiet = True Or quietProbe = True) Then
                 'Continue the kernel, and don't print messages
                 'Phase 1: Probe hardware and BIOS if nohwprobe is not passed
@@ -109,7 +79,7 @@ Public Module Kernel
 
             'Phase 2: Username management
             UserManagement.initializeMainUsers()
-            If (enableDemo = True) Then UserManagement.addUser("demo")
+            If (enableDemo = True) Then UserManagement.adduser("demo")
             LoginFlag = True
 
             'Phase 3: Check for pre-user making
@@ -122,6 +92,7 @@ Public Module Kernel
             DisposeExit.DisposeAll()
 
             'Phase 6: Log-in
+            ShowTime()
             If (LoginFlag = True And maintenance = False) Then
                 Login.LoginPrompt()
             ElseIf (LoginFlag = True And maintenance = True) Then
@@ -136,6 +107,43 @@ Public Module Kernel
             End If
             KernelError(CChar("U"), True, 5, "Kernel Error while booting: {0}", Err.Description)
         End Try
+
+    End Sub
+
+    Sub InitEverything()
+
+        'Check arguments, initialize date and files, and continue.
+        If (argsOnBoot = True) Then
+            ArgumentPrompt.PromptArgs()
+            If (argsFlag = True) Then ArgumentParse.ParseArguments()
+        End If
+        If (argsInjected = True) Then
+            ArgumentParse.ParseArguments()
+            answerargs = ""
+            argsInjected = False
+        End If
+        If (TimeDateIsSet = False) Then
+            InitializeTimeDate()
+            TimeDateIsSet = True
+        End If
+        InitializeDirectoryFile.Init()
+
+        'Parse real command-line arguments
+        For Each argu In Environment.GetCommandLineArgs
+            CommandLineArgsParse.parseCMDArguments(argu)
+        Next
+
+        'Create config file and then read it
+        Config.checkForUpgrade()
+        If (File.Exists(Environ("USERPROFILE") + "\kernelConfig.ini") = True) Then
+            configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
+        Else
+            Config.createConfig(False)
+            configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
+        End If
+        Config.readImportantConfig()
+        Config.readConfig()
+        Wdbg("Kernel initialized, version {0}.", True, KernelVersion)
 
     End Sub
 

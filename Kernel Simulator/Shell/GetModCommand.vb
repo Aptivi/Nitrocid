@@ -16,19 +16,20 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module Beep
+Module GetModCommand
 
-    Public Sub Beep(ByVal freq As Integer, ByVal s As Double)
+    Sub ExecuteModCommand(ByVal cmd As String)
 
-        If (freq <= 36 Or freq >= 32768) Then
-            Wln("Invalid value for beep frequency.", "neutralText")
-        ElseIf (freq > 2048) Then
-            Wln("ERROR: Beep may be loud, depending on speaker. Setting values higher than 2048 might cause your ears to damage, " + _
-                "and more importantly, your motherboard speaker might deafen, or malfunction." + vbNewLine + vbNewLine + _
-                "Please read documentation for more info why high frequency shouldn't be used.", "neutralText")
+        Wdbg("Command {0} starting from mod", True, cmd)
+        Dim parts As String() = cmd.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+        Dim actualCmd As String = parts(0)
+        If (cmd.StartsWith(actualCmd + " ")) Then
+            'These below will be executed if there is arguments
+            Dim args As String = cmd.Replace(parts(0) + " ", "")
+            scripts(actualCmd).PerformCmd(args)
         Else
-            Wln("Beeping in {0} seconds in {1} Hz...", "neutralText", s, freq)
-            System.Console.Beep(freq, CInt(s * 1000))
+            'This will be executed if there is no arguments
+            scripts(actualCmd).PerformCmd()
         End If
 
     End Sub

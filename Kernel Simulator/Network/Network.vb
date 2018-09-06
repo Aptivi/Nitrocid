@@ -18,51 +18,6 @@
 
 Public Module Network
 
-    Sub CheckNetworkKernel()
-
-        If System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() Then
-            W("net: Checking for connectivity..." + vbNewLine + _
-              "net: Write address, or URL: ", "input")
-            Dim AnswerPing As String = System.Console.ReadLine()
-            If (AnswerPing <> "q") Then
-                PingTargetKernel(AnswerPing)
-            Else
-                Wln("Network checking has been cancelled.", "neutralText")
-            End If
-        Else
-            Wln("net: Network not available.", "neutralText")
-        End If
-
-    End Sub
-
-    Sub CheckNetworkCommand()
-
-        If System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() Then
-            W("net: Write address, or URL: ", "input")
-            Dim AnswerPing As String = System.Console.ReadLine()
-            If (AnswerPing <> "q") Then
-                PingTarget(AnswerPing)
-            Else
-                Wln("Network checking has been cancelled.", "neutralText")
-            End If
-        Else
-            Wln("net: Network not available.", "neutralText")
-        End If
-
-    End Sub
-
-    Sub PingTargetKernel(ByVal Address As String)
-
-        Try
-            If My.Computer.Network.Ping(Address) Then
-                Wln("net: Connection is ready.", "neutralText")
-            End If
-        Catch pe As Net.NetworkInformation.PingException
-            Wln("net: Connection is not ready, server error, or connection problem.", "neutralText")
-        End Try
-
-    End Sub
-
     Public Sub PingTarget(ByVal Address As String, Optional ByVal repeatTimes As Int16 = 3)
 
         Dim i As Int16 = 1

@@ -36,97 +36,10 @@ Module ArgumentParse
                     BootArgs(i) = BootArgs(i).Substring(0, indexArg)
                 End If
                 If (AvailableArgs.Contains(BootArgs(i).Substring(0, indexArg))) Then
-                    If (BootArgs(i).Contains("motd")) Then
-
-                        If (BootArgs(i) = "motd") Then
-                            ChangeMessage()
-                        Else
-                            Dim newmotd = BootArgs(i).Substring(5)
-                            If (newmotd = "") Then
-                                Wln("Blank message of the day.", "neutralText")
-                            ElseIf (newmotd = "q") Then
-                                Wln("MOTD changing has been cancelled.", "neutralText")
-                            Else
-                                W("Changing MOTD...", "neutralText")
-                                MOTDMessage = newmotd
-                                Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
-                                lns(23) = "MOTD = " + newmotd
-                                IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
-                                Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
-                            End If
-                        End If
-
-                    ElseIf (BootArgs(i) = "nohwprobe") Then
+                    If (BootArgs(i) = "nohwprobe") Then
 
                         'Disables automatic hardware probing.
                         ProbeFlag = False
-
-                    ElseIf (BootArgs(i).Contains("chkn=1")) Then
-
-                        'Makes a kernel check for connectivity on boot
-                        Network.CheckNetworkKernel()
-
-                    ElseIf (BootArgs(i) = "preadduser") Then
-
-                        W("Write username: ", "input")
-                        arguser = System.Console.ReadLine()
-                        If InStr(arguser, " ") > 0 Then
-                            Wln("Spaces are not allowed.", "neutralText")
-                        ElseIf (arguser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                            Wln("Special characters are not allowed.", "neutralText")
-                        ElseIf (arguser = "q") Then
-                            Wln("Username creation has been cancelled.", "neutralText")
-                        Else
-                            W("Write password: ", "input")
-                            argword = System.Console.ReadLine()
-                            If InStr(argword, " ") > 0 Then
-                                Wln("Spaces are not allowed.", "neutralText")
-                            ElseIf (argword.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                                Wln("Special characters are not allowed.", "neutralText")
-                            ElseIf (argword = "q") Then
-                                Wln("Username creation has been cancelled.", "neutralText")
-                            Else
-                                W("Confirm: ", "input")
-                                Dim answerpasswordconfirm As String = System.Console.ReadLine()
-                                If InStr(answerpasswordconfirm, " ") > 0 Then
-                                    Wln("Spaces are not allowed.", "neutralText")
-                                ElseIf (answerpasswordconfirm.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                                    Wln("Special characters are not allowed.", "neutralText")
-                                ElseIf (argword = answerpasswordconfirm) Then
-                                    CruserFlag = True
-                                ElseIf (argword <> answerpasswordconfirm) Then
-                                    Wln("Password doesn't match.", "neutralText")
-                                ElseIf (answerpasswordconfirm = "q") Then
-                                    Wln("Username creation has been cancelled.", "neutralText")
-                                End If
-                            End If
-                        End If
-
-
-                    ElseIf (BootArgs(i).Contains("hostname")) Then
-
-                        If (BootArgs(i) = "hostname") Then
-                            HostName.ChangeHostName()
-                        Else
-                            Dim newhost As String = BootArgs(i).Substring(9)
-                            If (newhost = "") Then
-                                Wln("Blank host name.", "neutralText")
-                            ElseIf (newhost.Length <= 3) Then
-                                Wln("The host name length must be at least 4 characters.", "neutralText")
-                            ElseIf InStr(newhost, " ") > 0 Then
-                                Wln("Spaces are not allowed.", "neutralText")
-                            ElseIf (newhost.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                                Wln("Special characters are not allowed.", "neutralText")
-                            ElseIf (newhost = "q") Then
-                                Wln("Host name changing has been cancelled.", "neutralText")
-                            Else
-                                Wln("Changing from: {0} to {1}...", "neutralText", HName, newhost)
-                                HName = newhost
-                                Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
-                                lns(24) = "Host Name = " + newhost
-                                IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
-                            End If
-                        End If
 
                     ElseIf (BootArgs(i) = "quiet") Then
 

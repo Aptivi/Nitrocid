@@ -109,9 +109,6 @@ Public Module KernelTools
             answerargs = Nothing
         End If
         Erase BootArgs
-        answerbeep = Nothing
-        answerbeepms = Nothing
-        answerecho = Nothing
         argsFlag = False
         Computers = Nothing
         ProbeFlag = True
@@ -123,6 +120,9 @@ Public Module KernelTools
         slotsUsedNum = 0
         totalSlots = 0
         AvailableDirs.Clear()
+        modcmnds.Clear()
+        moddefs.Clear()
+        scripts.Clear()
         Wdbg("General variables reset", True)
 
         'Reset users

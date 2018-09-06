@@ -10,15 +10,12 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - It can only be Console at the moment, while we are developing a GUI for this simulator.
 
-- The version of Firefox was old and so we cannot upload binary into release page. You have to build from source to use, or use an [archive](https://github.com/EoflaOE/Kernel-Simulator/tree/archive/bin/Windows).
-
-## |-----+--> _Download_ <--+-----|
-
-You can download the binary and the source code here: https://github.com/EoflaOE/Kernel-Simulator/releases
+- The version of Firefox was old and so we cannot upload binary into release page. You have to build from source to use, or use an [archive](https://github.com/EoflaOE/Kernel-Simulator/tree/archive/bin/Windows), Because the machine that we're developing and building on doesn't have SSE2 support on our build CPU, **AMD Athlon XP 1500+**. To download, use above link.
 
 ## |-----+--> _Prerequisites_ <--+-----|
 
-- Windows XP or higher
+- Windows XP or higher (Kernel Simulator is planned to use .NET Framework 4.7 or higher to optimize usage for Windows 10 systems, etc.)
+
 - [Microsoft .NET Framework 4.0](https://download.microsoft.com/download/1/B/E/1BE39E79-7E39-46A3-96FF-047F95396215/dotNetFx40_Full_setup.exe) or higher is **important and required** for Kernel Simulator to work fully. If you have Windows 8 or later, you might already have this version of Microsoft .NET Framework 4.0.
 
 ## |-----+--> _Build Instructions_ <--+-----|
@@ -75,6 +72,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **8/16/2018 - 0.0.4.12:** Replaced disco command with a screensaver. It seems like 0.0.5 will be released because it looks stable, but we have some remaining changes before the final release.
 
+**9/4/2018 - 0.0.5.0:** Removed prompts, fixed MAL username probing, added "showaliases", fixed alias parsing, removed the requirement to provide command to remove alias, and implementation of user-made commands in mods
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`
@@ -86,6 +85,8 @@ The documentations can be found in source code of kernel simulator in `Kernel Si
 **Documentation - contributing rules:** Conditions for contributing to Kernel Simulator
 
 **Documentation - troubleshooting:** List of known and user-reported problems
+
+* The text files will be moved to wiki section.
 
 ## |-----+--> _Contributors_ <--+-----|
 

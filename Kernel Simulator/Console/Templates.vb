@@ -30,6 +30,8 @@ Module Templates
     Public userNameShellColorDef As Object = userNameShellColor
     Public backgroundColorDef As Object = backgroundColor
     Public neutralTextColorDef As Object = neutralTextColor
+    Public cmdListColorDef As Object = cmdListColor
+    Public cmdDefColorDef As Object = cmdDefColor
 
     'Variables for the "RedConsole" theme
     Public inputColorRC As Object = ConsoleColor.Red
@@ -40,6 +42,8 @@ Module Templates
     Public userNameShellColorRC As Object = ConsoleColor.Red
     Public backgroundColorRC As Object = ConsoleColor.Black
     Public neutralTextColorRC As Object = ConsoleColor.Red
+    Public cmdListColorRC As Object = ConsoleColor.Red
+    Public cmdDefColorRC As Object = ConsoleColor.DarkRed
 
     'Variables for the "Bluespire" theme
     Public inputColorBS As Object = ConsoleColor.Cyan
@@ -50,6 +54,8 @@ Module Templates
     Public userNameShellColorBS As Object = ConsoleColor.Blue
     Public backgroundColorBS As Object = ConsoleColor.DarkCyan
     Public neutralTextColorBS As Object = ConsoleColor.Cyan
+    Public cmdListColorBS As Object = ConsoleColor.Cyan
+    Public cmdDefColorBS As Object = ConsoleColor.Blue
 
     'Variables for the "Hacker" theme
     Public inputColorHckr As Object = ConsoleColor.Green
@@ -60,6 +66,8 @@ Module Templates
     Public userNameShellColorHckr As Object = ConsoleColor.Green
     Public backgroundColorHckr As Object = ConsoleColor.DarkGray
     Public neutralTextColorHckr As Object = ConsoleColor.Green
+    Public cmdListColorHckr As Object = ConsoleColor.DarkGreen
+    Public cmdDefColorHckr As Object = ConsoleColor.Green
 
     'Variables for the "LinuxUncolored" theme
     Public inputColorLUnc As Object = ConsoleColor.Gray
@@ -70,6 +78,8 @@ Module Templates
     Public userNameShellColorLUnc As Object = ConsoleColor.Gray
     Public backgroundColorLUnc As Object = ConsoleColor.Black
     Public neutralTextColorLUnc As Object = ConsoleColor.Gray
+    Public cmdListColorLUnc As Object = ConsoleColor.Gray
+    Public cmdDefColorLUnc As Object = ConsoleColor.Gray
 
     'Variables for the "LinuxColoredDef" theme
     'If there is a mistake in colors, please fix it.
@@ -81,5 +91,7 @@ Module Templates
     Public userNameShellColorLcDef As Object = ConsoleColor.Blue
     Public backgroundColorLcDef As Object = ConsoleColor.Black
     Public neutralTextColorLcDef As Object = ConsoleColor.Gray
+    Public cmdListColorLcDef As Object = ConsoleColor.White
+    Public cmdDefColorLcDef As Object = ConsoleColor.Gray
 
 End Module
