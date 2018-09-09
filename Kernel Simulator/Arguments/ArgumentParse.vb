@@ -45,10 +45,6 @@ Module ArgumentParse
 
                         Quiet = True
 
-                    ElseIf (BootArgs(i) = "gpuprobe") Then
-
-                        GPUProbeFlag = True
-
                     ElseIf (BootArgs(i).Contains("cmdinject")) Then
 
                         'Command Injector argument

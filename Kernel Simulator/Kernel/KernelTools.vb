@@ -112,7 +112,6 @@ Public Module KernelTools
         argsFlag = False
         Computers = Nothing
         ProbeFlag = True
-        GPUProbeFlag = False
         Quiet = False
         StopPanicAndGoToDoublePanic = False
         strcommand = Nothing

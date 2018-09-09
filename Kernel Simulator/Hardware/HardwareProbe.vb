@@ -56,14 +56,12 @@ Public Module HardwareProbe
                         Wdbg("HDD failed to probe.", True, KernelVersion)
                         Wln("hwprobe: HDD: failed to probe", "neutralText")
                     End If
-                    If (GPUProbeFlag = True) Then
-                        ProbeGPU(True, False)
-                        If (GPUDone = True) Then
-                            Wdbg("GPU probed.", True, KernelVersion)
-                        Else
-                            Wdbg("GPU failed to probe.", True, KernelVersion)
-                            Wln("hwprobe: GPU: failed to probe", "neutralText")
-                        End If
+                    ProbeGPU(True, False)
+                    If (GPUDone = True) Then
+                        Wdbg("GPU probed.", True, KernelVersion)
+                    Else
+                        Wdbg("GPU failed to probe.", True, KernelVersion)
+                        Wln("hwprobe: GPU: failed to probe", "neutralText")
                     End If
                     BiosInformation()
                     If (BIOSDone = True) Then
@@ -102,14 +100,12 @@ Public Module HardwareProbe
                         Wdbg("HDD failed to probe.", True, KernelVersion)
                         Wln("hwprobe: HDD: failed to probe", "neutralText")
                     End If
-                    If (GPUProbeFlag = True) Then
-                        ProbeGPU(True, False)
-                        If (GPUDone = True) Then
-                            Wdbg("GPU probed.", True, KernelVersion)
-                        Else
-                            Wdbg("GPU failed to probe.", True, KernelVersion)
-                            Wln("hwprobe: GPU: failed to probe", "neutralText")
-                        End If
+                    ProbeGPU(True, False)
+                    If (GPUDone = True) Then
+                        Wdbg("GPU probed.", True, KernelVersion)
+                    Else
+                        Wdbg("GPU failed to probe.", True, KernelVersion)
+                        Wln("hwprobe: GPU: failed to probe", "neutralText")
                     End If
                     BiosInformation()
                     If (BIOSDone = True) Then
@@ -129,9 +125,7 @@ Public Module HardwareProbe
                 Cpuinfo()
                 SysMemory(True)
                 Hddinfo(True)
-                If (GPUProbeFlag = True) Then
-                    ProbeGPU(True, True)
-                End If
+                ProbeGPU(True, True)
                 BiosInformation()
             End If
         End If
@@ -156,7 +150,7 @@ Public Module HardwareProbe
     Public Sub ProbeGPU(Optional ByVal KernelMode As Boolean = True, Optional ByVal QuietMode As Boolean = False)
 
         Try
-            If ProbeFlag = True And GPUProbeFlag = True Then
+            If ProbeFlag = True Then
                 GPUDone = True
                 Dim colGPUs As Object
                 Dim oGPU As Object

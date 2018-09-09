@@ -76,6 +76,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **9/6/2018 - 0.0.5.1:** Follow-up release removed unused code, improved behavior of debugging logs, and improved readability of a debug message while probing mods with commands without definitions.
 
+**9/9/2018 - 0.0.5.2:** Made GPU probing on boot, removing "gpuprobe" argument, changed behavior of updating config
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`

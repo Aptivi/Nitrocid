@@ -42,7 +42,6 @@ Public Module Config
                              "Colored Shell = True" + vbNewLine + _
                              "Probe Slots = True" + vbNewLine + _
                              "Quiet Probe = False" + vbNewLine + _
-                             "Probe GPU = False" + vbNewLine + _
                              "Background Color = {7}" + vbNewLine + _
                              "Input Color = {8}" + vbNewLine + _
                              "Show Time/Date on Corner = False" + vbNewLine + _
@@ -96,15 +95,44 @@ Public Module Config
 
     Public Sub updateConfig()
 
-        Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
-            writer.WriteLine("Show Time/Date on Corner = False")
-            writer.WriteLine("MOTD = Welcome to Kernel!")
-            writer.WriteLine("Host Name = kernel")
-            writer.WriteLine("MOTD After Login = Logged in successfully as <user>!")
-            writer.WriteLine("Listed command in Help Color = {0}", cmdListColor)
-            writer.WriteLine("Definition of command in Help Color = {0}", cmdDefColor)
-            writer.Close() : writer.Dispose()
-        End Using
+        createConfig(False)
+        Dim cfghash As New HashSet(Of String)(File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini"))
+        If (cfghash.Count = 21) Then
+            Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                writer.WriteLine("Show Time/Date on Corner = False") : cfghash.Add("Show Time/Date on Corner = False")
+                writer.Close() : writer.Dispose()
+            End Using
+        End If
+        If (cfghash.Count = 22) Then
+            Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                writer.WriteLine("MOTD = Welcome to Kernel!") : cfghash.Add("MOTD = Welcome to Kernel!")
+                writer.Close() : writer.Dispose()
+            End Using
+        End If
+        If (cfghash.Count = 23) Then
+            Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                writer.WriteLine("Host Name = kernel") : cfghash.Add("Host Name = kernel")
+                writer.Close() : writer.Dispose()
+            End Using
+        End If
+        If (cfghash.Count = 24) Then
+            Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                writer.WriteLine("MOTD After Login = Logged in successfully as <user>!") : cfghash.Add("MOTD After Login = Logged in successfully as <user>!")
+                writer.Close() : writer.Dispose()
+            End Using
+        End If
+        If (cfghash.Count = 25) Then
+            Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                writer.WriteLine("Listed command in Help Color = {0}", cmdListColor) : cfghash.Add("Listed command in Help Color = " & cmdListColor)
+                writer.Close() : writer.Dispose()
+            End Using
+        End If
+        If (cfghash.Count = 26) Then
+            Using writer As New StreamWriter(Environ("USERPROFILE") + "\kernelConfig.ini", True)
+                writer.WriteLine("Definition of command in Help Color = {0}", cmdDefColor) : cfghash.Add("Definition of command in Help Color = " & cmdDefColor)
+                writer.Close() : writer.Dispose()
+            End Using
+        End If
 
     End Sub
 
@@ -219,12 +247,6 @@ Public Module Config
                         quietProbe = True
                     ElseIf (line.Replace("Quiet Probe = ", "") = "False") Then
                         quietProbe = False
-                    End If
-                ElseIf (line.Contains("Probe GPU = ")) Then
-                    If (line.Replace("Probe GPU = ", "") = "True") Then
-                        GPUProbeFlag = True
-                    ElseIf (line.Replace("Probe GPU = ", "") = "False") Then
-                        GPUProbeFlag = False
                     End If
                 ElseIf (line.Contains("Show Time/Date on Corner = ")) Then
                     If (line.Replace("Show Time/Date on Corner = ", "") = "True") Then

@@ -59,5 +59,6 @@ If some of the ideas disappeared, then it is either done or cancelled.
 6. Custom aliases for commands (Perm. in 0.0.6)
 7. More placeholders for MAL and MOTD (0.0.5.5)
 8. Un-aliasable list (0.0.5.5)
+9. Use .ini Library (0.0.5.5)
 
 (If you have ideas, edit this section by inserting your idea.)

@@ -19,35 +19,36 @@
 Imports System
 Imports System.IO
 Imports System.Reflection
+Imports System.Reflection.Assembly
 
 Public Module Kernel
 
     'Variables
-    Public Hddsize As String                                                            'The size of simulated Hard Drive
-    Public Dsize As String                                                              'Same as above, but in bytes
-    Public Hddmodel As String                                                           'Model of hard drive
-    Public Cpuname As String                                                            'CPU name
-    Public Cpuspeed As String                                                           'CPU Clock Speed
-    Public SysMem As String                                                             'Memory of simulated system
-    Public BIOSCaption As String                                                        'BIOS Caption
-    Public BIOSMan As String                                                            'BIOS Manufacturer
-    Public BIOSSMBIOSVersion As String                                                  'BIOS Version from SMBIOS
-    Public BIOSVersion As String                                                        'BIOS Version (some AMI BIOSes output "AMIINT - 10") 
-    Public KernelVersion As String = Assembly.GetExecutingAssembly().GetName().Version.ToString()
-    Public BootArgs() As String                                                         'Array for boot arguments
-    Public AvailableArgs() As String = {"nohwprobe", "quiet", "gpuprobe", "cmdinject", "debug", "maintenance", "help"}
-    Public availableCMDLineArgs() As String = {"createConf", "promptArgs"}              'Array for available command-line arguments
-    Public slotsUsedName As String                                                      'Lists slots by names
-    Public slotsUsedNum As Integer                                                      'Lists slots by numbers
-    Public Capacities() As String                                                       'Capacity (in MB)
-    Public totalSlots As Integer                                                        'Total slots
-    Public configReader As StreamReader                                                 'Configuration file
-    Public MOTDMessage As String                                                        'Message of the MOTD
-    Public HName As String                                                              'Host Name of the kernel
-    Public StatusesRAM As String                                                        'Status of all memory chips
-    Public MAL As String                                                                'MOTD After Login.
-    Public instanceChecked As Boolean = False                                           'To fix bug of checking instance.
-    Declare Sub Sleep Lib "kernel32" (ByVal milliseconds As Integer)                    'Enable sleep (Mandatory, don't remove)
+    Public Hddsize As String
+    Public Dsize As String
+    Public Hddmodel As String
+    Public Cpuname As String
+    Public Cpuspeed As String
+    Public SysMem As String
+    Public BIOSCaption As String
+    Public BIOSMan As String
+    Public BIOSSMBIOSVersion As String
+    Public BIOSVersion As String
+    Public KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
+    Public BootArgs() As String
+    Public AvailableArgs() As String = {"nohwprobe", "quiet", "cmdinject", "debug", "maintenance", "help"}
+    Public availableCMDLineArgs() As String = {"createConf", "promptArgs"}
+    Public slotsUsedName As String
+    Public slotsUsedNum As Integer
+    Public Capacities() As String
+    Public totalSlots As Integer
+    Public configReader As StreamReader
+    Public MOTDMessage As String
+    Public HName As String
+    Public StatusesRAM As String
+    Public MAL As String
+    Public instanceChecked As Boolean = False
+    Declare Sub Sleep Lib "kernel32" (ByVal milliseconds As Integer)
 
     Sub Main()
 
@@ -73,7 +74,7 @@ Public Module Kernel
                 HardwareProbe.ProbeHW(True, CChar("K"))
             Else
                 'Continue the kernel
-                'Phase 1: Probe hardware if nohwprobe is not passed
+                'Phase 1: Probe hardware and BIOS if nohwprobe is not passed
                 HardwareProbe.ProbeHW(False, CChar("K"))
             End If
 

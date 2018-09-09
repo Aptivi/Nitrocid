@@ -20,7 +20,6 @@ Module Flags
 
     'Variables
     Public ProbeFlag As Boolean = True                          'Check to see if the hardware can be probed
-    Public GPUProbeFlag As Boolean = False                      'No GPU probe (Probe GPU = 'gpuprobe' kernel argument)
     Public Quiet As Boolean = False                             'Quiet mode
     Public TimeDateIsSet As Boolean = False                     'To fix a bug after reboot
     Public StopPanicAndGoToDoublePanic As Boolean               'Double panic mode in kernel error
