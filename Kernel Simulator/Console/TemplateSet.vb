@@ -99,18 +99,19 @@ Public Module TemplateSet
 
     Public Sub MakePermanent()
 
-        Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
-        lns(2) = "User Name Shell Color = " + userNameShellColor.ToString
-        lns(3) = "Host Name Shell Color = " + hostNameShellColor.ToString
-        lns(4) = "Continuable Kernel Error Color = " + contKernelErrorColor.ToString
-        lns(5) = "Uncontinuable Kernel Error Color = " + uncontKernelErrorColor.ToString
-        lns(6) = "Text Color = " + neutralTextColor.ToString
-        lns(7) = "License Color = " + licenseColor.ToString
-        lns(20) = "Background Color = " + backgroundColor.ToString
-        lns(21) = "Input Color = " + inputColor.ToString
-        lns(26) = "Listed command in Help Color = " + cmdListColor.ToString
-        lns(27) = "Definition of command in Help Color = " + cmdDefColor.ToString
-        IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
+        Dim ksconf As New IniFile()
+        ksconf.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
+        ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColor.ToString
+        ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColor.ToString
+        ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColor.ToString
+        ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColor.ToString
+        ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColor.ToString
+        ksconf.Sections("Colors").Keys("License Color").Value = licenseColor.ToString
+        ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColor.ToString
+        ksconf.Sections("Colors").Keys("Input Color").Value = inputColor.ToString
+        ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColor.ToString
+        ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColor.ToString
+        ksconf.Save(Environ("USERPROFILE") + "\kernelConfig.ini")
 
     End Sub
 

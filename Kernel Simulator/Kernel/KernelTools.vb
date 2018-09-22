@@ -29,6 +29,7 @@ Public Module KernelTools
     ''' <remarks></remarks>
     Public Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal ParamArray Variables() As Object)
         Try
+            'TODO: Debugging and crash dump files on 0.0.6
             'Check error types and its capabilities
             If (ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C") Then
                 If (ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5) Then
@@ -117,6 +118,7 @@ Public Module KernelTools
         strcommand = Nothing
         slotsUsedName = Nothing
         slotsUsedNum = 0
+        StatusesRAM = Nothing
         totalSlots = 0
         AvailableDirs.Clear()
         modcmnds.Clear()

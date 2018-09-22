@@ -1,0 +1,20 @@
+﻿NOTE (EN): CHARACTERS WON'T DISPLAY PROPERLY IF USED ON STANDARD CONSOLES! USE RUSSIAN CONSOLES FOR THIS TO WORK PROPERLY.
+     (RU): ХАРАКТЕРЫ НЕ ОКАЗЫВАЮТСЯ, ЧТОБЫ ИСПОЛЬЗОВАТЬСЯ НА СТАНДАРТНЫХ КОНСОЛИ! 
+	       ИСПОЛЬЗУЙТЕ РОССИЙСКИЕ КОНСОЛИ ДЛЯ ЭТОГО РАБОТЫ.
+	(R:E): KHARAKTERY NE OKAZYVAYUTSYA, CHTOBY ISPOL'ZOVAT'SYA NA STANDARTNYKH KONSOLI! ISPOL'ZUYTE ROSSIYSKIYe KONSOLI DLYA ETOGO RABOTY.
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Добро пожаловать в ядро | Версия {0} :: Dobro pozhalovat' v yadro ​​| Versiya {0}
+Введите пароль администратора для обслуживания. :: Vvedite parol' administratora dlya obsluzhivaniya.
+Ошибка ядра при загрузке: :: Oshibka yadra pri zagruzke:
+Ошибка при анализе реальных аргументов командной строки: :: Oshibka pri analize real'nykh argumentov komandnoy stroki:
+Инъекционные аргументы будут запланированы для запуска при следующей перезагрузке. :: In"yektsionnyye argumenty budut zaplanirovany dlya zapuska pri sleduyushchey perezagruzke.
+Разделяйте аргументы загрузки запятыми без пробелов, например, «motd,gpuprobe» :: Razdelyayte argumenty zagruzki zapyatymi bez probelov, naprimer, «motd,gpuprobe»
+Разделяйте команды в 'cmdinject' с двоеточиями с пробелами, например, 'cmdinject setthemes Hacker : beep 1024 0.5' :: Razdelyayte komandy v 'cmdinject' s dvoyetochiyami s probelami, naprimer, 'cmdinject setthemes Hacker : beep 1024 0.5'
+Обратите внимание, что аргумент «debug» не полностью охватывает ядро. :: Obratite vnimaniye, chto argument «debug» ne polnost'yu okhvatyvayet yadro.
+Было обнаружено обновление от {0} до {1}. :: Bylo obnaruzheno obnovleniye ot {0} do {1}.
+Конфигурационная структура для 0.0.5.5 не будет обратной совместимости и не будет работать с предыдущими версиями. Конфигурация будет сброшена к настройкам по умолчанию. :: Konfiguratsionnaya struktura dlya 0.0.5.5 ne budet obratnoy sovmestimosti i ne budet rabotat' s predydushchimi versiyami. Konfiguratsiya budet sbroshena k nastroykam po umolchaniyu.
+Вы уверены, что хотите обновить конфигурацию и перезапустить <y/n>? :: Vy uvereny, chto khotite obnovit' konfiguratsiyu i perezapustit' <y/n>?
+Спецсимволы не допустимы. :: Spetssimvoly ne dopustimy.
+Сообщение оболочки: запрошенная команда {0} не разрешена для запуска в режиме обслуживания. :: Soobshcheniye obolochki: zaproshennaya komanda {0} ne razreshena dlya zapuska v rezhime obsluzhivaniya.
+Сообщение оболочки: запрошенная команда {0} не найдена. См. «Справка» для доступных команд. :: Soobshcheniye obolochki: zaproshennaya komanda {0} ne naydena. Sm. «Spravka» dlya dostupnykh komand.

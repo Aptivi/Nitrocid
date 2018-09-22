@@ -18,7 +18,6 @@
 
 Public Module Shell
 
-    'TODO: In 0.0.5, prepare for mod commands
     'Available Commands (availableCommands())
     'Admin-Only commands (strictCmds())
     Public ColoredShell As Boolean = True                   'To fix known bug
@@ -27,7 +26,7 @@ Public Module Shell
                                             "adduser", "chmotd", "chhostname", "showmotd", "lscomp", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", _
                                             "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", _
                                             "scical", "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "showmal", "savescreen", _
-                                            "lockscreen", "setsaver", "loadsaver", "showaliases"}
+                                            "lockscreen", "setsaver", "loadsaver", "showaliases", "noaliases", "ftp", "useddeps"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", "reloadconfig", "alias", _
                                      "chmal", "setsaver", "loadsaver"}
     Public modcmnds As New ArrayList
@@ -53,20 +52,21 @@ Public Module Shell
                 End If
             Next
         End If
-        If (modcmnds.Count - 1 <> -1) Then
-            For Each c As String In modcmnds
-                Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
-                If (Parts(0) = c And strcommand.StartsWith(Parts(0))) Then
-                    DoneFlag = True
-                    GetModCommand.ExecuteModCommand(strcommand)
-                End If
-            Next
+        If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
+            If (modcmnds.Count - 1 <> -1) Then
+                For Each c As String In modcmnds
+                    Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                    If (Parts(0) = c And strcommand.StartsWith(Parts(0))) Then
+                        DoneFlag = True
+                        GetModCommand.ExecuteModCommand(strcommand)
+                    End If
+                Next
+            End If
         End If
         If (DoneFlag = False) Then
             getLine()
-        Else
-            initializeShell()
         End If
+        initializeShell()
 
     End Sub
 
@@ -85,9 +85,7 @@ Public Module Shell
         'Reads command written by user
         Try
             If ArgsMode = False Then
-                If (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
-                    initializeShell()
-                Else
+                If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
                     Dim groupCmds() As String = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                     For Each cmd In groupCmds
                         Dim indexCmd As Integer = cmd.IndexOf(" ")
@@ -109,7 +107,6 @@ Public Module Shell
                             Wln("Shell message: The requested command {0} is not found. See 'help' for available commands.", "neutralText", cmd.Substring(0, indexCmd))
                         End If
                     Next
-                    initializeShell()
                 End If
             ElseIf (ArgsMode = True And CommandFlag = True) Then
                 CommandFlag = False
@@ -120,9 +117,7 @@ Public Module Shell
                         cmd = cmd.Substring(0, indexCmd)
                     End If
                     If (availableCommands.Contains(cmd.Substring(0, indexCmd))) Then
-                        If (cmd = Nothing Or cmd.StartsWith(" ") = True) Then
-                            initializeShell()
-                        Else
+                        If Not (cmd = Nothing Or cmd.StartsWith(" ") = True) Then
                             If (adminList(signedinusrnm) = True And strictCmds.Contains(cmd.Substring(0, indexCmd)) = True) Then
                                 Wdbg("Cmd exec: {0}", True, cmd.Substring(0, indexCmd))
                                 GetCommand.ExecuteCommand(cmd)

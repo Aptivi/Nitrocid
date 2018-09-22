@@ -21,9 +21,6 @@ Imports System.IO
 
 Public Module GetCommand
 
-    'Variables
-    Public key As Double
-
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
 
         Dim index As Integer = requestedCommand.IndexOf(" ")
@@ -159,9 +156,10 @@ Public Module GetCommand
                     Else
                         Wln("Changing from: {0} to {1}...", "neutralText", HName, newhost)
                         HName = newhost
-                        Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
-                        lns(24) = "Host Name = " + newhost
-                        IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
+                        Dim ksconf As New IniFile()
+                        ksconf.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
+                        ksconf.Sections("Login").Keys("Host Name").Value = newhost
+                        ksconf.Save(Environ("USERPROFILE") + "\kernelConfig.ini")
                     End If
                 Else
                     HelpSystem.ShowHelp(words(0))
@@ -176,9 +174,10 @@ Public Module GetCommand
                     Else
                         W("Changing MOTD...", "neutralText")
                         MOTDMessage = newmotd
-                        Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
-                        lns(23) = "MOTD = " + newmotd
-                        IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
+                        Dim ksconf As New IniFile()
+                        ksconf.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
+                        ksconf.Sections("Login").Keys("MOTD").Value = MOTDMessage
+                        ksconf.Save(Environ("USERPROFILE") + "\kernelConfig.ini")
                         Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
                     End If
                 Else
@@ -194,9 +193,10 @@ Public Module GetCommand
                     Else
                         W("Changing MAL...", "neutralText")
                         MAL = newmal
-                        Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
-                        lns(25) = "MOTD After Login = " + newmal
-                        IO.File.WriteAllLines(Environ("USERPROFILE") + "\kernelConfig.ini", lns)
+                        Dim ksconf As New IniFile()
+                        ksconf.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
+                        ksconf.Sections("Login").Keys("MOTD After Login").Value = newmal
+                        ksconf.Save(Environ("USERPROFILE") + "\kernelConfig.ini")
                         Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmal' to see the changes", "neutralText")
                     End If
                 Else
@@ -309,6 +309,10 @@ Public Module GetCommand
                     HelpSystem.ShowHelp(words(0))
                 End If
 
+            ElseIf (requestedCommand = "ftp") Then
+
+                FTPShell.InitiateShell()
+
             ElseIf (requestedCommand = "hwprobe") Then
 
                 HardwareProbe.ProbeHW()
@@ -354,18 +358,18 @@ Public Module GetCommand
 
             ElseIf (requestedCommand = "lscomp") Then
 
-                NetworkList.GetNetworkComputers()
-                NetworkList.ListOnlineAndOfflineHosts()
+                NetworkTools.GetNetworkComputers()
+                NetworkTools.ListOnlineAndOfflineHosts()
 
             ElseIf (requestedCommand = "lsnet") Then
 
-                NetworkList.GetNetworkComputers()
-                NetworkList.ListHostsInNetwork()
+                NetworkTools.GetNetworkComputers()
+                NetworkTools.ListHostsInNetwork()
 
             ElseIf (requestedCommand = "lsnettree") Then
 
-                NetworkList.GetNetworkComputers()
-                NetworkList.ListHostsInTree()
+                NetworkTools.GetNetworkComputers()
+                NetworkTools.ListHostsInTree()
 
             ElseIf (requestedCommand = "logout") Then
 
@@ -387,6 +391,10 @@ Public Module GetCommand
                 Else
                     HelpSystem.ShowHelp("md")
                 End If
+
+            ElseIf (requestedCommand = "noaliases") Then
+
+                Wln("Aliases that are forbidden: {0}", "neutralText", String.Join(", ", forbidden))
 
             ElseIf (requestedCommand.Substring(0, index) = "panicsim") Then
 
@@ -467,10 +475,10 @@ Public Module GetCommand
 
                 'Reload configuration
                 If (File.Exists(Environ("USERPROFILE") + "\kernelConfig.ini") = True) Then
-                    configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
+                    configReader.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
                 Else
                     Config.createConfig(False)
-                    configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
+                    configReader.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
                 End If
                 Config.readConfig()
                 Wln("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", "neutralText")
@@ -649,74 +657,80 @@ Public Module GetCommand
 
             ElseIf (requestedCommand = "showtd") Then
 
-                    TimeDate.ShowTime()
+                TimeDate.ShowTime()
 
             ElseIf (requestedCommand.Substring(0, index) = "showtdzone") Then
 
-                    If (requestedCommand <> "showtdzone") Then
-                        Dim DoneFlag As Boolean = False
-                        For Each zoneName In zoneTimes.Keys
-                            If (zoneName = strArgs) Then
-                                DoneFlag = True : TimeZones.showTimesInZones(strArgs)
-                            End If
-                        Next
-                        If (DoneFlag = False) Then
-                            If (args(0) = "all") Then
-                                TimeZones.showTimesInZones()
-                            Else
-                                HelpSystem.ShowHelp(words(0))
-                            End If
+                If (requestedCommand <> "showtdzone") Then
+                    Dim DoneFlag As Boolean = False
+                    For Each zoneName In zoneTimes.Keys
+                        If (zoneName = strArgs) Then
+                            DoneFlag = True : TimeZones.showTimesInZones(strArgs)
                         End If
-                    Else
-                        HelpSystem.ShowHelp("showtdzone")
-                    End If
-
-            ElseIf (requestedCommand = "showmotd") Then
-
-                    'Show changes to MOTD, or current
-                    Wln(MOTDMessage, "neutralText")
-
-            ElseIf (requestedCommand = "showmal") Then
-
-                    'Show changes to MAL, or current
-                    If (MAL.Contains("<user>")) Then
-                        MAL = MAL.Replace("<user>", signedinusrnm)
-                    End If
-                    Wln(MAL, "neutralText")
-
-            ElseIf (requestedCommand = "shutdown") Then
-
-                    'Shuts down the simulated system
-                    Wln("Shutting down...", "neutralText")
-                    System.Console.Beep(870, 250)
-                    KernelTools.ResetEverything()
-                    dbgWriter.Close()
-                    dbgWriter.Dispose()
-                    System.Console.Clear()
-                    Environment.Exit(0)
-
-            ElseIf (requestedCommand = "sysinfo") Then
-
-                    'Shows system information
-                    Wln("Kernel Version: {0}", "neutralText", KernelVersion)
-                    HardwareProbe.ListDrivers()
-
-            ElseIf (requestedCommand.Substring(0, index) = "unitconv") Then
-
-                    If (requestedCommand <> "unitconv") Then
-                        If (args.Count - 1 = 2) Then
-                            unitConv.Converter(args(0), args(1), args(2))
+                    Next
+                    If (DoneFlag = False) Then
+                        If (args(0) = "all") Then
+                            TimeZones.showTimesInZones()
                         Else
                             HelpSystem.ShowHelp(words(0))
                         End If
-                    Else
-                        HelpSystem.ShowHelp("unitconv")
                     End If
+                Else
+                    HelpSystem.ShowHelp("showtdzone")
+                End If
+
+            ElseIf (requestedCommand = "showmotd") Then
+
+                'Show changes to MOTD, or current
+                Wln(MOTDMessage, "neutralText")
+
+            ElseIf (requestedCommand = "showmal") Then
+
+                'Show changes to MAL, or current
+                MAL = PlaceParse.ProbePlaces(MAL)
+                Wln(MAL, "neutralText")
+
+            ElseIf (requestedCommand = "shutdown") Then
+
+                'Shuts down the simulated system
+                Wln("Shutting down...", "neutralText")
+                System.Console.Beep(870, 250)
+                KernelTools.ResetEverything()
+                If (DebugMode = True) Then
+                    dbgWriter.Close()
+                    dbgWriter.Dispose()
+                End If
+                Environment.Exit(0)
+
+            ElseIf (requestedCommand = "sysinfo") Then
+
+                'Shows system information
+                Wln("Kernel Version: {0}", "neutralText", KernelVersion)
+                HardwareProbe.ListDrivers()
+
+            ElseIf (requestedCommand.Substring(0, index) = "unitconv") Then
+
+                If (requestedCommand <> "unitconv") Then
+                    If (args.Count - 1 = 2) Then
+                        unitConv.Converter(args(0), args(1), args(2))
+                    Else
+                        HelpSystem.ShowHelp(words(0))
+                    End If
+                Else
+                    HelpSystem.ShowHelp("unitconv")
+                End If
+
+            ElseIf (requestedCommand = "useddeps") Then
+
+                Wln("MadMilkman.Ini" + vbNewLine + _
+                    "Source code: https://github.com/MarioZ/MadMilkman.Ini" + vbNewLine + _
+                    "Copyright (c) 2016, Mario Zorica" + vbNewLine + _
+                    "License (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE", "neutralText")
 
             ElseIf (requestedCommand = "version") Then
 
-                    'Shows current kernel version
-                    Wln("Version: {0}", "neutralText", KernelVersion)
+                'Shows current kernel version
+                Wln("Version: {0}", "neutralText", KernelVersion)
 
             End If
         Catch ex As Exception

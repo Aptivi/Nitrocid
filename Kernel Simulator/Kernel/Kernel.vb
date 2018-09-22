@@ -42,7 +42,7 @@ Public Module Kernel
     Public slotsUsedNum As Integer
     Public Capacities() As String
     Public totalSlots As Integer
-    Public configReader As StreamReader
+    Public configReader As New IniFile()
     Public MOTDMessage As String
     Public HName As String
     Public StatusesRAM As String
@@ -141,10 +141,10 @@ Public Module Kernel
         'Create config file and then read it
         Config.checkForUpgrade()
         If (File.Exists(Environ("USERPROFILE") + "\kernelConfig.ini") = True) Then
-            configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
+            configReader.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
         Else
             Config.createConfig(False)
-            configReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
+            configReader.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
         End If
         Config.readImportantConfig()
         Config.readConfig()

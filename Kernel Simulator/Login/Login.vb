@@ -34,6 +34,7 @@ Public Module Login
         If (clsOnLogin = True) Then
             System.Console.Clear()
         End If
+        MOTDMessage = PlaceParse.ProbePlaces(MOTDMessage)
         If (showMOTD = False) Or (showMOTDOnceFlag = False) Then
             W(vbNewLine + "Username: ", "input")
         ElseIf (showMOTDOnceFlag = True And showMOTD = True) Then
@@ -116,17 +117,11 @@ Public Module Login
     Public Sub signIn(ByVal signedInUser As String)
 
         'Initialize shell, and sign in to user.
-        Dim oldMAL As String = MAL
-        If (LockMode = False) Then
-            If (MAL.Contains("<user>")) Then
-                MAL = MAL.Replace("<user>", signedInUser)
-            End If
-            Wln(vbNewLine + MAL, "neutralText")
-        End If
-        MAL = oldMAL
-        If LockMode = True Then LockMode = False
         signedinusrnm = signedInUser
+        MAL = PlaceParse.ProbePlaces(MAL)
+        If LockMode = True Then LockMode = False
         showMOTDOnceFlag = True
+        Wln(MAL, "neutralText")
         Shell.initializeShell()
 
     End Sub

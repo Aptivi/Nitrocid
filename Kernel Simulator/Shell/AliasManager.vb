@@ -19,6 +19,7 @@
 Public Module AliasManager
 
     Public aliases As New Dictionary(Of String, String)
+    Public forbidden As String() = {"alias"}
 
     Public Sub manageAlias(ByVal mode As String, ByVal aliasTBA As String, Optional ByVal cmd As String = "")
 
@@ -29,6 +30,9 @@ Public Module AliasManager
             ElseIf Not (availableCommands.Contains(cmd)) Then
                 Wln("Command not found to alias to {0}.", "neutralText", aliasTBA)
                 Wdbg("availableCmds.Cont({0}) = false | No aliasing", True, cmd)
+            ElseIf (forbidden.Contains(cmd)) Then
+                Wln("Aliasing {0} to {1} is forbidden completely.", "neutralText", cmd, aliasTBA)
+                Wdbg("forbid.Cont({0}) = true | No aliasing", True, cmd)
             Else
                 Wdbg("({0} = {1}) = false", True, aliasTBA, cmd)
                 aliases.Add(aliasTBA, cmd)

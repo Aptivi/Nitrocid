@@ -105,14 +105,20 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MadMilkman.Ini, Version=1.0.6.2, Culture=neutral, PublicKeyToken=4e0b5157a7ffbb74, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Referenced Assemblies\MadMilkman.Ini.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="MadMilkman.Ini" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />
@@ -120,6 +126,7 @@
     <Import Include="System.Data" />
     <Import Include="System.Diagnostics" />
     <Import Include="System.Linq" />
+    <Import Include="System.Net" />
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +145,8 @@
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\InstanceCheck.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
+    <Compile Include="Languages\Translate.vb" />
+    <Compile Include="Login\PlaceParse.vb" />
     <Compile Include="Misc\Beep.vb" />
     <Compile Include="Misc\Calculator\sciCalc.vb" />
     <Compile Include="Misc\Calculator\stdCalc.vb" />
@@ -148,6 +157,9 @@
     <Compile Include="Misc\DisposeExit.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModParser.vb" />
+    <Compile Include="Network\FTP\FTPGetCommand.vb" />
+    <Compile Include="Network\FTP\FTPHelpSystem.vb" />
+    <Compile Include="Network\FTP\FTPShell.vb" />
     <Compile Include="Network\NetworkTools.vb" />
     <Compile Include="Shell\AliasManager.vb" />
     <Compile Include="Shell\GetAlias.vb" />
@@ -173,9 +185,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Network\Network.vb" />
-    <Compile Include="Network\NetworkList.vb" />
     <Compile Include="Shell\GetModCommand.vb" />
-    <Compile Include="Shell\HelpDefinitions.vb" />
     <Compile Include="Shell\HelpSystem.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />
@@ -230,6 +240,21 @@
     <Content Include="Documentation\Documentation - faq.txt" />
     <Content Include="Documentation\Documentation - main page.txt" />
     <Content Include="Documentation\Documentation - troubleshooting.txt" />
+    <Content Include="Languages\chi.txt" />
+    <Content Include="Languages\cro.txt" />
+    <Content Include="Languages\fre.txt" />
+    <Content Include="Languages\ger.txt" />
+    <Content Include="Languages\ind.txt" />
+    <Content Include="Languages\irn.txt" />
+    <Content Include="Languages\ita.txt" />
+    <Content Include="Languages\jpn.txt" />
+    <Content Include="Languages\kor.txt" />
+    <Content Include="Languages\mal.txt" />
+    <Content Include="Languages\nla.txt" />
+    <Content Include="Languages\ptg.txt" />
+    <Content Include="Languages\rus.txt" />
+    <Content Include="Languages\spa.txt" />
+    <Content Include="Languages\tky.txt" />
     <Content Include="Paomedia-Small-N-Flat-Terminal.ico" />
   </ItemGroup>
   <ItemGroup />

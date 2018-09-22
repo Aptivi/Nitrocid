@@ -2,10 +2,6 @@
 
 - General
 
-Q: Why do I get the kernel panic about not being able to get information about hardware?
-A: You have either found a bug in the kernel, or you are running an unsupported version of Windows.
-   EDIT: Now error messages are even more friendlier.
-
 Q: Why is this kernel unfinished?
 A: Because it is still on early alpha development stage. We are currently at 0.0.x stage. Stages:
 
@@ -17,23 +13,19 @@ A: Because it is still on early alpha development stage. We are currently at 0.0
 Q: Can this program have an editor?
 A: Yes, you can make one, or if you don't know how to contribute, wait for someone else or the owner to contribute.
 
-
 - Log-in
 
 Q: Why when I log-in into random usernames that does not exist, on the debugger, it says that there is an error?
 A: It is handled by supressing it. It is optional that you will see this error on the debugging window.
 
-Q: I accidentally made a typo in my username while creating. Can I change it?
-A: The name changing feature will be included in the future. From now, just create another username with your correct name in it.
-   EDIT: You can change your name since 0.0.3.
-
-
 - Commands
 
-Q: Is it interactive?
-A: Now, it is not interactive, Possibly, on the bootable version of Kernel, it will include the interactive shell.
-   EDIT: The shell now includes multiple commands.
-
-Q: Why the "beep" or "annoying-sound" does not produce beep sound?
+Q: Why the "beep" does not produce beep sound?
 A: The host system doesn't have the motherboard speaker, or the motherboard speaker isn't plugged in correctly, or it is malfunctioned.
    EDIT: Some PCs might make a "beep" on the internal sound speaker inside your PC. Dell Optiplex 7040 + Windows 10 is known to have it.
+
+- FTP
+
+Q: Why does the "Injecting CWD..." message appear?
+A: Because we use .NET Framework 4.0 as our development framework and we have to make a workaround to force FTP to use CWD before doing
+   transmissions. This does not indicate an error.

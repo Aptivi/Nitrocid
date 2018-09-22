@@ -139,6 +139,7 @@ Public Module HardwareProbe
         Wln("RAM: Used slots (by numbers): {0} / {1} ({2}%)", "neutralText", CStr(slotsUsedNum), totalSlots, FormatNumber(CStr(slotsUsedNum * 100 / totalSlots), 1))
         Wln("RAM: {0}", "neutralText", StatusesRAM)
         Wln("RAM: {0} = {1}MB", SysMem, String.Join("MB + ", "neutralText", Capacities))
+        Wln("hwprobe: RAM: Probing status is deprecated and will be removed in future release.", "neutralText")
         Hddinfo(False, False)
         ProbeGPU(False)
         BiosInformation()
@@ -207,6 +208,7 @@ Public Module HardwareProbe
                             "hwprobe: HDD: CHS: {5} cylinders | {6} heads | {7} sectors", "neutralText", _
                             Man, Hddmodel, FormatNumber(Hddsize, 2), IntType, Status, C, H, S)
                     End If
+                    Wln("hwprobe: HDD: Probing status is deprecated and will be removed in future release.", "neutralText")
                     If (Status = "Degraded") Then
                         KernelError(CChar("C"), False, 0, "Hard drive {0} is degraded. Backup and replace before failure.", Hddmodel)
                     ElseIf (Status = "Pred Fail") Then
@@ -224,6 +226,7 @@ Public Module HardwareProbe
                             "HDD: CHS: {5} cylinders | {6} heads | {7} sectors", "neutralText", _
                             Man, Hddmodel, FormatNumber(Hddsize, 2), IntType, Status, C, H, S)
                     End If
+                    Wln("HDD: Probing status is deprecated and will be removed in future release.", "neutralText")
                 End If
             Next
         Catch ex As Exception
@@ -297,6 +300,7 @@ Public Module HardwareProbe
                     Wln("hwprobe: RAM: Used slots (by names): {0}", "neutralText", slotsUsedName)
                     Wln("hwprobe: RAM: Used slots (by numbers): {0} / {1} ({2}%)", "neutralText", CStr(slotsUsedNum), totalSlots, FormatNumber(CStr(slotsUsedNum * 100 / totalSlots), 1))
                     Wln("hwprobe: RAM: {0}", "neutralText", StatusesRAM)
+                    Wln("hwprobe: RAM: Probing status is deprecated and will be removed in future release.", "neutralText")
                 End If
             End If
             SysMem = dRam / 1024 / 1024 & "MB"                                              'Calculate RAM in MB

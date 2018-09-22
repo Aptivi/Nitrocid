@@ -1,0 +1,29 @@
+﻿NOTE (EN): KOREAN TEXTS CANNOT BE VIEWED ON STANDARD CONSOLES, BUT IF YOU MANAGED TO GET A KOREAN SYSTEM OR CONSOLE THAT CAN HANDLE KOREAN 
+           LANGUAGE. YOU MIGHT BE ABLE TO READ THEM. ON 0.0.5.9, ONLY NORMAL CHARACTERS EXIST. WE WILL THINK OF A WORKAROUND IN THE FINAL 
+		   RELEASE. ADDITIONALLY, IF YOU WANT TO READ THIS FILE, READ IT IN UNICODE WITH KOREA-SUPPORTED FONT!
+     (KO): 한국어 텍스트는 표준 컨소시엄에서 볼 수 없지만 한국어를 처리 할 수있는 한국어 시스템 또는 콘솔을 사용하려면 관리해야합니다. 
+	       당신은 그들을 읽을 수 있습니다. 0.0.5.9에서 오직 정상적인 문자 만 존재합니다. 우리는 최종 릴리스에서 해결 방법이 있다고 생각합니다. 
+		   이 파일을 읽고 싶다면 한국 지원 폰트로 유니 코드로 읽으십시오!
+    (K:E): hangug-eo tegseuteuneun pyojun keonsosieom-eseo bol su eobsjiman hangug-eoleul cheoli hal su-issneun hangug-eo siseutem ttoneun 
+	       konsol-eul sayonghalyeomyeon gwanlihaeyahabnida. dangsin-eun geudeul-eul ilg-eul su issseubnida. 0.0.5.9eseo ojig jeongsangjeog-in 
+		   munja man jonjaehabnida. ulineun choejong lilliseueseo haegyeol bangbeob-i issdago saeng-gaghabnida. i pail-eul ilg-go sipdamyeon 
+		   hangug jiwon ponteulo yuni kodeulo ilg-eusibsio!
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+커널에 오신 것을 환영합니다. 버전 {0} :: keoneol-e osin geos-eul hwan-yeonghabnida. beojeon {0}
+유지 보수를 위해 관리자 암호를 입력하십시오. :: yuji bosuleul wihae gwanlija amholeul iblyeoghasibsio.
+부팅 중 커널 오류: :: buting jung keoneol olyu:
+실제 명령 줄 인수를 구문 분석하는 동안 오류가 발생했습니다. :: silje myeonglyeong jul insuleul gumun bunseoghaneun dong-an olyuga balsaenghaessseubnida.
+주입 된 인수는 다음 재부팅시 실행되도록 예약됩니다. :: ju-ib doen insuneun da-eum jaebutingsi silhaengdoedolog yeyagdoebnida.
+인수 삽입이 취소되었습니다. :: insu sab-ib-i chwisodoeeossseubnida.
+공백없이 부팅 인수를 쉼표로 구분하십시오 (예: 'motd,gpuprobe'). :: gongbaeg-eobs-i buting insuleul swimpyolo gubunhasibsio (ye: 'motd,gpuprobe').
+공백이있는 콜론을 사용하여 'cmdinject'의 명령을 구분하십시오 (예: 'cmdinject setthemes Hacker : beep 1024 0.5') :: gongbaeg-iissneun kollon-eul sayonghayeo 'cmdinject'ui myeonglyeong-eul gubunhasibsio (ye: 'cmdinject setthemes Hacker : beep 1024 0.5')
+'debug'인수는 커널을 완전히 커버하지 않습니다. :: 'debug'insuneun keoneol-eul wanjeonhi keobeohaji anhseubnida.
+bargs: 요청한 인수 {0} 을 (를) 찾을 수 없습니다. :: bargs : yocheonghan insu {0} eul (leul) chaj-eul su eobs-seubnida.
+{0} 에서 {1} (으) 로의 업그레이드가 감지되었습니다. :: {0} eseo {1} (eu) loui eobgeuleideuga gamjidoeeossseubnida.
+0.0.5.5의 설정 구조는 이전 버전과 호환되지 않으며 이전 버전과 호환되지 않습니다. 구성이 기본 설정으로 재설정됩니다. :: 0.0.5.5ui seoljeong gujoneun ijeon beojeongwa hohwandoeji anh-eumyeo ijeon beojeongwa hohwandoeji anhseubnida. guseong-i gibon seoljeong-eulo jaeseoljeongdoebnida.
+구성을 업데이트하고 <y/n> 을 다시 시작 하시겠습니까? :: guseong-eul eobdeiteuhago <y/n> eul dasi sijag hasigessseubnikka?
+구성을 업데이트하는 중 오류가 발생했습니다. :: guseong-eul eobdeiteuhaneun jung olyuga balsaenghaessseubnida.
+특수 문자는 사용할 수 없습니다. :: teugsu munjaneun sayonghal su eobs-seubnida.
+셸 메시지 : 요청한 명령 {0} 을 (를) 유지 관리 모드로 실행할 수 없습니다. :: syel mesiji : yocheonghan myeonglyeong {0} eul (leul) yuji gwanli modeulo silhaenghal su eobs-seubnida.
+셸 메시지 : 요청한 명령 {0} 을 (를) 찾을 수 없습니다. 사용 가능한 명령에 대해서는 '도움말'을 참조하십시오. :: syel mesiji : yocheonghan myeonglyeong {0} eul (leul) chaj-eul su eobs-seubnida. sayong ganeunghan myeonglyeong-e daehaeseoneun 'doummal'eul chamjohasibsio.

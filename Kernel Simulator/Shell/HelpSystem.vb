@@ -18,11 +18,66 @@
 
 Public Module HelpSystem
 
+    'This dictionary is the definitions for commands.
+    Public definitions As New Dictionary(Of String, String) From {{"adduser", "Adds users (Only admins can access this command)"}, _
+                                                                  {"alias", "Adds aliases to commands (Only admins can access this command)"}, _
+                                                                  {"arginj", "Injects arguments to the kernel (reboot required, admins only)"}, _
+                                                                  {"beep", "Console will beep in Hz and time in milliseconds"}, _
+                                                                  {"calc", "Simple calculator"}, _
+                                                                  {"cdir", "Shows current directory"}, _
+                                                                  {"changedir", "Changes directory"}, _
+                                                                  {"chhostname", "Changes host name (Admins only)"}, _
+                                                                  {"chmal", "Changes MAL, the MOTD After Login (Admins only)"}, _
+                                                                  {"chmotd", "Changes MOTD, the Message Of The Day (Admins only)"}, _
+                                                                  {"chpwd", "Changes password for current user"}, _
+                                                                  {"chusrname", "Changes user name (Admins Only)"}, _
+                                                                  {"choice", "Makes user choices"}, _
+                                                                  {"cls", "Clears the screen"}, _
+                                                                  {"debuglog", "Shows debug logs (Admins Only)"}, _
+                                                                  {"echo", "Writes a text into a console"}, _
+                                                                  {"ftp", "Use an FTP shell to interact with servers"}, _
+                                                                  {"help", "Help page"}, _
+                                                                  {"hwprobe", "Probe hardware manually (One time in 'nohwprobe' kernel)"}, _
+                                                                  {"list", "List file/folder contents in current folder"}, _
+                                                                  {"loadsaver", "Loads screensaver file in %USERPROFILE%\KSMods"}, _
+                                                                  {"lockscreen", "Locks your screen with a password"}, _
+                                                                  {"logout", "Logs you out"}, _
+                                                                  {"lscomp", "Lists all network devices who is online (and offline in domains)"}, _
+                                                                  {"lsnet", "Lists all network addresses on host"}, _
+                                                                  {"lsnettree", "Lists all network addresses on host using the tree"}, _
+                                                                  {"md", "Creates a directory"}, _
+                                                                  {"netinfo", "Lists information about all available interfaces"}, _
+                                                                  {"noaliases", "Shows forbidden list of aliases"}, _
+                                                                  {"panicsim", "Kernel Panic Simulator (real)"}, _
+                                                                  {"perm", "Manage permissions for users (Only admins can access this command)"}, _
+                                                                  {"ping", "Check to see if specified address is available"}, _
+                                                                  {"read", "Writes file contents to the console"}, _
+                                                                  {"reboot", "Restarts your computer (WARNING: No syncing, because it is not a final kernel)"}, _
+                                                                  {"reloadconfig", "Reloads configuration file that is edited."}, _
+                                                                  {"rd", "Removes a directory"}, _
+                                                                  {"rmuser", "Removes a user from the list (Admins Only)"}, _
+                                                                  {"savescreen", "Saves your screen from burn outs"}, _
+                                                                  {"scical", "Scientific calculator. The unit converter is separated to another command"}, _
+                                                                  {"setcolors", "Sets up kernel colors"}, _
+                                                                  {"setsaver", "Sets up kernel screensavers"}, _
+                                                                  {"setthemes", "Sets up kernel themes"}, _
+                                                                  {"showaliases", "Shows aliases"}, _
+                                                                  {"showmal", "Shows MOTD after login set by user or kernel"}, _
+                                                                  {"showmotd", "Shows message of the day set by user or kernel"}, _
+                                                                  {"showtd", "Shows date and time"}, _
+                                                                  {"showtdzone", "Shows date and time in zones"}, _
+                                                                  {"shutdown", "The kernel will be shut down"}, _
+                                                                  {"sysinfo", "System information"}, _
+                                                                  {"unitconv", "Unit converter that is separated from scicalc."}, _
+                                                                  {"useddeps", "Shows used open source dependencies"}, _
+                                                                  {"version", "Shows kernel version"}}
+    Public moddefs As New Dictionary(Of String, String)
+
     Public Sub ShowHelp(Optional ByVal command As String = "")
 
+        Dim wholesslist As String() = IO.Directory.GetFiles(Environ("USERPROFILE") + "/KSMods", "*SS.m", IO.SearchOption.TopDirectoryOnly)
         If (command = "") Then
 
-            'TODO: Modification Parser for mods with commands (Help, Commands, and everything).
             If (simHelp = False) Then
                 For Each cmd As String In definitions.Keys
                     W("- {0}: ", "helpCmd", cmd) : Wln("{0}", "helpDef", definitions(cmd))
@@ -99,6 +154,10 @@ Public Module HelpSystem
 
             Wln("Usage: echo <text>", "neutralText")
 
+        ElseIf (command = "ftp") Then
+
+            Wln("Usage: ftp: Initializes the FTP shell.", "neutralText")
+
         ElseIf (command = "hwprobe") Then
 
             Wln("Usage: hwprobe: Probes hardware (Only works when the hardware is not probed and hwprobe is not executed).", "neutralText")
@@ -117,7 +176,8 @@ Public Module HelpSystem
 
         ElseIf (command = "loadsaver") Then
 
-            Wln("Usage: loadsaver <modNameSS.m>", "neutralText")
+            Wln("Usage: loadsaver <modNameSS.m>" + vbNewLine + _
+                "       where modnameSS.m will be {0}", "neutralText", String.Join(", ", wholesslist))
 
         ElseIf (command = "lockscreen") Then
 
@@ -136,6 +196,10 @@ Public Module HelpSystem
         ElseIf (command = "netinfo") Then
 
             Wln("Usage: netinfo: Get every network information", "neutralText")
+
+        ElseIf (command = "noaliases") Then
+
+            Wln("Usage: noaliases: SHows forbidden list of aliases", "neutralText")
 
         ElseIf (command = "panicsim") Then
 
@@ -188,12 +252,17 @@ Public Module HelpSystem
 
         ElseIf (command = "setsaver") Then
 
-            Wln("Usage: setsaver <modNameSS.m>", "neutralText")
+            Wln("Usage: setsaver <modNameSS.m/matrix/disco/colorMix>" + vbNewLine + _
+                "       where modnameSS.m will be {0}", "neutralText", String.Join(", ", wholesslist))
 
         ElseIf (command = "setthemes") Then
 
             Wln("Usage: setthemes <Theme>" + vbNewLine + _
                 "       Friends of setthemes: setcolors", "neutralText")
+
+        ElseIf (command = "showaliases") Then
+
+            Wln("Usage: showaliases: Shows aliases", "neutralText")
 
         ElseIf (command = "showmotd") Then
 
@@ -224,6 +293,10 @@ Public Module HelpSystem
                 "Reaumur, Romer, Delisle, Rankine, j, kj, m/s, km/h, cm/ms, Kilograms, Grams, Tons, Kilotons, Megatons, kn, n, Hz, kHz, MHz, " + _
                 "GHz, Number (source only), Money (target only), Percent (target only), Centivolts, Volts, Kilovolts, Watts, Kilowatts, " + _
                 "Milliliters, Liters, Kiloliters, Gallons, Ounces, Feet, Inches, Yards and Miles.", "neutralText")
+
+        ElseIf (command = "useddeps") Then
+
+            Wln("Usage: useddeps: Shows open source libraries used", "neutralText")
 
         ElseIf (command = "version") Then
 

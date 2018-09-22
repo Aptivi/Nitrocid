@@ -1,0 +1,15 @@
+﻿Welkom bij de kernel | Versie {0}
+Voer het beheerderswachtwoord in voor onderhoud.
+Kernel-fout tijdens het booten:
+Fout tijdens het parseren van echte opdrachtregelargumenten:
+Geïnjecteerde argumenten worden gepland om te worden uitgevoerd bij het volgende opnieuw opstarten.
+Aparte opstartargumenten met komma's zonder spaties, bijvoorbeeld 'motd,gpuprobe'
+Afzonderlijke opdrachten op 'cmdinject' met dubbele punten met spaties, bijvoorbeeld 'cmdinject setthemes Hacker : beep 1024 0.5'
+Merk op dat het 'debug'-argument de kernel niet volledig dekt.
+Een upgrade van {0} naar {1} is gedetecteerd.
+De configuratiestructuur voor 0.0.5.5 zal niet achterwaarts compatibel zijn en zal niet werken met eerdere versies. De configuratie wordt gereset naar de standaardinstellingen.
+Weet u zeker dat u de configuratie wilt bijwerken en <y/n> wilt herstarten?
+Er is een fout opgetreden bij het proberen om de configuratie bij te werken.
+Speciale karakters zijn niet toegestaan.
+Shell-bericht: het gevraagde commando {0} mag niet worden uitgevoerd in de onderhoudsmodus.
+Shell-bericht: het gevraagde commando {0} is niet gevonden. Zie 'help' voor beschikbare commando's.

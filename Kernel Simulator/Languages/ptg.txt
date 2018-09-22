@@ -1,0 +1,40 @@
+﻿NOTE (EN): SOME CHARACTERS CAN'T BE DISPLAYED PROPERLY ON SOME CONSOLES. USE ANOTHER CONSOLE THAT SUPPORTS PORTUGUESE CHARACTERS.
+     (PT): ALGUNS PERSONAGENS NÃO PODEM SER EXIBIDOS ADEQUADAMENTE EM ALGUNS CONSOLOS. UTILIZAR OUTRA CONSOLA QUE APOIA PERSONAGENS PORTUGUESAS.
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+{0}/{1} {2}: tempo esgotado, desconectado ou servidor off-line.
+Digite a senha do administrador para manutenção.
+Erro no kernel durante a inicialização:
+Erro ao analisar argumentos reais da linha de comando:
+Argumentos injetados serão agendados para serem executados na próxima reinicialização.
+Injeção de Argumento foi cancelada.
+Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, 'motd,gpuprobe'
+Comandos separados em 'cmdinject' com dois-pontos com espaços, por exemplo, 'cmdinject setthemes Hacker : beep 1024 0.5'
+Note que o argumento 'debug' não cobre completamente o kernel.
+bargs: O argumento solicitado {0} não foi encontrado.
+Uma atualização de {0} para {1} foi detectada.
+A estrutura de configuração para o 0.0.5.5 não será compatível com versões anteriores e não funcionará com versões anteriores. A configuração será redefinida para as configurações padrão.
+Tem certeza de que deseja atualizar a configuração e reiniciar <y/n>?
+Há um erro ao tentar atualizar a configuração.
+Espaços não são permitidos.
+Caracteres especiais não são permitidos.
+Mensagem do shell: O comando solicitado {0} não pode ser executado no modo de manutenção.
+Mensagem do shell: O comando solicitado {0} não foi encontrado. Veja 'help' para os comandos disponíveis.
+Tipo de arquivo não suportado para o arquivo mod {0}
+O arquivo mod {0} é um protetor de tela e é ignorado
+Mod não pode ser carregado por causa do seguinte:
+O usuário {0} foi adicionado à lista de administradores.
+Falha ao adicionar usuário nas listas de permissão: tipo inválido {0}
+Você encontrou um bug ou a permissão que você tentou adicionar ou remover já está concluída ou outro erro.
+O usuário {0} já está conectado. Efetue logout e login como outro administrador.
+Há um erro sério ao imprimir texto.
+{0} não é um protetor de tela. Um código de proteção de tela deve ter "SS.m" no final.
+{0} não inicializou. O código do protetor de tela pode ter sofrido um erro durante a inicialização.
+Protetor de tela {0} não encontrado no banco de dados. Inicialize com "loadsaver {0}".
+O alias não pode ser o mesmo nome de um comando.
+Outra instância do Kernel Simulator está sendo executada. Desligando em caso de interferência.
+hwprobe: Seu hardware será testado. Por favor, espere...
+RAM: Slots usados (por números): {0} / {1} ({2}%)
+Uma ou mais de suas fichas não podem obter seu status, portanto, "unknown" é assumido.
+Por favor, leia a documentação para mais informações porque a alta freqüência não deve ser usada.
+{0} / {1} {2}: tempo esgotado, desconectado ou servidor off-line.

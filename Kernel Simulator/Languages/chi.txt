@@ -1,0 +1,27 @@
+﻿NOTE (EN): CHINESE TEXTS CANNOT BE VIEWED ON STANDARD CONSOLES, BUT IF YOU MANAGED TO GET A CHINESE SYSTEM OR CONSOLE THAT CAN HANDLE CHINESE 
+           LANGUAGE. YOU MIGHT BE ABLE TO READ THEM. ON 0.0.5.9, ONLY NORMAL CHARACTERS EXIST. WE WILL THINK OF A WORKAROUND IN THE FINAL 
+		   RELEASE. ADDITIONALLY, IF YOU WANT TO READ THIS FILE, READ IT IN UNICODE WITH CHINESE-SUPPORTED FONT!
+	 (CH): 中文文本不能在標準容器上查看，但如果您管理中文系統或控制台可以處理中文語言。 你可以閱讀它們。 在0.0.5.9，只有正常字符存在。 
+	       我們將在最終版本中思考一個變通方法。 另外，如果你想閱讀這個文件，請用中文支持的字體閱讀unicode！
+	(C:E): Zhōngwén wénběn bùnéng zài biāozhǔn róngqì shàng chákàn, dàn rúguǒ nín guǎnlǐ zhōngwén xìtǒng huò kòngzhì tái kěyǐ chǔlǐ zhōngwén 
+	       yǔyán. Nǐ kěyǐ yuèdú tāmen. Zài 0.0.5.9, Zhǐyǒu zhèngcháng zìfú cúnzài. Wǒmen jiàng zài zuìzhōng bǎnběn zhōng sīkǎo yīgè biàntōng 
+		   fāngfǎ. Lìngwài, rúguǒ nǐ xiǎng yuèdú zhège wénjiàn, qǐng yòng zhōngwén zhīchí de zìtǐ yuèdú unicode!
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+歡迎來到內核 | 版本{0} :: Huānyíng lái dào nèihé | bǎnběn {0}
+輸入管理密碼進行維護。 :: Shūrù guǎnlǐ mìmǎ jìnxíng wéihù.
+引導時出現內核錯誤： :: Yǐndǎo shí chūxiàn nèihé cuòwù:
+解析實際命令行參數時出錯： :: Jiěxī shíjì mìnglìng xíng cānshù shí chūcuò:
+注入的參數將安排在下次重新啟動時運行。 :: Zhùrù de cānshù jiāng ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.
+參數注射已被取消。 :: Cānshù zhùrù yǐ qǔxiāo.
+使用逗號分隔引導參數，不帶空格，例如'motd，gpuprobe' :: Shǐyòng dòuhào fēngé yǐndǎo cānshù, bù dài kònggé, lìrú'motd,gpuprobe'
+'cmdinject'上的命令與帶空格的冒號分開，例如'cmdinject setthemes Hacker：beep 1024 0.5' :: 'Cmdinject' shàng de mìnglìng yǔ dài kònggé de màohào fēnkāi, lìrú'cmdinject setthemes Hacker:Beep 1024 0.5'
+請注意，'debug'參數並不完全覆蓋內核。 :: Qǐng zhùyì,'debug'cānshù bìng bù wánquán fùgài nèihé.
+bargs：找不到請求的參數{0}。 :: bargs: Zhǎo bù dào qǐngqiú de cānshù {0}.
+檢測到從{0}升級到{1}。 :: Jiǎncè dào cóng {0} shēngjí dào {1}.
+0.0.5.5的配置結構不會向後兼容，也不適用於以前的版本。 配置將重置為默認設置。 :: 0.0.5.5 De pèizhì jiégòu bù huì xiànghòu jiānróng, yě bù shìyòng yú yǐqián de bǎnběn. Pèizhì jiāng chóng zhì wèi mòrèn shèzhì.
+您確定要更新配置並重新啟動<y/n>嗎？ :: Nín quèdìng yào gēngxīn pèizhì bìng chóngxīn qǐdòng <y/n> ma?
+嘗試更新配置時出錯。 :: Chángshì gēngxīn pèizhì shí chūcuò.
+不允許有特殊字符。 :: Bù yǔnxǔ yǒu tèshū zìfú.
+Shell消息：不允許在維護模式下運行請求的命令{0}。 :: Shell xiāoxī: Bù yǔnxǔ zài wéihù móshì xià yùnxíng qǐngqiú de mìnglìng {0}.
+Shell消息：找不到請求的命令{0}。 有關可用命令，請參閱“help”。 :: Shell xiāoxī: Zhǎo bù dào qǐngqiú de mìnglìng {0}. Yǒuguān kěyòng mìnglìng, qǐng cānyuè “help”.

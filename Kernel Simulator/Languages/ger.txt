@@ -1,0 +1,30 @@
+﻿Willkommen im Kernel | Version {0}
+Geben Sie das Administratorkennwort für die Wartung ein.
+Kernel Fehler beim Booten:
+Fehler beim Parsen von echten Befehlszeilenargumenten:
+Verfügbare Argumente:
+Argumente ('help' für Hilfe):
+Injizierte Argumente werden für den nächsten Neustart geplant.
+Argument Injektion wurde abgebrochen.
+Trennen Sie Boot-Argumente mit Kommas ohne Leerzeichen, z. B. "motd, gpuprobe"
+Separate Befehle für 'cmdinject' mit Doppelpunkten mit Leerzeichen, zum Beispiel, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Beachten Sie, dass das 'debug' streit den Kernel nicht vollständig abdeckt.
+bargs: Das angeforderte Argument {0} wurde nicht gefunden.
+datetime: Zeit ist {0}
+datetime: Heute ist {0}
+datetime: Zeitzone: {0}
+Ein Upgrade von {0} auf {1} wurde erkannt.
+Die Konfigurationsstruktur für 0.0.5.5 ist nicht abwärtskompatibel und funktioniert nicht mit früheren Versionen. Die Konfiguration wird auf die Standardeinstellungen zurückgesetzt.
+Sind Sie sicher, dass Sie die Konfiguration aktualisieren und <y/n> neu starten möchten?
+Beim Aktualisieren der Konfiguration ist ein Fehler aufgetreten.
+Sonderzeichen sind nicht erlaubt.
+Shell-Nachricht: Der angeforderte Befehl {0} darf nicht im Wartungsmodus ausgeführt werden.
+Sie sind nicht berechtigt, {0} zu verwenden
+Shell-Nachricht: Der angeforderte Befehl {0} wurde nicht gefunden. Siehe 'help' für verfügbare Befehle.
+Nicht unterstützter Dateityp für die Mod-Datei {0}
+Die Mod-Datei {0} ist ein Bildschirmschoner und wird ignoriert
+Mod kann nicht geladen werden wegen:
+{0} kann nicht in {1} konvertiert werden
+{0} bis {1}: {2}
+Zeit von {0}: {1}
+Verzeichnis kann nicht in /{0} geändert werden, da das Verzeichnis nirgends führt.

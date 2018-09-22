@@ -18,6 +18,8 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - [Microsoft .NET Framework 4.0](https://download.microsoft.com/download/1/B/E/1BE39E79-7E39-46A3-96FF-047F95396215/dotNetFx40_Full_setup.exe) or higher is **important and required** for Kernel Simulator to work fully. If you have Windows 8 or later, you might already have this version of Microsoft .NET Framework 4.0.
 
+- MadMilkman DLL or installed library (DLL tested)
+
 ## |-----+--> _Build Instructions_ <--+-----|
 
 1. Install [Microsoft Visual Basic Express 2010](https://visual-basic-express.soft32.com/old-version/386190/2010.express/) or Visual Studio 2010, or higher.
@@ -32,7 +34,7 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 6. Click on the **Build** menu bar, and click on **Build Kernel Simulator**
 
-7. In **Windows Explorer**, go to the build directory and then double-click on the executable file.
+7. In **Windows Explorer**, go to the build directory and then double-click on the executable file. 
 
 ## |-----+--> _History_ <--+-----|
 
@@ -78,6 +80,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **9/9/2018 - 0.0.5.2:** Made GPU probing on boot, removing "gpuprobe" argument, changed behavior of updating config
 
+**9/22/2018 - 0.0.5.5:** Re-written config, Forbidden aliases, added missing help entries for "showalises", added more MOTD and MAL placeholders, fixed repeating message of RAM status, and an FTP client has been added, finally!
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`
@@ -97,6 +101,16 @@ The documentations can be found in source code of kernel simulator in `Kernel Si
 **EoflaOE:** Owner of Kernel Simulator
 
 **Paomedia:** Icon creator
+
+## |-----+--> _Open Source Libraries used_ <--+-----|
+
+MadMilkman.Ini
+
+Source code: https://github.com/MarioZ/MadMilkman.Ini
+
+Copyright (c) 2016, Mario Zorica
+
+License (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
 
 ## |-----+--> _License - GNU GPL_ <--+-----|
 

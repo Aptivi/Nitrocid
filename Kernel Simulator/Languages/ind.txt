@@ -1,0 +1,42 @@
+﻿NOTE (EN): ALL HINDI CHARACTERS WILL BE SWITCHED TO NORMAL CHARACTERS THAT SOUND LIKE HINDI, BECAUSE CONSOLE CANNOT HANDLE HINDI CHARACTERS.
+           MEANWHILE, NORMAL CHARACTERS EXIST HERE. ONCE 0.0.5.9 IS RELEASED, ALL HINDI CHARACTERS WILL BE REMOVED, THEN WE WILL THINK OF A
+		   WORKAROUND IN BETWEEN RELEASES. YOU MAY ONLY OPEN THIS TEXT BY UNICODE FORMATTING.
+	 (IN): सभी हिंदी चरित्रों को सामान्य चरित्रों के लिए स्विच किया जाएगा जो हिंदी की तरह ध्वनि, क्योंकि कंसोल हिंदी चरित्रों को संभाला नहीं जा सकता है। मीनहेल,
+	       सामान्य चरित्र यहां मौजूद हैं। एक बार 0.0.5.9 जारी किया गया है, सभी हिंदी चरित्र हटा दिए जाएंगे, फिर हम रिलीज के दौरान एक कामकाज के बारे में 
+		   सोचेंगे। आप केवल यूनिकोड प्रारूप के द्वारा इस पाठ को खोल सकते हैं।
+	(I:E): sabhee hindee charitron ko saamaany charitron ke lie svich kiya jaega jo hindee kee tarah dhvani, kyonki kansol hindee charitron ko 
+	       sambhaala nahin ja sakata hai. meenahel, saamaany charitr yahaan maujood hain. ek baar 0.0.5.9 jaaree kiya gaya hai, sabhee hindee 
+		   charitr hata die jaenge, phir ham rileej ke dauraan ek kaamakaaj ke baare mein sochenge. aap keval yoonikod praaroop ke dvaara is 
+		   paath ko khol sakate hain.
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+कर्नेल में आपका स्वागत | संस्करण {0} :: karnel mein aapaka svaagat | sanskaran {0}
+रखरखाव के लिए व्यवस्थापक पासवर्ड दर्ज करें। :: rakharakhaav ke lie vyavasthaapak paasavard darj karen.
+बूटिंग के दौरान कर्नेल त्रुटि: :: booting ke dauraan karnel truti:
+असली कमांड लाइन तर्कों को पार्स करते समय त्रुटि: :: asalee kamaand lain tarkon ko paars karate samay truti:
+उपलब्ध तर्क: :: upalabdh tark:
+तर्क (सहायता के लिए 'help'): :: tark (sahaayata ke lie sahaayata):
+इंजेक्शन वाले तर्क अगले रीबूट पर चलने के लिए निर्धारित किए जाएंगे। :: injekshan vaale tark agale reeboot par chalane ke lie nirdhaarit kie jaenge.
+तर्क इंजेक्शन रद्द कर दिया गया है। :: tark injekshan radd kar diya gaya hai.
+बिना स्पेस के अल्पविराम के साथ अलग बूट तर्क, उदाहरण के लिए, 'motd,gpuprobe' :: bina spes ke alpaviraam ke saath alag boot tark, udaaharan ke lie, 'motd,gpuprobe'
+रिक्त स्थान वाले कॉलन के साथ 'cmdinject' पर अलग-अलग आदेश, उदाहरण के लिए, 'cmdinject setthemes Hacker: beep 1024 0.5' :: rikt sthaan vaale kolan ke saath chmdinjaicht par alag-alag aadesh, udaaharan ke lie, 'cmdinject setthemes Hacker: beep 1024 0.5'
+ध्यान दें कि 'debug' तर्क कर्नेल को पूरी तरह से कवर नहीं करता है। :: dhyaan den ki 'debug' tark karnel ko pooree tarah se kavar nahin karata hai.
+bargs: अनुरोधित तर्क {0} नहीं मिला है। :: bargs: anurodhit tark {0} nahin mila hai.
+datetime: समय {0} है :: datetime: samay {0} hai
+datetime: आज {0} है :: datetime: aaj {0} hai
+datetime: समय क्षेत्र: {0} :: datetime: samay kshetr: {0}
+{0} से {1} तक अपग्रेड किया गया था। :: {0} se {1} tak apagred kiya gaya tha.
+0.0.5.5 के लिए कॉन्फ़िगरेशन संरचना पीछे-संगत नहीं होगी और पिछले संस्करणों के साथ काम नहीं करेगी। कॉन्फ़िगरेशन डिफ़ॉल्ट सेटिंग्स पर रीसेट हो जाएगा। :: 0.0.5.5 ke lie konfigareshan sanrachana peechhe-sangat nahin hogee aur pichhale sanskaranon ke saath kaam nahin karegee. konfigareshan difolt setings par reeset ho jaega.
+क्या आप वाकई कॉन्फ़िगरेशन अपडेट करना चाहते हैं और <y/n> पुनरारंभ करना चाहते हैं? :: kya aap vaakee konfigareshan apadet karana chaahate hain aur <y/n> punaraarambh karana chaahate hain?
+कॉन्फ़िगरेशन अपडेट करने का प्रयास करने में त्रुटि हुई है। :: konfigareshan apadet karane ka prayaas karane mein truti huee hai.
+विशेष वर्णों की अनुमति नहीं है। :: vishesh varnon kee anumati nahin hai.
+शेल संदेश: अनुरोधित आदेश {0} को रखरखाव मोड में चलाने की अनुमति नहीं है। :: shel sandesh: anurodhit aadesh {0} ko rakharakhaav mod mein chalaane kee anumati nahin hai.
+आपको {0} का उपयोग करने की अनुमति नहीं है :: aapako {0} ka upayog karane kee anumati nahin hai
+शैल संदेश: अनुरोधित आदेश {0} नहीं मिला है। उपलब्ध कमांड के लिए 'सहायता' देखें। :: shail sandesh: anurodhit aadesh {0} nahin mila hai. upalabdh kamaand ke lie sahaayata dekhen.
+मोड फ़ाइल के लिए असमर्थित फ़ाइल प्रकार {0} :: mod fail ke lie asamarthit fail prakaar {0}
+मॉड फ़ाइल {0} एक स्क्रीनसेवर है और इसे अनदेखा किया जाता है :: mod fail {0} ek skreenasevar hai aur ise anadekha kiya jaata hai
+निम्नलिखित के कारण मॉड लोड नहीं किया जा सकता है: :: nimnalikhit ke kaaran mod lod nahin kiya ja sakata hai:
+{0} को {1} में परिवर्तित नहीं किया जा सकता :: {0} ko {1} mein parivartit nahin kiya ja sakata
+{0} से {1}: {2} :: {0} se {1}: {2}
+{0} का समय: {1} :: {0} ka samay: {1}
+निर्देशिका को /{0} में परिवर्तित नहीं कर सकता क्योंकि वह निर्देशिका कहीं भी नहीं जाती है। :: nirdeshika ko /{0} mein parivartit nahin kar sakata kyonki vah nirdeshika kaheen bhee nahin jaatee hai.

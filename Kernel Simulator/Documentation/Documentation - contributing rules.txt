@@ -55,10 +55,8 @@ If some of the ideas disappeared, then it is either done or cancelled.
 2. GUI Command Prompt
 3. "uiprompt" real command-line argument launches GUI command prompt
 4. Move every single documentation to Wiki in repository (Planned in 0.0.6)
-5. Languages (Delayed to 0.0.6)
+5. Languages (Delayed to 0.0.5.9)
 6. Custom aliases for commands (Perm. in 0.0.6)
-7. More placeholders for MAL and MOTD (0.0.5.5)
-8. Un-aliasable list (0.0.5.5)
-9. Use .ini Library (0.0.5.5)
+7. Debug everything (0.0.5.9)
 
 (If you have ideas, edit this section by inserting your idea.)

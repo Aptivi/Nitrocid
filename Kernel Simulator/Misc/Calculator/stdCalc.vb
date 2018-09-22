@@ -49,6 +49,11 @@ Public Module stdCalc
             If (DebugMode = True) Then
                 Wln(ex.StackTrace, "neutralText") : Wdbg(ex.StackTrace, True)
             End If
+        Catch ex As OverflowException
+            Wln("There has been a suspected attempt at calculating that resulted in an overflow.", "neutralText")
+            If (DebugMode = True) Then
+                Wln("Overflow " + ex.StackTrace, "neutralText") : Wdbg("Overflow " + ex.StackTrace, True)
+            End If
         Catch ex As Exception
             Wln("There is an error while calculating: {0}", "neutralText", ex.Message)
             If (DebugMode = True) Then

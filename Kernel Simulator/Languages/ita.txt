@@ -1,0 +1,16 @@
+﻿Benvenuti nel kernel | Versione {0}
+Immettere la password dell'amministratore per la manutenzione.
+Errore del kernel durante l'avvio:
+Errore durante l'analisi degli argomenti della riga di comando reali:
+Gli argomenti iniettati saranno programmati per essere eseguiti al successivo riavvio.
+L'argomento Injection è stato cancellato.
+Separare gli argomenti di avvio con virgole senza spazi, ad esempio "motd,gpuprobe"
+Comandi separati su 'cmdinject' con i due punti con spazi, ad esempio 'cmdinject setthemes Hacker: beep 1024 0.5'
+Si noti che l'argomento 'debug' non copre completamente il kernel.
+È stato rilevato un aggiornamento da {0} a {1}.
+La struttura di configurazione per 0.0.5.5 non sarà retrocompatibile e non funzionerà con le versioni precedenti. La configurazione verrà ripristinata alle impostazioni predefinite.
+Sei sicuro di voler aggiornare la configurazione e riavviare <y/n>?
+Si è verificato un errore durante il tentativo di aggiornare la configurazione.
+Non sono ammessi personaggi speciali.
+Messaggio shell: il comando richiesto {0} non può essere eseguito in modalità di manutenzione.
+Messaggio shell: il comando richiesto {0} non è stato trovato. Vedi 'aiuto' per i comandi disponibili.

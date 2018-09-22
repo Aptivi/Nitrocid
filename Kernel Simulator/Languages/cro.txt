@@ -1,0 +1,19 @@
+﻿NOTE (EN): SOME CHARACTERS CAN'T BE DISPLAYED PROPERLY ON SOME CONSOLES. USE ANOTHER CONSOLE THAT SUPPORTS CROATIAN CHARACTERS.
+     (CR): NEKI ZNAKOVI NE MOŽE PRIKAZIVATI NEKA KOLONSKU. KORISTITE DRUGU KONSOLITU KOJA PODRŽA HRVATSKE ZNAKOVE.
+-------------------------------------------------------------------------------------------------------------------------------
+
+Dobrodošli u kernel | Verzija {0}
+Unesite lozinku administratora za održavanje.
+Pogreška kernela tijekom dizanja:
+Pogreška prilikom analize stvarnih argumenata naredbenog retka:
+Ubrizgani argumenti bit će zakazani za pokretanje pri sljedećem ponovnom pokretanju.
+Odvojite argumente za pokretanje s zarezima bez razmaka, na primjer, 'motd,gpuprobe'
+Odvojite naredbe na 'cmdinject' s dvotočkama s razmaknicama, na primjer, 'cmdinject setthemes Hacker : beep 1024 0.5'
+Napominjemo da argument 'debug' ne pokriva potpuno kernel.
+Dohvaćena je nadogradnja od {0} do {1}.
+Konfiguracijska struktura za 0.0.5.5 neće biti kompatibilna s unazad i neće raditi s prethodnim verzijama. Konfiguracija će se vratiti na zadane postavke.
+Jeste li sigurni da želite ažurirati konfiguraciju i ponovo pokrenuti <y/n>?
+Došlo je do pogreške prilikom pokušaja ažuriranja konfiguracije.
+Posebni znakovi nisu dopušteni.
+Shell poruka: zatražena naredba {0} nije dopuštena za pokretanje u načinu održavanja.
+Shell poruka: zatražena naredba {0} nije pronađena. Pogledajte "pomoć" za dostupne naredbe.
