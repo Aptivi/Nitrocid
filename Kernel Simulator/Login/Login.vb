@@ -35,6 +35,11 @@ Public Module Login
             System.Console.Clear()
         End If
         MOTDMessage = PlaceParse.ProbePlaces(MOTDMessage)
+
+        'Generate user list
+        Wln(vbNewLine + "Available usernames: {0}", "neutralText", String.Join(", ", userword.Keys))
+
+        'Login process
         If (showMOTD = False) Or (showMOTDOnceFlag = False) Then
             W(vbNewLine + "Username: ", "input")
         ElseIf (showMOTDOnceFlag = True And showMOTD = True) Then

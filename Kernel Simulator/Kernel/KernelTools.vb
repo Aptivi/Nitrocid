@@ -118,7 +118,6 @@ Public Module KernelTools
         strcommand = Nothing
         slotsUsedName = Nothing
         slotsUsedNum = 0
-        StatusesRAM = Nothing
         totalSlots = 0
         AvailableDirs.Clear()
         modcmnds.Clear()
@@ -129,6 +128,13 @@ Public Module KernelTools
         'Reset users
         UserManagement.resetUsers()
         Wdbg("User variables reset", True)
+
+        'Reset hardware info
+        HDDList.Clear()
+        BIOSList.Clear()
+        GPUList.Clear()
+        RAMList.Clear()
+        CPUList.Clear()
 
         'Release RAM used
         DisposeExit.DisposeAll()

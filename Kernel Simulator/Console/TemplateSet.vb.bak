@@ -100,13 +100,7 @@ Public Module TemplateSet
     Public Sub MakePermanent()
 
         Dim ksconf As New IniFile()
-        Dim configPath As String
-        If (EnvironmentOSType.Contains("Unix")) Then
-            configPath = Environ("HOME") + "/kernelConfig.ini"
-        Else
-            configPath = Environ("USERPROFILE") + "\kernelConfig.ini"
-        End If
-        ksconf.Load(configPath)
+        ksconf.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
         ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColor.ToString
         ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColor.ToString
         ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColor.ToString
@@ -117,7 +111,7 @@ Public Module TemplateSet
         ksconf.Sections("Colors").Keys("Input Color").Value = inputColor.ToString
         ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColor.ToString
         ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColor.ToString
-        ksconf.Save(configPath)
+        ksconf.Save(Environ("USERPROFILE") + "\kernelConfig.ini")
 
     End Sub
 

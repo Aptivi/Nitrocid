@@ -76,7 +76,13 @@ Public Module Config
                     New IniKey(ksconf, "Kernel Version", KernelVersion)))
 
             'Save Config
-            ksconf.Save(Environ("USERPROFILE") + "\kernelConfig.ini")
+            Dim savepath As String
+            If (EnvironmentOSType.Contains("Unix")) Then
+                savepath = Environ("HOME") + "/kernelConfig.ini"
+            Else
+                savepath = Environ("USERPROFILE") + "\kernelConfig.ini"
+            End If
+            ksconf.Save(savepath)
 
             'Exit if it is executed using real command-line arguments
             If (CmdArg = True) Then
@@ -98,15 +104,29 @@ Public Module Config
     End Sub
 
     Public Sub checkForUpgrade()
-        'Rewrite checker on 0.0.5.6
+        'Rewrite checker only when there is a necessary change.
         Try
-            Dim lns() As String = IO.File.ReadAllLines(Environ("USERPROFILE") + "\kernelConfig.ini")
+            'Variables
+            Dim confPath As String
+            Dim lns() As String
+            Dim configUpdater As New IniFile()
+
+            'Ready the path
+            If (EnvironmentOSType.Contains("Unix")) Then
+                confPath = Environ("HOME") + "/kernelConfig.ini"
+            Else
+                confPath = Environ("USERPROFILE") + "\kernelConfig.ini"
+            End If
+            lns = IO.File.ReadAllLines(confPath)
+            configUpdater.Load(confPath)
+
+            'If the old Kernel Simulator config pattern has been detected, perform a reset
             If (lns(0).Contains("Kernel Version = ") And lns(0).Replace("Kernel Version = ", "") <> KernelVersion) Then
                 If (lns.Length > 0) AndAlso (lns(0).StartsWith("Kernel Version = ")) Then
-                    '0.0.5.5 Config will not be backwards-compatible, so config will reset
+                    Wdbg("Kernel version upgraded to {0} from {1}", True, KernelVersion, lns(0).Replace("Kernel Version = ", ""))
                     Wln("An upgrade from {0} to {1} was detected.", "neutralText", lns(0).Replace("Kernel Version = ", ""), KernelVersion)
-                    W("The config structure for 0.0.5.5 won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings." + vbNewLine + _
-                      "Are you sure that you want to update configuration and restart <y/n>? ", "input")
+                    W("The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings." + vbNewLine + _
+                      "Are you sure that you want to update configuration and restart <y/n>? ", "input", lns(0).Replace("Kernel Version = ", ""))
                     Dim answer As String = Console.ReadKey.KeyChar
                     If (answer = "y") Then
                         Wln(vbNewLine + "Updating configuration file...", "neutralText")
@@ -115,9 +135,15 @@ Public Module Config
                     Else
                         Wdbg("answer ({0} <> ""y""", True, answer)
                         DisposeExit.DisposeAll()
+                        ResetEverything()
                         Environment.Exit(2)
                     End If
                 End If
+            ElseIf configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
+                Wdbg("Kernel version upgraded to {0} from {1}", True, KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
+                Wln("An upgrade from {0} to {1} was detected. Updating configuration...", "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
+                configUpdater.Sections("Misc").Keys("Kernel Version").Value = KernelVersion
+                configUpdater.Save(confPath)
             End If
         Catch ex As Exception
             If (DebugMode = True) Then
@@ -129,7 +155,7 @@ Public Module Config
         End Try
     End Sub
 
-    'This sub will be changed in every release
+    'This sub will be changed in every release when there's a config update.
     Public Sub updateConfig()
 
         createConfig(False)

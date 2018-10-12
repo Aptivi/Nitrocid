@@ -1,16 +1,20 @@
 ﻿|---------------+--> Kernel Simulator - Simulates the future kernel that is planned by us <--+---------------|
 
 NOTE: This kernel simulator will continue to be developed, even if we made the real PC version of Kernel.
+	  Are you building a Linux version of Kernel Simulator in MonoDevelop? If so, add in "kernel Simulator.vbproj":
+	  <VbcToolExe>vbc</VbcToolExe>
+	  <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+	  <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+	  and change the output path to your choice if you are building using Release.
 
 INFO: This kernel simulator is not a final planned version of Kernel, since it was minimal.
 	  It can only be Console at the moment, while we are developing a GUI for this simulator.
 
-Kernel Simulator lets you simulate a very early access for our future Kernel.
-
-Cannot log-in to Kernel Simulator on "root" account? The password is the backwards of "root"
+Kernel Simulator lets you simulate a very early access for our future Kernel. Cannot log-in to Kernel Simulator on "root" account? The password is the backwards of "root"
 
 |---------------+--> History <--+---------------|
 
+10/1/2018 - 0.0.5.6: Improved probers, username list on log-in, better compatibility with Unix
 9/22/2018 - 0.0.5.5: Re-written config, Forbidden aliases, added missing help entries for "showalises", added more MOTD and MAL placeholders, fixed repeating message of RAM status, and an FTP client has been added, finally!
 9/9/2018 - 0.0.5.2: Made GPU probing on boot, removing "gpuprobe" argument, changed behavior of updating config
 9/6/2018 - 0.0.5.1: Follow-up release removed unused code, improved behavior of debugging logs, and improved readability of a debug message while probing mods with commands without definitions.

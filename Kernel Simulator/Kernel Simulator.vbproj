@@ -15,7 +15,8 @@
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>E:\Documents and Settings\EoflaOE\Desktop\visual basic projects\VB2010\Kernel Simulator\</PublishUrl>
     <Install>true</Install>
@@ -142,6 +143,7 @@
     <Compile Include="Files\FileContents.vb" />
     <Compile Include="Files\InitializeDirectoryFile.vb" />
     <Compile Include="Files\ListFolders.vb" />
+    <Compile Include="Hardware\HardwareVars.vb" />
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\InstanceCheck.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
@@ -153,7 +155,6 @@
     <Compile Include="Misc\Calculator\unitConv.vb" />
     <Compile Include="Misc\Config.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
-    <Compile Include="Misc\Writers\DebugWriter.vb" />
     <Compile Include="Misc\DisposeExit.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModParser.vb" />

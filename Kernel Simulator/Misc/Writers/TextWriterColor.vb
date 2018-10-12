@@ -17,9 +17,31 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Console
+Imports System.IO
 
 'This module is very important to reduce line numbers when there is color.
 Public Module TextWriterColor
+
+    Public dbgWriter As StreamWriter
+
+    ''' <summary>
+    ''' Outputs the text into the debugger file, and sets the time stamp.
+    ''' </summary>
+    ''' <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
+    ''' <param name="line">A condition whether it writes a new line or not</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <remarks></remarks>
+    Public Sub Wdbg(ByVal text As String, ByVal line As Boolean, ByVal ParamArray vars() As Object)
+
+        If (DebugMode = True) Then
+            If (line = False) Then
+                dbgWriter.Write(FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortDate) + " " + FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortTime) + ": " + text, vars)
+            ElseIf (line = True) Then
+                dbgWriter.WriteLine(FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortDate) + " " + FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortTime) + ": " + text, vars)
+            End If
+        End If
+
+    End Sub
 
     ''' <summary>
     ''' Outputs the text into the terminal prompt, and sets colors as needed.
@@ -52,7 +74,13 @@ Public Module TextWriterColor
             Else
                 Exit Sub
             End If
-            Write(text, vars)
+
+            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+            For v As Integer = 0 To vars.Length - 1
+                text = text.Replace("{" + CStr(v) + "}", vars(v))
+            Next
+
+            Write(text)
             If (Console.BackgroundColor = ConsoleColor.Black) Then ResetColor()
             If (colorType = "input" And ColoredShell = True) Then ForegroundColor = inputColor
         Catch ex As Exception
@@ -92,7 +120,13 @@ Public Module TextWriterColor
             Else
                 Exit Sub
             End If
-            WriteLine(text, vars)
+
+            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+            For v As Integer = 0 To vars.Length - 1
+                text = text.Replace("{" + CStr(v) + "}", vars(v))
+            Next
+
+            WriteLine(text)
             If (Console.BackgroundColor = ConsoleColor.Black) Then ResetColor()
             If (colorType = "input") Then ForegroundColor = inputColor
         Catch ex As Exception

@@ -157,15 +157,9 @@ Public Module GetCommand
                         Wln("Changing from: {0} to {1}...", "neutralText", HName, newhost)
                         HName = newhost
                         Dim ksconf As New IniFile()
-                        Dim pathConfig As String
-                        If (EnvironmentOSType.Contains("Unix")) Then
-                            pathConfig = Environ("HOME") & "/kernelConfig.ini"
-                        Else
-                            pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
-                        End If
-                        ksconf.Load(pathConfig)
+                        ksconf.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
                         ksconf.Sections("Login").Keys("Host Name").Value = newhost
-                        ksconf.Save(pathConfig)
+                        ksconf.Save(Environ("USERPROFILE") + "\kernelConfig.ini")
                     End If
                 Else
                     HelpSystem.ShowHelp(words(0))
@@ -181,15 +175,9 @@ Public Module GetCommand
                         W("Changing MOTD...", "neutralText")
                         MOTDMessage = newmotd
                         Dim ksconf As New IniFile()
-                        Dim pathConfig As String
-                        If (EnvironmentOSType.Contains("Unix")) Then
-                            pathConfig = Environ("HOME") & "/kernelConfig.ini"
-                        Else
-                            pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
-                        End If
-                        ksconf.Load(pathConfig)
+                        ksconf.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
                         ksconf.Sections("Login").Keys("MOTD").Value = MOTDMessage
-                        ksconf.Save(pathConfig)
+                        ksconf.Save(Environ("USERPROFILE") + "\kernelConfig.ini")
                         Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
                     End If
                 Else
@@ -206,15 +194,9 @@ Public Module GetCommand
                         W("Changing MAL...", "neutralText")
                         MAL = newmal
                         Dim ksconf As New IniFile()
-                        Dim pathConfig As String
-                        If (EnvironmentOSType.Contains("Unix")) Then
-                            pathConfig = Environ("HOME") & "/kernelConfig.ini"
-                        Else
-                            pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
-                        End If
-                        ksconf.Load(pathConfig)
+                        ksconf.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
                         ksconf.Sections("Login").Keys("MOTD After Login").Value = newmal
-                        ksconf.Save(pathConfig)
+                        ksconf.Save(Environ("USERPROFILE") + "\kernelConfig.ini")
                         Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmal' to see the changes", "neutralText")
                     End If
                 Else
@@ -304,13 +286,7 @@ Public Module GetCommand
 
                 If (DebugMode = True) Then
                     Dim line As String
-                    Dim debugPath As String
-                    If (EnvironmentOSType.Contains("Unix")) Then
-                        debugPath = Environ("HOME") & "/kernelDbg.log"
-                    Else
-                        debugPath = Environ("USERPROFILE") & "\kernelDbg.log"
-                    End If
-                    Using dbglog = File.Open(debugPath, FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
+                    Using dbglog = File.Open(Environ("USERPROFILE") + "\kernelDbg.log", FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
                         line = reader.ReadLine()
                         Do While (reader.EndOfStream <> True)
                             Wln(line, "neutralText")
@@ -382,30 +358,18 @@ Public Module GetCommand
 
             ElseIf (requestedCommand = "lscomp") Then
 
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    Wln("Listing PCs is not supported yet on Unix.", "neutralText")
-                Else
-                    NetworkTools.GetNetworkComputers()
-                    NetworkTools.ListOnlineAndOfflineHosts()
-                End If
+                NetworkTools.GetNetworkComputers()
+                NetworkTools.ListOnlineAndOfflineHosts()
 
             ElseIf (requestedCommand = "lsnet") Then
 
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    Wln("Listing PCs is not supported yet on Unix.", "neutralText")
-                Else
-                    NetworkTools.GetNetworkComputers()
-                    NetworkTools.ListHostsInNetwork()
-                End If
+                NetworkTools.GetNetworkComputers()
+                NetworkTools.ListHostsInNetwork()
 
             ElseIf (requestedCommand = "lsnettree") Then
 
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    Wln("Listing PCs is not supported yet on Unix.", "neutralText")
-                Else
-                    NetworkTools.GetNetworkComputers()
-                    NetworkTools.ListHostsInTree()
-                End If
+                NetworkTools.GetNetworkComputers()
+                NetworkTools.ListHostsInTree()
 
             ElseIf (requestedCommand = "logout") Then
 
@@ -510,19 +474,12 @@ Public Module GetCommand
             ElseIf (requestedCommand = "reloadconfig") Then
 
                 'Reload configuration
-                Dim pathConfig As String
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    pathConfig = Environ("HOME") & "/kernelConfig.ini"
-                Else
-                    pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
-                End If
-                If (File.Exists(pathConfig) = True) Then
-                    configReader.Load(pathConfig)
+                If (File.Exists(Environ("USERPROFILE") + "\kernelConfig.ini") = True) Then
+                    configReader.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
                 Else
                     Config.createConfig(False)
-                    configReader.Load(pathConfig)
+                    configReader.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
                 End If
-                Config.readImportantConfig()
                 Config.readConfig()
                 Wln("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", "neutralText")
 
@@ -649,12 +606,7 @@ Public Module GetCommand
 
             ElseIf (requestedCommand.Substring(0, index) = "setsaver") Then
 
-                Dim modPath As String
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    modPath = Environ("HOME") + "/KSMods/"
-                Else
-                    modPath = Environ("USERPROFILE") + "\KSMods\"
-                End If
+                Dim modPath As String = Environ("USERPROFILE") + "\KSMods\"
                 If (requestedCommand <> "setsaver") Then
                     If (args.Count >= 0) Then
                         If (strArgs = "colorMix" Or strArgs = "matrix" Or strArgs = "disco") Then
@@ -711,7 +663,6 @@ Public Module GetCommand
 
                 If (requestedCommand <> "showtdzone") Then
                     Dim DoneFlag As Boolean = False
-                    initTimesInZones()
                     For Each zoneName In zoneTimes.Keys
                         If (zoneName = strArgs) Then
                             DoneFlag = True : TimeZones.showTimesInZones(strArgs)

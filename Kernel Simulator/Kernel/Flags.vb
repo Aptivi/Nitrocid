@@ -43,5 +43,6 @@ Module Flags
     Public slotProbe As Boolean = True                          'Probe slots
     Public quietProbe As Boolean = False                        'Probe quietly
     Public CornerTD As Boolean = False                          'Show Time/Date on corner
+    Public instanceChecked As Boolean = False                   'Instance checking
 
 End Module

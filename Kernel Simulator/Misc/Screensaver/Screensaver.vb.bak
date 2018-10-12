@@ -20,7 +20,6 @@ Imports Microsoft.VisualBasic
 Imports System.CodeDom.Compiler
 Imports System.Reflection
 Imports System.ComponentModel
-Imports System.Threading
 
 Public Module Screensaver
 
@@ -51,11 +50,7 @@ Public Module Screensaver
         '                           Substitute: TextWriterColor.W() or TextWriterColor.Wln() with System.Console.WriteLine() or System.Console.Write().
         finalSaver.preDisplay()
         Do While True
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(1)
-            Else
-                Sleep(1)
-            End If
+            Sleep(1)
             If (custom.CancellationPending = True) Then
                 e.Cancel = True
                 Console.Clear()
@@ -79,11 +74,7 @@ Public Module Screensaver
         Console.CursorVisible = False
         Dim colorrand As New Random()
         Do While True
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(1)
-            Else
-                Sleep(1)
-            End If
+            Sleep(1)
             If (colorMix.CancellationPending = True) Then
                 e.Cancel = True
                 Console.Clear()
@@ -117,11 +108,7 @@ Public Module Screensaver
                 Console.CursorVisible = True
                 Exit Do
             Else
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    Thread.Sleep(1)
-                   Else
-                    Sleep(1)
-                End If
+                Sleep(1)
                 Console.Write(CStr(random.Next(2)))
             End If
         Loop
@@ -133,11 +120,7 @@ Public Module Screensaver
         Console.CursorVisible = False
         Do While True
             For Each color In colors
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    Thread.Sleep(100)
-                Else
-                    Sleep(100)
-                End If
+                Sleep(100)
                 If (disco.CancellationPending = True) Then
                     e.Cancel = True
                     Console.Clear()
@@ -162,42 +145,26 @@ Public Module Screensaver
             colorMix.RunWorkerAsync()
             Console.ReadKey()
             colorMix.CancelAsync()
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(50)
-            Else
-                Sleep(50)
-            End If
+            Sleep(50)
         ElseIf (saver = "matrix") Then
             matrix.WorkerSupportsCancellation = True
             matrix.RunWorkerAsync()
             Console.ReadKey()
             matrix.CancelAsync()
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(50)
-            Else
-                Sleep(50)
-            End If
+            Sleep(50)
         ElseIf (saver = "disco") Then
             disco.WorkerSupportsCancellation = True
             disco.RunWorkerAsync()
             Console.ReadKey()
             disco.CancelAsync()
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(150)
-            Else
-                Sleep(150)
-            End If
+            Sleep(150)
         ElseIf (ScrnSvrdb.ContainsKey(saver)) Then
             'Only one custom screensaver can be used.
             custom.WorkerSupportsCancellation = True
             custom.RunWorkerAsync()
             Console.ReadKey()
             custom.CancelAsync()
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(50)
-            Else
-                Sleep(50)
-            End If
+            Sleep(50)
         Else
             Wln("The requested screensaver {0} is not found.", "neutralText", saver)
         End If
@@ -207,12 +174,7 @@ Public Module Screensaver
     'TODO: In the final release of 0.0.5, change so it probes everything on boot
     Sub compileCustom(ByVal file As String)
 
-        Dim modPath As String
-        If (EnvironmentOSType.Contains("Unix")) Then
-            modPath = Environ("HOME") + "/KSMods/"
-        Else
-            modPath = Environ("USERPROFILE") + "\KSMods\"
-        End If
+        Dim modPath As String = Environ("USERPROFILE") + "\KSMods\"
         If (FileIO.FileSystem.FileExists(modPath + file)) Then
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
                 modFile = modFile.Replace(modPath, "")

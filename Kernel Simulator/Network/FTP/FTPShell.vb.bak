@@ -93,11 +93,7 @@ Public Module FTPShell
 
         'Complete initialization
         If (initialized = False) Then
-            If (EnvironmentOSType.Contains("Unix")) Then
-                currDirect = Environ("HOME")
-            Else
-                currDirect = Environ("USERPROFILE")
-            End If
+            currDirect = Environ("USERPROFILE")
             Binary = True : Passive = True
             initialized = True
         End If

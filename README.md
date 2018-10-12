@@ -10,17 +10,25 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - It can only be Console at the moment, while we are developing a GUI for this simulator.
 
-- The version of Firefox was old and so we cannot upload binary into release page. You have to build from source to use, or use an [archive](https://github.com/EoflaOE/Kernel-Simulator/tree/archive/bin/Windows), Because the machine that we're developing and building on doesn't have SSE2 support on our build CPU, **AMD Athlon XP 1500+**. To download, use above link.
+- The version of Firefox was old and so we cannot upload binary into release page. You have to build from source to use, or use an [archive](https://github.com/EoflaOE/Kernel-Simulator/tree/archive/bin/WindowsAndLinux), Because the machine that we're developing and building on doesn't have SSE2 support on our build CPU, **AMD Athlon XP 1500+**. To download, use above link.
 
 ## |-----+--> _Prerequisites_ <--+-----|
+
+1. For Windows systems
 
 - Windows XP or higher (Kernel Simulator is planned to use .NET Framework 4.7 or higher to optimize usage for Windows 10 systems, etc.)
 
 - [Microsoft .NET Framework 4.0](https://download.microsoft.com/download/1/B/E/1BE39E79-7E39-46A3-96FF-047F95396215/dotNetFx40_Full_setup.exe) or higher is **important and required** for Kernel Simulator to work fully. If you have Windows 8 or later, you might already have this version of Microsoft .NET Framework 4.0.
 
+2. For Unix systems
+
+- Any Unix system that contains the latest version of [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/). MonoDevelop is required to build from source.
+
 - MadMilkman DLL or installed library (DLL tested)
 
 ## |-----+--> _Build Instructions_ <--+-----|
+
+- For Windows systems
 
 1. Install [Microsoft Visual Basic Express 2010](https://visual-basic-express.soft32.com/old-version/386190/2010.express/) or Visual Studio 2010, or higher.
 
@@ -35,6 +43,26 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 6. Click on the **Build** menu bar, and click on **Build Kernel Simulator**
 
 7. In **Windows Explorer**, go to the build directory and then double-click on the executable file. 
+
+- For Unix systems
+
+1. Install [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/) and MonoDevelop.
+
+2. After installation, extrace the source code, and open MonoDevelop, and click on **Open...**
+
+3. Go to the source directory, and double-click the solution file
+
+4. Add the following lines to **Kernel Simulator.vbproj**:
+
+	<VbcToolExe>vbc</VbcToolExe>
+	<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+	<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+	
+5. Change the output directory if you are building using **Release**.
+
+6. Click on the **Build** menu bar, and click on build button to compile.
+
+7. In **your file manager**, go to the build directory and then double-click on the executable file.
 
 ## |-----+--> _History_ <--+-----|
 
@@ -81,6 +109,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **9/9/2018 - 0.0.5.2:** Made GPU probing on boot, removing "gpuprobe" argument, changed behavior of updating config
 
 **9/22/2018 - 0.0.5.5:** Re-written config, Forbidden aliases, added missing help entries for "showalises", added more MOTD and MAL placeholders, fixed repeating message of RAM status, and an FTP client has been added, finally!
+
+**10/12/2018 - 0.0.5.6:** Improved probers, username list on log-in, better compatibility with Unix
 
 ## |-----+--> _Manual pages_ <--+-----|
 

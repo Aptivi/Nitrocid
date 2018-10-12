@@ -75,7 +75,12 @@ Public Module HelpSystem
 
     Public Sub ShowHelp(Optional ByVal command As String = "")
 
-        Dim wholesslist As String() = IO.Directory.GetFiles(Environ("USERPROFILE") + "/KSMods", "*SS.m", IO.SearchOption.TopDirectoryOnly)
+        Dim wholesslist As String()
+        If (EnvironmentOSType.Contains("Unix")) Then
+            wholesslist = IO.Directory.GetFiles(Environ("HOME") + "/KSMods", "*SS.m", IO.SearchOption.TopDirectoryOnly)
+        Else
+            wholesslist = IO.Directory.GetFiles(Environ("USERPROFILE") + "\KSMods", "*SS.m", IO.SearchOption.TopDirectoryOnly)
+        End If
         If (command = "") Then
 
             If (simHelp = False) Then
@@ -104,7 +109,8 @@ Public Module HelpSystem
 
         ElseIf (command = "arginj") Then
 
-            Wln("Usage: arginj [Arguments separated by commas]", "neutralText")
+            Wln("Usage: arginj [Arguments separated by commas]" + vbNewLine + _
+                "       where arguments will be {0}", "neutralText", String.Join(", ", AvailableArgs))
 
         ElseIf (command = "calc") Then
 

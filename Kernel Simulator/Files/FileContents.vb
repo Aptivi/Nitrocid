@@ -28,7 +28,7 @@ Public Module FileContents
 
         ElseIf (filename = "hdpack") Then
 
-            Hddinfo(False, False)
+            Hddinfo(False)
 
         ElseIf (filename = "libuesh.elb") Then
 

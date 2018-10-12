@@ -14,7 +14,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-'About this kernel: THIS KERNEL IS NEAR TO BETA BUT NOT FINAL! Final kernel will be developed through another language, ASM included, depending on system.
+'About: THIS KERNEL IS NEAR TO BETA BUT NOT FINAL! Final kernel will be developed through another language, ASM included, depending on system.
 
 Imports System
 Imports System.IO
@@ -24,39 +24,27 @@ Imports System.Reflection.Assembly
 Public Module Kernel
 
     'Variables
-    Public Hddsize As String
-    Public Dsize As String
-    Public Hddmodel As String
-    Public Cpuname As String
-    Public Cpuspeed As String
-    Public SysMem As String
-    Public BIOSCaption As String
-    Public BIOSMan As String
-    Public BIOSSMBIOSVersion As String
-    Public BIOSVersion As String
     Public KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
     Public BootArgs() As String
     Public AvailableArgs() As String = {"nohwprobe", "quiet", "cmdinject", "debug", "maintenance", "help"}
     Public availableCMDLineArgs() As String = {"createConf", "promptArgs"}
-    Public slotsUsedName As String
-    Public slotsUsedNum As Integer
-    Public Capacities() As String
-    Public totalSlots As Integer
     Public configReader As New IniFile()
     Public MOTDMessage As String
     Public HName As String
-    Public StatusesRAM As String
     Public MAL As String
-    Public instanceChecked As Boolean = False
+    Public EnvironmentOSType As String = Environment.OSVersion.ToString
+
+    'Windows only (Nothing happens in Unix - no exceptions)
     Declare Sub Sleep Lib "kernel32" (ByVal milliseconds As Integer)
 
     Sub Main()
 
-        'A title
-        Console.Title = "Kernel Simulator v" & KernelVersion
-
         'TODO: Re-write the whole kernel in Beta
+        'TODO: Give the kernel name of "Meritorious Kernalism" and the simulator name of "MeritSim".
         Try
+            'A title
+            Console.Title = "Kernel Simulator v" & KernelVersion & " - Compiled on " & getCompileDate()
+
             'Initialize everything
             InitEverything()
 
@@ -68,14 +56,23 @@ Public Module Kernel
                             "    This is free software, and you are welcome to redistribute it" + vbNewLine + _
                             "    under certain conditions; See COPYING file in source code." + vbNewLine, "license")
             If (instanceChecked = False) Then InstanceCheck.MultiInstance()
-            If (Quiet = True Or quietProbe = True) Then
-                'Continue the kernel, and don't print messages
-                'Phase 1: Probe hardware and BIOS if nohwprobe is not passed
-                HardwareProbe.ProbeHW(True, CChar("K"))
+
+            'Check for Mono Runtime before probing
+            If (EnvironmentOSType.Contains("Unix")) Then
+                'TODO: Unix systems must have their own probers after re-organizing subs
+                'Phase 1: Skip Phase 1
+                Wln("hwprobe: Probing not supported because it's not designed to run probers on Unix.", "neutralText")
+                Wdbg("OSVersion is Unix = True", True)
             Else
-                'Continue the kernel
+                Wdbg("OSVersion is Unix = False", True)
                 'Phase 1: Probe hardware and BIOS if nohwprobe is not passed
-                HardwareProbe.ProbeHW(False, CChar("K"))
+                If (Quiet = True Or quietProbe = True) Then
+                    'Continue the kernel, and don't print messages
+                    HardwareProbe.ProbeHW(True, CChar("K"))
+                Else
+                    'Continue the kernel
+                    HardwareProbe.ProbeHW(False, CChar("K"))
+                End If
             End If
 
             'Phase 2: Username management
@@ -128,8 +125,11 @@ Public Module Kernel
             answerargs = ""
             argsInjected = False
         End If
-        If (DebugMode = True) Then
+        If (DebugMode = True) And (Not EnvironmentOSType.Contains("Unix")) Then
             dbgWriter = New StreamWriter(Environ("USERPROFILE") + "\kernelDbg.log", True)
+            dbgWriter.AutoFlush = True
+        ElseIf (DebugMode = True) And (EnvironmentOSType.Contains("Unix")) Then
+            dbgWriter = New StreamWriter(Environ("HOME") + "/kernelDbg.log", True)
             dbgWriter.AutoFlush = True
         End If
         If (TimeDateIsSet = False) Then
@@ -139,17 +139,48 @@ Public Module Kernel
         InitializeDirectoryFile.Init()
 
         'Create config file and then read it
-        Config.checkForUpgrade()
-        If (File.Exists(Environ("USERPROFILE") + "\kernelConfig.ini") = True) Then
-            configReader.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
+        Dim pathConfig As String
+        If (EnvironmentOSType.Contains("Unix")) Then
+            pathConfig = Environ("HOME") & "/kernelConfig.ini"
+        Else
+            pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
+        End If
+        If (File.Exists(pathConfig) = True) Then
+            configReader.Load(pathConfig)
         Else
             Config.createConfig(False)
-            configReader.Load(Environ("USERPROFILE") + "\kernelConfig.ini")
+            configReader.Load(pathConfig)
         End If
+        Config.checkForUpgrade()
         Config.readImportantConfig()
         Config.readConfig()
         Wdbg("Kernel initialized, version {0}.", True, KernelVersion)
 
     End Sub
+
+    Function getCompileDate() As DateTime
+        'Variables and Constants
+        Const Offset As Integer = 60 : Const LTOff As Integer = 8
+        Dim asmByte(2047) As Byte : Dim asmStream As Stream
+
+        'Get compile date
+        If (EnvironmentOSType.Contains("Unix")) Then
+            asmStream = New FileStream(Path.GetDirectoryName(Assembly.GetExecutingAssembly.Location) + "/Kernel Simulator.exe", FileMode.Open, FileAccess.Read)
+        Else
+            asmStream = New FileStream(Path.GetDirectoryName(Assembly.GetExecutingAssembly.Location) + "\Kernel Simulator.exe", FileMode.Open, FileAccess.Read)
+        End If
+        asmStream.Read(asmByte, 0, 2048)
+        If Not asmStream Is Nothing Then asmStream.Close()
+
+        'We are almost there
+        Dim i64 As Integer = BitConverter.ToInt32(asmByte, Offset)
+        Dim compileseconds As Integer = BitConverter.ToInt32(asmByte, i64 + LTOff)
+        Dim dt As New DateTime(1970, 1, 1, 0, 0, 0)
+        dt = dt.AddSeconds(compileseconds)
+        dt = dt.AddHours(TimeZone.CurrentTimeZone.GetUtcOffset(dt).Hours)
+
+        'Now return compile date
+        Return dt
+    End Function
 
 End Module

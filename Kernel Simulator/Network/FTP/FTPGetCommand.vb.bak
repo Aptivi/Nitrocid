@@ -93,15 +93,9 @@ Public Module FTPGetCommand
             ElseIf (cmd.Substring(0, index) = "changelocaldir") Then
                 If (cmd <> "changelocaldir") Then
                     'Check if folder exists
-                    Dim targetDir As String
-                    If (EnvironmentOSType.Contains("Unix")) Then
-                        targetDir = currDirect + "/" + strArgs
-                    Else
-                        targetDir = currDirect + "\" + strArgs
-                    End If
-                    If (IO.Directory.Exists(targetDir)) Then
+                    If (IO.Directory.Exists(currDirect + "\" + strArgs)) Then
                         'Parse written directory
-                        Dim parser As New IO.DirectoryInfo(targetDir)
+                        Dim parser As New IO.DirectoryInfo(currDirect + "\" + strArgs)
                         currDirect = parser.FullName
                     Else
                         Wln("Local directory {0} doesn't exist.", "neutralText", strArgs)
@@ -279,11 +273,7 @@ Public Module FTPGetCommand
                 Dim working As String
                 If (cmd <> "listlocal") Then
                     'List local directory that is not on the current directory
-                    If (EnvironmentOSType.Contains("Unix")) Then
-                        working = currDirect + "/" + strArgs
-                    Else
-                        working = currDirect + "\" + strArgs
-                    End If
+                    working = currDirect + "\" + strArgs
                     ListLocal(working)
                 Else
                     'List current local directory
@@ -416,12 +406,7 @@ Public Module FTPGetCommand
                         Dim newFile As String = oldDir + strArgs
 
                         'Local file which will be uploaded
-                        Dim upFile As String
-                        If (EnvironmentOSType.Contains("Unix")) Then
-                            upFile = currDirect + "/" + strArgs
-                        Else
-                            upFile = currDirect + "\" + strArgs
-                        End If
+                        Dim upFile As String = currDirect + "\" + strArgs
 
                         'Try to upload file
                         Try

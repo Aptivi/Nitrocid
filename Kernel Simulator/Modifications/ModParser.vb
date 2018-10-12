@@ -64,7 +64,12 @@ Public Module ModParser
 
     Sub ParseMods()
 
-        Dim modPath As String = Environ("USERPROFILE") + "\KSMods\"
+        Dim modPath As String
+        If (EnvironmentOSType.Contains("Unix")) Then
+            modPath = Environ("HOME") + "/KSMods/"
+        Else
+            modPath = Environ("USERPROFILE") + "\KSMods\"
+        End If
         If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
         If (Quiet = False) And (FileIO.FileSystem.GetFiles(modPath).Count <> 0) Then Wln("mod: Loading mods...", "neutralText")
         For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)

@@ -21,7 +21,6 @@ Imports System.TimeZoneInfo
 
 Public Module TimeZones
 
-    'TODO: Don't use registry way.
     'Time Zones in an array
     Private zoneReg As RegistryKey
     Public zones As Object()
@@ -40,30 +39,18 @@ Public Module TimeZones
         'Run a cleanup in the list
         zoneTimes.Clear()
 
-        'Adds date and time to every single time zone to the list
+        'Adds date and time to every single time zone to the list.
         For Each zone In zones
-            'Workaround for Unix.
-            If (EnvironmentOSType.Contains("Unix")) Then
-                zoneTimes.Add(zone.DisplayName, ConvertTime(KernelDateTime, FindSystemTimeZoneById(zone.DisplayName)))
-            Else
-                zoneTimes.Add(zone, ConvertTime(KernelDateTime, FindSystemTimeZoneById(zone)))
-            End If
+            zoneTimes.Add(zone, ConvertTime(KernelDateTime, FindSystemTimeZoneById(zone)))
         Next
 
     End Sub
 
     Public Sub showTimesInZones(Optional ByVal zone As String = "all")
 
-        For Each timezone In zones
-            If (EnvironmentOSType.Contains("Unix")) Then
-                If (timezone.DisplayName = zone) Then
-                    Wln("- Time of {0}: {1}", "neutralText", zone, zoneTimes(zone).ToString())
-                End If
-            ElseIf (EnvironmentOSType.Contains("Windows") And timezone = zone) Then
-                Wln("- Time of {0}: {1}", "neutralText", zone, zoneTimes(zone).ToString())
-            End If
-        Next
-        If (zone = "all") Then
+        If (zones.Contains(zone)) Then
+            Wln("- Time of {0}: {1}", "neutralText", zone, zoneTimes(zone).ToString())
+        ElseIf (zone = "all") Then
             For Each timezone In zoneTimes.Keys
                 Wln("- Time of {0}: {1}", "neutralText", timezone, zoneTimes(timezone).ToString())
             Next

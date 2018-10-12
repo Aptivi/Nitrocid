@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
-Imports System.Threading
 
 Public Module TimeDate
 
@@ -37,8 +36,8 @@ Public Module TimeDate
             Else
                 KernelDateTime = Date.Now
                 strKernelTimeDate = Date.Now.ToString
+                initTimesInZones()
 
-                'We have to remove initTimesInZones as a workaround for Unix
                 'We're sorry, but this is the only way of writing text on the corner, so some lines in runtime might be out of position...
                 'We also have to slow down calling this function every second.
                 originalRow = Console.CursorTop
@@ -49,11 +48,7 @@ Public Module TimeDate
                     Console.SetCursorPosition(originalCol, originalRow)
                 End If
             End If
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(1000)
-            Else
-                Sleep(1000)
-            End If
+            Sleep(1000)
         Loop
 
     End Sub
