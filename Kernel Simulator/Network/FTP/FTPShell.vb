@@ -23,8 +23,9 @@ Imports System.Reflection
 Public Module FTPShell
 
     Public ftpstream As FtpWebRequest
-    Public availftpcmds As String() = {"binary", "connect", "changelocaldir", "changeremotedir", "delete", "disconnect", _
-                                       "download", "exit", "help", "listlocal", "listremote", "passive", "ssl", "text", "upload"}
+    Public availftpcmds As String() = {"binary", "bin", "connect", "changelocaldir", "cdl", "changeremotedir", "cdr", "currlocaldir", "pwdl", _
+                                       "currremotedir", "pwdr", "delete", "del", "disconnect", "download", "get", "exit", "help", _
+                                       "listlocal", "lsl", "listremote", "lsr", "passive", "ssl", "text", "txt", "upload", "put"}
     Public connected As Boolean = False
     Private initialized As Boolean = False
     Public ftpsite As String
@@ -136,11 +137,10 @@ Public Module FTPShell
         Dim words As String() = strcmd.Split({" "c})
         If (availftpcmds.Contains(words(0))) Then
             FTPGetCommand.ExecuteCommand(strcmd)
-            FTPShell.InitiateShell()
-        Else
+        ElseIf (words(0) <> "") Then
             Wln("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", "neutralText", strcmd)
-            FTPShell.InitiateShell()
         End If
+        FTPShell.InitiateShell()
 
     End Sub
 

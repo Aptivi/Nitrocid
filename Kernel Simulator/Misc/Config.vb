@@ -51,7 +51,7 @@ Public Module Config
             'The Hardware Section
             ksconf.Sections.Add(
                 New IniSection(ksconf, "Hardware",
-                    New IniKey(ksconf, "Quiet Probe", "Quiet Probe"),
+                    New IniKey(ksconf, "Quiet Probe", "False"),
                     New IniKey(ksconf, "Probe Slots", "True")))
 
             'The Login Section
@@ -143,6 +143,7 @@ Public Module Config
                 Wdbg("Kernel version upgraded to {0} from {1}", True, KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
                 Wln("An upgrade from {0} to {1} was detected. Updating configuration...", "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
                 configUpdater.Sections("Misc").Keys("Kernel Version").Value = KernelVersion
+                configUpdater.Sections("Hardware").Keys("Quiet Probe").Value = "False"
                 configUpdater.Save(confPath)
             End If
         Catch ex As Exception

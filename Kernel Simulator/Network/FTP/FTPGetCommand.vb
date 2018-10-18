@@ -31,7 +31,7 @@ Public Module FTPGetCommand
 
         'Command code
         Try
-            If (cmd = "binary") Then
+            If (cmd = "binary" Or cmd = "bin") Then
                 If (connected = False) Then
                     Wln("You should connect to server before switching transfer modes", "neutralText")
                 Else
@@ -90,8 +90,8 @@ Public Module FTPGetCommand
                 Else
                     Wln("Enter an FTP server that starts with ""ftp://"" or ""ftps://""", "neutralText")
                 End If
-            ElseIf (cmd.Substring(0, index) = "changelocaldir") Then
-                If (cmd <> "changelocaldir") Then
+            ElseIf (cmd.Substring(0, index) = "changelocaldir" Or cmd.Substring(0, index) = "cdl") Then
+                If (cmd <> "changelocaldir" Or cmd <> "cdl") Then
                     'Check if folder exists
                     Dim targetDir As String
                     If (EnvironmentOSType.Contains("Unix")) Then
@@ -109,8 +109,8 @@ Public Module FTPGetCommand
                 Else
                     Wln("Enter a local directory. "".."" to go back.", "neutralText")
                 End If
-            ElseIf (cmd.Substring(0, index) = "changeremotedir") Then
-                If (cmd <> "changeremotedir") Then
+            ElseIf (cmd.Substring(0, index) = "changeremotedir" Or cmd.Substring(0, index) = "cdr") Then
+                If (cmd <> "changeremotedir" Or cmd <> "cdr") Then
                     'Old and New directory variable
                     Dim oldDir As String = ftpsite + currentremoteDir + "/"
                     Dim newDir As String = oldDir + strArgs
@@ -129,6 +129,8 @@ Public Module FTPGetCommand
                             exist = True
                         End Using
                     Catch ex As WebException
+                        Wdbg("Error changing directory to {0}: {1}", True, newDir, response.StatusDescription)
+                        Wdbg("{0}", True, ex.StackTrace)
                         exist = False
                     End Try
 
@@ -141,7 +143,7 @@ Public Module FTPGetCommand
                         currentremoteDir = response.ResponseUri.AbsolutePath
                     Else
                         'Directory doesn't exist, go to the old directory
-                        Wln("Directory {0} not found", "neutralText", strArgs)
+                        Wln("Directory {0} not found. Reason: {1}", "neutralText", strArgs, response.StatusDescription)
                         ftpstream = WebRequest.Create(oldDir)
                         ftpstream.Credentials = New NetworkCredential(user, pass)
                         If (Binary = False) Then ftpstream.UseBinary = False
@@ -149,8 +151,16 @@ Public Module FTPGetCommand
                 Else
                     Wln("Enter a remote directory. "".."" to go back", "neutralText")
                 End If
-            ElseIf (cmd.Substring(0, index) = "delete") Then
-                If (cmd <> "delete") Then
+            ElseIf (cmd.Substring(0, index) = "currlocaldir" Or cmd.Substring(0, index) = "pwdl") Then
+                Wln("Local directory: {0}", "neutralText", currDirect)
+            ElseIf (cmd.Substring(0, index) = "currremotedir" Or cmd.Substring(0, index) = "pwdr") Then
+                If (connected = True) Then
+                    Wln("Remote directory: {0}", "neutralText", currentremoteDir)
+                Else
+                    Wln("You must connect to server before getting current remote directory.", "neutralText")
+                End If
+            ElseIf (cmd.Substring(0, index) = "delete" Or cmd.Substring(0, index) = "del") Then
+                If (cmd <> "delete" Or cmd <> "del") Then
                     If (connected = True) Then
                         'Old directory and New file variable
                         Dim oldDir As String = ftpsite + currentremoteDir + "/"
@@ -177,7 +187,13 @@ Public Module FTPGetCommand
                                 Wln(vbNewLine + "Deleted file {0}", "neutralText", strArgs)
                             End If
                         Catch ex As WebException
-                            Wln("Error trying to delete file {0}", "neutralText", strArgs)
+                            Wdbg("Error deleting file {0}: {1}", True, strArgs, ex.Message)
+                            Wdbg("{0}", True, ex.StackTrace)
+                            If (DebugMode = True) Then
+                                Wln("Error when trying to delete file {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", strArgs, response.StatusDescription, ex.StackTrace)
+                            Else
+                                Wln("Error when trying to delete file {0}: {1}", "neutralText", strArgs, response.StatusDescription)
+                            End If
                         End Try
 
                         'Either way, go to the old directory that has the deleted file
@@ -204,8 +220,8 @@ Public Module FTPGetCommand
                 Else
                     Wln("You haven't connected to any server yet", "neutralText")
                 End If
-            ElseIf (cmd.Substring(0, index) = "download") Then
-                If (cmd <> "download") Then
+            ElseIf (cmd.Substring(0, index) = "download" Or cmd.Substring(0, index) = "get") Then
+                If (cmd <> "download" Or cmd <> "get") Then
                     If (connected = True) Then
                         'Old directory and new file variables
                         Dim oldDir As String = ftpsite + currentremoteDir + "/"
@@ -228,10 +244,14 @@ Public Module FTPGetCommand
                             'Make a stream and get a response stream
                             Dim dStream As IO.Stream = response.GetResponseStream()
 
+                            'Split the strArgs if there is "/"
+                            Dim strArgsSeparated As String()
+                            strArgsSeparated = strArgs.Split({"/"}, StringSplitOptions.RemoveEmptyEntries)
+
                             'Conditions if Binary or ASCII
                             If (Binary = True) Then
                                 'Make a dFile stream
-                                Dim dFile As New IO.FileStream(IO.Path.Combine(currDirect, strArgs), IO.FileMode.Create)
+                                Dim dFile As New IO.FileStream(IO.Path.Combine(currDirect, strArgsSeparated(strArgsSeparated.Length - 1)), IO.FileMode.Create)
 
                                 'Make dStream copy to dFile by binary
                                 Wln("Downloading using Binary mode...", "neutralText")
@@ -244,7 +264,7 @@ Public Module FTPGetCommand
                                 Dim dFile As New IO.StreamReader(dStream)
 
                                 'Make a Down stream writer
-                                Dim Down As New IO.StreamWriter(IO.Path.Combine(currDirect, strArgs), False)
+                                Dim Down As New IO.StreamWriter(IO.Path.Combine(currDirect, strArgsSeparated(strArgsSeparated.Length - 1)), False)
 
                                 'Make dFile copy to Down by text (ASCII)
                                 Wln("Downloading using ASCII mode...", "neutralText")
@@ -257,7 +277,13 @@ Public Module FTPGetCommand
                             'Download is finished.
                             Wln(vbNewLine + "Downloaded file {0}. Status {1}", "neutralText", strArgs, response.StatusDescription)
                         Catch ex As WebException
-                            Wln("Error trying to download file {0}.", "neutralText", strArgs)
+                            Wdbg("Error downloading file {0}: {1}", True, strArgs, ex.Message)
+                            Wdbg("{0}", True, ex.StackTrace)
+                            If (DebugMode = True) Then
+                                Wln("Error when trying to download file {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", strArgs, response.StatusDescription, ex.StackTrace)
+                            Else
+                                Wln("Error when trying to download file {0}: {1}", "neutralText", strArgs, response.StatusDescription)
+                            End If
                         End Try
 
                         'Go to the old directory
@@ -275,9 +301,9 @@ Public Module FTPGetCommand
                 ftpexit = True
             ElseIf (cmd = "help") Then
                 FTPHelpSystem.FTPShowHelp()
-            ElseIf (cmd.Substring(0, index) = "listlocal") Then
+            ElseIf (cmd.Substring(0, index) = "listlocal" Or cmd.Substring(0, index) = "lsl") Then
                 Dim working As String
-                If (cmd <> "listlocal") Then
+                If (cmd <> "listlocal" Or cmd <> "lsl") Then
                     'List local directory that is not on the current directory
                     If (EnvironmentOSType.Contains("Unix")) Then
                         working = currDirect + "/" + strArgs
@@ -290,9 +316,9 @@ Public Module FTPGetCommand
                     working = currDirect
                     ListLocal(working)
                 End If
-            ElseIf (cmd.Substring(0, index) = "listremote") Then
+            ElseIf (cmd.Substring(0, index) = "listremote" Or cmd.Substring(0, index) = "lsr") Then
                 Dim line As String = "" : Dim listftp As New List(Of String)
-                If (cmd <> "listremote") Then
+                If (cmd <> "listremote" Or cmd <> "lsr") Then
                     If (connected = True) Then
                         'Old and new directory variables
                         Dim oldDir As String = ftpsite + currentremoteDir + "/"
@@ -323,7 +349,13 @@ Public Module FTPGetCommand
                                 Wln(listing, "neutralText")
                             Next
                         Catch ex As WebException
-                            Wln("The directory {0} is not found or you don't have permission to list directory", "neutralText", strArgs)
+                            Wdbg("Error listing {0}: {1}", True, strArgs, ex.Message)
+                            Wdbg("{0}", True, ex.StackTrace)
+                            If (DebugMode = True) Then
+                                Wln("Error when trying to list folder {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", strArgs, response.StatusDescription, ex.StackTrace)
+                            Else
+                                Wln("Error when trying to list folder {0}: {1}", "neutralText", strArgs, response.StatusDescription)
+                            End If
                         End Try
 
                         'Either way, go to the old directory that has the deleted file
@@ -361,7 +393,13 @@ Public Module FTPGetCommand
                                 Wln(listing, "neutralText")
                             Next
                         Catch ex As WebException
-                            Wln("Error while listing directory {0}", "neutralText", strArgs)
+                            Wdbg("Error listing {0}: {1}", True, strArgs, ex.Message)
+                            Wdbg("{0}", True, ex.StackTrace)
+                            If (DebugMode = True) Then
+                                Wln("Error when trying to list folder {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", strArgs, response.StatusDescription, ex.StackTrace)
+                            Else
+                                Wln("Error when trying to list folder {0}: {1}", "neutralText", strArgs, response.StatusDescription)
+                            End If
                         End Try
 
                         'Either way, go to the old directory that has the deleted file
@@ -400,7 +438,7 @@ Public Module FTPGetCommand
                 Else
                     Wln("You should connect to SSL-secured server before switching SSL mode.", "neutralText")
                 End If
-            ElseIf (cmd = "text") Then
+            ElseIf (cmd = "text" Or cmd = "txt") Then
                 If (connected = False) Then
                     Wln("You should connect to server before switching transfer modes", "neutralText")
                 Else
@@ -408,8 +446,8 @@ Public Module FTPGetCommand
                     Binary = False
                     Wln("Transfer mode: Text", "neutralText")
                 End If
-            ElseIf (cmd.Substring(0, index) = "upload") Then
-                If (cmd <> "upload") Then
+            ElseIf (cmd.Substring(0, index) = "upload" Or cmd.Substring(0, index) = "put") Then
+                If (cmd <> "upload" Or cmd <> "put") Then
                     If (connected = True) Then
                         'Old directory and new file variable
                         Dim oldDir As String = ftpsite + currentremoteDir + "/"
@@ -448,7 +486,13 @@ Public Module FTPGetCommand
                             Wln(vbNewLine + "Uploaded file {0}", "neutralText", strArgs)
                             uploading.Close()
                         Catch ex As WebException
-                            Wln("Error trying to upload file {0}", "neutralText", strArgs)
+                            Wdbg("Error uploading {0}: {1}", True, strArgs, ex.Message)
+                            Wdbg("{0}", True, ex.StackTrace)
+                            If (DebugMode = True) Then
+                                Wln("Error when trying to upload {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", strArgs, response.StatusDescription, ex.StackTrace)
+                            Else
+                                Wln("Error when trying to upload {0}: {1}", "neutralText", strArgs, response.StatusDescription)
+                            End If
                         End Try
 
                         'Go back to the old directory

@@ -19,21 +19,23 @@
 Public Module FTPHelpSystem
 
     'This dictionary is the definitions for commands.
-    Public ftpDefinitions As New Dictionary(Of String, String) From {{"binary", "Switches transfer mode to binary (Recommended for most file transfers, mainly ISO files, .deb packages, or any downloaded file that isn't usable in text mode)"}, _
+    Public ftpDefinitions As New Dictionary(Of String, String) From {{"binary (Alias: bin)", "Switches transfer mode to binary (Recommended for most file transfers, mainly ISO files, .deb packages, or any downloaded file that isn't usable in text mode)"}, _
+                                                                     {"currlocaldir (Alias: pwdl)", "Gets current local directory"}, _
+                                                                     {"currremotedir (Alias: pwdr)", "Gets current remote directory"}, _
                                                                      {"connect", "Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")"}, _
-                                                                     {"changelocaldir", "Changes local directory to download to or upload from"}, _
-                                                                     {"changeremotedir", "Changes remote directory to download from or upload to"}, _
-                                                                     {"delete", "Deletes remote file from server"}, _
+                                                                     {"changelocaldir (Alias: cdl)", "Changes local directory to download to or upload from"}, _
+                                                                     {"changeremotedir (Alias: cdr)", "Changes remote directory to download from or upload to"}, _
+                                                                     {"delete (Alias: del)", "Deletes remote file from server"}, _
                                                                      {"disconnect", "Disconnects from server"}, _
-                                                                     {"download", "Downloads remote file to local directory using binary or text"}, _
+                                                                     {"download (Alias: get)", "Downloads remote file to local directory using binary or text"}, _
                                                                      {"exit", "Exits FTP shell and returns to kernel"}, _
                                                                      {"help", "Shows help screen"}, _
-                                                                     {"listlocal", "Lists local directory"}, _
-                                                                     {"listremote", "Lists remote directory"}, _
+                                                                     {"listlocal (Alias: lsl)", "Lists local directory"}, _
+                                                                     {"listremote (Alias: lsr)", "Lists remote directory"}, _
                                                                      {"passive", "Use passive mode for transferring (Default: on, because common FTP servers only accept passive connections)"}, _
                                                                      {"ssl", "Uses SSL for encryption of a connection"}, _
-                                                                     {"text", "Switches transfer mode to text (Recommended for .txt files, and all files that only contains readable text and not binary data)"}, _
-                                                                     {"upload", "Uploads local file to remote directory using binary or text"}}
+                                                                     {"text (Alias: txt)", "Switches transfer mode to text (Recommended for .txt files, and all files that only contains readable text and not binary data)"}, _
+                                                                     {"upload (Alias: put)", "Uploads local file to remote directory using binary or text"}}
 
     Public Sub FTPShowHelp()
 

@@ -22,7 +22,7 @@ Public Module Shell
     'Admin-Only commands (strictCmds())
     Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
-    Public availableCommands() As String = {"help", "logout", "version", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot", "beep", _
+    Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot", "beep", _
                                             "adduser", "chmotd", "chhostname", "showmotd", "lscomp", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", _
                                             "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", _
                                             "scical", "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "showmal", "savescreen", _
@@ -74,6 +74,8 @@ Public Module Shell
 
         If adminList(signedinusrnm) = True Then
             W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} # ", "def", currDir)
+        ElseIf (maintenance = True) Then
+            W("Maintenance Mode>", "def")
         Else
             W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} $ ", "def", currDir)
         End If

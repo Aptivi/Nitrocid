@@ -69,8 +69,7 @@ Public Module HelpSystem
                                                                   {"shutdown", "The kernel will be shut down"}, _
                                                                   {"sysinfo", "System information"}, _
                                                                   {"unitconv", "Unit converter that is separated from scicalc."}, _
-                                                                  {"useddeps", "Shows used open source dependencies"}, _
-                                                                  {"version", "Shows kernel version"}}
+                                                                  {"useddeps", "Shows used open source dependencies"}}
     Public moddefs As New Dictionary(Of String, String)
 
     Public Sub ShowHelp(Optional ByVal command As String = "")

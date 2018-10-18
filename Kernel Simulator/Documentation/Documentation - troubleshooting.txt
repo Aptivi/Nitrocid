@@ -17,10 +17,9 @@ A: It works only for PCs with the motherboard speaker installed on it. Your PC m
    (Dell Optiplex 7040, most UEFI motherboards, etc.)
 
 
-- Linux Known Bugs
+- Unix Known Bugs
 
-1. Any error messages that is handled will crash the handler with a continuable kernel error. Investigation found that 
-   something ambiguous is going on.
+(No bugs)
 
 - Windows Known Bugs
 

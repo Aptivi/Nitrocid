@@ -63,7 +63,11 @@ Public Module KernelTools
             If (Description.Contains("DOUBLE PANIC: ") And ErrorType = "D") Then
                 'If the description has a double panic tag and the error type is Double
                 Wln("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", "uncontError", ErrorType, CStr(Description), CStr(RebootTime))
-                Sleep(CInt(RebootTime * 1000))
+                If (EnvironmentOSType.Contains("Unix")) Then
+                    Threading.Thread.Sleep(CInt(RebootTime * 1000))
+                Else
+                    Sleep(CInt(RebootTime * 1000))
+                End If
                 System.Console.Clear()
                 ResetEverything()
                 Main()
@@ -87,7 +91,11 @@ Public Module KernelTools
             Else
                 'Everything else.
                 Wln("[{0}] panic: {1} -- Rebooting in {2} seconds...", "uncontError", ErrorType, CStr(Description), CStr(RebootTime))
-                Sleep(CInt(RebootTime * 1000))
+                If (EnvironmentOSType.Contains("Unix")) Then
+                    Threading.Thread.Sleep(CInt(RebootTime * 1000))
+                Else
+                    Sleep(CInt(RebootTime * 1000))
+                End If
                 System.Console.Clear()
                 ResetEverything()
                 Main()
@@ -144,6 +152,9 @@ Public Module KernelTools
         If (DebugMode = True) Then
             DebugMode = False
         End If
+
+        'Close settings
+        configReader = New IniFile()
 
     End Sub
 

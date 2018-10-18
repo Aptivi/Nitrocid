@@ -754,8 +754,29 @@ Public Module GetCommand
             ElseIf (requestedCommand = "sysinfo") Then
 
                 'Shows system information
-                Wln("Kernel Version: {0}", "neutralText", KernelVersion)
+                Wln("{0}[ Kernel settings ]", "helpCmd", vbNewLine)
+
+                'Kernel section
+                Wln(vbNewLine + "Kernel Version: {0}" + vbNewLine + _
+                                "Debug Mode: {1}" + vbNewLine + _
+                                "Colored Shell: {2}" + vbNewLine + _
+                                "Arguments on Boot: {3}" + vbNewLine + _
+                                "Help command simplified: {4}" + vbNewLine + _
+                                "MOTD on Login: {5}" + vbNewLine + _
+                                "Time/Date on corner: {6}" + vbNewLine + _
+                                "Hardware probed: {7}" + vbNewLine + _
+                                "Current theme: {8}" + vbNewLine, "neutralText", KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString, ProbeFlag.ToString, currentTheme)
+
+                'Hardware section
+                Wln("[ Hardware settings ]{0}", "helpCmd", vbNewLine)
                 HardwareProbe.ListDrivers()
+
+                'User section
+                Wln("{0}[ User settings ]", "helpCmd", vbNewLine)
+                Wln(vbNewLine + "Current user name: {0}" + vbNewLine + _
+                                "Current host name: {1}" + vbNewLine + _
+                                "Available usernames: {2}" + vbNewLine + _
+                                "Computer host name: {3}" + vbNewLine, "neutralText", signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
 
             ElseIf (requestedCommand.Substring(0, index) = "unitconv") Then
 
@@ -775,11 +796,6 @@ Public Module GetCommand
                     "Source code: https://github.com/MarioZ/MadMilkman.Ini" + vbNewLine + _
                     "Copyright (c) 2016, Mario Zorica" + vbNewLine + _
                     "License (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE", "neutralText")
-
-            ElseIf (requestedCommand = "version") Then
-
-                'Shows current kernel version
-                Wln("Version: {0}", "neutralText", KernelVersion)
 
             End If
         Catch ex As Exception

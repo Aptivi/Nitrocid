@@ -154,6 +154,11 @@ Public Module Kernel
         Config.checkForUpgrade()
         Config.readImportantConfig()
         Config.readConfig()
+
+        'Parse current theme string
+        ParseCurrentTheme()
+
+        'Send a message on debugger
         Wdbg("Kernel initialized, version {0}.", True, KernelVersion)
 
     End Sub
@@ -162,13 +167,10 @@ Public Module Kernel
         'Variables and Constants
         Const Offset As Integer = 60 : Const LTOff As Integer = 8
         Dim asmByte(2047) As Byte : Dim asmStream As Stream
+        Dim codePath As Assembly = Assembly.GetExecutingAssembly
 
         'Get compile date
-        If (EnvironmentOSType.Contains("Unix")) Then
-            asmStream = New FileStream(Path.GetDirectoryName(Assembly.GetExecutingAssembly.Location) + "/Kernel Simulator.exe", FileMode.Open, FileAccess.Read)
-        Else
-            asmStream = New FileStream(Path.GetDirectoryName(Assembly.GetExecutingAssembly.Location) + "\Kernel Simulator.exe", FileMode.Open, FileAccess.Read)
-        End If
+        asmStream = New FileStream(Path.GetFullPath(codePath.Location), FileMode.Open, FileAccess.Read)
         asmStream.Read(asmByte, 0, 2048)
         If Not asmStream Is Nothing Then asmStream.Close()
 

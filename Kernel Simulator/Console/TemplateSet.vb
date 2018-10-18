@@ -18,6 +18,9 @@
 
 Public Module TemplateSet
 
+    'Variables
+    Public currentTheme As String
+
     Public Sub templateSet(ByVal theme As String)
 
         If colorTemplates.Contains(theme) = True Then
@@ -91,6 +94,7 @@ Public Module TemplateSet
                 templateSetExitFlag = True
             End If
             MakePermanent()
+            ParseCurrentTheme()
         Else
             Wln("Invalid color template {0}", "neutralText", theme)
         End If
@@ -118,6 +122,88 @@ Public Module TemplateSet
         ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColor.ToString
         ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColor.ToString
         ksconf.Save(configPath)
+
+    End Sub
+
+    Sub ParseCurrentTheme()
+
+        Dim ksconf As New IniFile()
+        Dim configPath As String
+        If (EnvironmentOSType.Contains("Unix")) Then
+            configPath = Environ("HOME") + "/kernelConfig.ini"
+        Else
+            configPath = Environ("USERPROFILE") + "\kernelConfig.ini"
+        End If
+        ksconf.Load(configPath)
+        If (ksconf.Sections("Colors").Keys("User Name Shell Color").Value = ConsoleColor.DarkGreen.ToString And _
+            ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = ConsoleColor.Green.ToString And _
+            ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = ConsoleColor.Yellow.ToString And _
+            ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = ConsoleColor.Red.ToString And _
+            ksconf.Sections("Colors").Keys("Text Color").Value = ConsoleColor.Gray.ToString And _
+            ksconf.Sections("Colors").Keys("License Color").Value = ConsoleColor.White.ToString And _
+            ksconf.Sections("Colors").Keys("Background Color").Value = ConsoleColor.Black.ToString And _
+            ksconf.Sections("Colors").Keys("Input Color").Value = ConsoleColor.White.ToString And _
+            ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = ConsoleColor.DarkYellow.ToString And _
+            ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = ConsoleColor.DarkGray.ToString) Then
+            currentTheme = "Default"
+        ElseIf (ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorRC.ToString And _
+            ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorRC.ToString And _
+            ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorRC.ToString And _
+            ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorRC.ToString And _
+            ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorRC.ToString And _
+            ksconf.Sections("Colors").Keys("License Color").Value = licenseColorRC.ToString And _
+            ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorRC.ToString And _
+            ksconf.Sections("Colors").Keys("Input Color").Value = inputColorRC.ToString And _
+            ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorRC.ToString And _
+            ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorRC.ToString) Then
+            currentTheme = "RedConsole"
+        ElseIf (ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorBS.ToString And _
+            ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorBS.ToString And _
+            ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorBS.ToString And _
+            ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorBS.ToString And _
+            ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorBS.ToString And _
+            ksconf.Sections("Colors").Keys("License Color").Value = licenseColorBS.ToString And _
+            ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorBS.ToString And _
+            ksconf.Sections("Colors").Keys("Input Color").Value = inputColorBS.ToString And _
+            ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorBS.ToString And _
+            ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorBS.ToString) Then
+            currentTheme = "BlueSpire"
+        ElseIf (ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorHckr.ToString And _
+            ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorHckr.ToString And _
+            ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorHckr.ToString And _
+            ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorHckr.ToString And _
+            ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorHckr.ToString And _
+            ksconf.Sections("Colors").Keys("License Color").Value = licenseColorHckr.ToString And _
+            ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorHckr.ToString And _
+            ksconf.Sections("Colors").Keys("Input Color").Value = inputColorHckr.ToString And _
+            ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorHckr.ToString And _
+            ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorHckr.ToString) Then
+            currentTheme = "Hacker"
+        ElseIf (ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLUnc.ToString And _
+            ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorLUnc.ToString And _
+            ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorLUnc.ToString And _
+            ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorLUnc.ToString And _
+            ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorLUnc.ToString And _
+            ksconf.Sections("Colors").Keys("License Color").Value = licenseColorLUnc.ToString And _
+            ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorLUnc.ToString And _
+            ksconf.Sections("Colors").Keys("Input Color").Value = inputColorLUnc.ToString And _
+            ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorLUnc.ToString And _
+            ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorLUnc.ToString) Then
+            currentTheme = "LinuxUncolored"
+        ElseIf (ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLcDef.ToString And _
+            ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorLcDef.ToString And _
+            ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorLcDef.ToString And _
+            ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorLcDef.ToString And _
+            ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorLcDef.ToString And _
+            ksconf.Sections("Colors").Keys("License Color").Value = licenseColorLcDef.ToString And _
+            ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorLcDef.ToString And _
+            ksconf.Sections("Colors").Keys("Input Color").Value = inputColorLcDef.ToString And _
+            ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorLcDef.ToString And _
+            ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorLcDef.ToString) Then
+            currentTheme = "LinuxColoredDef"
+        Else
+            currentTheme = "Custom"
+        End If
 
     End Sub
 
