@@ -1,0 +1,3 @@
+language: csharp
+mono: latest
+solution: Kernel Simulator.sln
