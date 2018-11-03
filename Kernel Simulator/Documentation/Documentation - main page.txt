@@ -14,6 +14,7 @@ Kernel Simulator lets you simulate a very early access for our future Kernel. Ca
 
 |---------------+--> History <--+---------------|
 
+10/23/2018 - 0.0.5.8: Removed beeping when rebooting and shutting down, Removed "beep" command, (Windows) Probers will now continue even if they failed, Disposing memory now no longer uses VB6 method of handling errors
 10/13/2018 - 0.0.5.7: Fixed crash when starting when running on a file name that is other than "Kernel Simulator.exe", Better error handling for FTP, Added current directory printing in FTP, removed "version" command, fixed the "Quiet Probe" value being set "Quiet Probe", Expanded "sysinfo", Fixed configuration reader not closing when exiting kernel, (Unix) Fixed a known bug
 10/12/2018 - 0.0.5.6: Improved probers, username list on log-in, better compatibility with Unix
 9/22/2018 - 0.0.5.5: Re-written config, Forbidden aliases, added missing help entries for "showalises", added more MOTD and MAL placeholders, fixed repeating message of RAM status, and an FTP client has been added, finally!

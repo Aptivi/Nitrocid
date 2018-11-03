@@ -76,19 +76,6 @@ Public Module GetCommand
                     HelpSystem.ShowHelp(words(0))
                 End If
 
-            ElseIf (requestedCommand.Substring(0, index) = "beep") Then
-
-                'Beep system initialization
-                If (requestedCommand <> "beep") Then
-                    If (args.Count - 1 = 1) Then
-                        Beep.Beep(CInt(args(0)), CDbl(args(1)))
-                    Else
-                        HelpSystem.ShowHelp(words(0))
-                    End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
-                End If
-
             ElseIf (requestedCommand.Substring(0, index) = "arginj") Then
 
                 'Argument Injection
@@ -530,7 +517,6 @@ Public Module GetCommand
 
                 'Reboot the simulated system
                 Wln("Rebooting...", "neutralText")
-                System.Console.Beep(870, 250)
                 KernelTools.ResetEverything()
                 System.Console.Clear()
                 Main()
@@ -743,7 +729,6 @@ Public Module GetCommand
 
                 'Shuts down the simulated system
                 Wln("Shutting down...", "neutralText")
-                System.Console.Beep(870, 250)
                 KernelTools.ResetEverything()
                 If (DebugMode = True) Then
                     dbgWriter.Close()
@@ -796,6 +781,11 @@ Public Module GetCommand
                     "Source code: https://github.com/MarioZ/MadMilkman.Ini" + vbNewLine + _
                     "Copyright (c) 2016, Mario Zorica" + vbNewLine + _
                     "License (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE", "neutralText")
+
+            ElseIf (requestedCommand.Substring(0, index) = "usermanual") Then
+
+                Wln("User manual is work in progress." + vbNewLine + vbNewLine + _
+                    "You can't use this manual as it isn't finished at this time.", "neutralText")
 
             End If
         Catch ex As Exception

@@ -16,21 +16,28 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module Beep
+Module UserManual
 
-    Public Sub Beep(ByVal freq As Integer, ByVal s As Double)
+    'Variables
+    Public sectionsManual As Dictionary(Of String, String)
 
-        If (freq <= 36 Or freq >= 32768) Then
-            Wln("Invalid value for beep frequency.", "neutralText")
-        ElseIf (freq > 2048) Then
-            Wln("ERROR: Beep may be loud, depending on speaker. Setting values higher than 2048 might cause your ears to damage, " + _
-                "and more importantly, your motherboard speaker might deafen, or malfunction." + vbNewLine + vbNewLine + _
-                "Please read documentation for more info why high frequency shouldn't be used.", "neutralText")
-        Else
-            Wln("Beeping in {0} seconds in {1} Hz...", "neutralText", s, freq)
-            System.Console.Beep(freq, CInt(s * 1000))
-        End If
+    'This is not final! This is here only for preparation for 0.0.5.9's features.
+    ''' <summary>
+    ''' We haven't implemented anything yet.
+    ''' </summary>
+    ''' <param name="section">A section on the current manual page</param>
+    ''' <remarks></remarks>
+    Public Sub ReadManual(ByVal section As String)
+        Throw New NotImplementedException
+    End Sub
 
+    ''' <summary>
+    ''' We haven't implemented anything yet.
+    ''' </summary>
+    ''' <param name="sectionFile">A file which is a section file</param>
+    ''' <remarks></remarks>
+    Public Sub ParseManual(ByVal sectionFile As String)
+        Throw New NotImplementedException
     End Sub
 
 End Module

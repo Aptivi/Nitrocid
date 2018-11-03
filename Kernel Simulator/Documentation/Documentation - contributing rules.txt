@@ -51,5 +51,7 @@ If some of the ideas disappeared, then it is either done or cancelled.
 5. Languages (Delayed to 0.0.5.9)
 6. Custom aliases for commands (Perm. in 0.0.6)
 7. Debug everything (0.0.5.9)
+8. Events and Exceptions (0.0.5.9)
+9. A separate program called "Kernel Simulator Manual Studio"
 
 (If you have ideas, edit this section by inserting your idea.)

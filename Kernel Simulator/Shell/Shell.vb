@@ -22,13 +22,14 @@ Public Module Shell
     'Admin-Only commands (strictCmds())
     Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
-    Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot", "beep", _
-                                            "adduser", "chmotd", "chhostname", "showmotd", "lscomp", "hwprobe", "ping", "lsnet", "lsnettree", "showtd", "chpwd", _
-                                            "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", _
-                                            "scical", "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "showmal", "savescreen", _
-                                            "lockscreen", "setsaver", "loadsaver", "showaliases", "noaliases", "ftp", "useddeps"}
-    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", "reloadconfig", "alias", _
-                                     "chmal", "setsaver", "loadsaver"}
+    Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot", _
+                                            "adduser", "chmotd", "chhostname", "showmotd", "lscomp", "hwprobe", "ping", "lsnet", _
+                                            "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", _
+                                            "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical", "unitconv", "md", "rd", _
+                                            "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "showmal", "savescreen", "lockscreen", _
+                                            "setsaver", "loadsaver", "showaliases", "noaliases", "ftp", "useddeps", "usermanual"}
+    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", _
+                                     "reloadconfig", "alias", "chmal", "setsaver", "loadsaver"}
     Public modcmnds As New ArrayList
 
     'For contributors: For each added command, you should also add a command in availableCommands array so there is no problems detecting your new command.

@@ -22,7 +22,6 @@ Public Module HelpSystem
     Public definitions As New Dictionary(Of String, String) From {{"adduser", "Adds users (Only admins can access this command)"}, _
                                                                   {"alias", "Adds aliases to commands (Only admins can access this command)"}, _
                                                                   {"arginj", "Injects arguments to the kernel (reboot required, admins only)"}, _
-                                                                  {"beep", "Console will beep in Hz and time in milliseconds"}, _
                                                                   {"calc", "Simple calculator"}, _
                                                                   {"cdir", "Shows current directory"}, _
                                                                   {"changedir", "Changes directory"}, _
@@ -69,7 +68,8 @@ Public Module HelpSystem
                                                                   {"shutdown", "The kernel will be shut down"}, _
                                                                   {"sysinfo", "System information"}, _
                                                                   {"unitconv", "Unit converter that is separated from scicalc."}, _
-                                                                  {"useddeps", "Shows used open source dependencies"}}
+                                                                  {"useddeps", "Shows used open source dependencies"}, _
+                                                                  {"usermanual", "A very descriptive user manual."}}
     Public moddefs As New Dictionary(Of String, String)
 
     Public Sub ShowHelp(Optional ByVal command As String = "")
@@ -101,10 +101,6 @@ Public Module HelpSystem
         ElseIf (command = "alias") Then
 
             Wln("Usage: alias <rem/add> <alias> <cmd>", "neutralText")
-
-        ElseIf (command = "beep") Then
-
-            Wln("Usage: beep <Frequency:Hz> <Time:Seconds>", "neutralText")
 
         ElseIf (command = "arginj") Then
 
@@ -303,10 +299,10 @@ Public Module HelpSystem
 
             Wln("Usage: useddeps: Shows open source libraries used", "neutralText")
 
-        ElseIf (command = "version") Then
+        ElseIf (command = "usermanual") Then
 
-            Wln("Usage: version: Shows kernel version." + vbNewLine + _
-                "       Friends of version: sysinfo", "neutralText")
+            Wln("Usage: usermanual <sectionWord>" + vbNewLine + _
+                "       Work in progress.", "neutralText")
 
         End If
 

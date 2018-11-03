@@ -149,13 +149,13 @@
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Languages\Translate.vb" />
     <Compile Include="Login\PlaceParse.vb" />
-    <Compile Include="Misc\Beep.vb" />
     <Compile Include="Misc\Calculator\sciCalc.vb" />
     <Compile Include="Misc\Calculator\stdCalc.vb" />
     <Compile Include="Misc\Calculator\unitConv.vb" />
     <Compile Include="Misc\Config.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\DisposeExit.vb" />
+    <Compile Include="Misc\UserManual.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModParser.vb" />
     <Compile Include="Network\FTP\FTPGetCommand.vb" />
@@ -236,6 +236,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ManPageExample.txt" />
     <None Include="COPYING" />
     <Content Include="Documentation\Documentation - contributing rules.txt" />
     <Content Include="Documentation\Documentation - faq.txt" />

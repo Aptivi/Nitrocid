@@ -23,9 +23,6 @@ Public Module Translate
     'It does not contain all of the strings, but contains only some strings.
     'If anyone want to contribute, please feel free to do so.
 
-    'FOR INDIA: (EN) Please be aware that the terminal won't be able to use Hindi letters, so we will use alternative way.
-    '           (IN) कृपया ध्यान रखें कि टर्मिनल हिंदी अक्षरों का उपयोग करने में सक्षम नहीं होगा, इसलिए हम वैकल्पिक तरीके से उपयोग करेंगे।
-
     ''' <summary>
     ''' We haven't implemented anything yet.
     ''' </summary>

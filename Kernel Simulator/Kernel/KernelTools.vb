@@ -18,6 +18,8 @@
 
 Public Module KernelTools
 
+    'TODO: Move all appropriate kernel tools from their own subs to this sub
+
     ''' <summary>
     ''' Indicates that there's something wrong with the kernel.
     ''' </summary>

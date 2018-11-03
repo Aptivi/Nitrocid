@@ -40,7 +40,7 @@ Public Module Kernel
     Sub Main()
 
         'TODO: Re-write the whole kernel in Beta
-        'TODO: Give the kernel name of "Meritorious Kernalism" and the simulator name of "MeritSim".
+        'TODO: Give the kernel name of "Meritorious Kernalism" and the simulator name of "MeritSim" in the final release.
         Try
             'A title
             Console.Title = "Kernel Simulator v" & KernelVersion & " - Compiled on " & getCompileDate()

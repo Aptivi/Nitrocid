@@ -1,0 +1,38 @@
+(*MAN START*)
+~~- Supports comments outside & inside
+~~- Supports empty newlines also (outside & inside, to make reading easy)
+
+~~- TITLE: Any title. DON'T PUT ANY NEWLINES
+-TITLE:Test document
+
+~~- REVISION: DON'T INCREMENT "v" before version
+-REVISION:1.0
+
+~~- KSLAYOUT: Layout versions (0.0.5.9-OR-ABOVE done. 0.0.6.0-OR-ABOVE WIP)
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- BODY START: Important! Newlines during BODY are recognized and not ignored.
+-BODY START-
+Hello world!
+Supports colors too!
+
+~~- TODO: Test warning message when document includes TODO
+Well, that's enough.
+Goodbye...
+~~- End the documentation by -BODY END-. You should put new line before putting.
+-BODY END-
+
+~~- COLOR CONFIGURATION: Text then put the arrow "-=>" then color NAME. Examples below:
+-COLOR CONFIGURATION-
+colors-=>Green
+Well-=>Red
+Good-=>Yellow
+bye-=>Red
+that's enough-=>Blue
+-COLOR CONFIG END-
+
+~~- SECTIONS: Important! Text then put the arrow "=>" then SE1: Main section, SE2: Secondary section.
+-SECTIONS-
+Hello world!=>SE1
+Well, that's enough=>SE2
+-SECTIONS END-

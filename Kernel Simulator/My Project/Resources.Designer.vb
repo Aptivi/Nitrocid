@@ -59,5 +59,32 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''~~- Supports comments outside &amp; inside
+        '''~~- Supports empty newlines also (outside &amp; inside, to make reading easy)
+        '''
+        '''~~- TITLE: Any title. DON&apos;T PUT ANY NEWLINES
+        '''-TITLE:Test document
+        '''
+        '''~~- REVISION: DON&apos;T INCREMENT &quot;v&quot; before version
+        '''-REVISION:1.0
+        '''
+        '''~~- KSLAYOUT: Layout versions (0.0.5.9-OR-ABOVE done. 0.0.6.0-OR-ABOVE WIP)
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''~~- BODY START: Important! Newlines during BODY are recognized and not ignored.
+        '''-BODY START-
+        '''Hello world!
+        '''Supports colors too!
+        '''
+        '''~~- [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ManPageExample() As String
+            Get
+                Return ResourceManager.GetString("ManPageExample", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace
