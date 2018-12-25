@@ -16,29 +16,37 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Environment
-Imports System.IO
-
 Module CommandLineArgsParse
 
     Sub parseCMDArguments(ByVal arg As String)
-
         Try
-            If (GetCommandLineArgs.Length <> 0 And availableCMDLineArgs.Contains(arg) = True) Then
+            If (Environment.GetCommandLineArgs.Length <> 0 And availableCMDLineArgs.Contains(arg) = True) Then
+                Dim strArgs As String = Environment.GetCommandLineArgs.Skip(1).ToArray.Join(" ")
+                Dim argArgs As String = Environment.GetCommandLineArgs.Skip(2).ToArray.Join(" ")
+
+                'Parse arguments
                 If (arg = "createConf") Then
                     Config.createConfig(True)
                 ElseIf (arg = "promptArgs") Then
                     ArgumentPrompt.PromptArgs()
                     If (argsFlag = True) Then ArgumentParse.ParseArguments()
+                ElseIf (arg = "testMod") Then
+                    ReadyPath_MOD()
+                    StartParse(argArgs)
+                    If (scripts.Count = 0) Then
+                        Environment.Exit(1)
+                    Else
+                        Environment.Exit(0)
+                    End If
                 End If
             End If
         Catch ex As Exception
-            If (DebugMode = True) Then
-                Wln("Error while parsing real command-line arguments: {0} " + vbNewLine + _
-                    "{1}", "neutralText", Err.Description, ex.StackTrace) : Wdbg(ex.StackTrace, True)
+            Wln(DoTranslation("Error while parsing real command-line arguments: {0}", currentLang) + vbNewLine +
+                "{1}", "neutralText", Err.Description, ex.StackTrace)
+            If (arg = "testMod" Or arg = "createConf") Then
+                Environment.Exit(1)
             End If
         End Try
-
     End Sub
 
 End Module

@@ -16,9 +16,31 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Threading
+
 Public Module FTPGetCommand
 
-    Public response As FtpWebResponse
+    'Progress Bar Enabled
+    Dim progressFlag As Boolean = True
+    Dim ConsoleOriginalPosition_LEFT As Integer
+    Dim ConsoleOriginalPosition_TOP As Integer
+    Public ClientFTP As FtpClient
+
+    'To enable progress
+    Public Complete As New Progress(Of Double)(Function(percentage)
+                                                   'If the progress is not defined, disable progress bar
+                                                   If (percentage < 0) Then
+                                                       progressFlag = False
+                                                   Else
+                                                       ConsoleOriginalPosition_LEFT = Console.CursorLeft
+                                                       ConsoleOriginalPosition_TOP = Console.CursorTop
+                                                       If (progressFlag = True And percentage <> 100) Then
+                                                           W("{0}%", "neutralText", FormatNumber(percentage, 1))
+                                                       End If
+                                                       Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
+                                                   End If
+                                                   Thread.Sleep(500)
+                                               End Function)
 
     Public Sub ExecuteCommand(ByVal cmd As String)
 
@@ -31,64 +53,51 @@ Public Module FTPGetCommand
 
         'Command code
         Try
-            If (cmd = "binary" Or cmd = "bin") Then
-                If (connected = False) Then
-                    Wln("You should connect to server before switching transfer modes", "neutralText")
-                Else
-                    'Use Binary mode to transfer files
-                    ftpstream.UseBinary = True
-                    Binary = True
-                    Wln("Transfer mode: Binary", "neutralText")
-                End If
-            ElseIf (cmd.Substring(0, index) = "connect") Then
+            If (cmd.Substring(0, index) = "connect") Then
                 If (cmd <> "connect") Then
                     If (connected = True) Then
-                        Wln("You should disconnect from server before connecting to another server", "neutralText")
+                        Wln(DoTranslation("You should disconnect from server before connecting to another server", currentLang), "neutralText")
                     Else
                         Try
                             'Create an FTP stream to connect to
-                            ftpstream = WebRequest.Create(strArgs)
+                            ClientFTP = New FtpClient With {
+                                .Host = strArgs
+                            }
 
                             'Prompt for username and for password
-                            W("Username for {0}: ", "input", strArgs)
+                            W(DoTranslation("Username for {0}: ", currentLang), "input", strArgs)
                             user = Console.ReadLine()
                             If (user = "") Then user = "anonymous"
-                            W("Password for {0} at {1}: ", "input", user, strArgs)
+                            W(DoTranslation("Password for {0}: ", currentLang), "input", user)
                             pass = Console.ReadLine()
 
                             'Set up credentials
-                            ftpstream.Credentials = New NetworkCredential(user, pass)
+                            ClientFTP.Credentials = New NetworkCredential(user, pass)
 
-                            'Get the working directory and get the response
-                            ftpstream.Method = WebRequestMethods.Ftp.PrintWorkingDirectory
-                            response = ftpstream.GetResponse
+                            'Connect
+                            Dim address As New Uri(strArgs)
+                            ClientFTP = FtpClient.Connect(address)
 
                             'Show that it's connected
-                            Wln("Connected to {0}", "neutralText", strArgs)
-                            Wln(response.WelcomeMessage, "neutralText")
-
-                            'Set up a connected flag
+                            Wln(DoTranslation("Connected to {0}", currentLang), "neutralText", strArgs)
                             connected = True
 
                             'Prepare to print current FTP directory
-                            currentremoteDir = response.ResponseUri.AbsolutePath
-
-                            'Make ftpsite only "ftp://ftp.example.com" or "ftps://ftps.example.com"
-                            ftpsite = strArgs
-                            If Not (currentremoteDir = "/") Then ftpsite = ftpsite.Replace(currentremoteDir, "")
-
+                            currentremoteDir = ClientFTP.GetWorkingDirectory
+                            ftpsite = ClientFTP.Host
                         Catch ex As Exception
-                            Wdbg("Error connecting to {0}: {1}", True, args(0), ex.Message)
-                            Wdbg("{0}", True, ex.StackTrace)
+                            Wdbg("Error connecting to {0}: {1}", args(0), ex.Message)
+                            Wdbg("{0}", ex.StackTrace)
                             If (DebugMode = True) Then
-                                Wln("Error when trying to connect to {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", args(0), ex.Message, ex.StackTrace)
+                                Wln(DoTranslation("Error when trying to connect to {0}: {1}", currentLang) + vbNewLine +
+                                    DoTranslation("Stack Trace: {2}", currentLang), "neutralText", args(0), ex.Message, ex.StackTrace)
                             Else
-                                Wln("Error when trying to connect to {0}: {1}", "neutralText", args(0), ex.Message)
+                                Wln(DoTranslation("Error when trying to connect to {0}: {1}", currentLang), "neutralText", args(0), ex.Message)
                             End If
                         End Try
                     End If
                 Else
-                    Wln("Enter an FTP server that starts with ""ftp://"" or ""ftps://""", "neutralText")
+                    Wln(DoTranslation("Enter an FTP server that starts with ""ftp://"" or ""ftps://""", currentLang), "neutralText")
                 End If
             ElseIf (cmd.Substring(0, index) = "changelocaldir" Or cmd.Substring(0, index) = "cdl") Then
                 If (cmd <> "changelocaldir" Or cmd <> "cdl") Then
@@ -104,113 +113,63 @@ Public Module FTPGetCommand
                         Dim parser As New IO.DirectoryInfo(targetDir)
                         currDirect = parser.FullName
                     Else
-                        Wln("Local directory {0} doesn't exist.", "neutralText", strArgs)
+                        Wln(DoTranslation("Local directory {0} doesn't exist.", currentLang), "neutralText", strArgs)
                     End If
                 Else
-                    Wln("Enter a local directory. "".."" to go back.", "neutralText")
+                    Wln(DoTranslation("Enter a local directory. "".."" to go back.", currentLang), "neutralText")
                 End If
             ElseIf (cmd.Substring(0, index) = "changeremotedir" Or cmd.Substring(0, index) = "cdr") Then
-                If (cmd <> "changeremotedir" Or cmd <> "cdr") Then
-                    'Old and New directory variable
-                    Dim oldDir As String = ftpsite + currentremoteDir + "/"
-                    Dim newDir As String = oldDir + strArgs
-
-                    'Open a new stream request which points to changed remote directory
-                    ftpstream = WebRequest.Create(newDir)
-                    ftpstream.Credentials = New NetworkCredential(user, pass)
-
-                    'A boolean to check to use if the directory exists
-                    Dim exist As Boolean
-
-                    'Try to list directory, and if it exists, make "exist = True", otherwise, "exist = False"
-                    Try
-                        ftpstream.Method = WebRequestMethods.Ftp.ListDirectory
-                        Using ftpstream.GetResponse
-                            exist = True
-                        End Using
-                    Catch ex As WebException
-                        Wdbg("Error changing directory to {0}: {1}", True, newDir, response.StatusDescription)
-                        Wdbg("{0}", True, ex.StackTrace)
-                        exist = False
-                    End Try
-
-                    If (exist = True) Then
-                        'Directory exists, go to the new directory
-                        ftpstream = WebRequest.Create(newDir)
-                        ftpstream.Credentials = New NetworkCredential(user, pass)
-                        ftpstream.Method = WebRequestMethods.Ftp.PrintWorkingDirectory
-                        response = ftpstream.GetResponse
-                        currentremoteDir = response.ResponseUri.AbsolutePath
+                If (connected = True) Then
+                    If (cmd <> "changeremotedir" Or cmd <> "cdr") Then
+                        If (ClientFTP.DirectoryExists(strArgs) = True) Then
+                            'Directory exists, go to the new directory
+                            ClientFTP.SetWorkingDirectory(strArgs)
+                            currentremoteDir = ClientFTP.GetWorkingDirectory
+                        Else
+                            'Directory doesn't exist, go to the old directory
+                            Wln(DoTranslation("Directory {0} not found.", currentLang), "neutralText", strArgs)
+                        End If
                     Else
-                        'Directory doesn't exist, go to the old directory
-                        Wln("Directory {0} not found. Reason: {1}", "neutralText", strArgs, response.StatusDescription)
-                        ftpstream = WebRequest.Create(oldDir)
-                        ftpstream.Credentials = New NetworkCredential(user, pass)
-                        If (Binary = False) Then ftpstream.UseBinary = False
+                        Wln(DoTranslation("Enter a remote directory. "".."" to go back", currentLang), "neutralText")
                     End If
                 Else
-                    Wln("Enter a remote directory. "".."" to go back", "neutralText")
+                    Wln(DoTranslation("You must connect to a server before changing directory", currentLang), "neutralText")
                 End If
             ElseIf (cmd.Substring(0, index) = "currlocaldir" Or cmd.Substring(0, index) = "pwdl") Then
-                Wln("Local directory: {0}", "neutralText", currDirect)
+                Wln(DoTranslation("Local directory: {0}", currentLang), "neutralText", currDirect)
             ElseIf (cmd.Substring(0, index) = "currremotedir" Or cmd.Substring(0, index) = "pwdr") Then
                 If (connected = True) Then
-                    Wln("Remote directory: {0}", "neutralText", currentremoteDir)
+                    Wln(DoTranslation("Remote directory: {0}", currentLang), "neutralText", currentremoteDir)
                 Else
-                    Wln("You must connect to server before getting current remote directory.", "neutralText")
+                    Wln(DoTranslation("You must connect to server before getting current remote directory.", currentLang), "neutralText")
                 End If
             ElseIf (cmd.Substring(0, index) = "delete" Or cmd.Substring(0, index) = "del") Then
                 If (cmd <> "delete" Or cmd <> "del") Then
                     If (connected = True) Then
-                        'Old directory and New file variable
-                        Dim oldDir As String = ftpsite + currentremoteDir + "/"
-                        Dim newFile As String = oldDir + strArgs
+                        'Print a message
+                        Wln(DoTranslation("Deleting file {0}...", currentLang), "neutralText", strArgs)
 
-                        'Try to delete file
-                        Try
-                            'Print a message
-                            Wln("Deleting file {0}...", "neutralText", strArgs)
+                        'Make a confirmation message so user will not accidentally delete a file
+                        W(DoTranslation("Are you sure you want to delete file {0} <y/n>?", currentLang), "input", strArgs)
+                        Dim answer As String = Console.ReadKey.KeyChar
 
-                            'Make a request with a file to be deleted
-                            ftpstream = WebRequest.Create(newFile)
-                            ftpstream.Credentials = New NetworkCredential(user, pass)
-                            If (Binary = False) Then ftpstream.UseBinary = False
-                            ftpstream.Method = WebRequestMethods.Ftp.DeleteFile
-
-                            'Make a confirmation message so user will not accidentally delete a file
-                            W("Are you sure you want to delete file {0} <y/n>?", "input", strArgs)
-                            Dim answer As String = Console.ReadKey.KeyChar
-
-                            'If the answer is "y", then delete a file
-                            If (answer = "y") Then
-                                response = ftpstream.GetResponse
-                                Wln(vbNewLine + "Deleted file {0}", "neutralText", strArgs)
-                            End If
-                        Catch ex As WebException
-                            Wdbg("Error deleting file {0}: {1}", True, strArgs, ex.Message)
-                            Wdbg("{0}", True, ex.StackTrace)
-                            If (DebugMode = True) Then
-                                Wln("Error when trying to delete file {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", strArgs, response.StatusDescription, ex.StackTrace)
-                            Else
-                                Wln("Error when trying to delete file {0}: {1}", "neutralText", strArgs, response.StatusDescription)
-                            End If
-                        End Try
-
-                        'Either way, go to the old directory that has the deleted file
-                        ftpstream = WebRequest.Create(oldDir)
-                        ftpstream.Credentials = New NetworkCredential(user, pass)
-                        If (Binary = False) Then ftpstream.UseBinary = False
+                        'If the answer is "y", then delete a file
+                        If (answer = "y") Then
+                            ClientFTP.DeleteFile(strArgs)
+                            Wln(vbNewLine + DoTranslation("Deleted file {0}", currentLang), "neutralText", strArgs)
+                        End If
                     Else
-                        Wln("You must connect to server with administrative privileges before performing the deletion.", "neutralText")
+                        Wln(DoTranslation("You must connect to server with administrative privileges before performing the deletion.", currentLang), "neutralText")
                     End If
                 Else
-                    Wln("Enter a file to remove. You must have administrative permissions on your logged in username to be able to remove.", "neutralText")
+                    Wln(DoTranslation("Enter a file to remove. You must have administrative permissions on your logged in username to be able to remove.", currentLang), "neutralText")
                 End If
             ElseIf (cmd = "disconnect") Then
                 If (connected = True) Then
                     'Set a connected flag to False
                     connected = False
-                    Wln("Disconnected from {0}", "neutralText", ftpsite)
+                    ClientFTP.Disconnect()
+                    Wln(DoTranslation("Disconnected from {0}", currentLang), "neutralText", ftpsite)
 
                     'Clean up everything
                     ftpsite = ""
@@ -218,83 +177,37 @@ Public Module FTPGetCommand
                     user = ""
                     pass = ""
                 Else
-                    Wln("You haven't connected to any server yet", "neutralText")
+                    Wln(DoTranslation("You haven't connected to any server yet", currentLang), "neutralText")
                 End If
             ElseIf (cmd.Substring(0, index) = "download" Or cmd.Substring(0, index) = "get") Then
                 If (cmd <> "download" Or cmd <> "get") Then
                     If (connected = True) Then
-                        'Old directory and new file variables
-                        Dim oldDir As String = ftpsite + currentremoteDir + "/"
-                        Dim newFile As String = oldDir + strArgs
+                        'Show a message to download
+                        W(DoTranslation("Downloading file {0}...", currentLang), "neutralText", strArgs)
+                        ClientFTP.DownloadFile(currDirect + strArgs, strArgs, True, FtpVerify.None, Complete)
+                        Console.WriteLine()
 
-                        'Try to download file
-                        Try
-                            'Show a message to download
-                            Wln("Downloading file {0}...", "neutralText", strArgs)
-
-                            'Make a new request with the new file
-                            ftpstream = WebRequest.Create(newFile)
-                            ftpstream.Credentials = New NetworkCredential(user, pass)
-                            If (Binary = False) Then ftpstream.UseBinary = False
-                            ftpstream.Method = WebRequestMethods.Ftp.DownloadFile
-
-                            'Get a response
-                            response = ftpstream.GetResponse
-
-                            'Make a stream and get a response stream
-                            Dim dStream As IO.Stream = response.GetResponseStream()
-
-                            'Split the strArgs if there is "/"
-                            Dim strArgsSeparated As String()
-                            strArgsSeparated = strArgs.Split({"/"}, StringSplitOptions.RemoveEmptyEntries)
-
-                            'Conditions if Binary or ASCII
-                            If (Binary = True) Then
-                                'Make a dFile stream
-                                Dim dFile As New IO.FileStream(IO.Path.Combine(currDirect, strArgsSeparated(strArgsSeparated.Length - 1)), IO.FileMode.Create)
-
-                                'Make dStream copy to dFile by binary
-                                Wln("Downloading using Binary mode...", "neutralText")
-                                dStream.CopyTo(dFile)
-
-                                'Close stream
-                                dStream.Close()
+                        'Verify hash (Removed in 0.0.5.10 as FtpVerify.Retry is implemented.)
+                        If (ClientFTP.HashAlgorithms <> FtpHashAlgorithm.NONE) Then
+                            Dim fileHash As FtpHash = ClientFTP.GetHash(strArgs)
+                            Wln(DoTranslation("Hash status: ", currentLang) + vbNewLine +
+                                DoTranslation("REMOTE: {0} ({1})", currentLang), "neutralText", fileHash.Value, fileHash.Algorithm.ToString)
+                            If (fileHash.Verify(currDirect + strArgs)) Then
+                                'Download is finished.
+                                Wln(DoTranslation("Downloaded file {0}.", currentLang), "neutralText", strArgs)
                             Else
-                                'Make a dFile stream reader
-                                Dim dFile As New IO.StreamReader(dStream)
-
-                                'Make a Down stream writer
-                                Dim Down As New IO.StreamWriter(IO.Path.Combine(currDirect, strArgsSeparated(strArgsSeparated.Length - 1)), False)
-
-                                'Make dFile copy to Down by text (ASCII)
-                                Wln("Downloading using ASCII mode...", "neutralText")
-                                Down.WriteLine(dFile.ReadToEnd())
-
-                                'Close stream
-                                dStream.Close()
+                                'Download finished with corrupted file
+                                Wln(DoTranslation("Download failed for file {0} because the local file is corrupt.", currentLang), "neutralText", strArgs)
                             End If
-
+                        Else
                             'Download is finished.
-                            Wln(vbNewLine + "Downloaded file {0}. Status {1}", "neutralText", strArgs, response.StatusDescription)
-                        Catch ex As WebException
-                            Wdbg("Error downloading file {0}: {1}", True, strArgs, ex.Message)
-                            Wdbg("{0}", True, ex.StackTrace)
-                            If (DebugMode = True) Then
-                                Wln("Error when trying to download file {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", strArgs, response.StatusDescription, ex.StackTrace)
-                            Else
-                                Wln("Error when trying to download file {0}: {1}", "neutralText", strArgs, response.StatusDescription)
-                            End If
-                        End Try
-
-                        'Go to the old directory
-                        ftpstream = WebRequest.Create(oldDir)
-                        ftpstream.Credentials = New NetworkCredential(user, pass)
-                        If (Binary = False) Then ftpstream.UseBinary = False
+                            Wln(DoTranslation("Downloaded file {0} without checking for sum. This file might be corrupt.", currentLang), "neutralText", strArgs)
+                        End If
                     Else
-                        Wln("You must connect to server before performing transmission.", "neutralText")
+                        Wln(DoTranslation("You must connect to server before performing transmission.", currentLang), "neutralText")
                     End If
                 Else
-                    Wln("Enter a file to download to local directory.", "neutralText")
+                    Wln(DoTranslation("Enter a file to download to local directory.", currentLang), "neutralText")
                 End If
             ElseIf (cmd = "exit") Then
                 'Set a flag
@@ -320,200 +233,91 @@ Public Module FTPGetCommand
                 Dim line As String = "" : Dim listftp As New List(Of String)
                 If (cmd <> "listremote" Or cmd <> "lsr") Then
                     If (connected = True) Then
-                        'Old and new directory variables
-                        Dim oldDir As String = ftpsite + currentremoteDir + "/"
-                        Dim newDir As String = oldDir + strArgs
-
-                        'Make a new request
-                        ftpstream = WebRequest.Create(newDir)
-                        ftpstream.Credentials = New NetworkCredential(user, pass)
-                        If (Binary = False) Then ftpstream.UseBinary = False
-                        ftpstream.Method = WebRequestMethods.Ftp.ListDirectoryDetails
-
-                        Try
-                            'Get a response
-                            response = ftpstream.GetResponse()
-
-                            'Make a directory listing stream reader
-                            Dim streamlist As New IO.StreamReader(response.GetResponseStream)
-
-                            'Try to list directory
-                            If streamlist IsNot Nothing Then line = streamlist.ReadLine
-                            While line IsNot Nothing
-                                listftp.Add(line)
-                                line = streamlist.ReadLine
-                            End While
-
-                            'Print the list
-                            For Each listing In listftp
-                                Wln(listing, "neutralText")
-                            Next
-                        Catch ex As WebException
-                            Wdbg("Error listing {0}: {1}", True, strArgs, ex.Message)
-                            Wdbg("{0}", True, ex.StackTrace)
-                            If (DebugMode = True) Then
-                                Wln("Error when trying to list folder {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", strArgs, response.StatusDescription, ex.StackTrace)
-                            Else
-                                Wln("Error when trying to list folder {0}: {1}", "neutralText", strArgs, response.StatusDescription)
+                        Dim FileSize As Long
+                        Dim ModDate As DateTime
+                        For Each DirListFTP As FtpListItem In ClientFTP.GetListing(strArgs)
+                            W("- " + DirListFTP.FullName, "neutralText")
+                            If DirListFTP.Type = FtpFileSystemObjectType.File Then
+                                FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
+                                ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
+                                W(DoTranslation("{0} | Modified in: {1}", currentLang), "neutralText", FileSize.ToString, ModDate.ToString)
                             End If
-                        End Try
-
-                        'Either way, go to the old directory that has the deleted file
-                        ftpstream = WebRequest.Create(oldDir)
-                        ftpstream.Credentials = New NetworkCredential(user, pass)
-                        If (Binary = False) Then ftpstream.UseBinary = False
+                            Console.WriteLine()
+                        Next
                     Else
-                        Wln("You should connect to server before listing all remote files.", "neutralText")
+                        Wln(DoTranslation("You should connect to server before listing all remote files.", currentLang), "neutralText")
                     End If
                 Else
                     If (connected = True) Then
-                        'A variable
-                        Dim direct As String = ftpsite + currentremoteDir
-
-                        'List current directory method
-                        If (Binary = False) Then ftpstream.UseBinary = False
-                        ftpstream.Method = WebRequestMethods.Ftp.ListDirectoryDetails
-
-                        Try
-                            'Get a response
-                            response = ftpstream.GetResponse()
-
-                            'Make a directory listing stream reader
-                            Dim streamlist As New IO.StreamReader(response.GetResponseStream)
-
-                            'Try to make a list
-                            If streamlist IsNot Nothing Then line = streamlist.ReadLine
-                            While line IsNot Nothing
-                                listftp.Add(line)
-                                line = streamlist.ReadLine
-                            End While
-
-                            'Print the list
-                            For Each listing In listftp
-                                Wln(listing, "neutralText")
-                            Next
-                        Catch ex As WebException
-                            Wdbg("Error listing {0}: {1}", True, strArgs, ex.Message)
-                            Wdbg("{0}", True, ex.StackTrace)
-                            If (DebugMode = True) Then
-                                Wln("Error when trying to list folder {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", strArgs, response.StatusDescription, ex.StackTrace)
-                            Else
-                                Wln("Error when trying to list folder {0}: {1}", "neutralText", strArgs, response.StatusDescription)
+                        Dim FileSize As Long
+                        Dim ModDate As DateTime
+                        For Each DirListFTP As FtpListItem In ClientFTP.GetListing(currentremoteDir)
+                            W("- " + DirListFTP.FullName, "neutralText")
+                            If DirListFTP.Type = FtpFileSystemObjectType.File Then
+                                FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
+                                ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
+                                W(DoTranslation("{0} | Modified in: {1}", currentLang), "neutralText", FileSize.ToString, ModDate.ToString)
                             End If
-                        End Try
-
-                        'Either way, go to the old directory that has the deleted file
-                        ftpstream = WebRequest.Create(direct)
-                        ftpstream.Credentials = New NetworkCredential(user, pass)
-                        If (Binary = False) Then ftpstream.UseBinary = False
+                            Console.WriteLine()
+                        Next
                     Else
-                        Wln("You should connect to server before listing all remote files.", "neutralText")
+                        Wln(DoTranslation("You should connect to server before listing all remote files.", currentLang), "neutralText")
                     End If
                 End If
-            ElseIf (cmd = "passive") Then
-                If (connected = True And Passive = True) Then
-                    'Switch to active mode
-                    ftpstream.UsePassive = False
-                    Passive = False
-                    Wln("FTP mode: Active", "neutralText")
-                ElseIf (connected = True And Passive = False) Then
-                    'Switch to passive mode
-                    ftpstream.UsePassive = True
-                    Passive = True
-                    Wln("FTP mode: Passive", "neutralText")
+            ElseIf (cmd.Substring(0, index) = "rename" Or cmd.Substring(0, index) = "ren") Then
+                If (cmd <> "rename" Or cmd <> "ren") Then
+                    If (connected = True) Then
+                        Wln(DoTranslation("Renaming file {0} to {1}...", currentLang), "neutralText", args(0), args(1))
+
+                        'Begin the renaming process
+                        ClientFTP.Rename(args(0), args(1))
+
+                        'Show a message
+                        Wln(vbNewLine + DoTranslation("Renamed successfully", currentLang), "neutralText")
+                    Else
+                        Wln(DoTranslation("You must connect to server before performing transmission.", currentLang), "neutralText")
+                    End If
                 Else
-                    Wln("You should connect to server before switching between passive and active transfer mode.", "neutralText")
-                End If
-            ElseIf (cmd = "ssl") Then
-                If (connected = True And SSL = False) Then
-                    'Enable SSL
-                    ftpstream.EnableSsl = True
-                    SSL = True
-                    Wln("SSL turned on", "neutralText")
-                ElseIf (connected = True And SSL = True) Then
-                    'Disable SSL
-                    ftpstream.EnableSsl = False
-                    SSL = False
-                    Wln("SSL turned off", "neutralText")
-                Else
-                    Wln("You should connect to SSL-secured server before switching SSL mode.", "neutralText")
-                End If
-            ElseIf (cmd = "text" Or cmd = "txt") Then
-                If (connected = False) Then
-                    Wln("You should connect to server before switching transfer modes", "neutralText")
-                Else
-                    ftpstream.UseBinary = False
-                    Binary = False
-                    Wln("Transfer mode: Text", "neutralText")
+                    Wln(DoTranslation("Enter a file and the new file name.", currentLang), "neutralText")
                 End If
             ElseIf (cmd.Substring(0, index) = "upload" Or cmd.Substring(0, index) = "put") Then
                 If (cmd <> "upload" Or cmd <> "put") Then
                     If (connected = True) Then
-                        'Old directory and new file variable
-                        Dim oldDir As String = ftpsite + currentremoteDir + "/"
-                        Dim newFile As String = oldDir + strArgs
+                        Wln(DoTranslation("Uploading file {0}...", currentLang), "neutralText", strArgs.Substring(strArgs.IndexOf(" ")))
 
-                        'Local file which will be uploaded
-                        Dim upFile As String
-                        If (EnvironmentOSType.Contains("Unix")) Then
-                            upFile = currDirect + "/" + strArgs
-                        Else
-                            upFile = currDirect + "\" + strArgs
-                        End If
+                        'Begin the uploading process
+                        ClientFTP.UploadFile(currDirect + args(0), strArgs.Substring(strArgs.IndexOf(" ")), True, True, FtpVerify.Retry, Complete)
+                        Console.WriteLine()
 
-                        'Try to upload file
-                        Try
-                            'Print a message
-                            Wln("Uploading file {0}...", "neutralText", strArgs)
-
-                            'Make a new request to upload
-                            ftpstream = WebRequest.Create(newFile)
-                            ftpstream.Credentials = New NetworkCredential(user, pass)
-                            If (Binary = False) Then ftpstream.UseBinary = False
-                            ftpstream.Method = WebRequestMethods.Ftp.UploadFile
-
-                            'Get a response
-                            response = ftpstream.GetResponse
-
-                            'Store the uploading file into array and make a stream
-                            Dim uplFile() As Byte = IO.File.ReadAllBytes(upFile)
-                            Dim uploading As IO.Stream = ftpstream.GetRequestStream
-
-                            'Begin the uploading process
-                            uploading.Write(uplFile, 0, uplFile.Length)
-
-                            'Show a message, close stream
-                            Wln(vbNewLine + "Uploaded file {0}", "neutralText", strArgs)
-                            uploading.Close()
-                        Catch ex As WebException
-                            Wdbg("Error uploading {0}: {1}", True, strArgs, ex.Message)
-                            Wdbg("{0}", True, ex.StackTrace)
-                            If (DebugMode = True) Then
-                                Wln("Error when trying to upload {0}: {1}" + vbNewLine + "Stack Trace: {2}", "neutralText", strArgs, response.StatusDescription, ex.StackTrace)
-                            Else
-                                Wln("Error when trying to upload {0}: {1}", "neutralText", strArgs, response.StatusDescription)
-                            End If
-                        End Try
-
-                        'Go back to the old directory
-                        ftpstream = WebRequest.Create(oldDir)
-                        ftpstream.Credentials = New NetworkCredential(user, pass)
-                        If (Binary = False) Then ftpstream.UseBinary = False
+                        'Show a message
+                        Wln(vbNewLine + DoTranslation("Uploaded file {0}", currentLang), "neutralText", strArgs.Substring(strArgs.IndexOf(" ")))
                     Else
-                        Wln("You must connect to server before performing transmission.", "neutralText")
+                        Wln(DoTranslation("You must connect to server before performing transmission.", currentLang), "neutralText")
                     End If
                 Else
-                    Wln("Enter a file to download to local directory.", "neutralText")
+                    Wln(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>", currentLang), "neutralText")
                 End If
             End If
-        Catch ex As Exception
+        Catch ex As Exception 'The InnerException CAN be Nothing
             If (DebugMode = True) Then
-                Wln("Error trying to execute FTP command {3}." + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText", _
-                    Err.Number, Err.Description, ex.StackTrace, words(0))
+                If Not IsNothing(ex.InnerException) Then 'This is required to fix NullReferenceException when there is nothing in InnerException, so please don't remove.
+                    Wln(DoTranslation("Error trying to execute FTP command {3}.", currentLang) + vbNewLine +
+                        DoTranslation("Error {0}: {1} ", currentLang) + DoTranslation("(Inner:", currentLang) + " {4})" + vbNewLine + "{2}", "neutralText", Err.Number, Err.Description, ex.StackTrace, words(0), ex.InnerException.Message)
+                Else
+                    Wln(DoTranslation("Error trying to execute FTP command {3}.", currentLang) + vbNewLine +
+                        DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", "neutralText", Err.Number, Err.Description, ex.StackTrace, words(0))
+                End If
                 Wdbg(ex.StackTrace, True)
             Else
-                Wln("Error trying to execute FTP command {2}." + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description, words(0))
+                If Not IsNothing(ex.InnerException) Then
+                    Wln(DoTranslation("Error trying to execute FTP command {2}.", currentLang) + vbNewLine +
+                        DoTranslation("Error {0}: {1} ", currentLang) + DoTranslation("(Inner:", currentLang) + "{3})", "neutralText", Err.Number, Err.Description, words(0), ex.InnerException.Message)
+                Else
+                    Wln(DoTranslation("Error trying to execute FTP command {2}.", currentLang) + vbNewLine +
+                        DoTranslation("Error {0}: {1}", currentLang), "neutralText", Err.Number, Err.Description, words(0))
+                End If
             End If
+            EventManager.RaiseFTPCommandError()
         End Try
 
     End Sub
@@ -522,11 +326,9 @@ Public Module FTPGetCommand
 
         For Each dirfile In IO.Directory.GetDirectories(dir)
             Try
-                W("- .{0}: ", "helpCmd", dirfile.Replace(dir, "")) : Wln("{0} folders, {1} files", "helpDef", _
-                                                                                                IO.Directory.GetDirectories(dirfile).Count, _
-                                                                                                IO.Directory.GetFiles(dirfile).Count)
+                W("- .{0}: ", "helpCmd", dirfile.Replace(dir, "")) : Wln(DoTranslation("{0} folders, {1} files", currentLang), "helpDef", IO.Directory.GetDirectories(dirfile).Count, IO.Directory.GetFiles(dirfile).Count)
             Catch exc As UnauthorizedAccessException
-                Wln("(Access Denied)", "helpDef")
+                Wln(DoTranslation("(Access Denied)", currentLang), "helpDef")
                 Continue For
             End Try
         Next
@@ -534,13 +336,13 @@ Public Module FTPGetCommand
             Dim fileinfo As New IO.FileInfo(file)
             Dim size As Double = fileinfo.Length / 1024
             Try
-                W("- .{0}: ", "helpCmd", file.Replace(dir, "")) : Wln("{0} KB, Created in {1} {2}, Modified in {3} {4}", "helpDef", _
-                                                                                             FormatNumber(size, 2), FormatDateTime(IO.File.GetCreationTime(file), DateFormat.ShortDate), _
-                                                                                             FormatDateTime(IO.File.GetCreationTime(file), DateFormat.ShortTime), _
-                                                                                             FormatDateTime(IO.File.GetLastWriteTime(file), DateFormat.ShortDate), _
-                                                                                             FormatDateTime(IO.File.GetLastWriteTime(file), DateFormat.ShortTime))
+                W("- .{0}: ", "helpCmd", file.Replace(dir, "")) : Wln(DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), "helpDef",
+                                                                      FormatNumber(size, 2), FormatDateTime(IO.File.GetCreationTime(file), DateFormat.ShortDate),
+                                                                      FormatDateTime(IO.File.GetCreationTime(file), DateFormat.ShortTime),
+                                                                      FormatDateTime(IO.File.GetLastWriteTime(file), DateFormat.ShortDate),
+                                                                      FormatDateTime(IO.File.GetLastWriteTime(file), DateFormat.ShortTime))
             Catch exc As UnauthorizedAccessException
-                Wln("(Access Denied)", "helpDef")
+                Wln(DoTranslation("(Access Denied)", currentLang), "helpDef")
                 Continue For
             End Try
         Next

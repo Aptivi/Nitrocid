@@ -37,7 +37,7 @@ Module HardwareVars
     'then GPU
     Public Class GPU
         Public Name As String
-        Public Memory As UInt32
+        Public Memory As UInt64
     End Class
 
     'then RAM

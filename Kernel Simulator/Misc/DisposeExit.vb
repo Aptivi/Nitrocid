@@ -25,15 +25,17 @@ Public Module DisposeExit
     Public Sub DisposeAll()
 
         Try
+            Wdbg("Garbage collector starting... Max generators: {0}", GC.MaxGeneration.ToString)
             GC.Collect()
             GC.WaitForPendingFinalizers()
             If (Environment.OSVersion.Platform = PlatformID.Win32NT) Then
                 SetProcessWorkingSetSize(GetCurrentProcess().Handle, -1, -1)
             End If
+            EventManager.RaiseGarbageCollected()
         Catch ex As Exception
-            Wln("Error trying to free RAM: {0} - Continuing...", "neutralText", Err.Description)
+            Wln(DoTranslation("Error trying to free RAM: {0} - Continuing...", currentLang), "neutralText", Err.Description)
             If (DebugMode = True) Then
-                Wln(ex.StackTrace, "neutralText") : Wdbg("Error freeing RAM: {0} " + vbNewLine + "{1}", True, Err.Description, ex.StackTrace)
+                Wln(ex.StackTrace, "neutralText") : Wdbg("Error freeing RAM: {0} " + vbNewLine + "{1}", Err.Description, ex.StackTrace)
             End If
         End Try
 

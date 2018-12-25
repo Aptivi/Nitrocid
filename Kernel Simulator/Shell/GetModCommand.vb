@@ -20,10 +20,16 @@ Module GetModCommand
 
     Sub ExecuteModCommand(ByVal cmd As String)
 
-        Wdbg("Command {0} starting from mod", True, cmd)
         Dim parts As String() = cmd.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
         Dim actualCmd As String = parts(0)
-        If (cmd.StartsWith(actualCmd + " ")) Then
+        Wdbg("Command = {0}", actualCmd)
+        For Each script As IScript In scripts.Values
+            If (actualCmd = script.Cmd) And (script.Name <> Nothing) And (actualCmd <> script.Name) Then
+                Wdbg("Command = {0}", actualCmd)
+                actualCmd = script.Name
+            End If
+        Next
+        If (cmd.StartsWith(parts(0) + " ")) Then
             'These below will be executed if there is arguments
             Dim args As String = cmd.Replace(parts(0) + " ", "")
             scripts(actualCmd).PerformCmd(args)
@@ -31,6 +37,7 @@ Module GetModCommand
             'This will be executed if there is no arguments
             scripts(actualCmd).PerformCmd()
         End If
+        Wdbg("Command executed successfully.")
 
     End Sub
 

@@ -96,7 +96,7 @@ Public Module TemplateSet
             MakePermanent()
             ParseCurrentTheme()
         Else
-            Wln("Invalid color template {0}", "neutralText", theme)
+            Wln(DoTranslation("Invalid color template {0}", currentLang), "neutralText", theme)
         End If
 
     End Sub

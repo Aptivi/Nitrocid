@@ -36,22 +36,22 @@ Public Module FileContents
 
         ElseIf (filename = "kernel") Then
 
-            Wln("Kernel process PID: 1" + vbNewLine + _
-                                     "Priority: High" + vbNewLine + _
-                                     "Importance: High, and shouldn't be killed.", "neutralText")
+            Wln(DoTranslation("Kernel process PID: 1", currentLang) + vbNewLine +
+                DoTranslation("Priority: High", currentLang) + vbNewLine +
+                DoTranslation("Importance: High, and shouldn't be killed.", currentLang), "neutralText")
 
         ElseIf (filename = "login") Then
 
-            Wln("Login process PID: 2" + vbNewLine + _
-                                     "Priority: Normal" + vbNewLine + _
-                                     "Importance: High, and shouldn't be killed.", "neutralText")
+            Wln(DoTranslation("Login process PID: 2", currentLang) + vbNewLine +
+                DoTranslation("Priority: Normal", currentLang) + vbNewLine +
+                DoTranslation("Importance: High, and shouldn't be killed.", currentLang), "neutralText")
 
         ElseIf (filename = "uesh") Then
 
-            Wln("UESH process PID: 3" + vbNewLine + _
-                                     "Priority: Normal" + vbNewLine + _
-                                     "Importance: Normal." + vbNewLine + _
-                                     "Short For: Unified Eofla SHell", "neutralText")
+            Wln(DoTranslation("UESH process PID: 3", currentLang) + vbNewLine +
+                DoTranslation("Priority: Normal", currentLang) + vbNewLine +
+                DoTranslation("Importance: Normal.", currentLang) + vbNewLine +
+                DoTranslation("Short For: Unified Eofla SHell", currentLang), "neutralText")
 
         End If
 

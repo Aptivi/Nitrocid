@@ -49,13 +49,14 @@ Module ArgumentParse
 
                         'Command Injector argument
                         If (BootArgs(i) = "cmdinject") Then
-                            W("Available commands: {0}" + vbNewLine + "Write command: ", "input", String.Join(", ", availableCommands))
+                            W(DoTranslation("Available commands: {0}", currentLang) + vbNewLine +
+                              DoTranslation("Write command:", currentLang) + " ", "input", String.Join(", ", availableCommands)) 'TODO: The extra + " " will be fixed in the final release
                             argcmds = System.Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                             argcommands = String.Join(", ", argcmds)
                             If (argcommands <> "q") Then
                                 CommandFlag = True
                             Else
-                                Wln("Command injection has been cancelled.", "neutralText")
+                                Wln(DoTranslation("Command injection has been cancelled.", currentLang), "neutralText")
                             End If
                         Else
                             argcmds = BootArgs(i).Substring(10).Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
@@ -73,9 +74,9 @@ Module ArgumentParse
 
                     ElseIf (BootArgs(i) = "help") Then
 
-                        Wln("Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe'" + vbNewLine + _
-                            "Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5'" + vbNewLine + _
-                            "Note that the 'debug' argument does not fully cover the kernel.", "neutralText")
+                        Wln(DoTranslation("Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe'", currentLang) + vbNewLine +
+                            DoTranslation("Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5'", currentLang) + vbNewLine +
+                            DoTranslation("Note that the 'debug' argument does not fully cover the kernel.", currentLang), "neutralText")
                         answerargs = "" : argsFlag = False : argsInjected = False
                         ArgumentPrompt.PromptArgs()
                         If (argsFlag = True) Then
@@ -84,11 +85,11 @@ Module ArgumentParse
 
                     End If
                 Else
-                    Wln("bargs: The requested argument {0} is not found.", "neutralText", BootArgs(i).Substring(0, indexArg))
+                    Wln(DoTranslation("bargs: The requested argument {0} is not found.", currentLang), "neutralText", BootArgs(i).Substring(0, indexArg))
                 End If
             Next
         Catch ex As Exception
-            KernelError(CChar("U"), True, 5, "bargs: Unrecoverable error in argument: " + Err.Description)
+            KernelError(CChar("U"), True, 5, DoTranslation("bargs: Unrecoverable error in argument: ", currentLang) + Err.Description)
         End Try
 
     End Sub

@@ -1,0 +1,369 @@
+﻿Available commands: {0} <=+=> upalabdh aadesh: {0}
+Write command: <=+=> kamaand likhen:
+Command injection has been cancelled. <=+=> kamaand injekshan radd kar diya gaya hai.
+Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe' <=+=> bina spes ke alpaviraam ke saath alag boot tark, udaaharan ke lie, 'motd, gpuprobe'
+Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5' <=+=> rikt sthaan vaale kolan ke saath chmdinjaicht par alag-alag aadesh, udaaharan ke lie, 'cmdinject setthemes hacker: beep 1024 0.5'
+Note that the 'debug' argument does not fully cover the kernel. <=+=> dhyaan den ki 'debug' tark karnel ko pooree tarah se kavar nahin karata hai.
+bargs: The requested argument {0} is not found. <=+=> baarg: anurodhit tark {0} nahin mila hai.
+bargs: Unrecoverable error in argument:  <=+=> baarg: tark mein apraapy truti:
+Available arguments: {0} <=+=> upalabdh tark: {0}
+Arguments ('help' for help):  <=+=> tark (sahaayata ke lie sahaayata): 
+Injected arguments will be scheduled to run at next reboot. <=+=> injekshan vaale tark agale reeboot par chalane ke lie nirdhaarit kie jaenge.
+Argument Injection has been cancelled. <=+=> tark injekshan radd kar diya gaya hai.
+Error while parsing real command-line arguments: {0} <=+=> asalee kamaand lain tarkon ko paars karate samay truti: {0}
+Invalid color template {0} <=+=> amaany rang tempalet {0}
+Default <=+=> difolt
+Custom <=+=> kastam
+Cannot change directory to /{0} because that directory leads nowhere. <=+=> nirdeshika ko / {0} mein parivartit nahin kar sakata kyonki vah nirdeshika kaheen bhee nahin jaatee hai.
+Kernel process PID: 1 <=+=> karnel prakriya peeaeedee: 1
+Priority: High <=+=> praathamikata: uchch
+Importance: High, and shouldn't be killed. <=+=> mahatv: uchch, aur maara nahin jaana chaahie.
+Login process PID: 2 <=+=> login prakriya peeaeedee: 2
+Priority: Normal <=+=> praathamikata: saamaany
+UESH process PID: 3 <=+=> UESH prakriya peeaeedee: 3
+Importance: Normal. <=+=> mahatv: saamaany.
+Short For: Unified Eofla SHell  <=+=> laghu ke lie: Unified Eofla SHell
+There is nothing. <=+=> vahaan kuchh bhee nahin hai.
+hwprobe: Your hardware will be probed. Please wait... <=+=> hwprobai: aapake haardaveyar kee jaanch kee jaegee. krpaya prateeksha karen ...
+hwprobe: Hardware already probed. <=+=> hwprobai: haardaveyar pahale se hee jaanch kee hai.
+hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobai: haardaveyar kee jaanch nahin kee jaatee hai. 'hwprobe' ka upayog kar jaanch karen
+CPU: One or more of the CPU cores failed to be probed. Showing information anyway... <=+=> seepeeyoo: ek ya adhik chpu kor kee jaanch kee viphal rahee. vaise bhee jaanakaaree dikha raha hai ...
+RAM: One or more of the RAM chips failed to be probed. Showing information anyway... <=+=> raim: ek ya adhik raim chips kee jaanch mein asaphal raha. vaise bhee jaanakaaree dikha raha hai ...
+HDD: One or more of the hard drives failed to be probed. Showing information anyway... <=+=> echadeedee: ek ya adhik haard draiv kee jaanch mein viphal raha. vaise bhee jaanakaaree dikha raha hai ...
+GPU: One or more of the graphics card failed to be probed. Showing information anyway... <=+=> jeepeeyoo: ek ya adhik graaphiks kaard kee jaanch mein viphal raha. vaise bhee jaanakaaree dikha raha hai ...
+BIOS: One or more of the BIOS chips failed to be probed. Showing information anyway... <=+=> beeaeeoes: beeaeeoes chips mein se ek ya adhik jaanch kee ja rahee hai. vaise bhee jaanakaaree dikha raha hai ...
+CPU: Total number of processors: {0} <=+=> seepeeyoo: prosesar kee kul sankhya: {0}
+CPU: {0} {1}MHz <=+=> seepeeyoo: {0} {1} mhz
+RAM: {0}MB = {1}MB <=+=> raam: {0} emabee = {1} emabee
+RAM: Used slots (by names): {0} <=+=> raam: prayukt slot (naamon se): {0}
+RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> raam: prayukt slot (sankhyaon dvaara): {0} / {1} ({2}%)
+RAM: Probing status is deprecated and will be removed in future release. <=+=> raam: jaanch kee sthiti ko hata diya gaya hai aur bhavishy mein rileej mein hata diya jaega.
+GPU: No appropriate driver installed. <=+=> jeepeeyoo: koee uchit draivar sthaapit nahin hai.
+GPU: {0} {1}MB <=+=> jeepeeyoo: {0} {1} emabee
+HDD: {0} {1}GB <=+=> echadeedee: {0} {1} jeebee
+HDD: {0} {1} {2}GB <=+=> echadeedee: {0} {1} {2} jeebee
+HDD: Type: {2} | Status: {3} <=+=> echadeedee: taip: {2} | sthiti: {3}
+HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> echadeedee: seeeches: {4} silendar | {5} sir | {6} sektar
+hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobai: probing samarthit nahin hai kyonki yah yooniks par probars chalaane ke lie dizain nahin kiya gaya hai.
+Enter the admin password for maintenance. <=+=> rakharakhaav ke lie vyavasthaapak paasavard darj karen.
+There is no more users remaining in the list. <=+=> soochee mein koee aur upayogakarta shesh nahin hai.
+Kernel Error while booting: {0} <=+=> booting ke dauraan karnel truti: {0}
+DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug. <=+=> dabal painik: reeboot taim adhikatam sveekrt {0} truti riboot samay se adhik hai. aapako karnel bag mila.
+[{0}] panic: Reboot enabled due to error level being {0}. <=+=> [{0}] aatank: truti star {0} hone ke kaaran saksham reeboot.
+[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute. <=+=> [{0}] dahashat: reeboot karane ka samay: {1} sekand, 1 ghante se adhik hai. yah 1 minat par set hai.
+DOUBLE PANIC: Error Type {0} invalid. <=+=> dabal painik: truti prakaar {0} amaany.
+[{0}] dpanic: {1} -- Rebooting in {2} seconds... <=+=> [{0}] dpanich: {1} - {2} sekand mein reeboot kar raha hai ...
+[{0}] panic: Reboot disabled due to error level being {0}. <=+=> [{0}] aatank: truti star {0} hone ke kaaran aksham reeboot.
+[{0}] panic: {1} -- Press any key to continue using the kernel. <=+=> [{0}] dahashat: {1} - karnel ka upayog jaaree rakhane ke lie koee bhee kunjee dabaen.
+[{0}] panic: {1} -- Press any key to shutdown. <=+=> [{0}] dahashat: {1} - shat daun karane ke lie koee bhee kunjee dabaen.
+[{0}] panic: {1} -- Rebooting in {2} seconds... <=+=> [{0}] dahashat: {1} - {2} sekand mein reeboot kar raha hai ...
+DOUBLE PANIC: Kernel bug: {0} <=+=> dabal painik: karnel bag: {0}
+Shutting down... <=+=> band karana ...
+Rebooting... <=+=> reeboot kar raha hai ...
+---===+++> Welcome to the kernel | Version {0} <+++===--- <=+=> ---===+++> karnel mein aapaka svaagat hai | sanskaran {0} <+++===---
+Another instance of Kernel Simulator is running. Shutting down in case of interference. <=+=> Kernel Simulator ka ek aur udaaharan chal raha hai. hastakshep ke maamale mein band karana.
+The user {0} has been added to the admin list. <=+=> upayogakarta {0} ko vyavasthaapak soochee mein joda gaya hai.
+The user {0} has been added to the disabled list. <=+=> upayogakarta {0} aksham soochee mein joda gaya hai.
+Failed to add user into permission lists: invalid type {0} <=+=> anumati soochee mein upayogakarta jodane mein viphal: amaany prakaar {0}
+Failed to add user into permission lists: invalid user {0} <=+=> anumati soochee mein upayogakarta jodane mein viphal: amaany upayogakarta {0}
+The user {0} has been removed from the admin list. <=+=> upayogakarta {0} ko vyavasthaapak soochee se hata diya gaya hai.
+The user {0} has been removed from the disabled list. <=+=> upayogakarta {0} aksham soochee se hata diya gaya hai.
+Failed to remove user from permission lists: invalid type {0} <=+=> anumati soochee se upayogakarta ko hataane mein viphal: amaany prakaar {0}
+You are already logged in. <=+=> aap pahale hee log in hain.
+Failed to remove user from permission lists: invalid user {0} <=+=> anumati soochee se upayogakarta ko hataane mein viphal: amaany upayogakarta {0}
+You have found a bug in the permission system: invalid mode {0} <=+=> aapako anumati pranaalee mein ek bag mila hai: amaany mod {0}
+You have either found a bug, or the permission you tried to add or remove is already done, or other error. <=+=> aapako ya to ek bag mila hai, ya jis anumati ko aap jodane ya nikaalane ka prayaas kar chuke hain vah pahale se hee kiya gaya hai, ya any truti.
+Error {0}: {1} <=+=> truti {0}: {1}
+You have either found a bug, or the permission you tried to edit for a new user has failed. <=+=> aapako ya to ek bag mila hai, ya ek nae upayogakarta ke lie sampaadit karane kee anumati aapane viphal kar dee hai.
+Available usernames: {0} <=+=> upalabdh upayogakarta naam: {0}
+Username:  <=+=> upayogakarta naam: 
+Spaces are not allowed. <=+=> rikt sthaan kee anumati nahin hai.
+Special characters are not allowed. <=+=> vishesh varnon kee anumati nahin hai.
+{0}'s password:  <=+=> {0} ka paasavard: 
+Wrong password. <=+=> galat paasavard.
+User is disabled. <=+=> upayogakarta aksham hai.
+Wrong username. <=+=> galat upayogakarta naam.
+Error trying to parse placeholders. {0} - Stack trace: <=+=> plesaholdars ko paars karane ka prayaas karane mein truti. {0} - staik tres:
+Error trying to parse placeholders. {0} <=+=> plesaholdars ko paars karane ka prayaas karane mein truti. {0}
+Error trying to add username. <=+=> upayogakarta naam jodane ka prayaas karane mein truti.
+usrmgr: Creating username {0}... <=+=> usrmgr: upayogakarta naam banaana {0} ...
+Blank username. <=+=> khaalee upayogakarta naam.
+User {0} not found. <=+=> upayogakarta {0} nahin mila.
+User {0} isn't allowed to be removed. <=+=> upayogakarta {0} ko hataane kee anumati nahin hai.
+User {0} is already logged in. Log-out and log-in as another admin. <=+=> upayogakarta {0} pahale se log in hai. log-aaut aur log-in kisee any vyavasthaapak ke roop mein.
+User {0} removed. <=+=> upayogakarta {0} hata diya gaya.
+Error trying to remove username. <=+=> upayogakarta naam hataane kee koshish mein truti.
+{0} of {1} = {2} <=+=> {0} ke {0} = {2}
+Attempt to divide by zero is not allowed. <=+=> shoony se vibhaajit karane kee koshish kee anumati nahin hai.
+There has been a suspected attempt at calculating that resulted in an overflow. <=+=> ganana karane ke lie ek sandigdh prayaas kiya gaya hai jisake parinaamasvaroop ovaraphlo hua hai.
+There is an error while calculating: {0} <=+=> ganana karate samay ek truti huee hai: {0}
+{0} cannot be converted to {1}. <=+=> {0} ko {1} mein parivartit nahin kiya ja sakata hai.
+Either the source  <=+=> ya to srot 
+ or destination  <=+=>  ya gantavy 
+ does not exist on server. <=+=>  sarvar par maujood nahin hai.
+{0} to {1}: {2} <=+=> {0} se {1}: {2}
+Error trying to convert from {0} to {1}: {2} <=+=> {0} se {1} mein parivartit karane ka prayaas karane mein truti: {2}
+Error <=+=> truti
+The requested screensaver {0} is not found. <=+=> anurodh kiya gaya skreenasevar {0} nahin mila hai.
+{0} has been initialized properly. <=+=> {0} theek se shuroo kiya gaya hai.
+{0} already exists. <=+=> {0} pahale se maujood hai.
+{0} did not initialize. The screensaver code might have experienced an error while initializing. <=+=> {0} praarambh nahin hua. praarambh karane ke dauraan skreenasevar kod mein ek truti huee ho sakatee hai.
+Screensaver {0} does not exist. <=+=> skreenasevar {0} maujood nahin hai.
+{0} is set to default screensaver. <=+=> {0} difolt skreenasevar par set hai.
+Screensaver {0} not found in database. Initialize with "loadsaver {0}". <=+=> skreenasevar {0} detaabes mein nahin mila. "loadsaver {0}" ke saath aarambh karen.
+Screensaver can't be loaded because of the following:  <=+=> nimnalikhit ke kaaran skreenasevar lod nahin kiya ja sakata hai: 
+There is a serious error when printing text. <=+=> paath print karate samay ek gambheer truti hai.
+There is an error trying to create configuration. <=+=> konfigareshan banaane ka prayaas karane mein truti huee hai.
+There is an error trying to create configuration: {0} <=+=> konfigareshan banaane ka prayaas karane mein truti huee hai: {0}
+An upgrade from {0} to {1} was detected. <=+=> {0} se {1} tak apagred kiya gaya tha.
+The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings. <=+=> {0} ke lie konfigareshan sanrachana peechhe-sangat nahin hogee aur pichhale sanskaranon ke saath kaam nahin karegee. konfigareshan difolt setings par reeset ho jaega.
+Are you sure that you want to update configuration and restart <y/n>?  <=+=> kya aap vaakee konfigareshan apadet karana chaahate hain aur <y/n> punaraarambh karana chaahate hain?
+Updating configuration file... <=+=> konfigareshan fail apadet kar raha hai ...
+An upgrade from {0} to {1} was detected. Updating configuration... <=+=> {0} se {1} tak apagred kiya gaya tha. konfigareshan apadet kar raha hai ...
+There is an error trying to update configuration: {0}. <=+=> konfigareshan apadet karane ka prayaas karane mein truti huee hai: {0}.
+There is an error trying to update configuration. <=+=> konfigareshan apadet karane ka prayaas karane mein truti huee hai.
+There is an error trying to read configuration. <=+=> konfigareshan padhane kee koshish mein ek truti hai.
+There is an error trying to read configuration: {0} <=+=> konfigareshan padhane kee koshish mein ek truti hai: {0}
+Error trying to free RAM: {0} - Continuing... <=+=> raam ko mukt karane ka prayaas karane mein truti: {0} - jaaree hai ...
+Mod can't be loaded because of the following:  <=+=> nimnalikhit ke kaaran mod lod nahin kiya ja sakata hai: 
+mod: Loading mods... <=+=> mod: mod lod ho raha hai ...
+mod: Stopping mods... <=+=> mod: mod rokana ...
+Mod {0} does not have the name. Review the source code. <=+=> mod {0} ka naam nahin hai. srot kod kee sameeksha karen.
+Mod {0} does not have the version. <=+=> mod {0} mein sanskaran nahin hai.
+{0} v{1} started <=+=> {0} vee {1} shuroo hua
+No definition for command {0}. <=+=> aadesh {0} ke lie koee paribhaasha nahin hai.
+Command defined by  <=+=> aadesh dvaara paribhaashit kamaand 
+You should disconnect from server before connecting to another server <=+=> kisee any sarvar se kanekt karane se pahale aapako sarvar se diskanekt karana chaahie
+Username for {0}:  <=+=> {0} ke lie upayogakarta naam: 
+Password for {0}:  <=+=> {0} ke lie paasavard: 
+Connected to {0} <=+=> {0}  se kanekt kiya gaya
+Error when trying to connect to {0}: {1} <=+=> {0}: se kanekt karane ka prayaas karate samay truti ({1})
+Stack Trace: {2} <=+=> staik tres: ​​{2}
+Enter an FTP server that starts with "ftp://" or "ftps://" <=+=> ek ftp sarvar darj karen jo "ftp://" ya "ftps://"  se shuroo hota hai
+Local directory {0} doesn't exist. <=+=> sthaaneey nirdeshika {0} maujood nahin hai.
+Enter a local directory. ".." to go back. <=+=> ek sthaaneey nirdeshika darj karen. ".." vaapas jaane ke lie.
+Directory {0} not found. <=+=> nirdeshika {0} nahin milee.
+Enter a remote directory. ".." to go back <=+=> ek doorasth nirdeshika darj karen. ".." vaapas jaane ke lie
+You must connect to a server before changing directory <=+=> nirdeshika  badalane se pahale aapako kisee sarvar se kanekt hona chaahie
+Local directory: {0} <=+=> sthaaneey nirdeshika: {0}
+Remote directory: {0} <=+=> doorasth nirdeshika: {0}
+You must connect to server before getting current remote directory. <=+=> vartamaan rimot nirdeshika praapt karane se pahale aapako sarvar se kanekt hona chaahie.
+Deleting file {0}... <=+=> fail hataana {0} ...
+Are you sure you want to delete file {0} <y/n>? <=+=> kya aap vaakee fail {0} <y/n> ko mitaana chaahate hain?
+Deleted file {0} <=+=> hataee gaee fail {0}
+You must connect to server with administrative privileges before performing the deletion. <=+=> hataane se pahale aapako sarvar se vyavasthaapakeey visheshaadhikaaron se kanekt hona chaahie.
+Enter a file to remove. <=+=> nikaalane ke lie ek phail darj karen.
+You must have administrative permissions on your logged in username to be able to remove. <=+=> aapake log in upayogakarta naam par nikaalane mein saksham hone ke lie aapake paas vyavasthaapakeey anumatiyaan honee chaahie.
+Disconnected from {0} <=+=> {0}  se diskanekt kiya gaya
+You haven't connected to any server yet <=+=> aapane abhee tak kisee bhee sarvar se kanekt nahin kiya hai
+Downloading file {0}... <=+=> fail daunalod kar raha hai {0} ...
+Hash status: <=+=> haish sthiti:
+REMOTE: {0} ({1}) <=+=> rimot: {0} ({1})
+Downloaded file {0}. <=+=> daunalod kee gaee fail {0}.
+Download failed for file {0} because the local file is corrupt. <=+=> fail {0} ke lie asaphal daunalod kyonki sthaaneey fail dooshit hai.
+Downloaded file {0} without checking for sum. This file might be corrupt. <=+=> yog kee jaanch kie bina daunalod kee gaee fail {0}. yah fail dooshit ho sakatee hai.
+You must connect to server before performing transmission. <=+=> traansamishan karane se pahale aapako sarvar se kanekt hona chaahie.
+Enter a file to download to local directory. <=+=> sthaaneey nirdeshika mein daunalod karane ke lie ek fail darj karen.
+{0} | Modified in: {1} <=+=> {0} | mein sanshodhit: {1}
+You should connect to server before listing all remote files. <=+=> sabhee doorasth failon ko soocheebaddh karane se pahale aapako sarvar se kanekt karana chaahie.
+Renaming file {0} to {1}... <=+=> fail {0} se {1} ka naam badal raha hai ...
+Renamed successfully <=+=> saphalataapoorvak naamaankit
+Enter a file and the new file name. <=+=> ek fail aur naee fail naam darj karen.
+Uploading file {0}... <=+=> fail apalod kar raha hai {0} ...
+Uploaded file {0} <=+=> apalod kee gaee fail {0}
+Enter a file to upload to remote directory. upload <file> <directory> <=+=> doorasth nirdeshika mein apalod karane ke lie ek fail darj karen. upload <filai> <diraichtory>
+Error trying to execute FTP command  <=+=> ftp aadesh nishpaadit karane ka prayaas karane mein truti
+(Inner: <=+=> (aantarik:
+{0} folders, {1} files <=+=> {0} foldar, {1} failen
+(Access Denied) <=+=> (pravesh asveekrt)
+{0} KB, Created in {1} {2}, Modified in {3} {4} <=+=> {0} kebee, {1} {2} mein banaaya gaya, {3} {4}  mein sanshodhit
+Gets current local directory <=+=> vartamaan sthaaneey nirdeshika  praapt karata hai
+Gets current remote directory <=+=> vartamaan rimot nirdeshika  praapt karata hai
+Connects to an FTP server (it must start with "ftp://" or "ftps://") <=+=> ek ftp sarvar se kanekt hota hai (ise "ftp://" ya "ftps://" se shuroo hona chaahie)
+Changes local directory to download to or upload from <=+=> se daunalod ya apalod karane ke lie sthaaneey nirdeshika badalata hai
+Changes remote directory to download from or upload to <=+=> se daunalod ya apalod karane ke lie doorasth nirdeshika badalata hai
+Deletes remote file from server <=+=> sarvar se doorasth fail hata deta hai
+Disconnects from server <=+=> sarvar se diskanekt
+Downloads remote file to local directory using binary or text <=+=> dviaadhaaree ya paath  ka upayog kar sthaaneey nirdeshika mein doorasth fail daunalod karata hai
+Exits FTP shell and returns to kernel <=+=> efateepee khol se baahar nikalata hai aur karnel par lautaata hai
+Shows help screen <=+=> madad skreen dikhaata hai
+Lists local directory <=+=> sthaaneey nirdeshika soocheebaddh karata hai
+Lists remote directory <=+=> doorasth nirdeshika soocheebaddh karata hai
+Renames specific file or directory <=+=> vishisht fail ya nirdeshika ka naam badalata hai
+Uploads local file to remote directory using binary or text <=+=> bainaree ya tekst  ka upayog kar doorasth nirdeshika mein sthaaneey fail apalod karata hai
+There was an error in the FTP shell. <=+=> efateepee khol mein ek truti huee thee.
+FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell. <=+=> efateepee sandesh: anurodhit aadesh {0} nahin mila hai. efateepee khol par nirdisht upalabdh aadeshon kee soochee ke lie sahaayata dekhen.
+net: Got response from {0} in {1} ms <=+=> net: {0} emes  mein {0} se pratikriya milee
+Timed out, disconnected, or server offline. <=+=> samay samaapt, diskanekt, ya ofalain sarvar.
+net: Your computer name on network is {0} <=+=> net: netavark par aapaka kampyootar naam {0} hai
+net: Your host name is {1} <=+=> net: aapaka host naam {1} hai
+net: It appears that computers are in the domain or workgroup: <=+=> net: aisa prateet hota hai ki kampyootar domen ya varkagrup mein hain:
+net: WiFi or Ethernet is disconnected. <=+=> net: vaeephaee ya eetharanet diskanekt ho gaya hai.
+net: It appears that computers are connected below: <=+=> net: aisa prateet hota hai ki kampyootar neeche jude hue hain:
+net: Router Address: {0} <=+=> net: rautar pata: {0}
+Failed to get properties for adapter {0} <=+=> edaaptar {0}  ke lie gun praapt karane mein viphal
+Adapter Number: <=+=> edaaptar sankhya:
+Adapter Name: <=+=> edaaptar naam:
+Maximum Transmission Unit: {2} Units <=+=> adhikatam traansamishan yoonit: {2} ikaiyaan
+DHCP Enabled: <=+=> deeechaseepee saksham:
+Non-unicast packets: <=+=> gair-yoonikaast paiket:
+Unicast packets: <=+=> yoonikaast paikets:
+Error incoming/outgoing packets: <=+=> inakaming/aautagoing paiket mein truti:
+Alias can't be the same name as a command. <=+=> upanaam ek kamaand ke samaan naam nahin ho sakata hai.
+Command not found to alias to {0}. <=+=> kamaand ko {0} ke lie upanaam nahin mila.
+Aliasing {0} to {1} is forbidden completely. <=+=> elising {0} se {1} pooree tarah se pratibandhit hai.
+You can now run "{0}" as a command: "{1}". <=+=> ab aap kamaand ke roop mein "{0}" chala sakate hain: "{1}".
+You can no longer use "{0}" as a command "{1}". <=+=> ab aap "{0}" kamaand ke roop mein "{1}" ka upayog nahin kar sakate hain.
+Alias {0} is not found to be removed. <=+=> upanaam {0} ko hataaya nahin gaya hai.
+Invalid mode {0}. <=+=> amaany mod {0}.
+Injected arguments, {0}, will be scheduled to run at next reboot. <=+=> injekshan tark, {0}, agale reeboot par chalaane ke lie nirdhaarit kiya jaega.
+There was not enough arguments. See below for usage: <=+=> paryaapt tark nahin the. upayog ke lie neeche dekhen:
+Current directory: {0} <=+=> vartamaan nirdeshika: {0}
+Directory {0} not found <=+=> nirdeshika {0} nahin milee
+Blank host name. <=+=> khaalee mejabaan naam.
+Changing from: {0} to {1}... <=+=> se badal raha hai: {0} se {1} ...
+Blank message of the day. <=+=> din ka khaalee sandesh.
+Blank MAL After Login. <=+=> login ke baad khaalee emeel.
+Changing MAL from {0} to {1}... <=+=> {0} se {1} tak emeel badal raha hai ...
+Choice command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> chois kamaand ko hata diya gaya hai aur bhavishy mein rileej mein hata diya jaega jab tak ki intaraiktiv shail laagoo nahin kiya gaya ho. jo bhee ho, yah gair-intaraiktiv gole ke lie bekaar hai
+Choice {0} selected. <=+=> vikalp {0} chuna gaya.
+Choice has been cancelled. <=+=> vikalp radd kar diya gaya hai.
+Wrong user password. <=+=> galat upayogakarta paasavard.
+Passwords doesn't match. <=+=> paasavard mel nahin khaata hai.
+Username has been changed to {0}! <=+=> upayogakarta naam badal diya gaya hai {0}!
+The new name you entered is already found. <=+=> aapake dvaara darj kiya gaya naya naam pahale se hee mila hai.
+Echo command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> iko kamaand ko hata diya gaya hai aur bhavishy mein rileej mein hata diya jaega jab tak ki intaraiktiv shail laagoo nahin kiya gaya ho. jo bhee ho, yah gair-intaraiktiv gole ke lie bekaar hai.
+Listing PCs is not supported yet on Unix. <=+=> listing peesee abhee tak yooniks par samarthit nahin hai.
+Aliases that are forbidden: {0} <=+=> upanaam jo varjit hain: {0}
+PanicSim command is deprecated and will be removed in future release until the interactive shell has been implemented. It increases abuse for Kernel Error. <=+=> panichsim kamaand ko hata diya gaya hai aur bhavishy mein rileej mein hata diya jaega jab tak ki intaraiktiv shail laagoo nahin kiya gaya ho. yah karnel truti ke lie durupayog badhaata hai.
+{0} is not found. <=+=> {0} nahin mila hai.
+Configuration reloaded. You might need to reboot the kernel for some changes to take effect. <=+=> konfigareshan punah lod kiya gaya. kuchh parivartanon ko prabhaavee hone ke lie aapako karnel ko reeboot karane kee aavashyakata ho sakatee hai.
+Everything is reset to normal settings. <=+=> sab kuchh saamaany setings par reeset hai.
+One or more of the colors is invalid. <=+=> rangon mein se ek ya adhik amaany hai. 
+Colors are not available. Turn on colored shell in the kernel config. <=+=> rang upalabdh nahin hain. karnel konfigareshan mein rangeen khol ko chaaloo karen.
+Screensaver {0} not found. <=+=> skreenasevar {0} nahin mila.
+{0}[ Kernel settings ] <=+=> {0}[ karnel setings ]
+Kernel Version: <=+=> karnel sanskaran:
+Debug Mode: <=+=> deebag mod:
+Colored Shell: <=+=> rangeen shail:
+Arguments on Boot: <=+=> boot par tark:
+Help command simplified: <=+=> sahaayata aadesh saraleekrt:
+MOTD on Login: <=+=> login par emoteedee:
+Time/Date on corner: <=+=> kone par samay / tithi:
+Hardware probed: <=+=> haardaveyar kee jaanch kee gaee:
+Current theme: <=+=> vartamaan vishay:
+[ Hardware settings ]{0} <=+=> [ haardaveyar setings ] 0}
+{0}[ User settings ] <=+=> {0}[ upayogakarta setings ]
+Current user name: <=+=> vartamaan upayogakarta naam:
+Current host name: <=+=> vartamaan host naam:
+Available usernames: <=+=> upalabdh upayogakarta naam:
+Computer host name: <=+=> kampyootar host ka naam:
+{0}[ Messages Settings ] <=+=> {0}[ sandesh setings ]
+Source code: <=+=> srot kod:
+Copyright (c) <=+=> kopeerait (c)
+License <=+=> laisens
+present <=+=> vartamaan
+Error trying to execute command <=+=> kamaand  nishpaadit karane ka prayaas karane mein truti
+Adds users (Only admins can access this command) <=+=> upayogakartaon ko jodata hai (keval vyavasthaapak hee is aadesh tak pahunch sakate hain)
+Adds aliases to commands (Only admins can access this command) <=+=> aadeshon mein upanaam jodata hai (keval vyavasthaapak hee is aadesh tak pahunch sakate hain)
+Injects arguments to the kernel (reboot required, admins only) <=+=> karnel ko tark injekt karata hai (reeboot aavashyak hai, keval vyavasthaapak)
+Simple calculator <=+=> saral kailakuletar
+Shows current directory <=+=> vartamaan nirdeshika dikhaata hai
+Changes directory <=+=> nirdeshika badalata hai
+Changes host name (Admins only) <=+=> parivartan host naam (keval vyavasthaapak)
+Changes MAL, the MOTD After Login (Admins only) <=+=> parivartan emeel, login ke baad emoteedee (keval vyavasthaapak)
+Changes MOTD, the Message Of The Day (Admins only) <=+=> parivartan emoteedee, din ka sandesh (keval vyavasthaapak)
+Changes password for current user <=+=> vartamaan upayogakarta ke lie paasavard badalata hai
+Changes user name (Admins Only) <=+=> upayogakarta naam badalata hai (keval vyavasthaapak)
+Makes user choices <=+=> upayogakarta vikalp banaata hai
+Clears the screen <=+=> skreen saaf karata hai
+Convert currency <=+=> mudra kanavart karen
+Shows debug logs (Admins Only) <=+=> deebag log dikhaata hai (keval vyavasthaapak)
+Writes a text into a console <=+=> ek kansol mein ek paath likhata hai
+Use an FTP shell to interact with servers <=+=> sarvar ke saath sanvaad karane ke lie ek efateepee khol ka prayog karen
+Help page <=+=> sahaayata prshth
+Probe hardware manually (One time in 'nohwprobe' kernel) <=+=> haardaveyar mainyual roop se jaanchen (nohaprobob karnel mein ek baar)
+List file/folder contents in current folder <=+=> vartamaan foldar mein fail / foldar saamagree soocheebaddh karen
+Loads screensaver file in %USERPROFILE%\KSMods <=+=> %USERPROFILE%\KSMods mein skreenasevar fail lod karata hai
+Locks your screen with a password <=+=> paasavard ke saath apanee skreen ko lok karata hai
+Logs you out <=+=> aapako log aaut karata hai
+Lists all network devices who is online (and offline in domains) <=+=> un sabhee netavark upakaranon ko soocheebaddh karata hai jo onalain hain (aur domen mein ophalain)
+Lists all network addresses on host <=+=> host par sabhee netavark pate soocheebaddh karata hai
+Lists all network addresses on host using the tree <=+=> ped ka upayog kar mejabaan par sabhee netavark pate soocheebaddh karata hai
+Creates a directory <=+=> ek nirdeshika banaata hai
+Lists information about all available interfaces <=+=> sabhee upalabdh intaraphes ke baare mein jaanakaaree soocheebaddh karata hai
+Shows forbidden list of aliases <=+=> upanaamon kee varjit soochee dikhaata hai
+Kernel Panic Simulator (real) <=+=> karnel aatank simyuletar (asalee)
+Manage permissions for users (Only admins can access this command) <=+=> upayogakartaon ke lie anumatiyaan prabandhit karen (keval vyavasthaapak hee is aadesh tak pahunch sakate hain)
+Check to see if specified address is available <=+=> yah dekhane ke lie jaanchen ki nirdisht pata upalabdh hai ya nahin
+Writes file contents to the console <=+=> kansol mein fail saamagree likhata hai
+Restarts your computer (WARNING: No syncing, because it is not a final kernel) <=+=> apane kampyootar ko punaraarambh karata hai (chetaavanee: koee samanvayan nahin, kyonki yah antim karnel nahin hai)
+Reloads configuration file that is edited. <=+=> sampaadit kee gaee konfigareshan fail ko punah lod karata hai.
+Removes a directory <=+=> ek nirdeshika hataata hai
+Removes a user from the list (Admins Only) <=+=> kisee upayogakarta ko soochee se hataata hai (keval vyavasthaapak)
+Saves your screen from burn outs <=+=> aapakee skreen ko jalaoo bahishkaar se bachaata hai
+Scientific calculator. The unit converter is separated to another command <=+=> saintifik kailakuletar. yoonit kanavartar ko any kamaand  se alag kiya gaya hai
+Sets up kernel colors <=+=> karnel rang set karata hai
+Sets up kernel screensavers <=+=> karnel skreenasevar set karata hai
+Sets up kernel themes <=+=> karnel theem set karata hai
+Shows aliases <=+=> upanaam dikhaata hai
+Shows MOTD after login set by user or kernel <=+=> upayogakarta ya karnel dvaara set login ke baad emoteedee dikhaata hai
+Shows message of the day set by user or kernel <=+=> upayogakarta ya karnel dvaara set kie gae din ka sandesh dikhaata hai
+Shows date and time <=+=> dinaank aur samay dikhaata hai
+Shows date and time in zones <=+=> jonon mein dinaank aur samay dikhaata hai
+The kernel will be shut down <=+=> karnel band ho jaega
+System information <=+=> sistam jaanakaaree
+Unit converter that is separated from scicalc. <=+=> yoonit kanavartar jo skelikal se alag hai.
+Shows used open source dependencies <=+=> khula srot nirbharata  dikhaata hai dikhaata hai
+A very descriptive user manual. <=+=> ek bahut varnanaatmak upayogakarta pustika.
+* You can use multiple commands using the colon between commands. <=+=> * aap kamaand ke beech kolan ka upayog karake ekaadhik kamaand ka upayog kar sakate hain.
+Available commands:  <=+=> upalabdh aadesh: 
+Mod commands:  <=+=> mod kamaand: 
+Aliases to commands:  <=+=> aadeshon ke lie upanaam: 
+Usage: <=+=> upayog:
+Arguments separated by commas <=+=> alpaviraam se alag tark
+where arguments will be {0} <=+=> jahaan tark {0} honge
+to get current directory <=+=> vartamaan nirdeshika praapt karane ke lie
+In which source and destination is a 3 UPPERCASE characters of an exchange rate <=+=> kis srot aur gantavy mein vinimay dar ke 3 aparakes akshar hain
+List of all IDs and names: <=+=> sabhee aaeedee aur naamon kee soochee:
+Shows you debug logs so you can send the log to us. <=+=> dikhaata hai ki aap log deebag karate hain taaki aap hamen log bhej saken.
+Initializes the FTP shell. <=+=> efateepee khol shuroo karata hai.
+Probes hardware (Only works when the hardware is not probed and hwprobe is not executed). <=+=> jaanch haardaveyar (keval tabhee kaam karata hai jab haardaveyar kee jaanch nahin kee jaatee hai aur hwprobai nishpaadit nahin kiya jaata hai).
+Lists network information, as well as every computer connected to a network. <=+=> netavark kee jaanakaaree soocheebaddh karata hai, saath hee netavark se jude pratyek kampyootar ko soocheebaddh karata hai.
+Friends of <=+=> ke mitr
+Lists network information, as well as every computer connected to a network, in a tree form. <=+=> ek vrksh roop mein, netavark kee jaanakaaree soocheebaddh karata hai, saath hee netavark se jude pratyek kampyootar ko soocheebaddh karata hai.
+Lists network information, as well as every computer. <=+=> netavark jaanakaaree, saath hee saath har kampyootar soocheebaddh karata hai.
+where modnameSS.m will be <=+=> jahaan modnameSS.m hoga
+Locks your screen with the password. <=+=> paasavard ke saath apanee skreen lok karata hai.
+Logs you out of the user. <=+=> aapako upayogakarta se log aaut karata hai.
+Get every network information <=+=> pratyek netavark jaanakaaree praapt karen
+Restarts your simulated computer. <=+=> apane anuroopit kampyootar ko punaraarambh karata hai.
+Reloads the configuration that is changed by the end-user or by tool. <=+=> ant upayogakarta ya upakaran dvaara parivartit kee gaee konfigareshan ko phir se lod karata hai.
+Colors doesn't require a restart, but most of the settings require you to restart. <=+=> rangon ko punaraarambh karane kee aavashyakata nahin hai, lekin adhikaansh setings ko aapako punaraarambh karane kee aavashyakata hotee hai.
+shows you a selected screensaver, while protecting your screen from burn outs. <=+=> aapakee skreen ko jalane se bachaane ke dauraan, aapako ek chayanit skreenasevar dikhaata hai.
+Shows the date and time. <=+=> tithi aur samay dikhaata hai.
+Shows the date and time in zones. <=+=> jonon mein dinaank aur samay dikhaata hai.
+Shuts down your simulated computer. <=+=> apane anuroopit kampyootar band kar deta hai.
+Shows system information and versions. <=+=> sistam kee jaanakaaree aur sanskaran dikhaata hai.
+Shows open source libraries used <=+=> prayukt opan sors laibreree dikhaata hai
+There was an error in the shell. <=+=> khol mein ek truti thee.
+You don't have permission to use {0} <=+=> aapake paas {0}  ka upayog karane kee anumati nahin hai
+Shell message: The requested command {0} is not allowed to run in maintenance mode. <=+=> shel sandesh: anurodhit aadesh {0} ko rakharakhaav mod mein chalaane kee anumati nahin hai.
+Shell message: The requested command {0} is not found. See 'help' for available commands. <=+=> shail sandesh: anurodhit aadesh {0} nahin mila hai. upalabdh kamaand ke lie sahaayata dekhen.
+Shell message: Command {0} is not allowed to run on log in. <=+=> shel sandesh: kamaand {0} ko log in karane kee anumati nahin hai.
+Shell message: The requested command {0} is not found. <=+=> shail sandesh: anurodhit aadesh {0} nahin mila hai.
+Error trying to execute command. <=+=> aadesh nishpaadit karane ka prayaas karane mein truti.
+datetime: Time is {0} <=+=> detaataim: samay {0} hai
+datetime: Today is {0} <=+=> detaataim: aaj {0} hai
+datetime: Time Zone: {0} <=+=> detaataim: samay kshetr: {0}
+- Time of {0}: {1} <=+=> - {0} ka samay: {1}
+to clear screen. <=+=> skreen saaf karane ke lie.
+It seems that the manual page {0} is not found. <=+=> aisa lagata hai ki mainual pej {0} nahin mila hai.
+There is an error when trying to load the manual page {0} becuase {1}. <=+=> mainyual prshth {0} baichuasai {1} lod karane ka prayaas karate samay ek truti huee hai.
+This manual page is incomplete for the following reasons: <=+=> yah mainyual prshth nimn kaaranon se apoorn hai:
+Press any key to continue... <=+=> jaaree rakhane ke lie koee bhee kunjee dabaen...
+ | {0} words | Revision v{1} | {2} sections <=+=>  | {0} shabd | sanshodhan v{1} | {2} khand
+This manual page title is not written <=+=> yah mainual pej sheershak likha nahin hai
+This manual page ({0}) does not contain any body text. Deleting page... <=+=> yah mainual pej ({0}) mein koee bhee bodee tekst nahin hai. pej hataana ...
+This manual page ({0}) does not contain any section. Deleting page... <=+=> yah mainual pej ({0}) mein koee bhee anubhaag nahin hai. pej hataana ...
+You tried to view a manual page with the debugging feature enabled. This may cause significant performance impacts depending on the system. Please press any key to continue, accepting the risks of performance impact. <=+=> aapane dibaging suvidha saksham ke saath mainyual prshth dekhane ka prayaas kiya. isase sistam ke aadhaar par mahatvapoorn pradarshan prabhaav ho sakate hain. pradarshan prabhaav ke jokhimon ko sveekaar karate hue, jaaree rakhane ke lie krpaya koee bhee kunjee dabaen.

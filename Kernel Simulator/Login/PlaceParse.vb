@@ -19,17 +19,18 @@
 Public Module PlaceParse
 
     'Placeholders (strings)
-    Private userplace As String = "<user>"
-    Private sdateplace As String = "<shortdate>"
-    Private ldateplace As String = "<longdate>"
-    Private stimeplace As String = "<shorttime>"
-    Private ltimeplace As String = "<longtime>"
-    Private tzplace As String = "<timezone>"
-    Private stzplace As String = "<summertimezone>"
+    Private ReadOnly userplace As String = "<user>"
+    Private ReadOnly sdateplace As String = "<shortdate>"
+    Private ReadOnly ldateplace As String = "<longdate>"
+    Private ReadOnly stimeplace As String = "<shorttime>"
+    Private ReadOnly ltimeplace As String = "<longtime>"
+    Private ReadOnly tzplace As String = "<timezone>"
+    Private ReadOnly stzplace As String = "<summertimezone>"
 
     'Probing code
     Public Function ProbePlaces(ByVal text As String) As String
 
+        EventManager.RaisePlaceholderParsing()
         Try
             If (text.Contains(userplace)) Then text = text.Replace(userplace, signedinusrnm)
             If (text.Contains(sdateplace)) Then text = text.Replace(sdateplace, FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortDate))
@@ -38,12 +39,13 @@ Public Module PlaceParse
             If (text.Contains(ltimeplace)) Then text = text.Replace(ltimeplace, FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongTime))
             If (text.Contains(tzplace)) Then text = text.Replace(tzplace, TimeZone.CurrentTimeZone.StandardName)
             If (text.Contains(stzplace)) Then text = text.Replace(stzplace, TimeZone.CurrentTimeZone.DaylightName)
+            EventManager.RaisePlaceholderParsed()
         Catch ex As NullReferenceException
             Wdbg(ex.StackTrace, True)
             If (DebugMode = True) Then
-                Wln("Error trying to parse placeholders. {0} - Stack trace:" + vbNewLine + ex.StackTrace, "neutralText", ex.Message)
+                Wln(DoTranslation("Error trying to parse placeholders. {0} - Stack trace:", currentLang) + vbNewLine + ex.StackTrace, "neutralText", ex.Message)
             Else
-                Wln("Error trying to parse placeholders. {0}", "neutralText", ex.Message)
+                Wln(DoTranslation("Error trying to parse placeholders. {0}", currentLang), "neutralText", ex.Message)
             End If
         End Try
         Return text

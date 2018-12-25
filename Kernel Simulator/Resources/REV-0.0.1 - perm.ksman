@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell command "perm"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perm command
+
+Summary: Manages permissions for your user or other users
+
+Description
+
+If you want to manage permissions for your user or other users, or if you want to prevent the user from being logged on, use this command.
+
+This command lets you manage permissions whether the administrative privileges are on or off, or if the user is disabled or not.
+
+Command usage
+
+* perm (userName) (Admin/Disabled) (Allow/Disallow)
+
+Examples
+
+* perm joe Admin Allow: It enables "joe" to access administrative commands
+* perm joe Disabled Allow: It causes "joe" to be suspended
+* perm joe Admin Disallow: It disables "joe" to access administrative commands
+* perm joe Disabled Disallow: It enables "joe" to be logged on
+-BODY END-
+
+-COLOR CONFIGURATION-
+perm (userName) (Admin/Disabled) (Allow/Disallow)=>Green
+perm joe Admin Allow:=>Yellow
+perm joe Disabled Allow=>Yellow
+perm joe Admin Disallow:=>Yellow
+perm joe Disabled Disallow:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+perm command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -28,9 +28,9 @@ Public Module sciCalc
                     Dim finalExp As String = ""
                     Dim numOps As Integer = 0
                     For i As Integer = 0 To exps.Count - 1 Step 2
-                        If (exps(i) = "pi") Then
+                        If (exps(i) = "pi") Then 'Add a "pi" = 3.14 constant value to our expression
                             expressions.Add(Math.PI)
-                        ElseIf (exps(i) = "e") Then
+                        ElseIf (exps(i) = "e") Then 'Add an euler constant value to our expression
                             expressions.Add(Math.E)
                         Else
                             expressions.Add(exps(i))
@@ -49,43 +49,40 @@ Public Module sciCalc
                     Dim finalRes = New DataTable().Compute(finalExp, Nothing)
                     Wln("{0}= {1}", "neutralText", finalExp, FormatNumber(finalRes, 2))
                 Else
-                    Wln("Usage: scical <expression1|pi|e> <+|-|*|/|%> <expression2|pi|e> ..." + vbNewLine + _
-                        "       scical <sqrt|tan|sin|cos> <number>", "neutralText")
+                    HelpSystem.ShowHelp("scical")
                 End If
             Else
                 If (exps.Count = 2) Then
                     Dim finalRes
-                    If (exps(0) = "sqrt") Then
+                    If (exps(0) = "sqrt") Then 'Square root of a number
                         finalRes = Math.Sqrt(exps(1))
-                    ElseIf (exps(0) = "tan") Then
+                    ElseIf (exps(0) = "tan") Then 'Tangent of a number
                         finalRes = Math.Tan(exps(1))
-                    ElseIf (exps(0) = "sin") Then
+                    ElseIf (exps(0) = "sin") Then 'A sine of a number
                         finalRes = Math.Sin(exps(1))
-                    ElseIf (exps(0) = "cos") Then
+                    ElseIf (exps(0) = "cos") Then 'A cosine of a number
                         finalRes = Math.Cos(exps(1))
                     Else
-                        Wln("Usage: scical <expression1|pi|e> <+|-|*|/|%> <expression2|pi|e> ..." + vbNewLine + _
-                            "       scical <sqrt|tan|sin|cos> <number>", "neutralText")
+                        HelpSystem.ShowHelp("scical")
                         Exit Sub
                     End If
-                    Wln("{0} of {1} = {2}", "neutralText", exps(0), exps(1), FormatNumber(finalRes, 2))
+                    Wln(DoTranslation("{0} of {1} = {2}", currentLang), "neutralText", exps(0), exps(1), FormatNumber(finalRes, 2))
                 Else
-                    Wln("Usage: scical <expression1|pi|e> <+|-|*|/|%> <expression2|pi|e> ..." + vbNewLine + _
-                        "       scical <sqrt|tan|sin|cos> <number>", "neutralText")
+                    HelpSystem.ShowHelp("scical")
                 End If
             End If
         Catch ex As DivideByZeroException
-            Wln("Attempt to divide by zero is not allowed.", "neutralText")
+            Wln(DoTranslation("Attempt to divide by zero is not allowed.", currentLang), "neutralText")
             If (DebugMode = True) Then
                 Wln(ex.StackTrace, "neutralText") : Wdbg(ex.StackTrace, True)
             End If
         Catch ex As OverflowException
-            Wln("There has been a suspected attempt at calculating that resulted in an overflow.", "neutralText")
+            Wln(DoTranslation("There has been a suspected attempt at calculating that resulted in an overflow.", currentLang), "neutralText")
             If (DebugMode = True) Then
                 Wln("Overflow " + ex.StackTrace, "neutralText") : Wdbg("Overflow " + ex.StackTrace, True)
             End If
         Catch ex As Exception
-            Wln("There is an error while calculating: {0}", "neutralText", ex.Message)
+            Wln(DoTranslation("There is an error while calculating: {0}", currentLang), "neutralText", ex.Message)
             If (DebugMode = True) Then
                 Wln(ex.StackTrace, "neutralText") : Wdbg(ex.StackTrace, True)
             End If

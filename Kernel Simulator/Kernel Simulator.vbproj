@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -14,7 +14,7 @@
     <AssemblyName>Kernel Simulator</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -46,11 +46,13 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>KSBinary\DEV\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -58,12 +60,13 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\..\My Files\Misc\visual basic projects\VB2010\Kernel Simulator\</OutputPath>
+    <OutputPath>KSBinary\RELEASE\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
     <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -84,7 +87,7 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -103,24 +106,83 @@
     <ManifestKeyFile>Kernel Simulator_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>KSBuild\</OutputPath>
+    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>KSRel\</OutputPath>
+    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MadMilkman.Ini, Version=1.0.6.2, Culture=neutral, PublicKeyToken=4e0b5157a7ffbb74, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Referenced Assemblies\MadMilkman.Ini.dll</HintPath>
+    <Reference Include="FluentFTP, Version=19.2.2.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentFTP.19.2.2\lib\net45\FluentFTP.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MadMilkman.Ini, Version=1.0.6.0, Culture=neutral, PublicKeyToken=4e0b5157a7ffbb74, processorArchitecture=MSIL">
+      <HintPath>..\packages\MadMilkman.Ini.1.0.6.0\lib\net20\MadMilkman.Ini.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="FluentFTP" />
     <Import Include="MadMilkman.Ini" />
     <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Newtonsoft.Json" />
     <Import Include="System" />
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
@@ -144,11 +206,14 @@
     <Compile Include="Files\InitializeDirectoryFile.vb" />
     <Compile Include="Files\ListFolders.vb" />
     <Compile Include="Hardware\HardwareVars.vb" />
+    <Compile Include="Kernel\EventsAndExceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />
-    <Compile Include="Kernel\InstanceCheck.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Languages\Translate.vb" />
     <Compile Include="Login\PlaceParse.vb" />
+    <Compile Include="ManPages\Manual.vb" />
+    <Compile Include="ManPages\PageParser.vb" />
+    <Compile Include="ManPages\PageViewer.vb" />
     <Compile Include="Misc\Calculator\sciCalc.vb" />
     <Compile Include="Misc\Calculator\stdCalc.vb" />
     <Compile Include="Misc\Calculator\unitConv.vb" />
@@ -156,6 +221,7 @@
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\DisposeExit.vb" />
     <Compile Include="Misc\UserManual.vb" />
+    <Compile Include="Misc\Writers\StreamReaderExtensions.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModParser.vb" />
     <Compile Include="Network\FTP\FTPGetCommand.vb" />
@@ -236,27 +302,85 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ManPageExample.txt" />
+    <None Include="packages.config" />
+    <None Include="Resources\eng.txt" />
+    <None Include="Resources\REV-0.0.1 - adduser.ksman" />
+    <None Include="Resources\REV-0.0.1 - alias.ksman" />
+    <None Include="Resources\REV-0.0.1 - arginj.ksman" />
+    <None Include="Resources\REV-0.0.1 - Available command-line arguments.ksman" />
+    <None Include="Resources\REV-0.0.1 - Available commands.ksman" />
+    <None Include="Resources\REV-0.0.1 - Available FTP commands.ksman" />
+    <None Include="Resources\REV-0.0.1 - Available kernel arguments.ksman" />
+    <None Include="Resources\REV-0.0.1 - Available manual pages.ksman" />
+    <None Include="Resources\REV-0.0.1 - calc.ksman" />
+    <None Include="Resources\REV-0.0.1 - cdir.ksman" />
+    <None Include="Resources\REV-0.0.1 - chdir.ksman" />
+    <None Include="Resources\REV-0.0.1 - chhostname.ksman" />
+    <None Include="Resources\REV-0.0.1 - chmal.ksman" />
+    <None Include="Resources\REV-0.0.1 - chmotd.ksman" />
+    <None Include="Resources\REV-0.0.1 - chpwd.ksman" />
+    <None Include="Resources\REV-0.0.1 - chusrname.ksman" />
+    <None Include="Resources\REV-0.0.1 - cls.ksman" />
+    <None Include="Resources\REV-0.0.1 - Configuration for your Kernel.ksman" />
+    <None Include="Resources\REV-0.0.1 - debuglog.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP changelocaldir or cdl.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP changeremotedir or cdr.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP connect.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP currlocaldir or pwdl.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP currremotedir or pwdr.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP delete or del.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP disconnect.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP download or get.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP listlocal or lsl.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP listremote or lsr.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP rename or ren.ksman" />
+    <None Include="Resources\REV-0.0.1 - FTP upload or put.ksman" />
+    <None Include="Resources\REV-0.0.1 - ftp.ksman" />
+    <None Include="Resources\REV-0.0.1 - History of Kernel Simulator.ksman" />
+    <None Include="Resources\REV-0.0.1 - hwprobe.ksman" />
+    <None Include="Resources\REV-0.0.1 - Introduction to the Kernel.ksman" />
+    <None Include="Resources\REV-0.0.1 - list.ksman" />
+    <None Include="Resources\REV-0.0.1 - loadsaver.ksman" />
+    <None Include="Resources\REV-0.0.1 - lockscreen.ksman" />
+    <None Include="Resources\REV-0.0.1 - logout.ksman" />
+    <None Include="Resources\REV-0.0.1 - lscomp.ksman" />
+    <None Include="Resources\REV-0.0.1 - lsnet.ksman" />
+    <None Include="Resources\REV-0.0.1 - lsnettree.ksman" />
+    <None Include="Resources\REV-0.0.1 - md.ksman" />
+    <None Include="Resources\REV-0.0.1 - Modding guide.ksman" />
+    <None Include="Resources\REV-0.0.1 - netinfo.ksman" />
+    <None Include="Resources\REV-0.0.1 - noaliases.ksman" />
+    <None Include="Resources\REV-0.0.1 - perm.ksman" />
+    <None Include="Resources\REV-0.0.1 - ping.ksman" />
+    <None Include="Resources\REV-0.0.1 - rd.ksman" />
+    <None Include="Resources\REV-0.0.1 - read.ksman" />
+    <None Include="Resources\REV-0.0.1 - reboot.ksman" />
+    <None Include="Resources\REV-0.0.1 - reloadconfig.ksman" />
+    <None Include="Resources\REV-0.0.1 - rmuser.ksman" />
+    <None Include="Resources\REV-0.0.1 - savescreen.ksman" />
+    <None Include="Resources\REV-0.0.1 - scical.ksman" />
+    <None Include="Resources\REV-0.0.1 - Screensaver modding guide.ksman" />
+    <None Include="Resources\REV-0.0.1 - setcolors.ksman" />
+    <None Include="Resources\REV-0.0.1 - setsaver.ksman" />
+    <None Include="Resources\REV-0.0.1 - setthemes.ksman" />
+    <None Include="Resources\REV-0.0.1 - showmotd.ksman" />
+    <None Include="Resources\REV-0.0.1 - showtd.ksman" />
+    <None Include="Resources\REV-0.0.1 - showtdzone.ksman" />
+    <None Include="Resources\REV-0.0.1 - shutdown.ksman" />
+    <None Include="Resources\REV-0.0.1 - sysinfo.ksman" />
+    <None Include="Resources\REV-0.0.1 - unitconv.ksman" />
+    <None Include="Resources\REV-0.0.1 - useddeps.ksman" />
+    <None Include="Resources\spa.txt" />
+    <None Include="Resources\ptg.txt" />
+    <None Include="Resources\ind.txt" />
+    <None Include="Resources\ger.txt" />
+    <None Include="Resources\fre.txt" />
+    <None Include="Resources\chi.txt" />
     <None Include="COPYING" />
     <Content Include="Documentation\Documentation - contributing rules.txt" />
     <Content Include="Documentation\Documentation - faq.txt" />
     <Content Include="Documentation\Documentation - main page.txt" />
     <Content Include="Documentation\Documentation - troubleshooting.txt" />
-    <Content Include="Languages\chi.txt" />
-    <Content Include="Languages\cro.txt" />
-    <Content Include="Languages\fre.txt" />
-    <Content Include="Languages\ger.txt" />
-    <Content Include="Languages\ind.txt" />
-    <Content Include="Languages\irn.txt" />
-    <Content Include="Languages\ita.txt" />
-    <Content Include="Languages\jpn.txt" />
-    <Content Include="Languages\kor.txt" />
-    <Content Include="Languages\mal.txt" />
-    <Content Include="Languages\nla.txt" />
-    <Content Include="Languages\ptg.txt" />
-    <Content Include="Languages\rus.txt" />
-    <Content Include="Languages\spa.txt" />
-    <Content Include="Languages\tky.txt" />
     <Content Include="Paomedia-Small-N-Flat-Terminal.ico" />
   </ItemGroup>
   <ItemGroup />

@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell command "shutdown"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+shutdown command
+
+Summary: Shuts down your computer
+
+Description
+
+If you're finished with everything and don't want to do something else on your computer, instead of leaving it on to consume energy and pay more money to the electricity center, you have to use this command to shutdown your computer and conserve power.
+
+Command usage
+
+* shutdown
+-BODY END-
+
+-COLOR CONFIGURATION-
+shutdown=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+shutdown command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

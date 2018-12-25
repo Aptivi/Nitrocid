@@ -19,23 +19,20 @@
 Public Module FTPHelpSystem
 
     'This dictionary is the definitions for commands.
-    Public ftpDefinitions As New Dictionary(Of String, String) From {{"binary (Alias: bin)", "Switches transfer mode to binary (Recommended for most file transfers, mainly ISO files, .deb packages, or any downloaded file that isn't usable in text mode)"}, _
-                                                                     {"currlocaldir (Alias: pwdl)", "Gets current local directory"}, _
-                                                                     {"currremotedir (Alias: pwdr)", "Gets current remote directory"}, _
-                                                                     {"connect", "Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")"}, _
-                                                                     {"changelocaldir (Alias: cdl)", "Changes local directory to download to or upload from"}, _
-                                                                     {"changeremotedir (Alias: cdr)", "Changes remote directory to download from or upload to"}, _
-                                                                     {"delete (Alias: del)", "Deletes remote file from server"}, _
-                                                                     {"disconnect", "Disconnects from server"}, _
-                                                                     {"download (Alias: get)", "Downloads remote file to local directory using binary or text"}, _
-                                                                     {"exit", "Exits FTP shell and returns to kernel"}, _
-                                                                     {"help", "Shows help screen"}, _
-                                                                     {"listlocal (Alias: lsl)", "Lists local directory"}, _
-                                                                     {"listremote (Alias: lsr)", "Lists remote directory"}, _
-                                                                     {"passive", "Use passive mode for transferring (Default: on, because common FTP servers only accept passive connections)"}, _
-                                                                     {"ssl", "Uses SSL for encryption of a connection"}, _
-                                                                     {"text (Alias: txt)", "Switches transfer mode to text (Recommended for .txt files, and all files that only contains readable text and not binary data)"}, _
-                                                                     {"upload (Alias: put)", "Uploads local file to remote directory using binary or text"}}
+    Public ftpDefinitions As New Dictionary(Of String, String) From {{"currlocaldir (Alias: pwdl)", DoTranslation("Gets current local directory", currentLang)},
+                                                                     {"currremotedir (Alias: pwdr)", DoTranslation("Gets current remote directory", currentLang)},
+                                                                     {"connect", DoTranslation("Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", currentLang)},
+                                                                     {"changelocaldir (Alias: cdl)", DoTranslation("Changes local directory to download to or upload from", currentLang)},
+                                                                     {"changeremotedir (Alias: cdr)", DoTranslation("Changes remote directory to download from or upload to", currentLang)},
+                                                                     {"delete (Alias: del)", DoTranslation("Deletes remote file from server", currentLang)},
+                                                                     {"disconnect", DoTranslation("Disconnects from server", currentLang)},
+                                                                     {"download (Alias: get)", DoTranslation("Downloads remote file to local directory using binary or text", currentLang)},
+                                                                     {"exit", DoTranslation("Exits FTP shell and returns to kernel", currentLang)},
+                                                                     {"help", DoTranslation("Shows help screen", currentLang)},
+                                                                     {"listlocal (Alias: lsl)", DoTranslation("Lists local directory", currentLang)},
+                                                                     {"listremote (Alias: lsr)", DoTranslation("Lists remote directory", currentLang)},
+                                                                     {"rename (Alias: ren)", DoTranslation("Renames specific file or directory", currentLang)},
+                                                                     {"upload (Alias: put)", DoTranslation("Uploads local file to remote directory using binary or text", currentLang)}}
 
     Public Sub FTPShowHelp()
 

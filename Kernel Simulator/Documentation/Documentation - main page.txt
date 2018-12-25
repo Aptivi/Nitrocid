@@ -1,20 +1,24 @@
 ﻿|---------------+--> Kernel Simulator - Simulates the future kernel that is planned by us <--+---------------|
 
 NOTE: This kernel simulator will continue to be developed, even if we made the real PC version of Kernel.
-	  Are you building a Linux version of Kernel Simulator in MonoDevelop? If so, add in "kernel Simulator.vbproj":
-	  <VbcToolExe>vbc</VbcToolExe>
+
+INFO: Are you building a Linux version of Kernel Simulator in MonoDevelop? If so, install MonoDevelop and libmono-microsoft-visualbasic10.0-cil and add in "Kernel Simulator.vbproj":
 	  <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-	  <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-	  and change the output path to your choice if you are building using Release.
+      We are working on removing warnings when building using MonoDevelop. While we suggest MonoDevelop, we recommend JetBrains Rider for Linux 64-bit.
 
 INFO: This kernel simulator is not a final planned version of Kernel, since it was minimal.
 	  It can only be Console at the moment, while we are developing a GUI for this simulator.
+
+We have discontinued Windows XP support since 0.0.5.9. We are using NuGet to get libraries now. We also paused porting for MonoDevelop in Linux and macOS in beta versions. Although it works, some features may not work properly, and any of the issues or pull requests about the Linux compatibility optimization while the version you're using is a beta version of 0.0.6 will be closed.
+
+This version is the beta version so expect some bugs and instabilities. If you have experienced one, send a bug report to GitHub with stack trace and debugging logs.
 
 Kernel Simulator lets you simulate a very early access for our future Kernel. Cannot log-in to Kernel Simulator on "root" account? The password is the backwards of "root"
 
 |---------------+--> History <--+---------------|
 
-10/23/2018 - 0.0.5.8: Removed beeping when rebooting and shutting down, Removed "beep" command, (Windows) Probers will now continue even if they failed, Disposing memory now no longer uses VB6 method of handling errors
+12/24/2018 - 0.0.5.9: Mods will now be stopped when shutting down, Mods can have their own name and their own version, fixed debugger not closing properly when rebooting or shutting down, Shell now no longer exit the application when an exception happens, Debugging now more sensitive (except for getting commands), Now debug writer doesn't support writing without new lines, You are finally allowed to include spaces in your hostname as well as hostnames that is less than 4 characters like "joe", Deprecated useless and abusive commands, Removed extra checks for IANA timezones resulting in no more registry way, fixed listing networks, Added currency converter that uses the Internet (If we have added local values, we have to release more updates which is time-consuming, so the Internet way conserves time and updates), we have finally allowed users to view debug logs using KS with the debugging off, we have improved FTP client, for those who don't speak English can now set their own language although the default is English, fixed missing help entry for "lscomp", Added kernel manual pages, took out Windows XP support, fixed NullReferenceException when there are errors trying to compile mods, added testMods cmdline argument, and more...
+11/1/2018 - 0.0.5.8: Removed beeping when rebooting and shutting down, Removed "beep" command, (Windows) Probers will now continue even if they failed, Disposing memory now no longer uses VB6 method of handling errors
 10/13/2018 - 0.0.5.7: Fixed crash when starting when running on a file name that is other than "Kernel Simulator.exe", Better error handling for FTP, Added current directory printing in FTP, removed "version" command, fixed the "Quiet Probe" value being set "Quiet Probe", Expanded "sysinfo", Fixed configuration reader not closing when exiting kernel, (Unix) Fixed a known bug
 10/12/2018 - 0.0.5.6: Improved probers, username list on log-in, better compatibility with Unix
 9/22/2018 - 0.0.5.5: Re-written config, Forbidden aliases, added missing help entries for "showalises", added more MOTD and MAL placeholders, fixed repeating message of RAM status, and an FTP client has been added, finally!
@@ -61,6 +65,24 @@ Source code: https://github.com/MarioZ/MadMilkman.Ini
 Copyright (c) 2016, Mario Zorica
 
 License (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
+
+Newtonsoft.Json
+
+Source code: https://github.com/JamesNK/Newtonsoft.Json
+
+Copyright (c) 2007, James Newton-King
+
+License (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+
+FluentFTP
+
+Source code: https://github.com/robinrodricks/FluentFTP
+
+Copyright (c) 2011-2016, J.P. Trosclair
+
+Copyright (c) 2016-present, Robin Rodricks
+
+License (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 
 |---------------+--> License - GNU GPL <--+---------------|
 

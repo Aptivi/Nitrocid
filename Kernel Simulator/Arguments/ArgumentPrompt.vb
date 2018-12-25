@@ -29,17 +29,18 @@ Module ArgumentPrompt
             ArgumentParse.ParseArguments()
         Else
             'Shows available arguments and prompts for it
-            W("Available arguments: {0}" + vbNewLine + "Arguments ('help' for help): ", "input", String.Join(", ", AvailableArgs))
-            answerargs = System.Console.ReadLine()
+            W(DoTranslation("Available arguments: {0}", currentLang) + vbNewLine +
+              DoTranslation("Arguments ('help' for help): ", currentLang), "input", String.Join(", ", AvailableArgs))
+            answerargs = Console.ReadLine()
 
             'Make a kernel check for arguments later if anything is entered
             If (answerargs <> Nothing And InjMode = False) Then
                 argsFlag = True
             ElseIf (answerargs <> Nothing And InjMode = True) Then
                 argsInjected = True
-                Wln("Injected arguments will be scheduled to run at next reboot.", "neutralText")
+                Wln(DoTranslation("Injected arguments will be scheduled to run at next reboot.", currentLang), "neutralText")
             ElseIf (answerargs = "q" And InjMode = True) Then
-                Wln("Argument Injection has been cancelled.", "neutralText")
+                Wln(DoTranslation("Argument Injection has been cancelled.", currentLang), "neutralText")
             End If
         End If
 

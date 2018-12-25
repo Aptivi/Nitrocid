@@ -16,13 +16,14 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports Newtonsoft.Json.Linq
+
 Public Module unitConv
 
     Private resultVal As Object
 
     Public Sub Converter(ByVal sourceUnit As String, ByVal targetUnit As String, ByVal value As Object)
 
-        'TODO: Add currency conversion (might require Internet)
         'Begin with size conversion first...
         If (sourceUnit.IndexOf("B", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("TB", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value / 1099511627776
@@ -345,11 +346,78 @@ Public Module unitConv
         ElseIf (sourceUnit.IndexOf("Miles", 0, StringComparison.CurrentCultureIgnoreCase) > -1 And targetUnit.IndexOf("Yards", 0, StringComparison.CurrentCultureIgnoreCase) > -1) Then
             resultVal = value * 1760
         Else
-            Wln("{0} cannot be converted to {1}.", "neutralText", sourceUnit, targetUnit)
+            Wln(DoTranslation("{0} cannot be converted to {1}.", currentLang), "neutralText", sourceUnit, targetUnit)
             Exit Sub
         End If
-        Wln("{0} to {1}: {2}", "neutralText", sourceUnit, targetUnit, resultVal)
+        Wln(DoTranslation("{0} to {1}: {2}", currentLang), "neutralText", sourceUnit, targetUnit, resultVal)
 
     End Sub
+
+    Sub CurrencyConvert(ByVal src3UPchars As String, ByVal dest3UPchars As String, ByVal value As Double)
+
+        Try
+            Dim RateResult As String = ""
+            Dim RateURL As String = "http://free.currencyconverterapi.com/api/v5/convert?q=" + src3UPchars + "_" + dest3UPchars + "&compact=y"
+            Dim RateReq As HttpWebRequest = CType(WebRequest.Create(RateURL), HttpWebRequest)
+            Dim RateRes As HttpWebResponse = CType(RateReq.GetResponse(), HttpWebResponse)
+            Dim RateStream As New IO.StreamReader(RateRes.GetResponseStream)
+            Dim RateToken As JToken
+            RateResult = RateStream.ReadToEnd
+            If (RateResult = "{}") Then
+                Throw New EventsAndExceptions.JsonNullException(DoTranslation("Either the source ", currentLang) + src3UPchars +
+                                                                DoTranslation(" or destination ", currentLang) + dest3UPchars +
+                                                                DoTranslation(" does not exist on server.", currentLang))
+            End If
+            RateToken = JToken.Parse(RateResult)
+            Dim RateMult As Object = RateToken(src3UPchars + "_" + dest3UPchars)
+            RateMult = RateMult("val").ToString
+            Dim Result As Double = value * CDbl(RateMult)
+            Wln(DoTranslation("{0} to {1}: {2}", currentLang), "neutralText", src3UPchars, dest3UPchars, FormatNumber(Result, 2))
+        Catch ex As Exception
+            If (DebugMode = True) Then
+                Wln(DoTranslation("Error trying to convert from {0} to {1}: {2}", currentLang) + vbNewLine + ex.StackTrace, "neutralText", src3UPchars, dest3UPchars, ex.Message)
+                Wdbg(ex.StackTrace, True)
+            Else
+                Wln(DoTranslation("Error trying to convert from {0} to {1}: {2}", currentLang), "neutralText", src3UPchars, dest3UPchars, ex.Message)
+            End If
+        End Try
+
+    End Sub
+
+    Public Class currencyInfo
+        Public ID As String
+        Public CurrencyName As String
+        Public CountryName As String
+    End Class
+
+    Public Function GetAllCurrencies() As List(Of currencyInfo)
+
+        Dim currList As New List(Of currencyInfo)
+        Try
+            Dim RateResult As String = ""
+            Dim RateURL As String = "http://free.currencyconverterapi.com/api/v5/countries"
+            Dim RateReq As HttpWebRequest = CType(WebRequest.Create(RateURL), HttpWebRequest)
+            Dim RateRes As HttpWebResponse = CType(RateReq.GetResponse(), HttpWebResponse)
+            Dim RateStream As New IO.StreamReader(RateRes.GetResponseStream)
+            Dim RateToken As JToken
+            RateResult = RateStream.ReadToEnd
+            RateToken = JToken.Parse(RateResult)
+            Dim countries As JObject = RateToken.SelectToken("results")
+            For Each country In countries
+                Dim countryKey As String = country.Key
+                Dim countryValue As JObject = country.Value
+                Dim currId As String = countryValue("currencyId").ToString
+                Dim currName As String = countryValue("currencyName").ToString
+                Dim cntryName As String = countryValue("name").ToString
+                currList.Add(New currencyInfo With {.ID = currId, .CurrencyName = currName, .CountryName = cntryName})
+            Next
+        Catch ex As Exception
+            currList.Add(New currencyInfo With {.ID = DoTranslation("Error", currentLang),
+                                                .CurrencyName = DoTranslation("Error", currentLang),
+                                                .CountryName = DoTranslation("Error", currentLang)})
+        End Try
+        Return currList
+
+    End Function
 
 End Module

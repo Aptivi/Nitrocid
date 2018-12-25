@@ -118,7 +118,223 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ManPageExample" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ManPageExample.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="chi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chi.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fre.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ger.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ind" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ind.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ptg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ptg.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="spa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spa.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="eng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eng.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-16</value>
+  </data>
+  <data name="Introduction_to_the_Kernel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - Introduction to the Kernel.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Available_manual_pages" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - Available manual pages.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Available_commands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - Available commands.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="History_of_Kernel_Simulator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - History of Kernel Simulator.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Available_FTP_commands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - Available FTP commands.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Modding_guide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - Modding guide.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___adduser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - adduser.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___alias" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - alias.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___arginj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - arginj.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___calc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - calc.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___cdir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - cdir.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___chdir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - chdir.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___chhostname" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - chhostname.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___chmal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - chmal.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___chmotd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - chmotd.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___chpwd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - chpwd.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___chusrname" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - chusrname.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___cls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - cls.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___debuglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - debuglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___ftp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - ftp.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_changelocaldir_or_cdl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP changelocaldir or cdl.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_changeremotedir_or_cdr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP changeremotedir or cdr.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_connect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP connect.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_currlocaldir_or_pwdl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP currlocaldir or pwdl.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_currremotedir_or_pwdr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP currremotedir or pwdr.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_delete_or_del" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP delete or del.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_disconnect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP disconnect.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_download_or_get" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP download or get.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_listlocal_or_lsl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP listlocal or lsl.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_listremote_or_lsr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP listremote or lsr.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_rename_or_ren" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP rename or ren.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___FTP_upload_or_put" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - FTP upload or put.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___hwprobe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - hwprobe.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - list.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___loadsaver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - loadsaver.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___lockscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - lockscreen.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - logout.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___lscomp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - lscomp.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___lsnet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - lsnet.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___lsnettree" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - lsnettree.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___md" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - md.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___netinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - netinfo.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___noaliases" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - noaliases.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___perm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - perm.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___ping" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - ping.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - rd.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___read" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - read.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___reboot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - reboot.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___reloadconfig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - reloadconfig.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___rmuser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - rmuser.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___savescreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - savescreen.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___scical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - scical.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___setcolors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - setcolors.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___setsaver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - setsaver.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___setthemes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - setthemes.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___showmotd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - showmotd.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___showtd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - showtd.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___showtdzone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - showtdzone.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___shutdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - shutdown.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___sysinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - sysinfo.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___unitconv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - unitconv.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REV_0_0_1___useddeps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - useddeps.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Screensaver_modding_guide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - Screensaver modding guide.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Available_command_line_arguments" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - Available command-line arguments.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Available_kernel_arguments" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - Available kernel arguments.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Configuration_for_your_Kernel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REV-0.0.1 - Configuration for your Kernel.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

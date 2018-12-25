@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:FTP command "rename" or "ren"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+rename or ren FTP command
+
+Summary: Renames the folder or file in the server
+
+Description
+
+You can rename the folder or file in the server when they're named incorrectly in the server. You need to have administrative privileges to run this command.
+
+Command usage
+
+* rename/ren (oldFile) (newFile)
+Examples
+
+* rename shagnhai.png shanghai.png: Renames the file "shagnhai.png" to "shanghai.png"
+* ren citys Cities: Renames the file "citys" to "Cities"
+-BODY END-
+
+-COLOR CONFIGURATION-
+rename/ren (oldFile) (newFile)=>Green
+rename shagnhai.png shanghai.png:=>Yellow
+ren citys Cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rename or ren FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

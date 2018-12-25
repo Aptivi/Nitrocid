@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Shell command "rd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+rd command
+
+Summary: Removes directory from current working directory
+
+Description
+
+This command lets you remove a directory from your current working directory. Currently, all of the kernel folders and files are re-generated everytime you tried to remove kernel folders and files and tried rebooting.
+
+When the real file system is being implemented, it will really remove directories.
+
+Command usage
+
+* rd (directory)
+
+Examples
+
+* rd boot: It removes the boot directory
+-BODY END-
+
+-COLOR CONFIGURATION-
+rd (directory)=>Green
+rd boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

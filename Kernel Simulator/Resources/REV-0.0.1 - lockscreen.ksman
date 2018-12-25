@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell command "lockscreen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lockscreen command
+
+Summary: You can lock the screen with the default screensaver to prevent screen burns
+
+Description
+
+You can lock your screen and show your default screensaver to confirm that you're away and will coma back for an hour or more. It then asks for your password for security.
+
+Command usage
+
+* lockscreen
+-BODY END-
+
+-COLOR CONFIGURATION-
+lockscreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lockscreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

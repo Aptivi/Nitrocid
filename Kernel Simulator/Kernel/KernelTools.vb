@@ -16,9 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module KernelTools
+Imports System.IO
+Imports System.Reflection
+Imports System.Reflection.Assembly
+Imports System.Threading
 
-    'TODO: Move all appropriate kernel tools from their own subs to this sub
+Public Module KernelTools
 
     ''' <summary>
     ''' Indicates that there's something wrong with the kernel.
@@ -37,22 +40,22 @@ Public Module KernelTools
                 If (ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5) Then
                     'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                     'generate a second kernel error stating that there is something wrong with the reboot time.
-                    KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.", CStr(ErrorType))
+                    KernelError(CChar("D"), True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.", currentLang), CStr(ErrorType))
                     StopPanicAndGoToDoublePanic = True
                 ElseIf (ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False) Then
                     'If the error type is unrecoverable, or double, and the rebooting is false where it should
                     'not be false, then it can deal with this issue by enabling reboot.
-                    Wln("[{0}] panic: Reboot enabled due to error level being {0}.", "uncontError", ErrorType)
+                    Wln(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}.", currentLang), "uncontError", ErrorType)
                     Reboot = True
                 End If
                 If (RebootTime > 3600) Then
                     'If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
-                    Wln("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.", "uncontError", ErrorType, CStr(RebootTime))
+                    Wln(DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.", currentLang), "uncontError", ErrorType, CStr(RebootTime))
                     RebootTime = 60
                 End If
             Else
                 'If the error type is other than D/F/C/U/S, then it will generate a second error.
-                KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Error Type {0} invalid.", CStr(ErrorType))
+                KernelError(CChar("D"), True, 5, DoTranslation("DOUBLE PANIC: Error Type {0} invalid.", currentLang), CStr(ErrorType))
                 StopPanicAndGoToDoublePanic = True
             End If
 
@@ -61,55 +64,87 @@ Public Module KernelTools
                 Description = Description.Replace("{" + CStr(v) + "}", Variables(v))
             Next
 
+            'Fire an event
+            EventManager.RaiseKernelError()
+
             'Check error capabilities
             If (Description.Contains("DOUBLE PANIC: ") And ErrorType = "D") Then
                 'If the description has a double panic tag and the error type is Double
-                Wln("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", "uncontError", ErrorType, CStr(Description), CStr(RebootTime))
+                Wln(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, CStr(Description), CStr(RebootTime))
                 If (EnvironmentOSType.Contains("Unix")) Then
-                    Threading.Thread.Sleep(CInt(RebootTime * 1000))
+                    Thread.Sleep(CInt(RebootTime * 1000))
                 Else
                     Sleep(CInt(RebootTime * 1000))
                 End If
-                System.Console.Clear()
-                ResetEverything()
-                Main()
+                PowerManage("reboot")
             ElseIf (StopPanicAndGoToDoublePanic = True) Then
                 'Switch to Double Panic
                 Exit Sub
             ElseIf (ErrorType = "C" And Reboot = True) Then
                 'Check if error is Continuable and reboot is enabled
                 Reboot = False
-                Wln("[{0}] panic: Reboot disabled due to error level being {0}." + vbNewLine + "[{0}] panic: {1} -- Press any key to continue using the kernel.", "contError", ErrorType, CStr(Description))
-                Dim answercontpanic = System.Console.ReadKey.KeyChar
+                Wln(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.", currentLang) + vbNewLine +
+                    DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, CStr(Description))
+                Dim answercontpanic = Console.ReadKey.KeyChar
             ElseIf (ErrorType = "C" And Reboot = False) Then
                 'Check if error is Continuable and reboot is disabled
-                Wln("[{0}] panic: {1} -- Press any key to continue using the kernel.", "contError", ErrorType, CStr(Description))
-                Dim answercontpanic = System.Console.ReadKey.KeyChar
+                EventManager.RaiseContKernelError()
+                Wln(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, CStr(Description))
+                Dim answercontpanic = Console.ReadKey.KeyChar
             ElseIf ((Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C")) Then
                 'If rebooting is disabled and the error type does not equal Double or Continuable
-                Wln("[{0}] panic: {1} -- Press any key to shutdown.", "uncontError", ErrorType, CStr(Description))
-                Dim answerpanic = System.Console.ReadKey.KeyChar
-                Environment.Exit(0)
+                Wln(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown.", currentLang), "uncontError", ErrorType, CStr(Description))
+                Dim answerpanic = Console.ReadKey.KeyChar
+                PowerManage("shutdown")
             Else
                 'Everything else.
-                Wln("[{0}] panic: {1} -- Rebooting in {2} seconds...", "uncontError", ErrorType, CStr(Description), CStr(RebootTime))
+                Wln(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, CStr(Description), CStr(RebootTime))
                 If (EnvironmentOSType.Contains("Unix")) Then
-                    Threading.Thread.Sleep(CInt(RebootTime * 1000))
+                    Thread.Sleep(CInt(RebootTime * 1000))
                 Else
                     Sleep(CInt(RebootTime * 1000))
                 End If
-                System.Console.Clear()
-                ResetEverything()
-                Main()
+                PowerManage("reboot")
             End If
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
-                KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Kernel bug: {0}", Err.Description)
+                KernelError(CChar("D"), True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), Err.Description)
             Else
-                KernelError(CChar("D"), True, 5, "DOUBLE PANIC: Kernel bug: {0}", Err.Description)
+                KernelError(CChar("D"), True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), Err.Description)
             End If
         End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Manage computer's (actually, simulated computer) power
+    ''' </summary>
+    ''' <param name="PowerMode">Whether it would be "shutdown" or "reboot"</param>
+    ''' <remarks></remarks>
+    Public Sub PowerManage(ByVal PowerMode As String)
+
+        Wdbg("Power management has the argument of {0}", PowerMode)
+        If (PowerMode = "shutdown") Then
+            EventManager.RaisePreShutdown()
+            Wln(DoTranslation("Shutting down...", currentLang), "neutralText")
+            KernelTools.ResetEverything()
+            EventManager.RaisePostShutdown()
+
+            'Stop all mods
+            ParseMods(False)
+            Environment.Exit(0)
+        ElseIf (PowerMode = "reboot") Then
+            EventManager.RaisePreReboot()
+            Wln(DoTranslation("Rebooting...", currentLang), "neutralText")
+            KernelTools.ResetEverything()
+            EventManager.RaisePostReboot()
+
+            'Stop all mods
+            ParseMods(False)
+            Console.Clear()
+            Main()
+        End If
 
     End Sub
 
@@ -133,11 +168,11 @@ Public Module KernelTools
         modcmnds.Clear()
         moddefs.Clear()
         scripts.Clear()
-        Wdbg("General variables reset", True)
+        Wdbg("General variables reset")
 
         'Reset users
         UserManagement.resetUsers()
-        Wdbg("User variables reset", True)
+        Wdbg("User variables reset")
 
         'Reset hardware info
         HDDList.Clear()
@@ -148,16 +183,128 @@ Public Module KernelTools
 
         'Release RAM used
         DisposeExit.DisposeAll()
-        Wdbg("Garbage collector finished", True)
+        Wdbg("Garbage collector finished")
 
         'Disable Debugger
         If (DebugMode = True) Then
             DebugMode = False
+            dbgWriter.Close() : dbgWriter.Dispose()
         End If
+
+        'Reset manpages
+        Pages.Clear()
 
         'Close settings
         configReader = New IniFile()
 
     End Sub
+
+    Sub InitEverything()
+
+        'Parse real command-line arguments
+        For Each argu In Environment.GetCommandLineArgs
+            CommandLineArgsParse.parseCMDArguments(argu)
+        Next
+
+        'Check arguments and initialize date and files.
+        If (argsOnBoot = True) Then
+            ArgumentPrompt.PromptArgs()
+            If (argsFlag = True) Then ArgumentParse.ParseArguments()
+        End If
+        If (argsInjected = True) Then
+            ArgumentParse.ParseArguments()
+            answerargs = ""
+            argsInjected = False
+        End If
+        If (TimeDateIsSet = False) Then
+            InitializeTimeDate()
+            TimeDateIsSet = True
+        End If
+        InitializeDirectoryFile.Init()
+
+        'Initialize debugger
+        If (DebugMode = True) And (Not EnvironmentOSType.Contains("Unix")) Then
+            dbgWriter = New StreamWriter(Environ("USERPROFILE") + "\kernelDbg.log", True)
+        ElseIf (DebugMode = True) And (EnvironmentOSType.Contains("Unix")) Then
+            dbgWriter = New StreamWriter(Environ("HOME") + "/kernelDbg.log", True)
+        End If
+        If (DebugMode = True) Then dbgWriter.AutoFlush = True
+
+        'Create config file and then read it
+        Dim pathConfig As String
+        If (EnvironmentOSType.Contains("Unix")) Then
+            pathConfig = Environ("HOME") & "/kernelConfig.ini"
+        Else
+            pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
+        End If
+        If (File.Exists(pathConfig) = True) Then
+            configReader.Load(pathConfig)
+        Else
+            Config.createConfig(False)
+            configReader.Load(pathConfig)
+        End If
+        Config.checkForUpgrade()
+        Config.readImportantConfig()
+        Config.readConfig()
+
+        'Show introduction. Don't remove license.
+        Wln(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), "neutralText", KernelVersion)
+        Wln(vbNewLine + "    Kernel Simulator  Copyright (C) 2018  EoflaOE" + vbNewLine +
+                        "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
+                        "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
+                        "    This is free software, and you are welcome to redistribute it" + vbNewLine +
+                        "    under certain conditions; See COPYING file in source code." + vbNewLine, "license")
+
+
+
+        'Parse current theme string
+        ParseCurrentTheme()
+
+        'Send a message on debugger
+        If (instanceChecked = False) Then MultiInstance()
+        Wdbg("Kernel initialized, version {0}.", KernelVersion)
+
+        'Initialize manual pages
+        For Each titleMan As String In AvailablePages
+            Pages.Add(titleMan, New Manual(titleMan))
+            CheckManual(titleMan)
+        Next
+
+    End Sub
+
+    Sub MultiInstance()
+
+        'Check to see if multiple Kernel Simulator processes are running.
+        Static ksInst As Mutex
+        Dim ksOwner As Boolean
+        ksInst = New Mutex(True, "Kernel Simulator", ksOwner)
+        If (ksOwner = False) Then
+            KernelError(CChar("F"), False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference.", currentLang))
+        End If
+        instanceChecked = True
+
+    End Sub
+
+    Function GetCompileDate() As DateTime
+        'Variables and Constants
+        Const Offset As Integer = 60 : Const LTOff As Integer = 8
+        Dim asmByte(2047) As Byte : Dim asmStream As Stream
+        Dim codePath As Assembly = Assembly.GetExecutingAssembly
+
+        'Get compile date
+        asmStream = New FileStream(Path.GetFullPath(codePath.Location), FileMode.Open, FileAccess.Read)
+        asmStream.Read(asmByte, 0, 2048)
+        If Not asmStream Is Nothing Then asmStream.Close()
+
+        'We are almost there
+        Dim i64 As Integer = BitConverter.ToInt32(asmByte, Offset)
+        Dim compileseconds As Integer = BitConverter.ToInt32(asmByte, i64 + LTOff)
+        Dim dt As New DateTime(1970, 1, 1, 0, 0, 0)
+        dt = dt.AddSeconds(compileseconds)
+        dt = dt.AddHours(TimeZone.CurrentTimeZone.GetUtcOffset(dt).Hours)
+
+        'Now return compile date
+        Return dt
+    End Function
 
 End Module

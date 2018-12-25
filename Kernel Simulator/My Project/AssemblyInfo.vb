@@ -10,8 +10,8 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Kernel Simulator")> 
-<Assembly: AssemblyDescription("Simulates our future kernel.")> 
+<Assembly: AssemblyTitle("Kernel Simulator")>
+<Assembly: AssemblyDescription("Simulates our future kernel. A development version for 1-year anniversary 0.0.6")>
 <Assembly: AssemblyCompany("EoflaOE")> 
 <Assembly: AssemblyProduct("Kernel Simulator")> 
 <Assembly: AssemblyCopyright("Copyright © EoflaOE 2018")> 
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.0.5.8")> 
-<Assembly: AssemblyFileVersion("1.0.5.8")> 
+<Assembly: AssemblyVersion("0.0.5.9")> 
+<Assembly: AssemblyFileVersion("1.0.5.9")> 
 
 <Assembly: NeutralResourcesLanguageAttribute("en-US")> 

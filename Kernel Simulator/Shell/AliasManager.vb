@@ -25,31 +25,31 @@ Public Module AliasManager
 
         If (mode = "add") Then
             If (aliasTBA = cmd) Then
-                Wln("Alias can't be the same name as a command.", "neutralText")
-                Wdbg("({0} = {1}) = true", True, aliasTBA, cmd)
+                Wln(DoTranslation("Alias can't be the same name as a command.", currentLang), "neutralText")
+                Wdbg("({0} = {1}) = true", aliasTBA, cmd)
             ElseIf Not (availableCommands.Contains(cmd)) Then
-                Wln("Command not found to alias to {0}.", "neutralText", aliasTBA)
-                Wdbg("availableCmds.Cont({0}) = false | No aliasing", True, cmd)
+                Wln(DoTranslation("Command not found to alias to {0}.", currentLang), "neutralText", aliasTBA)
+                Wdbg("availableCmds.Cont({0}) = false | No aliasing", cmd)
             ElseIf (forbidden.Contains(cmd)) Then
-                Wln("Aliasing {0} to {1} is forbidden completely.", "neutralText", cmd, aliasTBA)
-                Wdbg("forbid.Cont({0}) = true | No aliasing", True, cmd)
+                Wln(DoTranslation("Aliasing {0} to {1} is forbidden completely.", currentLang), "neutralText", cmd, aliasTBA)
+                Wdbg("forbid.Cont({0}) = true | No aliasing", cmd)
             Else
-                Wdbg("({0} = {1}) = false", True, aliasTBA, cmd)
+                Wdbg("({0} = {1}) = false", aliasTBA, cmd)
                 aliases.Add(aliasTBA, cmd)
-                Wln("You can now run ""{0}"" as a command: ""{1}"".", "neutralText", aliasTBA, cmd)
+                Wln(DoTranslation("You can now run ""{0}"" as a command: ""{1}"".", currentLang), "neutralText", aliasTBA, cmd)
             End If
         ElseIf (mode = "rem") Then
             If (aliases.ContainsKey(aliasTBA)) Then
                 cmd = aliases(aliasTBA)
-                Wdbg("aliases({0}) is found", True, aliasTBA)
+                Wdbg("aliases({0}) is found", aliasTBA)
                 aliases.Remove(aliasTBA)
-                Wln("You can no longer use ""{0}"" as a command ""{1}"".", "neutralText", aliasTBA, cmd)
+                Wln(DoTranslation("You can no longer use ""{0}"" as a command ""{1}"".", currentLang), "neutralText", aliasTBA, cmd)
             Else
-                Wdbg("aliases({0}) is not found", True, aliasTBA)
-                Wln("Alias {0} is not found to be removed.", "neutralText", aliasTBA)
+                Wdbg("aliases({0}) is not found", aliasTBA)
+                Wln(DoTranslation("Alias {0} is not found to be removed.", currentLang), "neutralText", aliasTBA)
             End If
         Else
-            Wln("Invalid mode {0}.", "neutralText", mode)
+            Wln(DoTranslation("Invalid mode {0}.", currentLang), "neutralText", mode)
         End If
 
     End Sub

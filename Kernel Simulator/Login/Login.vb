@@ -30,6 +30,9 @@ Public Module Login
 
     Sub LoginPrompt()
 
+        'Fire event PreLogin
+        EventManager.RaisePreLogin()
+
         'Prompts user to log-in
         If (clsOnLogin = True) Then
             System.Console.Clear()
@@ -37,21 +40,21 @@ Public Module Login
         MOTDMessage = PlaceParse.ProbePlaces(MOTDMessage)
 
         'Generate user list
-        Wln(vbNewLine + "Available usernames: {0}", "neutralText", String.Join(", ", userword.Keys))
+        Wln(vbNewLine + DoTranslation("Available usernames: {0}", currentLang), "neutralText", String.Join(", ", userword.Keys))
 
         'Login process
         If (showMOTD = False) Or (showMOTDOnceFlag = False) Then
-            W(vbNewLine + "Username: ", "input")
+            W(vbNewLine + DoTranslation("Username: ", currentLang), "input")
         ElseIf (showMOTDOnceFlag = True And showMOTD = True) Then
-            W(vbNewLine + MOTDMessage + vbNewLine + vbNewLine + "Username: ", "input")
+            W(vbNewLine + MOTDMessage + vbNewLine + vbNewLine + DoTranslation("Username: ", currentLang), "input")
         End If
         showMOTDOnceFlag = False
         answeruser = System.Console.ReadLine()
         If InStr(CStr(answeruser), " ") > 0 Then
-            Wln("Spaces are not allowed.", "neutralText")
+            Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
             LoginPrompt()
         ElseIf (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-            Wln("Special characters are not allowed.", "neutralText")
+            Wln(DoTranslation("Special characters are not allowed.", currentLang), "neutralText")
             LoginPrompt()
         Else
             showPasswordPrompt(CStr(answeruser))
@@ -68,15 +71,15 @@ Public Module Login
         'Prompts user to enter a user's password
         For Each availableUsers As String In userword.Keys.ToArray
             If availableUsers = answeruser And disabledList(availableUsers) = False Then
-                Wdbg("ASSERT({0} = {1}, {2} = False) = True, True", True, availableUsers, answeruser, disabledList(availableUsers))
+                Wdbg("ASSERT({0} = {1}, {2} = False) = True, True", availableUsers, answeruser, disabledList(availableUsers))
                 DoneFlag = True
                 password = userword.Item(usernamerequested)
                 'Check if there's the password
                 If Not (password = Nothing) Then
-                    W("{0}'s password: ", "input", usernamerequested)
+                    W(DoTranslation("{0}'s password: ", currentLang), "input", usernamerequested)
                     answerpass = System.Console.ReadLine()
                     If InStr(CStr(answerpass), " ") > 0 Then
-                        Wln("Spaces are not allowed.", "neutralText")
+                        Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
                         If (maintenance = False) Then
                             If (LockMode = True) Then
                                 showPasswordPrompt(usernamerequested)
@@ -88,10 +91,14 @@ Public Module Login
                         End If
                     Else
                         If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
-                            Wdbg("ASSERT(Parse({0}, {1})) = True | ASSERT({1} = {2}) = True", True, usernamerequested, password, answerpass)
+                            Wdbg("ASSERT(Parse({0}, {1})) = True | ASSERT({1} = {2}) = True", usernamerequested, password, answerpass)
+                            If (LockMode = True) Then
+                                LockMode = False
+                                EventManager.RaisePostUnlock()
+                            End If
                             signIn(usernamerequested)
                         Else
-                            Wln("Wrong password.", "neutralText")
+                            Wln(DoTranslation("Wrong password.", currentLang), "neutralText")
                             If (maintenance = False) Then
                                 If (LockMode = True) Then
                                     showPasswordPrompt(usernamerequested)
@@ -105,15 +112,20 @@ Public Module Login
                     End If
                 Else
                     'Log-in instantly
+                    If (LockMode = True) Then
+                        LockMode = False
+                        EventManager.RaisePostUnlock()
+                        Exit Sub
+                    End If
                     signIn(usernamerequested)
                 End If
             ElseIf (availableUsers = answeruser And disabledList(availableUsers) = True) Then
-                Wln("User is disabled.", "neutralText")
+                Wln(DoTranslation("User is disabled.", currentLang), "neutralText")
                 LoginPrompt()
             End If
         Next
         If DoneFlag = False Then
-            Wln("Wrong username.", "neutralText")
+            Wln(DoTranslation("Wrong username.", currentLang), "neutralText")
             LoginPrompt()
         End If
 
@@ -127,6 +139,7 @@ Public Module Login
         If LockMode = True Then LockMode = False
         showMOTDOnceFlag = True
         Wln(MAL, "neutralText")
+        EventManager.RaisePostLogin()
         Shell.initializeShell()
 
     End Sub

@@ -32,7 +32,8 @@ Public Module Config
                     New IniKey(ksconf, "Change Root Password", "False"),
                     New IniKey(ksconf, "Set Root Password to", "toor"),
                     New IniKey(ksconf, "Create Demo Account", "True"),
-                    New IniKey(ksconf, "Customized Colors on Boot", "False")))
+                    New IniKey(ksconf, "Customized Colors on Boot", "False"),
+                    New IniKey(ksconf, "Language", "eng")))
 
             'The Colors Section
             ksconf.Sections.Add(
@@ -92,9 +93,9 @@ Public Module Config
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wdbg(ex.StackTrace, True)
-                Wln("There is an error trying to create configuration: {0}." + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
+                Wln(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
             Else
-                Wln("There is an error trying to create configuration.", "neutralText")
+                Wln(DoTranslation("There is an error trying to create configuration.", currentLang), "neutralText")
             End If
             If (CmdArg = True) Then
                 DisposeExit.DisposeAll()
@@ -120,38 +121,39 @@ Public Module Config
             lns = IO.File.ReadAllLines(confPath)
             configUpdater.Load(confPath)
 
-            'If the old Kernel Simulator config pattern has been detected, perform a reset
+            'TODO: Remove checking for old KS layout
             If (lns(0).Contains("Kernel Version = ") And lns(0).Replace("Kernel Version = ", "") <> KernelVersion) Then
                 If (lns.Length > 0) AndAlso (lns(0).StartsWith("Kernel Version = ")) Then
-                    Wdbg("Kernel version upgraded to {0} from {1}", True, KernelVersion, lns(0).Replace("Kernel Version = ", ""))
-                    Wln("An upgrade from {0} to {1} was detected.", "neutralText", lns(0).Replace("Kernel Version = ", ""), KernelVersion)
-                    W("The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings." + vbNewLine + _
-                      "Are you sure that you want to update configuration and restart <y/n>? ", "input", lns(0).Replace("Kernel Version = ", ""))
+                    Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, lns(0).Replace("Kernel Version = ", ""))
+                    Wln(DoTranslation("An upgrade from {0} to {1} was detected.", currentLang), "neutralText", lns(0).Replace("Kernel Version = ", ""), KernelVersion)
+                    W(DoTranslation("The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings.", currentLang) + vbNewLine +
+                      DoTranslation("Are you sure that you want to update configuration and restart <y/n>? ", currentLang), "input", lns(0).Replace("Kernel Version = ", ""))
                     Dim answer As String = Console.ReadKey.KeyChar
                     If (answer = "y") Then
                         Wln(vbNewLine + "Updating configuration file...", "neutralText")
-                        Wdbg("answer ({0} = ""y""", True, answer)
+                        Wdbg("answer ({0} = ""y""", answer)
                         updateConfig()
                     Else
-                        Wdbg("answer ({0} <> ""y""", True, answer)
+                        Wdbg("answer ({0} <> ""y""", answer)
                         DisposeExit.DisposeAll()
                         ResetEverything()
                         Environment.Exit(2)
                     End If
                 End If
             ElseIf configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
-                Wdbg("Kernel version upgraded to {0} from {1}", True, KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
-                Wln("An upgrade from {0} to {1} was detected. Updating configuration...", "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
+                Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
+                Wln(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
                 configUpdater.Sections("Misc").Keys("Kernel Version").Value = KernelVersion
                 configUpdater.Sections("Hardware").Keys("Quiet Probe").Value = "False"
+                configUpdater.Sections("General").Keys("Language").Value = "eng"
                 configUpdater.Save(confPath)
             End If
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wdbg(ex.StackTrace, True)
-                Wln("There is an error trying to update configuration: {0}." + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
+                Wln(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
             Else
-                Wln("There is an error trying to update configuration.", "neutralText")
+                Wln(DoTranslation("There is an error trying to update configuration.", currentLang), "neutralText")
             End If
         End Try
     End Sub
@@ -168,16 +170,20 @@ Public Module Config
 
     Public Sub readImportantConfig()
         Try
+            Dim Lang_TBA As String = configReader.Sections("General").Keys("Language").Value
             If (configReader.Sections("Shell").Keys("Colored Shell").Value = "False") Then
                 TemplateSet.templateSet("LinuxUncolored")
                 ColoredShell = False
             End If
+            If (availableLangs.Contains(Lang_TBA)) Then
+                currentLang = Lang_TBA
+            End If
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wdbg(ex.StackTrace, True)
-                Wln("There is an error trying to read configuration: {0}." + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
+                Wln(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
             Else
-                Wln("There is an error trying to read configuration.", "neutralText")
+                Wln(DoTranslation("There is an error trying to read configuration.", currentLang), "neutralText")
             End If
         End Try
     End Sub
@@ -227,9 +233,9 @@ Public Module Config
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wdbg(ex.StackTrace, True)
-                Wln("There is an error trying to read configuration: {0}." + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
+                Wln(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
             Else
-                Wln("There is an error trying to read configuration.", "neutralText")
+                Wln(DoTranslation("There is an error trying to read configuration.", currentLang), "neutralText")
             End If
         End Try
     End Sub

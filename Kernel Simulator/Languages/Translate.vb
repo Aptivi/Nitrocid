@@ -18,20 +18,80 @@
 
 Public Module Translate
 
-    'This is not final! This is here only for preparation for 0.0.5.9's features.
-    'Files like ger.txt, spa.txt, etc. are only stubs, and are unfinished. 
-    'It does not contain all of the strings, but contains only some strings.
-    'If anyone want to contribute, please feel free to do so.
+    'TODO: Download language files from the Internet (GitHub repo "KSLangs")
+    'TODO: Reformat translation files to look even more elegant, removing unnecessary fixups.
+    'Variables
+    Public availableLangs() As String = {"chi", "eng", "fre", "ger", "ind", "ptg", "spa"}
+    Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
+    Public FixupComplete As Boolean = False
+    Public currentLang As String = "eng" 'Default to English
 
     ''' <summary>
-    ''' We haven't implemented anything yet.
+    ''' Translate string into another language, or to English if the language wasn't specified or if it's invalid.
     ''' </summary>
-    ''' <param name="text">Any string that exists in Kernel Simulator's translation files or mod files</param>
+    ''' <param name="text">Any string that exists in Kernel Simulator's translation files</param>
     ''' <param name="lang">3 letter language</param>
-    ''' <returns></returns>
+    ''' <returns>Translated string</returns>
     ''' <remarks></remarks>
-    Public Function DoTranslation(ByVal text As String, ByVal lang As String) As String
-        Throw New NotImplementedException
+    Public Function DoTranslation(ByVal text As String, Optional ByVal lang As String = "eng") As String
+        'List Fixup
+        If (FixupComplete = False) Then
+            For ind As Integer = 1 To engStrings.Count - 1
+                engStrings(ind) = engStrings(ind).Remove(engStrings(ind).Length - 1)
+            Next
+            FixupComplete = True
+        End If
+
+        'Get language string and translate
+        Dim translatedString As Dictionary(Of String, String)
+        Dim translated As String = ""
+        If availableLangs.Contains(lang) And lang <> "eng" Then
+            translatedString = PrepareDict(lang)
+            For Each StrTran As String In translatedString.Keys
+                If StrTran = text Then
+                    translated = translatedString(text)
+                    Exit For
+                End If
+            Next
+            Return translated
+        ElseIf availableLangs.Contains(lang) And lang = "eng" Then
+            Wdbg("{0} is in language list but it's English", lang)
+            Return text
+        Else
+            Wdbg("{0} isn't in language list", lang)
+            Return text
+        End If
+    End Function
+
+    Private Function PrepareDict(ByVal lang As String) As Dictionary(Of String, String)
+        Dim langStrings As New Dictionary(Of String, String)
+        Dim translated As String = ""
+        Select Case lang
+            Case "chi"
+                translated = My.Resources.chi
+            Case "fre"
+                translated = My.Resources.fre
+            Case "ger"
+                translated = My.Resources.ger
+            Case "ind"
+                translated = My.Resources.ind
+            Case "ptg"
+                translated = My.Resources.ptg
+            Case "spa"
+                translated = My.Resources.spa
+        End Select
+
+        'Convert translated string list to Dictionary
+        Dim translatedLs As List(Of String) = translated.Replace(Chr(13), "").Split(New String() {Chr(10), " <=+=> "}, StringSplitOptions.None).ToList
+        For Each langStr As String In engStrings
+            translatedLs.Remove(langStr)
+        Next
+
+        'Move final translations to dictionary
+        For ind As Integer = 0 To translatedLs.Count - 1
+            langStrings.Add(engStrings(ind), translatedLs(ind))
+        Next
+        Return langStrings
     End Function
 
 End Module

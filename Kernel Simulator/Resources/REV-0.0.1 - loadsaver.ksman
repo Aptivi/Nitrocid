@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Shell command "loadsaver"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+loadsaver command
+
+Summary: You can import your screensaver modfiles before setting them as default.
+
+Description
+
+This command is required as it compiles the contents of your modfile to see if there is any errors.
+
+This command imports your screensaver mod files and puts it to the valid screensaver list if your screensaver doesn't contain any errors from the build system.
+
+You should run this command before setting it as the default screensaver to allow the kernel to save your screen with your custom screensavers.
+
+Command usage
+
+* loadsaver ((ScreenSaverName)SS.m)
+
+Examples
+
+* loadsaver AdvancedMatrixSS.m: It loads AdvancedMatrixSS.m into the screensaver list
+* loadsaver SpaceSS.m: It loads SpaceSS.m into the screensaver list
+-BODY END-
+
+-COLOR CONFIGURATION-
+loadsaver ((ScreenSaverName)SS.m)=>Green
+loadsaver AdvancedMatrixSS.m:=>Yellow
+loadsaver SpaceSS.m:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+loadsaver command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

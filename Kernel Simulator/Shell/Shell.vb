@@ -23,11 +23,11 @@ Public Module Shell
     Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
     Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot", _
-                                            "adduser", "chmotd", "chhostname", "showmotd", "lscomp", "hwprobe", "ping", "lsnet", _
+                                            "adduser", "chmotd", "chhostname", "lscomp", "hwprobe", "ping", "lsnet", _
                                             "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", _
                                             "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical", "unitconv", "md", "rd", _
-                                            "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "showmal", "savescreen", "lockscreen", _
-                                            "setsaver", "loadsaver", "showaliases", "noaliases", "ftp", "useddeps", "usermanual"}
+                                            "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "savescreen", "lockscreen", _
+                                            "setsaver", "loadsaver", "noaliases", "ftp", "useddeps", "usermanual", "currency"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", _
                                      "reloadconfig", "alias", "chmal", "setsaver", "loadsaver"}
     Public modcmnds As New ArrayList
@@ -38,36 +38,76 @@ Public Module Shell
 
     Public Sub initializeShell()
 
+        'Variables
+        Dim Done As Boolean = False
+
         'Initialize Shell
-        Dim DoneFlag As Boolean = False
-        getLine(True)
-        commandPromptWrite()
-        DisposeExit.DisposeAll()
-        If (ColoredShell = True) Then System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
-        strcommand = System.Console.ReadLine()
-        If (aliases.Count - 1 <> -1) Then
-            For Each a As String In aliases.Keys
-                If (strcommand.StartsWith(a)) Then
-                    DoneFlag = True
-                    GetAlias.ExecuteAlias(a)
-                End If
-            Next
-        End If
-        If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
-            If (modcmnds.Count - 1 <> -1) Then
-                For Each c As String In modcmnds
-                    Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
-                    If (Parts(0) = c And strcommand.StartsWith(Parts(0))) Then
-                        DoneFlag = True
-                        GetModCommand.ExecuteModCommand(strcommand)
+        While True
+            Try
+                'Try to probe injected commands
+                Wdbg("Probing injected commands using GetLine(True)...")
+                getLine(True)
+
+                'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes.
+                Console.CursorVisible = True
+
+                'Write a prompt
+                commandPromptWrite()
+                DisposeExit.DisposeAll()
+
+                'Set an input color
+                Wdbg("ColoredShell = {0}", ColoredShell)
+                If (ColoredShell = True) Then System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+
+                'Wait for command
+                EventManager.RaiseShellInitialized()
+                strcommand = System.Console.ReadLine()
+
+                'Fire event of PreRaiseCommand
+                EventManager.RaisePreExecuteCommand()
+
+                'Check for a type of command
+                If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
+                    'Don't make "End If <newline> If" be "ElseIf", or no commands can be run properly.
+                    If (modcmnds.Count - 1 <> -1) Then
+                        Wdbg("Mod commands probing started with {0}", strcommand)
+                        For Each c As String In modcmnds
+                            Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                            If (Parts(0) = c And strcommand.StartsWith(Parts(0))) Then
+                                Done = True
+                                GetModCommand.ExecuteModCommand(strcommand)
+                            End If
+                        Next
                     End If
-                Next
-            End If
-        End If
-        If (DoneFlag = False) Then
-            getLine()
-        End If
-        initializeShell()
+                    If (aliases.Count - 1 <> -1) Then
+                        Wdbg("Aliases probing started with {0}", strcommand)
+                        For Each a As String In aliases.Keys
+                            Wdbg("strcommand, a = {0}, {1}", strcommand, a)
+                            If (strcommand.StartsWith(a)) Then
+                                Done = True
+                                GetAlias.ExecuteAlias(a)
+                            End If
+                        Next
+                    End If
+                    If (Done = False) Then
+                        Wdbg("Executing built-in command")
+                        getLine()
+                    End If
+                End If
+
+                'Fire an event of PostExecuteCommand
+                EventManager.RaisePostExecuteCommand()
+            Catch ex As Exception
+                If (DebugMode = True) Then
+                    Wln(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText",
+                        Err.Number, Err.Description, ex.StackTrace)
+                    Wdbg(ex.StackTrace, True)
+                Else
+                    Wln(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description)
+                End If
+                Continue While
+            End Try
+        End While
 
     End Sub
 
@@ -97,17 +137,17 @@ Public Module Shell
                             cmd = cmd.Substring(0, indexCmd)
                         End If
                         If (adminList(signedinusrnm) = False And strictCmds.Contains(cmd.Substring(0, indexCmd)) = True) Then
-                            Wdbg("Cmd exec {0} failed: adminList.ASSERT(signedinusrnm) = False, strictCmds.Cont({0}.Substr(0, {1})) = True", True, cmd.Substring(0, indexCmd), indexCmd)
-                            Wln("You don't have permission to use {0}", "neutralText", cmd.Substring(0, indexCmd))
+                            Wdbg("Cmd exec {0} failed: adminList.ASSERT(signedinusrnm) = False, strictCmds.Cont({0}.Substr(0, {1})) = True", cmd.Substring(0, indexCmd), indexCmd)
+                            Wln(DoTranslation("You don't have permission to use {0}", currentLang), "neutralText", cmd.Substring(0, indexCmd))
                         ElseIf (maintenance = True And cmd.Contains("logout")) Then
-                            Wdbg("Cmd exec {0} failed: maintenance = True && input.Cont(""logout"") = True", True, cmd.Substring(0, indexCmd), indexCmd)
-                            Wln("Shell message: The requested command {0} is not allowed to run in maintenance mode.", "neutralText", cmd.Substring(0, indexCmd))
+                            Wdbg("Cmd exec {0} failed: maintenance = True && input.Cont(""logout"") = True", cmd.Substring(0, indexCmd), indexCmd)
+                            Wln(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), "neutralText", cmd.Substring(0, indexCmd))
                         ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(cmd.Substring(0, indexCmd)) = True) Or (availableCommands.Contains(cmd.Substring(0, indexCmd))) Then
-                            Wdbg("Cmd exec: {0}", True, cmd.Substring(0, indexCmd))
+                            Wdbg("Cmd exec: {0}", cmd.Substring(0, indexCmd))
                             GetCommand.ExecuteCommand(cmd)
                         Else
-                            Wdbg("Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", True, cmd.Substring(0, indexCmd), indexCmd)
-                            Wln("Shell message: The requested command {0} is not found. See 'help' for available commands.", "neutralText", cmd.Substring(0, indexCmd))
+                            Wdbg("Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", cmd.Substring(0, indexCmd), indexCmd)
+                            Wln(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), "neutralText", cmd.Substring(0, indexCmd))
                         End If
                     Next
                 End If
@@ -122,32 +162,32 @@ Public Module Shell
                     If (availableCommands.Contains(cmd.Substring(0, indexCmd))) Then
                         If Not (cmd = Nothing Or cmd.StartsWith(" ") = True) Then
                             If (adminList(signedinusrnm) = True And strictCmds.Contains(cmd.Substring(0, indexCmd)) = True) Then
-                                Wdbg("Cmd exec: {0}", True, cmd.Substring(0, indexCmd))
+                                Wdbg("Cmd exec: {0}", cmd.Substring(0, indexCmd))
                                 GetCommand.ExecuteCommand(cmd)
                             ElseIf (adminList(signedinusrnm) = False And strictCmds.Contains(cmd.Substring(0, indexCmd)) = True) Then
-                                Wdbg("Cmd exec {0} failed: adminList.ASSERT(signedinusrnm) = False, strictCmds.Cont({0}.Substr(0, {1})) = True", True, cmd.Substring(0, indexCmd), indexCmd)
-                                Wln("You don't have permission to use {0}", "neutralText", cmd.Substring(0, indexCmd))
+                                Wdbg("Cmd exec {0} failed: adminList.ASSERT(signedinusrnm) = False, strictCmds.Cont({0}.Substr(0, {1})) = True", cmd.Substring(0, indexCmd), indexCmd)
+                                Wln(DoTranslation("You don't have permission to use {0}", currentLang), "neutralText", cmd.Substring(0, indexCmd))
                             ElseIf (cmd = "logout" Or cmd = "shutdown" Or cmd = "reboot") Then
-                                Wdbg("Cmd exec {0} failed: {0} = (""logout"" | ""shutdown"" | ""reboot"") = True", True, cmd.Substring(0, indexCmd))
-                                Wln("Shell message: Command {0} is not allowed to run on log in.", "neutralText", cmd)
+                                Wdbg("Cmd exec {0} failed: {0} = (""logout"" | ""shutdown"" | ""reboot"") = True", cmd.Substring(0, indexCmd))
+                                Wln(DoTranslation("Shell message: Command {0} is not allowed to run on log in.", currentLang), "neutralText", cmd)
                             Else
-                                Wdbg("Cmd exec: {0}", True, cmd.Substring(0, indexCmd))
+                                Wdbg("Cmd exec: {0}", cmd.Substring(0, indexCmd))
                                 GetCommand.ExecuteCommand(cmd)
                             End If
                         End If
                     Else
-                        Wdbg("Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", True, cmd.Substring(0, indexCmd), indexCmd)
-                        Wln("Shell message: The requested command {0} is not found.", "neutralText", cmd.Substring(0, cmd.Count - 1))
+                        Wdbg("Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", cmd.Substring(0, indexCmd), indexCmd)
+                        Wln(DoTranslation("Shell message: The requested command {0} is not found.", currentLang), "neutralText", cmd.Substring(0, cmd.Count - 1))
                     End If
                 Next
             End If
         Catch ex As Exception
             If (DebugMode = True) Then
-                Wln("Error trying to execute command." + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText", _
+                Wln(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", "neutralText",
                     Err.Number, Err.Description, ex.StackTrace)
                 Wdbg(ex.StackTrace, True)
             Else
-                Wln("Error trying to execute command." + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description)
+                Wln(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), "neutralText", Err.Number, Err.Description)
             End If
         End Try
 

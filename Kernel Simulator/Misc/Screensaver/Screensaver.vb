@@ -26,37 +26,37 @@ Public Module Screensaver
 
     'Variables and Interface
     Public LockMode As Boolean = False
-    Public defSaverName As String = "matrix" 'Permanent screensavers will be added in 0.0.6. Currently, it has been set to matrix
+    Public defSaverName As String = "matrix" 'TODO: Permanent screensavers will be added in 0.0.6. Currently, it has been set to matrix
     Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"disco", False}}
-    Public WithEvents colorMix As New BackgroundWorker
-    Public WithEvents matrix As New BackgroundWorker
-    Public WithEvents disco As New BackgroundWorker
-    Public WithEvents custom As New BackgroundWorker
+    Public WithEvents ColorMix As New BackgroundWorker
+    Public WithEvents Matrix As New BackgroundWorker
+    Public WithEvents Disco As New BackgroundWorker
+    Public WithEvents Custom As New BackgroundWorker
     Public colors() As ConsoleColor = CType(ConsoleColor.GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
     Private execCustomSaver As CompilerResults
     Private finalSaver As ICustomSaver
     Private DoneFlag As Boolean = False
     Public Interface ICustomSaver
-        Sub initSaver()
-        Sub preDisplay()
-        Sub scrnSaver()
-        Property initialized As Boolean
+        Sub InitSaver()
+        Sub PreDisplay()
+        Sub ScrnSaver()
+        Property Initialized As Boolean
     End Interface
 
-    Sub custom_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles custom.DoWork
+    Sub Custom_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Custom.DoWork
 
         'To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
         '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
         '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
         '                           Substitute: TextWriterColor.W() or TextWriterColor.Wln() with System.Console.WriteLine() or System.Console.Write().
-        finalSaver.preDisplay()
+        finalSaver.PreDisplay()
         Do While True
             If (EnvironmentOSType.Contains("Unix")) Then
                 Thread.Sleep(1)
             Else
                 Sleep(1)
             End If
-            If (custom.CancellationPending = True) Then
+            If (Custom.CancellationPending = True) Then
                 e.Cancel = True
                 Console.Clear()
                 System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
@@ -65,13 +65,13 @@ Public Module Screensaver
                 Console.CursorVisible = True
                 Exit Do
             Else
-                finalSaver.scrnSaver()
+                finalSaver.ScrnSaver()
             End If
         Loop
 
     End Sub
 
-    Sub colorMix_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles colorMix.DoWork
+    Sub ColorMix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles ColorMix.DoWork
 
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.White
@@ -84,7 +84,7 @@ Public Module Screensaver
             Else
                 Sleep(1)
             End If
-            If (colorMix.CancellationPending = True) Then
+            If (ColorMix.CancellationPending = True) Then
                 e.Cancel = True
                 Console.Clear()
                 System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
@@ -99,16 +99,16 @@ Public Module Screensaver
 
     End Sub
 
-    Sub matrix_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles matrix.DoWork
+    Sub Matrix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Matrix.DoWork
 
-        'At this time, the matrix is basic and only prints zeroes and ones. The advanced matrix will be on 0.0.6.
+        'TODO: At this time, the matrix is basic and only prints zeroes and ones. The advanced matrix will be on 0.0.6.
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.Green
         Console.Clear()
         Console.CursorVisible = False
         Dim random As New Random()
         Do While True
-            If (matrix.CancellationPending = True) Then
+            If (Matrix.CancellationPending = True) Then
                 e.Cancel = True
                 Console.Clear()
                 System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
@@ -119,7 +119,7 @@ Public Module Screensaver
             Else
                 If (EnvironmentOSType.Contains("Unix")) Then
                     Thread.Sleep(1)
-                   Else
+                Else
                     Sleep(1)
                 End If
                 Console.Write(CStr(random.Next(2)))
@@ -128,7 +128,7 @@ Public Module Screensaver
 
     End Sub
 
-    Sub disco_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles disco.DoWork
+    Sub Disco_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Disco.DoWork
 
         Console.CursorVisible = False
         Do While True
@@ -138,7 +138,7 @@ Public Module Screensaver
                 Else
                     Sleep(100)
                 End If
-                If (disco.CancellationPending = True) Then
+                If (Disco.CancellationPending = True) Then
                     e.Cancel = True
                     Console.Clear()
                     System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
@@ -157,31 +157,32 @@ Public Module Screensaver
 
     Sub ShowSavers(ByVal saver As String)
 
+        EventManager.RaisePreShowScreensaver()
         If (saver = "colorMix") Then
-            colorMix.WorkerSupportsCancellation = True
-            colorMix.RunWorkerAsync()
+            ColorMix.WorkerSupportsCancellation = True
+            ColorMix.RunWorkerAsync()
             Console.ReadKey()
-            colorMix.CancelAsync()
+            ColorMix.CancelAsync()
             If (EnvironmentOSType.Contains("Unix")) Then
                 Thread.Sleep(50)
             Else
                 Sleep(50)
             End If
         ElseIf (saver = "matrix") Then
-            matrix.WorkerSupportsCancellation = True
-            matrix.RunWorkerAsync()
+            Matrix.WorkerSupportsCancellation = True
+            Matrix.RunWorkerAsync()
             Console.ReadKey()
-            matrix.CancelAsync()
+            Matrix.CancelAsync()
             If (EnvironmentOSType.Contains("Unix")) Then
                 Thread.Sleep(50)
             Else
                 Sleep(50)
             End If
         ElseIf (saver = "disco") Then
-            disco.WorkerSupportsCancellation = True
-            disco.RunWorkerAsync()
+            Disco.WorkerSupportsCancellation = True
+            Disco.RunWorkerAsync()
             Console.ReadKey()
-            disco.CancelAsync()
+            Disco.CancelAsync()
             If (EnvironmentOSType.Contains("Unix")) Then
                 Thread.Sleep(150)
             Else
@@ -189,23 +190,24 @@ Public Module Screensaver
             End If
         ElseIf (ScrnSvrdb.ContainsKey(saver)) Then
             'Only one custom screensaver can be used.
-            custom.WorkerSupportsCancellation = True
-            custom.RunWorkerAsync()
+            Custom.WorkerSupportsCancellation = True
+            Custom.RunWorkerAsync()
             Console.ReadKey()
-            custom.CancelAsync()
+            Custom.CancelAsync()
             If (EnvironmentOSType.Contains("Unix")) Then
                 Thread.Sleep(50)
             Else
                 Sleep(50)
             End If
         Else
-            Wln("The requested screensaver {0} is not found.", "neutralText", saver)
+            Wln(DoTranslation("The requested screensaver {0} is not found.", currentLang), "neutralText", saver)
         End If
+        EventManager.RaisePostShowScreensaver()
 
     End Sub
 
-    'TODO: In the final release of 0.0.5, change so it probes everything on boot
-    Sub compileCustom(ByVal file As String)
+    'TODO: In the release of 0.0.5.10, change so it probes everything on boot
+    Sub CompileCustom(ByVal file As String)
 
         Dim modPath As String
         If (EnvironmentOSType.Contains("Unix")) Then
@@ -218,53 +220,50 @@ Public Module Screensaver
                 modFile = modFile.Replace(modPath, "")
                 If (modFile = file) Then
                     If Not modFile.EndsWith("SS.m") Then
-                        Wdbg("{0} is not a screensaver. A screensaver code should have ""SS.m"" at the end.", True, modFile)
+                        Wdbg("{0} is not a screensaver. A screensaver code should have ""SS.m"" at the end.", modFile)
                     Else
                         finalSaver = GenSaver(IO.File.ReadAllText(modPath + modFile))
                         If (DoneFlag = True) Then
-                            finalSaver.initSaver()
-                            If (finalSaver.initialized = True) Then
+                            finalSaver.InitSaver()
+                            If (finalSaver.Initialized = True) Then
                                 If Not (ScrnSvrdb.ContainsKey(modFile)) Then
-                                    Wln("{0} has been initialized properly.", "neutralText", modFile)
+                                    Wln(DoTranslation("{0} has been initialized properly.", currentLang), "neutralText", modFile)
                                     ScrnSvrdb.Add(modFile, False)
                                 Else
-                                    Wln("{0} already exists.", "neutralText", modFile)
+                                    Wln(DoTranslation("{0} already exists.", currentLang), "neutralText", modFile)
                                 End If
                             Else
-                                Wln("{0} did not initialize. The screensaver code might have experienced an error while initializing.", "neutralText", modFile)
+                                Wln(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), "neutralText", modFile)
                             End If
                         End If
                     End If
                 End If
             Next
         Else
-            Wln("Screensaver {0} does not exist.", "neutralText", file)
+            Wln(DoTranslation("Screensaver {0} does not exist.", currentLang), "neutralText", file)
         End If
 
     End Sub
 
-    Sub setDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
+    Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
 
         If (ScrnSvrdb.ContainsKey(saver)) Then
-
             ScrnSvrdb(defSaverName) = False
             defSaverName = saver
             ScrnSvrdb(saver) = setDef
-            Wln("{0} is set to default screensaver.", "neutralText", saver)
-
+            Wln(DoTranslation("{0} is set to default screensaver.", currentLang), "neutralText", saver)
         Else
-
-            Wln("Screensaver {0} not found in database. Initialize with ""loadsaver {0}"".", "neutralText", saver)
-
+            Wln(DoTranslation("Screensaver {0} not found in database. Initialize with ""loadsaver {0}"".", currentLang), "neutralText", saver)
         End If
 
     End Sub
 
     Function GenSaver(ByVal code As String) As ICustomSaver
         Using provider As New VBCodeProvider()
-            Dim prm As New CompilerParameters()
-            prm.GenerateExecutable = False
-            prm.GenerateInMemory = True
+            Dim prm As New CompilerParameters With {
+                .GenerateExecutable = False,
+                .GenerateInMemory = True
+            }
             prm.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly.Location)
             prm.ReferencedAssemblies.Add("System.dll")
             prm.ReferencedAssemblies.Add("System.Core.dll")
@@ -276,7 +275,7 @@ Public Module Screensaver
             Dim modCode() As String = New String() {"Imports " & namespc & vbNewLine & code}
             execCustomSaver = provider.CompileAssemblyFromSource(prm, modCode)
             If (execCustomSaver.Errors.HasErrors) And (Quiet = False) Then
-                Wln("Screensaver can't be loaded because of the following: ", "neutralText")
+                Wln(DoTranslation("Screensaver can't be loaded because of the following: ", currentLang), "neutralText")
                 For Each errorName In execCustomSaver.Errors
                     Wln(errorName.ToString, "neutralText") : Wdbg(errorName.ToString, True)
                 Next

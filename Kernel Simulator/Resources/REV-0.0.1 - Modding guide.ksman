@@ -1,0 +1,502 @@
+(*MAN START*)
+
+-TITLE:How to make your own mod for the kernel
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+What is the mod for the kernel?
+
+The mod is the source code file that loads on boot, and can add extensions to the kernel, the shell, and everything. It can also respond to events. However, the mod can only have one command, and a command code.
+
+This is useful if you want to add your own extensions to the kernel, like event handlers for the kernel.
+
+Can I make my own screensaver?
+
+Yes, but first check out "usermanual Screensaver modding guide" manual page for instructions on how to add your screensaver.
+
+Basic modding
+
+0. How to make your own mods on Visual Studio 2017?
+
+1. On the Start Page, click on New Project
+2. Click on Empty Project, and name your mod or modpack. Make sure the project directory is set to your KSMods directory in your home folder. When you're finished, click OK.
+3. Right-click on References on the Solution Explorer, and press Add Reference...
+4. Click on the Browse... button, and locate your Kernel Simulator executable file (the file you just ran)
+5. When you click OK on Open File, you will see that your KS executable files is added to the reference list.
+6. Make sure it has the checkbox that is checked on it, and click on OK.
+7. Right-click on the project, not the solution
+8. Change the application type to Class Library
+9. On the Compile section, click on Build Events, then write this on the Post-build event command line:
+   - copy ..\..\ModFile.vb ..\..\..\..\ModFile.m
+   - del /Q *.* (to make sure that there is no dummy DLL files being created as we don't use DLL for mods)
+   - "path\to\Kernel Simulator.exe" testMods ModFile.m
+10. Make sure the post-build event runs only when the build is successful
+11. Save everything by pressing CTRL+S
+12. Expand the References section on the Solution Explorer
+13. Set the Copy Local setting to False as you have the executable so you don't make an extra copy
+14. Right-click on the project, and go to Add > Class
+15. Name your mod, but leave the .vb intact. Your mod name should be the one that is included in the Post-build built event. If your mod name is changed, you must also change the post-build event for the changes to be reflected.
+16. Click Add, and the code will be ready:
+    Public Class ModName
+
+    End Class
+17. Between the Public Class... and the End Class lines, let Visual Studio 2017 know that you're going to create your KS mod by writing: Implements IScript
+18. If you're going to add namespaces, these rules must be met:
+    1) Don't import Kernel_Simulator by itself. KS does that automatically
+    2) When importing modules/classes like TextWriterColor, it's written like this: Imports Kernel_Simulator.TextWriterColor
+19. Define properties for mod information by putting below the Implements IScript:
+    Property Cmd As String Implements IScript.Cmd
+    Property Def As String Implements IScript.Def
+    Property Name As String Implements IScript.Name
+    Property Version As String Implements IScript.Version
+20. Make your start mod sub named StartMod() that implements the IScript.StartMod, by writing:
+    Sub StartMod() Implements IScript.StartMod
+        Cmd = ""         'If you're going to add commands, write your command here.
+        Def = ""         'Explain what is your command and what it's going to do.
+        Name = "ModName" 'Replace ModName with your mod name whatever you like, but it SHOULD reflect the mod purpose. You can also use verbs, adjectives, space galaxy names, and so on. This field is required.
+        Version = "1.0"  'You can specify your mod version, but it should follow the versioning guidelines and you can find it on the Internet. This field is required.
+
+	'Your code below
+    End Sub
+21. Replace every Your code below comment with your code. Repeat this step on all the interface subs
+22. Make your mod stop sub named StopMod() that implements the IScript.StopMod, by writing:
+    Sub StopMod() Implements IScript.StopMod
+        'Your code below
+    End Sub
+23. 1) If you're making your command in your mod, write the response code below:
+       Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	   'Your code below
+       End Sub
+    2) If you're making your command which handles arguments, write the response code below:
+       Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	   If (args = "YourArgHere") Then 'Replace YourArgsHere with your argument set
+	       'Your code below
+           End If
+       End Sub
+    3) If you're making your command which handles subsequent arguments, write the response code below:
+       Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	   Dim splitArgs As String() = args.Split({" "c})
+           If splitArgs.Length > 1 Then
+               If (splitArgs(0) = "Part1" And splitArgs(1) = "Part2") Then 'Replace Part1 with your argument, and Part2 with your argument. You can also replace the splitArgs(0) = "Part1" And splitArgs(1) = "Part2" with your statement
+                   'Your code below
+               Else
+                   'Your argument mismatch code below
+               End If
+           Else
+               'Your code that handles not enough arguments
+           End If
+       End Sub
+24. 1) If you're making your event handler which handles what happened in the kernel, write the handle code below:
+       Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+           If (ev = "EventName") Then 'Replace EventName with events that is found on "usermanual Events for Mod Developers" command
+	       'Your code below
+	   End If
+       End Sub
+    2) If you're handling multiple events, write the handle code below:
+       Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+           If (ev = "EventName") Then 'Replace EventName with events that is found on "usermanual Events for Mod Developers" command
+	       'Your code below
+	   ElseIf (ev = "AnotherEvent") Then ' Replace AnotherEvent with events that is found on "usermanual Events for Mod Developers" command
+               'Your code below
+	   End If
+       End Sub
+    3) IMPORTANT NOTICE! Never try to use infinite loops in handlers unless you're making infinite loops that exits if the specified condition is met, or in the test environment. That will lock the kernel up.
+25. You can make your subs anywhere on the class, but if:
+    1) they're on the different class, press Enter on End Class and make a public new class that stores new subs:
+       Public Class AnotherClass
+	   'Your definitions below, and so your subs, functions, interfaces, etc.
+       End Class
+    2) they're trying to re-initialize the mod by re-calling StartMod(), Try so on your test environment first, then the Production environment if that worked properly.
+    And the following conditions should be met:
+    1) They shouldn't make an infinite loop unless you're making them that exits if specified conditions are met
+    2) They shouldn't try to cause errors with the kernel.
+    3) If you're an exploiter and are making the exploit code for the kernel, do so on your test environment first then the production environment, then make your CVE report so we get attention and fix that quickly.
+    4) If your mod is going to extend the kernel, place your extension codes on separate subs
+    5) Put your sub call on one of the four subs that implements the IScript interface. Ex. If you're going to make a sub that's going to be called on mod start, place your sub call on the StartMod() sub, and then your code on your sub.
+26. Run the build. When the build is successful, ignore the dialog box that appears.
+27. Run your Kernel Simulator you've just referenced to in your project.
+
+1. Hello World on Kernel Start, and Goodbye World on Kernel Stop
+
+Hello World is the popular starting example for all of the programmers. These examples usually start with printing the "Hello World" string to the console output or command prompt. To make your first Hello World mod, follow these steps:
+
+1. Right-click on the project, and go to Add > Class
+2. Name your mod, but leave the .vb intact. Your mod name should be the one that is included in the Post-build built event. If your mod name is changed, you must also change the post-build event for the changes to be reflected.
+3. Click Add, and the code will be ready.
+4. Write below the (Assume that your mod name is HelloGuys) Public Class HelloGuys: Implements IScript
+5. Write above the Public Class HelloGuys:
+   - Imports Kernel_Simulator.ModParser
+   - Imports Kernel_Simulator.TextWriterColor
+6. You should get errors saying that these subs should be created.
+7. Make your start mod event handler by writing:
+    Property Cmd As String Implements IScript.Cmd
+    Property Def As String Implements IScript.Def
+    Property Name As String Implements IScript.Name
+    Property Version As String Implements IScript.Version
+    Sub StartMod() Implements IScript.StartMod
+        Cmd = ""
+        Def = ""
+        Name = "HelloGuys"
+        Version = "1.0"
+        Wln("Hello World", "neutralText")
+    End Sub
+8. Make your stop event handler by writing:
+    Sub StopMod() Implements IScript.StopMod
+        Wln("Goodbye World", "neutralText")
+    End Sub
+9. Since we're not implementing commands nor event responders, we're going to leave these blank:
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+    End Sub
+    Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    End Sub
+10. The code should look like this:
+    Imports Kernel_Simulator.ModParser
+    Imports Kernel_Simulator.TextWriterColor
+    Public Class HelloGuys
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = ""
+            Def = ""
+            Name = "HelloGuys"
+            Version = "1.0"
+            Wln("Hello World", "neutralText")
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+            Wln("Goodbye World", "neutralText")
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+    	End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
+11. Run the build. When the build is successful, ignore the dialog box that appears.
+12. Run your Kernel Simulator you've just referenced to in your project.
+13. If everything goes well, you should see the following messages:
+    mod: Loading mods...
+    Hello World
+    HelloGuys v1.0 started
+
+2. Hello World on command execute
+
+1. Repeat the steps 1-5 on the first example: Hello World on Kernel Start and Goodbye World on Kernel Stop
+2. Make your start mod event handler by writing (assuming that your mod name is HelloShell):
+    Property Cmd As String Implements IScript.Cmd
+    Property Def As String Implements IScript.Def
+    Property Name As String Implements IScript.Name
+    Property Version As String Implements IScript.Version
+    Sub StartMod() Implements IScript.StartMod
+        Cmd = "SayHello"
+        Def = ""
+        Name = "HelloShell"
+        Version = "1.0"
+    End Sub
+3. Since we're not implementing shutdown handler nor event responders, we're going to leave these blank:
+    Sub StopMod() Implements IScript.StopMod
+    End Sub
+    Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    End Sub
+4. Make your command handler, and let it respond to the SayHello mod command:
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	Wln("Hello World", "neutralText")
+    End Sub
+5. The code should look like this:
+    Imports Kernel_Simulator.ModParser
+    Imports Kernel_Simulator.TextWriterColor
+    Public Class HelloShell
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "SayHello"
+            Def = ""
+            Name = "HelloShell"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	    Wln("Hello World", "neutralText")
+    	End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
+6. Repeat the steps 11-12 on the first example: Hello World on Kernel Start and Goodbye World on Kernel Stop
+
+3. Hello World on command execute with arguments (single)
+
+1. Assuming that your mod name is HelloArgs, your argument that will make your command say Hello World is HW, and that your command is SayHello, Repeat the steps 1-3 on the second example: Hello World on command execute
+2. Make your command handler, and let it respond to the SayHello mod command:
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	If (args = "HW") Then
+	    Wln("Hello World", "neutralText")
+	Else
+	    Wln("Make me say Hello by running ""SayHello HW.""", "neutralText")
+	End If
+    End Sub
+3. The code should look like this:
+    Imports Kernel_Simulator.ModParser
+    Imports Kernel_Simulator.TextWriterColor
+    Public Class HelloArgs
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "SayHello"
+            Def = ""
+            Name = "HelloArgs"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	    If (args = "HW") Then
+	    	Wln("Hello World", "neutralText")
+	    Else
+	    	Wln("Make me say Hello by running ""SayHello HW.""", "neutralText")
+	    End If
+        End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
+4. Repeat the last step on the second example: Hello World on command execute
+
+4. Hello World on command execute with multiple arguments
+
+1. Assuming that your mod name is HelloArgs, your argument that will make your command say Hello World is Say Hello, and that your command is WhatDoISay, Repeat the steps 1-3 on the second example: Hello World on command execute
+2. Make your command handler, and let it respond to the WhatDoISay mod command:
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	Dim splitArgs As String() = args.Split({" "c})
+        Dim ArgCount As Integer = 1
+        If splitArgs.Length > 1 Then
+            If (splitArgs(0) = "Say" And splitArgs(1) = "Hello") Then
+                Wln("Hello World", "neutralText")
+            Else
+                Wln("Make me say Hello by running ""WhatDoISay Say Hello.""", "neutralText")
+            End If
+        Else
+            Wln("Make me say Hello by running ""WhatDoISay Say Hello.""", "neutralText")
+        End If
+        For Each arg As String In splitArgs
+            Wln("Argument {0}: {1}", "neutralText", ArgCount, splitArgs(ArgCount - 1))
+            ArgCount += 1
+        Next
+    End Sub
+3. The code should look like this:
+    Imports Kernel_Simulator.ModParser
+    Imports Kernel_Simulator.TextWriterColor
+    Public Class HelloArgs
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "WhatDoISay"
+            Def = ""
+            Name = "HelloArgs"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	    Dim splitArgs As String() = args.Split({" "c})
+            Dim ArgCount As Integer = 1
+            If splitArgs.Length > 1 Then
+            	If (splitArgs(0) = "Say" And splitArgs(1) = "Hello") Then
+                    Wln("Hello World", "neutralText")
+            	Else
+                    Wln("Make me say Hello by running ""WhatDoISay Say Hello.""", "neutralText")
+            	End If
+            Else
+            	Wln("Make me say Hello by running ""WhatDoISay Say Hello.""", "neutralText")
+            End If
+            For Each arg As String In splitArgs
+            	Wln("Argument {0}: {1}", "neutralText", ArgCount, splitArgs(ArgCount - 1))
+            	ArgCount += 1
+            Next
+        End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
+4. Repeat the last step on the second example: Hello World on command execute
+
+5. Network Speed Testing
+
+1. Assuming that your mod name is InternetSpeed, and that your command is getnetspeed, Repeat the steps 1-3 on the second example: Hello World on command execute
+2. Put these namespaces above the file:
+    - Imports System.Net
+    - Imports System.Linq
+    - Imports System.IO
+    - Imports System.Math
+    - Imports Microsoft.VisualBasic.Interaction
+3. Make your command handler:
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+        Dim speeds As Double() = New Double(4) {}
+        For i As Integer = 0 To 4
+            Dim jQueryFileSize As Integer = 261
+            Dim client As New WebClient()
+            Dim startTime As DateTime = DateTime.Now
+            client.DownloadFile("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ("USERPROFILE") + "\jQuery.js")
+            Dim endTime As DateTime = DateTime.Now
+            speeds(i) = Round((jQueryFileSize / (endTime - startTime).TotalSeconds))
+        Next
+        File.Delete(Environ("USERPROFILE") + "\jQuery.js")
+        Wln("Download speed: {0}KB/s", "neutralText", speeds.Average())
+    End Sub
+4. The code should look like this:
+    Imports System.Net
+    Imports System.Linq
+    Imports System.IO
+    Imports System.Math
+    Imports Microsoft.VisualBasic.Interaction
+    Imports Kernel_Simulator.ModParser
+    Imports Kernel_Simulator.TextWriterColor
+    Public Class InternetSpeed
+    	Implements IScript
+    	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "getnetspeed"
+            Def = ""
+            Name = "InternetSpeed"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+            Dim speeds As Double() = New Double(4) {}
+            For i As Integer = 0 To 4
+            	Dim jQueryFileSize As Integer = 261
+            	Dim client As New WebClient()
+            	Dim startTime As Date = Date.Now
+            	client.DownloadFile("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ("USERPROFILE") + "\jQuery.js")
+            	Dim endTime As Date = Date.Now
+            	speeds(i) = Round(jQueryFileSize / (endTime - startTime).TotalSeconds)
+            Next
+            File.Delete(Environ("USERPROFILE") + "\jQuery.js")
+            Wln("Download speed: {0}KB/s", "neutralText", speeds.Average())
+    	End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
+5. Repeat the last step on the second example: Hello World on command execute
+
+More examples
+
+If you want to check out more examples, feel free to check them out in the KSModExamples respository in GitHub.
+
+Sources:
+
+1. https://www.aspsnippets.com/Articles/Check-Internet-Connection-Download-Speed-using-C-and-VBNet-in-ASPNet.aspx
+-BODY END-
+
+-COLOR CONFIGURATION-
+mod=>Green
+New Project=>Cyan
+Empty Project=>Cyan
+References=>Cyan
+Solution Explorer=>DarkGreen
+Add Reference...=>Cyan
+Browse...=>Cyan
+Kernel Simulator=>DarkGreen
+OK=>Cyan
+Open File=>DarkGreen
+KS=>DarkGreen
+OK.=>Cyan
+checked=>Red
+project,=>Green
+solution=>Red
+Class Library=>Cyan
+Compile=>DarkGreen
+Build Events,=>Cyan
+Post-build=>DarkGreen
+copy ..\..\ModFile.vb ..\..\..\..\ModFile.m=>Cyan
+del /Q *.*=>Cyan
+"path\to\Kernel Simulator.exe" testMods ModFile.m=>Cyan
+only=>Red
+CTRL+S=>Cyan
+Copy Local=>Cyan
+False=>Red
+Add=>Cyan
+mod,=>Green
+should=>Red
+Public=>Cyan
+ModName=>DarkGreen
+End=>Cyan
+Class...=>Cyan
+Visual Studio 2017=>Magenta
+Implements=>Cyan
+IScript=>DarkGreen
+Kernel_Simulator=>Cyan
+TextWriterColor=>Green
+Imports=>Cyan
+Kernel_Simulator.TextWriterColor=>DarkGreen
+IScript:=>DarkGreen
+Property As String=>Cyan
+Cmd Def Name Version=>DarkGreen
+IScript.Cmd IScript.Def IScript.Name IScript.Version=>DarkGreen
+StartMod() IScript.StartMod=>DarkGreen
+"" "ModName" "1.0"=>DarkGreen
+Sub=>Cyan
+StopMod() IScript.StopMod=>DarkGreen
+PerformCmd (ByVal String) IScript.PerformCmd=>DarkGreen
+If (args "YourArgHere") Then=>DarkGreen
+Dim String() .Split({" "c})=>Cyan
+splitArgs.Length 1=>DarkGreen
+(splitArgs(0) "Part1" And splitArgs(1) "Part2")=>DarkGreen
+Else=>Red
+(ev "EventName") IScript.InitEvents=>DarkGreen
+ElseIf=>Red
+"AnotherEvent")=>DarkGreen
+IMPORTANT NOTICE! Never=>Red
+subs=>Green
+AnotherClass=>DarkGreen
+Hello World=>Green
+HelloGuys) HelloGuys: HelloGuys=>DarkGreen
+Kernel_Simulator.ModParser=>DarkGreen
+errors=>Red
+"HelloGuys"=>DarkGreen
+"Hello World", "neutralText"=>DarkGreen
+"Goodbye World",=>DarkGreen
+mod: Loading mods...=>Green
+v1.0 started=>Green
+"SayHello" "HelloShell" HelloShell):=>DarkGreen
+"HW")=>DarkGreen
+"Say" "Hello"=>DarkGreen
+"WhatDoISay" "HelloArgs"=>DarkGreen
+"Argument {0}: {1}", "neutralText", ArgCount, splitArgs(ArgCount - 1)=>DarkGreen
+ArgCount + 1=>DarkGreen
+For Each In=>Cyan
+arg splitArgs=>DarkGreen
+Next=>Cyan
+System.Net System.Linq System.IO System.Math Microsoft.VisualBasic.Interaction=>DarkGreen
+"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ("USERPROFILE") "\jQuery.js"=>DarkGreen
+"Download speed: {0}KB/s", speeds.Average()=>DarkGreen
+"getnetspeed" "InternetSpeed" InternetSpeed InternetSpeed, getnetspeed,=>DarkGreen
+KSModExamples GitHub=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the mod for the kernel?=>SE1
+Can I make my own screensaver?=>SE1
+Basic modding=>SE1
+0. How to make your own mods on Visual Studio 2017?=>SE2
+1. Hello World on Kernel Start, and Goodbye World on Kernel Stop=>SE2
+2. Hello World on command execute=>SE2
+3. Hello World on command execute with arguments (single)=>SE2
+4. Hello World on command execute with multiple arguments=>SE2
+5. Network Speed Testing=>SE2
+More examples=>SE1
+Sources:=>SE1
+-SECTIONS END-

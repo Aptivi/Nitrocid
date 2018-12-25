@@ -1,4 +1,4 @@
-﻿
+
 '    Kernel Simulator  Copyright (C) 2018  EoflaOE
 '
 '    This file is part of Kernel Simulator
@@ -28,19 +28,12 @@ Public Module TextWriterColor
     ''' Outputs the text into the debugger file, and sets the time stamp.
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
-    ''' <param name="line">A condition whether it writes a new line or not</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     ''' <remarks></remarks>
-    Public Sub Wdbg(ByVal text As String, ByVal line As Boolean, ByVal ParamArray vars() As Object)
-
+    Public Sub Wdbg(ByVal text As String, ByVal ParamArray vars() As Object)
         If (DebugMode = True) Then
-            If (line = False) Then
-                dbgWriter.Write(FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortDate) + " " + FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortTime) + ": " + text, vars)
-            ElseIf (line = True) Then
-                dbgWriter.WriteLine(FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortDate) + " " + FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortTime) + ": " + text, vars)
-            End If
+            dbgWriter.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + ": " + text, vars)
         End If
-
     End Sub
 
     ''' <summary>

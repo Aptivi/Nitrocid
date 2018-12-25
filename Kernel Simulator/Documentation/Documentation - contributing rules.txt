@@ -48,10 +48,10 @@ If some of the ideas disappeared, then it is either done or cancelled.
 2. GUI Command Prompt
 3. "uiprompt" real command-line argument launches GUI command prompt
 4. Move every single documentation to Wiki in repository (Planned in 0.0.6)
-5. Languages (Delayed to 0.0.5.9)
+5. Translate mod strings using <modname>-<lang>.mlng (0.0.6)
 6. Custom aliases for commands (Perm. in 0.0.6)
-7. Debug everything (0.0.5.9)
-8. Events and Exceptions (0.0.5.9)
-9. A separate program called "Kernel Simulator Manual Studio"
+7. A separate program called "Kernel Simulator Manual Studio"
+8. Custom manpage (0.0.6)
+9. Translated manual pages (0.0.6)
 
 (If you have ideas, edit this section by inserting your idea.)

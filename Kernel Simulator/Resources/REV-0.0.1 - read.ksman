@@ -1,0 +1,35 @@
+(*MAN START*)
+
+-TITLE:Shell command "read"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+read command
+
+Summary: Reads file contents and prints it to the screen
+
+Description
+
+This command lets you see the file contents in your current working directory. You must specify a file in order to read the contents.
+
+Command usage
+
+* read (file)
+
+Examples
+
+* read libuesh: It reads file contents of libuesh
+-BODY END-
+
+-COLOR CONFIGURATION-
+read (file)=>Green
+read libuesh:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+read command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

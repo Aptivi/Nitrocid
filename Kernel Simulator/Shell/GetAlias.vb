@@ -25,4 +25,22 @@ Module GetAlias
 
     End Sub
 
+    Public Sub ListAliases()
+        If (aliases.Count <> 0) Then
+            Dim aliasValues As New ArrayList
+            Dim aliasKeys As New ArrayList
+            For Each a As String In aliases.Values
+                aliasValues.Add(a)
+            Next
+            For Each a As String In aliases.Keys
+                aliasKeys.Add(a)
+            Next
+            For a As Integer = 0 To aliasKeys.Count - 1
+                W("{0}: ", "helpCmd", aliasKeys(a))
+                Wln(aliasValues(a), "helpDef")
+            Next
+        End If
+
+    End Sub
+
 End Module

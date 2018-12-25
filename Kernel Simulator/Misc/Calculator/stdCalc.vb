@@ -42,20 +42,20 @@ Public Module stdCalc
                 Dim finalRes = New DataTable().Compute(finalExp, Nothing)
                 Wln("{0}= {1}", "neutralText", finalExp, FormatNumber(finalRes, 2))
             Else
-                Wln("Usage: calc <expression1> <+|-|*|/|%> <expression2> ...", "neutralText")
+                HelpSystem.ShowHelp("calc")
             End If
         Catch ex As DivideByZeroException
-            Wln("Attempt to divide by zero is not allowed.", "neutralText")
+            Wln(DoTranslation("Attempt to divide by zero is not allowed.", currentLang), "neutralText")
             If (DebugMode = True) Then
                 Wln(ex.StackTrace, "neutralText") : Wdbg(ex.StackTrace, True)
             End If
         Catch ex As OverflowException
-            Wln("There has been a suspected attempt at calculating that resulted in an overflow.", "neutralText")
+            Wln(DoTranslation("There has been a suspected attempt at calculating that resulted in an overflow.", currentLang), "neutralText")
             If (DebugMode = True) Then
                 Wln("Overflow " + ex.StackTrace, "neutralText") : Wdbg("Overflow " + ex.StackTrace, True)
             End If
         Catch ex As Exception
-            Wln("There is an error while calculating: {0}", "neutralText", ex.Message)
+            Wln(DoTranslation("There is an error while calculating: {0}", currentLang), "neutralText", ex.Message)
             If (DebugMode = True) Then
                 Wln(ex.StackTrace, "neutralText") : Wdbg(ex.StackTrace, True)
             End If

@@ -1,0 +1,369 @@
+﻿Available commands: {0} <=+=> Comandos disponíveis: {0}
+Write command: <=+=> Comando de gravação:
+Command injection has been cancelled. <=+=> A injeção de comando foi cancelada.
+Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe' <=+=> Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, 'motd, gpuprobe'
+Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5' <=+=> Comandos separados em 'cmdinject' com dois-pontos com espaços, por exemplo, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Note that the 'debug' argument does not fully cover the kernel. <=+=> Note que o argumento 'debug' não cobre completamente o kernel.
+bargs: The requested argument {0} is not found. <=+=> bargs: O argumento solicitado {0} não foi encontrado.
+bargs: Unrecoverable error in argument:  <=+=> bargs: Erro irrecuperável no argumento:
+Available arguments: {0} <=+=> Argumentos disponíveis: {0}
+Arguments ('help' for help):  <=+=> Argumentos ('help' for help):
+Injected arguments will be scheduled to run at next reboot. <=+=> Argumentos injetados serão agendados para serem executados na próxima reinicialização.
+Argument Injection has been cancelled. <=+=> Injeção de Argumento foi cancelada.
+Error while parsing real command-line arguments: {0} <=+=> Erro ao analisar argumentos de linha de comando reais: {0}
+Invalid color template {0} <=+=> Modelo de cor inválido {0}
+Default <=+=> Padrão
+Custom <=+=> Personalizado
+Cannot change directory to /{0} because that directory leads nowhere. <=+=> Não é possível alterar o diretório para / {0} porque esse diretório não leva a lugar nenhum.
+Kernel process PID: 1 <=+=> Processo de Kernel PID: 1
+Priority: High <=+=> Prioridade: alta
+Importance: High, and shouldn't be killed. <=+=> Importância: alta e não deve ser morta
+Login process PID: 2 <=+=> Processo de login PID: 2
+Priority: Normal <=+=> Prioridade: Normal
+UESH process PID: 3 <=+=> Processo UESH PID: 3
+Importance: Normal. <=+=> Importância: Normal.
+Short For: Unified Eofla SHell  <=+=> Short For: Unified Eofla SHELL
+There is nothing. <=+=> Não há nada.
+hwprobe: Your hardware will be probed. Please wait... <=+=> hwprobe: Seu hardware será testado. Por favor aguarde ...
+hwprobe: Hardware already probed. <=+=> hwprobe: Hardware já testado.
+hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobe: o hardware não é testado. Teste usando 'hwprobe'
+CPU: One or more of the CPU cores failed to be probed. Showing information anyway... <=+=> CPU: Um ou mais núcleos da CPU não puderam ser analisados. Mostrando informações de qualquer maneira ...
+RAM: One or more of the RAM chips failed to be probed. Showing information anyway... <=+=> RAM: Um ou mais dos chips de RAM não foram analisados. Mostrando informações de qualquer maneira ...
+HDD: One or more of the hard drives failed to be probed. Showing information anyway... <=+=> HDD: Um ou mais discos rígidos não foram testados. Mostrando informações de qualquer maneira ...
+GPU: One or more of the graphics card failed to be probed. Showing information anyway... <=+=> GPU: Uma ou mais placas gráficas não foram analisadas. Mostrando informações de qualquer maneira ...
+BIOS: One or more of the BIOS chips failed to be probed. Showing information anyway... <=+=> BIOS: Um ou mais dos chips do BIOS não foram testados. Mostrando informações de qualquer maneira ...
+CPU: Total number of processors: {0} <=+=> CPU: Número total de processadores: {0}
+CPU: {0} {1}MHz <=+=> CPU: {0} {1} MHz
+RAM: {0}MB = {1}MB <=+=> RAM: {0} MB = {1} MB
+RAM: Used slots (by names): {0} <=+=> RAM: Slots usados ​​(por nomes): {0}
+RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> RAM: Slots usados ​​(por números): {0} / {1} ({2}%)
+RAM: Probing status is deprecated and will be removed in future release. <=+=> RAM: O status da pesquisa está obsoleto e será removido no lançamento futuro.
+GPU: No appropriate driver installed. <=+=> GPU: Nenhum driver apropriado instalado.
+GPU: {0} {1}MB <=+=> GPU: {0} {1} MB
+HDD: {0} {1}GB <=+=> HDD: {0} {1} GB
+HDD: {0} {1} {2}GB <=+=> HDD: {0} {1} {2} GB
+HDD: Type: {2} | Status: {3} <=+=> HDD: Tipo: {2} | Status: {3}
+HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} cilindros | {5} cabeças | {6} setores
+hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: A detecção não é suportada porque não foi projetada para executar probers no Unix.
+Enter the admin password for maintenance. <=+=> Digite a senha do administrador para manutenção.
+There is no more users remaining in the list. <=+=> Não há mais usuários restantes na lista.
+Kernel Error while booting: {0} <=+=> Erro de kernel durante a inicialização: {0}
+DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug. <=+=> PAINEL DUPLO: O tempo de reinicialização excede o tempo máximo permitido de reinicialização do erro {0}. Você encontrou um bug do kernel.
+[{0}] panic: Reboot enabled due to error level being {0}. <=+=> [{0}] panic: Reinicialização ativada devido ao nível de erro ser {0}.
+[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute. <=+=> [{0}] panic: Hora de reiniciar: {1} segundos, excede 1 hora. Está definido para 1 minuto.
+DOUBLE PANIC: Error Type {0} invalid. <=+=> PÂNICO DUPLO: Tipo de erro {0} inválido.
+[{0}] dpanic: {1} -- Rebooting in {2} seconds... <=+=> [{0}] dpanic: {1} - Reiniciando em {2} segundos ...
+[{0}] panic: Reboot disabled due to error level being {0}. <=+=> [{0}] pânico: Reinicialização desativada devido ao nível de erro ser {0}.
+[{0}] panic: {1} -- Press any key to continue using the kernel. <=+=> [{0}] panic: {1} - Pressione qualquer tecla para continuar usando o kernel.
+[{0}] panic: {1} -- Press any key to shutdown. <=+=> [{0}] pânico: {1} - Pressione qualquer tecla para desligar.
+[{0}] panic: {1} -- Rebooting in {2} seconds... <=+=> [{0}] panic: {1} - Reiniciando em {2} segundos ...
+DOUBLE PANIC: Kernel bug: {0} <=+=> PANIC DUPLO: Bug do Kernel: {0}
+Shutting down... <=+=> Desligando ...
+Rebooting... <=+=> Reiniciando ...
+---===+++> Welcome to the kernel | Version {0} <+++===--- <=+=> ---===+++> Bem vindo ao kernel | Versão {0} <+++===---
+Another instance of Kernel Simulator is running. Shutting down in case of interference. <=+=> Outra instância do Kernel Simulator está sendo executada. Desligando em caso de interferência.
+The user {0} has been added to the admin list. <=+=> O usuário {0} foi adicionado à lista de administradores.
+The user {0} has been added to the disabled list. <=+=> O usuário {0} foi adicionado à lista desativada.
+Failed to add user into permission lists: invalid type {0} <=+=> Falha ao adicionar usuário nas listas de permissão: tipo inválido {0}
+Failed to add user into permission lists: invalid user {0} <=+=> Falha ao adicionar usuário nas listas de permissão: usuário inválido {0}
+The user {0} has been removed from the admin list. <=+=> O usuário {0} foi removido da lista de administradores.
+The user {0} has been removed from the disabled list. <=+=> O usuário {0} foi removido da lista desativada.
+Failed to remove user from permission lists: invalid type {0} <=+=> Falha ao remover o usuário das listas de permissão: tipo inválido {0}
+You are already logged in. <=+=> Você já está logado.
+Failed to remove user from permission lists: invalid user {0} <=+=> Falha ao remover o usuário das listas de permissão: usuário inválido {0}
+You have found a bug in the permission system: invalid mode {0} <=+=> Você encontrou um bug no sistema de permissões: modo inválido {0}
+You have either found a bug, or the permission you tried to add or remove is already done, or other error. <=+=> Você encontrou um bug ou a permissão que você tentou adicionar ou remover já está concluída ou outro erro.
+Error {0}: {1} <=+=> Erro {0}: {1}
+You have either found a bug, or the permission you tried to edit for a new user has failed. <=+=> Você encontrou um bug ou a permissão que você tentou editar para um novo usuário falhou.
+Available usernames: {0} <=+=> Usernames disponíveis: {0}
+Username:  <=+=> Nome de usuário: 
+Spaces are not allowed. <=+=> Espaços não são permitidos.
+Special characters are not allowed. <=+=> Caracteres especiais não são permitidos.
+{0}'s password:  <=+=> {0} senha: 
+Wrong password. <=+=> Senha incorreta.
+User is disabled. <=+=> O usuário está desativado.
+Wrong username. <=+=> Nome de usuário errado.
+Error trying to parse placeholders. {0} - Stack trace: <=+=> Erro ao tentar analisar marcadores de posição. {0} - rastreamento de pilha:
+Error trying to parse placeholders. {0} <=+=> Erro ao tentar analisar marcadores de posição. {0}
+Error trying to add username. <=+=> Erro ao tentar adicionar o nome de usuário.
+usrmgr: Creating username {0}... <=+=> usrmgr: Criando nome de usuário {0} ...
+Blank username. <=+=> Nome de usuário em branco.
+User {0} not found. <=+=> Usuário {0} não encontrado.
+User {0} isn't allowed to be removed. <=+=> O usuário {0} não pode ser removido.
+User {0} is already logged in. Log-out and log-in as another admin. <=+=> O usuário {0} já está conectado. Efetue logout e login como outro administrador.
+User {0} removed. <=+=> Usuário {0} removido.
+Error trying to remove username. <=+=> Erro ao tentar remover o nome de usuário.
+{0} of {1} = {2} <=+=> {0} de {1} = {2}
+Attempt to divide by zero is not allowed. <=+=> Tentativa de dividir por zero não é permitida.
+There has been a suspected attempt at calculating that resulted in an overflow. <=+=> Houve uma suspeita de tentativa de cálculo que resultou em um estouro.
+There is an error while calculating: {0} <=+=> Há um erro ao calcular: {0}
+{0} cannot be converted to {1}. <=+=> {0} não pode ser convertido para {1}.
+Either the source  <=+=> Ou a fonte 
+ or destination  <=+=>  ou destino 
+ does not exist on server. <=+=>  não existe no servidor.
+{0} to {1}: {2} <=+=> {0} para {1}: {2}
+Error trying to convert from {0} to {1}: {2} <=+=> Erro ao tentar converter de {0} para {1}: {2}
+Error <=+=> Erro
+The requested screensaver {0} is not found. <=+=> O protetor de tela solicitado {0} não foi encontrado.
+{0} has been initialized properly. <=+=> {0} foi inicializado corretamente.
+{0} already exists. <=+=> {0} já existe.
+{0} did not initialize. The screensaver code might have experienced an error while initializing. <=+=> {0} não inicializou. O código do protetor de tela pode ter sofrido um erro durante a inicialização.
+Screensaver {0} does not exist. <=+=> O protetor de tela {0} não existe.
+{0} is set to default screensaver. <=+=> {0} está definido como protetor de tela padrão.
+Screensaver {0} not found in database. Initialize with "loadsaver {0}". <=+=> Protetor de tela {0} não encontrado no banco de dados. Inicialize com "loadsaver {0}".
+Screensaver can't be loaded because of the following:  <=+=> O protetor de tela não pode ser carregado por causa do seguinte: 
+There is a serious error when printing text. <=+=> Há um erro sério ao imprimir texto.
+There is an error trying to create configuration. <=+=> Há um erro ao tentar criar uma configuração.
+There is an error trying to create configuration: {0} <=+=> Há um erro ao tentar criar uma configuração: {0}
+An upgrade from {0} to {1} was detected. <=+=> Uma atualização de {0} para {1} foi detectada.
+The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings. <=+=> A estrutura de configuração para {0} não será compatível com versões anteriores e não funcionará com versões anteriores. A configuração será redefinida para as configurações padrão.
+Are you sure that you want to update configuration and restart <y/n>?  <=+=> Tem certeza de que deseja atualizar a configuração e reiniciar <y/n>?
+Updating configuration file... <=+=> Atualizando o arquivo de configuração ...
+An upgrade from {0} to {1} was detected. Updating configuration... <=+=> Uma atualização de {0} para {1} foi detectada. Atualizando a configuração ...
+There is an error trying to update configuration: {0}. <=+=> Há um erro ao tentar atualizar a configuração: {0}.
+There is an error trying to update configuration. <=+=> Há um erro ao tentar atualizar a configuração.
+There is an error trying to read configuration. <=+=> Há um erro ao tentar ler a configuração.
+There is an error trying to read configuration: {0} <=+=> Há um erro ao tentar ler a configuração: {0}
+Error trying to free RAM: {0} - Continuing... <=+=> Erro ao tentar liberar RAM: {0} - continuando ...
+Mod can't be loaded because of the following:  <=+=> Mod não pode ser carregado por causa do seguinte: 
+mod: Loading mods... <=+=> mod: Carregando mods ...
+mod: Stopping mods... <=+=> mod: Parando mods ...
+Mod {0} does not have the name. Review the source code. <=+=> O mod {0} não possui o nome. Revise o código-fonte.
+Mod {0} does not have the version. <=+=> O mod {0} não possui a versão.
+{0} v{1} started <=+=> {0} v {1} iniciado
+No definition for command {0}. <=+=> Nenhuma definição para o comando {0}.
+Command defined by  <=+=> Comando definido por
+You should disconnect from server before connecting to another server <=+=> Você deve desconectar do servidor antes de se conectar a outro servidor
+Username for {0}:  <=+=> Nome de usuário para {0}: 
+Password for {0}:  <=+=> Senha para {0}: 
+Connected to {0} <=+=> Conectado a {0}
+Error when trying to connect to {0}: {1} <=+=> Erro ao tentar se conectar a {0}: {1}
+Stack Trace: {2} <=+=> Rastreamento de pilha: {2}
+Enter an FTP server that starts with "ftp://" or "ftps://" <=+=> Digite um servidor FTP que comece com "ftp://" ou "ftps://"
+Local directory {0} doesn't exist. <=+=> O diretório local {0} não existe.
+Enter a local directory. ".." to go back. <=+=> Digite um diretório local. ".." voltar.
+Directory {0} not found. <=+=> Diretório {0} não encontrado.
+Enter a remote directory. ".." to go back <=+=> Digite um diretório remoto. ".." para voltar
+You must connect to a server before changing directory <=+=> Você deve se conectar a um servidor antes de alterar o diretório
+Local directory: {0} <=+=> Diretório local: {0}
+Remote directory: {0} <=+=> Diretório remoto: {0}
+You must connect to server before getting current remote directory. <=+=> Você deve se conectar ao servidor antes de obter o diretório remoto atual.
+Deleting file {0}... <=+=> Excluindo o arquivo {0} ...
+Are you sure you want to delete file {0} <y/n>? <=+=> Tem certeza de que deseja excluir o arquivo {0} <y/n>?
+Deleted file {0} <=+=> Arquivo excluído {0}
+You must connect to server with administrative privileges before performing the deletion. <=+=> Você deve se conectar ao servidor com privilégios administrativos antes de executar a exclusão.
+Enter a file to remove. <=+=> Digite um arquivo para remover.
+You must have administrative permissions on your logged in username to be able to remove. <=+=> Você deve ter permissões administrativas no seu nome de usuário logado para poder remover.
+Disconnected from {0} <=+=> Desconectado de {0}
+You haven't connected to any server yet <=+=> Você ainda não se conectou a nenhum servidor
+Downloading file {0}... <=+=> Fazendo o download do arquivo {0} ...
+Hash status: <=+=> Status de hash:
+REMOTE: {0} ({1}) <=+=> REMOTO: {0} ({1})
+Downloaded file {0}. <=+=> Arquivo baixado {0}.
+Download failed for file {0} because the local file is corrupt. <=+=> O download falhou para o arquivo {0} porque o arquivo local está corrompido.
+Downloaded file {0} without checking for sum. This file might be corrupt. <=+=> Arquivo baixado {0} sem verificar a soma. Este arquivo pode estar corrompido
+You must connect to server before performing transmission. <=+=> Você deve se conectar ao servidor antes de realizar a transmissão.
+Enter a file to download to local directory. <=+=> Digite um arquivo para baixar no diretório local.
+{0} | Modified in: {1} <=+=> {0} | Modificado em: {1}
+You should connect to server before listing all remote files. <=+=> Você deve se conectar ao servidor antes de listar todos os arquivos remotos.
+Renaming file {0} to {1}... <=+=> Renomeando o arquivo {0} para {1} ...
+Renamed successfully <=+=> Renomeado com sucesso
+Enter a file and the new file name. <=+=> Digite um arquivo e o novo nome de arquivo.
+Uploading file {0}... <=+=> Fazendo upload do arquivo {0} ...
+Uploaded file {0} <=+=> Arquivo enviado {0}
+Enter a file to upload to remote directory. upload <file> <directory> <=+=> Digite um arquivo para fazer o upload para o diretório remoto. upload <arquivo> <diretório>
+Error trying to execute FTP command  <=+=> Erro ao tentar executar o comando FTP
+(Inner: <=+=> (Interno:
+{0} folders, {1} files <=+=> {0} pastas, {1} arquivos
+(Access Denied) <=+=> (Acesso Negado)
+{0} KB, Created in {1} {2}, Modified in {3} {4} <=+=> {0} KB, Criado em {1} {2}, Modificado em {3} {4}
+Gets current local directory <=+=> Obtém o diretório local atual
+Gets current remote directory <=+=> Obtém o diretório remoto atual
+Connects to an FTP server (it must start with "ftp://" or "ftps://") <=+=> Conecta-se a um servidor FTP (deve começar com "ftp: //" ou "ftps: //")
+Changes local directory to download to or upload from <=+=> Altera o diretório local para download ou upload de
+Changes remote directory to download from or upload to <=+=> Altera o diretório remoto para download ou upload para
+Deletes remote file from server <=+=> Exclui o arquivo remoto do servidor
+Disconnects from server <=+=> Desconecta do servidor
+Downloads remote file to local directory using binary or text <=+=> Faz o download do arquivo remoto para o diretório local usando binário ou texto
+Exits FTP shell and returns to kernel <=+=> Sai do shell FTP e retorna ao kernel
+Shows help screen <=+=> Mostra a tela de ajuda
+Lists local directory <=+=> Lista o diretório local
+Lists remote directory <=+=> Lista o diretório remoto
+Renames specific file or directory <=+=> Renomeia um arquivo ou diretório específico
+Uploads local file to remote directory using binary or text <=+=> Carrega arquivo local para o diretório remoto usando binário ou texto
+There was an error in the FTP shell. <=+=> Houve um erro no shell do FTP.
+FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell. <=+=> Mensagem de FTP: O comando solicitado {0} não foi encontrado. Veja 'help' para uma lista de comandos disponíveis especificados no shell do FTP.
+net: Got response from {0} in {1} ms <=+=> net: Resposta de {0} em {1} ms
+Timed out, disconnected, or server offline. <=+=> Tempo limite esgotado, desconectado ou servidor off-line.
+net: Your computer name on network is {0} <=+=> net: O nome do seu computador na rede é {0}
+net: Your host name is {1} <=+=> net: Seu nome de host é {1}
+net: It appears that computers are in the domain or workgroup: <=+=> net: Parece que os computadores estão no domínio ou grupo de trabalho:
+net: WiFi or Ethernet is disconnected. <=+=> net: WiFi ou Ethernet está desconectado.
+net: It appears that computers are connected below: <=+=> net: Parece que os computadores estão conectados abaixo:
+net: Router Address: {0} <=+=> net: Endereço do roteador: {0}
+Failed to get properties for adapter {0} <=+=> Falha ao obter propriedades para o adaptador {0}
+Adapter Number: <=+=> Número do Adaptador:
+Adapter Name: <=+=> Nome do Adaptador:
+Maximum Transmission Unit: {2} Units <=+=> Unidade Máxima de Transmissão: {2} Unidades
+DHCP Enabled: <=+=> DHCP ativado:
+Non-unicast packets: <=+=> Pacotes não unicast:
+Unicast packets: <=+=> Pacotes de unicast:
+Error incoming/outgoing packets: <=+=> Erro de entrada/saída de pacotes:
+Alias can't be the same name as a command. <=+=> O alias não pode ser o mesmo nome de um comando.
+Command not found to alias to {0}. <=+=> Comando não encontrado para alias para {0}.
+Aliasing {0} to {1} is forbidden completely. <=+=> Aliasing {0} para {1} é proibido completamente.
+You can now run "{0}" as a command: "{1}". <=+=> Agora você pode executar "{0}" como um comando: "{1}".
+You can no longer use "{0}" as a command "{1}". <=+=> Você não pode mais usar "{0}" como um comando "{1}".
+Alias {0} is not found to be removed. <=+=> O alias {0} não foi encontrado para ser removido
+Invalid mode {0}. <=+=> Modo inválido {0}.
+Injected arguments, {0}, will be scheduled to run at next reboot. <=+=> Argumentos injetados, {0}, serão agendados para serem executados na próxima reinicialização.
+There was not enough arguments. See below for usage: <=+=> Não houve argumentos suficientes. Veja abaixo para uso:
+Current directory: {0} <=+=> Diretório atual: {0}
+Directory {0} not found <=+=> Diretório {0} não encontrado
+Blank host name. <=+=> Nome do host em branco.
+Changing from: {0} to {1}... <=+=> Alterando de: {0} para {1} ...
+Blank message of the day. <=+=> Mensagem em branco do dia.
+Blank MAL After Login. <=+=> MAL em branco após o login.
+Changing MAL from {0} to {1}... <=+=> Mudando o MAL de {0} para {1} ...
+Choice command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> O comando de escolha está obsoleto e será removido no lançamento futuro até que o shell interativo seja implementado. Seja como for, é inútil para shells não interativos.
+Choice {0} selected. <=+=> Escolha {0} selecionada.
+Choice has been cancelled. <=+=> A escolha foi cancelada.
+Wrong user password. <=+=> Senha incorreta do usuário.
+Passwords doesn't match. <=+=> Senhas não coincidem.
+Username has been changed to {0}! <=+=> O nome de usuário foi alterado para {0}!
+The new name you entered is already found. <=+=> O novo nome que você digitou já foi encontrado.
+Echo command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> O comando Echo foi descontinuado e será removido no release futuro até que o shell interativo seja implementado. Seja como for, é inútil para shells não interativos.
+Listing PCs is not supported yet on Unix. <=+=> A listagem de PCs ainda não é suportada no Unix.
+Aliases that are forbidden: {0} <=+=> Apelidos que são proibidos: {0}
+PanicSim command is deprecated and will be removed in future release until the interactive shell has been implemented. It increases abuse for Kernel Error. <=+=> O comando PanicSim está obsoleto e será removido no lançamento futuro até que o shell interativo seja implementado. Aumenta o abuso do erro do kernel.
+{0} is not found. <=+=> {0} não foi encontrado.
+Configuration reloaded. You might need to reboot the kernel for some changes to take effect. <=+=> Configuração recarregada. Pode ser necessário reinicializar o kernel para que algumas alterações entrem em vigor.
+Everything is reset to normal settings. <=+=> Tudo é redefinido para as configurações normais.
+One or more of the colors is invalid. <=+=> Uma ou mais cores são inválidas.
+Colors are not available. Turn on colored shell in the kernel config. <=+=> Cores não estão disponíveis. Ative o shell colorido na configuração do kernel.
+Screensaver {0} not found. <=+=> Protetor de tela {0} não encontrado.
+{0}[ Kernel settings ] <=+=> {0}[ Configurações do kernel ]
+Kernel Version: <=+=> Versão do Kernel:
+Debug Mode: <=+=> Modo de Depuração:
+Colored Shell: <=+=> Concha Colorida:
+Arguments on Boot: <=+=> Argumentos na inicialização:
+Help command simplified: <=+=> Comando de ajuda simplificado:
+MOTD on Login: <=+=> MOTD no Login:
+Time/Date on corner: <=+=> Hora/Data no canto:
+Hardware probed: <=+=> Hardware testado:
+Current theme: <=+=> Tema atual:
+[ Hardware settings ]{0} <=+=> [ Configurações de hardware ]{0}
+{0}[ User settings ] <=+=> {0}[ Configurações do usuário ]
+Current user name: <=+=> Nome de usuário atual:
+Current host name: <=+=> Nome do host atual:
+Available usernames: <=+=> Usernames disponíveis:
+Computer host name: <=+=> Nome do host do computador:
+{0}[ Messages Settings ] <=+=> {0}[ Configurações de Mensagens ]
+Source code: <=+=> Código fonte:
+Copyright (c) <=+=> Copyright (c)
+License <=+=> Licença
+present <=+=> presente
+Error trying to execute command <=+=> Erro ao tentar executar o comando
+Adds users (Only admins can access this command) <=+=> Adiciona usuários (Somente administradores podem acessar este comando)
+Adds aliases to commands (Only admins can access this command) <=+=> Adiciona aliases aos comandos (somente administradores podem acessar este comando)
+Injects arguments to the kernel (reboot required, admins only) <=+=> Injeta argumentos para o kernel (reinicialização necessária, somente administradores)
+Simple calculator <=+=> Calculadora simples
+Shows current directory <=+=> Mostra o diretório atual
+Changes directory <=+=> Muda o diretório
+Changes host name (Admins only) <=+=> Altera o nome do host (somente administradores)
+Changes MAL, the MOTD After Login (Admins only) <=+=> MAL muda, o MOTD após o login (somente administradores)
+Changes MOTD, the Message Of The Day (Admins only) <=+=> Muda o MOTD, a mensagem do dia (somente administradores)
+Changes password for current user <=+=> Altera a senha do usuário atual
+Changes user name (Admins Only) <=+=> Altera o nome de usuário (somente administradores)
+Makes user choices <=+=> Faz escolhas do usuário
+Clears the screen <=+=> Limpa a tela
+Convert currency <=+=> Converter moeda
+Shows debug logs (Admins Only) <=+=> Mostra logs de depuração (somente administradores)
+Writes a text into a console <=+=> Escreve um texto em um console
+Use an FTP shell to interact with servers <=+=> Use um shell de FTP para interagir com os servidores
+Help page <=+=> Página de ajuda
+Probe hardware manually (One time in 'nohwprobe' kernel) <=+=> Analisar hardware manualmente (uma vez no kernel 'nohwprobe')
+List file/folder contents in current folder <=+=> Listar o conteúdo do arquivo / pasta na pasta atual
+Loads screensaver file in %USERPROFILE%\KSMods <=+=> Carrega o arquivo do protetor de tela em %USERPROFILE%\KSMods
+Locks your screen with a password <=+=> Bloqueia sua tela com uma senha
+Logs you out <=+=> Faz o logout
+Lists all network devices who is online (and offline in domains) <=+=> Lista todos os dispositivos de rede que estão on-line (e off-line em domínios)
+Lists all network addresses on host <=+=> Lista todos os endereços de rede no host
+Lists all network addresses on host using the tree <=+=> Lista todos os endereços de rede no host usando a árvore
+Creates a directory <=+=> Cria um diretório
+Lists information about all available interfaces <=+=> Lista informações sobre todas as interfaces disponíveis
+Shows forbidden list of aliases <=+=> Mostra lista proibida de aliases
+Kernel Panic Simulator (real) <=+=> Kernel Panic Simulator (real)
+Manage permissions for users (Only admins can access this command) <=+=> Gerenciar permissões para usuários (somente administradores podem acessar este comando)
+Check to see if specified address is available <=+=> Verifique se o endereço especificado está disponível
+Writes file contents to the console <=+=> Grava o conteúdo do arquivo no console
+Restarts your computer (WARNING: No syncing, because it is not a final kernel) <=+=> Reinicia o seu computador (ATENÇÃO: Sem sincronização, porque não é um kernel final)
+Reloads configuration file that is edited. <=+=> Recarrega o arquivo de configuração editado.
+Removes a directory <=+=> Remove um diretório
+Removes a user from the list (Admins Only) <=+=> Remove um usuário da lista (somente administradores)
+Saves your screen from burn outs <=+=> Salva sua tela de queimaduras
+Scientific calculator. The unit converter is separated to another command <=+=> Calculadora científica. O conversor da unidade é separado para outro comando
+Sets up kernel colors <=+=> Configura as cores do kernel
+Sets up kernel screensavers <=+=> Configura screensavers do kernel
+Sets up kernel themes <=+=> Configura temas do kernel
+Shows aliases <=+=> Mostra aliases
+Shows MOTD after login set by user or kernel <=+=> Mostra MOTD após o login definido pelo usuário ou kernel
+Shows message of the day set by user or kernel <=+=> Mostra a mensagem do dia definida pelo usuário ou kernel
+Shows date and time <=+=> Mostra data e hora
+Shows date and time in zones <=+=> Mostra a data e a hora nas zonas
+The kernel will be shut down <=+=> O kernel será desligado
+System information <=+=> Informação do sistema
+Unit converter that is separated from scicalc. <=+=> Conversor de unidades separado do scicalc.
+Shows used open source dependencies <=+=> Mostra dependências de código aberto usadas
+A very descriptive user manual. <=+=> Um manual do usuário muito descritivo.
+* You can use multiple commands using the colon between commands. <=+=> * Você pode usar vários comandos usando os dois pontos entre os comandos.
+Available commands:  <=+=> Comandos disponíveis: 
+Mod commands:  <=+=> Comandos Mod: 
+Aliases to commands:  <=+=> Aliases para comandos: 
+Usage: <=+=> Uso:
+Arguments separated by commas <=+=> Argumentos separados por vírgulas
+where arguments will be {0} <=+=> onde os argumentos serão {0}
+to get current directory <=+=> para obter o diretório atual
+In which source and destination is a 3 UPPERCASE characters of an exchange rate <=+=> Em qual origem e destino são 3 caracteres maiúsculos de uma taxa de câmbio
+List of all IDs and names: <=+=> Lista de todos os IDs e nomes:
+Shows you debug logs so you can send the log to us. <=+=> Mostra os registros de depuração para que você possa enviar o registro para nós.
+Initializes the FTP shell. <=+=> Inicializa o shell do FTP.
+Probes hardware (Only works when the hardware is not probed and hwprobe is not executed). <=+=> Detecta hardware (funciona apenas quando o hardware não é testado e o hwprobe não é executado).
+Lists network information, as well as every computer connected to a network. <=+=> Lista informações de rede, bem como todos os computadores conectados a uma rede.
+Friends of <=+=> Amigos de
+Lists network information, as well as every computer connected to a network, in a tree form. <=+=> Lista informações de rede, bem como todos os computadores conectados a uma rede, em forma de árvore.
+Lists network information, as well as every computer. <=+=> Lista informações de rede, bem como todos os computadores.
+where modnameSS.m will be <=+=> onde modnameSS.m será
+Locks your screen with the password. <=+=> Bloqueia sua tela com a senha.
+Logs you out of the user. <=+=> Logs você fora do usuário.
+Get every network information <=+=> Obter todas as informações da rede
+Restarts your simulated computer. <=+=> Reinicia o seu computador simulado.
+Reloads the configuration that is changed by the end-user or by tool. <=+=> Recarrega a configuração que é alterada pelo usuário final ou pela ferramenta.
+Colors doesn't require a restart, but most of the settings require you to restart. <=+=> As cores não exigem reinicialização, mas a maioria das configurações exige que você reinicie.
+shows you a selected screensaver, while protecting your screen from burn outs. <=+=> mostra um protetor de tela selecionado, enquanto protege sua tela contra queimaduras.
+Shows the date and time. <=+=> Mostra a data e a hora.
+Shows the date and time in zones. <=+=> Mostra a data e a hora nas zonas.
+Shuts down your simulated computer. <=+=> Desliga o seu computador simulado.
+Shows system information and versions. <=+=> Mostra informações e versões do sistema.
+Shows open source libraries used <=+=> Mostra bibliotecas de código aberto usadas
+There was an error in the shell. <=+=> Houve um erro no shell.
+You don't have permission to use {0} <=+=> Você não tem permissão para usar {0}
+Shell message: The requested command {0} is not allowed to run in maintenance mode. <=+=> Mensagem do shell: O comando solicitado {0} não pode ser executado no modo de manutenção.
+Shell message: The requested command {0} is not found. See 'help' for available commands. <=+=> Mensagem do shell: O comando solicitado {0} não foi encontrado. Veja 'help' para os comandos disponíveis.
+Shell message: Command {0} is not allowed to run on log in. <=+=> Mensagem do shell: O comando {0} não pode ser executado no log in.
+Shell message: The requested command {0} is not found. <=+=> Mensagem do shell: O comando solicitado {0} não foi encontrado.
+Error trying to execute command. <=+=> Erro ao tentar executar o comando.
+datetime: Time is {0} <=+=> datetime: o tempo é {0}
+datetime: Today is {0} <=+=> datetime: Hoje é {0}
+datetime: Time Zone: {0} <=+=> datetime: fuso horário: {0}
+- Time of {0}: {1} <=+=> - Tempo de {0}: {1}
+to clear screen. <=+=> para limpar a tela.
+It seems that the manual page {0} is not found. <=+=> Parece que a página de manual {0} não foi encontrada.
+There is an error when trying to load the manual page {0} becuase {1}. <=+=> Há um erro ao tentar carregar a página de manual {0} porque {1}.
+This manual page is incomplete for the following reasons: <=+=> Esta página de manual está incompleta pelos seguintes motivos:
+Press any key to continue... <=+=> Pressione qualquer tecla para continuar...
+ | {0} words | Revision v{1} | {2} sections <=+=>  | {0} palavras | Revisão v{1} | {2} seções
+This manual page title is not written <=+=> Este título da página de manual não está escrito
+This manual page ({0}) does not contain any body text. Deleting page... <=+=> Esta página de manual ({0}) não contém nenhum texto do corpo. Excluindo a página ...
+This manual page ({0}) does not contain any section. Deleting page... <=+=> Esta página de manual ({0}) não contém nenhuma seção. Excluindo a página ...
+You tried to view a manual page with the debugging feature enabled. This may cause significant performance impacts depending on the system. Please press any key to continue, accepting the risks of performance impact. <=+=> Você tentou visualizar uma página de manual com o recurso de depuração ativado. Isso pode causar impactos significativos no desempenho, dependendo do sistema. Por favor, pressione qualquer tecla para continuar, aceitando os riscos de impacto no desempenho.

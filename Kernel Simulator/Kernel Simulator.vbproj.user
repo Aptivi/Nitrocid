@@ -12,6 +12,11 @@
     <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup>
-    <ReferencePath>C:\Documents and Settings\Eofla\My Documents\Visual Studio 2010\Projects\Kernel Simulator\Kernel Simulator\Referenced Assemblies\</ReferencePath>
+    <ReferencePath>
+    </ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>
+    </StartArguments>
   </PropertyGroup>
 </Project>

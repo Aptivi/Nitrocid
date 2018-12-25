@@ -21,49 +21,27 @@ Public Module ListFolders
     Public AvailableDirs As New List(Of String)
 
     Public Sub list(ByVal folder As String)
-
         If (folder = "bin" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "bin") Then
-
             Wln(String.Join("* ", availableCommands) + "*", "neutralText")
-
         ElseIf (folder = "boot" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "boot") Then
-
             Wln("loader~", "neutralText")
-
         ElseIf (folder = "dev" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "dev") Then
-
             Wln("{0}hdpack", "neutralText", slotsUsedName)
-
         ElseIf (folder = "etc" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "etc") Then
-
-            Wln("There is nothing.", "neutralText")
-
+            Wln(DoTranslation("There is nothing.", currentLang), "neutralText")
         ElseIf (folder = "lib" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "lib") Then
-
             Wln("libuesh.elb", "neutralText")
-
         ElseIf (folder = "proc" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "proc") Then
-
             Wln("kernel~ login~ uesh~", "neutralText")
-
         ElseIf (folder = "usr" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "usr") Then
-
-            Wln("There is nothing.", "neutralText")
-
+            Wln(DoTranslation("There is nothing.", currentLang), "neutralText")
         ElseIf (folder = "var" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "var") Then
-
-            Wln("There is nothing.", "neutralText")
-
+            Wln(DoTranslation("There is nothing.", currentLang), "neutralText")
         ElseIf (folder = ".." Or folder = "/") Then
-
             Wln(String.Join(", ", AvailableDirs), "neutralText")
-
         Else
-
-            Wln("There is nothing.", "neutralText")
-
+            Wln(DoTranslation("There is nothing.", currentLang), "neutralText")
         End If
-
     End Sub
 
 End Module

@@ -1,4 +1,4 @@
-﻿
+
 '    Kernel Simulator  Copyright (C) 2018  EoflaOE
 '
 '    This file is part of Kernel Simulator
@@ -16,7 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
 Imports System.IO
 
 Public Module GetCommand
@@ -29,6 +28,7 @@ Public Module GetCommand
         Dim strArgs As String = requestedCommand.Substring(index)
         If Not (index = requestedCommand.Length) Then strArgs = strArgs.Substring(1)
         Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+        Dim Done As Boolean = False
         Try
             If (requestedCommand.Substring(0, index) = "help") Then
 
@@ -41,17 +41,15 @@ Public Module GetCommand
                         HelpSystem.ShowHelp(words(0))
                     End If
                 End If
+                Done = True
 
             ElseIf (requestedCommand.Substring(0, index) = "adduser") Then
 
                 If (requestedCommand <> "adduser") Then
                     If (args.Count - 1 = 2) Then
                         adduser(args(0), args(1))
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "alias") Then
@@ -60,20 +58,14 @@ Public Module GetCommand
                     If (args.Count - 1 > 1) Then
                         If (args(0) = "add") Then
                             manageAlias(args(0), args(1), args(2))
-                        Else
-                            HelpSystem.ShowHelp(words(0))
+                            Done = True
                         End If
                     ElseIf (args.Count - 1 = 1) Then
                         If (args(0) = "rem") Then
                             manageAlias(args(0), args(1))
-                        Else
-                            HelpSystem.ShowHelp(words(0))
+                            Done = True
                         End If
-                    Else
-                        HelpSystem.ShowHelp(words(0))
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "arginj") Then
@@ -83,12 +75,9 @@ Public Module GetCommand
                     If (args.Count - 1 >= 0) Then
                         answerargs = String.Join(",", args)
                         argsInjected = True
-                        Wln("Injected arguments, {0}, will be scheduled to run at next reboot.", "neutralText", answerargs)
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Wln(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot.", currentLang), "neutralText", answerargs)
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "calc") Then
@@ -96,17 +85,15 @@ Public Module GetCommand
                 If (requestedCommand <> "calc") Then
                     If (args.Count - 1 > 1) Then
                         stdCalc.expressionCalculate(args)
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand = "cdir") Then
 
                 'Current directory
-                Wln("Current directory: {0}", "neutralText", currDir)
+                Wln(DoTranslation("Current directory: {0}", currentLang), "neutralText", currDir)
+                Done = True
 
             ElseIf (requestedCommand.Substring(0, index) = "chdir") Then
 
@@ -116,10 +103,9 @@ Public Module GetCommand
                     ElseIf (args(0) = "..") Then
                         CurrentDir.setCurrDir("")
                     Else
-                        Wln("Directory {0} not found", "neutralText", args(0))
+                        Wln(DoTranslation("Directory {0} not found", currentLang), "neutralText", args(0))
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
+                    Done = True
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "chhostname") Then
@@ -127,21 +113,12 @@ Public Module GetCommand
                 If (requestedCommand <> "chhostname") Then
                     Dim newhost As String = requestedCommand.Substring(11)
                     If (newhost = "") Then
-                        Wln("Blank host name.", "neutralText")
-                        HelpSystem.ShowHelp(words(0))
-                    ElseIf (newhost.Length <= 3) Then
-                        Wln("The host name length must be at least 4 characters.", "neutralText")
-                        HelpSystem.ShowHelp(words(0))
-                    ElseIf InStr(newhost, " ") > 0 Then
-                        Wln("Spaces are not allowed.", "neutralText")
-                        HelpSystem.ShowHelp(words(0))
+                        Wln(DoTranslation("Blank host name.", currentLang), "neutralText")
                     ElseIf (newhost.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-                        Wln("Special characters are not allowed.", "neutralText")
-                        HelpSystem.ShowHelp(words(0))
-                    ElseIf (newhost = "q") Then
-                        Wln("Host name changing has been cancelled.", "neutralText")
+                        Wln(DoTranslation("Special characters are not allowed.", currentLang), "neutralText")
                     Else
-                        Wln("Changing from: {0} to {1}...", "neutralText", HName, newhost)
+                        Done = True
+                        Wln(DoTranslation("Changing from: {0} to {1}...", currentLang), "neutralText", HName, newhost)
                         HName = newhost
                         Dim ksconf As New IniFile()
                         Dim pathConfig As String
@@ -154,8 +131,6 @@ Public Module GetCommand
                         ksconf.Sections("Login").Keys("Host Name").Value = newhost
                         ksconf.Save(pathConfig)
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "chmotd") Then
@@ -163,9 +138,9 @@ Public Module GetCommand
                 If (requestedCommand <> "chmotd") Then
                     Dim newmotd = requestedCommand.Substring(7)
                     If (newmotd = "") Then
-                        Wln("Blank message of the day.", "neutralText")
+                        Wln(DoTranslation("Blank message of the day.", currentLang), "neutralText")
                     Else
-                        W("Changing MOTD...", "neutralText")
+                        Wln(DoTranslation("Changing MOTD...", currentLang), "neutralText")
                         MOTDMessage = newmotd
                         Dim ksconf As New IniFile()
                         Dim pathConfig As String
@@ -177,10 +152,8 @@ Public Module GetCommand
                         ksconf.Load(pathConfig)
                         ksconf.Sections("Login").Keys("MOTD").Value = MOTDMessage
                         ksconf.Save(pathConfig)
-                        Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmotd' to see the changes", "neutralText")
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "chmal") Then
@@ -188,9 +161,9 @@ Public Module GetCommand
                 If (requestedCommand <> "chmal") Then
                     Dim newmal = requestedCommand.Substring(6)
                     If (newmal = "") Then
-                        Wln("Blank MAL After Login.", "neutralText")
+                        Wln(DoTranslation("Blank MAL After Login.", currentLang), "neutralText")
                     Else
-                        W("Changing MAL...", "neutralText")
+                        Wln(DoTranslation("Changing MAL...", currentLang), "neutralText")
                         MAL = newmal
                         Dim ksconf As New IniFile()
                         Dim pathConfig As String
@@ -202,14 +175,13 @@ Public Module GetCommand
                         ksconf.Load(pathConfig)
                         ksconf.Sections("Login").Keys("MOTD After Login").Value = newmal
                         ksconf.Save(pathConfig)
-                        Wln(" Done!" + vbNewLine + "Please log-out, or use 'showmal' to see the changes", "neutralText")
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp("chmal")
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "choice") Then
 
+                Wln(DoTranslation("Choice command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells.", currentLang), "neutralText")
                 If (requestedCommand <> "choice") Then
                     If (args.Count - 1 = 1) Then
                         W("{0} <{1}> ", "input", args(0), args(1))
@@ -217,16 +189,13 @@ Public Module GetCommand
                         Dim answerchoices() As String = args(1).Split(CChar("/"))
                         For Each choiceset In answerchoices
                             If (answerchoice = choiceset) Then
-                                Wln(vbNewLine + "Choice {0} selected.", "neutralText", answerchoice)
+                                Wln(vbNewLine + DoTranslation("Choice {0} selected.", currentLang), "neutralText", answerchoice)
                             ElseIf (answerchoice = "q") Then
-                                Wln(vbNewLine + "Choice has been cancelled.", "neutralText")
+                                Wln(vbNewLine + DoTranslation("Choice has been cancelled.", currentLang), "neutralText")
                             End If
                         Next
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "chpwd") Then
@@ -234,23 +203,19 @@ Public Module GetCommand
                 If (requestedCommand <> "chpwd") Then
                     If (args.Count - 1 = 3) Then
                         If InStr(args(3), " ") > 0 Then
-                            Wln("Spaces are not allowed.", "neutralText")
+                            Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
                         ElseIf (args(3) = args(2)) Then
                             If (args(1) = userword(args(0))) Then
                                 userword.Item(args(0)) = args(2)
                             Else
-                                Wln("Wrong user password.", "neutralText")
+                                Wln(DoTranslation("Wrong user password.", currentLang), "neutralText")
                             End If
                         ElseIf (args(3) <> args(2)) Then
-                            Wln("Passwords doesn't match.", "neutralText")
+                            Wln(DoTranslation("Passwords doesn't match.", currentLang), "neutralText")
                         End If
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
-
 
             ElseIf (requestedCommand.Substring(0, index) = "chusrname") Then
 
@@ -263,87 +228,91 @@ Public Module GetCommand
                                 Dim temporary As String = userword(args(0))
                                 userword.Remove(args(0))
                                 userword.Add(args(1), temporary)
-                                Groups.permissionEditForNewUser(args(0), args(1))
-                                Wln("Username has been changed to {0}!", "neutralText", args(1))
+                                permissionEditForNewUser(args(0), args(1))
+                                Wln(DoTranslation("Username has been changed to {0}!", currentLang), "neutralText", args(1))
                                 If (args(0) = signedinusrnm) Then
                                     LoginPrompt()
                                 End If
                             Else
-                                Wln("The new name you entered is already found.", "neutralText")
+                                Wln(DoTranslation("The new name you entered is already found.", currentLang), "neutralText")
                                 Exit Sub
                             End If
                         End If
                         If (DoneFlag = False) Then
-                            Wln("User {0} not found.", "neutralText", args(0))
+                            Wln(DoTranslation("User {0} not found.", currentLang), "neutralText", args(0))
                         End If
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-
                 End If
 
             ElseIf (requestedCommand = "cls") Then
 
-                System.Console.Clear()
+                Console.Clear() : Done = True
+
+            ElseIf (requestedCommand.Substring(0, index) = "currency") Then
+
+                If (requestedCommand <> "currency") Then
+                    If (args.Count - 1 >= 2) Then
+                        Done = True
+                        CurrencyConvert(args(0), args(1), args(2))
+                    End If
+                End If
 
             ElseIf (requestedCommand = "debuglog") Then
 
-                If (DebugMode = True) Then
-                    Dim line As String
-                    Dim debugPath As String
-                    If (EnvironmentOSType.Contains("Unix")) Then
-                        debugPath = Environ("HOME") & "/kernelDbg.log"
-                    Else
-                        debugPath = Environ("USERPROFILE") & "\kernelDbg.log"
-                    End If
-                    Using dbglog = File.Open(debugPath, FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
-                        line = reader.ReadLine()
-                        Do While (reader.EndOfStream <> True)
-                            Wln(line, "neutralText")
-                            line = reader.ReadLine
-                        Loop
-                    End Using
+                Dim line As String
+                Dim debugPath As String
+                If (EnvironmentOSType.Contains("Unix")) Then
+                    debugPath = Environ("HOME") & "/kernelDbg.log"
                 Else
-                    Wln("Debugging not enabled.", "neutralText")
+                    debugPath = Environ("USERPROFILE") & "\kernelDbg.log"
                 End If
+                Using dbglog = File.Open(debugPath, FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
+                    line = reader.ReadLine()
+                    Do While (reader.EndOfStream <> True)
+                        Wln(line, "neutralText")
+                        line = reader.ReadLine
+                    Loop
+                End Using
+                Done = True
 
             ElseIf (requestedCommand.Substring(0, index) = "echo") Then
 
+                Wln(DoTranslation("Echo command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells.", currentLang), "neutralText")
                 If (requestedCommand <> "echo") Then
                     If (strArgs <> "") Then
                         Wln(strArgs, "neutralText")
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand = "ftp") Then
 
-                FTPShell.InitiateShell()
+                InitiateShell() : Done = True
 
             ElseIf (requestedCommand = "hwprobe") Then
 
-                HardwareProbe.ProbeHW()
+                If Not (EnvironmentOSType.Contains("Unix")) Then
+                    ProbeHW() : Done = True
+                Else
+                    Wln(DoTranslation("hwprobe: Probing not supported because it's not designed to run probers on Unix.", currentLang), "neutralText")
+                    Done = True
+                End If
 
             ElseIf (requestedCommand.Substring(0, index) = "loadsaver") Then
 
                 If (requestedCommand <> "loadsaver") Then
                     If (args.Count - 1 >= 0) Then
-                        Screensaver.compileCustom(strArgs)
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        CompileCustom(strArgs)
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp("loadsaver")
                 End If
 
             ElseIf (requestedCommand = "lockscreen") Then
 
+                Done = True
                 LockMode = True
-                Screensaver.ShowSavers(defSaverName)
+                ShowSavers(defSaverName)
                 showPasswordPrompt(signedinusrnm)
 
             ElseIf (requestedCommand.Substring(0, index) = "list") Then
@@ -353,78 +322,83 @@ Public Module GetCommand
                     If (currDir = "/") Then
                         Wln(String.Join(", ", AvailableDirs), "neutralText")
                     Else
-                        ListFolders.list(currDir.Substring(1))
+                        list(currDir.Substring(1))
                     End If
+                    Done = True
                 Else
                     If (args.Count - 1 = 0) Then
                         If (AvailableDirs.Contains(args(0)) Or args(0) = ".." Or args(0) = "/" Or (AvailableDirs.Contains(args(0).Substring(1)) And (args(0).StartsWith("/") Or args(0).StartsWith("..")))) Then
-                            ListFolders.list(args(0))
+                            list(args(0))
                         Else
-                            Wln("Directory {0} not found", "neutralText", args(0))
+                            Wln(DoTranslation("Directory {0} not found", currentLang), "neutralText", args(0))
                         End If
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
                 End If
 
             ElseIf (requestedCommand = "lscomp") Then
 
                 If (EnvironmentOSType.Contains("Unix")) Then
-                    Wln("Listing PCs is not supported yet on Unix.", "neutralText")
+                    Wln(DoTranslation("Listing PCs is not supported yet on Unix.", currentLang), "neutralText")
                 Else
-                    NetworkTools.GetNetworkComputers()
-                    NetworkTools.ListOnlineAndOfflineHosts()
+                    GetNetworkComputers()
+                    ListOnlineAndOfflineHosts()
                 End If
+                Done = True
 
             ElseIf (requestedCommand = "lsnet") Then
 
                 If (EnvironmentOSType.Contains("Unix")) Then
-                    Wln("Listing PCs is not supported yet on Unix.", "neutralText")
+                    Wln(DoTranslation("Listing PCs is not supported yet on Unix.", currentLang), "neutralText")
                 Else
-                    NetworkTools.GetNetworkComputers()
-                    NetworkTools.ListHostsInNetwork()
+                    GetNetworkComputers()
+                    ListHostsInNetwork()
                 End If
+                Done = True
 
             ElseIf (requestedCommand = "lsnettree") Then
 
                 If (EnvironmentOSType.Contains("Unix")) Then
-                    Wln("Listing PCs is not supported yet on Unix.", "neutralText")
+                    Wln(DoTranslation("Listing PCs is not supported yet on Unix.", currentLang), "neutralText")
                 Else
-                    NetworkTools.GetNetworkComputers()
-                    NetworkTools.ListHostsInTree()
+                    GetNetworkComputers()
+                    ListHostsInTree()
                 End If
+                Done = True
 
             ElseIf (requestedCommand = "logout") Then
 
                 'Logs out of the user
-                LoginPrompt()
+                Done = True
+                LoginPrompt() 'TODO: More reliable way should be implemented (no making duplicate stacks)
 
             ElseIf (requestedCommand = "netinfo") Then
 
-                NetworkTools.getProperties()
+                getProperties()
+                Done = True
 
             ElseIf (requestedCommand.Substring(0, index) = "md") Then
 
                 If (requestedCommand <> "md") Then
                     If (args.Count - 1 = 0) Then
                         AvailableDirs.Add(args(0))
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp("md")
                 End If
 
             ElseIf (requestedCommand = "noaliases") Then
 
-                Wln("Aliases that are forbidden: {0}", "neutralText", String.Join(", ", forbidden))
+                Wln(DoTranslation("Aliases that are forbidden: {0}", currentLang), "neutralText", String.Join(", ", forbidden))
+                Done = True
 
             ElseIf (requestedCommand.Substring(0, index) = "panicsim") Then
 
                 'Kernel panic simulator
+                Wln(DoTranslation("PanicSim command is deprecated and will be removed in future release until the interactive shell has been implemented. It increases abuse for Kernel Error.", currentLang), "neutralText")
                 If (requestedCommand <> "panicsim") Then
                     If (args.Count - 1 = 0) Then
                         KernelError(CChar("C"), False, 0, args(0))
+                        Done = True
                     ElseIf (args.Count - 1 = 1) Then
                         If (args(1) <> "C") Then
                             KernelError(CChar(args(1)), True, 30, args(0))
@@ -432,9 +406,8 @@ Public Module GetCommand
                             KernelError(CChar(args(1)), False, 0, args(0))
                         ElseIf (args(1) = "D") Then
                             KernelError(CChar(args(1)), True, 5, args(0))
-                        Else
-                            HelpSystem.ShowHelp(words(0))
                         End If
+                        Done = True
                     ElseIf (args.Count - 1 = 2) Then
                         If (CDbl(args(2)) <= 3600 And (args(1) <> "C" Or args(1) <> "D")) Then
                             KernelError(CChar(args(1)), True, CLng(args(2)), args(0))
@@ -442,14 +415,9 @@ Public Module GetCommand
                             KernelError(CChar(args(1)), False, 0, args(0))
                         ElseIf (CDbl(args(2)) <= 5 And args(1) = "D") Then
                             KernelError(CChar(args(1)), True, CLng(args(2)), args(0))
-                        Else
-                            HelpSystem.ShowHelp(words(0))
                         End If
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "perm") Then
@@ -457,25 +425,20 @@ Public Module GetCommand
                 If (requestedCommand <> "perm") Then
                     If (args.Count - 1 = 2) Then
                         permission(args(1), args(0), args(2))
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "ping") Then
 
                 If (requestedCommand <> "ping") Then
                     If (args.Count - 1 = 0) Then
-                        Network.PingTarget(args(0), 1)
+                        PingTarget(args(0), 1)
+                        Done = True
                     ElseIf (args.Count - 1 = 1) Then
-                        Network.PingTarget(args(0), args(1))
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        PingTarget(args(0), args(1))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "read") Then
@@ -483,20 +446,18 @@ Public Module GetCommand
                 If (requestedCommand <> "read") Then
                     If (args.Count - 1 = 0) Then
                         If (AvailableFiles.Contains(args(0))) Then
-                            FileContents.readContents(args(0))
+                            readContents(args(0))
                         Else
-                            Wln("{0} is not found.", "neutralText", args(0))
+                            Wln(DoTranslation("{0} is not found.", currentLang), "neutralText", args(0))
                         End If
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand = "reloadconfig") Then
 
                 'Reload configuration
+                Done = True
                 Dim pathConfig As String
                 If (EnvironmentOSType.Contains("Unix")) Then
                     pathConfig = Environ("HOME") & "/kernelConfig.ini"
@@ -511,14 +472,15 @@ Public Module GetCommand
                 End If
                 Config.readImportantConfig()
                 Config.readConfig()
-                Wln("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", "neutralText")
+                Wln(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", currentLang), "neutralText")
 
             ElseIf (requestedCommand = "reboot") Then
 
                 'Reboot the simulated system
-                Wln("Rebooting...", "neutralText")
-                KernelTools.ResetEverything()
-                System.Console.Clear()
+                Done = True
+                Wln(DoTranslation("Rebooting...", currentLang), "neutralText")
+                ResetEverything()
+                Console.Clear()
                 Main()
 
             ElseIf (requestedCommand.Substring(0, index) = "rd") Then
@@ -526,51 +488,45 @@ Public Module GetCommand
                 If (requestedCommand <> "rd") Then
                     If (args.Count - 1 = 0) Then
                         AvailableDirs.Remove(args(0))
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp("rd")
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "rmuser") Then
 
                 If (requestedCommand <> "rmuser") Then
                     If (args.Count - 1 = 0) Then
-                        UserManagement.removeUserFromDatabase(args(0))
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        removeUserFromDatabase(args(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand = "savescreen") Then
 
-                Screensaver.ShowSavers(defSaverName)
+                Done = True
+                ShowSavers(defSaverName)
 
             ElseIf (requestedCommand.Substring(0, index) = "scical") Then
 
                 If (requestedCommand <> "scical") Then
                     If ((args(0) <> "sqrt" And args(0) <> "tan" And args(0) <> "sin" And args(0) <> "cos" And args(0) <> "floor" And args(0) <> "ceiling" And args(0) <> "abs") And args.Count - 1 > 1) Then
                         sciCalc.expressionCalculate(False, args)
+                        Done = True
                     ElseIf ((args(0) = "sqrt" Or args(0) = "tan" Or args(0) = "sin" Or args(0) = "cos" Or args(0) = "floor" Or args(0) = "ceiling" Or args(0) = "abs") And args.Count - 1 = 1) Then
                         sciCalc.expressionCalculate(True, args)
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "setcolors") Then
 
                 If (requestedCommand <> "setcolors") Then
                     If (args.Count - 1 = 9) Then
+                        Done = True
                         If (ColoredShell = True) Then
-                            If (availableColors.Contains(args(0)) And availableColors.Contains(args(1)) And availableColors.Contains(args(2)) And _
-                                availableColors.Contains(args(3)) And availableColors.Contains(args(4)) And availableColors.Contains(args(5)) And _
-                                availableColors.Contains(args(6)) And availableColors.Contains(args(7)) And availableColors.Contains(args(8)) And _
+                            If (availableColors.Contains(args(0)) And availableColors.Contains(args(1)) And availableColors.Contains(args(2)) And
+                                availableColors.Contains(args(3)) And availableColors.Contains(args(4)) And availableColors.Contains(args(5)) And
+                                availableColors.Contains(args(6)) And availableColors.Contains(args(7)) And availableColors.Contains(args(8)) And
                                 availableColors.Contains(args(9))) Then
                                 inputColor = CType([Enum].Parse(GetType(ConsoleColor), args(0)), ConsoleColor)
                                 licenseColor = CType([Enum].Parse(GetType(ConsoleColor), args(1)), ConsoleColor)
@@ -618,19 +574,15 @@ Public Module GetCommand
                                 End If
                             ElseIf (args.Contains("RESET")) Then
                                 ResetColors()
-                                Wln("Everything is reset to normal settings.", "neutralText")
+                                Wln(DoTranslation("Everything is reset to normal settings.", currentLang), "neutralText")
                             Else
-                                Wln("One or more of the colors is invalid.", "neutralText")
+                                Wln(DoTranslation("One or more of the colors is invalid.", currentLang), "neutralText")
                             End If
                             MakePermanent()
                         Else
-                            Wln("Colors are not available. Turn on colored shell in the kernel config.", "neutralText")
+                            Wln(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), "neutralText")
                         End If
-                    Else
-                        HelpSystem.ShowHelp(words(0))
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "setsaver") Then
@@ -644,92 +596,67 @@ Public Module GetCommand
                 If (requestedCommand <> "setsaver") Then
                     If (args.Count >= 0) Then
                         If (strArgs = "colorMix" Or strArgs = "matrix" Or strArgs = "disco") Then
-                            Screensaver.setDefaultScreensaver(strArgs)
+                            SetDefaultScreensaver(strArgs)
                         Else
                             If (FileIO.FileSystem.FileExists(modPath + strArgs)) Then
-                                Screensaver.setDefaultScreensaver(strArgs)
+                                SetDefaultScreensaver(strArgs)
                             Else
-                                Wln("Screensaver {0} not found.", "neutralText", strArgs)
+                                Wln(DoTranslation("Screensaver {0} not found.", currentLang), "neutralText", strArgs)
                             End If
                         End If
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp("setsaver")
                 End If
 
             ElseIf (requestedCommand.Substring(0, index) = "setthemes") Then
 
                 If (requestedCommand <> "setthemes") Then
                     If (args.Count - 1 = 0) Then
-                        If (ColoredShell = True) Then TemplateSet.templateSet(args(0)) Else Wln("Colors are not available. Turn on colored shell in the kernel config.", "neutralText")
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        If (ColoredShell = True) Then TemplateSet.templateSet(args(0)) Else Wln(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), "neutralText")
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp(words(0))
-                End If
-
-            ElseIf (requestedCommand = "showaliases") Then
-
-                If (aliases.Count <> 0) Then
-                    Dim aliasValues As New ArrayList
-                    Dim aliasKeys As New ArrayList
-                    For Each a As String In aliases.Values
-                        aliasValues.Add(a)
-                    Next
-                    For Each a As String In aliases.Keys
-                        aliasKeys.Add(a)
-                    Next
-                    For a As Integer = 0 To aliasKeys.Count - 1
-                        Wln("{2}: {0} is an alias to {1}", "neutralText", aliasKeys(a), aliasValues(a), a + 1)
-                    Next
-                Else
-                    Wln("No aliases to list. Create one by ""alias add <alias> <cmd>.""", "neutralText")
                 End If
 
             ElseIf (requestedCommand = "showtd") Then
 
-                TimeDate.ShowTime()
+                ShowTime() : Done = True
 
             ElseIf (requestedCommand.Substring(0, index) = "showtdzone") Then
 
                 If (requestedCommand <> "showtdzone") Then
-                    Dim DoneFlag As Boolean = False
                     initTimesInZones()
+                    Dim DoneFlag As Boolean = False
                     For Each zoneName In zoneTimes.Keys
                         If (zoneName = strArgs) Then
-                            DoneFlag = True : TimeZones.showTimesInZones(strArgs)
+                            DoneFlag = True : Done = True
+                            showTimesInZones(strArgs)
                         End If
                     Next
                     If (DoneFlag = False) Then
                         If (args(0) = "all") Then
-                            TimeZones.showTimesInZones()
-                        Else
-                            HelpSystem.ShowHelp(words(0))
+                            showTimesInZones()
+                            Done = True
                         End If
                     End If
-                Else
-                    HelpSystem.ShowHelp("showtdzone")
                 End If
 
             ElseIf (requestedCommand = "showmotd") Then
 
                 'Show changes to MOTD, or current
                 Wln(MOTDMessage, "neutralText")
+                Done = True
 
             ElseIf (requestedCommand = "showmal") Then
 
                 'Show changes to MAL, or current
-                MAL = PlaceParse.ProbePlaces(MAL)
                 Wln(MAL, "neutralText")
+                Done = True
 
             ElseIf (requestedCommand = "shutdown") Then
 
                 'Shuts down the simulated system
-                Wln("Shutting down...", "neutralText")
-                KernelTools.ResetEverything()
+                Wln(DoTranslation("Shutting down...", currentLang), "neutralText")
+                ResetEverything()
                 If (DebugMode = True) Then
                     dbgWriter.Close()
                     dbgWriter.Dispose()
@@ -738,63 +665,87 @@ Public Module GetCommand
 
             ElseIf (requestedCommand = "sysinfo") Then
 
+                Done = True
+
                 'Shows system information
-                Wln("{0}[ Kernel settings ]", "helpCmd", vbNewLine)
+                Wln(DoTranslation("{0}[ Kernel settings ]", currentLang), "helpCmd", vbNewLine)
 
                 'Kernel section
-                Wln(vbNewLine + "Kernel Version: {0}" + vbNewLine + _
-                                "Debug Mode: {1}" + vbNewLine + _
-                                "Colored Shell: {2}" + vbNewLine + _
-                                "Arguments on Boot: {3}" + vbNewLine + _
-                                "Help command simplified: {4}" + vbNewLine + _
-                                "MOTD on Login: {5}" + vbNewLine + _
-                                "Time/Date on corner: {6}" + vbNewLine + _
-                                "Hardware probed: {7}" + vbNewLine + _
-                                "Current theme: {8}" + vbNewLine, "neutralText", KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString, ProbeFlag.ToString, currentTheme)
+                Wln(vbNewLine + DoTranslation("Kernel Version:", currentLang) + " {0}" + vbNewLine +
+                                DoTranslation("Debug Mode:", currentLang) + " {1}" + vbNewLine +
+                                DoTranslation("Colored Shell:", currentLang) + " {2}" + vbNewLine +
+                                DoTranslation("Arguments on Boot:", currentLang) + " {3}" + vbNewLine +
+                                DoTranslation("Help command simplified:", currentLang) + " {4}" + vbNewLine +
+                                DoTranslation("MOTD on Login:", currentLang) + " {5}" + vbNewLine +
+                                DoTranslation("Time/Date on corner:", currentLang) + " {6}" + vbNewLine +
+                                DoTranslation("Hardware probed:", currentLang) + " {7}" + vbNewLine +
+                                DoTranslation("Current theme:", currentLang) + " {8}" + vbNewLine, "neutralText", KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString, ProbeFlag.ToString, currentTheme)
 
                 'Hardware section
-                Wln("[ Hardware settings ]{0}", "helpCmd", vbNewLine)
+                Wln(DoTranslation("[ Hardware settings ]{0}", currentLang), "helpCmd", vbNewLine)
                 HardwareProbe.ListDrivers()
 
                 'User section
-                Wln("{0}[ User settings ]", "helpCmd", vbNewLine)
-                Wln(vbNewLine + "Current user name: {0}" + vbNewLine + _
-                                "Current host name: {1}" + vbNewLine + _
-                                "Available usernames: {2}" + vbNewLine + _
-                                "Computer host name: {3}" + vbNewLine, "neutralText", signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
+                Wln(DoTranslation("{0}[ User settings ]", currentLang), "helpCmd", vbNewLine)
+                Wln(vbNewLine + DoTranslation("Current user name:", currentLang) + " {0}" + vbNewLine +
+                                DoTranslation("Current host name:", currentLang) + " {1}" + vbNewLine +
+                                DoTranslation("Available usernames:", currentLang) + " {2}" + vbNewLine +
+                                DoTranslation("Computer host name:", currentLang) + " {3}" + vbNewLine, "neutralText", signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
+
+                'Messages Section
+                Wln(DoTranslation("{0}[ Messages Settings ]", currentLang), "helpCmd", vbNewLine)
+                Wln(vbNewLine + "MOTD: {0}" + vbNewLine +
+                                "MAL: {0}", MOTDMessage, MAL)
 
             ElseIf (requestedCommand.Substring(0, index) = "unitconv") Then
 
                 If (requestedCommand <> "unitconv") Then
                     If (args.Count - 1 = 2) Then
-                        unitConv.Converter(args(0), args(1), args(2))
-                    Else
-                        HelpSystem.ShowHelp(words(0))
+                        Converter(args(0), args(1), args(2))
+                        Done = True
                     End If
-                Else
-                    HelpSystem.ShowHelp("unitconv")
                 End If
 
             ElseIf (requestedCommand = "useddeps") Then
 
-                Wln("MadMilkman.Ini" + vbNewLine + _
-                    "Source code: https://github.com/MarioZ/MadMilkman.Ini" + vbNewLine + _
-                    "Copyright (c) 2016, Mario Zorica" + vbNewLine + _
-                    "License (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE", "neutralText")
+                Done = True
+                Wln("MadMilkman.Ini" + vbNewLine +
+                    DoTranslation("Source code:", currentLang) + " https://github.com/MarioZ/MadMilkman.Ini" + vbNewLine +
+                    DoTranslation("Copyright (c)", currentLang) + " 2016, Mario Zorica" + vbNewLine +
+                    DoTranslation("License", currentLang) + " (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE" + vbNewLine +
+                    "Newtonsoft.Json" + vbNewLine +
+                    DoTranslation("Source code:", currentLang) + " https://github.com/JamesNK/Newtonsoft.Json" + vbNewLine +
+                    DoTranslation("Copyright (c)", currentLang) + " 2007, James Newton-King" + vbNewLine +
+                    DoTranslation("License", currentLang) + " (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md" + vbNewLine +
+                    "FluentFTP" + vbNewLine +
+                    DoTranslation("Source code:", currentLang) + " https://github.com/robinrodricks/FluentFTP" + vbNewLine +
+                    DoTranslation("Copyright (c)", currentLang) + " 2011-2016, J.P. Trosclair" + vbNewLine +
+                    DoTranslation("Copyright (c)", currentLang) + " 2016-" + DoTranslation("present", currentLang) + ", Robin Rodricks" + vbNewLine +
+                    DoTranslation("License", currentLang) + " (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT", "neutralText")
 
             ElseIf (requestedCommand.Substring(0, index) = "usermanual") Then
 
-                Wln("User manual is work in progress." + vbNewLine + vbNewLine + _
-                    "You can't use this manual as it isn't finished at this time.", "neutralText")
+                Done = True
+                If (requestedCommand <> "usermanual") Then
+                    ViewPage(strArgs)
+                Else
+                    ViewPage("Available manual pages")
+                End If
 
             End If
+            If (Done = False) Then
+                Throw New EventsAndExceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:", currentLang))
+            End If
+        Catch neaex As EventsAndExceptions.NotEnoughArgumentsException
+            Wln(neaex.Message, "neutralText")
+            ShowHelp(requestedCommand.Substring(0, index))
         Catch ex As Exception
             If (DebugMode = True) Then
-                Wln("Error trying to execute command {3}." + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText", _
+                Wln(DoTranslation("Error trying to execute command", currentLang) + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", "neutralText",
                     Err.Number, Err.Description, ex.StackTrace, words(0))
                 Wdbg(ex.StackTrace, True)
             Else
-                Wln("Error trying to execute command {2}." + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description, words(0))
+                Wln(DoTranslation("Error trying to execute command", currentLang) + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), "neutralText", Err.Number, Err.Description, words(0))
             End If
         End Try
 

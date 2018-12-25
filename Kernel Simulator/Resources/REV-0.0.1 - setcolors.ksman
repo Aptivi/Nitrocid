@@ -1,0 +1,79 @@
+(*MAN START*)
+
+-TITLE:Shell command "setcolors"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+setcolors command
+
+Summary: You can set the kernel colors
+
+Description
+
+This command allows you to set the kernel text colors, including the kernel error message, input message, license text, general text, etc. It also lets you set the background color to make your kernel look more personalized.
+
+This command probes colors from ConsoleColor enum values known as integers. This list shows you the available colors and their color values.
+
+* White = 15
+* Black = 0
+* Gray = 7
+* DarkGray = 8
+* DarkRed = 4
+* Red = 12
+* DarkYellow = 6
+* Yellow = 14
+* DarkGreen = 2
+* Green = 10
+* DarkCyan = 3
+* Cyan = 11
+* DarkBlue = 1
+* Blue = 9
+* DarkMagenta = 5
+* Magenta = 13
+
+If there is "def" in the color sets, then it will get the default color for the specified section. For example, if you execute this command "setcolors Red DarkRed Red DarkRed def def def Red Red DarkRed", the host name shell color, the username shell color and the background color will be set to their default values.
+
+However if there is a RESET between colors, every color will get reset to their default settings. The THEME option is not implemented yet, although it exists in the AvailableColors() string array.
+
+Command usage
+
+* setcolors (inputColor/def/RESET) (licenseColor/def/RESET) (contKernelErrorColor/def/RESET) (uncontKernelErrorColor/def/RESET) (hostNameShellColor/def/RESET) (userNameShellColor/def/RESET) (backgroundColor/def/RESET) (neutralTextColor/def/RESET) (cmdListColor/def/RESET) (cmdDefColor/def/RESET)
+
+Examples
+
+* setcolors DarkCyan Blue DarkRed Red Cyan DarkCyan def Cyan Cyan DarkCyan
+* setcolors DarkMagenta Magenta DarkRed Red Magenta DarkMagenta def Magenta Magenta DarkMagenta
+* setcolors DarkYellow Yellow DarkRed Red Yellow DarkYellow def Yellow Yellow DarkYellow
+-BODY END-
+
+-COLOR CONFIGURATION-
+White=>White
+Black=>Black
+Gray=>Gray
+DarkGray=>DarkGray
+DarkRed=>DarkRed
+Red=>Red
+DarkYellow=>DarkYellow
+Yellow=>Yellow
+DarkGreen=>DarkGreen
+Green=>Green
+DarkCyan=>DarkCyan
+Cyan=>Cyan
+DarkBlue=>DarkBlue
+Blue=>Blue
+DarkMagenta=>DarkMagenta
+Magenta=>Magenta
+def=>Gray
+setcolors (inputColor/def/RESET) (licenseColor/def/RESET) (contKernelErrorColor/def/RESET) (uncontKernelErrorColor/def/RESET) (hostNameShellColor/def/RESET) (userNameShellColor/def/RESET) (backgroundColor/def/RESET) (neutralTextColor/def/RESET) (cmdListColor/def/RESET) (cmdDefColor/def/RESET)=>Green
+setcolors DarkCyan Blue DarkRed Red Cyan DarkCyan def Cyan Cyan DarkCyan=>Yellow
+setcolors DarkMagenta Magenta DarkRed Red Magenta DarkMagenta def Magenta Magenta DarkMagenta=>Yellow
+setcolors DarkYellow Yellow DarkRed Red Yellow DarkYellow def Yellow Yellow DarkYellow=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setcolors command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

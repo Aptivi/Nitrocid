@@ -19,18 +19,20 @@
 Public Module HardwareProbe
 
     'TODO: Re-write in Beta
+    'TODO: Remove the "nohwprobe" argument. Parsing is now important.
+    'TODO: Remove the BIOS and GPU probing until the final release.
     Public Sub ProbeHW(Optional ByVal QuietHWProbe As Boolean = False, Optional ByVal KernelUser As Char = CChar("U"))
 
-        Wdbg("QuietHWProbe = {0}, KernelUser = {1}, ProbeFlag = {2}.", True, QuietHWProbe, KernelUser, ProbeFlag)
+        Wdbg("QuietHWProbe = {0}, KernelUser = {1}, ProbeFlag = {2}.", QuietHWProbe, KernelUser, ProbeFlag)
         If (QuietHWProbe = False) Then
-                If (ProbeFlag = True And KernelUser = "K") Or (ProbeFlag = False And KernelUser = "U") Then
-                    Wln("hwprobe: Your hardware will be probed. Please wait...", "neutralText")
-                    StartProbing()
-                ElseIf (KernelUser = "U" And ProbeFlag = True) Then
-                    Wln("hwprobe: Hardware already probed.", "neutralText")
-                ElseIf (ProbeFlag = False And KernelUser = "K") Then
-                    Wln("hwprobe: Hardware is not probed. Probe using 'hwprobe'", "neutralText")
-                End If
+            If (ProbeFlag = True And KernelUser = "K") Or (ProbeFlag = False And KernelUser = "U") Then
+                Wln(DoTranslation("hwprobe: Your hardware will be probed. Please wait...", currentLang), "neutralText")
+                StartProbing()
+            ElseIf (KernelUser = "U" And ProbeFlag = True) Then
+                Wln(DoTranslation("hwprobe: Hardware already probed.", currentLang), "neutralText")
+            ElseIf (ProbeFlag = False And KernelUser = "K") Then
+                Wln(DoTranslation("hwprobe: Hardware is not probed. Probe using 'hwprobe'", currentLang), "neutralText")
+            End If
         ElseIf (QuietHWProbe = True) Then
             If (ProbeFlag = True) Then
                 Cpuinfo()
@@ -62,32 +64,32 @@ Public Module HardwareProbe
 
         'We are checking to see if any of the probers reported a failure starting with CPU
         If (CPUDone = False) Then
-            Wdbg("CPU failed to probe.", True, KernelVersion)
-            Wln("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", "neutralText")
+            Wdbg("CPU failed to probe.", KernelVersion)
+            Wln(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", currentLang), "neutralText")
         End If
 
         'then RAM
         If (RAMDone = False) Then
-            Wdbg("RAM failed to probe.", True, KernelVersion)
-            Wln("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", "neutralText")
+            Wdbg("RAM failed to probe.", KernelVersion)
+            Wln(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", currentLang), "neutralText")
         End If
 
         'then HDD
         If (HDDDone = False) Then
-            Wdbg("HDD failed to probe.", True, KernelVersion)
-            Wln("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", "neutralText")
+            Wdbg("HDD failed to probe.", KernelVersion)
+            Wln(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), "neutralText")
         End If
 
         'then GPU
         If (GPUDone = False) Then
-            Wdbg("GPU failed to probe.", True, KernelVersion)
-            Wln("GPU: One or more of the graphics card failed to be probed. Showing information anyway...", "neutralText")
+            Wdbg("GPU failed to probe.", KernelVersion)
+            Wln(DoTranslation("GPU: One or more of the graphics card failed to be probed. Showing information anyway...", currentLang), "neutralText")
         End If
 
         'and finally BIOS
         If (BIOSDone = False) Then
-            Wdbg("BIOS failed to probe.", True, KernelVersion)
-            Wln("BIOS: One or more of the BIOS chips failed to be probed. Showing information anyway...", "neutralText")
+            Wdbg("BIOS failed to probe.", KernelVersion)
+            Wln(DoTranslation("BIOS: One or more of the BIOS chips failed to be probed. Showing information anyway...", currentLang), "neutralText")
         End If
 
         'Inform users
@@ -99,14 +101,14 @@ Public Module HardwareProbe
 
         'CPU Info
         For Each processorinfo In CPUList
-            Wln("CPU: {0} {1}MHz", "neutralText", processorinfo.Name, processorinfo.ClockSpeed)
+            Wln(DoTranslation("CPU: {0} {1}MHz", currentLang), "neutralText", processorinfo.Name, processorinfo.ClockSpeed)
         Next
-        Wln("CPU: Total number of processors: {0}", "neutralText", Environment.ProcessorCount)
+        Wln(DoTranslation("CPU: Total number of processors: {0}", currentLang), "neutralText", Environment.ProcessorCount)
 
         'RAM Info
         Dim times As Integer = 1
         Dim total As UInt64
-        Wdbg("RAM probed.", True, KernelVersion)
+        Wdbg("RAM probed.", KernelVersion)
 
         'This is an expression totalling a RAM to print string
         For Each capacity In Capacities
@@ -114,64 +116,64 @@ Public Module HardwareProbe
         Next
 
         'Print some info
-        Wln("RAM: {0}MB = {1}MB", "neutralText", CStr(total), String.Join("MB + ", Capacities))
+        Wln(DoTranslation("RAM: {0}MB = {1}MB", currentLang), "neutralText", CStr(total), String.Join("MB + ", Capacities))
 
         'A loop to print names
         For Each slotname In RAMList
             If (times = 1) Then
-                W("RAM: Used slots (by names): {0} ", "neutralText", slotname.SlotName)
+                W(DoTranslation("RAM: Used slots (by names): {0}", currentLang), "neutralText", slotname.SlotName)
             Else
-                W("{0} ", "neutralText", slotname.SlotName)
+                W(" {0}", "neutralText", slotname.SlotName)
             End If
             times += 1
         Next
         times = 1
 
         'Number of slots used
-        Wln(vbNewLine + "RAM: Used slots (by numbers): {0} / {1} ({2}%)", "neutralText", CStr(slotsUsedNum), totalSlots, FormatNumber(CStr(slotsUsedNum * 100 / totalSlots), 1))
+        Wln(vbNewLine + DoTranslation("RAM: Used slots (by numbers): {0} / {1} ({2}%)", currentLang), "neutralText", CStr(slotsUsedNum), totalSlots, FormatNumber(CStr(slotsUsedNum * 100 / totalSlots), 1))
 
         'This one is a necessary string, so we will do another loop.
         For Each memstat In RAMList
             If (times = 1) Then
-                W("RAM: {0}: {1} ", "neutralText", memstat.SlotName, memstat.Status)
+                W("RAM: {0}: {1}", "neutralText", memstat.SlotName, memstat.Status)
             Else
-                W("| {0}: {1} ", "neutralText", memstat.SlotName, memstat.Status)
+                W(" | {0}: {1}", "neutralText", memstat.SlotName, memstat.Status)
             End If
             times += 1
         Next
-        Wln(vbNewLine + "RAM: Probing status is deprecated and will be removed in future release.", "neutralText")
+        Wln(vbNewLine + DoTranslation("RAM: Probing status is deprecated and will be removed in future release.", currentLang), "neutralText")
 
         'GPU Info
         For Each gpuinfo In GPUList
             If (gpuinfo.Name = "Microsoft Basic Display Adapter" Or gpuinfo.Name = "Standard VGA Graphics Adapter") Then
-                Wln("GPU: No appropriate driver installed.", "neutralText")
+                Wln(DoTranslation("GPU: No appropriate driver installed.", currentLang), "neutralText")
             Else
-                Wln("GPU: {0} {1}MB", "neutralText", gpuinfo.Name, CStr(gpuinfo.Memory / 1024 / 1024))
+                Wln(DoTranslation("GPU: {0} {1}MB", currentLang), "neutralText", gpuinfo.Name, CStr(gpuinfo.Memory / 1024 / 1024))
             End If
         Next
 
         'Drive Info
         For Each driveinfo In HDDList
             If (driveinfo.Manufacturer = "(Standard disk drives)") Then
-                Wln("HDD: {0} {1}GB" + vbNewLine + _
-                    "HDD: Type: {2} | Status: {3}" + vbNewLine + _
-                    "HDD: CHS: {4} cylinders | {5} heads | {6} sectors", "neutralText", _
-                    driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2), _
-                    driveinfo.InterfaceType, driveinfo.Status, driveinfo.Cylinders, _
+                Wln(DoTranslation("HDD: {0} {1}GB", currentLang) + vbNewLine +
+                    DoTranslation("HDD: Type: {2} | Status: {3}", currentLang) + vbNewLine +
+                    DoTranslation("HDD: CHS: {4} cylinders | {5} heads | {6} sectors", currentLang), "neutralText",
+                    driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2),
+                    driveinfo.InterfaceType, driveinfo.Status, driveinfo.Cylinders,
                     driveinfo.Heads, driveinfo.Sectors)
             Else
-                Wln("HDD: {0} {1} {2}GB" + vbNewLine + _
-                    "HDD: Type: {3} | Status: {4}" + vbNewLine + _
-                    "HDD: CHS: {5} cylinders | {6} heads | {7} sectors", "neutralText", _
-                    driveinfo.Manufacturer, driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2), _
-                    driveinfo.InterfaceType, driveinfo.Status, driveinfo.Cylinders, _
+                Wln(DoTranslation("HDD: {0} {1} {2}GB", currentLang) + vbNewLine +
+                    DoTranslation("HDD: Type: {3} | Status: {4}", currentLang) + vbNewLine +
+                    DoTranslation("HDD: CHS: {5} cylinders | {6} heads | {7} sectors", currentLang), "neutralText",
+                    driveinfo.Manufacturer, driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2),
+                    driveinfo.InterfaceType, driveinfo.Status, driveinfo.Cylinders,
                     driveinfo.Heads, driveinfo.Sectors)
             End If
         Next
 
         'BIOS Info
         For Each BIOSInfo In BIOSList
-            Wln("BIOS: {0} {1} {2} {3}", "neutralText", BIOSInfo.Manufacturer, BIOSInfo.Name, BIOSInfo.Version, BIOSInfo.SMBIOSVersion)
+            Wln(DoTranslation("BIOS: {0} {1} {2} {3}", currentLang), "neutralText", BIOSInfo.Manufacturer, BIOSInfo.Name, BIOSInfo.Version, BIOSInfo.SMBIOSVersion)
         Next
 
     End Sub
@@ -184,13 +186,16 @@ Public Module HardwareProbe
         If ProbeFlag = True Then
             GPUDone = True
             colGPUs = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_VideoController")
-            Wdbg("Object created = {0}.Win32_VideoController", True, colGPUs)
+            Wdbg("Object created = {0}.Win32_VideoController", colGPUs)
         End If
         For Each oGPU As Object In colGPUs
             Try
                 If ProbeFlag = True Then
+                    If (oGPU.AdapterRAM.ToString = DBNull.Value.ToString) Then
+                        oGPU.AdapterRAM = 0
+                    End If
                     GPUList.Add(New GPU With {.Name = oGPU.Caption, .Memory = oGPU.AdapterRAM})
-                    Wdbg("GPU Object = {0}.Win32_VideoController.Caption = {1}, {0}.Win32_VideoController.AdapterRAM = {2}", True, oGPU, oGPU.Caption, oGPU.AdapterRAM)
+                    Wdbg("GPU Object = {0}.Win32_VideoController.Caption = {1}, {0}.Win32_VideoController.AdapterRAM = {2}", oGPU, oGPU.Caption, oGPU.AdapterRAM.ToString)
                 End If
             Catch ex As Exception
                 GPUDone = False
@@ -206,16 +211,16 @@ Public Module HardwareProbe
     Public Sub Hddinfo(Optional ByVal QuietMode As Boolean = False)
         HDDDone = True
         Dim HDDSet As Object = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_DiskDrive")
-        Wdbg("Object created = {0}.Win32_DiskDrive", True, HDDSet)
+        Wdbg("Object created = {0}.Win32_DiskDrive", HDDSet)
         For Each Hdd As Object In HDDSet
             Try
                 HDDList.Add(New HDD With {.Model = Hdd.Model, .Size = Hdd.Size, .Status = Hdd.Status, _
                                                       .Manufacturer = Hdd.Manufacturer, .Cylinders = Hdd.TotalCylinders, .Heads = Hdd.TotalHeads, _
                                                       .Sectors = Hdd.TotalSectors, .InterfaceType = Hdd.InterfaceType})
-                Wdbg("HDD Object = {0}.Win32_DiskDrive.Manufacturer = {3}, {0}.Win32_DiskDrive.Model = {1}, {0}.Win32_DiskDrive.Size = {2}, " + _
-                     "{0}.Win32_DiskDrive.InterfaceType = {4}, {0}.Win32_DiskDrive.Status = {5}, CHS: {6}, {7}, {8}", True, _
-                     Hdd, HDDList(HDDList.Count - 1).Model, HDDList(HDDList.Count - 1).Size, HDDList(HDDList.Count - 1).Manufacturer, _
-                     HDDList(HDDList.Count - 1).InterfaceType, HDDList(HDDList.Count - 1).Status, HDDList(HDDList.Count - 1).Cylinders, _
+                Wdbg("HDD Object = {0}.Win32_DiskDrive.Manufacturer = {3}, {0}.Win32_DiskDrive.Model = {1}, {0}.Win32_DiskDrive.Size = {2}, " +
+                     "{0}.Win32_DiskDrive.InterfaceType = {4}, {0}.Win32_DiskDrive.Status = {5}, CHS: {6}, {7}, {8}",
+                     Hdd, HDDList(HDDList.Count - 1).Model, HDDList(HDDList.Count - 1).Size, HDDList(HDDList.Count - 1).Manufacturer,
+                     HDDList(HDDList.Count - 1).InterfaceType, HDDList(HDDList.Count - 1).Status, HDDList(HDDList.Count - 1).Cylinders,
                      HDDList(HDDList.Count - 1).Heads, HDDList(HDDList.Count - 1).Sectors)
             Catch ex As Exception
                 HDDDone = False
@@ -231,11 +236,11 @@ Public Module HardwareProbe
     Public Sub Cpuinfo()
         CPUDone = True
         Dim CPUSet As Object = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_Processor")
-        Wdbg("Object created = {0}.Win32_Processor", True, CPUSet)
+        Wdbg("Object created = {0}.Win32_Processor", CPUSet)
         For Each CPU As Object In CPUSet
             Try
                 CPUList.Add(New CPU With {.Name = CPU.Name, .ClockSpeed = CPU.CurrentClockSpeed})
-                Wdbg("CPU Object = {0}.Win32_Processor.Name = {1}, {0}.Win32_Processor.CurrentClockSpeed = {2}", True, CPU, CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
+                Wdbg("CPU Object = {0}.Win32_Processor.Name = {1}, {0}.Win32_Processor.CurrentClockSpeed = {2}", CPU, CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
             Catch ex As Exception
                 CPUDone = False
                 If (DebugMode = True) Then
@@ -251,7 +256,7 @@ Public Module HardwareProbe
         Dim colInstances As Object = GetObject("winmgmts:").ExecQuery("SELECT * FROM Win32_PhysicalMemory")
         Dim colSlots As Object = GetObject("winmgmts:").ExecQuery("SELECT * FROM Win32_PhysicalMemoryArray")
         Dim temp = ""
-        Wdbg("colInstances = {0}.Win32_PhysicalMemory, colSlots = {1}.Win32_PhysicalMemoryArray", True, colInstances, colSlots)
+        Wdbg("colInstances = {0}.Win32_PhysicalMemory, colSlots = {1}.Win32_PhysicalMemoryArray", colInstances, colSlots)
         For Each oInstance In colInstances
             Try
                 RAMList.Add(New RAM With {.ChipCapacity = oInstance.Capacity, .SlotName = "", .SlotNumber = 0, .Status = ""})
@@ -264,7 +269,7 @@ Public Module HardwareProbe
                     End If
                 End If
                 temp = temp + CStr(RAMList(RAMList.Count - 1).ChipCapacity / 1024 / 1024) + " "
-                Wdbg("oInstance = {0}.Win32_PhysicalMemory.Capacity = {1}", True, oInstance, RAMList(RAMList.Count - 1).ChipCapacity)
+                Wdbg("oInstance = {0}.Win32_PhysicalMemory.Capacity = {1}", oInstance, RAMList(RAMList.Count - 1).ChipCapacity)
             Catch ex As Exception
                 RAMDone = False
                 If (DebugMode = True) Then
@@ -279,7 +284,7 @@ Public Module HardwareProbe
             For Each oSlot In colSlots
                 Try
                     totalSlots = oSlot.MemoryDevices
-                    Wdbg("oSlot = {0}.Win32_PhysicalMemoryArray.MemoryDevices | totalSlots = {1}", True, oSlot, totalSlots)
+                    Wdbg("oSlot = {0}.Win32_PhysicalMemoryArray.MemoryDevices | totalSlots = {1}", oSlot, totalSlots)
                 Catch ex As Exception
                     RAMDone = False
                     If (DebugMode = True) Then
@@ -294,12 +299,12 @@ Public Module HardwareProbe
     Public Sub BiosInformation()
         BIOSDone = True
         Dim Info As Object = GetObject("winmgmts:").ExecQuery("Select * from Win32_BIOS")
-        Wdbg("Object created = {0}.Win32_BIOS", True, Info)
+        Wdbg("Object created = {0}.Win32_BIOS", Info)
         For Each BiosInfoSpec As Object In Info
             Try
                 BIOSList.Add(New BIOS With {.Name = BiosInfoSpec.Name, .Manufacturer = BiosInfoSpec.Manufacturer, .SMBIOSVersion = BiosInfoSpec.SMBIOSBIOSVersion, _
                                                         .Version = BiosInfoSpec.Version})
-                Wdbg("Bios Object = {0}.Win32_BIOS.Name = {1}, {0}.Win32_BIOS.Manufacturer = {2}, {0}.Win32_BIOS.SMBIOSBIOSVersion = {3}, {0}.Win32_BIOS.Version = {4}, ", True, BiosInfoSpec, BIOSList(BIOSList.Count - 1).Name, BIOSList(BIOSList.Count - 1).Manufacturer, BIOSList(BIOSList.Count - 1).SMBIOSVersion, BIOSList(BIOSList.Count - 1).Version)
+                Wdbg("Bios Object = {0}.Win32_BIOS.Name = {1}, {0}.Win32_BIOS.Manufacturer = {2}, {0}.Win32_BIOS.SMBIOSBIOSVersion = {3}, {0}.Win32_BIOS.Version = {4}, ", BiosInfoSpec, BIOSList(BIOSList.Count - 1).Name, BIOSList(BIOSList.Count - 1).Manufacturer, BIOSList(BIOSList.Count - 1).SMBIOSVersion, BIOSList(BIOSList.Count - 1).Version)
                 If (BIOSList(BIOSList.Count - 1).SMBIOSVersion = BIOSList(BIOSList.Count - 1).Name) Then
                     BIOSList(BIOSList.Count - 1).SMBIOSVersion = Nothing
                 End If

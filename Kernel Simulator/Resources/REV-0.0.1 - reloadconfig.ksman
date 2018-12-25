@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell command "reloadconfig"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+reloadconfig command
+
+Summary: Reloads the kernel configuration
+
+Description
+
+This command reloads the kernel settings and tries to conserve restarts and reflect the changes immediately. If the changes are not reflected, reboot the kernel.
+
+Command usage
+
+* reloadconfig
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadconfig=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadconfig command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

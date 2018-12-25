@@ -35,19 +35,19 @@ Public Module Network
                 ElseIf (repeatTimes = 1) Then
                     s.Start()
                     If My.Computer.Network.Ping(Address) Then
-                        Wln("net: Got response from {0} in {1} ms", "neutralText", Address, s.ElapsedMilliseconds.ToString)
+                        Wln(DoTranslation("net: Got response from {0} in {1} ms", currentLang), "neutralText", Address, s.ElapsedMilliseconds.ToString)
                     End If
                     s.Stop()
                 End If
                 If (i - 1 = repeatTimes) Then
                     Exit Sub
                 End If
-            Catch pe As Net.NetworkInformation.PingException
+            Catch pe As NetworkInformation.PingException
                 If (repeatTimes = 1) Then
-                    Wln("{0}: Timed out, disconnected, or server offline.", "neutralText", Address)
+                    Wln(DoTranslation("{0}: Timed out, disconnected, or server offline.", currentLang), "neutralText", Address)
                     Exit Do
                 Else
-                    Wln("{0}/{1} {2}: Timed out, disconnected, or server offline.", "neutralText", repeatTimes, i, Address)
+                    Wln(DoTranslation("{0}/{1} {2}: Timed out, disconnected, or server offline.", currentLang), "neutralText", repeatTimes, i, Address)
                     If (repeatTimes = i) Then
                         Exit Do
                     End If

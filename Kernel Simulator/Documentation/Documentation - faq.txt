@@ -23,9 +23,3 @@ A: It is handled by supressing it. It is optional that you will see this error o
 Q: Why the "beep" does not produce beep sound?
 A: The host system doesn't have the motherboard speaker, or the motherboard speaker isn't plugged in correctly, or it is malfunctioned.
    EDIT: Some PCs might make a "beep" on the internal sound speaker inside your PC. Dell Optiplex 7040 + Windows 10 is known to have it.
-
-- FTP
-
-Q: Why does the "Injecting CWD..." message appear?
-A: Because we use .NET Framework 4.0 as our development framework and we have to make a workaround to force FTP to use CWD before doing
-   transmissions. This does not indicate an error.

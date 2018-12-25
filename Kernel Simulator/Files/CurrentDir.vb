@@ -19,6 +19,7 @@
 Public Module CurrentDir
 
     'Variables
+    'TODO: Change the file system to real file system
     Public currDir As String = "/"
 
     Public Sub setCurrDir(ByVal dir As String)
@@ -28,7 +29,7 @@ Public Module CurrentDir
         ElseIf (dir = "") Then
             currDir = "/"
         Else
-            Wln("Cannot change directory to /{0} because that directory leads nowhere.", "neutralText", dir)
+            Wln(DoTranslation("Cannot change directory to /{0} because that directory leads nowhere.", currentLang), "neutralText", dir)
         End If
 
     End Sub

@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:FTP command "upload" or "put"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+upload or put FTP command
+
+Summary: Uploads the file to the server
+
+Description
+
+If you need to add your local files in your current working directory to the current working server directory, you must have administrative privileges to add files.
+
+For example, if you're adding the picture of the New Delhi city using the PNG format, you need to upload it to the server for everyone to see. Assuming that it's "NewDelhi.PNG", use "put NewDelhi.PNG."
+
+Command usage
+
+* upload/put (file)
+
+Examples
+
+* upload Win10-Oct2018-x64.iso: Puts the "Win10-Oct2018-x64.iso" to the current working server directory
+* put urls.txt: Puts the "urls.txt" to the current working server directory
+-BODY END-
+
+-COLOR CONFIGURATION-
+upload/put (file)=>Green
+upload Win10-Oct2018-x64.iso:=>Yellow
+put urls.txt:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+upload or put FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

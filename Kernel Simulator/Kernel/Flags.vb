@@ -25,7 +25,6 @@ Module Flags
     Public StopPanicAndGoToDoublePanic As Boolean               'Double panic mode in kernel error
     Public DebugMode As Boolean = False                         'Toggle Debugging mode
     Public LoginFlag As Boolean                                 'Flag for log-in
-    Public MainUserDone As Boolean                              'Main users initialization is done
     Public CommandFlag As Boolean = False                       'A signal for command kernel argument
     Public templateSetExitFlag As Boolean = False               'A signal for checking if the template was set
     Public CruserFlag As Boolean = False                        'A signal to the kernel where user has to be created

@@ -20,8 +20,8 @@ Public Module LoadBackground
 
     Public Sub Load()
 
-        System.Console.BackgroundColor = backgroundColor
-        System.Console.Clear()
+        Console.BackgroundColor = backgroundColor
+        Console.Clear()
 
     End Sub
 

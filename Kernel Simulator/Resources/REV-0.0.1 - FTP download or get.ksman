@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:FTP command "download" or "get"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+download or get FTP command
+
+Summary: Downloads a file from the current working directory
+
+Description
+
+Downloads the binary or text file and saves it to the current working local directory for you to use the downloaded file that is provided in the FTP server.
+
+Command usage
+
+* download/get (file)
+Examples
+
+* download text.txt: Downloads the text file named "text.txt"
+* get shanghai.png: Downloads the binary image file that shows you the Shanghai city in China and saves it to "shanghai.png"
+-BODY END-
+
+-COLOR CONFIGURATION-
+download/get (file)=>Green
+download text.txt:=>Yellow
+get shanghai.png:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+download or get FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

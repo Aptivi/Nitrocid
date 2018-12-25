@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell command "lsnet"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lsnet command
+
+Summary: You can list computers that are online and their IP addresses in domains or workgroups
+
+Description
+
+If you want to get all of the computers that joined the workgroup or the domain, you can use this command, but you must first ask for permission if you're on the public places such as office, school, cafe, etc., otherwise, staff members will disconnect your computer for getting addresses.
+
+This command is also useful if you are listing computers in your small network or your house that has multiple computers running Windows, no matter the version of Windows is running.
+
+Command usage
+
+* lsnet
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnet=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnet command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

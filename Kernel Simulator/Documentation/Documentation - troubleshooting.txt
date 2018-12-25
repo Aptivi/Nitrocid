@@ -19,8 +19,8 @@ A: It works only for PCs with the motherboard speaker installed on it. Your PC m
 
 - Unix Known Bugs
 
-(No bugs)
+1. The viewer is not displayed correctly
 
 - Windows Known Bugs
 
-(No bugs)
+1. Some words might print on the last line where it shows you information on the manual page viewer
