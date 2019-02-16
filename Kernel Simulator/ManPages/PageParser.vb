@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -26,7 +26,7 @@ Module PageParser
                                          "calc", "cdir", "chdir", "chhostname", "chmal", "chmotd", "chpwd", "chusrname", "cls", "debuglog", "FTP changelocaldir", "FTP cdl",
                                          "FTP changeremotedir", "FTP cdr", "FTP connect", "FTP currlocaldir", "FTP pwdl", "FTP currremotedir", "FTP pwdr", "FTP delete",
                                          "FTP del", "FTP disconnect", "FTP download", "FTP get", "FTP listlocal", "FTP lsl", "FTP listremote", "FTP lsr", "FTP rename",
-                                         "FTP ren", "FTP upload", "FTP put", "ftp", "hwprobe", "list", "loadsaver", "lockscreen", "logout", "lscomp", "lsnet", "lsnettree",
+                                         "FTP ren", "FTP upload", "FTP put", "ftp", "list", "loadsaver", "lockscreen", "logout", "lscomp", "lsnet", "lsnettree",
                                          "md", "netinfo", "noaliases", "perm", "ping", "rd", "read", "reboot", "reloadconfig", "rmuser", "savescreen", "scical", "setcolors",
                                          "setsaver", "setthemes", "showmotd", "showtd", "showtdzone", "shutdown", "sysinfo", "unitconv", "useddeps", "Available command-line arguments",
                                          "Available kernel arguments", "Configuration for your Kernel"}
@@ -111,8 +111,6 @@ Module PageParser
                         manLines = My.Resources.REV_0_0_1___FTP_upload_or_put.Replace(Chr(13), "").Split(Chr(10))
                     Case "ftp"
                         manLines = My.Resources.REV_0_0_1___ftp.Replace(Chr(13), "").Split(Chr(10))
-                    Case "hwprobe"
-                        manLines = My.Resources.REV_0_0_1___hwprobe.Replace(Chr(13), "").Split(Chr(10))
                     Case "list"
                         manLines = My.Resources.REV_0_0_1___list.Replace(Chr(13), "").Split(Chr(10))
                     Case "loadsaver"
@@ -181,30 +179,25 @@ Module PageParser
                 Wdbg("Checking manual {0}", ManTitle)
                 For Each manLine As String In manLines
                     If (InternalParseDone = True) Then 'Check for the rest if the manpage has MAN START section
-                        Wdbg("Checking for TODO...")
                         CheckTODO(manLine)
                         If (BodyParsing = True) Then
-                            Wdbg("Checking for body...")
                             ParseBody(manLine)
                         ElseIf (ColorParsing = True) Then
-                            Wdbg("Checking for color...")
                             ParseColor(manLine)
                         ElseIf (SectionParsing = True) Then
-                            Wdbg("Checking for section...")
                             ParseSection(manLine)
                         Else
-                            Wdbg("Checking for internal sections...")
                             ParseMan_INTERNAL(manLine)
                         End If
                     ElseIf (InternalParseDone = False) Then 'Check for the MAN START section
                         If (manLine = "(*MAN START*)") Then
-                            Wdbg("Successfully found (*MAN START*).")
+                            Wdbg("Successfully found (*MAN START*) in manpage {0}.", ManTitle)
                             InternalParseDone = True
                         End If
                     End If
                 Next
                 If (InternalParseDone = True) Then
-                    Wdbg("Valid manual page!")
+                    Wdbg("Valid manual page! ({0})", ManTitle)
                     Sanity_INTERNAL(ManTitle)
                 Else
                     Throw New EventsAndExceptions.TruncatedManpageException(DoTranslation("The manual page {0} is somehow truncated.", currentLang))
@@ -263,7 +256,7 @@ Module PageParser
     'Get strings until end of body
     Public Sub ParseBody(ByVal line As String)
         If (line <> "-BODY END-") Then
-            Wdbg("Appending {0} to builder", line)
+            If line <> "" Then Wdbg("Appending {0} to builder", line)
             Pages(ManTitle).Body.Append(line + vbNewLine)
         ElseIf (line.StartsWith("~~-") = False) Then 'If the line does not start with the comment
             BodyParsing = False

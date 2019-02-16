@@ -44,6 +44,7 @@ HDD: {0} {1}GB <=+=> echadeedee: {0} {1} jeebee
 HDD: {0} {1} {2}GB <=+=> echadeedee: {0} {1} {2} jeebee
 HDD: Type: {2} | Status: {3} <=+=> echadeedee: taip: {2} | sthiti: {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> echadeedee: seeeches: {4} silendar | {5} sir | {6} sektar
+BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobai: probing samarthit nahin hai kyonki yah yooniks par probars chalaane ke lie dizain nahin kiya gaya hai.
 Enter the admin password for maintenance. <=+=> rakharakhaav ke lie vyavasthaapak paasavard darj karen.
 There is no more users remaining in the list. <=+=> soochee mein koee aur upayogakarta shesh nahin hai.

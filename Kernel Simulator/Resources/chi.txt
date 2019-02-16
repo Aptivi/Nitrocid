@@ -44,6 +44,7 @@ HDD: {0} {1}GB <=+=> HDD: {0} {1}GB
 HDD: {0} {1} {2}GB <=+=> HDD: {0} {1} {2}GB
 HDD: Type: {2} | Status: {3} <=+=> HDD: Jiànrù: {2} |Zhuàngtài: {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} Qìgāng | {5} tóu | {6} sector
+BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: Tàncè bù shòu zhīchí, yīnwèi tā bùshì wèi zài Unix shàng yùnxíng tàncè qì ér shèjì de.
 Enter the admin password for maintenance. <=+=> Shūrù guǎnlǐ mìmǎ jìnxíng wéihù.
 There is no more users remaining in the list. <=+=> Lièbiǎo zhōng méiyǒu shèngyú yònghù.

@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -29,37 +29,34 @@ Public Module Login
     'TODO: Re-write in the final release of 0.0.6 (delayed)
 
     Sub LoginPrompt()
+        While True
+            'Fire event PreLogin
+            EventManager.RaisePreLogin()
 
-        'Fire event PreLogin
-        EventManager.RaisePreLogin()
+            'Prompts user to log-in
+            If (clsOnLogin = True) Then
+                Console.Clear()
+            End If
 
-        'Prompts user to log-in
-        If (clsOnLogin = True) Then
-            System.Console.Clear()
-        End If
-        MOTDMessage = PlaceParse.ProbePlaces(MOTDMessage)
+            'Generate user list
+            Wln(vbNewLine + DoTranslation("Available usernames: {0}", currentLang), "neutralText", String.Join(", ", userword.Keys))
 
-        'Generate user list
-        Wln(vbNewLine + DoTranslation("Available usernames: {0}", currentLang), "neutralText", String.Join(", ", userword.Keys))
-
-        'Login process
-        If (showMOTD = False) Or (showMOTDOnceFlag = False) Then
-            W(vbNewLine + DoTranslation("Username: ", currentLang), "input")
-        ElseIf (showMOTDOnceFlag = True And showMOTD = True) Then
-            W(vbNewLine + MOTDMessage + vbNewLine + vbNewLine + DoTranslation("Username: ", currentLang), "input")
-        End If
-        showMOTDOnceFlag = False
-        answeruser = System.Console.ReadLine()
-        If InStr(CStr(answeruser), " ") > 0 Then
-            Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
-            LoginPrompt()
-        ElseIf (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
-            Wln(DoTranslation("Special characters are not allowed.", currentLang), "neutralText")
-            LoginPrompt()
-        Else
-            showPasswordPrompt(CStr(answeruser))
-        End If
-
+            'Login process
+            If (showMOTD = False) Or (showMOTDOnceFlag = False) Then
+                W(vbNewLine + DoTranslation("Username: ", currentLang), "input")
+            ElseIf (showMOTDOnceFlag = True And showMOTD = True) Then
+                W(vbNewLine + PlaceParse.ProbePlaces(MOTDMessage) + vbNewLine + vbNewLine + DoTranslation("Username: ", currentLang), "input")
+            End If
+            showMOTDOnceFlag = False
+            answeruser = Console.ReadLine()
+            If InStr(CStr(answeruser), " ") > 0 Then
+                Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
+            ElseIf (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+                Wln(DoTranslation("Special characters are not allowed.", currentLang), "neutralText")
+            Else
+                showPasswordPrompt(CStr(answeruser))
+            End If
+        End While
     End Sub
 
     Sub showPasswordPrompt(ByVal usernamerequested As String)
@@ -68,7 +65,7 @@ Public Module Login
         Dim DoneFlag As Boolean = False
         On Error Resume Next
 
-        'Prompts user to enter a user's password
+        'Prompts user to enter a user's password | TODO: Prevent stack overflowing
         For Each availableUsers As String In userword.Keys.ToArray
             If availableUsers = answeruser And disabledList(availableUsers) = False Then
                 Wdbg("ASSERT({0} = {1}, {2} = False) = True, True", availableUsers, answeruser, disabledList(availableUsers))
@@ -77,14 +74,12 @@ Public Module Login
                 'Check if there's the password
                 If Not (password = Nothing) Then
                     W(DoTranslation("{0}'s password: ", currentLang), "input", usernamerequested)
-                    answerpass = System.Console.ReadLine()
+                    answerpass = Console.ReadLine()
                     If InStr(CStr(answerpass), " ") > 0 Then
                         Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
                         If (maintenance = False) Then
                             If (LockMode = True) Then
                                 showPasswordPrompt(usernamerequested)
-                            Else
-                                LoginPrompt()
                             End If
                         Else
                             showPasswordPrompt(usernamerequested)
@@ -102,8 +97,6 @@ Public Module Login
                             If (maintenance = False) Then
                                 If (LockMode = True) Then
                                     showPasswordPrompt(usernamerequested)
-                                Else
-                                    LoginPrompt()
                                 End If
                             Else
                                 showPasswordPrompt(usernamerequested)
@@ -121,12 +114,10 @@ Public Module Login
                 End If
             ElseIf (availableUsers = answeruser And disabledList(availableUsers) = True) Then
                 Wln(DoTranslation("User is disabled.", currentLang), "neutralText")
-                LoginPrompt()
             End If
         Next
         If DoneFlag = False Then
             Wln(DoTranslation("Wrong username.", currentLang), "neutralText")
-            LoginPrompt()
         End If
 
     End Sub
@@ -135,10 +126,9 @@ Public Module Login
 
         'Initialize shell, and sign in to user.
         signedinusrnm = signedInUser
-        MAL = PlaceParse.ProbePlaces(MAL)
         If LockMode = True Then LockMode = False
         showMOTDOnceFlag = True
-        Wln(MAL, "neutralText")
+        Wln(PlaceParse.ProbePlaces(MAL), "neutralText")
         EventManager.RaisePostLogin()
         Shell.initializeShell()
 

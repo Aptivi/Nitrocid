@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.Reflection
-Imports System.Reflection.Assembly
 Imports System.Threading
 
 Public Module KernelTools
@@ -71,11 +70,7 @@ Public Module KernelTools
             If (Description.Contains("DOUBLE PANIC: ") And ErrorType = "D") Then
                 'If the description has a double panic tag and the error type is Double
                 Wln(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, CStr(Description), CStr(RebootTime))
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    Thread.Sleep(CInt(RebootTime * 1000))
-                Else
-                    Sleep(CInt(RebootTime * 1000))
-                End If
+                Thread.Sleep(CInt(RebootTime * 1000))
                 PowerManage("reboot")
             ElseIf (StopPanicAndGoToDoublePanic = True) Then
                 'Switch to Double Panic
@@ -85,25 +80,21 @@ Public Module KernelTools
                 Reboot = False
                 Wln(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.", currentLang) + vbNewLine +
                     DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, CStr(Description))
-                Dim answercontpanic = Console.ReadKey.KeyChar
+                Console.ReadKey()
             ElseIf (ErrorType = "C" And Reboot = False) Then
                 'Check if error is Continuable and reboot is disabled
                 EventManager.RaiseContKernelError()
                 Wln(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, CStr(Description))
-                Dim answercontpanic = Console.ReadKey.KeyChar
+                Console.ReadKey()
             ElseIf ((Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C")) Then
                 'If rebooting is disabled and the error type does not equal Double or Continuable
                 Wln(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown.", currentLang), "uncontError", ErrorType, CStr(Description))
-                Dim answerpanic = Console.ReadKey.KeyChar
+                Console.ReadKey()
                 PowerManage("shutdown")
             Else
                 'Everything else.
                 Wln(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, CStr(Description), CStr(RebootTime))
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    Thread.Sleep(CInt(RebootTime * 1000))
-                Else
-                    Sleep(CInt(RebootTime * 1000))
-                End If
+                Thread.Sleep(CInt(RebootTime * 1000))
                 PowerManage("reboot")
             End If
         Catch ex As Exception
@@ -157,7 +148,6 @@ Public Module KernelTools
         Erase BootArgs
         argsFlag = False
         Computers = Nothing
-        ProbeFlag = True
         Quiet = False
         StopPanicAndGoToDoublePanic = False
         strcommand = Nothing
@@ -249,13 +239,12 @@ Public Module KernelTools
 
         'Show introduction. Don't remove license.
         Wln(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), "neutralText", KernelVersion)
-        Wln(vbNewLine + "    Kernel Simulator  Copyright (C) 2018  EoflaOE" + vbNewLine +
+        Wln(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE" + vbNewLine +
                         "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
                         "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
                         "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                         "    under certain conditions; See COPYING file in source code." + vbNewLine, "license")
-
-
+        Wln("OS: Running on {0}", "neutralText", EnvironmentOSType)
 
         'Parse current theme string
         ParseCurrentTheme()
@@ -263,6 +252,7 @@ Public Module KernelTools
         'Send a message on debugger
         If (instanceChecked = False) Then MultiInstance()
         Wdbg("Kernel initialized, version {0}.", KernelVersion)
+        Wdbg("OS: {0}", EnvironmentOSType)
 
         'Initialize manual pages
         For Each titleMan As String In AvailablePages

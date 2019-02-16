@@ -39,7 +39,7 @@ Basic modding
 15. Name your mod, but leave the .vb intact. Your mod name should be the one that is included in the Post-build built event. If your mod name is changed, you must also change the post-build event for the changes to be reflected.
 16. Click Add, and the code will be ready:
     Public Class ModName
-
+	    'Your code here
     End Class
 17. Between the Public Class... and the End Class lines, let Visual Studio 2017 know that you're going to create your KS mod by writing: Implements IScript
 18. If you're going to add namespaces, these rules must be met:

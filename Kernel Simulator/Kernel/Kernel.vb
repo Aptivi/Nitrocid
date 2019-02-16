@@ -14,6 +14,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+'TODO: Change app icon in 0.0.6
 Imports System.Reflection.Assembly
 
 Public Module Kernel
@@ -21,7 +22,7 @@ Public Module Kernel
     'Variables
     Public KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
     Public BootArgs() As String
-    Public AvailableArgs() As String = {"nohwprobe", "quiet", "cmdinject", "debug", "maintenance", "help"}
+    Public AvailableArgs() As String = {"quiet", "cmdinject", "debug", "maintenance", "help"}
     Public availableCMDLineArgs() As String = {"createConf", "promptArgs", "testMod"}
     Public configReader As New IniFile()
     Public MOTDMessage As String
@@ -29,9 +30,6 @@ Public Module Kernel
     Public MAL As String
     Public EnvironmentOSType As String = Environment.OSVersion.ToString
     Public EventManager As New EventsAndExceptions
-
-    'Windows only (Nothing happens in Unix - no exceptions)
-    Declare Sub Sleep Lib "kernel32" (ByVal milliseconds As Integer)
 
     Sub Main()
 
@@ -55,10 +53,10 @@ Public Module Kernel
                 'Phase 1: Probe hardware and BIOS if nohwprobe is not passed
                 If (Quiet = True Or quietProbe = True) Then
                     'Continue the kernel, and don't print messages
-                    HardwareProbe.ProbeHW(True, CChar("K"))
+                    HardwareProbe.ProbeHW(True)
                 Else
                     'Continue the kernel
-                    HardwareProbe.ProbeHW(False, CChar("K"))
+                    HardwareProbe.ProbeHW(False)
                 End If
             End If
 

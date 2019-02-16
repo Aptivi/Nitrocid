@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -34,11 +34,7 @@ Public Module TimeZones
 
         'Adds date and time to every single time zone to the list
         For Each zone In zones
-            If (EnvironmentOSType.Contains("Unix")) Then
-                zoneTimes.Add(zone.DisplayName, ConvertTime(KernelDateTime, FindSystemTimeZoneById(zone.DisplayName)))
-            Else
-                zoneTimes.Add(zone.Id, ConvertTime(KernelDateTime, FindSystemTimeZoneById(zone.Id)))
-            End If
+            zoneTimes.Add(zone.Id, ConvertTime(KernelDateTime, FindSystemTimeZoneById(zone.Id)))
         Next
 
     End Sub

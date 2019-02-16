@@ -12,10 +12,8 @@ A: It works only for PCs with the motherboard speaker installed on it. Your PC m
    installed on it because your computer might be new. You can still install motherboard speaker by buying it and then
    plugging the motherboard speaker to the correct port for it. If you still don't hear a beep sound, contact us or
    check the motherboard speaker's port for correct installation. Read your motherboard's manual. If the manual does
-   not mention one for motherboard speaker, send us your motherboard's manufacturer and model. If your computer is
-   known to make a "beep" sound on internal sound speaker inside your computer, then raise the volume on the mixer. 
-   (Dell Optiplex 7040, most UEFI motherboards, etc.)
-
+   not mention one for motherboard speaker, send us your motherboard's manufacturer and model. If you have Windows 10
+   installed and are using the new terminal features, it's known to cause the in-app "beep" sound, so check your volume.
 
 - Unix Known Bugs
 

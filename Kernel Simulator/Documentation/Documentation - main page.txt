@@ -13,10 +13,13 @@ We have discontinued Windows XP support since 0.0.5.9. We are using NuGet to get
 
 This version is the beta version so expect some bugs and instabilities. If you have experienced one, send a bug report to GitHub with stack trace and debugging logs.
 
+We might not be able to release the 0.0.6 on internal release day and month, so expect some lateness. But, you can expect the beta version of 0.0.6 to release on the 1-year anniversary event.
+
 Kernel Simulator lets you simulate a very early access for our future Kernel. Cannot log-in to Kernel Simulator on "root" account? The password is the backwards of "root"
 
 |---------------+--> History <--+---------------|
 
+1/28/2019 - 0.0.5.10: Improved readability of manual pages (vbTab is now filtered and will not cause issues), Now the translator prints debug info when a string is not found in the translation list, Hardware Prober: Stop spamming "System.__ComObject" to debugger to allow easy reading, Manpage Parser: Stop filling debug logs with useless "Checking for..." texts and expanded few debug messages, Fixed the BIOS string not showing, Removed unnecessary sleep platform checks, Removed "nohwprobe" kernel argument as hardware probing is important, Removed unnecessary timezone platform checks, Updated FluentFTP and Newtonsoft.Json libraries to their latest stable versions, No stack duplicates except the password part in Login, Fixed bug of MAL and MOTD not refreshing between logins, Fixed bug of sysinfo (the message settings not printing), The kernel now prints environment used on boot, debug, and on sysinfo command, Made writing events obsolete
 12/24/2018 - 0.0.5.9: Mods will now be stopped when shutting down, Mods can have their own name and their own version, fixed debugger not closing properly when rebooting or shutting down, Shell now no longer exit the application when an exception happens, Debugging now more sensitive (except for getting commands), Now debug writer doesn't support writing without new lines, You are finally allowed to include spaces in your hostname as well as hostnames that is less than 4 characters like "joe", Deprecated useless and abusive commands, Removed extra checks for IANA timezones resulting in no more registry way, fixed listing networks, Added currency converter that uses the Internet (If we have added local values, we have to release more updates which is time-consuming, so the Internet way conserves time and updates), we have finally allowed users to view debug logs using KS with the debugging off, we have improved FTP client, for those who don't speak English can now set their own language although the default is English, fixed missing help entry for "lscomp", Added kernel manual pages, took out Windows XP support, fixed NullReferenceException when there are errors trying to compile mods, added testMods cmdline argument, and more...
 11/1/2018 - 0.0.5.8: Removed beeping when rebooting and shutting down, Removed "beep" command, (Windows) Probers will now continue even if they failed, Disposing memory now no longer uses VB6 method of handling errors
 10/13/2018 - 0.0.5.7: Fixed crash when starting when running on a file name that is other than "Kernel Simulator.exe", Better error handling for FTP, Added current directory printing in FTP, removed "version" command, fixed the "Quiet Probe" value being set "Quiet Probe", Expanded "sysinfo", Fixed configuration reader not closing when exiting kernel, (Unix) Fixed a known bug
@@ -87,7 +90,7 @@ License (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TX
 |---------------+--> License - GNU GPL <--+---------------|
 
     Kernel Simulator - Simulates our future planned Kernel
-    Copyright (C) 2018  EoflaOE
+    Copyright (C) 2018-2019  EoflaOE
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

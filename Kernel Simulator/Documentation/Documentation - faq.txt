@@ -3,7 +3,7 @@
 - General
 
 Q: Why is this kernel unfinished?
-A: Because it is still on early alpha development stage. We are currently at 0.0.x stage. Stages:
+A: Because it is still on early alpha development stage. We are still at the 0.0.x stage. Stages:
 
 	0.0.x indicates that it is alpha
 	0.x.x indicates that it is beta
@@ -12,14 +12,3 @@ A: Because it is still on early alpha development stage. We are currently at 0.0
 
 Q: Can this program have an editor?
 A: Yes, you can make one, or if you don't know how to contribute, wait for someone else or the owner to contribute.
-
-- Log-in
-
-Q: Why when I log-in into random usernames that does not exist, on the debugger, it says that there is an error?
-A: It is handled by supressing it. It is optional that you will see this error on the debugging window.
-
-- Commands
-
-Q: Why the "beep" does not produce beep sound?
-A: The host system doesn't have the motherboard speaker, or the motherboard speaker isn't plugged in correctly, or it is malfunctioned.
-   EDIT: Some PCs might make a "beep" on the internal sound speaker inside your PC. Dell Optiplex 7040 + Windows 10 is known to have it.

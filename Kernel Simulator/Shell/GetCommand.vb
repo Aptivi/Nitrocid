@@ -1,5 +1,5 @@
 
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -185,7 +185,7 @@ Public Module GetCommand
                 If (requestedCommand <> "choice") Then
                     If (args.Count - 1 = 1) Then
                         W("{0} <{1}> ", "input", args(0), args(1))
-                        Dim answerchoice As String = System.Console.ReadKey.KeyChar
+                        Dim answerchoice As String = Console.ReadKey.KeyChar
                         Dim answerchoices() As String = args(1).Split(CChar("/"))
                         For Each choiceset In answerchoices
                             If (answerchoice = choiceset) Then
@@ -290,15 +290,6 @@ Public Module GetCommand
 
                 InitiateShell() : Done = True
 
-            ElseIf (requestedCommand = "hwprobe") Then
-
-                If Not (EnvironmentOSType.Contains("Unix")) Then
-                    ProbeHW() : Done = True
-                Else
-                    Wln(DoTranslation("hwprobe: Probing not supported because it's not designed to run probers on Unix.", currentLang), "neutralText")
-                    Done = True
-                End If
-
             ElseIf (requestedCommand.Substring(0, index) = "loadsaver") Then
 
                 If (requestedCommand <> "loadsaver") Then
@@ -370,7 +361,7 @@ Public Module GetCommand
 
                 'Logs out of the user
                 Done = True
-                LoginPrompt() 'TODO: More reliable way should be implemented (no making duplicate stacks)
+                LogoutRequested = True
 
             ElseIf (requestedCommand = "netinfo") Then
 
@@ -668,7 +659,7 @@ Public Module GetCommand
                 Done = True
 
                 'Shows system information
-                Wln(DoTranslation("{0}[ Kernel settings ]", currentLang), "helpCmd", vbNewLine)
+                Wln(DoTranslation("{0}[ Kernel settings (Running on {1}) ]", currentLang), "helpCmd", vbNewLine, EnvironmentOSType)
 
                 'Kernel section
                 Wln(vbNewLine + DoTranslation("Kernel Version:", currentLang) + " {0}" + vbNewLine +
@@ -678,8 +669,7 @@ Public Module GetCommand
                                 DoTranslation("Help command simplified:", currentLang) + " {4}" + vbNewLine +
                                 DoTranslation("MOTD on Login:", currentLang) + " {5}" + vbNewLine +
                                 DoTranslation("Time/Date on corner:", currentLang) + " {6}" + vbNewLine +
-                                DoTranslation("Hardware probed:", currentLang) + " {7}" + vbNewLine +
-                                DoTranslation("Current theme:", currentLang) + " {8}" + vbNewLine, "neutralText", KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString, ProbeFlag.ToString, currentTheme)
+                                DoTranslation("Current theme:", currentLang) + " {7}" + vbNewLine, "neutralText", KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString, currentTheme)
 
                 'Hardware section
                 Wln(DoTranslation("[ Hardware settings ]{0}", currentLang), "helpCmd", vbNewLine)
@@ -690,12 +680,12 @@ Public Module GetCommand
                 Wln(vbNewLine + DoTranslation("Current user name:", currentLang) + " {0}" + vbNewLine +
                                 DoTranslation("Current host name:", currentLang) + " {1}" + vbNewLine +
                                 DoTranslation("Available usernames:", currentLang) + " {2}" + vbNewLine +
-                                DoTranslation("Computer host name:", currentLang) + " {3}" + vbNewLine, "neutralText", signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
+                                DoTranslation("Computer host name:", currentLang) + " {3}", "neutralText", signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
 
                 'Messages Section
                 Wln(DoTranslation("{0}[ Messages Settings ]", currentLang), "helpCmd", vbNewLine)
                 Wln(vbNewLine + "MOTD: {0}" + vbNewLine +
-                                "MAL: {0}", MOTDMessage, MAL)
+                                "MAL: {1}", "neutralText", PlaceParse.ProbePlaces(MOTDMessage), PlaceParse.ProbePlaces(MAL))
 
             ElseIf (requestedCommand.Substring(0, index) = "unitconv") Then
 

@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -49,10 +49,14 @@ Public Module Translate
             translatedString = PrepareDict(lang)
             For Each StrTran As String In translatedString.Keys
                 If StrTran = text Then
+                    Wdbg("Translating string to {0}: {1}", lang, text)
                     translated = translatedString(text)
                     Exit For
                 End If
             Next
+            If Not (translatedString.Keys.Contains(text)) Then
+                Wdbg("No string found in langlist. Lang: {0}, String: {1}", lang, text)
+            End If
             Return translated
         ElseIf availableLangs.Contains(lang) And lang = "eng" Then
             Wdbg("{0} is in language list but it's English", lang)

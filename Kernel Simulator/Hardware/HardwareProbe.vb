@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -19,28 +19,20 @@
 Public Module HardwareProbe
 
     'TODO: Re-write in Beta
-    'TODO: Remove the "nohwprobe" argument. Parsing is now important.
     'TODO: Remove the BIOS and GPU probing until the final release.
-    Public Sub ProbeHW(Optional ByVal QuietHWProbe As Boolean = False, Optional ByVal KernelUser As Char = CChar("U"))
+    'TODO: Replace COM calling functions with an even more reliable Management class.
+    Public Sub ProbeHW(Optional ByVal QuietHWProbe As Boolean = False)
 
-        Wdbg("QuietHWProbe = {0}, KernelUser = {1}, ProbeFlag = {2}.", QuietHWProbe, KernelUser, ProbeFlag)
+        Wdbg("QuietHWProbe = {0}.", QuietHWProbe)
         If (QuietHWProbe = False) Then
-            If (ProbeFlag = True And KernelUser = "K") Or (ProbeFlag = False And KernelUser = "U") Then
-                Wln(DoTranslation("hwprobe: Your hardware will be probed. Please wait...", currentLang), "neutralText")
-                StartProbing()
-            ElseIf (KernelUser = "U" And ProbeFlag = True) Then
-                Wln(DoTranslation("hwprobe: Hardware already probed.", currentLang), "neutralText")
-            ElseIf (ProbeFlag = False And KernelUser = "K") Then
-                Wln(DoTranslation("hwprobe: Hardware is not probed. Probe using 'hwprobe'", currentLang), "neutralText")
-            End If
+            Wln(DoTranslation("hwprobe: Your hardware will be probed. Please wait...", currentLang), "neutralText")
+            StartProbing()
         ElseIf (QuietHWProbe = True) Then
-            If (ProbeFlag = True) Then
-                Cpuinfo()
-                SysMemory(True)
-                Hddinfo(True)
-                ProbeGPU(True, True)
-                BiosInformation()
-            End If
+            Cpuinfo()
+            SysMemory(True)
+            Hddinfo(True)
+            ProbeGPU(True, True)
+            BiosInformation()
         End If
 
     End Sub
@@ -92,8 +84,7 @@ Public Module HardwareProbe
             Wln(DoTranslation("BIOS: One or more of the BIOS chips failed to be probed. Showing information anyway...", currentLang), "neutralText")
         End If
 
-        'Inform users
-        ProbeFlag = True
+        'Print information about the probed hardware
         ListDrivers()
     End Sub
 
@@ -183,20 +174,16 @@ Public Module HardwareProbe
     Public Sub ProbeGPU(Optional ByVal KernelMode As Boolean = True, Optional ByVal QuietMode As Boolean = False)
 
         Dim colGPUs As Object = ""
-        If ProbeFlag = True Then
-            GPUDone = True
-            colGPUs = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_VideoController")
-            Wdbg("Object created = {0}.Win32_VideoController", colGPUs)
-        End If
+        GPUDone = True
+        colGPUs = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_VideoController")
+        Wdbg("Object created = colGPUs.Win32_VideoController")
         For Each oGPU As Object In colGPUs
             Try
-                If ProbeFlag = True Then
-                    If (oGPU.AdapterRAM.ToString = DBNull.Value.ToString) Then
-                        oGPU.AdapterRAM = 0
-                    End If
-                    GPUList.Add(New GPU With {.Name = oGPU.Caption, .Memory = oGPU.AdapterRAM})
-                    Wdbg("GPU Object = {0}.Win32_VideoController.Caption = {1}, {0}.Win32_VideoController.AdapterRAM = {2}", oGPU, oGPU.Caption, oGPU.AdapterRAM.ToString)
+                If (oGPU.AdapterRAM.ToString = DBNull.Value.ToString) Then
+                    oGPU.AdapterRAM = 0
                 End If
+                GPUList.Add(New GPU With {.Name = oGPU.Caption, .Memory = oGPU.AdapterRAM})
+                Wdbg("GPU Object = oGPU.Win32_VideoController.Caption = {0}, oGPU.Win32_VideoController.AdapterRAM = {1}", oGPU.Caption, oGPU.AdapterRAM.ToString)
             Catch ex As Exception
                 GPUDone = False
                 If (DebugMode = True) Then
@@ -211,15 +198,15 @@ Public Module HardwareProbe
     Public Sub Hddinfo(Optional ByVal QuietMode As Boolean = False)
         HDDDone = True
         Dim HDDSet As Object = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_DiskDrive")
-        Wdbg("Object created = {0}.Win32_DiskDrive", HDDSet)
+        Wdbg("Object created = HDDSet.Win32_DiskDrive")
         For Each Hdd As Object In HDDSet
             Try
                 HDDList.Add(New HDD With {.Model = Hdd.Model, .Size = Hdd.Size, .Status = Hdd.Status, _
                                                       .Manufacturer = Hdd.Manufacturer, .Cylinders = Hdd.TotalCylinders, .Heads = Hdd.TotalHeads, _
                                                       .Sectors = Hdd.TotalSectors, .InterfaceType = Hdd.InterfaceType})
-                Wdbg("HDD Object = {0}.Win32_DiskDrive.Manufacturer = {3}, {0}.Win32_DiskDrive.Model = {1}, {0}.Win32_DiskDrive.Size = {2}, " +
-                     "{0}.Win32_DiskDrive.InterfaceType = {4}, {0}.Win32_DiskDrive.Status = {5}, CHS: {6}, {7}, {8}",
-                     Hdd, HDDList(HDDList.Count - 1).Model, HDDList(HDDList.Count - 1).Size, HDDList(HDDList.Count - 1).Manufacturer,
+                Wdbg("HDD Object = Hdd.Win32_DiskDrive.Manufacturer = {2}, Hdd.Win32_DiskDrive.Model = {0}, Hdd.Win32_DiskDrive.Size = {1}, " +
+                     "Hdd.Win32_DiskDrive.InterfaceType = {3}, Hdd.Win32_DiskDrive.Status = {4}, CHS: {5}, {6}, {7}",
+                     HDDList(HDDList.Count - 1).Model, HDDList(HDDList.Count - 1).Size, HDDList(HDDList.Count - 1).Manufacturer,
                      HDDList(HDDList.Count - 1).InterfaceType, HDDList(HDDList.Count - 1).Status, HDDList(HDDList.Count - 1).Cylinders,
                      HDDList(HDDList.Count - 1).Heads, HDDList(HDDList.Count - 1).Sectors)
             Catch ex As Exception
@@ -236,11 +223,11 @@ Public Module HardwareProbe
     Public Sub Cpuinfo()
         CPUDone = True
         Dim CPUSet As Object = GetObject("Winmgmts:").ExecQuery("SELECT * FROM Win32_Processor")
-        Wdbg("Object created = {0}.Win32_Processor", CPUSet)
+        Wdbg("Object created = CPUSet.Win32_Processor", CPUSet)
         For Each CPU As Object In CPUSet
             Try
                 CPUList.Add(New CPU With {.Name = CPU.Name, .ClockSpeed = CPU.CurrentClockSpeed})
-                Wdbg("CPU Object = {0}.Win32_Processor.Name = {1}, {0}.Win32_Processor.CurrentClockSpeed = {2}", CPU, CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
+                Wdbg("CPU Object = CPU.Win32_Processor.Name = {0}, CPU.Win32_Processor.CurrentClockSpeed = {1}", CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
             Catch ex As Exception
                 CPUDone = False
                 If (DebugMode = True) Then
@@ -256,7 +243,7 @@ Public Module HardwareProbe
         Dim colInstances As Object = GetObject("winmgmts:").ExecQuery("SELECT * FROM Win32_PhysicalMemory")
         Dim colSlots As Object = GetObject("winmgmts:").ExecQuery("SELECT * FROM Win32_PhysicalMemoryArray")
         Dim temp = ""
-        Wdbg("colInstances = {0}.Win32_PhysicalMemory, colSlots = {1}.Win32_PhysicalMemoryArray", colInstances, colSlots)
+        Wdbg("colInstances = Win32_PhysicalMemory, colSlots = Win32_PhysicalMemoryArray")
         For Each oInstance In colInstances
             Try
                 RAMList.Add(New RAM With {.ChipCapacity = oInstance.Capacity, .SlotName = "", .SlotNumber = 0, .Status = ""})
@@ -269,7 +256,7 @@ Public Module HardwareProbe
                     End If
                 End If
                 temp = temp + CStr(RAMList(RAMList.Count - 1).ChipCapacity / 1024 / 1024) + " "
-                Wdbg("oInstance = {0}.Win32_PhysicalMemory.Capacity = {1}", oInstance, RAMList(RAMList.Count - 1).ChipCapacity)
+                Wdbg("oInstance.Win32_PhysicalMemory.Capacity = {0}", RAMList(RAMList.Count - 1).ChipCapacity)
             Catch ex As Exception
                 RAMDone = False
                 If (DebugMode = True) Then
@@ -284,7 +271,7 @@ Public Module HardwareProbe
             For Each oSlot In colSlots
                 Try
                     totalSlots = oSlot.MemoryDevices
-                    Wdbg("oSlot = {0}.Win32_PhysicalMemoryArray.MemoryDevices | totalSlots = {1}", oSlot, totalSlots)
+                    Wdbg("oSlot = Win32_PhysicalMemoryArray.MemoryDevices | totalSlots = {0}", totalSlots)
                 Catch ex As Exception
                     RAMDone = False
                     If (DebugMode = True) Then
@@ -299,12 +286,13 @@ Public Module HardwareProbe
     Public Sub BiosInformation()
         BIOSDone = True
         Dim Info As Object = GetObject("winmgmts:").ExecQuery("Select * from Win32_BIOS")
-        Wdbg("Object created = {0}.Win32_BIOS", Info)
+        Wdbg("Object created = Info.Win32_BIOS")
         For Each BiosInfoSpec As Object In Info
             Try
                 BIOSList.Add(New BIOS With {.Name = BiosInfoSpec.Name, .Manufacturer = BiosInfoSpec.Manufacturer, .SMBIOSVersion = BiosInfoSpec.SMBIOSBIOSVersion, _
                                                         .Version = BiosInfoSpec.Version})
-                Wdbg("Bios Object = {0}.Win32_BIOS.Name = {1}, {0}.Win32_BIOS.Manufacturer = {2}, {0}.Win32_BIOS.SMBIOSBIOSVersion = {3}, {0}.Win32_BIOS.Version = {4}, ", BiosInfoSpec, BIOSList(BIOSList.Count - 1).Name, BIOSList(BIOSList.Count - 1).Manufacturer, BIOSList(BIOSList.Count - 1).SMBIOSVersion, BIOSList(BIOSList.Count - 1).Version)
+                Wdbg("Bios Object = BiosInfoSpec.Win32_BIOS.Name = {0}, BiosInfoSpec.Win32_BIOS.Manufacturer = {1}, BiosInfoSpec.Win32_BIOS.SMBIOSBIOSVersion = {2}, BiosInfoSpec.Win32_BIOS.Version = {3}, ",
+                     BIOSList(BIOSList.Count - 1).Name, BIOSList(BIOSList.Count - 1).Manufacturer, BIOSList(BIOSList.Count - 1).SMBIOSVersion, BIOSList(BIOSList.Count - 1).Version)
                 If (BIOSList(BIOSList.Count - 1).SMBIOSVersion = BIOSList(BIOSList.Count - 1).Name) Then
                     BIOSList(BIOSList.Count - 1).SMBIOSVersion = Nothing
                 End If

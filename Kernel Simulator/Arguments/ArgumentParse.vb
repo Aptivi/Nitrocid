@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -36,12 +36,7 @@ Module ArgumentParse
                     BootArgs(i) = BootArgs(i).Substring(0, indexArg)
                 End If
                 If (AvailableArgs.Contains(BootArgs(i).Substring(0, indexArg))) Then
-                    If (BootArgs(i) = "nohwprobe") Then
-
-                        'Disables automatic hardware probing.
-                        ProbeFlag = False
-
-                    ElseIf (BootArgs(i) = "quiet") Then
+                    If (BootArgs(i) = "quiet") Then
 
                         Quiet = True
 
@@ -51,7 +46,7 @@ Module ArgumentParse
                         If (BootArgs(i) = "cmdinject") Then
                             W(DoTranslation("Available commands: {0}", currentLang) + vbNewLine +
                               DoTranslation("Write command:", currentLang) + " ", "input", String.Join(", ", availableCommands)) 'TODO: The extra + " " will be fixed in the final release
-                            argcmds = System.Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
+                            argcmds = Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                             argcommands = String.Join(", ", argcmds)
                             If (argcommands <> "q") Then
                                 CommandFlag = True

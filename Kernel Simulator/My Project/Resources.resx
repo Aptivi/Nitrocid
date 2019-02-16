@@ -146,7 +146,7 @@
     <value>..\Resources\REV-0.0.1 - Available manual pages.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Available_commands" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REV-0.0.1 - Available commands.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\REV-0.0.1.1 - Available commands.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="History_of_Kernel_Simulator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REV-0.0.1 - History of Kernel Simulator.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -234,9 +234,6 @@
   </data>
   <data name="REV_0_0_1___FTP_upload_or_put" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REV-0.0.1 - FTP upload or put.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="REV_0_0_1___hwprobe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REV-0.0.1 - hwprobe.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="REV_0_0_1___list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REV-0.0.1 - list.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

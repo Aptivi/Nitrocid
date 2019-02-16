@@ -90,7 +90,7 @@ Namespace My.Resources
         '''
         '''~~- Information about this manual page:
         '''-TITLE:Available commands
-        '''-REVISION:0.0.1
+        '''-REVISION:0.0.1.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
         '''
         '''~~- Make sure that all of the commands that are available in the kernel is put.
@@ -98,7 +98,7 @@ Namespace My.Resources
         '''Administrative commands:
         '''
         '''1. adduser: You can add the user&apos;s name whenever you need, with the password if required. However, passwords are required to ensure security. Currently, it has an argument of &quot;adduser &lt;username&gt; &lt;password&gt;.&quot;
-        '''2. perm: You can manage user&apos;s permission settin [rest of string was truncated]&quot;;.
+        '''2. perm: You can manage user&apos;s permission sett [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property Available_commands() As String
             Get
@@ -1042,35 +1042,6 @@ Namespace My.Resources
         Friend ReadOnly Property REV_0_0_1___FTP_upload_or_put() As String
             Get
                 Return ResourceManager.GetString("REV_0_0_1___FTP_upload_or_put", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell command &quot;hwprobe&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''hwprobe command
-        '''
-        '''Summary: You can make your kernel detect hardware configurations when the kernel didn&apos;t do that on boot
-        '''
-        '''Description
-        '''
-        '''You can use this command to make the kernel detect hardware and its configuration settings like BIOS, GPU, RAM, HDD, and CPU. It is only usable when the kernel didn&apos;t probe the hardware and their settings on boot.
-        '''
-        '''Command usage
-        '''
-        '''* hwprobe
-        '''-BODY END-
-        '''
-        '''-C [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property REV_0_0_1___hwprobe() As String
-            Get
-                Return ResourceManager.GetString("REV_0_0_1___hwprobe", resourceCulture)
             End Get
         End Property
         

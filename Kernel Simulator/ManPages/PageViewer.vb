@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -45,7 +45,7 @@ Module PageViewer
                     Wln(Todo, "neutralText")
                 Next
                 W(vbNewLine + DoTranslation("Press any key to continue...", currentLang), "neutralText")
-                Dim cont As String = Console.ReadKey.KeyChar 'TODO: Remove unnecessary ".KeyChar" and variable declaration in the program
+                Console.ReadKey()
             End If
 
             'Clear screen for readability, and backup the values of FG and BG for console
@@ -75,9 +75,17 @@ Module PageViewer
 
             'Write the body
             For Each line As String In Pages(title).Body.ToString.Replace(Chr(13), "").Split(Chr(10))
+                Dim MkNewLineNec As Boolean = True
+
+                'Check for line that starts with a space
+                If (line.StartsWith(" ") Or line.StartsWith(vbTab)) Then
+                    MkNewLineNec = False 'Make making new line unnecessary
+                End If
+
+                'Prepare the view
                 If (line <> "") Then
                     vbNewLineRequired = True
-                    For Each word As String In line.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                    For Each word As String In line.Split({" "c})
                         'Manage lines
                         If oldTop = InfoPlace - 1 Then
                             Wdbg("oldTop ({0}) = InfoPlace - 1 ({1})", oldTop, InfoPlace - 1)
@@ -100,7 +108,7 @@ Module PageViewer
 
                         'Check the word is there is color
                         For Each Word_color As String In splitWords_COLORS_dict.Keys
-                            If (Word_color = word) Then 'If the word in the dictionary matches one in word in the body, set the color
+                            If (Word_color = word.Replace(vbTab, "")) Then 'If the word in the dictionary matches one in word in the body, set the color
                                 Console.ForegroundColor = splitWords_COLORS_dict(Word_color)
                                 Wdbg("{0} has a color entry.", Word_color)
                                 Exit For
@@ -119,9 +127,9 @@ Module PageViewer
                             End If
                         Next
 
-                        'Check for "" on word variable
-                        If (word = "") Then
-                            Wdbg("Making newline...")
+                        'Check for "" on word variable, and make newline if it's necessary.
+                        If (word = "" And MkNewLineNec = True) Then
+                            Wdbg("Making newline... They are necessary.")
                             word = vbNewLine
                         End If
 
@@ -134,6 +142,9 @@ Module PageViewer
                     Console.WriteLine()
                     oldTop = Console.CursorTop
                 End If
+
+                'Reset necessary newlines
+                MkNewLineNec = True
             Next
 
             'Stop on last page

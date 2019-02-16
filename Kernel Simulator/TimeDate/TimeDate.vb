@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -49,11 +49,7 @@ Public Module TimeDate
                     Console.SetCursorPosition(originalCol, originalRow)
                 End If
             End If
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(1000)
-            Else
-                Sleep(1000)
-            End If
+            Thread.Sleep(1000)
         Loop
 
     End Sub

@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -16,7 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports Microsoft.VisualBasic
 Imports System.CodeDom.Compiler
 Imports System.Reflection
 Imports System.ComponentModel
@@ -32,7 +31,7 @@ Public Module Screensaver
     Public WithEvents Matrix As New BackgroundWorker
     Public WithEvents Disco As New BackgroundWorker
     Public WithEvents Custom As New BackgroundWorker
-    Public colors() As ConsoleColor = CType(ConsoleColor.GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
+    Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
     Private execCustomSaver As CompilerResults
     Private finalSaver As ICustomSaver
     Private DoneFlag As Boolean = False
@@ -51,16 +50,12 @@ Public Module Screensaver
         '                           Substitute: TextWriterColor.W() or TextWriterColor.Wln() with System.Console.WriteLine() or System.Console.Write().
         finalSaver.PreDisplay()
         Do While True
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(1)
-            Else
-                Sleep(1)
-            End If
+            Thread.Sleep(1)
             If (Custom.CancellationPending = True) Then
                 e.Cancel = True
                 Console.Clear()
-                System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
-                System.Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
+                Console.ForegroundColor = CType(inputColor, ConsoleColor)
+                Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
                 LoadBackground.Load()
                 Console.CursorVisible = True
                 Exit Do
@@ -79,21 +74,17 @@ Public Module Screensaver
         Console.CursorVisible = False
         Dim colorrand As New Random()
         Do While True
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(1)
-            Else
-                Sleep(1)
-            End If
+            Thread.Sleep(1)
             If (ColorMix.CancellationPending = True) Then
                 e.Cancel = True
                 Console.Clear()
-                System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
-                System.Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
+                Console.ForegroundColor = CType(inputColor, ConsoleColor)
+                Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
                 LoadBackground.Load()
                 Console.CursorVisible = True
                 Exit Do
             Else
-                System.Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor) : Console.Write(" ")
+                Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor) : Console.Write(" ")
             End If
         Loop
 
@@ -111,17 +102,13 @@ Public Module Screensaver
             If (Matrix.CancellationPending = True) Then
                 e.Cancel = True
                 Console.Clear()
-                System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
-                System.Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
+                Console.ForegroundColor = CType(inputColor, ConsoleColor)
+                Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
                 LoadBackground.Load()
                 Console.CursorVisible = True
                 Exit Do
             Else
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    Thread.Sleep(1)
-                Else
-                    Sleep(1)
-                End If
+                Thread.Sleep(1)
                 Console.Write(CStr(random.Next(2)))
             End If
         Loop
@@ -133,16 +120,12 @@ Public Module Screensaver
         Console.CursorVisible = False
         Do While True
             For Each color In colors
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    Thread.Sleep(100)
-                Else
-                    Sleep(100)
-                End If
+                Thread.Sleep(100)
                 If (Disco.CancellationPending = True) Then
                     e.Cancel = True
                     Console.Clear()
-                    System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
-                    System.Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
+                    Console.ForegroundColor = CType(inputColor, ConsoleColor)
+                    Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
                     LoadBackground.Load()
                     Console.CursorVisible = True
                     Exit Do
@@ -163,42 +146,26 @@ Public Module Screensaver
             ColorMix.RunWorkerAsync()
             Console.ReadKey()
             ColorMix.CancelAsync()
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(50)
-            Else
-                Sleep(50)
-            End If
+            Thread.Sleep(50)
         ElseIf (saver = "matrix") Then
             Matrix.WorkerSupportsCancellation = True
             Matrix.RunWorkerAsync()
             Console.ReadKey()
             Matrix.CancelAsync()
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(50)
-            Else
-                Sleep(50)
-            End If
+            Thread.Sleep(50)
         ElseIf (saver = "disco") Then
             Disco.WorkerSupportsCancellation = True
             Disco.RunWorkerAsync()
             Console.ReadKey()
             Disco.CancelAsync()
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(150)
-            Else
-                Sleep(150)
-            End If
+            Thread.Sleep(150)
         ElseIf (ScrnSvrdb.ContainsKey(saver)) Then
             'Only one custom screensaver can be used.
             Custom.WorkerSupportsCancellation = True
             Custom.RunWorkerAsync()
             Console.ReadKey()
             Custom.CancelAsync()
-            If (EnvironmentOSType.Contains("Unix")) Then
-                Thread.Sleep(50)
-            Else
-                Sleep(50)
-            End If
+            Thread.Sleep(50)
         Else
             Wln(DoTranslation("The requested screensaver {0} is not found.", currentLang), "neutralText", saver)
         End If
@@ -206,7 +173,6 @@ Public Module Screensaver
 
     End Sub
 
-    'TODO: In the release of 0.0.5.10, change so it probes everything on boot
     Sub CompileCustom(ByVal file As String)
 
         Dim modPath As String

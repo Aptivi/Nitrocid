@@ -44,6 +44,7 @@ HDD: {0} {1}GB <=+=> HDD: {0} {1}GB
 HDD: {0} {1} {2}GB <=+=> HDD: {0} {1} {2}GB
 HDD: Type: {2} | Status: {3} <=+=> HDD: Type: {2} | Statut: {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} cylindres | {5} têtes | {6} secteurs
+BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: Les sondages ne sont pas pris en charge car ils ne sont pas conçus pour exécuter des sondes sous Unix.
 Enter the admin password for maintenance. <=+=> Entrez le mot de passe administrateur pour la maintenance.
 There is no more users remaining in the list. <=+=> Il ne reste plus d'utilisateurs dans la liste.

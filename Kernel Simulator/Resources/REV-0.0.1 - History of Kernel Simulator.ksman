@@ -564,7 +564,7 @@ After several crashes, we got a laptop running Windows 10 on it, and moved all t
 
 We re-wrote these 3-4 files, and they worked successfully like the last time we extended them to have 0.0.5.9 features.
 
-KS 0.0.5.9, the current version
+KS 0.0.5.9
 
 The changelog says "Mods will now be stopped when shutting down, Mods can have their own name and their own version, fixed debugger not closing properly when rebooting or shutting down, Shell now no longer exit the application when an exception happens, Debugging now more sensitive (except for getting commands), Now debugger can debug better if the new line isn't going to be added after the end of the log, You are finally allowed to include spaces in your hostname as well as hostnames that is less than 4 characters like "joe", Deprecated useless and abusive commands, Removed extra checks for IANA timezones resulting in no more registry way, fixed listing networks, Added currency converter that uses the Internet (If we have added local values, we have to release more updates which is time-consuming, so the Internet way conserves time and updates), we have finally allowed users to view debug logs using KS with the debugging off, we have improved FTP client, for those who don't speak English can now set their own language although the default is English, fixed missing help entry for "lscomp", Added kernel manual pages, took out Windows XP support, and more..."
 
@@ -595,6 +595,25 @@ The changelog says "Mods will now be stopped when shutting down, Mods can have t
 25. Now Time/Date on the corner will be shown correctly on resized consoles
 26. Removed the registry way on TimeZones
 27. Now NuGet is used to manage packages (libraries)
+
+KS 0.0.5.10, the current version
+
+We are busy with something else, and we couldn't release 0.0.6 on time for 1-year anniversary, so this release is a 1-year anniversary. Here's the changelogs in any way:
+
+1. Improved readability of manual pages (vbTab is now filtered and will not cause issues)
+2. Now the translator prints debug info when a string is not found in the translation list
+3. Hardware Prober: Stop spamming "System.__ComObject" to debugger to allow easy reading
+4. Manpage Parser: Stop filling debug logs with useless "Checking for..." texts and expanded few debug messages
+5. Fixed the BIOS string not showing
+6. Removed unnecessary sleep platform checks
+7. Removed "nohwprobe" kernel argument as hardware probing is important
+8. Removed unnecessary timezone platform checks
+9. Updated FluentFTP and Newtonsoft.Json libraries to their latest stable versions (Yes, this is why we're using NuGet! NuGet is better than manually updating the external libraries.)
+10. No stack duplicates except the password part in Login
+11. Fixed bug of MAL and MOTD not refreshing between logins
+12. Fixed bug of sysinfo (the message settings not printing)
+13. The kernel now prints environment used on boot, debug, and on sysinfo command
+14. Made writing events obsolete
 -BODY END-
 
 -SECTIONS-
@@ -632,5 +651,6 @@ KS 0.0.5.6=>SE1
 KS 0.0.5.7=>SE1
 KS 0.0.5.8=>SE1
 The new development looks=>SE1
-KS 0.0.5.9, the current version=>SE1
+KS 0.0.5.9=>SE1
+KS 0.0.5.10, the current version=>SE1
 -SECTIONS END-

@@ -44,6 +44,7 @@ HDD: {0} {1}GB <=+=> Festplatte: {0} {1} GB
 HDD: {0} {1} {2}GB <=+=> Festplatte: {0} {1} {2} GB
 HDD: Type: {2} | Status: {3} <=+=> Festplatte: Geben Sie Folgendes ein: {2} | Status: {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} Zylinder | {5} Köpfe | {6} Sektoren
+BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: Das Prüfen wird nicht unterstützt, da es nicht dafür ausgelegt ist, Prober unter Unix auszuführen.
 Enter the admin password for maintenance. <=+=> Geben Sie das Administratorkennwort für die Wartung ein.
 There is no more users remaining in the list. <=+=> Es sind keine weiteren Benutzer in der Liste vorhanden.

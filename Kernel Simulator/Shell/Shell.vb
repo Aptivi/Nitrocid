@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -22,13 +22,13 @@ Public Module Shell
     'Admin-Only commands (strictCmds())
     Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
-    Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot", _
-                                            "adduser", "chmotd", "chhostname", "lscomp", "hwprobe", "ping", "lsnet", _
-                                            "lsnettree", "showtd", "chpwd", "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", _
-                                            "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical", "unitconv", "md", "rd", _
-                                            "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "savescreen", "lockscreen", _
-                                            "setsaver", "loadsaver", "noaliases", "ftp", "useddeps", "usermanual", "currency"}
-    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog", _
+    Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot",
+                                            "adduser", "chmotd", "chhostname", "lscomp", "ping", "lsnet", "lsnettree", "showtd", "chpwd",
+                                            "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes",
+                                            "netinfo", "calc", "scical", "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone",
+                                            "alias", "chmal", "savescreen", "lockscreen", "setsaver", "loadsaver", "noaliases", "ftp",
+                                            "useddeps", "usermanual", "currency"}
+    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "loadsaver"}
     Public modcmnds As New ArrayList
 
@@ -43,70 +43,76 @@ Public Module Shell
 
         'Initialize Shell
         While True
-            Try
-                'Try to probe injected commands
-                Wdbg("Probing injected commands using GetLine(True)...")
-                getLine(True)
+            If LogoutRequested Then
+                Wdbg("Requested log out: {0}", LogoutRequested)
+                LogoutRequested = False
+                Exit Sub
+            Else
+                Try
+                    'Try to probe injected commands
+                    Wdbg("Probing injected commands using GetLine(True)...")
+                    getLine(True)
 
-                'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes.
-                Console.CursorVisible = True
+                    'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes.
+                    Console.CursorVisible = True
 
-                'Write a prompt
-                commandPromptWrite()
-                DisposeExit.DisposeAll()
+                    'Write a prompt
+                    commandPromptWrite()
+                    DisposeExit.DisposeAll()
 
-                'Set an input color
-                Wdbg("ColoredShell = {0}", ColoredShell)
-                If (ColoredShell = True) Then System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+                    'Set an input color
+                    Wdbg("ColoredShell = {0}", ColoredShell)
+                    If (ColoredShell = True) Then System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
 
-                'Wait for command
-                EventManager.RaiseShellInitialized()
-                strcommand = System.Console.ReadLine()
+                    'Wait for command
+                    EventManager.RaiseShellInitialized()
+                    strcommand = System.Console.ReadLine()
 
-                'Fire event of PreRaiseCommand
-                EventManager.RaisePreExecuteCommand()
+                    'Fire event of PreRaiseCommand
+                    EventManager.RaisePreExecuteCommand()
 
-                'Check for a type of command
-                If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
-                    'Don't make "End If <newline> If" be "ElseIf", or no commands can be run properly.
-                    If (modcmnds.Count - 1 <> -1) Then
-                        Wdbg("Mod commands probing started with {0}", strcommand)
-                        For Each c As String In modcmnds
-                            Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
-                            If (Parts(0) = c And strcommand.StartsWith(Parts(0))) Then
-                                Done = True
-                                GetModCommand.ExecuteModCommand(strcommand)
-                            End If
-                        Next
+                    'Check for a type of command
+                    If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
+                        'Don't make "End If <newline> If" be "ElseIf", or no commands can be run properly.
+                        If (modcmnds.Count - 1 <> -1) Then
+                            Wdbg("Mod commands probing started with {0}", strcommand)
+                            For Each c As String In modcmnds
+                                Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                                If (Parts(0) = c And strcommand.StartsWith(Parts(0))) Then
+                                    Done = True
+                                    GetModCommand.ExecuteModCommand(strcommand)
+                                End If
+                            Next
+                        End If
+                        If (aliases.Count - 1 <> -1) Then
+                            Wdbg("Aliases probing started with {0}", strcommand)
+                            For Each a As String In aliases.Keys
+                                Wdbg("strcommand, a = {0}, {1}", strcommand, a)
+                                If (strcommand.StartsWith(a)) Then
+                                    Done = True
+                                    GetAlias.ExecuteAlias(a)
+                                End If
+                            Next
+                        End If
+                        If (Done = False) Then
+                            Wdbg("Executing built-in command")
+                            getLine()
+                        End If
                     End If
-                    If (aliases.Count - 1 <> -1) Then
-                        Wdbg("Aliases probing started with {0}", strcommand)
-                        For Each a As String In aliases.Keys
-                            Wdbg("strcommand, a = {0}, {1}", strcommand, a)
-                            If (strcommand.StartsWith(a)) Then
-                                Done = True
-                                GetAlias.ExecuteAlias(a)
-                            End If
-                        Next
-                    End If
-                    If (Done = False) Then
-                        Wdbg("Executing built-in command")
-                        getLine()
-                    End If
-                End If
 
-                'Fire an event of PostExecuteCommand
-                EventManager.RaisePostExecuteCommand()
-            Catch ex As Exception
-                If (DebugMode = True) Then
-                    Wln(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText",
-                        Err.Number, Err.Description, ex.StackTrace)
-                    Wdbg(ex.StackTrace, True)
-                Else
-                    Wln(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description)
-                End If
-                Continue While
-            End Try
+                    'Fire an event of PostExecuteCommand
+                    EventManager.RaisePostExecuteCommand()
+                Catch ex As Exception
+                    If (DebugMode = True) Then
+                        Wln(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText",
+                            Err.Number, Err.Description, ex.StackTrace)
+                        Wdbg(ex.StackTrace, True)
+                    Else
+                        Wln(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description)
+                    End If
+                    Continue While
+                End Try
+            End If
         End While
 
     End Sub

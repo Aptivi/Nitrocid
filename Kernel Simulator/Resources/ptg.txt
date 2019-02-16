@@ -44,6 +44,7 @@ HDD: {0} {1}GB <=+=> HDD: {0} {1} GB
 HDD: {0} {1} {2}GB <=+=> HDD: {0} {1} {2} GB
 HDD: Type: {2} | Status: {3} <=+=> HDD: Tipo: {2} | Status: {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} cilindros | {5} cabeças | {6} setores
+BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: A detecção não é suportada porque não foi projetada para executar probers no Unix.
 Enter the admin password for maintenance. <=+=> Digite a senha do administrador para manutenção.
 There is no more users remaining in the list. <=+=> Não há mais usuários restantes na lista.

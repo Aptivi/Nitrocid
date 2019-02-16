@@ -1,5 +1,5 @@
 
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -36,7 +36,6 @@ Public Module HelpSystem
                                                                   {"echo", DoTranslation("Writes a text into a console", currentLang)},
                                                                   {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                                   {"help", DoTranslation("Help page", currentLang)},
-                                                                  {"hwprobe", DoTranslation("Probe hardware manually (One time in 'nohwprobe' kernel)", currentLang)},
                                                                   {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
                                                                   {"loadsaver", DoTranslation("Loads screensaver file in %USERPROFILE%\KSMods", currentLang)},
                                                                   {"lockscreen", DoTranslation("Locks your screen with a password", currentLang)},
@@ -159,10 +158,6 @@ Public Module HelpSystem
         ElseIf (command = "ftp") Then
 
             Wln(DoTranslation("Usage:", currentLang) + " ftp: " + DoTranslation("Initializes the FTP shell.", currentLang), "neutralText")
-
-        ElseIf (command = "hwprobe") Then
-
-            Wln(DoTranslation("Usage:", currentLang) + " hwprobe: " + DoTranslation("Probes hardware (Only works when the hardware is not probed and hwprobe is not executed).", currentLang), "neutralText")
 
         ElseIf (command = "list") Then
             Wln(DoTranslation("Usage:", currentLang) + " list [oneDirectory]" + vbNewLine +

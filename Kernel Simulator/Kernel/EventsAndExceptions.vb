@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -44,10 +44,10 @@ Public Class EventsAndExceptions
     Public Event PostFetchNetworks()
     Public Event PlaceholderParsing()
     Public Event PlaceholderParsed()
-    Public Event PreWriteToDebugger() 'Writing event
-    Public Event PostWriteToDebugger() 'Writing event
-    Public Event PreWriteToConsole() 'Writing event
-    Public Event PostWriteToConsole() 'Writing event
+    <Obsolete> Public Event PreWriteToDebugger() 'Writing event - Deprecated
+    <Obsolete> Public Event PostWriteToDebugger() 'Writing event - Deprecated
+    <Obsolete> Public Event PreWriteToConsole() 'Writing event - Deprecated
+    <Obsolete> Public Event PostWriteToConsole() 'Writing event - Deprecated
     Public Event GarbageCollected()
     Public Event FTPShellInitialized()
     Public Event FTPPreExecuteCommand()
@@ -195,22 +195,22 @@ Public Class EventsAndExceptions
             script.InitEvents("PlaceholderParsed")
         Next
     End Sub
-    Public Sub RespondPreWriteToDebugger() Handles Me.PreWriteToDebugger
+    <Obsolete> Public Sub RespondPreWriteToDebugger() Handles Me.PreWriteToDebugger
         For Each script As IScript In scripts.Values
             script.InitEvents("PreWriteToDebugger")
         Next
     End Sub
-    Public Sub RespondPostWriteToDebugger() Handles Me.PostWriteToDebugger
+    <Obsolete> Public Sub RespondPostWriteToDebugger() Handles Me.PostWriteToDebugger
         For Each script As IScript In scripts.Values
             script.InitEvents("PostWriteToDebugger")
         Next
     End Sub
-    Public Sub RespondPreWriteToConsole() Handles Me.PreWriteToConsole
+    <Obsolete> Public Sub RespondPreWriteToConsole() Handles Me.PreWriteToConsole
         For Each script As IScript In scripts.Values
             script.InitEvents("PreWriteToConsole")
         Next
     End Sub
-    Public Sub RespondPostWriteToConsole() Handles Me.PostWriteToConsole
+    <Obsolete> Public Sub RespondPostWriteToConsole() Handles Me.PostWriteToConsole
         For Each script As IScript In scripts.Values
             script.InitEvents("PostWriteToConsole")
         Next
@@ -339,16 +339,16 @@ Public Class EventsAndExceptions
         Wdbg("Raising event PlaceholderParsed() and responding in RespondPlaceholderParsed()...")
         RaiseEvent PlaceholderParsed()
     End Sub
-    Public Sub RaisePreWriteToDebugger()
+    <Obsolete> Public Sub RaisePreWriteToDebugger()
         RaiseEvent PreWriteToDebugger()
     End Sub
-    Public Sub RaisePostWriteToDebugger()
+    <Obsolete> Public Sub RaisePostWriteToDebugger()
         RaiseEvent PostWriteToDebugger()
     End Sub
-    Public Sub RaisePreWriteToConsole()
+    <Obsolete> Public Sub RaisePreWriteToConsole()
         RaiseEvent PreWriteToConsole()
     End Sub
-    Public Sub RaisePostWriteToConsole()
+    <Obsolete> Public Sub RaisePostWriteToConsole()
         RaiseEvent PostWriteToConsole()
     End Sub
     Public Sub RaiseGarbageCollected()
