@@ -54,7 +54,7 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 4. Add the following lines to **Kernel Simulator.vbproj**:
 
-	<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+	`<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>`
 	
 5. Change the output directory if you are building using **Release**.
 
