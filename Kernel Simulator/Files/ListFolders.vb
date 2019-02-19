@@ -26,7 +26,7 @@ Public Module ListFolders
         ElseIf (folder = "boot" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "boot") Then
             Wln("loader~", "neutralText")
         ElseIf (folder = "dev" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "dev") Then
-            Wln("{0}hdpack", "neutralText", slotsUsedName)
+            Wln("{0}", "neutralText", slotsUsedName)
         ElseIf (folder = "etc" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "etc") Then
             Wln(DoTranslation("There is nothing.", currentLang), "neutralText")
         ElseIf (folder = "lib" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "lib") Then

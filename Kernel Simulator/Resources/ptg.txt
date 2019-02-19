@@ -1,5 +1,5 @@
 ﻿Available commands: {0} <=+=> Comandos disponíveis: {0}
-Write command: <=+=> Comando de gravação:
+Write command:  <=+=> Comando de gravação: 
 Command injection has been cancelled. <=+=> A injeção de comando foi cancelada.
 Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe' <=+=> Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, 'motd, gpuprobe'
 Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5' <=+=> Comandos separados em 'cmdinject' com dois-pontos com espaços, por exemplo, 'cmdinject setthemes Hacker: beep 1024 0.5'
@@ -40,10 +40,10 @@ RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> RAM: Slots usados ​​(po
 RAM: Probing status is deprecated and will be removed in future release. <=+=> RAM: O status da pesquisa está obsoleto e será removido no lançamento futuro.
 GPU: No appropriate driver installed. <=+=> GPU: Nenhum driver apropriado instalado.
 GPU: {0} {1}MB <=+=> GPU: {0} {1} MB
-HDD: {0} {1}GB <=+=> HDD: {0} {1} GB
-HDD: {0} {1} {2}GB <=+=> HDD: {0} {1} {2} GB
-HDD: Type: {2} | Status: {3} <=+=> HDD: Tipo: {2} | Status: {3}
+HDD: {0} {1}GB {2} <=+=> HDD: {0} {1} GB {2}
+HDD: {0} {1} {2}GB {3} <=+=> HDD: {0} {1} {2} GB {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} cilindros | {5} cabeças | {6} setores
+HDD: CHS: {3} cylinders | {4} heads | {5} sectors <=+=> HDD: CHS: {3} cilindros | {4} cabeças | {5} setores
 BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: A detecção não é suportada porque não foi projetada para executar probers no Unix.
 Enter the admin password for maintenance. <=+=> Digite a senha do administrador para manutenção.
@@ -107,7 +107,6 @@ Error trying to convert from {0} to {1}: {2} <=+=> Erro ao tentar converter de {
 Error <=+=> Erro
 The requested screensaver {0} is not found. <=+=> O protetor de tela solicitado {0} não foi encontrado.
 {0} has been initialized properly. <=+=> {0} foi inicializado corretamente.
-{0} already exists. <=+=> {0} já existe.
 {0} did not initialize. The screensaver code might have experienced an error while initializing. <=+=> {0} não inicializou. O código do protetor de tela pode ter sofrido um erro durante a inicialização.
 Screensaver {0} does not exist. <=+=> O protetor de tela {0} não existe.
 {0} is set to default screensaver. <=+=> {0} está definido como protetor de tela padrão.
@@ -226,24 +225,19 @@ Changing from: {0} to {1}... <=+=> Alterando de: {0} para {1} ...
 Blank message of the day. <=+=> Mensagem em branco do dia.
 Blank MAL After Login. <=+=> MAL em branco após o login.
 Changing MAL from {0} to {1}... <=+=> Mudando o MAL de {0} para {1} ...
-Choice command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> O comando de escolha está obsoleto e será removido no lançamento futuro até que o shell interativo seja implementado. Seja como for, é inútil para shells não interativos.
-Choice {0} selected. <=+=> Escolha {0} selecionada.
-Choice has been cancelled. <=+=> A escolha foi cancelada.
 Wrong user password. <=+=> Senha incorreta do usuário.
 Passwords doesn't match. <=+=> Senhas não coincidem.
 Username has been changed to {0}! <=+=> O nome de usuário foi alterado para {0}!
 The new name you entered is already found. <=+=> O novo nome que você digitou já foi encontrado.
-Echo command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> O comando Echo foi descontinuado e será removido no release futuro até que o shell interativo seja implementado. Seja como for, é inútil para shells não interativos.
 Listing PCs is not supported yet on Unix. <=+=> A listagem de PCs ainda não é suportada no Unix.
 Aliases that are forbidden: {0} <=+=> Apelidos que são proibidos: {0}
-PanicSim command is deprecated and will be removed in future release until the interactive shell has been implemented. It increases abuse for Kernel Error. <=+=> O comando PanicSim está obsoleto e será removido no lançamento futuro até que o shell interativo seja implementado. Aumenta o abuso do erro do kernel.
 {0} is not found. <=+=> {0} não foi encontrado.
 Configuration reloaded. You might need to reboot the kernel for some changes to take effect. <=+=> Configuração recarregada. Pode ser necessário reinicializar o kernel para que algumas alterações entrem em vigor.
 Everything is reset to normal settings. <=+=> Tudo é redefinido para as configurações normais.
 One or more of the colors is invalid. <=+=> Uma ou mais cores são inválidas.
 Colors are not available. Turn on colored shell in the kernel config. <=+=> Cores não estão disponíveis. Ative o shell colorido na configuração do kernel.
 Screensaver {0} not found. <=+=> Protetor de tela {0} não encontrado.
-{0}[ Kernel settings ] <=+=> {0}[ Configurações do kernel ]
+{0}[ Kernel settings (Running on {1}) ] <=+=> {0}[ Configurações do kernel (executando em {1}) ]
 Kernel Version: <=+=> Versão do Kernel:
 Debug Mode: <=+=> Modo de Depuração:
 Colored Shell: <=+=> Concha Colorida:
@@ -276,16 +270,14 @@ Changes MAL, the MOTD After Login (Admins only) <=+=> MAL muda, o MOTD após o l
 Changes MOTD, the Message Of The Day (Admins only) <=+=> Muda o MOTD, a mensagem do dia (somente administradores)
 Changes password for current user <=+=> Altera a senha do usuário atual
 Changes user name (Admins Only) <=+=> Altera o nome de usuário (somente administradores)
-Makes user choices <=+=> Faz escolhas do usuário
 Clears the screen <=+=> Limpa a tela
 Convert currency <=+=> Converter moeda
 Shows debug logs (Admins Only) <=+=> Mostra logs de depuração (somente administradores)
-Writes a text into a console <=+=> Escreve um texto em um console
 Use an FTP shell to interact with servers <=+=> Use um shell de FTP para interagir com os servidores
 Help page <=+=> Página de ajuda
 Probe hardware manually (One time in 'nohwprobe' kernel) <=+=> Analisar hardware manualmente (uma vez no kernel 'nohwprobe')
 List file/folder contents in current folder <=+=> Listar o conteúdo do arquivo / pasta na pasta atual
-Loads screensaver file in %USERPROFILE%\KSMods <=+=> Carrega o arquivo do protetor de tela em %USERPROFILE%\KSMods
+Reloads screensaver file in %USERPROFILE%\KSMods <=+=> Recarrega o arquivo do protetor de tela em %USERPROFILE%\KSMods
 Locks your screen with a password <=+=> Bloqueia sua tela com uma senha
 Logs you out <=+=> Faz o logout
 Lists all network devices who is online (and offline in domains) <=+=> Lista todos os dispositivos de rede que estão on-line (e off-line em domínios)
@@ -294,7 +286,6 @@ Lists all network addresses on host using the tree <=+=> Lista todos os endereç
 Creates a directory <=+=> Cria um diretório
 Lists information about all available interfaces <=+=> Lista informações sobre todas as interfaces disponíveis
 Shows forbidden list of aliases <=+=> Mostra lista proibida de aliases
-Kernel Panic Simulator (real) <=+=> Kernel Panic Simulator (real)
 Manage permissions for users (Only admins can access this command) <=+=> Gerenciar permissões para usuários (somente administradores podem acessar este comando)
 Check to see if specified address is available <=+=> Verifique se o endereço especificado está disponível
 Writes file contents to the console <=+=> Grava o conteúdo do arquivo no console
@@ -367,4 +358,4 @@ Press any key to continue... <=+=> Pressione qualquer tecla para continuar...
 This manual page title is not written <=+=> Este título da página de manual não está escrito
 This manual page ({0}) does not contain any body text. Deleting page... <=+=> Esta página de manual ({0}) não contém nenhum texto do corpo. Excluindo a página ...
 This manual page ({0}) does not contain any section. Deleting page... <=+=> Esta página de manual ({0}) não contém nenhuma seção. Excluindo a página ...
-You tried to view a manual page with the debugging feature enabled. This may cause significant performance impacts depending on the system. Please press any key to continue, accepting the risks of performance impact. <=+=> Você tentou visualizar uma página de manual com o recurso de depuração ativado. Isso pode causar impactos significativos no desempenho, dependendo do sistema. Por favor, pressione qualquer tecla para continuar, aceitando os riscos de impacto no desempenho.
+Running on {0} <=+=> executando em {0}

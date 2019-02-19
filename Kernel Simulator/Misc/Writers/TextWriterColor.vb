@@ -33,6 +33,7 @@ Public Module TextWriterColor
     Public Sub Wdbg(ByVal text As String, ByVal ParamArray vars() As Object)
         If (DebugMode = True) Then
             dbgWriter.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + ": " + text, vars)
+            Debug.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + ": " + text, vars)
         End If
     End Sub
 

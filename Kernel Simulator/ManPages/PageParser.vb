@@ -26,7 +26,7 @@ Module PageParser
                                          "calc", "cdir", "chdir", "chhostname", "chmal", "chmotd", "chpwd", "chusrname", "cls", "debuglog", "FTP changelocaldir", "FTP cdl",
                                          "FTP changeremotedir", "FTP cdr", "FTP connect", "FTP currlocaldir", "FTP pwdl", "FTP currremotedir", "FTP pwdr", "FTP delete",
                                          "FTP del", "FTP disconnect", "FTP download", "FTP get", "FTP listlocal", "FTP lsl", "FTP listremote", "FTP lsr", "FTP rename",
-                                         "FTP ren", "FTP upload", "FTP put", "ftp", "list", "loadsaver", "lockscreen", "logout", "lscomp", "lsnet", "lsnettree",
+                                         "FTP ren", "FTP upload", "FTP put", "ftp", "list", "reloadsaver", "lockscreen", "logout", "lscomp", "lsnet", "lsnettree",
                                          "md", "netinfo", "noaliases", "perm", "ping", "rd", "read", "reboot", "reloadconfig", "rmuser", "savescreen", "scical", "setcolors",
                                          "setsaver", "setthemes", "showmotd", "showtd", "showtdzone", "shutdown", "sysinfo", "unitconv", "useddeps", "Available command-line arguments",
                                          "Available kernel arguments", "Configuration for your Kernel"}
@@ -113,8 +113,8 @@ Module PageParser
                         manLines = My.Resources.REV_0_0_1___ftp.Replace(Chr(13), "").Split(Chr(10))
                     Case "list"
                         manLines = My.Resources.REV_0_0_1___list.Replace(Chr(13), "").Split(Chr(10))
-                    Case "loadsaver"
-                        manLines = My.Resources.REV_0_0_1___loadsaver.Replace(Chr(13), "").Split(Chr(10))
+                    Case "reloadsaver"
+                        manLines = My.Resources.REV_0_0_1_1___reloadsaver.Replace(Chr(13), "").Split(Chr(10))
                     Case "lockscreen"
                         manLines = My.Resources.REV_0_0_1___lockscreen.Replace(Chr(13), "").Split(Chr(10))
                     Case "logout"

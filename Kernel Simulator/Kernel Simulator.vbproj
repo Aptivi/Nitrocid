@@ -170,6 +170,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Net" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -218,10 +219,14 @@
     <Compile Include="Misc\Config.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\DisposeExit.vb" />
-    <Compile Include="Misc\UserManual.vb" />
     <Compile Include="Misc\Writers\StreamReaderExtensions.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModParser.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Network\FTP\FTPGetCommand.vb" />
     <Compile Include="Network\FTP\FTPHelpSystem.vb" />
     <Compile Include="Network\FTP\FTPShell.vb" />
@@ -239,11 +244,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -259,9 +259,9 @@
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -306,7 +306,7 @@
     <None Include="Resources\REV-0.0.1 - alias.ksman" />
     <None Include="Resources\REV-0.0.1 - arginj.ksman" />
     <None Include="Resources\REV-0.0.1 - Available command-line arguments.ksman" />
-    <None Include="Resources\REV-0.0.1.1 - Available commands.ksman" />
+    <None Include="Resources\REV-0.0.1.2 - Available commands.ksman" />
     <None Include="Resources\REV-0.0.1 - Available FTP commands.ksman" />
     <None Include="Resources\REV-0.0.1 - Available kernel arguments.ksman" />
     <None Include="Resources\REV-0.0.1 - Available manual pages.ksman" />
@@ -338,7 +338,7 @@
     <None Include="Resources\REV-0.0.1 - hwprobe.ksman" />
     <None Include="Resources\REV-0.0.1 - Introduction to the Kernel.ksman" />
     <None Include="Resources\REV-0.0.1 - list.ksman" />
-    <None Include="Resources\REV-0.0.1 - loadsaver.ksman" />
+    <None Include="Resources\REV-0.0.1.1 - reloadsaver.ksman" />
     <None Include="Resources\REV-0.0.1 - lockscreen.ksman" />
     <None Include="Resources\REV-0.0.1 - logout.ksman" />
     <None Include="Resources\REV-0.0.1 - lscomp.ksman" />

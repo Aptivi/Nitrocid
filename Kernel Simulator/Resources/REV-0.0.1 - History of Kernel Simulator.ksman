@@ -596,7 +596,7 @@ The changelog says "Mods will now be stopped when shutting down, Mods can have t
 26. Removed the registry way on TimeZones
 27. Now NuGet is used to manage packages (libraries)
 
-KS 0.0.5.10, the current version
+KS 0.0.5.10
 
 We are busy with something else, and we couldn't release 0.0.6 on time for 1-year anniversary, so this release is a 1-year anniversary. Here's the changelogs in any way:
 
@@ -614,6 +614,20 @@ We are busy with something else, and we couldn't release 0.0.6 on time for 1-yea
 12. Fixed bug of sysinfo (the message settings not printing)
 13. The kernel now prints environment used on boot, debug, and on sysinfo command
 14. Made writing events obsolete
+
+Truth about status probing
+
+When we are making KS 0.0.4.5, we have added Status for RAM and for HDD to indicate that they're OK, or if they're failing. But, the readings for the RAM is always "Unknown", and we thought that the HDD probing is a bit redundant, so we have removed them in this release. We thought that this was an accidental addition, and due to it being so early, so the status is redundant and will likely be added in the final release (1.0.0).
+
+KS 0.0.5.11, the current version
+
+This version is released as the hotfix for 0.0.5.10, removing more obsolete things and slimming before 0.0.6. However, this version's slimming process has removed the status probing for RAM and for HDD.
+
+1. Made GPU and BIOS probing <Obsolete>
+2. No more COM calls when probing hardware
+3. Removed a useless file that has hard drive data
+4. Fixed the translation of sysinfo when displaying the kernel configuration section
+5. Removed status probing from HDD and RAM
 -BODY END-
 
 -SECTIONS-
@@ -652,5 +666,7 @@ KS 0.0.5.7=>SE1
 KS 0.0.5.8=>SE1
 The new development looks=>SE1
 KS 0.0.5.9=>SE1
-KS 0.0.5.10, the current version=>SE1
+KS 0.0.5.10=>SE1
+Truth about status probing=>SE1
+KS 0.0.5.11, the current version=>SE1
 -SECTIONS END-

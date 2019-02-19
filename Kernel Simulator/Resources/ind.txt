@@ -1,5 +1,5 @@
 ﻿Available commands: {0} <=+=> upalabdh aadesh: {0}
-Write command: <=+=> kamaand likhen:
+Write command:  <=+=> kamaand likhen: 
 Command injection has been cancelled. <=+=> kamaand injekshan radd kar diya gaya hai.
 Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe' <=+=> bina spes ke alpaviraam ke saath alag boot tark, udaaharan ke lie, 'motd, gpuprobe'
 Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5' <=+=> rikt sthaan vaale kolan ke saath chmdinjaicht par alag-alag aadesh, udaaharan ke lie, 'cmdinject setthemes hacker: beep 1024 0.5'
@@ -40,10 +40,10 @@ RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> raam: prayukt slot (sankhya
 RAM: Probing status is deprecated and will be removed in future release. <=+=> raam: jaanch kee sthiti ko hata diya gaya hai aur bhavishy mein rileej mein hata diya jaega.
 GPU: No appropriate driver installed. <=+=> jeepeeyoo: koee uchit draivar sthaapit nahin hai.
 GPU: {0} {1}MB <=+=> jeepeeyoo: {0} {1} emabee
-HDD: {0} {1}GB <=+=> echadeedee: {0} {1} jeebee
-HDD: {0} {1} {2}GB <=+=> echadeedee: {0} {1} {2} jeebee
-HDD: Type: {2} | Status: {3} <=+=> echadeedee: taip: {2} | sthiti: {3}
+HDD: {0} {1}GB {2} <=+=> echadeedee: {0} {1} jeebee {2}
+HDD: {0} {1} {2}GB {3} <=+=> echadeedee: {0} {1} {2} jeebee {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> echadeedee: seeeches: {4} silendar | {5} sir | {6} sektar
+HDD: CHS: {3} cylinders | {4} heads | {5} sectors <=+=> echadeedee: seeeches: {3} silendar | {4} sir | {5} sektar
 BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobai: probing samarthit nahin hai kyonki yah yooniks par probars chalaane ke lie dizain nahin kiya gaya hai.
 Enter the admin password for maintenance. <=+=> rakharakhaav ke lie vyavasthaapak paasavard darj karen.
@@ -107,7 +107,6 @@ Error trying to convert from {0} to {1}: {2} <=+=> {0} se {1} mein parivartit ka
 Error <=+=> truti
 The requested screensaver {0} is not found. <=+=> anurodh kiya gaya skreenasevar {0} nahin mila hai.
 {0} has been initialized properly. <=+=> {0} theek se shuroo kiya gaya hai.
-{0} already exists. <=+=> {0} pahale se maujood hai.
 {0} did not initialize. The screensaver code might have experienced an error while initializing. <=+=> {0} praarambh nahin hua. praarambh karane ke dauraan skreenasevar kod mein ek truti huee ho sakatee hai.
 Screensaver {0} does not exist. <=+=> skreenasevar {0} maujood nahin hai.
 {0} is set to default screensaver. <=+=> {0} difolt skreenasevar par set hai.
@@ -226,24 +225,19 @@ Changing from: {0} to {1}... <=+=> se badal raha hai: {0} se {1} ...
 Blank message of the day. <=+=> din ka khaalee sandesh.
 Blank MAL After Login. <=+=> login ke baad khaalee emeel.
 Changing MAL from {0} to {1}... <=+=> {0} se {1} tak emeel badal raha hai ...
-Choice command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> chois kamaand ko hata diya gaya hai aur bhavishy mein rileej mein hata diya jaega jab tak ki intaraiktiv shail laagoo nahin kiya gaya ho. jo bhee ho, yah gair-intaraiktiv gole ke lie bekaar hai
-Choice {0} selected. <=+=> vikalp {0} chuna gaya.
-Choice has been cancelled. <=+=> vikalp radd kar diya gaya hai.
 Wrong user password. <=+=> galat upayogakarta paasavard.
 Passwords doesn't match. <=+=> paasavard mel nahin khaata hai.
 Username has been changed to {0}! <=+=> upayogakarta naam badal diya gaya hai {0}!
 The new name you entered is already found. <=+=> aapake dvaara darj kiya gaya naya naam pahale se hee mila hai.
-Echo command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> iko kamaand ko hata diya gaya hai aur bhavishy mein rileej mein hata diya jaega jab tak ki intaraiktiv shail laagoo nahin kiya gaya ho. jo bhee ho, yah gair-intaraiktiv gole ke lie bekaar hai.
 Listing PCs is not supported yet on Unix. <=+=> listing peesee abhee tak yooniks par samarthit nahin hai.
 Aliases that are forbidden: {0} <=+=> upanaam jo varjit hain: {0}
-PanicSim command is deprecated and will be removed in future release until the interactive shell has been implemented. It increases abuse for Kernel Error. <=+=> panichsim kamaand ko hata diya gaya hai aur bhavishy mein rileej mein hata diya jaega jab tak ki intaraiktiv shail laagoo nahin kiya gaya ho. yah karnel truti ke lie durupayog badhaata hai.
 {0} is not found. <=+=> {0} nahin mila hai.
 Configuration reloaded. You might need to reboot the kernel for some changes to take effect. <=+=> konfigareshan punah lod kiya gaya. kuchh parivartanon ko prabhaavee hone ke lie aapako karnel ko reeboot karane kee aavashyakata ho sakatee hai.
 Everything is reset to normal settings. <=+=> sab kuchh saamaany setings par reeset hai.
 One or more of the colors is invalid. <=+=> rangon mein se ek ya adhik amaany hai. 
 Colors are not available. Turn on colored shell in the kernel config. <=+=> rang upalabdh nahin hain. karnel konfigareshan mein rangeen khol ko chaaloo karen.
 Screensaver {0} not found. <=+=> skreenasevar {0} nahin mila.
-{0}[ Kernel settings ] <=+=> {0}[ karnel setings ]
+{0}[ Kernel settings (Running on {1}) ] <=+=> {0}[ karnel setings ({1} par chal rahee hain) ]
 Kernel Version: <=+=> karnel sanskaran:
 Debug Mode: <=+=> deebag mod:
 Colored Shell: <=+=> rangeen shail:
@@ -276,16 +270,14 @@ Changes MAL, the MOTD After Login (Admins only) <=+=> parivartan emeel, login ke
 Changes MOTD, the Message Of The Day (Admins only) <=+=> parivartan emoteedee, din ka sandesh (keval vyavasthaapak)
 Changes password for current user <=+=> vartamaan upayogakarta ke lie paasavard badalata hai
 Changes user name (Admins Only) <=+=> upayogakarta naam badalata hai (keval vyavasthaapak)
-Makes user choices <=+=> upayogakarta vikalp banaata hai
 Clears the screen <=+=> skreen saaf karata hai
 Convert currency <=+=> mudra kanavart karen
 Shows debug logs (Admins Only) <=+=> deebag log dikhaata hai (keval vyavasthaapak)
-Writes a text into a console <=+=> ek kansol mein ek paath likhata hai
 Use an FTP shell to interact with servers <=+=> sarvar ke saath sanvaad karane ke lie ek efateepee khol ka prayog karen
 Help page <=+=> sahaayata prshth
 Probe hardware manually (One time in 'nohwprobe' kernel) <=+=> haardaveyar mainyual roop se jaanchen (nohaprobob karnel mein ek baar)
 List file/folder contents in current folder <=+=> vartamaan foldar mein fail / foldar saamagree soocheebaddh karen
-Loads screensaver file in %USERPROFILE%\KSMods <=+=> %USERPROFILE%\KSMods mein skreenasevar fail lod karata hai
+Reloads screensaver file in %USERPROFILE%\KSMods <=+=> %USERPROFILE%\KSMods mein skreenasevar fail punah lod karen
 Locks your screen with a password <=+=> paasavard ke saath apanee skreen ko lok karata hai
 Logs you out <=+=> aapako log aaut karata hai
 Lists all network devices who is online (and offline in domains) <=+=> un sabhee netavark upakaranon ko soocheebaddh karata hai jo onalain hain (aur domen mein ophalain)
@@ -294,7 +286,6 @@ Lists all network addresses on host using the tree <=+=> ped ka upayog kar mejab
 Creates a directory <=+=> ek nirdeshika banaata hai
 Lists information about all available interfaces <=+=> sabhee upalabdh intaraphes ke baare mein jaanakaaree soocheebaddh karata hai
 Shows forbidden list of aliases <=+=> upanaamon kee varjit soochee dikhaata hai
-Kernel Panic Simulator (real) <=+=> karnel aatank simyuletar (asalee)
 Manage permissions for users (Only admins can access this command) <=+=> upayogakartaon ke lie anumatiyaan prabandhit karen (keval vyavasthaapak hee is aadesh tak pahunch sakate hain)
 Check to see if specified address is available <=+=> yah dekhane ke lie jaanchen ki nirdisht pata upalabdh hai ya nahin
 Writes file contents to the console <=+=> kansol mein fail saamagree likhata hai
@@ -367,4 +358,4 @@ Press any key to continue... <=+=> jaaree rakhane ke lie koee bhee kunjee dabaen
 This manual page title is not written <=+=> yah mainual pej sheershak likha nahin hai
 This manual page ({0}) does not contain any body text. Deleting page... <=+=> yah mainual pej ({0}) mein koee bhee bodee tekst nahin hai. pej hataana ...
 This manual page ({0}) does not contain any section. Deleting page... <=+=> yah mainual pej ({0}) mein koee bhee anubhaag nahin hai. pej hataana ...
-You tried to view a manual page with the debugging feature enabled. This may cause significant performance impacts depending on the system. Please press any key to continue, accepting the risks of performance impact. <=+=> aapane dibaging suvidha saksham ke saath mainyual prshth dekhane ka prayaas kiya. isase sistam ke aadhaar par mahatvapoorn pradarshan prabhaav ho sakate hain. pradarshan prabhaav ke jokhimon ko sveekaar karate hue, jaaree rakhane ke lie krpaya koee bhee kunjee dabaen.
+Running on {0} <=+=> {0} par chal rahee hain

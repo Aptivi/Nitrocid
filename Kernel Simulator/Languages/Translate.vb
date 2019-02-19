@@ -56,6 +56,8 @@ Public Module Translate
             Next
             If Not (translatedString.Keys.Contains(text)) Then
                 Wdbg("No string found in langlist. Lang: {0}, String: {1}", lang, text)
+                Return text
+                Exit Function
             End If
             Return translated
         ElseIf availableLangs.Contains(lang) And lang = "eng" Then

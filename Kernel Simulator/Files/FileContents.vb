@@ -18,17 +18,13 @@
 
 Public Module FileContents
 
-    Public AvailableFiles() As String = {"loader", "hdpack", "libuesh.elb", "kernel", "login", "uesh"}
+    Public AvailableFiles() As String = {"loader", "libuesh.elb", "kernel", "login", "uesh"}
 
     Public Sub readContents(ByVal filename As String)
 
         If (filename = "loader") Then
 
             Wln("Boot_Version = {0}", "neutralText", KernelVersion)
-
-        ElseIf (filename = "hdpack") Then
-
-            Hddinfo(False)
 
         ElseIf (filename = "libuesh.elb") Then
 

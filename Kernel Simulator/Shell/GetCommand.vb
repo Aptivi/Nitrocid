@@ -179,25 +179,6 @@ Public Module GetCommand
                     End If
                 End If
 
-            ElseIf (requestedCommand.Substring(0, index) = "choice") Then
-
-                Wln(DoTranslation("Choice command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells.", currentLang), "neutralText")
-                If (requestedCommand <> "choice") Then
-                    If (args.Count - 1 = 1) Then
-                        W("{0} <{1}> ", "input", args(0), args(1))
-                        Dim answerchoice As String = Console.ReadKey.KeyChar
-                        Dim answerchoices() As String = args(1).Split(CChar("/"))
-                        For Each choiceset In answerchoices
-                            If (answerchoice = choiceset) Then
-                                Wln(vbNewLine + DoTranslation("Choice {0} selected.", currentLang), "neutralText", answerchoice)
-                            ElseIf (answerchoice = "q") Then
-                                Wln(vbNewLine + DoTranslation("Choice has been cancelled.", currentLang), "neutralText")
-                            End If
-                        Next
-                        Done = True
-                    End If
-                End If
-
             ElseIf (requestedCommand.Substring(0, index) = "chpwd") Then
 
                 If (requestedCommand <> "chpwd") Then
@@ -276,28 +257,9 @@ Public Module GetCommand
                 End Using
                 Done = True
 
-            ElseIf (requestedCommand.Substring(0, index) = "echo") Then
-
-                Wln(DoTranslation("Echo command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells.", currentLang), "neutralText")
-                If (requestedCommand <> "echo") Then
-                    If (strArgs <> "") Then
-                        Wln(strArgs, "neutralText")
-                        Done = True
-                    End If
-                End If
-
             ElseIf (requestedCommand = "ftp") Then
 
                 InitiateShell() : Done = True
-
-            ElseIf (requestedCommand.Substring(0, index) = "loadsaver") Then
-
-                If (requestedCommand <> "loadsaver") Then
-                    If (args.Count - 1 >= 0) Then
-                        CompileCustom(strArgs)
-                        Done = True
-                    End If
-                End If
 
             ElseIf (requestedCommand = "lockscreen") Then
 
@@ -382,35 +344,6 @@ Public Module GetCommand
                 Wln(DoTranslation("Aliases that are forbidden: {0}", currentLang), "neutralText", String.Join(", ", forbidden))
                 Done = True
 
-            ElseIf (requestedCommand.Substring(0, index) = "panicsim") Then
-
-                'Kernel panic simulator
-                Wln(DoTranslation("PanicSim command is deprecated and will be removed in future release until the interactive shell has been implemented. It increases abuse for Kernel Error.", currentLang), "neutralText")
-                If (requestedCommand <> "panicsim") Then
-                    If (args.Count - 1 = 0) Then
-                        KernelError(CChar("C"), False, 0, args(0))
-                        Done = True
-                    ElseIf (args.Count - 1 = 1) Then
-                        If (args(1) <> "C") Then
-                            KernelError(CChar(args(1)), True, 30, args(0))
-                        ElseIf (args(1) = "C") Then
-                            KernelError(CChar(args(1)), False, 0, args(0))
-                        ElseIf (args(1) = "D") Then
-                            KernelError(CChar(args(1)), True, 5, args(0))
-                        End If
-                        Done = True
-                    ElseIf (args.Count - 1 = 2) Then
-                        If (CDbl(args(2)) <= 3600 And (args(1) <> "C" Or args(1) <> "D")) Then
-                            KernelError(CChar(args(1)), True, CLng(args(2)), args(0))
-                        ElseIf (CDbl(args(2)) <= 3600 And args(1) = "C") Or (CDbl(args(2)) <= 0 And args(1) = "C") Then
-                            KernelError(CChar(args(1)), False, 0, args(0))
-                        ElseIf (CDbl(args(2)) <= 5 And args(1) = "D") Then
-                            KernelError(CChar(args(1)), True, CLng(args(2)), args(0))
-                        End If
-                        Done = True
-                    End If
-                End If
-
             ElseIf (requestedCommand.Substring(0, index) = "perm") Then
 
                 If (requestedCommand <> "perm") Then
@@ -473,6 +406,15 @@ Public Module GetCommand
                 ResetEverything()
                 Console.Clear()
                 Main()
+
+            ElseIf (requestedCommand.Substring(0, index) = "reloadsaver") Then
+
+                If (requestedCommand <> "reloadsaver") Then
+                    If (args.Count - 1 >= 0) Then
+                        CompileCustom(strArgs)
+                        Done = True
+                    End If
+                End If
 
             ElseIf (requestedCommand.Substring(0, index) = "rd") Then
 

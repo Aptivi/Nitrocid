@@ -22,14 +22,13 @@ Public Module Shell
     'Admin-Only commands (strictCmds())
     Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
-    Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "echo", "choice", "shutdown", "reboot",
-                                            "adduser", "chmotd", "chhostname", "lscomp", "ping", "lsnet", "lsnettree", "showtd", "chpwd",
-                                            "sysinfo", "arginj", "panicsim", "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes",
-                                            "netinfo", "calc", "scical", "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone",
-                                            "alias", "chmal", "savescreen", "lockscreen", "setsaver", "loadsaver", "noaliases", "ftp",
-                                            "useddeps", "usermanual", "currency"}
+    Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "shutdown", "reboot", "adduser", "chmotd",
+                                            "chhostname", "lscomp", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj",
+                                            "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical",
+                                            "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "savescreen",
+                                            "lockscreen", "setsaver", "reloadsaver", "noaliases", "ftp", "useddeps", "usermanual", "currency"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
-                                     "reloadconfig", "alias", "chmal", "setsaver", "loadsaver"}
+                                     "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver"}
     Public modcmnds As New ArrayList
 
     'For contributors: For each added command, you should also add a command in availableCommands array so there is no problems detecting your new command.
@@ -62,11 +61,11 @@ Public Module Shell
 
                     'Set an input color
                     Wdbg("ColoredShell = {0}", ColoredShell)
-                    If (ColoredShell = True) Then System.Console.ForegroundColor = CType(inputColor, ConsoleColor)
+                    If (ColoredShell = True) Then Console.ForegroundColor = CType(inputColor, ConsoleColor)
 
                     'Wait for command
                     EventManager.RaiseShellInitialized()
-                    strcommand = System.Console.ReadLine()
+                    strcommand = Console.ReadLine()
 
                     'Fire event of PreRaiseCommand
                     EventManager.RaisePreExecuteCommand()

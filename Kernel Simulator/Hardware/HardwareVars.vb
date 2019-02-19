@@ -21,7 +21,6 @@ Module HardwareVars
         Public Model As String
         Public Manufacturer As String
         Public InterfaceType As String
-        Public Status As String
         Public Cylinders As UInt64
         Public Heads As UInt32
         Public Sectors As UInt64
@@ -43,7 +42,6 @@ Module HardwareVars
     'then RAM
     Public Class RAM
         Public ChipCapacity As UInt64
-        Public Status As String
         Public SlotNumber As Integer
         Public SlotName As String
     End Class

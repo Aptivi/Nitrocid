@@ -118,10 +118,10 @@ Public Module Config
             Else
                 confPath = Environ("USERPROFILE") + "\kernelConfig.ini"
             End If
-            lns = IO.File.ReadAllLines(confPath)
+            lns = File.ReadAllLines(confPath)
             configUpdater.Load(confPath)
 
-            'TODO: Remove checking for old KS layout
+            'TODO: Remove checking for old KS layout and re-write the updater to retain user settings and create new entries
             If (lns(0).Contains("Kernel Version = ") And lns(0).Replace("Kernel Version = ", "") <> KernelVersion) Then
                 If (lns.Length > 0) AndAlso (lns(0).StartsWith("Kernel Version = ")) Then
                     Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, lns(0).Replace("Kernel Version = ", ""))
@@ -145,7 +145,7 @@ Public Module Config
                 Wln(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
                 configUpdater.Sections("Misc").Keys("Kernel Version").Value = KernelVersion
                 configUpdater.Sections("Hardware").Keys("Quiet Probe").Value = "False"
-                configUpdater.Sections("General").Keys("Language").Value = "eng"
+                configUpdater.Sections("General").Keys("Language").Value = currentLang
                 configUpdater.Save(confPath)
             End If
         Catch ex As Exception
@@ -163,7 +163,7 @@ Public Module Config
 
         createConfig(False)
         KernelTools.ResetEverything()
-        System.Console.Clear()
+        Console.Clear()
         Main()
 
     End Sub

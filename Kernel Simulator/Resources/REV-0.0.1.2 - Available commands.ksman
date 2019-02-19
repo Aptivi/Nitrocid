@@ -2,7 +2,7 @@
 
 ~~- Information about this manual page:
 -TITLE:Available commands
--REVISION:0.0.1
+-REVISION:0.0.1.2
 -KSLAYOUT:0.0.5.9-OR-ABOVE
 
 ~~- Make sure that all of the commands that are available in the kernel is put.
@@ -22,17 +22,9 @@ Administrative commands:
 11. alias: You can manage your aliases to commands so you don't have to type long commands, using "alias <add/rem> <aliasName> <Command>."
 12. chmal: You can change your message of the day after login, and it supports the same placeholders, and it has the same argument of "chmal <Anything>."
 13. setsaver: You can set your screensaver of your choice or your customized one as the default one, and if you plan to use customized screensavers, you should name your extension as <ScreensaverName>SS.m to be recognized as a screensaver, not as an extension. It has the argument of "setsaver <<ScreensaverName>SS.m/matrix/disco/colorMix>."
-14. loadsaver: You can load your screensaver extension file from the KSMods directory. You should load your screensaver file before you can set it as default and use it. It has the usage of "loadsaver <<ScreensaverName>SS.m>."
+14. reloadsaver: You can reload your screensaver extension file from the KSMods directory. You should load your screensaver file before you can set it as default and use it. It has the usage of "loadsaver <<ScreensaverName>SS.m>."
 
 Normal user commands:
-
-Abusive and useless commands:
-
-These abusive and useless commands were liable to be removed in the future and there is no manual page for them, so don't add back the commands below using mods. We're listing a few abusive and useless commands:
-
-1. choice: This was made in 0.0.1, but kept until the future release because it has been reported as useless because it has 2 reasons: The shell is non-interactive, and it's just testing features of Console.ReadKey. This command lets you ask your question and give it the answer sets like Y/N, O/C, etc. Arguments: "choice <Question> <Answers>" where <Answers> has an example of Y/N, O/C, etc.
-2. echo: This was also made in 0.0.1. It's reported as useless because it's testing the string writer and the shell is non-interactive. This command lets you print your text and you can use it like this: "echo <anything>".
-3. panicsim: This was also made in 0.0.1. It's abusive because it encourages users to use this command on a normal user account to force crash the kernel with the user messages. This command lets you crash your kernel with your own message, and can be used like this: "panicsim <message> [S/F/D/[C]/U] [RebootTime:seconds]."
 
 Useful commands:
 
@@ -42,7 +34,6 @@ Useful commands:
 4. chpwd: You can change your password, or someone else's password. It's been reported that the normal accounts can use this command to change anyone's password without any consent. Usage: "chpwd <username> <password> <newpassword> <newpassword>"
 5. cls: To clear your screen from text.
 6. ftp: You can transfer files from/to an FTP server, and interact with the servers.
-7. hwprobe: You can look for the installed hardware inside your system. You can only use it on Windows, and you can only use it if the kernel didn't look for a hardware because the argument "nohwprobe" is passed.
 8. list: You can list your current working directory, or list another directory using "list [Directory]."
 9. lscomp: You can list all of the working computers, even offline if you're on the domain that has some computers off like school, big office, etc. This can also be used on cubicles, but for all the places, you need to ask your boss for permission whether you can list all of the computers or not.
 10. lsnet: You can list all of the working computers, but omitting the offline computers.
@@ -87,14 +78,10 @@ alias:=>Red
 chmal:=>Red
 setsaver:=>Red
 loadsaver:=>Red
-choice:=>Gray
-echo:=>Gray
-panicsim:=>Gray
 -COLOR CONFIG END-
 
 -SECTIONS-
 Administrative commands:=>SE1
 Normal user commands:=>SE1
-Useless and abusive commands:=>SE2
 Useful commands:=>SE2
 -SECTIONS END-

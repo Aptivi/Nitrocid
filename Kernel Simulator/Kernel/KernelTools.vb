@@ -244,7 +244,7 @@ Public Module KernelTools
                         "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
                         "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                         "    under certain conditions; See COPYING file in source code." + vbNewLine, "license")
-        Wln("OS: Running on {0}", "neutralText", EnvironmentOSType)
+        Wln("OS: " + DoTranslation("Running on {0}", currentLang), "neutralText", EnvironmentOSType)
 
         'Parse current theme string
         ParseCurrentTheme()

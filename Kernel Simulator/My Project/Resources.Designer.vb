@@ -174,10 +174,10 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; Kěyòng mìnglìng: {0}
-        '''Write command: &lt;=+=&gt; Xiě mìnglìng:
+        '''Write command:  &lt;=+=&gt; Xiě mìnglìng: 
         '''Command injection has been cancelled. &lt;=+=&gt; Mìnglìng zhùrù yǐ bèi qǔxiāo.
         '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; Shǐyòng dòuhào fēngé yǐndǎo cānshù, bù dài kònggé, lìrú&apos;motd,gpuprobe&apos;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; &apos;Cmdinject&apos; shàng de mìnglìng yǔ dài kònggé de màohào fēnkāi, lìrú&apos;c [rest of string was truncated]&quot;;.
+        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; &apos;Cmdinject&apos; shàng de mìnglìng yǔ dài kònggé de màohào fēnkāi, lìrú [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property chi() As String
             Get
@@ -208,7 +208,7 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to Available commands: {0}
-        '''Write command: 
+        '''Write command:  
         '''Command injection has been cancelled. 
         '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; 
         '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; 
@@ -217,7 +217,7 @@ Namespace My.Resources
         '''bargs: Unrecoverable error in argument:  
         '''Available arguments: {0} 
         '''Arguments (&apos;help&apos; for help):  
-        '''Injected ar [rest of string was truncated]&quot;;.
+        '''Injected a [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property eng() As String
             Get
@@ -227,10 +227,10 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; Commandes disponibles: {0}
-        '''Write command: &lt;=+=&gt; Commande d&apos;écriture:
+        '''Write command:  &lt;=+=&gt; Commande d&apos;écriture: 
         '''Command injection has been cancelled. &lt;=+=&gt; L&apos;injection de commande a été annulée.
         '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; Séparez les arguments de démarrage par des virgules sans espaces, par exemple &quot;motd,gpuprobe&quot;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Séparez les commandes s [rest of string was truncated]&quot;;.
+        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Séparez les commandes [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property fre() As String
             Get
@@ -240,10 +240,10 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; Verfügbare Befehle: {0}
-        '''Write command: &lt;=+=&gt; Schreibbefehl:
+        '''Write command:  &lt;=+=&gt; Schreibbefehl: 
         '''Command injection has been cancelled. &lt;=+=&gt; Die Befehlsinjektion wurde abgebrochen.
         '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; Trennen Sie Boot-Argumente durch Kommas ohne Leerzeichen, z. B. &quot;motd, gpuprobe&quot;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Trennen Sie Befehle in &apos;cmdinject&apos; mit Doppe [rest of string was truncated]&quot;;.
+        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Trennen Sie Befehle in &apos;cmdinject&apos; mit Dop [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ger() As String
             Get
@@ -272,10 +272,10 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; upalabdh aadesh: {0}
-        '''Write command: &lt;=+=&gt; kamaand likhen:
+        '''Write command:  &lt;=+=&gt; kamaand likhen: 
         '''Command injection has been cancelled. &lt;=+=&gt; kamaand injekshan radd kar diya gaya hai.
         '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; bina spes ke alpaviraam ke saath alag boot tark, udaaharan ke lie, &apos;motd, gpuprobe&apos;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; rikt sthaan vaale kolan ke saath chmdinja [rest of string was truncated]&quot;;.
+        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; rikt sthaan vaale kolan ke saath chmdin [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ind() As String
             Get
@@ -326,10 +326,10 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; Comandos disponíveis: {0}
-        '''Write command: &lt;=+=&gt; Comando de gravação:
+        '''Write command:  &lt;=+=&gt; Comando de gravação: 
         '''Command injection has been cancelled. &lt;=+=&gt; A injeção de comando foi cancelada.
         '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, &apos;motd, gpuprobe&apos;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Comandos separados em &apos;cmdi [rest of string was truncated]&quot;;.
+        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Comandos separados em &apos;cm [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ptg() As String
             Get
@@ -1074,32 +1074,6 @@ Namespace My.Resources
         Friend ReadOnly Property REV_0_0_1___list() As String
             Get
                 Return ResourceManager.GetString("REV_0_0_1___list", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell command &quot;loadsaver&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''loadsaver command
-        '''
-        '''Summary: You can import your screensaver modfiles before setting them as default.
-        '''
-        '''Description
-        '''
-        '''This command is required as it compiles the contents of your modfile to see if there is any errors.
-        '''
-        '''This command imports your screensaver mod files and puts it to the valid screensaver list if your screensaver doesn&apos;t contain any errors from the build system.
-        '''
-        '''You should ru [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property REV_0_0_1___loadsaver() As String
-            Get
-                Return ResourceManager.GetString("REV_0_0_1___loadsaver", resourceCulture)
             End Get
         End Property
         
@@ -1884,6 +1858,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell command &quot;reloadsaver&quot;
+        '''-REVISION:0.0.1.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''reloadsaver command
+        '''
+        '''Summary: You can reload screensaver files after making changes to them.
+        '''
+        '''Description
+        '''
+        '''This command compiles the contents of your modfile to see if there is any errors, and reassign your screensaver mod files to the valid screensaver list if your screensaver doesn&apos;t contain any errors from the build system.
+        '''
+        '''If you want to reflect changes on your screensaver, make s [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property REV_0_0_1_1___reloadsaver() As String
+            Get
+                Return ResourceManager.GetString("REV_0_0_1_1___reloadsaver", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Screensaver modding guide
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -1905,10 +1903,10 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; Comandos disponibles: {0}
-        '''Write command: &lt;=+=&gt; Comando de escritura:
+        '''Write command:  &lt;=+=&gt; Comando de escritura: 
         '''Command injection has been cancelled. &lt;=+=&gt; La inyección de comandos ha sido cancelada.
         '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; Separe los argumentos de arranque con comas sin espacios, por ejemplo, &apos;motd, gpuprobe&apos;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Comandos separados en &apos;c [rest of string was truncated]&quot;;.
+        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Comandos separados en  [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property spa() As String
             Get

@@ -1,5 +1,5 @@
 ﻿Available commands: {0} <=+=> Commandes disponibles: {0}
-Write command: <=+=> Commande d'écriture:
+Write command:  <=+=> Commande d'écriture: 
 Command injection has been cancelled. <=+=> L'injection de commande a été annulée.
 Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe' <=+=> Séparez les arguments de démarrage par des virgules sans espaces, par exemple "motd,gpuprobe"
 Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5' <=+=> Séparez les commandes sur 'cmdinject' avec les deux points avec des espaces, par exemple, 'cmdinject setthemes Hacker : beep 1024 0.5'
@@ -40,10 +40,10 @@ RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> RAM: emplacements utilisés
 RAM: Probing status is deprecated and will be removed in future release. <=+=> RAM: le statut de vérification est obsolète et sera supprimé dans les prochaines versions.
 GPU: No appropriate driver installed. <=+=> GPU: Aucun pilote approprié installé.
 GPU: {0} {1}MB <=+=> GPU: {0} {1}MB
-HDD: {0} {1}GB <=+=> HDD: {0} {1}GB
-HDD: {0} {1} {2}GB <=+=> HDD: {0} {1} {2}GB
-HDD: Type: {2} | Status: {3} <=+=> HDD: Type: {2} | Statut: {3}
+HDD: {0} {1}GB {2} <=+=> HDD: {0} {1}GB {2}
+HDD: {0} {1} {2}GB {3} <=+=> HDD: {0} {1} {2}GB {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} cylindres | {5} têtes | {6} secteurs
+HDD: CHS: {3} cylinders | {4} heads | {5} sectors <=+=> HDD: CHS: {3} cylindres | {4} têtes | {5} secteurs
 BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: Les sondages ne sont pas pris en charge car ils ne sont pas conçus pour exécuter des sondes sous Unix.
 Enter the admin password for maintenance. <=+=> Entrez le mot de passe administrateur pour la maintenance.
@@ -77,10 +77,10 @@ You have either found a bug, or the permission you tried to add or remove is alr
 Error {0}: {1} <=+=> Erreur {0}: {1}
 You have either found a bug, or the permission you tried to edit for a new user has failed. <=+=> Vous avez trouvé un bogue ou l'autorisation que vous avez tenté de modifier pour un nouvel utilisateur a échoué.
 Available usernames: {0} <=+=> Noms d'utilisateur disponibles: {0}
-Username:  <=+=> Nom d'utilisateur:
+Username:  <=+=> Nom d'utilisateur: 
 Spaces are not allowed. <=+=> Les espaces ne sont pas autorisés.
 Special characters are not allowed. <=+=> Les caractères spéciaux ne sont pas autorisés.
-{0}'s password:  <=+=> Le mot de passe de {0}:
+{0}'s password:  <=+=> Le mot de passe de {0}: 
 Wrong password. <=+=> Mauvais mot de passe.
 User is disabled. <=+=> L'utilisateur est désactivé.
 Wrong username. <=+=> Mauvais nom d'utilisateur.
@@ -107,7 +107,6 @@ Error trying to convert from {0} to {1}: {2} <=+=> Erreur lors de la tentative d
 Error <=+=> Erreur
 The requested screensaver {0} is not found. <=+=> L'économiseur d'écran demandé {0} est introuvable.
 {0} has been initialized properly. <=+=> {0} a été initialisé correctement.
-{0} already exists. <=+=> {0} existe déjà.
 {0} did not initialize. The screensaver code might have experienced an error while initializing. <=+=> {0} n'a pas été initialisé. Le code de l'économiseur d'écran a peut-être rencontré une erreur lors de l'initialisation.
 Screensaver {0} does not exist. <=+=> L'économiseur d'écran {0} n'existe pas.
 {0} is set to default screensaver. <=+=> {0} est défini sur l'écran de veille par défaut.
@@ -226,24 +225,19 @@ Changing from: {0} to {1}... <=+=> Passage de: {0} à {1} ...
 Blank message of the day. <=+=> Message vide du jour.
 Blank MAL After Login. <=+=> Blank MAL après la connexion.
 Changing MAL from {0} to {1}... <=+=> Changement de MAL de {0} à {1} ...
-Choice command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> La commande Choice est obsolète et sera supprimée dans les prochaines versions jusqu'à la mise en œuvre du shell interactif. Quoi qu'il en soit, c'est inutile pour les shells non interactifs.
-Choice {0} selected. <=+=> Choix {0} sélectionné.
-Choice has been cancelled. <=+=> Le choix a été annulé.
 Wrong user password. <=+=> Mauvais mot de passe utilisateur.
 Passwords doesn't match. <=+=> Les mots de passe ne correspondent pas.
 Username has been changed to {0}! <=+=> Le nom d'utilisateur a été changé en {0}!
 The new name you entered is already found. <=+=> Le nouveau nom que vous avez entré est déjà trouvé.
-Echo command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> La commande Echo est obsolète et sera supprimée dans les prochaines versions jusqu'à la mise en œuvre du shell interactif. Quoi qu'il en soit, c'est inutile pour les shells non interactifs.
 Listing PCs is not supported yet on Unix. <=+=> La liste des ordinateurs n'est pas encore prise en charge sous Unix.
 Aliases that are forbidden: {0} <=+=> Alias interdits: {0}
-PanicSim command is deprecated and will be removed in future release until the interactive shell has been implemented. It increases abuse for Kernel Error. <=+=> La commande PanicSim est obsolète et sera supprimée dans les prochaines versions jusqu'à la mise en œuvre du shell interactif. Cela augmente les abus pour les erreurs du noyau.
 {0} is not found. <=+=> {0} introuvable.
 Configuration reloaded. You might need to reboot the kernel for some changes to take effect. <=+=> Configuration rechargée. Vous devrez peut-être redémarrer le noyau pour que certaines modifications prennent effet.
 Everything is reset to normal settings. <=+=> Tout est réinitialisé aux paramètres normaux.
 One or more of the colors is invalid. <=+=> Une ou plusieurs des couleurs sont invalides.
 Colors are not available. Turn on colored shell in the kernel config. <=+=> Les couleurs ne sont pas disponibles. Activer le shell coloré dans la configuration du noyau.
 Screensaver {0} not found. <=+=> Économiseur d'écran {0} introuvable.
-{0}[ Kernel settings ] <=+=> {0}[ Paramètres du noyau ]
+{0}[ Kernel settings (Running on {1}) ] <=+=> {0}[ Paramètres du noyau (en cours d'exécution sur {1}) ]
 Kernel Version: <=+=> Version du noyau:
 Debug Mode: <=+=> Mode débogage:
 Colored Shell: <=+=> Coquille Colorée:
@@ -276,16 +270,14 @@ Changes MAL, the MOTD After Login (Admins only) <=+=> Modifie MAL, le MOTD aprè
 Changes MOTD, the Message Of The Day (Admins only) <=+=> Modifications MOTD, le message du jour (administrateurs uniquement)
 Changes password for current user <=+=> Change le mot de passe pour l'utilisateur actuel
 Changes user name (Admins Only) <=+=> Modifie le nom d'utilisateur (administrateurs uniquement)
-Makes user choices <=+=> Fait les choix de l'utilisateur
 Clears the screen <=+=> Efface l'écran
 Convert currency <=+=> Convertir la monnaie
 Shows debug logs (Admins Only) <=+=> Affiche les journaux de débogage (administrateurs uniquement)
-Writes a text into a console <=+=> Écrit un texte dans une console
 Use an FTP shell to interact with servers <=+=> Utiliser un shell FTP pour interagir avec les serveurs
 Help page <=+=> Page d'aide
 Probe hardware manually (One time in 'nohwprobe' kernel) <=+=> Sondage manuel du matériel (une fois dans le noyau 'nohwprobe')
 List file/folder contents in current folder <=+=> Liste le contenu du fichier / dossier dans le dossier actuel
-Loads screensaver file in %USERPROFILE%\KSMods <=+=> Charge le fichier d'économiseur d'écran dans %USERPROFILE%\KSMods
+Reloads screensaver file in %USERPROFILE%\KSMods <=+=> Recharge le fichier d'économiseur d'écran dans %USERPROFILE%\KSMods
 Locks your screen with a password <=+=> Verrouille votre écran avec un mot de passe
 Logs you out <=+=> Vous déconnecte
 Lists all network devices who is online (and offline in domains) <=+=> Répertorie tous les périphériques réseau en ligne (et hors ligne dans les domaines)
@@ -294,7 +286,6 @@ Lists all network addresses on host using the tree <=+=> Répertorie toutes les 
 Creates a directory <=+=> Crée un répertoire
 Lists information about all available interfaces <=+=> Répertorie des informations sur toutes les interfaces disponibles
 Shows forbidden list of aliases <=+=> Affiche la liste des alias interdits
-Kernel Panic Simulator (real) <=+=> Simulateur de panique du noyau (réel)
 Manage permissions for users (Only admins can access this command) <=+=> Gérer les autorisations pour les utilisateurs (seuls les administrateurs peuvent accéder à cette commande)
 Check to see if specified address is available <=+=> Vérifiez si l'adresse spécifiée est disponible
 Writes file contents to the console <=+=> Écrit le contenu du fichier sur la console
@@ -367,4 +358,4 @@ Press any key to continue... <=+=> Appuyez sur n'importe quelle touche pour cont
 This manual page title is not written <=+=> Ce titre de page de manuel n'est pas écrit
 This manual page ({0}) does not contain any body text. Deleting page... <=+=> Cette page de manuel ({0}) ne contient aucun corps de texte. Suppression d'une page ...
 This manual page ({0}) does not contain any section. Deleting page... <=+=> Cette page de manuel ({0}) ne contient aucune section. Suppression d'une page ...
-You tried to view a manual page with the debugging feature enabled. This may cause significant performance impacts depending on the system. Please press any key to continue, accepting the risks of performance impact. <=+=> Vous avez essayé d'afficher une page de manuel avec la fonctionnalité de débogage activée. Cela peut avoir un impact significatif sur les performances en fonction du système. Appuyez sur n’importe quelle touche pour continuer, en acceptant les risques d’impact sur les performances.
+Running on {0} <=+=> en cours d'exécution sur {0}

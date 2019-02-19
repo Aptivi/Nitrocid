@@ -23,6 +23,7 @@ Imports System.Threading
 
 Public Module Screensaver
 
+    'TODO: Screensavers can have their own variables, and the only thing required is the CancelPending variable.
     'Variables and Interface
     Public LockMode As Boolean = False
     Public defSaverName As String = "matrix" 'TODO: Permanent screensavers will be added in 0.0.6. Currently, it has been set to matrix
@@ -176,7 +177,7 @@ Public Module Screensaver
     Sub CompileCustom(ByVal file As String)
 
         Dim modPath As String
-        If (EnvironmentOSType.Contains("Unix")) Then
+        If (EnvironmentOSType.Contains("Unix")) Then 'TODO: Remove instances of this block, making path variables for each path appropriate for every platform
             modPath = Environ("HOME") + "/KSMods/"
         Else
             modPath = Environ("USERPROFILE") + "\KSMods\"
@@ -196,7 +197,9 @@ Public Module Screensaver
                                     Wln(DoTranslation("{0} has been initialized properly.", currentLang), "neutralText", modFile)
                                     ScrnSvrdb.Add(modFile, False)
                                 Else
-                                    Wln(DoTranslation("{0} already exists.", currentLang), "neutralText", modFile)
+                                    ScrnSvrdb.Remove(modFile)
+                                    CompileCustom(file)
+                                    Exit Sub
                                 End If
                             Else
                                 Wln(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), "neutralText", modFile)
@@ -225,6 +228,7 @@ Public Module Screensaver
     End Sub
 
     Function GenSaver(ByVal code As String) As ICustomSaver
+        DoneFlag = False
         Using provider As New VBCodeProvider()
             Dim prm As New CompilerParameters With {
                 .GenerateExecutable = False,

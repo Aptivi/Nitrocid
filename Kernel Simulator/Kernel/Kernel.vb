@@ -69,8 +69,17 @@ Public Module Kernel
             'Phase 3: Check for pre-user making
             If (CruserFlag = True) Then adduser(arguser, argword)
 
-            'Phase 4: Parse Mods
+            'Phase 4: Parse Mods and Screensavers
             ModParser.ParseMods(True)
+            Dim modPath As String
+            If (EnvironmentOSType.Contains("Unix")) Then
+                modPath = Environ("HOME") + "/KSMods/"
+            Else
+                modPath = Environ("USERPROFILE") + "\KSMods\"
+            End If
+            For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
+                CompileCustom(modFile.Replace(modPath, ""))
+            Next
 
             'Phase 5: Free unused RAM and raise the started event
             EventManager.RaiseStartKernel()

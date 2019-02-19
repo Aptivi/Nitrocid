@@ -1,5 +1,5 @@
 ﻿Available commands: {0} <=+=> Kěyòng mìnglìng: {0}
-Write command: <=+=> Xiě mìnglìng:
+Write command:  <=+=> Xiě mìnglìng: 
 Command injection has been cancelled. <=+=> Mìnglìng zhùrù yǐ bèi qǔxiāo.
 Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe' <=+=> Shǐyòng dòuhào fēngé yǐndǎo cānshù, bù dài kònggé, lìrú'motd,gpuprobe'
 Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5' <=+=> 'Cmdinject' shàng de mìnglìng yǔ dài kònggé de màohào fēnkāi, lìrú'cmdinject setthemes Hacker:Beep 1024 0.5'
@@ -40,10 +40,10 @@ RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> RAM: Yǐ shǐyòng de chā 
 RAM: Probing status is deprecated and will be removed in future release. <=+=> RAM: Bù tuījiàn shǐyòng tàncè zhuàngtài, jiānglái de bǎnběn jiāng shānchú.
 GPU: No appropriate driver installed. <=+=> GPU: Méiyǒu ānzhuāng shìdàng de qūdòng chéngxù.
 GPU: {0} {1}MB <=+=> GPU: {0} {1}MB
-HDD: {0} {1}GB <=+=> HDD: {0} {1}GB
-HDD: {0} {1} {2}GB <=+=> HDD: {0} {1} {2}GB
-HDD: Type: {2} | Status: {3} <=+=> HDD: Jiànrù: {2} |Zhuàngtài: {3}
+HDD: {0} {1}GB {2} <=+=> HDD: {0} {1}GB {2}
+HDD: {0} {1} {2}GB {3} <=+=> HDD: {0} {1} {2}GB {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} Qìgāng | {5} tóu | {6} sector
+HDD: CHS: {3} cylinders | {4} heads | {5} sectors <=+=> HDD: CHS: {3} Qìgāng | {4} tóu | {5} sector
 BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: Tàncè bù shòu zhīchí, yīnwèi tā bùshì wèi zài Unix shàng yùnxíng tàncè qì ér shèjì de.
 Enter the admin password for maintenance. <=+=> Shūrù guǎnlǐ mìmǎ jìnxíng wéihù.
@@ -76,11 +76,11 @@ You have found a bug in the permission system: invalid mode {0} <=+=> nín zài 
 You have either found a bug, or the permission you tried to add or remove is already done, or other error. <=+=> nín zhǎodàole cuòwù, huòzhě nín chángshì tiānjiā huò shānchú de quánxiàn yǐjīng wánchéng, huòzhě qítā cuòwù.
 Error {0}: {1} <=+=> Cuòwù {0}:{1}
 You have either found a bug, or the permission you tried to edit for a new user has failed. <=+=> Nín yǐ zhǎodào cuòwù, huòzhě nín chángshì wèi xīn yònghù biānjí de quánxiàn shībài.
-Available usernames: {0} <=+=> Kěyòng de yònghù míng:{0}
-Username:  <=+=> Yònghù míng:
+Available usernames: {0} <=+=> Kěyòng de yònghù míng: {0}
+Username:  <=+=> Yònghù míng: 
 Spaces are not allowed. <=+=> Bù yǔnxǔ yǒu kònggé.
 Special characters are not allowed. <=+=> Bù yǔnxǔ yǒu tèshū zìfú.
-{0}'s password:  <=+=> {0} De mìmǎ:
+{0}'s password:  <=+=> {0} De mìmǎ: 
 Wrong password. <=+=> Mìmǎ cuòwù.
 User is disabled. <=+=> Yònghù bèi jìnyòng.
 Wrong username. <=+=> Cuòwù de yònghù míng.
@@ -107,7 +107,6 @@ Error trying to convert from {0} to {1}: {2} <=+=> Chángshì cóng {0} zhuǎnhu
 Error <=+=> Cuòwù
 The requested screensaver {0} is not found. <=+=> zhǎo bù dào qǐngqiú de píngmù bǎohù chéngxù {0}.
 {0} has been initialized properly. <=+=> {0} Yǐ zhèngquè chūshǐhuà.
-{0} already exists. <=+=> {0} Yǐ cúnzài.
 {0} did not initialize. The screensaver code might have experienced an error while initializing. <=+=> {0} Wèi chūshǐhuà. Píngmù bǎohù chéngxù dàimǎ kěnéng zài chūshǐhuà shí yù dào cuòwù.
 Screensaver {0} does not exist. <=+=> Píngmù bǎohù chéngxù {0} bù cúnzài.
 {0} is set to default screensaver. <=+=> {0} Shèzhì wèi mòrèn píngmù bǎohù chéngxù.
@@ -226,24 +225,19 @@ Changing from: {0} to {1}... <=+=> Cóng:{0} Gēnggǎi wèi {1}...
 Blank message of the day. <=+=> Dàngtiān de kòngbái xiāoxī.
 Blank MAL After Login. <=+=> Dēnglù hòu kòngbái MAL.
 Changing MAL from {0} to {1}... <=+=> Jiāng MAL cóng {0} gēnggǎi wèi {1}...
-Choice command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> Bù tuījiàn shǐyòng Choice mìnglìng, zài jiānglái de fǎ xíng bǎn zhōng jiàng shānchú gāi mìnglìng, zhídào shíxiànle jiāohù shì shell. Wúlùn rúhé, tā shì duìyú fēi jiāohù shì shell wúyòng.
-Choice {0} selected. <=+=> Xuǎnzéle xuǎnxiàng {0}.
-Choice has been cancelled. <=+=> Xuǎnzé yǐ bèi qǔxiāo.
 Wrong user password. <=+=> Yònghù mìmǎ cuòwù.
 Passwords doesn't match. <=+=> Mìmǎ bù pǐpèi.
 Username has been changed to {0}! <=+=> Yònghù míng yǐ gēnggǎi wèi {0}!
 The new name you entered is already found. <=+=> Nín shūrù de xīn míngchēng yǐjīng zhǎodào.
-Echo command is deprecated and will be removed in future release until the interactive shell has been implemented. Whatever, it's useless for non-interactive shells. <=+=> Bù tuījiàn shǐyòng Echo mìnglìng, zài jiānglái de fǎ xíng bǎn zhōng jiàng shānchú tā, zhídào shíxiànle jiāohù shì shell. Wúlùn rúhé, tā dōu shì wúyòng de duìyú fēi jiāohù shì shell.
 Listing PCs is not supported yet on Unix. <=+=> Unix shàng shàng bù zhīchí liè chū PC.
 Aliases that are forbidden: {0} <=+=> Jìnzhǐ shǐyòng de biémíng:{0}
-PanicSim command is deprecated and will be removed in future release until the interactive shell has been implemented. It increases abuse for Kernel Error. <=+=> Bù tuījiàn shǐyòng PanicSim mìnglìng, zài jiānglái de fǎ xíng bǎn zhōng jiàng shānchú tā, zhídào shíxiànle jiāohù shì shell. Tā zēngjiāle lànyòng yòng yú nèihé cuòwù.
 {0} is not found. <=+=> Zhǎo bù dào {0}.
 Configuration reloaded. You might need to reboot the kernel for some changes to take effect. <=+=> Pèizhì chóngxīn jiāzài. Nín kěnéng xūyào chóngxīn qǐdòng nèihé cáinéng shǐ mǒu xiē gēnggǎi shēngxiào.
 Everything is reset to normal settings. <=+=> Yīqiè dōu chóng zhì wèi zhèngcháng shèzhì.
 One or more of the colors is invalid. <=+=> Yī zhǒng huò duō zhǒng yánsè wúxiào.
 Colors are not available. Turn on colored shell in the kernel config. <=+=> Yánsè bùkěyòng. Zài nèihé pèizhì zhōng dǎkāi cǎisè shell.
 Screensaver {0} not found. <=+=> Píngmù bǎohù chéngxù {0} wèi zhǎodào.
-{0}[ Kernel settings ] <=+=> {0}[Nèihé shèzhì]
+{0}[ Kernel settings (Running on {1}) ] <=+=> {0}[ Nèihé shèzhì (zài {1} shàng yùnxíng) ]
 Kernel Version: <=+=> Nèihé bǎnběn:
 Debug Mode: <=+=> Tiáoshì móshì:
 Colored Shell: <=+=> Cǎi ké:
@@ -253,13 +247,13 @@ MOTD on Login: <=+=> Dēnglù shí de MOTD:
 Time/Date on corner: <=+=> Jiǎoluò de shíjiān/rìqí:
 Hardware probed: <=+=> Yìngjiàn tàncè:
 Current theme: <=+=> Mùqián de zhǔtí:
-[ Hardware settings ]{0} <=+=> [Yìngjiàn shèzhì]{0}
-{0}[ User settings ] <=+=> {0}[yònghù shèzhì]
+[ Hardware settings ]{0} <=+=> [ Yìngjiàn shèzhì ]{0}
+{0}[ User settings ] <=+=> {0}[ yònghù shèzhì ]
 Current user name: <=+=> Dāngqián yònghù míng:
 Current host name: <=+=> Dāngqián zhǔjī míng:
 Available usernames: <=+=> Kěyòng de yònghù míng:
 Computer host name: <=+=> Jìsuànjī zhǔjī míng:
-{0}[ Messages Settings ] <=+=> {0}[Xiāoxī shèzhì]
+{0}[ Messages Settings ] <=+=> {0}[ Xiāoxī shèzhì ]
 Source code: <=+=> Yuán dàimǎ:
 Copyright (c) <=+=> Bǎnquán suǒyǒu (c)
 License <=+=> Xǔkě zhèng
@@ -276,16 +270,14 @@ Changes MAL, the MOTD After Login (Admins only) <=+=> gēnggǎi MAL, dēnglù h�
 Changes MOTD, the Message Of The Day (Admins only) <=+=> gēnggǎi MOTD, jí dàngtiān de xiāoxī (jǐn xiàn guǎnlǐ yuán)
 Changes password for current user <=+=> gēnggǎi dāngqián yònghù de mìmǎ
 Changes user name (Admins Only) <=+=> gēnggǎi yònghù míng (jǐn xiàn guǎnlǐ yuán)
-Makes user choices <=+=> shǐyònghù xuǎnzé
 Clears the screen <=+=> qīngchú píngmù
 Convert currency <=+=> zhuǎnhuàn huòbì
 Shows debug logs (Admins Only) <=+=> xiǎnshì tiáoshì rìzhì (jǐn xiàn guǎnlǐ yuán)
-Writes a text into a console <=+=> jiāng wénběn xiě rù kòngzhì tái
 Use an FTP shell to interact with servers <=+=> shǐyòng FTP shell yǔ fúwùqì jìnxíng jiāohù
 Help page <=+=> bāngzhù yèmiàn
 Probe hardware manually (One time in 'nohwprobe' kernel) <=+=> shǒudòng tàncè yìngjiàn (zài'nohwprobe'nèihé zhōng yīcì)
 List file/folder contents in current folder <=+=> liè chū dāngqiáng wénjiàn jiā zhōng de wénjiàn/wénjiàn jiā nèiróng
-Loads screensaver file in %USERPROFILE%\KSMods <=+=> zài %USERPROFILE%\KSMods zhōng jiāzài píngmù bǎohù chéngxù wénjiàn
+Reloads screensaver file in %USERPROFILE%\KSMods <=+=> Chóngxīn jiāzài %USERPROFILE%\KSMods zhōng de píngmù bǎohù chéngxù wénjiàn
 Locks your screen with a password <=+=> shǐyòng mìmǎ suǒdìng píngmù
 Logs you out <=+=> jìlù nǐ
 Lists all network devices who is online (and offline in domains) <=+=> liè chū suǒyǒu liánjī (yǐjí yù zhōng tuō jī) de wǎngluò shèbèi
@@ -294,7 +286,6 @@ Lists all network addresses on host using the tree <=+=> shǐyòng shù liè ch�
 Creates a directory <=+=> chuàngjiàn mùlù
 Lists information about all available interfaces <=+=> liè chū yǒuguān suǒyǒu kěyòng jiēkǒu de xìnxī
 Shows forbidden list of aliases <=+=> xiǎnshì jìnyòng de biémíng lièbiǎo
-Kernel Panic Simulator (real) <=+=> nèihé kǒnghuāng mónǐ qì (zhēnshí)
 Manage permissions for users (Only admins can access this command) <=+=> guǎnlǐ yònghù quánxiàn (zhǐyǒu guǎnlǐ yuán cáinéng fǎngwèn cǐ mìnglìng)
 Check to see if specified address is available <=+=> jiǎnchá zhǐdìng dì dìzhǐ shìfǒu kěyòng
 Writes file contents to the console <=+=> jiāng wénjiàn nèiróng xiě rù kòngzhì tái
@@ -367,4 +358,4 @@ Press any key to continue... <=+=> Àn rènyì jiàn jìxù...
 This manual page title is not written <=+=> cǐ shǒucè yè biāotí wèi xiě rù
 This manual page ({0}) does not contain any body text. Deleting page... <=+=> běn shǒucè yè ({0}) bù bāohán rènhé zhèngwén. Zhèngzài shānchú yèmiàn...
 This manual page ({0}) does not contain any section. Deleting page... <=+=> Běn shǒucè yè ({0}) bù bāohán rènhé bùfèn. Zhèngzài shānchú yèmiàn...
-You tried to view a manual page with the debugging feature enabled. This may cause significant performance impacts depending on the system. Please press any key to continue, accepting the risks of performance impact. <=+=> Nín chángshì chákàn qǐyòngle tiáoshì gōngnéng de shǒucè yè. Gēnjù xìtǒng de bùtóng, zhè kěnéng huì duì xìngnéng chǎnshēng zhòngdà yǐngxiǎng. Qǐng àn rènyì jiàn jìxù, jiēshòu xìngnéng yǐngxiǎng de fēngxiǎn.
+Running on {0} <=+=> zài {0} shàng yùnxíng

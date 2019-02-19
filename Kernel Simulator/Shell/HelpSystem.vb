@@ -30,14 +30,11 @@ Public Module HelpSystem
                                                                   {"chmotd", DoTranslation("Changes MOTD, the Message Of The Day (Admins only)", currentLang)},
                                                                   {"chpwd", DoTranslation("Changes password for current user", currentLang)},
                                                                   {"chusrname", DoTranslation("Changes user name (Admins Only)", currentLang)},
-                                                                  {"choice", DoTranslation("Makes user choices", currentLang)},
                                                                   {"cls", DoTranslation("Clears the screen", currentLang)},
                                                                   {"debuglog", DoTranslation("Shows debug logs (Admins Only)", currentLang)},
-                                                                  {"echo", DoTranslation("Writes a text into a console", currentLang)},
                                                                   {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                                   {"help", DoTranslation("Help page", currentLang)},
                                                                   {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
-                                                                  {"loadsaver", DoTranslation("Loads screensaver file in %USERPROFILE%\KSMods", currentLang)},
                                                                   {"lockscreen", DoTranslation("Locks your screen with a password", currentLang)},
                                                                   {"logout", DoTranslation("Logs you out", currentLang)},
                                                                   {"lscomp", DoTranslation("Lists all network devices who is online (and offline in domains)", currentLang)},
@@ -46,12 +43,12 @@ Public Module HelpSystem
                                                                   {"md", DoTranslation("Creates a directory", currentLang)},
                                                                   {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
                                                                   {"noaliases", DoTranslation("Shows forbidden list of aliases", currentLang)},
-                                                                  {"panicsim", DoTranslation("Kernel Panic Simulator (real)", currentLang)},
                                                                   {"perm", DoTranslation("Manage permissions for users (Only admins can access this command)", currentLang)},
                                                                   {"ping", DoTranslation("Check to see if specified address is available", currentLang)},
                                                                   {"read", DoTranslation("Writes file contents to the console", currentLang)},
                                                                   {"reboot", DoTranslation("Restarts your computer (WARNING: No syncing, because it is not a final kernel)", currentLang)},
                                                                   {"reloadconfig", DoTranslation("Reloads configuration file that is edited.", currentLang)},
+                                                                  {"reloadsaver", DoTranslation("Reloads screensaver file in %USERPROFILE%\KSMods", currentLang)},
                                                                   {"rd", DoTranslation("Removes a directory", currentLang)},
                                                                   {"rmuser", DoTranslation("Removes a user from the list (Admins Only)", currentLang)},
                                                                   {"savescreen", DoTranslation("Saves your screen from burn outs", currentLang)},
@@ -131,10 +128,6 @@ Public Module HelpSystem
 
             Wln(DoTranslation("Usage:", currentLang) + " chmal <Message>", "neutralText")
 
-        ElseIf (command = "choice") Then
-
-            Wln(DoTranslation("Usage:", currentLang) + " choice <Question> <sets>", "neutralText")
-
         ElseIf (command = "chpwd") Then
 
             Wln(DoTranslation("Usage:", currentLang) + " chpwd: <Username> <UserPass> <newPass> <confirm>", "neutralText")
@@ -150,10 +143,6 @@ Public Module HelpSystem
         ElseIf (command = "debuglog") Then
 
             Wln(DoTranslation("Usage:", currentLang) + " debuglog: " + DoTranslation("Shows you debug logs so you can send the log to us.", currentLang), "neutralText")
-
-        ElseIf (command = "echo") Then
-
-            Wln(DoTranslation("Usage:", currentLang) + " echo <text>", "neutralText")
 
         ElseIf (command = "ftp") Then
 
@@ -175,9 +164,9 @@ Public Module HelpSystem
             Wln(DoTranslation("Usage:", currentLang) + " lsnettree: " + DoTranslation("Lists network information, as well as every computer connected to a network, in a tree form.", currentLang) + vbNewLine +
                 "       " + DoTranslation("Friends of", currentLang) + " lsnettree: lscomp, lsnet", "neutralText")
 
-        ElseIf (command = "loadsaver") Then
+        ElseIf (command = "reloadsaver") Then
 
-            Wln(DoTranslation("Usage:", currentLang) + " loadsaver <modNameSS.m>" + vbNewLine +
+            Wln(DoTranslation("Usage:", currentLang) + " reloadsaver <modNameSS.m>" + vbNewLine +
                 "       " + DoTranslation("where modnameSS.m will be", currentLang) + " {0}", "neutralText", String.Join(", ", wholesslist))
 
         ElseIf (command = "lockscreen") Then
@@ -201,10 +190,6 @@ Public Module HelpSystem
         ElseIf (command = "noaliases") Then
 
             Wln(DoTranslation("Usage:", currentLang) + " noaliases: " + DoTranslation("Shows forbidden list of aliases", currentLang), "neutralText")
-
-        ElseIf (command = "panicsim") Then
-
-            Wln(DoTranslation("Usage:", currentLang) + " panicsim <message> [S/F/D/[C]/U] [RebootTime:Seconds]", "neutralText")
 
         ElseIf (command = "perm") Then
 
