@@ -14,6 +14,12 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - We took out Windows XP support in favor of NuGet and .NET Framework 4.6.1.
 
+- We paused porting for MonoDevelop in Linux and macOS in beta versions. Although it works, some features may not work properly, and any of the issues or pull requests about the Linux compatibility optimization while the version you're using is a beta version of 0.0.6 will be closed.
+
+- This version is the beta version so expect some bugs and instabilities. If you have experienced one, send a bug report to GitHub with stack trace and debugging logs.
+
+- Expect the 0.0.6 version to be frozen, because our build laptop is slow and we don't have enough resources at this time. Whenever we get the faster Windows 10 computer, we will stop the beta releases for 0.0.6 and finish all the tasks required to shape the future of 0.0.6.
+
 ## |-----+--> _Prerequisites_ <--+-----|
 
 1. For Windows systems
@@ -119,6 +125,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **2/16/2019 - 0.0.5.10:** Improved readability of manual pages (vbTab is now filtered and will not cause issues), Now the translator prints debug info when a string is not found in the translation list, Hardware Prober: Stop spamming "System.__ComObject" to debugger to allow easy reading, Manpage Parser: Stop filling debug logs with useless "Checking for..." texts and expanded few debug messages, Fixed the BIOS string not showing, Removed unnecessary sleep platform checks, Removed "nohwprobe" kernel argument as hardware probing is important, Removed unnecessary timezone platform checks, Updated FluentFTP and Newtonsoft.Json libraries to their latest stable versions, No stack duplicates except the password part in Login, Fixed bug of MAL and MOTD not refreshing between logins, Fixed bug of sysinfo (the message settings not printing), The kernel now prints environment used on boot, debug, and on sysinfo command, Made writing events obsolete
 
 **2/18/2019 - 0.0.5.11:** Made GPU and BIOS probing `<Obsolete>`, No more COM calls when probing hardware, Removed a useless file that has hard drive data, Fixed the translation of sysinfo when displaying the kernel configuration section, Removed status probing from HDD and RAM (See why on `usermanual History of Kernel Simulator`, section `Truth about status probing`), Fixed the CHS section not appearing if the hard drive has the Manufacturer value, Fixed the translator not returning English value if the translation list doesn't contain such value, Fixed the GPU prober assuming that Microsoft Basic Display Driver is not a basic driver, Made screensavers be probed on boot, Fixed NullReferenceException when trying to load the next screensaver after an error occured on the previous screensaver, Fixed the OS info not translated when starting up a kernel, Fixed language config not preserving when updating, Debug information now prints to VS2017 debug output window (You still have to turn on debugging), Made the loadsaver command reloadsaver, Removed useless and abusive commands (echo, panicsim and choice)
+
+**2/22/2019 - 0.0.5.12:** Now createConf cmdline arg only creates config if the config file isn't found, Some preparations for 0.0.6 (slimming down only), Removed the GPU and BIOS probing, Now older KS config won't be allowed to be updated here (Workaround: You need to remove your old KS config file and re-run the app), Fixed the Environment.OS bug on Windows 10 (10.0) where it returns Windows 8 (6.2) version, Fixed the placeholders not parsing when using showmotd/showmal command, Fixed the simple help not showing mods, Fixed built-in commands not running after you run mod commands or alias commands, Fixed NullReferenceException when debugging, Improved alias listing, Fixed the printing text exception message not translating to current language, Fixed the "/" or "\" appearing before the modname when probing mods and screensavers, Removed unnecessary fixup in translation, Fixed more stack overflows in FTP shell, Fixed the FTP message translation translating "'help'" as the language when it's supposed to be a command, Fixed the command not found message when not entering anything in FTP shell
 
 ## |-----+--> _Manual pages_ <--+-----|
 

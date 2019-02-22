@@ -21,7 +21,6 @@ Imports System.IO
 Public Module GetCommand
 
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
-
         Dim index As Integer = requestedCommand.IndexOf(" ")
         If (index = -1) Then index = requestedCommand.Length
         Dim words = requestedCommand.Split({" "c})
@@ -99,9 +98,9 @@ Public Module GetCommand
 
                 If (args.Count - 1 = 0) Then
                     If (AvailableDirs.Contains(args(0)) And currDir = "/") Then
-                        CurrentDir.setCurrDir(args(0))
+                        setCurrDir(args(0))
                     ElseIf (args(0) = "..") Then
-                        CurrentDir.setCurrDir("")
+                        setCurrDir("")
                     Else
                         Wln(DoTranslation("Directory {0} not found", currentLang), "neutralText", args(0))
                     End If
@@ -121,12 +120,7 @@ Public Module GetCommand
                         Wln(DoTranslation("Changing from: {0} to {1}...", currentLang), "neutralText", HName, newhost)
                         HName = newhost
                         Dim ksconf As New IniFile()
-                        Dim pathConfig As String
-                        If (EnvironmentOSType.Contains("Unix")) Then
-                            pathConfig = Environ("HOME") & "/kernelConfig.ini"
-                        Else
-                            pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
-                        End If
+                        Dim pathConfig As String = paths("Configuration")
                         ksconf.Load(pathConfig)
                         ksconf.Sections("Login").Keys("Host Name").Value = newhost
                         ksconf.Save(pathConfig)
@@ -143,12 +137,7 @@ Public Module GetCommand
                         Wln(DoTranslation("Changing MOTD...", currentLang), "neutralText")
                         MOTDMessage = newmotd
                         Dim ksconf As New IniFile()
-                        Dim pathConfig As String
-                        If (EnvironmentOSType.Contains("Unix")) Then
-                            pathConfig = Environ("HOME") & "/kernelConfig.ini"
-                        Else
-                            pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
-                        End If
+                        Dim pathConfig As String = paths("Configuration")
                         ksconf.Load(pathConfig)
                         ksconf.Sections("Login").Keys("MOTD").Value = MOTDMessage
                         ksconf.Save(pathConfig)
@@ -166,12 +155,7 @@ Public Module GetCommand
                         Wln(DoTranslation("Changing MAL...", currentLang), "neutralText")
                         MAL = newmal
                         Dim ksconf As New IniFile()
-                        Dim pathConfig As String
-                        If (EnvironmentOSType.Contains("Unix")) Then
-                            pathConfig = Environ("HOME") & "/kernelConfig.ini"
-                        Else
-                            pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
-                        End If
+                        Dim pathConfig As String = paths("Configuration")
                         ksconf.Load(pathConfig)
                         ksconf.Sections("Login").Keys("MOTD After Login").Value = newmal
                         ksconf.Save(pathConfig)
@@ -242,12 +226,7 @@ Public Module GetCommand
             ElseIf (requestedCommand = "debuglog") Then
 
                 Dim line As String
-                Dim debugPath As String
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    debugPath = Environ("HOME") & "/kernelDbg.log"
-                Else
-                    debugPath = Environ("USERPROFILE") & "\kernelDbg.log"
-                End If
+                Dim debugPath As String = paths("Debugger")
                 Using dbglog = File.Open(debugPath, FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
                     line = reader.ReadLine()
                     Do While (reader.EndOfStream <> True)
@@ -382,20 +361,7 @@ Public Module GetCommand
 
                 'Reload configuration
                 Done = True
-                Dim pathConfig As String
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    pathConfig = Environ("HOME") & "/kernelConfig.ini"
-                Else
-                    pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
-                End If
-                If (File.Exists(pathConfig) = True) Then
-                    configReader.Load(pathConfig)
-                Else
-                    Config.createConfig(False)
-                    configReader.Load(pathConfig)
-                End If
-                Config.readImportantConfig()
-                Config.readConfig()
+                InitializeConfig()
                 Wln(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", currentLang), "neutralText")
 
             ElseIf (requestedCommand = "reboot") Then
@@ -471,7 +437,7 @@ Public Module GetCommand
                                 neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), args(7)), ConsoleColor)
                                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), args(8)), ConsoleColor)
                                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), args(9)), ConsoleColor)
-                                LoadBackground.Load()
+                                Load()
                             ElseIf (args.Contains("def")) Then
                                 If (Array.IndexOf(args, "") = 0) Then
                                     args(0) = "White"
@@ -494,7 +460,7 @@ Public Module GetCommand
                                 ElseIf (Array.IndexOf(args, "") = 6) Then
                                     args(6) = "Black"
                                     backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), args(6)), ConsoleColor)
-                                    LoadBackground.Load()
+                                    Load()
                                 ElseIf (Array.IndexOf(args, "") = 7) Then
                                     args(7) = "Gray"
                                     neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), args(7)), ConsoleColor)
@@ -520,12 +486,7 @@ Public Module GetCommand
 
             ElseIf (requestedCommand.Substring(0, index) = "setsaver") Then
 
-                Dim modPath As String
-                If (EnvironmentOSType.Contains("Unix")) Then
-                    modPath = Environ("HOME") + "/KSMods/"
-                Else
-                    modPath = Environ("USERPROFILE") + "\KSMods\"
-                End If
+                Dim modPath As String = paths("Mods")
                 If (requestedCommand <> "setsaver") Then
                     If (args.Count >= 0) Then
                         If (strArgs = "colorMix" Or strArgs = "matrix" Or strArgs = "disco") Then
@@ -545,7 +506,7 @@ Public Module GetCommand
 
                 If (requestedCommand <> "setthemes") Then
                     If (args.Count - 1 = 0) Then
-                        If (ColoredShell = True) Then TemplateSet.templateSet(args(0)) Else Wln(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), "neutralText")
+                        If (ColoredShell = True) Then templateSet(args(0)) Else Wln(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), "neutralText")
                         Done = True
                     End If
                 End If
@@ -576,13 +537,13 @@ Public Module GetCommand
             ElseIf (requestedCommand = "showmotd") Then
 
                 'Show changes to MOTD, or current
-                Wln(MOTDMessage, "neutralText")
+                Wln(ProbePlaces(MOTDMessage), "neutralText")
                 Done = True
 
             ElseIf (requestedCommand = "showmal") Then
 
                 'Show changes to MAL, or current
-                Wln(MAL, "neutralText")
+                Wln(ProbePlaces(MAL), "neutralText")
                 Done = True
 
             ElseIf (requestedCommand = "shutdown") Then
@@ -680,7 +641,6 @@ Public Module GetCommand
                 Wln(DoTranslation("Error trying to execute command", currentLang) + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), "neutralText", Err.Number, Err.Description, words(0))
             End If
         End Try
-
     End Sub
 
 End Module

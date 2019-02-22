@@ -70,12 +70,7 @@ Public Module HelpSystem
 
     Public Sub ShowHelp(Optional ByVal command As String = "")
 
-        Dim wholesslist As String()
-        If (EnvironmentOSType.Contains("Unix")) Then
-            wholesslist = IO.Directory.GetFiles(Environ("HOME") + "/KSMods", "*SS.m", IO.SearchOption.TopDirectoryOnly)
-        Else
-            wholesslist = IO.Directory.GetFiles(Environ("USERPROFILE") + "\KSMods", "*SS.m", IO.SearchOption.TopDirectoryOnly)
-        End If
+        Dim wholesslist As String() = IO.Directory.GetFiles(paths("Mods"), "*SS.m", IO.SearchOption.TopDirectoryOnly)
         If (command = "") Then
 
             If (simHelp = False) Then
@@ -85,9 +80,17 @@ Public Module HelpSystem
                 For Each cmd As String In moddefs.Keys
                     W("- {0}: ", "helpCmd", cmd) : Wln("{0}", "helpDef", moddefs(cmd))
                 Next
-                ListAliases()
+                For Each cmd As String In aliases.Keys
+                    W("- {0}: ", "helpCmd", cmd) : Wln("{0}", "helpDef", definitions(aliases(cmd)))
+                Next
                 Wln(DoTranslation("* You can use multiple commands using the colon between commands.", currentLang), "neutralText")
             Else
+                For Each cmd As String In aliases.Keys
+                    W("{0}({1}), ", "helpCmd", cmd, aliases(cmd))
+                Next
+                For Each cmd As String In moddefs.Keys
+                    W("{0}, ", "helpCmd", cmd)
+                Next
                 Wln(String.Join(", ", availableCommands), "neutralText")
             End If
 

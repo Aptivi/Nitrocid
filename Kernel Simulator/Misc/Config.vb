@@ -20,70 +20,117 @@ Imports System.IO
 
 Public Module Config
 
-    Public Sub createConfig(ByVal CmdArg As Boolean)
+    Public Sub createConfig(ByVal CmdArg As Boolean, ByVal Preserve As Boolean)
         Try
             Dim ksconf As New IniFile()
+            If Preserve Then
+                'The General Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "General",
+                        New IniKey(ksconf, "Prompt for Arguments on Boot", argsOnBoot),
+                        New IniKey(ksconf, "Maintenance Mode", maintenance),
+                        New IniKey(ksconf, "Change Root Password", setRootPasswd),
+                        New IniKey(ksconf, "Set Root Password to", RootPasswd),
+                        New IniKey(ksconf, "Create Demo Account", enableDemo),
+                        New IniKey(ksconf, "Customized Colors on Boot", customColor),
+                        New IniKey(ksconf, "Language", currentLang)))
 
-            'The General Section
-            ksconf.Sections.Add(
-                New IniSection(ksconf, "General",
-                    New IniKey(ksconf, "Prompt for Arguments on Boot", "False"),
-                    New IniKey(ksconf, "Maintenance Mode", "False"),
-                    New IniKey(ksconf, "Change Root Password", "False"),
-                    New IniKey(ksconf, "Set Root Password to", "toor"),
-                    New IniKey(ksconf, "Create Demo Account", "True"),
-                    New IniKey(ksconf, "Customized Colors on Boot", "False"),
-                    New IniKey(ksconf, "Language", "eng")))
+                'The Colors Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Colors",
+                        New IniKey(ksconf, "User Name Shell Color", userNameShellColor),
+                        New IniKey(ksconf, "Host Name Shell Color", hostNameShellColor),
+                        New IniKey(ksconf, "Continuable Kernel Error Color", contKernelErrorColor),
+                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", uncontKernelErrorColor),
+                        New IniKey(ksconf, "Text Color", neutralTextColor),
+                        New IniKey(ksconf, "License Color", licenseColor),
+                        New IniKey(ksconf, "Background Color", backgroundColor),
+                        New IniKey(ksconf, "Input Color", inputColor),
+                        New IniKey(ksconf, "Listed command in Help Color", cmdListColor),
+                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor)))
 
-            'The Colors Section
-            ksconf.Sections.Add(
-                New IniSection(ksconf, "Colors",
-                    New IniKey(ksconf, "User Name Shell Color", userNameShellColor),
-                    New IniKey(ksconf, "Host Name Shell Color", hostNameShellColor),
-                    New IniKey(ksconf, "Continuable Kernel Error Color", contKernelErrorColor),
-                    New IniKey(ksconf, "Uncontinuable Kernel Error Color", uncontKernelErrorColor),
-                    New IniKey(ksconf, "Text Color", neutralTextColor),
-                    New IniKey(ksconf, "License Color", licenseColor),
-                    New IniKey(ksconf, "Background Color", backgroundColor),
-                    New IniKey(ksconf, "Input Color", inputColor),
-                    New IniKey(ksconf, "Listed command in Help Color", cmdListColor),
-                    New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor)))
+                'The Hardware Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Hardware",
+                        New IniKey(ksconf, "Quiet Probe", quietProbe),
+                        New IniKey(ksconf, "Probe Slots", slotProbe)))
 
-            'The Hardware Section
-            ksconf.Sections.Add(
-                New IniSection(ksconf, "Hardware",
-                    New IniKey(ksconf, "Quiet Probe", "False"),
-                    New IniKey(ksconf, "Probe Slots", "True")))
+                'The Login Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Login",
+                        New IniKey(ksconf, "Show MOTD on Log-in", showMOTD),
+                        New IniKey(ksconf, "Clear Screen on Log-in", clsOnLogin),
+                        New IniKey(ksconf, "MOTD", MOTDMessage),
+                        New IniKey(ksconf, "Host Name", HName),
+                        New IniKey(ksconf, "MOTD After Login", MAL)))
 
-            'The Login Section
-            ksconf.Sections.Add(
-                New IniSection(ksconf, "Login",
-                    New IniKey(ksconf, "Show MOTD on Log-in", "True"),
-                    New IniKey(ksconf, "Clear Screen on Log-in", "False"),
-                    New IniKey(ksconf, "MOTD", "Welcome to Kernel!"),
-                    New IniKey(ksconf, "Host Name", "kernel"),
-                    New IniKey(ksconf, "MOTD After Login", "Logged in successfully as <user>")))
+                'The Shell Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Shell",
+                        New IniKey(ksconf, "Colored Shell", ColoredShell),
+                        New IniKey(ksconf, "Simplified Help Command", simHelp)))
 
-            'The Shell Section
-            ksconf.Sections.Add(
-                New IniSection(ksconf, "Shell",
-                    New IniKey(ksconf, "Colored Shell", "True"),
-                    New IniKey(ksconf, "Simplified Help Command", "False")))
+                'Misc Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Misc",
+                        New IniKey(ksconf, "Show Time/Date on Upper Right Corner", CornerTD),
+                        New IniKey(ksconf, "Kernel Version", KernelVersion)))
+            Else
+                'The General Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "General",
+                        New IniKey(ksconf, "Prompt for Arguments on Boot", "False"),
+                        New IniKey(ksconf, "Maintenance Mode", "False"),
+                        New IniKey(ksconf, "Change Root Password", "False"),
+                        New IniKey(ksconf, "Set Root Password to", "toor"),
+                        New IniKey(ksconf, "Create Demo Account", "True"),
+                        New IniKey(ksconf, "Customized Colors on Boot", "False"),
+                        New IniKey(ksconf, "Language", "eng")))
 
-            'Misc Section
-            ksconf.Sections.Add(
-                New IniSection(ksconf, "Misc",
-                    New IniKey(ksconf, "Show Time/Date on Upper Right Corner", "False"),
-                    New IniKey(ksconf, "Kernel Version", KernelVersion)))
+                'The Colors Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Colors",
+                        New IniKey(ksconf, "User Name Shell Color", userNameShellColor),
+                        New IniKey(ksconf, "Host Name Shell Color", hostNameShellColor),
+                        New IniKey(ksconf, "Continuable Kernel Error Color", contKernelErrorColor),
+                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", uncontKernelErrorColor),
+                        New IniKey(ksconf, "Text Color", neutralTextColor),
+                        New IniKey(ksconf, "License Color", licenseColor),
+                        New IniKey(ksconf, "Background Color", backgroundColor),
+                        New IniKey(ksconf, "Input Color", inputColor),
+                        New IniKey(ksconf, "Listed command in Help Color", cmdListColor),
+                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor)))
+
+                'The Hardware Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Hardware",
+                        New IniKey(ksconf, "Quiet Probe", "False"),
+                        New IniKey(ksconf, "Probe Slots", "True")))
+
+                'The Login Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Login",
+                        New IniKey(ksconf, "Show MOTD on Log-in", "True"),
+                        New IniKey(ksconf, "Clear Screen on Log-in", "False"),
+                        New IniKey(ksconf, "MOTD", "Welcome to Kernel!"),
+                        New IniKey(ksconf, "Host Name", "kernel"),
+                        New IniKey(ksconf, "MOTD After Login", "Logged in successfully as <user>")))
+
+                'The Shell Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Shell",
+                        New IniKey(ksconf, "Colored Shell", "True"),
+                        New IniKey(ksconf, "Simplified Help Command", "False")))
+
+                'Misc Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Misc",
+                        New IniKey(ksconf, "Show Time/Date on Upper Right Corner", "False"),
+                        New IniKey(ksconf, "Kernel Version", KernelVersion)))
+            End If
 
             'Save Config
-            Dim savepath As String
-            If (EnvironmentOSType.Contains("Unix")) Then
-                savepath = Environ("HOME") + "/kernelConfig.ini"
-            Else
-                savepath = Environ("USERPROFILE") + "\kernelConfig.ini"
-            End If
-            ksconf.Save(savepath)
+            ksconf.Save(paths("Configuration"))
 
             'Exit if it is executed using real command-line arguments
             If (CmdArg = True) Then
@@ -108,45 +155,16 @@ Public Module Config
         'Rewrite checker only when there is a necessary change.
         Try
             'Variables
-            Dim confPath As String
-            Dim lns() As String
             Dim configUpdater As New IniFile()
 
-            'Ready the path
-            If (EnvironmentOSType.Contains("Unix")) Then
-                confPath = Environ("HOME") + "/kernelConfig.ini"
-            Else
-                confPath = Environ("USERPROFILE") + "\kernelConfig.ini"
-            End If
-            lns = File.ReadAllLines(confPath)
-            configUpdater.Load(confPath)
+            'Load config
+            configUpdater.Load(paths("Configuration"))
 
-            'TODO: Remove checking for old KS layout and re-write the updater to retain user settings and create new entries
-            If (lns(0).Contains("Kernel Version = ") And lns(0).Replace("Kernel Version = ", "") <> KernelVersion) Then
-                If (lns.Length > 0) AndAlso (lns(0).StartsWith("Kernel Version = ")) Then
-                    Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, lns(0).Replace("Kernel Version = ", ""))
-                    Wln(DoTranslation("An upgrade from {0} to {1} was detected.", currentLang), "neutralText", lns(0).Replace("Kernel Version = ", ""), KernelVersion)
-                    W(DoTranslation("The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings.", currentLang) + vbNewLine +
-                      DoTranslation("Are you sure that you want to update configuration and restart <y/n>? ", currentLang), "input", lns(0).Replace("Kernel Version = ", ""))
-                    Dim answer As String = Console.ReadKey.KeyChar
-                    If (answer = "y") Then
-                        Wln(vbNewLine + "Updating configuration file...", "neutralText")
-                        Wdbg("answer ({0} = ""y""", answer)
-                        updateConfig()
-                    Else
-                        Wdbg("answer ({0} <> ""y""", answer)
-                        DisposeExit.DisposeAll()
-                        ResetEverything()
-                        Environment.Exit(2)
-                    End If
-                End If
-            ElseIf configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
+            'Check to see if the kernel is outdated
+            If configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
                 Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
                 Wln(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
-                configUpdater.Sections("Misc").Keys("Kernel Version").Value = KernelVersion
-                configUpdater.Sections("Hardware").Keys("Quiet Probe").Value = "False"
-                configUpdater.Sections("General").Keys("Language").Value = currentLang
-                configUpdater.Save(confPath)
+                updateConfig()
             End If
         Catch ex As Exception
             If (DebugMode = True) Then
@@ -158,10 +176,9 @@ Public Module Config
         End Try
     End Sub
 
-    'This sub will be changed in every release when there's a config update.
     Public Sub updateConfig()
 
-        createConfig(False)
+        createConfig(False, True)
         KernelTools.ResetEverything()
         Console.Clear()
         Main()
@@ -172,12 +189,10 @@ Public Module Config
         Try
             Dim Lang_TBA As String = configReader.Sections("General").Keys("Language").Value
             If (configReader.Sections("Shell").Keys("Colored Shell").Value = "False") Then
-                TemplateSet.templateSet("LinuxUncolored")
+                templateSet("LinuxUncolored")
                 ColoredShell = False
             End If
-            If (availableLangs.Contains(Lang_TBA)) Then
-                currentLang = Lang_TBA
-            End If
+            If (availableLangs.Contains(Lang_TBA)) Then currentLang = Lang_TBA
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wdbg(ex.StackTrace, True)
@@ -201,7 +216,7 @@ Public Module Config
             If ColoredShell = True And customColor = True Then licenseColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("License Color").Value), ConsoleColor)
             If ColoredShell = True And customColor = True Then
                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Background Color").Value), ConsoleColor)
-                LoadBackground.Load()
+                Load()
             End If
             If ColoredShell = True And customColor = True Then inputColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColor)
             If ColoredShell = True And customColor = True Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColor)
@@ -238,6 +253,15 @@ Public Module Config
                 Wln(DoTranslation("There is an error trying to read configuration.", currentLang), "neutralText")
             End If
         End Try
+    End Sub
+
+    Sub InitializeConfig()
+        Dim pathConfig As String = paths("Configuration")
+        If Not File.Exists(pathConfig) Then Config.createConfig(False, False)
+        configReader.Load(pathConfig)
+        Config.readImportantConfig()
+        Config.readConfig()
+        Config.checkForUpgrade()
     End Sub
 
 End Module

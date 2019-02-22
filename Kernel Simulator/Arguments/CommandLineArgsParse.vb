@@ -26,12 +26,11 @@ Module CommandLineArgsParse
 
                 'Parse arguments
                 If (arg = "createConf") Then
-                    Config.createConfig(True)
+                    If Not (IO.File.Exists(paths("Configuration"))) Then Config.createConfig(True, False)
                 ElseIf (arg = "promptArgs") Then
                     ArgumentPrompt.PromptArgs()
                     If (argsFlag = True) Then ArgumentParse.ParseArguments()
                 ElseIf (arg = "testMod") Then
-                    ReadyPath_MOD()
                     StartParse(argArgs)
                     If (scripts.Count = 0) Then
                         Environment.Exit(1)

@@ -30,21 +30,16 @@ hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobe: El hardwar
 CPU: One or more of the CPU cores failed to be probed. Showing information anyway... <=+=> CPU: uno o más de los núcleos de la CPU no pudieron ser probados. Mostrando información de todos modos ...
 RAM: One or more of the RAM chips failed to be probed. Showing information anyway... <=+=> RAM: Uno o más de los chips de RAM no pudieron ser probados. Mostrando información de todos modos ...
 HDD: One or more of the hard drives failed to be probed. Showing information anyway... <=+=> HDD: Uno o más de los discos duros no pudieron ser probados. Mostrando información de todos modos ...
-GPU: One or more of the graphics card failed to be probed. Showing information anyway... <=+=> GPU: Uno o más de la tarjeta gráfica no pudieron ser probados. Mostrando información de todos modos ...
-BIOS: One or more of the BIOS chips failed to be probed. Showing information anyway... <=+=> BIOS: Uno o más de los chips de BIOS no pudieron ser probados. Mostrando información de todos modos ...
 CPU: Total number of processors: {0} <=+=> CPU: Número total de procesadores: {0}
 CPU: {0} {1}MHz <=+=> CPU: {0} {1} MHz
 RAM: {0}MB = {1}MB <=+=> RAM: {0} MB = {1} MB
 RAM: Used slots (by names): {0} <=+=> RAM: ranuras usadas (por nombre): {0}
 RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> RAM: ranuras usadas (en números): {0} / {1} ({2}%)
 RAM: Probing status is deprecated and will be removed in future release. <=+=> RAM: el estado de sondeo está en desuso y se eliminará en futuras versiones.
-GPU: No appropriate driver installed. <=+=> GPU: No hay un controlador apropiado instalado.
-GPU: {0} {1}MB <=+=> GPU: {0} {1} MB
 HDD: {0} {1}GB {2} <=+=> HDD: {0} {1} GB {2}
 HDD: {0} {1} {2}GB {3} <=+=> HDD: {0} {1} {2} GB {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} cilindros | {5} cabezas | {6} sectores
 HDD: CHS: {3} cylinders | {4} heads | {5} sectors <=+=> HDD: CHS: {3} cilindros | {4} cabezas | {5} sectores
-BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: Probing no es compatible porque no está diseñado para ejecutar probers en Unix.
 Enter the admin password for maintenance. <=+=> Introduzca la contraseña de administrador para el mantenimiento.
 There is no more users remaining in the list. <=+=> No hay más usuarios restantes en la lista.
@@ -115,10 +110,6 @@ Screensaver can't be loaded because of the following:  <=+=> El protector de pan
 There is a serious error when printing text. <=+=> Hay un error grave al imprimir texto.
 There is an error trying to create configuration. <=+=> Hay un error al intentar crear la configuración.
 There is an error trying to create configuration: {0} <=+=> Hay un error al intentar crear la configuración: {0}
-An upgrade from {0} to {1} was detected. <=+=> Se detectó una actualización de {0} a {1}.
-The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings. <=+=> La estructura de configuración para {0} no será compatible con versiones anteriores y no funcionará con versiones anteriores. La configuración se restablecerá a la configuración predeterminada.
-Are you sure that you want to update configuration and restart <y/n>?  <=+=> ¿Está seguro de que desea actualizar la configuración y reiniciar <y / n>? 
-Updating configuration file... <=+=> Actualizando el archivo de configuración ...
 An upgrade from {0} to {1} was detected. Updating configuration... <=+=> Se detectó una actualización de {0} a {1}. Actualizando la configuración ...
 There is an error trying to update configuration: {0}. <=+=> Hay un error al intentar actualizar la configuración: {0}.
 There is an error trying to update configuration. <=+=> Hay un error al intentar actualizar la configuración.
@@ -192,7 +183,7 @@ Lists remote directory <=+=> Lista del directorio remoto
 Renames specific file or directory <=+=> Renombra archivo específico o directorio
 Uploads local file to remote directory using binary or text <=+=> Carga el archivo local al directorio remoto usando binario o texto
 There was an error in the FTP shell. <=+=> Hubo un error en el shell FTP.
-FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell. <=+=> Mensaje de FTP: el comando solicitado {0} no se encuentra. Consulte 'ayuda' para obtener una lista de los comandos disponibles especificados en el shell FTP.
+FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell. <=+=> Mensaje de FTP: el comando solicitado {0} no se encuentra. Consulte 'help' para obtener una lista de los comandos disponibles especificados en el shell FTP.
 net: Got response from {0} in {1} ms <=+=> net: se obtuvo respuesta de {0} en {1} ms
 Timed out, disconnected, or server offline. <=+=> Tiempo de espera, desconectado o servidor desconectado.
 net: Your computer name on network is {0} <=+=> net: el nombre de su computadora en la red es {0}

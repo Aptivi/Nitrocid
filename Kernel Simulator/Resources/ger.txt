@@ -30,21 +30,16 @@ hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobe: Hardware w
 CPU: One or more of the CPU cores failed to be probed. Showing information anyway... <=+=> CPU: Ein oder mehrere CPU-Kerne konnten nicht geprüft werden. Zeige trotzdem Informationen ...
 RAM: One or more of the RAM chips failed to be probed. Showing information anyway... <=+=> RAM: Einer oder mehrere der RAM-Chips konnten nicht geprüft werden. Zeige trotzdem Informationen ...
 HDD: One or more of the hard drives failed to be probed. Showing information anyway... <=+=> HDD: Eine oder mehrere Festplatten wurden nicht geprüft. Zeige trotzdem Informationen ...
-GPU: One or more of the graphics card failed to be probed. Showing information anyway... <=+=> GPU: Eine oder mehrere Grafikkarten wurden nicht geprüft. Zeige trotzdem Informationen ...
-BIOS: One or more of the BIOS chips failed to be probed. Showing information anyway... <=+=> BIOS: Einer oder mehrere BIOS-Chips konnten nicht geprüft werden. Zeige trotzdem Informationen ...
 CPU: Total number of processors: {0} <=+=> CPU: Gesamtanzahl der Prozessoren: {0}
 CPU: {0} {1}MHz <=+=> CPU: {0} {1} MHz
 RAM: {0}MB = {1}MB <=+=> RAM: {0} MB = {1} MB
 RAM: Used slots (by names): {0} <=+=> RAM: Benutzte Slots (nach Namen): {0}
 RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> RAM: Benutzte Slots (nach Zahlen): {0} / {1} ({2}%)
 RAM: Probing status is deprecated and will be removed in future release. <=+=> RAM: Der Prüfstatus ist veraltet und wird in zukünftigen Versionen entfernt.
-GPU: No appropriate driver installed. <=+=> GPU: Kein geeigneter Treiber installiert.
-GPU: {0} {1}MB <=+=> GPU: {0} {1} MB
 HDD: {0} {1}GB {2} <=+=> Festplatte: {0} {1} GB {2}
 HDD: {0} {1} {2}GB {3} <=+=> Festplatte: {0} {1} {2} GB {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} Zylinder | {5} Köpfe | {6} Sektoren
 HDD: CHS: {3} cylinders | {4} heads | {5} sectors <=+=> HDD: CHS: {3} Zylinder | {4} Köpfe | {5} Sektoren
-BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: Das Prüfen wird nicht unterstützt, da es nicht dafür ausgelegt ist, Prober unter Unix auszuführen.
 Enter the admin password for maintenance. <=+=> Geben Sie das Administratorkennwort für die Wartung ein.
 There is no more users remaining in the list. <=+=> Es sind keine weiteren Benutzer in der Liste vorhanden.
@@ -115,10 +110,6 @@ Screensaver can't be loaded because of the following:  <=+=> Der Bildschirmschon
 There is a serious error when printing text. <=+=> Beim Drucken von Text ist ein schwerwiegender Fehler aufgetreten.
 There is an error trying to create configuration. <=+=> Beim Erstellen der Konfiguration ist ein Fehler aufgetreten.
 There is an error trying to create configuration: {0} <=+=> Beim Erstellen der Konfiguration ist ein Fehler aufgetreten: {0}
-An upgrade from {0} to {1} was detected. <=+=> Ein Upgrade von {0} auf {1} wurde erkannt.
-The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings. <=+=> Die Konfigurationsstruktur für {0} ist nicht abwärtskompatibel und funktioniert nicht mit früheren Versionen. Die Konfiguration wird auf die Standardeinstellungen zurückgesetzt.
-Are you sure that you want to update configuration and restart <y/n>?  <=+=> Sind Sie sicher, dass Sie die Konfiguration aktualisieren und <y/n> neu starten möchten?
-Updating configuration file... <=+=> Konfigurationsdatei wird aktualisiert ...
 An upgrade from {0} to {1} was detected. Updating configuration... <=+=> Ein Upgrade von {0} auf {1} wurde erkannt. Aktualisierung der Konfiguration ...
 There is an error trying to update configuration: {0}. <=+=> Beim Aktualisieren der Konfiguration ist ein Fehler aufgetreten: {0}.
 There is an error trying to update configuration. <=+=> Beim Aktualisieren der Konfiguration ist ein Fehler aufgetreten.
@@ -192,7 +183,7 @@ Lists remote directory <=+=>Listet das entfernte Verzeichnis auf
 Renames specific file or directory <=+=> Benennt eine bestimmte Datei oder ein Verzeichnis um
 Uploads local file to remote directory using binary or text <=+=> Lädt die lokale Datei unter Verwendung von Binärcode oder Text in das Remoteverzeichnis hoch
 There was an error in the FTP shell. <=+=> In der FTP-Shell ist ein Fehler aufgetreten.
-FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell. <=+=> FTP-Nachricht: Der angeforderte Befehl {0} wurde nicht gefunden. Eine Liste der verfügbaren Befehle in der FTP-Shell finden Sie unter 'Hilfe'.
+FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell. <=+=> FTP-Nachricht: Der angeforderte Befehl {0} wurde nicht gefunden. Eine Liste der verfügbaren Befehle in der FTP-Shell finden Sie unter 'help'.
 net: Got response from {0} in {1} ms <=+=> net: Antwort von {0} in {1} ms
 Timed out, disconnected, or server offline. <=+=> Timeout, Verbindung getrennt oder Server offline.
 net: Your computer name on network is {0} <=+=> net: Ihr Computername im Netzwerk lautet {0}

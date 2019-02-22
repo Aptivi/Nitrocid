@@ -27,8 +27,44 @@ Public Module NetworkTools
     Public adapterNumber As Long
     Public Computers As String
 
+    Public Sub PingTarget(ByVal Address As String, Optional ByVal repeatTimes As Int16 = 3)
+        Dim i As Int16 = 1
+        Dim s As New Stopwatch
+        Do
+            Try
+                If (repeatTimes <> 1) And Not (repeatTimes < 0) Then
+                    For i = i To repeatTimes
+                        s.Start()
+                        If My.Computer.Network.Ping(Address) Then
+                            Wln("{0}/{1} {2}: {3} ms", "neutralText", repeatTimes, i, Address, s.ElapsedMilliseconds.ToString)
+                        End If
+                        s.Reset()
+                    Next
+                ElseIf (repeatTimes = 1) Then
+                    s.Start()
+                    If My.Computer.Network.Ping(Address) Then
+                        Wln(DoTranslation("net: Got response from {0} in {1} ms", currentLang), "neutralText", Address, s.ElapsedMilliseconds.ToString)
+                    End If
+                    s.Stop()
+                End If
+                If (i - 1 = repeatTimes) Then
+                    Exit Sub
+                End If
+            Catch pe As PingException
+                If (repeatTimes = 1) Then
+                    Wln(DoTranslation("{0}: Timed out, disconnected, or server offline.", currentLang), "neutralText", Address)
+                    Exit Do
+                Else
+                    s.Reset()
+                    Wln(DoTranslation("{0}/{1} {2}: Timed out, disconnected, or server offline.", currentLang), "neutralText", repeatTimes, i, Address)
+                    If (repeatTimes = i) Then Exit Do
+                    i = i + 1
+                    Continue Do
+                End If
+            End Try
+        Loop
+    End Sub
     Public Sub ListOnlineAndOfflineHosts()
-
         'Check if main network is available
         If My.Computer.Network.IsAvailable Then
             'Variables
@@ -46,11 +82,8 @@ Public Module NetworkTools
         Else
             Wln(DoTranslation("net: WiFi or Ethernet is disconnected.", currentLang), "neutralText")
         End If
-
     End Sub
-
     Public Sub ListHostsInNetwork()
-
         'Error Handler
         On Error Resume Next
 
@@ -99,11 +132,8 @@ Public Module NetworkTools
         Else
             Wln(DoTranslation("net: WiFi or Ethernet is disconnected.", currentLang), "neutralText")
         End If
-
     End Sub
-
     Public Sub GetNetworkComputers()
-
         'Error Handler
         On Error Resume Next
 
@@ -131,11 +161,8 @@ Public Module NetworkTools
                 d.Dispose()
             Next
         Next
-
     End Sub
-
     Public Sub ListHostsInTree()
-
         'Error Handler
         On Error Resume Next
 
@@ -177,11 +204,8 @@ Public Module NetworkTools
         Else
             Wln(DoTranslation("net: WiFi or Ethernet is disconnected.", currentLang), "neutralText")
         End If
-
     End Sub
-
     Public Sub getProperties()
-
         Dim proper As IPGlobalProperties = IPGlobalProperties.GetIPGlobalProperties
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces
         For Each adapter As NetworkInterface In adapters
@@ -215,7 +239,6 @@ Public Module NetworkTools
                 Wdbg("Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType)
             End If
         Next
-
     End Sub
 
 End Module

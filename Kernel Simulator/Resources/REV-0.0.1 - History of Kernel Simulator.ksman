@@ -619,7 +619,7 @@ Truth about status probing
 
 When we are making KS 0.0.4.5, we have added Status for RAM and for HDD to indicate that they're OK, or if they're failing. But, the readings for the RAM is always "Unknown", and we thought that the HDD probing is a bit redundant, so we have removed them in this release. We thought that this was an accidental addition, and due to it being so early, so the status is redundant and will likely be added in the final release (1.0.0).
 
-KS 0.0.5.11, the current version
+KS 0.0.5.11
 
 This version is released as the hotfix for 0.0.5.10, removing more obsolete things and slimming before 0.0.6. However, this version's slimming process has removed the status probing for RAM and for HDD.
 
@@ -628,6 +628,37 @@ This version is released as the hotfix for 0.0.5.10, removing more obsolete thin
 3. Removed a useless file that has hard drive data
 4. Fixed the translation of sysinfo when displaying the kernel configuration section
 5. Removed status probing from HDD and RAM
+6. Fixed the CHS section not appearing if the hard drive has the Manufacturer value
+7. Fixed the translator not returning English value if the translation list doesn't contain such value
+8. Fixed the GPU prober assuming that Microsoft Basic Display Driver is not a basic driver
+9. Made screensavers be probed on boot
+10. Fixed NullReferenceException when trying to load the next screensaver after an error occured on the previous screensaver
+11. Fixed the OS info not translated when starting up a kernel
+12. Fixed language config not preserving when updating
+13. Debug information now prints to VS2017 debug output window (You still have to turn on debugging)
+14. Made the loadsaver command reloadsaver
+15. Removed useless and abusive commands (echo, panicsim and choice)
+
+KS 0.0.5.12, the current version
+
+This version is released to fix more bugs and do more improvements, including the fix for Environment.OS for Windows 10. This release is a 1-year anniversary for KS
+
+1. Now createConf cmdline arg only creates config if the config file isn't found
+2. Some preparations for 0.0.6 (slimming down only)
+3. Removed the GPU and BIOS probing
+4. Now older KS config won't be allowed to be updated here (Workaround: You need to remove your old KS config file and re-run the app)
+5. Fixed the Environment.OS bug on Windows 10 (10.0) where it returns Windows 8 (6.2) version
+6. Fixed the placeholders not parsing when using showmotd/showmal command
+7. Fixed the simple help not showing mods
+8. Fixed built-in commands not running after you run mod commands or alias commands
+9. Fixed NullReferenceException when debugging
+10. Improved alias listing
+11. Fixed the printing text exception message not translating to current language
+12. Fixed the "/" or "\" appearing before the modname when probing mods and screensavers
+13. Removed unnecessary fixup in translation
+14. Fixed more stack overflows in FTP shell
+15. Fixed the FTP message translation translating "'help'" as the language when it's supposed to be a command
+16. Fixed the command not found message when not entering anything in FTP shell
 -BODY END-
 
 -SECTIONS-
@@ -668,5 +699,6 @@ The new development looks=>SE1
 KS 0.0.5.9=>SE1
 KS 0.0.5.10=>SE1
 Truth about status probing=>SE1
-KS 0.0.5.11, the current version=>SE1
+KS 0.0.5.11=>SE1
+KS 0.0.5.12, the current version=>SE1
 -SECTIONS END-

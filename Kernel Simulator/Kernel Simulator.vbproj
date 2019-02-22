@@ -46,7 +46,7 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>KSBinary\DEV\</OutputPath>
+    <OutputPath>KSBuild\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
     <WarningsAsErrors>
@@ -60,7 +60,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>KSBinary\RELEASE\</OutputPath>
+    <OutputPath>KSBuild\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
     <WarningsAsErrors>
@@ -81,7 +81,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -112,7 +112,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\x64\Debug\</OutputPath>
+    <OutputPath>KSBuild\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
     <DebugType>full</DebugType>
@@ -123,7 +123,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\x64\Release\</OutputPath>
+    <OutputPath>KSBuild\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
@@ -147,7 +147,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>KSRel\</OutputPath>
+    <OutputPath>KSBuild\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
@@ -195,15 +195,8 @@
     <Compile Include="Arguments\ArgumentParse.vb" />
     <Compile Include="Arguments\ArgumentPrompt.vb" />
     <Compile Include="Arguments\CommandLineArgsParse.vb" />
-    <Compile Include="Console\ColorInitialize.vb" />
-    <Compile Include="Console\ColorSet.vb" />
-    <Compile Include="Console\LoadBackground.vb" />
-    <Compile Include="Console\Templates.vb" />
-    <Compile Include="Console\TemplateSet.vb" />
-    <Compile Include="Files\CurrentDir.vb" />
-    <Compile Include="Files\FileContents.vb" />
-    <Compile Include="Files\InitializeDirectoryFile.vb" />
-    <Compile Include="Files\ListFolders.vb" />
+    <Compile Include="Console\Color.vb" />
+    <Compile Include="Files\Filesystem.vb" />
     <Compile Include="Hardware\HardwareVars.vb" />
     <Compile Include="Kernel\EventsAndExceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />
@@ -219,7 +212,6 @@
     <Compile Include="Misc\Config.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\DisposeExit.vb" />
-    <Compile Include="Misc\Writers\StreamReaderExtensions.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModParser.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
@@ -232,7 +224,6 @@
     <Compile Include="Network\FTP\FTPShell.vb" />
     <Compile Include="Network\NetworkTools.vb" />
     <Compile Include="Shell\AliasManager.vb" />
-    <Compile Include="Shell\GetAlias.vb" />
     <Compile Include="Shell\GetCommand.vb" />
     <Compile Include="Hardware\HardwareProbe.vb" />
     <Compile Include="Kernel\Kernel.vb" />
@@ -249,7 +240,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Network\Network.vb" />
     <Compile Include="Shell\GetModCommand.vb" />
     <Compile Include="Shell\HelpSystem.vb" />
     <Compile Include="Shell\Shell.vb" />
@@ -266,6 +256,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="app.manifest" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

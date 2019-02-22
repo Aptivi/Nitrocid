@@ -62,18 +62,10 @@ Public Module ModParser
         End Using
     End Function
 
-    Private modPath As String
-    Sub ReadyPath_MOD()
-        If (EnvironmentOSType.Contains("Unix")) Then
-            modPath = Environ("HOME") + "/KSMods/"
-        Else
-            modPath = Environ("USERPROFILE") + "\KSMods\"
-        End If
-    End Sub
+    Private modPath As String = paths("Mods")
 
     Sub ParseMods(ByVal StartStop As Boolean)
         'StartStop: If true, the mods start, otherwise, the mod stops.
-        ReadyPath_MOD()
         If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
         Dim count As Integer = FileIO.FileSystem.GetFiles(modPath).Count
         If (Quiet = False) And (count <> 0) And StartStop = True Then

@@ -33,12 +33,6 @@ Module HardwareVars
         Public ClockSpeed As UInt64
     End Class
 
-    'then GPU
-    Public Class GPU
-        Public Name As String
-        Public Memory As UInt64
-    End Class
-
     'then RAM
     Public Class RAM
         Public ChipCapacity As UInt64
@@ -46,26 +40,12 @@ Module HardwareVars
         Public SlotName As String
     End Class
 
-    'then BIOS
-    Public Class BIOS
-        Public Name As String
-        Public Manufacturer As String
-        Public SMBIOSVersion As String
-        Public Version As String
-    End Class
-
     'Hardware Lists
     Public HDDList As New List(Of HDD)
     Public CPUList As New List(Of CPU)
-    Public GPUList As New List(Of GPU)
     Public RAMList As New List(Of RAM)
-    Public BIOSList As New List(Of BIOS)
 
     'Hardware Variables (important)
-    Public BIOSCaption As String
-    Public BIOSMan As String
-    Public BIOSSMBIOSVersion As String
-    Public BIOSVersion As String
     Public slotsUsedName As String
     Public slotsUsedNum As Integer
     Public Capacities() As String
@@ -75,7 +55,5 @@ Module HardwareVars
     Public CPUDone As Boolean = False
     Public RAMDone As Boolean = False
     Public HDDDone As Boolean = False
-    Public GPUDone As Boolean = False
-    Public BIOSDone As Boolean = False
 
 End Module

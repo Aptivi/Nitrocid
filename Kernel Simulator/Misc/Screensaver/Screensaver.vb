@@ -51,13 +51,13 @@ Public Module Screensaver
         '                           Substitute: TextWriterColor.W() or TextWriterColor.Wln() with System.Console.WriteLine() or System.Console.Write().
         finalSaver.PreDisplay()
         Do While True
-            Thread.Sleep(1)
+            'Thread.Sleep(1)
             If (Custom.CancellationPending = True) Then
                 e.Cancel = True
                 Console.Clear()
                 Console.ForegroundColor = CType(inputColor, ConsoleColor)
                 Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
-                LoadBackground.Load()
+                Load()
                 Console.CursorVisible = True
                 Exit Do
             Else
@@ -81,7 +81,7 @@ Public Module Screensaver
                 Console.Clear()
                 Console.ForegroundColor = CType(inputColor, ConsoleColor)
                 Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
-                LoadBackground.Load()
+                Load()
                 Console.CursorVisible = True
                 Exit Do
             Else
@@ -105,7 +105,7 @@ Public Module Screensaver
                 Console.Clear()
                 Console.ForegroundColor = CType(inputColor, ConsoleColor)
                 Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
-                LoadBackground.Load()
+                Load()
                 Console.CursorVisible = True
                 Exit Do
             Else
@@ -127,7 +127,7 @@ Public Module Screensaver
                     Console.Clear()
                     Console.ForegroundColor = CType(inputColor, ConsoleColor)
                     Console.BackgroundColor = CType(backgroundColor, ConsoleColor)
-                    LoadBackground.Load()
+                    Load()
                     Console.CursorVisible = True
                     Exit Do
                 Else
@@ -176,12 +176,7 @@ Public Module Screensaver
 
     Sub CompileCustom(ByVal file As String)
 
-        Dim modPath As String
-        If (EnvironmentOSType.Contains("Unix")) Then 'TODO: Remove instances of this block, making path variables for each path appropriate for every platform
-            modPath = Environ("HOME") + "/KSMods/"
-        Else
-            modPath = Environ("USERPROFILE") + "\KSMods\"
-        End If
+        Dim modPath As String = paths("Mods")
         If (FileIO.FileSystem.FileExists(modPath + file)) Then
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
                 modFile = modFile.Replace(modPath, "")

@@ -23,7 +23,6 @@ Public Module Translate
     'Variables
     Public availableLangs() As String = {"chi", "eng", "fre", "ger", "ind", "ptg", "spa"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
-    Public FixupComplete As Boolean = False
     Public currentLang As String = "eng" 'Default to English
 
     ''' <summary>
@@ -34,14 +33,6 @@ Public Module Translate
     ''' <returns>Translated string</returns>
     ''' <remarks></remarks>
     Public Function DoTranslation(ByVal text As String, Optional ByVal lang As String = "eng") As String
-        'List Fixup
-        If (FixupComplete = False) Then
-            For ind As Integer = 1 To engStrings.Count - 1
-                engStrings(ind) = engStrings(ind).Remove(engStrings(ind).Length - 1)
-            Next
-            FixupComplete = True
-        End If
-
         'Get language string and translate
         Dim translatedString As Dictionary(Of String, String)
         Dim translated As String = ""

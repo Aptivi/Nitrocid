@@ -16,10 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System
-Imports System.IO
-Imports System.Reflection
-
 Public Module FTPShell
 
     Public ftpstream As FtpWebRequest
@@ -37,55 +33,47 @@ Public Module FTPShell
     Public ftpexit As Boolean = False
 
     Public Sub InitiateShell()
-
-        'Complete initialization
-        If (initialized = False) Then
-            If (EnvironmentOSType.Contains("Unix")) Then
-                currDirect = Environ("HOME")
-            Else
-                currDirect = Environ("USERPROFILE")
+        While True
+            'Complete initialization
+            If (initialized = False) Then
+                currDirect = paths("Home")
+                initialized = True
             End If
-            initialized = True
-        End If
 
-        'Check if the shell is going to exit
-        If (ftpexit = True) Then
-            connected = False
-            ftpsite = ""
-            currDirect = ""
-            currentremoteDir = ""
-            user = ""
-            pass = ""
-            strcmd = ""
-            ftpexit = False
-            initialized = False
-            Exit Sub
-        End If
+            'Check if the shell is going to exit
+            If (ftpexit = True) Then
+                connected = False
+                ftpsite = ""
+                currDirect = ""
+                currentremoteDir = ""
+                user = ""
+                pass = ""
+                strcmd = ""
+                ftpexit = False
+                initialized = False
+                Exit Sub
+            End If
 
-        'Prompt for command
-        If (connected = True) Then
-            W("[", "def") : W("{0}", "userName", user) : W("@", "def") : W("{0}", "hostName", ftpsite) : W("]{0} ", "def", currentremoteDir)
-        Else
-            W("{0}> ", "def", currDirect)
-        End If
-        DisposeAll()
-        If (ColoredShell = True) Then Console.ForegroundColor = CType(inputColor, ConsoleColor)
-        strcmd = Console.ReadLine()
-        GetLine()
-
+            'Prompt for command
+            If (connected = True) Then
+                W("[", "def") : W("{0}", "userName", user) : W("@", "def") : W("{0}", "hostName", ftpsite) : W("]{0} ", "def", currentremoteDir)
+            Else
+                W("{0}> ", "def", currDirect)
+            End If
+            DisposeAll()
+            If (ColoredShell = True) Then Console.ForegroundColor = CType(inputColor, ConsoleColor)
+            strcmd = Console.ReadLine()
+            If Not (strcmd = Nothing Or strcmd.StartsWith(" ")) Then GetLine()
+        End While
     End Sub
 
     Public Sub GetLine()
-
         Dim words As String() = strcmd.Split({" "c})
         If (availftpcmds.Contains(words(0))) Then
             FTPGetCommand.ExecuteCommand(strcmd)
-            FTPShell.InitiateShell()
         Else
-            Wln("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", "neutralText", strcmd)
-            FTPShell.InitiateShell()
+            Wln(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), "neutralText", strcmd)
         End If
-
     End Sub
 
 End Module

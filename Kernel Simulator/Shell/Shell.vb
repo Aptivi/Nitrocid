@@ -36,10 +36,6 @@ Public Module Shell
     '                  checking if user has Admin permission to use your new admin command.
 
     Public Sub initializeShell()
-
-        'Variables
-        Dim Done As Boolean = False
-
         'Initialize Shell
         While True
             If LogoutRequested Then
@@ -72,32 +68,28 @@ Public Module Shell
 
                     'Check for a type of command
                     If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
-                        'Don't make "End If <newline> If" be "ElseIf", or no commands can be run properly.
-                        If (modcmnds.Count - 1 <> -1) Then
-                            Wdbg("Mod commands probing started with {0}", strcommand)
-                            For Each c As String In modcmnds
-                                Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
-                                If (Parts(0) = c And strcommand.StartsWith(Parts(0))) Then
-                                    Done = True
-                                    GetModCommand.ExecuteModCommand(strcommand)
-                                End If
-                            Next
-                        End If
-                        If (aliases.Count - 1 <> -1) Then
-                            Wdbg("Aliases probing started with {0}", strcommand)
-                            For Each a As String In aliases.Keys
-                                Wdbg("strcommand, a = {0}, {1}", strcommand, a)
-                                If (strcommand.StartsWith(a)) Then
-                                    Done = True
-                                    GetAlias.ExecuteAlias(a)
-                                End If
-                            Next
-                        End If
+                        Dim Done As Boolean = False
+                        Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                        Wdbg("Mod commands probing started with {0}", strcommand)
+                        For Each c As String In modcmnds
+                            If (Parts(0) = c) Then
+                                Done = True
+                                GetModCommand.ExecuteModCommand(strcommand)
+                            End If
+                        Next
+                        Wdbg("Aliases probing started with {0}", strcommand)
+                        For Each a As String In aliases.Keys
+                            If (Parts(0) = a) Then
+                                Done = True
+                                ExecuteAlias(a)
+                            End If
+                        Next
                         If (Done = False) Then
                             Wdbg("Executing built-in command")
                             getLine()
                         End If
                     End If
+
 
                     'Fire an event of PostExecuteCommand
                     EventManager.RaisePostExecuteCommand()

@@ -22,7 +22,6 @@ Public Module AliasManager
     Public forbidden As String() = {"alias"}
 
     Public Sub manageAlias(ByVal mode As String, ByVal aliasTBA As String, Optional ByVal cmd As String = "")
-
         If (mode = "add") Then
             If (aliasTBA = cmd) Then
                 Wln(DoTranslation("Alias can't be the same name as a command.", currentLang), "neutralText")
@@ -51,7 +50,10 @@ Public Module AliasManager
         Else
             Wln(DoTranslation("Invalid mode {0}.", currentLang), "neutralText", mode)
         End If
-
+    End Sub
+    Sub ExecuteAlias(ByVal aliascmd As String)
+        Dim actualCmd As String = aliases(aliascmd) + strcommand.Replace(aliascmd, "")
+        GetCommand.ExecuteCommand(actualCmd)
     End Sub
 
 End Module

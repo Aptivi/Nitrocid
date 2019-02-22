@@ -30,21 +30,16 @@ hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobai: haardavey
 CPU: One or more of the CPU cores failed to be probed. Showing information anyway... <=+=> seepeeyoo: ek ya adhik chpu kor kee jaanch kee viphal rahee. vaise bhee jaanakaaree dikha raha hai ...
 RAM: One or more of the RAM chips failed to be probed. Showing information anyway... <=+=> raim: ek ya adhik raim chips kee jaanch mein asaphal raha. vaise bhee jaanakaaree dikha raha hai ...
 HDD: One or more of the hard drives failed to be probed. Showing information anyway... <=+=> echadeedee: ek ya adhik haard draiv kee jaanch mein viphal raha. vaise bhee jaanakaaree dikha raha hai ...
-GPU: One or more of the graphics card failed to be probed. Showing information anyway... <=+=> jeepeeyoo: ek ya adhik graaphiks kaard kee jaanch mein viphal raha. vaise bhee jaanakaaree dikha raha hai ...
-BIOS: One or more of the BIOS chips failed to be probed. Showing information anyway... <=+=> beeaeeoes: beeaeeoes chips mein se ek ya adhik jaanch kee ja rahee hai. vaise bhee jaanakaaree dikha raha hai ...
 CPU: Total number of processors: {0} <=+=> seepeeyoo: prosesar kee kul sankhya: {0}
 CPU: {0} {1}MHz <=+=> seepeeyoo: {0} {1} mhz
 RAM: {0}MB = {1}MB <=+=> raam: {0} emabee = {1} emabee
 RAM: Used slots (by names): {0} <=+=> raam: prayukt slot (naamon se): {0}
 RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> raam: prayukt slot (sankhyaon dvaara): {0} / {1} ({2}%)
 RAM: Probing status is deprecated and will be removed in future release. <=+=> raam: jaanch kee sthiti ko hata diya gaya hai aur bhavishy mein rileej mein hata diya jaega.
-GPU: No appropriate driver installed. <=+=> jeepeeyoo: koee uchit draivar sthaapit nahin hai.
-GPU: {0} {1}MB <=+=> jeepeeyoo: {0} {1} emabee
 HDD: {0} {1}GB {2} <=+=> echadeedee: {0} {1} jeebee {2}
 HDD: {0} {1} {2}GB {3} <=+=> echadeedee: {0} {1} {2} jeebee {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> echadeedee: seeeches: {4} silendar | {5} sir | {6} sektar
 HDD: CHS: {3} cylinders | {4} heads | {5} sectors <=+=> echadeedee: seeeches: {3} silendar | {4} sir | {5} sektar
-BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobai: probing samarthit nahin hai kyonki yah yooniks par probars chalaane ke lie dizain nahin kiya gaya hai.
 Enter the admin password for maintenance. <=+=> rakharakhaav ke lie vyavasthaapak paasavard darj karen.
 There is no more users remaining in the list. <=+=> soochee mein koee aur upayogakarta shesh nahin hai.
@@ -115,10 +110,6 @@ Screensaver can't be loaded because of the following:  <=+=> nimnalikhit ke kaar
 There is a serious error when printing text. <=+=> paath print karate samay ek gambheer truti hai.
 There is an error trying to create configuration. <=+=> konfigareshan banaane ka prayaas karane mein truti huee hai.
 There is an error trying to create configuration: {0} <=+=> konfigareshan banaane ka prayaas karane mein truti huee hai: {0}
-An upgrade from {0} to {1} was detected. <=+=> {0} se {1} tak apagred kiya gaya tha.
-The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings. <=+=> {0} ke lie konfigareshan sanrachana peechhe-sangat nahin hogee aur pichhale sanskaranon ke saath kaam nahin karegee. konfigareshan difolt setings par reeset ho jaega.
-Are you sure that you want to update configuration and restart <y/n>?  <=+=> kya aap vaakee konfigareshan apadet karana chaahate hain aur <y/n> punaraarambh karana chaahate hain?
-Updating configuration file... <=+=> konfigareshan fail apadet kar raha hai ...
 An upgrade from {0} to {1} was detected. Updating configuration... <=+=> {0} se {1} tak apagred kiya gaya tha. konfigareshan apadet kar raha hai ...
 There is an error trying to update configuration: {0}. <=+=> konfigareshan apadet karane ka prayaas karane mein truti huee hai: {0}.
 There is an error trying to update configuration. <=+=> konfigareshan apadet karane ka prayaas karane mein truti huee hai.
@@ -192,7 +183,7 @@ Lists remote directory <=+=> doorasth nirdeshika soocheebaddh karata hai
 Renames specific file or directory <=+=> vishisht fail ya nirdeshika ka naam badalata hai
 Uploads local file to remote directory using binary or text <=+=> bainaree ya tekst  ka upayog kar doorasth nirdeshika mein sthaaneey fail apalod karata hai
 There was an error in the FTP shell. <=+=> efateepee khol mein ek truti huee thee.
-FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell. <=+=> efateepee sandesh: anurodhit aadesh {0} nahin mila hai. efateepee khol par nirdisht upalabdh aadeshon kee soochee ke lie sahaayata dekhen.
+FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell. <=+=> efateepee sandesh: anurodhit aadesh {0} nahin mila hai. efateepee 'help' par nirdisht upalabdh aadeshon kee soochee ke lie sahaayata dekhen.
 net: Got response from {0} in {1} ms <=+=> net: {0} emes  mein {0} se pratikriya milee
 Timed out, disconnected, or server offline. <=+=> samay samaapt, diskanekt, ya ofalain sarvar.
 net: Your computer name on network is {0} <=+=> net: netavark par aapaka kampyootar naam {0} hai

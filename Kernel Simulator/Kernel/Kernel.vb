@@ -44,7 +44,7 @@ Public Module Kernel
 
             'Check for Unix before probing
             If (EnvironmentOSType.Contains("Unix")) Then
-                'TODO: Unix systems must have their own probers after re-organizing subs
+                'TODO: Unix systems must have their own probers after re-organizing subs in either 0.0.5.13 or 0.0.6
                 'Phase 1: Skip Phase 1
                 Wln(DoTranslation("hwprobe: Probing not supported because it's not designed to run probers on Unix.", currentLang), "neutralText")
                 Wdbg("OSVersion is Unix = True")
@@ -71,12 +71,7 @@ Public Module Kernel
 
             'Phase 4: Parse Mods and Screensavers
             ModParser.ParseMods(True)
-            Dim modPath As String
-            If (EnvironmentOSType.Contains("Unix")) Then
-                modPath = Environ("HOME") + "/KSMods/"
-            Else
-                modPath = Environ("USERPROFILE") + "\KSMods\"
-            End If
+            Dim modPath As String = paths("Mods")
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
                 CompileCustom(modFile.Replace(modPath, ""))
             Next

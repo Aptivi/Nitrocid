@@ -30,21 +30,16 @@ hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobe: o hardware
 CPU: One or more of the CPU cores failed to be probed. Showing information anyway... <=+=> CPU: Um ou mais núcleos da CPU não puderam ser analisados. Mostrando informações de qualquer maneira ...
 RAM: One or more of the RAM chips failed to be probed. Showing information anyway... <=+=> RAM: Um ou mais dos chips de RAM não foram analisados. Mostrando informações de qualquer maneira ...
 HDD: One or more of the hard drives failed to be probed. Showing information anyway... <=+=> HDD: Um ou mais discos rígidos não foram testados. Mostrando informações de qualquer maneira ...
-GPU: One or more of the graphics card failed to be probed. Showing information anyway... <=+=> GPU: Uma ou mais placas gráficas não foram analisadas. Mostrando informações de qualquer maneira ...
-BIOS: One or more of the BIOS chips failed to be probed. Showing information anyway... <=+=> BIOS: Um ou mais dos chips do BIOS não foram testados. Mostrando informações de qualquer maneira ...
 CPU: Total number of processors: {0} <=+=> CPU: Número total de processadores: {0}
 CPU: {0} {1}MHz <=+=> CPU: {0} {1} MHz
 RAM: {0}MB = {1}MB <=+=> RAM: {0} MB = {1} MB
 RAM: Used slots (by names): {0} <=+=> RAM: Slots usados ​​(por nomes): {0}
 RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> RAM: Slots usados ​​(por números): {0} / {1} ({2}%)
 RAM: Probing status is deprecated and will be removed in future release. <=+=> RAM: O status da pesquisa está obsoleto e será removido no lançamento futuro.
-GPU: No appropriate driver installed. <=+=> GPU: Nenhum driver apropriado instalado.
-GPU: {0} {1}MB <=+=> GPU: {0} {1} MB
 HDD: {0} {1}GB {2} <=+=> HDD: {0} {1} GB {2}
 HDD: {0} {1} {2}GB {3} <=+=> HDD: {0} {1} {2} GB {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} cilindros | {5} cabeças | {6} setores
 HDD: CHS: {3} cylinders | {4} heads | {5} sectors <=+=> HDD: CHS: {3} cilindros | {4} cabeças | {5} setores
-BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: A detecção não é suportada porque não foi projetada para executar probers no Unix.
 Enter the admin password for maintenance. <=+=> Digite a senha do administrador para manutenção.
 There is no more users remaining in the list. <=+=> Não há mais usuários restantes na lista.
@@ -115,10 +110,6 @@ Screensaver can't be loaded because of the following:  <=+=> O protetor de tela 
 There is a serious error when printing text. <=+=> Há um erro sério ao imprimir texto.
 There is an error trying to create configuration. <=+=> Há um erro ao tentar criar uma configuração.
 There is an error trying to create configuration: {0} <=+=> Há um erro ao tentar criar uma configuração: {0}
-An upgrade from {0} to {1} was detected. <=+=> Uma atualização de {0} para {1} foi detectada.
-The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings. <=+=> A estrutura de configuração para {0} não será compatível com versões anteriores e não funcionará com versões anteriores. A configuração será redefinida para as configurações padrão.
-Are you sure that you want to update configuration and restart <y/n>?  <=+=> Tem certeza de que deseja atualizar a configuração e reiniciar <y/n>?
-Updating configuration file... <=+=> Atualizando o arquivo de configuração ...
 An upgrade from {0} to {1} was detected. Updating configuration... <=+=> Uma atualização de {0} para {1} foi detectada. Atualizando a configuração ...
 There is an error trying to update configuration: {0}. <=+=> Há um erro ao tentar atualizar a configuração: {0}.
 There is an error trying to update configuration. <=+=> Há um erro ao tentar atualizar a configuração.

@@ -22,7 +22,7 @@ Imports System.IO
 'This module is very important to reduce line numbers when there is color.
 Public Module TextWriterColor
 
-    Public dbgWriter As StreamWriter
+    Public dbgWriter As StreamWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
 
     ''' <summary>
     ''' Outputs the text into the debugger file, and sets the time stamp.
@@ -78,7 +78,7 @@ Public Module TextWriterColor
             If (Console.BackgroundColor = ConsoleColor.Black) Then ResetColor()
             If (colorType = "input" And ColoredShell = True) Then ForegroundColor = inputColor
         Catch ex As Exception
-            KernelError(CChar("C"), False, 0, "There is a serious error when printing text.")
+            KernelError(CChar("C"), False, 0, DoTranslation("There is a serious error when printing text.", currentLang))
         End Try
 
     End Sub
@@ -124,7 +124,7 @@ Public Module TextWriterColor
             If (Console.BackgroundColor = ConsoleColor.Black) Then ResetColor()
             If (colorType = "input") Then ForegroundColor = inputColor
         Catch ex As Exception
-            KernelError(CChar("C"), False, 0, "There is a serious error when printing text.")
+            KernelError(CChar("C"), False, 0, DoTranslation("There is a serious error when printing text.", currentLang))
         End Try
 
     End Sub

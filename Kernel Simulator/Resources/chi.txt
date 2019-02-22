@@ -30,21 +30,16 @@ hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobe: Méiyǒu t
 CPU: One or more of the CPU cores failed to be probed. Showing information anyway... <=+=> CPU: Wúfǎ tàncè yīgè huò duō gè CPU héxīn. Wúlùn rúhé xiǎnshì xìnxī......
 RAM: One or more of the RAM chips failed to be probed. Showing information anyway... <=+=> RAM: Yīgè huò duō gè RAM xīnpiàn wèi néng bèi tàncè. Wúlùn rúhé xiǎnshì xìnxī......
 HDD: One or more of the hard drives failed to be probed. Showing information anyway... <=+=> HDD: Wèi néng tàncè dào yīgè huò duō gè yìngpán qūdòngqì. Wúlùn rúhé xiǎnshì xìnxī......
-GPU: One or more of the graphics card failed to be probed. Showing information anyway... <=+=> GPU: Yīgè huò duō gè xiǎnkǎ wèi néng bèi tàncè. Wúlùn rúhé xiǎnshì xìnxī......
-BIOS: One or more of the BIOS chips failed to be probed. Showing information anyway... <=+=> BIOS: Yīgè huò duō gè BIOS xīnpiàn wèi néng bèi tàncè. Wúlùn rúhé xiǎnshì xìnxī......
 CPU: Total number of processors: {0} <=+=> CPU: Chǔlǐ qì zǒngshù: {0}
 CPU: {0} {1}MHz <=+=> CPU: {0} {1}MHz
 RAM: {0}MB = {1}MB <=+=> RAM: {0}MB = {1}MB
 RAM: Used slots (by names): {0} <=+=> RAM: Shǐyòng de chā cáo (àn míngchēng):{0}
 RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> RAM: Yǐ shǐyòng de chā cáo (àn shùzì): {0}/{1}({2}%)
 RAM: Probing status is deprecated and will be removed in future release. <=+=> RAM: Bù tuījiàn shǐyòng tàncè zhuàngtài, jiānglái de bǎnběn jiāng shānchú.
-GPU: No appropriate driver installed. <=+=> GPU: Méiyǒu ānzhuāng shìdàng de qūdòng chéngxù.
-GPU: {0} {1}MB <=+=> GPU: {0} {1}MB
 HDD: {0} {1}GB {2} <=+=> HDD: {0} {1}GB {2}
 HDD: {0} {1} {2}GB {3} <=+=> HDD: {0} {1} {2}GB {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} Qìgāng | {5} tóu | {6} sector
 HDD: CHS: {3} cylinders | {4} heads | {5} sectors <=+=> HDD: CHS: {3} Qìgāng | {4} tóu | {5} sector
-BIOS: {0} {1} {2} {3} <=+=> BIOS: {0} {1} {2} {3}
 hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: Tàncè bù shòu zhīchí, yīnwèi tā bùshì wèi zài Unix shàng yùnxíng tàncè qì ér shèjì de.
 Enter the admin password for maintenance. <=+=> Shūrù guǎnlǐ mìmǎ jìnxíng wéihù.
 There is no more users remaining in the list. <=+=> Lièbiǎo zhōng méiyǒu shèngyú yònghù.
@@ -115,10 +110,6 @@ Screensaver can't be loaded because of the following:  <=+=> Yóuyú yǐxià yu�
 There is a serious error when printing text. <=+=> Dǎyìn wénběn shí chūxiàn yánzhòng cuòwù.
 There is an error trying to create configuration. <=+=> Chángshì chuàngjiàn pèizhì shí chūcuò.
 There is an error trying to create configuration: {0} <=+=> Chángshì chuàngjiàn pèizhì shí chūcuò: {0}
-An upgrade from {0} to {1} was detected. <=+=> Jiǎncè dào cóng {0} shēngjí dào {1}.
-The config structure for {0} won't be backwards-compatible and will not work with previous versions. Configuration will be reset to default settings. <=+=> {0} De pèizhì jiégòu bù huì xiàng hòu jiānróng, yě bù shìyòng yú yǐqián de bǎnběn. Pèizhì jiāng chóng zhì wèi mòrèn shèzhì.
-Are you sure that you want to update configuration and restart <y/n>?  <=+=> Nín quèdìng yào gēngxīn pèizhì bìng chóngxīn qǐdòng <y/ n> ma?
-Updating configuration file... <=+=> Gēngxīn pèizhì wénjiàn...
 An upgrade from {0} to {1} was detected. Updating configuration... <=+=> Jiǎncè dào cóng {0} shēngjí dào {1}. Gēngxīn pèizhì...
 There is an error trying to update configuration: {0}. <=+=> Chángshì gēngxīn pèizhì shí chūcuò: {0}.
 There is an error trying to update configuration. <=+=> Chángshì gēngxīn pèizhì shí chūcuò.

@@ -22,6 +22,9 @@ Imports System.Threading
 
 Public Module KernelTools
 
+    ' A dictionary for storing paths and files (used for mods, screensavers, etc.)
+    Public paths As New Dictionary(Of String, String)
+
     ''' <summary>
     ''' Indicates that there's something wrong with the kernel.
     ''' </summary>
@@ -105,7 +108,6 @@ Public Module KernelTools
                 KernelError(CChar("D"), True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), Err.Description)
             End If
         End Try
-
     End Sub
 
     ''' <summary>
@@ -114,7 +116,6 @@ Public Module KernelTools
     ''' <param name="PowerMode">Whether it would be "shutdown" or "reboot"</param>
     ''' <remarks></remarks>
     Public Sub PowerManage(ByVal PowerMode As String)
-
         Wdbg("Power management has the argument of {0}", PowerMode)
         If (PowerMode = "shutdown") Then
             EventManager.RaisePreShutdown()
@@ -136,11 +137,9 @@ Public Module KernelTools
             Console.Clear()
             Main()
         End If
-
     End Sub
 
     Sub ResetEverything()
-
         'Reset every variable that is resettable
         If (argsInjected = False) Then
             answerargs = Nothing
@@ -166,8 +165,6 @@ Public Module KernelTools
 
         'Reset hardware info
         HDDList.Clear()
-        BIOSList.Clear()
-        GPUList.Clear()
         RAMList.Clear()
         CPUList.Clear()
 
@@ -186,10 +183,28 @@ Public Module KernelTools
 
         'Close settings
         configReader = New IniFile()
-
     End Sub
 
     Sub InitEverything()
+        'Initialize paths
+        InitPaths()
+
+        'Check for multiple instances of KS
+        If (instanceChecked = False) Then MultiInstance()
+
+        'Create config file and then read it
+        InitializeConfig()
+
+        'Test the debugger and show welcome message. Don't remove license
+        Wdbg("Kernel initialized, version {0}.", KernelVersion)
+        Wdbg("OS: {0}", EnvironmentOSType)
+        Wln(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), "neutralText", KernelVersion)
+        Wln(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE" + vbNewLine +
+                        "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
+                        "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
+                        "    This is free software, and you are welcome to redistribute it" + vbNewLine +
+                        "    under certain conditions; See COPYING file in source code." + vbNewLine, "license")
+        Wln("OS: " + DoTranslation("Running on {0}", currentLang), "neutralText", EnvironmentOSType)
 
         'Parse real command-line arguments
         For Each argu In Environment.GetCommandLineArgs
@@ -210,60 +225,19 @@ Public Module KernelTools
             InitializeTimeDate()
             TimeDateIsSet = True
         End If
-        InitializeDirectoryFile.Init()
-
-        'Initialize debugger
-        If (DebugMode = True) And (Not EnvironmentOSType.Contains("Unix")) Then
-            dbgWriter = New StreamWriter(Environ("USERPROFILE") + "\kernelDbg.log", True)
-        ElseIf (DebugMode = True) And (EnvironmentOSType.Contains("Unix")) Then
-            dbgWriter = New StreamWriter(Environ("HOME") + "/kernelDbg.log", True)
-        End If
-        If (DebugMode = True) Then dbgWriter.AutoFlush = True
-
-        'Create config file and then read it
-        Dim pathConfig As String
-        If (EnvironmentOSType.Contains("Unix")) Then
-            pathConfig = Environ("HOME") & "/kernelConfig.ini"
-        Else
-            pathConfig = Environ("USERPROFILE") & "\kernelConfig.ini"
-        End If
-        If (File.Exists(pathConfig) = True) Then
-            configReader.Load(pathConfig)
-        Else
-            Config.createConfig(False)
-            configReader.Load(pathConfig)
-        End If
-        Config.checkForUpgrade()
-        Config.readImportantConfig()
-        Config.readConfig()
-
-        'Show introduction. Don't remove license.
-        Wln(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), "neutralText", KernelVersion)
-        Wln(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE" + vbNewLine +
-                        "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
-                        "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
-                        "    This is free software, and you are welcome to redistribute it" + vbNewLine +
-                        "    under certain conditions; See COPYING file in source code." + vbNewLine, "license")
-        Wln("OS: " + DoTranslation("Running on {0}", currentLang), "neutralText", EnvironmentOSType)
+        Init()
 
         'Parse current theme string
         ParseCurrentTheme()
-
-        'Send a message on debugger
-        If (instanceChecked = False) Then MultiInstance()
-        Wdbg("Kernel initialized, version {0}.", KernelVersion)
-        Wdbg("OS: {0}", EnvironmentOSType)
 
         'Initialize manual pages
         For Each titleMan As String In AvailablePages
             Pages.Add(titleMan, New Manual(titleMan))
             CheckManual(titleMan)
         Next
-
     End Sub
 
     Sub MultiInstance()
-
         'Check to see if multiple Kernel Simulator processes are running.
         Static ksInst As Mutex
         Dim ksOwner As Boolean
@@ -272,7 +246,6 @@ Public Module KernelTools
             KernelError(CChar("F"), False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference.", currentLang))
         End If
         instanceChecked = True
-
     End Sub
 
     Function GetCompileDate() As DateTime
@@ -296,5 +269,19 @@ Public Module KernelTools
         'Now return compile date
         Return dt
     End Function
+
+    Sub InitPaths()
+        If EnvironmentOSType.Contains("Unix") Then
+            paths.Add("Mods", Environ("HOME") + "/KSMods/")
+            paths.Add("Configuration", Environ("HOME") + "/kernelConfig.ini")
+            paths.Add("Debugging", Environ("HOME") + "/kernelDbg.log")
+            paths.Add("Home", Environ("HOME"))
+        Else
+            paths.Add("Mods", Environ("USERPROFILE") + "\KSMods\")
+            paths.Add("Configuration", Environ("USERPROFILE") + "\kernelConfig.ini")
+            paths.Add("Debugging", Environ("USERPROFILE") + "\kernelDbg.log")
+            paths.Add("Home", Environ("USERPROFILE"))
+        End If
+    End Sub
 
 End Module
