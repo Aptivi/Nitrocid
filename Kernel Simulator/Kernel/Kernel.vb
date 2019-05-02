@@ -32,7 +32,6 @@ Public Module Kernel
     Public EventManager As New EventsAndExceptions
 
     Sub Main()
-
         'TODO: Re-write the whole kernel in Beta
         'TODO: Give the kernel name of "Meritorious Kernalism" and the simulator name of "MeritSim" in the final release.
         Try
@@ -42,35 +41,26 @@ Public Module Kernel
             'Initialize everything
             InitEverything()
 
-            'Check for Unix before probing
-            If (EnvironmentOSType.Contains("Unix")) Then
-                'TODO: Unix systems must have their own probers after re-organizing subs in either 0.0.5.13 or 0.0.6
-                'Phase 1: Skip Phase 1
-                Wln(DoTranslation("hwprobe: Probing not supported because it's not designed to run probers on Unix.", currentLang), "neutralText")
-                Wdbg("OSVersion is Unix = True")
+            'Phase 1: Probe hardware
+            If (Quiet = True Or quietProbe = True) Then
+                'Continue the kernel, and don't print messages
+                ProbeHW(True)
             Else
-                Wdbg("OSVersion is Unix = False")
-                'Phase 1: Probe hardware and BIOS if nohwprobe is not passed
-                If (Quiet = True Or quietProbe = True) Then
-                    'Continue the kernel, and don't print messages
-                    HardwareProbe.ProbeHW(True)
-                Else
-                    'Continue the kernel
-                    HardwareProbe.ProbeHW(False)
-                End If
+                'Continue the kernel
+                ProbeHW(False)
             End If
 
             'Phase 2: Username management
-            UserManagement.adduser("root", RootPasswd)
+            adduser("root", RootPasswd)
             permission("Admin", "root", "Allow", Quiet)
-            If (enableDemo = True) Then UserManagement.adduser("demo")
+            If (enableDemo = True) Then adduser("demo")
             LoginFlag = True
 
             'Phase 3: Check for pre-user making
             If (CruserFlag = True) Then adduser(arguser, argword)
 
             'Phase 4: Parse Mods and Screensavers
-            ModParser.ParseMods(True)
+            ParseMods(True)
             Dim modPath As String = paths("Mods")
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
                 CompileCustom(modFile.Replace(modPath, ""))
@@ -78,7 +68,7 @@ Public Module Kernel
 
             'Phase 5: Free unused RAM and raise the started event
             EventManager.RaiseStartKernel()
-            DisposeExit.DisposeAll()
+            DisposeAll()
 
             'Phase 6: Log-in
             ShowTime()
@@ -86,12 +76,12 @@ Public Module Kernel
                 Throw New EventsAndExceptions.NullUsersException(DoTranslation("There is no more users remaining in the list.", currentLang))
             End If
             If (LoginFlag = True And maintenance = False) Then
-                Login.LoginPrompt()
+                LoginPrompt()
             ElseIf (LoginFlag = True And maintenance = True) Then
                 LoginFlag = False
                 Wln(DoTranslation("Enter the admin password for maintenance.", currentLang), "neutralText")
                 answeruser = "root"
-                Login.showPasswordPrompt(answeruser)
+                showPasswordPrompt(answeruser)
             End If
         Catch ex As Exception
             If (DebugMode = True) Then
@@ -99,7 +89,6 @@ Public Module Kernel
             End If
             KernelError(CChar("U"), True, 5, DoTranslation("Kernel Error while booting: {0}", currentLang), Err.Description)
         End Try
-
     End Sub
 
 End Module

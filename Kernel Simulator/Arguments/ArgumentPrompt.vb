@@ -26,7 +26,7 @@ Module ArgumentPrompt
         'Checks if the arguments are injected
         If argsInjected = True Then
             argsInjected = False
-            ArgumentParse.ParseArguments()
+            ParseArguments()
         Else
             'Shows available arguments and prompts for it
             W(DoTranslation("Available arguments: {0}", currentLang) + vbNewLine +

@@ -142,9 +142,6 @@ Module PageViewer
                     Console.WriteLine()
                     oldTop = Console.CursorTop
                 End If
-
-                'Reset necessary newlines
-                MkNewLineNec = True
             Next
 
             'Stop on last page
@@ -153,7 +150,6 @@ Module PageViewer
 
             'Clean up
             Wdbg("Exiting...")
-            oldTop = 0
             Console.Clear()
         Else
             Wln(DoTranslation("It seems that the manual page {0} is not found.", currentLang), "neutralText", title)

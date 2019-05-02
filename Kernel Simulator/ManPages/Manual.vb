@@ -20,76 +20,13 @@ Imports System.Text
 
 Public Class Manual
 
-    Private Title As String
-    Private Revision As String
-    Private LayoutVersion As String
-    Private Body_builder As New StringBuilder
-    Private Color_dict As New Dictionary(Of String, ConsoleColor)
-    Private Section_dict As New Dictionary(Of String, String)
-    Private Todo_dict As New List(Of String)
-
-    Public Property ManualTitle() As String
-        Get
-            Return Title
-        End Get
-        Set(ByVal Value As String)
-            Title = Value
-        End Set
-    End Property
-
-    Public Property ManualRevision() As String
-        Get
-            Return Revision
-        End Get
-        Set(ByVal Value As String)
-            Revision = Value
-        End Set
-    End Property
-
-    Public Property ManualLayoutVersion() As String
-        Get
-            Return LayoutVersion
-        End Get
-        Set(ByVal Value As String)
-            LayoutVersion = Value
-        End Set
-    End Property
-
-    Public Property Body() As StringBuilder
-        Get
-            Return Body_builder
-        End Get
-        Set(ByVal Value As StringBuilder)
-            Body_builder = Value
-        End Set
-    End Property
-
-    Public Property Colors() As Dictionary(Of String, ConsoleColor)
-        Get
-            Return Color_dict
-        End Get
-        Set(ByVal Value As Dictionary(Of String, ConsoleColor))
-            Color_dict = Value
-        End Set
-    End Property
-
-    Public Property Sections() As Dictionary(Of String, String)
-        Get
-            Return Section_dict
-        End Get
-        Set(ByVal Value As Dictionary(Of String, String))
-            Section_dict = Value
-        End Set
-    End Property
-
-    Public Property Todos() As List(Of String)
-        Get
-            Return Todo_dict
-        End Get
-        Set(ByVal Value As List(Of String))
-            Todo_dict = Value
-        End Set
-    End Property
+    Public Property ManualTitle As String
+    Public Property ManualRevision As String
+    Public Property ManualLayoutVersion As String
+    Public Property Body As New StringBuilder
+    Public Property Colors As New Dictionary(Of String, ConsoleColor)
+    Public Property Sections As New Dictionary(Of String, String)
+    Public Property Todos As New List(Of String)
 
     Public Sub New(ByVal Title As String)
         If (AvailablePages.Contains(Title)) Then

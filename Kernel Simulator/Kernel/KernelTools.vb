@@ -80,7 +80,6 @@ Public Module KernelTools
                 Exit Sub
             ElseIf (ErrorType = "C" And Reboot = True) Then
                 'Check if error is Continuable and reboot is enabled
-                Reboot = False
                 Wln(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.", currentLang) + vbNewLine +
                     DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, CStr(Description))
                 Console.ReadKey()
@@ -120,7 +119,7 @@ Public Module KernelTools
         If (PowerMode = "shutdown") Then
             EventManager.RaisePreShutdown()
             Wln(DoTranslation("Shutting down...", currentLang), "neutralText")
-            KernelTools.ResetEverything()
+            ResetEverything()
             EventManager.RaisePostShutdown()
 
             'Stop all mods
@@ -129,7 +128,7 @@ Public Module KernelTools
         ElseIf (PowerMode = "reboot") Then
             EventManager.RaisePreReboot()
             Wln(DoTranslation("Rebooting...", currentLang), "neutralText")
-            KernelTools.ResetEverything()
+            ResetEverything()
             EventManager.RaisePostReboot()
 
             'Stop all mods
@@ -160,7 +159,7 @@ Public Module KernelTools
         Wdbg("General variables reset")
 
         'Reset users
-        UserManagement.resetUsers()
+        resetUsers()
         Wdbg("User variables reset")
 
         'Reset hardware info
@@ -169,7 +168,7 @@ Public Module KernelTools
         CPUList.Clear()
 
         'Release RAM used
-        DisposeExit.DisposeAll()
+        DisposeAll()
         Wdbg("Garbage collector finished")
 
         'Disable Debugger
@@ -208,16 +207,16 @@ Public Module KernelTools
 
         'Parse real command-line arguments
         For Each argu In Environment.GetCommandLineArgs
-            CommandLineArgsParse.parseCMDArguments(argu)
+            ParseCMDArguments(argu)
         Next
 
         'Check arguments and initialize date and files.
         If (argsOnBoot = True) Then
-            ArgumentPrompt.PromptArgs()
-            If (argsFlag = True) Then ArgumentParse.ParseArguments()
+            PromptArgs()
+            If (argsFlag = True) Then ParseArguments()
         End If
         If (argsInjected = True) Then
-            ArgumentParse.ParseArguments()
+            ParseArguments()
             answerargs = ""
             argsInjected = False
         End If

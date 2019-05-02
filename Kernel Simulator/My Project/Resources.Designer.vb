@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -90,7 +90,7 @@ Namespace My.Resources
         '''
         '''~~- Information about this manual page:
         '''-TITLE:Available commands
-        '''-REVISION:0.0.1.1
+        '''-REVISION:0.0.1.2
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
         '''
         '''~~- Make sure that all of the commands that are available in the kernel is put.
@@ -208,16 +208,16 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to Available commands: {0}
-        '''Write command:  
-        '''Command injection has been cancelled. 
-        '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; 
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; 
-        '''Note that the &apos;debug&apos; argument does not fully cover the kernel. 
-        '''bargs: The requested argument {0} is not found. 
-        '''bargs: Unrecoverable error in argument:  
-        '''Available arguments: {0} 
-        '''Arguments (&apos;help&apos; for help):  
-        '''Injected a [rest of string was truncated]&quot;;.
+        '''Write command: 
+        '''Command injection has been cancelled.
+        '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;
+        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;
+        '''Note that the &apos;debug&apos; argument does not fully cover the kernel.
+        '''bargs: The requested argument {0} is not found.
+        '''bargs: Unrecoverable error in argument: 
+        '''Available arguments: {0}
+        '''Arguments (&apos;help&apos; for help): 
+        '''Injected arguments  [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property eng() As String
             Get

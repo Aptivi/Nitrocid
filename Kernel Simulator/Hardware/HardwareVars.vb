@@ -26,11 +26,22 @@ Module HardwareVars
         Public Sectors As UInt64
         Public Size As UInt64
     End Class
+    Public Class HDD_Linux
+        Inherits HDD
+        Public Size_LNX As String
+        Public Model_LNX As String
+        Public Vendor_LNX As String
+    End Class
 
     'then CPU
     Public Class CPU
         Public Name As String
         Public ClockSpeed As UInt64
+    End Class
+    Public Class CPU_Linux
+        Inherits CPU
+        Public CPUName As String
+        Public Clock As String
     End Class
 
     'then RAM
@@ -38,6 +49,10 @@ Module HardwareVars
         Public ChipCapacity As UInt64
         Public SlotNumber As Integer
         Public SlotName As String
+    End Class
+    Public Class RAM_Linux
+        Inherits RAM
+        Public Capacity As String
     End Class
 
     'Hardware Lists

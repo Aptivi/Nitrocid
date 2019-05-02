@@ -32,12 +32,12 @@ Public Module GetCommand
             If (requestedCommand.Substring(0, index) = "help") Then
 
                 If (requestedCommand = "help") Then
-                    HelpSystem.ShowHelp()
+                    ShowHelp()
                 Else
                     If (args.Count - 1 = 0) Then
-                        HelpSystem.ShowHelp(args(0))
+                        ShowHelp(args(0))
                     Else
-                        HelpSystem.ShowHelp(words(0))
+                        ShowHelp(words(0))
                     End If
                 End If
                 Done = True
@@ -254,13 +254,13 @@ Public Module GetCommand
                     If (currDir = "/") Then
                         Wln(String.Join(", ", AvailableDirs), "neutralText")
                     Else
-                        list(currDir.Substring(1))
+                        List(currDir.Substring(1))
                     End If
                     Done = True
                 Else
                     If (args.Count - 1 = 0) Then
                         If (AvailableDirs.Contains(args(0)) Or args(0) = ".." Or args(0) = "/" Or (AvailableDirs.Contains(args(0).Substring(1)) And (args(0).StartsWith("/") Or args(0).StartsWith("..")))) Then
-                            list(args(0))
+                            List(args(0))
                         Else
                             Wln(DoTranslation("Directory {0} not found", currentLang), "neutralText", args(0))
                         End If
@@ -576,7 +576,11 @@ Public Module GetCommand
 
                 'Hardware section
                 Wln(DoTranslation("[ Hardware settings ]{0}", currentLang), "helpCmd", vbNewLine)
-                HardwareProbe.ListDrivers()
+                If Not EnvironmentOSType.Contains("Unix") then
+                    ListDrivers()
+                Else
+                    ListDrivers_Linux()
+                End If
 
                 'User section
                 Wln(DoTranslation("{0}[ User settings ]", currentLang), "helpCmd", vbNewLine)
@@ -588,7 +592,7 @@ Public Module GetCommand
                 'Messages Section
                 Wln(DoTranslation("{0}[ Messages Settings ]", currentLang), "helpCmd", vbNewLine)
                 Wln(vbNewLine + "MOTD: {0}" + vbNewLine +
-                                "MAL: {1}", "neutralText", PlaceParse.ProbePlaces(MOTDMessage), PlaceParse.ProbePlaces(MAL))
+                                "MAL: {1}", "neutralText", ProbePlaces(MOTDMessage), ProbePlaces(MAL))
 
             ElseIf (requestedCommand.Substring(0, index) = "unitconv") Then
 

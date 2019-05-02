@@ -16,9 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module sciCalc
+Public Module SciCalc
 
-    Public Sub expressionCalculate(ByVal sciMode As Boolean, ByVal ParamArray exps() As Object)
+    Public Sub ExpressionCalculate(ByVal sciMode As Boolean, ByVal ParamArray exps() As Object)
 
         Try
             If (sciMode = False) Then
@@ -49,7 +49,7 @@ Public Module sciCalc
                     Dim finalRes = New DataTable().Compute(finalExp, Nothing)
                     Wln("{0}= {1}", "neutralText", finalExp, FormatNumber(finalRes, 2))
                 Else
-                    HelpSystem.ShowHelp("scical")
+                    ShowHelp("scical")
                 End If
             Else
                 If (exps.Count = 2) Then
@@ -63,12 +63,12 @@ Public Module sciCalc
                     ElseIf (exps(0) = "cos") Then 'A cosine of a number
                         finalRes = Math.Cos(exps(1))
                     Else
-                        HelpSystem.ShowHelp("scical")
+                        ShowHelp("scical")
                         Exit Sub
                     End If
                     Wln(DoTranslation("{0} of {1} = {2}", currentLang), "neutralText", exps(0), exps(1), FormatNumber(finalRes, 2))
                 Else
-                    HelpSystem.ShowHelp("scical")
+                    ShowHelp("scical")
                 End If
             End If
         Catch ex As DivideByZeroException

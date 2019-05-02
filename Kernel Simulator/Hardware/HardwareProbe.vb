@@ -15,24 +15,35 @@
 '
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+Imports System.IO
 Imports System.Management
+Imports Newtonsoft.Json.Linq
 
 Public Module HardwareProbe
 
     'TODO: Re-write in Beta
     Public Sub ProbeHW(Optional ByVal QuietHWProbe As Boolean = False)
         Wdbg("QuietHWProbe = {0}.", QuietHWProbe)
+        
         If Not QuietHWProbe Then
             Wln(DoTranslation("hwprobe: Your hardware will be probed. Please wait...", currentLang), "neutralText")
             StartProbing()
         Else
-            ProbeHardware()
+            If Not EnvironmentOSType.Contains("Unix") then
+                ProbeHardware()
+            Else
+                ProbeHardwareLinux()
+            End If
         End If
     End Sub
 
     Public Sub StartProbing()
         'We will probe hardware
-        ProbeHardware()
+        If Not EnvironmentOSType.Contains("Unix") then
+            ProbeHardware()
+        Else
+            ProbeHardwareLinux()
+        End If
 
         'We are checking to see if any of the probers reported a failure starting with CPU
         If (CPUDone = False) Then
@@ -53,9 +64,14 @@ Public Module HardwareProbe
         End If
 
         'Print information about the probed hardware
-        ListDrivers()
+        If Not EnvironmentOSType.Contains("Unix") then
+            ListDrivers()
+        Else
+            ListDrivers_Linux()
+        End If
     End Sub
-
+    '----------> Windows hardware probers <----------
+    
     Public Sub ListDrivers()
         'Variables
         Dim times As Integer = 1
@@ -69,7 +85,7 @@ Public Module HardwareProbe
 
         'This is an expression totalling a RAM to print string
         For Each capacity In Capacities
-            total = total + capacity
+            total += capacity
         Next
 
         'Print some info
@@ -84,7 +100,6 @@ Public Module HardwareProbe
             End If
             times += 1
         Next
-        times = 1
 
         'Number of slots used
         Wln(vbNewLine + DoTranslation("RAM: Used slots (by numbers): {0} / {1} ({2}%)", currentLang), "neutralText", CStr(slotsUsedNum), totalSlots, FormatNumber(CStr(slotsUsedNum * 100 / totalSlots), 1))
@@ -178,5 +193,77 @@ Public Module HardwareProbe
                 End Try
             Next
         End If
+    End Sub
+
+    '----------> Linux hardware prober <----------
+    'This uses inxi to get information about HDD. If you don't have it installed, use your appropriate package manager to install inxi or build from source.
+
+    Public Sub ProbeHardwareLinux()
+        'CPU Prober
+        Try
+            Dim cpuinfo As New StreamReader("/proc/cpuinfo")
+            Dim Name = "", Clock = "", ln As String
+            Do While Not cpuinfo.EndOfStream
+                ln = cpuinfo.ReadLine()
+                If ln.StartsWith("model name" + vbTab + ": ") Then
+                    Name = ln.Replace("model name" + vbTab + ": ", "")
+                ElseIf ln.StartsWith("cpu MHz" + vbTab + vbBack + ":") Then
+                    Clock = ln.Replace("cpu Mhz" + vbTab + vbTab + ": ", "")
+                    Exit Do
+                End If
+            Loop
+            CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name})
+        Catch ex As Exception
+            CPUDone = False
+            If (DebugMode = True) Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+        End Try
+
+        'RAM Prober
+        Try
+            Dim raminfo As New StreamReader("/proc/meminfo")
+            RAMList.Add(New RAM_Linux With {.Capacity = raminfo.ReadLine()})
+        Catch ex As Exception
+            RAMDone = False
+            If (DebugMode = True) Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+        End Try
+
+        'HDD Prober
+        Try
+            Dim inxi As New Process
+            Dim inxinfo As New ProcessStartInfo With {.FileName = "/usr/bin/inxi", .Arguments = "-D --output json --output-file print",
+                                                      .WindowStyle = ProcessWindowStyle.Hidden, 
+                                                      .CreateNoWindow = True,
+                                                      .UseShellExecute = False,
+                                                      .RedirectStandardOutput = True}
+            inxi.StartInfo = inxinfo
+            inxi.Start() : inxi.WaitForExit()
+            Dim inxitoken As JToken = JToken.Parse(inxi.StandardOutput.ReadToEnd())
+            Dim inxiReady As Boolean = False
+            For Each inxidrvs In inxitoken.SelectToken("000#Drives")
+                If inxiReady Then
+                    HDDList.Add(New HDD_Linux With{.Size_LNX = inxidrvs("004#size"), .Model_LNX = inxidrvs("003#model"), .Vendor_LNX = inxidrvs("002#vendor")})
+                End If
+                inxiReady = True
+            Next
+        Catch ex As Exception
+            HDDDone = False
+            If (DebugMode = True) Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+        End Try
+    End Sub
+    Sub ListDrivers_Linux()
+        'CPU List
+        For Each info As CPU_Linux In CPUList
+            Wln("CPU: {0} {1}", "neutralText", info.CPUName, info.Clock)
+        Next
+
+        'HDD List
+        For Each info As HDD_Linux In HDDList
+            Wln("HDD: {0} {1} {2}", "neutralText", info.Vendor_LNX, info.Model_LNX, info.Size_LNX)
+        Next
+
+        'RAM List
+        For Each info As RAM_Linux In RAMList
+            Wln("RAM: {0}", "neutralText", info.Capacity)
+        Next
     End Sub
 End Module

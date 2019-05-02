@@ -73,9 +73,9 @@ Module ArgumentParse
                             DoTranslation("Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5'", currentLang) + vbNewLine +
                             DoTranslation("Note that the 'debug' argument does not fully cover the kernel.", currentLang), "neutralText")
                         answerargs = "" : argsFlag = False : argsInjected = False
-                        ArgumentPrompt.PromptArgs()
+                        PromptArgs()
                         If (argsFlag = True) Then
-                            ArgumentParse.ParseArguments()
+                            ParseArguments()
                         End If
 
                     End If

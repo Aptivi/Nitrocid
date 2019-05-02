@@ -18,7 +18,7 @@
 
 Public Module UserManagement
 
-    Public Sub initializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")
+    Public Sub InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")
 
         Try
             userword.Add(uninitUser, unpassword)
@@ -38,21 +38,21 @@ Public Module UserManagement
 
     End Sub
 
-    Public Sub adduser(ByVal newUser As String, Optional ByVal newPassword As String = "")
+    Public Sub Adduser(ByVal newUser As String, Optional ByVal newPassword As String = "")
 
         'Adds users
         If (Quiet = False) Then
             Wln(DoTranslation("usrmgr: Creating username {0}...", currentLang), "neutralText", newUser)
         End If
         If (newPassword = Nothing) Then
-            initializeUser(newUser)
+            InitializeUser(newUser)
         Else
-            initializeUser(newUser, newPassword)
+            InitializeUser(newUser, newPassword)
         End If
 
     End Sub
 
-    Public Sub resetUsers()
+    Public Sub ResetUsers()
 
         'Resets users and permissions
         adminList.Clear()
@@ -74,7 +74,7 @@ Public Module UserManagement
     End Sub
 
     'This sub is an accomplice of in-shell command arguments.
-    Public Sub removeUserFromDatabase(ByVal user As String)
+    Public Sub RemoveUserFromDatabase(ByVal user As String)
 
         Try
             Dim DoneFlag As String = "No"
@@ -116,8 +116,6 @@ Public Module UserManagement
                     DoTranslation("Error {0}: {1}", currentLang), "neutralText", Err.Number, Err.Description)
             End If
         End Try
-        user = Nothing
-
     End Sub
 
 End Module

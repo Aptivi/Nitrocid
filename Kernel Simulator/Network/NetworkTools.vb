@@ -16,7 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Net
 Imports System.Net.NetworkInformation
 Imports System.DirectoryServices
 Imports System.Net.Sockets.AddressFamily
@@ -58,7 +57,7 @@ Public Module NetworkTools
                     s.Reset()
                     Wln(DoTranslation("{0}/{1} {2}: Timed out, disconnected, or server offline.", currentLang), "neutralText", repeatTimes, i, Address)
                     If (repeatTimes = i) Then Exit Do
-                    i = i + 1
+                    i += 1
                     Continue Do
                 End If
             End Try
@@ -170,7 +169,7 @@ Public Module NetworkTools
         If My.Computer.Network.IsAvailable Then
             'Variables
             Dim HostNameFromDNS As String = Dns.GetHostName()
-            Dim IPHostEntry As Net.IPHostEntry = Dns.GetHostEntry(HostNameFromDNS)
+            Dim IPHostEntry As IPHostEntry = Dns.GetHostEntry(HostNameFromDNS)
             Dim ComputerNames() = Computers.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
 
             'Get router
@@ -193,7 +192,7 @@ Public Module NetworkTools
             For Each cmp In ComputerNames
                 HostNameFromDNS = cmp
                 IPHostEntry = Dns.GetHostEntry(HostNameFromDNS)
-                Dim p As New System.Net.NetworkInformation.Ping()
+                Dim p As New Ping()
                 For Each ipheal In IPHostEntry.AddressList
                     Dim reply = p.Send(ipheal, 100)
                     If (reply.Status = IPStatus.Success) Then
@@ -205,11 +204,10 @@ Public Module NetworkTools
             Wln(DoTranslation("net: WiFi or Ethernet is disconnected.", currentLang), "neutralText")
         End If
     End Sub
-    Public Sub getProperties()
-        Dim proper As IPGlobalProperties = IPGlobalProperties.GetIPGlobalProperties
+    Public Sub GetProperties()
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces
         For Each adapter As NetworkInterface In adapters
-            adapterNumber = adapterNumber + 1
+            adapterNumber += 1
             If adapter.Supports(NetworkInterfaceComponent.IPv4) = False Then
                 Wdbg("{0} doesn't support IPv4 because ASSERT(adapter.Supp(IPv4) = True) = False.", adapter.Description)
             ElseIf (adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or

@@ -20,7 +20,7 @@ Imports System.IO
 
 Public Module Config
 
-    Public Sub createConfig(ByVal CmdArg As Boolean, ByVal Preserve As Boolean)
+    Public Sub CreateConfig(ByVal CmdArg As Boolean, ByVal Preserve As Boolean)
         Try
             Dim ksconf As New IniFile()
             If Preserve Then
@@ -134,7 +134,7 @@ Public Module Config
 
             'Exit if it is executed using real command-line arguments
             If (CmdArg = True) Then
-                DisposeExit.DisposeAll()
+                DisposeAll()
                 Environment.Exit(0)
             End If
         Catch ex As Exception
@@ -145,13 +145,13 @@ Public Module Config
                 Wln(DoTranslation("There is an error trying to create configuration.", currentLang), "neutralText")
             End If
             If (CmdArg = True) Then
-                DisposeExit.DisposeAll()
+                DisposeAll()
                 Environment.Exit(2)
             End If
         End Try
     End Sub
 
-    Public Sub checkForUpgrade()
+    Public Sub CheckForUpgrade()
         'Rewrite checker only when there is a necessary change.
         Try
             'Variables
@@ -176,20 +176,20 @@ Public Module Config
         End Try
     End Sub
 
-    Public Sub updateConfig()
+    Public Sub UpdateConfig()
 
-        createConfig(False, True)
-        KernelTools.ResetEverything()
+        CreateConfig(False, True)
+        ResetEverything()
         Console.Clear()
         Main()
 
     End Sub
 
-    Public Sub readImportantConfig()
+    Public Sub ReadImportantConfig()
         Try
             Dim Lang_TBA As String = configReader.Sections("General").Keys("Language").Value
             If (configReader.Sections("Shell").Keys("Colored Shell").Value = "False") Then
-                templateSet("LinuxUncolored")
+                TemplateSet("LinuxUncolored")
                 ColoredShell = False
             End If
             If (availableLangs.Contains(Lang_TBA)) Then currentLang = Lang_TBA
@@ -203,7 +203,7 @@ Public Module Config
         End Try
     End Sub
 
-    Public Sub readConfig()
+    Public Sub ReadConfig()
         Try
             If (configReader.Sections("General").Keys("Customized Colors on Boot").Value = "True") Then customColor = True Else customColor = False
 
@@ -257,11 +257,11 @@ Public Module Config
 
     Sub InitializeConfig()
         Dim pathConfig As String = paths("Configuration")
-        If Not File.Exists(pathConfig) Then Config.createConfig(False, False)
+        If Not File.Exists(pathConfig) Then createConfig(False, False)
         configReader.Load(pathConfig)
-        Config.readImportantConfig()
-        Config.readConfig()
-        Config.checkForUpgrade()
+        readImportantConfig()
+        readConfig()
+        checkForUpgrade()
     End Sub
 
 End Module

@@ -35,7 +35,7 @@ Public Module Shell
     '                  For each added admin command, you should also add a command in strictCmds array after performing above procedure so there is no problems 
     '                  checking if user has Admin permission to use your new admin command.
 
-    Public Sub initializeShell()
+    Public Sub InitializeShell()
         'Initialize Shell
         While True
             If LogoutRequested Then
@@ -53,7 +53,7 @@ Public Module Shell
 
                     'Write a prompt
                     commandPromptWrite()
-                    DisposeExit.DisposeAll()
+                    DisposeAll()
 
                     'Set an input color
                     Wdbg("ColoredShell = {0}", ColoredShell)
@@ -74,7 +74,7 @@ Public Module Shell
                         For Each c As String In modcmnds
                             If (Parts(0) = c) Then
                                 Done = True
-                                GetModCommand.ExecuteModCommand(strcommand)
+                                ExecuteModCommand(strcommand)
                             End If
                         Next
                         Wdbg("Aliases probing started with {0}", strcommand)
@@ -108,7 +108,7 @@ Public Module Shell
 
     End Sub
 
-    Public Sub commandPromptWrite()
+    Public Sub CommandPromptWrite()
 
         If adminList(signedinusrnm) = True Then
             W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} # ", "def", currDir)
@@ -120,7 +120,7 @@ Public Module Shell
 
     End Sub
 
-    Public Sub getLine(Optional ByVal ArgsMode As Boolean = False)
+    Public Sub GetLine(Optional ByVal ArgsMode As Boolean = False)
 
         'Reads command written by user
         Try

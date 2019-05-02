@@ -22,7 +22,7 @@ Public Module Groups
     Public adminList As New Dictionary(Of String, Boolean)()         'Users that are allowed to have administrative access.
     Public disabledList As New Dictionary(Of String, Boolean)()      'Users that are unable to login
 
-    Public Sub permission(ByVal type As String, ByVal username As String, ByVal mode As String, Optional ByVal quiet As Boolean = False)
+    Public Sub Permission(ByVal type As String, ByVal username As String, ByVal mode As String, Optional ByVal quiet As Boolean = False)
 
         'Variables
         Dim DoneFlag As Boolean = False
@@ -108,7 +108,7 @@ Public Module Groups
 
     End Sub
 
-    Public Sub permissionEditForNewUser(ByVal oldName As String, ByVal username As String)
+    Public Sub PermissionEditForNewUser(ByVal oldName As String, ByVal username As String)
 
         'Edit username (continuation for changeName() sub)
         Try

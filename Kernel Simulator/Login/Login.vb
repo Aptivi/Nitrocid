@@ -45,7 +45,7 @@ Public Module Login
             If (showMOTD = False) Or (showMOTDOnceFlag = False) Then
                 W(vbNewLine + DoTranslation("Username: ", currentLang), "input")
             ElseIf (showMOTDOnceFlag = True And showMOTD = True) Then
-                W(vbNewLine + PlaceParse.ProbePlaces(MOTDMessage) + vbNewLine + vbNewLine + DoTranslation("Username: ", currentLang), "input")
+                W(vbNewLine + ProbePlaces(MOTDMessage) + vbNewLine + vbNewLine + DoTranslation("Username: ", currentLang), "input")
             End If
             showMOTDOnceFlag = False
             answeruser = Console.ReadLine()
@@ -59,7 +59,7 @@ Public Module Login
         End While
     End Sub
 
-    Sub showPasswordPrompt(ByVal usernamerequested As String)
+    Sub ShowPasswordPrompt(ByVal usernamerequested As String)
 
         'Variables and error handler
         Dim DoneFlag As Boolean = False
@@ -79,10 +79,10 @@ Public Module Login
                         Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
                         If (maintenance = False) Then
                             If (LockMode = True) Then
-                                showPasswordPrompt(usernamerequested)
+                                ShowPasswordPrompt(usernamerequested)
                             End If
                         Else
-                            showPasswordPrompt(usernamerequested)
+                            ShowPasswordPrompt(usernamerequested)
                         End If
                     Else
                         If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
@@ -96,10 +96,10 @@ Public Module Login
                             Wln(DoTranslation("Wrong password.", currentLang), "neutralText")
                             If (maintenance = False) Then
                                 If (LockMode = True) Then
-                                    showPasswordPrompt(usernamerequested)
+                                    ShowPasswordPrompt(usernamerequested)
                                 End If
                             Else
-                                showPasswordPrompt(usernamerequested)
+                                ShowPasswordPrompt(usernamerequested)
                             End If
                         End If
                     End If
@@ -122,15 +122,15 @@ Public Module Login
 
     End Sub
 
-    Public Sub signIn(ByVal signedInUser As String)
+    Public Sub SignIn(ByVal signedInUser As String)
 
         'Initialize shell, and sign in to user.
         signedinusrnm = signedInUser
         If LockMode = True Then LockMode = False
         showMOTDOnceFlag = True
-        Wln(PlaceParse.ProbePlaces(MAL), "neutralText")
+        Wln(ProbePlaces(MAL), "neutralText")
         EventManager.RaisePostLogin()
-        Shell.initializeShell()
+        initializeShell()
 
     End Sub
 

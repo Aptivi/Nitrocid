@@ -130,7 +130,7 @@ Public Module Color
         Console.BackgroundColor = backgroundColor
         Console.Clear()
     End Sub
-    Public Sub templateSet(ByVal theme As String)
+    Public Sub TemplateSet(ByVal theme As String)
         If colorTemplates.Contains(theme) = True Then
             If theme = "Default" Then
                 ResetColors()

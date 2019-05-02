@@ -62,7 +62,7 @@ Public Module ModParser
         End Using
     End Function
 
-    Private modPath As String = paths("Mods")
+    Private ReadOnly modPath As String = paths("Mods")
 
     Sub ParseMods(ByVal StartStop As Boolean)
         'StartStop: If true, the mods start, otherwise, the mod stops.

@@ -249,7 +249,9 @@ Module PageParser
     End Sub
 
     'Parse manual file from mods (Not implemented yet)
+#Disable Warning IDE0060
     Public Sub ParseMan_EXTERNAL(ByVal line As String, ByVal ManFile As String)
+#Enable Warning IDE0060
         Throw New NotImplementedException
     End Sub
 
@@ -313,7 +315,9 @@ Module PageParser
     End Sub
 
     'Perform a sanity check on mod manpages (Not implemented)
+#Disable Warning IDE0060
     Public Sub Sanity_EXTERNAL(ByVal title As String)
+#Enable Warning IDE0060
         Throw New NotImplementedException
     End Sub
 

@@ -21,7 +21,7 @@ Public Module AliasManager
     Public aliases As New Dictionary(Of String, String)
     Public forbidden As String() = {"alias"}
 
-    Public Sub manageAlias(ByVal mode As String, ByVal aliasTBA As String, Optional ByVal cmd As String = "")
+    Public Sub ManageAlias(ByVal mode As String, ByVal aliasTBA As String, Optional ByVal cmd As String = "")
         If (mode = "add") Then
             If (aliasTBA = cmd) Then
                 Wln(DoTranslation("Alias can't be the same name as a command.", currentLang), "neutralText")

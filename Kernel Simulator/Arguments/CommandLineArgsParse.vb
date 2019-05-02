@@ -18,18 +18,17 @@
 
 Module CommandLineArgsParse
 
-    Sub parseCMDArguments(ByVal arg As String)
+    Sub ParseCMDArguments(ByVal arg As String)
         Try
             If (Environment.GetCommandLineArgs.Length <> 0 And availableCMDLineArgs.Contains(arg) = True) Then
-                Dim strArgs As String = Environment.GetCommandLineArgs.Skip(1).ToArray.Join(" ")
                 Dim argArgs As String = Environment.GetCommandLineArgs.Skip(2).ToArray.Join(" ")
 
                 'Parse arguments
                 If (arg = "createConf") Then
-                    If Not (IO.File.Exists(paths("Configuration"))) Then Config.createConfig(True, False)
+                    If Not (IO.File.Exists(paths("Configuration"))) Then createConfig(True, False)
                 ElseIf (arg = "promptArgs") Then
-                    ArgumentPrompt.PromptArgs()
-                    If (argsFlag = True) Then ArgumentParse.ParseArguments()
+                    PromptArgs()
+                    If (argsFlag = True) Then ParseArguments()
                 ElseIf (arg = "testMod") Then
                     StartParse(argArgs)
                     If (scripts.Count = 0) Then

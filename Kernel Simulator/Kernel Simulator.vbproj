@@ -14,7 +14,7 @@
     <AssemblyName>Kernel Simulator</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -206,9 +206,9 @@
     <Compile Include="ManPages\Manual.vb" />
     <Compile Include="ManPages\PageParser.vb" />
     <Compile Include="ManPages\PageViewer.vb" />
-    <Compile Include="Misc\Calculator\sciCalc.vb" />
-    <Compile Include="Misc\Calculator\stdCalc.vb" />
-    <Compile Include="Misc\Calculator\unitConv.vb" />
+    <Compile Include="Misc\Calculator\SciCalc.vb" />
+    <Compile Include="Misc\Calculator\StdCalc.vb" />
+    <Compile Include="Misc\Calculator\UnitConv.vb" />
     <Compile Include="Misc\Config.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\DisposeExit.vb" />

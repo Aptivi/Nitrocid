@@ -24,10 +24,10 @@ Public Module TimeZones
     Public zones As TimeZoneInfo()
     Public zoneTimes As New Dictionary(Of String, DateTime)
 
-    Public Sub initTimesInZones()
+    Public Sub InitTimesInZones()
 
         'Get all system time zones (IANA on Unix)
-        zones = TimeZoneInfo.GetSystemTimeZones.ToArray
+        zones = GetSystemTimeZones.ToArray
 
         'Run a cleanup in the list
         zoneTimes.Clear()
@@ -39,7 +39,7 @@ Public Module TimeZones
 
     End Sub
 
-    Public Sub showTimesInZones(Optional ByVal zone As String = "all")
+    Public Sub ShowTimesInZones(Optional ByVal zone As String = "all")
 
         For Each timezone In zones
             If (timezone.DisplayName = zone) Then

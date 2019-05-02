@@ -24,7 +24,7 @@ Public Module Filesystem
     Public currDir As String = "/"
     Public AvailableDirs As New List(Of String)
 
-    Public Sub setCurrDir(ByVal dir As String)
+    Public Sub SetCurrDir(ByVal dir As String)
         If (AvailableDirs.Contains(dir)) Then
             currDir = "/" + dir
         ElseIf (dir = "") Then
@@ -33,7 +33,7 @@ Public Module Filesystem
             Wln(DoTranslation("Cannot change directory to /{0} because that directory leads nowhere.", currentLang), "neutralText", dir)
         End If
     End Sub
-    Public Sub readContents(ByVal filename As String)
+    Public Sub ReadContents(ByVal filename As String)
         If (filename = "loader") Then
 
             Wln("Boot_Version = {0}", "neutralText", KernelVersion)
@@ -66,7 +66,7 @@ Public Module Filesystem
     Public Sub Init()
         AvailableDirs.AddRange({"boot", "bin", "dev", "etc", "lib", "proc", "usr", "var"})
     End Sub
-    Public Sub list(ByVal folder As String)
+    Public Sub List(ByVal folder As String)
         If (folder = "bin" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "bin") Then
             Wln(String.Join("* ", availableCommands) + "*", "neutralText")
         ElseIf (folder = "boot" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "boot") Then

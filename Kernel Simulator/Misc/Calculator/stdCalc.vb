@@ -16,9 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module stdCalc
+Public Module StdCalc
 
-    Public Sub expressionCalculate(ByVal ParamArray exps() As String)
+    Public Sub ExpressionCalculate(ByVal ParamArray exps() As String)
 
         Try
             If (exps.Count >= 3) Then
@@ -42,7 +42,7 @@ Public Module stdCalc
                 Dim finalRes = New DataTable().Compute(finalExp, Nothing)
                 Wln("{0}= {1}", "neutralText", finalExp, FormatNumber(finalRes, 2))
             Else
-                HelpSystem.ShowHelp("calc")
+                ShowHelp("calc")
             End If
         Catch ex As DivideByZeroException
             Wln(DoTranslation("Attempt to divide by zero is not allowed.", currentLang), "neutralText")

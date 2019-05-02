@@ -12,7 +12,7 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - It can only be Console at the moment, while we are developing a GUI for this simulator.
 
-- We took out Windows XP support in favor of NuGet and .NET Framework 4.6.1.
+- We took out Windows XP support in favor of NuGet and .NET Framework 4.7.
 
 - We paused porting for MonoDevelop in Linux and macOS in beta versions. Although it works, some features may not work properly, and any of the issues or pull requests about the Linux compatibility optimization while the version you're using is a beta version of 0.0.6 will be closed.
 
@@ -26,7 +26,7 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - Windows 7 or higher
 
-- Microsoft .NET Framework 4.6.1 or higher
+- Microsoft .NET Framework 4.7 or higher
 
 2. For Unix systems
 
@@ -36,9 +36,9 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - For Windows systems
 
-1. Install Microsoft Visual Studio 2017, or higher.
+1. Install Microsoft Visual Studio 2019, or higher.
 
-2. After installation, extract the source code, open VS2017, and click on **Open Project...**
+2. After installation, extract the source code, open VS2019, and click on **Open Project...**
 
 3. Go to the source directory, and double-click the solution file
 
@@ -57,16 +57,12 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 2. After installation, extrace the source code, and open MonoDevelop, and click on **Open...**
 
 3. Go to the source directory, and double-click the solution file
-
-4. Add the following lines to **Kernel Simulator.vbproj**:
-
-	`<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>`
 	
-5. Change the output directory if you are building using **Release**.
+4. Change the output directory if you are building using **Release**.
 
-6. Click on the **Build** menu bar, and click on build button to compile.
+5. Click on the **Build** menu bar, and click on build button to compile.
 
-7. In **your file manager**, go to the build directory and then double-click on the executable file.
+6. In **your file manager**, go to the build directory and then double-click on the executable file.
 
 ## |-----+--> _History_ <--+-----|
 
@@ -127,6 +123,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **2/18/2019 - 0.0.5.11:** Made GPU and BIOS probing `<Obsolete>`, No more COM calls when probing hardware, Removed a useless file that has hard drive data, Fixed the translation of sysinfo when displaying the kernel configuration section, Removed status probing from HDD and RAM (See why on `usermanual History of Kernel Simulator`, section `Truth about status probing`), Fixed the CHS section not appearing if the hard drive has the Manufacturer value, Fixed the translator not returning English value if the translation list doesn't contain such value, Fixed the GPU prober assuming that Microsoft Basic Display Driver is not a basic driver, Made screensavers be probed on boot, Fixed NullReferenceException when trying to load the next screensaver after an error occured on the previous screensaver, Fixed the OS info not translated when starting up a kernel, Fixed language config not preserving when updating, Debug information now prints to VS2017 debug output window (You still have to turn on debugging), Made the loadsaver command reloadsaver, Removed useless and abusive commands (echo, panicsim and choice)
 
 **2/22/2019 - 0.0.5.12:** Now createConf cmdline arg only creates config if the config file isn't found, Some preparations for 0.0.6 (slimming down only), Removed the GPU and BIOS probing, Now older KS config won't be allowed to be updated here (Workaround: You need to remove your old KS config file and re-run the app), Fixed the Environment.OS bug on Windows 10 (10.0) where it returns Windows 8 (6.2) version, Fixed the placeholders not parsing when using showmotd/showmal command, Fixed the simple help not showing mods, Fixed built-in commands not running after you run mod commands or alias commands, Fixed NullReferenceException when debugging, Improved alias listing, Fixed the printing text exception message not translating to current language, Fixed the "/" or "\" appearing before the modname when probing mods and screensavers, Removed unnecessary fixup in translation, Fixed more stack overflows in FTP shell, Fixed the FTP message translation translating "'help'" as the language when it's supposed to be a command, Fixed the command not found message when not entering anything in FTP shell
+
+**4/14/2019 - 0.0.5.13:** More slimming by JetBrains ReSharper for VS2017, Implemented Linux hardware probing (You need to install inxi for HDD probes to work), Increased .NET requirement to 4.7, Removed warning about binding redirects in MonoDevelop, Increased VS version requirement to VS2019, Removed annoying "Naming rule violation" by using suggested option
 
 ## |-----+--> _Manual pages_ <--+-----|
 

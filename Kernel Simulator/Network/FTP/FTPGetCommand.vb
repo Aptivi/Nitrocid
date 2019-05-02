@@ -213,7 +213,7 @@ Public Module FTPGetCommand
                 'Set a flag
                 ftpexit = True
             ElseIf (cmd = "help") Then
-                FTPHelpSystem.FTPShowHelp()
+                FTPShowHelp()
             ElseIf (cmd.Substring(0, index) = "listlocal" Or cmd.Substring(0, index) = "lsl") Then
                 Dim working As String
                 If (cmd <> "listlocal" Or cmd <> "lsl") Then
@@ -230,7 +230,6 @@ Public Module FTPGetCommand
                     ListLocal(working)
                 End If
             ElseIf (cmd.Substring(0, index) = "listremote" Or cmd.Substring(0, index) = "lsr") Then
-                Dim line As String = "" : Dim listftp As New List(Of String)
                 If (cmd <> "listremote" Or cmd <> "lsr") Then
                     If (connected = True) Then
                         Dim FileSize As Long

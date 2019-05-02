@@ -639,7 +639,7 @@ This version is released as the hotfix for 0.0.5.10, removing more obsolete thin
 14. Made the loadsaver command reloadsaver
 15. Removed useless and abusive commands (echo, panicsim and choice)
 
-KS 0.0.5.12, the current version
+KS 0.0.5.12
 
 This version is released to fix more bugs and do more improvements, including the fix for Environment.OS for Windows 10. This release is a 1-year anniversary for KS
 
@@ -659,6 +659,45 @@ This version is released to fix more bugs and do more improvements, including th
 14. Fixed more stack overflows in FTP shell
 15. Fixed the FTP message translation translating "'help'" as the language when it's supposed to be a command
 16. Fixed the command not found message when not entering anything in FTP shell
+
+KS 0.0.5.13, the current version
+
+We have simplified even more things, with the changes below:
+
+1. More slimming by JetBrains ReSharper for VS2017
+2. Implemented Linux hardware probing (You need to install inxi for HDD probes to work. Instructions in the "Linux probing" section of this manual.)
+3. Increased .NET requirement to 4.7 (Every user need to have 4.7 instead of 4.6 installed.)
+4. Removed warning about binding redirects in MonoDevelop (MonoDevelop is unaware...)
+5. Increased VS version requirement to VS2019 (To test features in it.)
+6. Removed annoying "Naming rule violation" by using suggested option
+
+Linux probing
+
+We are using the /proc/cpuinfo file to get information about the processor (name and clock), the /proc/meminfo file to get total memory that is installed in the system, and inxi application to get information about hard drives.
+
+But, not all distros install inxi by default, so if you don't have it installed, probing will fail. In order to install, follow below:
+
+Debian, and its derivatives:
+
+	# apt update
+	# apt install inxi
+
+Red Hat, and its derivatives:
+
+	# dnf/yum install inxi (?)
+
+OpenSUSE, and its derivatives:
+
+	# zypper install inxi (?)
+
+Arch Linux, and its derivatives:
+
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
+
+The rest, build from source and put the executable file into /usr/bin since the prober only looks in that directory, or use your package managers to install it.
+
+(?): Untested. If anybody tested, send a PR to edit this manual page with the correct commands.
 -BODY END-
 
 -SECTIONS-
@@ -700,5 +739,7 @@ KS 0.0.5.9=>SE1
 KS 0.0.5.10=>SE1
 Truth about status probing=>SE1
 KS 0.0.5.11=>SE1
-KS 0.0.5.12, the current version=>SE1
+KS 0.0.5.12=>SE1
+KS 0.0.5.13, the current version=>SE1
+Linux probing=>SE2
 -SECTIONS END-

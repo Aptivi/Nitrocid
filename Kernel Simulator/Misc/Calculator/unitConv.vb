@@ -18,7 +18,7 @@
 
 Imports Newtonsoft.Json.Linq
 
-Public Module unitConv
+Public Module UnitConv
 
     Private resultVal As Object
 
@@ -356,7 +356,7 @@ Public Module unitConv
     Sub CurrencyConvert(ByVal src3UPchars As String, ByVal dest3UPchars As String, ByVal value As Double)
 
         Try
-            Dim RateResult As String = ""
+            Dim RateResult As String
             Dim RateURL As String = "http://free.currencyconverterapi.com/api/v5/convert?q=" + src3UPchars + "_" + dest3UPchars + "&compact=y"
             Dim RateReq As HttpWebRequest = CType(WebRequest.Create(RateURL), HttpWebRequest)
             Dim RateRes As HttpWebResponse = CType(RateReq.GetResponse(), HttpWebResponse)
@@ -384,7 +384,7 @@ Public Module unitConv
 
     End Sub
 
-    Public Class currencyInfo
+    Public Class CurrencyInfo
         Public ID As String
         Public CurrencyName As String
         Public CountryName As String
@@ -404,7 +404,6 @@ Public Module unitConv
             RateToken = JToken.Parse(RateResult)
             Dim countries As JObject = RateToken.SelectToken("results")
             For Each country In countries
-                Dim countryKey As String = country.Key
                 Dim countryValue As JObject = country.Value
                 Dim currId As String = countryValue("currencyId").ToString
                 Dim currName As String = countryValue("currencyName").ToString
