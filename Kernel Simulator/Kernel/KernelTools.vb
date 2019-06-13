@@ -152,10 +152,11 @@ Public Module KernelTools
         slotsUsedName = Nothing
         slotsUsedNum = 0
         totalSlots = 0
-        AvailableDirs.Clear()
+        CurrDirStructure.Clear()
         modcmnds.Clear()
         moddefs.Clear()
         scripts.Clear()
+        paths.Clear()
         Wdbg("General variables reset")
 
         'Reset users

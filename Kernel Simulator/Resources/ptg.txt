@@ -14,16 +14,6 @@ Error while parsing real command-line arguments: {0} <=+=> Erro ao analisar argu
 Invalid color template {0} <=+=> Modelo de cor inválido {0}
 Default <=+=> Padrão
 Custom <=+=> Personalizado
-Cannot change directory to /{0} because that directory leads nowhere. <=+=> Não é possível alterar o diretório para / {0} porque esse diretório não leva a lugar nenhum.
-Kernel process PID: 1 <=+=> Processo de Kernel PID: 1
-Priority: High <=+=> Prioridade: alta
-Importance: High, and shouldn't be killed. <=+=> Importância: alta e não deve ser morta
-Login process PID: 2 <=+=> Processo de login PID: 2
-Priority: Normal <=+=> Prioridade: Normal
-UESH process PID: 3 <=+=> Processo UESH PID: 3
-Importance: Normal. <=+=> Importância: Normal.
-Short For: Unified Eofla SHell  <=+=> Short For: Unified Eofla SHELL
-There is nothing. <=+=> Não há nada.
 hwprobe: Your hardware will be probed. Please wait... <=+=> hwprobe: Seu hardware será testado. Por favor aguarde ...
 hwprobe: Hardware already probed. <=+=> hwprobe: Hardware já testado.
 hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobe: o hardware não é testado. Teste usando 'hwprobe'
@@ -350,3 +340,5 @@ This manual page title is not written <=+=> Este título da página de manual n�
 This manual page ({0}) does not contain any body text. Deleting page... <=+=> Esta página de manual ({0}) não contém nenhum texto do corpo. Excluindo a página ...
 This manual page ({0}) does not contain any section. Deleting page... <=+=> Esta página de manual ({0}) não contém nenhuma seção. Excluindo a página ...
 Running on {0} <=+=> executando em {0}
+You are not authorized to get info for {0}. <=+=> Você não está autorizado a obter informações para {0}.
+This command is obsolete and will be removed in a future release. <=+=> Este comando é obsoleto e será removido em uma versão futura.

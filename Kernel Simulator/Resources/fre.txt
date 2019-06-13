@@ -14,16 +14,6 @@ Error while parsing real command-line arguments: {0} <=+=> Erreur lors de l'anal
 Invalid color template {0} <=+=> Modèle de couleur non valide {0}
 Default <=+=> Défaut
 Custom <=+=> Douane
-Cannot change directory to /{0} because that directory leads nowhere. <=+=> Impossible de changer le répertoire en /{0} car ce répertoire ne mène nulle part.
-Kernel process PID: 1 <=+=> PID de processus du noyau: 1
-Priority: High <=+=> Priorité: élevée
-Importance: High, and shouldn't be killed. <=+=> Importance: Élevée, et ne devrait pas être tué.
-Login process PID: 2 <=+=> Processus de connexion PID: 2
-Priority: Normal <=+=> Priorité: normale
-UESH process PID: 3 <=+=> PID de processus UESH: 3
-Importance: Normal. <=+=> Importance: normale.
-Short For: Unified Eofla SHell  <=+=> Short pour: Unifié Eofla SHell
-There is nothing. <=+=> Il n'y a rien.
 hwprobe: Your hardware will be probed. Please wait... <=+=> hwprobe: Votre matériel sera sondé. S'il vous plaît, attendez...
 hwprobe: Hardware already probed. <=+=> hwprobe: le matériel a déjà été sondé.
 hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobe: le matériel n'est pas détecté. Sonde utilisant 'hwprobe'
@@ -350,3 +340,5 @@ This manual page title is not written <=+=> Ce titre de page de manuel n'est pas
 This manual page ({0}) does not contain any body text. Deleting page... <=+=> Cette page de manuel ({0}) ne contient aucun corps de texte. Suppression d'une page ...
 This manual page ({0}) does not contain any section. Deleting page... <=+=> Cette page de manuel ({0}) ne contient aucune section. Suppression d'une page ...
 Running on {0} <=+=> en cours d'exécution sur {0}
+You are not authorized to get info for {0}. <=+=> Vous n'êtes pas autorisé à obtenir des informations pour {0}.
+This command is obsolete and will be removed in a future release. <=+=> Cette commande est obsolète et sera supprimée dans une prochaine version.

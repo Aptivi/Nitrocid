@@ -14,16 +14,6 @@ Error while parsing real command-line arguments: {0} <=+=> Jiěxī shíjì mìng
 Invalid color template {0} <=+=> Wúxiào de yánsè múbǎn {0}
 Default <=+=> Mòrèn
 Custom <=+=> Xíguàn
-Cannot change directory to /{0} because that directory leads nowhere. <=+=> Wúfǎ jiāng mùlù gēnggǎi wèi /{0}, yīnwèi gāi mùlù wú chù kě xún.
-Kernel process PID: 1 <=+=> Nèihé jìnchéng PID: 1
-Priority: High <=+=> Yōuxiān jí: Gāo
-Importance: High, and shouldn't be killed. <=+=> Zhòngyào xìng: Gāo, bù yìng gāi bèi shā sǐ.
-Login process PID: 2 <=+=> Dēnglù guòchéng PID: 2
-Priority: Normal <=+=> Yōuxiān jí: Zhèngcháng
-UESH process PID: 3 <=+=> UESH guòchéng PID:3
-Importance: Normal. <=+=> Zhòngyào xìng: Zhèngcháng.
-Short For: Unified Eofla SHell  <=+=> Jiǎnchēng: Unified Eofla SHell
-There is nothing. <=+=> Kōng wú yī wù.
 hwprobe: Your hardware will be probed. Please wait... <=+=> hwprobe: Nǐ de yìngjiàn jiāng bèi tàncè. Qǐng nàixīn děngdài...
 hwprobe: Hardware already probed. <=+=> hwprobe: Yìngjiàn yǐjīng tàncèguòle.
 hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobe: Méiyǒu tàncè yìngjiàn. Shǐyòng'hwprobe'jìnxíng tàncè
@@ -350,3 +340,5 @@ This manual page title is not written <=+=> cǐ shǒucè yè biāotí wèi xiě 
 This manual page ({0}) does not contain any body text. Deleting page... <=+=> běn shǒucè yè ({0}) bù bāohán rènhé zhèngwén. Zhèngzài shānchú yèmiàn...
 This manual page ({0}) does not contain any section. Deleting page... <=+=> Běn shǒucè yè ({0}) bù bāohán rènhé bùfèn. Zhèngzài shānchú yèmiàn...
 Running on {0} <=+=> zài {0} shàng yùnxíng
+You are not authorized to get info for {0}. <=+=> Nín wú quán huòqǔ {0} de xìnxī.
+This command is obsolete and will be removed in a future release. <=+=> Cǐ mìnglìng yǐ guòshí, jiàng zài yǐhòu de bǎnběn zhōng shānchú.

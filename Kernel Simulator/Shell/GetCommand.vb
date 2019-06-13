@@ -28,6 +28,13 @@ Public Module GetCommand
         If Not (index = requestedCommand.Length) Then strArgs = strArgs.Substring(1)
         Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
         Dim Done As Boolean = False
+
+        'Check to see is a requested command is obsolete
+        If obsoleteCmds.Contains(words(0)) Then
+            Wln(DoTranslation("This command is obsolete and will be removed in a future release.", currentLang), "neutralText")
+        End If
+
+        'Execute a command
         Try
             If (requestedCommand.Substring(0, index) = "help") Then
 
@@ -91,19 +98,13 @@ Public Module GetCommand
             ElseIf (requestedCommand = "cdir") Then
 
                 'Current directory
-                Wln(DoTranslation("Current directory: {0}", currentLang), "neutralText", currDir)
+                Wln(DoTranslation("Current directory: {0}", currentLang), "neutralText", CurrDir)
                 Done = True
 
             ElseIf (requestedCommand.Substring(0, index) = "chdir") Then
 
                 If (args.Count - 1 = 0) Then
-                    If (AvailableDirs.Contains(args(0)) And currDir = "/") Then
-                        setCurrDir(args(0))
-                    ElseIf (args(0) = "..") Then
-                        setCurrDir("")
-                    Else
-                        Wln(DoTranslation("Directory {0} not found", currentLang), "neutralText", args(0))
-                    End If
+                    SetCurrDir(strArgs)
                     Done = True
                 End If
 
@@ -251,19 +252,11 @@ Public Module GetCommand
 
                 'Lists folders and files
                 If (requestedCommand = "list") Then
-                    If (currDir = "/") Then
-                        Wln(String.Join(", ", AvailableDirs), "neutralText")
-                    Else
-                        List(currDir.Substring(1))
-                    End If
+                    List(CurrDir)
                     Done = True
                 Else
                     If (args.Count - 1 = 0) Then
-                        If (AvailableDirs.Contains(args(0)) Or args(0) = ".." Or args(0) = "/" Or (AvailableDirs.Contains(args(0).Substring(1)) And (args(0).StartsWith("/") Or args(0).StartsWith("..")))) Then
-                            List(args(0))
-                        Else
-                            Wln(DoTranslation("Directory {0} not found", currentLang), "neutralText", args(0))
-                        End If
+                        List(strArgs)
                         Done = True
                     End If
                 End If
@@ -313,7 +306,13 @@ Public Module GetCommand
 
                 If (requestedCommand <> "md") Then
                     If (args.Count - 1 = 0) Then
-                        AvailableDirs.Add(args(0))
+                        Dim Direct As String
+                        If EnvironmentOSType.Contains("Unix") Then
+                            Direct = CurrDir + "/" + strArgs
+                        Else
+                            Direct = CurrDir + "\" + strArgs
+                        End If
+                        Directory.CreateDirectory(Direct)
                         Done = True
                     End If
                 End If
@@ -348,10 +347,10 @@ Public Module GetCommand
 
                 If (requestedCommand <> "read") Then
                     If (args.Count - 1 = 0) Then
-                        If (AvailableFiles.Contains(args(0))) Then
-                            readContents(args(0))
+                        If (CurrDirStructure.Contains(CurrDir + strArgs)) Then
+                            ReadContents(CurrDir + strArgs)
                         Else
-                            Wln(DoTranslation("{0} is not found.", currentLang), "neutralText", args(0))
+                            Wln(DoTranslation("{0} is not found.", currentLang), "neutralText", strArgs)
                         End If
                         Done = True
                     End If
@@ -385,8 +384,14 @@ Public Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "rd") Then
 
                 If (requestedCommand <> "rd") Then
-                    If (args.Count - 1 = 0) Then
-                        AvailableDirs.Remove(args(0))
+                    If (args.Count - 1 >= 0) Then
+                        Dim Direct As String
+                        If EnvironmentOSType.Contains("Unix") Then
+                            Direct = CurrDir + "/" + strArgs
+                        Else
+                            Direct = CurrDir + "\" + strArgs
+                        End If
+                        Directory.Delete(Direct, True)
                         Done = True
                     End If
                 End If

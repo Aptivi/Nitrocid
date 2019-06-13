@@ -14,16 +14,6 @@ Error while parsing real command-line arguments: {0} <=+=> asalee kamaand lain t
 Invalid color template {0} <=+=> amaany rang tempalet {0}
 Default <=+=> difolt
 Custom <=+=> kastam
-Cannot change directory to /{0} because that directory leads nowhere. <=+=> nirdeshika ko / {0} mein parivartit nahin kar sakata kyonki vah nirdeshika kaheen bhee nahin jaatee hai.
-Kernel process PID: 1 <=+=> karnel prakriya peeaeedee: 1
-Priority: High <=+=> praathamikata: uchch
-Importance: High, and shouldn't be killed. <=+=> mahatv: uchch, aur maara nahin jaana chaahie.
-Login process PID: 2 <=+=> login prakriya peeaeedee: 2
-Priority: Normal <=+=> praathamikata: saamaany
-UESH process PID: 3 <=+=> UESH prakriya peeaeedee: 3
-Importance: Normal. <=+=> mahatv: saamaany.
-Short For: Unified Eofla SHell  <=+=> laghu ke lie: Unified Eofla SHell
-There is nothing. <=+=> vahaan kuchh bhee nahin hai.
 hwprobe: Your hardware will be probed. Please wait... <=+=> hwprobai: aapake haardaveyar kee jaanch kee jaegee. krpaya prateeksha karen ...
 hwprobe: Hardware already probed. <=+=> hwprobai: haardaveyar pahale se hee jaanch kee hai.
 hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobai: haardaveyar kee jaanch nahin kee jaatee hai. 'hwprobe' ka upayog kar jaanch karen
@@ -350,3 +340,5 @@ This manual page title is not written <=+=> yah mainual pej sheershak likha nahi
 This manual page ({0}) does not contain any body text. Deleting page... <=+=> yah mainual pej ({0}) mein koee bhee bodee tekst nahin hai. pej hataana ...
 This manual page ({0}) does not contain any section. Deleting page... <=+=> yah mainual pej ({0}) mein koee bhee anubhaag nahin hai. pej hataana ...
 Running on {0} <=+=> {0} par chal rahee hain
+You are not authorized to get info for {0}. <=+=> aap {0} ke lie jaanakaaree praapt karane ke lie adhikrt nahin hain.
+This command is obsolete and will be removed in a future release. <=+=> yah kamaand aprachalit hai aur bhavishy ke rileez mein hata dee jaegee.

@@ -29,6 +29,7 @@ Public Module Shell
                                             "lockscreen", "setsaver", "reloadsaver", "noaliases", "ftp", "useddeps", "usermanual", "currency"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver"}
+    Public obsoleteCmds() As String = {"cdir"}
     Public modcmnds As New ArrayList
 
     'For contributors: For each added command, you should also add a command in availableCommands array so there is no problems detecting your new command.
@@ -111,11 +112,11 @@ Public Module Shell
     Public Sub CommandPromptWrite()
 
         If adminList(signedinusrnm) = True Then
-            W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} # ", "def", currDir)
+            W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} # ", "def", CurrDir)
         ElseIf (maintenance = True) Then
             W("Maintenance Mode>", "def")
         Else
-            W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} $ ", "def", currDir)
+            W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} $ ", "def", CurrDir)
         End If
 
     End Sub

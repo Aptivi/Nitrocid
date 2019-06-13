@@ -24,7 +24,7 @@ Public Module HelpSystem
                                                                   {"arginj", DoTranslation("Injects arguments to the kernel (reboot required, admins only)", currentLang)},
                                                                   {"calc", DoTranslation("Simple calculator", currentLang)},
                                                                   {"cdir", DoTranslation("Shows current directory", currentLang)},
-                                                                  {"changedir", DoTranslation("Changes directory", currentLang)},
+                                                                  {"chdir", DoTranslation("Changes directory", currentLang)},
                                                                   {"chhostname", DoTranslation("Changes host name (Admins only)", currentLang)},
                                                                   {"chmal", DoTranslation("Changes MAL, the MOTD After Login (Admins only)", currentLang)},
                                                                   {"chmotd", DoTranslation("Changes MOTD, the Message Of The Day (Admins only)", currentLang)},

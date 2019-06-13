@@ -18,7 +18,7 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - This version is the beta version so expect some bugs and instabilities. If you have experienced one, send a bug report to GitHub with stack trace and debugging logs.
 
-- Expect the 0.0.6 version to be frozen, because our build laptop is slow and we don't have enough resources at this time. Whenever we get the faster Windows 10 computer, we will stop the beta releases for 0.0.6 and finish all the tasks required to shape the future of 0.0.6.
+- This is the last beta build of 0.0.6, because we got a faster Windows 10 computer to continue working on.
 
 ## |-----+--> _Prerequisites_ <--+-----|
 
@@ -125,6 +125,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **2/22/2019 - 0.0.5.12:** Now createConf cmdline arg only creates config if the config file isn't found, Some preparations for 0.0.6 (slimming down only), Removed the GPU and BIOS probing, Now older KS config won't be allowed to be updated here (Workaround: You need to remove your old KS config file and re-run the app), Fixed the Environment.OS bug on Windows 10 (10.0) where it returns Windows 8 (6.2) version, Fixed the placeholders not parsing when using showmotd/showmal command, Fixed the simple help not showing mods, Fixed built-in commands not running after you run mod commands or alias commands, Fixed NullReferenceException when debugging, Improved alias listing, Fixed the printing text exception message not translating to current language, Fixed the "/" or "\" appearing before the modname when probing mods and screensavers, Removed unnecessary fixup in translation, Fixed more stack overflows in FTP shell, Fixed the FTP message translation translating "'help'" as the language when it's supposed to be a command, Fixed the command not found message when not entering anything in FTP shell
 
 **4/14/2019 - 0.0.5.13:** More slimming by JetBrains ReSharper for VS2017, Implemented Linux hardware probing (You need to install inxi for HDD probes to work), Increased .NET requirement to 4.7, Removed warning about binding redirects in MonoDevelop, Increased VS version requirement to VS2019, Removed annoying "Naming rule violation" by using suggested option
+
+**6/13/2019 - 0.0.5.14:** Replaced fake file system with real one (access to your files), Fixed the wrong `changedir` help command being shown instead of `chdir`, `cdir,` which shows the current directory, is now obsolete, Fixed crash while rebooting the kernel
 
 ## |-----+--> _Manual pages_ <--+-----|
 

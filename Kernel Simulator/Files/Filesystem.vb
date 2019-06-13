@@ -19,74 +19,87 @@
 Public Module Filesystem
 
     'Variables
-    'TODO: Change the file system to real file system in 0.0.5.13
-    Public AvailableFiles() As String = {"loader", "libuesh.elb", "kernel", "login", "uesh"}
-    Public currDir As String = "/"
-    Public AvailableDirs As New List(Of String)
+    Public CurrDirStructure As New List(Of String)
+    Public CurrDir As String
 
+    'Subs
     Public Sub SetCurrDir(ByVal dir As String)
-        If (AvailableDirs.Contains(dir)) Then
-            currDir = "/" + dir
-        ElseIf (dir = "") Then
-            currDir = "/"
+        Dim direct As String
+        If EnvironmentOSType.Contains("Unix") Then
+            direct = CurrDir + "/" + dir
         Else
-            Wln(DoTranslation("Cannot change directory to /{0} because that directory leads nowhere.", currentLang), "neutralText", dir)
+            direct = CurrDir + "\" + dir
+        End If
+        If IO.Directory.Exists(direct) Then
+            Dim Parser As New IO.DirectoryInfo(direct)
+            CurrDir = Parser.FullName
+            InitStructure()
+        Else
+            Wln(DoTranslation("Directory {0} not found", currentLang), "neutralText", dir)
         End If
     End Sub
     Public Sub ReadContents(ByVal filename As String)
-        If (filename = "loader") Then
-
-            Wln("Boot_Version = {0}", "neutralText", KernelVersion)
-
-        ElseIf (filename = "libuesh.elb") Then
-
-            Wln("[startelb]=ueshlib-<UESH Library Version {0}>-", "neutralText", KernelVersion)
-
-        ElseIf (filename = "kernel") Then
-
-            Wln(DoTranslation("Kernel process PID: 1", currentLang) + vbNewLine +
-                DoTranslation("Priority: High", currentLang) + vbNewLine +
-                DoTranslation("Importance: High, and shouldn't be killed.", currentLang), "neutralText")
-
-        ElseIf (filename = "login") Then
-
-            Wln(DoTranslation("Login process PID: 2", currentLang) + vbNewLine +
-                DoTranslation("Priority: Normal", currentLang) + vbNewLine +
-                DoTranslation("Importance: High, and shouldn't be killed.", currentLang), "neutralText")
-
-        ElseIf (filename = "uesh") Then
-
-            Wln(DoTranslation("UESH process PID: 3", currentLang) + vbNewLine +
-                DoTranslation("Priority: Normal", currentLang) + vbNewLine +
-                DoTranslation("Importance: Normal.", currentLang) + vbNewLine +
-                DoTranslation("Short For: Unified Eofla SHell", currentLang), "neutralText")
-
-        End If
+        Using FStream As New IO.StreamReader(filename)
+            While Not FStream.EndOfStream
+                Wln(FStream.ReadLine, "neutralText")
+            End While
+        End Using
     End Sub
     Public Sub Init()
-        AvailableDirs.AddRange({"boot", "bin", "dev", "etc", "lib", "proc", "usr", "var"})
+        If EnvironmentOSType.Contains("Unix") Then
+            CurrDir = Environ("HOME")
+        Else
+            CurrDir = Environ("USERPROFILE")
+        End If
+        InitStructure()
+    End Sub
+    Public Sub InitStructure()
+        CurrDirStructure.AddRange(IO.Directory.EnumerateFileSystemEntries(CurrDir, "*", IO.SearchOption.TopDirectoryOnly))
+        CurrDirStructure.Add(CurrDir)
     End Sub
     Public Sub List(ByVal folder As String)
-        If (folder = "bin" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "bin") Then
-            Wln(String.Join("* ", availableCommands) + "*", "neutralText")
-        ElseIf (folder = "boot" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "boot") Then
-            Wln("loader~", "neutralText")
-        ElseIf (folder = "dev" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "dev") Then
-            Wln("{0}", "neutralText", slotsUsedName)
-        ElseIf (folder = "etc" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "etc") Then
-            Wln(DoTranslation("There is nothing.", currentLang), "neutralText")
-        ElseIf (folder = "lib" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "lib") Then
-            Wln("libuesh.elb", "neutralText")
-        ElseIf (folder = "proc" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "proc") Then
-            Wln("kernel~ login~ uesh~", "neutralText")
-        ElseIf (folder = "usr" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "usr") Then
-            Wln(DoTranslation("There is nothing.", currentLang), "neutralText")
-        ElseIf (folder = "var" Or (folder.StartsWith("/") Or folder.StartsWith("..")) And folder.Substring(1) = "var") Then
-            Wln(DoTranslation("There is nothing.", currentLang), "neutralText")
-        ElseIf (folder = ".." Or folder = "/") Then
-            Wln(String.Join(", ", AvailableDirs), "neutralText")
+        If Not folder = CurrDir Then folder = CurrDir + folder
+        If CurrDirStructure.Contains(folder) Then
+            If IO.Directory.Exists(folder) Then
+                For Each Entry As String In IO.Directory.EnumerateFileSystemEntries(folder)
+                    Try
+                        If IO.File.Exists(Entry) Then
+                            Dim FInfo As New IO.FileInfo(Entry)
+
+                            'Print information
+                            Wln("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), "neutralText",
+                                FormatNumber(FInfo.Length / 1024, 2),
+                                FormatDateTime(FInfo.CreationTime, DateFormat.ShortDate),
+                                FormatDateTime(FInfo.CreationTime, DateFormat.ShortTime),
+                                FormatDateTime(FInfo.LastWriteTime, DateFormat.ShortDate),
+                                FormatDateTime(FInfo.LastWriteTime, DateFormat.ShortTime))
+                        ElseIf IO.Directory.Exists(Entry) Then
+                            Dim DInfo As New IO.DirectoryInfo(Entry)
+
+                            'Get all file sizes in a folder
+                            Dim Files As List(Of IO.FileInfo) = DInfo.EnumerateFiles("*", IO.SearchOption.AllDirectories).ToList
+                            Dim TotalSize As Long = 0 'In bytes
+                            For Each DFile As IO.FileInfo In Files
+                                TotalSize += DFile.Length
+                            Next
+
+                            'Print information
+                            Wln("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), "neutralText",
+                                FormatNumber(TotalSize / 1024, 2),
+                                FormatDateTime(DInfo.CreationTime, DateFormat.ShortDate),
+                                FormatDateTime(DInfo.CreationTime, DateFormat.ShortTime),
+                                FormatDateTime(DInfo.LastWriteTime, DateFormat.ShortDate),
+                                FormatDateTime(DInfo.LastWriteTime, DateFormat.ShortTime))
+                        End If
+                    Catch ex As UnauthorizedAccessException 'Error while getting info
+                        Wln("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), "neutralText", Entry)
+                    End Try
+                Next
+            Else
+                Wln(DoTranslation("Directory {0} not found", currentLang), "neutralText", folder)
+            End If
         Else
-            Wln(DoTranslation("There is nothing.", currentLang), "neutralText")
+            Wln(DoTranslation("{0} is not found.", currentLang), "neutralText", folder)
         End If
     End Sub
 
