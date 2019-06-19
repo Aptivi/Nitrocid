@@ -74,6 +74,7 @@ Public Module Config
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Misc",
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", CornerTD),
+                        New IniKey(ksconf, "Screensaver", defSaverName),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             Else
                 'The General Section
@@ -126,6 +127,7 @@ Public Module Config
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Misc",
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", "False"),
+                        New IniKey(ksconf, "Screensaver", "matrix"),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
@@ -193,6 +195,7 @@ Public Module Config
                 ColoredShell = False
             End If
             If (availableLangs.Contains(Lang_TBA)) Then currentLang = Lang_TBA
+            InitHelp()
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wdbg(ex.StackTrace, True)
@@ -245,6 +248,7 @@ Public Module Config
 
             'Misc Section
             If (configReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True") Then CornerTD = True Else CornerTD = False
+            defSaverName = configReader.Sections("Misc").Keys("Screensaver").Value
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wdbg(ex.StackTrace, True)

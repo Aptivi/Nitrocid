@@ -14,7 +14,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-'TODO: Change app icon in 0.0.6
 Imports System.Reflection.Assembly
 
 Public Module Kernel
@@ -87,7 +86,7 @@ Public Module Kernel
             If (DebugMode = True) Then
                 Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
             End If
-            KernelError(CChar("U"), True, 5, DoTranslation("Kernel Error while booting: {0}", currentLang), Err.Description)
+            KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}", currentLang), ex, Err.Description)
         End Try
     End Sub
 

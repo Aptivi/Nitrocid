@@ -1,0 +1,346 @@
+﻿Käytettävissä olevat komennot: {0}
+Kirjoita komento:
+Komentosuihku on peruutettu.
+Erota käynnistysasetukset pilkuilla ilman välilyöntejä, esimerkiksi "motd, gpuprobe"
+Erota komennot 'cmdinject': llä kolonkeilla, joissa on välilyöntejä, esimerkiksi 'cmdinject setthemes Hacker: beep 1024 0.5'
+Huomaa, että debug-argumentti ei kata kokonaan ytimiä.
+bargs: Pyydettyä argumenttia {0} ei löydy.
+bargs: Palautumaton virhe argumentissa:
+Saatavilla olevat argumentit: {0}
+Argumentit ('help' en ohje):
+Injektoidut argumentit ajoitetaan seuraavassa uudelleenkäynnistyksessä.
+Argumentin ruiskutus on peruutettu.
+Virhe todellisia komentorivin argumentteja jäsennettäessä: {0}
+Virheellinen värimalli {0}
+oletusarvo
+asiakassuhde
+hwprobe: Laitteesi testataan. Odota...
+hwprobe: Laitteisto on jo testattu.
+hwprobe: Laitteistoa ei testata. Koettele hwprobe
+CPU: Yksi tai useampi CPU-ytimestä ei ole testattu. Näytetään tiedot joka tapauksessa ...
+RAM: Yksi tai useampi RAM-siru epäonnistui. Näytetään tiedot joka tapauksessa ...
+HDD: Yksi tai useampia kiintolevyjä ei voitu testata. Näytetään tiedot joka tapauksessa ...
+CPU: Prosessorien kokonaismäärä: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: Käytetyt lähtöpaikat (nimien mukaan): {0}
+RAM: Käytetyt lähtöpaikat (numeroiden mukaan): {0} / {1} ({2}%)
+RAM: koetuksen tila on vanhentunut ja poistetaan tulevassa versiossa.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} sylinterit | {5} pää | {6} alat
+HDD: CHS: {3} sylinterit | {4} päätä {5} alat
+hwprobe: Koetusta ei tueta, koska sitä ei ole suunniteltu suorittamaan koettimia Unixissa.
+Anna ylläpitäjän admin-salasana.
+Luettelossa ei ole enää käyttäjiä.
+Ytimen virhe käynnistyksen aikana: {0}
+DOUBLE PANIC: Reboot Time ylittää sallitun {0} virheen uudelleenkäynnistysajan. Löysit ytimen virheen.
+[{0}] paniikki: Käynnistä uudelleen käynnistys, koska virhetaso on {0}.
+[{0}] paniikki: Käynnistysaika: {1} sekuntia, yli 1 tunti. Se on asetettu 1 minuutiksi.
+DOUBLE PANIC: Virhetyyppi {0} on virheellinen.
+[{0}] dpanic: {1} - Käynnistys uudelleen {2} sekunnissa ...
+[{0}] paniikki: Käynnistä uudelleen käytöstä poisto, koska virhetaso on {0}.
+[{0}] paniikki: {1} - Paina mitä tahansa näppäintä jatkaaksesi ytimen käyttöä.
+[{0}] paniikki: {1} - Paina mitä tahansa näppäintä sammuttamiseen.
+[{0}] paniikki: {1} - uudelleen käynnistäminen {2} sekunnissa ...
+DOUBLE PANIC: Kernel-virhe: {0}
+Sammutetaan...
+Uudelleenkäynnistystä ...
+---===+++> Tervetuloa ytimeen Versio {0} <+++===---
+Toinen Kernel Simulatorin esiintymä on käynnissä. Sammuta häiriötilanteessa.
+Käyttäjä {0} on lisätty hallintaluetteloon.
+Käyttäjä {0} on lisätty estettyyn luetteloon.
+Käyttäjän lisääminen lupaluetteloon epäonnistui: virheellinen tyyppi {0}
+Käyttäjän lisääminen lupaluetteloon epäonnistui: virheellinen käyttäjä {0}
+Käyttäjä {0} on poistettu hallintaluettelosta.
+Käyttäjä {0} on poistettu käytöstä poistetusta luettelosta.
+Käyttäjien poistaminen lupaluetteloista epäonnistui: virheellinen tyyppi {0}
+Olet jo kirjautunut sisään.
+Käyttäjien poistaminen lupaluetteloista epäonnistui: virheellinen käyttäjä {0}
+Olet löytänyt virheen lupajärjestelmässä: virheellinen tila {0}
+Olet joko löytänyt virheen, tai lupaa, jonka yritit lisätä tai poistaa, on jo tehty, tai muu virhe.
+Virhe {0}: {1}
+Olet löytänyt virheen, tai lupa, jonka yritit muokata uudelle käyttäjälle, on epäonnistunut.
+Käytettävissä olevat käyttäjätunnukset: {0}
+Käyttäjätunnus:
+Tilat eivät ole sallittuja.
+Erikoismerkit eivät ole sallittuja.
+{0}: n salasana:
+Väärä salasana.
+Käyttäjä on poistettu käytöstä.
+Väärä käyttäjätunnus.
+Virhe yrittää jäsentää paikkamerkkejä. {0} - Stack-jälki:
+Virhe yrittää jäsentää paikkamerkkejä. {0}
+Virhe yrittäessäsi lisätä käyttäjätunnusta.
+usrmgr: Käyttäjätunnuksen {0} luominen ...
+Tyhjä käyttäjätunnus.
+Käyttäjää {0} ei löytynyt.
+Käyttäjää {0} ei saa poistaa.
+Käyttäjä {0} on jo kirjautunut sisään. Kirjaudu ulos ja kirjaudu sisään toiseen ylläpitäjään.
+Käyttäjä {0} poistettu.
+Virhe yrittäessäsi poistaa käyttäjätunnuksen.
+{0} {1} = {2}
+Yhteenveto nollaan ei ole sallittua.
+On epäilty yritys yrittää laskea, mikä johti ylivuotoon.
+Laskennassa on virhe: {0}
+{0} ei voi muuntaa {1}.
+Joko lähde
+ tai kohde
+ ei ole palvelimessa.
+{0} - {1}: {2}
+Virhe yrittäessäsi muuntaa osoitteesta {0} {1}: {2}
+Virhe
+Pyydettyä näytönsäästäjää {0} ei löydy.
+{0} on alustettu oikein.
+{0} ei alustettu. Näytönsäästäjän koodi saattaa olla kokenut virheen alustuksen aikana.
+Näytönsäästäjä {0} ei ole olemassa.
+{0} on asetettu oletusnäyttöön.
+Näytönsäästäjä {0} ei löydy tietokannasta. Alusta "loadaver {0}".
+Näytönsäästäjää ei voi ladata seuraavista syistä:
+Tulostettaessa tekstiä on vakava virhe.
+Konfigurointia yritettäessä luodaan virhe.
+Konfigurointia yritettäessä luodaan virhe: {0}
+Päivitys {0} - {1} havaittiin. Asetusten päivittäminen ...
+Konfigurointia yritettäessä päivitetään virhe: {0}.
+Konfigurointia yritettäessä päivitetään virhe.
+Konfigurointia yritettäessä luetaan virhe.
+Määrityksiä luettaessa yritetään virhe: {0}
+Virhe RAM-muistia yritettäessä: {0} - jatkuu ...
+Modia ei voi ladata, koska:
+mod: Moduulien lataaminen ...
+mod: Moduulien pysäyttäminen ...
+Mod {0}: lla ei ole nimeä. Tarkista lähdekoodi.
+Mod {0}: lla ei ole versiota.
+{0} v {1} aloitettiin
+Komentoa {0} ei ole määritelty.
+Komento määrittämä
+Sinun pitäisi katkaista palvelin ennen yhteyden muodostamista toiseen palvelimeen
+Käyttäjänimi {0}:
+Salasana {0}:
+Yhdistetty {0}
+Virhe yrittäessäsi muodostaa yhteyden {0}: {1}
+Pino Trace: {2}
+Syötä FTP-palvelin, joka alkaa "ftp://" tai "ftps://"
+Paikallista hakemistoa {0} ei ole olemassa.
+Anna paikallinen hakemisto. ".." Mennä takaisin.
+Hakemistoa {0} ei löytynyt.
+Anna etähakemisto. ".." Mennä takaisin
+Sinun on muodostettava yhteys palvelimeen ennen hakemiston vaihtamista
+Paikallinen hakemisto: {0}
+Etäkansio: {0}
+Sinun on muodostettava yhteys palvelimeen ennen nykyisen etäkansion hakemista.
+Tiedoston {0} poistaminen ...
+Haluatko varmasti poistaa tiedoston {0} <y/n>?
+Poistettu tiedosto {0}
+Sinun täytyy muodostaa yhteys palvelimeen, jolla on järjestelmänvalvojan oikeudet, ennen kuin poistat sen.
+Anna poistettava tiedosto.
+Sinun täytyy olla järjestelmänvalvojan oikeudet kirjautuneessa käyttäjätunnuksessasi, jotta voit poistaa ne.
+Irrotettu osoitteesta {0}
+Et ole vielä liittynyt mihinkään palvelimeen
+Ladataan tiedostoa {0} ...
+Hash-tila:
+REMOTE: {0} ({1})
+Ladattu tiedosto {0}.
+Lataus epäonnistui tiedostoon {0}, koska paikallinen tiedosto on vioittunut.
+Ladattu tiedosto {0} tarkistamatta summaa. Tämä tiedosto saattaa olla vioittunut.
+Sinun on muodostettava yhteys palvelimeen ennen lähetyksen suorittamista.
+Syötä ladattava tiedosto paikalliseen hakemistoon.
+{0} | Muutettu: {1}
+Sinun pitäisi muodostaa yhteys palvelimeen, ennen kuin luet kaikki etätiedostot.
+Tiedoston {0} nimeäminen {1}: ksi ...
+Nimeä uudelleen onnistuneesti
+Anna tiedosto ja uusi tiedostonimi.
+Tiedoston {0} lataaminen ...
+Ladattu tiedosto {0}
+Anna tiedosto, jonka haluat ladata etäkansioon. lataa <tiedosto> <hakemisto>
+Virhe FTP-komentoa suoritettaessa
+(Sisäinen:
+{0} kansioita, {1} tiedostoja
+(Pääsy evätty)
+{0} KB, luotu {1} {2}, muokattu osoitteessa {3} {4}
+Saat nykyisen paikallisen hakemiston
+Saat nykyisen etäkansion
+Yhdistyy FTP-palvelimeen (sen on aloitettava "ftp://" tai "ftps://")
+Muuttaa paikallisen hakemiston lataamista tai lataamista varten
+Muuttaa etäkansion hakemaan tai lataamaan
+Poistaa etätiedoston palvelimesta
+Katkaisee palvelimen
+Lataaa etätiedoston paikalliselle hakemistolle binäärisen tai tekstin avulla
+Poistu FTP-kuoresta ja palaa ytimeen
+Näyttää ohjeenäytön
+Luettelee paikallisen hakemiston
+Luettelee etäkansion
+Nimeää tietyn tiedoston tai hakemiston uudelleen
+Lähettää paikallisen tiedoston etähakemistoon binäärisen tai tekstin avulla
+FTP-kuoressa oli virhe.
+FTP-viesti: Pyydettyä komentoa {0} ei löydy. Katso ohjeet 'FTP-kuoressa määritettyjen käytettävissä olevien komentojen luettelosta.
+net: Vastaa {0} {1} ms: ssa
+Ajastettu, katkaistu tai palvelin offline-tilassa.
+verkko: Tietokoneen nimi verkossa on {0}
+net: Isäntänimesi on {1}
+net: Näyttää siltä, ​​että tietokoneet ovat verkkotunnuksessa tai työryhmässä:
+net: WiFi tai Ethernet on katkaistu.
+net: Näyttää siltä, ​​että tietokoneet on kytketty alla:
+net: Reitittimen osoite: {0}
+Sovittimen {0} ominaisuuksien saaminen epäonnistui
+Sovittimen numero:
+Adapterin nimi:
+Suurin lähetysyksikkö: {2} Yksiköt
+DHCP käytössä:
+Ei-unicast-paketit:
+Unicast-paketit:
+Virhe saapuvissa / lähtevissä paketeissa:
+Alias ​​ei voi olla sama nimi kuin komennolla.
+Komennosta ei löydy aliasista {0}.
+Aliasing {0} - {1} on kielletty kokonaan.
+Nyt voit suorittaa "{0}" komentona: "{1}".
+Et voi enää käyttää komentoa "{0}" komennona "{1}".
+Alias ​​{0} ei löydy poistetuksi.
+Virheellinen tila {0}.
+Injektoidut argumentit, {0}, ajetaan seuraavan uudelleenkäynnistyksen aikana.
+Väitteitä ei ollut riittävästi. Katso alla oleva käyttö:
+Hakemistoa {0} ei löytynyt
+Tyhjä isäntänimi.
+Vaihtaminen: {0} - {1} ...
+Päivän tyhjä viesti.
+Tyhjä MAL kirjautumisen jälkeen.
+MAL: n muuttaminen {0}: sta {1}: ksi ...
+Väärä käyttäjän salasana.
+Salasanat eivät vastaa.
+Käyttäjätunnus on muutettu {0}!
+Annettu uusi nimi on jo löydetty.
+Tietokoneiden luettelointia ei vielä tueta Unixissa.
+Alias, jotka ovat kiellettyjä: {0}
+{0} ei löydy.
+Konfigurointi ladataan uudelleen. Jotta muutokset voisivat tulla voimaan, saatat joutua käynnistämään ytimen uudelleen.
+Kaikki palautuu normaaleihin asetuksiin.
+Yksi tai useampi väri on virheellinen.
+Värit eivät ole käytettävissä. Kytke värillinen kuori ytimen kokoonpanossa.
+Näytönsäästäjä {0} ei löydy.
+{0}[Ytimen asetukset (käynnissä {1})]
+Ytimen versio:
+Debug-tilassa:
+Värillinen kuori:
+Argumentit käynnistettäessä:
+Ohjekomento yksinkertaistettu:
+MOTD kirjautumisessa:
+Aika / päivä kulmassa:
+Laitteisto on testattu:
+Nykyinen teema:
+[Laitteiston asetukset] {0}
+{0}[Käyttäjän asetukset]
+Nykyinen käyttäjänimi:
+Nykyinen isäntänimi:
+Käytettävissä olevat käyttäjätunnukset:
+Tietokoneen isäntänimi:
+{0}[Viestiasetukset]
+Lähdekoodi:
+Tekijänoikeus (c)
+lisenssi
+esittää
+Virhe komentoa suoritettaessa
+Lisää käyttäjiä (Vain käyttäjät voivat käyttää tätä komentoa)
+Lisää komentoja varten aliaksia (vain pääkäyttäjät voivat käyttää tätä komentoa)
+Injisoi argumentit ytimeen (käynnistä uudelleen, vain järjestelmänvalvojat)
+Yksinkertainen laskin
+Muuttaa hakemistoa
+Muuttaa isäntänimeä (vain ylläpitäjät)
+Muutokset MAL, MOTD kirjautumisen jälkeen (vain ylläpitäjät)
+Muutokset MOTD, päivän viesti (vain ylläpitäjät)
+Muuttaa nykyisen käyttäjän salasanaa
+Muuttaa käyttäjänimeä (vain ylläpitäjät)
+Tyhjentää näytön
+Muunna valuutta
+Näyttää virheenkorjauslokit (vain ylläpitäjät)
+Käytä FTP-kuoria vuorovaikutuksessa palvelimien kanssa
+Ohje-sivu
+Anturin laitteisto manuaalisesti (kerran nohwprobe-ytimessä)
+Luettele tiedoston / kansion sisältö nykyiseen kansioon
+Lataa uudelleen näytönsäästäjän tiedosto %USERPROFILE%\KSMods
+Lukitsee näytön salasanalla
+Kirjaa sinut ulos
+Luettelee kaikki verkkolaitteet, jotka ovat verkossa (ja offline-tilassa)
+Luettelee kaikki isäntänä olevat verkko-osoitteet
+Luettelee kaikki verkko-osoitteet isäntänä puun avulla
+Luo hakemiston
+Luettelee tiedot kaikista käytettävissä olevista rajapinnoista
+Näyttää kielletyn luettelon aliaksista
+Hallinnoi käyttäjien oikeuksia (Vain käyttäjät voivat käyttää tätä komentoa)
+Tarkista, onko määritetty osoite käytettävissä
+Kirjoittaa tiedoston sisällön konsoliin
+Käynnistää tietokoneen uudelleen (VAROITUS: Ei synkronointia, koska se ei ole lopullinen ydin)
+Lataa muokattu kokoonpanotiedosto uudelleen.
+Poistaa hakemiston
+Poistaa käyttäjän luettelosta (vain ylläpitäjät)
+Tallentaa näytön polttovälineistä
+Tieteellinen laskin. Yksikkömuunnin on erotettu toiseen komentoon
+Määrittää ytimen värit
+Määrittää ytimen näytönsäästäjät
+Määrittää ytimen teemat
+Näyttää aliakset
+Näyttää MOTD: n käyttäjän tai ytimen asettaman kirjautumisen jälkeen
+Näyttää käyttäjän tai ytimen asettaman päivän viestin
+Näyttää päivämäärän ja kellonajan
+Näyttää päivämäärän ja kellonajan alueilla
+Ydin suljetaan
+Järjestelmätiedot
+Yksikkömuunnin, joka on erotettu sciccista.
+Näyttää käytettyjen avoimen lähdekoodin riippuvuudet
+Erittäin kuvaileva käyttöohje.
+* Voit käyttää komentoja useiden komentojen avulla kaksoispisteellä.
+Käytettävissä olevat komennot:
+Mod-komennot:
+Alias-komennot:
+Käyttö:
+Argumentit erotetaan pilkulla
+missä argumentit ovat {0}
+saat nykyisen hakemiston
+Missä lähteessä ja määränpäässä on 3 valuuttakurssin YLIMÄÄRÄ-merkkiä
+Luettelo kaikista tunnisteista ja nimistä:
+Näyttää lokitiedostot, jotta voit lähettää lokin meille.
+Alustaa FTP-kuoren.
+Koettimien laitteisto (toimii vain, kun laitteistoa ei ole testattu ja hwprobe ei ole suoritettu).
+Luettelee sekä verkkotiedot että kaikki verkkoon liitetyt tietokoneet.
+Ystävät
+Luettelee sekä verkkotiedot että kaikki verkkoon liitetyt tietokoneet puumuodossa.
+Luettelee sekä verkkotiedot että jokainen tietokone.
+missä modnameSS.m on
+Lukitsee näytön salasanalla.
+Kirjaudu ulos käyttäjältä.
+Hanki kaikki verkkotiedot
+Käynnistää simuloidun tietokoneen uudelleen.
+Lataa uudelleen loppukäyttäjän tai työkalun muuttama kokoonpano.
+Värit eivät vaadi uudelleenkäynnistystä, mutta useimmat asetukset edellyttävät uudelleen käynnistämistä.
+näyttää valitun näytönsäästäjän, samalla kun suojaat näytön palovammoja.
+Näyttää päivämäärän ja kellonajan.
+Näyttää päivämäärän ja kellonajan alueilla.
+Sammuttaa simuloidun tietokoneen.
+Näyttää järjestelmän tiedot ja versiot.
+Näyttää avoimen lähdekoodin kirjastot
+Kuoressa oli virhe.
+Sinulla ei ole oikeutta käyttää {0}
+Kuorosanoma: Pyydettyä komentoa {0} ei saa käyttää huoltotilassa.
+Shell-viesti: Pyydettyä komentoa {0} ei löydy. Katso käytettävissä olevat komennot ohjeesta.
+Shell-viesti: Komentoa {0} ei saa käyttää kirjautumalla.
+Shell-viesti: Pyydettyä komentoa {0} ei löydy.
+Virhe komentoa suoritettaessa.
+datetime: Aika on {0}
+datetime: Tänään on {0}
+datetime: Aikavyöhyke: {0}
+- {0} aika: {1}
+tyhjentää näytön.
+Näyttää siltä, ​​että manuaalista sivua {0} ei löydy.
+Manuaalisen sivun lataamisessa on virhe {0}, koska {1}.
+Tämä manuaalinen sivu on epätäydellinen seuraavista syistä:
+Paina mitä tahansa näppäintä jatkaaksesi...
+ | {0} sanat Versio v {1} | {2} jaksot
+Tätä manuaalista sivun nimeä ei ole kirjoitettu
+Tämä manuaalinen sivu ({0}) ei sisällä kehon tekstiä. Sivun poistaminen ...
+Tämä manuaalinen sivu ({0}) ei sisällä osia. Sivun poistaminen ...
+Käynnissä {0}
+Sinulla ei ole oikeutta saada tietoa {0}.
+Tämä komento on vanhentunut ja se poistetaan tulevassa versiossa.
+Sinulla ei ole oikeutta muuttaa salasanaa {0}, koska kohde oli admin.
+Muunna rahamäärä maasta toiseen
+Valuutat:
+usrmgr: Käyttäjätunnus {0} on jo löydetty

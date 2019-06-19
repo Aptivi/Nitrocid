@@ -1,344 +1,346 @@
-﻿Available commands: {0} <=+=> Kěyòng mìnglìng: {0}
-Write command:  <=+=> Xiě mìnglìng: 
-Command injection has been cancelled. <=+=> Mìnglìng zhùrù yǐ bèi qǔxiāo.
-Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe' <=+=> Shǐyòng dòuhào fēngé yǐndǎo cānshù, bù dài kònggé, lìrú'motd,gpuprobe'
-Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5' <=+=> 'Cmdinject' shàng de mìnglìng yǔ dài kònggé de màohào fēnkāi, lìrú'cmdinject setthemes Hacker:Beep 1024 0.5'
-Note that the 'debug' argument does not fully cover the kernel. <=+=> Qǐng zhùyì,'debug'cānshù bìng bù wánquán fùgài nèihé.
-bargs: The requested argument {0} is not found. <=+=> bargs: Zhǎo bù dào qǐngqiú de cānshù {0}.
-bargs: Unrecoverable error in argument:  <=+=> bargs: Cānshù zhōng bùkě huīfù de cuòwù:
-Available arguments: {0} <=+=> Kěyòng cānshù:{0}
-Arguments ('help' for help):  <=+=> Cānshù ('bāngzhù'xúnqiú bāngzhù):
-Injected arguments will be scheduled to run at next reboot. <=+=> Zhùrù de cānshù jiāng ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.
-Argument Injection has been cancelled. <=+=> Cānshù zhùshè yǐ bèi qǔxiāo
-Error while parsing real command-line arguments: {0} <=+=> Jiěxī shíjì mìnglìng xíng cānshù shí chūcuò: {0}
-Invalid color template {0} <=+=> Wúxiào de yánsè múbǎn {0}
-Default <=+=> Mòrèn
-Custom <=+=> Xíguàn
-hwprobe: Your hardware will be probed. Please wait... <=+=> hwprobe: Nǐ de yìngjiàn jiāng bèi tàncè. Qǐng nàixīn děngdài...
-hwprobe: Hardware already probed. <=+=> hwprobe: Yìngjiàn yǐjīng tàncèguòle.
-hwprobe: Hardware is not probed. Probe using 'hwprobe' <=+=> hwprobe: Méiyǒu tàncè yìngjiàn. Shǐyòng'hwprobe'jìnxíng tàncè
-CPU: One or more of the CPU cores failed to be probed. Showing information anyway... <=+=> CPU: Wúfǎ tàncè yīgè huò duō gè CPU héxīn. Wúlùn rúhé xiǎnshì xìnxī......
-RAM: One or more of the RAM chips failed to be probed. Showing information anyway... <=+=> RAM: Yīgè huò duō gè RAM xīnpiàn wèi néng bèi tàncè. Wúlùn rúhé xiǎnshì xìnxī......
-HDD: One or more of the hard drives failed to be probed. Showing information anyway... <=+=> HDD: Wèi néng tàncè dào yīgè huò duō gè yìngpán qūdòngqì. Wúlùn rúhé xiǎnshì xìnxī......
-CPU: Total number of processors: {0} <=+=> CPU: Chǔlǐ qì zǒngshù: {0}
-CPU: {0} {1}MHz <=+=> CPU: {0} {1}MHz
-RAM: {0}MB = {1}MB <=+=> RAM: {0}MB = {1}MB
-RAM: Used slots (by names): {0} <=+=> RAM: Shǐyòng de chā cáo (àn míngchēng):{0}
-RAM: Used slots (by numbers): {0} / {1} ({2}%) <=+=> RAM: Yǐ shǐyòng de chā cáo (àn shùzì): {0}/{1}({2}%)
-RAM: Probing status is deprecated and will be removed in future release. <=+=> RAM: Bù tuījiàn shǐyòng tàncè zhuàngtài, jiānglái de bǎnběn jiāng shānchú.
-HDD: {0} {1}GB {2} <=+=> HDD: {0} {1}GB {2}
-HDD: {0} {1} {2}GB {3} <=+=> HDD: {0} {1} {2}GB {3}
-HDD: CHS: {4} cylinders | {5} heads | {6} sectors <=+=> HDD: CHS: {4} Qìgāng | {5} tóu | {6} sector
-HDD: CHS: {3} cylinders | {4} heads | {5} sectors <=+=> HDD: CHS: {3} Qìgāng | {4} tóu | {5} sector
-hwprobe: Probing not supported because it's not designed to run probers on Unix. <=+=> hwprobe: Tàncè bù shòu zhīchí, yīnwèi tā bùshì wèi zài Unix shàng yùnxíng tàncè qì ér shèjì de.
-Enter the admin password for maintenance. <=+=> Shūrù guǎnlǐ mìmǎ jìnxíng wéihù.
-There is no more users remaining in the list. <=+=> Lièbiǎo zhōng méiyǒu shèngyú yònghù.
-Kernel Error while booting: {0} <=+=> Yǐndǎo shí chūxiàn nèihé cuòwù: {0}
-DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug. <=+=> DOUBLE PANIC: Chóngxīn qǐdòng shíjiān chāoguò yǔnxǔ de zuìdà {0} cuòwù chóngqǐ shíjiān. Nǐ fāxiànle yīgè nèihé cuòwù.
-[{0}] panic: Reboot enabled due to error level being {0}. <=+=> [{0}] Kǒnghuāng: Yóuyú cuòwù jíbié wèi {0} ér chóngqǐ.
-[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute. <=+=> [{0}] Kǒnghuāng: Chóngqǐ shíjiān: {1} Miǎo, chāoguò 1 xiǎoshí. Tā shèzhì wèi 1 fēnzhōng.
-DOUBLE PANIC: Error Type {0} invalid. <=+=> DOUBLE PANIC: Cuòwù lèixíng {0} wúxiào.
-[{0}] dpanic: {1} -- Rebooting in {2} seconds... <=+=> [{0}] dpanic:{1} - Zài {2} miǎo nèi chóngxīn qǐdòng...
-[{0}] panic: Reboot disabled due to error level being {0}. <=+=> [{0}] Kǒnghuāng: Yóuyú cuòwù jíbié wèi {0} ér jìnyòng chóngxīn qǐdòng.
-[{0}] panic: {1} -- Press any key to continue using the kernel. <=+=> [{0}] Kǒnghuāng:{1} - Àn rènyì jiàn jìxù shǐyòng nèihé.
-[{0}] panic: {1} -- Press any key to shutdown. <=+=> [{0}] Kǒnghuāng:{1} - Àn rènyì jiàn guānbì.
-[{0}] panic: {1} -- Rebooting in {2} seconds... <=+=> [{0}] Kǒnghuāng:{1} - Zài {2} miǎo nèi chóngxīn qǐdòng...
-DOUBLE PANIC: Kernel bug: {0} <=+=> DOUBLE PANIC: Nèihé cuòwù:{0}
-Shutting down... <=+=> Guānbì......
-Rebooting... <=+=> Chóngxīn qǐdòng...
----===+++> Welcome to the kernel | Version {0} <+++===--- <=+=> ---===+++> Huānyíng lái dào nèihé | bǎnběn {0} <+++===---
-Another instance of Kernel Simulator is running. Shutting down in case of interference. <=+=> nèihé mónǐ qì de lìng yīgè shílì zhèngzài yùnxíng. Zài fāshēng gānrǎo de qíngkuàng xià guānjī.
-The user {0} has been added to the admin list. <=+=> Yònghù {0} yǐ tiānjiā dào guǎnlǐ lièbiǎo zhōng.
-The user {0} has been added to the disabled list. <=+=> Yònghù {0} yǐ tiānjiā dào jìnyòng lièbiǎo zhōng.
-Failed to add user into permission lists: invalid type {0} <=+=> Wúfǎ jiāng yònghù tiānjiā dào quánxiàn lièbiǎo zhōng: Wúxiào lèixíng {0}
-Failed to add user into permission lists: invalid user {0} <=+=> Wúfǎ jiāng yònghù tiānjiā dào quánxiàn lièbiǎo zhōng: Wúxiào de yònghù {0}
-The user {0} has been removed from the admin list. <=+=> yònghù {0} yǐ cóng guǎnlǐ lièbiǎo zhōng shānchú.
-The user {0} has been removed from the disabled list. <=+=> Yònghù {0} yǐ cóng jìnyòng lièbiǎo zhōng shānchú.
-Failed to remove user from permission lists: invalid type {0} <=+=> Wúfǎ cóng quánxiàn lièbiǎo zhōng shānchú yònghù: Wúxiào lèixíng {0}
-You are already logged in. <=+=> nín yǐ dēnglù.
-Failed to remove user from permission lists: invalid user {0} <=+=> Wúfǎ cóng quánxiàn lièbiǎo zhōng shānchú yònghù: Wúxiào de yònghù {0}
-You have found a bug in the permission system: invalid mode {0} <=+=> nín zài quánxiàn xìtǒng zhōng fāxiànle yīgè cuòwù: Wúxiào móshì {0}
-You have either found a bug, or the permission you tried to add or remove is already done, or other error. <=+=> nín zhǎodàole cuòwù, huòzhě nín chángshì tiānjiā huò shānchú de quánxiàn yǐjīng wánchéng, huòzhě qítā cuòwù.
-Error {0}: {1} <=+=> Cuòwù {0}:{1}
-You have either found a bug, or the permission you tried to edit for a new user has failed. <=+=> Nín yǐ zhǎodào cuòwù, huòzhě nín chángshì wèi xīn yònghù biānjí de quánxiàn shībài.
-Available usernames: {0} <=+=> Kěyòng de yònghù míng: {0}
-Username:  <=+=> Yònghù míng: 
-Spaces are not allowed. <=+=> Bù yǔnxǔ yǒu kònggé.
-Special characters are not allowed. <=+=> Bù yǔnxǔ yǒu tèshū zìfú.
-{0}'s password:  <=+=> {0} De mìmǎ: 
-Wrong password. <=+=> Mìmǎ cuòwù.
-User is disabled. <=+=> Yònghù bèi jìnyòng.
-Wrong username. <=+=> Cuòwù de yònghù míng.
-Error trying to parse placeholders. {0} - Stack trace: <=+=> Chángshì jiěxī zhàn wèi fú shí chūcuò. {0} - Duīzhàn gēnzōng:
-Error trying to parse placeholders. {0} <=+=> Chángshì jiěxī zhàn wèi fú shí chūcuò. {0}
-Error trying to add username. <=+=> Chángshì tiānjiā yònghù míng shí chūcuò.
-usrmgr: Creating username {0}... <=+=> usrmgr: Chuàngjiàn yònghù míng {0}...
-Blank username. <=+=> Kòngbái yònghù míng.
-User {0} not found. <=+=> Zhǎo bù dào yònghù {0}.
-User {0} isn't allowed to be removed. <=+=> Bù yǔnxǔ shānchú yònghù {0}.
-User {0} is already logged in. Log-out and log-in as another admin. <=+=> Yònghù {0} yǐ dēnglù. Zhùxiāo bìng yǐ lìng yīgè guǎnlǐ yuán shēnfèn dēnglù. 
-User {0} removed. <=+=> Yònghù {0} yǐ shānchú.
-Error trying to remove username. <=+=> Chángshì shānchú yònghù míng shí chūcuò.
-{0} of {1} = {2} <=+=> {1} De {0} = {2}
-Attempt to divide by zero is not allowed. <=+=> Bù yǔnxǔ chángshì chú yǐ líng. 
-There has been a suspected attempt at calculating that resulted in an overflow. <=+=> Yǒurén huáiyí jìsuàn dǎozhì yìchū.
-There is an error while calculating: {0} <=+=> Jìsuàn shí chūcuò:{0}
-{0} cannot be converted to {1}. <=+=> {0} Wúfǎ zhuǎnhuàn wèi {1}.
-Either the source  <=+=> Yuán 
- or destination  <=+=>   huò mùdì de 
- does not exist on server. <=+=>  zài fúwùqì shàng bù cúnzài.
-{0} to {1}: {2} <=+=> {0} Dào {1}:{2}
-Error trying to convert from {0} to {1}: {2} <=+=> Chángshì cóng {0} zhuǎnhuàn wèi {1} shí chūcuò:{2}
-Error <=+=> Cuòwù
-The requested screensaver {0} is not found. <=+=> zhǎo bù dào qǐngqiú de píngmù bǎohù chéngxù {0}.
-{0} has been initialized properly. <=+=> {0} Yǐ zhèngquè chūshǐhuà.
-{0} did not initialize. The screensaver code might have experienced an error while initializing. <=+=> {0} Wèi chūshǐhuà. Píngmù bǎohù chéngxù dàimǎ kěnéng zài chūshǐhuà shí yù dào cuòwù.
-Screensaver {0} does not exist. <=+=> Píngmù bǎohù chéngxù {0} bù cúnzài.
-{0} is set to default screensaver. <=+=> {0} Shèzhì wèi mòrèn píngmù bǎohù chéngxù.
-Screensaver {0} not found in database. Initialize with "loadsaver {0}". <=+=> Zài shùjùkù zhōng zhǎo bù dào píngmù bǎohù chéngxù {0}. Shǐyòng “loadsaver {0}” chūshǐhuà.
-Screensaver can't be loaded because of the following:  <=+=> Yóuyú yǐxià yuányīn, wúfǎ jiāzài píngmù bǎohù chéngxù: 
-There is a serious error when printing text. <=+=> Dǎyìn wénběn shí chūxiàn yánzhòng cuòwù.
-There is an error trying to create configuration. <=+=> Chángshì chuàngjiàn pèizhì shí chūcuò.
-There is an error trying to create configuration: {0} <=+=> Chángshì chuàngjiàn pèizhì shí chūcuò: {0}
-An upgrade from {0} to {1} was detected. Updating configuration... <=+=> Jiǎncè dào cóng {0} shēngjí dào {1}. Gēngxīn pèizhì...
-There is an error trying to update configuration: {0}. <=+=> Chángshì gēngxīn pèizhì shí chūcuò: {0}.
-There is an error trying to update configuration. <=+=> Chángshì gēngxīn pèizhì shí chūcuò.
-There is an error trying to read configuration. <=+=> Chángshì dòu qǔ pèizhì shí chūcuò.
-There is an error trying to read configuration: {0} <=+=> Chángshì dòu qǔ pèizhì shí chūcuò: {0}
-Error trying to free RAM: {0} - Continuing... <=+=> Chángshì shìfàng RAM shí chūcuò:{0} - Jìxù...
-Mod can't be loaded because of the following:  <=+=> Yóuyú yǐxià yuányīn, wúfǎ jiāzài Mod:
-mod: Loading mods... <=+=> mod: Jiāzài mods...
-mod: Stopping mods... <=+=> mod: Tíngzhǐ mods...
-Mod {0} does not have the name. Review the source code. <=+=> Mod {0} méiyǒu míngchēng. Chákàn yuán dàimǎ.
-Mod {0} does not have the version. <=+=> Mod {0} méiyǒu bǎnběn.
-{0} v{1} started <=+=> {0} v{1} yǐ qǐdòng
-No definition for command {0}. <=+=> méiyǒu mìnglìng {0} de dìngyì.
-Command defined by  <=+=> zhīqián, nín yīnggāi duàn kāi yǔ fúwùqì de liánjiē
-You should disconnect from server before connecting to another server <=+=> dìngyì de mìnglìng zài liánjiē dào lìng yī tái fúwùqì
-Username for {0}:  <=+=> {0} de yònghù míng:
-Password for {0}:  <=+=> {0} De mìmǎ:
-Connected to {0} <=+=> Yǐ liánjiē dào {0}
-Error when trying to connect to {0}: {1} <=+=> chángshì liánjiē dào {0} shí chūcuò:{1}
-Stack Trace: {2} <=+=> Duīzhàn gēnzōng: {2}
-Enter an FTP server that starts with "ftp://" or "ftps://" <=+=> Shūrù yǐ "ftp://" Huò "ftps://" Kāitóu de FTP fúwùqì
-Local directory {0} doesn't exist. <=+=> běndì mùlù {0} bù cúnzài.
-Enter a local directory. ".." to go back. <=+=> Shūrù běndì mùlù. ".."Huíqù.
-Directory {0} not found. <=+=> Zhǎo bù dào mùlù {0}.
-Enter a remote directory. ".." to go back <=+=> Shūrù yuǎnchéng mùlù. ".." Huíqù
-You must connect to a server before changing directory <=+=> zài gēnggǎi mùlù zhīqián, bìxū liánjiē dào fúwùqì
-Local directory: {0} <=+=> běndì mùlù: {0}
-Remote directory: {0} <=+=> Yuǎnchéng mùlù: {0}
-You must connect to server before getting current remote directory. <=+=> Nín bìxū zài huòqǔ dāngqián yuǎnchéng mùlù zhīqián liánjiē dào fúwùqì.
-Deleting file {0}... <=+=> Shānchú wénjiàn {0}...
-Are you sure you want to delete file {0} <y/n>? <=+=> Nín quèdìng yào shānchú wénjiàn {0} <y/n> ma?
-Deleted file {0} <=+=> Yǐ shānchú wénjiàn {0}
-You must connect to server with administrative privileges before performing the deletion. <=+=> zài zhíxíng shānchú zhīqián, bìxū shǐyòng guǎnlǐ quánxiàn liánjiē dào fúwùqì.
-Enter a file to remove. <=+=> Shūrù yào shānchú de wénjiàn.
-You must have administrative permissions on your logged in username to be able to remove. <=+=> Nín bìxū yǒngyǒu yǐ dēnglù yònghù míng de guǎnlǐ quánxiàn cáinéng shānchú.
-Disconnected from {0} <=+=> Yǔ {0} duàn kāi liánjiē
-You haven't connected to any server yet <=+=> nín hái méiyǒu liánjiē dào rènhé fúwùqì
-Downloading file {0}... <=+=> zhèngzàixiàzài wénjiàn {0}...
-Hash status: <=+=> Hā xī zhuàngtài:
-REMOTE: {0} ({1}) <=+=> REMOTE: {0} ({1})
-Downloaded file {0}. <=+=> Yǐ xiàzài wénjiàn {0}.
-Download failed for file {0} because the local file is corrupt. <=+=> Wénjiàn {0} de xià zǎi shībài, yīn wéi běndì wénjiàn yǐ sǔnhuài.
-Downloaded file {0} without checking for sum. This file might be corrupt. <=+=> Xiàzài wénjiàn {0} ér bù jiǎnchá zǒnghé. Cǐ wénjiàn kěnéng yǐ sǔnhuài.
-You must connect to server before performing transmission. <=+=> Nín bìxū zài zhíxíng chuánshū zhīqián liánjiē dào fúwùqì.
-Enter a file to download to local directory. <=+=> Shūrù yào xiàzài dào běndì mùlù de wénjiàn.
-{0} | Modified in: {1} <=+=> {0} |Xiūgǎi yú:{1}
-You should connect to server before listing all remote files. <=+=> Nín yīnggāi zài liè chū suǒyǒu yuǎnchéng wénjiàn zhīqián liánjiē dào fúwùqì.
-Renaming file {0} to {1}... <=+=> Jiāng wénjiàn {0} zhòng mìngmíng wèi {1}...
-Renamed successfully <=+=> Yǐ chénggōng zhòng mìngmíng
-Enter a file and the new file name. <=+=> Shūrù wénjiàn hé xīn wénjiàn míng.
-Uploading file {0}... <=+=> Shàngchuán wénjiàn {0}...
-Uploaded file {0} <=+=> Shàngchuán de wénjiàn {0}
-Enter a file to upload to remote directory. upload <file> <directory> <=+=> shūrù yào shàngzài dào yuǎnchéng mùlù de wénjiàn. Shàngchuán <file> <directory>
-Error trying to execute FTP command  <=+=> chángshì zhíxíng FTP mìnglìng shí chūcuò
-(Inner: <=+=> (nèibù:
-{0} folders, {1} files <=+=> {0} Gè wénjiàn jiā,{1} gè wénjiàn
-(Access Denied) <=+=> (fǎngwèn bèi jùjué)
-{0} KB, Created in {1} {2}, Modified in {3} {4} <=+=> {0} KB, zài {1} {2} zhōng chuàngjiàn, zài {3} {4} zhōng xiūgǎi
-Gets current local directory <=+=> huòqǔ dāngqián běndì mùlù
-Gets current remote directory <=+=> huòqǔ dāngqián yuǎnchéng mùlù
-Connects to an FTP server (it must start with "ftp://" or "ftps://") <=+=> liánjiē dào FTP fúwùqì (bìxū yǐ "ftp://" Huò "ftps://" Kāitóu)
-Changes local directory to download to or upload from <=+=> gēnggǎi běndì mùlù yǐ xiàzài dào huò cóng shàngchuán
-Changes remote directory to download from or upload to <=+=> gēnggǎi yào cóng zhòng xiàzài huò shàngchuán dào de yuǎnchéng mùlù
-Deletes remote file from server <=+=> cóng fúwùqì zhōng shānchú yuǎnchéng wénjiàn
-Disconnects from server <=+=> duàn kāi yǔ fúwùqì de liánjiē
-Downloads remote file to local directory using binary or text <=+=> shǐyòng èrjìnzhì huò wénběn jiāng yuǎnchéng wénjiàn xiàzài dào běndì mùlù
-Exits FTP shell and returns to kernel <=+=> tuìchū FTP shell bìng fǎnhuí nèihé
-Shows help screen <=+=> xiǎnshì bāngzhù píngmù
-Lists local directory <=+=> liè chū běndì mùlù
-Lists remote directory <=+=> liè chū yuǎnchéng mùlù
-Renames specific file or directory <=+=> zhòng mìngmíng tèdìng wénjiàn huò mùlù
-Uploads local file to remote directory using binary or text <=+=> shǐyòng èrjìnzhì huò wénběn jiāng běndì wénjiàn shàngzài dào yuǎnchéng mùlù
-There was an error in the FTP shell. <=+=> FTP shell zhōng cúnzài cuòwù.
-FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell. <=+=> FTP xiāoxī: Zhǎo bù dào qǐngqiú de mìnglìng {0}. Yǒuguān FTP shell shàng zhǐdìng de kěyòng mìnglìng dì lièbiǎo, qǐng cānyuè “help”.
-net: Got response from {0} in {1} ms <=+=> net: Zài {1} ms zhōng dédào {0} de xiǎngyìng
-Timed out, disconnected, or server offline. <=+=> chāoshí, duàn kāi liánjiē huò fúwùqì tuō jī.
-net: Your computer name on network is {0} <=+=> net: Nín zài wǎngluò shàng de jìsuànjī míngchēng wèi {0}
-net: Your host name is {1} <=+=> net: Nín de zhǔjī míng shì {1}
-net: It appears that computers are in the domain or workgroup: <=+=> net: Jìsuànjī sìhū zài yù huò gōngzuò zǔ zhōng:
-net: WiFi or Ethernet is disconnected. <=+=> net: WiFi huò yǐtài wǎng duàn kāi liánjiē.
-net: It appears that computers are connected below: <=+=> Net: Jìsuànjī sìhū liánjiē zàixiàmiàn:
-net: Router Address: {0} <=+=> Net: Lùyóuqì dìzhǐ: {0}
-Failed to get properties for adapter {0} <=+=> Wúfǎ huòqǔ shìpèiqì {0} de shǔxìng
-Adapter Number: <=+=> Shìpèiqì biānhào:
-Adapter Name: <=+=> Shìpèiqì míngchēng:
-Maximum Transmission Unit: {2} Units <=+=> Zuìdà chuánshū dānwèi: {2} Dānwèi
-DHCP Enabled: <=+=> DHCP yǐ qǐyòng:
-Non-unicast packets: <=+=> Fēi dān bō shùjù bāo:
-Unicast packets: <=+=> Dān bō shùjù bāo:
-Error incoming/outgoing packets: <=+=> Chuán rù/chuán chū shùjù bāo chūcuò:
-Alias can't be the same name as a command. <=+=> Biémíng bùnéng yǔ mìnglìng tóngmíng.
-Command not found to alias to {0}. <=+=> Wèi zhǎodào mìnglìng {0} de biémíng.
-Aliasing {0} to {1} is forbidden completely. <=+=> Wánquán jìnzhǐ jiāng {0} biémíng wèi {1}.
-You can now run "{0}" as a command: "{1}". <=+=> Nín xiànzài kěyǐ yùnxíng "{0}" zuòwéi mìnglìng: "{1}".
-You can no longer use "{0}" as a command "{1}". <=+=> Nín bùnéng zài shǐyòng "{0}" zuòwéi mìnglìng "{1}".
-Alias {0} is not found to be removed. <=+=> Zhǎo bù dào biémíng {0}.
-Invalid mode {0}. <=+=> Wúxiào móshì {0}.
-Injected arguments, {0}, will be scheduled to run at next reboot. <=+=> Zhùrù de cānshù {0} jiāng bèi ānpái zài xià cì chóngxīn qǐdòng shí yùnxíng.
-There was not enough arguments. See below for usage: <=+=> Méiyǒu zúgòu dì lùnjù. Qǐng cānyuè xiàmiàn de yòngfǎ:
-Current directory: {0} <=+=> Dāngqián mùlù:{0}
-Directory {0} not found <=+=> Mùlù {0} wèi zhǎodào
-Blank host name. <=+=> kòngbái zhǔjī míng.
-Changing from: {0} to {1}... <=+=> Cóng:{0} Gēnggǎi wèi {1}...
-Blank message of the day. <=+=> Dàngtiān de kòngbái xiāoxī.
-Blank MAL After Login. <=+=> Dēnglù hòu kòngbái MAL.
-Changing MAL from {0} to {1}... <=+=> Jiāng MAL cóng {0} gēnggǎi wèi {1}...
-Wrong user password. <=+=> Yònghù mìmǎ cuòwù.
-Passwords doesn't match. <=+=> Mìmǎ bù pǐpèi.
-Username has been changed to {0}! <=+=> Yònghù míng yǐ gēnggǎi wèi {0}!
-The new name you entered is already found. <=+=> Nín shūrù de xīn míngchēng yǐjīng zhǎodào.
-Listing PCs is not supported yet on Unix. <=+=> Unix shàng shàng bù zhīchí liè chū PC.
-Aliases that are forbidden: {0} <=+=> Jìnzhǐ shǐyòng de biémíng:{0}
-{0} is not found. <=+=> Zhǎo bù dào {0}.
-Configuration reloaded. You might need to reboot the kernel for some changes to take effect. <=+=> Pèizhì chóngxīn jiāzài. Nín kěnéng xūyào chóngxīn qǐdòng nèihé cáinéng shǐ mǒu xiē gēnggǎi shēngxiào.
-Everything is reset to normal settings. <=+=> Yīqiè dōu chóng zhì wèi zhèngcháng shèzhì.
-One or more of the colors is invalid. <=+=> Yī zhǒng huò duō zhǒng yánsè wúxiào.
-Colors are not available. Turn on colored shell in the kernel config. <=+=> Yánsè bùkěyòng. Zài nèihé pèizhì zhōng dǎkāi cǎisè shell.
-Screensaver {0} not found. <=+=> Píngmù bǎohù chéngxù {0} wèi zhǎodào.
-{0}[ Kernel settings (Running on {1}) ] <=+=> {0}[ Nèihé shèzhì (zài {1} shàng yùnxíng) ]
-Kernel Version: <=+=> Nèihé bǎnběn:
-Debug Mode: <=+=> Tiáoshì móshì:
-Colored Shell: <=+=> Cǎi ké:
-Arguments on Boot: <=+=> Boot shàng de cānshù:
-Help command simplified: <=+=> Bāngzhù mìnglìng jiǎnhuà:
-MOTD on Login: <=+=> Dēnglù shí de MOTD:
-Time/Date on corner: <=+=> Jiǎoluò de shíjiān/rìqí:
-Hardware probed: <=+=> Yìngjiàn tàncè:
-Current theme: <=+=> Mùqián de zhǔtí:
-[ Hardware settings ]{0} <=+=> [ Yìngjiàn shèzhì ]{0}
-{0}[ User settings ] <=+=> {0}[ yònghù shèzhì ]
-Current user name: <=+=> Dāngqián yònghù míng:
-Current host name: <=+=> Dāngqián zhǔjī míng:
-Available usernames: <=+=> Kěyòng de yònghù míng:
-Computer host name: <=+=> Jìsuànjī zhǔjī míng:
-{0}[ Messages Settings ] <=+=> {0}[ Xiāoxī shèzhì ]
-Source code: <=+=> Yuán dàimǎ:
-Copyright (c) <=+=> Bǎnquán suǒyǒu (c)
-License <=+=> Xǔkě zhèng
-present <=+=> xiànzài
-Error trying to execute command <=+=> chángshì zhíxíng mìnglìng shí chūcuò
-Adds users (Only admins can access this command) <=+=> tiānjiā yònghù (zhǐyǒu guǎnlǐ yuán kěyǐ fǎngwèn cǐ mìnglìng)
-Adds aliases to commands (Only admins can access this command) <=+=> xiàng mìnglìng tiānjiā biémíng (zhǐyǒu guǎnlǐ yuán cáinéng fǎngwèn cǐ mìnglìng)
-Injects arguments to the kernel (reboot required, admins only) <=+=> zhùrù nèihé de cānshù (xūyào chóngxīn qǐdòng, jǐn xiàn guǎnlǐ yuán)
-Simple calculator <=+=> Jiǎndān de jìsuàn qì
-Shows current directory <=+=> xiǎnshì dāngqián mùlù
-Changes directory <=+=> gēnggǎi mùlù
-Changes host name (Admins only) <=+=> gēnggǎi zhǔjī míng (jǐn xiàn guǎnlǐ yuán)
-Changes MAL, the MOTD After Login (Admins only) <=+=> gēnggǎi MAL, dēnglù hòu de MOTD(jǐn xiàn guǎnlǐ yuán)
-Changes MOTD, the Message Of The Day (Admins only) <=+=> gēnggǎi MOTD, jí dàngtiān de xiāoxī (jǐn xiàn guǎnlǐ yuán)
-Changes password for current user <=+=> gēnggǎi dāngqián yònghù de mìmǎ
-Changes user name (Admins Only) <=+=> gēnggǎi yònghù míng (jǐn xiàn guǎnlǐ yuán)
-Clears the screen <=+=> qīngchú píngmù
-Convert currency <=+=> zhuǎnhuàn huòbì
-Shows debug logs (Admins Only) <=+=> xiǎnshì tiáoshì rìzhì (jǐn xiàn guǎnlǐ yuán)
-Use an FTP shell to interact with servers <=+=> shǐyòng FTP shell yǔ fúwùqì jìnxíng jiāohù
-Help page <=+=> bāngzhù yèmiàn
-Probe hardware manually (One time in 'nohwprobe' kernel) <=+=> shǒudòng tàncè yìngjiàn (zài'nohwprobe'nèihé zhōng yīcì)
-List file/folder contents in current folder <=+=> liè chū dāngqiáng wénjiàn jiā zhōng de wénjiàn/wénjiàn jiā nèiróng
-Reloads screensaver file in %USERPROFILE%\KSMods <=+=> Chóngxīn jiāzài %USERPROFILE%\KSMods zhōng de píngmù bǎohù chéngxù wénjiàn
-Locks your screen with a password <=+=> shǐyòng mìmǎ suǒdìng píngmù
-Logs you out <=+=> jìlù nǐ
-Lists all network devices who is online (and offline in domains) <=+=> liè chū suǒyǒu liánjī (yǐjí yù zhōng tuō jī) de wǎngluò shèbèi
-Lists all network addresses on host <=+=> liè chū zhǔjī shàng de suǒyǒu wǎngluò dìzhǐ
-Lists all network addresses on host using the tree <=+=> shǐyòng shù liè chū zhǔjī shàng de suǒyǒu wǎngluò dìzhǐ
-Creates a directory <=+=> chuàngjiàn mùlù
-Lists information about all available interfaces <=+=> liè chū yǒuguān suǒyǒu kěyòng jiēkǒu de xìnxī
-Shows forbidden list of aliases <=+=> xiǎnshì jìnyòng de biémíng lièbiǎo
-Manage permissions for users (Only admins can access this command) <=+=> guǎnlǐ yònghù quánxiàn (zhǐyǒu guǎnlǐ yuán cáinéng fǎngwèn cǐ mìnglìng)
-Check to see if specified address is available <=+=> jiǎnchá zhǐdìng dì dìzhǐ shìfǒu kěyòng
-Writes file contents to the console <=+=> jiāng wénjiàn nèiróng xiě rù kòngzhì tái
-Restarts your computer (WARNING: No syncing, because it is not a final kernel) <=+=> chóngxīn qǐdòng jìsuànjī (jǐnggào: Méiyǒu tóngbù, yīnwèi tā bùshì zuìzhōng nèihé)
-Reloads configuration file that is edited. <=+=> chóngxīn jiāzài yǐ biānjí de pèizhì wénjiàn.
-Removes a directory <=+=> Shānchú mùlù
-Removes a user from the list (Admins Only) <=+=> cóng lièbiǎo zhōng shānchú yònghù (jǐn xiàn guǎnlǐ yuán)
-Saves your screen from burn outs <=+=> bǎocún nín de píngmù miǎn yú shāo huài
-Scientific calculator. The unit converter is separated to another command <=+=> kēxué jìsuàn qì. Dānwèi zhuǎnhuàn qì yǔ lìng yīgè mìnglìng fēnkāi
-Sets up kernel colors <=+=> shèzhì nèihé yánsè
-Sets up kernel screensavers <=+=> shèzhì nèihé píngmù bǎohù chéngxù
-Sets up kernel themes <=+=> shèzhì nèihé zhǔtí
-Shows aliases <=+=> xiǎnshì biémíng
-Shows MOTD after login set by user or kernel <=+=> zài yònghù huò nèihé shèzhì dēnglù hòu xiǎnshì MOTD
-Shows message of the day set by user or kernel <=+=> xiǎnshì yònghù huò nèihé shèzhì de rìqí xiāoxī
-Shows date and time <=+=> xiǎnshì rìqí hé shíjiān
-Shows date and time in zones <=+=> zài qūyù zhōng xiǎnshì rìqí hé shíjiān
-The kernel will be shut down <=+=> nèihé jiāng guānbì
-System information <=+=> xìtǒng xìnxī
-Unit converter that is separated from scicalc. <=+=> yǔ scicalc fēnlí de dānwèi zhuǎnhuàn qì.
-Shows used open source dependencies <=+=> Xiǎnshì shǐyòng de kāiyuán yīlài xiàng
-A very descriptive user manual. <=+=> yī běn fēicháng jù miáoshù xìng de yònghù shǒucè.
-* You can use multiple commands using the colon between commands. <=+=> *Nín kěyǐ shǐyòng mìnglìng zhī jiān de màohào lái shǐyòng duō gè mìnglìng.
-Available commands:  <=+=> Kěyòng mìnglìng:
-Mod commands:  <=+=> Mod mìnglìng:
-Aliases to commands:  <=+=> Mìnglìng de biémíng:
-Usage: <=+=> Yòngfǎ:
-Arguments separated by commas <=+=> Yòng dòuhào fēngé de cānshù
-where arguments will be {0} <=+=> qízhōng cānshù wèi {0}
-to get current directory <=+=> huòqǔ dāngqián mùlù
-In which source and destination is a 3 UPPERCASE characters of an exchange rate <=+=> zài nǎge yuán hé mùdì de shì huìlǜ de 3 gè dàxiě zìfú
-List of all IDs and names: <=+=> suǒyǒu ID hé míngchēng dì lièbiǎo:
-Shows you debug logs so you can send the log to us. <=+=> Xiǎnshì tiáoshì rìzhì, yǐbiàn nín kěyǐ jiāng rìzhì fāsòng gěi wǒmen.
-Initializes the FTP shell. <=+=> Chūshǐhuà FTP shell.
-Probes hardware (Only works when the hardware is not probed and hwprobe is not executed). <=+=> Tàn zhēn yìngjiàn (jǐn zài wèi tàncè yìngjiàn qiě wèi zhíxíng hwprobe shí yǒuxiào).
-Lists network information, as well as every computer connected to a network. <=+=> Liè chū wǎngluò xìnxī yǐjí liánjiē dào wǎngluò de měi tái jìsuànjī.
-Friends of <=+=> Péngyǒu
-Lists network information, as well as every computer connected to a network, in a tree form. <=+=> yǐ shù xíngshì liè chū wǎngluò xìnxī yǐjí liánjiē dào wǎngluò de měi tái jìsuànjī.
-Lists network information, as well as every computer. <=+=> Liè chū wǎngluò xìnxī yǐjí měi tái jìsuànjī.
-where modnameSS.m will be <=+=> Qízhōng modnameSS.M jiāng shì
-Locks your screen with the password. <=+=> shǐyòng mìmǎ suǒdìng píngmù.
-Logs you out of the user. <=+=> Jiāng nín tuìchū yònghù.
-Get every network information <=+=> Huòqǔ měi gè wǎngluò xìnxī
-Restarts your simulated computer. <=+=> chóngxīn qǐdòng nín de mónǐ jìsuànjī.
-Reloads the configuration that is changed by the end-user or by tool. <=+=> Chóngxīn jiāzài zuìzhōng yònghù huò gōngjù gēnggǎi de pèizhì.
-Colors doesn't require a restart, but most of the settings require you to restart. <=+=> Yánsè bù xūyào chóngxīn qǐdòng, dàn dà duōshù shèzhì dōu yāoqiú nín chóngxīn qǐdòng.
-shows you a selected screensaver, while protecting your screen from burn outs. <=+=> Xiàng nín xiǎnshì suǒ xuǎn de píngmù bǎohù chéngxù, tóngshí bǎohù nín de píngmù miǎn shòu shāo huài.
-Shows the date and time. <=+=> Xiǎnshì rìqí hé shíjiān.
-Shows the date and time in zones. <=+=> Xiǎnshì qūyù zhōng de rìqí hé shíjiān.
-Shuts down your simulated computer. <=+=> Guānbì mónǐ jìsuànjī.
-Shows system information and versions. <=+=> Xiǎnshì xìtǒng xìnxī hé bǎnběn.
-Shows open source libraries used <=+=> Xiǎnshì shǐyòng de kāiyuán kù
-There was an error in the shell. <=+=> shell zhōng yǒu yīgè cuòwù.
-You don't have permission to use {0} <=+=> Nín wú quán shǐyòng {0}
-Shell message: The requested command {0} is not allowed to run in maintenance mode. <=+=> Shell xiāoxī: Bù yǔnxǔ zài wéihù móshì xià yùnxíng qǐngqiú de mìnglìng {0}.
-Shell message: The requested command {0} is not found. See 'help' for available commands. <=+=> Shell xiāoxī: Zhǎo bù dào qǐngqiú de mìnglìng {0}. Yǒuguān kěyòng mìnglìng, qǐng cānyuè “help”.
-Shell message: Command {0} is not allowed to run on log in. <=+=> Shell xiāoxī: Dēnglù shí bù yǔnxǔ yùnxíng mìnglìng {0}.
-Shell message: The requested command {0} is not found. <=+=> Shell xiāoxī: Zhǎo bù dào qǐngqiú de mìnglìng {0}.
-Error trying to execute command. <=+=> Chángshì zhíxíng mìnglìng shí chūcuò.
-datetime: Time is {0} <=+=> datetime: Shíjiān wèi {0}
-datetime: Today is {0} <=+=> datetime: Jīntiān shì {0}
-datetime: Time Zone: {0} <=+=> datetime: Shíqū:{0}
-- Time of {0}: {1} <=+=> - Shíjiān {0}:{1}
-to clear screen. <=+=> Qīngchú píngmù.
-It seems that the manual page {0} is not found. <=+=> Sìhū zhǎo bù dào shǒucè yè {0}.
-There is an error when trying to load the manual page {0} becuase {1}. <=+=> Chángshì jiāzài shǒucè yè {0} shí chūcuò, yīnwèi {1}.
-This manual page is incomplete for the following reasons: <=+=> Yóuyú yǐxià yuányīn, běn shǒucè yè bù wánzhěng:
-Press any key to continue... <=+=> Àn rènyì jiàn jìxù...
- | {0} words | Revision v{1} | {2} sections <=+=>  | {0} Zì | xiūdìng bǎn v{1} | {2} bùfèn
-This manual page title is not written <=+=> cǐ shǒucè yè biāotí wèi xiě rù
-This manual page ({0}) does not contain any body text. Deleting page... <=+=> běn shǒucè yè ({0}) bù bāohán rènhé zhèngwén. Zhèngzài shānchú yèmiàn...
-This manual page ({0}) does not contain any section. Deleting page... <=+=> Běn shǒucè yè ({0}) bù bāohán rènhé bùfèn. Zhèngzài shānchú yèmiàn...
-Running on {0} <=+=> zài {0} shàng yùnxíng
-You are not authorized to get info for {0}. <=+=> Nín wú quán huòqǔ {0} de xìnxī.
-This command is obsolete and will be removed in a future release. <=+=> Cǐ mìnglìng yǐ guòshí, jiàng zài yǐhòu de bǎnběn zhōng shānchú.
+﻿Kěyòng mìnglìng: {0}
+Xiě mìnglìng: 
+Mìnglìng zhùrù yǐ bèi qǔxiāo.
+Shǐyòng dòuhào fēngé yǐndǎo cānshù, bù dài kònggé, lìrú'motd,gpuprobe'
+'Cmdinject' shàng de mìnglìng yǔ dài kònggé de màohào fēnkāi, lìrú'cmdinject setthemes Hacker:Beep 1024 0.5'
+Qǐng zhùyì,'debug'cānshù bìng bù wánquán fùgài nèihé.
+bargs: Zhǎo bù dào qǐngqiú de cānshù {0}.
+bargs: Cānshù zhōng bùkě huīfù de cuòwù:
+Kěyòng cānshù:{0}
+Cānshù ('bāngzhù'xúnqiú bāngzhù):
+Zhùrù de cānshù jiāng ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.
+Cānshù zhùshè yǐ bèi qǔxiāo
+Jiěxī shíjì mìnglìng xíng cānshù shí chūcuò: {0}
+Wúxiào de yánsè múbǎn {0}
+Mòrèn
+Xíguàn
+hwprobe: Nǐ de yìngjiàn jiāng bèi tàncè. Qǐng nàixīn děngdài...
+hwprobe: Yìngjiàn yǐjīng tàncèguòle.
+hwprobe: Méiyǒu tàncè yìngjiàn. Shǐyòng'hwprobe'jìnxíng tàncè
+CPU: Wúfǎ tàncè yīgè huò duō gè CPU héxīn. Wúlùn rúhé xiǎnshì xìnxī......
+RAM: Yīgè huò duō gè RAM xīnpiàn wèi néng bèi tàncè. Wúlùn rúhé xiǎnshì xìnxī......
+HDD: Wèi néng tàncè dào yīgè huò duō gè yìngpán qūdòngqì. Wúlùn rúhé xiǎnshì xìnxī......
+CPU: Chǔlǐ qì zǒngshù: {0}
+CPU: {0} {1}MHz
+RAM: {0}MB = {1}MB
+RAM: Shǐyòng de chā cáo (àn míngchēng):{0}
+RAM: Yǐ shǐyòng de chā cáo (àn shùzì): {0}/{1}({2}%)
+RAM: Bù tuījiàn shǐyòng tàncè zhuàngtài, jiānglái de bǎnběn jiāng shānchú.
+HDD: {0} {1}GB {2}
+HDD: {0} {1} {2}GB {3}
+HDD: CHS: {4} Qìgāng | {5} tóu | {6} sector
+HDD: CHS: {3} Qìgāng | {4} tóu | {5} sector
+hwprobe: Tàncè bù shòu zhīchí, yīnwèi tā bùshì wèi zài Unix shàng yùnxíng tàncè qì ér shèjì de.
+Shūrù guǎnlǐ mìmǎ jìnxíng wéihù.
+Lièbiǎo zhōng méiyǒu shèngyú yònghù.
+Yǐndǎo shí chūxiàn nèihé cuòwù: {0}
+DOUBLE PANIC: Chóngxīn qǐdòng shíjiān chāoguò yǔnxǔ de zuìdà {0} cuòwù chóngqǐ shíjiān. Nǐ fāxiànle yīgè nèihé cuòwù.
+[{0}] Kǒnghuāng: Yóuyú cuòwù jíbié wèi {0} ér chóngqǐ.
+[{0}] Kǒnghuāng: Chóngqǐ shíjiān: {1} Miǎo, chāoguò 1 xiǎoshí. Tā shèzhì wèi 1 fēnzhōng.
+DOUBLE PANIC: Cuòwù lèixíng {0} wúxiào.
+[{0}] dpanic:{1} - Zài {2} miǎo nèi chóngxīn qǐdòng...
+[{0}] Kǒnghuāng: Yóuyú cuòwù jíbié wèi {0} ér jìnyòng chóngxīn qǐdòng.
+[{0}] Kǒnghuāng:{1} - Àn rènyì jiàn jìxù shǐyòng nèihé.
+[{0}] Kǒnghuāng:{1} - Àn rènyì jiàn guānbì.
+[{0}] Kǒnghuāng:{1} - Zài {2} miǎo nèi chóngxīn qǐdòng...
+DOUBLE PANIC: Nèihé cuòwù:{0}
+Guānbì......
+Chóngxīn qǐdòng...
+---===+++> Huānyíng lái dào nèihé | bǎnběn {0} <+++===---
+nèihé mónǐ qì de lìng yīgè shílì zhèngzài yùnxíng. Zài fāshēng gānrǎo de qíngkuàng xià guānjī.
+Yònghù {0} yǐ tiānjiā dào guǎnlǐ lièbiǎo zhōng.
+Yònghù {0} yǐ tiānjiā dào jìnyòng lièbiǎo zhōng.
+Wúfǎ jiāng yònghù tiānjiā dào quánxiàn lièbiǎo zhōng: Wúxiào lèixíng {0}
+Wúfǎ jiāng yònghù tiānjiā dào quánxiàn lièbiǎo zhōng: Wúxiào de yònghù {0}
+yònghù {0} yǐ cóng guǎnlǐ lièbiǎo zhōng shānchú.
+Yònghù {0} yǐ cóng jìnyòng lièbiǎo zhōng shānchú.
+Wúfǎ cóng quánxiàn lièbiǎo zhōng shānchú yònghù: Wúxiào lèixíng {0}
+nín yǐ dēnglù.
+Wúfǎ cóng quánxiàn lièbiǎo zhōng shānchú yònghù: Wúxiào de yònghù {0}
+nín zài quánxiàn xìtǒng zhōng fāxiànle yīgè cuòwù: Wúxiào móshì {0}
+nín zhǎodàole cuòwù, huòzhě nín chángshì tiānjiā huò shānchú de quánxiàn yǐjīng wánchéng, huòzhě qítā cuòwù.
+Cuòwù {0}:{1}
+Nín yǐ zhǎodào cuòwù, huòzhě nín chángshì wèi xīn yònghù biānjí de quánxiàn shībài.
+Kěyòng de yònghù míng: {0}
+Yònghù míng: 
+Bù yǔnxǔ yǒu kònggé.
+Bù yǔnxǔ yǒu tèshū zìfú.
+{0} De mìmǎ: 
+Mìmǎ cuòwù.
+Yònghù bèi jìnyòng.
+Cuòwù de yònghù míng.
+Chángshì jiěxī zhàn wèi fú shí chūcuò. {0} - Duīzhàn gēnzōng:
+Chángshì jiěxī zhàn wèi fú shí chūcuò. {0}
+Chángshì tiānjiā yònghù míng shí chūcuò.
+usrmgr: Chuàngjiàn yònghù míng {0}...
+Kòngbái yònghù míng.
+Zhǎo bù dào yònghù {0}.
+Bù yǔnxǔ shānchú yònghù {0}.
+Yònghù {0} yǐ dēnglù. Zhùxiāo bìng yǐ lìng yīgè guǎnlǐ yuán shēnfèn dēnglù. 
+Yònghù {0} yǐ shānchú.
+Chángshì shānchú yònghù míng shí chūcuò.
+{1} De {0} = {2}
+Bù yǔnxǔ chángshì chú yǐ líng. 
+Yǒurén huáiyí jìsuàn dǎozhì yìchū.
+Jìsuàn shí chūcuò:{0}
+{0} Wúfǎ zhuǎnhuàn wèi {1}.
+Yuán 
+huò mùdì de 
+zài fúwùqì shàng bù cúnzài.
+{0} Dào {1}:{2}
+Chángshì cóng {0} zhuǎnhuàn wèi {1} shí chūcuò:{2}
+Cuòwù
+zhǎo bù dào qǐngqiú de píngmù bǎohù chéngxù {0}.
+{0} Yǐ zhèngquè chūshǐhuà.
+{0} Wèi chūshǐhuà. Píngmù bǎohù chéngxù dàimǎ kěnéng zài chūshǐhuà shí yù dào cuòwù.
+Píngmù bǎohù chéngxù {0} bù cúnzài.
+{0} Shèzhì wèi mòrèn píngmù bǎohù chéngxù.
+Zài shùjùkù zhōng zhǎo bù dào píngmù bǎohù chéngxù {0}. Shǐyòng “loadsaver {0}” chūshǐhuà.
+Yóuyú yǐxià yuányīn, wúfǎ jiāzài píngmù bǎohù chéngxù: 
+Dǎyìn wénběn shí chūxiàn yánzhòng cuòwù.
+Chángshì chuàngjiàn pèizhì shí chūcuò.
+Chángshì chuàngjiàn pèizhì shí chūcuò: {0}
+Jiǎncè dào cóng {0} shēngjí dào {1}. Gēngxīn pèizhì...
+Chángshì gēngxīn pèizhì shí chūcuò: {0}.
+Chángshì gēngxīn pèizhì shí chūcuò.
+Chángshì dòu qǔ pèizhì shí chūcuò.
+Chángshì dòu qǔ pèizhì shí chūcuò: {0}
+Chángshì shìfàng RAM shí chūcuò:{0} - Jìxù...
+Yóuyú yǐxià yuányīn, wúfǎ jiāzài Mod:
+mod: Jiāzài mods...
+mod: Tíngzhǐ mods...
+Mod {0} méiyǒu míngchēng. Chákàn yuán dàimǎ.
+Mod {0} méiyǒu bǎnběn.
+{0} v{1} yǐ qǐdòng
+méiyǒu mìnglìng {0} de dìngyì.
+zhīqián, nín yīnggāi duàn kāi yǔ fúwùqì de liánjiē
+dìngyì de mìnglìng zài liánjiē dào lìng yī tái fúwùqì
+{0} de yònghù míng:
+{0} De mìmǎ:
+Yǐ liánjiē dào {0}
+chángshì liánjiē dào {0} shí chūcuò:{1}
+Duīzhàn gēnzōng: {2}
+Shūrù yǐ "ftp://" Huò "ftps://" Kāitóu de FTP fúwùqì
+běndì mùlù {0} bù cúnzài.
+Shūrù běndì mùlù. ".."Huíqù.
+Zhǎo bù dào mùlù {0}.
+Shūrù yuǎnchéng mùlù. ".." Huíqù
+zài gēnggǎi mùlù zhīqián, bìxū liánjiē dào fúwùqì
+běndì mùlù: {0}
+Yuǎnchéng mùlù: {0}
+Nín bìxū zài huòqǔ dāngqián yuǎnchéng mùlù zhīqián liánjiē dào fúwùqì.
+Shānchú wénjiàn {0}...
+ma?
+Yǐ shānchú wénjiàn {0}
+zài zhíxíng shānchú zhīqián, bìxū shǐyòng guǎnlǐ quánxiàn liánjiē dào fúwùqì.
+Shūrù yào shānchú de wénjiàn.
+Nín bìxū yǒngyǒu yǐ dēnglù yònghù míng de guǎnlǐ quánxiàn cáinéng shānchú.
+Yǔ {0} duàn kāi liánjiē
+nín hái méiyǒu liánjiē dào rènhé fúwùqì
+zhèngzàixiàzài wénjiàn {0}...
+Hā xī zhuàngtài:
+REMOTE: {0} ({1})
+Yǐ xiàzài wénjiàn {0}.
+Wénjiàn {0} de xià zǎi shībài, yīn wéi běndì wénjiàn yǐ sǔnhuài.
+Xiàzài wénjiàn {0} ér bù jiǎnchá zǒnghé. Cǐ wénjiàn kěnéng yǐ sǔnhuài.
+Nín bìxū zài zhíxíng chuánshū zhīqián liánjiē dào fúwùqì.
+Shūrù yào xiàzài dào běndì mùlù de wénjiàn.
+{0} |Xiūgǎi yú:{1}
+Nín yīnggāi zài liè chū suǒyǒu yuǎnchéng wénjiàn zhīqián liánjiē dào fúwùqì.
+Jiāng wénjiàn {0} zhòng mìngmíng wèi {1}...
+Yǐ chénggōng zhòng mìngmíng
+Shūrù wénjiàn hé xīn wénjiàn míng.
+Shàngchuán wénjiàn {0}...
+Shàngchuán de wénjiàn {0}
+
+chángshì zhíxíng FTP mìnglìng shí chūcuò
+(nèibù:
+{0} Gè wénjiàn jiā,{1} gè wénjiàn
+(fǎngwèn bèi jùjué)
+{0} KB, zài {1} {2} zhōng chuàngjiàn, zài {3} {4} zhōng xiūgǎi
+huòqǔ dāngqián běndì mùlù
+huòqǔ dāngqián yuǎnchéng mùlù
+liánjiē dào FTP fúwùqì (bìxū yǐ "ftp://" Huò "ftps://" Kāitóu)
+gēnggǎi běndì mùlù yǐ xiàzài dào huò cóng shàngchuán
+gēnggǎi yào cóng zhòng xiàzài huò shàngchuán dào de yuǎnchéng mùlù
+cóng fúwùqì zhōng shānchú yuǎnchéng wénjiàn
+duàn kāi yǔ fúwùqì de liánjiē
+shǐyòng èrjìnzhì huò wénběn jiāng yuǎnchéng wénjiàn xiàzài dào běndì mùlù
+tuìchū FTP shell bìng fǎnhuí nèihé
+xiǎnshì bāngzhù píngmù
+liè chū běndì mùlù
+liè chū yuǎnchéng mùlù
+zhòng mìngmíng tèdìng wénjiàn huò mùlù
+shǐyòng èrjìnzhì huò wénběn jiāng běndì wénjiàn shàngzài dào yuǎnchéng mùlù
+FTP shell zhōng cúnzài cuòwù.
+FTP xiāoxī: Zhǎo bù dào qǐngqiú de mìnglìng {0}. Yǒuguān FTP shell shàng zhǐdìng de kěyòng mìnglìng dì lièbiǎo, qǐng cānyuè “help”.
+net: Zài {1} ms zhōng dédào {0} de xiǎngyìng
+chāoshí, duàn kāi liánjiē huò fúwùqì tuō jī.
+net: Nín zài wǎngluò shàng de jìsuànjī míngchēng wèi {0}
+net: Nín de zhǔjī míng shì {1}
+net: Jìsuànjī sìhū zài yù huò gōngzuò zǔ zhōng:
+net: WiFi huò yǐtài wǎng duàn kāi liánjiē.
+Net: Jìsuànjī sìhū liánjiē zàixiàmiàn:
+Net: Lùyóuqì dìzhǐ: {0}
+Wúfǎ huòqǔ shìpèiqì {0} de shǔxìng
+Shìpèiqì biānhào:
+Shìpèiqì míngchēng:
+Zuìdà chuánshū dānwèi: {2} Dānwèi
+DHCP yǐ qǐyòng:
+Fēi dān bō shùjù bāo:
+Dān bō shùjù bāo:
+Chuán rù/chuán chū shùjù bāo chūcuò:
+Biémíng bùnéng yǔ mìnglìng tóngmíng.
+Wèi zhǎodào mìnglìng {0} de biémíng.
+Wánquán jìnzhǐ jiāng {0} biémíng wèi {1}.
+Nín xiànzài kěyǐ yùnxíng "{0}" zuòwéi mìnglìng: "{1}".
+Nín bùnéng zài shǐyòng "{0}" zuòwéi mìnglìng "{1}".
+Zhǎo bù dào biémíng {0}.
+Wúxiào móshì {0}.
+Zhùrù de cānshù {0} jiāng bèi ānpái zài xià cì chóngxīn qǐdòng shí yùnxíng.
+Méiyǒu zúgòu dì lùnjù. Qǐng cānyuè xiàmiàn de yòngfǎ:
+Mùlù {0} wèi zhǎodào
+kòngbái zhǔjī míng.
+Cóng:{0} Gēnggǎi wèi {1}...
+Dàngtiān de kòngbái xiāoxī.
+Dēnglù hòu kòngbái MAL.
+Jiāng MAL cóng {0} gēnggǎi wèi {1}...
+Yònghù mìmǎ cuòwù.
+Mìmǎ bù pǐpèi.
+Yònghù míng yǐ gēnggǎi wèi {0}!
+Nín shūrù de xīn míngchēng yǐjīng zhǎodào.
+Unix shàng shàng bù zhīchí liè chū PC.
+Jìnzhǐ shǐyòng de biémíng:{0}
+Zhǎo bù dào {0}.
+Pèizhì chóngxīn jiāzài. Nín kěnéng xūyào chóngxīn qǐdòng nèihé cáinéng shǐ mǒu xiē gēnggǎi shēngxiào.
+Yīqiè dōu chóng zhì wèi zhèngcháng shèzhì.
+Yī zhǒng huò duō zhǒng yánsè wúxiào.
+Yánsè bùkěyòng. Zài nèihé pèizhì zhōng dǎkāi cǎisè shell.
+Píngmù bǎohù chéngxù {0} wèi zhǎodào.
+{0}[ Nèihé shèzhì (zài {1} shàng yùnxíng) ]
+Nèihé bǎnběn:
+Tiáoshì móshì:
+Cǎi ké:
+Boot shàng de cānshù:
+Bāngzhù mìnglìng jiǎnhuà:
+Dēnglù shí de MOTD:
+Jiǎoluò de shíjiān/rìqí:
+Yìngjiàn tàncè:
+Mùqián de zhǔtí:
+[ Yìngjiàn shèzhì ]{0}
+{0}[ yònghù shèzhì ]
+Dāngqián yònghù míng:
+Dāngqián zhǔjī míng:
+Kěyòng de yònghù míng:
+Jìsuànjī zhǔjī míng:
+{0}[ Xiāoxī shèzhì ]
+Yuán dàimǎ:
+Bǎnquán suǒyǒu (c)
+Xǔkě zhèng
+xiànzài
+chángshì zhíxíng mìnglìng shí chūcuò
+tiānjiā yònghù (zhǐyǒu guǎnlǐ yuán kěyǐ fǎngwèn cǐ mìnglìng)
+xiàng mìnglìng tiānjiā biémíng (zhǐyǒu guǎnlǐ yuán cáinéng fǎngwèn cǐ mìnglìng)
+zhùrù nèihé de cānshù (xūyào chóngxīn qǐdòng, jǐn xiàn guǎnlǐ yuán)
+Jiǎndān de jìsuàn qì
+gēnggǎi mùlù
+gēnggǎi zhǔjī míng (jǐn xiàn guǎnlǐ yuán)
+gēnggǎi MAL, dēnglù hòu de MOTD(jǐn xiàn guǎnlǐ yuán)
+gēnggǎi MOTD, jí dàngtiān de xiāoxī (jǐn xiàn guǎnlǐ yuán)
+gēnggǎi dāngqián yònghù de mìmǎ
+gēnggǎi yònghù míng (jǐn xiàn guǎnlǐ yuán)
+qīngchú píngmù
+zhuǎnhuàn huòbì
+xiǎnshì tiáoshì rìzhì (jǐn xiàn guǎnlǐ yuán)
+shǐyòng FTP shell yǔ fúwùqì jìnxíng jiāohù
+bāngzhù yèmiàn
+shǒudòng tàncè yìngjiàn (zài'nohwprobe'nèihé zhōng yīcì)
+liè chū dāngqiáng wénjiàn jiā zhōng de wénjiàn/wénjiàn jiā nèiróng
+KSMods zhōng de píngmù bǎohù chéngxù wénjiàn
+shǐyòng mìmǎ suǒdìng píngmù
+jìlù nǐ
+liè chū suǒyǒu liánjī (yǐjí yù zhōng tuō jī) de wǎngluò shèbèi
+liè chū zhǔjī shàng de suǒyǒu wǎngluò dìzhǐ
+shǐyòng shù liè chū zhǔjī shàng de suǒyǒu wǎngluò dìzhǐ
+chuàngjiàn mùlù
+liè chū yǒuguān suǒyǒu kěyòng jiēkǒu de xìnxī
+xiǎnshì jìnyòng de biémíng lièbiǎo
+guǎnlǐ yònghù quánxiàn (zhǐyǒu guǎnlǐ yuán cáinéng fǎngwèn cǐ mìnglìng)
+jiǎnchá zhǐdìng dì dìzhǐ shìfǒu kěyòng
+jiāng wénjiàn nèiróng xiě rù kòngzhì tái
+chóngxīn qǐdòng jìsuànjī (jǐnggào: Méiyǒu tóngbù, yīnwèi tā bùshì zuìzhōng nèihé)
+chóngxīn jiāzài yǐ biānjí de pèizhì wénjiàn.
+Shānchú mùlù
+cóng lièbiǎo zhōng shānchú yònghù (jǐn xiàn guǎnlǐ yuán)
+bǎocún nín de píngmù miǎn yú shāo huài
+kēxué jìsuàn qì. Dānwèi zhuǎnhuàn qì yǔ lìng yīgè mìnglìng fēnkāi
+shèzhì nèihé yánsè
+shèzhì nèihé píngmù bǎohù chéngxù
+shèzhì nèihé zhǔtí
+xiǎnshì biémíng
+zài yònghù huò nèihé shèzhì dēnglù hòu xiǎnshì MOTD
+xiǎnshì yònghù huò nèihé shèzhì de rìqí xiāoxī
+xiǎnshì rìqí hé shíjiān
+zài qūyù zhōng xiǎnshì rìqí hé shíjiān
+nèihé jiāng guānbì
+xìtǒng xìnxī
+yǔ scicalc fēnlí de dānwèi zhuǎnhuàn qì.
+Xiǎnshì shǐyòng de kāiyuán yīlài xiàng
+yī běn fēicháng jù miáoshù xìng de yònghù shǒucè.
+*Nín kěyǐ shǐyòng mìnglìng zhī jiān de màohào lái shǐyòng duō gè mìnglìng.
+Kěyòng mìnglìng:
+Mod mìnglìng:
+Mìnglìng de biémíng:
+Yòngfǎ:
+Yòng dòuhào fēngé de cānshù
+qízhōng cānshù wèi {0}
+huòqǔ dāngqián mùlù
+zài nǎge yuán hé mùdì de shì huìlǜ de 3 gè dàxiě zìfú
+suǒyǒu ID hé míngchēng dì lièbiǎo:
+Xiǎnshì tiáoshì rìzhì, yǐbiàn nín kěyǐ jiāng rìzhì fāsòng gěi wǒmen.
+Chūshǐhuà FTP shell.
+Tàn zhēn yìngjiàn (jǐn zài wèi tàncè yìngjiàn qiě wèi zhíxíng hwprobe shí yǒuxiào).
+Liè chū wǎngluò xìnxī yǐjí liánjiē dào wǎngluò de měi tái jìsuànjī.
+Péngyǒu
+yǐ shù xíngshì liè chū wǎngluò xìnxī yǐjí liánjiē dào wǎngluò de měi tái jìsuànjī.
+Liè chū wǎngluò xìnxī yǐjí měi tái jìsuànjī.
+Qízhōng modnameSS.M jiāng shì
+shǐyòng mìmǎ suǒdìng píngmù.
+Jiāng nín tuìchū yònghù.
+Huòqǔ měi gè wǎngluò xìnxī
+chóngxīn qǐdòng nín de mónǐ jìsuànjī.
+Chóngxīn jiāzài zuìzhōng yònghù huò gōngjù gēnggǎi de pèizhì.
+Yánsè bù xūyào chóngxīn qǐdòng, dàn dà duōshù shèzhì dōu yāoqiú nín chóngxīn qǐdòng.
+Xiàng nín xiǎnshì suǒ xuǎn de píngmù bǎohù chéngxù, tóngshí bǎohù nín de píngmù miǎn shòu shāo huài.
+Xiǎnshì rìqí hé shíjiān.
+Xiǎnshì qūyù zhōng de rìqí hé shíjiān.
+Guānbì mónǐ jìsuànjī.
+Xiǎnshì xìtǒng xìnxī hé bǎnběn.
+Xiǎnshì shǐyòng de kāiyuán kù
+shell zhōng yǒu yīgè cuòwù.
+Nín wú quán shǐyòng {0}
+Shell xiāoxī: Bù yǔnxǔ zài wéihù móshì xià yùnxíng qǐngqiú de mìnglìng {0}.
+Shell xiāoxī: Zhǎo bù dào qǐngqiú de mìnglìng {0}. Yǒuguān kěyòng mìnglìng, qǐng cānyuè “help”.
+Shell xiāoxī: Dēnglù shí bù yǔnxǔ yùnxíng mìnglìng {0}.
+Shell xiāoxī: Zhǎo bù dào qǐngqiú de mìnglìng {0}.
+Chángshì zhíxíng mìnglìng shí chūcuò.
+datetime: Shíjiān wèi {0}
+datetime: Jīntiān shì {0}
+datetime: Shíqū:{0}
+- Shíjiān {0}:{1}
+Qīngchú píngmù.
+Sìhū zhǎo bù dào shǒucè yè {0}.
+Chángshì jiāzài shǒucè yè {0} shí chūcuò, yīnwèi {1}.
+Yóuyú yǐxià yuányīn, běn shǒucè yè bù wánzhěng:
+Àn rènyì jiàn jìxù...
+| {0} Zì | xiūdìng bǎn v{1} | {2} bùfèn
+cǐ shǒucè yè biāotí wèi xiě rù
+běn shǒucè yè ({0}) bù bāohán rènhé zhèngwén. Zhèngzài shānchú yèmiàn...
+Běn shǒucè yè ({0}) bù bāohán rènhé bùfèn. Zhèngzài shānchú yèmiàn...
+zài {0} shàng yùnxíng
+Nín wú quán huòqǔ {0} de xìnxī.
+Cǐ mìnglìng yǐ guòshí, jiàng zài yǐhòu de bǎnběn zhōng shānchú.
+Nín wú quán gēnggǎi mìmǎ {0}, yīnwèi mùbiāo shì guǎnlǐ yuán.
+Jiāng jīn'é cóng guójiā/dìqū zhuǎnhuàn wèi guójiā/dìqū
+huòbì:
+usrmgr: Yǐ zhǎodào yònghù míng {0}

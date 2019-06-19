@@ -21,12 +21,22 @@ Imports System.IO
 Public Module GetCommand
 
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
+        'Get the index of the first space
         Dim index As Integer = requestedCommand.IndexOf(" ")
         If (index = -1) Then index = requestedCommand.Length
-        Dim words = requestedCommand.Split({" "c})
+
+        'Split the requested command string into words
+        Dim words() As String = requestedCommand.Split({" "c})
+
+        'Get the string of arguments
         Dim strArgs As String = requestedCommand.Substring(index)
         If Not (index = requestedCommand.Length) Then strArgs = strArgs.Substring(1)
+
+        'Split the arguments string into array (args: No empty entries | eargs: Empty entries)
         Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+        Dim eargs() As String = strArgs.Split({" "c})
+
+        'The command is done
         Dim Done As Boolean = False
 
         'Check to see is a requested command is obsolete
@@ -52,9 +62,17 @@ Public Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "adduser") Then
 
                 If (requestedCommand <> "adduser") Then
-                    If (args.Count - 1 = 2) Then
-                        adduser(args(0), args(1))
+                    If (args.Count - 1 = 0) Then
+                        Adduser(args(0))
                         Done = True
+                    ElseIf (args.Count - 1 = 2) Then
+                        If args(1) = args(2) Then
+                            Adduser(args(0), args(1))
+                            Done = True
+                        Else
+                            Wln(DoTranslation("Passwords doesn't match.", currentLang), "neutralText")
+                            Done = True
+                        End If
                     End If
                 End If
 
@@ -63,12 +81,12 @@ Public Module GetCommand
                 If (requestedCommand <> "alias") Then
                     If (args.Count - 1 > 1) Then
                         If (args(0) = "add") Then
-                            manageAlias(args(0), args(1), args(2))
+                            ManageAlias(args(0), args(1), args(2))
                             Done = True
                         End If
                     ElseIf (args.Count - 1 = 1) Then
                         If (args(0) = "rem") Then
-                            manageAlias(args(0), args(1))
+                            ManageAlias(args(0), args(1))
                             Done = True
                         End If
                     End If
@@ -90,16 +108,10 @@ Public Module GetCommand
 
                 If (requestedCommand <> "calc") Then
                     If (args.Count - 1 > 1) Then
-                        stdCalc.expressionCalculate(args)
+                        StdCalc.ExpressionCalculate(args)
                         Done = True
                     End If
                 End If
-
-            ElseIf (requestedCommand = "cdir") Then
-
-                'Current directory
-                Wln(DoTranslation("Current directory: {0}", currentLang), "neutralText", CurrDir)
-                Done = True
 
             ElseIf (requestedCommand.Substring(0, index) = "chdir") Then
 
@@ -167,16 +179,20 @@ Public Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "chpwd") Then
 
                 If (requestedCommand <> "chpwd") Then
-                    If (args.Count - 1 = 3) Then
-                        If InStr(args(3), " ") > 0 Then
+                    If (eargs.Count - 1 = 3) Then
+                        If InStr(eargs(3), " ") > 0 Then
                             Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
-                        ElseIf (args(3) = args(2)) Then
-                            If (args(1) = userword(args(0))) Then
-                                userword.Item(args(0)) = args(2)
+                        ElseIf (eargs(3) = eargs(2)) Then
+                            If (eargs(1) = userword(eargs(0))) Then
+                                If adminList(eargs(0)) And adminList(signedinusrnm) Then
+                                    userword.Item(eargs(0)) = eargs(2)
+                                ElseIf adminList(eargs(0)) And Not adminList(signedinusrnm) Then
+                                    Wln(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang), "neutralText", eargs(0))
+                                End If
                             Else
                                 Wln(DoTranslation("Wrong user password.", currentLang), "neutralText")
                             End If
-                        ElseIf (args(3) <> args(2)) Then
+                        ElseIf (eargs(3) <> eargs(2)) Then
                             Wln(DoTranslation("Passwords doesn't match.", currentLang), "neutralText")
                         End If
                         Done = True
@@ -194,7 +210,7 @@ Public Module GetCommand
                                 Dim temporary As String = userword(args(0))
                                 userword.Remove(args(0))
                                 userword.Add(args(1), temporary)
-                                permissionEditForNewUser(args(0), args(1))
+                                PermissionEditForNewUser(args(0), args(1))
                                 Wln(DoTranslation("Username has been changed to {0}!", currentLang), "neutralText", args(1))
                                 If (args(0) = signedinusrnm) Then
                                     LoginPrompt()
@@ -246,7 +262,7 @@ Public Module GetCommand
                 Done = True
                 LockMode = True
                 ShowSavers(defSaverName)
-                showPasswordPrompt(signedinusrnm)
+                ShowPasswordPrompt(signedinusrnm)
 
             ElseIf (requestedCommand.Substring(0, index) = "list") Then
 
@@ -299,7 +315,7 @@ Public Module GetCommand
 
             ElseIf (requestedCommand = "netinfo") Then
 
-                getProperties()
+                GetProperties()
                 Done = True
 
             ElseIf (requestedCommand.Substring(0, index) = "md") Then
@@ -326,7 +342,7 @@ Public Module GetCommand
 
                 If (requestedCommand <> "perm") Then
                     If (args.Count - 1 = 2) Then
-                        permission(args(1), args(0), args(2))
+                        Permission(args(1), args(0), args(2))
                         Done = True
                     End If
                 End If
@@ -400,7 +416,7 @@ Public Module GetCommand
 
                 If (requestedCommand <> "rmuser") Then
                     If (args.Count - 1 = 0) Then
-                        removeUserFromDatabase(args(0))
+                        RemoveUserFromDatabase(args(0))
                         Done = True
                     End If
                 End If
@@ -414,10 +430,10 @@ Public Module GetCommand
 
                 If (requestedCommand <> "scical") Then
                     If ((args(0) <> "sqrt" And args(0) <> "tan" And args(0) <> "sin" And args(0) <> "cos" And args(0) <> "floor" And args(0) <> "ceiling" And args(0) <> "abs") And args.Count - 1 > 1) Then
-                        sciCalc.expressionCalculate(False, args)
+                        SciCalc.ExpressionCalculate(False, args)
                         Done = True
                     ElseIf ((args(0) = "sqrt" Or args(0) = "tan" Or args(0) = "sin" Or args(0) = "cos" Or args(0) = "floor" Or args(0) = "ceiling" Or args(0) = "abs") And args.Count - 1 = 1) Then
-                        sciCalc.expressionCalculate(True, args)
+                        SciCalc.ExpressionCalculate(True, args)
                         Done = True
                     End If
                 End If
@@ -494,7 +510,7 @@ Public Module GetCommand
                 Dim modPath As String = paths("Mods")
                 If (requestedCommand <> "setsaver") Then
                     If (args.Count >= 0) Then
-                        If (strArgs = "colorMix" Or strArgs = "matrix" Or strArgs = "disco") Then
+                        If (ScrnSvrdb.ContainsKey(strArgs)) Then
                             SetDefaultScreensaver(strArgs)
                         Else
                             If (FileIO.FileSystem.FileExists(modPath + strArgs)) Then
@@ -511,7 +527,7 @@ Public Module GetCommand
 
                 If (requestedCommand <> "setthemes") Then
                     If (args.Count - 1 = 0) Then
-                        If (ColoredShell = True) Then templateSet(args(0)) Else Wln(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), "neutralText")
+                        If (ColoredShell = True) Then TemplateSet(args(0)) Else Wln(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), "neutralText")
                         Done = True
                     End If
                 End If
@@ -523,17 +539,17 @@ Public Module GetCommand
             ElseIf (requestedCommand.Substring(0, index) = "showtdzone") Then
 
                 If (requestedCommand <> "showtdzone") Then
-                    initTimesInZones()
+                    InitTimesInZones()
                     Dim DoneFlag As Boolean = False
                     For Each zoneName In zoneTimes.Keys
                         If (zoneName = strArgs) Then
                             DoneFlag = True : Done = True
-                            showTimesInZones(strArgs)
+                            ShowTimesInZones(strArgs)
                         End If
                     Next
                     If (DoneFlag = False) Then
                         If (args(0) = "all") Then
-                            showTimesInZones()
+                            ShowTimesInZones()
                             Done = True
                         End If
                     End If
@@ -581,7 +597,7 @@ Public Module GetCommand
 
                 'Hardware section
                 Wln(DoTranslation("[ Hardware settings ]{0}", currentLang), "helpCmd", vbNewLine)
-                If Not EnvironmentOSType.Contains("Unix") then
+                If Not EnvironmentOSType.Contains("Unix") Then
                     ListDrivers()
                 Else
                     ListDrivers_Linux()

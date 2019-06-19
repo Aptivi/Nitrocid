@@ -12,13 +12,9 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - It can only be Console at the moment, while we are developing a GUI for this simulator.
 
-- We took out Windows XP support in favor of NuGet and .NET Framework 4.7.
+- We took out Windows XP support in 0.0.5.9 in favor of NuGet and .NET Framework 4.7.
 
-- We paused porting for MonoDevelop in Linux and macOS in beta versions. Although it works, some features may not work properly, and any of the issues or pull requests about the Linux compatibility optimization while the version you're using is a beta version of 0.0.6 will be closed.
-
-- This version is the beta version so expect some bugs and instabilities. If you have experienced one, send a bug report to GitHub with stack trace and debugging logs.
-
-- This is the last beta build of 0.0.6, because we got a faster Windows 10 computer to continue working on.
+- Two documentations, faq and troubleshooting, are deleted because they are not updated regularly.
 
 ## |-----+--> _Prerequisites_ <--+-----|
 
@@ -54,7 +50,7 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 1. Install [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/) and MonoDevelop.
 
-2. After installation, extrace the source code, and open MonoDevelop, and click on **Open...**
+2. After installation, extract the source code, open MonoDevelop, and click on **Open...**
 
 3. Go to the source directory, and double-click the solution file
 	
@@ -128,17 +124,15 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **6/13/2019 - 0.0.5.14:** Replaced fake file system with real one (access to your files), Fixed the wrong `changedir` help command being shown instead of `chdir`, `cdir,` which shows the current directory, is now obsolete, Fixed crash while rebooting the kernel
 
+**6/19/2019 - 0.0.6:** New icon, Updated FluentFTP and Newtonsoft.Json libs, Removed writing events, Re-written login (Not all, but re-designed), Fixed the chpwd command not changing password if the target doesn't have password, Fixed chpwd not checking if a normal user changes admin password, Fixed adduser not adding users without passwords, Fixed adduser adding users with passwords even if they don't match, Removed cdir, Added config entry for screensaver name, Implemented debugging and dump files for kernel errors, Shipped with .pdb debugging symbols for KS, Fixed reboot not clearing screen, Added Dutch, Finnish, Italian, Malay, Swedish and Turkey languages (switch to a compatible font in console), Countries and currencies are now listed when not providing enough arguments or issuing "help currency", Fixed help list not updating for new language update when rebooting, Added permanent aliases (located under your profile, aliases.csv), The password is now hidden when logging in to maintain security, Fixed users being removed after each reboot
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`
 
 **Documentation - main page:** Information about Kernel Simulator, this page
 
-**Documentation - faq:** Frequently Asked Questions for Kernel Simulator
-
 **Documentation - contributing rules:** Conditions for contributing to Kernel Simulator
-
-**Documentation - troubleshooting:** List of known and user-reported problems
 
 * The text files will be moved to wiki section.
 

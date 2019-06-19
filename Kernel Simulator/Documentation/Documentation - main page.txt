@@ -4,16 +4,13 @@ INFO: Are you building a Linux version of Kernel Simulator in MonoDevelop? If so
 
 INFO: This kernel simulator is not a final planned version of Kernel, since it was minimal.
 
-We paused porting for MonoDevelop in Linux and macOS in beta versions. Although it works, some features may not work properly, and any of the issues or pull requests about the Linux compatibility optimization while the version you're using is a beta version of 0.0.6 will be closed.
-
-This version is the beta version so expect some bugs and instabilities. If you have experienced one, send a bug report to GitHub with stack trace and debugging logs.
+INFO: Two documentations, faq and troubleshooting, are deleted because they are not updated regularly.
 
 Kernel Simulator lets you simulate a very early access for our future Kernel that will continue to be developed, even if we made the real PC version of Kernel.
 
-This is the last beta build of 0.0.6, because we got a faster Windows 10 computer to continue working on.
-
 |---------------+--> History <--+---------------|
 
+6/19/2019 - 0.0.6: New icon, Updated FluentFTP and Newtonsoft.Json libs, Removed writing events, Re-written login (Not all, but re-designed), Fixed the chpwd command not changing password if the target doesn't have password, Fixed chpwd not checking if a normal user changes admin password, Fixed adduser not adding users without passwords, Fixed adduser adding users with passwords even if they don't match, Removed cdir, Added config entry for screensaver name, Implemented debugging and dump files for kernel errors, Shipped with .pdb debugging symbols for KS, Fixed reboot not clearing screen, Added Dutch, Finnish, Italian, Malay, Swedish and Turkey languages (switch to a compatible font in console), Countries and currencies are now listed when not providing enough arguments or issuing "help currency", Fixed help list not updating for new language update when rebooting, Added permanent aliases (located under your profile, aliases.csv), The password is now hidden when logging in to maintain security, Fixed users being removed after each reboot
 6/13/2019 - 0.0.5.14: Replaced fake file system with real one (access to your files), Fixed the wrong "changedir" help command being shown instead of "chdir", "cdir," which shows the current directory, is now obsolete, Fixed crash while rebooting the kernel
 4/14/2019 - 0.0.5.13: More slimming by JetBrains ReSharper for VS2017, Implemented Linux hardware probing (You need to install inxi for HDD probes to work), Increased .NET requirement to 4.7, Removed warning about binding redirects in MonoDevelop, Increased VS version requirement to VS2019, Removed annoying "Naming rule violation" by using suggested option
 2/22/2019 - 0.0.5.12: Now createConf cmdline arg only creates config if the config file isn't found, Some preparations for 0.0.6 (slimming down only), Removed the GPU and BIOS probing, Now older KS config won't be allowed to be updated here (Workaround: You need to remove your old KS config file and re-run the app), Fixed the Environment.OS bug on Windows 10 (10.0) where it returns Windows 8 (6.2) version, Fixed the placeholders not parsing when using showmotd/showmal command, Fixed the simple help not showing mods, Fixed built-in commands not running after you run mod commands or alias commands, Fixed NullReferenceException when debugging, Improved alias listing, Fixed the printing text exception message not translating to current language, Fixed the "/" or "\" appearing before the modname when probing mods and screensavers, Removed unnecessary fixup in translation, Fixed more stack overflows in FTP shell, Fixed the FTP message translation translating "'help'" as the language when it's supposed to be a command, Fixed the command not found message when not entering anything in FTP shell
@@ -48,15 +45,13 @@ This is the last beta build of 0.0.6, because we got a faster Windows 10 compute
 |---------------+--> Manual pages <--+---------------|
 
 Documentation - main page: Information about Kernel Simulator, this page
-Documentation - faq: Frequently Asked Questions for Kernel Simulator
 Documentation - contributing rules: Conditions for contributing Kernel Simulator
-Documentation - troubleshooting: List of known and user-reported problems
 
 |---------------+--> Credits <--+---------------|
 
 EoflaOE: Owner of Kernel Simulator
 
-Paomedia: Creator of icon
+Oxygen Team: Creator of icon
 
 |---------------+--> Open Source Libraries used <--+---------------|
 
@@ -82,7 +77,7 @@ Source code: https://github.com/robinrodricks/FluentFTP
 
 Copyright (c) 2011-2016, J.P. Trosclair
 
-Copyright (c) 2016-present, Robin Rodricks
+Copyright (c) 2016-2019, Robin Rodricks
 
 License (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 

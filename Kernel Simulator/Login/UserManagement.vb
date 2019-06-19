@@ -44,32 +44,15 @@ Public Module UserManagement
         If (Quiet = False) Then
             Wln(DoTranslation("usrmgr: Creating username {0}...", currentLang), "neutralText", newUser)
         End If
-        If (newPassword = Nothing) Then
-            InitializeUser(newUser)
+        If Not userword.ContainsKey(newUser) Then
+            If (newPassword = Nothing) Then
+                InitializeUser(newUser)
+            Else
+                InitializeUser(newUser, newPassword)
+            End If
         Else
-            InitializeUser(newUser, newPassword)
+            Wln(DoTranslation("usrmgr: Username {0} is already found", currentLang), "neutralText", newUser)
         End If
-
-    End Sub
-
-    Public Sub ResetUsers()
-
-        'Resets users and permissions
-        adminList.Clear()
-        disabledList.Clear()
-        userword.Clear()
-
-        'Resets outputs
-        password = Nothing
-        LoginFlag = False
-        CruserFlag = False
-        signedinusrnm = Nothing
-
-        'Resets inputs
-        answerpass = Nothing
-        answeruser = Nothing
-        arguser = Nothing
-        argword = Nothing
 
     End Sub
 

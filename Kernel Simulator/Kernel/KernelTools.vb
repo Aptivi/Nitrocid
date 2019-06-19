@@ -25,6 +25,8 @@ Public Module KernelTools
     ' A dictionary for storing paths and files (used for mods, screensavers, etc.)
     Public paths As New Dictionary(Of String, String)
 
+    ' ----------------------------------------------- Kernel errors -----------------------------------------------
+
     ''' <summary>
     ''' Indicates that there's something wrong with the kernel.
     ''' </summary>
@@ -32,32 +34,36 @@ Public Module KernelTools
     ''' <param name="Reboot">Specifies whether to reboot on panic or to show the message to press any key to shut down</param>
     ''' <param name="RebootTime">Specifies seconds before reboot. 0 is instant. Negative numbers are not allowed.</param>
     ''' <param name="Description">Explanation of what happened when it errored.</param>
+    ''' <param name="Exc">An exception to get stack traces, etc. Used for dump files currently.</param>
     ''' <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
     ''' <remarks></remarks>
-    Public Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal ParamArray Variables() As Object)
+    Public Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal ParamArray Variables() As Object)
         Try
-            'TODO: Debugging and crash dump files on 0.0.6
             'Check error types and its capabilities
             If (ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C") Then
                 If (ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5) Then
                     'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                     'generate a second kernel error stating that there is something wrong with the reboot time.
-                    KernelError(CChar("D"), True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.", currentLang), CStr(ErrorType))
+                    Wdbg("Errors that have {0} type shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
+                    KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.", currentLang), Nothing, CStr(ErrorType))
                     StopPanicAndGoToDoublePanic = True
                 ElseIf (ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False) Then
                     'If the error type is unrecoverable, or double, and the rebooting is false where it should
                     'not be false, then it can deal with this issue by enabling reboot.
+                    Wdbg("Errors that have {0} type enforced Reboot = True.", ErrorType)
                     Wln(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}.", currentLang), "uncontError", ErrorType)
                     Reboot = True
                 End If
                 If (RebootTime > 3600) Then
                     'If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
+                    Wdbg("RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime)
                     Wln(DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.", currentLang), "uncontError", ErrorType, CStr(RebootTime))
                     RebootTime = 60
                 End If
             Else
                 'If the error type is other than D/F/C/U/S, then it will generate a second error.
-                KernelError(CChar("D"), True, 5, DoTranslation("DOUBLE PANIC: Error Type {0} invalid.", currentLang), CStr(ErrorType))
+                Wdbg("Error type {0} is not valid.", ErrorType)
+                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Error Type {0} invalid.", currentLang), Nothing, CStr(ErrorType))
                 StopPanicAndGoToDoublePanic = True
             End If
 
@@ -69,45 +75,120 @@ Public Module KernelTools
             'Fire an event
             EventManager.RaiseKernelError()
 
+            'Make a dump file
+            GeneratePanicDump(Description, ErrorType, Exc)
+
             'Check error capabilities
             If (Description.Contains("DOUBLE PANIC: ") And ErrorType = "D") Then
                 'If the description has a double panic tag and the error type is Double
-                Wln(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, CStr(Description), CStr(RebootTime))
-                Thread.Sleep(CInt(RebootTime * 1000))
+                Wdbg("Double panic caused by bug in kernel crash.")
+                Wln(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, Description, CStr(RebootTime))
+                Thread.Sleep(RebootTime * 1000)
+                Wdbg("Rebooting")
                 PowerManage("reboot")
             ElseIf (StopPanicAndGoToDoublePanic = True) Then
                 'Switch to Double Panic
                 Exit Sub
             ElseIf (ErrorType = "C" And Reboot = True) Then
                 'Check if error is Continuable and reboot is enabled
+                Wdbg("Continuable kernel errors shouldn't have Reboot = True.")
                 Wln(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.", currentLang) + vbNewLine +
-                    DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, CStr(Description))
+                    DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, Description)
                 Console.ReadKey()
             ElseIf (ErrorType = "C" And Reboot = False) Then
                 'Check if error is Continuable and reboot is disabled
                 EventManager.RaiseContKernelError()
-                Wln(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, CStr(Description))
+                Wln(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, Description)
                 Console.ReadKey()
             ElseIf ((Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C")) Then
                 'If rebooting is disabled and the error type does not equal Double or Continuable
-                Wln(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown.", currentLang), "uncontError", ErrorType, CStr(Description))
+                Wdbg("Reboot is False, ErrorType is not double or continuable.")
+                Wln(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown.", currentLang), "uncontError", ErrorType, Description)
                 Console.ReadKey()
                 PowerManage("shutdown")
             Else
                 'Everything else.
-                Wln(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, CStr(Description), CStr(RebootTime))
-                Thread.Sleep(CInt(RebootTime * 1000))
+                Wdbg("Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
+                Wln(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, Description, CStr(RebootTime))
+                Thread.Sleep(RebootTime * 1000)
                 PowerManage("reboot")
             End If
         Catch ex As Exception
             If (DebugMode = True) Then
                 Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
-                KernelError(CChar("D"), True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), Err.Description)
+                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), ex, Err.Description)
             Else
-                KernelError(CChar("D"), True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), Err.Description)
+                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), ex, Err.Description)
             End If
         End Try
     End Sub
+
+    'TODO: Dumps are not localized
+    Sub GeneratePanicDump(ByVal Description As String, ByVal ErrorType As Char, ByVal Exc As Exception)
+        'Open a file stream for dump
+        Dim Dump As New StreamWriter(paths("Home") + "/dmp_" + FormatDateTime(Date.Now, DateFormat.ShortDate).Replace("/", "-") + "_" + FormatDateTime(Date.Now, DateFormat.LongTime).Replace(":", "-"))
+        Wdbg("Opened file stream in home directory, saved as dmp_{0}_{1}.txt", FormatDateTime(Date.Now, DateFormat.ShortDate).Replace("/", "-") + "_" + FormatDateTime(Date.Now, DateFormat.LongTime).Replace(":", "-"))
+
+        'Write info (Header)
+        Dump.AutoFlush = True
+        Dump.WriteLine("----------------------------- Kernel panic dump -----------------------------" + vbNewLine + vbNewLine +
+                       ">> Panic information <<" + vbNewLine +
+                       "> Description: {0}" + vbNewLine +
+                       "> Error type: {1}" + vbNewLine +
+                       "> Date and Time: {2}" + vbNewLine, Description, ErrorType, FormatDateTime(Date.Now, DateFormat.GeneralDate))
+
+        'Write Info (Exception)
+        If Not IsNothing(Exc) Then
+            Dump.WriteLine(">> Exception information <<" + vbNewLine +
+                           "> Exception: {0}" + vbNewLine +
+                           "> Description: {1}" + vbNewLine +
+                           "> HRESULT: {2}" + vbNewLine +
+                           "> Source: {3}" + vbNewLine + vbNewLine +
+                           "> Stack trace <" + vbNewLine + vbNewLine +
+                           Exc.StackTrace + vbNewLine + vbNewLine +
+                           ">> Inner exception 1 information <<", Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), Exc.Message, Exc.HResult, Exc.Source)
+
+            'Write info (Inner exceptions)
+            Dim Count As Integer = 1
+            Dim InnerExc As Exception = Exc.InnerException
+            While Not InnerExc Is Nothing
+                Count += 1
+                Dump.WriteLine("> Exception: {0}" + vbNewLine +
+                               "> Description: {1}" + vbNewLine +
+                               "> HRESULT: {2}" + vbNewLine +
+                               "> Source: {3}" + vbNewLine + vbNewLine +
+                               "> Stack trace <" + vbNewLine + vbNewLine +
+                               InnerExc.StackTrace + vbNewLine, InnerExc.ToString.Substring(0, InnerExc.ToString.IndexOf(":")), InnerExc.Message, InnerExc.HResult, InnerExc.Source)
+                InnerExc = InnerExc.InnerException
+                If Not InnerExc Is Nothing Then
+                    Dump.WriteLine(">> Inner exception {0} information <<", Count)
+                Else
+                    Dump.WriteLine(">> Exception {0} is the root cause <<" + vbNewLine, Count)
+                End If
+            End While
+        Else
+            Dump.WriteLine(">> No exception; might be a kernel error. <<" + vbNewLine)
+        End If
+
+        'Write info (Frames)
+        Dump.WriteLine(">> Frames, files, lines, and columns <<")
+        Try
+            Dim ExcTrace As New StackTrace(Exc, True)
+            Dim FrameNo As Integer = 1
+            For Each Frame As StackFrame In ExcTrace.GetFrames
+                Dump.WriteLine("> Frame {0}: File: {1} | Line: {2} | Column: {3}", FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
+                FrameNo += 1
+            Next
+        Catch ex As Exception
+            Dump.WriteLine("> There is an error when trying to get frame information. {0}: {1}", ex.ToString.Substring(0, ex.ToString.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
+        End Try
+
+        'Close stream
+        Wdbg("Closing file stream for dump...")
+        Dump.Flush() : Dump.Close()
+    End Sub
+
+    ' ----------------------------------------------- Power management -----------------------------------------------
 
     ''' <summary>
     ''' Manage computer's (actually, simulated computer) power
@@ -121,22 +202,18 @@ Public Module KernelTools
             Wln(DoTranslation("Shutting down...", currentLang), "neutralText")
             ResetEverything()
             EventManager.RaisePostShutdown()
-
-            'Stop all mods
-            ParseMods(False)
             Environment.Exit(0)
         ElseIf (PowerMode = "reboot") Then
             EventManager.RaisePreReboot()
             Wln(DoTranslation("Rebooting...", currentLang), "neutralText")
             ResetEverything()
             EventManager.RaisePostReboot()
-
-            'Stop all mods
-            ParseMods(False)
             Console.Clear()
             Main()
         End If
     End Sub
+
+    ' ----------------------------------------------- Init and reset -----------------------------------------------
 
     Sub ResetEverything()
         'Reset every variable that is resettable
@@ -159,10 +236,6 @@ Public Module KernelTools
         paths.Clear()
         Wdbg("General variables reset")
 
-        'Reset users
-        resetUsers()
-        Wdbg("User variables reset")
-
         'Reset hardware info
         HDDList.Clear()
         RAMList.Clear()
@@ -183,11 +256,24 @@ Public Module KernelTools
 
         'Close settings
         configReader = New IniFile()
+
+        'Stop all mods
+        ParseMods(False)
     End Sub
 
     Sub InitEverything()
-        'Initialize paths
+        'Initialize paths and help
         InitPaths()
+        InitHelp()
+
+        'We need to create a file so InitAliases() won't give out an error
+        If Not File.Exists(paths("Home") + "/aliases.csv") Then
+            Dim fstream As FileStream = File.Create(paths("Home") + "/aliases.csv")
+            fstream.Close()
+        End If
+
+        'Initialize aliases
+        InitAliases()
 
         'Check for multiple instances of KS
         If (instanceChecked = False) Then MultiInstance()
@@ -212,16 +298,16 @@ Public Module KernelTools
         Next
 
         'Check arguments and initialize date and files.
-        If (argsOnBoot = True) Then
+        If argsOnBoot Then
             PromptArgs()
-            If (argsFlag = True) Then ParseArguments()
+            If argsFlag Then ParseArguments()
         End If
-        If (argsInjected = True) Then
+        If argsInjected Then
             ParseArguments()
             answerargs = ""
             argsInjected = False
         End If
-        If (TimeDateIsSet = False) Then
+        If Not TimeDateIsSet Then
             InitializeTimeDate()
             TimeDateIsSet = True
         End If
@@ -237,13 +323,29 @@ Public Module KernelTools
         Next
     End Sub
 
+    Sub InitPaths()
+        If EnvironmentOSType.Contains("Unix") Then
+            paths.Add("Mods", Environ("HOME") + "/KSMods/")
+            paths.Add("Configuration", Environ("HOME") + "/kernelConfig.ini")
+            paths.Add("Debugging", Environ("HOME") + "/kernelDbg.log")
+            paths.Add("Home", Environ("HOME"))
+        Else
+            paths.Add("Mods", Environ("USERPROFILE") + "\KSMods\")
+            paths.Add("Configuration", Environ("USERPROFILE") + "\kernelConfig.ini")
+            paths.Add("Debugging", Environ("USERPROFILE") + "\kernelDbg.log")
+            paths.Add("Home", Environ("USERPROFILE"))
+        End If
+    End Sub
+
+    ' ----------------------------------------------- Misc -----------------------------------------------
+
     Sub MultiInstance()
         'Check to see if multiple Kernel Simulator processes are running.
         Static ksInst As Mutex
         Dim ksOwner As Boolean
         ksInst = New Mutex(True, "Kernel Simulator", ksOwner)
-        If (ksOwner = False) Then
-            KernelError(CChar("F"), False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference.", currentLang))
+        If Not ksOwner Then
+            KernelError("F", False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference.", currentLang), Nothing)
         End If
         instanceChecked = True
     End Sub
@@ -269,19 +371,5 @@ Public Module KernelTools
         'Now return compile date
         Return dt
     End Function
-
-    Sub InitPaths()
-        If EnvironmentOSType.Contains("Unix") Then
-            paths.Add("Mods", Environ("HOME") + "/KSMods/")
-            paths.Add("Configuration", Environ("HOME") + "/kernelConfig.ini")
-            paths.Add("Debugging", Environ("HOME") + "/kernelDbg.log")
-            paths.Add("Home", Environ("HOME"))
-        Else
-            paths.Add("Mods", Environ("USERPROFILE") + "\KSMods\")
-            paths.Add("Configuration", Environ("USERPROFILE") + "\kernelConfig.ini")
-            paths.Add("Debugging", Environ("USERPROFILE") + "\kernelDbg.log")
-            paths.Add("Home", Environ("USERPROFILE"))
-        End If
-    End Sub
 
 End Module

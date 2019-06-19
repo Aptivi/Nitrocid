@@ -24,9 +24,10 @@ Imports System.Threading
 Public Module Screensaver
 
     'TODO: Screensavers can have their own variables, and the only thing required is the CancelPending variable.
-    'Variables and Interface
+    'Variables
     Public LockMode As Boolean = False
-    Public defSaverName As String = "matrix" 'TODO: Permanent screensavers will be added in 0.0.6. Currently, it has been set to matrix
+    Public InSaver As Boolean = False
+    Public defSaverName As String = "matrix"
     Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"disco", False}}
     Public WithEvents ColorMix As New BackgroundWorker
     Public WithEvents Matrix As New BackgroundWorker
@@ -36,6 +37,8 @@ Public Module Screensaver
     Private execCustomSaver As CompilerResults
     Private finalSaver As ICustomSaver
     Private DoneFlag As Boolean = False
+
+    'Interface
     Public Interface ICustomSaver
         Sub InitSaver()
         Sub PreDisplay()
@@ -44,7 +47,6 @@ Public Module Screensaver
     End Interface
 
     Sub Custom_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Custom.DoWork
-
         'To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
         '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
         '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
@@ -64,11 +66,9 @@ Public Module Screensaver
                 finalSaver.ScrnSaver()
             End If
         Loop
-
     End Sub
 
     Sub ColorMix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles ColorMix.DoWork
-
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.White
         Console.Clear()
@@ -88,12 +88,10 @@ Public Module Screensaver
                 Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor) : Console.Write(" ")
             End If
         Loop
-
     End Sub
 
     Sub Matrix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Matrix.DoWork
-
-        'TODO: At this time, the matrix is basic and only prints zeroes and ones. The advanced matrix will be on 0.0.6.
+        'TODO: At this time, the matrix is basic and only prints zeroes and ones. The advanced matrix will be on 0.0.6. (cancelled)
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.Green
         Console.Clear()
@@ -113,11 +111,9 @@ Public Module Screensaver
                 Console.Write(CStr(random.Next(2)))
             End If
         Loop
-
     End Sub
 
     Sub Disco_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Disco.DoWork
-
         Console.CursorVisible = False
         Do While True
             For Each color In colors
@@ -136,24 +132,23 @@ Public Module Screensaver
                 End If
             Next
         Loop
-
     End Sub
 
     Sub ShowSavers(ByVal saver As String)
-
+        InSaver = True
         EventManager.RaisePreShowScreensaver()
         If (saver = "colorMix") Then
             ColorMix.WorkerSupportsCancellation = True
             ColorMix.RunWorkerAsync()
             Console.ReadKey()
             ColorMix.CancelAsync()
-            Thread.Sleep(50)
+            Thread.Sleep(150)
         ElseIf (saver = "matrix") Then
             Matrix.WorkerSupportsCancellation = True
             Matrix.RunWorkerAsync()
             Console.ReadKey()
             Matrix.CancelAsync()
-            Thread.Sleep(50)
+            Thread.Sleep(150)
         ElseIf (saver = "disco") Then
             Disco.WorkerSupportsCancellation = True
             Disco.RunWorkerAsync()
@@ -166,16 +161,15 @@ Public Module Screensaver
             Custom.RunWorkerAsync()
             Console.ReadKey()
             Custom.CancelAsync()
-            Thread.Sleep(50)
+            Thread.Sleep(150)
         Else
             Wln(DoTranslation("The requested screensaver {0} is not found.", currentLang), "neutralText", saver)
         End If
         EventManager.RaisePostShowScreensaver()
-
+        InSaver = False
     End Sub
 
     Sub CompileCustom(ByVal file As String)
-
         Dim modPath As String = paths("Mods")
         If (FileIO.FileSystem.FileExists(modPath + file)) Then
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
@@ -206,12 +200,15 @@ Public Module Screensaver
         Else
             Wln(DoTranslation("Screensaver {0} does not exist.", currentLang), "neutralText", file)
         End If
-
     End Sub
 
     Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
-
         If (ScrnSvrdb.ContainsKey(saver)) Then
+            Dim ksconf As New IniFile()
+            Dim pathConfig As String = paths("Configuration")
+            ksconf.Load(pathConfig)
+            ksconf.Sections("Misc").Keys("Screensaver").Value = saver
+            ksconf.Save(pathConfig)
             ScrnSvrdb(defSaverName) = False
             defSaverName = saver
             ScrnSvrdb(saver) = setDef
@@ -219,7 +216,6 @@ Public Module Screensaver
         Else
             Wln(DoTranslation("Screensaver {0} not found in database. Initialize with ""loadsaver {0}"".", currentLang), "neutralText", saver)
         End If
-
     End Sub
 
     Function GenSaver(ByVal code As String) As ICustomSaver

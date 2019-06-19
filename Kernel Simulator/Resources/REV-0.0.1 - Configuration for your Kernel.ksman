@@ -64,7 +64,8 @@ Each entry mentioned below can take either True, or False.
 Misc
 
 1. Show Time/Date on Upper Right Corner: You can establish the live time/date banner that's updating, and the position is on the upper-right corner. It can take either True or False.
-2. Kernel Version: Don't change this entry! It specifies the current kernel version we're at.
+2. Screensaver: You can choose your screensavers available.
+3. Kernel Version: Don't change this entry! It specifies the current kernel version we're at.
 -BODY END-
 
 -SECTIONS-

@@ -19,54 +19,58 @@
 Public Module HelpSystem
 
     'This dictionary is the definitions for commands.
-    Public definitions As New Dictionary(Of String, String) From {{"adduser", DoTranslation("Adds users (Only admins can access this command)", currentLang)},
-                                                                  {"alias", DoTranslation("Adds aliases to commands (Only admins can access this command)", currentLang)},
-                                                                  {"arginj", DoTranslation("Injects arguments to the kernel (reboot required, admins only)", currentLang)},
-                                                                  {"calc", DoTranslation("Simple calculator", currentLang)},
-                                                                  {"cdir", DoTranslation("Shows current directory", currentLang)},
-                                                                  {"chdir", DoTranslation("Changes directory", currentLang)},
-                                                                  {"chhostname", DoTranslation("Changes host name (Admins only)", currentLang)},
-                                                                  {"chmal", DoTranslation("Changes MAL, the MOTD After Login (Admins only)", currentLang)},
-                                                                  {"chmotd", DoTranslation("Changes MOTD, the Message Of The Day (Admins only)", currentLang)},
-                                                                  {"chpwd", DoTranslation("Changes password for current user", currentLang)},
-                                                                  {"chusrname", DoTranslation("Changes user name (Admins Only)", currentLang)},
-                                                                  {"cls", DoTranslation("Clears the screen", currentLang)},
-                                                                  {"debuglog", DoTranslation("Shows debug logs (Admins Only)", currentLang)},
-                                                                  {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
-                                                                  {"help", DoTranslation("Help page", currentLang)},
-                                                                  {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
-                                                                  {"lockscreen", DoTranslation("Locks your screen with a password", currentLang)},
-                                                                  {"logout", DoTranslation("Logs you out", currentLang)},
-                                                                  {"lscomp", DoTranslation("Lists all network devices who is online (and offline in domains)", currentLang)},
-                                                                  {"lsnet", DoTranslation("Lists all network addresses on host", currentLang)},
-                                                                  {"lsnettree", DoTranslation("Lists all network addresses on host using the tree", currentLang)},
-                                                                  {"md", DoTranslation("Creates a directory", currentLang)},
-                                                                  {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
-                                                                  {"noaliases", DoTranslation("Shows forbidden list of aliases", currentLang)},
-                                                                  {"perm", DoTranslation("Manage permissions for users (Only admins can access this command)", currentLang)},
-                                                                  {"ping", DoTranslation("Check to see if specified address is available", currentLang)},
-                                                                  {"read", DoTranslation("Writes file contents to the console", currentLang)},
-                                                                  {"reboot", DoTranslation("Restarts your computer (WARNING: No syncing, because it is not a final kernel)", currentLang)},
-                                                                  {"reloadconfig", DoTranslation("Reloads configuration file that is edited.", currentLang)},
-                                                                  {"reloadsaver", DoTranslation("Reloads screensaver file in %USERPROFILE%\KSMods", currentLang)},
-                                                                  {"rd", DoTranslation("Removes a directory", currentLang)},
-                                                                  {"rmuser", DoTranslation("Removes a user from the list (Admins Only)", currentLang)},
-                                                                  {"savescreen", DoTranslation("Saves your screen from burn outs", currentLang)},
-                                                                  {"scical", DoTranslation("Scientific calculator. The unit converter is separated to another command", currentLang)},
-                                                                  {"setcolors", DoTranslation("Sets up kernel colors", currentLang)},
-                                                                  {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
-                                                                  {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
-                                                                  {"showaliases", DoTranslation("Shows aliases", currentLang)},
-                                                                  {"showmal", DoTranslation("Shows MOTD after login set by user or kernel", currentLang)},
-                                                                  {"showmotd", DoTranslation("Shows message of the day set by user or kernel", currentLang)},
-                                                                  {"showtd", DoTranslation("Shows date and time", currentLang)},
-                                                                  {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
-                                                                  {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
-                                                                  {"sysinfo", DoTranslation("System information", currentLang)},
-                                                                  {"unitconv", DoTranslation("Unit converter that is separated from scicalc.", currentLang)},
-                                                                  {"useddeps", DoTranslation("Shows used open source dependencies", currentLang)},
-                                                                  {"usermanual", DoTranslation("A very descriptive user manual.", currentLang)}}
+    Public definitions As Dictionary(Of String, String)
     Public moddefs As New Dictionary(Of String, String)
+
+    Public Sub InitHelp()
+        definitions = New Dictionary(Of String, String) From {{"adduser", DoTranslation("Adds users (Only admins can access this command)", currentLang)},
+                                                             {"alias", DoTranslation("Adds aliases to commands (Only admins can access this command)", currentLang)},
+                                                             {"arginj", DoTranslation("Injects arguments to the kernel (reboot required, admins only)", currentLang)},
+                                                             {"calc", DoTranslation("Simple calculator", currentLang)},
+                                                             {"chdir", DoTranslation("Changes directory", currentLang)},
+                                                             {"chhostname", DoTranslation("Changes host name (Admins only)", currentLang)},
+                                                             {"chmal", DoTranslation("Changes MAL, the MOTD After Login (Admins only)", currentLang)},
+                                                             {"chmotd", DoTranslation("Changes MOTD, the Message Of The Day (Admins only)", currentLang)},
+                                                             {"chpwd", DoTranslation("Changes password for current user", currentLang)},
+                                                             {"chusrname", DoTranslation("Changes user name (Admins Only)", currentLang)},
+                                                             {"cls", DoTranslation("Clears the screen", currentLang)},
+                                                             {"currency", DoTranslation("Convert amount of money from country to country", currentLang)},
+                                                             {"debuglog", DoTranslation("Shows debug logs (Admins Only)", currentLang)},
+                                                             {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
+                                                             {"help", DoTranslation("Help page", currentLang)},
+                                                             {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
+                                                             {"lockscreen", DoTranslation("Locks your screen with a password", currentLang)},
+                                                             {"logout", DoTranslation("Logs you out", currentLang)},
+                                                             {"lscomp", DoTranslation("Lists all network devices who is online (and offline in domains)", currentLang)},
+                                                             {"lsnet", DoTranslation("Lists all network addresses on host", currentLang)},
+                                                             {"lsnettree", DoTranslation("Lists all network addresses on host using the tree", currentLang)},
+                                                             {"md", DoTranslation("Creates a directory", currentLang)},
+                                                             {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
+                                                             {"noaliases", DoTranslation("Shows forbidden list of aliases", currentLang)},
+                                                             {"perm", DoTranslation("Manage permissions for users (Only admins can access this command)", currentLang)},
+                                                             {"ping", DoTranslation("Check to see if specified address is available", currentLang)},
+                                                             {"read", DoTranslation("Writes file contents to the console", currentLang)},
+                                                             {"reboot", DoTranslation("Restarts your computer (WARNING: No syncing, because it is not a final kernel)", currentLang)},
+                                                             {"reloadconfig", DoTranslation("Reloads configuration file that is edited.", currentLang)},
+                                                             {"reloadsaver", DoTranslation("Reloads screensaver file in %USERPROFILE%\KSMods", currentLang)},
+                                                             {"rd", DoTranslation("Removes a directory", currentLang)},
+                                                             {"rmuser", DoTranslation("Removes a user from the list (Admins Only)", currentLang)},
+                                                             {"savescreen", DoTranslation("Saves your screen from burn outs", currentLang)},
+                                                             {"scical", DoTranslation("Scientific calculator. The unit converter is separated to another command", currentLang)},
+                                                             {"setcolors", DoTranslation("Sets up kernel colors", currentLang)},
+                                                             {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
+                                                             {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
+                                                             {"showaliases", DoTranslation("Shows aliases", currentLang)},
+                                                             {"showmal", DoTranslation("Shows MOTD after login set by user or kernel", currentLang)},
+                                                             {"showmotd", DoTranslation("Shows message of the day set by user or kernel", currentLang)},
+                                                             {"showtd", DoTranslation("Shows date and time", currentLang)},
+                                                             {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
+                                                             {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
+                                                             {"sysinfo", DoTranslation("System information", currentLang)},
+                                                             {"unitconv", DoTranslation("Unit converter that is separated from scicalc.", currentLang)},
+                                                             {"useddeps", DoTranslation("Shows used open source dependencies", currentLang)},
+                                                             {"usermanual", DoTranslation("A very descriptive user manual.", currentLang)}}
+    End Sub
 
     Public Sub ShowHelp(Optional ByVal command As String = "")
 
@@ -111,10 +115,6 @@ Public Module HelpSystem
 
             Wln(DoTranslation("Usage:", currentLang) + " calc <expression> ...", "neutralText")
 
-        ElseIf (command = "cdir") Then
-
-            Wln(DoTranslation("Usage:", currentLang) + " cdir: to get current directory", "neutralText")
-
         ElseIf (command = "chdir") Then
 
             Wln(DoTranslation("Usage:", currentLang) + " chdir <directory/..>", "neutralText")
@@ -133,7 +133,7 @@ Public Module HelpSystem
 
         ElseIf (command = "chpwd") Then
 
-            Wln(DoTranslation("Usage:", currentLang) + " chpwd: <Username> <UserPass> <newPass> <confirm>", "neutralText")
+            Wln(DoTranslation("Usage:", currentLang) + " chpwd <Username> <UserPass> <newPass> <confirm>", "neutralText")
 
         ElseIf (command = "chusrname") Then
 
@@ -142,6 +142,14 @@ Public Module HelpSystem
         ElseIf (command = "cls") Then
 
             Wln(DoTranslation("Usage:", currentLang) + " cls: " + DoTranslation("to clear screen.", currentLang), "neutralText")
+
+        ElseIf (command = "currency") Then
+
+            Wln(DoTranslation("Usage:", currentLang) + " currency <SourceCountry3Letters> <DestCountry3Letters> <AmountOfMoney>" + vbNewLine +
+                DoTranslation("Currencies:", currentLang) + vbNewLine, "neutralText")
+            For Each CInfo As CurrencyInfo In GetAllCurrencies()
+                Wln("- {0}({2}): {1}", "neutralText", CInfo.CountryName, CInfo.CurrencyName, CInfo.ID)
+            Next
 
         ElseIf (command = "debuglog") Then
 

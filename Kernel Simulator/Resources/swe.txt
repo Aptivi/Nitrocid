@@ -1,0 +1,346 @@
+﻿Tillgängliga kommandon: {0}
+Skriv kommando:
+Kommandoinjektion har avbrutits.
+Separata startargument med kommatecken utan mellanslag, till exempel "motd, gpuprobe"
+Separata kommandon på 'cmdinject' med kolonner med mellanslag, till exempel 'cmdinject setthemes Hacker: pip 1024 0.5'
+Observera att argumentet "debug" inte helt täcker kärnan.
+pråmar: Det begärda argumentet {0} hittades inte.
+pråmar: Oåterkalleligt fel i argument:
+Tillgängliga argument: {0}
+Argument ('help' för hjälp):
+Injicerade argument kommer att schemaläggas att köras vid nästa omstart.
+Argumentinjektion har avbrutits.
+Ett fel uppstod när man analyserade riktiga kommandoradsargument: {0}
+Ogiltig färgmall {0}
+Standard
+Beställnings
+hwprobe: Din hårdvara kommer att undersökas. Vänta...
+hwprobe: Hårdvara som redan testats.
+hwprobe: Hårdvara är inte probed. Probe med "hwprobe"
+CPU: En eller flera av CPU-kärnorna misslyckades att undersökas. Visar information ändå ...
+RAM: En eller flera av RAM-chipsen kunde inte sonderas. Visar information ändå ...
+HDD: En eller flera hårddiskar kunde inte sonderas. Visar information ändå ...
+CPU: Totalt antal processorer: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: Använda slots (med namn): {0}
+RAM: Använda slots (efter siffror): {0} / {1} ({2}%)
+RAM: Probing status avlägsnas och kommer att tas bort i framtida utgåva.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} cylindrar | {5} huvuden | {6} sektorer
+HDD: CHS: {3} cylindrar | {4} huvuden | {5} sektorer
+hwprobe: Probing stöds inte eftersom den inte är avsedd att köra probers på Unix.
+Ange administratörslösenordet för underhåll.
+Det finns inga fler användare kvar i listan.
+Kärnfel vid uppstart: {0}
+DUBBEL PANIC: Omstartstid överstiger maximalt tillåten {0} felåterställningstid. Du hittade en kärnfel.
+[{0}] panik: Omstart aktiverat på grund av felnivå {0}.
+[{0}] panik: Tid för omstart: {1} sekunder, överstiger 1 timme. Den är inställd på 1 minut.
+DUBBEL PANIC: Fel typ {0} ogiltig.
+[{0}] dpanic: {1} - Omstart på {2} sekunder ...
+[{0}] panik: Omstart avaktiverat på grund av felnivå {0}.
+[{0}] panik: {1} - Tryck på valfri tangent för att fortsätta använda kärnan.
+[{0}] panik: {1} - Tryck på valfri knapp för avstängning.
+[{0}] panik: {1} - Omstart på {2} sekunder ...
+DOUBLE PANIC: Kernelbug: {0}
+Stänger ner...
+Startar om ...
+---===+++> Välkommen till kärnan | Version {0} <+++===---
+En annan instans av Kernel Simulator körs. Stängning vid störning.
+Användaren {0} har lagts till i administratörslistan.
+Användaren {0} har lagts till i funktionslistan.
+Misslyckades att lägga till användare i behörighetslistor: ogiltig typ {0}
+Misslyckades att lägga till användaren i behörighetslistor: ogiltig användare {0}
+Användaren {0} har tagits bort från adminlistan.
+Användaren {0} har tagits bort från funktionslistan.
+Misslyckades med att ta bort användaren från behörighetslistor: ogiltig typ {0}
+Du är redan inloggad.
+Misslyckades med att ta bort användaren från behörighetslistor: ogiltig användare {0}
+Du har hittat ett fel i tillståndssystemet: Ogiltigt läge {0}
+Du har antingen hittat en bugg, eller det tillstånd du försökte lägga till eller ta bort är redan gjort, eller ett annat fel.
+Fel {0}: {1}
+Du har antingen hittat en bugg eller det tillstånd du försökte redigera för en ny användare har misslyckats.
+Tillgängliga användarnamn: {0}
+Användarnamn:
+Områden är inte tillåtna.
+Specialtecken är inte tillåtna.
+{0} lösenord:
+Fel lösenord.
+Användaren är inaktiverad.
+Fel användarnamn.
+Det gick inte att försöka parsa platshållare. {0} - Stack spår:
+Det gick inte att försöka parsa platshållare. {0}
+Det gick inte att försöka lägga till användarnamn.
+usrmgr: Skapa användarnamn {0} ...
+Blank användarnamn.
+Användare {0} hittades inte.
+Användaren {0} får inte tas bort.
+Användaren {0} är redan inloggad. Logga ut och logga in som en annan admin.
+Användaren {0} har tagits bort.
+Ett fel på att försöka ta bort användarnamnet.
+{0} av {1} = {2}
+Försök att dela med noll är inte tillåtet.
+Det har varit ett misstänkt försök att beräkna som resulterade i ett överflöde.
+Det finns ett fel vid beräkningen: {0}
+{0} kan inte konverteras till {1}.
+Antingen källan
+ eller destination
+ existerar inte på servern.
+{0} till {1}: {2}
+Ett fel på att försöka konvertera från {0} till {1}: {2}
+Fel
+Den begärda skärmsläckaren {0} hittades inte.
+{0} har initialiserats ordentligt.
+{0} inleddes inte. Skärmsläckarkoden kan ha upplevt ett fel vid initiering.
+Skärmsläckare {0} existerar inte.
+{0} är inställd på standard skärmsläckare.
+Skärmsläckare {0} hittades inte i databasen. Initiera med "Loadsaver {0}".
+Skärmsläckaren kan inte laddas på grund av följande:
+Det finns ett allvarligt fel vid utskrift av text.
+Det gick inte att försöka skapa konfiguration.
+Det gick inte att försöka skapa konfiguration: {0}
+En uppgradering från {0} till {1} ​​upptäcktes. Uppdaterar konfiguration ...
+Det gick inte att försöka uppdatera konfigurationen: {0}.
+Det gick inte att försöka uppdatera konfigurationen.
+Det gick inte att försöka läsa konfigurationen.
+Det gick inte att försöka läsa konfigurationen: {0}
+Ett fel på att försöka frigöra RAM: {0} - Fortsättning ...
+Mod kan inte laddas på grund av följande:
+mod: Laddar mods ...
+mod: Stopp mods ...
+Mod {0} har inte namnet. Granska källkoden.
+Mod {0} har inte versionen.
+{0} v {1} startade
+Ingen definition för kommando {0}.
+Kommando definierad av
+Du bör koppla från servern innan du ansluter till en annan server
+Användarnamn för {0}:
+Lösenord för {0}:
+Ansluten till {0}
+Fel vid försök att ansluta till {0}: {1}
+Stack Trace: {2}
+Ange en FTP-server som börjar med "ftp: //" eller "ftps: //"
+Lokal katalog {0} existerar inte.
+Ange en lokal katalog. ".." att gå tillbaka.
+Directory {0} not found.
+Ange en fjärrkatalog. ".." att gå tillbaka
+Du måste ansluta till en server innan du ändrar katalogen
+Lokal katalog: {0}
+Fjärrkatalog: {0}
+Du måste ansluta till servern innan du får den aktuella fjärrkatalogen.
+Tar bort filen {0} ...
+Är du säker på att du vill radera filen {0} <y / n>?
+Raderad fil {0}
+Du måste ansluta till servern med administrativa behörigheter innan du tar bort raderingen.
+Ange en fil att ta bort.
+Du måste ha administrativ behörighet på ditt inloggade användarnamn för att kunna ta bort.
+Avkopplad från {0}
+Du har inte anslutit till någon server än
+Hämtar fil {0} ...
+Hash status:
+REMOTE: {0} ({1})
+Nedladdad fil {0}.
+Hämtningen misslyckades för filen {0} eftersom den lokala filen är korrupt.
+Nedladdad fil {0} utan att kontrollera summan. Den här filen kan vara skadad.
+Du måste ansluta till servern innan du utför överföring.
+Ange en fil som ska hämtas till den lokala katalogen.
+{0} | Ändrad i: {1}
+Du bör ansluta till servern innan du listar alla fjärrfiler.
+Byter namn på filen {0} till {1} ​​...
+Renamed framgångsrikt
+Ange en fil och det nya filnamnet.
+Överför fil {0} ...
+Uppladdad fil {0}
+Ange en fil för att ladda upp till fjärrkatalogen. ladda upp <fil> <katalog>
+Ett fel på att försöka utföra FTP-kommandot
+(Inre:
+{0} mappar, {1} filer
+(Tillträde beviljas ej)
+{0} KB, skapad i {1} {2}, Ändrad i {3} {4}
+Hämtar nuvarande lokala katalog
+Hämtar nuvarande fjärrkatalog
+Ansluter till en FTP-server (den måste börja med "ftp://" eller "ftps://")
+Ändrar lokal katalog för att ladda ner till eller ladda upp från
+Ändrar fjärrkatalog för att ladda ner från eller ladda upp till
+Tar bort fjärrfil från server
+Kopplar från servern
+Nedladdningar avlägsen fil till lokal katalog med binär eller text
+Avslutar FTP-skalet och återgår till kärnan
+Visar hjälpskärm
+Visar lokal katalog
+Listar fjärrkatalog
+Byter namn på specifik fil eller katalog
+Överför lokal fil till fjärrkatalog med binär eller text
+Det uppstod ett fel i FTP-skalet.
+FTP-meddelande: Det begärda kommandot {0} hittades inte. Se "help" för en lista över tillgängliga kommandon som anges på FTP-skalet.
+net: Fick svar från {0} i {1} ms
+Timed out, frånkopplad eller server offline.
+net: Ditt datornamn på nätet är {0}
+net: Ditt värdnamn är {1}
+net: Det verkar som att datorer finns i domänen eller arbetsgruppen:
+nät: WiFi eller Ethernet är avstängt.
+net: Det verkar som att datorer är anslutna nedan:
+nät: Routeradress: {0}
+Misslyckades med att få egenskaper för adapter {0}
+Adapternummer:
+Adapternamn:
+Maximal sändningsenhet: {2} Enheter
+DHCP aktiverat:
+Non-unicast-paket:
+Unicast-paket:
+Fel i inkommande / utgående paket:
+Alias ​​kan inte vara samma namn som ett kommando.
+Kommando hittades inte på alias till {0}.
+Aliasing {0} till {1} ​​är förbjudet helt.
+Du kan nu köra "{0}" som ett kommando: "{1}".
+Du kan inte längre använda "{0}" som ett kommando "{1}".
+Alias ​​{0} kan inte tas bort.
+Ogiltigt läge {0}.
+Injicerade argument, {0}, kommer att schemaläggas att köras vid nästa omstart.
+Det var inte tillräckligt med argument. Se nedan för användning:
+Directory {0} not found
+Blank värdnamn.
+Byter från: {0} till {1} ​​...
+Dagens tomma meddelande.
+Blank MAL efter inloggning.
+Ändrar MAL från {0} till {1} ​​...
+Fel användarlösenord.
+Lösenorden matchar inte.
+Användarnamnet har ändrats till {0}!
+Det nya namnet du skrev in hittades redan.
+Listing PCs stöds inte ännu på Unix.
+Aliaser som är förbjudna: {0}
+{0} hittades inte.
+Konfigurationen laddas om. Det kan hända att du måste starta om kärnan för att vissa ändringar ska träda i kraft.
+Allt återställs till normala inställningar.
+En eller flera av färgerna är ogiltiga.
+Färger är inte tillgängliga. Slå på det färgade skalet i kärnans konfiguration.
+Skärmsläckare {0} hittades inte.
+{0}[Kärnan inställningar (körs på {1})]
+Kernelversion:
+Debugläge:
+Färgad Shell:
+Argument på Boot:
+Hjälpkommandot förenklat:
+MOTD på inloggning:
+Tid / datum på hörnet:
+Hårdvara probed:
+Aktuellt tema:
+[Hårdvaruinställningar] {0}
+{0}[Användarinställningar]
+Nuvarande användarnamn:
+Nuvarande värdnamn:
+Tillgängliga användarnamn:
+Dator värdnamn:
+{0}[Meddelanden Inställningar]
+Källkod:
+Upphovsrätt (c)
+Licens
+närvarande
+Ett fel på att försöka utföra kommandot
+Lägger till användare (Endast administratörer kan komma åt det här kommandot)
+Lägger till alias till kommandon (endast administratörer kan komma åt det här kommandot)
+Injicerar argument till kärnan (omstart krävs endast administratörer)
+Enkel kalkylator
+Ändringar katalog
+Ändrar värdnamn (endast administratörer)
+Ändringar MAL, MOTD Efter Inloggning (Endast Admins)
+Ändrar MOTD, Dagens Meddelande (endast Admins)
+Ändrar lösenord för nuvarande användare
+Ändrar användarnamn (endast administratörer)
+Rensar skärmen
+Konvertera valuta
+Visar felsökningsloggar (endast Admins)
+Använd ett FTP-skal för att interagera med servrar
+Hjälp sida
+Probe-maskinvara manuellt (en gång i "nohwprobe" -kärnan)
+Lista fil / mapp innehåll i aktuell mapp
+Uppdaterar skärmsläckarefilen i %USERPROFILE%\KSMods
+Låser skärmen med ett lösenord
+Loggar ut dig
+Visar alla nätverksenheter som är online (och offline i domäner)
+Visar alla nätverksadresser på värd
+Visar alla nätverksadresser på värd med hjälp av trädet
+Skapar en katalog
+Visar information om alla tillgängliga gränssnitt
+Visar förbjuden lista över alias
+Hantera behörigheter för användare (Endast administratörer kan komma åt det här kommandot)
+Kontrollera om den angivna adressen är tillgänglig
+Skriver filinnehåll till konsolen
+Startar om datorn (VARNING: Ingen synkronisering, eftersom det inte är en slutkärna)
+Uppdaterar konfigurationsfilen som redigeras.
+Ta bort en katalog
+Ta bort en användare från listan (endast administratörer)
+Sparar din skärm från burn outs
+Vetenskaplig miniräknare. Enhetsomvandlaren är skild från ett annat kommando
+Ställer in kärnfärger
+Ställer in skärmsläckare för kärnan
+Sätter upp kärnämnen
+Visar alias
+Visar MOTD efter inloggning inställd av användare eller kärna
+Visar meddelandet om dagen som anges av användaren eller kärnan
+Visar datum och tid
+Visar datum och tid i zoner
+Kärnan stängs av
+Systeminformation
+Enhetskonverterare som är skild från scicalc.
+Visar bruket av öppen källkod
+En mycket beskrivande användarmanual.
+* Du kan använda flera kommandon med kolon mellan kommandon.
+Tillgängliga kommandon:
+Mod-kommandon:
+Aliaser till kommandon:
+Användande:
+Argumenter åtskilda av kommatecken
+där argument kommer att vara {0}
+för att få aktuell katalog
+I vilken källa och destination är en 3 UPPERCASE tecken på en växelkurs
+Lista över alla ID och namn:
+Visar dig debug-loggar så att du kan skicka loggen till oss.
+Initialiserar FTP-skalet.
+Probes-hårdvara (fungerar bara när hårdvaran inte är probed och hwprobe inte exekveras).
+Visar nätverksinformation, liksom varje dator som är ansluten till ett nätverk.
+Vänner av
+Visar nätverksinformation, liksom varje dator som är ansluten till ett nätverk, i en trädform.
+Visar nätverksinformation, liksom varje dator.
+där modnameSS.m kommer att vara
+Låser skärmen med lösenordet.
+Loggar dig ur användaren.
+Få varje nätverksinformation
+Startar om din simulerade dator.
+Uppdaterar konfigurationen som ändras av slutanvändaren eller verktyget.
+Färger kräver ingen omstart, men de flesta inställningarna kräver att du startar om.
+visar dig en vald skärmsläckare, samtidigt som du skyddar din skärm från burn outs.
+Visar datum och tid.
+Visar datum och tid i zoner.
+Stänger ner din simulerade dator.
+Visar systeminformation och versioner.
+Visar öppna källkataloger som används
+Det uppstod ett fel i skalet.
+Du har inte behörighet att använda {0}
+Shell meddelande: Det begärda kommandot {0} får inte köras i underhållsläge.
+Shell meddelande: Det begärda kommandot {0} hittades inte. Se "hjälp" för tillgängliga kommandon.
+Shell meddelande: Kommandot {0} får inte köra på inloggning.
+Shell meddelande: Det begärda kommandot {0} hittades inte.
+Ett fel på att försöka utföra kommandot.
+datetime: Tiden är {0}
+datetime: Idag är {0}
+datetime: Tidzon: {0}
+- Tid för {0}: {1}
+för att rensa skärmen.
+Det verkar som om manuell sida {0} inte hittades.
+Ett fel uppstod när man försökte ladda manualsidan {0} eftersom {1}.
+Den här handboken är ofullständig av följande skäl:
+Tryck på valfri tangent för att fortsätta...
+ | {0} ord | Revision v {1} | {2} sektioner
+Den här manuella sidtiteln är inte skriven
+Den här manuella sidan ({0}) innehåller ingen kroppstext. Raderar sida ...
+Den här handboksidan ({0}) innehåller inga avsnitt. Raderar sida ...
+Kör på {0}
+Du är inte behörig att få information för {0}.
+Detta kommando är föråldrat och kommer att tas bort i en framtida release.
+Du är inte behörig att ändra lösenord för {0} eftersom målet var en admin.
+Konvertera summa pengar från land till land
+Valutor:
+usrmgr: Användarnamn {0} finns redan

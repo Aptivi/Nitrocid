@@ -146,7 +146,7 @@
     <value>..\Resources\REV-0.0.1 - Available manual pages.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Available_commands" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REV-0.0.1.2 - Available commands.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\REV-0.0.1.3 - Available commands.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="History_of_Kernel_Simulator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REV-0.0.1 - History of Kernel Simulator.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -168,9 +168,6 @@
   </data>
   <data name="REV_0_0_1___calc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REV-0.0.1 - calc.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="REV_0_0_1___cdir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REV-0.0.1 - cdir.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="REV_0_0_1___chdir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REV-0.0.1 - chdir.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -333,5 +330,23 @@
   </data>
   <data name="Configuration_for_your_Kernel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REV-0.0.1 - Configuration for your Kernel.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dtc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dtc.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="fin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fin.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="ita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ita.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="mal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mal.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="swe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\swe.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="tky" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tky.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
 </root>

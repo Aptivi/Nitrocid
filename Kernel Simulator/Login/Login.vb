@@ -26,8 +26,6 @@ Public Module Login
     Public signedinusrnm As String                              'Username that is signed in
     Private showMOTDOnceFlag As Boolean = True                  'Show MOTD every LoginPrompt() session
 
-    'TODO: Re-write in the final release of 0.0.6 (delayed)
-
     Sub LoginPrompt()
         While True
             'Fire event PreLogin
@@ -44,93 +42,122 @@ Public Module Login
             'Login process
             If (showMOTD = False) Or (showMOTDOnceFlag = False) Then
                 W(vbNewLine + DoTranslation("Username: ", currentLang), "input")
-            ElseIf (showMOTDOnceFlag = True And showMOTD = True) Then
+            ElseIf showMOTDOnceFlag = True And showMOTD = True Then
                 W(vbNewLine + ProbePlaces(MOTDMessage) + vbNewLine + vbNewLine + DoTranslation("Username: ", currentLang), "input")
             End If
             showMOTDOnceFlag = False
             answeruser = Console.ReadLine()
-            If InStr(CStr(answeruser), " ") > 0 Then
+
+            'Parse input
+            If InStr(answeruser, " ") > 0 Then
                 Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
             ElseIf (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
                 Wln(DoTranslation("Special characters are not allowed.", currentLang), "neutralText")
+            ElseIf userword.ContainsKey(answeruser) Then
+                If disabledList(answeruser) = False Then
+                    ShowPasswordPrompt(answeruser)
+                Else
+                    Wln(DoTranslation("User is disabled.", currentLang), "neutralText")
+                End If
             Else
-                showPasswordPrompt(CStr(answeruser))
+                Wln(DoTranslation("Wrong username.", currentLang), "neutralText")
             End If
         End While
     End Sub
 
     Sub ShowPasswordPrompt(ByVal usernamerequested As String)
 
-        'Variables and error handler
-        Dim DoneFlag As Boolean = False
+        'Error handler
         On Error Resume Next
 
-        'Prompts user to enter a user's password | TODO: Prevent stack overflowing
-        For Each availableUsers As String In userword.Keys.ToArray
-            If availableUsers = answeruser And disabledList(availableUsers) = False Then
-                Wdbg("ASSERT({0} = {1}, {2} = False) = True, True", availableUsers, answeruser, disabledList(availableUsers))
-                DoneFlag = True
-                password = userword.Item(usernamerequested)
-                'Check if there's the password
-                If Not (password = Nothing) Then
-                    W(DoTranslation("{0}'s password: ", currentLang), "input", usernamerequested)
-                    answerpass = Console.ReadLine()
-                    If InStr(CStr(answerpass), " ") > 0 Then
+        'Prompts user to enter a user's password
+        While True
+            Wdbg("ASSERT({0} = False) = True", disabledList(usernamerequested))
+
+            'Get the password from dictionary
+            password = userword.Item(usernamerequested)
+
+            'Check if there's the password
+            If Not password = Nothing Then
+                'Wait for input
+                W(DoTranslation("{0}'s password: ", currentLang), "input", usernamerequested)
+
+                'Get input
+                While True
+                    Dim character As Char = Console.ReadKey(True).KeyChar
+                    If character = vbCr Or character = vbLf Then
+                        Console.WriteLine()
+                        Exit While
+                    Else
+                        answerpass += character
+                    End If
+                End While
+
+                'Parse password input
+                If InStr(answerpass, " ") > 0 Then
                         Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
-                        If (maintenance = False) Then
-                            If (LockMode = True) Then
-                                ShowPasswordPrompt(usernamerequested)
+                        If Not maintenance Then
+                            If Not LockMode Then
+                                Exit Sub
                             End If
-                        Else
-                            ShowPasswordPrompt(usernamerequested)
                         End If
                     Else
                         If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
                             Wdbg("ASSERT(Parse({0}, {1})) = True | ASSERT({1} = {2}) = True", usernamerequested, password, answerpass)
-                            If (LockMode = True) Then
-                                LockMode = False
-                                EventManager.RaisePostUnlock()
-                            End If
-                            signIn(usernamerequested)
+
+                            'Log-in instantly
+                            SignIn(usernamerequested)
+                            Exit Sub
                         Else
                             Wln(DoTranslation("Wrong password.", currentLang), "neutralText")
-                            If (maintenance = False) Then
-                                If (LockMode = True) Then
-                                    ShowPasswordPrompt(usernamerequested)
+                            If Not maintenance Then
+                                If Not LockMode Then
+                                    Exit Sub
                                 End If
-                            Else
-                                ShowPasswordPrompt(usernamerequested)
                             End If
                         End If
                     End If
                 Else
                     'Log-in instantly
-                    If (LockMode = True) Then
-                        LockMode = False
-                        EventManager.RaisePostUnlock()
-                        Exit Sub
-                    End If
-                    signIn(usernamerequested)
-                End If
-            ElseIf (availableUsers = answeruser And disabledList(availableUsers) = True) Then
-                Wln(DoTranslation("User is disabled.", currentLang), "neutralText")
+                    SignIn(usernamerequested)
+                Exit Sub
             End If
-        Next
-        If DoneFlag = False Then
-            Wln(DoTranslation("Wrong username.", currentLang), "neutralText")
-        End If
+        End While
 
     End Sub
 
     Public Sub SignIn(ByVal signedInUser As String)
 
-        'Initialize shell, and sign in to user.
+        'Release lock
+        If LockMode Then
+            LockMode = False
+            EventManager.RaisePostUnlock()
+            Exit Sub
+        End If
+
+        'Resets inputs
+        answerpass = Nothing
+        answeruser = Nothing
+        arguser = Nothing
+        argword = Nothing
+
+        'Resets outputs
+        password = Nothing
+        LoginFlag = False
+        CruserFlag = False
+        signedinusrnm = Nothing
+
+        'Sign in to user.
         signedinusrnm = signedInUser
         If LockMode = True Then LockMode = False
         showMOTDOnceFlag = True
         Wln(ProbePlaces(MAL), "neutralText")
+
+        'Fire event PostLogin
         EventManager.RaisePostLogin()
-        initializeShell()
+
+        'Initialize shell
+        InitializeShell()
 
     End Sub
 

@@ -18,8 +18,9 @@
 
 Public Module Shell
 
-    'Available Commands (availableCommands())
-    'Admin-Only commands (strictCmds())
+    'Available Commands  (availableCommands)
+    'Admin-Only commands (strictCmds)
+    'Obsolete commands   (obsoleteCmds)
     Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
     Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "shutdown", "reboot", "adduser", "chmotd",
@@ -29,15 +30,14 @@ Public Module Shell
                                             "lockscreen", "setsaver", "reloadsaver", "noaliases", "ftp", "useddeps", "usermanual", "currency"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver"}
-    Public obsoleteCmds() As String = {"cdir"}
+    Public obsoleteCmds() As String = {}
     Public modcmnds As New ArrayList
 
-    'For contributors: For each added command, you should also add a command in availableCommands array so there is no problems detecting your new command.
-    '                  For each added admin command, you should also add a command in strictCmds array after performing above procedure so there is no problems 
-    '                  checking if user has Admin permission to use your new admin command.
-
+    'For contributors: For each added command, you should add a command to availableCommands array so there is no problems detecting your new command.
+    '                  For each added admin command, you should add a command to strictCmds array after performing above procedure so there are no problems checking if user has Admin permission to use your new admin command.
+    '                  For each obsolete command, you should add a command to obsoleteCmds array so there are no problems checking if your command is obsolete.
+    'Initialize Shell
     Public Sub InitializeShell()
-        'Initialize Shell
         While True
             If LogoutRequested Then
                 Wdbg("Requested log out: {0}", LogoutRequested)
@@ -47,13 +47,13 @@ Public Module Shell
                 Try
                     'Try to probe injected commands
                     Wdbg("Probing injected commands using GetLine(True)...")
-                    getLine(True)
+                    GetLine(True)
 
                     'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes.
                     Console.CursorVisible = True
 
                     'Write a prompt
-                    commandPromptWrite()
+                    CommandPromptWrite()
                     DisposeAll()
 
                     'Set an input color
@@ -87,7 +87,7 @@ Public Module Shell
                         Next
                         If (Done = False) Then
                             Wdbg("Executing built-in command")
-                            getLine()
+                            GetLine()
                         End If
                     End If
 

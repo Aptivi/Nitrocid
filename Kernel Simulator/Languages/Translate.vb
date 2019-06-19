@@ -19,9 +19,8 @@
 Public Module Translate
 
     'TODO: Download language files from the Internet (GitHub repo "KSLangs")
-    'TODO: Reformat translation files to look even more elegant, removing unnecessary fixups.
     'Variables
-    Public availableLangs() As String = {"chi", "eng", "fre", "ger", "ind", "ptg", "spa"}
+    Public availableLangs() As String = {"chi", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "mal", "ptg", "spa", "swe", "tky"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
 
@@ -35,25 +34,24 @@ Public Module Translate
     Public Function DoTranslation(ByVal text As String, Optional ByVal lang As String = "eng") As String
         'Get language string and translate
         Dim translatedString As Dictionary(Of String, String)
-        Dim translated As String = ""
+
+        'If the language is available and is not English, translate
         If availableLangs.Contains(lang) And lang <> "eng" Then
+            'Prepare dictionary
             translatedString = PrepareDict(lang)
-            For Each StrTran As String In translatedString.Keys
-                If StrTran = text Then
-                    Wdbg("Translating string to {0}: {1}", lang, text)
-                    translated = translatedString(text)
-                    Exit For
-                End If
-            Next
-            If Not (translatedString.Keys.Contains(text)) Then
+
+            'Do translation
+            If translatedString.Keys.Contains(text) Then
+                Wdbg("Translating string to {0}: {1}", lang, text)
+                Return translatedString(text)
+            Else 'String wasn't found
                 Wdbg("No string found in langlist. Lang: {0}, String: {1}", lang, text)
                 Return text
             End If
-            Return translated
-        ElseIf availableLangs.Contains(lang) And lang = "eng" Then
+        ElseIf availableLangs.Contains(lang) And lang = "eng" Then 'If the language is available, but is English, don't translate
             Wdbg("{0} is in language list but it's English", lang)
             Return text
-        Else
+        Else 'If the language is invalid
             Wdbg("{0} isn't in language list", lang)
             Return text
         End If
@@ -65,23 +63,32 @@ Public Module Translate
         Select Case lang
             Case "chi"
                 translated = My.Resources.chi
+            Case "dtc"
+                translated = My.Resources.dtc
             Case "fre"
                 translated = My.Resources.fre
+            Case "fin"
+                translated = My.Resources.fin
             Case "ger"
                 translated = My.Resources.ger
             Case "ind"
                 translated = My.Resources.ind
+            Case "ita"
+                translated = My.Resources.ita
+            Case "mal"
+                translated = My.Resources.mal
             Case "ptg"
                 translated = My.Resources.ptg
             Case "spa"
                 translated = My.Resources.spa
+            Case "swe"
+                translated = My.Resources.swe
+            Case "tky"
+                translated = My.Resources.tky
         End Select
 
         'Convert translated string list to Dictionary
-        Dim translatedLs As List(Of String) = translated.Replace(Chr(13), "").Split(New String() {Chr(10), " <=+=> "}, StringSplitOptions.None).ToList
-        For Each langStr As String In engStrings
-            translatedLs.Remove(langStr)
-        Next
+        Dim translatedLs As List(Of String) = translated.Replace(Chr(13), "").Split(Chr(10)).ToList
 
         'Move final translations to dictionary
         For ind As Integer = 0 To translatedLs.Count - 1

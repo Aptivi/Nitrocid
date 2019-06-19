@@ -235,10 +235,12 @@ Public Module FTPGetCommand
                         Dim FileSize As Long
                         Dim ModDate As DateTime
                         For Each DirListFTP As FtpListItem In ClientFTP.GetListing(strArgs)
-                            W("- " + DirListFTP.FullName, "neutralText")
+                            W("- " + DirListFTP.FullName + " ", "neutralText")
                             If DirListFTP.Type = FtpFileSystemObjectType.File Then
                                 FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
                                 ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
+
+                                'TODO: Make size human-readable
                                 W(DoTranslation("{0} | Modified in: {1}", currentLang), "neutralText", FileSize.ToString, ModDate.ToString)
                             End If
                             Console.WriteLine()
@@ -251,7 +253,7 @@ Public Module FTPGetCommand
                         Dim FileSize As Long
                         Dim ModDate As DateTime
                         For Each DirListFTP As FtpListItem In ClientFTP.GetListing(currentremoteDir)
-                            W("- " + DirListFTP.FullName, "neutralText")
+                            W("- " + DirListFTP.FullName + " ", "neutralText")
                             If DirListFTP.Type = FtpFileSystemObjectType.File Then
                                 FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
                                 ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)

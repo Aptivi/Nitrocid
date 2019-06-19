@@ -84,7 +84,7 @@ Module ArgumentParse
                 End If
             Next
         Catch ex As Exception
-            KernelError(CChar("U"), True, 5, DoTranslation("bargs: Unrecoverable error in argument: ", currentLang) + Err.Description)
+            KernelError(CChar("U"), True, 5, DoTranslation("bargs: Unrecoverable error in argument: ", currentLang) + Err.Description, ex)
         End Try
 
     End Sub

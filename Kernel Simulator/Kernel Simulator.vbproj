@@ -53,6 +53,7 @@
     </WarningsAsErrors>
     <Prefer32Bit>false</Prefer32Bit>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <Optimize>true</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -97,7 +98,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Paomedia-Small-N-Flat-Terminal.ico</ApplicationIcon>
+    <ApplicationIcon>iconfinder_applications-utilities_8840.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>F1A42ADA35A42942B5F12BA2CA2FC6F3464C0BDD</ManifestCertificateThumbprint>
@@ -143,6 +144,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
+    <Optimize>false</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -157,15 +159,15 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentFTP, Version=21.0.0.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentFTP.21.0.0\lib\net45\FluentFTP.dll</HintPath>
+    <Reference Include="FluentFTP, Version=25.0.3.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentFTP.25.0.3\lib\net45\FluentFTP.dll</HintPath>
     </Reference>
     <Reference Include="MadMilkman.Ini, Version=1.0.6.0, Culture=neutral, PublicKeyToken=4e0b5157a7ffbb74, processorArchitecture=MSIL">
       <HintPath>..\packages\MadMilkman.Ini.1.0.6.0\lib\net20\MadMilkman.Ini.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -291,18 +293,23 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tky.txt" />
+    <None Include="Resources\swe.txt" />
+    <None Include="Resources\mal.txt" />
+    <None Include="Resources\ita.txt" />
+    <None Include="Resources\fin.txt" />
+    <None Include="Resources\dtc.txt" />
     <None Include="packages.config" />
     <None Include="Resources\eng.txt" />
     <None Include="Resources\REV-0.0.1 - adduser.ksman" />
     <None Include="Resources\REV-0.0.1 - alias.ksman" />
     <None Include="Resources\REV-0.0.1 - arginj.ksman" />
     <None Include="Resources\REV-0.0.1 - Available command-line arguments.ksman" />
-    <None Include="Resources\REV-0.0.1.2 - Available commands.ksman" />
+    <None Include="Resources\REV-0.0.1.3 - Available commands.ksman" />
     <None Include="Resources\REV-0.0.1 - Available FTP commands.ksman" />
     <None Include="Resources\REV-0.0.1 - Available kernel arguments.ksman" />
     <None Include="Resources\REV-0.0.1 - Available manual pages.ksman" />
     <None Include="Resources\REV-0.0.1 - calc.ksman" />
-    <None Include="Resources\REV-0.0.1 - cdir.ksman" />
     <None Include="Resources\REV-0.0.1 - chdir.ksman" />
     <None Include="Resources\REV-0.0.1 - chhostname.ksman" />
     <None Include="Resources\REV-0.0.1 - chmal.ksman" />
@@ -367,10 +374,8 @@
     <None Include="Resources\chi.txt" />
     <None Include="COPYING" />
     <Content Include="Documentation\Documentation - contributing rules.txt" />
-    <Content Include="Documentation\Documentation - faq.txt" />
     <Content Include="Documentation\Documentation - main page.txt" />
-    <Content Include="Documentation\Documentation - troubleshooting.txt" />
-    <Content Include="Paomedia-Small-N-Flat-Terminal.ico" />
+    <Content Include="iconfinder_applications-utilities_8840.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

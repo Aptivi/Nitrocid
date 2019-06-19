@@ -1,0 +1,346 @@
+﻿Comandi disponibili: {0}
+Scrivi il comando:
+L'iniezione del comando è stata annullata.
+Separare gli argomenti di avvio con virgole senza spazi, ad esempio "motd, gpuprobe"
+Comandi separati su 'cmdinject' con i due punti con spazi, ad esempio 'cmdinject setthemes Hacker: beep 1024 0.5'
+Si noti che l'argomento 'debug' non copre completamente il kernel.
+bargs: l'argomento richiesto {0} non è stato trovato.
+bargs: errore irreversibile nell'argomento:
+Argomenti disponibili: {0}
+Argomenti ('aiuto' per aiuto):
+Gli argomenti iniettati saranno programmati per essere eseguiti al successivo riavvio.
+L'argomento Injection è stato cancellato.
+Errore durante l'analisi degli argomenti della riga di comando reali: {0}
+Modello di colore non valido {0}
+Predefinito
+costume
+hwprobe: il tuo hardware verrà verificato. Attendere prego...
+hwprobe: hardware già verificato.
+hwprobe: l'hardware non viene verificato. Sonda usando 'hwprobe'
+CPU: uno o più core della CPU non sono stati rilevati. Mostrare informazioni comunque ...
+RAM: uno o più chip RAM non sono stati rilevati. Mostrare informazioni comunque ...
+HDD: uno o più dischi rigidi non sono stati rilevati. Mostrare informazioni comunque ...
+CPU: numero totale di processori: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: slot usati (per nome): {0}
+RAM: slot utilizzati (in base ai numeri): {0} / {1} ({2}%)
+RAM: lo stato di rilevamento è deprecato e verrà rimosso in una versione futura.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} cilindri | {5} teste | {6} settori
+HDD: CHS: {3} cilindri | {4} teste | {5} settori
+hwprobe: Probing non supportato perché non è progettato per eseguire i prober su Unix.
+Immettere la password dell'amministratore per la manutenzione.
+Non ci sono più utenti rimasti nell'elenco.
+Errore del kernel durante l'avvio: {0}
+DOPPIO PANICO: il tempo di riavvio supera il tempo massimo consentito per il riavvio dell'errore {0}. Hai trovato un bug del kernel.
+[{0}] panico: riavvio attivato a causa del livello di errore {0}.
+[{0}] panico: tempo di riavvio: {1} secondi, superiore a 1 ora. È impostato su 1 minuto.
+DOUBLE PANIC: Tipo di errore {0} non valido.
+[{0}] Dpanic: {1} - Riavvio in {2} secondi ...
+[{0}] panico: riavvio disabilitato a causa del livello di errore {0}.
+[{0}] panico: {1}: premi un tasto qualsiasi per continuare a utilizzare il kernel.
+[{0}] panico: {1}: premi un tasto qualsiasi per chiudere.
+[{0}] panico: {1} - Riavvio in {2} secondi ...
+DOUBLE PANIC: bug del kernel: {0}
+Chiudere...
+Riavvio ...
+---===+++> Benvenuto nel kernel | Versione {0} <+++===---
+È in esecuzione un'altra istanza di Kernel Simulator. Arresto in caso di interferenza.
+L'utente {0} è stato aggiunto all'elenco degli amministratori.
+L'utente {0} è stato aggiunto all'elenco dei disabili.
+Impossibile aggiungere l'utente negli elenchi di autorizzazioni: tipo non valido {0}
+Impossibile aggiungere l'utente negli elenchi di autorizzazioni: utente non valido {0}
+L'utente {0} è stato rimosso dall'elenco degli amministratori.
+L'utente {0} è stato rimosso dall'elenco disattivato.
+Impossibile rimuovere l'utente dagli elenchi di autorizzazioni: tipo non valido {0}
+Sei già loggato.
+Impossibile rimuovere l'utente dagli elenchi di autorizzazioni: utente non valido {0}
+Hai trovato un bug nel sistema di autorizzazione: modalità non valida {0}
+Hai trovato un bug o il permesso che hai provato ad aggiungere o rimuovere è già stato fatto, o altro errore.
+Errore {0}: {1}
+Hai trovato un bug o il permesso che hai provato a modificare per un nuovo utente non è riuscito.
+Nomi utente disponibili: {0}
+Nome utente:
+Gli spazi non sono ammessi.
+I caratteri speciali non sono ammessi.
+La password di {0}:
+Password errata.
+L'utente è disabilitato
+Username sbagliato.
+Errore durante il tentativo di analizzare i segnaposti. {0} - Traccia stack:
+Errore durante il tentativo di analizzare i segnaposti. {0}
+Errore durante il tentativo di aggiungere il nome utente.
+usrmgr: Creazione del nome utente {0} ...
+Nome utente vuoto
+Utente {0} non trovato.
+L'utente {0} non può essere rimosso.
+L'utente {0} è già connesso. Disconnettersi e accedere come altro amministratore.
+Utente {0} rimosso.
+Errore durante il tentativo di rimuovere il nome utente.
+{0} di {1} = {2}
+Tentativo di divisione per zero non è consentito.
+C'è stato un sospetto tentativo di calcolo che ha provocato un overflow.
+C'è un errore durante il calcolo: {0}
+{0} non può essere convertito in {1}.
+O la fonte
+ o destinazione
+ non esiste sul server.
+Da {0} a {1}: {2}
+Errore durante il tentativo di conversione da {0} a {1}: {2}
+Errore
+Lo screensaver richiesto {0} non è stato trovato.
+{0} è stato inizializzato correttamente.
+{0} non inizializzato. Il codice dello screensaver potrebbe aver subito un errore durante l'inizializzazione.
+Il salvaschermo {0} non esiste.
+{0} è impostato sullo screensaver predefinito.
+Screensaver {0} non trovato nel database. Inizializza con "loadaver {0}".
+Il salvaschermo non può essere caricato a causa di quanto segue:
+Si è verificato un errore grave durante la stampa del testo.
+Si è verificato un errore durante il tentativo di creare la configurazione.
+C'è un errore nel tentativo di creare la configurazione: {0}
+È stato rilevato un aggiornamento da {0} a {1}. Aggiornamento della configurazione ...
+Si è verificato un errore durante il tentativo di aggiornare la configurazione: {0}.
+Si è verificato un errore durante il tentativo di aggiornare la configurazione.
+Si è verificato un errore durante il tentativo di leggere la configurazione.
+C'è un errore nel tentativo di leggere la configurazione: {0}
+Errore durante il tentativo di liberare la RAM: {0} - Continua ...
+Mod non può essere caricato a causa di quanto segue:
+mod: caricamento mod ...
+mod: interruzione mod ...
+Il mod {0} non ha il nome. Rivedere il codice sorgente
+Il mod {0} non ha la versione.
+{0} v {1} avviato
+Nessuna definizione per il comando {0}.
+Comando definito da
+È necessario disconnettersi dal server prima di connettersi a un altro server
+Nome utente per {0}:
+Password per {0}:
+Connesso a {0}
+Errore durante il tentativo di connessione a {0}: {1}
+Stack Trace: {2}
+Inserisci un server FTP che inizi con "ftp://" o "ftps://"
+La directory locale {0} non esiste.
+Inserisci una directory locale ".." tornare indietro.
+Directory {0} non trovata.
+Inserisci una directory remota ".." tornare indietro
+È necessario connettersi a un server prima di cambiare directory
+Directory locale: {0}
+Directory remota: {0}
+È necessario connettersi al server prima di ottenere la directory remota corrente.
+Eliminazione del file {0} ...
+Sei sicuro di voler eliminare il file {0} <y/n>?
+File cancellato {0}
+È necessario connettersi al server con privilegi amministrativi prima di eseguire l'eliminazione.
+Inserisci un file da rimuovere.
+È necessario disporre delle autorizzazioni amministrative per il proprio nome utente connesso da poter rimuovere.
+Disconnesso da {0}
+Non sei ancora connesso a nessun server
+Download del file {0} ...
+Stato hash:
+REMOTO: {0} ({1})
+File scaricato {0}.
+Download non riuscito per il file {0} perché il file locale è corrotto.
+File scaricato {0} senza verificare la somma. Questo file potrebbe essere danneggiato.
+È necessario connettersi al server prima di eseguire la trasmissione.
+Inserisci un file da scaricare nella directory locale.
+{0} | Modificato in: {1}
+È necessario connettersi al server prima di elencare tutti i file remoti.
+Rinominare il file {0} in {1} ...
+Rinominato con successo
+Inserisci un file e il nuovo nome del file.
+Caricamento del file {0} ...
+File caricato {0}
+Inserisci un file da caricare nella directory remota. carica <file> <directory>
+Errore durante il tentativo di eseguire il comando FTP
+(Interno:
+{0} cartelle, {1} file
+(Accesso negato)
+{0} KB, creato in {1} {2}, modificato in {3} {4}
+Ottiene la directory locale corrente
+Ottiene la directory remota corrente
+Si collega a un server FTP (deve iniziare con "ftp://" o "ftps://")
+Cambia la directory locale da scaricare o caricare da
+Cambia la directory remota da scaricare o caricare in
+Elimina il file remoto dal server
+Disconnette dal server
+Scarica il file remoto nella directory locale usando binari o testo
+Esce dalla shell FTP e ritorna al kernel
+Mostra la schermata di aiuto
+Elenca la directory locale
+Elenca la directory remota
+Rinomina file o directory specifici
+Carica il file locale nella directory remota usando binari o testo
+Si è verificato un errore nella shell FTP.
+Messaggio FTP: il comando richiesto {0} non è stato trovato. Vedi 'aiuto' per un elenco di comandi disponibili specificati sulla shell FTP.
+net: risposta ottenuta da {0} in {1} ms
+Tempo scaduto, disconnesso o server offline.
+net: il tuo nome computer sulla rete è {0}
+net: il tuo nome host è {1}
+net: sembra che i computer siano nel dominio o nel gruppo di lavoro:
+net: WiFi o Ethernet sono disconnessi.
+net: sembra che i computer siano collegati di seguito:
+net: indirizzo del router: {0}
+Impossibile ottenere le proprietà per la scheda {0}
+Numero di scheda:
+Nome dell'adattatore:
+Unità di trasmissione massima: {2} Unità
+DHCP abilitato:
+Pacchetti non unicast:
+Pacchetti unicast:
+Errore nell'ingresso / uscita dei pacchetti:
+L'alias non può essere lo stesso nome di un comando.
+Comando non trovato per l'alias su {0}.
+L'aliasing da {0} a {1} è completamente vietato.
+Ora puoi eseguire "{0}" come comando: "{1}".
+Non puoi più usare "{0}" come comando "{1}".
+Alias ​​{0} non è stato trovato per essere rimosso.
+Modalità non valida {0}.
+Gli argomenti iniettati, {0}, saranno programmati per essere eseguiti al prossimo riavvio.
+Non c'erano abbastanza argomenti. Vedi sotto per l'uso:
+Directory {0} non trovata
+Nome host vuoto.
+Passaggio da: {0} a {1} ...
+Messaggio vuoto del giorno.
+MAL vuoto dopo l'accesso.
+Modifica del MAL da {0} a {1} ...
+Password utente errata.
+Le password non corrispondono.
+Il nome utente è stato cambiato in {0}!
+Il nuovo nome che hai inserito è già stato trovato.
+L'elenco dei PC non è ancora supportato su Unix.
+Alias ​​vietati: {0}
+{0} non trovato.
+Configurazione ricaricata. Potrebbe essere necessario riavviare il kernel affinché alcune modifiche abbiano effetto.
+Tutto viene ripristinato alle normali impostazioni.
+Uno o più colori non sono validi.
+I colori non sono disponibili. Attiva la shell colorata nella configurazione del kernel.
+Screensaver {0} non trovato.
+{0}[Impostazioni del kernel (in esecuzione su {1})]
+Versione del kernel:
+Modalità di debug:
+Guscio colorato:
+Argomenti all'avvio:
+Aiuta il comando semplificato:
+MOTD on Login:
+Ora / data nell'angolo:
+Hardware rilevato:
+Tema attuale:
+[Impostazioni hardware] {0}
+{0}[Impostazioni utente]
+Nome utente corrente:
+Nome host attuale:
+Nomi utente disponibili:
+Nome host del computer:
+{0}[Impostazioni messaggi]
+Codice sorgente:
+Copyright (c)
+Licenza
+presente
+Errore durante il tentativo di eseguire il comando
+Aggiunge utenti (solo gli amministratori possono accedere a questo comando)
+Aggiunge alias ai comandi (solo gli amministratori possono accedere a questo comando)
+Inject argomenti al kernel (riavvio richiesto, solo amministratori)
+Calcolatrice semplice
+Cambia directory
+Modifica il nome host (solo amministratori)
+Cambia MAL, il MOTD dopo l'accesso (solo amministratori)
+Cambia MOTD, il messaggio del giorno (solo amministratori)
+Cambia la password per l'utente corrente
+Cambia il nome utente (solo amministratori)
+Cancella lo schermo
+Converti valuta
+Mostra i log di debug (solo amministratori)
+Utilizzare una shell FTP per interagire con i server
+Pagina di aiuto
+Analizza manualmente l'hardware (una volta nel kernel 'nohwprobe')
+Elenca il contenuto del file / cartella nella cartella corrente
+Ricarica il file screensaver in %USERPROFILE%\KSMods
+Blocca lo schermo con una password
+Esci
+Elenca tutti i dispositivi di rete che sono online (e offline nei domini)
+Elenca tutti gli indirizzi di rete sull'host
+Elenca tutti gli indirizzi di rete sull'host utilizzando l'albero
+Crea una directory
+Elenca le informazioni su tutte le interfacce disponibili
+Mostra un elenco di alias vietato
+Gestisci le autorizzazioni per gli utenti (solo gli amministratori possono accedere a questo comando)
+Controlla se l'indirizzo specificato è disponibile
+Scrive il contenuto del file nella console
+Riavvia il computer (ATTENZIONE: nessuna sincronizzazione, perché non è un kernel finale)
+Ricarica il file di configurazione che è stato modificato.
+Rimuove una directory
+Rimuove un utente dall'elenco (solo amministratori)
+Salva lo schermo dai burn out
+Calcolatrice scientifica. Il convertitore di unità è separato da un altro comando
+Imposta i colori del kernel
+Imposta gli screensaver del kernel
+Imposta i temi del kernel
+Mostra gli alias
+Mostra MOTD dopo l'accesso impostato dall'utente o dal kernel
+Mostra il messaggio del giorno impostato dall'utente o dal kernel
+Mostra data e ora
+Mostra data e ora nelle zone
+Il kernel verrà spento
+Informazioni di sistema
+Convertitore di unità separato da scicalc.
+Gli show hanno utilizzato le dipendenze open source
+Un manuale utente molto descrittivo.
+* Puoi usare più comandi usando i due punti tra i comandi.
+Comandi disponibili:
+Comandi Mod:
+Alias ​​ai comandi:
+Uso:
+Argomenti separati da virgole
+dove gli argomenti saranno {0}
+per ottenere la directory corrente
+In quale origine e destinazione sono presenti 3 caratteri MAIUSCOLO di un tasso di cambio
+Elenco di tutti gli ID e i nomi:
+Mostra i log di debug in modo da poter inviare il registro a noi.
+Inizializza la shell FTP.
+Hardware sonde (Funziona solo quando l'hardware non viene rilevato e hwprobe non viene eseguito).
+Elenca le informazioni di rete, così come ogni computer connesso a una rete.
+Amici di
+Elenca le informazioni di rete, così come ogni computer connesso a una rete, in una struttura ad albero.
+Elenca le informazioni di rete, così come ogni computer.
+dove sarà modnameSS.m
+Blocca lo schermo con la password.
+Ti disconnette dall'utente.
+Ottieni tutte le informazioni di rete
+Riavvia il tuo computer simulato.
+Ricarica la configurazione che viene modificata dall'utente finale o dallo strumento.
+I colori non richiedono il riavvio, ma la maggior parte delle impostazioni richiede il riavvio.
+mostra uno screensaver selezionato, proteggendo allo stesso tempo lo schermo dai burn out.
+Mostra la data e l'ora.
+Mostra la data e l'ora nelle zone.
+Spegne il tuo computer simulato.
+Mostra le informazioni e le versioni del sistema.
+Mostra le librerie open source utilizzate
+Si è verificato un errore nella shell.
+Non hai il permesso di usare {0}
+Messaggio shell: il comando richiesto {0} non può essere eseguito in modalità di manutenzione.
+Messaggio shell: il comando richiesto {0} non è stato trovato. Vedi 'aiuto' per i comandi disponibili.
+Messaggio shell: il comando {0} non può essere eseguito all'accesso.
+Messaggio shell: il comando richiesto {0} non è stato trovato.
+Errore durante il tentativo di eseguire il comando.
+datetime: il tempo è {0}
+datetime: oggi è {0}
+datetime: Fuso orario: {0}
+- Tempo di {0}: {1}
+per pulire lo schermo.
+Sembra che la pagina manuale {0} non sia stata trovata.
+Si è verificato un errore durante il tentativo di caricare la pagina manuale {0} per {1}.
+Questa pagina di manuale è incompleta per i seguenti motivi:
+Premere un tasto qualsiasi per continuare...
+ | {0} parole | Revisione v {1} | {2} sezioni
+Questo titolo di pagina manuale non è scritto
+Questa pagina di manuale ({0}) non contiene alcun testo del corpo. Eliminazione della pagina ...
+Questa pagina di manuale ({0}) non contiene alcuna sezione. Eliminazione della pagina ...
+In esecuzione su {0}
+Non sei autorizzato a ricevere informazioni per {0}.
+Questo comando è obsoleto e verrà rimosso in una versione futura.
+Non sei autorizzato a cambiare la password di {0} perché il target era un amministratore.
+Converti quantità di denaro da paese a paese
+valute:
+usrmgr: il nome utente {0} è già stato trovato

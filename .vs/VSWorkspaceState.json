@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Kernel Simulator",
+    "\\Kernel Simulator\\Misc",
+    "\\Kernel Simulator\\Misc\\Calculator"
   ],
+  "SelectedNode": "\\Kernel Simulator\\Misc\\Calculator\\SciCalc.vb",
   "PreviewInSolutionExplorer": false
 }

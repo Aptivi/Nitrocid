@@ -660,7 +660,7 @@ This version is released to fix more bugs and do more improvements, including th
 15. Fixed the FTP message translation translating "'help'" as the language when it's supposed to be a command
 16. Fixed the command not found message when not entering anything in FTP shell
 
-KS 0.0.5.13, the current version
+KS 0.0.5.13
 
 We have simplified even more things, with the changes below:
 
@@ -698,6 +698,39 @@ Arch Linux, and its derivatives:
 The rest, build from source and put the executable file into /usr/bin since the prober only looks in that directory, or use your package managers to install it.
 
 (?): Untested. If anybody tested, send a PR to edit this manual page with the correct commands.
+
+KS 0.0.5.14
+
+After we got a new PC, the update has came. It has the following changes:
+
+1. Replaced fake file system with real one (access to your files)
+2. Fixed the wrong "changedir" help command being shown instead of "chdir"
+3. "cdir," which shows the current directory, is now obsolete
+4. Fixed crash while rebooting the kernel
+
+KS 0.0.6, the current version
+
+This update is as big as 0.0.4, but we have released this update to fix more problems. It is a service pack for 0.0.5.5 with the following changes:
+
+1. New icon
+2. Updated FluentFTP and Newtonsoft.Json libs
+3. Removed writing events
+4. Re-written login (Not all, but re-designed)
+5. Fixed the chpwd command not changing password if the target doesn't have password
+6. Fixed chpwd not checking if a normal user changes admin password
+7. Fixed adduser not adding users without passwords
+8. Fixed adduser adding users with passwords even if they don't match
+9. Removed cdir
+10. Added config entry for screensaver name
+11. Implemented debugging and dump files for kernel errors
+12. Shipped with .pdb debugging symbols for KS
+13. Fixed reboot not clearing screen
+14. Added Dutch, Finnish, Italian, Malay, Swedish and Turkey languages (switch to a compatible font in console)
+15. Countries and currencies are now listed when not providing enough arguments or issuing "help currency"
+16. Fixed help list not updating for new language update when rebooting
+17. Added permanent aliases (located under your profile, aliases.csv)
+18. The password is now hidden when logging in to maintain security
+19. Fixed users being removed after each reboot
 -BODY END-
 
 -SECTIONS-
@@ -740,6 +773,8 @@ KS 0.0.5.10=>SE1
 Truth about status probing=>SE1
 KS 0.0.5.11=>SE1
 KS 0.0.5.12=>SE1
-KS 0.0.5.13, the current version=>SE1
+KS 0.0.5.13=>SE1
 Linux probing=>SE2
+KS 0.0.5.14=>SE1
+KS 0.0.6, the current version=>SE1
 -SECTIONS END-

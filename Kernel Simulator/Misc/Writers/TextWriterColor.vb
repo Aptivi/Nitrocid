@@ -78,7 +78,7 @@ Public Module TextWriterColor
             If (Console.BackgroundColor = ConsoleColor.Black) Then ResetColor()
             If (colorType = "input" And ColoredShell = True) Then ForegroundColor = inputColor
         Catch ex As Exception
-            KernelError(CChar("C"), False, 0, DoTranslation("There is a serious error when printing text.", currentLang))
+            KernelError(CChar("C"), False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
         End Try
 
     End Sub
@@ -124,7 +124,7 @@ Public Module TextWriterColor
             If (Console.BackgroundColor = ConsoleColor.Black) Then ResetColor()
             If (colorType = "input") Then ForegroundColor = inputColor
         Catch ex As Exception
-            KernelError(CChar("C"), False, 0, DoTranslation("There is a serious error when printing text.", currentLang))
+            KernelError(CChar("C"), False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
         End Try
 
     End Sub

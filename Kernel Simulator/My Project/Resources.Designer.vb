@@ -90,7 +90,7 @@ Namespace My.Resources
         '''
         '''~~- Information about this manual page:
         '''-TITLE:Available commands
-        '''-REVISION:0.0.1.2
+        '''-REVISION:0.0.1.3
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
         '''
         '''~~- Make sure that all of the commands that are available in the kernel is put.
@@ -173,11 +173,17 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; Kěyòng mìnglìng: {0}
-        '''Write command:  &lt;=+=&gt; Xiě mìnglìng: 
-        '''Command injection has been cancelled. &lt;=+=&gt; Mìnglìng zhùrù yǐ bèi qǔxiāo.
-        '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; Shǐyòng dòuhào fēngé yǐndǎo cānshù, bù dài kònggé, lìrú&apos;motd,gpuprobe&apos;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; &apos;Cmdinject&apos; shàng de mìnglìng yǔ dài kònggé de màohào fēnkāi, lìrú [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to Kěyòng mìnglìng: {0}
+        '''Xiě mìnglìng: 
+        '''Mìnglìng zhùrù yǐ bèi qǔxiāo.
+        '''Shǐyòng dòuhào fēngé yǐndǎo cānshù, bù dài kònggé, lìrú&apos;motd,gpuprobe&apos;
+        '''&apos;Cmdinject&apos; shàng de mìnglìng yǔ dài kònggé de màohào fēnkāi, lìrú&apos;cmdinject setthemes Hacker:Beep 1024 0.5&apos;
+        '''Qǐng zhùyì,&apos;debug&apos;cānshù bìng bù wánquán fùgài nèihé.
+        '''bargs: Zhǎo bù dào qǐngqiú de cānshù {0}.
+        '''bargs: Cānshù zhōng bùkě huīfù de cuòwù:
+        '''Kěyòng cānshù:{0}
+        '''Cānshù (&apos;bāngzhù&apos;xúnqiú bāngzhù):
+        '''Zhùrù de cānshù jiāng ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property chi() As String
             Get
@@ -207,6 +213,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Beschikbare opdrachten: {0}
+        '''Schrijf commando:
+        '''Commando-injectie is geannuleerd.
+        '''Aparte opstartargumenten met komma&apos;s zonder spaties, bijvoorbeeld &apos;motd, gpuprobe&apos;
+        '''Afzonderlijke opdrachten op &apos;cmdinject&apos; met dubbele punten met spaties, bijvoorbeeld &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;
+        '''Merk op dat het &apos;debug&apos;-argument de kernel niet volledig dekt.
+        '''bargs: het gevraagde argument {0} is niet gevonden.
+        '''bargs: Onherstelbare fout in argument:
+        '''Beschikbare argumenten: {0}
+        '''Argumenten (&apos;help&apos; voor hulp [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property dtc() As String
+            Get
+                Return ResourceManager.GetString("dtc", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Available commands: {0}
         '''Write command: 
         '''Command injection has been cancelled.
@@ -226,11 +250,35 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; Commandes disponibles: {0}
-        '''Write command:  &lt;=+=&gt; Commande d&apos;écriture: 
-        '''Command injection has been cancelled. &lt;=+=&gt; L&apos;injection de commande a été annulée.
-        '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; Séparez les arguments de démarrage par des virgules sans espaces, par exemple &quot;motd,gpuprobe&quot;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Séparez les commandes [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to Käytettävissä olevat komennot: {0}
+        '''Kirjoita komento:
+        '''Komentosuihku on peruutettu.
+        '''Erota käynnistysasetukset pilkuilla ilman välilyöntejä, esimerkiksi &quot;motd, gpuprobe&quot;
+        '''Erota komennot &apos;cmdinject&apos;: llä kolonkeilla, joissa on välilyöntejä, esimerkiksi &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Huomaa, että debug-argumentti ei kata kokonaan ytimiä.
+        '''bargs: Pyydettyä argumenttia {0} ei löydy.
+        '''bargs: Palautumaton virhe argumentissa:
+        '''Saatavilla olevat argumentit: {0}
+        '''Argumentit (&apos;help&apos; en ohje):
+        '''Injektoid [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property fin() As String
+            Get
+                Return ResourceManager.GetString("fin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Commandes disponibles: {0}
+        '''Commande d&apos;écriture: 
+        '''L&apos;injection de commande a été annulée.
+        '''Séparez les arguments de démarrage par des virgules sans espaces, par exemple &quot;motd,gpuprobe&quot;
+        '''Séparez les commandes sur &apos;cmdinject&apos; avec les deux points avec des espaces, par exemple, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;
+        '''Notez que l&apos;argument &apos;debug&apos; ne couvre pas complètement le noyau.
+        '''bargs: l&apos;argument demandé {0} est introuvable.
+        '''bargs: erreur irrécupérable dans l&apos;argument:
+        '''Arguments disponibles: {0}
+        '''A [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property fre() As String
             Get
@@ -239,11 +287,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; Verfügbare Befehle: {0}
-        '''Write command:  &lt;=+=&gt; Schreibbefehl: 
-        '''Command injection has been cancelled. &lt;=+=&gt; Die Befehlsinjektion wurde abgebrochen.
-        '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; Trennen Sie Boot-Argumente durch Kommas ohne Leerzeichen, z. B. &quot;motd, gpuprobe&quot;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Trennen Sie Befehle in &apos;cmdinject&apos; mit Dop [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to Verfügbare Befehle: {0}
+        '''Schreibbefehl: 
+        '''Die Befehlsinjektion wurde abgebrochen.
+        '''Trennen Sie Boot-Argumente durch Kommas ohne Leerzeichen, z. B. &quot;motd, gpuprobe&quot;
+        '''Trennen Sie Befehle in &apos;cmdinject&apos; mit Doppelpunkten mit Leerzeichen, z. B. &apos;cmdinject setthemes Hacker: beep 1024 0,5&apos;
+        '''Beachten Sie, dass das Debug-Argument den Kernel nicht vollständig abdeckt.
+        '''bargs: Das angeforderte Argument {0} wurde nicht gefunden.
+        '''bargs: Nicht behebbarer Fehler im Argument:
+        '''Verfügbare Argumente: {0}
+        '''Argumente (&apos;Hilfe [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ger() As String
             Get
@@ -271,11 +324,17 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; upalabdh aadesh: {0}
-        '''Write command:  &lt;=+=&gt; kamaand likhen: 
-        '''Command injection has been cancelled. &lt;=+=&gt; kamaand injekshan radd kar diya gaya hai.
-        '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; bina spes ke alpaviraam ke saath alag boot tark, udaaharan ke lie, &apos;motd, gpuprobe&apos;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; rikt sthaan vaale kolan ke saath chmdin [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to upalabdh aadesh: {0}
+        '''kamaand likhen: 
+        '''kamaand injekshan radd kar diya gaya hai.
+        '''bina spes ke alpaviraam ke saath alag boot tark, udaaharan ke lie, &apos;motd, gpuprobe&apos;
+        '''rikt sthaan vaale kolan ke saath chmdinjaicht par alag-alag aadesh, udaaharan ke lie, &apos;cmdinject setthemes hacker: beep 1024 0.5&apos;
+        '''dhyaan den ki &apos;debug&apos; tark karnel ko pooree tarah se kavar nahin karata hai.
+        '''baarg: anurodhit tark {0} nahin mila hai.
+        '''baarg: tark mein apraapy truti:
+        '''upalabdh tark: {0}
+        '''tark (sahaayata ke lie sahaayata): 
+        '''in [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ind() As String
             Get
@@ -303,6 +362,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Comandi disponibili: {0}
+        '''Scrivi il comando:
+        '''L&apos;iniezione del comando è stata annullata.
+        '''Separare gli argomenti di avvio con virgole senza spazi, ad esempio &quot;motd, gpuprobe&quot;
+        '''Comandi separati su &apos;cmdinject&apos; con i due punti con spazi, ad esempio &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Si noti che l&apos;argomento &apos;debug&apos; non copre completamente il kernel.
+        '''bargs: l&apos;argomento richiesto {0} non è stato trovato.
+        '''bargs: errore irreversibile nell&apos;argomento:
+        '''Argomenti disponibili: {0}
+        '''Argomenti (&apos;aiuto&apos; per ai [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ita() As String
+            Get
+                Return ResourceManager.GetString("ita", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Perintah yang tersedia: {0}
+        '''Tulis perintah:
+        '''Suntikan arahan telah dibatalkan.
+        '''Hantarkan butiran boot dengan koma tanpa ruang, sebagai contoh, &apos;motd, gpuprobe&apos;
+        '''Perintah berasingan pada &apos;cmdinject&apos; dengan titik-titik dengan ruang, contohnya, &apos;cmdinject setthemes Hacker: bip 1024 0.5&apos;
+        '''Perhatikan bahawa hujah &apos;debug&apos; tidak meliputi kernel sepenuhnya.
+        '''Bargs: Hujah yang diminta {0} tidak dijumpai.
+        '''bargs: Kesalahan yang tidak dapat dipulihkan dalam hujah:
+        '''Hujah yang tersedia: {0}
+        '''Argumen (&apos;help&apos; untuk men [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property mal() As String
+            Get
+                Return ResourceManager.GetString("mal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
         '''-TITLE:How to make your own mod for the kernel
@@ -325,11 +420,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; Comandos disponíveis: {0}
-        '''Write command:  &lt;=+=&gt; Comando de gravação: 
-        '''Command injection has been cancelled. &lt;=+=&gt; A injeção de comando foi cancelada.
-        '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, &apos;motd, gpuprobe&apos;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Comandos separados em &apos;cm [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to Comandos disponíveis: {0}
+        '''Comando de gravação: 
+        '''A injeção de comando foi cancelada.
+        '''Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, &apos;motd, gpuprobe&apos;
+        '''Comandos separados em &apos;cmdinject&apos; com dois-pontos com espaços, por exemplo, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Note que o argumento &apos;debug&apos; não cobre completamente o kernel.
+        '''bargs: O argumento solicitado {0} não foi encontrado.
+        '''bargs: Erro irrecuperável no argumento:
+        '''Argumentos disponíveis: {0}
+        '''Argumentos (&apos;help&apos; f [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ptg() As String
             Get
@@ -428,43 +528,6 @@ Namespace My.Resources
         Friend ReadOnly Property REV_0_0_1___calc() As String
             Get
                 Return ResourceManager.GetString("REV_0_0_1___calc", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell command &quot;cdir&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''cdir command
-        '''
-        '''Summary: You can get current directory
-        '''
-        '''Description
-        '''
-        '''This command tells you the current working directory.
-        '''
-        '''Command usage
-        '''
-        '''* cdir
-        '''
-        '''Examples
-        '''
-        '''* cdir (while on /boot): It tells you that you&apos;re on /boot
-        '''* cdir (while on the root directory): It tells you that you&apos;re on /
-        '''-BODY END-
-        '''
-        '''-COLOR CONFIGURATION-
-        '''cdir=&gt;Green
-        '''cdir (while on /boot):=&gt;Yellow
-        '''cdir (while on the root d [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property REV_0_0_1___cdir() As String
-            Get
-                Return ResourceManager.GetString("REV_0_0_1___cdir", resourceCulture)
             End Get
         End Property
         
@@ -1902,15 +1965,58 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Available commands: {0} &lt;=+=&gt; Comandos disponibles: {0}
-        '''Write command:  &lt;=+=&gt; Comando de escritura: 
-        '''Command injection has been cancelled. &lt;=+=&gt; La inyección de comandos ha sido cancelada.
-        '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos; &lt;=+=&gt; Separe los argumentos de arranque con comas sin espacios, por ejemplo, &apos;motd, gpuprobe&apos;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos; &lt;=+=&gt; Comandos separados en  [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to Comandos disponibles: {0}
+        '''Comando de escritura: 
+        '''La inyección de comandos ha sido cancelada.
+        '''Separe los argumentos de arranque con comas sin espacios, por ejemplo, &apos;motd, gpuprobe&apos;
+        '''Comandos separados en &apos;cmdinject&apos; con dos puntos con espacios, por ejemplo, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Tenga en cuenta que el argumento &apos;depurar&apos; no cubre completamente el kernel.
+        '''bargs: el argumento solicitado {0} no se encuentra.
+        '''bargs: error irrecuperable en el argumento: 
+        '''Argumentos disponibles: {0}
+        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property spa() As String
             Get
                 Return ResourceManager.GetString("spa", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tillgängliga kommandon: {0}
+        '''Skriv kommando:
+        '''Kommandoinjektion har avbrutits.
+        '''Separata startargument med kommatecken utan mellanslag, till exempel &quot;motd, gpuprobe&quot;
+        '''Separata kommandon på &apos;cmdinject&apos; med kolonner med mellanslag, till exempel &apos;cmdinject setthemes Hacker: pip 1024 0.5&apos;
+        '''Observera att argumentet &quot;debug&quot; inte helt täcker kärnan.
+        '''pråmar: Det begärda argumentet {0} hittades inte.
+        '''pråmar: Oåterkalleligt fel i argument:
+        '''Tillgängliga argument: {0}
+        '''Argument (&apos;help&apos; för hjälp):
+        '''Injicerade argume [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property swe() As String
+            Get
+                Return ResourceManager.GetString("swe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Kullanılabilir komutlar: {0}
+        '''Yazma komutu:
+        '''Komut enjeksiyonu iptal edildi.
+        '''Önyükleme argümanlarını boşluksuz virgüllerle ayırın, örneğin, &apos;motd, gpuprobe&apos;
+        '''&apos;cmdinject&apos; ifadesinde boşluklu virgüllerle ayrı komutlar, örneğin &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''&apos;hata ayıklama&apos; argümanının çekirdeği tamamen kapsamadığını unutmayın.
+        '''bargs: İstenen argüman {0} bulunamadı.
+        '''bargs: Bağımsız değişkende kurtarılamaz hata:
+        '''Kullanılabilir değişkenler: {0}
+        '''Bağımsız Değişkenler (yardım için &apos;help&apos;):
+        '''Enjek [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property tky() As String
+            Get
+                Return ResourceManager.GetString("tky", resourceCulture)
             End Get
         End Property
     End Module

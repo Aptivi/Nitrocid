@@ -23,7 +23,7 @@ Module PageParser
     Public Pages As New Dictionary(Of String, Manual)
     Public AvailablePages() As String = {"Introduction to the Kernel", "Available manual pages", "Available commands", "History of Kernel Simulator",
                                          "Available FTP commands", "Modding guide", "Screensaver modding guide", "adduser", "alias", "arginj",
-                                         "calc", "cdir", "chdir", "chhostname", "chmal", "chmotd", "chpwd", "chusrname", "cls", "debuglog", "FTP changelocaldir", "FTP cdl",
+                                         "calc", "chdir", "chhostname", "chmal", "chmotd", "chpwd", "chusrname", "cls", "debuglog", "FTP changelocaldir", "FTP cdl",
                                          "FTP changeremotedir", "FTP cdr", "FTP connect", "FTP currlocaldir", "FTP pwdl", "FTP currremotedir", "FTP pwdr", "FTP delete",
                                          "FTP del", "FTP disconnect", "FTP download", "FTP get", "FTP listlocal", "FTP lsl", "FTP listremote", "FTP lsr", "FTP rename",
                                          "FTP ren", "FTP upload", "FTP put", "ftp", "list", "reloadsaver", "lockscreen", "logout", "lscomp", "lsnet", "lsnettree",
@@ -67,8 +67,6 @@ Module PageParser
                         manLines = My.Resources.REV_0_0_1___arginj.Replace(Chr(13), "").Split(Chr(10))
                     Case "calc"
                         manLines = My.Resources.REV_0_0_1___calc.Replace(Chr(13), "").Split(Chr(10))
-                    Case "cdir"
-                        manLines = My.Resources.REV_0_0_1___cdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "chdir"
                         manLines = My.Resources.REV_0_0_1___chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "chhostname"

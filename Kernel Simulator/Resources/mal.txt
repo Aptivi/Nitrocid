@@ -1,0 +1,346 @@
+﻿Perintah yang tersedia: {0}
+Tulis perintah:
+Suntikan arahan telah dibatalkan.
+Hantarkan butiran boot dengan koma tanpa ruang, sebagai contoh, 'motd, gpuprobe'
+Perintah berasingan pada 'cmdinject' dengan titik-titik dengan ruang, contohnya, 'cmdinject setthemes Hacker: bip 1024 0.5'
+Perhatikan bahawa hujah 'debug' tidak meliputi kernel sepenuhnya.
+Bargs: Hujah yang diminta {0} tidak dijumpai.
+bargs: Kesalahan yang tidak dapat dipulihkan dalam hujah:
+Hujah yang tersedia: {0}
+Argumen ('help' untuk mendapatkan bantuan):
+Argumen yang disuntik akan dijadualkan dijalankan pada reboot seterusnya.
+Suntikan Argumen telah dibatalkan.
+Ralat semasa menghuburkan hujah baris perintah sebenar: {0}
+Templat warna tidak sah {0}
+Lalai
+Custom
+hwprobe: Perkakasan anda akan disiasat. Sila tunggu...
+hwprobe: Perkakasan telah disiasat.
+hwprobe: Perkakasan tidak disiasat. Siasatan menggunakan 'hwprobe'
+CPU: Satu atau lebih teras CPU gagal disiasat. Menunjukkan maklumat lagi ...
+RAM: Satu atau lebih cip RAM gagal untuk disiasat. Menunjukkan maklumat lagi ...
+HDD: Satu atau lebih cakera keras gagal untuk disiasat. Menunjukkan maklumat lagi ...
+CPU: Jumlah bilangan pemproses: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: Slot yang digunakan (mengikut nama): {0}
+RAM: Slot yang digunakan (mengikut nombor): {0} / {1} ({2}%)
+RAM: Status pembatalan tidak dapat digunakan dan akan dikeluarkan pada pelepasan masa depan.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} silinder | {5} kepala | {6} sektor
+HDD: CHS: {3} silinder | {4} kepala | {5} sektor
+hwprobe: Probing tidak disokong kerana ia tidak direka untuk mengatasi masalah pada Unix.
+Masukkan kata laluan admin untuk penyelenggaraan.
+Tiada lagi pengguna yang tinggal di dalam senarai.
+Ralat Kernel semasa boot: {0}
+Gagal DOUBLE: Masa Reboot melebihi masa reboot ralat {0} maksimum yang dibenarkan. Anda mendapati bug kernel.
+Panik [{0}]: Reboot didayakan kerana tahap ralat menjadi {0}.
+[{0}] panik: Masa untuk reboot: {1} saat, melebihi 1 jam. Ia ditetapkan untuk 1 minit.
+GUGUR DOUBLE: Jenis Ralat {0} tidak sah.
+[{0}] dpanic: {1} - Reboot dalam {2} saat ...
+Panik [{0}]: Reboot dilumpuhkan kerana tahap ralat menjadi {0}.
+[{0}] panik: {1} - Tekan sebarang kekunci untuk terus menggunakan kernel.
+[{0}] panik: {1} - Tekan sebarang kekunci untuk menutup.
+[{0}] panik: {1} - Reboot dalam {2} saat ...
+GUGUR DOUBLE: bug kernel: {0}
+Tutup...
+Reboot ...
+---===+++> Selamat datang ke kernel | Versi {0} <+++===---
+Satu lagi contoh Simulator Kernel sedang dijalankan. Menutup sekiranya berlaku gangguan.
+Pengguna {0} telah ditambah ke senarai admin.
+Pengguna {0} telah ditambahkan ke senarai orang kurang upaya.
+Gagal menambah pengguna ke senarai kebenaran: jenis tidak sah {0}
+Gagal menambah pengguna ke senarai kebenaran: pengguna tidak sah {0}
+Pengguna {0} telah dikeluarkan dari senarai admin.
+Pengguna {0} telah dikeluarkan dari senarai orang kurang upaya.
+Gagal mengeluarkan pengguna dari senarai kebenaran: jenis tidak sah {0}
+Anda sudah log masuk.
+Gagal mengeluarkan pengguna dari senarai kebenaran: pengguna tidak sah {0}
+Anda telah menemui pepijat dalam sistem kebenaran: mod tidak sah {0}
+Anda telah menemui bug, atau kebenaran yang anda cuba tambah atau keluarkan sudah selesai, atau ralat lain.
+Ralat {0}: {1}
+Anda telah menemui bug, atau kebenaran yang anda cuba edit untuk pengguna baru telah gagal.
+Nama pengguna yang ada: {0}
+Nama pengguna:
+Ruang tidak dibenarkan.
+Watak khas tidak dibenarkan.
+Kata laluan {0}:
+Salah kata laluan.
+Pengguna dinyahdayakan.
+Nama pengguna salah.
+Ralat cuba menghurai ruang letak. {0} - Jejak tindanan:
+Ralat cuba menghurai ruang letak. {0}
+Ralat cuba menambah nama pengguna.
+usrmgr: Mencipta nama pengguna {0} ...
+Nama pengguna kosong.
+Pengguna {0} tidak dijumpai.
+Pengguna {0} tidak dibenarkan dikeluarkan.
+Pengguna {0} sudah log masuk. Log keluar dan log masuk sebagai admin lain.
+Pengguna {0} dialih keluar.
+Ralat cuba memadam nama pengguna.
+{0} daripada {1} = {2}
+Percubaan untuk membahagikan dengan sifar tidak dibenarkan.
+Terdapat percubaan yang disyaki untuk mengira yang mengakibatkan limpahan.
+Terdapat ralat semasa mengira: {0}
+{0} tidak boleh ditukar kepada {1}.
+Sama ada sumbernya
+ atau destinasi
+ tidak wujud pada pelayan.
+{0} ke {1}: {2}
+Ralat cuba menukar dari {0} ke {1}: {2}
+Ralat
+Screensaver yang diminta {0} tidak dijumpai.
+{0} telah dimulakan dengan betul.
+{0} tidak dimulakan. Kod screensaver mungkin mengalami ralat semasa menginisialisasi.
+Screensaver {0} tidak wujud.
+{0} ditetapkan kepada penanda lalai lalai.
+Screensaver {0} tidak dijumpai dalam pangkalan data. Inisialisasi dengan "loadsaver {0}".
+Screensaver tidak boleh dimuatkan kerana perkara berikut:
+Terdapat ralat yang serius apabila mencetak teks.
+Terdapat ralat cuba mencipta konfigurasi.
+Terdapat ralat cuba membuat konfigurasi: {0}
+Peningkatan dari {0} hingga {1} dikesan. Mengemas kini konfigurasi ...
+Terdapat ralat cuba mengemas kini konfigurasi: {0}.
+Terdapat ralat cuba mengemas kini konfigurasi.
+Terdapat ralat cuba membaca konfigurasi.
+Terdapat ralat semasa cuba membaca konfigurasi: {0}
+Ralat cuba untuk membebaskan RAM: {0} - Melanjutkan ...
+Mod tidak boleh dimuatkan kerana perkara berikut:
+mod: Memuat mod ...
+mod: Menghentikan mod ...
+Mod {0} tidak mempunyai nama. Semak kod sumber.
+Mod {0} tidak mempunyai versi.
+{0} v {1} bermula
+Tiada definisi bagi arahan {0}.
+Perintah yang ditakrifkan oleh
+Anda harus memutuskan sambungan dari pelayan sebelum menyambung ke pelayan lain
+Nama pengguna untuk {0}:
+Kata laluan untuk {0}:
+Disambungkan ke {0}
+Ralat ketika cuba menyambung ke {0}: {1}
+Stack Trace: {2}
+Masukkan pelayan FTP yang bermula dengan "ftp://" atau "ftps://"
+Direktori setempat {0} tidak wujud.
+Masukkan direktori setempat. ".." untuk kembali semula.
+Direktori {0} tidak dijumpai.
+Masukkan direktori jauh. ".." untuk kembali semula
+Anda mesti menyambung ke pelayan sebelum menukar direktori
+Direktori setempat: {0}
+Direktori jauh: {0}
+Anda mesti menyambung ke pelayan sebelum mendapatkan direktori jarak jauh semasa.
+Memadam fail {0} ...
+Adakah anda pasti mahu memadamkan fail {0} <y/n>?
+Fail dipadam {0}
+Anda mesti menyambung ke pelayan dengan keistimewaan pentadbiran sebelum melakukan penghapusan.
+Masukkan fail untuk dialih keluar.
+Anda mesti mempunyai keizinan pentadbiran pada nama pengguna anda yang log masuk untuk dapat mengalih keluar.
+Terputus dari {0}
+Anda belum lagi menyambung kepada mana-mana pelayan
+Memuat turun fail {0} ...
+Status Hash:
+REMOTE: {0} ({1})
+Fail yang dimuat turun {0}.
+Muat turun gagal untuk fail {0} kerana fail tempatan rosak.
+Fail yang dimuat turun {0} tanpa menyemak jumlah. Fail ini mungkin rosak.
+Anda mesti menyambung ke pelayan sebelum melakukan penghantaran.
+Masukkan fail untuk dimuat turun ke direktori setempat.
+{0} | Diubah suai dalam: {1}
+Anda harus menyambung ke pelayan sebelum menyenaraikan semua fail terpencil.
+Menamakan semula fail {0} ke {1} ...
+Diubah nama dengan jayanya
+Masukkan fail dan nama fail baru.
+Memuat naik fail {0} ...
+Fail yang dimuat naik {0}
+Masukkan fail untuk dimuat naik ke direktori jauh. muat naik <file> <directory>
+Ralat cuba untuk melaksanakan arahan FTP
+(Inner:
+{0} folder, {1} fail
+(Akses dinafikan)
+{0} KB, Dibuat dalam {1} {2}, Diubah dalam {3} {4}
+Mendapatkan direktori setempat semasa
+Mendapatkan direktori jarak jauh semasa
+Menyambung ke pelayan FTP (ia mesti bermula dengan "ftp://" atau "ftps://")
+Mengubah direktori setempat untuk muat turun atau muat naik dari
+Tukar direktori jauh untuk dimuat turun atau muat naik ke
+Menghapus fail jauh dari pelayan
+Disconnects from server
+Muat turun fail jauh ke direktori setempat menggunakan binari atau teks
+Keluar shell FTP dan kembali ke kernel
+Menunjukkan skrin bantuan
+Senarai direktori setempat
+Senarai direktori jauh
+Menamakan semula fail atau direktori tertentu
+Muat naik fail setempat ke direktori jauh menggunakan binari atau teks
+Terdapat ralat dalam shell FTP.
+Mesej FTP: Perintah yang diminta {0} tidak dijumpai. Lihat 'help' untuk senarai arahan yang ada yang dinyatakan pada shell FTP.
+bersih: Ada tindak balas daripada {0} dalam {1} ms
+Berjadual, terputus sambungan atau pelayan di luar talian.
+net: Nama komputer anda di rangkaian adalah {0}
+net: Nama hos anda adalah {1}
+net: Nampaknya komputer berada dalam domain atau kumpulan kerja:
+bersih: WiFi atau Ethernet diputuskan.
+net: Nampaknya komputer disambungkan di bawah:
+bersih: Alamat Penghala: {0}
+Gagal mendapatkan sifat untuk penyesuai {0}
+Nombor Adapter:
+Nama Penyesuai:
+Unit Penghantaran Maksimum: {2} Unit
+DHCP Enabled:
+Paket bukan unicast:
+Paket Unicast:
+Ralat paket masuk / keluar:
+Alias ​​tidak boleh menjadi nama yang sama sebagai perintah.
+Perintah tidak dijumpai kepada alias {0}.
+Aliasing {0} ke {1} dilarang sama sekali.
+Anda kini boleh menjalankan "{0}" sebagai arahan: "{1}".
+Anda tidak boleh menggunakan "{0}" sebagai arahan "{1}".
+Alias ​​{0} tidak dapat dialih keluar.
+Mod tidak sah {0}.
+Argumen yang disuntik, {0}, akan dijadualkan dijalankan pada reboot seterusnya.
+Tidak ada hujah yang cukup. Lihat di bawah untuk penggunaan:
+Direktori {0} tidak dijumpai
+Nama tuan rumah kosong.
+Mengubah dari: {0} ke {1} ...
+Mesej kosong pada hari itu.
+Blank MAL Selepas Masuk.
+Menukar MAL dari {0} ke {1} ...
+Kata laluan pengguna yang salah.
+Kata laluan tidak sepadan.
+Nama pengguna telah diubah menjadi {0}!
+Nama baru yang anda masukkan sudah dijumpai.
+Penyenaraian PC tidak disokong lagi pada Unix.
+Aliases yang dilarang: {0}
+{0} tidak dijumpai.
+Konfigurasi dimuat semula. Anda mungkin perlu reboot kernel untuk beberapa perubahan berlaku.
+Semuanya diset semula ke tetapan biasa.
+Satu atau lebih warna tidak sah.
+Warna tidak tersedia. Hidupkan shell berwarna dalam konfigurasi kernel.
+Screensaver {0} tidak dijumpai.
+{0}[Tetapan kernel (Running on {1})]
+Versi Kernel:
+Mod Debug:
+Shell berwarna:
+Argumen pada Boot:
+Perintah membantu dipermudahkan:
+MOTD pada Login:
+Masa / Tarikh di sudut:
+Perkakasan yang disiasat:
+Tema semasa:
+[Tetapan perkakasan] {0}
+{0}[Tetapan pengguna]
+Nama pengguna semasa:
+Nama hos semasa:
+Nama pengguna yang tersedia:
+Nama tuan rumah komputer:
+{0}[Seting Mesej]
+Kod sumber:
+Hak cipta (c)
+Lesen
+hadir
+Ralat cuba melaksanakan arahan
+Menambah pengguna (Pengurus hanya boleh mengakses arahan ini)
+Menambah alias kepada perintah (Hanya admin boleh mengakses perintah ini)
+Mengajukan argumen ke kernel (reboot diperlukan, hanya admin)
+Kalkulator mudah
+Perubahan direktori
+Perubahan nama hos (Hanya pentadbir)
+Perubahan MAL, MOTD Selepas Masuk (Pentadbir sahaja)
+Perubahan MOTD, Mesej Hari Ini (Pentadbir sahaja)
+Perubahan kata laluan untuk pengguna semasa
+Perubahan nama pengguna (Hanya Pentadbir)
+Membersihkan skrin
+Tukar mata wang
+Menunjukkan log debug (Hanya Pentadbir)
+Gunakan shell FTP untuk berinteraksi dengan pelayan
+Halaman bantuan
+Siasat perkakasan secara manual (Satu kali dalam kernel 'nohwprobe')
+Senaraikan kandungan fail / folder dalam folder semasa
+Muat semula fail screensaver dalam% USERPROFILE%\KSMods
+Mengunci skrin anda dengan kata laluan
+Log masuk anda
+Menyenaraikan semua peranti rangkaian yang dalam talian (dan di luar talian dalam domain)
+Menyenaraikan semua alamat rangkaian pada hos
+Menyenaraikan semua alamat rangkaian pada hos menggunakan pokok itu
+Mencipta direktori
+Menyenaraikan maklumat mengenai semua antara muka yang ada
+Menunjukkan senarai haram yang dilarang
+Urus keizinan untuk pengguna (Pengurus hanya boleh mengakses arahan ini)
+Semak untuk melihat jika alamat yang dinyatakan tersedia
+Menulis kandungan fail ke konsol
+Mulakan semula komputer anda (AMARAN: Tiada penyegerakan, kerana ia bukan kernel akhir)
+Muat semula fail konfigurasi yang diedit.
+Menghapus direktori
+Menghapuskan pengguna dari senarai (Admins Only)
+Menjimatkan skrin anda daripada terbakar
+Kalkulator saintifik. Penukar unit dipisahkan kepada satu lagi arahan
+Menetapkan warna kernel
+Menetapkan screensaver kernel
+Menetapkan tema kernel
+Menunjukkan alias
+Menunjukkan MOTD selepas log masuk yang ditetapkan oleh pengguna atau kernel
+Menunjukkan mesej hari yang ditetapkan oleh pengguna atau kernel
+Menunjukkan tarikh dan masa
+Menunjukkan tarikh dan masa di zon
+Kernel akan ditutup
+Maklumat sistem
+Unit penukar yang dipisahkan dari scicalc.
+Menunjukkan kebergantungan sumber terbuka yang digunakan
+Manual pengguna yang sangat deskriptif.
+* Anda boleh menggunakan pelbagai arahan menggunakan titik antara perintah.
+Perintah yang tersedia:
+Perintah mod:
+Aliases to commands:
+Penggunaan:
+Argumen dipisahkan oleh koma
+di mana argumen akan {0}
+untuk mendapatkan direktori semasa
+Di mana sumber dan destinasi adalah 3 huruf UPPERCASE kadar pertukaran
+Senarai semua ID dan nama:
+Menunjukkan log debug anda supaya anda boleh menghantar log kepada kami.
+Inisialisasi shell FTP.
+Perisian perkakasan (Hanya berfungsi apabila perkakasan tidak disiasat dan hwprobe tidak dilaksanakan).
+Menyenaraikan maklumat rangkaian, serta setiap komputer yang disambungkan ke rangkaian.
+Rakan-rakan
+Menyenaraikan maklumat rangkaian, serta setiap komputer yang disambungkan ke rangkaian, dalam bentuk pokok.
+Menyenaraikan maklumat rangkaian, serta setiap komputer.
+di mana modnameSS.m akan berada
+Mengunci skrin anda dengan kata laluan.
+Log keluar daripada pengguna.
+Dapatkan setiap maklumat rangkaian
+Mulakan semula komputer simulasi anda.
+Muat semula konfigurasi yang ditukar oleh pengguna akhir atau dengan alat.
+Warna tidak memerlukan restart, tetapi kebanyakan tetapan memerlukan anda untuk memulakan semula.
+menunjukkan kepada anda screensaver yang dipilih, sambil melindungi skrin anda dari kebakaran.
+Menunjukkan tarikh dan masa.
+Menunjukkan tarikh dan masa di zon.
+Mematikan komputer simulasi anda.
+Menunjukkan maklumat dan versi sistem.
+Menunjukkan perpustakaan sumber terbuka yang digunakan
+Terdapat ralat dalam shell.
+Anda tidak mempunyai kebenaran menggunakan {0}
+Mesej Shell: Perintah yang diminta {0} tidak dibenarkan dijalankan dalam mod penyelenggaraan.
+Mesej Shell: Perintah yang diminta {0} tidak dijumpai. Lihat 'bantuan' untuk arahan yang ada.
+Mesej Shell: Perintah {0} tidak dibenarkan berjalan masuk.
+Mesej Shell: Perintah yang diminta {0} tidak dijumpai.
+Ralat cuba melaksanakan arahan.
+datetime: Masa adalah {0}
+datetime: Today is {0}
+datetime: Zon Waktu: {0}
+- Masa {0}: {1}
+untuk membersihkan skrin.
+Nampaknya halaman manual {0} tidak dijumpai.
+Terdapat ralat semasa cuba memuat halaman manual {0} kerana {1}.
+Halaman manual ini tidak lengkap kerana alasan berikut:
+Tekan mana-mana butang untuk meneruskan...
+ | {0} perkataan | Penyemakan v {1} | {2} bahagian
+Tajuk halaman manual ini tidak ditulis
+Halaman manual ini ({0}) tidak mengandungi sebarang teks badan. Memadam halaman ...
+Halaman manual ini ({0}) tidak mengandungi sebarang bahagian. Memadam halaman ...
+Berjalan di {0}
+Anda tidak dibenarkan mendapatkan info untuk {0}.
+Perintah ini sudah usang dan akan dikeluarkan dalam pelepasan masa depan.
+Anda tidak dibenarkan menukar kata laluan {0} kerana sasarannya adalah pentadbir.
+Tukar jumlah wang dari negara ke negara
+Mata wang:
+usrmgr: Nama pengguna {0} sudah dijumpai

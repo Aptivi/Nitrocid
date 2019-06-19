@@ -42,18 +42,12 @@ Public Class EventsAndExceptions
     Public Event PostFetchNetworks()
     Public Event PlaceholderParsing()
     Public Event PlaceholderParsed()
-    <Obsolete> Public Event PreWriteToDebugger() 'Writing event - Deprecated
-    <Obsolete> Public Event PostWriteToDebugger() 'Writing event - Deprecated
-    <Obsolete> Public Event PreWriteToConsole() 'Writing event - Deprecated
-    <Obsolete> Public Event PostWriteToConsole() 'Writing event - Deprecated
     Public Event GarbageCollected()
     Public Event FTPShellInitialized()
     Public Event FTPPreExecuteCommand()
     Public Event FTPPostExecuteCommand()
     Public Event FTPCommandError()
 
-    'For writing events, the "Wdbg" instruction has been removed because it's spamming the debug log and makes the kernel even slower.
-    'TODO: Writing events are considered to be removed in the final release of 0.0.6.
     'These subs handle events
     Public Sub RespondStartKernel() Handles Me.KernelStarted
         For Each script As IScript In scripts.Values
@@ -193,26 +187,6 @@ Public Class EventsAndExceptions
             script.InitEvents("PlaceholderParsed")
         Next
     End Sub
-    <Obsolete> Public Sub RespondPreWriteToDebugger() Handles Me.PreWriteToDebugger
-        For Each script As IScript In scripts.Values
-            script.InitEvents("PreWriteToDebugger")
-        Next
-    End Sub
-    <Obsolete> Public Sub RespondPostWriteToDebugger() Handles Me.PostWriteToDebugger
-        For Each script As IScript In scripts.Values
-            script.InitEvents("PostWriteToDebugger")
-        Next
-    End Sub
-    <Obsolete> Public Sub RespondPreWriteToConsole() Handles Me.PreWriteToConsole
-        For Each script As IScript In scripts.Values
-            script.InitEvents("PreWriteToConsole")
-        Next
-    End Sub
-    <Obsolete> Public Sub RespondPostWriteToConsole() Handles Me.PostWriteToConsole
-        For Each script As IScript In scripts.Values
-            script.InitEvents("PostWriteToConsole")
-        Next
-    End Sub
     Public Sub RespondGarbageCollected() Handles Me.GarbageCollected
         For Each script As IScript In scripts.Values
             Wdbg("Mod {0} v{1} responded to event GarbageCollected()...", script.Name, script.Version)
@@ -336,18 +310,6 @@ Public Class EventsAndExceptions
     Public Sub RaisePlaceholderParsed()
         Wdbg("Raising event PlaceholderParsed() and responding in RespondPlaceholderParsed()...")
         RaiseEvent PlaceholderParsed()
-    End Sub
-    <Obsolete> Public Sub RaisePreWriteToDebugger()
-        RaiseEvent PreWriteToDebugger()
-    End Sub
-    <Obsolete> Public Sub RaisePostWriteToDebugger()
-        RaiseEvent PostWriteToDebugger()
-    End Sub
-    <Obsolete> Public Sub RaisePreWriteToConsole()
-        RaiseEvent PreWriteToConsole()
-    End Sub
-    <Obsolete> Public Sub RaisePostWriteToConsole()
-        RaiseEvent PostWriteToConsole()
     End Sub
     Public Sub RaiseGarbageCollected()
         Wdbg("Raising event GarbageCollected() and responding in RespondGarbageCollected()...")
