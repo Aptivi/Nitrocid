@@ -344,3 +344,4 @@ Sie sind nicht berechtigt, das Kennwort von {0} zu ändern, da das Ziel ein Admi
 Konvertieren Sie den Geldbetrag von Land zu Land
 Währungen:
 usrmgr: Benutzername {0} wurde bereits gefunden
+Geben Sie Ihren API-Schlüssel ein: 

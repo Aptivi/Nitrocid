@@ -344,3 +344,4 @@ Você não está autorizado a alterar a senha de {0} porque o alvo era um admini
 Converter quantia de dinheiro de país para país
 Moedas:
 usrmgr: O nome de usuário {0} já foi encontrado
+Digite sua chave de API: 

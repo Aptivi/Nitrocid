@@ -126,6 +126,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **6/19/2019 - 0.0.6:** New icon, Updated FluentFTP and Newtonsoft.Json libs, Removed writing events, Re-written login (Not all, but re-designed), Fixed the chpwd command not changing password if the target doesn't have password, Fixed chpwd not checking if a normal user changes admin password, Fixed adduser not adding users without passwords, Fixed adduser adding users with passwords even if they don't match, Removed cdir, Added config entry for screensaver name, Implemented debugging and dump files for kernel errors, Shipped with .pdb debugging symbols for KS, Fixed reboot not clearing screen, Added Dutch, Finnish, Italian, Malay, Swedish and Turkey languages (switch to a compatible font in console), Countries and currencies are now listed when not providing enough arguments or issuing "help currency", Fixed help list not updating for new language update when rebooting, Added permanent aliases (located under your profile, aliases.csv), The password is now hidden when logging in to maintain security, Fixed users being removed after each reboot
 
+**6/21/2019 - 0.0.6.1:** Removed currency information showing on help (will bring it back later), Users are now required to enter their API Key from apilayer.net to convert currencies (Basic plan, get at http://currencylayer.com/product, untested: couldn't pay for basic plan)
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`

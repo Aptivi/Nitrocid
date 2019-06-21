@@ -145,11 +145,7 @@ Public Module HelpSystem
 
         ElseIf (command = "currency") Then
 
-            Wln(DoTranslation("Usage:", currentLang) + " currency <SourceCountry3Letters> <DestCountry3Letters> <AmountOfMoney>" + vbNewLine +
-                DoTranslation("Currencies:", currentLang) + vbNewLine, "neutralText")
-            For Each CInfo As CurrencyInfo In GetAllCurrencies()
-                Wln("- {0}({2}): {1}", "neutralText", CInfo.CountryName, CInfo.CurrencyName, CInfo.ID)
-            Next
+            Wln(DoTranslation("Usage:", currentLang) + " currency <SourceCountry3Letters> <DestCountry3Letters> <AmountOfMoney>", "neutralText")
 
         ElseIf (command = "debuglog") Then
 

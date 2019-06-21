@@ -344,3 +344,4 @@ aap {0} ka paasavard badalane ke lie adhikrt nahin hain kyonki lakshy ek vyavast
 desh se doosare desh mein dhanaraashi parivartit karen
 mudraen:
 usrmgr: upayogakarta naam {0} pahale se hee paaya gaya hai
+apanee epeeaee kunjee darj karen: 

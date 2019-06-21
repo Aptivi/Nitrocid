@@ -344,3 +344,4 @@ Sinulla ei ole oikeutta muuttaa salasanaa {0}, koska kohde oli admin.
 Muunna rahamäärä maasta toiseen
 Valuutat:
 usrmgr: Käyttäjätunnus {0} on jo löydetty
+Anna API-avain: 

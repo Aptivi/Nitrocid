@@ -344,3 +344,4 @@ Vous n'êtes pas autorisé à changer le mot de passe de {0} car la cible était
 Convertir une somme d'argent d'un pays à l'autre
 Devises:
 usrmgr: le nom d'utilisateur {0} est déjà trouvé
+Entrez votre clé API: 

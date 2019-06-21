@@ -344,3 +344,4 @@ U bent niet gemachtigd om het wachtwoord van {0} te wijzigen omdat het doel een 
 Converteer de hoeveelheid geld van land tot land
 valuta:
 usrmgr: gebruikersnaam {0} is al gevonden
+Voer uw API-sleutel in: 

@@ -344,3 +344,4 @@ Anda tidak dibenarkan menukar kata laluan {0} kerana sasarannya adalah pentadbir
 Tukar jumlah wang dari negara ke negara
 Mata wang:
 usrmgr: Nama pengguna {0} sudah dijumpai
+Masukkan kunci API anda: 

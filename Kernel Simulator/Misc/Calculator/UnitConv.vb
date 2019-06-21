@@ -355,9 +355,23 @@ Public Module UnitConv
 
     Sub CurrencyConvert(ByVal src3UPchars As String, ByVal dest3UPchars As String, ByVal value As Double)
 
+        'Get API key from user
+        Dim RateAPIKey As String = ""
+        W(DoTranslation("Enter your API key: ", currentLang), "neutralText")
+        While True
+            Dim character As Char = Console.ReadKey(True).KeyChar
+            If character = vbCr Or character = vbLf Then
+                Console.WriteLine()
+                Exit While
+            Else
+                RateAPIKey += character
+            End If
+        End While
+
+        'Try to get currency
         Try
             Dim RateResult As String
-            Dim RateURL As String = "http://free.currencyconverterapi.com/api/v5/convert?q=" + src3UPchars + "_" + dest3UPchars + "&compact=y"
+            Dim RateURL As String = "https://apilayer.net/api/convert?access_key=" + RateAPIKey + "&from=" + src3UPchars + "&to=" + dest3UPchars + "&amount=" + CStr(value)
             Dim RateReq As HttpWebRequest = CType(WebRequest.Create(RateURL), HttpWebRequest)
             Dim RateRes As HttpWebResponse = CType(RateReq.GetResponse(), HttpWebResponse)
             Dim RateStream As New IO.StreamReader(RateRes.GetResponseStream)
@@ -369,9 +383,7 @@ Public Module UnitConv
                                                                 DoTranslation(" does not exist on server.", currentLang))
             End If
             RateToken = JToken.Parse(RateResult)
-            Dim RateMult As Object = RateToken(src3UPchars + "_" + dest3UPchars)
-            RateMult = RateMult("val").ToString
-            Dim Result As Double = value * CDbl(RateMult)
+            Dim Result As Double = RateToken("result")
             Wln(DoTranslation("{0} to {1}: {2}", currentLang), "neutralText", src3UPchars, dest3UPchars, FormatNumber(Result, 2))
         Catch ex As Exception
             If (DebugMode = True) Then
@@ -383,40 +395,5 @@ Public Module UnitConv
         End Try
 
     End Sub
-
-    Public Class CurrencyInfo
-        Public ID As String
-        Public CurrencyName As String
-        Public CountryName As String
-    End Class
-
-    Public Function GetAllCurrencies() As List(Of currencyInfo)
-
-        Dim currList As New List(Of currencyInfo)
-        Try
-            Dim RateResult As String = ""
-            Dim RateURL As String = "http://free.currencyconverterapi.com/api/v5/countries"
-            Dim RateReq As HttpWebRequest = CType(WebRequest.Create(RateURL), HttpWebRequest)
-            Dim RateRes As HttpWebResponse = CType(RateReq.GetResponse(), HttpWebResponse)
-            Dim RateStream As New IO.StreamReader(RateRes.GetResponseStream)
-            Dim RateToken As JToken
-            RateResult = RateStream.ReadToEnd
-            RateToken = JToken.Parse(RateResult)
-            Dim countries As JObject = RateToken.SelectToken("results")
-            For Each country In countries
-                Dim countryValue As JObject = country.Value
-                Dim currId As String = countryValue("currencyId").ToString
-                Dim currName As String = countryValue("currencyName").ToString
-                Dim cntryName As String = countryValue("name").ToString
-                currList.Add(New currencyInfo With {.ID = currId, .CurrencyName = currName, .CountryName = cntryName})
-            Next
-        Catch ex As Exception
-            currList.Add(New currencyInfo With {.ID = DoTranslation("Error", currentLang),
-                                                .CurrencyName = DoTranslation("Error", currentLang),
-                                                .CountryName = DoTranslation("Error", currentLang)})
-        End Try
-        Return currList
-
-    End Function
 
 End Module

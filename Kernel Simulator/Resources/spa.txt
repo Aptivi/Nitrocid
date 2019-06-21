@@ -344,3 +344,4 @@ No tiene autorización para cambiar la contraseña de {0} porque el objetivo era
 Convertir cantidad de dinero de un país a otro
 Monedas:
 usrmgr: el nombre de usuario {0} ya se encuentra
+Ingrese su clave API: 

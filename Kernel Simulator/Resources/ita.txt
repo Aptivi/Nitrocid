@@ -344,3 +344,4 @@ Non sei autorizzato a cambiare la password di {0} perché il target era un ammin
 Converti quantità di denaro da paese a paese
 valute:
 usrmgr: il nome utente {0} è già stato trovato
+apanee epeeaee kunjee darj karen: 

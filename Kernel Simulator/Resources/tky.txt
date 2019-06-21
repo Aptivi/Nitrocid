@@ -344,3 +344,4 @@ Hedef bir yönetici olduğu için {0} şifresini değiştirme yetkiniz yok.
 Ülkeden ülkeye para miktarını dönüştürme
 Kurlar:
 usrmgr: Kullanıcı adı {0} zaten bulundu
+API anahtarınızı girin: 

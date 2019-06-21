@@ -344,3 +344,4 @@ Du är inte behörig att ändra lösenord för {0} eftersom målet var en admin.
 Konvertera summa pengar från land till land
 Valutor:
 usrmgr: Användarnamn {0} finns redan
+Ange din API-nyckel: 
