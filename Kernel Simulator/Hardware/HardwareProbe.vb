@@ -46,19 +46,19 @@ Public Module HardwareProbe
         End If
 
         'We are checking to see if any of the probers reported a failure starting with CPU
-        If (CPUDone = False) Then
+        If CPUDone = False Then
             Wdbg("CPU failed to probe.", KernelVersion)
             Wln(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", currentLang), "neutralText")
         End If
 
         'then RAM
-        If (RAMDone = False) Then
+        If RAMDone = False Then
             Wdbg("RAM failed to probe.", KernelVersion)
             Wln(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", currentLang), "neutralText")
         End If
 
         'and finally HDD
-        If (HDDDone = False) Then
+        If HDDDone = False Then
             Wdbg("HDD failed to probe.", KernelVersion)
             Wln(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), "neutralText")
         End If
@@ -93,7 +93,7 @@ Public Module HardwareProbe
 
         'A loop to print names
         For Each slotname In RAMList
-            If (times = 1) Then
+            If times = 1 Then
                 W(DoTranslation("RAM: Used slots (by names): {0}", currentLang), "neutralText", slotname.SlotName)
             Else
                 W(" {0}", "neutralText", slotname.SlotName)
@@ -106,7 +106,7 @@ Public Module HardwareProbe
 
         'Drive Info
         For Each driveinfo In HDDList
-            If (driveinfo.Manufacturer = "(Standard disk drives)") Then
+            If driveinfo.Manufacturer = "(Standard disk drives)" Then
                 Wln(DoTranslation("HDD: {0} {1}GB {2}", currentLang) + vbNewLine +
                     DoTranslation("HDD: CHS: {3} cylinders | {4} heads | {5} sectors", currentLang), "neutralText",
                     driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2),
@@ -147,7 +147,7 @@ Public Module HardwareProbe
                      HDDList(HDDList.Count - 1).Sectors)
             Catch ex As Exception
                 HDDDone = False
-                If (DebugMode = True) Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+                If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
                 Continue For
             End Try
         Next
@@ -159,7 +159,7 @@ Public Module HardwareProbe
                 Wdbg("CPU: CPU.Win32_Processor.Name = {0}, CPU.Win32_Processor.CurrentClockSpeed = {1}", CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
             Catch ex As Exception
                 CPUDone = False
-                If (DebugMode = True) Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+                If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
                 Continue For
             End Try
         Next
@@ -168,19 +168,19 @@ Public Module HardwareProbe
         For Each RAM As ManagementBaseObject In MemSet.Get
             Try
                 RAMList.Add(New RAM With {.ChipCapacity = RAM("Capacity"), .SlotName = "", .SlotNumber = 0})
-                If (slotProbe = True) Then RAMList(RAMList.Count - 1).SlotName = RAM("DeviceLocator")
+                If slotProbe = True Then RAMList(RAMList.Count - 1).SlotName = RAM("DeviceLocator")
                 temp = temp + CStr(RAMList(RAMList.Count - 1).ChipCapacity / 1024 / 1024) + " "
                 Wdbg("RAM.Win32_PhysicalMemory.Capacity = {0}", RAMList(RAMList.Count - 1).ChipCapacity)
             Catch ex As Exception
                 RAMDone = False
-                If (DebugMode = True) Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+                If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
                 Continue For
             End Try
         Next
         Capacities = temp.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
 
         'Slot Prober
-        If (slotProbe = True) Then
+        If slotProbe = True Then
             RAMList(RAMList.Count - 1).SlotNumber = Capacities.Count() : slotsUsedNum = Capacities.Count()
             For Each Slot As ManagementBaseObject In SltSet.Get
                 Try
@@ -188,7 +188,7 @@ Public Module HardwareProbe
                     Wdbg("Slot = Win32_PhysicalMemoryArray.MemoryDevices | totalSlots = {0}", totalSlots)
                 Catch ex As Exception
                     RAMDone = False
-                    If (DebugMode = True) Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+                    If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
                     Continue For
                 End Try
             Next
@@ -215,7 +215,7 @@ Public Module HardwareProbe
             CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name})
         Catch ex As Exception
             CPUDone = False
-            If (DebugMode = True) Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+            If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
         End Try
 
         'RAM Prober
@@ -224,7 +224,7 @@ Public Module HardwareProbe
             RAMList.Add(New RAM_Linux With {.Capacity = raminfo.ReadLine()})
         Catch ex As Exception
             RAMDone = False
-            If (DebugMode = True) Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+            If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
         End Try
 
         'HDD Prober
@@ -247,7 +247,7 @@ Public Module HardwareProbe
             Next
         Catch ex As Exception
             HDDDone = False
-            If (DebugMode = True) Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+            If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
         End Try
     End Sub
     Sub ListDrivers_Linux()

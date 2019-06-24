@@ -36,7 +36,7 @@ Public Module FTPHelpSystem
 
     Public Sub FTPShowHelp()
 
-        If (simHelp = False) Then
+        If simHelp = False Then
             For Each cmd As String In ftpDefinitions.Keys
                 W("- {0}: ", "helpCmd", cmd) : Wln("{0}", "helpDef", ftpDefinitions(cmd))
             Next

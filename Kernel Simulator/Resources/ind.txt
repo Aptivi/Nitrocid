@@ -138,11 +138,8 @@ aapake log in upayogakarta naam par nikaalane mein saksham hone ke lie aapake pa
 {0}  se diskanekt kiya gaya
 aapane abhee tak kisee bhee sarvar se kanekt nahin kiya hai
 fail daunalod kar raha hai {0} ...
-haish sthiti:
-rimot: {0} ({1})
 daunalod kee gaee fail {0}.
 fail {0} ke lie asaphal daunalod kyonki sthaaneey fail dooshit hai.
-yog kee jaanch kie bina daunalod kee gaee fail {0}. yah fail dooshit ho sakatee hai.
 traansamishan karane se pahale aapako sarvar se kanekt hona chaahie.
 sthaaneey nirdeshika mein daunalod karane ke lie ek fail darj karen.
 {0} | mein sanshodhit: {1}
@@ -345,3 +342,5 @@ desh se doosare desh mein dhanaraashi parivartit karen
 mudraen:
 usrmgr: upayogakarta naam {0} pahale se hee paaya gaya hai
 apanee epeeaee kunjee darj karen: 
+kampyootar nahin mil sake. yadi aap vindoj 10 ka naveenatam sanskaran chala rahe hain, to aapako smbv1 ko saksham karana hoga. yah protokol haalaanki asurakshit hai aur ham is samasya ko hal karane kee koshish karenge.
+deebag log mein sab kuchh hataata hai

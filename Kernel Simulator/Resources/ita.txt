@@ -138,11 +138,8 @@ Inserisci un file da rimuovere.
 Disconnesso da {0}
 Non sei ancora connesso a nessun server
 Download del file {0} ...
-Stato hash:
-REMOTO: {0} ({1})
 File scaricato {0}.
 Download non riuscito per il file {0} perché il file locale è corrotto.
-File scaricato {0} senza verificare la somma. Questo file potrebbe essere danneggiato.
 È necessario connettersi al server prima di eseguire la trasmissione.
 Inserisci un file da scaricare nella directory locale.
 {0} | Modificato in: {1}
@@ -345,3 +342,5 @@ Converti quantità di denaro da paese a paese
 valute:
 usrmgr: il nome utente {0} è già stato trovato
 apanee epeeaee kunjee darj karen: 
+Impossibile ottenere computer. Se si sta utilizzando l'ultima versione di Windows 10, è necessario abilitare SMBv1. Questo protocollo è tuttavia insicuro e cercheremo di risolvere questo problema.
+Elimina tutto nel registro di debug

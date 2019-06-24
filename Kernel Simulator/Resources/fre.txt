@@ -138,11 +138,8 @@ Vous devez disposer d'autorisations administratives sur votre nom d'utilisateur 
 Déconnecté de {0}
 Vous n'avez encore connecté à aucun serveur
 Téléchargement du fichier {0} ...
-Statut de hachage:
-DISTANCE: {0} ({1})
 Fichier téléchargé {0}.
 Le téléchargement du fichier {0} a échoué car le fichier local est corrompu.
-Fichier téléchargé {0} sans vérifier la somme. Ce fichier est peut-être corrompu.
 Vous devez vous connecter au serveur avant d'effectuer la transmission.
 Entrez un fichier à télécharger dans le répertoire local.
 {0} | Modifié dans: {1}
@@ -345,3 +342,5 @@ Convertir une somme d'argent d'un pays à l'autre
 Devises:
 usrmgr: le nom d'utilisateur {0} est déjà trouvé
 Entrez votre clé API: 
+Impossible d'avoir des ordinateurs. Si vous exécutez la dernière version de Windows 10, vous devez activer SMBv1. Ce protocole n'est cependant pas sécurisé et nous allons essayer de résoudre ce problème.
+Supprime tout dans le journal de débogage

@@ -1,7 +1,7 @@
 (*MAN START*)
 
 -TITLE:How to make your own mod for the kernel
--REVISION:0.0.1
+-REVISION:0.0.2
 -KSLAYOUT:0.0.5.9-OR-ABOVE
 
 -BODY START-
@@ -20,7 +20,7 @@ Basic modding
 0. How to make your own mods on Visual Studio 2017?
 
 1. On the Start Page, click on New Project
-2. Click on Empty Project, and name your mod or modpack. Make sure the project directory is set to your KSMods directory in your home folder. When you're finished, click OK.
+2. Click on Empty Project, select VB or C#, and name your mod or modpack. Make sure the project directory is set to your KSMods directory in your home folder. When you're finished, click OK.
 3. Right-click on References on the Solution Explorer, and press Add Reference...
 4. Click on the Browse... button, and locate your Kernel Simulator executable file (the file you just ran)
 5. When you click OK on Open File, you will see that your KS executable files is added to the reference list.
@@ -28,15 +28,20 @@ Basic modding
 7. Right-click on the project, not the solution
 8. Change the application type to Class Library
 9. On the Compile section, click on Build Events, then write this on the Post-build event command line:
-   - copy ..\..\ModFile.vb ..\..\..\..\ModFile.m
-   - del /Q *.* (to make sure that there is no dummy DLL files being created as we don't use DLL for mods)
-   - "path\to\Kernel Simulator.exe" testMods ModFile.m
+   If you are using VB:
+      - copy ..\..\ModFile.vb ..\..\..\..\ModFile.m
+      - del /Q *.* (to make sure that there is no dummy DLL files being created as we don't use DLL for mods)
+      - "path\to\Kernel Simulator.exe" testMods ModFile.m
+   If you are using C#:
+      - copy ..\..\ModFile.cs ..\..\..\..\ModFileCS.m
+      - del /Q *.* (to make sure that there is no dummy DLL files being created as we don't use DLL for mods)
+      - "path\to\Kernel Simulator.exe" testMods ModFileCS.m
 10. Make sure the post-build event runs only when the build is successful
 11. Save everything by pressing CTRL+S
 12. Expand the References section on the Solution Explorer
 13. Set the Copy Local setting to False as you have the executable so you don't make an extra copy
 14. Right-click on the project, and go to Add > Class
-15. Name your mod, but leave the .vb intact. Your mod name should be the one that is included in the Post-build built event. If your mod name is changed, you must also change the post-build event for the changes to be reflected.
+15. Assume that you're making a mod in VB. Name your mod, but leave the .vb intact. Your mod name should be the one that is included in the Post-build built event. If your mod name is changed, you must also change the post-build event for the changes to be reflected.
 16. Click Add, and the code will be ready:
     Public Class ModName
 	    'Your code here
@@ -150,7 +155,8 @@ Hello World is the popular starting example for all of the programmers. These ex
     End Sub
     Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
     End Sub
-10. The code should look like this:
+10. The code should look like this in VB:
+
     Imports Kernel_Simulator.ModParser
     Imports Kernel_Simulator.TextWriterColor
     Public Class HelloGuys
@@ -174,6 +180,37 @@ Hello World is the popular starting example for all of the programmers. These ex
     	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
     	End Sub
     End Class
+
+...Or in C#:
+
+    using MP = Kernel_Simulator.ModParser;
+    using TWC = Kernel_Simulator.TextWriterColor;
+	public class HelloGuys : MP.IScript
+	{
+	public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "";
+			Def = "";
+			Name = "HelloGuys";
+			Version = "1.0";
+			TWC.Wln("Hello World", "neutralText");
+		}
+		public void StopMod()
+		{
+			TWC.Wln("Goodbye World", "neutralText");
+		}
+		public void PerformCmd(string args = "")
+		{
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
+
 11. Run the build. When the build is successful, ignore the dialog box that appears.
 12. Run your Kernel Simulator you've just referenced to in your project.
 13. If everything goes well, you should see the following messages:
@@ -204,7 +241,8 @@ Hello World is the popular starting example for all of the programmers. These ex
     Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
 	Wln("Hello World", "neutralText")
     End Sub
-5. The code should look like this:
+5. The code should look like this in VB:
+
     Imports Kernel_Simulator.ModParser
     Imports Kernel_Simulator.TextWriterColor
     Public Class HelloShell
@@ -227,6 +265,36 @@ Hello World is the popular starting example for all of the programmers. These ex
     	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
     	End Sub
     End Class
+
+...Or in C#
+    
+	using MP = Kernel_Simulator.ModParser;
+    using TWC = Kernel_Simulator.TextWriterColor;
+	public class HelloShell : MP.IScript
+	{
+	public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "SayHello";
+			Def = "";
+			Name = "HelloShell";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+		TWC.Wln("Hello World", "neutralText");
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
+
 6. Repeat the steps 11-12 on the first example: Hello World on Kernel Start and Goodbye World on Kernel Stop
 
 3. Hello World on command execute with arguments (single)
@@ -240,7 +308,8 @@ Hello World is the popular starting example for all of the programmers. These ex
 	    Wln("Make me say Hello by running ""SayHello HW.""", "neutralText")
 	End If
     End Sub
-3. The code should look like this:
+3. The code should look like this in VB:
+
     Imports Kernel_Simulator.ModParser
     Imports Kernel_Simulator.TextWriterColor
     Public Class HelloArgs
@@ -267,6 +336,43 @@ Hello World is the popular starting example for all of the programmers. These ex
     	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
     	End Sub
     End Class
+
+...Or in C#:
+    
+	using MP = Kernel_Simulator.ModParser;
+    using TWC = Kernel_Simulator.TextWriterColor;
+	public class HelloArgs : MP.IScript
+	{
+	public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "SayHello";
+			Def = "";
+			Name = "HelloArgs";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+		if (args == "HW")
+		{
+			TWC.Wln("Hello World", "neutralText");
+		}
+		else
+		{
+			TWC.Wln("Make me say Hello by running \"SayHello HW.\"", "neutralText");
+		}
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
+
 4. Repeat the last step on the second example: Hello World on command execute
 
 4. Hello World on command execute with multiple arguments
@@ -290,7 +396,8 @@ Hello World is the popular starting example for all of the programmers. These ex
             ArgCount += 1
         Next
     End Sub
-3. The code should look like this:
+3. The code should look like this in VB:
+
     Imports Kernel_Simulator.ModParser
     Imports Kernel_Simulator.TextWriterColor
     Public Class HelloArgs
@@ -327,6 +434,57 @@ Hello World is the popular starting example for all of the programmers. These ex
     	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
     	End Sub
     End Class
+
+...Or in C#:
+
+    using MP = Kernel_Simulator.ModParser;
+    using TWC = Kernel_Simulator.TextWriterColor;
+	public class HelloArgs : MP.IScript
+	{
+		public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "WhatDoISay";
+			Def = "";
+			Name = "HelloArgs";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+		string[] splitArgs = args.Split(new[] {' '});
+			int ArgCount = 1;
+			if (splitArgs.Length > 1)
+			{
+				if (splitArgs[0] == "Say" && splitArgs[1] == "Hello")
+				{
+					TWC.Wln("Hello World", "neutralText");
+				}
+				else
+				{
+					TWC.Wln("Make me say Hello by running \"WhatDoISay Say Hello.\"", "neutralText");
+				}
+			}
+			else
+			{
+				TWC.Wln("Make me say Hello by running \"WhatDoISay Say Hello.\"", "neutralText");
+			}
+			foreach (string arg in splitArgs)
+			{
+				TWC.Wln("Argument {0}: {1}", "neutralText", ArgCount, splitArgs[ArgCount - 1]);
+				ArgCount += 1;
+			}
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
+
 4. Repeat the last step on the second example: Hello World on command execute
 
 5. Network Speed Testing
@@ -352,7 +510,8 @@ Hello World is the popular starting example for all of the programmers. These ex
         File.Delete(Environ("USERPROFILE") + "\jQuery.js")
         Wln("Download speed: {0}KB/s", "neutralText", speeds.Average())
     End Sub
-4. The code should look like this:
+4. The code should look like this in VB:
+
     Imports System.Net
     Imports System.Linq
     Imports System.IO
@@ -390,11 +549,57 @@ Hello World is the popular starting example for all of the programmers. These ex
     	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
     	End Sub
     End Class
+
+...Or in C#:
+
+    using System;
+	using System.Net;
+	using System.Linq;
+	using System.IO;
+	using M = System.Math;
+	using MP = Kernel_Simulator.ModParser;
+	using TWC = Kernel_Simulator.TextWriterColor;
+	public class InternetSpeed : MP.IScript
+	{
+		public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "getnetspeed";
+			Def = "";
+			Name = "InternetSpeed";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+			double[] speeds = new double[5];
+			for (int i = 0; i <= 4; i++)
+			{
+				int jQueryFileSize = 261;
+				WebClient client = new WebClient();
+				DateTime startTime = DateTime.Now;
+				client.DownloadFile("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\jQuery.js");
+				DateTime endTime = DateTime.Now;
+				speeds[i] = M.Round(jQueryFileSize / (endTime - startTime).TotalSeconds);
+			}
+			File.Delete(System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\jQuery.js");
+			TWC.Wln("Download speed: {0}KB/s", "neutralText", speeds.Average());
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
+
 5. Repeat the last step on the second example: Hello World on command execute
 
 More examples
 
-If you want to check out more examples, feel free to check them out in the KSModExamples respository in GitHub.
+If you want to check out more examples, feel free to check them out in the KSModExamples respository in GitHub (Not available yet).
 
 Sources:
 

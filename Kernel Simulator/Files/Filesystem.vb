@@ -46,11 +46,7 @@ Public Module Filesystem
         End Using
     End Sub
     Public Sub Init()
-        If EnvironmentOSType.Contains("Unix") Then
-            CurrDir = Environ("HOME")
-        Else
-            CurrDir = Environ("USERPROFILE")
-        End If
+        CurrDir = paths("Home")
         InitStructure()
     End Sub
     Public Sub InitStructure()

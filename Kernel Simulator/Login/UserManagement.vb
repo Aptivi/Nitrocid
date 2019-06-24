@@ -26,7 +26,7 @@ Public Module UserManagement
             adminList.Add(uninitUser, False)
             disabledList.Add(uninitUser, False)
         Catch ex As Exception
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wln(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
                     DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", "neutralText", Err.Number, Err.Description, ex.StackTrace)
                 Wdbg(ex.StackTrace, True)
@@ -41,11 +41,11 @@ Public Module UserManagement
     Public Sub Adduser(ByVal newUser As String, Optional ByVal newPassword As String = "")
 
         'Adds users
-        If (Quiet = False) Then
+        If Quiet = False Then
             Wln(DoTranslation("usrmgr: Creating username {0}...", currentLang), "neutralText", newUser)
         End If
         If Not userword.ContainsKey(newUser) Then
-            If (newPassword = Nothing) Then
+            If newPassword = Nothing Then
                 InitializeUser(newUser)
             Else
                 InitializeUser(newUser, newPassword)
@@ -63,23 +63,23 @@ Public Module UserManagement
             Dim DoneFlag As String = "No"
             If InStr(user, " ") > 0 Then
                 Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
-            ElseIf (user = "q") Then
+            ElseIf user = "q" Then
                 DoneFlag = "Cancelled"
-            ElseIf (user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+            ElseIf user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                 Wln(DoTranslation("Special characters are not allowed.", currentLang), "neutralText")
-            ElseIf (user = Nothing) Then
+            ElseIf user = Nothing Then
                 Wln(DoTranslation("Blank username.", currentLang), "neutralText")
             ElseIf userword.ContainsKey(user) = False Then
                 Wdbg("ASSERT(isFound({0})) = False", user)
                 Wln(DoTranslation("User {0} not found.", currentLang), "neutralText", user)
             Else
                 For Each usersRemove As String In userword.Keys.ToArray
-                    If (usersRemove = user And user = "root") Then
+                    If usersRemove = user And user = "root" Then
                         Wln(DoTranslation("User {0} isn't allowed to be removed.", currentLang), "neutralText", user)
-                    ElseIf (user = usersRemove And usersRemove = signedinusrnm) Then
+                    ElseIf user = usersRemove And usersRemove = signedinusrnm Then
                         Wln(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin.", currentLang), "neutralText", user)
                         Wdbg("ASSERT({0}.isLoggedIn(ASSERT({0} = {1}) = True)) = True", user, signedinusrnm)
-                    ElseIf (usersRemove = user And user <> "root") Then
+                    ElseIf usersRemove = user And user <> "root" Then
                         adminList.Remove(user)
                         disabledList.Remove(user)
                         Wdbg("userword.ToBeRemoved = {0}", String.Join(", ", userword(user).ToArray))
@@ -90,7 +90,7 @@ Public Module UserManagement
                 Next
             End If
         Catch ex As Exception
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wln(DoTranslation("Error trying to remove username.", currentLang) + vbNewLine +
                     DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", "neutralText", Err.Number, Err.Description, ex.StackTrace)
                 Wdbg(ex.StackTrace, True)

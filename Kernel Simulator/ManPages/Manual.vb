@@ -29,7 +29,7 @@ Public Class Manual
     Public Property Todos As New List(Of String)
 
     Public Sub New(ByVal Title As String)
-        If (AvailablePages.Contains(Title)) Then
+        If AvailablePages.Contains(Title) Then
             ManualTitle = Title
         End If
     End Sub

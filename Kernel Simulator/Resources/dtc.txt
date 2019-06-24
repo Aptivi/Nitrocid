@@ -138,11 +138,8 @@ U moet beheerdersrechten hebben voor uw ingelogde gebruikersnaam om te kunnen ve
 Verbinding verbroken met {0}
 Je hebt nog geen verbinding met een server
 Bestand {0} downloaden ...
-Hash-status:
-REMOTE: {0} ({1})
 Gedownload bestand {0}.
 Downloaden mislukt voor bestand {0} omdat het lokale bestand corrupt is.
-Gedownload bestand {0} zonder te controleren op som. Dit bestand is mogelijk beschadigd.
 U moet verbinding maken met de server voordat u verzendt.
 Voer een bestand in om te downloaden naar de lokale map.
 {0} | Gewijzigd in: {1}
@@ -345,3 +342,5 @@ Converteer de hoeveelheid geld van land tot land
 valuta:
 usrmgr: gebruikersnaam {0} is al gevonden
 Voer uw API-sleutel in: 
+Kon geen computers krijgen. Als u de nieuwste versie van Windows 10 gebruikt, moet u SMBv1 inschakelen. Dit protocol is echter onzeker en we zullen proberen dit probleem op te lossen.
+Hiermee verwijdert u alles in het logboek voor foutopsporing

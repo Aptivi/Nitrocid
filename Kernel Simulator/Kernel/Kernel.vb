@@ -16,6 +16,7 @@
 
 Imports System.Reflection.Assembly
 
+'TODO: Make debug syms mandatory: Download debug syms from GitHub from archive branch (https://github.com/EoflaOE/Kernel-Simulator/tree/archive/dbgsyms), install to the same folder as the executable, inform user that it needs to be shut down, and quit
 Public Module Kernel
 
     'Variables
@@ -41,7 +42,7 @@ Public Module Kernel
             InitEverything()
 
             'Phase 1: Probe hardware
-            If (Quiet = True Or quietProbe = True) Then
+            If Quiet = True Or quietProbe = True Then
                 'Continue the kernel, and don't print messages
                 ProbeHW(True)
             Else
@@ -52,11 +53,11 @@ Public Module Kernel
             'Phase 2: Username management
             adduser("root", RootPasswd)
             permission("Admin", "root", "Allow", Quiet)
-            If (enableDemo = True) Then adduser("demo")
+            If enableDemo = True Then adduser("demo")
             LoginFlag = True
 
             'Phase 3: Check for pre-user making
-            If (CruserFlag = True) Then adduser(arguser, argword)
+            If CruserFlag = True Then adduser(arguser, argword)
 
             'Phase 4: Parse Mods and Screensavers
             ParseMods(True)
@@ -71,19 +72,16 @@ Public Module Kernel
 
             'Phase 6: Log-in
             ShowTime()
-            If (userword.Count = 0) Then 'Check if user amount is zero
-                Throw New EventsAndExceptions.NullUsersException(DoTranslation("There is no more users remaining in the list.", currentLang))
-            End If
-            If (LoginFlag = True And maintenance = False) Then
+            If LoginFlag = True And maintenance = False Then
                 LoginPrompt()
-            ElseIf (LoginFlag = True And maintenance = True) Then
+            ElseIf LoginFlag = True And maintenance = True Then
                 LoginFlag = False
                 Wln(DoTranslation("Enter the admin password for maintenance.", currentLang), "neutralText")
                 answeruser = "root"
                 showPasswordPrompt(answeruser)
             End If
         Catch ex As Exception
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
             End If
             KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}", currentLang), ex, Err.Description)

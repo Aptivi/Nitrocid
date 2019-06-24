@@ -138,11 +138,8 @@ Você deve ter permissões administrativas no seu nome de usuário logado para p
 Desconectado de {0}
 Você ainda não se conectou a nenhum servidor
 Fazendo o download do arquivo {0} ...
-Status de hash:
-REMOTO: {0} ({1})
 Arquivo baixado {0}.
 O download falhou para o arquivo {0} porque o arquivo local está corrompido.
-Arquivo baixado {0} sem verificar a soma. Este arquivo pode estar corrompido
 Você deve se conectar ao servidor antes de realizar a transmissão.
 Digite um arquivo para baixar no diretório local.
 {0} | Modificado em: {1}
@@ -345,3 +342,5 @@ Converter quantia de dinheiro de país para país
 Moedas:
 usrmgr: O nome de usuário {0} já foi encontrado
 Digite sua chave de API: 
+Não foi possível obter computadores. Se você estiver executando a versão mais recente do Windows 10, precisará ativar o SMBv1. Este protocolo é, no entanto, inseguro e vamos tentar resolver este problema.
+Exclui tudo no log de depuração

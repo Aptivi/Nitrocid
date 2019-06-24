@@ -31,8 +31,13 @@ Public Module Login
             'Fire event PreLogin
             EventManager.RaisePreLogin()
 
+            'Extremely rare situation except if modded: Check to see if there are any users
+            If userword.Count = 0 Then 'Check if user amount is zero
+                Throw New EventsAndExceptions.NullUsersException(DoTranslation("There is no more users remaining in the list.", currentLang))
+            End If
+
             'Prompts user to log-in
-            If (clsOnLogin = True) Then
+            If clsOnLogin = True Then
                 Console.Clear()
             End If
 
@@ -51,7 +56,7 @@ Public Module Login
             'Parse input
             If InStr(answeruser, " ") > 0 Then
                 Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
-            ElseIf (answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1) Then
+            ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                 Wln(DoTranslation("Special characters are not allowed.", currentLang), "neutralText")
             ElseIf userword.ContainsKey(answeruser) Then
                 If disabledList(answeruser) = False Then
@@ -72,7 +77,7 @@ Public Module Login
 
         'Prompts user to enter a user's password
         While True
-            Wdbg("ASSERT({0} = False) = True", disabledList(usernamerequested))
+            Wdbg("User {0} is not disabled", usernamerequested)
 
             'Get the password from dictionary
             password = userword.Item(usernamerequested)
@@ -85,6 +90,7 @@ Public Module Login
                 'Get input
                 While True
                     Dim character As Char = Console.ReadKey(True).KeyChar
+                    Wdbg("Parse char: {0}", character)
                     If character = vbCr Or character = vbLf Then
                         Console.WriteLine()
                         Exit While
@@ -95,31 +101,31 @@ Public Module Login
 
                 'Parse password input
                 If InStr(answerpass, " ") > 0 Then
-                        Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
+                    Wln(DoTranslation("Spaces are not allowed.", currentLang), "neutralText")
+                    If Not maintenance Then
+                        If Not LockMode Then
+                            Exit Sub
+                        End If
+                    End If
+                Else
+                    If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
+                        Wdbg("ASSERT(Parse({0}, {1})) = True | ASSERT({1} = {2}) = True", usernamerequested, password, answerpass)
+
+                        'Log-in instantly
+                        SignIn(usernamerequested)
+                        Exit Sub
+                    Else
+                        Wln(DoTranslation("Wrong password.", currentLang), "neutralText")
                         If Not maintenance Then
                             If Not LockMode Then
                                 Exit Sub
                             End If
                         End If
-                    Else
-                        If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
-                            Wdbg("ASSERT(Parse({0}, {1})) = True | ASSERT({1} = {2}) = True", usernamerequested, password, answerpass)
-
-                            'Log-in instantly
-                            SignIn(usernamerequested)
-                            Exit Sub
-                        Else
-                            Wln(DoTranslation("Wrong password.", currentLang), "neutralText")
-                            If Not maintenance Then
-                                If Not LockMode Then
-                                    Exit Sub
-                                End If
-                            End If
-                        End If
                     End If
-                Else
-                    'Log-in instantly
-                    SignIn(usernamerequested)
+                End If
+            Else
+                'Log-in instantly
+                SignIn(usernamerequested)
                 Exit Sub
             End If
         End While

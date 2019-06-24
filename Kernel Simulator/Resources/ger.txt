@@ -138,11 +138,8 @@ Sie müssen über Administratorrechte für Ihren angemeldeten Benutzernamen verf
 Von {0} getrennt
 Sie haben noch keine Verbindung zu einem Server hergestellt
 Download der Datei {0} ...
-Hash-Status:
-REMOTE: {0} ({1})
 Heruntergeladene Datei {0}.
 Der Download für die Datei {0} ist fehlgeschlagen, weil die lokale Datei beschädigt ist.
-Datei {0} heruntergeladen, ohne nach der Summe zu suchen. Diese Datei ist möglicherweise beschädigt.
 Sie müssen eine Verbindung zum Server herstellen, bevor Sie die Übertragung durchführen.
 Geben Sie eine Datei zum Herunterladen in das lokale Verzeichnis ein.
 {0} | Geändert in: {1}
@@ -345,3 +342,5 @@ Konvertieren Sie den Geldbetrag von Land zu Land
 Währungen:
 usrmgr: Benutzername {0} wurde bereits gefunden
 Geben Sie Ihren API-Schlüssel ein: 
+Konnte keine Computer bekommen. Wenn Sie die neueste Version von Windows 10 ausführen, müssen Sie SMBv1 aktivieren. Dieses Protokoll ist jedoch unsicher und wir werden versuchen, dieses Problem zu lösen.
+Löscht alles im Debug-Protokoll

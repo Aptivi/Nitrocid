@@ -31,7 +31,7 @@ Public Module TimeDate
     Sub TimeDateChange_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles TimeDateChange.DoWork
 
         Do While True
-            If (TimeDateChange.CancellationPending = True) Then
+            If TimeDateChange.CancellationPending = True Then
                 e.Cancel = True
                 Exit Do
             Else
@@ -43,9 +43,9 @@ Public Module TimeDate
                 'We also have to slow down calling this function every second.
                 originalRow = Console.CursorTop
                 originalCol = Console.CursorLeft
-                If (CornerTD = True) Then
+                If CornerTD = True Then
                     Console.SetCursorPosition(Console.WindowWidth - 6, Console.WindowTop)
-                    Wln("{0} {1}", "neutralText", FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortTime), FormatDateTime(CDate(strKernelTimeDate), DateFormat.ShortDate))
+                    Wln("{0} {1}", "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.ShortTime), FormatDateTime(strKernelTimeDate, DateFormat.ShortDate))
                     Console.SetCursorPosition(originalCol, originalRow)
                 End If
             End If
@@ -65,8 +65,8 @@ Public Module TimeDate
 
     Public Sub ShowTime()
 
-        Wln(DoTranslation("datetime: Time is {0}", currentLang), "neutralText", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongTime))
-        Wln(DoTranslation("datetime: Today is {0}", currentLang), "neutralText", FormatDateTime(CDate(strKernelTimeDate), DateFormat.LongDate))
+        Wln(DoTranslation("datetime: Time is {0}", currentLang), "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.LongTime))
+        Wln(DoTranslation("datetime: Today is {0}", currentLang), "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.LongDate))
         Wln(DoTranslation("datetime: Time Zone: {0}", currentLang), "neutralText", TimeZone.CurrentTimeZone.StandardName)
 
     End Sub

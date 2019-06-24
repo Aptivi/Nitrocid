@@ -31,24 +31,24 @@ Module ArgumentParse
             BootArgs = answerargs.Split({","c}, StringSplitOptions.RemoveEmptyEntries)
             For i As Integer = 0 To BootArgs.Count - 1
                 Dim indexArg As Integer = BootArgs(i).IndexOf(" ")
-                If (indexArg = -1) Then
+                If indexArg = -1 Then
                     indexArg = BootArgs(i).Count
                     BootArgs(i) = BootArgs(i).Substring(0, indexArg)
                 End If
-                If (AvailableArgs.Contains(BootArgs(i).Substring(0, indexArg))) Then
-                    If (BootArgs(i) = "quiet") Then
+                If AvailableArgs.Contains(BootArgs(i).Substring(0, indexArg)) Then
+                    If BootArgs(i) = "quiet" Then
 
                         Quiet = True
 
-                    ElseIf (BootArgs(i).Contains("cmdinject")) Then
+                    ElseIf BootArgs(i).Contains("cmdinject") Then
 
                         'Command Injector argument
-                        If (BootArgs(i) = "cmdinject") Then
+                        If BootArgs(i) = "cmdinject" Then
                             W(DoTranslation("Available commands: {0}", currentLang) + vbNewLine +
                               DoTranslation("Write command: ", currentLang), "input", String.Join(", ", availableCommands))
                             argcmds = Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                             argcommands = String.Join(", ", argcmds)
-                            If (argcommands <> "q") Then
+                            If argcommands <> "q" Then
                                 CommandFlag = True
                             Else
                                 Wln(DoTranslation("Command injection has been cancelled.", currentLang), "neutralText")
@@ -59,22 +59,22 @@ Module ArgumentParse
                             CommandFlag = True
                         End If
 
-                    ElseIf (BootArgs(i) = "debug") Then
+                    ElseIf BootArgs(i) = "debug" Then
 
                         DebugMode = True
 
-                    ElseIf (BootArgs(i) = "maintenance") Then
+                    ElseIf BootArgs(i) = "maintenance" Then
 
                         maintenance = True
 
-                    ElseIf (BootArgs(i) = "help") Then
+                    ElseIf BootArgs(i) = "help" Then
 
                         Wln(DoTranslation("Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe'", currentLang) + vbNewLine +
                             DoTranslation("Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5'", currentLang) + vbNewLine +
                             DoTranslation("Note that the 'debug' argument does not fully cover the kernel.", currentLang), "neutralText")
                         answerargs = "" : argsFlag = False : argsInjected = False
                         PromptArgs()
-                        If (argsFlag = True) Then
+                        If argsFlag = True Then
                             ParseArguments()
                         End If
 
@@ -84,7 +84,7 @@ Module ArgumentParse
                 End If
             Next
         Catch ex As Exception
-            KernelError(CChar("U"), True, 5, DoTranslation("bargs: Unrecoverable error in argument: ", currentLang) + Err.Description, ex)
+            KernelError("U", True, 5, DoTranslation("bargs: Unrecoverable error in argument: ", currentLang) + Err.Description, ex)
         End Try
 
     End Sub

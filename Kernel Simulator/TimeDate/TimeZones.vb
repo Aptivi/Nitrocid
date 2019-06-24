@@ -42,11 +42,11 @@ Public Module TimeZones
     Public Sub ShowTimesInZones(Optional ByVal zone As String = "all")
 
         For Each timezone In zones
-            If (timezone.DisplayName = zone) Then
+            If timezone.DisplayName = zone Then
                 Wln(DoTranslation("- Time of {0}: {1}", currentLang), "neutralText", zone, zoneTimes(zone).ToString())
             End If
         Next
-        If (zone = "all") Then
+        If zone = "all" Then
             For Each timezone In zoneTimes.Keys
                 Wln(DoTranslation("- Time of {0}: {1}", currentLang), "neutralText", timezone, zoneTimes(timezone).ToString())
             Next

@@ -29,7 +29,7 @@ Module GetModCommand
                 actualCmd = script.Name
             End If
         Next
-        If (cmd.StartsWith(parts(0) + " ")) Then
+        If cmd.StartsWith(parts(0) + " ") Then
             'These below will be executed if there is arguments
             Dim args As String = cmd.Replace(parts(0) + " ", "")
             scripts(actualCmd).PerformCmd(args)

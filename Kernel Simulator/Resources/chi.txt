@@ -138,11 +138,8 @@ Nín bìxū yǒngyǒu yǐ dēnglù yònghù míng de guǎnlǐ quánxiàn cáiné
 Yǔ {0} duàn kāi liánjiē
 nín hái méiyǒu liánjiē dào rènhé fúwùqì
 zhèngzàixiàzài wénjiàn {0}...
-Hā xī zhuàngtài:
-REMOTE: {0} ({1})
 Yǐ xiàzài wénjiàn {0}.
 Wénjiàn {0} de xià zǎi shībài, yīn wéi běndì wénjiàn yǐ sǔnhuài.
-Xiàzài wénjiàn {0} ér bù jiǎnchá zǒnghé. Cǐ wénjiàn kěnéng yǐ sǔnhuài.
 Nín bìxū zài zhíxíng chuánshū zhīqián liánjiē dào fúwùqì.
 Shūrù yào xiàzài dào běndì mùlù de wénjiàn.
 {0} |Xiūgǎi yú:{1}
@@ -345,3 +342,5 @@ Jiāng jīn'é cóng guójiā/dìqū zhuǎnhuàn wèi guójiā/dìqū
 huòbì:
 usrmgr: Yǐ zhǎodào yònghù míng {0}
 Shūrù nín de API mì yào: 
+Wúfǎ huòdé diànnǎo. Rúguǒ nín yùnxíng de shì zuìxīn bǎnběn de Windows 10, zé xūyào qǐyòng SMBv1. Rán'ér, gāi xiéyì bù ānquán, wǒmen jiāng chángshì jiějué cǐ wèntí.
+Shānchú tiáoshì rìzhì zhōng de suǒyǒu nèiróng

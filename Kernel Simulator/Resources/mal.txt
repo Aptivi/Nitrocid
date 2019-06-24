@@ -138,11 +138,8 @@ Anda mesti mempunyai keizinan pentadbiran pada nama pengguna anda yang log masuk
 Terputus dari {0}
 Anda belum lagi menyambung kepada mana-mana pelayan
 Memuat turun fail {0} ...
-Status Hash:
-REMOTE: {0} ({1})
 Fail yang dimuat turun {0}.
 Muat turun gagal untuk fail {0} kerana fail tempatan rosak.
-Fail yang dimuat turun {0} tanpa menyemak jumlah. Fail ini mungkin rosak.
 Anda mesti menyambung ke pelayan sebelum melakukan penghantaran.
 Masukkan fail untuk dimuat turun ke direktori setempat.
 {0} | Diubah suai dalam: {1}
@@ -345,3 +342,5 @@ Tukar jumlah wang dari negara ke negara
 Mata wang:
 usrmgr: Nama pengguna {0} sudah dijumpai
 Masukkan kunci API anda: 
+Tidak dapat komputer. Sekiranya anda menjalankan versi terbaru Windows 10, anda perlu mengaktifkan SMBv1. Protokol ini bagaimanapun tidak selamat dan kami akan cuba menyelesaikan masalah ini.
+Menghapus semua dalam log debug

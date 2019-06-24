@@ -28,6 +28,7 @@ Public Module AliasManager
         While Not aliastreamr.EndOfStream
             Dim line As String = aliastreamr.ReadLine
             If Not aliases.ContainsKey(line.Remove(line.IndexOf(","c))) Then
+                Wdbg("Adding ""{0}, {1}"" to aliases.csv...", line.Remove(line.IndexOf(","c)), line.Substring(line.IndexOf(" "c) + 1))
                 aliases.Add(line.Remove(line.IndexOf(","c)), line.Substring(line.IndexOf(" "c) + 1))
             End If
         End While
@@ -37,6 +38,7 @@ Public Module AliasManager
         'Save all aliases to file
         Dim aliast As New List(Of String)
         For i As Integer = 0 To aliases.Count - 1
+            Wdbg("Adding ""{0}, {1}"" to list...", aliases.Keys(i), aliases.Values(i))
             aliast.Add(aliases.Keys(i) + ", " + aliases.Values(i))
         Next
 
@@ -48,27 +50,27 @@ Public Module AliasManager
 
     'Management and Execution
     Public Sub ManageAlias(ByVal mode As String, ByVal aliasTBA As String, Optional ByVal cmd As String = "")
-        If (mode = "add") Then
+        If mode = "add" Then
             'User tries to add an alias.
-            If (aliasTBA = cmd) Then
+            If aliasTBA = cmd Then
                 Wln(DoTranslation("Alias can't be the same name as a command.", currentLang), "neutralText")
-                Wdbg("({0} = {1}) = true", aliasTBA, cmd)
-            ElseIf Not (availableCommands.Contains(cmd)) Then
+                Wdbg("Assertion succeeded: {0} = {1}", aliasTBA, cmd)
+            ElseIf Not availableCommands.Contains(cmd) Then
                 Wln(DoTranslation("Command not found to alias to {0}.", currentLang), "neutralText", aliasTBA)
-                Wdbg("availableCmds.Cont({0}) = false | No aliasing", cmd)
-            ElseIf (forbidden.Contains(cmd)) Then
+                Wdbg("availableCmds.Contains({0}) = false | No aliasing", cmd)
+            ElseIf forbidden.Contains(cmd) Then
                 Wln(DoTranslation("Aliasing {0} to {1} is forbidden completely.", currentLang), "neutralText", cmd, aliasTBA)
-                Wdbg("forbid.Cont({0}) = true | No aliasing", cmd)
+                Wdbg("forbid.Contains({0}) = true | No aliasing", cmd)
             Else
-                Wdbg("({0} = {1}) = false", aliasTBA, cmd)
+                Wdbg("Assertion failed: {0} = {1}", aliasTBA, cmd)
                 aliases.Add(aliasTBA, cmd)
                 Wln(DoTranslation("You can now run ""{0}"" as a command: ""{1}"".", currentLang), "neutralText", aliasTBA, cmd)
             End If
-        ElseIf (mode = "rem") Then
+        ElseIf mode = "rem" Then
             'user tries to remove an alias
-            If (aliases.ContainsKey(aliasTBA)) Then
+            If aliases.ContainsKey(aliasTBA) Then
                 cmd = aliases(aliasTBA)
-                Wdbg("aliases({0}) is found", aliasTBA)
+                Wdbg("aliases({0}) is found. That makes it {1}", aliasTBA, cmd)
                 aliases.Remove(aliasTBA)
                 Wln(DoTranslation("You can no longer use ""{0}"" as a command ""{1}"".", currentLang), "neutralText", aliasTBA, cmd)
             Else
@@ -76,6 +78,7 @@ Public Module AliasManager
                 Wln(DoTranslation("Alias {0} is not found to be removed.", currentLang), "neutralText", aliasTBA)
             End If
         Else
+            Wdbg("Mode {0} was neither add nor rem.", mode)
             Wln(DoTranslation("Invalid mode {0}.", currentLang), "neutralText", mode)
         End If
 

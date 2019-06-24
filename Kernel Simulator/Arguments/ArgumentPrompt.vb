@@ -34,12 +34,12 @@ Module ArgumentPrompt
             answerargs = Console.ReadLine()
 
             'Make a kernel check for arguments later if anything is entered
-            If (answerargs <> Nothing And InjMode = False) Then
+            If answerargs <> Nothing And InjMode = False Then
                 argsFlag = True
-            ElseIf (answerargs <> Nothing And InjMode = True) Then
+            ElseIf answerargs <> Nothing And InjMode = True Then
                 argsInjected = True
                 Wln(DoTranslation("Injected arguments will be scheduled to run at next reboot.", currentLang), "neutralText")
-            ElseIf (answerargs = "q" And InjMode = True) Then
+            ElseIf answerargs = "q" And InjMode = True Then
                 Wln(DoTranslation("Argument Injection has been cancelled.", currentLang), "neutralText")
             End If
         End If

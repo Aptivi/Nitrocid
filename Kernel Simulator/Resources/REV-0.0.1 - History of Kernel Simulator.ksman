@@ -708,7 +708,7 @@ After we got a new PC, the update has came. It has the following changes:
 3. "cdir," which shows the current directory, is now obsolete
 4. Fixed crash while rebooting the kernel
 
-KS 0.0.6, the current version
+KS 0.0.6
 
 This update is as big as 0.0.4, but we have released this update to fix more problems. It is a service pack for 0.0.5.5 with the following changes:
 
@@ -731,6 +731,23 @@ This update is as big as 0.0.4, but we have released this update to fix more pro
 17. Added permanent aliases (located under your profile, aliases.csv)
 18. The password is now hidden when logging in to maintain security
 19. Fixed users being removed after each reboot
+
+KS 0.0.6.1
+
+1. Removed currency information showing on help (will bring it back later)
+2. Users are now required to enter their API Key from apilayer.net to convert currencies (Basic plan, get at http://currencylayer.com/product, untested: couldn't pay for basic plan)
+
+KS 0.0.6.2, the current version
+
+1. Fixed debug log show command not working because the path was not found (typo: Debugger -> Debugging)
+2. Added a notice in listing PC commands about latest versions of Windows 10
+3. Fixed debug kernel header not writing when run with debug argument on
+4. Fixed the debug log being empty every reboot and start
+5. Allowed clearing debug log in command using cdbglog
+6. Used built-in FtpVerify enumerators, removing our hash check for older versions of FluentFTP
+7. Better debugging experience
+8. Debugging now shows line number and source file if pdb is on the same folder
+9. Allowed modding using C#
 -BODY END-
 
 -SECTIONS-
@@ -776,5 +793,7 @@ KS 0.0.5.12=>SE1
 KS 0.0.5.13=>SE1
 Linux probing=>SE2
 KS 0.0.5.14=>SE1
-KS 0.0.6, the current version=>SE1
+KS 0.0.6=>SE1
+KS 0.0.6.1=>SE1
+KS 0.0.6.2, the current version=>SE1
 -SECTIONS END-

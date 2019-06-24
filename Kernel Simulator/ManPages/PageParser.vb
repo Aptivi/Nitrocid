@@ -42,7 +42,7 @@ Module PageParser
     Public Sub CheckManual(ByVal Title As String)
         Try
             ManTitle = Title
-            If (AvailablePages.Contains(ManTitle)) Then
+            If AvailablePages.Contains(ManTitle) Then
                 Dim manLines As String() = {}
                 Select Case ManTitle
                     Case "Introduction to the Kernel"
@@ -176,25 +176,25 @@ Module PageParser
                 End Select
                 Wdbg("Checking manual {0}", ManTitle)
                 For Each manLine As String In manLines
-                    If (InternalParseDone = True) Then 'Check for the rest if the manpage has MAN START section
+                    If InternalParseDone = True Then 'Check for the rest if the manpage has MAN START section
                         CheckTODO(manLine)
-                        If (BodyParsing = True) Then
+                        If BodyParsing = True Then
                             ParseBody(manLine)
-                        ElseIf (ColorParsing = True) Then
+                        ElseIf ColorParsing = True Then
                             ParseColor(manLine)
-                        ElseIf (SectionParsing = True) Then
+                        ElseIf SectionParsing = True Then
                             ParseSection(manLine)
                         Else
                             ParseMan_INTERNAL(manLine)
                         End If
-                    ElseIf (InternalParseDone = False) Then 'Check for the MAN START section
-                        If (manLine = "(*MAN START*)") Then
+                    ElseIf InternalParseDone = False Then 'Check for the MAN START section
+                        If manLine = "(*MAN START*)" Then
                             Wdbg("Successfully found (*MAN START*) in manpage {0}.", ManTitle)
                             InternalParseDone = True
                         End If
                     End If
                 Next
-                If (InternalParseDone = True) Then
+                If InternalParseDone = True Then
                     Wdbg("Valid manual page! ({0})", ManTitle)
                     Sanity_INTERNAL(ManTitle)
                 Else
@@ -205,7 +205,7 @@ Module PageParser
             Wdbg("The manual page {0} is somehow truncated. {1}", ManTitle, ex.Message)
             Wdbg(ex.StackTrace)
             Wln(DoTranslation("There is an error when trying to load the manual page {0} becuase {1}.", currentLang), "neutralText", ManTitle, ex.Message)
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wln(ex.StackTrace, "neutralText")
             End If
         End Try
@@ -213,7 +213,7 @@ Module PageParser
 
     'Check for any TODO
     Public Sub CheckTODO(ByVal line As String)
-        If (line.Contains("TODO")) Then
+        If line.Contains("TODO") Then
             Wdbg("TODO found on this line: {0}", line)
             Dim TODOindex As Integer = InStr(line, "TODO")
             Pages(ManTitle).Todos.Add(line.Substring(TODOindex + "TODO".Length + 1))
@@ -222,26 +222,26 @@ Module PageParser
 
     'Parse manual file from KS, not mods
     Public Sub ParseMan_INTERNAL(ByVal line As String)
-        If (line.StartsWith("-REVISION:")) Then
+        If line.StartsWith("-REVISION:") Then
             Wdbg("Revision found on this line: {0}", line)
             Dim Rev As String = line.Substring(line.IndexOf(":") + 1)
-            If (Rev = "") Then
+            If Rev = "" Then
                 Wdbg("Revision not defined. Assuming v1...")
                 Rev = "1"
             End If
             Pages(ManTitle).ManualRevision = Rev
-        ElseIf (line.StartsWith("-KSLAYOUT:")) Then
+        ElseIf line.StartsWith("-KSLAYOUT:") Then
             Dim Lay As String = line.Substring(line.IndexOf(":") + 1)
-            If Not (AvailableLayouts.Contains(Lay)) Then
+            If Not AvailableLayouts.Contains(Lay) Then
                 Wdbg("Layout {0} not found in the available layouts. Assuming 0.0.5.9-OR-ABOVE...", Lay)
                 Lay = "0.0.5.9-OR-ABOVE"
             End If
             Pages(ManTitle).ManualLayoutVersion = Lay
-        ElseIf (line = "-BODY START-") Then
+        ElseIf line = "-BODY START-" Then
             BodyParsing = True
-        ElseIf (line = "-COLOR CONFIGURATION-") Then
+        ElseIf line = "-COLOR CONFIGURATION-" Then
             ColorParsing = True
-        ElseIf (line = "-SECTIONS-") Then
+        ElseIf line = "-SECTIONS-" Then
             SectionParsing = True
         End If
     End Sub
@@ -255,43 +255,43 @@ Module PageParser
 
     'Get strings until end of body
     Public Sub ParseBody(ByVal line As String)
-        If (line <> "-BODY END-") Then
-            If line <> "" Then Wdbg("Appending {0} to builder", line)
+        If line <> "-BODY END-" Then
+            'If line <> "" Then Wdbg("Appending {0} to builder", line) (Causes spam - Don't uncomment until further notice)
             Pages(ManTitle).Body.Append(line + vbNewLine)
-        ElseIf (line.StartsWith("~~-") = False) Then 'If the line does not start with the comment
+        ElseIf line.StartsWith("~~-") = False Then 'If the line does not start with the comment
             BodyParsing = False
         End If
     End Sub
 
     'The colors on the manpage will be parsed
     Public Sub ParseColor(ByVal line As String)
-        If (line <> "-COLOR CONFIG END-") Then
+        If line <> "-COLOR CONFIG END-" Then
             Dim colors_MAN() As String = line.Split("=>".ToCharArray, StringSplitOptions.RemoveEmptyEntries)
-            If Not (colors_MAN.Length = 0) Then
-                If Not (Pages(ManTitle).Colors.ContainsKey(colors_MAN(0))) Then
-                    Pages(ManTitle).Colors.Add(colors_MAN(0), CType([Enum].Parse(GetType(ConsoleColor), colors_MAN(1)), ConsoleColor))
+            If Not colors_MAN.Length = 0 Then
+                If Not Pages(ManTitle).Colors.ContainsKey(colors_MAN(0)) Then
+                    Pages(ManTitle).Colors.Add(colors_MAN(0), [Enum].Parse(GetType(ConsoleColor), colors_MAN(1)))
                     Wdbg("The color {0} is being assigned to {1}, according to: {2}", colors_MAN(1).ToString, colors_MAN(0), line)
                 End If
             End If
-        ElseIf (line.StartsWith("~~-") = False) Then
+        ElseIf line.StartsWith("~~-") = False Then
             ColorParsing = False
         End If
     End Sub
 
     'Parse sections
     Public Sub ParseSection(ByVal line As String)
-        If (line <> "-SECTIONS END-") Then
+        If line <> "-SECTIONS END-" Then
             Dim sections() As String = line.Split("=>".ToCharArray, StringSplitOptions.RemoveEmptyEntries)
             Pages(ManTitle).Sections.Add(sections(0), sections(1))
             Wdbg("The section {0} is being assigned to {1}, according to {2}", sections(1), sections(0), line)
-        ElseIf (line.StartsWith("~~-") = False) Then
+        ElseIf line.StartsWith("~~-") = False Then
             SectionParsing = False
         End If
     End Sub
 
     'Perform a sanity check on internal manpages
     Public Sub Sanity_INTERNAL(ByVal title As String)
-        If (title = "") Then
+        If title = "" Then
             UnknownTitleCount += 1
             Wdbg("The manual page #{0} seems to have no title.", UnknownTitleCount)
             Dim originalValue As Manual = Pages(title)
@@ -301,11 +301,11 @@ Module PageParser
             Pages(title).ManualTitle = title
             Wdbg("Title has changed to ""{0}""", title)
             Wln(DoTranslation("This manual page title is not written", currentLang), "neutralText")
-        ElseIf (Pages(title).Body.ToString = "") Then
+        ElseIf Pages(title).Body.ToString = "" Then
             Wdbg("Body for ""{0}"" does not contain anything.", title)
             Wln(DoTranslation("This manual page ({0}) does not contain any body text. Deleting page...", currentLang), "neutralText", title)
             Pages.Remove(title)
-        ElseIf (Pages(title).Sections.Count = 0) Then
+        ElseIf Pages(title).Sections.Count = 0 Then
             Wdbg("No sections for ""{0}""", title)
             Wln(DoTranslation("This manual page ({0}) does not contain any section. Deleting page...", currentLang), "neutralText", title)
             Pages.Remove(title)

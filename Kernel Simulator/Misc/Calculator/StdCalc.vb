@@ -21,7 +21,7 @@ Public Module StdCalc
     Public Sub ExpressionCalculate(ByVal ParamArray exps() As String)
 
         Try
-            If (exps.Count >= 3) Then
+            If exps.Count >= 3 Then
                 Dim expressions As New List(Of String)
                 Dim ops As New List(Of String)
                 Dim finalExp As String = ""
@@ -34,7 +34,7 @@ Public Module StdCalc
                 Next
                 For i As Integer = 0 To expressions.Count - 1
                     finalExp = finalExp + expressions(i) + " "
-                    If (i <> expressions.Count - 1) Then
+                    If i <> expressions.Count - 1 Then
                         finalExp = finalExp + ops(numOps) + " "
                         numOps += 1
                     End If
@@ -46,17 +46,17 @@ Public Module StdCalc
             End If
         Catch ex As DivideByZeroException
             Wln(DoTranslation("Attempt to divide by zero is not allowed.", currentLang), "neutralText")
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wln(ex.StackTrace, "neutralText") : Wdbg(ex.StackTrace, True)
             End If
         Catch ex As OverflowException
             Wln(DoTranslation("There has been a suspected attempt at calculating that resulted in an overflow.", currentLang), "neutralText")
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wln("Overflow " + ex.StackTrace, "neutralText") : Wdbg("Overflow " + ex.StackTrace, True)
             End If
         Catch ex As Exception
             Wln(DoTranslation("There is an error while calculating: {0}", currentLang), "neutralText", ex.Message)
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wln(ex.StackTrace, "neutralText") : Wdbg(ex.StackTrace, True)
             End If
         End Try

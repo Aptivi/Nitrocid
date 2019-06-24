@@ -138,11 +138,8 @@ Sinun täytyy olla järjestelmänvalvojan oikeudet kirjautuneessa käyttäjätun
 Irrotettu osoitteesta {0}
 Et ole vielä liittynyt mihinkään palvelimeen
 Ladataan tiedostoa {0} ...
-Hash-tila:
-REMOTE: {0} ({1})
 Ladattu tiedosto {0}.
 Lataus epäonnistui tiedostoon {0}, koska paikallinen tiedosto on vioittunut.
-Ladattu tiedosto {0} tarkistamatta summaa. Tämä tiedosto saattaa olla vioittunut.
 Sinun on muodostettava yhteys palvelimeen ennen lähetyksen suorittamista.
 Syötä ladattava tiedosto paikalliseen hakemistoon.
 {0} | Muutettu: {1}
@@ -345,3 +342,5 @@ Muunna rahamäärä maasta toiseen
 Valuutat:
 usrmgr: Käyttäjätunnus {0} on jo löydetty
 Anna API-avain: 
+Tietokoneita ei voitu saada. Jos käytössäsi on uusin Windows 10 -versio, sinun on otettava SMBv1 käyttöön. Tämä pöytäkirja on kuitenkin epävarma ja yritämme ratkaista tämän ongelman.
+Poistaa kaiken debug-lokissa

@@ -138,11 +138,8 @@ Du måste ha administrativ behörighet på ditt inloggade användarnamn för att
 Avkopplad från {0}
 Du har inte anslutit till någon server än
 Hämtar fil {0} ...
-Hash status:
-REMOTE: {0} ({1})
 Nedladdad fil {0}.
 Hämtningen misslyckades för filen {0} eftersom den lokala filen är korrupt.
-Nedladdad fil {0} utan att kontrollera summan. Den här filen kan vara skadad.
 Du måste ansluta till servern innan du utför överföring.
 Ange en fil som ska hämtas till den lokala katalogen.
 {0} | Ändrad i: {1}
@@ -345,3 +342,5 @@ Konvertera summa pengar från land till land
 Valutor:
 usrmgr: Användarnamn {0} finns redan
 Ange din API-nyckel: 
+Kunde inte hämta datorer. Om du kör den senaste versionen av Windows 10 måste du aktivera SMBv1. Detta protokoll är dock osäkert och vi kommer att försöka lösa detta problem.
+Tar bort allt i felsökningsloggen

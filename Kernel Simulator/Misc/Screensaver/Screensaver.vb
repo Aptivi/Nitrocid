@@ -54,7 +54,7 @@ Public Module Screensaver
         finalSaver.PreDisplay()
         Do While True
             'Thread.Sleep(1)
-            If (Custom.CancellationPending = True) Then
+            If Custom.CancellationPending = True Then
                 e.Cancel = True
                 Console.Clear()
                 Console.ForegroundColor = CType(inputColor, ConsoleColor)
@@ -76,7 +76,7 @@ Public Module Screensaver
         Dim colorrand As New Random()
         Do While True
             Thread.Sleep(1)
-            If (ColorMix.CancellationPending = True) Then
+            If ColorMix.CancellationPending = True Then
                 e.Cancel = True
                 Console.Clear()
                 Console.ForegroundColor = CType(inputColor, ConsoleColor)
@@ -98,7 +98,7 @@ Public Module Screensaver
         Console.CursorVisible = False
         Dim random As New Random()
         Do While True
-            If (Matrix.CancellationPending = True) Then
+            If Matrix.CancellationPending = True Then
                 e.Cancel = True
                 Console.Clear()
                 Console.ForegroundColor = CType(inputColor, ConsoleColor)
@@ -118,7 +118,7 @@ Public Module Screensaver
         Do While True
             For Each color In colors
                 Thread.Sleep(100)
-                If (Disco.CancellationPending = True) Then
+                If Disco.CancellationPending = True Then
                     e.Cancel = True
                     Console.Clear()
                     Console.ForegroundColor = CType(inputColor, ConsoleColor)
@@ -137,25 +137,25 @@ Public Module Screensaver
     Sub ShowSavers(ByVal saver As String)
         InSaver = True
         EventManager.RaisePreShowScreensaver()
-        If (saver = "colorMix") Then
+        If saver = "colorMix" Then
             ColorMix.WorkerSupportsCancellation = True
             ColorMix.RunWorkerAsync()
             Console.ReadKey()
             ColorMix.CancelAsync()
             Thread.Sleep(150)
-        ElseIf (saver = "matrix") Then
+        ElseIf saver = "matrix" Then
             Matrix.WorkerSupportsCancellation = True
             Matrix.RunWorkerAsync()
             Console.ReadKey()
             Matrix.CancelAsync()
             Thread.Sleep(150)
-        ElseIf (saver = "disco") Then
+        ElseIf saver = "disco" Then
             Disco.WorkerSupportsCancellation = True
             Disco.RunWorkerAsync()
             Console.ReadKey()
             Disco.CancelAsync()
             Thread.Sleep(150)
-        ElseIf (ScrnSvrdb.ContainsKey(saver)) Then
+        ElseIf ScrnSvrdb.ContainsKey(saver) Then
             'Only one custom screensaver can be used.
             Custom.WorkerSupportsCancellation = True
             Custom.RunWorkerAsync()
@@ -171,18 +171,18 @@ Public Module Screensaver
 
     Sub CompileCustom(ByVal file As String)
         Dim modPath As String = paths("Mods")
-        If (FileIO.FileSystem.FileExists(modPath + file)) Then
+        If FileIO.FileSystem.FileExists(modPath + file) Then
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
                 modFile = modFile.Replace(modPath, "")
-                If (modFile = file) Then
+                If modFile = file Then
                     If Not modFile.EndsWith("SS.m") Then
                         Wdbg("{0} is not a screensaver. A screensaver code should have ""SS.m"" at the end.", modFile)
                     Else
                         finalSaver = GenSaver(IO.File.ReadAllText(modPath + modFile))
-                        If (DoneFlag = True) Then
+                        If DoneFlag = True Then
                             finalSaver.InitSaver()
-                            If (finalSaver.Initialized = True) Then
-                                If Not (ScrnSvrdb.ContainsKey(modFile)) Then
+                            If finalSaver.Initialized = True Then
+                                If Not ScrnSvrdb.ContainsKey(modFile) Then
                                     Wln(DoTranslation("{0} has been initialized properly.", currentLang), "neutralText", modFile)
                                     ScrnSvrdb.Add(modFile, False)
                                 Else
@@ -203,7 +203,7 @@ Public Module Screensaver
     End Sub
 
     Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
-        If (ScrnSvrdb.ContainsKey(saver)) Then
+        If ScrnSvrdb.ContainsKey(saver) Then
             Dim ksconf As New IniFile()
             Dim pathConfig As String = paths("Configuration")
             ksconf.Load(pathConfig)
@@ -235,7 +235,7 @@ Public Module Screensaver
             Dim namespc As String = GetType(ICustomSaver).Namespace
             Dim modCode() As String = New String() {"Imports " & namespc & vbNewLine & code}
             execCustomSaver = provider.CompileAssemblyFromSource(prm, modCode)
-            If (execCustomSaver.Errors.HasErrors) And (Quiet = False) Then
+            If execCustomSaver.Errors.HasErrors And (Quiet = False) Then
                 Wln(DoTranslation("Screensaver can't be loaded because of the following: ", currentLang), "neutralText")
                 For Each errorName In execCustomSaver.Errors
                     Wln(errorName.ToString, "neutralText") : Wdbg(errorName.ToString, True)

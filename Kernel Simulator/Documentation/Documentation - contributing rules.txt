@@ -42,13 +42,12 @@ Follow the bug reporting design pattern, and explain as much as you can. Less-sp
 
 |---------------+--> To-do list for adding into Kernel Simulator <--+---------------|
 
-If some of the ideas disappeared, then it is either done or cancelled.
+If some of the ideas disappeared, then it is either done or cancelled. (This section is deleted by 0.0.7, and moved to Task List in VS2019.)
 
 1. Interactive host system file manager (Planned in the bootable version)
 2. Move every single documentation to Wiki in repository, including the manual pages, making manual page commands open a website to Wiki (Planned in 0.0.7)
-3. Translate mod strings using <modname>-<lang>.mlng (0.0.6.5)
-4. Custom manpage (0.0.6.5)
-5. Translated manual pages (0.0.6.5)
-6. Permanent list of usernames and passwords (passwords in encrypted form - in beta)
+3. Custom manpage (0.0.6.5)
+4. Translated manual pages (0.0.6.5)
+5. Permanent list of usernames and passwords (passwords in encrypted form - in beta)
 
 (If you have ideas, edit this section by inserting your idea.)

@@ -25,7 +25,7 @@ Module PageViewer
 
     'Preview the manual page
     Public Sub ViewPage(ByVal title As String)
-        If (AvailablePages.Contains(title)) Then
+        If AvailablePages.Contains(title) Then
             'Variables
             Dim writtenLines As Integer
             Dim oldTop As Integer
@@ -37,7 +37,7 @@ Module PageViewer
 
             'If there is any To-do, write them to the console
             Wdbg("Todo count for ""{0}"": {1}", title, Pages(title).Todos.Count.ToString)
-            If (Pages(title).Todos.Count <> 0) Then
+            If Pages(title).Todos.Count <> 0 Then
                 Wdbg("Todos are found in manpage. List of todos:")
                 Wln(DoTranslation("This manual page is incomplete for the following reasons:", currentLang) + vbNewLine, "neutralText")
                 For Each Todo As String In Pages(title).Todos
@@ -78,12 +78,12 @@ Module PageViewer
                 Dim MkNewLineNec As Boolean = True
 
                 'Check for line that starts with a space
-                If (line.StartsWith(" ") Or line.StartsWith(vbTab)) Then
+                If line.StartsWith(" ") Or line.StartsWith(vbTab) Then
                     MkNewLineNec = False 'Make making new line unnecessary
                 End If
 
                 'Prepare the view
-                If (line <> "") Then
+                If line <> "" Then
                     vbNewLineRequired = True
                     For Each word As String In line.Split({" "c})
                         'Manage lines
@@ -100,7 +100,7 @@ Module PageViewer
                             Wdbg("CursorTop ({0}) > oldTop ({1}) and writtenLines ({2}) <> oldTop ({1}) || vbNewLineRequired ({3})", Console.CursorTop, oldTop, writtenLines, vbNewLineRequired)
                             writtenLines += 1
                             Console.WriteLine()
-                            If (vbNewLineRequired = True) Then vbNewLineRequired = False
+                            If vbNewLineRequired = True Then vbNewLineRequired = False
                         End If
 
                         'Store the old height
@@ -108,7 +108,7 @@ Module PageViewer
 
                         'Check the word is there is color
                         For Each Word_color As String In splitWords_COLORS_dict.Keys
-                            If (Word_color = word.Replace(vbTab, "")) Then 'If the word in the dictionary matches one in word in the body, set the color
+                            If Word_color = word.Replace(vbTab, "") Then 'If the word in the dictionary matches one in word in the body, set the color
                                 Console.ForegroundColor = splitWords_COLORS_dict(Word_color)
                                 Wdbg("{0} has a color entry.", Word_color)
                                 Exit For
@@ -117,7 +117,7 @@ Module PageViewer
 
                         'Parse for sections
                         For Each Line_sect As String In Pages(title).Sections.Keys
-                            If (Line_sect = line And line.StartsWith(word)) Then
+                            If Line_sect = line And line.StartsWith(word) Then
                                 Dim sec_Num As Integer = Pages(title).Sections(Line_sect).Substring(2)
                                 For times = 1 To sec_Num
                                     Console.Write("-")
@@ -128,7 +128,7 @@ Module PageViewer
                         Next
 
                         'Check for "" on word variable, and make newline if it's necessary.
-                        If (word = "" And MkNewLineNec = True) Then
+                        If word = "" And MkNewLineNec = True Then
                             Wdbg("Making newline... They are necessary.")
                             word = vbNewLine
                         End If

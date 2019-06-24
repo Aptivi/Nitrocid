@@ -135,18 +135,18 @@ Public Module Config
             ksconf.Save(paths("Configuration"))
 
             'Exit if it is executed using real command-line arguments
-            If (CmdArg = True) Then
+            If CmdArg = True Then
                 DisposeAll()
                 Environment.Exit(0)
             End If
         Catch ex As Exception
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wdbg(ex.StackTrace, True)
                 Wln(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
             Else
                 Wln(DoTranslation("There is an error trying to create configuration.", currentLang), "neutralText")
             End If
-            If (CmdArg = True) Then
+            If CmdArg = True Then
                 DisposeAll()
                 Environment.Exit(2)
             End If
@@ -169,7 +169,7 @@ Public Module Config
                 updateConfig()
             End If
         Catch ex As Exception
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wdbg(ex.StackTrace, True)
                 Wln(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
             Else
@@ -190,14 +190,14 @@ Public Module Config
     Public Sub ReadImportantConfig()
         Try
             Dim Lang_TBA As String = configReader.Sections("General").Keys("Language").Value
-            If (configReader.Sections("Shell").Keys("Colored Shell").Value = "False") Then
+            If configReader.Sections("Shell").Keys("Colored Shell").Value = "False" Then
                 TemplateSet("LinuxUncolored")
                 ColoredShell = False
             End If
-            If (availableLangs.Contains(Lang_TBA)) Then currentLang = Lang_TBA
+            If availableLangs.Contains(Lang_TBA) Then currentLang = Lang_TBA
             InitHelp()
         Catch ex As Exception
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wdbg(ex.StackTrace, True)
                 Wln(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
             Else
@@ -208,7 +208,7 @@ Public Module Config
 
     Public Sub ReadConfig()
         Try
-            If (configReader.Sections("General").Keys("Customized Colors on Boot").Value = "True") Then customColor = True Else customColor = False
+            If configReader.Sections("General").Keys("Customized Colors on Boot").Value = "True" Then customColor = True Else customColor = False
 
             'Colors Section
             If ColoredShell = True And customColor = True Then userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("User Name Shell Color").Value), ConsoleColor)
@@ -226,31 +226,31 @@ Public Module Config
             If ColoredShell = True And customColor = True Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Definition of command in Help Color").Value), ConsoleColor)
 
             'General Section
-            If (configReader.Sections("General").Keys("Create Demo Account").Value = "True") Then enableDemo = True Else enableDemo = False
-            If (configReader.Sections("General").Keys("Change Root Password").Value = "True") Then setRootPasswd = True Else setRootPasswd = False
-            If (setRootPasswd = True) Then RootPasswd = configReader.Sections("General").Keys("Set Root Password to").Value
-            If (configReader.Sections("General").Keys("Maintenance Mode").Value = "True") Then maintenance = True Else maintenance = False
-            If (configReader.Sections("General").Keys("Prompt for Arguments on Boot").Value = "True") Then argsOnBoot = True Else argsOnBoot = False
+            If configReader.Sections("General").Keys("Create Demo Account").Value = "True" Then enableDemo = True Else enableDemo = False
+            If configReader.Sections("General").Keys("Change Root Password").Value = "True" Then setRootPasswd = True Else setRootPasswd = False
+            If setRootPasswd = True Then RootPasswd = configReader.Sections("General").Keys("Set Root Password to").Value
+            If configReader.Sections("General").Keys("Maintenance Mode").Value = "True" Then maintenance = True Else maintenance = False
+            If configReader.Sections("General").Keys("Prompt for Arguments on Boot").Value = "True" Then argsOnBoot = True Else argsOnBoot = False
 
             'Login Section
-            If (configReader.Sections("Login").Keys("Clear Screen on Log-in").Value = "True") Then clsOnLogin = True Else clsOnLogin = False
-            If (configReader.Sections("Login").Keys("Show MOTD on Log-in").Value = "True") Then showMOTD = True Else showMOTD = False
+            If configReader.Sections("Login").Keys("Clear Screen on Log-in").Value = "True" Then clsOnLogin = True Else clsOnLogin = False
+            If configReader.Sections("Login").Keys("Show MOTD on Log-in").Value = "True" Then showMOTD = True Else showMOTD = False
             MOTDMessage = configReader.Sections("Login").Keys("MOTD").Value
             HName = configReader.Sections("Login").Keys("Host Name").Value
             MAL = configReader.Sections("Login").Keys("MOTD After Login").Value
 
             'Shell Section
-            If (configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True") Then simHelp = True Else simHelp = False
+            If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
 
             'Hardware Section
-            If (configReader.Sections("Hardware").Keys("Probe Slots").Value = "True") Then slotProbe = True Else slotProbe = False
-            If (configReader.Sections("Hardware").Keys("Quiet Probe").Value = "True") Then quietProbe = True Else quietProbe = False
+            If configReader.Sections("Hardware").Keys("Probe Slots").Value = "True" Then slotProbe = True Else slotProbe = False
+            If configReader.Sections("Hardware").Keys("Quiet Probe").Value = "True" Then quietProbe = True Else quietProbe = False
 
             'Misc Section
-            If (configReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True") Then CornerTD = True Else CornerTD = False
+            If configReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True" Then CornerTD = True Else CornerTD = False
             defSaverName = configReader.Sections("Misc").Keys("Screensaver").Value
         Catch ex As Exception
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wdbg(ex.StackTrace, True)
                 Wln(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
             Else

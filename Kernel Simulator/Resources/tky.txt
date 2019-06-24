@@ -138,11 +138,8 @@ Kaldırabilmek için oturum açmış kullanıcı adınız üzerinde yönetici iz
 {0} ile bağlantısı kesildi
 Henüz herhangi bir sunucuya bağlanmadınız
 {0} dosyası indiriliyor ...
-Karma durumu:
-UZAKTAN: {0} ({1})
 İndirilen dosya {0}.
 Yerel dosya bozuk olduğu için indirme işlemi {0} için başarısız oldu.
-Toplamı kontrol etmeden {0} dosya indirildi. Bu dosya bozuk olabilir.
 İletim gerçekleştirmeden önce sunucuya bağlanmanız gerekir.
 Yerel dizine indirmek için bir dosya girin.
 {0} | Değiştirildi: {1}
@@ -345,3 +342,5 @@ Hedef bir yönetici olduğu için {0} şifresini değiştirme yetkiniz yok.
 Kurlar:
 usrmgr: Kullanıcı adı {0} zaten bulundu
 API anahtarınızı girin: 
+Bilgisayarlar alınamadı. Windows 10'un en son sürümünü kullanıyorsanız, SMBv1'i etkinleştirmeniz gerekir. Ancak bu protokol güvensiz ve bu sorunu çözmeye çalışacağız.
+Hata ayıklama günlüğündeki her şeyi siler

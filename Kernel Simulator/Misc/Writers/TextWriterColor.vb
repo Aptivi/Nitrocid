@@ -22,7 +22,7 @@ Imports System.IO
 'This module is very important to reduce line numbers when there is color.
 Public Module TextWriterColor
 
-    Public dbgWriter As StreamWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
+    Public dbgWriter As StreamWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
 
     ''' <summary>
     ''' Outputs the text into the debugger file, and sets the time stamp.
@@ -31,9 +31,17 @@ Public Module TextWriterColor
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     ''' <remarks></remarks>
     Public Sub Wdbg(ByVal text As String, ByVal ParamArray vars() As Object)
-        If (DebugMode = True) Then
-            dbgWriter.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + ": " + text, vars)
-            Debug.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + ": " + text, vars)
+        If DebugMode = True Then
+            Dim STrace As New StackTrace(True)
+            Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
+            Dim LineNum As String = STrace.GetFrame(1).GetFileLineNumber
+            If Not Source Is Nothing And Not LineNum = 0 Then
+                dbgWriter.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + " (" + Source + ":" + LineNum + "): " + text, vars)
+                Debug.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + " (" + Source + ":" + LineNum + "): " + text, vars)
+            Else
+                dbgWriter.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + ": " + text, vars)
+                Debug.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + ": " + text, vars)
+            End If
         End If
     End Sub
 
@@ -47,23 +55,23 @@ Public Module TextWriterColor
     Public Sub W(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
 
         Try
-            If (colorType = "neutralText" Or colorType = "input") Then
+            If colorType = "neutralText" Or colorType = "input" Then
                 ForegroundColor = neutralTextColor
-            ElseIf (colorType = "contError") Then
+            ElseIf colorType = "contError" Then
                 ForegroundColor = contKernelErrorColor
-            ElseIf (colorType = "uncontError") Then
+            ElseIf colorType = "uncontError" Then
                 ForegroundColor = uncontKernelErrorColor
-            ElseIf (colorType = "hostName") Then
+            ElseIf colorType = "hostName" Then
                 ForegroundColor = hostNameShellColor
-            ElseIf (colorType = "userName") Then
+            ElseIf colorType = "userName" Then
                 ForegroundColor = userNameShellColor
-            ElseIf (colorType = "license") Then
+            ElseIf colorType = "license" Then
                 ForegroundColor = licenseColor
-            ElseIf (colorType = "def") Then
+            ElseIf colorType = "def" Then
                 ForegroundColor = ConsoleColor.Gray
-            ElseIf (colorType = "helpDef") Then
+            ElseIf colorType = "helpDef" Then
                 ForegroundColor = cmdDefColor
-            ElseIf (colorType = "helpCmd") Then
+            ElseIf colorType = "helpCmd" Then
                 ForegroundColor = cmdListColor
             Else
                 Exit Sub
@@ -75,10 +83,10 @@ Public Module TextWriterColor
             Next
 
             Write(text)
-            If (Console.BackgroundColor = ConsoleColor.Black) Then ResetColor()
-            If (colorType = "input" And ColoredShell = True) Then ForegroundColor = inputColor
+            If Console.BackgroundColor = ConsoleColor.Black Then ResetColor()
+            If colorType = "input" And ColoredShell = True Then ForegroundColor = inputColor
         Catch ex As Exception
-            KernelError(CChar("C"), False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+            KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
         End Try
 
     End Sub
@@ -93,23 +101,23 @@ Public Module TextWriterColor
     Public Sub Wln(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
 
         Try
-            If (colorType = "neutralText" Or colorType = "input") Then
+            If colorType = "neutralText" Or colorType = "input" Then
                 ForegroundColor = neutralTextColor
-            ElseIf (colorType = "contError") Then
+            ElseIf colorType = "contError" Then
                 ForegroundColor = contKernelErrorColor
-            ElseIf (colorType = "uncontError") Then
+            ElseIf colorType = "uncontError" Then
                 ForegroundColor = uncontKernelErrorColor
-            ElseIf (colorType = "hostName") Then
+            ElseIf colorType = "hostName" Then
                 ForegroundColor = hostNameShellColor
-            ElseIf (colorType = "userName") Then
+            ElseIf colorType = "userName" Then
                 ForegroundColor = userNameShellColor
-            ElseIf (colorType = "license") Then
+            ElseIf colorType = "license" Then
                 ForegroundColor = licenseColor
-            ElseIf (colorType = "def") Then
+            ElseIf colorType = "def" Then
                 ForegroundColor = ConsoleColor.Gray
-            ElseIf (colorType = "helpDef") Then
+            ElseIf colorType = "helpDef" Then
                 ForegroundColor = cmdDefColor
-            ElseIf (colorType = "helpCmd") Then
+            ElseIf colorType = "helpCmd" Then
                 ForegroundColor = cmdListColor
             Else
                 Exit Sub
@@ -121,10 +129,10 @@ Public Module TextWriterColor
             Next
 
             WriteLine(text)
-            If (Console.BackgroundColor = ConsoleColor.Black) Then ResetColor()
-            If (colorType = "input") Then ForegroundColor = inputColor
+            If Console.BackgroundColor = ConsoleColor.Black Then ResetColor()
+            If colorType = "input" Then ForegroundColor = inputColor
         Catch ex As Exception
-            KernelError(CChar("C"), False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+            KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
         End Try
 
     End Sub

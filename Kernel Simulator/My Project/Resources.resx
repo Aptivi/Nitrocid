@@ -155,7 +155,7 @@
     <value>..\Resources\REV-0.0.1 - Available FTP commands.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Modding_guide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REV-0.0.1 - Modding guide.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\REV-0.0.2 - Modding guide.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="REV_0_0_1___adduser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REV-0.0.1 - adduser.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

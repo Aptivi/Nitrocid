@@ -31,7 +31,7 @@ Public Module NetworkTools
         Dim s As New Stopwatch
         Do
             Try
-                If (repeatTimes <> 1) And Not (repeatTimes < 0) Then
+                If (repeatTimes <> 1) And Not repeatTimes < 0 Then
                     For i = i To repeatTimes
                         s.Start()
                         If My.Computer.Network.Ping(Address) Then
@@ -39,24 +39,24 @@ Public Module NetworkTools
                         End If
                         s.Reset()
                     Next
-                ElseIf (repeatTimes = 1) Then
+                ElseIf repeatTimes = 1 Then
                     s.Start()
                     If My.Computer.Network.Ping(Address) Then
                         Wln(DoTranslation("net: Got response from {0} in {1} ms", currentLang), "neutralText", Address, s.ElapsedMilliseconds.ToString)
                     End If
                     s.Stop()
                 End If
-                If (i - 1 = repeatTimes) Then
+                If i - 1 = repeatTimes Then
                     Exit Sub
                 End If
             Catch pe As PingException
-                If (repeatTimes = 1) Then
+                If repeatTimes = 1 Then
                     Wln(DoTranslation("{0}: Timed out, disconnected, or server offline.", currentLang), "neutralText", Address)
                     Exit Do
                 Else
                     s.Reset()
                     Wln(DoTranslation("{0}/{1} {2}: Timed out, disconnected, or server offline.", currentLang), "neutralText", repeatTimes, i, Address)
-                    If (repeatTimes = i) Then Exit Do
+                    If repeatTimes = i Then Exit Do
                     i += 1
                     Continue Do
                 End If
@@ -105,7 +105,7 @@ Public Module NetworkTools
                 Dim p As New Ping()
                 For Each ipheal In IPHostEntry.AddressList
                     Dim reply = p.Send(ipheal, 100)
-                    If (reply.Status = IPStatus.Success) Then
+                    If reply.Status = IPStatus.Success Then
                         Wln("net: {0}: {1}", "neutralText", cmp, ipheal.ToString)
                     End If
                 Next
@@ -144,6 +144,7 @@ Public Module NetworkTools
         Computers = Nothing
 
         'Get workgroups and domain
+        'In Windows 10 and later, you will need SMBv1 re-installed, and that is insecure.
         de.Path = "WinNT:"
         For Each d As DirectoryEntry In de.Children
             If d.SchemaClassName = "Domain" Then alWorkGroups.Add(d.Name)
@@ -195,7 +196,7 @@ Public Module NetworkTools
                 Dim p As New Ping()
                 For Each ipheal In IPHostEntry.AddressList
                     Dim reply = p.Send(ipheal, 100)
-                    If (reply.Status = IPStatus.Success) Then
+                    If reply.Status = IPStatus.Success Then
                         Wln("|-> {0}: {1}", "neutralText", cmp, ipheal.ToString)
                     End If
                 Next
@@ -210,18 +211,18 @@ Public Module NetworkTools
             adapterNumber += 1
             If adapter.Supports(NetworkInterfaceComponent.IPv4) = False Then
                 Wdbg("{0} doesn't support IPv4 because ASSERT(adapter.Supp(IPv4) = True) = False.", adapter.Description)
-            ElseIf (adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
+            ElseIf adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
                     adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet3Megabit Or
                     adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetFx Or
                     adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetT Or
                     adapter.NetworkInterfaceType = NetworkInterfaceType.GigabitEthernet Or
-                    adapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211) Then
+                    adapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211 Then
                 Dim adapterProperties As IPInterfaceProperties = adapter.GetIPProperties()
                 Dim p As IPv4InterfaceProperties = adapterProperties.GetIPv4Properties
                 Dim s As IPv4InterfaceStatistics = adapter.GetIPv4Statistics
-                If (p Is Nothing) Then
+                If p Is Nothing Then
                     Wln(DoTranslation("Failed to get properties for adapter {0}", currentLang), "neutralText", adapter.Description)
-                ElseIf (s Is Nothing) Then
+                ElseIf s Is Nothing Then
                     Wln(DoTranslation("Failed to get statistics for adapter {0}", currentLang), "neutralText", adapter.Description)
                 End If
                 Wln(DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +

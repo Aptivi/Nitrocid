@@ -128,6 +128,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **6/21/2019 - 0.0.6.1:** Removed currency information showing on help (will bring it back later), Users are now required to enter their API Key from apilayer.net to convert currencies (Basic plan, get at http://currencylayer.com/product, untested: couldn't pay for basic plan)
 
+**6/24/2019 - 0.0.6.2:** Fixed debug log show command not working because the path was not found (typo: Debugger -> Debugging), Added a notice in listing PC commands about latest versions of Windows 10, Fixed debug kernel header not writing when run with debug argument on, Fixed the debug log being empty every reboot and start, Allowed clearing debug log in command using cdbglog, Used built-in FtpVerify enumerators, removing our hash check for older versions of FluentFTP, Better debugging experience, Debugging now shows line number and source file if pdb is on the same folder, Allowed modding using C#
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`

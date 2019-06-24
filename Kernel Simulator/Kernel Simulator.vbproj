@@ -343,7 +343,7 @@
     <None Include="Resources\REV-0.0.1 - lsnet.ksman" />
     <None Include="Resources\REV-0.0.1 - lsnettree.ksman" />
     <None Include="Resources\REV-0.0.1 - md.ksman" />
-    <None Include="Resources\REV-0.0.1 - Modding guide.ksman" />
+    <None Include="Resources\REV-0.0.2 - Modding guide.ksman" />
     <None Include="Resources\REV-0.0.1 - netinfo.ksman" />
     <None Include="Resources\REV-0.0.1 - noaliases.ksman" />
     <None Include="Resources\REV-0.0.1 - perm.ksman" />

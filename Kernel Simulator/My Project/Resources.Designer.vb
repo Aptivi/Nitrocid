@@ -401,7 +401,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to (*MAN START*)
         '''
         '''-TITLE:How to make your own mod for the kernel
-        '''-REVISION:0.0.1
+        '''-REVISION:0.0.2
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
         '''
         '''-BODY START-

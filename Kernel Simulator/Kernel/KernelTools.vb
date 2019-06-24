@@ -40,21 +40,21 @@ Public Module KernelTools
     Public Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal ParamArray Variables() As Object)
         Try
             'Check error types and its capabilities
-            If (ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C") Then
-                If (ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5) Then
+            If ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C" Then
+                If ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5 Then
                     'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                     'generate a second kernel error stating that there is something wrong with the reboot time.
                     Wdbg("Errors that have {0} type shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
                     KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.", currentLang), Nothing, CStr(ErrorType))
                     StopPanicAndGoToDoublePanic = True
-                ElseIf (ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False) Then
+                ElseIf ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False Then
                     'If the error type is unrecoverable, or double, and the rebooting is false where it should
                     'not be false, then it can deal with this issue by enabling reboot.
                     Wdbg("Errors that have {0} type enforced Reboot = True.", ErrorType)
                     Wln(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}.", currentLang), "uncontError", ErrorType)
                     Reboot = True
                 End If
-                If (RebootTime > 3600) Then
+                If RebootTime > 3600 Then
                     'If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
                     Wdbg("RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime)
                     Wln(DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.", currentLang), "uncontError", ErrorType, CStr(RebootTime))
@@ -79,28 +79,28 @@ Public Module KernelTools
             GeneratePanicDump(Description, ErrorType, Exc)
 
             'Check error capabilities
-            If (Description.Contains("DOUBLE PANIC: ") And ErrorType = "D") Then
+            If Description.Contains("DOUBLE PANIC: ") And ErrorType = "D" Then
                 'If the description has a double panic tag and the error type is Double
                 Wdbg("Double panic caused by bug in kernel crash.")
                 Wln(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
                 Wdbg("Rebooting")
                 PowerManage("reboot")
-            ElseIf (StopPanicAndGoToDoublePanic = True) Then
+            ElseIf StopPanicAndGoToDoublePanic = True Then
                 'Switch to Double Panic
                 Exit Sub
-            ElseIf (ErrorType = "C" And Reboot = True) Then
+            ElseIf ErrorType = "C" And Reboot = True Then
                 'Check if error is Continuable and reboot is enabled
                 Wdbg("Continuable kernel errors shouldn't have Reboot = True.")
                 Wln(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.", currentLang) + vbNewLine +
                     DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, Description)
                 Console.ReadKey()
-            ElseIf (ErrorType = "C" And Reboot = False) Then
+            ElseIf ErrorType = "C" And Reboot = False Then
                 'Check if error is Continuable and reboot is disabled
                 EventManager.RaiseContKernelError()
                 Wln(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, Description)
                 Console.ReadKey()
-            ElseIf ((Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C")) Then
+            ElseIf (Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C") Then
                 'If rebooting is disabled and the error type does not equal Double or Continuable
                 Wdbg("Reboot is False, ErrorType is not double or continuable.")
                 Wln(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown.", currentLang), "uncontError", ErrorType, Description)
@@ -114,7 +114,7 @@ Public Module KernelTools
                 PowerManage("reboot")
             End If
         Catch ex As Exception
-            If (DebugMode = True) Then
+            If DebugMode = True Then
                 Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
                 KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), ex, Err.Description)
             Else
@@ -197,13 +197,13 @@ Public Module KernelTools
     ''' <remarks></remarks>
     Public Sub PowerManage(ByVal PowerMode As String)
         Wdbg("Power management has the argument of {0}", PowerMode)
-        If (PowerMode = "shutdown") Then
+        If PowerMode = "shutdown" Then
             EventManager.RaisePreShutdown()
             Wln(DoTranslation("Shutting down...", currentLang), "neutralText")
             ResetEverything()
             EventManager.RaisePostShutdown()
             Environment.Exit(0)
-        ElseIf (PowerMode = "reboot") Then
+        ElseIf PowerMode = "reboot" Then
             EventManager.RaisePreReboot()
             Wln(DoTranslation("Rebooting...", currentLang), "neutralText")
             ResetEverything()
@@ -217,7 +217,7 @@ Public Module KernelTools
 
     Sub ResetEverything()
         'Reset every variable that is resettable
-        If (argsInjected = False) Then
+        If argsInjected = False Then
             answerargs = Nothing
         End If
         Erase BootArgs
@@ -246,7 +246,7 @@ Public Module KernelTools
         Wdbg("Garbage collector finished")
 
         'Disable Debugger
-        If (DebugMode = True) Then
+        If DebugMode = True Then
             DebugMode = False
             dbgWriter.Close() : dbgWriter.Dispose()
         End If
@@ -276,14 +276,12 @@ Public Module KernelTools
         InitAliases()
 
         'Check for multiple instances of KS
-        If (instanceChecked = False) Then MultiInstance()
+        If instanceChecked = False Then MultiInstance()
 
         'Create config file and then read it
         InitializeConfig()
 
         'Test the debugger and show welcome message. Don't remove license
-        Wdbg("Kernel initialized, version {0}.", KernelVersion)
-        Wdbg("OS: {0}", EnvironmentOSType)
         Wln(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), "neutralText", KernelVersion)
         Wln(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE" + vbNewLine +
                         "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
@@ -297,7 +295,7 @@ Public Module KernelTools
             ParseCMDArguments(argu)
         Next
 
-        'Check arguments and initialize date and files.
+        'Check arguments
         If argsOnBoot Then
             PromptArgs()
             If argsFlag Then ParseArguments()
@@ -307,6 +305,13 @@ Public Module KernelTools
             answerargs = ""
             argsInjected = False
         End If
+
+        'Write header for debug
+        Wdbg("-------------------------------------------------------------------")
+        Wdbg("Kernel initialized, version {0}.", KernelVersion)
+        Wdbg("OS: {0}", EnvironmentOSType)
+
+        'Initialize date and files
         If Not TimeDateIsSet Then
             InitializeTimeDate()
             TimeDateIsSet = True
@@ -328,11 +333,13 @@ Public Module KernelTools
             paths.Add("Mods", Environ("HOME") + "/KSMods/")
             paths.Add("Configuration", Environ("HOME") + "/kernelConfig.ini")
             paths.Add("Debugging", Environ("HOME") + "/kernelDbg.log")
+            paths.Add("Aliases", Environ("HOME") + "/aliases.csv")
             paths.Add("Home", Environ("HOME"))
         Else
             paths.Add("Mods", Environ("USERPROFILE") + "\KSMods\")
             paths.Add("Configuration", Environ("USERPROFILE") + "\kernelConfig.ini")
             paths.Add("Debugging", Environ("USERPROFILE") + "\kernelDbg.log")
+            paths.Add("Aliases", Environ("HOME") + "\aliases.csv")
             paths.Add("Home", Environ("USERPROFILE"))
         End If
     End Sub

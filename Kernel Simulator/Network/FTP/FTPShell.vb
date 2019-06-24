@@ -35,13 +35,13 @@ Public Module FTPShell
     Public Sub InitiateShell()
         While True
             'Complete initialization
-            If (initialized = False) Then
+            If initialized = False Then
                 currDirect = paths("Home")
                 initialized = True
             End If
 
             'Check if the shell is going to exit
-            If (ftpexit = True) Then
+            If ftpexit = True Then
                 connected = False
                 ftpsite = ""
                 currDirect = ""
@@ -55,13 +55,13 @@ Public Module FTPShell
             End If
 
             'Prompt for command
-            If (connected = True) Then
+            If connected = True Then
                 W("[", "def") : W("{0}", "userName", user) : W("@", "def") : W("{0}", "hostName", ftpsite) : W("]{0} ", "def", currentremoteDir)
             Else
                 W("{0}> ", "def", currDirect)
             End If
             DisposeAll()
-            If (ColoredShell = True) Then Console.ForegroundColor = CType(inputColor, ConsoleColor)
+            If ColoredShell = True Then Console.ForegroundColor = CType(inputColor, ConsoleColor)
             strcmd = Console.ReadLine()
             If Not (strcmd = Nothing Or strcmd.StartsWith(" ")) Then GetLine()
         End While
@@ -69,7 +69,7 @@ Public Module FTPShell
 
     Public Sub GetLine()
         Dim words As String() = strcmd.Split({" "c})
-        If (availftpcmds.Contains(words(0))) Then
+        If availftpcmds.Contains(words(0)) Then
             FTPGetCommand.ExecuteCommand(strcmd)
         Else
             Wln(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), "neutralText", strcmd)
