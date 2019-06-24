@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Reflection
 Imports System.Threading
+Imports System.Runtime.InteropServices
 
 Public Module KernelTools
 

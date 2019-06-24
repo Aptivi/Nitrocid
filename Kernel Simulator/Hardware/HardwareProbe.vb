@@ -79,7 +79,10 @@ Public Module HardwareProbe
 
         'CPU Info
         For Each processorinfo In CPUList
-            Wln(DoTranslation("CPU: {0} {1}MHz", currentLang), "neutralText", processorinfo.Name, processorinfo.ClockSpeed)
+            W(DoTranslation("CPU: {0} {1}MHz", currentLang), "neutralText", processorinfo.Name, processorinfo.ClockSpeed)
+            If CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available) Then
+                Wln(" : SSE2", "neutralText")
+            End If
         Next
         Wln(DoTranslation("CPU: Total number of processors: {0}", currentLang), "neutralText", Environment.ProcessorCount)
 
