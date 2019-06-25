@@ -344,3 +344,4 @@ usrmgr: upayogakarta naam {0} pahale se hee paaya gaya hai
 apanee epeeaee kunjee darj karen: 
 kampyootar nahin mil sake. yadi aap vindoj 10 ka naveenatam sanskaran chala rahe hain, to aapako smbv1 ko saksham karana hoga. yah protokol haalaanki asurakshit hai aur ham is samasya ko hal karane kee koshish karenge.
 deebag log mein sab kuchh hataata hai
+SSE sanskaran ho jaata hai

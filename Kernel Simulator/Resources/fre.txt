@@ -344,3 +344,4 @@ usrmgr: le nom d'utilisateur {0} est déjà trouvé
 Entrez votre clé API: 
 Impossible d'avoir des ordinateurs. Si vous exécutez la dernière version de Windows 10, vous devez activer SMBv1. Ce protocole n'est cependant pas sécurisé et nous allons essayer de résoudre ce problème.
 Supprime tout dans le journal de débogage
+Obtient les versions SSE

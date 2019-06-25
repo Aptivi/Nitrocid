@@ -616,6 +616,15 @@ Public Module GetCommand
                 ResetEverything()
                 Environment.Exit(0)
 
+            ElseIf requestedCommand = "sses" Then
+
+                Wln("SSE:  {0}" + vbNewLine +
+                    "SSE2: {1}" + vbNewLine +
+                    "SSE3: {2}", "neutralText",
+                    CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMIAvailable),
+                    CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available),
+                    CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsSSE3Available))
+
             ElseIf requestedCommand = "sysinfo" Then
 
                 Done = True

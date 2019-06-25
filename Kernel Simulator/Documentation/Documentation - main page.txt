@@ -10,6 +10,7 @@ Kernel Simulator lets you simulate a very early access for our future Kernel tha
 
 |---------------+--> History <--+---------------|
 
+6/25/2019 - 0.0.6.2b: Added a command named `sses` to list all SSE versions
 6/24/2019 - 0.0.6.2a: Added checking for processor instructions (currently used in kernel booting to see if SSE2 is supported)
 6/24/2019 - 0.0.6.2: Fixed debug log show command not working because the path was not found (typo: Debugger -> Debugging), Added a notice in listing PC commands about latest versions of Windows 10, Fixed debug kernel header not writing when run with debug argument on, Fixed the debug log being empty every reboot and start, Allowed clearing debug log in command using cdbglog, Used built-in FtpVerify enumerators, removing our hash check for older versions of FluentFTP, Better debugging experience, Debugging now shows line number and source file if pdb is on the same folder, Allowed modding using C#
 6/21/2019 - 0.0.6.1: Removed currency information showing on help (will bring it back later), Users are now required to enter their API Key from apilayer.net to convert currencies (Basic plan, get at http://currencylayer.com/product, untested: couldn't pay for basic plan)

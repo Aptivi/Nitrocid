@@ -344,3 +344,4 @@ usrmgr: el nombre de usuario {0} ya se encuentra
 Ingrese su clave API: 
 No se pudieron obtener las computadoras. Si está ejecutando la última versión de Windows 10, debe habilitar SMBv1. Sin embargo, este protocolo es inseguro e intentaremos resolver este problema.
 Borra todo en el registro de depuración
+Obtiene versiones SSE

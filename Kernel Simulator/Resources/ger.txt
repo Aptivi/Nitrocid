@@ -344,3 +344,4 @@ usrmgr: Benutzername {0} wurde bereits gefunden
 Geben Sie Ihren API-Schlüssel ein: 
 Konnte keine Computer bekommen. Wenn Sie die neueste Version von Windows 10 ausführen, müssen Sie SMBv1 aktivieren. Dieses Protokoll ist jedoch unsicher und wir werden versuchen, dieses Problem zu lösen.
 Löscht alles im Debug-Protokoll
+Ruft SSE-Versionen ab

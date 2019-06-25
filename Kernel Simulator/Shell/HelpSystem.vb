@@ -67,6 +67,7 @@ Public Module HelpSystem
                                                              {"showtd", DoTranslation("Shows date and time", currentLang)},
                                                              {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
                                                              {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
+                                                             {"sses", DoTranslation("Gets SSE versions", currentLang)},
                                                              {"sysinfo", DoTranslation("System information", currentLang)},
                                                              {"unitconv", DoTranslation("Unit converter that is separated from scicalc.", currentLang)},
                                                              {"useddeps", DoTranslation("Shows used open source dependencies", currentLang)},
@@ -278,6 +279,10 @@ Public Module HelpSystem
 
             Wln(DoTranslation("Usage:", currentLang) + " shutdown: " + DoTranslation("Shuts down your simulated computer.", currentLang) + vbNewLine +
                 "       " + DoTranslation("Friends of", currentLang) + " shutdown: reboot, logout", "neutralText")
+
+        ElseIf command = "sses" Then
+
+            Wln(DoTranslation("Usage:", currentLang) + " sses: " + DoTranslation("Gets SSE versions", currentLang), "neutralText")
 
         ElseIf command = "sysinfo" Then
 

@@ -344,3 +344,4 @@ usrmgr: il nome utente {0} è già stato trovato
 apanee epeeaee kunjee darj karen: 
 Impossibile ottenere computer. Se si sta utilizzando l'ultima versione di Windows 10, è necessario abilitare SMBv1. Questo protocollo è tuttavia insicuro e cercheremo di risolvere questo problema.
 Elimina tutto nel registro di debug
+Ottiene le versioni SSE

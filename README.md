@@ -132,6 +132,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **6/24/2019 - 0.0.6.2a:** Added checking for processor instructions (currently used in kernel booting to see if SSE2 is supported)
 
+**6/25/2019 - 0.0.6.2b:** Added a command named `sses` to list all SSE versions
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`

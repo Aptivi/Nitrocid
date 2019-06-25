@@ -749,11 +749,15 @@ KS 0.0.6.2
 8. Debugging now shows line number and source file if pdb is on the same folder
 9. Allowed modding using C#
 
-KS 0.0.6.2a, the current version
+KS 0.0.6.2a
 
 This is the smallest update ever, although contains one important thing. The assembly version is 0.0.6.2, but this is the newer version, because Visual Studio still couldn't allow us to use letters on versions.
 
 1. Added checking for processor instructions (currently used in kernel booting to see if SSE2 is supported)
+
+KS 0.0.6.2b, the current version
+
+1. Added a command named `sses` to list all SSE versions
 -BODY END-
 
 -SECTIONS-
@@ -802,5 +806,6 @@ KS 0.0.5.14=>SE1
 KS 0.0.6=>SE1
 KS 0.0.6.1=>SE1
 KS 0.0.6.2=>SE1
-KS 0.0.6.2a, the current version=>SE1
+KS 0.0.6.2a=>SE1
+KS 0.0.6.2b, the current version=>SE1
 -SECTIONS END-
