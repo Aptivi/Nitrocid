@@ -345,3 +345,5 @@ Shūrù nín de API mì yào:
 Wúfǎ huòdé diànnǎo. Rúguǒ nín yùnxíng de shì zuìxīn bǎnběn de Windows 10, zé xūyào qǐyòng SMBv1. Rán'ér, gāi xiéyì bù ānquán, wǒmen jiāng chángshì jiějué cǐ wèntí.
 Shānchú tiáoshì rìzhì zhōng de suǒyǒu nèiróng
 Huòqǔ SSE bǎnběn
+Yǔyán wúxiào
+gǎibiàn yǔyán

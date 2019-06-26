@@ -71,7 +71,7 @@ Public Module Kernel
             DisposeAll()
 
             'Phase 6: Log-in
-            ShowTime()
+            If Not Quiet Then ShowTime()
             If LoginFlag = True And maintenance = False Then
                 LoginPrompt()
             ElseIf LoginFlag = True And maintenance = True Then

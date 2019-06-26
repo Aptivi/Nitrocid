@@ -64,9 +64,10 @@ Public Module ModParser
             Wdbg("Has errors: {0}", res.Errors.HasErrors)
             Wdbg("Has warnings: {0}", res.Errors.HasWarnings)
             If res.Errors.HasErrors And (Quiet = False) Then
-                Wln(DoTranslation("Mod can't be loaded because of the following: ", currentLang), "neutralText")
+                If Not Quiet Then Wln(DoTranslation("Mod can't be loaded because of the following: ", currentLang), "neutralText")
                 For Each errorName In res.Errors
-                    Wln(errorName.ToString, "neutralText") : Wdbg(errorName.ToString)
+                    If Not Quiet Then Wln(errorName.ToString, "neutralText")
+                    Wdbg(errorName.ToString)
                 Next
                 Exit Function
             End If
@@ -102,9 +103,10 @@ Public Module ModParser
             Wdbg("Has errors: {0}", res.Errors.HasErrors)
             Wdbg("Has warnings: {0}", res.Errors.HasWarnings)
             If res.Errors.HasErrors And (Quiet = False) Then
-                Wln(DoTranslation("Mod can't be loaded because of the following: ", currentLang), "neutralText")
+                If Not Quiet Then Wln(DoTranslation("Mod can't be loaded because of the following: ", currentLang), "neutralText")
                 For Each errorName In res.Errors
-                    Wln(errorName.ToString, "neutralText") : Wdbg(errorName.ToString)
+                    If Not Quiet Then Wln(errorName.ToString, "neutralText")
+                    Wdbg(errorName.ToString)
                 Next
                 Exit Function
             End If
@@ -161,7 +163,7 @@ Public Module ModParser
             Wdbg("script.StartMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
             If script.Name = "" Then
                 Wdbg("No name for {0}", modFile)
-                Wln(DoTranslation("Mod {0} does not have the name. Review the source code.", currentLang), "neutralText", modFile)
+                If Not Quiet Then Wln(DoTranslation("Mod {0} does not have the name. Review the source code.", currentLang), "neutralText", modFile)
                 scripts.Add(script.Cmd, script)
             Else
                 Wdbg("There is a name for {0}", modFile)
@@ -169,15 +171,15 @@ Public Module ModParser
             End If
             If script.Version = "" And script.Name <> "" Then
                 Wdbg("{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
-                Wln(DoTranslation("Mod {0} does not have the version.", currentLang), "neutralText", script.Name)
+                If Not Quiet Then Wln(DoTranslation("Mod {0} does not have the version.", currentLang), "neutralText", script.Name)
             ElseIf script.Name <> "" And script.Version <> "" Then
                 Wdbg("{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
-                Wln(DoTranslation("{0} v{1} started", currentLang), "neutralText", script.Name, script.Version)
+                If Not Quiet Then Wln(DoTranslation("{0} v{1} started", currentLang), "neutralText", script.Name, script.Version)
             End If
             If script.Cmd <> "" And StartStop = True Then
                 modcmnds.Add(script.Cmd)
                 If script.Def = "" Then
-                    Wln(DoTranslation("No definition for command {0}.", currentLang), "neutralText", script.Cmd)
+                    If Not Quiet Then Wln(DoTranslation("No definition for command {0}.", currentLang), "neutralText", script.Cmd)
                     Wdbg("{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
                     script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
                 End If

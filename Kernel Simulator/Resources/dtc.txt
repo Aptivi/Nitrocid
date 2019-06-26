@@ -345,3 +345,5 @@ Voer uw API-sleutel in:
 Kon geen computers krijgen. Als u de nieuwste versie van Windows 10 gebruikt, moet u SMBv1 inschakelen. Dit protocol is echter onzeker en we zullen proberen dit probleem op te lossen.
 Hiermee verwijdert u alles in het logboek voor foutopsporing
 Krijgt SSE-versies
+Ongeldige taal
+Verandert de taal

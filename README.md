@@ -134,6 +134,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **6/25/2019 - 0.0.6.2b:** Added a command named `sses` to list all SSE versions
 
+**6/26/2019 - 0.0.6.3:** Fixed `quiet` not being entirely quiet, Fixed messages not appearing after signing in (ex. Adding user message), Allowed changing language using command, Fixed the help text showing after executing `sses`, Added Czech language
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`

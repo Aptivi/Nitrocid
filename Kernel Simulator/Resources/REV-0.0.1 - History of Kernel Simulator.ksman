@@ -755,9 +755,17 @@ This is the smallest update ever, although contains one important thing. The ass
 
 1. Added checking for processor instructions (currently used in kernel booting to see if SSE2 is supported)
 
-KS 0.0.6.2b, the current version
+KS 0.0.6.2b
 
 1. Added a command named `sses` to list all SSE versions
+
+KS 0.0.6.3, the current version
+
+1. Fixed `quiet` not being entirely quiet
+2. Fixed messages not appearing after signing in (ex. Adding user message)
+3. Allowed changing language using command
+4. Fixed the help text showing after executing `sses`
+5. Added Czech language
 -BODY END-
 
 -SECTIONS-
@@ -807,5 +815,6 @@ KS 0.0.6=>SE1
 KS 0.0.6.1=>SE1
 KS 0.0.6.2=>SE1
 KS 0.0.6.2a=>SE1
-KS 0.0.6.2b, the current version=>SE1
+KS 0.0.6.2b=>SE1
+KS 0.0.6.3=>SE1
 -SECTIONS END-

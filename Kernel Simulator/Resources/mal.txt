@@ -345,3 +345,5 @@ Masukkan kunci API anda:
 Tidak dapat komputer. Sekiranya anda menjalankan versi terbaru Windows 10, anda perlu mengaktifkan SMBv1. Protokol ini bagaimanapun tidak selamat dan kami akan cuba menyelesaikan masalah ini.
 Menghapus semua dalam log debug
 Mendapatkan versi SSE
+Bahasa tidak sah
+Perubahan bahasa

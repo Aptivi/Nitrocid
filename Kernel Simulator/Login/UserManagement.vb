@@ -51,7 +51,7 @@ Public Module UserManagement
                 InitializeUser(newUser, newPassword)
             End If
         Else
-            Wln(DoTranslation("usrmgr: Username {0} is already found", currentLang), "neutralText", newUser)
+            If Not Quiet Then Wln(DoTranslation("usrmgr: Username {0} is already found", currentLang), "neutralText", newUser)
         End If
 
     End Sub

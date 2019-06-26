@@ -30,6 +30,7 @@ Public Module HelpSystem
                                                              {"cdbglog", DoTranslation("Deletes everything in debug log", currentLang)},
                                                              {"chdir", DoTranslation("Changes directory", currentLang)},
                                                              {"chhostname", DoTranslation("Changes host name (Admins only)", currentLang)},
+                                                             {"chlang", DoTranslation("Changes language", currentLang)},
                                                              {"chmal", DoTranslation("Changes MAL, the MOTD After Login (Admins only)", currentLang)},
                                                              {"chmotd", DoTranslation("Changes MOTD, the Message Of The Day (Admins only)", currentLang)},
                                                              {"chpwd", DoTranslation("Changes password for current user", currentLang)},
@@ -128,6 +129,11 @@ Public Module HelpSystem
         ElseIf command = "chhostname" Then
 
             Wln(DoTranslation("Usage:", currentLang) + " chhostname <HostName>", "neutralText")
+
+        ElseIf command = "chlang" Then
+
+            Wln(DoTranslation("Usage:", currentLang) + " chlang <language>" + vbNewLine +
+                "<language>: " + String.Join("/", availableLangs), "neutralText")
 
         ElseIf command = "chmotd" Then
 

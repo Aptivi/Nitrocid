@@ -345,3 +345,5 @@ Anna API-avain:
 Tietokoneita ei voitu saada. Jos käytössäsi on uusin Windows 10 -versio, sinun on otettava SMBv1 käyttöön. Tämä pöytäkirja on kuitenkin epävarma ja yritämme ratkaista tämän ongelman.
 Poistaa kaiken debug-lokissa
 Saat SSE-versiot
+Virheellinen kieli
+Muuttaa kieltä

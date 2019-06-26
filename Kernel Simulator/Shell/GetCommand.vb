@@ -148,32 +148,47 @@ Public Module GetCommand
             ElseIf words(0) = "chhostname" Then
 
                 If requestedCommand <> "chhostname" Then
-                    Dim newhost As String = requestedCommand.Substring(11)
-                    If newhost = "" Then
+                    If words(1) = "" Then
                         Wln(DoTranslation("Blank host name.", currentLang), "neutralText")
-                    ElseIf newhost.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
+                    ElseIf words(1).IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                         Wln(DoTranslation("Special characters are not allowed.", currentLang), "neutralText")
                     Else
                         Done = True
-                        Wln(DoTranslation("Changing from: {0} to {1}...", currentLang), "neutralText", HName, newhost)
-                        HName = newhost
+                        Wln(DoTranslation("Changing from: {0} to {1}...", currentLang), "neutralText", HName, words(1))
+                        HName = words(1)
                         Dim ksconf As New IniFile()
                         Dim pathConfig As String = paths("Configuration")
                         ksconf.Load(pathConfig)
-                        ksconf.Sections("Login").Keys("Host Name").Value = newhost
+                        ksconf.Sections("Login").Keys("Host Name").Value = HName
                         ksconf.Save(pathConfig)
+                    End If
+                End If
+
+            ElseIf words(0) = "chlang" Then
+
+                If requestedCommand <> "chlang" Then
+                    If availableLangs.Contains(words(1)) Then
+                        Done = True
+                        Wln(DoTranslation("Changing from: {0} to {1}...", currentLang), "neutralText", currentLang, words(1))
+                        currentLang = words(1)
+                        Dim ksconf As New IniFile()
+                        Dim pathConfig As String = paths("Configuration")
+                        ksconf.Load(pathConfig)
+                        ksconf.Sections("Misc").Keys("Language").Value = currentLang
+                        ksconf.Save(pathConfig)
+                    Else
+                        Wln(DoTranslation("Invalid language", currentLang), "neutralText")
                     End If
                 End If
 
             ElseIf words(0) = "chmotd" Then
 
                 If requestedCommand <> "chmotd" Then
-                    Dim newmotd = requestedCommand.Substring(7)
-                    If newmotd = "" Then
+                    If words(1) = "" Then
                         Wln(DoTranslation("Blank message of the day.", currentLang), "neutralText")
                     Else
                         Wln(DoTranslation("Changing MOTD...", currentLang), "neutralText")
-                        MOTDMessage = newmotd
+                        MOTDMessage = words(1)
                         Dim ksconf As New IniFile()
                         Dim pathConfig As String = paths("Configuration")
                         ksconf.Load(pathConfig)
@@ -186,16 +201,15 @@ Public Module GetCommand
             ElseIf words(0) = "chmal" Then
 
                 If requestedCommand <> "chmal" Then
-                    Dim newmal = requestedCommand.Substring(6)
-                    If newmal = "" Then
+                    If words(1) = "" Then
                         Wln(DoTranslation("Blank MAL After Login.", currentLang), "neutralText")
                     Else
                         Wln(DoTranslation("Changing MAL...", currentLang), "neutralText")
-                        MAL = newmal
+                        MAL = words(1)
                         Dim ksconf As New IniFile()
                         Dim pathConfig As String = paths("Configuration")
                         ksconf.Load(pathConfig)
-                        ksconf.Sections("Login").Keys("MOTD After Login").Value = newmal
+                        ksconf.Sections("Login").Keys("MOTD After Login").Value = MAL
                         ksconf.Save(pathConfig)
                         Done = True
                     End If
@@ -624,6 +638,7 @@ Public Module GetCommand
                     CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMIAvailable),
                     CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available),
                     CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsSSE3Available))
+                Done = True
 
             ElseIf requestedCommand = "sysinfo" Then
 

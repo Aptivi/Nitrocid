@@ -345,3 +345,5 @@ Digite sua chave de API:
 Não foi possível obter computadores. Se você estiver executando a versão mais recente do Windows 10, precisará ativar o SMBv1. Este protocolo é, no entanto, inseguro e vamos tentar resolver este problema.
 Exclui tudo no log de depuração
 Obtém versões do SSE
+Idioma inválido
+Muda de idioma

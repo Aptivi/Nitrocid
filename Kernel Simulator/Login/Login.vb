@@ -162,6 +162,9 @@ Public Module Login
         'Fire event PostLogin
         EventManager.RaisePostLogin()
 
+        'Unquiet
+        Quiet = False
+
         'Initialize shell
         InitializeShell()
 

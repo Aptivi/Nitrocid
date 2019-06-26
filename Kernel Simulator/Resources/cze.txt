@@ -1,0 +1,349 @@
+﻿Dostupné příkazy: {0}
+Příkaz Write:
+Příkazové injekce byla zrušena.
+Argumenty spouštění oddělte čárkami bez mezer, například 'motd, gpuprobe'
+Samostatné příkazy na 'cmdinject' s dvojtečkami s mezerami, například 'cmdinject setthemes Hacker: beep 1024 0.5'
+Povšimněte si, že argument 'debug' zcela nepokrývá jádro.
+bargs: Požadovaný argument {0} nebyl nalezen.
+bargs: Neodstranitelná chyba v argumentu:
+Dostupné argumenty: {0}
+Argumenty (nápověda „help“):
+Vložené argumenty budou naplánovány na další restart.
+Argument Injection byl zrušen.
+Chyba při analýze reálných argumentů příkazového řádku: {0}
+Neplatná šablona barev {0}
+Výchozí
+Zvyk
+hwprobe: Váš hardware bude testován. Prosím, čekejte...
+hwprobe: Hardware již probed.
+hwprobe: Hardware není prozkoumán. Sonda používající „hwprobe“
+CPU: Jedno nebo více jader CPU selhalo. Zobrazení informací tak jako tak ...
+RAM: Jeden nebo více RAM čipů selhalo. Zobrazení informací tak jako tak ...
+HDD: Jeden nebo více pevných disků se nepodařilo sondovat. Zobrazení informací tak jako tak ...
+CPU: Celkový počet procesorů: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: Použité sloty (podle jmen): {0}
+RAM: Použité sloty (podle čísel): {0} / {1} ({2}%)
+RAM: Stav probing je zastaralý a bude odstraněn v budoucím vydání.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} válce | {5} hlav | {6} sektorů
+HDD: CHS: {3} válce | {4} hlavy | {5} sektorů
+hwprobe: Probing není podporován, protože není určen ke spuštění probers na Unixu.
+Zadejte heslo správce pro údržbu.
+V seznamu není zbývající více uživatelů.
+Chyba při zavádění jádra: {0}
+DOUBLE PANIC: Reboot Time překračuje maximální povolený čas restartu {0}. Našli jste chybu jádra.
+[{0}] panic: Reboot povolen z důvodu chybové úrovně {0}.
+[{0}] panic: Čas restartu: {1} sekund, překročí 1 hodinu. Je nastavena na 1 minutu.
+DOUBLE PANIC: Chyba typu {0} neplatná.
+[{0}] dpanic: {1} - Restart v {2} sekundách ...
+[{0}] panika: Reboot vypnut z důvodu chyby {0}.
+[{0}] panic: {1} - Pro pokračování v používání jádra stiskněte libovolnou klávesu.
+[{0}] panika: {1} - Stisknutím libovolného tlačítka vypnete.
+[{0}] panika: {1} - Restart v {2} sekundách ...
+DOUBLE PANIC: Chyba jádra: {0}
+Vypínání...
+Restartování ...
+---===+++> Vítejte v jádře Verze {0} <+++===---
+Je spuštěna další instance Simulátoru jádra. Vypnutí v případě rušení.
+Uživatel {0} byl přidán do seznamu admin.
+Uživatel {0} byl přidán do zakázaného seznamu.
+Nepodařilo se přidat uživatele do seznamů oprávnění: neplatný typ {0}
+Nepodařilo se přidat uživatele do seznamů oprávnění: neplatný uživatel {0}
+Uživatel {0} byl odstraněn ze seznamu admin.
+Uživatel {0} byl odstraněn ze zakázaného seznamu.
+Nepodařilo se odebrat uživatele ze seznamů oprávnění: neplatný typ {0}
+Už jste přihlášen.
+Nepodařilo se odebrat uživatele ze seznamů oprávnění: neplatný uživatel {0}
+V systému oprávnění jste našli chybu: neplatný režim {0}
+Buď jste našli chybu, nebo oprávnění, které jste se pokusili přidat nebo odebrat, je již provedeno, nebo jinou chybu.
+Chyba {0}: {1}
+Buď jste našli chybu nebo oprávnění, které jste se pokusili upravit pro nového uživatele, selhalo.
+Dostupná uživatelská jména: {0}
+Uživatelské jméno:
+Prostory nejsou povoleny.
+Speciální znaky nejsou povoleny.
+Heslo {0}:
+Špatné heslo.
+Uživatel je zakázán.
+Chybné uživatelské jméno.
+Chyba při pokusu o analýzu zástupných symbolů. {0} - Stack trace:
+Chyba při pokusu o analýzu zástupných symbolů. {0}
+Při pokusu o přidání uživatelského jména došlo k chybě.
+usrmgr: Vytvoření uživatelského jména {0} ...
+Prázdné uživatelské jméno.
+Uživatel {0} nebyl nalezen.
+Uživatel {0} nesmí být odstraněn.
+Uživatel {0} je již přihlášen. Odhlásit se a přihlásit se jako jiný admin.
+Uživatel {0} byl odstraněn.
+Chyba při pokusu o odebrání uživatelského jména.
+{0} z {1} = {2}
+Pokus o dělení nulou není povolen.
+Došlo k podezřelému pokusu o výpočet, který měl za následek přetečení.
+Při výpočtu došlo k chybě: {0}
+{0} nelze převést na {1}.
+Buď zdroj
+ nebo určení
+ na serveru neexistuje.
+{0} až {1}: {2}
+Chyba při pokusu o převod z {0} na {1}: {2}
+Chyba
+Požadovaný spořič obrazovky {0} nebyl nalezen.
+{0} bylo správně inicializováno.
+{0} nebyl inicializován. Kód spořiče obrazovky mohl při inicializaci zaznamenat chybu.
+Spořič obrazovky {0} neexistuje.
+{0} je nastaven na výchozí spořič obrazovky.
+Spořič obrazovky {0} nebyl nalezen v databázi. Inicializujte pomocí "loadaver {0}".
+Spořič obrazovky nelze načíst z následujících důvodů:
+Při tisku textu došlo k závažné chybě.
+Při pokusu o vytvoření konfigurace došlo k chybě.
+Při pokusu o vytvoření konfigurace došlo k chybě: {0}
+Byl zjištěn upgrade z {0} na {1}. Aktualizace konfigurace ...
+Při pokusu o aktualizaci konfigurace došlo k chybě: {0}.
+Při pokusu o aktualizaci konfigurace došlo k chybě.
+Při pokusu o čtení konfigurace došlo k chybě.
+Při pokusu o čtení konfigurace došlo k chybě: {0}
+Chyba při pokusu o uvolnění paměti RAM: {0} - Pokračování ...
+Mod nelze načíst z následujících důvodů:
+mod: Načítání modů ...
+mod: Zastavení modů ...
+Mod {0} nemá název. Zkontrolujte zdrojový kód.
+Mod {0} nemá verzi.
+Začalo {0} v {1}
+Žádné příkazy pro příkaz {0}.
+Příkaz definovaný
+Před připojením k jinému serveru byste se měli odpojit od serveru
+Uživatelské jméno pro {0}:
+Heslo pro {0}:
+Připojeno k {0}
+Chyba při pokusu o připojení k {0}: {1}
+Stoh Trace: {2}
+Zadejte FTP server, který začíná na "ftp://" nebo "ftps://"
+Místní adresář {0} neexistuje.
+Zadejte místní adresář. ".." vrátit se.
+Adresář {0} nebyl nalezen.
+Zadejte vzdálený adresář. ".." vrátit se
+Před změnou adresáře se musíte připojit k serveru
+Místní adresář: {0}
+Vzdálený adresář: {0}
+Před získáním aktuálního vzdáleného adresáře se musíte připojit k serveru.
+Odstranění souboru {0} ...
+Opravdu chcete smazat soubor {0} <y/n>?
+Smazaný soubor {0}
+Před provedením odstranění se musíte připojit k serveru s oprávněními pro správu.
+Zadejte soubor, který chcete odebrat.
+Abyste mohli odebrat, musíte mít oprávnění k přihlášení ke svému přihlášenému uživatelskému jménu.
+Odpojeno od {0}
+Ještě jste se nepřipojili k žádnému serveru
+Stažení souboru {0} ...
+Stažený soubor {0}.
+Stažení souboru {0} se nezdařilo, protože místní soubor je poškozen.
+Před přenosem se musíte připojit k serveru.
+Zadejte soubor ke stažení do lokálního adresáře.
+{0} | Upraveno v: {1}
+Před zápisem všech vzdálených souborů byste se měli připojit k serveru.
+Přejmenování souboru {0} na {1} ...
+Úspěšně přejmenováno
+Zadejte soubor a nový název souboru.
+Soubor pro nahrání {0} ...
+Nahraný soubor {0}
+Zadejte soubor, který chcete nahrát do vzdáleného adresáře. upload <soubor> <adresář>
+Chyba při pokusu o provedení příkazu FTP
+(Vnitřní:
+{0} složky, {1} soubory
+(Přístup odepřen)
+{0} KB, Založeno v {1} {2}, upraveno v {3} {4}
+Získá aktuální místní adresář
+Získá aktuální vzdálený adresář
+Připojuje se k FTP serveru (musí začínat "ftp://" nebo "ftps://")
+Změní místní adresář ke stažení nebo nahrávání
+Změní vzdálený adresář ke stažení z nebo nahrajte na
+Odstraní vzdálený soubor ze serveru
+Odpojí se od serveru
+Stažení vzdáleného souboru do lokálního adresáře pomocí binárního nebo textového souboru
+Ukončí FTP shell a vrátí se do jádra
+Zobrazí obrazovku nápovědy
+Seznam místních adresářů
+Seznamy vzdáleného adresáře
+Přejmenuje konkrétní soubor nebo adresář
+Nahraje místní soubor do vzdáleného adresáře pomocí binárního nebo textového souboru
+Došlo k chybě v prostředí FTP.
+Zpráva FTP: Požadovaný příkaz {0} nebyl nalezen. Seznam dostupných příkazů zadaných v prostředí FTP naleznete v nápovědě.
+net: Dostal odpověď od {0} v {1} ms
+Vypršel časový limit, odpojen nebo server offline.
+net: Jméno vašeho počítače v síti je {0}
+net: Jméno hostitele je {1}
+net: Zdá se, že počítače jsou v doméně nebo pracovní skupině:
+net: WiFi nebo Ethernet je odpojen.
+net: Zdá se, že počítače jsou připojeny níže:
+net: Router Adresa: {0}
+Nepodařilo se získat vlastnosti adaptéru {0}
+Číslo adaptéru:
+Název adaptéru:
+Maximální přenosová jednotka: {2} Jednotky
+Povoleno DHCP:
+Non-unicast pakety:
+Pakety Unicast:
+Chyba příchozích / odchozích paketů:
+Alias ​​nemůže být stejný jako příkaz.
+Příkaz nebyl nalezen jako alias {0}.
+Aliasing {0} na {1} je zcela zakázán.
+Nyní můžete spustit příkaz "{0}" jako příkaz: "{1}".
+"{0}" již nemůžete použít jako příkaz "{1}".
+Alias ​​{0} nebyl nalezen.
+Neplatný režim {0}.
+Vložené argumenty, {0}, budou naplánovány na další restart.
+Nebylo dost argumentů. Níže naleznete použití:
+Adresář {0} nebyl nalezen
+Prázdný název hostitele.
+Změna z: {0} na {1} ...
+Prázdná zpráva dne.
+Prázdné MAL po přihlášení.
+Změna MAL z {0} na {1} ...
+Nesprávné uživatelské heslo.
+Hesla neodpovídají.
+Uživatelské jméno bylo změněno na {0}!
+Zadaný nový název je již nalezen.
+Výpis počítačů zatím není podporován na Unixu.
+Aliasy, které jsou zakázány: {0}
+{0} nebyl nalezen.
+Konfigurace byla znovu načtena. Některé změny se projeví až po restartování jádra.
+Vše je obnoveno na normální nastavení.
+Jedna nebo více barev je neplatná.
+Barvy nejsou k dispozici. Zapněte barevný shell v konfiguraci jádra.
+Spořič obrazovky {0} nebyl nalezen.
+{0}[Nastavení jádra (běží na {1})]
+Verze jádra:
+Debugovací mód:
+Barevná skořepina:
+Argumenty při spouštění:
+Zjednodušený příkaz nápovědy:
+MOTD při přihlášení:
+Čas / datum v rohu:
+Sondování hardwaru:
+Aktuální téma:
+[Hardwarová nastavení] {0}
+{0}[Uživatelské nastavení]
+Aktuální uživatelské jméno:
+Aktuální název hostitele:
+Dostupná uživatelská jména:
+Název hostitele počítače:
+{0}[Nastavení zpráv]
+Zdrojový kód:
+Copyright (c)
+Licence
+současnost, dárek
+Chyba při pokusu o provedení příkazu
+Přidává uživatele (k tomuto příkazu mají přístup pouze administrátoři)
+Přidá aliasy do příkazů (k tomuto příkazu mohou přistupovat pouze administrátoři)
+Vloží argumenty do jádra (vyžaduje se restart, pouze administrátoři)
+Jednoduchá kalkulačka
+Změní adresář
+Změní název hostitele (pouze Admins)
+Změní MAL, MOTD po přihlášení (pouze administrátoři)
+Změní MOTD, zprávu dne (pouze administrátoři)
+Změní heslo pro aktuálního uživatele
+Změní jméno uživatele (pouze Admins)
+Vymaže obrazovku
+Převést měnu
+Zobrazí protokoly ladění (pouze Admins)
+Pro interakci se servery použijte shell FTP
+Stránka nápovědy
+Ruční sondování hardwaru (jednou v jádře 'nohwprobe')
+Seznam obsahu souboru / složky v aktuální složce
+Znovu načte soubor spořiče v %USERPROFILE%\KSMods
+Uzamkne obrazovku heslem
+Odhlásí vás
+Seznam všech síťových zařízení, která jsou online (a offline v doménách)
+Seznam všech síťových adres na hostiteli
+Seznam všech síťových adres na hostiteli pomocí stromu
+Vytvoří adresář
+Zobrazí informace o všech dostupných rozhraních
+Zobrazí zakázaný seznam přezdívek
+Správa oprávnění pro uživatele (k tomuto příkazu mohou přistupovat pouze administrátoři)
+Zkontrolujte, zda je zadaná adresa k dispozici
+Zapíše obsah souboru do konzoly
+Restartuje počítač (VAROVÁNÍ: Není synchronizace, protože se nejedná o konečné jádro)
+Znovu načte konfigurační soubor, který je upraven.
+Odstraní adresář
+Odstraní uživatele ze seznamu (pouze Admins)
+Uloží obrazovku před vypálením
+Vědecká kalkulačka. Převodník jednotky je oddělen od jiného povelu
+Nastaví barvy jádra
+Nastaví spořiče obrazovky
+Nastaví témata jádra
+Zobrazí aliasy
+Zobrazuje MOTD po přihlášení uživatele nebo jádra
+Zobrazí zprávu dne nastavenou uživatelem nebo jádrem
+Zobrazuje datum a čas
+Zobrazuje datum a čas v zónách
+Jádro bude vypnuto
+Systémové informace
+Převodník jednotky, který je oddělen od scicalc.
+Zobrazuje použité závislosti open source
+Velmi popisný uživatelský manuál.
+* Můžete použít více příkazů pomocí dvojtečky mezi příkazy.
+Dostupné příkazy:
+Příkazy Mod:
+Aliasy na příkazy:
+Používání:
+Argumenty oddělené čárkami
+kde argumenty budou {0}
+získat aktuální adresář
+Ve kterém zdroji a cíli jsou 3 UPPERCASE znaky směnného kurzu
+Seznam všech ID a jmen:
+Zobrazí protokoly ladění, abyste nám mohli odeslat protokol.
+Inicializuje prostředí FTP.
+Hardware sondy (Funguje pouze v případě, že hardware není sondován a hwprobe není proveden).
+Zobrazí informace o síti, stejně jako každý počítač připojený k síti.
+Přátelé uživatele
+Uvádí informace o síti, stejně jako každý počítač připojený k síti, ve stromovém tvaru.
+Vypíše informace o síti, stejně jako každý počítač.
+kde modnameSS.m bude
+Uzamkne obrazovku heslem.
+Odhlásí vás z uživatele.
+Získejte všechny informace o síti
+Restartuje simulovaný počítač.
+Znovu načte konfiguraci, kterou změnil koncový uživatel nebo nástroj.
+Barvy nevyžadují restart, ale většina nastavení vyžaduje restart.
+zobrazí vybraný spořič obrazovky a zároveň chrání obrazovku před vypálením.
+Zobrazuje datum a čas.
+Zobrazuje datum a čas v zónách.
+Vypne simulovaný počítač.
+Zobrazuje informace o systému a verze.
+Zobrazuje použité knihovny s otevřeným zdrojovým kódem
+Ve skořápce došlo k chybě.
+Nemáte oprávnění k použití {0}
+Zpráva Shell: Požadovaný příkaz {0} není povolen v režimu údržby.
+Zpráva Shell: Požadovaný příkaz {0} nebyl nalezen. Dostupné příkazy naleznete v tématu Nápověda.
+Zpráva Shell: Příkaz {0} není povolen pro přihlášení.
+Zpráva Shell: Požadovaný příkaz {0} nebyl nalezen.
+Chyba při pokusu o provedení příkazu.
+datetime: Čas je {0}
+datetime: Dnes je {0}
+datetime: Časové pásmo: {0}
+- Čas {0}: {1}
+pro vymazání obrazovky.
+Zdá se, že ruční stránka {0} nebyla nalezena.
+Při pokusu o načtení ruční stránky {0} becuase {1} došlo k chybě.
+Tato ruční stránka je neúplná z následujících důvodů:
+Pokračujte stiskem libovolné klávesy...
+ | {0} slov | Revize v {1} | {2} sekce
+Tento název manuálové stránky není napsán
+Tato ruční stránka ({0}) neobsahuje žádný text těla. Smazání stránky ...
+Tato stránka manuálu ({0}) neobsahuje žádnou sekci. Smazání stránky ...
+Běží na {0}
+Nemáte oprávnění získat informace pro {0}.
+Tento příkaz je zastaralý a bude odstraněn v budoucí verzi.
+Nemáte oprávnění změnit heslo {0}, protože cíl byl admin.
+Převést množství peněz ze země do země
+Měny:
+usrmgr: Jméno uživatele {0} je již nalezeno
+Zadejte klíč API:
+Nelze získat počítače. Pokud používáte nejnovější verzi systému Windows 10, musíte povolit protokol SMBv1. Tento protokol je však nejistý a my se pokusíme tento problém vyřešit.
+Odstraní vše v protokolu ladění
+Získá verze SSE
+Neplatný jazyk
+Změní jazyk

@@ -294,6 +294,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cze.txt" />
     <None Include="Resources\tky.txt" />
     <None Include="Resources\swe.txt" />
     <None Include="Resources\mal.txt" />

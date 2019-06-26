@@ -345,3 +345,5 @@ API anahtarınızı girin:
 Bilgisayarlar alınamadı. Windows 10'un en son sürümünü kullanıyorsanız, SMBv1'i etkinleştirmeniz gerekir. Ancak bu protokol güvensiz ve bu sorunu çözmeye çalışacağız.
 Hata ayıklama günlüğündeki her şeyi siler
 SSE versiyonlarını alır
+Geçersiz dil
+Dili değiştir

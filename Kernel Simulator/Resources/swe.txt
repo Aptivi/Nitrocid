@@ -345,3 +345,5 @@ Ange din API-nyckel:
 Kunde inte hämta datorer. Om du kör den senaste versionen av Windows 10 måste du aktivera SMBv1. Detta protokoll är dock osäkert och vi kommer att försöka lösa detta problem.
 Tar bort allt i felsökningsloggen
 Får SSE-versioner
+Ogiltigt språk
+Ändrar språk
