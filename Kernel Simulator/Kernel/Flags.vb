@@ -25,11 +25,9 @@ Module Flags
     Public DebugMode As Boolean = False                         'Toggle Debugging mode
     Public LoginFlag As Boolean                                 'Flag for log-in
     Public CommandFlag As Boolean = False                       'A signal for command kernel argument
-    Public templateSetExitFlag As Boolean = False               'A signal for checking if the template was set
     Public CruserFlag As Boolean = False                        'A signal to the kernel where user has to be created
     Public argsFlag As Boolean                                  'A flag for checking for an argument later
     Public argsInjected As Boolean                              'A flag for checking for an argument on reboot
-    Public customColor As Boolean = False                       'Enable custom colors
     Public enableDemo As Boolean = True                         'Enable Demo Account
     Public setRootPasswd As Boolean = False                     'Set Root Password
     Public RootPasswd As String = ""                            'Set Root Password

@@ -142,7 +142,7 @@ Fichier téléchargé {0}.
 Le téléchargement du fichier {0} a échoué car le fichier local est corrompu.
 Vous devez vous connecter au serveur avant d'effectuer la transmission.
 Entrez un fichier à télécharger dans le répertoire local.
-{0} | Modifié dans: {1}
+{0} KB | Modifié dans: {1}
 Vous devez vous connecter au serveur avant de répertorier tous les fichiers distants.
 Renommer le fichier {0} en {1} ...
 Renommé avec succès

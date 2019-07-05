@@ -32,7 +32,6 @@ Public Module Config
                         New IniKey(ksconf, "Change Root Password", setRootPasswd),
                         New IniKey(ksconf, "Set Root Password to", RootPasswd),
                         New IniKey(ksconf, "Create Demo Account", enableDemo),
-                        New IniKey(ksconf, "Customized Colors on Boot", customColor),
                         New IniKey(ksconf, "Language", currentLang)))
 
                 'The Colors Section
@@ -85,7 +84,6 @@ Public Module Config
                         New IniKey(ksconf, "Change Root Password", "False"),
                         New IniKey(ksconf, "Set Root Password to", "toor"),
                         New IniKey(ksconf, "Create Demo Account", "True"),
-                        New IniKey(ksconf, "Customized Colors on Boot", "False"),
                         New IniKey(ksconf, "Language", "eng")))
 
                 'The Colors Section
@@ -189,13 +187,7 @@ Public Module Config
 
     Public Sub ReadImportantConfig()
         Try
-            Dim Lang_TBA As String = configReader.Sections("General").Keys("Language").Value
-            If configReader.Sections("Shell").Keys("Colored Shell").Value = "False" Then
-                TemplateSet("LinuxUncolored")
-                ColoredShell = False
-            End If
-            If availableLangs.Contains(Lang_TBA) Then currentLang = Lang_TBA
-            InitHelp()
+
         Catch ex As Exception
             If DebugMode = True Then
                 Wdbg(ex.StackTrace, True)
@@ -208,22 +200,31 @@ Public Module Config
 
     Public Sub ReadConfig()
         Try
-            If configReader.Sections("General").Keys("Customized Colors on Boot").Value = "True" Then customColor = True Else customColor = False
+            '----------------------------- Important configuration things -----------------------------
+            'Language
+            SetLang(configReader.Sections("General").Keys("Language").Value)
 
+            'Colored Shell
+            If configReader.Sections("Shell").Keys("Colored Shell").Value = "False" Then
+                TemplateSet("LinuxUncolored")
+                ColoredShell = False
+            End If
+
+            '----------------------------- General configuration -----------------------------
             'Colors Section
-            If ColoredShell = True And customColor = True Then userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("User Name Shell Color").Value), ConsoleColor)
-            If ColoredShell = True And customColor = True Then hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Host Name Shell Color").Value), ConsoleColor)
-            If ColoredShell = True And customColor = True Then contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value), ConsoleColor)
-            If ColoredShell = True And customColor = True Then uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value), ConsoleColor)
-            If ColoredShell = True And customColor = True Then neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Text Color").Value), ConsoleColor)
-            If ColoredShell = True And customColor = True Then licenseColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("License Color").Value), ConsoleColor)
-            If ColoredShell = True And customColor = True Then
+            If ColoredShell Then userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("User Name Shell Color").Value), ConsoleColor)
+            If ColoredShell Then hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Host Name Shell Color").Value), ConsoleColor)
+            If ColoredShell Then contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value), ConsoleColor)
+            If ColoredShell Then uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value), ConsoleColor)
+            If ColoredShell Then neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Text Color").Value), ConsoleColor)
+            If ColoredShell Then licenseColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("License Color").Value), ConsoleColor)
+            If ColoredShell Then
                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Background Color").Value), ConsoleColor)
                 Load()
             End If
-            If ColoredShell = True And customColor = True Then inputColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColor)
-            If ColoredShell = True And customColor = True Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColor)
-            If ColoredShell = True And customColor = True Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Definition of command in Help Color").Value), ConsoleColor)
+            If ColoredShell Then inputColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColor)
+            If ColoredShell Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColor)
+            If ColoredShell Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), configReader.Sections("Colors").Keys("Definition of command in Help Color").Value), ConsoleColor)
 
             'General Section
             If configReader.Sections("General").Keys("Create Demo Account").Value = "True" Then enableDemo = True Else enableDemo = False

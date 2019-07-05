@@ -142,7 +142,7 @@ Arquivo baixado {0}.
 O download falhou para o arquivo {0} porque o arquivo local está corrompido.
 Você deve se conectar ao servidor antes de realizar a transmissão.
 Digite um arquivo para baixar no diretório local.
-{0} | Modificado em: {1}
+{0} KB | Modificado em: {1}
 Você deve se conectar ao servidor antes de listar todos os arquivos remotos.
 Renomeando o arquivo {0} para {1} ...
 Renomeado com sucesso

@@ -167,18 +167,8 @@ Public Module GetCommand
             ElseIf words(0) = "chlang" Then
 
                 If requestedCommand <> "chlang" Then
-                    If availableLangs.Contains(words(1)) Then
-                        Done = True
-                        Wln(DoTranslation("Changing from: {0} to {1}...", currentLang), "neutralText", currentLang, words(1))
-                        currentLang = words(1)
-                        Dim ksconf As New IniFile()
-                        Dim pathConfig As String = paths("Configuration")
-                        ksconf.Load(pathConfig)
-                        ksconf.Sections("Misc").Keys("Language").Value = currentLang
-                        ksconf.Save(pathConfig)
-                    Else
-                        Wln(DoTranslation("Invalid language", currentLang), "neutralText")
-                    End If
+                    SetLang(words(1))
+                    Done = True
                 End If
 
             ElseIf words(0) = "chmotd" Then

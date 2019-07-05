@@ -76,6 +76,7 @@ Module PageViewer
             'Write the body
             For Each line As String In Pages(title).Body.ToString.Replace(Chr(13), "").Split(Chr(10))
                 Dim MkNewLineNec As Boolean = True
+                Dim oldWord As String = ""
 
                 'Check for line that starts with a space
                 If line.StartsWith(" ") Or line.StartsWith(vbTab) Then
@@ -103,9 +104,6 @@ Module PageViewer
                             If vbNewLineRequired = True Then vbNewLineRequired = False
                         End If
 
-                        'Store the old height
-                        oldTop = Console.CursorTop
-
                         'Check the word is there is color
                         For Each Word_color As String In splitWords_COLORS_dict.Keys
                             If Word_color = word.Replace(vbTab, "") Then 'If the word in the dictionary matches one in word in the body, set the color
@@ -129,13 +127,21 @@ Module PageViewer
 
                         'Check for "" on word variable, and make newline if it's necessary.
                         If word = "" And MkNewLineNec = True Then
-                            Wdbg("Making newline... They are necessary.")
-                            word = vbNewLine
+                            If oldWord = "" Then
+                                Wdbg("Making newline... They are necessary.")
+                                word = vbNewLine
+                            Else
+                                MkNewLineNec = False
+                            End If
                         End If
 
                         'Write words
                         Console.Write(word + " ")
                         Console.ForegroundColor = OriginalFG_INFO
+                        oldWord = word
+
+                        'Store the old height
+                        oldTop = Console.CursorTop
                     Next
                 Else
                     writtenLines += 1

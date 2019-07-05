@@ -142,7 +142,7 @@ Fail yang dimuat turun {0}.
 Muat turun gagal untuk fail {0} kerana fail tempatan rosak.
 Anda mesti menyambung ke pelayan sebelum melakukan penghantaran.
 Masukkan fail untuk dimuat turun ke direktori setempat.
-{0} | Diubah suai dalam: {1}
+{0} KB | Diubah suai dalam: {1}
 Anda harus menyambung ke pelayan sebelum menyenaraikan semua fail terpencil.
 Menamakan semula fail {0} ke {1} ...
 Diubah nama dengan jayanya

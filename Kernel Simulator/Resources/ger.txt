@@ -142,7 +142,7 @@ Heruntergeladene Datei {0}.
 Der Download für die Datei {0} ist fehlgeschlagen, weil die lokale Datei beschädigt ist.
 Sie müssen eine Verbindung zum Server herstellen, bevor Sie die Übertragung durchführen.
 Geben Sie eine Datei zum Herunterladen in das lokale Verzeichnis ein.
-{0} | Geändert in: {1}
+{0} KB | Geändert in: {1}
 Sie sollten eine Verbindung zum Server herstellen, bevor Sie alle Remote-Dateien auflisten.
 Umbenennen der Datei {0} in {1} ...
 Erfolgreich umbenannt

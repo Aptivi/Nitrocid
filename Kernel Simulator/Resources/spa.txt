@@ -142,7 +142,7 @@ Archivo descargado {0}.
 La descarga falló para el archivo {0} porque el archivo local está dañado.
 Debe conectarse al servidor antes de realizar la transmisión.
 Introduzca un archivo para descargar en el directorio local.
-{0} | Modificado en: {1}
+{0} KB | Modificado en: {1}
 Debe conectarse al servidor antes de listar todos los archivos remotos.
 Renombrando archivo {0} a {1} ...
 Renombrado exitosamente

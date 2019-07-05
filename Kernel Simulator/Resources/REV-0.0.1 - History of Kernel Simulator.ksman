@@ -759,13 +759,22 @@ KS 0.0.6.2b
 
 1. Added a command named `sses` to list all SSE versions
 
-KS 0.0.6.3, the current version
+KS 0.0.6.3
 
 1. Fixed `quiet` not being entirely quiet
 2. Fixed messages not appearing after signing in (ex. Adding user message)
 3. Allowed changing language using command
 4. Fixed the help text showing after executing `sses`
 5. Added Czech language
+
+KS 0.0.6.4, the current version
+
+1. Fixed NullReferenceException when changing language
+2. Fixed massive documentation newlines when trying to parse an empty word that is not on the beginning (Please note that we still have newline issues in the first line)
+3. Added Ubuntu Theme
+4. Removed unused flag
+5. Removed extra requirement to parse colors on boot (removed greed)
+6. Made reading FTP file size human-readable
 -BODY END-
 
 -SECTIONS-
@@ -817,4 +826,5 @@ KS 0.0.6.2=>SE1
 KS 0.0.6.2a=>SE1
 KS 0.0.6.2b=>SE1
 KS 0.0.6.3=>SE1
+KS 0.0.6.4, the current version=>SE1
 -SECTIONS END-

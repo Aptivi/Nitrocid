@@ -142,7 +142,7 @@ daunalod kee gaee fail {0}.
 fail {0} ke lie asaphal daunalod kyonki sthaaneey fail dooshit hai.
 traansamishan karane se pahale aapako sarvar se kanekt hona chaahie.
 sthaaneey nirdeshika mein daunalod karane ke lie ek fail darj karen.
-{0} | mein sanshodhit: {1}
+{0} KB | mein sanshodhit: {1}
 sabhee doorasth failon ko soocheebaddh karane se pahale aapako sarvar se kanekt karana chaahie.
 fail {0} se {1} ka naam badal raha hai ...
 saphalataapoorvak naamaankit

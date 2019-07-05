@@ -142,7 +142,7 @@ Ladattu tiedosto {0}.
 Lataus epäonnistui tiedostoon {0}, koska paikallinen tiedosto on vioittunut.
 Sinun on muodostettava yhteys palvelimeen ennen lähetyksen suorittamista.
 Syötä ladattava tiedosto paikalliseen hakemistoon.
-{0} | Muutettu: {1}
+{0} KB | Muutettu: {1}
 Sinun pitäisi muodostaa yhteys palvelimeen, ennen kuin luet kaikki etätiedostot.
 Tiedoston {0} nimeäminen {1}: ksi ...
 Nimeä uudelleen onnistuneesti

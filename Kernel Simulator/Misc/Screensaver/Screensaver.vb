@@ -91,7 +91,6 @@ Public Module Screensaver
     End Sub
 
     Sub Matrix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Matrix.DoWork
-        'TODO: At this time, the matrix is basic and only prints zeroes and ones. The advanced matrix will be on 0.0.6. (cancelled)
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.Green
         Console.Clear()

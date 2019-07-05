@@ -142,7 +142,7 @@ Stažený soubor {0}.
 Stažení souboru {0} se nezdařilo, protože místní soubor je poškozen.
 Před přenosem se musíte připojit k serveru.
 Zadejte soubor ke stažení do lokálního adresáře.
-{0} | Upraveno v: {1}
+{0} KB | Upraveno v: {1}
 Před zápisem všech vzdálených souborů byste se měli připojit k serveru.
 Přejmenování souboru {0} na {1} ...
 Úspěšně přejmenováno

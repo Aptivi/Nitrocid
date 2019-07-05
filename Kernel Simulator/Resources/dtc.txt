@@ -142,7 +142,7 @@ Gedownload bestand {0}.
 Downloaden mislukt voor bestand {0} omdat het lokale bestand corrupt is.
 U moet verbinding maken met de server voordat u verzendt.
 Voer een bestand in om te downloaden naar de lokale map.
-{0} | Gewijzigd in: {1}
+{0} KB | Gewijzigd in: {1}
 U moet verbinding maken met de server voordat u alle externe bestanden opslaat.
 Naam van bestand {0} in {1} wijzigen ...
 Hernoemd succesvol

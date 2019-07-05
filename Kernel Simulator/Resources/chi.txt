@@ -142,7 +142,7 @@ Yǐ xiàzài wénjiàn {0}.
 Wénjiàn {0} de xià zǎi shībài, yīn wéi běndì wénjiàn yǐ sǔnhuài.
 Nín bìxū zài zhíxíng chuánshū zhīqián liánjiē dào fúwùqì.
 Shūrù yào xiàzài dào běndì mùlù de wénjiàn.
-{0} |Xiūgǎi yú:{1}
+{0} KB | Xiūgǎi yú: {1}
 Nín yīnggāi zài liè chū suǒyǒu yuǎnchéng wénjiàn zhīqián liánjiē dào fúwùqì.
 Jiāng wénjiàn {0} zhòng mìngmíng wèi {1}...
 Yǐ chénggōng zhòng mìngmíng

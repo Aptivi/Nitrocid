@@ -142,7 +142,7 @@ Henüz herhangi bir sunucuya bağlanmadınız
 Yerel dosya bozuk olduğu için indirme işlemi {0} için başarısız oldu.
 İletim gerçekleştirmeden önce sunucuya bağlanmanız gerekir.
 Yerel dizine indirmek için bir dosya girin.
-{0} | Değiştirildi: {1}
+{0} KB | Değiştirildi: {1}
 Tüm uzak dosyaları listelemeden önce sunucuya bağlanmanız gerekir.
 {0} dosyasını {1} olarak yeniden adlandırılıyor ...
 Başarıyla yeniden adlandırıldı

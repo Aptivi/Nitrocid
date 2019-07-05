@@ -142,7 +142,7 @@ Nedladdad fil {0}.
 Hämtningen misslyckades för filen {0} eftersom den lokala filen är korrupt.
 Du måste ansluta till servern innan du utför överföring.
 Ange en fil som ska hämtas till den lokala katalogen.
-{0} | Ändrad i: {1}
+{0} KB | Ändrad i: {1}
 Du bör ansluta till servern innan du listar alla fjärrfiler.
 Byter namn på filen {0} till {1} ​​...
 Renamed framgångsrikt

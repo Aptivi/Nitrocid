@@ -142,7 +142,7 @@ File scaricato {0}.
 Download non riuscito per il file {0} perché il file locale è corrotto.
 È necessario connettersi al server prima di eseguire la trasmissione.
 Inserisci un file da scaricare nella directory locale.
-{0} | Modificato in: {1}
+{0} KB | Modificato in: {1}
 È necessario connettersi al server prima di elencare tutti i file remoti.
 Rinominare il file {0} in {1} ...
 Rinominato con successo

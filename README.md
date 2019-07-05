@@ -136,6 +136,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **6/26/2019 - 0.0.6.3:** Fixed `quiet` not being entirely quiet, Fixed messages not appearing after signing in (ex. Adding user message), Allowed changing language using command, Fixed the help text showing after executing `sses`, Added Czech language
 
+**6/28/2019 - 0.0.6.4:** Fixed NullReferenceException when changing language, Fixed massive documentation newlines when trying to parse an empty word that is not on the beginning (Please note that we still have newline issues in the first line), Added Ubuntu theme, Removed unused flag, Removed extra requirement to parse colors on boot (removed greed), Made reading FTP file size human-readable
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`
