@@ -767,7 +767,7 @@ KS 0.0.6.3
 4. Fixed the help text showing after executing `sses`
 5. Added Czech language
 
-KS 0.0.6.4, the current version
+KS 0.0.6.4
 
 1. Fixed NullReferenceException when changing language
 2. Fixed massive documentation newlines when trying to parse an empty word that is not on the beginning (Please note that we still have newline issues in the first line)
@@ -775,6 +775,12 @@ KS 0.0.6.4, the current version
 4. Removed unused flag
 5. Removed extra requirement to parse colors on boot (removed greed)
 6. Made reading FTP file size human-readable
+
+KS 0.0.6.4a, the current version
+
+1. Fixed Linux hardware probing failing even if succeeded
+2. Fixed RAM prober showing MemTotal: prefix
+3. Made message about libcpanel-json-xs-perl clear
 -BODY END-
 
 -SECTIONS-
@@ -826,5 +832,6 @@ KS 0.0.6.2=>SE1
 KS 0.0.6.2a=>SE1
 KS 0.0.6.2b=>SE1
 KS 0.0.6.3=>SE1
-KS 0.0.6.4, the current version=>SE1
+ks 0.0.6.4=>SE1
+KS 0.0.6.4a, the current version=>SE1
 -SECTIONS END-

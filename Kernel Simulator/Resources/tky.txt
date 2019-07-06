@@ -347,3 +347,4 @@ Hata ayıklama günlüğündeki her şeyi siler
 SSE versiyonlarını alır
 Geçersiz dil
 Dili değiştir
+Sisteminizde yüklü libcpanel-json-xs-perl olmayabilir. Kurulum için paket yöneticinize başvurun. Debian (ve türevleri) sistemleri için, terminal emülatöründe "sudo apt install libcpanel-json-xs-perl" komutunu çalıştırmak isteyebilirsiniz. Bir hatanın diğer detayları:

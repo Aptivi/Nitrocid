@@ -347,3 +347,4 @@ Odstraní vše v protokolu ladění
 Získá verze SSE
 Neplatný jazyk
 Změní jazyk
+Nemusíte mít v systému nainstalován libcpanel-json-xs-perl. Informace o instalaci získáte od správce balíčků. Pro systémy Debian (a deriváty) můžete v emulátoru terminálu spustit "sudo apt install libcpanel-json-xs-perl". Další podrobnosti o chybě:

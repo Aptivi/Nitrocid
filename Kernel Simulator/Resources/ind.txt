@@ -347,3 +347,4 @@ deebag log mein sab kuchh hataata hai
 SSE sanskaran ho jaata hai
 amaany bhaasha
 bhaasha badal jaatee hai
+aapake paas apane sistam par libchpanail-json-xs-pairl sthaapit nahin ho sakata hai. sthaapana ke lie apane paikej prabandhak ka sandarbh len. debiyan (aur derivetiv) sistam ke lie, aap tarminal emuletar mein "sudo apt install libchpanail-json-xs-pairl" chalaana chaah sakate hain. ek truti ke adhik vivaran:

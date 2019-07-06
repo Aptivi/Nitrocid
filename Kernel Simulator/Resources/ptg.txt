@@ -347,3 +347,4 @@ Exclui tudo no log de depuração
 Obtém versões do SSE
 Idioma inválido
 Muda de idioma
+Você pode não ter o libcpanel-json-xs-perl instalado em seu sistema. Consulte o seu gerenciador de pacotes para instalação. Para sistemas Debian (e derivados), você pode querer rodar "sudo apt install libcpanel-json-xs-perl" no emulador de terminal. Mais detalhes de um erro:

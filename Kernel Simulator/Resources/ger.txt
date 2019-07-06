@@ -347,3 +347,4 @@ Löscht alles im Debug-Protokoll
 Ruft SSE-Versionen ab
 Ungültige Sprache
 Ändert die Sprache
+Möglicherweise ist libcpanel-json-xs-perl nicht auf Ihrem System installiert. Informationen zur Installation erhalten Sie von Ihrem Paketmanager. Für Debian-Systeme (und Derivate) möchten Sie möglicherweise "sudo apt install libcpanel-json-xs-perl" im Terminal-Emulator ausführen. Weitere Details zu einem Fehler:

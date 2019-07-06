@@ -347,3 +347,4 @@ Poistaa kaiken debug-lokissa
 Saat SSE-versiot
 Virheellinen kieli
 Muuttaa kieltä
+Et ehkä ole asentanut libcpanel-json-xs-perl-järjestelmääsi. Katso asennuksen hallintaoppaasta. Debianin (ja johdannaisten) järjestelmissä saatat haluta suorittaa "sudo apt install libcpanel-json-xs-perl" pääteemulaattorissa. Lisätietoja virheestä:

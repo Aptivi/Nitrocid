@@ -347,3 +347,4 @@ Hiermee verwijdert u alles in het logboek voor foutopsporing
 Krijgt SSE-versies
 Ongeldige taal
 Verandert de taal
+Mogelijk hebt u libcpanel-json-xs-perl niet op uw systeem geïnstalleerd. Raadpleeg uw pakketbeheerder voor installatie. Voor Debian (en derivaten) systemen, zou u "sudo apt install libcpanel-json-xs-perl" in de terminalemulator willen kunnen uitvoeren. Meer details over een fout:

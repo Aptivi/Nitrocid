@@ -347,3 +347,4 @@ Menghapus semua dalam log debug
 Mendapatkan versi SSE
 Bahasa tidak sah
 Perubahan bahasa
+Anda mungkin tidak mempunyai libcpanel-json-xs-perl yang dipasang pada sistem anda. Rujuk kepada pengurus pakej anda untuk pemasangan. Untuk sistem Debian (dan derivatif), anda mungkin mahu menjalankan "sudo apt install libcpanel-json-xs-perl" dalam emulator terminal. Maklumat lanjut tentang ralat:

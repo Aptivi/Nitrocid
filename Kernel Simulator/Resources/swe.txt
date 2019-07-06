@@ -347,3 +347,4 @@ Tar bort allt i felsökningsloggen
 Får SSE-versioner
 Ogiltigt språk
 Ändrar språk
+Du kanske inte har libcpanel-json-xs-perl installerad på ditt system. Se din pakethanterare för installation. För Debian (och derivat) -system kanske du vill köra "sudo apt install libcpanel-json-xs-perl" i terminalemulatorn. Mer detaljer om ett fel:

@@ -24,12 +24,12 @@ Public Module HardwareProbe
     'TODO: Re-write in Beta
     Public Sub ProbeHW(Optional ByVal QuietHWProbe As Boolean = False)
         Wdbg("QuietHWProbe = {0}.", QuietHWProbe)
-        
+
         If Not QuietHWProbe Then
             Wln(DoTranslation("hwprobe: Your hardware will be probed. Please wait...", currentLang), "neutralText")
             StartProbing()
         Else
-            If Not EnvironmentOSType.Contains("Unix") then
+            If Not EnvironmentOSType.Contains("Unix") Then
                 ProbeHardware()
             Else
                 ProbeHardwareLinux()
@@ -39,7 +39,7 @@ Public Module HardwareProbe
 
     Public Sub StartProbing()
         'We will probe hardware
-        If Not EnvironmentOSType.Contains("Unix") then
+        If Not EnvironmentOSType.Contains("Unix") Then
             ProbeHardware()
         Else
             ProbeHardwareLinux()
@@ -64,14 +64,14 @@ Public Module HardwareProbe
         End If
 
         'Print information about the probed hardware
-        If Not EnvironmentOSType.Contains("Unix") then
+        If Not EnvironmentOSType.Contains("Unix") Then
             ListDrivers()
         Else
             ListDrivers_Linux()
         End If
     End Sub
     '----------> Windows hardware probers <----------
-    
+
     Public Sub ListDrivers()
         'Variables
         Dim times As Integer = 1
@@ -202,20 +202,28 @@ Public Module HardwareProbe
     'This uses inxi to get information about HDD. If you don't have it installed, use your appropriate package manager to install inxi or build from source.
 
     Public Sub ProbeHardwareLinux()
+        'Done sets
+        HDDDone = True
+        CPUDone = True
+        RAMDone = True
+
         'CPU Prober
         Try
             Dim cpuinfo As New StreamReader("/proc/cpuinfo")
-            Dim Name = "", Clock = "", ln As String
+            Dim Name = "", Clock = "", SSE2 = False, ln As String
             Do While Not cpuinfo.EndOfStream
                 ln = cpuinfo.ReadLine()
-                If ln.StartsWith("model name" + vbTab + ": ") Then
+                If ln.StartsWith("model name") Then
                     Name = ln.Replace("model name" + vbTab + ": ", "")
-                ElseIf ln.StartsWith("cpu MHz" + vbTab + vbBack + ":") Then
-                    Clock = ln.Replace("cpu Mhz" + vbTab + vbTab + ": ", "")
-                    Exit Do
+                ElseIf ln.StartsWith("cpu MHz") Then
+                    Clock = ln.Substring(ln.IndexOfAny({"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}))
+                ElseIf ln.StartsWith("flags") Then
+                    If ln.Contains("sse2") Then
+                        SSE2 = True
+                    End If
                 End If
             Loop
-            CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name})
+            CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name, .SSE2 = SSE2})
         Catch ex As Exception
             CPUDone = False
             If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
@@ -224,39 +232,48 @@ Public Module HardwareProbe
         'RAM Prober
         Try
             Dim raminfo As New StreamReader("/proc/meminfo")
-            RAMList.Add(New RAM_Linux With {.Capacity = raminfo.ReadLine()})
+            Dim mem As String = raminfo.ReadLine()
+            mem = mem.Substring(mem.IndexOfAny({"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}))
+            RAMList.Add(New RAM_Linux With {.Capacity = mem})
         Catch ex As Exception
             RAMDone = False
             If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
         End Try
 
-        'HDD Prober
+        'HDD Prober (You need to have inxi and libcpanel-json-xs-perl installed)
         Try
             Dim inxi As New Process
             Dim inxinfo As New ProcessStartInfo With {.FileName = "/usr/bin/inxi", .Arguments = "-D --output json --output-file print",
-                                                      .WindowStyle = ProcessWindowStyle.Hidden, 
+                                                      .WindowStyle = ProcessWindowStyle.Hidden,
                                                       .CreateNoWindow = True,
                                                       .UseShellExecute = False,
                                                       .RedirectStandardOutput = True}
             inxi.StartInfo = inxinfo
             inxi.Start() : inxi.WaitForExit()
-            Dim inxitoken As JToken = JToken.Parse(inxi.StandardOutput.ReadToEnd())
+            Dim inxiout As String = inxi.StandardOutput.ReadToEnd
+            If Not inxiout.StartsWith("{") And Not inxiout.EndsWith("}") Then 'If an error appeared while running perl
+                HDDDone = False
+                Wdbg(inxiout)
+                Wln(DoTranslation("You may not have libcpanel-json-xs-perl installed on your system. Refer to your package manager for installation. For Debian (and derivatives) systems, you might want to run ""sudo apt install libcpanel-json-xs-perl"" in the terminal emulator. More details of an error:", currentLang) + vbNewLine + inxiout, "neutralText")
+                Exit Sub
+            End If
+            Dim inxitoken As JToken = JToken.Parse(inxiout)
             Dim inxiReady As Boolean = False
             For Each inxidrvs In inxitoken.SelectToken("000#Drives")
                 If inxiReady Then
-                    HDDList.Add(New HDD_Linux With{.Size_LNX = inxidrvs("004#size"), .Model_LNX = inxidrvs("003#model"), .Vendor_LNX = inxidrvs("002#vendor")})
+                    HDDList.Add(New HDD_Linux With {.Size_LNX = inxidrvs("004#size"), .Model_LNX = inxidrvs("003#model"), .Vendor_LNX = inxidrvs("002#vendor")})
                 End If
                 inxiReady = True
             Next
         Catch ex As Exception
             HDDDone = False
-            If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+            If DebugMode = True Then Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace)
         End Try
     End Sub
     Sub ListDrivers_Linux()
         'CPU List
         For Each info As CPU_Linux In CPUList
-            Wln("CPU: {0} {1}", "neutralText", info.CPUName, info.Clock)
+            Wln("CPU: {0} {1} Mhz", "neutralText", info.CPUName, info.Clock)
         Next
 
         'HDD List

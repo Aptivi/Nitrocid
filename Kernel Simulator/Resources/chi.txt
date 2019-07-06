@@ -347,3 +347,4 @@ Shānchú tiáoshì rìzhì zhōng de suǒyǒu nèiróng
 Huòqǔ SSE bǎnběn
 Yǔyán wúxiào
 gǎibiàn yǔyán
+Nín de xìtǒng shàng kěnéng méiyǒu ānzhuāng libcpanel-json-xs-perl. Qǐng cānyuè bāo guǎnlǐ qì yǐ jìnxíng ānzhuāng. Duìyú Debian(hé yǎnshēng chǎnpǐn) xìtǒng, nín kěnéng xīwàng zài zhōngduān fǎngzhēn qì zhōng yùnxíng “sudo apt install libcpanel-json-xs-perl”. Cuòwù de gèng duō xìjié:

@@ -347,3 +347,4 @@ Elimina tutto nel registro di debug
 Ottiene le versioni SSE
 Lingua non valida
 Cambia lingua
+Non è possibile installare libcpanel-json-xs-perl sul sistema. Fare riferimento al proprio gestore di pacchetti per l'installazione. Per i sistemi Debian (e derivati), è possibile eseguire "sudo apt install libcpanel-json-xs-perl" nell'emulatore di terminale. Maggiori dettagli su un errore:

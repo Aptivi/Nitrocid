@@ -42,6 +42,7 @@ Module HardwareVars
         Inherits CPU
         Public CPUName As String
         Public Clock As String
+        Public SSE2 As Boolean
     End Class
 
     'then RAM
