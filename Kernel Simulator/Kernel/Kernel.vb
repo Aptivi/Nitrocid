@@ -37,6 +37,13 @@ Public Module Kernel
         Try
             'A title
             Console.Title = "Kernel Simulator v" & KernelVersion & " - Compiled on " & GetCompileDate()
+            InitPaths()
+
+            'Download debug symbols if not found (loads automatically)
+            If Not IO.File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
+                Dim pdbdown As New WebClient
+                pdbdown.DownloadFile("https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/" + KernelVersion + ".pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+            End If
 
             'Initialize everything
             InitEverything()

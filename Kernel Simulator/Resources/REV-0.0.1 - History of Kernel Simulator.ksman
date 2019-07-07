@@ -776,11 +776,15 @@ KS 0.0.6.4
 5. Removed extra requirement to parse colors on boot (removed greed)
 6. Made reading FTP file size human-readable
 
-KS 0.0.6.4a, the current version
+KS 0.0.6.4a
 
 1. Fixed Linux hardware probing failing even if succeeded
 2. Fixed RAM prober showing MemTotal: prefix
 3. Made message about libcpanel-json-xs-perl clear
+
+KS 0.0.6.4b, the current version
+
+1. Made one preparation for 0.0.6.5: Downloading debug symbols on startup if not found
 -BODY END-
 
 -SECTIONS-
@@ -833,5 +837,6 @@ KS 0.0.6.2a=>SE1
 KS 0.0.6.2b=>SE1
 KS 0.0.6.3=>SE1
 ks 0.0.6.4=>SE1
-KS 0.0.6.4a, the current version=>SE1
+KS 0.0.6.4a=>SE1
+KS 0.0.6.4b, the current version=>SE1
 -SECTIONS END-

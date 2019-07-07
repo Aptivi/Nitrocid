@@ -263,8 +263,7 @@ Public Module KernelTools
     End Sub
 
     Sub InitEverything()
-        'Initialize paths and help
-        InitPaths()
+        'Initialize help
         InitHelp()
 
         'We need to create a file so InitAliases() won't give out an error

@@ -140,6 +140,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **7/6/2019 - 0.0.6.4a:** Fixed Linux hardware probing failing even if succeeded, Fixed RAM prober showing MemTotal: prefix, Made message about libcpanel-json-xs-perl clear
 
+**7/7/2019 - 0.0.6.4b:** Made one preparation for 0.0.6.5: Downloading debug symbols on startup if not found
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation`
