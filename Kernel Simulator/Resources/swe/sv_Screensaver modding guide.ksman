@@ -1,0 +1,425 @@
+(*MAN START*)
+
+-TITLE:Sk??rmsl??ckare modding guide
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Vad ??r sk??rmsl??ckaren f??r k??rnan?
+
+Sk??rmsl??ckaren ??r den inaktiva processen som aktiveras om din dator gick i vilol??ge. 
+
+Sk??rmsl??ckaren kan ocks?? anpassas, och vi l??r dig hur du g??r din f??rsta sk??rmsl??ckare, att g??ra fr??n den enklaste sk??rmsl??ckaren till legendariska.
+
+Grundl??ggande modding (sk??rmsl??ckare)
+
+0. Hur g??r du dina egna sk??rmsl??ckare p?? Visual Studio 2017?
+
+1. Upprepa steg 1-8 fr??n Modding-guiden
+2. Klicka p?? Bygg h??ndelser i avsnittet Kompilera och skriv det sedan p?? kommandoraden Post-build-h??ndelse:
+- kopiera .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (S??tt SS framf??r .m s?? att KS k??nner igen det som en sk??rmsl??ckare och inte som mod)
+- del / Q *. * (f??r att se till att det inte skapas n??gra dummy-DLL-filer eftersom vi inte anv??nder DLL f??r mods)
+3. Upprepa steg 9-16 fr??n Modding-guiden, men ers??tt Imports Kernel_Simulator.ModParser med Imports Kernel_Simulator.Screensaver
+4. Mellan raderna Public Class ... och End Class, l??t Visual Studio 2017 veta att du kommer att skapa din KS-sk??rmsl??ckare genom att skriva: Implementerar ICustomSaver
+5. Om du ska l??gga till namnomr??den m??ste dessa regler vara uppfyllda:
+1) Importera inte Kernel_Simulator av sig sj??lv. 
+2) N??r du importerar moduler / klasser som TextWriterColor, skrivs det s?? h??r: Importerar Kernel_Simulator.TextWriterColor
+6. Definiera egenskaper f??r modinformation genom att l??gga ned Implements IScript:
+Egendom initierad som booleska implementationer ICustomSaver.Initialized
+7. G??r din init-sk??rmsl??ckareund med namnet InitSaver () som implementerar ICustomSaver.InitSaver genom att skriva:
+Sub InitSaver () Implementerar ICustomSaver.InitSaver
+"Din kod h??r
+Initialiserat = Sant 'L??gg det var som helst i suben om du g??r om villkor, annars l??mna det h??r.
+Avsluta under
+8. Byt ut alla kommentarer fr??n din kod h??r med din kod. 
+9. G??r din f??rdisplay (kallas innan sk??rmsl??ckaren visas) som heter PreDisplay () som implementerar ICustomSaver.PreDisplay genom att skriva:
+Sub PreDisplay () Implementerar ICustomSaver.PreDisplay
+"Din kod h??r
+Avsluta under
+10. G??r din visningskod (den ska visa n??got) under som heter ScrnSaver () som implementerar ICustomSaver.ScrnSaver genom att skriva:
+Sub ScrnSaver () Implementerar ICustomSaver.ScrnSaver
+"Din kod h??r
+Avsluta under
+11. Du kan g??ra dina abonnemang var som helst i klassen, men om:
+1) de ??r i den olika klassen, tryck p?? Enter p?? End Class och g??r en offentlig ny klass som lagrar nya under:
+Public Class AnotherClass
+"Dina definitioner nedan, och s?? dina subs, funktioner, gr??nssnitt, etc.
+Slutklass
+2) de f??rs??ker ??terinitiera sk??rmsl??ckaren genom att ringa om InitSaver (), prova s?? med testmilj??n f??rst, sedan produktionsmilj??n om det fungerade korrekt.
+Och f??ljande villkor b??r uppfyllas:
+1) De b??r inte g??ra en o??ndlig slinga om du inte g??r dem som g??r ut om angivna villkor ??r uppfyllda
+2) De b??r inte f??rs??ka orsaka fel med k??rnan.
+3) S??tt ditt subsamtal p?? en av de tre delarna som implementerar ICustomSaver-gr??nssnittet. 
+12. K??r byggandet. 
+13. K??r din Kernel Simulator som du just har h??nvisat till i ditt projekt, och ladda, st??lla in standard och l??s dina scren och din sk??rmsl??ckare ??r d??r.
+
+1. Meddelandel??dan i konsolen och snart, ??ver natten eller of??rsk??md (g?? bort ...) meddelanden
+
+Sk??rmsl??ckaren i den bakre meddelandel??dan ber??ttar f??r folk att dator??garen ??r borta, eller att ??garen ber??ttar att de borde f??rsvinna eftersom det finns viktiga saker som h??nder i deras datorer. 
+
+1. H??gerklicka p?? projektet och g?? till L??gg till> Klass
+2. Namnge din sk??rmsl??ckare, men l??t .vb vara intakt. 
+3. Klicka p?? L??gg till, s?? kommer koden att vara klar.
+4. Skriv nedan (Antag att ditt modnamn ??r SOR) Public Class SOR: Implementerar ICustomSaver
+5. Skriv ovan Public Class SOR:
+- Importsystem
+- Importsystem. Tr??dning
+- Importerar Kernel_Simulator.Screensaver
+- Importerar Kernel_Simulator.TextWriterColor
+- Importerar Kernel_Simulator.Login
+6. Du b??r f?? fel med att s??ga att dessa subs b??r skapas.
+7. G??r din h??ndelsehanterare f??r sk??rmsl??ckare genom att skriva:
+Egendom initierad som booleska implementationer ICustomSaver.Initialized
+Sub InitSaver () Implementerar ICustomSaver.InitSaver
+Wln ("Ladda den h??r sk??rmsl??ckaren med" "loadsaver SORSS.m" "och" "setaver SORSS.m" "", "neutralText")
+Initialiserat = Sant
+Avsluta under
+8. Eftersom vi inte implementerar n??gonting innan vi visar sk??rmsl??ckare kommer vi att l??mna detta tomt:
+Sub PreDisplay () Implementerar ICustomSaver.PreDisplay
+Avsluta under
+9. Skriv ovan fastigheten som initieras ...:
+Public SOR_Random As New Random () 'Initierar slumptalsgeneratorn
+Public S_Random As New Random () 'Initierar slumptalsgeneratorn
+Public O_Random As New Random () 'Initierar generator f??r slumpm??ssigt nummer
+Public R_Random As New Random () 'Initierar slumptalsgeneratorn
+9. Skriv under ScrnSaver ():
+Console.Clear ()
+Om Custom.CancellationPending = Sant d?? "Detta kommer att l??sa problemet f??r uppgiften ??r upptagen.
+Avsluta f??r
+Sluta om
+Dim SOR_Integer Som heltal = SOR_Random.N??sta (1, 4) 'V??ljer om det ??r snart, ??ver natten eller of??rsk??mt
+Dim Soon_MsgID som heltal = SOR_Random.N??sta (0, 2) 'V??ljer meddelanden i den snart arrayen
+Dim Over_MsgID Som heltal = SOR_Random.N??sta (0, 2) 'V??ljer meddelanden i matchen ??ver natten
+Dim Rude_MsgID som heltal = SOR_Random.N??sta (0, 3) 'V??ljer meddelanden i Rude-matrisen
+Console.SetWindowPosition (0, 1)
+V??lj ??rende SOR_Integer
+Fall 1 'Snart
+WritMsg (SOR_Integer, Soon_MsgID)
+Fall 2 '??vernattning
+WritMsg (SOR_Integer, Over_MsgID)
+Fall 3 "Rude
+WritMsg (SOR_Integer, Rude_MsgID)
+Avsluta V??lj
+Thread.sleep (10 tusen)
+11. Du kanske m??ste skapa en funktion och 2 sub f??r att detta ska fungera. 
+Public Shared Function ParsePlaces (ByVal text As String)
+text = text. Ers??tt ("<OWNER>", signinusrnm)
+Returnera text
+Avsluta funktion
+Public Shared Sub InitializeBar (ByVal strlen som heltal)
+W ("-", "neutralText")
+F??r l som heltal = 0 Till strlen - 1
+W ("-", "neutralText")
+N??sta
+Wln ("-", "neutralText")
+Avsluta under
+Public Shared Sub WritMsg (ByVal TypeID som heltal, ByVal MsgID som heltal)
+Dim BackMessages As String () = {"<OWNER> kommer snart tillbaka.", "<OWNER> ??r upptagen. Han kommer snart tillbaka."}
+Dim OvernightMsg As String () = {"Det verkar som att <OWNER> kommer tillbaka ??ver natten", "Han kommer tillbaka ??ver natten."}
+Dim RudeMessages As String () = {"Kan du g?? bort?", "G?? bort, <OWNER> kommer snart tillbaka", "<OWNER> ??r inte h??r. G?? bort."}
+Dim text som str??ng = ""
+V??lj Fall TypeID
+Fall 1
+text = ParsePlaces (BackMessages (MsgID))
+Fall 2
+text = ParsePlaces (OvernightMsg (MsgID))
+Fall 3
+text = ParsePlaces (RudeMessages (MsgID))
+Avsluta V??lj
+InitializeBar (text.Length)
+Wln ("| {0} |", "neutralText", text)
+InitializeBar (text.Length)
+Avsluta under
+12. Koden ska se ut s?? h??r:
+Importsystem
+Importerar system. Tr??dning
+Importerar Kernel_Simulator.Screensaver
+Importerar Kernel_Simulator.TextWriterColor
+Importerar Kernel_Simulator.Login
+Public Class SoonOvernightRude
+Implementerar ICustomSaver
+Egendom initierad som booleska implementationer ICustomSaver.Initialized
+Public SOR_Random As New Random () 'Initierar slumptalsgeneratorn
+Public S_Random As New Random () 'Initierar slumptalsgeneratorn
+Public O_Random As New Random () 'Initierar generator f??r slumpm??ssigt nummer
+Public R_Random As New Random () 'Initierar slumptalsgeneratorn
+Sub InitSaver () Implementerar ICustomSaver.InitSaver
+Wln ("St??ll in denna sk??rmsl??ckare som standard med" "setaver SORSS.m" "", "neutralText")
+Initialiserat = Sant
+Avsluta under
+Sub PreDisplay () Implementerar ICustomSaver.PreDisplay
+Avsluta under
+Sub ScrnSaver () Implementerar ICustomSaver.ScrnSaver
+Console.Clear ()
+Om Custom.CancellationPending = Sant d?? "Detta kommer att l??sa problemet f??r uppgiften ??r upptagen.
+Avsluta f??r
+Sluta om
+Dim SOR_Integer Som heltal = SOR_Random.N??sta (1, 4) 'V??ljer om det ??r snart, ??ver natten eller of??rsk??mt
+Dim Soon_MsgID som heltal = S_Random.N??sta (0, 2) 'V??ljer meddelanden i den snart arrayen
+Dim Over_MsgID som heltal = O_Random.N??sta (0, 2) 'V??ljer meddelanden i matchen ??ver natten
+Dim Rude_MsgID som heltal = R_Random.N??sta (0, 3) 'V??ljer meddelanden i Rude-matrisen
+Console.SetCursorPosition (0, 1)
+V??lj ??rende SOR_Integer
+Fall 1 'Snart
+WritMsg (SOR_Integer, Soon_MsgID)
+Fall 2 '??vernattning
+WritMsg (SOR_Integer, Over_MsgID)
+Fall 3 "Rude
+WritMsg (SOR_Integer, Rude_MsgID)
+Avsluta V??lj
+Thread.sleep (10 tusen)
+Avsluta under
+Public Shared Function ParsePlaces (ByVal text As String)
+text = text. Ers??tt ("<OWNER>", signinusrnm)
+Returnera text
+Avsluta funktion
+Public Shared Sub InitializeBar (ByVal strlen som heltal)
+W ("-", "neutralText")
+F??r l som heltal = 0 Till strlen - 1
+W ("-", "neutralText")
+N??sta
+Wln ("-", "neutralText")
+Avsluta under
+Public Shared Sub WritMsg (ByVal TypeID som heltal, ByVal MsgID som heltal)
+Dim BackMessages As String () = {"<OWNER> kommer snart tillbaka.", "<OWNER> ??r upptagen. Han kommer snart tillbaka."}
+Dim OvernightMsg As String () = {"Det verkar som att <OWNER> kommer tillbaka ??ver natten", "Han kommer tillbaka ??ver natten."}
+Dim RudeMessages As String () = {"Kan du g?? bort?", "G?? bort, <OWNER> kommer snart tillbaka", "<OWNER> ??r inte h??r. G?? bort."}
+Dim text som str??ng = ""
+V??lj Fall TypeID
+Fall 1
+text = ParsePlaces (BackMessages (MsgID))
+Fall 2
+text = ParsePlaces (OvernightMsg (MsgID))
+Fall 3
+text = ParsePlaces (RudeMessages (MsgID))
+Avsluta V??lj
+InitializeBar (text.Length)
+Wln ("| {0} |", "neutralText", text)
+InitializeBar (text.Length)
+Avsluta under
+Slutklass
+13. K??r byggandet. 
+14. K??r din Kernelsimulator som du just har refererat till i ditt projekt, och ladda, st??ll in som standard och k??r sparsk??rm.
+
+2. Enkel blank sk??rm
+
+1. Upprepa steg 1-4 i det f??rsta exemplet: Meddelanderuta i konsolen och snart, ??ver natten eller of??rsk??md (g?? bort ...) meddelanden
+2. Skriv ovan Public Class Blank (f??rutsatt att ditt klassnamn ??r Tomt):
+- Importsystem
+- Importerar Kernel_Simulator.Screensaver
+3. Skriv dessa nedanf??r Implements ICustomSaver:
+Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+Public Sub InitSaver () Implementerar ICustomSaver.InitSaver
+Initialiserat = Sant
+Avsluta under
+Public Sub PreDisplay () Implementerar ICustomSaver.PreDisplay
+Avsluta under
+Public Sub ScrnSaver () Implementerar ICustomSaver.ScrnSaver
+
+Avsluta under
+4. Skriv in ScrnSaver-sub:
+Console.Clear ()
+5. Koden ska se ut s?? h??r:
+Importsystem
+Importerar Kernel_Simulator.Screensaver
+Offentlig klass tom
+Implementerar ICustomSaver
+Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+Public Sub InitSaver () Implementerar ICustomSaver.InitSaver
+Initialiserat = Sant
+Avsluta under
+Public Sub PreDisplay () Implementerar ICustomSaver.PreDisplay
+Avsluta under
+Public Sub ScrnSaver () Implementerar ICustomSaver.ScrnSaver
+Console.Clear ()
+Avsluta under
+Slutklass
+5. Upprepa stegen 13-14 i det f??rsta exemplet: Meddelanderuta i konsolen och snart, ??ver natten eller of??rsk??md (g?? bort ...) meddelanden
+
+3. Animering (ritningscirkel - 4 ramar - 4 FPS)
+
+Detta exempel kommer att komma ig??ng med animationerna. 
+
+Importsystem
+Importerar Microsoft.VisualBasic.Constants
+Importerar Kernel_Simulator.TextWriterColor
+Importerar system. Tr??dning
+Importerar Kernel_Simulator.Screensaver
+Public Class ANI
+Implementerar ICustomSaver
+Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+Public CurrentStep som heltal
+Public Sub InitSaver () Implementerar ICustomSaver.InitSaver
+Initialiserat = Sant
+Avsluta under
+Public Sub PreDisplay () Implementerar ICustomSaver.PreDisplay
+Avsluta under
+Public Sub ScrnSaver () Implementerar ICustomSaver.ScrnSaver
+F??r CurrentStep = 0 till 3
+Console.Clear ()
+Om Custom.CancellationPending = Sant d?? "Detta kommer att l??sa problemet f??r uppgiften ??r upptagen.
+Avsluta f??r
+Sluta om
+Wln (aniset (CurrentStep), "neutralText")
+Thread.sleep (150)
+N??sta
+Avsluta under
+
+Public aniset As String () = {"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"",
+"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"oMMh" vbNewLine
+"mMM" vbNewLine
+"yMMm`" vbNewLine
+"` hMMN- "vbNewLine
+"` oMMMd. "vbNewLine
+".: odMMMm /" vbNewLine
+"mNMMMMMNy:" vbNewLine
+"mmhhs / -",
+"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"hMMo oMMh" vbNewLine
+"MMm mMM" vbNewLine
+"mMMy yMMm`" vbNewLine
+"-NMMh`` hMMN- "vbNewLine
+".dMMMs` `oMMMd." vbNewLine
+"/ dMMMdo :.: odMMMm /" vbNewLine
+": yNMMMMMNmmNMMMMMNy:" vbNewLine
+"- / shhmmmmhhs / -",
+"- / oydmmmmhyo / -" vbNewLine
+": yNMMMMMNmmNMMMMMNy:" vbNewLine
+": dMMMdo :.: odMMMd /" vbNewLine
+".dMMMs .oMMMd." vbNewLine
+"-NMMh`` hMMN- "vbNewLine
+"mMMy yMMm`" vbNewLine
+"MMm mMM" vbNewLine
+"hMMo oMMh" vbNewLine
+"hMMo oMMh" vbNewLine
+"MMm mMM" vbNewLine
+"mMMy yMMm`" vbNewLine
+"-NMMh`` hMMN- "vbNewLine
+".dMMMs` `oMMMd." vbNewLine
+"/ dMMMdo :.: odMMMm /" vbNewLine
+": yNMMMMMNmmNMMMMMNy:" vbNewLine
+"- / shhmmmmhhs / -"}
+Slutklass
+
+4. Ber??kna fr??n 0 till 1 000 000 med framstegsf??ltet (dynamiskt)
+
+Importsystem
+Importerar Microsoft.VisualBasic.Constants
+Importerar Kernel_Simulator.TextWriterColor
+Importerar Microsoft.VisualBasic.Strings
+Importerar Kernel_Simulator.Screensaver
+Public Class Dynamic
+Implementerar ICustomSaver
+Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+Allm??nna resurser som heltal
+Offentligt progWent som heltal
+Offentlig kontroll som heltal
+Offentlig gammal check som heltal
+Public Sub InitSaver () Implementerar ICustomSaver.InitSaver
+Initialiserat = Sant
+Avsluta under
+Public Sub PreDisplay () Implementerar ICustomSaver.PreDisplay
+Avsluta under
+Public Sub ScrnSaver () Implementerar ICustomSaver.ScrnSaver
+Console.Clear ()
+F??r res = 0 till 1000000
+Om Custom.CancellationPending = Sant d?? "Detta kommer att l??sa problemet f??r uppgiften ??r upptagen.
+Avsluta f??r
+Sluta om
+Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 5)
+ShowStats ()
+N??sta
+Kontrollera = 0: oldCheck = 0: ProgWent = 0
+Avsluta under
+Public Sub ShowStats ()
+Wln ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+UpdateProgressBar (Res * 100/1000000)
+Avsluta under
+Public Sub UpdateProgressBar (ByVal procent som str??ng)
+Kontrollera = procent / 5
+Wln (Kontrollera, "neutralText")
+Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
+W ("--------------------", "neutralText")
+Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
+W ("|", "neutralText")
+Om Kontrollera <> oldCheck Then
+F??r gick som heltal = 0 till ProgWent
+W ("*", "neutralText")
+N??sta
+ProgWent = 1
+Sluta om
+Console.SetCursorPosition ((Console.WindowWidth / 2) 11, (Console.WindowHeight / 2) - 2)
+W ("|", "neutralText")
+Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 1)
+W ("--------------------", "neutralText")
+oldCheck = procent / 5
+Avsluta under
+Slutklass
+
+Fler exempel
+
+Om du vill kolla in fler exempel, k??nn dig fri att kolla in dem i KSModExamples arkiv i mappen Sk??rmsl??ckare i GitHub.
+-BODY END-
+
+-COLOR CONFIGURATION-
+screensaver=>Green
+savescreen=>DarkGreen
+Modding guide=>Green
+Compile=>Cyan
+Build Events=>Cyan
+Post-build event=>Green
+End Class=>Cyan
+Public Class...=>Cyan
+Visual Studio 2017=>Magenta
+Imports Implements=>Cyan
+ICustomSaver=>Green
+Kernel_Simulator=>Cyan
+TextWriterColor=>Green
+Kernel_Simulator.TextWriterColor=>Green
+Property As Boolean Sub=>Cyan
+Initialized ICustomSaver.Initialized=>Green
+Kernel Simulator=>Green
+Rude=>Red
+KSModExamples Screensavers GitHub=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the screensaver for the kernel?=>SE1
+Basic modding (screensaver)=>SE1
+0. How to make your own screensavers on Visual Studio 2017?=>SE2
+1. In-Console Message Box, and Soon, Overnight, or Rude (Go away...) messages=>SE2
+2. Simple Blank screen=>SE2
+3. Animation (Drawing Circle - 4 frames - 4 FPS)=>SE2
+4. Calculate from 0 to 1,000,000 with progress bar (dynamic)=>SE2
+More examples=>SE1
+-SECTIONS END-

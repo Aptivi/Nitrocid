@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "sysinfo"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl sysinfo
+
+Zusammenfassung: Ruft Ihre Systeminformationen ab
+
+Beschreibung
+
+Mit diesem Befehl k??nnen Sie Ihre Kernelkonfiguration sowie Ihre MOTD-, MAL-, Host-, Benutzer- und Hardwareinformationen anzeigen.
+
+Dieser Befehl ist n??tzlich f??r Fehlerberichte und Absturzberichte.
+
+Befehlsverwendung
+
+* sysinfo
+-BODY END-
+
+-COLOR CONFIGURATION-
+sysinfo=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+sysinfo command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

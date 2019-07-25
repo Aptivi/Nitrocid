@@ -1,0 +1,44 @@
+(*MAN START*)
+
+-TITLE:P????kaz Shell "setthemes"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+p????kaz setthemes
+
+Shrnut??: Nastav?? motiv
+
+Popis
+
+J??dro m????ete p??izp??sobit pomoc?? motiv??, kter?? obsahuj?? sady barev pro nastaven?? barev. 
+
+* V??choz??: V??choz?? sada barev j??dra
+* RedConsole: Konzola bude po nastaven?? ??erven??
+* Bluespire: U??ijte si modrou konzoli
+* Hacker: Pokud jste hacker, nastavte toto t??ma tak, aby konzole vypadala jako hackovac?? konzole (zelen?? matice)
+LinuxUncolored: Simuluje neobarven?? prost??ed?? Linuxu (bash)
+* LinuxColoredDef: Simuluje barevn?? prost??ed?? Linuxu (bash)
+
+Pou??it?? p????kaz??
+
+* setthemes (t??ma)
+
+P????klady
+
+* setthemes Hacker
+* setthemes Bluespire
+-BODY END-
+
+-COLOR CONFIGURATION-
+setthemes (Theme)=>Green
+setthemes Hacker=>Yellow
+setthemes Bluespire=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setthemes command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

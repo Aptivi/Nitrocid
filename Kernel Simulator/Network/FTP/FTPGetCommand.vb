@@ -1,5 +1,4 @@
-﻿
-'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
+﻿'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -16,8 +15,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Threading
-
 Public Module FTPGetCommand
 
     'Progress Bar Enabled
@@ -27,20 +24,19 @@ Public Module FTPGetCommand
     Public ClientFTP As FtpClient
 
     'To enable progress
-    Public Complete As New Progress(Of Double)(Function(percentage)
-                                                   'If the progress is not defined, disable progress bar
-                                                   If percentage < 0 Then
-                                                       progressFlag = False
-                                                   Else
-                                                       ConsoleOriginalPosition_LEFT = Console.CursorLeft
-                                                       ConsoleOriginalPosition_TOP = Console.CursorTop
-                                                       If progressFlag = True And percentage <> 100 Then
-                                                           W("{0}%", "neutralText", FormatNumber(percentage, 1))
-                                                       End If
-                                                       Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
-                                                   End If
-                                                   Thread.Sleep(500)
-                                               End Function)
+    Public Complete As New Progress(Of FtpProgress)(Sub(percentage)
+                                                        'If the progress is not defined, disable progress bar
+                                                        If percentage.Progress < 0 Then
+                                                            progressFlag = False
+                                                        Else
+                                                            ConsoleOriginalPosition_LEFT = Console.CursorLeft
+                                                            ConsoleOriginalPosition_TOP = Console.CursorTop
+                                                            If progressFlag = True And percentage.Progress <> 100 Then
+                                                                W("{0}% (ETA: {1} @ {2})             ", "neutralText", FormatNumber(percentage.Progress, 1), percentage.ETA, percentage.TransferSpeedToString)
+                                                            End If
+                                                            Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
+                                                        End If
+                                                    End Sub)
 
     Public Sub ExecuteCommand(ByVal cmd As String)
 
@@ -114,11 +110,7 @@ Public Module FTPGetCommand
                 If cmd <> "changelocaldir" Or cmd <> "cdl" Then
                     'Check if folder exists
                     Dim targetDir As String
-                    If EnvironmentOSType.Contains("Unix") Then
-                        targetDir = currDirect + "/" + strArgs
-                    Else
-                        targetDir = currDirect + "\" + strArgs
-                    End If
+                    targetDir = currDirect + "/" + strArgs
                     If IO.Directory.Exists(targetDir) Then
                         'Parse written directory
                         Dim parser As New IO.DirectoryInfo(targetDir)
@@ -198,7 +190,7 @@ Public Module FTPGetCommand
                             W(DoTranslation("Downloading file {0}...", currentLang), "neutralText", strArgs)
 
                             'Try to download 3 times
-                            ClientFTP.DownloadFile(currDirect + strArgs, strArgs, True, FtpVerify.Retry + FtpVerify.Throw, Complete)
+                            ClientFTP.DownloadFile($"{currDirect}/{strArgs}", strArgs, True, FtpVerify.Retry + FtpVerify.Throw, Complete)
 
                             'Show a message that it's downloaded
                             Console.WriteLine()
@@ -221,11 +213,7 @@ Public Module FTPGetCommand
                 Dim working As String
                 If cmd <> "listlocal" Or cmd <> "lsl" Then
                     'List local directory that is not on the current directory
-                    If EnvironmentOSType.Contains("Unix") Then
-                        working = currDirect + "/" + strArgs
-                    Else
-                        working = currDirect + "\" + strArgs
-                    End If
+                    working = $"{currDirect}/{strArgs}"
                     ListLocal(working)
                 Else
                     'List current local directory
@@ -238,7 +226,7 @@ Public Module FTPGetCommand
                         Dim FileSize As Long
                         Dim ModDate As DateTime
                         For Each DirListFTP As FtpListItem In ClientFTP.GetListing(strArgs)
-                            W("- " + DirListFTP.FullName, "neutralText")
+                            W($"- {DirListFTP.FullName}", "neutralText")
                             If DirListFTP.Type = FtpFileSystemObjectType.File Then
                                 W(": ", "neutralText")
                                 FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
@@ -255,7 +243,7 @@ Public Module FTPGetCommand
                         Dim FileSize As Long
                         Dim ModDate As DateTime
                         For Each DirListFTP As FtpListItem In ClientFTP.GetListing(currentremoteDir)
-                            W("- " + DirListFTP.FullName, "neutralText")
+                            W($"- {DirListFTP.FullName}", "neutralText")
                             If DirListFTP.Type = FtpFileSystemObjectType.File Then
                                 W(": ", "neutralText")
                                 FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
@@ -287,14 +275,14 @@ Public Module FTPGetCommand
             ElseIf cmd.Substring(0, index) = "upload" Or cmd.Substring(0, index) = "put" Then
                 If cmd <> "upload" Or cmd <> "put" Then
                     If connected = True Then
-                        Wln(DoTranslation("Uploading file {0}...", currentLang), "neutralText", strArgs.Substring(strArgs.IndexOf(" ")))
+                        Wln(DoTranslation("Uploading file {0}...", currentLang), "neutralText", strArgs)
 
                         'Begin the uploading process
-                        ClientFTP.UploadFile(currDirect + args(0), strArgs.Substring(strArgs.IndexOf(" ")), True, True, FtpVerify.Retry, Complete)
+                        ClientFTP.UploadFile($"{currDirect}/{strArgs}", strArgs, True, True, FtpVerify.Retry, Complete)
                         Console.WriteLine()
 
                         'Show a message
-                        Wln(vbNewLine + DoTranslation("Uploaded file {0}", currentLang), "neutralText", strArgs.Substring(strArgs.IndexOf(" ")))
+                        Wln(vbNewLine + DoTranslation("Uploaded file {0}", currentLang), "neutralText", strArgs)
                     Else
                         Wln(DoTranslation("You must connect to server before performing transmission.", currentLang), "neutralText")
                     End If

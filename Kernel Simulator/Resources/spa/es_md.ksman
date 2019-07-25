@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "md"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+md comando
+
+Resumen: puedes hacer tu directorio
+
+Descripci??n
+
+Si desea organizar sus archivos en una carpeta, debe crear una carpeta.
+
+Este comando le permite crear una carpeta en el directorio de trabajo actual.
+
+Uso del comando
+
+* md (folderName)
+
+Ejemplos
+
+* md Contrase??as: este comando crea una carpeta llamada "Contrase??as" en el directorio de trabajo actual
+-BODY END-
+
+-COLOR CONFIGURATION-
+md (folderName)=>Green
+md Passwords:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+md command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

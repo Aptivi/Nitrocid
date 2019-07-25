@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "lscomp"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah lscomp
+
+Ringkasan: Anda boleh menyenaraikan komputer, bahkan komputer luar talian, dalam kumpulan kerja dan domain
+
+Penerangan
+
+Jika anda perlu menyenaraikan komputer dalam kumpulan kerja atau domain, termasuk komputer luar talian jika komputer menyertai domain, anda boleh menggunakan arahan ini untuk mendapatkan semua komputer tanpa alamat IP mereka.
+
+Walau bagaimanapun jika anda perlu menyenaraikan komputer hanya jika mereka berada dalam talian, dan anda mahu mendapatkan alamat IP mereka, anda mungkin mahu mencari lsnet dan maklumat yang terdapat di "lsnet usermanual"
+
+Penggunaan perintah
+
+* lscomp
+-BODY END-
+
+-COLOR CONFIGURATION-
+lscomp=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lscomp command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

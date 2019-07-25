@@ -1,0 +1,51 @@
+﻿--------------- + -> Yleistä <- + --------------- |
+
+- Jos haluat osallistua ytimen simulaattoriin, alla olevia ehtoja on noudatettava:
+
+1. Jos haluat muokata / koodata ytimen ytimen, varmista, että kirjoitat muutokset oikein ja huolellisesti, varmista, että et vahingoita ytimen ydinominaisuuksia.
+2. Jos haluat lisätä / muokata / poistaa / muokata haluttuja ominaisuuksia kaikkialla, kirjoita muutokset huolellisesti.
+3. Kuten muutkin kehittäjät, jotka haluavat osallistua ytimen simulaattoriin, muutokset on testattava. Emme halua tuloksia, vain testata ja sanoa, että se on testattu. Jos haluat antaa tulokset, hyväksymme edelleen vetopyynnön.
+4. Jos et ole testannut sitä ja lähetit meille pyyntöä, testataan koodi ja jos havaitsemme, että:
+
+   - koodi toimii, hyväksymme vetopyynnön
+   - koodi ei toimi, suljetaan vetopyyntösi
+
+5. Jos et ole testannut sitä ja olet valmis lähettämään meille, testaa koodi ensin.
+6. Jos haluat muokata dokumentaatiota tai muita osia kuin koodausta tai lisätä osia / uutta dokumentaatiota, ota rohkeasti yhteyttä. Voit ilmoittaa meille.
+
+- Siirretään muille käyttöjärjestelmille tai ohjelmointikielille, jotka ovat muita kuin Assembly (ASM, NASM, ...) tai C / C ++ -kieli:
+
+Saatat joutua siirtämään ytimen simulaattorin toiseen käyttöjärjestelmään, kuten Linuxiin, macOSiin ja niin edelleen. Ja myös toiselle ohjelmointikielelle, joka on muu kuin C / C ++ tai Assembly kieli.
+
+ASM / C / C ++: n siirtäminen on meidän, omistajan, tehtävä. Meitä ei tueta kaikkia portteja ennen virallisen Kernel ASM / C / C + +: n käynnistettävää julkaisua, ja niihin liittyvät ongelmat hylätään välittömästi.
+
+- Jos haluat siirtää ytimen simulaattorin Linuxiin (testattu) tai macOS (testattomat) Visual Basiciin:
+
+1. Asenna Mono, MonoDevelop ja libmono-microsoft-visualbasic10.0-paketit. Voit selvittää, miten heidän virallisilla verkkosivuillaan.
+2. Lataa KS-lähdekoodi
+3. Avaa ratkaisu MonoDevelopin avulla ja suorita ohjelma.
+4. Ilmoita kaikista ongelmista KS-repo-osiossa.
+
+- Jos haluat siirtää ytimen simulaattorin Sun-käyttöjärjestelmään, BSD: eihin, Solarisiin jne.
+
+Tämä osa on rakenteilla. Jos sinulla on ohjeita, ota yhteyttä.
+
+Huomautus: Jos haluat siirtää ytimen simulaattorin toiselle ohjelmointikielelle, joka ei ole yhtä suuri kuin Assembly tai C / C ++, voit vapaasti.
+Huomautus: Kernelin siirtäminen Kernel Simulator -laitteeseen Real Computer / VirtualBoxiin asennetaan kokoonpanolla ja C / C ++: lla.
+Huomautus: Kernelin siirtäminen simulaattorin sisällä Android / iOS-järjestelmään on OK. Voit tehdä tarvittavat muutokset.
+
+| --------------- + -> Muut maksut, ongelmat jne. <- + --------------- |
+
+- Raportointikysymykset
+
+Noudata vikailmoituksen suunnittelumallia ja selitä niin paljon kuin mahdollista. Vähemmän tarkat selitykset ja väärä suunnittelumalli saattavat sulkea ongelman. Kuvakaappaukset ovat valinnaisia.
+
+| --------------- + -> Tehtäväluettelo ytimen simulaattorin lisäämiseen <- + --------------- |
+
+Jos jotkut ajatukset katoavat, niin se joko tehdään tai peruutetaan. (Tämä osio poistetaan 0.0.7: llä ja siirretään VS2019: n tehtäväluetteloon.)
+
+1. Interaktiivinen isäntäjärjestelmätiedostonhallinta (suunniteltu käynnistettävässä versiossa)
+2. Siirrä kaikki yksittäiset asiakirjat Wikiin arkistossa, mukaan lukien manuaaliset sivut, jolloin manuaaliset sivukomennot avaavat verkkosivuston Wikille (suunnitellut 0.0.7)
+3. Pysyvä luettelo käyttäjätunnuksista ja salasanoista (salasanat salatussa muodossa - beetassa)
+
+(Jos sinulla on ideoita, muokkaa tätä osiota lisäämällä ideasi.)

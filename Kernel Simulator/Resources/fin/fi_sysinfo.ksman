@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "sysinfo"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+sysinfo-komento
+
+Yhteenveto: Antaa j??rjestelm??n tiedot
+
+Kuvaus
+
+T??m??n komennon avulla voit n??hd?? ytimen kokoonpanon sek?? MOTD: n, MAL: n, is??nt??nimen, k??ytt??j??nimen ja laitteiston tiedot.
+
+T??m?? komento on hy??dyllinen vikailmoituksia ja kaatumisraportteja varten.
+
+Komennon k??ytt??
+
+* sysinfo
+-BODY END-
+
+-COLOR CONFIGURATION-
+sysinfo=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+sysinfo command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

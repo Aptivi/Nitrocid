@@ -31,7 +31,7 @@ Module GetModCommand
         Next
         If cmd.StartsWith(parts(0) + " ") Then
             'These below will be executed if there is arguments
-            Dim args As String = cmd.Replace(parts(0) + " ", "")
+            Dim args As String = cmd.Replace($"{parts(0)} ", "")
             scripts(actualCmd).PerformCmd(args)
         Else
             'This will be executed if there is no arguments

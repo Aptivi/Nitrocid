@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "perm"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perm-komento
+
+Yhteenveto: Hallitsee k??ytt??j??n tai muiden k??ytt??jien oikeuksia
+
+Kuvaus
+
+Jos haluat hallita k??ytt??j??n tai muiden k??ytt??jien oikeuksia tai haluat est???? k??ytt??j??n kirjautumisen sis????n, k??yt?? t??t?? komentoa.
+
+T??m??n komennon avulla voit hallita k??ytt??oikeuksia riippumatta siit??, onko j??rjestelm??nvalvojan oikeudet k??yt??ss?? tai poissa k??yt??st?? vai onko k??ytt??j?? poistettu k??yt??st?? vai ei.
+
+Komennon k??ytt??
+
+* perm (userName) (Admin / Disabled) (Salli / poista k??yt??st??)
+
+esimerkit
+
+* perm joe Admin Allow: Sen avulla "joe" p????see hallinnollisiin komentoihin
+* perm joe Disabled Allow: Se aiheuttaa "joe": n keskeytt??misen
+* perm joe Admin Disallow: Se poistaa "joe" k??yt??st?? hallintakomentojen k??ytt??miseksi
+* perm joe Disabled Ei k??yt??ss??: Se mahdollistaa "joe": n kirjautumisen
+-BODY END-
+
+-COLOR CONFIGURATION-
+perm (userName) (Admin/Disabled) (Allow/Disallow)=>Green
+perm joe Admin Allow:=>Yellow
+perm joe Disabled Allow=>Yellow
+perm joe Admin Disallow:=>Yellow
+perm joe Disabled Disallow:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+perm command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

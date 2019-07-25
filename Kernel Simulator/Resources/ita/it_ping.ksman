@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Comando shell "ping"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando ping
+
+Riepilogo: verifica se il server ?? offline / online
+
+Descrizione
+
+Se non riesci a raggiungere il server, o se vuoi sapere se ?? offline o online, o se vuoi vedere quanto ?? lontano il sito web, usa questo comando.
+
+Questo comando consente di inviare la richiesta ping al server e il server risponde se ?? online. 
+
+Utilizzo del comando
+
+* ping (indirizzo)
+* ping (indirizzo) [repeatTimes]
+
+Esempi
+
+* ping 127.0.0.1 3: esegue il ping "localhost" 3 volte
+* ping www.google.com 5: esegue il ping di www.google.com 5 volte
+* ping 192.168.1.105: esegue il ping di 192.168.1.105 una volta
+-BODY END-
+
+-COLOR CONFIGURATION-
+ping (Address)=>Green
+ping (Address) [repeatTimes]=>Green
+ping 127.0.0.1 3:=>Yellow
+ping www.google.com 5:=>Yellow
+ping 192.168.1.105:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+ping command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

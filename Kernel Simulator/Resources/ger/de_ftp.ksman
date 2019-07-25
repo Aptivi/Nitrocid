@@ -1,0 +1,33 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "ftp"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+FTP-Befehl
+
+Zusammenfassung: Sie k??nnen mit der FTP-Shell (File Transfer Protocol) interagieren, um eine Verbindung zu einem Server herzustellen und Dateien zu ??bertragen
+
+Beschreibung
+
+Sie k??nnen die FTP-Shell verwenden, um eine Verbindung zu Ihrem FTP-Server herzustellen, oder die ??ffentlichen FTP-Server, um mit den auf dem Server gefundenen Dateien zu interagieren.
+
+Sie k??nnen Dateien auf Ihren Computer herunterladen, Dateien auf den Server hochladen, Dateien durch Umbenennen, L??schen usw. verwalten und so weiter.
+
+Weitere Informationen zur Interaktion mit der Shell und ihren Befehlen finden Sie unter "Benutzerhandbuch zur FTP-Shell und ihren Befehlen".
+
+Befehlsverwendung
+
+* ftp
+-BODY END-
+
+-COLOR CONFIGURATION-
+ftp=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+ftp command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

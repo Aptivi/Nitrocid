@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "unitconv"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando unitconv
+
+Riepilogo: converte le unit?? in un'altra unit??
+
+Descrizione
+
+Puoi convertire le tue unit?? sorgente in un'altra unit?? senza dover usare Internet.
+
+Se invece devi convertire la valuta, usa il comando "valuta".
+
+L'unit?? di origine deve essere supportata dall'unit?? di destinazione (ad es. Km a cm) per convertire il valore fornito, altrimenti non pu?? essere convertita. 
+
+Utilizzo del comando
+
+* unitconv (sourceUnit) (destinazione) (valore)
+
+Esempi
+
+* unitconv GB B 50: converte file da 50 GB in kilobyte
+* unitconv Celsius Fahrenheit 36: converte i gradi 36C in Fahrenheit
+* unitconv pollici piedi 19: converte 19 pollici in piedi
+-BODY END-
+
+-COLOR CONFIGURATION-
+unitconv (sourceUnit) (destination) (value)=>Green
+unitconv GB B 50:=>Yellow
+unitconv Celsius Fahrenheit 36:=>Yellow
+unitconv Inches Feet 19:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+unitconv command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Shell-kommandot "lista"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+listkommando
+
+Sammanfattning: Du kan lista inneh??llet i den aktuella katalogen eller den angivna mappen
+
+Beskrivning
+
+Om du inte vet vad som finns i katalogen eller i den aktuella katalogen kan du anv??nda det h??r kommandot f??r att lista mappinneh??ll p?? det f??rgglada s??ttet.
+
+Kommandobruk
+
+* lista
+* lista [katalog]
+
+exempel
+
+* lista: Det h??r kommandot visar det aktuella inneh??llet i arbetskatalogen
+* lista ..: Detta kommando visar inneh??llet i ??verordnade mappar fr??n den aktuella katalogen
+* list boot: Detta kommando listar "boot" -mappen fr??n den aktuella arbetskatalogen, f??rutsatt att arbetskatalogen ??r /
+-BODY END-
+
+-COLOR CONFIGURATION-
+list=>Green
+list [directory]=>Green
+list:=>Yellow
+list ..:=>Yellow
+list boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+list command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

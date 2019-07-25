@@ -1,0 +1,145 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Introduction au noyau
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Quel est le noyau? 
+
+Le noyau en g??n??ral est un programme informatique qui constitue le c??ur du syst??me d???exploitation d???un ordinateur, avec un contr??le total sur tout le syst??me. 
+
+Cependant, Kernel Simulator est la premi??re application de simulation, et non pas d'??mulation, capable de simuler ce type de comportement, ?? l'exception du fait qu'elle est limit??e, car nous sommes toujours au stade Alpha. Elle vous montre ??galement comment le noyau a ??t?? am??lior?? et construit. 
+
+L'histoire d'Unix et de Linux.
+
+Qu'est-ce que Unix? 
+
+Unix est une famille de syst??mes d???exploitation informatiques multit??ches et multi-utilisateurs d??riv??s du syst??me AT original.
+
+Initialement destin?? ?? ??tre utilis?? dans le syst??me Bell, AT
+
+Les origines d'Unix remontent au milieu des ann??es 1960, lorsque le Massachusetts Institute of Technology, Bell Labs et General Electric d??veloppaient Multics, un syst??me d'exploitation ?? temps partag?? pour l'ordinateur central GE-645. 
+
+Le nouveau syst??me d'exploitation ??tait un syst??me ?? t??che unique. 
+
+Le syst??me d'exploitation ??tait ?? l'origine ??crit en langage assembleur, mais en 1973, la version 4 d'Unix a ??t?? r????crite en C. La version 4 d'Unix, cependant, contenait encore de nombreux codes d??pendants du PDP-11 et ne pouvait pas ??tre transf??r??e. 
+
+Les laboratoires Bell ont produit plusieurs versions d'Unix qui sont collectivement appel??es Research Unix. 
+
+?? la fin des ann??es 1970 et au d??but des ann??es 1980, l???influence d???Unix dans les milieux universitaires a conduit ?? l???adoption ?? grande ??chelle d???Unix (BSD et System V) par de nouvelles entreprises, notamment Sequent, HP-UX, Solaris, AIX et Xenix. 
+
+Dans les ann??es 1990, la popularit?? des syst??mes Unix et de syst??mes similaires ?? Unix a gagn?? en popularit??, car les distributions BSD et Linux ont ??t?? d??velopp??es gr??ce ?? la collaboration d'un r??seau mondial de programmeurs. 
+
+Qu'en est-il de Linux?
+
+Linux est une famille de syst??mes d???exploitation logiciels libres et ?? code source ouvert construits autour du noyau Linux. 
+
+En 1991, alors qu???il fr??quentait l???Universit?? d???Helsinki, Torvalds s???int??ressait aux syst??mes d???exploitation. 
+
+Torvalds a commenc?? le d??veloppement du noyau Linux sur MINIX et des applications ??crites pour MINIX ??taient ??galement utilis??es sur Linux. 
+
+Linus Torvalds avait voulu appeler son invention Freax, un porte-monnaie de free, freak et x (comme une allusion ?? Unix). 
+
+Afin de faciliter le d??veloppement, les fichiers ont ??t?? t??l??charg??s sur le serveur FTP (ftp.funet.fi) de FUNET en septembre 1991. Ari Lemmke, coll??gue de Torvalds ?? l'Universit?? de technologie d'Helsinki (HUT), l'un des administrateurs b??n??voles 
+
+L???adoption de Linux dans les environnements de production, au lieu d?????tre utilis??e uniquement par des amateurs, a commenc?? ?? s???implanter au milieu des ann??es 90 dans la communaut?? des supercalculateurs, o?? des organisations telles que la NASA ont commenc?? ?? remplacer leurs machines de plus en plus co??teuses par des grappes d???ordinateurs peu co??teux fonctionnant sous Linux. 
+
+Aujourd'hui, les syst??mes Linux sont utilis??s dans tous les domaines de l'informatique, des syst??mes int??gr??s ?? la quasi-totalit?? des superordinateurs, et se sont taill??s une place de choix dans les installations de serveurs telles que la pile d'applications LAMP. 
+
+Le plus grand succ??s de Linux sur le march?? grand public est peut-??tre le march?? des appareils mobiles, Android ??tant l???un des syst??mes d???exploitation les plus r??pandus sur les smartphones et tr??s populaire sur les tablettes et, plus r??cemment, sur les p??riph??riques portables. 
+
+Greg Kroah-Hartman est le responsable principal du noyau Linux et guide son d??veloppement. 
+
+Les fournisseurs et les communaut??s Linux associent et distribuent le noyau, les composants GNU et les composants non-GNU, avec un logiciel de gestion de paquets suppl??mentaire sous la forme de distributions Linux.
+
+Br??ve description de notre noyau aka Eofla Kernel
+
+Le noyau est construit ?? partir de z??ro et la premi??re version publique de Simulator a ??t?? construite le 23 f??vrier 2018. Actuellement, le simulateur saisit les informations sur le mat??riel via Windows Management Instrumentation (WMI) qui fournit toutes les informations relatives ?? votre mat??riel, y compris le processeur, la m??moire vive 
+
+Actuellement, il dispose d'une fonctionnalit?? de d??bogage qui corrige le noyau et le sauvegarde dans un fichier. 
+
+Sources
+
+1. https://en.wikipedia.org/wiki/Kernel_(operating_system)
+2. https://en.wikipedia.org/wiki/Unix
+3. https://en.wikipedia.org/wiki/Linux
+-BODY END-
+
+-COLOR CONFIGURATION-
+Kernel Simulator=>Yellow
+Simulation=>Green
+Emulation=>Red
+Alpha=>Red
+Unix=>Green
+Bell Labs=>DarkGreen
+Ken Thompson, Dennis Ritchie=>DarkGreen
+System=>DarkGreen
+AT&T=>DarkGreen
+University California Berkeley (BSD), Microsoft (Xenix), IBM (AIX), Sun Microsystems (Solaris)=>DarkGreen
+Novell=>DarkGreen
+Santa Cruz Operation (SCO)=>DarkGreen
+Open Group=>DarkGreen
+Apple's=>Gray
+Massachusetts Institute Technology=>DarkGreen
+General Electric=>DarkGreen
+Multics=>DarkGreen
+GE-645=>Red
+Douglas McIlroy, Joe Ossanna=>DarkGreen
+Unics Uniplexed Information Computing Service=>DarkGreen
+Multiplexed Computer Services=>DarkGreen
+Doug Peter G. Neumann=>DarkGreen
+Kernighan=>DarkGreen
+assembly language=>Magenta
+C=>Magenta
+Interdata 8/32=>Red
+Research=>DarkGreen
+Donald B. Gillies=>DarkGreen
+Illinois Department Science=>DarkGreen
+UIUC=>DarkGreen
+Greg Chesson=>DarkGreen
+Sequent, HP-UX, Solaris, AIX, Xenix=>DarkGreen
+Laboratories=>DarkGreen
+V Release 4 (SVR4)=>DarkGreen
+BSD=>DarkGreen
+Linux=>DarkGreen
+Darwin=>DarkGreen
+Mac OS X=>DarkMagenta
+macOS=>Magenta
+Linus=>DarkGreen
+Torvalds=>DarkGreen
+MINIX=>DarkGreen
+GNU=>Magenta
+GPL=>Magenta
+Freax=>DarkGreen
+free freak x=>Magenta
+ftp.funet.fi=>Blue
+FUNET=>DarkGreen
+Ari Lemmke=>DarkGreen
+Helsinki (HUT)=>DarkGreen
+NASA=>DarkGreen
+Dell=>DarkGreen
+Hewlett-Packard=>DarkGreen
+LAMP=>Magenta
+Google=>DarkGreen
+Chrome=>DarkGreen
+Android=>Green
+Valve=>Magenta
+Kroah-Hartman=>DarkGreen
+Stallman=>DarkGreen
+Free Software Foundation=>DarkGreen
+Windows Management Instrumentation (WMI)=>DarkGreen
+Unified Eofla SHell (UESH)=>DarkGreen
+InitiaOE=>DarkGreen
+uesh-maint=>DarkGreen
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the Kernel? How about Kernel Simulator?=>SE1
+The history of Unix and Linux.=>SE1
+What is Unix? and what happened in the past?=>SE2
+How about Linux?=>SE2
+Brief description for our Kernel aka Eofla Kernel=>SE1
+Sources=>SE1
+-SECTIONS END-

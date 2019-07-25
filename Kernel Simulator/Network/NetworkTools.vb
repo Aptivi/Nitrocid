@@ -156,7 +156,7 @@ Public Module NetworkTools
             de.Path = "WinNT://" & workgroup
             For Each d As DirectoryEntry In de.Children
                 If d.SchemaClassName = "Computer" Then
-                    Computers = Computers + " " + d.Name + " "
+                    Computers += $" {d.Name} "
                 End If
                 d.Dispose()
             Next

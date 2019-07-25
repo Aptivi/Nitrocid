@@ -1,0 +1,34 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Hujah kernel yang tersedia
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the kernel arguments that are available in the kernel is put.
+-BODY START-
+Bagaimana untuk menjalankan hujah? 
+
+Hujah kepada kernel adalah pilihan yang mana kernel atau bahagiannya akan bertindak secara berbeza berdasarkan pilihan yang telah anda pilih. 
+
+Anda boleh menjalankan hujah pada reboot seterusnya dengan menggunakan perintah arginj apabila pada shell. 
+
+Anda boleh membuat gesaan muncul dalam dua kaedah:
+
+1. Dengan menukar pilihan config "Prompt for Arguments on Boot" to True (Untuk maklumat lanjut mengenai config, gunakan "Fail konfigurasi usermanual untuk Kernel anda")
+2. Dengan menjalankan Simulator Kernel dengan argumen promptArgs cmdline (contohnya "Kernel Simulator.exe" promptArgs)
+
+Hujah yang berguna:
+
+1. nohwprobe: Melumpuhkan peranti keras automatik yang sedang diselidiki ketika boot ke kernel
+2. senyap: Jangan biarkan kernel mengatakan apa-apa pada boot
+3. cmdinject: Perintah yang dijalankan secara automatik apabila anda log masuk. Anda boleh memisahkan pelbagai arahan dengan menggunakan usus besar dengan ruang (ex. Cmdinject setthemes Bluespire: arginj debug)
+4. debug: Membolehkan mesej diagnostik pada kernel untuk membolehkan penyahpepijatan. 
+5. penyelenggaraan: Pergi ke mod selamat, mod tidak akan dimuat, dan screensaver tidak dapat dimuatkan.
+6. membantu: Memberi anda petua jika anda tidak pasti apa yang perlu dipisahkan
+-BODY END-
+
+-SECTIONS-
+How to run arguments? and how do I make the prompt appear?=>SE1
+Useful arguments:=>SE1
+-SECTIONS END-

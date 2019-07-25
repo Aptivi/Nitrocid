@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:FTP-opdracht "downloaden" of "krijgen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+download of krijg FTP-opdracht
+
+Samenvatting: downloadt een bestand uit de huidige werkdirectory
+
+Omschrijving
+
+Download het binaire of tekstbestand en sla het op in de huidige werkende lokale map zodat u het gedownloade bestand kunt gebruiken dat op de FTP-server wordt aangeboden.
+
+Commando gebruik
+
+* download / get (bestand)
+Voorbeelden
+
+* download text.txt: downloadt het tekstbestand met de naam "text.txt"
+* download shanghai.png: downloadt het binaire afbeeldingsbestand dat de Shanghai-stad in China toont en slaat het op naar "shanghai.png"
+-BODY END-
+
+-COLOR CONFIGURATION-
+download/get (file)=>Green
+download text.txt:=>Yellow
+get shanghai.png:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+download or get FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

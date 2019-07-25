@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:P????kaz Shell "unitconv"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+p????kaz unitconv
+
+Souhrn: P??evede jednotky na jinou jednotku
+
+Popis
+
+Zdrojov?? jednotky m????ete p??ev??st na jinou jednotku, ani?? byste museli pou????vat Internet.
+
+Pokud pot??ebujete p??ev??st m??nu, pou??ijte p????kaz "currency".
+
+Zdrojov?? jednotka mus?? b??t podporov??na c??lovou jednotkou (nap??. Km do cm), aby se p??evedla zadan?? hodnota, jinak ji nelze p??ev??st. 
+
+Pou??it?? p????kaz??
+
+* unitconv (sourceUnit) (c??l) (hodnota)
+
+P????klady
+
+* unitconv GB B 50: P??evede velikost souboru 50 GB na kilobajty
+* unitconv Celsius Fahrenheit 36: P??ev??d?? 36C stupn?? na Fahrenheit
+* unitconv Inches Feet 19: P??ev??d?? 19 palc?? na feets
+-BODY END-
+
+-COLOR CONFIGURATION-
+unitconv (sourceUnit) (destination) (value)=>Green
+unitconv GB B 50:=>Yellow
+unitconv Celsius Fahrenheit 36:=>Yellow
+unitconv Inches Feet 19:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+unitconv command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

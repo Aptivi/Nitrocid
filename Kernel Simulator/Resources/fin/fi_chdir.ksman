@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "chdir"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+chdir-komento
+
+Yhteenveto: Voit muuttaa nykyisen ty??hakemiston toiseen hakemistoon
+
+Kuvaus
+
+Voit vaihtaa ty??hakemiston toiseen hakemistoon suorittamaan luettelointikomentoja, poistamalla tiedostoja tai luomalla hakemistoja toiseen hakemistoon.
+
+Komennon k??ytt??
+
+* chdir (hakemisto)
+* chdir ..
+
+esimerkit
+
+* chdir boot: Se muuttaa ty??hakemistosi / boot-tilaan
+* chdir ..: Se palaa edelliseen ty??hakemistoon
+-BODY END-
+
+-COLOR CONFIGURATION-
+chdir <directory>=>Green
+chdir ..=>Green
+chdir boot:=>Yellow
+chdir ..:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chdir command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

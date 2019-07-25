@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell Befehl "lockscreen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl lockscreen
+
+Zusammenfassung: Sie k??nnen den Bildschirm mit dem Standard-Bildschirmschoner sperren, um Verbrennungen des Bildschirms zu vermeiden
+
+Beschreibung
+
+Sie k??nnen Ihren Bildschirm sperren und Ihren Standard-Bildschirmschoner anzeigen, um zu best??tigen, dass Sie abwesend sind und f??r eine Stunde oder l??nger ins Koma zur??ckkehren. 
+
+Befehlsverwendung
+
+* Sperrbildschirm
+-BODY END-
+
+-COLOR CONFIGURATION-
+lockscreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lockscreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

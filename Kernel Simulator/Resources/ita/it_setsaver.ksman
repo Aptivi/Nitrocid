@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "setsaver"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando setsaver
+
+Riepilogo: imposta il salvaschermo predefinito come salvaschermo o risparmiatori integrati
+
+Descrizione
+
+?? possibile impostare il salvaschermo predefinito come salvaschermo personalizzato dal file di mod o dai risparmiatori integrati come matrix, disco e colorMix.
+
+* matrice: visualizza la matrice di base che stampa tra 0 e 1 in colore verde del testo
+* disco: visualizza le luci della discoteca
+* colorMix: cambia il colore di sfondo nel colore casuale e stampa un "" per creare un blocco colorato e si ripete.
+
+Utilizzo del comando
+
+* setsaver ((ScreenSaverName) SS.m / matrix / disco / colorMix)
+
+Esempi
+
+* matrice setsaver
+* setsaver GameOfLifeSS.m
+* Setsaver LinesSS.m
+-BODY END-
+
+-COLOR CONFIGURATION-
+setsaver ((ScreenSaverName)SS.m/matrix/disco/colorMix)=>Green
+setsaver matrix=>Yellow
+setsaver GameOfLifeSS.m=>Yellow
+setsaver LinesSS.m=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setsaver command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

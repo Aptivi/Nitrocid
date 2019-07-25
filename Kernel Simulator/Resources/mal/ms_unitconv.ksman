@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "unitconv"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah unitconv
+
+Ringkasan: Menukar unit ke unit lain
+
+Penerangan
+
+Anda boleh menukar unit sumber anda ke unit lain tanpa perlu menggunakan Internet.
+
+Jika anda perlu menukar mata wang sebaliknya, gunakan arahan "mata wang".
+
+Unit sumber mesti disokong oleh unit destinasi (mis. Km hingga cm) untuk menukar nilai yang anda berikan, jika tidak, ia tidak boleh diubah. 
+
+Penggunaan perintah
+
+* unitconv (sourceUnit) (destinasi) (nilai)
+
+Contoh
+
+* unitconv GB B 50: Menukar saiz fail 50GB ke kilobytes
+* unitconv Celsius Fahrenheit 36: Menukar darjah 36C ke Fahrenheit
+* Unitconv Inci Feet 19: Menukar 19 inci ke feets
+-BODY END-
+
+-COLOR CONFIGURATION-
+unitconv (sourceUnit) (destination) (value)=>Green
+unitconv GB B 50:=>Yellow
+unitconv Celsius Fahrenheit 36:=>Yellow
+unitconv Inches Feet 19:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+unitconv command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

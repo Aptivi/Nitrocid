@@ -25,11 +25,7 @@ Public Module Filesystem
     'Subs
     Public Sub SetCurrDir(ByVal dir As String)
         Dim direct As String
-        If EnvironmentOSType.Contains("Unix") Then
-            direct = CurrDir + "/" + dir
-        Else
-            direct = CurrDir + "\" + dir
-        End If
+        direct = $"{CurrDir}/{dir}"
         If IO.Directory.Exists(direct) Then
             Dim Parser As New IO.DirectoryInfo(direct)
             CurrDir = Parser.FullName
@@ -45,7 +41,7 @@ Public Module Filesystem
             End While
         End Using
     End Sub
-    Public Sub Init()
+    Public Sub InitFS()
         CurrDir = paths("Home")
         InitStructure()
     End Sub
@@ -54,7 +50,7 @@ Public Module Filesystem
         CurrDirStructure.Add(CurrDir)
     End Sub
     Public Sub List(ByVal folder As String)
-        If Not folder = CurrDir Then folder = CurrDir + folder
+        If Not folder = CurrDir Then folder = $"{CurrDir}/{folder}"
         If CurrDirStructure.Contains(folder) Then
             If IO.Directory.Exists(folder) Then
                 For Each Entry As String In IO.Directory.EnumerateFileSystemEntries(folder)

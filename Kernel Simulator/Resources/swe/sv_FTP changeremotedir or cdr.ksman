@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:FTP-kommando "changeremotedir" eller "cdr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+changeremotedir eller cdr FTP-kommando
+
+Sammanfattning: ??ndrar din fj??rrkatalog
+
+Beskrivning
+
+Detta kommando l??ter dig ??ndra din fj??rrkatalog i din anslutna FTP-server till en annan katalog som finns i underkatalogen. 
+
+Kommandobruk
+
+* changeremotedir / cdr (katalog / ..)
+exempel
+
+* cdr X11 / GNOME: Detta kommer att ??ndra din fj??rrkatalog till X11 / GNOME
+* changelocaldir pub: Detta kommer att ??ndra din fj??rrkatalog till pub i din nuvarande arbetskatalog
+* cdr ..: Detta g??r till en ??verordnad katalog f??r den aktuella arbetskatalogen (g?? tillbaka)
+-BODY END-
+
+-COLOR CONFIGURATION-
+changeremotedir/cdr (directory/..)=>Green
+cdr X11/GNOME:=>Yellow
+changelocaldir pub:=>Yellow
+cdr ..:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+changeremotedir or cdr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

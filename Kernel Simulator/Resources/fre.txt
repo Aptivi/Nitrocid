@@ -348,3 +348,20 @@ Obtient les versions SSE
 Langue invalide
 Change de langue
 libcpanel-json-xs-perl n'est peut-être pas installé sur votre système. Reportez-vous à votre gestionnaire de paquets pour l'installation. Pour les systèmes Debian (et dérivés), vous pouvez exécuter "sudo apt install libcpanel-json-xs-perl" dans l'émulateur de terminal. Plus de détails d'une erreur:
+----------------------------- Dommage panique du noyau ------------------------------
+>> Information sur la panique <<
+> Description: {0}
+> Type d'erreur: {1}
+> Date et heure: {2}
+>> Information sur les exceptions <<
+> Exception: {0}
+> Description: {1}
+> HRESULT: {2}
+> Source: {3}
+> Trace de pile <
+>> Information sur l'exception interne {0} <<
+>> L'exception {0} est la cause première <<
+>> Pas d'exception; pourrait être une erreur du noyau. <<
+>> Cadres, fichiers, lignes et colonnes <<
+> Cadre {0}: Fichier: {1} | Ligne: {2} | Colonne: {3}
+> Il y a une erreur en essayant d'obtenir des informations sur le cadre. {0}: {1}

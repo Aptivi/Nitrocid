@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:FTP-opdracht "uploaden" of "plaatsen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+FTP-opdracht uploaden of plaatsen
+
+Samenvatting: uploadt het bestand naar de server
+
+Omschrijving
+
+Als u uw lokale bestanden in uw huidige werkdirectory moet toevoegen aan de huidige werkende serverdirectory, moet u beheerdersrechten hebben om bestanden toe te voegen.
+
+Als u bijvoorbeeld de foto van de stad New Delhi toevoegt met behulp van het PNG-formaat, moet u deze uploaden naar de server zodat iedereen deze kan zien. 
+
+Commando gebruik
+
+* upload / put (bestand)
+
+Voorbeelden
+
+* upload Win10-Oct2018-x64.iso: Zet de "Win10-Oct2018-x64.iso" in de huidige werkende serverdirectory
+* put urls.txt: zet de "urls.txt" in de huidige werkende serverdirectory
+-BODY END-
+
+-COLOR CONFIGURATION-
+upload/put (file)=>Green
+upload Win10-Oct2018-x64.iso:=>Yellow
+put urls.txt:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+upload or put FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando shell "cls"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando cls
+
+Resumo: voc?? pode limpar sua tela da desordem
+
+Descri????o
+
+Se voc?? est?? tentando se concentrar em uma coisa e n??o pode faz??-lo, ou se deseja que as informa????es pessoais impressas por comandos ocultos, voc?? pode limpar a tela da desordem para ganhar foco e reduzir a fadiga ocular.
+
+Isso tamb??m ?? ??til no script (ainda n??o implementado)
+
+Uso de comando
+
+* cls
+-BODY END-
+
+-COLOR CONFIGURATION-
+cls=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+cls command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

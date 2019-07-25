@@ -1,0 +1,85 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Tillg??ngliga kommandon
+-REVISION:0.0.1.3
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the commands that are available in the kernel is put.
+-BODY START-
+Administrativa kommandon:
+
+1. adduser: Du kan l??gga till anv??ndarens namn n??r du beh??ver, med l??senordet om det beh??vs. 
+2. perm: Du kan hantera anv??ndarens beh??righetsinst??llningar. 
+3. arginj: Du kan injicera argument i k??rnan s?? att n??r du startar om kommer de argument som injiceras k??ras. 
+4. chhostname: Du kan ??ndra ditt v??rdnamn p?? din k??rna f??r att anpassa saker. 
+5. chmotd: Du kan ??ndra ditt meddelande om dagen och du kan inkludera dina egna platsh??llare, inklusive <anv??ndare> som st??r f??r anv??ndarnamn, <kortdata> f??r det korta datumet i "MM / DD / ????????" format, <l??ngdat> 
+6. chusrname: Du kan ??ndra ditt anv??ndarnamn, eller n??gon annans namn med "chusrname <oldName> <newName>", ??ven om du ??ndrade ditt eget anv??ndarnamn till nytt namn, kommer du att logga ut omedelbart.
+7. rmuser: Du kan ta bort anv??ndarnamn, men du kan inte ta bort dina, om den angivna anv??ndaren inte vill anv??nda datorn, eller inte ??r inbjuden eller ??r ??verfl??dig. 
+8. netinfo: Du kan kontrollera din n??tverksstatus och n??tverksgr??nssnittinformation, inklusive WiFi-support. 
+9. debuglog: Du kan kontrollera dina fels??kningsloggar utan att beh??va g?? till filutforskaren som finns i din anv??ndarprofil och ??ppna textredigeraren / visaren p?? "kernelDbg.log." 
+10. reloadconfig: Du kan ladda om konfigurationsfilen f??r att l??sa de nya ??ndringarna, men ??ndringarna kommer att till??mpas n??r du startar om k??rnan.
+11. alias: Du kan hantera dina alias till kommandon s?? att du inte beh??ver skriva l??nga kommandon genom att anv??nda "alias <add / rem> <aliasName> <Command>."
+12. chmal: Du kan ??ndra ditt meddelande dagen efter inloggningen, och det st??der samma platsh??llare, och det har samma argument som "chmal <Alting>."
+13. setsaver: Du kan st??lla in din sk??rmsl??ckare som du v??ljer eller din anpassade som standard en, och om du planerar att anv??nda anpassade sk??rmsl??ckare, b??r du namnge ditt till??gg som <ScreensaverName> SS.m f??r att erk??nnas som en sk??rmsl??ckare, inte 
+14. reloadsaver: Du kan ladda om din sk??rmsl??ckare-f??rl??ngningsfil fr??n katalogen KSMods. 
+15. cdbglog: Du kan rensa fels??kningslogg och ??terst??lla storleken till 0
+
+Normala anv??ndarkommandon:
+
+1. calc: Du kan ber??kna dina uttryck, som att l??gga till siffror, subtrahera dem, multiplicera dem eller dela dem. 
+2. chdir: Du kan ??ndra din arbetskatalog med "chdir <katalog>"
+3. chpwd: Du kan ??ndra ditt l??senord eller n??gon annans l??senord. 
+4. cls: F??r att rensa sk??rmen fr??n text.
+5. ftp: Du kan ??verf??ra filer fr??n / till en FTP-server och interagera med servrarna.
+6. lista: Du kan lista din nuvarande arbetskatalog, eller lista en annan katalog med "lista [Katalog]."
+7. lscomp: Du kan lista alla fungerande datorer, ??ven offline om du ??r p?? dom??nen som har vissa datorer som skola, stora kontor etc. Detta kan ocks?? anv??ndas p?? b??s, men f??r alla platser, du 
+8. lsnet: Du kan lista alla fungerande datorer men utel??mna offline-datorerna.
+9. lsnettree: Du kan lista alla fungerande datorer, men utel??mna offline-datorerna i en tr??dform.
+10. l??ssk??rm: Du kan l??sa din sk??rm och visa din standardsk??rmsl??ckare som du eller k??rnan har angett. 
+11. utloggning: Du kan logga ut fr??n ditt konto n??r du ??r klar.
+12. md: Du kan skapa din katalog i rotkatalogen med "md <allt>."
+13. noaliases: Du kan se listan ??ver f??rbjudna alias som st??llts in av k??rnan. 
+14. ping: Du kan kontrollera adressen / servern f??r att se om den ??r online, laggy eller offline med hj??lp av "ping <Address> [repetitionstider]"
+15. rd: Du kan ta bort din skapade katalog med "rd <allt>", men om du f??rs??ker ta bort viktiga mappar ??terskapas de vid varje omstart och detta beteende kommer att ??ndras n??r vi implementerar ett riktigt filsystem.
+16. l??s: Du kan se vad som finns i en fil genom att "l??sa <fil>", ungef??r som "katt <s??kv??g / till / fil>."
+17. starta om: Du kan starta om din k??rna om du har gjort manuella eller verktygskonfigurations??ndringar f??r att de ska ??terspeglas, eller om du vill se startsekvensen igen.
+18. sparesk??rm: Du kan visa sk??rmsl??ckaren f??r att f??rhindra br??nnskador p?? sk??rmen.
+19. scical: Du kan ber??kna dina uttryck, men den h??r r??knaren ??r den vetenskapliga kalkylatorn och kommer att sl??s samman med "calc" i framtiden. 
+20. setcolors: Du kan st??lla in k??rnf??rgerna med "setcolors <inputColor / def> <licensColor / def> <contKernelErrorColor / def> <uncontKernelErrorColor / def> <hostNameShellColor / def> <userNameShellColor / def> <backgroundColor / def> <neutralTol 
+21. setthemes: Du kan st??lla in f??rgupps??ttningen f??r din k??rna, s?? kallad teman, med "setthemes <theme>"
+22. showmotd: Du kan visa dina ??ndringar i dagens meddelande
+23. showtd: Du kan visa din aktuella tid och datum samt din tidszon.
+24. showtdzone: Du kan visa tid och datum f??r tidszonen, eller du kan visa alla datum och tider f??r tidzonerna i aktuell tid och datum med "showtdzone <zon>" eller "showtdzone <all>"
+25. showmal: Du kan visa dina ??ndringar i meddelandet om dagen efter inloggning
+26. avst??ngning: Du kan st??nga av datorn (k??rnan, inte den faktiska datorn)
+27. sysinfo: Du kan visa din systeminformation samt k??rninst??llningarna.
+28. unitconv: Du kan konvertera enheten till vilken enhet som helst, om k??llan och m??let st??der varandra som cm -> m, med hj??lp av "unitconv <source> <target> <value>."
+29. useddeps: Du kan visa ??ppna k??llbibliotek som anv??nds
+30. usermanual: Du kan f?? information om allt eller f?? tillg??ngliga manuella sidor genom att bara skriva kommandot. 
+
+F??r mer information om varje kommando, se "usermanual <command>"
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser:=>Red
+perm:=>Red
+arginj:=>Red
+chhostname:=>Red
+chmotd:=>Red
+chusrname:=>Red
+rmuser:=>Red
+netinfo:=>Red
+debuglog:=>Red
+reloadconfig:=>Red
+alias:=>Red
+chmal:=>Red
+setsaver:=>Red
+loadsaver:=>Red
+cdbglog:=>Red
+-COLOR CONFIG END-
+
+-SECTIONS-
+Administrative commands:=>SE1
+Normal user commands:=>SE1
+-SECTIONS END-

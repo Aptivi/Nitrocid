@@ -1,0 +1,34 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Tillg??ngliga k??rnargument
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the kernel arguments that are available in the kernel is put.
+-BODY START-
+Hur man k??r argument? 
+
+Ett argument till k??rnan ??r det alternativ som k??rnan eller delar av den kommer att bete sig annorlunda baserat p?? alternativen du har valt. 
+
+Du kan k??ra argument p?? n??sta omstart genom att anv??nda kommandot arginj n??r du ??r p?? skalet. 
+
+Du kan f?? prompten att visas p?? tv?? s??tt:
+
+1. Genom att ??ndra konfigurationsalternativet "Fr??ga om argument vid start" till True (F??r mer information om config, anv??nd "usermanual Configuration file for your Kernel")
+2. Genom att k??ra Kernel Simulator med promptArgs cmdline-argumentet (t.ex. "Kernel Simulator.exe" promptArgs)
+
+Anv??ndbara argument:
+
+1. nohwprobe: Inaktiverar automatisk h??rdvaruprovning n??r du startar upp k??rnan
+2. tyst: L??t inte k??rnan s??ga n??got vid start
+3. cmdinject: K??r kommandon automatiskt n??r du ??r inloggad. Du kan separera flera kommandon med en kolon med mellanslag (Ex. Cmdinject-inst??llningsteman Bluespire: arginj debug)
+4. debug: Aktiverar diagnostiska meddelanden i k??rnan f??r att till??ta fels??kning. 
+5. underh??ll: G??r till s??kert l??ge, som l??gena inte kommer att laddas, och sk??rmsl??ckarna kan inte laddas.
+6. hj??lp: Ger dig tips om du ??r os??ker p?? vad du ska separera
+-BODY END-
+
+-SECTIONS-
+How to run arguments? and how do I make the prompt appear?=>SE1
+Useful arguments:=>SE1
+-SECTIONS END-

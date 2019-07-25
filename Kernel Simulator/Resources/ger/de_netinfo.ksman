@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Shell Befehl "netinfo"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl netinfo
+
+Zusammenfassung: Sie k??nnen den detaillierten Status der Netzwerkverbindung anzeigen
+
+Beschreibung
+
+Mit diesem Befehl k??nnen Sie die Details zu allen Wireless / Ethernet-Adaptern, Paketen, Paketen mit einem Fehler usw. anzeigen. Die gedruckten Informationen dienen der Diagnose. Wenn Sie also keine Verbindung zum Internet herstellen k??nnen, k??nnen Sie diese Informationen zur Diagnose verwenden 
+
+Die Abschnitte der Informationen zu Adaptern:
+
+Adapternummer: Hier sehen Sie die Nummer des aktuellen Adapters, von dem wir Informationen erhalten
+Adaptername: Hier sehen Sie den Namen des aktuellen Adapters
+Maximale ??bertragungseinheit: Hier wird die maximale ??bertragungseinheit des Adapters angegeben
+DHCP aktiviert: Hier erfahren Sie, ob DHCP aktiviert ist oder ob die statische IP-Adresse f??r die Netzwerkkonfiguration verwendet wird
+Non-Unicast-Pakete: Hier erfahren Sie, welche Pakete Non-Unicast sind
+Unicast-Pakete: Hier werden die Unicast-Pakete angezeigt
+Fehler bei eingehenden / ausgehenden Paketen: Hier werden die fehlerhaften Pakete angezeigt
+
+Befehlsverwendung
+
+* netinfo
+-BODY END-
+
+-COLOR CONFIGURATION-
+netinfo=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+netinfo command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

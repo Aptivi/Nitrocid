@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "perm"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando perm
+
+Resumen: gestiona los permisos para su usuario u otros usuarios
+
+Descripci??n
+
+Si desea administrar permisos para su usuario u otros usuarios, o si desea evitar que el usuario inicie sesi??n, use este comando.
+
+Este comando le permite administrar permisos ya sea que los privilegios administrativos est??n activados o desactivados, o si el usuario est?? deshabilitado o no.
+
+Uso del comando
+
+* perm (userName) (Admin / Disabled) (Permitir / No permitir)
+
+Ejemplos
+
+* perm joe Admin Allow: habilita "joe" para acceder a comandos administrativos
+* perm joe Disabled Permitir: hace que "joe" se suspenda
+* perm joe Admin Disallow: Deshabilita "joe" para acceder a comandos administrativos
+* perm joe Disabled Disallow: Permite "joe" iniciar sesi??n
+-BODY END-
+
+-COLOR CONFIGURATION-
+perm (userName) (Admin/Disabled) (Allow/Disallow)=>Green
+perm joe Admin Allow:=>Yellow
+perm joe Disabled Allow=>Yellow
+perm joe Admin Disallow:=>Yellow
+perm joe Disabled Disallow:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+perm command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

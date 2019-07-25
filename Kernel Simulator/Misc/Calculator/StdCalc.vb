@@ -33,9 +33,9 @@ Public Module StdCalc
                     ops.Add(exps(i))
                 Next
                 For i As Integer = 0 To expressions.Count - 1
-                    finalExp = finalExp + expressions(i) + " "
+                    finalExp += expressions(i) + " "
                     If i <> expressions.Count - 1 Then
-                        finalExp = finalExp + ops(numOps) + " "
+                        finalExp += ops(numOps) + " "
                         numOps += 1
                     End If
                 Next

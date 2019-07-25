@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "utloggning"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+logga ut kommando
+
+Sammanfattning: Du kan logga ut fr??n ditt konto.
+
+Beskrivning
+
+Om det finns en f??r??ndring som kr??ver utloggning och inloggning f??r att ??ndringarna ska tr??da i kraft, m??ste du logga ut och logga in igen.
+
+Detta kommando l??ter dig st??nga av ditt konto och logga in som n??gon annan. 
+
+Kommandobruk
+
+* logga ut
+-BODY END-
+
+-COLOR CONFIGURATION-
+logout=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+logout command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

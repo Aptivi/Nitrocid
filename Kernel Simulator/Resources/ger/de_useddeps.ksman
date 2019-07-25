@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell Befehl "useddeps"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+useddeps Befehl
+
+Zusammenfassung: Sie k??nnen die in diesem Programm verwendeten Bibliotheken erhalten
+
+Beschreibung
+
+Kernel Simulator enth??lt Bibliotheken f??r eine einfachere Codierung (f??r Entwickler). 
+
+Befehlsverwendung
+
+* useddeps
+-BODY END-
+
+-COLOR CONFIGURATION-
+useddeps=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+useddeps command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

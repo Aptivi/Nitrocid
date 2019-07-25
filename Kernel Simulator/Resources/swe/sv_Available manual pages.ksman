@@ -1,0 +1,20 @@
+(*MAN START*)
+
+-TITLE:Tillg??ngliga manuella sidor
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Checka ut:
+
+1. Introduktion till k??rnan: Den h??r sidan visar dig introduktionen om k??rnan, hur byggdes och f??rb??ttrades Unix och Linux under utvecklings??ren och en kort beskrivning om v??r k??rna, Eofla Kernel, som kommer att f?? ett namn.
+2. Tillg??ngliga kommandon: Den h??r sidan visar tillg??ngliga kommandon i k??rnan. 
+3. Historia om Kernel Simulator: Du kan se vad som h??nde mellan utvecklingen av Kernel Simulator-versioner och exakta f??r??ndringar mellan de versioner som har gjorts. 
+4. Modding guide: Du kan se hur du skapar din egen mod, och det finns exempel.
+5. Modningguide f??r sk??rmsl??ckare: Du kan se hur du skapar din egen sk??rmsl??ckare, och det finns exempel.
+6. Tillg??ngliga FTP-kommandon: Den h??r sidan visar tillg??ngliga kommandon i FTP-skalet. 
+-BODY END-
+
+-SECTIONS-
+Check out:=>SE1
+-SECTIONS END-

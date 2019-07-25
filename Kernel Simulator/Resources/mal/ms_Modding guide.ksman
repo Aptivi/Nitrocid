@@ -1,0 +1,707 @@
+(*MAN START*)
+
+-TITLE:Cara membuat mod anda sendiri untuk kernel
+-REVISION:0.0.2
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Apakah mod untuk kernel?
+
+Mod adalah fail kod sumber yang memuatkan boot, dan boleh menambah sambungan ke kernel, shell, dan segala-galanya. 
+
+Ini berguna jika anda mahu menambah sambungan anda sendiri ke kernel, seperti pengendali acara untuk kernel.
+
+Bolehkah saya membuat screensaver saya sendiri?
+
+Ya, tetapi mulailah terlebih dahulu halaman manual "Panduan pemodelan pedoman usianya" untuk arahan tentang cara menambah screensaver anda.
+
+Modding asas
+
+0. Bagaimana untuk membuat mod anda sendiri pada Visual Studio 2017?
+
+1. Pada Halaman Mula, klik pada Projek Baru
+2. Klik pada Projek Kosong, pilih VB atau C
+3. Klik kanan pada Rujukan pada Penyelesaian Penyelesaian, dan tekan Tambah Rujukan ...
+4. Klik pada butang Browse ..., dan cari file executable Kernel Simulator anda (fail yang anda lari)
+5. Apabila anda mengklik OK pada Fail Terbuka, anda akan melihat bahawa fail-fail executable KS anda akan ditambah ke senarai rujukan.
+6. Pastikan ia mempunyai kotak semak yang diperiksa padanya, dan klik pada OK.
+7. Klik kanan pada projek, bukan penyelesaiannya
+8. Tukar jenis aplikasi ke Perpustakaan Kelas
+9. Pada bahagian Kompilasi, klik pada Build Events, kemudian tuliskan ini pada baris perintah acara pasca-Build:
+Sekiranya anda menggunakan VB:
+- copy .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFile.m
+- del / Q *. * (untuk memastikan tiada fail DLL dummy yang dicipta kerana kita tidak menggunakan DLL untuk mod)
+- "path \ to \ Kernel Simulator.exe" testMods ModFile.m
+Sekiranya anda menggunakan C
+- copy .. \ .. \ ModFile.cs .. \ .. \ .. \ .. \ ModFileCS.m
+- del / Q *. * (untuk memastikan tiada fail DLL dummy yang dicipta kerana kita tidak menggunakan DLL untuk mod)
+- "laluan \ ke \ Kernel Simulator.exe" testMods ModFileCS.m
+10. Pastikan acara pasca bina berjalan hanya apabila binaan berjaya
+11. Simpan semuanya dengan menekan CTRL S
+12. Kembangkan bahagian Rujukan pada Penyelesaian Penyelesaian
+13. Tetapkan Salin seting tempatan kepada Palsu kerana anda mempunyai laksana yang boleh dilaksanakan sehingga anda tidak membuat salinan tambahan
+14. Klik kanan pada projek, dan pergi ke Tambah> Kelas
+15. Andaikan bahawa anda membuat mod dalam VB. 
+16. Klik Tambah, dan kod itu akan siap:
+ModName Kelas Awam
+'Kod anda di sini
+Kelas Akhir
+17. Antara Kelas Awam ... dan garisan Kelas Akhir, biarkan Visual Studio 2017 tahu bahawa anda akan membuat mod KS anda dengan menulis: Mengimplementasikan IScript
+18. Jika anda akan menambah ruang nama, peraturan ini mesti dipenuhi:
+1) Jangan import Kernel_Simulator dengan sendirinya. 
+2) Apabila mengimport modul / kelas seperti TextWriterColor, ia ditulis seperti ini: Import Kernel_Simulator.TextWriterColor
+19. Tentukan sifat untuk maklumat mod dengan meletakkan di bawah Implementasi IScript:
+Property Cmd As String Implements IScript.Cmd
+Def Property As String Implements IScript.Def
+Nama Harta Sebagai Sokongan String IScript.Name
+Versi Harta Sebagai Penguat String IScript.Version
+20. Buat sub mod mula anda bernama StartMod () yang melaksanakan IScript.StartMod, dengan menulis:
+Sub StartMod () Implementasi IScript.StartMod
+Cmd = "" 'Jika anda akan menambah arahan, tulis arahan anda di sini.
+Def = "" 'Jelaskan apa perintah anda dan apa yang akan dilakukannya.
+Name = "ModName" 'Gantikan ModName dengan nama mod anda apa sahaja yang anda suka, tetapi HARAP menggambarkan tujuan mod. 
+Versi = "1.0" 'Anda boleh menentukan versi mod anda, tetapi ia mesti mengikut garis panduan versi dan anda boleh menemuinya di Internet. 
+
+'Kod anda di bawah
+Sub Akhir
+21. Gantikan setiap Kod anda di bawah komen dengan kod anda. 
+22. Buat mod stop sub anda bernama StopMod () yang melaksanakan IScript.StopMod, dengan menulis:
+Sub StopMod () Melaksanakan IScript.StopMod
+'Kod anda di bawah
+Sub Akhir
+23. 1) Jika anda membuat arahan anda dalam mod anda, tulis kod respons di bawah:
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+'Kod anda di bawah
+Sub Akhir
+2) Jika anda membuat perintah anda yang mengendalikan hujah, tulis kod tindak balas di bawah:
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Jika (args = "YourArgHere") Kemudian 'Gantikan YourArgsHere dengan set argumen anda
+'Kod anda di bawah
+Akhir Jika
+Sub Akhir
+3) Jika anda membuat perintah anda yang mengendalikan hujah-hujah berikutnya, tulis kod tindak balas di bawah:
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Dim splitArgs As String () = args.Split ({"" c})
+Jika splitArgs.Length> 1 Kemudian
+Jika (splitArgs (0) = "Part1" Dan splitArgs (1) = "Part2") Kemudian 'Gantikan Part1 dengan hujah anda, dan Part2 dengan hujah anda. 
+'Kod anda di bawah
+Lain
+'Kod mismatch argument anda di bawah
+Akhir Jika
+Lain
+'Kod anda yang mengendalikan argumen tidak mencukupi
+Akhir Jika
+Sub Akhir
+24. 1) Jika anda membuat pengendali acara anda yang mengendalikan apa yang berlaku dalam kernel, tulis kod pegangan di bawah:
+SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
+Jika (ev = "EventName") Kemudian 'Gantikan EventName dengan peristiwa yang terdapat pada "Peristiwa Usermanual for Mod Developers" perintah
+'Kod anda di bawah
+Akhir Jika
+Sub Akhir
+2) Jika anda mengendalikan pelbagai acara, tulis kod pegangan di bawah:
+SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
+Jika (ev = "EventName") Kemudian 'Gantikan EventName dengan peristiwa yang terdapat pada "Peristiwa Usermanual for Mod Developers" perintah
+'Kod anda di bawah
+ElseIf (ev = "AnotherEvent") Kemudian 'Ganti AnotherEvent dengan peristiwa yang terdapat pada perintah "Usermanual Events for Mod Developers"
+'Kod anda di bawah
+Akhir Jika
+Sub Akhir
+3) PEMBERITAHUAN PENTING! 
+25. Anda boleh membuat subs anda di mana sahaja di kelas, tetapi jika:
+1) mereka berada di kelas yang berbeza, tekan Enter on End Class dan buat kelas baru awam yang menyimpan subs baru:
+AnotherClass Class Awam
+'Takrifan anda di bawah, dan sebagainya subs, fungsi, antara muka, dan lain-lain
+Kelas Akhir
+2) mereka cuba untuk memulakan semula mod dengan memanggil semula StartMod (), Cuba persekitaran ujian anda terlebih dahulu, maka persekitaran Pengeluaran jika itu berfungsi dengan baik.
+Dan syarat-syarat berikut harus dipenuhi:
+1) Mereka tidak boleh membuat gelung tanpa batas melainkan jika anda membuat mereka yang keluar jika syarat-syarat tertentu dipenuhi
+2) Mereka tidak boleh cuba menyebabkan kesilapan dengan kernel.
+3) Jika anda seorang pengeksploitasi dan membuat kod eksploit untuk kernel, lakukanlah persekitaran ujian anda terlebih dahulu kemudian persekitaran pengeluaran, kemudian buat laporan CVE anda supaya kami mendapat perhatian dan perbaiki dengan cepat.
+4) Jika mod anda akan memperluaskan kernel, letakkan kod pelanjutan anda pada subs berasingan
+5) Masukkan panggilan sub anda pada salah satu daripada empat kelip yang mengimplementasikan antara muka IScript. 
+26. Jalankan pembinaan. 
+27. Jalankan Kernel Simulator anda yang baru dirujuk ke dalam projek anda.
+
+1. Hello World pada Kernel Start, dan Goodbye World on Stop Kernel
+
+Hello World adalah contoh permulaan yang popular untuk semua pengaturcara. 
+
+1. Klik kanan pada projek, dan pergi ke Tambah> Kelas
+2. Namakan mod anda, tetapi biarkan .vb utuh. 
+3. Klik Tambah, dan kod itu akan siap.
+4. Tulis di bawah (Anggapkan bahawa nama mod anda adalah HelloGuys) Kelas Awam HelloGuys: Melaksanakan IScript
+5. Tulis di atas HelloGuys Kelas Awam:
+- Import Kernel_Simulator.ModParser
+- Import Kernel_Simulator.TextWriterColor
+6. Anda harus mendapatkan kesilapan yang mengatakan bahawa subs ini harus dibuat.
+7. Buat pengendali acara mod permulaan anda dengan menulis:
+Property Cmd As String Implements IScript.Cmd
+Def Property As String Implements IScript.Def
+Nama Harta Sebagai Sokongan String IScript.Name
+Versi Harta Sebagai Penguat String IScript.Version
+Sub StartMod () Implementasi IScript.StartMod
+Cmd = ""
+Def = ""
+Nama = "HelloGuys"
+Versi = "1.0"
+Wln ("Hello World", "neutralText")
+Sub Akhir
+8. Buat pengendali acara berhenti dengan menulis:
+Sub StopMod () Melaksanakan IScript.StopMod
+Wln ("Goodbye World", "neutralText")
+Sub Akhir
+9. Oleh kerana kami tidak melaksanakan arahan atau responden acara, kami akan meninggalkan perkara ini:
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Sub Akhir
+SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
+Sub Akhir
+10. Kod sepatutnya kelihatan seperti ini dalam VB:
+
+Import Kernel_Simulator.ModParser
+Import Kernel_Simulator.TextWriterColor
+HelloGuys Kelas Awam
+Memasukkan IScript
+Property Cmd As String Implements IScript.Cmd
+Def Property As String Implements IScript.Def
+Nama Harta Sebagai Sokongan String IScript.Name
+Versi Harta Sebagai Penguat String IScript.Version
+Sub StartMod () Implementasi IScript.StartMod
+Cmd = ""
+Def = ""
+Nama = "HelloGuys"
+Versi = "1.0"
+Wln ("Hello World", "neutralText")
+Sub Akhir
+Sub StopMod () Melaksanakan IScript.StopMod
+Wln ("Goodbye World", "neutralText")
+Sub Akhir
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Sub Akhir
+SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
+Sub Akhir
+Kelas Akhir
+
+... Atau dalam C
+
+menggunakan MP = Kernel_Simulator.ModParser;
+menggunakan TWC = Kernel_Simulator.TextWriterColor;
+HelloGuys kelas awam: MP.ISkrip
+{
+rentetan awam Cmd {get; 
+ketahanan awam Def {get; 
+Nama keratan awam {get; 
+versi rentetan awam {get; 
+permulaan awam StartMod ()
+{
+Cmd = "";
+Def = "";
+Nama = "HelloGuys";
+Versi = "1.0";
+TWC.Wln ("Hello World", "neutralText");
+}
+stopmo awam StopMod ()
+{
+TWC.Wln ("Goodbye World", "neutralText");
+}
+Fail awam PerformCmd (string args = "")
+{
+}
+void Public InitEvents (string ev)
+{
+}
+}
+
+11. Jalankan binaan. 
+12. Jalankan Kernel Simulator anda yang baru dirujuk ke dalam projek anda.
+13. Sekiranya semuanya berjalan lancar, anda harus melihat mesej berikut:
+mod: Memuat mod ...
+Hai dunia
+HelloGuys v1.0 bermula
+
+2. Hello World pada arahan melaksanakan
+
+1. Ulangi langkah 1-5 pada contoh pertama: Hello World on Start Kernel dan Goodbye World on Stop Kernel
+2. Buat pengendali acara mod permulaan anda dengan menulis (dengan mengandaikan bahawa nama mod anda adalah HelloShell):
+Property Cmd As String Implements IScript.Cmd
+Def Property As String Implements IScript.Def
+Nama Harta Sebagai Sokongan String IScript.Name
+Versi Harta Sebagai Penguat String IScript.Version
+Sub StartMod () Implementasi IScript.StartMod
+Cmd = "SayHello"
+Def = ""
+Nama = "HelloShell"
+Versi = "1.0"
+Sub Akhir
+3. Oleh kerana kami tidak melaksanakan pengendali penutupan atau responden acara, kami akan meninggalkan ini kosong:
+Sub StopMod () Melaksanakan IScript.StopMod
+Sub Akhir
+SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
+Sub Akhir
+4. Buat pengendali arahan anda, dan biarkan ia bertindak balas kepada perintah mod SayHello:
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Wln ("Hello World", "neutralText")
+Sub Akhir
+5. Kod harus kelihatan seperti ini di VB:
+
+Import Kernel_Simulator.ModParser
+Import Kernel_Simulator.TextWriterColor
+HelloShell Kelas Awam
+Memasukkan IScript
+Property Cmd As String Implements IScript.Cmd
+Def Property As String Implements IScript.Def
+Nama Harta Sebagai Sokongan String IScript.Name
+Versi Harta Sebagai Penguat String IScript.Version
+Sub StartMod () Implementasi IScript.StartMod
+Cmd = "SayHello"
+Def = ""
+Nama = "HelloShell"
+Versi = "1.0"
+Sub Akhir
+Sub StopMod () Melaksanakan IScript.StopMod
+Sub Akhir
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Wln ("Hello World", "neutralText")
+Sub Akhir
+SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
+Sub Akhir
+Kelas Akhir
+
+... Atau dalam C
+
+menggunakan MP = Kernel_Simulator.ModParser;
+menggunakan TWC = Kernel_Simulator.TextWriterColor;
+HelloShell kelas awam: MP.ISkrip
+{
+rentetan awam Cmd {get; 
+ketahanan awam Def {get; 
+Nama keratan awam {get; 
+versi rentetan awam {get; 
+permulaan awam StartMod ()
+{
+Cmd = "SayHello";
+Def = "";
+Nama = "HelloShell";
+Versi = "1.0";
+}
+stopmo awam StopMod ()
+{
+}
+Fail awam PerformCmd (string args = "")
+{
+TWC.Wln ("Hello World", "neutralText");
+}
+void Public InitEvents (string ev)
+{
+}
+}
+
+6. Ulangi langkah 11-12 pada contoh pertama: Hello World on Start Kernel dan Goodbye World on Stop Kernel
+
+3. Hello World pada arahan laksanakan dengan hujah (tunggal)
+
+1. Dengan mengandaikan bahawa nama mod anda adalah HelloArgs, hujah anda yang akan membuat arahan anda mengatakan Hello World adalah HW, dan perintah anda ialah SayHello, Ulangi langkah 1-3 pada contoh kedua: Hello World pada arahan mengeksekusi
+2. Jadikan pengendali arahan anda, dan biarkan ia bertindak balas kepada perintah mod SayHello:
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Jika (args = "HW") Kemudian
+Wln ("Hello World", "neutralText")
+Lain
+Wln ("Katakan saya Hello dengan berjalan" "SayHello HW." "", "NeutralText")
+Akhir Jika
+Sub Akhir
+3. Kod sepatutnya kelihatan seperti ini dalam VB:
+
+Import Kernel_Simulator.ModParser
+Import Kernel_Simulator.TextWriterColor
+HelloArgs Kelas Awam
+Memasukkan IScript
+Property Cmd As String Implements IScript.Cmd
+Def Property As String Implements IScript.Def
+Nama Harta Sebagai Sokongan String IScript.Name
+Versi Harta Sebagai Penguat String IScript.Version
+Sub StartMod () Implementasi IScript.StartMod
+Cmd = "SayHello"
+Def = ""
+Nama = "HelloArgs"
+Versi = "1.0"
+Sub Akhir
+Sub StopMod () Melaksanakan IScript.StopMod
+Sub Akhir
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Jika (args = "HW") Kemudian
+Wln ("Hello World", "neutralText")
+Lain
+Wln ("Katakan saya Hello dengan berjalan" "SayHello HW." "", "NeutralText")
+Akhir Jika
+Sub Akhir
+SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
+Sub Akhir
+Kelas Akhir
+
+... Atau dalam C
+
+menggunakan MP = Kernel_Simulator.ModParser;
+menggunakan TWC = Kernel_Simulator.TextWriterColor;
+HelloArgs kelas awam: MP.ISkrip
+{
+rentetan awam Cmd {get; 
+ketahanan awam Def {get; 
+Nama keratan awam {get; 
+versi rentetan awam {get; 
+permulaan awam StartMod ()
+{
+Cmd = "SayHello";
+Def = "";
+Nama = "HelloArgs";
+Versi = "1.0";
+}
+stopmo awam StopMod ()
+{
+}
+Fail awam PerformCmd (string args = "")
+{
+jika (args == "HW")
+{
+TWC.Wln ("Hello World", "neutralText");
+}
+lain
+{
+TWC.Wln ("Jadikan saya berkata Hello dengan berjalan \" SayHello HW. \ "", "NeutralText");
+}
+}
+void Public InitEvents (string ev)
+{
+}
+}
+
+4. Ulangi langkah terakhir pada contoh kedua: Hello World pada melaksanakan perintah
+
+4. Hello World pada arahan melaksanakan dengan pelbagai argumen
+
+1. Dengan mengandaikan bahawa nama mod anda adalah HelloArgs, hujah anda yang akan membuat perintah anda mengatakan Hello World adalah Katakanlah Hello, dan arahan anda adalah WhatDoISay, Ulangi langkah 1-3 pada contoh kedua: Hello World pada perintah mengeksekusi
+2. Jadikan pengendali arahan anda, dan biarkan ia bertindak balas kepada arahan mod WhatDoISay:
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Dim splitArgs As String () = args.Split ({"" c})
+Dim ArgCount Sebagai Integer = 1
+Jika splitArgs.Length> 1 Kemudian
+Jika (splitArgs (0) = "Katakan" Dan splitArgs (1) = "Hello") Kemudian
+Wln ("Hello World", "neutralText")
+Lain
+Wln ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
+Akhir Jika
+Lain
+Wln ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
+Akhir Jika
+Untuk Setiap arg Sebagai String Dalam splitArgs
+Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
+ArgCount = 1
+Seterusnya
+Sub Akhir
+3. Kod sepatutnya kelihatan seperti ini dalam VB:
+
+Import Kernel_Simulator.ModParser
+Import Kernel_Simulator.TextWriterColor
+HelloArgs Kelas Awam
+Memasukkan IScript
+Property Cmd As String Implements IScript.Cmd
+Def Property As String Implements IScript.Def
+Nama Harta Sebagai Sokongan String IScript.Name
+Versi Harta Sebagai Penguat String IScript.Version
+Sub StartMod () Implementasi IScript.StartMod
+Cmd = "WhatDoISay"
+Def = ""
+Nama = "HelloArgs"
+Versi = "1.0"
+Sub Akhir
+Sub StopMod () Melaksanakan IScript.StopMod
+Sub Akhir
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Dim splitArgs As String () = args.Split ({"" c})
+Dim ArgCount Sebagai Integer = 1
+Jika splitArgs.Length> 1 Kemudian
+Jika (splitArgs (0) = "Katakan" Dan splitArgs (1) = "Hello") Kemudian
+Wln ("Hello World", "neutralText")
+Lain
+Wln ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
+Akhir Jika
+Lain
+Wln ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
+Akhir Jika
+Untuk Setiap arg Sebagai String Dalam splitArgs
+Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
+ArgCount = 1
+Seterusnya
+Sub Akhir
+SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
+Sub Akhir
+Kelas Akhir
+
+... Atau dalam C
+
+menggunakan MP = Kernel_Simulator.ModParser;
+menggunakan TWC = Kernel_Simulator.TextWriterColor;
+HelloArgs kelas awam: MP.ISkrip
+{
+rentetan awam Cmd {get; 
+ketahanan awam Def {get; 
+Nama keratan awam {get; 
+versi rentetan awam {get; 
+permulaan awam StartMod ()
+{
+Cmd = "WhatDoISay";
+Def = "";
+Nama = "HelloArgs";
+Versi = "1.0";
+}
+stopmo awam StopMod ()
+{
+}
+Fail awam PerformCmd (string args = "")
+{
+string [] splitArgs = args.Split (new [] {''});
+int ArgCount = 1;
+jika (splitArgs.Length> 1)
+{
+jika (splitArgs [0] == "Katakan"
+{
+TWC.Wln ("Hello World", "neutralText");
+}
+lain
+{
+TWC.Wln ("Beri saya katakan Hello dengan berlari \" WhatDoISay Say Hello. \ "", "NeutralText");
+}
+}
+lain
+{
+TWC.Wln ("Beri saya katakan Hello dengan berlari \" WhatDoISay Say Hello. \ "", "NeutralText");
+}
+foreach (arg arg dalam splitArgs)
+{
+TWC.Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs [ArgCount - 1]);
+ArgCount = 1;
+}
+}
+void Public InitEvents (string ev)
+{
+}
+}
+
+4. Ulangi langkah terakhir pada contoh kedua: Hello World pada melaksanakan perintah
+
+5. Ujian Kelajuan Rangkaian
+
+1. Dengan mengandaikan bahawa nama mod anda adalah InternetSpeed, dan arahan anda adalah getnetspeed, Ulangi langkah 1-3 pada contoh kedua: Hello World on execute command
+2. Masukkan ruang nama di atas fail:
+- Import System.Net
+- Sistem Import.Linq
+- Sistem Import.IO
+- System.Math Import
+- Import Microsoft.VisualBasic.Interaction
+3. Jadikan pengendali arahan anda:
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Kelajuan bergelombang Sebagai Double () = Double Baru (4) {}
+Untuk i Sebagai Integer = 0 Ke 4
+Dim jQueryFileSize As Integer = 261
+Dim klien Sebagai WebClient Baru ()
+Dim startTime Seperti DateTime = DateTime.Now
+client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Lingkungan ("USERPROFILE") "\ jQuery.js")
+Dim endTime Seperti DateTime = DateTime.Now
+kelajuan (i) = Pusingan ((jQueryFileSize / (endTime - startTime) .TotalSeconds))
+Seterusnya
+File.Delete (Lingkungan ("USERPROFILE") "\ jQuery.js")
+Wln ("Muat turun kelajuan: {0} KB / s", "neutralText", speeds.Average ())
+Sub Akhir
+4. Kod sepatutnya kelihatan seperti ini dalam VB:
+
+Import System.Net
+Import System.Linq
+Import System.IO
+Import System.Math
+Import Microsoft.VisualBasic.Interaction
+Import Kernel_Simulator.ModParser
+Import Kernel_Simulator.TextWriterColor
+InternetSpeed ??????Kelas Awam
+Memasukkan IScript
+Property Cmd As String Implements IScript.Cmd
+Def Property As String Implements IScript.Def
+Nama Harta Sebagai Sokongan String IScript.Name
+Versi Harta Sebagai Penguat String IScript.Version
+Sub StartMod () Implementasi IScript.StartMod
+Cmd = "getnetspeed"
+Def = ""
+Name = "InternetSpeed"
+Versi = "1.0"
+Sub Akhir
+Sub StopMod () Melaksanakan IScript.StopMod
+Sub Akhir
+Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
+Kelajuan bergelombang Sebagai Double () = Double Baru (4) {}
+Untuk i Sebagai Integer = 0 Ke 4
+Dim jQueryFileSize As Integer = 261
+Dim klien Sebagai WebClient Baru ()
+Dim startTime As Date = Date.Now
+client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Lingkungan ("USERPROFILE") "\ jQuery.js")
+Dim endTime As Date = Date.Now
+kelajuan (i) = Pusingan (jQueryFileSize / (endTime - startTime) .TotalSeconds)
+Seterusnya
+File.Delete (Lingkungan ("USERPROFILE") "\ jQuery.js")
+Wln ("Muat turun kelajuan: {0} KB / s", "neutralText", speeds.Average ())
+Sub Akhir
+SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
+Sub Akhir
+Kelas Akhir
+
+... Atau dalam C
+
+menggunakan Sistem;
+menggunakan System.Net;
+menggunakan System.Linq;
+menggunakan System.IO;
+menggunakan M = System.Math;
+menggunakan MP = Kernel_Simulator.ModParser;
+menggunakan TWC = Kernel_Simulator.TextWriterColor;
+InternetSpeed ??????kelas awam: MP.ISkrip
+{
+rentetan awam Cmd {get; 
+ketahanan awam Def {get; 
+Nama keratan awam {get; 
+versi rentetan awam {get; 
+permulaan awam StartMod ()
+{
+Cmd = "getnetspeed";
+Def = "";
+Nama = "InternetSpeed";
+Versi = "1.0";
+}
+stopmo awam StopMod ()
+{
+}
+Fail awam PerformCmd (string args = "")
+{
+double [] speeds = new double [5];
+untuk (int i = 0; i <= 4; i)
+{
+int jQueryFileSize = 261;
+WebClient client = WebClient baru ();
+DateTime startTime = DateTime.Now;
+client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", System.Environment.GetEnvironmentVariable ("USERPROFILE") "\\ jQuery.js");
+DateTime endTime = DateTime.Now;
+kelajuan [i] = M.Round (jQueryFileSize / (endTime - startTime) .TotalSeconds);
+}
+File.Delete (System.Environment.GetEnvironmentVariable ("USERPROFILE") "\\ jQuery.js");
+TWC.Wln ("Muat turun kelajuan: {0} KB / s", "neutralText", speeds.Average ());
+}
+void Public InitEvents (string ev)
+{
+}
+}
+
+5. Ulangi langkah terakhir pada contoh kedua: Hello World on execute command
+
+Lebih banyak contoh
+
+Jika anda ingin menyemak lebih banyak contoh, jangan ragu untuk menyemaknya di Resitori KSModExamples di GitHub (Tidak tersedia lagi).
+
+Sumber:
+
+1. https://www.aspsnippets.com/Articles/Check-Internet-Connection-Download-Speed-using-C-and-VBNet-in-ASPNet.aspx
+-BODY END-
+
+-COLOR CONFIGURATION-
+mod=>Green
+New Project=>Cyan
+Empty Project=>Cyan
+References=>Cyan
+Solution Explorer=>DarkGreen
+Add Reference...=>Cyan
+Browse...=>Cyan
+Kernel Simulator=>DarkGreen
+OK=>Cyan
+Open File=>DarkGreen
+KS=>DarkGreen
+OK.=>Cyan
+checked=>Red
+project,=>Green
+solution=>Red
+Class Library=>Cyan
+Compile=>DarkGreen
+Build Events,=>Cyan
+Post-build=>DarkGreen
+copy ..\..\ModFile.vb ..\..\..\..\ModFile.m=>Cyan
+del /Q *.*=>Cyan
+"path\to\Kernel Simulator.exe" testMods ModFile.m=>Cyan
+only=>Red
+CTRL+S=>Cyan
+Copy Local=>Cyan
+False=>Red
+Add=>Cyan
+mod,=>Green
+should=>Red
+Public=>Cyan
+ModName=>DarkGreen
+End=>Cyan
+Class...=>Cyan
+Visual Studio 2017=>Magenta
+Implements=>Cyan
+IScript=>DarkGreen
+Kernel_Simulator=>Cyan
+TextWriterColor=>Green
+Imports=>Cyan
+Kernel_Simulator.TextWriterColor=>DarkGreen
+IScript:=>DarkGreen
+Property As String=>Cyan
+Cmd Def Name Version=>DarkGreen
+IScript.Cmd IScript.Def IScript.Name IScript.Version=>DarkGreen
+StartMod() IScript.StartMod=>DarkGreen
+"" "ModName" "1.0"=>DarkGreen
+Sub=>Cyan
+StopMod() IScript.StopMod=>DarkGreen
+PerformCmd (ByVal String) IScript.PerformCmd=>DarkGreen
+If (args "YourArgHere") Then=>DarkGreen
+Dim String() .Split({" "c})=>Cyan
+splitArgs.Length 1=>DarkGreen
+(splitArgs(0) "Part1" And splitArgs(1) "Part2")=>DarkGreen
+Else=>Red
+(ev "EventName") IScript.InitEvents=>DarkGreen
+ElseIf=>Red
+"AnotherEvent")=>DarkGreen
+IMPORTANT NOTICE! Never=>Red
+subs=>Green
+AnotherClass=>DarkGreen
+Hello World=>Green
+HelloGuys) HelloGuys: HelloGuys=>DarkGreen
+Kernel_Simulator.ModParser=>DarkGreen
+errors=>Red
+"HelloGuys"=>DarkGreen
+"Hello World", "neutralText"=>DarkGreen
+"Goodbye World",=>DarkGreen
+mod: Loading mods...=>Green
+v1.0 started=>Green
+"SayHello" "HelloShell" HelloShell):=>DarkGreen
+"HW")=>DarkGreen
+"Say" "Hello"=>DarkGreen
+"WhatDoISay" "HelloArgs"=>DarkGreen
+"Argument {0}: {1}", "neutralText", ArgCount, splitArgs(ArgCount - 1)=>DarkGreen
+ArgCount + 1=>DarkGreen
+For Each In=>Cyan
+arg splitArgs=>DarkGreen
+Next=>Cyan
+System.Net System.Linq System.IO System.Math Microsoft.VisualBasic.Interaction=>DarkGreen
+"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ("USERPROFILE") "\jQuery.js"=>DarkGreen
+"Download speed: {0}KB/s", speeds.Average()=>DarkGreen
+"getnetspeed" "InternetSpeed" InternetSpeed InternetSpeed, getnetspeed,=>DarkGreen
+KSModExamples GitHub=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the mod for the kernel?=>SE1
+Can I make my own screensaver?=>SE1
+Basic modding=>SE1
+0. How to make your own mods on Visual Studio 2017?=>SE2
+1. Hello World on Kernel Start, and Goodbye World on Kernel Stop=>SE2
+2. Hello World on command execute=>SE2
+3. Hello World on command execute with arguments (single)=>SE2
+4. Hello World on command execute with multiple arguments=>SE2
+5. Network Speed Testing=>SE2
+More examples=>SE1
+Sources:=>SE1
+-SECTIONS END-

@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:FTP komutu "currremotedir" veya "pwdr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+currremotedir veya pwdr FTP komutu
+
+??zet: Ge??erli uzak dizininizi al??r
+
+A????klama
+
+Bu FTP komutu, o anda bakmakta oldu??unuz FTP sunucusundaki uzak dizinin ne oldu??unu g??sterir.
+
+Komut kullan??m??
+
+* currremotedir
+* pwdr
+-BODY END-
+
+-COLOR CONFIGURATION-
+currremotedir=>Green
+pwdr=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+currremotedir or pwdr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

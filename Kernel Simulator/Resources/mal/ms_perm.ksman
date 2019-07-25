@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "perm"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perm perm
+
+Ringkasan: Mengurus keizinan untuk pengguna anda atau pengguna lain
+
+Penerangan
+
+Sekiranya anda ingin menguruskan kebenaran untuk pengguna atau pengguna lain, atau jika anda ingin menghalang pengguna daripada log masuk, gunakan arahan ini.
+
+Perintah ini membolehkan anda menguruskan keizinan sama ada keistimewaan pentadbiran ada atau tidak, atau jika pengguna dilumpuhkan atau tidak.
+
+Penggunaan perintah
+
+* perm (userName) (Admin / Dinonaktifkan) (Benarkan / Tidak Memungkinkan)
+
+Contoh
+
+* perm joe Admin Allow: Ia membolehkan "joe" untuk mengakses arahan pentadbiran
+* perm joe Disabled Allow: Ia menyebabkan "joe" digantung
+* perm joe Admin Disallow: Ia melumpuhkan "joe" untuk mengakses arahan pentadbiran
+* perm joe Disabled Disallow: Ia membolehkan "joe" untuk dilog masuk
+-BODY END-
+
+-COLOR CONFIGURATION-
+perm (userName) (Admin/Disabled) (Allow/Disallow)=>Green
+perm joe Admin Allow:=>Yellow
+perm joe Disabled Allow=>Yellow
+perm joe Admin Disallow:=>Yellow
+perm joe Disabled Disallow:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+perm command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

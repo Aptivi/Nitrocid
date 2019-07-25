@@ -1,0 +1,79 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "setcolors"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+setcolors-komento
+
+Yhteenveto: Voit asettaa ytimen v??rit
+
+Kuvaus
+
+T??m??n komennon avulla voit m????ritt???? ytimen tekstin v??rit, mukaan lukien ytimen virhesanoma, sy??tt??sanoma, lisenssin teksti, yleinen teksti jne. Sen avulla voit my??s m????ritt???? taustav??rin, jotta ydin n??ytt???? yksil??llisemm??lt??.
+
+T??m?? komento tutkii ConsoleColor enum -arvoista, joita kutsutaan kokonaisluvuiksi. 
+
+* Valkoinen = 15
+* Musta = 0
+* Harmaa = 7
+* DarkGray = 8
+* DarkRed = 4
+* Punainen = 12
+* DarkYellow = 6
+* Keltainen = 14
+* DarkGreen = 2
+* Vihre?? = 10
+* DarkCyan = 3
+* Syaani = 11
+* DarkBlue = 1
+* Sininen = 9
+* DarkMagenta = 5
+* Magenta = 13
+
+Jos v??risarjoissa on "def", se saa m????ritetyn osan oletusv??rin. 
+
+Jos v??rien v??lill?? on RESET, jokainen v??ri palautuu oletusasetuksiinsa. 
+
+Komennon k??ytt??
+
+* setcolors (inputColor / def / RESET) (licenseColor / def / RESET) (contKernelErrorColor / def / RESET) (uncontKernelErrorColor / def / RESET) (hostNameShellColor / def / RESET) (userNameShellColor / def / RESET) (taustaV??ri / def / RESET) 
+
+esimerkit
+
+* setcolors DarkCyan Blue DarkRed punainen syaani DarkCyan def syaani syaani DarkCyan
+* setcolors DarkMagenta Magenta DarkRed Punainen Magenta DarkMagenta def Magenta Magenta DarkMagenta
+* setcolors DarkYellow Keltainen DarkRed Punainen Keltainen DarkYellow def Keltainen Keltainen DarkYellow
+-BODY END-
+
+-COLOR CONFIGURATION-
+White=>White
+Black=>Black
+Gray=>Gray
+DarkGray=>DarkGray
+DarkRed=>DarkRed
+Red=>Red
+DarkYellow=>DarkYellow
+Yellow=>Yellow
+DarkGreen=>DarkGreen
+Green=>Green
+DarkCyan=>DarkCyan
+Cyan=>Cyan
+DarkBlue=>DarkBlue
+Blue=>Blue
+DarkMagenta=>DarkMagenta
+Magenta=>Magenta
+def=>Gray
+setcolors (inputColor/def/RESET) (licenseColor/def/RESET) (contKernelErrorColor/def/RESET) (uncontKernelErrorColor/def/RESET) (hostNameShellColor/def/RESET) (userNameShellColor/def/RESET) (backgroundColor/def/RESET) (neutralTextColor/def/RESET) (cmdListColor/def/RESET) (cmdDefColor/def/RESET)=>Green
+setcolors DarkCyan Blue DarkRed Red Cyan DarkCyan def Cyan Cyan DarkCyan=>Yellow
+setcolors DarkMagenta Magenta DarkRed Red Magenta DarkMagenta def Magenta Magenta DarkMagenta=>Yellow
+setcolors DarkYellow Yellow DarkRed Red Yellow DarkYellow def Yellow Yellow DarkYellow=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setcolors command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

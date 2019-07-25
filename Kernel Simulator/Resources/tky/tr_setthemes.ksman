@@ -1,0 +1,44 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "setthemes"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+setthemes komutu
+
+??zet: Teman??z?? ayarlar
+
+A????klama
+
+??ekirde??inizi, renkleri ayarlamak i??in renk k??melerini i??eren temalar?? kullanarak ki??iselle??tirebilirsiniz. 
+
+* Varsay??lan: Varsay??lan ??ekirdek rengi seti
+* RedConsole: Ayarlad??ktan sonra konsolunuz k??rm??z?? olacakt??r
+* Bluespire: Mavi konsolun tad??n?? ????kar??n
+* Hacker: Bilgisayar korsan??ysan??z, bu temay?? konsolunuzun bilgisayar korsanl?????? konsolu gibi g??r??nmesini sa??layacak ??ekilde ayarlay??n (ye??il renkli matris rengi)
+* LinuxUncolored: Renkli olmayan Linux kabu??unu sim??le eder (bash)
+* LinuxColoredDef: Renkli Linux kabu??unu sim??le eder (bash)
+
+Komut kullan??m??
+
+* setthemes (Tema)
+
+??rnekler
+
+* setthemes Hacker
+* setthemes Bluespire
+-BODY END-
+
+-COLOR CONFIGURATION-
+setthemes (Theme)=>Green
+setthemes Hacker=>Yellow
+setthemes Bluespire=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setthemes command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

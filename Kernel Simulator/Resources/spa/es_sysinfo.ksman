@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "sysinfo"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando sysinfo
+
+Resumen: Obtiene la informaci??n de su sistema.
+
+Descripci??n
+
+Este comando le permite ver la configuraci??n de su kernel, as?? como su MOTD, MAL, nombre de host, nombre de usuario e informaci??n de hardware.
+
+Este comando es ??til para informes de errores e informes de errores.
+
+Uso del comando
+
+* sysinfo
+-BODY END-
+
+-COLOR CONFIGURATION-
+sysinfo=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+sysinfo command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

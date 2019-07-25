@@ -1,0 +1,20 @@
+(*MAN START*)
+
+-TITLE:Verf??gbare Handbuchseiten
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Auschecken:
+
+1. Einf??hrung in den Kernel: Diese Seite zeigt Ihnen die Einf??hrung in den Kernel, wie Unix und Linux im Laufe der Jahre der Entwicklung gebaut und verbessert wurden, sowie eine kurze Beschreibung unseres Kernels, Eofla Kernel, der einen Namen erhalten wird.
+2. Verf??gbare Befehle: Auf dieser Seite werden die verf??gbaren Befehle im Kernel angezeigt. 
+3. Verlauf des Kernel-Simulators: Sie k??nnen sehen, was zwischen der Entwicklung der Kernel-Simulator-Versionen und den genauen ??nderungen zwischen den vorgenommenen Versionen passiert ist. 
+4. Modding-Anleitung: Sie k??nnen sehen, wie Sie Ihren eigenen Mod erstellen, und es gibt Beispiele.
+5. Anleitung zum Modden von Bildschirmschonern: Sie k??nnen sehen, wie Sie Ihren eigenen Bildschirmschoner erstellen, und es gibt Beispiele.
+6. Verf??gbare FTP-Befehle: Auf dieser Seite werden die verf??gbaren Befehle in der FTP-Shell angezeigt. 
+-BODY END-
+
+-SECTIONS-
+Check out:=>SE1
+-SECTIONS END-

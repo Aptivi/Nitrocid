@@ -1,0 +1,20 @@
+(*MAN START*)
+
+-TITLE:Pages de manuel disponibles
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Check-out:
+
+1. Introduction au noyau: Cette page pr??sente l???introduction au noyau, la mani??re dont Unix et Linux ont ??t?? construits et am??lior??s au cours des ann??es de d??veloppement, ainsi qu???une br??ve description de notre noyau, Eofla Kernel, qui donnera son nom.
+2. Commandes disponibles: Cette page vous montre les commandes disponibles dans le noyau. 
+3. Historique de Kernel Simulator: Vous pouvez voir ce qui s'est pass?? entre le d??veloppement des versions de Kernel Simulator et les modifications exactes apport??es entre les versions. 
+4. Guide de Modding: Vous pouvez voir comment cr??er votre propre mod, et il y a des exemples.
+5. Guide de modification d'??conomiseur d'??cran: vous pouvez voir comment cr??er votre propre ??conomiseur d'??cran. Vous trouverez des exemples.
+6. Commandes FTP disponibles: Cette page affiche les commandes disponibles dans le shell FTP. 
+-BODY END-
+
+-SECTIONS-
+Check out:=>SE1
+-SECTIONS END-

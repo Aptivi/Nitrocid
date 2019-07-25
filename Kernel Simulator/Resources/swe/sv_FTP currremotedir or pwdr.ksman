@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:FTP-kommando "currremotedir" eller "pwdr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+currremotedir eller pwdr FTP-kommando
+
+Sammanfattning: H??mtar din nuvarande fj??rrkatalog
+
+Beskrivning
+
+Det h??r FTP-kommandot ber??ttar vad som ??r fj??rrkatalogen i FTP-servern du f??r n??rvarande tittar p??.
+
+Kommandobruk
+
+* currremotedir
+* pwdr
+-BODY END-
+
+-COLOR CONFIGURATION-
+currremotedir=>Green
+pwdr=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+currremotedir or pwdr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,35 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "read"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl lesen
+
+Zusammenfassung: Liest den Dateiinhalt und druckt ihn auf dem Bildschirm aus
+
+Beschreibung
+
+Mit diesem Befehl k??nnen Sie den Dateiinhalt in Ihrem aktuellen Arbeitsverzeichnis anzeigen. 
+
+Befehlsverwendung
+
+* read (Datei)
+
+Beispiele
+
+* read libuesh: Liest den Dateiinhalt von libuesh
+-BODY END-
+
+-COLOR CONFIGURATION-
+read (file)=>Green
+read libuesh:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+read command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

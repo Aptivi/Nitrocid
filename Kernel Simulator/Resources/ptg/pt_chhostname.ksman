@@ -1,0 +1,44 @@
+(*MAN START*)
+
+-TITLE:Comando shell "chhostname"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando chhostname
+
+Resumo: Voc?? pode alterar seu nome de host para outro nome
+
+Descri????o
+
+Se voc?? est?? planejando mudar seu nome de host para outro nome, este comando ?? para voc??.
+
+Este comando usado para alterar o seu nome de host e redefine-o toda vez que voc?? reinicializa o kernel, mas agora o armazena no arquivo de configura????o assim que voc?? altera seu nome de host.
+
+Esta vers??o do kernel finalmente permite nomes de host com menos de 4 caracteres.
+
+Este comando tamb??m ?? ??til se voc?? estiver identificando v??rios computadores / servidores, para que voc?? n??o os esque??a.
+
+Uso de comando
+
+* chhostname (nome)
+
+Exemplos
+
+* chhostname joe: Altera seu nome de host para "joe"
+* chhostname comp-1: Altera seu nome de host para "comp-1"
+-BODY END-
+
+-COLOR CONFIGURATION-
+chhostname <name>=>Green
+chhostname joe:=>Yellow
+chhostname comp-1:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chhostname command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

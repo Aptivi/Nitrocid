@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "lockscreen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+kilit ekran?? komutu
+
+??zet: Ekran yanmalar??n?? ??nlemek i??in ekran?? varsay??lan ekran koruyucu ile kilitleyebilirsiniz.
+
+A????klama
+
+Uzakta oldu??unuzu ve bir saat veya daha fazla s??re boyunca komaya devam edece??inizi onaylamak i??in ekran??n??z?? kilitleyebilir ve varsay??lan ekran koruyucunuzu g??sterebilirsiniz. 
+
+Komut kullan??m??
+
+* kilit ekran??
+-BODY END-
+
+-COLOR CONFIGURATION-
+lockscreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lockscreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

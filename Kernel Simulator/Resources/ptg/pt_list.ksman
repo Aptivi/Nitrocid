@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Comando shell "lista"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando de lista
+
+Resumo: Voc?? pode listar o conte??do dentro do diret??rio atual ou da pasta especificada
+
+Descri????o
+
+Se voc?? n??o souber o que est?? no diret??rio ou no diret??rio atual, poder?? usar esse comando para listar o conte??do da pasta de maneira colorida.
+
+Uso de comando
+
+* Lista
+* lista [diret??rio]
+
+Exemplos
+
+* list: Este comando lista o conte??do atual do diret??rio de trabalho
+* list ..: Este comando lista o conte??do da pasta pai do diret??rio de trabalho atual
+* list boot: Este comando lista a pasta "boot" do diret??rio de trabalho atual, assumindo que o diret??rio de trabalho ?? /
+-BODY END-
+
+-COLOR CONFIGURATION-
+list=>Green
+list [directory]=>Green
+list:=>Yellow
+list ..:=>Yellow
+list boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+list command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

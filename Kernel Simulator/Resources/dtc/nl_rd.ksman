@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Shell-opdracht "rd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+rd commando
+
+Samenvatting: verwijdert de map uit de huidige werkmap
+
+Omschrijving
+
+Met deze opdracht kunt u een map uit uw huidige werkmap verwijderen. 
+
+Wanneer het echte bestandssysteem wordt ge??mplementeerd, worden directory's echt verwijderd.
+
+Commando gebruik
+
+* rd (directory)
+
+Voorbeelden
+
+* rd boot: het verwijdert de bootdirectory
+-BODY END-
+
+-COLOR CONFIGURATION-
+rd (directory)=>Green
+rd boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

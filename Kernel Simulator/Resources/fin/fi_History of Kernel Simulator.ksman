@@ -1,0 +1,853 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Kernel Simulatorin historia
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Pre-release
+
+Ennen kuin vapautat 0.0.1, ty??skentelemme PowerPoint OS -mallistoilla l??hes 2 vuotta sitten, ja ett?? k??ytimme VBA (VB6) -makroja Office 2007: ss??, ja vaikka ty??skentelemme PUNIX-pohjaisen PPT-k??ytt??j??rjestelm??n kanssa, makron m????r?? on 
+
+Kirjoitimme ytimen k??ynnistysmenettelyn, sis????nkirjautumisen ja kuoren, joka sis??lt???? komentoja. 
+
+KS 0.0.1
+
+Vapautuksessa 0.0.1 se sis??lsi alun perin proberin ja niiden koodit ovat Kernel.vb-koodauksessa, mutta se tuntui merkityksett??m??lt?? ja ep??orgaaniselta.
+
+Se sis??lsi my??s alkuper??isen sis????nkirjautumisen ja kuoren, mutta n??ytt???? silt??, ??????ett?? k??ynnistysmenettelyss?? se on tuottanut seuraavan tuotoksen varalla olevalle Windows 10 -kannettavalle (yritetty nyt):
+
+(1) usrmgr: J??rjestelm??n k??ytt??j??tunnukset: juuri luotu useradd.
+(2) usrmgr: K??ytt??j??juuri on ladattu onnistuneesti.
+(3) usrmgr: K??ytt??j?? useradd on ladattu onnistuneesti.
+(4) usrmgr: demoa ei l??ytynyt. 
+(5) usrmgr: K??ytt??j??tunnus on luotu.
+(6) usrmgr: K??ytt??j??juuri on ladattu onnistuneesti.
+(7) usrmgr: K??ytt??j?? useradd on ladattu onnistuneesti.
+(8) usrmgr: K??ytt??j??n esittely on ladattu onnistuneesti.
+(9) usrmgr: K??ytt??j??n esittely on ladattu onnistuneesti.
+
+Se (1) kertoi meille, ett?? n??m?? j??rjestelm??nvalvojat, root ja useradd (testitili, jolla on j??rjestelm??nvalvojan oikeudet), on luotu, mutta ei viel?? alustettu.
+Se (2-3) kertoi meille, ett?? ne on ladattu.
+K??yt??ss?? (4-5) testitili on luotu johtajan ja ytimen mukaan.
+(6-9), kaksi adminia on ladattu kahdesti, kuten se sanoi (2-3) (bug), ja (8-9), testitili ladataan TWICE, ei kerran. 
+
+Lis??ksi se on tehnyt 2 tarpeetonta linjaa (9) ja "Tervetuloa Kerneliin!"
+
+"K??ytt??j??tunnus" -kehote on "kirjautumistunnus", mik?? tarkoittaa sit??, ett?? k??ytt??jille, jotka eiv??t ole viel?? k??ytt??neet Linuxia, on vaikea ymm??rt????, mit?? "sis????nkirjautuminen" tarkoittaa, mutta "salasana:" -kehote on helppo ymm??rt???? sek?? aloittelijoille ett?? 
+
+Kun olet kirjautunut sis????n, kehosi n??ytt???? t??lt??: "[root @ kernel]
+
+Heti kun olet sy??tt??nyt ohjeen, siin?? on luettelo komentoista. 
+
+Joillakin komennoilla on omat aliasit, ja jotkut komennot raportoivat "T??m?? ydin ei ole lopullinen." 
+
+(1)
+(2) L??ht??
+(3)
+
+N??ytt???? silt??, ??ett?? sek?? (1) ett?? (3) linjat ovat t??ysin tarpeettomia. 
+
+Lis??ksi siin?? on 2 n??yt??ns????st??j????, Disco ja BW Disco (tulevaisuuden silm??t-h??vitt??j??)
+
+Heti, kun k??yt??t Discoa, se n??ytt???? h??mm??stytt??v??n disco-vaikutuksen, mutta sill?? on vika, kun poistut BG-v??rist?? muuten kuin mustana, kun painat ENTER-n??pp??int??, BG-v??ri pysyy ja tulostaa kuoren kehotteen ja tyhjent???? BG-v??rin. 
+
+BW Disco kuitenkin tuhoaa silm??si (todella) ja sill?? on sama virhe.
+
+Komennoilla on omat kehotuksensa. 
+
+Windows 10: ss?? CMD tekee ????nimerkin kaiuttimesta, ei emolevyn kaiuttimesta, joka piippaa POST: ssa (jotkut emolevyt tekev??t t??m??n)
+
+Tiedostojen listalla on v????renn??s, vaikka ydin ei ole lopullinen. 
+
+Komennolle ei voi lis??t?? argumentteja, tai KS olettaa, ett?? komentoa ei ole olemassa, vaikka se olisi olemassa, sanomalla, ett?? ex. 
+
+K??ynnistysotsikko kertoo my??s "- ---> Tervetuloa Eoflan ytimelle! Version 0.0.1.0 <--- -"
+
+My??s uudelleenk??ynnistys- tai sammutuskomento piippaa ja viiveet 3 sekunnin ajan tekev??t ty??ns??. 
+
+Prober voi my??s havaita vain yhden levyn.
+
+My??s Login.vb sis??lt???? monia tarpeettomia muuttujia. 
+
+Julkinen listaus uutena luettelona (merkkijonona) (K??ytt??j??tunnus Login.vb: st??)
+Julkinen salasanaluettelo uutena luettelona (merkkijono) (salasanaluettelo osoitteesta Login.vb)
+Julkinen k??ytt??j??nimi Uusi sanakirja (merkkijono, merkkijono) (sanakirja tallentaa k??ytt??j??nimen ja salasanan)
+My.Settings.Passwords (Salasana luettelosta My.Settings)
+My.Settings.Usernames (K??ytt??j??tunnus luettelosta My.Settings)
+
+Tarpeettomat muuttujat. 
+
+Julkinen k??ytt??j??nimi Uusi sanakirja (merkkijono, merkkijono) (sanakirja tallentaa k??ytt??j??nimen ja salasanan)
+
+KS 0.0.1.1
+
+Muutokset vaihtuvat osoitteeseen "Documentation - main page.txt" src: ss??. 
+
+Mutta mik?? viesti? 
+
+Ole hyv?? ja kirjaudu ulos, jotta muutokset tulevat voimaan. 
+
+Valitettavasti t??ll?? versiolla on samat tarkat virheet kuin ensimm??isess?? versiossa.
+
+KS 0.0.2
+
+Changelogs sanoi, ett?? sen koodi on suunniteltu uudelleen, sill?? on enemm??n komentoja, toteutettu perus-Internet, argumenttij??rjestelm??, vaihdetaan salasanaa ja muutoksia.
+
+Vaikka sill?? on sama sammutus / uudelleenk??ynnistys viiv??stysvirhe ja ei uusi rivi shell-viestin vian j??lkeen, t??ss?? on tarkalleen, miten muutokset tapahtuvat:
+
+1. "Sis????nkirjautuminen:" -viesti on muuttunut "K??ytt??j??tunnus:" helpottamaan ymm??rryst??
+2. On ytimen argumenttij??rjestelm??, ja he ovat "motd, nohwprobe, chkn = 1, preadduser, hostname ja hiljainen." 
+2a. 
+2b. 
+2c. 
+2d. 
+2e. 
+2F. 
+Mutta on olemassa virhe, ett?? kun yrit??t suorittaa argumentteja ytimen uudelleenk??ynnistyksen j??lkeen, jolla on my??s argumentteja, se kaatuu.
+3. Kaikki on v??rj??tty nyt.
+4. Korjattiin tarpeettomat uudet linjat l??hd??n v??lill??
+5. chpwd, hwprobe, lsnet, lsnettree, ping, showtd ja sysinfo lis??t????n
+6. Korjattiin discon taustakysymys
+7. Kaikki, mit?? mainitaan muutosmuistiossa
+
+KS 0.0.2.1
+
+Changelog sanoo, ett?? se vahvisti virheen "Command Not Found" -viestiin, ja lis??si unohtuneen tarkistuksen root-kansioon "chhostname" ja "chmotd".
+
+Ei muutoksia.
+
+KS 0.0.2.2
+
+Changelog sanoo, ett?? se vahvisti verkkoluetteloon virheen, jossa molemmat listatavat kaksinkertaiset PC-nimet n??kyv??t, virheiden k??sittely verkkojen luettelossa.
+
+Se lis??si my??s ytimen virheen k??sittelij??n.
+
+KS 0.0.2.3
+
+Changelog sanoo, ett?? se korjasi kaatumisen argumentteihin uudelleenk??ynnistyksen, vikojen korjaamisen ja paljon muuta. 
+
+Kaatumisen syy: Simulaattori yritti alustaa kunkin uudelleenk??ynnistyksen ajan ja p??iv??m????r??n.
+
+1. Siin?? on kiinte??t uudet linjat, kun k??ytet????n yli 2048 Hz: n taajuutta kysymykseen vastaamisen j??lkeen. 
+2. Siin?? on kiinte??t rivinvaihtokysymykset, kun ne vastaavat kysymykseen v????r?? valinta. 
+
+KS 0.0.3
+
+The changelog sanoo, ett?? se on kiinte?? vikoja, kirjautumisj??rjestelm??n uudelleen kirjoitettu, lis??tty komentoja, lis??tty argumentteja, lis??tty lupaj??rjestelm??, mukautetut v??rit ja paljon muuta.
+
+T??m??n version avulla voit k??ytt???? haluamaasi v??rej??. 
+
+1. Lis??ttiin virheenk??sittelij?? argumentteja j??sennett??ess??
+2. Lis??tty gpuprobe-argumentti (koetetaan grafiikkakortti jokaista k??ynnistyst?? varten)
+3. Lis??tty verkkoty??kalujen tarkistus
+4. Lis??tty valaus ajan ja p??iv??m????r??n n??ytt??miseksi
+5. Lis??tty palautusmuuttujan toiminto (oli toiminnassa, nyt ali)
+6. Lis??tty virhek??sittely k??ynnistett??ess?? ydin
+
+Huomaa, ett?? t??m??n julkaisun koodilohkojen k??sittely ei ole Try ... Catch -lohko, vaan vakio VB6-virheenk??sittelij??n koodinp??tk?? (Console-sovelluksessa):
+
+Virheess?? GoTo HandlerLabel
+
+Dim IntNumber as Integer = 50/0
+Lopeta Sub
+
+: HandlerLabel
+Console.WriteLine ("Jaa nollalla")
+Console.ReadKey
+
+KS 0.0.3.1
+
+Changelog sanoo, ett?? se on muokannut shell-otsikkoa valmisteltaessa 0.0.4, korjata vikoja poistamalla k??ytt??j??t, korjaamalla tyhj??n komennon ja lis????m??ll?? j??rjestelm??nvalvojan.
+
+Suuri julkaisu oli tarkoitus julkaista 20. toukokuuta 2018, mik?? on 3 p??iv???? ennen kuin kiintolevy ep??onnistui niin kauheasti.
+
+Joka tapauksessa, tarkassa muodossa:
+
+1. Login.vb: ss?? hallinta-osiot siirrettiin UserManagement.vb: hen, mik?? johti vain n??ihin osiin:
+1a. 
+1b. 
+1c. 
+2. Lis??tty "(Vain Admins)" -lippu chusrname, editperm ja rmuser
+3. Lis??tty rajoitettu komentorivi
+4. Jokainen tila, joka alkaa tilalla, katsotaan kommentiksi
+5. Nyt oletusoikeudet asetetaan aina, kun k??ytt??j?? luodaan
+
+KS 0.0.4
+
+T??m?? on KS: n suuri julkaisu. 
+
+Tarkka muodossa:
+
+1. Lis??tty komentorivin argumentteja ja k??ynnistysargumentteja
+2. Lis??tty virheenkorjaus (Wdbg)
+3. Lis??tty kirjoitusj??rjestelm?? (W ja Wln), jotta emme k??yt?? silmukkaa:
+(1) System.Console.ForegroundColor = CType (inputColor, ConsoleColor)
+(2) answerargs = System.Console.ReadLine ()
+(3) System.Console.ResetColor ()
+4. Lis??tty todelliset komentorivin argumentit (K??ynnist?? CMD KS-juurikansiossa ja suorita suoritettava tiedosto argumenteilla, kuten "KS.exe createConf")
+4a. 
+4b. 
+5. Lis??tty teemoja
+6. Lis??tty virhek??sittelij?? luvan asettamiseksi
+7. Muunnetaan kaikki virheenk??sittelij??t Try ... Catchiksi
+8. Lis??tty vaihtoehto n??ytt???? MOTD
+9. Lis??tty yll??pitotila
+10. Lis??tty asetukset
+11. Lis??tty laskin
+12. Ei RAM-vuotoa
+13. Lis??tty asettelu, netinfo, calc, scical, unitconv, md, mkdir, rd, rmdir ja debuglog -komennot
+14. Hidastetaan ajankohdan muutoksen toistonopeutta 100 ms: sta 500 ms: iin
+15. Pinging-kohdeosoite voidaan nyt toistaa
+16. Laitteistokotelointi on nyt laajennettu
+17. Siirretty jokainen Kernel.vb: n alikoodi sopiviin tiedostoihin
+
+Se on todella iso!
+
+Suuret julkaisut
+
+Suuret julkaisut ovat julkaisuja, joissa on 12 tarkkaa muutosta tai enemm??n muutoksia. 
+
+Jos haluat pit???? sit?? suurena tai valtavana julkaisuna, version 4, joka on jaettu 4: ll??, tulee olla numero, jolla ei ole desimaalipistett??, ensimm??inen versio, joka t??ytt???? kolmannen version osan s????nn??n, voi vaatia t??t?? otsikkoa, ja 
+
+KS 0.0.4.1
+
+Changelog sanoo, ett?? sill?? on kiinteit?? vikoja hakemiston muuttamisessa, kiinte??t viat "help chdir": ss??, lis??tty aliaksia hakemiston "cd" muuttamiseksi ja config-p??ivitys. 
+
+Ennen 5 p??iv??n kest??v???? kiintolevyn vikaantumista t??m?? versio julkaistiin nopean varmuuskopiona, nimelt????n Failure Followup Release.
+
+1. Unohdimme lis??t?? lisenssin otsikon Flags.vb: lle
+2. Lis??tty konfiguraation p??ivitysj??rjestelm??
+3. Lis??tty puuttuva merkint?? "cd"
+4. Lis??tty lauseke (ja currDir = "/")
+5. Lis??tty reloadconfig-komento (t??m??n komennon avulla voit ladata konfiguroinnin uudelleen)
+6. Muokattu muutoksen help-merkint??, jotta se heijastaa "cd"
+7. Lis??tty komento lis??t????n komentoon
+
+T??m?? julkaistiin 5/22/2018, 1 p??iv?? ennen kiintolevyn vikaantumista kehitysymp??rist??ss??.
+
+05.23.2018
+
+Julkaisimme 0.0.4.1-version julkisesti, jos kiintolevy ep??onnistuu.
+
+T??m??n j??lkeen yrit??mme oppia lis???? ytimist??, ja miten ne rakennetaan vanhojen Linux-CD-ROM-levyjen avulla, ja se, joka sattui olemaan Mandrake Linux, latautui. 
+
+Peli, jota pelataan tabletissamme, oli HackMe.
+
+Aina kun keskeytimme pelin, menimme tietokoneeseen ja n??imme, ett?? lataus pys??htyi, kuten tavallista. 
+
+Yritimme sitten Hirenin Boot CD: n Mini Windows XP: t??, ja se k??ynnistyi onnistuneesti. 
+
+CMD avattiin ja olemme suorittaneet chkdsk-ohjelman / F: ll??.
+
+N??imme, ett?? se on skannannut virheit?? ja vahvistanut ne, ja kun k??ynnistimme uudelleen, kaikki meni hyvin.
+
+Katso lis???? osoitteesta https://www.bleepingcomputer.com/forums/t/677922/windows-xp-sp3-reboot-cycle-crashes-often-on-boot/ (Thread on hot - bleepingcomputer.comin mukaan 
+
+24.5.2014 - 5/27/2018
+
+Yritimme uudelleen menem??ll?? k??ytt??j??rjestelm????n, mutta asiat sekasivat AVIRA Antivirusin asentamisen ja poistamisen j??lkeen, koska se oli ep??vakaa muiden kuin SSE2-prosessorien kanssa. 
+
+Menimme j??lleen MiniXP: hen, ja yritimme saada SMART-tiedot k??ytt??m??ll?? gsmartcontrol-uusinta versiota, mutta se ilmoitti, ettei sill?? ollut dwmapi.dll-tiedostoa. 
+
+Yritimme uudelleen k??ytt??m??ll?? CrystalDiskInfo-ohjelmaa, mutta se ei tulostanut tietoja oikein.
+
+Voimme varmuuskopioida kaikki t??rke??t tiedot nopeasti toiseen ty??asemaan, joka on kytketty viimeisten 2-3 vuoden aikana vara-tietokoneesta, joka ei k??ynnistynyt.
+
+Pyrimme my??s testaamaan asemaa Western Digital -diagnostiikkaty??kalulla, mutta pikatesti ep??onnistui v??litt??m??sti, joten se viittaa siihen, ett?? kiintolevyn vika on v??lit??n. 
+
+HDD: n viimeisen?? p??iv??n??, jossa on super-r????t??l??ity Windows XP -k??ytt??j??rjestelm??, asema ep??onnistui kokonaan sen j??lkeen, ja kaikki k??ytt??j??rjestelm??n ja ohjelmien osa, mukaan lukien XPize-tumma teema (Royale?), Windows-sivupalkki XP: lle, Visual 
+
+Lis??tietoja on osoitteessa: https://www.bleepingcomputer.com/forums/t/678191/windows-xp-sp3-slow-booting-unusual-hdd-activity-with-noise-then-bsod/ (s??ie on kuuma)
+
+05.28.2018
+
+Kun taajuusmuuttaja on kuollut, p????timme irrottaa kuolleen aseman tietokoneesta ja asettaa ty??aseman asetukset Masteriksi, menimme Hirenin BootCD: n Partition Magic -ohjelmaan ja m????ritimme sopivat asetukset siten, ett?? meill?? on kaksi osiota pyyhkim??tt?? tietokantaasi 
+
+T??m??n j??lkeen asensimme Windows XP: n ja konfiguroimme kaiken tarvittavan, kunhan emme pyyhki mit????n tietosivulta, koska jos se pyyhittiin, kaikki kovat ty??t menetet????n ikuisesti, aivan kuten se tapahtui meille, kun se tapahtui 
+
+Asennimme VB2010: n tarpeen mukaan.
+
+05.29.2018
+
+Meid??n on kohdattava toinen ongelma. 
+
+(1) K??ynnistystallennuksen tarkistaminen CD-ROM-levyll?? ... Ei l??ydy
+(2)
+(3) K??ynnistysh??iri??
+(4) Aseta BOOT-levyke asemaan A:
+(5) tai aseta j??rjestelm??n levy levylle.
+(6) Paina mit?? tahansa n??pp??int??, kun olet valmis.
+
+8 / ?? / 2018
+
+Korjattiin ongelma asettamalla ajurin jumpperi Masterista kaapelivalintaan
+
+KS 0.0.4.5
+
+Changelog sanoo, ett?? sill?? on kiinteit?? vikoja, kun mik????n koetin ep??onnistui mittaamaan laitteistoa, lis??si tarkempia tietoja koettimissa, Ohje-j??rjestelm?? parani, Korjaa vikoja v??rikehotteissa, Kysyy vanhentuneita ja paljon muuta, mutta sanoo my??s, ett?? se on viiv??stynyt 2 kuukautta 
+
+1. Muutettu MOTD- ja is??nt??nimi pysyv??ksi
+2. Voit jakaa, kun pist??t komentoja k??ytt??m??ll?? kaksoispisteit??, joissa on v??lily??ntej??.
+3. Lis??tty yll??pitotilan argumentti
+4. Muutti ohjetekstin k??rjen
+5. Lis??tty virhek??sittelij?? v??rien asettamisessa
+6. Ei en???? vikoja, kun joku luotain ei saanut tietoa laitteistosta
+7. Laajennetut koettimet sis??lt??v??t lis??tietoja
+8. Lis??tty nurkkaan async-aika / p??iv??m????r??
+9. Muutti tervetullut-bannerin
+10. Nyt laitteiston koetuksen virheenk??sittely on yst??v??llisempi
+11. Kernel Error -muuttujien tuki
+12. T??ysin hyl??tty My.Settings MOTD- ja Hostname-muuttujat
+13. Lis??tty enemm??n l??mp??tilayksik??it??
+14. Lis??tty Corner Time / Date-, MOTD- ja HostName-m????ritykset
+15. Poistetaan BW Disco
+16. Kysymykset ovat vanhentuneita
+17. Organisoi tukij??rjestelm??n
+18. hidastimme ajan / p??iv??m????r??n vaihtamista 500 ms: sta 1000 ms: iin
+19. Poistettiin tarpeettomat sub ShowTimeQuiet ()
+
+KS 0.0.4.6
+
+Changelog sanoo, ett?? se on poistanut ulkopuolisen "sy??tetyn", joka on poistettu komento 0.0.4.5 ja valmistautuminen 0.0.5: n mukautettuihin korvauksiin
+
+Mukautettujen korvausten valmistelu kertoo k??ytt??j??lle, ett?? ennalta m????ritetyt aliakset poistetaan, kun k??skyj??, joilla on omat aliaksensa, ja kun komentokomentoa k??ytet????n
+
+Kuitenkin vieras "sy??tetty" komento poistetaan k??ytett??viss?? olevista komennoista ().
+
+KS 0.0.4.7
+
+Changelog sanoo, ett?? sill?? on parempi virheenk??sittely "ping" -komennon ja kiinte??n "unitconv" -k??ytt??viestin osalta.
+
+1. Poistettiin viesti "net: Network available." 
+2. Muunnetaan muut VB6-virheenk??sittelij??t Network.vb: ss?? kokeilemaan ... Catch block
+3. Ping-yrityksi?? voidaan nyt toistaa, kun on virhe
+4. Unitconv-ohjeviesti, kun k??ytt??j?? ei antanut tarpeeksi argumentteja, p??ivitet????n nyt vastaamaan uusia yksik??it??.
+
+KS 0.0.4.9
+
+Changelog sanoo, ett?? se on parempi Error Handling for "unitconv" -komento, Lis??tty v??liaikaiset aliakset (ei lopullinen, koska ei ole "showaliases" -komentoa), korjaa joitakin vikoja, lis??tty aikavy??hykkeit?? ("showtdzone" ja n??yt?? nykyinen aikavy??hyke " 
+
+1. Monikerroksinen tarkistus on lis??tty k??ytt??m??ll?? mutexia, jotta v??ltet????n h??iri??t kahdella tai useammalla KS-prosessilla, jotka h??iritsev??t toisiaan.
+2. Lis??tty MOTD kirjautumisen j??lkeen
+3. Salasanoilla voi nyt olla symbolit, jotka takaavat suuremman turvallisuuden
+4. Korjattiin virhesanoma, joka poistettaessa k??ytt??ji?? sanoo "Virhe yritt???? lis??t?? k??ytt??j??tunnusta."
+5. Yksik??iden muuntaminen on nyt tapausherkk??
+6. Kiinte?? unitconv n??ytt???? tulokset, vaikka virheilmoitus ilmestyisi
+7. Parempi k??ytt??ytyminen, kun p??ivit??t konfig
+8. Voit hallita aliaksia
+9. Muutti kehotteen poistamisen viestin
+10. Muutettu ohjeesta merkkijonoksi ohjeeksi HelpSystem.ShowHelp (sanat (0))
+11. Lis??tty alias, chmal, showmal ja showtdzone -komennot
+12. Tehty kuoren j??sent??minen aliaksia
+13. Kirjoitin kirjoitettiin CMD-kehotteeseen, jossa kirjoitetaan alilinja
+14. Lis??tty tuki aikavy??hykkeille
+
+KS 0.0.4.10
+
+Changelog sanoo, ett?? se on fuusioinut "sysinfo" ja "lsdrivers", parannettu ohjeen m????ritys (k??ytetty sanakirja modulaation valmisteluun), lis??nnyt "lscomp", joka voi listata kaikki online- ja offline-tietokoneet vain nimien mukaan, lis??tty "lsnet" -virheen k??sittelij?? 
+
+1. Jokainen osa ja jokainen moduuli on julkistettu muutoksille
+2. Lis??tty muutostuki
+3. Korjasi jokaisen uudelleenk??ynnistyksen tarkistusmallin (esimerkkiChecked flag on lis??tty)
+4. Tehty jokaista lausuntoa, joka on yhden lausunnon yksi rivi
+5. Nyt MOTD n??kyy vain kerran
+6. Lis??tty n??yt??ns????st??j??
+7. Lis??tty tuki kaikkien tietokoneiden luetteloon, vaikka ne ovat offline-tilassa
+8. Lis??tty VB6-virheenk??sittelij?? lscomp, lsnet ja lsnettree
+9. Disco Effectin suorittaminen tekee kohdistimesta n??kym??tt??m??n, kun taas poistumisen yhteydess?? tausta palautetaan ja kohdistin n??kyy n??kyviss??.
+10. V??hennet????n, kuinka monta kertaa j??ljemp??n?? oleva koodilohko suoritetaan GetCommand.vb: ss??:
+(1) Sanat = pyydettyCommand.Split ({"" c})
+(2) Dim c Integer
+(3) arg = 1 sanoihin.Laskenta - 1
+(4) c = c sanat (arg) .Luku 1
+(5) Seuraava
+(6) Dim strArgs merkkijonona = requestCommand.Substring (requestCommand.IndexOf (""), c)
+(7) Dim args () merkkijonona = strArgs.Split ({"" c}, StringSplitOptions.RemoveEmptyEntries)
+siirt??m??ll?? se alkuun muutamalla muutoksilla, jolloin:
+(1) Dim indeksi As Integer = requestCommand.IndexOf ("")
+(2) Jos (indeksi = -1) Sitten indeksi = requestCommand.Length
+(3) Sanat = pyydettyCommand.Split ({"" c})
+(4) Dim strArgs merkkijonona = pyydettyCommand.Substring (index)
+(5) Jos ei (index = requestCommand.Length) Sitten strArgs = strArgs.Substring (1)
+(6) Dim args () merkkijonona = strArgs.Split ({"" c}, StringSplitOptions.RemoveEmptyEntries)
+11. Muutti ylim????r??isen aliaksen piippauksesta ??rsytt??v??ksi ????neksi
+12. Lis??tty loadaver, lockscreen, setaver ja savescreen -komennot
+13. Korvattiin lsdriversit lscompilla ja lsdrivers-tulostus siirret????n sysinfo-tilaan
+14. Nyt ExecuteCommand () -alueen virheenk??sittelij?? voi sanoa, mik?? komento ei onnistunut.
+15. Ohjeiden m????ritelm??t muutetaan nyt sanakirjaksi
+T??m?? on my??s valmistelu k????nnettyihin ytimiin.
+16. Korjasi sotkuisen komennon luettelon ShowHelpissa ()
+17. ueshversion muuttuja poistetaan, koska sit?? ei p??ivitet?? 0.0.4 j??lkeen, ja UESH-versio on nyt peritty ytimen versiosta
+
+KS 0.0.4.11
+
+Changelog sanoo, ett?? se on poistanut ennalta m????ritetyt aliakset ja mainitun kiinte??n tunnetun virheen.
+
+Katsotaanpa, mik?? on tunnettua virhett??mme, joka on noin 0.0.4.11.
+
+L??hdekoodin vianm????ritysasiakirjat sanovat, ett?? kun asetat "V??rillisen kuoren" arvoksi False, n??et, ett?? tulosteen v??ri on valkoinen eik?? harmaa.
+
+Perussyy? 
+
+Jos (colorType = "input") Sitten ForegroundColor = inputColor
+
+Se ei tarkistanut, onko ColoredShell-muuttuja totta, joten se yritt???? aina muuttaa konsolin etualan v??ri?? inputColoriksi, vaikka Colored Shell -asetukseksi olisi asetettu false.
+
+Koska t??m?? virhe on korjattu, koodi n??ytt???? nyt seuraavasti:
+
+Jos (colorType = "input" ja ColoredShell = True) Sitten ForegroundColor = inputColor
+
+T??m?? muutos ei kuitenkaan tapahtunut Wln () sub: ss??, koska kaikki kehotukset k??ytt??v??t W () -ohjelmaa oikein alustamaan kehotukset.
+
+Nyt tarkat muutokset:
+
+1. Muutti W () - ja Wln () -alueen virheenk??sittelij??n VB6-menetelm??st?? kokeilemaan ... Catch-lohkoja
+2. Kun malli on LinuxUncoloredDef, v??rillinen kuorimuuttuja asetetaan arvoon False, koska kaikki on t??ss?? v??riss??.
+3. Poistettiin komentojen ennalta m????ritetyt aliakset
+4. Muokattu ohjeen m????rittely, joten siin?? sanotaan, ett?? disco-komento poistetaan ja vaikutus tapahtuu n??yt??ns????st??jiss??.
+
+KS 0.0.4.12
+
+Changelog sanoo vain: "Korvattu disco-komento, jossa on n??yt??ns????st??j??."
+
+KS 0.0.5
+
+Changelog sanoo: "Poistetut kehotukset, kiinte??t MAL-k??ytt??j??tunnukset, lis??tyt" showaliases ", kiinte??t aliakset j??sennettiin, poistettiin vaatimus antaa komento poistaa alias ja k??ytt????n otetut komennot modeissa"
+
+T??m?? julkaisu on viimeinen 2 julkaisua, jotka julkaistaan ??ilman kirjaston riippuvuuksia.
+
+1. Poistettiin komentojen ja argumenttien kehotukset, mik?? johti massiiviseen tiedostokoon pienent??miseen (0.0.4.12: 306KB -> 0.0.5: 292KB)
+2. Lis??tty 2 v??rimuuttujaa help-komentoluettelon ja m????ritelmien tallentamiseen
+3. Lis??tty mustia saatavilla oleviin v??reihin
+4. V??rien asettaminen on nyt pysyv????
+5. Poistettu motd, chkn = 1, preadduser ja hostname argumentit
+6. Nyt ydin luo demo-testitilin vain, jos "Luo demo-tili" -asetus on Totta
+7. Nyt piippauskomento est???? taajuudet, jotka ovat yli 2048 Hz
+8. Nyt modeilla voi olla komentoja, ja niiss?? voi olla sanakirjan luettelo
+9. ManagAlias ??() -aliarvot ovat kaikki tarpeen
+10. Lis??tty komento showaliat, vaikka ei ole apua m????ritelm??
+11. Korjattiin aliasparser, ett?? kun komentorivi sis??lt???? jonkin alias-luettelon sanoista, alias suoritetaan ennen komentoa.
+
+KS 0.0.5.1
+
+Changelog sanoo: "Seurantavapautus poistti k??ytt??m??tt??m??n koodin, parantaa virheenkorjauslokien k??ytt??ytymist?? ja parantaa virheenkorjausviestin luettavuutta samalla, kun testataan modeja komennoilla ilman m????ritelmi??."
+
+1. Muutti k??ynnistysbanneria uudelleen
+2. Se j??sent???? todelliset komentorivin argumentit k??ynnistyksen yhteydess??
+3. Parannettu virheenkorjauslokien k??ytt??ytyminen
+4. Parannettu virheenkorjausviestin luettavuus samalla, kun testataan modeja komennoilla, joilla ei ole m????ritelmi??.
+
+KS 0.0.5.2
+
+Changelog sanoo: "Tehty GPU-koetusta k??ynnistyksess??, poistamalla" gpuprobe "-argumentti, muutettu konfigurointik??yt??nt??"
+
+1. Nyt GPU: ta tutkitaan aina, koska laitteiston testaus on t??rke????, jolloin gpuprobe-argumentti poistetaan
+2. Poistettu GPUProbeFlag-muuttuja
+3. Muutti kokoonpanon p??ivitt??mist??, joten kaksoismerkint??vika ei n??y
+
+Kirjastojen k??ytt??
+
+Yritimme tehd?? kaiken mahdollisimman yksinkertaiseksi, mutta konfiguraatio osoittautuu kaikkien kirjoittajien joukosta.
+
+P????timme ladata MadMilkman.Ini-kirjaston ja asentaa sen KS: ????n, ja kirjoitimme config-kirjailijat uudelleen kirjastoon.
+
+0.0.5.5-versio ei k??ytt??nyt NuGet-kirjastoa kirjastojen hankkimiseen, koska k??yt??mme 0.0.1-versiosta VB2010: t?? Windows XP: n kehitysymp??rist??ss??.
+
+VG2010: lle ei kuitenkaan ole toiminut NuGet-paketinhallinta, koska tuki on p????ttynyt, ja sen sijaan ne tarjoavat latauksia VS2015: lle ja VS2017: lle kirjoituksen aikaan.
+
+0.0.5.5 tukee kuitenkin edelleen Windows XP: t??.
+
+KS 0.0.5.5
+
+T??m?? versio k??ytt???? nyt MadMilkman.Ini-kirjastoa, jota voit tarkastella usedeps-komennossa.
+
+Changelog sanoi: "Uudelleen kirjoitettu konfiguraatio, Kielletyt aliakset, puuttuvat ohjekirjat" showalises ": lle, lis??siv??t lis???? MOTD- ja MAL-paikkamerkkej??, kiinte?? toistuva RAM-tilan viesti ja FTP-asiakas on lis??tty lopulta!"
+
+T??m?? versio on my??s lopullinen versio, joka ei toimi kunnolla Unix-j??rjestelmiss??.
+
+Sammutus- ja uudelleenk??ynnistyskomento ei en???? viiv??sty, mutta tekee kuitenkin ????nimerkin
+
+1. Kaikki konfiguraatio kirjoitetaan uudelleen k??ytt??en uutta kirjastoa, MadMilkman.Ini .NET 4.0
+2. Laitteiston koetustila on nyt vanhentunut
+3. RAM-tilan toistuva viesti on korjattu.
+4. Lis??tty lis???? MOTD- ja MAL-paikkamerkkej??, mik?? johti k??ytt??j??n, lyhytaikaisen, pitk??aikaisen, lyhyen, pitk??aikaisen, aikavy??hykkeen ja kes??t??hd??n sijainnin lis????miseen
+5. Nyt kun kokonaisluku ylivuoto poikkeus heitet????n, viesti on kuvailevampi.
+6. Lis??tty FTP-asiakas ja lis??tty ftp-komento
+7. Siirr?? pinging-ty??kalut NetworkTools.vb
+8. Nyt kiellettyjen komentojen aliasointi ei ole en???? sallittua
+9. Lis??tty noaliases ja useddeps -komentoja
+10. Lis??tty n??yttelyesityksi?? varten puuttuvia ohjeita
+11. Loadaver- ja setaver-ohjekirjat n??kyv??t nyt k??ytett??viss?? olevien n??yt??ns????st??j??tiedostojen luettelossa
+
+Unix-j??rjestelmien tuki
+
+Kun kehit??mme KS: ????, t??rm??simme Mono-projektiin ja se sanoi tukevansa Windowsia, Mac OS X: ???? ja Linuxia. 
+
+Suosittelemme JetBrains Rideri?? Linux 64-bittisille j??rjestelmille, koska se voi tarkistaa virheiden koodin LIVE, kuten Visual Studio for Windows, Visual Studio Code for Windows, Mac ja Linux, ja toisin kuin MonoDevelop. 
+
+.NET for Mono -projekti on kuitenkin kokeellinen t??ll?? hetkell??, mutta sek?? MonoDevelop ett?? Rider k??ytt??v??t sit??.
+
+Joten olemme ladanneet projektin MonoDevelopiin, mutta kun rakennimme projektin, saimme 3 varoitusta. 
+
+Kun olemme poistaneet Kernel.vb: n laitteiston alustustiedon, ydin k??ynnistyi, mutta on toinen ongelma.
+
+Vaikka Monon konsoli.Write (Line) voi j??sent???? argumentteja oikein, W (ln) ei voi.
+
+Teimme kaiken tarvittavan ongelman korjaamiseksi, ja se onnistui. 
+
+KS 0.0.5.6
+
+Changelog sanoo: "Parannetut probers, k??ytt??j??tunnus sis????nkirjautumisessa, parempi yhteensopivuus Unixin kanssa"
+
+1. Koska Unixissa on erilaisia ??ymp??rist??muuttujia, lis??simme jokaisen koodin, joka yritt???? k??ytt???? k??ytt??j??n profiilin hakemistoa
+2. Yksinkertaistanut laitteiston koetusprosessin tekem??ll?? luokkia ja luetteloita kullekin laitteelle
+3. Nyt se n??ytt???? k????nn??ksen p??iv??m????r??n otsikossa
+4. Siin?? luetellaan k??ytt??j??tunnukset sis????nkirjautumisen yhteydess??
+5. Siirretty virheenkorjauksen kirjoittaja TextWriterColor.vb
+6. Ennen j??sent??mist?? muuttujat ennen kirjoittamista
+7. P??ivitetyt konfiguraation p??ivitykset (Voit n??hd??, mit?? Config.vb: ss?? tapahtui l??hdekoodissa 0.0.5.6 ja 0.0.5.5)
+8. Ota tukea kaikille Unixin luettelointitietokomennoille
+9. Made reloadconfig luki t??rke??t konfigurointitiedot
+10. Nyt initTimesInZones () suoritetaan aina, kun showtdzone suoritetaan, sen sijaan ett?? p??ivitett??isiin joka toinen
+11. Nyt "help arginj" sis??lt???? argumentteja
+12. Nyt Unix saa aikavy??hyketukea
+
+KS 0.0.5.7
+
+Changelog sanoo: "Korjattu kaatuminen, kun k??ynnist??t, kun k??yt??t muuta tiedostonime?? kuin" Kernel Simulator.exe ", Parempi virhek??sittely FTP: lle, Lis??tty nykyinen hakemiston tulostus FTP: ss??, poistettu" version "komento, vahvistanut" Quiet Probe " 
+
+1. Nyt KS voi saada nykyisen teeman nimen
+2. Korjattu tunnettu bug "Mik?? tahansa k??sitelt??v?? virheilmoitus kaataa ohjaimen jatkuvalla ytimen virheell??."
+3. Nyt se tarkistaa Unix-j??rjestelm??n kaikista lepotilatoiminnoista
+4. Korjattu asetettu Quiet Probe -asetuksen m????ritystiedosto "Quiet Probe"
+5. FTP: ss?? komentoilla voi olla omat aliasit
+6. FTP-asiakkaan virheviestit ovat kuvailevampia
+7. Korjattiin kuorosanoma, joka n??kyy, kun painat ENTER-n??pp??int?? kirjoittamatta komentoja (FTP-kuori)
+8. Laajennettu sysinfo-komento n??ytt???? lis???? tietoa ytimest??
+9. Poista version komento
+
+KS 0.0.5.8
+
+Changelog sanoo: "Poistettu piippaus, kun k??ynnist??t ja sammutetaan, Poistettu" piippaus "-komento, (Windows) Proberit jatkuvat, vaikka ne ep??onnistuisivat, Muistin h??vitt??minen ei en???? k??yt?? VB6-menetelm???? virheiden k??sittelyyn"
+
+T??m?? julkaisu on viimeisin julkaisu, joka tukee Windows XP: t?? ja joka on rakennettu Visual Basic 2010 Express Editioniin. 
+
+Tied??mme hyvin, ett?? kannettavat tietokoneet ovat hitaampia kuin tietokoneet. 
+
+1. Nyt laitteistokokeiluvirheilmoitukset laajennetaan ja ymm??rrett??v??mm??t
+2. Nyt koettimet n??ytt??v??t tietoja kuitenkin, vaikka laitteistokokeet ovat ep??onnistuneet
+3. Muutti DisposeAll (): n virhek??sittelij??n VB6-menetelm??st?? Kokeile ... Catch-lohkoja
+4. Poisti piippauskomennon
+5. Nyt sammutus- ja uudelleenk??ynnistyskomento ei piippaa
+6. Lis??tty usermanual-komento, mutta se on k??ynniss??
+7. Nyt vain j??rjestelm??nvalvojat voivat k??ytt???? reloadconfig- ja alias-komentoja
+
+Uusi kehitys n??ytt????
+
+Aloitimme 0.0.5.9: n kehitt??misen VB2010 Express- ja Windows XP -k??ytt??j??rjestelmiss?? ja k??ytimme MadMilkman.Ini-, FluentFTP- ja Newtonsoft.Json-kirjastoja tavalliseen tapaan.
+
+Samaan aikaan yksi kirjastostamme on vakavasti vanhentunut ja sit?? on p??ivitett??v?? seurantaan lataus- ja latausprosessin etenemispalkissa. 
+
+Meill?? on kaksoisk??ynnistetty Windows XP ja Windows 7, ja yritimme asentaa VS2017: n, mutta n??ytt???? silt??, ??ett?? asennusohjelma kaatuu (ei asennusohjelma, jossa se lataa 60 Mt dataa ja purkaa ne, mutta k??ytet????n VS2017: n asentamiseen). 
+
+Sitten ep??ilimme, ett?? se oli vs_installer.exe yritt??ess????n k??ytt???? laittomia ohjeita muussa kuin SSE2 AMD Athlon XP 1500: ssa, joten olemme yritt??neet VS2015: ????, ja se toimi.
+
+NuGet-paketinhallinta toimi onnistuneesti. 
+
+Poistimme kaikki vanhat kirjastot vanhentuneella tavalla ja aloimme k??ytt???? NuGeti?? asettamaan riippuvuuskirjastoja KS: ????n, ja saimme FluentFTP: n uusimman version. 
+
+Olemme suorittaneet koodauksen ja yritimme laittaa sen GitHubiin k??ytt??m??ll?? GitHub-laajennusta VS-yhteis??ss??, mutta se ei onnistunut, koska devenv.exe yritti k??ytt???? SSE2-ohjeita, joten VS2015 kaatui.
+
+Useiden kaatumisten j??lkeen saimme kannettavan tietokoneen, jossa oli Windows 10, ja muutti kaikki KS-tiedostot siihen, mutta 3-4 tiedostoa menetettiin, ja yksi niist?? on GetCommand.vb, joka j??sent???? komentoja.
+
+Kirjoitimme n??m?? 3-4 tiedostoa uudelleen, ja he ty??skenteliv??t menestyksekk????sti, kuten viime kerralla, kun laajennimme niit?? 0.0.5.9-ominaisuuksiin.
+
+KS 0.0.5.9
+
+Changelog sanoo: "Modit lopetetaan nyt, kun suljetaan, Modit voivat olla omalla nimell????n ja omalla versiollaan, kiinte?? virheenkorjaaja ei sulkeudu kunnolla, kun k??ynnist??t tai sammutetaan, Shell ei en???? sulkeudu sovelluksesta, kun poikkeus tapahtuu. 
+
+1. K??ytt??ess??si GPU: ta, jos prober ei voi saada videon RAM-muistia GPU: lle, se palaa 0: een
+2. GPU-muistimuuttuja muutetaan UInt64: ksi
+3. Lis??tty tapahtumia ja poikkeuksia (hienoja malleja varten)
+4. Poistettu initializeMainUsers-aliverkko, koska KS tekee juuri root-tilin.
+5. Jos k??ytt??j??tunnuksessa ei ole k??ytt??j????, ydin kaatuu
+6. Nyt modit pys??ytet????n sammutuksen tai uudelleenk??ynnistyksen yhteydess??
+7. Siirrettiin kaikki ytimen ty??kalut KernelTools.vb
+8. Kaikki merkkijonot voidaan nyt k????nt???? (t??ll?? hetkell?? voit vaihtaa kielt?? vain muuttamalla asetustiedostoa tai KS Config -ty??kalua)
+9. Lis??tty manuaaliset sivut
+10. Nyt voit muuntaa valuutat (Internet-yhteys on pakollinen)
+11. Nyt debug-kirjoittaja ei tue kirjoittamista ilman uusia rivej??
+12. J??tteiden ker??ilij?? vikaa, kun se suoritetaan
+13. Nyt kaikki on debugged
+14. Poistettiin bin????riset, passiiviset, ssl- ja tekstin FTP-komennot
+15. Lis??tty FTP-komennon nime??minen uudelleen
+16. Nyt FTP-asiakas k??ytt???? FluentFTP: t?? helpottamaan hallintaa
+17. Nyt kun lataat tai lataat tiedostoja, n??et edistymispalkin
+18. Nyt kaikki siirret????n sopivissa tiloissa
+19. CWD-injektiota ei en???? tarvita
+20. Jotkut nimiavaruuspuhelut yksinkertaistuvat
+21. Lis??tty valuuttamuunnin
+22. Lis??tty puuttuva merkint?? lscompille
+23. Nyt aliasit n??kyv??t ohjekomennolla poistamalla showaliases-komennon
+24. Ei en???? pinon ylivuotoja, kun kirjoitat suurta m????r???? komentoja, jotka ylitt??v??t maksimipinon m????r??n
+25. Nyt kulmassa oleva aika / p??iv??m????r?? n??ytet????n oikein kokoisilla konsoleilla
+26. Poistettiin rekisteritapa TimeZonesissa
+27. Nyt NuGet k??ytet????n pakettien (kirjastojen) hallintaan
+
+KS 0.0.5.10
+
+Olemme kiireisi?? jotain muuta, emmek?? pystyneet vapauttamaan 0,0.6: a ajoissa 1-vuotisp??iv???? varten, joten t??m?? julkaisu on 1-vuotisjuhla. 
+
+1. Manuaalisten sivujen parempi luettavuus (vbTab on nyt suodatettu eik?? aiheuta ongelmia)
+2. Nyt k????nt??j?? tulostaa debug info, kun merkkijonoa ei l??ydy k????nn??slistasta
+3. Laitteisto Prober: Lopeta j??rjestelm??n "
+4. Manpage Parser: Pys??yt?? virheenkorjauslokien t??ytt??minen k??ytt??m??tt??mien tekstien tarkistuksella ja laajensi muutamia virheenkorjausviestej??
+5. Kiinte?? BIOS-merkkijono ei n??y
+6. Poistettiin tarpeettomat lepotarkastus
+7. Poistettu "nohwprobe" - ytimen argumentti, koska laitteiston testaus on t??rke????
+8. Poistettiin tarpeettomat aikavy??hykealustojen tarkistukset
+9. P??ivitetty FluentFTP- ja Newtonsoft.Json-kirjastot uusimpiin vakaisiin versioihin (Kyll??, siksi k??yt??mme NuGet! NuGeti?? on parempi kuin ulkoisten kirjastojen manuaalinen p??ivitt??minen.)
+10. Ei pinoa kaksoiskappaleita lukuun ottamatta salasanan osaa
+11. Korjattu MAL: n ja MOTD: n vika ei p??ivity kirjautumisten v??lill??
+12. Sysinfo: n korjausvirhe (viestin asetukset eiv??t tulostu)
+13. Ydin tulostaa nyt k??ynnistys-, debug- ja sysinfo-komennossa k??ytetyn ymp??rist??n
+14. Valmistetut kirjoitustapahtumat vanhentuneet
+
+Totuus tilantunnistuksesta
+
+Kun teemme KS 0.0.4.5, olemme lis??nneet Status for RAM ja HDD osoittamaan, ett?? ne ovat OK, tai jos ne eiv??t toimi. 
+
+KS 0.0.5.11
+
+T??m?? versio julkaistaan ??hotfix-korjauksena 0.0.5.10, poistamalla vanhentuneet asiat ja laihtumalla ennen 0.0.6. 
+
+1. Valmistettu GPU- ja BIOS-koetukset <Obsolete>
+2. Ei en???? COM-puheluja, kun laitteita testataan
+3. Poistettiin hy??dyt??n tiedosto, jossa on kiintolevyn tiedot
+4. Korjattiin sysinfo-k????nn??ksen kernel-kokoonpano-osan n??ytt??minen
+5. Poistettiin tilatunnistus kiintolevylt?? ja RAM-muistista
+6. Kiinte?? CHS-osa ei n??y, jos kiintolevyll?? on valmistajan arvo
+7. Kiinte?? k????nt??j?? ei palauta englanninkielist?? arvoa, jos k????nn??slista ei sis??ll?? t??llaista arvoa
+8. Kiinte?? GPU-proberi olettaen, ett?? Microsoft Basic Display Driver ei ole perusohjain
+9. Valmistetut n??yt??ns????st??j??t koetellaan k??ynnistyksess??
+10. Korjattu NullReferenceException, kun yrit??t ladata seuraavan n??yt??ns????st??j??n, kun edellisess?? n??yt??ns????st??j??ss?? tapahtui virhe.
+11. Korjattiin k??ytt??j??rjestelm??n tiedot, joita ei ole k????nnetty, kun k??ynnist??t ytimen
+12. Kiinte?? kieliasetus ei s??ilyt?? p??ivityksen aikana
+13. Debug-tiedot tulevat nyt VS2017-debug-tulostusikkunaan.
+14. Valmistettiin loadaver-komento uudelleen
+15. Poistetut hy??dyt??n ja v????rink??ytt??iset komennot (kaiku, panicsim ja valinta)
+
+KS 0.0.5.12
+
+T??m?? versio julkaistaan ??korjaamaan lis???? vikoja ja tekem????n enemm??n parannuksia, mukaan lukien korjaus ymp??rist??lle.OS Windows 10: lle. T??m?? julkaisu on KS: n vuosip??iv??
+
+1. Nyt CreateConf cmdline arg luo vain konfiguraation, jos m????ritystiedostoa ei l??ydy
+2. Jotkut valmistelut 0.0.6 (vain laihdutus)
+3. Poista GPU- ja BIOS-koetukset
+4. Nyt vanhempaa KS-konfigurointia ei voi p??ivitt???? t????ll?? (Ratkaisu: Sinun t??ytyy poistaa vanha KS-m????ritystiedosto ja k??ynnist???? sovellus uudelleen)
+5. Korjattiin Environment.OS-vika Windows 10: ss?? (10.0), jossa se palauttaa Windows 8 (6.2) -versiot
+6. Korjattiin paikkamerkit, jotka eiv??t j??senn?? k??ytett??ess?? showmotd / showmal-komentoa
+7. Korjattiin yksinkertainen ohje, joka ei n??yt?? modeja
+8. Kiinte??t sis????nrakennetut komennot eiv??t toimi, kun olet suorittanut mod-komennot tai alias-komennot
+9. Korjattu NullReferenceException kun virheenkorjaus
+10. Parannettu aliaksen luettelo
+11. Korjasi tulostustekstin poikkeusviestin, jota ei k????nnet?? nykyiseen kieleen
+12. Korjattiin "/" - tai "-merkki", joka esiintyi ennen modname-koodia, kun testataan modeja ja n??yt??ns????st??ji??
+13. Poistettiin k????nn??ksen tarpeeton korjaus
+14. Korjattiin enemm??n pinon ylivuotoja FTP-kuoressa
+15. Korjattiin FTP-viestik????nn??ksen k????nt??minen "help": ksi kieleksi, kun sen pit??isi olla komento
+16. Korjattu komento ei l??ytynyt, kun et kirjoittanut mit????n FTP-kuoressa
+
+KS 0.0.5.13
+
+Olemme yksinkertaistaneet viel??kin enemm??n asioita seuraavien muutosten avulla:
+
+1. JetBrains ReSharper VS2017: lle
+2. Toteutettu Linux-laitteiston testaus (sinun on asennettava inxi HDD-koettimille toimimaan. Ohjeet t??m??n k??ytt??oppaan "Linux-koetuksen" -osioon.)
+3. Lis??tty .NET-vaatimus 4,7: een (Jokaisen k??ytt??j??n t??ytyy olla 4,7 asennettuna 4.6: n sijasta.)
+4. Poistettiin varoitus sitovista uudelleenohjauksista MonoDevelopissa (MonoDevelop ei ole tietoinen ...)
+5. Lis??tty VS-version vaatimus VS2019: lle (testata sen ominaisuuksia.)
+6. Poistettiin ??rsytt??v?? "Nime??miss????nt??jen rikkominen" k??ytt??m??ll?? ehdotettua vaihtoehtoa
+
+Linux-mittaus
+
+K??yt??mme / proc / cpuinfo-tiedostoa saadaksesi tietoa prosessorista (nimi ja kello), / proc / meminfo-tiedostosta, jotta saat koko j??rjestelm????n asennetun muistin ja inxi-sovelluksen tietojen saamiseksi kiintolevyist??.
+
+Mutta kaikki distrot eiv??t asenna inxi oletusarvoisesti, joten jos sinulla ei ole sit?? asennettuna, koettaminen ep??onnistuu. 
+
+Debian ja sen johdannaiset:
+
+
+
+
+Red Hat ja sen johdannaiset:
+
+
+
+OpenSUSE ja sen johdannaiset:
+
+
+
+Arch Linux ja sen johdannaiset:
+
+
+
+
+Loput rakentuvat l??hteest?? ja asettavat suoritettavan tiedoston tiedostoon / usr / bin, koska prober n??ytt???? vain kyseisess?? hakemistossa, tai asenna paketinhallintaohjelmat.
+
+(?): Testattomat. 
+
+KS 0.0.5.14
+
+Kun saimme uuden tietokoneen, p??ivitys on tullut. 
+
+1. Korvattiin v????rennetty tiedostoj??rjestelm?? todellisella (p????sy tiedostoihisi)
+2. Korjattu v????r?? "changeir" -komento, joka n??ytet????n "chdir": n sijasta
+3. "cdir", joka n??ytt???? nykyisen hakemiston, on nyt vanhentunut
+4. Kiinte?? kaatuminen ytimen uudelleenk??ynnistyksen aikana
+
+KS 0.0.6
+
+T??m?? p??ivitys on yht?? suuri kuin 0.0.4, mutta olemme julkaisseet t??m??n p??ivityksen korjaamaan lis???? ongelmia. 
+
+1. Uusi kuvake
+2. P??ivitetty FluentFTP ja Newtonsoft.Json libs
+3. Poistetaan kirjoitustapahtumat
+4. Uudelleen kirjoitettu sis????nkirjautuminen (ei kaikki, mutta uudelleen suunniteltu)
+5. Korjattu chpwd-komento, joka ei muuta salasanaa, jos kohdealueella ei ole salasanaa
+6. Kiinte?? chpwd ei tarkista, onko normaali k??ytt??j?? muuttaa j??rjestelm??nvalvojan salasanaa
+7. Kiinte?? adduser ei lis???? k??ytt??ji?? ilman salasanoja
+8. Kiinte?? adduser, joka lis???? k??ytt??ji?? salasanoilla, vaikka ne eiv??t olisikaan yhteensopivia
+9. Poistettu cdir
+10. Lis??tty konfigurointimerkint?? n??yt??ns????st??j??n nimelle
+11. Toteutetut virheenkorjaus- ja dump-tiedostot ytimen virheit?? varten
+12. Toimitetaan .pdb-virheenkorjaussymboleilla KS: lle
+13. Kiinte?? uudelleenk??ynnistys ei tyhjennysn??ytt??
+14. Lis??tty hollanti, suomi, italia, malaiji, ruotsi ja turkki kieli?? (siirry yhteensopivaan fonttiin konsolissa)
+15. Maat ja valuutat ovat nyt listattuna, kun ne eiv??t tarjoa tarpeeksi argumentteja tai antavat "ohjevaluutta"
+16. Kiinte?? ohjekirja, jota ei p??ivitet?? uudelle kielen p??ivitykselle uudelleenk??ynnistyksen yhteydess??
+17. Lis??tty pysyvi?? aliaksia (jotka sijaitsevat profiilin alla, aliases.csv)
+18. Salasana on nyt piilotettu, kun kirjaudut sis????n turvallisuuden s??ilytt??miseksi
+19. Kiinte??t k??ytt??j??t poistetaan jokaisen uudelleenk??ynnistyksen j??lkeen
+
+KS 0.0.6.1
+
+1. Ohjeessa n??kyv??t poistetut valuuttatiedot (palauttaa ne my??hemmin)
+2. K??ytt??jien on nyt sy??tett??v?? API-avain apilayer.net-sivustosta valuuttojen muuntamiseksi (perussuunnitelma, osoitteessa http://currencylayer.com/product, testattomat: ei voitu maksaa perussuunnitelmasta)
+
+KS 0.0.6.2
+
+1. Kiinte?? debug log show -komento ei toimi, koska polkua ei l??ytynyt (typo: Debugger -> Debugging)
+2. Lis??tty ilmoitus, jossa luetellaan PC-komentoja Windows 10: n uusimmista versioista
+3. Korjattu debug-ytimen otsikko, jota ei kirjoiteta, kun k??yt??t debug-argumenttia
+4. Korjattu virheenkorjausloki on tyhj?? jokainen uudelleenk??ynnistys ja k??ynnist??
+5. Salli debug-kirjautumiskomennon tyhjent??minen cdbglogin avulla
+6. K??ytet????n sis????nrakennettua FtpVerify enumerators -ohjelmaa, poistamalla vanhat FluentFTP-versiot
+7. Parempi virheenkorjauskokemus
+8. Debugging n??ytt???? nyt rivinumeron ja l??hdetiedoston, jos pdb on samassa kansiossa
+9. Sallittu modding C: ll??
+
+KS 0.0.6.2a
+
+T??m?? on pienin p??ivitys koskaan, vaikka siin?? on yksi t??rke?? asia. 
+
+1. Lis??tty suorittimen ohjeiden tarkistaminen (jota k??ytet????n ytimen k??ynnist??misess??, jos haluat n??hd??, onko SSE2 tuettu)
+
+KS 0.0.6.2b
+
+1. Lis??tty komento nimelt????n `sses` luetteloon kaikista SSE-versioista
+
+KS 0.0.6.3
+
+1. Kiinte?? "hiljainen" ei ole t??ysin hiljainen
+2. Kiinte??t viestit eiv??t n??y kirjautumisen j??lkeen (esim. K??ytt??j??n viestin lis????minen)
+3. Sallittu kielen vaihtaminen komennolla
+4. Korjattiin ohjeteksti, joka n??kyy `sses`: n suorittamisen j??lkeen
+5. Lis??tty t??ekki
+
+KS 0.0.6.4
+
+1. Korjattiin NullReferenceException-vaihtoehto, kun vaihdat kielt??
+2. Korjattiin massiiviset dokumenttiviivat, kun yritettiin j??sent???? tyhj?? sana, joka ei ole alussa (Huomaa, ett?? meill?? on edelleen rivikysymyksi?? ensimm??isell?? rivill??)
+3. Lis??tty Ubuntu-teema
+4. Poistetaan k??ytt??m??t??n lippu
+5. Poistettiin ylim????r??inen vaatimus, jonka mukaan v??rit on analysoitava k??ynnistett??ess?? (poistettu ahneus)
+6. Luettu FTP-tiedoston koko ihmisen luettavaksi
+
+KS 0.0.6.4a
+
+1. Kiinte?? Linux-laitteistokokeilu ep??onnistui, vaikka se olisi onnistunut
+2. Kiinte?? RAM prober n??ytt???? MemTotal: etuliite
+3. Kirjoitettu viesti libcpanel-json-xs-perlist??
+
+KS 0.0.6.4b
+
+1. Valmistettiin yksi valmistelu 0.0.6.5: Debug-symbolien lataaminen k??ynnistyksen yhteydess??, jos sit?? ei l??ydy
+
+KS 0.0.6.5
+
+1. Kiinte??t dump-tiedostot luodaan ilman laajennusta
+2. Paikalliset kaatopaikat ja manuaaliset sivut
+3. Päivitetty kieliversio viimeistään
+4. Korjattiin joitakin tiedostojärjestelmää koskevia virheitä
+5. Kiinteä CPU-kellonopeus, joka näkyy kahdesti uusimmissa prosessoreissa (prosessorit, joiden kellonopeus on sisäisillä nimillä, esimerkiksi Intel(R) Core(TM) i7-8700 CPU @ 3.20 GHz)
+6. FTP-siirtojen kiinteä etenemispalkki, joten se käyttää uutta muotoa
+7. Lisätty ETA ja nopeus
+-BODY END-
+
+-SECTIONS-
+Pre-release=>SE1
+KS 0.0.1=>SE1
+KS 0.0.1.1=>SE1
+KS 0.0.2=>SE1
+KS 0.0.2.1=>SE1
+KS 0.0.2.2=>SE1
+KS 0.0.2.3=>SE1
+KS 0.0.3=>SE1
+KS 0.0.3.1=>SE1
+KS 0.0.4=>SE1
+Big releases=>SE1
+KS 0.0.4.1=>SE1
+5/23/2018=>SE1
+5/24/2018 to 5/27/2018=>SE1
+5/28/2018=>SE1
+5/29/2018=>SE1
+8/??/2018=>SE1
+KS 0.0.4.5=>SE1
+KS 0.0.4.6=>SE1
+KS 0.0.4.7=>SE1
+KS 0.0.4.9=>SE1
+KS 0.0.4.10=>SE1
+KS 0.0.4.11=>SE1
+KS 0.0.4.12=>SE1
+KS 0.0.5=>SE1
+KS 0.0.5.1=>SE1
+KS 0.0.5.2=>SE1
+Use of libraries=>SE1
+KS 0.0.5.5=>SE1
+The support for Unix systems=>SE1
+KS 0.0.5.6=>SE1
+KS 0.0.5.7=>SE1
+KS 0.0.5.8=>SE1
+The new development looks=>SE1
+KS 0.0.5.9=>SE1
+KS 0.0.5.10=>SE1
+Truth about status probing=>SE1
+KS 0.0.5.11=>SE1
+KS 0.0.5.12=>SE1
+KS 0.0.5.13=>SE1
+Linux probing=>SE2
+KS 0.0.5.14=>SE1
+KS 0.0.6=>SE1
+KS 0.0.6.1=>SE1
+KS 0.0.6.2=>SE1
+KS 0.0.6.2a=>SE1
+KS 0.0.6.2b=>SE1
+KS 0.0.6.3=>SE1
+ks 0.0.6.4=>SE1
+KS 0.0.6.4a=>SE1
+KS 0.0.6.4b=>SE1
+KS 0.0.6.5=>SE1
+-SECTIONS END-

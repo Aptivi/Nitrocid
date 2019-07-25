@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:Commande de shell "chdir"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande chdir
+
+R??sum??: vous pouvez changer votre r??pertoire de travail actuel en un autre r??pertoire.
+
+La description
+
+Vous pouvez modifier votre r??pertoire de travail dans un autre r??pertoire pour ex??cuter des commandes de liste, supprimer des fichiers ou cr??er des r??pertoires sur un autre r??pertoire.
+
+Utilisation de la commande
+
+* chdir (r??pertoire)
+* chdir ..
+
+Exemples
+
+* chdir boot: change votre r??pertoire de travail en / boot
+* chdir ..: retourne au r??pertoire de travail pr??c??dent
+-BODY END-
+
+-COLOR CONFIGURATION-
+chdir <directory>=>Green
+chdir ..=>Green
+chdir boot:=>Yellow
+chdir ..:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chdir command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:FTP p????kaz "delete" nebo "del"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+smazat nebo odstranit p????kaz FTP
+
+Souhrn: Odstran?? soubory nebo slo??ky
+
+Popis
+
+Pokud jste se p??ihl??sili k u??ivateli, kter?? m?? opr??vn??n?? spr??vce, m????ete ze serveru odebrat nepot??ebn?? soubory nebo dal???? slo??ky.
+
+Pokud jste odstranili soubor, zat??mco na serveru prob??haj?? p??enosy, lid??, kte???? se pokou??ej?? o smazan?? soubor, jej nebudou moci po sta??en?? st??hnout.
+
+Pou??it?? p????kaz??
+
+* smazat / del (soubor / adres????)
+P????klady
+
+* delete unwanted.txt: Odstra??te soubor s n??zvem "unsanted.txt"
+* del InactiveDir: Smazat slo??ku s n??zvem "InactiveDir"
+-BODY END-
+
+-COLOR CONFIGURATION-
+delete/del (file/directory)=>Green
+delete unwanted.txt:=>Yellow
+del InactiveDir:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+delete or del FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

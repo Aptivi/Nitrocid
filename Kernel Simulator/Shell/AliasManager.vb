@@ -20,7 +20,7 @@ Public Module AliasManager
 
     Public aliases As New Dictionary(Of String, String)
     Public forbidden As String() = {"alias"}
-    Private aliastreamr As New IO.StreamReader(paths("Home") + "/aliases.csv")
+    Private aliastreamr As New IO.StreamReader($"{paths("Home")}/aliases.csv")
 
     'Initializing and Saving
     Public Sub InitAliases()
@@ -39,13 +39,13 @@ Public Module AliasManager
         Dim aliast As New List(Of String)
         For i As Integer = 0 To aliases.Count - 1
             Wdbg("Adding ""{0}, {1}"" to list...", aliases.Keys(i), aliases.Values(i))
-            aliast.Add(aliases.Keys(i) + ", " + aliases.Values(i))
+            aliast.Add($"{aliases.Keys(i)}, {aliases.Values(i)}")
         Next
 
         'Close the read stream, write all the lines, then open the read stream again
         aliastreamr.Close()
-        IO.File.WriteAllLines(paths("Home") + "/aliases.csv", aliast)
-        aliastreamr = New IO.StreamReader(paths("Home") + "/aliases.csv")
+        IO.File.WriteAllLines($"{paths("Home")}/aliases.csv", aliast)
+        aliastreamr = New IO.StreamReader($"{paths("Home")}/aliases.csv")
     End Sub
 
     'Management and Execution

@@ -1,0 +1,35 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "lukea"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lukea komento
+
+Yhteenveto: Lukee tiedoston sis??ll??n ja tulostaa sen n??yt??lle
+
+Kuvaus
+
+T??m??n komennon avulla voit n??hd?? nykyisen ty??kansion sis??ll??n. 
+
+Komennon k??ytt??
+
+* luettu (tiedosto)
+
+esimerkit
+
+* Lue libuesh: Se lukee libueshin tiedoston sis??ll??n
+-BODY END-
+
+-COLOR CONFIGURATION-
+read (file)=>Green
+read libuesh:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+read command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

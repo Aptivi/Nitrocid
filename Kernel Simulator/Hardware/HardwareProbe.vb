@@ -79,7 +79,14 @@ Public Module HardwareProbe
 
         'CPU Info
         For Each processorinfo In CPUList
-            W(DoTranslation("CPU: {0} {1}MHz", currentLang), "neutralText", processorinfo.Name, processorinfo.ClockSpeed)
+            Dim CPUName As String = processorinfo.Name
+            If CPUName.Contains("@") And CPUName.EndsWith("GHz") Then
+                W("CPU: {0}", "neutralText", processorinfo.Name)
+            Else
+                W("CPU: {0} @ {1}MHz", "neutralText", processorinfo.Name, processorinfo.ClockSpeed)
+            End If
+
+            'SSE2 availability
             If CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available) Then
                 Wln(" : SSE2", "neutralText")
             End If

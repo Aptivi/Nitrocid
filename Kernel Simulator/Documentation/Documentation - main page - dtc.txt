@@ -1,0 +1,109 @@
+﻿| --------------- + -> Kernel Simulator - Simuleert de toekomstige kernel die door ons is gepland <- + -------------- - |
+
+INFO: Bouw je een Linux-versie van Kernel Simulator in MonoDevelop? Installeer in dat geval MonoDevelop en libmono-microsoft-visualbasic10.0-cil. Hoewel we MonoDevelop voorstellen, raden we JetBrains Rider voor Linux 64-bit aan.
+
+INFO: Deze kernelsimulator is geen definitieve geplande versie van Kernel, omdat deze minimaal was.
+
+INFO: Twee documentatie, faq en probleemoplossing, worden verwijderd omdat ze niet regelmatig worden bijgewerkt.
+
+Met Kernel Simulator kunt u een zeer vroege toegang simuleren voor onze toekomstige Kernel die nog zal worden ontwikkeld, zelfs als we de echte pc-versie van Kernel hebben gemaakt.
+
+| --------------- + -> Geschiedenis <- + --------------- |
+
+7/25/2019 - 0.0.6.5: Fixed dumpbestanden worden aangemaakt zonder extensie, gelokaliseerde dumps en manpages, verbeterde taalversie naar de nieuwste versie, wat bugs over het bestandssysteem opgelost, CPU-kloksnelheid tweemaal weergegeven in de nieuwste processors (processors die hebben kloksnelheid op hun interne namen, bijv. "Intel (R) Core (TM) i7-8700 CPU @ 3.20 GHz"), Vaste voortgangsbalk van FTP-overdrachten, zodat het nieuwe formaat, toegevoegde ETA en snelheid gebruikt
+7/7/2019 - 0.0.6.4b: Eén voorbereiding gemaakt voor 0.0.6.5: Debug-symbolen downloaden bij opstarten indien niet gevonden
+7/6/2019 - 0.0.6.4a: Vastlopen van Linux-hardware mislukt, zelfs als dit lukte, Fixed RAM Prober met MemTotal: prefix, bericht over libcpanel-json-xs-perl duidelijk gemaakt
+28-6-2019 - 0.0.6.4: NullReferenceException opgelost bij het veranderen van taal, massale documentatie nieuwe regels opgelost bij het ontleden van een leeg woord dat niet aan het begin is (houd er rekening mee dat we nog steeds problemen met de nieuwe regel hebben in de eerste regel), Toegevoegd Ubuntu thema, ongebruikte vlag verwijderd, extra vereiste verwijderd om kleuren tijdens het opstarten te parseren (hebzucht verwijderd), lezen FTP-bestandsgrootte leesbaar gemaakt voor mensen
+26-6-2019 - 0.0.6.3: Vast dat 'stil' niet helemaal stil is, vaste berichten niet verschenen na inloggen (bijv. Gebruikersbericht toevoegen), Toegestane taal wijzigen met opdracht, Fixed de helptekst die werd getoond na het uitvoeren van `sses` , Toegevoegd Tsjechische taal
+25-6-2019 - 0.0.6.2b: een opdracht met de naam `sses` toegevoegd om alle SSE-versies weer te geven
+24-6-2019 - 0.0.6.2a: Controle toegevoegd voor processorinstructies (momenteel gebruikt bij het opstarten van de kernel om te zien of SSE2 wordt ondersteund)
+24-6-2019 - 0.0.6.2: Foutopsporingslogboek voor foutopsporing werkt niet omdat het pad niet is gevonden (typefout: Debugger -> Foutopsporing), een bericht toegevoegd in de lijst met pc-opdrachten over de nieuwste versies van Windows 10, vaste debug-kernelkop niet schrijven bij uitvoeren met debug-argument aan, het debug-logboek is hersteld bij elke reboot en start, toegestaan ​​clearing debug-inlogopdracht met cdbglog, gebruikte ingebouwde FtpVerify enumerators, verwijdering van onze hash-check voor oudere versies van FluentFTP, betere debugging-ervaring, Foutopsporing toont nu regelnummer en bronbestand als pdb zich in dezelfde map bevindt, modding toegestaan ​​met C #
+21-6-2019 - 0.0.6.1: verwijderde valuta-informatie wordt weergegeven bij help (komt later terug), gebruikers moeten nu hun API-sleutel invoeren van apilayer.net om valuta's om te rekenen (basisplan, ga naar http: // currencylayer.com/product, niet getest: kon niet betalen voor basisplan)
+19-6-2019 - 0.0.6: Nieuw pictogram, bijgewerkt FluentFTP en Newtonsoft.Json bibliotheken, schrijfgebeurtenissen verwijderd, opnieuw geschreven login (niet alle, maar opnieuw ontworpen), de chpwd-opdracht niet gewijzigd als het doel niet verandert heb geen wachtwoord, Fixed chpwd controleert niet of een normale gebruiker het admin-wachtwoord verandert, Fixed adduser voegt geen gebruikers toe zonder wachtwoorden, Fixed adduser voegt gebruikers toe met wachtwoorden zelfs als deze niet overeenkomen, CDir verwijderd, Configuratie-ingang toegevoegd voor screensavernaam, Geïmplementeerd foutopsporing en dumpbestanden voor kernelfouten, verzonden met .pdb-foutopsporingssymbolen voor KS, vast scherm voor opnieuw opstarten niet hersteld, talen Nederlands, Fins, Italiaans, Maleis, Zweeds en Turkije toegevoegd (overschakelen naar een compatibel lettertype in console), landen en valuta zijn nu weergegeven als er niet voldoende argumenten worden opgegeven of "helpvaluta" wordt uitgegeven, vaste helplijst niet wordt bijgewerkt voor nieuwe taalupdate bij opnieuw opstarten, permanente aliassen toegevoegd (onder uw profiel, aliases.csv), het wachtwoord is nu verborgen bij het inloggen op maintai n beveiliging, vaste gebruikers worden verwijderd na elke herstart
+13-6-2019 - 0.0.5.14: Fake-bestandssysteem vervangen door echt (toegang tot uw bestanden), de verkeerde "veranderde" helpopdracht werd weergegeven in plaats van "chdir", "cdir", die de huidige map toont, is nu verouderd, vaste crash tijdens het herstarten van de kernel
+14-04-2019 - 0.0.5.13: Meer afslanken door JetBrains ReSharper voor VS2017, Linux-hardwareproblemen geïmplementeerd (je moet inxi installeren om HDD-sondes te laten werken), Verhoogde .NET-vereiste tot 4.7, waarschuwing over bindende omleidingen in MonoDevelop verwijderd, Verhoogde VS-versievereiste tot VS2019, vervelende "Naamregelovertreding" verwijderd door de voorgestelde optie te gebruiken
+22-2-2019 - 0.0.5.12: createConf cmdline arg maakt nu alleen config als het configuratiebestand niet wordt gevonden, enkele voorbereidingen voor 0.0.6 (alleen afslanking), GPU- en BIOS-sondering verwijderd, nu oudere KS-configuratie gewonnen mag hier niet worden bijgewerkt (oplossing: u moet uw oude KS-configuratiebestand verwijderen en de app opnieuw uitvoeren), de bug Environment.OS op Windows 10 (10.0) is gerepareerd, waarbij de Windows 8 (6.2) -versie wordt geretourneerd, De tijdelijke aanduidingen die niet parseren bij het gebruik van de opdracht showmotd / showmal zijn opgelost, de eenvoudige help die geen mods weergeeft, vaste opdrachten die niet werden uitgevoerd nadat u mod-opdrachten of alias-opdrachten hebt uitgevoerd, de NullReferenceException bij het opsporen van fouten verbeterd, verbeterde aliaslijst, de uitzondering voor de afdruktekst opgelost bericht niet vertaald naar de huidige taal, de "/" of "\" voor de modnaam opgelost bij het onderzoeken van mods en screensavers, onnodige fixup in vertaling verwijderd, meer stapeloverlopen in FTP-shell opgelost, de FTP-berichtvertaling vertaald die "help" vertaalde "als de taal wanneer het ' s verondersteld een commando te zijn, het commando niet gevonden commando gerepareerd bij het niet invoeren van iets in FTP shell
+18-2-2019 - 0.0.5.11: GPU- en BIOS-sondering `<Obsolete> 'gemaakt, geen COM-oproepen meer bij het zoeken naar hardware, een nutteloos bestand met harde schijfgegevens verwijderd, de vertaling van sysinfo bij het weergeven van de kernelconfiguratiesectie opgelost , Status-sondering van HDD en RAM verwijderd (zie waarom in `gebruikersgeschiedenis van Kernel Simulator`, sectie` Waarheid over status-sondering`), het CHS-gedeelte niet weergegeven als de harde schijf de waarde Fabrikant heeft, de vertaler niet geretourneerd waarde als de vertaallijst die waarde niet bevat, de GPU Prober gecorrigeerd in de veronderstelling dat Microsoft Basic Display Driver geen basisstuurprogramma is, maakte screensavers bij het opstarten, repareerde NullReferenceException bij het proberen om de volgende screensaver te laden na een fout op de vorige screensaver, de OS-info niet vertaald bij het opstarten van een kernel, vaste taalconfiguratie niet bewaard bij het updaten, Debug-informatie wordt nu afgedrukt naar VS2017 debug-uitvoervenster (u moet nog steeds deb inschakelen ugging), maakte het loadsaver commando reloadsaver, verwijderde nutteloze en beledigende commando's (echo, panicsim en keuze)
+16-2-2019 - 0.0.5.10: Verbeterde leesbaarheid van handmatige pagina's (vbTab is nu gefilterd en zal geen problemen veroorzaken), Nu drukt de vertaler foutopsporingsinformatie af wanneer een string niet wordt gevonden in de vertaallijst, Hardware Prober: Stop spamming " Systeem .__ ComObject "naar foutopsporing om gemakkelijk lezen mogelijk te maken, Manpage Parser: Stop het vullen van foutopsporingslogboeken met nutteloze" Controleren op ... "-teksten en enkele foutopsporingsberichten uitgebreid, de BIOS-reeks niet weergegeven, onnodige slaapplatformcontroles verwijderd," nohwprobe verwijderd " "kernelargument omdat hardware-onderzoek belangrijk is, onnodige tijdzone-platformcontroles verwijderd, FluentFTP en Newtonsoft.Json-bibliotheken bijgewerkt naar hun nieuwste stabiele versies, geen dubbele stapel behalve het wachtwoordgedeelte in Login, Fixed bug van MAL en MOTD niet vernieuwd tussen logins, opgelost bug van sysinfo (de berichtinstellingen worden niet afgedrukt), de kernel drukt nu de omgeving af die wordt gebruikt bij het opstarten, debug en op de opdracht sysinfo, waardoor schrijfgebeurtenissen verouderd zijn
+12/24/2018 - 0.0.5.9: Mods worden nu gestopt bij het afsluiten, Mods kunnen hun eigen naam en hun eigen versie hebben, vaste debugger sluit niet goed bij het opnieuw opstarten of afsluiten, Shell verlaat de toepassing nu niet meer wanneer een uitzondering gebeurt, Debuggen nu gevoeliger (behalve voor het krijgen van commando's), Nu debug writer ondersteunt schrijven zonder nieuwe regels niet, Je mag eindelijk spaties in je hostnaam opnemen en hostnamen die minder dan 4 karakters bevatten zoals "joe" , Verouderde nutteloze en beledigende opdrachten, Extra controles voor IANA-tijdzones verwijderd, wat niet meer leidt tot een register, vaste lijstnetwerken, valuta-omzetter toegevoegd die internet gebruikt (als we lokale waarden hebben toegevoegd, moeten we meer updates vrijgeven die tijdrovend zijn , zodat de manier van internet tijd en updates bespaart), we hebben eindelijk gebruikers de mogelijkheid gegeven om foutopsporingslogboeken te bekijken met KS zonder foutopsporing, we hebben een verbeterde FTP-client, want degenen die geen Engels spreken, kunnen nu hun eigen taal instellen hoewel de standaard Engels is, vaste ontbrekende hulpvermelding voor "lscomp", kernelhandboekpagina's toegevoegd, ondersteuning voor Windows XP weggehaald, NullReferenceException opgelost wanneer er fouten zijn opgetreden bij het compileren van mods, argument cmdline testMods toegevoegd, en meer ...
+11/1/2018 - 0.0.5.8: Pieptoon verwijderd bij opnieuw opstarten en afsluiten, opdracht 'piep' verwijderd, (Windows) Probers gaan nu door, zelfs als ze zijn mislukt, geheugen verwijderen gebruikt nu niet langer de VB6-methode voor het afhandelen van fouten
+13-10-2018 - 0.0.5.7: Crash opgelost bij het starten bij het uitvoeren van een bestandsnaam die anders is dan "Kernel Simulator.exe", Betere foutafhandeling voor FTP, Huidige directory afdrukken in FTP toegevoegd, opdracht "versie" verwijderd, de "Quiet Probe" waarde die wordt ingesteld "Quiet Probe", Uitgevouwen "sysinfo", Fixed configuratie lezer niet afgesloten bij het afsluiten van de kernel gerepareerd, (Unix) Een bekende bug opgelost
+10/12/2018 - 0.0.5.6: Verbeterde sondes, gebruikersnaamlijst bij inloggen, betere compatibiliteit met Unix
+22-09-2018 - 0.0.5.5: Herschreven configuratie, verboden aliassen, ontbrekende Help-vermeldingen toegevoegd voor "showalises", meer MOTD- en MAL-tijdelijke aanduidingen toegevoegd, herhalend bericht met RAM-status gerepareerd en een FTP-client is toegevoegd, eindelijk !
+9/9/2018 - 0.0.5.2: GPU-sondering gemaakt tijdens het opstarten, argument "gpuprobe" verwijderd, gedrag van configuratie-update gewijzigd
+9/6/2018 - 0.0.5.1: Follow-up release verwijderde ongebruikte code, verbeterd gedrag van foutopsporingslogboeken en verbeterde leesbaarheid van een foutopsporingsbericht terwijl mods werden doorzocht met opdrachten zonder definities.
+9/4/2018 - 0.0.5.0: Verwijderde prompts, vaste MAL gebruikersnaam sondering, "showaliases" toegevoegd, vaste alias parsing, verwijderde de eis om commando's te geven om alias te verwijderen, en implementatie van door de gebruiker gemaakte commando's in mods
+16-8-2018 - 0.0.4.12: Disco-opdracht vervangen door een screensaver. Het lijkt erop dat 0.0.5 zal worden vrijgegeven omdat het er stabiel uitziet, maar we hebben enkele resterende wijzigingen vóór de definitieve release.
+3-8-2018 - 0.0.4.11: Vooraf gedefinieerde aliassen verwijderd, bekende bug opgelost die wordt genoemd.
+8/2/2018 - 0.0.4.10: Fused "sysinfo" met "lsdrivers", Verbeterde Help-definitie (gebruikt woordenboek ter voorbereiding op modding), "lscomp" toegevoegd die alle online en offline computers alleen op naam kan vermelden, Toegevoegde foutenhandler voor "lsnet" en "lsnettree", vaste grammaticale fouten in "lsnet" en "lsnettree", mods toegevoegd (commando's nog niet geïmplementeerd - <modname> .m), screensavers toegevoegd, het gedrag van het weergeven van MOTD, vaste bug waar geval gewijzigd controleren na het opnieuw opstarten van de kernel zou zeggen dat het meer dan één exemplaar heeft en moet sluiten, en meer.
+21-7-2018 - 0.0.4.9: Betere foutafhandeling voor de opdracht "unitconv", tijdelijke aliassen toegevoegd (niet definitief omdat er geen opdracht "showaliases" is), enkele bugs opgelost, tijdzones toegevoegd ("showtdzone" en huidige tonen tijdzone in "showtd"), "alias", "chmal" en "showmal" toegevoegd, MOTD na inloggen aanpasbaar gemaakt, speciale tekens op wachtwoorden toegestaan ​​om de veiligheid te garanderen, Made Kernel Simulator één exemplaar om interferenties te voorkomen, en meer.
+17-7-2018 - 0.0.4.7: Betere foutafhandeling voor opdracht "ping", bericht "unitconv" gerepareerd
+16-7-2018 - 0.0.4.6: Verwijderd extern "gevoed" dat staat als het verwijderde commando in 0.0.4.5, Voorbereiding voor aangepaste substituties van 0.0.5
+15-7-2018 - 0.0.4.5: (2 maanden vertraagd vanwege uitval van de harde schijf) - Bugs verhelpen wanneer probers hardware niet konden testen, meer details toegevoegd in probers, Help-systeem verbeterd, Bugs in kleurprompts repareren, Prompts verouderd, en meer.
+22-5-2018 - 0.0.4.1: Fix bugs in veranderende map, Fix bugs in "help chdir", alias toegevoegd voor het veranderen van map genaamd "cd", en configuratie-update.
+5/20/2018 - 0.0.4: Wijziging van opstarttekst, aanpasbare instellingen, Thema's, opdrachtregelargumenten, opdrachtargument en volledige paring, Actueel directorysysteem (alfa), meer opdrachten, rekenmachine, foutopsporing met stack trace, foutopsporingslogboeken (onvoltooid), geen RAM-lek, bugs verhelpen en meer.
+5/2/2018 - 0.0.3.1: Shell-titel bewerkt ter voorbereiding op de grote release, bugs verholpen bij het verwijderen van gebruikers, blanco opdracht herstellen en toegevoegde admin-controle
+30-04-2018 - 0.0.3: Fix bugs, herschreven log-in systeem, toegevoegde commando's, toegevoegde argumenten, toegevoegd permissiesysteem, aangepaste kleuren en meer.
+11-04-2018 - 0.0.2.3: Crash op argumenten verhelpen na opnieuw opstarten, bugs repareren en meer.
+9-04-2018 - 0.0.2.2: Fix bug voor netwerklijst waarbij dubbele pc-namen op beide lijstmanieren verschijnen, foutafhandeling op lijstnetwerken.
+4/4/2018 - 0.0.2.1: Bug opgelost voor bericht "Command Not Found" en vergeten controle op root toegevoegd in "chhostname" en "chmotd".
+31-3-2018 - 0.0.2: Herontwerp van code, meer opdrachten, geïmplementeerd basisinternet, argumentatiesysteem, wachtwoord wijzigen en meer wijzigingen.
+16-3-2018 - 0.0.1.1: "showmotd" toegevoegd, een bericht gewijzigd en beter gecontroleerd op integer overflow op piepfrequentie.
+22-2-2018 - 0.0.1: Eerste uitgave, normaal gesproken, voor Windows.
+
+| --------------- + -> Handmatige pagina's <- + --------------- |
+
+Documentatie - hoofdpagina: informatie over Kernel Simulator, deze pagina
+Documentatie - bijdragende regels: voorwaarden voor bijdragende kernelsimulator
+
+| --------------- + -> Credits <- + --------------- |
+
+EoflaOE: Eigenaar van Kernel Simulator
+
+Oxygen Team: Creator of icon
+
+| --------------- + -> Open source-bibliotheken gebruikt <- + --------------- |
+
+MadMilkman.Ini
+
+Broncode: https://github.com/MarioZ/MadMilkman.Ini
+
+Copyright (c) 2016, Mario Zorica
+
+Licentie (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
+
+Newtonsoft.Json
+
+Broncode: https://github.com/JamesNK/Newtonsoft.Json
+
+Copyright (c) 2007, James Newton-King
+
+Licentie (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+
+FluentFTP
+
+Broncode: https://github.com/robinrodricks/FluentFTP
+
+Copyright (c) 2011-2016, J.P. Trosclair
+
+Copyright (c) 2016-2019, Robin Rodricks
+
+Licentie (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
+
+| --------------- + -> Licentie - GNU GPL <- + --------------- |
+
+    Kernel Simulator - Simuleert onze toekomstige geplande kernel
+    Copyright (C) 2018-2019 EoflaOE
+
+    Dit programma is gratis software: u kunt het herdistribueren en / of wijzigen
+    het onder de voorwaarden van de GNU General Public License zoals gepubliceerd door
+    de Free Software Foundation, versie 3 van de licentie, of
+    (naar uw keuze) een latere versie.
+
+    Dit programma wordt verspreid in de hoop dat het nuttig zal zijn,
+    maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete garantie van
+    VERKOOPBAARHEID OF GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de
+    GNU General Public License voor meer informatie.
+
+    U zou een kopie van de GNU General Public License moeten hebben ontvangen
+    samen met dit programma. Zie anders <https://www.gnu.org/licenses/>.

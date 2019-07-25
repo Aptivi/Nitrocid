@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "lsnet"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+arahan lsnet
+
+Ringkasan: Anda boleh menyenaraikan komputer yang dalam talian dan alamat IP mereka dalam domain atau kumpulan kerja
+
+Penerangan
+
+Jika anda ingin mendapatkan semua komputer yang menyertai kumpulan kerja atau domain, anda boleh menggunakan arahan ini, tetapi anda mesti terlebih dahulu meminta izin jika anda berada di tempat awam seperti pejabat, sekolah, kafe, dll. 
+
+Perintah ini juga berguna jika anda menyenaraikan komputer dalam rangkaian kecil anda atau rumah anda yang mempunyai banyak komputer yang menjalankan Windows, tidak kira versi Windows sedang berjalan.
+
+Penggunaan perintah
+
+* lsnet
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnet=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnet command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

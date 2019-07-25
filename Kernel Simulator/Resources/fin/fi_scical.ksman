@@ -1,0 +1,47 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "scical"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+scical-komento
+
+Yhteenveto: Voit arvioida kehittyneempi?? lausekkeita
+
+Kuvaus
+
+Voit k??ytt???? tieteellist?? laskinta arvioida kehittyneit?? lausekkeita, kuten saada neli??juuren numerot jne.
+
+T??ll?? hetkell?? t??m?? komento k??ytt???? DataTable-luokkaa lausekkeiden arvioimiseen. 
+
+https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
+
+Tulemme my??hemmin kirjoittamaan t??m??n laskimen uudelleen tai yhdistym????n todenn??k??isesti yhteen.
+
+Komennon k??ytt??
+
+* scical (lauseke1 | pi | e) (| - | * | / |%) (lauseke2 | pi | e) ...
+* scical (sqrt | tan | sin | cos) (numero)
+
+esimerkit
+
+* scical (29 * 35) pi: Se laskee suluissa olevat lausekkeet ensin, arvioi "pi", lis???? sen sitten kerrottujen lukujen tulokseen, ja tulos on 1018.14
+* scical e pi: Se lis???? euler-arvon ja pi yhdess?? ja tulos on 5.86
+* scical sqrt 729: Se saa neli??juuren 729, ja tulos on 27
+-BODY END-
+
+-COLOR CONFIGURATION-
+scical (expression1|pi|e) (+|-|*|/|%) (expression2|pi|e) ...=>Green
+scical (sqrt|tan|sin|cos) (number)=>Green
+scical (29 * 35) + pi:=>Yellow
+scical e + pi:=>Yellow
+scical sqrt 729:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+scical command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:P????kaz FTP "disconnect"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+odpojit p????kaz FTP
+
+Souhrn: Odpoj?? od aktu??ln??ho pracovn??ho serveru
+
+Popis
+
+Tento p????kaz ode??le p????kaz quit na server FTP, tak??e server v??, ??e odch??z??te. 
+
+Pou??it?? p????kaz??
+
+* odpojit
+-BODY END-
+
+-COLOR CONFIGURATION-
+disconnect=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+disconnect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-commando "hwprobe"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+hwprobe commando
+
+Samenvatting: Je kunt je kernel hardwareconfiguraties laten detecteren wanneer de kernel dat tijdens het booten niet deed
+
+Omschrijving
+
+Je kunt deze opdracht gebruiken om de kernel hardware en de bijbehorende configuratie-instellingen zoals BIOS, GPU, RAM, HDD en CPU te laten detecteren. 
+
+Commando gebruik
+
+* hwprobe
+-BODY END-
+
+-COLOR CONFIGURATION-
+hwprobe=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+hwprobe command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

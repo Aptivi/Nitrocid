@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Shell-opdracht "lijst"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lijstopdracht
+
+Samenvatting: u kunt inhoud weergeven in de huidige map of opgegeven map
+
+Omschrijving
+
+Als u niet weet wat er in de directory staat of in de huidige directory, kunt u deze opdracht gebruiken om de mapinhoud op een kleurrijke manier weer te geven.
+
+Commando gebruik
+
+* lijst
+* lijst [map]
+
+Voorbeelden
+
+* lijst: deze opdracht geeft de huidige inhoud van de werkdirectory weer
+* lijst ..: deze opdracht geeft een overzicht van de inhoud van de bovenliggende map uit de huidige werkdirectory
+* list boot: deze opdracht geeft de map "boot" uit de huidige werkdirectory weer, ervan uitgaande dat de werkdirectory /
+-BODY END-
+
+-COLOR CONFIGURATION-
+list=>Green
+list [directory]=>Green
+list:=>Yellow
+list ..:=>Yellow
+list boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+list command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

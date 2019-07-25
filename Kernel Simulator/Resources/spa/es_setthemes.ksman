@@ -1,0 +1,44 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "setthemes"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando setthemes
+
+Resumen: establece tu tema
+
+Descripci??n
+
+Puede personalizar su kernel utilizando temas, que contienen los conjuntos de colores para configurar los colores. 
+
+* Predeterminado: el conjunto de colores del kernel predeterminado
+* RedConsole: tu consola se pondr?? roja despu??s de configurarlo
+* Bluespire: Disfruta tu consola azul.
+* Hacker: si eres un hacker, configura este tema para que tu consola se vea m??s como una consola de hacking (color de matriz verde)
+* LinuxUncolored: simula el shell de Linux sin color (bash)
+* LinuxColoredDef: simula el shell de Linux de color (bash)
+
+Uso del comando
+
+* setthemes (Tema)
+
+Ejemplos
+
+* setthemes Hacker
+* setthemes Bluespire
+-BODY END-
+
+-COLOR CONFIGURATION-
+setthemes (Theme)=>Green
+setthemes Hacker=>Yellow
+setthemes Bluespire=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setthemes command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

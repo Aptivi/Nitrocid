@@ -1,0 +1,49 @@
+(*MAN START*)
+
+-TITLE:Shell-commando "chmal"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+chmal commando
+
+Samenvatting: u kunt uw bericht van de dag na het inloggen wijzigen
+
+Omschrijving
+
+Als u niet tevreden bent met het standaardbericht van de dag na het inloggen dat door de kernel wordt gegenereerd, kunt u deze opdracht gebruiken om het bericht te wijzigen en permanent in het configuratiebestand op te slaan.
+
+Het heeft ook placeholder-ondersteuning, zoals als u tijdelijke aanduidingen <shortdate> en <longtime> heeft, verandert de <shortdate> tijdelijke aanduiding in de huidige systeemdatum in het MM / DD / YYYY-formulier en wijzigt de <longtime> tijdelijke aanduiding in het huidige systeem 
+
+U kunt de onderstaande tijdelijke aanduidingen bekijken:
+
+* <gebruiker>: krijgt de huidige gebruikersnaam (Ex: joe)
+* <shortdate>: de systeemdatum wordt opgehaald in MM / DD / JJJJ-indeling (Ex: 12/7/2018)
+* <longdate>: haalt de systeemdatum op in <DayName>, <MonthName> DD, YYYY-indeling (bijv. vrijdag, 7 december 2018)
+* <shorttime>: verkrijgt de systeemtijd in UU: MM-indeling (Ex: 4:30)
+* <lang>: verkrijgt de systeemtijd in UU: MM: SS AM / PM-indeling (Ex: 4:30:10 PM)
+* <tijdzone>: verkrijgt de standaardtijdzone van het systeem (bijv .: Egypte standaardtijd)
+* <zomertijdzone: hiermee wordt de zomertijd van het systeem bereikt (bijv. Syri?? zomertijd)
+
+Commando gebruik
+
+* chmal (bericht)
+
+Voorbeelden
+
+* chmal Deze computer is ingeschakeld op (shortdate) (korte tijd): hij wijzigt uw MOTD na inloggen in het opgegeven bericht, met de placeholders opgenomen in het bericht.
+* chmal Welkom bij de kernel, (gebruiker)! 
+-BODY END-
+
+-COLOR CONFIGURATION-
+chmal (message)=>Green
+chmal This computer is turned on at (shortdate) (shorttime):=>Yellow
+chmal Welcome to the kernel, (user)! Your system time zone is (timezone):=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chmal command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

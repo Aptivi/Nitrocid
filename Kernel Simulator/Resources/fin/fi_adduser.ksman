@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "adduser"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+adduser-komento
+
+Yhteenveto: Voit lis??t?? k??ytt??j??n nimen aina kun tarvitset salasanaa tarvittaessa.
+
+Kuvaus
+
+Jos sinun on lis??tt??v?? henkil??, joka haluaa k??ytt???? ydint??, voit lis??t?? k??ytt??ji?? niihin ja antaa heille tarvittaessa salasanan. 
+
+Jos tarvitset kuitenkin henkil??n, jolla on j??rjestelm??nvalvojan oikeudet, sinun on annettava k??ytt??j??lle lupa sallia j??rjestelm??nvalvojan oikeudet. 
+
+Jos haluat lis??tietoja siit??, miten sinun pit??isi m????ritt???? k??ytt??oikeus k??ytt??jille, kannattaa katsoa "usermanual perm."
+
+Komennon k??ytt??
+
+* adduser (userName)
+* adduser (userName) [salasana] [vahvista]
+
+esimerkit
+
+* adduser joe: T??m?? luo uuden tilin, jonka nimi on "joe"
+* adduser test pass1234 pass1234: T??m?? luo uuden tilin, jonka nimi on "test" ja salasana "pass1234"
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser (userName)=>Green
+adduser (userName) [password] [confirm]=>Green
+adduser joe:=>Yellow
+adduser test pass1234 pass1234:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+adduser command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

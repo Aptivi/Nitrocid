@@ -1,0 +1,79 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "setcolors"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando setcolors
+
+Riepilogo: ?? possibile impostare i colori del kernel
+
+Descrizione
+
+Questo comando consente di impostare i colori del testo del kernel, inclusi il messaggio di errore del kernel, il messaggio di input, il testo della licenza, il testo generale, ecc. Consente inoltre di impostare il colore di sfondo per rendere il kernel pi?? personalizzato.
+
+Questo comando analizza i colori dai valori enum di ConsoleColor noti come numeri interi. 
+
+* Bianco = 15
+* Nero = 0
+* Grigio = 7
+* DarkGray = 8
+* DarkRed = 4
+* Rosso = 12
+* DarkYellow = 6
+* Giallo = 14
+* Verde scuro = 2
+* Verde = 10
+* DarkCyan = 3
+* Ciano = 11
+* DarkBlue = 1
+* Blu = 9
+* DarkMagenta = 5
+* Magenta = 13
+
+Se ?? presente "def" nei set di colori, otterr?? il colore predefinito per la sezione specificata. 
+
+Tuttavia, se ?? presente un RESET tra i colori, ogni colore verr?? ripristinato alle impostazioni predefinite. 
+
+Utilizzo del comando
+
+* setcolors (inputColor / def / RESET) (licenseColor / def / RESET) (contKernelErrorColor / def / RESET) (uncontKernelErrorColor / def / RESET) (hostNameShellColor / def / RESET) (userNameShellColor / def / RESET) (backgroundColor / defET / RESET) 
+
+Esempi
+
+* setcolors DarkCyan Blue DarkRed Red Cyan DarkCyan def Ciano Ciano DarkCyan
+* setcolors DarkMagenta Magenta DarkRed Red Magenta DarkMagenta def Magenta Magenta DarkMagenta
+* setcolors DarkYellow Yellow DarkRed Red Yellow DarkYellow def Giallo Giallo DarkYellow
+-BODY END-
+
+-COLOR CONFIGURATION-
+White=>White
+Black=>Black
+Gray=>Gray
+DarkGray=>DarkGray
+DarkRed=>DarkRed
+Red=>Red
+DarkYellow=>DarkYellow
+Yellow=>Yellow
+DarkGreen=>DarkGreen
+Green=>Green
+DarkCyan=>DarkCyan
+Cyan=>Cyan
+DarkBlue=>DarkBlue
+Blue=>Blue
+DarkMagenta=>DarkMagenta
+Magenta=>Magenta
+def=>Gray
+setcolors (inputColor/def/RESET) (licenseColor/def/RESET) (contKernelErrorColor/def/RESET) (uncontKernelErrorColor/def/RESET) (hostNameShellColor/def/RESET) (userNameShellColor/def/RESET) (backgroundColor/def/RESET) (neutralTextColor/def/RESET) (cmdListColor/def/RESET) (cmdDefColor/def/RESET)=>Green
+setcolors DarkCyan Blue DarkRed Red Cyan DarkCyan def Cyan Cyan DarkCyan=>Yellow
+setcolors DarkMagenta Magenta DarkRed Red Magenta DarkMagenta def Magenta Magenta DarkMagenta=>Yellow
+setcolors DarkYellow Yellow DarkRed Red Yellow DarkYellow def Yellow Yellow DarkYellow=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setcolors command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

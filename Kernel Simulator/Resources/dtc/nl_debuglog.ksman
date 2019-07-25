@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-opdracht "debuglog"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+debuglog-opdracht
+
+Samenvatting: u kunt kernel-foutopsporingslogboeken bekijken vanuit het bestand met de naam kernelDbg.log dat zich in uw gebruikersprofielmap bevindt
+
+Omschrijving
+
+Met deze viewer kunt u uw foutopsporingslogboeken bekijken zonder eerst de foutopsporingsmodus in de kernel in te schakelen. 
+
+Voorheen was voor deze opdracht vereist dat de debugger in de kernel was ingeschakeld.
+
+Commando gebruik
+
+* debuglog
+-BODY END-
+
+-COLOR CONFIGURATION-
+debuglog=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+debuglog command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

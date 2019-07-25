@@ -1,0 +1,27 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Argumentos de linha de comando dispon??veis
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the command-line arguments that are available in the kernel is put.
+-BODY START-
+Como executo os argumentos da linha de comando?
+
+Voc?? pode executar esses argumentos para fazer o simulador se comportar de maneira diferente, executando o Kernel Simulator como nos exemplos abaixo:
+
+- "Kernel Simulator.exe" promptArgs
+- "Kernel Simulator.exe" testMod ModToBeTested.m
+
+Argumentos ??teis:
+
+1. promptArgs: For??a o prompt de argumento do kernel a aparecer
+2. createConf: usado na ferramenta de configura????o do KS. 
+3. testMod: verifica a integridade do mod compilando e depois sai
+-BODY END-
+
+-SECTIONS-
+How do I run command-line arguments?=>SE1
+Useful arguments:=>SE1
+-SECTIONS END-

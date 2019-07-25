@@ -1,0 +1,425 @@
+(*MAN START*)
+
+-TITLE:Guida alla modifica del salvaschermo
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Qual ?? lo screensaver per il kernel?
+
+Lo screensaver ?? il processo inattivo che si attiver?? se il computer ?? rimasto inattivo. 
+
+Lo screensaver pu?? anche essere personalizzato e ti insegneremo come realizzare il tuo primo screensaver, per passare dallo screensaver pi?? semplice a quelli leggendari.
+
+Modding di base (screensaver)
+
+0. Come creare i tuoi salvaschermi su Visual Studio 2017?
+
+1. Ripetere i passaggi da 1 a 8 della guida alla modifica
+2. Nella sezione Compila, fai clic su Build Events, quindi scrivilo sulla riga di comando dell'evento Post-build:
+- copia .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (Metti SS prima del .m in modo che KS lo riconosca come screensaver e non come mod)
+- del / Q *. * (per assicurarsi che non ci siano file DLL fittizi in fase di creazione poich?? non utilizziamo DLL per le mod)
+3. Ripetere i passaggi 9-16 dalla guida Modding, ma sostituire Imports Kernel_Simulator.ModParser con Imports Kernel_Simulator.Screensaver
+4. Tra le righe Public Class ... e End Class, fai sapere a Visual Studio 2017 che stai per creare il tuo screensaver KS scrivendo: Implementa ICustomSaver
+5. Se vuoi aggiungere spazi dei nomi, devi rispettare queste regole:
+1) Non importare Kernel_Simulator da solo. 
+2) Quando si importano moduli / classi come TextWriterColor, ?? scritto cos??: Importa Kernel_Simulator.TextWriterColor
+6. Definire le propriet?? per le informazioni sulla mod inserendo di seguito l'IScript degli attrezzi:
+Propriet?? inizializzata come booleana Implementa ICustomSaver.Initialized
+7. Rendi il tuo sub screensaver chiamato InitSaver () che implementa ICustomSaver.InitSaver, scrivendo:
+Sub InitSaver () Implementa ICustomSaver.InitSaver
+'Il tuo codice qui
+Initialized = True 'Mettilo ovunque nel sottotitolo se stai creando Se le condizioni, altrimenti, lascialo qui.
+End Sub
+8. Sostituisci ogni commento Il tuo codice qui con il tuo codice. 
+9. Rendi il tuo pre-display (chiamato prima della visualizzazione dello screensaver) chiamato PreDisplay () che implementa ICustomSaver.PreDisplay, scrivendo:
+Sub PreDisplay () Implementa ICustomSaver.PreDisplay
+'Il tuo codice qui
+End Sub
+10. Rendi il tuo codice di visualizzazione (dovrebbe mostrare qualcosa) chiamato ScrnSaver () che implementa ICustomSaver.ScrnSaver, scrivendo:
+ScrnSaver secondario () Implementa ICustomSaver.ScrnSaver
+'Il tuo codice qui
+End Sub
+11. Puoi effettuare i tuoi abbonamenti ovunque nella classe, ma se:
+1) fanno parte della diversa classe, premi Invio su Fine classe e crea una nuova classe pubblica che memorizza nuovi abbonati:
+Classe pubblica AnotherClass
+"Le tue definizioni di seguito, quindi i tuoi sottotitoli, funzioni, interfacce, ecc.
+End Class
+2) stanno provando a reinizializzare lo screensaver richiamando InitSaver (), provalo prima nel tuo ambiente di test, poi nell'ambiente di produzione se ha funzionato correttamente.
+E devono essere soddisfatte le seguenti condizioni:
+1) Non dovrebbero fare un ciclo infinito a meno che tu non li stia facendo se vengono soddisfatte determinate condizioni
+2) Non dovrebbero provare a causare errori con il kernel.
+3) Metti la tua chiamata secondaria su uno dei tre sottotitoli che implementano l'interfaccia ICustomSaver. 
+12. Esegui la build. 
+13. Esegui il tuo Kernel Simulator a cui hai appena fatto riferimento nel tuo progetto, carica, imposta i valori predefiniti e blocca lo scren e lo screensaver ?? l??.
+
+1. Casella di messaggi in-console e messaggi Presto, Pernottamento o Scortese (Vai via ...)
+
+Lo screensaver della finestra di messaggio indietro dice alle persone che il proprietario del computer non c'?? pi??, o il proprietario dice che dovrebbero andare via perch?? ci sono cose importanti che accadono nei loro computer. 
+
+1. Fare clic con il tasto destro del mouse sul progetto e selezionare Aggiungi> Classe
+2. Dai un nome al tuo salvaschermo, ma lascia intatto il .vb. 
+3. Fai clic su Aggiungi e il codice sar?? pronto.
+4. Scrivi sotto (Assumi che il tuo nome mod sia SOR) Classe pubblica SOR: Implementa ICustomSaver
+5. Scrivi sopra il SOR di classe pubblica:
+- Sistema di importazione
+- Sistema di importazione. Filettatura
+- Importa Kernel_Simulator.Screensaver
+- Importa Kernel_Simulator.TextWriterColor
+- Importa Kernel_Simulator.Login
+6. Dovresti ricevere degli errori che dicono che questi sottotitoli dovrebbero essere creati.
+7. Crea il gestore dell'evento screensaver iniziale scrivendo:
+Propriet?? inizializzata come booleana Implementa ICustomSaver.Initialized
+Sub InitSaver () Implementa ICustomSaver.InitSaver
+Wln ("Carica questo screensaver usando" "loadsaver SORSS.m" "e" "setsaver SORSS.m" "", "neutralText")
+Inizializzato = Vero
+End Sub
+8. Poich?? non stiamo implementando nulla prima di visualizzare lo screensaver, lasceremo questo vuoto:
+Sub PreDisplay () Implementa ICustomSaver.PreDisplay
+End Sub
+9. Scrivi sopra la propriet?? inizializzata ...:
+Public SOR_Random As New Random () 'Inizializza il generatore di numeri casuali
+Public S_Random As New Random () 'Inizializza il generatore di numeri casuali
+O_Random pubblico come nuovo casuale () 'Inizializza il generatore di numeri casuali
+Public R_Random As New Random () 'Inizializza il generatore di numeri casuali
+9. Scrivere sul sottotitolo ScrnSaver ():
+Console.Clear ()
+Se Custom.CancellationPending = True, allora 'Questo risolver?? il problema per l'attivit?? occupata.
+Esci per
+Finisci se
+Dim SOR_Integer As Integer = SOR_Random.Next (1, 4) 'Scegli se presto, durante la notte o maleducato
+Dim Soon_MsgID As Integer = SOR_Random.Next (0, 2) 'Seleziona i messaggi nella matrice Soon
+Dim Over_MsgID As Intero = SOR_Random.Next (0, 2) 'Seleziona i messaggi nell'array Overnight
+Dim Rude_MsgID As Integer = SOR_Random.Next (0, 3) 'Seleziona i messaggi nell'array Rude
+Console.SetWindowPosition (0, 1)
+Seleziona Case SOR_Integer
+Caso 1 'Presto
+WriteMsg (SOR_Integer, Soon_MsgID)
+Caso 2 'Durante la notte
+WriteMsg (SOR_Integer, Over_MsgID)
+Caso 3 'Maleducato
+WriteMsg (SOR_Integer, Rude_MsgID)
+Fine selezione
+Thread.Sleep (10000)
+11. Potrebbe essere necessario creare 1 funzione e 2 sottotitoli affinch?? funzioni. 
+ParsePlaces con funzione condivisa pubblica (testo ByVal come stringa)
+text = text.Replace ("<OWNER>", signedinusrnm)
+Testo di ritorno
+Fine funzione
+InitializeBar condivisa pubblica (ByVal strlen As Integer)
+W ("-", "neutralText")
+Per l Come intero = 0 A strlen - 1
+W ("-", "neutralText")
+Il prossimo
+Wln ("-", "neutralText")
+End Sub
+WriteMsg secondario pubblico condiviso (ByVal TypeID come intero, ByVal MsgID come intero)
+Dim BackMessages As String () = {"<OWNER> torner?? presto.", "<OWNER> ?? occupato. Torner?? presto."}
+Dim OvernightMsg As String () = {"Sembra che <OWNER> torner?? dall'oggi al domani", "Torner?? dall'oggi al domani."}
+Dim RudeMessages As String () = {"Puoi andartene?", "Vai via, <OWNER> torner?? presto", "<OWNER> non ?? qui. Vai via."}
+Dim text As String = ""
+Seleziona ID caso
+Caso 1
+text = ParsePlaces (BackMessages (MsgID))
+Caso 2
+text = ParsePlaces (OvernightMsg (MsgID))
+Caso 3
+text = ParsePlaces (RudeMessages (MsgID))
+Fine selezione
+InitializeBar (text.length)
+Wln ("| {0} |", "neutralText", testo)
+InitializeBar (text.length)
+End Sub
+12. Il codice dovrebbe apparire cos??:
+Sistema di importazione
+Sistema di importazione. Filettatura
+Importa Kernel_Simulator.Screensaver
+Importa Kernel_Simulator.TextWriterColor
+Importa Kernel_Simulator.Login
+Public Class SoonOvernightRude
+Implementa ICustomSaver
+Propriet?? inizializzata come booleana Implementa ICustomSaver.Initialized
+Public SOR_Random As New Random () 'Inizializza il generatore di numeri casuali
+Public S_Random As New Random () 'Inizializza il generatore di numeri casuali
+O_Random pubblico come nuovo casuale () 'Inizializza il generatore di numeri casuali
+Public R_Random As New Random () 'Inizializza il generatore di numeri casuali
+Sub InitSaver () Implementa ICustomSaver.InitSaver
+Wln ("Imposta questo screensaver come predefinito usando" "setsaver SORSS.m" "", "neutralText")
+Inizializzato = Vero
+End Sub
+Sub PreDisplay () Implementa ICustomSaver.PreDisplay
+End Sub
+ScrnSaver secondario () Implementa ICustomSaver.ScrnSaver
+Console.Clear ()
+Se Custom.CancellationPending = True, allora 'Questo risolver?? il problema per l'attivit?? occupata.
+Esci per
+Finisci se
+Dim SOR_Integer As Integer = SOR_Random.Next (1, 4) 'Scegli se presto, durante la notte o maleducato
+Dim Soon_MsgID As Integer = S_Random.Next (0, 2) 'Seleziona i messaggi nella matrice Soon
+Dim Over_MsgID As Integer = O_Random.Next (0, 2) 'Seleziona i messaggi nell'array Overnight
+Dim Rude_MsgID As Integer = R_Random.Next (0, 3) 'Seleziona i messaggi nell'array Rude
+Console.SetCursorPosition (0, 1)
+Seleziona Case SOR_Integer
+Caso 1 'Presto
+WriteMsg (SOR_Integer, Soon_MsgID)
+Caso 2 'Durante la notte
+WriteMsg (SOR_Integer, Over_MsgID)
+Caso 3 'Maleducato
+WriteMsg (SOR_Integer, Rude_MsgID)
+Fine selezione
+Thread.Sleep (10000)
+End Sub
+ParsePlaces con funzione condivisa pubblica (testo ByVal come stringa)
+text = text.Replace ("<OWNER>", signedinusrnm)
+Testo di ritorno
+Fine funzione
+InitializeBar condivisa pubblica (ByVal strlen As Integer)
+W ("-", "neutralText")
+Per l Come intero = 0 A strlen - 1
+W ("-", "neutralText")
+Il prossimo
+Wln ("-", "neutralText")
+End Sub
+WriteMsg secondario pubblico condiviso (ByVal TypeID come intero, ByVal MsgID come intero)
+Dim BackMessages As String () = {"<OWNER> torner?? presto.", "<OWNER> ?? occupato. Torner?? presto."}
+Dim OvernightMsg As String () = {"Sembra che <OWNER> torner?? dall'oggi al domani", "Torner?? dall'oggi al domani."}
+Dim RudeMessages As String () = {"Puoi andartene?", "Vai via, <OWNER> torner?? presto", "<OWNER> non ?? qui. Vai via."}
+Dim text As String = ""
+Seleziona ID caso
+Caso 1
+text = ParsePlaces (BackMessages (MsgID))
+Caso 2
+text = ParsePlaces (OvernightMsg (MsgID))
+Caso 3
+text = ParsePlaces (RudeMessages (MsgID))
+Fine selezione
+InitializeBar (text.length)
+Wln ("| {0} |", "neutralText", testo)
+InitializeBar (text.length)
+End Sub
+End Class
+13. Esegui la build. 
+14. Esegui il tuo Kernel Simulator a cui hai appena fatto riferimento nel tuo progetto e carica, imposta come predefinito ed esegui la schermata di salvataggio.
+
+2. Schermata vuota semplice
+
+1. Ripeti i passaggi da 1 a 4 nel primo esempio: finestra di messaggio nella console e messaggi Presto, Pernottamento o Scortese (vai via ...)
+2. Scrivi sopra il vuoto della classe pubblica (supponendo che il tuo nome di classe sia vuoto):
+- Sistema di importazione
+- Importa Kernel_Simulator.Screensaver
+3. Scrivi questi sotto il ICustomSaver degli attrezzi:
+Propriet?? pubblica inizializzata come booleana implementa ICustomSaver.Initialized
+Public Sub InitSaver () Implementa ICustomSaver.InitSaver
+Inizializzato = Vero
+End Sub
+Public Sub PreDisplay () Implementa ICustomSaver.PreDisplay
+End Sub
+Public Sub ScrnSaver () Implementa ICustomSaver.ScrnSaver
+
+End Sub
+4. Scrivi all'interno del sottotitolo ScrnSaver:
+Console.Clear ()
+5. Il codice dovrebbe apparire cos??:
+Sistema di importazione
+Importa Kernel_Simulator.Screensaver
+Classe pubblica vuota
+Implementa ICustomSaver
+Propriet?? pubblica inizializzata come booleana implementa ICustomSaver.Initialized
+Public Sub InitSaver () Implementa ICustomSaver.InitSaver
+Inizializzato = Vero
+End Sub
+Public Sub PreDisplay () Implementa ICustomSaver.PreDisplay
+End Sub
+Public Sub ScrnSaver () Implementa ICustomSaver.ScrnSaver
+Console.Clear ()
+End Sub
+End Class
+5. Ripetere i passaggi 13-14 nel primo esempio: finestra di messaggio nella console e messaggi Presto, Pernottamento o Scortese (vai via ...)
+
+3. Animazione (Cerchio di disegno - 4 fotogrammi - 4 FPS)
+
+Questo esempio ti far?? iniziare con le animazioni. 
+
+Sistema di importazione
+Importa Microsoft.VisualBasic.Constants
+Importa Kernel_Simulator.TextWriterColor
+Sistema di importazione. Filettatura
+Importa Kernel_Simulator.Screensaver
+Classe pubblica ANI
+Implementa ICustomSaver
+Propriet?? pubblica inizializzata come booleana implementa ICustomSaver.Initialized
+Public CurrentStep Come intero
+Public Sub InitSaver () Implementa ICustomSaver.InitSaver
+Inizializzato = Vero
+End Sub
+Public Sub PreDisplay () Implementa ICustomSaver.PreDisplay
+End Sub
+Public Sub ScrnSaver () Implementa ICustomSaver.ScrnSaver
+Per CurrentStep = 0 a 3
+Console.Clear ()
+Se Custom.CancellationPending = True, allora 'Questo risolver?? il problema per l'attivit?? occupata.
+Esci per
+Finisci se
+Wln (aniset (CurrentStep), "neutralText")
+Thread.Sleep (150)
+Il prossimo
+End Sub
+
+Public aniset As String () = {"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"",
+"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"oMMh" vbNewLine
+"mMM" vbNewLine
+"yMMm`" vbNewLine
+"` hMMN- "vbNewLine
+"` oMMMd. "vbNewLine
+".: odMMMm /" vbNewLine
+"mNMMMMMNy:" vbNewLine
+"mmhhs / -",
+"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"hMMo oMMh" vbNewLine
+"MMm mMM" vbNewLine
+"mMMy yMMm`" vbNewLine
+"-NMMh`` hMMN- "vbNewLine
+".dMMMs`` oMMMd." vbNewLine
+"/ dMMMdo :..: odMMMm /" vbNewLine
+": yNMMMMMNmmNMMMMMNy:" vbNewLine
+"- / shhmmmmhhs / -",
+"- / oydmmmmhyo / -" vbNewLine
+": yNMMMMMNmmNMMMMMNy:" vbNewLine
+": dMMMdo :..: odMMMd /" vbNewLine
+".dMMMs. .oMMMd." vbNewLine
+"-NMMh`` hMMN- "vbNewLine
+"mMMy yMMm`" vbNewLine
+"MMm mMM" vbNewLine
+"hMMo oMMh" vbNewLine
+"hMMo oMMh" vbNewLine
+"MMm mMM" vbNewLine
+"mMMy yMMm`" vbNewLine
+"-NMMh`` hMMN- "vbNewLine
+".dMMMs`` oMMMd." vbNewLine
+"/ dMMMdo :..: odMMMm /" vbNewLine
+": yNMMMMMNmmNMMMMMNy:" vbNewLine
+"- / shhmmmmhhs / -"}
+End Class
+
+4. Calcola da 0 a 1.000.000 con barra di avanzamento (dinamica)
+
+Sistema di importazione
+Importa Microsoft.VisualBasic.Constants
+Importa Kernel_Simulator.TextWriterColor
+Importa Microsoft.VisualBasic.Strings
+Importa Kernel_Simulator.Screensaver
+Classe pubblica dinamica
+Implementa ICustomSaver
+Propriet?? pubblica inizializzata come booleana implementa ICustomSaver.Initialized
+Ricerca pubblica come numero intero
+ProgWent pubblico come numero intero
+Assegno pubblico come intero
+OldCheck pubblico come intero
+Public Sub InitSaver () Implementa ICustomSaver.InitSaver
+Inizializzato = Vero
+End Sub
+Public Sub PreDisplay () Implementa ICustomSaver.PreDisplay
+End Sub
+Public Sub ScrnSaver () Implementa ICustomSaver.ScrnSaver
+Console.Clear ()
+Per Res = 0 a 1000000
+Se Custom.CancellationPending = True, allora 'Questo risolver?? il problema per l'attivit?? occupata.
+Esci per
+Finisci se
+Console.SetCursorPosition (((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 5)
+SHOWSTATS ()
+Il prossimo
+Check = 0: oldCheck = 0: ProgWent = 0
+End Sub
+Public Sub ShowStats ()
+Wln ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+UpdateProgressBar (Res * 100/1000000)
+End Sub
+Public Sub UpdateProgressBar (ByVal percent As String)
+Verifica = percentuale / 5
+Wln (Check, "neutralText")
+Console.SetCursorPosition (((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
+W ("--------------------", "neutralText")
+Console.SetCursorPosition (((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
+W ("|", "neutralText")
+Se seleziona <> oldCheck, allora
+Per Went As Intero = 0 a ProgWent
+W ("*", "neutralText")
+Il prossimo
+ProgWent = 1
+Finisci se
+Console.SetCursorPosition (((Console.WindowWidth / 2) 11, (Console.WindowHeight / 2) - 2)
+W ("|", "neutralText")
+Console.SetCursorPosition (((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 1)
+W ("--------------------", "neutralText")
+oldCheck = percent / 5
+End Sub
+End Class
+
+Pi?? esempi
+
+Se vuoi dare un'occhiata a pi?? esempi, sentiti libero di provarli nel repository KSModExamples nella cartella Screensavers in GitHub.
+-BODY END-
+
+-COLOR CONFIGURATION-
+screensaver=>Green
+savescreen=>DarkGreen
+Modding guide=>Green
+Compile=>Cyan
+Build Events=>Cyan
+Post-build event=>Green
+End Class=>Cyan
+Public Class...=>Cyan
+Visual Studio 2017=>Magenta
+Imports Implements=>Cyan
+ICustomSaver=>Green
+Kernel_Simulator=>Cyan
+TextWriterColor=>Green
+Kernel_Simulator.TextWriterColor=>Green
+Property As Boolean Sub=>Cyan
+Initialized ICustomSaver.Initialized=>Green
+Kernel Simulator=>Green
+Rude=>Red
+KSModExamples Screensavers GitHub=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the screensaver for the kernel?=>SE1
+Basic modding (screensaver)=>SE1
+0. How to make your own screensavers on Visual Studio 2017?=>SE2
+1. In-Console Message Box, and Soon, Overnight, or Rude (Go away...) messages=>SE2
+2. Simple Blank screen=>SE2
+3. Animation (Drawing Circle - 4 frames - 4 FPS)=>SE2
+4. Calculate from 0 to 1,000,000 with progress bar (dynamic)=>SE2
+More examples=>SE1
+-SECTIONS END-

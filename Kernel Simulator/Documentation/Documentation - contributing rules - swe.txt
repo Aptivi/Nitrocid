@@ -1,0 +1,51 @@
+﻿| --------------- + -> Allmänt <- + --------------- |
+
+- Om du vill bidra till Kernel Simulator måste villkoren nedan följas:
+
+1. Om du vill modifiera / omkoda kärnkärnan, se till att du skriver ändringarna korrekt och noggrant, och se till att du inte skadar kärnkärnans funktioner.
+2. Om du vill lägga till / ändra / ta bort / koda några önskade funktioner överallt, skriv ändringarna noggrant.
+3. Liksom alla andra utvecklare som vill bidra till Kernel Simulator måste ändringarna testas. Vi vill inte ha resultaten, bara testa och säga att det är testat. Om du vill tillhandahålla resultaten accepterar vi fortfarande din dragförfrågan.
+4. Om du inte har testat den och du skickat oss en dragförfrågan testar vi koden och om vi finner det:
+
+   - din kod fungerar, vi accepterar din dragförfrågan
+   - din kod fungerar inte, vi stänger din dragförfrågan
+
+5. Om du inte har testat den och du är redo att skicka oss, testa koden först.
+6. Om du vill ändra dokumentationen, eller andra delar än kodning, eller lägga till delar av / ny dokumentation, må du gärna. Du kan meddela oss.
+
+- Porting till andra operativsystem eller programmeringsspråk som är annat än Assembly (ASM, NASM, ...) eller C / C ++ språk:
+
+Du kanske måste porta Kernel Simulator till andra operativsystem som Linux, macOS och så vidare. Och även till ett annat programmeringsspråk som är annat än C / C ++ eller monteringsspråk.
+
+Portationen till ASM / C / C ++ är upp till oss, ägaren. Alla portar till dem innan vår officiella Kernel ASM / C / C ++ startbara utgåva kommer inte att stöds av oss, och eventuella frågor angående dem kommer att avvisas omedelbart.
+
+- Om du vill porta Kernel Simulator till Linux (testad) eller macOS (otestad) på Visual Basic:
+
+1. Installera Mono, MonoDevelop och libmono-microsoft-visualbasic10.0-cil-paket. Du kan ta reda på hur på deras officiella webbplats.
+2. Ladda ner KS-källkoden
+3. Öppna lösningen med MonoDevelop och kör programmet.
+4. Rapportera eventuella problem i avsnittet Problem i vår KS-repo.
+
+- Om du vill porta Kernel Simulator till Sun OS, BSD: er, Solaris, etc. (ej testat):
+
+Detta avsnitt är under uppbyggnad. Om du har instruktioner, vänligen bidra.
+
+Obs! Om du vill porta Kernel Simulator till ett annat programmeringsspråk som inte är lika med Assembly eller C / C ++, känn dig fri att.
+Obs: Porting Kernel in the Kernel Simulator to the Real Computer / VirtualBox using Assembly and C / C ++ är upp till oss.
+Obs! Porten av kärnan i simulatorn till Android / iOS är OK. Du kan göra lämpliga ändringar.
+
+| --------------- + -> Andra bidrag, nummer etc. <- + --------------- |
+
+- Rapportera frågor
+
+Följ designmönstret för bugrapportering och förklara så mycket du kan. Mindre specifik förklaring och fel designmönster som följer kan stänga ditt problem. Skärmbilder är valfria.
+
+| --------------- + -> Att göra-lista för att lägga till i Kernel Simulator <- + --------------- |
+
+Om några av idéerna försvann är det antingen gjort eller avbrutet. (Detta avsnitt raderas av 0.0.7 och flyttas till Aktivitetslista i VS2019.)
+
+1. Interaktiv värdsystemfilhanterare (Planerad i den startbara versionen)
+2. Flytta varje dokumentation till Wiki i förvaret, inklusive manuella sidor, gör att manuella sidkommandon öppnar en webbplats till Wiki (Planerad i 0.0.7)
+3. Permanent lista över användarnamn och lösenord (lösenord i krypterad form - i beta)
+
+(Om du har idéer kan du redigera det här avsnittet genom att infoga din idé.)

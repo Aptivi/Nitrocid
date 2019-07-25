@@ -31,7 +31,7 @@ Public Module Shell
                                             "cdbglog", "sses", "chlang"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang"}
-    Public obsoleteCmds() As String = {}
+    Public obsoleteCmds() As String = {"currency"}
     Public modcmnds As New ArrayList
 
     'For contributors: For each added command, you should add a command to availableCommands array so there is no problems detecting your new command.

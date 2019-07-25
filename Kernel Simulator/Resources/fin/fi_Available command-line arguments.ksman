@@ -1,0 +1,27 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:K??ytett??viss?? olevat komentorivin argumentit
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the command-line arguments that are available in the kernel is put.
+-BODY START-
+Miten komentorivin argumentteja voidaan k??ytt?????
+
+Voit suorittaa n??m?? argumentit, jotta simulaattori k??ytt??ytyy eri tavalla: k??ynnist?? Kernel Simulator kuten alla olevat esimerkit:
+
+- "Kernel Simulator.exe" -kehoteArgs
+- "Kernel Simulator.exe" testMod ModToBeTested.m
+
+Hy??dyllisi?? argumentteja:
+
+1. promptArgs: Pakottaa ytimen argumenttikehotteen n??kyviin
+2. createConf: K??ytet????n KS Config -ty??kalussa. 
+3. testMod: Tarkistaa modin eheyden k????nt??m??ll??, sitten poistuu
+-BODY END-
+
+-SECTIONS-
+How do I run command-line arguments?=>SE1
+Useful arguments:=>SE1
+-SECTIONS END-

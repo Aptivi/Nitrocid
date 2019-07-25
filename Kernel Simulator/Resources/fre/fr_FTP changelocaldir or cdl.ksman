@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Commande FTP "changelocaldir" ou "cdl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande FTP changelocaldir ou cdl
+
+R??sum??: modifie votre r??pertoire local
+
+La description
+
+Cette commande vous permet de changer le r??pertoire local de vos disques durs en un autre r??pertoire existant dans le sous-r??pertoire. 
+
+Utilisation de la commande
+
+* changelocaldir / cdl (r??pertoire / ..)
+Exemples
+
+* changelocaldir C: \ Users \ Owner \ Desktop: Ceci changera votre r??pertoire local en C: \ Users \ Owner \ Desktop
+* changelocaldir Stuff: Ceci changera votre r??pertoire local en Stuff dans votre r??pertoire de travail actuel
+* cdl ..: Ceci ira dans un r??pertoire parent pour le r??pertoire de travail actuel (retour)
+-BODY END-
+
+-COLOR CONFIGURATION-
+changelocaldir/cdl (directory/..)=>Green
+changelocaldir C:\Users\Owner\Desktop:=>Yellow
+changelocaldir Stuff:=>Yellow
+cdl ..:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+changelocaldir or cdl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

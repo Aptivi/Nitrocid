@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:FTP-komento "download" tai "get"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lataa tai hanki FTP-komento
+
+Yhteenveto: Lataa tiedosto nykyisest?? ty??hakemistosta
+
+Kuvaus
+
+Lataaa bin????ri- tai tekstitiedoston ja tallentaa sen nykyiseen paikalliseen hakemistoon, jotta voit k??ytt???? ladattua tiedostoa, joka on FTP-palvelimessa.
+
+Komennon k??ytt??
+
+* lataa / hae (tiedosto)
+esimerkit
+
+* lataa text.txt: lataa tekstitiedoston nimelt?? "text.txt"
+* get shanghai.png: Lataaa binaarisen kuvatiedoston, joka n??ytt???? Shanghain kaupungin Kiinassa ja tallentaa sen "shanghai.png"
+-BODY END-
+
+-COLOR CONFIGURATION-
+download/get (file)=>Green
+download text.txt:=>Yellow
+get shanghai.png:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+download or get FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

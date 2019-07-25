@@ -1,0 +1,145 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Pengenalan kepada Kernel
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Apakah kernel itu? 
+
+Kernel pada umumnya ialah program komputer yang merupakan teras sistem pengendalian komputer, dengan kawalan penuh terhadap segala-galanya dalam sistem. 
+
+Walau bagaimanapun Simulator Kernel adalah Simulasi pertama yang sebenar, dan bukannya Emulasi, aplikasi yang boleh meniru kelakuan seperti ini, kecuali ia terhad kerana kita masih berada di peringkat Alpha, dan ia juga menunjukkan kepada anda peralihan bagaimana kernel kita diperbaiki dan dibina 
+
+Sejarah Unix dan Linux.
+
+Apakah Unix? 
+
+Unix adalah keluarga multitasking, sistem operasi komputer pengguna yang berasal dari AT yang asal
+
+Pada mulanya bertujuan untuk digunakan di dalam Sistem Bell, AT
+
+Asal-usul Unix bermula dari pertengahan 1960-an apabila Institut Teknologi Massachusetts, Bell Labs, dan General Electric telah membangunkan Multics, sistem operasi perkongsian masa untuk komputer kerangka utama GE-645. 
+
+Sistem operasi baru adalah sistem satu tugas. 
+
+Sistem operasi pada asalnya ditulis dalam bahasa perhimpunan, tetapi pada tahun 1973, Versi 4 Unix ditulis semula dalam C. Versi 4 Unix, bagaimanapun, masih mempunyai banyak kod PDP-11 yang banyak, dan tidak sesuai untuk port. 
+
+Bell Labs menghasilkan beberapa versi Unix yang secara kolektif dirujuk sebagai Penyelidikan Unix. 
+
+Pada penghujung 1970-an dan awal 1980-an, pengaruh Unix dalam kalangan akademik membawa kepada penggunaan besar Unix (BSD dan System V) oleh startup komersial, termasuk Sequent, HP-UX, Solaris, AIX, dan Xenix. 
+
+Pada tahun 1990-an, sistem Unix dan Unix semakin popular kerana pengagihan BSD dan Linux telah dibangunkan melalui kerjasama oleh rangkaian pengaturcara di seluruh dunia. 
+
+Bagaimana dengan Linux?
+
+Linux adalah keluarga sistem operasi perisian bebas dan terbuka yang dibina di sekitar kernel Linux. 
+
+Pada tahun 1991, ketika menghadiri University of Helsinki, Torvalds menjadi penasaran tentang sistem operasi. 
+
+Torvalds memulakan pembangunan kernel Linux pada MINIX dan aplikasi yang ditulis untuk MINIX juga digunakan pada Linux. 
+
+Linus Torvalds mahu memanggil rekaannya Freax, seorang portmanteau bebas, aneh, dan x (sebagai kiasan kepada Unix). 
+
+Untuk memudahkan perkembangan, fail-fail itu dimuat naik ke pelayan FTP (ftp.funet.fi) FUNET pada September 1991. Ari Lemmke, rakan sekerja Torvalds di Helsinki University of Technology (HUT), yang merupakan salah seorang pentadbir sukarelawan 
+
+Penggunaan Linux dalam persekitaran pengeluaran, bukannya digunakan hanya oleh penggemar, mula beroperasi pada pertengahan 1990-an dalam komuniti superkomputer, di mana organisasi seperti NASA mula menggantikan mesin mereka yang semakin mahal dengan kelompok komputer komoditi murah yang menjalankan Linux 
+
+Hari ini, sistem Linux digunakan sepanjang pengkomputeran, dari sistem terbenam kepada hampir semua superkomputer, dan telah memperoleh tempat dalam pemasangan pelayan seperti aplikasi LAMP yang popular. 
+
+Kejayaan terbesar Linux di pasaran pengguna mungkin adalah pasaran peranti mudah alih, dengan Android menjadi salah satu sistem operasi paling dominan pada telefon pintar dan sangat popular pada tablet dan, lebih baru-baru ini, pada wearables. 
+
+Greg Kroah-Hartman adalah penyelenggara utama untuk kernel Linux dan membimbing perkembangannya. 
+
+Pembekal dan komuniti Linux menggabungkan dan mengagihkan kernel, komponen GNU, dan komponen bukan GNU, dengan perisian pengurusan pakej tambahan berupa pengedaran Linux.
+
+Penerangan ringkas untuk kernel Eofla Kernel kami
+
+Kernel dibina dari awal, dan versi Simulator awam pertama dibina pada 23 Februari, 2018. Pada masa ini, Simulator merebut maklumat perkakasan melalui Instrumen Pengurusan Windows (WMI) yang menyediakan setiap maklumat untuk perkakasan anda, termasuk pemproses, RAM, grafik 
+
+Pada masa ini, ia mempunyai ciri debugging yang membebankan kernel pada apa yang sedang berlaku dan menyimpannya pada fail. 
+
+Sumber
+
+1. https://en.wikipedia.org/wiki/Kernel_(operating_system)
+2. https://en.wikipedia.org/wiki/Unix
+3. https://en.wikipedia.org/wiki/Linux
+-BODY END-
+
+-COLOR CONFIGURATION-
+Kernel Simulator=>Yellow
+Simulation=>Green
+Emulation=>Red
+Alpha=>Red
+Unix=>Green
+Bell Labs=>DarkGreen
+Ken Thompson, Dennis Ritchie=>DarkGreen
+System=>DarkGreen
+AT&T=>DarkGreen
+University California Berkeley (BSD), Microsoft (Xenix), IBM (AIX), Sun Microsystems (Solaris)=>DarkGreen
+Novell=>DarkGreen
+Santa Cruz Operation (SCO)=>DarkGreen
+Open Group=>DarkGreen
+Apple's=>Gray
+Massachusetts Institute Technology=>DarkGreen
+General Electric=>DarkGreen
+Multics=>DarkGreen
+GE-645=>Red
+Douglas McIlroy, Joe Ossanna=>DarkGreen
+Unics Uniplexed Information Computing Service=>DarkGreen
+Multiplexed Computer Services=>DarkGreen
+Doug Peter G. Neumann=>DarkGreen
+Kernighan=>DarkGreen
+assembly language=>Magenta
+C=>Magenta
+Interdata 8/32=>Red
+Research=>DarkGreen
+Donald B. Gillies=>DarkGreen
+Illinois Department Science=>DarkGreen
+UIUC=>DarkGreen
+Greg Chesson=>DarkGreen
+Sequent, HP-UX, Solaris, AIX, Xenix=>DarkGreen
+Laboratories=>DarkGreen
+V Release 4 (SVR4)=>DarkGreen
+BSD=>DarkGreen
+Linux=>DarkGreen
+Darwin=>DarkGreen
+Mac OS X=>DarkMagenta
+macOS=>Magenta
+Linus=>DarkGreen
+Torvalds=>DarkGreen
+MINIX=>DarkGreen
+GNU=>Magenta
+GPL=>Magenta
+Freax=>DarkGreen
+free freak x=>Magenta
+ftp.funet.fi=>Blue
+FUNET=>DarkGreen
+Ari Lemmke=>DarkGreen
+Helsinki (HUT)=>DarkGreen
+NASA=>DarkGreen
+Dell=>DarkGreen
+Hewlett-Packard=>DarkGreen
+LAMP=>Magenta
+Google=>DarkGreen
+Chrome=>DarkGreen
+Android=>Green
+Valve=>Magenta
+Kroah-Hartman=>DarkGreen
+Stallman=>DarkGreen
+Free Software Foundation=>DarkGreen
+Windows Management Instrumentation (WMI)=>DarkGreen
+Unified Eofla SHell (UESH)=>DarkGreen
+InitiaOE=>DarkGreen
+uesh-maint=>DarkGreen
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the Kernel? How about Kernel Simulator?=>SE1
+The history of Unix and Linux.=>SE1
+What is Unix? and what happened in the past?=>SE2
+How about Linux?=>SE2
+Brief description for our Kernel aka Eofla Kernel=>SE1
+Sources=>SE1
+-SECTIONS END-

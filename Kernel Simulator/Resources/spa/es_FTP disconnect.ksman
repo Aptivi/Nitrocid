@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "desconectar"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Desconectar comando FTP
+
+Resumen: Desconecta del servidor de trabajo actual
+
+Descripci??n
+
+Este comando env??a el comando para salir al servidor FTP para que el servidor sepa que usted se va. 
+
+Uso del comando
+
+* desconectar
+-BODY END-
+
+-COLOR CONFIGURATION-
+disconnect=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+disconnect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

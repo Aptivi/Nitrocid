@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "setsaver"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+setsaver komutu
+
+??zet: Varsay??lan ekran koruyucunuzu kendi ekran koruyucunuz veya dahili koruyucular??n??z olarak ayarlar
+
+A????klama
+
+Varsay??lan ekran koruyucunuzu modfile veya matrix, disco ve colorMix gibi yerle??ik koruyucularla kendi ekran koruyucunuz olarak ayarlayabilirsiniz.
+
+* matris: 0 ile 1 aras??nda ye??il metin renginde bas??lan temel matrisi g??r??nt??ler
+* disco: Disko ??????klar??n?? g??r??nt??ler
+* colorMix: Arka plan rengini rastgele renge de??i??tirir ve renkli bir blok yapmak i??in "" basar ve tekrarlar.
+
+Komut kullan??m??
+
+* Setsaver ((ScreenSaverName) SS.m / matrix / disco / colorMix)
+
+??rnekler
+
+* setsaver matrisi
+* setsaver GameOfLifeSS.m
+* setsaver LinesSS.m
+-BODY END-
+
+-COLOR CONFIGURATION-
+setsaver ((ScreenSaverName)SS.m/matrix/disco/colorMix)=>Green
+setsaver matrix=>Yellow
+setsaver GameOfLifeSS.m=>Yellow
+setsaver LinesSS.m=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setsaver command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,42 @@
+(*MAN START*)
+
+-TITLE:FTP-komento "listremote" tai "lsr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+listremote tai lsr FTP-komento
+
+Yhteenveto: Listaa nykyisen kansion tai siihen sis??ltyv??n kansion sis??ll??n
+
+Kuvaus
+
+Voit tarkastella nykyisen ty??hakemiston sis??lt??mi?? tiedostoja ja alihakemistoja, jos hakemistoja ei ole m????ritetty, tai m????ritetyss?? hakemistossa.
+
+Voit my??s n??hd?? nykyisen sijaintisi edellisen hakemiston sis??lt??m??t tiedostot ja alikansiot.
+
+Toisin kuin listlocal tai lsr, sinun pit??isi muodostaa yhteys palvelimeen, jotta voit k??ytt???? t??t?? komentoa, koska siin?? luetellaan palvelimessa olevat hakemistot, ei paikallista kiintolevy??.
+
+Komennon k??ytt??
+
+* listremote / lsr [kansio / ..]
+esimerkit
+
+* listremote: Luettelee ty??hakemiston sis??ll??n
+* listremote ..: Listaa edellisen ty??hakemiston sis??ll??n
+* lsr kaupungit: Luettelee "kaupunkien" kansion sis??ll??n
+-BODY END-
+
+-COLOR CONFIGURATION-
+listremote/lsr [folder/..]=>Green
+listremote:=>Yellow
+listremote ..:=>Yellow
+lsr cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+listremote or lsr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

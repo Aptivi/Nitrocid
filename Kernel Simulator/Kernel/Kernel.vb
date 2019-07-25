@@ -16,7 +16,6 @@
 
 Imports System.Reflection.Assembly
 
-'TODO: Make debug syms mandatory: Download debug syms from GitHub from archive branch (https://github.com/EoflaOE/Kernel-Simulator/tree/archive/dbgsyms), install to the same folder as the executable, inform user that it needs to be shut down, and quit
 Public Module Kernel
 
     'Variables
@@ -36,13 +35,13 @@ Public Module Kernel
         'TODO: Give the kernel name of "Meritorious Kernalism" and the simulator name of "MeritSim" in the final release.
         Try
             'A title
-            Console.Title = "Kernel Simulator v" & KernelVersion & " - Compiled on " & GetCompileDate()
+            Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}"
             InitPaths()
 
             'Download debug symbols if not found (loads automatically)
             If Not IO.File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                 Dim pdbdown As New WebClient
-                pdbdown.DownloadFile("https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/" + KernelVersion + ".pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+                pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
             End If
 
             'Initialize everything
@@ -58,13 +57,13 @@ Public Module Kernel
             End If
 
             'Phase 2: Username management
-            adduser("root", RootPasswd)
-            permission("Admin", "root", "Allow", Quiet)
-            If enableDemo = True Then adduser("demo")
+            Adduser("root", RootPasswd)
+            Permission("Admin", "root", "Allow", Quiet)
+            If enableDemo = True Then Adduser("demo")
             LoginFlag = True
 
             'Phase 3: Check for pre-user making
-            If CruserFlag = True Then adduser(arguser, argword)
+            If CruserFlag = True Then Adduser(arguser, argword)
 
             'Phase 4: Parse Mods and Screensavers
             ParseMods(True)
@@ -85,7 +84,7 @@ Public Module Kernel
                 LoginFlag = False
                 Wln(DoTranslation("Enter the admin password for maintenance.", currentLang), "neutralText")
                 answeruser = "root"
-                showPasswordPrompt(answeruser)
+                ShowPasswordPrompt(answeruser)
             End If
         Catch ex As Exception
             If DebugMode = True Then

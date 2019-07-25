@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando shell "hwprobe"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando hwprobe
+
+Resumo: Voc?? pode fazer com que seu kernel detecte configura????es de hardware quando o kernel n??o fizer isso na inicializa????o
+
+Descri????o
+
+Voc?? pode usar este comando para fazer o kernel detectar hardware e suas configura????es como BIOS, GPU, RAM, HDD e CPU. 
+
+Uso de comando
+
+* hwprobe
+-BODY END-
+
+-COLOR CONFIGURATION-
+hwprobe=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+hwprobe command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

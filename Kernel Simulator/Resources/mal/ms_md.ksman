@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "md"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+arahan md
+
+Ringkasan: Anda boleh membuat direktori anda
+
+Penerangan
+
+Sekiranya anda hendak menyusun fail anda ke dalam folder, anda mesti membuat folder.
+
+Perintah ini membolehkan anda membuat folder dalam direktori kerja semasa.
+
+Penggunaan perintah
+
+* md (folderName)
+
+Contoh
+
+* Kata laluan md: Perintah ini mencipta folder bernama "Sandi" dalam direktori kerja semasa
+-BODY END-
+
+-COLOR CONFIGURATION-
+md (folderName)=>Green
+md Passwords:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+md command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Comando shell "lista"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando di lista
+
+Riepilogo: ?? possibile elencare i contenuti all'interno della directory corrente o della cartella specificata
+
+Descrizione
+
+Se non sai cosa c'?? nella directory o nella directory corrente, puoi usare questo comando per elencare i contenuti delle cartelle in modo colorato.
+
+Comando di utilizzo
+
+* elenco
+* lista [directory]
+
+Esempi
+
+* elenco: questo comando elenca i contenuti della directory di lavoro corrente
+* lista ..: questo comando elenca i contenuti della cartella principale dalla directory di lavoro corrente
+* lista di avvio: questo comando elenca la cartella "boot" dalla directory di lavoro corrente, assumendo che la directory di lavoro sia /
+-BODY END-
+
+-COLOR CONFIGURATION-
+list=>Green
+list [directory]=>Green
+list:=>Yellow
+list ..:=>Yellow
+list boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+list command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-commando "useddeps"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+useddeps-opdracht
+
+Samenvatting: u kunt de bibliotheken gebruiken die in dit programma worden gebruikt
+
+Omschrijving
+
+Kernel Simulator wordt geleverd met bibliotheken voor eenvoudigere codering (voor ontwikkelaars). 
+
+Commando gebruik
+
+* useddeps
+-BODY END-
+
+-COLOR CONFIGURATION-
+useddeps=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+useddeps command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Shell Befehl "rmuser"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl rmuser
+
+Zusammenfassung: Entfernt nicht eingeladene oder redundante Benutzer
+
+Beschreibung
+
+Mit diesem Befehl k??nnen Sie den nicht eingeladenen oder redundanten Benutzer aus dem Benutzerw??rterbuch entfernen, das beim Start des Kernels initialisiert wird. 
+
+Sie k??nnen jedoch Ihren eigenen angemeldeten Benutzer nicht entfernen.
+
+Befehlsverwendung
+
+* rmuser (Benutzername)
+
+Beispiele
+
+* rmuser joe: Entfernt "joe" aus dem Benutzerw??rterbuch
+-BODY END-
+
+-COLOR CONFIGURATION-
+rmuser (Username)=>Green
+rmuser joe:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rmuser command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

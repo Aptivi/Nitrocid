@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:FTP-opdracht "disconnect"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+ontkoppel de FTP-opdracht
+
+Samenvatting: Verbreekt de verbinding met de huidige werkende server
+
+Omschrijving
+
+Met deze opdracht verzendt u de opdracht quit naar de FTP-server zodat de server weet dat u weggaat. 
+
+Commando gebruik
+
+* Loskoppelen
+-BODY END-
+
+-COLOR CONFIGURATION-
+disconnect=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+disconnect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

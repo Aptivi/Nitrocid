@@ -348,3 +348,20 @@ Ottiene le versioni SSE
 Lingua non valida
 Cambia lingua
 Non è possibile installare libcpanel-json-xs-perl sul sistema. Fare riferimento al proprio gestore di pacchetti per l'installazione. Per i sistemi Debian (e derivati), è possibile eseguire "sudo apt install libcpanel-json-xs-perl" nell'emulatore di terminale. Maggiori dettagli su un errore:
+----------------------------- Dump di panico del kernel ------------------------------
+>> Informazioni di panico <<
+> Descrizione: {0}
+> Tipo di errore: {1}
+> Data e ora: {2}
+>> Informazioni sull'eccezione <<
+> Eccezione: {0}
+> Descrizione: {1}
+> HRESULT: {2}
+> Fonte: {3}
+> Traccia stack <
+>> Informazioni sull'eccezione interna {0} <<
+>> L'eccezione {0} è la causa principale <<
+>> Nessuna eccezione; potrebbe essere un errore del kernel. <<
+>> Cornici, file, linee e colonne <<
+> Frame {0}: File: {1} | Riga: {2} | Colonna: {3}
+> Si è verificato un errore durante il tentativo di ottenere informazioni sul frame. {0}: {1}

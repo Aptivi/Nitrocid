@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:Comando shell "chdir"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando chdir
+
+Resumo: Voc?? pode alterar seu diret??rio de trabalho atual para outro diret??rio
+
+Descri????o
+
+Voc?? pode alterar seu diret??rio de trabalho para outro diret??rio para executar comandos de listagem, remover arquivos ou criar diret??rios em outro diret??rio.
+
+Uso de comando
+
+chdir (diret??rio)
+* chdir ..
+
+Exemplos
+
+* chdir boot: Ele altera seu diret??rio de trabalho para / boot
+* chdir ..: Volta ao diret??rio de trabalho anterior
+-BODY END-
+
+-COLOR CONFIGURATION-
+chdir <directory>=>Green
+chdir ..=>Green
+chdir boot:=>Yellow
+chdir ..:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chdir command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

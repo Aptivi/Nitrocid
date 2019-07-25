@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:FTP Befehl "delete" oder "del"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl zum L??schen oder L??schen von FTP
+
+Zusammenfassung: Entfernt Dateien oder Ordner
+
+Beschreibung
+
+Wenn Sie sich bei einem Benutzer mit Administratorrechten angemeldet haben, k??nnen Sie unerw??nschte Dateien oder zus??tzliche Ordner vom Server entfernen.
+
+Wenn Sie eine Datei gel??scht haben, w??hrend auf dem Server ??bertragungen stattfinden, k??nnen Personen, die versuchen, die gel??schte Datei abzurufen, sie nach einem fehlgeschlagenen Download nie wieder herunterladen.
+
+Befehlsverwendung
+
+* delete / del (Datei / Verzeichnis)
+Beispiele
+
+* delete unwanted.txt: L??sche die Datei mit dem Namen "unwanted.txt"
+* del InactiveDir: L??schen Sie den Ordner "InactiveDir"
+-BODY END-
+
+-COLOR CONFIGURATION-
+delete/del (file/directory)=>Green
+delete unwanted.txt:=>Yellow
+del InactiveDir:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+delete or del FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

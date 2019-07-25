@@ -1,0 +1,425 @@
+(*MAN START*)
+
+-TITLE:Ekran koruyucu modding k??lavuzu
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+??ekirde??in ekran koruyucusu nedir?
+
+Ekran koruyucu, bilgisayar??n??z bo??ta kal??rsa etkinle??tirilecek bo??ta i??lemdir. 
+
+Ekran koruyucu da ??zelle??tirilebilir ve size en basit ekran koruyucudan efsanevi olanlara kadar ilk ekran koruyucunuzu nas??l yapaca????n??z?? ????retece??iz.
+
+Temel modding (ekran koruyucu)
+
+0. Visual Studio 2017'de kendi ekran koruyucular??n??z nas??l yap??l??r?
+
+1. Modding rehberindeki 1-8 aras??ndaki ad??mlar?? tekrarlay??n.
+2. Derleme b??l??m??nde, Olay Olu??turma'y?? t??klay??n, ard??ndan bunu Post-build olay komut sat??r??na yaz??n:
+- copy .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (.s'nin ??n??ne SS koyun; KS onu KS'nin ekran koruyucusu olarak alg??lamas??n?? sa??lar.)
+- del / Q *. * (mods i??in DLL kullanmad??????m??z i??in olu??turulmu?? bo?? bir DLL dosyas?? olmad??????ndan emin olmak i??in)
+3. Modding k??lavuzundan 9-16 aras??ndaki ad??mlar?? tekrarlay??n, ancak Imports Kernel_Simulator.ModParser'?? Imports Kernel_Simulator.Screensaver ile de??i??tirin
+4. Genel S??n??f ... ve Son S??n??f sat??rlar?? aras??nda, Visual Studio 2017'ye KS ekran koruyucunuzu yazarak olu??turaca????n??z?? bildirin: ICustomSaver
+5. ??sim alanlar?? ekleyecekseniz, bu kurallara uyulmas?? gerekir:
+1) Kernel_Simulator'?? kendi kendine almay??n. 
+2) TextWriterColor gibi mod??lleri / s??n??flar?? i??e aktar??rken ????yle yaz??l??r: Imports Kernel_Simulator.TextWriterColor
+6. Implements IScript'i a??a????ya koyarak mod bilgisi i??in ??zellikleri tan??mlay??n:
+Boolean Olarak Ba??lat??lan ??zellik ICustomSaver.Initialized ????esini uygular
+7. ??nit ekran koruyucunuzu, ICustomSaver.InitSaver uygulayan InitSaver () ad??nda, a??a????dakileri yaparak yap??n:
+Sub InitSaver () ICustomSaver.InitSaver ????esini uygular
+'Kodunuz burada
+Initialized = True 'Yap??yorsan??z altta herhangi bir yere koyun. Ko??ullar varsa, burada b??rak??n.
+Son Alt
+8. Buradaki her bir Kodunuzu kodunuzla de??i??tirin. 
+9. ICustomSaver.PreDisplay'i uygulayan PreDisplay () adl?? alt-ekran??n??z?? (ekran koruyucuyu g??r??nt??lemeden ??nce ??a????r??r) alt yazarak yap??n:
+Sub PreDisplay () ICustomSaver.PreDisplay ????esini uygular
+'Kodunuz burada
+Son Alt
+10. Ekran kodunuzu, ICustomSaver.ScrnSaver'i uygulayan ScrnSaver () alt isimli bir alt yazarak haz??rlay??n:
+Sub ScrnSaver () ICustomSaver.ScrnSaver ????esini uygular
+'Kodunuz burada
+Son Alt
+11. Alt s??n??f??n??z?? s??n??f??n herhangi bir yerinde yapabilirsiniz, ancak:
+1) farkl?? s??n??ftalar, Son S??n??fta Enter tu??una bas??n ve yeni alt depolar?? halka a????k bir s??n??f haline getirin:
+Genel S??n??f AnotherClass
+'A??a????daki tan??mlar??n??z ve b??ylece alt, i??lev, aray??z vb.
+S??n??f sonu
+2) InitSaver () y??ntemini tekrar arayarak ekran koruyucuyu yeniden ba??latmaya ??al??????yorlar, ??nce test ortam??n??zda deneyin, sonra d??zg??n ??al??????yorsa ??retim ortam??n?? deneyin.
+Ve a??a????daki ko??ullar yerine getirilmelidir:
+1) Belirtilen ko??ullar yerine getirilirse, ????kmad??k??a yapmad??k??a sonsuz bir d??ng?? yapmamal??lar.
+2) ??ekirdekte hataya neden olmamal??lar.
+3) Alt ??a??r??n??z?? ICustomSaver aray??z??n?? uygulayan ???? alt programdan birine koyun. 
+12. Yap??y?? ??al????t??r??n. 
+13. Projenize yeni at??fta bulundu??unuz ??ekirdek Sim??lat??r??n??z?? ??al????t??r??n ve y??kleyin, varsay??lan?? ayarlay??n ve ekran??n??z?? ve ekran koruyucunuzu kilitleyin.
+
+1. Konsol ????i Mesaj Kutusu ve Yak??nda, Gecelik veya Kaba (Git ...) mesajlar??
+
+Geri mesaj kutusu ekran koruyucusu, insanlara bilgisayar sahibinin gitti??ini ya da bilgisayar sahibinin bilgisayar??nda ??nemli ??eyler oldu??u i??in kendilerine gitmeleri gerekti??ini s??yler. 
+
+1. Projeye sa?? t??klay??n ve Ekle> S??n??f'a gidin
+2. Ekran koruyucunuzu adland??r??n, ancak .vb dosyas??n?? sa??lam b??rak??n. 
+3. Ekle'ye t??klad??????n??zda kod haz??r olacakt??r.
+4. (Mod ad??n??z??n SOR oldu??unu varsayal??m) yaz??n??z. Public Class SOR: ICustomSaver'i uygular
+5. SOR S??n??f??n??n ??st??ne yaz??n:
+- ??thalat Sistemi
+- ??thalat Sistemi.
+- ??thalat Kernel_Simulator.Screensaver
+- Kernel_Simulator.TextWriterColor ????esini i??e aktar??r
+- ??thalat Kernel_Simulator.Login
+6. Bu altlar??n olu??turulmas?? gerekti??ini s??yleyen hatalar almal??s??n??z.
+7. Ba??lat ekran koruyucu olay i??leyicinizi a??a????dakileri yazarak yap??n:
+Boolean Olarak Ba??lat??lan ??zellik ICustomSaver.Initialized ????esini uygular
+Sub InitSaver () ICustomSaver.InitSaver ????esini uygular
+Wln ("" "ekran koruyucu SORSS.m" "ve" "setsaver SORSS.m" "", "neutralText" kullanarak bu ekran koruyucuyu y??kle)
+Ba??lat??ld?? = Do??ru
+Son Alt
+8. Ekran koruyucuyu g??r??nt??lemeden ??nce hi??bir ??ey uygulamad??????m??z i??in ??u bo?? b??rakaca????z:
+Sub PreDisplay () ICustomSaver.PreDisplay ????esini uygular
+Son Alt
+9. Ba??lat??lan M??lkiyetin ??st??ne yaz ...:
+Genel SOR_Random Yeni Rastgele () 'Rastgele say?? olu??turucuyu ba??lat??r
+Genel S_Random Yeni Rastgele () 'Rastgele say?? olu??turucuyu ba??lat??r
+Genel O_Random As New Random () 'Rasgele say?? ??retecini ba??lat??r
+Genel R_Random As Rastgele () 'Rastgele say?? olu??turucuyu ba??lat??r
+9. ScrnSaver () alt k??sm??na yaz??n:
+Console.Clear ()
+Custom.CancellationPending = True Sonra 'Me??gul olmakla ilgili sorunu ????zecektir.
+????k
+Bitti??inde
+Dim SOR_Integer Tamsay?? Olarak = SOR_Random.Next (1, 4) '??ok Yak??nda m??, Gecede mi yoksa Kaba m?? olaca????n?? se??er
+Dim Soon_MsgID As Tamsay?? = SOR_Random.Next (0, 2) 'Yak??nda dizisindeki mesajlar?? se??er
+Dim Over_MsgID As Tamsay?? = SOR_Random.Next (0, 2) 'Gecede dizisindeki mesajlar?? se??er
+Dim Rude_MsgID As Tamsay?? = SOR_Random.Next (0, 3) 'Rude dizisindeki mesajlar?? se??er
+Konsol.SetWindowPosition (0, 1)
+Vaka Se??iniz SOR_Integer
+Durum 1 'Yak??nda
+WriteMsg (SOR_Integer, Yak??nda_MsgID)
+Dava 2 'Gece
+WriteMsg (SOR_Integer, Over_MsgID)
+Dava 3 'Kaba
+WriteMsg (SOR_Integer, Rude_MsgID)
+Se??imi Sonland??r
+Thread.Sleep (10000)
+11. Bunun ??al????mas?? i??in 1 i??lev ve 2 alt ????e olu??turman??z gerekebilir. 
+Genel Payla????lan ????lev ParsePlaces (Dize Olarak ByVal metni)
+text = text.Replace ("<OWNER>", signedinusrnm)
+D??n???? metni
+Son ????lev
+Genel Payla????lan Alt Ba??latma ??ubu??u (Tam Say?? Olarak strlen ByVal)
+W ("-", "n??tr Metin")
+L i??in Tamsay?? Olarak = 0
+W ("-", "n??tr Metin")
+Sonraki
+Wln ("-", "n??tr Metin")
+Son Alt
+Genel Payla????lan Alt WriteMsg (Tam Say?? Olarak ByVal TypeID, Tam Say?? Olarak ByVal MsgID)
+Dim BackMessages As String () = {"<OWNER> yak??nda d??necek.", "<OWNER> me??gul. Yak??nda d??necek."}
+Dim OvernightMsg As String () = {"G??r??n????e g??re <OWNER> bir gecede d??necek", "Bir gecede d??necek."}
+Dim RudeMessages As String () = {"Gidebilir misin?", "Gidin, <OWNER> birazdan d??necek", "<OWNER> burada de??il. Gidin."}
+Dim text, String = ""
+Vaka Tipini Se??in
+Dava 1
+text = ParsePlaces (BackMessages (MsgID))
+Durum 2
+text = ParsePlaces (OvernightMsg (MsgID))
+3. Durum
+text = ParsePlaces (RudeMessages (MsgID))
+Se??imi Sonland??r
+InitializeBar (text.Length)
+Wln ("| {0} |", "n??tr Metin", metin)
+InitializeBar (text.Length)
+Son Alt
+12. Kod ????yle g??r??nmelidir:
+??thalat sistemi
+??thalat Sistemi.
+??thalat?? Kernel_Simulator.Screensaver
+Kernel_Simulator.TextWriterColor ????esini i??e aktar??r
+??thalat Kernel_Simulator.Login
+Genel S??n??f Yak??ndaGecelikRude
+ICustomSaver uygular
+Boolean Olarak Ba??lat??lan ??zellik ICustomSaver.Initialized ????esini uygular
+Genel SOR_Random Yeni Rastgele () 'Rastgele say?? olu??turucuyu ba??lat??r
+Genel S_Random Yeni Rastgele () 'Rastgele say?? olu??turucuyu ba??lat??r
+Genel O_Random As New Random () 'Rasgele say?? ??retecini ba??lat??r
+Genel R_Random As Rastgele () 'Rastgele say?? olu??turucuyu ba??lat??r
+Sub InitSaver () ICustomSaver.InitSaver ????esini uygular
+Wln ("" "setsaver SORSS.m" "", "neutralText" kullanarak bu ekran koruyucuyu varsay??lan olarak ayarlay??n)
+Ba??lat??ld?? = Do??ru
+Son Alt
+Sub PreDisplay () ICustomSaver.PreDisplay ????esini uygular
+Son Alt
+Sub ScrnSaver () ICustomSaver.ScrnSaver ????esini uygular
+Console.Clear ()
+Custom.CancellationPending = True Sonra 'Me??gul olmakla ilgili sorunu ????zecektir.
+????k
+Bitti??inde
+Dim SOR_Integer Tamsay?? Olarak = SOR_Random.Next (1, 4) '??ok Yak??nda m??, Gecede mi yoksa Kaba m?? olaca????n?? se??er
+Dim Soon_MsgID As Tamsay?? = S_Random.Next (0, 2) 'Yak??nda dizisindeki mesajlar?? se??er
+Dim Over_MsgID As Tamsay?? = O_Random.Next (0, 2) 'Gecede dizisindeki mesajlar?? se??er
+Dim Rude_MsgID As Tamsay?? = R_Random.Next (0, 3) 'Rude dizisindeki mesajlar?? se??er
+Konsol.SetCursorPosition (0, 1)
+Vaka Se??in SOR_Integer
+Durum 1 'Yak??nda
+WriteMsg (SOR_Integer, Yak??nda_MsgID)
+Dava 2 'Gece
+WriteMsg (SOR_Integer, Over_MsgID)
+Dava 3 'Kaba
+WriteMsg (SOR_Integer, Rude_MsgID)
+Se??imi Sonland??r
+Thread.Sleep (10000)
+Son Alt
+Genel Payla????lan ????lev ParsePlaces (Dize Olarak ByVal metni)
+text = text.Replace ("<OWNER>", signedinusrnm)
+D??n???? metni
+Son ????lev
+Genel Payla????lan Alt Ba??latma ??ubu??u (Tam Say?? Olarak strlen ByVal)
+W ("-", "n??tr Metin")
+L i??in Tamsay?? Olarak = 0
+W ("-", "n??tr Metin")
+Sonraki
+Wln ("-", "n??tr Metin")
+Son Alt
+Genel Payla????lan Alt WriteMsg (Tam Say?? Olarak ByVal TypeID, Tam Say?? Olarak ByVal MsgID)
+Dim BackMessages As String () = {"<OWNER> yak??nda d??necek.", "<OWNER> me??gul. Yak??nda d??necek."}
+Dim OvernightMsg As String () = {"G??r??n????e g??re <OWNER> bir gecede d??necek", "Bir gecede d??necek."}
+Dim RudeMessages As String () = {"Gidebilir misin?", "Gidin, <OWNER> birazdan d??necek", "<OWNER> burada de??il. Gidin."}
+Dim text, String = ""
+Vaka Tipini Se??in
+Dava 1
+text = ParsePlaces (BackMessages (MsgID))
+Durum 2
+text = ParsePlaces (OvernightMsg (MsgID))
+3. Durum
+text = ParsePlaces (RudeMessages (MsgID))
+Se??imi Sonland??r
+InitializeBar (text.Length)
+Wln ("| {0} |", "n??tr Metin", metin)
+InitializeBar (text.Length)
+Son Alt
+S??n??f sonu
+13. Yap??y?? ??al????t??r??n. 
+14. Projenize yeni at??fta bulundu??unuz ??ekirdek Sim??lat??r??n??z?? ??al????t??r??n ve varsay??lan?? ayarlay??n ve ekran koruyucusunu ??al????t??r??n.
+
+2. Basit Bo?? ekran
+
+1. ??lk ??rnekte 1-4 aras??ndaki ad??mlar?? tekrarlay??n: Konsol ????i Mesaj Kutusu ve Yak??nda, Gecede veya Kaba (Git ...) mesajlar??
+2. Bo?? S??n??f??n ??st??ne yaz??n (s??n??f ad??n??z??n Bo?? oldu??unu varsayarak):
+- ??thalat Sistemi
+- ??thalat Kernel_Simulator.Screensaver
+3. Bunlar?? Implements ICustomSaver'in alt??na yaz??n:
+Boolean Olarak Ba??lat??lan Genel ??zellik ICustomSaver.Initialized Uygulamas??
+Genel Alt InitSaver () ICustomSaver.InitSaver ????esini uygular
+Ba??lat??ld?? = Do??ru
+Son Alt
+Genel Alt ??n G??sterimi () ICustomSaver.PreDisplay ????esini uygular
+Son Alt
+Genel Alt ScrnSaver () ICustomSaver.ScrnSaver ????esini uygular
+
+Son Alt
+4. ScrnSaver alt k??sm??na yaz??n:
+Console.Clear ()
+5. Kod ????yle g??r??nmelidir:
+??thalat sistemi
+??thalat?? Kernel_Simulator.Screensaver
+Genel S??n??f Bo??
+ICustomSaver uygular
+Boolean Olarak Ba??lat??lan Genel ??zellik ICustomSaver.Initialized Uygulamas?? Yap??l??yor
+Genel Alt InitSaver () ICustomSaver.InitSaver ????esini uygular
+Ba??lat??ld?? = Do??ru
+Son Alt
+Genel Alt ??n G??sterimi () ICustomSaver.PreDisplay ????esini uygular
+Son Alt
+Genel Alt ScrnSaver () ICustomSaver.ScrnSaver ????esini uygular
+Console.Clear ()
+Son Alt
+S??n??f sonu
+5. ??lk ??rnekte 13-14 aras??ndaki ad??mlar?? tekrarlay??n: Konsol ????i Mesaj Kutusu ve Yak??nda, Gecede veya Kaba (Git ...) mesajlar??
+
+3. Animasyon (??izim ??emberi - 4 kare - 4 FPS)
+
+Bu ??rnek size animasyonlarla ba??laman??z?? sa??layacak. 
+
+??thalat sistemi
+Microsoft.VisualBasic.Constants'?? i??e aktar??r
+Kernel_Simulator.TextWriterColor ????esini i??e aktar??r
+??thalat Sistemi.
+??thalat?? Kernel_Simulator.Screensaver
+Kamu S??n??f?? ANI
+ICustomSaver uygular
+Boolean Olarak Ba??lat??lan Genel ??zellik ICustomSaver.Initialized Uygulamas??
+Tamsay?? Olarak Genel CurrentStep
+Genel Alt InitSaver () ICustomSaver.InitSaver ????esini uygular
+Ba??lat??ld?? = Do??ru
+Son Alt
+Genel Alt ??n G??sterimi () ICustomSaver.PreDisplay ????esini uygular
+Son Alt
+Genel Alt ScrnSaver () ICustomSaver.ScrnSaver ????esini uygular
+CurrentStep i??in = 0 ila 3
+Console.Clear ()
+Custom.CancellationPending = True Sonra 'Me??gul olmakla ilgili sorunu ????zecektir.
+????k
+Bitti??inde
+Wln (aniset (CurrentStep), "n??tr Metin")
+Thread.Sleep (150)
+Sonraki
+Son Alt
+
+Genel aniset As String () = {"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"",
+"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"oMMh" vbNewLine
+"mMM" vbNewLine
+"yMMm`" vbNewLine
+"` hMMN- "vbNewLine
+"` oMMMd. "vbNewLine
+".: odMMMm /" vbNewLine
+"mNMMMMMNy:" vbNewLine
+"mmhh / -",
+"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"hMMo oMMh" vbNewLine
+"MMm mMM" vbNewLine
+"mMMy yMMm`" vbNewLine
+"-NMMh`` hMMN- "vbNewLine
+".dMMMs` oMMMd. "vbNewLine
+"/ dMMMdo :..: odMMMm /" vbNewLine
+": yNMMMMMNmmNMMMMMNy:" vbNewLine
+"- / shhmmmmhhs / -",
+"- / oydmmmmhyo / -" vbNewLine
+": yNMMMMMNmmNMMMMMNy:" vbNewLine
+": dMMMdo :..: odMMMd /" vbNewLine
+".dMMMs. .oMMMd." vbNewLine
+"-NMMh`` hMMN- "vbNewLine
+"mMMy yMMm`" vbNewLine
+"MMm mMM" vbNewLine
+"hMMo oMMh" vbNewLine
+"hMMo oMMh" vbNewLine
+"MMm mMM" vbNewLine
+"mMMy yMMm`" vbNewLine
+"-NMMh`` hMMN- "vbNewLine
+".dMMMs` oMMMd. "vbNewLine
+"/ dMMMdo :..: odMMMm /" vbNewLine
+": yNMMMMMNmmNMMMMMNy:" vbNewLine
+"- / shhmmmmhhs / -"}
+S??n??f sonu
+
+4. ??lerleme ??ubu??u (dinamik) ile 0 ile 1,000,000 aras?? hesaplay??n
+
+??thalat sistemi
+Microsoft.VisualBasic.Constants'?? i??e aktar??r
+Kernel_Simulator.TextWriterColor ????esini i??e aktar??r
+Microsoft.VisualBasic.Strings ????esini i??e aktar??r
+??thalat?? Kernel_Simulator.Screensaver
+Genel S??n??f Dinamik
+ICustomSaver uygular
+Boolean Olarak Ba??lat??lan Genel ??zellik ICustomSaver.Initialized Uygulamas?? Yap??l??yor
+Tamsay?? Olarak Kamu Res
+Tamsay?? Olarak Genel ProgWent
+Tamsay?? Olarak Kamu Kontrol??
+Genel oldCheck Tamsay?? Olarak
+Genel Alt InitSaver () ICustomSaver.InitSaver ????esini uygular
+Ba??lat??ld?? = Do??ru
+Son Alt
+Genel Alt ??n G??sterimi () ICustomSaver.PreDisplay ????esini uygular
+Son Alt
+Genel Alt ScrnSaver () ICustomSaver.ScrnSaver ????esini uygular
+Console.Clear ()
+Res = 0 ila 1000000
+Custom.CancellationPending = True Sonra 'Me??gul olmakla ilgili sorunu ????zecektir.
+????k
+Bitti??inde
+Konsol.
+ShowStats ()
+Sonraki
+Kontrol = 0: oldCheck = 0: ProgWent = 0
+Son Alt
+Genel Alt ShowStats ()
+Wln ("{0} / 1000000 | {1}%", "n??tr Metin", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+UpdateProgressBar (Res * 100/1000000)
+Son Alt
+Genel Alt UpdateProgressBar (Dize Olarak Y??zde Y??zdesi)
+Kontrol = y??zde / 5
+Wln (??ek, "neutralText")
+KonsolSetCursorPosition ((Konsol Geni??li??i / 2) - 9, (Konsol Geni??li??i / 2) - 3)
+W ("--------------------", "n??tr Metin")
+Konsol.
+W ("|", "n??tr Metin")
+Kontrol Et <> oldCheck Sonra
+Tamsay?? Olarak Giden ????in = 0 ProgWent'e
+W ("*", "n??tr Metin")
+Sonraki
+ProgWent = 1
+Bitti??inde
+KonsolSetCursorPosition ((Konsol Geni??li??i / 2) 11, (Konsol Geni??li??i / 2) - 2)
+W ("|", "n??tr Metin")
+Konsol.
+W ("--------------------", "n??tr Metin")
+oldCheck = y??zde / 5
+Son Alt
+S??n??f sonu
+
+Daha fazla ??rnek
+
+Daha fazla ??rnek incelemek istiyorsan??z, GitHub'daki Ekran Koruyucular?? klas??r??ndeki KSModExamples respository'de bunlar?? kontrol etmekten ??ekinmeyin.
+-BODY END-
+
+-COLOR CONFIGURATION-
+screensaver=>Green
+savescreen=>DarkGreen
+Modding guide=>Green
+Compile=>Cyan
+Build Events=>Cyan
+Post-build event=>Green
+End Class=>Cyan
+Public Class...=>Cyan
+Visual Studio 2017=>Magenta
+Imports Implements=>Cyan
+ICustomSaver=>Green
+Kernel_Simulator=>Cyan
+TextWriterColor=>Green
+Kernel_Simulator.TextWriterColor=>Green
+Property As Boolean Sub=>Cyan
+Initialized ICustomSaver.Initialized=>Green
+Kernel Simulator=>Green
+Rude=>Red
+KSModExamples Screensavers GitHub=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the screensaver for the kernel?=>SE1
+Basic modding (screensaver)=>SE1
+0. How to make your own screensavers on Visual Studio 2017?=>SE2
+1. In-Console Message Box, and Soon, Overnight, or Rude (Go away...) messages=>SE2
+2. Simple Blank screen=>SE2
+3. Animation (Drawing Circle - 4 frames - 4 FPS)=>SE2
+4. Calculate from 0 to 1,000,000 with progress bar (dynamic)=>SE2
+More examples=>SE1
+-SECTIONS END-

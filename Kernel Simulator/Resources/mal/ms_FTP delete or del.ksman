@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Perintah FTP "padam" atau "del"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+hapus atau arahan del FTP
+
+Ringkasan: Menghapuskan fail atau folder
+
+Penerangan
+
+Jika anda telah melog masuk ke pengguna yang mempunyai keistimewaan pentadbiran, anda boleh mengalih keluar fail yang tidak dikehendaki, atau folder tambahan, dari pelayan.
+
+Jika anda memadam fail semasa terdapat penghantaran yang berlaku di pelayan, orang yang cuba mendapatkan fail yang dihapuskan tidak akan dapat memuat turunnya lagi setelah muat turun mereka gagal.
+
+Penggunaan perintah
+
+* delete / del (file / directory)
+Contoh
+
+* padamkan undanted.txt: Padam fail bernama "unwanted.txt"
+* del Tidak aktif: Padamkan folder bernama "Tidak Aktif"
+-BODY END-
+
+-COLOR CONFIGURATION-
+delete/del (file/directory)=>Green
+delete unwanted.txt:=>Yellow
+del InactiveDir:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+delete or del FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

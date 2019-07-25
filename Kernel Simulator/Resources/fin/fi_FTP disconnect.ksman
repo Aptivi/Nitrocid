@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:FTP-komento "katkaista"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+irrota FTP-komento
+
+Yhteenveto: Katkaisee nykyisen palvelinpalvelimen
+
+Kuvaus
+
+T??m?? komento l??hett???? lopetuskomennon FTP-palvelimelle, jotta palvelin tiet????, ett?? olet menossa pois. 
+
+Komennon k??ytt??
+
+* katkaista
+-BODY END-
+
+-COLOR CONFIGURATION-
+disconnect=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+disconnect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

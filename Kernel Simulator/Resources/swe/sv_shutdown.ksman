@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "avst??ngning"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+avst??ngningskommando
+
+Sammanfattning: St??ng av datorn
+
+Beskrivning
+
+Om du ??r klar med allt och inte vill g??ra n??got annat p?? din dator, ist??llet f??r att l??mna den kvar f??r att konsumera energi och betala mer pengar till elcentret, m??ste du anv??nda det h??r kommandot f??r att st??nga av datorn och spara str??m 
+
+Kommandobruk
+
+* st??nga av
+-BODY END-
+
+-COLOR CONFIGURATION-
+shutdown=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+shutdown command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

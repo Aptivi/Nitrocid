@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:FTP komutu "changelocaldir" veya "cdl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+changelocaldir veya cdl FTP komutu
+
+??zet: Yerel dizininizi de??i??tirir
+
+A????klama
+
+Bu komut, sabit disklerinizdeki yerel dizini alt dizinde bulunan ba??ka bir dizine de??i??tirmenize olanak sa??lar. 
+
+Komut kullan??m??
+
+* changelocaldir / cdl (dizin / ..)
+??rnekler
+
+* changelocaldir C: \ Users \ Sahip \ Masa??st??: Yerel dizininizi C: \ Users \ Owner \ Desktop olarak de??i??tirir
+* changelocaldir Stuff: Bu, yerel dizininizi ge??erli ??al????ma dizininizdeki Stuff olarak de??i??tirir.
+* cdl ..: Bu, ge??erli ??al????ma dizini i??in bir ??st dizine gider (geri d??n)
+-BODY END-
+
+-COLOR CONFIGURATION-
+changelocaldir/cdl (directory/..)=>Green
+changelocaldir C:\Users\Owner\Desktop:=>Yellow
+changelocaldir Stuff:=>Yellow
+cdl ..:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+changelocaldir or cdl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

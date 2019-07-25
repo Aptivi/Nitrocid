@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "changelocaldir" o "cdl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+changelocaldir o cdl comando FTP
+
+Resumen: Cambia tu directorio local
+
+Descripci??n
+
+Este comando le permite cambiar su directorio local en sus discos duros a otro directorio que existe en el subdirectorio. 
+
+Uso del comando
+
+* changelocaldir / cdl (directorio / ..)
+Ejemplos
+
+* changelocaldir C: \ Users \ Owner \ Desktop: esto cambiar?? su directorio local a C: \ Users \ Owner \ Desktop
+* Material de changelocaldir: Esto cambiar?? su directorio local a Material en su directorio de trabajo actual
+* cdl ...: Esto ir?? a un directorio principal para el directorio de trabajo actual (volver)
+-BODY END-
+
+-COLOR CONFIGURATION-
+changelocaldir/cdl (directory/..)=>Green
+changelocaldir C:\Users\Owner\Desktop:=>Yellow
+changelocaldir Stuff:=>Yellow
+cdl ..:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+changelocaldir or cdl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

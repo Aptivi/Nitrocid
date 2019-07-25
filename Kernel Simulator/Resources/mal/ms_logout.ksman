@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Perintah "logout"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+log keluar
+
+Ringkasan: Anda boleh log keluar dari akaun anda.
+
+Penerangan
+
+Sekiranya terdapat perubahan yang memerlukan log keluar dan log masuk untuk melaksanakan perubahan, anda mesti log keluar dan masuk semula.
+
+Perintah ini membolehkan anda mematikan akaun anda dan log masuk sebagai orang lain. 
+
+Penggunaan perintah
+
+* log keluar
+-BODY END-
+
+-COLOR CONFIGURATION-
+logout=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+logout command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,35 @@
+(*MAN START*)
+
+-TITLE:Shell-kommandot "l??s"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+l??s kommando
+
+Sammanfattning: L??ser filinneh??llet och skriver ut det p?? sk??rmen
+
+Beskrivning
+
+Det h??r kommandot l??ter dig se filinneh??llet i din nuvarande arbetskatalog. 
+
+Kommandobruk
+
+* l??s (fil)
+
+exempel
+
+* l??s libuesh: Den l??ser filinneh??llet i libuesh
+-BODY END-
+
+-COLOR CONFIGURATION-
+read (file)=>Green
+read libuesh:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+read command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

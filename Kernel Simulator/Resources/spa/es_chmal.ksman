@@ -1,0 +1,49 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "chmal"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando chmal
+
+Resumen: puede cambiar su mensaje del d??a despu??s de iniciar sesi??n
+
+Descripci??n
+
+Si no le gusta el mensaje predeterminado del d??a posterior al inicio de sesi??n generado por el kernel, puede usar este comando para cambiar el mensaje y almacenarlo permanentemente en el archivo de configuraci??n.
+
+Tambi??n tiene soporte para marcadores de posici??n, como si tiene marcadores de posici??n <shortdate> y <longtime>, los marcadores de posici??n <shortdate> a la fecha actual del sistema en el formulario MM / DD / YYYY, y los marcadores de posici??n <longtime> al sistema actual 
+
+Puede ver los marcadores de posici??n a continuaci??n:
+
+* <usuario>: Obtiene el nombre de usuario actual (Ej: joe)
+* <shortdate>: Obtiene la fecha del sistema en formato MM / DD / YYYY (Ej: 12/7/2018)
+* <longdate>: obtiene la fecha del sistema en <DayName>, <MonthName> DD, formato YYYY (Ej .: viernes, 7 de diciembre de 2018)
+* <shorttime>: obtiene la hora del sistema en formato HH: MM (Ej .: 4:30)
+* <tiempo de duraci??n>: obtiene la hora del sistema en formato HH: MM: SS AM / PM (Ej .: 4:30:10 PM)
+* <timezone>: Obtiene la zona horaria est??ndar del sistema (Ej .: Hora est??ndar de Egipto)
+* <summertimezone>: Obtiene la zona horaria de horario de verano del sistema (Ej .: Hora de verano de Siria)
+
+Uso del comando
+
+* chmal (mensaje)
+
+Ejemplos
+
+* chmal Esta computadora est?? encendida en (fecha corta) (tiempo corto): cambia su MOTD despu??s de iniciar sesi??n en el mensaje especificado, con los marcadores de posici??n incluidos en el mensaje.
+* chmal Bienvenido al kernel, (usuario)! 
+-BODY END-
+
+-COLOR CONFIGURATION-
+chmal (message)=>Green
+chmal This computer is turned on at (shortdate) (shorttime):=>Yellow
+chmal Welcome to the kernel, (user)! Your system time zone is (timezone):=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chmal command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

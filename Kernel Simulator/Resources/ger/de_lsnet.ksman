@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "lsnet"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl lsnet
+
+Zusammenfassung: Sie k??nnen Computer, die online sind, und ihre IP-Adressen in Dom??nen oder Arbeitsgruppen auflisten
+
+Beschreibung
+
+Wenn Sie alle Computer abrufen m??chten, die der Arbeitsgruppe oder der Dom??ne beigetreten sind, k??nnen Sie diesen Befehl verwenden. Sie m??ssen jedoch zuerst um Erlaubnis fragen, wenn Sie sich an ??ffentlichen Orten wie B??ros, Schulen, Caf??s usw. befinden 
+
+Dieser Befehl ist auch n??tzlich, wenn Sie Computer in Ihrem kleinen Netzwerk oder in Ihrem Haus auflisten, auf denen mehrere Computer mit Windows ausgef??hrt werden, unabh??ngig davon, welche Version von Windows ausgef??hrt wird.
+
+Befehlsverwendung
+
+* lsnet
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnet=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnet command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

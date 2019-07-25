@@ -348,3 +348,20 @@ Krijgt SSE-versies
 Ongeldige taal
 Verandert de taal
 Mogelijk hebt u libcpanel-json-xs-perl niet op uw systeem geïnstalleerd. Raadpleeg uw pakketbeheerder voor installatie. Voor Debian (en derivaten) systemen, zou u "sudo apt install libcpanel-json-xs-perl" in de terminalemulator willen kunnen uitvoeren. Meer details over een fout:
+----------------------------- Kernel paniekdump ------------------------------
+>> Paniekinformatie <<
+> Beschrijving: {0}
+> Fouttype: {1}
+> Datum en tijd: {2}
+>> Uitzonderingsinformatie <<
+> Uitzondering: {0}
+> Beschrijving: {1}
+> HRESULT: {2}
+> Bron: {3}
+> Stack trace <
+>> Innerlijke uitzondering {0} informatie <<
+>> Uitzondering {0} is de hoofdoorzaak <<
+>> Geen uitzondering; is mogelijk een kernelfout. <<
+>> Frames, bestanden, lijnen en kolommen <<
+> Frame {0}: Bestand: {1} | Regel: {2} | Kolom: {3}
+> Er is een fout opgetreden bij het verkrijgen van framegegevens. {0}: {1}

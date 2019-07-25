@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "bloqueo de pantalla"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando de bloqueo de pantalla
+
+Resumen: puede bloquear la pantalla con el protector de pantalla predeterminado para evitar quemaduras en la pantalla
+
+Descripci??n
+
+Puedes bloquear tu pantalla y mostrar tu protector de pantalla predeterminado para confirmar que est??s lejos y que volver??s en coma durante una hora o m??s. 
+
+Uso del comando
+
+* bloquear pantalla
+-BODY END-
+
+-COLOR CONFIGURATION-
+lockscreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lockscreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

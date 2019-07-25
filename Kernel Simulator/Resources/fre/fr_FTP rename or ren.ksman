@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:Commande FTP "renommer" ou "ren"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+renommer ou renommer une commande FTP
+
+R??sum??: renomme le dossier ou le fichier sur le serveur.
+
+La description
+
+Vous pouvez renommer le dossier ou le fichier sur le serveur s???ils ne sont pas nomm??s correctement. 
+
+Utilisation de la commande
+
+* renommer / ren (oldFile) (newFile)
+Exemples
+
+* renommer shagnhai.png shanghai.png: renomme le fichier "shagnhai.png" en "shanghai.png"
+* ren citys Cities: Renomme le fichier "citys" en "Cities"
+-BODY END-
+
+-COLOR CONFIGURATION-
+rename/ren (oldFile) (newFile)=>Green
+rename shagnhai.png shanghai.png:=>Yellow
+ren citys Cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rename or ren FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

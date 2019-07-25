@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:FTP-opdracht "currlocaldir" of "pwdl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+currlocaldir of pwdl FTP-opdracht
+
+Samenvatting: haalt uw huidige lokale map op
+
+Omschrijving
+
+Deze FTP-opdracht vertelt u wat de lokale map is waar u momenteel naar kijkt.
+
+Commando gebruik
+
+* currlocaldir
+* pwdl
+-BODY END-
+
+-COLOR CONFIGURATION-
+currlocaldir=>Green
+pwdl=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+currlocaldir or pwdl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

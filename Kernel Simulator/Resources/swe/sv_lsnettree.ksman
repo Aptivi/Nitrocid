@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "lsnettree"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lsnettree-kommando
+
+Sammanfattning: Du kan lista datorer som ??r online och deras IP-adresser i dom??ner eller arbetsgrupper, i tr??dformen
+
+Beskrivning
+
+Om du vill f?? alla datorer som gick med i arbetsgruppen eller dom??nen i tr??dformen kan du anv??nda det h??r kommandot, men du m??ste f??rst be om tillst??nd om du ??r p?? de offentliga platserna som kontor, skola, caf??, 
+
+Detta kommando ??r ocks?? anv??ndbart om du listar datorer i ditt lilla n??tverk eller ditt hus som har flera datorer som k??r Windows, oavsett vilken version av Windows som k??rs, i tr??dformen.
+
+Kommandobruk
+
+* lsnettree
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnettree=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnettree command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

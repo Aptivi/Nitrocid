@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "logout"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+logout-komento
+
+Yhteenveto: Voit kirjautua ulos tilist??si.
+
+Kuvaus
+
+Jos muutos edellytt???? kirjautumista ja sis????nkirjautumista, jotta muutokset tulevat voimaan, sinun on kirjauduttava ulos ja kirjauduttava sis????n uudelleen.
+
+T??m??n komennon avulla voit poistaa tilin ja kirjautua sis????n jonkun muun kanssa. 
+
+Komennon k??ytt??
+
+* kirjautua ulos
+-BODY END-
+
+-COLOR CONFIGURATION-
+logout=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+logout command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

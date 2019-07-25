@@ -1,0 +1,49 @@
+(*MAN START*)
+
+-TITLE:Shell-commando "chmotd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+opdracht chmotd
+
+Samenvatting: u kunt uw bericht van de dag wijzigen
+
+Omschrijving
+
+Als je het standaardbericht van de dag die door de kernel wordt gegenereerd niet leuk vindt, kun je deze opdracht gebruiken om het bericht te wijzigen en permanent in het configuratiebestand op te slaan.
+
+Het heeft ook placeholder-ondersteuning, zoals als u tijdelijke aanduidingen <shortdate> en <longtime> heeft, verandert de <shortdate> tijdelijke aanduiding in de huidige systeemdatum in het MM / DD / YYYY-formulier en wijzigt de <longtime> tijdelijke aanduiding in het huidige systeem 
+
+U kunt de onderstaande tijdelijke aanduidingen bekijken:
+
+* <gebruiker>: krijgt de huidige gebruikersnaam (is momenteel onbruikbaar terwijl het bericht wordt afgedrukt voordat we zijn ingelogd)
+* <shortdate>: geeft de systeemdatum MM / DD / JJJJ (voorbeeld: 12/7/2018)
+* <longdate>: haalt de systeemdatum op in <DayName>, <MonthName> DD, YYYY-indeling (bijv. vrijdag, 7 december 2018)
+* <shorttime>: verkrijgt de systeemtijd in UU: MM-indeling (Ex: 4:30)
+* <lang>: verkrijgt de systeemtijd in UU: MM: SS AM / PM-indeling (Ex: 4:30:10 PM)
+* <tijdzone>: verkrijgt de standaardtijdzone van het systeem (bijv .: Egypte standaardtijd)
+* <zomertijdzone: hiermee wordt de zomertijd van het systeem bereikt (bijv. Syri?? zomertijd)
+
+Commando gebruik
+
+* chmotd (bericht)
+
+Voorbeelden
+
+* chmotd Deze computer is ingeschakeld op (shortdate) (korte tijd): het verandert uw MOTD in het opgegeven bericht, met de placeholders opgenomen in het bericht.
+* chmotd De tijdzone van uw systeem is (tijdzone): uw MOTD wordt gewijzigd in het opgegeven bericht, met de tijdelijke aanduiding <timezone> in het bericht om de huidige standaardtijdzone te krijgen.
+-BODY END-
+
+-COLOR CONFIGURATION-
+chmotd (message)=>Green
+chmotd This computer is turned on at (shortdate) (shorttime):=>Yellow
+chmotd Your system time zone is (timezone):=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chmotd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

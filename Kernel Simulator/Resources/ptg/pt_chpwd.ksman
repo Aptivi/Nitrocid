@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Comando shell "chpwd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando chpwd
+
+Resumo: Voc?? pode alterar sua senha ou a senha de outra pessoa
+
+Descri????o
+
+Se a senha da sua conta ou da conta de outra pessoa precisar ser alterada, voc?? poder?? usar esse comando para alterar sua senha ou a senha de outra pessoa.
+
+Isso ?? ??til se voc?? acha que sua conta ou a conta de outra pessoa tem uma senha incorreta ou est?? na lista de senhas f??ceis localizada on-line.
+
+Este comando requer que voc?? especifique sua senha ou a senha de outra pessoa antes de escrever sua nova senha.
+
+Uso de comando
+
+* chpwd (nome de usu??rio) (UserPass) (newPass) (confirmar)
+
+Exemplos
+
+* chpwd joe easy1234 p4ssw0rd p4ssw0rd: Muda a senha do joe para p4ssw0rd from easy1234
+-BODY END-
+
+-COLOR CONFIGURATION-
+chpwd (Username) (UserPass) (newPass) (confirm)=>Green
+chpwd joe easy1234 p4ssw0rd p4ssw0rd:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chpwd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

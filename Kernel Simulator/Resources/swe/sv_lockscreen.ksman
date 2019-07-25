@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "l??ssk??rm"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+l??ssk??rmskommando
+
+Sammanfattning: Du kan l??sa sk??rmen med standardsk??rmsl??ckaren f??r att f??rhindra br??nnskador p?? sk??rmen
+
+Beskrivning
+
+Du kan l??sa din sk??rm och visa din standard sk??rmsl??ckare f??r att bekr??fta att du ??r borta och kommer att komma tillbaka i en timme eller mer. 
+
+Kommandobruk
+
+* l??ssk??rm
+-BODY END-
+
+-COLOR CONFIGURATION-
+lockscreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lockscreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

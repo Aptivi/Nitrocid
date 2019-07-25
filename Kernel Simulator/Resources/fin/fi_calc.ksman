@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "calc"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+calc-komento
+
+Yhteenveto: Voit laskea ilmaisuja
+
+Kuvaus
+
+Jos tarvitset apua ilmaisujen laskemiseen, kun kerrot ja jaat suuria m????ri??, tai jos sinun t??ytyy laskea ilmaisuja nopeammin, t??m?? komento on sinulle.
+
+Se k??ytt???? keskusyksikk???? (CPU) k??sittelem????n ja arvioimaan lausekkeita ja tulostaa sen n??yt??lle, kun se on valmis. 
+
+Se m????ritt???? automaattisesti, onko se Integer tai Double, kun tarkastellaan desimaalien lausekkeita, ja jos yhdell?? luvuista on desimaalipiste, se vaihtaa lausekkeen l??hd??n Double-tilaan, muuten se on Integer.
+
+Jos yrit??t ylitt???? ylivuotoa, kun lausekkeessasi ei ole desimaalipisteit??, se johtaa Integer Overflow -virheeseen. 
+
+Voit my??s lis??t?? sulkeita sen sis??ll?? olevaan lausekkeeseen olevan ensisijainen, koska se lasketaan PEMDAS-lomakkeella: Parentheses, Exponents, Multiplication, Division, Addition, Subtraction.
+
+Komennon k??ytt??
+
+* laskettu (numero) (| - | * | / |%) (numero) ...
+* laskettu ((numero) (| - | * | / |%) (numero) ...) (| - | * | / |%) (numero) ...
+
+esimerkit
+
+* laskettu 32 * 2048: T??m?? kertoo 32 vuoteen 2048 menness?? ja tulos on 65536
+* calc (128.50 - 42.25) / 2: T??m?? arvioi suluissa olevat lausekkeet ja jakaa tuloksen 2: lla, ja tulos on 43,13
+* calc 128.50 - 42.25 / 2: Jos kuitenkin kokeilet yll?? olevaa esimerkki?? ilman sulkeita, 128.50 - 42.25 ei ole en???? ensisijainen, ja tulos on 107,38
+* laskettu ((48.22 / 3.88) * (68.88 95.22)) 9 - .41: T??m?? arvioi t??m??n lausekkeen ja tulos on 2048
+* calc 3 * 5 * 5 * 3: T??m?? kerrotaan 3: lla 5: ll?? ensimm??isess?? osassa ja kerrotaan 5: ll?? toisella puolella, kerrotaan ne, ja tulos on 225
+* laskettu (1024 * 1024 * 1024) * 2.0: T??m?? kerrotaan 1024: ll?? 1024: ll?? 1024: ll??, kerrotaan sitten 2: lla kelluvan pisteprosessorin avulla, ja tulos on 2147483648.
+-BODY END-
+
+-COLOR CONFIGURATION-
+calc (number) (+|-|*|/|%) (number) ...=>Green
+calc ((number) (+|-|*|/|%) (number) ...) (+|-|*|/|%) (number) ...=>Green
+calc 32 * 2048:=>Yellow
+calc (128.50 - 42.25) / 2:=>Yellow
+calc 128.50 - 42.25 / 2:=>Yellow
+calc ((48.22 / 3.88) * (68.88 + 95.22)) + 9 - .41:=>Yellow
+calc 3*5 * 5*3:=>Yellow
+calc (1024*1024*1024) * 2.0:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+calc command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

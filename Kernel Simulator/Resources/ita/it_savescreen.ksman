@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "savescreen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando salva schermo
+
+Riepilogo: avvia lo screen saver corrente
+
+Descrizione
+
+Questo comando pu?? proteggere il tuo schermo LCD dal burn-in e ti mostra lo screensaver corrente che ?? stato impostato da te o dal kernel. 
+
+Utilizzo del comando
+
+* salvaschermo
+-BODY END-
+
+-COLOR CONFIGURATION-
+savescreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+savescreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:FTP-opdracht "changelocaldir" of "cdl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+changelocaldir of cdl FTP-opdracht
+
+Samenvatting: wijzigt uw lokale map
+
+Omschrijving
+
+Met deze opdracht kunt u uw lokale map op uw harde schijven wijzigen in een andere map die in de submap voorkomt. 
+
+Commando gebruik
+
+* changelocaldir / cdl (map / ..)
+Voorbeelden
+
+* changelocaldir C: \ Users \ Owner \ Desktop: dit zal je lokale directory veranderen in C: \ Users \ Owner \ Desktop
+* changelocaldir Stuff: dit zal uw lokale directory veranderen in Stuff in uw huidige werkdirectory
+* cdl ..: dit gaat naar een bovenliggende map voor de huidige werkdirectory (ga terug)
+-BODY END-
+
+-COLOR CONFIGURATION-
+changelocaldir/cdl (directory/..)=>Green
+changelocaldir C:\Users\Owner\Desktop:=>Yellow
+changelocaldir Stuff:=>Yellow
+cdl ..:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+changelocaldir or cdl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

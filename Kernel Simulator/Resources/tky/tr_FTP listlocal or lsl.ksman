@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:FTP komutu "listlocal" veya "lsl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+listlocal veya lsl FTP komutu
+
+??zet: Ge??erli klas??r??n veya sa??lanan klas??r??n i??eri??ini listeler.
+
+A????klama
+
+Dizin belirtilmemi??se, ge??erli ??al????ma dizininde yer alan dosyalar??n ve alt dizinlerin listesini veya belirtilmi??se belirtilen dizinde g??rebilirsiniz.
+
+Ge??erli konumunuzun ??nceki dizininde bulunan dosyalar??n ve alt dizinlerin listesini de g??rebilirsiniz.
+
+Komut kullan??m??
+
+* listlocal / lsl [klas??r / ..]
+??rnekler
+
+* listlocal: ??al????ma dizinindeki i??erikleri listeler
+* listlocal ..: ??nceki ??al????ma dizinindeki i??erikleri listeler.
+* lsl cities: "cities" klas??r??n??n i??eri??ini listeler
+-BODY END-
+
+-COLOR CONFIGURATION-
+listlocal/lsl [folder/..]=>Green
+listlocal:=>Yellow
+listlocal ..:=>Yellow
+lsl cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+listlocal or lsl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

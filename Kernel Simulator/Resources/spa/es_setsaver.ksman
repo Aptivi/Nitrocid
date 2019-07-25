@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Comando de shell
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando setsaver
+
+Resumen: establece su protector de pantalla predeterminado como su propio protector de pantalla o como salvapantallas incorporadas
+
+Descripci??n
+
+Puede configurar su protector de pantalla predeterminado como su propio protector de pantalla mediante el modfile o los protectores integrados, como matrix, disco y colorMix.
+
+* matriz: muestra la matriz b??sica que se imprime entre 0 y 1 en color de texto verde
+* disco: muestra las luces del disco
+* colorMix: cambia el color de fondo al color aleatorio e imprime "" para hacer un bloque de color, y se repite.
+
+Uso del comando
+
+* salvapantallas ((ScreenSaverName) SS.m / matrix / disco / colorMix)
+
+Ejemplos
+
+* matriz de salvapantallas
+* salvapantallas de GameOfLifeSS.m
+* salvapantallas LinesSS.m
+-BODY END-
+
+-COLOR CONFIGURATION-
+setsaver ((ScreenSaverName)SS.m/matrix/disco/colorMix)=>Green
+setsaver matrix=>Yellow
+setsaver GameOfLifeSS.m=>Yellow
+setsaver LinesSS.m=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setsaver command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-opdracht "cls"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+opdracht cls
+
+Samenvatting: u kunt uw scherm wissen uit rommel
+
+Omschrijving
+
+Als je je op ????n ding probeert te concentreren en je het niet kunt, of als je wilt dat de persoonlijke informatie die met opdrachten wordt afgedrukt, wordt verborgen, kun je je scherm vrijgeven van rommel om je aandacht te trekken en vermoeidheid van je ogen te verminderen.
+
+Dit is ook handig bij scripting (nog niet ge??mplementeerd)
+
+Commando gebruik
+
+* cls
+-BODY END-
+
+-COLOR CONFIGURATION-
+cls=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+cls command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

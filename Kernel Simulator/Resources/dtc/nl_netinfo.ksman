@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Shell commandeert "netinfo"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+netinfo commando
+
+Samenvatting: u kunt de gedetailleerde status van de netwerkverbinding bekijken
+
+Omschrijving
+
+Met deze opdracht kunt u de details bekijken van al uw draadloze / Ethernet-adapters, pakketten, pakketten met een fout, enz. De informatie die wordt afgedrukt, is diagnostisch, dus als u geen verbinding met internet kunt maken, kunt u deze informatie gebruiken om een ??????diagnose te stellen 
+
+De gedeelten van de informatie over adapters:
+
+Adapternummer: dit vertelt u het nummer van de huidige adapter waar we informatie van krijgen
+Adapternaam: dit vertelt u de naam van de huidige adapter
+Maximum Transmission Unit: dit vertelt u de maximale transmissie-eenheid van de adapter
+DHCP ingeschakeld: dit geeft aan of de DHCP is ingeschakeld of dat het statische IP-adres wordt gebruikt voor netwerkconfiguratie
+Niet-unicast-pakketten: dit vertelt u de pakketten die niet-unicast zijn
+Unicast-pakketten: dit vertelt u de pakketten die unicast zijn
+Fout inkomende / uitgaande pakketten: dit vertelt u de pakketten die fouten bevatten
+
+Commando gebruik
+
+* netinfo
+-BODY END-
+
+-COLOR CONFIGURATION-
+netinfo=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+netinfo command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

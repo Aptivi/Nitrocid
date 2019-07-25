@@ -1,0 +1,33 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "ftp"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+ftp-kommando
+
+Sammanfattning: Du kan interagera med FTP-skalet (File Transfer Protocol) f??r att ansluta till en server och ??verf??ra filer
+
+Beskrivning
+
+Du kan anv??nda FTP-skalet f??r att ansluta till din FTP-server eller de offentliga FTP-servrarna f??r att interagera med filerna som finns p?? servern.
+
+Du kan ladda ner filer till din dator, ladda upp filer till servern, hantera filer genom att byta namn, ta bort osv. Osv.
+
+F??r mer information om hur du interagerar med skalet och dess kommandon, se "vanliga FTP-skal och dess kommandon"
+
+Kommandobruk
+
+* ftp
+-BODY END-
+
+-COLOR CONFIGURATION-
+ftp=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+ftp command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Comando shell "adduser"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando adduser
+
+Riepilogo: ?? possibile aggiungere il nome dell'utente ogni volta che ?? necessario, con la password se richiesta.
+
+Descrizione
+
+Se ?? necessario aggiungere una persona che desidera utilizzare il kernel, ?? possibile aggiungere utenti per loro e lasciare che specifichino la password se ne hanno bisogno. 
+
+Tuttavia, se ?? necessario aggiungere una persona con diritti di amministratore, ?? necessario impostare l'autorizzazione per l'utente per consentire i diritti di amministratore. 
+
+Per ulteriori informazioni su come impostare l'autorizzazione per gli utenti, ?? necessario consultare "perm permanente".
+
+Comando di utilizzo
+
+* adduser (userName)
+* adduser (userName) [password] [conferma]
+
+Esempi
+
+* adduser joe: questo creer?? un nuovo account con il nome di "joe"
+* adduser test pass1234 pass1234: questo creer?? un nuovo account con il nome di "test" e la password di "pass1234"
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser (userName)=>Green
+adduser (userName) [password] [confirm]=>Green
+adduser joe:=>Yellow
+adduser test pass1234 pass1234:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+adduser command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

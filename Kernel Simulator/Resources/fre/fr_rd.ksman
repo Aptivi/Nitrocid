@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "rd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+3 e commande
+
+R??sum??: supprime le r??pertoire du r??pertoire de travail actuel
+
+La description
+
+Cette commande vous permet de supprimer un r??pertoire de votre r??pertoire de travail actuel. 
+
+Lorsque le syst??me de fichiers r??el est mis en ??uvre, il supprime r??ellement les r??pertoires.
+
+Utilisation de la commande
+
+* rd (r??pertoire)
+
+Exemples
+
+* rd boot: supprime le r??pertoire de d??marrage
+-BODY END-
+
+-COLOR CONFIGURATION-
+rd (directory)=>Green
+rd boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

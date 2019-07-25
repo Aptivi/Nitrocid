@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "sysinfo"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+sysinfo komutu
+
+??zet: Sistem bilgilerinizi al??r
+
+A????klama
+
+Bu komut, ??ekirdek yap??land??rman??z?? ve MOTD, MAL, ana bilgisayar ad??n??z??, kullan??c?? ad??n??z?? ve donan??m bilgilerinizi g??rmenizi sa??lar.
+
+Bu komut hata raporlar?? ve kilitlenme raporlar?? i??in kullan????l??d??r.
+
+Komut kullan??m??
+
+* sysinfo
+-BODY END-
+
+-COLOR CONFIGURATION-
+sysinfo=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+sysinfo command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

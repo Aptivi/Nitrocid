@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:FTP-kommando "byta namn" eller "ren"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+byta namn eller ??ndra FTP-kommando
+
+Sammanfattning: Byt namn p?? mappen eller filen p?? servern
+
+Beskrivning
+
+Du kan byta namn p?? mappen eller filen p?? servern n??r de heter felaktigt p?? servern. 
+
+Kommandobruk
+
+* byta namn / ren (oldFile) (newFile)
+exempel
+
+* byta namn p?? shagnhai.png shanghai.png: Byt namn p?? filen "shagnhai.png" till "shanghai.png"
+* ren citys Cities: byter namn p?? filen "citys" till "Cities"
+-BODY END-
+
+-COLOR CONFIGURATION-
+rename/ren (oldFile) (newFile)=>Green
+rename shagnhai.png shanghai.png:=>Yellow
+ren citys Cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rename or ren FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,20 @@
+(*MAN START*)
+
+-TITLE:P??ginas de manual dispon??veis
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Confira:
+
+1. Introdu????o ao Kernel: Esta p??gina mostra a introdu????o sobre o kernel, como o Unix e o Linux foram constru??dos e melhorados ao longo dos anos de desenvolvimento, e uma breve descri????o sobre o nosso kernel, Eofla Kernel, que receber?? um nome.
+2. Comandos dispon??veis: Esta p??gina mostra os comandos dispon??veis no kernel. 
+3. Hist??rico do Simulador do Kernel: Voc?? pode ver o que aconteceu entre o desenvolvimento das vers??es do Kernel Simulator e as mudan??as exatas entre as vers??es feitas. 
+4. Guia de Modding: Voc?? pode ver como criar seu pr??prio mod, e existem exemplos.
+5. Guia de modifica????o de tela: Voc?? pode ver como criar seu pr??prio protetor de tela, e h?? exemplos.
+6. Comandos FTP dispon??veis: Esta p??gina mostra os comandos dispon??veis no shell FTP. 
+-BODY END-
+
+-SECTIONS-
+Check out:=>SE1
+-SECTIONS END-

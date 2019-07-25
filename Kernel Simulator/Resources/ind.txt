@@ -347,4 +347,21 @@ deebag log mein sab kuchh hataata hai
 SSE sanskaran ho jaata hai
 amaany bhaasha
 bhaasha badal jaatee hai
-aapake paas apane sistam par libchpanail-json-xs-pairl sthaapit nahin ho sakata hai. sthaapana ke lie apane paikej prabandhak ka sandarbh len. debiyan (aur derivetiv) sistam ke lie, aap tarminal emuletar mein "sudo apt install libchpanail-json-xs-pairl" chalaana chaah sakate hain. ek truti ke adhik vivaran:
+aapake paas apane sistam par libcpanel-json-xs-perl sthaapit nahin ho sakata hai. sthaapana ke lie apane paikej prabandhak ka sandarbh len. debiyan (aur derivetiv) sistam ke lie, aap tarminal emuletar mein "sudo apt install libcpanel-json-xs-perl" chalaana chaah sakate hain. ek truti ke adhik vivaran:
+----------------------------- karnel painik damp ------------------------------
+>> aatank sambandhee jaanakaaree <<
+> vivaran: {0}
+> truti prakaar: {1}
+> dinaank aur samay: {2}
+>> apavaad jaanakaaree <<
+> apavaad: {0}
+> vivaran: {1}
+> hraisult: {2}
+> srot: {3}
+> staik tres <
+>> aantarik apavaad {0} jaanakaaree <<
+>> apavaad {0} mool kaaran hai <<
+>> koee apavaad nahin; ek karnel truti ho sakatee hai. <<
+>> phrems, phailen, lainen aur kolam <<
+> frem {0}: fail: {1} | pankti: {2} | kolam: {3}
+> frem jaanakaaree praapt karane ka prayaas karate samay koee truti hai. {0}: {1}

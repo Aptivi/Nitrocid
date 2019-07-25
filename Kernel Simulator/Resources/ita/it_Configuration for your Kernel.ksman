@@ -1,0 +1,80 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Configurazione per il tuo kernel
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Cos'?? la configurazione?
+
+La configurazione ?? la configurazione per il tuo kernel che memorizza pi?? opzioni del kernel che non possono essere modificate n?? negli argomenti n?? negli argomenti della riga di comando. 
+
+Ci sono molte sezioni per facilitare la lettura del file di configurazione. 
+
+Voci di configurazione
+
+Generale
+
+1. Prompt per gli argomenti all'avvio: ?? possibile forzare il kernel a fornire l'argomento prompt se il valore ?? impostato su True. 
+2. Modalit?? di manutenzione: puoi fare in modo che il kernel non analizzi alcun mod e screensaver all'avvio e ti d?? l'opportunit?? di riparare il tuo kernel. 
+3. Modifica password di root: ?? possibile modificare la password di amministrazione. 
+4. Impostare la password di root su: Se l'opzione "Cambia password di root" ?? impostata su True, ?? possibile scrivere la propria password di root. 
+5. Crea account demo: puoi fare in modo che il kernel crei l'account di prova, demo, impostandolo su True. 
+6. Colori personalizzati all'avvio: se questo ?? impostato su True, il kernel cambier?? i suoi colori in base ai valori di configurazione. 
+7. Lingua: pu?? prendere la scorciatoia in lingua di tre lettere. 
+
+Colori
+
+Ogni voce menzionata di seguito pu?? assumere nomi o valori di colore. 
+
+1. Nome utente Colore shell: ?? possibile modificare lo username che visualizza il colore parziale nell'intero prompt.
+2. Nome host Colore shell: ?? possibile modificare il nome host che visualizza il colore parziale nell'intero prompt.
+3. Colore dell'errore del kernel continuo: ?? possibile modificare il colore del testo dell'errore del kernel continuativo.
+4. Colore del kernel non cumulabile: ?? possibile modificare il colore del testo del colore dell'errore fatale.
+5. Colore del testo: puoi cambiare il colore generale del testo.
+6. Colore licenza: ?? possibile modificare il colore del testo della licenza.
+7. Colore di sfondo: puoi cambiare il colore di sfondo.
+8. Colore input: ?? possibile modificare il colore di input del testo.
+9. Comando elencato in Colore guida: ?? possibile modificare il colore del comando stampato nell'elenco comandi.
+10. Definizione del comando in Colore guida: ?? possibile modificare la descrizione stampata del colore del comando nell'elenco dei comandi.
+
+Hardware
+
+Ogni voce menzionata di seguito pu?? prendere False o True.
+
+1. Sonda silenziosa: ?? possibile rendere silenziosa la verifica hardware, non mostrando i risultati dell'hardware rilevato.
+2. Slot della sonda: ?? possibile fare in modo che il prober della RAM sonda gli slot della RAM.
+
+Accesso
+
+1. Mostra MOTD on Log-in: puoi fare in modo che il prompt di login ti mostri il messaggio del giorno prima di visualizzare il prompt. 
+2. Clear Screen on Log-in: ?? possibile rimuovere lo screen clutter prima di accedere se ?? impostato su True. 
+3. MOTD: ?? possibile modificare il messaggio di pre-accesso su qualsiasi valore. 
+4. Nome host: ?? possibile modificare il nome host del kernel.
+5. MOTD dopo l'accesso: ?? possibile modificare il messaggio post-accesso su qualsiasi valore. 
+
+Conchiglia
+
+Ogni voce indicata di seguito pu?? assumere True o False.
+
+1. Guscio colorato: puoi aggiungere il supporto per colorare il guscio.
+2. Comando di guida semplificato: puoi elencare i comandi nel formato separato da virgole.
+
+Varie
+
+1. Mostra ora / data nell'angolo in alto a destra: ?? possibile stabilire il banner ora / data in tempo reale che si sta aggiornando e la posizione ?? nell'angolo in alto a destra. 
+2. Salvaschermo: puoi scegliere i salvaschermo disponibili.
+3. Versione kernel: non modificare questa voce! 
+-BODY END-
+
+-SECTIONS-
+What is the Config?=>SE1
+Config entries=>SE1
+General=>SE2
+Colors=>SE2
+Hardware=>SE2
+Login=>SE2
+Shell=>SE2
+Misc=>SE2
+-SECTIONS END-

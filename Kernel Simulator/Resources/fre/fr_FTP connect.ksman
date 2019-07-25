@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Commande FTP "connecter"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+connecter la commande FTP
+
+R??sum??: connecte votre client FTP ?? n???importe quel serveur FTP valide
+
+La description
+
+Cette commande doit ??tre ex??cut??e avant d???ex??cuter des commandes de serveur FTP interactives, telles que t??l??charger, t??l??charger, cdl, cdr, etc.
+
+Cette commande ouvre une nouvelle session pour connecter votre client FTP ?? un serveur FTP ouvert au public et valide. 
+
+Utilisation de la commande
+
+* connecter (adresse)
+Exemples
+
+* connectez ftp://ftp.fabrikam.com: connecte votre client au serveur nomm?? "ftp.fabrikam.com"
+* connectez-vous ftps: //ftp.contoso.com: connecte votre client via SSL au serveur nomm?? "ftp.contoso.com"
+-BODY END-
+
+-COLOR CONFIGURATION-
+connect (address)=>Green
+connect ftp://ftp.fabrikam.com:=>Yellow
+connect ftps://ftp.contoso.com:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+connect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

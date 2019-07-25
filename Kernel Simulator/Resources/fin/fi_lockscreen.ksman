@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "lockscreen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lockscreen-komento
+
+Yhteenveto: Voit lukita n??yt??n oletusn??yt??ns????st??j??ll??, jotta n??ytt?? ei pala
+
+Kuvaus
+
+Voit lukita n??yt??n ja n??ytt???? oletusn??yt??ns????st??j??n vahvistaaksesi, ett?? olet poissa ja kooma takaisin tunnin tai enemm??n. 
+
+Komennon k??ytt??
+
+* lukitusn??ytt??
+-BODY END-
+
+-COLOR CONFIGURATION-
+lockscreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lockscreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

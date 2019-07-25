@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "lscomp"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl lscomp
+
+Zusammenfassung: Sie k??nnen Computer, auch Offline-Computer, in Arbeitsgruppen und Dom??nen auflisten
+
+Beschreibung
+
+Wenn Sie Computer in der Arbeitsgruppe oder in den Dom??nen auflisten m??ssen, einschlie??lich des Offline-Computers, wenn der Computer der Dom??ne beigetreten ist, k??nnen Sie diesen Befehl verwenden, um alle Computer ohne ihre IP-Adressen abzurufen.
+
+Wenn Sie jedoch nur Computer auflisten m??ssen, die online sind und deren IP-Adressen abrufen m??chten, m??chten Sie m??glicherweise nach lsnet suchen und die Informationen finden Sie unter "Benutzerhandbuch lsnet".
+
+Befehlsverwendung
+
+* lscomp
+-BODY END-
+
+-COLOR CONFIGURATION-
+lscomp=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lscomp command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

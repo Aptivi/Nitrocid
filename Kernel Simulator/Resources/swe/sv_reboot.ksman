@@ -1,0 +1,32 @@
+(*MAN START*)
+
+-TITLE:Shell-kommandot "starta om"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+starta om kommandot
+
+Sammanfattning: Starta om k??rnan
+
+Beskrivning
+
+Detta kommando startar om din simulerade k??rna och laddar om alla konfigurationer som inte laddas med reloadconfig. 
+
+VARNING: Det finns ingen filsystemssynkronisering eftersom den aktuella k??rnversionen inte har det verkliga filsystemet att synkronisera, och k??rnan ??r inte slutlig.
+
+Kommandobruk
+
+* starta om
+-BODY END-
+
+-COLOR CONFIGURATION-
+reboot=>Green
+WARNING:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+reboot command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

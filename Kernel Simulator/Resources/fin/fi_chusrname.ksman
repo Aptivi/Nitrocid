@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "chusrname"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+chusrname-komento
+
+Yhteenveto: Voit muuttaa k??ytt??j??nimesi tai jonkun toisen k??ytt??j??nimen
+
+Kuvaus
+
+Jos k??ytt??j??nimesi tai jonkun toisen k??ytt??j??nimi t??ytyy vaihtaa uudeksi k??ytt??j??tunnukseksi, sinun on muutettava niit??, jos se on k??ytt??j??nimesi tai jos joku sallii k??ytt??j??tunnuksen muuttamisen toiseen nimeen.
+
+Sinun on m????ritett??v?? nykyinen k??ytt??j??tunnus ennen uutta k??ytt??j??nime??, jotta ty??kalu tiet????, miten toisen henkil??n nime?? tai nime??si muutetaan.
+
+Kun muutat nimesi jonkun toisen nimeksi, kirjaudut ulos, jotta muutokset tulevat voimaan. 
+
+Komennon k??ytt??
+
+* chusrname (oldUserName) (newUserName)
+
+esimerkit
+
+* chusrname john JohnSmith: Se muuttaa Johnin k??ytt??j??tunnusta JohnSmithiin
+* chusrname admin opettaja: Se muuttaa yll??pit??j??n k??ytt??j??tunnuksen opettajaksi
+-BODY END-
+
+-COLOR CONFIGURATION-
+chusrname (oldUserName) (newUserName)=>Green
+chusrname admin teacher:=>Yellow
+chusrname john JohnSmith:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chusrname command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

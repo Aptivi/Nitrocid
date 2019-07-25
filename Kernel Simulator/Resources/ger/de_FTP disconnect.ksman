@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:FTP Befehl "Trennen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+FTP-Befehl trennen
+
+Zusammenfassung: Trennt die Verbindung zum aktuellen Arbeitsserver
+
+Beschreibung
+
+Dieser Befehl sendet den Befehl quit an den FTP-Server, damit der Server wei??, dass Sie abreisen. 
+
+Befehlsverwendung
+
+* trennen
+-BODY END-
+
+-COLOR CONFIGURATION-
+disconnect=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+disconnect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

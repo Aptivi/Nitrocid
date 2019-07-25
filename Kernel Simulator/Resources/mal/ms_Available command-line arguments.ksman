@@ -1,0 +1,27 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Hujah baris arahan yang ada
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the command-line arguments that are available in the kernel is put.
+-BODY START-
+Bagaimanakah saya menjalankan hujah baris arahan?
+
+Anda boleh menjalankan hujah-hujah ini untuk membuat simulator berkelakuan dengan cara yang berbeza, dengan menjalankan Simulator Kernel seperti contoh berikut:
+
+- "Kernel Simulator.exe" promptArgs
+- "Kernel Simulator.exe" testMod ModToBeTested.m
+
+Hujah yang berguna:
+
+1. promptArgs: Tekan hujah kernel prompt untuk muncul
+2. createConf: Digunakan dalam KS Config Tool. 
+3. testMod: Memeriksa integriti mod dengan menyusun, kemudian keluar
+-BODY END-
+
+-SECTIONS-
+How do I run command-line arguments?=>SE1
+Useful arguments:=>SE1
+-SECTIONS END-

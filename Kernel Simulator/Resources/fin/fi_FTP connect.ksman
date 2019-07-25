@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:FTP-komento "connect"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+kytke FTP-komento
+
+Yhteenveto: Yhdist???? FTP-asiakkaasi mihin tahansa voimassa olevaan FTP-palvelimeen
+
+Kuvaus
+
+T??m?? komento on suoritettava ennen kuin k??yt??t interaktiivisia FTP-palvelinkomentoja, kuten ladata, ladata, cdl, cdr jne.
+
+T??m?? komento avaa uuden istunnon FTP-asiakkaan liitt??miseksi kaikkiin yleis??lle avoimeen FTP-palvelimeen ja voimassa. 
+
+Komennon k??ytt??
+
+* Yhdist?? (osoite)
+esimerkit
+
+* connect ftp://ftp.fabrikam.com: Yhdist???? asiakkaan palvelimeen nimelt?? "ftp.fabrikam.com"
+* connect ftps: //ftp.contoso.com: Yhdist???? asiakkaasi SSL: n avulla palvelimeen nimelt?? "ftp.contoso.com"
+-BODY END-
+
+-COLOR CONFIGURATION-
+connect (address)=>Green
+connect ftp://ftp.fabrikam.com:=>Yellow
+connect ftps://ftp.contoso.com:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+connect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

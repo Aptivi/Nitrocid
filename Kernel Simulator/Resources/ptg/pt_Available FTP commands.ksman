@@ -1,0 +1,40 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Comandos FTP Dispon??veis
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the commands that are available in the FTP shell is put.
+-BODY START-
+Comandos Administrativos:
+
+1. delete (del): voc?? pode excluir arquivos indesejados do servidor
+2. rename (ren): renomeie os arquivos com nomes errados em seus nomes corretos no servidor
+3. upload (colocar): Envie seu arquivo local para o servidor
+
+Comandos normais do usu??rio:
+
+1. currlocaldir (pwdl): Obtenha seu diret??rio local de trabalho atual
+2. currremotedir (pwdr): Obtenha seu diret??rio atual do servidor de trabalho
+3. changelocaldir (cdl): Altera seu diret??rio local para outro diret??rio que existe
+4. changeremotedir (cdr): Altera seu diret??rio remoto para outro diret??rio que existe no servidor
+5. connect: permite comunicar-se com o servidor e com as credenciais, se especificado
+6. desconectar: ??????Quando voc?? terminar de se comunicar com o servidor, use este comando para informar ao servidor que voc?? est?? saindo
+7. download (get): Obt??m o arquivo remoto do servidor em seu diret??rio de trabalho local atual
+8. listlocal (lsl): Relaciona o conte??do do diret??rio de trabalho atual ou do diret??rio especificado
+9. listremote (lsr): Relaciona o conte??do do diret??rio atual do servidor de trabalho ou do diret??rio especificado
+
+Para obter mais informa????es sobre cada comando, consulte "usermanual FTP <command>"
+-BODY END-
+
+-COLOR CONFIGURATION-
+delete (del):=>Red
+rename (ren):=>Red
+upload (put):=>Red
+-COLOR CONFIG END-
+
+-SECTIONS-
+Administrative commands:=>SE1
+Normal user commands:=>SE1
+-SECTIONS END-

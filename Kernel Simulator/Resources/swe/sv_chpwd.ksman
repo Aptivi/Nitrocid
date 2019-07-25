@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "chpwd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+chpwd-kommando
+
+Sammanfattning: Du kan ??ndra ditt l??senord eller n??gon annans l??senord
+
+Beskrivning
+
+Om l??senordet f??r ditt konto, eller f??r n??gon annans konto, m??ste ??ndras, kan du anv??nda det h??r kommandot f??r att ??ndra ditt l??senord eller n??gon annans l??senord.
+
+Detta ??r anv??ndbart om du tror att ditt konto eller n??gon annans konto har ett d??ligt l??senord eller finns i listan med enkla l??senord som finns online.
+
+Detta kommando kr??ver att du anger ditt l??senord eller n??gon annans l??senord innan du skriver ditt nya l??senord.
+
+Kommandobruk
+
+* chpwd (Anv??ndarnamn) (UserPass) (newPass) (bekr??fta)
+
+exempel
+
+* chpwd joe easy1234 p4ssw0rd p4ssw0rd: Det ??ndrar joes l??senord till p4ssw0rd fr??n easy1234
+-BODY END-
+
+-COLOR CONFIGURATION-
+chpwd (Username) (UserPass) (newPass) (confirm)=>Green
+chpwd joe easy1234 p4ssw0rd p4ssw0rd:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chpwd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

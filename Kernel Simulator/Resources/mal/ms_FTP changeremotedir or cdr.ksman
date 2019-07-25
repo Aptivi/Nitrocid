@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Perintah FTP "changeremotedir" atau "cdr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah changeremotedir atau cdr FTP
+
+Ringkasan: Menukar direktori jauh anda
+
+Penerangan
+
+Perintah ini membolehkan anda menukar direktori jauh anda di pelayan FTP anda yang disambungkan ke direktori lain yang terdapat di subdirektori. 
+
+Penggunaan perintah
+
+* changeremotedir / cdr (direktori / ..)
+Contoh
+
+* cdr X11 / GNOME: Ini akan menukar direktori jauh anda ke X11 / GNOME
+* changelocaldir pub: Ini akan mengubah direktori jauh anda ke pub dalam direktori kerja semasa anda
+* cdr ..: Ini akan pergi ke direktori induk untuk direktori kerja semasa (kembali)
+-BODY END-
+
+-COLOR CONFIGURATION-
+changeremotedir/cdr (directory/..)=>Green
+cdr X11/GNOME:=>Yellow
+changelocaldir pub:=>Yellow
+cdr ..:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+changeremotedir or cdr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

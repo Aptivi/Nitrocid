@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell commando "noaliases"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+noaliases commando
+
+Samenvatting: u kunt verboden aliassen bekijken.
+
+Omschrijving
+
+Met deze opdracht kunt u de opdrachten bekijken waarvoor u geen alias moet maken, omdat ze zijn verboden voor het maken van problemen, zoals het alias van de opdracht "alias".
+
+Commando gebruik
+
+* noaliases
+-BODY END-
+
+-COLOR CONFIGURATION-
+noaliases=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+noaliases command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

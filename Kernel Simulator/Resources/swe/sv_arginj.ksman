@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "arginj"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+alias kommando
+
+Sammanfattning: Du kan st??lla in argumenten som ska startas vid omstart.
+
+Beskrivning
+
+Om du beh??ver starta om din k??rna f??r att k??ra fels??kningen, eller om du vill inaktivera h??rdvara som sparar tid vid start, ??r detta kommando ??t dig. 
+
+Du kan anv??nda det h??r kommandot om du beh??ver injicera argument medan du ??r i k??rnan. 
+
+Kommandobruk
+
+* arginj [Argument separerade med mellanslag]
+
+exempel
+
+* arginj debug: Sl?? p?? fels??kningsl??ge vid n??sta omstart
+* arginj nohwprobe: St??ng av h??rdvaruprov vid n??sta omstart
+* arginj tyst nohwprobe: St??ng av k??rnmeddelanden och h??rdvara vid n??sta omstart
+-BODY END-
+
+-COLOR CONFIGURATION-
+arginj [Arguments separated by spaces]=>Green
+arginj debug:=>Yellow
+arginj nohwprobe:=>Yellow
+arginj quiet nohwprobe:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+arginj command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,109 @@
+﻿| --------------- + -> Kernel Simulator - Simulasikan kernel masa depan yang dirancang oleh kami <- + -------------- - |
+
+INFO: Adakah anda membina versi Simulator Kernel Linux dalam MonoDevelop? Jika ya, pasangkan MonoDevelop dan libmono-microsoft-visualbasic10.0-cil. Walaupun kami mencadangkan MonoDevelop, kami mengesyorkan JetBrains Rider untuk Linux 64-bit.
+
+INFO: Simulator kernel ini bukan versi akhir Kernel yang dirancang, kerana ia adalah minimum.
+
+INFO: Dua dokumentasi, faq dan penyelesaian masalah, dipadam kerana ia tidak dikemas kini secara berkala.
+
+Simulator Kernel membolehkan anda mensimulasikan akses awal untuk Kernel masa depan kami yang akan terus dibangunkan, walaupun kami membuat versi PC sebenar Kernel.
+
+| --------------- + -> Sejarah <- + --------------- |
+
+7/25/2019 - 0.0.6.5: Fail pembuangan tetap yang dibuat tanpa lanjutan, dumps tempatan dan manpages, Versi bahasa ditingkatkan kepada yang terkini, Tetapkan beberapa bug mengenai sistem fail, Memperbaiki kelajuan jam CPU yang muncul dua kali dalam pemproses terkini (pemproses yang mempunyai kelajuan jam atas nama-nama dalaman mereka, sebagai contoh "Intel (R) Teras (TM) i7-8700 CPU @ 3.20GHz"), Memperbaiki bar perkembangan pemindahan FTP supaya menggunakan format baru, ETA ditambah dan kelajuan
+7/7/2019 - 0.0.6.4b: Membuat satu persediaan untuk 0.0.6.5: Memuat turun simbol debug pada permulaan jika tidak dijumpai
+7/6/2019 - 0.0.6.4a: Perisian perkakasan Linux tetap gagal walaupun berjaya, Proper RAM tetap menunjukkan MemTotal: awalan, Mesej dibuat tentang libcpanel-json-xs-perl jelas
+6/28/2019 - 0.0.6.4: Memperbaiki NullReferenceException apabila menukar bahasa, Memperbaiki dokumentasi besar-besaran baru apabila cuba menguraikan perkataan kosong yang tidak pada permulaan (Harap maklum bahawa kita masih mempunyai isu-isu baru dalam baris pertama), Ditambahkan Ubuntu tema, Dikeluarkan bendera yang tidak digunakan, Dikehendaki keperluan tambahan untuk menghuraikan warna pada boot (disingkirkan tamak), Dibuat membaca saiz fail FTP yang boleh dibaca manusia
+6/26/2019 - 0.0.6.3: Tetap `senyap` tidak sepenuhnya tenang, Mesej tetap tidak muncul selepas menandatangani (mis. Menambah mesej pengguna), Mengizinkan mengubah bahasa dengan menggunakan perintah, Tetapkan teks bantuan yang menunjukkan selepas melaksanakan` sses` , Menambah bahasa Czech
+6/25/2019 - 0.0.6.2b: Menambah perintah bernama `sses` untuk menyenaraikan semua versi SSE
+6/24/2019 - 0.0.6.2a: Menambahkan pemeriksaan untuk arahan pemproses (kini digunakan dalam boot kernel untuk melihat apakah SSE2 disokong)
+6/24/2019 - 0.0.6.2: Perintah log debug tetap tidak berfungsi kerana jalan tidak dijumpai (typo: Debugger -> Debugging), Menambah notis dalam menyenaraikan arahan PC mengenai versi terkini Windows 10, Pengepala kernel debug tetap tidak menulis semasa berjalan dengan hujah debug, Tetapkan log debug yang kosong setiap reboot dan mulakan, Dikehendaki mengosongkan debug log perintah dengan menggunakan cdbglog, Digunakan terbina dalam FtpVerify enumerators, mengeluarkan cek hash kami untuk versi lama FluentFTP, pengalaman debugging yang lebih baik, Debugging kini menunjukkan nombor baris dan fail sumber jika pdb berada pada folder yang sama, Modding yang dibenarkan menggunakan C #
+6/21/2019 - 0.0.6.1: Maklumat mata wang yang dihapuskan menunjukkan bantuan (akan membawanya kembali kemudian), Pengguna kini dikehendaki memasukkan Kunci API mereka dari apilayer.net untuk menukar matawang (Pelan asas, dapatkan di http: // currencylayer.com/product, belum teruji: tidak dapat membayar untuk pelan asas)
+6/19/2019 - 0.0.6: Ikon baru, Dikemaskini FluentFTP dan Newtonsoft.Json libs, Dihapuskan peristiwa bertulis, Log masuk semula bertulis (Tidak semua, tetapi direka semula), Tetap perintah chpwd tidak menukar kata laluan jika sasaran tidak 't mempunyai kata laluan, Tetap chpwd tidak memeriksa jika pengguna biasa mengubah kata laluan admin, Adduser tetap tidak menambahkan pengguna tanpa kata laluan, Penambah adduser menambah pengguna dengan kata laluan walaupun mereka tidak cocok, Dihapus cdir, Masuk entri konfigurasi untuk nama screensaver, Dilaksanakan debugging dan fail dump untuk kesilapan kernel, Dihantar dengan simbol debugging .pdb untuk KS, Tetap semula reboot tidak membersihkan skrin, Ditambah bahasa Belanda, Finland, Itali, Bahasa Melayu, Sweden dan Turki (bertukar ke font yang serasi di konsol), Negara dan mata wang adalah kini disenaraikan ketika tidak menyediakan argumen yang mencukupi atau mengeluarkan "mata wang bantuan", Senarai bantuan tetap tidak mengemaskini kemas kini bahasa baru semasa reboot, Menambah alias kekal (terletak di bawah profil anda, aliases.csv), Kata laluan sekarang tersembunyi ketika log masuk ke maintai n keselamatan, Pengguna tetap dikeluarkan selepas setiap but semula
+6/13/2019 - 0.0.5.14: Mengganti sistem fail palsu dengan yang sebenar (akses kepada fail anda), Menetapkan arahan bantuan yang "berubah" yang salah ditunjukkan daripada "chdir", "cdir," yang menunjukkan direktori semasa, kini sudah usang, Kerosakan tetap semasa reboot kernel
+4/14/2019 - 0.0.5.13: Lebih banyak pelangsingan oleh JetBrains ReSharper untuk VS2017, Pelaksanaan perkakasan Linux yang Dilaksanakan (Anda perlu memasang inxi untuk probe HDD untuk berfungsi), Peningkatan keperluan NET untuk 4.7, Peringatan Amaran mengenai pengalihan mengikat dalam MonoDevelop, Meningkatkan keperluan versi VS ke VS2019, Dihapuskan menjengkelkan "Penamaan peraturan pelanggaran" dengan menggunakan pilihan yang dicadangkan
+2/22/2019 - 0.0.5.12: Sekarang createConf cmdline arg hanya membuat konfigurasi jika fail konfig tidak dijumpai, Beberapa persediaan untuk 0.0.6 (melangsingkan sahaja), Mengeluarkan GPU dan BIOS probing, Sekarang lama KS config menang 'diperbolehkan dikemas kini di sini (Penyelesaian: Anda perlu mengalih fail lama config KS anda dan menjalankan semula aplikasinya), Tetapkan Alam Sekitar.OS bug pada Windows 10 (10.0) di mana ia mengembalikan versi Windows 8 (6.2) Tetapkan ruang letak tidak menguraikan apabila menggunakan perintah showmotd / showmal, Tetap bantuan mudah tidak menunjukkan mod, Tetap terbina dalam perintah yang tidak berjalan selepas anda menjalankan arahan mod atau arahan alias, Tetap NullReferenceException semasa debug, Peningkatan alias listing, Tetap pengecualian teks percetakan mesej yang tidak diterjemahkan ke bahasa semasa, Tetapkan "/" atau "\" muncul sebelum nama mod semasa mencarinya mods dan screensavers, Mengeluarkan pembetulan yang tidak perlu dalam terjemahan, Tetapkan lebih banyak overflows overflows dalam shell FTP, Tetapkan penterjemahan mesej FTP menerjemahkan "'help' "sebagai bahasa apabila ia ' s sepatutnya menjadi perintah, Tetap perintah tidak dijumpai mesej apabila tidak memasukkan apa-apa dalam shell FTP
+2/18/2019 - 0.0.5.11: Membuat GPU dan BIOS probing `<Usang>`, Tidak ada lagi panggilan COM ketika meneliti perkakasan, Mengeluarkan fail yang tidak berguna yang mempunyai data cakera keras, Tetap terjemahan sysinfo ketika memaparkan bahagian konfigurasi kernel , Status yang diasingkan dari HDD dan RAM (Lihat mengapa pada 'usermanual Sejarah Simulator Kernel', bahagian `Kebenaran mengenai status probing`), Tetapkan bahagian CHS tidak muncul jika cakera keras mempunyai nilai Pengilang, Tetap penterjemah tidak mengembalikan Bahasa Inggeris nilai jika senarai terjemahan tidak mengandung nilai semacam itu, Tetapkan GPU prober dengan asumsi bahwa Pemandu Tampilan Dasar Microsoft bukanlah driver dasar, Membuat screensavers dibuat pro boot, Memperbaiki NullReferenceException ketika mencoba memuatkan screensaver berikutnya setelah terjadi kesalahan pada screensaver sebelumnya, Memperbaiki maklumat OS yang tidak diterjemahkan apabila memulakan kernel, Konfigurasi bahasa tetap tidak dipelihara semasa mengemas kini, Maklumat debug kini mencetak ke tetingkap output debug VS2017 (Anda masih perlu menghidupkan deb memukul), Mematikan reloadsaver perintah loadsaver, Menghapus arahan yang tidak berguna dan kasar (gema, panicsim dan pilihan)
+2/16/2019 - 0.0.5.10: Membaca kebolehbacaan laman manual (vbTab kini ditapis dan tidak akan menyebabkan masalah), Sekarang penterjemah mencetak info debug apabila rentetan tidak dijumpai dalam senarai terjemahan, Prober Perkakasan: Menghentikan spam " Sistem .__ ComObject "kepada debugger untuk membolehkan bacaan mudah, Manpage Parser: Berhenti mengisi log debug dengan tidak berguna" Memeriksa ... "teks dan mengembangkan beberapa mesej debug, Tetapkan tali BIOS tidak dipaparkan, Mengeluarkan cek platform tidur yang tidak perlu, Dihapuskan" nohwprobe "Hujah kernel sebagai masalah pengesanan hardware penting, Mengeluarkan pemerhatian platform zon waktu yang tidak perlu, Dikemaskini FluentFTP dan perpustakaan Newtonsoft.Json ke versi stabil mereka yang terbaru, Tiada pendua salinan kecuali bahagian kata laluan dalam Log Masuk, Bug tetap MAL dan MOTD tidak menyegarkan antara log masuk, Tetap bug sysinfo (tetapan mesej tidak mencetak), Kernel sekarang mencetak persekitaran yang digunakan pada boot, debug, dan pada perintah sysinfo, peristiwa penulisan dibuat usang
+12/24/2018 - 0.0.5.9: Mod sekarang akan dihentikan apabila dimatikan, Mod boleh mempunyai nama mereka sendiri dan versi mereka sendiri, debugger tetap tidak ditutup dengan betul apabila reboot atau menutup, Shell kini tidak lagi keluar dari aplikasi apabila pengecualian berlaku, Debugging sekarang lebih sensitif (kecuali untuk mendapat perintah), Sekarang debug penulis tidak menyokong penulisan tanpa baris baru, Anda akhirnya boleh memasukkan ruang dalam nama host anda serta nama host yang kurang dari 4 aksara seperti "joe" , Arahan yang tidak digunakan dan kasar yang dihapuskan, Pemeriksaan tambahan yang dikeluarkan untuk masa lapang IANA menyebabkan tiada cara pendaftaran, rangkaian penyenaraian tetap, penukar mata wang Ditambah yang menggunakan Internet (Jika kita menambah nilai tempatan, kita perlu melepaskan lebih banyak kemas kini yang memakan masa yang lama , jadi cara Internet memelihara masa dan kemas kini), akhirnya kami membenarkan pengguna untuk melihat log debug menggunakan KS dengan debugging, kami telah meningkatkan pelanggan FTP, bagi mereka yang tidak berbahasa Inggeris kini boleh menetapkan bahasa mereka sendiri walaupun lalai adalah Bahasa Inggeris, kemasukan bantuan hilang yang hilang untuk "lscomp", halaman manual kernel Ditambah, mengeluarkan sokongan Windows XP, NullReferenceException tetap apabila terdapat kesilapan yang cuba untuk menyusun mod, menambah argumen testMods cmdline, dan banyak lagi ...
+11/1/2018 - 0.0.5.8: Dihapus semasa bongkok dan menutup, Dihapuskan "bip" arahan, (Windows) Probers sekarang akan berterusan walaupun gagal, Memindahkan memori sekarang tidak lagi menggunakan kaedah VB6 untuk menangani ralat
+10/13/2018 - 0.0.5.7: Kerosakan tetap apabila mula berjalan pada nama fail yang selain dari "Kernel Simulator.exe", pengendalian ralat yang lebih baik untuk FTP, Menambah cetakan direktori semasa dalam FTP, mengeluarkan "versi" arahan, menetapkan nilai "Tenang Siasat" yang ditetapkan "Siasatan Tenang", Diperluas "sysinfo", Pembaca konfigurasi tetap tidak menutup ketika keluar kernel, (Unix) Tetapkan bug yang diketahui
+10/12/2018 - 0.0.5.6: Meningkatkan probers, senarai nama pengguna pada log masuk, keserasian yang lebih baik dengan Unix
+9/22/2018 - 0.0.5.5: Konfigurasi bertulis semula, Alias ​​terlarang, menambah entri bantuan yang hilang untuk "showalises", menambahkan lebih banyak tempat letak kereta MOTD dan MAL, mesej mengulangi tetap status RAM, dan klien FTP telah ditambah, akhirnya !
+9/9/2018 - 0.0.5.2: Pembetulan GPU dibuat semasa boot, mengeluarkan argumen "gpuprobe", menukar tingkah laku pengemaskinian config
+9/6/2018 - 0.0.5.1: Pelepasan susulan dikeluarkan kod yang tidak digunakan, tingkah laku log debugging yang lebih baik, dan kebolehbacaan pembacaan mesej debug semasa membetulkan mod dengan perintah tanpa definisi.
+9/4/2018 - 0.0.5.0: Ganjaran yang dikeluarkan, penggeledahan nama pengguna MAL, tambah "showaliases", parsing alias tetap, memadam keperluan untuk memberikan perintah untuk menghapus alias, dan pelaksanaan perintah buatan pengguna dalam mod
+8/16/2018 - 0.0.4.12: Mengubah arahan disko dengan screensaver. Nampaknya 0.0.5 akan dilepaskan kerana kelihatan stabil, tetapi kami mempunyai beberapa perubahan sebelum pelepasan akhir.
+8/3/2018 - 0.0.4.11: Alias ​​terdahulu yang telah ditanggalkan, Mengesan bug yang diketahui yang disebutkan.
+8/2/2018 - 0.0.4.10: "Sysinfo" dengan "lsdrivers", Definisi Bantuan yang lebih baik (kamus yang digunakan untuk penyediaan modding), menambah "lscomp" yang boleh menyenaraikan semua komputer dalam talian dan luar talian dengan nama sahaja, untuk "lsnet" dan "lsnettree", kesilapan tatabahasa tetap dalam "lsnet" dan "lsnettree", tambah mod (perintah yang belum dilaksanakan - <modname> .m), tambah screensaver, mengubah tingkah laku menunjukkan MOTD, memeriksa selepas reboot kernel akan mengatakan bahawa ia mempunyai lebih dari satu contoh dan harus ditutup, dan banyak lagi.
+7/21/2018 - 0.0.4.9: Perlakuan Ralat yang lebih baik untuk arahan "unitconv", Menambah alias sementara (bukan akhir kerana tidak ada perintah "showaliases"), membetulkan beberapa pepijat, menambah zon waktu ("showtdzone" zon waktu dalam "showtd"), Ditambah "alias", "chmal", dan "showmal", Dibuat MOTD selepas login disesuaikan, Membenarkan aksara khas pada kata laluan untuk memastikan keselamatan, Made Simulator Kernel tunggal untuk mengelakkan gangguan, dan banyak lagi.
+7/17/2018 - 0.0.4.7: Ralat Lebih Baik Pengendalian untuk arahan "ping", Mesej penggunaan "unitconv" tetap
+7/16/2018 - 0.0.4.6: Dihapuskan "makan" luaran yang berdiri sebagai perintah yang dikeluarkan dalam 0.0.4.5, Persediaan untuk penggantian adat 0.0.5
+7/15/2018 - 0.0.4.5: (Dihentikan 2 bulan kerana kegagalan cakera keras) - Perbaiki pepijat apabila pengawas yang gagal untuk menimbulkan perkakasan, menambah butiran lebih lanjut dalam probers, Sistem bantuan bertambah baik, Perbaiki pepijat dalam warna, dan banyak lagi.
+5/22/2018 - 0.0.4.1: Betulkan pepijat dalam menukar direktori, Perbaiki pepijat dalam "help chdir", tambah alias untuk menukar direktori bernama "cd", dan konfigurasi update.
+5/20/2018 - 0.0.4: Perubahan teks permulaan, tetapan yang disesuaikan, Tema, hujah arahan baris, Argumen arahan dan parsing penuh, Sistem direktori sebenar (alpha), lebih banyak arahan, kalkulator, debugging dengan jejak tindanan, log debugging (belum selesai), tiada kebocoran RAM, membetulkan pepijat, dan banyak lagi.
+5/2/2018 - 0.0.3.1: Tajuk Shell diedit sebagai persediaan untuk pelepasan besar, membetulkan pepijat dengan membuang pengguna, memperbaiki arahan kosong, dan menambah pemeriksaan admin.
+4/30/2018 - 0.0.3: Perbaiki pepijat, sistem Log masuk semula, tambah arahan, menambah argumen, sistem kebenaran ditambah, warna tersuai dan banyak lagi.
+4/11/2018 - 0.0.2.3: Betulkan kemalangan pada hujah selepas reboot, tetapkan bug, dan banyak lagi.
+4/9/2018 - 0.0.2.2: Betulkan pepijat untuk senarai rangkaian di mana nama PC ganda muncul pada kedua-dua cara penyenaraian, Ralat pengendalian pada rangkaian penyenaraian.
+4/5/2018 - 0.0.2.1: Betulkan pepijat untuk mesej "Perintah Tidak Ditemukan", dan tambah lupa semak root untuk "chhostname" dan "chmotd".
+3/31/2018 - 0.0.2: Reka bentuk semula kod, lebih banyak perintah, mengimplementasikan Internet asas, sistem argumen, menukar kata laluan, dan banyak lagi perubahan.
+3/16/2018 - 0.0.1.1: Ditambah "showmotd", menukar mesej dan memeriksa lebih baik untuk integer melimpah pada Frekuensi Bip.
+2/22/2018 - 0.0.1: Pelepasan awal, biasanya, untuk Windows.
+
+| --------------- + -> Halaman manual <- + --------------- |
+
+Dokumentasi - halaman utama: Maklumat mengenai Simulator Kernel, halaman ini
+Dokumentasi - menyumbang peraturan: Syarat untuk menyumbang Simulator Kernel
+
+| --------------- + -> Kredit <- + --------------- |
+
+EoflaOE: Pemilik Kernel Simulator
+
+Pasukan Oksigen: Pencipta ikon
+
+| --------------- + -> Perpustakaan Sumber Terbuka yang digunakan <- + --------------- |
+
+MadMilkman.Ini
+
+Kod sumber: https://github.com/MarioZ/MadMilkman.Ini
+
+Hak cipta (c) 2016, Mario Zorica
+
+Lesen (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
+
+Newtonsoft.Json
+
+Kod sumber: https://github.com/JamesNK/Newtonsoft.Json
+
+Hak cipta (c) 2007, James Newton-King
+
+Lesen (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+
+FluentFTP
+
+Kod sumber: https://github.com/robinrodricks/FluentFTP
+
+Hak cipta (c) 2011-2016, J.P. Trosclair
+
+Hak Cipta (c) 2016-2019, Robin Rodricks
+
+Lesen (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
+
+| --------------- + -> Lesen - GNU GPL <- + --------------- |
+
+    Simulator Kernel - Simulasikan Kernel masa depan kami yang dirancang
+    Hak Cipta (C) 2018-2019 EoflaOE
+
+    Program ini adalah perisian percuma: anda boleh mengagihkan semula dan / atau mengubah suai
+    ia di bawah syarat-syarat Lesen Awam GNU yang diterbitkan oleh
+    Yayasan Perisian Bebas, sama ada versi 3 Lesen, atau
+    (pada pilihan anda) mana-mana versi kemudian.
+
+    Program ini diagihkan dengan harapan ia berguna,
+    tetapi dengan TANPA JAMINAN MANA; tanpa jaminan waranti tersirat
+    KEBAKARAN atau KESESUAIAN UNTUK TUJUAN TERTENTU. Lihat
+    GNU General Public License untuk maklumat lanjut.
+
+    Anda sepatutnya menerima salinan GNU General Public License
+    bersama-sama dengan program ini. Jika tidak, lihat <https://www.gnu.org/licenses/>.

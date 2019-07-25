@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Comando shell "chusrname"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando chusrname
+
+Riepilogo: puoi cambiare il tuo nome utente o il nome utente di qualcun altro
+
+Descrizione
+
+Se il tuo nome utente o il nome utente di qualcun altro devono essere cambiati in un nuovo nome utente, devi cambiarli se ?? il tuo nome utente o se qualcuno ti permette di cambiare il loro nome utente con un altro nome.
+
+?? necessario specificare il nome utente corrente prima del nuovo nome utente in modo che lo strumento sappia come modificare il nome di qualcun altro o il proprio nome in un altro nome.
+
+Quando cambi il tuo nome con il nome di qualcun altro, verrai disconnesso per rendere effettive le modifiche. 
+
+Comando di utilizzo
+
+* chusrname (oldUserName) (newUserName)
+
+Esempi
+
+* chusrname john JohnSmith: Cambia il nome utente di john in JohnSmith
+* chusrname admin teacher: cambia il nome utente di admin in teacher
+-BODY END-
+
+-COLOR CONFIGURATION-
+chusrname (oldUserName) (newUserName)=>Green
+chusrname admin teacher:=>Yellow
+chusrname john JohnSmith:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chusrname command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

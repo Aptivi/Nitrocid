@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "debuglog"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande debuglog
+
+R??sum??: vous pouvez afficher les journaux du d??bogueur du noyau ?? partir du fichier nomm?? kernelDbg.log situ?? dans votre dossier de profil utilisateur.
+
+La description
+
+Cette visionneuse vous permet de visualiser vos journaux de d??bogage sans d'abord activer le mode de d??bogage sur le noyau. 
+
+Avant, cette commande n??cessitait que le d??bogueur soit activ?? dans le noyau.
+
+Utilisation de la commande
+
+* journal de d??bogage
+-BODY END-
+
+-COLOR CONFIGURATION-
+debuglog=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+debuglog command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

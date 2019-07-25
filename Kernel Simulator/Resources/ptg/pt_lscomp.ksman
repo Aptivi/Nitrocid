@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando da shell "lscomp"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Comando lscomp
+
+Resumo: Voc?? pode listar computadores, at?? mesmo computadores offline, em grupos de trabalho e dom??nios
+
+Descri????o
+
+Se voc?? precisar listar computadores no grupo de trabalho ou dom??nios, incluindo o computador off-line, se o computador tiver ingressado no dom??nio, voc?? poder?? usar esse comando para obter todos os computadores sem seus endere??os IP.
+
+No entanto, se voc?? precisar listar os computadores apenas se eles estiverem on-line e quiser obter seus endere??os IP, talvez seja necess??rio procurar o lsnet e as informa????es s??o encontradas em "userservice lsnet"
+
+Uso de comando
+
+* lscomp
+-BODY END-
+
+-COLOR CONFIGURATION-
+lscomp=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lscomp command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

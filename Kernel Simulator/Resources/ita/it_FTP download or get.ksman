@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "download" o "get"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+scarica o ottieni il comando FTP
+
+Riepilogo: scarica un file dalla directory di lavoro corrente
+
+Descrizione
+
+Scarica il file binario o di testo e lo salva nella directory locale di lavoro corrente per poter utilizzare il file scaricato fornito nel server FTP.
+
+Comando di utilizzo
+
+* scarica / scarica (file)
+Esempi
+
+* download text.txt: scarica il file di testo denominato "text.txt"
+* get shanghai.png: scarica il file di immagine binaria che mostra la citt?? di Shanghai in Cina e la salva in "shanghai.png"
+-BODY END-
+
+-COLOR CONFIGURATION-
+download/get (file)=>Green
+download text.txt:=>Yellow
+get shanghai.png:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+download or get FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

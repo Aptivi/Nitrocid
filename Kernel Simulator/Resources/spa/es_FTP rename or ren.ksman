@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "renombrar" o "ren"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+cambiar el nombre o ren el comando FTP
+
+Resumen: Renombra la carpeta o el archivo en el servidor.
+
+Descripci??n
+
+Puede cambiar el nombre de la carpeta o el archivo en el servidor cuando se nombren incorrectamente en el servidor. 
+
+Uso del comando
+
+* renombrar / ren (oldFile) (newFile)
+Ejemplos
+
+* rename shagnhai.png shanghai.png: cambia el nombre del archivo "shagnhai.png" a "shanghai.png"
+* ren citys Cities: Renombra el archivo "citys" a "Cities"
+-BODY END-
+
+-COLOR CONFIGURATION-
+rename/ren (oldFile) (newFile)=>Green
+rename shagnhai.png shanghai.png:=>Yellow
+ren citys Cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rename or ren FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

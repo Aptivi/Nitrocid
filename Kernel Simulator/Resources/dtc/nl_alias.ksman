@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Shell-commando "alias"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+alias commando
+
+Samenvatting: u kunt een alternatieve snelkoppeling instellen voor de opdracht als u kortere woorden wilt gebruiken voor lange opdrachten.
+
+Omschrijving
+
+Sommige opdrachten in deze kernel zijn lang en sommige mensen schrijven niet snel op computers. 
+
+U kunt deze opdracht ook gebruiken als u van plan bent om scripts te maken als het echte bestandssysteem in de toekomst wordt toegevoegd, of als u ergens naar toe haast en u geen tijd hebt om de lange opdracht uit te voeren.
+
+U kunt de alias aan de lange opdracht toevoegen of verwijderen.
+
+Commando gebruik
+
+* alias add (alias) (cmd)
+* alias rem (alias)
+
+Voorbeelden
+
+* alias add libs useddeps: dit maakt een snelkoppeling van "useddeps" met de naam "libs"
+* alias add stdz showtdzone: Dit maakt een snelkoppeling van "showtdzone" met de naam "stdz"
+* alias add turnoff shutdown: dit maakt een snelkoppeling van "shutdown" door de naam "turnoff"
+* alias toevoegen? 
+* alias rem signout: hiermee wordt een snelkoppeling met de naam "signout" verwijderd door het commando "logout"
+* alias rem savescrn: hiermee wordt een snelkoppeling met de naam "savescrn" verwijderd met het commando "savescreen"
+* alias rem clearscrn: hiermee wordt een snelkoppeling met de naam "clearscrn" verwijderd door de opdracht "cls"
+* alias rem lckscrnsvr: hiermee wordt een snelkoppeling met de naam "lckscrnsvr" verwijderd met het commando "lockscreen"
+-BODY END-
+
+-COLOR CONFIGURATION-
+alias add (alias) (cmd)=>Green
+alias rem (alias)=>Green
+alias add libs useddeps:=>Yellow
+alias add stdz showtdzone:=>Yellow
+alias add turnoff shutdown:=>Yellow
+alias add ? help:=>Yellow
+alias rem signout:=>Yellow
+alias rem savescrn:=>Yellow
+alias rem clearscrn:=>Yellow
+alias rem lckscrnsvr:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+alias command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

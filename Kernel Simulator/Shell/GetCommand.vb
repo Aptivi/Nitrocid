@@ -364,16 +364,8 @@ Public Module GetCommand
 
                 If requestedCommand <> "md" Then
                     If args.Count - 1 = 0 Then
-                        'TODO: Replace all occurences of the below snippet to only say "/" in directory because "/" also works in Windows
-                        Dim Direct As String
-                        If EnvironmentOSType.Contains("Unix") Then
-                            Direct = CurrDir + "/" + strArgs
-                        Else
-                            Direct = CurrDir + "\" + strArgs
-                        End If
-
                         'Create directory
-                        Directory.CreateDirectory(Direct)
+                        Directory.CreateDirectory($"{CurrDir}/{strArgs}")
                         Done = True
                     End If
                 End If
@@ -408,8 +400,8 @@ Public Module GetCommand
 
                 If requestedCommand <> "read" Then
                     If args.Count - 1 = 0 Then
-                        If CurrDirStructure.Contains(CurrDir + strArgs) Then
-                            ReadContents(CurrDir + strArgs)
+                        If CurrDirStructure.Contains($"{CurrDir}/{strArgs}") Then
+                            ReadContents($"{CurrDir}/{strArgs}")
                         Else
                             Wln(DoTranslation("{0} is not found.", currentLang), "neutralText", strArgs)
                         End If
@@ -446,13 +438,7 @@ Public Module GetCommand
 
                 If requestedCommand <> "rd" Then
                     If args.Count - 1 >= 0 Then
-                        Dim Direct As String
-                        If EnvironmentOSType.Contains("Unix") Then
-                            Direct = CurrDir + "/" + strArgs
-                        Else
-                            Direct = CurrDir + "\" + strArgs
-                        End If
-                        Directory.Delete(Direct, True)
+                        Directory.Delete($"{CurrDir}/{strArgs}", True)
                         Done = True
                     End If
                 End If
@@ -558,7 +544,7 @@ Public Module GetCommand
                         If ScrnSvrdb.ContainsKey(strArgs) Then
                             SetDefaultScreensaver(strArgs)
                         Else
-                            If FileIO.FileSystem.FileExists(modPath + strArgs) Then
+                            If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") Then
                                 SetDefaultScreensaver(strArgs)
                             Else
                                 Wln(DoTranslation("Screensaver {0} not found.", currentLang), "neutralText", strArgs)

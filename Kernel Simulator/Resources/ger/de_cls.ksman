@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "cls"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl cls
+
+Zusammenfassung: Sie k??nnen den Bildschirm von Unordnung befreien
+
+Beschreibung
+
+Wenn Sie versuchen, sich auf eine Sache zu konzentrieren, und Sie k??nnen es nicht tun, oder wenn Sie m??chten, dass die pers??nlichen Daten durch ausgeblendete Befehle gedruckt werden, k??nnen Sie den Bildschirm von Unordnung befreien, um den Fokus zu erhalten und die Augen zu entlasten.
+
+Dies ist auch n??tzlich bei der Skripterstellung (noch nicht implementiert)
+
+Befehlsverwendung
+
+* cls
+-BODY END-
+
+-COLOR CONFIGURATION-
+cls=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+cls command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "rd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah rd
+
+Ringkasan: Menghapus direktori dari direktori kerja semasa
+
+Penerangan
+
+Perintah ini membolehkan anda mengeluarkan direktori dari direktori kerja semasa anda. 
+
+Apabila sistem fail sebenar sedang dilaksanakan, ia benar-benar akan mengeluarkan direktori.
+
+Penggunaan perintah
+
+* rd (direktori)
+
+Contoh
+
+* rd boot: Ia membuang direktori boot
+-BODY END-
+
+-COLOR CONFIGURATION-
+rd (directory)=>Green
+rd boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

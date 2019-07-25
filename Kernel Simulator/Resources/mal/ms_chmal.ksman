@@ -1,0 +1,49 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "chmal"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah chmal
+
+Ringkasan: Anda boleh menukar mesej anda hari selepas log masuk
+
+Penerangan
+
+Jika anda tidak suka mesej lalai hari selepas log masuk yang dihasilkan oleh kernel, maka anda boleh menggunakan perintah ini untuk menukar mesej dan menyimpannya secara kekal pada fail konfigurasi.
+
+Ia juga mempunyai sokongan pemegang tempat, seperti jika anda mempunyai ruang letak <shortdate> dan <longtime>, pemegang tempat <shortdate> berubah kepada tarikh sistem semasa dalam bentuk MM / DD / YYYY, dan pemegang tempat <lama> berubah kepada sistem semasa 
+
+Anda boleh melihat ruang letak di bawah:
+
+* <user>: Mendapatkan nama pengguna saat ini (Ex: joe)
+* <shortdate>: Dapat tanggal sistem dalam format MM / DD / YYYY (Contoh: 12/7/2018)
+* <longdate>: Mendapatkan tarikh sistem dalam <DayName>, <MonthName> DD, format YYYY (Contoh: Jumaat, 7 Disember 2018)
+* <shorttime>: Dapat waktu sistem dalam format HH: MM (Keluarkan: 4:30)
+* <longtime>: Dapat waktu sistem dalam format HH: MM: SS AM / PM (Keluarkan: 4:30:10 PM)
+* <timezone>: Mendapatkan zon waktu standard sistem (Contoh: Waktu Standard Mesir)
+* <summertimezone>: Dapat zona waktu penghematan siang hari sistem (Contoh: Waktu Siang Syria)
+
+Penggunaan perintah
+
+* chmal (mesej)
+
+Contoh
+
+* chmal Komputer ini dihidupkan pada (shortdate) (singkat): Ia mengubah MOTD anda selepas log masuk ke mesej yang ditentukan, dengan pemegang tempat yang termasuk dalam mesej.
+* chmal Selamat datang ke kernel, (pengguna)! 
+-BODY END-
+
+-COLOR CONFIGURATION-
+chmal (message)=>Green
+chmal This computer is turned on at (shortdate) (shorttime):=>Yellow
+chmal Welcome to the kernel, (user)! Your system time zone is (timezone):=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chmal command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

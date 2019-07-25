@@ -1,0 +1,79 @@
+(*MAN START*)
+
+-TITLE:P????kaz Shell "setcolors"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+p????kaz setcolors
+
+Souhrn: M????ete nastavit barvy j??dra
+
+Popis
+
+Tento p????kaz umo????uje nastavit barvy textu j??dra, v??etn?? chybov??ho hl????en?? j??dra, vstupn?? zpr??vy, licen??n??ho textu, obecn??ho textu atd. Umo????uje tak?? nastavit barvu pozad?? tak, aby j??dro vypadalo v??ce osobn??.
+
+Tento p????kaz zji????uje barvy z hodnot ConsoleColor enumers ozna??en??ch jako cel?? ????sla. 
+
+* B??l?? = 15
+* Black = 0
+* ??ed?? = 7
+* DarkGray = 8
+* DarkRed = 4
+* ??erven?? = 12
+* DarkYellow = 6
+??lut?? = 14
+* DarkGreen = 2
+* Zelen?? = 10
+* DarkCyan = 3
+* Cyan = 11
+* DarkBlue = 1
+* Modr?? = 9
+* DarkMagenta = 5
+* Magenta = 13
+
+Pokud je v sad??ch barev "def", pak dostane v??choz?? barvu pro zadanou sekci. 
+
+Pokud je v??ak mezi barvami RESET, ka??d?? barva bude resetov??na na v??choz?? nastaven??. 
+
+Pou??it?? p????kaz??
+
+* setcolors (inputColor / def / RESET) (licenceColor / def / RESET) (contKernelErrorColor / def / RESET) (uncontKernelErrorColor / def / RESET) (hostNameShellColor / def / RESET) (userNameShellColor / def / RESET) 
+
+P????klady
+
+setcolors DarkCyan Modr?? DarkRed ??erven?? Cyan DarkCyan def Cyan Cyan DarkCyan
+* setcolors DarkMagenta Magenta DarkRed ??erven?? Magenta DarkMagenta def Magenta Magenta DarkMagenta
+* setcolors DarkYellow ??lut?? DarkRed ??erven?? ??lut?? DarkYellow def ??lut?? ??lut?? DarkYellow
+-BODY END-
+
+-COLOR CONFIGURATION-
+White=>White
+Black=>Black
+Gray=>Gray
+DarkGray=>DarkGray
+DarkRed=>DarkRed
+Red=>Red
+DarkYellow=>DarkYellow
+Yellow=>Yellow
+DarkGreen=>DarkGreen
+Green=>Green
+DarkCyan=>DarkCyan
+Cyan=>Cyan
+DarkBlue=>DarkBlue
+Blue=>Blue
+DarkMagenta=>DarkMagenta
+Magenta=>Magenta
+def=>Gray
+setcolors (inputColor/def/RESET) (licenseColor/def/RESET) (contKernelErrorColor/def/RESET) (uncontKernelErrorColor/def/RESET) (hostNameShellColor/def/RESET) (userNameShellColor/def/RESET) (backgroundColor/def/RESET) (neutralTextColor/def/RESET) (cmdListColor/def/RESET) (cmdDefColor/def/RESET)=>Green
+setcolors DarkCyan Blue DarkRed Red Cyan DarkCyan def Cyan Cyan DarkCyan=>Yellow
+setcolors DarkMagenta Magenta DarkRed Red Magenta DarkMagenta def Magenta Magenta DarkMagenta=>Yellow
+setcolors DarkYellow Yellow DarkRed Red Yellow DarkYellow def Yellow Yellow DarkYellow=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setcolors command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

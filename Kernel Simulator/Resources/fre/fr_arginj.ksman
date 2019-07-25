@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Commande de shell "arginj"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande d'alias
+
+R??sum??: Vous pouvez d??finir les arguments pour lancer au red??marrage.
+
+La description
+
+Si vous devez red??marrer votre noyau pour ex??cuter le d??bogueur ou si vous souhaitez d??sactiver la v??rification du mat??riel pour gagner du temps lors du d??marrage, cette commande est pour vous. 
+
+Vous pouvez utiliser cette commande si vous devez injecter des arguments lorsque vous ??tes sur le noyau. 
+
+Utilisation de la commande
+
+* arginj [Arguments s??par??s par des espaces]
+
+Exemples
+
+* arginj debug: Active le mode d??bogage lors du prochain red??marrage
+* arginj nohwprobe: D??sactive le test du mat??riel au prochain red??marrage
+* arginj quiet nohwprobe: d??sactive les messages du noyau et la v??rification du mat??riel lors du prochain red??marrage
+-BODY END-
+
+-COLOR CONFIGURATION-
+arginj [Arguments separated by spaces]=>Green
+arginj debug:=>Yellow
+arginj nohwprobe:=>Yellow
+arginj quiet nohwprobe:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+arginj command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

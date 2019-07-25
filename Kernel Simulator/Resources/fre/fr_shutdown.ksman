@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "arr??t"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande d'arr??t
+
+R??sum??: ??teint votre ordinateur
+
+La description
+
+Si vous avez termin?? avec tout et que vous ne voulez pas faire autre chose sur votre ordinateur, au lieu de le laisser consommer de l'??nergie et payer plus d'argent au centre de l'??lectricit??, vous devez utiliser cette commande pour ??teindre votre ordinateur et ??conomiser de l'??nergie. 
+
+Utilisation de la commande
+
+* fermer
+-BODY END-
+
+-COLOR CONFIGURATION-
+shutdown=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+shutdown command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

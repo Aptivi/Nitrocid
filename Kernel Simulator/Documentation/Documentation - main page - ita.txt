@@ -1,0 +1,109 @@
+﻿| --------------- + -> Kernel Simulator - Simula il futuro kernel pianificato da noi <- + -------------- - |
+
+INFORMAZIONI: Stai creando una versione Linux di Kernel Simulator in MonoDevelop? In tal caso, installare MonoDevelop e libmono-microsoft-visualbasic10.0-cil. Mentre suggeriamo MonoDevelop, raccomandiamo JetBrains Rider per Linux a 64 bit.
+
+INFORMAZIONI: Questo simulatore del kernel non è una versione finale pianificata di Kernel, poiché era minima.
+
+INFORMAZIONI: Due documentazioni, domande frequenti e risoluzione dei problemi, vengono eliminate perché non vengono aggiornate regolarmente.
+
+Kernel Simulator ti consente di simulare un accesso molto precoce per il nostro futuro Kernel che continuerà a essere sviluppato, anche se abbiamo realizzato la versione PC reale di Kernel.
+
+| --------------- + -> Storia <- + --------------- |
+
+08/25/2019 - 0.0.6.5: risolti i file di dump creati senza estensione, dump e manpage localizzati, versione della lingua aggiornata all'ultimo, risolti alcuni bug sul filesystem, velocità di clock della CPU fissa che si presentava due volte negli ultimi processori (processori che hanno velocità di clock sui loro nomi interni, ad esempio "CPU Intel (R) Core (TM) i7-8700 @ 3.20GHz"), barra di avanzamento fissa dei trasferimenti FTP in modo che utilizzi un nuovo formato, ETA e velocità aggiunti
+07/07/2019 - 0.0.6.4b: ha effettuato una preparazione per 0.0.6.5: download dei simboli di debug all'avvio se non trovato
+06/07/2019 - 0.0.6.4a: Risolto il problema con il test dell'hardware Linux anche se riuscito, Prober RAM fisso che mostra MemTotal: prefisso, messaggio reso su libcpanel-json-xs-perl clear
+28/06/2019 - 0.0.6.4: risolto NullReferenceException durante il cambio di lingua, risolti nuovi casi di documentazione estesa quando si tenta di analizzare una parola vuota che non è all'inizio (si noti che abbiamo ancora problemi di nuova riga nella prima riga), aggiunta Ubuntu tema, rimosso flag inutilizzato, rimosso il requisito aggiuntivo per analizzare i colori all'avvio (rimozione dell'avidità), reso leggibile la dimensione del file FTP leggibile dall'uomo
+26/06/2019 - 0.0.6.3: Risolto il problema con `quiet` che non era completamente silenzioso, Risolti i messaggi che non venivano visualizzati dopo aver effettuato l'accesso (es. Aggiunta di un messaggio utente), Consentito cambiare lingua usando il comando, Risolto il testo di aiuto mostrato dopo aver eseguito` sses` , Aggiunta la lingua ceca
+25/06/2019 - 0.0.6.2b: aggiunto un comando chiamato `sses` per elencare tutte le versioni SSE
+24/06/2019 - 0.0.6.2a: Aggiunto controllo delle istruzioni del processore (attualmente utilizzato all'avvio del kernel per vedere se SSE2 è supportato)
+24/06/2019 - 0.0.6.2: corretto il comando di debug log show non funzionante perché il percorso non è stato trovato (errore di battitura: debugger -> debug), aggiunta una nota nella lista dei comandi del PC sulle ultime versioni di Windows 10, risolto il problema con il kernel di debug non scrivendo quando eseguito con argomento di debug attivo, risolto il log di debug vuoto a ogni riavvio e avvio, permesso di cancellare il comando di debug nel comando usando cdbglog, enumeratori FtpVerify integrati usati, rimuovendo il nostro controllo hash per le versioni precedenti di FluentFTP, migliore esperienza di debug, Il debug ora mostra il numero di riga e il file sorgente se pdb si trova nella stessa cartella, Modding consentito tramite C #
+21/06/2019 - 0.0.6.1: informazioni sulla valuta rimosse che mostrano aiuto (lo riporteranno in seguito), gli utenti sono ora tenuti a inserire la loro chiave API da apilayer.net per convertire le valute (piano di base, consultare http: // currencylayer.com/product, non testato: impossibile pagare per il piano di base)
+19/06/2019 - 0.0.6: Nuova icona, librerie FluentFTP e Newtonsoft.Json aggiornate, Eventi di scrittura rimossi, Accesso riscritto (non tutto, ma riprogettato), corretto il comando chpwd che non cambiava la password se la destinazione non avere password, risolto chpwd che non controlla se un utente normale cambia la password dell'amministratore, fisso utente che non aggiunge utenti senza password, fisso utente che aggiunge utenti con password anche se non corrispondono, cdir rimosso, aggiunta voce di configurazione per il nome dello screensaver, implementato file di debug e dump per errori del kernel, fornito con simboli di debug .pdb per KS, riavvio fisso che non cancella lo schermo, lingue olandese, finlandese, italiana, malese, svedese e turca aggiunte (passa a un font compatibile in console), paesi e valute sono ora elencato quando non si forniscono argomenti sufficienti o si emette "valuta di aiuto", elenco di aiuto fisso non aggiornato per l'aggiornamento di una nuova lingua al riavvio, alias permanenti aggiunti (situati sotto il profilo, aliases.csv), la password è ora nascosta quando si accede a maintai n sicurezza, risolti gli utenti che venivano rimossi dopo ogni riavvio
+13/06/2019 - 0.0.5.14: Sostituito il file system falso con uno reale (accesso ai file), corretto il comando di aiuto "changeir" errato visualizzato invece di "chdir", "cdir" che mostra la directory corrente, è ormai obsoleto, risolto crash durante il riavvio del kernel
+14/04/2019 - 0.0.5.13: Più snellimento da parte di JetBrains ReSharper per VS2017, Implementazione del sondaggio hardware Linux (è necessario installare inxi affinché le sonde HDD funzionino), Requisito .NET aumentato a 4.7, Avviso rimosso sui reindirizzamenti vincolanti in MonoDevelop, Aumentato il requisito della versione VS rispetto a VS2019, rimossa la fastidiosa "violazione delle regole di denominazione" utilizzando l'opzione suggerita
+22/02/2019 - 0.0.5.12: Ora createConf cmdline arg crea config solo se il file di configurazione non viene trovato, Alcuni preparativi per 0.0.6 (solo dimagrimento), Rimossa la GPU e il sondaggio BIOS, Ora la configurazione KS più vecchia ha vinto non può essere aggiornato qui (Soluzione alternativa: è necessario rimuovere il vecchio file di configurazione KS ed eseguire nuovamente l'app), corretto il bug Environment.OS su Windows 10 (10.0) dove restituiva la versione di Windows 8 (6.2), Risolto il problema con i segnaposto che non analizzavano quando si utilizzava il comando showmotd / showmal, Risolto il semplice aiuto che non mostrava mod, Risolti i comandi integrati che non funzionavano dopo aver eseguito comandi mod o comandi alias, Risolto NullReferenceException durante il debug, Elenco alias migliorato, Risolto l'eccezione del testo di stampa messaggio che non si traduce nella lingua corrente, corretto "/" o "\" che compariva prima del nome mod durante il sondaggio di mod e screensaver, rimosso fixup non necessario nella traduzione, corretto più overflow dello stack nella shell FTP, corretta la traduzione del messaggio FTP che traduceva "'help' "come lingua quando ' si suppone che sia un comando, risolto il messaggio di comando non trovato quando non si immette nulla nella shell FTP
+18/02/2019 - 0.0.5.11: Rilevamento GPU e BIOS `` <Obsolete> `, non più chiamate COM durante il sondaggio dell'hardware, rimosso un file inutile con dati del disco rigido, risolta la traduzione di sysinfo quando si visualizza la sezione di configurazione del kernel , Rimosso il rilevamento dello stato da HDD e RAM (Vedi perché su "Storia manuale del simulatore del kernel", sezione "Verità sul rilevamento dello stato"), Risolto il problema con la sezione CHS se il disco rigido aveva il valore del produttore, Risolto il problema con il traduttore che non restituiva l'inglese valore se l'elenco di traduzioni non contiene tale valore, risolto il problema con la proiezione GPU supponendo che Microsoft Basic Display Driver non sia un driver di base, fatto che i salvaschermi venissero rilevati all'avvio, Fix NullReferenceException durante il tentativo di caricare il salvaschermo successivo dopo che si è verificato un errore sul screensaver precedente, Risolto il problema con le informazioni del sistema operativo non tradotte all'avvio di un kernel, Risolto il problema con la configurazione della lingua che non veniva conservata durante l'aggiornamento, le informazioni di debug ora vengono stampate nella finestra di output del debug VS2017 (è comunque necessario attivare deb ugging), reso ricaricabile il comando loadsaver, rimosso comandi inutili e offensivi (eco, panicsim e scelta)
+16/02/2019 - 0.0.5.10: Migliore leggibilità delle pagine del manuale (vbTab è ora filtrato e non causerà problemi), Ora il traduttore stampa le informazioni di debug quando non viene trovata una stringa nell'elenco di traduzione, Hardware Prober: Stop spamming " System .__ ComObject "al debugger per consentire una lettura semplice, Manpage Parser: interrompe il riempimento dei registri di debug con testi" Verifica per ... "inutili ed espande alcuni messaggi di debug, corretta la stringa del BIOS che non viene visualizzata, rimossi i controlli inutili della piattaforma di sospensione, rimosso" nohwprobe "L'argomento del kernel come sondaggio hardware è importante, Rimossi i controlli della piattaforma del fuso orario non necessari, Librerie FluentFTP e Newtonsoft.Json aggiornate alle loro ultime versioni stabili, Nessun duplicato dello stack tranne la parte della password in Accesso, Corretto bug di MAL e MOTD che non si aggiornava tra gli accessi, Risolto bug di sysinfo (le impostazioni del messaggio non vengono stampate), il kernel ora stampa l'ambiente usato all'avvio, al debug e al comando sysinfo, ha reso obsoleti gli eventi di scrittura
+24/12/2018 - 0.0.5.9: Le mod ora verranno arrestate quando si spengono, le mod possono avere il proprio nome e la propria versione, il debugger corretto non si chiude correttamente al riavvio o allo spegnimento, Shell ora non esce più dall'applicazione quando un si verifica un'eccezione, il debug ora è più sensibile (tranne che per ottenere i comandi), ora il debug writer non supporta la scrittura senza nuove righe, puoi finalmente includere spazi nel tuo nome host e nomi host che sono meno di 4 caratteri come "joe" , Comandi obsoleti e inutili obsoleti, Rimossi i controlli extra per i fusi orari IANA che non comportano più il modo di registro, reti di elenchi fissi, Convertitore di valuta aggiunto che utilizza Internet (Se abbiamo aggiunto valori locali, dobbiamo rilasciare più aggiornamenti che richiedono molto tempo , quindi Internet risparmia tempo e aggiornamenti), abbiamo finalmente permesso agli utenti di visualizzare i log di debug usando KS con il debug disattivato, abbiamo migliorato il client FTP, per chi non parla inglese ora può impostare la propria lingua sebbene l'impostazione predefinita sia l'inglese, risolta la voce di aiuto mancante per "lscomp", aggiunte pagine di manuale del kernel, rimosso il supporto di Windows XP, risolto NullReferenceException quando ci sono errori nel tentativo di compilare mod, aggiunto argomento cmdline testMods e altro ...
+01/11/2018 - 0.0.5.8: Rimosso il segnale acustico quando si riavvia e si spegne, Comando "beep" rimosso, Probers (Windows) ora continua anche se falliscono, Lo smaltimento della memoria ora non utilizza più il metodo VB6 di gestione degli errori
+13/10/2018 - 0.0.5.7: Risolto il problema di arresto anomalo all'avvio quando si eseguiva un nome file diverso da "Kernel Simulator.exe", Migliore gestione degli errori per FTP, Aggiunta la stampa della directory corrente in FTP, rimosso il comando "versione", corretto il valore "Quiet Probe" impostato su "Quiet Probe", "sysinfo" espanso, corretto il lettore di configurazione che non si chiudeva all'uscita dal kernel, (Unix) Risolto un bug noto
+12/10/2018 - 0.0.5.6: probers migliorati, elenco dei nomi utente all'accesso, migliore compatibilità con Unix
+22/09/2018 - 0.0.5.5: Config riscritta, alias proibiti, aggiunte voci di aiuto mancanti per "showalise", aggiunti altri segnaposto MOTD e MAL, risolto il messaggio ripetuto dello stato RAM e infine è stato aggiunto un client FTP !
+09/09/2018 - 0.0.5.2: Esecuzione del sondaggio GPU all'avvio, rimozione dell'argomento "gpuprobe", modifica del comportamento di aggiornamento della configurazione
+06/09/2018 - 0.0.5.1: la versione di follow-up ha rimosso il codice inutilizzato, migliorato il comportamento dei registri di debug e migliorata la leggibilità di un messaggio di debug durante il sondaggio delle mod con comandi senza definizioni.
+04/09/2018 - 0.0.5.0: prompt rimossi, sondaggio MAL nome utente fisso, "showaliases" aggiunti, analisi alias fissi, rimosso il requisito di fornire il comando per rimuovere alias e implementazione di comandi creati dall'utente in mod
+16/08/2018 - 0.0.4.12: Sostituito il comando discoteca con uno screensaver. Sembra che 0.0.5 verrà rilasciato perché sembra stabile, ma abbiamo alcune modifiche rimanenti prima della versione finale.
+03/08/2018 - 0.0.4.11: Alias ​​predefiniti rimossi, corretto bug noto che è menzionato.
+02/08/2018 - 0.0.4.10: "sysinfo" fuso con "lsdrivers", definizione della Guida migliorata (dizionario utilizzato per la preparazione al modding), aggiunto "lscomp" che può elencare tutti i computer online e offline solo per nome, aggiunto gestore degli errori per "lsnet" e "lsnettree", risolti errori grammaticali in "lsnet" e "lsnettree", aggiunte mod (comandi non ancora implementati - <modname> .m), salvaschermi aggiunti, cambiato il comportamento di mostrare MOTD, corretto bug dove istanza il controllo dopo il riavvio del kernel direbbe che ha più di un'istanza e che dovrebbe chiudere, e altro ancora.
+21/07/2018 - 0.0.4.9: Migliore gestione degli errori per il comando "unitconv", Aggiunti alias temporanei (non definitivo perché non esiste un comando "showaliases"), risolti alcuni bug, aggiunti fusi orari ("showtdzone" e mostra corrente fuso orario in "showtd"), aggiunto "alias", "chmal" e "showmal", reso MOTD dopo il login personalizzabile, caratteri speciali consentiti su password per garantire sicurezza, Made Kernel Simulator a istanza singola per evitare interferenze e altro ancora.
+17/07/2018 - 0.0.4.7: Migliore gestione degli errori per il comando "ping", messaggio di utilizzo "unitconv" corretto
+16/07/2018 - 0.0.4.6: Rimosso "alimentato" estraneo che si pone come comando rimosso in 0.0.4.5, Preparazione per le sostituzioni personalizzate di 0.0.5
+15/07/2018 - 0.0.4.5: (Ritardato di 2 mesi a causa di un guasto del disco rigido) - Correzione dei bug quando eventuali probers non riuscivano a sondare l'hardware, aggiunti ulteriori dettagli nei probers, Sistema di aiuto migliorato, Correzione dei bug nei prompt dei colori, Prompt deprecated, e altro ancora
+22/05/2018 - 0.0.4.1: Correzione dei bug nella modifica della directory, correzione dei bug in "help chdir", aggiunta alias per la modifica della directory denominata "cd" e aggiornamento della configurazione.
+20/05/2018 - 0.0.4: Modifica del testo di avvio, impostazioni personalizzabili, Temi, Argomenti della riga di comando, Argomento del comando e analisi completa, Sistema di directory effettivo (alfa), più comandi, calcolatrice, debug con traccia stack, log di debug (incompiuto), nessuna perdita di RAM, correzione di bug e altro.
+02/05/2018 - 0.0.3.1: Titolo della shell modificato in preparazione della versione più grande, correzione di bug con rimozione di utenti, correzione di comandi vuoti e aggiunta di controllo dell'amministratore.
+30/04/2018 - 0.0.3: Correzione di bug, sistema di accesso riscritto, comandi aggiunti, argomenti aggiunti, sistema di autorizzazioni aggiunto, colori personalizzati e altro ancora.
+04/11/2018 - 0.0.2.3: Correzione dell'arresto anomalo degli argomenti dopo il riavvio, correzione dei bug e altro.
+09/04/2018 - 0.0.2.2: Correzione del bug per l'elenco di reti in cui i nomi di doppio PC vengono visualizzati in entrambi i modi di elenco, Gestione degli errori nelle reti di elenco.
+04/05/2018 - 0.0.2.1: Correzione del bug per il messaggio "Comando non trovato" e aggiunta verifica dimenticata per root in "chhostname" e "chmotd".
+31/03/2018 - 0.0.2: riprogettazione del codice, più comandi, Internet di base implementato, sistema di argomenti, modifica della password e altre modifiche.
+16/03/2018 - 0.0.1.1: Aggiunto "showmotd", modificato un messaggio e migliorato il controllo dell'overflow dei numeri interi sulla frequenza del segnale acustico.
+22/02/2018 - 0.0.1: Versione iniziale, normalmente, per Windows.
+
+| --------------- + -> Pagine del manuale <- + --------------- |
+
+Documentazione - pagina principale: informazioni su Kernel Simulator, questa pagina
+Documentazione - regole contributive: condizioni per il contributo di Kernel Simulator
+
+| --------------- + -> Crediti <- + --------------- |
+
+EoflaOE: proprietario di Kernel Simulator
+
+Oxygen Team: Creatore dell'icona
+
+| --------------- + -> Librerie open source utilizzate <- + --------------- |
+
+MadMilkman.Ini
+
+Codice sorgente: https://github.com/MarioZ/MadMilkman.Ini
+
+Copyright (c) 2016, Mario Zorica
+
+Licenza (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
+
+Newtonsoft.Json
+
+Codice sorgente: https://github.com/JamesNK/Newtonsoft.Json
+
+Copyright (c) 2007, James Newton-King
+
+Licenza (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+
+FluentFTP
+
+Codice sorgente: https://github.com/robinrodricks/FluentFTP
+
+Copyright (c) 2011-2016, J.P. Trosclair
+
+Copyright (c) 2016-2019, Robin Rodricks
+
+Licenza (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
+
+| --------------- + -> Licenza - GNU GPL <- + --------------- |
+
+    Kernel Simulator - Simula il nostro futuro kernel pianificato
+    Copyright (C) 2018-2019 EoflaOE
+
+    Questo programma è un software gratuito: puoi ridistribuirlo e / o modificarlo
+    secondo i termini della GNU General Public License come pubblicato da
+    la Free Software Foundation, versione 3 della Licenza, oppure
+    (a tua scelta) qualsiasi versione successiva.
+
+    Questo programma è distribuito nella speranza che possa essere utile,
+    ma SENZA ALCUNA GARANZIA; senza nemmeno la garanzia implicita di
+    COMMERCIABILITÀ o IDONEITÀ A UNO SCOPO PARTICOLARE. Vedi il
+    Licenza GNU General Public per maggiori dettagli.
+
+    Dovresti aver ricevuto una copia della GNU General Public License
+    insieme a questo programma. In caso contrario, consultare <https://www.gnu.org/licenses/>.

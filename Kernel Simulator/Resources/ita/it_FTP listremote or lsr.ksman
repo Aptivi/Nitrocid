@@ -1,0 +1,42 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "listremote" o "lsr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+listremote o lsr comando FTP
+
+Riepilogo: elenca i contenuti della cartella corrente o della cartella fornita
+
+Descrizione
+
+?? possibile visualizzare l'elenco dei file e delle sottodirectory contenuti nella directory di lavoro corrente se non sono specificate directory o nella directory specificata, se specificato.
+
+?? inoltre possibile visualizzare l'elenco dei file e delle sottodirectory contenuti nella directory precedente della posizione corrente.
+
+A differenza di listlocal o lsr, ?? necessario connettersi al server per utilizzare questo comando, poich?? elenca le directory nel server, non nel disco rigido locale.
+
+Comando di utilizzo
+
+* listremote / lsr [cartella / ..]
+Esempi
+
+* listremote: elenca i contenuti nella directory di lavoro
+* listremote ..: elenca i contenuti nella precedente directory di lavoro
+* lsr cities: elenca i contenuti della cartella "cities"
+-BODY END-
+
+-COLOR CONFIGURATION-
+listremote/lsr [folder/..]=>Green
+listremote:=>Yellow
+listremote ..:=>Yellow
+lsr cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+listremote or lsr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

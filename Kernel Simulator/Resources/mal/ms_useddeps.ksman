@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "useddeps"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+arahan yang digunakan
+
+Ringkasan: Anda boleh mendapatkan perpustakaan yang digunakan dalam program ini
+
+Penerangan
+
+Simulator Kernel datang dengan perpustakaan untuk pengekodan yang lebih mudah (untuk devs). 
+
+Penggunaan perintah
+
+* menggunakannya
+-BODY END-
+
+-COLOR CONFIGURATION-
+useddeps=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+useddeps command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

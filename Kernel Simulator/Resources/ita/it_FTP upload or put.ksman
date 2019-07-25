@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "upload" o "put"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+carica o metti il ??????comando FTP
+
+Riepilogo: carica il file sul server
+
+Descrizione
+
+Se ?? necessario aggiungere i file locali nella directory di lavoro corrente alla directory corrente del server di lavoro, ?? necessario disporre dei privilegi di amministratore per aggiungere file.
+
+Ad esempio, se aggiungi l'immagine della citt?? di Nuova Delhi utilizzando il formato PNG, devi caricarla sul server affinch?? tutti possano vederla. 
+
+Comando di utilizzo
+
+* upload / put (file)
+
+Esempi
+
+* carica Win10-Oct2018-x64.iso: inserisce "Win10-Oct2018-x64.iso" nella directory corrente del server di lavoro
+* inserisci urls.txt: inserisce "urls.txt" nella directory corrente del server di lavoro
+-BODY END-
+
+-COLOR CONFIGURATION-
+upload/put (file)=>Green
+upload Win10-Oct2018-x64.iso:=>Yellow
+put urls.txt:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+upload or put FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

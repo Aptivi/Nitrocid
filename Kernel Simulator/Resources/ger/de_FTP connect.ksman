@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:FTP Befehl "connect"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl connect FTP
+
+Zusammenfassung: Verbindet Ihren FTP-Client mit einem beliebigen g??ltigen FTP-Server
+
+Beschreibung
+
+Dieser Befehl muss ausgef??hrt werden, bevor interaktive FTP-Serverbefehle wie Download, Upload, CDL, CDR usw. ausgef??hrt werden.
+
+Dieser Befehl ??ffnet eine neue Sitzung, um Ihren FTP-Client mit einem ??ffentlichen und g??ltigen FTP-Server zu verbinden. 
+
+Befehlsverwendung
+
+* verbinden (Adresse)
+Beispiele
+
+* connect ftp://ftp.fabrikam.com: Verbindet Ihren Client mit dem Server "ftp.fabrikam.com"
+* connect ftps: //ftp.contoso.com: Verbindet Ihren Client ??ber SSL mit dem Server "ftp.contoso.com"
+-BODY END-
+
+-COLOR CONFIGURATION-
+connect (address)=>Green
+connect ftp://ftp.fabrikam.com:=>Yellow
+connect ftps://ftp.contoso.com:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+connect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

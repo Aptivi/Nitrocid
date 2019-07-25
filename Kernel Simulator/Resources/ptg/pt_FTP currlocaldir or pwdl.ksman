@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "currlocaldir" ou "pwdl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando de FTP currlocaldir ou pwdl
+
+Resumo: Obt??m seu diret??rio local atual
+
+Descri????o
+
+Este comando de FTP informa qual ?? o diret??rio local que voc?? est?? vendo atualmente.
+
+Uso de comando
+
+* currlocaldir
+* pwdl
+-BODY END-
+
+-COLOR CONFIGURATION-
+currlocaldir=>Green
+pwdl=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+currlocaldir or pwdl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

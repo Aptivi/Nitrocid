@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "debuglog"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+arahan debuglog
+
+Ringkasan: Anda boleh melihat log debugger kernel dari fail bernama kernelDbg.log yang terletak di folder profil pengguna anda
+
+Penerangan
+
+Penonton ini membolehkan anda melihat log debug anda tanpa terlebih dahulu membolehkan mod debugging pada kernel. 
+
+Sebelum ini, arahan ini memerlukan anda supaya debugger diaktifkan di dalam kernel.
+
+Penggunaan perintah
+
+* debuglog
+-BODY END-
+
+-COLOR CONFIGURATION-
+debuglog=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+debuglog command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

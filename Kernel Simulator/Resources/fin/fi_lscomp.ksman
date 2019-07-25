@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "lscomp"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lscomp-komento
+
+Yhteenveto: Voit listata tietokoneita, jopa offline-tietokoneita, ty??ryhmiin ja verkkotunnuksiin
+
+Kuvaus
+
+Jos sinun on lueteltava ty??ryhm??n tai verkkotunnuksen tietokoneita, mukaan lukien offline-tietokone, jos tietokone liittyi verkkotunnukseen, voit k??ytt???? t??t?? komentoa kaikkien tietokoneiden hankkimiseen ilman niiden IP-osoitteita.
+
+Jos kuitenkin tarvitset tietokoneiden luettelon vain, jos he ovat verkossa, ja haluat saada niiden IP-osoitteet, voit etsi?? lsneti?? ja tiedot l??ytyv??t osoitteesta "usermanual lsnet"
+
+Komennon k??ytt??
+
+* lscomp
+-BODY END-
+
+-COLOR CONFIGURATION-
+lscomp=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lscomp command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

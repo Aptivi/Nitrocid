@@ -353,7 +353,7 @@ Public Module UnitConv
 
     End Sub
 
-    Sub CurrencyConvert(ByVal src3UPchars As String, ByVal dest3UPchars As String, ByVal value As Double)
+    <Obsolete> Sub CurrencyConvert(ByVal src3UPchars As String, ByVal dest3UPchars As String, ByVal value As Double)
 
         'Get API key from user
         Dim RateAPIKey As String = ""
@@ -371,7 +371,7 @@ Public Module UnitConv
         'Try to get currency
         Try
             Dim RateResult As String
-            Dim RateURL As String = "https://apilayer.net/api/convert?access_key=" + RateAPIKey + "&from=" + src3UPchars + "&to=" + dest3UPchars + "&amount=" + CStr(value)
+            Dim RateURL As String = $"https://apilayer.net/api/convert?access_key={RateAPIKey}&from={src3UPchars}&to={dest3UPchars}&amount={CStr(value)}"
             Dim RateReq As HttpWebRequest = CType(WebRequest.Create(RateURL), HttpWebRequest)
             Dim RateRes As HttpWebResponse = CType(RateReq.GetResponse(), HttpWebResponse)
             Dim RateStream As New IO.StreamReader(RateRes.GetResponseStream)

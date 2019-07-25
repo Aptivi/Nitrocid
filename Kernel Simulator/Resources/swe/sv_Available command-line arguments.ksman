@@ -1,0 +1,27 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Tillg??ngliga kommandoradsargument
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the command-line arguments that are available in the kernel is put.
+-BODY START-
+Hur k??r jag kommandoradsargument?
+
+Du kan k??ra dessa argument f??r att f?? simulatorn att bete sig annorlunda genom att k??ra Kernel Simulator som nedanst??ende exempel:
+
+- "Kernel Simulator.exe" promptArgs
+- "Kernel Simulator.exe" testMod ModToBeTested.m
+
+Anv??ndbara argument:
+
+1. promptArgs: Tvingar k??rnargumentfr??gan att dyka upp
+2. createConf: Anv??nds i KS Config Tool. 
+3. testMod: Kontrollerar modens integritet genom att kompilera och sedan avslutas
+-BODY END-
+
+-SECTIONS-
+How do I run command-line arguments?=>SE1
+Useful arguments:=>SE1
+-SECTIONS END-

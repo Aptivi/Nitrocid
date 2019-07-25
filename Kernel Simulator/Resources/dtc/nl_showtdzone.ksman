@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell-commando "showtdzone"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+showtdzone-opdracht
+
+Samenvatting: toont de huidige tijd en datum in een andere tijdzone
+
+Omschrijving
+
+Als u wilt weten hoe laat het is in een andere stad of een ander land, kunt u dit hulpmiddel gebruiken om u de huidige tijd en datum in een ander land of een andere stad te vertellen.
+
+Deze opdracht is multi-platform en gebruikt de IANA-tijdzones op Unix-systemen en het Windows-tijdzonesysteem op Windows.
+
+Als u bijvoorbeeld 'Azi?? / Damascus' op de Unix-systemen wilt gebruiken, schrijft u 'showtdzone Asia / Damascus'. 
+
+Commando gebruik
+
+* showtdzone (TimeZone / alles)
+
+Voorbeelden
+
+* showtdzone Egypt Standaardtijd: toont de huidige tijd en datum in Egypte op Windows-systemen
+* showtdzone Asia / Hong_Kong: toont de huidige tijd en datum in Hong Kong op Linux-systemen
+* showtdzone alles: toont alle tijdzones en hun tijden en datums
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtdzone (TimeZone/all)=>Green
+showtdzone Egypt Standard Time:=>Yellow
+showtdzone Asia/Hong_Kong:=>Yellow
+showtdzone all:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtdzone command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

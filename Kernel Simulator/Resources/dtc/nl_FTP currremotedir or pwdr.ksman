@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:FTP-opdracht "currremotedir" of "pwdr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+currremotedir of pwdr FTP-opdracht
+
+Samenvatting: krijgt uw huidige externe map
+
+Omschrijving
+
+Deze FTP-opdracht vertelt u wat de externe map is in de FTP-server waar u momenteel naar kijkt.
+
+Commando gebruik
+
+* currremotedir
+* pwdr
+-BODY END-
+
+-COLOR CONFIGURATION-
+currremotedir=>Green
+pwdr=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+currremotedir or pwdr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Comando shell "alias"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando alias
+
+Riepilogo: ?? possibile impostare un collegamento alternativo al comando se si desidera utilizzare parole pi?? brevi per i comandi lunghi.
+
+Descrizione
+
+Alcuni comandi di questo kernel sono lunghi e alcune persone non scrivono velocemente sui computer. 
+
+?? inoltre possibile utilizzare questo comando se si pianifica di creare script se il file system reale verr?? aggiunto in futuro o se si sta facendo fretta per qualcosa e non si ha il tempo di eseguire il comando lungo.
+
+?? possibile aggiungere o rimuovere l'alias al comando lungo.
+
+Comando di utilizzo
+
+* alias add (alias) (cmd)
+* alias rem (alias)
+
+Esempi
+
+* alias aggiungi libs useddeps: questo creer?? una scorciatoia di "useddeps" con il nome di "libs"
+* alias aggiungi stdz showtdzone: questo creer?? una scorciatoia di "showtdzone" con il nome di "stdz"
+* alias aggiunge shutoff shutdown: questo creer?? una scorciatoia di "shutdown" con il nome di "turnoff"
+* alias aggiungi? 
+* alias rem signout: rimuover?? una scorciatoia chiamata "signout" dal comando "logout"
+* alias rem savescrn: rimuover?? un collegamento denominato "savescrn" dal comando "savescreen"
+* alias rem clearscrn: rimuover?? un collegamento denominato "clearscrn" dal comando "cls"
+* alias rem lckscrnsvr: questo rimuover?? un collegamento denominato "lckscrnsvr" dal comando "lockscreen"
+-BODY END-
+
+-COLOR CONFIGURATION-
+alias add (alias) (cmd)=>Green
+alias rem (alias)=>Green
+alias add libs useddeps:=>Yellow
+alias add stdz showtdzone:=>Yellow
+alias add turnoff shutdown:=>Yellow
+alias add ? help:=>Yellow
+alias rem signout:=>Yellow
+alias rem savescrn:=>Yellow
+alias rem clearscrn:=>Yellow
+alias rem lckscrnsvr:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+alias command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

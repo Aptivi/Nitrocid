@@ -1,0 +1,44 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "chhostname"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl chhostname
+
+Zusammenfassung: Sie k??nnen Ihren Hostnamen in einen anderen Namen ??ndern
+
+Beschreibung
+
+Wenn Sie vorhaben, Ihren Hostnamen in einen anderen Namen zu ??ndern, ist dieser Befehl f??r Sie vorgesehen.
+
+Dieser Befehl dient zum ??ndern Ihres Hostnamens und setzt ihn bei jedem Neustart des Kernels zur??ck. Jetzt wird er in der Konfigurationsdatei gespeichert, sobald Sie Ihren Hostnamen ??ndern.
+
+Diese Version des Kernels erlaubt schlie??lich Hostnamen mit weniger als 4 Zeichen.
+
+Dieser Befehl ist auch n??tzlich, wenn Sie mehrere Computer / Server identifizieren, damit Sie sie nicht vergessen.
+
+Befehlsverwendung
+
+* chhostname (name)
+
+Beispiele
+
+* chhostname joe: ??ndert den Hostnamen in "joe"
+* chhostname comp-1: ??ndert Ihren Hostnamen in "comp-1"
+-BODY END-
+
+-COLOR CONFIGURATION-
+chhostname <name>=>Green
+chhostname joe:=>Yellow
+chhostname comp-1:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chhostname command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

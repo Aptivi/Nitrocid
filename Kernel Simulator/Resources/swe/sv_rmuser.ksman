@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Shell-kommandot "rmuser"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+rmuser kommando
+
+Sammanfattning: Tar bort oinbjudna eller redundanta anv??ndare
+
+Beskrivning
+
+Det h??r kommandot l??ter dig ta bort den oinbjudna eller redundanta anv??ndaren fr??n anv??ndarordlistan som initialiseras i b??rjan av k??rnan. 
+
+Du kan dock inte ta bort din egen anv??ndare som ??r inloggad.
+
+Kommandobruk
+
+* rmuser (Anv??ndarnamn)
+
+exempel
+
+* rmuser joe: Tar bort "joe" fr??n anv??ndarordlistan
+-BODY END-
+
+-COLOR CONFIGURATION-
+rmuser (Username)=>Green
+rmuser joe:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rmuser command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

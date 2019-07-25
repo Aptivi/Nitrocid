@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Comando shell "netinfo"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando netinfo
+
+Resumo: Voc?? pode ver o status detalhado da conex??o de rede
+
+Descri????o
+
+Esse comando permite visualizar os detalhes sobre todos os seus adaptadores sem fio / Ethernet, pacotes, pacotes com erro, etc. As informa????es impressas s??o de diagn??stico, portanto, se voc?? n??o conseguir se conectar ?? Internet, poder?? usar essas informa????es para diagnosticar 
+
+As se????es das informa????es sobre adaptadores:
+
+N??mero do adaptador: informa o n??mero do adaptador atual do qual estamos recebendo informa????es
+Nome do adaptador: informa o nome do adaptador atual
+Unidade m??xima de transmiss??o: informa a unidade m??xima de transmiss??o do adaptador
+DHCP ativado: informa se o DHCP est?? ativado ou se usa o endere??o IP est??tico para configura????o de rede
+Pacotes n??o unicast: Isso informa os pacotes que n??o s??o unicast
+Pacotes Unicast: Isso informa os pacotes que s??o unicast
+Erro de entrada / sa??da de pacotes: isso informa os pacotes que possuem erros
+
+Uso de comando
+
+* netinfo
+-BODY END-
+
+-COLOR CONFIGURATION-
+netinfo=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+netinfo command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

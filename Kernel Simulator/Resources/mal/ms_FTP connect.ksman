@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Perintah FTP "menyambung"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+sambungkan arahan FTP
+
+Ringkasan: Sambungkan klien FTP anda kepada mana-mana pelayan FTP yang sah
+
+Penerangan
+
+Perintah ini mesti dijalankan sebelum menjalankan sebarang arahan pelayan FTP interaktif, seperti muat turun, muat naik, cdl, cdr, dll.
+
+Perintah ini membuka sesi baru untuk menyambungkan klien FTP anda kepada mana-mana pelayan FTP yang terbuka kepada umum, dan sah. 
+
+Penggunaan perintah
+
+* sambung (alamat)
+Contoh
+
+* sambungkan ftp://ftp.fabrikam.com: Sambungkan klien anda ke pelayan bernama "ftp.fabrikam.com"
+* sambung ftps: //ftp.contoso.com: Sambungkan klien anda menggunakan SSL ke pelayan bernama "ftp.contoso.com"
+-BODY END-
+
+-COLOR CONFIGURATION-
+connect (address)=>Green
+connect ftp://ftp.fabrikam.com:=>Yellow
+connect ftps://ftp.contoso.com:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+connect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

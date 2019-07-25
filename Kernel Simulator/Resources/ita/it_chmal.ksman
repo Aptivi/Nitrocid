@@ -1,0 +1,49 @@
+(*MAN START*)
+
+-TITLE:Comando di shell "chmal"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Chmal comando
+
+Riepilogo: ?? possibile modificare il messaggio del giorno dopo il log-in
+
+Descrizione
+
+Se non ti piace il messaggio predefinito del giorno dopo il log-in che viene generato dal kernel, puoi usare questo comando per cambiare il messaggio e memorizzarlo in modo permanente sul file di configurazione.
+
+Ha anche il supporto segnaposto, come se si dispone di segnaposti <longdate> e <longtime>, il segnaposto <shortdate> viene modificato nella data di sistema corrente nel modulo MM / DD / YYYY e il segnaposto <longtime> viene modificato nel sistema corrente 
+
+?? possibile visualizzare i segnaposto di seguito:
+
+* <utente>: Ottiene il nome utente corrente (es: joe)
+* <shortdate>: Ottiene la data di sistema nel formato MM / GG / AAAA (Es: 12/7/2018)
+* <longdate>: Ottiene la data di sistema in formato <DayName>, <MonthName> DD, YYYY (Es: venerd?? 7 dicembre 2018)
+* <breve tempo>: Ottiene l'ora del sistema in formato HH: MM (Es: 4:30)
+* <longtime>: Ottiene l'ora del sistema in formato HH: MM: SS AM / PM (Es: 4:30:10 PM)
+* <timezone>: Ottiene il fuso orario standard del sistema (Es: Tempo standard Egitto)
+* <summertimezone>: Ottiene l'ora legale del sistema (Es: Ora legale della Siria)
+
+Comando di utilizzo
+
+* chmal (messaggio)
+
+Esempi
+
+* chmal Questo computer ?? acceso a (shortdate) (shorttime): Cambia il MOTD dopo l'accesso al messaggio specificato, con i segnaposto inclusi nel messaggio.
+* chmal Benvenuto nel kernel, (utente)! 
+-BODY END-
+
+-COLOR CONFIGURATION-
+chmal (message)=>Green
+chmal This computer is turned on at (shortdate) (shorttime):=>Yellow
+chmal Welcome to the kernel, (user)! Your system time zone is (timezone):=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chmal command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

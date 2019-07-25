@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell command "logout"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+uitlogcommando
+
+Samenvatting: u kunt uitloggen bij uw account.
+
+Omschrijving
+
+Als er een wijziging is waarvoor u zich moet afmelden en moet aanmelden om de wijzigingen door te voeren, moet u zich afmelden en weer aanmelden.
+
+Met deze opdracht kunt u uw account verlaten en u aanmelden als iemand anders. 
+
+Commando gebruik
+
+* uitloggen
+-BODY END-
+
+-COLOR CONFIGURATION-
+logout=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+logout command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

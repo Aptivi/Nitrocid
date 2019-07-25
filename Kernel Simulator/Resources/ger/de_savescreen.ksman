@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell Befehl "savescreen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl savescreen
+
+Zusammenfassung: Startet Ihren aktuellen Bildschirmschoner
+
+Beschreibung
+
+Dieser Befehl sch??tzt Ihren LCD-Bildschirm vor dem Einbrennen und zeigt Ihnen den aktuellen Bildschirmschoner, den Sie oder der Kernel eingestellt haben. 
+
+Befehlsverwendung
+
+* Bildschirmschoner
+-BODY END-
+
+-COLOR CONFIGURATION-
+savescreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+savescreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

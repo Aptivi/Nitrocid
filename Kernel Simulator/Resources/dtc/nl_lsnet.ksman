@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-opdracht "lsnet"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lsnet commando
+
+Samenvatting: u kunt computers die online zijn en hun IP-adressen vermelden in domeinen of werkgroepen
+
+Omschrijving
+
+Als u alle computers wilt ophalen die lid zijn geworden van de werkgroep of het domein, kunt u deze opdracht gebruiken, maar u moet eerst toestemming vragen als u zich op openbare plaatsen bevindt, zoals op kantoor, op school, in een caf??, enzovoort. 
+
+Deze opdracht is ook handig als u computers opslaat in uw kleine netwerk of uw huis met meerdere computers met Windows, ongeacht de versie van Windows die wordt uitgevoerd.
+
+Commando gebruik
+
+* lsnet
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnet=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnet command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

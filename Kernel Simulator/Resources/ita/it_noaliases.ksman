@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "noalias"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando noaliases
+
+Riepilogo: ?? possibile visualizzare gli alias vietati.
+
+Descrizione
+
+Questo comando ti consente di visualizzare i comandi per i quali non dovresti creare un alias, perch?? ?? vietato creare problemi, come l'alias del comando "alias".
+
+Utilizzo del comando
+
+* noalias
+-BODY END-
+
+-COLOR CONFIGURATION-
+noaliases=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+noaliases command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

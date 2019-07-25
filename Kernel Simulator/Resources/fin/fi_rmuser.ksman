@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "rmuser"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+rmuser-komento
+
+Yhteenveto: Poistaa kutsumattomat tai tarpeettomat k??ytt??j??t
+
+Kuvaus
+
+T??m??n komennon avulla voit poistaa kutsumattoman tai redundantin k??ytt??j??n k??ytt??j??n sanakirjasta, joka on alustettu ytimen alussa. 
+
+Et kuitenkaan voi poistaa omaa k??ytt??j????, joka on kirjautunut sis????n.
+
+Komennon k??ytt??
+
+* rmuser (k??ytt??j??tunnus)
+
+esimerkit
+
+* rmuser joe: Poistaa "joe" k??ytt??j??n sanakirjasta
+-BODY END-
+
+-COLOR CONFIGURATION-
+rmuser (Username)=>Green
+rmuser joe:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rmuser command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

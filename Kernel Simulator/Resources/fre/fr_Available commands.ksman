@@ -1,0 +1,85 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Commandes disponibles
+-REVISION:0.0.1.3
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the commands that are available in the kernel is put.
+-BODY START-
+Commandes administratives:
+
+1. adduser: Vous pouvez ajouter le nom de l'utilisateur ?? tout moment, avec le mot de passe si n??cessaire. 
+2. perm: vous pouvez g??rer les param??tres d'autorisation de l'utilisateur. 
+3. arginj: Vous pouvez injecter des arguments dans le noyau pour que, lors du red??marrage, les arguments inject??s soient ex??cut??s. 
+4. chhostname: Vous pouvez changer le nom d'h??te de votre noyau pour personnaliser les ??l??ments. 
+5. chmotd: vous pouvez modifier votre message du jour et inclure vos propres espaces r??serv??s, y compris <utilisateur>, qui correspond ?? nom d'utilisateur, <shortdate> pour la date courte au format "MM / JJ / AAAA", <longdate> 
+6. chusrname: vous pouvez modifier votre nom d'utilisateur ou le nom d'une autre personne ?? l'aide de "chusrname <oldName> <newName>", mais si vous changez votre propre nom d'utilisateur en nouveau nom, vous serez imm??diatement d??connect??.
+7. rmuser: vous pouvez supprimer des noms d'utilisateur, mais vous ne pouvez pas supprimer les v??tres si l'utilisateur sp??cifi?? ne souhaite pas utiliser l'ordinateur, s'il n'est pas invit?? ou s'il est redondant. 
+8. netinfo: Vous pouvez v??rifier l?????tat de votre r??seau et les informations de votre interface r??seau, y compris la prise en charge WiFi. 
+9. debuglog: vous pouvez consulter vos journaux de d??bogage sans acc??der ?? l???explorateur de fichiers situ?? dans votre profil d???utilisateur et ouvrir l?????diteur / afficheur de texte dans ??kernelDbg.log??. 
+10. reloadconfig: vous pouvez recharger le fichier de configuration pour lire les nouvelles modifications, mais les modifications seront appliqu??es apr??s le red??marrage du noyau.
+11. alias: vous pouvez g??rer vos alias en commandes afin de ne pas avoir ?? taper de longues commandes ?? l'aide de "alias <add / rem> <nom_alias> <Commande>".
+12. chmal: Vous pouvez changer votre message du lendemain de la connexion, et il prend en charge les m??mes espaces r??serv??s, et il a le m??me argument de "chmal <N'importe quoi>."
+13. setsaver: Vous pouvez d??finir votre ??cran de veille de votre choix ou votre ??cran personnalis?? comme ??cran par d??faut. Si vous envisagez d???utiliser des ??conomiseurs d?????cran personnalis??s, vous devez nommer votre extension comme <ScreensaverName> SS.m afin qu???elle soit reconnue comme ??conomiseur d?????cran. 
+14. reloadsaver: Vous pouvez recharger votre fichier d???extension d?????conomiseur d?????cran ?? partir du r??pertoire KSMods. 
+15. cdbglog: vous pouvez effacer le journal de d??bogage, en remettant la taille ?? 0
+
+Commandes utilisateur normales:
+
+1. calc: Vous pouvez calculer vos expressions, comme ajouter des nombres, les soustraire, les multiplier ou les diviser. 
+2. chdir: Vous pouvez changer votre r??pertoire de travail en utilisant "chdir <r??pertoire>"
+3. chpwd: Vous pouvez changer votre mot de passe ou le mot de passe de quelqu'un d'autre. 
+4. cls: Pour effacer votre ??cran du texte.
+5. ftp: Vous pouvez transf??rer des fichiers de / vers un serveur FTP et interagir avec les serveurs.
+6. list: Vous pouvez lister votre r??pertoire de travail actuel ou un autre r??pertoire en utilisant "list [R??pertoire]".
+7. lscomp: Vous pouvez lister tous les ordinateurs en fonctionnement, m??me hors ligne si vous ??tes sur le domaine sur lequel certains ordinateurs sont ??teints (??cole, grand bureau, etc.). Cela peut ??galement ??tre utilis?? sur des cubicules, mais 
+8. lsnet: vous pouvez r??pertorier tous les ordinateurs en activit??, mais en omettant les ordinateurs hors ligne.
+9. lsnettree: Vous pouvez r??pertorier tous les ordinateurs en activit??, mais en omettant les ordinateurs hors ligne sous forme d'arborescence.
+10. lockscreen: Vous pouvez verrouiller votre ??cran et afficher votre ??cran de veille par d??faut d??fini par vous ou par le noyau. 
+11. D??connexion: Vous pouvez vous d??connecter de votre compte lorsque vous avez fini de travailler.
+12. md: Vous pouvez cr??er votre r??pertoire dans le r??pertoire racine en utilisant "md <n'importe>".
+13. noaliases: Vous pouvez voir la liste des alias interdits d??finis par le noyau. 
+14. ping: vous pouvez v??rifier l'adresse / le serveur pour voir s'il est en ligne, en attente ou hors ligne ?? l'aide de "ping <Adresse> [repeatTimes]"
+15. rd: Vous pouvez supprimer votre r??pertoire fait en utilisant "rd <n'importe>>", mais si vous essayez de supprimer des dossiers importants, ils sont recr????s ?? chaque red??marrage et ce comportement sera modifi?? lorsque nous impl??menterons un syst??me de fichiers r??el.
+16. read: Vous pouvez voir le contenu d'un fichier en "read <file>", un peu comme "cat <chemin / vers / fichier>".
+17. red??marrage: vous pouvez red??marrer votre noyau si vous avez apport?? des modifications de configuration manuelle ou des outils pour les refl??ter, ou si vous souhaitez voir ?? nouveau la s??quence de d??marrage.
+18. savescreen: Vous pouvez afficher l?????conomiseur d?????cran pour ??viter les br??lures d?????cran.
+19. scical: Vous pouvez calculer vos expressions, mais cette calculatrice est la calculatrice scientifique et sera fusionn??e avec "calc" ?? l'avenir. 
+20. setcolors: vous pouvez d??finir les couleurs du noyau avec "setcolors <inputColor / def> <licenseColor / def> <contKernelErrorColor / def> <uncontKernelErrorColor / def> <hostNameShellColor / def> <userNameShellColor / def> <backgroundColor / def> <backgroundColor 
+21. setthemes: Vous pouvez d??finir le jeu de couleurs de votre noyau, appel?? th??mes, en utilisant "setthemes <theme>"
+22. showmotd: vous pouvez afficher vos modifications dans le message du jour
+23. showtd: Vous pouvez afficher votre heure et date actuelles, ainsi que votre fuseau horaire.
+24. showtdzone: vous pouvez afficher l???heure et la date du fuseau horaire ou toutes les dates et heures des fuseaux horaires de l???heure et de la date actuelles en utilisant "showtdzone <zone>" ou "showtdzone <tout>".
+25. showmal: vous pouvez afficher vos modifications dans le message du jour apr??s la connexion.
+26. shutdown: vous pouvez ??teindre votre ordinateur (le noyau, pas le PC actuel)
+27. sysinfo: Vous pouvez afficher les informations de votre syst??me, ainsi que les param??tres du noyau.
+28. unitconv: Vous pouvez convertir l'unit?? en une unit?? quelconque, si la source et la cible se supportent, comme cm -> m, en utilisant "unitconv <source> <cible> <valeur>."
+29. useddeps: Vous pouvez afficher les biblioth??ques Open Source utilis??es
+30. manuel: Vous pouvez obtenir des informations sur tout, ou obtenir les pages de manuel disponibles en ??crivant uniquement la commande. 
+
+Pour plus d'informations sur chaque commande, consultez "usermanual <commande>"
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser:=>Red
+perm:=>Red
+arginj:=>Red
+chhostname:=>Red
+chmotd:=>Red
+chusrname:=>Red
+rmuser:=>Red
+netinfo:=>Red
+debuglog:=>Red
+reloadconfig:=>Red
+alias:=>Red
+chmal:=>Red
+setsaver:=>Red
+loadsaver:=>Red
+cdbglog:=>Red
+-COLOR CONFIG END-
+
+-SECTIONS-
+Administrative commands:=>SE1
+Normal user commands:=>SE1
+-SECTIONS END-

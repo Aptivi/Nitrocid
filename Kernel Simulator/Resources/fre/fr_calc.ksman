@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "calc"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande calc
+
+R??sum??: Vous pouvez calculer des expressions
+
+La description
+
+Si vous avez besoin d'aide pour calculer des expressions lors de la multiplication et de la division de grands nombres, ou si vous devez calculer des expressions plus rapidement, cette commande est pour vous.
+
+Il utilise l'unit?? centrale de traitement (CPU) pour traiter et ??valuer les expressions et l'imprime ?? l'??cran une fois l'op??ration termin??e. 
+
+Il d??termine automatiquement s'il s'agit d'un entier ou d'un double en examinant les expressions avec des d??cimales. Si l'un des nombres comporte un point d??cimal, il bascule la sortie de l'expression en double, sinon ce sera un entier.
+
+Si vous essayez de d??passer le d??passement alors qu'il n'y a pas de point d??cimal dans votre expression, cela entra??nera une erreur de d??passement d'entier. 
+
+Vous pouvez ??galement ajouter des parenth??ses pour que l'expression ?? l'int??rieur de celle-ci soit prioritaire, car elle est calcul??e dans un formulaire PEMDAS: parenth??ses, exposants, multiplication, division, addition et soustraction.
+
+Utilisation de la commande
+
+* calc (nombre) (| - | * | / |%) (nombre) ...
+* calc ((nombre) (| - | * | / |%) (nombre) ...) (| - | * | / |%) (nombre) ...
+
+Exemples
+
+* calc 32 * 2048: Ceci multipliera 32 par 2048, et le r??sultat est 65536
+* calc (128.50 - 42.25) / 2: Ceci ??valuera les expressions entre parenth??ses, puis divisera le r??sultat par 2 et donnera 43,13.
+* calc 128.50 - 42.25 / 2: Cependant, si vous avez essay?? l'exemple ci-dessus sans parenth??ses, la valeur 128.50 - 42.25 n'est plus une priorit?? absolue et le r??sultat est 107.38.
+* calc ((48.22 / 3.88) * (68.88 95.22)) 9 - .41: Ceci ??valuera cette expression et le r??sultat est 2048
+* calc 3 * 5 * 5 * 3: Ceci va multiplier 3 par 5 sur la premi??re partie, et multiplier 5 par 3 sur la seconde partie, puis les multiplier, et le r??sultat est 225
+* calc (1024 * 1024 * 1024) * 2.0: Ceci multipliera 1024 par 1024 par 1024, puis le multiplie par 2 ?? l'aide du processeur ?? virgule flottante. Le r??sultat est 2147483648.
+-BODY END-
+
+-COLOR CONFIGURATION-
+calc (number) (+|-|*|/|%) (number) ...=>Green
+calc ((number) (+|-|*|/|%) (number) ...) (+|-|*|/|%) (number) ...=>Green
+calc 32 * 2048:=>Yellow
+calc (128.50 - 42.25) / 2:=>Yellow
+calc 128.50 - 42.25 / 2:=>Yellow
+calc ((48.22 / 3.88) * (68.88 + 95.22)) + 9 - .41:=>Yellow
+calc 3*5 * 5*3:=>Yellow
+calc (1024*1024*1024) * 2.0:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+calc command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

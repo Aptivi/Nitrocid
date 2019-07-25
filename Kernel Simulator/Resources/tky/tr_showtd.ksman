@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "showtd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+showtd komutu
+
+??zet: Ge??erli saati ve tarihi g??sterir
+
+A????klama
+
+Saatin arka arkaya gitmeden saatin ka?? oldu??unu bilmek istiyorsan??z, saat dilimi yan?? s??ra ge??erli saati ve tarihi g??stermek i??in bu komutu kullanabilirsiniz.
+
+Komut kullan??m??
+
+* showtd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

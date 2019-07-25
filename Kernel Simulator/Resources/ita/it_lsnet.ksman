@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "lsnet"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando lsnet
+
+Riepilogo: ?? possibile elencare i computer online e i relativi indirizzi IP in domini o gruppi di lavoro
+
+Descrizione
+
+Se vuoi ottenere tutti i computer che si sono uniti al gruppo di lavoro o al dominio, puoi utilizzare questo comando, ma devi prima chiedere l'autorizzazione se ti trovi in ??luoghi pubblici come ufficio, scuola, bar, ecc., Altrimenti 
+
+Questo comando ?? utile anche se stai elencando i computer nella tua piccola rete o la tua casa che ha pi?? computer che eseguono Windows, indipendentemente dalla versione di Windows in esecuzione.
+
+Utilizzo del comando
+
+* lsnet
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnet=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnet command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

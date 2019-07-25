@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "adduser"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+adduser-kommando
+
+Sammanfattning: Du kan l??gga till anv??ndarens namn n??r du beh??ver, med l??senordet om det beh??vs.
+
+Beskrivning
+
+Om du beh??ver l??gga till en person som vill anv??nda k??rnan kan du l??gga till anv??ndare f??r dem och l??ta dem ange l??senordet om de beh??ver. 
+
+Men om du beh??ver l??gga till en person som har administrat??rsr??ttigheter, b??r du ange beh??righeten f??r anv??ndaren att till??ta administrat??rsr??ttigheter. 
+
+F??r mer information om hur du ska st??lla in beh??righet f??r anv??ndare b??r du titta p?? "usermanual perm."
+
+Kommandobruk
+
+* adduser (anv??ndarnamn)
+* adduser (anv??ndarnamn) [l??senord] [bekr??fta]
+
+exempel
+
+* adduser joe: Detta skapar ett nytt konto med namnet "joe"
+* adduser test pass1234 pass1234: Detta skapar ett nytt konto med namnet "test" och l??senordet f??r "pass1234"
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser (userName)=>Green
+adduser (userName) [password] [confirm]=>Green
+adduser joe:=>Yellow
+adduser test pass1234 pass1234:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+adduser command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

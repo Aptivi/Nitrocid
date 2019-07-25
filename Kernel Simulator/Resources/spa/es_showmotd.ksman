@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "showmotd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando showmotd
+
+Resumen: Muestra tu mensaje del d??a.
+
+Descripci??n
+
+Este comando muestra su mensaje del d??a anterior al inicio de sesi??n y analiza los marcadores de posici??n en el MOTD si se encuentran.
+
+Uso del comando
+
+* showmotd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showmotd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showmotd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "rd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Comando rd
+
+Resumo: Remove o diret??rio do diret??rio de trabalho atual
+
+Descri????o
+
+Esse comando permite remover um diret??rio do seu diret??rio de trabalho atual. 
+
+Quando o sistema de arquivos real estiver sendo implementado, ele realmente remover?? os diret??rios.
+
+Uso de comando
+
+* rd (diret??rio)
+
+Exemplos
+
+* rd boot: Remove o diret??rio de inicializa????o
+-BODY END-
+
+-COLOR CONFIGURATION-
+rd (directory)=>Green
+rd boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -19,7 +19,6 @@
 Imports System.IO
 Imports System.Reflection
 Imports System.Threading
-Imports System.Runtime.InteropServices
 
 Public Module KernelTools
 
@@ -70,7 +69,7 @@ Public Module KernelTools
 
             'Parse variables ({0}, {1}, ...) in the "Description" string variable
             For v As Integer = 0 To Variables.Length - 1
-                Description = Description.Replace("{" + CStr(v) + "}", Variables(v))
+                Description = Description.Replace($"{{{CStr(v)}}}", Variables(v))
             Next
 
             'Fire an event
@@ -127,61 +126,61 @@ Public Module KernelTools
     'TODO: Dumps are not localized
     Sub GeneratePanicDump(ByVal Description As String, ByVal ErrorType As Char, ByVal Exc As Exception)
         'Open a file stream for dump
-        Dim Dump As New StreamWriter(paths("Home") + "/dmp_" + FormatDateTime(Date.Now, DateFormat.ShortDate).Replace("/", "-") + "_" + FormatDateTime(Date.Now, DateFormat.LongTime).Replace(":", "-"))
-        Wdbg("Opened file stream in home directory, saved as dmp_{0}_{1}.txt", FormatDateTime(Date.Now, DateFormat.ShortDate).Replace("/", "-") + "_" + FormatDateTime(Date.Now, DateFormat.LongTime).Replace(":", "-"))
+        Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{FormatDateTime(Date.Now, DateFormat.ShortDate).Replace("/", "-")}_{FormatDateTime(Date.Now, DateFormat.LongTime).Replace(":", "-")}.txt")
+        Wdbg("Opened file stream in home directory, saved as dmp_{0}_{1}.txt", $"{FormatDateTime(Date.Now, DateFormat.ShortDate).Replace("/", "-")}_{FormatDateTime(Date.Now, DateFormat.LongTime).Replace(":", "-")}")
 
         'Write info (Header)
         Dump.AutoFlush = True
-        Dump.WriteLine("----------------------------- Kernel panic dump -----------------------------" + vbNewLine + vbNewLine +
-                       ">> Panic information <<" + vbNewLine +
-                       "> Description: {0}" + vbNewLine +
-                       "> Error type: {1}" + vbNewLine +
-                       "> Date and Time: {2}" + vbNewLine, Description, ErrorType, FormatDateTime(Date.Now, DateFormat.GeneralDate))
+        Dump.WriteLine(DoTranslation("----------------------------- Kernel panic dump -----------------------------", currentLang) + vbNewLine + vbNewLine +
+                       DoTranslation(">> Panic information <<", currentLang) + vbNewLine +
+                       DoTranslation("> Description: {0}", currentLang) + vbNewLine +
+                       DoTranslation("> Error type: {1}", currentLang) + vbNewLine +
+                       DoTranslation("> Date and Time: {2}", currentLang) + vbNewLine, Description, ErrorType, FormatDateTime(Date.Now, DateFormat.GeneralDate))
 
         'Write Info (Exception)
         If Not IsNothing(Exc) Then
-            Dump.WriteLine(">> Exception information <<" + vbNewLine +
-                           "> Exception: {0}" + vbNewLine +
-                           "> Description: {1}" + vbNewLine +
-                           "> HRESULT: {2}" + vbNewLine +
-                           "> Source: {3}" + vbNewLine + vbNewLine +
-                           "> Stack trace <" + vbNewLine + vbNewLine +
+            Dim Count As Integer = 1
+            Dump.WriteLine(DoTranslation(">> Exception information <<", currentLang) + vbNewLine +
+                           DoTranslation("> Exception: {0}", currentLang) + vbNewLine +
+                           DoTranslation("> Description: {1}", currentLang) + vbNewLine +
+                           DoTranslation("> HRESULT: {2}", currentLang) + vbNewLine +
+                           DoTranslation("> Source: {3}", currentLang) + vbNewLine + vbNewLine +
+                           DoTranslation("> Stack trace <", currentLang) + vbNewLine + vbNewLine +
                            Exc.StackTrace + vbNewLine + vbNewLine +
-                           ">> Inner exception 1 information <<", Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), Exc.Message, Exc.HResult, Exc.Source)
+                           DoTranslation(">> Inner exception {0} information <<", currentLang), Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), Exc.Message, Exc.HResult, Exc.Source)
 
             'Write info (Inner exceptions)
-            Dim Count As Integer = 1
             Dim InnerExc As Exception = Exc.InnerException
             While Not InnerExc Is Nothing
                 Count += 1
-                Dump.WriteLine("> Exception: {0}" + vbNewLine +
-                               "> Description: {1}" + vbNewLine +
-                               "> HRESULT: {2}" + vbNewLine +
-                               "> Source: {3}" + vbNewLine + vbNewLine +
-                               "> Stack trace <" + vbNewLine + vbNewLine +
+                Dump.WriteLine(DoTranslation("> Exception: {0}", currentLang) + vbNewLine +
+                               DoTranslation("> Description: {1}", currentLang) + vbNewLine +
+                               DoTranslation("> HRESULT: {2}", currentLang) + vbNewLine +
+                               DoTranslation("> Source: {3}", currentLang) + vbNewLine + vbNewLine +
+                               DoTranslation("> Stack trace <", currentLang) + vbNewLine + vbNewLine +
                                InnerExc.StackTrace + vbNewLine, InnerExc.ToString.Substring(0, InnerExc.ToString.IndexOf(":")), InnerExc.Message, InnerExc.HResult, InnerExc.Source)
                 InnerExc = InnerExc.InnerException
                 If Not InnerExc Is Nothing Then
-                    Dump.WriteLine(">> Inner exception {0} information <<", Count)
+                    Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<", currentLang), Count)
                 Else
-                    Dump.WriteLine(">> Exception {0} is the root cause <<" + vbNewLine, Count)
+                    Dump.WriteLine(DoTranslation(">> Exception {0} is the root cause <<", currentLang) + vbNewLine, Count)
                 End If
             End While
         Else
-            Dump.WriteLine(">> No exception; might be a kernel error. <<" + vbNewLine)
+            Dump.WriteLine(DoTranslation(">> No exception; might be a kernel error. <<", currentLang) + vbNewLine)
         End If
 
         'Write info (Frames)
-        Dump.WriteLine(">> Frames, files, lines, and columns <<")
+        Dump.WriteLine(DoTranslation(">> Frames, files, lines, and columns <<", currentLang))
         Try
             Dim ExcTrace As New StackTrace(Exc, True)
             Dim FrameNo As Integer = 1
             For Each Frame As StackFrame In ExcTrace.GetFrames
-                Dump.WriteLine("> Frame {0}: File: {1} | Line: {2} | Column: {3}", FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
+                Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}", currentLang), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
                 FrameNo += 1
             Next
         Catch ex As Exception
-            Dump.WriteLine("> There is an error when trying to get frame information. {0}: {1}", ex.ToString.Substring(0, ex.ToString.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
+            Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}", currentLang), ex.ToString.Substring(0, ex.ToString.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
         End Try
 
         'Close stream
@@ -267,8 +266,8 @@ Public Module KernelTools
         InitHelp()
 
         'We need to create a file so InitAliases() won't give out an error
-        If Not File.Exists(paths("Home") + "/aliases.csv") Then
-            Dim fstream As FileStream = File.Create(paths("Home") + "/aliases.csv")
+        If Not File.Exists($"{paths("Home")}/aliases.csv") Then
+            Dim fstream As FileStream = File.Create($"{paths("Home")}/aliases.csv")
             fstream.Close()
         End If
 
@@ -313,19 +312,16 @@ Public Module KernelTools
 
         'Initialize date and files
         If Not TimeDateIsSet Then
-            InitializeTimeDate()
+            InitTimeDate()
             TimeDateIsSet = True
         End If
-        Init()
+        InitFS()
 
         'Parse current theme string
         ParseCurrentTheme()
 
         'Initialize manual pages
-        For Each titleMan As String In AvailablePages
-            Pages.Add(titleMan, New Manual(titleMan))
-            CheckManual(titleMan)
-        Next
+        InitMan()
     End Sub
 
     Sub InitPaths()
@@ -339,7 +335,7 @@ Public Module KernelTools
             paths.Add("Mods", Environ("USERPROFILE") + "\KSMods\")
             paths.Add("Configuration", Environ("USERPROFILE") + "\kernelConfig.ini")
             paths.Add("Debugging", Environ("USERPROFILE") + "\kernelDbg.log")
-            paths.Add("Aliases", Environ("HOME") + "\aliases.csv")
+            paths.Add("Aliases", Environ("USERPROFILE") + "\aliases.csv")
             paths.Add("Home", Environ("USERPROFILE"))
         End If
     End Sub

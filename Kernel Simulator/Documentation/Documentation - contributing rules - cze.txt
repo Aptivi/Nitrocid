@@ -1,0 +1,51 @@
+﻿| --------------- + -> Obecné <- + --------------- |
+
+- Pokud chcete přispět do jádra, musíte dodržovat níže uvedené podmínky:
+
+1. Pokud si přejete modifikovat / překódovat jádro jádra, ujistěte se, že změny zapisujete správně a pečlivě a ujistěte se, že nepoškozujete funkce jádra jádra.
+2. Pokud chcete přidat / upravit / odebrat / překódovat některé požadované funkce všude, zapište změny pečlivě.
+3. Stejně jako každý jiný vývojář, který chce přispět do jádra, musí být změny testovány. Nechceme výsledky, pouze testujeme a říkáme, že jsou testovány. Pokud chcete poskytnout výsledky, stále přijímáme vaši žádost o vyžádání.
+4. Pokud jste to ještě nezkoušeli a poslali jste nám žádost o vyžádání, vyzkoušíme kód a pokud zjistíme, že:
+
+   - Váš kód funguje, my přijmeme vaši žádost o vyžádání
+   - váš kód nefunguje, vaši žádost o stažení zavřeme
+
+5. Pokud jste to ještě nezkoušeli a jste připraveni nám poslat, nejprve vyzkoušejte kód.
+6. Pokud chcete upravit dokumentaci nebo jiné části jiné než kódování nebo přidat části / nové dokumentace, neváhejte. Můžete nás informovat.
+
+- Přenos do jiných operačních systémů nebo programovacích jazyků, které jsou jiné než jazyk Assembly (ASM, NASM, ...) nebo C / C ++:
+
+Možná budete muset přenést Kernel Simulator do jiného operačního systému, jako je Linux, macOS atd. A také do jiných programovacích jazyků, které jsou jiné než C / C ++ nebo Assembly Assembly.
+
+Portování na ASM / C / C ++ je na nás, majiteli. Žádné porty k nim před naším oficiálním zaváděcím vydáním jádra ASM / C / C ++ nebudeme podporovat a jakékoli problémy, které se jich týkají, budou okamžitě odmítnuty.
+
+- Pokud chcete kernel Simulator přenést do systému Linux (testováno) nebo do makra (netestováno) v jazyce Visual Basic:
+
+1. Nainstalujte balíčky Mono, MonoDevelop a libmono-microsoft-visualbasic10.0-cil. Jak se dozvíte na jejich oficiálních webových stránkách.
+2. Stáhněte zdrojový kód KS
+3. Otevřete řešení pomocí programu MonoDevelop a spusťte program.
+4. Nahlaste případné problémy v sekci Problémy v našem repo KS.
+
+- Pokud chcete přenést jaderný simulátor do systémů Sun OS, BSD, Solaris atd. (Netestováno):
+
+Tato část je ve výstavbě. Pokud máte pokyny, přispějte prosím.
+
+Poznámka: Pokud chcete přenést jaderný simulátor do jiných programovacích jazyků, které se nerovná sestavení nebo C / C ++, neváhejte.
+Poznámka: Přenášení jádra uvnitř simulátoru jádra na reálný počítač / virtuální pole pomocí sestav a C / C ++ je na nás.
+Poznámka: Přenášení jádra uvnitř simulátoru na Android / iOS je v pořádku. Můžete provést příslušné úpravy.
+
+| --------------- + -> Další příspěvky, čísla atd. <- + --------------- |
+
+- Hlášení problémů
+
+Postupujte podle vzoru návrhu hlášení chyb a vysvětlete co nejvíce. Méně specifické vysvětlení a nesprávný návrhový vzor mohou váš problém uzavřít. Screenshoty jsou volitelné.
+
+| --------------- + -> Seznam úkolů pro přidání do jádra Simulator <- + --------------- |
+
+Pokud některé nápady zmizely, je to buď hotovo, nebo zrušeno. (Tato část je odstraněna o 0,0,7 a přesunuta do Seznamu úkolů ve VS2019.)
+
+1. Interaktivní správce souborů hostitelského systému (Plánováno ve spouštěcí verzi)
+2. Přesuňte každou jednotlivou dokumentaci na Wiki v úložišti, včetně manuálních stránek, takže ruční příkazy stránky otevřou web na Wiki (Plánováno v 0.0.7)
+3. Stálý seznam uživatelských jmen a hesel (hesla v šifrované podobě - ​​v beta verzi)
+
+(Pokud máte nápady, upravte tuto sekci vložením nápadu.)

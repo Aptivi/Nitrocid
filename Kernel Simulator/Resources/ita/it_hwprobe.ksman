@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando shell "hwprobe"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando hwprobe
+
+Riepilogo: puoi fare in modo che il tuo kernel rilevi le configurazioni hardware quando il kernel non lo fa all'avvio
+
+Descrizione
+
+?? possibile utilizzare questo comando per fare in modo che il kernel rilevi l'hardware e le sue impostazioni di configurazione come BIOS, GPU, RAM, HDD e CPU. 
+
+Comando di utilizzo
+
+* hwprobe
+-BODY END-
+
+-COLOR CONFIGURATION-
+hwprobe=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+hwprobe command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

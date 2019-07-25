@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "reloadconfig"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah reloadconfig
+
+Ringkasan: Muat semula konfigurasi kernel
+
+Penerangan
+
+Perintah ini memuat semula tetapan kernel dan cuba memulih semula dan mencerminkan perubahan dengan segera. 
+
+Penggunaan perintah
+
+* reloadconfig
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadconfig=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadconfig command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

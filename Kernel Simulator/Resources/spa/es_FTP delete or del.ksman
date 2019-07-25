@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "borrar" o "del"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+eliminar o eliminar el comando FTP
+
+Resumen: Elimina archivos o carpetas
+
+Descripci??n
+
+Si ha iniciado sesi??n en un usuario que tiene privilegios administrativos, puede eliminar archivos no deseados, o carpetas adicionales, del servidor.
+
+Si elimin?? un archivo mientras hay transmisiones en curso en el servidor, las personas que intenten obtener el archivo eliminado nunca podr??n volver a descargarlo despu??s de que falle la descarga.
+
+Uso del comando
+
+* delete / del (archivo / directorio)
+Ejemplos
+
+* delete unwanted.txt: elimina el archivo llamado "unwanted.txt"
+* del InactiveDir: elimine la carpeta llamada "InactiveDir"
+-BODY END-
+
+-COLOR CONFIGURATION-
+delete/del (file/directory)=>Green
+delete unwanted.txt:=>Yellow
+del InactiveDir:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+delete or del FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

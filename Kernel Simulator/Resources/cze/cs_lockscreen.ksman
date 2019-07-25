@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:P????kaz Shell "lockscreen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+p????kaz lockscreen
+
+Shrnut??: Obrazovku lze zamknout pomoc?? v??choz??ho spo??i??e obrazovky, aby se zabr??nilo vyp??len?? obrazovky
+
+Popis
+
+M????ete uzamknout obrazovku a uk??zat sv??j v??choz?? spo??i?? obrazovky, abyste potvrdili, ??e jste pry??, a budete vracet hodinu nebo v??ce. 
+
+Pou??it?? p????kaz??
+
+* uzam??en?? obrazovky
+-BODY END-
+
+-COLOR CONFIGURATION-
+lockscreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lockscreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

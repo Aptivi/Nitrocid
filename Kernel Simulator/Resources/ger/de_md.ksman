@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "md"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl md
+
+Zusammenfassung: Sie k??nnen Ihr Verzeichnis erstellen
+
+Beschreibung
+
+Wenn Sie Ihre Dateien in einem Ordner organisieren m??chten, m??ssen Sie einen Ordner erstellen.
+
+Mit diesem Befehl k??nnen Sie einen Ordner im aktuellen Arbeitsverzeichnis erstellen.
+
+Befehlsverwendung
+
+* md (Ordnername)
+
+Beispiele
+
+* md Passw??rter: Dieser Befehl erstellt einen Ordner mit dem Namen "Passw??rter" im aktuellen Arbeitsverzeichnis
+-BODY END-
+
+-COLOR CONFIGURATION-
+md (folderName)=>Green
+md Passwords:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+md command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -348,3 +348,20 @@ Obtiene versiones SSE
 Idioma inválido
 Cambia el idioma
 Es posible que no tenga libcpanel-json-xs-perl instalado en su sistema. Consulte a su administrador de paquetes para la instalación. Para los sistemas Debian (y derivados), es posible que desee ejecutar "sudo apt install libcpanel-json-xs-perl" en el emulador de terminal. Más detalles de un error:
+----------------------------- volcado de pánico del kernel ------------------------------
+>> Información de pánico <<
+> Descripción: {0}
+> Tipo de error: {1}
+> Fecha y hora: {2}
+>> Información de excepción <<
+> Excepción: {0}
+> Descripción: {1}
+> HRESULT: {2}
+> Fuente: {3}
+> Traza de pila <
+>> Excepción interna {0} información <<
+>> La excepción {0} es la causa raíz <<
+>> No hay excepción; podría ser un error del núcleo. <<
+>> Marcos, archivos, líneas y columnas <<
+> Cuadro {0}: Archivo: {1} | Línea: {2} | Columna: {3}
+> Hay un error al intentar obtener información de marco. {0}: {1}

@@ -1,0 +1,109 @@
+﻿| --------------- + -> Çekirdek Simülatörü - Bizim tarafımızdan planlanan gelecekteki çekirdeği simüle eder <- + -------------- - |
+
+BILGI: MonoDevelop'taki bir Çekirdek Simülatörü Linux sürümü mü kuruyorsunuz? Öyleyse, MonoDevelop ve libmono-microsoft-visualbasic10.0-cil'i yükleyin. MonoDevelop'u önermemize rağmen, Linux 64-bit için JetBrains Rider'ı tavsiye ediyoruz.
+
+BİLGİ: Bu çekirdek simülatörü, Kernel'in nihai olarak planlanan bir sürümü değil, çünkü çok küçüktü.
+
+BİLGİ: İki belge, sss ve sorun giderme, düzenli olarak güncellenmediklerinden silindi.
+
+Çekirdek Simülatörü, Çekirdek'in gerçek PC versiyonunu yapsak bile, geliştirmeye devam edecek olan geleceğimiz Çekirdek için çok erken bir erişim simülasyonu yapmanızı sağlar.
+
+| --------------- + -> Tarihçe <- + --------------- |
+
+07.25.2019 - 0.0.6.5: Uzantı olmadan yaratılan sabit döküm dosyaları, Yerelleştirilmiş dökümler ve kılavuz sayfaları, En son sürüme yükseltilmiş dil sürümü, Dosya sistemi ile ilgili bazı hatalar giderildi, En son işlemcilerde iki kez gösterilen Sabit CPU saat hızı (işlemcilere sahip olan işlemciler "Intel (R) Çekirdek (TM) i7-8700 CPU @ 3.20GHz @) iç adlarında saat hızı, FTP aktarımlarında sabit ilerleme çubuğu böylece yeni formatı kullanıyor, ETA ve hız ekliyor
+07.07.2019 - 0.0.6.4b: 0.0.6.5 için bir hazırlık yaptım: bulunamadıysa başlangıçta hata ayıklama simgelerini indirme
+07.06.2019 - 0.0.6.4a: Başarılı olsa bile başarısız olan Linux donanımı araştırılıyor, Sabit RAM probu MemTotal'u gösteriyor: önek, libcpanel-json-xs-perl hakkında mesaj yazdı
+28.06.2019 - 0.0.6.4: Dil değiştirirken NullReferenceException düzeltildi, Başlangıçta olmayan boş bir kelimeyi ayrıştırmaya çalışırken büyük toplu belgeler düzeltildi (Lütfen ilk satırda hala yeni satır sorunlarımız olduğunu unutmayın), Ubuntu eklendi. tema, kullanılmayan bayrak kaldırıldı, önyükleme sırasında renkleri ayrıştırmak için ekstra gereklilik kaldırıldı (açgözlülük kaldırıldı)
+26.06.2019 - 0.0.6.3: Sabit `sessiz 'tamamen sessiz olmamak, Oturum açtıktan sonra görünmeyen sabit mesajlar (örn. Kullanıcı mesajı ekleme), Komutu kullanarak dil değiştirilmesine izin verildi,' sses 'çalıştırıldıktan sonra gösterilen yardım metni düzeltildi. , Çek dili eklendi
+25.06.2019 - 0.0.6.2b: Tüm SSE versiyonlarını listelemek için `sses` isimli bir komut eklendi.
+6/24/2019 - 0.0.6.2a: İşlemci talimatlarını kontrol etti (şu anda SSE2'nin desteklenip desteklenmediğini görmek için çekirdek önyüklemesinde kullanılıyor).
+6/24/2019 - 0.0.6.2: Yol bulunamadığı için sabit hata ayıklama günlüğü show show komutu çalışmıyor (yazım hatası: Hata ayıklayıcı -> Hata ayıklama), Windows 10'un en son sürümleri hakkında PC komutları listelenirken bir uyarı eklendi, Sabit hata ayıklama çekirdek başlığı hata ayıklama bağımsız değişkeni ile çalıştırıldığında yazma, hata ayıklama günlüğü her yeniden başlatma ve başlatmada boş, Sabitlenmiş hata ayıklama günlüğünün cdbglog kullanarak komut satırında silinmesi düzeltildi, Yerleşik FtpVerify numaralandırıcıları, FluentFTP'nin eski sürümleri için hash kontrolümüz kaldırıldı, Daha iyi hata ayıklama deneyimi, Hata ayıklama, eğer pdb aynı klasördeyse, satır numarasını ve kaynak dosyayı gösterir, C # kullanarak izin verilen modding
+21.06.2019 - 0.0.6.1: Yardımda gösterilen kaldırılan para birimi bilgileri (daha sonra geri getirecektir), Kullanıcıların para birimlerini dönüştürmek için apilayer.net adresinden API Anahtarlarını girmeleri gerekmektedir (Temel plan, http: // currencylayer.com/product, denenmemiş: temel plan için ödeme yapamadı)
+19.06.2019 - 0.0.6: Yeni simge, Güncelleme FluentFTP ve Newtonsoft.Json libs, Kaldırılan yazma olayları, Yeniden yazılmış oturum açma (Hepsi değil, ancak yeniden tasarlandı), Hedefin yapmaması durumunda chpwd komutu parola değiştirilmemesi düzeltildi parolanız yok, Sabit chpwd normal bir kullanıcının yönetici şifresini değiştirip değiştirmediğini kontrol etmiyor, Sabit eklenti şifresi olmayan kullanıcılar eklemiyor, Sabit eklenti şifrelerle kullanıcı ekliyor olsa bile kullanıcıları ekliyor, Kaldırılan cdir, Ekran koruyucu adı için config girişi eklendi, Uygulandı çekirdek hataları için hata ayıklama ve döküm dosyaları, KS için .pdb hata ayıklama sembolleri ile birlikte gelir, Sabit yeniden başlatma ekranı silinmez, Hollandaca, Fince, İtalyanca, Malayca, İsveççe ve Türkiye dillerini ekler (konsolda uyumlu bir yazı tipine geçer), Ülkeler ve para birimleri Yeterli argümanlar sunmadığında veya "yardım para birimi" verirken şimdi listeleniyor, Yeniden başlatırken yeni dil güncellemesi için güncelleme yapılmayan Sabit yardım listesi, Kalıcı takma isimler eklendi (profilinizin altında bulunur, aliases.csv), Şifre, ana siteye giriş yaparken gizlendi n güvenlik, Her yeniden başlatma işleminden sonra Sabit kullanıcılar kaldırılıyor
+6/13/2019 - 0.0.5.14: Sahte dosya sistemi yerine gerçek dosya sistemi eklendi (dosyalarınıza erişim), şu anki dizini gösteren "chdir" yerine "cdir" gösterilmesi yanlış "changedir" yardım komutunun düzeltilmesi, şimdi modası geçmiş, çekirdeği yeniden başlatırken Sabit kaza
+14.04.2019 - 0.0.5.13: JetBrains ReSharper tarafından VS2017 için daha fazla zayıflama, Uygulanan Linux donanım sondası (Çalışmak için HDD sondaları için inxi yüklemeniz gerekir), 4.7'ye yükseltilmiş .NET gereksinimi, MonoDevelop'ta ciltleme yönlendirmeleri hakkında uyarı kaldırıldı, VS2019'a yükseltilmiş VS sürümü gereksinimi, Önerilen seçenek kullanılarak rahatsız edici "Adlandırma kuralı ihlali" kaldırıldı
+2/22/2019 - 0.0.5.12: Şimdi createConf cmdline argümanı sadece config dosyası bulunmadığında config, 0.0.6 için bazı hazırlıklar (sadece zayıflama), GPU ve BIOS sondajı kaldırıldı, Şimdi daha eski KS config kazandı burada güncellenmesine izin verilmiyor (Geçici Çözüm: Eski KS yapılandırma dosyanızı kaldırmanız ve uygulamayı yeniden çalıştırmanız gerekir), Windows 10'da (10.0) Windows 8 (6.2) sürümünü döndüren Environment.OS hatası düzeltildi, Showmotd / showmal komutunu kullanırken yer tutucuların ayrıştırılmaması, mod komutları gösterilmemesi durumunda basit yardımlar düzeltildi, mod komutları veya takma komutlar çalıştırıldıktan sonra çalışmayan sabit yerleşik komutlar düzeltildi, Hata ayıklama sırasında sabit NullReferenceException düzeltildi, Diğer takma adlar listesi düzeltildi, Yazdırma metni özel durumu düzeltildi mesaj, şu anki dile çevrilmiyor, Mods ve ekran koruyucular ile çalışırken, modname'den önce görünen "/" veya "\" düzeltildi, Çevirilerde gereksiz düzeltme giderildi, FTP kabuğunda daha fazla yığın taşması düzeltildi, "" yardım "çevirisi olan FTP mesajı çevirisi düzeltildi "dil olduğu zaman bir komut olması gerekiyordu, FTP kabuğuna hiçbir şey girmediğinde, komut bulunamadı mesajı düzeltildi.
+2/18/2019 - 0.0.5.11: GPU ve BIOS'u “<Obsolete>” olarak araştırdı, Donanımı araştırırken daha fazla COM çağrısı yapılmadı, Sabit sürücü verileri olan işe yaramaz bir dosya kaldırıldı, Çekirdek yapılandırma bölümünü görüntülerken sysinfo'nun çevirisi düzeltildi , Sabit Disk Sürücüsü ve RAM’den Probu Kaldırılmış Durum Durumu (Bkz. “Çekirdek Simülatörünün Kullanım Tarihçesi”, “Durum Probu Hakkında Doğrulama” bölümü), Sabit sürücünün Üretici değeri varsa CHS bölümünün görünmemesi düzeltildi. Çeviri listesi böyle bir değer içermiyorsa, Microsoft Temel Ekran Sürücüsü'nün temel bir sürücü olmadığı varsayılarak GPU yazıcısı düzeltildi, Ekran koruyucuları önyüklemede denetlendi, Bir hata oluştuğunda bir sonraki ekran koruyucu yüklenmeye çalışılırken Sabit NullReferenceException düzeltildi. önceki ekran koruyucu, Bir çekirdek başlatılırken işletim sistemi bilgisi çevrilmedi, Sabit dil yapılandırması güncellenirken korunmuyor, Hata ayıklama bilgileri artık VS2017 hata ayıklama çıktı penceresine yazdırılıyor (deb debisini açmanız gerekiyor) ugging), loadaver komutunu tekrar yükle, yeniden kaldırıldı, İşe yaramaz ve küfürlü komutlar kaldırıldı (echo, panicsim and choice)
+16.02.2019 - 0.0.5.10: Manuel sayfaların geliştirilmiş okunabilirliği (vbTab şimdi filtrelendi ve sorunlara yol açmayacak), Artık çevirmen bir dize çeviri listesinde bulunmadığında hata ayıklama bilgisini yazdırıyor, Hardware Prober: Spam göndermeyi durdur " System .__ ComObject "kolay okumayı sağlamak için hata ayıklayıcısına, Manpage Parser: Hata ayıklama günlüklerini gereksiz" Denetleniyor ... "metinleriyle doldurun ve birkaç hata ayıklama iletisini genişletin, BIOS dizesinin gösterilmemesi düzeltildi, Gereksiz uyku platformu kontrolleri kaldırıldı, Kaldırıldı" nohwprobe "Donanım sondası olarak çekirdek argümanı önemlidir, Gereksiz saat dilimi platformu kaldırıldı, En Son Sabit Sürümlere Güncelleştirildi, FluentFTP ve Newtonsoft.Json kütüphaneleri en son kararlı sürümlerine alındı, Oturum açmadaki parola bölümü dışında hiçbir kopya kopyası yok, MAL ve MOTD'nin sabit hatası, oturum açma sırasında yenilenmiyor sysinfo hatası (mesaj ayarları yazdırılmıyor), çekirdek şimdi önyükleme, hata ayıklama ve sysinfo komutunda kullanılan ortamı yazdırıyor
+12/24/2018 - 0.0.5.9: Modlar kapanırken durdurulacak, Modlar kendi adlarına ve kendi sürümlerine sahip olacaklar, sabit hata ayıklayıcı yeniden başlatılırken veya kapatıldığında düzgün şekilde kapanmıyor, Shell artık bir istisna olur, Hata ayıklama artık daha hassastır (komut almak dışında), Şimdi hata ayıklama yazarı yeni satırlar olmadan yazmayı desteklemiyor, Sonunda ana bilgisayar adınıza "joe" gibi 4 karakterden daha az ana makine adınız ve boşluk adlarınızı eklemenize izin veriliyor , Kullanımdan kaldırılmış ve kötü niyetli komutlar kaldırıldı, IANA zaman dilimleri için fazladan kontroller kaldırıldı, daha fazla kayıt yolu bulunmuyor, sabit listeleme ağları, İnterneti kullanan para birimi dönüştürücü eklendi (Yerel değerler eklediysek, zaman alan daha fazla güncelleme yayınlamamız gerekiyor. , böylece Internet yolu zamandan ve güncellemelerden tasarruf sağlar), nihayet kullanıcıların KS kullanarak hata ayıklama ile hata ayıklama günlüklerini görüntülemelerine izin verdik, FTP istemcisini geliştirdik, İngilizce konuşamayanlar artık kendi dillerini ayarlayabiliyor varsayılan İngilizce olsa da, "lscomp" için sabit yardım girişi düzeltildi, çekirdek el kitabı sayfaları eklendi, Windows XP desteği aldı, modları derlemeye çalışırken hatalar olduğunda NullReferenceException düzeltildi, testMods cmdline argümanı eklendi ve daha fazlası ...
+11.01.2018 - 0.0.5.8: Yeniden başlatıp kapatırken bip sesi çıkartıldı, kapatıldı, "bip" komutu kaldırıldı, (Windows) Sondalar artık başarısız olsalar bile devam edecek, Belleği şimdi atmak artık hataların işlenmesi VB6 yöntemini kullanmıyor
+10.03.2018 - 0.0.5.7: "Kernel Simulator.exe" den farklı bir dosya isminde çalışırken başlarken meydana gelen kilitlenme sorunu, FTP için daha iyi hata kullanımı, FTP'de mevcut dizin baskısı eklendi, "sürüm" komutu kaldırıldı, "Sessiz Prob" değerinin "Sessiz Prob" olarak ayarlanması düzeltildi, Genişletilmiş "sysinfo", Çekirdekden çıkarken kapanmayan sabit yapılandırma okuyucusu, (Unix) Bilinen bir hata düzeltildi
+10.12.2018 - 0.0.5.6: Geliştirilmiş sondalar, oturum açma sırasında kullanıcı adı listesi, Unix ile daha iyi uyumluluk
+22.08.2018 - 0.0.5.5: Yeniden yapılandırılmış yapılandırma, Yasaklı takma adlar, "gösteriler" için eksik yardım girişleri eklendi, daha fazla MOTD ve MAL yer tutucusu, tekrarlanan RAM durumunun tekrarlanan mesajı eklendi ve bir FTP istemcisi eklendi. !
+09.09.2018 - 0.0.5.2: Açılışta GPU araştırması yapıldı, "gpuprobe" argümanını kaldırarak, config güncelleme davranışını değiştirdi
+09.06.2018 - 0.0.5.1: Takip sürümü, kullanılmayan kodu kaldırıldı, hata ayıklama günlüklerinin davranışını iyileştirdi ve tanımsız komutlarla modları araştırırken hata ayıklama mesajının okunabilirliğini artırdı.
+09.04.2018 - 0.0.5.0: Kaldırılan istemler, sabit MAL kullanıcı adı sondalama, "showaliases" eklenmiş, sabit takma ad ayrıştırma, takma ad çıkarma komutunu sağlama gereksinimi kaldırılmış ve kullanıcı tarafından yapılan komutların modlarda uygulanması
+16.08.2018 - 0.0.4.12: Disko komutunu ekran koruyucu ile değiştirdi. Kararlı göründüğü için 0.0.5 piyasaya sürülecek gibi görünüyor, ancak son sürümden önce bazı değişiklikler yaptık.
+8/3/2018 - 0.0.4.11: Önceden tanımlanmış takma adlar kaldırıldı, Bahsedilen bilinen bilinen hata düzeltildi.
+20.02.2018 - 0.0.4.10: "lsdrivers" ile "sysinfo" kaynaşımı, Geliştirilmiş Yardım tanımı (modlama hazırlığı için kullanılır), tüm çevrimiçi ve çevrimdışı bilgisayarları yalnızca adlarıyla listeleyebilen "lscomp" eklendi, hata işleyicisi eklendi "lsnet" ve "lsnettree" için "lsnet" ve "lsnettree" deki sabit gramer hataları, modlar eklendi (henüz uygulanmayan komutlar - <modname> .m), ekran koruyucular eklendi, MOTD gösterme davranışını değiştirdi; Çekirdeğin yeniden başlatılmasından sonra kontrol edilmesi birden fazla örneğe sahip olduğunu ve kapanması gerektiğini ve daha fazlasını yapması gerektiğini söyler.
+21.07.2018 - 0.0.4.9: "Birimkonv" komutu için daha iyi hata yönetimi, Geçici takma ad eklendi ("showaliases" komutu olmadığından son değil), bazı hataları düzelt, zaman dilimlerini ekle ("showtdzone" ve geçerli olanları göster.) "showtd") saat dilimi), "takma ad", "chmal" ve "showmal", giriş özelleştirilebilir yapıldıktan sonra MOTD yaptı, güvenliği sağlamak için şifrelerde özel karakterlere izin verildi, müdahaleleri önlemek için Kernel Simulator özelliğine izin verildi ve daha fazlası.
+17.07.2018 - 0.0.4.7: "ping" komutu için hata yönetimi "Sabit" unitconv "kullanım mesajı
+17.06.2018 - 0.0.4.6: 0.0.4.5, 0.0.5'in özel ikameleri için hazırlık bölümünde kaldırılan komutla gösterilen yabancı "beslenen" kaldırıldı
+15.05.2018 - 0.0.4.5: (Sabit sürücü arızası nedeniyle 2 ay gecikmeli) - Herhangi bir probun donanım araştırması başarısız olduğunda hataları düzeltin, problara daha fazla ayrıntı eklendi, Yardım sistemi geliştirildi, Renk istemlerinde hatalar düzeltildi, Kullanımdan kaldırıldı, ve dahası.
+05.08.2018 - 0.0.4.1: Değişen dizindeki hataları düzelt, "help chdir" deki hataları düzelt, "cd" adlı dizini değiştirmek için takma isim ekle ve config güncellemesi.
+6/20/2018 - 0.0.4: Başlangıç ​​metninin değiştirilmesi, özelleştirilebilir ayarlar, Temalar, Komut satırı argümanları, Komut argümanı ve tam ayrıştırma, Gerçek dizin sistemi (alfa), daha fazla komut, hesap makinesi, yığın izlemesi ile hata ayıklama, hata ayıklama günlükleri (bitmemiş), RAM sızıntısı yok, hataları düzeltmek ve daha fazlası.
+05.02.2018 - 0.0.3.1: Büyük sürüm için hazırlık aşamasında düzenlenen Shell başlığı, kullanıcıları kaldırarak hataları düzelt, boş komutu düzelt ve yönetici kontrolü ekle.
+4/30/2018 - 0.0.3: Hataları düzelt, Oturum açma sistemi yeniden yazıldı, komutlar eklendi, argümanlar eklendi, izin sistemi eklendi, özel renkler ve daha fazlası.
+11.04.2018 - 0.0.2.3: Yeniden başlatma, hataların giderilmesi ve diğer işlemlerden sonra argümanlardaki çöküşü düzelt.
+04.09.2018 - 0.0.2.2: İkili PC adlarının her iki listeleme yolunda göründüğü ağ listesi için hatayı düzeltin, Ağları listeleme hatası.
+4/5/2018 - 0.0.2.1: "Komut Bulunamadı" mesajı için hatayı düzeltin ve "chhostname" ve "chmotd" içerisindeki kök için unutulmuş kontrolleri ekledi.
+3/31/2018 - 0.0.2: Kod yeniden tasarımı, daha fazla komut, temel İnternet, tartışma sistemi, şifre değiştirme ve daha fazla değişiklik yapıldı.
+3/16/2018 - 0.0.1.1: "showmotd" eklendi, bir mesajı değiştirdi ve Bip Frekansında tamsayı taşmasının daha iyi kontrol edilmesini sağladı.
+2/22/2018 - 0.0.1: Windows için normalde ilk sürüm.
+
+| --------------- + -> Manuel sayfalar <- + --------------- |
+
+Belgeler - ana sayfa: Çekirdek Simülatörü hakkında bilgi, bu sayfa
+Belgelendirme - katkıda bulunma kuralları: Çekirdek Simülatörüne katkıda bulunma koşulları
+
+| --------------- + -> Krediler <- + --------------- |
+
+EoflaOE: Çekirdek Simülatörü Sahibi
+
+Oksijen Ekibi: İkon yaratıcısı
+
+| --------------- + -> Açık Kaynak Kütüphaneleri kullanılmış <- + --------------- |
+
+MadMilkman.Ini
+
+Kaynak kodu: https://github.com/MarioZ/MadMilkman.Ini
+
+Telif Hakkı (c) 2016, Mario Zorica
+
+Lisans (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
+
+Newtonsoft.Json
+
+Kaynak kodu: https://github.com/JamesNK/Newtonsoft.Json
+
+Telif Hakkı (c) 2007, James Newton-King
+
+Lisans (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+
+FluentFTP
+
+Kaynak kodu: https://github.com/robinrodricks/FluentFTP
+
+Telif Hakkı (c) 2011-2016, J.P. Trosclair
+
+Telif Hakkı (c) 2016-2019, Robin Rodricks
+
+Lisans (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
+
+| --------------- + -> Lisans - GNU GPL <- + --------------- |
+
+    Çekirdek Simülatörü - Gelecek planlı Çekirdeğimizi Simüle Ediyor
+    Telif Hakkı (C) 2018-2019 EoflaOE
+
+    Bu program ücretsiz bir yazılımdır: yeniden dağıtabilir ve / veya değiştirebilirsiniz
+    tarafından yayınlanan GNU Genel Kamu Lisansı şartları altında
+    Özgür Yazılım Vakfı, Lisansın 3. sürümü veya
+    (sizin seçiminize göre) daha sonra herhangi bir sürümü.
+
+    Bu program faydalı olacağı umuduyla dağıtılmıştır,
+    Ancak HERHANGİ BİR GARANTİ OLMADAN; zımni garantisi bile olmadan
+    KATILIMCI AMAÇLI TİCARİ veya FITNESS. Bakın
+    Daha fazla bilgi için GNU Genel Kamu Lisansı.
+
+    GNU Genel Kamu Lisansının bir kopyasını almış olmalısınız.
+    bu programla birlikte. Değilse, <https://www.gnu.org/licenses/> adresine bakın.

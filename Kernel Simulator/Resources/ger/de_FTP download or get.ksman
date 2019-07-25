@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:FTP Befehl "download" oder "get"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Download oder FTP-Befehl abrufen
+
+Zusammenfassung: L??dt eine Datei aus dem aktuellen Arbeitsverzeichnis herunter
+
+Beschreibung
+
+L??dt die Bin??r- oder Textdatei herunter und speichert sie im aktuellen lokalen Arbeitsverzeichnis, damit Sie die heruntergeladene Datei verwenden k??nnen, die auf dem FTP-Server bereitgestellt wird.
+
+Befehlsverwendung
+
+* download / get (Datei)
+Beispiele
+
+* download text.txt: L??dt die Textdatei mit dem Namen "text.txt" herunter
+* get shanghai.png: L??dt die bin??re Bilddatei herunter, die Ihnen die Stadt Shanghai in China zeigt, und speichert sie in "shanghai.png".
+-BODY END-
+
+-COLOR CONFIGURATION-
+download/get (file)=>Green
+download text.txt:=>Yellow
+get shanghai.png:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+download or get FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

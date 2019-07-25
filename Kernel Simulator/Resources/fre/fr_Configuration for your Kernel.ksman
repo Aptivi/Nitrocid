@@ -1,0 +1,80 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Configuration pour votre noyau
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Quelle est la configuration?
+
+La configuration est la configuration de votre noyau qui stocke plus d'options du noyau qui ne peuvent pas ??tre ??dit??es ni dans les arguments, ni dans les arguments de ligne de commande. 
+
+Plusieurs sections facilitent la lecture du fichier de configuration. 
+
+Entr??es de configuration
+
+G??n??ral
+
+1. Invite pour les arguments au d??marrage: Vous pouvez forcer le noyau ?? vous donner l'invite d'argument si la valeur est d??finie sur True. 
+2. Mode maintenance: vous pouvez demander au noyau de ne pas analyser les mods et les ??crans de veille lors du d??marrage et vous donne la possibilit?? de r??parer votre noyau. 
+3. Changer le mot de passe racine: Vous pouvez changer le mot de passe administratif. 
+4. D??finissez le mot de passe racine sur: Si l'option "Changer le mot de passe racine" est d??finie sur Vrai, vous pouvez ??crire votre propre mot de passe root. 
+5. Cr??er un compte de d??monstration: Vous pouvez demander au noyau de cr??er le compte de test, d??mo, en d??finissant ce param??tre sur True. 
+6. Couleurs personnalis??es au d??marrage: Si cette option est d??finie sur True, le noyau modifiera ses couleurs en fonction des valeurs de configuration. 
+7. Langue: Cela peut prendre le raccourci de langue de trois lettres. 
+
+Couleurs
+
+Chaque entr??e mentionn??e ci-dessous peut prendre un nom ou une valeur de couleur. 
+
+1. Couleur de coque du nom d'utilisateur: Vous pouvez modifier le nom d'utilisateur affichant la couleur de la pi??ce dans toute l'invite.
+2. Couleur du shell du nom d'h??te: Vous pouvez modifier le nom d'h??te affichant la couleur de la pi??ce dans toute l'invite.
+3. Couleur d'erreur du noyau continu: Vous pouvez modifier la couleur du texte d'erreur du noyau continu.
+4. Couleur d'erreur du noyau non transmissible: Vous pouvez modifier la couleur du texte de la couleur d'erreur fatale.
+5. Couleur du texte: Vous pouvez changer la couleur g??n??rale du texte.
+6. Couleur de la licence: Vous pouvez changer la couleur du texte de la licence.
+7. Couleur de fond: Vous pouvez changer la couleur de fond.
+8. Couleur de saisie: Vous pouvez modifier la couleur de saisie du texte.
+9. Commande r??pertori??e dans Couleur d'aide: Vous pouvez modifier la couleur de la commande imprim??e dans la liste de commandes.
+10. D??finition de la commande dans Couleur d'aide: Vous pouvez modifier la description imprim??e de la couleur de la commande dans la liste des commandes.
+
+Mat??riel
+
+Chaque entr??e mentionn??e ci-dessous peut prendre soit False, soit True.
+
+1. Sonde silencieuse: vous pouvez rendre la v??rification du mat??riel silencieuse en ne montrant pas les r??sultats du mat??riel sond??.
+2. Slots de sonde: Vous pouvez faire en sorte que le prober RAM sonde les slots de RAM.
+
+S'identifier
+
+1. Afficher MOTD lors de la connexion: Vous pouvez faire en sorte que l'invite de connexion affiche le message du jour avant d'afficher l'invite. 
+2. Effacez l'??cran lors de la connexion: vous pouvez supprimer l'encombrement de l'??cran avant la connexion s'il est d??fini sur True. 
+3. MOTD: Vous pouvez modifier le message de pr??-connexion en n'importe quelle valeur. 
+4. Nom d'h??te: Vous pouvez changer le nom d'h??te du noyau.
+5. MOTD apr??s la connexion: vous pouvez modifier le message de post-connexion en n???importe quelle valeur. 
+
+coquille
+
+Chaque entr??e mentionn??e ci-dessous peut avoir la valeur True ou False.
+
+1. Coquille color??e: Vous pouvez ajouter un support pour la coloration de la coque.
+2. Commande d'aide simplifi??e: vous pouvez r??pertorier les commandes sous la forme s??par??e par des virgules.
+
+Misc
+
+1. Afficher l???heure / la date dans le coin sup??rieur droit: vous pouvez d??finir la banni??re de temps r??el / date en cours de mise ?? jour. La position se trouve dans le coin sup??rieur droit. 
+2. ??cran de veille: Vous pouvez choisir vos ??crans de veille disponibles.
+3. Version du noyau: Ne changez pas cette entr??e! 
+-BODY END-
+
+-SECTIONS-
+What is the Config?=>SE1
+Config entries=>SE1
+General=>SE2
+Colors=>SE2
+Hardware=>SE2
+Login=>SE2
+Shell=>SE2
+Misc=>SE2
+-SECTIONS END-

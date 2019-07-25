@@ -1,0 +1,32 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "Neustart"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl zum Neustart
+
+Zusammenfassung: Startet den Kernel neu
+
+Beschreibung
+
+Dieser Befehl startet Ihren simulierten Kernel neu und l??dt alle Konfigurationen neu, die nicht mit reloadconfig geladen wurden. 
+
+WARNUNG: Es findet keine Dateisystemsynchronisierung statt, da die aktuelle Kernelversion nicht ??ber das zu synchronisierende Dateisystem verf??gt und der Kernel nicht endg??ltig ist.
+
+Befehlsverwendung
+
+* Neustart
+-BODY END-
+
+-COLOR CONFIGURATION-
+reboot=>Green
+WARNING:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+reboot command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

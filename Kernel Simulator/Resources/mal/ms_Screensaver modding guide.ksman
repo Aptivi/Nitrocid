@@ -1,0 +1,425 @@
+(*MAN START*)
+
+-TITLE:Panduan pemodelan screensaver
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Apakah screensaver untuk kernel?
+
+Screensaver adalah proses terbiar yang akan diaktifkan sekiranya komputer anda tidak berfungsi. 
+
+Screensaver juga boleh disesuaikan, dan kami akan mengajar anda bagaimana untuk membuat screensaver pertama anda, untuk membuat dari screensaver yang paling mudah untuk yang legenda.
+
+Moding asas (screensaver)
+
+0. Bagaimana untuk membuat screensavers anda sendiri pada Visual Studio 2017?
+
+1. Ulangi langkah 1-8 dari panduan Modding
+2. Pada bahagian Compile, klik pada Build Events, kemudian tuliskan ini pada baris arahan peristiwa pasca-Build:
+- copy .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (Letakkan SS sebelum .m supaya KS mengenalinya sebagai screensaver dan bukan sebagai mod)
+- del / Q *. * (untuk memastikan tiada fail DLL dummy yang dicipta kerana kita tidak menggunakan DLL untuk mod)
+3. Ulangi langkah 9-16 dari panduan Modding, tetapi gantikan Import Kernel_Simulator.ModParser dengan Import Kernel_Simulator.Screensaver
+4. Antara Kelas Awam ... dan baris Kelas Akhir, biarkan Visual Studio 2017 tahu bahawa anda akan mencipta screensaver KS anda dengan menulis: Mengimplementasikan ICustomSaver
+5. Jika anda akan menambah ruang nama, peraturan ini mesti dipenuhi:
+1) Jangan import Kernel_Simulator dengan sendirinya. 
+2) Apabila mengimport modul / kelas seperti TextWriterColor, ia ditulis seperti ini: Import Kernel_Simulator.TextWriterColor
+6. Tentukan sifat untuk maklumat mod dengan meletakkan di bawah Implementasi IScript:
+Harta Bermula Sebagai Memasang Boolean ICustomSaver.Initialized
+7. Buat sub screensaver init bernama InitSaver () yang melaksanakan ICustomSaver.InitSaver, dengan menulis:
+SubInitSaver () Mengimplementasikan ICustomSaver.InitSaver
+'Kod anda di sini
+Inisialisasi = Benar 'Letakkan di mana-mana di sub jika anda membuat Jika syarat, jika tidak, tinggalkan di sini.
+Sub Akhir
+8. Gantikan setiap Kod anda di sini mengulas dengan kod anda. 
+9. Buat pra-paparan (Dipanggil sebelum memaparkan screensaver) sub bernama PreDisplay () yang melaksanakan ICustomSaver.PreDisplay, dengan menulis:
+Sub PreDisplay () Mengimplementasikan ICustomSaver.PreDisplay
+'Kod anda di sini
+Sub Akhir
+10. Buat kod paparan anda (ia sepatutnya memaparkan sesuatu) sub bernama ScrnSaver () yang melaksanakan ICustomSaver.ScrnSaver, dengan menulis:
+Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
+'Kod anda di sini
+Sub Akhir
+11. Anda boleh membuat pasangan anda di mana sahaja di kelas, tetapi jika:
+1) mereka berada di kelas yang berbeza, tekan Enter on End Class dan buat kelas baru awam yang menyimpan subs baru:
+AnotherClass Class Awam
+'Takrifan anda di bawah, dan sebagainya subs, fungsi, antara muka, dan lain-lain
+Kelas Akhir
+2) mereka cuba untuk memulakan semula screensaver dengan memanggil semula InitSaver (), Cuba persekitaran ujian anda terlebih dahulu, kemudian persekitaran Pengeluaran jika itu berfungsi dengan baik.
+Dan syarat-syarat berikut harus dipenuhi:
+1) Mereka tidak boleh membuat gelung tanpa batas kecuali anda membuat mereka yang keluar jika syarat-syarat tertentu dipenuhi
+2) Mereka tidak boleh cuba menyebabkan kesilapan dengan kernel.
+3) Letakkan sub panggilan anda pada salah satu daripada tiga kelip yang mengimplementasikan antara muka ICustomSaver. 
+12. Jalankan pembinaan. 
+13. Jalankan Simulator Kernel anda yang baru sahaja dirujuk ke dalam projek anda, dan muatkan, tetapkan lalai, dan kunci scren anda dan screensaver anda ada di sana.
+
+1. Kotak Mesej dalam Konsol, dan Soon, Semalaman, atau Rude (Pergi jauh ...) mesej
+
+Screensaver kotak mesej belakang memberitahu orang bahawa pemilik komputer hilang, atau pemilik mengatakan bahawa mereka harus pergi kerana ada perkara penting yang berlaku di dalam komputer mereka. 
+
+1. Klik kanan pada projek, dan pergi ke Tambah> Kelas
+2. Namakan screensaver anda, tetapi biarkan .vb utuh. 
+3. Klik Tambah, dan kod itu akan siap.
+4. Tulis di bawah (Anggapkan nama mod anda ialah SOR) Kelas Awam SOR: Pengimplementasian ICustomSaver
+5. Tulis di atas Kelas Awam SOR:
+- Sistem Import
+- Sistem Import.Threading
+- Import Kernel_Simulator.Screensaver
+- Import Kernel_Simulator.TextWriterColor
+- Import Kernel_Simulator.Login
+6. Anda harus mendapatkan kesilapan yang mengatakan bahawa subs ini harus dibuat.
+7. Buat pengendali acara screensaver permulaan dengan menulis:
+Harta Bermula Sebagai Memasang Boolean ICustomSaver.Initialized
+SubInitSaver () Mengimplementasikan ICustomSaver.InitSaver
+Wln ("Muatkan screensaver ini menggunakan" "loadsaver SORSS.m" "dan" "setsaver SORSS.m" "", "neutralText")
+Inisialized = Benar
+Sub Akhir
+8. Oleh kerana kami tidak melaksanakan apa-apa sebelum memaparkan screensaver, kami akan meninggalkan ini kosong:
+Sub PreDisplay () Mengimplementasikan ICustomSaver.PreDisplay
+Sub Akhir
+9. Tulis di atas Harta yang Diisytiharkan ...:
+Awam SOR_Random Sebagai Rawak Baru () 'Menetapkan semula penjana nombor rawak
+Public S_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
+Awam O_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
+Public R_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
+9. Tulis pada subjek ScrnSaver ():
+Console.Clear ()
+Jika Custom.CancellationPending = Benar Kemudian 'Ini akan membetulkan masalah untuk tugas sibuk.
+Keluar Untuk
+Akhir Jika
+Dim SOR_Integer Sebagai Integer = SOR_Random.Next (1, 4) 'Memilih sama ada Segera, Semalaman atau Rude
+Dim Soon_MsgID Sebagai Integer = SOR_Random.Next (0, 2) 'Memilih mesej dalam Arahan Soon
+Dim Over_MsgID Sebagai Integer = SOR_Random.Next (0, 2) 'Memilih mesej dalam array Overnight
+Dim Rude_MsgID Sebagai Integer = SOR_Random.Next (0, 3) 'Memilih mesej dalam pelbagai Rude
+Console.SetWindowPosition (0, 1)
+Pilih Kes SOR_Integer
+Kes 1 'Tidak lama kemudian
+WriteMsg (SOR_Integer, Soon_MsgID)
+Kes 2 'Bermalam
+WriteMsg (SOR_Integer, Over_MsgID)
+Kes 3 'Rude
+WriteMsg (SOR_Integer, Rude_MsgID)
+Akhir Pilih
+Thread.Sleep (10000)
+11. Anda mungkin perlu mencipta 1 fungsi dan 2 subs untuk ini berfungsi. 
+Fungsi Shared Public ParsePlaces (ByVal text As String)
+text = text.Replace ("<OWNER>", signedinusrnm)
+Hantar teks
+Fungsi Akhir
+Sub Public Shared InitializeBar (ByVal strlen As Integer)
+W ("-", "neutralText")
+Untuk l Sebagai Integer = 0 Untuk strlen - 1
+W ("-", "neutralText")
+Seterusnya
+Wln ("-", "neutralText")
+Sub Akhir
+Subbahas Awam WriteMsg (ByVal TypeID Sebagai Integer, ByVal MsgID Sebagai Integer)
+Dim BackMessages Sebagai String () = {"<OWNER> akan kembali tidak lama lagi.", "<OWNER> sibuk dan dia akan kembali tidak lama lagi."}
+Dim OvernightMsg Sebagai String () = {"Nampaknya <OWNER> akan kembali semalaman", "Dia akan kembali semalaman."}
+Dim RudeMessages Sebagai String () = {"Bolehkah anda pergi?", "Pergi, <OWNER> akan kembali tidak lama lagi", "<OWNER>
+Teks Dim sebagai String = ""
+Pilih TypeID Case
+Kes 1
+text = ParsePlaces (BackMessages (MsgID))
+Kes 2
+teks = ParsePlaces (OvernightMsg (MsgID))
+Kes 3
+text = ParsePlaces (RudeMessages (MsgID))
+Akhir Pilih
+InisialisasiBar (text.Length)
+Wln ("| {0} |", "neutralText", teks)
+InisialisasiBar (text.Length)
+Sub Akhir
+12. Kod sepatutnya seperti ini:
+Sistem Import
+Sistem Import.Threading
+Import Kernel_Simulator.Screensaver
+Import Kernel_Simulator.TextWriterColor
+Import Kernel_Simulator.Login
+Kelas Awam SoonOvernightRude
+Memerlukan ICustomSaver
+Harta Bermula Sebagai Memasang Boolean ICustomSaver.Initialized
+Awam SOR_Random Sebagai Rawak Baru () 'Menetapkan semula penjana nombor rawak
+Public S_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
+Awam O_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
+Public R_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
+SubInitSaver () Mengimplementasikan ICustomSaver.InitSaver
+Wln ("Tetapkan screensaver ini sebagai lalai menggunakan" "setsaver SORSS.m" "", "neutralText")
+Inisialized = Benar
+Sub Akhir
+Sub PreDisplay () Mengimplementasikan ICustomSaver.PreDisplay
+Sub Akhir
+Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
+Console.Clear ()
+Jika Custom.CancellationPending = Benar Kemudian 'Ini akan membetulkan masalah untuk tugas sibuk.
+Keluar Untuk
+Akhir Jika
+Dim SOR_Integer Sebagai Integer = SOR_Random.Next (1, 4) 'Memilih sama ada Segera, Semalaman atau Rude
+Dim Soon_MsgID Sebagai Integer = S_Random.Next (0, 2) 'Memilih mesej dalam Arahan Soon
+Dim Over_MsgID Sebagai Integer = O_Random.Next (0, 2) 'Memilih mesej dalam array Overnight
+Dim Rude_MsgID Sebagai Integer = R_Random.Next (0, 3) 'Memilih mesej dalam array Rude
+Console.SetCursorPosition (0, 1)
+Pilih Kes SOR_Integer
+Kes 1 'Tidak lama kemudian
+WriteMsg (SOR_Integer, Soon_MsgID)
+Kes 2 'Bermalam
+WriteMsg (SOR_Integer, Over_MsgID)
+Kes 3 'Rude
+WriteMsg (SOR_Integer, Rude_MsgID)
+Akhir Pilih
+Thread.Sleep (10000)
+Sub Akhir
+Fungsi Shared Public ParsePlaces (ByVal text As String)
+text = text.Replace ("<OWNER>", signedinusrnm)
+Hantar teks
+Fungsi Akhir
+Sub Public Shared InitializeBar (ByVal strlen As Integer)
+W ("-", "neutralText")
+Untuk l Sebagai Integer = 0 Untuk strlen - 1
+W ("-", "neutralText")
+Seterusnya
+Wln ("-", "neutralText")
+Sub Akhir
+Subbahas Awam WriteMsg (ByVal TypeID Sebagai Integer, ByVal MsgID Sebagai Integer)
+Dim BackMessages Sebagai String () = {"<OWNER> akan kembali tidak lama lagi.", "<OWNER> sibuk dan dia akan kembali tidak lama lagi."}
+Dim OvernightMsg Sebagai String () = {"Nampaknya <OWNER> akan kembali semalaman", "Dia akan kembali semalaman."}
+Dim RudeMessages Sebagai String () = {"Bolehkah anda pergi?", "Pergi, <OWNER> akan kembali tidak lama lagi", "<OWNER>
+Teks Dim sebagai String = ""
+Pilih TypeID Case
+Kes 1
+text = ParsePlaces (BackMessages (MsgID))
+Kes 2
+teks = ParsePlaces (OvernightMsg (MsgID))
+Kes 3
+text = ParsePlaces (RudeMessages (MsgID))
+Akhir Pilih
+InisialisasiBar (text.Length)
+Wln ("| {0} |", "neutralText", teks)
+InisialisasiBar (text.Length)
+Sub Akhir
+Kelas Akhir
+13. Jalankan binaan. 
+14. Jalankan Kernel Simulator anda yang baru dirujuk ke dalam projek anda, dan beban, tetapkan sebagai lalai, dan jalankan skrin penyelaman.
+
+2. Skrin Blank Mudah
+
+1. Ulangi langkah 1-4 pada contoh pertama: Kotak Mesej Dalam Konsol, dan Soon, Semalaman, atau Rude (Pergi jauh ...) mesej
+2. Tulis di atas Blank Kelas Awam (dengan mengandaikan bahawa nama kelas anda kosong):
+- Sistem Import
+- Import Kernel_Simulator.Screensaver
+3. Tuliskan ini di bawah Implementasi ICustomSaver:
+Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
+Awam Sub InitSaver () Mengimplementasikan ICustomSaver.InitSaver
+Inisialized = Benar
+Sub Akhir
+Public Sub PreDisplay () Implementasi ICustomSaver.PreDisplay
+Sub Akhir
+Public Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
+
+Sub Akhir
+4. Tulis di dalam sub ScrnSaver:
+Console.Clear ()
+5. Kod sepatutnya seperti ini:
+Sistem Import
+Import Kernel_Simulator.Screensaver
+Blank Kelas Awam
+Memerlukan ICustomSaver
+Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
+Awam Sub InitSaver () Mengimplementasikan ICustomSaver.InitSaver
+Inisialized = Benar
+Sub Akhir
+Public Sub PreDisplay () Implementasi ICustomSaver.PreDisplay
+Sub Akhir
+Public Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
+Console.Clear ()
+Sub Akhir
+Kelas Akhir
+5. Ulangi langkah 13-14 pada contoh pertama: Kotak Pesan Dalam Konsol, dan Soon, Semalaman, atau Rude (Pergi jauh ...) mesej
+
+3. Animasi (Bulatan Lukisan - 4 bingkai - 4 FPS)
+
+Contoh ini akan membuat anda bermula dengan animasi. 
+
+Sistem Import
+Import Microsoft.VisualBasic.Constants
+Import Kernel_Simulator.TextWriterColor
+Sistem Import.Threading
+Import Kernel_Simulator.Screensaver
+Kelas Awam ANI
+Memerlukan ICustomSaver
+Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
+CurrentStep Awam Sebagai Integer
+Awam Sub InitSaver () Mengimplementasikan ICustomSaver.InitSaver
+Inisialized = Benar
+Sub Akhir
+Public Sub PreDisplay () Implementasi ICustomSaver.PreDisplay
+Sub Akhir
+Public Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
+Untuk CurrentStep = 0 hingga 3
+Console.Clear ()
+Jika Custom.CancellationPending = Benar Kemudian 'Ini akan membetulkan masalah untuk tugas sibuk.
+Keluar Untuk
+Akhir Jika
+Wln (aniset (CurrentStep), "neutralText")
+Thread.Sleep (150)
+Seterusnya
+Sub Akhir
+
+Public aniset As String () = {"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"" vbNewLine
+"",
+"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"oMMh" vbNewLine
+"mMM" vbNewLine
+"yMMm`" vbNewLine
+"` hMMN- "vbNewLine
+"` oMMMd. "vbNewLine
+".: odMMMm /" vbNewLine
+"mNMMMMMNy:" vbNewLine
+"mmhhs / -",
+"mmhyo / -" vbNewLine
+"mNMMMMMNy:" vbNewLine
+".: odMMMd /" vbNewLine
+".oMMMd." vbNewLine
+"` hMMN- "vbNewLine
+"yMMm`" vbNewLine
+"mMM" vbNewLine
+"oMMh" vbNewLine
+"hMMo oMMh" vbNewLine
+"MMm mMM" vbNewLine
+"mMMy yMMm`" vbNewLine
+"-NMMh` `hMMN-" vbNewLine
+".dMMMs`` oMMMd." vbNewLine
+"/ dMMMdo:.: odMMMm /" vbNewLine
+": yNMMMMMNmmNMMMMMyy:" vbNewLine
+"- / shhmmmmhhs / -",
+"- / oydmmmmhyo / -" vbNewLine
+": yNMMMMMNmmNMMMMMyy:" vbNewLine
+": dMMMdo:.: odMMMd /" vbNewLine
+".dMMMs .oMMMd." vbNewLine
+"-NMMh` `hMMN-" vbNewLine
+"mMMy yMMm`" vbNewLine
+"MMm mMM" vbNewLine
+"hMMo oMMh" vbNewLine
+"hMMo oMMh" vbNewLine
+"MMm mMM" vbNewLine
+"mMMy yMMm`" vbNewLine
+"-NMMh` `hMMN-" vbNewLine
+".dMMMs`` oMMMd." vbNewLine
+"/ dMMMdo:.: odMMMm /" vbNewLine
+": yNMMMMMNmmNMMMMMyy:" vbNewLine
+"- / shhmmmmhhs / -"}
+Kelas Akhir
+
+4. Hitung dari 0 hingga 1,000,000 dengan bar kemajuan (dinamik)
+
+Sistem Import
+Import Microsoft.VisualBasic.Constants
+Import Kernel_Simulator.TextWriterColor
+Import Microsoft.VisualBasic.Strings
+Import Kernel_Simulator.Screensaver
+Dinamik Kelas Awam
+Memerlukan ICustomSaver
+Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
+Ketibaan Awam Sebagai Integer
+ProgWent Awam Sebagai Integer
+Pemeriksaan Awam Sebagai Integer
+Awam lama sebagai integer
+Awam Sub InitSaver () Mengimplementasikan ICustomSaver.InitSaver
+Inisialized = Benar
+Sub Akhir
+Public Sub PreDisplay () Implementasi ICustomSaver.PreDisplay
+Sub Akhir
+Public Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
+Console.Clear ()
+Untuk Res = 0 Kepada 1000000
+Jika Custom.CancellationPending = Benar Kemudian 'Ini akan membetulkan masalah untuk tugas sibuk.
+Keluar Untuk
+Akhir Jika
+Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 5)
+ShowStats ()
+Seterusnya
+Semak = 0: oldCheck = 0: ProgWent = 0
+Sub Akhir
+Public ShowStats ()
+Wln ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+UpdateProgressBar (Res * 100/1000000)
+Sub Akhir
+Public Sub UpdateProgressBar (ByVal percent As String)
+Semak = peratus / 5
+Wln (Semak, "neutralTeks")
+Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
+W ("--------------------", "neutralText")
+Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
+W ("|", "neutralText")
+Jika Semak <> oldCheck Kemudian
+Untuk Pergi Sebagai Integer = 0 Untuk ProgWent
+W ("*", "neutralText")
+Seterusnya
+ProgWent = 1
+Akhir Jika
+Console.SetCursorPosition ((Console.WindowWidth / 2) 11, (Console.WindowHeight / 2) - 2)
+W ("|", "neutralText")
+Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 1)
+W ("--------------------", "neutralText")
+oldCheck = peratus / 5
+Sub Akhir
+Kelas Akhir
+
+Lebih banyak contoh
+
+Sekiranya anda ingin menyemak lebih banyak contoh, jangan ragu untuk menyemaknya di dalam KSModExamples respository pada folder Screensavers di GitHub.
+-BODY END-
+
+-COLOR CONFIGURATION-
+screensaver=>Green
+savescreen=>DarkGreen
+Modding guide=>Green
+Compile=>Cyan
+Build Events=>Cyan
+Post-build event=>Green
+End Class=>Cyan
+Public Class...=>Cyan
+Visual Studio 2017=>Magenta
+Imports Implements=>Cyan
+ICustomSaver=>Green
+Kernel_Simulator=>Cyan
+TextWriterColor=>Green
+Kernel_Simulator.TextWriterColor=>Green
+Property As Boolean Sub=>Cyan
+Initialized ICustomSaver.Initialized=>Green
+Kernel Simulator=>Green
+Rude=>Red
+KSModExamples Screensavers GitHub=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the screensaver for the kernel?=>SE1
+Basic modding (screensaver)=>SE1
+0. How to make your own screensavers on Visual Studio 2017?=>SE2
+1. In-Console Message Box, and Soon, Overnight, or Rude (Go away...) messages=>SE2
+2. Simple Blank screen=>SE2
+3. Animation (Drawing Circle - 4 frames - 4 FPS)=>SE2
+4. Calculate from 0 to 1,000,000 with progress bar (dynamic)=>SE2
+More examples=>SE1
+-SECTIONS END-

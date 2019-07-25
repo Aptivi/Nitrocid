@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando shell "reloadconfig"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando reloadconfig
+
+Resumo: recarrega a configura????o do kernel
+
+Descri????o
+
+Este comando recarrega as configura????es do kernel e tenta conservar reinicializa????es e refletir as mudan??as imediatamente. 
+
+Uso de comando
+
+* reloadconfig
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadconfig=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadconfig command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:FTP-kommando "ta bort" eller "del"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+radera eller dela FTP-kommando
+
+Sammanfattning: Tar bort filer eller mappar
+
+Beskrivning
+
+Om du har loggat in p?? en anv??ndare som har administrativa beh??righeter kan du ta bort o??nskade filer eller extra mappar fr??n servern.
+
+Om du raderade en fil medan det ??verf??rs p?? servern, kommer personer som f??rs??ker f?? den raderade filen aldrig att ladda ner den igen efter att deras nedladdning misslyckats.
+
+Kommandobruk
+
+* ta bort / del (fil / katalog)
+exempel
+
+* radera unwanted.txt: Radera filen med namnet "unwanted.txt"
+* del InactiveDir: Radera mappen med namnet "InactiveDir"
+-BODY END-
+
+-COLOR CONFIGURATION-
+delete/del (file/directory)=>Green
+delete unwanted.txt:=>Yellow
+del InactiveDir:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+delete or del FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

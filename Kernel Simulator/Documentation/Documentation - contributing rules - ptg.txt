@@ -1,0 +1,51 @@
+﻿| --------------- + -> Geral <- + --------------- |
+
+- Se você quiser contribuir para o Kernel Simulator, as condições abaixo devem ser seguidas:
+
+1. Se você deseja modificar / recodificar o núcleo do kernel, certifique-se de escrever as alterações correta e cuidadosamente, certificando-se de não danificar os recursos do kernel principal.
+2. Se você quiser adicionar / modificar / remover / recodificar alguns recursos desejados em qualquer lugar, escreva as alterações com cuidado.
+3. Como todos os outros desenvolvedores que desejam contribuir para o Kernel Simulator, as alterações devem ser testadas. Nós não queremos os resultados, apenas teste, e dizemos que é testado. Se você deseja fornecer os resultados, ainda aceitamos sua solicitação de recebimento.
+4. Se você não testou, e você nos enviou solicitação de puxar, vamos testar o código e se acharmos que:
+
+   - seu código está funcionando, nós aceitaremos seu pedido pull
+   - o seu código não está funcionando, vamos fechar o seu pedido pull
+
+5. Se você ainda não testou e está pronto para nos enviar, teste primeiro o código.
+6. Se você quiser modificar a documentação, ou outras partes que não sejam codificação, ou adicionar partes de / nova documentação, sinta-se à vontade para. Você pode nos notificar.
+
+- Portando para outros sistemas operacionais ou linguagens de programação que não sejam da linguagem Assembly (ASM, NASM, ...) ou C / C ++:
+
+Você pode ter que portar o Kernel Simulator em outro sistema operacional, como Linux, macOS e assim por diante. E também, para outras linguagens de programação que não sejam C / C ++ ou Assembly.
+
+A portabilidade para o ASM / C / C ++ depende de nós, o proprietário. Quaisquer portas para eles antes da nossa versão inicializável oficial do Kernel ASM / C / C ++ não serão suportadas por nós, e quaisquer questões relacionadas a elas serão imediatamente recusadas.
+
+- Se você quiser portar o Kernel Simulator para Linux (testado) ou macOS (não testado) no Visual Basic:
+
+1. Instale os pacotes Mono, MonoDevelop e libmono-microsoft-visualbasic10.0-cil. Você pode descobrir como em seu site oficial.
+2. Faça o download do código-fonte do KS
+3. Abra a solução usando o MonoDevelop e execute o programa.
+4. Relate quaisquer problemas na seção Questões em nosso repositório do KS.
+
+- Se você quiser portar o Kernel Simulator para Sun OS, BSDs, Solaris, etc. (não testado):
+
+Esta seção está em construção. Se você tiver instruções, por favor contribua.
+
+Nota: Se você quiser portar o Kernel Simulator para outras linguagens de programação que não sejam iguais a Assembly ou C / C ++, sinta-se à vontade para.
+Nota: Portar o Kernel dentro do Simulador do Kernel para o Real Computer / VirtualBox usando Assembly e C / C ++ depende de nós.
+Nota: Portar o Kernel dentro do simulador para Android / iOS é OK. Você pode fazer modificações apropriadas.
+
+| --------------- + -> Outras contribuições, edições, etc. <- + --------------- |
+
+- Relatar problemas
+
+Siga o padrão de design de relatório de erros e explique o máximo que puder. Explicação menos específica e padrão de design errado podem encerrar o problema. As capturas de tela são opcionais.
+
+| --------------- + -> Lista de tarefas para adicionar ao Kernel Simulator <- + --------------- |
+
+Se algumas das ideias desaparecerem, isso será feito ou cancelado. (Esta seção é excluída por 0.0.7 e movida para Lista de Tarefas no VS2019.)
+
+1. Gerenciador de arquivos do sistema host interativo (planejado na versão inicializável)
+2. Mova cada documentação para o Wiki no repositório, incluindo as páginas de manual, fazendo com que os comandos manuais de página abram um site para o Wiki (Planejado em 0.0.7)
+3. Lista permanente de nomes de usuários e senhas (senhas em formato criptografado - em beta)
+
+(Se você tiver ideias, edite esta seção inserindo sua ideia.)

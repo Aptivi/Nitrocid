@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "noaliases"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+noaliases komutu
+
+??zet: Yasakl?? takma adlar?? g??r??nt??leyebilirsiniz.
+
+A????klama
+
+Bu komut, bir takma ad olu??turmaman??z gereken komutlar?? g??r??nt??lemenizi sa??lar, ????nk?? "takma ad" komutunu takma adland??rma gibi sorunlar olu??turmalar?? yasakt??r.
+
+Komut kullan??m??
+
+* noalias
+-BODY END-
+
+-COLOR CONFIGURATION-
+noaliases=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+noaliases command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

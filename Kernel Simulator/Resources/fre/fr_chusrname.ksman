@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:La commande shell "chusrname"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande chusrname
+
+R??sum??: vous pouvez changer votre nom d'utilisateur ou le nom d'utilisateur de quelqu'un d'autre
+
+La description
+
+Si votre nom d'utilisateur ou celui de quelqu'un d'autre doit ??tre remplac?? par un nouveau nom d'utilisateur, vous devez le changer s'il s'agit de votre nom d'utilisateur ou si quelqu'un vous permet de changer son nom d'utilisateur pour un autre nom.
+
+Vous devez sp??cifier le nom d'utilisateur actuel avant le nouveau nom afin que l'outil sache comment changer le nom d'une autre personne ou votre nom en un autre nom.
+
+Lorsque vous remplacez votre nom par celui d'une autre personne, vous serez d??connect?? pour que les modifications prennent effet. 
+
+Utilisation de la commande
+
+* chusrname (oldUserName) (newUserName)
+
+Exemples
+
+* chusrname john JohnSmith: il change le nom d'utilisateur de John en JohnSmith
+* chusrname admin teacher: change le nom d'utilisateur de admin en prof
+-BODY END-
+
+-COLOR CONFIGURATION-
+chusrname (oldUserName) (newUserName)=>Green
+chusrname admin teacher:=>Yellow
+chusrname john JohnSmith:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chusrname command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

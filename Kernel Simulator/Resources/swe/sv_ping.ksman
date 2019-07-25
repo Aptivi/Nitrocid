@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "ping"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+ping-kommando
+
+Sammanfattning: Kontrollerar om servern ??r offline / online
+
+Beskrivning
+
+Om du inte kan n?? servern eller om du vill veta om den ??r offline eller online eller om du vill se hur l??ngt webbplatsen ??r, anv??nd detta kommando.
+
+Detta kommando l??ter dig skicka pingf??rfr??gan till servern, och servern svarar om den ??r online. 
+
+Kommandobruk
+
+* ping (adress)
+* ping (Adress) [upprepningstider]
+
+exempel
+
+* ping 127.0.0.1 3: Det pingar "localhost" 3 g??nger
+* ping www.google.com 5: Det pingar www.google.com 5 g??nger
+* ping 192.168.1.105: Den ping 192.168.1.105 en g??ng
+-BODY END-
+
+-COLOR CONFIGURATION-
+ping (Address)=>Green
+ping (Address) [repeatTimes]=>Green
+ping 127.0.0.1 3:=>Yellow
+ping www.google.com 5:=>Yellow
+ping 192.168.1.105:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+ping command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

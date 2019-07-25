@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "calc"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl calc
+
+Zusammenfassung: Sie k??nnen Ausdr??cke berechnen
+
+Beschreibung
+
+Wenn Sie Hilfe bei der Berechnung von Ausdr??cken beim Multiplizieren und Teilen gro??er Zahlen ben??tigen oder wenn Sie Ausdr??cke schneller berechnen m??ssen, ist dieser Befehl genau das Richtige f??r Sie.
+
+Es verwendet die Central Processing Unit (CPU) zum Verarbeiten und Auswerten von Ausdr??cken und druckt diese nach Abschluss auf dem Bildschirm aus. 
+
+Es ermittelt automatisch, ob es sich um Integer oder Double handelt, indem Ausdr??cke nach Dezimalstellen durchsucht werden. Wenn eine der Zahlen einen Dezimalpunkt enth??lt, wird die Ausgabe des Ausdrucks auf Double umgeschaltet, andernfalls wird Integer ausgegeben.
+
+Wenn Sie versuchen, den ??berlauf zu ??berwinden, w??hrend Ihr Ausdruck keine Dezimalstellen enth??lt, f??hrt dies zum Integer Overflow-Fehler. 
+
+Sie k??nnen auch Klammern f??r den darin enthaltenen Ausdruck hinzuf??gen, damit er die h??chste Priorit??t hat, wenn er in einem PEMDAS-Formular berechnet wird: Klammern, Exponenten, Multiplikation, Division, Addition, Subtraktion.
+
+Befehlsverwendung
+
+* calc (number) (| - | * | / |%) (number) ...
+* calc ((number) (| - | * | / |%) (number) ...) (| - | * | / |%) (number) ...
+
+Beispiele
+
+* calc 32 * 2048: Dies multipliziert 32 mit 2048 und das Ergebnis ist 65536
+* calc (128.50 - 42.25) / 2: Hiermit werden Ausdr??cke in Klammern ausgewertet und das Ergebnis durch 2 geteilt. Das Ergebnis ist 43.13
+* calc 128.50 - 42.25 / 2: Wenn Sie jedoch das obige Beispiel ohne die Klammern ausprobiert haben, haben die Werte 128.50 - 42.25 nicht mehr die h??chste Priorit??t und das Ergebnis ist 107.38
+* calc ((48.22 / 3.88) * (68.88 95.22)) 9 - .41: Dies wertet diesen Ausdruck aus und das Ergebnis ist 2048
+* calc 3 * 5 * 5 * 3: Dies multipliziert 3 mit 5 im ersten Teil und 5 mit 3 im zweiten Teil, multipliziert sie dann und das Ergebnis ist 225
+* calc (1024 * 1024 * 1024) * 2.0: Dies multipliziert 1024 mit 1024 mit 1024 und multipliziert es dann mit 2 unter Verwendung des Gleitkommaprozessors, und das Ergebnis ist 2147483648.
+-BODY END-
+
+-COLOR CONFIGURATION-
+calc (number) (+|-|*|/|%) (number) ...=>Green
+calc ((number) (+|-|*|/|%) (number) ...) (+|-|*|/|%) (number) ...=>Green
+calc 32 * 2048:=>Yellow
+calc (128.50 - 42.25) / 2:=>Yellow
+calc 128.50 - 42.25 / 2:=>Yellow
+calc ((48.22 / 3.88) * (68.88 + 95.22)) + 9 - .41:=>Yellow
+calc 3*5 * 5*3:=>Yellow
+calc (1024*1024*1024) * 2.0:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+calc command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

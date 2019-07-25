@@ -1,0 +1,85 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Comandos disponibles
+-REVISION:0.0.1.3
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the commands that are available in the kernel is put.
+-BODY START-
+Comandos administrativos:
+
+1. adduser: puede agregar el nombre del usuario siempre que lo necesite, con la contrase??a si es necesario. 
+2. perm: Puede administrar la configuraci??n de permisos del usuario. 
+3. arginj: puede inyectar argumentos en el kernel para que, al reiniciar, se ejecuten los argumentos que se inyectan. 
+4. chhostname: Puedes cambiar tu nombre de host de tu kernel para personalizar las cosas. 
+5. chmotd: puede cambiar su mensaje del d??a e incluir sus propios marcadores de posici??n, incluido <user> que significa nombre de usuario, <shortdate> para la fecha corta en formato "MM / DD / YYYY", <longdate> 
+6. chusrname: puedes cambiar tu nombre de usuario, o el nombre de otra persona, usando "chusrname <oldName> <newName>", aunque si cambias tu nombre de usuario a un nuevo nombre, cerrar??s sesi??n inmediatamente.
+7. rmuser: puede eliminar los nombres de usuario, pero no puede eliminar el suyo, si el usuario especificado no quiere usar la computadora, no est?? invitado o es redundante. 
+8. netinfo: puede verificar el estado de su red y la informaci??n de la interfaz de red, incluida la compatibilidad con WiFi. 
+9. debuglog: puede revisar sus registros de depuraci??n sin tener que ir al explorador de archivos ubicado en su perfil de usuario y abrir el editor / visor de texto en "kernelDbg.log". 
+10. reloadconfig: puede volver a cargar el archivo de configuraci??n para leer los nuevos cambios, pero los cambios se aplicar??n despu??s de reiniciar el kernel.
+11. alias: puede administrar sus alias a los comandos para que no tenga que escribir comandos largos, usando "alias <add / rem> <aliasName> <Command>".
+12. chmal: puede cambiar el mensaje del d??a siguiente al inicio de sesi??n, admite los mismos marcadores de posici??n y tiene el mismo argumento de "chmal <cualquier cosa>".
+13. salvapantallas: puede configurar su salvapantallas de su elecci??n o su personalizado como el predeterminado, y si planea usar salvapantallas personalizados, debe nombrar su extensi??n como <ScreensaverName> SS.m para que se reconozca como salvapantallas, no 
+14. reloadsaver: puede volver a cargar el archivo de extensi??n del protector de pantalla desde el directorio KSMods. 
+15. cdbglog: puede borrar el registro de depuraci??n, restableciendo el tama??o a 0
+
+Comandos normales del usuario:
+
+1. calc: Puedes calcular tus expresiones, como sumar n??meros, restarlos, multiplicarlos o dividirlos. 
+2. chdir: puedes cambiar tu directorio de trabajo usando "chdir <directory>"
+3. chpwd: puedes cambiar tu contrase??a o la contrase??a de otra persona. 
+4. cls: para borrar tu pantalla del texto.
+5. ftp: puede transferir archivos desde / a un servidor FTP e interactuar con los servidores.
+6. lista: puede enumerar su directorio de trabajo actual, o enumerar otro directorio usando "lista [Directorio]".
+7. lscomp: puede enumerar todas las computadoras en funcionamiento, incluso sin conexi??n si est?? en el dominio que tiene algunas computadoras como la escuela, la oficina grande, etc. Esto tambi??n puede usarse en cub??culos, pero para todos los lugares, 
+8. lsnet: puede enumerar todas las computadoras que funcionan, pero omitiendo las computadoras sin conexi??n.
+9. lsnettree: puede enumerar todas las computadoras que funcionan, pero omitiendo las computadoras sin conexi??n en forma de ??rbol.
+10. pantalla de bloqueo: puede bloquear su pantalla y mostrar su protector de pantalla predeterminado establecido por usted o por el kernel. 
+11. cerrar sesi??n: puede cerrar sesi??n en su cuenta cuando haya terminado de trabajar.
+12. md: puede hacer su directorio en el directorio ra??z, usando "md <cualquier cosa>".
+13. noaliases: puede ver la lista de alias prohibidos establecidos por el n??cleo. 
+14. ping: puede verificar la direcci??n / servidor para ver si est?? en l??nea, retrasado o fuera de l??nea usando "ping <Address> [repeatTimes]"
+15. rd: puede eliminar su directorio creado usando "r <<nada>," pero si intenta eliminar carpetas importantes, ??stas se recrean en cada reinicio y este comportamiento cambiar?? cuando implementemos un sistema de archivos real.
+16. leer: puedes ver lo que hay dentro de un archivo con "leer <archivo>," muy parecido a "gato <ruta / a / archivo>".
+17. reinicio: puede reiniciar el kernel si ha realizado cambios en la configuraci??n manual o de la herramienta para que se reflejen, o si desea ver la secuencia de arranque nuevamente.
+18. pantalla de salvaguarda: puede mostrar el protector de pantalla para evitar que la pantalla se queme.
+19. scical: Puedes calcular tus expresiones, pero esta calculadora es la calculadora cient??fica, y se fusionar?? con "calc" en el futuro. 
+20. setcolors: Puedes configurar los colores del n??cleo usando "setcolors <inputColor / def> <licenseColor / def> <contKernelErrorColor / def> <uncontKernelErrorColor / def> <hostNameShellColor / def> <userNameShellColor / def> <backgroundColor / def> <hostNameShellColor / def> <userNameShellColor / def> <backgroundColor / def> <hostNameShellColor / def 
+21. setthemes: puedes establecer el conjunto de colores para tu kernel, como se conoce como temas, usando "setthemes <theme>"
+22. showmotd: Puedes mostrar tus cambios al Mensaje del d??a
+23. showtd: puede mostrar su hora y fecha actuales, as?? como su zona horaria.
+24. showtdzone: puede mostrar la hora y fecha de la zona horaria, o puede mostrar todas las fechas y horas de las zonas horarias en la fecha y hora actuales usando "showtdzone <zone>" o "showtdzone <all>"
+25. showmal: puede mostrar sus cambios en el Mensaje del d??a despu??s de iniciar sesi??n
+26. apagado: puede apagar su computadora (el kernel, no la PC real)
+27. sysinfo: puede mostrar la informaci??n de su sistema, as?? como la configuraci??n del kernel.
+28. unitconv: puede convertir la unidad en cualquier unidad, si la fuente y el destino se apoyan entre s?? como cm -> m, usando "unitconv <source> <target> <value>".
+29. useddeps: puede mostrar las bibliotecas de c??digo abierto utilizadas
+30. Manual de usuario: puede obtener informaci??n sobre todo u obtener las p??ginas de manual disponibles escribiendo solo el comando. 
+
+Para obtener m??s informaci??n acerca de cada comando, consulte "usermanual <comando>"
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser:=>Red
+perm:=>Red
+arginj:=>Red
+chhostname:=>Red
+chmotd:=>Red
+chusrname:=>Red
+rmuser:=>Red
+netinfo:=>Red
+debuglog:=>Red
+reloadconfig:=>Red
+alias:=>Red
+chmal:=>Red
+setsaver:=>Red
+loadsaver:=>Red
+cdbglog:=>Red
+-COLOR CONFIG END-
+
+-SECTIONS-
+Administrative commands:=>SE1
+Normal user commands:=>SE1
+-SECTIONS END-

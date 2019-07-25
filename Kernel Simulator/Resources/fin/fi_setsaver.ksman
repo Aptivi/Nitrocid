@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "setsaver"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+setaverin komento
+
+Yhteenveto: Asettaa oletusn??yt??ns????st??j??n oman n??yt??ns????st??j??n tai sis????nrakennetun s????st??j??n
+
+Kuvaus
+
+Voit asettaa oletusn??yt??ns????st??j??n omaksi n??yt??ns????st??j??ksi modifileill?? tai sis????nrakennetuilla s????st??jill??, kuten matriisilla, diskoilla ja colorMixill??.
+
+* matriisi: N??ytt???? perusmatriisin, joka tulostaa v??lill?? 0 ja 1 vihre??n tekstin v??riss??
+* disco: N??ytt???? disko-valot
+* colorMix: Se muuttaa taustav??rin satunnaiseksi v??riksi ja tulostaa "" v??rillisen lohkon valmistamiseksi ja toistaa.
+
+Komennon k??ytt??
+
+* setsaver ((ScreenSaverName) SS.m / matriisi / disco / colorMix)
+
+esimerkit
+
+* setaverin matriisi
+* setaver GameOfLifeSS.m
+* setaver LinesSS.m
+-BODY END-
+
+-COLOR CONFIGURATION-
+setsaver ((ScreenSaverName)SS.m/matrix/disco/colorMix)=>Green
+setsaver matrix=>Yellow
+setsaver GameOfLifeSS.m=>Yellow
+setsaver LinesSS.m=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setsaver command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

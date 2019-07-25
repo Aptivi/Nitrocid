@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "debuglog"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando debuglog
+
+Resumen: puede ver los registros del depurador del kernel desde el archivo llamado kernelDbg.log que se encuentra en su carpeta de perfil de usuario
+
+Descripci??n
+
+Este visor le permite ver sus registros de depuraci??n sin habilitar primero el modo de depuraci??n en el kernel. 
+
+Antes, este comando requer??a que el depurador estuviera encendido en el kernel.
+
+Uso del comando
+
+* registro de depuraci??n
+-BODY END-
+
+-COLOR CONFIGURATION-
+debuglog=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+debuglog command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

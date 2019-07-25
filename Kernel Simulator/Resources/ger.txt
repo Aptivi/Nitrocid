@@ -348,3 +348,20 @@ Ruft SSE-Versionen ab
 Ungültige Sprache
 Ändert die Sprache
 Möglicherweise ist libcpanel-json-xs-perl nicht auf Ihrem System installiert. Informationen zur Installation erhalten Sie von Ihrem Paketmanager. Für Debian-Systeme (und Derivate) möchten Sie möglicherweise "sudo apt install libcpanel-json-xs-perl" im Terminal-Emulator ausführen. Weitere Details zu einem Fehler:
+----------------------------- Kernel Panic Dump ------------------------------
+>> Panikmeldungen <<
+> Beschreibung: {0}
+> Fehlertyp: {1}
+> Datum und Uhrzeit: {2}
+>> Ausnahmeinformationen <<
+> Ausnahme: {0}
+> Beschreibung: {1}
+> HRESULT: {2}
+> Quelle: {3}
+> Stack trace <
+>> Informationen zur inneren Ausnahme {0} <<
+>> Ausnahme {0} ist die Grundursache <<
+>> Keine Ausnahme; könnte ein Kernelfehler sein. <<
+>> Rahmen, Dateien, Zeilen und Spalten <<
+> Frame {0}: Datei: {1} | Zeile: {2} | Spalte: {3}
+> Beim Versuch, Frame-Informationen abzurufen, ist ein Fehler aufgetreten. {0}: {1}

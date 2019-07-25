@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "adduser"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl adduser
+
+Zusammenfassung: Sie k??nnen den Benutzernamen bei Bedarf zusammen mit dem Kennwort hinzuf??gen.
+
+Beschreibung
+
+Wenn Sie eine Person hinzuf??gen m??ssen, die den Kernel verwenden m??chte, k??nnen Sie Benutzer f??r sie hinzuf??gen und sie das Kennwort angeben lassen, wenn sie es ben??tigen. 
+
+Wenn Sie jedoch eine Person mit Administratorrechten hinzuf??gen m??ssen, sollten Sie die Berechtigung f??r den Benutzer festlegen, Administratorrechte zuzulassen. 
+
+Weitere Informationen zum Einrichten der Berechtigung f??r Benutzer finden Sie unter "Benutzerdefinierte Berechtigung".
+
+Befehlsverwendung
+
+* adduser (Benutzername)
+* adduser (userName) [Passwort] [best??tigen]
+
+Beispiele
+
+* adduser joe: Hiermit wird ein neues Konto mit dem Namen "joe" erstellt.
+* adduser test pass1234 pass1234: Hiermit wird ein neues Konto mit dem Namen "test" und dem Passwort "pass1234" erstellt.
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser (userName)=>Green
+adduser (userName) [password] [confirm]=>Green
+adduser joe:=>Yellow
+adduser test pass1234 pass1234:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+adduser command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

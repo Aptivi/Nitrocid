@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "rd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl
+
+Zusammenfassung: Entfernt das Verzeichnis aus dem aktuellen Arbeitsverzeichnis
+
+Beschreibung
+
+Mit diesem Befehl k??nnen Sie ein Verzeichnis aus Ihrem aktuellen Arbeitsverzeichnis entfernen. 
+
+Wenn das reale Dateisystem implementiert wird, werden wirklich Verzeichnisse entfernt.
+
+Befehlsverwendung
+
+* rd (Verzeichnis)
+
+Beispiele
+
+* rd boot: Entfernt das Boot-Verzeichnis
+-BODY END-
+
+-COLOR CONFIGURATION-
+rd (directory)=>Green
+rd boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

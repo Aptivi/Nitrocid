@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "showtdzone"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+showtdzone komutu
+
+??zet: Ge??erli saati ve tarihi ba??ka bir saat diliminde g??sterir
+
+A????klama
+
+Ba??ka bir ??ehir veya ??lkede saatin ka?? oldu??unu bilmeniz gerekiyorsa, bu arac?? ba??ka bir ??lkede veya ??ehirde ge??erli saati ve tarihi anlatmak i??in kullanabilirsiniz.
+
+Bu komut ??ok platformludur ve Unix sistemlerinde IANA saat dilimlerini ve Windows'taki Windows saat dilimini kullan??r.
+
+??rne??in, Unix sistemlerinde "Asia / Damascus" kullanman??z gerekirse, "showtdzone Asia / Damascus" yazacaks??n??z. 
+
+Komut kullan??m??
+
+* showtdzone (TimeZone / t??m??)
+
+??rnekler
+
+* showtdzone Egypt Standard Time: Windows'taki M??s??r'daki ge??erli saati ve tarihi g??sterir.
+* showtdzone Asia / Hong_Kong: Linux sistemlerinde Hong Kong'da ge??erli saat ve tarihi g??r??nt??ler
+* showtdzone all: T??m saat dilimlerini ve saatlerini ve tarihlerini g??r??nt??ler
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtdzone (TimeZone/all)=>Green
+showtdzone Egypt Standard Time:=>Yellow
+showtdzone Asia/Hong_Kong:=>Yellow
+showtdzone all:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtdzone command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,42 @@
+(*MAN START*)
+
+-TITLE:FTP komutu "listremote" veya "lsr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+listremote veya lsr FTP komutu
+
+??zet: Ge??erli klas??r??n veya sa??lanan klas??r??n i??eri??ini listeler.
+
+A????klama
+
+Dizin belirtilmemi??se, ge??erli ??al????ma dizininde yer alan dosyalar??n ve alt dizinlerin listesini veya belirtilmi??se belirtilen dizinde g??rebilirsiniz.
+
+Ge??erli konumunuzun ??nceki dizininde bulunan dosyalar??n ve alt dizinlerin listesini de g??rebilirsiniz.
+
+Listlocal veya lsr'den farkl?? olarak, bu komutu kullanmak i??in sunucuya ba??lanman??z gerekir, ????nk?? yerel sabit s??r??c??de de??il, sunucudaki dizinleri listeler.
+
+Komut kullan??m??
+
+* listremote / lsr [klas??r / ..]
+??rnekler
+
+* listremote: ??al????ma dizinindeki i??erikleri listeler
+* listremote ..: ??nceki ??al????ma dizinindeki i??erikleri listeler.
+* lsr ??ehirler: "??ehirler" klas??r??n??n i??eri??ini listeler
+-BODY END-
+
+-COLOR CONFIGURATION-
+listremote/lsr [folder/..]=>Green
+listremote:=>Yellow
+listremote ..:=>Yellow
+lsr cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+listremote or lsr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

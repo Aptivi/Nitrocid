@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "currremotedir" o "pwdr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando FTP currremotedir o pwdr
+
+Riepilogo: ottiene la tua attuale directory remota
+
+Descrizione
+
+Questo comando FTP ti dice quale ?? la directory remota nel server FTP che stai attualmente guardando.
+
+Comando di utilizzo
+
+* currremotedir
+* pwdr
+-BODY END-
+
+-COLOR CONFIGURATION-
+currremotedir=>Green
+pwdr=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+currremotedir or pwdr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

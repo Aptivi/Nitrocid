@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Shell-commando "chusrname"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commando chusrname
+
+Samenvatting: u kunt uw gebruikersnaam of de gebruikersnaam van iemand anders wijzigen
+
+Omschrijving
+
+Als uw gebruikersnaam of de gebruikersnaam van iemand anders moet worden gewijzigd in een nieuwe gebruikersnaam, moet u deze wijzigen als dit uw gebruikersnaam is of als iemand u toestaat om zijn gebruikersnaam in een andere naam te veranderen.
+
+U moet de huidige gebruikersnaam opgeven v????r de nieuwe gebruikersnaam, zodat het hulpprogramma weet hoe u de naam van iemand anders of uw naam in een andere naam kunt wijzigen.
+
+Wanneer u uw naam wijzigt in de naam van iemand anders, wordt u uitgelogd om wijzigingen door te voeren. 
+
+Commando gebruik
+
+* chusrname (oldUserName) (newUserName)
+
+Voorbeelden
+
+* chusrname john JohnSmith: Het verandert John's gebruikersnaam in JohnSmith
+* chusrname admin teacher: het verandert de gebruikersnaam van de beheerder in de leraar
+-BODY END-
+
+-COLOR CONFIGURATION-
+chusrname (oldUserName) (newUserName)=>Green
+chusrname admin teacher:=>Yellow
+chusrname john JohnSmith:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chusrname command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

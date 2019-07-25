@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:FTP-komento "poista" tai "del"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+poista tai del FTP-komento
+
+Yhteenveto: Poistaa tiedostot tai kansiot
+
+Kuvaus
+
+Jos olet kirjautunut sis????n k??ytt??j????n, jolla on j??rjestelm??nvalvojan oikeudet, voit poistaa ei-toivotut tiedostot tai ylim????r??iset kansiot palvelimelta.
+
+Jos poistat tiedoston, kun palvelimessa on l??hetyksi??, henkil??t, jotka yritt??v??t saada poistetun tiedoston, eiv??t voi koskaan ladata sit?? uudelleen latauksen ep??onnistumisen j??lkeen.
+
+Komennon k??ytt??
+
+* Poista / del (tiedosto / hakemisto)
+esimerkit
+
+* Poista ei-toivottu.txt: Poista tiedosto, jonka nimi on "unsanted.txt"
+* del InactiveDir: Poista kansio nimelt?? "InactiveDir"
+-BODY END-
+
+-COLOR CONFIGURATION-
+delete/del (file/directory)=>Green
+delete unwanted.txt:=>Yellow
+del InactiveDir:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+delete or del FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

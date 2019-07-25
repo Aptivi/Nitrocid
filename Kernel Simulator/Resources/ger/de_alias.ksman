@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "Alias"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Alias-Befehl
+
+Zusammenfassung: Sie k??nnen eine alternative Verkn??pfung zum Befehl festlegen, wenn Sie k??rzere W??rter f??r lange Befehle verwenden m??chten.
+
+Beschreibung
+
+Einige Befehle in diesem Kernel sind lang und manche schreiben nicht schnell auf Computern. 
+
+Sie k??nnen diesen Befehl auch verwenden, wenn Sie Skripts erstellen m??chten, wenn das eigentliche Dateisystem in Zukunft hinzugef??gt wird oder wenn Sie auf der Suche nach etwas sind und keine Zeit haben, den langen Befehl auszuf??hren.
+
+Sie k??nnen den Alias ??????zum langen Befehl hinzuf??gen oder daraus entfernen.
+
+Befehlsverwendung
+
+* alias add (alias) (cmd)
+* alias rem (alias)
+
+Beispiele
+
+* alias add libs useddeps: Hiermit wird eine Verkn??pfung von "useddeps" mit dem Namen "libs" erstellt.
+* alias add stdz showtdzone: Dies erstellt eine Verkn??pfung von "showtdzone" mit dem Namen "stdz"
+* Alias ??????"Abschaltung hinzuf??gen": Dadurch wird eine Abk??rzung f??r "Abschaltung" mit dem Namen "Abschaltung" erstellt.
+* alias hinzuf??gen? 
+* alias rem signout: Hiermit wird eine Verkn??pfung entfernt, die durch den Befehl "logout" den Namen "signout" tr??gt.
+* alias rem savescrn: Dies entfernt eine Verkn??pfung mit dem Namen "savescrn" mit dem Befehl "savescreen".
+* alias rem clearscrn: Dies entfernt eine Verkn??pfung mit dem Namen "clearscrn" durch den Befehl "cls".
+* alias rem lckscrnsvr: Hiermit wird eine Verkn??pfung entfernt, die vom Befehl "lockscreen" den Namen "lckscrnsvr" tr??gt.
+-BODY END-
+
+-COLOR CONFIGURATION-
+alias add (alias) (cmd)=>Green
+alias rem (alias)=>Green
+alias add libs useddeps:=>Yellow
+alias add stdz showtdzone:=>Yellow
+alias add turnoff shutdown:=>Yellow
+alias add ? help:=>Yellow
+alias rem signout:=>Yellow
+alias rem savescrn:=>Yellow
+alias rem clearscrn:=>Yellow
+alias rem lckscrnsvr:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+alias command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

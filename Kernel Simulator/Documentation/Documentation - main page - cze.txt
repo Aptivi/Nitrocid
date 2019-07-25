@@ -1,0 +1,109 @@
+﻿| --------------- + -> Simulátor jádra - Simuluje budoucí jádro, které plánujeme my <- + -------------- - |
+
+INFO: Vytváříte linuxovou verzi Kernel Simulatoru v MonoDevelopu? Pokud ano, nainstalujte MonoDevelop a libmono-microsoft-visualbasic10.0-cil. Přestože doporučujeme MonoDevelop, doporučujeme JetBrains Rider pro Linux 64-bit.
+
+INFO: Tento simulátor jádra není finální plánovanou verzí jádra, protože byl minimální.
+
+INFO: Jsou odstraněny dvě dokumentace, faq a odstraňování problémů, protože nejsou pravidelně aktualizovány.
+
+Kernel Simulator vám umožní simulovat velmi brzký přístup pro naše budoucí jádro, které se bude i nadále vyvíjet, i když jsme vytvořili skutečnou PC verzi jádra.
+
+| --------------- + -> Historie <- + --------------- |
+
+7/25/2019 - 0.0.6.5: Opraveny soubory výpisu bez přípony, Lokalizované výpisy a manuály, Aktualizovaná jazyková verze na nejnovější, Opraveny některé chyby o souborovém systému, Opravena rychlost hodin procesoru, která se zobrazuje dvakrát v nejnovějších procesorech (procesory, které mají rychlost hodin na jejich interních názvech, např. "Intel (R) Core (TM) i7-8700 CPU @ 3,20GHz"), Opravená lišta průběhu FTP přenosů, takže používá nový formát, přidáno ETA a rychlost
+7/7/2019 - 0.0.6.4b: Byla provedena jedna příprava pro 0.0.6.5: Stažení ladících symbolů při spuštění, pokud nebylo nalezeno
+7/6/2019 - 0.0.6.4a: Opravena chyba hardwarové sondy v systému Linux, i když byla úspěšná, Opravená chyba v paměti RAM zobrazující MemTotal: předpona, Vyrobeno zprávy o libcpanel-json-xs-perl clear
+6/28/2019 - 0.0.6.4: Opravena chyba NullReferenceException při změně jazyka, Opravena masivní dokumentace nové řádky při pokusu o analýzu prázdného slova, které není na začátku (Upozorňujeme, že v prvním řádku stále máme nové řádky), Přidáno Ubuntu téma, Odebráno nepoužité označení, Odebráno další požadavek na analýzu barev při spuštění (odstraněná chamtivost), Čtení souborů FTP ve formátu pro čtení člověkem čitelné
+6/26/2019 - 0.0.6.3: Opraveno „ticho“ není úplně tiché, Opravené zprávy se nezobrazují po přihlášení (např. Přidání uživatelské zprávy), Povoleno změnit jazyk pomocí příkazu, Opraven text nápovědy zobrazující po provedení `sses` , Přidán český jazyk
+25.6.2019 - 0.0.6.2b: Přidán příkaz s názvem `sses` k seznamu všech verzí SSE
+6/24/2019 - 0.0.6.2a: Přidána kontrola instrukcí procesoru (aktuálně používaná při bootování jádra, aby se zjistilo, zda je podporována SSE2)
+6/24/2019 - 0.0.6.2: Příkaz opravy záznamu ladění protokolu nefunguje, protože nebyla nalezena cesta (typo: Debugger -> Ladění), Přidáno upozornění v seznamu příkazů PC o nejnovějších verzích systému Windows 10, Záhlaví jádra debug jádra nepíše při spuštění s argumentem ladění, opraven protokol ladění prázdný při každém restartování a spuštění, povoleno vymazání příkazu ladění přihlášení pomocí cdbglogu, použité vestavěné enumerátory FtpVerify, odstranění kontroly hash pro starší verze FluentFTP, lepší ladicí zážitek, Ladění nyní ukazuje číslo řádku a zdrojový soubor, pokud je pdb ve stejné složce. Povolené modulování pomocí C #
+21.6.2019 - 0.0.6.1: Odstraněné informace o měně, které se zobrazují na nápovědě (přinesou je zpět později), uživatelé jsou nyní povinni zadat svůj API klíč z apilayer.net pro převod měn (základní plán, získáte na http: // currencylayer.com/product, netestováno: nemohl zaplatit základní plán)
+6/19/2019 - 0.0.6: Nová ikona, Aktualizováno FluentFTP a Newtonsoft.Json libs, Odstraněné události zápisu, Přepsané přihlášení (Ne všechny, ale přepracované), Opraven příkaz chpwd neměnící heslo, pokud cíl není Nemám heslo, Opravený chpwd nekontroluje, zda normální uživatel změní heslo správce, Opravený adduser nepřidává uživatele bez hesel, Fixed adduser přidává uživatele s hesly, i když se neshodují, Odstraněn cdir, Přidán konfigurační záznam pro název spořiče obrazovky, Implementováno ladicí a výpisové soubory pro chyby jádra, dodávané s ladícími symboly .pdb pro KS, opravená obrazovka pro restartování není vymazána, přidány nizozemské, finské, italské, malajské, švédské a turecké jazyky (přepnout na kompatibilní písmo v konzole), země a měny jsou nyní je uveden, když neposkytuje dostatek argumentů nebo nevydává „měnu nápovědy“, Opravený seznam nápovědy, který se při restartu neaktualizuje na novou jazykovou aktualizaci, Přidány trvalé aliasy (umístěné pod vaším profilem, aliasy.csv), heslo je nyní při přihlášení k maintai n zabezpečení, Pevné uživatele budou odebíráni po každém restartu
+6/13/2019 - 0.0.5.14: Nahrazený falešný souborový systém skutečným (přístup k vašim souborům), Opraven nesprávný příkaz nápovědy „changesir“ zobrazený namísto „chdir“, „cdir“, který ukazuje aktuální adresář, je nyní zastaralý, Opraveno selhání při restartování jádra
+4/14/2019 - 0.0.5.13: Další hubnutí pomocí JetBrains ReSharper pro VS2017, Implementované testování hardwaru Linuxu (pro práci s HDD sondami musíte nainstalovat inxi), Požadavek na zvýšenou .NET na 4.7, Odstraněné varování o přesměrováních vazeb v MonoDevelop, Zvýšený požadavek na verzi VS na VS2019, odstraněno nepříjemné „porušení pravidla pro pojmenování“ pomocí navrhované volby
+2/22/2019 - 0.0.5.12: Nyní createConf cmdline arg vytváří konfiguraci pouze v případě, že nebyl nalezen konfigurační soubor, Některé přípravy na 0.0.6 (pouze zeštíhlení), Odstraněno testování GPU a BIOS, Nyní získala starší KS konfigurace Zde není povoleno aktualizace (Řešení: Je třeba odstranit váš starý konfigurační soubor KS a znovu spustit aplikaci), Opravená chyba Environment.OS v systému Windows 10 (10.0), kde vrací verzi systému Windows 8 (6.2), Opraveno zástupné symboly, které při použití příkazu showmotd / showmal nerozebíraly, Opravená jednoduchá nápověda, která nezobrazuje mody, Opravené vestavěné příkazy, které se nespouštějí po spuštění příkazů mod nebo alias, Opravená výjimka NullReferenceException při ladění, Vylepšený výpis aliasů, Opravena výjimka tiskového textu zpráva nepřekládající aktuální jazyk, Opraveno "/" nebo "\", které se objevují před modname při zkoušení modů a spořičů obrazovky, Odebráno zbytečné opravy v překladu, Opraveno další přetečení zásobníku v FTP shellu, Opraveno překládání FTP zpráv překladem "'help" „jako jazyk, když“ Má to být příkaz, Opraven příkaz nenalezen, když nevkládáte nic do FTP shellu
+2/18/2019 - 0.0.5.11: Proběhlo testování GPU a BIOS `<Obsolete>`, Žádné další COM hovory při testování hardwaru, Odstranění zbytečného souboru, který obsahuje data na pevném disku, Opraven překlad sysinfo při zobrazení sekce konfigurace jádra , Odebráno testování stavu z HDD a RAM (viz proč v `Obvyklá historie simulátoru jádra`, část` Pravda o testování stavu '), Opravena část CHS, která se neobjevuje, pokud má pevný disk hodnotu Výrobce, Opraveno překladatel nevrací angličtinu hodnota, pokud překladový seznam neobsahuje takovou hodnotu, Opraveno prober GPU za předpokladu, že Microsoft Basic Display Driver není základní ovladač, Vyrobené spořiče obrazovky budou vyzkoušeny při spuštění, Opravena NullReferenceException při pokusu o načtení dalšího spořiče obrazovky po výskytu chyby na předchozí spořič obrazovky, Opravena informace o OS nepřekládaná při spouštění jádra, Konfigurace opraveného jazyka, která se při aktualizaci nezachovává, informace o ladění se nyní vytisknou do výstupního okna ladění VS2017 (Stále musíte zapnout deb ugging), Vytvořil příkaz loadaver reloadsaver, Odstranil zbytečné a hrubé příkazy (echo, panicsim a výběr)
+2/16/2019 - 0.0.5.10: Vylepšená čitelnost manuálních stránek (vbTab je nyní filtrován a nebude způsobovat problémy), Nyní překladatel vytiskne informace o ladění, pokud není řetězec nalezen v seznamu překladů, Hardware Prober: Zastavte spamování “ Systém .__ ComObject "pro debugger, který umožňuje snadné čtení, Manpage Parser: Přestaňte vyplňovat protokoly ladění zbytečnými texty" Kontrola pro ... "a rozšířil několik zpráv o ladění, Opravený řetězec BIOS není zobrazen, Odstraněny zbytečné kontroly platformy spánku, Odstraněn" nohwprobe "Argument jádra jako hardwarové sondy je důležitý, Odstraněné zbytečné kontroly časových pásem, Aktualizované knihovny FluentFTP a Newtonsoft.Json na jejich nejnovější stabilní verze, Žádné duplikáty zásobníku kromě části hesla v Přihlášení, Opravená chyba MAL a MOTD se mezi přihlašovacími aktualizacemi neopravuje, Opraveno chyba sysinfo (nastavení zpráv se netiskne), jádro nyní tiskne prostředí používané při bootování, ladění a na příkaz sysinfo, Události při psaní jsou zastaralé
+12/24/2018 - 0.0.5.9: Mody budou nyní zastaveny při vypínání, Mody mohou mít své vlastní jméno a svou vlastní verzi, opravený debugger se nezavírá správně při restartování nebo vypínání, Shell nyní již ukončuje aplikaci, když výjimka se stane, ladění nyní citlivější (s výjimkou získávání příkazů), nyní ladicí program nepodporuje zápis bez nových řádků, konečně máte povoleno do svého hostitele zahrnout mezery a také názvy hostitelů, které mají méně než 4 znaky jako „joe“ , Zastaralé zbytečné a hrubé příkazy, Odstraněné zvláštní kontroly časových pásem IANA, které již nevedou k dalšímu registru, pevné sítě se seznamem, Převaděč měny, který používá internet (Pokud jsme přidali místní hodnoty, musíme vydat další aktualizace, které jsou časově náročné , takže způsob internetu šetří čas a aktualizace), konečně jsme uživatelům umožnili prohlížet protokoly ladění pomocí KS s laděním, vylepšili jsme FTP klienta, pro ty, kteří nemluví anglicky, si nyní mohou nastavit svůj vlastní jazyk Ačkoli výchozí je angličtina, opravena chybějící položka nápovědy pro "lscomp", Přidány stránky manuálu jádra, odstranila podporu systému Windows XP, opravena chyba NullReferenceException, když se při pokusu o kompilaci modů vyskytly chyby, přidán argument cmMline testMods a další ...
+11/1/2018 - 0.0.5.8: Odstraněné pípnutí při restartování a vypnutí, Příkaz Odstraněné pípnutí, (Windows) Probers budou pokračovat, i když selhaly, Dispozice paměti již nepoužívá metodu VB6 pro řešení chyb
+10/13/2018 - 0.0.5.7: Opravena chyba při spuštění při spuštění názvu souboru, který je jiný než „Kernel Simulator.exe“, Lepší zpracování chyb pro FTP, Přidání aktuálního tisku adresářů v FTP, odstranění příkazu „version“, opravena hodnota "Quiet Probe" nastavena na "Quiet Probe", Expanded "sysinfo", Čtečka pevné konfigurace se při ukončení jádra nezavírá, (Unix) Opravena známá chyba
+10/12/2018 - 0.0.5.6: Vylepšené sondy, přihlašovací seznam uživatelů, lepší kompatibilita s Unixem
+22.9.2018 - 0.0.5.5: Přepsaná konfigurace, Zakázané aliasy, přidány chybějící položky nápovědy pro "showalises", přidáno další zástupné symboly MOTD a MAL, opravena opakující se zpráva o stavu RAM a byl přidán FTP klient, konečně !
+9/9/2018 - 0.0.5.2: Bylo provedeno testování GPU na bootování, odstranění argumentu „gpuprobe“, změněné chování aktualizace konfigurace
+9/6/2018 - 0.0.5.1: Následné vydání odstranilo nepoužitý kód, zlepšilo chování debugovacích protokolů a zlepšilo čitelnost debugovací zprávy při sondování modů pomocí příkazů bez definic.
+9/4/2018 - 0.0.5.0: Odebrané výzvy, opraveno zkoušení uživatelského jména MAL, přidané "showaliasy", parsovaná analýza aliasů, odstraněn požadavek poskytnout příkaz k odstranění aliasu a implementace uživatelem vytvořených příkazů v modech
+16.8.2018 - 0.0.4.12: Nahrazen příkaz disco spořičem obrazovky. Vypadá to, že bude vydáno 0.0.5, protože vypadá stabilně, ale před finálním vydáním máme nějaké zbývající změny.
+8/3/2018 - 0.0.4.11: Byly odstraněny předdefinované aliasy, zmíněná opravená známá chyba.
+8/2/2018 - 0.0.4.10: Sloučený "sysinfo" s "lsdrivers", Vylepšená definice nápovědy (použitý slovník pro přípravu na modding), přidán "lscomp", který může seznam všech počítačů online i offline pouze podle jmen, Přidán obsluha chyb pro "lsnet" a "lsnettree", opravené gramatické chyby v "lsnet" a "lsnettree", přidané mods (příkazy zatím nejsou implementovány - <modname> .m), přidány spořiče obrazovky, změněno chování zobrazování MOTD, opravena chyba, kde instance kontrola po restartu jádra by řekla, že má více než jednu instanci a měla by se zavřít, a další.
+21.7.2018 - 0.0.4.9: Lepší zpracování chyb pro příkaz "unitconv", Přidání dočasných aliasu (ne finální, protože neexistuje žádný příkaz "showaliases"), oprava některých chyb, přidání časových pásem ("showtdzone" a zobrazení aktuálních časové pásmo v "showtd"), přidány "alias", "chmal" a "showmal", Made MOTD po přihlášení přizpůsobitelné, Povolené speciální znaky na heslech pro zajištění bezpečnosti, Made Kernel Simulator single-instance, aby se zabránilo rušení, a další.
+17.7.2018 - 0.0.4.7: Lepší zpracování chyb pro příkaz „ping“, pevná zpráva o použití „unitconv“
+16.6.2018 - 0.0.4.6: Odstraněn nadbytečný „feed“, který stojí jako odstraněný příkaz v 0.0.4.5, Příprava na vlastní substituce 0.0.5
+15.7.2018 - 0.0.4.5: (Zpoždění o 2 měsíce kvůli selhání pevného disku) - Opravy chyb v případě selhání hardwaru některými sondami, přidání dalších podrobností v sondách, vylepšený systém nápovědy, Opravy chyb v barevných výzvách, Výzvy zastaralé, a více.
+5/22/2018 - 0.0.4.1: Opravy chyb v měnícím se adresáři, Opravy chyb v "help chdir", přidán alias pro změnu adresáře s názvem "cd" a konfigurace aktualizace.
+5/20/2018 - 0.0.4: Změna spouštěcího textu, přizpůsobitelná nastavení, témata, argumenty příkazového řádku, argumenty příkazů a úplná analýza, skutečný adresářový systém (alfa), více příkazů, kalkulačka, ladění pomocí trasování zásobníku, protokoly ladění (nedokončený), nedochází k úniku paměti RAM, opravování chyb a další.
+5/2/2018 - 0.0.3.1: Shell title editován v rámci přípravy na velké vydání, oprava chyb s odebráním uživatelů, oprava prázdného příkazu a přidání admin kontroly.
+4/30/2018 - 0.0.3: Opravy chyb, přepsání systému přihlášení, přidané příkazy, přidané argumenty, přidaný systém oprávnění, vlastní barvy a další.
+4/11/2018 - 0.0.2.3: Oprava selhání argumentů po restartu, oprava chyb a další.
+4/9/2018 - 0.0.2.2: Oprava chyby pro seznam sítí, kde se dvojí názvy počítačů zobrazují na obou způsobech výpisu, Zpracování chyb na seznamech sítí.
+4/5/2018 - 0.0.2.1: Oprava chyby pro zprávu „Command Not Found“ a přidaná zapomenutá kontrola root v „chhostname“ a „chmotd“.
+31.3.2018 - 0.0.2: Přepracování kódu, více příkazů, implementovaný základní internet, systém argumentů, změna hesla a další změny.
+16.03.2018 - 0.0.1.1: Přidán „showmotd“, změněna zpráva a lepší kontrola celočíselného přetečení na Beep Frequency.
+22.2.2018 - 0.0.1: Počáteční vydání, obvykle pro Windows.
+
+| --------------- + -> Manuální stránky <- + --------------- |
+
+Dokumentace - hlavní stránka: Informace o jádrovém simulátoru, tato stránka
+Dokumentace - přispívající pravidla: Podmínky pro přispívající jádro Simulator
+
+| --------------- + -> Kredity <- + --------------- |
+
+EoflaOE: Vlastník jádra simulátoru
+
+Oxygen Team: Tvůrce ikony
+
+| --------------- + -> Open Source Library used <- + --------------- |
+
+MadMilkman.Ini
+
+Zdrojový kód: https://github.com/MarioZ/MadMilkman.Ini
+
+Copyright (c) 2016, Mario Zorica
+
+Licence (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
+
+Newtonsoft.Json
+
+Zdrojový kód: https://github.com/JamesNK/Newtonsoft.Json
+
+Copyright (c) 2007, James Newton-King
+
+Licence (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+
+FluentFTP
+
+Zdrojový kód: https://github.com/robinrodricks/FluentFTP
+
+Copyright (c) 2011-2016, J.P. Trosclair
+
+Copyright (c) 2016-2019, Robin Rodricks
+
+Licence (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
+
+| --------------- + -> Licence - GNU GPL <- + --------------- |
+
+    Kernel Simulator - Simuluje naše budoucí plánované jádro
+    Copyright (C) 2018-2019 EoflaOE
+
+    Tento program je svobodný software: můžete jej dále šířit a / nebo upravovat
+    to za podmínek Všeobecné veřejné licence GNU, jak je zveřejňuje
+    - Free Software Foundation, buď verze 3 licence, nebo -
+    (podle vašeho výběru) jakákoli novější verze.
+
+    Tento program je distribuován v naději, že bude užitečný,
+    ale BEZ JAKÉKOLI ZÁRUKY; bez předpokládané záruky
+    PRODEJNOST nebo VHODNOST PRO URČITÝ ÚČEL. Viz
+    GNU General Public License pro více informací.
+
+    Měli jste obdržet kopii GNU General Public License
+    spolu s tímto programem. Pokud ne, viz <https://www.gnu.org/licenses/>.

@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "reloadsaver"
+-REVISION:0.0.1.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande reloadsaver
+
+R??sum??: Vous pouvez recharger des fichiers d?????conomiseur d?????cran apr??s les avoir modifi??s.
+
+La description
+
+Cette commande compile le contenu de votre fichier de configuration pour d??terminer s'il existe des erreurs et r??affecter les fichiers de mod de votre ??conomiseur d'??cran ?? la liste des ??conomiseurs d'??cran valides si votre ??conomiseur d'??cran ne contient aucune erreur du syst??me de g??n??ration.
+
+Si vous souhaitez refl??ter les modifications sur votre ??conomiseur d'??cran, apportez-les ?? votre modfile d'??conomiseur d'??cran et ex??cutez cette commande en pointant sur le modfile modifi??.
+
+Utilisation de la commande
+
+* reloadsaver ((ScreenSaverName) SS.m)
+
+Exemples
+
+* reloadsaver AdvancedMatrixSS.m: Il charge AdvancedMatrixSS.m dans la liste des ??crans de veille.
+* reloadsaver SpaceSS.m: Il charge SpaceSS.m dans la liste des ??crans de veille.
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadsaver ((ScreenSaverName)SS.m)=>Green
+reloadsaver AdvancedMatrixSS.m:=>Yellow
+reloadsaver SpaceSS.m:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadsaver command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

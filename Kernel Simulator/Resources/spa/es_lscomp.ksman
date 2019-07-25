@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "lscomp"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando lscomp
+
+Resumen: puede enumerar equipos, incluso equipos sin conexi??n, en grupos de trabajo y dominios
+
+Descripci??n
+
+Si necesita enumerar las computadoras en el grupo de trabajo o los dominios, incluida la computadora sin conexi??n si la computadora se uni?? al dominio, puede usar este comando para obtener todas las computadoras sin sus direcciones IP.
+
+Sin embargo, si necesita listar las computadoras solo si est??n en l??nea, y desea obtener sus direcciones IP, puede buscar lsnet y la informaci??n se encuentra en "usermanual lsnet"
+
+Uso del comando
+
+* lscomp
+-BODY END-
+
+-COLOR CONFIGURATION-
+lscomp=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lscomp command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

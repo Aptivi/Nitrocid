@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "reloadconfig"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande reloadconfig
+
+R??sum??: recharge la configuration du noyau
+
+La description
+
+Cette commande recharge les param??tres du noyau et tente de conserver les red??marrages et de refl??ter les modifications imm??diatement. 
+
+Utilisation de la commande
+
+* reloadconfig
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadconfig=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadconfig command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

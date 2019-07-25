@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:FTP komutu "upload" veya "put"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+FTP komutunu y??kle ya da koy
+
+??zet: Dosyay?? sunucuya y??kler
+
+A????klama
+
+Ge??erli ??al????ma dizininizdeki yerel dosyalar??n??z?? ge??erli ??al????an sunucu dizinine eklemeniz gerekirse, dosya eklemek i??in y??netici haklar??na sahip olman??z gerekir.
+
+??rne??in, PNG format??n?? kullanarak Yeni Delhi ??ehrinin resmini ekliyorsan??z, herkesin g??rmesi i??in onu sunucuya y??klemeniz gerekir. 
+
+Komut kullan??m??
+
+* y??kle / koy (dosya)
+
+??rnekler
+
+* Win10-Oct2018-x64.iso'yu y??kle: "Win10-Oct2018-x64.iso'yu" ge??erli ??al????an sunucu dizinine yerle??tirir
+* urls.txt koy: "urls.txt" yi ge??erli ??al????an sunucu dizinine koyar
+-BODY END-
+
+-COLOR CONFIGURATION-
+upload/put (file)=>Green
+upload Win10-Oct2018-x64.iso:=>Yellow
+put urls.txt:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+upload or put FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

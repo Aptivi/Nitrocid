@@ -1,0 +1,853 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Sejarah Simulator Kernel
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Pra-pelepasan
+
+Sebelum pelepasan 0.0.1, kami sedang mengendalikan koleksi OS PowerPoint hampir 2 tahun lalu, dan menggunakan makro VBA (VB6) pada Office 2007, dan semasa kami sedang menjalankan OS PPT berasaskan PUNIX, jumlah makro adalah 
+
+Kami menulis prosedur boot kernel, log masuk, dan shell yang termasuk arahan. 
+
+KS 0.0.1
+
+Dalam pelepasan 0.0.1, ia pada asalnya termasuk prober dan kod mereka berada dalam Kernel.vb codefile, tetapi sepertinya tidak relevan dan tidak organisma.
+
+Ia juga termasuk log masuk dan shell asal, tetapi kelihatannya pada prosedur boot, ia menghasilkan output berikut pada komputer riba Windows 10 kami (cuba sekarang):
+
+(1) usrmgr: Nama pengguna sistem: root useradd dibuat.
+(2) usrmgr: Pengguna telah berjaya dimuatkan.
+(3) usrmgr: Pengguna useradd telah berjaya dimuatkan.
+(4) usrmgr: demo tidak dijumpai. 
+(5) usrmgr: Nama pengguna demo dibuat.
+(6) usrmgr: Root pengguna telah berjaya dimuatkan.
+(7) usrmgr: pengguna useradd telah berjaya dimuatkan.
+(8) usrmgr: Demo pengguna telah berjaya dimuatkan.
+(9) usrmgr: Demo pengguna telah berjaya dimuatkan.
+
+Pada (1), ia memberitahu kami bahawa pentadbir, root, dan useradd (akaun ujian dengan hak admin), telah dibuat tetapi belum dimulakan.
+Pada (2-3), ia memberitahu kami bahawa mereka telah dimuatkan.
+Pada (4-5), akaun ujian telah dibuat mengikut pengurus dan kepada kernel.
+Pada (6-9), dua pentadbir telah dimuatkan dua kali, seperti yang dikatakan pada (2-3) (bug), dan pada (8-9), akaun ujian dimuatkan TWICE, bukan sekali. 
+
+Juga, ia telah membuat 2 baris baru yang tidak perlu antara (9) dan "Selamat datang ke Kernel!"
+
+Permintaan "Username:" adalah "login:", yang bermaksud bahawa sukar bagi pengguna yang belum menggunakan Linux namun untuk memahami maksud "login" maksudnya, namun permintaan "password:" mudah dimengerti untuk pemula dan 
+
+Selepas log masuk, petikan anda kelihatan seperti ini: "[root @ kernel]
+
+Sebaik sahaja anda memasukkan "help", ia akan mempunyai senarai arahan. 
+
+Sesetengah arahan mempunyai alias masing-masing, dan beberapa arahan melaporkan "Kernel ini tidak muktamad." 
+
+(1)
+(2) Output
+(3)
+
+Sepertinya kedua-dua (1) dan (3) baris baru sama sekali tidak perlu. 
+
+Juga, ia mempunyai 2 screensavers, Disco, dan BW Disco (masa depan-pemusnah mata)
+
+Sebaik sahaja anda menjalankan Disco, ia akan menunjukkan kesan disko yang luar biasa, tetapi ia mempunyai pepijat apabila anda keluar apabila warna BG adalah selain daripada hitam apabila anda menekan ENTER, warna BG tetap dan mencetak shell prompt kemudian membersihkan BG 
+
+Walau bagaimanapun BW Disco akan memusnahkan mata anda (benar-benar) dan mempunyai bug yang sama.
+
+Perintah mempunyai arahan mereka sendiri, baik. 
+
+Pada Windows 10, CMD membuat bunyi bip melalui pembesar suara anda, bukan penceramah motherboard yang bip di POST (sesetengah motherboard melakukan ini)
+
+Fail penyenaraian mempunyai output palsu, walaupun kernel tidak muktamad. 
+
+Anda tidak boleh mempunyai argumen yang ditambahkan pada arahan, atau KS akan menganggap bahawa arahan itu tidak wujud walaupun ia wujud, mengatakan bahawa untuk ex. 
+
+Juga, tajuk permulaan mengatakan "- ---> Selamat datang ke Versi Eofla Kernel! 0.0.1.0 <--- -"
+
+Juga, sama ada reboot atau mematikan arahan bip dan penangguhan selama 3 saat kemudian melakukan tugas mereka. 
+
+Juga, prober itu hanya boleh mengesan satu cakera.
+
+Juga, Login.vb mengandungi banyak pembolehubah yang tidak perlu. 
+
+Usernamelist awam Sebagai Senarai Baru (Of String) (Nama pengguna dari Login.vb)
+Senarai kata laluan awam Sebagai Senarai Baru (Of String) (Senarai kata laluan dari Login.vb)
+Kata laluan umum sebagai Kamus Baru (Of String, String) (Kamus kedai Nama pengguna dan Kata Laluan)
+My.Settings.Passwords (Senarai kata laluan dari My.Settings)
+My.Settings.Usernames (Senarai nama pengguna dari My.Settings)
+
+Pembolehubah yang tidak perlu. 
+
+Kata laluan umum sebagai Kamus Baru (Of String, String) (Kamus kedai Nama pengguna dan Kata Laluan)
+
+KS 0.0.1.1
+
+Changelogs di "Dokumentasi - halaman utama.txt" di src. 
+
+Tetapi mesej mana? 
+
+Selesai! \ NSila log keluar untuk perubahan yang berlaku. 
+
+Malangnya, versi ini mempunyai bug yang sama dengan versi pertama.
+
+KS 0.0.2
+
+Changelogs mengatakan bahawa kodanya direkabentuk semula, mempunyai lebih banyak perintah, melaksanakan Internet dasar, sistem argumen, menukar kata laluan, dan banyak lagi perubahan.
+
+Walaupun ia mempunyai shutdown / restart yang sama menunda pepijat dan tidak ada garis baru selepas bug mesej shell, inilah bagaimana tepatnya perubahan berlaku:
+
+1. Permintaan "login:" telah berubah menjadi "Nama Pengguna:" untuk pemahaman yang lebih mudah
+2. Terdapat sistem hujah kernel, dan mereka "motd, nohwprobe, chkn = 1, preadduser, nama hos dan senyap." 
+2a. 
+2b. 
+2c. 
+2d. 
+2e. 
+2f. 
+Tetapi terdapat pepijat yang apabila anda cuba untuk melaksanakan hujah selepas menaikkan semula kernel yang juga mempunyai hujah yang dilaksanakan, ia akan terhempas.
+3. Semuanya berwarna sekarang.
+4. Menetapkan baris baru yang tidak perlu di antara output
+5. chpwd, hwprobe, lsnet, lsnettree, ping, showtd dan sysinfo ditambah
+6. Menetapkan isu latar belakang disko
+7. Semua yang disebutkan dalam changelog
+
+KS 0.0.2.1
+
+Changelog mengatakan bahawa ia menetapkan pepijat untuk mesej "Perintah Tidak Ditemukan", dan menambah dilupakan untuk memeriksa root di "chhostname" dan "chmotd".
+
+Tiada perubahan tambahan.
+
+KS 0.0.2.2
+
+Changelog mengatakan bahawa ia menetapkan pepijat untuk senarai rangkaian di mana dua nama PC muncul pada kedua-dua cara penyenaraian, Ralat pengendalian pada rangkaian penyenaraian.
+
+Ia juga menambah pengendali ralat untuk ralat kernel.
+
+KS 0.0.2.3
+
+Changelog mengatakan bahawa ia menetapkan kemalangan pada hujah selepas reboot, menetapkan pepijat, dan banyak lagi. 
+
+Sebab kemalangan: Simulator cuba untuk memulakan masa dan tarikh pada setiap reboot.
+
+1. Ia telah menetapkan isu-isu baru apabila menggunakan kekerapan yang melebihi 2048 Hz selepas menjawab soalan. 
+2. Ia telah menetapkan isu-isu baru apabila menjawab soalan yang salah pada perintah pilihan. 
+
+KS 0.0.3
+
+Changelog mengatakan bahawa ia menetapkan pepijat, sistem Log-in ditulis semula, perintah tambahan, argumen tambahan, sistem kebenaran ditambah, warna adat dan banyak lagi.
+
+Versi ini membenarkan anda menggunakan warna pilihan anda. 
+
+1. Menambah pengendali ralat semasa menguraikan hujah
+2. Menambah hujah gpuprobe (pemeriksaan kad grafik setiap permulaan)
+3. Menambah cek untuk alat rangkaian
+4. Menambahkan pemutus untuk menunjukkan masa dan tarikh
+5. Menambah fungsi pembolehubah semula (berfungsi, sekarang sub)
+6. Menambah kesilapan semasa memulakan kernel
+
+Sila ambil perhatian bahawa blok pengendalian ralat di pelepasan ini bukan Cuba ... Tangkap blok, tetapi coretan kod pengendali ralat VB6 standard di bawah (Pada aplikasi Konsol):
+
+Mengenai Kesalahan GoTo HandlerLabel
+
+Dim IntNumber Sebagai Integer = 50/0
+Keluar Sub
+
+: HandlerLabel
+Console.WriteLine ("Divide by Zero")
+Console.ReadKey
+
+KS 0.0.3.1
+
+Changelog mengatakan bahawa ia telah menyunting tajuk shell sebagai persediaan untuk 0.0.4, membetulkan pepijat dengan membuang pengguna, memperbaiki arahan kosong, dan menambah pemeriksaan admin.
+
+Pelepasan besar dijadualkan dikeluarkan pada 20 Mei 2018, iaitu 3 hari sebelum cakera keras gagal dalam cara yang dahsyat.
+
+Bagaimanapun, dalam bentuk yang tepat:
+
+1. Dalam Login.vb, subsektor pengurusan telah dipindahkan ke UserManagement.vb, yang membawa kepada hanya baki subsitan ini:
+1a. 
+1b. 
+1c. 
+2. Menambah bendera "(Admins Only)" pada chusrname, editperm, dan rmuser
+3. Ditambah array arahan terhad
+4. Setiap arahan yang bermula dengan ruang dianggap sebagai komen
+5. Sekarang kebenaran lalai ditetapkan setiap kali pengguna dibuat
+
+KS 0.0.4
+
+Ini adalah pelepasan besar KS. 
+
+Dalam bentuk yang tepat:
+
+1. Tambah hujah arahan baris dan hujah argumen but
+2. Menambah debugging (Wdbg)
+3. Menambah sistem penulisan (W dan Wln) supaya kita tidak akan menggunakan gelung:
+(1) System.Console.ForegroundColor = CType (inputColor, ConsoleColor)
+(2) answerargs = System.Console.ReadLine ()
+(3) System.Console.ResetColor ()
+4. Menambah argumen baris perintah sebenar (Running CMD pada folder root KS dan menjalankan fail boleh laku dengan argumen seperti "KS.exe createConf")
+4a. 
+4b. 
+5. Menambah tema
+6. Menambah pengendali ralat untuk menetapkan kebenaran
+7. Menukar semua pengendali ralat untuk Cuba ... Tangkap
+8. Menambah pilihan untuk menunjukkan MOTD
+9. Menambah mod penyelenggaraan
+10. Ditambah tetapan
+11. Penambahan kalkulator
+12. Tiada kebocoran RAM
+13. Ditambah arahan penyelesaian, netinfo, calc, scical, unitconv, md, mddir, rd, rmdir dan debuglog
+14. Melambatkan kadar ulangan perubahan masa dari 100 ms hingga 500 ms
+15. Alamat sasaran Pinging kini boleh diulang
+16. Permasalahan perkakasan kini diperpanjang
+17. Memindahkan setiap sub yang ada dalam Kernel.vb ke fail yang sesuai
+
+Ia sangat besar!
+
+Siaran besar
+
+Siaran besar adalah siaran yang mempunyai 12 perubahan tepat atau lebih banyak perubahan. 
+
+Untuk menganggapnya sebagai pelepasan besar atau besar, bahagian ketiga versi yang dibahagikan dengan 4 sepatutnya menjadi nombor yang tidak mempunyai titik perpuluhan, pelepasan pertama yang memenuhi peraturan bahagian versi ketiga boleh menuntut tajuk ini, dan 
+
+KS 0.0.4.1
+
+Changelog mengatakan bahawa ia telah menetapkan pepijat dalam menukar direktori, bug tetap dalam "help chdir", menambah alias untuk menukar direktori bernama "cd", dan konfigurasi update. 
+
+Sebelum insiden kegagalan HDD yang berlangsung selama 5 hari, versi ini dilepaskan sebagai pelepas sandaran cepat, yang dikenali sebagai Failure Followup Release.
+
+1. Kami terlupa untuk menambahkan tajuk lesen untuk Flags.vb
+2. Menambah sistem menaik taraf konfigurasi
+3. Menambah kemasukan hilang untuk "cd"
+4. Menambah pernyataan (Dan currDir = "/")
+5. Menambah perintah reloadconfig (perintah ini membolehkan anda memuat semula config)
+6. Mengedit kemasukan bantuan untuk diubah sehingga ia mencerminkan "cd"
+7. Menambah kemasukan bantuan untuk menambah arahan
+
+Ini dikeluarkan pada 5/22/2018, 1 hari sebelum kegagalan HDD dalam persekitaran pembangunan.
+
+5/23/2018
+
+Kami menerbitkan versi 0.0.4.1 secara terbuka sekiranya berlaku kegagalan HDD.
+
+Selepas itu, kami sedang berusaha untuk mengetahui lebih lanjut tentang kernel, dan bagaimana ia dibina, menggunakan CD-ROM Linux lama, dan yang berlaku untuk menjadi Mandrake Linux, sedang memuat turun. 
+
+Permainan yang kami mainkan dalam tablet kami berlaku untuk HackMe.
+
+Setiap kali kami menghentikan permainan, kami pergi ke komputer, dan melihat muat turun itu berhenti sejenak, seperti biasa. 
+
+Kami kemudian mencuba CD Hiren's Boot Mini Windows XP, dan yang berjaya dimuatkan. 
+
+Kami berjaya membuka CMD dan kami telah menjalankan program chkdsk dengan / F.
+
+Kami melihat bahawa ia telah mengimbas kesilapan dan membetulkannya, dan apabila kami memulakan semula, semuanya berjalan lancar.
+
+Lihat lagi di https://www.bleepingcomputer.com/forums/t/677922/windows-xp-sp3-reboot-cycle-crashes-often-on-boot/ (Benang panas - Menurut bleepingcomputer.com, ia berkata 
+
+5/24/2018 hingga 5/27/2018
+
+Kami cuba sekali lagi dengan pergi ke OS kami, tetapi perkara-perkara yang merosakkan selepas memasang dan menyahpasang AVIRA Antivirus kerana ketidakstabilannya dengan pemproses bukan-SSE2. 
+
+Kami pergi ke MiniXP sekali lagi, dan kami cuba mendapatkan maklumat SMART menggunakan versi terkini gsmartcontrol, tetapi melaporkan bahawa ia tidak mempunyai dwmapi.dll. 
+
+Kami cuba menggunakan CrystalDiskInfo lagi, tetapi ia tidak mencetak maklumat dengan betul.
+
+Kami dengan cepat menyandarkan semua data penting kepada pemacu kerja lain yang disambungkan dalam masa 2-3 tahun lepas dari komputer ganti yang gagal untuk boot.
+
+Kami juga cuba menguji pemacu menggunakan utiliti diagnostik Western Digital, tetapi ujian cepat gagal dengan serta-merta, jadi ia menunjukkan bahawa kegagalan cakera keras akan berlaku. 
+
+Pada hari terakhir HDD yang mempunyai Windows XP OS super-disesuaikan, pemacu itu gagal sepenuhnya selepas itu, dan semua bahagian OS dan program, termasuk tema gelap XPize (Royale?), Windows Sidebar untuk XP, Visual 
+
+Lihat lagi di: https://www.bleepingcomputer.com/forums/t/678191/windows-xp-sp3-slow-booting-unusual-hdd-activity-with-noise-then-bsod/ (Thread panas)
+
+5/28/2018
+
+Selepas pemacu telah mati, kami memutuskan untuk mencabut pemacu mati dari komputer, dan menetapkan tetapan pemacu kerja kepada Master, kami pergi ke Magic Partition BootCD's Magic Hiren, dan menetapkan tetapan yang sesuai supaya kami mempunyai 2 partition tanpa mengelap pemacu data kami 
+
+Selepas itu, kita memasang Windows XP dan mengkonfigurasi semua yang sesuai, selagi kita tidak menghapus segala sesuatu pada partition data, kerana jika ia dihapuskan, maka semua kerja keras akan hilang selama-lamanya, seperti yang berlaku kepada kita ketika 
+
+Kami menyediakan VB2010 sesuai.
+
+5/29/2018
+
+Kita menghadapi masalah lain. 
+
+(1) Memeriksa Rekod Boot pada CD-ROM ... Tidak Ditemukan
+(2)
+(3) Kegagalan Booting
+(4) Masukkan disket BOOT ke dalam pemacu A:
+(5) atau masukkan cakera sistem ke cakera.
+(6) Tekan sebarang kunci apabila bersedia.
+
+8 / ?? / 2018
+
+Kami membetulkan masalah itu dengan menetapkan jumper memandu dari Master ke Pilihan Kabel
+
+KS 0.0.4.5
+
+Changelog mengatakan bahawa ia telah menetapkan pepijat apabila sebarang penyelesai gagal meneliti perkakasan, menambah butiran lebih lanjut dalam probers, Sistem bantuan bertambah baik, Perbaiki pepijat pada prompt warna, Prompt tidak lama, dan banyak lagi, tetapi juga mengatakan bahawa ia telah ditangguhkan selama 2 bulan 
+
+1. Membuat perubahan MOTD dan nama hos kekal
+2. Anda boleh berpecah apabila menyuntik arahan menggunakan titik-titik dengan ruang di antara mereka.
+3. Menambah argumen mod penyelenggaraan
+4. Berubah tip untuk hujah bantuan
+5. Menambah pengesan ralat apabila menetapkan warna
+6. Tiada lagi pepijat apabila sebarang cubaan yang gagal untuk mendapatkan maklumat mengenai perkakasan
+7. Pemberi maklumat diperluas untuk mengandungi lebih banyak maklumat
+8. Menambah masa / tarikh async di sudut
+9. Menukar bendera selamat datang
+10. Sekarang pengendalian kesilapan perkakasan adalah lebih mesra
+11. Sokongan untuk pembolehubah untuk Ralat Kernel
+12. Benar-benar ditinggalkan My.Settings MOTD dan pembawa nama hos
+13. Menambahkan lebih banyak unit suhu
+14. Menambah entri konfig untuk Sudut Masa / Tarikh, MOTD, dan HostName
+15. Mengeluarkan BW Disco
+16. Prompt tidak digunakan
+17. Menguruskan sistem bantuan
+18. Kami perlahan mengubah masa / tarikh dari 500 ms hingga 1000 ms
+19. Menarik sub ShowTimeQuiet yang tidak perlu ()
+
+KS 0.0.4.6
+
+Changelog mengatakan bahawa ia telah mengeluarkan "makan" secara luaran yang berdiri sebagai perintah yang dikeluarkan dalam 0.0.4.5 dan penyediaan untuk penggantian tersuai 0.0.5
+
+Penyusunan penggantian tersuai sebenarnya memberitahu pengguna bahawa alias yang telah ditentukan sebelumnya akan dialihkan apabila menjalankan perintah yang mempunyai alias mereka sendiri, dan ketika menjalankan perintah bantuan
+
+Walau bagaimanapun arahan "makan" yang melampau dikeluarkan daripada array tersediaCommand ().
+
+KS 0.0.4.7
+
+Changelog mengatakan bahawa ia mempunyai Pengendalian Ralat yang lebih baik untuk perintah "ping" dan mesej penggunaan "unitconv" tetap.
+
+1. Dihapuskan mesej "bersih: Rangkaian tersedia." 
+2. Menukar kesemua pengendali ralat VB6 dalam Network.vb untuk Cuba ... Blok menangkap
+3. Percubaan ping kini boleh diulangi apabila terdapat ralat
+4. Mesej bantuan unitconv apabila pengguna tidak memasukkan argumen yang mencukupi kini dikemas kini untuk mencerminkan unit-unit baru.
+
+KS 0.0.4.9
+
+Changelog mengatakan bahawa ia mempunyai Peranti Kesalahan yang lebih baik untuk arahan "unitconv", Menambah alias sementara (bukan akhir kerana tidak ada perintah "showaliases"), memperbaiki beberapa pepijat, menambah zon waktu ("showtdzone", dan menunjukkan zon waktu semasa dalam " 
+
+1. Pemeriksaan multi-contoh telah ditambah menggunakan mutex untuk mengelakkan gangguan dengan dua atau lebih proses KS yang mengganggu satu sama lain.
+2. Menambah MOTD Selepas Masuk
+3. Kata laluan kini boleh mempunyai simbol untuk memastikan lebih banyak keselamatan
+4. Menetapkan mesej ralat yang apabila membuang pengguna, ia berkata "Ralat cuba menambah nama pengguna."
+5. Penukaran unit kini tidak sensitif
+6. Tetap unitconv menunjukkan keputusan walaupun mesej ralat muncul
+7. Tingkah laku yang lebih baik apabila mengemas kini konfigurasi
+8. Anda boleh menguruskan alias
+9. Menukar mesej mengeluarkan segera
+10. Berubah dari menunjukkan bantuan sebagai rentetan kepada HelpSystem.ShowHelp (kata-kata (0))
+11. Tambah arahan alias, chmal, showmal dan showtdzone
+12. Membuat alias parse shell
+13. Membuat penulis dalam CMD tulis menulis satu baris
+14. Menambah sokongan untuk zon masa
+
+KS 0.0.4.10
+
+Changelog mengatakan bahawa ia telah menyatu "sysinfo" dengan "lsdrivers", definisi Bantuan Penambahbaikan (kamus yang digunakan untuk penyediaan modding), menambah "lscomp" yang boleh menyenaraikan semua komputer dalam talian dan luar talian dengan nama sahaja, Menambah pengesan ralat untuk "lsnet" 
+
+1. Membuat setiap sub dan setiap modul awam untuk pengubahsuaian
+2. Menambah sokongan pengubahsuaian
+3. Tetapkan contoh memeriksa setiap but semula (Bendera contoh diperiksa telah ditambah)
+4. Membuat setiap pernyataan yang satu pernyataan satu baris
+5. Sekarang MOTD hanya akan ditunjukkan sekali
+6. Menambah screensavers
+7. Menambah sokongan untuk menyenaraikan semua komputer, walaupun mereka berada di luar talian
+8. Ditambah pengendali ralat VB6 untuk lscomp, lsnet, dan lsnettree
+9. Kesan Disco Running sekarang menjadikan kursor tidak kelihatan, sementara jika keluar, latar belakang akan ditetapkan semula dan kursor akan kelihatan.
+10. Mengurangkan jumlah kali blok kod di bawah dijalankan di GetCommand.vb:
+(1) Dim kata-kata = requestedCommand.Split ({"" c})
+(2) Dim c Sebagai Integer
+(3) Untuk arg = 1 Kepada words.Count - 1
+(4) perkataan c = c (arg). Jumlah 1
+(5) Seterusnya
+(6) Dim strArgs Sebagai String = requestedCommand.Substring (requestedCommand.IndexOf (""), c)
+(7) Dim args () Sebagai String = strArgs.Split ({"" c}, StringSplitOptions.RemoveEmptyEntries)
+dengan mengalihkannya ke bahagian atas dengan beberapa pengubahsuaian, mengakibatkan:
+(1) Dim indeks Sebagai Integer = requestedCommand.IndexOf ("")
+(2) Jika (indeks = -1) Kemudian indeks = requestedCommand.Length
+(3) Dim words = requestedCommand.Split ({"" c})
+(4) Dim strArgs Sebagai String = requestedCommand.Substring (indeks)
+(5) Jika Tidak (indeks = requestedCommand.Length) Kemudian strArgs = strArgs.Substring (1)
+(6) Dim args () Sebagai String = strArgs.Split ({"" c}, StringSplitOptions.RemoveEmptyEntries)
+11. Menukar alias berlebihan dari bip ke bunyi yang menjengkelkan
+12. Menambah loadsaver, lockscreen, setsaver dan perintah-perintah skrin
+13. Menggantikan pemandu dengan lscomp, dan output lsdrivers dipindahkan ke sysinfo
+14. Sekarang, pengendali ralat sub ExecuteCommand () boleh mengatakan arahan mana gagal dilaksanakan.
+15. Definisi bantuan kini ditukar menjadi kamus
+Ini juga merupakan persediaan untuk kernel yang diterjemahkan.
+16. Tetapkan penyenaraian arahan kemas dalam ShowHelp ()
+17. Pemboleh ubah ueshversion dikeluarkan kerana ia tidak dikemas kini sejak 0.0.4, dan versi UESH kini diwarisi dari versi kernel
+
+KS 0.0.4.11
+
+Changelog mengatakan bahawa ia telah mengalih keluar alias yang telah ditentukan sebelumnya, dan pepijat diketahui yang telah disebutkan.
+
+Mari kita lihat apa bug yang diketahui kita yang berada di sekitar sehingga 0.0.4.11.
+
+Dokumentasi penyelesaian masalah pada kod sumber mengatakan bahawa apabila menetapkan "Shell berwarna" kepada Palsu, anda akan melihat bahawa warna input putih bukan kelabu.
+
+Sebab utama? 
+
+Jika (colorType = "input") Kemudian ForegroundColor = inputColor
+
+Ia tidak semestinya jika pembolehubah ColoredShell adalah benar, jadi ia sentiasa cuba mengubah warna latar depan konsol ke inputColor, walaupun tetapan Shell berwarna telah ditetapkan.
+
+Oleh kerana pepijat ini ditetapkan, kod sekarang kelihatan seperti ini:
+
+Jika (colorType = "input" Dan ColoredShell = Benar) Kemudian ForegroundColor = inputColor
+
+Walau bagaimanapun, perubahan ini tidak berlaku pada Wln () sub kerana semua meminta menggunakan W () untuk mengesetkan arahan dengan betul.
+
+Sekarang, perubahan yang tepat:
+
+1. Menukar pengendali ralat untuk W () dan Wln () subs dari kaedah VB6 untuk Cuba ... Blok menangkap
+2. Sekarang, apabila template LinuxUncoloredDef, pembolehubah shell berwarna akan ditetapkan kepada Palsu, kerana segala-galanya tidak dicuci dalam templat ini.
+3. Mengeluarkan nama alias yang telah ditetapkan untuk arahan
+4. Mengedit definisi bantuan sehingga mengatakan bahawa arahan disko akan dikeluarkan dan kesannya akan berlaku dalam screensavers.
+
+KS 0.0.4.12
+
+Changelog hanya berkata "Menggantikan arahan disko dengan screensaver."
+
+KS 0.0.5
+
+Changelog berkata "Dihapuskan arahan, pengenal nama pengguna MAL tetap, tambah" showaliases ", parsing alias tetap, memadam keperluan untuk memberikan perintah untuk menghapus alias, dan pelaksanaan perintah buatan pengguna dalam mod"
+
+Siaran ini adalah siaran akhir 2 yang akan dikeluarkan tanpa sebarang kebergantungan perpustakaan.
+
+1. Dihapus arahan untuk arahan dan hujah, mengakibatkan pengurangan saiz fail secara besar-besaran (0.0.4.12: 306KB -> 0.0.5: 292KB)
+2. Menambah 2 pembolehubah warna untuk menyimpan senarai arahan dan definisi arahan bantuan
+3. Ditambah Hitam untuk warna yang ada
+4. Menetapkan warna kini kekal
+5. Dihapus motd, chkn = 1, preadduser dan argumen nama hos
+6. Sekarang kernel membuat akaun ujian demo hanya jika tetapan "Buat akaun demo" ditetapkan ke Benar
+7. Sekarang arahan bip menghalang frekuensi yang melebihi 2048 Hz
+8. Sekarang mod boleh mempunyai arahan, dan boleh mempunyai modlist kamus
+9. UrusAliAlias ??????() sub semua yang diperlukan
+10. Menambah perintah yang ditunjukkan, walaupun tiada definisi bantuan untuknya
+11. Tetapkan parser alias apabila baris arahan mengandungi salah satu perkataan dalam senarai alias, alias akan dilaksanakan sebelum perintah.
+
+KS 0.0.5.1
+
+Changelog berkata "Pelepasan susulan dikeluarkan kod yang tidak digunakan, tingkah laku log debugging yang lebih baik, dan pembacaan mesej debug yang lebih baik semasa membuat mods dengan arahan tanpa definisi."
+
+1. Menukar semula spanduk permulaan
+2. Ia menghubungkaitkan hujah arahan baris sebenar pada permulaan
+3. Kelakuan log debug yang lebih baik
+4. Membaca kebolehbacaan mesej debug semasa meneliti mod dengan arahan tanpa definisi.
+
+KS 0.0.5.2
+
+Changelog itu berkata "Made GPU probing boot, menghapus argumen" gpuprobe ", mengubah tingkah laku pengemaskinian config"
+
+1. Sekarang, GPU akan sentiasa disiasat kerana perkakasan perkakasan penting, menghasilkan penyingkiran hujah gpuprobe
+2. Mengalih keluar pembolehubah GPUProbeFlag
+3. Menukar tingkah laku pengemaskinian config supaya pepijat entri berganda tidak muncul
+
+Penggunaan perpustakaan
+
+Kami cuba membuat segalanya semudah mungkin, tetapi konfigurasi itu ternyata mempunyai semua penulis.
+
+Kami membuat keputusan untuk memuat turun perpustakaan MadMilkman.Ini dan memasangnya ke KS, dan kami menulis semula penulis-penulis config ke perpustakaan itu.
+
+Versi 0.0.5.5 tidak menggunakan NuGet untuk mendapatkan perpustakaan, kerana dari 0.0.1, kami menggunakan VB2010 pada persekitaran pembangunan Windows XP.
+
+Tetapi, tiada pengurus pakej NuGet yang bekerja untuk VB2010 kerana sokongan telah berakhir, dan sebaliknya, mereka menyediakan muat turun untuk VS2015, dan VS2017, pada masa penulisan.
+
+Walau bagaimanapun, 0.0.5.5 masih menyokong Windows XP.
+
+KS 0.0.5.5
+
+Versi ini kini menggunakan perpustakaan MadMilkman.Ini yang anda boleh lihat di command useddeps.
+
+Changelog berkata "Konfigurasi bertulis semula, Alias ??????terlarang, menambah entri bantuan yang hilang untuk" showalises ", menambahkan lebih banyak tempat letak kereta MOTD dan MAL, mesej mengulangi tetap status RAM, dan klien FTP telah ditambah, akhirnya!
+
+Versi ini juga versi terakhir untuk tidak berfungsi dengan betul di bawah sistem Unix.
+
+Pemadaman dan reboot arahan tidak lagi melambatkan, tetapi masih membuat bunyi bip
+
+1. Semua konfigurasi ditulis semula, menggunakan perpustakaan baru, MadMilkman.Ini .NET 4.0
+2. Status sokongan untuk perkakasan kini tidak digunakan lagi
+3. Mesej mengulang status RAM telah ditetapkan.
+4. Menambah lebih banyak pemegang tempat MOTD dan MAL, yang mengakibatkan pengguna, tarikh jangka pendek, jangka panjang, jangka masa pendek, ruang masa panjang, zon waktu dan ruang letak summertimezone ditambah
+5. Sekarang apabila pengecualian limpasan integer dibuang, mesej itu lebih bersifat deskriptif.
+6. Menambah klien FTP, dan menambah arahan ftp
+7. Pindahkan alat ping ke NetworkTools.vb
+8. Sekarang perintah-perintah yang dilarang menjadi tidak dibenarkan lagi
+9. Menambah noaliases dan arahan yang digunakan
+10. Menambah entri bantuan yang hilang untuk pertunjukan
+11. Entri bantuan untuk loadsaver dan setsaver kini menyenaraikan fail screensaver yang tersedia
+
+Sokongan untuk sistem Unix
+
+Apabila kita sedang membangun KS, kita terjumpa projek Mono, dan ia mengatakan bahawa ia mempunyai sokongan untuk Windows, Mac OS X, dan Linux. 
+
+Kami mengesyorkan JetBrains Rider untuk sistem 64-bit Linux, kerana ia boleh menyemak kod ralat untuk LIVE seperti Visual Studio untuk Windows, Kod Visual Studio untuk Windows, Mac, dan Linux, dan tidak seperti MonoDevelop. 
+
+NET untuk projek Mono bagaimanapun adalah eksperimen pada masa ini, tetapi kedua-dua MonoDevelop dan Rider menggunakannya.
+
+Jadi kami telah memuatkan projek itu ke dalam MonoDevelop, tetapi apabila kami membina projek itu, kami mendapat 3 amaran. 
+
+Selepas kami mengeluarkan kenyataan permulaan perkakasan dari Kernel.vb, kernel itu bermula, tetapi ada masalah lain.
+
+Walaupun Console.Write Mono (Line) boleh menghuraikan argumen dengan betul, W (ln) tidak boleh.
+
+Kami membuat semua yang diperlukan untuk menyelesaikan masalah ini, dan berjaya. 
+
+KS 0.0.5.6
+
+Changelog berkata "Meningkatkan masalah, senarai nama pengguna pada log masuk, keserasian yang lebih baik dengan Unix"
+
+1. Oleh kerana Unix mempunyai pembolehubah persekitaran yang berbeza, kami menambah cek bagi setiap kod yang cuba mengakses direktori profil pengguna
+2. Menyederhana proses penyelidikan perkakasan dengan membuat kelas dan senarai untuk setiap perkakasan
+3. Sekarang ia menunjukkan anda tarikh penyusunan dalam tajuk
+4. Ia menyenaraikan nama pengguna pada log masuk
+5. Memindahkan penulis debug ke TextWriterColor.vb
+6. Pemboleh ubah pra-parse sebelum menulis
+7. Pengemaskinian config dikemas kini (Anda dapat melihat apa yang berlaku pada Config.vb pada kod sumber 0.0.5.6 dan 0.0.5.5)
+8. Ambil sokongan untuk semua arahan komputer senarai untuk Unix
+9. Membuat reloadconfig membaca entri config penting
+10. Sekarang initTimesInZones () dilaksanakan setiap kali showtdzone dilaksanakan, bukannya mengemas kini setiap saat
+11. Sekarang "help arginj" menyenaraikan argumen
+12. Sekarang Unix akan mendapat sokongan zon waktu
+
+KS 0.0.5.7
+
+Changelog berkata "Kerosakan tetap apabila bermula ketika berjalan pada nama fail yang selain daripada" Kernel Simulator.exe ", pengendalian ralat yang lebih baik untuk FTP, Menambahkan cetakan direktori semasa di FTP, mengeluarkan" versi "perintah, mengesetkan" Quiet Probe " 
+
+1. Sekarang KS boleh mendapatkan nama tema semasa
+2. Tetapkan bug yang diketahui "Apa-apa mesej ralat yang ditangani akan merosakkan pengendali dengan ralat kernel yang berterusan."
+3. Sekarang ia memeriksa sistem Unix pada semua fungsi Tidur
+4. Tetapkan fail konfigurasi untuk Probe Tenang yang ditetapkan "Probe Tenang"
+5. Pada FTP, arahan boleh mempunyai alias masing-masing
+6. Membuat mesej ralat pada klien FTP lebih deskriptif
+7. Tetapkan mesej shell muncul apabila anda hanya menekan ENTER tanpa menaip perintah (Shell FTP)
+8. Lanjutan perintah sysinfo untuk menunjukkan lebih banyak maklumat mengenai kernel
+9. Mengeluarkan arahan versi
+
+KS 0.0.5.8
+
+Changelog berkata "Dihapuskan semasa bongkok dan menutup, Dihapuskan" bip "perintah, (Windows) Probers sekarang akan berterusan walaupun mereka gagal, Mematikan memori sekarang tidak lagi menggunakan kaedah VB6 untuk menangani ralat"
+
+Siaran ini adalah keluaran terakhir untuk menyokong Windows XP dan dibina pada Visual Basic 2010 Express Edition. 
+
+Kami tahu dengan baik bahawa komputer riba lebih perlahan daripada komputer untuk sesuatu. 
+
+1. Sekarang mesej ralat pengesanan diperpanjang dan lebih mudah difahami
+2. Sekarang wartawan akan menunjukkan maklumat pula, walaupun perkakasan perkakasan telah gagal
+3. Menukar pengesan ralat dalam DisposeAll () dari kaedah VB6 untuk Cuba ... Blok menangkap
+4. Dihapuskan perintah bip
+5. Sekarang shutdown dan reboot perintah tidak bip
+6. Menambah perintah usermanual, tetapi ia sedang berjalan
+7. Kini hanya pentadbir boleh menggunakan perintah reloadconfig dan alias
+
+Perkembangan baru kelihatan
+
+Kami memulakan pembangunan 0.0.5.9 dalam VB2010 Express dan Windows XP, dan menggunakan MadMilkman.Ini, FluentFTP dan perpustakaan Newtonsoft.Json dengan cara biasa.
+
+Sementara itu, salah satu perpustakaan kami telah lama ketinggalan zaman dan perlu dikemas kini untuk mengesan bar perkembangan muat naik dan kemajuan muat turun. 
+
+Kami mempunyai dual-boot Windows XP dengan Windows 7 dan cuba memasang VS2017, tetapi kelihatannya Installer crash (Bukan pemasang di mana ia memuat turun 60 MB data dan membongkarnya, tetapi digunakan untuk memasang VS2017). 
+
+Kami kemudian mengesyaki ia vs_installer.exe cuba mengakses arahan yang tidak sah di AMD Athlon XP 1500 yang bukan SSE2 kami, jadi kami telah mencuba VS2015, dan ia berfungsi.
+
+Pengurus pakej NuGet berjaya bekerja. 
+
+Kami mengalih keluar semua perpustakaan lama menggunakan cara ketinggalan zaman dan mula menggunakan NuGet untuk meletakkan perpustakaan ketergantungan ke KS, dan kami mendapat versi terkini FluentFTP. 
+
+Kami menyelesaikan pengekodan, dan kami cuba memasukkannya ke GitHub menggunakan sambungan GitHub dalam Komuniti VS, tetapi gagal berfungsi kerana devenv.exe cuba mengakses arahan SSE2, jadi VS2015 terhempas.
+
+Selepas beberapa kemalangan, kami mendapat komputer riba yang menjalankan Windows 10 di atasnya, dan memindahkan semua fail KS ke dalamnya, tetapi fail 3-4 telah hilang, dan salah satunya ialah GetCommand.vb, yang menghuraikan arahan.
+
+Kami menulis semula ketiga-tiga fail ini, dan mereka berhasil berjaya seperti kali terakhir kami memperluaskan mereka untuk mempunyai ciri-ciri 0.0.5.9.
+
+KS 0.0.5.9
+
+Changelog berkata "Mod sekarang akan dihentikan apabila mematikan, Mod boleh mempunyai nama mereka sendiri dan versi mereka sendiri, debugger tetap tidak menutup dengan betul apabila reboot atau menutup, Shell kini tidak lagi keluar dari aplikasi apabila pengecualian berlaku, Debugging sekarang lebih banyak lagi 
+
+1. Semasa memeriksa GPU, jika prober tidak boleh mendapatkan RAM video untuk GPU, ia akan kembali 0
+2. Pemboleh ubah memori GPU ditukar kepada UInt64
+3. Acara dan pengecualian yang ditambah (hebat untuk mod)
+4. Dihapus subjek initializeMainUsers kerana KS hanya membuat akaun root sekarang.
+5. Jika tiada pengguna dalam senarai nama pengguna, kernel akan jatuh
+6. Sekarang mod akan dihentikan pada shutdown atau reboot
+7. Memindahkan setiap alat kernel ke KernelTools.vb
+8. Semua rentetan kini boleh diterjemahkan (Pada masa ini, anda hanya boleh menukar bahasa dengan menukar fail config atau KS Config Tool)
+9. Menambah halaman manual
+10. Sekarang anda boleh menukar mata wang (Sambungan Internet diperlukan)
+11. Sekarang penulis debug tidak akan menyokong menulis tanpa baris baru
+12. Pengumpul sampah apabila ia dilaksanakan
+13. Sekarang semua akan di debug
+14. Perintah FTP binari, pasif, ssl dan teks yang dikeluarkan
+15. Menambah nama semula arahan FTP
+16. Sekarang pelanggan FTP menggunakan FluentFTP untuk memudahkan pengurusan
+17. Sekarang apabila anda memuat naik atau memuat turun fail, anda akan melihat bar kemajuan
+18. Sekarang semua akan dipindahkan dalam mod yang sesuai
+19. Suntikan CWD tidak diperlukan lagi
+20. Beberapa panggilan ruang nama dipermudahkan
+21. Penukar mata wang yang ditambah
+22. Menambah kemasukan hilang untuk lscomp
+23. Sekarang alias ditunjukkan melalui arahan bantuan, menghapus arahan showaliases
+24. Tiada lebih banyak tumpukan melimpah apabila menaip sejumlah besar arahan yang melebihi jumlah tindanan maksimum
+25. Sekarang Masa / Tarikh di sudut akan ditunjukkan dengan betul pada konsol saiz semula
+26. Dihapuskan cara pendaftaran pada TimeZones
+27. Sekarang NuGet digunakan untuk menguruskan pakej (perpustakaan)
+
+KS 0.0.5.10
+
+Kami sibuk dengan sesuatu yang lain, dan kami tidak dapat melepaskan 0.0.6 pada masa untuk ulang tahun 1 tahun, jadi siaran ini adalah ulang tahun 1 tahun. 
+
+1. Kebolehbaik pembacaan laman manual (vbTab kini ditapis dan tidak akan menyebabkan masalah)
+2. Sekarang penterjemah mencetak info debug apabila rentetan tidak dijumpai dalam senarai terjemahan
+3. Prober Perkakasan: Hentikan spam "Sistem .__ ComObject" kepada debugger untuk membolehkan bacaan mudah
+4. Parser Manpage: Berhenti mengisi log debug dengan teks "Memeriksa untuk ..." yang tidak berguna dan beberapa mesej debug diperluas
+5. Tetapkan tali BIOS tidak dipaparkan
+6. Mengeluarkan cek platform tidur yang tidak perlu
+7. Dikeluarkan hujah kernel "nohwprobe" sebagai masalah menemui perkakasan adalah penting
+8. Mengeluarkan cek platform zon waktu yang tidak perlu
+9. Dikemaskini FluentFTP dan perpustakaan Newtonsoft.Json ke versi stabil terkini mereka (Ya, ini sebabnya kami menggunakan NuGet! NuGet lebih baik daripada mengemas kini perpustakaan luaran secara manual.)
+10. Tiada salinan timbunan kecuali bahagian kata laluan dalam Log masuk
+11. Bug tetap MAL dan MOTD tidak menyegarkan antara log masuk
+12. Tetap bug sysinfo (tetapan mesej tidak mencetak)
+13. Kernel sekarang mencetak persekitaran yang digunakan pada boot, debug, dan pada perintah sysinfo
+14. Membuat acara bertulis usang
+
+Kebenaran mengenai status mencuba
+
+Apabila kita membuat KS 0.0.4.5, kita telah menambah Status untuk RAM dan untuk HDD untuk menunjukkan bahawa mereka OK, atau jika mereka gagal. 
+
+KS 0.0.5.11
+
+Versi ini dilancarkan sebagai hotfix untuk 0.0.5.10, mengeluarkan lebih banyak perkara usang dan pelangsingan sebelum 0.0.6. 
+
+1. Membuat GPU dan BIOS probing <Usang>
+2. Tidak ada lagi panggilan COM ketika meneliti perkakasan
+3. Memindahkan fail tidak berguna yang mempunyai data cakera keras
+4. Menetapkan terjemahan sysinfo apabila memaparkan bahagian konfigurasi kernel
+5. Status dikeluarkan dari IPD dan RAM
+6. Tetapkan bahagian CHS tidak muncul jika cakera keras mempunyai nilai Pengeluar
+7. Tetapkan penterjemah tidak mengembalikan nilai bahasa Inggeris jika senarai terjemahan tidak mengandungi nilai sedemikian
+8. Menetapkan prober GPU dengan menganggap bahawa Pemandu Paparan Asas Microsoft bukanlah pemandu asas
+9. Membuat screensavers disiasat pada boot
+10. Memperbaiki NullReferenceException apabila cuba memuatkan screensaver seterusnya selepas ralat berlaku pada screensaver terdahulu
+11. Memperbaiki maklumat OS yang tidak diterjemahkan apabila memulakan kernel
+12. Konfigurasi bahasa tetap tidak dipelihara semasa mengemaskini
+13. Maklumat debug kini dicetak ke tetingkap output debug VS2017 (Anda masih perlu menghidupkan debug)
+14. Membuat reloadsaver perintah loadsaver
+15. Mengeluarkan perintah-perintah yang tidak berguna dan menyalahgunakan (echo, panicsim dan pilihan)
+
+KS 0.0.5.12
+
+Versi ini dikeluarkan untuk memperbaiki lebih banyak pepijat dan melakukan peningkatan yang lebih baik, termasuk penetapan untuk Environment.OS untuk Windows 10. Siaran ini adalah ulang tahun 1 tahun untuk KS
+
+1. Sekarang createConf cmdline arg hanya membuat config jika file config tidak dijumpai
+2. Sesetengah persediaan untuk 0.0.6 (melangsingkan sahaja)
+3. Dihapuskan GPU dan BIOS probing
+4. Sekarang konfigurasi KS lama tidak akan dibenarkan untuk dikemas kini di sini (Penyelesaian: Anda perlu mengalih fail lama config KS anda dan menjalankan semula aplikasinya)
+5. Tetapkan Alam Sekitar.OS bug pada Windows 10 (10.0) di mana ia mengembalikan versi Windows 8 (6.2)
+6. Tetapkan ruang letak tidak menguraikan apabila menggunakan perintah showmotd / showmal
+7. Tetap bantuan mudah yang tidak menunjukkan mod
+8. Tetap terbina dalam arahan yang tidak berjalan selepas anda menjalankan perintah mod atau arahan alias
+9. Tetap NullReferenceException apabila debugging
+10. Peningkatan alias penyenaraian
+11. Memperbaiki mesej pengecualian teks percetakan yang tidak diterjemahkan ke bahasa semasa
+12. Menetapkan "/" atau "\" yang muncul sebelum nama mod semasa mencuba mods dan screensavers
+13. Menanggalkan pembetulan yang tidak perlu dalam terjemahan
+14. Memperbaiki overflows lebih banyak dalam shell FTP
+15. Tetapkan terjemahan mesej FTP menerjemahkan "'help'" sebagai bahasa apabila ia sepatutnya menjadi perintah
+16. Tetapkan arahan yang tidak dijumpai mesej apabila tidak memasukkan apa-apa dalam shell FTP
+
+KS 0.0.5.13
+
+Kami telah memudahkan lebih banyak perkara, dengan perubahan di bawah:
+
+1. Lebih banyak pelangsingan oleh JetBrains ReSharper untuk VS2017
+2. Dilaksanakan perkakasan perkakasan Linux (Anda perlu memasang inxi untuk probe HDD untuk berfungsi. Arahan dalam bahagian "Linux probing" manual ini.)
+3. Peningkatan keperluan .NET kepada 4.7 (Setiap pengguna perlu mempunyai 4.7 dan bukannya 4.6 dipasang.)
+4. Peringatan amaran mengenai pengalihan mengikat dalam MonoDevelop (MonoDevelop tidak menyedari ...)
+5. Meningkatkan keperluan versi VS ke VS2019 (Untuk menguji ciri-ciri di dalamnya.)
+6. Dihapuskan menjengkelkan "Penamaan peraturan pelanggaran" dengan menggunakan pilihan yang dicadangkan
+
+Mencuba Linux
+
+Kami menggunakan fail / proc / cpuinfo untuk mendapatkan maklumat mengenai pemproses (nama dan jam), fail / proc / meminfo untuk mendapatkan memori penuh yang dipasang dalam sistem, dan aplikasi untuk mendapatkan maklumat mengenai cakera keras.
+
+Tetapi, tidak semua distros memasang inxi secara lalai, jadi jika anda tidak memasangnya, cubaan akan gagal. 
+
+Debian, dan derivatifnya:
+
+
+
+
+Red Hat, dan derivatifnya:
+
+
+
+OpenSUSE, dan derivatifnya:
+
+
+
+Arch Linux, dan derivatifnya:
+
+
+
+
+Selebihnya, bina dari sumber dan letakkan fail boleh laku ke dalam / usr / bin sejak prober hanya melihat dalam direktori itu, atau gunakan pengurus pakej anda untuk memasangnya.
+
+(?): Dihidu. 
+
+KS 0.0.5.14
+
+Setelah kami mendapat PC baru, kemas kini telah datang. 
+
+1. Mengganti sistem fail palsu dengan sebenar (akses ke fail anda)
+2. Menetapkan perintah bantuan yang "diubah" yang salah ditunjukkan tetapi bukan "chdir"
+3. "cdir," yang menunjukkan direktori semasa, kini sudah usang
+4. Kerosakan tetap semasa reboot kernel
+
+KS 0.0.6
+
+Kemas kini ini adalah sebesar 0.0.4, tetapi kami telah mengeluarkan kemas kini ini untuk memperbaiki lebih banyak masalah. 
+
+1. Ikon baru
+2. Dikemaskini FluentFTP dan Newtonsoft.Json libs
+3. Acara penulisan yang dikeluarkan
+4. Log masuk semula (Tidak semua, tetapi direka semula)
+5. Tetapkan arahan chpwd tidak mengubah kata laluan jika sasaran tidak mempunyai kata laluan
+6. Tetap chpwd tidak memeriksa jika pengguna biasa mengubah kata laluan admin
+7. Pembetulan tetap tidak menambah pengguna tanpa kata laluan
+8. Tetapkan adduser menambah pengguna dengan kata laluan walaupun mereka tidak sepadan
+9. Dihapus cdir
+10. Tambah entri konfigurasi untuk nama screensaver
+11. Dilaksanakan debugging dan fail dump untuk kesilapan kernel
+12. Dihantar dengan simbol debugging .pdb untuk KS
+13. Reboot tetap tidak membersihkan skrin
+14. Menambah bahasa Belanda, Finland, Itali, Melayu, Sweden dan Turki (bertukar kepada fon serasi dalam konsol)
+15. Negara dan mata wang kini disenaraikan apabila tidak menyediakan argumen yang mencukupi atau mengeluarkan "mata wang bantuan"
+16. Senarai bantuan tetap tidak mengemaskini kemas kini bahasa baru semasa reboot
+17. Menambah alias kekal (terletak di bawah profil anda, aliases.csv)
+18. Kata laluan kini tersembunyi ketika log masuk untuk mengekalkan keselamatan
+19. Pengguna tetap dikeluarkan selepas setiap but semula
+
+KS 0.0.6.1
+
+1. Maklumat mata wang yang dikeluarkan menunjukkan bantuan (akan membawanya kembali kemudian)
+2. Pengguna kini dikehendaki memasukkan Key API mereka dari apilayer.net untuk menukar matawang (Pelan asas, mendapatkan http://currencylayer.com/product, belum dicuba: tidak dapat membayar untuk pelan asas)
+
+KS 0.0.6.2
+
+1. Perintah log debug tetap tidak berfungsi kerana laluan tidak dijumpai (typo: Debugger -> Debugging)
+2. Menambah notis dalam menyenaraikan arahan PC mengenai versi terkini Windows 10
+3. Tajuk kernel debug tetap tidak menulis semasa dijalankan dengan hujah debug pada
+4. Menetapkan log debug yang kosong setiap kali reboot dan bermula
+5. Dibenarkan mengosongkan log debug dalam arahan menggunakan cdbglog
+6. Digunakan dalam enjin pencari FtpVerify, mengeluarkan cek hash kami untuk versi lama FluentFTP
+7. Pengalaman debugging yang lebih baik
+8. Debugging sekarang menunjukkan nombor baris dan fail sumber jika pdb berada pada folder yang sama
+9. Moding yang dibenarkan menggunakan C
+
+KS 0.0.6.2a
+
+Ini adalah kemas kini terkecil yang pernah ada, walaupun mengandungi satu perkara penting. 
+
+1. Menambah pemeriksaan untuk arahan pemproses (kini digunakan dalam boot kernel untuk melihat apakah SSE2 disokong)
+
+KS 0.0.6.2b
+
+1. Menambah perintah bernama `sses` untuk menyenaraikan semua versi SSE
+
+KS 0.0.6.3
+
+1. Tetap `tenang 'tidak sepenuhnya diam
+2. Mesej tetap tidak muncul selepas melog masuk (contoh: Menambah mesej pengguna)
+3. Boleh menukar bahasa menggunakan perintah
+4. Tetapkan teks bantuan yang menunjukkan selepas melaksanakan `sses`
+5. Menambah bahasa Czech
+
+KS 0.0.6.4
+
+1. Tetap NullReferenceException apabila menukar bahasa
+2. Tetap dokumentasi besar-besaran baris baru apabila cuba menguraikan perkataan kosong yang tidak pada mulanya (Sila perhatikan bahawa kita masih mempunyai isu-isu baru dalam baris pertama)
+3. Menambah Tema Ubuntu
+4. Dihapuskan bendera yang tidak digunakan
+5. Permintaan tambahan yang dikeluarkan untuk mengurai warna pada boot (dikeluarkan ketamakan)
+6. Membuat saiz fail FTP yang boleh dibaca manusia
+
+KS 0.0.6.4a
+
+1. Tetap perkakasan Linux yang gagal apabila berjaya
+2. Prober RAM tetap memaparkan Memtotal: awalan
+3. Membuat mesej mengenai libcpanel-json-xs-perl yang jelas
+
+KS 0.0.6.4b
+
+1. Membuat satu persediaan untuk 0.0.6.5: Memuat turun simbol debug pada permulaan jika tidak dijumpai
+
+KS 0.0.6.5
+
+1. Fail pembuangan tetap yang dibuat tanpa sambungan
+2. Tempat pembuangan tempatan dan halaman manual
+3. Versi bahasa terkini yang terkini
+4. Tetapkan beberapa bug mengenai sistem fail
+5. Memperbaiki kelajuan jam CPU yang muncul dua kali dalam pemproses terkini (pemproses yang mempunyai kelajuan jam pada nama dalaman mereka, untuk contohnya "Intel (R) Core (TM) i7-8700 CPU @ 3.20GHz")
+6. Bar kemajuan pemindahan FTP supaya ia menggunakan format baru
+7. Menambah ETA dan kelajuan
+-BODY END-
+
+-SECTIONS-
+Pre-release=>SE1
+KS 0.0.1=>SE1
+KS 0.0.1.1=>SE1
+KS 0.0.2=>SE1
+KS 0.0.2.1=>SE1
+KS 0.0.2.2=>SE1
+KS 0.0.2.3=>SE1
+KS 0.0.3=>SE1
+KS 0.0.3.1=>SE1
+KS 0.0.4=>SE1
+Big releases=>SE1
+KS 0.0.4.1=>SE1
+5/23/2018=>SE1
+5/24/2018 to 5/27/2018=>SE1
+5/28/2018=>SE1
+5/29/2018=>SE1
+8/??/2018=>SE1
+KS 0.0.4.5=>SE1
+KS 0.0.4.6=>SE1
+KS 0.0.4.7=>SE1
+KS 0.0.4.9=>SE1
+KS 0.0.4.10=>SE1
+KS 0.0.4.11=>SE1
+KS 0.0.4.12=>SE1
+KS 0.0.5=>SE1
+KS 0.0.5.1=>SE1
+KS 0.0.5.2=>SE1
+Use of libraries=>SE1
+KS 0.0.5.5=>SE1
+The support for Unix systems=>SE1
+KS 0.0.5.6=>SE1
+KS 0.0.5.7=>SE1
+KS 0.0.5.8=>SE1
+The new development looks=>SE1
+KS 0.0.5.9=>SE1
+KS 0.0.5.10=>SE1
+Truth about status probing=>SE1
+KS 0.0.5.11=>SE1
+KS 0.0.5.12=>SE1
+KS 0.0.5.13=>SE1
+Linux probing=>SE2
+KS 0.0.5.14=>SE1
+KS 0.0.6=>SE1
+KS 0.0.6.1=>SE1
+KS 0.0.6.2=>SE1
+KS 0.0.6.2a=>SE1
+KS 0.0.6.2b=>SE1
+KS 0.0.6.3=>SE1
+ks 0.0.6.4=>SE1
+KS 0.0.6.4a=>SE1
+KS 0.0.6.4b=>SE1
+KS 0.0.6.5=>SE1
+-SECTIONS END-

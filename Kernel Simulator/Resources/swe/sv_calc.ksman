@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "calc"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+calc kommando
+
+Sammanfattning: Du kan ber??kna uttryck
+
+Beskrivning
+
+Om du beh??ver hj??lp med att ber??kna uttryck n??r du multiplicerar och delar upp stora siffror, eller om du beh??ver ber??kna uttryck snabbare ??r detta kommando ??t dig.
+
+Den anv??nder Central Processing Unit (CPU) f??r att bearbeta och utv??rdera uttryck och skriver ut det p?? sk??rmen n??r det ??r klart. 
+
+Det best??mmer automatiskt om det ??r heltal eller dubbel genom att titta p?? uttryck f??r decimaler, och om ett av siffrorna har en decimal, v??xlar det uttrycket f??r uttrycket till dubbel, annars kommer det att vara heltal.
+
+Om du f??rs??ker komma f??rbi ??verfl??det medan det inte finns n??gra decimaler i ditt uttryck kommer det att resultera i felet Integer Overflow. 
+
+Du kan ocks?? l??gga till parenteser f??r att uttrycket som ??r inuti det ska vara h??gsta prioritet eftersom det ber??knas i en PEMDAS-form: Parenteser, exponenter, multiplikation, division, till??gg, subtraktion.
+
+Kommandobruk
+
+* ber??kna (antal) (| - | * | / |%) (antal) ...
+* ber??kna ((antal) (| - | * | / |%) (antal) ...) (| - | * | / |%) (antal) ...
+
+exempel
+
+* ber??kna 32 * 2048: Detta kommer att multiplicera 32 med 2048, och resultatet ??r 65536
+* ber??kna (128,50 - 42,25) / 2: Detta kommer att utv??rdera uttryck som finns p?? parenteserna och delar sedan resultatet med 2, och resultatet ??r 43,13
+* ber??kna 128,50 - 42,25 / 2: Om du f??rs??kte ovanst??ende exempel utan parenteserna ??r 128,50 - 42,25 inte l??ngre h??gsta prioritet och resultatet ??r 107,38
+* ber??kna ((48,22 / 3,88) * (68,88 95,22)) 9 - .41: Detta kommer att utv??rdera detta uttryck, och resultatet ??r 2048
+* ber??kna 3 * 5 * 5 * 3: Detta kommer att multiplicera 3 med 5 p?? den f??rsta delen och multiplicera 5 med 3 p?? den andra delen, sedan multiplicera dem, och resultatet ??r 225
+* ber??kna (1024 * 1024 * 1024) * 2.0: Detta multiplicerar 1024 med 1024 med 1024, multiplicerar sedan det med 2 med hj??lp av flytpunktsprocessorn, och resultatet ??r 2147483648.
+-BODY END-
+
+-COLOR CONFIGURATION-
+calc (number) (+|-|*|/|%) (number) ...=>Green
+calc ((number) (+|-|*|/|%) (number) ...) (+|-|*|/|%) (number) ...=>Green
+calc 32 * 2048:=>Yellow
+calc (128.50 - 42.25) / 2:=>Yellow
+calc 128.50 - 42.25 / 2:=>Yellow
+calc ((48.22 / 3.88) * (68.88 + 95.22)) + 9 - .41:=>Yellow
+calc 3*5 * 5*3:=>Yellow
+calc (1024*1024*1024) * 2.0:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+calc command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

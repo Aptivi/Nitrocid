@@ -1,0 +1,33 @@
+(*MAN START*)
+
+-TITLE:Comando shell "ftp"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando ftp
+
+Resumo: Voc?? pode interagir com o shell FTP (File Transfer Protocol) para se conectar a um servidor e transferir arquivos
+
+Descri????o
+
+Voc?? pode usar o shell FTP para se conectar ao seu servidor FTP ou aos servidores FTP p??blicos para interagir com os arquivos encontrados no servidor.
+
+Voc?? pode baixar arquivos para o seu computador, fazer upload de arquivos para o servidor, gerenciar arquivos renomeando, excluindo, etc., e assim por diante.
+
+Para obter mais informa????es sobre como interagir com o shell e seus comandos, consulte "User FTP FTP e seus comandos"
+
+Uso de comando
+
+* ftp
+-BODY END-
+
+-COLOR CONFIGURATION-
+ftp=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+ftp command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

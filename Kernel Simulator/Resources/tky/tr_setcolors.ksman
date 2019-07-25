@@ -1,0 +1,79 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "setcolors"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+setcolors komutu
+
+??zet: ??ekirdek renklerini ayarlayabilirsiniz
+
+A????klama
+
+Bu komut, ??ekirdek hata mesaj??, giri?? mesaj??, lisans metni, genel metin vb. Dahil olmak ??zere ??ekirdek metin renklerini ayarlaman??z?? sa??lar. Ayr??ca, ??ekirde??inizin daha ki??isel g??r??nmesini sa??lamak i??in arka plan rengini ayarlaman??z?? sa??lar.
+
+Bu komut tamsay??lar olarak bilinen ConsoleColor enum de??erlerinden renkleri alg??lar. 
+
+* Beyaz = 15
+* Siyah = 0
+* Gri = 7
+* DarkGray = 8
+* DarkRed = 4
+* K??rm??z?? = 12
+* Koyu Sar?? = 6
+* Sar?? = 14
+* DarkGreen = 2
+* Ye??il = 10
+* DarkCyan = 3
+* Mavi = 11
+* DarkBlue = 1
+* Mavi = 9
+* DarkMagenta = 5
+* Macenta = 13
+
+Renk k??melerinde "def" varsa, belirtilen b??l??m i??in varsay??lan rengi al??r. 
+
+Ancak renkler aras??nda bir RESET varsa, her renk varsay??lan ayarlar??na s??f??rlan??r. 
+
+Komut kullan??m??
+
+* setcolors (inputColor / def / RESET) (licenseColor / def / RESET) (contKernelErrorColor / def / RESET) (uncontKernelErrorColor / def / RESET) (hostNameShellColor / def / RESET) (userNameShellColor / def / sol / RESET) 
+
+??rnekler
+
+* setcolors DarkCyan Mavi DarkRed K??rm??z?? Camg??be??i DarkCyan def Camg??be??i Camg??be??i DarkCyan
+* setcolors DarkMagenta Macenta DarkRed K??rm??z?? Macenta DarkMagenta def Macenta Macenta DarkMagenta
+* setcolors KoyuSar?? Sar?? KoyuK??rm??z?? K??rm??z?? Sar?? KoyuSar?? def Sar?? Sar?? KoyuSar??
+-BODY END-
+
+-COLOR CONFIGURATION-
+White=>White
+Black=>Black
+Gray=>Gray
+DarkGray=>DarkGray
+DarkRed=>DarkRed
+Red=>Red
+DarkYellow=>DarkYellow
+Yellow=>Yellow
+DarkGreen=>DarkGreen
+Green=>Green
+DarkCyan=>DarkCyan
+Cyan=>Cyan
+DarkBlue=>DarkBlue
+Blue=>Blue
+DarkMagenta=>DarkMagenta
+Magenta=>Magenta
+def=>Gray
+setcolors (inputColor/def/RESET) (licenseColor/def/RESET) (contKernelErrorColor/def/RESET) (uncontKernelErrorColor/def/RESET) (hostNameShellColor/def/RESET) (userNameShellColor/def/RESET) (backgroundColor/def/RESET) (neutralTextColor/def/RESET) (cmdListColor/def/RESET) (cmdDefColor/def/RESET)=>Green
+setcolors DarkCyan Blue DarkRed Red Cyan DarkCyan def Cyan Cyan DarkCyan=>Yellow
+setcolors DarkMagenta Magenta DarkRed Red Magenta DarkMagenta def Magenta Magenta DarkMagenta=>Yellow
+setcolors DarkYellow Yellow DarkRed Red Yellow DarkYellow def Yellow Yellow DarkYellow=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setcolors command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

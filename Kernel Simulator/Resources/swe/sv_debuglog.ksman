@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "debuglog"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+debuglog kommando
+
+Sammanfattning: Du kan visa k??rnfels??kningsloggar fr??n filen med namnet kernelDbg.log som finns i din anv??ndarprofilmapp
+
+Beskrivning
+
+Med den h??r visningen kan du se dina fels??kningsloggar utan att f??rst aktivera fels??kningsl??get p?? k??rnan. 
+
+Tidigare kr??vde detta kommando att fels??kningen ??r aktiverad i k??rnan.
+
+Kommandobruk
+
+* fels??kning
+-BODY END-
+
+-COLOR CONFIGURATION-
+debuglog=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+debuglog command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

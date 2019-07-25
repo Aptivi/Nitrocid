@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "calc"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah calc
+
+Ringkasan: Anda boleh mengira ungkapan
+
+Penerangan
+
+Sekiranya anda memerlukan bantuan cara mengira ekspresi apabila mengalikan dan membahagikan nombor besar, atau jika anda perlu mengira ekspresi dengan lebih cepat, arahan ini adalah untuk anda.
+
+Ia menggunakan Unit Pemprosesan Tengah (CPU) untuk memproses dan menilai ungkapan, dan mencetaknya pada skrin apabila selesai. 
+
+Ia secara automatik menentukan sama ada Integer atau Double dengan melihat ekspresi untuk perpuluhan, dan jika salah satu nombor mempunyai titik perpuluhan, ia akan menukar output ungkapan kepada Double, jika tidak, ia akan menjadi Integer.
+
+Jika anda cuba melepasi limpahan semasa tiada titik perpuluhan dalam ungkapan anda, ia akan mengakibatkan ralat Integer Overflow. 
+
+Anda juga boleh menambah tanda kurungan untuk ungkapan yang berada di dalamnya untuk menjadi keutamaan di atas kerana ia dikira dalam bentuk PEMDAS: Parentheses, Exponents, Multiplication, Division, Addition, Subtraction.
+
+Penggunaan perintah
+
+* calc (nombor) (| - | * | / |%) (bilangan) ...
+* calc ((nombor) (| - | * | / |%) (nombor) ...) (| - | * | / |%) (bilangan) ...
+
+Contoh
+
+* calc 32 * 2048: Ini akan membiak 32 oleh 2048, dan hasilnya ialah 65536
+* calc (128.50 - 42.25) / 2: Ini akan menilai ekspresi yang terdapat di kurungan, kemudian membagi hasilnya dengan 2, dan hasilnya adalah 43.13
+* calc 128.50 - 42.25 / 2: Bagaimanapun, jika Anda mencoba contoh di atas tanpa kurungan, 128.50 - 42.25 tidak lagi menjadi prioritas utama, dan hasilnya adalah 107.38
+* calc ((48.22 / 3.88) * (68.88 95.22)) 9 - .41: Ini akan menilai ungkapan ini, dan hasilnya ialah 2048
+* calc 3 * 5 * 5 * 3: Ini akan melipatgandakan 3 by 5 pada bahagian pertama, dan kalikan 5 by 3 pada bahagian kedua, kemudian darabkannya, dan hasilnya adalah 225
+* calc (1024 * 1024 * 1024) * 2.0: Ini akan melipatgandakan 1024 oleh 1024 oleh 1024, kemudian didarab dengan 2 menggunakan pemproses titik terapung, dan hasilnya ialah 2147483648.
+-BODY END-
+
+-COLOR CONFIGURATION-
+calc (number) (+|-|*|/|%) (number) ...=>Green
+calc ((number) (+|-|*|/|%) (number) ...) (+|-|*|/|%) (number) ...=>Green
+calc 32 * 2048:=>Yellow
+calc (128.50 - 42.25) / 2:=>Yellow
+calc 128.50 - 42.25 / 2:=>Yellow
+calc ((48.22 / 3.88) * (68.88 + 95.22)) + 9 - .41:=>Yellow
+calc 3*5 * 5*3:=>Yellow
+calc (1024*1024*1024) * 2.0:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+calc command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

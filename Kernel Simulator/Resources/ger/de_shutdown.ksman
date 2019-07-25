@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "shutdown"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl zum Herunterfahren
+
+Zusammenfassung: F??hrt Ihren Computer herunter
+
+Beschreibung
+
+Wenn Sie mit allem fertig sind und an Ihrem Computer nichts mehr tun m??chten, anstatt Energie zu verbrauchen und mehr Geld an das Stromzentrum zu zahlen, m??ssen Sie diesen Befehl verwenden, um Ihren Computer herunterzufahren und Strom zu sparen 
+
+Befehlsverwendung
+
+* ausschalten
+-BODY END-
+
+-COLOR CONFIGURATION-
+shutdown=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+shutdown command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Commande de shell "chpwd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande chpwd
+
+R??sum??: vous pouvez changer votre mot de passe ou le mot de passe de quelqu'un d'autre
+
+La description
+
+Si le mot de passe de votre compte ou du compte de quelqu'un d'autre doit ??tre modifi??, vous pouvez utiliser cette commande pour modifier votre mot de passe ou celui de quelqu'un d'autre.
+
+Ceci est utile si vous pensez que votre compte ou celui de quelqu'un d'autre a un mot de passe incorrect ou figure dans la liste des mots de passe faciles situ??e en ligne.
+
+Cette commande n??cessite que vous sp??cifiiez votre mot de passe ou le mot de passe de quelqu'un d'autre avant d'??crire votre nouveau mot de passe.
+
+Utilisation de la commande
+
+* chpwd (nom d'utilisateur) (UserPass) (newPass) (confirmer)
+
+Exemples
+
+* chpwd joe easy1234 p4ssw0rd p4ssw0rd: Il change le mot de passe de joe en p4ssw0rd de easy1234
+-BODY END-
+
+-COLOR CONFIGURATION-
+chpwd (Username) (UserPass) (newPass) (confirm)=>Green
+chpwd joe easy1234 p4ssw0rd p4ssw0rd:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chpwd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

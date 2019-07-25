@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Shell Befehl "reloadsaver"
+-REVISION:0.0.1.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl reloadsaver
+
+Zusammenfassung: Sie k??nnen Bildschirmschonerdateien neu laden, nachdem Sie ??nderungen daran vorgenommen haben.
+
+Beschreibung
+
+Dieser Befehl kompiliert den Inhalt Ihrer Moddatei, um festzustellen, ob Fehler vorliegen, und weist Ihre Bildschirmschoner-Moddateien der g??ltigen Bildschirmschonerliste zu, wenn Ihr Bildschirmschoner keine Fehler aus dem Build-System enth??lt.
+
+Wenn Sie ??nderungen an Ihrem Bildschirmschoner widerspiegeln m??chten, nehmen Sie einige ??nderungen an Ihrem Bildschirmschoner-Modfile vor und f??hren Sie diesen Befehl aus, der auf das ge??nderte Modfile zeigt.
+
+Befehlsverwendung
+
+* reloadsaver ((ScreenSaverName) SS.m)
+
+Beispiele
+
+* reloadsaver AdvancedMatrixSS.m: L??dt AdvancedMatrixSS.m in die Bildschirmschonerliste
+* reloadsaver SpaceSS.m: L??dt SpaceSS.m in die Bildschirmschonerliste
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadsaver ((ScreenSaverName)SS.m)=>Green
+reloadsaver AdvancedMatrixSS.m:=>Yellow
+reloadsaver SpaceSS.m:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadsaver command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

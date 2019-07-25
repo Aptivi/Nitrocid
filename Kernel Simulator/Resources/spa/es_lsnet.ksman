@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "lsnet"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando lsnet
+
+Resumen: puede enumerar los equipos que est??n en l??nea y sus direcciones IP en dominios o grupos de trabajo
+
+Descripci??n
+
+Si desea obtener todas las computadoras que se unieron al grupo de trabajo o al dominio, puede usar este comando, pero primero debe solicitar permiso si se encuentra en lugares p??blicos como oficinas, escuelas, caf??s, etc. 
+
+Este comando tambi??n es ??til si est?? listando computadoras en su red peque??a o en su casa que tiene varias computadoras que ejecutan Windows, sin importar la versi??n de Windows que se est?? ejecutando.
+
+Uso del comando
+
+* lsnet
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnet=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnet command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

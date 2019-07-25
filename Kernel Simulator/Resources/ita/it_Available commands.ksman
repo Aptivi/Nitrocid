@@ -1,0 +1,85 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Comandi disponibili
+-REVISION:0.0.1.3
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the commands that are available in the kernel is put.
+-BODY START-
+Comandi amministrativi:
+
+1. adduser: ?? possibile aggiungere il nome dell'utente ogni volta che ?? necessario, con la password, se necessario. 
+2. perm: puoi gestire le impostazioni di autorizzazione dell'utente. 
+3. arginj: ?? possibile inserire argomenti nel kernel in modo tale che al riavvio vengano eseguiti gli argomenti iniettati. 
+4. chhostname: puoi cambiare il tuo nome host del tuo kernel per personalizzare le cose. 
+5. chmotd: puoi cambiare il tuo messaggio del giorno, e puoi includere i tuoi segnaposti, tra cui <utente> che sta per username, <shortdate> per la data breve nel formato "MM / GG / AAAA", <longdate> 
+6. chusrname: puoi cambiare il tuo nome utente, o il nome di qualcun altro, usando "chusrname <oldName> <newName>," anche se se hai cambiato il tuo nome utente con il nuovo nome, verrai immediatamente disconnesso.
+7. rmuser: ?? possibile rimuovere i nomi utente, ma non ?? possibile rimuovere i propri, se l'utente specificato non desidera utilizzare il computer, oppure se non ?? invitato o ?? ridondante. 
+8. netinfo: ?? possibile controllare lo stato della rete e le informazioni dell'interfaccia di rete, incluso il supporto WiFi. 
+9. debuglog: puoi controllare i tuoi log di debugging senza dover andare al file explorer situato nel tuo profilo utente e aprire l'editor di testo / visualizzatore su "kernelDbg.log". 
+10. reloadconfig: puoi ricaricare il file di configurazione per leggere le nuove modifiche, ma le modifiche verranno applicate dopo il riavvio del kernel.
+11. alias: puoi gestire i tuoi alias per i comandi in modo da non dover digitare comandi lunghi, usando "alias <add / rem> <aliasName> <Command>."
+12. chmal: puoi modificare il messaggio del giorno dopo il login e supporta gli stessi segnaposto e ha lo stesso argomento di "chmal <Anything>".
+13. setaver: puoi impostare il salvaschermo di tua scelta o quello personalizzato come predefinito, e se prevedi di utilizzare screensaver personalizzati, dovresti nominare l'estensione come <ScreensaverName> SS.m per essere riconosciuto come salvaschermo, non 
+14. reloadsaver: puoi ricaricare il tuo file di estensione screensaver dalla directory KSMods. 
+15. cdbglog: puoi cancellare il registro di debug, ripristinando la dimensione a 0
+
+Comandi utente normale:
+
+1. calc: puoi calcolare le tue espressioni, come aggiungere numeri, sottrarli, moltiplicarli o dividerli. 
+2. chdir: puoi cambiare la tua directory di lavoro usando "chdir <directory>"
+3. chpwd: puoi cambiare la tua password, o la password di qualcun altro. 
+4. cls: per cancellare lo schermo dal testo.
+5. ftp: ?? possibile trasferire file da / a un server FTP e interagire con i server.
+6. lista: puoi elencare la tua directory di lavoro corrente o elencare un'altra directory usando "lista [Directory]".
+7. lscomp: puoi elencare tutti i computer funzionanti, anche offline, se sei nel dominio in cui alcuni computer sono spenti come la scuola, il grande ufficio, ecc. Questo pu?? essere usato anche sui cubicoli, ma per tutti i luoghi, 
+8. lsnet: puoi elencare tutti i computer funzionanti, ma omettendo i computer offline.
+9. lsnettree: ?? possibile elencare tutti i computer funzionanti, ma omettendo i computer offline in una forma ad albero.
+10. lockscreen: puoi bloccare lo schermo e mostrare lo screensaver predefinito impostato dall'utente o dal kernel. 
+11. logout: puoi chiudere il tuo account quando hai finito di lavorare.
+12. md: puoi creare la tua directory nella directory principale, usando "md <anything>."
+13. noalias: puoi vedere la lista degli alias proibiti impostati dal kernel. 
+14. ping: puoi controllare l'indirizzo / server per vedere se ?? online, in ritardo o offline usando "ping <Indirizzo> [repeatTimes]"
+15. rd: Puoi rimuovere la tua directory creata usando "rd <qualsiasi cosa>", ma se provi a rimuovere le cartelle importanti, vengono ricreate ad ogni riavvio e questo comportamento verr?? modificato quando implementeremo un filesystem reale.
+16. leggi: puoi vedere cosa c'?? dentro un file con "leggi <file>", molto simile a "cat <percorso / su / file>."
+17. Riavvia: puoi riavviare il kernel se hai apportato modifiche manuali o dello strumento per farle riflettere, o se vuoi vedere di nuovo la sequenza di avvio.
+18. savescreen: ?? possibile mostrare lo screensaver per evitare di bruciare lo schermo.
+19. scical: puoi calcolare le tue espressioni, ma questa calcolatrice ?? calcolatrice scientifica e in futuro verr?? unita a "calc". 
+20. setcolors: puoi impostare i colori del kernel usando "setcolors <inputColor / def> <licenseColor / def> <contKernelErrorColor / def> <uncontKernelErrorColor / def> <hostNameShellColor / def> <userNameShellColor / def> <backgroundColor / def> <neutralTextColor 
+21. setthemes: puoi impostare il set di colori per il tuo kernel, noto come temi, usando "setthemes <theme>"
+22. showmotd: ?? possibile mostrare le modifiche al messaggio del giorno
+23. showtd: puoi mostrare la tua ora e data attuali, oltre al fuso orario.
+24. showtdzone: puoi mostrare l'ora e la data del fuso orario, oppure puoi mostrare tutte le date e gli orari dei fusi orari nell'ora e nella data correnti usando "showtdzone <zone>" o "showtdzone <all>"
+25. showmal: puoi mostrare le tue modifiche al messaggio del giorno dopo il login
+26. shutdown: puoi spegnere il tuo computer (il kernel, non il PC reale)
+27. sysinfo: puoi mostrare le informazioni del tuo sistema, cos?? come le impostazioni del kernel.
+28. unitconv: puoi convertire l'unit?? in qualsiasi unit??, se la sorgente e il bersaglio si supportano a vicenda come cm -> m, usando "unitconv <source> <target> <value>."
+29. useddeps: ?? possibile mostrare le librerie open source utilizzate
+30. manuale: ?? possibile ottenere informazioni su tutto o ottenere le pagine di manuale disponibili scrivendo solo il comando. 
+
+Per ulteriori informazioni su ogni comando, consultare "usermanual <comando>"
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser:=>Red
+perm:=>Red
+arginj:=>Red
+chhostname:=>Red
+chmotd:=>Red
+chusrname:=>Red
+rmuser:=>Red
+netinfo:=>Red
+debuglog:=>Red
+reloadconfig:=>Red
+alias:=>Red
+chmal:=>Red
+setsaver:=>Red
+loadsaver:=>Red
+cdbglog:=>Red
+-COLOR CONFIG END-
+
+-SECTIONS-
+Administrative commands:=>SE1
+Normal user commands:=>SE1
+-SECTIONS END-

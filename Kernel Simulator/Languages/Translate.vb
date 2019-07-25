@@ -18,7 +18,6 @@
 
 Public Module Translate
 
-    'TODO: Download language files from the Internet (GitHub repo "KSLangs")
     'Variables
     Public availableLangs() As String = {"chi", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "mal", "ptg", "spa", "swe", "tky"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList

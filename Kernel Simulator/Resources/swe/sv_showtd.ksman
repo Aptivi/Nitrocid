@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-kommandot "showtd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+showtd kommando
+
+Sammanfattning: Visar aktuell tid och datum
+
+Beskrivning
+
+Om du vill veta vad klockan ??r utan att upprepade g??nger g?? in i klockan kan du anv??nda det h??r kommandot f??r att visa aktuell tid och datum s??v??l som din tidszon.
+
+Kommandobruk
+
+* showtd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

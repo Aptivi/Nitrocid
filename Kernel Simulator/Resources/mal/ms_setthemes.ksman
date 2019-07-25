@@ -1,0 +1,44 @@
+(*MAN START*)
+
+-TITLE:Perintah "susun atur"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+menetapkan arahan
+
+Ringkasan: Tetapkan tema anda
+
+Penerangan
+
+Anda boleh memperibadikan kernel anda menggunakan tema, yang mengandungi set warna untuk menetapkan warna. 
+
+* Lalai: Set warna kernel lalai
+* RedConsole: Konsol anda akan menjadi merah selepas menetapkannya
+* Bluespire: Nikmati konsol biru anda
+* Hacker: Jika anda penggodam, tetapkan tema ini untuk menjadikan konsol anda kelihatan seperti konsol peretasan (warna matriks hijau)
+* LinuxUncolored: Simulates shell Linux yang tidak berwarna (bash)
+* LinuxColoredDef: Menyebarkan shell Linux berwarna (bash)
+
+Penggunaan perintah
+
+* menetapkan (Tema)
+
+Contoh
+
+* menetapkan Hacker
+* menetapkan Bluespire
+-BODY END-
+
+-COLOR CONFIGURATION-
+setthemes (Theme)=>Green
+setthemes Hacker=>Yellow
+setthemes Bluespire=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setthemes command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -348,3 +348,20 @@ SSE versiyonlarını alır
 Geçersiz dil
 Dili değiştir
 Sisteminizde yüklü libcpanel-json-xs-perl olmayabilir. Kurulum için paket yöneticinize başvurun. Debian (ve türevleri) sistemleri için, terminal emülatöründe "sudo apt install libcpanel-json-xs-perl" komutunu çalıştırmak isteyebilirsiniz. Bir hatanın diğer detayları:
+----------------------------- Çekirdek panik dökümü ------------------------------
+>> Panik bilgisi <<
+> Açıklama: {0}
+> Hata türü: {1}
+> Tarih ve Saat: {2}
+>> İstisna bilgileri <<
+> İstisna: {0}
+> Açıklama: {1}
+> HRESULT: {2}
+> Kaynak: {3}
+> Yığın izi <
+>> İç istisna {0} bilgisi <<
+>> {0} istisnası, temel nedendir <<
+>> İstisna yok; bir çekirdek hatası olabilir. <<
+>> Çerçeveler, dosyalar, çizgiler ve sütunlar <<
+> Çerçevesi: {0} | Dosya: {1} | Satır: {2} | Sütun: {3}
+> Çerçeve bilgisini almaya çalışırken bir hata var. {0}: {1}

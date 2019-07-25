@@ -1,0 +1,47 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "scical"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+sanal komut
+
+??zet: Daha geli??mi?? ifadeleri de??erlendirmenizi sa??lar
+
+A????klama
+
+Say??lar??n karek??k??n?? alma gibi geli??mi?? ifadeleri de??erlendirmek i??in bilimsel hesap makinesini kullanabilirsiniz.
+
+??u anda, bu komut ifadeleri de??erlendirmek i??in DataTable () s??n??f??n?? kullan??r. 
+
+https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
+
+Daha sonra bu hesap makinesini yeniden yazaca????z veya muhtemelen bir birime birle??tirece??iz.
+
+Komut kullan??m??
+
+* scical (expression1 | pi | e) (| - | * | / |%) (expression2 | pi | e) ...
+* scical (sqrt | tan | sin | cos) (say??)
+
+??rnekler
+
+* scical (29 * 35) pi: ??nce parantez i??indeki ifadeleri hesaplar, "pi" yi de??erlendirir, sonra ??arp??lan say??larla ekler ve sonu?? 1018.14
+* scical e pi: Birlikte bir euler de??eri ve pi ekler ve sonu?? 5.86'd??r.
+* scical sqrt 729: 729'un karek??k??n?? al??r ve sonu?? 27'dir.
+-BODY END-
+
+-COLOR CONFIGURATION-
+scical (expression1|pi|e) (+|-|*|/|%) (expression2|pi|e) ...=>Green
+scical (sqrt|tan|sin|cos) (number)=>Green
+scical (29 * 35) + pi:=>Yellow
+scical e + pi:=>Yellow
+scical sqrt 729:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+scical command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "sysinfo"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+sysinfo-kommando
+
+Sammanfattning: H??mtar din systeminformation
+
+Beskrivning
+
+Med detta kommando kan du se din k??rnkonfiguration, s??v??l som din MOTD-, MAL-, v??rdnamn, anv??ndarnamn och h??rdvaruinformation.
+
+Detta kommando ??r anv??ndbart f??r felrapporter och kraschrapporter.
+
+Kommandobruk
+
+* sysinfo
+-BODY END-
+
+-COLOR CONFIGURATION-
+sysinfo=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+sysinfo command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando shell "lockscreen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando lockscreen
+
+Resumo: Voc?? pode bloquear a tela com o protetor de tela padr??o para evitar queimaduras de tela
+
+Descri????o
+
+Voc?? pode bloquear sua tela e mostrar seu protetor de tela padr??o para confirmar que voc?? est?? ausente e voltar?? em coma por uma hora ou mais. 
+
+Uso de comando
+
+* tela de bloqueio
+-BODY END-
+
+-COLOR CONFIGURATION-
+lockscreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lockscreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

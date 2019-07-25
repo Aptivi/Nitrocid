@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "unitconv"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+unitconv komutu
+
+??zet: Birimleri ba??ka bir birime d??n????t??r??r
+
+A????klama
+
+??nternet kullanmak zorunda kalmadan kaynak birimlerinizi ba??ka bir birime d??n????t??rebilirsiniz.
+
+Para birimini d??n????t??rmeniz gerekirse, "currency" komutunu kullan??n.
+
+Kaynak birim, verdi??iniz de??eri d??n????t??rmek i??in hedef birim (??rn. Cm'den cm'ye) taraf??ndan desteklenmelidir, aksi takdirde d??n????t??r??lemez. 
+
+Komut kullan??m??
+
+* unitconv (sourceUnit) (hedef) (de??er)
+
+??rnekler
+
+* unitconv GB B 50: 50GB dosya boyutunu kilobayta d??n????t??r??r
+* unitconv Celsius Fahrenheit 36: 36C dereceyi Fahrenheit'e ??evirir
+* unitconv Inches Feet 19: 19 in??'i fit a ??evirir
+-BODY END-
+
+-COLOR CONFIGURATION-
+unitconv (sourceUnit) (destination) (value)=>Green
+unitconv GB B 50:=>Yellow
+unitconv Celsius Fahrenheit 36:=>Yellow
+unitconv Inches Feet 19:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+unitconv command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

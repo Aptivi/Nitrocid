@@ -1,0 +1,85 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Perintah yang ada
+-REVISION:0.0.1.3
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the commands that are available in the kernel is put.
+-BODY START-
+Perintah pentadbiran:
+
+1. adduser: Anda boleh menambah nama pengguna bila-bila masa yang anda perlukan, dengan kata laluan jika diperlukan. 
+2. perm: Anda boleh menguruskan tetapan kebenaran pengguna. 
+3. arginj: Anda boleh menyuntik hujah ke dalam kernel supaya apabila anda reboot, hujah-hujah yang disuntik akan dijalankan. 
+4. nama host: Anda boleh menukar nama host anda kernel anda untuk memperibadikan perkara. 
+5. chmotd: Anda boleh menukar mesej anda hari ini, dan anda boleh memasukkan ruang letak anda sendiri, termasuk <pengguna> yang bermaksud nama pengguna, <shortdate> untuk tarikh pendek dalam format "MM / DD / YYYY", <longdate> 
+6. chusrname: Anda boleh menukar nama pengguna anda, atau nama orang lain, menggunakan "chusrname <oldName> <newName>," walaupun jika anda menukar nama pengguna anda sendiri ke nama baru, anda akan segera keluar.
+7. rmuser: Anda boleh mengalih keluar nama pengguna, tetapi anda tidak boleh memadam milik anda, jika pengguna yang ditentukan tidak mahu menggunakan komputer, atau tidak diundang, atau berlebihan. 
+8. netinfo: Anda boleh menyemak status rangkaian dan maklumat antara muka rangkaian anda, termasuk sokongan WiFi. 
+9. debuglog: Anda boleh menyemak log debug anda tanpa perlu pergi ke explorer fail yang terletak pada profil pengguna anda dan buka editor teks / penonton pada "kernelDbg.log." 
+10. reloadconfig: Anda boleh memuatkan semula fail konfigurasi untuk membaca perubahan baru, tetapi perubahan akan diterapkan selepas anda memulakan semula kernel.
+11. alias: Anda boleh mengurus alias anda kepada perintah supaya anda tidak perlu menaip perintah lama, menggunakan "alias <add / rem> <aliasName> <Command>."
+12. chmal: Anda boleh menukar mesej anda hari selepas login, dan ia menyokong ruang letak yang sama, dan ia mempunyai argumen yang sama "chmal <Anything>."
+13. setsaver: Anda boleh menetapkan screensaver pilihan atau pilihan anda sebagai lalai, dan jika anda merancang untuk menggunakan screensaver tersuai, anda harus menamakan pelanjutan anda sebagai <ScreensaverName> SS.m untuk diiktiraf sebagai screensaver, bukan 
+14. reloadsaver: Anda boleh memuatkan semula fail sambungan screensaver anda dari direktori KSMods. 
+15. cdbglog: Anda boleh membersihkan log debug, menetapkan semula saiz menjadi 0
+
+Perintah pengguna biasa:
+
+1. calc: Anda boleh mengira ungkapan anda, seperti menambah nombor, menolaknya, mendarabkannya atau membahagikannya. 
+2. chdir: Anda boleh menukar direktori kerja anda menggunakan "chdir <directory>"
+3. chpwd: Anda boleh menukar kata laluan anda, atau kata laluan orang lain. 
+4. cls: Untuk membersihkan skrin anda dari teks.
+5. ftp: Anda boleh memindahkan fail dari / ke pelayan FTP, dan berinteraksi dengan pelayan.
+6. senarai: Anda boleh menyenaraikan direktori kerja semasa anda, atau senarai direktori lain menggunakan "senarai [Direktori]."
+7. lscomp: Anda boleh menyenaraikan semua komputer yang bekerja, bahkan di luar talian jika anda berada di domain yang mempunyai beberapa komputer seperti sekolah, pejabat besar, dan sebagainya. Ini juga boleh digunakan pada cubicles, tetapi untuk semua tempat, anda 
+8. lsnet: Anda boleh menyenaraikan semua komputer yang berfungsi, tetapi tidak mematikan komputer luar talian.
+9. lsnettree: Anda boleh menyenaraikan semua komputer kerja, tetapi tidak mematikan komputer luar talian dalam bentuk pokok.
+10. kunci skrin: Anda boleh mengunci skrin anda dan menunjukkan screensaver lalai anda yang ditetapkan oleh anda atau oleh kernel. 
+11. logout: Anda boleh log off akaun anda apabila anda selesai bekerja.
+12. md: Anda boleh membuat direktori anda pada direktori root, menggunakan "md <anything>."
+13. noaliases: Anda dapat melihat senarai alias terlarang yang ditetapkan oleh kernel. 
+14. ping: Anda boleh menyemak alamat / pelayan untuk melihat sama ada dalam talian, laggy, atau luar talian dengan menggunakan "ping <Alamat> [repeatTimes]"
+15. rd: Anda boleh mengalih keluar direktori dibuat menggunakan "rd <anything>," tetapi jika anda cuba memadam folder penting, mereka akan dicipta pada setiap restart dan tingkah laku ini akan diubah apabila kami melaksanakan sistem fail yang sebenar.
+16. baca: Anda dapat melihat apa yang ada di dalam fail dengan "baca <fail>," seperti "cat <path / to / file>."
+17. reboot: Anda boleh memulakan semula kernel anda jika anda telah membuat perubahan konfigurasi manual atau alat untuk dicerminkan, atau jika anda mahu melihat urutan but semula.
+18. mengeset skrin: Anda boleh memaparkan screensaver untuk mengelakkan skrin terbakar.
+19. scical: Anda boleh mengira ungkapan anda, tetapi kalkulator ini adalah kalkulator saintifik, dan akan digabungkan dengan "kalk" pada masa akan datang. 
+20. setcolors: Anda boleh menetapkan warna kernel menggunakan "setcolors <inputColor / def> <licenseColor / def> <contKernelErrorColor / def> <uncontKernelErrorColor / def> <hostNameShellColor / def> <userNameShellColor / def> <backgroundColor / def> <neutralTextColor 
+21. menetapkan: Anda boleh menetapkan set warna untuk kernel anda, seperti yang dikenali sebagai tema, menggunakan "tema <tema>"
+22. showmotd: Anda boleh menunjukkan perubahan anda kepada Mesej Hari
+23. showtd: Anda boleh menunjukkan masa dan tarikh semasa anda, serta zon waktu anda.
+24. showtdzone: Anda boleh menunjukkan waktu dan tarikh zon waktu, atau anda boleh menunjukkan semua tarikh dan masa zon masa dalam masa dan tarikh semasa menggunakan "showtdzone <zone>" atau "showtdzone <all>"
+25. showmal: Anda boleh menunjukkan perubahan anda pada Mesej Hari Selepas Masuk
+26. shutdown: Anda boleh mematikan komputer anda (Kernel, bukan PC sebenar)
+27. sysinfo: Anda boleh menunjukkan maklumat sistem anda, serta tetapan kernel.
+28. unitconv: Anda boleh menukar unit ke mana-mana unit, jika sumber dan target menyokong satu sama lain seperti cm -> m, menggunakan "unitconv <source> <target> <value>."
+29. useddeps: Anda boleh menunjukkan perpustakaan sumber terbuka yang digunakan
+30. Usermanual: Anda boleh mendapatkan maklumat tentang segala-galanya, atau dapatkan halaman manual yang tersedia dengan hanya menulis perintah. 
+
+Untuk maklumat lanjut tentang setiap arahan, rujuk "usermanual <command>"
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser:=>Red
+perm:=>Red
+arginj:=>Red
+chhostname:=>Red
+chmotd:=>Red
+chusrname:=>Red
+rmuser:=>Red
+netinfo:=>Red
+debuglog:=>Red
+reloadconfig:=>Red
+alias:=>Red
+chmal:=>Red
+setsaver:=>Red
+loadsaver:=>Red
+cdbglog:=>Red
+-COLOR CONFIG END-
+
+-SECTIONS-
+Administrative commands:=>SE1
+Normal user commands:=>SE1
+-SECTIONS END-

@@ -1,0 +1,80 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Configura????o para o seu Kernel
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+O que ?? o Config?
+
+A configura????o ?? a configura????o do seu kernel que armazena mais op????es do kernel que n??o puderam ser editadas nem nos argumentos nem nos argumentos da linha de comando. 
+
+Existem muitas se????es para facilitar a leitura do arquivo de configura????o. 
+
+Entradas de configura????o
+
+Geral
+
+1. Solicitar Argumentos na Inicializa????o: Voc?? pode for??ar o kernel a fornecer o prompt de argumento se o valor estiver configurado como True. 
+2. Modo de Manuten????o: Voc?? pode fazer o kernel n??o analisar quaisquer mods e screensavers ao inicializar, e lhe d?? a oportunidade de reparar seu kernel. 
+3. Alterar a senha do root: Voc?? pode alterar a senha administrativa. 
+4. Defina a Senha Raiz para: Se a op????o "Alterar Senha Raiz" estiver configurada como Verdadeira, voc?? poder?? escrever sua pr??pria senha de root. 
+5. Criar Conta de Demonstra????o: Voc?? pode fazer o kernel criar a conta de teste, demo, definindo isso como Verdadeiro. 
+6. Cores personalizadas na inicializa????o: Se esta op????o estiver configurada como True, o kernel alterar?? suas cores com base nos valores de configura????o. 
+7. Idioma: pode usar o atalho de tr??s letras. 
+
+Cores
+
+Cada entrada mencionada abaixo pode ter nomes ou valores de cores. 
+
+1. Nome do Usu??rio Cor do Shell: Voc?? pode alterar o nome de usu??rio que exibe a cor da pe??a em todo o prompt.
+2. Cor do Shell do Nome do Host: Voc?? pode alterar o nome do host que exibe a cor da pe??a em todo o prompt.
+3. Cor de erro do kernel cont??nuo: Voc?? pode alterar a cor do texto de erro do kernel.
+4. Cor do Erro do Kernel Ininterrupto: Voc?? pode alterar a cor do texto da cor do erro fatal.
+5. Cor do Texto: Voc?? pode alterar a cor geral do texto.
+6. Cor da licen??a: voc?? pode alterar a cor do texto da licen??a.
+7. cor de fundo: voc?? pode mudar a cor de fundo.
+8. Cor de entrada: Voc?? pode alterar a cor de entrada de texto.
+9. Comando listado na Cor da Ajuda: Voc?? pode alterar a cor do comando impresso na lista de comandos.
+10. Defini????o de comando em Cor da Ajuda: Voc?? pode alterar a descri????o impressa da cor do comando na lista de comandos.
+
+Hardware
+
+Cada entrada mencionada abaixo pode levar False ou True.
+
+1. Quiet Probe: Voc?? pode tornar o hardware sossegado, n??o mostrando resultados de hardware testado.
+2. Slots de sonda: Voc?? pode fazer com que o apalpador de RAM detecte os slots de RAM.
+
+Entrar
+
+1. Mostrar MOTD on Log-in: Voc?? pode fazer o prompt de login mostrar-lhe a mensagem do dia antes de exibir o prompt. 
+2. Limpar tela no login: Voc?? pode remover a desordem da tela antes de fazer o login, se estiver definida como Verdadeiro. 
+3. MOTD: Voc?? pode alterar a mensagem de pr??-login para qualquer valor. 
+4. Nome do Host: Voc?? pode alterar o nome do host do kernel.
+5. MOTD Ap??s Login: Voc?? pode alterar a mensagem de p??s-login para qualquer valor. 
+
+Concha
+
+Cada entrada mencionada abaixo pode ter True ou False.
+
+1. Shell colorido: Voc?? pode adicionar suporte para colorir o shell.
+2. Comando Simplificado de Ajuda: Voc?? pode listar os comandos no formul??rio separado por v??rgulas.
+
+Misc
+
+1. Mostrar hora / data no canto superior direito: voc?? pode estabelecer a faixa de tempo / data ativa que est?? atualizando, e a posi????o est?? no canto superior direito. 
+2. Screensaver: Voc?? pode escolher seus screensavers dispon??veis.
+3. Vers??o do Kernel: N??o altere esta entrada! 
+-BODY END-
+
+-SECTIONS-
+What is the Config?=>SE1
+Config entries=>SE1
+General=>SE2
+Colors=>SE2
+Hardware=>SE2
+Login=>SE2
+Shell=>SE2
+Misc=>SE2
+-SECTIONS END-

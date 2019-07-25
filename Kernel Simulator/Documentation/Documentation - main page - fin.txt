@@ -1,0 +1,109 @@
+﻿| --------------- + -> Kernel-simulaattori - simuloi tulevaa ydinä, jonka suunnittelemme <- + -------------- - |
+
+INFO: Rakennatko Linux-versiota Kernel Simulatorista MonoDevelopissa? Jos näin on, asenna MonoDevelop ja libmono-microsoft-visualbasic10.0-cil. Vaikka suosittelemme MonoDevelopia, suosittelemme JetBrains Rideriä Linux 64-bittiseksi.
+
+INFO: Tämä ytimen simulaattori ei ole lopullinen suunniteltu ytimen versio, koska se oli minimaalinen.
+
+INFO: Kaksi dokumentaatiota, vika ja vianmääritys, poistetaan, koska niitä ei päivitetä säännöllisesti.
+
+Ytimen simulaattorin avulla voit simuloida hyvin varhaisen pääsyn tulevaan ytimellemme, jota kehitetään edelleen, vaikka teimme Kernelin todellisen PC-version.
+
+--------------- + -> Historia <- + --------------- |
+
+7/25/2019 - 0.0.6.5: Kiinteät polttotiedostot luodaan ilman laajennusta, Paikalliset kaatopaikat ja manuaalit, Päivitetty kieliversio viimeistään, Korjattiin joitakin vikoja tiedostojärjestelmästä, Kiinteä CPU-kellonopeus, joka näkyy kahdesti uusimmissa prosessoreissa (prosessorit, joissa on kellon nopeus niiden sisäisissä nimissä, esim. "Intel (C) Core (TM) i7-8700 CPU @ 3.20GHz"), FTP-siirtojen kiinteä etenemispalkki, joten se käyttää uutta muotoa, lisätty ETA ja nopeus
+7/7/2019 - 0.0.6.4b: Yksi valmistelu 0.0.6.5: Debug-symbolien lataaminen käynnistyksen yhteydessä, jos niitä ei löydy
+7/6/2019 - 0.0.6.4a: Kiinteä Linux-laitteiston testaus epäonnistui, vaikka se olisi onnistunut, Fixed RAM prober, joka näyttää MemTotal: prefiksin, Made in libcpanel-json-xs-perl clear
+6/28/2019 - 0.0.6.4: Korjattu NullReferenceException, kun vaihdat kieltä, Korjattiin massiiviset dokumenttiviivat, kun yritettiin jäsentää tyhjä sana, joka ei ole alussa (Huomaa, että meillä on vielä uusia rivejä ensimmäisessä rivissä), Lisätty Ubuntu teema, Poistettu käyttämätön lippu, Poistettu ylimääräinen vaatimus jäsentää värejä käynnistettäessä (poistettu ahneus), Made FTP-tiedoston koko ihmisen luettavissa
+6/26/2019 - 0.0.6.3: Kiinteä "hiljainen" ei ole täysin hiljainen, Kiinteät viestit, jotka eivät näy sisäänkirjautumisen jälkeen (esim. Käyttäjän viestin lisääminen), Salli muuttaminen kielellä komennolla, Korjattu ohjeteksti, joka näytetään `sses`: n suorittamisen jälkeen , Lisätty tšekki
+6/25/2019 - 0.0.6.2b: Lisätty komento nimeltään `sses` luetteloon kaikista SSE-versioista
+6/24/2019 - 0.0.6.2a: Lisätty suorittimen ohjeiden tarkistaminen (jota käytetään tällä hetkellä ytimen käynnistämisessä, jotta näet, onko SSE2 tuettu)
+6/24/2019 - 0.0.6.2: Kiinteä debug log show -komento ei toimi, koska polkua ei löytynyt (typo: Debugger -> Debugging), Lisätty ilmoitus PC-komentojen luettelosta uusimmista Windows 10 -versioista, Fixed debug kernel header ei kirjoittanut, kun käytät debug-argumenttia, Korjattu virheenkorjausloki on tyhjä jokaisen uudelleenkäynnistyksen ja käynnistyksen yhteydessä, Salli debug-kirjautumiskomennon käyttäminen cdbglogin avulla, Käytetyt sisäänrakennetut FtpVerify enumerators, poistamalla vanhat FluentFTP-versiot, Parempi virheenkorjauskokemus, Debugging näyttää nyt rivinumeron ja lähdetiedoston, jos pdb on samassa kansiossa, sallittu muokkaus käyttäen C #
+6/21/2019 - 0.0.6.1: Ohjeessa näkyvät poistetut valuuttatiedot (palauttaa ne myöhemmin), Käyttäjien on nyt syötettävä API-avain apilayer.net: stä valuuttojen muuntamiseksi (Perussuunnitelma, saat osoitteesta http: // currencylayer.com/product, testaamaton: ei voinut maksaa perussuunnitelmasta)
+6/19/2019 - 0.0.6: Uusi kuvake, Päivitetty FluentFTP ja Newtonsoft.Json libs, Poistetut kirjoitustapahtumat, Uudelleen kirjoitettu sisäänkirjautuminen (Kaikki, mutta uudelleen suunniteltu), Korjattu chpwd-komento ei muuttanut salasanaa, jos kohde ei ei ole salasanaa, kiinteä chpwd ei tarkista, onko normaali käyttäjä muutettu admin-salasanaan, kiinteä adduser ei lisää käyttäjiä ilman salasanoja, kiinteä adduser, joka lisää käyttäjiä salasanoilla, vaikka ne eivät sovi, poistettu cdir, lisätty konfigurointimerkintä näytönsäästäjän nimelle, toteutettu virheenkorjaus- ja tyhjennystiedostot ydinvirheisiin, toimitetaan .pdb-virheenkorjaussymboleilla KS: lle, Kiinteä uudelleenkäynnistys ei tyhjennä -näyttö, Lisätty hollanti, suomi, italia, malaiji, ruotsi ja turkki kielet (siirry yhteensopivaan fonttiin konsolissa), maat ja valuutat ovat nyt, kun ei tarjoa tarpeeksi argumentteja tai antamalla "ohjevaluutta", kiinteä ohjekirja, jota ei päivitetä uudelle kielen päivitykselle uudelleenkäynnistyksen yhteydessä, Lisätty pysyviä aliaksia (sijaitsee profiilin alla, aliases.csv), salasana on nyt piilotettu, kun kirjaudut sisään maintaan n turvallisuus, kiinteät käyttäjät poistetaan jokaisen uudelleenkäynnistyksen jälkeen
+6/13/2019 - 0.0.5.14: Korvattiin väärennetty tiedostojärjestelmä todellisella (pääsy tiedostoihisi), Korjattu väärä "changeir" ohjekomento näytetään "chdir", "cdir" sijaan, joka näyttää nykyisen hakemiston. on nyt vanhentunut, kiinteä kaatuminen ytimen uudelleenkäynnistyksen aikana
+4/14/2019 - 0.0.5.13: JetBrainsin enemmän laihtuminen ReSharper VS2017: lle, Toteutettu Linux-laitteiston testaus (sinun on asennettava inxi HDD-koettimille toimimaan), Lisätty NET-vaatimus 4,7: ään, Poistettu varoitus sitovista uudelleenohjauksista MonoDevelopissa, Lisätty VS-version vaatimus VS2019: lle, Poistettu ärsyttävä "Nimeämissääntöjen rikkominen" käyttämällä ehdotettua vaihtoehtoa
+2/22/2019 - 0.0.5.12: nyt createConf cmdline arg luo vain konfiguraation, jos määritystiedostoa ei löydy, jotkin valmistelut 0.0.6 (vain laihdutus), GPU- ja BIOS-koetuksen poistaminen, nyt vanhempi KS-konfigurointi voitettu sitä ei saa päivittää täällä (Ratkaisu: Sinun täytyy poistaa vanha KS-konfiguraatiotiedosto ja käynnistää sovellus uudelleen), Fixed Environment.OS -vika Windows 10: ssä (10.0), jossa se palauttaa Windows 8 (6.2) -versiot, Korjattiin paikkamerkit, jotka eivät jäsennä, kun käytät showmotd / showmal-komentoa, Korjattiin yksinkertainen ohje, joka ei näyttänyt modeja, Kiinteät sisäänrakennetut komennot eivät toimi, kun olet suorittanut mod-komennot tai alias-komennot, Korjattu NullReferenceException kun virheenkorjaus, Parannettu aliaksiluettelo, Korjattu tulostusteksti-poikkeus Viesti, joka ei käännä nykyiseen kieleen, Korjasi "/" tai "ennen" nimeä, kun näytetään modeja ja näytönsäästäjiä, Poistettiin tarpeettomat korjaukset käännöksessä, Korjattiin enemmän pinon ylivuotoja FTP-kuoressa, Korjattiin FTP-viestikäännöksen kääntäminen "help" "kielenä, kun se on" Sen pitäisi olla komento, Korjattu komento ei löytynyt, kun et kirjoittanut mitään FTP-kuoressa
+2/18/2019 - 0.0.5.11: Tehty GPU- ja BIOS-koetukset `<Obsolete>`, ei enää COM-puheluita laitteistoa tutkittaessa, Poistettiin hyödytön tiedosto, jossa on kiintolevytiedot, Korjattu sysinfo-käännöksen näyttäminen ytimen kokoonpano-osassa , Poistettu tilatunnistus kiintolevyltä ja RAM-muistista (katso, miksi "usernual Kernel Simulatorin historia", jakso "Totuus tilatunnistuksesta"), Korjattu CHS-osa, joka ei näy, jos kiintolevyllä on valmistajan arvo, Kiinteä kääntäjä ei palaa Englanti arvo, jos käännöslista ei sisällä tällaista arvoa, kiinteä GPU-prober olettaen, että Microsoft Basic Display Driver ei ole perusohjain, Made-näytönsäästäjiä testataan käynnistyksessä, korjattu NullReferenceException kun yrität ladata seuraavan näytönsäästäjän sen jälkeen, kun edellinen näytönsäästäjä, Korjattu käyttöjärjestelmätiedot, joita ei ole käännetty, kun käynnistät ytimen, Kiinteä kieli-kokoonpano ei säilytä päivityksen aikana, Debug-tiedot tulostaa nyt VS2017-debug-tulostusikkunaan (sinun täytyy vielä ottaa deb Ugging), Made the loadaver -komento reloadsaver, Poistetut hyödytön ja väärinkäyttöiset komennot (kaiku, panicsim ja valinta)
+2/16/2019 - 0.0.5.10: Manuaalisten sivujen parempi luettavuus (vbTab on nyt suodatettu ja se ei aiheuta ongelmia), nyt kääntäjä tulostaa debug info, kun merkkijonoa ei löydy käännöslistasta, Hardware Prober: Stop spamming Järjestelmä .__ ComObject "debuggeriin, joka mahdollistaa helpon lukemisen, Manpage Parser: Lopeta debug-lokien täyttäminen käyttämättömien" Checking for ... "-tekstien avulla ja laajensi muutamia virheenkorjausviestejä, Korjattiin BIOS-merkkijono, jota ei näytetä, Poistettiin tarpeettomat lepotarkastukset, poistettu" nohwprobe "ytimen argumentti laitteiston koettimena on tärkeä, poistettu tarpeettomat aikavyöhykealustatarkistukset, päivitetyt FluentFTP- ja Newtonsoft.Json-kirjastot uusimpiin vakioversioihinsa, Ei pinoa kopioita lukuun ottamatta salasanan osaa sisäänkirjautumisessa, MAL: n korjattu vika ja MOTD eivät päivity kirjautumisten välillä, korjattu sysinfo-virhe (viestien asetukset eivät tulostu), Ytimen tuloste on nyt käynnistyksen, debugin ja sysinfo-komennon yhteydessä, Made-kirjaustapahtumat vanhentuneet
+12/24/2018 - 0.0.5.9: Modit lopetetaan nyt, kun suljetaan, Modit voivat olla omalla nimellään ja omalla versiollaan, kiinteä virheenkorjaaja ei sulkeudu kunnolla, kun käynnistät tai sammutetaan, Shell ei enää sulkeudu sovelluksesta, kun poikkeus tapahtuu, Debugging nyt herkempi (paitsi saada komentoja), nyt debug kirjailija ei tue kirjoittamista ilman uusia rivejä, Olet lopulta sallia sisällyttää välilyöntejä isäntänimesi sekä isäntänimet, jotka ovat alle 4 merkkiä, kuten "joe" , Vanhentuneet hyödytön ja väärinkäyttöiset komennot, Poistettiin ylimääräiset tarkastukset IANA-aikavyöhykkeistä, mikä ei johtanut enää rekisteritapaan, kiinteisiin luetteloverkkoihin, Internetiä käyttävään lisättyyn valuuttamuunnimeen (Jos olemme lisänneet paikallisia arvoja, meidän on julkaistava lisää päivityksiä, jotka ovat aikaa vieviä) Internet-tapa säästää aikaa ja päivityksiä), olemme lopulta antaneet käyttäjille mahdollisuuden tarkastella virheenkorjauspäiväkirjoja käyttämällä KS: ää virheenkorjauksen jälkeen, olemme parantaneet FTP-asiakasta, niille, jotka eivät puhu englantia, voi nyt asettaa oman kielensä vaikka oletusarvo on englanti, kiinteä puuttuva ohjekirja "lscomp", Lisätty ytimen manuaaliset sivut, otti Windows XP: n tuen, korjasi NullReferenceExceptionin, kun on virheitä, jotka yrittävät kääntää modeja, lisäsivät testMods cmdline-argumentin ja lisää ...
+11/1/2018 - 0.0.5.8: Poistettu piippaus, kun käynnistät ja sammutetaan, Poistettu "piippaus" -komento, (Windows) Proberit jatkuvat, vaikka ne epäonnistuisivat, Muistin hävittäminen ei enää käytä VB6-menetelmää virheiden käsittelyyn
+10/13/2018 - 0.0.5.7: Korjattu kaatuminen käynnistyessä, kun sitä käytetään muulla kuin nimellä "Kernel Simulator.exe", Parempi virheenkäsittely FTP: lle, Lisätty nykyinen hakemiston tulostus FTP: ssä, poistettu "version" komento, kiinteä "Quiet Probe" -arvo on asetettu "Quiet Probe", laajennettu "sysinfo", kiinteä kokoonpanolukija, joka ei sulkeudu poistuttaessa ytimestä, (Unix) Korjattu tunnettu vika
+10/12/2018 - 0.0.5.6: Parannetut koettimet, käyttäjätunnus sisäänkirjautumisessa, parempi yhteensopivuus Unixin kanssa
+22.2.2018 - 0.0.5.5: Uudelleen kirjoitettu konfiguraatio, Kielletyt aliakset, lisätyt puuttuvat ohjekirjat "showalises", lisättiin lisää MOTD- ja MAL-paikkamerkkejä, kiinteä RAM-tilan toistuva viesti ja FTP-asiakas on lisätty lopulta !
+9.9.2014 - 0.0.5.2: Käynnistetty GPU-koetus, poistamalla "gpuprobe"-argumentti, muuttunut konfigurointikäytäntö
+9/6/2018 - 0.0.5.1: Seurantavapautus poistti käyttämättömän koodin, parantanut virheenkorjauslokien käyttäytymistä ja parantanut virheenkorjausviestin luettavuutta samalla, kun testattiin komennot, joissa ei ole määritelmiä.
+9/4/2018 - 0.0.5.0: Poistetut kehotukset, kiinteät MAL-käyttäjätunnukset, lisätty "showaliases", kiinteä alias-jäsentäminen, poistivat vaatimuksen, jonka mukaan komento on poistettava alias, ja käyttäjän tekemien komentojen toteuttaminen modeissa
+16.8.2018 - 0.0.4.12: Korvattu disco-komento ja näytönsäästäjä. Näyttää siltä, ​​että 0.0.5 julkaistaan, koska se näyttää vakaalta, mutta meillä on muutamia muutoksia ennen viimeistä julkaisua.
+3.8.2010 - 0.0.4.11: Poistettiin ennalta määritetyt aliakset, mainittu kiinteä tunnettu vika.
+8.8.2013 - 0.0.4.10: Sulautettu "sysinfo" ja "lsdrivers", parannettu ohjeen määritys (käytetty sanakirja modifiointia varten), lisätty "lscomp", joka voi luetella kaikki online- ja offline-tietokoneet vain nimien mukaan, lisätty virheenkäsittelijä "lsnet" ja "lsnettree", kiinteät kieliopilliset virheet "lsnet" ja "lsnettree", lisätty mods (komentoja ei ole vielä toteutettu - <nimi> .m), lisätty näytönsäästäjiä, muuttanut käyttäytymistä näyttää MOTD, kiinteä vika, jos esimerkki ytimen uudelleenkäynnistyksen tarkistaminen sanoisi, että sillä on useampi kuin yksi esimerkki ja sen pitäisi sulkea ja enemmän.
+7/21/2018 - 0.0.4.9: Parempi virheenkäsittely "unitconv" -komennolle, Lisätty väliaikaiset aliakset (ei lopullinen, koska ei ole "showaliases" -komentoa), korjaa joitakin vikoja, lisätty aikavyöhykkeitä ("showtdzone" ja näytä nykyinen Aikavyöhyke "showtd": ssa), Lisätty "alias", "chmal" ja "showmal", Made MOTD kirjautumisen jälkeen, Salasanojen sallitut erikoismerkit tietoturvan varmistamiseksi, Made Kernel Simulator yhden instanssin avulla häiriöiden välttämiseksi ja paljon muuta.
+7/17/2018 - 0.0.4.7: Parempi virheenkäsittely "ping" -komennolle, Kiinteä "unitconv" -käyttöviesti
+07/16/2018 - 0.0.4.6: Poistettu komento, joka on poistettu komento kohdassa 0.0.4.5, Valmistelu 0.0.5: n mukautettuihin korvauksiin
+7/15/2018 - 0.0.4.5: (Viivästynyt 2 kuukautta kiintolevyn vikaantumisen vuoksi) - Korjaa vikoja, kun mikään koetin epäonnistui mittaamaan laitteistoa, lisäsi tarkempia tietoja koettimissa, Ohje-järjestelmä parani, Korjaa vikoja värikehotteissa ja enemmän.
+5/22/2018 - 0.0.4.1: Korjaa vikoja hakemiston muuttamisessa, Fix bugs in "help chdir", lisäsi alias muutettavan hakemiston "cd" muuttamiseksi ja config update.
+5/20/2018 - 0.0.4: Käynnistystekstin muuttaminen, muokattavat asetukset, Teemat, Komentorivin argumentit, Komentoratkaisu ja täysi jäsentäminen, Todellinen hakemistojärjestelmä (alfa), useampia komentoja, laskin, virheenkorjaus pinojäljellä, virheenkorjauslokit (keskeneräiset), ei RAM-vuotoa, korjaa vikoja ja paljon muuta.
+5/2/2018 - 0.0.3.1: Shell-nimike muokattiin suurta julkaisua valmisteltaessa, korjaa vikoja poistamalla käyttäjät, korjaamalla tyhjä komento ja lisäämällä admin-tarkistus.
+4/30/2018 - 0.0.3: Korjaa vikoja, kirjaudu sisään järjestelmän uudelleen, lisätty komentoja, lisätty argumentteja, lisätty lupajärjestelmä, mukautetut värit ja paljon muuta.
+4/11/2018 - 0.0.2.3: Korjaa argumenttien epäonnistuminen uudelleenkäynnistyksen, vikojen korjaamisen ja paljon muuta.
+9.4.2014 - 0.0.2.2: Korjaa verkkoluettelon vika, jossa molemmat listaustavat näkyvät kaksois-PC-nimissä, Virheenkäsittely verkkojen luettelossa.
+4/5/2018 - 0.0.2.1: Korjaa "Command Not Found" -viestin virhe ja lisäsi unohtuneet tarkistukset root-kansioon "chhostname" ja "chmotd".
+3/31/2018 - 0.0.2: Koodin uudelleensuunnittelu, lisää komentoja, toteutettu perus-Internet, argumenttijärjestelmä, salasanan muuttaminen ja muutokset.
+3/16/2018 - 0.0.1.1: Lisätty "showmotd", muutti viestin ja tarkistaa kokonaisluvun ylivuoto Beep Frequency.
+2/22/2018 - 0.0.1: Aluksi Windows-käyttöjärjestelmä.
+
+--------------- + -> Manuaaliset sivut <- + --------------- |
+
+Dokumentaatio - pääsivu: Tietoja ytimen simulaattorista, tästä sivusta
+Dokumentointi - säännöt: Kernel-simulaattorin osallistumisen ehdot
+
+| --------------- + -> Laajuus <- + --------------- |
+
+EoflaOE: Kernel Simulatorin omistaja
+
+Happiryhmä: Kuvakkeen luoja
+
+| --------------- + -> Käytetyt avoimen lähdekoodin kirjastot <- + --------------- |
+
+MadMilkman.Ini
+
+Lähdekoodi: https://github.com/MarioZ/MadMilkman.Ini
+
+Copyright (c) 2016, Mario Zorica
+
+Lisenssi (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
+
+Newtonsoft.Json
+
+Lähdekoodi: https://github.com/JamesNK/Newtonsoft.Json
+
+Copyright (c) 2007, James Newton-King
+
+Lisenssi (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+
+FluentFTP
+
+Lähdekoodi: https://github.com/robinrodricks/FluentFTP
+
+Copyright (c) 2011-2016, J.P. Trosclair
+
+Copyright (c) 2016-2019, Robin Rodricks
+
+Lisenssi (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
+
+--------------- + -> Lisenssi - GNU GPL <- + --------------- |
+
+    Kernel Simulator - Simuloi tulevaa suunniteltua ydinämme
+    Copyright (C) 2018-2019 EoflaOE
+
+    Tämä ohjelma on ilmainen ohjelmisto: voit jakaa sen ja / tai muokata sitä
+    se on julkaistu GNU: n yleisen julkisen lisenssin mukaisesti
+    Free Software Foundation, joko lisenssin versio 3, tai. \ t
+    (valintasi mukaan) myöhempi versio.
+
+    Tämä ohjelma jaetaan siinä toivossa, että se on hyödyllistä.
+    mutta ILMAINEN TAKUU; ilman implisiittistä takuuta
+    MERKITYSVASTUU tai VAIKUTTAVUUS ERITYISEKSI. Katso
+    Lisätietoja GNU General Public License.
+
+    Sinun olisi pitänyt saada kopio GNU General Public License -lisenssistä
+    yhdessä tämän ohjelman kanssa. Jos ei, katso <https://www.gnu.org/licenses/>.

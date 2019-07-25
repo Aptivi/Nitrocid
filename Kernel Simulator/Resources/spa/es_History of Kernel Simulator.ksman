@@ -1,0 +1,853 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Historia del simulador de kernel
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Pre-lanzamiento
+
+Antes del lanzamiento de 0.0.1, estamos trabajando en la colecci??n de sistemas operativos de PowerPoint hace casi 2 a??os, y utilizamos macros VBA (VB6) en Office 2007, y mientras trabajamos en el sistema operativo PPT basado en PUNIX, la cantidad de macros es 
+
+Escribimos el procedimiento de arranque del kernel, el inicio de sesi??n y el shell que incluye comandos. 
+
+KS 0.0.1
+
+En el lanzamiento de 0.0.1, originalmente inclu??a el probador y sus c??digos est??n en el archivo de c??digo Kernel.vb, pero eso parec??a irrelevante y desorganizado.
+
+Tambi??n incluy?? el inicio de sesi??n y el shell originales, pero parece que en el proceso de arranque, ha generado la siguiente salida en nuestra computadora port??til Windows 10 de repuesto (probada ahora):
+
+(1) usrmgr: nombres de usuario del sistema: root useradd creado.
+(2) usrmgr: la ra??z del usuario se ha cargado correctamente.
+(3) usrmgr: el usuario useradd se ha cargado correctamente.
+(4) usrmgr: demo no encontrada. 
+(5) usrmgr: Demo de nombre de usuario creada.
+(6) usrmgr: la ra??z del usuario se ha cargado correctamente.
+(7) usrmgr: el usuario useradd se ha cargado correctamente.
+(8) usrmgr: la demostraci??n del usuario se ha cargado correctamente.
+(9) usrmgr: la demostraci??n del usuario se ha cargado correctamente.
+
+En (1), nos dijo que estos administradores, root y useradd (cuenta de prueba con derechos de administrador), se han creado pero a??n no se han inicializado.
+En (2-3), nos dijo que han sido cargados.
+En (4-5), la cuenta de prueba se ha creado de acuerdo con el administrador y el kernel.
+En (6-9), los dos administradores se cargaron dos veces, como se dijo en (2-3) (error), y en (8-9), la cuenta de prueba carg?? DOS VECES, no una vez. 
+
+Adem??s, ha realizado 2 nuevas l??neas innecesarias entre (9) y "??Bienvenido a Kernel!"
+
+El mensaje "Nombre de usuario:" es "inicio de sesi??n:", lo que significa que es dif??cil para los usuarios que a??n no han usado Linux entender lo que significa "inicio de sesi??n"; sin embargo, el mensaje "contrase??a:" es f??cil de entender tanto para los principiantes como para 
+
+Despu??s de iniciar sesi??n, su solicitud se ve as??: "[root @ kernel]
+
+Tan pronto como ingreses a "ayuda", tendr?? una lista de comandos. 
+
+Algunos comandos tienen sus propios alias, y algunos comandos informan "Este kernel no es definitivo". 
+
+(1)
+(2) Salida
+(3)
+
+Parece que ambas (1) y (3) nuevas l??neas son completamente innecesarias. 
+
+Adem??s, tiene estos 2 salvapantallas, Disco y Disco BW (futuro-destructor de ojos)
+
+Tan pronto como ejecute Disco, mostrar?? el incre??ble efecto disco, pero tiene un error cuando sale cuando el color BG no es negro, cuando presiona ENTER, el color BG permanece e imprime el indicador de la c??scara y luego borra la BG. 
+
+Sin embargo, BW Disco destruir?? tus ojos (realmente) y tiene el mismo error.
+
+Los comandos tienen sus propias indicaciones, bien. 
+
+En Windows 10, el CMD emite un pitido a trav??s de su altavoz, no el altavoz de la placa base que emite un pitido en la POST (algunas placas madre hacen esto)
+
+El listado de archivos tiene una salida falsa, aunque el kernel no es definitivo. 
+
+No puede tener argumentos agregados al comando, o KS asumir?? que el comando no existi?? a pesar de que existe, diciendo que por ejemplo. 
+
+Adem??s, el encabezado de inicio dice "- ---> ??Bienvenido a Eofla Kernel! Versi??n 0.0.1.0 <--- -"
+
+Adem??s, el comando de reinicio o apagado emite una se??al sonora y demora durante 3 segundos y luego hace su trabajo. 
+
+Adem??s, el probador solo puede detectar un disco.
+
+Adem??s, el Login.vb contiene muchas variables innecesarias. 
+
+Lista de usuarios p??blicos como nueva lista (de cadena) (lista de nombre de usuario de Login.vb)
+Lista de contrase??as p??blicas como nueva lista (de cadena) (lista de contrase??as de Login.vb)
+Usuario p??blico como nuevo diccionario (de cadena, cadena) (el diccionario almacena el nombre de usuario y la contrase??a)
+My.Settings.Passwords (lista de contrase??as de My.Settings)
+My.Settings.Usernames (lista de nombre de usuario de My.Settings)
+
+Variables innecesarias. 
+
+Usuario p??blico como nuevo diccionario (de cadena, cadena) (el diccionario almacena el nombre de usuario y la contrase??a)
+
+KS 0.0.1.1
+
+Los registros de cambios en "Documentation - main page.txt" en src. 
+
+Pero ??qu?? mensaje? 
+
+??Hecho! \ NPor favor cierre la sesi??n para que los cambios surtan efecto. 
+
+Lamentablemente, esta versi??n tiene los mismos errores exactos que la primera versi??n.
+
+KS 0.0.2
+
+Los registros de cambios dijeron que su c??digo est?? redise??ado, tiene m??s comandos, implement?? Internet b??sico, sistema de argumentos, cambio de contrase??a y m??s cambios.
+
+A pesar de que tiene el mismo error de demora de apagado / reinicio y no hay una nueva l??nea despu??s del error del mensaje de shell, aqu?? est?? c??mo exactamente van los cambios
+
+1. El mensaje de "inicio de sesi??n:" ha cambiado a "Nombre de usuario:" para una mejor comprensi??n
+2. Hay un sistema de argumentos del kernel, y son "motd, nohwprobe, chkn = 1, preadduser, hostname, y quiet". 
+2a. 
+2b. 
+2c. 
+2d. 
+2e. 
+2f. 
+Pero hay un error que cuando intentas ejecutar argumentos despu??s de reiniciar el kernel que tambi??n tiene argumentos ejecutados, se bloquear??.
+3. Todo est?? coloreado ahora.
+4. Se corrigieron nuevas l??neas innecesarias entre la salida.
+5. Se agregan chpwd, hwprobe, lsnet, lsnettree, ping, showtd y sysinfo
+6. Arreglado el problema de fondo de la discoteca.
+7. Todo lo que se menciona en el registro de cambios.
+
+KS 0.0.2.1
+
+El registro de cambios dice que corrigi?? un error para el mensaje "Comando no encontrado", y agreg?? una comprobaci??n olvidada de la ra??z en "nombre de chhost" y "chmotd".
+
+No hay cambios extra.
+
+KS 0.0.2.2
+
+El registro de cambios dice que corrigi?? un error en la lista de redes donde los nombres de PC dobles aparecen en ambas formas de lista, manejo de errores en redes de listados.
+
+Tambi??n agreg?? un controlador de errores para el error del n??cleo.
+
+KS 0.0.2.3
+
+El registro de cambios dice que solucion?? la falla en los argumentos despu??s de reiniciar, corregir errores y m??s. 
+
+Motivo de la falla: el simulador intent?? inicializar la hora y la fecha en cada reinicio.
+
+1. Ha solucionado problemas de nueva l??nea cuando se usa una frecuencia que est?? por encima de 2048 Hz despu??s de responder la pregunta. 
+2. Ha solucionado problemas de nueva l??nea al responder la pregunta incorrectamente en el comando de elecci??n. 
+
+KS 0.0.3
+
+El registro de cambios dice que solucion?? errores, se reescribi?? el sistema de inicio de sesi??n, se agregaron comandos, se agregaron argumentos, se agreg?? un sistema de permisos, colores personalizados y m??s.
+
+Esta versi??n le permiti?? utilizar los colores de su elecci??n. 
+
+1. Agregado el controlador de errores al analizar los argumentos
+2. Agregado el argumento gpuprobe (prueba la tarjeta gr??fica cada inicio)
+3. Se agreg?? la comprobaci??n de herramientas de red.
+4. Casting a??adido para mostrar la hora y fecha
+5. Agregada funci??n de restablecimiento de variables (era funci??n, ahora sub)
+6. Agregado manejo de errores al iniciar el kernel.
+
+Tenga en cuenta que los bloques de c??digo de manejo de errores en esta versi??n no son el bloque Try ... Catch, sino el fragmento de c??digo del controlador de errores VB6 est??ndar a continuaci??n (en la aplicaci??n de la consola):
+
+En error GoTo HandlerLabel
+
+Dim IntNumber As Integer = 50/0
+Subir de salida
+
+: HandlerLabel
+Console.WriteLine ("Divide by Zero")
+Console.ReadKey
+
+KS 0.0.3.1
+
+El registro de cambios dice que ha editado el t??tulo de la shell en preparaci??n para 0.0.4, corregir errores al eliminar usuarios, corregir un comando en blanco y agregar una comprobaci??n de administraci??n.
+
+El lanzamiento principal se program?? para el 20 de mayo de 2018, 3 d??as antes de que el disco duro fallara de una manera tan horrible.
+
+De todos modos, en la forma exacta:
+
+1. En Login.vb, los subs de administraci??n se movieron a UserManagement.vb, lo que lleva a que solo queden estos subs:
+1a. 
+1b. 
+1c. 
+2. Se agreg?? el indicador "(Solo administradores)" en chusrname, editperm y rmuser
+3. Se agreg?? la matriz de comandos restringida.
+4. Cada comando que comienza con el espacio es considerado como un comentario.
+5. Ahora los permisos predeterminados se establecen cada vez que se crea un usuario
+
+KS 0.0.4
+
+Este es el gran lanzamiento de KS. 
+
+En la forma exacta:
+
+1. A??adidos argumentos de l??nea de comando y argumentos de arranque.
+2. Agregado de depuraci??n (Wdbg)
+3. Se agreg?? el sistema de escritura (W y Wln) para que no usemos el bucle de:
+(1) System.Console.ForegroundColor = CType (inputColor, ConsoleColor)
+(2) answerargs = System.Console.ReadLine ()
+(3) System.Console.ResetColor ()
+4. Se agregaron los argumentos reales de la l??nea de comandos (ejecutar CMD en la carpeta ra??z de KS y ejecutar el archivo ejecutable con argumentos como "KS.exe createConf")
+4a. 
+4b. 
+5. Temas agregados
+6. Agregado controlador de errores para la configuraci??n de permisos
+7. Convirti?? todos los manejadores de errores para intentar ... Atrapar
+8. A??adida la opci??n para mostrar MOTD.
+9. A??adido modo de mantenimiento
+10. Configuraciones agregadas
+11. calculadora a??adida
+12. No hay p??rdida de RAM
+13. Se agregaron los comandos setthemes, netinfo, calc, scical, unitconv, md, mkdir, rd, rmdir y debuglog.
+14. Ralentiz?? la velocidad de repetici??n del cambio de fecha y hora de 100 ms a 500 ms
+15. La direcci??n de destino de ping ahora se puede repetir
+16. El sondeo de hardware ahora est?? extendido
+17. Movi?? cada sub que est?? en Kernel.vb a los archivos que son apropiados
+
+??Es realmente grande!
+
+Grandes lanzamientos
+
+Los lanzamientos grandes son lanzamientos que tienen 12 cambios exactos o m??s cambios. 
+
+Para considerarlo como una versi??n grande o enorme, la tercera parte de la versi??n que se divide por 4 debe ser el n??mero que no tiene el punto decimal, la primera versi??n que cumple con la regla de la tercera versi??n puede reclamar este t??tulo, y 
+
+KS 0.0.4.1
+
+El registro de cambios dice que tiene errores corregidos en el directorio cambiante, errores corregidos en "help chdir", alias agregado para cambiar el directorio llamado "cd" y actualizaci??n de configuraci??n. 
+
+Antes del incidente de falla de la unidad de disco duro que dur?? 5 d??as, esta versi??n se lanz?? como una versi??n de copia de seguridad r??pida, llamada Versi??n de seguimiento de fallas.
+
+1. Olvidamos agregar el encabezado de licencia para Flags.vb
+2. Se agreg?? el sistema de actualizaci??n de configuraci??n.
+3. Agregada entrada faltante para "cd"
+4. Agreg?? la declaraci??n (Y currDir = "/")
+5. Se agreg?? el comando reloadconfig (este comando le permite volver a cargar la configuraci??n)
+6. Edite la entrada de ayuda para changedir para que refleje "cd"
+7. Se agreg?? la entrada de ayuda para el comando agregado.
+
+Esto se lanz?? el 22/05/2018, 1 d??a antes de la falla de la unidad de disco duro en el entorno de desarrollo.
+
+23/05/2018
+
+Publicamos la versi??n 0.0.4.1 p??blicamente en caso de que haya una falla en el disco duro.
+
+Despu??s de eso, estamos tratando de aprender m??s sobre los n??cleos, y c??mo est??n construidos, utilizando los antiguos CD-ROM de Linux, y el que result?? ser Mandrake Linux, se estaba descargando. 
+
+El juego que estamos jugando en nuestra tableta es HackMe.
+
+Cada vez que pausamos el juego, entramos en la computadora y vimos que la descarga se detuvo, como de costumbre. 
+
+Luego probamos el Mini Windows XP del CD de arranque de Hiren, y eso arranc?? con ??xito. 
+
+Logramos abrir el CMD y hemos ejecutado el programa chkdsk con / F.
+
+Vimos que ha escaneado en busca de errores y los corrigi??, y cuando reiniciamos de nuevo, todo sali?? bien.
+
+Vea m??s en https://www.bleepingcomputer.com/forums/t/677922/windows-xp-sp3-reboot-cycle-crashes-often-on-boot/ (El hilo est?? caliente - Seg??n bleepingcomputer.com, dice 
+
+5/24/2018 al 5/27/2018
+
+Intentamos nuevamente yendo a nuestro sistema operativo, pero las cosas se complicaron despu??s de instalar y desinstalar AVIRA Antivirus debido a su inestabilidad con los procesadores que no son SSE2. 
+
+Volvimos a entrar en MiniXP e intentamos obtener la informaci??n SMART usando la ??ltima versi??n de gsmartcontrol, pero se inform?? que no ten??a el dwmapi.dll. 
+
+Intentamos nuevamente usando CrystalDiskInfo, pero no imprimimos la informaci??n correctamente.
+
+R??pidamente hicimos una copia de seguridad de todos los datos importantes en otra unidad en funcionamiento que est?? conectada en los ??ltimos 2 o 3 a??os desde la computadora de repuesto que no se pudo iniciar.
+
+Tambi??n intentamos probar la unidad utilizando la utilidad de diagn??stico Western Digital, pero la prueba r??pida fall?? inmediatamente, por lo que sugiere que la falla del disco duro es inminente. 
+
+En el ??ltimo d??a de la unidad de disco duro que tiene el sistema operativo Windows XP s??per personalizado, la unidad fall?? completamente despu??s de eso, y toda la parte del sistema operativo y los programas, incluido el tema oscuro XPize (Royale?), Windows Sidebar for XP, Visual 
+
+Vea m??s en: https://www.bleepingcomputer.com/forums/t/678191/windows-xp-sp3-slow-booting-unusual-hdd-activity-with-noise-then-bsod/ (El hilo est?? caliente)
+
+28/05/2018
+
+Despu??s de que la unidad se apag??, decidimos desconectar la unidad muerta de la computadora, y establecer la configuraci??n de la unidad de trabajo en Maestro, entramos en el Partition Magic de Hiren's BootCD y establecimos la configuraci??n adecuada para que tengamos 2 particiones sin borrar nuestra unidad de datos 
+
+Despu??s de eso, instalamos Windows XP y configuramos todo seg??n corresponda, siempre y cuando no borramos todo lo que estaba en la partici??n de datos, porque si se elimin??, todo el trabajo duro se perder?? para siempre, como nos ocurri?? a nosotros cuando 
+
+Configuramos VB2010 seg??n corresponda.
+
+29/05/2018
+
+Nos enfrentamos a otro problema. 
+
+(1) Comprobando el registro de arranque en CD-ROM ... No encontrado
+(2)
+(3) Fallo de arranque
+(4) Inserte el disquete BOOT en la unidad A:
+(5) o inserte el disco del sistema en el disco.
+(6) Presione cualquier tecla cuando est?? listo.
+
+8 / ?? / 2018
+
+Solucionamos ese problema configurando el puente de la unidad de Master a Cable Select
+
+KS 0.0.4.5
+
+El registro de cambios dice que ha corregido errores cuando cualquier probador no prob?? el hardware, agreg?? m??s detalles en los probadores, el sistema de ayuda mejor??, corrigi?? errores en las solicitudes de color, solicitudes en desuso, y m??s, pero tambi??n dice que se ha retrasado durante 2 meses debido 
+
+1. Hecho cambio de MOTD y nombre de host permanente
+2. Puede dividir al inyectar comandos usando dos puntos con espacios entre ellos.
+3. Agregado argumento de modo de mantenimiento
+4. Cambi?? la punta por argumento de ayuda.
+5. Agregado controlador de errores al configurar los colores.
+6. No m??s errores cuando alg??n sondeo no pudo obtener informaci??n sobre el hardware
+7. Probers extendidos para contener m??s informaci??n.
+8. Se agreg?? hora / fecha as??ncrona en la esquina
+9. Cambiado el banner de bienvenida.
+10. Ahora el manejo de errores de sondeo de hardware es m??s amigable
+11. Soporte para variables para Error de Kernel
+12. Variables totalmente abandonadas de My.Settings MOTD y nombre de host
+13. Agregado m??s unidades de temperatura
+14. Se agregaron las entradas de configuraci??n para Corner Time / Date, MOTD y HostName
+15. Eliminado el Disco BW
+16. Las solicitudes est??n en desuso
+17. Organiz?? el sistema de ayuda.
+18. Redujimos la velocidad / fecha de cambio de 500 ms a 1000 ms.
+19. Eliminado sub ShowTimeQuiet innecesario ()
+
+KS 0.0.4.6
+
+El registro de cambios dice que ha eliminado el "alimentado" extra??o que se mantiene como el comando eliminado en 0.0.4.5 y la preparaci??n para las sustituciones personalizadas de 0.0.5
+
+La preparaci??n de las sustituciones personalizadas informa exactamente al usuario de que los alias predefinidos se eliminar??n cuando se ejecuten comandos que tengan sus propios alias y cuando se ejecute el comando de ayuda
+
+Sin embargo, el comando "alimentado" se elimina de la matriz availableCommands ().
+
+KS 0.0.4.7
+
+El registro de cambios dice que tiene un mejor manejo de errores para el comando "ping" y un mensaje de uso fijo "unitconv".
+
+1. Se elimin?? el mensaje "red: red disponible". 
+2. Convirti?? el resto de los controladores de errores VB6 en Network.vb para Probar ... Bloques de captura
+3. Los intentos de ping ahora se pueden repetir cuando hay un error
+4. El mensaje de ayuda de unitconv cuando el usuario no ingres?? suficientes argumentos ahora se actualiza para reflejar las nuevas unidades.
+
+KS 0.0.4.9
+
+El registro de cambios dice que tiene un mejor manejo de errores para el comando "unitconv", se agregaron alias temporales (no es definitivo porque no hay un comando "showaliases"), se corrigen algunos errores, se agregaron zonas horarias ("showtdzone" y se muestra la zona horaria actual en " 
+
+1. Se ha agregado la verificaci??n de m??ltiples instancias usando el mutex para evitar la interferencia con dos o m??s procesos KS que interfieren entre s??.
+2. Agregado el MOTD despu??s de iniciar sesi??n
+3. Las contrase??as ahora pueden tener los s??mbolos para garantizar m??s seguridad
+4. Se corrigi?? el mensaje de error que al eliminar usuarios, dice "Error al intentar agregar el nombre de usuario".
+5. La conversi??n de unidades ahora no distingue entre may??sculas y min??sculas
+6. Se corrigi?? unitconv mostrando resultados incluso si aparec??a un mensaje de error
+7. Mejor comportamiento al actualizar config.
+8. Puedes gestionar los alias
+9. Se modific?? el mensaje de eliminaci??n de mensajes.
+10. Cambi?? de mostrar ayuda como cadena a HelpSystem.ShowHelp (palabras (0))
+11. Agregados los comandos alias, chmal, showmal y showtdzone
+12. Hizo el shell parse alias
+13. Hizo el escritor en el prompt CMD escribe sub una l??nea
+14. A??adido soporte para zonas horarias
+
+KS 0.0.4.10
+
+El registro de cambios dice que ha fusionado "sysinfo" con "lsdrivers", definici??n de Ayuda mejorada (diccionario usado para la preparaci??n para la modificaci??n), agregado "lscomp" que puede enumerar todos los equipos en l??nea y fuera de l??nea, controlador de errores agregado para "lsnet" 
+
+1. Hice cada sub y cada m??dulo p??blico para modificaciones.
+2. A??adido soporte de modificaci??n
+3. Se arregl?? la comprobaci??n de la instancia cada reinicio (se ha agregado el indicador de instancia de verificaci??n)
+4. Hizo todas las declaraciones if que sean de una sola l??nea.
+5. Ahora MOTD solo se mostrar?? una vez.
+6. A??adidos salvapantallas
+7. Se agreg?? soporte para listar todas las computadoras, incluso si est??n fuera de l??nea
+8. Se agreg?? el controlador de errores VB6 para lscomp, lsnet y lsnettree
+9. La ejecuci??n de Disco Effect ahora hace que el cursor sea invisible, mientras que si sale, el fondo se restablecer?? y el cursor estar?? visible.
+10. Redujo la cantidad de veces que se ejecuta el bloque de c??digo siguiente en GetCommand.vb:
+(1) Dim palabras = requiredCommand.Split ({"" c})
+(2) Dim c As Integer
+(3) Para arg = 1 To words.Count - 1
+(4) c = c palabras (arg) .Cuenta 1
+(5) Siguiente
+(6) Dim strArgs As String = requestCommand.Substring (requiredCommand.IndexOf (""), c)
+(7) Dim args () As String = strArgs.Split ({"" c}, StringSplitOptions.RemoveEmptyEntries)
+movi??ndolo a la parte superior con algunas modificaciones, resultando en:
+(1) Dim index As Integer = requiredCommand.IndexOf ("")
+(2) Si (??ndice = -1) Luego ??ndice = solicitaComando.Longitud
+(3) Dim palabras = requiredCommand.Split ({"" c})
+(4) Dim strArgs As String = requiredCommand.Substring (index)
+(5) Si no es as?? (index = requiredCommand.Length) Entonces strArgs = strArgs.Substring (1)
+(6) Dim args () As String = strArgs.Split ({"" c}, StringSplitOptions.RemoveEmptyEntries)
+11. Cambi?? el alias redundante de pitido a sonido molesto
+12. Se agregaron los comandos loadsaver, lockscreen, setsaver y savescreen
+13. Reemplaz?? lsdrivers con lscomp, y la salida de lsdrivers se mueve a sysinfo
+14. Ahora, el controlador de errores de ExecuteCommand () sub puede decir qu?? comando no se ejecut??.
+15. Las definiciones de ayuda ahora se convierten en diccionario.
+Esta es tambi??n una preparaci??n para los n??cleos traducidos.
+16. Se corrigi?? la lista de comandos desordenados en ShowHelp ()
+17. La variable ueshversion se elimina porque no est?? actualizada desde 0.0.4, y la versi??n UESH ahora se hereda de la versi??n del kernel
+
+KS 0.0.4.11
+
+El registro de cambios dice que ha eliminado los alias predefinidos y que se ha corregido el error conocido que se menciona.
+
+Vamos a ver cu??l es nuestro error conocido que est?? por ah?? hasta 0.0.4.11.
+
+La documentaci??n de soluci??n de problemas en el c??digo fuente dice que al configurar "Shell de color" en False, ver?? que el color de entrada es blanco en lugar de gris.
+
+??La causa ra??z? 
+
+Si (colorType = "input") entonces ForegroundColor = inputColor
+
+No comprob?? si la variable ColoredShell era verdadera, por lo que siempre intenta cambiar el color de primer plano de la consola a inputColor, incluso si la configuraci??n de la Concha coloreada se estableci?? en falso.
+
+Debido a que este error est?? solucionado, el c??digo ahora se ve as??:
+
+Si (colorType = "input" y ColoredShell = True) ForegroundColor = inputColor
+
+Sin embargo, este cambio no ocurri?? en Wln () sub porque todas las solicitudes usan W () para inicializarlas correctamente.
+
+Ahora, los cambios exactos:
+
+1. Se modific?? el controlador de errores para W () y Wln () subs desde el m??todo VB6 a Try ... Catch blocks
+2. Ahora, cuando la plantilla es LinuxUncoloredDef, la variable de shell de color se establece en False, porque todo est?? sin colorear en esta plantilla.
+3. Se eliminaron los alias predefinidos para comandos
+4. Edite la definici??n de ayuda, por lo que dice que el comando de disco se eliminar?? y el efecto tendr?? lugar en los protectores de pantalla.
+
+KS 0.0.4.12
+
+El registro de cambios solo dice "comando de disco reemplazado con un protector de pantalla".
+
+KS 0.0.5
+
+El registro de cambios dice "Se eliminaron los avisos, se repar?? el sondeo del nombre de usuario de MAL, se agregaron" showaliases ", se repar?? el alias, se elimin?? el requisito de proporcionar un comando para eliminar el alias y la implementaci??n de comandos hechos por el usuario en los mods
+
+Esta versi??n es la versi??n final de 2 versiones sin ninguna dependencia de biblioteca.
+
+1. Se eliminaron las solicitudes de comandos y argumentos, lo que result?? en una reducci??n masiva del tama??o del archivo (0.0.4.12: 306KB -> 0.0.5: 292KB)
+2. Se agregaron 2 variables de color para almacenar la lista de comandos de ayuda y las definiciones
+3. A??adido negro a los colores disponibles
+4. Los colores de configuraci??n son ahora permanentes.
+5. Se eliminaron los argumentos de motd, chkn = 1, preadduser y hostname
+6. Ahora el n??cleo crea una cuenta de prueba de demostraci??n solo si la configuraci??n "Crear cuenta de demostraci??n" est?? establecida en Verdadero
+7. Ahora el comando de pitido previene frecuencias que son m??s de 2048 Hz
+8. Ahora los mods pueden tener comandos, y pueden tener el modlist del diccionario
+9. Todos los subvalores manageAlias ??() son todos requeridos
+10. Se han agregado los comandos de comando, aunque no hay una definici??n de ayuda para ellos.
+11. Se corrigi?? el analizador de alias de que cuando la l??nea de comandos contiene una de las palabras en la lista de alias, el alias se ejecutar?? antes que el comando.
+
+KS 0.0.5.1
+
+El registro de cambios dice "La versi??n de seguimiento elimin?? el c??digo no utilizado, mejor?? el comportamiento de los registros de depuraci??n y mejor?? la legibilidad de un mensaje de depuraci??n al sondear mods con comandos sin definiciones".
+
+1. Cambiado el banner de inicio de nuevo.
+2. Analiza los argumentos reales de la l??nea de comandos en el inicio
+3. Comportamiento mejorado de los registros de depuraci??n
+4. Mejor legibilidad de un mensaje de depuraci??n al sondear mods con comandos sin definiciones.
+
+KS 0.0.5.2
+
+El registro de cambios dice "Se hizo un sondeo de GPU en el arranque, se elimin?? el argumento" gpuprobe ", se cambi?? el comportamiento de la configuraci??n de actualizaci??n"
+
+1. Ahora, la GPU siempre ser?? probada ya que la prueba del hardware es importante, lo que resulta en la eliminaci??n del argumento gpuprobe
+2. Eliminado la variable GPUProbeFlag
+3. Se modific?? el comportamiento de actualizar la configuraci??n para que no aparezca el error de doble entrada.
+
+Uso de bibliotecas
+
+Tratamos de hacer todo lo m??s simple posible, pero la configuraci??n resulta tener todos los escritores.
+
+Decidimos descargar la biblioteca MadMilkman.Ini e instalarla en KS, y reescribimos los escritores de configuraci??n a los de la biblioteca.
+
+La versi??n 0.0.5.5 no us?? NuGet para obtener bibliotecas, porque a partir de la versi??n 0.0.1, estamos utilizando el VB2010 en el entorno de desarrollo de Windows XP.
+
+Pero, no hay un administrador de paquetes de NuGet en funcionamiento para VB2010 porque el soporte ha finalizado, y en su lugar, proporcionan descargas para VS2015 y VS2017, en el momento de la escritura.
+
+Sin embargo, 0.0.5.5 todav??a es compatible con Windows XP.
+
+KS 0.0.5.5
+
+Esta versi??n ahora usa la biblioteca MadMilkman.Ini que puede ver en el comando useddeps.
+
+El registro de cambios dijo "Configuraci??n reescrita, Alias ??????prohibidos, entradas de ayuda faltantes agregadas para las" presentaciones ", agregados m??s marcadores de posici??n MOTD y MAL, mensajes repetidos fijos del estado de la memoria RAM, ??y finalmente se agreg?? un cliente FTP!"
+
+Esta versi??n tambi??n es la versi??n final para que no funcione correctamente en sistemas Unix.
+
+El comando de apagado y reinicio ya no se demorar??, sino que a??n emitir?? un pitido
+
+1. Se reescriben todas las configuraciones, utilizando la nueva biblioteca, MadMilkman.Ini .NET 4.0
+2. El estado de sondeo para hardware ahora est?? en desuso
+3. El mensaje de repetici??n del estado de la RAM se ha corregido.
+4. Se agregaron m??s marcadores de posici??n MOTD y MAL, lo que result?? en la adici??n de marcadores de posici??n de usuario, fecha corta, fecha larga, tiempo corto, hora larga y zona horaria y zona de verano.
+5. Ahora, cuando se lanza la excepci??n de desbordamiento de enteros, el mensaje es m??s descriptivo.
+6. Se agreg?? el cliente FTP y se agreg?? el comando ftp.
+7. Movi?? las herramientas de ping a NetworkTools.vb
+8. Ahora los comandos prohibidos de alias ya no est??n permitidos
+9. A??adidos comandos noalias y useddeps.
+10. Se agregaron entradas de ayuda faltantes para showaliases
+11. Las entradas de ayuda para loadsaver y setsaver ahora muestran los archivos de protector de pantalla disponibles
+
+El soporte para sistemas Unix.
+
+Cuando estamos desarrollando KS, nos topamos con el proyecto Mono, y dijo que tiene soporte para Windows, Mac OS X y Linux. 
+
+Recomendamos los sistemas JetBrains Rider para Linux de 64 bits, ya que puede buscar el c??digo en busca de errores LIVE como Visual Studio para Windows, Visual Studio Code para Windows, Mac y Linux y, a diferencia de MonoDevelop. 
+
+El proyecto .NET para Mono, sin embargo, es experimental en este momento, pero tanto MonoDevelop como Rider lo usan.
+
+As?? que hemos cargado el proyecto en MonoDevelop, pero cuando construimos el proyecto, obtuvimos 3 advertencias. 
+
+Despu??s de que eliminamos la declaraci??n de inicializaci??n de hardware de Kernel.vb, el kernel se inici??, pero hay otro problema.
+
+Aunque Console.Write (Line) de Mono puede analizar los argumentos correctamente, W (ln) no puede.
+
+Hicimos todo lo necesario para solucionar este problema, y ??tuvo ??xito. 
+
+KS 0.0.5.6
+
+El registro de cambios dice "Probadores mejorados, lista de nombres de usuario al iniciar sesi??n, mejor compatibilidad con Unix"
+
+1. Dado que Unix tiene diferentes variables de entorno, agregamos una verificaci??n para cada c??digo que intenta acceder al directorio del perfil del usuario
+2. Simplific?? el proceso de prueba del hardware al hacer clases y listas para cada hardware.
+3. Ahora te muestra la fecha de compilaci??n en el t??tulo.
+4. Enumera los nombres de usuario en el inicio de sesi??n.
+5. Movi?? el escritor de depuraci??n a TextWriterColor.vb
+6. Pre-parse las variables antes de escribir
+7. Actualizadores de configuraci??n actualizados (puede ver lo que sucedi?? en Config.vb en el c??digo fuente de 0.0.5.6 y 0.0.5.5)
+8. Obtener soporte para todos los comandos de computadora de lista para Unix
+9. Hecho reloadconfig leer la entrada de configuraci??n importante
+10. Ahora initTimesInZones () se ejecuta cada vez que se ejecuta showtdzone, en lugar de actualizar cada segundo
+11. Ahora "help arginj" lista argumentos
+12. Ahora Unix obtendr?? soporte de zona horaria
+
+KS 0.0.5.7
+
+El registro de cambios dice "Se solucion?? el bloqueo al iniciarse cuando se ejecuta en un nombre de archivo que no es" Kernel Simulator.exe ". Se mejor?? el manejo de errores para FTP, se agreg?? la impresi??n del directorio actual en FTP, se elimin?? el comando" versi??n ", se corrigi?? la" Sonda silenciosa " 
+
+1. Ahora KS puede obtener el nombre del tema actual
+2. Se corrigi?? el error conocido "Cualquier mensaje de error que se maneje colapsar?? el controlador con un error de kernel continuo".
+3. Ahora comprueba el sistema Unix en todas las funciones Sleep
+4. Se corrigi?? el archivo de configuraci??n de Quiet Probe que se configuraba "Quiet Probe"
+5. En FTP, los comandos pueden tener sus propios alias
+6. Hizo los mensajes de error en el cliente FTP m??s descriptivos.
+7. Se corrigi?? la aparici??n del mensaje de shell al presionar ENTER sin escribir comandos (FTP Shell)
+8. Se extendi?? el comando sysinfo para mostrar m??s informaci??n sobre el kernel
+9. Eliminado el comando de versi??n.
+
+KS 0.0.5.8
+
+El registro de cambios dice "Se elimin?? el pitido al reiniciar y apagar, se elimin?? el comando" beep ", (Windows) Probers ahora continuar?? aunque fallara, la memoria de eliminaci??n ya no usa el m??todo VB6 de manejo de errores"
+
+Esta versi??n es la ??ltima versi??n que admite Windows XP y se basa en Visual Basic 2010 Express Edition. 
+
+Sabemos muy bien que las computadoras port??tiles son m??s lentas que las computadoras para algo. 
+
+1. Ahora los mensajes de error de sondeo de hardware son extensos y m??s comprensibles
+2. Ahora los sondeos mostrar??n informaci??n de todos modos, incluso si el sondeo de hardware ha fallado
+3. Se modific?? el controlador de errores en DisposeAll () del m??todo VB6 a Probar ... Bloques de captura
+4. Eliminado el comando de pitido
+5. Ahora el comando de apagado y reinicio no emite un pitido
+6. Se agreg?? el comando de usuario, pero est?? en progreso.
+7. Ahora solo los administradores pueden usar reloadconfig y los comandos de alias
+
+El nuevo desarrollo se ve
+
+Comenzamos el desarrollo de 0.0.5.9 en VB2010 Express y Windows XP, y utilizamos las bibliotecas MadMilkman.Ini, FluentFTP y Newtonsoft.Json para obtener la forma normal.
+
+Mientras tanto, una de nuestras bibliotecas est?? muy desactualizada y debe actualizarse para hacer un seguimiento de la barra de progreso del proceso de carga y descarga. 
+
+Tenemos Windows XP de arranque dual con Windows 7 e intentamos instalar VS2017, pero parece que el instalador se bloquea (no el instalador donde descarga 60 MB de datos y los desempaqueta, pero se usa para instalar VS2017). 
+
+Luego sospechamos que era vs_installer.exe intentando acceder a instrucciones ilegales en nuestro AMD Athlon XP 1500 no SSE2, por lo que probamos VS2015 y funcion??.
+
+El gestor de paquetes de NuGet funcion?? correctamente. 
+
+Eliminamos todas las bibliotecas antiguas de forma anticuada y comenzamos a usar NuGet para poner bibliotecas de dependencias en KS, y obtuvimos la ??ltima versi??n de FluentFTP. 
+
+Completamos la codificaci??n e intentamos ponerla en GitHub usando la extensi??n GitHub en la comunidad VS, pero no funcion?? porque el devenv.exe intent?? acceder a las instrucciones del SSE2, por lo que VS2015 se bloque??.
+
+Despu??s de varios bloqueos, obtuvimos una computadora port??til con Windows 10 y movimos todos los archivos KS a ella, pero se perdieron 3-4 archivos, y uno de ellos es GetCommand.vb, que analiza los comandos.
+
+Reescribimos estos archivos 3-4, y funcionaron exitosamente como la ??ltima vez que los extendimos para tener caracter??sticas 0.0.5.9.
+
+KS 0.0.5.9
+
+El registro de cambios dice "Los Mods ahora se detendr??n cuando se apaguen, los Mods pueden tener su propio nombre y su propia versi??n, el depurador fijo no se cerr?? correctamente cuando se reinicia o apaga, Shell ahora ya no sale de la aplicaci??n cuando ocurre una excepci??n, Depugging ahora m??s 
+
+1. Al sondear GPU, si el probador no puede obtener RAM de video para la GPU, devolver?? 0
+2. La variable de memoria GPU se cambia a UInt64
+3. Eventos agregados y excepciones (ideal para mods)
+4. Se elimin?? la sub initializeMainUsers porque KS solo hace una cuenta de root ahora.
+5. Si no hay ning??n usuario en la lista de nombres de usuario, el n??cleo se bloquear??
+6. Ahora los mods se detendr??n al apagar o reiniciar
+7. Movi?? todas las herramientas del kernel a KernelTools.vb
+8. Ahora se pueden traducir todas las cadenas (actualmente, solo puede cambiar el idioma cambiando el archivo de configuraci??n o la herramienta de configuraci??n KS)
+9. P??ginas de manual a??adidas.
+10. Ahora puede convertir monedas (se requiere conexi??n a Internet)
+11. Ahora el escritor de depuraci??n no admitir?? la escritura sin nuevas l??neas
+12. El recolector de basura depura cuando se ejecuta
+13. Ahora todo ser?? depurado.
+14. Se eliminaron los comandos FTP binarios, pasivos, ssl y de texto.
+15. Agregado renombrar comando FTP
+16. Ahora el cliente FTP usa el FluentFTP para una administraci??n m??s f??cil
+17. Ahora, cuando cargue o descargue archivos, ver?? la barra de progreso
+18. Ahora todo ser?? transferido en modos apropiados.
+19. La inyecci??n de CWD ya no es necesaria
+20. Algunas llamadas de espacio de nombres se simplifican
+21. Agregado convertidor de moneda.
+22. Agregada entrada faltante para lscomp
+23. Ahora los alias se muestran mediante el comando de ayuda, eliminando el comando showaliases
+24. No m??s desbordamientos de pila al escribir la gran cantidad de comandos que excede la cantidad m??xima de pila
+25. Ahora la hora / fecha en la esquina se mostrar?? correctamente en las consolas de tama??o ajustado
+26. Eliminado el modo de registro en zonas horarias
+27. Ahora NuGet se utiliza para administrar paquetes (bibliotecas)
+
+KS 0.0.5.10
+
+Estamos ocupados con otra cosa, y no pudimos lanzar 0.0.6 a tiempo para el primer aniversario, por lo que este lanzamiento es un aniversario de un a??o. 
+
+1. Mejor legibilidad de las p??ginas del manual (vbTab ahora est?? filtrado y no causar?? problemas)
+2. Ahora el traductor imprime informaci??n de depuraci??n cuando no se encuentra una cadena en la lista de traducci??n
+3. Prueba de hardware: detenga el env??o de correo no deseado "System .__ ComObject" al depurador para permitir la lectura f??cil
+4. Manpage Parser: deja de llenar registros de depuraci??n con textos in??tiles de "Comprobaci??n de ..." y algunos mensajes de depuraci??n ampliados
+5. Se corrigi?? la cadena de BIOS que no se muestra
+6. Se eliminaron los controles innecesarios de la plataforma del sue??o
+7. Se elimin?? el argumento del kernel "nohwprobe", ya que la prueba del hardware es importante
+8. Se eliminaron los controles innecesarios de la plataforma de zona horaria.
+9. Actualice las bibliotecas FluentFTP y Newtonsoft.Json a sus ??ltimas versiones estables (S??, es por eso que estamos usando NuGet! NuGet es mejor que actualizar manualmente las bibliotecas externas).
+10. No hay duplicados de pila, excepto la parte de contrase??a en Inicio de sesi??n
+11. Se corrigi?? el error de MAL y MOTD que no se actualizaba entre los inicios de sesi??n
+12. Solucionado el error de sysinfo (la configuraci??n del mensaje no se imprime)
+13. El n??cleo ahora imprime el entorno utilizado en los comandos de arranque, depuraci??n y sysinfo
+14. Hechos de escribir hechos obsoletos.
+
+La verdad sobre el sondeo de estado
+
+Cuando estamos haciendo KS 0.0.4.5, hemos agregado Estado para RAM y HDD para indicar que est??n bien, o si est??n fallando. 
+
+KS 0.0.5.11
+
+Esta versi??n se lanz?? como la revisi??n para 0.0.5.10, eliminando las cosas m??s obsoletas y adelgazando antes de 0.0.6. 
+
+1. Realizado sondeo de GPU y BIOS <Obsolete>
+2. No hay m??s llamadas COM al sondear hardware
+3. Se elimin?? un archivo in??til que tiene datos del disco duro
+4. Se corrigi?? la traducci??n de sysinfo al mostrar la secci??n de configuraci??n del kernel
+5. Eliminado el sondeo de estado de HDD y RAM
+6. Se corrigi?? que la secci??n de CHS no apareciera si el disco duro tiene el valor del fabricante
+7. Se corrigi?? que el traductor no devolviera el valor en ingl??s si la lista de traducci??n no conten??a dicho valor
+8. Arreglado el probador de GPU asumiendo que el Controlador de Pantalla B??sico de Microsoft no es un controlador b??sico
+9. Los protectores de pantalla hechos sondeados en el arranque.
+10. Se corrigi?? NullReferenceException al intentar cargar el siguiente protector de pantalla despu??s de que ocurriera un error en el protector de pantalla anterior
+11. Se corrigi?? la informaci??n del sistema operativo que no se traduc??a al iniciar un kernel
+12. Configuraci??n de idioma fijo que no se conserva al actualizar
+13. La informaci??n de depuraci??n ahora se imprime en la ventana de salida de depuraci??n del VS2017 (a??n debe activar la depuraci??n)
+14. Hizo el comando loadsaver reloadsaver
+15. Eliminado comandos in??tiles y abusivos (eco, panicsim y elecci??n)
+
+KS 0.0.5.12
+
+Esta versi??n se lanz?? para corregir m??s errores y realizar m??s mejoras, incluida la soluci??n para Environment.OS para Windows 10. Esta versi??n es un aniversario de 1 a??o para KS
+
+1. Ahora createConf cmdline arg solo crea config si no se encuentra el archivo de configuraci??n
+2. Algunas preparaciones para 0.0.6 (solo para adelgazar)
+3. Eliminado el GPU y BIOS sondeo
+4. Ahora la configuraci??n KS anterior no podr?? actualizarse aqu?? (Soluci??n alternativa: debe eliminar su archivo de configuraci??n KS anterior y volver a ejecutar la aplicaci??n)
+5. Se corrigi?? el error Environment.OS en Windows 10 (10.0) donde se devuelve la versi??n de Windows 8 (6.2)
+6. Se corrigieron los marcadores de posici??n que no se analizan al usar el comando showmotd / showmal
+7. Se corrigi?? la simple ayuda que no mostraba mods.
+8. Se corrigieron los comandos incorporados que no se ejecutaban despu??s de ejecutar comandos mod o comandos alias
+9. Se corrigi?? NullReferenceException al depurar
+10. Lista de alias mejorada
+11. Se corrigi?? el mensaje de excepci??n de texto de impresi??n que no se traduc??a al idioma actual
+12. Se corrigi?? el "/" o "\" que aparec??a antes del nombre de mod al sondear mods y protectores de pantalla
+13. Eliminado la reparaci??n innecesaria en la traducci??n
+14. Se corrigieron m??s desbordamientos de pila en el shell FTP
+15. Se corrigi?? la traducci??n del mensaje FTP que traduc??a "ayuda" como el idioma cuando se supone que es un comando.
+16. Se corrigi?? el mensaje de comando no encontrado al no ingresar nada en el shell FTP
+
+KS 0.0.5.13
+
+Hemos simplificado a??n m??s cosas, con los cambios a continuaci??n:
+
+1. M??s adelgazamiento de JetBrains ReSharper para VS2017
+2. Implement?? el sondeo de hardware de Linux (es necesario instalar inxi para que funcionen los sondeos de HDD. Instrucciones en la secci??n "sondeo de Linux" de este manual).
+3. Se aument?? el requisito de .NET a 4.7 (cada usuario debe tener 4.7 en lugar de 4.6 instalado).
+4. Se elimin?? la advertencia sobre el enlace de redirecciones en MonoDevelop (MonoDevelop no es consciente ...)
+5. Se aument?? el requisito de la versi??n VS a VS2019 (para probar las caracter??sticas en ??l).
+6. Se elimin?? la molesta "violaci??n de la regla de denominaci??n" mediante la opci??n sugerida
+
+Prueba de Linux
+
+Estamos utilizando el archivo / proc / cpuinfo para obtener informaci??n sobre el procesador (nombre y reloj), el archivo / proc / meminfo para obtener la memoria total que est?? instalada en el sistema y la aplicaci??n inxi para obtener informaci??n sobre los discos duros.
+
+Pero, no todas las distribuciones se instalan inxi de manera predeterminada, por lo tanto, si no lo tiene instalado, el sondeo fallar??. 
+
+Debian, y sus derivados:
+
+
+
+
+Red Hat, y sus derivados:
+
+
+
+OpenSUSE, y sus derivados:
+
+
+
+Arch Linux, y sus derivados:
+
+
+
+
+El resto, compile desde la fuente y coloque el archivo ejecutable en / usr / bin ya que el probador solo busca en ese directorio, o use los administradores de paquetes para instalarlo.
+
+(?): Sin probar. 
+
+KS 0.0.5.14
+
+Despu??s de que tenemos una nueva PC, la actualizaci??n ha llegado. 
+
+1. Sistema de archivos falso reemplazado por uno real (acceso a sus archivos)
+2. Se corrigi?? el comando de ayuda "changedir" incorrecto que se muestra en lugar de "chdir"
+3. "cdir", que muestra el directorio actual, ahora est?? obsoleto
+4. Solucionado el fallo al reiniciar el kernel
+
+KS 0.0.6
+
+Esta actualizaci??n es tan grande como 0.0.4, pero hemos lanzado esta actualizaci??n para solucionar m??s problemas. 
+
+1. Nuevo icono
+2. Actualizaci??n de FluentFTP y Newtonsoft.Json libs
+3. Eliminado eventos de escritura
+4. Inicio de sesi??n reescrito (no todos, pero redise??ado)
+5. Se corrigi?? el comando chpwd que no cambiaba la contrase??a si el objetivo no ten??a contrase??a
+6. Se corrigi?? chpwd no verificando si un usuario normal cambia la contrase??a de administrador
+7. Se corrigi?? adduser sin agregar usuarios sin contrase??as
+8. Se corrigi?? adduser agregando usuarios con contrase??as incluso si no coincid??an
+9. Cdir eliminado
+10. Agregada entrada de configuraci??n para el nombre del protector de pantalla
+11. Implementado archivos de depuraci??n y volcado para errores del kernel
+12. Enviado con s??mbolos de depuraci??n .pdb para KS
+13. Arreglado el reinicio sin borrar la pantalla
+14. Se agregaron los idiomas holand??s, finland??s, italiano, malayo, sueco y turco (cambie a una fuente compatible en la consola)
+15. Los pa??ses y las monedas ahora aparecen en la lista cuando no proporcionan suficientes argumentos o emiten "moneda de ayuda"
+16. Se corrigi?? la lista de ayuda que no se actualizaba para la actualizaci??n de un nuevo idioma al reiniciar
+17. Agregados alias permanentes (ubicados debajo de su perfil, aliases.csv)
+18. La contrase??a ahora est?? oculta al iniciar sesi??n para mantener la seguridad
+19. Se corrigi?? la eliminaci??n de los usuarios despu??s de cada reinicio
+
+KS 0.0.6.1
+
+1. Se elimin?? la informaci??n de la moneda que se muestra en la ayuda (la devolver?? m??s adelante)
+2. Ahora se requiere que los usuarios ingresen su Clave de API de apilayer.net para convertir monedas (plan b??sico, visite http://currencylayer.com/product, sin probar: no se pudo pagar el plan b??sico)
+
+KS 0.0.6.2
+
+1. Se corrigi?? el comando debug log show que no funcionaba porque no se encontr?? la ruta (error tipogr??fico: Depurador -> Depuraci??n)
+2. Se agreg?? un aviso en la lista de comandos de PC sobre las ??ltimas versiones de Windows 10
+3. Se corrigi?? el encabezado del n??cleo de depuraci??n que no se escrib??a cuando se ejecutaba con el argumento de depuraci??n activado
+4. Se corrigi?? que el registro de depuraci??n estaba vac??o cada reinicio e inicio
+5. Permitido borrar el comando de inicio de sesi??n de depuraci??n usando cdbglog
+6. Se usaron los enumeradores FtpVerify incorporados, eliminando nuestra comprobaci??n de hash para versiones anteriores de FluentFTP
+7. Mejor experiencia en depuraci??n
+8. La depuraci??n ahora muestra el n??mero de l??nea y el archivo fuente si pdb est?? en la misma carpeta
+9. Modding permitido usando C
+
+KS 0.0.6.2a
+
+Esta es la actualizaci??n m??s peque??a, aunque contiene una cosa importante. 
+
+1. Se agreg?? la verificaci??n de las instrucciones del procesador (actualmente se usa en el arranque del kernel para ver si se admite SSE2)
+
+KS 0.0.6.2b
+
+1. Se agreg?? un comando llamado `sses` para listar todas las versiones de SSE
+
+KS 0.0.6.3
+
+1. Arreglado `quiet` no ser completamente silencioso
+2. Se corrigieron los mensajes que no aparec??an despu??s de iniciar sesi??n (por ejemplo, agregar un mensaje de usuario)
+3. Permitido cambiar de idioma usando el comando
+4. Se corrigi?? el texto de ayuda que se muestra despu??s de ejecutar `sses`
+5. A??adido idioma checo
+
+KS 0.0.6.4
+
+1. Se corrigi?? NullReferenceException al cambiar el idioma
+2. Se corrigieron nuevas l??neas de documentaci??n masiva al intentar analizar una palabra vac??a que no est?? al principio (tenga en cuenta que todav??a tenemos problemas de nueva l??nea en la primera l??nea)
+3. Agregado el tema de Ubuntu
+4. Eliminado la bandera no utilizada
+5. Se elimin?? el requisito adicional de analizar los colores en el arranque (se elimin?? la codicia)
+6. Hecho lectura de tama??o de archivo FTP legible por humanos
+
+KS 0.0.6.4a
+
+1. Arreglado el error en el sondeo del hardware de Linux, incluso si se lograba
+2. Solucionador de RAM fijo que muestra MemTotal: prefijo
+3. Hizo un mensaje sobre libcpanel-json-xs-perl clear
+
+KS 0.0.6.4b
+
+1. Hizo una preparaci??n para 0.0.6.5: Descargar s??mbolos de depuraci??n en el inicio si no se encuentra
+
+KS 0.0.6.5
+
+1. Se corrigieron los archivos volcados que se creaban sin extensi??n.
+2. Vertederos localizados y p??ginas de manual.
+3. Versión de idioma actualizada a la última
+4. Se corrigieron algunos errores sobre el sistema de archivos
+5. Se corrigió la velocidad del reloj de la CPU que aparece dos veces en los últimos procesadores (procesadores que tienen la velocidad del reloj en sus nombres internos, por ejemplo, "Intel (R) Core (TM) i7-8700 CPU @ 3.20GHz")
+6. Se corrigió la barra de progreso de las transferencias de FTP por lo que utiliza un nuevo formato
+7. ETA y velocidad añadidas
+-BODY END-
+
+-SECTIONS-
+Pre-release=>SE1
+KS 0.0.1=>SE1
+KS 0.0.1.1=>SE1
+KS 0.0.2=>SE1
+KS 0.0.2.1=>SE1
+KS 0.0.2.2=>SE1
+KS 0.0.2.3=>SE1
+KS 0.0.3=>SE1
+KS 0.0.3.1=>SE1
+KS 0.0.4=>SE1
+Big releases=>SE1
+KS 0.0.4.1=>SE1
+5/23/2018=>SE1
+5/24/2018 to 5/27/2018=>SE1
+5/28/2018=>SE1
+5/29/2018=>SE1
+8/??/2018=>SE1
+KS 0.0.4.5=>SE1
+KS 0.0.4.6=>SE1
+KS 0.0.4.7=>SE1
+KS 0.0.4.9=>SE1
+KS 0.0.4.10=>SE1
+KS 0.0.4.11=>SE1
+KS 0.0.4.12=>SE1
+KS 0.0.5=>SE1
+KS 0.0.5.1=>SE1
+KS 0.0.5.2=>SE1
+Use of libraries=>SE1
+KS 0.0.5.5=>SE1
+The support for Unix systems=>SE1
+KS 0.0.5.6=>SE1
+KS 0.0.5.7=>SE1
+KS 0.0.5.8=>SE1
+The new development looks=>SE1
+KS 0.0.5.9=>SE1
+KS 0.0.5.10=>SE1
+Truth about status probing=>SE1
+KS 0.0.5.11=>SE1
+KS 0.0.5.12=>SE1
+KS 0.0.5.13=>SE1
+Linux probing=>SE2
+KS 0.0.5.14=>SE1
+KS 0.0.6=>SE1
+KS 0.0.6.1=>SE1
+KS 0.0.6.2=>SE1
+KS 0.0.6.2a=>SE1
+KS 0.0.6.2b=>SE1
+KS 0.0.6.3=>SE1
+ks 0.0.6.4=>SE1
+KS 0.0.6.4a=>SE1
+KS 0.0.6.4b=>SE1
+KS 0.0.6.5=>SE1
+-SECTIONS END-

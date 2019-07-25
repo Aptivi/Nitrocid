@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "rmuser"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando rmuser
+
+Riepilogo: rimuove l'utente non invitato o ridondante
+
+Descrizione
+
+Questo comando consente di rimuovere l'utente non invitato o ridondante dal dizionario utente inizializzato all'inizio del kernel. 
+
+Tuttavia, non ?? possibile rimuovere il proprio utente che ha effettuato l'accesso.
+
+Utilizzo del comando
+
+* rmuser (nome utente)
+
+Esempi
+
+* rmuser joe: rimuove "joe" dal dizionario utente
+-BODY END-
+
+-COLOR CONFIGURATION-
+rmuser (Username)=>Green
+rmuser joe:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rmuser command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

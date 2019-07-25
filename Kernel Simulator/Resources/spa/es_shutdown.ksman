@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "apagado"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando de apagado
+
+Resumen: apaga tu computadora
+
+Descripci??n
+
+Si ha terminado con todo y no quiere hacer otra cosa en su computadora, en lugar de dejarla consumiendo energ??a y pagando m??s dinero al centro de electricidad, debe usar este comando para apagar su computadora y ahorrar energ??a. 
+
+Uso del comando
+
+* apagar
+-BODY END-
+
+-COLOR CONFIGURATION-
+shutdown=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+shutdown command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

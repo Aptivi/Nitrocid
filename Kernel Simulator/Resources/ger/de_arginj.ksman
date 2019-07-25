@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Shell Befehl "arginj"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Alias-Befehl
+
+Zusammenfassung: Sie k??nnen die Argumente festlegen, die beim Neustart gestartet werden sollen.
+
+Beschreibung
+
+Wenn Sie Ihren Kernel neu starten m??ssen, um den Debugger auszuf??hren, oder wenn Sie die Hardwarepr??fung deaktivieren m??chten, um beim Booten Zeit zu sparen, ist dieser Befehl f??r Sie. 
+
+Sie k??nnen diesen Befehl verwenden, wenn Sie im Kernel Argumente einf??gen m??ssen. 
+
+Befehlsverwendung
+
+* arginj [Argumente durch Leerzeichen getrennt]
+
+Beispiele
+
+* arginj debug: Aktiviert den Debug-Modus beim n??chsten Neustart
+* arginj nohwprobe: Deaktiviert die Hardwarepr??fung beim n??chsten Neustart
+* arginj quiet nohwprobe: Schalte Kernel-Nachrichten und Hardware-Tests beim n??chsten Neustart aus
+-BODY END-
+
+-COLOR CONFIGURATION-
+arginj [Arguments separated by spaces]=>Green
+arginj debug:=>Yellow
+arginj nohwprobe:=>Yellow
+arginj quiet nohwprobe:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+arginj command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

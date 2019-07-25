@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:FTP-komento "listlocal" tai "lsl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+listlocal tai lsl FTP-komento
+
+Yhteenveto: Listaa nykyisen kansion tai siihen sis??ltyv??n kansion sis??ll??n
+
+Kuvaus
+
+Voit tarkastella nykyisen ty??hakemiston sis??lt??mi?? tiedostoja ja alihakemistoja, jos hakemistoja ei ole m????ritetty, tai m????ritetyss?? hakemistossa.
+
+Voit my??s n??hd?? nykyisen sijaintisi edellisen hakemiston sis??lt??m??t tiedostot ja alikansiot.
+
+Komennon k??ytt??
+
+* listlocal / lsl [kansio / ..]
+esimerkit
+
+* listlocal: Luettelee ty??hakemiston sis??ll??n
+* listlocal ..: Luettelee edellisen ty??kansion sis??ll??n
+* lsl kaupungit: Luettelee "kaupunkien" kansion sis??ll??n
+-BODY END-
+
+-COLOR CONFIGURATION-
+listlocal/lsl [folder/..]=>Green
+listlocal:=>Yellow
+listlocal ..:=>Yellow
+lsl cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+listlocal or lsl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

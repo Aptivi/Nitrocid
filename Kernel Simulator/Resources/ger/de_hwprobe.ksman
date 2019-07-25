@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell Befehl "hwprobe"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl hwprobe
+
+Zusammenfassung: Sie k??nnen Ihren Kernel dazu bringen, Hardwarekonfigurationen zu erkennen, wenn der Kernel dies beim Booten nicht getan hat
+
+Beschreibung
+
+Mit diesem Befehl k??nnen Sie den Kernel Hardware und Konfigurationseinstellungen wie BIOS, GPU, RAM, Festplatte und CPU erkennen lassen. 
+
+Befehlsverwendung
+
+* hwprobe
+-BODY END-
+
+-COLOR CONFIGURATION-
+hwprobe=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+hwprobe command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

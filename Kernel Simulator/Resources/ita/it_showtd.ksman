@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "showtd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando showtd
+
+Riepilogo: mostra l'ora e la data correnti
+
+Descrizione
+
+Se vuoi sapere che ore sono senza andare ripetutamente all'orologio, puoi usare questo comando per mostrarti l'ora e la data attuali, cos?? come il tuo fuso orario.
+
+Utilizzo del comando
+
+* showtd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

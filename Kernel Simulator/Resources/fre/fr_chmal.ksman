@@ -1,0 +1,49 @@
+(*MAN START*)
+
+-TITLE:Commande shell "chmal"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande chmal
+
+R??sum??: Vous pouvez changer votre message du jour apr??s la connexion
+
+La description
+
+Si vous n'aimez pas le message par d??faut du jour apr??s la connexion g??n??r?? par le noyau, vous pouvez utiliser cette commande pour modifier le message et le stocker de mani??re permanente dans le fichier de configuration.
+
+Il prend ??galement en charge les espaces r??serv??s, comme si vous aviez des espaces r??serv??s <shortdate> et <longtime>, que les espaces r??serv??s <shortdate> changeaient vers la date syst??me actuelle dans le formulaire MM / JJ / AAAA et que les espaces r??serv??s <longtime> du syst??me actuel 
+
+Vous pouvez voir les espaces r??serv??s ci-dessous:
+
+* <utilisateur>: Obtient le nom d'utilisateur actuel (Ex: joe)
+* <shortdate>: Obtient la date du syst??me au format MM / JJ / AAAA (Ex: 12/7/2018)
+* <longdate>: Obtient la date du syst??me au format <DayName>, <MonthName> DD, AAAA (Ex: vendredi 7 d??cembre 2018).
+* <shorttime>: Obtient l'heure du syst??me au format HH: MM (Ex: 4:30).
+* <longtime>: r??cup??re l'heure du syst??me au format HH: MM: SS AM / PM (Ex: 16:30:10)
+* <timezone>: Obtient le fuseau horaire standard du syst??me (Ex: heure normale de l'??gypte)
+* <summertimezone>: Obtient le fuseau horaire du syst??me (exemple: l'heure d'??t?? de la Syrie).
+
+Utilisation de la commande
+
+* chmal (message)
+
+Exemples
+
+* chmal Cet ordinateur est allum?? ?? (shortdate) (shorttime): il modifie votre MOTD apr??s la connexion au message sp??cifi??, avec les espaces r??serv??s inclus dans le message.
+* chmal Bienvenue dans le noyau, (utilisateur)! 
+-BODY END-
+
+-COLOR CONFIGURATION-
+chmal (message)=>Green
+chmal This computer is turned on at (shortdate) (shorttime):=>Yellow
+chmal Welcome to the kernel, (user)! Your system time zone is (timezone):=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chmal command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

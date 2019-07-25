@@ -37,6 +37,7 @@ Public Module ModParser
     Private ReadOnly modPath As String = paths("Mods")
 
     '------------------------------------------- Generators -------------------------------------------
+    'TODO: Can be unified into one GenMod sub
     Private Function GenMod(ByVal code As String) As IScript 'For Visual Basic mods
         Using provider As New VBCodeProvider()
             Dim prm As New CompilerParameters With {

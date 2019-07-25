@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "debuglog"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+debuglog-komento
+
+Yhteenveto: Voit tarkastella ytimen virheenkorjauslokia tiedostosta nimelt?? kernelDbg.log, joka sijaitsee k??ytt??j??profiilikansionasi
+
+Kuvaus
+
+T??m??n katseluohjelman avulla voit tarkastella virheenkorjauslokia ottamatta ensin k??ytt????n virheenj??ljitystilaa ytimess??. 
+
+Ennen t??t?? komentoa vaadittiin, ett?? debugger on otettu k??ytt????n ytimess??.
+
+Komennon k??ytt??
+
+* debuglog
+-BODY END-
+
+-COLOR CONFIGURATION-
+debuglog=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+debuglog command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

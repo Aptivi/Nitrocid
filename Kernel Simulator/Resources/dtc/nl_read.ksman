@@ -1,0 +1,35 @@
+(*MAN START*)
+
+-TITLE:Shell-commando "lezen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lees commando
+
+Samenvatting: Leest bestandsinhoud en drukt deze af op het scherm
+
+Omschrijving
+
+Met deze opdracht kunt u de inhoud van het bestand in uw huidige werkdirectory bekijken. 
+
+Commando gebruik
+
+* lees (bestand)
+
+Voorbeelden
+
+* lees libuesh: het leest de bestandsinhoud van libuesh
+-BODY END-
+
+-COLOR CONFIGURATION-
+read (file)=>Green
+read libuesh:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+read command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

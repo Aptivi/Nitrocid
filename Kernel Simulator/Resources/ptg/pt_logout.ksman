@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando shell "logout"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando de logout
+
+Resumo: Voc?? pode sair da sua conta.
+
+Descri????o
+
+Se houver uma altera????o que exija logout e login para que as altera????es entrem em vigor, voc?? dever?? fazer logoff e efetuar login novamente.
+
+Esse comando permite que voc?? saia da sua conta e fa??a login como outra pessoa. 
+
+Uso de comando
+
+* sair
+-BODY END-
+
+-COLOR CONFIGURATION-
+logout=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+logout command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

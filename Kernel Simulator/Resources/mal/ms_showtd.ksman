@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "showtd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah showtd
+
+Ringkasan: Menunjukkan masa dan tarikh semasa
+
+Penerangan
+
+Sekiranya anda ingin mengetahui masa itu tanpa berulang kali masuk ke dalam jam, anda boleh menggunakan arahan ini untuk menunjukkan kepada anda masa dan tarikh semasa, serta zon masa anda.
+
+Penggunaan perintah
+
+* showtd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

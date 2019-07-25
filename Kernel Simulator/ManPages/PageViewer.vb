@@ -31,6 +31,11 @@ Module PageViewer
             Dim oldTop As Integer
             Dim vbNewLineRequired As Boolean
 
+            'Check language
+            If currentLang <> "eng" Then
+                title = $"{currentLang}{title}"
+            End If
+
             'Get the bottom place
             InfoPlace = Console.WindowHeight - 1
             Wdbg("Bottom informational height is {0}", InfoPlace)
@@ -164,6 +169,9 @@ Module PageViewer
     End Sub
 
     Private Sub WriteInfo(ByVal title As String)
+        If currentLang <> "eng" Then
+            title = title.Replace(currentLang, "")
+        End If
         Console.SetCursorPosition(Console.CursorLeft, InfoPlace)
         Console.BackgroundColor = ConsoleColor.White : Console.ForegroundColor = ConsoleColor.Black
         Console.Write(title + DoTranslation(" | {0} words | Revision v{1} | {2} sections", currentLang), Pages(title).Body.ToString.Split(" ").Length.ToString,

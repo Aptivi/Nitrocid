@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "showtdzone"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando showtdzone
+
+Resumen: muestra la hora y fecha actuales en otra zona horaria
+
+Descripci??n
+
+Si necesita saber qu?? hora es en otra ciudad o pa??s, puede usar esta herramienta para informarle la hora y fecha actuales en otro pa??s o ciudad.
+
+Este comando es multiplataforma y utiliza las zonas horarias de la IANA en sistemas Unix y el sistema de zona horaria de Windows en Windows.
+
+Por ejemplo, si necesita usar "Asia / Damasco" en los sistemas Unix, escribir?? "showtdzone Asia / Damasco". 
+
+Uso del comando
+
+* showtdzone (TimeZone / all)
+
+Ejemplos
+
+* showtdzone Hora est??ndar de Egipto: muestra la hora y fecha actuales en Egipto en los sistemas Windows
+* showtdzone Asia / Hong_Kong: muestra la hora y fecha actuales en Hong Kong en los sistemas Linux
+* showtdzone all: muestra todas las zonas horarias y sus horas y fechas
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtdzone (TimeZone/all)=>Green
+showtdzone Egypt Standard Time:=>Yellow
+showtdzone Asia/Hong_Kong:=>Yellow
+showtdzone all:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtdzone command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "showtd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl showtd
+
+Zusammenfassung: Zeigt die aktuelle Uhrzeit und das Datum an
+
+Beschreibung
+
+Wenn Sie wissen m??chten, wie sp??t es ist, ohne wiederholt auf die Uhr zu schauen, k??nnen Sie diesen Befehl verwenden, um die aktuelle Uhrzeit und das aktuelle Datum sowie Ihre Zeitzone anzuzeigen.
+
+Befehlsverwendung
+
+* showtd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

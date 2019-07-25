@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:FTP Befehl "listlocal" oder "lsl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl listlocal oder lsl FTP
+
+Zusammenfassung: Listet den Inhalt des aktuellen Ordners oder des bereitgestellten Ordners auf
+
+Beschreibung
+
+Sie k??nnen die Liste der Dateien und Unterverzeichnisse anzeigen, die im aktuellen Arbeitsverzeichnis enthalten sind, wenn keine Verzeichnisse angegeben sind, oder im angegebenen Verzeichnis, wenn angegeben.
+
+Sie k??nnen auch die Liste der Dateien und Unterverzeichnisse anzeigen, die im vorherigen Verzeichnis Ihrer aktuellen Position enthalten sind.
+
+Befehlsverwendung
+
+* listlocal / lsl [Ordner / ..]
+Beispiele
+
+* listlocal: Listet den Inhalt im Arbeitsverzeichnis auf
+* listlocal ..: Listet den Inhalt des vorherigen Arbeitsverzeichnisses auf
+* lsl cities: Listet den Inhalt des Ordners "cities" auf
+-BODY END-
+
+-COLOR CONFIGURATION-
+listlocal/lsl [folder/..]=>Green
+listlocal:=>Yellow
+listlocal ..:=>Yellow
+lsl cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+listlocal or lsl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Perintah FTP "muat naik" atau "meletakkan"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+muat naik atau letakkan arahan FTP
+
+Ringkasan: Muat naik fail ke pelayan
+
+Penerangan
+
+Jika anda perlu menambah fail setempat anda dalam direktori kerja semasa anda ke direktori pelayan semasa, anda mesti mempunyai keistimewaan pentadbiran untuk menambah fail.
+
+Sebagai contoh, jika anda menambah gambar bandar New Delhi menggunakan format PNG, anda perlu memuat naiknya ke pelayan untuk semua orang dapat melihat. 
+
+Penggunaan perintah
+
+* muat naik / letakkan (fail)
+
+Contoh
+
+* muat naik Win10-Oct2018-x64.iso: Meletakkan "Win10-Oct2018-x64.iso" ke direktori pelayan semasa yang berfungsi
+* letakkan urls.txt: Meletakkan "urls.txt" ke direktori pelayan kerja semasa
+-BODY END-
+
+-COLOR CONFIGURATION-
+upload/put (file)=>Green
+upload Win10-Oct2018-x64.iso:=>Yellow
+put urls.txt:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+upload or put FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

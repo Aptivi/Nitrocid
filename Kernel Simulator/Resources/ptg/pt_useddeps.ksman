@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando da shell "useddeps"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Comando useddeps
+
+Resumo: Voc?? pode obter as bibliotecas usadas neste programa
+
+Descri????o
+
+O Kernel Simulator vem com bibliotecas para facilitar a codifica????o (para desenvolvedores). 
+
+Uso de comando
+
+* useddeps
+-BODY END-
+
+-COLOR CONFIGURATION-
+useddeps=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+useddeps command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

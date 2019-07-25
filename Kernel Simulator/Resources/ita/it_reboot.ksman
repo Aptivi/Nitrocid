@@ -1,0 +1,32 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "riavvio"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando di riavvio
+
+Riepilogo: riavvia il kernel
+
+Descrizione
+
+Questo comando riavvia il kernel simulato e ricarica tutte le configurazioni che non sono state caricate usando reloadconfig. 
+
+ATTENZIONE: non esiste alcuna sincronizzazione del file system perch?? la versione corrente del kernel non ha il vero file system da sincronizzare e il kernel non ?? definitivo.
+
+Utilizzo del comando
+
+* riavvio
+-BODY END-
+
+-COLOR CONFIGURATION-
+reboot=>Green
+WARNING:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+reboot command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

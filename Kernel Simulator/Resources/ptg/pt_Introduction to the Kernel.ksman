@@ -1,0 +1,145 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Introdu????o ao Kernel
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+O que ?? o kernel? 
+
+O kernel em geral ?? um programa de computador que ?? o n??cleo do sistema operacional de um computador, com controle total sobre tudo no sistema. 
+
+No entanto, o Kernel Simulator ?? o primeiro simulador real, e n??o emula????o, aplicativo que pode simular esses tipos de comportamento, exceto pelo fato de ainda estarmos no est??gio Alpha e tamb??m mostrar a transi????o de como o kernel foi aprimorado e constru??do 
+
+A hist??ria do Unix e Linux.
+
+O que ?? o Unix? 
+
+O Unix ?? uma fam??lia de sistemas operacionais multiusu??rios, multiusu??rios, que deriva do AT original
+
+Inicialmente destinado ao uso dentro do Sistema Bell, AT
+
+As origens do Unix datam de meados da d??cada de 1960, quando o Massachusetts Institute of Technology, a Bell Labs e a General Electric estavam desenvolvendo o Multics, um sistema operacional de compartilhamento de tempo para o computador mainframe GE-645. 
+
+O novo sistema operacional era um sistema de tarefa ??nica. 
+
+O sistema operacional foi originalmente escrito em linguagem assembly, mas em 1973, a Vers??o 4 do Unix foi reescrita em C. Vers??o 4 O Unix, no entanto, ainda tinha muitos c??digos dependentes do PDP-11 e n??o ?? adequado para portabilidade. 
+
+A Bell Labs produziu v??rias vers??es do Unix que s??o coletivamente chamadas de Research Unix. 
+
+Durante o final dos anos 1970 e in??cio dos anos 80, a influ??ncia do Unix nos c??rculos acad??micos levou ?? ado????o em grande escala do Unix (BSD e System V) por startups comerciais, incluindo Sequent, HP-UX, Solaris, AIX e Xenix. 
+
+Nos anos 90, os sistemas Unix e Unix cresceram em popularidade, pois as distribui????es BSD e Linux foram desenvolvidas atrav??s da colabora????o de uma rede mundial de programadores. 
+
+Como sobre o Linux?
+
+O Linux ?? uma fam??lia de sistemas operacionais de software livre e de c??digo aberto criados em torno do kernel do Linux. 
+
+Em 1991, enquanto freq??entava a Universidade de Helsinque, Torvalds ficou curioso sobre os sistemas operacionais. 
+
+Torvalds come??ou o desenvolvimento do kernel do Linux no MINIX e os aplicativos escritos para o MINIX tamb??m foram usados ??????no Linux. 
+
+Linus Torvalds queria chamar sua inven????o de Freax, uma jun????o de livre, aberra????o e x (como uma alus??o ao Unix). 
+
+Para facilitar o desenvolvimento, os arquivos foram enviados para o servidor FTP (ftp.funet.fi) do FUNET em setembro de 1991. Ari Lemmke, colega de trabalho de Torvalds na Universidade de Tecnologia de Helsinque (HUT), que era um dos administradores volunt??rios 
+
+A ado????o do Linux em ambientes de produ????o, em vez de ser usada apenas por amadores, come??ou a decolar em meados da d??cada de 1990 na comunidade de supercomputa????o, onde organiza????es como a NASA come??aram a substituir suas m??quinas cada vez mais caras por clusters de computadores de baixo custo 
+
+Atualmente, os sistemas Linux s??o usados ??em toda a computa????o, desde sistemas embarcados at?? praticamente todos os supercomputadores, e garantem um lugar em instala????es de servidores, como a popular pilha de aplicativos LAMP. 
+
+O maior sucesso do Linux no mercado de consumo talvez seja o mercado de dispositivos m??veis, com o Android sendo um dos sistemas operacionais mais dominantes em smartphones e muito popular em tablets e, mais recentemente, em wearables. 
+
+Greg Kroah-Hartman ?? o principal mantenedor do kernel Linux e orienta seu desenvolvimento. 
+
+Fornecedores e comunidades Linux combinam e distribuem o kernel, componentes GNU e componentes n??o-GNU, com software adicional de gerenciamento de pacotes na forma de distribui????es Linux.
+
+Breve descri????o para o nosso Kernel aka Eofla Kernel
+
+O kernel ?? constru??do do zero, e a primeira vers??o p??blica do Simulador foi constru??da em 23 de fevereiro de 2018. Atualmente, o Simulador coleta informa????es de hardware via Windows Management Instrumentation (WMI) que fornece todas as informa????es para o seu hardware, incluindo o processador, RAM e gr??ficos. 
+
+Atualmente, ele possui um recurso de depura????o que depura o kernel sobre o que est?? acontecendo e o salva em um arquivo. 
+
+Fontes
+
+1. https://en.wikipedia.org/wiki/Kernel_(operating_system)
+2. https://en.wikipedia.org/wiki/Unix
+3. https://en.wikipedia.org/wiki/Linux
+-BODY END-
+
+-COLOR CONFIGURATION-
+Kernel Simulator=>Yellow
+Simulation=>Green
+Emulation=>Red
+Alpha=>Red
+Unix=>Green
+Bell Labs=>DarkGreen
+Ken Thompson, Dennis Ritchie=>DarkGreen
+System=>DarkGreen
+AT&T=>DarkGreen
+University California Berkeley (BSD), Microsoft (Xenix), IBM (AIX), Sun Microsystems (Solaris)=>DarkGreen
+Novell=>DarkGreen
+Santa Cruz Operation (SCO)=>DarkGreen
+Open Group=>DarkGreen
+Apple's=>Gray
+Massachusetts Institute Technology=>DarkGreen
+General Electric=>DarkGreen
+Multics=>DarkGreen
+GE-645=>Red
+Douglas McIlroy, Joe Ossanna=>DarkGreen
+Unics Uniplexed Information Computing Service=>DarkGreen
+Multiplexed Computer Services=>DarkGreen
+Doug Peter G. Neumann=>DarkGreen
+Kernighan=>DarkGreen
+assembly language=>Magenta
+C=>Magenta
+Interdata 8/32=>Red
+Research=>DarkGreen
+Donald B. Gillies=>DarkGreen
+Illinois Department Science=>DarkGreen
+UIUC=>DarkGreen
+Greg Chesson=>DarkGreen
+Sequent, HP-UX, Solaris, AIX, Xenix=>DarkGreen
+Laboratories=>DarkGreen
+V Release 4 (SVR4)=>DarkGreen
+BSD=>DarkGreen
+Linux=>DarkGreen
+Darwin=>DarkGreen
+Mac OS X=>DarkMagenta
+macOS=>Magenta
+Linus=>DarkGreen
+Torvalds=>DarkGreen
+MINIX=>DarkGreen
+GNU=>Magenta
+GPL=>Magenta
+Freax=>DarkGreen
+free freak x=>Magenta
+ftp.funet.fi=>Blue
+FUNET=>DarkGreen
+Ari Lemmke=>DarkGreen
+Helsinki (HUT)=>DarkGreen
+NASA=>DarkGreen
+Dell=>DarkGreen
+Hewlett-Packard=>DarkGreen
+LAMP=>Magenta
+Google=>DarkGreen
+Chrome=>DarkGreen
+Android=>Green
+Valve=>Magenta
+Kroah-Hartman=>DarkGreen
+Stallman=>DarkGreen
+Free Software Foundation=>DarkGreen
+Windows Management Instrumentation (WMI)=>DarkGreen
+Unified Eofla SHell (UESH)=>DarkGreen
+InitiaOE=>DarkGreen
+uesh-maint=>DarkGreen
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the Kernel? How about Kernel Simulator?=>SE1
+The history of Unix and Linux.=>SE1
+What is Unix? and what happened in the past?=>SE2
+How about Linux?=>SE2
+Brief description for our Kernel aka Eofla Kernel=>SE1
+Sources=>SE1
+-SECTIONS END-

@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "showtd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando showtd
+
+Resumen: muestra la hora y fecha actuales
+
+Descripci??n
+
+Si desea saber qu?? hora es sin ir al reloj repetidamente, puede usar este comando para mostrar la hora y fecha actuales, as?? como su zona horaria.
+
+Uso del comando
+
+* showtd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "lsnettree"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah lsnettree
+
+Ringkasan: Anda boleh menyenaraikan komputer yang dalam talian dan alamat IP mereka dalam domain atau kumpulan kerja, dalam bentuk pokok
+
+Penerangan
+
+Jika anda ingin mendapatkan semua komputer yang menyertai kumpulan kerja atau domain dalam bentuk pokok, anda boleh menggunakan arahan ini, tetapi anda mesti terlebih dahulu meminta kebenaran jika anda berada di tempat awam seperti pejabat, sekolah, kafe, 
+
+Perintah ini juga berguna jika anda menyenaraikan komputer dalam rangkaian kecil anda atau rumah anda yang mempunyai banyak komputer yang menjalankan Windows, tidak kira versi Windows sedang berjalan, dalam bentuk pokok.
+
+Penggunaan perintah
+
+* lsnettree
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnettree=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnettree command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

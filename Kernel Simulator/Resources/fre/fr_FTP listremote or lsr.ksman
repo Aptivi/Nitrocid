@@ -1,0 +1,42 @@
+(*MAN START*)
+
+-TITLE:Commande FTP "listremote" ou "lsr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Commande listremote ou lsr FTP
+
+R??sum??: r??pertorie le contenu du dossier actuel ou du dossier fourni.
+
+La description
+
+Vous pouvez voir la liste des fichiers et sous-r??pertoires contenus dans le r??pertoire de travail actuel si aucun r??pertoire n'est sp??cifi??, ou dans le r??pertoire sp??cifi??, s'il est sp??cifi??.
+
+Vous pouvez ??galement voir la liste des fichiers et sous-r??pertoires contenus dans le r??pertoire pr??c??dent de votre position actuelle.
+
+Contrairement ?? listlocal ou lsr, vous devez vous connecter au serveur pour utiliser cette commande, car elle r??pertorie les r??pertoires du serveur, et non du disque dur local.
+
+Utilisation de la commande
+
+* listremote / lsr [dossier / ..]
+Exemples
+
+* listremote: Liste le contenu du r??pertoire de travail
+* listremote ..: Liste le contenu du r??pertoire de travail pr??c??dent
+* lsr cities: r??pertorie le contenu du dossier "cities"
+-BODY END-
+
+-COLOR CONFIGURATION-
+listremote/lsr [folder/..]=>Green
+listremote:=>Yellow
+listremote ..:=>Yellow
+lsr cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+listremote or lsr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

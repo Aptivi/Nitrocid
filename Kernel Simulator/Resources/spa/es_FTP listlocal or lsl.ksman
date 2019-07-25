@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "listlocal" o "lsl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando listlocal o lsl FTP
+
+Resumen: enumera los contenidos de la carpeta actual o la carpeta provista
+
+Descripci??n
+
+Puede ver la lista de los archivos y subdirectorios contenidos en el directorio de trabajo actual si no se especifica ning??n directorio, o en el directorio especificado, si se especifica.
+
+Tambi??n puede ver la lista de los archivos y subdirectorios contenidos en el directorio anterior de su posici??n actual.
+
+Uso del comando
+
+* listlocal / lsl [carpeta / ..]
+Ejemplos
+
+* listlocal: muestra los contenidos en el directorio de trabajo
+* listlocal ..: muestra los contenidos en el directorio de trabajo anterior
+* lsl cities: muestra el contenido de la carpeta "cities"
+-BODY END-
+
+-COLOR CONFIGURATION-
+listlocal/lsl [folder/..]=>Green
+listlocal:=>Yellow
+listlocal ..:=>Yellow
+lsl cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+listlocal or lsl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

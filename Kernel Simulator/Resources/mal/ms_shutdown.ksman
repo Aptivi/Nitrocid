@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell arahan "shutdown"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+arahan tutupan
+
+Ringkasan: Mematikan komputer anda
+
+Penerangan
+
+Sekiranya anda selesai dengan segala-galanya dan tidak mahu melakukan sesuatu yang lain pada komputer anda, dan bukan meninggalkannya untuk mengambil tenaga dan membayar lebih banyak wang ke pusat elektrik, anda perlu menggunakan arahan ini untuk menutup komputer anda dan memulih kuasa 
+
+Penggunaan perintah
+
+* menutup
+-BODY END-
+
+-COLOR CONFIGURATION-
+shutdown=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+shutdown command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

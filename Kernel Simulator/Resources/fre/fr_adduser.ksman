@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "adduser"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande adduser
+
+R??sum??: Vous pouvez ajouter le nom de l'utilisateur ?? tout moment, avec le mot de passe si n??cessaire.
+
+La description
+
+Si vous devez ajouter une personne qui souhaite utiliser le noyau, vous pouvez ajouter des utilisateurs et leur permettre de sp??cifier le mot de passe s???ils en ont besoin. 
+
+Toutefois, si vous devez ajouter une personne disposant de droits d'administrateur, vous devez d??finir l'autorisation pour l'utilisateur d'autoriser les droits d'administrateur. 
+
+Pour plus d'informations sur la configuration de l'autorisation pour les utilisateurs, reportez-vous ?? la section "perm permanent".
+
+Utilisation de la commande
+
+* adduser (nom d'utilisateur)
+* adduser (nom d'utilisateur) [mot de passe] [confirmer]
+
+Exemples
+
+* adduser joe: Ceci cr??era un nouveau compte avec le nom de "joe"
+* adduser test pass1234 pass1234: Ceci cr??era un nouveau compte avec le nom "test" et le mot de passe de "pass1234".
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser (userName)=>Green
+adduser (userName) [password] [confirm]=>Green
+adduser joe:=>Yellow
+adduser test pass1234 pass1234:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+adduser command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

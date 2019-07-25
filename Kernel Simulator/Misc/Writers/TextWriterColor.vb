@@ -36,15 +36,16 @@ Public Module TextWriterColor
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
             Dim LineNum As String = STrace.GetFrame(1).GetFileLineNumber
             If Not Source Is Nothing And Not LineNum = 0 Then
-                dbgWriter.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + " (" + Source + ":" + LineNum + "): " + text, vars)
-                Debug.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + " (" + Source + ":" + LineNum + "): " + text, vars)
+                dbgWriter.WriteLine($"{FormatDateTime(KernelDateTime, DateFormat.ShortDate)} {FormatDateTime(KernelDateTime, DateFormat.ShortTime)} ({Source}:{LineNum}): {text}", vars)
+                Debug.WriteLine($"{FormatDateTime(KernelDateTime, DateFormat.ShortDate)} {FormatDateTime(KernelDateTime, DateFormat.ShortTime)} ({Source}:{LineNum}): {text}", vars)
             Else
-                dbgWriter.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + ": " + text, vars)
-                Debug.WriteLine(FormatDateTime(KernelDateTime, DateFormat.ShortDate) + " " + FormatDateTime(KernelDateTime, DateFormat.ShortTime) + ": " + text, vars)
+                dbgWriter.WriteLine($"{FormatDateTime(KernelDateTime, DateFormat.ShortDate)} {FormatDateTime(KernelDateTime, DateFormat.ShortTime)}: {text}", vars)
+                Debug.WriteLine($"{FormatDateTime(KernelDateTime, DateFormat.ShortDate)} {FormatDateTime(KernelDateTime, DateFormat.ShortTime)}: {text}", vars)
             End If
         End If
     End Sub
 
+    'TODO: Merge line and without line writes into unified "W" sub
     ''' <summary>
     ''' Outputs the text into the terminal prompt, and sets colors as needed.
     ''' </summary>
@@ -79,7 +80,7 @@ Public Module TextWriterColor
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
             For v As Integer = 0 To vars.Length - 1
-                text = text.Replace("{" + CStr(v) + "}", vars(v))
+                text = text.Replace("{" + CStr(v) + "}", vars(v).ToString)
             Next
 
             Write(text)
@@ -125,7 +126,7 @@ Public Module TextWriterColor
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
             For v As Integer = 0 To vars.Length - 1
-                text = text.Replace("{" + CStr(v) + "}", vars(v))
+                text = text.Replace("{" + CStr(v) + "}", vars(v).ToString)
             Next
 
             WriteLine(text)

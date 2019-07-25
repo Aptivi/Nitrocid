@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Shell-kommandot "alias"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+alias kommando
+
+Sammanfattning: Du kan st??lla in en alternativ genv??g till kommandot om du vill anv??nda kortare ord f??r l??nga kommandon.
+
+Beskrivning
+
+Vissa kommandon i den h??r k??rnan ??r l??nga och andra skriver inte snabbt p?? datorer. 
+
+Du kan ocks?? anv??nda det h??r kommandot om du planerar att g??ra skript om det verkliga filsystemet kommer att l??ggas till i framtiden, eller om du rusar efter n??got och du inte har tid att k??ra det l??nga kommandot.
+
+Du kan l??gga till eller ta bort aliaset i det l??nga kommandot.
+
+Kommandobruk
+
+* alias add (alias) (cmd)
+* alias rem (alias)
+
+exempel
+
+* alias add libs useddeps: Detta skapar en genv??g av "useddeps" med namnet "libs"
+* alias add stdz showtdzone: Detta skapar en genv??g av "showtdzone" med namnet "stdz"
+* alias l??gga till avst??ngning av avst??ngning: Detta skapar en genv??g av "avst??ngning" med namnet "avst??ngning"
+* alias l??gga till? 
+* alias rem signout: Detta tar bort en genv??g som heter "signout" med kommandot "logout"
+* alias rem savescrn: Detta tar bort en genv??g som heter "savescrn" med kommandot "savescreen"
+* alias rem clearscrn: Detta tar bort en genv??g som heter "clearscrn" av kommandot "cls"
+* alias rem lckscrnsvr: Detta tar bort en genv??g som heter "lckscrnsvr" med kommandot "lockscreen"
+-BODY END-
+
+-COLOR CONFIGURATION-
+alias add (alias) (cmd)=>Green
+alias rem (alias)=>Green
+alias add libs useddeps:=>Yellow
+alias add stdz showtdzone:=>Yellow
+alias add turnoff shutdown:=>Yellow
+alias add ? help:=>Yellow
+alias rem signout:=>Yellow
+alias rem savescrn:=>Yellow
+alias rem clearscrn:=>Yellow
+alias rem lckscrnsvr:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+alias command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

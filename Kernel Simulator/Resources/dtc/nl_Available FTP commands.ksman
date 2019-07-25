@@ -1,0 +1,40 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Beschikbare FTP-opdrachten
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the commands that are available in the FTP shell is put.
+-BODY START-
+Administratieve opdrachten:
+
+1. delete (del): u kunt ongewenste bestanden van de server verwijderen
+2. hernoemen (ren): Hernoem de verkeerd benoemde bestanden in hun juiste naam op de server
+3. upload (put): stuur uw lokale bestand naar de server
+
+Normale gebruikersopdrachten:
+
+1. currlocaldir (pwdl): Krijg uw huidige werkende lokale map
+2. currremotedir (pwdr): download uw huidige werkende serverdirectory
+3. changelocaldir (cdl): Verandert uw lokale map in een bestaande map
+4. changeremotedir (cdr): verandert uw externe map in een andere map die op de server aanwezig is
+5. connect: Hiermee kunt u communiceren met de server en met de referenties indien opgegeven
+6. verbreken: wanneer u klaar bent met communiceren met de server, gebruikt u deze opdracht om de server te laten weten dat u vertrekt
+7. download (get): haalt het externe bestand van de server naar uw huidige lokale werkdirectory
+8. listlocal (lsl): geeft de inhoud van uw huidige werkdirectory of opgegeven map weer
+9. listremote (lsr): geeft een overzicht van de inhoud van uw huidige werkserverrichtlijn of opgegeven map
+
+Raadpleeg "usermanual FTP <command>" voor meer informatie over elke opdracht.
+-BODY END-
+
+-COLOR CONFIGURATION-
+delete (del):=>Red
+rename (ren):=>Red
+upload (put):=>Red
+-COLOR CONFIG END-
+
+-SECTIONS-
+Administrative commands:=>SE1
+Normal user commands:=>SE1
+-SECTIONS END-

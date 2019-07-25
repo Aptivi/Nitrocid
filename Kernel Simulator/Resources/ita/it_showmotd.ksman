@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "showmotd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando showmotd
+
+Riepilogo: mostra il tuo messaggio del giorno
+
+Descrizione
+
+Questo comando mostra il tuo messaggio del giorno prima dell'accesso e analizza i segnaposto nel MOTD se trovato.
+
+Utilizzo del comando
+
+* showmotd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showmotd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showmotd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

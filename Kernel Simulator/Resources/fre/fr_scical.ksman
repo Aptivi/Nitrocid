@@ -1,0 +1,47 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "scique"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande scientifique
+
+R??sum??: vous permet d'??valuer des expressions plus avanc??es
+
+La description
+
+Vous pouvez utiliser la calculatrice scientifique pour ??valuer des expressions avanc??es, telles que l???obtention de la racine carr??e de nombres, etc.
+
+Actuellement, cette commande utilise la classe DataTable () pour ??valuer les expressions. 
+
+https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
+
+Nous r??-??crirons plus tard cette calculatrice ou probablement nous fusionnerons en une seule.
+
+Utilisation de la commande
+
+* scical (expression1 | pi | e) (| - | * | / |%) (expression2 | pi | e) ...
+* scical (sqrt | tan | sin | cos) (nombre)
+
+Exemples
+
+* scical (29 * 35) pi: Il calcule d'abord les expressions sur les parenth??ses, ??value "pi", puis l'ajoute au r??sultat des nombres multipli??s, pour un r??sultat de 1018.14
+* scical e pi: Il ajoute une valeur euler et pi ensemble, et le r??sultat est 5,86
+* scical sqrt 729: Il obtient la racine carr??e de 729, et le r??sultat est 27
+-BODY END-
+
+-COLOR CONFIGURATION-
+scical (expression1|pi|e) (+|-|*|/|%) (expression2|pi|e) ...=>Green
+scical (sqrt|tan|sin|cos) (number)=>Green
+scical (29 * 35) + pi:=>Yellow
+scical e + pi:=>Yellow
+scical sqrt 729:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+scical command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "cls"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+cls command
+
+Ringkasan: Anda boleh membersihkan skrin anda dari kekacauan
+
+Penerangan
+
+Jika anda cuba memberi tumpuan kepada satu perkara dan anda tidak boleh melakukannya, atau jika anda mahu maklumat peribadi dicetak oleh arahan yang tersembunyi, anda boleh membersihkan skrin anda daripada kekacauan untuk mendapatkan tumpuan dan mengurangkan keletihan mata.
+
+Ini juga berguna dalam skrip (belum dilaksanakan)
+
+Penggunaan perintah
+
+* cls
+-BODY END-
+
+-COLOR CONFIGURATION-
+cls=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+cls command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

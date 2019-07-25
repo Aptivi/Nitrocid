@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "rd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+rd comando
+
+Resumen: Elimina el directorio del directorio de trabajo actual
+
+Descripci??n
+
+Este comando le permite eliminar un directorio de su directorio de trabajo actual. 
+
+Cuando se implementa el sistema de archivos real, realmente eliminar?? los directorios.
+
+Uso del comando
+
+* rd (directorio)
+
+Ejemplos
+
+* rd boot: elimina el directorio de arranque.
+-BODY END-
+
+-COLOR CONFIGURATION-
+rd (directory)=>Green
+rd boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

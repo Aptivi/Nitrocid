@@ -1,0 +1,707 @@
+(*MAN START*)
+
+-TITLE:C??mo hacer tu propio mod para el kernel.
+-REVISION:0.0.2
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+??Cu??l es el mod para el kernel?
+
+El mod es el archivo de c??digo fuente que se carga en el arranque y puede agregar extensiones al kernel, al shell y todo. 
+
+Esto es ??til si desea agregar sus propias extensiones al kernel, como los controladores de eventos para el kernel.
+
+??Puedo hacer mi propio protector de pantalla?
+
+S??, pero primero echa un vistazo a la p??gina del manual de "gu??a de uso del protector de pantalla manual" para obtener instrucciones sobre c??mo agregar el protector de pantalla.
+
+Modding b??sico
+
+0. ??C??mo hacer tus propios mods en Visual Studio 2017?
+
+1. En la p??gina de inicio, haga clic en Nuevo proyecto
+2. Haga clic en Proyecto vac??o, seleccione VB o C
+3. Haga clic con el bot??n derecho en Referencias en el Explorador de soluciones y presione Agregar referencia ...
+4. Haga clic en el bot??n Examinar ... y busque el archivo ejecutable de Kernel Simulator (el archivo que acaba de ejecutar)
+5. Cuando haga clic en Aceptar en Abrir archivo, ver?? que sus archivos ejecutables de KS se agregan a la lista de referencia.
+6. Aseg??rese de que tenga marcada la casilla de verificaci??n y haga clic en Aceptar.
+7. Haga clic derecho en el proyecto, no en la soluci??n
+8. Cambie el tipo de aplicaci??n a Class Library
+9. En la secci??n Compilar, haga clic en Crear eventos, luego escriba esto en la l??nea de comandos del evento posterior a la construcci??n:
+Si est?? utilizando VB:
+- copiar .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFile.m
+- del / Q *. * (para asegurarse de que no se creen archivos DLL ficticios ya que no usamos DLL para modificaciones)
+- "path \ to \ Kernel Simulator.exe" testMods ModFile.m
+Si estas usando C
+- copiar .. \ .. \ ModFile.cs .. \ .. \ .. \ .. \ ModFileCS.m
+- del / Q *. * (para asegurarse de que no se creen archivos DLL ficticios ya que no usamos DLL para modificaciones)
+- "path \ to \ Kernel Simulator.exe" testMods ModFileCS.m
+10. Aseg??rese de que el evento posterior a la compilaci??n se ejecute solo cuando la compilaci??n sea exitosa
+11. Guarda todo presionando CTRL S
+12. Expanda la secci??n Referencias en el Explorador de soluciones.
+13. Establezca la configuraci??n de Copiar local en Falso ya que tiene el ejecutable para no hacer una copia adicional
+14. Haga clic con el bot??n derecho en el proyecto y vaya a Agregar> Clase
+15. Supongamos que est??s haciendo un mod en VB. 
+16. Haga clic en Agregar, y el c??digo estar?? listo:
+Clase p??blica ModName
+'Tu c??digo aqu??
+Clase final
+17. Entre las l??neas de clase p??blica ... y clase final, h??gale saber a Visual Studio 2017 que va a crear su KS mod escribiendo: Implementa IScript
+18. Si vas a agregar espacios de nombres, estas reglas deben cumplirse:
+1) No importe Kernel_Simulator por s?? mismo. 
+2) Al importar m??dulos / clases como TextWriterColor, est?? escrito as??: Imports Kernel_Simulator.TextWriterColor
+19. Defina las propiedades para la informaci??n del mod colocando debajo de Implementa IScript:
+La propiedad cmd como cadena implementa IScript.Cmd
+La propiedad Def como cadena implementa IScript.Def
+Nombre de propiedad como cadena implementa IScript.Name
+La versi??n de la propiedad como cadena implementa IScript.Version
+20. Haz tu sub mod de inicio llamado StartMod () que implementa el IScript.StartMod, escribiendo:
+Sub StartMod () implementa IScript.StartMod
+Cmd = "" 'Si va a agregar comandos, escriba su comando aqu??.
+Def = "" 'Explique cu??l es su orden y qu?? va a hacer.
+Name = "ModName" 'Reemplace ModName con el nombre de tu mod como quieras, pero DEBE reflejar el prop??sito del mod. 
+Versi??n = "1.0" 'Puede especificar la versi??n de su mod, pero debe seguir las pautas de versi??n y puede encontrarla en Internet. 
+
+'Su c??digo de abajo
+End Sub
+21. Reemplace todos los comentarios de Su c??digo a continuaci??n con su c??digo. 
+22. Haga que su mod deje de llamarse StopMod () que implementa IScript.StopMod, escribiendo:
+Sub StopMod () implementa IScript.StopMod
+'Su c??digo de abajo
+End Sub
+23. 1) Si est?? realizando su comando en su mod, escriba el siguiente c??digo de respuesta:
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+'Su c??digo de abajo
+End Sub
+2) Si est?? realizando su comando que maneja los argumentos, escriba el c??digo de respuesta a continuaci??n:
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+Si (args = "YourArgHere") Entonces 'Reemplace YourArgsHere con su conjunto de argumentos
+'Su c??digo de abajo
+Terminara si
+End Sub
+3) Si est?? realizando su comando que maneja los argumentos subsiguientes, escriba el siguiente c??digo de respuesta:
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+Dim splitArgs As String () = args.Split ({"" c})
+Si splitArgs.Length> 1 entonces
+Si (splitArgs (0) = "Part1" y splitArgs (1) = "Part2") Luego 'Reemplace Part1 con su argumento, y Part2 con su argumento. 
+'Su c??digo de abajo
+M??s
+'Su argumento de discrepancia de c??digo a continuaci??n
+Terminara si
+M??s
+'Tu c??digo que no maneja suficientes argumentos
+Terminara si
+End Sub
+24. 1) Si est?? haciendo su controlador de eventos que maneja lo que sucedi?? en el kernel, escriba el siguiente c??digo de manejo:
+Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
+If (ev = "EventName") Entonces 'Reemplace EventName con eventos que se encuentran en el comando "Eventos temporales de usuario para desarrolladores de mods"
+'Su c??digo de abajo
+Terminara si
+End Sub
+2) Si est?? manejando m??ltiples eventos, escriba el c??digo del identificador a continuaci??n:
+Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
+If (ev = "EventName") Entonces 'Reemplace EventName con eventos que se encuentran en el comando "Eventos temporales de usuario para desarrolladores de mods"
+'Su c??digo de abajo
+ElseIf (ev = "AnotherEvent") Entonces 'Reemplazar AnotherEvent con eventos que se encuentran en el comando "Eventos temporales de usuarios para desarrolladores de mods"
+'Su c??digo de abajo
+Terminara si
+End Sub
+3) ??AVISO IMPORTANTE! 
+25. Puedes hacer tus subs en cualquier parte de la clase, pero si:
+1) est??n en la clase diferente, presione Entrar en clase final y cree una nueva clase p??blica que almacene nuevos subs:
+Clase p??blica de otra clase
+'Sus definiciones a continuaci??n, y por lo tanto sus subs, funciones, interfaces, etc.
+Clase final
+2) est??n intentando reinicializar el mod volviendo a llamar a StartMod (), int??ntelo primero en su entorno de prueba, luego en el entorno de producci??n si eso funcion?? correctamente.
+Y se deben cumplir las siguientes condiciones:
+1) No deber??an hacer un bucle infinito a menos que los est?? haciendo que salgan si se cumplen las condiciones especificadas
+2) No deber??an intentar causar errores con el kernel.
+3) Si usted es un explotador y est?? creando el c??digo de explotaci??n para el kernel, h??galo primero en su entorno de prueba y luego en el entorno de producci??n, luego haga su informe CVE para que podamos obtener atenci??n y solucionarlo r??pidamente.
+4) Si su mod va a extender el kernel, coloque sus c??digos de extensi??n en subs separados
+5) Coloque su sub llamada en uno de los cuatro subs que implementa la interfaz IScript. 
+26. Ejecutar la construcci??n. 
+27. Ejecute el simulador de kernel al que acaba de hacer referencia en su proyecto.
+
+1. Hello World en Kernel Start, y Goodbye World en Kernel Stop
+
+Hello World es el ejemplo de inicio popular para todos los programadores. 
+
+1. Haga clic con el bot??n derecho en el proyecto y vaya a Agregar> Clase
+2. Nombra tu mod, pero deja intacto el .vb. 
+3. Haga clic en Agregar, y el c??digo estar?? listo.
+4. Escriba debajo de (Suponga que su nombre de mod es HelloGuys) Clase p??blica HelloGuys: Implements IScript
+5. Escribe sobre la clase p??blica HelloGuys:
+- Imports Kernel_Simulator.ModParser
+- Imports Kernel_Simulator.TextWriterColor
+6. Deber??a obtener errores que indiquen que se deben crear estos subs.
+7. Haga su controlador de eventos mod de inicio escribiendo:
+La propiedad cmd como cadena implementa IScript.Cmd
+La propiedad Def como cadena implementa IScript.Def
+Nombre de propiedad como cadena implementa IScript.Name
+La versi??n de la propiedad como cadena implementa IScript.Version
+Sub StartMod () implementa IScript.StartMod
+Cmd = ""
+Def = ""
+Nombre = "HelloGuys"
+Versi??n = "1.0"
+Wln ("Hello World", "neutralText")
+End Sub
+8. Haga su controlador de eventos de parada escribiendo:
+Sub StopMod () implementa IScript.StopMod
+Wln ("Goodbye World", "neutralText")
+End Sub
+9. Ya que no estamos implementando comandos ni respondedores de eventos, vamos a dejar estos espacios en blanco:
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+End Sub
+Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
+End Sub
+10. El c??digo deber??a verse as?? en VB:
+
+Imports Kernel_Simulator.ModParser
+Imports Kernel_Simulator.TextWriterColor
+Clase p??blica HelloGuys
+Implementa IScript
+La propiedad cmd como cadena implementa IScript.Cmd
+La propiedad Def como cadena implementa IScript.Def
+Nombre de propiedad como cadena implementa IScript.Name
+La versi??n de la propiedad como cadena implementa IScript.Version
+Sub StartMod () implementa IScript.StartMod
+Cmd = ""
+Def = ""
+Nombre = "HelloGuys"
+Versi??n = "1.0"
+Wln ("Hello World", "neutralText")
+End Sub
+Sub StopMod () implementa IScript.StopMod
+Wln ("Goodbye World", "neutralText")
+End Sub
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+End Sub
+Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
+End Sub
+Clase final
+
+... o en C
+
+using MP = Kernel_Simulator.ModParser;
+using TWC = Kernel_Simulator.TextWriterColor;
+HelloGuys de clase p??blica: MP.IScript
+{
+cadena p??blica Cmd {get; 
+cadena p??blica Def {get; 
+Nombre de la cadena p??blica {get; 
+cadena p??blica versi??n {get; 
+StartMod vac??o p??blico ()
+{
+Cmd = "";
+Def = "";
+Nombre = "HelloGuys";
+Versi??n = "1.0";
+TWC.Wln ("Hello World", "neutralText");
+}
+p??blico void StopMod ()
+{
+TWC.Wln ("Goodbye World", "neutralText");
+}
+public void PerformCmd (cadena args = "")
+{
+}
+public void InitEvents (cadena ev)
+{
+}
+}
+
+11. Ejecutar la construcci??n. 
+12. Ejecute el simulador de kernel al que acaba de hacer referencia en su proyecto.
+13. Si todo va bien, deber??as ver los siguientes mensajes:
+mod: cargando mods ...
+Hola Mundo
+HelloGuys v1.0 comenzado
+
+2. Hola mundo en comando ejecutar
+
+1. Repita los pasos 1 a 5 en el primer ejemplo: Hello World en Kernel Start y Goodbye World en Kernel Stop.
+2. Haga su controlador de eventos mod de inicio escribiendo (asumiendo que su nombre de mod es HelloShell):
+La propiedad cmd como cadena implementa IScript.Cmd
+La propiedad Def como cadena implementa IScript.Def
+Nombre de propiedad como cadena implementa IScript.Name
+La versi??n de la propiedad como cadena implementa IScript.Version
+Sub StartMod () implementa IScript.StartMod
+Cmd = "SayHello"
+Def = ""
+Nombre = "HelloShell"
+Versi??n = "1.0"
+End Sub
+3. Ya que no estamos implementando el controlador de apagado ni los respondedores de eventos, vamos a dejar estos espacios en blanco:
+Sub StopMod () implementa IScript.StopMod
+End Sub
+Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
+End Sub
+4. Haga su controlador de comandos y deje que responda al comando mod SayHello:
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+Wln ("Hello World", "neutralText")
+End Sub
+5. El c??digo deber??a verse as?? en VB:
+
+Imports Kernel_Simulator.ModParser
+Imports Kernel_Simulator.TextWriterColor
+Clase p??blica HelloShell
+Implementa IScript
+La propiedad cmd como cadena implementa IScript.Cmd
+La propiedad Def como cadena implementa IScript.Def
+Nombre de propiedad como cadena implementa IScript.Name
+La versi??n de la propiedad como cadena implementa IScript.Version
+Sub StartMod () implementa IScript.StartMod
+Cmd = "SayHello"
+Def = ""
+Nombre = "HelloShell"
+Versi??n = "1.0"
+End Sub
+Sub StopMod () implementa IScript.StopMod
+End Sub
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+Wln ("Hello World", "neutralText")
+End Sub
+Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
+End Sub
+Clase final
+
+... o en C
+
+using MP = Kernel_Simulator.ModParser;
+using TWC = Kernel_Simulator.TextWriterColor;
+clase p??blica HelloShell: MP.IScript
+{
+cadena p??blica Cmd {get; 
+cadena p??blica Def {get; 
+Nombre de la cadena p??blica {get; 
+cadena p??blica versi??n {get; 
+StartMod vac??o p??blico ()
+{
+Cmd = "SayHello";
+Def = "";
+Nombre = "HelloShell";
+Versi??n = "1.0";
+}
+p??blico void StopMod ()
+{
+}
+public void PerformCmd (cadena args = "")
+{
+TWC.Wln ("Hello World", "neutralText");
+}
+public void InitEvents (cadena ev)
+{
+}
+}
+
+6. Repita los pasos 11-12 en el primer ejemplo: Hello World en Kernel Start y Goodbye World en Kernel Stop.
+
+3. Hola mundo en comando ejecutar con argumentos (solo)
+
+1. Suponiendo que su nombre de mod sea HelloArgs, su argumento que har?? que su comando diga Hello World es HW, y que su comando sea SayHello, repita los pasos 1-3 en el segundo ejemplo: Hello World on command execute
+2. Haga su controlador de comandos y deje que responda al comando mod SayHello:
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+Si (args = "HW") Entonces
+Wln ("Hello World", "neutralText")
+M??s
+Wln ("Hazme saludar ejecutando" "SayHello HW." "", "NeutralText")
+Terminara si
+End Sub
+3. El c??digo deber??a verse as?? en VB:
+
+Imports Kernel_Simulator.ModParser
+Imports Kernel_Simulator.TextWriterColor
+Clase p??blica HelloArgs
+Implementa IScript
+La propiedad cmd como cadena implementa IScript.Cmd
+La propiedad Def como cadena implementa IScript.Def
+Nombre de propiedad como cadena implementa IScript.Name
+La versi??n de la propiedad como cadena implementa IScript.Version
+Sub StartMod () implementa IScript.StartMod
+Cmd = "SayHello"
+Def = ""
+Nombre = "HelloArgs"
+Versi??n = "1.0"
+End Sub
+Sub StopMod () implementa IScript.StopMod
+End Sub
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+Si (args = "HW") Entonces
+Wln ("Hello World", "neutralText")
+M??s
+Wln ("Hazme saludar ejecutando" "SayHello HW." "", "NeutralText")
+Terminara si
+End Sub
+Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
+End Sub
+Clase final
+
+... o en C
+
+using MP = Kernel_Simulator.ModParser;
+using TWC = Kernel_Simulator.TextWriterColor;
+clase p??blica HelloArgs: MP.IScript
+{
+cadena p??blica Cmd {get; 
+cadena p??blica Def {get; 
+Nombre de la cadena p??blica {get; 
+cadena p??blica versi??n {get; 
+StartMod vac??o p??blico ()
+{
+Cmd = "SayHello";
+Def = "";
+Nombre = "HelloArgs";
+Versi??n = "1.0";
+}
+p??blico void StopMod ()
+{
+}
+public void PerformCmd (cadena args = "")
+{
+if (args == "HW")
+{
+TWC.Wln ("Hello World", "neutralText");
+}
+m??s
+{
+TWC.Wln ("Hazme saludar ejecutando \" SayHello HW. \ "", "NeutralText");
+}
+}
+public void InitEvents (cadena ev)
+{
+}
+}
+
+4. Repita el ??ltimo paso en el segundo ejemplo: Hello World on command execute
+
+4. Hello World on command se ejecuta con m??ltiples argumentos.
+
+1. Suponiendo que su nombre de mod sea HelloArgs, su argumento que har?? que su comando diga Hello World es Say Hello, y que su comando sea WhatDoISay, repita los pasos 1-3 en el segundo ejemplo: Hello World on command execute
+2. Haga su controlador de comandos y deje que responda al comando mod WhatDoISay:
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+Dim splitArgs As String () = args.Split ({"" c})
+Dim ArgCount como entero = 1
+Si splitArgs.Length> 1 entonces
+Si (splitArgs (0) = "Say" y splitArgs (1) = "Hello") Entonces
+Wln ("Hello World", "neutralText")
+M??s
+Wln ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
+Terminara si
+M??s
+Wln ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
+Terminara si
+Para cada argumento como cadena en splitArgs
+Wln ("Argumento {0}: {1}", "texto neutral", ArgCount, splitArgs (ArgCount - 1))
+ArgCount = 1
+Siguiente
+End Sub
+3. El c??digo deber??a verse as?? en VB:
+
+Imports Kernel_Simulator.ModParser
+Imports Kernel_Simulator.TextWriterColor
+Clase p??blica HelloArgs
+Implementa IScript
+La propiedad cmd como cadena implementa IScript.Cmd
+La propiedad Def como cadena implementa IScript.Def
+Nombre de propiedad como cadena implementa IScript.Name
+La versi??n de la propiedad como cadena implementa IScript.Version
+Sub StartMod () implementa IScript.StartMod
+Cmd = "WhatDoISay"
+Def = ""
+Nombre = "HelloArgs"
+Versi??n = "1.0"
+End Sub
+Sub StopMod () implementa IScript.StopMod
+End Sub
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+Dim splitArgs As String () = args.Split ({"" c})
+Dim ArgCount como entero = 1
+Si splitArgs.Length> 1 entonces
+Si (splitArgs (0) = "Say" y splitArgs (1) = "Hello") Entonces
+Wln ("Hello World", "neutralText")
+M??s
+Wln ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
+Terminara si
+M??s
+Wln ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
+Terminara si
+Para cada argumento como cadena en splitArgs
+Wln ("Argumento {0}: {1}", "texto neutral", ArgCount, splitArgs (ArgCount - 1))
+ArgCount = 1
+Siguiente
+End Sub
+Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
+End Sub
+Clase final
+
+... o en C
+
+using MP = Kernel_Simulator.ModParser;
+using TWC = Kernel_Simulator.TextWriterColor;
+clase p??blica HelloArgs: MP.IScript
+{
+cadena p??blica Cmd {get; 
+cadena p??blica Def {get; 
+Nombre de la cadena p??blica {get; 
+cadena p??blica versi??n {get; 
+StartMod vac??o p??blico ()
+{
+Cmd = "WhatDoISay";
+Def = "";
+Nombre = "HelloArgs";
+Versi??n = "1.0";
+}
+p??blico void StopMod ()
+{
+}
+public void PerformCmd (cadena args = "")
+{
+string [] splitArgs = args.Split (new [] {''});
+int ArgCount = 1;
+if (splitArgs.Length> 1)
+{
+if (splitArgs [0] == "Say"
+{
+TWC.Wln ("Hello World", "neutralText");
+}
+m??s
+{
+TWC.Wln ("Hazme saludar ejecutando \" WhatDoISay Say Hello. \ "", "NeutralText");
+}
+}
+m??s
+{
+TWC.Wln ("Hazme saludar ejecutando \" WhatDoISay Say Hello. \ "", "NeutralText");
+}
+foreach (cadena arg en splitArgs)
+{
+TWC.Wln ("Argumento {0}: {1}", "texto neutral", ArgCount, splitArgs [ArgCount - 1]);
+ArgCount = 1;
+}
+}
+public void InitEvents (cadena ev)
+{
+}
+}
+
+4. Repita el ??ltimo paso en el segundo ejemplo: Hello World on command execute
+
+5. Pruebas de velocidad de red
+
+1. Suponiendo que su nombre de mod sea InternetSpeed, y que su comando sea getnetspeed, repita los pasos 1-3 en el segundo ejemplo: Hello World on command execute
+2. Coloque estos espacios de nombres sobre el archivo:
+- Importaciones System.Net
+- Sistema de importaciones.Linq
+- Importaciones System.IO
+- Sistema de importaciones.
+- Importa Microsoft.VisualBasic.Interaction
+3. Haga su controlador de comando:
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+Velocidades de atenuaci??n As Double () = New Double (4) {}
+Para i como entero = 0 a 4
+Dim jQueryFileSize As Integer = 261
+Cliente Dim como nuevo cliente web ()
+Dim startTime As DateTime = DateTime.Now
+client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ ("USERPROFILE") "\ jQuery.js")
+Dim endTime As DateTime = DateTime.Now
+Velocidades (i) = Round ((jQueryFileSize / (endTime - startTime) .TotalSeconds))
+Siguiente
+File.Delete (Environ ("USERPROFILE") "\ jQuery.js")
+Wln ("Velocidad de descarga: {0} KB / s", "neutralText", speeds.Average ())
+End Sub
+4. El c??digo deber??a verse as?? en VB:
+
+Importaciones System.Net
+Sistema de importaciones.
+Importaciones System.IO
+Sistema de importaciones.
+Importa Microsoft.VisualBasic.Interaction
+Imports Kernel_Simulator.ModParser
+Imports Kernel_Simulator.TextWriterColor
+Clase p??blica InternetSpeed
+Implementa IScript
+La propiedad cmd como cadena implementa IScript.Cmd
+La propiedad Def como cadena implementa IScript.Def
+Nombre de propiedad como cadena implementa IScript.Name
+La versi??n de la propiedad como cadena implementa IScript.Version
+Sub StartMod () implementa IScript.StartMod
+Cmd = "getnetspeed"
+Def = ""
+Nombre = "InternetSpeed"
+Versi??n = "1.0"
+End Sub
+Sub StopMod () implementa IScript.StopMod
+End Sub
+Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
+Velocidades de atenuaci??n As Double () = New Double (4) {}
+Para i como entero = 0 a 4
+Dim jQueryFileSize As Integer = 261
+Cliente Dim como nuevo cliente web ()
+Dim startTime As Date = Date.Now
+client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ ("USERPROFILE") "\ jQuery.js")
+Dim endTime As Date = Date.Now
+Velocidades (i) = Round (jQueryFileSize / (endTime - startTime) .TotalSeconds)
+Siguiente
+File.Delete (Environ ("USERPROFILE") "\ jQuery.js")
+Wln ("Velocidad de descarga: {0} KB / s", "neutralText", speeds.Average ())
+End Sub
+Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
+End Sub
+Clase final
+
+... o en C
+
+usando el sistema;
+utilizando System.Net;
+utilizando System.Linq;
+utilizando System.IO;
+utilizando M = System.Math;
+using MP = Kernel_Simulator.ModParser;
+using TWC = Kernel_Simulator.TextWriterColor;
+clase p??blica InternetSpeed: MP.IScript
+{
+cadena p??blica Cmd {get; 
+cadena p??blica Def {get; 
+Nombre de la cadena p??blica {get; 
+cadena p??blica versi??n {get; 
+StartMod vac??o p??blico ()
+{
+Cmd = "getnetspeed";
+Def = "";
+Nombre = "InternetSpeed";
+Versi??n = "1.0";
+}
+p??blico void StopMod ()
+{
+}
+public void PerformCmd (cadena args = "")
+{
+doble [] velocidades = nuevo doble [5];
+para (int i = 0; i <= 4; i)
+{
+int jQueryFileSize = 261;
+Cliente de WebClient = nuevo WebClient ();
+DateTime startTime = DateTime.Now;
+client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", System.Environment.GetEnvironmentVariable ("USERPROFILE") "\\ jQuery.js");
+DateTime endTime = DateTime.Now;
+velocidades [i] = M.Round (jQueryFileSize / (endTime - startTime) .TotalSeconds);
+}
+File.Delete (System.Environment.GetEnvironmentVariable ("USERPROFILE") "\\ jQuery.js");
+TWC.Wln ("Velocidad de descarga: {0} KB / s", "neutralText", speeds.Average ());
+}
+public void InitEvents (cadena ev)
+{
+}
+}
+
+5. Repita el ??ltimo paso en el segundo ejemplo: Hello World on command execute
+
+M??s ejemplos
+
+Si desea ver m??s ejemplos, si??ntase libre de revisarlos en el repositorio KSModExamples en GitHub (no disponible todav??a).
+
+Fuentes:
+
+1. https://www.aspsnippets.com/Articles/Check-Internet-Connection-Download-Speed-using-C-and-VBNet-in-ASPNet.aspx
+-BODY END-
+
+-COLOR CONFIGURATION-
+mod=>Green
+New Project=>Cyan
+Empty Project=>Cyan
+References=>Cyan
+Solution Explorer=>DarkGreen
+Add Reference...=>Cyan
+Browse...=>Cyan
+Kernel Simulator=>DarkGreen
+OK=>Cyan
+Open File=>DarkGreen
+KS=>DarkGreen
+OK.=>Cyan
+checked=>Red
+project,=>Green
+solution=>Red
+Class Library=>Cyan
+Compile=>DarkGreen
+Build Events,=>Cyan
+Post-build=>DarkGreen
+copy ..\..\ModFile.vb ..\..\..\..\ModFile.m=>Cyan
+del /Q *.*=>Cyan
+"path\to\Kernel Simulator.exe" testMods ModFile.m=>Cyan
+only=>Red
+CTRL+S=>Cyan
+Copy Local=>Cyan
+False=>Red
+Add=>Cyan
+mod,=>Green
+should=>Red
+Public=>Cyan
+ModName=>DarkGreen
+End=>Cyan
+Class...=>Cyan
+Visual Studio 2017=>Magenta
+Implements=>Cyan
+IScript=>DarkGreen
+Kernel_Simulator=>Cyan
+TextWriterColor=>Green
+Imports=>Cyan
+Kernel_Simulator.TextWriterColor=>DarkGreen
+IScript:=>DarkGreen
+Property As String=>Cyan
+Cmd Def Name Version=>DarkGreen
+IScript.Cmd IScript.Def IScript.Name IScript.Version=>DarkGreen
+StartMod() IScript.StartMod=>DarkGreen
+"" "ModName" "1.0"=>DarkGreen
+Sub=>Cyan
+StopMod() IScript.StopMod=>DarkGreen
+PerformCmd (ByVal String) IScript.PerformCmd=>DarkGreen
+If (args "YourArgHere") Then=>DarkGreen
+Dim String() .Split({" "c})=>Cyan
+splitArgs.Length 1=>DarkGreen
+(splitArgs(0) "Part1" And splitArgs(1) "Part2")=>DarkGreen
+Else=>Red
+(ev "EventName") IScript.InitEvents=>DarkGreen
+ElseIf=>Red
+"AnotherEvent")=>DarkGreen
+IMPORTANT NOTICE! Never=>Red
+subs=>Green
+AnotherClass=>DarkGreen
+Hello World=>Green
+HelloGuys) HelloGuys: HelloGuys=>DarkGreen
+Kernel_Simulator.ModParser=>DarkGreen
+errors=>Red
+"HelloGuys"=>DarkGreen
+"Hello World", "neutralText"=>DarkGreen
+"Goodbye World",=>DarkGreen
+mod: Loading mods...=>Green
+v1.0 started=>Green
+"SayHello" "HelloShell" HelloShell):=>DarkGreen
+"HW")=>DarkGreen
+"Say" "Hello"=>DarkGreen
+"WhatDoISay" "HelloArgs"=>DarkGreen
+"Argument {0}: {1}", "neutralText", ArgCount, splitArgs(ArgCount - 1)=>DarkGreen
+ArgCount + 1=>DarkGreen
+For Each In=>Cyan
+arg splitArgs=>DarkGreen
+Next=>Cyan
+System.Net System.Linq System.IO System.Math Microsoft.VisualBasic.Interaction=>DarkGreen
+"http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ("USERPROFILE") "\jQuery.js"=>DarkGreen
+"Download speed: {0}KB/s", speeds.Average()=>DarkGreen
+"getnetspeed" "InternetSpeed" InternetSpeed InternetSpeed, getnetspeed,=>DarkGreen
+KSModExamples GitHub=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the mod for the kernel?=>SE1
+Can I make my own screensaver?=>SE1
+Basic modding=>SE1
+0. How to make your own mods on Visual Studio 2017?=>SE2
+1. Hello World on Kernel Start, and Goodbye World on Kernel Stop=>SE2
+2. Hello World on command execute=>SE2
+3. Hello World on command execute with arguments (single)=>SE2
+4. Hello World on command execute with multiple arguments=>SE2
+5. Network Speed Testing=>SE2
+More examples=>SE1
+Sources:=>SE1
+-SECTIONS END-

@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Comando shell "chpwd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando chpwd
+
+Riepilogo: ?? possibile modificare la password o la password di qualcun altro
+
+Descrizione
+
+Se ?? necessario modificare la password per il proprio account o per l'account di qualcun altro, ?? possibile utilizzare questo comando per modificare la password o la password di qualcun altro.
+
+Ci?? ?? utile se pensi che il tuo account o l'account di qualcun altro abbia una password errata o si trovi nell'elenco delle password facile che si trova online.
+
+Questo comando richiede di specificare la password o la password di qualcun altro prima di scrivere la nuova password.
+
+Comando di utilizzo
+
+* chpwd (Username) (UserPass) (newPass) (conferma)
+
+Esempi
+
+* chpwd joe easy1234 p4ssw0rd p4ssw0rd: Cambia la password di joe in p4ssw0rd da easy1234
+-BODY END-
+
+-COLOR CONFIGURATION-
+chpwd (Username) (UserPass) (newPass) (confirm)=>Green
+chpwd joe easy1234 p4ssw0rd p4ssw0rd:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chpwd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

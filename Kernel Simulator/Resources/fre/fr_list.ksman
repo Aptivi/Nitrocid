@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "liste"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande de liste
+
+R??sum??: vous pouvez r??pertorier le contenu du r??pertoire en cours ou du dossier sp??cifi??.
+
+La description
+
+Si vous ne savez pas ce qu'il y a dans le r??pertoire ou dans le r??pertoire en cours, vous pouvez utiliser cette commande pour r??pertorier le contenu des dossiers de mani??re color??e.
+
+Utilisation de la commande
+
+* liste
+* liste [r??pertoire]
+
+Exemples
+
+* list: Cette commande liste le contenu actuel du r??pertoire de travail
+* list ..: Cette commande r??pertorie le contenu du dossier parent du r??pertoire de travail en cours.
+* list boot: Cette commande r??pertorie le dossier "boot" du r??pertoire de travail actuel, en supposant que le r??pertoire de travail est /
+-BODY END-
+
+-COLOR CONFIGURATION-
+list=>Green
+list [directory]=>Green
+list:=>Yellow
+list ..:=>Yellow
+list boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+list command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

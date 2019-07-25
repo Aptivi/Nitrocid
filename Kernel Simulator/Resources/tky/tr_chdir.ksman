@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "chdir"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+chdir komutu
+
+??zet: Mevcut ??al????ma dizininizi ba??ka bir dizine de??i??tirebilirsiniz
+
+A????klama
+
+Listeleme komutlar??n?? uygulamak, dosyalar?? kald??rmak veya ba??ka bir dizinde dizin olu??turmak i??in ??al????ma dizininizi ba??ka bir dizine de??i??tirebilirsiniz.
+
+Komut kullan??m??
+
+* chdir (dizin)
+* chdir ..
+
+??rnekler
+
+* chdir boot: ??al????ma dizininizi / boot olarak de??i??tirir.
+* chdir ..: Bir ??nceki ??al????ma dizinine geri d??ner
+-BODY END-
+
+-COLOR CONFIGURATION-
+chdir <directory>=>Green
+chdir ..=>Green
+chdir boot:=>Yellow
+chdir ..:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chdir command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

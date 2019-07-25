@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "hwprobe"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+hwprobe-kommando
+
+Sammanfattning: Du kan f?? din k??rna att uppt??cka h??rdvarukonfigurationer n??r k??rnan inte gjorde det vid start
+
+Beskrivning
+
+Du kan anv??nda det h??r kommandot f??r att f?? k??rnan att uppt??cka h??rdvara och dess konfigurationsinst??llningar som BIOS, GPU, RAM, HDD och CPU. 
+
+Kommandobruk
+
+* hwprobe
+-BODY END-
+
+-COLOR CONFIGURATION-
+hwprobe=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+hwprobe command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

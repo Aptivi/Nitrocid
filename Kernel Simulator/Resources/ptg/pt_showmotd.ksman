@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando shell "showmotd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando showmotd
+
+Resumo: mostra sua mensagem do dia
+
+Descri????o
+
+Este comando mostra sua mensagem do dia antes do login e analisa os espa??os reservados no MOTD, se encontrados.
+
+Uso de comando
+
+* showmotd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showmotd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showmotd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

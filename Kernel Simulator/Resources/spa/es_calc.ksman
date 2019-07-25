@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "calc"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando de calc
+
+Resumen: puedes calcular expresiones
+
+Descripci??n
+
+Si necesita ayuda sobre c??mo calcular expresiones al multiplicar y dividir n??meros grandes, o si necesita calcular expresiones m??s r??pido, este comando es para usted.
+
+Utiliza la Unidad Central de Procesamiento (CPU) para procesar y evaluar expresiones, y lo imprime en la pantalla cuando termina. 
+
+Determina autom??ticamente si es Integer o Double al mirar las expresiones para decimales, y si uno de los n??meros tiene un punto decimal, cambia la salida de la expresi??n a Double, de lo contrario, ser?? Integer.
+
+Si intenta superar el desbordamiento mientras no haya puntos decimales en su expresi??n, se producir?? el error de desbordamiento de enteros. 
+
+Tambi??n puede agregar par??ntesis para que la expresi??n que est?? dentro de ella sea la prioridad m??s alta, ya que se calcula en forma de PEMDAS: Par??ntesis, Exponentes, Multiplicaci??n, Divisi??n, Suma, Resta.
+
+Uso del comando
+
+* calc (n??mero) (| - | * | / |%) (n??mero) ...
+* calc ((n??mero) (| - | * | / |%) (n??mero) ...) (| - | * | / |%) (n??mero) ...
+
+Ejemplos
+
+* calc 32 * 2048: esto multiplicar?? 32 por 2048, y el resultado es 65536
+* calc (128.50 - 42.25) / 2: Esto evaluar?? las expresiones que est??n en los par??ntesis, luego divide el resultado por 2, y el resultado es 43.13
+* calc 128.50 - 42.25 / 2: Sin embargo, si prob?? el ejemplo anterior sin los par??ntesis, 128.50 - 42.25 ya no es la m??xima prioridad, y el resultado es 107.38
+* calc ((48.22 / 3.88) * (68.88 95.22)) 9 - .41: Esto evaluar?? esta expresi??n, y el resultado es 2048
+* calc 3 * 5 * 5 * 3: esto multiplicar?? 3 por 5 en la primera parte, y multiplicar?? 5 por 3 en la segunda parte, luego los multiplica, y el resultado es 225
+* calc (1024 * 1024 * 1024) * 2.0: Esto multiplicar?? 1024 por 1024 por 1024, luego lo multiplica por 2 usando el procesador de punto flotante, y el resultado es 2147483648.
+-BODY END-
+
+-COLOR CONFIGURATION-
+calc (number) (+|-|*|/|%) (number) ...=>Green
+calc ((number) (+|-|*|/|%) (number) ...) (+|-|*|/|%) (number) ...=>Green
+calc 32 * 2048:=>Yellow
+calc (128.50 - 42.25) / 2:=>Yellow
+calc 128.50 - 42.25 / 2:=>Yellow
+calc ((48.22 / 3.88) * (68.88 + 95.22)) + 9 - .41:=>Yellow
+calc 3*5 * 5*3:=>Yellow
+calc (1024*1024*1024) * 2.0:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+calc command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "lsnettree"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando de lsnettree
+
+Resumen: puede enumerar los equipos que est??n en l??nea y sus direcciones IP en dominios o grupos de trabajo, en forma de ??rbol
+
+Descripci??n
+
+Si desea obtener todas las computadoras que se unieron al grupo de trabajo o al dominio en forma de ??rbol, puede usar este comando, pero primero debe solicitar permiso si se encuentra en lugares p??blicos como oficinas, escuelas, caf??s, 
+
+Este comando tambi??n es ??til si est?? listando computadoras en su red peque??a o en su casa que tiene varias computadoras ejecutando Windows, sin importar la versi??n de Windows que se est?? ejecutando, en forma de ??rbol.
+
+Uso del comando
+
+* lsnettree
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnettree=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnettree command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

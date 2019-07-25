@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell Befehl "lsnettree"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl lsnettree
+
+Zusammenfassung: Sie k??nnen Computer, die online sind, und ihre IP-Adressen in Dom??nen oder Arbeitsgruppen in der Strukturform auflisten
+
+Beschreibung
+
+Wenn Sie alle Computer, die der Arbeitsgruppe oder der Dom??ne beigetreten sind, in der Baumstruktur anzeigen m??chten, k??nnen Sie diesen Befehl verwenden. Sie m??ssen jedoch zuerst um Erlaubnis fragen, wenn Sie sich an ??ffentlichen Orten wie B??ros, Schulen, Caf??s, 
+
+Dieser Befehl ist auch n??tzlich, wenn Sie Computer in Ihrem kleinen Netzwerk oder in Ihrem Haus, auf denen mehrere Computer mit Windows ausgef??hrt werden, unabh??ngig von der Version von Windows in der Baumstruktur auflisten.
+
+Befehlsverwendung
+
+* lsnettree
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnettree=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnettree command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

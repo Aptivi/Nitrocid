@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "savescreen"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+savescreen-komento
+
+Yhteenveto: K??ynnist???? nykyisen n??yt??ns????st??j??n
+
+Kuvaus
+
+T??m?? komento voi suojata nestekiden??yt??n palamista ja n??ytt???? nykyisen n??yt??ns????st??j??n, jonka olet asettanut sin?? tai ytimen. 
+
+Komennon k??ytt??
+
+* Savescreen
+-BODY END-
+
+-COLOR CONFIGURATION-
+savescreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+savescreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

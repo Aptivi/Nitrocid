@@ -1,0 +1,20 @@
+(*MAN START*)
+
+-TITLE:Halaman manual yang tersedia
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Semak:
+
+1. Pengenalan kepada Kernel: Halaman ini menunjukkan pengenalan mengenai kernel, bagaimana Unix dan Linux dibina dan diperbaiki selama bertahun-tahun pembangunan, dan penerangan ringkas mengenai kernel kami, Eofla Kernel, yang akan mendapat nama.
+2. Perintah yang ada: Halaman ini menunjukkan arahan yang ada dalam kernel. 
+3. Sejarah Simulator Kernel: Anda dapat melihat apa yang berlaku antara perkembangan versi Simulator Kernel, dan perubahan tepat antara versi yang dibuat. 
+4. Panduan pemodelan: Anda dapat melihat cara membuat mod anda sendiri, dan terdapat contoh.
+5. Panduan pemodelan screensaver: Anda boleh melihat cara membuat screensaver anda sendiri, dan ada contohnya.
+6. Perintah FTP yang ada: Halaman ini memperlihatkan arahan yang tersedia di dalam shell FTP. 
+-BODY END-
+
+-SECTIONS-
+Check out:=>SE1
+-SECTIONS END-

@@ -1,0 +1,51 @@
+﻿| --------------- + -> Allgemein <- + --------------- |
+
+- Wenn Sie einen Beitrag zum Kernel-Simulator leisten möchten, müssen die folgenden Bedingungen erfüllt sein:
+
+1. Wenn Sie den Kernel ändern / neu codieren möchten, stellen Sie sicher, dass Sie die Änderungen korrekt und sorgfältig schreiben und die Kernelfunktionen nicht beschädigen.
+2. Wenn Sie überall einige gewünschte Funktionen hinzufügen / ändern / entfernen / neu codieren möchten, schreiben Sie die Änderungen sorgfältig.
+3. Wie alle anderen Entwickler, die einen Beitrag zum Kernel-Simulator leisten möchten, müssen die Änderungen getestet werden. Wir wollen die Ergebnisse nicht, nur testen und sagen, dass es getestet wird. Wenn Sie die Ergebnisse bereitstellen möchten, akzeptieren wir Ihre Pull-Anfrage dennoch.
+4. Wenn Sie es nicht getestet haben und uns eine Pull-Anfrage gesendet haben, werden wir den Code testen und wenn wir feststellen, dass:
+
+   - Ihr Code funktioniert, wir akzeptieren Ihre Pull-Anfrage
+   - Ihr Code funktioniert nicht, wir schließen Ihre Pull-Anfrage
+
+5. Wenn Sie es noch nicht getestet haben und bereit sind, uns den Code zu senden, testen Sie ihn zuerst.
+6. Wenn Sie die Dokumentation oder andere Teile als die Codierung ändern oder Teile der / neuen Dokumentation hinzufügen möchten, wenden Sie sich an. Sie können uns benachrichtigen.
+
+- Portierung auf andere Betriebssysteme oder Programmiersprachen als Assembly (ASM, NASM, ...) oder C / C ++:
+
+Möglicherweise müssen Sie den Kernel-Simulator auf ein anderes Betriebssystem wie Linux, macOS usw. portieren. Und auch in eine andere Programmiersprache als C / C ++ oder Assembler.
+
+Die Portierung nach ASM / C / C ++ liegt bei uns, dem Eigentümer. Alle Ports zu ihnen vor unserer offiziellen bootfähigen Kernel ASM / C / C ++ - Version werden von uns nicht unterstützt, und alle diesbezüglichen Probleme werden sofort abgelehnt.
+
+- Wenn Sie den Kernel-Simulator unter Visual Basic auf Linux (getestet) oder macOS (ungetestet) portieren möchten:
+
+1. Installieren Sie die Pakete Mono, MonoDevelop und libmono-microsoft-visualbasic10.0-cil. Sie können herausfinden, wie auf ihrer offiziellen Website.
+2. Laden Sie den KS-Quellcode herunter
+3. Öffnen Sie die Lösung mit MonoDevelop und führen Sie das Programm aus.
+4. Melden Sie alle Probleme im Abschnitt Probleme in unserem KS-Repo.
+
+- Wenn Sie den Kernel-Simulator auf Sun OS, BSDs, Solaris usw. portieren möchten (nicht getestet):
+
+Dieser Abschnitt befindet sich im Aufbau. Wenn Sie Anweisungen haben, tragen Sie bitte bei.
+
+Hinweis: Wenn Sie den Kernel-Simulator auf eine andere Programmiersprache portieren möchten, die nicht mit Assembly oder C / C ++ identisch ist, können Sie dies tun.
+Hinweis: Die Portierung des Kernels innerhalb des Kernelsimulators auf den Real Computer / die VirtualBox mithilfe von Assembly und C / C ++ liegt bei uns.
+Hinweis: Die Portierung des Kernels im Simulator auf Android / iOS ist in Ordnung. Sie können entsprechende Änderungen vornehmen.
+
+| --------------- + -> Andere Beiträge, Probleme usw. <- + --------------- |
+
+- Melden von Problemen
+
+Folgen Sie dem Entwurfsmuster für Fehlerberichte und erklären Sie so viel wie möglich. Weniger spezifische Erklärungen und das Befolgen eines falschen Entwurfsmusters können Ihr Problem lösen. Screenshots sind optional.
+
+| --------------- + -> Aufgabenliste zum Hinzufügen in den Kernel-Simulator <- + --------------- |
+
+Wenn einige der Ideen verschwunden sind, wird dies entweder getan oder abgebrochen. (Dieser Abschnitt wird in Version 0.0.7 gelöscht und in VS2019 in die Aufgabenliste verschoben.)
+
+1. Interaktiver Hostsystem-Dateimanager (in der bootfähigen Version geplant)
+2. Verschieben Sie jede einzelne Dokumentation in das Wiki im Repository, einschließlich der Handbuchseiten, und lassen Sie die Befehle der Handbuchseite eine Website in das Wiki öffnen (Geplant in 0.0.7).
+3. Permanente Liste von Benutzernamen und Passwörtern (Passwörter in verschlüsselter Form - in Beta)
+
+(Wenn Sie Ideen haben, bearbeiten Sie diesen Abschnitt, indem Sie Ihre Idee einfügen.)

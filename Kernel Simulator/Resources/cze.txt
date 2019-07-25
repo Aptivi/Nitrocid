@@ -348,3 +348,20 @@ Získá verze SSE
 Neplatný jazyk
 Změní jazyk
 Nemusíte mít v systému nainstalován libcpanel-json-xs-perl. Informace o instalaci získáte od správce balíčků. Pro systémy Debian (a deriváty) můžete v emulátoru terminálu spustit "sudo apt install libcpanel-json-xs-perl". Další podrobnosti o chybě:
+----------------------------- Panikový výpis jádra ------------------------------
+>> Informace o panice <<
+> Popis: {0}
+> Typ chyby: {1}
+> Datum a čas: {2}
+>> Informace o výjimkách <<
+> Výjimka: {0}
+> Popis: {1}
+> HRESULT: {2}
+> Zdroj: {3}
+> Sledování zásobníku <
+>> Vnitřní výjimka {0} informace <<
+>> Výjimka {0} je hlavní příčinou <<
+>> Žádná výjimka; může to být chyba jádra. <<
+>> Rámečky, soubory, řádky a sloupce <<
+> Rámeček {0}: Soubor: {1} | Řádek: {2} | Sloupec: {3}
+> Při pokusu o získání rámových informací došlo k chybě. {0}: {1}

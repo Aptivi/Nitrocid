@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "sparesk??rm"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+sparcreen-kommando
+
+Sammanfattning: Startar din nuvarande sk??rmsl??ckare
+
+Beskrivning
+
+Detta kommando kan skydda din LCD-sk??rm fr??n inbr??nning och visar dig den aktuella sk??rmsl??ckaren som ??r inst??lld av dig eller av k??rnan. 
+
+Kommandobruk
+
+* sparesk??rm
+-BODY END-
+
+-COLOR CONFIGURATION-
+savescreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+savescreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

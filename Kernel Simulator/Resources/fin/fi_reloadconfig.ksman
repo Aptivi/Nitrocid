@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "reloadconfig"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+reloadconfig-komento
+
+Yhteenveto: Lataa ytimen kokoonpano uudelleen
+
+Kuvaus
+
+T??m?? komento lataa ytimen asetukset uudelleen ja yritt???? s??ilytt???? uudelleenk??ynnistykset ja heijastaa muutokset v??litt??m??sti. 
+
+Komennon k??ytt??
+
+* reloadconfig
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadconfig=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadconfig command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

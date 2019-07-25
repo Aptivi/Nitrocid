@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:P????kaz FTP "connect"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+p??ipojit p????kaz FTP
+
+Shrnut??: P??ipojuje klienta FTP k libovoln??mu platn??mu serveru FTP
+
+Popis
+
+Tento p????kaz mus?? b??t proveden p??ed spu??t??n??m jak??chkoli interaktivn??ch p????kaz?? FTP serveru, jako je download, upload, cdl, cdr atd.
+
+Tento p????kaz otev??e novou relaci pro p??ipojen?? klienta FTP k libovoln??mu serveru FTP, kter?? je ve??ejn?? p????stupn?? a platn??. 
+
+Pou??it?? p????kaz??
+
+* p??ipojit (adresa)
+P????klady
+
+* p??ipojit ftp://ftp.fabrikam.com: P??ipojuje klienta k serveru s n??zvem "ftp.fabrikam.com"
+* connect ftps: //ftp.contoso.com: P??ipojuje klienta pomoc?? SSL k serveru s n??zvem "ftp.contoso.com"
+-BODY END-
+
+-COLOR CONFIGURATION-
+connect (address)=>Green
+connect ftp://ftp.fabrikam.com:=>Yellow
+connect ftps://ftp.contoso.com:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+connect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

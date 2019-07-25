@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "cerrar sesi??n"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando de cierre de sesi??n
+
+Resumen: puede salir de su cuenta.
+
+Descripci??n
+
+Si hay un cambio que requiere el cierre de sesi??n y el inicio de sesi??n para que los cambios surtan efecto, debe cerrar sesi??n y volver a iniciar sesi??n.
+
+Este comando te permite salir de tu cuenta e iniciar sesi??n como otra persona. 
+
+Uso del comando
+
+* cerrar sesi??n
+-BODY END-
+
+-COLOR CONFIGURATION-
+logout=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+logout command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "spegnimento"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando di spegnimento
+
+Riepilogo: arresta il computer
+
+Descrizione
+
+Se hai finito con tutto e non vuoi fare qualcos'altro sul tuo computer, invece di lasciarlo acceso per consumare energia e pagare pi?? soldi al centro elettrico, devi usare questo comando per spegnere il computer e risparmiare energia 
+
+Utilizzo del comando
+
+* spegnimento
+-BODY END-
+
+-COLOR CONFIGURATION-
+shutdown=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+shutdown command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

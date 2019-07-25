@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "changeremotedir" o "cdr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+changeremotedir o cdr comando FTP
+
+Riepilogo: modifica la directory remota
+
+Descrizione
+
+Questo comando consente di modificare la directory remota nel server FTP connesso in un'altra directory esistente nella sottodirectory. 
+
+Comando di utilizzo
+
+* changeremotedir / cdr (directory / ..)
+Esempi
+
+* cdr X11 / GNOME: questo cambier?? la directory remota in X11 / GNOME
+* changelocaldir pub: questo cambier?? la directory remota in pub nella directory di lavoro corrente
+* cdr ..: questo andr?? a una directory padre per la directory di lavoro corrente (torna indietro)
+-BODY END-
+
+-COLOR CONFIGURATION-
+changeremotedir/cdr (directory/..)=>Green
+cdr X11/GNOME:=>Yellow
+changelocaldir pub:=>Yellow
+cdr ..:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+changeremotedir or cdr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

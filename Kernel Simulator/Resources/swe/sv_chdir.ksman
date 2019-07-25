@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:Shell-kommando "chdir"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+chdir-kommando
+
+Sammanfattning: Du kan ??ndra din nuvarande arbetskatalog till en annan katalog
+
+Beskrivning
+
+Du kan ??ndra din arbetskatalog till en annan katalog f??r att k??ra listningskommandon, ta bort filer eller skapa kataloger i en annan katalog.
+
+Kommandobruk
+
+* chdir (katalog)
+* chdir ..
+
+exempel
+
+* chdir boot: Det ??ndrar din arbetskatalog till / boot
+* chdir ..: Det g??r tillbaka till f??reg??ende arbetskatalog
+-BODY END-
+
+-COLOR CONFIGURATION-
+chdir <directory>=>Green
+chdir ..=>Green
+chdir boot:=>Yellow
+chdir ..:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chdir command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

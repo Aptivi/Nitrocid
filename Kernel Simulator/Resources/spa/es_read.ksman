@@ -1,0 +1,35 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "leer"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando de lectura
+
+Resumen: lee el contenido del archivo y lo imprime en la pantalla
+
+Descripci??n
+
+Este comando le permite ver el contenido del archivo en su directorio de trabajo actual. 
+
+Uso del comando
+
+* leer (archivo)
+
+Ejemplos
+
+* leer libuesh: lee el contenido de los archivos de libuesh
+-BODY END-
+
+-COLOR CONFIGURATION-
+read (file)=>Green
+read libuesh:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+read command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

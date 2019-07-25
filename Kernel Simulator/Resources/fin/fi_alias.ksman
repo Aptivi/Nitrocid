@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "alias"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+alias-komento
+
+Yhteenveto: Voit m????ritt???? komennolle vaihtoehtoisen pikakuvakkeen, jos haluat k??ytt???? lyhyempi?? sanoja pitki?? komentoja varten.
+
+Kuvaus
+
+Jotkin t??m??n ytimen komennot ovat pitki??, ja jotkut ihmiset eiv??t kirjoita nopeasti tietokoneisiin. 
+
+Voit my??s k??ytt???? t??t?? komentoa, jos aiot tehd?? skriptej??, jos todellinen tiedostoj??rjestelm?? lis??t????n tulevaisuudessa, tai jos olet kiirehtim??ss?? jotain ja sinulla ei ole aikaa suorittaa pitk???? komentoa.
+
+Voit lis??t?? tai poistaa aliaksen pitk????n komentoon.
+
+Komennon k??ytt??
+
+* alias (alias) (cmd)
+* alias rem (alias)
+
+esimerkit
+
+* alias lis???? libs useddeps: T??m?? luo pikakuvakkeen "useddeps" nimell?? "libs"
+* alias lis???? stdz showtdzone: T??m?? luo pikakuvakkeen "showtdzone" nimell?? "stdz"
+* alias lis???? turnoff shutdown: T??m?? luo pikakuvakkeen "shutdown" nimell?? "turnoff"
+* alias lis??t????n? 
+* alias rem signout: T??m?? poistaa pikakuvakkeen, jonka nimi on "logout" komennolla "logout"
+* alias rem savescrn: T??m?? poistaa pikakuvakkeen, jonka nimi on "savescrn" komennolla "savescreen"
+* alias rem clearscrn: T??m?? poistaa pikakuvakkeen, jonka nimi on "clearscrn" komennolla "cls"
+* alias rem lckscrnsvr: T??m?? poistaa "lckscrnsvr" -komennon komennolla "lockscreen"
+-BODY END-
+
+-COLOR CONFIGURATION-
+alias add (alias) (cmd)=>Green
+alias rem (alias)=>Green
+alias add libs useddeps:=>Yellow
+alias add stdz showtdzone:=>Yellow
+alias add turnoff shutdown:=>Yellow
+alias add ? help:=>Yellow
+alias rem signout:=>Yellow
+alias rem savescrn:=>Yellow
+alias rem clearscrn:=>Yellow
+alias rem lckscrnsvr:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+alias command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

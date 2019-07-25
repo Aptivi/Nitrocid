@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:Comando FTP "rinomina" o "ren"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+rinominare o rinominare il comando FTP
+
+Riepilogo: rinomina la cartella o il file nel server
+
+Descrizione
+
+?? possibile rinominare la cartella o il file nel server quando vengono denominati in modo errato nel server. 
+
+Comando di utilizzo
+
+* rinominare / ren (oldFile) (newFile)
+Esempi
+
+* rinomina shagnhai.png shanghai.png: rinomina il file "shagnhai.png" in "shanghai.png"
+* ren citys Cities: rinomina il file "citys" in "Cities"
+-BODY END-
+
+-COLOR CONFIGURATION-
+rename/ren (oldFile) (newFile)=>Green
+rename shagnhai.png shanghai.png:=>Yellow
+ren citys Cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+rename or ren FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

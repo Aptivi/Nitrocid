@@ -23,7 +23,6 @@ Imports System.Threading
 
 Public Module Screensaver
 
-    'TODO: Screensavers can have their own variables, and the only thing required is the CancelPending variable.
     'Variables
     Public LockMode As Boolean = False
     Public InSaver As Boolean = False

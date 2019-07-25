@@ -1,0 +1,34 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:K??ytett??viss?? olevat ytimen argumentit
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the kernel arguments that are available in the kernel is put.
+-BODY START-
+Miten argumentteja k??ytet????n? 
+
+Ytimen argumentti on vaihtoehto, jonka ytimen tai sen osien toiminta riippuu valitsemastasi vaihtoehdoista. 
+
+Voit suorittaa argumentteja seuraavassa uudelleenk??ynnistyksess?? k??ytt??m??ll?? arginj-komentoa kuoressa. 
+
+Voit tehd?? t??m??n nopeasti kahdella tavalla:
+
+1. Muuttamalla konfigurointiasetusta "Kysy k??ynnistysasiakirjoja" True (Lis??tietoja konfiguraatiosta, k??yt?? "ytimen vakiom????ritystiedostoa")
+2. K??ytt??m??ll?? Kernel Simulator -ohjelmaa promptArgs cmdline-argumentilla (esim. "Kernel Simulator.exe" -kehoteArgs)
+
+Hy??dyllisi?? argumentteja:
+
+1. nohwprobe: Poistaa automaattisen laitteiston testauksen k??ynnistett??ess?? ytimeen
+2. hiljainen: ??l?? anna ytimen sanoa mit????n k??ynnistyksess??
+3. cmdinject: Suorita komentoja automaattisesti, kun olet kirjautunut sis????n. Voit erottaa useita komentoja k??ytt??m??ll?? kaksoispisteit?? v??lily??nteill?? (esim. Cmdinject setthemes Bluespire: arginj debug)
+4. debug: Sallii ytimen diagnostiset viestit virheenkorjauksen sallimiseksi. 
+5. Huolto: Siirtyy tallennustilaan, jota modoja ei ladata, eik?? n??yt??ns????st??ji?? voi ladata.
+6. ohje: antaa vihjeit??, jos et ole varma, mit?? erottaa
+-BODY END-
+
+-SECTIONS-
+How to run arguments? and how do I make the prompt appear?=>SE1
+Useful arguments:=>SE1
+-SECTIONS END-

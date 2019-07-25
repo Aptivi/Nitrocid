@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "shutdown"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+shutdown-komento
+
+Yhteenveto: Sammuttaa tietokoneen
+
+Kuvaus
+
+Jos olet valmis tekem??ll?? kaiken ja et halua tehd?? jotain muuta tietokoneellasi, sen sijaan ett?? j??t??t sen kuluttamaan energiaa ja maksamaan enemm??n rahaa s??hk??keskukselle, sinun on k??ytett??v?? t??t?? komentoa tietokoneen sammuttamiseksi ja virran s????st??miseksi 
+
+Komennon k??ytt??
+
+* sammuttaa
+-BODY END-
+
+-COLOR CONFIGURATION-
+shutdown=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+shutdown command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

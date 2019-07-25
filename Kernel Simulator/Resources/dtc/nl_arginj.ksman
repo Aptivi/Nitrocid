@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Shell-commando "arginj"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+alias commando
+
+Samenvatting: u kunt de argumenten instellen die bij het opnieuw opstarten moeten worden gestart.
+
+Omschrijving
+
+Als u uw kernel opnieuw moet opstarten om de foutopsporing uit te voeren, of als u hardwarematig testen wilt uitschakelen om tijd te besparen tijdens het opstarten, dan is deze opdracht iets voor u. 
+
+U kunt deze opdracht gebruiken als u argumenten moet injecteren terwijl u zich in de kernel bevindt. 
+
+Commando gebruik
+
+* arginj [Argumenten gescheiden door spaties]
+
+Voorbeelden
+
+* arginj debug: Schakel de debug-modus in bij de volgende herstart
+* arginj nohwprobe: Schakel hardware sonderen uit bij de volgende herstart
+* arginj quiet nohwprobe: Schakel kernel-berichten en hardware-analyse uit bij de volgende herstart
+-BODY END-
+
+-COLOR CONFIGURATION-
+arginj [Arguments separated by spaces]=>Green
+arginj debug:=>Yellow
+arginj nohwprobe:=>Yellow
+arginj quiet nohwprobe:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+arginj command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

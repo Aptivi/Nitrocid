@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "lsnettree"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande lsnettree
+
+R??sum??: vous pouvez r??pertorier les ordinateurs en ligne et leurs adresses IP dans des domaines ou des groupes de travail, sous la forme d'arborescence.
+
+La description
+
+Si vous souhaitez obtenir tous les ordinateurs qui ont rejoint le groupe de travail ou le domaine sous la forme d'arborescence, vous pouvez utiliser cette commande, mais vous devez d'abord demander l'autorisation si vous vous trouvez dans des lieux publics tels que bureau, ??cole, caf??, etc. 
+
+Cette commande est ??galement utile si vous r??pertoriez les ordinateurs de votre petit r??seau ou de votre maison comportant plusieurs ordinateurs ex??cutant Windows, quelle que soit la version de Windows en cours d'ex??cution, sous la forme d'arborescence.
+
+Utilisation de la commande
+
+* lsnettree
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnettree=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnettree command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

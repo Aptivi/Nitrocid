@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "setsaver"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande setsaver
+
+R??sum??: d??finit votre ??conomiseur d?????cran par d??faut comme ??tant votre propre ??conomiseur d?????cran ou vos ??conomiseurs int??gr??s.
+
+La description
+
+Vous pouvez d??finir votre ??conomiseur d'??cran par d??faut comme votre propre ??conomiseur d'??cran ?? l'aide du fichier de configuration ou des ??conomiseurs int??gr??s tels que la matrice, la disco et le colorMix.
+
+* matrix: Affiche la matrice de base qui imprime entre 0 et 1 en couleur de texte vert
+* disco: Affiche les lumi??res disco
+* colorMix: change la couleur de fond en couleur al??atoire et imprime un "" pour cr??er un bloc color??, puis se r??p??te.
+
+Utilisation de la commande
+
+* setsaver ((ScreenSaverName) SS.m / matrix / disco / colorMix)
+
+Exemples
+
+* matrice de setsaver
+* setsaver GameOfLifeSS.m
+* setsaver LinesSS.m
+-BODY END-
+
+-COLOR CONFIGURATION-
+setsaver ((ScreenSaverName)SS.m/matrix/disco/colorMix)=>Green
+setsaver matrix=>Yellow
+setsaver GameOfLifeSS.m=>Yellow
+setsaver LinesSS.m=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setsaver command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

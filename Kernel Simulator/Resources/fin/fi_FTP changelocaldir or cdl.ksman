@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:FTP-komento "changelocaldir" tai "cdl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+changelocaldir tai cdl FTP-komento
+
+Yhteenveto: Muuttaa paikallista hakemistoa
+
+Kuvaus
+
+T??m??n komennon avulla voit muuttaa kiintolevyjen paikallista hakemistoa toiseen alihakemistossa olevaan hakemistoon. 
+
+Komennon k??ytt??
+
+* changelocaldir / cdl (hakemisto / ..)
+esimerkit
+
+* changelocaldir C: K??ytt??j??t Omistaja Ty??p??yt??: T??m?? muuttaa paikallisen hakemiston C: K??ytt??j??t Omistaja Ty??p??yt??
+* changelocaldir Stuff: T??m?? muuttaa paikallisen hakemiston Stuffiksi nykyisess?? ty??hakemistossa
+* cdl ..: T??m?? siirtyy nykyisen ty??hakemiston vanhempaan hakemistoon (palaa takaisin)
+-BODY END-
+
+-COLOR CONFIGURATION-
+changelocaldir/cdl (directory/..)=>Green
+changelocaldir C:\Users\Owner\Desktop:=>Yellow
+changelocaldir Stuff:=>Yellow
+cdl ..:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+changelocaldir or cdl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

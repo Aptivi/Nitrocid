@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell commando "unitconv"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+unitconv-opdracht
+
+Samenvatting: converteert eenheden naar een andere eenheid
+
+Omschrijving
+
+U kunt uw broneenheden converteren naar een andere eenheid zonder het internet te hoeven gebruiken.
+
+Als u in plaats daarvan de valuta moet converteren, gebruikt u de opdracht "currency".
+
+De broneenheid moet worden ondersteund door de bestemmingseenheid (bijvoorbeeld km tot cm) om de door u opgegeven waarde te converteren, anders kan deze niet worden geconverteerd. 
+
+Commando gebruik
+
+* unitconv (sourceUnit) (bestemming) (waarde)
+
+Voorbeelden
+
+* unitconv GB B 50: converteert de bestandsgrootte van 50 GB naar kilobytes
+* unitconv Celsius Fahrenheit 36: converteert 36C graden naar Fahrenheit
+* unitconv Inches Feet 19: converteert 19 inch naar voeten
+-BODY END-
+
+-COLOR CONFIGURATION-
+unitconv (sourceUnit) (destination) (value)=>Green
+unitconv GB B 50:=>Yellow
+unitconv Celsius Fahrenheit 36:=>Yellow
+unitconv Inches Feet 19:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+unitconv command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -1,0 +1,37 @@
+(*MAN START*)
+
+-TITLE:Comando Shell "md"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando md
+
+Riepilogo: puoi creare la tua directory
+
+Descrizione
+
+Se si desidera organizzare i file in una cartella, ?? necessario creare una cartella.
+
+Questo comando consente di creare una cartella nella directory di lavoro corrente.
+
+Utilizzo del comando
+
+* md (nome cartella)
+
+Esempi
+
+* md Password: questo comando crea una cartella denominata "Password" nella directory di lavoro corrente
+-BODY END-
+
+-COLOR CONFIGURATION-
+md (folderName)=>Green
+md Passwords:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+md command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

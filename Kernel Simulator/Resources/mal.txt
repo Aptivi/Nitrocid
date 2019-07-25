@@ -348,3 +348,20 @@ Mendapatkan versi SSE
 Bahasa tidak sah
 Perubahan bahasa
 Anda mungkin tidak mempunyai libcpanel-json-xs-perl yang dipasang pada sistem anda. Rujuk kepada pengurus pakej anda untuk pemasangan. Untuk sistem Debian (dan derivatif), anda mungkin mahu menjalankan "sudo apt install libcpanel-json-xs-perl" dalam emulator terminal. Maklumat lanjut tentang ralat:
+----------------------------- Dump panik kernel ------------------------------
+>> Maklumat panik <<
+> Penerangan: {0}
+> Jenis ralat: {1}
+> Tarikh dan Masa: {2}
+>> Maklumat pengecualian <<
+> Pengecualian: {0}
+> Penerangan: {1}
+> HRESULT: {2}
+> Sumber: {3}
+> Jejak tindanan <
+>> Pengecualian dalaman {0} maklumat <<
+>> Pengecualian {0} adalah penyebab utama <<
+>> Tiada pengecualian; mungkin ralat kernel. <<
+>> Bingkai, fail, baris, dan lajur <<
+> Bingkai {0}: Fail: {1} | Baris: {2} | Lajur: {3}
+> Terdapat ralat apabila cuba mendapatkan maklumat bingkai. {0}: {1}

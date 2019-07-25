@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "lsnettree"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+lsnettree-komento
+
+Yhteenveto: Voit luetella verkossa olevat tietokoneet ja niiden IP-osoitteet verkkotunnuksissa tai ty??ryhmiss??
+
+Kuvaus
+
+Jos haluat saada kaikki ty??ryhm????n tai verkkotunnukseen liittyneet tietokoneet puulomakkeessa, voit k??ytt???? t??t?? komentoa, mutta sinun t??ytyy ensin pyyt???? lupaa, jos olet julkisilla paikoilla, kuten toimistossa, koulussa, kahvilassa, 
+
+T??m?? komento on my??s hy??dyllinen, jos luet pieni?? verkkoja tai talosi tietokoneita, joissa on useita tietokoneita, joissa on Windows, riippumatta Windows-versiosta, puun muodossa.
+
+Komennon k??ytt??
+
+* lsnettree
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnettree=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnettree command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

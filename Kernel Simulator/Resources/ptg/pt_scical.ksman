@@ -1,0 +1,47 @@
+(*MAN START*)
+
+-TITLE:Comando shell "scical"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando scical
+
+Resumo: permite avaliar express??es mais avan??adas
+
+Descri????o
+
+Voc?? pode usar a calculadora cient??fica para avaliar express??es avan??adas, como obter a raiz quadrada de n??meros etc.
+
+Atualmente, esse comando usa a classe DataTable () para avaliar express??es. 
+
+https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
+
+Mais tarde, reescreveremos essa calculadora ou, provavelmente, faremos a fus??o em uma.
+
+Uso de comando
+
+* scical (express??o1 | pi | e) (| - | * | / |%) (express??o2 | pi | e) ...
+* scical (sqrt | tan | sin | cos) (n??mero)
+
+Exemplos
+
+* scical (29 * 35) pi: Calcula as express??es nos par??nteses primeiro, avalia "pi", depois adiciona-o com o resultado dos n??meros multiplicados, e o resultado ?? 1018.14
+* scical e pi: Adiciona um valor euler e pi juntos, e o resultado ?? 5.86
+* sqrt scical 729: Obt??m a raiz quadrada de 729, e o resultado ?? 27
+-BODY END-
+
+-COLOR CONFIGURATION-
+scical (expression1|pi|e) (+|-|*|/|%) (expression2|pi|e) ...=>Green
+scical (sqrt|tan|sin|cos) (number)=>Green
+scical (29 * 35) + pi:=>Yellow
+scical e + pi:=>Yellow
+scical sqrt 729:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+scical command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

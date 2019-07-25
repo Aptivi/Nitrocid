@@ -1,0 +1,35 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "baca"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+baca perintah
+
+Ringkasan: Membaca kandungan fail dan mencetaknya ke skrin
+
+Penerangan
+
+Perintah ini membolehkan anda melihat kandungan fail dalam direktori kerja semasa anda. 
+
+Penggunaan perintah
+
+* dibaca (fail)
+
+Contoh
+
+* membaca libuesh: Ia membaca kandungan fail libuesh
+-BODY END-
+
+-COLOR CONFIGURATION-
+read (file)=>Green
+read libuesh:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+read command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

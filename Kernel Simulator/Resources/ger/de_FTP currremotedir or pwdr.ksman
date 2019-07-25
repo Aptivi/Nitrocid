@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:FTP Befehl "currremotedir" oder "pwdr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+currremotedir oder pwdr FTP Befehl
+
+Zusammenfassung: Ruft Ihr aktuelles Remote-Verzeichnis ab
+
+Beschreibung
+
+Dieser FTP-Befehl teilt Ihnen mit, welches Remote-Verzeichnis auf dem FTP-Server gerade angezeigt wird.
+
+Befehlsverwendung
+
+* currremotedir
+* pwdr
+-BODY END-
+
+-COLOR CONFIGURATION-
+currremotedir=>Green
+pwdr=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+currremotedir or pwdr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

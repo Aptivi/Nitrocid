@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "alias"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande d'alias
+
+R??sum??: vous pouvez d??finir un autre raccourci vers la commande si vous souhaitez utiliser des mots plus courts pour les commandes longues.
+
+La description
+
+Certaines commandes de ce noyau sont longues et certaines personnes n'??crivent pas vite sur les ordinateurs. 
+
+Vous pouvez ??galement utiliser cette commande si vous pr??voyez de cr??er des scripts si le syst??me de fichiers r??el sera ajout?? ult??rieurement, ou si vous vous pr??cipitez pour quelque chose et que vous n'avez pas le temps d'ex??cuter la longue commande.
+
+Vous pouvez ajouter ou supprimer l'alias ?? la commande longue.
+
+Utilisation de la commande
+
+* alias add (alias) (cmd)
+* alias rem (alias)
+
+Exemples
+
+* alias add libs useddeps: Ceci cr??era un raccourci de "useddeps" portant le nom de "libs"
+* alias add stdz showtdzone: Ceci cr??era un raccourci de "showtdzone" sous le nom de "stdz"
+* alias add turnoff shutdown: Ceci cr??era un raccourci "shutdown" sous le nom de "turnoff"
+* alias ajouter? 
+* alias rem signout: ceci supprimera un raccourci nomm?? "signout" par la commande "logout"
+* alias rem saveescrn: Ceci supprimera un raccourci nomm?? "saveescrn" par la commande "savescreen"
+* alias rem clearscrn: Ceci supprimera un raccourci nomm?? "clearscrn" par la commande "cls"
+* alias rem lckscrnsvr: Ceci supprimera un raccourci nomm?? "lckscrnsvr" par la commande "lockscreen"
+-BODY END-
+
+-COLOR CONFIGURATION-
+alias add (alias) (cmd)=>Green
+alias rem (alias)=>Green
+alias add libs useddeps:=>Yellow
+alias add stdz showtdzone:=>Yellow
+alias add turnoff shutdown:=>Yellow
+alias add ? help:=>Yellow
+alias rem signout:=>Yellow
+alias rem savescrn:=>Yellow
+alias rem clearscrn:=>Yellow
+alias rem lckscrnsvr:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+alias command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

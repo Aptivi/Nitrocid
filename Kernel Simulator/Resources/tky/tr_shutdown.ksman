@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "kapatma"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+kapatma komutu
+
+??zet: Bilgisayar??n??z?? kapat??r
+
+A????klama
+
+Her ??eyi tamamlad??ysan??z ve bilgisayar??n??zda ba??ka bir ??ey yapmak istemiyorsan??z, enerji t??ketmek ve elektrik merkezine daha fazla para ??demek yerine a????k b??rakmak yerine, bilgisayar??n??z?? kapatmak ve enerji tasarrufu yapmak i??in bu komutu kullanman??z gerekir. 
+
+Komut kullan??m??
+
+* kapat
+-BODY END-
+
+-COLOR CONFIGURATION-
+shutdown=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+shutdown command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

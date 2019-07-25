@@ -1,0 +1,80 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Konfigurasi untuk Kernel anda
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Apakah itu Config?
+
+Konfigurasi adalah konfigurasi untuk kernel anda yang menyimpan lebih banyak pilihan kernel yang tidak boleh diedit sama ada argumen atau hujah arahan baris. 
+
+Terdapat banyak bahagian untuk memudahkan membaca fail konfigurasi. 
+
+Penyertaan Config
+
+Ketua
+
+1. Prompt untuk Argumen pada Boot: Anda boleh memaksa kernel untuk memberikan hujah hujah jika nilai ditetapkan ke Benar. 
+2. Mod Penyelenggaraan: Anda boleh membuat kernel untuk tidak menghurai mana-mana mods dan screensavers semasa boot, dan memberikan anda peluang untuk memperbaiki kernel anda. 
+3. Tukar Kata Laluan Root: Anda boleh menukar kata laluan pentadbiran. 
+4. Tetapkan Kata Laluan Root ke: Jika pilihan "Tukar Kata Laluan Root" ditetapkan ke Benar, anda boleh menulis kata laluan root anda sendiri. 
+5. Buat Akaun Demo: Anda boleh membuat kernel membuat akaun ujian, demo, dengan menetapkan ini kepada Benar. 
+6. Warna Tersuai pada Boot: Jika ini ditetapkan ke Benar, kernel akan menukar warna berdasarkan nilai konfigurasi. 
+7. Bahasa: Ia boleh mengambil jalan pintas bahasa tiga huruf. 
+
+Warna
+
+Setiap entri yang disebutkan di bawah boleh mengambil nama atau nilai warna. 
+
+1. Nama Pengguna Warna Shell: Anda boleh menukar nama pengguna yang memaparkan warna bahagian dalam keseluruhan gerak.
+2. Nama Warna Shell Host: Anda boleh menukar nama tuan rumah yang memaparkan warna bahagian dalam keseluruhan gerak.
+3. Warna Ralat Kernel Terus-menerus: Anda boleh menukar warna teks ralat kernel yang boleh dilanjutkan.
+4. Warna Ralat Kernel yang Tidak Terus: Anda boleh menukar warna teks warna ralat kesilapan.
+5. Warna Teks: Anda boleh menukar warna teks umum.
+6. Warna Lesen: Anda boleh menukar warna teks lesen.
+7. Warna Latar Belakang: Anda boleh menukar warna latar belakang.
+8. Warna Input: Anda boleh menukar warna input teks.
+9. Senarai arahan dalam Warna Bantuan: Anda boleh menukar warna perintah cetak dalam senarai arahan.
+10. Definisi arahan dalam Warna Bantuan: Anda boleh menukar keterangan bercetak mengenai warna arahan dalam senarai arahan.
+
+Perkakasan
+
+Setiap entri yang disebutkan di bawah boleh diambil sama ada Salah, atau Benar.
+
+1. Siasatan Tenang: Anda boleh membuat perkakasan menemui senyap, dengan tidak menunjukkan hasil perkakasan probed.
+2. Probe Slots: Anda boleh membuat prober RAM menyelidik slot RAM.
+
+Log masuk
+
+1. Tunjukkan MOTD di Log-in: Anda boleh membuat log masuk segera menunjukkan Mesej Hari sebelum memaparkan prompt. 
+2. Bersihkan Skrin pada Log Masuk: Anda boleh mengalih keluar kekacauan skrin sebelum log masuk jika ia ditetapkan kepada Benar. 
+3. MOTD: Anda boleh menukar mesej pra-login kepada sebarang nilai. 
+4. Nama Hos: Anda boleh menukar nama hos kernel.
+5. MOTD Selepas Masuk: Anda boleh menukar mesej pasca masuk ke sebarang nilai. 
+
+Shell
+
+Setiap entri yang dinyatakan di bawah boleh mengambil sama ada True, or False.
+
+1. Berwarna Berwarna: Anda boleh menambah sokongan untuk mewarna cangkang.
+2. Bantuan Bantuan Ringkas: Anda boleh menyenaraikan arahan dalam borang yang dipisahkan koma.
+
+Misc
+
+1. Tunjukkan Masa / Tarikh di Sudut Kanan Atas: Anda boleh menetapkan spanduk masa / tarikh yang sedang dikemas kini, dan posisi di sudut kanan atas. 
+2. Screensaver: Anda boleh memilih screensavers anda yang ada.
+3. Versi Kernel: Jangan ubah entri ini! 
+-BODY END-
+
+-SECTIONS-
+What is the Config?=>SE1
+Config entries=>SE1
+General=>SE2
+Colors=>SE2
+Hardware=>SE2
+Login=>SE2
+Shell=>SE2
+Misc=>SE2
+-SECTIONS END-

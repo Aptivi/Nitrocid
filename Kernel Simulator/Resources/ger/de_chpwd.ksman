@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "chpwd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl chpwd
+
+Zusammenfassung: Sie k??nnen Ihr Passwort oder das Passwort einer anderen Person ??ndern
+
+Beschreibung
+
+Wenn das Kennwort f??r Ihr Konto oder f??r das Konto einer anderen Person ge??ndert werden muss, k??nnen Sie mit diesem Befehl Ihr Kennwort oder das Kennwort einer anderen Person ??ndern.
+
+Dies ist n??tzlich, wenn Sie der Meinung sind, dass Ihr Konto oder das Konto einer anderen Person ein falsches Kennwort hat oder in der Online-Liste f??r einfache Kennw??rter aufgef??hrt ist.
+
+F??r diesen Befehl m??ssen Sie Ihr Kennwort oder das Kennwort einer anderen Person angeben, bevor Sie Ihr neues Kennwort eingeben k??nnen.
+
+Befehlsverwendung
+
+* chpwd (Benutzername) (UserPass) (newPass) (best??tigen)
+
+Beispiele
+
+* chpwd joe easy1234 p4ssw0rd p4ssw0rd: ??ndert das Passwort von joe in p4ssw0rd von easy1234
+-BODY END-
+
+-COLOR CONFIGURATION-
+chpwd (Username) (UserPass) (newPass) (confirm)=>Green
+chpwd joe easy1234 p4ssw0rd p4ssw0rd:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chpwd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

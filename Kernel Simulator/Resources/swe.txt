@@ -348,3 +348,20 @@ Får SSE-versioner
 Ogiltigt språk
 Ändrar språk
 Du kanske inte har libcpanel-json-xs-perl installerad på ditt system. Se din pakethanterare för installation. För Debian (och derivat) -system kanske du vill köra "sudo apt install libcpanel-json-xs-perl" i terminalemulatorn. Mer detaljer om ett fel:
+----------------------------- Kärnan panik dump ------------------------------
+>> Panikinformation <<
+> Beskrivning: {0}
+> Feltyp: {1}
+> Datum och tid: {2}
+>> Undantagsinformation <<
+> Undantag: {0}
+> Beskrivning: {1}
+> HRESULT: {2}
+> Källa: {3}
+> Stack trace <
+>> Inre undantag {0} information <<
+>> Undantag {0} är grundorsaken <<
+>> Inget undantag; kan vara ett kärnfel. <<
+>> Ramar, filer, linjer och kolumner <<
+> Ram {0}: Fil: {1} | Rad: {2} | Kolumn: {3}
+> Det finns ett fel när du försöker få raminformation. {0}: {1}

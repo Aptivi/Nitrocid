@@ -1,0 +1,35 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "lire"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande de lecture
+
+R??sum??: lit le contenu du fichier et l???imprime ?? l?????cran
+
+La description
+
+Cette commande vous permet de voir le contenu du fichier dans votre r??pertoire de travail actuel. 
+
+Utilisation de la commande
+
+* lire (fichier)
+
+Exemples
+
+* read libuesh: Lit le contenu du fichier de libuesh
+-BODY END-
+
+-COLOR CONFIGURATION-
+read (file)=>Green
+read libuesh:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+read command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

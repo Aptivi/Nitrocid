@@ -1,0 +1,42 @@
+(*MAN START*)
+
+-TITLE:FTP-kommando "listremote" eller "lsr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+listremote eller lsr FTP-kommando
+
+Sammanfattning: Listar inneh??llet i den aktuella mappen eller den medf??ljande mappen
+
+Beskrivning
+
+Du kan se listan ??ver filer och underkataloger som finns i den aktuella arbetskatalogen om inga kataloger ??r angivna, eller i den angivna katalogen, om den anges.
+
+Du kan ocks?? se listan ??ver filer och underkataloger som finns i den tidigare katalogen f??r din nuvarande position.
+
+Till skillnad fr??n listlocal eller lsr, b??r du ansluta till servern f??r att anv??nda detta kommando, eftersom det listar kataloger p?? servern, inte p?? den lokala h??rddisken.
+
+Kommandobruk
+
+* listremote / lsr [mapp / ..]
+exempel
+
+* listremote: Listar inneh??llet i arbetskatalogen
+* listremote ..: Listar inneh??llet i f??reg??ende arbetskatalog
+* lsr st??der: Listar inneh??llet i mappen "st??der"
+-BODY END-
+
+-COLOR CONFIGURATION-
+listremote/lsr [folder/..]=>Green
+listremote:=>Yellow
+listremote ..:=>Yellow
+lsr cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+listremote or lsr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

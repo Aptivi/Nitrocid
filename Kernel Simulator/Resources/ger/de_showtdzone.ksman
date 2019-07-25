@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell Befehl "showtdzone"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl showtdzone
+
+Zusammenfassung: Zeigt die aktuelle Uhrzeit und das Datum in einer anderen Zeitzone an
+
+Beschreibung
+
+Wenn Sie wissen m??chten, wie sp??t es in einer anderen Stadt oder einem anderen Land ist, k??nnen Sie mit diesem Tool die aktuelle Uhrzeit und das aktuelle Datum in einem anderen Land oder einer anderen Stadt anzeigen.
+
+Dieser Befehl ist plattform??bergreifend und verwendet die IANA-Zeitzonen auf Unix-Systemen und das Windows-Zeitzonensystem unter Windows.
+
+Wenn Sie beispielsweise "Asia / Damascus" auf den Unix-Systemen verwenden m??ssen, schreiben Sie "showtdzone Asia / Damascus". 
+
+Befehlsverwendung
+
+* showtdzone (Zeitzone / alle)
+
+Beispiele
+
+* showtdzone Egypt Standard Time: Zeigt die aktuelle Uhrzeit und das Datum in ??gypten auf Windows-Systemen an
+* showtdzone Asia / Hong_Kong: Zeigt die aktuelle Uhrzeit und das aktuelle Datum in Hongkong auf Linux-Systemen an
+* showtdzone all: Zeigt alle Zeitzonen sowie deren Zeiten und Datumsangaben an
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtdzone (TimeZone/all)=>Green
+showtdzone Egypt Standard Time:=>Yellow
+showtdzone Asia/Hong_Kong:=>Yellow
+showtdzone all:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtdzone command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

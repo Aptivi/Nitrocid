@@ -1,0 +1,40 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Verf??gbare FTP-Befehle
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the commands that are available in the FTP shell is put.
+-BODY START-
+Administrative Befehle:
+
+1. delete (del): Sie k??nnen unerw??nschte Dateien vom Server l??schen
+2. umbenennen (ren): Benennen Sie die falsch benannten Dateien auf dem Server in die richtigen Namen um
+3. upload (put): Sende deine lokale Datei an den Server
+
+Normale Benutzerbefehle:
+
+1. currlocaldir (pwdl): Holen Sie sich Ihr aktuelles Arbeitsverzeichnis
+2. currremotedir (pwdr): Ruft Ihr aktuelles Arbeitsserververzeichnis ab
+3. changelocaldir (cdl): ??ndert Ihr lokales Verzeichnis in ein anderes vorhandenes Verzeichnis
+4. changeremotedir (cdr): ??ndert Ihr Remote-Verzeichnis in ein anderes Verzeichnis, das auf dem Server vorhanden ist
+5. connect: Erm??glicht die Kommunikation mit dem Server und den Anmeldeinformationen, falls angegeben
+6. disconnect: Wenn Sie mit der Kommunikation mit dem Server fertig sind, teilen Sie dem Server mit diesem Befehl mit, dass Sie den Server verlassen
+7. download (get): Liefert die entfernte Datei vom Server in Ihr aktuelles lokales Arbeitsverzeichnis
+8. listlocal (lsl): Listet den Inhalt Ihres aktuellen Arbeitsverzeichnisses oder des angegebenen Verzeichnisses auf
+9. listremote (lsr): Listet den Inhalt Ihres aktuellen Workign-Serververzeichnisses oder des angegebenen Verzeichnisses auf
+
+Weitere Informationen zu den einzelnen Befehlen finden Sie unter "Benutzerhandbuch FTP <Befehl>".
+-BODY END-
+
+-COLOR CONFIGURATION-
+delete (del):=>Red
+rename (ren):=>Red
+upload (put):=>Red
+-COLOR CONFIG END-
+
+-SECTIONS-
+Administrative commands:=>SE1
+Normal user commands:=>SE1
+-SECTIONS END-

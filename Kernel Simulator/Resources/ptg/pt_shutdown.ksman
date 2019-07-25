@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Comando shell "shutdown"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando shutdown
+
+Resumo: desliga seu computador
+
+Descri????o
+
+Se voc?? tiver terminado tudo e n??o quiser fazer outra coisa em seu computador, em vez de deix??-lo para consumir energia e pagar mais dinheiro para o centro de eletricidade, ?? necess??rio usar esse comando para desligar o computador e economizar energia. 
+
+Uso de comando
+
+* desligar
+-BODY END-
+
+-COLOR CONFIGURATION-
+shutdown=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+shutdown command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

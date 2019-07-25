@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:FTP Befehl "upload" oder "put"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+FTP-Befehl hochladen oder einf??gen
+
+Zusammenfassung: L??dt die Datei auf den Server hoch
+
+Beschreibung
+
+Wenn Sie Ihre lokalen Dateien in Ihrem aktuellen Arbeitsverzeichnis zum aktuellen Arbeitsserververzeichnis hinzuf??gen m??ssen, m??ssen Sie ??ber Administratorrechte verf??gen, um Dateien hinzuf??gen zu k??nnen.
+
+Wenn Sie beispielsweise das Bild der Stadt Neu-Delhi im PNG-Format hinzuf??gen, m??ssen Sie es auf den Server hochladen, damit alle es sehen k??nnen. 
+
+Befehlsverwendung
+
+* Upload / Put (Datei)
+
+Beispiele
+
+* Win10-Oct2018-x64.iso hochladen: Legt die Datei "Win10-Oct2018-x64.iso" im aktuellen Arbeitsverzeichnis des Servers ab
+* put urls.txt: Setzt die "urls.txt" in das aktuelle Arbeitsverzeichnis des Servers
+-BODY END-
+
+-COLOR CONFIGURATION-
+upload/put (file)=>Green
+upload Win10-Oct2018-x64.iso:=>Yellow
+put urls.txt:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+upload or put FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

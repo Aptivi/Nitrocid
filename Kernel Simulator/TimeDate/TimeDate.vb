@@ -54,7 +54,7 @@ Public Module TimeDate
 
     End Sub
 
-    Sub InitializeTimeDate()
+    Sub InitTimeDate()
 
         KernelDateTime = Date.Now
         strKernelTimeDate = Date.Now.ToString

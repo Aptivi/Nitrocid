@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:Shell-commando "chdir"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+chdir-opdracht
+
+Samenvatting: u kunt uw huidige werkdirectory wijzigen in een andere map
+
+Omschrijving
+
+U kunt uw werkdirectory wijzigen in een andere directory om listingopdrachten uit te voeren, bestanden te verwijderen of mappen te maken in een andere directory.
+
+Commando gebruik
+
+* chdir (directory)
+* chdir ..
+
+Voorbeelden
+
+* chdir boot: het verandert je werkdirectory in / boot
+* chdir ..: het gaat terug naar de vorige werkdirectory
+-BODY END-
+
+-COLOR CONFIGURATION-
+chdir <directory>=>Green
+chdir ..=>Green
+chdir boot:=>Yellow
+chdir ..:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chdir command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

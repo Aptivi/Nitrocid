@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Shell-Befehl "unitconv"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Befehl unitconv
+
+Zusammenfassung: Konvertiert Einheiten in eine andere Einheit
+
+Beschreibung
+
+Sie k??nnen Ihre Quelleneinheiten in eine andere Einheit konvertieren, ohne das Internet verwenden zu m??ssen.
+
+Wenn Sie stattdessen eine W??hrung umrechnen m??ssen, verwenden Sie den Befehl "currency".
+
+Die Quelleneinheit muss von der Zieleinheit unterst??tzt werden (z. B. km in cm), um den von Ihnen angegebenen Wert zu konvertieren. Andernfalls kann sie nicht konvertiert werden. 
+
+Befehlsverwendung
+
+* unitconv (sourceUnit) (destination) (value)
+
+Beispiele
+
+* unitconv GB B 50: Konvertiert 50 GB Dateigr????e in Kilobyte
+* unitconv Celsius Fahrenheit 36: Konvertiert 36C Grad in Fahrenheit
+* unitconv Inches Feet 19: Konvertiert 19 Zoll in Fu??
+-BODY END-
+
+-COLOR CONFIGURATION-
+unitconv (sourceUnit) (destination) (value)=>Green
+unitconv GB B 50:=>Yellow
+unitconv Celsius Fahrenheit 36:=>Yellow
+unitconv Inches Feet 19:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+unitconv command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

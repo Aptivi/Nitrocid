@@ -1,0 +1,33 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "ftp"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah ftp
+
+Ringkasan: Anda boleh berinteraksi dengan shell Protokol Pemindahan Fail (FTP) untuk menyambung ke pelayan dan memindahkan fail
+
+Penerangan
+
+Anda boleh menggunakan shell FTP untuk menyambung ke pelayan FTP anda atau pelayan FTP awam untuk berinteraksi dengan fail yang terdapat di pelayan.
+
+Anda boleh memuat turun fail ke komputer anda, memuat naik fail ke pelayan, menguruskan fail dengan menamakan semula, memadam, dll, dan sebagainya.
+
+Untuk mendapatkan maklumat lanjut tentang cara berinteraksi dengan shell dan arahannya, rujuk "FTP Shell usermanual dan arahannya"
+
+Penggunaan perintah
+
+* ftp
+-BODY END-
+
+-COLOR CONFIGURATION-
+ftp=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+ftp command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

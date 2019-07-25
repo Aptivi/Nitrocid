@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:FTP-komento "currremotedir" tai "pwdr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+currremotedir tai pwdr FTP-komento
+
+Yhteenveto: Saat nykyisen et??kansion
+
+Kuvaus
+
+T??m?? FTP-komento kertoo, mit?? et??hakemistoa FTP-palvelimessa tarkastelet t??ll?? hetkell??.
+
+Komennon k??ytt??
+
+* currremotedir
+* pwdr
+-BODY END-
+
+-COLOR CONFIGURATION-
+currremotedir=>Green
+pwdr=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+currremotedir or pwdr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

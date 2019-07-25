@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "list"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+list komutu
+
+??zet: Ge??erli dizindeki i??erikleri veya belirtilen klas??r?? listeleyebilirsiniz.
+
+A????klama
+
+Dizinde veya ge??erli dizinde ne oldu??unu bilmiyorsan??z, klas??r i??eri??ini renkli bir ??ekilde listelemek i??in bu komutu kullanabilirsiniz.
+
+Komut kullan??m??
+
+* liste
+* liste [dizin]
+
+??rnekler
+
+* list: Bu komut mevcut ??al????ma dizini i??eri??ini listeler
+* list ..: Bu komut, ana klas??r??n i??eri??ini mevcut ??al????ma dizininden listeler.
+* list boot: Bu komut, ??al????ma dizininin / oldu??u varsay??larak, ge??erli ??al????ma dizinindeki "boot" klas??r??n?? listeler.
+-BODY END-
+
+-COLOR CONFIGURATION-
+list=>Green
+list [directory]=>Green
+list:=>Yellow
+list ..:=>Yellow
+list boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+list command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

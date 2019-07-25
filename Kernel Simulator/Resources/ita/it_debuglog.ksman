@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Comando di shell "debuglog"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando debuglog
+
+Riepilogo: ?? possibile visualizzare i registri del debugger del kernel dal file kernelDbg.log che si trova nella cartella del profilo utente
+
+Descrizione
+
+Questo visualizzatore consente di visualizzare i registri di debug senza prima abilitare la modalit?? di debug sul kernel. 
+
+Prima, questo comando richiedeva che il debugger fosse attivo nel kernel.
+
+Comando di utilizzo
+
+* debuglog
+-BODY END-
+
+-COLOR CONFIGURATION-
+debuglog=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+debuglog command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-
