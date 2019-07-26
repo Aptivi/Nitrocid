@@ -24,6 +24,7 @@ Comandos administrativos:
 13. salvapantallas: puede configurar su salvapantallas de su elecci??n o su personalizado como el predeterminado, y si planea usar salvapantallas personalizados, debe nombrar su extensi??n como <ScreensaverName> SS.m para que se reconozca como salvapantallas, no 
 14. reloadsaver: puede volver a cargar el archivo de extensi??n del protector de pantalla desde el directorio KSMods. 
 15. cdbglog: puede borrar el registro de depuraci??n, restableciendo el tama??o a 0
+16. chlang: cambia tu idioma
 
 Comandos normales del usuario:
 
@@ -57,6 +58,7 @@ Comandos normales del usuario:
 28. unitconv: puede convertir la unidad en cualquier unidad, si la fuente y el destino se apoyan entre s?? como cm -> m, usando "unitconv <source> <target> <value>".
 29. useddeps: puede mostrar las bibliotecas de c??digo abierto utilizadas
 30. Manual de usuario: puede obtener informaci??n sobre todo u obtener las p??ginas de manual disponibles escribiendo solo el comando. 
+31. sses: Obtiene las capacidades SSE (1 | 2 | 3) encontradas en los procesadores
 
 Para obtener m??s informaci??n acerca de cada comando, consulte "usermanual <comando>"
 -BODY END-

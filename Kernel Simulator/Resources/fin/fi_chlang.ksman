@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:Shell-komento "chlang"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+chlang-komento
+
+Yhteenveto: Muuttaa j??rjestelm??n kielen
+
+Kuvaus
+
+J??rjestelm??n kieli voidaan muuttaa joko muokkaamalla m????ritystiedostoja manuaalisesti k??ytt??m??ll?? Kernel Simulator Configuration Tool -ty??kalua tai k??ytt??m??ll?? t??t?? komentoa. 
+
+Komennon k??ytt??
+
+* chlang <kieli>
+
+esimerkit
+
+* chlang fre: Muuttaa j??rjestelm??n kielen ranskaksi
+-BODY END-
+
+-COLOR CONFIGURATION-
+chlang <language>=>Green
+chlang fre:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chlang command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

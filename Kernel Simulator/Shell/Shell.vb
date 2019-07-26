@@ -27,8 +27,8 @@ Public Module Shell
                                             "chhostname", "lscomp", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj",
                                             "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical",
                                             "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "savescreen",
-                                            "lockscreen", "setsaver", "reloadsaver", "noaliases", "ftp", "useddeps", "usermanual", "currency",
-                                            "cdbglog", "sses", "chlang"}
+                                            "lockscreen", "setsaver", "reloadsaver", "noaliases", "ftp", "useddeps", "usermanual", "cdbglog",
+                                            "sses", "chlang"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang"}
     Public obsoleteCmds() As String = {"currency"}

@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:Shell command "chlang"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+chlang command
+
+Summary: Changes system language
+
+Description
+
+The system language can be changed either by manually editing configuration files, using Kernel Simulator Configuration Tool, or by using this command. Restart is not required, since printing text, viewing user manual, and updating help list relies on "currentLang" field. It changes the value of "currentLang" field to the appropriate found language in the array of available languages.
+
+Command usage
+
+* chlang <language>
+
+Examples
+
+* chlang fre: Changes system language to French
+-BODY END-
+
+-COLOR CONFIGURATION-
+chlang <language>=>Green
+chlang fre:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chlang command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

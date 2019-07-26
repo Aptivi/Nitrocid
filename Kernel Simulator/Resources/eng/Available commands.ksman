@@ -24,6 +24,7 @@ Administrative commands:
 13. setsaver: You can set your screensaver of your choice or your customized one as the default one, and if you plan to use customized screensavers, you should name your extension as <ScreensaverName>SS.m to be recognized as a screensaver, not as an extension. It has the argument of "setsaver <<ScreensaverName>SS.m/matrix/disco/colorMix>."
 14. reloadsaver: You can reload your screensaver extension file from the KSMods directory. You should load your screensaver file before you can set it as default and use it. It has the usage of "loadsaver <<ScreensaverName>SS.m>."
 15. cdbglog: You can clear debug log, resetting the size to 0
+16. chlang: Changes your language
 
 Normal user commands:
 
@@ -57,6 +58,7 @@ Normal user commands:
 28. unitconv: You can convert the unit to any unit, if the source and target supports each other like cm -> m, using "unitconv <source> <target> <value>."
 29. useddeps: You can show the open source libraries used
 30. usermanual: You can get information about everything, or get the available manual pages by writing only the command. Usage: "usermanual [Page title]."
+31. sses: Gets SSE(1|2|3) capabilities found in processors
 
 For more information about every command, consult "usermanual <command>"
 -BODY END-
@@ -77,6 +79,7 @@ chmal:=>Red
 setsaver:=>Red
 loadsaver:=>Red
 cdbglog:=>Red
+chlang:=>Red
 -COLOR CONFIG END-
 
 -SECTIONS-

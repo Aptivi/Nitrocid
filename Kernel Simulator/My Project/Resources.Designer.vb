@@ -269,6 +269,39 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell command &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''cdbglog command
+        '''
+        '''Summary: Clears debugging log
+        '''
+        '''Command usage
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-.
+        '''</summary>
+        Friend ReadOnly Property cdbglog() As String
+            Get
+                Return ResourceManager.GetString("cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell command &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -340,6 +373,28 @@ Namespace My.Resources
         Friend ReadOnly Property chi() As String
             Get
                 Return ResourceManager.GetString("chi", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell command &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''chlang command
+        '''
+        '''Summary: Changes system language
+        '''
+        '''Description
+        '''
+        '''The system language can be changed either by manually editing configuration files, using Kernel Simulator Configuration Tool, or by using this command. Restart is not required, since printing text, viewing user manual, and updating help list relies on &quot;currentLang&quot; field. It changes the value of &quot;currentLang&quot; field to the appropriat [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property chlang() As String
+            Get
+                Return ResourceManager.GetString("chlang", resourceCulture)
             End Get
         End Property
         
@@ -714,6 +769,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:P????kaz Shell &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''P????kaz cdbglog
+        '''
+        '''Shrnut??: Vyma??e protokol lad??n??
+        '''
+        '''Pou??it?? p????kazu
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property cs_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("cs_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:P????kaz Shell &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -765,6 +854,40 @@ Namespace My.Resources
         Friend ReadOnly Property cs_chhostname() As String
             Get
                 Return ResourceManager.GetString("cs_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell p????kaz &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''chlang p????kaz
+        '''
+        '''Shrnut??: Zm??n?? syst??mov?? jazyk
+        '''
+        '''Popis
+        '''
+        '''Jazyk syst??mu lze zm??nit bu?? manu??ln?? ??pravou konfigura??n??ch soubor??, pomoc?? konfigura??n??ho n??stroje j??dra Simulator, nebo pomoc?? tohoto p????kazu. 
+        '''
+        '''Pou??it?? p????kazu
+        '''
+        '''* chlang &lt;jazyk&gt;
+        '''
+        '''P????klady
+        '''
+        '''* chlang fre: Zm??n?? syst??mov?? jazyk na francouz??tinu
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''chlang &lt;languag [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property cs_chlang() As String
+            Get
+                Return ResourceManager.GetString("cs_chlang", resourceCulture)
             End Get
         End Property
         
@@ -2212,6 +2335,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell p????kaz &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''p????kaz sses
+        '''
+        '''Shrnut??: Kontroluje dostupnost SSE / SSE2 / SSE3.
+        '''
+        '''Popis
+        '''
+        '''Pokud chcete v??d??t, zda jsou ve va??em procesoru k dispozici SSE, SSE2 a SSE3, m????ete pou????t tento p????kaz. 
+        '''
+        '''Pokud se chyst??te prozkoumat v??ce o tomto hovoru, kter?? je intern?? pou????v??n v programech C Windows, viz tento dokument: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-proces [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property cs_sses() As String
+            Get
+                Return ResourceManager.GetString("cs_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:P????kaz Shell &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -2537,6 +2684,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell-Befehl &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Befehl cdbglog
+        '''
+        '''Zusammenfassung: L??scht das Debugging-Protokoll
+        '''
+        '''Befehlsverwendung
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property de_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("de_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-Befehl &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -2586,6 +2767,40 @@ Namespace My.Resources
         Friend ReadOnly Property de_chhostname() As String
             Get
                 Return ResourceManager.GetString("de_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell-Befehl &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Befehl chlang
+        '''
+        '''Zusammenfassung: ??ndert die Systemsprache
+        '''
+        '''Beschreibung
+        '''
+        '''Die Systemsprache kann entweder durch manuelles Bearbeiten der Konfigurationsdateien mit dem Kernel-Simulator-Konfigurationstool oder mit diesem Befehl ge??ndert werden. 
+        '''
+        '''Befehlsverwendung
+        '''
+        '''* chlang &lt;Sprache&gt;
+        '''
+        '''Beispiele
+        '''
+        '''* chlang fre: ??ndert die Systemsprache in Franz??sisch
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''c [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property de_chlang() As String
+            Get
+                Return ResourceManager.GetString("de_chlang", resourceCulture)
             End Get
         End Property
         
@@ -3982,6 +4197,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell Befehl &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Befehl sses
+        '''
+        '''Zusammenfassung: ??berpr??ft die Verf??gbarkeit von SSE / SSE2 / SSE3.
+        '''
+        '''Beschreibung
+        '''
+        '''Wenn Sie wissen m??chten, ob SSE, SSE2 und SSE3 in Ihrem Prozessor verf??gbar sind, k??nnen Sie diesen Befehl verwenden. 
+        '''
+        '''Weitere Informationen zu diesem Aufruf, der intern in C Windows-Programmen verwendet wird, finden Sie in folgendem Dokument: https://docs.microsoft.com/en-us/windows/win32/api/ [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property de_sses() As String
+            Get
+                Return ResourceManager.GetString("de_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-Befehl &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -4353,6 +4592,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Comando de shell &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando cdbglog
+        '''
+        '''Resumen: borra el registro de depuraci??n
+        '''
+        '''Uso del comando
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property es_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("es_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Comando de shell &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -4405,6 +4678,39 @@ Namespace My.Resources
         Friend ReadOnly Property es_chhostname() As String
             Get
                 Return ResourceManager.GetString("es_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Comando de shell &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando chlang
+        '''
+        '''Resumen: Cambia el idioma del sistema.
+        '''
+        '''Descripci??n
+        '''
+        '''El idioma del sistema se puede cambiar editando manualmente los archivos de configuraci??n, utilizando la herramienta de configuraci??n del simulador de kernel o usando este comando. 
+        '''
+        '''Uso del comando
+        '''
+        '''* chlang &lt;language&gt;
+        '''
+        '''Ejemplos
+        '''
+        '''* chlang fre: Cambia el idioma del sistema a franc??s
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGU [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property es_chlang() As String
+            Get
+                Return ResourceManager.GetString("es_chlang", resourceCulture)
             End Get
         End Property
         
@@ -5846,6 +6152,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Comando de shell &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando sses
+        '''
+        '''Resumen: Verifica la disponibilidad de SSE / SSE2 / SSE3.
+        '''
+        '''Descripci??n
+        '''
+        '''Si desea saber si SSE, SSE2 y SSE3 est??n disponibles en su procesador, puede utilizar este comando. 
+        '''
+        '''Si va a explorar m??s sobre esta llamada, que se usa internamente en los programas de C Windows, consulte este documento: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthr [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property es_sses() As String
+            Get
+                Return ResourceManager.GetString("es_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Comando de shell &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -6155,6 +6485,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell-komento &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''cdbglog-komento
+        '''
+        '''Yhteenveto: Tyhjent???? virheenkorjauslokin
+        '''
+        '''Komennon k??ytt??
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property fi_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("fi_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-komento &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -6207,6 +6571,39 @@ Namespace My.Resources
         Friend ReadOnly Property fi_chhostname() As String
             Get
                 Return ResourceManager.GetString("fi_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell-komento &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''chlang-komento
+        '''
+        '''Yhteenveto: Muuttaa j??rjestelm??n kielen
+        '''
+        '''Kuvaus
+        '''
+        '''J??rjestelm??n kieli voidaan muuttaa joko muokkaamalla m????ritystiedostoja manuaalisesti k??ytt??m??ll?? Kernel Simulator Configuration Tool -ty??kalua tai k??ytt??m??ll?? t??t?? komentoa. 
+        '''
+        '''Komennon k??ytt??
+        '''
+        '''* chlang &lt;kieli&gt;
+        '''
+        '''esimerkit
+        '''
+        '''* chlang fre: Muuttaa j??rjestelm??n kielen ranskaksi
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIG [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property fi_chlang() As String
+            Get
+                Return ResourceManager.GetString("fi_chlang", resourceCulture)
             End Get
         End Property
         
@@ -7667,6 +8064,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell-komento &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''sses-komento
+        '''
+        '''Yhteenveto: SSE / SSE2 / SSE3: n saatavuuden tarkistukset.
+        '''
+        '''Kuvaus
+        '''
+        '''Jos haluat tiet????, onko SSE, SSE2 ja SSE3 k??ytett??viss?? prosessorissasi, voit k??ytt???? t??t?? komentoa. 
+        '''
+        '''Jos aiot tutkia lis???? t??st?? puhelusta, jota k??ytet????n sis??isesti C-Windows-ohjelmissa, katso t??m?? asiakirja: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthre [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property fi_sses() As String
+            Get
+                Return ResourceManager.GetString("fi_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-komento &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -7996,6 +8417,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Commande Shell &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''commande cdbglog
+        '''
+        '''R??sum??: efface le journal de d??bogage
+        '''
+        '''Utilisation de la commande
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property fr_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("fr_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Commande de shell &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -8043,6 +8498,37 @@ Namespace My.Resources
         Friend ReadOnly Property fr_chhostname() As String
             Get
                 Return ResourceManager.GetString("fr_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Commande de shell &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''commande chlang
+        '''
+        '''R??sum??: change la langue du syst??me
+        '''
+        '''La description
+        '''
+        '''La langue du syst??me peut ??tre modifi??e en modifiant manuellement les fichiers de configuration, en utilisant l&apos;outil de configuration de Kernel Simulator ou en utilisant cette commande. 
+        '''
+        '''Utilisation de la commande
+        '''
+        '''* chlang &lt;langue&gt;
+        '''
+        '''Exemples
+        '''
+        '''* chlang fre: change la langue du syst??me en fran??ais
+        '''-BODY  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property fr_chlang() As String
+            Get
+                Return ResourceManager.GetString("fr_chlang", resourceCulture)
             End Get
         End Property
         
@@ -9415,6 +9901,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Commande Shell &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''commande sses
+        '''
+        '''R??sum??: V??rifie la disponibilit?? SSE / SSE2 / SSE3.
+        '''
+        '''La description
+        '''
+        '''Si vous voulez savoir si SSE, SSE2 et SSE3 sont disponibles dans votre processeur, vous pouvez utiliser cette commande. 
+        '''
+        '''Si vous souhaitez en savoir plus sur cet appel, utilis?? en interne dans les programmes Windows C, consultez la documentation suivante: https://docs.microsoft.com/en-us/windows/win32/api [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property fr_sses() As String
+            Get
+                Return ResourceManager.GetString("fr_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Commande Shell &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -10106,6 +10616,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell m??ngl??ng ???cdbglog???
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Cdbglog m??ngl??ng
+        '''
+        '''Zh??iy??o: Q??ngch?? ti??osh?? r??zh??
+        '''
+        '''M??ngl??ng y??ngf??
+        '''
+        '''* Cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property hi_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("hi_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell m??ngl??ng ???chdir???
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -10155,6 +10699,28 @@ Namespace My.Resources
         Friend ReadOnly Property hi_chhostname() As String
             Get
                 Return ResourceManager.GetString("hi_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:K??p??i m??ngl??ng ???chlang???
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Chlang m??ngl??ng
+        '''
+        '''Zh??iy??o: G??ngg??i x??t??ng y??y??n
+        '''
+        '''Mi??osh??
+        '''
+        '''K??y?? t??nggu?? sh??ud??ng bi??nj?? p??izh?? w??nji??n, sh??y??ng n??ih?? m??n?? q?? p??izh?? g??ngj?? hu?? sh??y??ng c?? m??ngl??ng l??i g??ngg??i x??t??ng y??y??n. B?? x??y??o ch??ngx??n q??d??ng, y??nw??i d??y??n w??nb??n, ch??k??n y??ngh?? sh??uc?? h?? g??ngx??n b??ngzh?? li??bi??o y??l??i y?? ???currentLang??? z [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hi_chlang() As String
+            Get
+                Return ResourceManager.GetString("hi_chlang", resourceCulture)
             End Get
         End Property
         
@@ -11432,6 +11998,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:K??p??i zh??l??ng ???sses???
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Sses m??ngl??ng
+        '''
+        '''Zh??iy??o: Ji??nch?? SSE/ SSE2/ SSE3 de k??y??ngx??ng.
+        '''
+        '''Mi??osh??
+        '''
+        '''R??gu?? n??n xi??ng zh??d??o ch??l?? q?? zh??ng sh??f??u y??u SSE,SSE2 h?? SSE3, n??n k??n??ng x??y??o sh??y??ng c?? m??ngl??ng. Q??ng zh??y??, t?? b?? sh??y??ng y?? Linux x??t??ng, y??nw??i c?? m??ngl??ng sh??ngw??i ji??x??, y??nw??i t?? sh??y??ng Windows di??oy??ng (IsProcessorFeaturePresent).
+        '''
+        '''R??gu?? [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hi_sses() As String
+            Get
+                Return ResourceManager.GetString("hi_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell m??ngl??ng ???sysinfo???
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -11786,6 +12376,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Comando Shell &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando cdbglog
+        '''
+        '''Riepilogo: cancella il registro di debug
+        '''
+        '''Utilizzo del comando
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property it_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("it_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Comando shell &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -11837,6 +12461,40 @@ Namespace My.Resources
         Friend ReadOnly Property it_chhostname() As String
             Get
                 Return ResourceManager.GetString("it_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Comando Shell &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando chlang
+        '''
+        '''Riepilogo: modifica la lingua del sistema
+        '''
+        '''Descrizione
+        '''
+        '''La lingua del sistema pu?? essere cambiata modificando manualmente i file di configurazione, usando Kernel Simulator Configuration Tool o usando questo comando. 
+        '''
+        '''Utilizzo del comando
+        '''
+        '''* chlang &lt;language&gt;
+        '''
+        '''Esempi
+        '''
+        '''* chlang fre: cambia la lingua del sistema in francese
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''chlang &lt;la [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property it_chlang() As String
+            Get
+                Return ResourceManager.GetString("it_chlang", resourceCulture)
             End Get
         End Property
         
@@ -13271,6 +13929,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Comando Shell &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando sses
+        '''
+        '''Riepilogo: verifica la disponibilit?? di SSE / SSE2 / SSE3.
+        '''
+        '''Descrizione
+        '''
+        '''Se vuoi sapere se SSE, SSE2 e SSE3 sono disponibili nel tuo processore, puoi usare questo comando. 
+        '''
+        '''Per ulteriori informazioni su questa chiamata, utilizzata internamente nei programmi C Windows, consultare questo documento: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthre [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property it_sses() As String
+            Get
+                Return ResourceManager.GetString("it_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Comando Shell &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -13820,6 +14502,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Perintah Shell &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''perintah cdbglog
+        '''
+        '''Ringkasan: Bersihkan log penyahpepijatan
+        '''
+        '''Penggunaan perintah
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property ms_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("ms_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Perintah Shell &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -13872,6 +14588,40 @@ Namespace My.Resources
         Friend ReadOnly Property ms_chhostname() As String
             Get
                 Return ResourceManager.GetString("ms_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Perintah Shell &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''perintah chlang
+        '''
+        '''Ringkasan: Perubahan bahasa sistem
+        '''
+        '''Penerangan
+        '''
+        '''Bahasa sistem boleh ditukar sama ada dengan menyunting fail konfigurasi secara manual, menggunakan Alat Konfigurasi Simulator Kernel, atau dengan menggunakan perintah ini. 
+        '''
+        '''Penggunaan perintah
+        '''
+        '''* chlang &lt;bahasa&gt;
+        '''
+        '''Contoh
+        '''
+        '''* chlang fre: Perubahan sistem bahasa ke bahasa Perancis
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''chlang [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ms_chlang() As String
+            Get
+                Return ResourceManager.GetString("ms_chlang", resourceCulture)
             End Get
         End Property
         
@@ -15308,6 +16058,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Perintah Shell &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''perintah sses
+        '''
+        '''Ringkasan: Cek untuk ketersediaan SSE / SSE2 / SSE3.
+        '''
+        '''Penerangan
+        '''
+        '''Jika anda ingin mengetahui sama ada SSE, SSE2, dan SSE3 tersedia dalam pemproses anda, anda mungkin mahu menggunakan arahan ini. 
+        '''
+        '''Jika anda akan meneroka lebih lanjut mengenai panggilan ini, yang digunakan secara dalaman dalam program C Windows, lihat dokumen ini: https://docs.microsoft.com/en-us/windows/win32/ap [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ms_sses() As String
+            Get
+                Return ResourceManager.GetString("ms_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Perintah Shell &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -15638,6 +16412,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell-opdracht &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''cdbglog-opdracht
+        '''
+        '''Samenvatting: wist het foutopsporingslogboek
+        '''
+        '''Commando gebruik
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property nl_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("nl_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-commando &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -15690,6 +16498,40 @@ Namespace My.Resources
         Friend ReadOnly Property nl_chhostname() As String
             Get
                 Return ResourceManager.GetString("nl_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell-commando &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''chlang commando
+        '''
+        '''Samenvatting: Verandert systeemtaal
+        '''
+        '''Omschrijving
+        '''
+        '''De systeemtaal kan worden gewijzigd door configuratiebestanden handmatig te bewerken, Kernel Simulator Configuration Tool te gebruiken of door deze opdracht te gebruiken. 
+        '''
+        '''Commando gebruik
+        '''
+        '''* chlang &lt;taal&gt;
+        '''
+        '''Voorbeelden
+        '''
+        '''* chlang fre: Verandert systeemtaal naar Frans
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''chlang &lt;langua [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property nl_chlang() As String
+            Get
+                Return ResourceManager.GetString("nl_chlang", resourceCulture)
             End Get
         End Property
         
@@ -17115,6 +17957,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell-commando &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''sses commando
+        '''
+        '''Samenvatting: Controleert op beschikbaarheid van SSE / SSE2 / SSE3.
+        '''
+        '''Omschrijving
+        '''
+        '''Als u wilt weten of SSE, SSE2 en SSE3 beschikbaar zijn in uw processor, kunt u deze opdracht gebruiken. 
+        '''
+        '''Als u meer wilt weten over deze oproep, die intern wordt gebruikt in C Windows-programma&apos;s, raadpleegt u dit document: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-p [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property nl_sses() As String
+            Get
+                Return ResourceManager.GetString("nl_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-opdracht &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -17515,6 +18381,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Comando shell &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando cdbglog
+        '''
+        '''Resumo: Limpa o log de depura????o
+        '''
+        '''Uso de comando
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property pt_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("pt_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Comando shell &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -17566,6 +18466,40 @@ Namespace My.Resources
         Friend ReadOnly Property pt_chhostname() As String
             Get
                 Return ResourceManager.GetString("pt_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Comando da shell &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando chlang
+        '''
+        '''Resumo: altera a linguagem do sistema
+        '''
+        '''Descri????o
+        '''
+        '''O idioma do sistema pode ser alterado editando manualmente os arquivos de configura????o, usando o Kernel Simulator Configuration Tool ou usando este comando. 
+        '''
+        '''Uso de comando
+        '''
+        '''* chlang &lt;idioma&gt;
+        '''
+        '''Exemplos
+        '''
+        '''* chlang fre: altera a linguagem do sistema para franc??s
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''chlang &lt;language [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property pt_chlang() As String
+            Get
+                Return ResourceManager.GetString("pt_chlang", resourceCulture)
             End Get
         End Property
         
@@ -19025,6 +19959,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Comando shell &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando sses
+        '''
+        '''Resumo: Verifica a disponibilidade de SSE / SSE2 / SSE3.
+        '''
+        '''Descri????o
+        '''
+        '''Se voc?? quiser saber se SSE, SSE2 e SSE3 est??o dispon??veis em seu processador, conv??m usar este comando. 
+        '''
+        '''Se voc?? for explorar mais sobre essa chamada, que ?? usada internamente em programas do C Windows, consulte este documento: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-proc [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property pt_sses() As String
+            Get
+                Return ResourceManager.GetString("pt_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Comando shell &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -19614,6 +20572,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell command &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''sses command
+        '''
+        '''Summary: Checks for SSE/SSE2/SSE3 availability.
+        '''
+        '''Description
+        '''
+        '''If you want to know if SSE, SSE2, and SSE3 are available in your processor, you may want to use this command. Note that it won&apos;t work on Linux systems as this command is not ready because it uses Windows call (IsProcessorFeaturePresent).
+        '''
+        '''If you&apos;re going to explore more about this call, which is internally used in C++ W [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property sses() As String
+            Get
+                Return ResourceManager.GetString("sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-kommando &quot;adduser&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -19828,6 +20810,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell-kommando &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''cdbglog kommando
+        '''
+        '''Sammanfattning: Rensar fels??kningslogg
+        '''
+        '''Kommandobruk
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property sv_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("sv_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-kommando &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -19880,6 +20896,40 @@ Namespace My.Resources
         Friend ReadOnly Property sv_chhostname() As String
             Get
                 Return ResourceManager.GetString("sv_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell-kommando &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''chlang kommando
+        '''
+        '''Sammanfattning: ??ndrar systemspr??k
+        '''
+        '''Beskrivning
+        '''
+        '''Systemets spr??k kan ??ndras antingen genom att manuellt redigera konfigurationsfiler, anv??nda Kernel Simulator Configuration Tool eller genom att anv??nda detta kommando. 
+        '''
+        '''Kommandobruk
+        '''
+        '''* chlang &lt;spr??k&gt;
+        '''
+        '''exempel
+        '''
+        '''* chlang fre: ??ndrar systemspr??k till franska
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''chlang &lt;language&gt; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property sv_chlang() As String
+            Get
+                Return ResourceManager.GetString("sv_chlang", resourceCulture)
             End Get
         End Property
         
@@ -21339,6 +22389,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell-kommandot &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''sses kommando
+        '''
+        '''Sammanfattning: Kontrollerar tillg??nglighet f??r SSE / SSE2 / SSE3.
+        '''
+        '''Beskrivning
+        '''
+        '''Om du vill veta om SSE, SSE2 och SSE3 ??r tillg??ngliga i din processor kanske du vill anv??nda det h??r kommandot. 
+        '''
+        '''Om du ska utforska mer om detta samtal, som anv??nds internt i C Windows-program, se detta dokument: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-proces [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property sv_sses() As String
+            Get
+                Return ResourceManager.GetString("sv_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-kommando &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -21720,6 +22794,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Kabuk komutu &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''cdbglog komutu
+        '''
+        '''??zet: hata ay??klama g??nl??????n?? temizler
+        '''
+        '''Komut kullan??m??
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property tr_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("tr_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Kabuk komutu &quot;chdir&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -21769,6 +22877,40 @@ Namespace My.Resources
         Friend ReadOnly Property tr_chhostname() As String
             Get
                 Return ResourceManager.GetString("tr_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Kabuk komutu &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''chlang komutu
+        '''
+        '''??zet: Sistem dilini de??i??tirir
+        '''
+        '''A????klama
+        '''
+        '''Sistem dili, yap??land??rma dosyalar??n?? elle d??zenleyerek, ??ekirdek Sim??lat??r?? Yap??land??rma Arac??&apos;n?? kullanarak veya bu komutu kullanarak de??i??tirilebilir. 
+        '''
+        '''Komut kullan??m??
+        '''
+        '''* chlang &lt;language&gt;
+        '''
+        '''??rnekler
+        '''
+        '''* chlang fre: Sistem dilini Frans??zca olarak de??i??tirir
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''chlang &lt;l [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property tr_chlang() As String
+            Get
+                Return ResourceManager.GetString("tr_chlang", resourceCulture)
             End Get
         End Property
         
@@ -23207,6 +24349,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Kabuk komutu &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''sses komutu
+        '''
+        '''??zet: SSE / SSE2 / SSE3 kullan??labilirli??ini kontrol eder.
+        '''
+        '''A????klama
+        '''
+        '''????lemcinizde SSE, SSE2 ve SSE3&apos;??n bulunup bulunmad??????n?? bilmek istiyorsan??z, bu komutu kullanmak isteyebilirsiniz. 
+        '''
+        '''C Windows programlar??nda dahili olarak kullan??lan bu arama hakk??nda daha fazla ara??t??rma yapacaksan??z, ??u dok??mana bak??n: https://docs.microsoft.com/en-us/windows/win32/api/pro [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property tr_sses() As String
+            Get
+                Return ResourceManager.GetString("tr_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Kabuk komutu &quot;sysinfo&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -23558,6 +24724,40 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell m??ngl??ng ???cdbglog???
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Cdbglog m??ngl??ng
+        '''
+        '''Zh??iy??o: Q??ngch?? ti??osh?? r??zh??
+        '''
+        '''M??ngl??ng y??ngf??
+        '''
+        '''* Cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property zh_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("zh_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell m??ngl??ng ???chdir???
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -23607,6 +24807,28 @@ Namespace My.Resources
         Friend ReadOnly Property zh_chhostname() As String
             Get
                 Return ResourceManager.GetString("zh_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:K??p??i m??ngl??ng ???chlang???
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Chlang m??ngl??ng
+        '''
+        '''Zh??iy??o: G??ngg??i x??t??ng y??y??n
+        '''
+        '''Mi??osh??
+        '''
+        '''K??y?? t??nggu?? sh??ud??ng bi??nj?? p??izh?? w??nji??n, sh??y??ng n??ih?? m??n?? q?? p??izh?? g??ngj?? hu?? sh??y??ng c?? m??ngl??ng l??i g??ngg??i x??t??ng y??y??n. B?? x??y??o ch??ngx??n q??d??ng, y??nw??i d??y??n w??nb??n, ch??k??n y??ngh?? sh??uc?? h?? g??ngx??n b??ngzh?? li??bi??o y??l??i y?? ???currentLang??? z [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property zh_chlang() As String
+            Get
+                Return ResourceManager.GetString("zh_chlang", resourceCulture)
             End Get
         End Property
         
@@ -24878,6 +26100,30 @@ Namespace My.Resources
         Friend ReadOnly Property zh_shutdown() As String
             Get
                 Return ResourceManager.GetString("zh_shutdown", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:K??p??i zh??l??ng ???sses???
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Sses m??ngl??ng
+        '''
+        '''Zh??iy??o: Ji??nch?? SSE/ SSE2/ SSE3 de k??y??ngx??ng.
+        '''
+        '''Mi??osh??
+        '''
+        '''R??gu?? n??n xi??ng zh??d??o ch??l?? q?? zh??ng sh??f??u y??u SSE,SSE2 h?? SSE3, n??n k??n??ng x??y??o sh??y??ng c?? m??ngl??ng. Q??ng zh??y??, t?? b?? sh??y??ng y?? Linux x??t??ng, y??nw??i c?? m??ngl??ng sh??ngw??i ji??x??, y??nw??i t?? sh??y??ng Windows di??oy??ng (IsProcessorFeaturePresent).
+        '''
+        '''R??gu?? [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property zh_sses() As String
+            Get
+                Return ResourceManager.GetString("zh_sses", resourceCulture)
             End Get
         End Property
         

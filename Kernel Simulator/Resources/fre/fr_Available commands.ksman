@@ -24,6 +24,7 @@ Commandes administratives:
 13. setsaver: Vous pouvez d??finir votre ??cran de veille de votre choix ou votre ??cran personnalis?? comme ??cran par d??faut. Si vous envisagez d???utiliser des ??conomiseurs d?????cran personnalis??s, vous devez nommer votre extension comme <ScreensaverName> SS.m afin qu???elle soit reconnue comme ??conomiseur d?????cran. 
 14. reloadsaver: Vous pouvez recharger votre fichier d???extension d?????conomiseur d?????cran ?? partir du r??pertoire KSMods. 
 15. cdbglog: vous pouvez effacer le journal de d??bogage, en remettant la taille ?? 0
+16. chlang: change de langue
 
 Commandes utilisateur normales:
 
@@ -57,6 +58,7 @@ Commandes utilisateur normales:
 28. unitconv: Vous pouvez convertir l'unit?? en une unit?? quelconque, si la source et la cible se supportent, comme cm -> m, en utilisant "unitconv <source> <cible> <valeur>."
 29. useddeps: Vous pouvez afficher les biblioth??ques Open Source utilis??es
 30. manuel: Vous pouvez obtenir des informations sur tout, ou obtenir les pages de manuel disponibles en ??crivant uniquement la commande. 
+31. sses: Obtient les fonctionnalités SSE (1 | 2 | 3) trouvées dans les processeurs.
 
 Pour plus d'informations sur chaque commande, consultez "usermanual <commande>"
 -BODY END-

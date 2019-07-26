@@ -24,6 +24,7 @@ Comandi amministrativi:
 13. setaver: puoi impostare il salvaschermo di tua scelta o quello personalizzato come predefinito, e se prevedi di utilizzare screensaver personalizzati, dovresti nominare l'estensione come <ScreensaverName> SS.m per essere riconosciuto come salvaschermo, non 
 14. reloadsaver: puoi ricaricare il tuo file di estensione screensaver dalla directory KSMods. 
 15. cdbglog: puoi cancellare il registro di debug, ripristinando la dimensione a 0
+16. chlang: cambia la tua lingua
 
 Comandi utente normale:
 
@@ -57,6 +58,7 @@ Comandi utente normale:
 28. unitconv: puoi convertire l'unit?? in qualsiasi unit??, se la sorgente e il bersaglio si supportano a vicenda come cm -> m, usando "unitconv <source> <target> <value>."
 29. useddeps: ?? possibile mostrare le librerie open source utilizzate
 30. manuale: ?? possibile ottenere informazioni su tutto o ottenere le pagine di manuale disponibili scrivendo solo il comando. 
+31. sses: ottiene le funzionalità SSE (1 | 2 | 3) presenti nei processori
 
 Per ulteriori informazioni su ogni comando, consultare "usermanual <comando>"
 -BODY END-

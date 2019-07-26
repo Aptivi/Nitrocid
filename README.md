@@ -144,6 +144,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **7/25/2019 - 0.0.6.5:** Fixed dump files being created without extension, Localized dumps and manpages, Upgraded language version to the latest, Fixed some bugs about filesystem, Fixed CPU clock speed showing up twice in latest processors (processors that have clock speed on their internal names, for ex. "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz"), Fixed progress bar of FTP transfers so it uses new format, Added ETA and speed
 
+**7/26/2019 - 0.0.6.6:** Updated manual page for new commands, Removed currency command (unpaid)
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation` and are localized to supported languages.

@@ -36,7 +36,6 @@ Public Module HelpSystem
                                                              {"chpwd", DoTranslation("Changes password for current user", currentLang)},
                                                              {"chusrname", DoTranslation("Changes user name (Admins Only)", currentLang)},
                                                              {"cls", DoTranslation("Clears the screen", currentLang)},
-                                                             {"currency", DoTranslation("Convert amount of money from country to country", currentLang)},
                                                              {"debuglog", DoTranslation("Shows debug logs (Admins Only)", currentLang)},
                                                              {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                              {"help", DoTranslation("Help page", currentLang)},

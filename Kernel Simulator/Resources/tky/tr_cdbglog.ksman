@@ -1,0 +1,25 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "cdbglog"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+cdbglog komutu
+
+??zet: hata ay??klama g??nl??????n?? temizler
+
+Komut kullan??m??
+
+* cdbglog
+-BODY END-
+
+-COLOR CONFIGURATION-
+cdbglog=>Green
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+cdbglog command=>SE1
+Command usage=>SE2
+-SECTIONS END-

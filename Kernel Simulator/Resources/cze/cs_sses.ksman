@@ -1,0 +1,32 @@
+(*MAN START*)
+
+-TITLE:Shell p????kaz "sses"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+p????kaz sses
+
+Shrnut??: Kontroluje dostupnost SSE / SSE2 / SSE3.
+
+Popis
+
+Pokud chcete v??d??t, zda jsou ve va??em procesoru k dispozici SSE, SSE2 a SSE3, m????ete pou????t tento p????kaz. 
+
+Pokud se chyst??te prozkoumat v??ce o tomto hovoru, kter?? je intern?? pou????v??n v programech C Windows, viz tento dokument: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi 
+
+Pou??it?? p????kazu
+
+* sses
+-BODY END-
+
+-COLOR CONFIGURATION-
+sses=>Green
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+sses command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

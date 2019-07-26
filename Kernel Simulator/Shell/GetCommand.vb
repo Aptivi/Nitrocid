@@ -260,20 +260,10 @@ Public Module GetCommand
 
                 Console.Clear() : Done = True
 
-            ElseIf words(0) = "currency" Then
-
-                If requestedCommand <> "currency" Then
-                    If args.Count - 1 >= 2 Then
-                        Done = True
-                        CurrencyConvert(args(0), args(1), args(2))
-                    End If
-                End If
-
             ElseIf requestedCommand = "debuglog" Then
 
                 Dim line As String
-                Dim debugPath As String = paths("Debugging")
-                Using dbglog = File.Open(debugPath, FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
+                Using dbglog = File.Open(paths("Debugging"), FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
                     line = reader.ReadLine()
                     Do While reader.EndOfStream <> True
                         Wln(line, "neutralText")

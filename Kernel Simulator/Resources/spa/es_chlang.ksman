@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "chlang"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando chlang
+
+Resumen: Cambia el idioma del sistema.
+
+Descripci??n
+
+El idioma del sistema se puede cambiar editando manualmente los archivos de configuraci??n, utilizando la herramienta de configuraci??n del simulador de kernel o usando este comando. 
+
+Uso del comando
+
+* chlang <language>
+
+Ejemplos
+
+* chlang fre: Cambia el idioma del sistema a franc??s
+-BODY END-
+
+-COLOR CONFIGURATION-
+chlang <language>=>Green
+chlang fre:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chlang command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

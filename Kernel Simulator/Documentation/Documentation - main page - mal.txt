@@ -10,6 +10,7 @@ Simulator Kernel membolehkan anda mensimulasikan akses awal untuk Kernel masa de
 
 | --------------- + -> Sejarah <- + --------------- |
 
+7/26/2019 - 0.0.6.6: Laman manual yang dikemaskini untuk arahan baru, arahan mata wang yang dialih keluar (tidak dibayar)
 7/25/2019 - 0.0.6.5: Fail pembuangan tetap yang dibuat tanpa lanjutan, dumps tempatan dan manpages, Versi bahasa ditingkatkan kepada yang terkini, Tetapkan beberapa bug mengenai sistem fail, Memperbaiki kelajuan jam CPU yang muncul dua kali dalam pemproses terkini (pemproses yang mempunyai kelajuan jam atas nama-nama dalaman mereka, sebagai contoh "Intel (R) Teras (TM) i7-8700 CPU @ 3.20GHz"), Memperbaiki bar perkembangan pemindahan FTP supaya menggunakan format baru, ETA ditambah dan kelajuan
 7/7/2019 - 0.0.6.4b: Membuat satu persediaan untuk 0.0.6.5: Memuat turun simbol debug pada permulaan jika tidak dijumpai
 7/6/2019 - 0.0.6.4a: Perisian perkakasan Linux tetap gagal walaupun berjaya, Proper RAM tetap menunjukkan MemTotal: awalan, Mesej dibuat tentang libcpanel-json-xs-perl jelas

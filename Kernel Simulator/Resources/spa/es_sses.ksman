@@ -1,0 +1,32 @@
+(*MAN START*)
+
+-TITLE:Comando de shell "sses"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+comando sses
+
+Resumen: Verifica la disponibilidad de SSE / SSE2 / SSE3.
+
+Descripci??n
+
+Si desea saber si SSE, SSE2 y SSE3 est??n disponibles en su procesador, puede utilizar este comando. 
+
+Si va a explorar m??s sobre esta llamada, que se usa internamente en los programas de C Windows, consulte este documento: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi 
+
+Uso del comando
+
+* sses
+-BODY END-
+
+-COLOR CONFIGURATION-
+sses=>Green
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+sses command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

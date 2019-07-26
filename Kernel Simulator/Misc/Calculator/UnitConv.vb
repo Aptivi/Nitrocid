@@ -353,47 +353,4 @@ Public Module UnitConv
 
     End Sub
 
-    <Obsolete> Sub CurrencyConvert(ByVal src3UPchars As String, ByVal dest3UPchars As String, ByVal value As Double)
-
-        'Get API key from user
-        Dim RateAPIKey As String = ""
-        W(DoTranslation("Enter your API key: ", currentLang), "neutralText")
-        While True
-            Dim character As Char = Console.ReadKey(True).KeyChar
-            If character = vbCr Or character = vbLf Then
-                Console.WriteLine()
-                Exit While
-            Else
-                RateAPIKey += character
-            End If
-        End While
-
-        'Try to get currency
-        Try
-            Dim RateResult As String
-            Dim RateURL As String = $"https://apilayer.net/api/convert?access_key={RateAPIKey}&from={src3UPchars}&to={dest3UPchars}&amount={CStr(value)}"
-            Dim RateReq As HttpWebRequest = CType(WebRequest.Create(RateURL), HttpWebRequest)
-            Dim RateRes As HttpWebResponse = CType(RateReq.GetResponse(), HttpWebResponse)
-            Dim RateStream As New IO.StreamReader(RateRes.GetResponseStream)
-            Dim RateToken As JToken
-            RateResult = RateStream.ReadToEnd
-            If RateResult = "{}" Then
-                Throw New EventsAndExceptions.JsonNullException(DoTranslation("Either the source ", currentLang) + src3UPchars +
-                                                                DoTranslation(" or destination ", currentLang) + dest3UPchars +
-                                                                DoTranslation(" does not exist on server.", currentLang))
-            End If
-            RateToken = JToken.Parse(RateResult)
-            Dim Result As Double = RateToken("result")
-            Wln(DoTranslation("{0} to {1}: {2}", currentLang), "neutralText", src3UPchars, dest3UPchars, FormatNumber(Result, 2))
-        Catch ex As Exception
-            If DebugMode = True Then
-                Wln(DoTranslation("Error trying to convert from {0} to {1}: {2}", currentLang) + vbNewLine + ex.StackTrace, "neutralText", src3UPchars, dest3UPchars, ex.Message)
-                Wdbg(ex.StackTrace, True)
-            Else
-                Wln(DoTranslation("Error trying to convert from {0} to {1}: {2}", currentLang), "neutralText", src3UPchars, dest3UPchars, ex.Message)
-            End If
-        End Try
-
-    End Sub
-
 End Module

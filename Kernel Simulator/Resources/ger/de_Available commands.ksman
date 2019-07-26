@@ -1,4 +1,4 @@
-(*MAN START*)
+﻿(*MAN START*)
 
 ~~- Information about this manual page:
 -TITLE:Verf??gbare Befehle
@@ -24,6 +24,7 @@ Administrative Befehle:
 13. Bildschirmschoner: Sie k??nnen einen Bildschirmschoner Ihrer Wahl oder einen benutzerdefinierten als Standard festlegen. Wenn Sie benutzerdefinierte Bildschirmschoner verwenden m??chten, sollten Sie Ihre Erweiterung als <ScreensaverName> SS.m bezeichnen, um als Bildschirmschoner erkannt zu werden, nicht als 
 14. reloadsaver: Sie k??nnen Ihre Bildschirmschoner-Erweiterungsdatei aus dem KSMods-Verzeichnis neu laden. 
 15. cdbglog: Sie k??nnen das Debug-Protokoll l??schen und die Gr????e auf 0 zur??cksetzen
+16. chlang: Ändert Ihre Sprache
 
 Normale Benutzerbefehle:
 
@@ -57,6 +58,7 @@ Normale Benutzerbefehle:
 28. unitconv: Sie k??nnen die Einheit in eine beliebige Einheit konvertieren, wenn sich Quelle und Ziel wie cm -> m unter Verwendung von "unitconv <Quelle> <Ziel> <Wert>" unterst??tzen.
 29. useddeps: Sie k??nnen die verwendeten Open-Source-Bibliotheken anzeigen
 30. Benutzerhandbuch: Sie k??nnen Informationen ??ber alles abrufen oder die verf??gbaren Handbuchseiten abrufen, indem Sie nur den Befehl schreiben. 
+31. sses: Ruft SSE (1 | 2 | 3) -Funktionen ab, die in Prozessoren zu finden sind
 
 Weitere Informationen zu jedem Befehl finden Sie in "Benutzerhandbuch <Befehl>".
 -BODY END-

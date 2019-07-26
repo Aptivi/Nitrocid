@@ -1,4 +1,4 @@
-(*MAN START*)
+﻿(*MAN START*)
 
 ~~- Information about this manual page:
 -TITLE:Tillg??ngliga kommandon
@@ -24,6 +24,7 @@ Administrativa kommandon:
 13. setsaver: Du kan st??lla in din sk??rmsl??ckare som du v??ljer eller din anpassade som standard en, och om du planerar att anv??nda anpassade sk??rmsl??ckare, b??r du namnge ditt till??gg som <ScreensaverName> SS.m f??r att erk??nnas som en sk??rmsl??ckare, inte 
 14. reloadsaver: Du kan ladda om din sk??rmsl??ckare-f??rl??ngningsfil fr??n katalogen KSMods. 
 15. cdbglog: Du kan rensa fels??kningslogg och ??terst??lla storleken till 0
+16. chlang: Ändrar ditt språk
 
 Normala anv??ndarkommandon:
 
@@ -57,6 +58,7 @@ Normala anv??ndarkommandon:
 28. unitconv: Du kan konvertera enheten till vilken enhet som helst, om k??llan och m??let st??der varandra som cm -> m, med hj??lp av "unitconv <source> <target> <value>."
 29. useddeps: Du kan visa ??ppna k??llbibliotek som anv??nds
 30. usermanual: Du kan f?? information om allt eller f?? tillg??ngliga manuella sidor genom att bara skriva kommandot. 
+31. sses: Få SSE (1 | 2 | 3) -funktioner som finns i processorer
 
 F??r mer information om varje kommando, se "usermanual <command>"
 -BODY END-

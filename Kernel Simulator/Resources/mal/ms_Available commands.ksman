@@ -24,6 +24,7 @@ Perintah pentadbiran:
 13. setsaver: Anda boleh menetapkan screensaver pilihan atau pilihan anda sebagai lalai, dan jika anda merancang untuk menggunakan screensaver tersuai, anda harus menamakan pelanjutan anda sebagai <ScreensaverName> SS.m untuk diiktiraf sebagai screensaver, bukan 
 14. reloadsaver: Anda boleh memuatkan semula fail sambungan screensaver anda dari direktori KSMods. 
 15. cdbglog: Anda boleh membersihkan log debug, menetapkan semula saiz menjadi 0
+16. chlang: Perubahan bahasa anda
 
 Perintah pengguna biasa:
 
@@ -57,6 +58,7 @@ Perintah pengguna biasa:
 28. unitconv: Anda boleh menukar unit ke mana-mana unit, jika sumber dan target menyokong satu sama lain seperti cm -> m, menggunakan "unitconv <source> <target> <value>."
 29. useddeps: Anda boleh menunjukkan perpustakaan sumber terbuka yang digunakan
 30. Usermanual: Anda boleh mendapatkan maklumat tentang segala-galanya, atau dapatkan halaman manual yang tersedia dengan hanya menulis perintah. 
+31. Sses: Mendapatkan keupayaan SSE (1 | 2 | 3) yang terdapat dalam pemproses
 
 Untuk maklumat lanjut tentang setiap arahan, rujuk "usermanual <command>"
 -BODY END-

@@ -10,6 +10,7 @@ O Kernel Simulator permite simular um acesso muito antecipado para o nosso futur
 
 | --------------- + -> Histórico <- + --------------- |
 
+26/07/2019 - 0.0.6.6: Página de manual atualizada para novos comandos, Comando de moeda removida (não pago)
 7/25/2019 - 0.0.6.5: arquivos de despejo fixo sendo criados sem extensão, dumps localizados e manpages, atualizados versão da linguagem para o mais recente, Corrigido alguns erros sobre o sistema de arquivos, Velocidade do clock da CPU fixa aparecendo duas vezes nos processadores mais recentes (processadores que têm velocidade de clock em seus nomes internos, por exemplo, "CPU Intel (R) Core (TM) i7-8700 @ 3.20GHz"), Barra de progresso fixa de transferências FTP para que ele use o novo formato, ETA adicionado e velocidade
 7/7/2019 - 0.0.6.4b: feita uma preparação para 0.0.6.5: Download de símbolos de depuração na inicialização se não for encontrado
 7/6/2019 - 0.0.6.4a: Falha na análise de hardware do Linux corrigido, mesmo que tenha sido bem-sucedida. Prober de RAM corrigido mostrando MemTotal: prefixo, Mensagem da mensagem sobre libcpanel-json-xs-perl clear

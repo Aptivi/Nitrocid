@@ -10,6 +10,7 @@ Ytimen simulaattorin avulla voit simuloida hyvin varhaisen pääsyn tulevaan yti
 
 --------------- + -> Historia <- + --------------- |
 
+7/26/2019 - 0.0.6.6: Uusien komentojen päivitetty manuaalinen sivu, Poistettu valuuttakomento (maksuton)
 7/25/2019 - 0.0.6.5: Kiinteät polttotiedostot luodaan ilman laajennusta, Paikalliset kaatopaikat ja manuaalit, Päivitetty kieliversio viimeistään, Korjattiin joitakin vikoja tiedostojärjestelmästä, Kiinteä CPU-kellonopeus, joka näkyy kahdesti uusimmissa prosessoreissa (prosessorit, joissa on kellon nopeus niiden sisäisissä nimissä, esim. "Intel (C) Core (TM) i7-8700 CPU @ 3.20GHz"), FTP-siirtojen kiinteä etenemispalkki, joten se käyttää uutta muotoa, lisätty ETA ja nopeus
 7/7/2019 - 0.0.6.4b: Yksi valmistelu 0.0.6.5: Debug-symbolien lataaminen käynnistyksen yhteydessä, jos niitä ei löydy
 7/6/2019 - 0.0.6.4a: Kiinteä Linux-laitteiston testaus epäonnistui, vaikka se olisi onnistunut, Fixed RAM prober, joka näyttää MemTotal: prefiksin, Made in libcpanel-json-xs-perl clear

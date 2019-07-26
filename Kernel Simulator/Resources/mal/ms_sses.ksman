@@ -1,0 +1,32 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "sses"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah sses
+
+Ringkasan: Cek untuk ketersediaan SSE / SSE2 / SSE3.
+
+Penerangan
+
+Jika anda ingin mengetahui sama ada SSE, SSE2, dan SSE3 tersedia dalam pemproses anda, anda mungkin mahu menggunakan arahan ini. 
+
+Jika anda akan meneroka lebih lanjut mengenai panggilan ini, yang digunakan secara dalaman dalam program C Windows, lihat dokumen ini: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi 
+
+Penggunaan perintah
+
+* sses
+-BODY END-
+
+-COLOR CONFIGURATION-
+sses=>Green
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+sses command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

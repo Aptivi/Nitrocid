@@ -10,6 +10,7 @@ Kernel Simulator vám umožní simulovat velmi brzký přístup pro naše budouc
 
 | --------------- + -> Historie <- + --------------- |
 
+26.7.2016 - 0.0.6.6: Aktualizovaná stránka manuálu pro nové příkazy, Příkaz Odstraněná měna (neplacená)
 7/25/2019 - 0.0.6.5: Opraveny soubory výpisu bez přípony, Lokalizované výpisy a manuály, Aktualizovaná jazyková verze na nejnovější, Opraveny některé chyby o souborovém systému, Opravena rychlost hodin procesoru, která se zobrazuje dvakrát v nejnovějších procesorech (procesory, které mají rychlost hodin na jejich interních názvech, např. "Intel (R) Core (TM) i7-8700 CPU @ 3,20GHz"), Opravená lišta průběhu FTP přenosů, takže používá nový formát, přidáno ETA a rychlost
 7/7/2019 - 0.0.6.4b: Byla provedena jedna příprava pro 0.0.6.5: Stažení ladících symbolů při spuštění, pokud nebylo nalezeno
 7/6/2019 - 0.0.6.4a: Opravena chyba hardwarové sondy v systému Linux, i když byla úspěšná, Opravená chyba v paměti RAM zobrazující MemTotal: předpona, Vyrobeno zprávy o libcpanel-json-xs-perl clear

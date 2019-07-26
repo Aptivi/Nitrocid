@@ -271,6 +271,42 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Resources\eng\cdbglog.ksman" />
+    <None Include="Resources\eng\chlang.ksman" />
+    <None Include="Resources\cze\cs_cdbglog.ksman" />
+    <None Include="Resources\cze\cs_chlang.ksman" />
+    <None Include="Resources\cze\cs_sses.ksman" />
+    <None Include="Resources\ger\de_cdbglog.ksman" />
+    <None Include="Resources\ger\de_chlang.ksman" />
+    <None Include="Resources\ger\de_sses.ksman" />
+    <None Include="Resources\spa\es_cdbglog.ksman" />
+    <None Include="Resources\spa\es_chlang.ksman" />
+    <None Include="Resources\spa\es_sses.ksman" />
+    <None Include="Resources\fin\fi_cdbglog.ksman" />
+    <None Include="Resources\fin\fi_chlang.ksman" />
+    <None Include="Resources\fin\fi_sses.ksman" />
+    <None Include="Resources\fre\fr_cdbglog.ksman" />
+    <None Include="Resources\fre\fr_chlang.ksman" />
+    <None Include="Resources\fre\fr_sses.ksman" />
+    <None Include="Resources\ind\hi_cdbglog.ksman" />
+    <None Include="Resources\ind\hi_chlang.ksman" />
+    <None Include="Resources\ind\hi_sses.ksman" />
+    <None Include="Resources\ita\it_cdbglog.ksman" />
+    <None Include="Resources\ita\it_chlang.ksman" />
+    <None Include="Resources\ita\it_sses.ksman" />
+    <None Include="Resources\mal\ms_cdbglog.ksman" />
+    <None Include="Resources\mal\ms_chlang.ksman" />
+    <None Include="Resources\mal\ms_sses.ksman" />
+    <None Include="Resources\dtc\nl_cdbglog.ksman" />
+    <None Include="Resources\dtc\nl_chlang.ksman" />
+    <None Include="Resources\dtc\nl_sses.ksman" />
+    <None Include="Resources\ptg\pt_cdbglog.ksman" />
+    <None Include="Resources\ptg\pt_chlang.ksman" />
+    <None Include="Resources\ptg\pt_sses.ksman" />
+    <None Include="Resources\eng\sses.ksman" />
+    <None Include="Resources\swe\sv_cdbglog.ksman" />
+    <None Include="Resources\swe\sv_chlang.ksman" />
+    <None Include="Resources\swe\sv_sses.ksman" />
     <None Include="Resources\tky\tr_adduser.ksman" />
     <None Include="Resources\tky\tr_alias.ksman" />
     <None Include="Resources\tky\tr_arginj.ksman" />
@@ -336,6 +372,12 @@
     <None Include="Resources\tky\tr_sysinfo.ksman" />
     <None Include="Resources\tky\tr_unitconv.ksman" />
     <None Include="Resources\tky\tr_useddeps.ksman" />
+    <None Include="Resources\tky\tr_cdbglog.ksman" />
+    <None Include="Resources\tky\tr_chlang.ksman" />
+    <None Include="Resources\tky\tr_sses.ksman" />
+    <None Include="Resources\chi\zh_cdbglog.ksman" />
+    <None Include="Resources\chi\zh_chlang.ksman" />
+    <None Include="Resources\chi\zh_sses.ksman" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">

@@ -24,6 +24,7 @@ Comandos Administrativos:
 13. setsaver: Voc?? pode definir seu protetor de tela de sua escolha ou seu personalizado como padr??o, e se voc?? planeja usar screensavers personalizados, voc?? deve nomear sua extens??o como <ScreensaverName> SS.m para ser reconhecido como um protetor de tela, n??o 
 14. reloadsaver: Voc?? pode recarregar seu arquivo de extens??o do protetor de tela do diret??rio KSMods. 
 15. cdbglog: Voc?? pode limpar o log de depura????o, redefinindo o tamanho para 0
+16. chlang: Altera seu idioma
 
 Comandos normais do usu??rio:
 
@@ -57,6 +58,7 @@ Comandos normais do usu??rio:
 28. unitconv: Voc?? pode converter a unidade para qualquer unidade, se a origem e o destino suportarem um ao outro como cm -> m, usando "unitconv <source> <target> <value>."
 29.depadas: voc?? pode mostrar as bibliotecas de c??digo aberto usadas
 30. usermanual: Voc?? pode obter informa????es sobre tudo ou obter as p??ginas de manual dispon??veis escrevendo apenas o comando. 
+31. sses: Obtém os recursos SSE (1 | 2 | 3) encontrados nos processadores
 
 Para mais informa????es sobre cada comando, consulte "usermanual <command>"
 -BODY END-

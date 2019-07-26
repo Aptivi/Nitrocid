@@ -10,6 +10,7 @@ Met Kernel Simulator kunt u een zeer vroege toegang simuleren voor onze toekomst
 
 | --------------- + -> Geschiedenis <- + --------------- |
 
+26-7-2019 - 0.0.6.6: bijgewerkte handleidingpagina voor nieuwe opdrachten, opdracht voor verwijderde valuta (onbetaald)
 7/25/2019 - 0.0.6.5: Fixed dumpbestanden worden aangemaakt zonder extensie, gelokaliseerde dumps en manpages, verbeterde taalversie naar de nieuwste versie, wat bugs over het bestandssysteem opgelost, CPU-kloksnelheid tweemaal weergegeven in de nieuwste processors (processors die hebben kloksnelheid op hun interne namen, bijv. "Intel (R) Core (TM) i7-8700 CPU @ 3.20 GHz"), Vaste voortgangsbalk van FTP-overdrachten, zodat het nieuwe formaat, toegevoegde ETA en snelheid gebruikt
 7/7/2019 - 0.0.6.4b: Eén voorbereiding gemaakt voor 0.0.6.5: Debug-symbolen downloaden bij opstarten indien niet gevonden
 7/6/2019 - 0.0.6.4a: Vastlopen van Linux-hardware mislukt, zelfs als dit lukte, Fixed RAM Prober met MemTotal: prefix, bericht over libcpanel-json-xs-perl duidelijk gemaakt

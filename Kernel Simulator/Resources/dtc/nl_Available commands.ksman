@@ -24,6 +24,7 @@ Administratieve opdrachten:
 13. setsaver: u kunt uw schermbeveiliging naar keuze instellen of uw aangepaste schermbeveiliging instellen als standaardlocatie, en als u van plan bent om aangepaste schermbeveiligingen te gebruiken, moet u uw extensie een naam geven als <ScreensaverName> SS.m om te worden herkend als een screensaver, niet als 
 14. reloadsaver: u kunt uw bestandsextensie voor de screensaver opnieuw laden vanuit de KSMods-directory. 
 15. cdbglog: U kunt het logboek voor foutopsporing wissen en de grootte opnieuw instellen op 0
+16. chlang: Verandert uw taal
 
 Normale gebruikersopdrachten:
 
@@ -57,6 +58,7 @@ Normale gebruikersopdrachten:
 28. unitconv: je kunt de eenheid naar elke eenheid converteren, als de bron en het doel elkaar ondersteunen, zoals cm -> m, met behulp van "unitconv <source> <target> <value>".
 29. useddeps: u kunt de gebruikte open source-bibliotheken weergeven
 30. gebruikelijk: u kunt overal informatie over krijgen of de beschikbare pagina's handmatig opvragen door alleen de opdracht te schrijven. 
+31. sses: Krijgt SSE (1 | 2 | 3) -mogelijkheden gevonden in processors
 
 Raadpleeg "usermanual <command>" voor meer informatie over elke opdracht.
 -BODY END-

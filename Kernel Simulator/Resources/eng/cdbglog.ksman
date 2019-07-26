@@ -1,0 +1,25 @@
+(*MAN START*)
+
+-TITLE:Shell command "cdbglog"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+cdbglog command
+
+Summary: Clears debugging log
+
+Command usage
+
+* cdbglog
+-BODY END-
+
+-COLOR CONFIGURATION-
+cdbglog=>Green
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+cdbglog command=>SE1
+Command usage=>SE2
+-SECTIONS END-

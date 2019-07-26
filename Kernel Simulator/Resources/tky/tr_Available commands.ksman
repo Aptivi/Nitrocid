@@ -1,4 +1,4 @@
-(*MAN START*)
+﻿(*MAN START*)
 
 ~~- Information about this manual page:
 -TITLE:Mevcut komutlar
@@ -24,6 +24,7 @@
 13. setsaver: Ekran koruyucunuzu tercih etti??iniz ekran koruyucuyu veya ??zelle??tirilmi?? olan?? varsay??lan ayar olarak ayarlayabilirsiniz ve ??zelle??tirilmi?? ekran koruyucular kullanmay?? planl??yorsan??z, uzant??n??z?? ekran koruyucusu olarak de??il, ekran koruyucusu olarak tan??mlanmas?? i??in <ScreensaverName> SS.m olarak adland??rmal??s??n??z. 
 14. yeniden y??kleme: Ekran koruyucu uzant?? dosyan??z?? KSMods dizininden yeniden y??kleyebilirsiniz. 
 15. cdbglog: Boyutu 0'a s??f??rlayarak hata ay??klama g??nl??????n?? temizleyebilirsiniz.
+16. chlang: Dilinizi değiştirir
 
 Normal kullan??c?? komutlar??:
 
@@ -57,6 +58,7 @@ Normal kullan??c?? komutlar??:
 28. unitconv: Kaynak ve hedef birbirini cm -> m gibi destekliyorsa, birimi "unitconv <source> <target> <value>" kullanarak destekliyorsa, herhangi bir birime d??n????t??rebilirsiniz.
 29. useddeps: Kullan??lan a????k kaynak k??t??phaneleri g??sterebilir.
 30. kullan??c?? eliyle: Her ??ey hakk??nda bilgi alabilir veya yaln??zca komut yazarak el ile verilen sayfalar?? alabilirsiniz. 
+31. sses: İşlemcilerde bulunan SSE (1 | 2 | 3) yeteneklerini alır
 
 Her komut hakk??nda daha fazla bilgi i??in, "usermanualual <command>" konusuna bak??n.
 -BODY END-

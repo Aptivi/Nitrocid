@@ -2887,4 +2887,130 @@
   <data name="zh_useddeps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chi\zh_useddeps.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eng\cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eng\chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="cs_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cze\cs_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="cs_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cze\cs_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="cs_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cze\cs_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="de_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ger\de_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="de_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ger\de_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="de_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ger\de_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="es_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spa\es_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="es_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spa\es_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="es_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spa\es_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="fi_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fin\fi_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="fi_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fin\fi_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="fi_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fin\fi_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="fr_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fre\fr_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="fr_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fre\fr_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="fr_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fre\fr_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="hi_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ind\hi_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="hi_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ind\hi_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="hi_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ind\hi_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="it_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ita\it_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="it_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ita\it_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="it_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ita\it_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="ms_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mal\ms_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="ms_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mal\ms_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="ms_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mal\ms_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="nl_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dtc\nl_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="nl_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dtc\nl_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="nl_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dtc\nl_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="pt_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ptg\pt_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="pt_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ptg\pt_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="pt_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ptg\pt_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eng\sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="sv_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\swe\sv_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="sv_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\swe\sv_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="sv_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\swe\sv_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="tr_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tky\tr_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="tr_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tky\tr_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="tr_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tky\tr_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="zh_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chi\zh_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="zh_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chi\zh_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="zh_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chi\zh_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>

@@ -10,6 +10,7 @@ Kernel Simulator låter dig simulera en mycket tidig åtkomst för vår framtida
 
 | --------------- + -> Historik <- + --------------- |
 
+7/26/2019 - 0.0.6.6: Uppdaterad manuell sida för nya kommandon, Borttagen valutakommando (obetalt)
 7/25/2019 - 0.0.6.5: Fasta dumpfiler skapas utan förlängning, Lokala dumpningar och manpages, Uppgraderad språkversion till den senaste, Fixade några buggar om filsystem, Fast CPU-klockhastighet som visas två gånger i de senaste processorerna (processorer som har klockhastighet på deras interna namn, till exempel "Intel (R) Core (TM) i7-8700 CPU @ 3.20GHz"), Fast framstegsfält för FTP-överföringar så att det använder nytt format, lagt till ETA och hastighet
 7/7/2019 - 0.0.6.4b: Gjorde en förberedelse för 0.0.6.5: Nedladdning av felsökningssymboler vid start om den inte hittades
 7/6/2019 - 0.0.6.4a: Fasta Linux-hårdvaruförsök misslyckas även om det lyckades, Fast RAM-prober som visar MemTotal: prefix, Gjort meddelande om libcpanel-json-xs-perl clear

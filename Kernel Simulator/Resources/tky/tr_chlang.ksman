@@ -1,0 +1,36 @@
+(*MAN START*)
+
+-TITLE:Kabuk komutu "chlang"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+chlang komutu
+
+??zet: Sistem dilini de??i??tirir
+
+A????klama
+
+Sistem dili, yap??land??rma dosyalar??n?? elle d??zenleyerek, ??ekirdek Sim??lat??r?? Yap??land??rma Arac??'n?? kullanarak veya bu komutu kullanarak de??i??tirilebilir. 
+
+Komut kullan??m??
+
+* chlang <language>
+
+??rnekler
+
+* chlang fre: Sistem dilini Frans??zca olarak de??i??tirir
+-BODY END-
+
+-COLOR CONFIGURATION-
+chlang <language>=>Green
+chlang fre:=>Yellow
+
+-COLOR CONFIG END-
+
+-SECTIONS-
+chlang command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-
