@@ -101,7 +101,7 @@ Public Module Translate
     Public Sub SetLang(ByVal lang As String)
         If availableLangs.Contains(lang) Then
             'Set current language
-            Wln(DoTranslation("Changing from: {0} to {1}...", currentLang), "neutralText", currentLang, lang)
+            W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, "neutralText", currentLang, lang)
             currentLang = lang
             Dim ksconf As New IniFile()
             Dim pathConfig As String = paths("Configuration")
@@ -111,8 +111,9 @@ Public Module Translate
 
             'Update help list for translated help
             InitHelp()
+            InitFTPHelp()
         Else
-            Wln(DoTranslation("Invalid language", currentLang), "neutralText")
+            W(DoTranslation("Invalid language", currentLang), True, "neutralText")
         End If
     End Sub
 

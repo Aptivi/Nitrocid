@@ -795,6 +795,28 @@ KS 0.0.6.5
 5. Memperbaiki kelajuan jam CPU yang muncul dua kali dalam pemproses terkini (pemproses yang mempunyai kelajuan jam pada nama dalaman mereka, untuk contohnya "Intel (R) Core (TM) i7-8700 CPU @ 3.20GHz")
 6. Bar kemajuan pemindahan FTP supaya ia menggunakan format baru
 7. Menambah ETA dan kelajuan
+
+KS 0.0.6.6
+
+1. Halaman manual yang dikemas kini untuk arahan baru
+2. Perintah mata wang yang dikeluarkan (tidak dibayar)
+
+KS 0.0.6.9
+
+1. Kalkulator dan penukar unit yang dikeluarkan
+2. Unified two print command menjadi one
+3. Gabenor dua mod bersatu menjadi satu
+4. Dibenarkan memasuki pelayan FTP tanpa menyatakan awalan "ftp: //"
+5. Membenarkan alamat yang ditentukan sebagai argumen arahan "ftp"
+6. Sekarang pelanggan FTP akan memutuskan secara aman apabila keluar
+7. Perincian bantuan FTP tetap tidak mengemaskini apabila menukar bahasa
+8. Pemeriksaan SSE oleh perintah kini disokong pada sistem Unix
+9. Masa sudut dan kedudukan tarikh tetap
+10. Kata laluan tetap tidak berfungsi dengan betul walaupun pengguna memasukkan kata laluan yang betul
+11. Menghapus fasa yang tidak digunakan
+12. Ditambah debug pada setiap fasa
+13. Ditambah pemegang tempat sistem operasi untuk digunakan dengan MOTD dan MAL
+14. Menambah parser baru untuk membuat MOTD menyokong lebih daripada 1 baris
 -BODY END-
 
 -SECTIONS-
@@ -850,4 +872,6 @@ ks 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
+KS 0.0.6.6=>SE1
+KS 0.0.6.9=>SE1
 -SECTIONS END-

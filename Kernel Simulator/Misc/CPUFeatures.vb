@@ -20,6 +20,7 @@ Imports System.Runtime.InteropServices
 
 Public Class CPUFeatures
 
+    ' ----------------------------- Windows functions -----------------------------
     <DllImport("kernel32.dll")> 'Check for specific processor feature
     Public Shared Function IsProcessorFeaturePresent(ByVal processorFeature As SSEnum) As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
@@ -39,5 +40,29 @@ Public Class CPUFeatures
         InstructionsSSE3Available = 13
     End Enum
 
+    ' ----------------------------- Unix functions -----------------------------
+    Public Sub CheckSSEs()
+        Dim cpuinfo As New IO.StreamReader("/proc/cpuinfo")
+        Dim SSE, SSE2, SSE3 As Boolean
+        Dim ln As String
+        Do While Not cpuinfo.EndOfStream
+            ln = cpuinfo.ReadLine
+            If ln.StartsWith("flags") Then
+                If ln.Contains("sse") Then
+                    SSE = True
+                End If
+                If ln.Contains("sse2") Then
+                    SSE2 = True
+                End If
+                If ln.Contains("sse3") Then
+                    SSE3 = True
+                End If
+                Exit Do
+            End If
+        Loop
+        W("SSE:  {0}" + vbNewLine +
+          "SSE2: {1}" + vbNewLine +
+          "SSE3: {2}", True, "neutralText", SSE, SSE2, SSE3)
+    End Sub
 
 End Class

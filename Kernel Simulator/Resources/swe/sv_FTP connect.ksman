@@ -17,17 +17,15 @@ Detta kommando ??ppnar en ny session f??r att ansluta din FTP-klient till vilken
 
 Kommandobruk
 
-* anslut (adress)
+* connect (address)
 exempel
 
-* anslut ftp://ftp.fabrikam.com: Ansluter din klient till servern med namnet "ftp.fabrikam.com"
-* anslut ftps: //ftp.contoso.com: Ansluter din klient med SSL till servern med namnet "ftp.contoso.com"
+* connect ftp.fabrikam.com: Ansluter din klient till servern med namnet "ftp.fabrikam.com"
 -BODY END-
 
 -COLOR CONFIGURATION-
 connect (address)=>Green
-connect ftp://ftp.fabrikam.com:=>Yellow
-connect ftps://ftp.contoso.com:=>Yellow
+connect ftp.fabrikam.com:=>Yellow
 -COLOR CONFIG END-
 
 -SECTIONS-

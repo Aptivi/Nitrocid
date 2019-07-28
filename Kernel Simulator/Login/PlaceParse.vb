@@ -26,6 +26,8 @@ Public Module PlaceParse
     Private ReadOnly ltimeplace As String = "<longtime>"
     Private ReadOnly tzplace As String = "<timezone>"
     Private ReadOnly stzplace As String = "<summertimezone>"
+    Private ReadOnly sysplace As String = "<system>"
+    Private ReadOnly nlnplace As String = "<eol>"
 
     'Probing code
     Public Function ProbePlaces(ByVal text As String) As String
@@ -39,13 +41,15 @@ Public Module PlaceParse
             If text.Contains(ltimeplace) Then text = text.Replace(ltimeplace, FormatDateTime(strKernelTimeDate, DateFormat.LongTime))
             If text.Contains(tzplace) Then text = text.Replace(tzplace, TimeZone.CurrentTimeZone.StandardName)
             If text.Contains(stzplace) Then text = text.Replace(stzplace, TimeZone.CurrentTimeZone.DaylightName)
+            If text.Contains(sysplace) Then text = text.Replace(sysplace, EnvironmentOSType)
+            If text.Contains(nlnplace) Then text = text.Replace(nlnplace, vbNewLine)
             EventManager.RaisePlaceholderParsed()
         Catch ex As NullReferenceException
-            Wdbg(ex.StackTrace, True)
+            WStkTrc(ex)
             If DebugMode = True Then
-                Wln(DoTranslation("Error trying to parse placeholders. {0} - Stack trace:", currentLang) + vbNewLine + ex.StackTrace, "neutralText", ex.Message)
+                W(DoTranslation("Error trying to parse placeholders. {0} - Stack trace:", currentLang) + vbNewLine + ex.StackTrace, True, "neutralText", ex.Message)
             Else
-                Wln(DoTranslation("Error trying to parse placeholders. {0}", currentLang), "neutralText", ex.Message)
+                W(DoTranslation("Error trying to parse placeholders. {0}", currentLang), True, "neutralText", ex.Message)
             End If
         End Try
         Return text

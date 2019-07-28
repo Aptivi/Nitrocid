@@ -209,9 +209,6 @@
     <Compile Include="ManPages\Manual.vb" />
     <Compile Include="ManPages\PageParser.vb" />
     <Compile Include="ManPages\PageViewer.vb" />
-    <Compile Include="Misc\Calculator\SciCalc.vb" />
-    <Compile Include="Misc\Calculator\StdCalc.vb" />
-    <Compile Include="Misc\Calculator\UnitConv.vb" />
     <Compile Include="Misc\Config.vb" />
     <Compile Include="Misc\CPUFeatures.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
@@ -226,6 +223,7 @@
     <Compile Include="Network\FTP\FTPGetCommand.vb" />
     <Compile Include="Network\FTP\FTPHelpSystem.vb" />
     <Compile Include="Network\FTP\FTPShell.vb" />
+    <Compile Include="Network\FTP\FTPTools.vb" />
     <Compile Include="Network\NetworkTools.vb" />
     <Compile Include="Shell\AliasManager.vb" />
     <Compile Include="Shell\GetCommand.vb" />

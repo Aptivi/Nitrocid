@@ -17,17 +17,15 @@ Dieser Befehl ??ffnet eine neue Sitzung, um Ihren FTP-Client mit einem ??ffentli
 
 Befehlsverwendung
 
-* verbinden (Adresse)
+* connect (address)
 Beispiele
 
-* connect ftp://ftp.fabrikam.com: Verbindet Ihren Client mit dem Server "ftp.fabrikam.com"
-* connect ftps: //ftp.contoso.com: Verbindet Ihren Client ??ber SSL mit dem Server "ftp.contoso.com"
+* connect ftp.fabrikam.com: Verbindet Ihren Client mit dem Server "ftp.fabrikam.com"
 -BODY END-
 
 -COLOR CONFIGURATION-
 connect (address)=>Green
-connect ftp://ftp.fabrikam.com:=>Yellow
-connect ftps://ftp.contoso.com:=>Yellow
+connect ftp.fabrikam.com:=>Yellow
 -COLOR CONFIG END-
 
 -SECTIONS-

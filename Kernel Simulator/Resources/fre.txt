@@ -120,7 +120,7 @@ Mot de passe pour {0}:
 Connecté à {0}
 Erreur lors de la tentative de connexion à {0}: {1}
 Trace de pile: {2}
-Entrez un serveur FTP qui commence par "ftp://" ou "ftps://"
+Entrez un serveur FTP.
 Le répertoire local {0} n'existe pas.
 Entrez un répertoire local. ".." retourner.
 Répertoire {0} introuvable.

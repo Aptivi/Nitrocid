@@ -120,7 +120,7 @@ Passwort für {0}:
 Verbunden mit {0}
 Fehler beim Versuch, eine Verbindung zu {0} herzustellen: {1}
 Stack Trace: {2}
-Geben Sie einen FTP-Server ein, der mit "ftp: //" oder "ftps: //" beginnt
+Geben Sie einen FTP-Server ein.
 Das lokale Verzeichnis {0} existiert nicht.
 Geben Sie ein lokales Verzeichnis ein. ".." zurück zu gehen.
 Das Verzeichnis {0} wurde nicht gefunden.

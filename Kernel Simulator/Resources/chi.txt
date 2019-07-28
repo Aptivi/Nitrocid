@@ -120,7 +120,7 @@ dìngyì de mìnglìng zài liánjiē dào lìng yī tái fúwùqì
 Yǐ liánjiē dào {0}
 chángshì liánjiē dào {0} shí chūcuò:{1}
 Duīzhàn gēnzōng: {2}
-Shūrù yǐ "ftp://" Huò "ftps://" Kāitóu de FTP fúwùqì
+Jìnrù FTP fúwùqì.
 běndì mùlù {0} bù cúnzài.
 Shūrù běndì mùlù. ".."Huíqù.
 Zhǎo bù dào mùlù {0}.

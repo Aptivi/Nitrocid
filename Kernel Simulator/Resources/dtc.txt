@@ -120,7 +120,7 @@ Wachtwoord voor {0}:
 Verbonden met {0}
 Fout bij proberen verbinding te maken met {0}: {1}
 Stack Trace: {2}
-Voer een FTP-server in die begint met "ftp://" of "ftps://"
+Voer een FTP-server in.
 Lokale directory {0} bestaat niet.
 Voer een lokale map in. ".." terug gaan.
 Directory {0} niet gevonden.

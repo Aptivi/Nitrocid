@@ -245,30 +245,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Shell command &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''calc command
-        '''
-        '''Summary: You can calculate expressions
-        '''
-        '''Description
-        '''
-        '''If you need help on how to calculate expressions when multiplying and dividing large numbers, or if you need to calculate expressions faster, this command is for you.
-        '''
-        '''It uses the Central Processing Unit (CPU) to process and evaluate expressions, and prints it on the screen when it&apos;s finished. You can&apos;t divide a number by zero.        ''' [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property calc() As String
-            Get
-                Return ResourceManager.GetString("calc", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Shell command &quot;cdbglog&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -737,32 +713,6 @@ Namespace My.Resources
         Friend ReadOnly Property cs_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("cs_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:P????kaz Shell &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''p????kaz calc
-        '''
-        '''Shrnut??: M????ete vypo????tat v??razy
-        '''
-        '''Popis
-        '''
-        '''Pokud pot??ebujete pomoci, jak vypo????tat v??razy p??i n??soben?? a d??len?? velk??ch ????sel, nebo pokud pot??ebujete vypo????tat v??razy rychleji, tento p????kaz je pro v??s.
-        '''
-        '''Pou????v?? centr??ln?? procesorovou jednotku (CPU) pro zpracov??n?? a vyhodnocov??n?? v??raz?? a po dokon??en?? tisku je vytiskne na obrazovku. 
-        '''
-        '''Automat [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property cs_calc() As String
-            Get
-                Return ResourceManager.GetString("cs_calc", resourceCulture)
             End Get
         End Property
         
@@ -2081,34 +2031,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:P????kaz Shell &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''scical p????kaz
-        '''
-        '''Shrnut??: Umo????uje vyhodnotit pokro??ilej???? v??razy
-        '''
-        '''Popis
-        '''
-        '''V??deckou kalkula??ku m????ete pou????t k vyhodnocen?? pokro??il??ch v??raz??, nap????klad z??sk??n?? druh?? odmocniny ????sel atd.
-        '''
-        '''Tento p????kaz v sou??asn?? dob?? pou????v?? k vyhodnocen?? v??raz?? t????du DataTable (). 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
-        '''
-        '''Pozd??ji p [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property cs_scical() As String
-            Get
-                Return ResourceManager.GetString("cs_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Pr??vodce spo??i??em obrazovky
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -2392,34 +2314,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:P????kaz Shell &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''p????kaz unitconv
-        '''
-        '''Souhrn: P??evede jednotky na jinou jednotku
-        '''
-        '''Popis
-        '''
-        '''Zdrojov?? jednotky m????ete p??ev??st na jinou jednotku, ani?? byste museli pou????vat Internet.
-        '''
-        '''Pokud pot??ebujete p??ev??st m??nu, pou??ijte p????kaz &quot;currency&quot;.
-        '''
-        '''Zdrojov?? jednotka mus?? b??t podporov??na c??lovou jednotkou (nap??. Km do cm), aby se p??evedla zadan?? hodnota, jinak ji nelze p??ev??st. 
-        '''
-        '''Pou??it? [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property cs_unitconv() As String
-            Get
-                Return ResourceManager.GetString("cs_unitconv", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:P????kaz Shell &quot;useddeps&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -2654,30 +2548,6 @@ Namespace My.Resources
         Friend ReadOnly Property de_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("de_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell-Befehl &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''Befehl calc
-        '''
-        '''Zusammenfassung: Sie k??nnen Ausdr??cke berechnen
-        '''
-        '''Beschreibung
-        '''
-        '''Wenn Sie Hilfe bei der Berechnung von Ausdr??cken beim Multiplizieren und Teilen gro??er Zahlen ben??tigen oder wenn Sie Ausdr??cke schneller berechnen m??ssen, ist dieser Befehl genau das Richtige f??r Sie.
-        '''
-        '''Es verwendet die Central Processing Unit (CPU) zum Verarbeiten und Auswerten von Ausdr??cken und druckt diese n [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property de_calc() As String
-            Get
-                Return ResourceManager.GetString("de_calc", resourceCulture)
             End Get
         End Property
         
@@ -3949,34 +3819,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Shell-Befehl &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''Befehl
-        '''
-        '''Zusammenfassung: Hier k??nnen Sie erweiterte Ausdr??cke auswerten
-        '''
-        '''Beschreibung
-        '''
-        '''Mit dem wissenschaftlichen Taschenrechner k??nnen Sie erweiterte Ausdr??cke auswerten, z. B. die Quadratwurzel von Zahlen usw.
-        '''
-        '''Derzeit verwendet dieser Befehl die DataTable () - Klasse, um Ausdr??cke auszuwerten. 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
-        '''
-        '''Wir werden die [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property de_scical() As String
-            Get
-                Return ResourceManager.GetString("de_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Bildschirmschoner Modding Guide
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -4250,32 +4092,6 @@ Namespace My.Resources
         Friend ReadOnly Property de_sysinfo() As String
             Get
                 Return ResourceManager.GetString("de_sysinfo", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell-Befehl &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''Befehl unitconv
-        '''
-        '''Zusammenfassung: Konvertiert Einheiten in eine andere Einheit
-        '''
-        '''Beschreibung
-        '''
-        '''Sie k??nnen Ihre Quelleneinheiten in eine andere Einheit konvertieren, ohne das Internet verwenden zu m??ssen.
-        '''
-        '''Wenn Sie stattdessen eine W??hrung umrechnen m??ssen, verwenden Sie den Befehl &quot;currency&quot;.
-        '''
-        '''Die Quelleneinheit muss von der Zieleinheit unterst??tzt werden (z. B. km in cm), um den von I [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property de_unitconv() As String
-            Get
-                Return ResourceManager.GetString("de_unitconv", resourceCulture)
             End Get
         End Property
         
@@ -4560,32 +4376,6 @@ Namespace My.Resources
         Friend ReadOnly Property es_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("es_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Comando de shell &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''comando de calc
-        '''
-        '''Resumen: puedes calcular expresiones
-        '''
-        '''Descripci??n
-        '''
-        '''Si necesita ayuda sobre c??mo calcular expresiones al multiplicar y dividir n??meros grandes, o si necesita calcular expresiones m??s r??pido, este comando es para usted.
-        '''
-        '''Utiliza la Unidad Central de Procesamiento (CPU) para procesar y evaluar expresiones, y lo imprime en la pantalla cuando termina. 
-        '''
-        '''Determina autom??ti [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property es_calc() As String
-            Get
-                Return ResourceManager.GetString("es_calc", resourceCulture)
             End Get
         End Property
         
@@ -5897,34 +5687,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Comando de shell &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''comando esc??nico
-        '''
-        '''Resumen: le permite evaluar expresiones m??s avanzadas
-        '''
-        '''Descripci??n
-        '''
-        '''Puede usar la calculadora cient??fica para evaluar expresiones avanzadas, como obtener la ra??z cuadrada de los n??meros, etc.
-        '''
-        '''Actualmente, este comando usa la clase DataTable () para evaluar expresiones. 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
-        '''
-        '''M??s tarde reescri [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property es_scical() As String
-            Get
-                Return ResourceManager.GetString("es_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Guia de modding del protector de pantalla
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -6209,34 +5971,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Comando de shell &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''comando unitconv
-        '''
-        '''Resumen: Convierte unidades a otra unidad.
-        '''
-        '''Descripci??n
-        '''
-        '''Puede convertir sus unidades fuente a otra unidad sin tener que usar Internet.
-        '''
-        '''Si necesita convertir una moneda, use el comando &quot;moneda&quot;.
-        '''
-        '''La unidad de origen debe ser compatible con la unidad de destino (por ejemplo, km a cm) para convertir el valor proporcionado, de lo contrario, no se puede convertir. 
-        '''
-        '''U [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property es_unitconv() As String
-            Get
-                Return ResourceManager.GetString("es_unitconv", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Comando de shell &quot;useddeps&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -6453,32 +6187,6 @@ Namespace My.Resources
         Friend ReadOnly Property fi_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("fi_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell-komento &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''calc-komento
-        '''
-        '''Yhteenveto: Voit laskea ilmaisuja
-        '''
-        '''Kuvaus
-        '''
-        '''Jos tarvitset apua ilmaisujen laskemiseen, kun kerrot ja jaat suuria m????ri??, tai jos sinun t??ytyy laskea ilmaisuja nopeammin, t??m?? komento on sinulle.
-        '''
-        '''Se k??ytt???? keskusyksikk???? (CPU) k??sittelem????n ja arvioimaan lausekkeita ja tulostaa sen n??yt??lle, kun se on valmis. 
-        '''
-        '''Se m????ritt???? automaattisesti, onko se Integer ta [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property fi_calc() As String
-            Get
-                Return ResourceManager.GetString("fi_calc", resourceCulture)
             End Get
         End Property
         
@@ -7812,34 +7520,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Shell-komento &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''scical-komento
-        '''
-        '''Yhteenveto: Voit arvioida kehittyneempi?? lausekkeita
-        '''
-        '''Kuvaus
-        '''
-        '''Voit k??ytt???? tieteellist?? laskinta arvioida kehittyneit?? lausekkeita, kuten saada neli??juuren numerot jne.
-        '''
-        '''T??ll?? hetkell?? t??m?? komento k??ytt???? DataTable-luokkaa lausekkeiden arvioimiseen. 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
-        '''
-        '''Tulemme my??hemmin kirjoittamaan t [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property fi_scical() As String
-            Get
-                Return ResourceManager.GetString("fi_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:N??yt??ns????st??j??n muokkausopas
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -8123,36 +7803,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Shell-komento &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''unitconv-komento
-        '''
-        '''Yhteenveto: Muuntaa yksik??t toiseen yksikk????n
-        '''
-        '''Kuvaus
-        '''
-        '''Voit muuntaa l??hdelaitteesi toiseen yksikk????n k??ytt??m??tt?? Interneti??.
-        '''
-        '''Jos haluat vaihtaa valuutta sen sijaan, k??yt?? &quot;valuutta&quot; -komentoa.
-        '''
-        '''L??hdeyksik??n on tuettava kohdeyksikk???? (esim. Km - cm), jos haluat muuntaa tarjotun arvon, muuten se ei voi muuntaa. 
-        '''
-        '''Komennon k??ytt??
-        '''
-        '''* unitconv (l??hdeU [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property fi_unitconv() As String
-            Get
-                Return ResourceManager.GetString("fi_unitconv", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Shell-komento &quot;useddeps&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -8387,30 +8037,6 @@ Namespace My.Resources
         Friend ReadOnly Property fr_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("fr_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Commande Shell &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''commande calc
-        '''
-        '''R??sum??: Vous pouvez calculer des expressions
-        '''
-        '''La description
-        '''
-        '''Si vous avez besoin d&apos;aide pour calculer des expressions lors de la multiplication et de la division de grands nombres, ou si vous devez calculer des expressions plus rapidement, cette commande est pour vous.
-        '''
-        '''Il utilise l&apos;unit?? centrale de traitement (CPU) pour traiter et ??valuer les expressions et l&apos;imprime ?? l [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property fr_calc() As String
-            Get
-                Return ResourceManager.GetString("fr_calc", resourceCulture)
             End Get
         End Property
         
@@ -9665,32 +9291,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Commande Shell &quot;scique&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''commande scientifique
-        '''
-        '''R??sum??: vous permet d&apos;??valuer des expressions plus avanc??es
-        '''
-        '''La description
-        '''
-        '''Vous pouvez utiliser la calculatrice scientifique pour ??valuer des expressions avanc??es, telles que l???obtention de la racine carr??e de nombres, etc.
-        '''
-        '''Actuellement, cette commande utilise la classe DataTable () pour ??valuer les expressions. 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/sy [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property fr_scical() As String
-            Get
-                Return ResourceManager.GetString("fr_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Guide de modding d&apos;??conomiseur d&apos;??cran
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -9950,32 +9550,6 @@ Namespace My.Resources
         Friend ReadOnly Property fr_sysinfo() As String
             Get
                 Return ResourceManager.GetString("fr_sysinfo", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Commande shell &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''commande unitconv
-        '''
-        '''R??sum??: convertit les unit??s en une autre unit??
-        '''
-        '''La description
-        '''
-        '''Vous pouvez convertir vos unit??s source en une autre unit?? sans avoir ?? utiliser Internet.
-        '''
-        '''Si vous avez besoin de convertir une devise ?? la place, utilisez la commande &quot;devise&quot;.
-        '''
-        '''L&apos;unit?? source doit ??tre prise en charge par l&apos;unit?? de destination (par exemple, km en cm) pour convertir la valeu [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property fr_unitconv() As String
-            Get
-                Return ResourceManager.GetString("fr_unitconv", resourceCulture)
             End Get
         End Property
         
@@ -10586,30 +10160,6 @@ Namespace My.Resources
         Friend ReadOnly Property hi_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("hi_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell m??ngl??ng ???calc???
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''Calc m??ngl??ng
-        '''
-        '''Ji??nji??: N??n k??y?? j??su??n bi??od?? sh??
-        '''
-        '''Mi??osh??
-        '''
-        '''R??gu?? n??n x??y??o y??ugu??n r??h?? z??i ch??ng y?? h?? ch?? y?? d?? sh?? sh?? j??su??n bi??od?? sh?? de b??ngzh??, hu??zh?? r??gu?? n??n x??y??o g??ng ku??i d?? j??su??n bi??od?? sh??, n??me c?? m??ngl??ng sh??h?? n??n.
-        '''
-        '''T?? sh??y??ng zh??ngy??ng ch??l?? d??nyu??n (CPU) ch??l?? h?? p??ngg?? bi??od?? sh??, b??ng [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property hi_calc() As String
-            Get
-                Return ResourceManager.GetString("hi_calc", resourceCulture)
             End Get
         End Property
         
@@ -11761,32 +11311,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:K??p??i m??ngl??ng ???scical???
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''Ji??nru?? de m??ngl??ng
-        '''
-        '''Zh??iy??o: Y??nx?? n??n p??ngg?? g??ng g??oj?? de bi??od?? sh??
-        '''
-        '''Mi??osh??
-        '''
-        '''N??n k??y?? sh??y??ng k??xu?? j??su??n q?? l??i p??ngg?? g??oj?? bi??od?? sh??, l??r?? hu??q?? sh??z?? de p??ngf??ngg??n d??ng.
-        '''
-        '''M??qi??n, c?? m??ngl??ng sh??y??ng DataTable() l??i l??i j??su??n bi??od?? sh??. K??n k??n zh??ge w??nd??ng:
-        '''
-        '''Https://Docs.Microsoft.Com/dotnet/api/system [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property hi_scical() As String
-            Get
-                Return ResourceManager.GetString("hi_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:P??ngm?? b??oh?? ch??ngx?? xi??g??i zh??n??n
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -12049,32 +11573,6 @@ Namespace My.Resources
         Friend ReadOnly Property hi_sysinfo() As String
             Get
                 Return ResourceManager.GetString("hi_sysinfo", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell m??ngl??ng ???unitconv???
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''Unitconv m??ngl??ng
-        '''
-        '''Zh??iy??o: Ji??ng d??nw??i zhu??nhu??n w??i l??ng y??g?? d??nw??i
-        '''
-        '''Mi??osh??
-        '''
-        '''N??n w??x?? sh??y??ng Internet j?? k?? ji??ng yu??n sh??b??i zhu??nhu??n w??i q??t?? sh??b??i.
-        '''
-        '''R??gu?? n??n x??y??o zhu??nhu??n hu??b??, q??ng sh??y??ng ???currency??? m??ngl??ng.
-        '''
-        '''Yu??n d??nyu??n b??x?? y??u m??bi??o d??nyu??n zh??ch?? (l??r??,km zh?? cm) y?? zhu??nhu??n n??n t??g?? [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property hi_unitconv() As String
-            Get
-                Return ResourceManager.GetString("hi_unitconv", resourceCulture)
             End Get
         End Property
         
@@ -12344,32 +11842,6 @@ Namespace My.Resources
         Friend ReadOnly Property it_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("it_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Comando di shell &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''comando calc
-        '''
-        '''Riepilogo: puoi calcolare le espressioni
-        '''
-        '''Descrizione
-        '''
-        '''Se hai bisogno di aiuto su come calcolare le espressioni quando moltiplichi e dividi grandi numeri, o se hai bisogno di calcolare le espressioni pi?? velocemente, questo comando ?? per te.
-        '''
-        '''Utilizza la Central Processing Unit (CPU) per elaborare e valutare le espressioni e stamparle sullo schermo al termine. 
-        '''
-        '''Determina a [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property it_calc() As String
-            Get
-                Return ResourceManager.GetString("it_calc", resourceCulture)
             End Get
         End Property
         
@@ -13675,34 +13147,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Comando Shell &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''comando scical
-        '''
-        '''Riepilogo: consente di valutare espressioni pi?? avanzate
-        '''
-        '''Descrizione
-        '''
-        '''?? possibile utilizzare il calcolatore scientifico per valutare espressioni avanzate, come ottenere la radice quadrata di numeri, ecc.
-        '''
-        '''Attualmente, questo comando utilizza la classe DataTable () per valutare le espressioni. 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
-        '''
-        '''In  [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property it_scical() As String
-            Get
-                Return ResourceManager.GetString("it_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Guida alla modifica del salvaschermo
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -13979,32 +13423,6 @@ Namespace My.Resources
         Friend ReadOnly Property it_sysinfo() As String
             Get
                 Return ResourceManager.GetString("it_sysinfo", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Comando Shell &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''comando unitconv
-        '''
-        '''Riepilogo: converte le unit?? in un&apos;altra unit??
-        '''
-        '''Descrizione
-        '''
-        '''Puoi convertire le tue unit?? sorgente in un&apos;altra unit?? senza dover usare Internet.
-        '''
-        '''Se invece devi convertire la valuta, usa il comando &quot;valuta&quot;.
-        '''
-        '''L&apos;unit?? di origine deve essere supportata dall&apos;unit?? di destinazione (ad es. Km a cm) per convertire il valore fornito, altrimenti non pu?? essere convertita. [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property it_unitconv() As String
-            Get
-                Return ResourceManager.GetString("it_unitconv", resourceCulture)
             End Get
         End Property
         
@@ -14470,32 +13888,6 @@ Namespace My.Resources
         Friend ReadOnly Property ms_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("ms_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Perintah Shell &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''perintah calc
-        '''
-        '''Ringkasan: Anda boleh mengira ungkapan
-        '''
-        '''Penerangan
-        '''
-        '''Sekiranya anda memerlukan bantuan cara mengira ekspresi apabila mengalikan dan membahagikan nombor besar, atau jika anda perlu mengira ekspresi dengan lebih cepat, arahan ini adalah untuk anda.
-        '''
-        '''Ia menggunakan Unit Pemprosesan Tengah (CPU) untuk memproses dan menilai ungkapan, dan mencetaknya pada skrin apabila selesai. 
-        '''
-        '''Ia  [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property ms_calc() As String
-            Get
-                Return ResourceManager.GetString("ms_calc", resourceCulture)
             End Get
         End Property
         
@@ -15808,34 +15200,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Perintah Shell &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''perintah scikal
-        '''
-        '''Ringkasan: Membolehkan anda menilai ekspresi yang lebih maju
-        '''
-        '''Penerangan
-        '''
-        '''Anda boleh menggunakan kalkulator saintifik untuk menilai ekspresi lanjutan, seperti mendapatkan punca kuasa angka, dsb.
-        '''
-        '''Pada masa ini, arahan ini menggunakan kelas DataTable () untuk menilai ekspresi. 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
-        '''
-        '''Kami kemudian akan me [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property ms_scical() As String
-            Get
-                Return ResourceManager.GetString("ms_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Panduan pemodelan screensaver
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -16117,34 +15481,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Perintah Shell &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''perintah unitconv
-        '''
-        '''Ringkasan: Menukar unit ke unit lain
-        '''
-        '''Penerangan
-        '''
-        '''Anda boleh menukar unit sumber anda ke unit lain tanpa perlu menggunakan Internet.
-        '''
-        '''Jika anda perlu menukar mata wang sebaliknya, gunakan arahan &quot;mata wang&quot;.
-        '''
-        '''Unit sumber mesti disokong oleh unit destinasi (mis. Km hingga cm) untuk menukar nilai yang anda berikan, jika tidak, ia tidak boleh diubah. 
-        '''
-        '''Penggunaan perint [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property ms_unitconv() As String
-            Get
-                Return ResourceManager.GetString("ms_unitconv", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Perintah Shell &quot;useddeps&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -16382,30 +15718,6 @@ Namespace My.Resources
         Friend ReadOnly Property nl_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("nl_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell-opdracht &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''calc-opdracht
-        '''
-        '''Samenvatting: u kunt expressies berekenen
-        '''
-        '''Omschrijving
-        '''
-        '''Als u hulp nodig hebt bij het berekenen van uitdrukkingen bij het vermenigvuldigen en delen van grote getallen, of als u uitdrukkingen sneller moet berekenen, is dit bevel voor u.
-        '''
-        '''Het maakt gebruik van de Central Processing Unit (CPU) om uitdrukkingen te verwerken en te evalueren en drukt deze af op het scherm wanneer dez [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property nl_calc() As String
-            Get
-                Return ResourceManager.GetString("nl_calc", resourceCulture)
             End Get
         End Property
         
@@ -17708,32 +17020,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Shell commando &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''scische opdracht
-        '''
-        '''Samenvatting: Hiermee kunt u geavanceerdere expressies evalueren
-        '''
-        '''Omschrijving
-        '''
-        '''U kunt de wetenschappelijke calculator gebruiken om geavanceerde uitdrukkingen te evalueren, zoals het verkrijgen van de vierkantswortel van getallen, enz.
-        '''
-        '''Momenteel gebruikt deze opdracht de klasse DataTable () om expressies te evalueren. 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.d [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property nl_scical() As String
-            Get
-                Return ResourceManager.GetString("nl_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Screensaver modding gids
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -18011,32 +17297,6 @@ Namespace My.Resources
         Friend ReadOnly Property nl_sysinfo() As String
             Get
                 Return ResourceManager.GetString("nl_sysinfo", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell commando &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''unitconv-opdracht
-        '''
-        '''Samenvatting: converteert eenheden naar een andere eenheid
-        '''
-        '''Omschrijving
-        '''
-        '''U kunt uw broneenheden converteren naar een andere eenheid zonder het internet te hoeven gebruiken.
-        '''
-        '''Als u in plaats daarvan de valuta moet converteren, gebruikt u de opdracht &quot;currency&quot;.
-        '''
-        '''De broneenheid moet worden ondersteund door de bestemmingseenheid (bijvoorbeeld km tot cm) om de door u opge [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property nl_unitconv() As String
-            Get
-                Return ResourceManager.GetString("nl_unitconv", resourceCulture)
             End Get
         End Property
         
@@ -18349,32 +17609,6 @@ Namespace My.Resources
         Friend ReadOnly Property pt_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("pt_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Comando shell &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''comando calc
-        '''
-        '''Resumo: Voc?? pode calcular express??es
-        '''
-        '''Descri????o
-        '''
-        '''Se voc?? precisar de ajuda sobre como calcular express??es ao multiplicar e dividir n??meros grandes, ou se precisar calcular express??es mais rapidamente, esse comando ?? para voc??.
-        '''
-        '''Ele usa a Unidade Central de Processamento (CPU) para processar e avaliar express??es, e imprime na tela quando terminar. 
-        '''
-        '''Ele automaticament [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property pt_calc() As String
-            Get
-                Return ResourceManager.GetString("pt_calc", resourceCulture)
             End Get
         End Property
         
@@ -19702,34 +18936,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Comando shell &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''comando scical
-        '''
-        '''Resumo: permite avaliar express??es mais avan??adas
-        '''
-        '''Descri????o
-        '''
-        '''Voc?? pode usar a calculadora cient??fica para avaliar express??es avan??adas, como obter a raiz quadrada de n??meros etc.
-        '''
-        '''Atualmente, esse comando usa a classe DataTable () para avaliar express??es. 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
-        '''
-        '''Mais tarde, reescreveremos essa c [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property pt_scical() As String
-            Get
-                Return ResourceManager.GetString("pt_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Guia de modifica????o de tela
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -20016,32 +19222,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Comando Shell &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''comando unitconv
-        '''
-        '''Resumo: Converte unidades em outra unidade
-        '''
-        '''Descri????o
-        '''
-        '''Voc?? pode converter suas unidades de origem em outra unidade sem precisar usar a Internet.
-        '''
-        '''Se voc?? precisar converter a moeda, use o comando &quot;moeda&quot;.
-        '''
-        '''A unidade de origem deve ser suportada pela unidade de destino (por exemplo, km a cm) para converter o valor fornecido, caso contr??rio, n??o ?? poss??vel convert [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property pt_unitconv() As String
-            Get
-                Return ResourceManager.GetString("pt_unitconv", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Comando da shell &quot;useddeps&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -20292,34 +19472,6 @@ Namespace My.Resources
         Friend ReadOnly Property savescreen() As String
             Get
                 Return ResourceManager.GetString("savescreen", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell command &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''scical command
-        '''
-        '''Summary: Allows you to evaluate more advanced expressions
-        '''
-        '''Description
-        '''
-        '''You can use the scientific calculator to evaluate advanced expressions, such as getting the square root of numbers, etc.
-        '''
-        '''Currently, this command uses the DataTable() class to evaluate expressions. Look at this documentation:
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
-        '''
-        '''We  [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property scical() As String
-            Get
-                Return ResourceManager.GetString("scical", resourceCulture)
             End Get
         End Property
         
@@ -20778,32 +19930,6 @@ Namespace My.Resources
         Friend ReadOnly Property sv_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("sv_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell-kommando &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''calc kommando
-        '''
-        '''Sammanfattning: Du kan ber??kna uttryck
-        '''
-        '''Beskrivning
-        '''
-        '''Om du beh??ver hj??lp med att ber??kna uttryck n??r du multiplicerar och delar upp stora siffror, eller om du beh??ver ber??kna uttryck snabbare ??r detta kommando ??t dig.
-        '''
-        '''Den anv??nder Central Processing Unit (CPU) f??r att bearbeta och utv??rdera uttryck och skriver ut det p?? sk??rmen n??r det ??r klart. 
-        '''
-        '''Det best??mm [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property sv_calc() As String
-            Get
-                Return ResourceManager.GetString("sv_calc", resourceCulture)
             End Get
         End Property
         
@@ -22135,32 +21261,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Shell-kommando &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''scical kommando
-        '''
-        '''Sammanfattning: Ger dig m??jlighet att utv??rdera mer avancerade uttryck
-        '''
-        '''Beskrivning
-        '''
-        '''Du kan anv??nda den vetenskapliga kalkylatorn f??r att utv??rdera avancerade uttryck, till exempel att f?? kvadratroten med siffror, etc.
-        '''
-        '''F??r n??rvarande anv??nder detta kommando klassen DataTable () f??r att utv??rdera uttryck. 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.datac [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property sv_scical() As String
-            Get
-                Return ResourceManager.GetString("sv_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Sk??rmsl??ckare modding guide
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -22442,32 +21542,6 @@ Namespace My.Resources
         Friend ReadOnly Property sv_sysinfo() As String
             Get
                 Return ResourceManager.GetString("sv_sysinfo", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell-kommando &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''unitconv kommando
-        '''
-        '''Sammanfattning: Konverterar enheter till en annan enhet
-        '''
-        '''Beskrivning
-        '''
-        '''Du kan konvertera dina k??llenheter till en annan enhet utan att beh??va anv??nda Internet.
-        '''
-        '''Om du beh??ver konvertera valuta ist??llet anv??nder du kommandot &quot;valuta&quot;.
-        '''
-        '''K??llenheten m??ste st??ds av destinationsenheten (t.ex. km till cm) f??r att konvertera ditt angivna v??rde, annars kan den inte k [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property sv_unitconv() As String
-            Get
-                Return ResourceManager.GetString("sv_unitconv", resourceCulture)
             End Get
         End Property
         
@@ -22762,32 +21836,6 @@ Namespace My.Resources
         Friend ReadOnly Property tr_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("tr_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Kabuk komutu &quot;calc&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''calc komutu
-        '''
-        '''??zet: ??fadeleri hesaplayabilirsiniz
-        '''
-        '''A????klama
-        '''
-        '''B??y??k say??lar?? ??arparken ve b??lerken ifadeleri nas??l hesaplayaca????n??z konusunda yard??ma ihtiyac??n??z varsa veya ifadeleri daha h??zl?? hesaplaman??z gerekiyorsa, bu komut tam size g??re.
-        '''
-        '''??fadeleri i??lemek ve de??erlendirmek i??in Merkezi ????lem Birimi&apos;ni (CPU) kullan??r ve tamamland??????nda ekrana yazd??r??r. 
-        '''
-        '''On [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property tr_calc() As String
-            Get
-                Return ResourceManager.GetString("tr_calc", resourceCulture)
             End Get
         End Property
         
@@ -24094,34 +23142,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Kabuk komutu &quot;scical&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''sanal komut
-        '''
-        '''??zet: Daha geli??mi?? ifadeleri de??erlendirmenizi sa??lar
-        '''
-        '''A????klama
-        '''
-        '''Say??lar??n karek??k??n?? alma gibi geli??mi?? ifadeleri de??erlendirmek i??in bilimsel hesap makinesini kullanabilirsiniz.
-        '''
-        '''??u anda, bu komut ifadeleri de??erlendirmek i??in DataTable () s??n??f??n?? kullan??r. 
-        '''
-        '''https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
-        '''
-        '''Daha sonra bu hesa [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property tr_scical() As String
-            Get
-                Return ResourceManager.GetString("tr_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Ekran koruyucu modding k??lavuzu
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -24406,32 +23426,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:Kabuk komutu &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''unitconv komutu
-        '''
-        '''??zet: Birimleri ba??ka bir birime d??n????t??r??r
-        '''
-        '''A????klama
-        '''
-        '''??nternet kullanmak zorunda kalmadan kaynak birimlerinizi ba??ka bir birime d??n????t??rebilirsiniz.
-        '''
-        '''Para birimini d??n????t??rmeniz gerekirse, &quot;currency&quot; komutunu kullan??n.
-        '''
-        '''Kaynak birim, verdi??iniz de??eri d??n????t??rmek i??in hedef birim (??rn. Cm&apos;den cm&apos;ye) taraf??ndan desteklenmelidir, aksi takdirde d [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property tr_unitconv() As String
-            Get
-                Return ResourceManager.GetString("tr_unitconv", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:Kabuk komutu &quot;useddeps&quot;
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -24464,34 +23458,6 @@ Namespace My.Resources
         Friend ReadOnly Property tr_useddeps() As String
             Get
                 Return ResourceManager.GetString("tr_useddeps", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell command &quot;unitconv&quot;
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''unitconv command
-        '''
-        '''Summary: Converts units to another unit
-        '''
-        '''Description
-        '''
-        '''You can convert your source units to another unit without having to use the Internet.
-        '''
-        '''If you need to convert currency instead, use the &quot;currency&quot; command.
-        '''
-        '''The source unit must be supported by the destination unit (eg. km to cm) to convert your provided value, otherwise, it can&apos;t convert. (eg. km to MB)
-        '''
-        '''Command us [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property unitconv() As String
-            Get
-                Return ResourceManager.GetString("unitconv", resourceCulture)
             End Get
         End Property
         
@@ -24694,30 +23660,6 @@ Namespace My.Resources
         Friend ReadOnly Property zh_Available_manual_pages() As String
             Get
                 Return ResourceManager.GetString("zh_Available_manual_pages", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell m??ngl??ng ???calc???
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''Calc m??ngl??ng
-        '''
-        '''Ji??nji??: N??n k??y?? j??su??n bi??od?? sh??
-        '''
-        '''Mi??osh??
-        '''
-        '''R??gu?? n??n x??y??o y??ugu??n r??h?? z??i ch??ng y?? h?? ch?? y?? d?? sh?? sh?? j??su??n bi??od?? sh?? de b??ngzh??, hu??zh?? r??gu?? n??n x??y??o g??ng ku??i d?? j??su??n bi??od?? sh??, n??me c?? m??ngl??ng sh??h?? n??n.
-        '''
-        '''T?? sh??y??ng zh??ngy??ng ch??l?? d??nyu??n (CPU) ch??l?? h?? p??ngg?? bi??od?? sh??, b??ng [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property zh_calc() As String
-            Get
-                Return ResourceManager.GetString("zh_calc", resourceCulture)
             End Get
         End Property
         
@@ -25869,32 +24811,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
-        '''-TITLE:K??p??i m??ngl??ng ???scical???
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''Ji??nru?? de m??ngl??ng
-        '''
-        '''Zh??iy??o: Y??nx?? n??n p??ngg?? g??ng g??oj?? de bi??od?? sh??
-        '''
-        '''Mi??osh??
-        '''
-        '''N??n k??y?? sh??y??ng k??xu?? j??su??n q?? l??i p??ngg?? g??oj?? bi??od?? sh??, l??r?? hu??q?? sh??z?? de p??ngf??ngg??n d??ng.
-        '''
-        '''M??qi??n, c?? m??ngl??ng sh??y??ng DataTable() l??i l??i j??su??n bi??od?? sh??. K??n k??n zh??ge w??nd??ng:
-        '''
-        '''Https://Docs.Microsoft.Com/dotnet/api/system [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property zh_scical() As String
-            Get
-                Return ResourceManager.GetString("zh_scical", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
         '''-TITLE:P??ngm?? b??oh?? ch??ngx?? xi??g??i zh??n??n
         '''-REVISION:0.0.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -26157,32 +25073,6 @@ Namespace My.Resources
         Friend ReadOnly Property zh_sysinfo() As String
             Get
                 Return ResourceManager.GetString("zh_sysinfo", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to (*MAN START*)
-        '''
-        '''-TITLE:Shell m??ngl??ng ???unitconv???
-        '''-REVISION:0.0.1
-        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
-        '''
-        '''-BODY START-
-        '''Unitconv m??ngl??ng
-        '''
-        '''Zh??iy??o: Ji??ng d??nw??i zhu??nhu??n w??i l??ng y??g?? d??nw??i
-        '''
-        '''Mi??osh??
-        '''
-        '''N??n w??x?? sh??y??ng Internet j?? k?? ji??ng yu??n sh??b??i zhu??nhu??n w??i q??t?? sh??b??i.
-        '''
-        '''R??gu?? n??n x??y??o zhu??nhu??n hu??b??, q??ng sh??y??ng ???currency??? m??ngl??ng.
-        '''
-        '''Yu??n d??nyu??n b??x?? y??u m??bi??o d??nyu??n zh??ch?? (l??r??,km zh?? cm) y?? zhu??nhu??n n??n t??g?? [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property zh_unitconv() As String
-            Get
-                Return ResourceManager.GetString("zh_unitconv", resourceCulture)
             End Get
         End Property
         

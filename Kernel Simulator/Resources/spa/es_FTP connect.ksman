@@ -17,17 +17,15 @@ Este comando abre una nueva sesi??n para conectar su cliente FTP a cualquier ser
 
 Uso del comando
 
-* conectar (direcci??n)
+* connect (address)
 Ejemplos
 
-* connect ftp://ftp.fabrikam.com: conecta su cliente al servidor llamado "ftp.fabrikam.com"
-* connect ftps: //ftp.contoso.com: conecta su cliente mediante SSL al servidor llamado "ftp.contoso.com"
+* connect ftp.fabrikam.com: conecta su cliente al servidor llamado "ftp.fabrikam.com"
 -BODY END-
 
 -COLOR CONFIGURATION-
 connect (address)=>Green
-connect ftp://ftp.fabrikam.com:=>Yellow
-connect ftps://ftp.contoso.com:=>Yellow
+connect ftp.fabrikam.com:=>Yellow
 -COLOR CONFIG END-
 
 -SECTIONS-

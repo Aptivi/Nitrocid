@@ -795,6 +795,28 @@ KS 0.0.6.5
 5. phiksd seepeeyoo ghadee kee gati naveenatam prosesar mein do baar dikhaatee hai (aise prosesar jisamen ghadee kee gati unake aantarik naamon par hotee hai, udaaharan ke lie. "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz")
 6. efateepee sthaanaantaran kee nishchit pragati pattee isalie yah nae praaroop ka upayog karata hai
 7. eeteee aur gati ko joda gaya
+
+KS 0.0.6.6
+
+1. naee kamaand ke lie apadet kiya gaya mainual pej
+2. hatae gae mudra kamaand (avaitanik)
+
+KS 0.0.6.9
+
+1. hatae gae kailakuletar aur yoonit kanvartars
+2. ek mein do mudran aadesh ekeekrt
+3. ekeekrt do mod janaretar ek mein
+4. "ftp://" upasarg nirdisht kie bina ftp sarvar mein pravesh kee anumati hai
+5. "ftp" kamaand tark ke roop mein nirdisht pate
+6. ab FTP graahak baahar nikalane par shaanti se diskanekt ho jaega
+7. phiksd FTP vivaranon ko badalate samay adyatan nahin karane mein madad karate hain
+8. kamaand dvaara ssai jaanch ab yooniks sistam par samarthit hai
+9. nishchit kone ka samay aur taareekh kee sthiti
+10. agar upayogakarta sahee paasavard daalata hai to bhee phiksd paasavard sahee tareeke se kaam nahin kar raha hai
+11. aprayukt charan ko hata diya
+12. pratyek charan mein dibag joda gaya
+13. motd aur mal ke saath upayog ke lie joda gaya opareting sistam plesaholdar
+14. motd saport ko 1 lain se adhik banaane ke lie nyoolain paarsar joda gaya
 -BODY END-
 
 -SECTIONS-
@@ -850,4 +872,6 @@ ks 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
+KS 0.0.6.6=>SE1
+KS 0.0.6.9=>SE1
 -SECTIONS END-

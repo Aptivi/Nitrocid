@@ -795,6 +795,28 @@ KS 0.0.6.5
 5. Behoben, dass die CPU-Taktrate in den neuesten Prozessoren zweimal angezeigt wurde (Prozessoren, deren interne Namen Taktraten aufweisen, z. B. "Intel (R) Core (TM) i7-8700-CPU bei 3,20 GHz").
 6. Der Fortschrittsbalken für FTP-Übertragungen wurde korrigiert, sodass das neue Format verwendet wird
 7. ETA und Geschwindigkeit hinzugefügt
+
+KS 0.0.6.6
+
+1. Aktualisierte Handbuchseite für neue Befehle
+2. Währungsbefehl entfernt (unbezahlt)
+
+KS 0.0.6.9
+
+1. Taschenrechner und Einheitenumrechner entfernt
+2. Vereinheitlichen Sie zwei Druckbefehle zu einem
+3. Zwei Mod-Generatoren zu einem vereint
+4. Der FTP-Server darf ohne Angabe des Präfixes "ftp: //" betreten werden
+5. Erlaubt die Angabe der Adresse als "ftp" -Befehlsargument
+6. Der FTP-Client wird nun beim Beenden die Verbindung ohne Probleme trennen
+7. Behoben, dass die FTP-Hilfebeschreibungen beim Ändern der Sprache nicht aktualisiert wurden
+8. Die SSE-Überprüfung per Befehl wird jetzt auf Unix-Systemen unterstützt
+9. Feste Eckzeit und Datumsposition
+10. Behobenes Passwort funktioniert nicht richtig, auch wenn der Benutzer das richtige Passwort eingegeben hat
+11. Unbenutzte Phase entfernt
+12. Debug für jede Phase hinzugefügt
+13. Platzhalter für Betriebssystem zur Verwendung mit MOTD und MAL hinzugefügt
+14. Newline-Parser hinzugefügt, damit MOTD mehr als eine Zeile unterstützt
 -BODY END-
 
 -SECTIONS-
@@ -850,4 +872,6 @@ ks 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
+KS 0.0.6.6=>SE1
+KS 0.0.6.9=>SE1
 -SECTIONS END-

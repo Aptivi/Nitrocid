@@ -795,6 +795,28 @@ KS 0.0.6.5
 5. Kiinteä CPU-kellonopeus, joka näkyy kahdesti uusimmissa prosessoreissa (prosessorit, joiden kellonopeus on sisäisillä nimillä, esimerkiksi Intel(R) Core(TM) i7-8700 CPU @ 3.20 GHz)
 6. FTP-siirtojen kiinteä etenemispalkki, joten se käyttää uutta muotoa
 7. Lisätty ETA ja nopeus
+
+KS 0.0.6.6
+
+1. Päivitetty manuaalinen sivu uusia komentoja varten
+2. Poistettu valuuttakomento (maksamaton)
+
+KS 0.0.6.9
+
+1. Poistetaan laskimet ja yksikkömuuntimet
+2. Yhdistä kaksi tulostuskomentoa yhteen
+3. Yhdistä kaksi modgeneraattoria yhteen
+4. Sallittu FTP-palvelimen syöttäminen määrittelemättä "ftp: //" -liitettä
+5. Sallii osoitteen määrittäminen komennon "ftp" argumentiksi
+6. Nyt FTP-asiakas katkeaa rauhallisesti poistuttaessa
+7. Kiinteät FTP-ohjeiden kuvaukset eivät päivity kieliä vaihdettaessa
+8. Unix-järjestelmissä tuetaan nyt komentoja SSE-tarkistusta
+9. Kiinteä kulman aika ja päivämäärä
+10. Kiinteä salasana ei toimi oikein, vaikka käyttäjä asetti oikean salasanan
+11. Poistetaan käyttämätön vaihe
+12. Lisätty debug jokaisessa vaiheessa
+13. Lisätty käyttöjärjestelmän paikanvaraaja käytettäväksi MOTD: n ja MAL: n kanssa
+14. Lisätty newline-jäsennin, jotta MOTD tukee useampaa kuin yhtä riviä
 -BODY END-
 
 -SECTIONS-
@@ -850,4 +872,6 @@ ks 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
+KS 0.0.6.6=>SE1
+KS 0.0.6.9=>SE1
 -SECTIONS END-

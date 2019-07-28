@@ -48,47 +48,43 @@ Public Module Kernel
             InitEverything()
 
             'Phase 1: Probe hardware
-            If Quiet = True Or quietProbe = True Then
-                'Continue the kernel, and don't print messages
-                ProbeHW(True)
-            Else
-                'Continue the kernel
-                ProbeHW(False)
-            End If
+            Wdbg("- Kernel Phase 1: Probing hardware")
+            ProbeHW()
 
             'Phase 2: Username management
+            Wdbg("- Kernel Phase 2: Manage internal usernames")
             Adduser("root", RootPasswd)
             Permission("Admin", "root", "Allow", Quiet)
             If enableDemo = True Then Adduser("demo")
             LoginFlag = True
 
-            'Phase 3: Check for pre-user making
-            If CruserFlag = True Then Adduser(arguser, argword)
-
-            'Phase 4: Parse Mods and Screensavers
+            'Phase 3: Parse Mods and Screensavers
+            Wdbg("- Kernel Phase 3: Parse mods and screensavers")
             ParseMods(True)
             Dim modPath As String = paths("Mods")
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
                 CompileCustom(modFile.Replace(modPath, ""))
             Next
 
-            'Phase 5: Free unused RAM and raise the started event
+            'Phase 4: Free unused RAM and raise the started event
+            Wdbg("- Kernel Phase 4: Garbage collection starts and the events now work")
             EventManager.RaiseStartKernel()
             DisposeAll()
 
-            'Phase 6: Log-in
+            'Phase 5: Log-in
+            Wdbg("- Kernel Phase 5: Log in")
             If Not Quiet Then ShowTime()
             If LoginFlag = True And maintenance = False Then
                 LoginPrompt()
             ElseIf LoginFlag = True And maintenance = True Then
                 LoginFlag = False
-                Wln(DoTranslation("Enter the admin password for maintenance.", currentLang), "neutralText")
+                W(DoTranslation("Enter the admin password for maintenance.", currentLang), True, "neutralText")
                 answeruser = "root"
                 ShowPasswordPrompt(answeruser)
             End If
         Catch ex As Exception
             If DebugMode = True Then
-                Wln(ex.StackTrace, "uncontError") : Wdbg(ex.StackTrace, True)
+                W(ex.StackTrace, True, "uncontError") : WStkTrc(ex)
             End If
             KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}", currentLang), ex, Err.Description)
         End Try

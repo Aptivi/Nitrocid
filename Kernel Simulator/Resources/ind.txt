@@ -120,7 +120,7 @@ kisee any sarvar se kanekt karane se pahale aapako sarvar se diskanekt karana ch
 {0}  se kanekt kiya gaya
 {0}: se kanekt karane ka prayaas karate samay truti ({1})
 staik tres: ​​{2}
-ek ftp sarvar darj karen jo "ftp://" ya "ftps://"  se shuroo hota hai
+FTP sarvar darj karen.
 sthaaneey nirdeshika {0} maujood nahin hai.
 ek sthaaneey nirdeshika darj karen. ".." vaapas jaane ke lie.
 nirdeshika {0} nahin milee.

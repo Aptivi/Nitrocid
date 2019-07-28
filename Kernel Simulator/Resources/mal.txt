@@ -120,7 +120,7 @@ Kata laluan untuk {0}:
 Disambungkan ke {0}
 Ralat ketika cuba menyambung ke {0}: {1}
 Stack Trace: {2}
-Masukkan pelayan FTP yang bermula dengan "ftp://" atau "ftps://"
+Masukkan pelayan FTP.
 Direktori setempat {0} tidak wujud.
 Masukkan direktori setempat. ".." untuk kembali semula.
 Direktori {0} tidak dijumpai.

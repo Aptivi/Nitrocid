@@ -17,17 +17,15 @@ T??m?? komento avaa uuden istunnon FTP-asiakkaan liitt??miseksi kaikkiin yleis??
 
 Komennon k??ytt??
 
-* Yhdist?? (osoite)
+* connect (address)
 esimerkit
 
-* connect ftp://ftp.fabrikam.com: Yhdist???? asiakkaan palvelimeen nimelt?? "ftp.fabrikam.com"
-* connect ftps: //ftp.contoso.com: Yhdist???? asiakkaasi SSL: n avulla palvelimeen nimelt?? "ftp.contoso.com"
+* connect ftp.fabrikam.com: Yhdist???? asiakkaan palvelimeen nimelt?? "ftp.fabrikam.com"
 -BODY END-
 
 -COLOR CONFIGURATION-
 connect (address)=>Green
-connect ftp://ftp.fabrikam.com:=>Yellow
-connect ftps://ftp.contoso.com:=>Yellow
+connect ftp.fabrikam.com:=>Yellow
 -COLOR CONFIG END-
 
 -SECTIONS-

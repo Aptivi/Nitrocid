@@ -120,7 +120,7 @@ Senha para {0}:
 Conectado a {0}
 Erro ao tentar se conectar a {0}: {1}
 Rastreamento de pilha: {2}
-Digite um servidor FTP que comece com "ftp://" ou "ftps://"
+Digite um servidor FTP.
 O diretório local {0} não existe.
 Digite um diretório local. ".." voltar.
 Diretório {0} não encontrado.

@@ -139,10 +139,10 @@ Public Module Config
             End If
         Catch ex As Exception
             If DebugMode = True Then
-                Wdbg(ex.StackTrace, True)
-                Wln(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
+                WStkTrc(ex)
+                W(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, "neutralText", Err.Description)
             Else
-                Wln(DoTranslation("There is an error trying to create configuration.", currentLang), "neutralText")
+                W(DoTranslation("There is an error trying to create configuration.", currentLang), True, "neutralText")
             End If
             If CmdArg = True Then
                 DisposeAll()
@@ -161,17 +161,18 @@ Public Module Config
             configUpdater.Load(paths("Configuration"))
 
             'Check to see if the kernel is outdated
+            'TODO: Show changelogs during update
             If configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
                 Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
-                Wln(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
-                updateConfig()
+                W(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), True, "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
+                UpdateConfig()
             End If
         Catch ex As Exception
             If DebugMode = True Then
-                Wdbg(ex.StackTrace, True)
-                Wln(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
+                WStkTrc(ex)
+                W(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, "neutralText", Err.Description)
             Else
-                Wln(DoTranslation("There is an error trying to update configuration.", currentLang), "neutralText")
+                W(DoTranslation("There is an error trying to update configuration.", currentLang), True, "neutralText")
             End If
         End Try
     End Sub
@@ -179,28 +180,13 @@ Public Module Config
     Public Sub UpdateConfig()
 
         CreateConfig(False, True)
-        ResetEverything()
-        Console.Clear()
-        Main()
+        PowerManage("reboot")
 
-    End Sub
-
-    Public Sub ReadImportantConfig()
-        Try
-
-        Catch ex As Exception
-            If DebugMode = True Then
-                Wdbg(ex.StackTrace, True)
-                Wln(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
-            Else
-                Wln(DoTranslation("There is an error trying to read configuration.", currentLang), "neutralText")
-            End If
-        End Try
     End Sub
 
     Public Sub ReadConfig()
         Try
-            '----------------------------- Important configuration things -----------------------------
+            '----------------------------- Important configuration -----------------------------
             'Language
             SetLang(configReader.Sections("General").Keys("Language").Value)
 
@@ -252,10 +238,10 @@ Public Module Config
             defSaverName = configReader.Sections("Misc").Keys("Screensaver").Value
         Catch ex As Exception
             If DebugMode = True Then
-                Wdbg(ex.StackTrace, True)
-                Wln(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, "neutralText", Err.Description)
+                WStkTrc(ex)
+                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, "neutralText", Err.Description)
             Else
-                Wln(DoTranslation("There is an error trying to read configuration.", currentLang), "neutralText")
+                W(DoTranslation("There is an error trying to read configuration.", currentLang), True, "neutralText")
             End If
         End Try
     End Sub
@@ -264,8 +250,7 @@ Public Module Config
         Dim pathConfig As String = paths("Configuration")
         If Not File.Exists(pathConfig) Then createConfig(False, False)
         configReader.Load(pathConfig)
-        readImportantConfig()
-        readConfig()
+        ReadConfig()
         checkForUpgrade()
     End Sub
 

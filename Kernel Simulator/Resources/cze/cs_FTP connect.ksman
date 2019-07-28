@@ -20,14 +20,12 @@ Pou??it?? p????kaz??
 * p??ipojit (adresa)
 P????klady
 
-* p??ipojit ftp://ftp.fabrikam.com: P??ipojuje klienta k serveru s n??zvem "ftp.fabrikam.com"
-* connect ftps: //ftp.contoso.com: P??ipojuje klienta pomoc?? SSL k serveru s n??zvem "ftp.contoso.com"
+* connect ftp.fabrikam.com: P??ipojuje klienta k serveru s n??zvem "ftp.fabrikam.com"
 -BODY END-
 
 -COLOR CONFIGURATION-
 connect (address)=>Green
-connect ftp://ftp.fabrikam.com:=>Yellow
-connect ftps://ftp.contoso.com:=>Yellow
+connect ftp.fabrikam.com:=>Yellow
 -COLOR CONFIG END-
 
 -SECTIONS-

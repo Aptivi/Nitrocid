@@ -120,7 +120,7 @@ Lösenord för {0}:
 Ansluten till {0}
 Fel vid försök att ansluta till {0}: {1}
 Stack Trace: {2}
-Ange en FTP-server som börjar med "ftp: //" eller "ftps: //"
+Ange en FTP-server.
 Lokal katalog {0} existerar inte.
 Ange en lokal katalog. ".." att gå tillbaka.
 Directory {0} not found.

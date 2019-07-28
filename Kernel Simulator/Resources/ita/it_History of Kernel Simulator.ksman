@@ -795,6 +795,28 @@ KS 0.0.6.5
 5. Corretta la velocità di clock della CPU che veniva visualizzata due volte negli ultimi processori (processori che hanno una velocità di clock nei loro nomi interni, ad esempio "CPU Intel (R) Core (TM) i7-8700 @ 3.20GHz")
 6. Corretta la barra di avanzamento dei trasferimenti FTP in modo che utilizzi un nuovo formato
 7. Aggiunti ETA e velocità
+
+KS 0.0.6.6
+
+1. Pagina di manuale aggiornata per i nuovi comandi
+2. Comando valuta rimosso (non pagato)
+
+KS 0.0.6.9
+
+1. Calcolatori e convertitori di unità rimossi
+2. Unificato due comandi di stampa in uno
+3. Unificati due generatori di mod in uno
+4. Consentito l'accesso al server FTP senza specificare il prefisso "ftp: //"
+5. È consentito specificare l'indirizzo come argomento del comando "ftp"
+6. Ora il client FTP si disconnetterà pacificamente all'uscita
+7. Corrette le descrizioni della guida FTP che non si aggiornano quando si cambiano le lingue
+8. Il controllo SSE tramite comando è ora supportato sui sistemi Unix
+9. Fissa l'ora dell'angolo e la posizione della data
+10. Risolto il problema con la password che non funzionava correttamente anche se l'utente inseriva la password corretta
+11. Fase inutilizzata rimossa
+12. Aggiunto debug su ogni fase
+13. Aggiunto segnaposto del sistema operativo da utilizzare con MOTD e MAL
+14. Aggiunto il parser newline per far sì che MOTD supporti più di 1 riga
 -BODY END-
 
 -SECTIONS-
@@ -850,4 +872,6 @@ ks 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
+KS 0.0.6.6=>SE1
+KS 0.0.6.9=>SE1
 -SECTIONS END-

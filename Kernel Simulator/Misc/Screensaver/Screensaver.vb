@@ -49,7 +49,7 @@ Public Module Screensaver
         'To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
         '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
         '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
-        '                           Substitute: TextWriterColor.W() or TextWriterColor.Wln() with System.Console.WriteLine() or System.Console.Write().
+        '                           Substitute: TextWriterColor.W() with System.Console.WriteLine() or System.Console.Write().
         finalSaver.PreDisplay()
         Do While True
             'Thread.Sleep(1)
@@ -161,7 +161,7 @@ Public Module Screensaver
             Custom.CancelAsync()
             Thread.Sleep(150)
         Else
-            Wln(DoTranslation("The requested screensaver {0} is not found.", currentLang), "neutralText", saver)
+            W(DoTranslation("The requested screensaver {0} is not found.", currentLang), True, "neutralText", saver)
         End If
         EventManager.RaisePostShowScreensaver()
         InSaver = False
@@ -181,7 +181,7 @@ Public Module Screensaver
                             finalSaver.InitSaver()
                             If finalSaver.Initialized = True Then
                                 If Not ScrnSvrdb.ContainsKey(modFile) Then
-                                    Wln(DoTranslation("{0} has been initialized properly.", currentLang), "neutralText", modFile)
+                                    W(DoTranslation("{0} has been initialized properly.", currentLang), True, "neutralText", modFile)
                                     ScrnSvrdb.Add(modFile, False)
                                 Else
                                     ScrnSvrdb.Remove(modFile)
@@ -189,14 +189,14 @@ Public Module Screensaver
                                     Exit Sub
                                 End If
                             Else
-                                Wln(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), "neutralText", modFile)
+                                W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, "neutralText", modFile)
                             End If
                         End If
                     End If
                 End If
             Next
         Else
-            Wln(DoTranslation("Screensaver {0} does not exist.", currentLang), "neutralText", file)
+            W(DoTranslation("Screensaver {0} does not exist.", currentLang), True, "neutralText", file)
         End If
     End Sub
 
@@ -210,9 +210,9 @@ Public Module Screensaver
             ScrnSvrdb(defSaverName) = False
             defSaverName = saver
             ScrnSvrdb(saver) = setDef
-            Wln(DoTranslation("{0} is set to default screensaver.", currentLang), "neutralText", saver)
+            W(DoTranslation("{0} is set to default screensaver.", currentLang), True, "neutralText", saver)
         Else
-            Wln(DoTranslation("Screensaver {0} not found in database. Initialize with ""loadsaver {0}"".", currentLang), "neutralText", saver)
+            W(DoTranslation("Screensaver {0} not found in database. Initialize with ""loadsaver {0}"".", currentLang), True, "neutralText", saver)
         End If
     End Sub
 
@@ -234,9 +234,9 @@ Public Module Screensaver
             Dim modCode() As String = New String() {"Imports " & namespc & vbNewLine & code}
             execCustomSaver = provider.CompileAssemblyFromSource(prm, modCode)
             If execCustomSaver.Errors.HasErrors And (Quiet = False) Then
-                Wln(DoTranslation("Screensaver can't be loaded because of the following: ", currentLang), "neutralText")
+                W(DoTranslation("Screensaver can't be loaded because of the following: ", currentLang), True, "neutralText")
                 For Each errorName In execCustomSaver.Errors
-                    Wln(errorName.ToString, "neutralText") : Wdbg(errorName.ToString, True)
+                    W(errorName.ToString, True, "neutralText") : Wdbg(errorName.ToString, True)
                 Next
                 Exit Function
             Else

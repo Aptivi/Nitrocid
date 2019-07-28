@@ -37,84 +37,58 @@ Public Module ModParser
     Private ReadOnly modPath As String = paths("Mods")
 
     '------------------------------------------- Generators -------------------------------------------
-    'TODO: Can be unified into one GenMod sub
-    Private Function GenMod(ByVal code As String) As IScript 'For Visual Basic mods
-        Using provider As New VBCodeProvider()
-            Dim prm As New CompilerParameters With {
+    Private Function GenMod(ByVal PLang As String, ByVal code As String) As IScript
+        Dim provider As CodeDomProvider
+        Wdbg($"Language detected: {PLang}")
+        If PLang = "C#" Then
+            provider = New CSharpCodeProvider
+        ElseIf PLang = "VB.NET" Then
+            provider = New VBCodeProvider
+        Else
+            Exit Function
+        End If
+        Dim prm As New CompilerParameters With {
                 .GenerateExecutable = False,
                 .GenerateInMemory = True
-            }
+           }
 
-            'Add referenced assemblies
-            Wdbg("Referenced assemblies will be added.")
-            prm.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly.Location) 'It should reference itself
-            prm.ReferencedAssemblies.Add("System.dll")
-            prm.ReferencedAssemblies.Add("System.Core.dll")
-            prm.ReferencedAssemblies.Add("System.Data.dll")
-            prm.ReferencedAssemblies.Add("System.DirectoryServices.dll")
-            prm.ReferencedAssemblies.Add("System.Xml.dll")
-            prm.ReferencedAssemblies.Add("System.Xml.Linq.dll")
-            Wdbg("Referenced assemblies added.")
+        'Add referenced assemblies
+        Wdbg("Referenced assemblies will be added.")
+        prm.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly.Location) 'It should reference itself
+        prm.ReferencedAssemblies.Add("System.dll")
+        prm.ReferencedAssemblies.Add("System.Core.dll")
+        prm.ReferencedAssemblies.Add("System.Data.dll")
+        prm.ReferencedAssemblies.Add("System.DirectoryServices.dll")
+        prm.ReferencedAssemblies.Add("System.Xml.dll")
+        prm.ReferencedAssemblies.Add("System.Xml.Linq.dll")
+        Wdbg("Referenced assemblies added.")
 
-            'Try to compile
-            Dim namespc As String = GetType(IScript).Namespace
-            Dim modCode() As String = New String() {"Imports " & namespc & vbNewLine & code}
-            Dim res As CompilerResults = provider.CompileAssemblyFromSource(prm, modCode)
+        'Try to compile
+        Dim namespc As String = GetType(IScript).Namespace
+        Dim modCode() As String
+        If PLang = "VB.NET" Then
+            modCode = {$"Imports {namespc}{vbNewLine}{code}"}
+        ElseIf PLang = "C#" Then
+            modCode = {$"using {namespc};{vbNewLine}{code}"}
+        End If
+#Disable Warning BC42104
+        Dim res As CompilerResults = provider.CompileAssemblyFromSource(prm, modCode)
+#Enable Warning BC42104
 
-            'Check to see if there are compilation errors
-            Wdbg("Has errors: {0}", res.Errors.HasErrors)
-            Wdbg("Has warnings: {0}", res.Errors.HasWarnings)
-            If res.Errors.HasErrors And (Quiet = False) Then
-                If Not Quiet Then Wln(DoTranslation("Mod can't be loaded because of the following: ", currentLang), "neutralText")
-                For Each errorName In res.Errors
-                    If Not Quiet Then Wln(errorName.ToString, "neutralText")
-                    Wdbg(errorName.ToString)
-                Next
-                Exit Function
-            End If
-            For Each t As Type In res.CompiledAssembly.GetTypes()
-                If t.GetInterface(GetType(IScript).Name) IsNot Nothing Then Return CType(res.CompiledAssembly.CreateInstance(t.Name), IScript)
+        'Check to see if there are compilation errors
+        Wdbg("Has errors: {0}", res.Errors.HasErrors)
+        Wdbg("Has warnings: {0}", res.Errors.HasWarnings)
+        If res.Errors.HasErrors And (Quiet = False) Then
+            If Not Quiet Then W(DoTranslation("Mod can't be loaded because of the following: ", currentLang), True, "neutralText")
+            For Each errorName In res.Errors
+                If Not Quiet Then W(errorName.ToString, True, "neutralText")
+                Wdbg(errorName.ToString)
             Next
-        End Using
-    End Function
-    Private Function GenModCS(ByVal code As String) As IScript 'For C# Mods
-        Using provider As New CSharpCodeProvider()
-            Dim prm As New CompilerParameters With {
-                .GenerateExecutable = False,
-                .GenerateInMemory = True
-            }
-
-            'Add referenced assemblies
-            Wdbg("Referenced assemblies will be added.")
-            prm.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly.Location) 'It should reference itself
-            prm.ReferencedAssemblies.Add("System.dll")
-            prm.ReferencedAssemblies.Add("System.Core.dll")
-            prm.ReferencedAssemblies.Add("System.Data.dll")
-            prm.ReferencedAssemblies.Add("System.DirectoryServices.dll")
-            prm.ReferencedAssemblies.Add("System.Xml.dll")
-            prm.ReferencedAssemblies.Add("System.Xml.Linq.dll")
-            Wdbg("Referenced assemblies added.")
-
-            'Try to compile
-            Dim namespc As String = GetType(IScript).Namespace
-            Dim modCode() As String = New String() {"using " & namespc & ";" & vbNewLine & code}
-            Dim res As CompilerResults = provider.CompileAssemblyFromSource(prm, modCode)
-
-            'Check to see if there are compilation errors
-            Wdbg("Has errors: {0}", res.Errors.HasErrors)
-            Wdbg("Has warnings: {0}", res.Errors.HasWarnings)
-            If res.Errors.HasErrors And (Quiet = False) Then
-                If Not Quiet Then Wln(DoTranslation("Mod can't be loaded because of the following: ", currentLang), "neutralText")
-                For Each errorName In res.Errors
-                    If Not Quiet Then Wln(errorName.ToString, "neutralText")
-                    Wdbg(errorName.ToString)
-                Next
-                Exit Function
-            End If
-            For Each t As Type In res.CompiledAssembly.GetTypes()
-                If t.GetInterface(GetType(IScript).Name) IsNot Nothing Then Return CType(res.CompiledAssembly.CreateInstance(t.Name), IScript)
-            Next
-        End Using
+            Exit Function
+        End If
+        For Each t As Type In res.CompiledAssembly.GetTypes()
+            If t.GetInterface(GetType(IScript).Name) IsNot Nothing Then Return CType(res.CompiledAssembly.CreateInstance(t.Name), IScript)
+        Next
     End Function
 
     '------------------------------------------- Misc -------------------------------------------
@@ -123,17 +97,17 @@ Public Module ModParser
         If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
         Dim count As Integer = FileIO.FileSystem.GetFiles(modPath).Count
         If (Quiet = False) And (count <> 0) And StartStop = True Then
-            Wln(DoTranslation("mod: Loading mods...", currentLang), "neutralText")
+            W(DoTranslation("mod: Loading mods...", currentLang), True, "neutralText")
             Wdbg("Mods are being loaded. Total mods with screensavers = {0}", count)
         ElseIf (Quiet = False) And (count <> 0) And StartStop = False Then
-            Wln(DoTranslation("mod: Stopping mods...", currentLang), "neutralText")
+            W(DoTranslation("mod: Stopping mods...", currentLang), True, "neutralText")
             Wdbg("Mods are being stopped. Total mods with screensavers = {0}", count)
         End If
         If StartStop = False Then
             For Each script As IScript In scripts.Values
                 script.StopMod()
                 Wdbg("script.StopMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
-                If script.Name <> "" And script.Version <> "" Then Wln("{0} v{1} stopped", "neutralText", script.Name, script.Version)
+                If script.Name <> "" And script.Version <> "" Then W("{0} v{1} stopped", True, "neutralText", script.Name, script.Version)
             Next
         Else
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
@@ -151,10 +125,10 @@ Public Module ModParser
             Wdbg("Mod file {0} is a screensaver and is ignored.", modFile)
         ElseIf modFile.EndsWith("CS.m") Then
             'Mod has a language of C#
-            Dim script As IScript = GenModCS(IO.File.ReadAllText(modPath + modFile))
+            Dim script As IScript = GenMod("C#", IO.File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile, StartStop)
         Else
-            Dim script As IScript = GenMod(IO.File.ReadAllText(modPath + modFile))
+            Dim script As IScript = GenMod("VB.NET", IO.File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile, StartStop)
         End If
     End Sub
@@ -164,7 +138,7 @@ Public Module ModParser
             Wdbg("script.StartMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
             If script.Name = "" Then
                 Wdbg("No name for {0}", modFile)
-                If Not Quiet Then Wln(DoTranslation("Mod {0} does not have the name. Review the source code.", currentLang), "neutralText", modFile)
+                If Not Quiet Then W(DoTranslation("Mod {0} does not have the name. Review the source code.", currentLang), True, "neutralText", modFile)
                 scripts.Add(script.Cmd, script)
             Else
                 Wdbg("There is a name for {0}", modFile)
@@ -172,15 +146,15 @@ Public Module ModParser
             End If
             If script.Version = "" And script.Name <> "" Then
                 Wdbg("{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
-                If Not Quiet Then Wln(DoTranslation("Mod {0} does not have the version.", currentLang), "neutralText", script.Name)
+                If Not Quiet Then W(DoTranslation("Mod {0} does not have the version.", currentLang), True, "neutralText", script.Name)
             ElseIf script.Name <> "" And script.Version <> "" Then
                 Wdbg("{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
-                If Not Quiet Then Wln(DoTranslation("{0} v{1} started", currentLang), "neutralText", script.Name, script.Version)
+                If Not Quiet Then W(DoTranslation("{0} v{1} started", currentLang), True, "neutralText", script.Name, script.Version)
             End If
             If script.Cmd <> "" And StartStop = True Then
                 modcmnds.Add(script.Cmd)
                 If script.Def = "" Then
-                    If Not Quiet Then Wln(DoTranslation("No definition for command {0}.", currentLang), "neutralText", script.Cmd)
+                    If Not Quiet Then W(DoTranslation("No definition for command {0}.", currentLang), True, "neutralText", script.Cmd)
                     Wdbg("{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
                     script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
                 End If

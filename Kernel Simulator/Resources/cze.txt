@@ -120,7 +120,7 @@ Heslo pro {0}:
 Připojeno k {0}
 Chyba při pokusu o připojení k {0}: {1}
 Stoh Trace: {2}
-Zadejte FTP server, který začíná na "ftp://" nebo "ftps://"
+Zadejte FTP server.
 Místní adresář {0} neexistuje.
 Zadejte místní adresář. ".." vrátit se.
 Adresář {0} nebyl nalezen.

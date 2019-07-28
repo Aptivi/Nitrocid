@@ -32,17 +32,20 @@ Public Module FTPShell
     Private strcmd As String
     Public ftpexit As Boolean = False
 
-    Public Sub InitiateShell()
+    Public Sub InitiateShell(Optional ByVal Connects As Boolean = False, Optional ByVal Address As String = "")
         While True
             'Complete initialization
             If initialized = False Then
+                Wdbg($"Completing initialization of FTP: {initialized}")
                 currDirect = paths("Home")
                 initialized = True
             End If
 
             'Check if the shell is going to exit
             If ftpexit = True Then
+                Wdbg("Exiting shell...")
                 connected = False
+                ClientFTP?.Disconnect()
                 ftpsite = ""
                 currDirect = ""
                 currentremoteDir = ""
@@ -55,24 +58,41 @@ Public Module FTPShell
             End If
 
             'Prompt for command
-            If connected = True Then
-                W("[", "def") : W("{0}", "userName", user) : W("@", "def") : W("{0}", "hostName", ftpsite) : W("]{0} ", "def", currentremoteDir)
-            Else
-                W("{0}> ", "def", currDirect)
+            If Not Connects Then
+                Wdbg("Preparing prompt...")
+                If connected Then
+                    W("[", False, "def") : W("{0}", False, "userName", user) : W("@", False, "def") : W("{0}", False, "hostName", ftpsite) : W("]{0} ", False, "def", currentremoteDir)
+                Else
+                    W("{0}> ", False, "def", currDirect)
+                End If
             End If
+
+            'Run garbage collector
             DisposeAll()
+
+            'Set input color
             If ColoredShell = True Then Console.ForegroundColor = CType(inputColor, ConsoleColor)
-            strcmd = Console.ReadLine()
+            If Connects Then
+                Wdbg($"Currently connecting to {Address} by ""ftp (address)""...")
+                strcmd = $"connect {Address}"
+                Connects = False
+            Else
+                Wdbg("Normal shell")
+                strcmd = Console.ReadLine()
+            End If
+
+            'Parse command
             If Not (strcmd = Nothing Or strcmd.StartsWith(" ")) Then GetLine()
         End While
     End Sub
 
     Public Sub GetLine()
         Dim words As String() = strcmd.Split({" "c})
+        Wdbg($"Is the command found? {availftpcmds.Contains(words(0))}")
         If availftpcmds.Contains(words(0)) Then
             FTPGetCommand.ExecuteCommand(strcmd)
         Else
-            Wln(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), "neutralText", strcmd)
+            W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), True, "neutralText", strcmd)
         End If
     End Sub
 

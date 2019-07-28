@@ -28,7 +28,7 @@ Public Module TimeDate
     Private originalRow As Integer
     Private originalCol As Integer
 
-    Sub TimeDateChange_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles TimeDateChange.DoWork
+    Sub TimeDateChange_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles TimeDateChange.DoWork
 
         Do While True
             If TimeDateChange.CancellationPending = True Then
@@ -37,15 +37,11 @@ Public Module TimeDate
             Else
                 KernelDateTime = Date.Now
                 strKernelTimeDate = Date.Now.ToString
-
-                'We have to remove initTimesInZones as a workaround for Unix
-                'We're sorry, but this is the only way of writing text on the corner, so some lines in runtime might be out of position...
-                'We also have to slow down calling this function every second.
                 originalRow = Console.CursorTop
                 originalCol = Console.CursorLeft
                 If CornerTD = True Then
-                    Console.SetCursorPosition(Console.WindowWidth - 6, Console.WindowTop)
-                    Wln("{0} {1}", "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.ShortTime), FormatDateTime(strKernelTimeDate, DateFormat.ShortDate))
+                    Console.SetCursorPosition(Console.WindowWidth - 16, Console.WindowTop)
+                    W("{0} {1}", True, "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.ShortTime), FormatDateTime(strKernelTimeDate, DateFormat.ShortDate))
                     Console.SetCursorPosition(originalCol, originalRow)
                 End If
             End If
@@ -65,9 +61,9 @@ Public Module TimeDate
 
     Public Sub ShowTime()
 
-        Wln(DoTranslation("datetime: Time is {0}", currentLang), "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.LongTime))
-        Wln(DoTranslation("datetime: Today is {0}", currentLang), "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.LongDate))
-        Wln(DoTranslation("datetime: Time Zone: {0}", currentLang), "neutralText", TimeZone.CurrentTimeZone.StandardName)
+        W(DoTranslation("datetime: Time is {0}", currentLang), True, "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.LongTime))
+        W(DoTranslation("datetime: Today is {0}", currentLang), True, "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.LongDate))
+        W(DoTranslation("datetime: Time Zone: {0}", currentLang), True, "neutralText", TimeZone.CurrentTimeZone.StandardName)
 
     End Sub
 

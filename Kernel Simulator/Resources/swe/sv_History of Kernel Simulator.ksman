@@ -795,6 +795,28 @@ KS 0,0,6,5
 5. Fast CPU-klockhastighet som visas två gånger i de senaste processorerna (processorer som har klockhastighet på sina interna namn, till exempel. "Intel (R) Core (TM) i7-8700 CPU @ 3.20GHz")
 6. Fast framstegsfält för FTP-överföringar så att det använder nytt format
 7. Lade till ETA och hastighet
+
+KS 0,0,6,6
+
+1. Uppdaterad manuell sida för nya kommandon
+2. Borttagen valutakommando (obetalt)
+
+KS 0,0,6,9
+
+1. Borttagna kalkylatorer och enhetsomvandlare
+2. Förenade två utskriftskommandon till ett
+3. Enade två modgeneratorer till en
+4. Tillåtet att ange FTP-server utan att ange "ftp: //" prefix
+5. Tillåtet att ange adress som "ftp" -kommandotargumentet
+6. Nu kommer FTP-klienten att koppla av fredligt när den lämnar
+7. Fasta FTP-hjälpbeskrivningar som inte uppdateras vid ändring av språk
+8. SSE-kontroll med kommando stöds nu på Unix-system
+9. Fast hörntid och datumposition
+10. Fasta lösenord fungerar inte korrekt även om användaren har lagt rätt lösenord
+11. Borttagen oanvänd fas
+12. Lade till felsökning i varje fas
+13. Lagt till platshållare för operativsystem för användning med MOTD och MAL
+14. Lade till ny linje-parser för att göra MOTD-stöd mer än 1 rad
 -BODY END-
 
 -SECTIONS-
@@ -850,4 +872,6 @@ ks 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
+KS 0.0.6.6=>SE1
+KS 0.0.6.9=>SE1
 -SECTIONS END-

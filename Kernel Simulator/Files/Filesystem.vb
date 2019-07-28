@@ -31,13 +31,13 @@ Public Module Filesystem
             CurrDir = Parser.FullName
             InitStructure()
         Else
-            Wln(DoTranslation("Directory {0} not found", currentLang), "neutralText", dir)
+            W(DoTranslation("Directory {0} not found", currentLang), True, "neutralText", dir)
         End If
     End Sub
     Public Sub ReadContents(ByVal filename As String)
         Using FStream As New IO.StreamReader(filename)
             While Not FStream.EndOfStream
-                Wln(FStream.ReadLine, "neutralText")
+                W(FStream.ReadLine, True, "neutralText")
             End While
         End Using
     End Sub
@@ -59,7 +59,7 @@ Public Module Filesystem
                             Dim FInfo As New IO.FileInfo(Entry)
 
                             'Print information
-                            Wln("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), "neutralText",
+                            W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, "neutralText",
                                 FormatNumber(FInfo.Length / 1024, 2),
                                 FormatDateTime(FInfo.CreationTime, DateFormat.ShortDate),
                                 FormatDateTime(FInfo.CreationTime, DateFormat.ShortTime),
@@ -76,7 +76,7 @@ Public Module Filesystem
                             Next
 
                             'Print information
-                            Wln("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), "neutralText",
+                            W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, "neutralText",
                                 FormatNumber(TotalSize / 1024, 2),
                                 FormatDateTime(DInfo.CreationTime, DateFormat.ShortDate),
                                 FormatDateTime(DInfo.CreationTime, DateFormat.ShortTime),
@@ -84,14 +84,14 @@ Public Module Filesystem
                                 FormatDateTime(DInfo.LastWriteTime, DateFormat.ShortTime))
                         End If
                     Catch ex As UnauthorizedAccessException 'Error while getting info
-                        Wln("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), "neutralText", Entry)
+                        W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, "neutralText", Entry)
                     End Try
                 Next
             Else
-                Wln(DoTranslation("Directory {0} not found", currentLang), "neutralText", folder)
+                W(DoTranslation("Directory {0} not found", currentLang), True, "neutralText", folder)
             End If
         Else
-            Wln(DoTranslation("{0} is not found.", currentLang), "neutralText", folder)
+            W(DoTranslation("{0} is not found.", currentLang), True, "neutralText", folder)
         End If
     End Sub
 

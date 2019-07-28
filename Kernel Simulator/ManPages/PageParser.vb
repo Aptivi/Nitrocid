@@ -23,129 +23,129 @@ Module PageParser
     Public AvailablePages() As String = { 'English manuals below
                                          "Introduction to the Kernel", "Available manual pages", "Available commands", "History of Kernel Simulator",
                                          "Available FTP commands", "Modding guide", "Screensaver modding guide", "adduser", "alias", "arginj",
-                                         "calc", "chdir", "chhostname", "chmal", "chmotd", "chpwd", "chusrname", "cls", "debuglog", "FTP changelocaldir", "FTP cdl",
+                                         "chdir", "chhostname", "chmal", "chmotd", "chpwd", "chusrname", "cls", "debuglog", "FTP changelocaldir", "FTP cdl",
                                          "FTP changeremotedir", "FTP cdr", "FTP connect", "FTP currlocaldir", "FTP pwdl", "FTP currremotedir", "FTP pwdr", "FTP delete",
                                          "FTP del", "FTP disconnect", "FTP download", "FTP get", "FTP listlocal", "FTP lsl", "FTP listremote", "FTP lsr", "FTP rename",
                                          "FTP ren", "FTP upload", "FTP put", "ftp", "list", "reloadsaver", "lockscreen", "logout", "lscomp", "lsnet", "lsnettree",
-                                         "md", "netinfo", "noaliases", "perm", "ping", "rd", "read", "reboot", "reloadconfig", "rmuser", "savescreen", "scical", "setcolors",
-                                         "setsaver", "setthemes", "showmotd", "showtd", "showtdzone", "shutdown", "sysinfo", "unitconv", "useddeps", "Available command-line arguments",
+                                         "md", "netinfo", "noaliases", "perm", "ping", "rd", "read", "reboot", "reloadconfig", "rmuser", "savescreen", "setcolors",
+                                         "setsaver", "setthemes", "showmotd", "showtd", "showtdzone", "shutdown", "sysinfo", "useddeps", "Available command-line arguments",
                                          "Available kernel arguments", "Configuration for your Kernel", "cdbglog", "chlang", "sses", 'Chinese manuals below
                                          "chiIntroduction to the Kernel", "chiAvailable manual pages", "chiAvailable commands", "chiHistory of Kernel Simulator",
                                          "chiAvailable FTP commands", "chiModding guide", "chiScreensaver modding guide", "chiadduser", "chialias", "chiarginj",
-                                         "chicalc", "chichdir", "chichhostname", "chichmal", "chichmotd", "chichpwd", "chichusrname", "chicls", "chidebuglog", "chiFTP changelocaldir", "chiFTP cdl",
+                                         "chichdir", "chichhostname", "chichmal", "chichmotd", "chichpwd", "chichusrname", "chicls", "chidebuglog", "chiFTP changelocaldir", "chiFTP cdl",
                                          "chiFTP changeremotedir", "chiFTP cdr", "chiFTP connect", "chiFTP currlocaldir", "chiFTP pwdl", "chiFTP currremotedir", "chiFTP pwdr", "chiFTP delete",
                                          "chiFTP del", "chiFTP disconnect", "chiFTP download", "chiFTP get", "chiFTP listlocal", "chiFTP lsl", "chiFTP listremote", "chiFTP lsr", "chiFTP rename",
                                          "chiFTP ren", "chiFTP upload", "chiFTP put", "chiftp", "chilist", "chireloadsaver", "chilockscreen", "chilogout", "chilscomp", "chilsnet", "chilsnettree",
-                                         "chimd", "chinetinfo", "chinoaliases", "chiperm", "chiping", "chird", "chiread", "chireboot", "chireloadconfig", "chirmuser", "chisavescreen", "chiscical", "chisetcolors",
-                                         "chisetsaver", "chisetthemes", "chishowmotd", "chishowtd", "chishowtdzone", "chishutdown", "chisysinfo", "chiunitconv", "chiuseddeps", "chiAvailable command-line arguments",
+                                         "chimd", "chinetinfo", "chinoaliases", "chiperm", "chiping", "chird", "chiread", "chireboot", "chireloadconfig", "chirmuser", "chisavescreen", "chisetcolors",
+                                         "chisetsaver", "chisetthemes", "chishowmotd", "chishowtd", "chishowtdzone", "chishutdown", "chisysinfo", "chiuseddeps", "chiAvailable command-line arguments",
                                          "chiAvailable kernel arguments", "chiConfiguration for your Kernel", "chicdbglog", "chichlang", "chisses", 'Czech manuals below
                                          "czeIntroduction to the Kernel", "czeAvailable manual pages", "czeAvailable commands", "czeHistory of Kernel Simulator",
                                          "czeAvailable FTP commands", "czeModding guide", "czeScreensaver modding guide", "czeadduser", "czealias", "czearginj",
-                                         "czecalc", "czechdir", "czechhostname", "czechmal", "czechmotd", "czechpwd", "czechusrname", "czecls", "czedebuglog", "czeFTP changelocaldir", "czeFTP cdl",
+                                         "czechdir", "czechhostname", "czechmal", "czechmotd", "czechpwd", "czechusrname", "czecls", "czedebuglog", "czeFTP changelocaldir", "czeFTP cdl",
                                          "czeFTP changeremotedir", "czeFTP cdr", "czeFTP connect", "czeFTP currlocaldir", "czeFTP pwdl", "czeFTP currremotedir", "czeFTP pwdr", "czeFTP delete",
                                          "czeFTP del", "czeFTP disconnect", "czeFTP download", "czeFTP get", "czeFTP listlocal", "czeFTP lsl", "czeFTP listremote", "czeFTP lsr", "czeFTP rename",
                                          "czeFTP ren", "czeFTP upload", "czeFTP put", "czeftp", "czelist", "czereloadsaver", "czelockscreen", "czelogout", "czelscomp", "czelsnet", "czelsnettree",
-                                         "czemd", "czenetinfo", "czenoaliases", "czeperm", "czeping", "czerd", "czeread", "czereboot", "czereloadconfig", "czermuser", "czesavescreen", "czescical", "czesetcolors",
-                                         "czesetsaver", "czesetthemes", "czeshowmotd", "czeshowtd", "czeshowtdzone", "czeshutdown", "czesysinfo", "czeunitconv", "czeuseddeps", "czeAvailable command-line arguments",
+                                         "czemd", "czenetinfo", "czenoaliases", "czeperm", "czeping", "czerd", "czeread", "czereboot", "czereloadconfig", "czermuser", "czesavescreen", "czesetcolors",
+                                         "czesetsaver", "czesetthemes", "czeshowmotd", "czeshowtd", "czeshowtdzone", "czeshutdown", "czesysinfo", "czeuseddeps", "czeAvailable command-line arguments",
                                          "czeAvailable kernel arguments", "czeConfiguration for your Kernel", "czecdbglog", "czechlang", "czesses", 'Dutch manuals below
                                          "dtcIntroduction to the Kernel", "dtcAvailable manual pages", "dtcAvailable commands", "dtcHistory of Kernel Simulator",
                                          "dtcAvailable FTP commands", "dtcModding guide", "dtcScreensaver modding guide", "dtcadduser", "dtcalias", "dtcarginj",
-                                         "dtccalc", "dtcchdir", "dtcchhostname", "dtcchmal", "dtcchmotd", "dtcchpwd", "dtcchusrname", "dtccls", "dtcdebuglog", "dtcFTP changelocaldir", "dtcFTP cdl",
+                                         "dtcchdir", "dtcchhostname", "dtcchmal", "dtcchmotd", "dtcchpwd", "dtcchusrname", "dtccls", "dtcdebuglog", "dtcFTP changelocaldir", "dtcFTP cdl",
                                          "dtcFTP changeremotedir", "dtcFTP cdr", "dtcFTP connect", "dtcFTP currlocaldir", "dtcFTP pwdl", "dtcFTP currremotedir", "dtcFTP pwdr", "dtcFTP delete",
                                          "dtcFTP del", "dtcFTP disconnect", "dtcFTP download", "dtcFTP get", "dtcFTP listlocal", "dtcFTP lsl", "dtcFTP listremote", "dtcFTP lsr", "dtcFTP rename",
                                          "dtcFTP ren", "dtcFTP upload", "dtcFTP put", "dtcftp", "dtclist", "dtcreloadsaver", "dtclockscreen", "dtclogout", "dtclscomp", "dtclsnet", "dtclsnettree",
-                                         "dtcmd", "dtcnetinfo", "dtcnoaliases", "dtcperm", "dtcping", "dtcrd", "dtcread", "dtcreboot", "dtcreloadconfig", "dtcrmuser", "dtcsavescreen", "dtcscical", "dtcsetcolors",
-                                         "dtcsetsaver", "dtcsetthemes", "dtcshowmotd", "dtcshowtd", "dtcshowtdzone", "dtcshutdown", "dtcsysinfo", "dtcunitconv", "dtcuseddeps", "dtcAvailable command-line arguments",
+                                         "dtcmd", "dtcnetinfo", "dtcnoaliases", "dtcperm", "dtcping", "dtcrd", "dtcread", "dtcreboot", "dtcreloadconfig", "dtcrmuser", "dtcsavescreen", "dtcsetcolors",
+                                         "dtcsetsaver", "dtcsetthemes", "dtcshowmotd", "dtcshowtd", "dtcshowtdzone", "dtcshutdown", "dtcsysinfo", "dtcuseddeps", "dtcAvailable command-line arguments",
                                          "dtcAvailable kernel arguments", "dtcConfiguration for your Kernel", "dtccdbglog", "dtcchlang", "dtcsses", 'Finnish manuals below
                                          "finIntroduction to the Kernel", "finAvailable manual pages", "finAvailable commands", "finHistory of Kernel Simulator",
                                          "finAvailable FTP commands", "finModding guide", "finScreensaver modding guide", "finadduser", "finalias", "finarginj",
-                                         "fincalc", "finchdir", "finchhostname", "finchmal", "finchmotd", "finchpwd", "finchusrname", "fincls", "findebuglog", "finFTP changelocaldir", "finFTP cdl",
+                                         "finchdir", "finchhostname", "finchmal", "finchmotd", "finchpwd", "finchusrname", "fincls", "findebuglog", "finFTP changelocaldir", "finFTP cdl",
                                          "finFTP changeremotedir", "finFTP cdr", "finFTP connect", "finFTP currlocaldir", "finFTP pwdl", "finFTP currremotedir", "finFTP pwdr", "finFTP delete",
                                          "finFTP del", "finFTP disconnect", "finFTP download", "finFTP get", "finFTP listlocal", "finFTP lsl", "finFTP listremote", "finFTP lsr", "finFTP rename",
                                          "finFTP ren", "finFTP upload", "finFTP put", "finftp", "finlist", "finreloadsaver", "finlockscreen", "finlogout", "finlscomp", "finlsnet", "finlsnettree",
-                                         "finmd", "finnetinfo", "finnoaliases", "finperm", "finping", "finrd", "finread", "finreboot", "finreloadconfig", "finrmuser", "finsavescreen", "finscical", "finsetcolors",
-                                         "finsetsaver", "finsetthemes", "finshowmotd", "finshowtd", "finshowtdzone", "finshutdown", "finsysinfo", "finunitconv", "finuseddeps", "finAvailable command-line arguments",
+                                         "finmd", "finnetinfo", "finnoaliases", "finperm", "finping", "finrd", "finread", "finreboot", "finreloadconfig", "finrmuser", "finsavescreen", "finsetcolors",
+                                         "finsetsaver", "finsetthemes", "finshowmotd", "finshowtd", "finshowtdzone", "finshutdown", "finsysinfo", "finuseddeps", "finAvailable command-line arguments",
                                          "finAvailable kernel arguments", "finConfiguration for your Kernel", "fincdbglog", "finchlang", "finsses", 'French manuals below
                                          "freIntroduction to the Kernel", "freAvailable manual pages", "freAvailable commands", "freHistory of Kernel Simulator",
                                          "freAvailable FTP commands", "freModding guide", "freScreensaver modding guide", "freadduser", "frealias", "frearginj",
-                                         "frecalc", "frechdir", "frechhostname", "frechmal", "frechmotd", "frechpwd", "frechusrname", "frecls", "fredebuglog", "freFTP changelocaldir", "freFTP cdl",
+                                         "frechdir", "frechhostname", "frechmal", "frechmotd", "frechpwd", "frechusrname", "frecls", "fredebuglog", "freFTP changelocaldir", "freFTP cdl",
                                          "freFTP changeremotedir", "freFTP cdr", "freFTP connect", "freFTP currlocaldir", "freFTP pwdl", "freFTP currremotedir", "freFTP pwdr", "freFTP delete",
                                          "freFTP del", "freFTP disconnect", "freFTP download", "freFTP get", "freFTP listlocal", "freFTP lsl", "freFTP listremote", "freFTP lsr", "freFTP rename",
                                          "freFTP ren", "freFTP upload", "freFTP put", "freftp", "frelist", "frereloadsaver", "frelockscreen", "frelogout", "frelscomp", "frelsnet", "frelsnettree",
-                                         "fremd", "frenetinfo", "frenoaliases", "freperm", "freping", "frerd", "freread", "frereboot", "frereloadconfig", "frermuser", "fresavescreen", "frescical", "fresetcolors",
-                                         "fresetsaver", "fresetthemes", "freshowmotd", "freshowtd", "freshowtdzone", "freshutdown", "fresysinfo", "freunitconv", "freuseddeps", "freAvailable command-line arguments",
+                                         "fremd", "frenetinfo", "frenoaliases", "freperm", "freping", "frerd", "freread", "frereboot", "frereloadconfig", "frermuser", "fresavescreen", "fresetcolors",
+                                         "fresetsaver", "fresetthemes", "freshowmotd", "freshowtd", "freshowtdzone", "freshutdown", "fresysinfo", "freuseddeps", "freAvailable command-line arguments",
                                          "freAvailable kernel arguments", "freConfiguration for your Kernel", "frecdbglog", "frechlang", "fresses", 'German manuals below
                                          "gerIntroduction to the Kernel", "gerAvailable manual pages", "gerAvailable commands", "gerHistory of Kernel Simulator",
                                          "gerAvailable FTP commands", "gerModding guide", "gerScreensaver modding guide", "geradduser", "geralias", "gerarginj",
-                                         "gercalc", "gerchdir", "gerchhostname", "gerchmal", "gerchmotd", "gerchpwd", "gerchusrname", "gercls", "gerdebuglog", "gerFTP changelocaldir", "gerFTP cdl",
+                                         "gerchdir", "gerchhostname", "gerchmal", "gerchmotd", "gerchpwd", "gerchusrname", "gercls", "gerdebuglog", "gerFTP changelocaldir", "gerFTP cdl",
                                          "gerFTP changeremotedir", "gerFTP cdr", "gerFTP connect", "gerFTP currlocaldir", "gerFTP pwdl", "gerFTP currremotedir", "gerFTP pwdr", "gerFTP delete",
                                          "gerFTP del", "gerFTP disconnect", "gerFTP download", "gerFTP get", "gerFTP listlocal", "gerFTP lsl", "gerFTP listremote", "gerFTP lsr", "gerFTP rename",
                                          "gerFTP ren", "gerFTP upload", "gerFTP put", "gerftp", "gerlist", "gerreloadsaver", "gerlockscreen", "gerlogout", "gerlscomp", "gerlsnet", "gerlsnettree",
-                                         "germd", "gernetinfo", "gernoaliases", "gerperm", "gerping", "gerrd", "gerread", "gerreboot", "gerreloadconfig", "gerrmuser", "gersavescreen", "gerscical", "gersetcolors",
-                                         "gersetsaver", "gersetthemes", "gershowmotd", "gershowtd", "gershowtdzone", "gershutdown", "gersysinfo", "gerunitconv", "geruseddeps", "gerAvailable command-line arguments",
+                                         "germd", "gernetinfo", "gernoaliases", "gerperm", "gerping", "gerrd", "gerread", "gerreboot", "gerreloadconfig", "gerrmuser", "gersavescreen", "gersetcolors",
+                                         "gersetsaver", "gersetthemes", "gershowmotd", "gershowtd", "gershowtdzone", "gershutdown", "gersysinfo", "geruseddeps", "gerAvailable command-line arguments",
                                          "gerAvailable kernel arguments", "gerConfiguration for your Kernel", "gercdbglog", "gerchlang", "gersses", 'Hindi manuals below
                                          "indIntroduction to the Kernel", "indAvailable manual pages", "indAvailable commands", "indHistory of Kernel Simulator",
                                          "indAvailable FTP commands", "indModding guide", "indScreensaver modding guide", "indadduser", "indalias", "indarginj",
-                                         "indcalc", "indchdir", "indchhostname", "indchmal", "indchmotd", "indchpwd", "indchusrname", "indcls", "inddebuglog", "indFTP changelocaldir", "indFTP cdl",
+                                         "indchdir", "indchhostname", "indchmal", "indchmotd", "indchpwd", "indchusrname", "indcls", "inddebuglog", "indFTP changelocaldir", "indFTP cdl",
                                          "indFTP changeremotedir", "indFTP cdr", "indFTP connect", "indFTP currlocaldir", "indFTP pwdl", "indFTP currremotedir", "indFTP pwdr", "indFTP delete",
                                          "indFTP del", "indFTP disconnect", "indFTP download", "indFTP get", "indFTP listlocal", "indFTP lsl", "indFTP listremote", "indFTP lsr", "indFTP rename",
                                          "indFTP ren", "indFTP upload", "indFTP put", "indftp", "indlist", "indreloadsaver", "indlockscreen", "indlogout", "indlscomp", "indlsnet", "indlsnettree",
-                                         "indmd", "indnetinfo", "indnoaliases", "indperm", "indping", "indrd", "indread", "indreboot", "indreloadconfig", "indrmuser", "indsavescreen", "indscical", "indsetcolors",
-                                         "indsetsaver", "indsetthemes", "indshowmotd", "indshowtd", "indshowtdzone", "indshutdown", "indsysinfo", "indunitconv", "induseddeps", "indAvailable command-line arguments",
+                                         "indmd", "indnetinfo", "indnoaliases", "indperm", "indping", "indrd", "indread", "indreboot", "indreloadconfig", "indrmuser", "indsavescreen", "indsetcolors",
+                                         "indsetsaver", "indsetthemes", "indshowmotd", "indshowtd", "indshowtdzone", "indshutdown", "indsysinfo", "induseddeps", "indAvailable command-line arguments",
                                          "indAvailable kernel arguments", "indConfiguration for your Kernel", "indcdbglog", "indchlang", "indsses", 'Italian manuals below
                                          "itaIntroduction to the Kernel", "itaAvailable manual pages", "itaAvailable commands", "itaHistory of Kernel Simulator",
                                          "itaAvailable FTP commands", "itaModding guide", "itaScreensaver modding guide", "itaadduser", "itaalias", "itaarginj",
-                                         "itacalc", "itachdir", "itachhostname", "itachmal", "itachmotd", "itachpwd", "itachusrname", "itacls", "itadebuglog", "itaFTP changelocaldir", "itaFTP cdl",
+                                         "itachdir", "itachhostname", "itachmal", "itachmotd", "itachpwd", "itachusrname", "itacls", "itadebuglog", "itaFTP changelocaldir", "itaFTP cdl",
                                          "itaFTP changeremotedir", "itaFTP cdr", "itaFTP connect", "itaFTP currlocaldir", "itaFTP pwdl", "itaFTP currremotedir", "itaFTP pwdr", "itaFTP delete",
                                          "itaFTP del", "itaFTP disconnect", "itaFTP download", "itaFTP get", "itaFTP listlocal", "itaFTP lsl", "itaFTP listremote", "itaFTP lsr", "itaFTP rename",
                                          "itaFTP ren", "itaFTP upload", "itaFTP put", "itaftp", "italist", "itareloadsaver", "italockscreen", "italogout", "italscomp", "italsnet", "italsnettree",
-                                         "itamd", "itanetinfo", "itanoaliases", "itaperm", "itaping", "itard", "itaread", "itareboot", "itareloadconfig", "itarmuser", "itasavescreen", "itascical", "itasetcolors",
-                                         "itasetsaver", "itasetthemes", "itashowmotd", "itashowtd", "itashowtdzone", "itashutdown", "itasysinfo", "itaunitconv", "itauseddeps", "itaAvailable command-line arguments",
+                                         "itamd", "itanetinfo", "itanoaliases", "itaperm", "itaping", "itard", "itaread", "itareboot", "itareloadconfig", "itarmuser", "itasavescreen", "itasetcolors",
+                                         "itasetsaver", "itasetthemes", "itashowmotd", "itashowtd", "itashowtdzone", "itashutdown", "itasysinfo", "itauseddeps", "itaAvailable command-line arguments",
                                          "itaAvailable kernel arguments", "itaConfiguration for your Kernel", "itacdbglog", "itachlang", "itasses", 'Malay manuals below
                                          "malIntroduction to the Kernel", "malAvailable manual pages", "malAvailable commands", "malHistory of Kernel Simulator",
                                          "malAvailable FTP commands", "malModding guide", "malScreensaver modding guide", "maladduser", "malalias", "malarginj",
-                                         "malcalc", "malchdir", "malchhostname", "malchmal", "malchmotd", "malchpwd", "malchusrname", "malcls", "maldebuglog", "malFTP changelocaldir", "malFTP cdl",
+                                         "malchdir", "malchhostname", "malchmal", "malchmotd", "malchpwd", "malchusrname", "malcls", "maldebuglog", "malFTP changelocaldir", "malFTP cdl",
                                          "malFTP changeremotedir", "malFTP cdr", "malFTP connect", "malFTP currlocaldir", "malFTP pwdl", "malFTP currremotedir", "malFTP pwdr", "malFTP delete",
                                          "malFTP del", "malFTP disconnect", "malFTP download", "malFTP get", "malFTP listlocal", "malFTP lsl", "malFTP listremote", "malFTP lsr", "malFTP rename",
                                          "malFTP ren", "malFTP upload", "malFTP put", "malftp", "mallist", "malreloadsaver", "mallockscreen", "mallogout", "mallscomp", "mallsnet", "mallsnettree",
-                                         "malmd", "malnetinfo", "malnoaliases", "malperm", "malping", "malrd", "malread", "malreboot", "malreloadconfig", "malrmuser", "malsavescreen", "malscical", "malsetcolors",
-                                         "malsetsaver", "malsetthemes", "malshowmotd", "malshowtd", "malshowtdzone", "malshutdown", "malsysinfo", "malunitconv", "maluseddeps", "malAvailable command-line arguments",
+                                         "malmd", "malnetinfo", "malnoaliases", "malperm", "malping", "malrd", "malread", "malreboot", "malreloadconfig", "malrmuser", "malsavescreen", "malsetcolors",
+                                         "malsetsaver", "malsetthemes", "malshowmotd", "malshowtd", "malshowtdzone", "malshutdown", "malsysinfo", "maluseddeps", "malAvailable command-line arguments",
                                          "malAvailable kernel arguments", "malConfiguration for your Kernel", "malcdbglog", "malchlang", "malsses", 'Portuguese manuals below
                                          "ptgIntroduction to the Kernel", "ptgAvailable manual pages", "ptgAvailable commands", "ptgHistory of Kernel Simulator",
                                          "ptgAvailable FTP commands", "ptgModding guide", "ptgScreensaver modding guide", "ptgadduser", "ptgalias", "ptgarginj",
-                                         "ptgcalc", "ptgchdir", "ptgchhostname", "ptgchmal", "ptgchmotd", "ptgchpwd", "ptgchusrname", "ptgcls", "ptgdebuglog", "ptgFTP changelocaldir", "ptgFTP cdl",
+                                         "ptgchdir", "ptgchhostname", "ptgchmal", "ptgchmotd", "ptgchpwd", "ptgchusrname", "ptgcls", "ptgdebuglog", "ptgFTP changelocaldir", "ptgFTP cdl",
                                          "ptgFTP changeremotedir", "ptgFTP cdr", "ptgFTP connect", "ptgFTP currlocaldir", "ptgFTP pwdl", "ptgFTP currremotedir", "ptgFTP pwdr", "ptgFTP delete",
                                          "ptgFTP del", "ptgFTP disconnect", "ptgFTP download", "ptgFTP get", "ptgFTP listlocal", "ptgFTP lsl", "ptgFTP listremote", "ptgFTP lsr", "ptgFTP rename",
                                          "ptgFTP ren", "ptgFTP upload", "ptgFTP put", "ptgftp", "ptglist", "ptgreloadsaver", "ptglockscreen", "ptglogout", "ptglscomp", "ptglsnet", "ptglsnettree",
-                                         "ptgmd", "ptgnetinfo", "ptgnoaliases", "ptgperm", "ptgping", "ptgrd", "ptgread", "ptgreboot", "ptgreloadconfig", "ptgrmuser", "ptgsavescreen", "ptgscical", "ptgsetcolors",
-                                         "ptgsetsaver", "ptgsetthemes", "ptgshowmotd", "ptgshowtd", "ptgshowtdzone", "ptgshutdown", "ptgsysinfo", "ptgunitconv", "ptguseddeps", "ptgAvailable command-line arguments",
+                                         "ptgmd", "ptgnetinfo", "ptgnoaliases", "ptgperm", "ptgping", "ptgrd", "ptgread", "ptgreboot", "ptgreloadconfig", "ptgrmuser", "ptgsavescreen", "ptgsetcolors",
+                                         "ptgsetsaver", "ptgsetthemes", "ptgshowmotd", "ptgshowtd", "ptgshowtdzone", "ptgshutdown", "ptgsysinfo", "ptguseddeps", "ptgAvailable command-line arguments",
                                          "ptgAvailable kernel arguments", "ptgConfiguration for your Kernel", "ptgcdbglog", "ptgchlang", "ptgsses", 'Spanish manuals below
                                          "spaIntroduction to the Kernel", "spaAvailable manual pages", "spaAvailable commands", "spaHistory of Kernel Simulator",
                                          "spaAvailable FTP commands", "spaModding guide", "spaScreensaver modding guide", "spaadduser", "spaalias", "spaarginj",
-                                         "spacalc", "spachdir", "spachhostname", "spachmal", "spachmotd", "spachpwd", "spachusrname", "spacls", "spadebuglog", "spaFTP changelocaldir", "spaFTP cdl",
+                                         "spachdir", "spachhostname", "spachmal", "spachmotd", "spachpwd", "spachusrname", "spacls", "spadebuglog", "spaFTP changelocaldir", "spaFTP cdl",
                                          "spaFTP changeremotedir", "spaFTP cdr", "spaFTP connect", "spaFTP currlocaldir", "spaFTP pwdl", "spaFTP currremotedir", "spaFTP pwdr", "spaFTP delete",
                                          "spaFTP del", "spaFTP disconnect", "spaFTP download", "spaFTP get", "spaFTP listlocal", "spaFTP lsl", "spaFTP listremote", "spaFTP lsr", "spaFTP rename",
                                          "spaFTP ren", "spaFTP upload", "spaFTP put", "spaftp", "spalist", "spareloadsaver", "spalockscreen", "spalogout", "spalscomp", "spalsnet", "spalsnettree",
-                                         "spamd", "spanetinfo", "spanoaliases", "spaperm", "spaping", "spard", "sparead", "spareboot", "spareloadconfig", "sparmuser", "spasavescreen", "spascical", "spasetcolors",
-                                         "spasetsaver", "spasetthemes", "spashowmotd", "spashowtd", "spashowtdzone", "spashutdown", "spasysinfo", "spaunitconv", "spauseddeps", "spaAvailable command-line arguments",
+                                         "spamd", "spanetinfo", "spanoaliases", "spaperm", "spaping", "spard", "sparead", "spareboot", "spareloadconfig", "sparmuser", "spasavescreen", "spasetcolors",
+                                         "spasetsaver", "spasetthemes", "spashowmotd", "spashowtd", "spashowtdzone", "spashutdown", "spasysinfo", "spauseddeps", "spaAvailable command-line arguments",
                                          "spaAvailable kernel arguments", "spaConfiguration for your Kernel", "spacdbglog", "spachlang", "spasses", 'Swedish manuals below
                                          "sweIntroduction to the Kernel", "sweAvailable manual pages", "sweAvailable commands", "sweHistory of Kernel Simulator",
                                          "sweAvailable FTP commands", "sweModding guide", "sweScreensaver modding guide", "sweadduser", "swealias", "swearginj",
-                                         "swecalc", "swechdir", "swechhostname", "swechmal", "swechmotd", "swechpwd", "swechusrname", "swecls", "swedebuglog", "sweFTP changelocaldir", "sweFTP cdl",
+                                         "swechdir", "swechhostname", "swechmal", "swechmotd", "swechpwd", "swechusrname", "swecls", "swedebuglog", "sweFTP changelocaldir", "sweFTP cdl",
                                          "sweFTP changeremotedir", "sweFTP cdr", "sweFTP connect", "sweFTP currlocaldir", "sweFTP pwdl", "sweFTP currremotedir", "sweFTP pwdr", "sweFTP delete",
                                          "sweFTP del", "sweFTP disconnect", "sweFTP download", "sweFTP get", "sweFTP listlocal", "sweFTP lsl", "sweFTP listremote", "sweFTP lsr", "sweFTP rename",
                                          "sweFTP ren", "sweFTP upload", "sweFTP put", "sweftp", "swelist", "swereloadsaver", "swelockscreen", "swelogout", "swelscomp", "swelsnet", "swelsnettree",
-                                         "swemd", "swenetinfo", "swenoaliases", "sweperm", "sweping", "swerd", "sweread", "swereboot", "swereloadconfig", "swermuser", "swesavescreen", "swescical", "swesetcolors",
-                                         "swesetsaver", "swesetthemes", "sweshowmotd", "sweshowtd", "sweshowtdzone", "sweshutdown", "swesysinfo", "sweunitconv", "sweuseddeps", "sweAvailable command-line arguments",
+                                         "swemd", "swenetinfo", "swenoaliases", "sweperm", "sweping", "swerd", "sweread", "swereboot", "swereloadconfig", "swermuser", "swesavescreen", "swesetcolors",
+                                         "swesetsaver", "swesetthemes", "sweshowmotd", "sweshowtd", "sweshowtdzone", "sweshutdown", "swesysinfo", "sweuseddeps", "sweAvailable command-line arguments",
                                          "sweAvailable kernel arguments", "sweConfiguration for your Kernel", "swecdbglog", "swechlang", "swesses", 'Turkish manuals below
                                          "tkyIntroduction to the Kernel", "tkyAvailable manual pages", "tkyAvailable commands", "tkyHistory of Kernel Simulator",
                                          "tkyAvailable FTP commands", "tkyModding guide", "tkyScreensaver modding guide", "tkyadduser", "tkyalias", "tkyarginj",
-                                         "tkycalc", "tkychdir", "tkychhostname", "tkychmal", "tkychmotd", "tkychpwd", "tkychusrname", "tkycls", "tkydebuglog", "tkyFTP changelocaldir", "tkyFTP cdl",
+                                         "tkychdir", "tkychhostname", "tkychmal", "tkychmotd", "tkychpwd", "tkychusrname", "tkycls", "tkydebuglog", "tkyFTP changelocaldir", "tkyFTP cdl",
                                          "tkyFTP changeremotedir", "tkyFTP cdr", "tkyFTP connect", "tkyFTP currlocaldir", "tkyFTP pwdl", "tkyFTP currremotedir", "tkyFTP pwdr", "tkyFTP delete",
                                          "tkyFTP del", "tkyFTP disconnect", "tkyFTP download", "tkyFTP get", "tkyFTP listlocal", "tkyFTP lsl", "tkyFTP listremote", "tkyFTP lsr", "tkyFTP rename",
                                          "tkyFTP ren", "tkyFTP upload", "tkyFTP put", "tkyftp", "tkylist", "tkyreloadsaver", "tkylockscreen", "tkylogout", "tkylscomp", "tkylsnet", "tkylsnettree",
-                                         "tkymd", "tkynetinfo", "tkynoaliases", "tkyperm", "tkyping", "tkyrd", "tkyread", "tkyreboot", "tkyreloadconfig", "tkyrmuser", "tkysavescreen", "tkyscical", "tkysetcolors",
-                                         "tkysetsaver", "tkysetthemes", "tkyshowmotd", "tkyshowtd", "tkyshowtdzone", "tkyshutdown", "tkysysinfo", "tkyunitconv", "tkyuseddeps", "tkyAvailable command-line arguments",
+                                         "tkymd", "tkynetinfo", "tkynoaliases", "tkyperm", "tkyping", "tkyrd", "tkyread", "tkyreboot", "tkyreloadconfig", "tkyrmuser", "tkysavescreen", "tkysetcolors",
+                                         "tkysetsaver", "tkysetthemes", "tkyshowmotd", "tkyshowtd", "tkyshowtdzone", "tkyshutdown", "tkysysinfo", "tkyuseddeps", "tkyAvailable command-line arguments",
                                          "tkyAvailable kernel arguments", "tkyConfiguration for your Kernel", "tkycdbglog", "tkychlang", "tkysses"}
     Public AvailableLayouts() As String = {"0.0.5.9-OR-ABOVE"}
     Private InternalParseDone As Boolean = False
@@ -193,8 +193,6 @@ Module PageParser
                         manLines = My.Resources._alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "arginj"
                         manLines = My.Resources.arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "calc"
-                        manLines = My.Resources.calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "chdir"
                         manLines = My.Resources.chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "chhostname"
@@ -273,8 +271,6 @@ Module PageParser
                         manLines = My.Resources.rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "savescreen"
                         manLines = My.Resources.savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "scical"
-                        manLines = My.Resources.scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "setcolors"
                         manLines = My.Resources.setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "setsaver"
@@ -291,8 +287,6 @@ Module PageParser
                         manLines = My.Resources.shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "sysinfo"
                         manLines = My.Resources.sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "unitconv"
-                        manLines = My.Resources.unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "useddeps"
                         manLines = My.Resources.useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "Available command-line arguments"
@@ -330,8 +324,6 @@ Module PageParser
                         manLines = My.Resources.zh_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "chiarginj"
                         manLines = My.Resources.zh_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "chicalc"
-                        manLines = My.Resources.zh_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "chichdir"
                         manLines = My.Resources.zh_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "chichhostname"
@@ -410,8 +402,6 @@ Module PageParser
                         manLines = My.Resources.zh_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "chisavescreen"
                         manLines = My.Resources.zh_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "chiscical"
-                        manLines = My.Resources.zh_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "chisetcolors"
                         manLines = My.Resources.zh_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "chisetsaver"
@@ -428,8 +418,6 @@ Module PageParser
                         manLines = My.Resources.zh_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "chisysinfo"
                         manLines = My.Resources.zh_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "chiunitconv"
-                        manLines = My.Resources.zh_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "chiuseddeps"
                         manLines = My.Resources.zh_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "chiAvailable command-line arguments"
@@ -467,8 +455,6 @@ Module PageParser
                         manLines = My.Resources.cs_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "czearginj"
                         manLines = My.Resources.cs_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "czecalc"
-                        manLines = My.Resources.cs_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "czechdir"
                         manLines = My.Resources.cs_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "czechhostname"
@@ -547,8 +533,6 @@ Module PageParser
                         manLines = My.Resources.cs_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "czesavescreen"
                         manLines = My.Resources.cs_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "czescical"
-                        manLines = My.Resources.cs_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "czesetcolors"
                         manLines = My.Resources.cs_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "czesetsaver"
@@ -565,8 +549,6 @@ Module PageParser
                         manLines = My.Resources.cs_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "czesysinfo"
                         manLines = My.Resources.cs_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "czeunitconv"
-                        manLines = My.Resources.cs_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "czeuseddeps"
                         manLines = My.Resources.cs_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "czeAvailable command-line arguments"
@@ -604,8 +586,6 @@ Module PageParser
                         manLines = My.Resources.nl_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "dtcarginj"
                         manLines = My.Resources.nl_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "dtccalc"
-                        manLines = My.Resources.nl_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "dtcchdir"
                         manLines = My.Resources.nl_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "dtcchhostname"
@@ -684,8 +664,6 @@ Module PageParser
                         manLines = My.Resources.nl_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "dtcsavescreen"
                         manLines = My.Resources.nl_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "dtcscical"
-                        manLines = My.Resources.nl_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "dtcsetcolors"
                         manLines = My.Resources.nl_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "dtcsetsaver"
@@ -702,8 +680,6 @@ Module PageParser
                         manLines = My.Resources.nl_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "dtcsysinfo"
                         manLines = My.Resources.nl_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "dtcunitconv"
-                        manLines = My.Resources.nl_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "dtcuseddeps"
                         manLines = My.Resources.nl_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "dtcAvailable command-line arguments"
@@ -741,8 +717,6 @@ Module PageParser
                         manLines = My.Resources.fi_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "finarginj"
                         manLines = My.Resources.fi_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "fincalc"
-                        manLines = My.Resources.fi_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "finchdir"
                         manLines = My.Resources.fi_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "finchhostname"
@@ -821,8 +795,6 @@ Module PageParser
                         manLines = My.Resources.fi_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "finsavescreen"
                         manLines = My.Resources.fi_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "finscical"
-                        manLines = My.Resources.fi_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "finsetcolors"
                         manLines = My.Resources.fi_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "finsetsaver"
@@ -839,8 +811,6 @@ Module PageParser
                         manLines = My.Resources.fi_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "finsysinfo"
                         manLines = My.Resources.fi_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "finunitconv"
-                        manLines = My.Resources.fi_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "finuseddeps"
                         manLines = My.Resources.fi_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "finAvailable command-line arguments"
@@ -878,8 +848,6 @@ Module PageParser
                         manLines = My.Resources.fr_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "frearginj"
                         manLines = My.Resources.fr_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "frecalc"
-                        manLines = My.Resources.fr_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "frechdir"
                         manLines = My.Resources.fr_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "frechhostname"
@@ -958,8 +926,6 @@ Module PageParser
                         manLines = My.Resources.fr_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "fresavescreen"
                         manLines = My.Resources.fr_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "frescical"
-                        manLines = My.Resources.fr_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "fresetcolors"
                         manLines = My.Resources.fr_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "fresetsaver"
@@ -976,8 +942,6 @@ Module PageParser
                         manLines = My.Resources.fr_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "fresysinfo"
                         manLines = My.Resources.fr_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "freunitconv"
-                        manLines = My.Resources.fr_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "freuseddeps"
                         manLines = My.Resources.fr_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "freAvailable command-line arguments"
@@ -1015,8 +979,6 @@ Module PageParser
                         manLines = My.Resources.de_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "gerarginj"
                         manLines = My.Resources.de_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "gercalc"
-                        manLines = My.Resources.de_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "gerchdir"
                         manLines = My.Resources.de_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "gerchhostname"
@@ -1095,8 +1057,6 @@ Module PageParser
                         manLines = My.Resources.de_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "gersavescreen"
                         manLines = My.Resources.de_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "gerscical"
-                        manLines = My.Resources.de_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "gersetcolors"
                         manLines = My.Resources.de_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "gersetsaver"
@@ -1113,8 +1073,6 @@ Module PageParser
                         manLines = My.Resources.de_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "gersysinfo"
                         manLines = My.Resources.de_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "gerunitconv"
-                        manLines = My.Resources.de_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "geruseddeps"
                         manLines = My.Resources.de_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "gerAvailable command-line arguments"
@@ -1152,8 +1110,6 @@ Module PageParser
                         manLines = My.Resources.hi_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "indarginj"
                         manLines = My.Resources.hi_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "indcalc"
-                        manLines = My.Resources.hi_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "indchdir"
                         manLines = My.Resources.hi_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "indchhostname"
@@ -1232,8 +1188,6 @@ Module PageParser
                         manLines = My.Resources.hi_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "indsavescreen"
                         manLines = My.Resources.hi_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "indscical"
-                        manLines = My.Resources.hi_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "indsetcolors"
                         manLines = My.Resources.hi_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "indsetsaver"
@@ -1250,8 +1204,6 @@ Module PageParser
                         manLines = My.Resources.hi_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "indsysinfo"
                         manLines = My.Resources.hi_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "indunitconv"
-                        manLines = My.Resources.hi_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "induseddeps"
                         manLines = My.Resources.hi_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "indAvailable command-line arguments"
@@ -1289,8 +1241,6 @@ Module PageParser
                         manLines = My.Resources.it_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "itaarginj"
                         manLines = My.Resources.it_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "itacalc"
-                        manLines = My.Resources.it_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "itachdir"
                         manLines = My.Resources.it_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "itachhostname"
@@ -1369,8 +1319,6 @@ Module PageParser
                         manLines = My.Resources.it_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "itasavescreen"
                         manLines = My.Resources.it_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "itascical"
-                        manLines = My.Resources.it_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "itasetcolors"
                         manLines = My.Resources.it_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "itasetsaver"
@@ -1387,8 +1335,6 @@ Module PageParser
                         manLines = My.Resources.it_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "itasysinfo"
                         manLines = My.Resources.it_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "itaunitconv"
-                        manLines = My.Resources.it_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "itauseddeps"
                         manLines = My.Resources.it_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "itaAvailable command-line arguments"
@@ -1426,8 +1372,6 @@ Module PageParser
                         manLines = My.Resources.ms_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "malarginj"
                         manLines = My.Resources.ms_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "malcalc"
-                        manLines = My.Resources.ms_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "malchdir"
                         manLines = My.Resources.ms_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "malchhostname"
@@ -1506,8 +1450,6 @@ Module PageParser
                         manLines = My.Resources.ms_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "malsavescreen"
                         manLines = My.Resources.ms_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "malscical"
-                        manLines = My.Resources.ms_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "malsetcolors"
                         manLines = My.Resources.ms_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "malsetsaver"
@@ -1524,8 +1466,6 @@ Module PageParser
                         manLines = My.Resources.ms_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "malsysinfo"
                         manLines = My.Resources.ms_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "malunitconv"
-                        manLines = My.Resources.ms_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "maluseddeps"
                         manLines = My.Resources.ms_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "malAvailable command-line arguments"
@@ -1563,8 +1503,6 @@ Module PageParser
                         manLines = My.Resources.pt_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "ptgarginj"
                         manLines = My.Resources.pt_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "ptgcalc"
-                        manLines = My.Resources.pt_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "ptgchdir"
                         manLines = My.Resources.pt_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "ptgchhostname"
@@ -1643,8 +1581,6 @@ Module PageParser
                         manLines = My.Resources.pt_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "ptgsavescreen"
                         manLines = My.Resources.pt_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "ptgscical"
-                        manLines = My.Resources.pt_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "ptgsetcolors"
                         manLines = My.Resources.pt_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "ptgsetsaver"
@@ -1661,8 +1597,6 @@ Module PageParser
                         manLines = My.Resources.pt_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "ptgsysinfo"
                         manLines = My.Resources.pt_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "ptgunitconv"
-                        manLines = My.Resources.pt_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "ptguseddeps"
                         manLines = My.Resources.pt_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "ptgAvailable command-line arguments"
@@ -1700,8 +1634,6 @@ Module PageParser
                         manLines = My.Resources.es_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "spaarginj"
                         manLines = My.Resources.es_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "spacalc"
-                        manLines = My.Resources.es_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "spachdir"
                         manLines = My.Resources.es_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "spachhostname"
@@ -1780,8 +1712,6 @@ Module PageParser
                         manLines = My.Resources.es_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "spasavescreen"
                         manLines = My.Resources.es_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "spascical"
-                        manLines = My.Resources.es_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "spasetcolors"
                         manLines = My.Resources.es_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "spasetsaver"
@@ -1798,8 +1728,6 @@ Module PageParser
                         manLines = My.Resources.es_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "spasysinfo"
                         manLines = My.Resources.es_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "spaunitconv"
-                        manLines = My.Resources.es_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "spauseddeps"
                         manLines = My.Resources.es_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "spaAvailable command-line arguments"
@@ -1837,8 +1765,6 @@ Module PageParser
                         manLines = My.Resources.sv_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "swearginj"
                         manLines = My.Resources.sv_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "swecalc"
-                        manLines = My.Resources.sv_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "swechdir"
                         manLines = My.Resources.sv_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "swechhostname"
@@ -1917,8 +1843,6 @@ Module PageParser
                         manLines = My.Resources.sv_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "swesavescreen"
                         manLines = My.Resources.sv_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "swescical"
-                        manLines = My.Resources.sv_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "swesetcolors"
                         manLines = My.Resources.sv_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "swesetsaver"
@@ -1935,8 +1859,6 @@ Module PageParser
                         manLines = My.Resources.sv_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "swesysinfo"
                         manLines = My.Resources.sv_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "sweunitconv"
-                        manLines = My.Resources.sv_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "sweuseddeps"
                         manLines = My.Resources.sv_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "sweAvailable command-line arguments"
@@ -1974,8 +1896,6 @@ Module PageParser
                         manLines = My.Resources.tr_alias.Replace(Chr(13), "").Split(Chr(10))
                     Case "tkyarginj"
                         manLines = My.Resources.tr_arginj.Replace(Chr(13), "").Split(Chr(10))
-                    Case "tkycalc"
-                        manLines = My.Resources.tr_calc.Replace(Chr(13), "").Split(Chr(10))
                     Case "tkychdir"
                         manLines = My.Resources.tr_chdir.Replace(Chr(13), "").Split(Chr(10))
                     Case "tkychhostname"
@@ -2054,8 +1974,6 @@ Module PageParser
                         manLines = My.Resources.tr_rmuser.Replace(Chr(13), "").Split(Chr(10))
                     Case "tkysavescreen"
                         manLines = My.Resources.tr_savescreen.Replace(Chr(13), "").Split(Chr(10))
-                    Case "tkyscical"
-                        manLines = My.Resources.tr_scical.Replace(Chr(13), "").Split(Chr(10))
                     Case "tkysetcolors"
                         manLines = My.Resources.tr_setcolors.Replace(Chr(13), "").Split(Chr(10))
                     Case "tkysetsaver"
@@ -2072,8 +1990,6 @@ Module PageParser
                         manLines = My.Resources.tr_shutdown.Replace(Chr(13), "").Split(Chr(10))
                     Case "tkysysinfo"
                         manLines = My.Resources.tr_sysinfo.Replace(Chr(13), "").Split(Chr(10))
-                    Case "tkyunitconv"
-                        manLines = My.Resources.tr_unitconv.Replace(Chr(13), "").Split(Chr(10))
                     Case "tkyuseddeps"
                         manLines = My.Resources.tr_useddeps.Replace(Chr(13), "").Split(Chr(10))
                     Case "tkyAvailable command-line arguments"
@@ -2119,10 +2035,10 @@ Module PageParser
             End If
         Catch ex As Exception
             Wdbg("The manual page {0} is somehow truncated. {1}", ManTitle, ex.Message)
-            Wdbg(ex.StackTrace)
-            Wln(DoTranslation("There is an error when trying to load the manual page {0} becuase {1}.", currentLang), "neutralText", ManTitle, ex.Message)
+            WStkTrc(ex)
+            W(DoTranslation("There is an error when trying to load the manual page {0} becuase {1}.", currentLang), True, "neutralText", ManTitle, ex.Message)
             If DebugMode = True Then
-                Wln(ex.StackTrace, "neutralText")
+                W(ex.StackTrace, True, "neutralText")
             End If
         End Try
     End Sub
@@ -2216,14 +2132,14 @@ Module PageParser
             Pages.Add(title, originalValue)
             Pages(title).ManualTitle = title
             Wdbg("Title has changed to ""{0}""", title)
-            Wln(DoTranslation("This manual page title is not written", currentLang), "neutralText")
+            W(DoTranslation("This manual page title is not written", currentLang), True, "neutralText")
         ElseIf Pages(title).Body.ToString = "" Then
             Wdbg("Body for ""{0}"" does not contain anything.", title)
-            Wln(DoTranslation("This manual page ({0}) does not contain any body text. Deleting page...", currentLang), "neutralText", title)
+            W(DoTranslation("This manual page ({0}) does not contain any body text. Deleting page...", currentLang), True, "neutralText", title)
             Pages.Remove(title)
         ElseIf Pages(title).Sections.Count = 0 Then
             Wdbg("No sections for ""{0}""", title)
-            Wln(DoTranslation("This manual page ({0}) does not contain any section. Deleting page...", currentLang), "neutralText", title)
+            W(DoTranslation("This manual page ({0}) does not contain any section. Deleting page...", currentLang), True, "neutralText", title)
             Pages.Remove(title)
         End If
     End Sub

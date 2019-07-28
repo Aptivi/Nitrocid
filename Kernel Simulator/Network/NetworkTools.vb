@@ -35,14 +35,14 @@ Public Module NetworkTools
                     For i = i To repeatTimes
                         s.Start()
                         If My.Computer.Network.Ping(Address) Then
-                            Wln("{0}/{1} {2}: {3} ms", "neutralText", repeatTimes, i, Address, s.ElapsedMilliseconds.ToString)
+                            W("{0}/{1} {2}: {3} ms", True, "neutralText", repeatTimes, i, Address, s.ElapsedMilliseconds.ToString)
                         End If
                         s.Reset()
                     Next
                 ElseIf repeatTimes = 1 Then
                     s.Start()
                     If My.Computer.Network.Ping(Address) Then
-                        Wln(DoTranslation("net: Got response from {0} in {1} ms", currentLang), "neutralText", Address, s.ElapsedMilliseconds.ToString)
+                        W(DoTranslation("net: Got response from {0} in {1} ms", currentLang), True, "neutralText", Address, s.ElapsedMilliseconds.ToString)
                     End If
                     s.Stop()
                 End If
@@ -51,11 +51,11 @@ Public Module NetworkTools
                 End If
             Catch pe As PingException
                 If repeatTimes = 1 Then
-                    Wln(DoTranslation("{0}: Timed out, disconnected, or server offline.", currentLang), "neutralText", Address)
+                    W(DoTranslation("{0}: Timed out, disconnected, or server offline.", currentLang), True, "neutralText", Address)
                     Exit Do
                 Else
                     s.Reset()
-                    Wln(DoTranslation("{0}/{1} {2}: Timed out, disconnected, or server offline.", currentLang), "neutralText", repeatTimes, i, Address)
+                    W(DoTranslation("{0}/{1} {2}: Timed out, disconnected, or server offline.", currentLang), True, "neutralText", repeatTimes, i, Address)
                     If repeatTimes = i Then Exit Do
                     i += 1
                     Continue Do
@@ -70,16 +70,16 @@ Public Module NetworkTools
             Dim ComputerNames() = Computers.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
 
             'Display information
-            Wln(DoTranslation("net: Your computer name on network is {0}", currentLang) + vbNewLine +
+            W(DoTranslation("net: Your computer name on network is {0}", currentLang) + vbNewLine +
                 DoTranslation("net: Your host name is {1}", currentLang) + vbNewLine +
-                DoTranslation("net: It appears that computers are in the domain or workgroup:", currentLang), "neutralText", My.Computer.Name, HName)
+                DoTranslation("net: It appears that computers are in the domain or workgroup:", currentLang), True, "neutralText", My.Computer.Name, HName)
 
             'List online and offline computers
             For Each cmp In ComputerNames
-                Wln("net: {0}", "neutralText", cmp)
+                W("net: {0}", True, "neutralText", cmp)
             Next
         Else
-            Wln(DoTranslation("net: WiFi or Ethernet is disconnected.", currentLang), "neutralText")
+            W(DoTranslation("net: WiFi or Ethernet is disconnected.", currentLang), True, "neutralText")
         End If
     End Sub
     Public Sub ListHostsInNetwork()
@@ -94,9 +94,9 @@ Public Module NetworkTools
             Dim ComputerNames() = Computers.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
 
             'Display infromation
-            Wln(DoTranslation("net: Your computer name on network is {0}", currentLang) + vbNewLine +
+            W(DoTranslation("net: Your computer name on network is {0}", currentLang) + vbNewLine +
                 DoTranslation("net: Your host name is {1}", currentLang) + vbNewLine +
-                DoTranslation("net: It appears that computers are connected below:", currentLang), "neutralText", My.Computer.Name, HName)
+                DoTranslation("net: It appears that computers are connected below:", currentLang), True, "neutralText", My.Computer.Name, HName)
 
             'List IP addresses of computers
             For Each cmp In ComputerNames
@@ -106,7 +106,7 @@ Public Module NetworkTools
                 For Each ipheal In IPHostEntry.AddressList
                     Dim reply = p.Send(ipheal, 100)
                     If reply.Status = IPStatus.Success Then
-                        Wln("net: {0}: {1}", "neutralText", cmp, ipheal.ToString)
+                        W("net: {0}: {1}", True, "neutralText", cmp, ipheal.ToString)
                     End If
                 Next
             Next
@@ -121,7 +121,7 @@ Public Module NetworkTools
                             If ip.Equals(UnicastIPAI.Address) Then
                                 Dim adapterProperties As IPInterfaceProperties = router.GetIPProperties()
                                 For Each gateway As GatewayIPAddressInformation In adapterProperties.GatewayAddresses
-                                    Wln(DoTranslation("net: Router Address: {0}", currentLang), "neutralText", gateway.Address.ToString())
+                                    W(DoTranslation("net: Router Address: {0}", currentLang), True, "neutralText", gateway.Address.ToString())
                                 Next
                             End If
                         End If
@@ -129,7 +129,7 @@ Public Module NetworkTools
                 Next
             Next
         Else
-            Wln(DoTranslation("net: WiFi or Ethernet is disconnected.", currentLang), "neutralText")
+            W(DoTranslation("net: WiFi or Ethernet is disconnected.", currentLang), True, "neutralText")
         End If
     End Sub
     Public Sub GetNetworkComputers()
@@ -181,7 +181,7 @@ Public Module NetworkTools
                             If ip.Equals(UnicastIPAI.Address) Then
                                 Dim adapterProperties As IPInterfaceProperties = router.GetIPProperties()
                                 For Each gateway As GatewayIPAddressInformation In adapterProperties.GatewayAddresses
-                                    Wln(gateway.Address.ToString(), "neutralText")
+                                    W(gateway.Address.ToString(), True, "neutralText")
                                 Next
                             End If
                         End If
@@ -197,12 +197,12 @@ Public Module NetworkTools
                 For Each ipheal In IPHostEntry.AddressList
                     Dim reply = p.Send(ipheal, 100)
                     If reply.Status = IPStatus.Success Then
-                        Wln("|-> {0}: {1}", "neutralText", cmp, ipheal.ToString)
+                        W("|-> {0}: {1}", True, "neutralText", cmp, ipheal.ToString)
                     End If
                 Next
             Next
         Else
-            Wln(DoTranslation("net: WiFi or Ethernet is disconnected.", currentLang), "neutralText")
+            W(DoTranslation("net: WiFi or Ethernet is disconnected.", currentLang), True, "neutralText")
         End If
     End Sub
     Public Sub GetProperties()
@@ -221,19 +221,19 @@ Public Module NetworkTools
                 Dim p As IPv4InterfaceProperties = adapterProperties.GetIPv4Properties
                 Dim s As IPv4InterfaceStatistics = adapter.GetIPv4Statistics
                 If p Is Nothing Then
-                    Wln(DoTranslation("Failed to get properties for adapter {0}", currentLang), "neutralText", adapter.Description)
+                    W(DoTranslation("Failed to get properties for adapter {0}", currentLang), True, "neutralText", adapter.Description)
                 ElseIf s Is Nothing Then
-                    Wln(DoTranslation("Failed to get statistics for adapter {0}", currentLang), "neutralText", adapter.Description)
+                    W(DoTranslation("Failed to get statistics for adapter {0}", currentLang), True, "neutralText", adapter.Description)
                 End If
-                Wln(DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
-                    DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
-                    DoTranslation("Maximum Transmission Unit: {2} Units", currentLang) + vbNewLine +
-                    DoTranslation("DHCP Enabled:", currentLang) + " {3}" + vbNewLine +
-                    DoTranslation("Non-unicast packets:", currentLang) + " {4}/{5}" + vbNewLine +
-                    DoTranslation("Unicast packets:", currentLang) + " {6}/{7}" + vbNewLine +
-                    DoTranslation("Error incoming/outgoing packets:", currentLang) + " {8}/{9}", "neutralText",
-                    adapterNumber, adapter.Description, p.Mtu, p.IsDhcpEnabled, s.NonUnicastPacketsSent, s.NonUnicastPacketsReceived,
-                    s.UnicastPacketsSent, s.UnicastPacketsReceived, s.IncomingPacketsWithErrors, s.OutgoingPacketsWithErrors)
+                W(DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
+                  DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
+                  DoTranslation("Maximum Transmission Unit: {2} Units", currentLang) + vbNewLine +
+                  DoTranslation("DHCP Enabled:", currentLang) + " {3}" + vbNewLine +
+                  DoTranslation("Non-unicast packets:", currentLang) + " {4}/{5}" + vbNewLine +
+                  DoTranslation("Unicast packets:", currentLang) + " {6}/{7}" + vbNewLine +
+                  DoTranslation("Error incoming/outgoing packets:", currentLang) + " {8}/{9}", True, "neutralText",
+                  adapterNumber, adapter.Description, p.Mtu, p.IsDhcpEnabled, s.NonUnicastPacketsSent, s.NonUnicastPacketsReceived,
+                  s.UnicastPacketsSent, s.UnicastPacketsReceived, s.IncomingPacketsWithErrors, s.OutgoingPacketsWithErrors)
             Else
                 Wdbg("Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType)
             End If

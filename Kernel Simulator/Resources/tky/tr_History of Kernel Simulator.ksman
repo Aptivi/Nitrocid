@@ -795,6 +795,28 @@ KS 0.0.6.5
 5. En yeni işlemcilerde (iç adlarında saat hızına sahip işlemciler, örneğin iki kez) gösterilen sabit CPU saat hızı. "Intel (R) Core (TM) i7-8700 CPU @ 3.20GHz")
 6. Sabit FTP transferleri çubuğu yeni format kullanıyor, böylece
 7. ETA ve hız eklendi
+
+KS 0.0.6.6
+
+1. Yeni komutlar için güncellenmiş kılavuz sayfası
+2. Kaldırılan para birimi komutu (ücretsiz)
+
+KS 0.0.6.9
+
+1. Kaldırılmış hesap makineleri ve birim dönüştürücüler
+2. Birleştirilmiş iki yazdırma komutu birde
+3. Birleştirilmiş iki mod üreteci
+4. "ftp://" öneki belirtmeden FTP sunucusuna girilmesine izin verildi
+5. "ftp" komut argümanı olarak adres belirtilmesine izin verildi
+6. Şimdi, FTP istemcisi çıkarken barışçıl bir şekilde kesilecek
+7. Dil değiştirirken güncellenmeyen Sabit FTP yardım açıklamaları
+8. Komutla SSE kontrolü şimdi Unix sistemlerinde desteklenmektedir
+9. Sabit köşe zamanı ve tarihi konumu
+10. Kullanıcı doğru şifreyi girse bile sabit şifre düzgün çalışmıyor
+11. Kullanılmayan faz kaldırıldı
+12. Her aşamada hata ayıklama eklendi
+13. MOTD ve MAL ile kullanılmak üzere işletim sistemi yer tutucusu eklendi
+14. MOTD'nin 1'den fazla satırı desteklemesi için newline ayrıştırıcı eklendi
 -BODY END-
 
 -SECTIONS-
@@ -850,4 +872,6 @@ ks 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
+KS 0.0.6.6=>SE1
+KS 0.0.6.9=>SE1
 -SECTIONS END-

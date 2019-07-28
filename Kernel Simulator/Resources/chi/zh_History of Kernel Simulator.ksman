@@ -795,6 +795,28 @@ KS 0.0.6.5
 5. Gùdìng CPU shízhōng sùdù zài zuìxīn chǔlǐ qì zhòng chūxiàn liǎng cì (nèibù míngchēng jùyǒu shízhōng sùdù de chǔlǐ qì, lìrú “Intel(R)Core(TM)i7-8700 CPU@ 3.20GHz”)
 6. Xiūfùle FTP chuánshū de jìndù tiáo, yīncǐ tā shǐyòng xīn géshì
 7. Zēngjiāle ETA hé sùdù
+
+KS 0.0.6.6
+
+1. Gēngxīnle xīn mìnglìng de shǒucè yè
+2. Shānchú huòbì mìnglìng (wèi fù)
+
+KS 0.0.6.9
+
+1. Shān​​chúle jìsuàn qì hé dānwèi zhuǎnhuàn qì
+2. Tǒngyī liǎng gè dǎyìn mìnglìng hé èr wéi yī
+3. Jiāng liǎng gè mod fāshēng qì tǒngyī wéi yītǐ
+4. Yǔnxǔ jìnrù FTP fúwùqì ér bù zhǐdìng “ftp://” Qiánzhuì
+5. Yǔnxǔ jiāng dìzhǐ zhǐdìng wèi “ftp” mìnglìng cānshù
+6. Xiànzài,FTP kèhù duān jiàng zài tuìchū shí ānjìng de duàn kāi liánjiē
+7. Xiūfùle gēnggǎi yǔyán shí bù gēngxīn de FTP bāngzhù shuōmíng
+8. Unix xìtǒng xiànzài zhīchí àn mìnglìng jìnxíng SSE jiǎnchá
+9. Xiūzhèng zhuǎnjiǎo shíjiān hé rìqí wèizhì
+10. Jíshǐyònghù shūrùle zhèngquè de mìmǎ, gùdìng mìmǎ yě wúfǎ zhèngcháng gōngzuò
+11. Yí chú wèi shǐ yòng de xiāng
+12. Zài měi gè jiēduàn tiānjiāle tiáoshì
+13. Tiānjiāle cāozuò xìtǒng zhàn wèi fú, yòng yú MOTD hé MAL
+14. Tiānjiāle huànháng fú jiěxī qì, shǐ MOTD zhīchí chāoguò 1 xíng
 -BODY END-
 
 -SECTIONS-
@@ -850,4 +872,6 @@ ks 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
+KS 0.0.6.6=>SE1
+KS 0.0.6.9=>SE1
 -SECTIONS END-

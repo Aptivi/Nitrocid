@@ -25,13 +25,12 @@ Public Module Shell
     Public strcommand As String                             'Written Command
     Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "shutdown", "reboot", "adduser", "chmotd",
                                             "chhostname", "lscomp", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj",
-                                            "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "calc", "scical",
-                                            "unitconv", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal", "savescreen",
-                                            "lockscreen", "setsaver", "reloadsaver", "noaliases", "ftp", "useddeps", "usermanual", "cdbglog",
-                                            "sses", "chlang"}
+                                            "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "md", "rd", "debuglog",
+                                            "reloadconfig", "showtdzone", "alias", "chmal", "savescreen", "lockscreen", "setsaver", "reloadsaver",
+                                            "noaliases", "ftp", "useddeps", "usermanual", "cdbglog", "sses", "chlang"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang"}
-    Public obsoleteCmds() As String = {"currency"}
+    Public obsoleteCmds() As String = {}
     Public modcmnds As New ArrayList
 
     'For contributors: For each added command, you should add a command to availableCommands array so there is no problems detecting your new command.
@@ -98,11 +97,11 @@ Public Module Shell
                     EventManager.RaisePostExecuteCommand()
                 Catch ex As Exception
                     If DebugMode = True Then
-                        Wln(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", "neutralText",
+                        W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", True, "neutralText",
                             Err.Number, Err.Description, ex.StackTrace)
-                        Wdbg(ex.StackTrace, True)
+                        WStkTrc(ex)
                     Else
-                        Wln(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}", "neutralText", Err.Number, Err.Description)
+                        W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}", True, "neutralText", Err.Number, Err.Description)
                     End If
                     Continue While
                 End Try
@@ -113,11 +112,11 @@ Public Module Shell
     Public Sub CommandPromptWrite()
 
         If adminList(signedinusrnm) = True Then
-            W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} # ", "def", CurrDir)
+            W("[", False, "def") : W("{0}", False, "userName", signedinusrnm) : W("@", False, "def") : W("{0}", False, "hostName", HName) : W("]{0} # ", False, "def", CurrDir)
         ElseIf maintenance = True Then
-            W("Maintenance Mode>", "def")
+            W("Maintenance Mode>", False, "def")
         Else
-            W("[", "def") : W("{0}", "userName", signedinusrnm) : W("@", "def") : W("{0}", "hostName", HName) : W("]{0} $ ", "def", CurrDir)
+            W("[", False, "def") : W("{0}", False, "userName", signedinusrnm) : W("@", False, "def") : W("{0}", False, "hostName", HName) : W("]{0} $ ", False, "def", CurrDir)
         End If
 
     End Sub
@@ -141,16 +140,16 @@ Public Module Shell
                         'Check to see if a user is able to execute a command
                         If adminList(signedinusrnm) = False And strictCmds.Contains(cmd) = True Then
                             Wdbg("Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
-                            Wln(DoTranslation("You don't have permission to use {0}", currentLang), "neutralText", cmd)
+                            W(DoTranslation("You don't have permission to use {0}", currentLang), True, "neutralText", cmd)
                         ElseIf maintenance = True And cmd.Contains("logout") Then
                             Wdbg("Cmd exec {0} failed: In maintenance mode. Assertion of input.Contains(""logout"") is True", cmd)
-                            Wln(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), "neutralText", cmd)
+                            W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), True, "neutralText", cmd)
                         ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(cmd) = True) Or availableCommands.Contains(cmd) Then
                             Wdbg("Cmd exec {0} succeeded", cmd)
                             GetCommand.ExecuteCommand(cmdArgs)
                         Else
                             Wdbg("Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", cmd, indexCmd)
-                            Wln(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), "neutralText", cmd)
+                            W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), True, "neutralText", cmd)
                         End If
                     Next
                 End If
@@ -173,10 +172,10 @@ Public Module Shell
                                 GetCommand.ExecuteCommand(cmdArgs)
                             ElseIf adminList(signedinusrnm) = False And strictCmds.Contains(cmd) = True Then
                                 Wdbg("Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
-                                Wln(DoTranslation("You don't have permission to use {0}", currentLang), "neutralText", cmd)
+                                W(DoTranslation("You don't have permission to use {0}", currentLang), True, "neutralText", cmd)
                             ElseIf cmd = "logout" Or cmd = "shutdown" Or cmd = "reboot" Then
                                 Wdbg("Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", cmd)
-                                Wln(DoTranslation("Shell message: Command {0} is not allowed to run on log in.", currentLang), "neutralText", cmd)
+                                W(DoTranslation("Shell message: Command {0} is not allowed to run on log in.", currentLang), True, "neutralText", cmd)
                             Else
                                 Wdbg("Cmd exec {0} succeeded", cmd)
                                 GetCommand.ExecuteCommand(cmdArgs)
@@ -184,17 +183,17 @@ Public Module Shell
                         End If
                     Else
                         Wdbg("Cmd exec {0} failed: availableCmds.Contains({0}) is False", cmd)
-                        Wln(DoTranslation("Shell message: The requested command {0} is not found.", currentLang), "neutralText", cmd)
+                        W(DoTranslation("Shell message: The requested command {0} is not found.", currentLang), True, "neutralText", cmd)
                     End If
                 Next
             End If
         Catch ex As Exception
             If DebugMode = True Then
-                Wln(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", "neutralText",
-                    Err.Number, Err.Description, ex.StackTrace)
-                Wdbg(ex.StackTrace, True)
+                W(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, "neutralText",
+                  Err.Number, Err.Description, ex.StackTrace)
+                WStkTrc(ex)
             Else
-                Wln(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), "neutralText", Err.Number, Err.Description)
+                W(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, "neutralText", Err.Number, Err.Description)
             End If
         End Try
 

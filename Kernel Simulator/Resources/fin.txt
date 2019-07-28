@@ -120,7 +120,7 @@ Salasana {0}:
 Yhdistetty {0}
 Virhe yrittäessäsi muodostaa yhteyden {0}: {1}
 Pino Trace: {2}
-Syötä FTP-palvelin, joka alkaa "ftp://" tai "ftps://"
+Syötä FTP-palvelin.
 Paikallista hakemistoa {0} ei ole olemassa.
 Anna paikallinen hakemisto. ".." Mennä takaisin.
 Hakemistoa {0} ei löytynyt.

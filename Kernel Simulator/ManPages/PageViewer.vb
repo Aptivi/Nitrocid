@@ -44,12 +44,12 @@ Module PageViewer
             Wdbg("Todo count for ""{0}"": {1}", title, Pages(title).Todos.Count.ToString)
             If Pages(title).Todos.Count <> 0 Then
                 Wdbg("Todos are found in manpage. List of todos:")
-                Wln(DoTranslation("This manual page is incomplete for the following reasons:", currentLang) + vbNewLine, "neutralText")
+                W(DoTranslation("This manual page is incomplete for the following reasons:", currentLang) + vbNewLine, True, "neutralText")
                 For Each Todo As String In Pages(title).Todos
                     Wdbg("TODO: {0}", Todo)
-                    Wln(Todo, "neutralText")
+                    W(Todo, True, "neutralText")
                 Next
-                W(vbNewLine + DoTranslation("Press any key to continue...", currentLang), "neutralText")
+                W(vbNewLine + DoTranslation("Press any key to continue...", currentLang), False, "neutralText")
                 Console.ReadKey()
             End If
 
@@ -163,7 +163,7 @@ Module PageViewer
             Wdbg("Exiting...")
             Console.Clear()
         Else
-            Wln(DoTranslation("It seems that the manual page {0} is not found.", currentLang), "neutralText", title)
+            W(DoTranslation("It seems that the manual page {0} is not found.", currentLang), True, "neutralText", title)
         End If
 
     End Sub

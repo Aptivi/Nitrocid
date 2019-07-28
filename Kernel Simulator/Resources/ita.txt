@@ -120,7 +120,7 @@ Password per {0}:
 Connesso a {0}
 Errore durante il tentativo di connessione a {0}: {1}
 Stack Trace: {2}
-Inserisci un server FTP che inizi con "ftp://" o "ftps://"
+Inserisci un server FTP.
 La directory locale {0} non esiste.
 Inserisci una directory locale ".." tornare indietro.
 Directory {0} non trovata.

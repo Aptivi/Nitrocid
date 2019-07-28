@@ -793,6 +793,28 @@ KS 0.0.6.5
 5. Pevná rychlost hodin CPU zobrazující se dvakrát u nejnovějších procesorů (procesory, které mají taktovací rychlost na svých interních názvech, např. „Intel (R) Core ™ i7-8700 CPU @ 3,20GHz“)
 6. Opravená lišta průběhu FTP přenosů, takže používá nový formát
 7. Přidáno ETA a rychlost
+
+KS 0.0.6.6
+
+1. Aktualizovaná stránka manuálu pro nové příkazy
+2. Odstraněný příkaz měny (neplacený)
+
+KS 0.0.6.9
+
+1. Odebrané kalkulačky a převodníky jednotek
+2. Sjednocené dva tiskové příkazy do jednoho
+3. Sjednocené dva mod generátory do jednoho
+4. Povoleno vstupovat na FTP server bez zadání předpony "ftp: //"
+5. Povoleno zadat adresu jako argument příkazu „ftp“
+6. Nyní se FTP klient při ukončení poklidně odpojí
+7. Opravené popisy nápovědy FTP se při změně jazyků neaktualizují
+8. V systémech Unix je nyní podporována kontrola SSE příkazem
+9. Pevný čas a datum v rohu
+10. Opravené heslo nefunguje správně, i když uživatel zadal správné heslo
+11. Odstraněná nepoužitá fáze
+12. Přidáno ladění v každé fázi
+13. Přidán zástupný symbol operačního systému pro použití s MOTD a MAL
+14. Přidán syntaktický analyzátor nové řady, aby podpora MOTD byla více než 1 řádek
 -BODY END-
 
 -SECTIONS-
@@ -848,4 +870,6 @@ ks 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
+KS 0.0.6.6=>SE1
+KS 0.0.6.9=>SE1
 -SECTIONS END-

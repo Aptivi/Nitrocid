@@ -120,7 +120,7 @@ Contraseña para {0}:
 Conectado a {0}
 Error al intentar conectarse a {0}: {1}
 Seguimiento de pila: {2}
-Ingrese un servidor FTP que comience con "ftp://" o "ftps://"
+Ingrese un servidor FTP.
 El directorio local {0} no existe.
 Introduzca un directorio local. ".." para volver.
 Directorio {0} no encontrado.

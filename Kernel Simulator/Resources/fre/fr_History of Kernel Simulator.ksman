@@ -795,6 +795,28 @@ KS 0.0.6.5
 5. La vitesse d'horloge de la CPU fixe a été affichée deux fois dans les derniers processeurs (les processeurs dont les noms internes ont une vitesse d'horloge, par exemple "Intel(R) Core(TM) i7-8700 CPU @ 3,20 GHz")
 6. Correction de la barre de progression des transferts FTP afin qu’elle utilise un nouveau format
 7. ETA ajouté et vitesse
+
+KS 0.0.6.6
+
+1. Mise à jour de la page de manuel pour les nouvelles commandes
+2. Commande de devise supprimée (non payée)
+
+KS 0.0.6.9
+
+1. Suppression des calculatrices et des convertisseurs d'unités
+2. Unifié deux commandes d'impression en une
+3. Unifié deux générateurs de mod en un
+4. Autorisé à entrer dans un serveur FTP sans spécifier le préfixe "ftp: //"
+5. Autorisé en spécifiant l'adresse en tant qu'argument de la commande "ftp"
+6. Maintenant, le client FTP se déconnectera paisiblement lors de la fermeture de
+7. Les descriptions d'aide FTP fixes ne sont pas mises à jour lors du changement de langue
+8. La vérification SSE par commande est maintenant prise en charge sur les systèmes Unix.
+9. Heure et date fixes
+10. Le mot de passe fixe ne fonctionne pas correctement même si l'utilisateur met le mot de passe correct
+11. Suppression de la phase non utilisée
+12. Ajout du débogage à chaque phase
+13. Ajout d'un espace réservé au système d'exploitation pour une utilisation avec MOTD et MAL
+14. Ajout d'un analyseur syntaxique newline pour que MOTD prenne en charge plus d'une ligne
 -BODY END-
 
 -SECTIONS-
@@ -850,4 +872,6 @@ ks 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
+KS 0.0.6.6=>SE1
+KS 0.0.6.9=>SE1
 -SECTIONS END-

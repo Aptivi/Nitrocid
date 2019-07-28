@@ -32,7 +32,7 @@ Public Module Color
 
     'Array for available colors
     Public availableColors() As String = {"White", "Black", "Gray", "DarkGray", "DarkRed", "Red", "DarkYellow", "Yellow", "DarkGreen", "Green",
-                                          "DarkCyan", "Cyan", "DarkBlue", "Blue", "DarkMagenta", "Magenta", "RESET", "THEME"}
+                                          "DarkCyan", "Cyan", "DarkBlue", "Blue", "DarkMagenta", "Magenta", "RESET"}
 
     'Templates array (available ones)
     Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "LinuxUncolored", "LinuxColoredDef"}
@@ -222,7 +222,7 @@ Public Module Color
             MakePermanent()
             ParseCurrentTheme()
         Else
-            Wln(DoTranslation("Invalid color template {0}", currentLang), "neutralText", theme)
+            W(DoTranslation("Invalid color template {0}", currentLang), True, "neutralText", theme)
         End If
     End Sub
 

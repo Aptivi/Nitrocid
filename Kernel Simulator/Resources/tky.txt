@@ -120,7 +120,7 @@ Başka bir sunucuya bağlanmadan önce sunucu bağlantısını kesmelisiniz.
 {0} ağına bağlandı
 {0} bağlanmaya çalışırken hata: {1}
 Yığın İzleme: {2}
-"ftp://" veya "ftps://" ile başlayan bir FTP sunucusu girin.
+Bir FTP sunucusu girin.
 Yerel dizin {0} mevcut değil.
 Yerel bir dizin girin. ".." geri dönmek için.
 {0} dizini bulunamadı.

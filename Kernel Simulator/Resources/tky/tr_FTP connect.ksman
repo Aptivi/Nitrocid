@@ -17,17 +17,15 @@ Bu komut, FTP istemcinizi halka a????k ve ge??erli olan herhangi bir FTP sunucus
 
 Komut kullan??m??
 
-* ba??lan (adres)
+* connect (address)
 ??rnekler
 
-* ftp://ftp.fabrikam.com adresini ba??lay??n: ??stemcinizi "ftp.fabrikam.com" adl?? sunucuya ba??lar
-* ftps ba??lay??n: //ftp.contoso.com: SSL kullanarak istemcinizi "ftp.contoso.com" adl?? sunucuya ba??lar
+* connect ftp.fabrikam.com adresini ba??lay??n: ??stemcinizi "ftp.fabrikam.com" adl?? sunucuya ba??lar
 -BODY END-
 
 -COLOR CONFIGURATION-
 connect (address)=>Green
-connect ftp://ftp.fabrikam.com:=>Yellow
-connect ftps://ftp.contoso.com:=>Yellow
+connect ftp.fabrikam.com:=>Yellow
 -COLOR CONFIG END-
 
 -SECTIONS-
