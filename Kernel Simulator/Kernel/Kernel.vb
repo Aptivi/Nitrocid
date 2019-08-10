@@ -48,6 +48,13 @@ Public Module Kernel
                 'Initialize everything
                 InitEverything()
 
+                'For config
+                If RebootRequested Then
+                    RebootRequested = False
+                    LogoutRequested = False
+                    Exit Try
+                End If
+
                 'Phase 1: Probe hardware
                 Wdbg("- Kernel Phase 1: Probing hardware")
                 ProbeHW()

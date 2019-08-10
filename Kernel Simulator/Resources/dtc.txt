@@ -368,3 +368,4 @@ Mogelijk hebt u libcpanel-json-xs-perl niet op uw systeem geïnstalleerd. Raadpl
 U hebt uw systeemtaal ingesteld op iets anders dan Engels. Excuses voor het ongemak, maar het lijkt erop dat Google en zijn vertaler erg raar zijn over het vertalen van codeblokken voor elke programmeertaal. Hoewel we alle codeblokken voor vertaalde handmatige pagina's repareren, raden we u aan een ticket voor Google Translate te openen voor het vertalen van codeblokken die niet zijn bedoeld om te worden vertaald, en uw systeemtaal in te stellen op Engels als u deze spreekt.
 Laadt wijzigingen opnieuw.
 Mods opnieuw geladen.
+Wat is nieuw: probleem opgelost met het tonen van het wachtwoord in duidelijke tekst, veranderde logboeken tijdens update, Fixed KeyNotFoundException na het bijwerken van de configuratie bij het opstarten

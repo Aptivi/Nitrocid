@@ -150,6 +150,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **8/8/2019 - 0.0.6.10:** Simplified namespace to KS, Fixed codeblocks for Hindi, Chinese, and 1/2 Czech (See comment on GetCommand.vb), Added missing help entry for "reloadsaver", Added "reloadmods" command, Made KernelVersion and EnvironmentOSType read-only, "promptArgs" cmdline argument removed, Extra stack now not generated when rebooting
 
+**8/10/2019 - 0.0.6.11:** Fixed debug showing password in clear text, Showed changelogs during update, Fixed KeyNotFoundException after updating config on startup
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation` and are localized to supported languages.

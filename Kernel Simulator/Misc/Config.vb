@@ -161,10 +161,11 @@ Public Module Config
             configUpdater.Load(paths("Configuration"))
 
             'Check to see if the kernel is outdated
-            'TODO: Show changelogs during update
             If configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
                 Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
                 W(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), True, "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
+                W(DoTranslation("What's new: Fixed debug showing password in clear text, Showed changelogs during update, Fixed KeyNotFoundException after updating config on startup", currentLang), True, "neutralText")
+                Console.ReadKey(True)
                 UpdateConfig()
             End If
         Catch ex As Exception

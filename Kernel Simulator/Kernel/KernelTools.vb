@@ -123,7 +123,6 @@ Public Module KernelTools
         End Try
     End Sub
 
-    'TODO: Dumps are not localized
     Sub GeneratePanicDump(ByVal Description As String, ByVal ErrorType As Char, ByVal Exc As Exception)
         'Open a file stream for dump
         Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{FormatDateTime(Date.Now, DateFormat.ShortDate).Replace("/", "-")}_{FormatDateTime(Date.Now, DateFormat.LongTime).Replace(":", "-")}.txt")
@@ -281,6 +280,10 @@ Public Module KernelTools
 
         'Create config file and then read it
         InitializeConfig()
+
+        If RebootRequested Then
+            Exit Sub
+        End If
 
         'Show welcome message. Don't remove license
         W(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), True, "neutralText", KernelVersion)

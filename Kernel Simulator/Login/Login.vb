@@ -103,8 +103,6 @@ Public Module Login
                 'Get input
                 While True
                     Dim character As Char = Console.ReadKey(True).KeyChar
-                    'TODO: Works perfectly, should be removed because it poses a security exploit.
-                    Wdbg("Parse char: {0}", character)
                     If character = vbCr Or character = vbLf Then
                         Console.WriteLine()
                         Exit While
@@ -123,9 +121,6 @@ Public Module Login
                     End If
                 Else
                     If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
-                        'TODO: Works perfectly, should be removed because it poses a security exploit.
-                        Wdbg("ASSERT(Parse({0}, {1})) = True | ASSERT({1} = {2}) = True", usernamerequested, password, answerpass)
-
                         'Log-in instantly
                         SignIn(usernamerequested)
                         Exit Sub

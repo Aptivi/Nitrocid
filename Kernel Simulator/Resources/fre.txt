@@ -368,3 +368,4 @@ libcpanel-json-xs-perl n'est peut-être pas installé sur votre système. Report
 Vous avez défini la langue de votre système sur autre chose que l'anglais. Désolé pour le désagrément, mais il semble que Google et son traducteur sont très bizarres quant à la traduction de blocs de code pour tous les langages de programmation. Bien que nous réparions tous les blocs de code des pages de manuel traduites, nous vous suggérons d'ouvrir un ticket vers Google Translate pour la traduction des blocs de code non destinés à être traduits et de définir la langue de votre système en anglais si vous le parlez.
 Recharge les modifications.
 Mods rechargés.
+Quoi de neuf: Correction du débogage montrant le mot de passe en texte clair, Journal des modifications affiché lors de la mise à jour, Exception KeyNotFoundException après la mise à jour de la configuration au démarrage

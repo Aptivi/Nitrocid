@@ -368,3 +368,4 @@ Möglicherweise ist libcpanel-json-xs-perl nicht auf Ihrem System installiert. I
 Sie haben Ihre Systemsprache auf etwas anderes als Englisch eingestellt. Wir entschuldigen uns für die Unannehmlichkeiten, aber es scheint, dass Google und sein Übersetzer sehr komisch darin sind, Codeblöcke für jede Programmiersprache zu übersetzen. Während wir alle Codeblöcke für übersetzte Handbuchseiten korrigieren, empfehlen wir Ihnen, ein Ticket für Google Translate zu öffnen, um Codeblöcke zu übersetzen, die nicht übersetzt werden sollen, und Ihre Systemsprache auf Englisch festzulegen, wenn Sie sie sprechen.
 Lädt Änderungen neu.
 Mods neu geladen.
+Was ist neu: Fehler behoben, bei dem das Passwort im Klartext angezeigt und Änderungsprotokolle während des Updates angezeigt wurden, KeyNotFoundException nach Aktualisierung der Konfiguration beim Start behoben
