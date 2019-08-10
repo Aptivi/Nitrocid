@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:FTP naredba "upload" ili "put"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+prenesite ili stavite FTP naredbu
+
+Sa??etak: U??itava datoteku na poslu??itelj
+
+Opis
+
+Ako trebate dodati lokalne datoteke u va??u trenutnu radnu mapu u trenutni direktorij poslu??itelja, za dodavanje datoteka morate imati administrativne povlastice.
+
+Na primjer, ako dodajete sliku grada New Delhija pomo??u PNG formata, morate je prenijeti na poslu??itelj da bi je svi mogli vidjeti. 
+
+Upotreba naredbe
+
+* upload / put (datoteka)
+
+Primjeri
+
+* upload Win10-Oct2018-x64.iso: Stavlja "Win10-Oct2018-x64.iso" u trenutni direktorij poslu??itelja
+* stavi urls.txt: Stavlja "urls.txt" u trenutni direktorij poslu??itelja
+-BODY END-
+
+-COLOR CONFIGURATION-
+upload/put (file)=>Green
+upload Win10-Oct2018-x64.iso:=>Yellow
+put urls.txt:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+upload or put FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

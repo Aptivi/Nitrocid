@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Naredba granate "arginj"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba alias
+
+Sa??etak: Argumente mo??ete postaviti pri ponovnom pokretanju.
+
+Opis
+
+Ako trebate ponovno pokrenuti kernel da biste pokrenuli program za uklanjanje pogre??aka ili ako ??elite onemogu??iti hardversko sondiranje kako biste u??tedjeli vrijeme prilikom dizanja, onda je ova naredba za vas. 
+
+Ovu naredbu mo??ete koristiti ako trebate umetnuti argumente dok ste u jezgri. 
+
+Upotreba naredbe
+
+* arginj [Argumenti razdvojeni razmacima]
+
+Primjeri
+
+* arginj ispravljanje: Uklju??ite na??in uklanjanja pogre??aka pri sljede??em ponovnom pokretanju
+* arginj nohwprobe: Isklju??ite sondiranje hardvera pri sljede??em ponovnom pokretanju
+* arginj silent nohwprobe: Isklju??ite kernel poruke i hardversko sondiranje pri sljede??em ponovnom pokretanju
+-BODY END-
+
+-COLOR CONFIGURATION-
+arginj [Arguments separated by spaces]=>Green
+arginj debug:=>Yellow
+arginj nohwprobe:=>Yellow
+arginj quiet nohwprobe:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+arginj command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

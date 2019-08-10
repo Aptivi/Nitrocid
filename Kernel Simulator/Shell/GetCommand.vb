@@ -405,10 +405,14 @@ Public Module GetCommand
 
                 'Reboot the simulated system
                 Done = True
-                W(DoTranslation("Rebooting...", currentLang), True, "neutralText")
-                ResetEverything()
-                Console.Clear()
-                Main()
+                PowerManage("reboot")
+
+            ElseIf words(0) = "reloadmods" Then
+
+                'Reload mods
+                Done = True
+                ReloadMods()
+                W(DoTranslation("Mods reloaded.", currentLang), True, "neutralText")
 
             ElseIf words(0) = "reloadsaver" Then
 
@@ -575,9 +579,7 @@ Public Module GetCommand
             ElseIf requestedCommand = "shutdown" Then
 
                 'Shuts down the simulated system
-                W(DoTranslation("Shutting down...", currentLang), True, "neutralText")
-                ResetEverything()
-                Environment.Exit(0)
+                PowerManage("shutdown")
 
             ElseIf requestedCommand = "sses" Then
 
@@ -644,13 +646,22 @@ Public Module GetCommand
                   "FluentFTP" + vbNewLine +
                   DoTranslation("Source code:", currentLang) + " https://github.com/robinrodricks/FluentFTP" + vbNewLine +
                   DoTranslation("Copyright (c)", currentLang) + " 2011-2016, J.P. Trosclair" + vbNewLine +
-                  DoTranslation("Copyright (c)", currentLang) + " 2016-" + DoTranslation("present", currentLang) + ", Robin Rodricks" + vbNewLine +
+                  DoTranslation("Copyright (c)", currentLang) + " 2016-2019" + ", Robin Rodricks" + vbNewLine +
                   DoTranslation("License", currentLang) + " (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT", True, "neutralText")
 
             ElseIf words(0) = "usermanual" Then
 
                 Done = True
                 If requestedCommand <> "usermanual" Then
+                    If currentLang <> "eng" And (strArgs = "Modding guide" Or strArgs = "Screensaver modding guide") Then
+                        ' Google is weird about translating code blocks for Visual Basic that THEY SHOULDN'T HAVE DONE TO THESE DOCUMENTATIONS!
+                        W(DoTranslation("You have set your system language to anything other than English. Sorry for the inconvenience, but it seems " +
+                                        "that Google and its translator are very weird about translating code blocks for any programming language. " +
+                                        "While we fix all the code blocks for translated manual pages, we suggest you open a ticket to Google Translate " +
+                                        "for translating code blocks that aren't meant to be translated, and set your system language to English if you " +
+                                        "speak it.", currentLang), True, "neutralText")
+                        Exit Sub
+                    End If
                     ViewPage(strArgs)
                 Else
                     ViewPage("Available manual pages")

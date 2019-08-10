@@ -91,7 +91,7 @@ Public Module ModParser
         Next
     End Function
 
-    '------------------------------------------- Misc -------------------------------------------
+    '------------------------------------------- Parsers -------------------------------------------
     Sub ParseMods(ByVal StartStop As Boolean)
         'StartStop: If true, the mods start, otherwise, the mod stops.
         If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
@@ -132,6 +132,8 @@ Public Module ModParser
             FinalizeMods(script, modFile, StartStop)
         End If
     End Sub
+
+    '------------------------------------------- Finalizer -------------------------------------------
     Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         If Not IsNothing(script) Then
             script.StartMod()
@@ -161,6 +163,24 @@ Public Module ModParser
                 moddefs.Add(script.Cmd, script.Def)
             End If
         End If
+    End Sub
+
+    '------------------------------------------- Reloader -------------------------------------------
+    Sub ReloadMods()
+        'Clear all scripts, commands, and defs
+        modcmnds.Clear()
+        moddefs.Clear()
+        scripts.Clear()
+
+        'Stop all mods
+        ParseMods(False)
+
+        'Start all mods
+        ParseMods(True)
+        Dim modPath As String = paths("Mods")
+        For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
+            CompileCustom(modFile.Replace(modPath, ""))
+        Next
     End Sub
 
 End Module

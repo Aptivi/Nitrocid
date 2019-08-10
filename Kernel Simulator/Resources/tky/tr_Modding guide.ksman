@@ -48,8 +48,8 @@ Genel S??n??f ModAd??
 S??n??f sonu
 17. Genel S??n??f ... ve Son S??n??f sat??rlar?? aras??nda, Visual Studio 2017'ye KS modunuzu yazaca????n??z?? s??yleyin: Implements IScript
 18. ??sim alanlar?? ekleyecekseniz, bu kurallara uyulmas?? gerekir:
-1) Kernel_Simulator'?? kendi kendine almay??n. 
-2) TextWriterColor gibi mod??lleri / s??n??flar?? i??e aktar??rken ????yle yaz??l??r: Imports Kernel_Simulator.TextWriterColor
+1) KS'?? kendi kendine almay??n. 
+2) TextWriterColor gibi mod??lleri / s??n??flar?? i??e aktar??rken ????yle yaz??l??r: Imports KS.TextWriterColor
 19. Implements IScript'in alt??na koyarak mod bilgisi ??zelliklerini tan??mlay??n:
 Dize Olarak ??zellik Cmd IScript.Cmd Uygular
 Dize Olarak ??zellik Tan??m?? IScript.Def'i Uygular
@@ -131,8 +131,8 @@ Merhaba D??nya, t??m programc??lar i??in pop??ler bir ba??lang???? ????????rne??
 3. Ekle'ye t??klad??????n??zda kod haz??r olacakt??r.
 4. (Mod ad??n??z??n HelloGuys oldu??unu varsayal??m) yaz??n??z. Public Class HelloGuys: IScript
 5. HelloGuys Public Class'??n ??zerine yaz??n:
-- ??thalat Kernel_Simulator.ModParser
-- Kernel_Simulator.TextWriterColor ????esini i??e aktar??r
+- ??thalat KS.ModParser
+- KS.TextWriterColor ????esini i??e aktar??r
 6. Bu altlar??n olu??turulmas?? gerekti??ini s??yleyen hatalar almal??s??n??z.
 7. mod ba??lang???? ??????olay i??leyicinizi a??a????dakileri yaparak yaz??n:
 Dize Olarak ??zellik Cmd Uygulamas?? IScript.Cmd
@@ -144,11 +144,11 @@ Cmd = ""
 Def = ""
 Name = "HelloGuys"
 S??r??m = "1.0"
-Wln ("Merhaba D??nya", "n??tr Metin")
+W ("Merhaba D??nya", "n??tr Metin")
 Son Alt
 8. Dur olay i??leyicinizi a??a????dakileri yaparak yaz??n:
 Sub StopMod (), IScript.StopMod ????esini uygular.
-Wln ("Ho????akal??n D??nyas??", "neutralText")
+W ("Ho????akal??n D??nyas??", "neutralText")
 Son Alt
 9. Ne komutlar?? ne de olay yan??tlay??c??lar?? uygulamad??????m??z i??in, a??a????dakileri bo?? b??rakaca????z:
 Alt PerformCmd (??ste??e Ba??l?? ByVal, String = "" Olarak Args) IScript.PerformCmd ????esini uygular.
@@ -157,8 +157,8 @@ Alt InitEvents (ByVal ev As String) IScript.InitEvents ????esini uygular
 Son Alt
 10. Kod VB'de ????yle g??r??nmelidir:
 
-??thalat Kernel_Simulator.ModParser
-Kernel_Simulator.TextWriterColor ????esini i??e aktar??r
+??thalat KS.ModParser
+KS.TextWriterColor ????esini i??e aktar??r
 Genel S??n??f HelloGuys
 IScript uygular
 Dize Olarak ??zellik Cmd Uygulamas?? IScript.Cmd
@@ -170,10 +170,10 @@ Cmd = ""
 Def = ""
 Name = "HelloGuys"
 S??r??m = "1.0"
-Wln ("Merhaba D??nya", "n??tr Metin")
+W ("Merhaba D??nya", "n??tr Metin")
 Son Alt
 Sub StopMod (), IScript.StopMod ????esini uygular.
-Wln ("Ho????akal??n D??nyas??", "neutralText")
+W ("Ho????akal??n D??nyas??", "neutralText")
 Son Alt
 Alt PerformCmd (??ste??e Ba??l?? ByVal, String = "" Olarak Args) IScript.PerformCmd ????esini uygular.
 Son Alt
@@ -183,8 +183,8 @@ S??n??f sonu
 
 ... Veya C
 
-MP = Kernel_Simulator.ModParser kullanarak;
-TWC kullanarak = Kernel_Simulator.TextWriterColor;
+MP = KS.ModParser kullanarak;
+TWC kullanarak = KS.TextWriterColor;
 kamu s??n??f?? HelloGuys: MP.IScript
 {
 ortak dize Cmd {get; 
@@ -197,11 +197,11 @@ Cmd = "";
 Def = "";
 Name = "HelloGuys";
 S??r??m = "1.0";
-TWC.Wln ("Merhaba D??nya", "neutralText");
+TWC.W ("Merhaba D??nya", "neutralText");
 }
 genel ge??ersiz StopMod ()
 {
-TWC.Wln ("Ho????akal??n D??nyas??", "neutralText");
+TWC.W ("Ho????akal??n D??nyas??", "neutralText");
 }
 public void PerformCmd (dize args = "")
 {
@@ -239,12 +239,12 @@ Alt InitEvents (ByVal ev As String) IScript.InitEvents ????esini uygular
 Son Alt
 4. Komut i??leyicinizi yap??n ve SayHello mod komutuna yan??t vermesine izin verin:
 Alt PerformCmd (??ste??e Ba??l?? ByVal, String = "" Olarak Args) IScript.PerformCmd ????esini uygular.
-Wln ("Merhaba D??nya", "n??tr Metin")
+W ("Merhaba D??nya", "n??tr Metin")
 Son Alt
 5. Kod VB'de ????yle g??r??nmelidir:
 
-??thalat Kernel_Simulator.ModParser
-Kernel_Simulator.TextWriterColor ????esini i??e aktar??r
+??thalat KS.ModParser
+KS.TextWriterColor ????esini i??e aktar??r
 Genel S??n??f HelloShell
 IScript uygular
 Dize Olarak ??zellik Cmd Uygulamas?? IScript.Cmd
@@ -260,7 +260,7 @@ Son Alt
 Sub StopMod (), IScript.StopMod ????esini uygular.
 Son Alt
 Alt PerformCmd (??ste??e Ba??l?? ByVal, String = "" Olarak Args) IScript.PerformCmd ????esini uygular.
-Wln ("Merhaba D??nya", "n??tr Metin")
+W ("Merhaba D??nya", "n??tr Metin")
 Son Alt
 Alt InitEvents (ByVal ev As String) IScript.InitEvents ????esini uygular
 Son Alt
@@ -268,8 +268,8 @@ S??n??f sonu
 
 ... Veya C
 
-MP = Kernel_Simulator.ModParser kullanarak;
-TWC kullanarak = Kernel_Simulator.TextWriterColor;
+MP = KS.ModParser kullanarak;
+TWC kullanarak = KS.TextWriterColor;
 genel s??n??f HelloShell: MP.IScript
 {
 ortak dize Cmd {get; 
@@ -288,7 +288,7 @@ genel ge??ersiz StopMod ()
 }
 public void PerformCmd (dize args = "")
 {
-TWC.Wln ("Merhaba D??nya", "neutralText");
+TWC.W ("Merhaba D??nya", "neutralText");
 }
 public void InitEvents (dize ev)
 {
@@ -303,15 +303,15 @@ public void InitEvents (dize ev)
 2. Komut i??leyicinizi yap??n ve SayHello mod komutuna yan??t vermesine izin verin:
 Alt PerformCmd (??ste??e Ba??l?? ByVal, String = "" Olarak Args) IScript.PerformCmd ????esini uygular.
 E??er (args = "HW") ise
-Wln ("Merhaba D??nya", "n??tr Metin")
+W ("Merhaba D??nya", "n??tr Metin")
 Ba??ka
-Wln ("Beni Merhaba diyerek" "SayHello HW." "", "NeutralText" olarak ??al????t??rarak)
+W ("Beni Merhaba diyerek" "SayHello HW." "", "NeutralText" olarak ??al????t??rarak)
 Bitti??inde
 Son Alt
 3. Kod VB'de ????yle g??r??nmelidir:
 
-??thalat Kernel_Simulator.ModParser
-Kernel_Simulator.TextWriterColor ????esini i??e aktar??r
+??thalat KS.ModParser
+KS.TextWriterColor ????esini i??e aktar??r
 Genel S??n??f HelloArgs
 IScript uygular
 Dize Olarak ??zellik Cmd IScript.Cmd Uygular
@@ -328,9 +328,9 @@ Sub StopMod (), IScript.StopMod ????esini uygular.
 Son Alt
 Alt PerformCmd (??ste??e Ba??l?? ByVal, String = "" Olarak Args) IScript.PerformCmd ????esini uygular.
 E??er (args = "HW") ise
-Wln ("Merhaba D??nya", "n??tr Metin")
+W ("Merhaba D??nya", "n??tr Metin")
 Ba??ka
-Wln ("Beni Hello diyerek" "SayHello HW." "", "NeutralText") ??al????t??r
+W ("Beni Hello diyerek" "SayHello HW." "", "NeutralText") ??al????t??r
 Bitti??inde
 Son Alt
 Alt InitEvents (ByVal ev As String) IScript.InitEvents ????esini uygular
@@ -339,8 +339,8 @@ S??n??f sonu
 
 ... Veya C
 
-MP = Kernel_Simulator.ModParser kullanarak;
-TWC kullanarak = Kernel_Simulator.TextWriterColor;
+MP = KS.ModParser kullanarak;
+TWC kullanarak = KS.TextWriterColor;
 genel s??n??f HelloArgs: MP.IScript
 {
 ortak dize Cmd {get; 
@@ -361,11 +361,11 @@ public void PerformCmd (dize args = "")
 {
 e??er (args == "HW")
 {
-TWC.Wln ("Merhaba D??nya", "neutralText");
+TWC.W ("Merhaba D??nya", "neutralText");
 }
 Ba??ka
 {
-TWC.Wln ("\" SayHello HW. \ "", "NeutralText" komutunu ??al????t??rarak Merhaba dememi sa??lay??n);
+TWC.W ("\" SayHello HW. \ "", "NeutralText" komutunu ??al????t??rarak Merhaba dememi sa??lay??n);
 }
 }
 public void InitEvents (dize ev)
@@ -384,22 +384,22 @@ Dim splitArgs As String () = args.Split ({"" c})
 Tamsay?? Olarak Dim ArgCount = 1
 SplitArgs.Length> 1 ??yleyse
 E??er (splitArgs (0) = "Say" Ve splitArgs (1) = "Merhaba") Sonra
-Wln ("Merhaba D??nya", "n??tr Metin")
+W ("Merhaba D??nya", "n??tr Metin")
 Ba??ka
-Wln ("Beni Hello diyerek" "WhatDoISay Merhaba Deyin." "", "NeutralText") yap??n.
+W ("Beni Hello diyerek" "WhatDoISay Merhaba Deyin." "", "NeutralText") yap??n.
 Bitti??inde
 Ba??ka
-Wln ("Beni Hello diyerek" "WhatDoISay Merhaba Deyin." "", "NeutralText") yap??n.
+W ("Beni Hello diyerek" "WhatDoISay Merhaba Deyin." "", "NeutralText") yap??n.
 Bitti??inde
 Her arg i??in splitArgs'ta String Olarak
-Wln ("Ba????ms??z De??i??ken {0}: {1}", "n??tr Metin", ArgCount, splitArgs (ArgCount - 1))
+W ("Ba????ms??z De??i??ken {0}: {1}", "n??tr Metin", ArgCount, splitArgs (ArgCount - 1))
 ArgCount = 1
 Sonraki
 Son Alt
 3. Kod VB'de ????yle g??r??nmelidir:
 
-??thalat Kernel_Simulator.ModParser
-Kernel_Simulator.TextWriterColor ????esini i??e aktar??r
+??thalat KS.ModParser
+KS.TextWriterColor ????esini i??e aktar??r
 Genel S??n??f HelloArgs
 IScript uygular
 Dize Olarak ??zellik Cmd Uygulamas?? IScript.Cmd
@@ -419,15 +419,15 @@ Dim splitArgs As String () = args.Split ({"" c})
 Tamsay?? Olarak Dim ArgCount = 1
 SplitArgs.Length> 1 ??yleyse
 E??er (splitArgs (0) = "Say" Ve splitArgs (1) = "Merhaba") Sonra
-Wln ("Merhaba D??nya", "n??tr Metin")
+W ("Merhaba D??nya", "n??tr Metin")
 Ba??ka
-Wln ("Beni Hello diyerek" "WhatDoISay Merhaba Deyin." "", "NeutralText") yap??n.
+W ("Beni Hello diyerek" "WhatDoISay Merhaba Deyin." "", "NeutralText") yap??n.
 Bitti??inde
 Ba??ka
-Wln ("Beni Hello diyerek" "WhatDoISay Merhaba Deyin." "", "NeutralText") yap??n.
+W ("Beni Hello diyerek" "WhatDoISay Merhaba Deyin." "", "NeutralText") yap??n.
 Bitti??inde
 Her arg i??in splitArgs'ta String Olarak
-Wln ("Ba????ms??z De??i??ken {0}: {1}", "n??tr Metin", ArgCount, splitArgs (ArgCount - 1))
+W ("Ba????ms??z De??i??ken {0}: {1}", "n??tr Metin", ArgCount, splitArgs (ArgCount - 1))
 ArgCount = 1
 Sonraki
 Son Alt
@@ -437,8 +437,8 @@ S??n??f sonu
 
 ... Veya C
 
-MP = Kernel_Simulator.ModParser kullanarak;
-TWC kullanarak = Kernel_Simulator.TextWriterColor;
+MP = KS.ModParser kullanarak;
+TWC kullanarak = KS.TextWriterColor;
 genel s??n??f HelloArgs: MP.IScript
 {
 ortak dize Cmd {get; 
@@ -463,20 +463,20 @@ e??er (splitArgs.Length> 1)
 {
 if (splitArgs [0] == "S??yle"
 {
-TWC.Wln ("Merhaba D??nya", "neutralText");
+TWC.W ("Merhaba D??nya", "neutralText");
 }
 Ba??ka
 {
-TWC.Wln ("\" WhatDoISay Merhaba Deyin. \ "", "NeutralText" komutunu ??al????t??rarak Merhaba dememi sa??lay??n);
+TWC.W ("\" WhatDoISay Merhaba Deyin. \ "", "NeutralText" komutunu ??al????t??rarak Merhaba dememi sa??lay??n);
 }
 }
 Ba??ka
 {
-TWC.Wln ("\" WhatDoISay Merhaba Deyin. \ "", "NeutralText" komutunu ??al????t??rarak Merhaba dememi sa??lay??n);
+TWC.W ("\" WhatDoISay Merhaba Deyin. \ "", "NeutralText" komutunu ??al????t??rarak Merhaba dememi sa??lay??n);
 }
 foreach (splitArgs'ta string arg??man??)
 {
-TWC.Wln ("Ba????ms??z de??i??ken {0}: {1}", "n??tr Metin", ArgCount, splitArgs [ArgCount - 1]);
+TWC.W ("Ba????ms??z de??i??ken {0}: {1}", "n??tr Metin", ArgCount, splitArgs [ArgCount - 1]);
 ArgCount = 1;
 }
 }
@@ -508,7 +508,7 @@ Dim endTime As DateTime = DateTime.Now
 h??zlar?? (i) = Yuvarlak ((jQueryFileSize / (endTime - startTime) .TotalSeconds))
 Sonraki
 File.Delete (Environ ("USERPROFILE") "\ jQuery.js")
-Wln ("??ndirme h??z??: {0} KB / s", "neutralText", speeds.Average ())
+W ("??ndirme h??z??: {0} KB / s", "neutralText", speeds.Average ())
 Son Alt
 4. Kod VB'de ????yle g??r??nmelidir:
 
@@ -517,8 +517,8 @@ Son Alt
 ??thalat System.IO
 ??thalat Sistemi.
 Microsoft.VisualBasic.Interaction ????esini i??e aktar??r
-??thalat Kernel_Simulator.ModParser
-Kernel_Simulator.TextWriterColor ????esini i??e aktar??r
+??thalat KS.ModParser
+KS.TextWriterColor ????esini i??e aktar??r
 Genel S??n??f Internet H??z??
 IScript uygular
 Dize Olarak ??zellik Cmd IScript.Cmd Uygular
@@ -544,7 +544,7 @@ Dim endTime As Date = Date.Now
 h??zlar?? (i) = Yuvarlak (jQueryFileSize / (endTime - startTime) .TotalSeconds)
 Sonraki
 File.Delete (Environ ("USERPROFILE") "\ jQuery.js")
-Wln ("??ndirme h??z??: {0} KB / s", "neutralText", speeds.Average ())
+W ("??ndirme h??z??: {0} KB / s", "neutralText", speeds.Average ())
 Son Alt
 Alt InitEvents (ByVal ev As String) IScript.InitEvents ????esini uygular
 Son Alt
@@ -557,8 +557,8 @@ System.Net kullanarak;
 System.Linq kullanarak;
 System.IO kullanarak;
 M = System.Math kullanarak;
-MP = Kernel_Simulator.ModParser kullanarak;
-TWC kullanarak = Kernel_Simulator.TextWriterColor;
+MP = KS.ModParser kullanarak;
+TWC kullanarak = KS.TextWriterColor;
 genel s??n??f InternetSpeed: MP.IScript
 {
 ortak dize Cmd {get; 
@@ -588,7 +588,7 @@ DateTime endTime = DateTime.Now;
 [i] = M.Round (jQueryFileSize / (endTime - startTime) .TotalSeconds) h??zlar??;
 }
 File.Delete (System.Environment.GetEnvironmentVariable ("USERPROFILE") "\\ jQuery.js");
-TWC.Wln ("??ndirme h??z??: {0} KB / s", "neutralText", speeds.Average ());
+TWC.W ("??ndirme h??z??: {0} KB / s", "neutralText", speeds.Average ());
 }
 public void InitEvents (dize ev)
 {
@@ -643,10 +643,10 @@ Class...=>Cyan
 Visual Studio 2017=>Magenta
 Implements=>Cyan
 IScript=>DarkGreen
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
 Imports=>Cyan
-Kernel_Simulator.TextWriterColor=>DarkGreen
+KS.TextWriterColor=>DarkGreen
 IScript:=>DarkGreen
 Property As String=>Cyan
 Cmd Def Name Version=>DarkGreen
@@ -669,7 +669,7 @@ subs=>Green
 AnotherClass=>DarkGreen
 Hello World=>Green
 HelloGuys) HelloGuys: HelloGuys=>DarkGreen
-Kernel_Simulator.ModParser=>DarkGreen
+KS.ModParser=>DarkGreen
 errors=>Red
 "HelloGuys"=>DarkGreen
 "Hello World", "neutralText"=>DarkGreen

@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. pratyek charan mein dibag joda gaya
 13. motd aur mal ke saath upayog ke lie joda gaya opareting sistam plesaholdar
 14. motd saport ko 1 lain se adhik banaane ke lie nyoolain paarsar joda gaya
+
+KS 0.0.6.10
+
+1. saraleekrt nemaspes se ke.es.
+2. hindee, cheenee aur 1/2 chek ke lie phiksd kodablok (gaitchommand.vb par tippanee dekhen)
+3. "reelodasavar" ke lie anupalabdh sahaayata pravishti
+4. "reelodamods" kamaand joda gaya
+5. karnel vichalan aur envaayaranamentostaip keval-padhane ke lie banaaya gaya
+6. "prompt egs" chmdlinai tark hata diya gaya
+7. riboot karate samay atirikt staik ab utpann nahin hota hai
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

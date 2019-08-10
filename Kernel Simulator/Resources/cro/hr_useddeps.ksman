@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Naredba ljuske "useddeps"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba useddeps
+
+Sa??etak: Mo??ete dobiti knji??nice koje se koriste u ovom programu
+
+Opis
+
+Kernel Simulator dolazi s knji??nicama za lak??e kodiranje (za razvojne programere). 
+
+Upotreba naredbe
+
+* useddeps
+-BODY END-
+
+-COLOR CONFIGURATION-
+useddeps=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+useddeps command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

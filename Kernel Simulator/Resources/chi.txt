@@ -365,3 +365,6 @@ Nín de xìtǒng shàng kěnéng méiyǒu ānzhuāng libcpanel-json-xs-perl. Qǐ
 >> Kuàngjià, wénjiàn, xíng hé liè <<
 > zhèng {0}: Wénjiàn: {1} |Xíng: {2} |Zhuānlán: {3}
 > Chángshì huòqǔ zhèng xìnxī shí chūcuò. {0}: {1}
+Nín yǐ jiāng xìtǒng yǔyán shèzhì wèi chú yīngyǔ zhī wài de rènhé qítā yǔyán. Hěn bàoqiàn gěi nín dài lái bu biàn, dàn sìhū Google jí qí fānyì rényuán duìyú fānyì rènhé biānchéng yǔyán de dàimǎ kuài dōu fēicháng qíguài. Suīrán wǒmen xiūfùle fānyì shǒucè yè de suǒyǒu dàimǎ kuài, dàn wǒmen jiànyì nín dǎkāi Goog​​le Translate de piàojù, yǐ fānyì bù xūyào fānyì de dàimǎ kuài, bìng zài nín shuō chū shí jiāng xìtǒng yǔyán shèzhì wèi yīngyǔ.
+Chóngxīn jiāzài xiūgǎi.
+Mods chóngxīn jiāzài.

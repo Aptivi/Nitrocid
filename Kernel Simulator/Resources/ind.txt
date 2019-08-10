@@ -365,3 +365,6 @@ aapake paas apane sistam par libcpanel-json-xs-perl sthaapit nahin ho sakata hai
 >> phrems, phailen, lainen aur kolam <<
 > frem {0}: fail: {1} | pankti: {2} | kolam: {3}
 > frem jaanakaaree praapt karane ka prayaas karate samay koee truti hai. {0}: {1}
+aapane apanee sistam bhaasha ko angrejee ke alaava kisee aur cheez mein set kiya hai. asuvidha ke lie khed hai, lekin aisa lagata hai ki Google aur isake anuvaadak kisee bhee prograaming bhaasha ke lie kod blok ka anuvaad karane ke baare mein bahut ajeeb hain. jab ham anuvaadit mainual prshthon ke lie sabhee kod blok ko theek kar dete hain, to ham sujhaav dete hain ki aap anuvaad karane ke lie Google blok ka ek tikat kholen jisaka anuvaad karane ka matalab hai, aur yadi aap ise bolate hain to apanee sistam bhaasha ko angrejee mein set karen.
+sanshodhanon ko punah lod karen.
+mods ko punah lod kiya gaya.

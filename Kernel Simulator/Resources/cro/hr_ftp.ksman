@@ -1,0 +1,33 @@
+(*MAN START*)
+
+-TITLE:Naredba ljuske "ftp"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+ftp naredba
+
+Sa??etak: Mo??ete se me??usobno komunicirati s ljuskom File Transfer Protocol (FTP) za povezivanje s poslu??iteljem i prijenos datoteka
+
+Opis
+
+Pomo??u FTP ljuske mo??ete se povezati s va??im FTP poslu??iteljem ili javnim FTP poslu??iteljima za interakciju s datotekama na poslu??itelju.
+
+Mo??ete preuzimati datoteke na svoje ra??unalo, u??itavati datoteke na poslu??itelj, upravljati datotekama preimenovanjem, brisanjem itd. Itd.
+
+Za vi??e informacija o interakciji s ??koljkom i njezinim naredbama, pogledajte "usermanual FTP Shell i njegove naredbe".
+
+Upotreba naredbe
+
+* ftp
+-BODY END-
+
+-COLOR CONFIGURATION-
+ftp=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+ftp command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

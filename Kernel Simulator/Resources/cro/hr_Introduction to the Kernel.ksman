@@ -1,0 +1,145 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Uvod u Kernel
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+??to je kernel? 
+
+Kernel je op??enito ra??unalni program koji je jezgra ra??unalnog operativnog sustava s potpunom kontrolom nad svime u sustavu. 
+
+Me??utim, Kernel Simulator je prva prva simulacija, a ne Emulacija, aplikacija koja mo??e simulirati takve vrste pona??anja, osim ??to je ograni??ena jer smo jo?? u fazi Alpha, a ujedno vam pokazuje i prijelaz o tome kako je pobolj??ano i izgra??eno na??e jezgro 
+
+Povijest Unixa i Linuxa.
+
+??to je Unix? 
+
+Unix je obitelj multitasking, vi??ekorisni??kih ra??unalnih operativnih sustava koji potje??u iz izvorne AT
+
+U po??etku su bile namijenjene za upotrebu u Bell System-u, AT
+
+Podrijetlo Unixa datira iz sredine 1960-ih kada su Massachusetts Institute of Technology, Bell Labs i General Electric razvijali Multics, operativni sustav za dijeljenje vremena za glavno ra??unalo GE-645. 
+
+Novi operativni sustav bio je sustav s jednim zadatkom. 
+
+Operativni sustav izvorno je pisan skupnim jezikom, ali 1973., Verzija 4 Unix prepisana je u C. Verzija 4, Unix je, ipak, imao mnogo PDP-11 ovisnih kodova i nije pogodna za prijenos. 
+
+Bell Labs proizveo je nekoliko verzija Unixa koje se zajedno nazivaju Research Unix. 
+
+Tijekom kasnih 1970-ih i po??etka 1980-ih, utjecaj Unixa u akademskim krugovima doveo je do opse??nog usvajanja Unixa (BSD i System V) od strane komercijalnih startupa, uklju??uju??i Sequent, HP-UX, Solaris, AIX i Xenix. 
+
+U 1990-ima Unix i Unix-sli??ni sustavi postali su sve popularniji jer su distribucije BSD i Linuxa razvijene suradnjom svjetske mre??e programera. 
+
+A Linux?
+
+Linux je obitelj operativnih sustava besplatnog i otvorenog koda softvera izgra??ena oko Linux kernela. 
+
+1991. godine, dok je poha??ao Sveu??ili??te u Helsinkiju, Torvalds je postao znati??eljan oko operativnih sustava. 
+
+Torvalds je zapo??eo razvoj Linux kernela na MINIX-u, a aplikacije pisane za MINIX kori??tene su i na Linuxu. 
+
+Linus Torvalds ??elio je svoj izum nazvati Freax, luka slobodnjaka, nakaza i x (kao aluzija na Unix). 
+
+Da bi se olak??ao razvoj, datoteke su prenesene na FTP server (ftp.funet.fi) FUNET-a u rujnu 1991. Ari Lemmke, Torvaldsov suradnik na Helsinkijskom tehnolo??kom sveu??ili??tu (HUT), koji je bio jedan od volonterskih administratora 
+
+Usvajanje Linuxa u proizvodnom okru??enju, umjesto da ga koriste samo hobisti, po??elo je prvo krenuti sredinom 1990-ih u zajednici superra??unala, gdje su organizacije poput NASA-e po??ele zamijeniti sve skuplje strojeve klasterima jeftinih robnih ra??unala sa Linuxom 
+
+Danas se Linux sustavi koriste u ??itavom ra??unalstvu, od ugra??enih sustava do gotovo svih superra??unala i osigurali su mjesto u poslu??iteljskim instalacijama poput popularne LAMP stog. 
+
+Najve??i uspjeh Linuxa na potro??a??kom tr??i??tu mo??da je tr??i??te mobilnih ure??aja, a Android je jedan od najdominantnijih operativnih sustava na pametnim telefonima i vrlo popularan na tabletima i, u posljednje vrijeme, no??enju. 
+
+Greg Kroah-Hartman vode??i je odr??ava?? Linux kernela i vodi njegov razvoj. 
+
+Linuxovi dobavlja??i i zajednice kombiniraju i distribuiraju kernel, GNU komponente i komponente koje nisu GNU, s dodatnim softverom za upravljanje paketima u obliku Linux distribucija.
+
+Kratak opis na??eg kernela aka Eofla Kernel
+
+Kernel je izra??en ispo??etka, a prva javna verzija Simulatora izgra??ena je 23. velja??e 2018. Trenutno Simulator uzima informacije o hardveru putem Windows Management Instrumentation (WMI) koji pru??a sve informacije o va??em hardveru, uklju??uju??i procesor, RAM, grafiku 
+
+Trenutno ima zna??ajku za uklanjanje pogre??aka koja uklanja pogre??ku kernela o tome ??to se doga??a i sprema ga u datoteku. 
+
+izvori
+
+1. https://en.wikipedia.org/wiki/Kernel_(operating_system)
+2. https://en.wikipedia.org/wiki/Unix
+3. https://en.wikipedia.org/wiki/Linux
+-BODY END-
+
+-COLOR CONFIGURATION-
+Kernel Simulator=>Yellow
+Simulation=>Green
+Emulation=>Red
+Alpha=>Red
+Unix=>Green
+Bell Labs=>DarkGreen
+Ken Thompson, Dennis Ritchie=>DarkGreen
+System=>DarkGreen
+AT&T=>DarkGreen
+University California Berkeley (BSD), Microsoft (Xenix), IBM (AIX), Sun Microsystems (Solaris)=>DarkGreen
+Novell=>DarkGreen
+Santa Cruz Operation (SCO)=>DarkGreen
+Open Group=>DarkGreen
+Apple's=>Gray
+Massachusetts Institute Technology=>DarkGreen
+General Electric=>DarkGreen
+Multics=>DarkGreen
+GE-645=>Red
+Douglas McIlroy, Joe Ossanna=>DarkGreen
+Unics Uniplexed Information Computing Service=>DarkGreen
+Multiplexed Computer Services=>DarkGreen
+Doug Peter G. Neumann=>DarkGreen
+Kernighan=>DarkGreen
+assembly language=>Magenta
+C=>Magenta
+Interdata 8/32=>Red
+Research=>DarkGreen
+Donald B. Gillies=>DarkGreen
+Illinois Department Science=>DarkGreen
+UIUC=>DarkGreen
+Greg Chesson=>DarkGreen
+Sequent, HP-UX, Solaris, AIX, Xenix=>DarkGreen
+Laboratories=>DarkGreen
+V Release 4 (SVR4)=>DarkGreen
+BSD=>DarkGreen
+Linux=>DarkGreen
+Darwin=>DarkGreen
+Mac OS X=>DarkMagenta
+macOS=>Magenta
+Linus=>DarkGreen
+Torvalds=>DarkGreen
+MINIX=>DarkGreen
+GNU=>Magenta
+GPL=>Magenta
+Freax=>DarkGreen
+free freak x=>Magenta
+ftp.funet.fi=>Blue
+FUNET=>DarkGreen
+Ari Lemmke=>DarkGreen
+Helsinki (HUT)=>DarkGreen
+NASA=>DarkGreen
+Dell=>DarkGreen
+Hewlett-Packard=>DarkGreen
+LAMP=>Magenta
+Google=>DarkGreen
+Chrome=>DarkGreen
+Android=>Green
+Valve=>Magenta
+Kroah-Hartman=>DarkGreen
+Stallman=>DarkGreen
+Free Software Foundation=>DarkGreen
+Windows Management Instrumentation (WMI)=>DarkGreen
+Unified Eofla SHell (UESH)=>DarkGreen
+InitiaOE=>DarkGreen
+uesh-maint=>DarkGreen
+-COLOR CONFIG END-
+
+-SECTIONS-
+What is the Kernel? How about Kernel Simulator?=>SE1
+The history of Unix and Linux.=>SE1
+What is Unix? and what happened in the past?=>SE2
+How about Linux?=>SE2
+Brief description for our Kernel aka Eofla Kernel=>SE1
+Sources=>SE1
+-SECTIONS END-

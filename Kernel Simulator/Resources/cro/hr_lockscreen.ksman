@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Naredba ljuske "zaklju??ani zaslon"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba zaklju??anog zaslona
+
+Sa??etak: Zaslon mo??ete zaklju??ati zadanom ??uvarom zaslona kako biste sprije??ili opekotine na zaslonu
+
+Opis
+
+Mo??ete zaklju??ati zaslon i pokazati zadanu ??uvar zaslona kako biste potvrdili da ste udaljeni i da ??e vam se povra??ati sat vremena ili vi??e. 
+
+Upotreba naredbe
+
+* zaklju??avanje zaslona
+-BODY END-
+
+-COLOR CONFIGURATION-
+lockscreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lockscreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

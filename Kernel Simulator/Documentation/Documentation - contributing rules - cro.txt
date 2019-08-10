@@ -1,0 +1,51 @@
+﻿| --------------- + -> Općenito <- + --------------- |
+
+- Ako želite pridonijeti Kernel Simulatoru, moraju se slijediti dolje navedeni uvjeti:
+
+1. Ako želite izmijeniti / rekodirati jezgru jezgre, provjerite je li ispravno i pažljivo napisali promjene, pazeći da ne oštetite značajke jezgre jezgre.
+2. Ako želite svugdje dodati / izmijeniti / ukloniti / rekodirati neke željene značajke, promjene pažljivo napišite.
+3. Kao i svi drugi programeri koji žele pridonijeti Kernel Simulatoru, promjene se moraju testirati. Ne želimo rezultate, samo test i reći da su testirani. Ako želite pružiti rezultate, još uvijek prihvaćamo vaš zahtjev za povlačenjem.
+4. Ako ga niste testirali, a poslali ste nam zahtjev za povlačenjem, testirat ćemo kôd i ako ustanovimo da:
+
+   - vaš kôd radi, prihvatit ćemo vaš zahtjev za povlačenjem
+   - vaš kôd ne radi, zatvorit ćemo vaš zahtjev za povlačenjem
+
+5. Ako ga niste testirali, a spremni ste nam poslati, najprije testirajte kôd.
+6. Ako želite izmijeniti dokumentaciju ili druge dijelove koji nisu kodiranje ili dodati dijelove / nove dokumentacije, slobodno to. Možete nas obavijestiti.
+
+- Prenošenje na druge operativne sustave ili programske jezike koji nisu skupština (ASM, NASM, ...) ili C / C++ jezik:
+
+Možda ćete morati priključiti Kernel Simulator u drugi operativni sustav kao što je Linux, macOS i tako dalje. Isto tako, na drugi programski jezik koji nije C / C++ ili skupni jezik.
+
+Prenošenje ASM / C / C++ ovisi o nama, vlasniku. Svaka vrata za njih prije službenog Kernel ASM / C / C++ bootable izdanja neće nas podržati, a bilo kakva pitanja u vezi s njima bit će odmah odbijena.
+
+- Ako želite Kernel Simulator prenijeti na Linux (testirano) ili macOS (neprovjereno) na Visual Basic:
+
+1. Instalirajte pakete Mono, MonoDevelop i libmono-microsoft-visualbasic10.0-cil. Možete ih saznati na njihovoj službenoj web stranici.
+2. Preuzmite KS izvorni kod
+3. Otvorite rješenje pomoću programa MonoDevelop i pokrenite program.
+4. Izvijestite o bilo kojem pitanju o odjeljku s problemima u našem repo KS-u.
+
+- Ako želite priključiti Kernel Simulator na Sun OS, BSD, Solaris itd. (Neprovjereno):
+
+Ovaj dio je u izradi. Ako imate upute, molim vas dajte svoj doprinos.
+
+Napomena: Ako želite poslati Kernel Simulator na drugi programski jezik koji ne odgovara Assembly ili C / C++, slobodno se obratite.
+Napomena: Prenošenje Kernel-a unutar Kernel Simulatora u pravi računalo / VirtualBox pomoću Assembly i C / C++ je na nama.
+Napomena: Prenošenje Kernel-a unutar simulatora na Android / iOS je u redu. Možete izvršiti odgovarajuće izmjene.
+
+| --------------- + -> Ostali prilozi, izdanja itd. <- + --------------- |
+
+- Izvještavanje o problemima
+
+Slijedite obrazac dizajna prijavljivanja grešaka i objasnite što više možete. Manje specifično objašnjenje i pogrešan obrazac dizajna koji slijede mogu zatvoriti vaš problem. Snimke zaslona nisu obavezne.
+
+| --------------- + -> Popis obveza za dodavanje u Kernel Simulator <- + --------------- |
+
+Ako su neke ideje nestale, onda se ili rade ili poništavaju. (Ovaj se odjeljak briše s 0.0.7 i premješten je u Popis zadataka u VS2019.)
+
+1. Interaktivni upravitelj datoteka glavnog računala (planirano u bootable verziji)
+2. Premjestite svaku pojedinačnu dokumentaciju u skladište Wiki, uključujući stranice s priručnikom, čineći naredbe ručnih stranica za otvaranje web stranice za Wiki (planirano u 0.0.7)
+3. Stalni popis korisničkih imena i lozinki (lozinke u šifriranom obliku - u beta verziji)
+
+(Ako imate ideje, uredite ovaj odjeljak umetanjem svoje ideje.)

@@ -1,0 +1,80 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Konfiguracija va??eg kernela
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+??to je Config?
+
+Konfiguracija je konfiguracija za va??u kernel koja pohranjuje vi??e opcija jezgre koje se ne mogu ure??ivati ??????ni u argumentima ni u argumentima naredbene linije. 
+
+Postoji mnogo odjeljaka radi lak??eg ??itanja konfiguracijske datoteke. 
+
+Konfigurirajte unose
+
+General
+
+1. Odziv za argumente pri pokretanju: Mo??ete prisiliti kernel da vam da argument za argument ako je vrijednost postavljena na True. 
+2. Na??in odr??avanja: Mo??ete u??initi da kernel ne rastavlja mod i ??uvar zaslona prilikom dizanja, a pru??a vam mogu??nost popravka va??eg kernela. 
+3. Promjena Root lozinke: Mo??ete promijeniti administrativnu lozinku. 
+4. Postavite Root Password na: Ako je opcija "Change Root Password" postavljena na True, mo??ete napisati vlastitu root lozinku. 
+5. Kreirajte demo ra??un: jezgru mo??ete napraviti tako da stvori testni ra??un, demo, postavljaju??i ovo na True. 
+6. Prilago??ene boje pri pokretanju: Ako je ovo postavljeno na True, kernel ??e promijeniti svoje boje na temelju konfiguracijskih vrijednosti. 
+7. Jezik: mo??e potrajati pre??icu na jeziku s tri slova. 
+
+boje
+
+Svaki unos spomenut u nastavku mo??e imati imena boja ili vrijednosti. 
+
+1. Boja ljuske korisni??kog imena: Mo??ete promijeniti korisni??ko ime koje prikazuje boju dijela u cijelom odzivu.
+2. Boja ljuske naziva hosta: Mo??ete promijeniti ime hosta koji prikazuje boju dijela u cijelom odzivu.
+3. Kontinuirana boja pogre??ke kernela: Mo??ete promijeniti boju teksta o neprekidnoj jezgri.
+4. Nekontinuirana boja pogre??ke kernela: Mo??ete promijeniti boju teksta kobne pogre??ke.
+5. Boja teksta: Mo??ete promijeniti op??u boju teksta.
+6. Boja licence: Mo??ete promijeniti boju teksta licence.
+7. Boja pozadine: Mo??ete promijeniti boju pozadine.
+8. Boja unosa: Mo??ete promijeniti boju unosa teksta.
+9. Navedena naredba u boji pomo??i: Mo??ete promijeniti ispisanu naredbenu boju na popisu naredbi.
+10. Definicija naredbe u Pomo??noj boji: Mo??ete promijeniti ispisani opis naredbene boje na popisu naredbi.
+
+Hardver
+
+Svaki u nastavku spomenuti unos mo??e biti la??an ili istinit.
+
+1. Tiha sonda: Provjeravanje hardvera mo??ete u??initi mirnim tako da ne prikazujete rezultate ispitivanog hardvera.
+2. Slotovi sonde: Mo??ete napraviti sondiranje RAM sonde za RAM utore.
+
+Prijaviti se
+
+1. Prika??ite MOTD o prijavi: Mo??ete zatra??iti da se prompt za prijavu poka??e Porukom dana prije prikazivanja upita. 
+2. O??istite zaslon pri prijavi: Mo??ete ukloniti nerede na zaslonu prije prijave ako je postavljeno na True. 
+3. MOTD: Poruku prije prijave mo??ete promijeniti u bilo koju vrijednost. 
+4. Ime doma??ina: Mo??ete promijeniti ime doma??ina kernela.
+5. MOTD nakon prijave: Poruku nakon prijave mo??ete promijeniti u bilo koju vrijednost. 
+
+Ljuska
+
+Svaki unos spomenut u nastavku mo??e biti istinit ili la??an.
+
+1. Obojena ??koljka: Mo??ete dodati podr??ku za bojenje ljuske.
+2. Pojednostavljena naredba za pomo??: Naredbe mo??ete popisati u obliku razdvojenom zarezom.
+
+Razno
+
+1. Prika??ite vrijeme / datum u gornjem desnom kutu: mo??ete postaviti banner vremena / datuma koji se a??urira, a polo??aj se nalazi u gornjem desnom kutu. 
+2. ??uvar zaslona: Mo??ete odabrati dostupne ??uvare zaslona.
+3. Kernel verzija: Ne mijenjajte ovaj unos! 
+-BODY END-
+
+-SECTIONS-
+What is the Config?=>SE1
+Config entries=>SE1
+General=>SE2
+Colors=>SE2
+Hardware=>SE2
+Login=>SE2
+Shell=>SE2
+Misc=>SE2
+-SECTIONS END-

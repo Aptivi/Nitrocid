@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Naredba ljuske "chusrname"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba chusrname
+
+Sa??etak: Mo??ete promijeniti svoje korisni??ko ime ili korisni??ko ime nekog drugog
+
+Opis
+
+Ako va??e korisni??ko ime ili korisni??ko ime nekog drugog trebate promijeniti u novo korisni??ko ime, morate ih promijeniti ako je to va??e korisni??ko ime ili ako vam netko dopu??ta da promijenite svoje korisni??ko ime u drugo ime.
+
+Prije novog korisni??kog imena trebate navesti trenuta??no korisni??ko ime tako da alat zna kako promijeniti tu??e ime ili va??e ime u drugo ime.
+
+Kad promijenite svoje ime u tu??e ime, odjavit ??ete se kako bi promjene stupile na snagu. 
+
+Upotreba naredbe
+
+* chusrname (oldUserName) (novoUserName)
+
+Primjeri
+
+* chusrname john JohnSmith: To mijenja Johnnovo korisni??ko ime u JohnSmith
+* chusrname administrator u??itelja: Zamjenjuje korisni??ko ime u??itelja
+-BODY END-
+
+-COLOR CONFIGURATION-
+chusrname (oldUserName) (newUserName)=>Green
+chusrname admin teacher:=>Yellow
+chusrname john JohnSmith:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chusrname command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

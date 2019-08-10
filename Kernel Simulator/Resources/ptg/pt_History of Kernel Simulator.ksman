@@ -806,7 +806,7 @@ KS 0.0.6.9
 1. Removed calculadoras e conversores de unidade
 2. Unificado dois comandos de impressão em um
 3. Unificado dois geradores mod em um
-4. Permitido entrar no servidor FTP sem especificar o prefixo "ftp: //"
+4. Permitido entrar no servidor FTP sem especificar o prefixo "ftp://"
 5. Permitido especificando endereço como o argumento do comando "ftp"
 6. Agora o cliente FTP desconectará pacificamente ao sair
 7. Corrigidas descrições de ajuda de FTP não atualizando ao alterar idiomas
@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Adicionado debug em cada fase
 13. Adicionado espaço reservado para o sistema operacional para uso com MOTD e MAL
 14. Adicionado analisador de nova linha para fazer com que o MOTD suporte mais de uma linha
+
+KS 0.0.6.10
+
+1. Espaço de nomes simplificado para KS
+2. Codeblocks fixos para hindi, chinês e 1/2 tcheco (ver comentário em GetCommand.vb)
+3. Adicionada entrada de ajuda ausente para "reloadsaver"
+4. Adicionado o comando "reloadmods"
+5. Made KernelVersion e EnvironmentOSType somente leitura
+6. argumento "promptArgs" cmdline removido
+7. Pilha extra agora não é gerada durante a reinicialização
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Naredba ??koljke "netinfo"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba netinfo
+
+Sa??etak: Mo??ete vidjeti detaljan status mre??ne veze
+
+Opis
+
+Ova naredba omogu??uje vam pregled detalja o svim va??im be??i??nim / Ethernet adapterima, paketima, paketima koji imaju gre??ku itd. Ispisani podaci su dijagnosti??ki, pa ako se ne mo??ete povezati s Internetom, te podatke mo??ete koristiti za dijagnosticiranje 
+
+Odjeljci informacija o adapterima:
+
+Broj adaptera: To vam govori broj trenutnog adaptera iz kojeg dobivamo informacije
+Naziv adaptera: ovo vam govori ime trenutnog adaptera
+Jedinica za maksimalni prijenos: To vam govori o maksimalnoj prijenosnoj jedinici adaptera
+DHCP je omogu??en: ovo vam govori je li DHCP uklju??en ili koristi stati??ku IP adresu za mre??no pode??avanje
+Non-unicast paketi: ovo vam govori pakete koji su ne-unicast
+Unicast paketi: ovo vam govori pakete koji su jedinstveni
+Pogre??ka u dolaznom / odlaznom paketu: To vam govori pakete koji imaju pogre??ke
+
+Upotreba naredbe
+
+* netinfo
+-BODY END-
+
+-COLOR CONFIGURATION-
+netinfo=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+netinfo command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

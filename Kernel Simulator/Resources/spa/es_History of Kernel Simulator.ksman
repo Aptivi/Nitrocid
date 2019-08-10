@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Se agregó depuración en cada fase.
 13. Se ha agregado el marcador de posición del sistema operativo para usar con MOTD y MAL
 14. Se agregó el analizador de nueva línea para hacer que MOTD soporte más de 1 línea.
+
+KS 0.0.6.10
+
+1. Espacio de nombres simplificado para KS
+2. Bloques de código fijos para hindi, chino y 1/2 checo (Ver comentario en GetCommand.vb)
+3. Se agregó la entrada de ayuda que falta para "reloadsaver"
+4. Se agregó el comando "reloadmods"
+5. Hecho KernelVersion y EnvironmentOSType de solo lectura
+6. Se eliminó el argumento cmdline "promptArgs"
+7. Pila adicional ahora no se genera al reiniciar
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

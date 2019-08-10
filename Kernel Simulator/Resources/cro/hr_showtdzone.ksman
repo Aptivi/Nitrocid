@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Naredba Shell "showtdzone"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba showtdzone
+
+Sa??etak: Prikazuje trenuta??no vrijeme i datum u drugoj vremenskoj zoni
+
+Opis
+
+Ako trebate znati koliko je sati u drugom gradu ili dr??avi, pomo??u ovog alata mo??ete vam re??i trenuta??no vrijeme i datum u drugoj zemlji ili gradu.
+
+Ova naredba je multiplatformna i koristi vremenske zone IANA na Unix sustavima i sustav Windows vremenske zone u sustavu Windows.
+
+Na primjer, ako trebate koristiti "Azija / Damask" na Unix sustavima, napisat ??ete "showtdzone Asia / Damask." 
+
+Upotreba naredbe
+
+* showtdzone (TimeZone / sve)
+
+Primjeri
+
+* showtdzone Egypt Standardno vrijeme: prikazuje trenutno vrijeme i datum u Egiptu na Windows sustavima
+* showtdzone Asia / Hong_Kong: Prikazuje trenutno vrijeme i datum u Hong Kongu na Linux sustavima
+* showtdzone all: Prikazuje sve vremenske zone i njihova vremena i datume
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtdzone (TimeZone/all)=>Green
+showtdzone Egypt Standard Time:=>Yellow
+showtdzone Asia/Hong_Kong:=>Yellow
+showtdzone all:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtdzone command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

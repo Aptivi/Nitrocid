@@ -209,7 +209,8 @@ Public Module KernelTools
             ResetEverything()
             EventManager.RaisePostReboot()
             Console.Clear()
-            Main()
+            LogoutRequested = True
+            RebootRequested = True
         End If
     End Sub
 

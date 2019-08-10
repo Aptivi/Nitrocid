@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Kernel Simulator",
+    "\\Kernel Simulator\\Resources"
   ],
-  "SelectedNode": "\\_config.yml",
+  "SelectedNode": "\\Kernel Simulator\\Kernel Simulator.vbproj",
   "PreviewInSolutionExplorer": false
 }

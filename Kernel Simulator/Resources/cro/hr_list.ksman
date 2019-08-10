@@ -1,0 +1,41 @@
+(*MAN START*)
+
+-TITLE:Naredba ljuske "popis"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba popisa
+
+Sa??etak: Mo??ete popisati sadr??aj unutar trenutne mape ili odre??ene mape
+
+Opis
+
+Ako ne znate ??to se nalazi u direktoriju ili u trenutnoj mapi, pomo??u ove naredbe mo??ete ??areno pregledati sadr??aj mape.
+
+Upotreba naredbe
+
+* popis
+* popis [mapa]
+
+Primjeri
+
+* list: Ova naredba navodi trenutni sadr??aj radnog imenika
+* list ..: Ova naredba navodi sadr??aj roditeljske mape iz trenutne radne mape
+* boot liste: Ova naredba navodi mapu "boot" iz trenutne radne mape, pod pretpostavkom da je radni direktorij /
+-BODY END-
+
+-COLOR CONFIGURATION-
+list=>Green
+list [directory]=>Green
+list:=>Yellow
+list ..:=>Yellow
+list boot:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+list command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

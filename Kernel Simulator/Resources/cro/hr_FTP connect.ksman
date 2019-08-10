@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Naredba FTP "pove??i se"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+pove??ite FTP naredbu
+
+Sa??etak: Povezuje va?? FTP klijent na bilo koji FTP poslu??itelj koji je va??e??i
+
+Opis
+
+Ova se naredba mora izvr??iti prije pokretanja bilo kojih interaktivnih naredbi FTP poslu??itelja, kao ??to su preuzimanje, prijenos, cdl, cdr, itd.
+
+Ova naredba otvara novu sesiju za povezivanje va??eg FTP klijenta na bilo koji FTP poslu??itelj koji je otvoren za javnost i vrijedi. 
+
+Upotreba naredbe
+
+* povezivanje (adresa)
+Primjeri
+
+* connect ftp://ftp.fabrikam.com: povezuje va??eg klijenta sa poslu??iteljem pod nazivom "ftp.fabrikam.com"
+* connect ftps: //ftp.contoso.com: povezuje va??eg klijenta putem SSL-a na poslu??itelj pod nazivom "ftp.contoso.com"
+-BODY END-
+
+-COLOR CONFIGURATION-
+connect (address)=>Green
+connect ftp://ftp.fabrikam.com:=>Yellow
+connect ftps://ftp.contoso.com:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+connect FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

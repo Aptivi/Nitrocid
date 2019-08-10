@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Naredba FTP "currremotedir" ili "pwdr"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+currremotedir ili pwdr FTP naredba
+
+Sa??etak: dobiva trenutni udaljeni direktorij
+
+Opis
+
+Ova naredba FTP govori ??to je udaljeni direktorij na FTP poslu??itelju koji trenutno gledate.
+
+Upotreba naredbe
+
+* currremotedir
+* pwdr
+-BODY END-
+
+-COLOR CONFIGURATION-
+currremotedir=>Green
+pwdr=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+currremotedir or pwdr FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

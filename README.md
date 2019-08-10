@@ -148,6 +148,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **7/27/2019 - 0.0.6.9:** Removed calculators and unit converters, Unified two printing commands into one, Unified two mod generators into one, Allowed entering FTP server without specifying "ftp://" prefix, Allowed specifying address as the "ftp" command argument, Now the FTP client will disconnect peacefully when exiting, Fixed FTP help descriptions not updating when changing languages, SSE checking by command is now supported on Unix systems, Fixed corner time and date position, Fixed password not working correctly even if the user put the correct password, Removed unused phase, Added debug on each phase, Added operating system placeholder for use with MOTD and MAL, Added newline parser to make MOTD support more than 1 line
 
+**8/8/2019 - 0.0.6.10:** Simplified namespace to KS, Fixed codeblocks for Hindi, Chinese, and 1/2 Czech (See comment on GetCommand.vb), Added missing help entry for "reloadsaver", Added "reloadmods" command, Made KernelVersion and EnvironmentOSType read-only, "promptArgs" cmdline argument removed, Extra stack now not generated when rebooting
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation` and are localized to supported languages.

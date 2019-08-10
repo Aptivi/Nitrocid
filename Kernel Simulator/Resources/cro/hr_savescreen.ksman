@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Naredba Shell "??uva zaslon"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba za spremanje zaslona
+
+Sa??etak: Pokre??e va?? trenutni ??uvar zaslona
+
+Opis
+
+Ova naredba mo??e za??tititi va?? LCD zaslon od izgaranja i prikazuje vam trenutnu ??uvar zaslona koju ste postavili vi ili kernel. 
+
+Upotreba naredbe
+
+* ??tedi zaslon
+-BODY END-
+
+-COLOR CONFIGURATION-
+savescreen=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+savescreen command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

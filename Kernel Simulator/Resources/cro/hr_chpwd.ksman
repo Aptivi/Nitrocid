@@ -1,0 +1,39 @@
+(*MAN START*)
+
+-TITLE:Naredba ljuske "chpwd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba chpwd
+
+Sa??etak: Mo??ete promijeniti lozinku ili tu??u lozinku
+
+Opis
+
+Ako je potrebno promijeniti lozinku za va?? ra??un ili za ra??un nekog drugog, tada mo??ete upotrijebiti ovu naredbu za promjenu zaporke ili tu??e lozinke.
+
+Ovo je korisno ako mislite da va?? ra??un ili ra??un nekog drugog ima pogre??nu lozinku ili je na popisu jednostavnih lozinki smje??ten na mre??i.
+
+Ova naredba zahtijeva da odredite svoju lozinku ili tu??u lozinku prije nego ??to napi??ete novu lozinku.
+
+Upotreba naredbe
+
+* chpwd (korisni??ko ime) (userPass) (newPass) (potvrdi)
+
+Primjeri
+
+* chpwd joe easy1234 p4ssw0rd p4ssw0rd: Promijenio je Joe-ovu lozinku u p4ssw0rd iz easy1234
+-BODY END-
+
+-COLOR CONFIGURATION-
+chpwd (Username) (UserPass) (newPass) (confirm)=>Green
+chpwd joe easy1234 p4ssw0rd p4ssw0rd:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+chpwd command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

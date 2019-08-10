@@ -365,3 +365,6 @@ Nemusíte mít v systému nainstalován libcpanel-json-xs-perl. Informace o inst
 >> Rámečky, soubory, řádky a sloupce <<
 > Rámeček {0}: Soubor: {1} | Řádek: {2} | Sloupec: {3}
 > Při pokusu o získání rámových informací došlo k chybě. {0}: {1}
+Nastavili jste systémový jazyk na něco jiného než angličtinu. Omlouváme se za nepříjemnosti, ale zdá se, že Google a její překladatel jsou velmi divní ohledně překládání kódových bloků pro jakýkoli programovací jazyk. Přestože opravujeme všechny bloky kódu pro přeložené manuální stránky, doporučujeme vám otevřít si lístek do Překladače Google Překladač překladu kódových bloků, které nejsou určeny k překladu, a nastavit svůj systémový jazyk na angličtinu, pokud budete mluvit.
+Znovu načte úpravy.
+Režimy byly znovu načteny.

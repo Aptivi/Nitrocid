@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Perintah Shell "reloadmods"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+perintah reloadmods
+
+Ringkasan: Mengubah suai semula
+
+Penerangan
+
+Perintah ini membolehkan anda memuat semula pengubahsuaian apabila perubahan dalam kod sumber untuk mod yang ditentukan dibuat atau mod ditambah atau dikeluarkan.
+
+Penggunaan perintah
+
+* reloadmods
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadmods=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadmods command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

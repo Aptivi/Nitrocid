@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Naredba ljuske "adduser"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba adduser
+
+Sa??etak: Korisni??ko ime mo??ete dodati kad god vam treba, uz lozinku ako je potrebno.
+
+Opis
+
+Ako trebate dodati osobu koja ??eli koristiti kernel, mo??ete dodati korisnike za njih i dopustiti im da odrede lozinku ako trebaju. 
+
+Me??utim, ako trebate dodati osobu koja ima administratorska prava, trebali biste postaviti dopu??tenje za korisnika da dopu??ta administratorska prava. 
+
+Za vi??e informacija o tome kako biste trebali postaviti dozvolu za korisnike, pogledajte "usermanual perm."
+
+Upotreba naredbe
+
+* adduser (userName)
+* adduser (userName) [lozinka] [potvrda]
+
+Primjeri
+
+* adduser joe: Ovo ??e stvoriti novi ra??un s imenom "joe"
+* adduser test pass1234 pass1234: Ovo ??e stvoriti novi ra??un s imenom "test" i lozinkom "pass1234"
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser (userName)=>Green
+adduser (userName) [password] [confirm]=>Green
+adduser joe:=>Yellow
+adduser test pass1234 pass1234:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+adduser command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

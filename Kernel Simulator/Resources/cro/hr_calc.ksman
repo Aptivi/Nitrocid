@@ -1,0 +1,55 @@
+(*MAN START*)
+
+-TITLE:Naredba ljuske "calc"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba calc
+
+Sa??etak: Mo??ete izra??unati izraze
+
+Opis
+
+Ako vam je potrebna pomo?? za izra??un izraza pri mno??enju i dijeljenju velikog broja ili ako trebate br??e izra??unati izraze, ova naredba je za vas.
+
+Sredi??nja procesna jedinica (CPU) koristi za obradu i procjenu izraza i ispisuje ih na ekranu kad zavr??i. 
+
+Automatski utvr??uje je li cijeli ili dvostruki gledanjem izraza za decimalne brojeve, a ako jedan od brojeva ima decimalnu to??ku, izlaz izraza prebacuje u Double, ina??e ??e biti Integer.
+
+Ako poku??ate prije??i overflow dok u izrazu nema decimalnih to??aka, rezultirat ??e pogre??kom Integer Overflow. 
+
+Zagrade koji se nalaze unutar njega tako??er mo??ete dodati kao glavni prioritet jer se izra??unava u obliku PEMDAS: Zagrade, eksponenti, mno??enje, podjela, zbrajanje, oduzimanje.
+
+Upotreba naredbe
+
+* calc (broj) (| - | * | / |%) (broj) ...
+* calc ((broj) (| - | * | / |%) (broj) ...) (| - | * | / |%) (broj) ...
+
+Primjeri
+
+* calc 32 * 2048: To ??e se pomno??iti 32 do 2048, a rezultat je 65536
+* calc (128,50 - 42,25) / 2: Ovo ??e procijeniti izraze koji se nalaze u zagradama, a zatim dijeli rezultat na 2, a rezultat je 43,13
+* calc 128,50 - 42,25 / 2: Me??utim, ako ste isprobali gornji primjer bez zagrada, 128,50 - 42,25 vi??e nije prioritet, a rezultat je 107,38
+* calc ((48.22 / 3.88) * (68.88 95.22)) 9 - .41: Ovo ??e procijeniti ovaj izraz, a rezultat je 2048
+* calc 3 * 5 * 5 * 3: Ovo ??e pomno??iti 3 na 5 na prvom dijelu, i pomno??iti 5 sa 3 na drugom dijelu, a zatim ih mno??iti, a rezultat je 225
+* calc (1024 * 1024 * 1024) * 2.0: To ??e se pomno??iti 1024 na 1024 na 1024, zatim ??e se pomno??iti sa 2 pomo??u procesora s pomi??nom ta??kom, a rezultat je 2147483648.
+-BODY END-
+
+-COLOR CONFIGURATION-
+calc (number) (+|-|*|/|%) (number) ...=>Green
+calc ((number) (+|-|*|/|%) (number) ...) (+|-|*|/|%) (number) ...=>Green
+calc 32 * 2048:=>Yellow
+calc (128.50 - 42.25) / 2:=>Yellow
+calc 128.50 - 42.25 / 2:=>Yellow
+calc ((48.22 / 3.88) * (68.88 + 95.22)) + 9 - .41:=>Yellow
+calc 3*5 * 5*3:=>Yellow
+calc (1024*1024*1024) * 2.0:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+calc command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

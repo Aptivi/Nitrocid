@@ -1,0 +1,34 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Dostupni argumenti jezgre
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the kernel arguments that are available in the kernel is put.
+-BODY START-
+Kako pokrenuti argumente? 
+
+Argument kernelu je mogu??nost ??ije ??e se jezgre ili njeni dijelovi pona??ati druga??ije na temelju opcija koje ste odabrali. 
+
+Argumente mo??ete pokrenuti na sljede??em ponovnom pokretanju pomo??u naredbe arginj kada je na shell. 
+
+Brzo mo??ete prikazati na dva na??ina:
+
+1. Promjenom opcije konfiguracije "Odziv na argumente pri pokretanju" u True (Za vi??e informacija o config-u koristite "usermanual Configuration file for your Kernel")
+2. Pokretanje Kernel Simulator s argumentom cmdline promptArgs (npr. "Kernel Simulator.exe" promptArgs)
+
+Korisni argumenti:
+
+1. nohwprobe: Onemogu??uje automatsko sondiranje hardvera prilikom dizanja jezgre
+2. ti??ina: Ne dozvolite da kernel ni??ta ka??e na boot
+3. cmdinject: Automatsko pokretanje naredbi kada ste prijavljeni. Mo??ete odvojiti vi??e naredbi dvoto??kom s razmacima (npr. Cmdinject setthemes Bluespire: uklanjanje pogre??aka arginj)
+4. ispravljanje pogre??aka: omogu??uje dijagnosti??ke poruke na kernelu da omogu??e uklanjanje pogre??aka. 
+5. odr??avanje: prelazi u siguran na??in rada, modovi se ne??e u??itati, a ??uvari zaslona ne mogu se u??itati.
+6. pomo??: daje vam savjete ako niste sigurni ??to razdvojiti
+-BODY END-
+
+-SECTIONS-
+How to run arguments? and how do I make the prompt appear?=>SE1
+Useful arguments:=>SE1
+-SECTIONS END-

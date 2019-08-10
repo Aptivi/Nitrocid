@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Added debug on each phase
 13. Added operating system placeholder for use with MOTD and MAL
 14. Added newline parser to make MOTD support more than 1 line
+
+KS 0.0.6.10
+
+1. Simplified namespace to KS
+2. Fixed codeblocks for Hindi, Chinese, and 1/2 Czech (See comment on GetCommand.vb)
+3. Added missing help entry for "reloadsaver"
+4. Added "reloadmods" command
+5. Made KernelVersion and EnvironmentOSType read-only
+6. "promptArgs" cmdline argument removed
+7. Extra stack now not generated when rebooting
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

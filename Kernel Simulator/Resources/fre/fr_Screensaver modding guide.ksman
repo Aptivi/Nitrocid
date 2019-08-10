@@ -19,11 +19,11 @@ Modding de base (??conomiseur d'??cran)
 2. Dans la section Compile, cliquez sur Build Events, puis ??crivez-le sur la ligne de commande de l'??v??nement post-build:
 - copier .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (placez SS avant le .m afin que KS le reconnaisse comme ??cran de veille et non comme mod)
 - del / Q *. * (pour vous assurer qu'aucun fichier DLL factice n'est cr???? car nous n'utilisons pas DLL pour les mods)
-3. R??p??tez les ??tapes 9 ?? 16 du guide de Modding, mais remplacez Imports Kernel_Simulator.ModParser par Imports Kernel_Simulator.Screensaver.
+3. R??p??tez les ??tapes 9 ?? 16 du guide de Modding, mais remplacez Imports KS.ModParser par Imports KS.Screensaver.
 4. Entre les lignes Public Class ... et End Class, faites savoir ?? Visual Studio 2017 que vous allez cr??er votre ??conomiseur d'??cran KS en ??crivant: Impl??mente ICustomSaver.
 5. Si vous souhaitez ajouter des espaces de nom, ces r??gles doivent ??tre respect??es:
-1) N'importez pas Kernel_Simulator par lui-m??me. 
-2) Lors de l???importation de modules / classes tels que TextWriterColor, l?????criture est la suivante: Imports Kernel_Simulator.TextWriterColor
+1) N'importez pas KS par lui-m??me. 
+2) Lors de l???importation de modules / classes tels que TextWriterColor, l?????criture est la suivante: Imports KS.TextWriterColor
 6. D??finissez les propri??t??s des informations de mod en mettant sous IScript Implements:
 Propri??t?? initialis??e en tant que bool??en impl??mente ICustomSaver.Initialized
 7. Cr??ez votre sous-??conomiseur d???init init nomm?? InitSaver () qui impl??mente ICustomSaver.InitSaver en ??crivant:
@@ -64,14 +64,14 @@ L'??conomiseur d'??cran de la bo??te de message de retour indique aux gens que l
 5. Ecrivez au-dessus de la classe publique DORS:
 - Syst??me d'importation
 - Importations System.Threading
-- Importe Kernel_Simulator.Screensaver
-- Importe Kernel_Simulator.TextWriterColor
-- Importe Kernel_Simulator.Login
+- Importe KS.Screensaver
+- Importe KS.TextWriterColor
+- Importe KS.Login
 6. Vous devriez avoir des erreurs en disant que ces sous-marins devraient ??tre cr????s.
 7. Cr??ez votre gestionnaire d?????cran de d??marrage en ??conomiseur d?????cran en ??crivant:
 Propri??t?? initialis??e en tant que bool??en impl??mente ICustomSaver.Initialized
 Sub InitSaver () impl??mente ICustomSaver.InitSaver
-Wln ("Chargez cet ??conomiseur d'??cran en utilisant" "loadSaver SORSS.m" "et" "setsaver SORSS.m" "", "neutralText")
+W ("Chargez cet ??conomiseur d'??cran en utilisant" "loadSaver SORSS.m" "et" "setsaver SORSS.m" "", "neutralText")
 Initialis?? = Vrai
 End Sub
 8. Comme nous n'impl??mentons rien avant d'afficher l'??cran de veille, nous allons laisser ce champ vide:
@@ -111,7 +111,7 @@ W ("-", "neutralText")
 Pour l As Integer = 0 To strlen - 1
 W ("-", "neutralText")
 Suivant
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 End Sub
 Public Shared Sub WriteMsg (ByVal TypeID en tant qu'entier, ByVal MsgID en tant qu'entier)
 Dim BackMessages As String () = {"<OWNER> sera bient??t de retour.", "<OWNER> est occup??. Il sera de retour bient??t."}
@@ -127,15 +127,15 @@ Cas 3
 text = ParsePlaces (RudeMessages (MsgID))
 Fin S??lectionner
 InitializeBar (text.Length)
-Wln ("| {0} |", "texte neutre", texte)
+W ("| {0} |", "texte neutre", texte)
 InitializeBar (text.Length)
 End Sub
 12. Le code devrait ressembler ?? ceci:
 Syst??me d'importation
 Importations System.Threading
-Importe Kernel_Simulator.Screensaver
-Importe Kernel_Simulator.TextWriterColor
-Importe Kernel_Simulator.Login
+Importe KS.Screensaver
+Importe KS.TextWriterColor
+Importe KS.Login
 Classe publique SoonOvernightRude
 Impl??mente ICustomSaver
 Propri??t?? initialis??e en tant que bool??en impl??mente ICustomSaver.Initialized
@@ -144,7 +144,7 @@ Public S_Random As New Random () 'Initialise le g??n??rateur de nombres al??atoi
 Public O_Random As New Random () 'Initialise le g??n??rateur de nombres al??atoires
 Public R_Random As New Random () 'Initialise le g??n??rateur de nombres al??atoires
 Sub InitSaver () impl??mente ICustomSaver.InitSaver
-Wln ("D??finissez cet ??conomiseur d'??cran par d??faut ?? l'aide de" "setsaver SORSS.m" "", "neutralText")
+W ("D??finissez cet ??conomiseur d'??cran par d??faut ?? l'aide de" "setsaver SORSS.m" "", "neutralText")
 Initialis?? = Vrai
 End Sub
 Sub PreDisplay () impl??mente ICustomSaver.PreDisplay
@@ -178,7 +178,7 @@ W ("-", "neutralText")
 Pour l As Integer = 0 To strlen - 1
 W ("-", "neutralText")
 Suivant
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 End Sub
 Public Shared Sub WriteMsg (ByVal TypeID en tant qu'entier, ByVal MsgID en tant qu'entier)
 Dim BackMessages As String () = {"<OWNER> sera bient??t de retour.", "<OWNER> est occup??. Il sera de retour bient??t."}
@@ -194,7 +194,7 @@ Cas 3
 text = ParsePlaces (RudeMessages (MsgID))
 Fin S??lectionner
 InitializeBar (text.Length)
-Wln ("| {0} |", "texte neutre", texte)
+W ("| {0} |", "texte neutre", texte)
 InitializeBar (text.Length)
 End Sub
 Classe de fin
@@ -206,7 +206,7 @@ Classe de fin
 1. R??p??tez les ??tapes 1 ?? 4 du premier exemple: messages dans la bo??te de message de la console et bient??t, dans la nuit ou impolis (dispara??tre ...).
 2. Ecrivez au-dessus du blanc de la classe publique (en supposant que votre nom de classe est vide):
 - Syst??me d'importation
-- Importe Kernel_Simulator.Screensaver
+- Importe KS.Screensaver
 3. Ecrivez ces informations ci-dessous dans Implements ICustomSaver:
 La propri??t?? publique initialis??e en tant que bool??en impl??mente ICustomSaver.Initialized
 Public Sub InitSaver () impl??mente ICustomSaver.InitSaver
@@ -221,7 +221,7 @@ End Sub
 Console.Clear ()
 5. Le code devrait ressembler ?? ceci:
 Syst??me d'importation
-Importe Kernel_Simulator.Screensaver
+Importe KS.Screensaver
 Classe publique vierge
 Impl??mente ICustomSaver
 La propri??t?? publique initialis??e en tant que bool??en impl??mente ICustomSaver.Initialized
@@ -242,9 +242,9 @@ Cet exemple va vous aider ?? d??marrer avec les animations.
 
 Syst??me d'importation
 Importe Microsoft.VisualBasic.Constants
-Importe Kernel_Simulator.TextWriterColor
+Importe KS.TextWriterColor
 Importations System.Threading
-Importe Kernel_Simulator.Screensaver
+Importe KS.Screensaver
 Classe publique ANI
 Impl??mente ICustomSaver
 La propri??t?? publique initialis??e en tant que bool??en impl??mente ICustomSaver.Initialized
@@ -260,7 +260,7 @@ Console.Clear ()
 Si Custom.CancellationPending = True Then 'Cela r??soudra le probl??me de la t??che occup??e.
 Sortie pour
 Fin si
-Wln (aniset (CurrentStep), "neutralText")
+W (aniset (CurrentStep), "neutralText")
 Thread.Sleep (150)
 Suivant
 End Sub
@@ -335,9 +335,9 @@ Classe de fin
 
 Syst??me d'importation
 Importe Microsoft.VisualBasic.Constants
-Importe Kernel_Simulator.TextWriterColor
+Importe KS.TextWriterColor
 Importe Microsoft.VisualBasic.Strings
-Importe Kernel_Simulator.Screensaver
+Importe KS.Screensaver
 Classe publique dynamique
 Impl??mente ICustomSaver
 La propri??t?? publique initialis??e en tant que bool??en impl??mente ICustomSaver.Initialized
@@ -362,12 +362,12 @@ Suivant
 Check = 0: oldCheck = 0: ProgWent = 0
 End Sub
 Public Sub ShowStats ()
-Wln ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+W ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
 UpdateProgressBar (Res * 100/1000000)
 End Sub
 Public Sub UpdateProgressBar (ByVal pourcent As String)
 Contr??le = pourcentage / 5
-Wln (V??rifier, "neutralText")
+W (V??rifier, "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
 W ("--------------------", "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
@@ -403,9 +403,9 @@ Public Class...=>Cyan
 Visual Studio 2017=>Magenta
 Imports Implements=>Cyan
 ICustomSaver=>Green
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
-Kernel_Simulator.TextWriterColor=>Green
+KS.TextWriterColor=>Green
 Property As Boolean Sub=>Cyan
 Initialized ICustomSaver.Initialized=>Green
 Kernel Simulator=>Green

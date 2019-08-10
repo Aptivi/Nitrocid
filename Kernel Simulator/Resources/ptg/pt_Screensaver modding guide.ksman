@@ -19,11 +19,11 @@ Modding b??sico (screensaver)
 2. Na se????o Compile, clique em Build Events e, em seguida, escreva isso na linha de comando do evento Post-build:
 - copy .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (Coloque SS antes do .m para que o KS o reconhe??a como protetor de tela e n??o como mod)
 - del / Q *. * (para ter certeza de que n??o h?? arquivos DLL sendo criados, j?? que n??o usamos DLLs para mods)
-3. Repita os passos 9-16 a partir do guia de mods, mas substitua o Kernel_Simulator.ModParser importa????es com importa????es Kernel_Simulator.Screensaver
+3. Repita os passos 9-16 a partir do guia de mods, mas substitua o KS.ModParser importa????es com importa????es KS.Screensaver
 4. Entre as classes Public Class ... e End Class, deixe que o Visual Studio 2017 saiba que voc?? criar?? seu protetor de tela KS escrevendo: Implements ICustomSaver
 5. Se voc?? for adicionar namespaces, essas regras dever??o ser atendidas:
-1) N??o importe o Kernel_Simulator sozinho. 
-2) Ao importar m??dulos / classes como TextWriterColor, est?? escrito assim: Importa o Kernel_Simulator.TextWriterColor
+1) N??o importe o KS sozinho. 
+2) Ao importar m??dulos / classes como TextWriterColor, est?? escrito assim: Importa o KS.TextWriterColor
 6. Defina propriedades para informa????es de modifica????o, colocando abaixo o Implements IScript:
 Propriedade inicializada como implementa????es booleanas ICustomSaver.Initialized
 7. Fa??a o seu protetor de tela de inicializa????o sub chamado InitSaver () que implementa o ICustomSaver.InitSaver, escrevendo:
@@ -64,14 +64,14 @@ O protetor de tela da caixa de mensagem de retorno informa ??s pessoas que o pro
 5. Escreva acima da classe p??blica SOR:
 - Sistema de Importa????o
 - Imports System.Threading
-- Importa o Kernel_Simulator.Screensaver
-- Importa o Kernel_Simulator.TextWriterColor
-- Importa o Kernel_Simulator.Login
+- Importa o KS.Screensaver
+- Importa o KS.TextWriterColor
+- Importa o KS.Login
 6. Voc?? deve receber erros dizendo que esses subs devem ser criados.
 7. Fa??a o seu manipulador de eventos start screensaver escrevendo:
 Propriedade inicializada como implementa????es booleanas ICustomSaver.Initialized
 Sub InitSaver () implementa ICustomSaver.InitSaver
-Wln ("Carrega este screensaver usando" "loadsaver SORSS.m" "e" "setsaver SORSS.m" "", "neutralText")
+W ("Carrega este screensaver usando" "loadsaver SORSS.m" "e" "setsaver SORSS.m" "", "neutralText")
 Inicializado = Verdadeiro
 End Sub
 8. Como n??o estamos implementando nada antes de exibir a prote????o de tela, deixaremos isso em branco:
@@ -111,7 +111,7 @@ W ("-", "neutralText")
 Para l As Integer = 0 Para strlen - 1
 W ("-", "neutralText")
 Pr??ximo
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 End Sub
 Public Shared Sub WriteMsg (ByVal TypeID como Integer, ByVal MsgID como Integer)
 Dim BackMessages As String () = {"<OWNER> retornar?? em breve.", "<OWNER> est?? ocupado. Ele retornar?? em breve."}
@@ -127,15 +127,15 @@ Caso 3
 text = ParsePlaces (RudeMessages (MsgID))
 Selecionar final
 InitializeBar (text.Length)
-Wln ("| {0} |", "neutralText", texto)
+W ("| {0} |", "neutralText", texto)
 InitializeBar (text.Length)
 End Sub
 12. O c??digo deve ficar assim:
 Sistema de Importa????o
 Imports System.Threading
-Importa o Kernel_Simulator.Screensaver
-Importa o Kernel_Simulator.TextWriterColor
-Importa o Kernel_Simulator.Login
+Importa o KS.Screensaver
+Importa o KS.TextWriterColor
+Importa o KS.Login
 Classe p??blica SoonOvernightRude
 Implementa ICustomSaver
 Propriedade inicializada como implementa????es booleanas ICustomSaver.Initialized
@@ -144,7 +144,7 @@ Public S_Random As New Random () 'Inicializa o gerador de n??meros aleat??rios
 Public O_Random As New Random () 'Inicializa o gerador de n??meros aleat??rios
 Public R_Random As New Random () 'Inicializa o gerador de n??meros aleat??rios
 Sub InitSaver () implementa ICustomSaver.InitSaver
-Wln ("Defina este protetor de tela como padr??o usando" "setsaver SORSS.m" "", "neutralText")
+W ("Defina este protetor de tela como padr??o usando" "setsaver SORSS.m" "", "neutralText")
 Inicializado = Verdadeiro
 End Sub
 Sub PreDisplay () implementa ICustomSaver.PreDisplay
@@ -178,7 +178,7 @@ W ("-", "neutralText")
 Para l As Integer = 0 Para strlen - 1
 W ("-", "neutralText")
 Pr??ximo
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 End Sub
 Public Shared Sub WriteMsg (ByVal TypeID como Integer, ByVal MsgID como Integer)
 Dim BackMessages As String () = {"<OWNER> retornar?? em breve.", "<OWNER> est?? ocupado. Ele retornar?? em breve."}
@@ -194,7 +194,7 @@ Caso 3
 text = ParsePlaces (RudeMessages (MsgID))
 Selecionar final
 InitializeBar (text.Length)
-Wln ("| {0} |", "neutralText", texto)
+W ("| {0} |", "neutralText", texto)
 InitializeBar (text.Length)
 End Sub
 Classe final
@@ -206,7 +206,7 @@ Classe final
 1. Repita as etapas de 1 a 4 no primeiro exemplo: mensagens na caixa do console e mensagens em breve, noturno ou rude (v?? embora ...)
 2. Escreva acima da classe p??blica em branco (supondo que o nome da sua classe seja em branco):
 - Sistema de Importa????o
-- Importa o Kernel_Simulator.Screensaver
+- Importa o KS.Screensaver
 3. Escreva estes abaixo dos Implementos ICustomSaver:
 Propriedade p??blica inicializada como implementa????es booleanas ICustomSaver.Initialized
 Public Sub InitSaver () Implementa ICustomSaver.InitSaver
@@ -221,7 +221,7 @@ End Sub
 Console.Clear ()
 5. O c??digo deve ficar assim:
 Sistema de Importa????o
-Importa o Kernel_Simulator.Screensaver
+Importa o KS.Screensaver
 Classe p??blica em branco
 Implementa ICustomSaver
 Propriedade p??blica inicializada como implementa????es booleanas ICustomSaver.Initialized
@@ -242,9 +242,9 @@ Este exemplo ir?? ajud??-lo com as anima????es.
 
 Sistema de Importa????o
 Importa o Microsoft.VisualBasic.Constants
-Importa o Kernel_Simulator.TextWriterColor
+Importa o KS.TextWriterColor
 Imports System.Threading
-Importa o Kernel_Simulator.Screensaver
+Importa o KS.Screensaver
 Classe p??blica ANI
 Implementa ICustomSaver
 Propriedade p??blica inicializada como implementa????es booleanas ICustomSaver.Initialized
@@ -260,7 +260,7 @@ Console.Clear ()
 Se Custom.CancellationPending = True Then 'Isso corrigir?? o problema da tarefa estar ocupada.
 Saia para
 Fim se
-Wln (aniset (CurrentStep), "neutralText")
+W (aniset (CurrentStep), "neutralText")
 Thread.Sleep (150)
 Pr??ximo
 End Sub
@@ -335,9 +335,9 @@ Classe final
 
 Sistema de Importa????o
 Importa o Microsoft.VisualBasic.Constants
-Importa o Kernel_Simulator.TextWriterColor
+Importa o KS.TextWriterColor
 Imports Microsoft.VisualBasic.Strings
-Importa o Kernel_Simulator.Screensaver
+Importa o KS.Screensaver
 Din??mica de Classe P??blica
 Implementa ICustomSaver
 Propriedade p??blica inicializada como implementa????es booleanas ICustomSaver.Initialized
@@ -362,12 +362,12 @@ Pr??ximo
 Verificar = 0: oldCheck = 0: ProgWent = 0
 End Sub
 Public Sub ShowStats ()
-Wln ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+W ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
 UpdateProgressBar (Res * 100/1000000)
 End Sub
 Public Sub UpdateProgressBar (ByVal por cento como string)
 Verificar = por cento / 5
-Wln (verificar, "neutralText")
+W (verificar, "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
 W ("--------------------", "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
@@ -403,9 +403,9 @@ Public Class...=>Cyan
 Visual Studio 2017=>Magenta
 Imports Implements=>Cyan
 ICustomSaver=>Green
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
-Kernel_Simulator.TextWriterColor=>Green
+KS.TextWriterColor=>Green
 Property As Boolean Sub=>Cyan
 Initialized ICustomSaver.Initialized=>Green
 Kernel Simulator=>Green

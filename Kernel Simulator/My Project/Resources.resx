@@ -235,6 +235,9 @@
   <data name="reloadsaver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eng\reloadsaver.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eng\reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="lockscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eng\lockscreen.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1458,6 +1461,201 @@
   </data>
   <data name="hi_useddeps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ind\hi_useddeps.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_adduser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_adduser.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_alias" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_alias.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_arginj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_arginj.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_Available_commands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_Available commands.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_Available_command_line_arguments" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_Available command-line arguments.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_Available_FTP_commands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_Available FTP commands.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_Available_kernel_arguments" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_Available kernel arguments.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_Available_manual_pages" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_Available manual pages.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_chdir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_chdir.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_chhostname" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_chhostname.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_chmal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_chmal.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_chmotd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_chmotd.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_chpwd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_chpwd.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_chusrname" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_chusrname.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_cls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_cls.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_Configuration_for_your_Kernel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_Configuration for your Kernel.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_debuglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_debuglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_ftp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_ftp.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_changelocaldir_or_cdl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP changelocaldir or cdl.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_changeremotedir_or_cdr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP changeremotedir or cdr.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_connect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP connect.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_currlocaldir_or_pwdl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP currlocaldir or pwdl.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_currremotedir_or_pwdr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP currremotedir or pwdr.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_delete_or_del" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP delete or del.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_disconnect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP disconnect.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_download_or_get" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP download or get.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_listlocal_or_lsl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP listlocal or lsl.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_listremote_or_lsr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP listremote or lsr.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_rename_or_ren" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP rename or ren.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_FTP_upload_or_put" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_FTP upload or put.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_History_of_Kernel_Simulator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_History of Kernel Simulator.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_hwprobe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_hwprobe.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_Introduction_to_the_Kernel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_Introduction to the Kernel.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_list.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_lockscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_lockscreen.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_logout.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_lscomp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_lscomp.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_lsnet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_lsnet.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_lsnettree" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_lsnettree.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_md" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_md.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_Modding_guide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_Modding guide.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_netinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_netinfo.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_noaliases" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_noaliases.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_perm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_perm.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_ping" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_ping.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_rd.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_read" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_read.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_reboot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_reboot.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_reloadconfig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_reloadconfig.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_reloadsaver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_reloadsaver.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_rmuser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_rmuser.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_savescreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_savescreen.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_Screensaver_modding_guide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_Screensaver modding guide.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_setcolors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_setcolors.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_setsaver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_setsaver.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_setthemes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_setthemes.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_showmotd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_showmotd.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_showtd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_showtd.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_showtdzone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_showtdzone.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_shutdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_shutdown.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_sysinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_sysinfo.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_useddeps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_useddeps.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_cdbglog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_cdbglog.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="hr_chlang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_chlang.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="hr_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="it_adduser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ita\it_adduser.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2887,4 +3085,50 @@
   <data name="zh_sses" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chi\zh_sses.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
+  <data name="cro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="zh_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chi\zh_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cs_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cze\cs_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="de_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ger\de_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="es_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spa\es_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fi_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fin\fi_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fr_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fre\fr_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hi_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ind\hi_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hr_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cro\hr_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="it_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ita\it_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ms_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mal\ms_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nl_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dtc\nl_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pt_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ptg\pt_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sv_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\swe\sv_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tr_reloadmods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tky\tr_reloadmods.ksman;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+
 </root>

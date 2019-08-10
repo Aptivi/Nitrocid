@@ -48,8 +48,8 @@ Classe publique ModName
 Classe de fin
 17. Entre les lignes Public Class ... et End Class, faites savoir ?? Visual Studio 2017 que vous allez cr??er votre mod KS en ??crivant: Impl??mente IScript
 18. Si vous souhaitez ajouter des espaces de nom, ces r??gles doivent ??tre respect??es:
-1) N'importez pas Kernel_Simulator par lui-m??me. 
-2) Lors de l???importation de modules / classes tels que TextWriterColor, l?????criture est la suivante: Imports Kernel_Simulator.TextWriterColor
+1) N'importez pas KS par lui-m??me. 
+2) Lors de l???importation de modules / classes tels que TextWriterColor, l?????criture est la suivante: Imports KS.TextWriterColor
 19. D??finissez les propri??t??s des informations de mod en mettant sous IScript Implements:
 Propri??t?? Cmd As String Impl??mente IScript.Cmd
 Propri??t?? Def As String impl??mente IScript.Def
@@ -131,8 +131,8 @@ Hello World est l'exemple de d??part populaire pour tous les programmeurs.
 3. Cliquez sur Ajouter et le code sera pr??t.
 4. Ecrivez ci-dessous le (supposez que votre nom de mod est HelloGuys) Classe publique HelloGuys: Implements IScript
 5. Ecrivez au-dessus de la classe publique HelloGuys:
-- Importe Kernel_Simulator.ModParser
-- Importe Kernel_Simulator.TextWriterColor
+- Importe KS.ModParser
+- Importe KS.TextWriterColor
 6. Vous devriez avoir des erreurs en disant que ces sous-marins devraient ??tre cr????s.
 7. Cr??ez votre gestionnaire d?????v??nements d??but mod en ??crivant:
 Propri??t?? Cmd As String Impl??mente IScript.Cmd
@@ -144,11 +144,11 @@ Cmd = ""
 Def = ""
 Name = "HelloGuys"
 Version = "1.0"
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 End Sub
 8. D??finissez votre gestionnaire d?????v??nement stop en ??crivant:
 Sub StopMod () impl??mente IScript.StopMod
-Wln ("Au revoir monde", "texte neutre")
+W ("Au revoir monde", "texte neutre")
 End Sub
 9. Puisque nous n'impl??mentons pas de commandes ni de r??pondeurs aux ??v??nements, nous allons laisser ces champs vides:
 Sub PerformCmd (Arguments facultatifs de ByVal As String = "") Impl??mente IScript.PerformCmd
@@ -157,8 +157,8 @@ Sub InitEvents (ByVal ev As String) Impl??mente IScript.InitEvents
 End Sub
 10. Le code devrait ressembler ?? ceci en VB:
 
-Importe Kernel_Simulator.ModParser
-Importe Kernel_Simulator.TextWriterColor
+Importe KS.ModParser
+Importe KS.TextWriterColor
 Classe publique HelloGuys
 Impl??mente IScript
 Propri??t?? Cmd As String Impl??mente IScript.Cmd
@@ -170,10 +170,10 @@ Cmd = ""
 Def = ""
 Name = "HelloGuys"
 Version = "1.0"
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 End Sub
 Sub StopMod () impl??mente IScript.StopMod
-Wln ("Au revoir monde", "texte neutre")
+W ("Au revoir monde", "texte neutre")
 End Sub
 Sub PerformCmd (Arguments facultatifs de ByVal As String = "") Impl??mente IScript.PerformCmd
 End Sub
@@ -183,8 +183,8 @@ Classe de fin
 
 ... ou en C
 
-using MP = Kernel_Simulator.ModParser;
-using TWC = Kernel_Simulator.TextWriterColor;
+using MP = KS.ModParser;
+using TWC = KS.TextWriterColor;
 Classe publique HelloGuys: MP.IScript
 {
 cha??ne publique Cmd {get; 
@@ -197,11 +197,11 @@ Cmd = "";
 Def = "";
 Name = "HelloGuys";
 Version = "1.0";
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 public vide StopMod ()
 {
-TWC.Wln ("Au revoir monde", "texte neutre");
+TWC.W ("Au revoir monde", "texte neutre");
 }
 public void PerformCmd (string args = "")
 {
@@ -239,12 +239,12 @@ Sub InitEvents (ByVal ev As String) Impl??mente IScript.InitEvents
 End Sub
 4. D??finissez votre gestionnaire de commandes et laissez-le r??pondre ?? la commande SayHello mod:
 Sub PerformCmd (Arguments facultatifs de ByVal As String = "") Impl??mente IScript.PerformCmd
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 End Sub
 5. Le code devrait ressembler ?? ceci en VB:
 
-Importe Kernel_Simulator.ModParser
-Importe Kernel_Simulator.TextWriterColor
+Importe KS.ModParser
+Importe KS.TextWriterColor
 Classe publique HelloShell
 Impl??mente IScript
 Propri??t?? Cmd As String Impl??mente IScript.Cmd
@@ -260,7 +260,7 @@ End Sub
 Sub StopMod () impl??mente IScript.StopMod
 End Sub
 Sub PerformCmd (Arguments facultatifs de ByVal As String = "") Impl??mente IScript.PerformCmd
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 End Sub
 Sub InitEvents (ByVal ev As String) Impl??mente IScript.InitEvents
 End Sub
@@ -268,8 +268,8 @@ Classe de fin
 
 ... ou en C
 
-using MP = Kernel_Simulator.ModParser;
-using TWC = Kernel_Simulator.TextWriterColor;
+using MP = KS.ModParser;
+using TWC = KS.TextWriterColor;
 Classe publique HelloShell: MP.IScript
 {
 cha??ne publique Cmd {get; 
@@ -288,7 +288,7 @@ public vide StopMod ()
 }
 public void PerformCmd (string args = "")
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 public void InitEvents (string ev)
 {
@@ -303,15 +303,15 @@ public void InitEvents (string ev)
 2. D??finissez votre gestionnaire de commandes et laissez-le r??pondre ?? la commande SayHello mod:
 Sub PerformCmd (Arguments facultatifs de ByVal As String = "") Impl??mente IScript.PerformCmd
 Si (args = "HW") alors
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Autre
-Wln ("Fais-moi dire bonjour en ex??cutant" "SayHello HW." "", "NeutralText")
+W ("Fais-moi dire bonjour en ex??cutant" "SayHello HW." "", "NeutralText")
 Fin si
 End Sub
 3. Le code devrait ressembler ?? ceci en VB:
 
-Importe Kernel_Simulator.ModParser
-Importe Kernel_Simulator.TextWriterColor
+Importe KS.ModParser
+Importe KS.TextWriterColor
 Classe publique HelloArgs
 Impl??mente IScript
 Propri??t?? Cmd As String Impl??mente IScript.Cmd
@@ -328,9 +328,9 @@ Sub StopMod () impl??mente IScript.StopMod
 End Sub
 Sub PerformCmd (Arguments facultatifs de ByVal As String = "") Impl??mente IScript.PerformCmd
 Si (args = "HW") alors
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Autre
-Wln ("Fais-moi dire bonjour en ex??cutant" "SayHello HW." "", "NeutralText")
+W ("Fais-moi dire bonjour en ex??cutant" "SayHello HW." "", "NeutralText")
 Fin si
 End Sub
 Sub InitEvents (ByVal ev As String) Impl??mente IScript.InitEvents
@@ -339,8 +339,8 @@ Classe de fin
 
 ... ou en C
 
-using MP = Kernel_Simulator.ModParser;
-using TWC = Kernel_Simulator.TextWriterColor;
+using MP = KS.ModParser;
+using TWC = KS.TextWriterColor;
 Classe publique HelloArgs: MP.IScript
 {
 cha??ne publique Cmd {get; 
@@ -361,11 +361,11 @@ public void PerformCmd (string args = "")
 {
 if (args == "HW")
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 autre
 {
-TWC.Wln ("Fais-moi dire bonjour en lan??ant \" SayHello HW. \ "", "NeutralText");
+TWC.W ("Fais-moi dire bonjour en lan??ant \" SayHello HW. \ "", "NeutralText");
 }
 }
 public void InitEvents (string ev)
@@ -384,22 +384,22 @@ Dim splitArgs As String () = args.Split ({"" c})
 Dim ArgCount As Integer = 1
 Si splitArgs.Length> 1 alors
 If (splitArgs (0) = "Say" et splitArgs (1) = "Hello") alors
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Autre
-Wln ("Make me say Hello en ex??cutant" "WhatDoISay Say Hello." "", "NeutralText")
+W ("Make me say Hello en ex??cutant" "WhatDoISay Say Hello." "", "NeutralText")
 Fin si
 Autre
-Wln ("Make me say Hello en ex??cutant" "WhatDoISay Say Hello." "", "NeutralText")
+W ("Make me say Hello en ex??cutant" "WhatDoISay Say Hello." "", "NeutralText")
 Fin si
 Pour chaque argument sous forme de cha??ne dans splitArgs
-Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
+W ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
 ArgCount = 1
 Suivant
 End Sub
 3. Le code devrait ressembler ?? ceci en VB:
 
-Importe Kernel_Simulator.ModParser
-Importe Kernel_Simulator.TextWriterColor
+Importe KS.ModParser
+Importe KS.TextWriterColor
 Classe publique HelloArgs
 Impl??mente IScript
 Propri??t?? Cmd As String Impl??mente IScript.Cmd
@@ -419,15 +419,15 @@ Dim splitArgs As String () = args.Split ({"" c})
 Dim ArgCount As Integer = 1
 Si splitArgs.Length> 1 alors
 If (splitArgs (0) = "Say" et splitArgs (1) = "Hello") alors
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Autre
-Wln ("Make me say Hello en ex??cutant" "WhatDoISay Say Hello." "", "NeutralText")
+W ("Make me say Hello en ex??cutant" "WhatDoISay Say Hello." "", "NeutralText")
 Fin si
 Autre
-Wln ("Make me say Hello en ex??cutant" "WhatDoISay Say Hello." "", "NeutralText")
+W ("Make me say Hello en ex??cutant" "WhatDoISay Say Hello." "", "NeutralText")
 Fin si
 Pour chaque argument sous forme de cha??ne dans splitArgs
-Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
+W ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
 ArgCount = 1
 Suivant
 End Sub
@@ -437,8 +437,8 @@ Classe de fin
 
 ... ou en C
 
-using MP = Kernel_Simulator.ModParser;
-using TWC = Kernel_Simulator.TextWriterColor;
+using MP = KS.ModParser;
+using TWC = KS.TextWriterColor;
 Classe publique HelloArgs: MP.IScript
 {
 cha??ne publique Cmd {get; 
@@ -463,20 +463,20 @@ if (splitArgs.Length> 1)
 {
 if (splitArgs [0] == "Dites"
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 autre
 {
-TWC.Wln ("Faites-moi dire bonjour en lan??ant \" WhatDoISay Say Hello. \ "", "NeutralText");
+TWC.W ("Faites-moi dire bonjour en lan??ant \" WhatDoISay Say Hello. \ "", "NeutralText");
 }
 }
 autre
 {
-TWC.Wln ("Faites-moi dire bonjour en lan??ant \" WhatDoISay Say Hello. \ "", "NeutralText");
+TWC.W ("Faites-moi dire bonjour en lan??ant \" WhatDoISay Say Hello. \ "", "NeutralText");
 }
 foreach (string arg dans splitArgs)
 {
-TWC.Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs [ArgCount - 1]);
+TWC.W ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs [ArgCount - 1]);
 ArgCount = 1;
 }
 }
@@ -508,7 +508,7 @@ Dim endTime As DateTime = DateTime.Now
 vitesses (i) = Round ((jQueryFileSize / (endTime - startTime) .TotalSeconds))
 Suivant
 File.Delete (Environ ("USERPROFILE") "\ jQuery.js")
-Wln ("Vitesse de t??l??chargement: {0} Ko / s", "neutralText", speeds.Average ())
+W ("Vitesse de t??l??chargement: {0} Ko / s", "neutralText", speeds.Average ())
 End Sub
 4. Le code devrait ressembler ?? ceci en VB:
 
@@ -517,8 +517,8 @@ Importations System.Linq
 Importations System.IO
 Importations System.Math
 Importe Microsoft.VisualBasic.Interaction
-Importe Kernel_Simulator.ModParser
-Importe Kernel_Simulator.TextWriterColor
+Importe KS.ModParser
+Importe KS.TextWriterColor
 Classe publique InternetSpeed
 Impl??mente IScript
 Propri??t?? Cmd As String Impl??mente IScript.Cmd
@@ -544,7 +544,7 @@ Dim endTime As Date = Date.Now
 vitesses (i) = Round (jQueryFileSize / (endTime - startTime) .TotalSeconds)
 Suivant
 File.Delete (Environ ("USERPROFILE") "\ jQuery.js")
-Wln ("Vitesse de t??l??chargement: {0} Ko / s", "neutralText", speeds.Average ())
+W ("Vitesse de t??l??chargement: {0} Ko / s", "neutralText", speeds.Average ())
 End Sub
 Sub InitEvents (ByVal ev As String) Impl??mente IScript.InitEvents
 End Sub
@@ -557,8 +557,8 @@ using System.Net;
 using System.Linq;
 using System.IO;
 using M = System.Math;
-using MP = Kernel_Simulator.ModParser;
-using TWC = Kernel_Simulator.TextWriterColor;
+using MP = KS.ModParser;
+using TWC = KS.TextWriterColor;
 Classe publique InternetSpeed: MP.IScript
 {
 cha??ne publique Cmd {get; 
@@ -588,7 +588,7 @@ DateTime endTime = DateTime.Now;
 vitesses [i] = M.Round (jQueryFileSize / (endTime - startTime) .TotalSeconds);
 }
 File.Delete (System.Environment.GetEnvironmentVariable ("USERPROFILE") "\\ jQuery.js");
-TWC.Wln ("Vitesse de t??l??chargement: {0} Ko / s", "texte neutre", speeds.Average ());
+TWC.W ("Vitesse de t??l??chargement: {0} Ko / s", "texte neutre", speeds.Average ());
 }
 public void InitEvents (string ev)
 {
@@ -643,10 +643,10 @@ Class...=>Cyan
 Visual Studio 2017=>Magenta
 Implements=>Cyan
 IScript=>DarkGreen
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
 Imports=>Cyan
-Kernel_Simulator.TextWriterColor=>DarkGreen
+KS.TextWriterColor=>DarkGreen
 IScript:=>DarkGreen
 Property As String=>Cyan
 Cmd Def Name Version=>DarkGreen
@@ -669,7 +669,7 @@ subs=>Green
 AnotherClass=>DarkGreen
 Hello World=>Green
 HelloGuys) HelloGuys: HelloGuys=>DarkGreen
-Kernel_Simulator.ModParser=>DarkGreen
+KS.ModParser=>DarkGreen
 errors=>Red
 "HelloGuys"=>DarkGreen
 "Hello World", "neutralText"=>DarkGreen

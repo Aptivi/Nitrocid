@@ -806,7 +806,7 @@ KS 0.0.6.9
 1. Kalkulator dan penukar unit yang dikeluarkan
 2. Unified two print command menjadi one
 3. Gabenor dua mod bersatu menjadi satu
-4. Dibenarkan memasuki pelayan FTP tanpa menyatakan awalan "ftp: //"
+4. Dibenarkan memasuki pelayan FTP tanpa menyatakan awalan "ftp://"
 5. Membenarkan alamat yang ditentukan sebagai argumen arahan "ftp"
 6. Sekarang pelanggan FTP akan memutuskan secara aman apabila keluar
 7. Perincian bantuan FTP tetap tidak mengemaskini apabila menukar bahasa
@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Ditambah debug pada setiap fasa
 13. Ditambah pemegang tempat sistem operasi untuk digunakan dengan MOTD dan MAL
 14. Menambah parser baru untuk membuat MOTD menyokong lebih daripada 1 baris
+
+KS 0.0.6.10
+
+1. Ruang nama ringkas kepada KS
+2. Tetapkan kod kunci untuk Hindi, Cina, dan 1/2 Czech (Lihat komen di GetCommand.vb)
+3. Menambah entri bantuan hilang untuk "reloadsaver"
+4. Menambah arahan "reloadmods"
+5. Made KernelVersion dan EnvironmentOSype baca sahaja
+6. Argumen cmdline "promptArgs" dikeluarkan
+7. Stack tambahan kini tidak dijana semasa reboot
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

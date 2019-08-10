@@ -20,6 +20,7 @@ Public Module UserManagement
 
     Public Sub InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")
 
+        'TODO: Only display username in debug info. Showing password in cleartext makes a security breach.
         Try
             userword.Add(uninitUser, unpassword)
             Wdbg("userword = {1}", userword, String.Join(", ", userword.ToArray))

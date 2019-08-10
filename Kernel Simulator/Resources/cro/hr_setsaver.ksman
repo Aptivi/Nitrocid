@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Naredba Shell "setsaver"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba setsaver
+
+Sa??etak: Postavlja zadani ??uvar zaslona kao svoj ??uvar zaslona ili ugra??eni ??uvar zaslona
+
+Opis
+
+Zadani screensaver mo??ete postaviti kao svoj ??uvar zaslona modfiljem ili ugra??enim ??uvarima kao ??to su matrica, disco i colorMix.
+
+* matrica: Prikazuje osnovnu matricu koja ispisuje izme??u 0 i 1 zelenom bojom teksta
+* disco: Prikazuje disko svjetla
+* colorMix: Mijenja boju pozadine u slu??ajnu boju i ispisuje "" obojeni blok i ponavlja se.
+
+Upotreba naredbe
+
+* setsaver ((ScreenSaverName) SS.m / matrica / disco / colorMix)
+
+Primjeri
+
+* matrica za postavljanje
+* setovi GameOfLifeSS.m
+* postavljanje linija LinesSS.m
+-BODY END-
+
+-COLOR CONFIGURATION-
+setsaver ((ScreenSaverName)SS.m/matrix/disco/colorMix)=>Green
+setsaver matrix=>Yellow
+setsaver GameOfLifeSS.m=>Yellow
+setsaver LinesSS.m=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+setsaver command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

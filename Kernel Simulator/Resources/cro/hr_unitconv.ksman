@@ -1,0 +1,43 @@
+(*MAN START*)
+
+-TITLE:Naredba ljuske "unitconv"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba unitconv
+
+Sa??etak: Pretvara jedinice u drugu jedinicu
+
+Opis
+
+Svoje izvorne jedinice mo??ete pretvoriti u drugu jedinicu bez upotrebe interneta.
+
+Ako ??elite pretvoriti valutu umjesto toga, upotrijebite naredbu "valuta".
+
+Odredi??na jedinica mora podr??ati odredi??nu jedinicu (npr. Km do cm) za pretvaranje date vrijednosti, ina??e je ne mo??e pretvoriti. 
+
+Upotreba naredbe
+
+* unitconv (izvorUnit) (odredi??te) (vrijednost)
+
+Primjeri
+
+* unitconv GB B 50: Pretvori veli??inu datoteke od 50 GB u kilobajte
+* unitconv Celzijus Fahrenheit 36: Pretvara 36 stupnjeva u Fahrenheit
+* unitconv in??a Stopala 19: pretvara 19 in??a u stopala
+-BODY END-
+
+-COLOR CONFIGURATION-
+unitconv (sourceUnit) (destination) (value)=>Green
+unitconv GB B 50:=>Yellow
+unitconv Celsius Fahrenheit 36:=>Yellow
+unitconv Inches Feet 19:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+unitconv command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

@@ -48,8 +48,8 @@ ModName Kelas Awam
 Kelas Akhir
 17. Antara Kelas Awam ... dan garisan Kelas Akhir, biarkan Visual Studio 2017 tahu bahawa anda akan membuat mod KS anda dengan menulis: Mengimplementasikan IScript
 18. Jika anda akan menambah ruang nama, peraturan ini mesti dipenuhi:
-1) Jangan import Kernel_Simulator dengan sendirinya. 
-2) Apabila mengimport modul / kelas seperti TextWriterColor, ia ditulis seperti ini: Import Kernel_Simulator.TextWriterColor
+1) Jangan import KS dengan sendirinya. 
+2) Apabila mengimport modul / kelas seperti TextWriterColor, ia ditulis seperti ini: Import KS.TextWriterColor
 19. Tentukan sifat untuk maklumat mod dengan meletakkan di bawah Implementasi IScript:
 Property Cmd As String Implements IScript.Cmd
 Def Property As String Implements IScript.Def
@@ -131,8 +131,8 @@ Hello World adalah contoh permulaan yang popular untuk semua pengaturcara.
 3. Klik Tambah, dan kod itu akan siap.
 4. Tulis di bawah (Anggapkan bahawa nama mod anda adalah HelloGuys) Kelas Awam HelloGuys: Melaksanakan IScript
 5. Tulis di atas HelloGuys Kelas Awam:
-- Import Kernel_Simulator.ModParser
-- Import Kernel_Simulator.TextWriterColor
+- Import KS.ModParser
+- Import KS.TextWriterColor
 6. Anda harus mendapatkan kesilapan yang mengatakan bahawa subs ini harus dibuat.
 7. Buat pengendali acara mod permulaan anda dengan menulis:
 Property Cmd As String Implements IScript.Cmd
@@ -144,11 +144,11 @@ Cmd = ""
 Def = ""
 Nama = "HelloGuys"
 Versi = "1.0"
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Sub Akhir
 8. Buat pengendali acara berhenti dengan menulis:
 Sub StopMod () Melaksanakan IScript.StopMod
-Wln ("Goodbye World", "neutralText")
+W ("Goodbye World", "neutralText")
 Sub Akhir
 9. Oleh kerana kami tidak melaksanakan arahan atau responden acara, kami akan meninggalkan perkara ini:
 Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
@@ -157,8 +157,8 @@ SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
 Sub Akhir
 10. Kod sepatutnya kelihatan seperti ini dalam VB:
 
-Import Kernel_Simulator.ModParser
-Import Kernel_Simulator.TextWriterColor
+Import KS.ModParser
+Import KS.TextWriterColor
 HelloGuys Kelas Awam
 Memasukkan IScript
 Property Cmd As String Implements IScript.Cmd
@@ -170,10 +170,10 @@ Cmd = ""
 Def = ""
 Nama = "HelloGuys"
 Versi = "1.0"
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Sub Akhir
 Sub StopMod () Melaksanakan IScript.StopMod
-Wln ("Goodbye World", "neutralText")
+W ("Goodbye World", "neutralText")
 Sub Akhir
 Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
 Sub Akhir
@@ -183,8 +183,8 @@ Kelas Akhir
 
 ... Atau dalam C
 
-menggunakan MP = Kernel_Simulator.ModParser;
-menggunakan TWC = Kernel_Simulator.TextWriterColor;
+menggunakan MP = KS.ModParser;
+menggunakan TWC = KS.TextWriterColor;
 HelloGuys kelas awam: MP.ISkrip
 {
 rentetan awam Cmd {get; 
@@ -197,11 +197,11 @@ Cmd = "";
 Def = "";
 Nama = "HelloGuys";
 Versi = "1.0";
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 stopmo awam StopMod ()
 {
-TWC.Wln ("Goodbye World", "neutralText");
+TWC.W ("Goodbye World", "neutralText");
 }
 Fail awam PerformCmd (string args = "")
 {
@@ -239,12 +239,12 @@ SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
 Sub Akhir
 4. Buat pengendali arahan anda, dan biarkan ia bertindak balas kepada perintah mod SayHello:
 Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Sub Akhir
 5. Kod harus kelihatan seperti ini di VB:
 
-Import Kernel_Simulator.ModParser
-Import Kernel_Simulator.TextWriterColor
+Import KS.ModParser
+Import KS.TextWriterColor
 HelloShell Kelas Awam
 Memasukkan IScript
 Property Cmd As String Implements IScript.Cmd
@@ -260,7 +260,7 @@ Sub Akhir
 Sub StopMod () Melaksanakan IScript.StopMod
 Sub Akhir
 Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Sub Akhir
 SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
 Sub Akhir
@@ -268,8 +268,8 @@ Kelas Akhir
 
 ... Atau dalam C
 
-menggunakan MP = Kernel_Simulator.ModParser;
-menggunakan TWC = Kernel_Simulator.TextWriterColor;
+menggunakan MP = KS.ModParser;
+menggunakan TWC = KS.TextWriterColor;
 HelloShell kelas awam: MP.ISkrip
 {
 rentetan awam Cmd {get; 
@@ -288,7 +288,7 @@ stopmo awam StopMod ()
 }
 Fail awam PerformCmd (string args = "")
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 void Public InitEvents (string ev)
 {
@@ -303,15 +303,15 @@ void Public InitEvents (string ev)
 2. Jadikan pengendali arahan anda, dan biarkan ia bertindak balas kepada perintah mod SayHello:
 Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
 Jika (args = "HW") Kemudian
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Lain
-Wln ("Katakan saya Hello dengan berjalan" "SayHello HW." "", "NeutralText")
+W ("Katakan saya Hello dengan berjalan" "SayHello HW." "", "NeutralText")
 Akhir Jika
 Sub Akhir
 3. Kod sepatutnya kelihatan seperti ini dalam VB:
 
-Import Kernel_Simulator.ModParser
-Import Kernel_Simulator.TextWriterColor
+Import KS.ModParser
+Import KS.TextWriterColor
 HelloArgs Kelas Awam
 Memasukkan IScript
 Property Cmd As String Implements IScript.Cmd
@@ -328,9 +328,9 @@ Sub StopMod () Melaksanakan IScript.StopMod
 Sub Akhir
 Sub PerformCmd (Pilihan ByVal args Sebagai String = "") Implementasi IScript.PerformCmd
 Jika (args = "HW") Kemudian
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Lain
-Wln ("Katakan saya Hello dengan berjalan" "SayHello HW." "", "NeutralText")
+W ("Katakan saya Hello dengan berjalan" "SayHello HW." "", "NeutralText")
 Akhir Jika
 Sub Akhir
 SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
@@ -339,8 +339,8 @@ Kelas Akhir
 
 ... Atau dalam C
 
-menggunakan MP = Kernel_Simulator.ModParser;
-menggunakan TWC = Kernel_Simulator.TextWriterColor;
+menggunakan MP = KS.ModParser;
+menggunakan TWC = KS.TextWriterColor;
 HelloArgs kelas awam: MP.ISkrip
 {
 rentetan awam Cmd {get; 
@@ -361,11 +361,11 @@ Fail awam PerformCmd (string args = "")
 {
 jika (args == "HW")
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 lain
 {
-TWC.Wln ("Jadikan saya berkata Hello dengan berjalan \" SayHello HW. \ "", "NeutralText");
+TWC.W ("Jadikan saya berkata Hello dengan berjalan \" SayHello HW. \ "", "NeutralText");
 }
 }
 void Public InitEvents (string ev)
@@ -384,22 +384,22 @@ Dim splitArgs As String () = args.Split ({"" c})
 Dim ArgCount Sebagai Integer = 1
 Jika splitArgs.Length> 1 Kemudian
 Jika (splitArgs (0) = "Katakan" Dan splitArgs (1) = "Hello") Kemudian
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Lain
-Wln ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
+W ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
 Akhir Jika
 Lain
-Wln ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
+W ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
 Akhir Jika
 Untuk Setiap arg Sebagai String Dalam splitArgs
-Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
+W ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
 ArgCount = 1
 Seterusnya
 Sub Akhir
 3. Kod sepatutnya kelihatan seperti ini dalam VB:
 
-Import Kernel_Simulator.ModParser
-Import Kernel_Simulator.TextWriterColor
+Import KS.ModParser
+Import KS.TextWriterColor
 HelloArgs Kelas Awam
 Memasukkan IScript
 Property Cmd As String Implements IScript.Cmd
@@ -419,15 +419,15 @@ Dim splitArgs As String () = args.Split ({"" c})
 Dim ArgCount Sebagai Integer = 1
 Jika splitArgs.Length> 1 Kemudian
 Jika (splitArgs (0) = "Katakan" Dan splitArgs (1) = "Hello") Kemudian
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Lain
-Wln ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
+W ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
 Akhir Jika
 Lain
-Wln ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
+W ("Katakan saya Hello dengan berlari" "WhatDoISay Say Hello." "", "NeutralText")
 Akhir Jika
 Untuk Setiap arg Sebagai String Dalam splitArgs
-Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
+W ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
 ArgCount = 1
 Seterusnya
 Sub Akhir
@@ -437,8 +437,8 @@ Kelas Akhir
 
 ... Atau dalam C
 
-menggunakan MP = Kernel_Simulator.ModParser;
-menggunakan TWC = Kernel_Simulator.TextWriterColor;
+menggunakan MP = KS.ModParser;
+menggunakan TWC = KS.TextWriterColor;
 HelloArgs kelas awam: MP.ISkrip
 {
 rentetan awam Cmd {get; 
@@ -463,20 +463,20 @@ jika (splitArgs.Length> 1)
 {
 jika (splitArgs [0] == "Katakan"
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 lain
 {
-TWC.Wln ("Beri saya katakan Hello dengan berlari \" WhatDoISay Say Hello. \ "", "NeutralText");
+TWC.W ("Beri saya katakan Hello dengan berlari \" WhatDoISay Say Hello. \ "", "NeutralText");
 }
 }
 lain
 {
-TWC.Wln ("Beri saya katakan Hello dengan berlari \" WhatDoISay Say Hello. \ "", "NeutralText");
+TWC.W ("Beri saya katakan Hello dengan berlari \" WhatDoISay Say Hello. \ "", "NeutralText");
 }
 foreach (arg arg dalam splitArgs)
 {
-TWC.Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs [ArgCount - 1]);
+TWC.W ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs [ArgCount - 1]);
 ArgCount = 1;
 }
 }
@@ -508,7 +508,7 @@ Dim endTime Seperti DateTime = DateTime.Now
 kelajuan (i) = Pusingan ((jQueryFileSize / (endTime - startTime) .TotalSeconds))
 Seterusnya
 File.Delete (Lingkungan ("USERPROFILE") "\ jQuery.js")
-Wln ("Muat turun kelajuan: {0} KB / s", "neutralText", speeds.Average ())
+W ("Muat turun kelajuan: {0} KB / s", "neutralText", speeds.Average ())
 Sub Akhir
 4. Kod sepatutnya kelihatan seperti ini dalam VB:
 
@@ -517,8 +517,8 @@ Import System.Linq
 Import System.IO
 Import System.Math
 Import Microsoft.VisualBasic.Interaction
-Import Kernel_Simulator.ModParser
-Import Kernel_Simulator.TextWriterColor
+Import KS.ModParser
+Import KS.TextWriterColor
 InternetSpeed ??????Kelas Awam
 Memasukkan IScript
 Property Cmd As String Implements IScript.Cmd
@@ -544,7 +544,7 @@ Dim endTime As Date = Date.Now
 kelajuan (i) = Pusingan (jQueryFileSize / (endTime - startTime) .TotalSeconds)
 Seterusnya
 File.Delete (Lingkungan ("USERPROFILE") "\ jQuery.js")
-Wln ("Muat turun kelajuan: {0} KB / s", "neutralText", speeds.Average ())
+W ("Muat turun kelajuan: {0} KB / s", "neutralText", speeds.Average ())
 Sub Akhir
 SubInitEvents Sub (ByVal ev As String) Melaksanakan IScript.InitEvents
 Sub Akhir
@@ -557,8 +557,8 @@ menggunakan System.Net;
 menggunakan System.Linq;
 menggunakan System.IO;
 menggunakan M = System.Math;
-menggunakan MP = Kernel_Simulator.ModParser;
-menggunakan TWC = Kernel_Simulator.TextWriterColor;
+menggunakan MP = KS.ModParser;
+menggunakan TWC = KS.TextWriterColor;
 InternetSpeed ??????kelas awam: MP.ISkrip
 {
 rentetan awam Cmd {get; 
@@ -588,7 +588,7 @@ DateTime endTime = DateTime.Now;
 kelajuan [i] = M.Round (jQueryFileSize / (endTime - startTime) .TotalSeconds);
 }
 File.Delete (System.Environment.GetEnvironmentVariable ("USERPROFILE") "\\ jQuery.js");
-TWC.Wln ("Muat turun kelajuan: {0} KB / s", "neutralText", speeds.Average ());
+TWC.W ("Muat turun kelajuan: {0} KB / s", "neutralText", speeds.Average ());
 }
 void Public InitEvents (string ev)
 {
@@ -643,10 +643,10 @@ Class...=>Cyan
 Visual Studio 2017=>Magenta
 Implements=>Cyan
 IScript=>DarkGreen
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
 Imports=>Cyan
-Kernel_Simulator.TextWriterColor=>DarkGreen
+KS.TextWriterColor=>DarkGreen
 IScript:=>DarkGreen
 Property As String=>Cyan
 Cmd Def Name Version=>DarkGreen
@@ -669,7 +669,7 @@ subs=>Green
 AnotherClass=>DarkGreen
 Hello World=>Green
 HelloGuys) HelloGuys: HelloGuys=>DarkGreen
-Kernel_Simulator.ModParser=>DarkGreen
+KS.ModParser=>DarkGreen
 errors=>Red
 "HelloGuys"=>DarkGreen
 "Hello World", "neutralText"=>DarkGreen

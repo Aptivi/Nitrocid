@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Lisätty debug jokaisessa vaiheessa
 13. Lisätty käyttöjärjestelmän paikanvaraaja käytettäväksi MOTD: n ja MAL: n kanssa
 14. Lisätty newline-jäsennin, jotta MOTD tukee useampaa kuin yhtä riviä
+
+KS 0.0.6.10
+
+1. Yksinkertaistettu nimitila KS: ksi
+2. Kiinteät koodilukot hindin, kiinan ja 1/2 tšekin kielelle (katso kommentti GetCommand.vb: ssä)
+3. Lisätty puuttuva ohje kohtaan "reloadsaver"
+4. Lisätty komento "reloadmods"
+5. Tehty KernelVersion- ja EnvironmentOSType -muotoisiksi
+6. cmdline-argumentti "promptArgs" poistettu
+7. Ylimääräistä pinoa ei nyt muodostu käynnistettäessä
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

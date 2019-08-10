@@ -10,8 +10,8 @@
     </SchemaVersion>
     <ProjectGuid>{C7B37899-C361-423D-9512-FE0A87A46866}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Kernel_Simulator.Kernel</StartupObject>
-    <RootNamespace>Kernel_Simulator</RootNamespace>
+    <StartupObject>KS.Kernel</StartupObject>
+    <RootNamespace>KS</RootNamespace>
     <AssemblyName>Kernel Simulator</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
@@ -215,11 +215,6 @@
     <Compile Include="Misc\DisposeExit.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModParser.vb" />
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Network\FTP\FTPGetCommand.vb" />
     <Compile Include="Network\FTP\FTPHelpSystem.vb" />
     <Compile Include="Network\FTP\FTPShell.vb" />
@@ -255,6 +250,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -269,6 +269,75 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Resources\cro\hr_adduser.ksman" />
+    <None Include="Resources\cro\hr_alias.ksman" />
+    <None Include="Resources\cro\hr_arginj.ksman" />
+    <None Include="Resources\cro\hr_Available command-line arguments.ksman" />
+    <None Include="Resources\cro\hr_Available commands.ksman" />
+    <None Include="Resources\cro\hr_Available FTP commands.ksman" />
+    <None Include="Resources\cro\hr_Available kernel arguments.ksman" />
+    <None Include="Resources\cro\hr_Available manual pages.ksman" />
+    <None Include="Resources\cro\hr_calc.ksman" />
+    <None Include="Resources\cro\hr_chdir.ksman" />
+    <None Include="Resources\cro\hr_chhostname.ksman" />
+    <None Include="Resources\cro\hr_chmal.ksman" />
+    <None Include="Resources\cro\hr_chmotd.ksman" />
+    <None Include="Resources\cro\hr_chpwd.ksman" />
+    <None Include="Resources\cro\hr_chusrname.ksman" />
+    <None Include="Resources\cro\hr_cls.ksman" />
+    <None Include="Resources\cro\hr_Configuration for your Kernel.ksman" />
+    <None Include="Resources\cro\hr_debuglog.ksman" />
+    <None Include="Resources\cro\hr_FTP changelocaldir or cdl.ksman" />
+    <None Include="Resources\cro\hr_FTP changeremotedir or cdr.ksman" />
+    <None Include="Resources\cro\hr_FTP connect.ksman" />
+    <None Include="Resources\cro\hr_FTP currlocaldir or pwdl.ksman" />
+    <None Include="Resources\cro\hr_FTP currremotedir or pwdr.ksman" />
+    <None Include="Resources\cro\hr_FTP delete or del.ksman" />
+    <None Include="Resources\cro\hr_FTP disconnect.ksman" />
+    <None Include="Resources\cro\hr_FTP download or get.ksman" />
+    <None Include="Resources\cro\hr_FTP listlocal or lsl.ksman" />
+    <None Include="Resources\cro\hr_FTP listremote or lsr.ksman" />
+    <None Include="Resources\cro\hr_FTP rename or ren.ksman" />
+    <None Include="Resources\cro\hr_FTP upload or put.ksman" />
+    <None Include="Resources\cro\hr_ftp.ksman" />
+    <None Include="Resources\cro\hr_History of Kernel Simulator.ksman" />
+    <None Include="Resources\cro\hr_hwprobe.ksman" />
+    <None Include="Resources\cro\hr_Introduction to the Kernel.ksman" />
+    <None Include="Resources\cro\hr_list.ksman" />
+    <None Include="Resources\cro\hr_lockscreen.ksman" />
+    <None Include="Resources\cro\hr_logout.ksman" />
+    <None Include="Resources\cro\hr_lscomp.ksman" />
+    <None Include="Resources\cro\hr_lsnet.ksman" />
+    <None Include="Resources\cro\hr_lsnettree.ksman" />
+    <None Include="Resources\cro\hr_md.ksman" />
+    <None Include="Resources\cro\hr_Modding guide.ksman" />
+    <None Include="Resources\cro\hr_netinfo.ksman" />
+    <None Include="Resources\cro\hr_noaliases.ksman" />
+    <None Include="Resources\cro\hr_perm.ksman" />
+    <None Include="Resources\cro\hr_ping.ksman" />
+    <None Include="Resources\cro\hr_rd.ksman" />
+    <None Include="Resources\cro\hr_read.ksman" />
+    <None Include="Resources\cro\hr_reboot.ksman" />
+    <None Include="Resources\cro\hr_reloadconfig.ksman" />
+    <None Include="Resources\cro\hr_reloadmods.ksman" />
+    <None Include="Resources\cro\hr_reloadsaver.ksman" />
+    <None Include="Resources\cro\hr_rmuser.ksman" />
+    <None Include="Resources\cro\hr_savescreen.ksman" />
+    <None Include="Resources\cro\hr_scical.ksman" />
+    <None Include="Resources\cro\hr_Screensaver modding guide.ksman" />
+    <None Include="Resources\cro\hr_setcolors.ksman" />
+    <None Include="Resources\cro\hr_setsaver.ksman" />
+    <None Include="Resources\cro\hr_setthemes.ksman" />
+    <None Include="Resources\cro\hr_showmotd.ksman" />
+    <None Include="Resources\cro\hr_showtd.ksman" />
+    <None Include="Resources\cro\hr_showtdzone.ksman" />
+    <None Include="Resources\cro\hr_shutdown.ksman" />
+    <None Include="Resources\cro\hr_sysinfo.ksman" />
+    <None Include="Resources\cro\hr_unitconv.ksman" />
+    <None Include="Resources\cro\hr_useddeps.ksman" />
+    <None Include="Resources\cro\hr_cdbglog.ksman" />
+    <None Include="Resources\cro\hr_chlang.ksman" />
+    <None Include="Resources\cro\hr_sses.ksman" />
     <None Include="Resources\eng\cdbglog.ksman" />
     <None Include="Resources\eng\chlang.ksman" />
     <None Include="Resources\cze\cs_cdbglog.ksman" />
@@ -355,6 +424,7 @@
     <None Include="Resources\tky\tr_read.ksman" />
     <None Include="Resources\tky\tr_reboot.ksman" />
     <None Include="Resources\tky\tr_reloadconfig.ksman" />
+    <None Include="Resources\tky\tr_reloadmods.ksman" />
     <None Include="Resources\tky\tr_reloadsaver.ksman" />
     <None Include="Resources\tky\tr_rmuser.ksman" />
     <None Include="Resources\tky\tr_savescreen.ksman" />
@@ -400,6 +470,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\cro.txt" />
     <None Include="Resources\chi\zh_adduser.ksman" />
     <None Include="Resources\chi\zh_alias.ksman" />
     <None Include="Resources\chi\zh_arginj.ksman" />
@@ -450,6 +521,7 @@
     <None Include="Resources\chi\zh_read.ksman" />
     <None Include="Resources\chi\zh_reboot.ksman" />
     <None Include="Resources\chi\zh_reloadconfig.ksman" />
+    <None Include="Resources\chi\zh_reloadmods.ksman" />
     <None Include="Resources\chi\zh_reloadsaver.ksman" />
     <None Include="Resources\chi\zh_rmuser.ksman" />
     <None Include="Resources\chi\zh_savescreen.ksman" />
@@ -516,6 +588,7 @@
     <None Include="Resources\cze\cs_read.ksman" />
     <None Include="Resources\cze\cs_reboot.ksman" />
     <None Include="Resources\cze\cs_reloadconfig.ksman" />
+    <None Include="Resources\cze\cs_reloadmods.ksman" />
     <None Include="Resources\cze\cs_reloadsaver.ksman" />
     <None Include="Resources\cze\cs_rmuser.ksman" />
     <None Include="Resources\cze\cs_savescreen.ksman" />
@@ -581,6 +654,7 @@
     <None Include="Resources\dtc\nl_read.ksman" />
     <None Include="Resources\dtc\nl_reboot.ksman" />
     <None Include="Resources\dtc\nl_reloadconfig.ksman" />
+    <None Include="Resources\dtc\nl_reloadmods.ksman" />
     <None Include="Resources\dtc\nl_reloadsaver.ksman" />
     <None Include="Resources\dtc\nl_rmuser.ksman" />
     <None Include="Resources\dtc\nl_savescreen.ksman" />
@@ -646,6 +720,7 @@
     <None Include="Resources\fin\fi_read.ksman" />
     <None Include="Resources\fin\fi_reboot.ksman" />
     <None Include="Resources\fin\fi_reloadconfig.ksman" />
+    <None Include="Resources\fin\fi_reloadmods.ksman" />
     <None Include="Resources\fin\fi_reloadsaver.ksman" />
     <None Include="Resources\fin\fi_rmuser.ksman" />
     <None Include="Resources\fin\fi_savescreen.ksman" />
@@ -711,6 +786,7 @@
     <None Include="Resources\fre\fr_read.ksman" />
     <None Include="Resources\fre\fr_reboot.ksman" />
     <None Include="Resources\fre\fr_reloadconfig.ksman" />
+    <None Include="Resources\fre\fr_reloadmods.ksman" />
     <None Include="Resources\fre\fr_reloadsaver.ksman" />
     <None Include="Resources\fre\fr_rmuser.ksman" />
     <None Include="Resources\fre\fr_savescreen.ksman" />
@@ -776,6 +852,7 @@
     <None Include="Resources\ger\de_read.ksman" />
     <None Include="Resources\ger\de_reboot.ksman" />
     <None Include="Resources\ger\de_reloadconfig.ksman" />
+    <None Include="Resources\ger\de_reloadmods.ksman" />
     <None Include="Resources\ger\de_reloadsaver.ksman" />
     <None Include="Resources\ger\de_rmuser.ksman" />
     <None Include="Resources\ger\de_savescreen.ksman" />
@@ -841,6 +918,7 @@
     <None Include="Resources\ind\hi_read.ksman" />
     <None Include="Resources\ind\hi_reboot.ksman" />
     <None Include="Resources\ind\hi_reloadconfig.ksman" />
+    <None Include="Resources\ind\hi_reloadmods.ksman" />
     <None Include="Resources\ind\hi_reloadsaver.ksman" />
     <None Include="Resources\ind\hi_rmuser.ksman" />
     <None Include="Resources\ind\hi_savescreen.ksman" />
@@ -906,6 +984,7 @@
     <None Include="Resources\ita\it_read.ksman" />
     <None Include="Resources\ita\it_reboot.ksman" />
     <None Include="Resources\ita\it_reloadconfig.ksman" />
+    <None Include="Resources\ita\it_reloadmods.ksman" />
     <None Include="Resources\ita\it_reloadsaver.ksman" />
     <None Include="Resources\ita\it_rmuser.ksman" />
     <None Include="Resources\ita\it_savescreen.ksman" />
@@ -971,6 +1050,7 @@
     <None Include="Resources\mal\ms_read.ksman" />
     <None Include="Resources\mal\ms_reboot.ksman" />
     <None Include="Resources\mal\ms_reloadconfig.ksman" />
+    <None Include="Resources\mal\ms_reloadmods.ksman" />
     <None Include="Resources\mal\ms_reloadsaver.ksman" />
     <None Include="Resources\mal\ms_rmuser.ksman" />
     <None Include="Resources\mal\ms_savescreen.ksman" />
@@ -1036,6 +1116,7 @@
     <None Include="Resources\ptg\pt_read.ksman" />
     <None Include="Resources\ptg\pt_reboot.ksman" />
     <None Include="Resources\ptg\pt_reloadconfig.ksman" />
+    <None Include="Resources\ptg\pt_reloadmods.ksman" />
     <None Include="Resources\ptg\pt_reloadsaver.ksman" />
     <None Include="Resources\ptg\pt_rmuser.ksman" />
     <None Include="Resources\ptg\pt_savescreen.ksman" />
@@ -1101,6 +1182,7 @@
     <None Include="Resources\spa\es_read.ksman" />
     <None Include="Resources\spa\es_reboot.ksman" />
     <None Include="Resources\spa\es_reloadconfig.ksman" />
+    <None Include="Resources\spa\es_reloadmods.ksman" />
     <None Include="Resources\spa\es_reloadsaver.ksman" />
     <None Include="Resources\spa\es_rmuser.ksman" />
     <None Include="Resources\spa\es_savescreen.ksman" />
@@ -1166,6 +1248,7 @@
     <None Include="Resources\swe\sv_read.ksman" />
     <None Include="Resources\swe\sv_reboot.ksman" />
     <None Include="Resources\swe\sv_reloadconfig.ksman" />
+    <None Include="Resources\swe\sv_reloadmods.ksman" />
     <None Include="Resources\swe\sv_reloadsaver.ksman" />
     <None Include="Resources\swe\sv_rmuser.ksman" />
     <None Include="Resources\swe\sv_savescreen.ksman" />
@@ -1240,6 +1323,7 @@
     <None Include="Resources\eng\read.ksman" />
     <None Include="Resources\eng\reboot.ksman" />
     <None Include="Resources\eng\reloadconfig.ksman" />
+    <None Include="Resources\eng\reloadmods.ksman" />
     <None Include="Resources\eng\rmuser.ksman" />
     <None Include="Resources\eng\savescreen.ksman" />
     <None Include="Resources\eng\scical.ksman" />
@@ -1262,6 +1346,7 @@
     <None Include="Resources\chi.txt" />
     <None Include="COPYING" />
     <Content Include="Documentation\Documentation - contributing rules - chi.txt" />
+    <Content Include="Documentation\Documentation - contributing rules - cro.txt" />
     <Content Include="Documentation\Documentation - contributing rules - cze.txt" />
     <Content Include="Documentation\Documentation - contributing rules - dtc.txt" />
     <Content Include="Documentation\Documentation - contributing rules - fin.txt" />
@@ -1276,6 +1361,7 @@
     <Content Include="Documentation\Documentation - contributing rules - tky.txt" />
     <Content Include="Documentation\Documentation - contributing rules.txt" />
     <Content Include="Documentation\Documentation - main page - chi.txt" />
+    <Content Include="Documentation\Documentation - main page - cro.txt" />
     <Content Include="Documentation\Documentation - main page - cze.txt" />
     <Content Include="Documentation\Documentation - main page - dtc.txt" />
     <Content Include="Documentation\Documentation - main page - fin.txt" />

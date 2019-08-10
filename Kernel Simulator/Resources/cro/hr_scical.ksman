@@ -1,0 +1,47 @@
+(*MAN START*)
+
+-TITLE:Naredba Shell "skical"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+??kakljiva naredba
+
+Sa??etak: Omogu??uje vam da ocijenite naprednije izraze
+
+Opis
+
+Znanstveni kalkulator mo??ete koristiti za procjenu naprednih izraza, poput dobivanja kvadratnog korijena brojeva itd.
+
+Trenutno ova naredba koristi klasu DataTable () za procjenu izraza. 
+
+https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
+
+Kasnije ??emo ovaj kalkulator ponovno napisati ili se vjerojatno spojiti u jedan.
+
+Upotreba naredbe
+
+* scical (izraz1 | pi | e) (| - | * | / |%) (izraz2 | pi | e) ...
+* scical (sqrt | tan | sin | cos) (broj)
+
+Primjeri
+
+* skical (29 * 35) pi: Izra??unava izraze na zagradama prvo, procjenjuje "pi", a zatim dodaje rezultatom pomno??enih brojeva, a rezultat je 1018,14
+* scical e pi: Dodaje euler vrijednost i pi zajedno, a rezultat je 5,86
+* scical sqrt 729: Dobiva kvadratni korijen 729, a rezultat 27
+-BODY END-
+
+-COLOR CONFIGURATION-
+scical (expression1|pi|e) (+|-|*|/|%) (expression2|pi|e) ...=>Green
+scical (sqrt|tan|sin|cos) (number)=>Green
+scical (29 * 35) + pi:=>Yellow
+scical e + pi:=>Yellow
+scical sqrt 729:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+scical command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

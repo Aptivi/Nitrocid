@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Commande Shell "reloadmods"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+commande reloadmods
+
+R??sum??: recharge les modifications
+
+La description
+
+Cette commande vous permet de recharger les modifications lorsqu'un changement du code source du mod sp??cifi?? est cr???? ou que le mod est ajout?? ou supprim??.
+
+Utilisation de la commande
+
+* reloadmods
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadmods=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadmods command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

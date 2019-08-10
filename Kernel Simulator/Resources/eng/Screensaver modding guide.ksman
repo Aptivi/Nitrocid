@@ -19,11 +19,11 @@ Basic modding (screensaver)
 2. On the Compile section, click on Build Events, then write this on the Post-build event command line:
    - copy ..\..\ModFile.vb ..\..\..\..\ModFileSS.m (Put SS before the .m so that KS recognizes it as a screensaver and not as a mod)
    - del /Q *.* (to make sure that there is no dummy DLL files being created as we don't use DLL for mods)
-3. Repeat steps 9-16 from the Modding guide, but replace the Imports Kernel_Simulator.ModParser with Imports Kernel_Simulator.Screensaver
+3. Repeat steps 9-16 from the Modding guide, but replace the Imports KS.ModParser with Imports KS.Screensaver
 4. Between the Public Class... and the End Class lines, let Visual Studio 2017 know that you're going to create your KS screensaver by writing: Implements ICustomSaver
 5. If you're going to add namespaces, these rules must be met:
-    1) Don't import Kernel_Simulator by itself. KS does that automatically
-    2) When importing modules/classes like TextWriterColor, it's written like this: Imports Kernel_Simulator.TextWriterColor
+    1) Don't import KS by itself. KS does that automatically
+    2) When importing modules/classes like TextWriterColor, it's written like this: Imports KS.TextWriterColor
 6. Define properties for mod information by putting below the Implements IScript:
     Property Initialized As Boolean Implements ICustomSaver.Initialized
 7. Make your init screensaver sub named InitSaver() that implements the ICustomSaver.InitSaver, by writing:
@@ -43,7 +43,7 @@ Basic modding (screensaver)
 11. You can make your subs anywhere on the class, but if:
     1) they're on the different class, press Enter on End Class and make a public new class that stores new subs:
        Public Class AnotherClass
-	   'Your definitions below, and so your subs, functions, interfaces, etc.
+	       'Your definitions below, and so your subs, functions, interfaces, etc.
        End Class
     2) they're trying to re-initialize the screensaver by re-calling InitSaver(), Try so on your test environment first, then the Production environment if that worked properly.
     And the following conditions should be met:
@@ -64,14 +64,14 @@ The back message box screensaver tells people that the computer owner is gone, o
 5. Write above the Public Class SOR:
    - Imports System
    - Imports System.Threading
-   - Imports Kernel_Simulator.Screensaver
-   - Imports Kernel_Simulator.TextWriterColor
-   - Imports Kernel_Simulator.Login
+   - Imports KS.Screensaver
+   - Imports KS.TextWriterColor
+   - Imports KS.Login
 6. You should get errors saying that these subs should be created.
 7. Make your start screensaver event handler by writing:
     Property Initialized As Boolean Implements ICustomSaver.Initialized
     Sub InitSaver() Implements ICustomSaver.InitSaver
-	Wln("Load this screensaver using ""loadsaver SORSS.m"" and ""setsaver SORSS.m""", "neutralText")
+	W("Load this screensaver using ""loadsaver SORSS.m"" and ""setsaver SORSS.m""", "neutralText")
         Initialized = True
     End Sub
 8. Since we're not implementing anything before displaying screensaver, we're going to leave this blank:
@@ -111,7 +111,7 @@ The back message box screensaver tells people that the computer owner is gone, o
         For l As Integer = 0 To strlen - 1
             W("-", "neutralText")
         Next
-        Wln("-+", "neutralText")
+        W("-+", "neutralText")
     End Sub
     Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer)
 	Dim BackMessages As String() = {"<OWNER> will be back soon.", "<OWNER> is busy. He will be back soon."}
@@ -127,15 +127,15 @@ The back message box screensaver tells people that the computer owner is gone, o
                 text = ParsePlaces(RudeMessages(MsgID))
         End Select
         InitializeBar(text.Length)
-        Wln("   | {0} |", "neutralText", text)
+        W("   | {0} |", "neutralText", text)
         InitializeBar(text.Length)
     End Sub
 12. The code should look like this:
     Imports System
     Imports System.Threading
-    Imports Kernel_Simulator.Screensaver
-    Imports Kernel_Simulator.TextWriterColor
-    Imports Kernel_Simulator.Login
+    Imports KS.Screensaver
+    Imports KS.TextWriterColor
+    Imports KS.Login
     Public Class SoonOvernightRude
     	Implements ICustomSaver
     	Property Initialized As Boolean Implements ICustomSaver.Initialized
@@ -144,7 +144,7 @@ The back message box screensaver tells people that the computer owner is gone, o
     	Public O_Random As New Random() 'Initializes the random number generator
     	Public R_Random As New Random() 'Initializes the random number generator
     	Sub InitSaver() Implements ICustomSaver.InitSaver
-            Wln("Set this screensaver as default using ""setsaver SORSS.m""", "neutralText")
+            W("Set this screensaver as default using ""setsaver SORSS.m""", "neutralText")
             Initialized = True
     	End Sub
     	Sub PreDisplay() Implements ICustomSaver.PreDisplay
@@ -178,7 +178,7 @@ The back message box screensaver tells people that the computer owner is gone, o
             For l As Integer = 0 To strlen - 1
             	W("-", "neutralText")
             Next
-            Wln("-+", "neutralText")
+            W("-+", "neutralText")
         End Sub
         Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer)
 	    Dim BackMessages As String() = {"<OWNER> will be back soon.", "<OWNER> is busy. He will be back soon."}
@@ -194,7 +194,7 @@ The back message box screensaver tells people that the computer owner is gone, o
                     text = ParsePlaces(RudeMessages(MsgID))
             End Select
             InitializeBar(text.Length)
-            Wln("   | {0} |", "neutralText", text)
+            W("   | {0} |", "neutralText", text)
             InitializeBar(text.Length)
     	End Sub
     End Class
@@ -206,7 +206,7 @@ The back message box screensaver tells people that the computer owner is gone, o
 1. Repeat the steps 1-4 on the first example: In-Console Message Box, and Soon, Overnight, or Rude (Go away...) messages
 2. Write above the Public Class Blank (assuming that your classname is Blank):
     - Imports System
-    - Imports Kernel_Simulator.Screensaver
+    - Imports KS.Screensaver
 3. Write these below the Implements ICustomSaver:
     Public Property Initialized As Boolean Implements ICustomSaver.Initialized
     Public Sub InitSaver() Implements ICustomSaver.InitSaver
@@ -221,7 +221,7 @@ The back message box screensaver tells people that the computer owner is gone, o
     Console.Clear()
 5. The code should look like this:
     Imports System
-    Imports Kernel_Simulator.Screensaver
+    Imports KS.Screensaver
     Public Class Blank
     	Implements ICustomSaver
     	Public Property Initialized As Boolean Implements ICustomSaver.Initialized
@@ -242,9 +242,9 @@ This example will get you started with the animations. Copy-paste the code for r
 
 Imports System
 Imports Microsoft.VisualBasic.Constants
-Imports Kernel_Simulator.TextWriterColor
+Imports KS.TextWriterColor
 Imports System.Threading
-Imports Kernel_Simulator.Screensaver
+Imports KS.Screensaver
 Public Class ANI
     Implements ICustomSaver
     Public Property Initialized As Boolean Implements ICustomSaver.Initialized
@@ -260,7 +260,7 @@ Public Class ANI
 	    If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
                 Exit For
             End If
-            Wln(aniset(CurrentStep), "neutralText")
+            W(aniset(CurrentStep), "neutralText")
             Thread.Sleep(150)
         Next
     End Sub
@@ -335,9 +335,9 @@ End Class
 
 Imports System
 Imports Microsoft.VisualBasic.Constants
-Imports Kernel_Simulator.TextWriterColor
+Imports KS.TextWriterColor
 Imports Microsoft.VisualBasic.Strings
-Imports Kernel_Simulator.Screensaver
+Imports KS.Screensaver
 Public Class Dynamic
     Implements ICustomSaver
     Public Property Initialized As Boolean Implements ICustomSaver.Initialized
@@ -362,12 +362,12 @@ Public Class Dynamic
         Check = 0 : oldCheck = 0 : ProgWent = 0
     End Sub
     Public Sub ShowStats()
-        Wln("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber(CStr(Res * 100 / 1000000), 1))
+        W("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber(CStr(Res * 100 / 1000000), 1))
         UpdateProgressBar(Res * 100 / 1000000)
     End Sub
     Public Sub UpdateProgressBar(ByVal percent As String)
         Check = percent / 5
-        Wln(Check, "neutralText")
+        W(Check, "neutralText")
         Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
         W("+--------------------+", "neutralText")
         Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
@@ -403,9 +403,9 @@ Public Class...=>Cyan
 Visual Studio 2017=>Magenta
 Imports Implements=>Cyan
 ICustomSaver=>Green
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
-Kernel_Simulator.TextWriterColor=>Green
+KS.TextWriterColor=>Green
 Property As Boolean Sub=>Cyan
 Initialized ICustomSaver.Initialized=>Green
 Kernel Simulator=>Green

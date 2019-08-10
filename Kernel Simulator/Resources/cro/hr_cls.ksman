@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Naredba ljuske "cls"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba cls
+
+Sa??etak: Zaslon mo??ete o??istiti od nereda
+
+Opis
+
+Ako se poku??avate usredoto??iti na jednu stvar, a ne mo??ete to u??initi, ili ako ??elite da osobni podaci ispisani naredbama budu skriveni, mo??ete o??istiti zaslon od nereda da bi stekli fokus i smanjili optere??enje o??iju.
+
+Ovo je tako??er korisno u skripti (jo?? nije implementirano)
+
+Upotreba naredbe
+
+* cls
+-BODY END-
+
+-COLOR CONFIGURATION-
+cls=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+cls command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

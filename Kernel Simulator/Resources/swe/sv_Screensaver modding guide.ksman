@@ -19,11 +19,11 @@ Grundl??ggande modding (sk??rmsl??ckare)
 2. Klicka p?? Bygg h??ndelser i avsnittet Kompilera och skriv det sedan p?? kommandoraden Post-build-h??ndelse:
 - kopiera .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (S??tt SS framf??r .m s?? att KS k??nner igen det som en sk??rmsl??ckare och inte som mod)
 - del / Q *. * (f??r att se till att det inte skapas n??gra dummy-DLL-filer eftersom vi inte anv??nder DLL f??r mods)
-3. Upprepa steg 9-16 fr??n Modding-guiden, men ers??tt Imports Kernel_Simulator.ModParser med Imports Kernel_Simulator.Screensaver
+3. Upprepa steg 9-16 fr??n Modding-guiden, men ers??tt Imports KS.ModParser med Imports KS.Screensaver
 4. Mellan raderna Public Class ... och End Class, l??t Visual Studio 2017 veta att du kommer att skapa din KS-sk??rmsl??ckare genom att skriva: Implementerar ICustomSaver
 5. Om du ska l??gga till namnomr??den m??ste dessa regler vara uppfyllda:
-1) Importera inte Kernel_Simulator av sig sj??lv. 
-2) N??r du importerar moduler / klasser som TextWriterColor, skrivs det s?? h??r: Importerar Kernel_Simulator.TextWriterColor
+1) Importera inte KS av sig sj??lv. 
+2) N??r du importerar moduler / klasser som TextWriterColor, skrivs det s?? h??r: Importerar KS.TextWriterColor
 6. Definiera egenskaper f??r modinformation genom att l??gga ned Implements IScript:
 Egendom initierad som booleska implementationer ICustomSaver.Initialized
 7. G??r din init-sk??rmsl??ckareund med namnet InitSaver () som implementerar ICustomSaver.InitSaver genom att skriva:
@@ -64,14 +64,14 @@ Sk??rmsl??ckaren i den bakre meddelandel??dan ber??ttar f??r folk att dator??gar
 5. Skriv ovan Public Class SOR:
 - Importsystem
 - Importsystem. Tr??dning
-- Importerar Kernel_Simulator.Screensaver
-- Importerar Kernel_Simulator.TextWriterColor
-- Importerar Kernel_Simulator.Login
+- Importerar KS.Screensaver
+- Importerar KS.TextWriterColor
+- Importerar KS.Login
 6. Du b??r f?? fel med att s??ga att dessa subs b??r skapas.
 7. G??r din h??ndelsehanterare f??r sk??rmsl??ckare genom att skriva:
 Egendom initierad som booleska implementationer ICustomSaver.Initialized
 Sub InitSaver () Implementerar ICustomSaver.InitSaver
-Wln ("Ladda den h??r sk??rmsl??ckaren med" "loadsaver SORSS.m" "och" "setaver SORSS.m" "", "neutralText")
+W ("Ladda den h??r sk??rmsl??ckaren med" "loadsaver SORSS.m" "och" "setaver SORSS.m" "", "neutralText")
 Initialiserat = Sant
 Avsluta under
 8. Eftersom vi inte implementerar n??gonting innan vi visar sk??rmsl??ckare kommer vi att l??mna detta tomt:
@@ -111,7 +111,7 @@ W ("-", "neutralText")
 F??r l som heltal = 0 Till strlen - 1
 W ("-", "neutralText")
 N??sta
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 Avsluta under
 Public Shared Sub WritMsg (ByVal TypeID som heltal, ByVal MsgID som heltal)
 Dim BackMessages As String () = {"<OWNER> kommer snart tillbaka.", "<OWNER> ??r upptagen. Han kommer snart tillbaka."}
@@ -127,15 +127,15 @@ Fall 3
 text = ParsePlaces (RudeMessages (MsgID))
 Avsluta V??lj
 InitializeBar (text.Length)
-Wln ("| {0} |", "neutralText", text)
+W ("| {0} |", "neutralText", text)
 InitializeBar (text.Length)
 Avsluta under
 12. Koden ska se ut s?? h??r:
 Importsystem
 Importerar system. Tr??dning
-Importerar Kernel_Simulator.Screensaver
-Importerar Kernel_Simulator.TextWriterColor
-Importerar Kernel_Simulator.Login
+Importerar KS.Screensaver
+Importerar KS.TextWriterColor
+Importerar KS.Login
 Public Class SoonOvernightRude
 Implementerar ICustomSaver
 Egendom initierad som booleska implementationer ICustomSaver.Initialized
@@ -144,7 +144,7 @@ Public S_Random As New Random () 'Initierar slumptalsgeneratorn
 Public O_Random As New Random () 'Initierar generator f??r slumpm??ssigt nummer
 Public R_Random As New Random () 'Initierar slumptalsgeneratorn
 Sub InitSaver () Implementerar ICustomSaver.InitSaver
-Wln ("St??ll in denna sk??rmsl??ckare som standard med" "setaver SORSS.m" "", "neutralText")
+W ("St??ll in denna sk??rmsl??ckare som standard med" "setaver SORSS.m" "", "neutralText")
 Initialiserat = Sant
 Avsluta under
 Sub PreDisplay () Implementerar ICustomSaver.PreDisplay
@@ -178,7 +178,7 @@ W ("-", "neutralText")
 F??r l som heltal = 0 Till strlen - 1
 W ("-", "neutralText")
 N??sta
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 Avsluta under
 Public Shared Sub WritMsg (ByVal TypeID som heltal, ByVal MsgID som heltal)
 Dim BackMessages As String () = {"<OWNER> kommer snart tillbaka.", "<OWNER> ??r upptagen. Han kommer snart tillbaka."}
@@ -194,7 +194,7 @@ Fall 3
 text = ParsePlaces (RudeMessages (MsgID))
 Avsluta V??lj
 InitializeBar (text.Length)
-Wln ("| {0} |", "neutralText", text)
+W ("| {0} |", "neutralText", text)
 InitializeBar (text.Length)
 Avsluta under
 Slutklass
@@ -206,7 +206,7 @@ Slutklass
 1. Upprepa steg 1-4 i det f??rsta exemplet: Meddelanderuta i konsolen och snart, ??ver natten eller of??rsk??md (g?? bort ...) meddelanden
 2. Skriv ovan Public Class Blank (f??rutsatt att ditt klassnamn ??r Tomt):
 - Importsystem
-- Importerar Kernel_Simulator.Screensaver
+- Importerar KS.Screensaver
 3. Skriv dessa nedanf??r Implements ICustomSaver:
 Public Property Initialized As Boolean Implements ICustomSaver.Initialized
 Public Sub InitSaver () Implementerar ICustomSaver.InitSaver
@@ -221,7 +221,7 @@ Avsluta under
 Console.Clear ()
 5. Koden ska se ut s?? h??r:
 Importsystem
-Importerar Kernel_Simulator.Screensaver
+Importerar KS.Screensaver
 Offentlig klass tom
 Implementerar ICustomSaver
 Public Property Initialized As Boolean Implements ICustomSaver.Initialized
@@ -242,9 +242,9 @@ Detta exempel kommer att komma ig??ng med animationerna.
 
 Importsystem
 Importerar Microsoft.VisualBasic.Constants
-Importerar Kernel_Simulator.TextWriterColor
+Importerar KS.TextWriterColor
 Importerar system. Tr??dning
-Importerar Kernel_Simulator.Screensaver
+Importerar KS.Screensaver
 Public Class ANI
 Implementerar ICustomSaver
 Public Property Initialized As Boolean Implements ICustomSaver.Initialized
@@ -260,7 +260,7 @@ Console.Clear ()
 Om Custom.CancellationPending = Sant d?? "Detta kommer att l??sa problemet f??r uppgiften ??r upptagen.
 Avsluta f??r
 Sluta om
-Wln (aniset (CurrentStep), "neutralText")
+W (aniset (CurrentStep), "neutralText")
 Thread.sleep (150)
 N??sta
 Avsluta under
@@ -335,9 +335,9 @@ Slutklass
 
 Importsystem
 Importerar Microsoft.VisualBasic.Constants
-Importerar Kernel_Simulator.TextWriterColor
+Importerar KS.TextWriterColor
 Importerar Microsoft.VisualBasic.Strings
-Importerar Kernel_Simulator.Screensaver
+Importerar KS.Screensaver
 Public Class Dynamic
 Implementerar ICustomSaver
 Public Property Initialized As Boolean Implements ICustomSaver.Initialized
@@ -362,12 +362,12 @@ N??sta
 Kontrollera = 0: oldCheck = 0: ProgWent = 0
 Avsluta under
 Public Sub ShowStats ()
-Wln ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+W ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
 UpdateProgressBar (Res * 100/1000000)
 Avsluta under
 Public Sub UpdateProgressBar (ByVal procent som str??ng)
 Kontrollera = procent / 5
-Wln (Kontrollera, "neutralText")
+W (Kontrollera, "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
 W ("--------------------", "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
@@ -403,9 +403,9 @@ Public Class...=>Cyan
 Visual Studio 2017=>Magenta
 Imports Implements=>Cyan
 ICustomSaver=>Green
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
-Kernel_Simulator.TextWriterColor=>Green
+KS.TextWriterColor=>Green
 Property As Boolean Sub=>Cyan
 Initialized ICustomSaver.Initialized=>Green
 Kernel Simulator=>Green

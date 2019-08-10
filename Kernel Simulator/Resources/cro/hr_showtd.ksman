@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Naredba Shell "showtd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba showtd
+
+Sa??etak: Prikazuje trenutno vrijeme i datum
+
+Opis
+
+Ako ??elite znati koliko je sati, a da vi??e puta ne ulazite u sat, pomo??u ove naredbe mo??ete prikazati trenutno vrijeme i datum, kao i svoju vremensku zonu.
+
+Upotreba naredbe
+
+* showtd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showtd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showtd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

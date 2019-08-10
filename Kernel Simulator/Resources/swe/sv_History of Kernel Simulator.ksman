@@ -412,7 +412,7 @@ KS 0.0.4.12
 
 F??r??ndringsloggen s??ger bara "Ersatt diskotekommando med en sk??rmsl??ckare."
 
-KS 0,0,5
+KS 0.0.5
 
 ??ndringsloggen s??ger "Borttagna meddelanden, fixat MAL-anv??ndarnamnsunders??kning, lagt till" showalyser ", fixat alias-parsing, tagit bort kravet att tillhandah??lla kommando f??r att ta bort alias och implementering av anv??ndarskapade kommandon i mods"
 
@@ -459,7 +459,7 @@ Men det finns ingen fungerande NuGet-pakethanterare f??r VB2010 eftersom support
 
 0.0.5.5 st??der dock Windows XP.
 
-KS 0,0,5,5
+KS 0.0.5.5
 
 Denna version anv??nder nu MadMilkman.Ini-biblioteket som du kan se i kommandot useddeps.
 
@@ -497,7 +497,7 @@ Efter att vi tagit bort h??rdvarainitieringsf??rklaringen fr??n Kernel.vb starta
 
 Vi gjorde allt som beh??vs f??r att l??sa problemet och det lyckades. 
 
-KS 0,0,5,6
+KS 0.0.5.6
 
 Changelog s??ger "F??rb??ttrade probers, anv??ndarnamn lista p?? inloggning, b??ttre kompatibilitet med Unix"
 
@@ -514,7 +514,7 @@ Changelog s??ger "F??rb??ttrade probers, anv??ndarnamn lista p?? inloggning, b??
 11. Nu "help arginj" listar argument
 12. Nu f??r Unix tidszonst??d
 
-KS 0,0,5,7
+KS 0.0.5.7
 
 Changelog s??ger "Fast krasch n??r startar n??r du k??r p?? ett filnamn som ??r annat ??n" Kernel Simulator.exe ", B??ttre felhantering f??r FTP, Lagt till aktuell katalogutskrift i FTP, tagit bort" version "-kommandot, fixat" Quiet Probe " 
 
@@ -528,7 +528,7 @@ Changelog s??ger "Fast krasch n??r startar n??r du k??r p?? ett filnamn som ??r 
 8. Ut??kat sysinfo-kommandot f??r att visa mer information om k??rnan
 9. Borttagen versionskommandot
 
-KS 0,0,5,8
+KS 0.0.5.8
 
 ??ndringsloggen s??ger "Borttagen pip vid omstart och avst??ngning, Borttagen" pip "-kommando, (Windows) Probers kommer nu att forts??tta ??ven om de misslyckades. Avl??gsnande av minne anv??nder nu inte l??ngre VB6-metod f??r att hantera fel"
 
@@ -564,7 +564,7 @@ Efter flera kraschar fick vi en b??rbar dator som k??r Windows 10 p?? den och fl
 
 Vi skrev om dessa 3-4 filer, och de fungerade framg??ngsrikt som f??rra g??ngen vi ut??kade dem till att ha 0.0.5.9 funktioner.
 
-KS 0,0,5,9
+KS 0.0.5.9
 
 Changelog s??ger "Mods kommer nu att stoppas n??r du st??nger av, Mods kan ha sitt eget namn och sin egen version, fast debugger st??ngs inte ordentligt vid omstart eller st??ngning. Shell avslutar nu inte l??ngre applikationen n??r ett undantag intr??ffar, Debugging nu mer 
 
@@ -708,7 +708,7 @@ Efter att vi f??tt en ny dator har uppdateringen kommit.
 3. "cdir", som visar den aktuella katalogen, ??r nu f??r??ldrad
 4. Fast krasch medan du startar om k??rnan
 
-KS 0,0,6
+KS 0.0.6
 
 Den h??r uppdateringen ??r s?? stor som 0.0.4, men vi har sl??ppt den h??r uppdateringen f??r att fixa fler problem. 
 
@@ -786,7 +786,7 @@ KS 0.0.6.4b
 
 1. Gjorde en f??rberedelse f??r 0.0.6.5: Ladda ner fels??kningssymboler vid start om det inte hittas
 
-KS 0,0,6,5
+KS 0.0.6.5
 
 1. Fasta dumpfiler skapas utan f??rl??ngning
 2. Lokaliserade dumpar och manuella sidor
@@ -796,12 +796,12 @@ KS 0,0,6,5
 6. Fast framstegsfält för FTP-överföringar så att det använder nytt format
 7. Lade till ETA och hastighet
 
-KS 0,0,6,6
+KS 0.0.6.6
 
 1. Uppdaterad manuell sida för nya kommandon
 2. Borttagen valutakommando (obetalt)
 
-KS 0,0,6,9
+KS 0.0.6.9
 
 1. Borttagna kalkylatorer och enhetsomvandlare
 2. Förenade två utskriftskommandon till ett
@@ -817,6 +817,16 @@ KS 0,0,6,9
 12. Lade till felsökning i varje fas
 13. Lagt till platshållare för operativsystem för användning med MOTD och MAL
 14. Lade till ny linje-parser för att göra MOTD-stöd mer än 1 rad
+
+KS 0.0.6.10
+
+1. Förenklad namnutrymme till KS
+2. Fasta kodblock för hindi, kinesiska och 1/2 tjeckiska (se kommentar på GetCommand.vb)
+3. Lagt till saknad hjälppost för "reloadsaver"
+4. Lade till "reloadmods" -kommando
+5. Made KernelVersion and EnvironmentOSType skrivskyddad
+6. cmdline-argumentet "promptArgs" har tagits bort
+7. Extra stapel genereras nu inte vid omstart
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

@@ -19,11 +19,11 @@ Grundmodding (Bildschirmschoner)
 2. Klicken Sie im Abschnitt Kompilieren auf Ereignisse erstellen und geben Sie dies in die Befehlszeile f??r Ereignisse nach dem Erstellen ein:
 - kopiere .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (setze SS vor das .m, damit KS es als Bildschirmschoner und nicht als Mod erkennt)
 - del / Q *. * (um sicherzustellen, dass keine Dummy-DLL-Dateien erstellt werden, da wir keine DLL f??r Mods verwenden)
-3. Wiederholen Sie die Schritte 9 bis 16 im Modding-Handbuch, ersetzen Sie jedoch den Imports Kernel_Simulator.ModParser durch Imports Kernel_Simulator.Screensaver
+3. Wiederholen Sie die Schritte 9 bis 16 im Modding-Handbuch, ersetzen Sie jedoch den Imports KS.ModParser durch Imports KS.Screensaver
 4. Lassen Sie Visual Studio 2017 zwischen den Zeilen Public Class ... und End Class wissen, dass Sie Ihren KS-Bildschirmschoner erstellen, indem Sie Folgendes schreiben: Implementiert ICustomSaver
 5. Wenn Sie Namespaces hinzuf??gen m??chten, m??ssen die folgenden Regeln erf??llt sein:
-1) Importieren Sie Kernel_Simulator nicht alleine. 
-2) Beim Importieren von Modulen / Klassen wie TextWriterColor wird Folgendes geschrieben: Importiert Kernel_Simulator.TextWriterColor
+1) Importieren Sie KS nicht alleine. 
+2) Beim Importieren von Modulen / Klassen wie TextWriterColor wird Folgendes geschrieben: Importiert KS.TextWriterColor
 6. Definieren Sie die Eigenschaften f??r die Mod-Informationen, indem Sie das Implements IScript unten platzieren:
 Als Boolean initialisierte Eigenschaft Implementiert ICustomSaver.Initialized
 7. Erstellen Sie Ihr Init-Screensaver-Sub mit dem Namen InitSaver (), das den ICustomSaver.InitSaver implementiert, indem Sie Folgendes schreiben:
@@ -64,14 +64,14 @@ Der Bildschirmschoner im hinteren Meldungsfeld informiert die Benutzer dar??ber,
 5. Schreiben Sie ??ber die ??ffentliche Klasse SOR:
 - Importiert System
 - Importiert System.Threading
-- Importiert den Kernel_Simulator.Screensaver
-- Importiert Kernel_Simulator.TextWriterColor
-- Importiert Kernel_Simulator.Login
+- Importiert den KS.Screensaver
+- Importiert KS.TextWriterColor
+- Importiert KS.Login
 6. Es sollte eine Fehlermeldung angezeigt werden, dass diese Subs erstellt werden sollen.
 7. Erstellen Sie Ihren Startbildschirmschoner-Ereignishandler, indem Sie Folgendes schreiben:
 Als Boolean initialisierte Eigenschaft Implementiert ICustomSaver.Initialized
 Sub InitSaver () Implementiert ICustomSaver.InitSaver
-Wln ("Lade diesen Bildschirmschoner mit" "LoadSaver SORSS.m" "und" "SetSaver SORSS.m" "," neutralText ")
+W ("Lade diesen Bildschirmschoner mit" "LoadSaver SORSS.m" "und" "SetSaver SORSS.m" "," neutralText ")
 Initialisiert = True
 End Sub
 8. Da wir vor dem Anzeigen des Bildschirmschoners nichts implementieren, lassen wir dieses Feld leer:
@@ -111,7 +111,7 @@ W ("-", "neutralText")
 For l As Integer = 0 To strlen - 1
 W ("-", "neutralText")
 N??chster
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 End Sub
 Public Shared Sub WriteMsg (ByVal TypeID als Ganzzahl, ByVal MsgID als Ganzzahl)
 Dim BackMessages Da String () = {"<BESITZER> wird bald zur??ck sein.", "<BESITZER> ist besch??ftigt. Er wird bald zur??ck sein."}
@@ -127,15 +127,15 @@ Fall 3
 text = ParsePlaces (RudeMessages (MsgID))
 Ende ausw??hlen
 InitializeBar (text.Length)
-Wln ("| {0} |", "neutralText", Text)
+W ("| {0} |", "neutralText", Text)
 InitializeBar (text.Length)
 End Sub
 12. Der Code sollte folgenderma??en aussehen:
 System importieren
 Importiert System.Threading
-Importiert den Kernel_Simulator.Screensaver
-Importiert Kernel_Simulator.TextWriterColor
-Importiert Kernel_Simulator.Login
+Importiert den KS.Screensaver
+Importiert KS.TextWriterColor
+Importiert KS.Login
 ??ffentliche Klasse SoonOvernightRude
 Implementiert ICustomSaver
 Als Boolean initialisierte Eigenschaft Implementiert ICustomSaver.Initialized
@@ -144,7 +144,7 @@ Public S_Random As New Random () 'Initialisiert den Zufallszahlengenerator
 Public O_Random As New Random () 'Initialisiert den Zufallszahlengenerator
 Public R_Random As New Random () 'Initialisiert den Zufallszahlengenerator
 Sub InitSaver () Implementiert ICustomSaver.InitSaver
-Wln ("Diesen Bildschirmschoner mit" "setsaver SORSS.m" "," neutralText "als Standard festlegen)
+W ("Diesen Bildschirmschoner mit" "setsaver SORSS.m" "," neutralText "als Standard festlegen)
 Initialisiert = True
 End Sub
 Sub PreDisplay () Implementiert ICustomSaver.PreDisplay
@@ -178,7 +178,7 @@ W ("-", "neutralText")
 For l As Integer = 0 To strlen - 1
 W ("-", "neutralText")
 N??chster
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 End Sub
 Public Shared Sub WriteMsg (ByVal TypeID als Ganzzahl, ByVal MsgID als Ganzzahl)
 Dim BackMessages Da String () = {"<BESITZER> wird bald zur??ck sein.", "<BESITZER> ist besch??ftigt. Er wird bald zur??ck sein."}
@@ -194,7 +194,7 @@ Fall 3
 text = ParsePlaces (RudeMessages (MsgID))
 Ende ausw??hlen
 InitializeBar (text.Length)
-Wln ("| {0} |", "neutralText", Text)
+W ("| {0} |", "neutralText", Text)
 InitializeBar (text.Length)
 End Sub
 Klasse beenden
@@ -206,7 +206,7 @@ Klasse beenden
 1. Wiederholen Sie die Schritte 1 bis 4 f??r das erste Beispiel: In-Console Message Box und Soon, Overnight oder Rude (Go away ...)
 2. Schreiben Sie ??ber das ??ffentliche Klassenfeld (vorausgesetzt, Ihr Klassenname ist leer):
 - Importiert System
-- Importiert den Kernel_Simulator.Screensaver
+- Importiert den KS.Screensaver
 3. Schreiben Sie diese unter die Implements ICustomSaver:
 ??ffentliche Eigenschaft Initialisiert als Boolean Implementiert ICustomSaver.Initialized
 Public Sub InitSaver () Implementiert ICustomSaver.InitSaver
@@ -221,7 +221,7 @@ End Sub
 Console.Clear ()
 5. Der Code sollte folgenderma??en aussehen:
 System importieren
-Importiert den Kernel_Simulator.Screensaver
+Importiert den KS.Screensaver
 ??ffentliche Klasse leer
 Implementiert ICustomSaver
 ??ffentliche Eigenschaft Initialisiert als Boolean Implementiert ICustomSaver.Initialized
@@ -242,9 +242,9 @@ In diesem Beispiel werden Sie mit den Animationen beginnen.
 
 System importieren
 Importiert Microsoft.VisualBasic.Constants
-Importiert Kernel_Simulator.TextWriterColor
+Importiert KS.TextWriterColor
 Importiert System.Threading
-Importiert den Kernel_Simulator.Screensaver
+Importiert den KS.Screensaver
 ??ffentliche Klasse ANI
 Implementiert ICustomSaver
 ??ffentliche Eigenschaft Initialisiert als Boolean Implementiert ICustomSaver.Initialized
@@ -260,7 +260,7 @@ Console.Clear ()
 If Custom.CancellationPending = True Then 'Dies behebt das Problem f??r die Aufgabe, die gerade besch??ftigt ist.
 Ausfahrt f??r
 End If
-Wln (aniset (CurrentStep), "neutralText")
+W (aniset (CurrentStep), "neutralText")
 Thread.Sleep (150)
 N??chster
 End Sub
@@ -335,9 +335,9 @@ Klasse beenden
 
 System importieren
 Importiert Microsoft.VisualBasic.Constants
-Importiert Kernel_Simulator.TextWriterColor
+Importiert KS.TextWriterColor
 Importiert Microsoft.VisualBasic.Strings
-Importiert den Kernel_Simulator.Screensaver
+Importiert den KS.Screensaver
 Public Class Dynamic
 Implementiert ICustomSaver
 ??ffentliche Eigenschaft Initialisiert als Boolean Implementiert ICustomSaver.Initialized
@@ -362,12 +362,12 @@ N??chster
 Check = 0: oldCheck = 0: ProgWent = 0
 End Sub
 ??ffentliche Sub ShowStats ()
-Wln ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+W ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
 UpdateProgressBar (Res * 100/1000000)
 End Sub
 Public Sub UpdateProgressBar (ByVal percent As String)
 Check = Prozent / 5
-Wln (Check, "neutralText")
+W (Check, "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
 W ("--------------------", "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
@@ -403,9 +403,9 @@ Public Class...=>Cyan
 Visual Studio 2017=>Magenta
 Imports Implements=>Cyan
 ICustomSaver=>Green
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
-Kernel_Simulator.TextWriterColor=>Green
+KS.TextWriterColor=>Green
 Property As Boolean Sub=>Cyan
 Initialized ICustomSaver.Initialized=>Green
 Kernel Simulator=>Green

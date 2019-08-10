@@ -1,0 +1,369 @@
+﻿Dostupne naredbe: {0}
+Napisati naredbu:
+Ukidanje naredbe je otkazano.
+Argumente pokretanja odvojite zarezima bez razmaka, na primjer, "motd, gpuprobe"
+Odvojite naredbe na 'cmdinject' kolonama s razmacima, na primjer, 'cmdinject setthemes Hacker: beep 1024 0,5'
+Imajte na umu da argument za uklanjanje pogrešaka ne pokriva u potpunosti kernel.
+bargs: Traženi argument {0} nije pronađen.
+bargs: Nerešiva ​​greška u argumentu:
+Dostupni argumenti: {0}
+Argumenti ("pomoć" za pomoć):
+Injektirani argumenti treba se pokrenuti pri sljedećem ponovnom pokretanju.
+Ubrizgavanje argumenata otkazano je.
+Pogreška prilikom raščlanjivanja stvarnih argumenata naredbenog retka: {0}
+Nevažeći predložak boja {0}
+Zadano
+Prilagođen
+hwprobe: Vaš će hardver biti ispitivan. Molimo pričekajte ...
+hwprobe: Hardver je već ispitivan.
+hwprobe: Hardver nije ispitivan. Sonda pomoću "hwprobe"
+CPU: Jedna ili više CPU jezgara nije uspjelo sondirati. Ionako se prikazuju informacije ...
+RAM-a: Jedan ili više RAM-ovih čipova nije uspjelo sondirati. Ionako se prikazuju informacije ...
+HDD: Jedan ili više tvrdih diskova nije uspjelo sondirati. Ionako se prikazuju informacije ...
+CPU: ukupan broj procesora: {0}
+CPU: {0} {1} MHz
+RAM-a: {0} MB = {1} MB
+RAM: rabljeni slotovi (prema imenima): {0}
+RAM: rabljeni slotovi (prema brojevima): {0} / {1} ({2}%)
+RAM-a: status sondiranja je zastario i bit će uklonjen u budućem izdanju.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} cilindri | {5} glave | {6} sektora
+HDD: CHS: {3} cilindri | {4} glave | {5} sektora
+hwprobe: Sondiranje nije podržano jer nije osmišljeno za pokretanje probera na Unixu.
+Unesite lozinku administratora za održavanje.
+Na popisu nema više korisnika.
+Pogreška kernela tijekom dizanja: {0}
+DVOJNA PANIKA: Vrijeme ponovnog pokretanja premašuje maksimalno dopušteno {0} vrijeme za ponovno pokretanje pogreške. Pronašli ste grešku kernela.
+[{0}] panika: ponovno pokretanje omogućeno jer je razina pogreške {0}.
+[{0}] panika: Vrijeme za ponovno podizanje sustava: {1} sekundi, više od 1 sata. Postavlja se na 1 minutu.
+DVOJNA PANIKA: Vrsta pogreške {0} nevaljana.
+[{0}] dpanic: {1} - Ponovno pokretanje za {2} sekunde ...
+[{0}] panika: ponovno pokretanje je onemogućeno jer je razina pogreške {0}.
+[{0}] panika: {1} - Pritisnite bilo koju tipku za nastavak korištenja kernela.
+[{0}] panika: {1} - Pritisnite bilo koju tipku za isključenje.
+[{0}] panika: {1} - Ponovno pokretanje za {2} sekunde ...
+DVOJNA PANIKA: Kernel bug: {0}
+Isključivanje ...
+Ponovno pokretanje ...
+---===+++> Dobrodošli u kernel | Verzija {0} <+++===---
+Pokreće se još jedna instanca Kernel Simulator. Isključivanje u slučaju smetnji.
+Na popisu administratora dodan je korisnik {0}.
+Korisnik {0} dodan je na popis onemogućenih.
+Nije moguće dodavanje korisnika na popise dozvola: nevaljana vrsta {0}
+Nije uspjelo dodavanje korisnika na popise dozvola: nevaljani korisnik {0}
+Korisnik {0} uklonjen je s popisa administratora.
+Korisnik {0} je uklonjen s popisa onemogućenih.
+Uklanjanje korisnika s popisa dozvola nije uspjelo: nevažeća vrsta {0}
+Već si prijavljen.
+Uklanjanje korisnika s popisa dozvola nije uspjelo: nevažeći korisnik {0}
+Pronašli ste pogrešku u sustavu dozvola: nevažeći način {0}
+Pronašli ste pogrešku ili je već učinjeno dopuštenje za pokušaj dodavanja ili uklanjanja ili druga pogreška.
+Pogreška {0}: {1}
+Pronašli ste pogrešku ili odobrenje koje ste pokušali urediti za novog korisnika nije uspjelo.
+Dostupna korisnička imena: {0}
+Korisničko ime:
+Prostori nisu dopušteni.
+Posebni znakovi nisu dopušteni.
+Zaporka {0}:
+Pogrešna lozinka.
+Korisnik je onemogućen.
+Pogrešno korisničko ime.
+Pogreška pri pokušaju raščlanjivanja rezerviranih mjesta. {0} - Trag snopa:
+Pogreška pri pokušaju raščlanjivanja rezerviranih mjesta. {0}
+Pogreška prilikom pokušaja dodavanja korisničkog imena.
+usrmgr: Stvaranje korisničkog imena {0} ...
+Prazno korisničko ime.
+Korisnik {0} nije pronađen.
+Korisnik {0} nije dopušten za uklanjanje.
+Korisnik {0} je već prijavljen. Odjava i prijava kao drugi administrator.
+Korisnik {0} je uklonjen.
+Pogreška pri pokušaju uklanjanja korisničkog imena.
+{0} od {1} = {2}
+Pokušaj podjele s nulom nije dopušten.
+Osumnjičen je pokušaj izračuna koji je rezultirao preljevom.
+Došlo je do pogreške prilikom izračuna: {0}
+{0} se ne može pretvoriti u {1}.
+Ili izvor
+ ili odredište
+ ne postoji na poslužitelju.
+{0} do {1}: {2}
+Pogreška pri pokušaju pretvorbe iz {0} u {1}: {2}
+greška
+Zatraženi čuvar zaslona {0} nije pronađen.
+{0} je pravilno pokrenut.
+{0} se nije inicijalizirao. Kod čuvara zaslona mogao je doći do pogreške prilikom inicijalizacije.
+Čuvar zaslona {0} ne postoji.
+{0} je postavljena na zadanu čuvar zaslona.
+Čuvar zaslona {0} nije pronađen u bazi podataka. Inicijalizirajte s "loadsaver {0}".
+Čuvar zaslona ne može se učitati zbog sljedećeg:
+Pri ispisu teksta postoji ozbiljna pogreška.
+Došlo je do pogreške prilikom pokušaja stvaranja konfiguracije.
+Došlo je do pogreške prilikom pokušaja stvaranja konfiguracije: {0}
+Otkrivena je nadogradnja s {0} na {1}. Ažuriranje konfiguracije ...
+Došlo je do pogreške prilikom pokušaja ažuriranja konfiguracije: {0}.
+Došlo je do pogreške prilikom pokušaja ažuriranja konfiguracije.
+Došlo je do pogreške prilikom pokušaja čitanja konfiguracije.
+Došlo je do pogreške prilikom pokušaja čitanja konfiguracije: {0}
+Pogreška pri pokušaju oslobađanja RAM-a: {0} - Nastavak ...
+Mod se ne može učitati zbog sljedećeg:
+mod: Učitavanje modova ...
+mod: Zaustavljanje modova ...
+Mod {0} nema ime. Pregledajte izvorni kod.
+Mod {0} nema verziju.
+{0} v {1} započeo
+Nema naredbe za naredbu {0}.
+Naredba definirana s
+Prije spajanja na drugi poslužitelj trebali biste prekinuti vezu
+Korisničko ime za {0}:
+Lozinka za {0}:
+Povezano sa {0}
+Pogreška kod pokušaja povezivanja sa {0}: {1}
+Trag snopa: {2}
+Unesite FTP poslužitelj.
+Lokalni direktorij {0} ne postoji.
+Unesite lokalni direktorij. ".." vratiti se.
+Imenik {0} nije pronađen.
+Unesite udaljeni direktorij. ".." vratiti se
+Prije promjene direktorija morate se povezati s poslužiteljem
+Lokalni direktorij: {0}
+Udaljeni direktorij: {0}
+Morate se povezati s poslužiteljem prije nego što dobijete trenutni udaljeni direktorij.
+Brisanje datoteke {0} ...
+Jeste li sigurni da želite izbrisati datoteku {0} <y / n>?
+Izbrisana datoteka {0}
+Prije brisanja morate se povezati s poslužiteljem s administrativnim povlasticama.
+Unesite datoteku koju želite ukloniti.
+Morate imati administrativna dopuštenja na svom prijavljenom korisničkom imenu da biste ih mogli ukloniti.
+Prekinuta s vezom {0}
+Još se niste povezali ni s jednim poslužiteljem
+Preuzimanje datoteke {0} ...
+Preuzeta datoteka {0}.
+Preuzimanje datoteke nije uspjelo {0} jer je lokalna datoteka oštećena.
+Prije izvođenja prijenosa morate se povezati s poslužiteljem.
+Unesite datoteku za preuzimanje u lokalni direktorij.
+{0} KB | Izmijenjeno u: {1}
+Prije popisa svih udaljenih datoteka trebali biste se povezati s poslužiteljem.
+Preimenovanje datoteke {0} u {1} ...
+Uspješno preimenovan
+Unesite datoteku i novo ime datoteke.
+Prijenos datoteke {0} ...
+Prenesena datoteka {0}
+Unesite datoteku za prijenos u udaljeni direktorij. upload <file> <directory>
+Pogreška pri pokušaju izvršenja FTP naredbe
+(Unutarnji:
+{0} mape, {1} datoteke
+(Pristup odbijen)
+{0} KB, stvoreno u {1} {2}, izmijenjeno u {3} {4}
+Dobiva trenutni lokalni imenik
+Dobiva trenutni udaljeni direktorij
+Povezuje se na FTP poslužitelj (mora početi s "ftp://" ili "ftps://")
+Mijenja lokalni direktorij za preuzimanje ili prijenos s
+Mijenja udaljeni imenik za preuzimanje ili prijenos u
+Brisanje udaljene datoteke s poslužitelja
+Prekida vezu s poslužiteljem
+Preuzima udaljenu datoteku u lokalni direktorij koristeći binarni ili tekst
+Izlazi iz FTP ljuske i vraća se u kernel
+Prikazuje zaslon pomoći
+Navodi lokalni imenik
+Navodi udaljeni imenik
+Preimenuje određenu datoteku ili mapu
+Prenosi lokalnu datoteku u udaljeni direktorij koristeći binarni ili tekst
+Došlo je do pogreške u FTP školjci.
+FTP poruka: Zatražena naredba {0} nije pronađena. Pogledajte "pomoć" za popis dostupnih naredbi navedenih na FTP shellu.
+net: Dobio je odgovor od {0} u {1} ms
+Isključeno je, isključeno ili offline poslužitelj.
+net: Naziv vašeg računala na mreži je {0}
+net: Ime domaćina je {1}
+net: Čini se da su računala u domeni ili radnoj skupini:
+mreža: WiFi ili Ethernet nisu povezani.
+net: Čini se da su računala spojena u nastavku:
+net: Adresa rutera: {0}
+Nije uspjelo dobivanje svojstava za adapter {0}
+Broj adaptera:
+Naziv adaptera:
+Maksimalna jedinica za prijenos: {2} Jedinice
+Omogućen DHCP:
+Paketi koji nisu jednokratni:
+Jednokratni paketi:
+Pogreška pri dolaznom / odlaznom paketu:
+Alias ​​ne može biti isto ime kao naredba.
+Naredba nije pronađena za pseudonim do {0}.
+Izrezivanje {0} do {1} potpuno je zabranjeno.
+Sada možete pokrenuti "{0}" kao naredbu: "{1}".
+Ne možete više koristiti "{0}" kao naredbu "{1}".
+Ne može se ukloniti pseudonim {0}.
+Nevažeći način {0}.
+Ubrizgani argumenti, {0}, planiraju se pokrenuti pri sljedećem ponovnom pokretanju.
+Nije bilo dovoljno argumenata. Pogledajte dolje za upotrebu:
+Imenik {0} nije pronađen
+Prazno ime domaćina.
+Promjena iz: {0} u {1} ...
+Prazna poruka dana.
+Prazan MAL nakon prijave.
+Promjena MAL-a s {0} na {1} ...
+Pogrešna korisnička lozinka.
+Lozinke se ne podudaraju.
+Korisničko ime je promijenjeno u {0}!
+Novo ime koje ste unijeli je već pronađeno.
+Računala s popisom još nisu podržana na Unixu.
+Zabranjena su savezništva: {0}
+{0} nije pronađen.
+Konfiguracija je ponovno učitana. Možda ćete trebati ponovno pokrenuti kernel da bi neke promjene stupile na snagu.
+Sve se vraća na normalne postavke.
+Jedna ili više boja nisu valjane.
+Boje nisu dostupne. U konfiguraciji jezgre uključite obojenu ljusku.
+Čuvar zaslona {0} nije pronađen.
+{0} [Postavke kernela (radi u {1})]
+Verzija kernela:
+Način uklanjanja pogrešaka:
+Obojena školjka:
+Argumenti na čizmi:
+Pojednostavljena naredba pomoći:
+MOTD za prijavu:
+Vrijeme / datum na uglu:
+Sondiranje hardvera:
+Trenutna tema:
+[Hardverske postavke] {0}
+{0} [Korisničke postavke]
+Trenutačno korisničko ime:
+Trenutačno ime domaćina:
+Dostupna korisnička imena:
+Naziv računala računala:
+{0} [Postavke poruka]
+Izvorni kod:
+Copyright (c)
+licenca
+predstaviti
+Pogreška pri pokušaju izvršenja naredbe
+Dodaje korisnike (samo administratori mogu pristupiti ovoj naredbi)
+Naredbama dodaje pseudonimije (samo administratori mogu pristupiti ovoj naredbi)
+Ubrizgava argumente u kernel (potrebno je ponovno pokretanje, samo administratori)
+Jednostavan kalkulator
+Imenik promjena
+Izmjena imena domaćina (samo za administratore)
+Mijenja MAL, MOTD nakon prijave (samo za administratore)
+Mijenja MOTD, poruku dana (samo za administratore)
+Promijeni lozinku za trenutnog korisnika
+Mijenja korisničko ime (samo za administratore)
+Brisanje zaslona
+Pretvori valutu
+Prikazuje dnevnike uklanjanja pogrešaka (samo za administratore)
+Upotrijebite FTP školjku za interakciju s poslužiteljima
+Stranica pomoći
+Sonda hardver ručno (Jednom u kernelu 'nohwprobe')
+Popis sadržaja datoteke / mape u trenutnoj mapi
+Ponovo učitava datoteku čuvara zaslona u %USERPROFILE%\KSMods
+Zaključava zaslon lozinkom
+Odjavi vas
+Navodi sve mrežne uređaje koji su na mreži (i izvan mreže u domenama)
+Navodi sve mrežne adrese na hostu
+Navodi sve mrežne adrese na host pomoću stabla
+Stvara direktorij
+Popis informacija o svim dostupnim sučeljima
+Prikazuje popis zabranjenih aliasa
+Upravljanje dozvolama za korisnike (samo administratori mogu pristupiti ovoj naredbi)
+Provjerite je li navedena adresa dostupna
+Sadrži sadržaj datoteke na konzolu
+Ponovno pokreće vaše računalo (UPOZORENJE: Nema sinkronizacije jer nije konačni kernel)
+Ponovno učitava konfiguracijsku datoteku koju uređuje.
+Uklanja mapu
+Uklanja korisnika s popisa (samo za administratore)
+Pohranjuje zaslon od izgaranja
+Znanstveni kalkulator. Pretvarač jedinice je odvojen na drugu naredbu
+Postavlja boje kernela
+Postavlja čuvara zaslona jezgre
+Postavlja teme jezgre
+Prikazuje pseudonime
+Prikazuje MOTD nakon prijave koji je postavio korisnik ili kernel
+Prikazuje poruku dana koji je postavio korisnik ili kernel
+Prikazuje datum i vrijeme
+Prikazuje datum i vrijeme u zonama
+Kernel će se isključiti
+Informacije o sustavu
+Pretvarač jedinice odvojen od scicalc-a.
+Prikazuje korištene ovisnosti o otvorenom izvoru
+Vrlo opisan korisnički priručnik.
+* Možete koristiti više naredbi pomoću dvotočka između naredbi.
+Dostupne naredbe:
+Mod naredbe:
+Najave za naredbe:
+Upotreba:
+Argumenti razdvojeni zarezima
+gdje će argumenti biti {0}
+dobiti trenutni imenik
+U kojem su izvoru i odredištu 3 znaka POVRATNOG tečaja
+Popis svih ID-ova i imena:
+Prikazuje uklanjanje pogrešaka dnevnicima kako biste nam mogli poslati zapisnik.
+Inicijalizira FTP školjku.
+Hardver sonde (djeluje samo ako hardver nije sondiran i ako hwprobe nije izveden).
+Navodi podatke o mreži kao i svako računalo spojeno na mrežu.
+Prijatelji od
+U obliku stabla navodi podatke o mreži, kao i svako računalo spojeno na mrežu.
+Navodi podatke o mreži, kao i o svakom računalu.
+gdje će biti modnameSS.m
+Zaključava zaslon lozinkom.
+Odjava vas od korisnika.
+Dobivajte sve mrežne informacije
+Ponovno pokreće vaše simulirano računalo.
+Ponovno učitava konfiguraciju koju mijenja krajnji korisnik ili putem alata.
+Boje ne zahtijevaju ponovno pokretanje, ali većina postavki zahtijeva ponovno pokretanje.
+prikazuje vam odabrani čuvar zaslona, ​​dok štiti vaš zaslon od izgaranja.
+Prikazuje datum i vrijeme.
+Prikazuje datum i vrijeme u zonama.
+Isključuje vaše simulirano računalo.
+Prikazuje informacije o sustavu i verzije.
+Prikazuje korištene biblioteke otvorenog koda
+Došlo je do pogreške u ljusci.
+Nemate dozvolu za upotrebu {0}
+Poruka školjke: Zatražena naredba {0} nije dopuštena za pokretanje u načinu održavanja.
+Poruka školjke: Tražena naredba {0} nije pronađena. Pogledajte "pomoć" za dostupne naredbe.
+Poruka školjke: Naredba {0} nije dopuštena za pokretanje prilikom prijave.
+Poruka školjke: Tražena naredba {0} nije pronađena.
+Pogreška pri pokušaju izvršenja naredbe.
+datetime: Vrijeme je {0}
+datetime: Danas je {0}
+datetime: Vremenska zona: {0}
+- Vrijeme od {0}: {1}
+za brisanje zaslona.
+Čini se da stranica s priručnikom {0} nije pronađena.
+Došlo je do pogreške prilikom pokušaja učitavanja stranice s priručnikom {0} zbog {1}.
+Ova stranica za priručnik je nepotpuna iz sljedećih razloga:
+Pritisnite bilo koju tipku za nastavak...
+ | {0} riječi | Revizija v {1} | {2} odjeljka
+Naslov ove stranice priručnika nije napisan
+Ova stranica za priručnik ({0}) ne sadrži tekst tijela. Brisanje stranice ...
+Ova stranica za priručnik ({0}) ne sadrži nijedan odjeljak. Brisanje stranice ...
+Trčanje {0}
+Niste ovlašteni za dobivanje informacija za {0}.
+Ova naredba je zastarjela i bit će uklonjena u budućem izdanju.
+Niste ovlašteni mijenjati lozinku za {0} jer je meta bio administrator.
+Pretvorite iznos novca iz države u zemlju
+valute:
+usrmgr: Korisničko ime {0} je već pronađeno
+Unesite svoj API ključ:
+Računala se ne mogu nabaviti. Ako koristite najnoviju verziju sustava Windows 10, morate omogućiti SMBv1. Taj je protokol, međutim, nesiguran i mi ćemo pokušati riješiti ovaj problem.
+Briše sve u zapisniku pogrešaka
+Dobija SSE verzije
+Nevažeći jezik
+Mijenja jezik
+Možda na vašem sustavu nije instaliran libcpanel-json-xs-perl. Za instalaciju potražite svoj upravitelj paketa. Za Debian (i njegove derivate) sustave, možda biste htjeli pokrenuti "sudo apt install libcpanel-json-xs-perl" u terminalnom emulatoru. Više detalja o pogrešci:
+----------------------------- Kernel panični deponij ------------------ -----------
+>> Informacije o paniki <<
+> Opis: {0}
+> Vrsta pogreške: {1}
+> Datum i vrijeme: {2}
+>> Informacije o izuzecima <<
+> Izuzetak: {0}
+> Opis: {1}
+> HRESULT: {2}
+> Izvor: {3}
+> Trag snopa <
+>> Unutarnja iznimka {0} podaci <<
+>> Iznimka {0} je temeljni uzrok <<
+>> Nije iznimka; možda je greška kernela. <<
+>> Okviri, datoteke, linije i stupci <<
+> Okvir {0}: Datoteka: {1} | Redak: {2} | Stupac: {3}
+> Došlo je do pogreške pri pokušaju dobivanja informacija o okviru. {0}: {1}
+Jezik sustava postavili ste na bilo šta drugo osim na engleski. Oprosti zbog neugodnosti, ali čini se da su Google i njegov prevoditelj vrlo čudni u prevođenju blokova kodova s ​​bilo kojeg programskog jezika. Dok popravljamo sve blokove kodova za prevedene stranice s priručnicima, predlažemo vam da otvorite kartu u Google prevoditelju za prevođenje blokova kodova koji nisu namijenjeni prevođenju, a jezik vašeg sustava postavite na engleski ako ga govorite.
+Modovi su ponovno učitani.

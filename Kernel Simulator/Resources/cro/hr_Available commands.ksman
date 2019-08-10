@@ -1,0 +1,88 @@
+(*MAN START*)
+
+~~- Information about this manual page:
+-TITLE:Dostupne naredbe
+-REVISION:0.0.1.4
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+~~- Make sure that all of the commands that are available in the kernel is put.
+-BODY START-
+Administrativne naredbe:
+
+1. adduser: Korisni??ko ime mo??ete dodati kad god vam treba, uz lozinku ako je potrebno. 
+2. perm: mo??ete upravljati postavkama korisni??kih dozvola. 
+3. arginj: Mo??ete umetnuti argumente u kernel tako da se pri ponovnom pokretanju pokre??u argumenti koji se ubrizgavaju. 
+4. chhostname: Mo??ete promijeniti ime doma??ina va??eg kernela da biste prilagodili stvari. 
+5. chmotd: Mo??ete promijeniti svoju poruku dana, i mo??ete uklju??iti vlastite rezervirane mjesta, uklju??uju??i <user> ??to zna??i korisni??ko ime, <shortdate> za kratak datum u "MM / DD / YYYY" formatu, <longdate> 
+6. chusrname: Mo??ete promijeniti svoje korisni??ko ime ili tu??e ime koriste??i "chusrname <oldName> <newName>", iako ako promijenite svoje korisni??ko ime u novo ime, odjavit ??ete se odmah.
+7. rmuser: Mo??ete ukloniti korisni??ka imena, ali ne mo??ete ih ukloniti ako navedeni korisnik ne ??eli koristiti ra??unalo ili je nepozvan ili je suvi??an. 
+8. netinfo: Mo??ete provjeriti stanje mre??e i podatke mre??nog su??elja, uklju??uju??i podr??ku za WiFi. 
+9. ispravljanje pogre??aka: Mo??ete provjeriti svoje zapisnike za uklanjanje pogre??aka bez potrebe za odlaskom na preglednik datoteka koji se nalazi na va??em korisni??kom profilu i otvaranje ure??iva??a teksta / preglednika na "kernelDbg.log." 
+10. reloadconfig: Mo??ete ponovno u??itati konfiguracijsku datoteku da biste pro??itali nove promjene, ali promjene ??e se primijeniti nakon ??to ponovno pokrenete kernel.
+11. alias: Svojim pseudonimima mo??ete upravljati naredbama tako da ne morate unositi duge naredbe koriste??i "pseudonim <add / rem> <aliasName> <Command>."
+12. chmal: Mo??ete promijeniti svoju poruku dan nakon prijave, a podr??avaju iste rezervirane mjesta i isti argument "chmal <Sve".
+13. setsaver: ??uvar zaslona po va??em izboru ili prilago??eni zaslon mo??ete postaviti kao zadani, a ako planirate koristiti prilago??ene ??uvare zaslona, ??????trebalo bi svoje pro??irenje imenovati <ScreensaverName> SS.m da biste ga prepoznali kao ??uvar zaslona, ??????a ne 
+14. ponovno u??itavanje: Mo??ete ponovo u??itati datoteku s nastavkom ??uvara zaslona iz KSMods kataloga. 
+15. cdbglog: Mo??ete ukloniti program za uklanjanje pogre??aka i resetirati veli??inu na 0
+16. chlang: mijenja jezik
+
+Naredbe za uobi??ajene korisnike:
+
+1. izra??una: izraze mo??ete izra??unati, poput dodavanja brojeva, oduzimanja, mno??enja ili dijeljenja. 
+2. chdir: Svoj radni imenik mo??ete promijeniti pomo??u "chdir <directory>"
+3. chpwd: Mo??ete promijeniti zaporku ili lozinku nekog drugog. 
+4. cls: Za brisanje zaslona s teksta.
+5. ftp: Mo??ete prenositi datoteke s / na FTP poslu??itelj i komunicirati s poslu??iteljima.
+6. list: Mo??ete popisati va?? trenutni radni imenik ili navesti drugi direktorij pomo??u "list [Imenik]."
+7. lscomp: mo??ete navesti sva radna ra??unala, ??ak i izvan mre??e, ako ste na domeni koja ima isklju??ena ra??unala, kao ??to su ??kola, veliki ured itd. To se tako??er mo??e koristiti u kabinama, ali za sva mjesta morate 
+8. lsnet: Mo??ete navesti sva radna ra??unala, ali izostaviti offline ra??unala.
+9. Mre??a mre??e: Mo??ete popisati sva radna ra??unala, ali izostaviti izvanmre??na ra??unala u obliku stabla.
+10. zaklju??ani zaslon: mo??ete zaklju??ati zaslon i pokazati svoj zadani screensaver koji ste postavili vi ili kernel. 
+11. odjava: S ra??una se mo??ete odjaviti po zavr??etku rada.
+12. md: Svoj direktorij mo??ete napraviti u korijenskom direktoriju, koriste??i "md <anything>."
+13. noaliases: Mo??ete vidjeti popis zabranjenih aliasa koje postavlja kernel. 
+14. ping: Mo??ete provjeriti adresu / poslu??itelj da biste vidjeli je li online ili lagan ili izvan mre??e pomo??u "ping <Adress> [repeTimes]"
+15. rd: Napravljeni direktorij mo??ete ukloniti pomo??u "rd <anything>", ali ako poku??ate ukloniti va??ne mape, oni ??e se ponovno stvoriti pri svakom ponovnom pokretanju i ovo ??e se pona??anje promijeniti kada implementiramo pravi datote??ni sustav.
+16. read: Mo??ete vidjeti ??to se nalazi u datoteci "read <file>", sli??no kao "cat <put / to / file>."
+17. ponovno podizanje sustava: Mo??ete ponovo pokrenuti kernel ako ste napravili ru??ne promjene ili promjene konfiguracije alata da bi se one odrazile ili ako ??elite vidjeti redoslijed pokretanja ponovo.
+18. ??tedni zaslon: Mo??ete pokazati ??uvar zaslona kako biste sprije??ili izgaranje zaslona.
+19. skepti??no: Mo??ete izra??unati svoje izraze, ali ovaj je kalkulator znanstveni kalkulator i ubudu??e ??e se spojiti s "calc". 
+20. setcolors: boje kernela mo??ete postaviti pomo??u "setcolors <inputColor / def> <licenceColor / def> <contKernelErrorColor / def> <uncontKernelErrorColor / def> <hostNameShellColor / def> <userNameShellColor / def> <backgroundColor / def> <neutralText 
+21. setthemes: Mo??ete postaviti skup boja za svoje jezgre, poznate kao teme, pomo??u "setthemes <theme>"
+22. showmotd: Mo??ete pokazati svoje promjene u Poruci dana
+23. showtd: Mo??ete prikazati svoje trenutno vrijeme i datum, kao i vremensku zonu.
+24. showtdzone: Mo??ete prikazati vrijeme i datum vremenske zone ili mo??ete prikazati sve datume i vremena vremenskih zona u trenutnom vremenu i datumu pomo??u "showtdzone <zone>" ili "showtdzone <all>"
+25. showmal: Mo??ete pokazati svoje promjene u Poruci dana nakon prijave
+26. shutdown: Mo??ete isklju??iti ra??unalo (kernel, a ne stvarno ra??unalo)
+27. sysinfo: Mo??ete pokazati informacije o va??em sustavu kao i postavke kernela.
+28. unitconv: Jedinicu mo??ete pretvoriti u bilo koju jedinicu, ako se izvor i cilj me??usobno podr??avaju, poput cm -> m, koriste??i "unitconv <source> <target> <value>."
+29. useddeps: Mo??ete pokazati kori??tene biblioteke otvorenog koda
+30. usermanual: Mo??ete dobiti informacije o svemu ili dobiti dostupne stranice s priru??nikom pi??u??i samo naredbu. 
+31. sses: Dobija SSE (1 | 2 | 3) mogu??nosti prona??ene u procesorima
+
+Za vi??e informacija o svakoj naredbi pogledajte "usermanual <command>"
+-BODY END-
+
+-COLOR CONFIGURATION-
+adduser:=>Red
+perm:=>Red
+arginj:=>Red
+chhostname:=>Red
+chmotd:=>Red
+chusrname:=>Red
+rmuser:=>Red
+netinfo:=>Red
+debuglog:=>Red
+reloadconfig:=>Red
+alias:=>Red
+chmal:=>Red
+setsaver:=>Red
+loadsaver:=>Red
+cdbglog:=>Red
+chlang:=>Red
+-COLOR CONFIG END-
+
+-SECTIONS-
+Administrative commands:=>SE1
+Normal user commands:=>SE1
+-SECTIONS END-

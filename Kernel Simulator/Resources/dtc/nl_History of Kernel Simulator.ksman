@@ -806,7 +806,7 @@ KS 0.0.6.9
 1. Verwijderde rekenmachines en eenheidconverters
 2. Unified twee afdrukopdrachten in één
 3. Verenigde twee modgenerators in één
-4. Mag FTP-server binnengaan zonder het voorvoegsel "ftp: //" op te geven
+4. Mag FTP-server binnengaan zonder het voorvoegsel "ftp://" op te geven
 5. Toegestaan om het adres op te geven als het "ftp" opdrachtargument
 6. Nu zal de FTP-client vreedzaam de verbinding verbreken bij het afsluiten
 7. Vaste FTP-helpbeschrijvingen worden niet bijgewerkt bij het veranderen van talen
@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Foutopsporing toegevoegd voor elke fase
 13. Plaatsaanduiding besturingssysteem toegevoegd voor gebruik met MOTD en MAL
 14. Newline parser toegevoegd om MOTD meer dan 1 regel te ondersteunen
+
+KS 0.0.6.10
+
+1. Vereenvoudigde naamruimte naar KS
+2. Vaste codeblocks voor Hindi, Chinees en 1/2 Tsjechisch (zie commentaar op GetCommand.vb)
+3. Ontbrekende hulpvermelding toegevoegd voor "reloadsaver"
+4. Opdracht "reloadmods" toegevoegd
+5. Gemaakt KernelVersion en EnvironmentOSType alleen-lezen
+6. cmdline-argument "promptArgs" verwijderd
+7. Extra stapel nu niet gegenereerd bij opnieuw opstarten
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

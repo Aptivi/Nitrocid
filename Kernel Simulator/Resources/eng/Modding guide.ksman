@@ -48,8 +48,8 @@ Basic modding
     End Class
 17. Between the Public Class... and the End Class lines, let Visual Studio 2017 know that you're going to create your KS mod by writing: Implements IScript
 18. If you're going to add namespaces, these rules must be met:
-    1) Don't import Kernel_Simulator by itself. KS does that automatically
-    2) When importing modules/classes like TextWriterColor, it's written like this: Imports Kernel_Simulator.TextWriterColor
+    1) Don't import "KS" by itself. KS does that automatically
+    2) When importing modules/classes like TextWriterColor, it's written like this: Imports KS.TextWriterColor
 19. Define properties for mod information by putting below the Implements IScript:
     Property Cmd As String Implements IScript.Cmd
     Property Def As String Implements IScript.Def
@@ -71,12 +71,12 @@ Basic modding
     End Sub
 23. 1) If you're making your command in your mod, write the response code below:
        Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
-	   'Your code below
+	       'Your code below
        End Sub
     2) If you're making your command which handles arguments, write the response code below:
        Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
-	   If (args = "YourArgHere") Then 'Replace YourArgsHere with your argument set
-	       'Your code below
+	       If (args = "YourArgHere") Then 'Replace YourArgsHere with your argument set
+	           'Your code below
            End If
        End Sub
     3) If you're making your command which handles subsequent arguments, write the response code below:
@@ -95,22 +95,22 @@ Basic modding
 24. 1) If you're making your event handler which handles what happened in the kernel, write the handle code below:
        Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
            If (ev = "EventName") Then 'Replace EventName with events that is found on "usermanual Events for Mod Developers" command
-	       'Your code below
-	   End If
+	           'Your code below
+	       End If
        End Sub
     2) If you're handling multiple events, write the handle code below:
        Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
            If (ev = "EventName") Then 'Replace EventName with events that is found on "usermanual Events for Mod Developers" command
-	       'Your code below
-	   ElseIf (ev = "AnotherEvent") Then ' Replace AnotherEvent with events that is found on "usermanual Events for Mod Developers" command
+	           'Your code below
+	       ElseIf (ev = "AnotherEvent") Then ' Replace AnotherEvent with events that is found on "usermanual Events for Mod Developers" command
                'Your code below
-	   End If
+	       End If
        End Sub
     3) IMPORTANT NOTICE! Never try to use infinite loops in handlers unless you're making infinite loops that exits if the specified condition is met, or in the test environment. That will lock the kernel up.
 25. You can make your subs anywhere on the class, but if:
     1) they're on the different class, press Enter on End Class and make a public new class that stores new subs:
        Public Class AnotherClass
-	   'Your definitions below, and so your subs, functions, interfaces, etc.
+	       'Your definitions below, and so your subs, functions, interfaces, etc.
        End Class
     2) they're trying to re-initialize the mod by re-calling StartMod(), Try so on your test environment first, then the Production environment if that worked properly.
     And the following conditions should be met:
@@ -131,8 +131,8 @@ Hello World is the popular starting example for all of the programmers. These ex
 3. Click Add, and the code will be ready.
 4. Write below the (Assume that your mod name is HelloGuys) Public Class HelloGuys: Implements IScript
 5. Write above the Public Class HelloGuys:
-   - Imports Kernel_Simulator.ModParser
-   - Imports Kernel_Simulator.TextWriterColor
+   - Imports KS.ModParser
+   - Imports KS.TextWriterColor
 6. You should get errors saying that these subs should be created.
 7. Make your start mod event handler by writing:
     Property Cmd As String Implements IScript.Cmd
@@ -144,11 +144,11 @@ Hello World is the popular starting example for all of the programmers. These ex
         Def = ""
         Name = "HelloGuys"
         Version = "1.0"
-        Wln("Hello World", "neutralText")
+        W("Hello World", True, "neutralText")
     End Sub
 8. Make your stop event handler by writing:
     Sub StopMod() Implements IScript.StopMod
-        Wln("Goodbye World", "neutralText")
+        W("Goodbye World", True, "neutralText")
     End Sub
 9. Since we're not implementing commands nor event responders, we're going to leave these blank:
     Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
@@ -157,8 +157,8 @@ Hello World is the popular starting example for all of the programmers. These ex
     End Sub
 10. The code should look like this in VB:
 
-    Imports Kernel_Simulator.ModParser
-    Imports Kernel_Simulator.TextWriterColor
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
     Public Class HelloGuys
     	Implements IScript
 	Property Cmd As String Implements IScript.Cmd
@@ -170,10 +170,10 @@ Hello World is the popular starting example for all of the programmers. These ex
             Def = ""
             Name = "HelloGuys"
             Version = "1.0"
-            Wln("Hello World", "neutralText")
+            W("Hello World", True, "neutralText")
     	End Sub
     	Sub StopMod() Implements IScript.StopMod
-            Wln("Goodbye World", "neutralText")
+            W("Goodbye World", True, "neutralText")
     	End Sub
     	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
     	End Sub
@@ -183,8 +183,8 @@ Hello World is the popular starting example for all of the programmers. These ex
 
 ...Or in C#:
 
-    using MP = Kernel_Simulator.ModParser;
-    using TWC = Kernel_Simulator.TextWriterColor;
+    using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
 	public class HelloGuys : MP.IScript
 	{
 	public string Cmd {get; set;}
@@ -197,11 +197,11 @@ Hello World is the popular starting example for all of the programmers. These ex
 			Def = "";
 			Name = "HelloGuys";
 			Version = "1.0";
-			TWC.Wln("Hello World", "neutralText");
+			TWC.W("Hello World", True, "neutralText");
 		}
 		public void StopMod()
 		{
-			TWC.Wln("Goodbye World", "neutralText");
+			TWC.W("Goodbye World", True, "neutralText");
 		}
 		public void PerformCmd(string args = "")
 		{
@@ -239,12 +239,12 @@ Hello World is the popular starting example for all of the programmers. These ex
     End Sub
 4. Make your command handler, and let it respond to the SayHello mod command:
     Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
-	Wln("Hello World", "neutralText")
+	W("Hello World", True, "neutralText")
     End Sub
 5. The code should look like this in VB:
 
-    Imports Kernel_Simulator.ModParser
-    Imports Kernel_Simulator.TextWriterColor
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
     Public Class HelloShell
     	Implements IScript
 	Property Cmd As String Implements IScript.Cmd
@@ -260,7 +260,7 @@ Hello World is the popular starting example for all of the programmers. These ex
     	Sub StopMod() Implements IScript.StopMod
     	End Sub
     	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
-	    Wln("Hello World", "neutralText")
+	    W("Hello World", True, "neutralText")
     	End Sub
     	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
     	End Sub
@@ -268,8 +268,8 @@ Hello World is the popular starting example for all of the programmers. These ex
 
 ...Or in C#
     
-	using MP = Kernel_Simulator.ModParser;
-    using TWC = Kernel_Simulator.TextWriterColor;
+	using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
 	public class HelloShell : MP.IScript
 	{
 	public string Cmd {get; set;}
@@ -288,7 +288,7 @@ Hello World is the popular starting example for all of the programmers. These ex
 		}
 		public void PerformCmd(string args = "")
 		{
-		TWC.Wln("Hello World", "neutralText");
+		TWC.W("Hello World", True, "neutralText");
 		}
 		public void InitEvents(string ev)
 		{
@@ -303,15 +303,15 @@ Hello World is the popular starting example for all of the programmers. These ex
 2. Make your command handler, and let it respond to the SayHello mod command:
     Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
 	If (args = "HW") Then
-	    Wln("Hello World", "neutralText")
+	    W("Hello World", True, "neutralText")
 	Else
-	    Wln("Make me say Hello by running ""SayHello HW.""", "neutralText")
+	    W("Make me say Hello by running ""SayHello HW.""", True, "neutralText")
 	End If
     End Sub
 3. The code should look like this in VB:
 
-    Imports Kernel_Simulator.ModParser
-    Imports Kernel_Simulator.TextWriterColor
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
     Public Class HelloArgs
     	Implements IScript
 	Property Cmd As String Implements IScript.Cmd
@@ -328,9 +328,9 @@ Hello World is the popular starting example for all of the programmers. These ex
     	End Sub
     	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
 	    If (args = "HW") Then
-	    	Wln("Hello World", "neutralText")
+	    	W("Hello World", True, "neutralText")
 	    Else
-	    	Wln("Make me say Hello by running ""SayHello HW.""", "neutralText")
+	    	W("Make me say Hello by running ""SayHello HW.""", True, "neutralText")
 	    End If
         End Sub
     	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
@@ -339,8 +339,8 @@ Hello World is the popular starting example for all of the programmers. These ex
 
 ...Or in C#:
     
-	using MP = Kernel_Simulator.ModParser;
-    using TWC = Kernel_Simulator.TextWriterColor;
+	using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
 	public class HelloArgs : MP.IScript
 	{
 	public string Cmd {get; set;}
@@ -361,11 +361,11 @@ Hello World is the popular starting example for all of the programmers. These ex
 		{
 		if (args == "HW")
 		{
-			TWC.Wln("Hello World", "neutralText");
+			TWC.W("Hello World", True, "neutralText");
 		}
 		else
 		{
-			TWC.Wln("Make me say Hello by running \"SayHello HW.\"", "neutralText");
+			TWC.W("Make me say Hello by running \"SayHello HW.\"", True, "neutralText");
 		}
 		}
 		public void InitEvents(string ev)
@@ -384,22 +384,22 @@ Hello World is the popular starting example for all of the programmers. These ex
         Dim ArgCount As Integer = 1
         If splitArgs.Length > 1 Then
             If (splitArgs(0) = "Say" And splitArgs(1) = "Hello") Then
-                Wln("Hello World", "neutralText")
+                W("Hello World", True, "neutralText")
             Else
-                Wln("Make me say Hello by running ""WhatDoISay Say Hello.""", "neutralText")
+                W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
             End If
         Else
-            Wln("Make me say Hello by running ""WhatDoISay Say Hello.""", "neutralText")
+            W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
         End If
         For Each arg As String In splitArgs
-            Wln("Argument {0}: {1}", "neutralText", ArgCount, splitArgs(ArgCount - 1))
+            W("Argument {0}: {1}", True, "neutralText", ArgCount, splitArgs(ArgCount - 1))
             ArgCount += 1
         Next
     End Sub
 3. The code should look like this in VB:
 
-    Imports Kernel_Simulator.ModParser
-    Imports Kernel_Simulator.TextWriterColor
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
     Public Class HelloArgs
     	Implements IScript
 	Property Cmd As String Implements IScript.Cmd
@@ -419,15 +419,15 @@ Hello World is the popular starting example for all of the programmers. These ex
             Dim ArgCount As Integer = 1
             If splitArgs.Length > 1 Then
             	If (splitArgs(0) = "Say" And splitArgs(1) = "Hello") Then
-                    Wln("Hello World", "neutralText")
+                    W("Hello World", True, "neutralText")
             	Else
-                    Wln("Make me say Hello by running ""WhatDoISay Say Hello.""", "neutralText")
+                    W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
             	End If
             Else
-            	Wln("Make me say Hello by running ""WhatDoISay Say Hello.""", "neutralText")
+            	W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
             End If
             For Each arg As String In splitArgs
-            	Wln("Argument {0}: {1}", "neutralText", ArgCount, splitArgs(ArgCount - 1))
+            	W("Argument {0}: {1}", True, "neutralText", ArgCount, splitArgs(ArgCount - 1))
             	ArgCount += 1
             Next
         End Sub
@@ -437,8 +437,8 @@ Hello World is the popular starting example for all of the programmers. These ex
 
 ...Or in C#:
 
-    using MP = Kernel_Simulator.ModParser;
-    using TWC = Kernel_Simulator.TextWriterColor;
+    using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
 	public class HelloArgs : MP.IScript
 	{
 		public string Cmd {get; set;}
@@ -463,20 +463,20 @@ Hello World is the popular starting example for all of the programmers. These ex
 			{
 				if (splitArgs[0] == "Say" && splitArgs[1] == "Hello")
 				{
-					TWC.Wln("Hello World", "neutralText");
+					TWC.W("Hello World", True, "neutralText");
 				}
 				else
 				{
-					TWC.Wln("Make me say Hello by running \"WhatDoISay Say Hello.\"", "neutralText");
+					TWC.W("Make me say Hello by running \"WhatDoISay Say Hello.\"", True, "neutralText");
 				}
 			}
 			else
 			{
-				TWC.Wln("Make me say Hello by running \"WhatDoISay Say Hello.\"", "neutralText");
+				TWC.W("Make me say Hello by running \"WhatDoISay Say Hello.\"", True, "neutralText");
 			}
 			foreach (string arg in splitArgs)
 			{
-				TWC.Wln("Argument {0}: {1}", "neutralText", ArgCount, splitArgs[ArgCount - 1]);
+				TWC.W("Argument {0}: {1}", True, "neutralText", ArgCount, splitArgs[ArgCount - 1]);
 				ArgCount += 1;
 			}
 		}
@@ -508,7 +508,7 @@ Hello World is the popular starting example for all of the programmers. These ex
             speeds(i) = Round((jQueryFileSize / (endTime - startTime).TotalSeconds))
         Next
         File.Delete(Environ("USERPROFILE") + "\jQuery.js")
-        Wln("Download speed: {0}KB/s", "neutralText", speeds.Average())
+        W("Download speed: {0}KB/s", True, "neutralText", speeds.Average())
     End Sub
 4. The code should look like this in VB:
 
@@ -517,8 +517,8 @@ Hello World is the popular starting example for all of the programmers. These ex
     Imports System.IO
     Imports System.Math
     Imports Microsoft.VisualBasic.Interaction
-    Imports Kernel_Simulator.ModParser
-    Imports Kernel_Simulator.TextWriterColor
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
     Public Class InternetSpeed
     	Implements IScript
     	Property Cmd As String Implements IScript.Cmd
@@ -544,7 +544,7 @@ Hello World is the popular starting example for all of the programmers. These ex
             	speeds(i) = Round(jQueryFileSize / (endTime - startTime).TotalSeconds)
             Next
             File.Delete(Environ("USERPROFILE") + "\jQuery.js")
-            Wln("Download speed: {0}KB/s", "neutralText", speeds.Average())
+            W("Download speed: {0}KB/s", True, "neutralText", speeds.Average())
     	End Sub
     	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
     	End Sub
@@ -557,8 +557,8 @@ Hello World is the popular starting example for all of the programmers. These ex
 	using System.Linq;
 	using System.IO;
 	using M = System.Math;
-	using MP = Kernel_Simulator.ModParser;
-	using TWC = Kernel_Simulator.TextWriterColor;
+	using MP = KS.ModParser;
+	using TWC = KS.TextWriterColor;
 	public class InternetSpeed : MP.IScript
 	{
 		public string Cmd {get; set;}
@@ -588,7 +588,7 @@ Hello World is the popular starting example for all of the programmers. These ex
 				speeds[i] = M.Round(jQueryFileSize / (endTime - startTime).TotalSeconds);
 			}
 			File.Delete(System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\jQuery.js");
-			TWC.Wln("Download speed: {0}KB/s", "neutralText", speeds.Average());
+			TWC.W("Download speed: {0}KB/s", True, "neutralText", speeds.Average());
 		}
 		public void InitEvents(string ev)
 		{
@@ -643,10 +643,10 @@ Class...=>Cyan
 Visual Studio 2017=>Magenta
 Implements=>Cyan
 IScript=>DarkGreen
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
 Imports=>Cyan
-Kernel_Simulator.TextWriterColor=>DarkGreen
+KS.TextWriterColor=>DarkGreen
 IScript:=>DarkGreen
 Property As String=>Cyan
 Cmd Def Name Version=>DarkGreen
@@ -669,10 +669,10 @@ subs=>Green
 AnotherClass=>DarkGreen
 Hello World=>Green
 HelloGuys) HelloGuys: HelloGuys=>DarkGreen
-Kernel_Simulator.ModParser=>DarkGreen
+KS.ModParser=>DarkGreen
 errors=>Red
 "HelloGuys"=>DarkGreen
-"Hello World", "neutralText"=>DarkGreen
+"Hello World", True, "neutralText"=>DarkGreen
 "Goodbye World",=>DarkGreen
 mod: Loading mods...=>Green
 v1.0 started=>Green
@@ -680,7 +680,7 @@ v1.0 started=>Green
 "HW")=>DarkGreen
 "Say" "Hello"=>DarkGreen
 "WhatDoISay" "HelloArgs"=>DarkGreen
-"Argument {0}: {1}", "neutralText", ArgCount, splitArgs(ArgCount - 1)=>DarkGreen
+"Argument {0}: {1}", True, "neutralText", ArgCount, splitArgs(ArgCount - 1)=>DarkGreen
 ArgCount + 1=>DarkGreen
 For Each In=>Cyan
 arg splitArgs=>DarkGreen

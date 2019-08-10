@@ -1,0 +1,40 @@
+(*MAN START*)
+
+-TITLE:Naredba FTP "listlocal" ili "lsl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+listlocal ili lsl naredba FTP
+
+Sa??etak: prikazuje sadr??aj trenutne mape ili prilo??ene mape
+
+Opis
+
+Mo??ete vidjeti popis datoteka i podmapa koji se nalaze u trenutnom radnom imeniku ako nije naveden nijedan direktorij ili u odre??enoj mapi, ako je navedena.
+
+Tako??er mo??ete vidjeti popis datoteka i podmapa koji se nalaze u prethodnom direktoriju va??eg trenutnog polo??aja.
+
+Upotreba naredbe
+
+* listlocal / lsl [mapa / ..]
+Primjeri
+
+* listlocal: sadr??i popis u radnom imeniku
+* listlocal ..: Navodi sadr??aj u prethodnom radnom imeniku
+* lsl gradova: Popis sadr??aja mape "gradova"
+-BODY END-
+
+-COLOR CONFIGURATION-
+listlocal/lsl [folder/..]=>Green
+listlocal:=>Yellow
+listlocal ..:=>Yellow
+lsl cities:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+listlocal or lsl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

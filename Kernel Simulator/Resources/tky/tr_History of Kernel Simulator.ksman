@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Her aşamada hata ayıklama eklendi
 13. MOTD ve MAL ile kullanılmak üzere işletim sistemi yer tutucusu eklendi
 14. MOTD'nin 1'den fazla satırı desteklemesi için newline ayrıştırıcı eklendi
+
+KS 0.0.6.10
+
+1. KS'ye basitleştirilmiş ad alanı
+2. Hintçe, Çince ve 1/2 Çek için kod kodları düzeltildi (GetCommand.vb hakkındaki yoruma bakın)
+3. "yeniden yükle" için eksik yardım girişi eklendi
+4. "reloadmods" komutu eklendi
+5. Yapılan KernelVersion ve EnvironmentOSType salt okunur
+6. "promptArgs" cmdline argümanı kaldırıldı
+7. Yeniden başlatma sırasında şimdi ekstra yığın oluşturulmadı
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Shell-opdracht "reloadmods"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+opdracht reloadmods
+
+Samenvatting: herlaadt wijzigingen
+
+Omschrijving
+
+Met deze opdracht kunt u wijzigingen opnieuw laden wanneer een wijziging in de broncode voor de opgegeven mod wordt gemaakt of mod wordt toegevoegd of verwijderd.
+
+Commando gebruik
+
+* herlaadmods
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadmods=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadmods command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

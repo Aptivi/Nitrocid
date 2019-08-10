@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Naredba Shell "showmotd"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba showmotd
+
+Sa??etak: Prikazuje va??u poruku dana
+
+Opis
+
+Ova naredba pokazuje va??u poruku dan prije prijave i ra????lanjuje mjesta rezerviranja u MOTD-u ako ih prona??u.
+
+Upotreba naredbe
+
+* showmotd
+-BODY END-
+
+-COLOR CONFIGURATION-
+showmotd=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+showmotd command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

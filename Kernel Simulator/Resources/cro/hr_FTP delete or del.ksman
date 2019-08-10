@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Naredba FTP "izbri??i" ili "del"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba za brisanje ili del FTP
+
+Sa??etak: uklanja datoteke ili mape
+
+Opis
+
+Ako ste se prijavili korisniku koji ima administrativne povlastice, mo??ete ukloniti ne??eljene datoteke ili dodatne mape s poslu??itelja.
+
+Ako ste izbrisali datoteku dok se na poslu??itelju doga??aju prijenosi, ljudi koji poku??aju dobiti izbrisanu datoteku vi??e je ne??e mo??i preuzeti nakon ??to njihovo preuzimanje ne uspije.
+
+Upotreba naredbe
+
+* delete / del (datoteka / direktorij)
+Primjeri
+
+* obri??i ne??eljeni.txt: izbri??i datoteku pod nazivom "ne??eljeni.txt"
+* del InactiveDir: Izbri??ite mapu pod nazivom "InactiveDir"
+-BODY END-
+
+-COLOR CONFIGURATION-
+delete/del (file/directory)=>Green
+delete unwanted.txt:=>Yellow
+del InactiveDir:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+delete or del FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

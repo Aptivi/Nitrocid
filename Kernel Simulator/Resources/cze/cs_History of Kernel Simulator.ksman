@@ -815,6 +815,16 @@ KS 0.0.6.9
 12. Přidáno ladění v každé fázi
 13. Přidán zástupný symbol operačního systému pro použití s MOTD a MAL
 14. Přidán syntaktický analyzátor nové řady, aby podpora MOTD byla více než 1 řádek
+
+KS 0.0.6.10
+
+1. Zjednodušený obor názvů na KS
+2. Opravené kódové bloky pro hindštinu, čínštinu a 1/2 češtiny (viz komentář na GetCommand.vb)
+3. Přidána chybějící položka nápovědy pro „reloadsaver“
+4. Přidán příkaz „reloadmods“
+5. Vyrobeno KernelVersion a EnvironmentOSType jen pro čtení
+6. argument „promptArgs“ cmdline byl odstraněn
+7. Extra stack nyní není generován při restartování
 -BODY END-
 
 -SECTIONS-
@@ -872,4 +882,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

@@ -39,7 +39,7 @@ Namespace My.Resources
         Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("Kernel_Simulator.Resources", GetType(Resources).Assembly)
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("KS.Resources", GetType(Resources).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan
@@ -520,6 +520,25 @@ Namespace My.Resources
         Friend ReadOnly Property Configuration_for_your_Kernel() As String
             Get
                 Return ResourceManager.GetString("Configuration_for_your_Kernel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dostupne naredbe: {0}
+        '''Napisati naredbu:
+        '''Ukidanje naredbe je otkazano.
+        '''Argumente pokretanja odvojite zarezima bez razmaka, na primjer, &quot;motd, gpuprobe&quot;
+        '''Odvojite naredbe na &apos;cmdinject&apos; kolonama s razmacima, na primjer, &apos;cmdinject setthemes Hacker: beep 1024 0,5&apos;
+        '''Imajte na umu da argument za uklanjanje pogrešaka ne pokriva u potpunosti kernel.
+        '''bargs: Traženi argument {0} nije pronađen.
+        '''bargs: Nerešiva ​​greška u argumentu:
+        '''Dostupni argumenti: {0}
+        '''Argumenti (&quot;pomoć&quot; za pomoć):
+        '''Injektirani argumenti tr [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property cro() As String
+            Get
+                Return ResourceManager.GetString("cro", resourceCulture)
             End Get
         End Property
         
@@ -1934,6 +1953,42 @@ Namespace My.Resources
         Friend ReadOnly Property cs_reloadconfig() As String
             Get
                 Return ResourceManager.GetString("cs_reloadconfig", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell p????kaz &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''p????kaz reloadmods
+        '''
+        '''Shrnut??: Znovu na??te ??pravy
+        '''
+        '''Popis
+        '''
+        '''Tento p????kaz umo????uje znovu na????st modifikace, kdy?? je vytvo??ena zm??na zdrojov??ho k??du pro zadan?? mod nebo je p??id??n nebo odebr??n mod.
+        '''
+        '''Pou??it?? p????kazu
+        '''
+        '''* reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Command u [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property cs_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("cs_reloadmods", resourceCulture)
             End Get
         End Property
         
@@ -3727,6 +3782,41 @@ Namespace My.Resources
         Friend ReadOnly Property de_reloadconfig() As String
             Get
                 Return ResourceManager.GetString("de_reloadconfig", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell Befehl &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Befehl reloadmods
+        '''
+        '''Zusammenfassung: L??dt ??nderungen neu
+        '''
+        '''Beschreibung
+        '''
+        '''Mit diesem Befehl k??nnen Sie ??nderungen neu laden, wenn eine ??nderung im Quellcode f??r den angegebenen Mod erstellt oder der Mod hinzugef??gt oder entfernt wird.
+        '''
+        '''Befehlsverwendung
+        '''
+        '''* reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''De [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property de_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("de_reloadmods", resourceCulture)
             End Get
         End Property
         
@@ -5599,6 +5689,42 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Comando de shell &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando reloadmods
+        '''
+        '''Resumen: modificaciones de recarga
+        '''
+        '''Descripci??n
+        '''
+        '''Este comando le permite recargar modificaciones cuando se crea un cambio en el c??digo fuente para el mod especificado o se agrega o elimina el mod.
+        '''
+        '''Uso del comando
+        '''
+        '''* reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Co [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property es_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("es_reloadmods", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Comando de shell &quot;reloadsaver&quot;
         '''-REVISION:0.0.1.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -6595,7 +6721,7 @@ Namespace My.Resources
         '''
         '''Komennon k??ytt??
         '''
-        '''* Yhdist? [rest of string was truncated]&quot;;.
+        '''* connect [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property fi_FTP_connect() As String
             Get
@@ -7423,6 +7549,42 @@ Namespace My.Resources
         Friend ReadOnly Property fi_reloadconfig() As String
             Get
                 Return ResourceManager.GetString("fi_reloadconfig", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell-komento &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''reloadmods-komento
+        '''
+        '''Yhteenveto: Lataa muutokset uudelleen
+        '''
+        '''Kuvaus
+        '''
+        '''T??m??n komennon avulla voit ladata muutokset uudelleen, kun m????ritetyn modin l??hdekoodimuutos luodaan tai mod lis??t????n tai poistetaan.
+        '''
+        '''Komentojen k??ytt??
+        '''
+        '''* remodmodit
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Command usa [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property fi_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("fi_reloadmods", resourceCulture)
             End Get
         End Property
         
@@ -9197,6 +9359,40 @@ Namespace My.Resources
         Friend ReadOnly Property fr_reloadconfig() As String
             Get
                 Return ResourceManager.GetString("fr_reloadconfig", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Commande Shell &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''commande reloadmods
+        '''
+        '''R??sum??: recharge les modifications
+        '''
+        '''La description
+        '''
+        '''Cette commande vous permet de recharger les modifications lorsqu&apos;un changement du code source du mod sp??cifi?? est cr???? ou que le mod est ajout?? ou supprim??.
+        '''
+        '''Utilisation de la commande
+        '''
+        '''* reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods comman [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property fr_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("fr_reloadmods", resourceCulture)
             End Get
         End Property
         
@@ -11243,6 +11439,41 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell m??ngl??ng ???reloadmods???
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Reloadmods m??ngl??ng
+        '''
+        '''Zh??iy??o: Ch??ngx??n ji??z??i xi??g??i
+        '''
+        '''Mi??osh??
+        '''
+        '''C?? m??ngl??ng y??nx?? n??n z??i chu??ngji??n zh??d??ng mod de yu??n d??im?? g??ngg??i hu?? ti??nji?? hu?? sh??nch?? mod sh?? ch??ngx??n ji??z??i xi??g??i.
+        '''
+        '''M??ngl??ng y??ngf??
+        '''
+        '''* Reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hi_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("hi_reloadmods", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell m??ngl??ng ???reloadsaver???
         '''-REVISION:0.0.1.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -11616,6 +11847,1902 @@ Namespace My.Resources
         Friend ReadOnly Property History_of_Kernel_Simulator() As String
             Get
                 Return ResourceManager.GetString("History_of_Kernel_Simulator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;adduser&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba adduser
+        '''
+        '''Sa??etak: Korisni??ko ime mo??ete dodati kad god vam treba, uz lozinku ako je potrebno.
+        '''
+        '''Opis
+        '''
+        '''Ako trebate dodati osobu koja ??eli koristiti kernel, mo??ete dodati korisnike za njih i dopustiti im da odrede lozinku ako trebaju. 
+        '''
+        '''Me??utim, ako trebate dodati osobu koja ima administratorska prava, trebali biste postaviti dopu??tenje za korisnika da dopu??ta administratorska  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_adduser() As String
+            Get
+                Return ResourceManager.GetString("hr_adduser", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;alias&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba alias
+        '''
+        '''Sa??etak: Mo??ete narediti alternativnu pre??ac naredbi ako ??elite koristiti kratke rije??i za duge naredbe.
+        '''
+        '''Opis
+        '''
+        '''Neke naredbe u ovom kernelu su duga??ke, a neki ne pi??u brzo na ra??unala. 
+        '''
+        '''Ovu naredbu mo??ete koristiti i ako planirate napraviti skripte ako ??e se stvarni datote??ni sustav dodati u budu??nosti ili ako ne??to ??urite i nemate vremena izvr??iti dugu naredbu.        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_alias() As String
+            Get
+                Return ResourceManager.GetString("hr_alias", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba granate &quot;arginj&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba alias
+        '''
+        '''Sa??etak: Argumente mo??ete postaviti pri ponovnom pokretanju.
+        '''
+        '''Opis
+        '''
+        '''Ako trebate ponovno pokrenuti kernel da biste pokrenuli program za uklanjanje pogre??aka ili ako ??elite onemogu??iti hardversko sondiranje kako biste u??tedjeli vrijeme prilikom dizanja, onda je ova naredba za vas. 
+        '''
+        '''Ovu naredbu mo??ete koristiti ako trebate umetnuti argumente dok ste u jezgri. 
+        '''
+        '''Upotreb [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_arginj() As String
+            Get
+                Return ResourceManager.GetString("hr_arginj", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''~~- Information about this manual page:
+        '''-TITLE:Dostupni argumenti naredbenog retka
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''~~- Make sure that all of the command-line arguments that are available in the kernel is put.
+        '''-BODY START-
+        '''Kako pokrenuti argumente naredbenog retka?
+        '''
+        '''Ove argumente mo??ete pokrenuti da bi se simulator pona??ao druga??ije, pokretanjem Kernel Simulatora kao u nastavku primjera:
+        '''
+        '''- promptArgs &quot;Kernel Simulator.exe&quot;
+        '''- &quot;Kernel Simulator.exe&quot; testMod ModToBeT [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_Available_command_line_arguments() As String
+            Get
+                Return ResourceManager.GetString("hr_Available_command_line_arguments", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''~~- Information about this manual page:
+        '''-TITLE:Dostupne naredbe
+        '''-REVISION:0.0.1.4
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''~~- Make sure that all of the commands that are available in the kernel is put.
+        '''-BODY START-
+        '''Administrativne naredbe:
+        '''
+        '''1. adduser: Korisni??ko ime mo??ete dodati kad god vam treba, uz lozinku ako je potrebno. 
+        '''2. perm: mo??ete upravljati postavkama korisni??kih dozvola. 
+        '''3. arginj: Mo??ete umetnuti argumente u kernel tako da se pri ponovnom pokretanju pokre??u argumenti k [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_Available_commands() As String
+            Get
+                Return ResourceManager.GetString("hr_Available_commands", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''~~- Information about this manual page:
+        '''-TITLE:Dostupne FTP naredbe
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''~~- Make sure that all of the commands that are available in the FTP shell is put.
+        '''-BODY START-
+        '''Administrativne naredbe:
+        '''
+        '''1. delete (del): mo??ete izbrisati ne??eljene datoteke s poslu??itelja
+        '''2. preimenovanje (ren): preimenovanje pogre??no imenovanih datoteka u njihova ispravna imena na poslu??itelju
+        '''3. upload (put): lokalnu datoteku po??aljite poslu??itelju
+        '''
+        '''Naredbe [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_Available_FTP_commands() As String
+            Get
+                Return ResourceManager.GetString("hr_Available_FTP_commands", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''~~- Information about this manual page:
+        '''-TITLE:Dostupni argumenti jezgre
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''~~- Make sure that all of the kernel arguments that are available in the kernel is put.
+        '''-BODY START-
+        '''Kako pokrenuti argumente? 
+        '''
+        '''Argument kernelu je mogu??nost ??ije ??e se jezgre ili njeni dijelovi pona??ati druga??ije na temelju opcija koje ste odabrali. 
+        '''
+        '''Argumente mo??ete pokrenuti na sljede??em ponovnom pokretanju pomo??u naredbe arginj kada je na shell. 
+        '''
+        '''B [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_Available_kernel_arguments() As String
+            Get
+                Return ResourceManager.GetString("hr_Available_kernel_arguments", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Dostupne stranice s priru??nikom
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Provjeri:
+        '''
+        '''1. Uvod u kernel: Ova stranica prikazuje vam uvod o kernelu, kako su tijekom godina razvoja Unix i Linux izgra??eni i pobolj??ani, te kratak opis na??eg kernela, Eofla Kernel, koji ??e dobiti ime.
+        '''2. Dostupne naredbe: Ova stranica prikazuje vam dostupne naredbe u kernelu. 
+        '''3. Povijest Kernel Simulator: Mo??ete vidjeti ??to se dogodilo izme??u razvoja Kernel Simulator verzija  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_Available_manual_pages() As String
+            Get
+                Return ResourceManager.GetString("hr_Available_manual_pages", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;cdbglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba cdbglog
+        '''
+        '''Sa??etak: Bri??e dnevnik uklanjanja pogre??aka
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* cdbglog
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''cdbglog=&gt;Green
+        '''
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''cdbglog command=&gt;SE1
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property hr_cdbglog() As String
+            Get
+                Return ResourceManager.GetString("hr_cdbglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;chdir&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''chdir naredba
+        '''
+        '''Sa??etak: Va?? trenutni radni imenik mo??ete promijeniti u drugi direktorij
+        '''
+        '''Opis
+        '''
+        '''Mo??ete promijeniti svoj radni imenik u drugi direktorij za izvr??avanje naredbi uvr??tenja, uklanjanje datoteka ili stvaranje direktorija u drugoj mapi.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* chdir (direktorij)
+        '''* chdir ..
+        '''
+        '''Primjeri
+        '''
+        '''* chdir boot: Promijenjuje va?? radni imenik u / boot
+        '''* chdir ..: Vra??a  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_chdir() As String
+            Get
+                Return ResourceManager.GetString("hr_chdir", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;chhostname&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba chhostname
+        '''
+        '''Sa??etak: Ime doma??ina mo??ete promijeniti u drugo ime
+        '''
+        '''Opis
+        '''
+        '''Ako planirate promijeniti ime svog doma??ina u drugo ime, ova naredba je za vas.
+        '''
+        '''Ova naredba koristila se za promjenu imena va??eg doma??ina i resetira ga svaki put kada ponovno pokrenete kernel, ali sad ga pohranjuje u config datoteku ??im promijenite ime glavnog ra??unala.
+        '''
+        '''Ova ina??ica kernela kona?? [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_chhostname() As String
+            Get
+                Return ResourceManager.GetString("hr_chhostname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;chlang&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''chlang naredba
+        '''
+        '''Sa??etak: Mijenja jezik sustava
+        '''
+        '''Opis
+        '''
+        '''Jezik sustava mo??ete promijeniti ru??nim ure??ivanjem konfiguracijskih datoteka, pomo??u alata za konfiguriranje Kernel Simulatora ili pomo??u ove naredbe. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* chlang &lt;jezi??ni jezik&gt;
+        '''
+        '''Primjeri
+        '''
+        '''* chlang fre: Promijeni jezik sustava u francuski
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''chlang &lt;language&gt;=&gt;Green
+        '''chlan [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_chlang() As String
+            Get
+                Return ResourceManager.GetString("hr_chlang", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;chmal&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''chmal zapovijed
+        '''
+        '''Sa??etak: Svoju poruku mo??ete promijeniti dan nakon prijave
+        '''
+        '''Opis
+        '''
+        '''Ako vam se ne svi??a zadana poruka dana nakon prijave koju generira kernel, pomo??u ove naredbe mo??ete promijeniti poruku i trajno je pohraniti u config datoteku.
+        '''
+        '''Tako??er ima podr??ku rezerviranog mjesta, primjerice ako imate &lt;shortdate&gt; i &lt;longtime&gt; rezervirana mjesta, &lt;shortdate&gt; rezervirano mjesto promi [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_chmal() As String
+            Get
+                Return ResourceManager.GetString("hr_chmal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba granate &quot;chmotd&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''chmotd naredba
+        '''
+        '''Sa??etak: Mo??ete promijeniti svoju poruku dana
+        '''
+        '''Opis
+        '''
+        '''Ako vam se ne svi??a zadana poruka dana koju generira kernel, pomo??u ove naredbe mo??ete promijeniti poruku i trajno je pohraniti u config datoteku.
+        '''
+        '''Tako??er ima podr??ku rezerviranog mjesta, primjerice ako imate &lt;shortdate&gt; i &lt;longtime&gt; rezervirana mjesta, &lt;shortdate&gt; rezervirano mjesto promijeni se u trenutni datum s [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_chmotd() As String
+            Get
+                Return ResourceManager.GetString("hr_chmotd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;chpwd&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba chpwd
+        '''
+        '''Sa??etak: Mo??ete promijeniti lozinku ili tu??u lozinku
+        '''
+        '''Opis
+        '''
+        '''Ako je potrebno promijeniti lozinku za va?? ra??un ili za ra??un nekog drugog, tada mo??ete upotrijebiti ovu naredbu za promjenu zaporke ili tu??e lozinke.
+        '''
+        '''Ovo je korisno ako mislite da va?? ra??un ili ra??un nekog drugog ima pogre??nu lozinku ili je na popisu jednostavnih lozinki smje??ten na mre??i.
+        '''
+        '''Ova naredb [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_chpwd() As String
+            Get
+                Return ResourceManager.GetString("hr_chpwd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;chusrname&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba chusrname
+        '''
+        '''Sa??etak: Mo??ete promijeniti svoje korisni??ko ime ili korisni??ko ime nekog drugog
+        '''
+        '''Opis
+        '''
+        '''Ako va??e korisni??ko ime ili korisni??ko ime nekog drugog trebate promijeniti u novo korisni??ko ime, morate ih promijeniti ako je to va??e korisni??ko ime ili ako vam netko dopu??ta da promijenite svoje korisni??ko ime u drugo ime.
+        '''
+        '''Prije novog korisni??kog imena trebate navest [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_chusrname() As String
+            Get
+                Return ResourceManager.GetString("hr_chusrname", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;cls&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba cls
+        '''
+        '''Sa??etak: Zaslon mo??ete o??istiti od nereda
+        '''
+        '''Opis
+        '''
+        '''Ako se poku??avate usredoto??iti na jednu stvar, a ne mo??ete to u??initi, ili ako ??elite da osobni podaci ispisani naredbama budu skriveni, mo??ete o??istiti zaslon od nereda da bi stekli fokus i smanjili optere??enje o??iju.
+        '''
+        '''Ovo je tako??er korisno u skripti (jo?? nije implementirano)
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* cls
+        '''-BODY END-
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_cls() As String
+            Get
+                Return ResourceManager.GetString("hr_cls", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''~~- Information about this manual page:
+        '''-TITLE:Konfiguracija va??eg kernela
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''??to je Config?
+        '''
+        '''Konfiguracija je konfiguracija za va??u kernel koja pohranjuje vi??e opcija jezgre koje se ne mogu ure??ivati ??????ni u argumentima ni u argumentima naredbene linije. 
+        '''
+        '''Postoji mnogo odjeljaka radi lak??eg ??itanja konfiguracijske datoteke. 
+        '''
+        '''Konfigurirajte unose
+        '''
+        '''General
+        '''
+        '''1. Odziv za argumente pri pokretanju: Mo??ete prisilit [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_Configuration_for_your_Kernel() As String
+            Get
+                Return ResourceManager.GetString("hr_Configuration_for_your_Kernel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;debuglog&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba za uklanjanje pogre??aka
+        '''
+        '''Sa??etak: Dnevnike za uklanjanje pogre??aka kernel mo??ete vidjeti iz datoteke nazvane kernelDbg.log koja se nalazi u mapi va??eg korisni??kog profila.
+        '''
+        '''Opis
+        '''
+        '''Ovaj preglednik vam omogu??uje pregled dnevnika za uklanjanje pogre??aka bez da prvo omogu??ite na??in uklanjanja pogre??aka na kernelu. 
+        '''
+        '''Prije toga, ova naredba je zahtijevala da se debugger uklju?? [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_debuglog() As String
+            Get
+                Return ResourceManager.GetString("hr_debuglog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;ftp&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''ftp naredba
+        '''
+        '''Sa??etak: Mo??ete se me??usobno komunicirati s ljuskom File Transfer Protocol (FTP) za povezivanje s poslu??iteljem i prijenos datoteka
+        '''
+        '''Opis
+        '''
+        '''Pomo??u FTP ljuske mo??ete se povezati s va??im FTP poslu??iteljem ili javnim FTP poslu??iteljima za interakciju s datotekama na poslu??itelju.
+        '''
+        '''Mo??ete preuzimati datoteke na svoje ra??unalo, u??itavati datoteke na poslu??itelj, upravljati  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_ftp() As String
+            Get
+                Return ResourceManager.GetString("hr_ftp", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;changelocaldir&quot; ili &quot;cdl&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''changelocaldir ili cdl FTP naredba
+        '''
+        '''Sa??etak: Mijenja lokalni lokalni imenik
+        '''
+        '''Opis
+        '''
+        '''Ova naredba omogu??uje vam promjenu lokalnog direktorija na tvrdom disku u drugi direktorij koji postoji u poddirektoriji. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* changelocaldir / cdl (imenik / ..)
+        '''Primjeri
+        '''
+        '''* changelocaldir C: \ Korisnici \ Vlasnik \ Desktop: Ovo ??e va?? lokalni direktorij promijeniti u C [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_changelocaldir_or_cdl() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_changelocaldir_or_cdl", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;changeremotedir&quot; ili &quot;cdr&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''changeremotedir ili cdr FTP naredba
+        '''
+        '''Sa??etak: Promjena va??eg udaljenog direktorija
+        '''
+        '''Opis
+        '''
+        '''Ova naredba omogu??uje vam promjenu udaljenog direktorija na va??em povezanom FTP poslu??itelju u drugi direktorij koji postoji u poddirektoriji. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* changeremotedir / cdr (imenik / ..)
+        '''Primjeri
+        '''
+        '''* cdr X11 / GNOME: Ovo ??e promijeniti va?? udaljeni direktorij u X [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_changeremotedir_or_cdr() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_changeremotedir_or_cdr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;pove??i se&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''pove??ite FTP naredbu
+        '''
+        '''Sa??etak: Povezuje va?? FTP klijent na bilo koji FTP poslu??itelj koji je va??e??i
+        '''
+        '''Opis
+        '''
+        '''Ova se naredba mora izvr??iti prije pokretanja bilo kojih interaktivnih naredbi FTP poslu??itelja, kao ??to su preuzimanje, prijenos, cdl, cdr, itd.
+        '''
+        '''Ova naredba otvara novu sesiju za povezivanje va??eg FTP klijenta na bilo koji FTP poslu??itelj koji je otvoren za javnost i vrije [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_connect() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_connect", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;currlocaldir&quot; ili &quot;pwdl&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''currlocaldir ili pwdl FTP naredba
+        '''
+        '''Sa??etak: dobiva trenutni lokalni direktorij
+        '''
+        '''Opis
+        '''
+        '''Ova FTP naredba govori o tome ??to je lokalni direktorij koji trenutno gledate.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* currlocaldir
+        '''* pwdl
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''currlocaldir=&gt;Green
+        '''pwdl=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''currlocaldir or pwdl FTP command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Comman [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_currlocaldir_or_pwdl() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_currlocaldir_or_pwdl", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;currremotedir&quot; ili &quot;pwdr&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''currremotedir ili pwdr FTP naredba
+        '''
+        '''Sa??etak: dobiva trenutni udaljeni direktorij
+        '''
+        '''Opis
+        '''
+        '''Ova naredba FTP govori ??to je udaljeni direktorij na FTP poslu??itelju koji trenutno gledate.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* currremotedir
+        '''* pwdr
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''currremotedir=&gt;Green
+        '''pwdr=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''currremotedir or pwdr FTP command=&gt;SE1
+        '''Des [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_currremotedir_or_pwdr() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_currremotedir_or_pwdr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;izbri??i&quot; ili &quot;del&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba za brisanje ili del FTP
+        '''
+        '''Sa??etak: uklanja datoteke ili mape
+        '''
+        '''Opis
+        '''
+        '''Ako ste se prijavili korisniku koji ima administrativne povlastice, mo??ete ukloniti ne??eljene datoteke ili dodatne mape s poslu??itelja.
+        '''
+        '''Ako ste izbrisali datoteku dok se na poslu??itelju doga??aju prijenosi, ljudi koji poku??aju dobiti izbrisanu datoteku vi??e je ne??e mo??i preuzeti nakon ??to njihovo p [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_delete_or_del() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_delete_or_del", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;prekini vezu&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''odspojite FTP naredbu
+        '''
+        '''Sa??etak: Prekida se s trenutnog radnog poslu??itelja
+        '''
+        '''Opis
+        '''
+        '''Ova naredba ??alje naredbu quit na FTP poslu??itelj tako da poslu??itelj zna da odlazite. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* prekinuti vezu
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''disconnect=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''disconnect FTP command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_disconnect() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_disconnect", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;preuzmi&quot; ili &quot;uzmi&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''preuzmi ili preuzmi naredbu FTP
+        '''
+        '''Sa??etak: Preuzima datoteku iz trenutne radne mape
+        '''
+        '''Opis
+        '''
+        '''Preuzimate binarnu ili tekstualnu datoteku i spremate je u trenutni radni lokalni direktorij da biste mogli koristiti preuzetu datoteku koja se nalazi na FTP poslu??itelju.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* preuzimanje / preuzimanje (datoteka)
+        '''Primjeri
+        '''
+        '''* preuzmi text.txt: preuzima tekstualnu datoteku [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_download_or_get() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_download_or_get", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;listlocal&quot; ili &quot;lsl&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''listlocal ili lsl naredba FTP
+        '''
+        '''Sa??etak: prikazuje sadr??aj trenutne mape ili prilo??ene mape
+        '''
+        '''Opis
+        '''
+        '''Mo??ete vidjeti popis datoteka i podmapa koji se nalaze u trenutnom radnom imeniku ako nije naveden nijedan direktorij ili u odre??enoj mapi, ako je navedena.
+        '''
+        '''Tako??er mo??ete vidjeti popis datoteka i podmapa koji se nalaze u prethodnom direktoriju va??eg trenutnog polo??aja.
+        '''
+        '''Up [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_listlocal_or_lsl() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_listlocal_or_lsl", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;listremote&quot; ili &quot;lsr&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''listremote ili lsr FTP naredba
+        '''
+        '''Sa??etak: prikazuje sadr??aj trenutne mape ili prilo??ene mape
+        '''
+        '''Opis
+        '''
+        '''Mo??ete vidjeti popis datoteka i podmapa koji se nalaze u trenutnom radnom imeniku ako nije naveden nijedan direktorij ili u odre??enoj mapi, ako je navedena.
+        '''
+        '''Tako??er mo??ete vidjeti popis datoteka i podmapa koji se nalaze u prethodnom direktoriju va??eg trenutnog polo??aja.
+        '''
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_listremote_or_lsr() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_listremote_or_lsr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba FTP &quot;preimenuj&quot; ili &quot;ponovo&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''preimenujte ili unajmite FTP naredbu
+        '''
+        '''Sa??etak: Preimenuje mapu ili datoteku na poslu??itelju
+        '''
+        '''Opis
+        '''
+        '''Mo??ete preimenovati mapu ili datoteku na poslu??itelju ako su na poslu??itelju pogre??no imenovane. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* preimenovanje / ren (oldFile) (newFile)
+        '''Primjeri
+        '''
+        '''* preimenovanje shagnhai.png shanghai.png: preimenovanje datoteke &quot;shagnhai.png&quot; u &quot;shanghai.png&quot;
+        '''* r [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_rename_or_ren() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_rename_or_ren", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:FTP naredba &quot;upload&quot; ili &quot;put&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''prenesite ili stavite FTP naredbu
+        '''
+        '''Sa??etak: U??itava datoteku na poslu??itelj
+        '''
+        '''Opis
+        '''
+        '''Ako trebate dodati lokalne datoteke u va??u trenutnu radnu mapu u trenutni direktorij poslu??itelja, za dodavanje datoteka morate imati administrativne povlastice.
+        '''
+        '''Na primjer, ako dodajete sliku grada New Delhija pomo??u PNG formata, morate je prenijeti na poslu??itelj da bi je svi mogli vidjeti. 
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_FTP_upload_or_put() As String
+            Get
+                Return ResourceManager.GetString("hr_FTP_upload_or_put", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''~~- Information about this manual page:
+        '''-TITLE:Povijest Kernel Simulator
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Pre-pu??tanje
+        '''
+        '''Prije izdavanja 0.0.1, radili smo na PowerPoint OS kolekciji prije gotovo dvije godine, i koja je koristila VBA (VB6) makronaredbe u sustavu Office 2007, a dok radimo na PPUN OS-u utemeljenom na PUNIX-u, iznos makronaredbe je 
+        '''
+        '''Napisali smo postupak pokretanja kernela, prijavu i ljusku koja uklju??uje naredbe. 
+        '''
+        '''KS 0.0.1
+        '''
+        '''U izdanju 0. [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_History_of_Kernel_Simulator() As String
+            Get
+                Return ResourceManager.GetString("hr_History_of_Kernel_Simulator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;hwprobe&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba hwprobe
+        '''
+        '''Sa??etak: Mo??ete u??initi da va??e jezgro otkriva hardverske konfiguracije kada kernel to nije u??inio pri pokretanju
+        '''
+        '''Opis
+        '''
+        '''Ovu naredbu mo??ete koristiti da bi jezgro otkrilo hardver i njegove postavke konfiguracije kao ??to su BIOS, GPU, RAM, HDD i CPU. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* hwprobe
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''hwprobe=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_hwprobe() As String
+            Get
+                Return ResourceManager.GetString("hr_hwprobe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''~~- Information about this manual page:
+        '''-TITLE:Uvod u Kernel
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''??to je kernel? 
+        '''
+        '''Kernel je op??enito ra??unalni program koji je jezgra ra??unalnog operativnog sustava s potpunom kontrolom nad svime u sustavu. 
+        '''
+        '''Me??utim, Kernel Simulator je prva prva simulacija, a ne Emulacija, aplikacija koja mo??e simulirati takve vrste pona??anja, osim ??to je ograni??ena jer smo jo?? u fazi Alpha, a ujedno vam pokazuje i prijelaz o tome ka [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_Introduction_to_the_Kernel() As String
+            Get
+                Return ResourceManager.GetString("hr_Introduction_to_the_Kernel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;popis&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba popisa
+        '''
+        '''Sa??etak: Mo??ete popisati sadr??aj unutar trenutne mape ili odre??ene mape
+        '''
+        '''Opis
+        '''
+        '''Ako ne znate ??to se nalazi u direktoriju ili u trenutnoj mapi, pomo??u ove naredbe mo??ete ??areno pregledati sadr??aj mape.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* popis
+        '''* popis [mapa]
+        '''
+        '''Primjeri
+        '''
+        '''* list: Ova naredba navodi trenutni sadr??aj radnog imenika
+        '''* list ..: Ova naredba navodi sadr??aj roditeljsk [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_list() As String
+            Get
+                Return ResourceManager.GetString("hr_list", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;zaklju??ani zaslon&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba zaklju??anog zaslona
+        '''
+        '''Sa??etak: Zaslon mo??ete zaklju??ati zadanom ??uvarom zaslona kako biste sprije??ili opekotine na zaslonu
+        '''
+        '''Opis
+        '''
+        '''Mo??ete zaklju??ati zaslon i pokazati zadanu ??uvar zaslona kako biste potvrdili da ste udaljeni i da ??e vam se povra??ati sat vremena ili vi??e. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* zaklju??avanje zaslona
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''lockscr [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_lockscreen() As String
+            Get
+                Return ResourceManager.GetString("hr_lockscreen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;odjava&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba za odjava
+        '''
+        '''Sa??etak: Mo??ete se odjaviti sa svog ra??una.
+        '''
+        '''Opis
+        '''
+        '''Ako postoji promjena koja zahtijeva odjavu i prijavu da bi promjene stupile na snagu, morate se odjaviti i ponovno prijaviti.
+        '''
+        '''Ova naredba omogu??uje vam uklanjanje ra??una i prijavu kao netko drugi. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* odjaviti se
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''logout=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_logout() As String
+            Get
+                Return ResourceManager.GetString("hr_logout", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;lscomp&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba lscomp
+        '''
+        '''Sa??etak: Ra??unala, ??ak i izvan ra??unala, mo??ete popisati u radnim skupinama i domenama
+        '''
+        '''Opis
+        '''
+        '''Ako trebate navesti ra??unala u radnoj grupi ili domenama, uklju??uju??i izvanmre??no ra??unalo ako se ra??unalo pridru??ilo domeni, pomo??u ove naredbe mo??ete dobiti sva ra??unala bez IP adrese.
+        '''
+        '''Ako trebate nabrojati ra??unala samo ako su na mre??i i ??elite dobiti njihove IP [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_lscomp() As String
+            Get
+                Return ResourceManager.GetString("hr_lscomp", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;lsnet&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Naredba lnet
+        '''
+        '''Sa??etak: Ra??unala koja su na mre??i i njihove IP adrese mo??ete navesti u domenama ili radnim skupinama
+        '''
+        '''Opis
+        '''
+        '''Ako ??elite nabaviti sva ra??unala koja su se pridru??ila radnoj grupi ili domeni, mo??ete upotrijebiti ovu naredbu, ali prvo morate zatra??iti dozvolu ako ste na javnim mjestima kao ??to su ured, ??kola, kafi?? itd., U protivnom 
+        '''
+        '''Ova je naredba korisna i ako na popi [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_lsnet() As String
+            Get
+                Return ResourceManager.GetString("hr_lsnet", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;lsnettree&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Naredba mre??e
+        '''
+        '''Sa??etak: Ra??unala koja su na mre??i i njihove IP adrese mo??ete popisati u domenama ili radnim skupinama, u obliku stabla
+        '''
+        '''Opis
+        '''
+        '''Ako ??elite dobiti sva ra??unala koja su se pridru??ila radnoj grupi ili domeni u obliku stabla, mo??ete koristiti ovu naredbu, ali prvo morate zatra??iti dozvolu ako ste na javnim mjestima kao ??to su ured, ??kola, kafi??, 
+        '''
+        '''Ova naredba je kori [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_lsnettree() As String
+            Get
+                Return ResourceManager.GetString("hr_lsnettree", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;md&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba md
+        '''
+        '''Sa??etak: Mo??ete napraviti svoj direktorij
+        '''
+        '''Opis
+        '''
+        '''Ako ??elite organizirati datoteke u mapu, morate stvoriti mapu.
+        '''
+        '''Ova naredba omogu??uje vam stvaranje mape u trenutnoj radnoj mapi.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* md (folderName)
+        '''
+        '''Primjeri
+        '''
+        '''* md lozinke: Ova naredba stvara mapu pod nazivom &quot;Lozinke&quot; u trenutnoj radnoj mapi
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''md (folderName)=&gt;Green
+        '''m [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_md() As String
+            Get
+                Return ResourceManager.GetString("hr_md", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Kako napraviti svoj vlastiti mod za kernel
+        '''-REVISION:0.0.2
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Koji je mod za kernel?
+        '''
+        '''Mod je datoteka izvornog koda koja se u??itava u boot i mo??e dodati ekstenzije jezgri, ljusci i svemu. 
+        '''
+        '''Ovo je korisno ako ??elite dodati vlastita pro??irenja u kernel, poput alata za obradu doga??aja za kernel.
+        '''
+        '''Mogu li napraviti svoj ??uvar zaslona?
+        '''
+        '''Da, ali prvo provjerite stranicu s uputama o &quot;usermanual Screensaver modding&quot; za upute o tome ka [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_Modding_guide() As String
+            Get
+                Return ResourceManager.GetString("hr_Modding_guide", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ??koljke &quot;netinfo&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba netinfo
+        '''
+        '''Sa??etak: Mo??ete vidjeti detaljan status mre??ne veze
+        '''
+        '''Opis
+        '''
+        '''Ova naredba omogu??uje vam pregled detalja o svim va??im be??i??nim / Ethernet adapterima, paketima, paketima koji imaju gre??ku itd. Ispisani podaci su dijagnosti??ki, pa ako se ne mo??ete povezati s Internetom, te podatke mo??ete koristiti za dijagnosticiranje 
+        '''
+        '''Odjeljci informacija o adapterima:
+        '''
+        '''Broj adap [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_netinfo() As String
+            Get
+                Return ResourceManager.GetString("hr_netinfo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;noaliases&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba noaliases
+        '''
+        '''Sa??etak: Mo??ete pregledavati zabranjene pseudonime.
+        '''
+        '''Opis
+        '''
+        '''Ova naredba omogu??uje vam pregledavanje naredbi za koje ne biste trebali stvarati pseudonim, jer su zabranjeni za pravljenje problema, poput okupljanja naredbe &quot;alias&quot;.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* noaliases
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''noaliases=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''noaliases command=&gt; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_noaliases() As String
+            Get
+                Return ResourceManager.GetString("hr_noaliases", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ??koljke &quot;perm&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''perm naredba
+        '''
+        '''Sa??etak: Upravlja dozvola za svog korisnika ili druge korisnike
+        '''
+        '''Opis
+        '''
+        '''Ako ??elite upravljati dozvolama za svog korisnika ili druge korisnike, ili ako ??elite sprije??iti da se korisnik prijavi, upotrijebite ovu naredbu.
+        '''
+        '''Ova naredba omogu??uje vam upravljanje dozvolama bilo da su administrativne povlastice uklju??ene ili isklju??ene ili je korisnik onemogu??en ili ne.
+        '''
+        '''Upot [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_perm() As String
+            Get
+                Return ResourceManager.GetString("hr_perm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;ping&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba ping
+        '''
+        '''Sa??etak: Provjera za server ako je offline / online
+        '''
+        '''Opis
+        '''
+        '''Ako ne mo??ete do??i do poslu??itelja ili ??elite znati je li offline ili online ili ??elite vidjeti koliko je udaljeno web mjesto, upotrijebite ovu naredbu.
+        '''
+        '''Ova naredba omogu??uje vam slanje ping poslu??itelja, a poslu??itelj odgovara ako je na mre??i. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* ping (adresa)
+        '''* ping (adresa) [repeTimes [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_ping() As String
+            Get
+                Return ResourceManager.GetString("hr_ping", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;rd&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''rd naredba
+        '''
+        '''Sa??etak: Uklanja mapu iz trenutne radne mape
+        '''
+        '''Opis
+        '''
+        '''Ova naredba omogu??uje vam uklanjanje mape iz trenutne radne mape. 
+        '''
+        '''Kada se implementira pravi datote??ni sustav, on ??e stvarno ukloniti direktorije.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* rd (direktorij)
+        '''
+        '''Primjeri
+        '''
+        '''* rd boot: Uklanja mapu boot
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''rd (directory)=&gt;Green
+        '''rd boot:=&gt;Yellow
+        '''-COLOR CONFIG END [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_rd() As String
+            Get
+                Return ResourceManager.GetString("hr_rd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;??itaj&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba za ??itanje
+        '''
+        '''Sa??etak: ??ita sadr??aj datoteke i ispisuje na zaslon
+        '''
+        '''Opis
+        '''
+        '''Ova naredba omogu??uje vam da vidite sadr??aj datoteke u va??oj trenutnoj radnoj mapi. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* ??itanje (datoteka)
+        '''
+        '''Primjeri
+        '''
+        '''* read libuesh: ??ita sadr??aj datoteke libuesh
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''read (file)=&gt;Green
+        '''read libuesh:=&gt;Yellow
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''re [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_read() As String
+            Get
+                Return ResourceManager.GetString("hr_read", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;ponovno podizanje sustava&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba za ponovno pokretanje
+        '''
+        '''Sa??etak: Ponovno vra??a jezgru
+        '''
+        '''Opis
+        '''
+        '''Ova naredba ponovno pokre??e simuliranu kernel i ponovno u??itava sve konfiguracije koje nisu u??itane pomo??u reloadconfig. 
+        '''
+        '''UPOZORENJE: Ne postoji sinkronizacija datote??nog sustava jer trenutna verzija kernela nema stvarni datote??ni sustav za sinkronizaciju i kernel nije kona??an.
+        '''
+        '''Upotreba naredbe [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_reboot() As String
+            Get
+                Return ResourceManager.GetString("hr_reboot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;reloadconfig&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba reloadconfig
+        '''
+        '''Sa??etak: Ponovno u??itava konfiguraciju jezgre
+        '''
+        '''Opis
+        '''
+        '''Ova naredba ponovno u??itava postavke kernela i poku??ava sa??uvati ponovno pokretanje i odmah odraziti promjene. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* reloadconfig
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadconfig=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadconfig command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Command usage=&gt;SE2
+        '''-SE [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_reloadconfig() As String
+            Get
+                Return ResourceManager.GetString("hr_reloadconfig", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba reloadmods
+        '''
+        '''Sa??etak: U??itaj modifikacije
+        '''
+        '''Opis
+        '''
+        '''Ova naredba omogu??uje vam ponovno u??itavanje modifikacija kada se stvori promjena izvornog koda za odre??eni mod ili se doda ili ukloni mod.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Command usage=&gt;SE2
+        '''-S [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("hr_reloadmods", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;reloadsaver&quot;
+        '''-REVISION:0.0.1.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba za ponovno u??itavanje
+        '''
+        '''Sa??etak: Datoteke ??uvanja zaslona mo??ete ponovo u??itati nakon ??to ih promijenite.
+        '''
+        '''Opis
+        '''
+        '''Ova naredba sastavlja sadr??aj va??eg modfila da vidi postoje li pogre??ke i dodijelite svoje modemske datoteke screensaver na va??e??i popis ??uvara zaslona ako ??uvar zaslona ne sadr??i nijednu pogre??ku sustava gradnje.
+        '''
+        '''Ako ??elite odraziti promjene na svom  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_reloadsaver() As String
+            Get
+                Return ResourceManager.GetString("hr_reloadsaver", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;rmuser&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba rmuser
+        '''
+        '''Sa??etak: uklanja nepozvanog ili suvi??nog korisnika
+        '''
+        '''Opis
+        '''
+        '''Ova naredba omogu??uje uklanjanje nepozvanog ili suvi??nog korisnika iz korisni??kog rje??nika koji se inicijalizira na po??etku kernele. 
+        '''
+        '''Me??utim ne mo??ete ukloniti svog vlastitog korisnika koji je prijavljen.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* rmuser (korisni??ko ime)
+        '''
+        '''Primjeri
+        '''
+        '''* rmuser joe: uklanja &quot;joe&quot; iz korisni? [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_rmuser() As String
+            Get
+                Return ResourceManager.GetString("hr_rmuser", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;??uva zaslon&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba za spremanje zaslona
+        '''
+        '''Sa??etak: Pokre??e va?? trenutni ??uvar zaslona
+        '''
+        '''Opis
+        '''
+        '''Ova naredba mo??e za??tititi va?? LCD zaslon od izgaranja i prikazuje vam trenutnu ??uvar zaslona koju ste postavili vi ili kernel. 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* ??tedi zaslon
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''savescreen=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''savescreen command=&gt;SE1
+        '''Description=&gt;SE2
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_savescreen() As String
+            Get
+                Return ResourceManager.GetString("hr_savescreen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Vodi?? za modiranje ??uvara zaslona
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''??to je screensaver za kernel?
+        '''
+        '''??uvar zaslona je neaktivan postupak koji ??e se aktivirati ako va??e ra??unalo ne radi. 
+        '''
+        '''??uvar zaslona tako??er se mo??e prilagoditi i nau??it ??emo vas kako napraviti svoj prvi ??uvar zaslona, ??????od najjednostavnijeg ??uvara zaslona do legendarnog.
+        '''
+        '''Osnovni modding (??uvar zaslona)
+        '''
+        '''0. Kako napraviti vlastite ??uvare zaslona u Visual Studio  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_Screensaver_modding_guide() As String
+            Get
+                Return ResourceManager.GetString("hr_Screensaver_modding_guide", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba setcolors
+        '''
+        '''Sa??etak: Mo??ete postaviti boje jezgre
+        '''
+        '''Opis
+        '''
+        '''Ova naredba omogu??uje vam postavljanje boja teksta kernela, uklju??uju??i poruku o pogre??ci kernela, ulaznu poruku, tekst licence, op??i tekst itd. Tako??er vam omogu??uje postavljanje boje pozadine kako bi va??e jezgro izgledalo personaliziranije.
+        '''
+        '''Ova naredba provjerava boje iz vrijednosti enuma ConsoleColor poznate kao cijeli brojevi. 
+        '''
+        '''* Bij [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_setcolors() As String
+            Get
+                Return ResourceManager.GetString("hr_setcolors", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;setsaver&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba setsaver
+        '''
+        '''Sa??etak: Postavlja zadani ??uvar zaslona kao svoj ??uvar zaslona ili ugra??eni ??uvar zaslona
+        '''
+        '''Opis
+        '''
+        '''Zadani screensaver mo??ete postaviti kao svoj ??uvar zaslona modfiljem ili ugra??enim ??uvarima kao ??to su matrica, disco i colorMix.
+        '''
+        '''* matrica: Prikazuje osnovnu matricu koja ispisuje izme??u 0 i 1 zelenom bojom teksta
+        '''* disco: Prikazuje disko svjetla
+        '''* colorMix: Mije [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_setsaver() As String
+            Get
+                Return ResourceManager.GetString("hr_setsaver", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;setthemes&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba setthemes
+        '''
+        '''Sa??etak: Postavlja va??u temu
+        '''
+        '''Opis
+        '''
+        '''Mo??ete prilagoditi svoje jezgre pomo??u tema koje sadr??e skupove boja za postavljanje boja. 
+        '''
+        '''* Zadano: zadani skup boje kernela
+        '''* RedConsole: Va??a ??e konzola biti crvena nakon postavljanja
+        '''* Bluespire: U??ivajte u svojoj plavoj konzoli
+        '''* Haker: Ako ste haker, postavite ovu temu kako bi va??a konzola izgledala vi??e kao hakers [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_setthemes() As String
+            Get
+                Return ResourceManager.GetString("hr_setthemes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;showmotd&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba showmotd
+        '''
+        '''Sa??etak: Prikazuje va??u poruku dana
+        '''
+        '''Opis
+        '''
+        '''Ova naredba pokazuje va??u poruku dan prije prijave i ra????lanjuje mjesta rezerviranja u MOTD-u ako ih prona??u.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* showmotd
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''showmotd=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''showmotd command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property hr_showmotd() As String
+            Get
+                Return ResourceManager.GetString("hr_showmotd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;showtd&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba showtd
+        '''
+        '''Sa??etak: Prikazuje trenutno vrijeme i datum
+        '''
+        '''Opis
+        '''
+        '''Ako ??elite znati koliko je sati, a da vi??e puta ne ulazite u sat, pomo??u ove naredbe mo??ete prikazati trenutno vrijeme i datum, kao i svoju vremensku zonu.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* showtd
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''showtd=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''showtd command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Command usa [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_showtd() As String
+            Get
+                Return ResourceManager.GetString("hr_showtd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;showtdzone&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba showtdzone
+        '''
+        '''Sa??etak: Prikazuje trenuta??no vrijeme i datum u drugoj vremenskoj zoni
+        '''
+        '''Opis
+        '''
+        '''Ako trebate znati koliko je sati u drugom gradu ili dr??avi, pomo??u ovog alata mo??ete vam re??i trenuta??no vrijeme i datum u drugoj zemlji ili gradu.
+        '''
+        '''Ova naredba je multiplatformna i koristi vremenske zone IANA na Unix sustavima i sustav Windows vremenske zone u sustavu Windows.
+        '''
+        '''Na p [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_showtdzone() As String
+            Get
+                Return ResourceManager.GetString("hr_showtdzone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;isklju??ivanje&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba za isklju??ivanje
+        '''
+        '''Sa??etak: Isklju??ite ra??unalo
+        '''
+        '''Opis
+        '''
+        '''Ako zavr??ite sa svime i ne ??elite raditi ne??to drugo na ra??unalu, umjesto da ga ostavite za potro??nju energije i upla??ujete vi??e novca u elektri??ni centar, ovu naredbu trebate koristiti za ga??enje ra??unala i u??tedu energije 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* ugasiti
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''shutdown=&gt;Green [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_shutdown() As String
+            Get
+                Return ResourceManager.GetString("hr_shutdown", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba Shell &quot;sses&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba sses
+        '''
+        '''Sa??etak: Provjere dostupnosti SSE / SSE2 / SSE3.
+        '''
+        '''Opis
+        '''
+        '''Ako ??elite znati jesu li SSE, SSE2 i SSE3 dostupni u va??em procesoru, mo??da biste trebali koristiti ovu naredbu. 
+        '''
+        '''Ako ??ete istra??iti vi??e o ovom pozivu koji se interno koristi u programima C Windows, pogledajte ovaj dokument: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi 
+        '''        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_sses() As String
+            Get
+                Return ResourceManager.GetString("hr_sses", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;sysinfo&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba sysinfo
+        '''
+        '''Sa??etak: dobiva podatke o va??em sustavu
+        '''
+        '''Opis
+        '''
+        '''Ova naredba omogu??uje vam prikaz konfiguracije jezgre, kao i va??e MOTD, MAL, ime ra??unala, korisni??ko ime i podatke o hardveru.
+        '''
+        '''Ova naredba korisna je za izvje????a o programskim pogre??kama i izvje????a o padu.
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* sysinfo
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''sysinfo=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''- [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property hr_sysinfo() As String
+            Get
+                Return ResourceManager.GetString("hr_sysinfo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Naredba ljuske &quot;useddeps&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''naredba useddeps
+        '''
+        '''Sa??etak: Mo??ete dobiti knji??nice koje se koriste u ovom programu
+        '''
+        '''Opis
+        '''
+        '''Kernel Simulator dolazi s knji??nicama za lak??e kodiranje (za razvojne programere). 
+        '''
+        '''Upotreba naredbe
+        '''
+        '''* useddeps
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''useddeps=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''useddeps command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Command usage=&gt;SE2
+        '''-SECTIONS END-
+        '''.
+        '''</summary>
+        Friend ReadOnly Property hr_useddeps() As String
+            Get
+                Return ResourceManager.GetString("hr_useddeps", resourceCulture)
             End Get
         End Property
         
@@ -13050,6 +15177,41 @@ Namespace My.Resources
         Friend ReadOnly Property it_reloadconfig() As String
             Get
                 Return ResourceManager.GetString("it_reloadconfig", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Comando Shell &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando reloadmods
+        '''
+        '''Riepilogo: ricarica le modifiche
+        '''
+        '''Descrizione
+        '''
+        '''Questo comando consente di ricaricare le modifiche quando viene creata una modifica nel codice sorgente per la mod specificata o quando la mod viene aggiunta o rimossa.
+        '''
+        '''Utilizzo del comando
+        '''
+        '''* reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''D [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property it_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("it_reloadmods", resourceCulture)
             End Get
         End Property
         
@@ -15111,6 +17273,41 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Perintah Shell &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''perintah reloadmods
+        '''
+        '''Ringkasan: Mengubah suai semula
+        '''
+        '''Penerangan
+        '''
+        '''Perintah ini membolehkan anda memuat semula pengubahsuaian apabila perubahan dalam kod sumber untuk mod yang ditentukan dibuat atau mod ditambah atau dikeluarkan.
+        '''
+        '''Penggunaan perintah
+        '''
+        '''* reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''Descript [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ms_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("ms_reloadmods", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Perintah Shell &quot;reloadsaver&quot;
         '''-REVISION:0.0.1.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -16931,6 +19128,41 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell-opdracht &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''opdracht reloadmods
+        '''
+        '''Samenvatting: herlaadt wijzigingen
+        '''
+        '''Omschrijving
+        '''
+        '''Met deze opdracht kunt u wijzigingen opnieuw laden wanneer een wijziging in de broncode voor de opgegeven mod wordt gemaakt of mod wordt toegevoegd of verwijderd.
+        '''
+        '''Commando gebruik
+        '''
+        '''* herlaadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''Descr [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property nl_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("nl_reloadmods", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-commando &quot;reloadsaver&quot;
         '''-REVISION:0.0.1.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -18018,7 +20250,7 @@ Namespace My.Resources
         '''
         '''Uso de comando
         '''
-        '''* conectar  [rest of string was truncated]&quot;;.
+        '''* connect ( [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property pt_FTP_connect() As String
             Get
@@ -18843,6 +21075,42 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Comando shell &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''comando reloadmods
+        '''
+        '''Resumo: Recarrega as modifica????es
+        '''
+        '''Descri????o
+        '''
+        '''Este comando permite recarregar modifica????es quando uma altera????o no c??digo-fonte para o mod especificado ?? criada ou mod ?? adicionado ou removido.
+        '''
+        '''Uso de comando
+        '''
+        '''* reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''Description=&gt;SE2
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property pt_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("pt_reloadmods", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Comando shell &quot;reloadsaver&quot;
         '''-REVISION:0.0.1.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -19392,6 +21660,43 @@ Namespace My.Resources
         Friend ReadOnly Property reloadconfig() As String
             Get
                 Return ResourceManager.GetString("reloadconfig", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell command &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''reloadmods command
+        '''
+        '''Summary: Reloads modifications
+        '''
+        '''Description
+        '''
+        '''This command lets you reload modifications when a change in the source code for the specified mod is created or mod is added or removed.
+        '''
+        '''Command usage
+        '''
+        '''* reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Command usage=&gt;SE2
+        '''-SEC [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property reloadmods() As String
+            Get
+                Return ResourceManager.GetString("reloadmods", resourceCulture)
             End Get
         End Property
         
@@ -21170,6 +23475,42 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to (*MAN START*)
         '''
+        '''-TITLE:Shell-kommandot &quot;reloadmods&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''reloadmods kommando
+        '''
+        '''Sammanfattning: Laddar om ??ndringar
+        '''
+        '''Beskrivning
+        '''
+        '''Detta kommando l??ter dig ladda om ??ndringar n??r en ??ndring i k??llkoden f??r det angivna modet skapas eller mod l??ggs till eller tas bort.
+        '''
+        '''Kommandobruk
+        '''
+        '''* ladda om mods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        '''Description=&gt;SE2
+        '''Comman [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property sv_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("sv_reloadmods", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
         '''-TITLE:Shell-kommandot &quot;reloadsaver&quot;
         '''-REVISION:0.0.1.1
         '''-KSLAYOUT:0.0.5.9-OR-ABOVE
@@ -22234,7 +24575,7 @@ Namespace My.Resources
         '''
         '''Komut kullan??m??
         '''
-        '''* ba? [rest of string was truncated]&quot;;.
+        '''* con [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property tr_FTP_connect() As String
             Get
@@ -23046,6 +25387,38 @@ Namespace My.Resources
         Friend ReadOnly Property tr_reloadconfig() As String
             Get
                 Return ResourceManager.GetString("tr_reloadconfig", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Kabuk komutu &quot;yeniden y??kleme modlar??&quot;
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''resoadmods komutu
+        '''
+        '''??zet: De??i??iklikleri yeniden y??kler
+        '''
+        '''A????klama
+        '''
+        '''Bu komut, belirtilen mod i??in kaynak kodunda bir de??i??iklik olu??turuldu??unda veya mod eklendi??inde veya kald??r??ld??????nda de??i??iklikleri yeniden y??klemenizi sa??lar.
+        '''
+        '''Komut kullan??m??
+        '''
+        '''* yeniden y??kleme modlar??
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property tr_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("tr_reloadmods", resourceCulture)
             End Get
         End Property
         
@@ -24737,6 +27110,41 @@ Namespace My.Resources
         Friend ReadOnly Property zh_reloadconfig() As String
             Get
                 Return ResourceManager.GetString("zh_reloadconfig", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to (*MAN START*)
+        '''
+        '''-TITLE:Shell m??ngl??ng ???reloadmods???
+        '''-REVISION:0.0.1
+        '''-KSLAYOUT:0.0.5.9-OR-ABOVE
+        '''
+        '''-BODY START-
+        '''Reloadmods m??ngl??ng
+        '''
+        '''Zh??iy??o: Ch??ngx??n ji??z??i xi??g??i
+        '''
+        '''Mi??osh??
+        '''
+        '''C?? m??ngl??ng y??nx?? n??n z??i chu??ngji??n zh??d??ng mod de yu??n d??im?? g??ngg??i hu?? ti??nji?? hu?? sh??nch?? mod sh?? ch??ngx??n ji??z??i xi??g??i.
+        '''
+        '''M??ngl??ng y??ngf??
+        '''
+        '''* Reloadmods
+        '''-BODY END-
+        '''
+        '''-COLOR CONFIGURATION-
+        '''reloadmods=&gt;Green
+        '''-COLOR CONFIG END-
+        '''
+        '''-SECTIONS-
+        '''reloadmods command=&gt;SE1
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property zh_reloadmods() As String
+            Get
+                Return ResourceManager.GetString("zh_reloadmods", resourceCulture)
             End Get
         End Property
         

@@ -27,9 +27,9 @@ Public Module Shell
                                             "chhostname", "lscomp", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj",
                                             "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "md", "rd", "debuglog",
                                             "reloadconfig", "showtdzone", "alias", "chmal", "savescreen", "lockscreen", "setsaver", "reloadsaver",
-                                            "noaliases", "ftp", "useddeps", "usermanual", "cdbglog", "sses", "chlang"}
+                                            "noaliases", "ftp", "useddeps", "usermanual", "cdbglog", "sses", "chlang", "reloadmods"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
-                                     "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang"}
+                                     "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods"}
     Public obsoleteCmds() As String = {}
     Public modcmnds As New ArrayList
 

@@ -19,11 +19,11 @@ Basic modding (n??yt??ns????st??j??)
 2. Valitse Compile (K????nn??) -osiosta Build Events (Rakenna tapahtumat) ja kirjoita t??m?? Post-build-tapahtumakomentoriville:
 - kopio .. .. ModFile.vb .. .. .. ModFileSS.m (Laita SS ennen .m: ????, jotta KS tunnistaa sen n??yt??ns????st??j??ksi eik?? modiksi)
 - del / Q *. * (varmista, ett?? ei ole luotu DLL-tiedostoja, koska emme k??yt?? DLL-moduuleja)
-3. Toista vaiheet 9-16 muokkausoppaasta, mutta korvaa tuonti Kernel_Simulator.ModParser ja tuonti Kernel_Simulator.Screensaver
+3. Toista vaiheet 9-16 muokkausoppaasta, mutta korvaa tuonti KS.ModParser ja tuonti KS.Screensaver
 4. Julkisen luokan ... ja loppuluokan rivien v??lill??, anna Visual Studio 2017 tiet????, ett?? luot KS-n??yt??ns????st??j??n kirjoittamalla: Sovellukset ICustomSaver
 5. Jos aiot lis??t?? nimiavaruuksia, n??m?? s????nn??t on t??ytett??v??:
 1) ??l?? tuo Kernel_Simulatoria itse. 
-2) Kun tuodaan moduuleja / luokkia, kuten TextWriterColor, se on kirjoitettu n??in: Import Kernel_Simulator.TextWriterColor
+2) Kun tuodaan moduuleja / luokkia, kuten TextWriterColor, se on kirjoitettu n??in: Import KS.TextWriterColor
 6. M????rittele mod-informaation ominaisuudet asettamalla alla olevat sovellusohjelman tunnukset:
 Kiinteist?? on alustettu Boolen-ty??kaluksi ICustomSaver.Initialized
 7. Tee IC screensaver (), joka toteuttaa ICustomSaver.InitSaverin, init scaveraver -aloitteen kirjoittamalla:
@@ -64,14 +64,14 @@ Takaisin-viestiruudun n??yt??ns????st??j?? kertoo ihmisille, ett?? tietokoneen o
 5. Kirjoita julkinen luokka SOR:
 - Tuontij??rjestelm??
 - Tuonti System.Threading
-- Tuonti Kernel_Simulator.Screensaver
-- Tuo Kernel_Simulator.TextWriterColor
-- Tuo Kernel_Simulator.Login
+- Tuonti KS.Screensaver
+- Tuo KS.TextWriterColor
+- Tuo KS.Login
 6. Sinun pit??isi saada virheit?? sanomalla, ett?? n??m?? osiot on luotava.
 7. Tee aloitusn??yt??ns????st??j??n tapahtuman k??sittelij?? kirjoittamalla:
 Kiinteist?? on alustettu Boolen-ty??kaluksi ICustomSaver.Initialized
 Sub InitSaver () toteuttaa ICustomSaver.InitSaver
-Wln ("Lataa t??m?? n??yt??ns????st??j?? k??ytt??m??ll??" loadaver SORSS.m "ja" "setaver SORSS.m" "," neutralText ")
+W ("Lataa t??m?? n??yt??ns????st??j?? k??ytt??m??ll??" loadaver SORSS.m "ja" "setaver SORSS.m" "," neutralText ")
 Initialized = True
 Lopeta Sub
 8. Koska emme toteuta mit????n ennen n??yt??ns????st??j??n n??ytt??mist??, j??t??mme t??m??n tyhj??ksi:
@@ -111,7 +111,7 @@ W ("-", "neutralText")
 Sill?? l As Integer = 0 To Strlen - 1
 W ("-", "neutralText")
 Seuraava
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 Lopeta Sub
 Public Shared Sub WriteMsg (ByVal-tyyppitunnus kokonaislukuna, ByVal MsgID Asentajana)
 Dim BackMessages Kuten String () = {"<OWNER> palaa pian.", "<OWNER> on varattu. H??n palaa pian."}
@@ -127,15 +127,15 @@ Tapaus 3
 text = ParsePlaces (RudeMessages (MsgID))
 Lopeta Valitse
 InitializeBar (text.Length)
-Wln ("| {0} |", "neutralText", teksti)
+W ("| {0} |", "neutralText", teksti)
 InitializeBar (text.Length)
 Lopeta Sub
 12. Koodin pit??isi n??ytt???? t??lt??:
 Tuontij??rjestelm??
 Tuonti System.Threading
-Tuo Kernel_Simulator.Screensaver
-Tuo Kernel_Simulator.TextWriterColor
-Tuo Kernel_Simulator.Login
+Tuo KS.Screensaver
+Tuo KS.TextWriterColor
+Tuo KS.Login
 Julkinen luokka SoonOvernightRude
 Ottaa k??ytt????n ICustomSaverin
 Kiinteist?? on alustettu Boolen-ty??kaluksi ICustomSaver.Initialized
@@ -144,7 +144,7 @@ Julkinen S_Random Uusi satunnainen () 'Alustaa satunnaislukugeneraattorin
 Julkinen O_Random Uusi satunnainen () 'Alustaa satunnaislukugeneraattorin
 Julkinen R_Random Uusi satunnainen () 'Alustaa satunnaislukugeneraattorin
 Sub InitSaver () toteuttaa ICustomSaver.InitSaver
-Wln ("Aseta t??m?? n??yt??ns????st??j?? oletusasetukseksi k??ytt??m??ll??" "setaver SORSS.m" "", "neutralText")
+W ("Aseta t??m?? n??yt??ns????st??j?? oletusasetukseksi k??ytt??m??ll??" "setaver SORSS.m" "", "neutralText")
 Initialized = True
 Lopeta Sub
 Sub PreDisplay () toteuttaa ICustomSaver.PreDisplay
@@ -178,7 +178,7 @@ W ("-", "neutralText")
 Sill?? l As Integer = 0 To Strlen - 1
 W ("-", "neutralText")
 Seuraava
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 Lopeta Sub
 Public Shared Sub WriteMsg (ByVal-tyyppitunnus kokonaislukuna, ByVal MsgID Asentajana)
 Dim BackMessages Kuten String () = {"<OWNER> palaa pian.", "<OWNER> on varattu. H??n palaa pian."}
@@ -194,7 +194,7 @@ Tapaus 3
 text = ParsePlaces (RudeMessages (MsgID))
 Lopeta Valitse
 InitializeBar (text.Length)
-Wln ("| {0} |", "neutralText", teksti)
+W ("| {0} |", "neutralText", teksti)
 InitializeBar (text.Length)
 Lopeta Sub
 Loppuluokka
@@ -206,7 +206,7 @@ Loppuluokka
 1. Toista vaiheet 1-4 ensimm??isess?? esimerkiss??: Konsolin viestiruutu ja Pian, Y??pyminen tai Rude (Siirry pois ...) -viestej??
 2. Kirjoita julkisen luokan tyhj??ksi (olettaen, ett?? luokkasi on tyhj??):
 - Tuontij??rjestelm??
-- Tuonti Kernel_Simulator.Screensaver
+- Tuonti KS.Screensaver
 3. Kirjoita n??m?? alla olevat sovellukset ICustomSaver:
 Julkinen omaisuus on alustettu Boolen-ty??kaluksi ICustomSaver.Initialized
 Julkinen Sub InitSaver () toteuttaa ICustomSaver.InitSaver
@@ -221,7 +221,7 @@ Lopeta Sub
 Console.Clear ()
 5. Koodin pit??isi n??ytt???? t??lt??:
 Tuontij??rjestelm??
-Tuo Kernel_Simulator.Screensaver
+Tuo KS.Screensaver
 Julkinen luokka
 Ottaa k??ytt????n ICustomSaverin
 Julkinen omaisuus on alustettu Boolen-ty??kaluksi ICustomSaver.Initialized
@@ -242,9 +242,9 @@ T??m?? esimerkki aloittaa animaatioiden kanssa.
 
 Tuontij??rjestelm??
 Tuo Microsoft.VisualBasic.Constants
-Tuo Kernel_Simulator.TextWriterColor
+Tuo KS.TextWriterColor
 Tuonti System.Threading
-Tuo Kernel_Simulator.Screensaver
+Tuo KS.Screensaver
 Julkinen luokka ANI
 Ottaa k??ytt????n ICustomSaverin
 Julkinen omaisuus on alustettu Boolen-ty??kaluksi ICustomSaver.Initialized
@@ -260,7 +260,7 @@ Console.Clear ()
 Jos Custom.CancellationPending = Tosi sitten 'T??m?? korjaa ongelman, kun teht??v?? on varattu.
 Poistu
 Loppu Jos
-Wln (aniset (CurrentStep), "neutralText")
+W (aniset (CurrentStep), "neutralText")
 Thread.sleep (150)
 Seuraava
 Lopeta Sub
@@ -335,9 +335,9 @@ Loppuluokka
 
 Tuontij??rjestelm??
 Tuo Microsoft.VisualBasic.Constants
-Tuo Kernel_Simulator.TextWriterColor
+Tuo KS.TextWriterColor
 Tuo Microsoft.VisualBasic.Strings
-Tuo Kernel_Simulator.Screensaver
+Tuo KS.Screensaver
 Julkinen luokka Dynaaminen
 Ottaa k??ytt????n ICustomSaverin
 Julkinen omaisuus on alustettu Boolen-ty??kaluksi ICustomSaver.Initialized
@@ -362,12 +362,12 @@ Seuraava
 Tarkista = 0: oldCheck = 0: ProgWent = 0
 Lopeta Sub
 Julkiset Sub ShowStats ()
-Wln ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+W ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
 UpdateProgressBar (Res * 100/1000000)
 Lopeta Sub
 Julkinen Sub UpdateProgressBar (ByVal-prosenttiosuus merkkijonona)
 Tarkista = prosentti / 5
-Wln (Tarkista, "neutraali teksti")
+W (Tarkista, "neutraali teksti")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
 W ("--------------------", "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
@@ -403,9 +403,9 @@ Public Class...=>Cyan
 Visual Studio 2017=>Magenta
 Imports Implements=>Cyan
 ICustomSaver=>Green
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
-Kernel_Simulator.TextWriterColor=>Green
+KS.TextWriterColor=>Green
 Property As Boolean Sub=>Cyan
 Initialized ICustomSaver.Initialized=>Green
 Kernel Simulator=>Green

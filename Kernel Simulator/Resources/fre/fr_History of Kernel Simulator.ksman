@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Ajout du débogage à chaque phase
 13. Ajout d'un espace réservé au système d'exploitation pour une utilisation avec MOTD et MAL
 14. Ajout d'un analyseur syntaxique newline pour que MOTD prenne en charge plus d'une ligne
+
+KS 0.0.6.10
+
+1. Espace de noms simplifié pour KS
+2. Correction des blocs de code pour l'hindi, le chinois et la 1/2 tchèque (voir le commentaire sur GetCommand.vb)
+3. Ajout de l'aide manquante pour "reloadsaver"
+4. Ajout de la commande "reloadmods"
+5. Made KernelVersion et EnvironmentOSType en lecture seule
+6. Suppression de l'argument cmdline "promptArgs"
+7. La pile supplémentaire n'est plus générée lors du redémarrage
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

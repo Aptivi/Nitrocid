@@ -19,11 +19,11 @@ Basismodding (screensaver)
 2. Klik in het gedeelte Compileren op Gebeurtenissen bouwen en schrijf dit op de opdrachtregel van de opdracht Post-build:
 - copy .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (Plaats SS voor de .m zodat KS het als een screensaver herkent en niet als een mod)
 - del / Q *. * (om er zeker van te zijn dat er geen dummy DLL-bestanden worden aangemaakt omdat we geen DLL gebruiken voor mods)
-3. Herhaal stap 9-16 uit de Modding-gids, maar vervang de Imports Kernel_Simulator.ModParser met Imports Kernel_Simulator.Screensaver
+3. Herhaal stap 9-16 uit de Modding-gids, maar vervang de Imports KS.ModParser met Imports KS.Screensaver
 4. Laat tussen de klassen Public Class ... en End Class Visual Studio 2017 weten dat u uw KS screensaver gaat maken door te schrijven: Implements ICustomSaver
 5. Als u naamruimten gaat toevoegen, moet aan deze regels worden voldaan:
-1) Importeer Kernel_Simulator niet zelf. 
-2) Bij het importeren van modules / klassen zoals TextWriterColor, is dit zo geschreven: Imports Kernel_Simulator.TextWriterColor
+1) Importeer KS niet zelf. 
+2) Bij het importeren van modules / klassen zoals TextWriterColor, is dit zo geschreven: Imports KS.TextWriterColor
 6. Definieer eigenschappen voor mod-informatie door hieronder het Implements IScript te plaatsen:
 Eigenschap ge??nitialiseerd als Booleaanse implementaties ICustomSaver.Initialized
 7. Maak je init screensaver met de naam InitSaver () die de ICustomSaver.InitSaver implementeert, door te schrijven:
@@ -64,14 +64,14 @@ De schermbox van het back-message-venster vertelt mensen dat de eigenaar van de 
 5. Schrijf boven de openbare klasse SOR:
 - Importeert systeem
 - Importeert System.Threading
-- Importeert Kernel_Simulator.Screensaver
-- Importeert Kernel_Simulator.TextWriterColor
-- Importeert Kernel_Simulator.Login
+- Importeert KS.Screensaver
+- Importeert KS.TextWriterColor
+- Importeert KS.Login
 6. U zou fouten moeten krijgen die zeggen dat deze subs moeten worden aangemaakt.
 7. Maak van uw start screensaver event handler door te schrijven:
 Eigenschap ge??nitialiseerd als Booleaanse implementaties ICustomSaver.Initialized
 Sub InitSaver () Implementeert ICustomSaver.InitSaver
-Wln ("Laad deze schermbeveiliging met" "loadsaver SORSS.m" "en" "setsaver SORSS.m" "", "neutralText")
+W ("Laad deze schermbeveiliging met" "loadsaver SORSS.m" "en" "setsaver SORSS.m" "", "neutralText")
 Ge??nitialiseerd = Waar
 End Sub
 8. Aangezien we niets implementeren voordat we de screensaver weergeven, laten we dit veld leeg:
@@ -111,7 +111,7 @@ W ("-", "neutralText")
 For l As Integer = 0 To strlen - 1
 W ("-", "neutralText")
 volgende
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 End Sub
 Public Shared Sub WriteMsg (ByVal TypeID As Integer, ByVal MsgID As Integer)
 Dim BackMessages As String () = {"<OWNER> zal snel terugkomen.", "<OWNER> is bezig. Hij zal snel terug zijn."}
@@ -127,15 +127,15 @@ Case 3
 text = ParsePlaces (RudeMessages (MsgID))
 Einde selecteren
 InitializeBar (text.length)
-Wln ("| {0} |", "neutralText", tekst)
+W ("| {0} |", "neutralText", tekst)
 InitializeBar (text.length)
 End Sub
 12. De code zou er als volgt uit moeten zien:
 Systeem importeert
 Importeert System.Threading
-Importeert Kernel_Simulator.Screensaver
-Importeert Kernel_Simulator.TextWriterColor
-Importeert Kernel_Simulator.Login
+Importeert KS.Screensaver
+Importeert KS.TextWriterColor
+Importeert KS.Login
 Openbare klas SoonOvernightRude
 Implementeert ICustomSaver
 Eigenschap ge??nitialiseerd als Booleaanse implementaties ICustomSaver.Initialized
@@ -144,7 +144,7 @@ Public S_Random As New Random () 'Initialiseert de willekeurige nummergenerator
 Public O_Random As New Random () 'Initialiseert de generator voor willekeurige getallen
 Public R_Random As New Random () 'Initialiseert de willekeurige nummergenerator
 Sub InitSaver () Implementeert ICustomSaver.InitSaver
-Wln ("Stel deze schermbeveiliging in als standaard met" "setsaver SORSS.m" "", "neutralText")
+W ("Stel deze schermbeveiliging in als standaard met" "setsaver SORSS.m" "", "neutralText")
 Ge??nitialiseerd = Waar
 End Sub
 Sub PreDisplay () Implementeert ICustomSaver.PreDisplay
@@ -178,7 +178,7 @@ W ("-", "neutralText")
 For l As Integer = 0 To strlen - 1
 W ("-", "neutralText")
 volgende
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 End Sub
 Public Shared Sub WriteMsg (ByVal TypeID As Integer, ByVal MsgID As Integer)
 Dim BackMessages As String () = {"<OWNER> zal snel terugkomen.", "<OWNER> is bezig. Hij zal snel terug zijn."}
@@ -194,7 +194,7 @@ Case 3
 text = ParsePlaces (RudeMessages (MsgID))
 Einde selecteren
 InitializeBar (text.length)
-Wln ("| {0} |", "neutralText", tekst)
+W ("| {0} |", "neutralText", tekst)
 InitializeBar (text.length)
 End Sub
 Eindklasse
@@ -206,7 +206,7 @@ Eindklasse
 1. Herhaal stap 1 tot en met 4 in het eerste voorbeeld: berichtenberichten in de consoleborden en snel, 's nachts of onbeleefd (ga weg ...)
 2. Schrijf boven de public class blank (in de veronderstelling dat uw classname leeg is):
 - Importeert systeem
-- Importeert Kernel_Simulator.Screensaver
+- Importeert KS.Screensaver
 3. Schrijf deze onder de implementaties ICustomSaver:
 Public Property ge??nitialiseerd als Boolean implementeert ICustomSaver.Initialized
 Public Sub InitSaver () Implementeert ICustomSaver.InitSaver
@@ -221,7 +221,7 @@ End Sub
 Console.Clear ()
 5. De code zou er als volgt uit moeten zien:
 Systeem importeert
-Importeert Kernel_Simulator.Screensaver
+Importeert KS.Screensaver
 Openbare klas Blank
 Implementeert ICustomSaver
 Public Property ge??nitialiseerd als Boolean implementeert ICustomSaver.Initialized
@@ -242,9 +242,9 @@ Dit voorbeeld helpt u op weg met de animaties.
 
 Systeem importeert
 Importeert Microsoft.VisualBasic.Constants
-Importeert Kernel_Simulator.TextWriterColor
+Importeert KS.TextWriterColor
 Importeert System.Threading
-Importeert Kernel_Simulator.Screensaver
+Importeert KS.Screensaver
 Openbare klas ANI
 Implementeert ICustomSaver
 Public Property ge??nitialiseerd als Boolean implementeert ICustomSaver.Initialized
@@ -260,7 +260,7 @@ Console.Clear ()
 If Custom.CancellationPending = True Then 'Hiermee wordt het probleem opgelost voor de taak die bezig is.
 Exit voor
 Stop als
-Wln (aniset (CurrentStep), "neutralText")
+W (aniset (CurrentStep), "neutralText")
 Thread.Sleep (150)
 volgende
 End Sub
@@ -335,9 +335,9 @@ Eindklasse
 
 Systeem importeert
 Importeert Microsoft.VisualBasic.Constants
-Importeert Kernel_Simulator.TextWriterColor
+Importeert KS.TextWriterColor
 Importeert Microsoft.VisualBasic.Strings
-Importeert Kernel_Simulator.Screensaver
+Importeert KS.Screensaver
 Public Class Dynamic
 Implementeert ICustomSaver
 Public Property ge??nitialiseerd als Boolean implementeert ICustomSaver.Initialized
@@ -362,12 +362,12 @@ volgende
 Controle = 0: oldCheck = 0: ProgWent = 0
 End Sub
 Public Sub ShowStats ()
-Wln ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+W ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
 UpdateProgressBar (Res * 100/1000000)
 End Sub
 Public Sub UpdateProgressBar (ByVal percent As String)
 Controleer = percentage / 5
-Wln (controle, "neutralText")
+W (controle, "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
 W ("--------------------", "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
@@ -403,9 +403,9 @@ Public Class...=>Cyan
 Visual Studio 2017=>Magenta
 Imports Implements=>Cyan
 ICustomSaver=>Green
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
-Kernel_Simulator.TextWriterColor=>Green
+KS.TextWriterColor=>Green
 Property As Boolean Sub=>Cyan
 Initialized ICustomSaver.Initialized=>Green
 Kernel Simulator=>Green

@@ -365,3 +365,6 @@ Você pode não ter o libcpanel-json-xs-perl instalado em seu sistema. Consulte 
 >> Quadros, arquivos, linhas e colunas <<
 > Frame {0}: Arquivo: {1} | Linha: {2} | Coluna: {3}
 > Ocorreu um erro ao tentar obter informações sobre o quadro. {0}: {1}
+Você definiu seu idioma do sistema para algo diferente do inglês. Desculpe pelo inconveniente, mas parece que o Google e seu tradutor são muito estranhos sobre a tradução de blocos de código para qualquer linguagem de programação. Enquanto corrigimos todos os bloqueios de código para páginas de manual traduzidas, sugerimos que você abra um tíquete para o Google Tradutor para traduzir blocos de código que não devem ser traduzidos e defina o idioma do seu sistema para inglês se você o disser.
+Recarrega as modificações.
+Mods recarregados.

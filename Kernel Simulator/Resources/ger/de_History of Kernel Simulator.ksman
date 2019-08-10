@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Debug für jede Phase hinzugefügt
 13. Platzhalter für Betriebssystem zur Verwendung mit MOTD und MAL hinzugefügt
 14. Newline-Parser hinzugefügt, damit MOTD mehr als eine Zeile unterstützt
+
+KS 0.0.6.10
+
+1. Vereinfachter Namespace zu KS
+2. Behobene Codeblöcke für Hindi, Chinesisch und 1/2 Tschechisch (Siehe Kommentar zu GetCommand.vb)
+3. Fehlender Hilfeeintrag für "reloadsaver" hinzugefügt
+4. Befehl "reloadmods" hinzugefügt
+5. KernelVersion und EnvironmentOSType sind schreibgeschützt
+6. Das cmdline-Argument "promptArgs" wurde entfernt
+7. Zusätzlicher Stack wird jetzt beim Neustart nicht generiert
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

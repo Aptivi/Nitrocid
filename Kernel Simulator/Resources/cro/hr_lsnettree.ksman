@@ -1,0 +1,31 @@
+(*MAN START*)
+
+-TITLE:Naredba Shell "lsnettree"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+Naredba mre??e
+
+Sa??etak: Ra??unala koja su na mre??i i njihove IP adrese mo??ete popisati u domenama ili radnim skupinama, u obliku stabla
+
+Opis
+
+Ako ??elite dobiti sva ra??unala koja su se pridru??ila radnoj grupi ili domeni u obliku stabla, mo??ete koristiti ovu naredbu, ali prvo morate zatra??iti dozvolu ako ste na javnim mjestima kao ??to su ured, ??kola, kafi??, 
+
+Ova naredba je korisna i ako u popisu stabala popisujete ra??unala u svojoj maloj mre??i ili va??oj ku??i koja ima vi??e ra??unala sa sustavom Windows, bez obzira na verziju sustava Windows.
+
+Upotreba naredbe
+
+* mre??a
+-BODY END-
+
+-COLOR CONFIGURATION-
+lsnettree=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+lsnettree command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

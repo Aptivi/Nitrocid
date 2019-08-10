@@ -365,3 +365,6 @@ Anda mungkin tidak mempunyai libcpanel-json-xs-perl yang dipasang pada sistem an
 >> Bingkai, fail, baris, dan lajur <<
 > Bingkai {0}: Fail: {1} | Baris: {2} | Lajur: {3}
 > Terdapat ralat apabila cuba mendapatkan maklumat bingkai. {0}: {1}
+Anda telah menetapkan bahasa sistem anda kepada apa pun selain bahasa Inggeris. Maaf untuk kesulitan ini, tetapi nampaknya Google dan penterjemahnya sangat pelik untuk menterjemahkan blok kod untuk bahasa pengaturcaraan. Semasa kami membetulkan semua blok kod untuk halaman manual yang diterjemahkan, kami cadangkan anda membuka tiket ke Google Terjemahan untuk menterjemah blok kod yang tidak dimaksudkan untuk diterjemahkan dan menetapkan bahasa sistem anda kepada bahasa Inggeris jika anda bercakap.
+Pengubahsuaian semula.
+Mod dimuat semula.

@@ -365,3 +365,6 @@ Et ehkä ole asentanut libcpanel-json-xs-perl-järjestelmääsi. Katso asennukse
 >> Kehykset, tiedostot, rivit ja sarakkeet <<
 > Kehys {0}: Tiedosto: {1} | Linja: {2} | Sarake: {3}
 > Kehysinformaatiota yritettäessä on virhe. {0}: {1}
+Olet asettanut järjestelmän kielen muuhun kuin englanniksi. Pahoittelemme häiriötä, mutta näyttää siltä, että Google ja sen kääntäjä ovat erittäin omituisia kääntämällä minkä tahansa ohjelmointikielen koodilohkoja. Korjaaessamme kaikki käännettyjen manuaalisten sivujen koodilohot, suosittelemme, että avaat lipun Google Translate -sovellukseen kääntämään koodilohkoja, joita ei ole tarkoitettu käännettäväksi, ja aseta järjestelmäkieleksi englanti, jos puhut sitä.
+Lataa muutokset uudelleen.
+Modit ladattu uudelleen.

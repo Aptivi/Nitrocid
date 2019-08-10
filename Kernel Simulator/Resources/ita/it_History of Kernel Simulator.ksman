@@ -806,7 +806,7 @@ KS 0.0.6.9
 1. Calcolatori e convertitori di unità rimossi
 2. Unificato due comandi di stampa in uno
 3. Unificati due generatori di mod in uno
-4. Consentito l'accesso al server FTP senza specificare il prefisso "ftp: //"
+4. Consentito l'accesso al server FTP senza specificare il prefisso "ftp://"
 5. È consentito specificare l'indirizzo come argomento del comando "ftp"
 6. Ora il client FTP si disconnetterà pacificamente all'uscita
 7. Corrette le descrizioni della guida FTP che non si aggiornano quando si cambiano le lingue
@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Aggiunto debug su ogni fase
 13. Aggiunto segnaposto del sistema operativo da utilizzare con MOTD e MAL
 14. Aggiunto il parser newline per far sì che MOTD supporti più di 1 riga
+
+KS 0.0.6.10
+
+1. Spazio dei nomi semplificato per KS
+2. Risolti i blocchi di codice per hindi, cinese e 1/2 ceco (vedi commento su GetCommand.vb)
+3. Aggiunta voce di aiuto mancante per "ricaricare"
+4. Aggiunto il comando "reloadmods"
+5. Reso KernelVersion e EnvironmentOSType di sola lettura
+6. Argomento cmdline "promptArgs" rimosso
+7. Lo stack extra ora non viene generato al riavvio
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

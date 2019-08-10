@@ -365,3 +365,6 @@ Sisteminizde yüklü libcpanel-json-xs-perl olmayabilir. Kurulum için paket yö
 >> Çerçeveler, dosyalar, çizgiler ve sütunlar <<
 > Çerçevesi: {0} | Dosya: {1} | Satır: {2} | Sütun: {3}
 > Çerçeve bilgisini almaya çalışırken bir hata var. {0}: {1}
+Sistem dilinizi İngilizce'den başka bir şeye ayarladınız. Verdiğimiz rahatsızlıktan dolayı üzgünüz, ancak Google ve çevirmeninin herhangi bir programlama dili için kod bloklarını çevirmekte çok tuhaf olduğu görülüyor. Tercüme edilen manuel sayfaların tüm kod bloklarını düzeltirken, çevrilmesi amaçlanmayan kod bloklarını çevirmek için Google Translate'e bir bilet açmanızı ve konuşmanız durumunda sistem dilinizi İngilizce olarak ayarlamanızı öneririz.
+Değişiklikleri yeniden yükler.
+Modlar yeniden yüklendi.

@@ -1,0 +1,29 @@
+(*MAN START*)
+
+-TITLE:Naredba Shell "reloadmods"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+naredba reloadmods
+
+Sa??etak: U??itaj modifikacije
+
+Opis
+
+Ova naredba omogu??uje vam ponovno u??itavanje modifikacija kada se stvori promjena izvornog koda za odre??eni mod ili se doda ili ukloni mod.
+
+Upotreba naredbe
+
+* reloadmods
+-BODY END-
+
+-COLOR CONFIGURATION-
+reloadmods=>Green
+-COLOR CONFIG END-
+
+-SECTIONS-
+reloadmods command=>SE1
+Description=>SE2
+Command usage=>SE2
+-SECTIONS END-

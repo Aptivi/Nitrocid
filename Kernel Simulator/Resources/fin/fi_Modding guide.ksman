@@ -49,7 +49,7 @@ Loppuluokka
 17. Julkisen luokan ... ja loppuluokan rivien v??lill??, anna Visual Studio 2017 tiet????, ett?? luot KS-moduulisi kirjoittamalla: Implements IScript
 18. Jos aiot lis??t?? nimiavaruuksia, n??m?? s????nn??t on t??ytett??v??:
 1) ??l?? tuo Kernel_Simulatoria itse. 
-2) Kun tuodaan moduuleja / luokkia, kuten TextWriterColor, se on kirjoitettu n??in: Import Kernel_Simulator.TextWriterColor
+2) Kun tuodaan moduuleja / luokkia, kuten TextWriterColor, se on kirjoitettu n??in: Import KS.TextWriterColor
 19. M????rittele mod-informaation ominaisuudet asettamalla alla olevat sovellusohjelman alle:
 Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
 Ominaisuus Def As String toteuttaa IScript.Def
@@ -131,8 +131,8 @@ Hello World on suosittu aloitus esimerkki kaikille ohjelmoijille.
 3. Napsauta Lis???? ja koodi on valmis.
 4. Kirjoita alla (Oletetaan, ett?? mod name on HelloGuys) Julkisen luokan HelloGuys: toteuttaa IScript
 5. Kirjoita julkiseen luokkaan HelloGuys:
-- Tuo Kernel_Simulator.ModParser
-- Tuo Kernel_Simulator.TextWriterColor
+- Tuo KS.ModParser
+- Tuo KS.TextWriterColor
 6. Sinun pit??isi saada virheit?? sanomalla, ett?? n??m?? osiot on luotava.
 7. Tee aloitustapahtuman k??sittelij?? kirjoittamalla:
 Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
@@ -144,11 +144,11 @@ Cmd = ""
 Def = ""
 Nimi = "HelloGuys"
 Versio = "1.0"
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Lopeta Sub
 8. Tee pys??ytystapahtuman k??sittelij?? kirjoittamalla:
 Sub StopMod () toteuttaa IScript.StopMod
-Wln ("Goodbye World", "neutralText")
+W ("Goodbye World", "neutralText")
 Lopeta Sub
 9. Koska emme toteuta komentoja eik?? tapahtumaharjoittajia, j??t??mme n??m?? tyhj??t:
 Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
@@ -157,8 +157,8 @@ Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
 Lopeta Sub
 10. Koodin pit??isi n??ytt???? t??lt?? VB: ss??:
 
-Tuo Kernel_Simulator.ModParser
-Tuo Kernel_Simulator.TextWriterColor
+Tuo KS.ModParser
+Tuo KS.TextWriterColor
 Julkinen luokka HelloGuys
 Ottaa k??ytt????n IScriptin
 Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
@@ -170,10 +170,10 @@ Cmd = ""
 Def = ""
 Nimi = "HelloGuys"
 Versio = "1.0"
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Lopeta Sub
 Sub StopMod () toteuttaa IScript.StopMod
-Wln ("Goodbye World", "neutralText")
+W ("Goodbye World", "neutralText")
 Lopeta Sub
 Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
 Lopeta Sub
@@ -183,8 +183,8 @@ Loppuluokka
 
 ... Tai C
 
-k??ytt??en MP = Kernel_Simulator.ModParser;
-k??ytt??en TWC = Kernel_Simulator.TextWriterColor;
+k??ytt??en MP = KS.ModParser;
+k??ytt??en TWC = KS.TextWriterColor;
 julkinen luokka HelloGuys: MP.IScript
 {
 julkinen merkkijono Cmd {get; 
@@ -197,11 +197,11 @@ Cmd = "";
 Def = "";
 Nimi = "HelloGuys";
 Version = "1,0";
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 public void StopMod ()
 {
-TWC.Wln ("Goodbye World", "neutralText");
+TWC.W ("Goodbye World", "neutralText");
 }
 public void PerformCmd (merkkijono args = "")
 {
@@ -239,12 +239,12 @@ Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
 Lopeta Sub
 4. Tee komentok??sittelij?? ja anna sen vastata SayHello mod -komentoon:
 Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Lopeta Sub
 5. Koodin pit??isi n??ytt???? t??lt?? VB: ss??:
 
-Tuo Kernel_Simulator.ModParser
-Tuo Kernel_Simulator.TextWriterColor
+Tuo KS.ModParser
+Tuo KS.TextWriterColor
 Julkinen luokka HelloShell
 Ottaa k??ytt????n IScriptin
 Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
@@ -260,7 +260,7 @@ Lopeta Sub
 Sub StopMod () toteuttaa IScript.StopMod
 Lopeta Sub
 Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 Lopeta Sub
 Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
 Lopeta Sub
@@ -268,8 +268,8 @@ Loppuluokka
 
 ... Tai C
 
-k??ytt??en MP = Kernel_Simulator.ModParser;
-k??ytt??en TWC = Kernel_Simulator.TextWriterColor;
+k??ytt??en MP = KS.ModParser;
+k??ytt??en TWC = KS.TextWriterColor;
 julkinen luokka HelloShell: MP.IScript
 {
 julkinen merkkijono Cmd {get; 
@@ -288,7 +288,7 @@ public void StopMod ()
 }
 public void PerformCmd (merkkijono args = "")
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 public void InitEvents (merkkijono ev)
 {
@@ -303,15 +303,15 @@ public void InitEvents (merkkijono ev)
 2. Tee komentok??sittelij?? ja anna sen vastata SayHello mod -komentoon:
 Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
 Jos (args = "HW") Sitten
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 muu
-Wln ("Tee minut sanottavaksi" SayHello HW. "" "," NeutralText ")
+W ("Tee minut sanottavaksi" SayHello HW. "" "," NeutralText ")
 Loppu Jos
 Lopeta Sub
 3. Koodin pit??isi n??ytt???? t??lt?? VB: ss??:
 
-Tuo Kernel_Simulator.ModParser
-Tuo Kernel_Simulator.TextWriterColor
+Tuo KS.ModParser
+Tuo KS.TextWriterColor
 Julkisen luokan HelloArgs
 Ottaa k??ytt????n IScriptin
 Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
@@ -328,9 +328,9 @@ Sub StopMod () toteuttaa IScript.StopMod
 Lopeta Sub
 Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
 Jos (args = "HW") Sitten
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 muu
-Wln ("Tee minut sanottavaksi" SayHello HW. "" "," NeutralText ")
+W ("Tee minut sanottavaksi" SayHello HW. "" "," NeutralText ")
 Loppu Jos
 Lopeta Sub
 Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
@@ -339,8 +339,8 @@ Loppuluokka
 
 ... Tai C
 
-k??ytt??en MP = Kernel_Simulator.ModParser;
-k??ytt??en TWC = Kernel_Simulator.TextWriterColor;
+k??ytt??en MP = KS.ModParser;
+k??ytt??en TWC = KS.TextWriterColor;
 julkisen luokan HelloArgs: MP.IScript
 {
 julkinen merkkijono Cmd {get; 
@@ -361,11 +361,11 @@ public void PerformCmd (merkkijono args = "")
 {
 jos (args == "HW")
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 muu
 {
-TWC.Wln ("Anna minut sanomaan" SayHello HW. "," NeutralText ");
+TWC.W ("Anna minut sanomaan" SayHello HW. "," NeutralText ");
 }
 }
 public void InitEvents (merkkijono ev)
@@ -384,22 +384,22 @@ Dim splitArgs kuten merkkijono () = args.Split ({"" c})
 Dim ArgCount As Integer = 1
 Jos splitArgs.Length> 1 Sitten
 Jos (splitArgs (0) = "Sano" ja splitArgs (1) = "Hei") Sitten
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 muu
-Wln ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
+W ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
 Loppu Jos
 muu
-Wln ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
+W ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
 Loppu Jos
 Jokaiselle argille merkkijonoina jaettuna
-Wln ("Argumentti {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
+W ("Argumentti {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
 ArgCount = 1
 Seuraava
 Lopeta Sub
 3. Koodin pit??isi n??ytt???? t??lt?? VB: ss??:
 
-Tuo Kernel_Simulator.ModParser
-Tuo Kernel_Simulator.TextWriterColor
+Tuo KS.ModParser
+Tuo KS.TextWriterColor
 Julkisen luokan HelloArgs
 Ottaa k??ytt????n IScriptin
 Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
@@ -419,15 +419,15 @@ Dim splitArgs kuten merkkijono () = args.Split ({"" c})
 Dim ArgCount As Integer = 1
 Jos splitArgs.Length> 1 Sitten
 Jos (splitArgs (0) = "Sano" ja splitArgs (1) = "Hei") Sitten
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 muu
-Wln ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
+W ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
 Loppu Jos
 muu
-Wln ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
+W ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
 Loppu Jos
 Jokaiselle argille merkkijonoina jaettuna
-Wln ("Argumentti {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
+W ("Argumentti {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
 ArgCount = 1
 Seuraava
 Lopeta Sub
@@ -437,8 +437,8 @@ Loppuluokka
 
 ... Tai C
 
-k??ytt??en MP = Kernel_Simulator.ModParser;
-k??ytt??en TWC = Kernel_Simulator.TextWriterColor;
+k??ytt??en MP = KS.ModParser;
+k??ytt??en TWC = KS.TextWriterColor;
 julkisen luokan HelloArgs: MP.IScript
 {
 julkinen merkkijono Cmd {get; 
@@ -463,20 +463,20 @@ jos (splitArgs.Length> 1)
 {
 jos (splitArgs [0] == "Sano"
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 muu
 {
-TWC.Wln ("Tee minut sanottavaksi:" WhatDoISay Say Hello. "," NeutralText ");
+TWC.W ("Tee minut sanottavaksi:" WhatDoISay Say Hello. "," NeutralText ");
 }
 }
 muu
 {
-TWC.Wln ("Tee minut sanottavaksi:" WhatDoISay Say Hello. "," NeutralText ");
+TWC.W ("Tee minut sanottavaksi:" WhatDoISay Say Hello. "," NeutralText ");
 }
 foreach (merkkijono arg in splitArgs)
 {
-TWC.Wln ("Argumentti {0}: {1}", "neutralText", ArgCount, splitArgs [ArgCount - 1]);
+TWC.W ("Argumentti {0}: {1}", "neutralText", ArgCount, splitArgs [ArgCount - 1]);
 ArgCount = 1;
 }
 }
@@ -508,7 +508,7 @@ Dim endTime Kuten p??iv??m????r??Time = DateTime.Now
 nopeudet (i) = Round ((jQueryFileSize / (endTime - startTime) .TotalSeconds))
 Seuraava
 File.Delete (Environ ("USERPROFILE") "\ t
-Wln ("Latausnopeus: {0} KB / s", "neutralText", nopeudet. Keskiarvo ())
+W ("Latausnopeus: {0} KB / s", "neutralText", nopeudet. Keskiarvo ())
 Lopeta Sub
 4. Koodin pit??isi n??ytt???? t??lt?? VB: ss??:
 
@@ -517,8 +517,8 @@ Tuonti System.Linq
 Tuonti System.IO
 Tuonti System.Math
 Tuonti Microsoft.VisualBasic.Interaction
-Tuo Kernel_Simulator.ModParser
-Tuo Kernel_Simulator.TextWriterColor
+Tuo KS.ModParser
+Tuo KS.TextWriterColor
 Julkinen luokka InternetSpeed
 Ottaa k??ytt????n IScriptin
 Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
@@ -544,7 +544,7 @@ Dim EndTime As Date = Date.Now
 nopeudet (i) = Round (jQueryFileSize / (endTime - startTime) .TotalSeconds)
 Seuraava
 File.Delete (Environ ("USERPROFILE") "\ t
-Wln ("Latausnopeus: {0} KB / s", "neutralText", nopeudet. Keskiarvo ())
+W ("Latausnopeus: {0} KB / s", "neutralText", nopeudet. Keskiarvo ())
 Lopeta Sub
 Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
 Lopeta Sub
@@ -557,8 +557,8 @@ System.Netin avulla;
 System.Linqin avulla;
 System.IO: n avulla;
 k??ytt??en M = System.Math;
-k??ytt??en MP = Kernel_Simulator.ModParser;
-k??ytt??en TWC = Kernel_Simulator.TextWriterColor;
+k??ytt??en MP = KS.ModParser;
+k??ytt??en TWC = KS.TextWriterColor;
 julkinen luokka InternetSpeed: MP.IScript
 {
 julkinen merkkijono Cmd {get; 
@@ -588,7 +588,7 @@ DateTime endTime = DateTime.Now;
 nopeudet [i] = M.Round (jQueryFileSize / (endTime - startTime) .TotalSeconds);
 }
 File.Delete (System.Environment.GetEnvironmentVariable) ("USERPROFILE") "jQuery.js");
-TWC.Wln ("Latausnopeus: {0} KB / s", "neutralText", nopeudet. Keskiarvo ());
+TWC.W ("Latausnopeus: {0} KB / s", "neutralText", nopeudet. Keskiarvo ());
 }
 public void InitEvents (merkkijono ev)
 {
@@ -643,10 +643,10 @@ Class...=>Cyan
 Visual Studio 2017=>Magenta
 Implements=>Cyan
 IScript=>DarkGreen
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
 Imports=>Cyan
-Kernel_Simulator.TextWriterColor=>DarkGreen
+KS.TextWriterColor=>DarkGreen
 IScript:=>DarkGreen
 Property As String=>Cyan
 Cmd Def Name Version=>DarkGreen
@@ -669,7 +669,7 @@ subs=>Green
 AnotherClass=>DarkGreen
 Hello World=>Green
 HelloGuys) HelloGuys: HelloGuys=>DarkGreen
-Kernel_Simulator.ModParser=>DarkGreen
+KS.ModParser=>DarkGreen
 errors=>Red
 "HelloGuys"=>DarkGreen
 "Hello World", "neutralText"=>DarkGreen

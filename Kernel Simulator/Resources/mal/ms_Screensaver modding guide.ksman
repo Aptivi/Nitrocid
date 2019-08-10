@@ -19,11 +19,11 @@ Moding asas (screensaver)
 2. Pada bahagian Compile, klik pada Build Events, kemudian tuliskan ini pada baris arahan peristiwa pasca-Build:
 - copy .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (Letakkan SS sebelum .m supaya KS mengenalinya sebagai screensaver dan bukan sebagai mod)
 - del / Q *. * (untuk memastikan tiada fail DLL dummy yang dicipta kerana kita tidak menggunakan DLL untuk mod)
-3. Ulangi langkah 9-16 dari panduan Modding, tetapi gantikan Import Kernel_Simulator.ModParser dengan Import Kernel_Simulator.Screensaver
+3. Ulangi langkah 9-16 dari panduan Modding, tetapi gantikan Import KS.ModParser dengan Import KS.Screensaver
 4. Antara Kelas Awam ... dan baris Kelas Akhir, biarkan Visual Studio 2017 tahu bahawa anda akan mencipta screensaver KS anda dengan menulis: Mengimplementasikan ICustomSaver
 5. Jika anda akan menambah ruang nama, peraturan ini mesti dipenuhi:
-1) Jangan import Kernel_Simulator dengan sendirinya. 
-2) Apabila mengimport modul / kelas seperti TextWriterColor, ia ditulis seperti ini: Import Kernel_Simulator.TextWriterColor
+1) Jangan import KS dengan sendirinya. 
+2) Apabila mengimport modul / kelas seperti TextWriterColor, ia ditulis seperti ini: Import KS.TextWriterColor
 6. Tentukan sifat untuk maklumat mod dengan meletakkan di bawah Implementasi IScript:
 Harta Bermula Sebagai Memasang Boolean ICustomSaver.Initialized
 7. Buat sub screensaver init bernama InitSaver () yang melaksanakan ICustomSaver.InitSaver, dengan menulis:
@@ -64,14 +64,14 @@ Screensaver kotak mesej belakang memberitahu orang bahawa pemilik komputer hilan
 5. Tulis di atas Kelas Awam SOR:
 - Sistem Import
 - Sistem Import.Threading
-- Import Kernel_Simulator.Screensaver
-- Import Kernel_Simulator.TextWriterColor
-- Import Kernel_Simulator.Login
+- Import KS.Screensaver
+- Import KS.TextWriterColor
+- Import KS.Login
 6. Anda harus mendapatkan kesilapan yang mengatakan bahawa subs ini harus dibuat.
 7. Buat pengendali acara screensaver permulaan dengan menulis:
 Harta Bermula Sebagai Memasang Boolean ICustomSaver.Initialized
 SubInitSaver () Mengimplementasikan ICustomSaver.InitSaver
-Wln ("Muatkan screensaver ini menggunakan" "loadsaver SORSS.m" "dan" "setsaver SORSS.m" "", "neutralText")
+W ("Muatkan screensaver ini menggunakan" "loadsaver SORSS.m" "dan" "setsaver SORSS.m" "", "neutralText")
 Inisialized = Benar
 Sub Akhir
 8. Oleh kerana kami tidak melaksanakan apa-apa sebelum memaparkan screensaver, kami akan meninggalkan ini kosong:
@@ -111,7 +111,7 @@ W ("-", "neutralText")
 Untuk l Sebagai Integer = 0 Untuk strlen - 1
 W ("-", "neutralText")
 Seterusnya
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 Sub Akhir
 Subbahas Awam WriteMsg (ByVal TypeID Sebagai Integer, ByVal MsgID Sebagai Integer)
 Dim BackMessages Sebagai String () = {"<OWNER> akan kembali tidak lama lagi.", "<OWNER> sibuk dan dia akan kembali tidak lama lagi."}
@@ -127,15 +127,15 @@ Kes 3
 text = ParsePlaces (RudeMessages (MsgID))
 Akhir Pilih
 InisialisasiBar (text.Length)
-Wln ("| {0} |", "neutralText", teks)
+W ("| {0} |", "neutralText", teks)
 InisialisasiBar (text.Length)
 Sub Akhir
 12. Kod sepatutnya seperti ini:
 Sistem Import
 Sistem Import.Threading
-Import Kernel_Simulator.Screensaver
-Import Kernel_Simulator.TextWriterColor
-Import Kernel_Simulator.Login
+Import KS.Screensaver
+Import KS.TextWriterColor
+Import KS.Login
 Kelas Awam SoonOvernightRude
 Memerlukan ICustomSaver
 Harta Bermula Sebagai Memasang Boolean ICustomSaver.Initialized
@@ -144,7 +144,7 @@ Public S_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
 Awam O_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
 Public R_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
 SubInitSaver () Mengimplementasikan ICustomSaver.InitSaver
-Wln ("Tetapkan screensaver ini sebagai lalai menggunakan" "setsaver SORSS.m" "", "neutralText")
+W ("Tetapkan screensaver ini sebagai lalai menggunakan" "setsaver SORSS.m" "", "neutralText")
 Inisialized = Benar
 Sub Akhir
 Sub PreDisplay () Mengimplementasikan ICustomSaver.PreDisplay
@@ -178,7 +178,7 @@ W ("-", "neutralText")
 Untuk l Sebagai Integer = 0 Untuk strlen - 1
 W ("-", "neutralText")
 Seterusnya
-Wln ("-", "neutralText")
+W ("-", "neutralText")
 Sub Akhir
 Subbahas Awam WriteMsg (ByVal TypeID Sebagai Integer, ByVal MsgID Sebagai Integer)
 Dim BackMessages Sebagai String () = {"<OWNER> akan kembali tidak lama lagi.", "<OWNER> sibuk dan dia akan kembali tidak lama lagi."}
@@ -194,7 +194,7 @@ Kes 3
 text = ParsePlaces (RudeMessages (MsgID))
 Akhir Pilih
 InisialisasiBar (text.Length)
-Wln ("| {0} |", "neutralText", teks)
+W ("| {0} |", "neutralText", teks)
 InisialisasiBar (text.Length)
 Sub Akhir
 Kelas Akhir
@@ -206,7 +206,7 @@ Kelas Akhir
 1. Ulangi langkah 1-4 pada contoh pertama: Kotak Mesej Dalam Konsol, dan Soon, Semalaman, atau Rude (Pergi jauh ...) mesej
 2. Tulis di atas Blank Kelas Awam (dengan mengandaikan bahawa nama kelas anda kosong):
 - Sistem Import
-- Import Kernel_Simulator.Screensaver
+- Import KS.Screensaver
 3. Tuliskan ini di bawah Implementasi ICustomSaver:
 Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
 Awam Sub InitSaver () Mengimplementasikan ICustomSaver.InitSaver
@@ -221,7 +221,7 @@ Sub Akhir
 Console.Clear ()
 5. Kod sepatutnya seperti ini:
 Sistem Import
-Import Kernel_Simulator.Screensaver
+Import KS.Screensaver
 Blank Kelas Awam
 Memerlukan ICustomSaver
 Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
@@ -242,9 +242,9 @@ Contoh ini akan membuat anda bermula dengan animasi.
 
 Sistem Import
 Import Microsoft.VisualBasic.Constants
-Import Kernel_Simulator.TextWriterColor
+Import KS.TextWriterColor
 Sistem Import.Threading
-Import Kernel_Simulator.Screensaver
+Import KS.Screensaver
 Kelas Awam ANI
 Memerlukan ICustomSaver
 Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
@@ -260,7 +260,7 @@ Console.Clear ()
 Jika Custom.CancellationPending = Benar Kemudian 'Ini akan membetulkan masalah untuk tugas sibuk.
 Keluar Untuk
 Akhir Jika
-Wln (aniset (CurrentStep), "neutralText")
+W (aniset (CurrentStep), "neutralText")
 Thread.Sleep (150)
 Seterusnya
 Sub Akhir
@@ -335,9 +335,9 @@ Kelas Akhir
 
 Sistem Import
 Import Microsoft.VisualBasic.Constants
-Import Kernel_Simulator.TextWriterColor
+Import KS.TextWriterColor
 Import Microsoft.VisualBasic.Strings
-Import Kernel_Simulator.Screensaver
+Import KS.Screensaver
 Dinamik Kelas Awam
 Memerlukan ICustomSaver
 Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
@@ -362,12 +362,12 @@ Seterusnya
 Semak = 0: oldCheck = 0: ProgWent = 0
 Sub Akhir
 Public ShowStats ()
-Wln ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
+W ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
 UpdateProgressBar (Res * 100/1000000)
 Sub Akhir
 Public Sub UpdateProgressBar (ByVal percent As String)
 Semak = peratus / 5
-Wln (Semak, "neutralTeks")
+W (Semak, "neutralTeks")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
 W ("--------------------", "neutralText")
 Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
@@ -403,9 +403,9 @@ Public Class...=>Cyan
 Visual Studio 2017=>Magenta
 Imports Implements=>Cyan
 ICustomSaver=>Green
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
-Kernel_Simulator.TextWriterColor=>Green
+KS.TextWriterColor=>Green
 Property As Boolean Sub=>Cyan
 Initialized ICustomSaver.Initialized=>Green
 Kernel Simulator=>Green

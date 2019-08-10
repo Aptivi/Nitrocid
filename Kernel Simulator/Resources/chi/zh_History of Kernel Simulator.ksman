@@ -817,6 +817,16 @@ KS 0.0.6.9
 12. Zài měi gè jiēduàn tiānjiāle tiáoshì
 13. Tiānjiāle cāozuò xìtǒng zhàn wèi fú, yòng yú MOTD hé MAL
 14. Tiānjiāle huànháng fú jiěxī qì, shǐ MOTD zhīchí chāoguò 1 xíng
+
+KS 0.0.6.10
+
+1. Jiǎnhuà KS de mìngmíng kōngjiān
+2. Gùdìng yìn dì yǔ, zhōngwén hé 1/2 jiékè yǔ de dàimǎ kuài (qǐng cānyuè GetCommand.Vb shàng de pínglùn)
+3. Wèi “reloadsaver” tiānjiāle quēshǎo de bāngzhù tiáomù
+4. Tiānjiāle “reloadmods” mìnglìng
+5. Shǐ KernelVersion hé EnvironmentOSType chéngwéi zhǐ dú
+6. Shānchú “promptArgs”cmdline cānshù
+7. Chóngxīn qǐdòng shí, xiànzài méiyǒu shēngchéng éwài de duīzhàn
 -BODY END-
 
 -SECTIONS-
@@ -874,4 +884,5 @@ KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
+KS 0.0.6.10=>SE1
 -SECTIONS END-

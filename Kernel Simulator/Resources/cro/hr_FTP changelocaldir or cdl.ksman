@@ -1,0 +1,38 @@
+(*MAN START*)
+
+-TITLE:Naredba FTP "changelocaldir" ili "cdl"
+-REVISION:0.0.1
+-KSLAYOUT:0.0.5.9-OR-ABOVE
+
+-BODY START-
+changelocaldir ili cdl FTP naredba
+
+Sa??etak: Mijenja lokalni lokalni imenik
+
+Opis
+
+Ova naredba omogu??uje vam promjenu lokalnog direktorija na tvrdom disku u drugi direktorij koji postoji u poddirektoriji. 
+
+Upotreba naredbe
+
+* changelocaldir / cdl (imenik / ..)
+Primjeri
+
+* changelocaldir C: \ Korisnici \ Vlasnik \ Desktop: Ovo ??e va?? lokalni direktorij promijeniti u C: \ Users \ Vlasnik \ Desktop
+* changelocaldir Stuff: Ovo ??e promijeniti va?? lokalni imenik u Stuff u va??em trenutnom radnom imeniku
+* cdl ..: Ovo ??e se prebaciti u nadre??eni direktorij trenutne radne mape (vratiti se natrag)
+-BODY END-
+
+-COLOR CONFIGURATION-
+changelocaldir/cdl (directory/..)=>Green
+changelocaldir C:\Users\Owner\Desktop:=>Yellow
+changelocaldir Stuff:=>Yellow
+cdl ..:=>Yellow
+-COLOR CONFIG END-
+
+-SECTIONS-
+changelocaldir or cdl FTP command=>SE1
+Description=>SE2
+Command usage=>SE2
+Examples=>SE2
+-SECTIONS END-

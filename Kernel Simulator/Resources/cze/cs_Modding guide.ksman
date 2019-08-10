@@ -20,7 +20,7 @@ Z??kladn?? modding
 0. Jak vytvo??it vlastn?? mody na Visual Studio 2017?
 
 1. Na str??nce Start klepn??te na Nov?? projekt
-2. Klikn??te na Vypr??zdnit projekt, vyberte VB nebo C
+2. Klikn??te na Vypr??zdnit projekt, vyberte VB nebo C# 
 3. Klepn??te prav??m tla????tkem my??i na odkazy v aplikaci Solution Explorer a stiskn??te P??idat odkaz ...
 4. Klikn??te na tla????tko Proch??zet ... a vyhledejte spustiteln?? soubor Simul??tor j??dra (soubor, kter?? jste pr??v?? spustili)
 5. Kdy?? na Open File kliknete na OK, uvid??te, ??e va??e spustiteln?? soubory KS jsou p??id??ny do seznamu odkaz??.
@@ -28,97 +28,97 @@ Z??kladn?? modding
 7. Klepn??te prav??m tla????tkem my??i na projekt, ne na ??e??en??
 8. Zm????te typ aplikace na Knihovna t????d
 9. V ????sti Compile (Kompilovat) klepn??te na polo??ku Build Events (Sestavit ud??losti) a pot?? zapi??te p????kazov?? ????dek ud??losti Post-build:
-Pokud pou????v??te VB:
-- copy .. ..File.vb .. .. .. ..File.m
-- del / Q *. * (aby bylo zaji??t??no, ??e nejsou vytvo??eny ????dn?? fiktivn?? soubory DLL, proto??e nepou????v??me DLL pro mody)
-- "cesta k j??dru Simulator.exe" testMods ModFile.m
-Pokud pou????v??te C
-- copy .. ..File.cs .. .. .. .. .. ModFileCS.m
-- del / Q *. * (aby bylo zaji??t??no, ??e nejsou vytvo??eny ????dn?? fiktivn?? soubory DLL, proto??e nepou????v??me DLL pro mody)
-- "cesta k j??dru Simulator.exe" testMods ModFileCS.m
+   Pokud pou????v??te VB:
+      - copy ../../File.vb ../../../../File.m
+      - del / Q *. * (aby bylo zaji??t??no, ??e nejsou vytvo??eny ????dn?? fiktivn?? soubory DLL, proto??e nepou????v??me DLL pro mody)
+      - "cesta\k\Kernel Simulator.exe" testMods ModFile.m
+   Pokud pou????v??te C# 
+      - copy .. ..File.cs .. .. .. .. .. ModFileCS.m
+      - del / Q *. * (aby bylo zaji??t??no, ??e nejsou vytvo??eny ????dn?? fiktivn?? soubory DLL, proto??e nepou????v??me DLL pro mody)
+      - "cesta\k\Kernel Simulator.exe" testMods ModFileCS.m
 10. Ujist??te se, ??e ud??lost post-build je spu??t??na pouze tehdy, kdy?? je sestaven?? ??sp????n??
-11. Ulo??te v??e stisknut??m CTRL S
+11. Ulo??te v??e stisknut??m CTRL+S
 12. Rozbalte ????st Odkazy v aplikaci Solution Explorer
 13. Nastavte hodnotu Kop??rovat m??stn?? na hodnotu False, proto??e m??te spustiteln?? soubor, abyste nevytv????eli dal???? kopii
 14. Klepn??te prav??m tla????tkem my??i na projekt a p??ejd??te na p????kaz P??idat> T????da
 15. P??edpokl??dejme, ??e d??l??te mod ve VB. 
 16. Klepn??te na tla????tko P??idat a k??d bude p??ipraven:
-ModName ve??ejn?? t????dy
-???Tady m???? k??d
-Koncov?? t????da
+    Public Class ModName
+	    'Your code here
+    End Class
 17. Mezi linkami Public Class ... a End Class nechte Visual Studio 2017 v??d??t, ??e sv??j KS mod vytvo????te psan??m: Implements IScript
 18. Pokud chcete p??idat jmenn?? prostory, mus?? b??t tato pravidla spln??na:
-1) Neimportujte Kernel_Simulator s??m. 
-2) P??i importu modul?? / t????d, jako je TextWriterColor, je to naps??no takto: Import Kernel_Simulator.TextWriterColor
+    1) Neimportujte KS s??m. 
+    2) P??i importu modul?? / t????d, jako je TextWriterColor, je to naps??no takto: Import KS.TextWriterColor
 19. Definujte vlastnosti pro informace o modu vlo??en??m pod IScript produktu:
-Vlastnost Cmd jako ??et??zec implementuje IScript.Cmd
-Vlastnost Def jako ??et??zec implementuje IScript.Def
-N??zev vlastnosti jako ??et??zec implementuje IScript.Name
-Verze vlastnosti jako ??et??zec implementuje IScript.Version
+    Property Cmd As String Implements IScript.Cmd
+    Property Def As String Implements IScript.Def
+    Property Name As String Implements IScript.Name
+    Property Version As String Implements IScript.Version
 20. Ud??lejte sv??j start mod sub s n??zvem StartMod (), kter?? implementuje IScript.StartMod, naps??n??m:
-Sub StartMod () Implementuje IScript.StartMod
-Cmd = "" "Pokud chcete p??id??vat p????kazy, napi??te zde sv??j p????kaz.
-Def = "" 'Vysv??tlete, jak?? je v???? p????kaz a co bude d??lat.
-Name = "ModName" 'Nahradit ModName va????m jm??nem mod, a?? se v??m l??b??, ale m??lo by odr????et ????el mod. 
-Verze = "1.0" 'M????ete specifikovat verzi modu, ale m??la by se ????dit pokyny pro tvorbu verz?? a m????ete ji naj??t na Internetu. 
+    Sub StartMod() Implements IScript.StartMod
+        Cmd = ""         'If you're going to add commands, write your command here.
+        Def = ""         'Explain what is your command and what it's going to do.
+        Name = "ModName" 'Replace ModName with your mod name whatever you like, but it SHOULD reflect the mod purpose. You can also use verbs, adjectives, space galaxy names, and so on. This field is required.
+        Version = "1.0"  'You can specify your mod version, but it should follow the versioning guidelines and you can find it on the Internet. This field is required.
 
-???V???? k??d n????e
-End Sub
+	'Your code below
+    End Sub
 21. Nahra??te ka??d?? V???? k??d pod koment????em sv??m k??dem. 
 22. Vytvo??te si mod stop sub s n??zvem StopMod (), kter?? implementuje IScript.StopMod, naps??n??m:
-Sub StopMod () Implementuje IScript.StopMod
-???V???? k??d n????e
-End Sub
+    Sub StopMod() Implements IScript.StopMod
+        'Your code below
+    End Sub
 23. 1) Pokud zad??v??te p????kaz ve sv??m m??du, napi??te n????e uveden?? k??d odpov??di:
-Sub PerformCmd (voliteln?? ByVal args As String = "") Implementuje IScript.PerformCmd
-???V???? k??d n????e
-End Sub
-2) Pokud zad??v??te p????kaz, kter?? zpracov??v?? argumenty, napi??te n????e uveden?? k??d odpov??di:
-Sub PerformCmd (voliteln?? ByVal args As String = "") Implementuje IScript.PerformCmd
-Pokud (args = "YourArgHere") Pak 'Nahradit YourArgsHere s va???? sady argument??
-???V???? k??d n????e
-Konec Pokud
-End Sub
-3) Pokud zad??v??te p????kaz, kter?? zpracov??v?? n??sleduj??c?? argumenty, zadejte n????e uveden?? k??d odpov??di:
-Sub PerformCmd (voliteln?? ByVal args As String = "") Implementuje IScript.PerformCmd
-Dim splitArgs As String () = args.Split ({"" c})
-Pokud splitArgs.Length> 1 Potom
-Pokud (splitArgs (0) = "Part1" A splitArgs (1) = "Part2") Pak 'Nahradit ????st 1 va????m argumentem a ????st 2 argumentem. 
-???V???? k??d n????e
-Jin??
-???V???? argument nesouhlas?? n????e
-Konec Pokud
-Jin??
-'V???? k??d, kter?? zpracov??v?? ne dost argument??
-Konec Pokud
-End Sub
+       Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	       'Your code below
+       End Sub
+    2) Pokud zad??v??te p????kaz, kter?? zpracov??v?? argumenty, napi??te n????e uveden?? k??d odpov??di:
+       Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	       If (args = "YourArgHere") Then 'Replace YourArgsHere with your argument set
+	           'Your code below
+           End If
+       End Sub
+	3) Pokud zad??v??te p????kaz, kter?? zpracov??v?? n??sleduj??c?? argumenty, zadejte n????e uveden?? k??d odpov??di:
+       Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	   Dim splitArgs As String() = args.Split({" "c})
+           If splitArgs.Length > 1 Then
+               If (splitArgs(0) = "Part1" And splitArgs(1) = "Part2") Then 'Replace Part1 with your argument, and Part2 with your argument. You can also replace the splitArgs(0) = "Part1" And splitArgs(1) = "Part2" with your statement
+                   'Your code below
+               Else
+                   'Your argument mismatch code below
+               End If
+           Else
+               'Your code that handles not enough arguments
+           End If
+       End Sub
 24. 1) Pokud prov??d??te obslu??nou rutinu ud??lost??, kter?? zpracov??v?? to, co se stalo v j??d??e, napi??te k??d popisova??e n????e:
-Sub InitEvents (ByVal ev As String) Implementuje IScript.InitEvents
-If (ev = "EventName") Pak 'Nahradit EventName ud??lostmi, kter?? se nach??zej?? v p????kazu "usermanual Events for Mod Developers"
-???V???? k??d n????e
-Konec Pokud
-End Sub
-2) Pokud zpracov??v??te v??ce ud??lost??, napi??te k??d popisova??e n????e:
-Sub InitEvents (ByVal ev As String) Implementuje IScript.InitEvents
-If (ev = "EventName") Pak 'Nahradit EventName ud??lostmi, kter?? se nach??zej?? v p????kazu "usermanual Events for Mod Developers"
-???V???? k??d n????e
-ElseIf (ev = "AnotherEvent") Pak 'Nahradit AnotherEvent ud??lostmi, kter?? se nach??zej?? v p????kazu "usermanual Events for Mod Developers"
-???V???? k??d n????e
-Konec Pokud
-End Sub
-3) D??LE??IT?? UPOZORN??N??! 
+       Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+           If (ev = "EventName") Then 'Replace EventName with events that is found on "usermanual Events for Mod Developers" command
+	           'Your code below
+	       End If
+       End Sub
+	2) Pokud zpracov??v??te v??ce ud??lost??, napi??te k??d popisova??e n????e:
+       Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+           If (ev = "EventName") Then 'Replace EventName with events that is found on "usermanual Events for Mod Developers" command
+	           'Your code below
+	       ElseIf (ev = "AnotherEvent") Then ' Replace AnotherEvent with events that is found on "usermanual Events for Mod Developers" command
+               'Your code below
+	       End If
+       End Sub
+	3) D??LE??IT?? UPOZORN??N??! 
 25. M????ete si vytvo??it sv??j sub kdekoliv ve t????d??, ale pokud:
-1) jsou na jin?? t????d??, stiskn??te kl??vesu Enter na konci t????dy a vytvo??te novou ve??ejnou t????du, do kter?? budou ukl??d??ny nov?? p????sp??vky:
-Public Class AnotherClass
-'Va??e definice n????e, a tak va??e subs, funkce, rozhran??, atd.
-Koncov?? t????da
-2) pokou??ej?? se znovu inicializovat mod re-call StartMod (), zkuste to nejd????ve ve va??em testovac??m prost??ed??, pak produk??n?? prost??ed??, pokud to fungovalo spr??vn??.
-M??ly by b??t spln??ny n??sleduj??c?? podm??nky:
-1) Nem??li by tvo??it nekone??nou smy??ku, pokud je neud??l??te, pokud jsou spln??ny stanoven?? podm??nky
-2) Nem??li by se pokou??et zp??sobit chyby v j??d??e.
-3) Pokud jste vyko??is??ovatel a pou????v??te k??d pro zneu??it?? j??dra, prove??te to nejd????ve v testovac??m prost??ed?? a pot?? ve v??robn??m prost??ed??, pot?? prove??te zpr??vu o CVE, abyste se mohli rychle dozv??d??t a opravit.
-4) Pokud v???? mod bude roz??i??ovat j??dro, um??st??te sv?? roz??i??uj??c?? k??dy na samostatn?? subs
-5) Um??st??te sv??j d??l???? hovor na jeden ze ??ty?? subwoofer??, kter?? implementuje rozhran?? IScript. 
+	1) jsou na jin?? t????d??, stiskn??te kl??vesu Enter na konci t????dy a vytvo??te novou ve??ejnou t????du, do kter?? budou ukl??d??ny nov?? p????sp??vky:
+       Public Class AnotherClass
+	       'Your definitions below, and so your subs, functions, interfaces, etc.
+       End Class
+	2) pokou??ej?? se znovu inicializovat mod re-call StartMod (), zkuste to nejd????ve ve va??em testovac??m prost??ed??, pak produk??n?? prost??ed??, pokud to fungovalo spr??vn??.
+	M??ly by b??t spln??ny n??sleduj??c?? podm??nky:
+	1) Nem??li by tvo??it nekone??nou smy??ku, pokud je neud??l??te, pokud jsou spln??ny stanoven?? podm??nky
+	2) Nem??li by se pokou??et zp??sobit chyby v j??d??e.
+	3) Pokud jste vyko??is??ovatel a pou????v??te k??d pro zneu??it?? j??dra, prove??te to nejd????ve v testovac??m prost??ed?? a pot?? ve v??robn??m prost??ed??, pot?? prove??te zpr??vu o CVE, abyste se mohli rychle dozv??d??t a opravit.
+	4) Pokud v???? mod bude roz??i??ovat j??dro, um??st??te sv?? roz??i??uj??c?? k??dy na samostatn?? subs
+	5) Um??st??te sv??j d??l???? hovor na jeden ze ??ty?? subwoofer??, kter?? implementuje rozhran?? IScript. 
 26. Spus??te sestaven??. 
 27. Spus??te Simul??tor j??dra, na kter?? jste se ve sv??m projektu odkazovali.
 
@@ -131,169 +131,169 @@ Ahoj Sv??t je popul??rn?? v??choz?? p????klad pro v??echny program??tory.
 3. Klepn??te na tla????tko P??idat a k??d bude p??ipraven.
 4. Napi??te n????e (P??edpokl??dejme, ??e va??e jm??no mod je HelloGuys) Public Class HelloGuys: Implementuje IScript
 5. Pi??te nad ve??ejnou t????du HelloGuys:
-- Importuje Kernel_Simulator.ModParser
-- Importuje Kernel_Simulator.TextWriterColor
+   - Imports KS.ModParser
+   - Imports KS.TextWriterColor
 6. M??li byste dostat chyby, kter?? ????kaj??, ??e by m??ly b??t tyto p????sp??vky vytvo??eny.
 7. Vytvo??te si obslu??nou rutinu ud??losti start zaps??n??m:
-Vlastnost Cmd jako ??et??zec implementuje IScript.Cmd
-Vlastnost Def jako ??et??zec implementuje IScript.Def
-N??zev vlastnosti jako ??et??zec implementuje IScript.Name
-Verze vlastnosti jako ??et??zec implementuje IScript.Version
-Sub StartMod () Implementuje IScript.StartMod
-Cmd = ""
-Def = ""
-Jm??no = "HelloGuys"
-Verze = "1.0"
-Wln ("Hello World", "neutralText")
-End Sub
+    Property Cmd As String Implements IScript.Cmd
+    Property Def As String Implements IScript.Def
+    Property Name As String Implements IScript.Name
+    Property Version As String Implements IScript.Version
+    Sub StartMod() Implements IScript.StartMod
+        Cmd = ""
+        Def = ""
+        Name = "HelloGuys"
+        Version = "1.0"
+        W("Hello World", True, "neutralText")
+    End Sub
 8. Ud??lejte sv??j obslu??n?? program pro zastaven?? ud??lost?? naps??n??m:
-Sub StopMod () Implementuje IScript.StopMod
-Wln ("Goodbye World", "neutralText")
-End Sub
+    Sub StopMod() Implements IScript.StopMod
+        W("Goodbye World", True, "neutralText")
+    End Sub
 9. Proto??e neprov??d??me p????kazy ani odpov??da??e ud??lost??, nech??me tyto pr??zdn?? znaky:
-Sub PerformCmd (voliteln?? ByVal args As String = "") Implementuje IScript.PerformCmd
-End Sub
-Sub InitEvents (ByVal ev As String) Implementuje IScript.InitEvents
-End Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+    End Sub
+    Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    End Sub
 10. K??d by m??l vypadat takto ve VB:
 
-Importuje Kernel_Simulator.ModParser
-Importuje Kernel_Simulator.TextWriterColor
-Ve??ejn?? t????da HelloGuys
-Implementuje IScript
-Vlastnost Cmd jako ??et??zec implementuje IScript.Cmd
-Vlastnost Def jako ??et??zec implementuje IScript.Def
-N??zev vlastnosti jako ??et??zec implementuje IScript.Name
-Verze vlastnosti jako ??et??zec implementuje IScript.Version
-Sub StartMod () Implementuje IScript.StartMod
-Cmd = ""
-Def = ""
-Jm??no = "HelloGuys"
-Verze = "1.0"
-Wln ("Hello World", "neutralText")
-End Sub
-Sub StopMod () Implementuje IScript.StopMod
-Wln ("Goodbye World", "neutralText")
-End Sub
-Sub PerformCmd (voliteln?? ByVal args jako String = "") Implementuje IScript.PerformCmd
-End Sub
-Sub InitEvents (ByVal ev As String) Implementuje IScript.InitEvents
-End Sub
-Koncov?? t????da
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
+    Public Class HelloGuys
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = ""
+            Def = ""
+            Name = "HelloGuys"
+            Version = "1.0"
+            W("Hello World", True, "neutralText")
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+            W("Goodbye World", True, "neutralText")
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+    	End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
 
-... Nebo v C
+... Nebo v C#
 
-pomoc?? MP = Kernel_Simulator.ModParser;
-pomoc?? TWC = Kernel_Simulator.TextWriterColor;
-public class HelloGuys: MP.IScript
-{
-public string Cmd {get; 
-public string Def {get; 
-public string Jm??no {get; 
-public string Verze {get; 
-public void StartMod ()
-{
-Cmd = "";
-Def = "";
-Name = "HelloGuys";
-Verze = "1.0";
-TWC.Wln ("Hello World", "neutralText");
-}
-public void StopMod ()
-{
-TWC.Wln ("Goodbye World", "neutralText");
-}
-public void PerformCmd (??et??zec args = "")
-{
-}
-public void InitEvents (??et??zec ev)
-{
-}
-}
+    using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
+	public class HelloGuys : MP.IScript
+	{
+	public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "";
+			Def = "";
+			Name = "HelloGuys";
+			Version = "1.0";
+			TWC.W("Hello World", True, "neutralText");
+		}
+		public void StopMod()
+		{
+			TWC.W("Goodbye World", True, "neutralText");
+		}
+		public void PerformCmd(string args = "")
+		{
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
 
 11. Spustit sestaven??. 
 12. Spus??te Simul??tor j??dra, na kter?? jste se ve sv??m projektu odkazovali.
 13. Pokud v??e p??jde dob??e, m??li byste vid??t n??sleduj??c?? zpr??vy:
-mod: Na????t??n?? mod?? ...
-Ahoj sv??te
-Spustil se program HelloGuys v1.0
+	mod: Na????t??n?? mod?? ...
+	Ahoj sv??te
+	Spustil se program HelloGuys v1.0
 
 2. Hello World on command execute
 
 1. Opakujte kroky 1-5 na prvn??m p????kladu: Ahoj Sv??t na startu j??dra a Sbohem sv??ta na stop?? j??dra
 2. Vytvo??te si obslu??nou rutinu ud??losti start modem (za p??edpokladu, ??e jm??no modu je HelloShell):
-Vlastnost Cmd jako ??et??zec implementuje IScript.Cmd
-Vlastnost Def jako ??et??zec implementuje IScript.Def
-N??zev vlastnosti jako ??et??zec implementuje IScript.Name
-Verze vlastnosti jako ??et??zec implementuje IScript.Version
-Sub StartMod () Implementuje IScript.StartMod
-Cmd = "SayHello"
-Def = ""
-Jm??no = "HelloShell"
-Verze = "1.0"
-End Sub
+    Property Cmd As String Implements IScript.Cmd
+    Property Def As String Implements IScript.Def
+    Property Name As String Implements IScript.Name
+    Property Version As String Implements IScript.Version
+    Sub StartMod() Implements IScript.StartMod
+        Cmd = "SayHello"
+        Def = ""
+        Name = "HelloShell"
+        Version = "1.0"
+    End Sub
 3. Vzhledem k tomu, ??e neimplementujeme obslu??n?? program pro vypnut?? nebo ud??losti, nech??me tyto pr??zdn?? znaky:
-Sub StopMod () Implementuje IScript.StopMod
-End Sub
-Sub InitEvents (ByVal ev As String) Implementuje IScript.InitEvents
-End Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+    End Sub
+    Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    End Sub
 4. Prove??te p????kazov?? p????kaz a nechte jej reagovat na p????kaz SayHello mod:
-Sub PerformCmd (voliteln?? ByVal args As String = "") Implementuje IScript.PerformCmd
-Wln ("Hello World", "neutralText")
-End Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	W("Hello World", True, "neutralText")
+    End Sub
 5. K??d by m??l vypadat takto ve VB:
 
-Importuje Kernel_Simulator.ModParser
-Importuje Kernel_Simulator.TextWriterColor
-Ve??ejn?? t????da HelloShell
-Implementuje IScript
-Vlastnost Cmd jako ??et??zec implementuje IScript.Cmd
-Vlastnost Def jako ??et??zec implementuje IScript.Def
-N??zev vlastnosti jako ??et??zec implementuje IScript.Name
-Verze vlastnosti jako ??et??zec implementuje IScript.Version
-Sub StartMod () Implementuje IScript.StartMod
-Cmd = "SayHello"
-Def = ""
-Jm??no = "HelloShell"
-Verze = "1.0"
-End Sub
-Sub StopMod () Implementuje IScript.StopMod
-End Sub
-Sub PerformCmd (voliteln?? ByVal args jako String = "") Implementuje IScript.PerformCmd
-Wln ("Hello World", "neutralText")
-End Sub
-Sub InitEvents (ByVal ev As String) Implementuje IScript.InitEvents
-End Sub
-Koncov?? t????da
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
+    Public Class HelloShell
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "SayHello"
+            Def = ""
+            Name = "HelloShell"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	    W("Hello World", True, "neutralText")
+    	End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
 
 ... Nebo v C
 
-pomoc?? MP = Kernel_Simulator.ModParser;
-pomoc?? TWC = Kernel_Simulator.TextWriterColor;
-public class HelloShell: MP.IScript
-{
-public string Cmd {get; 
-public string Def {get; 
-public string Jm??no {get; 
-public string Verze {get; 
-public void StartMod ()
-{
-Cmd = "SayHello";
-Def = "";
-Name = "HelloShell";
-Verze = "1.0";
-}
-public void StopMod ()
-{
-}
-public void PerformCmd (??et??zec args = "")
-{
-TWC.Wln ("Hello World", "neutralText");
-}
-public void InitEvents (??et??zec ev)
-{
-}
-}
+	using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
+	public class HelloShell : MP.IScript
+	{
+	public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "SayHello";
+			Def = "";
+			Name = "HelloShell";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+		TWC.W("Hello World", True, "neutralText");
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
 
 6. Opakujte kroky 11-12 na prvn??m p????kladu: Ahoj Sv??t na startu j??dra a Sbohem sv??ta na stop?? j??dra
 
@@ -301,77 +301,77 @@ public void InitEvents (??et??zec ev)
 
 1. Za p??edpokladu, ??e va??e jm??no mod je HelloArgs, v???? argument, kter?? bude v???? p????kaz ????kat Hello World je HW, a ??e v???? p????kaz je SayHello, Opakujte kroky 1-3 na druh??m p????kladu: Hello World on command execute
 2. Ud??lejte sv??j p????kazov?? p????kaz a nechte ho reagovat na p????kaz SayHello mod:
-Sub PerformCmd (voliteln?? ByVal args jako String = "") Implementuje IScript.PerformCmd
-Pokud (args = "HW") Pak
-Wln ("Hello World", "neutralText")
-Jin??
-Wln ("??ekni mi, ??e ??eknu Ahoj spu??t??n??m" "SayHello HW." "", "NeutralText")
-Konec Pokud
-End Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	If (args = "HW") Then
+	    W("Hello World", True, "neutralText")
+	Else
+	    W("Make me say Hello by running ""SayHello HW.""", True, "neutralText")
+	End If
+    End Sub
 3. K??d by m??l vypadat takto ve VB:
 
-Importuje Kernel_Simulator.ModParser
-Importuje Kernel_Simulator.TextWriterColor
-Ve??ejn?? t????da HelloArgs
-Implementuje IScript
-Vlastnost Cmd jako ??et??zec implementuje IScript.Cmd
-Vlastnost Def jako ??et??zec implementuje IScript.Def
-N??zev vlastnosti jako ??et??zec implementuje IScript.Name
-Verze vlastnosti jako ??et??zec implementuje IScript.Version
-Sub StartMod () Implementuje IScript.StartMod
-Cmd = "SayHello"
-Def = ""
-Name = "HelloArgs"
-Verze = "1.0"
-End Sub
-Sub StopMod () Implementuje IScript.StopMod
-End Sub
-Sub PerformCmd (voliteln?? ByVal args As String = "") Implementuje IScript.PerformCmd
-Pokud (args = "HW") Pak
-Wln ("Hello World", "neutralText")
-Jin??
-Wln ("??ekni mi, ??e ??eknu Ahoj spu??t??n??m" "SayHello HW." "", "NeutralText")
-Konec Pokud
-End Sub
-Sub InitEvents (ByVal ev As String) Implementuje IScript.InitEvents
-End Sub
-Koncov?? t????da
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
+    Public Class HelloArgs
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "SayHello"
+            Def = ""
+            Name = "HelloArgs"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	    If (args = "HW") Then
+	    	W("Hello World", True, "neutralText")
+	    Else
+	    	W("Make me say Hello by running ""SayHello HW.""", True, "neutralText")
+	    End If
+        End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
 
-... Nebo v C
+... Nebo v C# 
 
-pomoc?? MP = Kernel_Simulator.ModParser;
-pomoc?? TWC = Kernel_Simulator.TextWriterColor;
-public class HelloArgs: MP.IScript
-{
-public string Cmd {get; 
-public string Def {get; 
-public string Jm??no {get; 
-public string Verze {get; 
-public void StartMod ()
-{
-Cmd = "SayHello";
-Def = "";
-Name = "HelloArgs";
-Verze = "1.0";
-}
-public void StopMod ()
-{
-}
-public void PerformCmd (??et??zec args = "")
-{
-if (args == "HW")
-{
-TWC.Wln ("Hello World", "neutralText");
-}
-jin??
-{
-TWC.Wln ("Ud??lej mi, ??e ??eknu Ahoj spu??t??n??m" SayHello HW. "," NeutralText ");
-}
-}
-public void InitEvents (??et??zec ev)
-{
-}
-}
+	using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
+	public class HelloArgs : MP.IScript
+	{
+	public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "SayHello";
+			Def = "";
+			Name = "HelloArgs";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+		if (args == "HW")
+		{
+			TWC.W("Hello World", True, "neutralText");
+		}
+		else
+		{
+			TWC.W("Make me say Hello by running \"SayHello HW.\"", True, "neutralText");
+		}
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
 
 4. Opakujte posledn?? krok na druh??m p????kladu: Prove??te p????kaz Hello World on command
 
@@ -379,111 +379,111 @@ public void InitEvents (??et??zec ev)
 
 1. Za p??edpokladu, ??e v???? n??zev modu je HelloArgs, v???? argument, kter?? bude v???? p????kaz ????kat Ahoj Sv??t je Say Hello, a ??e v???? p????kaz je WhatDoISay, Opakujte kroky 1-3 na druh??m p????kladu: Hello World on command execute
 2. Ud??lejte sv??j p????kazov?? p????kaz a nechte ho reagovat na p????kaz WhatDoISay mod:
-Sub PerformCmd (voliteln?? ByVal args As String = "") Implementuje IScript.PerformCmd
-Dim splitArgs As String () = args.Split ({"" c})
-Dim ArgCount jako Integer = 1
-Pokud splitArgs.Length> 1 Potom
-If (splitArgs (0) = "Say" A splitArgs (1) = "Hello") Pak
-Wln ("Hello World", "neutralText")
-Jin??
-Wln ("??ekni mi, ??e ??eknu Ahoj spu??t??n??m" "WhatDoISay Say Hello." "", "NeutralText")
-Konec Pokud
-Jin??
-Wln ("??ekni mi, ??e ??eknu Ahoj spu??t??n??m" "WhatDoISay Say Hello." "", "NeutralText")
-Konec Pokud
-Pro ka??d?? arg As String V splitArgs
-Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
-ArgCount = 1
-dal????
-End Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	Dim splitArgs As String() = args.Split({" "c})
+        Dim ArgCount As Integer = 1
+        If splitArgs.Length > 1 Then
+            If (splitArgs(0) = "Say" And splitArgs(1) = "Hello") Then
+                W("Hello World", True, "neutralText")
+            Else
+                W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
+            End If
+        Else
+            W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
+        End If
+        For Each arg As String In splitArgs
+            W("Argument {0}: {1}", True, "neutralText", ArgCount, splitArgs(ArgCount - 1))
+            ArgCount += 1
+        Next
+    End Sub
 3. K??d by m??l vypadat takto ve VB:
 
-Importuje Kernel_Simulator.ModParser
-Importuje Kernel_Simulator.TextWriterColor
-Ve??ejn?? t????da HelloArgs
-Implementuje IScript
-Vlastnost Cmd jako ??et??zec implementuje IScript.Cmd
-Vlastnost Def jako ??et??zec implementuje IScript.Def
-N??zev vlastnosti jako ??et??zec implementuje IScript.Name
-Verze vlastnosti jako ??et??zec implementuje IScript.Version
-Sub StartMod () Implementuje IScript.StartMod
-Cmd = "WhatDoISay"
-Def = ""
-Name = "HelloArgs"
-Verze = "1.0"
-End Sub
-Sub StopMod () Implementuje IScript.StopMod
-End Sub
-Sub PerformCmd (voliteln?? ByVal args As String = "") Implementuje IScript.PerformCmd
-Dim splitArgs As String () = args.Split ({"" c})
-Dim ArgCount jako Integer = 1
-Pokud splitArgs.Length> 1 Potom
-If (splitArgs (0) = "Say" A splitArgs (1) = "Hello") Pak
-Wln ("Hello World", "neutralText")
-Jin??
-Wln ("??ekni mi, ??e ??eknu Ahoj spu??t??n??m" "WhatDoISay Say Hello." "", "NeutralText")
-Konec Pokud
-Jin??
-Wln ("??ekni mi, ??e ??eknu Ahoj spu??t??n??m" "WhatDoISay Say Hello." "", "NeutralText")
-Konec Pokud
-Pro ka??d?? arg As String V splitArgs
-Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
-ArgCount = 1
-dal????
-End Sub
-Sub InitEvents (ByVal ev As String) Implementuje IScript.InitEvents
-End Sub
-Koncov?? t????da
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
+    Public Class HelloArgs
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "WhatDoISay"
+            Def = ""
+            Name = "HelloArgs"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	    Dim splitArgs As String() = args.Split({" "c})
+            Dim ArgCount As Integer = 1
+            If splitArgs.Length > 1 Then
+            	If (splitArgs(0) = "Say" And splitArgs(1) = "Hello") Then
+                    W("Hello World", True, "neutralText")
+            	Else
+                    W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
+            	End If
+            Else
+            	W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
+            End If
+            For Each arg As String In splitArgs
+            	W("Argument {0}: {1}", True, "neutralText", ArgCount, splitArgs(ArgCount - 1))
+            	ArgCount += 1
+            Next
+        End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
 
-... Nebo v C
+... Nebo v C# 
 
-pomoc?? MP = Kernel_Simulator.ModParser;
-pomoc?? TWC = Kernel_Simulator.TextWriterColor;
-public class HelloArgs: MP.IScript
-{
-public string Cmd {get; 
-public string Def {get; 
-public string Jm??no {get; 
-public string Verze {get; 
-public void StartMod ()
-{
-Cmd = "WhatDoISay";
-Def = "";
-Name = "HelloArgs";
-Verze = "1.0";
-}
-public void StopMod ()
-{
-}
-public void PerformCmd (??et??zec args = "")
-{
-string [] splitArgs = args.Split (nov?? [] {''});
-int ArgCount = 1;
-if (splitArgs.Length> 1)
-{
-if (splitArgs [0] == "??ekni"
-{
-TWC.Wln ("Hello World", "neutralText");
-}
-jin??
-{
-TWC.Wln ("Ud??lej mi, ??e ??eknu Ahoj spu??t??n??m" WhatDoISay Say Hello. "", "NeutralText");
-}
-}
-jin??
-{
-TWC.Wln ("Ud??lej mi, ??e ??eknu Ahoj spu??t??n??m" WhatDoISay Say Hello. "", "NeutralText");
-}
-foreach (??et??zec arg v splitArgs)
-{
-TWC.Wln ("Argument {0}: {1}", "neutralText", ArgCount, splitArgs [ArgCount - 1]);
-ArgCount = 1;
-}
-}
-public void InitEvents (??et??zec ev)
-{
-}
-}
+    using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
+	public class HelloArgs : MP.IScript
+	{
+		public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "WhatDoISay";
+			Def = "";
+			Name = "HelloArgs";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+		string[] splitArgs = args.Split(new[] {' '});
+			int ArgCount = 1;
+			if (splitArgs.Length > 1)
+			{
+				if (splitArgs[0] == "Say" && splitArgs[1] == "Hello")
+				{
+					TWC.W("Hello World", True, "neutralText");
+				}
+				else
+				{
+					TWC.W("Make me say Hello by running \"WhatDoISay Say Hello.\"", True, "neutralText");
+				}
+			}
+			else
+			{
+				TWC.W("Make me say Hello by running \"WhatDoISay Say Hello.\"", True, "neutralText");
+			}
+			foreach (string arg in splitArgs)
+			{
+				TWC.W("Argument {0}: {1}", True, "neutralText", ArgCount, splitArgs[ArgCount - 1]);
+				ArgCount += 1;
+			}
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
 
 4. Opakujte posledn?? krok na druh??m p????kladu: Prove??te p????kaz Hello World on command
 
@@ -491,109 +491,109 @@ public void InitEvents (??et??zec ev)
 
 1. Za p??edpokladu, ??e va??e jm??no mod je InternetSpeed, a ??e v???? p????kaz je getnetspeed, opakujte kroky 1-3 na druh??m p????kladu: Hello World on command execute
 2. Um??st??te tyto jmenn?? prostory nad soubor:
-- Importy System.Net
-- Imports System.Linq
-- Imports System.IO
-- Importuje System.Math
-- Importuje Microsoft.VisualBasic.Interaction
+    - Imports System.Net
+    - Imports System.Linq
+    - Imports System.IO
+    - Imports System.Math
+    - Imports Microsoft.VisualBasic.Interaction
 3. Prove??te sv??j p????kazov?? p????kaz:
-Sub PerformCmd (voliteln?? ByVal args jako String = "") Implementuje IScript.PerformCmd
-Dim rychlosti jako Double () = New Double (4) {}
-Pro i As Integer = 0 To 4
-Dim jQueryFileSize jako cel?? ????slo = 261
-Dim klienta jako nov?? webov?? klient ()
-Dim startTime Jako DateTime = DateTime.Now
-client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ ("USERPROFILE") "\ t
-Dim endTime jako DateTime = DateTime.Now
-rychlosti (i) = Kolo ((jQueryFileSize / (endTime - startTime) .TotalSeconds))
-dal????
-File.Delete (Environ ("USERPROFILE") "\ t
-Wln ("Rychlost stahov??n??: {0} KB / s", "neutralText", speeds.Average ())
-End Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+        Dim speeds As Double() = New Double(4) {}
+        For i As Integer = 0 To 4
+            Dim jQueryFileSize As Integer = 261
+            Dim client As New WebClient()
+            Dim startTime As DateTime = DateTime.Now
+            client.DownloadFile("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ("USERPROFILE") + "\jQuery.js")
+            Dim endTime As DateTime = DateTime.Now
+            speeds(i) = Round((jQueryFileSize / (endTime - startTime).TotalSeconds))
+        Next
+        File.Delete(Environ("USERPROFILE") + "\jQuery.js")
+        W("Download speed: {0}KB/s", True, "neutralText", speeds.Average())
+    End Sub
 4. K??d by m??l vypadat takto ve VB:
 
-Imports System.Net
-Imports System.Linq
-Imports System.IO
-Importuje System.Math
-Importuje Microsoft.VisualBasic.Interaction
-Importuje Kernel_Simulator.ModParser
-Importuje Kernel_Simulator.TextWriterColor
-Ve??ejn?? t????da InternetSpeed
-Implementuje IScript
-Vlastnost Cmd jako ??et??zec implementuje IScript.Cmd
-Vlastnost Def jako ??et??zec implementuje IScript.Def
-N??zev vlastnosti jako ??et??zec implementuje IScript.Name
-Verze vlastnosti jako ??et??zec implementuje IScript.Version
-Sub StartMod () Implementuje IScript.StartMod
-Cmd = "getnetspeed"
-Def = ""
-N??zev = "InternetSpeed"
-Verze = "1.0"
-End Sub
-Sub StopMod () Implementuje IScript.StopMod
-End Sub
-Sub PerformCmd (voliteln?? ByVal args As String = "") Implementuje IScript.PerformCmd
-Dim rychlosti jako Double () = New Double (4) {}
-Pro i As Integer = 0 To 4
-Dim jQueryFileSize jako cel?? ????slo = 261
-Dim klienta jako nov?? webov?? klient ()
-Dim startTime As Date = Datum.Nyn??
-client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ ("USERPROFILE") "
-Dim endTime As Date = Datum.Nyn??
-rychlosti (i) = Kolo (jQueryFileSize / (endTime - startTime) .Celkov?? sekundy)
-dal????
-File.Delete (Environ ("USERPROFILE") "\ t
-Wln ("Rychlost stahov??n??: {0} KB / s", "neutralText", speeds.Average ())
-End Sub
-Sub InitEvents (ByVal ev As String) Implementuje IScript.InitEvents
-End Sub
-Koncov?? t????da
+    Imports System.Net
+    Imports System.Linq
+    Imports System.IO
+    Imports System.Math
+    Imports Microsoft.VisualBasic.Interaction
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
+    Public Class InternetSpeed
+    	Implements IScript
+    	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "getnetspeed"
+            Def = ""
+            Name = "InternetSpeed"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+            Dim speeds As Double() = New Double(4) {}
+            For i As Integer = 0 To 4
+            	Dim jQueryFileSize As Integer = 261
+            	Dim client As New WebClient()
+            	Dim startTime As Date = Date.Now
+            	client.DownloadFile("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ("USERPROFILE") + "\jQuery.js")
+            	Dim endTime As Date = Date.Now
+            	speeds(i) = Round(jQueryFileSize / (endTime - startTime).TotalSeconds)
+            Next
+            File.Delete(Environ("USERPROFILE") + "\jQuery.js")
+            W("Download speed: {0}KB/s", True, "neutralText", speeds.Average())
+    	End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
 
-... Nebo v C
+... Nebo v C# 
 
-pomoc?? syst??mu;
-pomoc?? System.Net;
-pomoc?? System.Linq;
-pomoc?? System.IO;
-pomoc?? M = System.Math;
-pomoc?? MP = Kernel_Simulator.ModParser;
-pomoc?? TWC = Kernel_Simulator.TextWriterColor;
-public class InternetSpeed: MP.IScript
-{
-public string Cmd {get; 
-public string Def {get; 
-public string Jm??no {get; 
-public string Verze {get; 
-public void StartMod ()
-{
-Cmd = "getnetspeed";
-Def = "";
-Name = "InternetSpeed";
-Verze = "1.0";
-}
-public void StopMod ()
-{
-}
-public void PerformCmd (??et??zec args = "")
-{
-double [] speed = new double [5];
-pro (int i = 0; i <= 4; i)
-{
-int jQueryFileSize = 261;
-Klient WebClient = nov?? WebClient ();
-DateTime startTime = DateTime.Now;
-client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", System.Environment.GetEnvironmentVariable ("USERPROFILE") "); \ t
-DateTime endTime = DateTime.Now;
-rychlosti [i] = M.Round (jQueryFileSize / (endTime - startTime) .TotalSeconds);
-}
-File.Delete (System.Environment.GetEnvironmentVariable ("USERPROFILE") "jQuery.js");
-TWC.Wln ("Rychlost stahov??n??: {0} KB / s", "neutralText", speeds.Average ());
-}
-public void InitEvents (??et??zec ev)
-{
-}
-}
+    using System;
+	using System.Net;
+	using System.Linq;
+	using System.IO;
+	using M = System.Math;
+	using MP = KS.ModParser;
+	using TWC = KS.TextWriterColor;
+	public class InternetSpeed : MP.IScript
+	{
+		public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "getnetspeed";
+			Def = "";
+			Name = "InternetSpeed";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+			double[] speeds = new double[5];
+			for (int i = 0; i <= 4; i++)
+			{
+				int jQueryFileSize = 261;
+				WebClient client = new WebClient();
+				DateTime startTime = DateTime.Now;
+				client.DownloadFile("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\jQuery.js");
+				DateTime endTime = DateTime.Now;
+				speeds[i] = M.Round(jQueryFileSize / (endTime - startTime).TotalSeconds);
+			}
+			File.Delete(System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\jQuery.js");
+			TWC.W("Download speed: {0}KB/s", True, "neutralText", speeds.Average());
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
 
 5. Opakujte posledn?? krok na druh??m p????kladu: Ahoj Sv??t na p????kaz execute
 
@@ -643,10 +643,10 @@ Class...=>Cyan
 Visual Studio 2017=>Magenta
 Implements=>Cyan
 IScript=>DarkGreen
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
 Imports=>Cyan
-Kernel_Simulator.TextWriterColor=>DarkGreen
+KS.TextWriterColor=>DarkGreen
 IScript:=>DarkGreen
 Property As String=>Cyan
 Cmd Def Name Version=>DarkGreen
@@ -669,7 +669,7 @@ subs=>Green
 AnotherClass=>DarkGreen
 Hello World=>Green
 HelloGuys) HelloGuys: HelloGuys=>DarkGreen
-Kernel_Simulator.ModParser=>DarkGreen
+KS.ModParser=>DarkGreen
 errors=>Red
 "HelloGuys"=>DarkGreen
 "Hello World", "neutralText"=>DarkGreen

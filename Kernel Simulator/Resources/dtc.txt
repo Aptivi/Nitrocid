@@ -365,3 +365,6 @@ Mogelijk hebt u libcpanel-json-xs-perl niet op uw systeem geïnstalleerd. Raadpl
 >> Frames, bestanden, lijnen en kolommen <<
 > Frame {0}: Bestand: {1} | Regel: {2} | Kolom: {3}
 > Er is een fout opgetreden bij het verkrijgen van framegegevens. {0}: {1}
+U hebt uw systeemtaal ingesteld op iets anders dan Engels. Excuses voor het ongemak, maar het lijkt erop dat Google en zijn vertaler erg raar zijn over het vertalen van codeblokken voor elke programmeertaal. Hoewel we alle codeblokken voor vertaalde handmatige pagina's repareren, raden we u aan een ticket voor Google Translate te openen voor het vertalen van codeblokken die niet zijn bedoeld om te worden vertaald, en uw systeemtaal in te stellen op Engels als u deze spreekt.
+Laadt wijzigingen opnieuw.
+Mods opnieuw geladen.

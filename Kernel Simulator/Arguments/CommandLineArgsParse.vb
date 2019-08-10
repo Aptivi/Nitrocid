@@ -25,10 +25,7 @@ Module CommandLineArgsParse
 
                 'Parse arguments
                 If arg = "createConf" Then
-                    If Not IO.File.Exists(paths("Configuration")) Then createConfig(True, False)
-                ElseIf arg = "promptArgs" Then
-                    PromptArgs()
-                    If argsFlag = True Then ParseArguments()
+                    If Not IO.File.Exists(paths("Configuration")) Then CreateConfig(True, False)
                 ElseIf arg = "testMod" Then
                     StartParse(argArgs)
                     If scripts.Count = 0 Then

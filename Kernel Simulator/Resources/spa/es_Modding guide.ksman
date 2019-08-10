@@ -48,8 +48,8 @@ Clase p??blica ModName
 Clase final
 17. Entre las l??neas de clase p??blica ... y clase final, h??gale saber a Visual Studio 2017 que va a crear su KS mod escribiendo: Implementa IScript
 18. Si vas a agregar espacios de nombres, estas reglas deben cumplirse:
-1) No importe Kernel_Simulator por s?? mismo. 
-2) Al importar m??dulos / clases como TextWriterColor, est?? escrito as??: Imports Kernel_Simulator.TextWriterColor
+1) No importe KS por s?? mismo. 
+2) Al importar m??dulos / clases como TextWriterColor, est?? escrito as??: Imports KS.TextWriterColor
 19. Defina las propiedades para la informaci??n del mod colocando debajo de Implementa IScript:
 La propiedad cmd como cadena implementa IScript.Cmd
 La propiedad Def como cadena implementa IScript.Def
@@ -131,8 +131,8 @@ Hello World es el ejemplo de inicio popular para todos los programadores.
 3. Haga clic en Agregar, y el c??digo estar?? listo.
 4. Escriba debajo de (Suponga que su nombre de mod es HelloGuys) Clase p??blica HelloGuys: Implements IScript
 5. Escribe sobre la clase p??blica HelloGuys:
-- Imports Kernel_Simulator.ModParser
-- Imports Kernel_Simulator.TextWriterColor
+- Imports KS.ModParser
+- Imports KS.TextWriterColor
 6. Deber??a obtener errores que indiquen que se deben crear estos subs.
 7. Haga su controlador de eventos mod de inicio escribiendo:
 La propiedad cmd como cadena implementa IScript.Cmd
@@ -144,11 +144,11 @@ Cmd = ""
 Def = ""
 Nombre = "HelloGuys"
 Versi??n = "1.0"
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 End Sub
 8. Haga su controlador de eventos de parada escribiendo:
 Sub StopMod () implementa IScript.StopMod
-Wln ("Goodbye World", "neutralText")
+W ("Goodbye World", "neutralText")
 End Sub
 9. Ya que no estamos implementando comandos ni respondedores de eventos, vamos a dejar estos espacios en blanco:
 Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
@@ -157,8 +157,8 @@ Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
 End Sub
 10. El c??digo deber??a verse as?? en VB:
 
-Imports Kernel_Simulator.ModParser
-Imports Kernel_Simulator.TextWriterColor
+Imports KS.ModParser
+Imports KS.TextWriterColor
 Clase p??blica HelloGuys
 Implementa IScript
 La propiedad cmd como cadena implementa IScript.Cmd
@@ -170,10 +170,10 @@ Cmd = ""
 Def = ""
 Nombre = "HelloGuys"
 Versi??n = "1.0"
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 End Sub
 Sub StopMod () implementa IScript.StopMod
-Wln ("Goodbye World", "neutralText")
+W ("Goodbye World", "neutralText")
 End Sub
 Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
 End Sub
@@ -183,8 +183,8 @@ Clase final
 
 ... o en C
 
-using MP = Kernel_Simulator.ModParser;
-using TWC = Kernel_Simulator.TextWriterColor;
+using MP = KS.ModParser;
+using TWC = KS.TextWriterColor;
 HelloGuys de clase p??blica: MP.IScript
 {
 cadena p??blica Cmd {get; 
@@ -197,11 +197,11 @@ Cmd = "";
 Def = "";
 Nombre = "HelloGuys";
 Versi??n = "1.0";
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 p??blico void StopMod ()
 {
-TWC.Wln ("Goodbye World", "neutralText");
+TWC.W ("Goodbye World", "neutralText");
 }
 public void PerformCmd (cadena args = "")
 {
@@ -239,12 +239,12 @@ Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
 End Sub
 4. Haga su controlador de comandos y deje que responda al comando mod SayHello:
 Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 End Sub
 5. El c??digo deber??a verse as?? en VB:
 
-Imports Kernel_Simulator.ModParser
-Imports Kernel_Simulator.TextWriterColor
+Imports KS.ModParser
+Imports KS.TextWriterColor
 Clase p??blica HelloShell
 Implementa IScript
 La propiedad cmd como cadena implementa IScript.Cmd
@@ -260,7 +260,7 @@ End Sub
 Sub StopMod () implementa IScript.StopMod
 End Sub
 Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 End Sub
 Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
 End Sub
@@ -268,8 +268,8 @@ Clase final
 
 ... o en C
 
-using MP = Kernel_Simulator.ModParser;
-using TWC = Kernel_Simulator.TextWriterColor;
+using MP = KS.ModParser;
+using TWC = KS.TextWriterColor;
 clase p??blica HelloShell: MP.IScript
 {
 cadena p??blica Cmd {get; 
@@ -288,7 +288,7 @@ p??blico void StopMod ()
 }
 public void PerformCmd (cadena args = "")
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 public void InitEvents (cadena ev)
 {
@@ -303,15 +303,15 @@ public void InitEvents (cadena ev)
 2. Haga su controlador de comandos y deje que responda al comando mod SayHello:
 Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
 Si (args = "HW") Entonces
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 M??s
-Wln ("Hazme saludar ejecutando" "SayHello HW." "", "NeutralText")
+W ("Hazme saludar ejecutando" "SayHello HW." "", "NeutralText")
 Terminara si
 End Sub
 3. El c??digo deber??a verse as?? en VB:
 
-Imports Kernel_Simulator.ModParser
-Imports Kernel_Simulator.TextWriterColor
+Imports KS.ModParser
+Imports KS.TextWriterColor
 Clase p??blica HelloArgs
 Implementa IScript
 La propiedad cmd como cadena implementa IScript.Cmd
@@ -328,9 +328,9 @@ Sub StopMod () implementa IScript.StopMod
 End Sub
 Sub PerformCmd (Opcional ByVal args As String = "") implementa IScript.PerformCmd
 Si (args = "HW") Entonces
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 M??s
-Wln ("Hazme saludar ejecutando" "SayHello HW." "", "NeutralText")
+W ("Hazme saludar ejecutando" "SayHello HW." "", "NeutralText")
 Terminara si
 End Sub
 Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
@@ -339,8 +339,8 @@ Clase final
 
 ... o en C
 
-using MP = Kernel_Simulator.ModParser;
-using TWC = Kernel_Simulator.TextWriterColor;
+using MP = KS.ModParser;
+using TWC = KS.TextWriterColor;
 clase p??blica HelloArgs: MP.IScript
 {
 cadena p??blica Cmd {get; 
@@ -361,11 +361,11 @@ public void PerformCmd (cadena args = "")
 {
 if (args == "HW")
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 m??s
 {
-TWC.Wln ("Hazme saludar ejecutando \" SayHello HW. \ "", "NeutralText");
+TWC.W ("Hazme saludar ejecutando \" SayHello HW. \ "", "NeutralText");
 }
 }
 public void InitEvents (cadena ev)
@@ -384,22 +384,22 @@ Dim splitArgs As String () = args.Split ({"" c})
 Dim ArgCount como entero = 1
 Si splitArgs.Length> 1 entonces
 Si (splitArgs (0) = "Say" y splitArgs (1) = "Hello") Entonces
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 M??s
-Wln ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
+W ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
 Terminara si
 M??s
-Wln ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
+W ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
 Terminara si
 Para cada argumento como cadena en splitArgs
-Wln ("Argumento {0}: {1}", "texto neutral", ArgCount, splitArgs (ArgCount - 1))
+W ("Argumento {0}: {1}", "texto neutral", ArgCount, splitArgs (ArgCount - 1))
 ArgCount = 1
 Siguiente
 End Sub
 3. El c??digo deber??a verse as?? en VB:
 
-Imports Kernel_Simulator.ModParser
-Imports Kernel_Simulator.TextWriterColor
+Imports KS.ModParser
+Imports KS.TextWriterColor
 Clase p??blica HelloArgs
 Implementa IScript
 La propiedad cmd como cadena implementa IScript.Cmd
@@ -419,15 +419,15 @@ Dim splitArgs As String () = args.Split ({"" c})
 Dim ArgCount como entero = 1
 Si splitArgs.Length> 1 entonces
 Si (splitArgs (0) = "Say" y splitArgs (1) = "Hello") Entonces
-Wln ("Hello World", "neutralText")
+W ("Hello World", "neutralText")
 M??s
-Wln ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
+W ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
 Terminara si
 M??s
-Wln ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
+W ("Hazme saludar ejecutando" "WhatDoISay Say Hello". "", "NeutralText")
 Terminara si
 Para cada argumento como cadena en splitArgs
-Wln ("Argumento {0}: {1}", "texto neutral", ArgCount, splitArgs (ArgCount - 1))
+W ("Argumento {0}: {1}", "texto neutral", ArgCount, splitArgs (ArgCount - 1))
 ArgCount = 1
 Siguiente
 End Sub
@@ -437,8 +437,8 @@ Clase final
 
 ... o en C
 
-using MP = Kernel_Simulator.ModParser;
-using TWC = Kernel_Simulator.TextWriterColor;
+using MP = KS.ModParser;
+using TWC = KS.TextWriterColor;
 clase p??blica HelloArgs: MP.IScript
 {
 cadena p??blica Cmd {get; 
@@ -463,20 +463,20 @@ if (splitArgs.Length> 1)
 {
 if (splitArgs [0] == "Say"
 {
-TWC.Wln ("Hello World", "neutralText");
+TWC.W ("Hello World", "neutralText");
 }
 m??s
 {
-TWC.Wln ("Hazme saludar ejecutando \" WhatDoISay Say Hello. \ "", "NeutralText");
+TWC.W ("Hazme saludar ejecutando \" WhatDoISay Say Hello. \ "", "NeutralText");
 }
 }
 m??s
 {
-TWC.Wln ("Hazme saludar ejecutando \" WhatDoISay Say Hello. \ "", "NeutralText");
+TWC.W ("Hazme saludar ejecutando \" WhatDoISay Say Hello. \ "", "NeutralText");
 }
 foreach (cadena arg en splitArgs)
 {
-TWC.Wln ("Argumento {0}: {1}", "texto neutral", ArgCount, splitArgs [ArgCount - 1]);
+TWC.W ("Argumento {0}: {1}", "texto neutral", ArgCount, splitArgs [ArgCount - 1]);
 ArgCount = 1;
 }
 }
@@ -508,7 +508,7 @@ Dim endTime As DateTime = DateTime.Now
 Velocidades (i) = Round ((jQueryFileSize / (endTime - startTime) .TotalSeconds))
 Siguiente
 File.Delete (Environ ("USERPROFILE") "\ jQuery.js")
-Wln ("Velocidad de descarga: {0} KB / s", "neutralText", speeds.Average ())
+W ("Velocidad de descarga: {0} KB / s", "neutralText", speeds.Average ())
 End Sub
 4. El c??digo deber??a verse as?? en VB:
 
@@ -517,8 +517,8 @@ Sistema de importaciones.
 Importaciones System.IO
 Sistema de importaciones.
 Importa Microsoft.VisualBasic.Interaction
-Imports Kernel_Simulator.ModParser
-Imports Kernel_Simulator.TextWriterColor
+Imports KS.ModParser
+Imports KS.TextWriterColor
 Clase p??blica InternetSpeed
 Implementa IScript
 La propiedad cmd como cadena implementa IScript.Cmd
@@ -544,7 +544,7 @@ Dim endTime As Date = Date.Now
 Velocidades (i) = Round (jQueryFileSize / (endTime - startTime) .TotalSeconds)
 Siguiente
 File.Delete (Environ ("USERPROFILE") "\ jQuery.js")
-Wln ("Velocidad de descarga: {0} KB / s", "neutralText", speeds.Average ())
+W ("Velocidad de descarga: {0} KB / s", "neutralText", speeds.Average ())
 End Sub
 Sub InitEvents (ByVal ev As String) implementa IScript.InitEvents
 End Sub
@@ -557,8 +557,8 @@ utilizando System.Net;
 utilizando System.Linq;
 utilizando System.IO;
 utilizando M = System.Math;
-using MP = Kernel_Simulator.ModParser;
-using TWC = Kernel_Simulator.TextWriterColor;
+using MP = KS.ModParser;
+using TWC = KS.TextWriterColor;
 clase p??blica InternetSpeed: MP.IScript
 {
 cadena p??blica Cmd {get; 
@@ -588,7 +588,7 @@ DateTime endTime = DateTime.Now;
 velocidades [i] = M.Round (jQueryFileSize / (endTime - startTime) .TotalSeconds);
 }
 File.Delete (System.Environment.GetEnvironmentVariable ("USERPROFILE") "\\ jQuery.js");
-TWC.Wln ("Velocidad de descarga: {0} KB / s", "neutralText", speeds.Average ());
+TWC.W ("Velocidad de descarga: {0} KB / s", "neutralText", speeds.Average ());
 }
 public void InitEvents (cadena ev)
 {
@@ -643,10 +643,10 @@ Class...=>Cyan
 Visual Studio 2017=>Magenta
 Implements=>Cyan
 IScript=>DarkGreen
-Kernel_Simulator=>Cyan
+KS=>Cyan
 TextWriterColor=>Green
 Imports=>Cyan
-Kernel_Simulator.TextWriterColor=>DarkGreen
+KS.TextWriterColor=>DarkGreen
 IScript:=>DarkGreen
 Property As String=>Cyan
 Cmd Def Name Version=>DarkGreen
@@ -669,7 +669,7 @@ subs=>Green
 AnotherClass=>DarkGreen
 Hello World=>Green
 HelloGuys) HelloGuys: HelloGuys=>DarkGreen
-Kernel_Simulator.ModParser=>DarkGreen
+KS.ModParser=>DarkGreen
 errors=>Red
 "HelloGuys"=>DarkGreen
 "Hello World", "neutralText"=>DarkGreen
