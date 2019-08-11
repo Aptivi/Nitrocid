@@ -4,6 +4,26 @@
 -REVISION:0.0.1
 -KSLAYOUT:0.0.5.9-OR-ABOVE
 
+~~- WARNING FOR TRANSLATORS!!! Google's logic for translating strings:
+~~- Sub Translate(ByVal Text As String)
+~~-		Dim Txt As String = GetTranslatedTextFromNet(Text) 'Translate text
+~~-		'To finalize, we do:
+~~-		UglifyEverything(Txt, UglifyMode.Quasi) 'To make sure that the translated text is ugly.
+~~-		RemoveWhitespacesFromBeginning(Txt) 'To make sure that all the codeblocks are ugly. Ruins pixel art also.
+~~-		CropAllTextFromPuncs(Txt) 'For sentences to be fragmented. Uses Google SentenceFragmentator API.
+~~-		MakeSpacesBetweenPuncs(Txt) 'To make all commands invalid.
+~~-		InvalidateCodeBlocks(Txt) 'This ensures that all code blocks will not compile because they're translated.
+~~-		MakeCSharpC(Txt) 'To fool users into thinking it's C.
+~~-		MakeYearsToPastEvents(Txt) 'To scare users and make the program changelogs invalid.
+~~-		TranslateCommands(Txt) 'To make all commands even more invalid.
+~~-		SendTranslatedDataToGoogle(Txt) 'To nullify user's privacy. Also sends to various hackers.
+~~-		PromoteSelf() 'To celebrate and motivate data collection. Makes it stronger.
+~~-		MakeUsersExtremelyFurious(True) 'To make all the users mad and rage.
+~~-		MakeSecondFaster(0.8) 'To make 1 second exactly 800ms.
+~~-		WasteDevelopersTimes(5) 'To waste developers' times 5 hours.
+~~- End Sub
+~~- So do your best to translate them yourself.
+
 -BODY START-
 What is the screensaver for the kernel?
 
@@ -71,7 +91,7 @@ The back message box screensaver tells people that the computer owner is gone, o
 7. Make your start screensaver event handler by writing:
     Property Initialized As Boolean Implements ICustomSaver.Initialized
     Sub InitSaver() Implements ICustomSaver.InitSaver
-	W("Load this screensaver using ""loadsaver SORSS.m"" and ""setsaver SORSS.m""", "neutralText")
+	W("Load this screensaver using ""loadsaver SORSS.m"" and ""setsaver SORSS.m""", True, "neutralText")
         Initialized = True
     End Sub
 8. Since we're not implementing anything before displaying screensaver, we're going to leave this blank:
@@ -150,8 +170,8 @@ The back message box screensaver tells people that the computer owner is gone, o
     	Sub PreDisplay() Implements ICustomSaver.PreDisplay
     	End Sub
     	Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
-	    Console.Clear()
-	    If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+	        Console.Clear()
+	        If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
                 Exit For
             End If
     	    Dim SOR_Integer As Integer = SOR_Random.Next(1, 4) 'Chooses whether it's Soon, Overnight or Rude
@@ -181,7 +201,7 @@ The back message box screensaver tells people that the computer owner is gone, o
             W("-+", "neutralText")
         End Sub
         Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer)
-	    Dim BackMessages As String() = {"<OWNER> will be back soon.", "<OWNER> is busy. He will be back soon."}
+	        Dim BackMessages As String() = {"<OWNER> will be back soon.", "<OWNER> is busy. He will be back soon."}
     	    Dim OvernightMsg As String() = {"It seems that <OWNER> will be back overnight", "He'll be back overnight."}
     	    Dim RudeMessages As String() = {"Can you go away?", "Go away, <OWNER> will be back soon", "<OWNER> isn't here. Go away."}
             Dim text As String = ""
@@ -232,7 +252,7 @@ The back message box screensaver tells people that the computer owner is gone, o
     	End Sub
     	Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
             Console.Clear()
-   	End Sub
+   		End Sub
     End Class
 5. Repeat the steps 13-14 on the first example: In-Console Message Box, and Soon, Overnight, or Rude (Go away...) messages
 
@@ -257,7 +277,7 @@ Public Class ANI
     Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
         For CurrentStep = 0 To 3
             Console.Clear()
-	    If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+	        If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
                 Exit For
             End If
             W(aniset(CurrentStep), "neutralText")

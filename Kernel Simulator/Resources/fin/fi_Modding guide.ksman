@@ -28,14 +28,14 @@ Basic modding
 7. Napsauta hiiren kakkospainikkeella projektia, ei ratkaisua
 8. Muuta sovellustyyppi luokkakirjastoksi
 9. Valitse Compile (K????nn??) -osiosta Build Events (Rakenna tapahtumat) ja kirjoita t??m?? Post-build-tapahtumakomentoriville:
-Jos k??yt??t VB: t??:
-- kopio .. .. ModFile.vb .. .. ..
-- del / Q *. * (varmista, ett?? ei ole luotu dummy-DLL-tiedostoja, koska emme k??yt?? DLL-moduuleja)
-- "polku Kernel Simulator.exe" testMods ModFile.m
-Jos k??yt??t C: t??
-- kopio .. .. ModFile.cs .. .. ..
-- del / Q *. * (varmista, ett?? ei ole luotu dummy-DLL-tiedostoja, koska emme k??yt?? DLL-moduuleja)
-- "polku Kernel Simulator.exe" testMods ModFileCS.m
+   If you are using VB:
+      - copy ..\..\ModFile.vb ..\..\..\..\ModFile.m
+      - del /Q *.* (to make sure that there is no dummy DLL files being created as we don't use DLL for mods)
+      - "path\to\Kernel Simulator.exe" testMods ModFile.m
+   If you are using C#:
+      - copy ..\..\ModFile.cs ..\..\..\..\ModFileCS.m
+      - del /Q *.* (to make sure that there is no dummy DLL files being created as we don't use DLL for mods)
+      - "path\to\Kernel Simulator.exe" testMods ModFileCS.m
 10. Varmista, ett?? j??lkik??sittely-tapahtuma toimii vain, kun rakennus on onnistunut
 11. Tallenna kaikki painamalla CTRL S
 12. Laajenna Solution Explorerin Referenssit-osio
@@ -43,82 +43,82 @@ Jos k??yt??t C: t??
 14. Napsauta hiiren kakkospainikkeella projektia ja siirry kohtaan Lis????> Luokka
 15. Oletetaan, ett?? teet moduulin VB: ss??. 
 16. Valitse Lis???? ja koodi on valmis:
-Julkinen luokka ModName
-'Koodisi t????ll??
-Loppuluokka
+    Public Class ModName
+	    'Your code here
+    End Class
 17. Julkisen luokan ... ja loppuluokan rivien v??lill??, anna Visual Studio 2017 tiet????, ett?? luot KS-moduulisi kirjoittamalla: Implements IScript
 18. Jos aiot lis??t?? nimiavaruuksia, n??m?? s????nn??t on t??ytett??v??:
-1) ??l?? tuo Kernel_Simulatoria itse. 
-2) Kun tuodaan moduuleja / luokkia, kuten TextWriterColor, se on kirjoitettu n??in: Import KS.TextWriterColor
+	1) ??l?? tuo Kernel_Simulatoria itse. 
+	2) Kun tuodaan moduuleja / luokkia, kuten TextWriterColor, se on kirjoitettu n??in: Import KS.TextWriterColor
 19. M????rittele mod-informaation ominaisuudet asettamalla alla olevat sovellusohjelman alle:
-Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
-Ominaisuus Def As String toteuttaa IScript.Def
-Ominaisuuden nimi merkkijonona toteuttaa IScript.Name
-Ominaisuusversio merkkijonona toteuttaa IScript.Version
+    Property Cmd As String Implements IScript.Cmd
+    Property Def As String Implements IScript.Def
+    Property Name As String Implements IScript.Name
+    Property Version As String Implements IScript.Version
 20. Tee aloitusmoduulisi StartMod (), joka toteuttaa IScript.StartModin, kirjoittamalla:
-Sub StartMod () toteuttaa IScript.StartMod
-Cmd = "" 'Jos aiot lis??t?? komentoja, kirjoita komento t??h??n.
-Def = "" 'Selit?? mik?? on komento ja mit?? se aikoo tehd??.
-Name = "ModName" 'Vaihda ModName mod-nimell??si mit?? haluat, mutta sen pit??isi heijastaa mod-tarkoitusta. 
-Version = "1.0" 'Voit m????ritt???? modiversiosi, mutta sen pit??isi noudattaa versiointiohjeita ja se l??ytyy Internetist??. 
+	Sub StartMod () Implements IScript.StartMod
+		Cmd = "" 'Jos aiot lis??t?? komentoja, kirjoita komento t??h??n.
+		Def = "" 'Selit?? mik?? on komento ja mit?? se aikoo tehd??.
+		Name = "ModName" 'Vaihda ModName mod-nimell??si mit?? haluat, mutta sen pit??isi heijastaa mod-tarkoitusta. 
+		Version = "1.0" 'Voit m????ritt???? modiversiosi, mutta sen pit??isi noudattaa versiointiohjeita ja se l??ytyy Internetist??. 
 
-'Alla oleva koodi
-Lopeta Sub
+		'Alla oleva koodi
+	End Sub
 21. Vaihda jokainen alla oleva koodi kommentoimalla koodisi kanssa. 
 22. Tee mod stop sub nimesi StopMod (), joka toteuttaa IScript.StopModin, kirjoittamalla:
-Sub StopMod () toteuttaa IScript.StopMod
-'Alla oleva koodi
-Lopeta Sub
+	Sub StopMod () toteuttaa IScript.StopMod
+		'Alla oleva koodi
+	End Sub
 23. 1) Jos teet komennon modissa, kirjoita vastauskoodi alla:
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-'Alla oleva koodi
-Lopeta Sub
-2) Jos teet komentosi, joka k??sittelee argumentteja, kirjoita vastauskoodi alla:
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Jos (args = "YourArgHere") Sitten "KorvaaArgsHereen argumenttisi
-'Alla oleva koodi
-Loppu Jos
-Lopeta Sub
-3) Jos teet komentosi, joka k??sittelee my??hempi?? argumentteja, kirjoita vastauskoodi alla:
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Dim splitArgs kuten merkkijono () = args.Split ({"" c})
-Jos splitArgs.Length> 1 Sitten
-Jos (splitArgs (0) = "Part1" ja splitArgs (1) = "Part2") Sitten "Vaihda Part1 argumenttisi ja Part2 argumenttisi kanssa. 
-'Alla oleva koodi
-muu
-'Alla oleva argumenttivastauskoodi
-Loppu Jos
-muu
-'Koodisi, joka k??sittelee riitt??m??tt??mi?? argumentteja
-Loppu Jos
-Lopeta Sub
+	Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
+		'Alla oleva koodi
+	End Sub
+	2) Jos teet komentosi, joka k??sittelee argumentteja, kirjoita vastauskoodi alla:
+	Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
+		If (args = "YourArgHere") Then
+			'Alla oleva koodi
+		End If
+	End Sub
+	3) Jos teet komentosi, joka k??sittelee my??hempi?? argumentteja, kirjoita vastauskoodi alla:
+       Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	   Dim splitArgs As String() = args.Split({" "c})
+           If splitArgs.Length > 1 Then
+               If (splitArgs(0) = "Part1" And splitArgs(1) = "Part2") Then 'Replace Part1 with your argument, and Part2 with your argument. You can also replace the splitArgs(0) = "Part1" And splitArgs(1) = "Part2" with your statement
+                   'Your code below
+               Else
+                   'Your argument mismatch code below
+               End If
+           Else
+               'Your code that handles not enough arguments
+           End If
+       End Sub
 1. 1) Jos teet tapahtumak??sittelij??n, joka k??sittelee ytimen tapahtumia, kirjoita alla oleva kahva-koodi:
-Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
-Jos (ev = "EventName") Sitten "Korvaa EventName tapahtumilla, jotka l??ytyv??t" Usermanual Event for Mod Developers "-komennosta
-'Alla oleva koodi
-Loppu Jos
-Lopeta Sub
-2) Jos k??sittelet useita tapahtumia, kirjoita alla oleva kahva-koodi:
-Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
-Jos (ev = "EventName") Sitten "Korvaa EventName tapahtumilla, jotka l??ytyv??t" Usermanual Event for Mod Developers "-komennosta
-'Alla oleva koodi
-ElseIf (ev = "AnotherEvent") Sitten "Vaihda toinenEventi tapahtumilla, jotka l??ytyv??t" Usermanual-tapahtumista Mod-kehitt??jille "-komennolla
-'Alla oleva koodi
-Loppu Jos
-Lopeta Sub
-3) T??RKE?? HUOMAUTUS! 
+       Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+           If (ev = "EventName") Then 'Replace EventName with events that is found on "usermanual Events for Mod Developers" command
+	           'Your code below
+	       End If
+       End Sub
+	2) Jos k??sittelet useita tapahtumia, kirjoita alla oleva kahva-koodi:
+       Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+           If (ev = "EventName") Then 'Replace EventName with events that is found on "usermanual Events for Mod Developers" command
+	           'Your code below
+	       ElseIf (ev = "AnotherEvent") Then ' Replace AnotherEvent with events that is found on "usermanual Events for Mod Developers" command
+               'Your code below
+	       End If
+       End Sub
+	3) T??RKE?? HUOMAUTUS! 
 25. Voit tehd?? tilaajan miss?? tahansa luokassa, mutta jos:
-1) ne ovat eri luokassa, paina Enter-luokassa Enter ja tee uusi uusi luokka, joka tallentaa uudet subs:
-Julkinen luokka AnotherClass
-'Alla olevat m????ritelm??t, joten tilaajat, toiminnot, rajapinnat jne.
-Loppuluokka
-2) he yritt??v??t alustaa modin uudelleen soittamalla StartModiin (), Kokeile ensin testiymp??rist??ss??si ja sitten tuotantoymp??rist????, jos se toimi oikein.
-Ja seuraavat ehdot olisi t??ytett??v??:
-1) Niiden ei pit??isi tehd?? ????ret??nt?? silmukkaa, ellet tee niit?? poistumiksi, jos tietyt ehdot t??yttyv??t
-2) Niiden ei pit??isi yritt???? aiheuttaa virheit?? ytimess??.
-3) Jos olet hyv??ksik??ytt??j?? ja teet ytimen hyv??ksik??ytt??koodin, tee se testausymp??rist??ss?? ensin tuotantoymp??rist??ss?? ja tee sitten CVE-raportti, jotta saamme huomion ja korjaamme sen nopeasti.
-4) Jos modisi aikoo laajentaa ytimen, aseta laajennuskoodisi erillisiin osiin
-5) Laita alikutsusi yhteen nelj??st?? osiosta, joka toteuttaa IScript-k??ytt??liittym??n. 
+	1) ne ovat eri luokassa, paina Enter-luokassa Enter ja tee uusi uusi luokka, joka tallentaa uudet subs:
+       Public Class AnotherClass
+	       'Your definitions below, and so your subs, functions, interfaces, etc.
+       End Class
+	2) he yritt??v??t alustaa modin uudelleen soittamalla StartModiin (), Kokeile ensin testiymp??rist??ss??si ja sitten tuotantoymp??rist????, jos se toimi oikein.
+	Ja seuraavat ehdot olisi t??ytett??v??:
+	1) Niiden ei pit??isi tehd?? ????ret??nt?? silmukkaa, ellet tee niit?? poistumiksi, jos tietyt ehdot t??yttyv??t
+	2) Niiden ei pit??isi yritt???? aiheuttaa virheit?? ytimess??.
+	3) Jos olet hyv??ksik??ytt??j?? ja teet ytimen hyv??ksik??ytt??koodin, tee se testausymp??rist??ss?? ensin tuotantoymp??rist??ss?? ja tee sitten CVE-raportti, jotta saamme huomion ja korjaamme sen nopeasti.
+	4) Jos modisi aikoo laajentaa ytimen, aseta laajennuskoodisi erillisiin osiin
+	5) Laita alikutsusi yhteen nelj??st?? osiosta, joka toteuttaa IScript-k??ytt??liittym??n. 
 26. Suorita rakennus. 
 27. Suorita Kernel Simulator, johon olet juuri viitannut projektissasi.
 
@@ -131,169 +131,169 @@ Hello World on suosittu aloitus esimerkki kaikille ohjelmoijille.
 3. Napsauta Lis???? ja koodi on valmis.
 4. Kirjoita alla (Oletetaan, ett?? mod name on HelloGuys) Julkisen luokan HelloGuys: toteuttaa IScript
 5. Kirjoita julkiseen luokkaan HelloGuys:
-- Tuo KS.ModParser
-- Tuo KS.TextWriterColor
+   - Imports KS.ModParser
+   - Imports KS.TextWriterColor
 6. Sinun pit??isi saada virheit?? sanomalla, ett?? n??m?? osiot on luotava.
 7. Tee aloitustapahtuman k??sittelij?? kirjoittamalla:
-Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
-Ominaisuus Def As String toteuttaa IScript.Def
-Ominaisuuden nimi merkkijonona toteuttaa IScript.Name
-Ominaisuusversio merkkijonona toteuttaa IScript.Version
-Sub StartMod () toteuttaa IScript.StartMod
-Cmd = ""
-Def = ""
-Nimi = "HelloGuys"
-Versio = "1.0"
-W ("Hello World", "neutralText")
-Lopeta Sub
+    Property Cmd As String Implements IScript.Cmd
+    Property Def As String Implements IScript.Def
+    Property Name As String Implements IScript.Name
+    Property Version As String Implements IScript.Version
+    Sub StartMod() Implements IScript.StartMod
+        Cmd = ""
+        Def = ""
+        Name = "HelloGuys"
+        Version = "1.0"
+        W("Hello World", True, "neutralText")
+    End Sub
 8. Tee pys??ytystapahtuman k??sittelij?? kirjoittamalla:
-Sub StopMod () toteuttaa IScript.StopMod
-W ("Goodbye World", "neutralText")
-Lopeta Sub
+    Sub StopMod() Implements IScript.StopMod
+        W("Goodbye World", True, "neutralText")
+    End Sub
 9. Koska emme toteuta komentoja eik?? tapahtumaharjoittajia, j??t??mme n??m?? tyhj??t:
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Lopeta Sub
-Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
-Lopeta Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+    End Sub
+    Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    End Sub
 10. Koodin pit??isi n??ytt???? t??lt?? VB: ss??:
 
-Tuo KS.ModParser
-Tuo KS.TextWriterColor
-Julkinen luokka HelloGuys
-Ottaa k??ytt????n IScriptin
-Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
-Ominaisuus Def As String toteuttaa IScript.Def
-Ominaisuuden nimi merkkijonona toteuttaa IScript.Name
-Ominaisuusversio merkkijonona toteuttaa IScript.Version
-Sub StartMod () toteuttaa IScript.StartMod
-Cmd = ""
-Def = ""
-Nimi = "HelloGuys"
-Versio = "1.0"
-W ("Hello World", "neutralText")
-Lopeta Sub
-Sub StopMod () toteuttaa IScript.StopMod
-W ("Goodbye World", "neutralText")
-Lopeta Sub
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Lopeta Sub
-Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
-Lopeta Sub
-Loppuluokka
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
+    Public Class HelloGuys
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = ""
+            Def = ""
+            Name = "HelloGuys"
+            Version = "1.0"
+            W("Hello World", True, "neutralText")
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+            W("Goodbye World", True, "neutralText")
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+    	End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
 
-... Tai C
+... Tai C#
 
-k??ytt??en MP = KS.ModParser;
-k??ytt??en TWC = KS.TextWriterColor;
-julkinen luokka HelloGuys: MP.IScript
-{
-julkinen merkkijono Cmd {get; 
-julkinen merkkijono Def {get; 
-julkinen merkkijono Nimi {get; 
-julkinen merkkijono Version {get; 
-public void StartMod ()
-{
-Cmd = "";
-Def = "";
-Nimi = "HelloGuys";
-Version = "1,0";
-TWC.W ("Hello World", "neutralText");
-}
-public void StopMod ()
-{
-TWC.W ("Goodbye World", "neutralText");
-}
-public void PerformCmd (merkkijono args = "")
-{
-}
-public void InitEvents (merkkijono ev)
-{
-}
-}
+    using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
+	public class HelloGuys : MP.IScript
+	{
+	public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "";
+			Def = "";
+			Name = "HelloGuys";
+			Version = "1.0";
+			TWC.W("Hello World", True, "neutralText");
+		}
+		public void StopMod()
+		{
+			TWC.W("Goodbye World", True, "neutralText");
+		}
+		public void PerformCmd(string args = "")
+		{
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
 
 11. Suorita rakennus. 
 12. Suorita Kernel Simulator, johon olet juuri viitannut projektissasi.
 13. Jos kaikki menee hyvin, sinun pit??isi n??hd?? seuraavat viestit:
-mod: Moduulien lataaminen ...
-Hei maailma
-HelloGuys v1.0 aloitettiin
+	mod: Moduulien lataaminen ...
+	Hei maailma
+	HelloGuys v1.0 aloitettiin
 
 2. Hei World on komento suorittaa
 
 1. Toista vaiheet 1-5 ensimm??isess?? esimerkiss??: Hello World on Kernel Start ja Goodbye World on Kernel Stop
 2. Tee aloitusmodin tapahtumak??sittelij?? kirjoittamalla (olettaen, ett?? mod-nimi on HelloShell):
-Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
-Ominaisuus Def As String toteuttaa IScript.Def
-Ominaisuuden nimi merkkijonona toteuttaa IScript.Name
-Ominaisuusversio merkkijonona toteuttaa IScript.Version
-Sub StartMod () toteuttaa IScript.StartMod
-Cmd = "SayHello"
-Def = ""
-Nimi = "HelloShell"
-Versio = "1.0"
-Lopeta Sub
+    Property Cmd As String Implements IScript.Cmd
+    Property Def As String Implements IScript.Def
+    Property Name As String Implements IScript.Name
+    Property Version As String Implements IScript.Version
+    Sub StartMod() Implements IScript.StartMod
+        Cmd = "SayHello"
+        Def = ""
+        Name = "HelloShell"
+        Version = "1.0"
+    End Sub
 3. Koska emme toteuta pys??ytysk??sittelij???? eik?? tapahtumien vastaajaa, j??t??mme n??m?? tyhj??t:
-Sub StopMod () toteuttaa IScript.StopMod
-Lopeta Sub
-Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
-Lopeta Sub
+    Sub StopMod() Implements IScript.StopMod
+    End Sub
+    Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    End Sub
 4. Tee komentok??sittelij?? ja anna sen vastata SayHello mod -komentoon:
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-W ("Hello World", "neutralText")
-Lopeta Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+		W("Hello World", True, "neutralText")
+    End Sub
 5. Koodin pit??isi n??ytt???? t??lt?? VB: ss??:
 
-Tuo KS.ModParser
-Tuo KS.TextWriterColor
-Julkinen luokka HelloShell
-Ottaa k??ytt????n IScriptin
-Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
-Ominaisuus Def As String toteuttaa IScript.Def
-Ominaisuuden nimi merkkijonona toteuttaa IScript.Name
-Ominaisuusversio merkkijonona toteuttaa IScript.Version
-Sub StartMod () toteuttaa IScript.StartMod
-Cmd = "SayHello"
-Def = ""
-Nimi = "HelloShell"
-Versio = "1.0"
-Lopeta Sub
-Sub StopMod () toteuttaa IScript.StopMod
-Lopeta Sub
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-W ("Hello World", "neutralText")
-Lopeta Sub
-Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
-Lopeta Sub
-Loppuluokka
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
+    Public Class HelloShell
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "SayHello"
+            Def = ""
+            Name = "HelloShell"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	    W("Hello World", True, "neutralText")
+    	End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
 
-... Tai C
+... Tai C#
 
-k??ytt??en MP = KS.ModParser;
-k??ytt??en TWC = KS.TextWriterColor;
-julkinen luokka HelloShell: MP.IScript
-{
-julkinen merkkijono Cmd {get; 
-julkinen merkkijono Def {get; 
-julkinen merkkijono Nimi {get; 
-julkinen merkkijono Version {get; 
-public void StartMod ()
-{
-Cmd = "SayHello";
-Def = "";
-Nimi = "HelloShell";
-Version = "1,0";
-}
-public void StopMod ()
-{
-}
-public void PerformCmd (merkkijono args = "")
-{
-TWC.W ("Hello World", "neutralText");
-}
-public void InitEvents (merkkijono ev)
-{
-}
-}
+	using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
+	public class HelloShell : MP.IScript
+	{
+	public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "SayHello";
+			Def = "";
+			Name = "HelloShell";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+		TWC.W("Hello World", True, "neutralText");
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
 
 6. Toista vaiheet 11-12 ensimm??isess?? esimerkiss??: Hello World on Kernel Start ja Goodbye World on Kernel Stop
 
@@ -301,77 +301,77 @@ public void InitEvents (merkkijono ev)
 
 1. Olettaen, ett?? mod-nimesi on HelloArgs, argumenttisi, joka tekee komennostasi, sanoo Hei maailma on HW, ja ett?? komentosi on SayHello, Toista vaiheet 1-3 toisessa esimerkiss??: Hei World on command
 2. Tee komentok??sittelij?? ja anna sen vastata SayHello mod -komentoon:
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Jos (args = "HW") Sitten
-W ("Hello World", "neutralText")
-muu
-W ("Tee minut sanottavaksi" SayHello HW. "" "," NeutralText ")
-Loppu Jos
-Lopeta Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	If (args = "HW") Then
+	    W("Hello World", True, "neutralText")
+	Else
+	    W("Make me say Hello by running ""SayHello HW.""", True, "neutralText")
+	End If
+    End Sub
 3. Koodin pit??isi n??ytt???? t??lt?? VB: ss??:
 
-Tuo KS.ModParser
-Tuo KS.TextWriterColor
-Julkisen luokan HelloArgs
-Ottaa k??ytt????n IScriptin
-Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
-Ominaisuus Def As String toteuttaa IScript.Def
-Ominaisuuden nimi merkkijonona toteuttaa IScript.Name
-Ominaisuusversio merkkijonona toteuttaa IScript.Version
-Sub StartMod () toteuttaa IScript.StartMod
-Cmd = "SayHello"
-Def = ""
-Nimi = "HelloArgs"
-Versio = "1.0"
-Lopeta Sub
-Sub StopMod () toteuttaa IScript.StopMod
-Lopeta Sub
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Jos (args = "HW") Sitten
-W ("Hello World", "neutralText")
-muu
-W ("Tee minut sanottavaksi" SayHello HW. "" "," NeutralText ")
-Loppu Jos
-Lopeta Sub
-Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
-Lopeta Sub
-Loppuluokka
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
+    Public Class HelloArgs
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "SayHello"
+            Def = ""
+            Name = "HelloArgs"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	    If (args = "HW") Then
+	    	W("Hello World", True, "neutralText")
+	    Else
+	    	W("Make me say Hello by running ""SayHello HW.""", True, "neutralText")
+	    End If
+        End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
 
-... Tai C
+... Tai C#
 
-k??ytt??en MP = KS.ModParser;
-k??ytt??en TWC = KS.TextWriterColor;
-julkisen luokan HelloArgs: MP.IScript
-{
-julkinen merkkijono Cmd {get; 
-julkinen merkkijono Def {get; 
-julkinen merkkijono Nimi {get; 
-julkinen merkkijono Version {get; 
-public void StartMod ()
-{
-Cmd = "SayHello";
-Def = "";
-Nimi = "HelloArgs";
-Version = "1,0";
-}
-public void StopMod ()
-{
-}
-public void PerformCmd (merkkijono args = "")
-{
-jos (args == "HW")
-{
-TWC.W ("Hello World", "neutralText");
-}
-muu
-{
-TWC.W ("Anna minut sanomaan" SayHello HW. "," NeutralText ");
-}
-}
-public void InitEvents (merkkijono ev)
-{
-}
-}
+	using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
+	public class HelloArgs : MP.IScript
+	{
+	public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "SayHello";
+			Def = "";
+			Name = "HelloArgs";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+		if (args == "HW")
+		{
+			TWC.W("Hello World", True, "neutralText");
+		}
+		else
+		{
+			TWC.W("Make me say Hello by running \"SayHello HW.\"", True, "neutralText");
+		}
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
 
 4. Toista viimeinen vaihe toisessa esimerkiss??: Hello World on command -ohjelma
 
@@ -379,111 +379,111 @@ public void InitEvents (merkkijono ev)
 
 1. Olettaen, ett?? mod-nimesi on HelloArgs, argumenttisi, joka tekee komennostasi, sanoo Hello World on sanoa Hei, ja ett?? komento on WhatDoISay, Toista vaiheet 1-3 toisessa esimerkiss??: Hello World on command suoritetaan
 2. Tee komentok??sittelij?? ja anna sen vastata WhatDoISay-mod-komentoon:
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Dim splitArgs kuten merkkijono () = args.Split ({"" c})
-Dim ArgCount As Integer = 1
-Jos splitArgs.Length> 1 Sitten
-Jos (splitArgs (0) = "Sano" ja splitArgs (1) = "Hei") Sitten
-W ("Hello World", "neutralText")
-muu
-W ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
-Loppu Jos
-muu
-W ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
-Loppu Jos
-Jokaiselle argille merkkijonoina jaettuna
-W ("Argumentti {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
-ArgCount = 1
-Seuraava
-Lopeta Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	Dim splitArgs As String() = args.Split({" "c})
+        Dim ArgCount As Integer = 1
+        If splitArgs.Length > 1 Then
+            If (splitArgs(0) = "Say" And splitArgs(1) = "Hello") Then
+                W("Hello World", True, "neutralText")
+            Else
+                W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
+            End If
+        Else
+            W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
+        End If
+        For Each arg As String In splitArgs
+            W("Argument {0}: {1}", True, "neutralText", ArgCount, splitArgs(ArgCount - 1))
+            ArgCount += 1
+        Next
+    End Sub
 3. Koodin pit??isi n??ytt???? t??lt?? VB: ss??:
 
-Tuo KS.ModParser
-Tuo KS.TextWriterColor
-Julkisen luokan HelloArgs
-Ottaa k??ytt????n IScriptin
-Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
-Ominaisuus Def As String toteuttaa IScript.Def
-Ominaisuuden nimi merkkijonona toteuttaa IScript.Name
-Ominaisuusversio merkkijonona toteuttaa IScript.Version
-Sub StartMod () toteuttaa IScript.StartMod
-Cmd = "WhatDoISay"
-Def = ""
-Nimi = "HelloArgs"
-Versio = "1.0"
-Lopeta Sub
-Sub StopMod () toteuttaa IScript.StopMod
-Lopeta Sub
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Dim splitArgs kuten merkkijono () = args.Split ({"" c})
-Dim ArgCount As Integer = 1
-Jos splitArgs.Length> 1 Sitten
-Jos (splitArgs (0) = "Sano" ja splitArgs (1) = "Hei") Sitten
-W ("Hello World", "neutralText")
-muu
-W ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
-Loppu Jos
-muu
-W ("Anna minut sanomaan Hei, k??ynnist??ess??si" WhatDoISay Say Hello. "" "," NeutralText ")
-Loppu Jos
-Jokaiselle argille merkkijonoina jaettuna
-W ("Argumentti {0}: {1}", "neutralText", ArgCount, splitArgs (ArgCount - 1))
-ArgCount = 1
-Seuraava
-Lopeta Sub
-Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
-Lopeta Sub
-Loppuluokka
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
+    Public Class HelloArgs
+    	Implements IScript
+	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "WhatDoISay"
+            Def = ""
+            Name = "HelloArgs"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+	    Dim splitArgs As String() = args.Split({" "c})
+            Dim ArgCount As Integer = 1
+            If splitArgs.Length > 1 Then
+            	If (splitArgs(0) = "Say" And splitArgs(1) = "Hello") Then
+                    W("Hello World", True, "neutralText")
+            	Else
+                    W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
+            	End If
+            Else
+            	W("Make me say Hello by running ""WhatDoISay Say Hello.""", True, "neutralText")
+            End If
+            For Each arg As String In splitArgs
+            	W("Argument {0}: {1}", True, "neutralText", ArgCount, splitArgs(ArgCount - 1))
+            	ArgCount += 1
+            Next
+        End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
 
-... Tai C
+... Tai C#
 
-k??ytt??en MP = KS.ModParser;
-k??ytt??en TWC = KS.TextWriterColor;
-julkisen luokan HelloArgs: MP.IScript
-{
-julkinen merkkijono Cmd {get; 
-julkinen merkkijono Def {get; 
-julkinen merkkijono Nimi {get; 
-julkinen merkkijono Version {get; 
-public void StartMod ()
-{
-Cmd = "Mit?? ei tarvitse";
-Def = "";
-Nimi = "HelloArgs";
-Version = "1,0";
-}
-public void StopMod ()
-{
-}
-public void PerformCmd (merkkijono args = "")
-{
-merkkijono [] splitArgs = args.Split (uusi [] {''});
-int ArgCount = 1;
-jos (splitArgs.Length> 1)
-{
-jos (splitArgs [0] == "Sano"
-{
-TWC.W ("Hello World", "neutralText");
-}
-muu
-{
-TWC.W ("Tee minut sanottavaksi:" WhatDoISay Say Hello. "," NeutralText ");
-}
-}
-muu
-{
-TWC.W ("Tee minut sanottavaksi:" WhatDoISay Say Hello. "," NeutralText ");
-}
-foreach (merkkijono arg in splitArgs)
-{
-TWC.W ("Argumentti {0}: {1}", "neutralText", ArgCount, splitArgs [ArgCount - 1]);
-ArgCount = 1;
-}
-}
-public void InitEvents (merkkijono ev)
-{
-}
-}
+    using MP = KS.ModParser;
+    using TWC = KS.TextWriterColor;
+	public class HelloArgs : MP.IScript
+	{
+		public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "WhatDoISay";
+			Def = "";
+			Name = "HelloArgs";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+		string[] splitArgs = args.Split(new[] {' '});
+			int ArgCount = 1;
+			if (splitArgs.Length > 1)
+			{
+				if (splitArgs[0] == "Say" && splitArgs[1] == "Hello")
+				{
+					TWC.W("Hello World", True, "neutralText");
+				}
+				else
+				{
+					TWC.W("Make me say Hello by running \"WhatDoISay Say Hello.\"", True, "neutralText");
+				}
+			}
+			else
+			{
+				TWC.W("Make me say Hello by running \"WhatDoISay Say Hello.\"", True, "neutralText");
+			}
+			foreach (string arg in splitArgs)
+			{
+				TWC.W("Argument {0}: {1}", True, "neutralText", ArgCount, splitArgs[ArgCount - 1]);
+				ArgCount += 1;
+			}
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
 
 4. Toista viimeinen vaihe toisessa esimerkiss??: Hello World on command -ohjelma
 
@@ -491,109 +491,109 @@ public void InitEvents (merkkijono ev)
 
 1. Olettaen, ett?? mod-nimesi on InternetSpeed ??????ja ett?? komento on getnetspeed, Toista vaiheet 1-3 toisessa esimerkiss??: Hei World on command
 2. Laita n??m?? nimitilat tiedoston yl??puolelle:
-- Tuonti System.Net
-- Tuonti System.Linq
-- Tuonti System.IO
-- Tuonti System.Math
-- Tuo Microsoft.VisualBasic.Interaction
+    - Imports System.Net
+    - Imports System.Linq
+    - Imports System.IO
+    - Imports System.Math
+    - Imports Microsoft.VisualBasic.Interaction
 3. Tee komentok??sittelij??:
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Dim nopeudet kaksinkertaisina () = New Double (4) {}
-I: n kokonaisarvona = 0 - 4
-Dim jQueryFileSize Aseta kokonaisuudessaan = 261
-Himmennyt asiakas uutena WebClientin?? ()
-Dim startTime Asetusp??iv??n?? = DateTime.Now
-client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ ("USERPROFILE") "\ t
-Dim endTime Kuten p??iv??m????r??Time = DateTime.Now
-nopeudet (i) = Round ((jQueryFileSize / (endTime - startTime) .TotalSeconds))
-Seuraava
-File.Delete (Environ ("USERPROFILE") "\ t
-W ("Latausnopeus: {0} KB / s", "neutralText", nopeudet. Keskiarvo ())
-Lopeta Sub
+    Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+        Dim speeds As Double() = New Double(4) {}
+        For i As Integer = 0 To 4
+            Dim jQueryFileSize As Integer = 261
+            Dim client As New WebClient()
+            Dim startTime As DateTime = DateTime.Now
+            client.DownloadFile("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ("USERPROFILE") + "\jQuery.js")
+            Dim endTime As DateTime = DateTime.Now
+            speeds(i) = Round((jQueryFileSize / (endTime - startTime).TotalSeconds))
+        Next
+        File.Delete(Environ("USERPROFILE") + "\jQuery.js")
+        W("Download speed: {0}KB/s", True, "neutralText", speeds.Average())
+    End Sub
 4. Koodin pit??isi n??ytt???? t??lt?? VB: ss??:
 
-Tuonti System.Net
-Tuonti System.Linq
-Tuonti System.IO
-Tuonti System.Math
-Tuonti Microsoft.VisualBasic.Interaction
-Tuo KS.ModParser
-Tuo KS.TextWriterColor
-Julkinen luokka InternetSpeed
-Ottaa k??ytt????n IScriptin
-Ominaisuus Cmd merkkijono toteuttaa IScript.Cmd
-Ominaisuus Def As String toteuttaa IScript.Def
-Ominaisuuden nimi merkkijonona toteuttaa IScript.Name
-Ominaisuusversio merkkijonona toteuttaa IScript.Version
-Sub StartMod () toteuttaa IScript.StartMod
-Cmd = "getnetspeed"
-Def = ""
-Nimi = "InternetSpeed"
-Versio = "1.0"
-Lopeta Sub
-Sub StopMod () toteuttaa IScript.StopMod
-Lopeta Sub
-Sub PerformCmd (valinnainen ByVal args merkkijonona = "") toteuttaa IScript.PerformCmd
-Dim nopeudet kaksinkertaisina () = New Double (4) {}
-I: n kokonaisarvona = 0 - 4
-Dim jQueryFileSize Aseta kokonaisuudessaan = 261
-Himmennyt asiakas uutena WebClientin?? ()
-Dim startTime As Date = Date.Now
-client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ ("USERPROFILE") "\ t
-Dim EndTime As Date = Date.Now
-nopeudet (i) = Round (jQueryFileSize / (endTime - startTime) .TotalSeconds)
-Seuraava
-File.Delete (Environ ("USERPROFILE") "\ t
-W ("Latausnopeus: {0} KB / s", "neutralText", nopeudet. Keskiarvo ())
-Lopeta Sub
-Sub InitEvents (ByVal ev kuten merkkijono) toteuttaa IScript.InitEvents
-Lopeta Sub
-Loppuluokka
+    Imports System.Net
+    Imports System.Linq
+    Imports System.IO
+    Imports System.Math
+    Imports Microsoft.VisualBasic.Interaction
+    Imports KS.ModParser
+    Imports KS.TextWriterColor
+    Public Class InternetSpeed
+    	Implements IScript
+    	Property Cmd As String Implements IScript.Cmd
+    	Property Def As String Implements IScript.Def
+    	Property Name As String Implements IScript.Name
+    	Property Version As String Implements IScript.Version
+    	Sub StartMod() Implements IScript.StartMod
+            Cmd = "getnetspeed"
+            Def = ""
+            Name = "InternetSpeed"
+            Version = "1.0"
+    	End Sub
+    	Sub StopMod() Implements IScript.StopMod
+    	End Sub
+    	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
+            Dim speeds As Double() = New Double(4) {}
+            For i As Integer = 0 To 4
+            	Dim jQueryFileSize As Integer = 261
+            	Dim client As New WebClient()
+            	Dim startTime As Date = Date.Now
+            	client.DownloadFile("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", Environ("USERPROFILE") + "\jQuery.js")
+            	Dim endTime As Date = Date.Now
+            	speeds(i) = Round(jQueryFileSize / (endTime - startTime).TotalSeconds)
+            Next
+            File.Delete(Environ("USERPROFILE") + "\jQuery.js")
+            W("Download speed: {0}KB/s", True, "neutralText", speeds.Average())
+    	End Sub
+    	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
+    	End Sub
+    End Class
 
 ... Tai C
 
-k??ytt??m??ll?? j??rjestelm????;
-System.Netin avulla;
-System.Linqin avulla;
-System.IO: n avulla;
-k??ytt??en M = System.Math;
-k??ytt??en MP = KS.ModParser;
-k??ytt??en TWC = KS.TextWriterColor;
-julkinen luokka InternetSpeed: MP.IScript
-{
-julkinen merkkijono Cmd {get; 
-julkinen merkkijono Def {get; 
-julkinen merkkijono Nimi {get; 
-julkinen merkkijono Version {get; 
-public void StartMod ()
-{
-Cmd = "getnetspeed";
-Def = "";
-Name = "InternetSpeed";
-Version = "1,0";
-}
-public void StopMod ()
-{
-}
-public void PerformCmd (merkkijono args = "")
-{
-kaksinkertainen [] nopeus = uusi kaksinkertainen [5];
-varten (int i = 0; i <= 4; i)
-{
-int jQueryFileSize = 261;
-WebClient client = uusi WebClient ();
-DateTime startTime = DateTime.Now;
-client.DownloadFile ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", System.Environment.GetEnvironmentVariable ("USERPROFILE") "jQuery.js");
-DateTime endTime = DateTime.Now;
-nopeudet [i] = M.Round (jQueryFileSize / (endTime - startTime) .TotalSeconds);
-}
-File.Delete (System.Environment.GetEnvironmentVariable) ("USERPROFILE") "jQuery.js");
-TWC.W ("Latausnopeus: {0} KB / s", "neutralText", nopeudet. Keskiarvo ());
-}
-public void InitEvents (merkkijono ev)
-{
-}
-}
+    using System;
+	using System.Net;
+	using System.Linq;
+	using System.IO;
+	using M = System.Math;
+	using MP = KS.ModParser;
+	using TWC = KS.TextWriterColor;
+	public class InternetSpeed : MP.IScript
+	{
+		public string Cmd {get; set;}
+		public string Def {get; set;}
+		public string Name {get; set;}
+		public string Version {get; set;}
+		public void StartMod()
+		{
+			Cmd = "getnetspeed";
+			Def = "";
+			Name = "InternetSpeed";
+			Version = "1.0";
+		}
+		public void StopMod()
+		{
+		}
+		public void PerformCmd(string args = "")
+		{
+			double[] speeds = new double[5];
+			for (int i = 0; i <= 4; i++)
+			{
+				int jQueryFileSize = 261;
+				WebClient client = new WebClient();
+				DateTime startTime = DateTime.Now;
+				client.DownloadFile("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js", System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\jQuery.js");
+				DateTime endTime = DateTime.Now;
+				speeds[i] = M.Round(jQueryFileSize / (endTime - startTime).TotalSeconds);
+			}
+			File.Delete(System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\jQuery.js");
+			TWC.W("Download speed: {0}KB/s", True, "neutralText", speeds.Average());
+		}
+		public void InitEvents(string ev)
+		{
+		}
+	}
 
 5. Toista viimeinen vaihe toisessa esimerkiss??: Hello World on command -ohjelma
 

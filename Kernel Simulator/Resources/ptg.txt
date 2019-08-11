@@ -368,4 +368,4 @@ Você pode não ter o libcpanel-json-xs-perl instalado em seu sistema. Consulte 
 Você definiu seu idioma do sistema para algo diferente do inglês. Desculpe pelo inconveniente, mas parece que o Google e seu tradutor são muito estranhos sobre a tradução de blocos de código para qualquer linguagem de programação. Enquanto corrigimos todos os bloqueios de código para páginas de manual traduzidas, sugerimos que você abra um tíquete para o Google Tradutor para traduzir blocos de código que não devem ser traduzidos e defina o idioma do seu sistema para inglês se você o disser.
 Recarrega as modificações.
 Mods recarregados.
-O que há de novo: Corrigida a depuração mostrando a senha em texto não criptografado, Exibido changelogs durante a atualização, Corrigido KeyNotFoundException depois de atualizar a configuração na inicialização
+O que há de novo: Mais correções de codeblock para as páginas de manual em checo, croata, holandês, finlandês, francês, alemão, italiano, malaio, português, espanhol, sueco e turco. Essa versão é resultado de modificações inúteis nos codeblocks que o Google precisa fazer para parecer feia, traduzida, descompilada e desalinhada.

@@ -368,4 +368,4 @@ Nín de xìtǒng shàng kěnéng méiyǒu ānzhuāng libcpanel-json-xs-perl. Qǐ
 Nín yǐ jiāng xìtǒng yǔyán shèzhì wèi chú yīngyǔ zhī wài de rènhé qítā yǔyán. Hěn bàoqiàn gěi nín dài lái bu biàn, dàn sìhū Google jí qí fānyì rényuán duìyú fānyì rènhé biānchéng yǔyán de dàimǎ kuài dōu fēicháng qíguài. Suīrán wǒmen xiūfùle fānyì shǒucè yè de suǒyǒu dàimǎ kuài, dàn wǒmen jiànyì nín dǎkāi Goog​​le Translate de piàojù, yǐ fānyì bù xūyào fānyì de dàimǎ kuài, bìng zài nín shuō chū shí jiāng xìtǒng yǔyán shèzhì wèi yīngyǔ.
 Chóngxīn jiāzài xiūgǎi.
 Mods chóngxīn jiāzài.
-Xīn gōngnéng: Xiūfùle yǐ míngwén xiǎnshì mìmǎ de tiáoshì, gēngxīn qíjiān xiǎnshì de gēnggǎi rìzhì, Xiūfùle qǐdòng shí gēngxīn pèizhì hòu de KeyNotFoundException
+Xīn gōngnéng: Jiékè yǔ, kè luó dì yǎ yǔ, hélán yǔ, fēnlán yǔ, fǎyǔ, déyǔ, yìdàlì yǔ, mǎ lái yǔ, pútáoyá yǔ, xībānyá yǔ, ruìdiǎn yǔ hé tǔ'ěrqí yǔ shǒucè yè de gèng duō dàimǎ kuài gēngzhèng. Cǐ bǎnběn shì duì Google bìxū duì dàimǎ kuài jìnxíng wúyòng xiūgǎi de jiéguǒ, yīncǐ tā gǎnjué nánkàn, fānyì, wúfǎ biānyì hé cuòwèi.

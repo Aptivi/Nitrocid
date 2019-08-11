@@ -17,39 +17,39 @@ Moding asas (screensaver)
 
 1. Ulangi langkah 1-8 dari panduan Modding
 2. Pada bahagian Compile, klik pada Build Events, kemudian tuliskan ini pada baris arahan peristiwa pasca-Build:
-- copy .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (Letakkan SS sebelum .m supaya KS mengenalinya sebagai screensaver dan bukan sebagai mod)
-- del / Q *. * (untuk memastikan tiada fail DLL dummy yang dicipta kerana kita tidak menggunakan DLL untuk mod)
+	- copy ..\..\ModFile.vb ..\..\..\..\ModFileSS.m (Letakkan SS sebelum .m supaya KS mengenalinya sebagai screensaver dan bukan sebagai mod)
+	- del /Q *.* (untuk memastikan tiada fail DLL dummy yang dicipta kerana kita tidak menggunakan DLL untuk mod)
 3. Ulangi langkah 9-16 dari panduan Modding, tetapi gantikan Import KS.ModParser dengan Import KS.Screensaver
 4. Antara Kelas Awam ... dan baris Kelas Akhir, biarkan Visual Studio 2017 tahu bahawa anda akan mencipta screensaver KS anda dengan menulis: Mengimplementasikan ICustomSaver
 5. Jika anda akan menambah ruang nama, peraturan ini mesti dipenuhi:
-1) Jangan import KS dengan sendirinya. 
-2) Apabila mengimport modul / kelas seperti TextWriterColor, ia ditulis seperti ini: Import KS.TextWriterColor
+	1) Jangan import KS dengan sendirinya. 
+	2) Apabila mengimport modul / kelas seperti TextWriterColor, ia ditulis seperti ini: Import KS.TextWriterColor
 6. Tentukan sifat untuk maklumat mod dengan meletakkan di bawah Implementasi IScript:
-Harta Bermula Sebagai Memasang Boolean ICustomSaver.Initialized
+    Property Initialized As Boolean Implements ICustomSaver.Initialized
 7. Buat sub screensaver init bernama InitSaver () yang melaksanakan ICustomSaver.InitSaver, dengan menulis:
-SubInitSaver () Mengimplementasikan ICustomSaver.InitSaver
-'Kod anda di sini
-Inisialisasi = Benar 'Letakkan di mana-mana di sub jika anda membuat Jika syarat, jika tidak, tinggalkan di sini.
-Sub Akhir
+    Sub InitSaver() Implements ICustomSaver.InitSaver
+        'Your code here
+	Initialized = True 'Put it anywhere in the sub if you're making If conditions, otherwise, leave it here.
+    End Sub
 8. Gantikan setiap Kod anda di sini mengulas dengan kod anda. 
 9. Buat pra-paparan (Dipanggil sebelum memaparkan screensaver) sub bernama PreDisplay () yang melaksanakan ICustomSaver.PreDisplay, dengan menulis:
-Sub PreDisplay () Mengimplementasikan ICustomSaver.PreDisplay
-'Kod anda di sini
-Sub Akhir
+    Sub PreDisplay() Implements ICustomSaver.PreDisplay
+        'Your code here
+    End Sub
 10. Buat kod paparan anda (ia sepatutnya memaparkan sesuatu) sub bernama ScrnSaver () yang melaksanakan ICustomSaver.ScrnSaver, dengan menulis:
-Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
-'Kod anda di sini
-Sub Akhir
+    Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+        'Your code here
+    End Sub
 11. Anda boleh membuat pasangan anda di mana sahaja di kelas, tetapi jika:
-1) mereka berada di kelas yang berbeza, tekan Enter on End Class dan buat kelas baru awam yang menyimpan subs baru:
-AnotherClass Class Awam
-'Takrifan anda di bawah, dan sebagainya subs, fungsi, antara muka, dan lain-lain
-Kelas Akhir
-2) mereka cuba untuk memulakan semula screensaver dengan memanggil semula InitSaver (), Cuba persekitaran ujian anda terlebih dahulu, kemudian persekitaran Pengeluaran jika itu berfungsi dengan baik.
-Dan syarat-syarat berikut harus dipenuhi:
-1) Mereka tidak boleh membuat gelung tanpa batas kecuali anda membuat mereka yang keluar jika syarat-syarat tertentu dipenuhi
-2) Mereka tidak boleh cuba menyebabkan kesilapan dengan kernel.
-3) Letakkan sub panggilan anda pada salah satu daripada tiga kelip yang mengimplementasikan antara muka ICustomSaver. 
+	1) mereka berada di kelas yang berbeza, tekan Enter on End Class dan buat kelas baru awam yang menyimpan subs baru:
+       Public Class AnotherClass
+	       'Your definitions below, and so your subs, functions, interfaces, etc.
+       End Class
+	2) mereka cuba untuk memulakan semula screensaver dengan memanggil semula InitSaver (), Cuba persekitaran ujian anda terlebih dahulu, kemudian persekitaran Pengeluaran jika itu berfungsi dengan baik.
+	Dan syarat-syarat berikut harus dipenuhi:
+	1) Mereka tidak boleh membuat gelung tanpa batas kecuali anda membuat mereka yang keluar jika syarat-syarat tertentu dipenuhi
+	2) Mereka tidak boleh cuba menyebabkan kesilapan dengan kernel.
+	3) Letakkan sub panggilan anda pada salah satu daripada tiga kelip yang mengimplementasikan antara muka ICustomSaver. 
 12. Jalankan pembinaan. 
 13. Jalankan Simulator Kernel anda yang baru sahaja dirujuk ke dalam projek anda, dan muatkan, tetapkan lalai, dan kunci scren anda dan screensaver anda ada di sana.
 
@@ -62,142 +62,142 @@ Screensaver kotak mesej belakang memberitahu orang bahawa pemilik komputer hilan
 3. Klik Tambah, dan kod itu akan siap.
 4. Tulis di bawah (Anggapkan nama mod anda ialah SOR) Kelas Awam SOR: Pengimplementasian ICustomSaver
 5. Tulis di atas Kelas Awam SOR:
-- Sistem Import
-- Sistem Import.Threading
-- Import KS.Screensaver
-- Import KS.TextWriterColor
-- Import KS.Login
+   - Imports System
+   - Imports System.Threading
+   - Imports KS.Screensaver
+   - Imports KS.TextWriterColor
+   - Imports KS.Login
 6. Anda harus mendapatkan kesilapan yang mengatakan bahawa subs ini harus dibuat.
 7. Buat pengendali acara screensaver permulaan dengan menulis:
-Harta Bermula Sebagai Memasang Boolean ICustomSaver.Initialized
-SubInitSaver () Mengimplementasikan ICustomSaver.InitSaver
-W ("Muatkan screensaver ini menggunakan" "loadsaver SORSS.m" "dan" "setsaver SORSS.m" "", "neutralText")
-Inisialized = Benar
-Sub Akhir
+    Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Sub InitSaver() Implements ICustomSaver.InitSaver
+	W("Load this screensaver using ""loadsaver SORSS.m"" and ""setsaver SORSS.m""", True, "neutralText")
+        Initialized = True
+    End Sub
 8. Oleh kerana kami tidak melaksanakan apa-apa sebelum memaparkan screensaver, kami akan meninggalkan ini kosong:
-Sub PreDisplay () Mengimplementasikan ICustomSaver.PreDisplay
-Sub Akhir
+    Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
 9. Tulis di atas Harta yang Diisytiharkan ...:
-Awam SOR_Random Sebagai Rawak Baru () 'Menetapkan semula penjana nombor rawak
-Public S_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
-Awam O_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
-Public R_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
+    Public SOR_Random As New Random() 'Initializes the random number generator
+    Public S_Random As New Random() 'Initializes the random number generator
+    Public O_Random As New Random() 'Initializes the random number generator
+    Public R_Random As New Random() 'Initializes the random number generator
 9. Tulis pada subjek ScrnSaver ():
-Console.Clear ()
-Jika Custom.CancellationPending = Benar Kemudian 'Ini akan membetulkan masalah untuk tugas sibuk.
-Keluar Untuk
-Akhir Jika
-Dim SOR_Integer Sebagai Integer = SOR_Random.Next (1, 4) 'Memilih sama ada Segera, Semalaman atau Rude
-Dim Soon_MsgID Sebagai Integer = SOR_Random.Next (0, 2) 'Memilih mesej dalam Arahan Soon
-Dim Over_MsgID Sebagai Integer = SOR_Random.Next (0, 2) 'Memilih mesej dalam array Overnight
-Dim Rude_MsgID Sebagai Integer = SOR_Random.Next (0, 3) 'Memilih mesej dalam pelbagai Rude
-Console.SetWindowPosition (0, 1)
-Pilih Kes SOR_Integer
-Kes 1 'Tidak lama kemudian
-WriteMsg (SOR_Integer, Soon_MsgID)
-Kes 2 'Bermalam
-WriteMsg (SOR_Integer, Over_MsgID)
-Kes 3 'Rude
-WriteMsg (SOR_Integer, Rude_MsgID)
-Akhir Pilih
-Thread.Sleep (10000)
+    Console.Clear()
+    If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+        Exit For
+    End If
+    Dim SOR_Integer As Integer = SOR_Random.Next(1, 4) 'Chooses whether it's Soon, Overnight or Rude
+    Dim Soon_MsgID As Integer = SOR_Random.Next(0, 2) 'Selects messages in the Soon array
+    Dim Over_MsgID As Integer = SOR_Random.Next(0, 2) 'Selects messages in the Overnight array
+    Dim Rude_MsgID As Integer = SOR_Random.Next(0, 3) 'Selects messages in the Rude array
+    Console.SetWindowPosition(0, 1)
+    Select Case SOR_Integer
+        Case 1 'Soon
+            WriteMsg(SOR_Integer, Soon_MsgID)
+        Case 2 'Overnight
+            WriteMsg(SOR_Integer, Over_MsgID)
+        Case 3 'Rude
+            WriteMsg(SOR_Integer, Rude_MsgID)
+    End Select
+    Thread.Sleep(10000)
 11. Anda mungkin perlu mencipta 1 fungsi dan 2 subs untuk ini berfungsi. 
-Fungsi Shared Public ParsePlaces (ByVal text As String)
-text = text.Replace ("<OWNER>", signedinusrnm)
-Hantar teks
-Fungsi Akhir
-Sub Public Shared InitializeBar (ByVal strlen As Integer)
-W ("-", "neutralText")
-Untuk l Sebagai Integer = 0 Untuk strlen - 1
-W ("-", "neutralText")
-Seterusnya
-W ("-", "neutralText")
-Sub Akhir
-Subbahas Awam WriteMsg (ByVal TypeID Sebagai Integer, ByVal MsgID Sebagai Integer)
-Dim BackMessages Sebagai String () = {"<OWNER> akan kembali tidak lama lagi.", "<OWNER> sibuk dan dia akan kembali tidak lama lagi."}
-Dim OvernightMsg Sebagai String () = {"Nampaknya <OWNER> akan kembali semalaman", "Dia akan kembali semalaman."}
-Dim RudeMessages Sebagai String () = {"Bolehkah anda pergi?", "Pergi, <OWNER> akan kembali tidak lama lagi", "<OWNER>
-Teks Dim sebagai String = ""
-Pilih TypeID Case
-Kes 1
-text = ParsePlaces (BackMessages (MsgID))
-Kes 2
-teks = ParsePlaces (OvernightMsg (MsgID))
-Kes 3
-text = ParsePlaces (RudeMessages (MsgID))
-Akhir Pilih
-InisialisasiBar (text.Length)
-W ("| {0} |", "neutralText", teks)
-InisialisasiBar (text.Length)
-Sub Akhir
+    Public Shared Function ParsePlaces(ByVal text As String)
+        text = text.Replace("<OWNER>", signedinusrnm)
+        Return text
+    End Function
+    Public Shared Sub InitializeBar(ByVal strlen As Integer)
+        W("   +-", "neutralText")
+        For l As Integer = 0 To strlen - 1
+            W("-", "neutralText")
+        Next
+        W("-+", "neutralText")
+    End Sub
+    Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer)
+	Dim BackMessages As String() = {"<OWNER> will be back soon.", "<OWNER> is busy. He will be back soon."}
+    	Dim OvernightMsg As String() = {"It seems that <OWNER> will be back overnight", "He'll be back overnight."}
+    	Dim RudeMessages As String() = {"Can you go away?", "Go away, <OWNER> will be back soon", "<OWNER> isn't here. Go away."}
+        Dim text As String = ""
+        Select Case TypeID
+            Case 1
+                text = ParsePlaces(BackMessages(MsgID))
+            Case 2
+                text = ParsePlaces(OvernightMsg(MsgID))
+            Case 3
+                text = ParsePlaces(RudeMessages(MsgID))
+        End Select
+        InitializeBar(text.Length)
+        W("   | {0} |", "neutralText", text)
+        InitializeBar(text.Length)
+    End Sub
 12. Kod sepatutnya seperti ini:
-Sistem Import
-Sistem Import.Threading
-Import KS.Screensaver
-Import KS.TextWriterColor
-Import KS.Login
-Kelas Awam SoonOvernightRude
-Memerlukan ICustomSaver
-Harta Bermula Sebagai Memasang Boolean ICustomSaver.Initialized
-Awam SOR_Random Sebagai Rawak Baru () 'Menetapkan semula penjana nombor rawak
-Public S_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
-Awam O_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
-Public R_Random Sebagai Rawak Baru () 'Menerapkan semula penjana nombor rawak
-SubInitSaver () Mengimplementasikan ICustomSaver.InitSaver
-W ("Tetapkan screensaver ini sebagai lalai menggunakan" "setsaver SORSS.m" "", "neutralText")
-Inisialized = Benar
-Sub Akhir
-Sub PreDisplay () Mengimplementasikan ICustomSaver.PreDisplay
-Sub Akhir
-Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
-Console.Clear ()
-Jika Custom.CancellationPending = Benar Kemudian 'Ini akan membetulkan masalah untuk tugas sibuk.
-Keluar Untuk
-Akhir Jika
-Dim SOR_Integer Sebagai Integer = SOR_Random.Next (1, 4) 'Memilih sama ada Segera, Semalaman atau Rude
-Dim Soon_MsgID Sebagai Integer = S_Random.Next (0, 2) 'Memilih mesej dalam Arahan Soon
-Dim Over_MsgID Sebagai Integer = O_Random.Next (0, 2) 'Memilih mesej dalam array Overnight
-Dim Rude_MsgID Sebagai Integer = R_Random.Next (0, 3) 'Memilih mesej dalam array Rude
-Console.SetCursorPosition (0, 1)
-Pilih Kes SOR_Integer
-Kes 1 'Tidak lama kemudian
-WriteMsg (SOR_Integer, Soon_MsgID)
-Kes 2 'Bermalam
-WriteMsg (SOR_Integer, Over_MsgID)
-Kes 3 'Rude
-WriteMsg (SOR_Integer, Rude_MsgID)
-Akhir Pilih
-Thread.Sleep (10000)
-Sub Akhir
-Fungsi Shared Public ParsePlaces (ByVal text As String)
-text = text.Replace ("<OWNER>", signedinusrnm)
-Hantar teks
-Fungsi Akhir
-Sub Public Shared InitializeBar (ByVal strlen As Integer)
-W ("-", "neutralText")
-Untuk l Sebagai Integer = 0 Untuk strlen - 1
-W ("-", "neutralText")
-Seterusnya
-W ("-", "neutralText")
-Sub Akhir
-Subbahas Awam WriteMsg (ByVal TypeID Sebagai Integer, ByVal MsgID Sebagai Integer)
-Dim BackMessages Sebagai String () = {"<OWNER> akan kembali tidak lama lagi.", "<OWNER> sibuk dan dia akan kembali tidak lama lagi."}
-Dim OvernightMsg Sebagai String () = {"Nampaknya <OWNER> akan kembali semalaman", "Dia akan kembali semalaman."}
-Dim RudeMessages Sebagai String () = {"Bolehkah anda pergi?", "Pergi, <OWNER> akan kembali tidak lama lagi", "<OWNER>
-Teks Dim sebagai String = ""
-Pilih TypeID Case
-Kes 1
-text = ParsePlaces (BackMessages (MsgID))
-Kes 2
-teks = ParsePlaces (OvernightMsg (MsgID))
-Kes 3
-text = ParsePlaces (RudeMessages (MsgID))
-Akhir Pilih
-InisialisasiBar (text.Length)
-W ("| {0} |", "neutralText", teks)
-InisialisasiBar (text.Length)
-Sub Akhir
-Kelas Akhir
+    Imports System
+    Imports System.Threading
+    Imports KS.Screensaver
+    Imports KS.TextWriterColor
+    Imports KS.Login
+    Public Class SoonOvernightRude
+    	Implements ICustomSaver
+    	Property Initialized As Boolean Implements ICustomSaver.Initialized
+    	Public SOR_Random As New Random() 'Initializes the random number generator
+    	Public S_Random As New Random() 'Initializes the random number generator
+    	Public O_Random As New Random() 'Initializes the random number generator
+    	Public R_Random As New Random() 'Initializes the random number generator
+    	Sub InitSaver() Implements ICustomSaver.InitSaver
+            W("Set this screensaver as default using ""setsaver SORSS.m""", "neutralText")
+            Initialized = True
+    	End Sub
+    	Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    	End Sub
+    	Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+	        Console.Clear()
+	        If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+                Exit For
+            End If
+    	    Dim SOR_Integer As Integer = SOR_Random.Next(1, 4) 'Chooses whether it's Soon, Overnight or Rude
+    	    Dim Soon_MsgID As Integer = S_Random.Next(0, 2) 'Selects messages in the Soon array
+    	    Dim Over_MsgID As Integer = O_Random.Next(0, 2) 'Selects messages in the Overnight array
+    	    Dim Rude_MsgID As Integer = R_Random.Next(0, 3) 'Selects messages in the Rude array
+            Console.SetCursorPosition(0, 1)
+            Select Case SOR_Integer
+            	Case 1 'Soon
+                    WriteMsg(SOR_Integer, Soon_MsgID)
+            	Case 2 'Overnight
+                    WriteMsg(SOR_Integer, Over_MsgID)
+            	Case 3 'Rude
+                    WriteMsg(SOR_Integer, Rude_MsgID)
+            End Select
+	    Thread.Sleep(10000)
+    	End Sub
+    	Public Shared Function ParsePlaces(ByVal text As String)
+            text = text.Replace("<OWNER>", signedinusrnm)
+            Return text
+        End Function
+        Public Shared Sub InitializeBar(ByVal strlen As Integer)
+            W("   +-", "neutralText")
+            For l As Integer = 0 To strlen - 1
+            	W("-", "neutralText")
+            Next
+            W("-+", "neutralText")
+        End Sub
+        Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer)
+	        Dim BackMessages As String() = {"<OWNER> will be back soon.", "<OWNER> is busy. He will be back soon."}
+    	    Dim OvernightMsg As String() = {"It seems that <OWNER> will be back overnight", "He'll be back overnight."}
+    	    Dim RudeMessages As String() = {"Can you go away?", "Go away, <OWNER> will be back soon", "<OWNER> isn't here. Go away."}
+            Dim text As String = ""
+            Select Case TypeID
+            	Case 1
+                    text = ParsePlaces(BackMessages(MsgID))
+            	Case 2
+                    text = ParsePlaces(OvernightMsg(MsgID))
+            	Case 3
+                    text = ParsePlaces(RudeMessages(MsgID))
+            End Select
+            InitializeBar(text.Length)
+            W("   | {0} |", "neutralText", text)
+            InitializeBar(text.Length)
+    	End Sub
+    End Class
 13. Jalankan binaan. 
 14. Jalankan Kernel Simulator anda yang baru dirujuk ke dalam projek anda, dan beban, tetapkan sebagai lalai, dan jalankan skrin penyelaman.
 
@@ -205,186 +205,186 @@ Kelas Akhir
 
 1. Ulangi langkah 1-4 pada contoh pertama: Kotak Mesej Dalam Konsol, dan Soon, Semalaman, atau Rude (Pergi jauh ...) mesej
 2. Tulis di atas Blank Kelas Awam (dengan mengandaikan bahawa nama kelas anda kosong):
-- Sistem Import
-- Import KS.Screensaver
+    - Imports System
+    - Imports KS.Screensaver
 3. Tuliskan ini di bawah Implementasi ICustomSaver:
-Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
-Awam Sub InitSaver () Mengimplementasikan ICustomSaver.InitSaver
-Inisialized = Benar
-Sub Akhir
-Public Sub PreDisplay () Implementasi ICustomSaver.PreDisplay
-Sub Akhir
-Public Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
-
-Sub Akhir
+    Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Public Sub InitSaver() Implements ICustomSaver.InitSaver
+        Initialized = True
+    End Sub
+    Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
+    Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+    
+    End Sub
 4. Tulis di dalam sub ScrnSaver:
-Console.Clear ()
+	Console.Clear()
 5. Kod sepatutnya seperti ini:
-Sistem Import
-Import KS.Screensaver
-Blank Kelas Awam
-Memerlukan ICustomSaver
-Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
-Awam Sub InitSaver () Mengimplementasikan ICustomSaver.InitSaver
-Inisialized = Benar
-Sub Akhir
-Public Sub PreDisplay () Implementasi ICustomSaver.PreDisplay
-Sub Akhir
-Public Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
-Console.Clear ()
-Sub Akhir
-Kelas Akhir
+    Imports System
+    Imports KS.Screensaver
+    Public Class Blank
+    	Implements ICustomSaver
+    	Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    	Public Sub InitSaver() Implements ICustomSaver.InitSaver
+            Initialized = True
+    	End Sub
+    	Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    	End Sub
+    	Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+            Console.Clear()
+   		End Sub
+    End Class
 5. Ulangi langkah 13-14 pada contoh pertama: Kotak Pesan Dalam Konsol, dan Soon, Semalaman, atau Rude (Pergi jauh ...) mesej
 
 3. Animasi (Bulatan Lukisan - 4 bingkai - 4 FPS)
 
 Contoh ini akan membuat anda bermula dengan animasi. 
 
-Sistem Import
-Import Microsoft.VisualBasic.Constants
-Import KS.TextWriterColor
-Sistem Import.Threading
-Import KS.Screensaver
-Kelas Awam ANI
-Memerlukan ICustomSaver
-Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
-CurrentStep Awam Sebagai Integer
-Awam Sub InitSaver () Mengimplementasikan ICustomSaver.InitSaver
-Inisialized = Benar
-Sub Akhir
-Public Sub PreDisplay () Implementasi ICustomSaver.PreDisplay
-Sub Akhir
-Public Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
-Untuk CurrentStep = 0 hingga 3
-Console.Clear ()
-Jika Custom.CancellationPending = Benar Kemudian 'Ini akan membetulkan masalah untuk tugas sibuk.
-Keluar Untuk
-Akhir Jika
-W (aniset (CurrentStep), "neutralText")
-Thread.Sleep (150)
-Seterusnya
-Sub Akhir
+Imports System
+Imports Microsoft.VisualBasic.Constants
+Imports KS.TextWriterColor
+Imports System.Threading
+Imports KS.Screensaver
+Public Class ANI
+    Implements ICustomSaver
+    Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Public CurrentStep As Integer
+    Public Sub InitSaver() Implements ICustomSaver.InitSaver
+        Initialized = True
+    End Sub
+    Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
+    Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+        For CurrentStep = 0 To 3
+            Console.Clear()
+	        If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+                Exit For
+            End If
+            W(aniset(CurrentStep), "neutralText")
+            Thread.Sleep(150)
+        Next
+    End Sub
 
-Public aniset As String () = {"mmhyo / -" vbNewLine
-"mNMMMMMNy:" vbNewLine
-".: odMMMd /" vbNewLine
-".oMMMd." vbNewLine
-"` hMMN- "vbNewLine
-"yMMm`" vbNewLine
-"mMM" vbNewLine
-"oMMh" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"",
-"mmhyo / -" vbNewLine
-"mNMMMMMNy:" vbNewLine
-".: odMMMd /" vbNewLine
-".oMMMd." vbNewLine
-"` hMMN- "vbNewLine
-"yMMm`" vbNewLine
-"mMM" vbNewLine
-"oMMh" vbNewLine
-"oMMh" vbNewLine
-"mMM" vbNewLine
-"yMMm`" vbNewLine
-"` hMMN- "vbNewLine
-"` oMMMd. "vbNewLine
-".: odMMMm /" vbNewLine
-"mNMMMMMNy:" vbNewLine
-"mmhhs / -",
-"mmhyo / -" vbNewLine
-"mNMMMMMNy:" vbNewLine
-".: odMMMd /" vbNewLine
-".oMMMd." vbNewLine
-"` hMMN- "vbNewLine
-"yMMm`" vbNewLine
-"mMM" vbNewLine
-"oMMh" vbNewLine
-"hMMo oMMh" vbNewLine
-"MMm mMM" vbNewLine
-"mMMy yMMm`" vbNewLine
-"-NMMh` `hMMN-" vbNewLine
-".dMMMs`` oMMMd." vbNewLine
-"/ dMMMdo:.: odMMMm /" vbNewLine
-": yNMMMMMNmmNMMMMMyy:" vbNewLine
-"- / shhmmmmhhs / -",
-"- / oydmmmmhyo / -" vbNewLine
-": yNMMMMMNmmNMMMMMyy:" vbNewLine
-": dMMMdo:.: odMMMd /" vbNewLine
-".dMMMs .oMMMd." vbNewLine
-"-NMMh` `hMMN-" vbNewLine
-"mMMy yMMm`" vbNewLine
-"MMm mMM" vbNewLine
-"hMMo oMMh" vbNewLine
-"hMMo oMMh" vbNewLine
-"MMm mMM" vbNewLine
-"mMMy yMMm`" vbNewLine
-"-NMMh` `hMMN-" vbNewLine
-".dMMMs`` oMMMd." vbNewLine
-"/ dMMMdo:.: odMMMm /" vbNewLine
-": yNMMMMMNmmNMMMMMyy:" vbNewLine
-"- / shhmmmmhhs / -"}
-Kelas Akhir
+    Public aniset As String() = {"                mmhyo/-         " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                   .:odMMMd/    " + vbNewLine +
+                                 "                       .oMMMd.  " + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                ",
+                                 "                mmhyo/-         " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                   .:odMMMd/    " + vbNewLine +
+                                 "                       .oMMMd.  " + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                       `oMMMd.  " + vbNewLine +
+                                 "                   .:odMMMm/    " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                mmhhs/-         ",
+                                 "                mmhyo/-         " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                   .:odMMMd/    " + vbNewLine +
+                                 "                       .oMMMd.  " + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "hMMo                        oMMh" + vbNewLine +
+                                 "+MMm                        mMM+" + vbNewLine +
+                                 " mMMy                      yMMm`" + vbNewLine +
+                                 " -NMMh`                  `hMMN- " + vbNewLine +
+                                 "  .dMMMs`              `oMMMd.  " + vbNewLine +
+                                 "    /dMMMdo:.      .:odMMMm/    " + vbNewLine +
+                                 "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                                 "         -/shhmmmmhhs/-         ",
+                                 "         -/oydmmmmhyo/-         " + vbNewLine +
+                                 "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                                 "    :dMMMdo:.      .:odMMMd/    " + vbNewLine +
+                                 "  .dMMMs.              .oMMMd.  " + vbNewLine +
+                                 " -NMMh`                  `hMMN- " + vbNewLine +
+                                 " mMMy                      yMMm`" + vbNewLine +
+                                 "+MMm                        mMM+" + vbNewLine +
+                                 "hMMo                        oMMh" + vbNewLine +
+                                 "hMMo                        oMMh" + vbNewLine +
+                                 "+MMm                        mMM+" + vbNewLine +
+                                 " mMMy                      yMMm`" + vbNewLine +
+                                 " -NMMh`                  `hMMN- " + vbNewLine +
+                                 "  .dMMMs`              `oMMMd.  " + vbNewLine +
+                                 "    /dMMMdo:.      .:odMMMm/    " + vbNewLine +
+                                 "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                                 "         -/shhmmmmhhs/-         "}
+End Class
 
 4. Hitung dari 0 hingga 1,000,000 dengan bar kemajuan (dinamik)
 
-Sistem Import
-Import Microsoft.VisualBasic.Constants
-Import KS.TextWriterColor
-Import Microsoft.VisualBasic.Strings
-Import KS.Screensaver
-Dinamik Kelas Awam
-Memerlukan ICustomSaver
-Harta Umum Bermula Sebagai Pemangkin Boolean ICustomSaver.Initialized
-Ketibaan Awam Sebagai Integer
-ProgWent Awam Sebagai Integer
-Pemeriksaan Awam Sebagai Integer
-Awam lama sebagai integer
-Awam Sub InitSaver () Mengimplementasikan ICustomSaver.InitSaver
-Inisialized = Benar
-Sub Akhir
-Public Sub PreDisplay () Implementasi ICustomSaver.PreDisplay
-Sub Akhir
-Public Sub ScrnSaver () Mengimplementasikan ICustomSaver.ScrnSaver
-Console.Clear ()
-Untuk Res = 0 Kepada 1000000
-Jika Custom.CancellationPending = Benar Kemudian 'Ini akan membetulkan masalah untuk tugas sibuk.
-Keluar Untuk
-Akhir Jika
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 5)
-ShowStats ()
-Seterusnya
-Semak = 0: oldCheck = 0: ProgWent = 0
-Sub Akhir
-Public ShowStats ()
-W ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
-UpdateProgressBar (Res * 100/1000000)
-Sub Akhir
-Public Sub UpdateProgressBar (ByVal percent As String)
-Semak = peratus / 5
-W (Semak, "neutralTeks")
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
-W ("--------------------", "neutralText")
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
-W ("|", "neutralText")
-Jika Semak <> oldCheck Kemudian
-Untuk Pergi Sebagai Integer = 0 Untuk ProgWent
-W ("*", "neutralText")
-Seterusnya
-ProgWent = 1
-Akhir Jika
-Console.SetCursorPosition ((Console.WindowWidth / 2) 11, (Console.WindowHeight / 2) - 2)
-W ("|", "neutralText")
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 1)
-W ("--------------------", "neutralText")
-oldCheck = peratus / 5
-Sub Akhir
-Kelas Akhir
+Imports System
+Imports Microsoft.VisualBasic.Constants
+Imports KS.TextWriterColor
+Imports Microsoft.VisualBasic.Strings
+Imports KS.Screensaver
+Public Class Dynamic
+    Implements ICustomSaver
+    Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Public Res As Integer
+    Public ProgWent As Integer
+    Public Check As Integer
+    Public oldCheck As Integer
+    Public Sub InitSaver() Implements ICustomSaver.InitSaver
+        Initialized = True
+    End Sub
+    Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
+    Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+        Console.Clear()
+        For Res = 0 To 1000000
+            If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+                Exit For
+            End If
+            Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 5)
+            ShowStats()
+        Next
+        Check = 0 : oldCheck = 0 : ProgWent = 0
+    End Sub
+    Public Sub ShowStats()
+        W("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber(CStr(Res * 100 / 1000000), 1))
+        UpdateProgressBar(Res * 100 / 1000000)
+    End Sub
+    Public Sub UpdateProgressBar(ByVal percent As String)
+        Check = percent / 5
+        W(Check, "neutralText")
+        Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
+        W("+--------------------+", "neutralText")
+        Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
+        W("| ", "neutralText")
+        If Check <> oldCheck Then
+            For Went As Integer = 0 To ProgWent
+                W("*", "neutralText")
+            Next
+            ProgWent += 1
+        End If
+        Console.SetCursorPosition((Console.WindowWidth / 2) + 11, (Console.WindowHeight / 2) - 2)
+        W(" |", "neutralText")
+        Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 1)
+        W("+--------------------+", "neutralText")
+        oldCheck = percent / 5
+    End Sub
+End Class
 
 Lebih banyak contoh
 

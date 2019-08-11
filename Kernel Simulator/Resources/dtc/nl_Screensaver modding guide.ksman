@@ -17,39 +17,39 @@ Basismodding (screensaver)
 
 1. Herhaal stap 1-8 in de Modding-gids
 2. Klik in het gedeelte Compileren op Gebeurtenissen bouwen en schrijf dit op de opdrachtregel van de opdracht Post-build:
-- copy .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (Plaats SS voor de .m zodat KS het als een screensaver herkent en niet als een mod)
-- del / Q *. * (om er zeker van te zijn dat er geen dummy DLL-bestanden worden aangemaakt omdat we geen DLL gebruiken voor mods)
+	- copy ..\..\ModFile.vb ..\..\..\..\ModFileSS.m (Plaats SS voor de .m zodat KS het als een screensaver herkent en niet als een mod)
+	- del /Q *.* (om er zeker van te zijn dat er geen dummy DLL-bestanden worden aangemaakt omdat we geen DLL gebruiken voor mods)
 3. Herhaal stap 9-16 uit de Modding-gids, maar vervang de Imports KS.ModParser met Imports KS.Screensaver
 4. Laat tussen de klassen Public Class ... en End Class Visual Studio 2017 weten dat u uw KS screensaver gaat maken door te schrijven: Implements ICustomSaver
 5. Als u naamruimten gaat toevoegen, moet aan deze regels worden voldaan:
-1) Importeer KS niet zelf. 
-2) Bij het importeren van modules / klassen zoals TextWriterColor, is dit zo geschreven: Imports KS.TextWriterColor
+	1) Importeer KS niet zelf. 
+	2) Bij het importeren van modules / klassen zoals TextWriterColor, is dit zo geschreven: Imports KS.TextWriterColor
 6. Definieer eigenschappen voor mod-informatie door hieronder het Implements IScript te plaatsen:
-Eigenschap ge??nitialiseerd als Booleaanse implementaties ICustomSaver.Initialized
+    Property Initialized As Boolean Implements ICustomSaver.Initialized
 7. Maak je init screensaver met de naam InitSaver () die de ICustomSaver.InitSaver implementeert, door te schrijven:
-Sub InitSaver () Implementeert ICustomSaver.InitSaver
-'Je code hier
-Ge??nitialiseerd = Waar 'Zet het ergens in de sub als je voorwaarden maakt, anders laat je het hier staan.
-End Sub
+    Sub InitSaver() Implements ICustomSaver.InitSaver
+        'Your code here
+	Initialized = True 'Put it anywhere in the sub if you're making If conditions, otherwise, leave it here.
+    End Sub
 8. Vervang elke Uw code hier commentaar met uw code. 
 9. Maak uw pre-display (Called voor het weergeven van de screensaver) met de naam PreDisplay () die de ICustomSaver.PreDisplay implementeert, door te schrijven:
-Sub PreDisplay () Implementeert ICustomSaver.PreDisplay
-'Je code hier
-End Sub
+	Sub PreDisplay () Implements ICustomSaver.PreDisplay
+		'Je code hier
+	End Sub
 10. Maak uw display-code (er zou iets moeten verschijnen) genaamd ScrnSaver () die de ICustomSaver.ScrnSaver implementeert, door te schrijven:
-Sub ScrnSaver () Implementeert ICustomSaver.ScrnSaver
-'Je code hier
-End Sub
+	Sub ScrnSaver () Implements ICustomSaver.ScrnSaver
+		'Je code hier
+	End Sub
 11. Je kunt je subs overal in de klas maken, maar als:
-1) ze zitten in de andere klasse, drukken op Enter op End Class en maken een openbare nieuwe klasse waarin nieuwe subs worden opgeslagen:
-Openbare klasse AnotherClass
-'Je definities hieronder, en dus je subs, functies, interfaces, etc.
-Eindklasse
-2) ze proberen de screensaver opnieuw te initialiseren door InitSaver () opnieuw aan te roepen, probeer het eerst in je testomgeving en vervolgens in de productieomgeving als dat goed werkt.
-En aan de volgende voorwaarden moet worden voldaan:
-1) Ze zouden geen oneindige lus moeten maken, tenzij je ze maakt die verdwijnen als aan bepaalde voorwaarden is voldaan
-2) Ze zouden niet moeten proberen fouten met de kernel te veroorzaken.
-3) Zet ??????uw sub-oproep op een van de drie subs die de ICustomSaver-interface implementeren. 
+	1) ze zitten in de andere klasse, drukken op Enter op End Class en maken een openbare nieuwe klasse waarin nieuwe subs worden opgeslagen:
+		Public Class AnotherClass
+			'Je definities hieronder, en dus je subs, functies, interfaces, etc.
+		End Class
+	2) ze proberen de screensaver opnieuw te initialiseren door InitSaver () opnieuw aan te roepen, probeer het eerst in je testomgeving en vervolgens in de productieomgeving als dat goed werkt.
+	En aan de volgende voorwaarden moet worden voldaan:
+	1) Ze zouden geen oneindige lus moeten maken, tenzij je ze maakt die verdwijnen als aan bepaalde voorwaarden is voldaan
+	2) Ze zouden niet moeten proberen fouten met de kernel te veroorzaken.
+	3) Zet ??????uw sub-oproep op een van de drie subs die de ICustomSaver-interface implementeren. 
 12. Voer de build uit. 
 13. Voer je Kernel-simulator uit waar je zojuist naar hebt verwezen in je project en laad, stel standaard in en vergrendel je scren en je screensaver is daar.
 
@@ -62,142 +62,142 @@ De schermbox van het back-message-venster vertelt mensen dat de eigenaar van de 
 3. Klik op Toevoegen en de code is klaar.
 4. Schrijf hieronder (neem aan dat uw mod naam SOR is) Public Class SOR: implementeert ICustomSaver
 5. Schrijf boven de openbare klasse SOR:
-- Importeert systeem
-- Importeert System.Threading
-- Importeert KS.Screensaver
-- Importeert KS.TextWriterColor
-- Importeert KS.Login
+   - Imports System
+   - Imports System.Threading
+   - Imports KS.Screensaver
+   - Imports KS.TextWriterColor
+   - Imports KS.Login
 6. U zou fouten moeten krijgen die zeggen dat deze subs moeten worden aangemaakt.
 7. Maak van uw start screensaver event handler door te schrijven:
-Eigenschap ge??nitialiseerd als Booleaanse implementaties ICustomSaver.Initialized
-Sub InitSaver () Implementeert ICustomSaver.InitSaver
-W ("Laad deze schermbeveiliging met" "loadsaver SORSS.m" "en" "setsaver SORSS.m" "", "neutralText")
-Ge??nitialiseerd = Waar
-End Sub
+    Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Sub InitSaver() Implements ICustomSaver.InitSaver
+		W("Load this screensaver using ""loadsaver SORSS.m"" and ""setsaver SORSS.m""", True, "neutralText")
+        Initialized = True
+    End Sub
 8. Aangezien we niets implementeren voordat we de screensaver weergeven, laten we dit veld leeg:
-Sub PreDisplay () Implementeert ICustomSaver.PreDisplay
-End Sub
+    Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
 9. Schrijf boven de eigenschap Ge??nitialiseerd ...:
-Public SOR_Random As New Random () 'Initialiseert de willekeurige nummergenerator
-Public S_Random As New Random () 'Initialiseert de willekeurige nummergenerator
-Public O_Random As New Random () 'Initialiseert de generator voor willekeurige getallen
-Public R_Random As New Random () 'Initialiseert de willekeurige nummergenerator
+	Public SOR_Random As New Random () 'Initialiseert de willekeurige nummergenerator
+	Public S_Random As New Random () 'Initialiseert de willekeurige nummergenerator
+	Public O_Random As New Random () 'Initialiseert de generator voor willekeurige getallen
+	Public R_Random As New Random () 'Initialiseert de willekeurige nummergenerator
 9. Schrijf op de sub ScrnSaver ():
-Console.Clear ()
-If Custom.CancellationPending = True Then 'Hiermee wordt het probleem opgelost voor de taak die bezig is.
-Exit voor
-Stop als
-Dim SOR_Integer As Integer = SOR_Random.Next (1, 4) 'Kiest of het snel,' s nachts of onbeleefd is
-Dim Soon_MsgID As Integer = SOR_Random.Next (0, 2) 'Selecteert berichten in de Soon array
-Dim Over_MsgID As Integer = SOR_Random.Next (0, 2) 'Selecteert berichten in de array Overnight
-Dim Rude_MsgID As Integer = SOR_Random.Next (0, 3) 'Selecteert berichten in de Rude-array
-Console.SetWindowPosition (0, 1)
-Selecteer Case SOR_Integer
-Case 1 'Binnenkort
-WriteMsg (SOR_Integer, Soon_MsgID)
-Case 2 'Overnight
-WriteMsg (SOR_Integer, Over_MsgID)
-Case 3 'Rude
-WriteMsg (SOR_Integer, Rude_MsgID)
-Einde selecteren
-Thread.Sleep (10000)
+    Console.Clear()
+    If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+        Exit For
+    End If
+    Dim SOR_Integer As Integer = SOR_Random.Next(1, 4) 'Chooses whether it's Soon, Overnight or Rude
+    Dim Soon_MsgID As Integer = SOR_Random.Next(0, 2) 'Selects messages in the Soon array
+    Dim Over_MsgID As Integer = SOR_Random.Next(0, 2) 'Selects messages in the Overnight array
+    Dim Rude_MsgID As Integer = SOR_Random.Next(0, 3) 'Selects messages in the Rude array
+    Console.SetWindowPosition(0, 1)
+    Select Case SOR_Integer
+        Case 1 'Soon
+            WriteMsg(SOR_Integer, Soon_MsgID)
+        Case 2 'Overnight
+            WriteMsg(SOR_Integer, Over_MsgID)
+        Case 3 'Rude
+            WriteMsg(SOR_Integer, Rude_MsgID)
+    End Select
+    Thread.Sleep(10000)
 11. Mogelijk moet u 1 functie en 2 subs maken om dit te laten werken. 
-Public Shared Function parsePlaces (ByVal-tekst als tekenreeks)
-text = text.Replace ("<OWNER>", signedinusrnm)
-Retourneer tekst
-Eindfunctie
-Public Shared Sub InitializeBar (ByVal strlen As Integer)
-W ("-", "neutralText")
-For l As Integer = 0 To strlen - 1
-W ("-", "neutralText")
-volgende
-W ("-", "neutralText")
-End Sub
-Public Shared Sub WriteMsg (ByVal TypeID As Integer, ByVal MsgID As Integer)
-Dim BackMessages As String () = {"<OWNER> zal snel terugkomen.", "<OWNER> is bezig. Hij zal snel terug zijn."}
-Dim OvernightMsg As String () = {"Het lijkt erop dat <OWNER> 's nachts weer terug is", "Hij komt' s nachts weer terug."}
-Dim RudeMessages As String () = {"Kan je weggaan?", "Ga weg, <OWNER> zal snel terugkomen", "<OWNER> is niet hier." Ga weg. "}
-Dimtekst als tekenreeks = ""
-Selecteer Case TypeID
-Zaak 1
-text = ParsePlaces (BackMessages (MsgID))
-Case 2
-text = ParsePlaces (OvernightMsg (MsgID))
-Case 3
-text = ParsePlaces (RudeMessages (MsgID))
-Einde selecteren
-InitializeBar (text.length)
-W ("| {0} |", "neutralText", tekst)
-InitializeBar (text.length)
-End Sub
+    Public Shared Function ParsePlaces(ByVal text As String)
+        text = text.Replace("<OWNER>", signedinusrnm)
+        Return text
+    End Function
+    Public Shared Sub InitializeBar(ByVal strlen As Integer)
+        W("   +-", "neutralText")
+        For l As Integer = 0 To strlen - 1
+            W("-", "neutralText")
+        Next
+        W("-+", "neutralText")
+    End Sub
+    Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer)
+	Dim BackMessages As String() = {"<OWNER> will be back soon.", "<OWNER> is busy. He will be back soon."}
+    	Dim OvernightMsg As String() = {"It seems that <OWNER> will be back overnight", "He'll be back overnight."}
+    	Dim RudeMessages As String() = {"Can you go away?", "Go away, <OWNER> will be back soon", "<OWNER> isn't here. Go away."}
+        Dim text As String = ""
+        Select Case TypeID
+            Case 1
+                text = ParsePlaces(BackMessages(MsgID))
+            Case 2
+                text = ParsePlaces(OvernightMsg(MsgID))
+            Case 3
+                text = ParsePlaces(RudeMessages(MsgID))
+        End Select
+        InitializeBar(text.Length)
+        W("   | {0} |", "neutralText", text)
+        InitializeBar(text.Length)
+    End Sub
 12. De code zou er als volgt uit moeten zien:
-Systeem importeert
-Importeert System.Threading
-Importeert KS.Screensaver
-Importeert KS.TextWriterColor
-Importeert KS.Login
-Openbare klas SoonOvernightRude
-Implementeert ICustomSaver
-Eigenschap ge??nitialiseerd als Booleaanse implementaties ICustomSaver.Initialized
-Public SOR_Random As New Random () 'Initialiseert de willekeurige nummergenerator
-Public S_Random As New Random () 'Initialiseert de willekeurige nummergenerator
-Public O_Random As New Random () 'Initialiseert de generator voor willekeurige getallen
-Public R_Random As New Random () 'Initialiseert de willekeurige nummergenerator
-Sub InitSaver () Implementeert ICustomSaver.InitSaver
-W ("Stel deze schermbeveiliging in als standaard met" "setsaver SORSS.m" "", "neutralText")
-Ge??nitialiseerd = Waar
-End Sub
-Sub PreDisplay () Implementeert ICustomSaver.PreDisplay
-End Sub
-Sub ScrnSaver () Implementeert ICustomSaver.ScrnSaver
-Console.Clear ()
-If Custom.CancellationPending = True Then 'Hiermee wordt het probleem opgelost voor de taak die bezig is.
-Exit voor
-Stop als
-Dim SOR_Integer As Integer = SOR_Random.Next (1, 4) 'Kiest of het snel,' s nachts of onbeleefd is
-Dim Soon_MsgID As Integer = S_Random.Next (0, 2) 'Selecteert berichten in de Soon array
-Dim Over_MsgID As Integer = O_Random.Next (0, 2) 'Selecteert berichten in de array Overnight
-Dim Rude_MsgID As Integer = R_Random.Next (0, 3) 'Selecteert berichten in de Rude-array
-Console.SetCursorPosition (0, 1)
-Selecteer Case SOR_Integer
-Case 1 'Binnenkort
-WriteMsg (SOR_Integer, Soon_MsgID)
-Case 2 'Overnight
-WriteMsg (SOR_Integer, Over_MsgID)
-Case 3 'Rude
-WriteMsg (SOR_Integer, Rude_MsgID)
-Einde selecteren
-Thread.Sleep (10000)
-End Sub
-Public Shared Function parsePlaces (ByVal-tekst als tekenreeks)
-text = text.Replace ("<OWNER>", signedinusrnm)
-Retourneer tekst
-Eindfunctie
-Public Shared Sub InitializeBar (ByVal strlen As Integer)
-W ("-", "neutralText")
-For l As Integer = 0 To strlen - 1
-W ("-", "neutralText")
-volgende
-W ("-", "neutralText")
-End Sub
-Public Shared Sub WriteMsg (ByVal TypeID As Integer, ByVal MsgID As Integer)
-Dim BackMessages As String () = {"<OWNER> zal snel terugkomen.", "<OWNER> is bezig. Hij zal snel terug zijn."}
-Dim OvernightMsg As String () = {"Het lijkt erop dat <OWNER> 's nachts weer terug is", "Hij komt' s nachts weer terug."}
-Dim RudeMessages As String () = {"Kan je weggaan?", "Ga weg, <OWNER> zal snel terugkomen", "<OWNER> is niet hier." Ga weg. "}
-Dimtekst als tekenreeks = ""
-Selecteer Case TypeID
-Zaak 1
-text = ParsePlaces (BackMessages (MsgID))
-Case 2
-text = ParsePlaces (OvernightMsg (MsgID))
-Case 3
-text = ParsePlaces (RudeMessages (MsgID))
-Einde selecteren
-InitializeBar (text.length)
-W ("| {0} |", "neutralText", tekst)
-InitializeBar (text.length)
-End Sub
-Eindklasse
+    Imports System
+    Imports System.Threading
+    Imports KS.Screensaver
+    Imports KS.TextWriterColor
+    Imports KS.Login
+    Public Class SoonOvernightRude
+    	Implements ICustomSaver
+    	Property Initialized As Boolean Implements ICustomSaver.Initialized
+    	Public SOR_Random As New Random() 'Initializes the random number generator
+    	Public S_Random As New Random() 'Initializes the random number generator
+    	Public O_Random As New Random() 'Initializes the random number generator
+    	Public R_Random As New Random() 'Initializes the random number generator
+    	Sub InitSaver() Implements ICustomSaver.InitSaver
+            W("Set this screensaver as default using ""setsaver SORSS.m""", "neutralText")
+            Initialized = True
+    	End Sub
+    	Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    	End Sub
+    	Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+	        Console.Clear()
+	        If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+                Exit For
+            End If
+    	    Dim SOR_Integer As Integer = SOR_Random.Next(1, 4) 'Chooses whether it's Soon, Overnight or Rude
+    	    Dim Soon_MsgID As Integer = S_Random.Next(0, 2) 'Selects messages in the Soon array
+    	    Dim Over_MsgID As Integer = O_Random.Next(0, 2) 'Selects messages in the Overnight array
+    	    Dim Rude_MsgID As Integer = R_Random.Next(0, 3) 'Selects messages in the Rude array
+            Console.SetCursorPosition(0, 1)
+            Select Case SOR_Integer
+            	Case 1 'Soon
+                    WriteMsg(SOR_Integer, Soon_MsgID)
+            	Case 2 'Overnight
+                    WriteMsg(SOR_Integer, Over_MsgID)
+            	Case 3 'Rude
+                    WriteMsg(SOR_Integer, Rude_MsgID)
+            End Select
+	    Thread.Sleep(10000)
+    	End Sub
+    	Public Shared Function ParsePlaces(ByVal text As String)
+            text = text.Replace("<OWNER>", signedinusrnm)
+            Return text
+        End Function
+        Public Shared Sub InitializeBar(ByVal strlen As Integer)
+            W("   +-", "neutralText")
+            For l As Integer = 0 To strlen - 1
+            	W("-", "neutralText")
+            Next
+            W("-+", "neutralText")
+        End Sub
+        Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer)
+	        Dim BackMessages As String() = {"<OWNER> will be back soon.", "<OWNER> is busy. He will be back soon."}
+    	    Dim OvernightMsg As String() = {"It seems that <OWNER> will be back overnight", "He'll be back overnight."}
+    	    Dim RudeMessages As String() = {"Can you go away?", "Go away, <OWNER> will be back soon", "<OWNER> isn't here. Go away."}
+            Dim text As String = ""
+            Select Case TypeID
+            	Case 1
+                    text = ParsePlaces(BackMessages(MsgID))
+            	Case 2
+                    text = ParsePlaces(OvernightMsg(MsgID))
+            	Case 3
+                    text = ParsePlaces(RudeMessages(MsgID))
+            End Select
+            InitializeBar(text.Length)
+            W("   | {0} |", "neutralText", text)
+            InitializeBar(text.Length)
+    	End Sub
+    End Class
 13. Voer de build uit. 
 14. Voer uw Kernel-simulator uit waar u zojuist naar hebt verwezen in uw project en laad, stel in als standaard en voer savescreen uit.
 
@@ -205,186 +205,186 @@ Eindklasse
 
 1. Herhaal stap 1 tot en met 4 in het eerste voorbeeld: berichtenberichten in de consoleborden en snel, 's nachts of onbeleefd (ga weg ...)
 2. Schrijf boven de public class blank (in de veronderstelling dat uw classname leeg is):
-- Importeert systeem
-- Importeert KS.Screensaver
+    - Imports System
+    - Imports KS.Screensaver
 3. Schrijf deze onder de implementaties ICustomSaver:
-Public Property ge??nitialiseerd als Boolean implementeert ICustomSaver.Initialized
-Public Sub InitSaver () Implementeert ICustomSaver.InitSaver
-Ge??nitialiseerd = Waar
-End Sub
-Public Sub PreDisplay () Implementeert ICustomSaver.PreDisplay
-End Sub
-Public Sub ScrnSaver () Implementeert ICustomSaver.ScrnSaver
-
-End Sub
+    Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Public Sub InitSaver() Implements ICustomSaver.InitSaver
+        Initialized = True
+    End Sub
+    Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
+    Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+    
+    End Sub
 4. Schrijf in de ScrnSaver-sub:
-Console.Clear ()
+    Console.Clear()
 5. De code zou er als volgt uit moeten zien:
-Systeem importeert
-Importeert KS.Screensaver
-Openbare klas Blank
-Implementeert ICustomSaver
-Public Property ge??nitialiseerd als Boolean implementeert ICustomSaver.Initialized
-Public Sub InitSaver () Implementeert ICustomSaver.InitSaver
-Ge??nitialiseerd = Waar
-End Sub
-Public Sub PreDisplay () Implementeert ICustomSaver.PreDisplay
-End Sub
-Public Sub ScrnSaver () Implementeert ICustomSaver.ScrnSaver
-Console.Clear ()
-End Sub
-Eindklasse
+    Imports System
+    Imports KS.Screensaver
+    Public Class Blank
+    	Implements ICustomSaver
+    	Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    	Public Sub InitSaver() Implements ICustomSaver.InitSaver
+            Initialized = True
+    	End Sub
+    	Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    	End Sub
+    	Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+            Console.Clear()
+   	End Sub
+    End Class
 5. Herhaal stap 13-14 in het eerste voorbeeld: berichtenberichten in de console en snel, 's nachts of onbeleeft (ga weg ...) berichten
 
 3. Animatie (Drawing Circle - 4 frames - 4 FPS)
 
 Dit voorbeeld helpt u op weg met de animaties. 
 
-Systeem importeert
-Importeert Microsoft.VisualBasic.Constants
-Importeert KS.TextWriterColor
-Importeert System.Threading
-Importeert KS.Screensaver
-Openbare klas ANI
-Implementeert ICustomSaver
-Public Property ge??nitialiseerd als Boolean implementeert ICustomSaver.Initialized
-Public CurrentStep As Integer
-Public Sub InitSaver () Implementeert ICustomSaver.InitSaver
-Ge??nitialiseerd = Waar
-End Sub
-Public Sub PreDisplay () Implementeert ICustomSaver.PreDisplay
-End Sub
-Public Sub ScrnSaver () Implementeert ICustomSaver.ScrnSaver
-Voor CurrentStep = 0 tot 3
-Console.Clear ()
-If Custom.CancellationPending = True Then 'Hiermee wordt het probleem opgelost voor de taak die bezig is.
-Exit voor
-Stop als
-W (aniset (CurrentStep), "neutralText")
-Thread.Sleep (150)
-volgende
-End Sub
+Imports System
+Imports Microsoft.VisualBasic.Constants
+Imports KS.TextWriterColor
+Imports System.Threading
+Imports KS.Screensaver
+Public Class ANI
+    Implements ICustomSaver
+    Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Public CurrentStep As Integer
+    Public Sub InitSaver() Implements ICustomSaver.InitSaver
+        Initialized = True
+    End Sub
+    Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
+    Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+        For CurrentStep = 0 To 3
+            Console.Clear()
+	        If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+                Exit For
+            End If
+            W(aniset(CurrentStep), "neutralText")
+            Thread.Sleep(150)
+        Next
+    End Sub
 
-Public aniset As String () = {"mmhyo / -" vbNewLine
-"mNMMMMMNy:" vbNewLine
-".: odMMMd /" vbNewLine
-".oMMMd." vbNewLine
-"` hMMN- "vbNewLine
-"yMMm" "vbNewLine
-"mMM" vbNewLine
-"oMMh" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"",
-"mmhyo / -" vbNewLine
-"mNMMMMMNy:" vbNewLine
-".: odMMMd /" vbNewLine
-".oMMMd." vbNewLine
-"` hMMN- "vbNewLine
-"yMMm" "vbNewLine
-"mMM" vbNewLine
-"oMMh" vbNewLine
-"oMMh" vbNewLine
-"mMM" vbNewLine
-"yMMm" "vbNewLine
-"` hMMN- "vbNewLine
-"` oMMMd. "vbNewLine
-".: odMMMm /" vbNewLine
-"mNMMMMMNy:" vbNewLine
-"mmhhs / -",
-"mmhyo / -" vbNewLine
-"mNMMMMMNy:" vbNewLine
-".: odMMMd /" vbNewLine
-".oMMMd." vbNewLine
-"` hMMN- "vbNewLine
-"yMMm" "vbNewLine
-"mMM" vbNewLine
-"oMMh" vbNewLine
-"hMMo oMMh" vbNewLine
-"MMm mMM" vbNewLine
-"mMMy yMMm`" vbNewLine
-"-NMMh`` hMMN- "vbNewLine
-".dMMMs`` oMMMd. "vbNewLine
-"/ dMMMdo :..: odMMMm /" vbNewLine
-": yNMMMMMNmmNMMMMMNy:" vbNewLine
-"- / shhmmmmhhs / -",
-"- / oydmmmmhyo / -" vbNewLine
-": yNMMMMMNmmNMMMMMNy:" vbNewLine
-": dMMMdo :..: odMMMd /" vbNewLine
-".dMMM. .oMMMd." vbNewLine
-"-NMMh`` hMMN- "vbNewLine
-"mMMy yMMm`" vbNewLine
-"MMm mMM" vbNewLine
-"hMMo oMMh" vbNewLine
-"hMMo oMMh" vbNewLine
-"MMm mMM" vbNewLine
-"mMMy yMMm`" vbNewLine
-"-NMMh`` hMMN- "vbNewLine
-".dMMMs`` oMMMd. "vbNewLine
-"/ dMMMdo :..: odMMMm /" vbNewLine
-": yNMMMMMNmmNMMMMMNy:" vbNewLine
-"- / shhmmmmhhs / -"}
-Eindklasse
+    Public aniset As String() = {"                mmhyo/-         " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                   .:odMMMd/    " + vbNewLine +
+                                 "                       .oMMMd.  " + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                ",
+                                 "                mmhyo/-         " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                   .:odMMMd/    " + vbNewLine +
+                                 "                       .oMMMd.  " + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                       `oMMMd.  " + vbNewLine +
+                                 "                   .:odMMMm/    " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                mmhhs/-         ",
+                                 "                mmhyo/-         " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                   .:odMMMd/    " + vbNewLine +
+                                 "                       .oMMMd.  " + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "hMMo                        oMMh" + vbNewLine +
+                                 "+MMm                        mMM+" + vbNewLine +
+                                 " mMMy                      yMMm`" + vbNewLine +
+                                 " -NMMh`                  `hMMN- " + vbNewLine +
+                                 "  .dMMMs`              `oMMMd.  " + vbNewLine +
+                                 "    /dMMMdo:.      .:odMMMm/    " + vbNewLine +
+                                 "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                                 "         -/shhmmmmhhs/-         ",
+                                 "         -/oydmmmmhyo/-         " + vbNewLine +
+                                 "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                                 "    :dMMMdo:.      .:odMMMd/    " + vbNewLine +
+                                 "  .dMMMs.              .oMMMd.  " + vbNewLine +
+                                 " -NMMh`                  `hMMN- " + vbNewLine +
+                                 " mMMy                      yMMm`" + vbNewLine +
+                                 "+MMm                        mMM+" + vbNewLine +
+                                 "hMMo                        oMMh" + vbNewLine +
+                                 "hMMo                        oMMh" + vbNewLine +
+                                 "+MMm                        mMM+" + vbNewLine +
+                                 " mMMy                      yMMm`" + vbNewLine +
+                                 " -NMMh`                  `hMMN- " + vbNewLine +
+                                 "  .dMMMs`              `oMMMd.  " + vbNewLine +
+                                 "    /dMMMdo:.      .:odMMMm/    " + vbNewLine +
+                                 "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                                 "         -/shhmmmmhhs/-         "}
+End Class
 
 4. Bereken van 0 tot 1.000.000 met voortgangsbalk (dynamisch)
 
-Systeem importeert
-Importeert Microsoft.VisualBasic.Constants
-Importeert KS.TextWriterColor
-Importeert Microsoft.VisualBasic.Strings
-Importeert KS.Screensaver
+Imports System
+Imports Microsoft.VisualBasic.Constants
+Imports KS.TextWriterColor
+Imports Microsoft.VisualBasic.Strings
+Imports KS.Screensaver
 Public Class Dynamic
-Implementeert ICustomSaver
-Public Property ge??nitialiseerd als Boolean implementeert ICustomSaver.Initialized
-Public Res As Integer
-Public ProgWent As Integer
-Openbare controle als geheel getal
-Public oldCheck As Integer
-Public Sub InitSaver () Implementeert ICustomSaver.InitSaver
-Ge??nitialiseerd = Waar
-End Sub
-Public Sub PreDisplay () Implementeert ICustomSaver.PreDisplay
-End Sub
-Public Sub ScrnSaver () Implementeert ICustomSaver.ScrnSaver
-Console.Clear ()
-Voor Res = 0 tot 1000000
-If Custom.CancellationPending = True Then 'Hiermee wordt het probleem opgelost voor de taak die bezig is.
-Exit voor
-Stop als
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 5)
-ShowStats ()
-volgende
-Controle = 0: oldCheck = 0: ProgWent = 0
-End Sub
-Public Sub ShowStats ()
-W ("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber (CStr (Res * 100/1000000), 1))
-UpdateProgressBar (Res * 100/1000000)
-End Sub
-Public Sub UpdateProgressBar (ByVal percent As String)
-Controleer = percentage / 5
-W (controle, "neutralText")
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
-W ("--------------------", "neutralText")
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
-W ("|", "neutralText")
-Als Controleer <> oudControleer vervolgens
-For Went As Integer = 0 To ProgWent
-W ("*", "neutralText")
-volgende
-ProgWent = 1
-Stop als
-Console.SetCursorPosition ((Console.WindowWidth / 2) 11, (Console.WindowHeight / 2) - 2)
-W ("|", "neutralText")
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 1)
-W ("--------------------", "neutralText")
-oldCheck = procent / 5
-End Sub
-Eindklasse
+    Implements ICustomSaver
+    Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Public Res As Integer
+    Public ProgWent As Integer
+    Public Check As Integer
+    Public oldCheck As Integer
+    Public Sub InitSaver() Implements ICustomSaver.InitSaver
+        Initialized = True
+    End Sub
+    Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
+    Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+        Console.Clear()
+        For Res = 0 To 1000000
+            If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+                Exit For
+            End If
+            Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 5)
+            ShowStats()
+        Next
+        Check = 0 : oldCheck = 0 : ProgWent = 0
+    End Sub
+    Public Sub ShowStats()
+        W("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber(CStr(Res * 100 / 1000000), 1))
+        UpdateProgressBar(Res * 100 / 1000000)
+    End Sub
+    Public Sub UpdateProgressBar(ByVal percent As String)
+        Check = percent / 5
+        W(Check, "neutralText")
+        Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
+        W("+--------------------+", "neutralText")
+        Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
+        W("| ", "neutralText")
+        If Check <> oldCheck Then
+            For Went As Integer = 0 To ProgWent
+                W("*", "neutralText")
+            Next
+            ProgWent += 1
+        End If
+        Console.SetCursorPosition((Console.WindowWidth / 2) + 11, (Console.WindowHeight / 2) - 2)
+        W(" |", "neutralText")
+        Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 1)
+        W("+--------------------+", "neutralText")
+        oldCheck = percent / 5
+    End Sub
+End Class
 
 Meer voorbeelden
 

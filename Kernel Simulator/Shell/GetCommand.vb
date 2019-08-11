@@ -653,15 +653,16 @@ Public Module GetCommand
 
                 Done = True
                 If requestedCommand <> "usermanual" Then
-                    If currentLang <> "eng" And (strArgs = "Modding guide" Or strArgs = "Screensaver modding guide") Then
-                        ' Google is weird about translating code blocks for Visual Basic that THEY SHOULDN'T HAVE DONE TO THESE DOCUMENTATIONS!
-                        W(DoTranslation("You have set your system language to anything other than English. Sorry for the inconvenience, but it seems " +
-                                        "that Google and its translator are very weird about translating code blocks for any programming language. " +
-                                        "While we fix all the code blocks for translated manual pages, we suggest you open a ticket to Google Translate " +
-                                        "for translating code blocks that aren't meant to be translated, and set your system language to English if you " +
-                                        "speak it.", currentLang), True, "neutralText")
-                        Exit Sub
-                    End If
+                    'Uncomment if there is a new language version for the below manpages and the codeblock fixes are not done. Replace "NewLang" with a three letter language code.
+                    'If currentLang = "NewLang" And (strArgs = "Modding guide" Or strArgs = "Screensaver modding guide") Then
+                    '    ' Google is weird about translating code blocks for Visual Basic that THEY SHOULDN'T HAVE DONE TO THESE DOCUMENTATIONS!
+                    '    W(DoTranslation("You have set your system language to anything other than English. Sorry for the inconvenience, but it seems " +
+                    '                    "that Google and its translator are very weird about translating code blocks for any programming language. " +
+                    '                    "While we fix all the code blocks for translated manual pages, we suggest you open a ticket to Google Translate " +
+                    '                    "for translating code blocks that aren't meant to be translated, and set your system language to English if you " +
+                    '                    "speak it.", currentLang), True, "neutralText")
+                    '    Exit Sub
+                    'End If
                     ViewPage(strArgs)
                 Else
                     ViewPage("Available manual pages")

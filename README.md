@@ -152,6 +152,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **8/10/2019 - 0.0.6.11:** Fixed debug showing password in clear text, Showed changelogs during update, Fixed KeyNotFoundException after updating config on startup
 
+**8/11/2019 - 0.0.6.12:** More codeblock corrections for Czech, Croatian, Dutch, Finnish, French, German, Italian, Malay, Portuguese, Spanish, Swedish, and Turkish manual pages. This version is a result of useless modifications to codeblocks that Google has to make so it feels ugly, translated, uncompilable, and misaligned.
+
 ## |-----+--> _Manual pages_ <--+-----|
 
 The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation` and are localized to supported languages.

@@ -10,8 +10,9 @@ Kernel Simulator vám umožní simulovat velmi brzký přístup pro naše budouc
 
 | --------------- + -> Historie <- + --------------- |
 
-EN: What's wrong with Google?
+EN: What's wrong with Google? See a commment of English "Modding Guide" and "Screensaver modding guide" in the source code for our possibly-wrong concept at the logic of Google Translate.
 
+8/11/2019 - 0.0.6.12: Další opravy kódového bloku pro české, chorvatské, nizozemské, finské, francouzské, německé, italské, malajské, portugalské, španělské, švédské a turecké manuálové stránky. Tato verze je výsledkem zbytečných úprav kódovacích bloků, které společnost Google musí provést, aby se cítila ošklivě, přeložena, nekompatibilní a špatně zarovnána.
 8/10/2019 - 0.0.6.11: Opraveno ladění ukazující heslo v čistém textu, Během aktualizace zobrazeny changelogy, Opravena chyba KeyNotFoundException po aktualizaci konfigurace při spuštění
 8/8/2019 - 0.0.6.10: Zjednodušený obor názvů pro KS, opravené kódové bloky pro hindštinu, čínštinu a 1/2 češtiny (viz komentář k GetCommand.vb), Přidán chybějící záznam nápovědy pro příkaz „reloadsaver“, přidán příkaz „reloadmods“ , Made KernelVersion a EnvironmentOSType jen pro čtení, argument "promptArgs" cmdline odstraněn, Extra stack nyní není generován při restartování
 27.7.2019 - 0.0.6.9: Odebrané kalkulačky a převodníky jednotek, Unified dva tiskové příkazy do jednoho, Unified two mod generators do jednoho, Povoleno zadání FTP serveru bez zadání předpony "ftp: //", Povoleno zadání adresy jako " Argument příkazu ftp, nyní se FTP klient poklidně odpojí při ukončení, popisy nápovědy opravené FTP se při změně jazyků neaktualizují, v systémech Unix je nyní podporována kontrola SSE příkazem, pevná poloha času a data pozice, opravené heslo nefunguje správně, i když uživatel vložil správné heslo, Odebráno nepoužívané fáze, Přidáno ladění v každé fázi, Přidán zástupný symbol operačního systému pro použití s MOTD a MAL, Přidán syntaktický analyzátor nové řady, aby podpora MOTD byla více než 1 řádek

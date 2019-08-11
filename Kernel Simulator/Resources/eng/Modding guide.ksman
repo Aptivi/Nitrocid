@@ -4,6 +4,26 @@
 -REVISION:0.0.2
 -KSLAYOUT:0.0.5.9-OR-ABOVE
 
+~~- WARNING FOR TRANSLATORS!!! Google's logic for translating strings:
+~~- Sub Translate(ByVal Text As String)
+~~-		Dim Txt As String = GetTranslatedTextFromNet(Text) 'Translate text
+~~-		'To finalize, we do:
+~~-		UglifyEverything(Txt, UglifyMode.Quasi) 'To make sure that the translated text is ugly.
+~~-		RemoveWhitespacesFromBeginning(Txt) 'To make sure that all the codeblocks are ugly. Ruins pixel art also.
+~~-		CropAllTextFromPuncs(Txt) 'For sentences to be fragmented. Uses Google SentenceFragmentator API.
+~~-		MakeSpacesBetweenPuncs(Txt) 'To make all commands invalid.
+~~-		InvalidateCodeBlocks(Txt) 'This ensures that all code blocks will not compile because they're translated.
+~~-		MakeCSharpC(Txt) 'To fool users into thinking it's C.
+~~-		MakeYearsToPastEvents(Txt) 'To scare users and make the program changelogs invalid.
+~~-		TranslateCommands(Txt) 'To make all commands even more invalid.
+~~-		SendTranslatedDataToGoogle(Txt) 'To nullify user's privacy. Also sends to various hackers.
+~~-		PromoteSelf() 'To celebrate and motivate data collection. Makes it stronger.
+~~-		MakeUsersExtremelyFurious(True) 'To make all the users mad and rage.
+~~-		MakeSecondFaster(0.8) 'To make 1 second exactly 800ms.
+~~-		WasteDevelopersTimes(5) 'To waste developers' times 5 hours.
+~~- End Sub
+~~- So do your best to translate them yourself.
+
 -BODY START-
 What is the mod for the kernel?
 
@@ -239,7 +259,7 @@ Hello World is the popular starting example for all of the programmers. These ex
     End Sub
 4. Make your command handler, and let it respond to the SayHello mod command:
     Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
-	W("Hello World", True, "neutralText")
+		W("Hello World", True, "neutralText")
     End Sub
 5. The code should look like this in VB:
 
@@ -302,11 +322,11 @@ Hello World is the popular starting example for all of the programmers. These ex
 1. Assuming that your mod name is HelloArgs, your argument that will make your command say Hello World is HW, and that your command is SayHello, Repeat the steps 1-3 on the second example: Hello World on command execute
 2. Make your command handler, and let it respond to the SayHello mod command:
     Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
-	If (args = "HW") Then
-	    W("Hello World", True, "neutralText")
-	Else
-	    W("Make me say Hello by running ""SayHello HW.""", True, "neutralText")
-	End If
+		If (args = "HW") Then
+			W("Hello World", True, "neutralText")
+		Else
+			W("Make me say Hello by running ""SayHello HW.""", True, "neutralText")
+		End If
     End Sub
 3. The code should look like this in VB:
 
@@ -327,11 +347,11 @@ Hello World is the popular starting example for all of the programmers. These ex
     	Sub StopMod() Implements IScript.StopMod
     	End Sub
     	Sub PerformCmd(Optional ByVal args As String = "") Implements IScript.PerformCmd
-	    If (args = "HW") Then
-	    	W("Hello World", True, "neutralText")
-	    Else
-	    	W("Make me say Hello by running ""SayHello HW.""", True, "neutralText")
-	    End If
+			If (args = "HW") Then
+	    		W("Hello World", True, "neutralText")
+			Else
+	    		W("Make me say Hello by running ""SayHello HW.""", True, "neutralText")
+			End If
         End Sub
     	Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
     	End Sub

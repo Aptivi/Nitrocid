@@ -368,4 +368,4 @@ Sisteminizde yüklü libcpanel-json-xs-perl olmayabilir. Kurulum için paket yö
 Sistem dilinizi İngilizce'den başka bir şeye ayarladınız. Verdiğimiz rahatsızlıktan dolayı üzgünüz, ancak Google ve çevirmeninin herhangi bir programlama dili için kod bloklarını çevirmekte çok tuhaf olduğu görülüyor. Tercüme edilen manuel sayfaların tüm kod bloklarını düzeltirken, çevrilmesi amaçlanmayan kod bloklarını çevirmek için Google Translate'e bir bilet açmanızı ve konuşmanız durumunda sistem dilinizi İngilizce olarak ayarlamanızı öneririz.
 Değişiklikleri yeniden yükler.
 Modlar yeniden yüklendi.
-Yenilikler: Şifreyi açık metinle gösteren hata ayıklama düzeltildi, Güncelleme sırasında gösterilen değişiklikler yapıldı, Başlangıçta config güncelledikten sonra KeyNotFoundException düzeltildi
+Yenilikler: Çekçe, Hırvatça, Felemenkçe, Fince, Fransızca, Almanca, İtalyanca, Malayca, Portekizce, İspanyolca, İsveççe ve Türkçe el kitabı sayfaları için daha fazla kod bloğu düzeltmesi. Bu sürüm, Google'ın yapması gereken kod bloklarında yapılan, çirkin, çevrilmiş, derlenmemiş ve yanlış hizalanmış hissettirdiği gereksiz değişikliklerin bir sonucudur.

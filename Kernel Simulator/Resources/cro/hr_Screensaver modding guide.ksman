@@ -17,39 +17,39 @@ Osnovni modding (??uvar zaslona)
 
 1. Ponovite korake 1-8 iz Modding vodi??a
 2. U odjeljku Kompilacija kliknite na Doga??aji za izgradnju, a zatim to napi??ite u naredbenoj naredbi Post-build event:
-- kopiraj .. \ .. \ ModFile.vb .. \ .. \ .. \ .. \ ModFileSS.m (Stavi SS prije .m tako da ga KS prepozna kao ??uvar zaslona, ??????a ne kao mod)
-- del / Q *. * (kako bismo bili sigurni da se ne stvaraju la??ne DLL datoteke jer ne koristimo DLL za modove)
+   - copy ..\..\ModFile.vb ..\..\..\..\ModFileSS.m (Stavi SS prije .m tako da ga KS prepozna kao ??uvar zaslona, ??????a ne kao mod)
+   - del /Q *.* (kako bismo bili sigurni da se ne stvaraju la??ne DLL datoteke jer ne koristimo DLL za modove)
 3. Ponovite korake 9-16 iz Modding vodi??a, ali zamijenite Imports Kernel_Simulator.ModParser s Uvoz Kernel_Simulator.Screensaver
 4. Izme??u linija javne klase ... i krajnje klase, obavijestite Visual Studio 2017 da ??ete kreirati svoju KS screensaver pisanjem: Implementira ICustomSaver
 5. Ako ??elite dodati prostore s imenima, moraju se ispuniti ova pravila:
-1) Ne uvozite Kernel_Simulator sam. 
-2) Pri uvozu modula / klasa poput TextWriterColor, pi??e se ovako: Uvozi Kernel_Simulator.TextWriterColor
+   1) Ne uvozite Kernel_Simulator sam. 
+   2) Pri uvozu modula / klasa poput TextWriterColor, pi??e se ovako: Uvozi Kernel_Simulator.TextWriterColor
 6. Definirajte svojstva za informacije o modu tako ??to ??ete staviti ispod skripte Implements IScript:
-Svojstvo inicijalizirano kao logi??na implementacija ICustomSaver.Initialized
+   Property Initialized As Boolean Implements ICustomSaver.Initialized
 7. U??inite svoj init screensaver pod nazivom InitSaver () koji implementira ICustomSaver.InitSaver, tako ??to ??ete napisati:
-Sub InitSaver () provodi ICustomSaver.InitSaver
-'Va?? kod ovdje
-Inicijalizirano = To??no 'Stavite ga bilo gdje u potkrovlje ako stvarate Ako su uvjeti, u suprotnom ostavite ovdje.
-Kraj Sub
+    Sub InitSaver() Implements ICustomSaver.InitSaver
+        'Your code here
+	Initialized = True 'Put it anywhere in the sub if you're making If conditions, otherwise, leave it here.
+    End Sub
 8. Zamijenite svaki svoj kod ovdje komentirajte svojim kodom. 
 9. Napravite svoj pretpregled (Nazvan prije prikazivanja ??uvara zaslona) podnaslov PreDisplay () koji implementira ICustomSaver.PreDisplay tako ??to ??ete napisati:
-Sub PreDisplay () provodi ICustomSaver.PreDisplay
-'Va?? kod ovdje
-Kraj Sub
+    Sub PreDisplay() Implements ICustomSaver.PreDisplay
+        'Your code here
+    End Sub
 10. Napravite svoj kod za prikaz (trebao bi prikazivati ??????ne??to) pod imenom ScrnSaver () koji implementira ICustomSaver.ScrnSaver, tako ??to napi??ete:
-Pod ScrnSaver () provodi ICustomSaver.ScrnSaver
-'Va?? kod ovdje
-Kraj Sub
+    Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+        'Your code here
+    End Sub
 11. Pretplatu mo??ete izvr??iti bilo gdje u razredu, ali ako:
-1) oni su u drugoj klasi, pritisnite Enter on End Class i javite novu klasu koja pohranjuje nove sub:
-Druga klasa javne klase
-'Va??e definicije u nastavku, pa tako i va??e pomo??ne jedinice, funkcije, su??elja itd.
-Krajnja klasa
-2) poku??avaju ponovo inicijalizirati ??uvar zaslona ponovnim pozivom na InitSaver (), Prvo poku??ajte s testnim okru??enjem, a zatim s proizvodnim okru??enjem ako to radi ispravno.
-I trebaju biti ispunjeni sljede??i uvjeti:
-1) Ne bi trebali praviti beskona??nu petlju osim ako ih ne napravite koja izlazi ako su ispunjeni odre??eni uvjeti
-2) Ne bi trebali poku??avati uzrokovati pogre??ke u kernelu.
-3) Postavite svoj sub poziv na jedan od tri potplata koji implementira ICustomSaver su??elje. 
+    1) oni su u drugoj klasi, pritisnite Enter on End Class i javite novu klasu koja pohranjuje nove sub:
+       Public Class AnotherClass
+	       'Your definitions below, and so your subs, functions, interfaces, etc.
+       End Class
+	2) poku??avaju ponovo inicijalizirati ??uvar zaslona ponovnim pozivom na InitSaver (), Prvo poku??ajte s testnim okru??enjem, a zatim s proizvodnim okru??enjem ako to radi ispravno.
+	I trebaju biti ispunjeni sljede??i uvjeti:
+	1) Ne bi trebali praviti beskona??nu petlju osim ako ih ne napravite koja izlazi ako su ispunjeni odre??eni uvjeti
+	2) Ne bi trebali poku??avati uzrokovati pogre??ke u kernelu.
+	3) Postavite svoj sub poziv na jedan od tri potplata koji implementira ICustomSaver su??elje. 
 12. Pokrenite gradnju. 
 13. Pokrenite svoj Kernel Simulator na koji ste se upravo referirali u svom projektu i u??itajte, postavite zadane postavke i zaklju??ajte svoj scren i ??uvar zaslona je tamo.
 
@@ -62,142 +62,142 @@ I trebaju biti ispunjeni sljede??i uvjeti:
 3. Kliknite Dodaj i kod ??e biti spreman.
 4. Napi??ite ispod (pretpostavite da je va??e ime SOR) javna klasa SOR: Provodi ICustomSaver
 5. Napi??ite iznad javne klase SOR:
-- Uvozni sustav
-- Uvozi sustav
-- Uvozi Kernel_Simulator.Screensaver
-- Uvozi Kernel_Simulator.TextWriterColor
-- Uvozi Kernel_Simulator.Login
+   - Imports System
+   - Imports System.Threading
+   - Imports KS.Screensaver
+   - Imports KS.TextWriterColor
+   - Imports KS.Login
 6. Trebali biste dobiti pogre??ke govore??i kako bi se ovi potplati trebali stvoriti.
 7. U??inite svoj startni ??uvar ??uvara zaslona tako ??to ??ete napisati:
-Svojstvo inicijalizirano kao logi??na implementacija ICustomSaver.Initialized
-Sub InitSaver () provodi ICustomSaver.InitSaver
-Wln ("U??itavanje ovog ??uvara zaslona pomo??u" "loadsaver SORSS.m" "i" "setsaver SORSS.m" "", "neutralText")
-Inicijalizirano = To??no
-Kraj Sub
+    Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Sub InitSaver() Implements ICustomSaver.InitSaver
+	W("Load this screensaver using ""loadsaver SORSS.m"" and ""setsaver SORSS.m""", "neutralText")
+        Initialized = True
+    End Sub
 8. Budu??i da ni??ta ne primjenjujemo prije prikazivanja ??uvara zaslona, ??????to ??emo ostaviti prazno:
-Sub PreDisplay () provodi ICustomSaver.PreDisplay
-Kraj Sub
+    Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
 9. Napi??ite iznad entiteta inicijaliziranog ...:
-Javni SOR_Random kao novi slu??ajni () 'Inicijalizira generator slu??ajnih brojeva
-Javni S_Random kao novi slu??ajni () 'Inicijalizira generator slu??ajnih brojeva
-Javni O_Random kao novi slu??ajni () 'Inicijalizira generator slu??ajnih brojeva
-Javni R_Random kao novi slu??ajni () 'Inicijalizira generator slu??ajnih brojeva
+    Public SOR_Random As New Random() 'Initializes the random number generator
+    Public S_Random As New Random() 'Initializes the random number generator
+    Public O_Random As New Random() 'Initializes the random number generator
+    Public R_Random As New Random() 'Initializes the random number generator
 9. Napi??i na podstrani ScrnSaver ():
-Console.Clear ()
-Ako je Custom.CancellationPending = Istina onda 'Ovo ??e rije??iti problem zbog toga ??to je zadatak zauzet.
-Izlaz za
-Zavr??i ako
-Dim SOR_Integer As Integer = SOR_Random.Next (1, 4) 'Bira se uskoro, no??enje ili nepristojno
-Dim Soon_MsgID As Integer = SOR_Random.Next (0, 2) 'Odabir poruka u nizu Soon
-Dim Over_MsgID As Integer = SOR_Random.Next (0, 2) 'Odabir poruka u nizu preko no??i
-Dim Rude_MsgID As Integer = SOR_Random.Next (0, 3) 'Odabir poruka u Rude polju
-Console.SetWindowPosition (0, 1)
-Odaberite Slu??aj SOR_Integer
-Slu??aj 1 'Uskoro
-WriteMsg (SOR_Integer, Soon_MsgID)
-Slu??aj 2 'Preno??i??te
-WriteMsg (SOR_Integer, Over_MsgID)
-Slu??aj 3 'Rude
-WriteMsg (SOR_Integer, Rude_MsgID)
-Kraj odabira
-Thread.Sleep (10000)
+    Console.Clear()
+    If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+        Exit For
+    End If
+    Dim SOR_Integer As Integer = SOR_Random.Next(1, 4) 'Chooses whether it's Soon, Overnight or Rude
+    Dim Soon_MsgID As Integer = SOR_Random.Next(0, 2) 'Selects messages in the Soon array
+    Dim Over_MsgID As Integer = SOR_Random.Next(0, 2) 'Selects messages in the Overnight array
+    Dim Rude_MsgID As Integer = SOR_Random.Next(0, 3) 'Selects messages in the Rude array
+    Console.SetWindowPosition(0, 1)
+    Select Case SOR_Integer
+        Case 1 'Soon
+            WriteMsg(SOR_Integer, Soon_MsgID)
+        Case 2 'Overnight
+            WriteMsg(SOR_Integer, Over_MsgID)
+        Case 3 'Rude
+            WriteMsg(SOR_Integer, Rude_MsgID)
+    End Select
+    Thread.Sleep(10000)
 11. Mo??da ??ete trebati stvoriti 1 funkciju i 2 pomo??ne jedinice kako bi ovo moglo funkcionirati. 
-ParsePlaces javnih dijeljenih funkcija (ByVal tekst kao niz)
-text = text.Replace ("<OWNER>", signinusrnm)
-Vrati tekst
-Zavr??na funkcija
-Javna dijeljena podinicijalizacijaBar (ByVal strlen kao Integer)
-W ("-", "neutralni tekst")
-Za l kao cjelobrojni = 0 Za strlen - 1
-W ("-", "neutralni tekst")
-Sljede??i
-Wln ("-", "neutralni tekst")
-Kraj Sub
-Javni dijeljeni sub WriteMsg (ByVal TypeID kao Integer, ByVal MsgID kao Integer)
-Dim BackMessages as String () = {"<OWNER> ??e se uskoro vratiti.", "<OWNER> je zauzet. On ??e se uskoro vratiti."}
-Dim OvernightMsg As String () = {"Izgleda da ??e se <OWNER> vratiti preko no??i", "On ??e se vratiti preko no??i."}
-Dim RudeMessages As String () = {"Mo??ete li oti??i?", "Odlazi, <OWNER> ??e se uskoro vratiti", "<OWNER> nije ovdje. Odlazite."}
-Prigu??i tekst kao string = ""
-Odaberite Case TypeID
-Slu??aj 1
-text = ParsePlaces (BackMessages (MsgID))
-Slu??aj 2
-tekst = ParsePlaces (OvernightMsg (MsgID))
-Slu??aj 3
-text = ParsePlaces (RudeMessages (MsgID))
-Kraj odabira
-InitializeBar (text.Length)
-Wln ("| {0} |", "neutralni tekst", tekst)
-InitializeBar (text.Length)
-Kraj Sub
+    Public Shared Function ParsePlaces(ByVal text As String)
+        text = text.Replace("<OWNER>", signedinusrnm)
+        Return text
+    End Function
+    Public Shared Sub InitializeBar(ByVal strlen As Integer)
+        W("   +-", "neutralText")
+        For l As Integer = 0 To strlen - 1
+            W("-", "neutralText")
+        Next
+        W("-+", "neutralText")
+    End Sub
+    Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer)
+	Dim BackMessages As String() = {"<OWNER> will be back soon.", "<OWNER> is busy. He will be back soon."}
+    	Dim OvernightMsg As String() = {"It seems that <OWNER> will be back overnight", "He'll be back overnight."}
+    	Dim RudeMessages As String() = {"Can you go away?", "Go away, <OWNER> will be back soon", "<OWNER> isn't here. Go away."}
+        Dim text As String = ""
+        Select Case TypeID
+            Case 1
+                text = ParsePlaces(BackMessages(MsgID))
+            Case 2
+                text = ParsePlaces(OvernightMsg(MsgID))
+            Case 3
+                text = ParsePlaces(RudeMessages(MsgID))
+        End Select
+        InitializeBar(text.Length)
+        W("   | {0} |", "neutralText", text)
+        InitializeBar(text.Length)
+    End Sub
 12. K??d treba izgledati ovako:
-Uvozni sustav
-Uvozi sustav
-Uvozi Kernel_Simulator.Screensaver
-Uvozi Kernel_Simulator.TextWriterColor
-Uvozi Kernel_Simulator.Login
-Javna klasa SoonOvernightRude
-Provodi ICustomSaver
-Svojstvo inicijalizirano kao logi??na implementacija ICustomSaver.Initialized
-Javni SOR_Random kao novi slu??ajni () 'Inicijalizira generator slu??ajnih brojeva
-Javni S_Random kao novi slu??ajni () 'Inicijalizira generator slu??ajnih brojeva
-Javni O_Random kao novi slu??ajni () 'Inicijalizira generator slu??ajnih brojeva
-Javni R_Random kao novi slu??ajni () 'Inicijalizira generator slu??ajnih brojeva
-Sub InitSaver () provodi ICustomSaver.InitSaver
-Wln ("Postavi ovaj screensaver kao zadani koriste??i" "setsaver SORSS.m" "", "neutralText")
-Inicijalizirano = To??no
-Kraj Sub
-Sub PreDisplay () provodi ICustomSaver.PreDisplay
-Kraj Sub
-Pod ScrnSaver () provodi ICustomSaver.ScrnSaver
-Console.Clear ()
-Ako je Custom.CancellationPending = Istina onda 'Ovo ??e rije??iti problem zbog toga ??to je zadatak zauzet.
-Izlaz za
-Zavr??i ako
-Dim SOR_Integer As Integer = SOR_Random.Next (1, 4) 'Bira se uskoro, no??enje ili nepristojno
-Dim Soon_MsgID As Integer = S_Random.Next (0, 2) 'Odabir poruka u nizu Soon
-Dim Over_MsgID As Integer = O_Random.Next (0, 2) 'Odabir poruka u nizu preko no??i
-Dim Rude_MsgID As Integer = R_Random.Next (0, 3) 'Odabir poruka u Rude polju
-Console.SetCursorPosition (0, 1)
-Odaberite Slu??aj SOR_Integer
-Slu??aj 1 'Uskoro
-WriteMsg (SOR_Integer, Soon_MsgID)
-Slu??aj 2 'Preno??i??te
-WriteMsg (SOR_Integer, Over_MsgID)
-Slu??aj 3 'Rude
-WriteMsg (SOR_Integer, Rude_MsgID)
-Kraj odabira
-Thread.Sleep (10000)
-Kraj Sub
-ParsePlaces javnih dijeljenih funkcija (ByVal tekst kao niz)
-text = text.Replace ("<OWNER>", signinusrnm)
-Vrati tekst
-Zavr??na funkcija
-Javna dijeljena podinicijalizacijaBar (ByVal strlen kao Integer)
-W ("-", "neutralni tekst")
-Za l kao cjelobrojni = 0 Za strlen - 1
-W ("-", "neutralni tekst")
-Sljede??i
-Wln ("-", "neutralni tekst")
-Kraj Sub
-Javni dijeljeni sub WriteMsg (ByVal TypeID kao Integer, ByVal MsgID kao Integer)
-Dim BackMessages as String () = {"<OWNER> ??e se uskoro vratiti.", "<OWNER> je zauzet. On ??e se uskoro vratiti."}
-Dim OvernightMsg As String () = {"Izgleda da ??e se <OWNER> vratiti preko no??i", "On ??e se vratiti preko no??i."}
-Dim RudeMessages As String () = {"Mo??ete li oti??i?", "Odlazi, <OWNER> ??e se uskoro vratiti", "<OWNER> nije ovdje. Odlazite."}
-Prigu??i tekst kao string = ""
-Odaberite Case TypeID
-Slu??aj 1
-text = ParsePlaces (BackMessages (MsgID))
-Slu??aj 2
-tekst = ParsePlaces (OvernightMsg (MsgID))
-Slu??aj 3
-text = ParsePlaces (RudeMessages (MsgID))
-Kraj odabira
-InitializeBar (text.Length)
-Wln ("| {0} |", "neutralni tekst", tekst)
-InitializeBar (text.Length)
-Kraj Sub
-Krajnja klasa
+    Imports System
+    Imports System.Threading
+    Imports KS.Screensaver
+    Imports KS.TextWriterColor
+    Imports KS.Login
+    Public Class SoonOvernightRude
+    	Implements ICustomSaver
+    	Property Initialized As Boolean Implements ICustomSaver.Initialized
+    	Public SOR_Random As New Random() 'Initializes the random number generator
+    	Public S_Random As New Random() 'Initializes the random number generator
+    	Public O_Random As New Random() 'Initializes the random number generator
+    	Public R_Random As New Random() 'Initializes the random number generator
+    	Sub InitSaver() Implements ICustomSaver.InitSaver
+            W("Set this screensaver as default using ""setsaver SORSS.m""", "neutralText")
+            Initialized = True
+    	End Sub
+    	Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    	End Sub
+    	Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+	        Console.Clear()
+	        If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+                Exit For
+            End If
+    	    Dim SOR_Integer As Integer = SOR_Random.Next(1, 4) 'Chooses whether it's Soon, Overnight or Rude
+    	    Dim Soon_MsgID As Integer = S_Random.Next(0, 2) 'Selects messages in the Soon array
+    	    Dim Over_MsgID As Integer = O_Random.Next(0, 2) 'Selects messages in the Overnight array
+    	    Dim Rude_MsgID As Integer = R_Random.Next(0, 3) 'Selects messages in the Rude array
+            Console.SetCursorPosition(0, 1)
+            Select Case SOR_Integer
+            	Case 1 'Soon
+                    WriteMsg(SOR_Integer, Soon_MsgID)
+            	Case 2 'Overnight
+                    WriteMsg(SOR_Integer, Over_MsgID)
+            	Case 3 'Rude
+                    WriteMsg(SOR_Integer, Rude_MsgID)
+            End Select
+	    Thread.Sleep(10000)
+    	End Sub
+    	Public Shared Function ParsePlaces(ByVal text As String)
+            text = text.Replace("<OWNER>", signedinusrnm)
+            Return text
+        End Function
+        Public Shared Sub InitializeBar(ByVal strlen As Integer)
+            W("   +-", "neutralText")
+            For l As Integer = 0 To strlen - 1
+            	W("-", "neutralText")
+            Next
+            W("-+", "neutralText")
+        End Sub
+        Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer)
+	        Dim BackMessages As String() = {"<OWNER> will be back soon.", "<OWNER> is busy. He will be back soon."}
+    	    Dim OvernightMsg As String() = {"It seems that <OWNER> will be back overnight", "He'll be back overnight."}
+    	    Dim RudeMessages As String() = {"Can you go away?", "Go away, <OWNER> will be back soon", "<OWNER> isn't here. Go away."}
+            Dim text As String = ""
+            Select Case TypeID
+            	Case 1
+                    text = ParsePlaces(BackMessages(MsgID))
+            	Case 2
+                    text = ParsePlaces(OvernightMsg(MsgID))
+            	Case 3
+                    text = ParsePlaces(RudeMessages(MsgID))
+            End Select
+            InitializeBar(text.Length)
+            W("   | {0} |", "neutralText", text)
+            InitializeBar(text.Length)
+    	End Sub
+    End Class
 13. Pokrenite gradnju. 
 14. Pokrenite svoj Kernel Simulator na koji ste se upravo referirali u svom projektu, a zatim se u??itajte, postavite kao zadano i pokrenite spremljeni zaslon.
 
@@ -205,186 +205,186 @@ Krajnja klasa
 
 1. Ponovite korake 1-4 na prvom primjeru: Okvir s porukama u konzoli, a uskoro, no??enje ili nepristojno (odlazite ...)
 2. Napi??ite iznad praznog razreda javne klase (pod pretpostavkom da je va??e ime razreda prazno):
-- Uvozni sustav
-- Uvozi Kernel_Simulator.Screensaver
+    - Imports System
+    - Imports KS.Screensaver
 3. Napi??ite ove ispod Implements ICustomSaver:
-Javno vlasni??tvo inicijalizirano kao logi??na implementacija ICustomSaver.Initialized
-Javni sub InitSaver () provodi ICustomSaver.InitSaver
-Inicijalizirano = To??no
-Kraj Sub
-Javni Sub PreDisplay () provodi ICustomSaver.PreDisplay
-Kraj Sub
-Javni pod ScrnSaver () provodi ICustomSaver.ScrnSaver
-
-Kraj Sub
+    Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Public Sub InitSaver() Implements ICustomSaver.InitSaver
+        Initialized = True
+    End Sub
+    Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
+    Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+    
+    End Sub
 4. Unesite ScrnSaver pod:
-Console.Clear ()
+    Console.Clear ()
 5. Kod treba izgledati ovako:
-Uvozni sustav
-Uvozi Kernel_Simulator.Screensaver
-Praznik javne klase
-Provodi ICustomSaver
-Javno vlasni??tvo inicijalizirano kao logi??na implementacija ICustomSaver.Initialized
-Javni sub InitSaver () provodi ICustomSaver.InitSaver
-Inicijalizirano = To??no
-Kraj Sub
-Javni Sub PreDisplay () provodi ICustomSaver.PreDisplay
-Kraj Sub
-Javni pod ScrnSaver () provodi ICustomSaver.ScrnSaver
-Console.Clear ()
-Kraj Sub
-Krajnja klasa
+    Imports System
+    Imports KS.Screensaver
+    Public Class Blank
+    	Implements ICustomSaver
+    	Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    	Public Sub InitSaver() Implements ICustomSaver.InitSaver
+            Initialized = True
+    	End Sub
+    	Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    	End Sub
+    	Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+        Console.Clear()
+   	End Sub
+    End Class
 5. Ponovite korake 13-14 na prvom primjeru: Poruka unutar konzole, a uskoro, no??enje ili nepristojno (odlazite ...)
 
 3. Animacija (krug crte??a - 4 kadra - 4 FPS)
 
 Ovaj ??e vam primjer zapo??eti s animacijama. 
 
-Uvozni sustav
-Uvozi Microsoft.VisualBasic.Constants
-Uvozi Kernel_Simulator.TextWriterColor
-Uvozi sustav
-Uvozi Kernel_Simulator.Screensaver
-Javna klasa ANI
-Provodi ICustomSaver
-Javno vlasni??tvo inicijalizirano kao logi??na implementacija ICustomSaver.Initialized
-Javni CurrentStep kao Integer
-Javni sub InitSaver () provodi ICustomSaver.InitSaver
-Inicijalizirano = To??no
-Kraj Sub
-Javni podnastupni prikaz () provodi ICustomSaver.PreDisplay
-Kraj Sub
-Javni pod ScrnSaver () provodi ICustomSaver.ScrnSaver
-Za CurrentStep = 0 do 3
-Console.Clear ()
-Ako je Custom.CancellationPending = Istina tada 'Ovo ??e rije??iti problem zbog toga ??to je zadatak zauzet.
-Izlaz za
-Zavr??i ako
-Wln (aniset (CurrentStep), "neutralni tekst")
-Thread.Sleep (150)
-Sljede??i
-Kraj Sub
+Imports System
+Imports Microsoft.VisualBasic.Constants
+Imports KS.TextWriterColor
+Imports System.Threading
+Imports KS.Screensaver
+Public Class ANI
+    Implements ICustomSaver
+    Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Public CurrentStep As Integer
+    Public Sub InitSaver() Implements ICustomSaver.InitSaver
+        Initialized = True
+    End Sub
+    Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
+    Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+        For CurrentStep = 0 To 3
+            Console.Clear()
+	        If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+                Exit For
+            End If
+            W(aniset(CurrentStep), "neutralText")
+            Thread.Sleep(150)
+        Next
+    End Sub
 
-Javni aniset kao String () = {"mmhyo / -" vbNewLine
-"mNMMMMMNy:" vbNewLine
-".: odMMMd /" vbNewLine
-".oMMMd." vbNewLine
-"` hMMN- "vbNewLine
-"yMMm`" vbNewLine
-"mMM" vbNewLine
-"oMMh" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"" vbNewLine
-"",
-"mmhyo / -" vbNewLine
-"mNMMMMMNy:" vbNewLine
-".: odMMMd /" vbNewLine
-".oMMMd." vbNewLine
-"` hMMN- "vbNewLine
-"yMMm`" vbNewLine
-"mMM" vbNewLine
-"oMMh" vbNewLine
-"oMMh" vbNewLine
-"mMM" vbNewLine
-"yMMm`" vbNewLine
-"` hMMN- "vbNewLine
-"` oMMMd. "vbNewLine
-".: odMMMm /" vbNewLine
-"mNMMMMMNy:" vbNewLine
-"mmhhs / -",
-"mmhyo / -" vbNewLine
-"mNMMMMMNy:" vbNewLine
-".: odMMMd /" vbNewLine
-".oMMMd." vbNewLine
-"` hMMN- "vbNewLine
-"yMMm`" vbNewLine
-"mMM" vbNewLine
-"oMMh" vbNewLine
-"hMMo oMMh" vbNewLine
-"MMm mMM" vbNewLine
-"mMMy yMMm`" vbNewLine
-"-NMMh`` hMMN- "vbNewLine
-".dMMMs` `oMMMd." vbNewLine
-"/ dMMMdo:.:: odMMMm /" vbNewLine
-": yNMMMMMNmmNMMMMMNy:" vbNewLine
-"- / shhmmmmhhs / -",
-"- / oydmmmmhyo / -" vbNewLine
-": yNMMMMMNmmNMMMMMNy:" vbNewLine
-": dMMMdo :.:: odMMMd /" vbNewLine
-".dMMMs .oMMMd." vbNewLine
-"-NMMh`` hMMN- "vbNewLine
-"mMMy yMMm`" vbNewLine
-"MMm mMM" vbNewLine
-"hMMo oMMh" vbNewLine
-"hMMo oMMh" vbNewLine
-"MMm mMM" vbNewLine
-"mMMy yMMm`" vbNewLine
-"-NMMh`` hMMN- "vbNewLine
-".dMMMs` `oMMMd." vbNewLine
-"/ dMMMdo:.:: odMMMm /" vbNewLine
-": yNMMMMMNmmNMMMMMNy:" vbNewLine
-"- / shhmmmmhhs / -"}
-Krajnja klasa
+    Public aniset As String() = {"                mmhyo/-         " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                   .:odMMMd/    " + vbNewLine +
+                                 "                       .oMMMd.  " + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                " + vbNewLine +
+                                 "                                ",
+                                 "                mmhyo/-         " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                   .:odMMMd/    " + vbNewLine +
+                                 "                       .oMMMd.  " + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                       `oMMMd.  " + vbNewLine +
+                                 "                   .:odMMMm/    " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                mmhhs/-         ",
+                                 "                mmhyo/-         " + vbNewLine +
+                                 "                mNMMMMMNy:      " + vbNewLine +
+                                 "                   .:odMMMd/    " + vbNewLine +
+                                 "                       .oMMMd.  " + vbNewLine +
+                                 "                         `hMMN- " + vbNewLine +
+                                 "                           yMMm`" + vbNewLine +
+                                 "                            mMM+" + vbNewLine +
+                                 "                            oMMh" + vbNewLine +
+                                 "hMMo                        oMMh" + vbNewLine +
+                                 "+MMm                        mMM+" + vbNewLine +
+                                 " mMMy                      yMMm`" + vbNewLine +
+                                 " -NMMh`                  `hMMN- " + vbNewLine +
+                                 "  .dMMMs`              `oMMMd.  " + vbNewLine +
+                                 "    /dMMMdo:.      .:odMMMm/    " + vbNewLine +
+                                 "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                                 "         -/shhmmmmhhs/-         ",
+                                 "         -/oydmmmmhyo/-         " + vbNewLine +
+                                 "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                                 "    :dMMMdo:.      .:odMMMd/    " + vbNewLine +
+                                 "  .dMMMs.              .oMMMd.  " + vbNewLine +
+                                 " -NMMh`                  `hMMN- " + vbNewLine +
+                                 " mMMy                      yMMm`" + vbNewLine +
+                                 "+MMm                        mMM+" + vbNewLine +
+                                 "hMMo                        oMMh" + vbNewLine +
+                                 "hMMo                        oMMh" + vbNewLine +
+                                 "+MMm                        mMM+" + vbNewLine +
+                                 " mMMy                      yMMm`" + vbNewLine +
+                                 " -NMMh`                  `hMMN- " + vbNewLine +
+                                 "  .dMMMs`              `oMMMd.  " + vbNewLine +
+                                 "    /dMMMdo:.      .:odMMMm/    " + vbNewLine +
+                                 "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                                 "         -/shhmmmmhhs/-         "}
+End Class
 
 4. Izra??unajte od 0 do 1.000.000 s trakom napretka (dinami??ki)
 
-Uvozni sustav
-Uvozi Microsoft.VisualBasic.Constants
-Uvozi Kernel_Simulator.TextWriterColor
-Uvozi Microsoft.VisualBasic.Strings
-Uvozi Kernel_Simulator.Screensaver
-Javna klasa dinamika
-Provodi ICustomSaver
-Javno vlasni??tvo se inicijalizira kao logi??na implementacija ICustomSaver.Initialized
-Public Res As Integer
-Javni ProgWent kao Integer
-Javna provjera kao cjelobrojni
-Javni stari Provjeri kao Integer
-Javni sub InitSaver () provodi ICustomSaver.InitSaver
-Inicijalizirano = To??no
-Kraj Sub
-Javni podnastupni prikaz () provodi ICustomSaver.PreDisplay
-Kraj Sub
-Javni pod ScrnSaver () provodi ICustomSaver.ScrnSaver
-Console.Clear ()
-Za Res = 0 do 1000000
-Ako je Custom.CancellationPending = Istina tada 'Ovo ??e rije??iti problem zbog toga ??to je zadatak zauzet.
-Izlaz za
-Zavr??i ako
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 5)
-ShowStats ()
-Sljede??i
-Provjerite = 0: oldCheck = 0: ProgWent = 0
-Kraj Sub
-Javne podsavjete ()
-Wln ("{0} / 1000000 | {1}%", "neutralni tekst", Res, FormatNumber (CStr (Res * 100/1000000), 1))
-UpdateProgressBar (Res * 100/1000000)
-Kraj Sub
-Javni podra??ak UpdateProgressBar (postotak ByVal kao niz)
-Provjera = postotak / 5
-Wln (Oznaka, "neutralni tekst")
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
-W ("--------------------", "neutralni tekst")
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
-W ("|", "neutralni tekst")
-Ako je ozna??ite <> oldCheck onda
-Za Odlazak kao Integer = 0 ProgWent
-W ("*", "neutralni tekst")
-Sljede??i
-ProgWent = 1
-Zavr??i ako
-Console.SetCursorPosition ((Console.WindowWidth / 2) 11, (Console.WindowHeight / 2) - 2)
-W ("|", "neutralni tekst")
-Console.SetCursorPosition ((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 1)
-W ("--------------------", "neutralni tekst")
-oldCheck = postotak / 5
-Kraj Sub
-Krajnja klasa
+Imports System
+Imports Microsoft.VisualBasic.Constants
+Imports KS.TextWriterColor
+Imports Microsoft.VisualBasic.Strings
+Imports KS.Screensaver
+Public Class Dynamic
+    Implements ICustomSaver
+    Public Property Initialized As Boolean Implements ICustomSaver.Initialized
+    Public Res As Integer
+    Public ProgWent As Integer
+    Public Check As Integer
+    Public oldCheck As Integer
+    Public Sub InitSaver() Implements ICustomSaver.InitSaver
+        Initialized = True
+    End Sub
+    Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
+    End Sub
+    Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+        Console.Clear()
+        For Res = 0 To 1000000
+            If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy.
+                Exit For
+            End If
+            Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 5)
+            ShowStats()
+        Next
+        Check = 0 : oldCheck = 0 : ProgWent = 0
+    End Sub
+    Public Sub ShowStats()
+        W("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber(CStr(Res * 100 / 1000000), 1))
+        UpdateProgressBar(Res * 100 / 1000000)
+    End Sub
+    Public Sub UpdateProgressBar(ByVal percent As String)
+        Check = percent / 5
+        W(Check, "neutralText")
+        Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3)
+        W("+--------------------+", "neutralText")
+        Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2)
+        W("| ", "neutralText")
+        If Check <> oldCheck Then
+            For Went As Integer = 0 To ProgWent
+                W("*", "neutralText")
+            Next
+            ProgWent += 1
+        End If
+        Console.SetCursorPosition((Console.WindowWidth / 2) + 11, (Console.WindowHeight / 2) - 2)
+        W(" |", "neutralText")
+        Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 1)
+        W("+--------------------+", "neutralText")
+        oldCheck = percent / 5
+    End Sub
+End Class
 
 Vi??e primjera
 
