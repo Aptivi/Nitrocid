@@ -679,21 +679,21 @@ Mutta kaikki distrot eiv??t asenna inxi oletusarvoisesti, joten jos sinulla ei o
 
 Debian ja sen johdannaiset:
 
-
-
+	# apt update
+	# apt install inxi
 
 Red Hat ja sen johdannaiset:
 
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE ja sen johdannaiset:
 
-
+	# zypper install inxi (?)
 
 Arch Linux ja sen johdannaiset:
 
-
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Loput rakentuvat l??hteest?? ja asettavat suoritettavan tiedoston tiedostoon / usr / bin, koska prober n??ytt???? vain kyseisess?? hakemistossa, tai asenna paketinhallintaohjelmat.
 
@@ -827,6 +827,27 @@ KS 0.0.6.10
 5. Tehty KernelVersion- ja EnvironmentOSType -muotoisiksi
 6. cmdline-argumentti "promptArgs" poistettu
 7. Ylimääräistä pinoa ei nyt muodostu käynnistettäessä
+
+KS 0.0.6.11
+
+1. Kiinteä virheenkorjaus, joka näyttää salasanan selkeästi
+2. Näytä muutoslokit päivityksen aikana
+3. Kiinteä KeyNotFoundException, kun päivitys on suoritettu käynnistyksen yhteydessä
+
+KS 0.0.6.12
+
+1. Lisää koodiblokkikorjauksia Tšekin, Kroatian, Hollannin, Suomen, Ranskan, Saksan, Italian, Malaijin, Portugalin, Espanjan, Ruotsin ja Turkin käsikirjasivuille.
+
+HUOMAUTUS: Tämä versio on seurausta turhista koodilohkojen muutoksista, jotka Google on tehtävä, jotta se tuntuisi rumaalta, käännetyltä, yhdistämättömältä ja väärin kohdistetulta.
+
+KS 0.0.6.13
+
+1. Parannetut aika- ja päivämääräajat (nyt kaksi kenttää, yksi DateTime, yksi merkkijono, on muodostettu yhdeksi)
+2. MOTD- ja MAL-jäsennys tiedostojen avulla uusien rivien tukemiseksi paremmin
+3. Kiinteät `chmal` ja` chmotd` ottaen vain yhden sanan
+4. Kiinteät casting-ongelmat ytimen virheessä
+5. Poistettu uusi rivin paikkamerkki
+6. Poistetut MAL- ja MOTD-määritykset
 -BODY END-
 
 -SECTIONS-
@@ -885,4 +906,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

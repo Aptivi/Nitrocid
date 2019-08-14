@@ -679,21 +679,21 @@ Tetapi, tidak semua distros memasang inxi secara lalai, jadi jika anda tidak mem
 
 Debian, dan derivatifnya:
 
-
-
+	# apt update
+	# apt install inxi
 
 Red Hat, dan derivatifnya:
 
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE, dan derivatifnya:
 
-
+	# zypper install inxi (?)
 
 Arch Linux, dan derivatifnya:
 
-
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Selebihnya, bina dari sumber dan letakkan fail boleh laku ke dalam / usr / bin sejak prober hanya melihat dalam direktori itu, atau gunakan pengurus pakej anda untuk memasangnya.
 
@@ -827,6 +827,27 @@ KS 0.0.6.10
 5. Made KernelVersion dan EnvironmentOSype baca sahaja
 6. Argumen cmdline "promptArgs" dikeluarkan
 7. Stack tambahan kini tidak dijana semasa reboot
+
+KS 0.0.6.11
+
+1. Tetapkan debug yang menunjukkan kata laluan dalam teks yang jelas
+2. Menunjukkan changelog semasa pembaruan
+3. Tetapkan KeyNotFoundException selepas mengemas kini config pada permulaan
+
+KS 0.0.6.12
+
+1. Lebih banyak pembetulan codeblock untuk laman manual bahasa Czech, Croatia, Belanda, Finland, Perancis, Jerman, Itali, Melayu, Portugis, Sepanyol, Sweden, dan Turki.
+
+NOTA: Versi ini adalah hasil daripada pengubahsuaian yang tidak berguna kepada codeblocks yang Google harus membuat supaya merasakan hodoh, diterjemahkan, tidak kompilasi, dan tidak sengaja.
+
+KS 0.0.6.13
+
+1. Masa percubaan yang lebih baik dan tarikh (Sekarang dua bidang, satu DateTime, satu String, dibuat menjadi satu)
+2. PEMULIHAN MOTD dan MAL menggunakan fail untuk menyokong baris baru
+3. Tetapkan `chmal` dan` chmotd` hanya mengambil satu perkataan
+4. Isu pemutus tetap pada ralat kernel
+5. Pemegang tempat baris baru yang dikeluarkan
+6. Dihapuskan penyertaan MAL dan MOTD config
 -BODY END-
 
 -SECTIONS-
@@ -885,4 +906,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

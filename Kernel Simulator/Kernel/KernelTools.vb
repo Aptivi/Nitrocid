@@ -51,13 +51,13 @@ Public Module KernelTools
                     'If the error type is unrecoverable, or double, and the rebooting is false where it should
                     'not be false, then it can deal with this issue by enabling reboot.
                     Wdbg("Errors that have {0} type enforced Reboot = True.", ErrorType)
-                    W(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}.", currentLang), "uncontError", ErrorType)
+                    W(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}.", currentLang), True, "uncontError", ErrorType)
                     Reboot = True
                 End If
                 If RebootTime > 3600 Then
                     'If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
                     Wdbg("RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime)
-                    W(DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.", currentLang), "uncontError", ErrorType, CStr(RebootTime))
+                    W(DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.", currentLang), True, "uncontError", ErrorType, CStr(RebootTime))
                     RebootTime = 60
                 End If
             Else
@@ -82,7 +82,7 @@ Public Module KernelTools
             If Description.Contains("DOUBLE PANIC: ") And ErrorType = "D" Then
                 'If the description has a double panic tag and the error type is Double
                 Wdbg("Double panic caused by bug in kernel crash.")
-                W(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, Description, CStr(RebootTime))
+                W(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", currentLang), True, "uncontError", ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
                 Wdbg("Rebooting")
                 PowerManage("reboot")
@@ -93,23 +93,23 @@ Public Module KernelTools
                 'Check if error is Continuable and reboot is enabled
                 Wdbg("Continuable kernel errors shouldn't have Reboot = True.")
                 W(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.", currentLang) + vbNewLine +
-                    DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, Description)
+                  DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), True, "contError", ErrorType, Description)
                 Console.ReadKey()
             ElseIf ErrorType = "C" And Reboot = False Then
                 'Check if error is Continuable and reboot is disabled
                 EventManager.RaiseContKernelError()
-                W(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), "contError", ErrorType, Description)
+                W(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), True, "contError", ErrorType, Description)
                 Console.ReadKey()
             ElseIf (Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C") Then
                 'If rebooting is disabled and the error type does not equal Double or Continuable
                 Wdbg("Reboot is False, ErrorType is not double or continuable.")
-                W(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown.", currentLang), "uncontError", ErrorType, Description)
+                W(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown.", currentLang), True, "uncontError", ErrorType, Description)
                 Console.ReadKey()
                 PowerManage("shutdown")
             Else
                 'Everything else.
                 Wdbg("Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
-                W(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds...", currentLang), "uncontError", ErrorType, Description, CStr(RebootTime))
+                W(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds...", currentLang), True, "uncontError", ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
                 PowerManage("reboot")
             End If
@@ -125,8 +125,8 @@ Public Module KernelTools
 
     Sub GeneratePanicDump(ByVal Description As String, ByVal ErrorType As Char, ByVal Exc As Exception)
         'Open a file stream for dump
-        Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{FormatDateTime(Date.Now, DateFormat.ShortDate).Replace("/", "-")}_{FormatDateTime(Date.Now, DateFormat.LongTime).Replace(":", "-")}.txt")
-        Wdbg("Opened file stream in home directory, saved as dmp_{0}_{1}.txt", $"{FormatDateTime(Date.Now, DateFormat.ShortDate).Replace("/", "-")}_{FormatDateTime(Date.Now, DateFormat.LongTime).Replace(":", "-")}")
+        Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{Date.Now.ToShortDateString.Replace("/", "-")}_{Date.Now.ToLongTimeString.Replace(":", "-")}.txt")
+        Wdbg("Opened file stream in home directory, saved as dmp_{0}_{1}.txt", $"{Date.Now.ToShortDateString.Replace("/", "-")}_{Date.Now.ToLongTimeString.Replace(":", "-")}")
 
         'Write info (Header)
         Dump.AutoFlush = True
@@ -330,18 +330,19 @@ Public Module KernelTools
     End Sub
 
     Sub InitPaths()
+        'TODO: Make dirs to more appropriate dirs
         If EnvironmentOSType.Contains("Unix") Then
-            paths.Add("Mods", Environ("HOME") + "/KSMods/")
-            paths.Add("Configuration", Environ("HOME") + "/kernelConfig.ini")
-            paths.Add("Debugging", Environ("HOME") + "/kernelDbg.log")
-            paths.Add("Aliases", Environ("HOME") + "/aliases.csv")
-            paths.Add("Home", Environ("HOME"))
+            If Not paths.ContainsKey("Mods") Then paths.Add("Mods", Environ("HOME") + "/KSMods/")
+            If Not paths.ContainsKey("Configuration") Then paths.Add("Configuration", Environ("HOME") + "/kernelConfig.ini")
+            If Not paths.ContainsKey("Debugging") Then paths.Add("Debugging", Environ("HOME") + "/kernelDbg.log")
+            If Not paths.ContainsKey("Aliases") Then paths.Add("Aliases", Environ("HOME") + "/aliases.csv")
+            If Not paths.ContainsKey("Home") Then paths.Add("Home", Environ("HOME"))
         Else
-            paths.Add("Mods", Environ("USERPROFILE") + "\KSMods\")
-            paths.Add("Configuration", Environ("USERPROFILE") + "\kernelConfig.ini")
-            paths.Add("Debugging", Environ("USERPROFILE") + "\kernelDbg.log")
-            paths.Add("Aliases", Environ("USERPROFILE") + "\aliases.csv")
-            paths.Add("Home", Environ("USERPROFILE"))
+            If Not paths.ContainsKey("Mods") Then paths.Add("Mods", Environ("USERPROFILE") + "\KSMods\")
+            If Not paths.ContainsKey("Configuration") Then paths.Add("Configuration", Environ("USERPROFILE") + "\kernelConfig.ini")
+            If Not paths.ContainsKey("Debugging") Then paths.Add("Debugging", Environ("USERPROFILE") + "\kernelDbg.log")
+            If Not paths.ContainsKey("Aliases") Then paths.Add("Aliases", Environ("USERPROFILE") + "\aliases.csv")
+            If Not paths.ContainsKey("Home") Then paths.Add("Home", Environ("USERPROFILE"))
         End If
     End Sub
 

@@ -10,6 +10,7 @@ Kernel Simulator låter dig simulera en mycket tidig åtkomst för vår framtida
 
 | --------------- + -> Historik <- + --------------- |
 
+8/13/2019 - 0.0.6.13: Förbättrade tester för tid och datum (nu två fält, en DateTime, en sträng, görs till en), MOTD och MAL-analysering med hjälp av filer för att bättre stödja nylinjer, Fast `chmal` och` chmotd `tar bara ett ord, fixade gjutproblem på kärnfel, Borttagen ny radplatshållare, borttagna MAL- och MOTD-konfigurationsposter
 8/11/2019 - 0.0.6.12: Fler kodblockkorrigeringar för tjeckiska, kroatiska, nederländska, finska, franska, tyska, italienska, malaysiska, portugisiska, spanska, svenska och turkiska manuella sidorna. Denna version är ett resultat av värdelösa ändringar av kodblock som Google måste göra så att det känns fult, översatt, okompilerbart och feljusterat.
 8/10/2019 - 0.0.6.11: Fast felsökning som visar lösenord i tydlig text, Visade ändringar under uppdatering, Fast KeyNotFoundException efter uppdatering av config vid start
 8/8/2019 - 0.0.6.10: Förenklad namnutrymme till KS, Fasta kodblock för hindi, kinesiska och 1/2 tjeckiska (Se kommentar på GetCommand.vb), Lagt till saknad hjälppost för "reloadsaver", lagt till "reloadmods" -kommando , Made KernelVersion and EnvironmentOSType skrivskyddad, "promptArgs" cmdline-argument har tagits bort, Extra stack genereras nu inte vid omstart
@@ -97,18 +98,18 @@ Licens (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 
 | --------------- + -> Licens - GNU GPL <- + --------------- |
 
-    Kernel Simulator - Simulerar vår framtida planerade Kernel
-    Copyright (C) 2018-2019 EoflaOE
+    Kernel Simulator - Simulates our future planned Kernel
+    Copyright (C) 2018-2019  EoflaOE
 
-    Detta program är gratis programvara: du kan distribuera det och / eller modifiera
-    det enligt villkoren i GNU General Public License som publiceras av
-    Free Software Foundation, antingen version 3 av licensen, eller
-    (efter eget val) alla senare versioner.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    Detta program distribueras i hopp om att det kommer att vara användbart,
-    men UTAN NÅGON GARANTI; utan ens den underförstådda garantin från
-    FÖRVÄRMIGHET eller FITNESS FÖR EN SÄRSKILT SYFTE. Se
-    GNU General Public License för mer information.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    Du borde ha fått en kopia av GNU General Public License
-    tillsammans med detta program. Om inte, se <https://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

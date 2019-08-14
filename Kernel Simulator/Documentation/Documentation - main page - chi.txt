@@ -10,6 +10,7 @@
 
 | --------------- +  - >历史< -  + --------------- |
 
+8/13/2019  -  0.0.6.13：改进的时间和日期缓解（现在两个字段，一个DateTime，一个字符串，组成一个），MOTD和MAL解析使用文件来更好地支持换行，修复`chmal`和`chmotd `只取一个字，修复了内核错误的铸造问题，删除了新的行占位符，移除了MAL和MOTD配置条目
 8/11/2019  -  0.0.6.12：捷克语，克罗地亚语，荷兰语，芬兰语，法语，德语，意大利语，马来语，葡萄牙语，西班牙语，瑞典语和土耳其语手册页的更多代码块更正。 此版本是对Google必须对代码块进行无用修改的结果，因此它感觉难看，翻译，无法编译和错位。
 8/10/2019  -  0.0.6.11：修复了调试，以明文形式显示密码，在更新期间显示更改日志，修复了启动时更新配置后的KeyNotFoundException
 8/8/2019  -  0.0.6.10：简化的命名空间到KS，修复了印地语，中文和1/2捷克语的代码块（请参阅GetCommand.vb上的评论），为“reloadsaver”添加了缺少的帮助条目，添加了“reloadmods”命令 ，Made KernelVersion和EnvironmentOSType只读，删除了“promptArgs”cmdline参数，重启时现在没有生成额外堆栈
@@ -97,18 +98,18 @@ FluentFTP
 
 |-----------------+--->许可证 -  GNU GPL <---+-----------------|
 
-    内核模拟器 - 模拟我们未来计划的内核
-    版权所有（C）2018-2019 EoflaOE
+    Kernel Simulator - Simulates our future planned Kernel
+    Copyright (C) 2018-2019  EoflaOE
 
-    该程序是免费软件：您可以重新分发和/或修改
-    它是根据GNU通用公共许可证的条款发布的
-    自由软件基金会，许可证的第3版，或
-    （根据您的选择）任何更高版本。
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    该程序的分发是希望它有用，
-    但没有任何保证;甚至没有暗示的保证
-    适销性或适用于特定用途的适用性。见
-    GNU通用公共许可证了解更多详情。
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    您应该已收到GNU通用公共许可证的副本
-    以及这个计划。如果没有，请参阅<https://www.gnu.org/licenses/>。
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

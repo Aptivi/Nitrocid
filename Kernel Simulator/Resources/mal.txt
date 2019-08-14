@@ -1,4 +1,4 @@
-﻿Perintah yang tersedia: {0}
+Perintah yang tersedia: {0}
 Tulis perintah:
 Suntikan arahan telah dibatalkan.
 Hantarkan butiran boot dengan koma tanpa ruang, sebagai contoh, 'motd, gpuprobe'
@@ -368,4 +368,8 @@ Anda mungkin tidak mempunyai libcpanel-json-xs-perl yang dipasang pada sistem an
 Anda telah menetapkan bahasa sistem anda kepada apa pun selain bahasa Inggeris. Maaf untuk kesulitan ini, tetapi nampaknya Google dan penterjemahnya sangat pelik untuk menterjemahkan blok kod untuk bahasa pengaturcaraan. Semasa kami membetulkan semua blok kod untuk halaman manual yang diterjemahkan, kami cadangkan anda membuka tiket ke Google Terjemahan untuk menterjemah blok kod yang tidak dimaksudkan untuk diterjemahkan dan menetapkan bahasa sistem anda kepada bahasa Inggeris jika anda bercakap.
 Pengubahsuaian semula.
 Mod dimuat semula.
-Yang baru: Lebih banyak pembetulan codeblock untuk halaman manual bahasa Czech, Croatia, Belanda, Finlandia, Perancis, Jerman, Itali, Melayu, Portugis, Sepanyol, Sweden, dan Turki. Versi ini adalah hasil daripada pengubahsuaian yang tidak berguna kepada codeblocks yang Google harus membuat sehingga merasakan hodoh, diterjemahkan, tidak kompilasi, dan misaligned.
+Apa yang baru: Percubaan masa dan tarikh yang lebih baik (Sekarang dua bidang, satu TarikhTime, satu String, dibuat satu), PEMULIHAN MOTD dan MAL menggunakan fail untuk menyokong baris baru yang lebih baik, Tetapkan `chmal` dan` chmotd` hanya mengambil satu perkataan, Tetap 
+Selamat datang ke Kernel!
+Log masuk berjaya sebagai <pengguna>
+MOTD / MAL adalah sah, tetapi jenis mesej tidak sah. 
+Cuba membaca MOTD / MAL yang merupakan jenis mesej tidak sah.

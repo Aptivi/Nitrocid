@@ -10,6 +10,7 @@ Ytimen simulaattorin avulla voit simuloida hyvin varhaisen pääsyn tulevaan yti
 
 --------------- + -> Historia <- + --------------- |
 
+13.8.2019 - 0.0.6.13: Parannetut aika- ja päivämääritykset (Nyt kaksi kenttää, yksi DateTime, yksi merkkijono, tehdään yhdeksi), MOTD- ja MAL-jäsentäminen käyttämällä tiedostoja paremmin tukemaan uusia linjoja, Kiinteät `chmal` ja` chmotd `vain yhden sanan ottaminen, korjatut casting-ongelmat ytimen virheessä, poistettu uusi rivin paikkamerkki, poistettu MAL- ja MOTD-kokoonpanotiedot
 11.8.2019 - 0.0.6.12: Lisää koodiblokkikorjauksia Tšekin, Kroatian, Hollannin, Suomen, Ranskan, Saksan, Italian, Malaijin, Portugalin, Espanjan, Ruotsin ja Turkin manuaalisivuille. Tämä versio on seurausta turhista koodilohkojen muutoksista, jotka Google on tehtävä, jotta se tuntuisi rumaalta, käännetyltä, yhdistämättömältä ja väärin kohdistetulta.
 10.8.2019 - 0.0.6.11: Kiinteä vianetsintä, joka näyttää salasanan selkeästi, näytetään muutoslokit päivityksen aikana, Kiinteä KeyNotFoundException, kun päivitys on suoritettu käynnistyksen yhteydessä
 8.8.2019 - 0.0.6.10: Yksinkertaistettu nimiavaruus KS: lle, kiinteät koodilietot hindin, kiinan ja 1/2 tšekin kielelle (katso kommentti GetCommand.vb: ssä), lisätty puuttuva ohjekohta "reloadsaver", lisätty "reloadmods" -komento , Made KernelVersion ja EnvironmentOSType read-only, "promptArgs" cmdline-argumentti poistettu, ylimääräistä pinoa ei nyt luoda uudelleenkäynnistyksen yhteydessä
@@ -97,18 +98,18 @@ Lisenssi (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.T
 
 --------------- + -> Lisenssi - GNU GPL <- + --------------- |
 
-    Kernel Simulator - Simuloi tulevaa suunniteltua ydinämme
-    Copyright (C) 2018-2019 EoflaOE
+    Kernel Simulator - Simulates our future planned Kernel
+    Copyright (C) 2018-2019  EoflaOE
 
-    Tämä ohjelma on ilmainen ohjelmisto: voit jakaa sen ja / tai muokata sitä
-    se on julkaistu GNU: n yleisen julkisen lisenssin mukaisesti
-    Free Software Foundation, joko lisenssin versio 3, tai. \ t
-    (valintasi mukaan) myöhempi versio.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    Tämä ohjelma jaetaan siinä toivossa, että se on hyödyllistä.
-    mutta ILMAINEN TAKUU; ilman implisiittistä takuuta
-    MERKITYSVASTUU tai VAIKUTTAVUUS ERITYISEKSI. Katso
-    Lisätietoja GNU General Public License.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    Sinun olisi pitänyt saada kopio GNU General Public License -lisenssistä
-    yhdessä tämän ohjelman kanssa. Jos ei, katso <https://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

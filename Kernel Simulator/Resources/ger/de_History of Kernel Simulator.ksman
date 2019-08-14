@@ -679,21 +679,21 @@ Da jedoch nicht alle Distributionen standardm????ig inxi installieren, schl??gt 
 
 Debian und seine Derivate:
 
-
-
+	# apt update
+	# apt install inxi
 
 Red Hat und seine Derivate:
 
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE und seine Derivate:
 
-
+	# zypper install inxi (?)
 
 Arch Linux und seine Derivate:
 
-
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Der Rest wird aus dem Quellcode erstellt und die ausf??hrbare Datei in / usr / bin abgelegt, da der Prober nur in diesem Verzeichnis sucht, oder Sie verwenden Ihre Paketmanager, um sie zu installieren.
 
@@ -827,6 +827,27 @@ KS 0.0.6.10
 5. KernelVersion und EnvironmentOSType sind schreibgeschützt
 6. Das cmdline-Argument "promptArgs" wurde entfernt
 7. Zusätzlicher Stack wird jetzt beim Neustart nicht generiert
+
+KS 0.0.6.11
+
+1. Fehler behoben, durch den das Passwort im Klartext angezeigt wurde
+2. Gezeigte Änderungsprotokolle während des Updates
+3. Behoben: KeyNotFoundException nach Aktualisierung der Konfiguration beim Start
+
+KS 0.0.6.12
+
+1. Weitere Codeblockkorrekturen für Handbuchseiten in den Sprachen Tschechisch, Kroatisch, Niederländisch, Finnisch, Französisch, Deutsch, Italienisch, Malaiisch, Portugiesisch, Spanisch, Schwedisch und Türkisch.
+
+HINWEIS: Diese Version ist das Ergebnis nutzloser Änderungen an Codeblöcken, die Google vornehmen muss, damit sie sich hässlich, übersetzt, nicht kompilierbar und falsch ausgerichtet anfühlen.
+
+KS 0.0.6.13
+
+1. Verbesserte Zeit- und Datumsprüfung
+2. MOTD- und MAL-Analyse unter Verwendung von Dateien zur besseren Unterstützung von Zeilenumbrüchen
+3. Behoben, dass "chmal" und "chmotd" nur ein Wort nahmen
+4. Casting-Probleme beim Kernel-Fehler behoben
+5. Platzhalter für neue Zeile entfernt
+6. MAL- und MOTD-Konfigurationseinträge entfernt
 -BODY END-
 
 -SECTIONS-
@@ -885,4 +906,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

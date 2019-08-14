@@ -12,6 +12,7 @@ Kernel Simulator vám umožní simulovat velmi brzký přístup pro naše budouc
 
 EN: What's wrong with Google? See a commment of English "Modding Guide" and "Screensaver modding guide" in the source code for our possibly-wrong concept at the logic of Google Translate.
 
+8/13/2019 - 0.0.6.13: Vylepšené časové a datové zkoušky (nyní dvě pole, jedno DateTime, jeden řetězec, jsou sloučeny do jednoho), analýza MOTD a MAL pomocí souborů pro lepší podporu nových řádků, opraveno `chmal` a` chmotd `brát jen jedno slovo, Opraveno problémy s obsazením při chybě jádra, Odstraněn nový zástupný symbol řádku, Odstraněno konfigurační položky MAL a MOTD
 8/11/2019 - 0.0.6.12: Další opravy kódového bloku pro české, chorvatské, nizozemské, finské, francouzské, německé, italské, malajské, portugalské, španělské, švédské a turecké manuálové stránky. Tato verze je výsledkem zbytečných úprav kódovacích bloků, které společnost Google musí provést, aby se cítila ošklivě, přeložena, nekompatibilní a špatně zarovnána.
 8/10/2019 - 0.0.6.11: Opraveno ladění ukazující heslo v čistém textu, Během aktualizace zobrazeny changelogy, Opravena chyba KeyNotFoundException po aktualizaci konfigurace při spuštění
 8/8/2019 - 0.0.6.10: Zjednodušený obor názvů pro KS, opravené kódové bloky pro hindštinu, čínštinu a 1/2 češtiny (viz komentář k GetCommand.vb), Přidán chybějící záznam nápovědy pro příkaz „reloadsaver“, přidán příkaz „reloadmods“ , Made KernelVersion a EnvironmentOSType jen pro čtení, argument "promptArgs" cmdline odstraněn, Extra stack nyní není generován při restartování
@@ -99,18 +100,18 @@ Licence (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TX
 
 | --------------- + -> Licence - GNU GPL <- + --------------- |
 
-    Kernel Simulator - Simuluje naše budoucí plánované jádro
-    Copyright (C) 2018-2019 EoflaOE
+    Kernel Simulator - Simulates our future planned Kernel
+    Copyright (C) 2018-2019  EoflaOE
 
-    Tento program je svobodný software: můžete jej dále šířit a / nebo upravovat
-    to za podmínek Všeobecné veřejné licence GNU, jak je zveřejňuje
-    - Free Software Foundation, buď verze 3 licence, nebo -
-    (podle vašeho výběru) jakákoli novější verze.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    Tento program je distribuován v naději, že bude užitečný,
-    ale BEZ JAKÉKOLI ZÁRUKY; bez předpokládané záruky
-    PRODEJNOST nebo VHODNOST PRO URČITÝ ÚČEL. Viz
-    GNU General Public License pro více informací.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    Měli jste obdržet kopii GNU General Public License
-    spolu s tímto programem. Pokud ne, viz <https://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

@@ -679,23 +679,25 @@ Ale ne v??echny distribuce instaluj?? inxi ve v??choz??m nastaven??, tak??e poku
 
 Debian a jeho deriv??ty:
 
-
+	# apt update
+	# apt install inxi
 
 Red Hat a jeho deriv??ty:
 
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE a jeho deriv??ty:
 
-
+	# zypper install inxi (?)
 
 Arch Linux a jeho deriv??ty:
 
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Zbytek, sestaven?? ze zdroje a vlo??en?? spustiteln??ho souboru do souboru / usr / bin, proto??e prober hled?? pouze v tomto adres????i, nebo jej pou??ije k instalaci spr??vci bal??k??.
 
-(?): Untested. 
+(?): Netestováno. 
 
 KS 0.0.5.14
 
@@ -825,6 +827,27 @@ KS 0.0.6.10
 5. Vyrobeno KernelVersion a EnvironmentOSType jen pro čtení
 6. argument „promptArgs“ cmdline byl odstraněn
 7. Extra stack nyní není generován při restartování
+
+KS 0.0.6.11
+
+1. Opraveno ladění ukazující heslo v čistém textu
+2. Zobrazeny changelogy během aktualizace
+3. Opravena chyba KeyNotFoundException po aktualizaci konfigurace při spuštění
+
+KS 0.0.6.12
+
+1. Další opravy kódového bloku pro české, chorvatské, nizozemské, finské, francouzské, německé, italské, malajské, portugalské, španělské, švédské a turecké manuálové stránky.
+
+POZNÁMKA: Tato verze je výsledkem zbytečných úprav kódovacích bloků, které společnost Google musí provést, aby se cítila ošklivě, přeložena, nekompatibilní a špatně zarovnána.
+
+KS 0.0.6.13
+
+1. Vylepšené časové a datové zkoušky (nyní dvě pole, jedno datum a čas, jedno řetězce, jsou sloučeny do jednoho)
+2. Analýza MOTD a MAL pomocí souborů k lepší podpoře nových řádků
+3. Opraveno `chmal` a` chmotd`, které mají pouze jedno slovo
+4. Opraveny problémy s odléváním při chybě jádra
+5. Odstraněn nový zástupný symbol řádku
+6. Odstraněné konfigurační položky MAL a MOTD
 -BODY END-
 
 -SECTIONS-
@@ -883,4 +906,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

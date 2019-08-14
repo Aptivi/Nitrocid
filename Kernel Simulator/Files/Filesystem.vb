@@ -60,11 +60,8 @@ Public Module Filesystem
 
                             'Print information
                             W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, "neutralText",
-                                FormatNumber(FInfo.Length / 1024, 2),
-                                FormatDateTime(FInfo.CreationTime, DateFormat.ShortDate),
-                                FormatDateTime(FInfo.CreationTime, DateFormat.ShortTime),
-                                FormatDateTime(FInfo.LastWriteTime, DateFormat.ShortDate),
-                                FormatDateTime(FInfo.LastWriteTime, DateFormat.ShortTime))
+                                FormatNumber(FInfo.Length / 1024, 2), FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
+                                                                      FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
                         ElseIf IO.Directory.Exists(Entry) Then
                             Dim DInfo As New IO.DirectoryInfo(Entry)
 
@@ -77,11 +74,8 @@ Public Module Filesystem
 
                             'Print information
                             W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, "neutralText",
-                                FormatNumber(TotalSize / 1024, 2),
-                                FormatDateTime(DInfo.CreationTime, DateFormat.ShortDate),
-                                FormatDateTime(DInfo.CreationTime, DateFormat.ShortTime),
-                                FormatDateTime(DInfo.LastWriteTime, DateFormat.ShortDate),
-                                FormatDateTime(DInfo.LastWriteTime, DateFormat.ShortTime))
+                                FormatNumber(TotalSize / 1024, 2), DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
+                                                                   DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
                         End If
                     Catch ex As UnauthorizedAccessException 'Error while getting info
                         W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, "neutralText", Entry)

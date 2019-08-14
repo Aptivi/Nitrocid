@@ -679,21 +679,21 @@ D??nsh??, m??r??n q??ngku??ng xi?? b??ngf??i su??y??u f??x??ng b??n d?? ??nzhu??
 
 Debian j?? q?? y??nsh??ng ch??np??n:
 
+	# apt update
+	# apt install inxi
 
+Red Hat j?? q?? y??nsh??ng p??n:
 
-
-H??ng m??o j?? q?? y??nsh??ng p??n:
-
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE j?? q?? y??nsh??ng ch??np??n:
 
-
+	# zypper install inxi (?)
 
 Arch Linux j?? q?? y??nsh??ng ch??np??n:
 
-
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Q??y?? de, c??ng yu??n d??im?? g??uji??n b??ng ji??ng k?? zh??x??ng w??nji??n f??ng r??/ usr/ bin, y??nw??i prober zh?? ch??zh??o g??i m??l??, hu??zh?? sh??y??ng b??o gu??nl?? q?? l??i ??nzhu??ng t??.
 
@@ -827,6 +827,27 @@ KS 0.0.6.10
 5. Shǐ KernelVersion hé EnvironmentOSType chéngwéi zhǐ dú
 6. Shānchú “promptArgs”cmdline cānshù
 7. Chóngxīn qǐdòng shí, xiànzài méiyǒu shēngchéng éwài de duīzhàn
+
+KS 0.0.6.11
+
+1. Xiūfùle yǐ míngwén xiǎnshì mìmǎ de tiáoshì
+2. Gēngxīn qíjiān xiǎnshì gēnggǎi rìzhì
+3. Xiūfùle qǐdòng shí gēngxīn pèizhì hòu de KeyNotFoundException
+
+KS 0.0.6.12
+
+1. Jiékè yǔ, kè luó dì yǎ yǔ, hélán yǔ, fēnlán yǔ, fǎyǔ, déyǔ, yìdàlì yǔ, mǎ lái yǔ, pútáoyá yǔ, xībānyá yǔ, ruìdiǎn yǔ hé tǔ'ěrqí yǔ shǒucè yè de gèng duō dàimǎ kuài gēngzhèng.
+
+Zhùyì: Cǐ bǎnběn shì duì Google bìxū duì dàimǎ kuài jìnxíng wúyòng xiūgǎi de jiéguǒ, yīncǐ tā gǎnjué nánkàn, fānyì, wúfǎ biānyì hé cuòwèi.
+
+KS 0.0.6.13
+
+1. Gǎijìn shíjiān hé rìqí huǎnjiě (xiànzài liǎng gè zìduàn, yīgè DateTime, yīgè zìfú chuàn, yīgè)
+2. Shǐyòng wénjiàn jiěxī MOTD hé MAL yǐ gèng hǎo dì zhīchí huànháng
+xiūzhèngle `chmal`hé `chmotd`zhǐ qǔ yīgè zì
+4. Xiūfùle nèihé cuòwù de zhuǎnhuàn wèntí
+5. Shānchúle xīn de xíng zhàn wèi fú
+6. Shānchúle MAL hé MOTD pèizhì tiáomù
 -BODY END-
 
 -SECTIONS-
@@ -885,4 +906,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

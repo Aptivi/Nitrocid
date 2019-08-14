@@ -38,11 +38,11 @@ Public Module TextWriterColor
 
             'For contributors who are testing new code: Uncomment the two Debug.WriteLine lines for immediate debugging (Immediate Window)
             If Not Source Is Nothing And Not LineNum = 0 Then
-                dbgWriter.WriteLine($"{FormatDateTime(KernelDateTime, DateFormat.ShortDate)} {FormatDateTime(KernelDateTime, DateFormat.ShortTime)} ({Source}:{LineNum}): {text}", vars)
-                'Debug.WriteLine($"{FormatDateTime(KernelDateTime, DateFormat.ShortDate)} {FormatDateTime(KernelDateTime, DateFormat.ShortTime)} ({Source}:{LineNum}): {text}", vars)
-            Else
-                dbgWriter.WriteLine($"{FormatDateTime(KernelDateTime, DateFormat.ShortDate)} {FormatDateTime(KernelDateTime, DateFormat.ShortTime)}: {text}", vars)
-                'Debug.WriteLine($"{FormatDateTime(KernelDateTime, DateFormat.ShortDate)} {FormatDateTime(KernelDateTime, DateFormat.ShortTime)}: {text}", vars)
+                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
+                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
+            Else 'Rare case, unless debug symbol is not found on archives.
+                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
+                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
             End If
         End If
     End Sub
@@ -62,6 +62,7 @@ Public Module TextWriterColor
     ''' <param name="colorType">A type of colors that will be changed. Any of neutralText, input, contError, uncontError, hostName, userName, def, helpCmd, helpDef, or license.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     ''' <remarks>This is used to reduce number of lines containing "System.Console.ForegroundColor = " and "System.Console.ResetColor()" text.</remarks>
+    ''' <!--TODO: Convert colorType to Enumerator-->
     Public Sub W(ByVal text As Object, ByVal Line As Boolean, ByVal colorType As String, ByVal ParamArray vars() As Object)
 
         Try

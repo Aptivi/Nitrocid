@@ -27,7 +27,6 @@ Public Module PlaceParse
     Private ReadOnly tzplace As String = "<timezone>"
     Private ReadOnly stzplace As String = "<summertimezone>"
     Private ReadOnly sysplace As String = "<system>"
-    Private ReadOnly nlnplace As String = "<eol>"
 
     'Probing code
     Public Function ProbePlaces(ByVal text As String) As String
@@ -35,14 +34,13 @@ Public Module PlaceParse
         EventManager.RaisePlaceholderParsing()
         Try
             If text.Contains(userplace) Then text = text.Replace(userplace, signedinusrnm)
-            If text.Contains(sdateplace) Then text = text.Replace(sdateplace, FormatDateTime(strKernelTimeDate, DateFormat.ShortDate))
-            If text.Contains(ldateplace) Then text = text.Replace(ldateplace, FormatDateTime(strKernelTimeDate, DateFormat.LongDate))
-            If text.Contains(stimeplace) Then text = text.Replace(stimeplace, FormatDateTime(strKernelTimeDate, DateFormat.ShortTime))
-            If text.Contains(ltimeplace) Then text = text.Replace(ltimeplace, FormatDateTime(strKernelTimeDate, DateFormat.LongTime))
+            If text.Contains(sdateplace) Then text = text.Replace(sdateplace, KernelDateTime.ToShortDateString)
+            If text.Contains(ldateplace) Then text = text.Replace(ldateplace, KernelDateTime.ToLongDateString)
+            If text.Contains(stimeplace) Then text = text.Replace(stimeplace, KernelDateTime.ToShortTimeString)
+            If text.Contains(ltimeplace) Then text = text.Replace(ltimeplace, KernelDateTime.ToShortDateString)
             If text.Contains(tzplace) Then text = text.Replace(tzplace, TimeZone.CurrentTimeZone.StandardName)
             If text.Contains(stzplace) Then text = text.Replace(stzplace, TimeZone.CurrentTimeZone.DaylightName)
             If text.Contains(sysplace) Then text = text.Replace(sysplace, EnvironmentOSType)
-            If text.Contains(nlnplace) Then text = text.Replace(nlnplace, vbNewLine)
             EventManager.RaisePlaceholderParsed()
         Catch ex As NullReferenceException
             WStkTrc(ex)

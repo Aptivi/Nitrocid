@@ -679,21 +679,21 @@ No, ne postavljaju svi distros-ovi inxi po zadanom, pa ako ga nemate instalirano
 
 Debian i njegovi derivati:
 
-
-
+	# apt update
+	# apt install inxi
 
 Red Hat i njegovi derivati:
 
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE i njegovi derivati:
 
-
+	# zypper install inxi (?)
 
 Arch Linux i njegovi derivati:
 
-
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Ostalo, napravite od izvora i stavite izvr??nu datoteku u / usr / bin budu??i da prober izgleda samo u tom direktoriju ili ga koristite da biste ga instalirali.
 
@@ -805,6 +805,27 @@ KS 0.0.6.10
 5. Učinio KernelVersion i EnvironmentOSType samo za čitanje
 6. Uklonjen je argument cmdline "promptArgs"
 7. Dodatni snop sada se ne generira pri ponovnom pokretanju
+
+KS 0.0.6.11
+
+1. Fiksni program za uklanjanje pogrešaka prikazuje lozinku u čistom tekstu
+2. Prikazani su dnevnici promjena tijekom ažuriranja
+3. Fiksno KeyNotFoundException nakon ažuriranja konfiguracije pri pokretanju
+
+KS 0.0.6.12
+
+1. Više ispravki kodnih blokova za stranice priručnika za češki, hrvatski, nizozemski, finski, francuski, njemački, talijanski, malajski, portugalski, španjolski, švedski i turski.
+
+NAPOMENA: Ova verzija rezultat je beskorisnih izmjena kodnih blokova koje Google mora izvršiti kako bi se osjećao ružno, prevedeno, nekompatibilno i neusklađeno.
+
+KS 0.0.6.13
+
+1. Poboljšane proba i vremena (sada su dva polja, jedan DateTime, jedan string, pretvoreni u jedno)
+2. MOTD i MAL raščlanjivanje pomoću datoteka radi bolje podrške novim linijama
+3. Fiksni `chmal` i` chmotd` samo uzimanje jedne riječi
+4. Popravljeni problemi emitiranja na pogrešci kernela
+5. Uklonjeno je novo rezervirano mjesto
+6. Uklonjeni unosi konfiguracije MAL i MOTD
 -BODY END-
 
 -SECTIONS-
@@ -856,11 +877,14 @@ KS 0.0.6.2=>SE1
 KS 0.0.6.2a=>SE1
 KS 0.0.6.2b=>SE1
 KS 0.0.6.3=>SE1
-ks 0.0.6.4=>SE1
+KS 0.0.6.4=>SE1
 KS 0.0.6.4a=>SE1
 KS 0.0.6.4b=>SE1
 KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

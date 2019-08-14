@@ -24,9 +24,7 @@ Public Module Kernel
     Public AvailableArgs() As String = {"quiet", "cmdinject", "debug", "maintenance", "help"}
     Public availableCMDLineArgs() As String = {"createConf", "testMod"}
     Public configReader As New IniFile()
-    Public MOTDMessage As String
-    Public HName As String
-    Public MAL As String
+    Public MOTDMessage, HName, MAL As String
     Public ReadOnly EnvironmentOSType As String = Environment.OSVersion.ToString
     Public EventManager As New EventsAndExceptions
 
@@ -36,7 +34,7 @@ Public Module Kernel
         While True
             Try
                 'A title
-                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}"
+                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}" 'Does MonoDevelop and Mono have the ability to compile interpolated strings?
                 InitPaths()
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
@@ -54,6 +52,10 @@ Public Module Kernel
                     LogoutRequested = False
                     Exit Try
                 End If
+
+                'If the two files are not found, create two MOTD files with current config.
+                If Not IO.File.Exists(paths("Home") + "/MOTD.txt") Then SetMOTD(DoTranslation("Welcome to Kernel!", currentLang), MessageType.MOTD)
+                If Not IO.File.Exists(paths("Home") + "/MAL.txt") Then SetMOTD(DoTranslation("Logged in successfully as <user>", currentLang), MessageType.MAL)
 
                 'Phase 1: Probe hardware
                 Wdbg("- Kernel Phase 1: Probing hardware")

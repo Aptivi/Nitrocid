@@ -10,7 +10,8 @@ Kernel Simulator ti consente di simulare un accesso molto precoce per il nostro 
 
 | --------------- + -> Storia <- + --------------- |
 
-8/11/2019 - 0.0.6.12: Altre correzioni di codeblock per pagine di manuale ceche, croate, olandesi, finlandesi, francesi, tedesche, italiane, malesi, portoghesi, spagnole, svedesi e turche. Questa versione è il risultato di inutili modifiche ai blocchi di codice che Google deve apportare in modo da sembrare brutto, tradotto, non compilabile e disallineato.
+13/08/2019 - 0.0.6.13: Prove di data e ora migliorate (ora due campi, un DateTime, una stringa, sono trasformati in uno), analisi MOTD e MAL usando i file per supportare meglio le nuove linee, risolto `chmal` e` chmotd `prendendo solo una parola, risolti i problemi di casting sull'errore del kernel, rimosso il segnaposto della nuova riga, rimosse le voci di configurazione MAL e MOTD
+08/11/2019 - 0.0.6.12: Altre correzioni di codeblock per pagine di manuale ceche, croate, olandesi, finlandesi, francesi, tedesche, italiane, malesi, portoghesi, spagnole, svedesi e turche. Questa versione è il risultato di inutili modifiche ai blocchi di codice che Google deve apportare in modo da sembrare brutto, tradotto, non compilabile e disallineato.
 08/10/2019 - 0.0.6.11: Corretto il debug che mostrava la password in chiaro, Mostra i log delle modifiche durante l'aggiornamento, Risolto KeyNotFoundException dopo l'aggiornamento della configurazione all'avvio
 08/08/2019 - 0.0.6.10: spazio dei nomi semplificato per KS, blocchi di codice fissi per hindi, cinese e 1/2 ceco (vedi commento su GetCommand.vb), aggiunta voce di aiuto mancante per "reloadsaver", aggiunto comando "reloadmods" , Made KernelVersion e EnvironmentOSType di sola lettura, argomento cmdline "promptArgs" rimosso, Stack extra ora non generato al riavvio
 27/07/2019 - 0.0.6.9: Calcolatori e convertitori di unità rimossi, Unificati due comandi di stampa in uno, Unificati due generatori di mod in uno, Consentito inserire il server FTP senza specificare il prefisso "ftp: //", Specificare l'indirizzo come " argomento del comando ftp "Ora il client FTP si disconnetterà pacificamente all'uscita, le descrizioni della Guida FTP fisso non si aggiornano quando si cambiano le lingue, il controllo SSE tramite comando ora è supportato sui sistemi Unix, l'ora dell'angolo fissa e la posizione della data, la password fissa non funziona correttamente anche se l'utente ha inserito la password corretta, Rimossa fase inutilizzata, Aggiunto debug su ogni fase, Aggiunto segnaposto del sistema operativo da utilizzare con MOTD e MAL, Aggiunto parser newline per rendere il supporto MOTD più di 1 riga
@@ -97,18 +98,18 @@ Licenza (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TX
 
 | --------------- + -> Licenza - GNU GPL <- + --------------- |
 
-    Kernel Simulator - Simula il nostro futuro kernel pianificato
-    Copyright (C) 2018-2019 EoflaOE
+    Kernel Simulator - Simulates our future planned Kernel
+    Copyright (C) 2018-2019  EoflaOE
 
-    Questo programma è un software gratuito: puoi ridistribuirlo e / o modificarlo
-    secondo i termini della GNU General Public License come pubblicato da
-    la Free Software Foundation, versione 3 della Licenza, oppure
-    (a tua scelta) qualsiasi versione successiva.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    Questo programma è distribuito nella speranza che possa essere utile,
-    ma SENZA ALCUNA GARANZIA; senza nemmeno la garanzia implicita di
-    COMMERCIABILITÀ o IDONEITÀ A UNO SCOPO PARTICOLARE. Vedi il
-    Licenza GNU General Public per maggiori dettagli.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    Dovresti aver ricevuto una copia della GNU General Public License
-    insieme a questo programma. In caso contrario, consultare <https://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

@@ -1,4 +1,4 @@
-﻿Käytettävissä olevat komennot: {0}
+Käytettävissä olevat komennot: {0}
 Kirjoita komento:
 Komentosuihku on peruutettu.
 Erota käynnistysasetukset pilkuilla ilman välilyöntejä, esimerkiksi "motd, gpuprobe"
@@ -368,4 +368,8 @@ Et ehkä ole asentanut libcpanel-json-xs-perl-järjestelmääsi. Katso asennukse
 Olet asettanut järjestelmän kielen muuhun kuin englanniksi. Pahoittelemme häiriötä, mutta näyttää siltä, että Google ja sen kääntäjä ovat erittäin omituisia kääntämällä minkä tahansa ohjelmointikielen koodilohkoja. Korjaaessamme kaikki käännettyjen manuaalisten sivujen koodilohot, suosittelemme, että avaat lipun Google Translate -sovellukseen kääntämään koodilohkoja, joita ei ole tarkoitettu käännettäväksi, ja aseta järjestelmäkieleksi englanti, jos puhut sitä.
 Lataa muutokset uudelleen.
 Modit ladattu uudelleen.
-Uutta: Lisää koodiblokkikorjauksia tšekin, kroatian, hollannin, suomen, ranskan, saksan, italian, malaijin, portugalin, espanjan, ruotsin ja turkin manuaalisivuille. Tämä versio on seurausta turhista koodilohkojen muutoksista, jotka Google on tehtävä, jotta se tuntuisi rumaalta, käännetyltä, yhdistämättömältä ja väärin kohdistetulta.
+Uutta: Parannetut aika- ja päivämääräajat (Nyt kaksi kenttää, yksi DateTime, yksi merkkijono, tehdään yhdeksi), MOTD- ja MAL-jäsentäminen käyttämällä tiedostoja paremmin tukemaan uusia linjoja, Kiinteät `chmal` ja` chmotd` ottaen vain yhden sanan, Fixed 
+Tervetuloa Kerneliin!
+Sisäänkirjautunut onnistuneesti nimellä <käyttäjä>
+MOTD / MAL on kelvollinen, mutta viestin tyyppi ei ole kelvollinen. 
+Yritettiin lukea MOTD / MAL, joka on virheellinen viestityyppi.

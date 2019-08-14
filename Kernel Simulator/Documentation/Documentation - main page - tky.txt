@@ -10,6 +10,7 @@ BİLGİ: İki belge, sss ve sorun giderme, düzenli olarak güncellenmediklerind
 
 | --------------- + -> Tarihçe <- + --------------- |
 
+8/13/2019 - 0.0.6.13: Geliştirilmiş Zaman ve Tarih denetimleri (Şimdi iki alan, bir DateTime, bir Dize, bir dize yapılır), MOTD ve MAL yeni satırları daha iyi desteklemek için dosyaları kullanarak ayrıştırma, Sabit `chmal` ve` chmotd `sadece bir kelime alarak, çekirdek hatası ile ilgili döküm sorunları, Yeni satır yer tutucusu kaldırıldı, MAL ve MOTD yapılandırma girişleri kaldırıldı
 11.08.2019 - 0.0.6.12: Çekçe, Hırvatça, Felemenkçe, Fince, Fransızca, Almanca, İtalyanca, Malayca, Portekizce, İspanyolca, İsveççe ve Türkçe el kitabı sayfaları için daha fazla kod bloğu düzeltmesi. Bu sürüm, Google'ın yapması gereken kod bloklarında yapılan, çirkin, çevrilmiş, derlenmemiş ve yanlış hizalanmış hissettirdiği gereksiz değişikliklerin bir sonucudur.
 8/10/2019 - 0.0.6.11: Şifreyi açık metin ile gösteren hata ayıklama düzeltildi, Güncelleme sırasında gösterilen değişiklikler yapıldı, Başlangıçta config güncelledikten sonra KeyNotFoundException düzeltildi
 08.08.2019 - 0.0.6.10: KS'ye basitleştirilmiş ad alanı, Hintçe, Çince ve 1/2 Çek için kod kodları çözüldü (GetCommand.vb'deki yoruma bakın), "yeniden yükle" için eksik yardım girişi eklendi, "yeniden yükle" komutu eklendi , KernelVersion ve EnvironmentOSType salt okunur, "promptArgs" cmdline argümanı kaldırıldı, yeniden başlatılırken Ekstra yığın artık oluşturulmadı
@@ -97,18 +98,18 @@ Lisans (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 
 | --------------- + -> Lisans - GNU GPL <- + --------------- |
 
-    Çekirdek Simülatörü - Gelecek planlı Çekirdeğimizi Simüle Ediyor
-    Telif Hakkı (C) 2018-2019 EoflaOE
+    Kernel Simulator - Simulates our future planned Kernel
+    Copyright (C) 2018-2019  EoflaOE
 
-    Bu program ücretsiz bir yazılımdır: yeniden dağıtabilir ve / veya değiştirebilirsiniz
-    tarafından yayınlanan GNU Genel Kamu Lisansı şartları altında
-    Özgür Yazılım Vakfı, Lisansın 3. sürümü veya
-    (sizin seçiminize göre) daha sonra herhangi bir sürümü.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    Bu program faydalı olacağı umuduyla dağıtılmıştır,
-    Ancak HERHANGİ BİR GARANTİ OLMADAN; zımni garantisi bile olmadan
-    KATILIMCI AMAÇLI TİCARİ veya FITNESS. Bakın
-    Daha fazla bilgi için GNU Genel Kamu Lisansı.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    GNU Genel Kamu Lisansının bir kopyasını almış olmalısınız.
-    bu programla birlikte. Değilse, <https://www.gnu.org/licenses/> adresine bakın.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

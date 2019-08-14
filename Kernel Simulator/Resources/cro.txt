@@ -1,4 +1,4 @@
-﻿Dostupne naredbe: {0}
+Dostupne naredbe: {0}
 Napisati naredbu:
 Ukidanje naredbe je otkazano.
 Argumente pokretanja odvojite zarezima bez razmaka, na primjer, "motd, gpuprobe"
@@ -367,4 +367,9 @@ Možda na vašem sustavu nije instaliran libcpanel-json-xs-perl. Za instalaciju 
 > Došlo je do pogreške pri pokušaju dobivanja informacija o okviru. {0}: {1}
 Jezik sustava postavili ste na bilo šta drugo osim na engleski. Oprosti zbog neugodnosti, ali čini se da su Google i njegov prevoditelj vrlo čudni u prevođenju blokova kodova s ​​bilo kojeg programskog jezika. Dok popravljamo sve blokove kodova za prevedene stranice s priručnicima, predlažemo vam da otvorite kartu u Google prevoditelju za prevođenje blokova kodova koji nisu namijenjeni prevođenju, a jezik vašeg sustava postavite na engleski ako ga govorite.
 Modovi su ponovno učitani.
-Što je novo: Više ispravki kodnih blokova za češke, hrvatske, nizozemske, finske, francuske, njemačke, talijanske, malajske, portugalske, španjolske, švedske i turske priručnike. Ova je inačica rezultat beskorisnih izmjena kodnih blokova koje Google mora napraviti kako bi se osjećao ružno, prevedeno, nekompatibilno i neusklađeno.
+Modovi su se uspješno učitali.
+Što je novo: Poboljšane proba i vremena (sada su dva polja, jedno DateTime, jedan niz, pretvorena u jedno), MOTD i MAL raščlanjivanje pomoću datoteka za bolju podršku novim linijama, Fixed `chmal` i` chmotd`, samo uzimanje jedne riječi, Fixed 
+Dobrodošli u Kernel!
+Uspješno ste prijavljeni kao <user>
+MOTD / MAL je valjana, ali vrsta poruke nije valjana. 
+Pokušao je pročitati MOTD / MAL koji je nevažeća vrsta poruke.

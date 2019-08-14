@@ -827,6 +827,28 @@ KS 0.0.6.10
 5. Made KernelVersion and EnvironmentOSType read-only
 6. "promptArgs" cmdline argument removed
 7. Extra stack now not generated when rebooting
+
+KS 0.0.6.11
+
+1. Fixed debug showing password in clear text
+2. Showed changelogs during update
+3. Fixed KeyNotFoundException after updating config on startup
+
+KS 0.0.6.12
+
+1. More codeblock corrections for Czech, Croatian, Dutch, Finnish, French, German, Italian, Malay, Portuguese, Spanish, Swedish, and Turkish manual pages. 
+
+NOTE: This version is a result of useless modifications to codeblocks that Google has to make so it feels ugly, translated, uncompilable, and misaligned.
+
+KS 0.0.6.13
+
+1. Improved Time and Date probations (Now two fields, one DateTime, one String, are made into one)
+2. MOTD and MAL parsing using files to better support newlines
+3. Fixed `chmal` and `chmotd` only taking one word
+4. Fixed casting issues on kernel error
+5. Removed new line placeholder
+6. Removed MAL and MOTD config entries
+
 -BODY END-
 
 -SECTIONS-
@@ -885,4 +907,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

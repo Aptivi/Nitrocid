@@ -496,7 +496,7 @@
             <returns>-1 if the command fails, otherwise the file size</returns>
             <example><code source="..\Examples\GetFileSize.cs" lang="cs" /></example>
         </member>
-        <member name="M:FluentFTP.FtpClient.GetFileSizeInternal(System.String)">
+        <member name="M:FluentFTP.FtpClient.GetFileSizeInternal(System.String,FluentFTP.FtpSizeReply)">
             <summary>
             Gets the file size of an object, without locking
             </summary>
@@ -509,7 +509,7 @@
             <param name="token">Cancellation Token</param>
             <returns>The size of the file, -1 if there was a problem.</returns>
         </member>
-        <member name="M:FluentFTP.FtpClient.GetFileSizeInternalAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:FluentFTP.FtpClient.GetFileSizeInternalAsync(System.String,System.Threading.CancellationToken,FluentFTP.FtpSizeReply)">
             <summary>
             Gets the file size of an object, without locking
             </summary>
@@ -1933,6 +1933,17 @@
             These flags must be copied when we quickly clone the connection.
             </summary>
         </member>
+        <member name="F:FluentFTP.FtpClient.m_lock">
+            <summary>
+            Used for internally synchronizing access to this
+            object from multiple threads
+            </summary>
+        </member>
+        <member name="P:FluentFTP.FtpClient.Lock">
+            <summary>
+            For usage by FTP proxies only
+            </summary>
+        </member>
         <member name="F:FluentFTP.FtpClient.m_asyncmethods">
             <summary>
             A list of asynchronous methods that are in progress
@@ -2161,7 +2172,7 @@
         <member name="P:FluentFTP.FtpClient.SslProtocols">
             <summary>
             Encryption protocols to use. Only valid if EncryptionMode property is not equal to <see cref="F:FluentFTP.FtpEncryptionMode.None"/>.
-            Default value is .NET Framework defaults from the <see cref="!:System.Net.Security.SslStream"/> class.
+            Default value is .NET Framework defaults from the <see cref="T:System.Net.Security.SslStream"/> class.
             </summary>
         </member>
         <member name="P:FluentFTP.FtpClient.SslBuffering">
@@ -4441,6 +4452,11 @@
             The non-encrypted stream
             </summary>
         </member>
+        <member name="P:FluentFTP.FtpSocketStream.SslStream">
+            <summary>
+            The encrypted stream
+            </summary>
+        </member>
         <member name="P:FluentFTP.FtpSocketStream.BaseStream">
             <summary>
             Gets the underlying stream, could be a NetworkStream or SslStream
@@ -4664,6 +4680,73 @@
             <param name="port">The port to connect to</param>
             <param name="ipVersions">Internet Protocol versions to support during the connection phase</param>
             <param name="token">Cancellation Token</param>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.ActivateEncryption(System.String)">
+            <summary>
+            Activates SSL on this stream using default protocols. Fires the ValidateCertificate event. 
+            If this event is not handled and there are SslPolicyErrors present, the certificate will 
+            not be accepted.
+            </summary>
+            <param name="targethost">The host to authenticate the certificate against</param>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.ActivateEncryptionAsync(System.String)">
+            <summary>
+            Activates SSL on this stream using default protocols. Fires the ValidateCertificate event. 
+            If this event is not handled and there are SslPolicyErrors present, the certificate will 
+            not be accepted.
+            </summary>
+            <param name="targethost">The host to authenticate the certificate against</param>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.ActivateEncryption(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection)">
+            <summary>
+            Activates SSL on this stream using default protocols. Fires the ValidateCertificate event.
+            If this event is not handled and there are SslPolicyErrors present, the certificate will 
+            not be accepted.
+            </summary>
+            <param name="targethost">The host to authenticate the certificate against</param>
+            <param name="clientCerts">A collection of client certificates to use when authenticating the SSL stream</param>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.ActivateEncryptionAsync(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection)">
+            <summary>
+            Activates SSL on this stream using default protocols. Fires the ValidateCertificate event.
+            If this event is not handled and there are SslPolicyErrors present, the certificate will 
+            not be accepted.
+            </summary>
+            <param name="targethost">The host to authenticate the certificate against</param>
+            <param name="clientCerts">A collection of client certificates to use when authenticating the SSL stream</param>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.ActivateEncryption(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Security.Authentication.SslProtocols)">
+            <summary>
+            Activates SSL on this stream using the specified protocols. Fires the ValidateCertificate event.
+            If this event is not handled and there are SslPolicyErrors present, the certificate will 
+            not be accepted.
+            </summary>
+            <param name="targethost">The host to authenticate the certificate against</param>
+            <param name="clientCerts">A collection of client certificates to use when authenticating the SSL stream</param>
+            <param name="sslProtocols">A bitwise parameter for supported encryption protocols.</param>
+            <exception cref="T:System.Security.Authentication.AuthenticationException">Thrown when authentication fails</exception>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.CreateBufferStream">
+            <summary>
+            Conditionally create a SSL BufferStream based on the configuration in FtpClient.SslBuffering.
+            </summary>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.GetBufferStream">
+            <summary>
+            If SSL Buffering is enabled it returns the BufferStream, else returns the internal NetworkStream.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.ActivateEncryptionAsync(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Security.Authentication.SslProtocols)">
+            <summary>
+            Activates SSL on this stream using the specified protocols. Fires the ValidateCertificate event.
+            If this event is not handled and there are SslPolicyErrors present, the certificate will 
+            not be accepted.
+            </summary>
+            <param name="targethost">The host to authenticate the certificate against</param>
+            <param name="clientCerts">A collection of client certificates to use when authenticating the SSL stream</param>
+            <param name="sslProtocols">A bitwise parameter for supported encryption protocols.</param>
+            <exception cref="T:System.Security.Authentication.AuthenticationException">Thrown when authentication fails</exception>
         </member>
         <member name="M:FluentFTP.FtpSocketStream.Listen(System.Net.IPAddress,System.Int32)">
             <summary>

@@ -10,6 +10,7 @@ Met Kernel Simulator kunt u een zeer vroege toegang simuleren voor onze toekomst
 
 | --------------- + -> Geschiedenis <- + --------------- |
 
+13-8-2019 - 0.0.6.13: Verbeterde tijd en datum probaties (nu worden twee velden, één DateTime, één String, tot één gemaakt), MOTD en MAL parsing met behulp van bestanden om nieuwe lijnen beter te ondersteunen, Fixed `chmal` en` chmotd `slechts één woord aannemend, Castproblemen bij kernelfout verholpen, nieuwe regelplaatsaanduiding verwijderd, MAL- en MOTD-configuratie-items verwijderd
 8/11/2019 - 0.0.6.12: Meer codeblokcorrecties voor manuele, Tsjechische, Kroatische, Nederlandse, Finse, Franse, Duitse, Italiaanse, Maleisische, Portugese, Spaanse, Zweedse en Turkse handleidingpagina's. Deze versie is het resultaat van nutteloze aanpassingen aan codeblocks die Google moet maken zodat het lelijk, vertaald, niet-compileerbaar en verkeerd uitgelijnd aanvoelt.
 8/10/2019 - 0.0.6.11: Foutopsporing weergegeven met wachtwoord in duidelijke tekst, changelogs getoond tijdens update, Fixed KeyNotFoundException na het bijwerken van de configuratie bij het opstarten
 8/8/2019 - 0.0.6.10: Vereenvoudigde naamruimte naar KS, Vaste codeblocks voor Hindi, Chinees en 1/2 Tsjechisch (zie commentaar op GetCommand.vb), ontbrekende hulpvermelding toegevoegd voor "reloadsaver", opdracht "reloadmods" toegevoegd , Made KernelVersion en EnvironmentOSType alleen-lezen, cmdline-argument "promptArgs" verwijderd, Extra stapel nu niet gegenereerd bij opnieuw opstarten
@@ -97,18 +98,18 @@ Licentie (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.T
 
 | --------------- + -> Licentie - GNU GPL <- + --------------- |
 
-    Kernel Simulator - Simuleert onze toekomstige geplande kernel
-    Copyright (C) 2018-2019 EoflaOE
+    Kernel Simulator - Simulates our future planned Kernel
+    Copyright (C) 2018-2019  EoflaOE
 
-    Dit programma is gratis software: u kunt het herdistribueren en / of wijzigen
-    het onder de voorwaarden van de GNU General Public License zoals gepubliceerd door
-    de Free Software Foundation, versie 3 van de licentie, of
-    (naar uw keuze) een latere versie.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    Dit programma wordt verspreid in de hoop dat het nuttig zal zijn,
-    maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete garantie van
-    VERKOOPBAARHEID OF GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de
-    GNU General Public License voor meer informatie.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    U zou een kopie van de GNU General Public License moeten hebben ontvangen
-    samen met dit programma. Zie anders <https://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

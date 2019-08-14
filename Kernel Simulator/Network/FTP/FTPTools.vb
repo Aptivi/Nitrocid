@@ -87,11 +87,11 @@ Module FTPTools
             Dim fileinfo As New IO.FileInfo(file)
             Dim size As Double = fileinfo.Length / 1024
             Try
-                W("- .{0}: ", False, "helpCmd", file.Replace(dir, "")) : W(DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, "helpDef",
-                                                                           FormatNumber(size, 2), FormatDateTime(IO.File.GetCreationTime(file), DateFormat.ShortDate),
-                                                                           FormatDateTime(IO.File.GetCreationTime(file), DateFormat.ShortTime),
-                                                                           FormatDateTime(IO.File.GetLastWriteTime(file), DateFormat.ShortDate),
-                                                                           FormatDateTime(IO.File.GetLastWriteTime(file), DateFormat.ShortTime))
+                W("- .{0}: ", False, "helpCmd", file.Replace(dir, "")) : W(DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, "helpDef", FormatNumber(size, 2),
+                                                                           IO.File.GetCreationTime(file).ToShortDateString,
+                                                                           IO.File.GetCreationTime(file).ToShortTimeString,
+                                                                           IO.File.GetLastWriteTime(file).ToShortDateString,
+                                                                           IO.File.GetLastWriteTime(file).ToShortTimeString)
             Catch exc As UnauthorizedAccessException
                 W(DoTranslation("(Access Denied)", currentLang), True, "helpDef")
                 Continue For

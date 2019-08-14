@@ -12,6 +12,7 @@ Kernel Simulator omogućuje vam simuliranje vrlo ranog pristupa za naš budući 
 
 EN: When translating dates and versions to Croatian Language, it seems that it puts dots and spaces in the dates and versions, making them corrupt and ugly. "8.11.2019. - 0.0.6.12 ."
 
+13.8.2019 - 0.0.6.13: Poboljšane proba i vremena (sada su dva polja, jedno DateTime, jedan niz, pretvorena u jedno), MOTD i MAL raščlanjivanje pomoću datoteka za bolju podršku novim linijama, Fixed `chmal` i` chmotd `samo jedna riječ, Fiksni problemi s lijevanjem na pogrešci kernela, Uklonjeni novi rezervirani spremnici retka, Uklonjeni unosi MAL i MOTD konfiguracije
 8.11.2019 - 0.0.6.12: Više ispravki kodnih blokova za stranice priručnika za češki, hrvatski, nizozemski, finski, francuski, njemački, talijanski, malajski, portugalski, španjolski, švedski i turski. Ova je inačica rezultat beskorisnih izmjena kodnih blokova koje Google mora napraviti kako bi se osjećao ružno, prevedeno, nekompatibilno i neusklađeno.
 8.10.2019 - 0.0.6.11: Fiksni program za uklanjanje pogrešaka prikazuje lozinku u čistom tekstu, Prikazani su dnevnici promjena tijekom ažuriranja, Fiksni KeyNotFoundException nakon ažuriranja konfiguracije pri pokretanju
 8.8.2019 - 0.0.6.10: Pojednostavljeni imenski prostor za KS, Fiksni blokovi koda za hindski, kineski i 1/2 češki (vidi komentar na GetCommand.vb), dodan je nedostajući unos pomoći za "reloadsaver", dodan naredba "reloadmods" , Učinjeni KernelVersion i EnvironmentOSType samo za čitanje, argument promptArgs "cmdline" uklonjen, dodatni snop sada se ne generira pri ponovnom pokretanju.
@@ -99,18 +100,18 @@ Licenca (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TX
 
 | --------------- + -> Dozvola - GNU GPL <- + --------------- |
 
-    Kernel Simulator - Simulira naš budući planirani Kernel
-    Autorska prava (C) 2018-2019 EoflaOE
+    Kernel Simulator - Simulates our future planned Kernel
+    Copyright (C) 2018-2019  EoflaOE
 
-    Ovaj je program besplatni softver: možete ga ponovo distribuirati i / ili mijenjati
-    pod uvjetima GNU General Public Licence koju je objavio GNU
-    Zaklada slobodnog softvera ili inačica 3 Licence ili
-    (po vašem izboru) bilo koja kasnija verzija.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    Ovaj se program distribuira u nadi da će biti koristan,
-    ali BEZ BILO GARANCIJE; bez implicitnog jamstva od
-    PRODAVLJIVOST ili PRIKLADNOST ZA POSEBNU NAMJENU. Vidi
-    GNU General Public License za više pojedinosti.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    Trebali ste dobiti primjerak Opće javne licence GNU-a
-    zajedno s ovim programom. Ako ne, pogledajte <https://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

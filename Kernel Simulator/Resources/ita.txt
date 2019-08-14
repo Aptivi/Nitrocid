@@ -1,4 +1,4 @@
-﻿Comandi disponibili: {0}
+Comandi disponibili: {0}
 Scrivi il comando:
 L'iniezione del comando è stata annullata.
 Separare gli argomenti di avvio con virgole senza spazi, ad esempio "motd, gpuprobe"
@@ -368,4 +368,8 @@ Non è possibile installare libcpanel-json-xs-perl sul sistema. Fare riferimento
 Hai impostato la lingua del tuo sistema su qualcosa di diverso dall'inglese. Ci scusiamo per l'inconveniente, ma sembra che Google e il suo traduttore siano molto strani nella traduzione di blocchi di codice per qualsiasi linguaggio di programmazione. Mentre ripariamo tutti i blocchi di codice per le pagine di manuali tradotte, ti consigliamo di aprire un ticket a Google Translate per la traduzione di blocchi di codice che non sono pensati per essere tradotti e di impostare la lingua del tuo sistema in inglese se lo parli.
 Ricarica le modifiche.
 Mod ricaricate.
-Novità: Altre correzioni di blocco del codice per le pagine di manuale in ceco, croato, olandese, finlandese, francese, tedesco, italiano, malese, portoghese, spagnolo, svedese e turco. Questa versione è il risultato di inutili modifiche ai blocchi di codice che Google deve apportare in modo da sembrare brutto, tradotto, non compilabile e disallineato.
+Novità: probazioni di data e ora migliorate (ora due campi, un DateTime, una stringa, sono trasformati in uno), analisi MOTD e MAL utilizzando i file per supportare meglio le nuove righe, risolto `chmal` e` chmotd` prendendo solo una parola, fisso 
+Benvenuto in Kernel!
+Accesso eseguito correttamente come <utente>
+MOTD / MAL è valido, ma il tipo di messaggio non è valido. 
+Ho provato a leggere MOTD / MAL che è del tipo di messaggio non valido.

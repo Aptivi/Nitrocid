@@ -10,6 +10,7 @@ Simulator Kernel membolehkan anda mensimulasikan akses awal untuk Kernel masa de
 
 | --------------- + -> Sejarah <- + --------------- |
 
+8/13/2019 - 0.0.6.13: Masa percubaan masa dan tarikh (Sekarang dua bidang, satu DateTime, satu String, dibuat menjadi satu), PEMUDA MOTD dan MAL menggunakan fail untuk menyokong baris baru yang lebih baik, Tetapkan `chmal` dan` chmotd `hanya mengambil satu perkataan, Isu pemutus tetap pada kesilapan kernel, Pemegang tempat baris baru yang telah dialih keluar, Dihapus entri MAL dan konfigurasi MOTD
 8/11/2019 - 0.0.6.12: Lebih banyak pembetulan codeblock untuk laman manual bahasa Czech, Croatia, Belanda, Finland, Perancis, Jerman, Itali, Melayu, Portugis, Sepanyol, Sweden, dan Turki. Versi ini adalah hasil daripada pengubahsuaian yang tidak berguna kepada codeblocks yang Google harus membuat sehingga merasakan hodoh, diterjemahkan, tidak kompilasi, dan misaligned.
 8/10/2019 - 0.0.6.11: Tetap menyahpepijat yang menunjukkan kata laluan dalam teks yang jelas, Mengubah changelog semasa pembaruan, Memperbaiki KeyNotFoundException selepas mengemas kini konfigurasi semasa permulaan
 8/8/2019 - 0.0.6.10: Ruang nama mudah untuk KS, Kod tetap untuk Hindi, Cina, dan 1/2 Czech (Lihat komen pada GetCommand.vb), Menambah entri bantuan hilang untuk "reloadsaver", Menambah perintah "reloadmods" , Made KernelVersion dan EnvironmentOS hanya baca sahaja, "promptArgs" argumen cmdline dibuang, Tumpukan tambahan sekarang tidak dijana semasa mereset
@@ -97,18 +98,18 @@ Lesen (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 
 | --------------- + -> Lesen - GNU GPL <- + --------------- |
 
-    Simulator Kernel - Simulasikan Kernel masa depan kami yang dirancang
-    Hak Cipta (C) 2018-2019 EoflaOE
+    Kernel Simulator - Simulates our future planned Kernel
+    Copyright (C) 2018-2019  EoflaOE
 
-    Program ini adalah perisian percuma: anda boleh mengagihkan semula dan / atau mengubah suai
-    ia di bawah syarat-syarat Lesen Awam GNU yang diterbitkan oleh
-    Yayasan Perisian Bebas, sama ada versi 3 Lesen, atau
-    (pada pilihan anda) mana-mana versi kemudian.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    Program ini diagihkan dengan harapan ia berguna,
-    tetapi dengan TANPA JAMINAN MANA; tanpa jaminan waranti tersirat
-    KEBAKARAN atau KESESUAIAN UNTUK TUJUAN TERTENTU. Lihat
-    GNU General Public License untuk maklumat lanjut.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    Anda sepatutnya menerima salinan GNU General Public License
-    bersama-sama dengan program ini. Jika tidak, lihat <https://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

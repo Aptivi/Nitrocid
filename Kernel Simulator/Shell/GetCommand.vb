@@ -165,16 +165,11 @@ Public Module GetCommand
             ElseIf words(0) = "chmotd" Then
 
                 If requestedCommand <> "chmotd" Then
-                    If words(1) = "" Then
+                    If strArgs = "" Then
                         W(DoTranslation("Blank message of the day.", currentLang), True, "neutralText")
                     Else
                         W(DoTranslation("Changing MOTD...", currentLang), True, "neutralText")
-                        MOTDMessage = words(1)
-                        Dim ksconf As New IniFile()
-                        Dim pathConfig As String = paths("Configuration")
-                        ksconf.Load(pathConfig)
-                        ksconf.Sections("Login").Keys("MOTD").Value = MOTDMessage
-                        ksconf.Save(pathConfig)
+                        SetMOTD(strArgs, MessageType.MOTD)
                         Done = True
                     End If
                 End If
@@ -182,16 +177,11 @@ Public Module GetCommand
             ElseIf words(0) = "chmal" Then
 
                 If requestedCommand <> "chmal" Then
-                    If words(1) = "" Then
+                    If strArgs = "" Then
                         W(DoTranslation("Blank MAL After Login.", currentLang), True, "neutralText")
                     Else
                         W(DoTranslation("Changing MAL...", currentLang), True, "neutralText")
-                        MAL = words(1)
-                        Dim ksconf As New IniFile()
-                        Dim pathConfig As String = paths("Configuration")
-                        ksconf.Load(pathConfig)
-                        ksconf.Sections("Login").Keys("MOTD After Login").Value = MAL
-                        ksconf.Save(pathConfig)
+                        SetMOTD(strArgs, MessageType.MAL)
                         Done = True
                     End If
                 End If

@@ -59,9 +59,7 @@ Public Module Config
                     New IniSection(ksconf, "Login",
                         New IniKey(ksconf, "Show MOTD on Log-in", showMOTD),
                         New IniKey(ksconf, "Clear Screen on Log-in", clsOnLogin),
-                        New IniKey(ksconf, "MOTD", MOTDMessage),
-                        New IniKey(ksconf, "Host Name", HName),
-                        New IniKey(ksconf, "MOTD After Login", MAL)))
+                        New IniKey(ksconf, "Host Name", HName)))
 
                 'The Shell Section
                 ksconf.Sections.Add(
@@ -164,7 +162,7 @@ Public Module Config
             If configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
                 Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
                 W(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), True, "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
-                W(DoTranslation("What's new: Fixed debug showing password in clear text, Showed changelogs during update, Fixed KeyNotFoundException after updating config on startup", currentLang), True, "neutralText")
+                W(DoTranslation("What's new: Improved Time and Date probations (Now two fields, one DateTime, one String, are made into one), MOTD and MAL parsing using files to better support newlines, Fixed `chmal` and `chmotd` only taking one word, Fixed casting issues on kernel error, Removed new line placeholder, Removed MAL and MOTD config entries", currentLang), True, "neutralText")
                 Console.ReadKey(True)
                 UpdateConfig()
             End If
@@ -223,9 +221,7 @@ Public Module Config
             'Login Section
             If configReader.Sections("Login").Keys("Clear Screen on Log-in").Value = "True" Then clsOnLogin = True Else clsOnLogin = False
             If configReader.Sections("Login").Keys("Show MOTD on Log-in").Value = "True" Then showMOTD = True Else showMOTD = False
-            MOTDMessage = configReader.Sections("Login").Keys("MOTD").Value
             HName = configReader.Sections("Login").Keys("Host Name").Value
-            MAL = configReader.Sections("Login").Keys("MOTD After Login").Value
 
             'Shell Section
             If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False

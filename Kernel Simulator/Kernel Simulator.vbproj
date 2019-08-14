@@ -160,8 +160,8 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentFTP, Version=27.0.0.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentFTP.27.0.0\lib\net45\FluentFTP.dll</HintPath>
+    <Reference Include="FluentFTP, Version=27.0.2.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentFTP.27.0.2\lib\net45\FluentFTP.dll</HintPath>
     </Reference>
     <Reference Include="MadMilkman.Ini, Version=1.0.6.0, Culture=neutral, PublicKeyToken=4e0b5157a7ffbb74, processorArchitecture=MSIL">
       <HintPath>..\packages\MadMilkman.Ini.1.0.6.0\lib\net20\MadMilkman.Ini.dll</HintPath>
@@ -205,7 +205,8 @@
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Languages\Translate.vb" />
-    <Compile Include="Login\PlaceParse.vb" />
+    <Compile Include="Misc\Probers\MOTDParse.vb" />
+    <Compile Include="Misc\Probers\PlaceParse.vb" />
     <Compile Include="ManPages\Manual.vb" />
     <Compile Include="ManPages\PageParser.vb" />
     <Compile Include="ManPages\PageViewer.vb" />
@@ -224,7 +225,6 @@
     <Compile Include="Shell\GetCommand.vb" />
     <Compile Include="Hardware\HardwareProbe.vb" />
     <Compile Include="Kernel\Kernel.vb" />
-    <Compile Include="Login\Groups.vb" />
     <Compile Include="Login\Login.vb" />
     <Compile Include="Login\UserManagement.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

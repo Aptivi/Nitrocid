@@ -679,21 +679,21 @@ Cependant, toutes les distributions n'installent pas inxi par d??faut. Par cons?
 
 Debian et ses d??riv??s:
 
-
-
+	# apt update
+	# apt install inxi
 
 Red Hat et ses d??riv??s:
 
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE, et ses d??riv??s:
 
-
+	# zypper install inxi (?)
 
 Arch Linux, et ses d??riv??s:
 
-
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Le reste, compilez ?? partir de la source et placez le fichier ex??cutable dans / usr / bin car le v??rificateur n???examine que dans ce r??pertoire, ou utilisez votre gestionnaire de paquets pour l???installer.
 
@@ -827,6 +827,27 @@ KS 0.0.6.10
 5. Made KernelVersion et EnvironmentOSType en lecture seule
 6. Suppression de l'argument cmdline "promptArgs"
 7. La pile supplémentaire n'est plus générée lors du redémarrage
+
+KS 0.0.6.11
+
+1. Correction du débogage montrant le mot de passe en clair
+2. Afficher les changelogs lors de la mise à jour
+3. Correction de KeyNotFoundException après la mise à jour de la configuration au démarrage
+
+KS 0.0.6.12
+
+1. Autres corrections de blocs de code pour les pages de manuel tchèque, croate, néerlandais, finnois, français, allemand, italien, malais, portugais, espagnol, suédois et turc.
+
+NOTE: Cette version est le résultat de modifications inutiles apportées aux codesblocs que Google doit effectuer pour donner une apparence laide, traduite, non compilable et mal alignée.
+
+KS 0.0.6.13
+
+1. Améliorations de la date et de la date (maintenant, deux champs, un DateTime, une chaîne, sont transformés en un)
+2. MOTD et MAL analysant en utilisant des fichiers pour mieux supporter les nouvelles lignes
+3. Correction de `chmal` et` chmotd` ne prenant qu'un mot
+4. Problèmes de casting résolus sur une erreur de noyau
+5. Suppression de la nouvelle ligne de réservation
+6. Suppression des entrées de configuration MAL et MOTD
 -BODY END-
 
 -SECTIONS-
@@ -885,4 +906,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

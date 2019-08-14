@@ -77,13 +77,32 @@
             <exception cref="T:System.ObjectDisposedException">Thrown if this object has been disposed.</exception>
             <example><code source="..\Examples\Connect.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.ConnectAsync(System.Threading.CancellationToken)">
+            <summary>
+            Connect to the server
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this object has been disposed.</exception>
+            <example><code source="..\Examples\Connect.cs" lang="cs" /></example>
+        </member>
         <member name="M:FluentFTP.FtpClient.Connect(FluentFTP.FtpSocketStream)">
             <summary>
             Connect to the FTP server. Overwritten in proxy classes.
             </summary>
             <param name="stream"></param>
         </member>
+        <member name="M:FluentFTP.FtpClient.ConnectAsync(FluentFTP.FtpSocketStream,System.Threading.CancellationToken)">
+            <summary>
+            Connect to the FTP server. Overwritten in proxy classes.
+            </summary>
+            <param name="stream"></param>
+            <param name="token"></param>
+        </member>
         <member name="M:FluentFTP.FtpClient.Connect(FluentFTP.FtpSocketStream,System.String,System.Int32,FluentFTP.FtpIpVersion)">
+            <summary>
+            Connect to the FTP server. Overwritten in proxy classes.
+            </summary>
+        </member>
+        <member name="M:FluentFTP.FtpClient.ConnectAsync(FluentFTP.FtpSocketStream,System.String,System.Int32,FluentFTP.FtpIpVersion,System.Threading.CancellationToken)">
             <summary>
             Connect to the FTP server. Overwritten in proxy classes.
             </summary>
@@ -91,6 +110,11 @@
         <member name="M:FluentFTP.FtpClient.Handshake">
             <summary>
             Called during Connect(). Typically extended by FTP proxies.
+            </summary>
+        </member>
+        <member name="M:FluentFTP.FtpClient.HandshakeAsync(System.Threading.CancellationToken)">
+            <summary>
+            Called during <see cref="!:ConnectAsync()"/>. Typically extended by FTP proxies.
             </summary>
         </member>
         <member name="M:FluentFTP.FtpClient.GetFeatures(FluentFTP.FtpReply)">
@@ -134,7 +158,19 @@
             Connect to the given server profile.
             </summary>
         </member>
+        <member name="M:FluentFTP.FtpClient.ConnectAsync(FluentFTP.FtpProfile,System.Threading.CancellationToken)">
+            <summary>
+            Connect to the given server profile.
+            </summary>
+        </member>
         <member name="M:FluentFTP.FtpClient.AutoConnect">
+            <summary>
+            Automatic FTP and FTPS connection negotiation.
+            This method tries every possible combination of the FTP connection properties, and connects to the first successful profile.
+            Returns the FtpProfile if the connection succeeded, or null if it failed.
+            </summary>
+        </member>
+        <member name="M:FluentFTP.FtpClient.AutoConnectAsync(System.Threading.CancellationToken)">
             <summary>
             Automatic FTP and FTPS connection negotiation.
             This method tries every possible combination of the FTP connection properties, and connects to the first successful profile.
@@ -148,7 +184,25 @@
             a FTP proxy.
             </summary>
         </member>
+        <member name="M:FluentFTP.FtpClient.AuthenticateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Performs a login on the server. This method is overridable so
+            that the login procedure can be changed to support, for example,
+            a FTP proxy.
+            </summary>
+        </member>
         <member name="M:FluentFTP.FtpClient.Authenticate(System.String,System.String)">
+            <summary>
+            Performs a login on the server. This method is overridable so
+            that the login procedure can be changed to support, for example,
+            a FTP proxy.
+            </summary>
+            <exception cref="T:FluentFTP.FtpAuthenticationException">On authentication failures</exception>
+            <remarks>
+            To handle authentication failures without retries, catch FtpAuthenticationException.
+            </remarks>
+        </member>
+        <member name="M:FluentFTP.FtpClient.AuthenticateAsync(System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Performs a login on the server. This method is overridable so
             that the login procedure can be changed to support, for example,
@@ -179,6 +233,11 @@
             </summary>
             <param name="ar"><see cref="T:System.IAsyncResult"/> returned from <see cref="M:FluentFTP.FtpClient.BeginDisconnect(System.AsyncCallback,System.Object)"/></param>
             <example><code source="..\Examples\BeginConnect.cs" lang="cs" /></example>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DisconnectAsync(System.Threading.CancellationToken)">
+            <summary>
+            Disconnects from the server asynchronously
+            </summary>
         </member>
         <member name="M:FluentFTP.FtpClient.FireValidateCertficate(FluentFTP.FtpSocketStream,FluentFTP.FtpSslValidationEventArgs)">
             <summary>
@@ -218,6 +277,13 @@
             <param name="ar">IAsyncResult returned from BeginDeleteFile</param>
             <example><code source="..\Examples\BeginDeleteFile.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.DeleteFileAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a file from the server asynchronously
+            </summary>
+            <param name="path">The full or relative path to the file</param>
+            <param name="token">Cancellation Token</param>
+        </member>
         <member name="M:FluentFTP.FtpClient.FileExists(System.String)">
             <summary>
             Checks if a file exists on the server.
@@ -245,6 +311,14 @@
             <param name="ar">IAsyncResult returned from <see cref="o:BeginFileExists"/></param>
             <returns>True if the file exists, false otherwise</returns>
             <example><code source="..\Examples\BeginFileExists.cs" lang="cs" /></example>
+        </member>
+        <member name="M:FluentFTP.FtpClient.FileExistsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks if a file exists on the server asynchronously.
+            </summary>
+            <param name="path">The full or relative path to the file</param>
+            <param name="token">Cancellation Token</param>
+            <returns>True if the file exists, false otherwise</returns>
         </member>
         <member name="M:FluentFTP.FtpClient.Rename(System.String,System.String)">
             <summary>
@@ -276,6 +350,16 @@
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginRename(System.String,System.String,System.AsyncCallback,System.Object)"/></param>
             <example><code source="..\Examples\BeginRename.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.RenameAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Renames an object on the remote file system asynchronously.
+            Low level method that should NOT be used in most cases. Prefer MoveFile() and MoveDirectory().
+            Throws exceptions if the file does not exist, or if the destination file already exists.
+            </summary>
+            <param name="path">The full or relative path to the object</param>
+            <param name="dest">The new full or relative path including the new name of the object</param>
+            <param name="token">Cancellation Token</param>
+        </member>
         <member name="M:FluentFTP.FtpClient.MoveFile(System.String,System.String,FluentFTP.FtpExists)">
             <summary>
             Moves a file on the remote file system from one directory to another.
@@ -306,6 +390,18 @@
             </summary>
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginMoveFile(System.String,System.String,FluentFTP.FtpExists,System.AsyncCallback,System.Object)"/></param>
         </member>
+        <member name="M:FluentFTP.FtpClient.MoveFileAsync(System.String,System.String,FluentFTP.FtpExists,System.Threading.CancellationToken)">
+            <summary>
+            Moves a file asynchronously on the remote file system from one directory to another.
+            Always checks if the source file exists. Checks if the dest file exists based on the `existsMode` parameter.
+            Only throws exceptions for critical errors.
+            </summary>
+            <param name="path">The full or relative path to the object</param>
+            <param name="dest">The new full or relative path including the new name of the object</param>
+            <param name="existsMode">Should we check if the dest file exists? And if it does should we overwrite/skip the operation?</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Whether the file was moved</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.SetFilePermissions(System.String,System.Int32)">
             <summary>
             Modify the permissions of the given file/folder.
@@ -317,6 +413,18 @@
             <param name="path">The full or relative path to the item</param>
             <param name="permissions">The permissions in CHMOD format</param>
         </member>
+        <member name="M:FluentFTP.FtpClient.SetFilePermissionsAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Modify the permissions of the given file/folder.
+            Only works on *NIX systems, and not on Windows/IIS servers.
+            Only works if the FTP server supports the SITE CHMOD command
+            (requires the CHMOD extension to be installed and enabled).
+            Throws FtpCommandException if there is an issue.
+            </summary>
+            <param name="path">The full or relative path to the item</param>
+            <param name="permissions">The permissions in CHMOD format</param>
+            <param name="token">Cancellation Token</param>
+        </member>
         <member name="M:FluentFTP.FtpClient.Chmod(System.String,System.Int32)">
             <summary>
             Modify the permissions of the given file/folder.
@@ -327,6 +435,18 @@
             </summary>
             <param name="path">The full or relative path to the item</param>
             <param name="permissions">The permissions in CHMOD format</param>
+        </member>
+        <member name="M:FluentFTP.FtpClient.ChmodAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Modify the permissions of the given file/folder.
+            Only works on *NIX systems, and not on Windows/IIS servers.
+            Only works if the FTP server supports the SITE CHMOD command
+            (requires the CHMOD extension to be installed and enabled).
+            Throws FtpCommandException if there is an issue.
+            </summary>
+            <param name="path">The full or relative path to the item</param>
+            <param name="permissions">The permissions in CHMOD format</param>
+            <param name="token">Cancellation Token</param>
         </member>
         <member name="M:FluentFTP.FtpClient.SetFilePermissions(System.String,FluentFTP.FtpPermission,FluentFTP.FtpPermission,FluentFTP.FtpPermission)">
             <summary>
@@ -341,6 +461,20 @@
             <param name="group">The group permissions</param>
             <param name="other">The other permissions</param>
         </member>
+        <member name="M:FluentFTP.FtpClient.SetFilePermissionsAsync(System.String,FluentFTP.FtpPermission,FluentFTP.FtpPermission,FluentFTP.FtpPermission,System.Threading.CancellationToken)">
+            <summary>
+            Modify the permissions of the given file/folder.
+            Only works on *NIX systems, and not on Windows/IIS servers.
+            Only works if the FTP server supports the SITE CHMOD command
+            (requires the CHMOD extension to be installed and enabled).
+            Throws FtpCommandException if there is an issue.
+            </summary>
+            <param name="path">The full or relative path to the item</param>
+            <param name="owner">The owner permissions</param>
+            <param name="group">The group permissions</param>
+            <param name="other">The other permissions</param>
+            <param name="token">Cancellation Token</param>
+        </member>
         <member name="M:FluentFTP.FtpClient.Chmod(System.String,FluentFTP.FtpPermission,FluentFTP.FtpPermission,FluentFTP.FtpPermission)">
             <summary>
             Modify the permissions of the given file/folder.
@@ -354,6 +488,20 @@
             <param name="group">The group permissions</param>
             <param name="other">The other permissions</param>
         </member>
+        <member name="M:FluentFTP.FtpClient.ChmodAsync(System.String,FluentFTP.FtpPermission,FluentFTP.FtpPermission,FluentFTP.FtpPermission,System.Threading.CancellationToken)">
+            <summary>
+            Modify the permissions of the given file/folder.
+            Only works on *NIX systems, and not on Windows/IIS servers.
+            Only works if the FTP server supports the SITE CHMOD command
+            (requires the CHMOD extension to be installed and enabled).
+            Throws FtpCommandException if there is an issue.
+            </summary>
+            <param name="path">The full or relative path to the item</param>
+            <param name="owner">The owner permissions</param>
+            <param name="group">The group permissions</param>
+            <param name="other">The other permissions</param>
+            <param name="token">Cancellation Token</param>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetFilePermissions(System.String)">
             <summary>
             Retrieve the permissions of the given file/folder as an FtpListItem object with all "Permission" properties set.
@@ -363,6 +511,16 @@
             </summary>
             <param name="path">The full or relative path to the item</param>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetFilePermissionsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Retrieve the permissions of the given file/folder as an FtpListItem object with all "Permission" properties set.
+            Throws FtpCommandException if there is an issue.
+            Returns null if the server did not specify a permission value.
+            Use `GetChmod` if you required the integer value instead.
+            </summary>
+            <param name="path">The full or relative path to the item</param>
+            <param name="token">Cancellation Token</param>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetChmod(System.String)">
             <summary>
             Retrieve the permissions of the given file/folder as an integer in the CHMOD format.
@@ -371,6 +529,16 @@
             Use `GetFilePermissions` if you required the permissions in the FtpPermission format.
             </summary>
             <param name="path">The full or relative path to the item</param>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetChmodAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Retrieve the permissions of the given file/folder as an integer in the CHMOD format.
+            Throws FtpCommandException if there is an issue.
+            Returns 0 if the server did not specify a permission value.
+            Use `GetFilePermissions` if you required the permissions in the FtpPermission format.
+            </summary>
+            <param name="path">The full or relative path to the item</param>
+            <param name="token">Cancellation Token</param>
         </member>
         <member name="M:FluentFTP.FtpClient.DereferenceLink(FluentFTP.FtpListItem)">
             <summary>
@@ -432,6 +600,33 @@
             <returns>A <see cref="T:FluentFTP.FtpListItem"/>, or null if the link can't be dereferenced</returns>
             <example><code source="..\Examples\BeginDereferenceLink.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.DereferenceLinkAsync(FluentFTP.FtpListItem,System.Int32,FluentFTP.IntRef,System.Threading.CancellationToken)">
+            <summary>
+            Derefence a FtpListItem object
+            </summary>
+            <param name="item">The item to derefence</param>
+            <param name="recMax">Maximum recursive calls</param>
+            <param name="count">Counter</param>
+            <param name="token">Cancellation Token</param>
+            <returns>FtpListItem, null if the link can't be dereferenced</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DereferenceLinkAsync(FluentFTP.FtpListItem,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Dereference a <see cref="T:FluentFTP.FtpListItem"/> object asynchronously
+            </summary>
+            <param name="item">The item to dereference</param>
+            <param name="recMax">Maximum recursive calls</param>
+            <param name="token">Cancellation Token</param>
+            <returns>FtpListItem, null if the link can't be dereferenced</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DereferenceLinkAsync(FluentFTP.FtpListItem,System.Threading.CancellationToken)">
+            <summary>
+            Dereference a <see cref="T:FluentFTP.FtpListItem"/> object asynchronously
+            </summary>
+            <param name="item">The item to dereference</param>
+            <param name="token">Cancellation Token</param>
+            <returns>FtpListItem, null if the link can't be dereferenced</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetFileSize(System.String)">
             <summary>
             Gets the size of a remote file, in bytes.
@@ -440,7 +635,7 @@
             <returns>-1 if the command fails, otherwise the file size</returns>
             <example><code source="..\Examples\GetFileSize.cs" lang="cs" /></example>
         </member>
-        <member name="M:FluentFTP.FtpClient.GetFileSizeInternal(System.String)">
+        <member name="M:FluentFTP.FtpClient.GetFileSizeInternal(System.String,FluentFTP.FtpSizeReply)">
             <summary>
             Gets the file size of an object, without locking
             </summary>
@@ -462,6 +657,19 @@
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetFileSize(System.String,System.AsyncCallback,System.Object)"/></param>
             <returns>The size of the file, -1 if there was a problem.</returns>
             <example><code source="..\Examples\BeginGetFileSize.cs" lang="cs" /></example>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetFileSizeAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously gets the size of a remote file, in bytes.
+            </summary>
+            <param name="path">The full or relative path of the file</param>
+            <param name="token">Cancellation Token</param>
+            <returns>The size of the file, -1 if there was a problem.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetFileSizeInternalAsync(System.String,System.Threading.CancellationToken,FluentFTP.FtpSizeReply)">
+            <summary>
+            Gets the file size of an object, without locking
+            </summary>
         </member>
         <member name="M:FluentFTP.FtpClient.GetModifiedTime(System.String,FluentFTP.FtpDate)">
             <summary>
@@ -491,6 +699,15 @@
             <returns>The modified time, or <see cref="F:System.DateTime.MinValue"/> if there was a problem</returns>
             <example><code source="..\Examples\BeginGetModifiedTime.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetModifiedTimeAsync(System.String,FluentFTP.FtpDate,System.Threading.CancellationToken)">
+            <summary>
+            Gets the modified time of a remote file asynchronously
+            </summary>
+            <param name="path">The full path to the file</param>
+            <param name="type">Return the date in local timezone or UTC?  Use FtpDate.Original to disable timezone conversion.</param>
+            <param name="token">Cancellation Token</param>
+            <returns>The modified time, or <see cref="F:System.DateTime.MinValue"/> if there was a problem</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.SetModifiedTime(System.String,System.DateTime,FluentFTP.FtpDate)">
             <summary>
             Changes the modified time of a remote file
@@ -516,6 +733,15 @@
             </summary>
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginSetModifiedTime(System.String,System.DateTime,FluentFTP.FtpDate,System.AsyncCallback,System.Object)"/></param>
             <returns>The modified time, or <see cref="F:System.DateTime.MinValue"/> if there was a problem</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.SetModifiedTimeAsync(System.String,System.DateTime,FluentFTP.FtpDate,System.Threading.CancellationToken)">
+            <summary>
+            Gets the modified time of a remote file asynchronously
+            </summary>
+            <param name="path">The full path to the file</param>
+            <param name="date">The new modified date/time value</param>
+            <param name="type">Is the date provided in local timezone or UTC? Use FtpDate.Original to disable timezone conversion.</param>
+            <param name="token">Cancellation Token</param>
         </member>
         <member name="M:FluentFTP.FtpClient.DeleteDirectory(System.String)">
             <summary>
@@ -576,6 +802,32 @@
             <param name="ar">IAsyncResult returned from BeginDeleteDirectory</param>
             <example><code source="..\Examples\BeginDeleteDirectory.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.DeleteDirectoryAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously removes a directory and all its contents.
+            </summary>
+            <param name="path">The full or relative path of the directory to delete</param>
+            <param name="token">Cancellation Token</param>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DeleteDirectoryAsync(System.String,FluentFTP.FtpListOption,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously removes a directory and all its contents.
+            </summary>
+            <param name="path">The full or relative path of the directory to delete</param>
+            <param name="options">Useful to delete hidden files or dot-files.</param>
+            <param name="token">Cancellation Token</param>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DeleteDirInternalAsync(System.String,System.Boolean,FluentFTP.FtpListOption,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously removes a directory. Used by <see cref="!:DeleteDirectoryAsync(string)"/> and
+            <see cref="!:DeleteDirectoryAsync(string, FtpListOption)"/>.
+            </summary>
+            <param name="path">The full or relative path of the directory to delete</param>
+            <param name="deleteContents">Delete the contents before deleting the folder</param>
+            <param name="options">Useful to delete hidden files or dot-files.</param>
+            <param name="token">Cancellation Token</param>
+            <returns></returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.DirectoryExists(System.String)">
             <summary>
             Tests if the specified directory exists on the server. This
@@ -611,6 +863,19 @@
             <param name="ar">IAsyncResult returned from BeginDirectoryExists</param>
             <returns>True if the directory exists. False otherwise.</returns>
             <example><code source="..\Examples\BeginDirectoryExists.cs" lang="cs" /></example>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DirectoryExistsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Tests if the specified directory exists on the server asynchronously. This
+            method works by trying to change the working directory to
+            the path specified. If it succeeds, the directory is changed
+            back to the old working directory and true is returned. False
+            is returned otherwise and since the CWD failed it is assumed
+            the working directory is still the same.
+            </summary>
+            <param name='path'>The full or relative path of the directory to check for</param>
+            <param name="token">Cancellation Token</param>
+            <returns>True if the directory exists. False otherwise.</returns>
         </member>
         <member name="M:FluentFTP.FtpClient.CreateDirectory(System.String)">
             <summary>
@@ -657,6 +922,22 @@
             <param name="ar">IAsyncResult returned from <see cref="o:BeginCreateDirectory"/></param>
             <example><code source="..\Examples\BeginCreateDirectory.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.CreateDirectoryAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Creates a remote directory asynchronously
+            </summary>
+            <param name="path">The full or relative path to the new remote directory</param>
+            <param name="force">Try to create the whole path if the preceding directories do not exist</param>
+            <param name="token">Cancellation Token</param>
+        </member>
+        <member name="M:FluentFTP.FtpClient.CreateDirectoryAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Creates a remote directory asynchronously. If the preceding
+            directories do not exist, then they are created.
+            </summary>
+            <param name="path">The full or relative path to the new remote directory</param>
+            <param name="token">Cancellation Token</param>
+        </member>
         <member name="M:FluentFTP.FtpClient.MoveDirectory(System.String,System.String,FluentFTP.FtpExists)">
             <summary>
             Moves a directory on the remote file system from one directory to another.
@@ -687,6 +968,18 @@
             </summary>
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginMoveDirectory(System.String,System.String,FluentFTP.FtpExists,System.AsyncCallback,System.Object)"/></param>
         </member>
+        <member name="M:FluentFTP.FtpClient.MoveDirectoryAsync(System.String,System.String,FluentFTP.FtpExists,System.Threading.CancellationToken)">
+            <summary>
+            Moves a directory asynchronously on the remote file system from one directory to another.
+            Always checks if the source directory exists. Checks if the dest directory exists based on the `existsMode` parameter.
+            Only throws exceptions for critical errors.
+            </summary>
+            <param name="path">The full or relative path to the object</param>
+            <param name="dest">The new full or relative path including the new name of the object</param>
+            <param name="existsMode">Should we check if the dest directory exists? And if it does should we overwrite/skip the operation?</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Whether the directory was moved</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.SetWorkingDirectory(System.String)">
             <summary>
             Sets the work directory on the server
@@ -711,6 +1004,13 @@
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginSetWorkingDirectory(System.String,System.AsyncCallback,System.Object)"/></param>
             <example><code source="..\Examples\BeginSetWorkingDirectory.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.SetWorkingDirectoryAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sets the working directory on the server asynchronously
+            </summary>
+            <param name="path">The directory to change to</param>
+            <param name="token">Cancellation Token</param>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetWorkingDirectory">
             <summary>
             Gets the current working directory
@@ -734,6 +1034,12 @@
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetWorkingDirectory(System.AsyncCallback,System.Object)"/></param>
             <returns>The current working directory</returns>
             <example><code source="..\Examples\BeginGetWorkingDirectory.cs" lang="cs" /></example>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetWorkingDirectoryAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the current working directory asynchronously
+            </summary>
+            <returns>The current working directory, ./ if the response couldn't be parsed.</returns>
         </member>
         <member name="M:FluentFTP.FtpClient.GetHashAlgorithm">
             <summary>
@@ -763,6 +1069,16 @@
             Ends a call to <see cref="M:FluentFTP.FtpClient.BeginGetHashAlgorithm(System.AsyncCallback,System.Object)"/>
             </summary>
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetHashAlgorithm(System.AsyncCallback,System.Object)"/></param>
+            <returns>The <see cref="T:FluentFTP.FtpHashAlgorithm"/> flag or <see cref="F:FluentFTP.FtpHashAlgorithm.NONE"/> if there was a problem.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetHashAlgorithmAsync">
+            <summary>
+            Gets the currently selected hash algorithm for the HASH command asynchronously.
+            </summary>
+            <remarks>
+             This feature is experimental. See this link for details:
+            http://tools.ietf.org/html/draft-bryan-ftpext-hash-02
+            </remarks>
             <returns>The <see cref="T:FluentFTP.FtpHashAlgorithm"/> flag or <see cref="F:FluentFTP.FtpHashAlgorithm.NONE"/> if there was a problem.</returns>
         </member>
         <member name="M:FluentFTP.FtpClient.SetHashAlgorithm(FluentFTP.FtpHashAlgorithm)">
@@ -805,6 +1121,13 @@
             Ends an asynchronous call to <see cref="M:FluentFTP.FtpClient.BeginSetHashAlgorithm(FluentFTP.FtpHashAlgorithm,System.AsyncCallback,System.Object)"/>
             </summary>
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginSetHashAlgorithm(FluentFTP.FtpHashAlgorithm,System.AsyncCallback,System.Object)"/></param>
+        </member>
+        <member name="M:FluentFTP.FtpClient.SetHashAlgorithmAsync(FluentFTP.FtpHashAlgorithm)">
+            <summary>
+            Sets the hash algorithm on the server to be used with the HASH command asynchronously.
+            </summary>
+            <param name="type">Hash algorithm to use</param>
+            <exception cref="T:System.NotImplementedException">Thrown if the selected algorithm is not available on the server</exception>
         </member>
         <member name="M:FluentFTP.FtpClient.GetHash(System.String)">
             <summary>
@@ -861,6 +1184,33 @@
             </summary>
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetHash(System.String,System.AsyncCallback,System.Object)"/></param>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetHashAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the hash of an object on the server using the currently selected hash algorithm asynchronously. 
+            </summary>
+            <remarks>
+            Supported algorithms, if any, are available in the <see cref="P:FluentFTP.FtpClient.HashAlgorithms"/>
+            property. You should confirm that it's not equal
+            to <see cref="F:FluentFTP.FtpHashAlgorithm.NONE"/> before calling this method
+            otherwise the server trigger a <see cref="T:FluentFTP.FtpCommandException"/>
+            due to a lack of support for the HASH command. You can
+            set the algorithm using the <see cref="M:FluentFTP.FtpClient.SetHashAlgorithm(FluentFTP.FtpHashAlgorithm)"/> method and
+            you can query the server for the current hash algorithm
+            using the <see cref="M:FluentFTP.FtpClient.GetHashAlgorithm"/> method.
+            
+            This feature is experimental and based on the following draft:
+            http://tools.ietf.org/html/draft-bryan-ftpext-hash-02
+            </remarks>
+            <param name="path">The file you want the server to compute the hash for</param>
+            <param name="token">Cancellation Token</param>
+            <exception cref="T:FluentFTP.FtpCommandException">
+            Thrown if the <see cref="P:FluentFTP.FtpClient.HashAlgorithms"/> property is <see cref="F:FluentFTP.FtpHashAlgorithm.NONE"/>, 
+            the remote path does not exist, or the command cannot be executed.
+            </exception>
+            <exception cref="T:System.ArgumentException">Path argument is null</exception>
+            <exception cref="T:System.NotImplementedException">Thrown when an unknown hash algorithm type is returned by the server</exception>
+            <returns>The hash of the file.</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetChecksum(System.String)">
             <summary>
             Retrieves a checksum of the given file using a checksum method that the server supports, if any. 
@@ -908,6 +1258,27 @@
             determine if this command was successful. <see cref="T:FluentFTP.FtpCommandException"/>s can be thrown from
             the underlying calls.</returns>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetChecksumAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves a checksum of the given file using a checksum method that the server supports, if any. 
+            </summary>
+            <remarks>
+            The algorithm used goes in this order:
+            1. HASH command; server preferred algorithm. See <see cref="M:FluentFTP.FtpClient.SetHashAlgorithm(FluentFTP.FtpHashAlgorithm)"/>
+            2. MD5 / XMD5 commands
+            3. XSHA1 command
+            4. XSHA256 command
+            5. XSHA512 command
+            6. XCRC command
+            </remarks>
+            <param name="path">Full or relative path of the file to checksum</param>
+            <param name="token">Cancellation Token</param>
+            <returns><see cref="T:FluentFTP.FtpHash"/> object containing the value and algorithm. Use the <see cref="P:FluentFTP.FtpHash.IsValid"/> property to
+            determine if this command was successful. <see cref="T:FluentFTP.FtpCommandException"/>s can be thrown from
+            the underlying calls.</returns>
+            <example><code source="..\Examples\GetChecksum.cs" lang="cs" /></example>
+            <exception cref="T:FluentFTP.FtpCommandException">The command fails</exception>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetMD5(System.String)">
             <summary>
             Gets the MD5 hash of the specified file using MD5. This is a non-standard extension
@@ -935,6 +1306,17 @@
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetMD5(System.String,System.AsyncCallback,System.Object)"/></param>
             <returns>The MD5 hash of the specified file.</returns>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetMD5Async(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the MD5 hash of the specified file using MD5 asynchronously. This is a non-standard extension
+            to the protocol and may or may not work. A FtpCommandException will be
+            thrown if the command fails.
+            </summary>
+            <param name="path">Full or relative path to remote file</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Server response, presumably the MD5 hash.</returns>
+            <exception cref="T:FluentFTP.FtpCommandException">The command fails</exception>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetXCRC(System.String)">
             <summary>
             Get the CRC value of the specified file. This is a non-standard extension of the protocol 
@@ -960,6 +1342,17 @@
             </summary>
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetXCRC(System.String,System.AsyncCallback,System.Object)"/></param>
             <returns>The CRC hash of the specified file.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetXCRCAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the CRC hash of the specified file using XCRC asynchronously. This is a non-standard extension
+            to the protocol and may or may not work. A FtpCommandException will be
+            thrown if the command fails.
+            </summary>
+            <param name="path">Full or relative path to remote file</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Server response, presumably the CRC hash.</returns>
+            <exception cref="T:FluentFTP.FtpCommandException">The command fails</exception>
         </member>
         <member name="M:FluentFTP.FtpClient.GetXMD5(System.String)">
             <summary>
@@ -988,6 +1381,17 @@
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetXMD5(System.String,System.AsyncCallback,System.Object)"/></param>
             <returns>The MD5 hash of the specified file.</returns>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetXMD5Async(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the MD5 hash of the specified file using XMD5 asynchronously. This is a non-standard extension
+            to the protocol and may or may not work. A FtpCommandException will be
+            thrown if the command fails.
+            </summary>
+            <param name="path">Full or relative path to remote file</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Server response, presumably the MD5 hash.</returns>
+            <exception cref="T:FluentFTP.FtpCommandException">The command fails</exception>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetXSHA1(System.String)">
             <summary>
             Gets the SHA-1 hash of the specified file using XSHA1. This is a non-standard extension
@@ -1014,6 +1418,17 @@
             </summary>
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetXSHA1(System.String,System.AsyncCallback,System.Object)"/></param>
             <returns>The SHA-1 hash of the specified file.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetXSHA1Async(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the SHA-1 hash of the specified file using XSHA1 asynchronously. This is a non-standard extension
+            to the protocol and may or may not work. A FtpCommandException will be
+            thrown if the command fails.
+            </summary>
+            <param name="path">Full or relative path to remote file</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Server response, presumably the SHA-1 hash.</returns>
+            <exception cref="T:FluentFTP.FtpCommandException">The command fails</exception>
         </member>
         <member name="M:FluentFTP.FtpClient.GetXSHA256(System.String)">
             <summary>
@@ -1042,6 +1457,17 @@
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetXSHA256(System.String,System.AsyncCallback,System.Object)"/></param>
             <returns>The SHA-256 hash of the specified file.</returns>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetXSHA256Async(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the SHA-256 hash of the specified file using XSHA256 asynchronously. This is a non-standard extension
+            to the protocol and may or may not work. A FtpCommandException will be
+            thrown if the command fails.
+            </summary>
+            <param name="path">Full or relative path to remote file</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Server response, presumably the SHA-256 hash.</returns>
+            <exception cref="T:FluentFTP.FtpCommandException">The command fails</exception>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetXSHA512(System.String)">
             <summary>
             Gets the SHA-512 hash of the specified file using XSHA512. This is a non-standard extension
@@ -1069,7 +1495,18 @@
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetXSHA512(System.String,System.AsyncCallback,System.Object)"/></param>
             <returns>The SHA-512 hash of the specified file.</returns>
         </member>
-        <member name="M:FluentFTP.FtpClient.ReportProgress(IProgress{FluentFTP.FtpProgress},System.Int64,System.Int64,System.Int64,System.TimeSpan)">
+        <member name="M:FluentFTP.FtpClient.GetXSHA512Async(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the SHA-512 hash of the specified file using XSHA512 asynchronously. This is a non-standard extension
+            to the protocol and may or may not work. A FtpCommandException will be
+            thrown if the command fails.
+            </summary>
+            <param name="path">Full or relative path to remote file</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Server response, presumably the SHA-512 hash.</returns>
+            <exception cref="T:FluentFTP.FtpCommandException">The command fails</exception>
+        </member>
+        <member name="M:FluentFTP.FtpClient.ReportProgress(System.IProgress{FluentFTP.FtpProgress},System.Int64,System.Int64,System.Int64,System.TimeSpan)">
             <summary>
             Sends progress to the user, either a value between 0-100 indicating percentage complete, or -1 for indeterminate.
             </summary>
@@ -1095,7 +1532,29 @@
             to propagate from this method.
             </remarks>
         </member>
-        <member name="M:FluentFTP.FtpClient.DownloadFile(System.String,System.String,FluentFTP.FtpLocalExists,FluentFTP.FtpVerify,IProgress{FluentFTP.FtpProgress})">
+        <member name="M:FluentFTP.FtpClient.DownloadFilesAsync(System.String,System.Collections.Generic.IEnumerable{System.String},FluentFTP.FtpLocalExists,FluentFTP.FtpVerify,FluentFTP.FtpError,System.Threading.CancellationToken)">
+            <summary>
+            Downloads the specified files into a local single directory.
+            High-level API that takes care of various edge cases internally.
+            Supports very large files since it downloads data in chunks.
+            Same speed as <see cref="o:DownloadFile"/>.
+            </summary>
+            <param name="localDir">The full or relative path to the directory that files will be downloaded.</param>
+            <param name="remotePaths">The full or relative paths to the files on the server</param>
+            <param name="existsMode">Overwrite if you want the local file to be overwritten if it already exists. Append will also create a new file if it dosen't exists</param>
+            <param name="verifyOptions">Sets if checksum verification is required for a successful download and what to do if it fails verification (See Remarks)</param>
+            <param name="errorHandling">Used to determine how errors are handled</param>
+            <param name="token">The token to monitor for cancellation requests</param>
+            <returns>The count of how many files were downloaded successfully. When existing files are skipped, they are not counted.</returns>
+            <remarks>
+            If verification is enabled (All options other than <see cref="F:FluentFTP.FtpVerify.None"/>) the hash will be checked against the server.  If the server does not support
+            any hash algorithm, then verification is ignored.  If only <see cref="F:FluentFTP.FtpVerify.OnlyChecksum"/> is set then the return of this method depends on both a successful 
+            upload &amp; verification.  Additionally, if any verify option is set and a retry is attempted then overwrite will automatically be set to true for subsequent attempts.
+            If <see cref="F:FluentFTP.FtpVerify.Throw"/> is set and <see cref="F:FluentFTP.FtpError.Throw"/> is <i>not set</i>, then individual verification errors will not cause an exception
+            to propagate from this method.
+            </remarks>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DownloadFile(System.String,System.String,FluentFTP.FtpLocalExists,FluentFTP.FtpVerify,System.IProgress{FluentFTP.FtpProgress})">
             <summary>
             Downloads the specified file onto the local file system.
             High-level API that takes care of various edge cases internally.
@@ -1113,7 +1572,26 @@
             upload &amp; verification.  Additionally, if any verify option is set and a retry is attempted then overwrite will automatically be set to true for subsequent attempts.
             </remarks>
         </member>
-        <member name="M:FluentFTP.FtpClient.Download(System.IO.Stream,System.String,System.Int64,IProgress{FluentFTP.FtpProgress})">
+        <member name="M:FluentFTP.FtpClient.DownloadFileAsync(System.String,System.String,FluentFTP.FtpLocalExists,FluentFTP.FtpVerify,System.IProgress{FluentFTP.FtpProgress},System.Threading.CancellationToken)">
+            <summary>
+            Downloads the specified file onto the local file system asynchronously.
+            High-level API that takes care of various edge cases internally.
+            Supports very large files since it downloads data in chunks.
+            </summary>
+            <param name="localPath">The full or relative path to the file on the local file system</param>
+            <param name="remotePath">The full or relative path to the file on the server</param>
+            <param name="existsMode">Overwrite if you want the local file to be overwritten if it already exists. Append will also create a new file if it dosen't exists</param>
+            <param name="verifyOptions">Sets if checksum verification is required for a successful download and what to do if it fails verification (See Remarks)</param>
+            <param name="progress">Provide an implementation of IProgress to track download progress. The value provided is in the range 0 to 100, indicating the percentage of the file transferred. If the progress is indeterminate, -1 is sent.</param>
+            <param name="token">Cancellation Token</param>
+            <returns>If true then the file was downloaded, false otherwise.</returns>
+            <remarks>
+            If verification is enabled (All options other than <see cref="F:FluentFTP.FtpVerify.None"/>) the hash will be checked against the server.  If the server does not support
+            any hash algorithm, then verification is ignored.  If only <see cref="F:FluentFTP.FtpVerify.OnlyChecksum"/> is set then the return of this method depends on both a successful 
+            upload &amp; verification.  Additionally, if any verify option is set and a retry is attempted then overwrite will automatically be set to true for subsequent attempts.
+            </remarks>
+        </member>
+        <member name="M:FluentFTP.FtpClient.Download(System.IO.Stream,System.String,System.Int64,System.IProgress{FluentFTP.FtpProgress})">
             <summary>
             Downloads the specified file into the specified stream.
             High-level API that takes care of various edge cases internally.
@@ -1125,7 +1603,7 @@
             <param name="progress">Provide an implementation of IProgress to track download progress. The value provided is in the range 0 to 100, indicating the percentage of the file transferred. If the progress is indeterminate, -1 is sent.</param>
             <returns>If true then the file was downloaded, false otherwise.</returns>
         </member>
-        <member name="M:FluentFTP.FtpClient.Download(System.Byte[]@,System.String,System.Int64,IProgress{FluentFTP.FtpProgress})">
+        <member name="M:FluentFTP.FtpClient.Download(System.Byte[]@,System.String,System.Int64,System.IProgress{FluentFTP.FtpProgress})">
             <summary>
             Downloads the specified file and return the raw byte array.
             High-level API that takes care of various edge cases internally.
@@ -1137,9 +1615,50 @@
             <param name="progress">Provide an implementation of IProgress to track download progress. The value provided is in the range 0 to 100, indicating the percentage of the file transferred. If the progress is indeterminate, -1 is sent.</param>
             <returns>If true then the file was downloaded, false otherwise.</returns>
         </member>
-        <member name="M:FluentFTP.FtpClient.DownloadFileInternal(System.String,System.IO.Stream,System.Int64,IProgress{FluentFTP.FtpProgress})">
+        <member name="M:FluentFTP.FtpClient.DownloadAsync(System.IO.Stream,System.String,System.Int64,System.IProgress{FluentFTP.FtpProgress},System.Threading.CancellationToken)">
+            <summary>
+            Downloads the specified file into the specified stream asynchronously .
+            High-level API that takes care of various edge cases internally.
+            Supports very large files since it downloads data in chunks.
+            </summary>
+            <param name="outStream">The stream that the file will be written to. Provide a new MemoryStream if you only want to read the file into memory.</param>
+            <param name="remotePath">The full or relative path to the file on the server</param>
+            <param name="restartPosition">The size of the existing file in bytes, or 0 if unknown. The download restarts from this byte index.</param>
+            <param name="token">The token to monitor cancellation requests</param>
+            <param name="progress">Provide an implementation of IProgress to track download progress. The value provided is in the range 0 to 100, indicating the percentage of the file transferred. If the progress is indeterminate, -1 is sent.</param>
+            <returns>If true then the file was downloaded, false otherwise.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DownloadAsync(System.String,System.Int64,System.IProgress{FluentFTP.FtpProgress},System.Threading.CancellationToken)">
+            <summary>
+            Downloads the specified file and return the raw byte array.
+            High-level API that takes care of various edge cases internally.
+            Supports very large files since it downloads data in chunks.
+            </summary>
+            <param name="remotePath">The full or relative path to the file on the server</param>
+            <param name="restartPosition">The size of the existing file in bytes, or 0 if unknown. The download restarts from this byte index.</param>
+            <param name="token">The token to monitor cancellation requests</param>
+            <param name="progress">Provide an implementation of IProgress to track download progress. The value provided is in the range 0 to 100, indicating the percentage of the file transferred. If the progress is indeterminate, -1 is sent.</param>
+            <returns>A byte array containing the contents of the downloaded file if successful, otherwise null.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DownloadAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Downloads the specified file into the specified stream asynchronously .
+            High-level API that takes care of various edge cases internally.
+            Supports very large files since it downloads data in chunks.
+            </summary>
+            <param name="remotePath">The full or relative path to the file on the server</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A byte array containing the contents of the downloaded file if successful, otherwise null.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DownloadFileInternal(System.String,System.IO.Stream,System.Int64,System.IProgress{FluentFTP.FtpProgress})">
             <summary>
             Download a file from the server and write the data into the given stream.
+            Reads data in chunks. Retries if server disconnects midway.
+            </summary>
+        </member>
+        <member name="M:FluentFTP.FtpClient.DownloadFileInternalAsync(System.String,System.IO.Stream,System.Int64,System.IProgress{FluentFTP.FtpProgress},System.Threading.CancellationToken)">
+            <summary>
+            Download a file from the server and write the data into the given stream asynchronously.
             Reads data in chunks. Retries if server disconnects midway.
             </summary>
         </member>
@@ -1190,7 +1709,31 @@
             to propagate from this method.
             </remarks>
         </member>
-        <member name="M:FluentFTP.FtpClient.UploadFile(System.String,System.String,FluentFTP.FtpExists,System.Boolean,FluentFTP.FtpVerify,IProgress{FluentFTP.FtpProgress})">
+        <member name="M:FluentFTP.FtpClient.UploadFilesAsync(System.Collections.Generic.IEnumerable{System.String},System.String,FluentFTP.FtpExists,System.Boolean,FluentFTP.FtpVerify,FluentFTP.FtpError,System.Threading.CancellationToken)">
+            <summary>
+            Uploads the given file paths to a single folder on the server asynchronously.
+            All files are placed directly into the given folder regardless of their path on the local filesystem.
+            High-level API that takes care of various edge cases internally.
+            Supports very large files since it uploads data in chunks.
+            Faster than uploading single files with <see cref="o:UploadFile"/> since it performs a single "file exists" check rather than one check per file.
+            </summary>
+            <param name="localPaths">The full or relative paths to the files on the local file system. Files can be from multiple folders.</param>
+            <param name="remoteDir">The full or relative path to the directory that files will be uploaded on the server</param>
+            <param name="existsMode">What to do if the file already exists? Skip, overwrite or append? Set this to FtpExists.None for fastest performance but only if you are SURE that the files do not exist on the server.</param>
+            <param name="createRemoteDir">Create the remote directory if it does not exist.</param>
+            <param name="verifyOptions">Sets if checksum verification is required for a successful upload and what to do if it fails verification (See Remarks)</param>
+            <param name="errorHandling">Used to determine how errors are handled</param>
+            <param name="token">The token to monitor for cancellation requests</param>
+            <returns>The count of how many files were uploaded successfully. Affected when files are skipped when they already exist.</returns>
+            <remarks>
+            If verification is enabled (All options other than <see cref="F:FluentFTP.FtpVerify.None"/>) the hash will be checked against the server.  If the server does not support
+            any hash algorithm, then verification is ignored.  If only <see cref="F:FluentFTP.FtpVerify.OnlyChecksum"/> is set then the return of this method depends on both a successful 
+            upload &amp; verification.  Additionally, if any verify option is set and a retry is attempted the existsMode will automatically be set to <see cref="F:FluentFTP.FtpExists.Overwrite"/>.
+            If <see cref="F:FluentFTP.FtpVerify.Throw"/> is set and <see cref="F:FluentFTP.FtpError.Throw"/> is <i>not set</i>, then individual verification errors will not cause an exception
+            to propagate from this method.
+            </remarks>
+        </member>
+        <member name="M:FluentFTP.FtpClient.UploadFile(System.String,System.String,FluentFTP.FtpExists,System.Boolean,FluentFTP.FtpVerify,System.IProgress{FluentFTP.FtpProgress})">
             <summary>
             Uploads the specified file directly onto the server.
             High-level API that takes care of various edge cases internally.
@@ -1210,7 +1753,28 @@
             upload &amp; verification.  Additionally, if any verify option is set and a retry is attempted the existsMode will automatically be set to <see cref="F:FluentFTP.FtpExists.Overwrite"/>.
             </remarks>
         </member>
-        <member name="M:FluentFTP.FtpClient.Upload(System.IO.Stream,System.String,FluentFTP.FtpExists,System.Boolean,IProgress{FluentFTP.FtpProgress})">
+        <member name="M:FluentFTP.FtpClient.UploadFileAsync(System.String,System.String,FluentFTP.FtpExists,System.Boolean,FluentFTP.FtpVerify,System.IProgress{FluentFTP.FtpProgress},System.Threading.CancellationToken)">
+            <summary>
+            Uploads the specified file directly onto the server asynchronously.
+            High-level API that takes care of various edge cases internally.
+            Supports very large files since it uploads data in chunks.
+            </summary>
+            <param name="localPath">The full or relative path to the file on the local file system</param>
+            <param name="remotePath">The full or relative path to the file on the server</param>
+            <param name="existsMode">What to do if the file already exists? Skip, overwrite or append? Set this to  <see cref="F:FluentFTP.FtpExists.NoCheck"/> for fastest performance
+             but only if you are SURE that the files do not exist on the server.</param>
+            <param name="createRemoteDir">Create the remote directory if it does not exist. Slows down upload due to additional checks required.</param>
+            <param name="verifyOptions">Sets if checksum verification is required for a successful upload and what to do if it fails verification (See Remarks)</param>
+            <param name="token">The token to monitor for cancellation requests.</param>
+            <param name="progress">Provide an implementation of IProgress to track upload progress. The value provided is in the range 0 to 100, indicating the percentage of the file transferred. If the progress is indeterminate, -1 is sent.</param>
+            <returns>If true then the file was uploaded, false otherwise.</returns>
+            <remarks>
+            If verification is enabled (All options other than <see cref="F:FluentFTP.FtpVerify.None"/>) the hash will be checked against the server.  If the server does not support
+            any hash algorithm, then verification is ignored.  If only <see cref="F:FluentFTP.FtpVerify.OnlyChecksum"/> is set then the return of this method depends on both a successful 
+            upload &amp; verification.  Additionally, if any verify option is set and a retry is attempted the existsMode will automatically be set to <see cref="F:FluentFTP.FtpExists.Overwrite"/>.
+            </remarks>
+        </member>
+        <member name="M:FluentFTP.FtpClient.Upload(System.IO.Stream,System.String,FluentFTP.FtpExists,System.Boolean,System.IProgress{FluentFTP.FtpProgress})">
             <summary>
             Uploads the specified stream as a file onto the server.
             High-level API that takes care of various edge cases internally.
@@ -1223,7 +1787,7 @@
             <param name="createRemoteDir">Create the remote directory if it does not exist. Slows down upload due to additional checks required.</param>
             <param name="progress">Provide an implementation of IProgress to track upload progress. The value provided is in the range 0 to 100, indicating the percentage of the file transferred. If the progress is indeterminate, -1 is sent.</param>
         </member>
-        <member name="M:FluentFTP.FtpClient.Upload(System.Byte[],System.String,FluentFTP.FtpExists,System.Boolean,IProgress{FluentFTP.FtpProgress})">
+        <member name="M:FluentFTP.FtpClient.Upload(System.Byte[],System.String,FluentFTP.FtpExists,System.Boolean,System.IProgress{FluentFTP.FtpProgress})">
             <summary>
             Uploads the specified byte array as a file onto the server.
             High-level API that takes care of various edge cases internally.
@@ -1236,9 +1800,45 @@
             <param name="createRemoteDir">Create the remote directory if it does not exist. Slows down upload due to additional checks required.</param>
             <param name="progress">Provide an implementation of IProgress to track upload progress. The value provided is in the range 0 to 100, indicating the percentage of the file transferred. If the progress is indeterminate, -1 is sent.</param>
         </member>
-        <member name="M:FluentFTP.FtpClient.UploadFileInternal(System.IO.Stream,System.String,System.Boolean,FluentFTP.FtpExists,System.Boolean,System.Boolean,IProgress{FluentFTP.FtpProgress})">
+        <member name="M:FluentFTP.FtpClient.UploadAsync(System.IO.Stream,System.String,FluentFTP.FtpExists,System.Boolean,System.IProgress{FluentFTP.FtpProgress},System.Threading.CancellationToken)">
+            <summary>
+            Uploads the specified stream as a file onto the server asynchronously.
+            High-level API that takes care of various edge cases internally.
+            Supports very large files since it uploads data in chunks.
+            </summary>
+            <param name="fileStream">The full data of the file, as a stream</param>
+            <param name="remotePath">The full or relative path to the file on the server</param>
+            <param name="existsMode">What to do if the file already exists? Skip, overwrite or append? Set this to <see cref="F:FluentFTP.FtpExists.NoCheck"/> for fastest performance,
+             but only if you are SURE that the files do not exist on the server.</param>
+            <param name="createRemoteDir">Create the remote directory if it does not exist. Slows down upload due to additional checks required.</param>
+            <param name="token">The token to monitor for cancellation requests.</param>
+            <param name="progress">Provide an implementation of IProgress to track upload progress. The value provided is in the range 0 to 100, indicating the percentage of the file transferred. If the progress is indeterminate, -1 is sent.</param>
+            <returns>If true then the file was uploaded, false otherwise.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.UploadAsync(System.Byte[],System.String,FluentFTP.FtpExists,System.Boolean,System.IProgress{FluentFTP.FtpProgress},System.Threading.CancellationToken)">
+            <summary>
+            Uploads the specified byte array as a file onto the server asynchronously.
+            High-level API that takes care of various edge cases internally.
+            Supports very large files since it uploads data in chunks.
+            </summary>
+            <param name="fileData">The full data of the file, as a byte array</param>
+            <param name="remotePath">The full or relative path to the file on the server</param>
+            <param name="existsMode">What to do if the file already exists? Skip, overwrite or append? Set this to <see cref="F:FluentFTP.FtpExists.NoCheck"/> for fastest performance,
+             but only if you are SURE that the files do not exist on the server.</param>
+            <param name="createRemoteDir">Create the remote directory if it does not exist. Slows down upload due to additional checks required.</param>
+            <param name="token">The token to monitor for cancellation requests.</param>
+            <param name="progress">Provide an implementation of IProgress to track upload progress. The value provided is in the range 0 to 100, indicating the percentage of the file transferred. If the progress is indeterminate, -1 is sent.</param>
+            <returns>If true then the file was uploaded, false otherwise.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.UploadFileInternal(System.IO.Stream,System.String,System.Boolean,FluentFTP.FtpExists,System.Boolean,System.Boolean,System.IProgress{FluentFTP.FtpProgress})">
             <summary>
             Upload the given stream to the server as a new file. Overwrites the file if it exists.
+            Writes data in chunks. Retries if server disconnects midway.
+            </summary>
+        </member>
+        <member name="M:FluentFTP.FtpClient.UploadFileInternalAsync(System.IO.Stream,System.String,System.Boolean,FluentFTP.FtpExists,System.Boolean,System.Boolean,System.IProgress{FluentFTP.FtpProgress},System.Threading.CancellationToken)">
+            <summary>
+            Upload the given stream to the server as a new file asynchronously. Overwrites the file if it exists.
             Writes data in chunks. Retries if server disconnects midway.
             </summary>
         </member>
@@ -1276,6 +1876,22 @@
             Ends a call to <see cref="M:FluentFTP.FtpClient.BeginGetObjectInfo(System.String,System.Boolean,System.AsyncCallback,System.Object)"/>
             </summary>
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginGetObjectInfo(System.String,System.Boolean,System.AsyncCallback,System.Object)"/></param>
+            <returns>A <see cref="T:FluentFTP.FtpListItem"/> if the command succeeded, or null if there was a problem.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetObjectInfoAsync(System.String,System.Boolean)">
+            <summary>
+            Return information about a remote file system object asynchronously. 
+            </summary>
+            <remarks>
+            You should check the <see cref="P:FluentFTP.FtpClient.Capabilities"/> property for the <see cref="F:FluentFTP.FtpCapability.MLSD"/> 
+            flag before calling this method. Failing to do so will result in an InvalidOperationException
+            being thrown when the server does not support machine listings. Returns null if the server response can't
+            be parsed or the server returns a failure completion code. The error for a failure
+            is logged with FtpTrace. No exception is thrown on error because that would negate
+            the usefulness of this method for checking for the existence of an object.</remarks>
+            <param name="path">Path of the item to retrieve information about</param>
+            <param name="dateModified">Get the accurate modified date using another MDTM command</param>
+            <exception cref="T:System.InvalidOperationException">Thrown if the server does not support this Capability</exception>
             <returns>A <see cref="T:FluentFTP.FtpListItem"/> if the command succeeded, or null if there was a problem.</returns>
         </member>
         <member name="M:FluentFTP.FtpClient.GetListing">
@@ -1380,10 +1996,69 @@
             <returns>An array of items retrieved in the listing</returns>
             <example><code source="..\Examples\BeginGetListing.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetListingAsync(System.String,FluentFTP.FtpListOption,System.Threading.CancellationToken)">
+            <summary>
+            Gets a file listing from the server asynchronously. Each <see cref="T:FluentFTP.FtpListItem"/> object returned
+            contains information about the file that was able to be retrieved. 
+            </summary>
+            <remarks>
+            If a <see cref="T:System.DateTime"/> property is equal to <see cref="F:System.DateTime.MinValue"/> then it means the 
+            date in question was not able to be retrieved. If the <see cref="P:FluentFTP.FtpListItem.Size"/> property
+            is equal to 0, then it means the size of the object could also not
+            be retrieved.
+            </remarks>
+            <param name="path">The path to list</param>
+            <param name="options">Options that dictate how the list operation is performed</param>
+            <param name="token">Cancellation Token</param>
+            <returns>An array of items retrieved in the listing</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetListingInternalAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get the records of a file listing and retry if temporary failure.
+            </summary>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetListingAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a file listing from the server asynchronously. Each <see cref="T:FluentFTP.FtpListItem"/> object returned
+            contains information about the file that was able to be retrieved. 
+            </summary>
+            <remarks>
+            If a <see cref="T:System.DateTime"/> property is equal to <see cref="F:System.DateTime.MinValue"/> then it means the 
+            date in question was not able to be retrieved. If the <see cref="P:FluentFTP.FtpListItem.Size"/> property
+            is equal to 0, then it means the size of the object could also not
+            be retrieved.
+            </remarks>
+            <param name="path">The path to list</param>
+            <param name="token">Cancellation Token</param>
+            <returns>An array of items retrieved in the listing</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetListingAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets a file listing from the server asynchronously. Each <see cref="T:FluentFTP.FtpListItem"/> object returned
+            contains information about the file that was able to be retrieved. 
+            </summary>
+            <remarks>
+            If a <see cref="T:System.DateTime"/> property is equal to <see cref="F:System.DateTime.MinValue"/> then it means the 
+            date in question was not able to be retrieved. If the <see cref="P:FluentFTP.FtpListItem.Size"/> property
+            is equal to 0, then it means the size of the object could also not
+            be retrieved.
+            </remarks>
+            <returns>An array of items retrieved in the listing</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetListingRecursive(System.String,FluentFTP.FtpListOption)">
             <summary>
             Recursive method of GetListing, to recurse through directories on servers that do not natively support recursion.
             Automatically called by GetListing where required.
+            Uses flat recursion instead of head recursion.
+            </summary>
+            <param name="path">The path of the directory to list</param>
+            <param name="options">Options that dictacte how a list is performed and what information is gathered.</param>
+            <returns>An array of FtpListItem objects</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetListingRecursiveAsync(System.String,FluentFTP.FtpListOption)">
+            <summary>
+            Recursive method of GetListingAsync, to recurse through directories on servers that do not natively support recursion.
+            Automatically called by GetListingAsync where required.
             Uses flat recursion instead of head recursion.
             </summary>
             <param name="path">The path of the directory to list</param>
@@ -1431,6 +2106,20 @@
             <returns>An array of file and directory names if any were returned.</returns>
             <example><code source="..\Examples\BeginGetNameListing.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetNameListingAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns a file/directory listing using the NLST command asynchronously
+            </summary>
+            <param name="path">The path of the directory to list</param>
+            <param name="token">Cancellation Token</param>
+            <returns>An array of file and directory names if any were returned.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.GetNameListingAsync(System.Threading.CancellationToken)">
+            <summary>
+            Returns a file/directory listing using the NLST command asynchronously
+            </summary>
+            <returns>An array of file and directory names if any were returned.</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.Execute(System.String)">
             <summary>
             Executes a command
@@ -1457,6 +2146,14 @@
             <returns>FtpReply object (never null).</returns>
             <example><code source="..\Examples\BeginExecute.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.ExecuteAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Performs an asynchronous execution of the specified command
+            </summary>
+            <param name="command">The command to execute</param>
+            <param name="token">Cancellation Token</param>
+            <returns>The servers reply to the command</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.GetReply">
             <summary>
             Retrieves a reply from the server. Do not execute this method
@@ -1467,7 +2164,26 @@
             <returns>FtpReply representing the response from the server</returns>
             <example><code source="..\Examples\BeginGetReply.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetReplyAsync(System.Threading.CancellationToken)">
+            <summary>
+            Retrieves a reply from the server. Do not execute this method
+            unless you are sure that a reply has been sent, i.e., you
+            executed a command. Doing so will cause the code to hang
+            indefinitely waiting for a server reply that is never coming.
+            </summary>
+            <returns>FtpReply representing the response from the server</returns>
+            <example><code source="..\Examples\BeginGetReply.cs" lang="cs" /></example>
+        </member>
         <member name="M:FluentFTP.FtpClient.OpenPassiveDataStream(FluentFTP.FtpDataConnectionType,System.String,System.Int64)">
+            <summary>
+            Opens the specified type of passive data stream
+            </summary>
+            <param name="type">Type of passive data stream to open</param>
+            <param name="command">The command to execute that requires a data stream</param>
+            <param name="restart">Restart location in bytes for file transfer</param>
+            <returns>A data stream ready to be used</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.OpenPassiveDataStreamAsync(FluentFTP.FtpDataConnectionType,System.String,System.Int64,System.Threading.CancellationToken)">
             <summary>
             Opens the specified type of passive data stream
             </summary>
@@ -1492,12 +2208,31 @@
             <param name="restart">Restart location in bytes for file transfer</param>
             <returns>A data stream ready to be used</returns>
         </member>
+        <member name="M:FluentFTP.FtpClient.OpenActiveDataStreamAsync(FluentFTP.FtpDataConnectionType,System.String,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified type of active data stream
+            </summary>
+            <param name="type">Type of passive data stream to open</param>
+            <param name="command">The command to execute that requires a data stream</param>
+            <param name="restart">Restart location in bytes for file transfer</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A data stream ready to be used</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.OpenDataStream(System.String,System.Int64)">
             <summary>
             Opens a data stream.
             </summary>
             <param name='command'>The command to execute that requires a data stream</param>
             <param name="restart">Restart location in bytes for file transfer</param>
+            <returns>The data stream.</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.OpenDataStreamAsync(System.String,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Opens a data stream.
+            </summary>
+            <param name='command'>The command to execute that requires a data stream</param>
+            <param name="restart">Restart location in bytes for file transfer</param>
+            <param name="token">Cancellation Token</param>
             <returns>The data stream.</returns>
         </member>
         <member name="M:FluentFTP.FtpClient.CloseDataStream(FluentFTP.FtpDataStream)">
@@ -1631,6 +2366,54 @@
             <returns>A readable stream of the remote file</returns>
             <example><code source="..\Examples\BeginOpenRead.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.OpenReadAsync(System.String,FluentFTP.FtpDataType,System.Int64,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified file for reading asynchronously
+            </summary>
+            <param name="path">The full or relative path of the file</param>
+            <param name="type">ASCII/Binary</param>
+            <param name="restart">Resume location</param>
+            <param name="checkIfFileExists">Only set this to false if you are SURE that the file does not exist. If true, it reads the file size and saves it into the stream length.</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A stream for reading the file on the server</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.OpenReadAsync(System.String,FluentFTP.FtpDataType,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified file for reading asynchronously
+            </summary>
+            <param name="path">The full or relative path of the file</param>
+            <param name="type">ASCII/Binary</param>
+            <param name="restart">Resume location</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A readable stream of the remote file</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.OpenReadAsync(System.String,FluentFTP.FtpDataType,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified file for reading asynchronously
+            </summary>
+            <param name="path">The full or relative path of the file</param>
+            <param name="type">ASCII/Binary</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A readable stream of the remote file</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.OpenReadAsync(System.String,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified file for reading asynchronously
+            </summary>
+            <param name="path">The full or relative path of the file</param>
+            <param name="restart">Resume location</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A readable stream of the remote file</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.OpenReadAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified file for reading asynchronously
+            </summary>
+            <param name="path">The full or relative path of the file</param>
+            <param name="token">Cancellation Token</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A readable stream of the remote file</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.OpenWrite(System.String)">
             <summary>
             Opens the specified file for writing. Please call GetReply() after you have successfully transfered the file to read the "OK" command sent by the server and prevent stale data on the socket.
@@ -1686,6 +2469,25 @@
             <param name="ar"><see cref="T:System.IAsyncResult"/> returned from <see cref="o:BeginOpenWrite"/></param>
             <returns>A writable stream</returns>
             <example><code source="..\Examples\BeginOpenWrite.cs" lang="cs" /></example>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:FluentFTP.FtpClient.OpenWriteAsync(System.String,FluentFTP.FtpDataType,System.Boolean,System.Threading.CancellationToken)" -->
+        <member name="M:FluentFTP.FtpClient.OpenWriteAsync(System.String,FluentFTP.FtpDataType,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified file for writing. Please call GetReply() after you have successfully transfered the file to read the "OK" command sent by the server and prevent stale data on the socket. asynchronously
+            </summary>
+            <param name="path">Full or relative path of the file</param>
+            <param name="type">ASCII/Binary</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A stream for writing to the file on the server</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.OpenWriteAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified file for writing. Please call GetReply() after you have successfully transfered the file to read the "OK" command sent by the server and prevent stale data on the socket. asynchronously
+            </summary>
+            <param name="path">Full or relative path of the file</param>
+            <param name="token">Cancellation Token</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A stream for writing to the file on the server</returns>
         </member>
         <member name="M:FluentFTP.FtpClient.OpenAppend(System.String)">
             <summary>
@@ -1744,6 +2546,33 @@
             <returns>A writable stream</returns>
             <example><code source="..\Examples\BeginOpenAppend.cs" lang="cs" /></example>
         </member>
+        <member name="M:FluentFTP.FtpClient.OpenAppendAsync(System.String,FluentFTP.FtpDataType,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified file to be appended asynchronously
+            </summary>
+            <param name="path">Full or relative path of the file</param>
+            <param name="type">ASCII/Binary</param>
+            <param name="checkIfFileExists">Only set this to false if you are SURE that the file does not exist. If true, it reads the file size and saves it into the stream length.</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A stream for writing to the file on the server</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.OpenAppendAsync(System.String,FluentFTP.FtpDataType,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified file to be appended asynchronously
+            </summary>
+            <param name="path">Full or relative path of the file</param>
+            <param name="type">ASCII/Binary</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A stream for writing to the file on the server</returns>
+        </member>
+        <member name="M:FluentFTP.FtpClient.OpenAppendAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Opens the specified file to be appended asynchronously
+            </summary>
+            <param name="path">Full or relative path of the file</param>
+            <param name="token">Cancellation Token</param>
+            <returns>A stream for writing to the file on the server</returns>
+        </member>
         <member name="M:FluentFTP.FtpClient.SetDataType(FluentFTP.FtpDataType)">
             <summary>
             Sets the data type of information sent over the data stream
@@ -1771,6 +2600,20 @@
             Ends a call to <see cref="M:FluentFTP.FtpClient.BeginSetDataType(FluentFTP.FtpDataType,System.AsyncCallback,System.Object)"/>
             </summary>
             <param name="ar">IAsyncResult returned from <see cref="M:FluentFTP.FtpClient.BeginSetDataType(FluentFTP.FtpDataType,System.AsyncCallback,System.Object)"/></param>
+        </member>
+        <member name="M:FluentFTP.FtpClient.SetDataTypeAsync(FluentFTP.FtpDataType,System.Threading.CancellationToken)">
+            <summary>
+            Sets the data type of information sent over the data stream asynchronously
+            </summary>
+            <param name="type">ASCII/Binary</param>
+            <param name="token">Cancellation Token</param>
+        </member>
+        <member name="M:FluentFTP.FtpClient.SetDataTypeNoLockAsync(FluentFTP.FtpDataType,System.Threading.CancellationToken)">
+            <summary>
+            Sets the data type of information sent over the data stream asynchronously
+            </summary>
+            <param name="type">ASCII/Binary</param>
+            <param name="token">Cancellation Token</param>
         </member>
         <member name="F:FluentFTP.FtpClient._EPSVNotSupported">
             <summary>
@@ -2242,6 +3085,11 @@
             Ensure a relative path is absolute by appending the working dir
             </summary>
         </member>
+        <member name="M:FluentFTP.FtpClient.GetAbsolutePathAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Ensure a relative path is absolute by appending the working dir
+            </summary>
+        </member>
         <member name="M:FluentFTP.FtpClient.DisableUTF8">
             <summary>
             Disables UTF8 support and changes the Encoding property
@@ -2258,6 +3106,17 @@
             <param name="closeStream">close the connection?</param>
             <param name="evenEncrypted">even read encrypted data?</param>
             <param name="traceData">trace data to logs?</param>
+        </member>
+        <member name="M:FluentFTP.FtpClient.ReadStaleDataAsync(System.Boolean,System.Boolean,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Data shouldn't be on the socket, if it is it probably
+            means we've been disconnected. Read and discard
+            whatever is there and close the connection (optional).
+            </summary>
+            <param name="closeStream">close the connection?</param>
+            <param name="evenEncrypted">even read encrypted data?</param>
+            <param name="traceData">trace data to logs?</param>
+            <param name="token">Cancellation Token</param>
         </member>
         <member name="M:FluentFTP.FtpClient.IsProxy">
             <summary>
@@ -4123,6 +4982,12 @@
             </summary>
             <param name="stream">The existing socket stream</param>
         </member>
+        <member name="M:FluentFTP.Proxy.FtpClientHttp11Proxy.ConnectAsync(FluentFTP.FtpSocketStream,System.Threading.CancellationToken)">
+            <summary>
+            Connects to the server using an existing <see cref="T:FluentFTP.FtpSocketStream"/>
+            </summary>
+            <param name="stream">The existing socket stream</param>
+        </member>
         <member name="M:FluentFTP.Proxy.FtpClientHttp11Proxy.Connect(FluentFTP.FtpSocketStream,System.String,System.Int32,FluentFTP.FtpIpVersion)">
             <summary>
             Connects to the server using an existing <see cref="T:FluentFTP.FtpSocketStream"/>
@@ -4131,6 +4996,16 @@
             <param name="host">Host name</param>
             <param name="port">Port number</param>
             <param name="ipVersions">IP version to use</param>
+        </member>
+        <member name="M:FluentFTP.Proxy.FtpClientHttp11Proxy.ConnectAsync(FluentFTP.FtpSocketStream,System.String,System.Int32,FluentFTP.FtpIpVersion,System.Threading.CancellationToken)">
+            <summary>
+            Connects to the server using an existing <see cref="T:FluentFTP.FtpSocketStream"/>
+            </summary>
+            <param name="stream">The existing socket stream</param>
+            <param name="host">Host name</param>
+            <param name="port">Port number</param>
+            <param name="ipVersions">IP version to use</param>
+            <param name="token">IP version to use</param>
         </member>
         <member name="T:FluentFTP.Proxy.FtpClientProxy">
             <summary>
@@ -4147,6 +5022,11 @@
         <member name="M:FluentFTP.Proxy.FtpClientProxy.Connect(FluentFTP.FtpSocketStream)">
             <summary> Redefine connect for FtpClient : authentication on the Proxy  </summary>
             <param name="stream">The socket stream.</param>
+        </member>
+        <member name="M:FluentFTP.Proxy.FtpClientProxy.ConnectAsync(FluentFTP.FtpSocketStream,System.Threading.CancellationToken)">
+            <summary> Redefine connect for FtpClient : authentication on the Proxy  </summary>
+            <param name="stream">The socket stream.</param>
+            <param name="token">Cancellation token.</param>
         </member>
         <member name="T:FluentFTP.Proxy.FtpClientUserAtHostProxy">
             <summary> A FTP client with a user@host proxy identification. </summary>
@@ -4214,6 +5094,16 @@
             <param name="count">Number of bytes to read</param>
             <returns>The number of bytes read</returns>
         </member>
+        <member name="M:FluentFTP.FtpDataStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Reads data off the stream asynchronously
+            </summary>
+            <param name="buffer">The buffer to read into</param>
+            <param name="offset">Where to start in the buffer</param>
+            <param name="count">Number of bytes to read</param>
+            <param name="token">The cancellation token for this task</param>
+            <returns>The number of bytes read</returns>
+        </member>
         <member name="M:FluentFTP.FtpDataStream.Write(System.Byte[],System.Int32,System.Int32)">
             <summary>
             Writes data to the stream
@@ -4221,6 +5111,15 @@
             <param name="buffer">The buffer to write to the stream</param>
             <param name="offset">Where to start in the buffer</param>
             <param name="count">The number of bytes to write to the buffer</param>
+        </member>
+        <member name="M:FluentFTP.FtpDataStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Writes data to the stream asynchronously
+            </summary>
+            <param name="buffer">The buffer to write to the stream</param>
+            <param name="offset">Where to start in the buffer</param>
+            <param name="count">The number of bytes to write to the buffer</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken"/> for this task</param>
         </member>
         <member name="M:FluentFTP.FtpDataStream.SetLength(System.Int64)">
             <summary>
@@ -4398,11 +5297,25 @@
             Flushes the stream
             </summary>
         </member>
+        <member name="M:FluentFTP.FtpSocketStream.FlushAsync(System.Threading.CancellationToken)">
+            <summary>
+            Flushes the stream asynchronously
+            </summary>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken"/> for this task</param>
+        </member>
         <member name="M:FluentFTP.FtpSocketStream.RawSocketRead(System.Byte[])">
             <summary>
             Bypass the stream and read directly off the socket.
             </summary>
             <param name="buffer">The buffer to read into</param>
+            <returns>The number of bytes read</returns>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.RawSocketReadAsync(System.Byte[],System.Threading.CancellationToken)">
+            <summary>
+            Bypass the stream and read directly off the socket.
+            </summary>
+            <param name="buffer">The buffer to read into</param>
+            <param name="token">Cancellation Token</param>
             <returns>The number of bytes read</returns>
         </member>
         <member name="M:FluentFTP.FtpSocketStream.Read(System.Byte[],System.Int32,System.Int32)">
@@ -4412,6 +5325,16 @@
             <param name="buffer">Buffer to read into</param>
             <param name="offset">Where in the buffer to start</param>
             <param name="count">Number of bytes to be read</param>
+            <returns>The amount of bytes read from the stream</returns>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Reads data from the stream
+            </summary>
+            <param name="buffer">Buffer to read into</param>
+            <param name="offset">Where in the buffer to start</param>
+            <param name="count">Number of bytes to be read</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken"/> for this task</param>
             <returns>The amount of bytes read from the stream</returns>
         </member>
         <member name="M:FluentFTP.FtpSocketStream.ReadLine(System.Text.Encoding)">
@@ -4429,6 +5352,22 @@
             <param name="bufferSize">The size of the buffer</param>
             <returns>A list of lines from the stream</returns>
         </member>
+        <member name="M:FluentFTP.FtpSocketStream.ReadLineAsync(System.Text.Encoding,System.Threading.CancellationToken)">
+            <summary>
+            Reads a line from the socket asynchronously
+            </summary>
+            <param name="encoding">The type of encoding used to convert from byte[] to string</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken"/> for this task</param>
+            <returns>A line from the stream, null if there is nothing to read</returns>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.ReadAllLinesAsync(System.Text.Encoding,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Reads all line from the socket
+            </summary>
+            <param name="encoding">The type of encoding used to convert from byte[] to string</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <returns>A list of lines from the stream</returns>
+        </member>
         <member name="M:FluentFTP.FtpSocketStream.Write(System.Byte[],System.Int32,System.Int32)">
             <summary>
             Writes data to the stream
@@ -4437,12 +5376,29 @@
             <param name="offset">Where in the buffer to start</param>
             <param name="count">Number of bytes to be read</param>
         </member>
+        <member name="M:FluentFTP.FtpSocketStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Writes data to the stream asynchronously
+            </summary>
+            <param name="buffer">Buffer to write to stream</param>
+            <param name="offset">Where in the buffer to start</param>
+            <param name="count">Number of bytes to be read</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken"/> for this task</param>
+        </member>
         <member name="M:FluentFTP.FtpSocketStream.WriteLine(System.Text.Encoding,System.String)">
             <summary>
             Writes a line to the stream using the specified encoding
             </summary>
             <param name="encoding">Encoding used for writing the line</param>
             <param name="buf">The data to write</param>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.WriteLineAsync(System.Text.Encoding,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Writes a line to the stream using the specified encoding asynchronously
+            </summary>
+            <param name="encoding">Encoding used for writing the line</param>
+            <param name="buf">The data to write</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken"/> for this task</param>
         </member>
         <member name="M:FluentFTP.FtpSocketStream.Dispose(System.Boolean)">
             <summary>
@@ -4465,6 +5421,15 @@
             <param name="port">The port to connect to</param>
             <param name="ipVersions">Internet Protocol versions to support during the connection phase</param>
         </member>
+        <member name="M:FluentFTP.FtpSocketStream.ConnectAsync(System.String,System.Int32,FluentFTP.FtpIpVersion,System.Threading.CancellationToken)">
+            <summary>
+            Connect to the specified host
+            </summary>
+            <param name="host">The host to connect to</param>
+            <param name="port">The port to connect to</param>
+            <param name="ipVersions">Internet Protocol versions to support during the connection phase</param>
+            <param name="token">Cancellation Token</param>
+        </member>
         <member name="M:FluentFTP.FtpSocketStream.ActivateEncryption(System.String)">
             <summary>
             Activates SSL on this stream using default protocols. Fires the ValidateCertificate event. 
@@ -4473,7 +5438,24 @@
             </summary>
             <param name="targethost">The host to authenticate the certificate against</param>
         </member>
+        <member name="M:FluentFTP.FtpSocketStream.ActivateEncryptionAsync(System.String)">
+            <summary>
+            Activates SSL on this stream using default protocols. Fires the ValidateCertificate event. 
+            If this event is not handled and there are SslPolicyErrors present, the certificate will 
+            not be accepted.
+            </summary>
+            <param name="targethost">The host to authenticate the certificate against</param>
+        </member>
         <member name="M:FluentFTP.FtpSocketStream.ActivateEncryption(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection)">
+            <summary>
+            Activates SSL on this stream using default protocols. Fires the ValidateCertificate event.
+            If this event is not handled and there are SslPolicyErrors present, the certificate will 
+            not be accepted.
+            </summary>
+            <param name="targethost">The host to authenticate the certificate against</param>
+            <param name="clientCerts">A collection of client certificates to use when authenticating the SSL stream</param>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.ActivateEncryptionAsync(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection)">
             <summary>
             Activates SSL on this stream using default protocols. Fires the ValidateCertificate event.
             If this event is not handled and there are SslPolicyErrors present, the certificate will 
@@ -4504,6 +5486,17 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:FluentFTP.FtpSocketStream.ActivateEncryptionAsync(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Security.Authentication.SslProtocols)">
+            <summary>
+            Activates SSL on this stream using the specified protocols. Fires the ValidateCertificate event.
+            If this event is not handled and there are SslPolicyErrors present, the certificate will 
+            not be accepted.
+            </summary>
+            <param name="targethost">The host to authenticate the certificate against</param>
+            <param name="clientCerts">A collection of client certificates to use when authenticating the SSL stream</param>
+            <param name="sslProtocols">A bitwise parameter for supported encryption protocols.</param>
+            <exception cref="T:System.Security.Authentication.AuthenticationException">Thrown when authentication fails</exception>
+        </member>
         <member name="M:FluentFTP.FtpSocketStream.DeactivateEncryption">
             <summary>
             Deactivates SSL on this stream using the specified protocols and reverts back to plain-text FTP.
@@ -4517,6 +5510,11 @@
             <param name="port">The port to listen on</param>
         </member>
         <member name="M:FluentFTP.FtpSocketStream.Accept">
+            <summary>
+            Accepts a connection from a listening socket
+            </summary>
+        </member>
+        <member name="M:FluentFTP.FtpSocketStream.AcceptAsync">
             <summary>
             Accepts a connection from a listening socket
             </summary>
@@ -4623,6 +5621,32 @@
             Converts a file size in bytes to a string representation (eg. 12345 becomes 12.3 KB)
             </summary>
         </member>
+        <member name="M:FluentFTP.FtpExtensions.FromAsync``5(System.Threading.Tasks.TaskFactory,System.Func{``0,``1,``2,``3,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,``4},``0,``1,``2,``3,System.Object)">
+            <summary>
+            This creates a <see cref="T:System.Threading.Tasks.Task`1"/> that represents a pair of begin and end methods
+            that conform to the Asynchronous Programming Model pattern.  This extends the maximum amount of arguments from
+             <see cref="o:System.Threading.TaskFactory.FromAsync"/> to 4 from a 3.  
+            </summary>
+            <typeparam name="TArg1">The type of the first argument passed to the <paramref name="beginMethod"/> delegate</typeparam>
+            <typeparam name="TArg2">The type of the second argument passed to the <paramref name="beginMethod"/> delegate</typeparam>
+            <typeparam name="TArg3">The type of the third argument passed to the <paramref name="beginMethod"/> delegate</typeparam>
+            <typeparam name="TArg4">The type of the forth argument passed to the <paramref name="beginMethod"/> delegate</typeparam>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="factory">The <see cref="T:System.Threading.Tasks.TaskFactory"/> used</param>
+            <param name="beginMethod">The delegate that begins the asynchronous operation</param>
+            <param name="endMethod">The delegate that ends the asynchronous operation</param>
+            <param name="arg1">The first argument passed to the <paramref name="beginMethod"/> delegate</param>
+            <param name="arg2">The second argument passed to the <paramref name="beginMethod"/> delegate</param>
+            <param name="arg3">The third argument passed to the <paramref name="beginMethod"/> delegate</param>
+            <param name="arg4">The forth argument passed to the <paramref name="beginMethod"/> delegate</param>
+            <param name="state">An object containing data to be used by the <paramref name="beginMethod"/> delegate</param>
+            <returns>The created <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous operation</returns>
+            <exception cref="T:System.ArgumentNullException">
+            beginMethod is null
+            or
+            endMethod is null
+            </exception>
+        </member>
         <member name="M:FluentFTP.FtpExtensions.IsValidCombination(FluentFTP.FtpError)">
             <summary>
             Validates that the FtpError flags set are not in an invalid combination.
@@ -4638,6 +5662,16 @@
         <member name="M:FluentFTP.FtpExtensions.IsBlank(System.String)">
             <summary>
             Checks if the string is null or 0 length.
+            </summary>
+        </member>
+        <member name="M:FluentFTP.FtpExtensions.IsBlank(System.Collections.IList)">
+            <summary>
+            Checks if the array is null or 0 length.
+            </summary>
+        </member>
+        <member name="M:FluentFTP.FtpExtensions.IsBlank(System.Collections.IEnumerable)">
+            <summary>
+            Checks if the array is null or 0 length.
             </summary>
         </member>
         <member name="M:FluentFTP.FtpExtensions.Join(System.String[],System.String)">
@@ -4746,1078 +5780,6 @@
             <summary>
             Ensures the given item is only added once. If it was not present true is returned, else false is returned.
             </summary>
-        </member>
-        <member name="T:System.Linq.Enumerable">
-            <summary>
-            Provides a set of static (Shared in Visual Basic) methods for 
-            querying objects that implement <see cref="T:System.Collections.Generic.IEnumerable`1" />.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.AsEnumerable``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the input typed as <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Empty``1">
-            <summary>
-            Returns an empty <see cref="T:System.Collections.Generic.IEnumerable`1"/> that has the 
-            specified type argument.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Cast``1(System.Collections.IEnumerable)">
-            <summary>
-            Converts the elements of an <see cref="T:System.Collections.IEnumerable"/> to the 
-            specified type.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.OfType``1(System.Collections.IEnumerable)">
-            <summary>
-            Filters the elements of an <see cref="T:System.Collections.IEnumerable"/> based on a specified type.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Range(System.Int32,System.Int32)">
-            <summary>
-            Generates a sequence of integral numbers within a specified range.
-            </summary>
-            <param name="start">The value of the first integer in the sequence.</param>
-            <param name="count">The number of sequential integers to generate.</param>
-        </member>
-        <member name="M:System.Linq.Enumerable.Repeat``1(``0,System.Int32)">
-            <summary>
-            Generates a sequence that contains one repeated value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Filters a sequence of values based on a predicate.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Boolean})">
-            <summary>
-            Filters a sequence of values based on a predicate. 
-            Each element's index is used in the logic of the predicate function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Select``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
-            <summary>
-            Projects each element of a sequence into a new form.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Select``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,``1})">
-            <summary>
-            Projects each element of a sequence into a new form by 
-            incorporating the element's index.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SelectMany``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}})">
-            <summary>
-            Projects each element of a sequence to an <see cref="T:System.Collections.Generic.IEnumerable`1" /> 
-            and flattens the resulting sequences into one sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SelectMany``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Collections.Generic.IEnumerable{``1}})">
-            <summary>
-            Projects each element of a sequence to an <see cref="T:System.Collections.Generic.IEnumerable`1" />, 
-            and flattens the resulting sequences into one sequence. The 
-            index of each source element is used in the projected form of 
-            that element.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SelectMany``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}},System.Func{``0,``1,``2})">
-            <summary>
-            Projects each element of a sequence to an <see cref="T:System.Collections.Generic.IEnumerable`1" />, 
-            flattens the resulting sequences into one sequence, and invokes 
-            a result selector function on each element therein.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SelectMany``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Collections.Generic.IEnumerable{``1}},System.Func{``0,``1,``2})">
-            <summary>
-            Projects each element of a sequence to an <see cref="T:System.Collections.Generic.IEnumerable`1" />, 
-            flattens the resulting sequences into one sequence, and invokes 
-            a result selector function on each element therein. The index of 
-            each source element is used in the intermediate projected form 
-            of that element.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.TakeWhile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Returns elements from a sequence as long as a specified condition is true.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.TakeWhile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Boolean})">
-            <summary>
-            Returns elements from a sequence as long as a specified condition is true.
-            The element's index is used in the logic of the predicate function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Take``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
-            <summary>
-            Returns a specified number of contiguous elements from the start 
-            of a sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.FirstImpl``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0})">
-            <summary>
-            Base implementation of First operator.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.First``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the first element of a sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.First``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Returns the first element in a sequence that satisfies a specified condition.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the first element of a sequence, or a default value if 
-            the sequence contains no elements.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Returns the first element of the sequence that satisfies a 
-            condition or a default value if no such element is found.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.LastImpl``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0})">
-            <summary>
-            Base implementation of Last operator.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Last``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the last element of a sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Last``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Returns the last element of a sequence that satisfies a 
-            specified condition.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.LastOrDefault``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the last element of a sequence, or a default value if 
-            the sequence contains no elements.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.LastOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Returns the last element of a sequence that satisfies a 
-            condition or a default value if no such element is found.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SingleImpl``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0})">
-            <summary>
-            Base implementation of Single operator.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Single``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the only element of a sequence, and throws an exception 
-            if there is not exactly one element in the sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Single``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Returns the only element of a sequence that satisfies a 
-            specified condition, and throws an exception if more than one 
-            such element exists.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SingleOrDefault``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the only element of a sequence, or a default value if 
-            the sequence is empty; this method throws an exception if there 
-            is more than one element in the sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SingleOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Returns the only element of a sequence that satisfies a 
-            specified condition or a default value if no such element 
-            exists; this method throws an exception if more than one element 
-            satisfies the condition.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ElementAt``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
-            <summary>
-            Returns the element at a specified index in a sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ElementAtOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
-            <summary>
-            Returns the element at a specified index in a sequence or a 
-            default value if the index is out of range.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Reverse``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Inverts the order of the elements in a sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SkipWhile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Bypasses elements in a sequence as long as a specified condition 
-            is true and then returns the remaining elements.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SkipWhile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32,System.Boolean})">
-            <summary>
-            Bypasses elements in a sequence as long as a specified condition 
-            is true and then returns the remaining elements. The element's 
-            index is used in the logic of the predicate function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Skip``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
-            <summary>
-            Bypasses a specified number of elements in a sequence and then 
-            returns the remaining elements.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Count``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the number of elements in a sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Count``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Returns a number that represents how many elements in the 
-            specified sequence satisfy a condition.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.LongCount``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns an <see cref="T:System.Int64"/> that represents the total number 
-            of elements in a sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.LongCount``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Returns an <see cref="T:System.Int64"/> that represents how many elements 
-            in a sequence satisfy a condition.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Concat``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Concatenates two sequences.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ToList``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Creates a <see cref="T:System.Collections.Generic.List`1"/> from an <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ToArray``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Creates an array from an <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Distinct``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns distinct elements from a sequence by using the default 
-            equality comparer to compare values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Distinct``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
-            <summary>
-            Returns distinct elements from a sequence by using a specified 
-            <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> to compare values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ToLookup``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
-            <summary>
-            Creates a <see cref="T:System.Linq.Lookup`2" /> from an 
-            <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to a specified key 
-            selector function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ToLookup``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
-            <summary>
-            Creates a <see cref="T:System.Linq.Lookup`2" /> from an 
-            <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to a specified key 
-            selector function and a key comparer.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ToLookup``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})">
-            <summary>
-            Creates a <see cref="T:System.Linq.Lookup`2" /> from an 
-            <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to specified key 
-            and element selector functions.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ToLookup``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
-            <summary>
-            Creates a <see cref="T:System.Linq.Lookup`2" /> from an 
-            <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to a specified key 
-            selector function, a comparer and an element selector function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.GroupBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
-            <summary>
-            Groups the elements of a sequence according to a specified key 
-            selector function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.GroupBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
-            <summary>
-            Groups the elements of a sequence according to a specified key 
-            selector function and compares the keys by using a specified 
-            comparer.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})">
-            <summary>
-            Groups the elements of a sequence according to a specified key 
-            selector function and projects the elements for each group by 
-            using a specified function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
-            <summary>
-            Groups the elements of a sequence according to a specified key 
-            selector function and creates a result value from each group and 
-            its key.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``1,System.Collections.Generic.IEnumerable{``0},``2})">
-            <summary>
-            Groups the elements of a sequence according to a key selector 
-            function. The keys are compared by using a comparer and each 
-            group's elements are projected by using a specified function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.GroupBy``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``1,System.Collections.Generic.IEnumerable{``0},``2},System.Collections.Generic.IEqualityComparer{``1})">
-            <summary>
-            Groups the elements of a sequence according to a specified key 
-            selector function and creates a result value from each group and 
-            its key. The elements of each group are projected by using a 
-            specified function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.GroupBy``4(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Func{``1,System.Collections.Generic.IEnumerable{``2},``3})">
-            <summary>
-            Groups the elements of a sequence according to a specified key 
-            selector function and creates a result value from each group and 
-            its key. The keys are compared by using a specified comparer.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.GroupBy``4(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Func{``1,System.Collections.Generic.IEnumerable{``2},``3},System.Collections.Generic.IEqualityComparer{``1})">
-            <summary>
-            Groups the elements of a sequence according to a specified key 
-            selector function and creates a result value from each group and 
-            its key. Key values are compared by using a specified comparer, 
-            and the elements of each group are projected by using a 
-            specified function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Aggregate``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,``0})">
-            <summary>
-            Applies an accumulator function over a sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Aggregate``2(System.Collections.Generic.IEnumerable{``0},``1,System.Func{``1,``0,``1})">
-            <summary>
-            Applies an accumulator function over a sequence. The specified 
-            seed value is used as the initial accumulator value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Aggregate``3(System.Collections.Generic.IEnumerable{``0},``1,System.Func{``1,``0,``1},System.Func{``1,``2})">
-            <summary>
-            Applies an accumulator function over a sequence. The specified 
-            seed value is used as the initial accumulator value, and the 
-            specified function is used to select the result value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Union``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Produces the set union of two sequences by using the default 
-            equality comparer.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Union``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
-            <summary>
-            Produces the set union of two sequences by using a specified 
-            <see cref="T:System.Collections.Generic.IEqualityComparer`1" />.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.DefaultIfEmpty``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the elements of the specified sequence or the type 
-            parameter's default value in a singleton collection if the 
-            sequence is empty.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.DefaultIfEmpty``1(System.Collections.Generic.IEnumerable{``0},``0)">
-            <summary>
-            Returns the elements of the specified sequence or the specified 
-            value in a singleton collection if the sequence is empty.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.All``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Determines whether all elements of a sequence satisfy a condition.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Determines whether a sequence contains any elements.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
-            <summary>
-            Determines whether any element of a sequence satisfies a 
-            condition.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Contains``1(System.Collections.Generic.IEnumerable{``0},``0)">
-            <summary>
-            Determines whether a sequence contains a specified element by 
-            using the default equality comparer.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Contains``1(System.Collections.Generic.IEnumerable{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
-            <summary>
-            Determines whether a sequence contains a specified element by 
-            using a specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" />.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Determines whether two sequences are equal by comparing the 
-            elements by using the default equality comparer for their type.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.SequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
-            <summary>
-            Determines whether two sequences are equal by comparing their 
-            elements by using a specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" />.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.MinMaxImpl``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Boolean})">
-            <summary>
-            Base implementation for Min/Max operator.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.MinMaxImpl``1(System.Collections.Generic.IEnumerable{System.Nullable{``0}},System.Nullable{``0},System.Func{System.Nullable{``0},System.Nullable{``0},System.Boolean})">
-            <summary>
-            Base implementation for Min/Max operator for nullable types.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the minimum value in a generic sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
-            <summary>
-            Invokes a transform function on each element of a generic 
-            sequence and returns the minimum resulting value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Returns the maximum value in a generic sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
-            <summary>
-            Invokes a transform function on each element of a generic 
-            sequence and returns the maximum resulting value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Renumerable``1(System.Collections.Generic.IEnumerator{``0})">
-            <summary>
-            Makes an enumerator seen as enumerable once more.
-            </summary>
-            <remarks>
-            The supplied enumerator must have been started. The first element
-            returned is the element the enumerator was on when passed in.
-            DO NOT use this method if the caller must be a generator. It is
-            mostly safe among aggregate operations.
-            </remarks>
-        </member>
-        <member name="M:System.Linq.Enumerable.OrderBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
-            <summary>
-            Sorts the elements of a sequence in ascending order according to a key.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.OrderBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
-            <summary>
-            Sorts the elements of a sequence in ascending order by using a 
-            specified comparer.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.OrderByDescending``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
-            <summary>
-            Sorts the elements of a sequence in descending order according to a key.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.OrderByDescending``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
-            <summary>
-             Sorts the elements of a sequence in descending order by using a 
-            specified comparer. 
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ThenBy``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1})">
-            <summary>
-            Performs a subsequent ordering of the elements in a sequence in 
-            ascending order according to a key.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ThenBy``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
-            <summary>
-            Performs a subsequent ordering of the elements in a sequence in 
-            ascending order by using a specified comparer.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ThenByDescending``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1})">
-            <summary>
-            Performs a subsequent ordering of the elements in a sequence in 
-            descending order, according to a key.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ThenByDescending``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
-            <summary>
-            Performs a subsequent ordering of the elements in a sequence in 
-            descending order by using a specified comparer.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.IntersectExceptImpl``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0},System.Boolean)">
-            <summary>
-            Base implementation for Intersect and Except operators.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Intersect``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Produces the set intersection of two sequences by using the 
-            default equality comparer to compare values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Intersect``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
-            <summary>
-            Produces the set intersection of two sequences by using the 
-            specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> to compare values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Except``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Produces the set difference of two sequences by using the 
-            default equality comparer to compare values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Except``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
-            <summary>
-            Produces the set difference of two sequences by using the 
-            specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> to compare values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ToDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
-            <summary>
-            Creates a <see cref="T:System.Collections.Generic.Dictionary`2" /> from an 
-            <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to a specified key 
-            selector function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ToDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
-            <summary>
-            Creates a <see cref="T:System.Collections.Generic.Dictionary`2" /> from an 
-            <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to a specified key 
-            selector function and key comparer.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})">
-            <summary>
-            Creates a <see cref="T:System.Collections.Generic.Dictionary`2" /> from an 
-            <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to specified key 
-            selector and element selector functions.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
-            <summary>
-            Creates a <see cref="T:System.Collections.Generic.Dictionary`2" /> from an 
-            <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to a specified key 
-            selector function, a comparer, and an element selector function.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Join``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Func{``0,``1,``3})">
-            <summary>
-            Correlates the elements of two sequences based on matching keys. 
-            The default equality comparer is used to compare keys.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Join``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Func{``0,``1,``3},System.Collections.Generic.IEqualityComparer{``2})">
-            <summary>
-            Correlates the elements of two sequences based on matching keys. 
-            The default equality comparer is used to compare keys. A 
-            specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> is used to compare keys.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.GroupJoin``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Func{``0,System.Collections.Generic.IEnumerable{``1},``3})">
-            <summary>
-            Correlates the elements of two sequences based on equality of 
-            keys and groups the results. The default equality comparer is 
-            used to compare keys.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.GroupJoin``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Func{``0,System.Collections.Generic.IEnumerable{``1},``3},System.Collections.Generic.IEqualityComparer{``2})">
-            <summary>
-            Correlates the elements of two sequences based on equality of 
-            keys and groups the results. The default equality comparer is 
-            used to compare keys. A specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 
-            is used to compare keys.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Int32})">
-            <summary>
-            Computes the sum of a sequence of nullable <see cref="T:System.Int32" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})">
-            <summary>
-            Computes the sum of a sequence of nullable <see cref="T:System.Int32" /> 
-            values that are obtained by invoking a transform function on 
-            each element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Int32})">
-            <summary>
-            Computes the average of a sequence of nullable <see cref="T:System.Int32" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})">
-            <summary>
-            Computes the average of a sequence of nullable <see cref="T:System.Int32" /> values 
-            that are obtained by invoking a transform function on each 
-            element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.Int32" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int32}})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.Int32" /> 
-            values that are obtained by invoking a transform function on 
-            each element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
-            <summary>
-            Computes the average of a sequence of <see cref="T:System.Int32" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int32}})">
-            <summary>
-            Computes the average of a sequence of <see cref="T:System.Int32" /> values 
-            that are obtained by invoking a transform function on each 
-            element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
-            <summary>
-            Returns the minimum value in a sequence of nullable 
-            <see cref="T:System.Int32" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int32}})">
-            <summary>
-            Invokes a transform function on each element of a sequence and 
-            returns the minimum nullable <see cref="T:System.Int32" /> value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
-            <summary>
-            Returns the maximum value in a sequence of nullable 
-            <see cref="T:System.Int32" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int32}})">
-            <summary>
-            Invokes a transform function on each element of a sequence and 
-            returns the maximum nullable <see cref="T:System.Int32" /> value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Int64})">
-            <summary>
-            Computes the sum of a sequence of nullable <see cref="T:System.Int64" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int64})">
-            <summary>
-            Computes the sum of a sequence of nullable <see cref="T:System.Int64" /> 
-            values that are obtained by invoking a transform function on 
-            each element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Int64})">
-            <summary>
-            Computes the average of a sequence of nullable <see cref="T:System.Int64" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int64})">
-            <summary>
-            Computes the average of a sequence of nullable <see cref="T:System.Int64" /> values 
-            that are obtained by invoking a transform function on each 
-            element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.Int64" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int64}})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.Int64" /> 
-            values that are obtained by invoking a transform function on 
-            each element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
-            <summary>
-            Computes the average of a sequence of <see cref="T:System.Int64" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int64}})">
-            <summary>
-            Computes the average of a sequence of <see cref="T:System.Int64" /> values 
-            that are obtained by invoking a transform function on each 
-            element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
-            <summary>
-            Returns the minimum value in a sequence of nullable 
-            <see cref="T:System.Int64" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int64}})">
-            <summary>
-            Invokes a transform function on each element of a sequence and 
-            returns the minimum nullable <see cref="T:System.Int64" /> value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
-            <summary>
-            Returns the maximum value in a sequence of nullable 
-            <see cref="T:System.Int64" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int64}})">
-            <summary>
-            Invokes a transform function on each element of a sequence and 
-            returns the maximum nullable <see cref="T:System.Int64" /> value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Single})">
-            <summary>
-            Computes the sum of a sequence of nullable <see cref="T:System.Single" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
-            <summary>
-            Computes the sum of a sequence of nullable <see cref="T:System.Single" /> 
-            values that are obtained by invoking a transform function on 
-            each element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Single})">
-            <summary>
-            Computes the average of a sequence of nullable <see cref="T:System.Single" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
-            <summary>
-            Computes the average of a sequence of nullable <see cref="T:System.Single" /> values 
-            that are obtained by invoking a transform function on each 
-            element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.Single" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Single}})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.Single" /> 
-            values that are obtained by invoking a transform function on 
-            each element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
-            <summary>
-            Computes the average of a sequence of <see cref="T:System.Single" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Single}})">
-            <summary>
-            Computes the average of a sequence of <see cref="T:System.Single" /> values 
-            that are obtained by invoking a transform function on each 
-            element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
-            <summary>
-            Returns the minimum value in a sequence of nullable 
-            <see cref="T:System.Single" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Single}})">
-            <summary>
-            Invokes a transform function on each element of a sequence and 
-            returns the minimum nullable <see cref="T:System.Single" /> value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
-            <summary>
-            Returns the maximum value in a sequence of nullable 
-            <see cref="T:System.Single" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Single}})">
-            <summary>
-            Invokes a transform function on each element of a sequence and 
-            returns the maximum nullable <see cref="T:System.Single" /> value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Double})">
-            <summary>
-            Computes the sum of a sequence of nullable <see cref="T:System.Double" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
-            <summary>
-            Computes the sum of a sequence of nullable <see cref="T:System.Double" /> 
-            values that are obtained by invoking a transform function on 
-            each element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Double})">
-            <summary>
-            Computes the average of a sequence of nullable <see cref="T:System.Double" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
-            <summary>
-            Computes the average of a sequence of nullable <see cref="T:System.Double" /> values 
-            that are obtained by invoking a transform function on each 
-            element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.Double" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Double}})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.Double" /> 
-            values that are obtained by invoking a transform function on 
-            each element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
-            <summary>
-            Computes the average of a sequence of <see cref="T:System.Double" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Double}})">
-            <summary>
-            Computes the average of a sequence of <see cref="T:System.Double" /> values 
-            that are obtained by invoking a transform function on each 
-            element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
-            <summary>
-            Returns the minimum value in a sequence of nullable 
-            <see cref="T:System.Double" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Double}})">
-            <summary>
-            Invokes a transform function on each element of a sequence and 
-            returns the minimum nullable <see cref="T:System.Double" /> value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
-            <summary>
-            Returns the maximum value in a sequence of nullable 
-            <see cref="T:System.Double" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Double}})">
-            <summary>
-            Invokes a transform function on each element of a sequence and 
-            returns the maximum nullable <see cref="T:System.Double" /> value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Decimal})">
-            <summary>
-            Computes the sum of a sequence of nullable <see cref="T:System.Decimal" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})">
-            <summary>
-            Computes the sum of a sequence of nullable <see cref="T:System.Decimal" /> 
-            values that are obtained by invoking a transform function on 
-            each element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Decimal})">
-            <summary>
-            Computes the average of a sequence of nullable <see cref="T:System.Decimal" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})">
-            <summary>
-            Computes the average of a sequence of nullable <see cref="T:System.Decimal" /> values 
-            that are obtained by invoking a transform function on each 
-            element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.Decimal" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Decimal}})">
-            <summary>
-            Computes the sum of a sequence of <see cref="T:System.Decimal" /> 
-            values that are obtained by invoking a transform function on 
-            each element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
-            <summary>
-            Computes the average of a sequence of <see cref="T:System.Decimal" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Decimal}})">
-            <summary>
-            Computes the average of a sequence of <see cref="T:System.Decimal" /> values 
-            that are obtained by invoking a transform function on each 
-            element of the input sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
-            <summary>
-            Returns the minimum value in a sequence of nullable 
-            <see cref="T:System.Decimal" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Decimal}})">
-            <summary>
-            Invokes a transform function on each element of a sequence and 
-            returns the minimum nullable <see cref="T:System.Decimal" /> value.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
-            <summary>
-            Returns the maximum value in a sequence of nullable 
-            <see cref="T:System.Decimal" /> values.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Decimal}})">
-            <summary>
-            Invokes a transform function on each element of a sequence and 
-            returns the maximum nullable <see cref="T:System.Decimal" /> value.
-            </summary>
-        </member>
-        <member name="T:System.Linq.IGrouping`2">
-            <summary>
-            Represents a collection of objects that have a common key.
-            </summary>
-        </member>
-        <member name="P:System.Linq.IGrouping`2.Key">
-            <summary>
-            Gets the key of the <see cref="T:System.Linq.IGrouping`2" />.
-            </summary>
-        </member>
-        <member name="T:System.Linq.ILookup`2">
-            <summary>
-            Defines an indexer, size property, and Boolean search method for 
-            data structures that map keys to <see cref="T:System.Collections.Generic.IEnumerable`1"/> 
-            sequences of values.
-            </summary>
-        </member>
-        <member name="T:System.Linq.IOrderedEnumerable`1">
-            <summary>
-            Represents a sorted sequence.
-            </summary>
-        </member>
-        <member name="M:System.Linq.IOrderedEnumerable`1.CreateOrderedEnumerable``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0},System.Boolean)">
-            <summary>
-            Performs a subsequent ordering on the elements of an 
-            <see cref="T:System.Linq.IOrderedEnumerable`1"/> according to a key.
-            </summary>
-        </member>
-        <member name="T:System.Linq.Lookup`2">
-            <summary>
-            Represents a collection of keys each mapped to one or more values.
-            </summary>
-        </member>
-        <member name="P:System.Linq.Lookup`2.Count">
-            <summary>
-            Gets the number of key/value collection pairs in the <see cref="T:System.Linq.Lookup`2" />.
-            </summary>
-        </member>
-        <member name="P:System.Linq.Lookup`2.Item(`0)">
-            <summary>
-            Gets the collection of values indexed by the specified key.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Lookup`2.Contains(`0)">
-            <summary>
-            Determines whether a specified key is in the <see cref="T:System.Linq.Lookup`2" />.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Lookup`2.ApplyResultSelector``1(System.Func{`0,System.Collections.Generic.IEnumerable{`1},``0})">
-            <summary>
-            Applies a transform function to each key and its associated 
-            values and returns the results.
-            </summary>
-        </member>
-        <member name="M:System.Linq.Lookup`2.GetEnumerator">
-            <summary>
-            Returns a generic enumerator that iterates through the <see cref="T:System.Linq.Lookup`2" />.
-            </summary>
-        </member>
-        <member name="T:IProgress`1">
-            <summary>
-            To support progress reporting in .NET 3.5 and .NET 4.0
-            </summary>
-        </member>
-        <member name="M:IProgress`1.Report(`0)">
-            <summary>
-            To support progress reporting in .NET 3.5 and .NET 4.0
-            </summary>
-        </member>
-        <member name="T:LinqBridge.DelegatingComparer`1">
-            <remarks>
-            This type is not intended to be used directly from user code.
-            It may be removed or changed in a future version without notice.
-            </remarks>
-        </member>
-        <member name="T:LinqBridge.Key`1">
-            <remarks>
-            This type is not intended to be used directly from user code.
-            It may be removed or changed in a future version without notice.
-            </remarks>
-        </member>
-        <member name="T:LinqBridge.KeyComparer`1">
-            <remarks>
-            This type is not intended to be used directly from user code.
-            It may be removed or changed in a future version without notice.
-            </remarks>
         </member>
     </members>
 </doc>

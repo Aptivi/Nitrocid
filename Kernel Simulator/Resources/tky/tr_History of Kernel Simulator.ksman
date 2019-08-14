@@ -5,6 +5,8 @@
 -REVISION:0.0.1
 -KSLAYOUT:0.0.5.9-OR-ABOVE
 
+~~- Google has ruined "Red Hat".
+
 -BODY START-
 Yay??n ??ncesi
 
@@ -679,21 +681,21 @@ Ancak, t??m da????t??mlar varsay??lan olarak inxi'yi y??klemez, bu nedenle kurul
 
 Debian ve t??revleri:
 
+	# apt update
+	# apt install inxi
 
+Red Hat ve t??revleri:
 
-
-K??rm??z?? ??apka ve t??revleri:
-
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE ve t??revleri:
 
-
+	# zypper install inxi (?)
 
 Arch Linux ve t??revleri:
 
-
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Gerisi, kaynaktan derlenir ve ??al????t??r??labilir dosyay?? / usr / bin dizinine yerle??tirir, ????nk?? prober sadece bu dizine bakar veya onu y??klemek i??in paket y??neticilerinizi kullan??r.
 
@@ -827,6 +829,27 @@ KS 0.0.6.10
 5. Yapılan KernelVersion ve EnvironmentOSType salt okunur
 6. "promptArgs" cmdline argümanı kaldırıldı
 7. Yeniden başlatma sırasında şimdi ekstra yığın oluşturulmadı
+
+KS 0.0.6.11
+
+1. Sabit hata ayıklama şifresini gösteren açık metin
+2. Güncelleme sırasında gösterilen değişiklikler yapıldı
+3. Başlangıçta config güncelledikten sonra KeyNotFoundException düzeltildi
+
+KS 0.0.6.12
+
+1. Çekçe, Hırvatça, Felemenkçe, Fince, Fransızca, Almanca, İtalyanca, Malayca, Portekizce, İspanyolca, İsveççe ve Türkçe el kitabı sayfaları için daha fazla kod bloğu düzeltmesi.
+
+NOT: Bu sürüm, Google'ın yapması gereken kod bloklarında yapılan, çirkin, çevrilmiş, derlenmemiş ve yanlış hizalanmış hissettirdiği gereksiz değişikliklerin bir sonucudur.
+
+KS 0.0.6.13
+
+1. Geliştirilmiş Saat ve Tarih denetimleri (Şimdi iki alan, bir DateTime, bir Dize birer tane yapılır)
+2. MOTD ve MAL yeni satırları daha iyi desteklemek için dosyaları kullanarak ayrıştırma
+3. Sabit "chmal" ve "chmotd" sadece bir kelime alarak
+4. Çekirdek hatası ile ilgili döküm sorunları
+5. Yeni satır yer tutucusu kaldırıldı
+6. Kaldırılan MAL ve MOTD yapılandırma girişleri
 -BODY END-
 
 -SECTIONS-
@@ -885,4 +908,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

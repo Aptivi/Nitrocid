@@ -679,21 +679,21 @@ Men inte alla distros installerar inxi som standard, s?? om du inte har det inst
 
 Debian och dess derivat:
 
-
-
+	# apt update
+	# apt install inxi
 
 Red Hat och dess derivat:
 
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE och dess derivat:
 
-
+	# zypper install inxi (?)
 
 Arch Linux och dess derivat:
 
-
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Resten, bygga fr??n k??llan och l??gg den k??rbara filen i / usr / bin eftersom prober bara ser i den katalogen, eller anv??nd dina pakethanter f??r att installera den.
 
@@ -827,6 +827,27 @@ KS 0.0.6.10
 5. Made KernelVersion and EnvironmentOSType skrivskyddad
 6. cmdline-argumentet "promptArgs" har tagits bort
 7. Extra stapel genereras nu inte vid omstart
+
+KS 0.0.6.11
+
+1. Fast felsökning som visar lösenord i tydlig text
+2. Visade växlar under uppdateringen
+3. Fast KeyNotFoundException efter uppdatering av config vid start
+
+KS 0.0.6.12
+
+1. Fler codeblock-korrigeringar för tjeckiska, kroatiska, holländska, finska, franska, tyska, italienska, malaysiska, portugisiska, spanska, svenska och turkiska manuella sidor.
+
+OBS: Den här versionen är ett resultat av värdelösa ändringar av kodblock som Google måste göra så att det känns fult, översatt, okompilerbart och feljusterat.
+
+KS 0.0.6.13
+
+1. Förbättrade tester för tid och datum (Nu görs två fält, en DateTime, en sträng, till en)
+2. MOTD- och MAL-parsning med filer för att bättre stödja nyheter
+3. Fixade "chmal" och "chmotd" tar bara ett ord
+4. Fixade gjutproblem på kärnfel
+5. Borttagen ny radplatshållare
+6. Borttagna MAL- och MOTD-konfigurationsposter
 -BODY END-
 
 -SECTIONS-
@@ -885,4 +906,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

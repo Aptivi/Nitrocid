@@ -440,7 +440,7 @@
             <returns>-1 if the command fails, otherwise the file size</returns>
             <example><code source="..\Examples\GetFileSize.cs" lang="cs" /></example>
         </member>
-        <member name="M:FluentFTP.FtpClient.GetFileSizeInternal(System.String)">
+        <member name="M:FluentFTP.FtpClient.GetFileSizeInternal(System.String,FluentFTP.FtpSizeReply)">
             <summary>
             Gets the file size of an object, without locking
             </summary>

@@ -1,4 +1,4 @@
-﻿Tillgängliga kommandon: {0}
+Tillgängliga kommandon: {0}
 Skriv kommando:
 Kommandoinjektion har avbrutits.
 Separata startargument med kommatecken utan mellanslag, till exempel "motd, gpuprobe"
@@ -367,4 +367,9 @@ Du kanske inte har libcpanel-json-xs-perl installerad på ditt system. Se din pa
 > Det finns ett fel när du försöker få raminformation. {0}: {1}
 Du har ställt in ditt systemspråk på allt annat än engelska. Ledsen för besväret, men det verkar som om Google och dess översättare är väldigt konstiga med att översätta kodblock för alla programmeringsspråk. Medan vi fixar alla kodblock för översatta manuella sidor, föreslår vi att du öppnar en biljett till Google Translate för att översätta kodblock som inte är tänkt att översättas och ställa in ditt systemspråk på engelska om du talar det.
 Laddar om ändringar.
-Vad är nytt: Fler codeblock-korrigeringar för tjeckiska, kroatiska, holländska, finska, franska, tyska, italienska, malaysiska, portugisiska, spanska, svenska och turkiska manuella sidor. Denna version är ett resultat av värdelösa ändringar av kodblock som Google måste göra så att det känns fult, översatt, okompilerbart och feljusterat.
+Mods laddade om framgångsrikt.
+Vad är nytt: Förbättrade tester för tid och datum (nu två fält, en DateTime, en sträng, görs till en), MOTD och MAL-analysering med hjälp av filer för att bättre stödja nylinjer, Fasta `chmal` och` chmotd` och bara ta ett ord, Fixed 
+Välkommen till Kernel!
+Inloggad framgångsrik som <användare>
+MOTD / MAL är giltig, men meddelandetypen är inte giltig. 
+Försökte läsa MOTD / MAL som är av ogiltig meddelandetyp.

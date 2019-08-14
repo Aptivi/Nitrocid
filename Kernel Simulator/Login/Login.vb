@@ -18,7 +18,6 @@
 
 Public Module Login
 
-    'TODO: MOTD and MAL will move to their own files to better support new lines for easier reading
     'Variables
     Public userword As New Dictionary(Of String, String)()      'List of usernames and passwords
     Public answeruser As String                                 'Input of username
@@ -49,14 +48,15 @@ Public Module Login
             End If
 
             'Generate user list
-            W(vbNewLine + DoTranslation("Available usernames: {0}", currentLang), True, "neutralText", String.Join(", ", userword.Keys))
+            W(DoTranslation("Available usernames: {0}", currentLang), True, "neutralText", String.Join(", ", userword.Keys))
 
             'Login process
-            If showMOTD = False Or showMOTDOnceFlag = False Then
-                W(vbNewLine + DoTranslation("Username: ", currentLang), False, "input")
-            ElseIf showMOTDOnceFlag = True And showMOTD = True Then
-                W(vbNewLine + ProbePlaces(MOTDMessage) + vbNewLine + vbNewLine + DoTranslation("Username: ", currentLang), False, "input")
+            ReadMOTDFromFile(MessageType.MOTD)
+            ReadMOTDFromFile(MessageType.MAL)
+            If showMOTDOnceFlag = True And showMOTD = True Then
+                W(vbNewLine + ProbePlaces(MOTDMessage), False, "input")
             End If
+            W(vbNewLine + DoTranslation("Username: ", currentLang), False, "input")
             showMOTDOnceFlag = False
             answeruser = Console.ReadLine()
 

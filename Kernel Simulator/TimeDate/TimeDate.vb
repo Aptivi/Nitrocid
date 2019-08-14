@@ -22,7 +22,6 @@ Imports System.Threading
 Public Module TimeDate
 
     'Variables
-    Public strKernelTimeDate As String
     Public KernelDateTime As New Date
     Public WithEvents TimeDateChange As New BackgroundWorker
     Private originalRow As Integer
@@ -36,12 +35,11 @@ Public Module TimeDate
                 Exit Do
             Else
                 KernelDateTime = Date.Now
-                strKernelTimeDate = Date.Now.ToString
                 originalRow = Console.CursorTop
                 originalCol = Console.CursorLeft
                 If CornerTD = True Then
                     Console.SetCursorPosition(Console.WindowWidth - 16, Console.WindowTop)
-                    W("{0} {1}", True, "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.ShortTime), FormatDateTime(strKernelTimeDate, DateFormat.ShortDate))
+                    W("{0} {1}", True, "neutralText", KernelDateTime.ToShortTimeString, KernelDateTime.ToShortDateString)
                     Console.SetCursorPosition(originalCol, originalRow)
                 End If
             End If
@@ -53,7 +51,6 @@ Public Module TimeDate
     Sub InitTimeDate()
 
         KernelDateTime = Date.Now
-        strKernelTimeDate = Date.Now.ToString
         TimeDateChange.WorkerSupportsCancellation = True
         TimeDateChange.RunWorkerAsync()
 
@@ -61,8 +58,8 @@ Public Module TimeDate
 
     Public Sub ShowTime()
 
-        W(DoTranslation("datetime: Time is {0}", currentLang), True, "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.LongTime))
-        W(DoTranslation("datetime: Today is {0}", currentLang), True, "neutralText", FormatDateTime(strKernelTimeDate, DateFormat.LongDate))
+        W(DoTranslation("datetime: Time is {0}", currentLang), True, "neutralText", KernelDateTime.ToLongTimeString)
+        W(DoTranslation("datetime: Today is {0}", currentLang), True, "neutralText", KernelDateTime.ToLongDateString)
         W(DoTranslation("datetime: Time Zone: {0}", currentLang), True, "neutralText", TimeZone.CurrentTimeZone.StandardName)
 
     End Sub

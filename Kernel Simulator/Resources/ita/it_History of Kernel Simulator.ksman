@@ -679,21 +679,21 @@ Ma non tutte le distribuzioni installano inxi per impostazione predefinita, quin
 
 Debian e i suoi derivati:
 
-
-
+	# apt update
+	# apt install inxi
 
 Red Hat e suoi derivati:
 
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE e i suoi derivati:
 
-
+	# zypper install inxi (?)
 
 Arch Linux e i suoi derivati:
 
-
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Il resto, costruisci dal sorgente e metti il ??????file eseguibile in / usr / bin poich?? il prober guarda solo in quella directory, o usa i tuoi gestori di pacchetti per installarlo.
 
@@ -827,6 +827,27 @@ KS 0.0.6.10
 5. Reso KernelVersion e EnvironmentOSType di sola lettura
 6. Argomento cmdline "promptArgs" rimosso
 7. Lo stack extra ora non viene generato al riavvio
+
+KS 0.0.6.11
+
+1. Corretto il debug che mostrava la password in chiaro
+2. Elenco delle modifiche mostrato durante l'aggiornamento
+3. Correzione di KeyNotFoundException dopo l'aggiornamento della configurazione all'avvio
+
+KS 0.0.6.12
+
+1. Altre correzioni di codeblock per pagine di manuale ceche, croate, olandesi, finlandesi, francesi, tedesche, italiane, malesi, portoghesi, spagnole, svedesi e turche.
+
+NOTA: questa versione è il risultato di inutili modifiche ai blocchi di codice che Google deve apportare in modo da sembrare brutto, tradotto, non compilabile e disallineato.
+
+KS 0.0.6.13
+
+1. Prove di data e ora migliorate (ora due campi, un DateTime, una stringa, sono trasformati in uno)
+2. Analisi MOTD e MAL utilizzando i file per supportare meglio le nuove righe
+3. Risolto `chmal` e` chmotd` che prendevano solo una parola
+4. Risolti i problemi di trasmissione sull'errore del kernel
+5. Rimosso il segnaposto per la nuova linea
+6. Rimosse le voci di configurazione MAL e MOTD
 -BODY END-
 
 -SECTIONS-
@@ -885,4 +906,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

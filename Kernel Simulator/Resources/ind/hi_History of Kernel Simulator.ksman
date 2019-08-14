@@ -679,21 +679,21 @@ D??nsh??, m??r??n q??ngku??ng xi?? b??ngf??i su??y??u f??x??ng b??n d?? ??nzhu??
 
 Debian j?? q?? y??nsh??ng ch??np??n:
 
+	# apt update
+	# apt install inxi
 
+Red Hat j?? q?? y??nsh??ng p??n:
 
-
-H??ng m??o j?? q?? y??nsh??ng p??n:
-
-
+	# dnf/yum install inxi (?)
 
 OpenSUSE j?? q?? y??nsh??ng ch??np??n:
 
-
+	# zypper install inxi (?)
 
 Arch Linux j?? q?? y??nsh??ng ch??np??n:
 
-
-
+	# pacman -Syu (?)
+	# pacman -i inxi (?)
 
 Q??y?? de, c??ng yu??n d??im?? g??uji??n b??ng ji??ng k?? zh??x??ng w??nji??n f??ng r??/ usr/ bin, y??nw??i prober zh?? ch??zh??o g??i m??l??, hu??zh?? sh??y??ng b??o gu??nl?? q?? l??i ??nzhu??ng t??.
 
@@ -827,6 +827,27 @@ KS 0.0.6.10
 5. karnel vichalan aur envaayaranamentostaip keval-padhane ke lie banaaya gaya
 6. "prompt egs" chmdlinai tark hata diya gaya
 7. riboot karate samay atirikt staik ab utpann nahin hota hai
+
+KS 0.0.6.11
+
+1. spasht paath mein paasavard dikhaane vaala phiksd dibag
+2. adyatan ke dauraan chainj dikhaaya gaya
+3. staartap par konfigar karane ke baad phiksd kaiynotfoundaixchaiption
+
+KS 0.0.6.12
+
+1. chek, kroeshiyaee, dach, phinish, phrench, jarman, itaalavee, malay, purtagaalee, spenish, sveedish aur turkee mainual prshthon ke lie adhik kodabl sudhaar.
+
+not: yah sanskaran googlai ko kodablok karane ke lie bekaar sanshodhanon ka ek parinaam hai, jisase googlai ko aisa karana padata hai ki vah badasoorat, anuvaadit, asambaddh aur galat anubhav karata hai.
+
+KS 0.0.6.13
+
+1. behatar samay aur dinaank pariveekshaen (ab do kshetr, ek dinaank samay, ek string, ek mein bane hain)
+2. motd aur mal behatar naeelains ko saport karane ke lie phails ka istemaal karate hain
+3. phiksd `chhmal` aur` chhmotd` keval ek shabd le raha hai
+4. karnel truti par phiksd kaasting mudde
+5. hatae gae nae lain plesaholdar
+6. hatae gae mal aur motd konfigareshan pravishtiyaan
 -BODY END-
 
 -SECTIONS-
@@ -885,4 +906,7 @@ KS 0.0.6.5=>SE1
 KS 0.0.6.6=>SE1
 KS 0.0.6.9=>SE1
 KS 0.0.6.10=>SE1
+KS 0.0.6.11=>SE1
+KS 0.0.6.12=>SE1
+KS 0.0.6.13=>SE1
 -SECTIONS END-

@@ -10,6 +10,7 @@ Mit dem Kernel-Simulator können Sie einen sehr frühen Zugriff für unseren zuk
 
 | --------------- + -> Verlauf <- + --------------- |
 
+8/13/2019 - 0.0.6.13: Verbesserte Zeit- und Datumsprüfungen (jetzt werden zwei Felder, eine DateTime und eine Zeichenfolge, zu einem zusammengefügt), MOTD- und MAL-Analyse unter Verwendung von Dateien zur besseren Unterstützung von Zeilenumbrüchen, Fixed `chmal` und` chmotd `Nur ein Wort nehmen, Casting-Probleme bei Kernel-Fehler behoben, Platzhalter für neue Zeile entfernt, MAL- und MOTD-Konfigurationseinträge entfernt
 8/11/2019 - 0.0.6.12: Weitere Codeblockkorrekturen für Handbuchseiten in den Sprachen Tschechisch, Kroatisch, Niederländisch, Finnisch, Französisch, Deutsch, Italienisch, Malaiisch, Portugiesisch, Spanisch, Schwedisch und Türkisch. Diese Version ist das Ergebnis nutzloser Änderungen an Codeblöcken, die Google vornehmen muss, damit sie sich hässlich, übersetzt, nicht kompilierbar und falsch ausgerichtet anfühlen.
 8/10/2019 - 0.0.6.11: Fehler behoben, bei dem das Passwort im Klartext angezeigt wurde und Änderungsprotokolle während des Updates angezeigt wurden, KeyNotFoundException nach Aktualisierung der Konfiguration beim Start behoben
 8/8/2019 - 0.0.6.10: Vereinfachter Namespace für KS, feste Codeblöcke für Hindi, Chinesisch und 1/2 Tschechisch (siehe Kommentar zu GetCommand.vb), fehlender Hilfeeintrag für "reloadsaver" hinzugefügt, Befehl "reloadmods" hinzugefügt , KernelVersion und EnvironmentOSType wurden schreibgeschützt. Das cmdline-Argument "promptArgs" wurde entfernt. Beim Neustart wird jetzt kein zusätzlicher Stapel mehr generiert
@@ -97,18 +98,18 @@ Lizenz (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 
 | --------------- + -> Lizenz - GNU GPL <- + --------------- |
 
-    Kernel Simulator - Simuliert unseren zukünftig geplanten Kernel
-    Copyright (C) 2018-2019 EoflaOE
+    Kernel Simulator - Simulates our future planned Kernel
+    Copyright (C) 2018-2019  EoflaOE
 
-    Dieses Programm ist freie Software: Sie können es weitergeben und / oder modifizieren
-    es unter den Bedingungen der GNU General Public License, wie von veröffentlicht
-    die Free Software Foundation, entweder Version 3 der Lizenz, oder
-    (nach Ihrer Wahl) eine spätere Version.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-    Dieses Programm wird in der Hoffnung verbreitet, dass es nützlich sein wird,
-    aber OHNE GARANTIE; ohne auch nur die implizite garantie von
-    MARKTGÄNGIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK. Siehe die
-    GNU General Public License für weitere Details.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    Sie sollten eine Kopie der GNU General Public License erhalten haben
-    zusammen mit diesem Programm. Wenn nicht, lesen Sie <https://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

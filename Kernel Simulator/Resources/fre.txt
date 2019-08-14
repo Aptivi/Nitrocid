@@ -1,4 +1,4 @@
-﻿Commandes disponibles: {0}
+Commandes disponibles: {0}
 Commande d'écriture: 
 L'injection de commande a été annulée.
 Séparez les arguments de démarrage par des virgules sans espaces, par exemple "motd,gpuprobe"
@@ -368,4 +368,8 @@ libcpanel-json-xs-perl n'est peut-être pas installé sur votre système. Report
 Vous avez défini la langue de votre système sur autre chose que l'anglais. Désolé pour le désagrément, mais il semble que Google et son traducteur sont très bizarres quant à la traduction de blocs de code pour tous les langages de programmation. Bien que nous réparions tous les blocs de code des pages de manuel traduites, nous vous suggérons d'ouvrir un ticket vers Google Translate pour la traduction des blocs de code non destinés à être traduits et de définir la langue de votre système en anglais si vous le parlez.
 Recharge les modifications.
 Mods rechargés.
-Quoi de neuf: Nouvelles corrections dans les blocs de code pour les pages de manuel tchèque, croate, néerlandais, finnois, français, allemand, italien, malais, portugais, espagnol, suédois et turc. Cette version est le résultat de modifications inutiles apportées à codeblocks par Google afin qu’elle se sente moche, traduite, non compilable et mal alignée.
+Nouveautés: probations de date et heure améliorées (deux champs, un DateTime, une chaîne, sont transformés en un), analyse MOTD et MAL utilisant des fichiers pour mieux prendre en charge les sauts de ligne, Fixed `chmal` et` chmotd` ne prenant qu'un mot, Fixed 
+Bienvenue sur Kernel!
+Connecté avec succès en tant que <utilisateur>
+MOTD / MAL est valide, mais le type de message n'est pas valide. 
+J'ai essayé de lire MOTD / MAL dont le type de message était invalide.

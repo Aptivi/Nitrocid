@@ -1,4 +1,4 @@
-﻿Beschikbare opdrachten: {0}
+Beschikbare opdrachten: {0}
 Schrijf commando:
 Commando-injectie is geannuleerd.
 Aparte opstartargumenten met komma's zonder spaties, bijvoorbeeld 'motd, gpuprobe'
@@ -368,4 +368,8 @@ Mogelijk hebt u libcpanel-json-xs-perl niet op uw systeem geïnstalleerd. Raadpl
 U hebt uw systeemtaal ingesteld op iets anders dan Engels. Excuses voor het ongemak, maar het lijkt erop dat Google en zijn vertaler erg raar zijn over het vertalen van codeblokken voor elke programmeertaal. Hoewel we alle codeblokken voor vertaalde handmatige pagina's repareren, raden we u aan een ticket voor Google Translate te openen voor het vertalen van codeblokken die niet zijn bedoeld om te worden vertaald, en uw systeemtaal in te stellen op Engels als u deze spreekt.
 Laadt wijzigingen opnieuw.
 Mods opnieuw geladen.
-Wat is nieuw: meer codeblokcorrecties voor Tsjechische, Kroatische, Nederlandse, Finse, Franse, Duitse, Italiaanse, Maleisische, Portugese, Spaanse, Zweedse en Turkse handleidingpagina's. Deze versie is het resultaat van nutteloze aanpassingen aan codeblocks die Google moet maken zodat het lelijk, vertaald, niet-compileerbaar en verkeerd uitgelijnd aanvoelt.
+Wat is nieuw: verbeterde tijd- en datumprobes (nu worden twee velden, één DateTime, één String, tot één gemaakt), MOTD en MAL parsing met behulp van bestanden om nieuwe regels beter te ondersteunen, `chmal` en` chmotd` gerepareerd met slechts één woord, opgelost 
+Welkom bij Kernel!
+Succesvol aangemeld als <gebruiker>
+MOTD / MAL is geldig, maar het berichttype is niet geldig. 
+Probeerde MOTD / MAL te lezen van het ongeldige berichttype.

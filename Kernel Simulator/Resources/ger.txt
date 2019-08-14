@@ -1,4 +1,4 @@
-﻿Verfügbare Befehle: {0}
+Verfügbare Befehle: {0}
 Schreibbefehl: 
 Die Befehlsinjektion wurde abgebrochen.
 Trennen Sie Boot-Argumente durch Kommas ohne Leerzeichen, z. B. "motd, gpuprobe"
@@ -368,4 +368,8 @@ Möglicherweise ist libcpanel-json-xs-perl nicht auf Ihrem System installiert. I
 Sie haben Ihre Systemsprache auf etwas anderes als Englisch eingestellt. Wir entschuldigen uns für die Unannehmlichkeiten, aber es scheint, dass Google und sein Übersetzer sehr komisch darin sind, Codeblöcke für jede Programmiersprache zu übersetzen. Während wir alle Codeblöcke für übersetzte Handbuchseiten korrigieren, empfehlen wir Ihnen, ein Ticket für Google Translate zu öffnen, um Codeblöcke zu übersetzen, die nicht übersetzt werden sollen, und Ihre Systemsprache auf Englisch festzulegen, wenn Sie sie sprechen.
 Lädt Änderungen neu.
 Mods neu geladen.
-Was ist neu: Weitere Codeblockkorrekturen für Handbuchseiten in den Sprachen Tschechisch, Kroatisch, Niederländisch, Finnisch, Französisch, Deutsch, Italienisch, Malaiisch, Portugiesisch, Spanisch, Schwedisch und Türkisch. Diese Version ist das Ergebnis nutzloser Änderungen an Codeblöcken, die Google vornehmen muss, damit sie sich hässlich, übersetzt, nicht kompilierbar und falsch ausgerichtet anfühlen.
+Was ist neu: Verbesserte Zeit- und Datumsprüfungen (jetzt werden zwei Felder, eine DateTime und eine Zeichenfolge, zu einem Feld zusammengefügt), MOTD- und MAL-Analyse unter Verwendung von Dateien zur besseren Unterstützung von Zeilenumbrüchen 
+Willkommen im Kernel!
+Erfolgreich als <Benutzer> angemeldet
+MOTD / MAL ist gültig, aber der Nachrichtentyp ist ungültig. 
+Es wurde versucht, MOTD / MAL zu lesen, das vom ungültigen Nachrichtentyp ist.
