@@ -18,13 +18,30 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.6-13</Version>
+    <!-- <Version>0.0.6-13</Version> Uncomment if you're using Semantic Versioning v2. WON'T WORK WITH UPLOADING PACKAGES TO PACKAGE CLOUDS SUCH AS NUGET, CHOCOLATEY, ETC. -->
+    <Version>0.0.6.13</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
+    <PackageTags>kernel;simulator;vb.net</PackageTags>
+    <!-- URL settings -->
+    <PackageProjectUrl>https://github.com/EoflaOE/Kernel-Simulator</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/EoflaOE/Kernel-Simulator/master/Kernel%20Simulator/iconfinder_applications-utilities_8840.ico</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/EoflaOE/Kernel-Simulator/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageReleaseNotes>https://github.com/EoflaOE/Kernel-Simulator/blob/master/README.md#--------history--------</PackageReleaseNotes>
+    <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
     <PackageOutputPath>KSNuget</PackageOutputPath>
+    <!-- Dependencies set up -->
+    <Dependencies>
+      <dependency id="MadMilkman.Ini" version="1.0.6.0"/>
+      <dependency id="FluentFTP" version="27.0.0"/>
+      <dependency id="Newtonsoft.Json" version="12.0.0"/>
+    </Dependencies>
+    <!-- KS Nuget Information End -->
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>E:\Documents and Settings\EoflaOE\Desktop\visual basic projects\VB2010\Kernel Simulator\</PublishUrl>
     <Install>true</Install>
@@ -167,6 +184,15 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="FluentFTP">
+      <Version>27.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="MadMilkman.Ini">
+      <Version>1.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.2</Version>
+    </PackageReference>
     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.2.0" />
     <Reference Include="FluentFTP, Version=27.0.2.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentFTP.27.0.2\lib\net45\FluentFTP.dll</HintPath>
