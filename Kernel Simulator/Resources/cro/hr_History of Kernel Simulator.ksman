@@ -826,6 +826,8 @@ KS 0.0.6.13
 4. Popravljeni problemi emitiranja na pogrešci kernela
 5. Uklonjeno je novo rezervirano mjesto
 6. Uklonjeni unosi konfiguracije MAL i MOTD
+7. Sada gradi i za Chocolatey Gallery i za NuGet u "N" izdanju.
+8. Fiksna NullReferenceException prilikom čitanja starih KS konfiguracijskih datoteka nadogradnjom na novi format
 -BODY END-
 
 -SECTIONS-

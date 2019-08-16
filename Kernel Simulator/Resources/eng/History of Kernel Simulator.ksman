@@ -848,7 +848,8 @@ KS 0.0.6.13
 4. Fixed casting issues on kernel error
 5. Removed new line placeholder
 6. Removed MAL and MOTD config entries
-
+7. Now builds for both Chocolatey Gallery and NuGet in "N" edition.
+8. Fixed NullReferenceException when reading old KS config files by upgrading it to a new format
 -BODY END-
 
 -SECTIONS-

@@ -368,7 +368,7 @@ Nín de xìtǒng shàng kěnéng méiyǒu ānzhuāng libcpanel-json-xs-perl. Qǐ
 Nín yǐ jiāng xìtǒng yǔyán shèzhì wèi chú yīngyǔ zhī wài de rènhé qítā yǔyán. Hěn bàoqiàn gěi nín dài lái bu biàn, dàn sìhū Google jí qí fānyì rényuán duìyú fānyì rènhé biānchéng yǔyán de dàimǎ kuài dōu fēicháng qíguài. Suīrán wǒmen xiūfùle fānyì shǒucè yè de suǒyǒu dàimǎ kuài, dàn wǒmen jiànyì nín dǎkāi Goog​​le Translate de piàojù, yǐ fānyì bù xūyào fānyì de dàimǎ kuài, bìng zài nín shuō chū shí jiāng xìtǒng yǔyán shèzhì wèi yīngyǔ.
 Chóngxīn jiāzài xiūgǎi.
 Mods chóngxīn jiāzài.
-Xīn gōngnéng: Gǎijìn shíjiān hé rìqí huǎnjiě (xiànzài liǎng gè zìduàn, yīgè DateTime, yīgè zìfú chuàn, yīgè),MOTD hé MAL jiěxī shǐyòng wénjiàn gèng hǎo dì zhīchí huànháng, xiūfù `chmal`hé `chmotd`zhǐ qǔ yīgè zì, gùdìng zhùzào nèihé cuòwù wèntí, shānchú xīn xíng zhàn wèi fú, shānchú MAL hé MOTD pèizhì tiáomù
+Xīn gōngnéng: Xiànzài yǐ “N” bǎn wèi Chocolatey Gallery hé NuGet gòujiàn, Tōngguò jiàng jiù KS pèizhì wénjiàn shēngjí wèi xīn géshì lái xiūfù NullReferenceException
 Huānyíng lái dào nèihé!
 Yǐ <user>chénggōng dēnglù
 MOTD/ MAL yǒuxiào, dàn xiāoxī lèixíng wúxiào. Jiǎshè MOTD......

@@ -368,7 +368,7 @@ Anda mungkin tidak mempunyai libcpanel-json-xs-perl yang dipasang pada sistem an
 Anda telah menetapkan bahasa sistem anda kepada apa pun selain bahasa Inggeris. Maaf untuk kesulitan ini, tetapi nampaknya Google dan penterjemahnya sangat pelik untuk menterjemahkan blok kod untuk bahasa pengaturcaraan. Semasa kami membetulkan semua blok kod untuk halaman manual yang diterjemahkan, kami cadangkan anda membuka tiket ke Google Terjemahan untuk menterjemah blok kod yang tidak dimaksudkan untuk diterjemahkan dan menetapkan bahasa sistem anda kepada bahasa Inggeris jika anda bercakap.
 Pengubahsuaian semula.
 Mod dimuat semula.
-Apa yang baru: Percubaan masa dan tarikh yang lebih baik (Sekarang dua bidang, satu TarikhTime, satu String, dibuat satu), PEMULIHAN MOTD dan MAL menggunakan fail untuk menyokong baris baru yang lebih baik, Tetapkan `chmal` dan` chmotd` hanya mengambil satu perkataan, Tetap 
+Apa yang baru: Sekarang dibina untuk kedua-dua Chocolatey Gallery dan NuGet dalam edisi "N", Tetapkan NullReferenceException apabila membaca fail config KS lama dengan menaik tarafnya kepada format baru
 Selamat datang ke Kernel!
 Log masuk berjaya sebagai <pengguna>
 MOTD / MAL adalah sah, tetapi jenis mesej tidak sah. 

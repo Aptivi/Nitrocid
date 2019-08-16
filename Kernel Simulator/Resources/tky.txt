@@ -368,7 +368,7 @@ Sisteminizde yüklü libcpanel-json-xs-perl olmayabilir. Kurulum için paket yö
 Sistem dilinizi İngilizce'den başka bir şeye ayarladınız. Verdiğimiz rahatsızlıktan dolayı üzgünüz, ancak Google ve çevirmeninin herhangi bir programlama dili için kod bloklarını çevirmekte çok tuhaf olduğu görülüyor. Tercüme edilen manuel sayfaların tüm kod bloklarını düzeltirken, çevrilmesi amaçlanmayan kod bloklarını çevirmek için Google Translate'e bir bilet açmanızı ve konuşmanız durumunda sistem dilinizi İngilizce olarak ayarlamanızı öneririz.
 Değişiklikleri yeniden yükler.
 Modlar yeniden yüklendi.
-Yenilikler: Geliştirilmiş Saat ve Tarih denetimleri (Şimdi iki alan, bir DateTime, bir Dize, bir dize yapılır), MOTD ve MAL yeni satırları daha iyi desteklemek için dosyaları kullanarak ayrıştırma, Sabit `chmal` ve` chmotd` sadece bir kelime alarak, Sabit 
+Yenilikler: Şimdi "N" baskısında hem Chocolatey Gallery hem de NuGet için geliştirildi, Eski KS yapılandırma dosyalarını yeni bir formata yükselterek okurken NullReferenceException düzeltildi
 Çekirdeğe Hoşgeldiniz!
 <user> olarak başarıyla giriş yapıldı
 MOTD / MAL geçerlidir, ancak mesaj tipi geçerli değildir. 

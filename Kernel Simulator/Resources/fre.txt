@@ -368,7 +368,7 @@ libcpanel-json-xs-perl n'est peut-être pas installé sur votre système. Report
 Vous avez défini la langue de votre système sur autre chose que l'anglais. Désolé pour le désagrément, mais il semble que Google et son traducteur sont très bizarres quant à la traduction de blocs de code pour tous les langages de programmation. Bien que nous réparions tous les blocs de code des pages de manuel traduites, nous vous suggérons d'ouvrir un ticket vers Google Translate pour la traduction des blocs de code non destinés à être traduits et de définir la langue de votre système en anglais si vous le parlez.
 Recharge les modifications.
 Mods rechargés.
-Nouveautés: probations de date et heure améliorées (deux champs, un DateTime, une chaîne, sont transformés en un), analyse MOTD et MAL utilisant des fichiers pour mieux prendre en charge les sauts de ligne, Fixed `chmal` et` chmotd` ne prenant qu'un mot, Fixed 
+Nouveautés: Maintenant construit pour Chocolatey Gallery et NuGet dans l'édition "N", Correction de NullReferenceException lors de la lecture d'anciens fichiers de configuration KS en le mettant à niveau vers un nouveau format
 Bienvenue sur Kernel!
 Connecté avec succès en tant que <utilisateur>
 MOTD / MAL est valide, mais le type de message n'est pas valide. 

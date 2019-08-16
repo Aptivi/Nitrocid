@@ -73,7 +73,7 @@ Public Module Config
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", CornerTD),
                         New IniKey(ksconf, "Screensaver", defSaverName),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
-            Else
+            Else '----------------------- If [Preserve] value is False, then don't preserve.
                 'The General Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "General",
@@ -109,9 +109,7 @@ Public Module Config
                     New IniSection(ksconf, "Login",
                         New IniKey(ksconf, "Show MOTD on Log-in", "True"),
                         New IniKey(ksconf, "Clear Screen on Log-in", "False"),
-                        New IniKey(ksconf, "MOTD", "Welcome to Kernel!"),
-                        New IniKey(ksconf, "Host Name", "kernel"),
-                        New IniKey(ksconf, "MOTD After Login", "Logged in successfully as <user>")))
+                        New IniKey(ksconf, "Host Name", "kernel")))
 
                 'The Shell Section
                 ksconf.Sections.Add(
@@ -162,7 +160,7 @@ Public Module Config
             If configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
                 Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
                 W(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), True, "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
-                W(DoTranslation("What's new: Improved Time and Date probations (Now two fields, one DateTime, one String, are made into one), MOTD and MAL parsing using files to better support newlines, Fixed `chmal` and `chmotd` only taking one word, Fixed casting issues on kernel error, Removed new line placeholder, Removed MAL and MOTD config entries", currentLang), True, "neutralText")
+                W(DoTranslation("What's new: Now builds for both Chocolatey Gallery and NuGet in ""N"" edition, Fixed NullReferenceException when reading old KS config files by upgrading it to a new format", currentLang), True, "neutralText")
                 Console.ReadKey(True)
                 UpdateConfig()
             End If
@@ -233,6 +231,8 @@ Public Module Config
             'Misc Section
             If configReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True" Then CornerTD = True Else CornerTD = False
             defSaverName = configReader.Sections("Misc").Keys("Screensaver").Value
+        Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
+            UpgradeConfig()
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)

@@ -10,6 +10,7 @@ Ytimen simulaattorin avulla voit simuloida hyvin varhaisen pääsyn tulevaan yti
 
 --------------- + -> Historia <- + --------------- |
 
+16.8.2019 - 0.0.6.13N: Rakentaa nyt sekä Chocolatey Gallerylle että NuGetille, Kiinteä NullReferenceException, kun luet vanhoja KS-asetustiedostoja päivittämällä ne uuteen muotoon
 13.8.2019 - 0.0.6.13: Parannetut aika- ja päivämääritykset (Nyt kaksi kenttää, yksi DateTime, yksi merkkijono, tehdään yhdeksi), MOTD- ja MAL-jäsentäminen käyttämällä tiedostoja paremmin tukemaan uusia linjoja, Kiinteät `chmal` ja` chmotd `vain yhden sanan ottaminen, korjatut casting-ongelmat ytimen virheessä, poistettu uusi rivin paikkamerkki, poistettu MAL- ja MOTD-kokoonpanotiedot
 11.8.2019 - 0.0.6.12: Lisää koodiblokkikorjauksia Tšekin, Kroatian, Hollannin, Suomen, Ranskan, Saksan, Italian, Malaijin, Portugalin, Espanjan, Ruotsin ja Turkin manuaalisivuille. Tämä versio on seurausta turhista koodilohkojen muutoksista, jotka Google on tehtävä, jotta se tuntuisi rumaalta, käännetyltä, yhdistämättömältä ja väärin kohdistetulta.
 10.8.2019 - 0.0.6.11: Kiinteä vianetsintä, joka näyttää salasanan selkeästi, näytetään muutoslokit päivityksen aikana, Kiinteä KeyNotFoundException, kun päivitys on suoritettu käynnistyksen yhteydessä

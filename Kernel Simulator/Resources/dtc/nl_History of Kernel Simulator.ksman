@@ -848,6 +848,8 @@ KS 0.0.6.13
 4. Castproblemen met kernelfouten opgelost
 5. Nieuwe regelplaatsaanduiding verwijderd
 6. MAL- en MOTD-configuratie-items verwijderd
+7. Bouwt nu voor zowel Chocolatey Gallery als NuGet in "N" -editie.
+8. NullReferenceException gerepareerd bij het lezen van oude KS-configuratiebestanden door deze naar een nieuw formaat te upgraden
 -BODY END-
 
 -SECTIONS-

@@ -10,6 +10,7 @@ Kernel Simulator låter dig simulera en mycket tidig åtkomst för vår framtida
 
 | --------------- + -> Historik <- + --------------- |
 
+8/16/2019 - 0.0.6.13N: bygger nu för både Chocolatey Gallery och NuGet, Fast NullReferenceException när du läser gamla KS-konfigurationsfiler genom att uppgradera dem till ett nytt format
 8/13/2019 - 0.0.6.13: Förbättrade tester för tid och datum (nu två fält, en DateTime, en sträng, görs till en), MOTD och MAL-analysering med hjälp av filer för att bättre stödja nylinjer, Fast `chmal` och` chmotd `tar bara ett ord, fixade gjutproblem på kärnfel, Borttagen ny radplatshållare, borttagna MAL- och MOTD-konfigurationsposter
 8/11/2019 - 0.0.6.12: Fler kodblockkorrigeringar för tjeckiska, kroatiska, nederländska, finska, franska, tyska, italienska, malaysiska, portugisiska, spanska, svenska och turkiska manuella sidorna. Denna version är ett resultat av värdelösa ändringar av kodblock som Google måste göra så att det känns fult, översatt, okompilerbart och feljusterat.
 8/10/2019 - 0.0.6.11: Fast felsökning som visar lösenord i tydlig text, Visade ändringar under uppdatering, Fast KeyNotFoundException efter uppdatering av config vid start

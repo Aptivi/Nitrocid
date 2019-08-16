@@ -16,6 +16,8 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - Two documentations, faq and troubleshooting, are deleted because they are not updated regularly.
 
+- KS now supports NuGet and Chocolatey Gallery, however the instructions are not ready yet.
+
 ## |-----+--> _Prerequisites_ <--+-----|
 
 1. For Windows systems
@@ -155,6 +157,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **8/11/2019 - 0.0.6.12:** More codeblock corrections for Czech, Croatian, Dutch, Finnish, French, German, Italian, Malay, Portuguese, Spanish, Swedish, and Turkish manual pages. This version is a result of useless modifications to codeblocks that Google has to make so it feels ugly, translated, uncompilable, and misaligned.
 
 **8/13/2019 - 0.0.6.13:** Improved Time and Date probations (Now two fields, one DateTime, one String, are made into one), MOTD and MAL parsing using files to better support newlines, Fixed `chmal` and `chmotd` only taking one word, Fixed casting issues on kernel error, Removed new line placeholder, Removed MAL and MOTD config entries
+
+**8/16/2019 - 0.0.6.13N:** Now builds for both Chocolatey Gallery and NuGet, Fixed NullReferenceException when reading old KS config files by upgrading it to a new format
 
 ## |-----+--> _Manual pages_ <--+-----|
 

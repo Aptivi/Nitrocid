@@ -368,7 +368,7 @@ Nemusíte mít v systému nainstalován libcpanel-json-xs-perl. Informace o inst
 Nastavili jste systémový jazyk na něco jiného než angličtinu. Omlouváme se za nepříjemnosti, ale zdá se, že Google a její překladatel jsou velmi divní ohledně překládání kódových bloků pro jakýkoli programovací jazyk. Přestože opravujeme všechny bloky kódu pro přeložené manuální stránky, doporučujeme vám otevřít si lístek do Překladače Google Překladač překladu kódových bloků, které nejsou určeny k překladu, a nastavit svůj systémový jazyk na angličtinu, pokud budete mluvit.
 Znovu načte úpravy.
 Režimy byly znovu načteny.
-Co je nového: Vylepšené časové a datové zkoušky (nyní dvě pole, jedno DateTime, jedno String, jsou sloučeny do jednoho), MOTD a MAL parsování pomocí souborů pro lepší podporu nových řádků, Opraveno `chmal` a` chmotd` pouze s jedním slovem 
+Co je nového: Nyní staví pro Chocolatey Gallery i NuGet v edici „N“, Opravena chyba NullReferenceException při čtení starých konfiguračních souborů KS upgradem na nový formát
 Vítejte v Kernelu!
 Úspěšně přihlášeno jako <user>
 MOTD / MAL je platný, ale typ zprávy není platný. 

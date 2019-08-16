@@ -848,6 +848,8 @@ KS 0.0.6.13
 4. Fixade gjutproblem på kärnfel
 5. Borttagen ny radplatshållare
 6. Borttagna MAL- och MOTD-konfigurationsposter
+7. Byggs nu för både Chocolatey Gallery och NuGet i "N" -utgåvan.
+8. Fast NullReferenceException när du läser gamla KS-konfigurationsfiler genom att uppgradera dem till ett nytt format
 -BODY END-
 
 -SECTIONS-

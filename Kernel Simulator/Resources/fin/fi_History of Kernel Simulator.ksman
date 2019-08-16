@@ -848,6 +848,8 @@ KS 0.0.6.13
 4. Kiinteät casting-ongelmat ytimen virheessä
 5. Poistettu uusi rivin paikkamerkki
 6. Poistetut MAL- ja MOTD-määritykset
+7. Nyt rakennetaan sekä Chocolatey Gallerylle että NuGetille "N" -painossa.
+8. Kiinteä NullReferenceException, kun luet vanhoja KS-asetustiedostoja päivittämällä ne uuteen muotoon
 -BODY END-
 
 -SECTIONS-

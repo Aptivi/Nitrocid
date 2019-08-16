@@ -848,6 +848,8 @@ KS 0.0.6.13
 4. Se corrigieron los problemas de conversión en el error del kernel
 5. Se eliminó el nuevo marcador de posición de línea
 6. Se eliminaron las entradas de configuración MAL y MOTD
+7. Ahora se construye para Chocolatey Gallery y NuGet en la edición "N".
+8. Se corrigió NullReferenceException al leer archivos de configuración antiguos de KS actualizándolo a un nuevo formato
 -BODY END-
 
 -SECTIONS-

@@ -18,6 +18,13 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <PackageId>KS</PackageId>
+    <Version>0.0.6-13</Version>
+    <Authors>EoflaOE</Authors>
+    <Title>Kernel Simulator</Title>
+    <PackageDescription>Simulates our future-planned kernel</PackageDescription>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>KSNuget</PackageOutputPath>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>E:\Documents and Settings\EoflaOE\Desktop\visual basic projects\VB2010\Kernel Simulator\</PublishUrl>
     <Install>true</Install>
@@ -160,6 +167,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.2.0" />
     <Reference Include="FluentFTP, Version=27.0.2.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentFTP.27.0.2\lib\net45\FluentFTP.dll</HintPath>
     </Reference>
@@ -205,6 +213,7 @@
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Languages\Translate.vb" />
+    <Compile Include="Misc\OldConfigUp.vb" />
     <Compile Include="Misc\Probers\MOTDParse.vb" />
     <Compile Include="Misc\Probers\PlaceParse.vb" />
     <Compile Include="ManPages\Manual.vb" />

@@ -848,6 +848,8 @@ KS 0.0.6.13
 4. Opraveny problémy s odléváním při chybě jádra
 5. Odstraněn nový zástupný symbol řádku
 6. Odstraněné konfigurační položky MAL a MOTD
+7. Nyní staví pro Chocolatey Gallery i NuGet v edici „N“.
+8. Opravena chyba NullReferenceException při čtení starých konfiguračních souborů KS upgradem na nový formát
 -BODY END-
 
 -SECTIONS-

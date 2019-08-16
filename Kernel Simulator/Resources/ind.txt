@@ -368,7 +368,7 @@ aapake paas apane sistam par libcpanel-json-xs-perl sthaapit nahin ho sakata hai
 aapane apanee sistam bhaasha ko angrejee ke alaava kisee aur cheez mein set kiya hai. asuvidha ke lie khed hai, lekin aisa lagata hai ki Google aur isake anuvaadak kisee bhee prograaming bhaasha ke lie kod blok ka anuvaad karane ke baare mein bahut ajeeb hain. jab ham anuvaadit mainual prshthon ke lie sabhee kod blok ko theek kar dete hain, to ham sujhaav dete hain ki aap anuvaad karane ke lie Google blok ka ek tikat kholen jisaka anuvaad karane ka matalab hai, aur yadi aap ise bolate hain to apanee sistam bhaasha ko angrejee mein set karen.
 sanshodhanon ko punah lod karen.
 mods ko punah lod kiya gaya.
-naya kya hai: behatar samay aur dinaank pariveekshaen (ab do feeld, ek dinaank samay, ek string, ek mein banaaya jaata hai), motd aur mal paarsing behatar samarthan naiwlinais ke lie failon ka upayog karake, phiksd `chhmal` aur` chhmotd aur keval ek shabd, phiksd karnel truti par kaasting muddon, naee lain plesaholdar, hatae gae mal aur motd konfigareshan pravishtiyon ko hata diya
+naya kya hai: ab "N" sanskaran mein chokaletee gailaree aur nuget donon ke lie banaata hai, phiksd NullReferenceException jab puraane kees phail ko padhate hain to ise ek nae phormet mein apagred karake
 karnel mein aapaka svaagat hai!
 <usair> ke roop mein saphalataapoorvak log in kiya
 motd / mal maany hai, lekin sandesh prakaar maany nahin hai. maan leejie ...

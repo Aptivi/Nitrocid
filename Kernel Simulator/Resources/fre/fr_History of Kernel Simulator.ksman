@@ -848,6 +848,8 @@ KS 0.0.6.13
 4. Problèmes de casting résolus sur une erreur de noyau
 5. Suppression de la nouvelle ligne de réservation
 6. Suppression des entrées de configuration MAL et MOTD
+7. Maintenant construit pour Chocolatey Gallery et NuGet dans l'édition "N".
+8. Correction de NullReferenceException lors de la lecture d'anciens fichiers de configuration KS en le mettant à niveau vers un nouveau format
 -BODY END-
 
 -SECTIONS-

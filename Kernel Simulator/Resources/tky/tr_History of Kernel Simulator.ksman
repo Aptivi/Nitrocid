@@ -850,6 +850,8 @@ KS 0.0.6.13
 4. Çekirdek hatası ile ilgili döküm sorunları
 5. Yeni satır yer tutucusu kaldırıldı
 6. Kaldırılan MAL ve MOTD yapılandırma girişleri
+7. Şimdi "N" baskısında hem Chocolatey Gallery hem de NuGet için geliştirildi.
+8. Eski KS yapılandırma dosyalarını yeni bir formata yükselterek okurken NullReferenceException düzeltildi
 -BODY END-
 
 -SECTIONS-

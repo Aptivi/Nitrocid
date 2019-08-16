@@ -848,6 +848,8 @@ KS 0.0.6.13
 4. Isu pemutus tetap pada ralat kernel
 5. Pemegang tempat baris baru yang dikeluarkan
 6. Dihapuskan penyertaan MAL dan MOTD config
+7. Sekarang dibina untuk kedua-dua Chocolatey Gallery dan NuGet dalam edisi "N".
+8. Tetapkan NullReferenceException apabila membaca fail config KS lama dengan menaik tarafnya kepada format baru
 -BODY END-
 
 -SECTIONS-

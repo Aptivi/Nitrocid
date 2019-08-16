@@ -848,6 +848,8 @@ KS 0.0.6.13
 4. Casting-Probleme beim Kernel-Fehler behoben
 5. Platzhalter für neue Zeile entfernt
 6. MAL- und MOTD-Konfigurationseinträge entfernt
+7. Baut jetzt sowohl für Chocolatey Gallery als auch für NuGet in der "N" Edition.
+8. NullReferenceException beim Lesen alter KS-Konfigurationsdateien durch Upgrade auf ein neues Format behoben
 -BODY END-
 
 -SECTIONS-

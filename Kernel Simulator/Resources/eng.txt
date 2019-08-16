@@ -368,7 +368,7 @@ You may not have libcpanel-json-xs-perl installed on your system. Refer to your 
 You have set your system language to anything other than English. Sorry for the inconvenience, but it seems that Google and its translator are very weird about translating code blocks for any programming language. While we fix all the code blocks for translated manual pages, we suggest you open a ticket to Google Translate for translating code blocks that aren't meant to be translated, and set your system language to English if you speak it.
 Reloads mods.
 Mods reloaded.
-What's new: Improved Time and Date probations (Now two fields, one DateTime, one String, are made into one), MOTD and MAL parsing using files to better support newlines, Fixed `chmal` and `chmotd` only taking one word, Fixed casting issues on kernel error, Removed new line placeholder, Removed MAL and MOTD config entries
+What's new: Now builds for both Chocolatey Gallery and NuGet in "N" edition, Fixed NullReferenceException when reading old KS config files by upgrading it to a new format
 Welcome to Kernel!
 Logged in successfully as <user>
 MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...
