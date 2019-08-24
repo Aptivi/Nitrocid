@@ -50,7 +50,7 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - For Unix systems (MonoDevelop)
 
-1. Install [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/) and MonoDevelop.
+1. Install [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/), libmono-microsoft-visualbasic10.0-cil, and MonoDevelop.
 
 2. After installation, extract the source code, open MonoDevelop, and click on **Open...**
 
@@ -61,6 +61,28 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 5. Click on the **Build** menu bar, and click on build button to compile.
 
 6. In **your file manager**, go to the build directory and then double-click on the executable file.
+
+* For Unix Systems that can do 64-bit (JetBrains Rider)
+
+1. Install [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/), Git, and libmono-microsoft-visualbasic10.0-cil. Remember to install Mono Runtime from the website, not your distro's repos. Mono 6.0.0 is at least required.
+
+2. Install JetBrains Rider from their website or snap if you use Ubuntu 64-bit
+
+3. After installation, open JetBrains Rider, and follow the configuration steps
+
+4. When the main menu opens, choose "Check out from Version Control" and then "Git"
+
+5. Write on the URL "https://github.com/EoflaOE/Kernel-Simulator.git" and press "Test" to verify your connectivity
+
+6. Press Clone, and git will download 100+ MB of data (because of archive branch), then Rider will open up. Don't worry if the progress bar stops moving. It's based on the amount of objects, not the size, because Rider and/or Git still hasn't implemented progress bar by repo size yet.
+
+7. You will get some errors about the inability to resolve My.Computer. Ignore these, as they won't interrupt the compilation.
+
+8. Click on the hammer button to build, or the Run button. When the Edit configuration screen appears, tick the checkbox named "Use External Console".
+
+9. If you used the hammer button, then open your file explorer, go to the build directory, and double-click on the executable file.
+
+NOTE: We recommend running builds using the bug button to make breakpoints work. The run button is not like MonoDevelop or Visual Studio. Visual Studio is lighter than Rider, although it's only available for Windows.
 
 ## |-----+--> _History_ <--+-----|
 
