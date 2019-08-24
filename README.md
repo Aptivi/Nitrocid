@@ -1,8 +1,6 @@
 # |---+-> Kernel Simulator <-+---|
 
-AppVeyor: [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master) 
-
-TravisCI: [![Build Status](https://travis-ci.org/EoflaOE/Kernel-Simulator.svg?branch=master)](https://travis-ci.org/EoflaOE/Kernel-Simulator)
+[![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master) [![Build Status](https://travis-ci.org/EoflaOE/Kernel-Simulator.svg?branch=master)](https://travis-ci.org/EoflaOE/Kernel-Simulator)
 
 This kernel simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal.
 
@@ -17,6 +15,16 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 - Two documentations, faq and troubleshooting, are deleted because they are not updated regularly.
 
 - KS now supports NuGet and Chocolatey Gallery, however the instructions are not ready yet.
+
+## |-----+--> _How to run/install_ <--+-----|
+
+* If you are going to install KS without building from source, either look at the Releases, or use the second link below.
+
+* If you are going to install KS as a NuGet library when modding or integrating, use the first link below.
+
+* NuGet Package: https://www.nuget.org/packages/KS/ (0.0.6.14, because of the completeness required that wasn't on the 0.0.6.13 version.)
+
+* Chocolatey: https://chocolatey.org/packages/KS/0.0.6.13 (choco install ks, Run using "Kernel Simulator" on the CMD or on Run.)
 
 ## |-----+--> _Prerequisites_ <--+-----|
 
