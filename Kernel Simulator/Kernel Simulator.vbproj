@@ -20,8 +20,8 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <!-- <Version>0.0.6-13</Version> Uncomment if you're using Semantic Versioning v2. WON'T WORK WITH UPLOADING PACKAGES TO PACKAGE CLOUDS SUCH AS NUGET, CHOCOLATEY, ETC. -->
-    <Version>0.0.6.13</Version>
+    <!-- <Version>0.0.6-14</Version> Uncomment if you're using Semantic Versioning v2. WON'T WORK WITH UPLOADING PACKAGES TO PACKAGE CLOUDS SUCH AS NUGET, CHOCOLATEY, ETC. -->
+    <Version>0.0.6.14</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -37,9 +37,9 @@
     <PackageOutputPath>KSNuget</PackageOutputPath>
     <!-- Dependencies set up -->
     <Dependencies>
-      <dependency id="MadMilkman.Ini" version="1.0.6.0"/>
-      <dependency id="FluentFTP" version="27.0.0"/>
-      <dependency id="Newtonsoft.Json" version="12.0.0"/>
+      <dependency id="MadMilkman.Ini" version="1.0.6.0" />
+      <dependency id="FluentFTP" version="27.0.0" />
+      <dependency id="Newtonsoft.Json" version="12.0.0" />
     </Dependencies>
     <!-- KS Nuget Information End -->
     <IsWebBootstrapper>false</IsWebBootstrapper>

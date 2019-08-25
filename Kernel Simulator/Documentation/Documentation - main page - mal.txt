@@ -10,6 +10,7 @@ Simulator Kernel membolehkan anda mensimulasikan akses awal untuk Kernel masa de
 
 | --------------- + -> Sejarah <- + --------------- |
 
+8/25/2019 - 0.0.6.14: Memecah perintah usermanual dengan mesej tersuai, Seksyen dibuat Teks untuk MOTD dan MAL di sysinfo
 8/16/2019 - 0.0.6.13N: Sekarang dibina untuk kedua-dua Galeri Chocolatey dan NuGet, Tetapkan NullReferenceException apabila membaca fail config KS lama dengan menaik tarafnya kepada format baru
 8/13/2019 - 0.0.6.13: Masa percubaan masa dan tarikh (Sekarang dua bidang, satu DateTime, satu String, dibuat menjadi satu), PEMUDA MOTD dan MAL menggunakan fail untuk menyokong baris baru yang lebih baik, Tetapkan `chmal` dan` chmotd `hanya mengambil satu perkataan, Isu pemutus tetap pada kesilapan kernel, Pemegang tempat baris baru yang telah dialih keluar, Dihapus entri MAL dan konfigurasi MOTD
 8/11/2019 - 0.0.6.12: Lebih banyak pembetulan codeblock untuk laman manual bahasa Czech, Croatia, Belanda, Finland, Perancis, Jerman, Itali, Melayu, Portugis, Sepanyol, Sweden, dan Turki. Versi ini adalah hasil daripada pengubahsuaian yang tidak berguna kepada codeblocks yang Google harus membuat sehingga merasakan hodoh, diterjemahkan, tidak kompilasi, dan misaligned.

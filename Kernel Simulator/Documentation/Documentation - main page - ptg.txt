@@ -10,6 +10,7 @@ O Kernel Simulator permite simular um acesso muito antecipado para o nosso futur
 
 | --------------- + -> Histórico <- + --------------- |
 
+25/08/2019 - 0.0.6.14: Reprovado o comando usermanual por mensagem customizada, seções de texto Made para MOTD e MAL em sysinfo
 16/08/2019 - 0.0.6.13N: Agora foi criado para o Chocolatey Gallery e o NuGet, Corrigido NullReferenceException ao ler arquivos de configuração antigos do KS atualizando-os para um novo formato
 8/13/2019 - 0.0.6.13: Probações aprimoradas de data e hora (agora dois campos, um DateTime, um String, são transformados em um), análise MOTD e MAL usando arquivos para melhor suportar novas linhas, Fixed `chmal` e` chmotd `usando apenas uma palavra, Corrigido problemas de transmissão no erro do kernel, Removido espaço reservado para nova linha, Removido MAL e entradas de configuração do MOTD
 8/11/2019 - 0.0.6.12: Mais correções de codeblock para as páginas de manual em checo, croata, holandês, finlandês, francês, alemão, italiano, malaio, português, espanhol, sueco e turco. Essa versão é resultado de modificações inúteis nos codeblocks que o Google precisa fazer para parecer feia, traduzida, descompilada e desalinhada.

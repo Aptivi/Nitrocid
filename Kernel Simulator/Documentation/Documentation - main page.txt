@@ -4,12 +4,13 @@ INFO: Are you building a Linux version of Kernel Simulator in MonoDevelop? If so
 
 INFO: This kernel simulator is not a final planned version of Kernel, since it was minimal.
 
-INFO: Two documentations, faq and troubleshooting, are deleted because they are not updated regularly.
-
 Kernel Simulator lets you simulate a very early access for our future Kernel that will continue to be developed, even if we made the real PC version of Kernel.
+
+Please note that we're going to change the version formatting on the 0.0.7 release, because the 0.0.x.5 versions will be 0.0.x.50, 0.0.x.9 will be 0.0.x.9x, and the pre-beta version will be 0.0.9x.xx where the fourth part is a revision of the specific beta version, 0.x.0. Also, the old documentation set (all .txt files in Documentation folder) will be removed.
 
 |---------------+--> History <--+---------------|
 
+8/25/2019 - 0.0.6.14: Deprecated the usermanual command by custom message, Made text sections for MOTD and MAL in sysinfo
 8/16/2019 - 0.0.6.13N: Now builds for both Chocolatey Gallery and NuGet, Fixed NullReferenceException when reading old KS config files by upgrading it to a new format
 8/13/2019 - 0.0.6.13: Improved Time and Date probations (Now two fields, one DateTime, one String, are made into one), MOTD and MAL parsing using files to better support newlines, Fixed `chmal` and `chmotd` only taking one word, Fixed casting issues on kernel error, Removed new line placeholder, Removed MAL and MOTD config entries
 8/11/2019 - 0.0.6.12: More codeblock corrections for Czech, Croatian, Dutch, Finnish, French, German, Italian, Malay, Portuguese, Spanish, Swedish, and Turkish manual pages. This version is a result of useless modifications to codeblocks that Google has to make so it feels ugly, translated, uncompilable, and misaligned.

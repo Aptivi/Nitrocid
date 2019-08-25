@@ -10,6 +10,7 @@ Met Kernel Simulator kunt u een zeer vroege toegang simuleren voor onze toekomst
 
 | --------------- + -> Geschiedenis <- + --------------- |
 
+25-8-2019 - 0.0.6.14: Het gebruikerscommando afgeschaft door aangepast bericht, Tekstsecties gemaakt voor MOTD en MAL in sysinfo
 16-8-2019 - 0.0.6.13N: bouwt nu voor zowel Chocolatey Gallery als NuGet, NullReferenceException gerepareerd bij het lezen van oude KS-configuratiebestanden door deze naar een nieuw formaat te upgraden
 13-8-2019 - 0.0.6.13: Verbeterde tijd en datum probaties (nu worden twee velden, één DateTime, één String, tot één gemaakt), MOTD en MAL parsing met behulp van bestanden om nieuwe lijnen beter te ondersteunen, Fixed `chmal` en` chmotd `slechts één woord aannemend, Castproblemen bij kernelfout verholpen, nieuwe regelplaatsaanduiding verwijderd, MAL- en MOTD-configuratie-items verwijderd
 8/11/2019 - 0.0.6.12: Meer codeblokcorrecties voor manuele, Tsjechische, Kroatische, Nederlandse, Finse, Franse, Duitse, Italiaanse, Maleisische, Portugese, Spaanse, Zweedse en Turkse handleidingpagina's. Deze versie is het resultaat van nutteloze aanpassingen aan codeblocks die Google moet maken zodat het lelijk, vertaald, niet-compileerbaar en verkeerd uitgelijnd aanvoelt.

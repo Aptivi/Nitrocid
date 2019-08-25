@@ -10,6 +10,7 @@ Mit dem Kernel-Simulator können Sie einen sehr frühen Zugriff für unseren zuk
 
 | --------------- + -> Verlauf <- + --------------- |
 
+8/25/2019 - 0.0.6.14: Der manuelle Befehl wurde durch benutzerdefinierte Meldung ersetzt. Textabschnitte für MOTD und MAL wurden in sysinfo erstellt
 8/16/2019 - 0.0.6.13N: Construit maintenant pour Chocolatey Gallery et NuGet, NullReferenceException beim Lesen alter KS-Konfigurationsdateien durch Upgrade auf ein neues Format behoben
 8/13/2019 - 0.0.6.13: Verbesserte Zeit- und Datumsprüfungen (jetzt werden zwei Felder, eine DateTime und eine Zeichenfolge, zu einem zusammengefügt), MOTD- und MAL-Analyse unter Verwendung von Dateien zur besseren Unterstützung von Zeilenumbrüchen, Fixed `chmal` und` chmotd `Nur ein Wort nehmen, Casting-Probleme bei Kernel-Fehler behoben, Platzhalter für neue Zeile entfernt, MAL- und MOTD-Konfigurationseinträge entfernt
 8/11/2019 - 0.0.6.12: Weitere Codeblockkorrekturen für Handbuchseiten in den Sprachen Tschechisch, Kroatisch, Niederländisch, Finnisch, Französisch, Deutsch, Italienisch, Malaiisch, Portugiesisch, Spanisch, Schwedisch und Türkisch. Diese Version ist das Ergebnis nutzloser Änderungen an Codeblöcken, die Google vornehmen muss, damit sie sich hässlich, übersetzt, nicht kompilierbar und falsch ausgerichtet anfühlen.

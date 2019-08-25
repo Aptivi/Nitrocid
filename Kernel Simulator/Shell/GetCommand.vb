@@ -618,9 +618,10 @@ Public Module GetCommand
                                 DoTranslation("Computer host name:", currentLang) + " {3}", True, "neutralText", signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
 
                 'Messages Section
-                W(DoTranslation("{0}[ Messages Settings ]", currentLang), True, "helpCmd", vbNewLine)
-                W(vbNewLine + "MOTD: {0}" + vbNewLine +
-                              "MAL: {1}", True, "neutralText", ProbePlaces(MOTDMessage), ProbePlaces(MAL))
+                W(vbNewLine + "[ MOTD ]", True, "helpCmd")
+                W(vbNewLine + ProbePlaces(MOTDMessage), True, "neutralText")
+                W(vbNewLine + "[ MAL ]", True, "helpCmd")
+                W(vbNewLine + ProbePlaces(MAL), True, "neutralText")
 
             ElseIf requestedCommand = "useddeps" Then
 
@@ -642,6 +643,8 @@ Public Module GetCommand
             ElseIf words(0) = "usermanual" Then
 
                 Done = True
+                W(DoTranslation("Documentations inside KS will be deprecated and will be moved to Wiki in 0.0.7", currentLang), True, "neutralText")
+                Console.ReadKey(True)
                 If requestedCommand <> "usermanual" Then
                     'Uncomment if there is a new language version for the below manpages and the codeblock fixes are not done. Replace "NewLang" with a three letter language code.
                     'If currentLang = "NewLang" And (strArgs = "Modding guide" Or strArgs = "Screensaver modding guide") Then

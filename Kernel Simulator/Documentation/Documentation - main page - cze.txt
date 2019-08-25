@@ -12,6 +12,7 @@ Kernel Simulator vám umožní simulovat velmi brzký přístup pro naše budouc
 
 EN: What's wrong with Google? See a commment of English "Modding Guide" and "Screensaver modding guide" in the source code for our possibly-wrong concept at the logic of Google Translate.
 
+25.8.2019 - 0.0.6.14: Zastaralý příkaz usermanual vlastní zprávou, Vyrobené textové sekce pro MOTD a MAL v sysinfo
 16.8.2019 - 0.0.6.13N: Nyní staví pro Chocolatey Gallery i NuGet, Opravena chyba NullReferenceException při čtení starých konfiguračních souborů KS upgradem na nový formát
 8/13/2019 - 0.0.6.13: Vylepšené časové a datové zkoušky (nyní dvě pole, jedno DateTime, jeden řetězec, jsou sloučeny do jednoho), analýza MOTD a MAL pomocí souborů pro lepší podporu nových řádků, opraveno `chmal` a` chmotd `brát jen jedno slovo, Opraveno problémy s obsazením při chybě jádra, Odstraněn nový zástupný symbol řádku, Odstraněno konfigurační položky MAL a MOTD
 8/11/2019 - 0.0.6.12: Další opravy kódového bloku pro české, chorvatské, nizozemské, finské, francouzské, německé, italské, malajské, portugalské, španělské, švédské a turecké manuálové stránky. Tato verze je výsledkem zbytečných úprav kódovacích bloků, které společnost Google musí provést, aby se cítila ošklivě, přeložena, nekompatibilní a špatně zarovnána.
