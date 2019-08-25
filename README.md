@@ -22,9 +22,9 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 * If you are going to install KS as a NuGet library when modding or integrating, use the first link below.
 
-* NuGet Package: https://www.nuget.org/packages/KS/ (0.0.6.14, because of the completeness required that wasn't on the 0.0.6.13 version.)
+* NuGet Package: https://www.nuget.org/packages/KS/
 
-* Chocolatey: https://chocolatey.org/packages/KS/0.0.6.13 (choco install ks, Run using "Kernel Simulator" on the CMD or on Run.)
+* Chocolatey: https://chocolatey.org/packages/KS/ (choco install ks, Run using "Kernel Simulator" on the CMD or on Run.)
 
 ## |-----+--> _Prerequisites_ <--+-----|
 
