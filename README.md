@@ -192,21 +192,13 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **8/25/2019 - 0.0.6.14:** Deprecated the usermanual command by custom message, Made text sections for MOTD and MAL in sysinfo
 
-## |-----+--> _Manual pages_ <--+-----|
-
-The documentations can be found in source code of kernel simulator in `Kernel Simulator/Documentation` and are localized to supported languages.
-
-**Documentation - main page:** Information about Kernel Simulator, this page
-
-**Documentation - contributing rules:** Conditions for contributing to Kernel Simulator
-
-* The text files will be moved to wiki section.
+**8/27/2019 - 0.0.7:** Removed manual code and moved all the English docs to Wiki (reducing size to its initial size before manpages were released), Removed changelog viewing on config upgrade, Removed pinging and listing computers in the network, Added support for FTPS, Made use of Filesystem.List instead of its own listing in FTP, Fixed the list command not supporting directories that have spaces
 
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator
 
-**Paomedia:** Icon creator
+**Oxygen Team:** Icon creator
 
 ## |-----+--> _Open Source Libraries used_ <--+-----|
 

@@ -368,7 +368,6 @@ Möglicherweise ist libcpanel-json-xs-perl nicht auf Ihrem System installiert. I
 Sie haben Ihre Systemsprache auf etwas anderes als Englisch eingestellt. Wir entschuldigen uns für die Unannehmlichkeiten, aber es scheint, dass Google und sein Übersetzer sehr komisch darin sind, Codeblöcke für jede Programmiersprache zu übersetzen. Während wir alle Codeblöcke für übersetzte Handbuchseiten korrigieren, empfehlen wir Ihnen, ein Ticket für Google Translate zu öffnen, um Codeblöcke zu übersetzen, die nicht übersetzt werden sollen, und Ihre Systemsprache auf Englisch festzulegen, wenn Sie sie sprechen.
 Lädt Änderungen neu.
 Mods neu geladen.
-Was ist neu: Baut jetzt sowohl für Chocolatey Gallery als auch für NuGet in der "N" Edition, NullReferenceException beim Lesen alter KS-Konfigurationsdateien durch Upgrade auf ein neues Format behoben
 Willkommen im Kernel!
 Erfolgreich als <Benutzer> angemeldet
 MOTD / MAL ist gültig, aber der Nachrichtentyp ist ungültig. 

@@ -368,7 +368,6 @@ Et ehkä ole asentanut libcpanel-json-xs-perl-järjestelmääsi. Katso asennukse
 Olet asettanut järjestelmän kielen muuhun kuin englanniksi. Pahoittelemme häiriötä, mutta näyttää siltä, että Google ja sen kääntäjä ovat erittäin omituisia kääntämällä minkä tahansa ohjelmointikielen koodilohkoja. Korjaaessamme kaikki käännettyjen manuaalisten sivujen koodilohot, suosittelemme, että avaat lipun Google Translate -sovellukseen kääntämään koodilohkoja, joita ei ole tarkoitettu käännettäväksi, ja aseta järjestelmäkieleksi englanti, jos puhut sitä.
 Lataa muutokset uudelleen.
 Modit ladattu uudelleen.
-Uutta: Nyt rakennetaan sekä Chocolatey Gallerylle että NuGetille "N" -painossa, Kiinteä NullReferenceException, kun luet vanhoja KS-asetustiedostoja päivittämällä ne uuteen muotoon
 Tervetuloa Kerneliin!
 Sisäänkirjautunut onnistuneesti nimellä <käyttäjä>
 MOTD / MAL on kelvollinen, mutta viestin tyyppi ei ole kelvollinen. 

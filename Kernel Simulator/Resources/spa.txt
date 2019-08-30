@@ -368,7 +368,6 @@ Es posible que no tenga libcpanel-json-xs-perl instalado en su sistema. Consulte
 Ha configurado el idioma de su sistema para cualquier cosa que no sea inglés. Disculpe las molestias, pero parece que Google y su traductor son muy extraños al traducir bloques de código para cualquier lenguaje de programación. Si bien arreglamos todos los bloques de código para las páginas del manual traducidas, le sugerimos que abra un ticket al Traductor de Google para traducir los bloques de código que no están destinados a ser traducidos, y establezca el idioma de su sistema en inglés si lo habla.
 Recarga modificaciones.
 Mods recargados.
-Novedades: Ahora se construye para Chocolatey Gallery y NuGet en la edición "N", Se corrigió NullReferenceException al leer archivos de configuración antiguos de KS actualizándolo a un nuevo formato
 ¡Bienvenido a Kernel!
 Se inició sesión correctamente como <usuario>
 MOTD / MAL es válido, pero el tipo de mensaje no es válido. 

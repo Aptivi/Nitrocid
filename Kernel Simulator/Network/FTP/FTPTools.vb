@@ -24,12 +24,20 @@ Module FTPTools
         Else
             Try
                 'Create an FTP stream to connect to
+                Dim FtpHost As String = address.Replace("ftps://", "").Replace(address.Substring(address.LastIndexOf(":")), "")
+                Dim FtpPort As String = address.Replace("ftps://", "").Replace(FtpHost + ":", "")
+                If FtpHost = FtpPort Then
+                    FtpPort = 0
+                End If
                 ClientFTP = New FtpClient With {
-                    .Host = address,
-                    .RetryAttempts = 3
+                    .Host = FtpHost,
+                    .Port = FtpPort,
+                    .RetryAttempts = 3,
+                    .EncryptionMode = FtpEncryptionMode.Explicit
                 }
 
                 'Prompt for username and for password
+                AddHandler ClientFTP.ValidateCertificate, New FtpSslValidation(AddressOf TryToValidate)
                 W(DoTranslation("Username for {0}: ", currentLang), False, "input", address)
                 user = Console.ReadLine()
                 If user = "" Then user = "anonymous"
@@ -49,9 +57,20 @@ Module FTPTools
                 'Set up credentials
                 ClientFTP.Credentials = New NetworkCredential(user, pass)
 
+                'Prepare profiles
+                Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect
+                Dim profsel As FtpProfile
+                If profiles.Count > 1 Then 'More than one profile
+                    W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine, True, "neutralText")
+                    For i As Integer = 1 To profiles.Count - 1
+                        W($"{i}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection.ToString}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption.ToString}, {profiles(i).Protocols.ToString}", True, "neutralText")
+                    Next
+                Else
+                    profsel = profiles(0) 'Select first profile
+                End If
+
                 'Connect
-                Dim Uri As New Uri(address)
-                ClientFTP = FtpClient.Connect(Uri)
+                ClientFTP.Connect(profsel)
 
                 'Show that it's connected
                 W(DoTranslation("Connected to {0}", currentLang), True, "neutralText", address)
@@ -62,7 +81,7 @@ Module FTPTools
                 ftpsite = ClientFTP.Host
             Catch ex As Exception
                 Wdbg("Error connecting to {0}: {1}", address, ex.Message)
-                Wdbg("{0}", ex.StackTrace)
+                WStkTrc(ex)
                 If DebugMode = True Then
                     W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang) + vbNewLine +
                       DoTranslation("Stack Trace: {2}", currentLang), True, "neutralText", address, ex.Message, ex.StackTrace)
@@ -73,31 +92,14 @@ Module FTPTools
         End If
     End Sub
 
-    Public Sub ListLocal(ByVal dir As String)
-
-        For Each dirfile In IO.Directory.GetDirectories(dir)
-            Try
-                W("- .{0}: ", False, "helpCmd", dirfile.Replace(dir, "")) : W(DoTranslation("{0} folders, {1} files", currentLang), True, "helpDef", IO.Directory.GetDirectories(dirfile).Count, IO.Directory.GetFiles(dirfile).Count)
-            Catch exc As UnauthorizedAccessException
-                W(DoTranslation("(Access Denied)", currentLang), True, "helpDef")
-                Continue For
-            End Try
-        Next
-        For Each file In IO.Directory.GetFiles(dir)
-            Dim fileinfo As New IO.FileInfo(file)
-            Dim size As Double = fileinfo.Length / 1024
-            Try
-                W("- .{0}: ", False, "helpCmd", file.Replace(dir, "")) : W(DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, "helpDef", FormatNumber(size, 2),
-                                                                           IO.File.GetCreationTime(file).ToShortDateString,
-                                                                           IO.File.GetCreationTime(file).ToShortTimeString,
-                                                                           IO.File.GetLastWriteTime(file).ToShortDateString,
-                                                                           IO.File.GetLastWriteTime(file).ToShortTimeString)
-            Catch exc As UnauthorizedAccessException
-                W(DoTranslation("(Access Denied)", currentLang), True, "helpDef")
-                Continue For
-            End Try
-        Next
-
+    Public Sub TryToValidate(control As FtpClient, e As FtpSslValidationEventArgs)
+        Wdbg("Certificate checks")
+        If e.PolicyErrors = Net.Security.SslPolicyErrors.None Then
+            Wdbg("Certificate accepted.")
+            Wdbg(e.Certificate.GetRawCertDataString)
+            e.Accept = True
+        End If
+        Wdbg($"Certificate error is {e.PolicyErrors.ToString}")
     End Sub
 
 End Module

@@ -368,7 +368,6 @@ Možda na vašem sustavu nije instaliran libcpanel-json-xs-perl. Za instalaciju 
 Jezik sustava postavili ste na bilo šta drugo osim na engleski. Oprosti zbog neugodnosti, ali čini se da su Google i njegov prevoditelj vrlo čudni u prevođenju blokova kodova s ​​bilo kojeg programskog jezika. Dok popravljamo sve blokove kodova za prevedene stranice s priručnicima, predlažemo vam da otvorite kartu u Google prevoditelju za prevođenje blokova kodova koji nisu namijenjeni prevođenju, a jezik vašeg sustava postavite na engleski ako ga govorite.
 Modovi su ponovno učitani.
 Modovi su se uspješno učitali.
-Što je novo: Sada gradi i za Chocolatey Gallery i za NuGet u "N" izdanju, Fiksna NullReferenceException prilikom čitanja starih KS konfiguracijskih datoteka nadogradnjom na novi format
 Dobrodošli u Kernel!
 Uspješno ste prijavljeni kao <user>
 MOTD / MAL je valjana, ali vrsta poruke nije valjana. 

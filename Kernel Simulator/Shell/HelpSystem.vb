@@ -62,7 +62,6 @@ Public Module HelpSystem
                                                               {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
                                                               {"showaliases", DoTranslation("Shows aliases", currentLang)},
                                                               {"showmal", DoTranslation("Shows MOTD after login set by user or kernel", currentLang)},
-                                                              {"showmotd", DoTranslation("Shows message of the day set by user or kernel", currentLang)},
                                                               {"showtd", DoTranslation("Shows date and time", currentLang)},
                                                               {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
                                                               {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
@@ -261,10 +260,6 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " showaliases: " + DoTranslation("Shows aliases", currentLang), True, "neutralText")
 
-        ElseIf command = "showmotd" Then
-
-            W(DoTranslation("Usage:", currentLang) + " showmotd: " + DoTranslation("Shows your current Message Of The Day.", currentLang), True, "neutralText")
-
         ElseIf command = "showtd" Then
 
             W(DoTranslation("Usage:", currentLang) + " showtd: " + DoTranslation("Shows the date and time.", currentLang), True, "neutralText")
@@ -293,7 +288,7 @@ Public Module HelpSystem
 
         ElseIf command = "usermanual" Then
 
-            W(DoTranslation("Usage:", currentLang) + " usermanual <sectionWord>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " usermanual", True, "neutralText")
 
         End If
 

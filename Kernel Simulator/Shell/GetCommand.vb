@@ -276,53 +276,9 @@ Public Module GetCommand
                     List(CurrDir)
                     Done = True
                 Else
-                    If args.Count - 1 = 0 Then
-                        List(strArgs)
-                        Done = True
-                    End If
+                    List(strArgs)
+                    Done = True
                 End If
-
-            ElseIf requestedCommand = "lscomp" Then
-
-                If EnvironmentOSType.Contains("Unix") Then
-                    W(DoTranslation("Listing PCs is not supported yet on Unix.", currentLang), True, "neutralText")
-                Else
-                    Try
-                        GetNetworkComputers()
-                        ListOnlineAndOfflineHosts()
-                    Catch ex As NullReferenceException
-                        W(DoTranslation("Couldn't get computers. If you are running the latest version of Windows 10, you need to enable SMBv1. This protocol is however insecure and we will try to solve this problem.", currentLang), True, "neutralText")
-                    End Try
-                End If
-                Done = True
-
-            ElseIf requestedCommand = "lsnet" Then
-
-                If EnvironmentOSType.Contains("Unix") Then
-                    W(DoTranslation("Listing PCs is not supported yet on Unix.", currentLang), True, "neutralText")
-                Else
-                    Try
-                        GetNetworkComputers()
-                        ListHostsInNetwork()
-                    Catch ex As NullReferenceException
-                        W(DoTranslation("Couldn't get computers. If you are running the latest version of Windows 10, you need to enable SMBv1. This protocol is however insecure and we will try to solve this problem.", currentLang), True, "neutralText")
-                    End Try
-                End If
-                Done = True
-
-            ElseIf requestedCommand = "lsnettree" Then
-
-                If EnvironmentOSType.Contains("Unix") Then
-                    W(DoTranslation("Listing PCs is not supported yet on Unix.", currentLang), True, "neutralText")
-                Else
-                    Try
-                        GetNetworkComputers()
-                        ListHostsInTree()
-                    Catch ex As NullReferenceException
-                        W(DoTranslation("Couldn't get computers. If you are running the latest version of Windows 10, you need to enable SMBv1. This protocol is however insecure and we will try to solve this problem.", currentLang), True, "neutralText")
-                    End Try
-                End If
-                Done = True
 
             ElseIf requestedCommand = "logout" Then
 
@@ -355,18 +311,6 @@ Public Module GetCommand
                 If requestedCommand <> "perm" Then
                     If args.Count - 1 = 2 Then
                         Permission(args(1), args(0), args(2))
-                        Done = True
-                    End If
-                End If
-
-            ElseIf words(0) = "ping" Then
-
-                If requestedCommand <> "ping" Then
-                    If args.Count - 1 = 0 Then
-                        PingTarget(args(0), 1)
-                        Done = True
-                    ElseIf args.Count - 1 = 1 Then
-                        PingTarget(args(0), args(1))
                         Done = True
                     End If
                 End If
@@ -643,23 +587,7 @@ Public Module GetCommand
             ElseIf words(0) = "usermanual" Then
 
                 Done = True
-                W(DoTranslation("Documentations inside KS will be deprecated and will be moved to Wiki in 0.0.7", currentLang), True, "neutralText")
-                Console.ReadKey(True)
-                If requestedCommand <> "usermanual" Then
-                    'Uncomment if there is a new language version for the below manpages and the codeblock fixes are not done. Replace "NewLang" with a three letter language code.
-                    'If currentLang = "NewLang" And (strArgs = "Modding guide" Or strArgs = "Screensaver modding guide") Then
-                    '    ' Google is weird about translating code blocks for Visual Basic that THEY SHOULDN'T HAVE DONE TO THESE DOCUMENTATIONS!
-                    '    W(DoTranslation("You have set your system language to anything other than English. Sorry for the inconvenience, but it seems " +
-                    '                    "that Google and its translator are very weird about translating code blocks for any programming language. " +
-                    '                    "While we fix all the code blocks for translated manual pages, we suggest you open a ticket to Google Translate " +
-                    '                    "for translating code blocks that aren't meant to be translated, and set your system language to English if you " +
-                    '                    "speak it.", currentLang), True, "neutralText")
-                    '    Exit Sub
-                    'End If
-                    ViewPage(strArgs)
-                Else
-                    ViewPage("Available manual pages")
-                End If
+                Process.Start("https://github.com/EoflaOE/Kernel-Simulator/wiki")
 
             End If
             If Done = False Then

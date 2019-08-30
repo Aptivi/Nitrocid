@@ -160,8 +160,6 @@ Public Module Config
             If configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
                 Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
                 W(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), True, "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
-                W(DoTranslation("What's new: Now builds for both Chocolatey Gallery and NuGet in ""N"" edition, Fixed NullReferenceException when reading old KS config files by upgrading it to a new format", currentLang), True, "neutralText")
-                Console.ReadKey(True)
                 UpdateConfig()
             End If
         Catch ex As Exception

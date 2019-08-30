@@ -51,9 +51,8 @@ Public Module FTPGetCommand
         'Command code
         Try
             If cmd.Substring(0, index) = "connect" Then
-                'TODO: Support full ftps:// protocol. Not sure of sftp:// protocol.
                 If cmd <> "connect" Then
-                    TryToConnect($"ftp://{strArgs}")
+                    TryToConnect($"ftps://{strArgs}")
                 Else
                     W(DoTranslation("Enter an FTP server.", currentLang), True, "neutralText")
                 End If
@@ -161,15 +160,10 @@ Public Module FTPGetCommand
             ElseIf cmd = "help" Then
                 FTPShowHelp()
             ElseIf cmd.Substring(0, index) = "listlocal" Or cmd.Substring(0, index) = "lsl" Then
-                Dim working As String
-                If cmd <> "listlocal" Or cmd <> "lsl" Then
-                    'List local directory that is not on the current directory
-                    working = $"{currDirect}/{strArgs}"
-                    ListLocal(working)
+                If cmd = "listlocal" Or cmd = "lsl" Then
+                    List(CurrDir)
                 Else
-                    'List current local directory
-                    working = currDirect
-                    ListLocal(working)
+                    List(strArgs)
                 End If
             ElseIf cmd.Substring(0, index) = "listremote" Or cmd.Substring(0, index) = "lsr" Then
                 If cmd <> "listremote" Or cmd <> "lsr" Then

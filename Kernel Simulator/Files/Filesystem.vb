@@ -28,7 +28,7 @@ Public Module Filesystem
         direct = $"{CurrDir}/{dir}"
         If IO.Directory.Exists(direct) Then
             Dim Parser As New IO.DirectoryInfo(direct)
-            CurrDir = Parser.FullName
+            CurrDir = Parser.FullName.Replace("\", "/")
             InitStructure()
         Else
             W(DoTranslation("Directory {0} not found", currentLang), True, "neutralText", dir)
@@ -48,9 +48,12 @@ Public Module Filesystem
     Public Sub InitStructure()
         CurrDirStructure.AddRange(IO.Directory.EnumerateFileSystemEntries(CurrDir, "*", IO.SearchOption.TopDirectoryOnly))
         CurrDirStructure.Add(CurrDir)
+        For i As Integer = 0 To CurrDirStructure.Count - 1
+            CurrDirStructure(i) = CurrDirStructure(i).Replace("\", "/")
+        Next
     End Sub
     Public Sub List(ByVal folder As String)
-        If Not folder = CurrDir Then folder = $"{CurrDir}/{folder}"
+        If Not folder = CurrDir And Not folder = "" Then folder = $"{CurrDir}/{folder}"
         If CurrDirStructure.Contains(folder) Then
             If IO.Directory.Exists(folder) Then
                 For Each Entry As String In IO.Directory.EnumerateFileSystemEntries(folder)

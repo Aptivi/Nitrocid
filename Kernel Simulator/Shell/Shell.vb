@@ -24,10 +24,10 @@ Public Module Shell
     Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
     Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "shutdown", "reboot", "adduser", "chmotd",
-                                            "chhostname", "lscomp", "ping", "lsnet", "lsnettree", "showtd", "chpwd", "sysinfo", "arginj",
-                                            "setcolors", "rmuser", "cls", "perm", "chusrname", "setthemes", "netinfo", "md", "rd", "debuglog",
-                                            "reloadconfig", "showtdzone", "alias", "chmal", "savescreen", "lockscreen", "setsaver", "reloadsaver",
-                                            "noaliases", "ftp", "useddeps", "usermanual", "cdbglog", "sses", "chlang", "reloadmods"}
+                                            "chhostname", "showtd", "chpwd", "sysinfo", "arginj", "setcolors", "rmuser", "cls", "perm", "chusrname",
+                                            "setthemes", "netinfo", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
+                                            "savescreen", "lockscreen", "setsaver", "reloadsaver", "noaliases", "ftp", "useddeps", "usermanual",
+                                            "cdbglog", "sses", "chlang", "reloadmods"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods"}
     Public obsoleteCmds() As String = {}

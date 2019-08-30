@@ -16,6 +16,9 @@
 
 Imports System.Reflection.Assembly
 
+'TODOs:
+'   TODO: Interactive host system file manager (Planned in the bootable version)
+'   TODO: Permanent list of usernames and passwords (passwords in encrypted form - in beta)
 Public Module Kernel
 
     'Variables
@@ -30,11 +33,10 @@ Public Module Kernel
 
     Sub Main()
         'TODO: Re-write the whole kernel in Beta
-        'TODO: Give the kernel name of "Meritorious Kernalism" and the simulator name of "MeritSim" in the final release.
         While True
             Try
                 'A title
-                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}" 'Does MonoDevelop and Mono have the ability to compile interpolated strings?
+                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}" 'Does MonoDevelop have the ability to compile interpolated strings?
                 InitPaths()
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
