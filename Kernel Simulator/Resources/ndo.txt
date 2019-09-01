@@ -1,0 +1,385 @@
+﻿Perintah yang tersedia: {0}
+Tulis perintah:
+Perintah injeksi telah dibatalkan.
+Pisahkan argumen boot dengan koma tanpa spasi, misalnya, 'motd, gpuprobe'
+Pisahkan perintah pada 'cmdinject' dengan titik dua dengan spasi, misalnya, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Perhatikan bahwa argumen 'debug' tidak sepenuhnya mencakup kernel.
+bargs: Argumen yang diminta {0} tidak ditemukan.
+bargs: Kesalahan yang tidak dapat dipulihkan dalam argumen:
+Argumen yang tersedia: {0}
+Argumen ('bantuan' untuk bantuan):
+Argumen yang disuntikkan akan dijadwalkan untuk dijalankan pada reboot berikutnya.
+Injeksi Argumen telah dibatalkan.
+Galat saat mem-parsing argumen baris perintah nyata: {0}
+Templat warna tidak valid {0}
+Default
+Adat
+hwprobe: Perangkat keras Anda akan diperiksa. Tunggu sebentar...
+hwprobe: Perangkat keras sudah diperiksa.
+hwprobe: Perangkat keras tidak diperiksa. Penyelidikan menggunakan 'hwprobe'
+CPU: Satu atau lebih inti CPU gagal diselidiki. Bagaimanapun juga, menampilkan informasi ...
+RAM: Satu atau lebih chip RAM gagal diselidiki. Bagaimanapun juga, menampilkan informasi ...
+HDD: Satu atau lebih hard drive gagal diperiksa. Bagaimanapun juga, menampilkan informasi ...
+CPU: Jumlah total prosesor: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: Slot yang digunakan (dengan nama): {0}
+RAM: Slot yang digunakan (dengan angka): {0} / {1} ({2}%)
+RAM: Status pemeriksaan sudah usang dan akan dihapus di rilis mendatang.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} silinder | {5} kepala | {6} sektor
+HDD: CHS: {3} silinder | {4} kepala | {5} sektor
+hwprobe: Probing tidak didukung karena tidak dirancang untuk menjalankan prober di Unix.
+Masukkan kata sandi admin untuk pemeliharaan.
+Tidak ada lagi pengguna yang tersisa dalam daftar.
+Kesalahan Kernel saat boot: {0}
+PANEN GANDA: Waktu Reboot melebihi maksimum waktu kesalahan booting {0} yang diizinkan. Anda menemukan bug kernel.
+[{0}] panik: Reboot diaktifkan karena tingkat kesalahan adalah {0}.
+[{0}] panik: Waktu untuk reboot: {1} detik, melebihi 1 jam. Ini diatur ke 1 menit.
+PANEN GANDA: Jenis Kesalahan {0} tidak valid.
+[{0}] dpanic: {1} - Reboot dalam {2} detik ...
+[{0}] panik: Reboot dinonaktifkan karena tingkat kesalahan adalah {0}.
+[{0}] panik: {1} - Tekan tombol apa saja untuk terus menggunakan kernel.
+[{0}] panik: {1} - Tekan tombol apa saja untuk mematikan.
+[{0}] panik: {1} - Reboot dalam {2} detik ...
+PANIC GANDA: Kernel bug: {0}
+Mematikan...
+Mulai ulang ...
+---===+++> Selamat datang di kernel | Versi {0} <+++===---
+Contoh lain dari Kernel Simulator sedang berjalan. Mematikan jika terjadi gangguan.
+Pengguna {0} telah ditambahkan ke daftar admin.
+Pengguna {0} telah ditambahkan ke daftar yang dinonaktifkan.
+Gagal menambahkan pengguna ke daftar izin: jenis tidak valid {0}
+Gagal menambahkan pengguna ke daftar izin: pengguna tidak valid {0}
+Pengguna {0} telah dihapus dari daftar admin.
+Pengguna {0} telah dihapus dari daftar yang dinonaktifkan.
+Gagal menghapus pengguna dari daftar izin: jenis tidak valid {0}
+Kamu sudah masuk.
+Gagal menghapus pengguna dari daftar izin: pengguna tidak valid {0}
+Anda telah menemukan bug di sistem izin: mode tidak valid {0}
+Anda telah menemukan bug, atau izin yang Anda coba tambahkan atau hapus sudah dilakukan, atau kesalahan lainnya.
+Kesalahan {0}: {1}
+Anda telah menemukan bug, atau izin yang Anda coba edit untuk pengguna baru telah gagal.
+Nama pengguna yang tersedia: {0}
+Nama pengguna:
+Spasi tidak diizinkan.
+Karakter spesial tidak diperbolehkan.
+{0} kata sandi:
+Kata sandi salah.
+Pengguna dinonaktifkan.
+Nama pengguna salah.
+Kesalahan saat mencoba mengurai placeholder. {0} - Jejak tumpukan:
+Kesalahan saat mencoba mengurai placeholder. {0}
+Kesalahan saat mencoba menambah nama pengguna.
+usrmgr: Membuat nama pengguna {0} ...
+Nama pengguna kosong.
+Pengguna {0} tidak ditemukan.
+Pengguna {0} tidak diizinkan untuk dihapus.
+Pengguna {0} sudah masuk. Keluar dan masuk sebagai admin lain.
+Pengguna {0} dihapus.
+Kesalahan saat mencoba menghapus nama pengguna.
+{0} dari {1} = {2}
+Mencoba untuk membagi dengan nol tidak diperbolehkan.
+Ada dugaan upaya penghitungan yang menghasilkan luapan.
+Ada kesalahan saat menghitung: {0}
+{0} tidak dapat dikonversi ke {1}.
+Entah sumbernya
+ atau tujuan
+ tidak ada di server.
+{0} hingga {1}: {2}
+Kesalahan saat mencoba mengkonversi dari {0} ke {1}: {2}
+Kesalahan
+Screensaver yang diminta {0} tidak ditemukan.
+{0} telah diinisialisasi dengan benar.
+{0} tidak menginisialisasi. Kode screensaver mungkin mengalami kesalahan saat inisialisasi.
+Screensaver {0} tidak ada.
+{0} diatur ke screensaver default.
+Screensaver {0} tidak ditemukan dalam database. Inisialisasi dengan "loadsaver {0}".
+Screensaver tidak dapat dimuat karena hal berikut:
+Ada kesalahan serius saat mencetak teks.
+Ada kesalahan saat mencoba membuat konfigurasi.
+Ada kesalahan saat mencoba membuat konfigurasi: {0}
+Pembaruan dari {0} ke {1} terdeteksi. Memperbarui konfigurasi ...
+Ada kesalahan saat mencoba memperbarui konfigurasi: {0}.
+Ada kesalahan saat mencoba memperbarui konfigurasi.
+Ada kesalahan saat mencoba membaca konfigurasi.
+Ada kesalahan saat mencoba membaca konfigurasi: {0}
+Kesalahan saat mencoba membebaskan RAM: {0} - Melanjutkan ...
+Mod tidak dapat dimuat karena hal berikut:
+mod: Memuat mods ...
+mod: Menghentikan mod ...
+Mod {0} tidak memiliki nama. Tinjau kode sumber.
+Mod {0} tidak memiliki versi.
+{0} v {1} dimulai
+Tidak ada definisi untuk perintah {0}.
+Perintah ditentukan oleh
+Anda harus memutuskan koneksi dari server sebelum menghubungkan ke server lain
+Nama pengguna untuk {0}:
+Kata sandi untuk {0}:
+Terhubung ke {0}
+Kesalahan saat mencoba terhubung ke {0}: {1}
+Stack Trace: {2}
+Masukkan server FTP.
+Direktori lokal {0} tidak ada.
+Masukkan direktori lokal. ".." untuk kembali.
+Direktori {0} tidak ditemukan.
+Masukkan direktori jarak jauh. ".." untuk kembali
+Anda harus terhubung ke server sebelum mengubah direktori
+Direktori lokal: {0}
+Direktori jarak jauh: {0}
+Anda harus terhubung ke server sebelum mendapatkan direktori jarak jauh saat ini.
+Menghapus file {0} ...
+Anda yakin ingin menghapus file {0} <y / n>?
+File yang dihapus {0}
+Anda harus terhubung ke server dengan hak administratif sebelum melakukan penghapusan.
+Masukkan file untuk dihapus.
+Anda harus memiliki izin administratif pada nama pengguna login Anda untuk dapat menghapus.
+Terputus dari {0}
+Anda belum terhubung ke server mana pun
+Mengunduh file {0} ...
+File yang diunduh {0}.
+Unduhan gagal untuk file {0} karena file lokal rusak.
+Anda harus terhubung ke server sebelum melakukan transmisi.
+Masukkan file untuk diunduh ke direktori lokal.
+{0} KB | Dimodifikasi dalam: {1}
+Anda harus terhubung ke server sebelum mendaftar semua file jarak jauh.
+Mengganti nama file {0} menjadi {1} ...
+Berganti nama dengan sukses
+Masukkan file dan nama file baru.
+Mengunggah file {0} ...
+File yang diunggah {0}
+Masukkan file untuk diunggah ke direktori jarak jauh. unggah <file> <direktori>
+Kesalahan saat mencoba menjalankan perintah FTP
+(Batin:
+{0} folder, {1} file
+(Akses ditolak)
+{0} KB, Dibuat dalam {1} {2}, Dimodifikasi dalam {3} {4}
+Mendapat direktori lokal saat ini
+Mendapat direktori jarak jauh saat ini
+Terhubung ke server FTP (harus dimulai dengan "ftp: //" atau "ftps: //")
+Mengubah direktori lokal untuk diunduh atau diunggah dari
+Mengubah direktori jarak jauh untuk mengunduh dari atau mengunggah ke
+Menghapus file jarak jauh dari server
+Terputus dari server
+Mengunduh file jarak jauh ke direktori lokal menggunakan biner atau teks
+Keluar dari shell FTP dan kembali ke kernel
+Menampilkan layar bantuan
+Daftar direktori lokal
+Daftar direktori jarak jauh
+Mengganti nama file atau direktori tertentu
+Unggah file lokal ke direktori jarak jauh menggunakan biner atau teks
+Ada kesalahan dalam shell FTP.
+Pesan FTP: Perintah yang diminta {0} tidak ditemukan. Lihat 'bantuan' untuk daftar perintah yang tersedia yang ditentukan pada shell FTP.
+bersih: Mendapat respons dari {0} dalam {1} ms
+Batas waktu, terputus, atau server offline.
+net: Nama komputer Anda di jaringan adalah {0}
+net: Nama host Anda adalah {1}
+net: Tampaknya komputer ada di domain atau workgroup:
+net: WiFi atau Ethernet terputus.
+net: Tampaknya komputer terhubung di bawah:
+net: Alamat Router: {0}
+Gagal mendapatkan properti untuk adaptor {0}
+Nomor Adaptor:
+Nama Adaptor:
+Unit Transmisi Maksimum: {2} Unit
+DHCP Diaktifkan:
+Paket non-unicast:
+Paket Unicast:
+Paket error masuk / keluar:
+Alias ​​tidak boleh dengan nama yang sama dengan perintah.
+Perintah tidak ditemukan alias ke {0}.
+Mengasingkan {0} ke {1} dilarang sepenuhnya.
+Anda sekarang dapat menjalankan "{0}" sebagai perintah: "{1}".
+Anda tidak dapat lagi menggunakan "{0}" sebagai perintah "{1}".
+Alias ​​{0} tidak ditemukan untuk dihapus.
+Mode tidak valid {0}.
+Argumen yang disuntikkan, {0}, akan dijadwalkan untuk dijalankan pada reboot berikutnya.
+Tidak ada cukup argumen. Lihat di bawah untuk penggunaan:
+Direktori {0} tidak ditemukan
+Nama host kosong.
+Mengubah dari: {0} ke {1} ...
+Pesan kosong hari ini.
+Blank MAL Setelah Masuk.
+Mengubah MAL dari {0} ke {1} ...
+Kata sandi pengguna salah.
+Kata sandi tidak cocok.
+Nama pengguna telah diubah menjadi {0}!
+Nama baru yang Anda masukkan sudah ditemukan.
+Listing PC belum didukung di Unix.
+Alias ​​yang dilarang: {0}
+{0} tidak ditemukan.
+Konfigurasi dimuat ulang. Anda mungkin perlu mem-boot ulang kernel agar beberapa perubahan diterapkan.
+Semuanya diatur ulang ke pengaturan normal.
+Satu atau lebih warna tidak valid.
+Warna tidak tersedia. Hidupkan cangkang berwarna di konfigurasi kernel.
+Screensaver {0} tidak ditemukan.
+{0} [Pengaturan kernel (Berjalan pada {1})]
+Versi Kernel:
+Mode Debug:
+Shell berwarna:
+Argumen tentang Boot:
+Perintah bantuan disederhanakan:
+MOTD saat Masuk:
+Waktu / Tanggal di sudut:
+Perangkat keras diperiksa:
+Tema saat ini:
+[Pengaturan perangkat keras] {0}
+{0} [Pengaturan pengguna]
+Nama pengguna saat ini:
+Nama host saat ini:
+Nama pengguna yang tersedia:
+Nama host komputer:
+{0} [Pengaturan Pesan]
+Kode sumber:
+Hak cipta (c)
+Lisensi
+menyajikan
+Kesalahan saat mencoba menjalankan perintah
+Menambahkan pengguna (Hanya admin yang dapat mengakses perintah ini)
+Menambahkan alias ke perintah (Hanya admin yang dapat mengakses perintah ini)
+Menyuntikkan argumen ke kernel (diperlukan reboot, khusus admin)
+Kalkulator sederhana
+Ubah direktori
+Mengubah nama host (khusus Admin)
+Mengubah MAL, MOTD Setelah Masuk (Khusus Admin)
+Mengubah MOTD, Pesan Hari Ini (khusus Admin)
+Mengubah kata sandi untuk pengguna saat ini
+Mengubah nama pengguna (Khusus Admin)
+Membersihkan layar
+Konversi mata uang
+Memperlihatkan log debug (Hanya Admin)
+Gunakan shell FTP untuk berinteraksi dengan server
+Halaman bantuan
+Probe hardware secara manual (Satu kali dalam kernel 'nohwprobe')
+Daftar isi file / folder di folder saat ini
+Muat ulang file screensaver di% USERPROFILE% \ KSMods
+Mengunci layar Anda dengan kata sandi
+Keluar Anda
+Daftar semua perangkat jaringan yang sedang online (dan offline dalam domain)
+Daftar semua alamat jaringan pada host
+Daftar semua alamat jaringan pada host menggunakan pohon
+Membuat direktori
+Daftar informasi tentang semua antarmuka yang tersedia
+Menampilkan daftar alias terlarang
+Kelola izin untuk pengguna (Hanya admin yang dapat mengakses perintah ini)
+Periksa untuk melihat apakah alamat yang ditentukan tersedia
+Menulis konten file ke konsol
+Nyalakan kembali komputer Anda (PERINGATAN: Tidak ada sinkronisasi, karena ini bukan kernel final)
+Muat ulang file konfigurasi yang diedit.
+Menghapus direktori
+Menghapus pengguna dari daftar (Hanya Admin)
+Menghemat layar Anda dari burn out
+Kalkulator ilmiah. Konverter unit dipisahkan ke perintah lain
+Mengatur warna kernel
+Mengatur screensaver kernel
+Menyiapkan tema kernel
+Menunjukkan alias
+Menunjukkan MOTD setelah login ditetapkan oleh pengguna atau kernel
+Memperlihatkan pesan hari yang ditetapkan oleh pengguna atau kernel
+Menunjukkan tanggal dan waktu
+Menampilkan tanggal dan waktu dalam zona
+Kernel akan dimatikan
+Sistem Informasi
+Unit converter yang terpisah dari scicalc.
+Menunjukkan dependensi open source yang digunakan
+Manual pengguna yang sangat deskriptif.
+* Anda dapat menggunakan banyak perintah menggunakan titik dua di antara perintah.
+Perintah yang tersedia:
+Perintah mod:
+Alias ​​ke perintah:
+Pemakaian:
+Argumen dipisahkan oleh koma
+di mana argumen akan menjadi {0}
+untuk mendapatkan direktori saat ini
+Di mana sumber dan tujuan adalah 3 karakter UPPERCASE dari nilai tukar
+Daftar semua ID dan nama:
+Menunjukkan Anda men-debug log sehingga Anda dapat mengirim log kepada kami.
+Menginisialisasi shell FTP.
+Probe hardware (Hanya bekerja ketika perangkat keras tidak diperiksa dan hwprobe tidak dieksekusi).
+Daftar informasi jaringan, serta setiap komputer yang terhubung ke jaringan.
+Teman dari
+Daftar informasi jaringan, serta setiap komputer yang terhubung ke jaringan, dalam bentuk pohon.
+Daftar informasi jaringan, serta setiap komputer.
+di mana modnameSS.m akan
+Mengunci layar Anda dengan kata sandi.
+Keluar Anda dari pengguna.
+Dapatkan setiap informasi jaringan
+Mulai ulang komputer Anda yang disimulasikan.
+Memuat ulang konfigurasi yang diubah oleh pengguna akhir atau oleh alat.
+Warna tidak memerlukan restart, tetapi sebagian besar pengaturan mengharuskan Anda untuk memulai kembali.
+menampilkan screensaver yang dipilih, sekaligus melindungi layar Anda dari burn out.
+Menunjukkan tanggal dan waktu.
+Menunjukkan tanggal dan waktu dalam zona.
+Matikan komputer Anda yang disimulasikan.
+Memperlihatkan informasi dan versi sistem.
+Memperlihatkan pustaka sumber terbuka yang digunakan
+Ada kesalahan di shell.
+Anda tidak memiliki izin untuk menggunakan {0}
+Pesan shell: Perintah yang diminta {0} tidak diizinkan dijalankan dalam mode pemeliharaan.
+Pesan shell: Perintah yang diminta {0} tidak ditemukan. Lihat 'bantuan' untuk perintah yang tersedia.
+Pesan shell: Perintah {0} tidak diizinkan berjalan saat masuk.
+Pesan shell: Perintah yang diminta {0} tidak ditemukan.
+Kesalahan saat mencoba menjalankan perintah.
+datetime: Waktu adalah {0}
+datetime: Hari ini adalah {0}
+datetime: Zona Waktu: {0}
+- Waktu {0}: {1}
+untuk menghapus layar.
+Tampaknya halaman buku panduan {0} tidak ditemukan.
+Ada kesalahan ketika mencoba memuat halaman manual {0} karena {1}.
+Halaman manual ini tidak lengkap karena alasan berikut:
+Tekan tombol apa saja untuk melanjutkan...
+ | {0} kata | Revisi v {1} | {2} bagian
+Judul halaman buku panduan ini tidak ditulis
+Halaman manual ini ({0}) tidak mengandung teks isi. Menghapus halaman ...
+Halaman manual ini ({0}) tidak mengandung bagian apa pun. Menghapus halaman ...
+Berjalan pada {0}
+Anda tidak berwenang untuk mendapatkan info untuk {0}.
+Perintah ini sudah usang dan akan dihapus di rilis mendatang.
+Anda tidak berwenang mengubah kata sandi {0} karena targetnya adalah admin.
+Konversi jumlah uang dari satu negara ke negara lain
+Mata uang:
+usrmgr: Nama pengguna {0} sudah ditemukan
+Masukkan kunci API Anda:
+Tidak bisa mendapatkan komputer. Jika Anda menjalankan versi terbaru Windows 10, Anda harus mengaktifkan SMBv1. Namun protokol ini tidak aman dan kami akan mencoba menyelesaikan masalah ini.
+Menghapus semua yang ada di log debug
+Mendapat versi SSE
+Bahasa tidak valid
+Mengubah bahasa
+Anda mungkin tidak menginstal libcpanel-json-xs-perl pada sistem Anda. Lihat manajer paket Anda untuk instalasi. Untuk sistem Debian (dan turunannya), Anda mungkin ingin menjalankan "sudo apt install libcpanel-json-xs-perl" di terminal emulator. Lebih detail dari kesalahan:
+----------------------------- Kernel panic dump ------------------ -----------
+>> Informasi panik <<
+> Keterangan: {0}
+> Jenis kesalahan: {1}
+> Tanggal dan Waktu: {2}
+>> Informasi pengecualian <<
+> Pengecualian: {0}
+> Keterangan: {1}
+> HRESULT: {2}
+> Sumber: {3}
+> Jejak tumpukan <
+>> Pengecualian dalam {0} informasi <<
+>> Pengecualian {0} adalah akar penyebab <<
+>> Tidak terkecuali; mungkin kesalahan kernel. <<
+>> Bingkai, file, garis, dan kolom <<
+> Bingkai {0}: File: {1} | Baris: {2} | Kolom: {3}
+> Ada kesalahan ketika mencoba untuk mendapatkan informasi bingkai. {0}: {1}
+Anda telah mengatur bahasa sistem Anda selain bahasa Inggris. Maaf atas ketidaknyamanan ini, tetapi tampaknya Google dan penerjemahnya sangat aneh menerjemahkan blok kode untuk bahasa pemrograman apa pun. Sementara kami memperbaiki semua blok kode untuk halaman manual yang diterjemahkan, kami sarankan Anda membuka tiket ke Google Translate untuk menerjemahkan blok kode yang tidak dimaksudkan untuk diterjemahkan, dan mengatur bahasa sistem Anda ke Bahasa Inggris jika Anda berbicara.
+Muat ulang mod.
+Mod dimuat ulang.
+Selamat datang di Kernel!
+Berhasil masuk sebagai <user>
+MOTD / MAL valid, tetapi jenis pesannya tidak valid. Dengan asumsi MOTD ...
+Mencoba membaca MOTD / MAL yang merupakan jenis pesan yang tidak valid.
+Sambil menjaga koneksi stabil, ia mengunduh {0} ke {1} ...
+Pengunduhan telah selesai.
+Gagal mengunduh dalam percobaan {0}: {1}
+Silakan gunakan "ftp" jika Anda akan mengunduh file dari server FTP.
+Unduh file ke direktori kerja saat ini
+Putuskan sambungan perangkat debug
+Daftar perangkat debug yang terhubung
+Perangkat debug {0} tidak ditemukan.
+Perangkat {0} terputus.
+Kesalahan dalam koneksi: {0}
+Debug mendengarkan semua alamat menggunakan port {0}.

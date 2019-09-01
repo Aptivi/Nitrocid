@@ -22,7 +22,21 @@ Imports System.IO
 'This module is very important to reduce line numbers when there is color.
 Public Module TextWriterColor
 
-    Public dbgWriter As StreamWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
+    Public dbgWriter As New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
+    Public dbgConns As New List(Of StreamWriter)
+
+    Public Enum ColTypes As Integer
+        Neutral = 1
+        Input = 2
+        Continuable = 3
+        Uncontinuable = 4
+        HostName = 5
+        UserName = 6
+        License = 7
+        Gray = 8
+        HelpDef = 9
+        HelpCmd = 10
+    End Enum
 
     ''' <summary>
     ''' Outputs the text into the debugger file, and sets the time stamp.
@@ -35,15 +49,42 @@ Public Module TextWriterColor
             Dim STrace As New StackTrace(True)
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
             Dim LineNum As String = STrace.GetFrame(1).GetFileLineNumber
+            Dim OffendingIndex As New List(Of Integer)
 
             'For contributors who are testing new code: Uncomment the two Debug.WriteLine lines for immediate debugging (Immediate Window)
             If Not Source Is Nothing And Not LineNum = 0 Then
+                'Debug to file and all connected debug devices (raw mode)
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
+                For Each dbgConn As StreamWriter In dbgConns
+                    Try
+                        dbgConn.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
+                    Catch ex As Exception
+                        OffendingIndex.Add(GetSWIndex(dbgConn))
+                    End Try
+                Next
                 'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
             Else 'Rare case, unless debug symbol is not found on archives.
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
+                For Each dbgConn As StreamWriter In dbgConns
+                    Try
+                        dbgConn.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
+                    Catch ex As Exception
+                        OffendingIndex.Add(GetSWIndex(dbgConn))
+                    End Try
+                Next
                 'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
             End If
+
+            'Disconnect offending clients who are disconnected
+            For Each i As Integer In OffendingIndex
+                If i <> -1 Then
+                    DebugDevices(i).Disconnect(True)
+                    dbgConns.RemoveAt(i)
+                    Wdbg("Debug device {0} disconnected.", DebugDevices(i).RemoteEndPoint.ToString.Remove(DebugDevices(i).RemoteEndPoint.ToString.IndexOf(":")))
+                    DebugDevices.RemoveAt(i)
+                End If
+            Next
+            OffendingIndex.Clear()
         End If
     End Sub
 
@@ -59,30 +100,29 @@ Public Module TextWriterColor
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="colorType">A type of colors that will be changed. Any of neutralText, input, contError, uncontError, hostName, userName, def, helpCmd, helpDef, or license.</param>
+    ''' <param name="colorType">A type of colors that will be changed.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     ''' <remarks>This is used to reduce number of lines containing "System.Console.ForegroundColor = " and "System.Console.ResetColor()" text.</remarks>
-    ''' <!--TODO: Convert colorType to Enumerator-->
-    Public Sub W(ByVal text As Object, ByVal Line As Boolean, ByVal colorType As String, ByVal ParamArray vars() As Object)
+    Public Sub W(ByVal text As Object, ByVal Line As Boolean, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
 
         Try
-            If colorType = "neutralText" Or colorType = "input" Then
+            If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
                 ForegroundColor = neutralTextColor
-            ElseIf colorType = "contError" Then
+            ElseIf colorType = ColTypes.Continuable Then
                 ForegroundColor = contKernelErrorColor
-            ElseIf colorType = "uncontError" Then
+            ElseIf colorType = ColTypes.Uncontinuable Then
                 ForegroundColor = uncontKernelErrorColor
-            ElseIf colorType = "hostName" Then
+            ElseIf colorType = ColTypes.HostName Then
                 ForegroundColor = hostNameShellColor
-            ElseIf colorType = "userName" Then
+            ElseIf colorType = ColTypes.UserName Then
                 ForegroundColor = userNameShellColor
-            ElseIf colorType = "license" Then
+            ElseIf colorType = ColTypes.License Then
                 ForegroundColor = licenseColor
-            ElseIf colorType = "def" Then
+            ElseIf colorType = ColTypes.Gray Then
                 ForegroundColor = ConsoleColor.Gray
-            ElseIf colorType = "helpDef" Then
+            ElseIf colorType = ColTypes.HelpDef Then
                 ForegroundColor = cmdDefColor
-            ElseIf colorType = "helpCmd" Then
+            ElseIf colorType = ColTypes.HelpCmd Then
                 ForegroundColor = cmdListColor
             Else
                 Exit Sub
@@ -95,7 +135,7 @@ Public Module TextWriterColor
 
             If Line Then WriteLine(text) Else Write(text)
             If Console.BackgroundColor = ConsoleColor.Black Then ResetColor()
-            If colorType = "input" And ColoredShell = True Then ForegroundColor = inputColor
+            If colorType = ColTypes.Input And ColoredShell = True Then ForegroundColor = inputColor
         Catch ex As Exception
             KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
         End Try

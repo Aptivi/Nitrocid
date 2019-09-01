@@ -161,7 +161,7 @@ Public Module Screensaver
             Custom.CancelAsync()
             Thread.Sleep(150)
         Else
-            W(DoTranslation("The requested screensaver {0} is not found.", currentLang), True, "neutralText", saver)
+            W(DoTranslation("The requested screensaver {0} is not found.", currentLang), True, ColTypes.Neutral, saver)
         End If
         EventManager.RaisePostShowScreensaver()
         InSaver = False
@@ -181,7 +181,7 @@ Public Module Screensaver
                             finalSaver.InitSaver()
                             If finalSaver.Initialized = True Then
                                 If Not ScrnSvrdb.ContainsKey(modFile) Then
-                                    W(DoTranslation("{0} has been initialized properly.", currentLang), True, "neutralText", modFile)
+                                    W(DoTranslation("{0} has been initialized properly.", currentLang), True, ColTypes.Neutral, modFile)
                                     ScrnSvrdb.Add(modFile, False)
                                 Else
                                     ScrnSvrdb.Remove(modFile)
@@ -189,14 +189,14 @@ Public Module Screensaver
                                     Exit Sub
                                 End If
                             Else
-                                W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, "neutralText", modFile)
+                                W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, ColTypes.Neutral, modFile)
                             End If
                         End If
                     End If
                 End If
             Next
         Else
-            W(DoTranslation("Screensaver {0} does not exist.", currentLang), True, "neutralText", file)
+            W(DoTranslation("Screensaver {0} does not exist.", currentLang), True, ColTypes.Neutral, file)
         End If
     End Sub
 
@@ -210,9 +210,9 @@ Public Module Screensaver
             ScrnSvrdb(defSaverName) = False
             defSaverName = saver
             ScrnSvrdb(saver) = setDef
-            W(DoTranslation("{0} is set to default screensaver.", currentLang), True, "neutralText", saver)
+            W(DoTranslation("{0} is set to default screensaver.", currentLang), True, ColTypes.Neutral, saver)
         Else
-            W(DoTranslation("Screensaver {0} not found in database. Initialize with ""loadsaver {0}"".", currentLang), True, "neutralText", saver)
+            W(DoTranslation("Screensaver {0} not found in database. Initialize with ""loadsaver {0}"".", currentLang), True, ColTypes.Neutral, saver)
         End If
     End Sub
 
@@ -234,9 +234,9 @@ Public Module Screensaver
             Dim modCode() As String = New String() {"Imports " & namespc & vbNewLine & code}
             execCustomSaver = provider.CompileAssemblyFromSource(prm, modCode)
             If execCustomSaver.Errors.HasErrors And (Quiet = False) Then
-                W(DoTranslation("Screensaver can't be loaded because of the following: ", currentLang), True, "neutralText")
+                W(DoTranslation("Screensaver can't be loaded because of the following: ", currentLang), True, ColTypes.Neutral)
                 For Each errorName In execCustomSaver.Errors
-                    W(errorName.ToString, True, "neutralText") : Wdbg(errorName.ToString, True)
+                    W(errorName.ToString, True, ColTypes.Neutral) : Wdbg(errorName.ToString, True)
                 Next
                 Exit Function
             Else

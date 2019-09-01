@@ -37,7 +37,7 @@ Public Module Login
             'Fire event PreLogin
             EventManager.RaisePreLogin()
 
-            'Extremely rare situation except if modded: Check to see if there are any users
+            'Extremely rare under normal conditions except if modded: Check to see if there are any users
             If userword.Count = 0 Then 'Check if user amount is zero
                 Throw New EventsAndExceptions.NullUsersException(DoTranslation("There is no more users remaining in the list.", currentLang))
             End If
@@ -48,31 +48,31 @@ Public Module Login
             End If
 
             'Generate user list
-            W(DoTranslation("Available usernames: {0}", currentLang), True, "neutralText", String.Join(", ", userword.Keys))
+            W(DoTranslation("Available usernames: {0}", currentLang), True, ColTypes.Neutral, String.Join(", ", userword.Keys))
 
             'Login process
             ReadMOTDFromFile(MessageType.MOTD)
             ReadMOTDFromFile(MessageType.MAL)
             If showMOTDOnceFlag = True And showMOTD = True Then
-                W(vbNewLine + ProbePlaces(MOTDMessage), False, "input")
+                W(vbNewLine + ProbePlaces(MOTDMessage), False, ColTypes.Input)
             End If
-            W(vbNewLine + DoTranslation("Username: ", currentLang), False, "input")
+            W(vbNewLine + DoTranslation("Username: ", currentLang), False, ColTypes.Input)
             showMOTDOnceFlag = False
             answeruser = Console.ReadLine()
 
             'Parse input
             If InStr(answeruser, " ") > 0 Then
-                W(DoTranslation("Spaces are not allowed.", currentLang), True, "neutralText")
+                W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
             ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-                W(DoTranslation("Special characters are not allowed.", currentLang), True, "neutralText")
+                W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Neutral)
             ElseIf userword.ContainsKey(answeruser) Then
                 If disabledList(answeruser) = False Then
                     ShowPasswordPrompt(answeruser)
                 Else
-                    W(DoTranslation("User is disabled.", currentLang), True, "neutralText")
+                    W(DoTranslation("User is disabled.", currentLang), True, ColTypes.Neutral)
                 End If
             Else
-                W(DoTranslation("Wrong username.", currentLang), True, "neutralText")
+                W(DoTranslation("Wrong username.", currentLang), True, ColTypes.Neutral)
             End If
         End While
     End Sub
@@ -98,7 +98,7 @@ Public Module Login
             'Check if there's the password
             If Not password = Nothing Then
                 'Wait for input
-                W(DoTranslation("{0}'s password: ", currentLang), False, "input", usernamerequested)
+                W(DoTranslation("{0}'s password: ", currentLang), False, ColTypes.Input, usernamerequested)
 
                 'Get input
                 While True
@@ -113,7 +113,7 @@ Public Module Login
 
                 'Parse password input
                 If InStr(answerpass, " ") > 0 Then
-                    W(DoTranslation("Spaces are not allowed.", currentLang), True, "neutralText")
+                    W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
                     If Not maintenance Then
                         If Not LockMode Then
                             Exit Sub
@@ -125,7 +125,7 @@ Public Module Login
                         SignIn(usernamerequested)
                         Exit Sub
                     Else
-                        W(DoTranslation("Wrong password.", currentLang), True, "neutralText")
+                        W(DoTranslation("Wrong password.", currentLang), True, ColTypes.Neutral)
                         If Not maintenance Then
                             If Not LockMode Then
                                 Exit Sub
@@ -165,7 +165,7 @@ Public Module Login
         signedinusrnm = signedInUser
         If LockMode = True Then LockMode = False
         showMOTDOnceFlag = True
-        W(ProbePlaces(MAL), True, "neutralText")
+        W(ProbePlaces(MAL), True, ColTypes.Neutral)
 
         'Fire event PostLogin
         EventManager.RaisePostLogin()

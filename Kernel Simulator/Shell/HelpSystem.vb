@@ -36,19 +36,18 @@ Public Module HelpSystem
                                                               {"chusrname", DoTranslation("Changes user name (Admins Only)", currentLang)},
                                                               {"cls", DoTranslation("Clears the screen", currentLang)},
                                                               {"debuglog", DoTranslation("Shows debug logs (Admins Only)", currentLang)},
+                                                              {"disconndbgdev", DoTranslation("Disconnect a debug device", currentLang)},
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
+                                                              {"get", DoTranslation("Downloads a file to current working directory", currentLang)},
                                                               {"help", DoTranslation("Help page", currentLang)},
                                                               {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
                                                               {"lockscreen", DoTranslation("Locks your screen with a password", currentLang)},
                                                               {"logout", DoTranslation("Logs you out", currentLang)},
-                                                              {"lscomp", DoTranslation("Lists all network devices who is online (and offline in domains)", currentLang)},
-                                                              {"lsnet", DoTranslation("Lists all network addresses on host", currentLang)},
-                                                              {"lsnettree", DoTranslation("Lists all network addresses on host using the tree", currentLang)},
+                                                              {"lsdbgdev", DoTranslation("Lists debugging devices connected", currentLang)},
                                                               {"md", DoTranslation("Creates a directory", currentLang)},
                                                               {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
                                                               {"noaliases", DoTranslation("Shows forbidden list of aliases", currentLang)},
                                                               {"perm", DoTranslation("Manage permissions for users (Only admins can access this command)", currentLang)},
-                                                              {"ping", DoTranslation("Check to see if specified address is available", currentLang)},
                                                               {"read", DoTranslation("Writes file contents to the console", currentLang)},
                                                               {"reboot", DoTranslation("Restarts your computer (WARNING: No syncing, because it is not a final kernel)", currentLang)},
                                                               {"reloadconfig", DoTranslation("Reloads configuration file that is edited.", currentLang)},
@@ -67,7 +66,6 @@ Public Module HelpSystem
                                                               {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
                                                               {"sses", DoTranslation("Gets SSE versions", currentLang)},
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
-                                                              {"useddeps", DoTranslation("Shows used open source dependencies", currentLang)},
                                                               {"usermanual", DoTranslation("A very descriptive user manual.", currentLang)}}
     End Sub
 
@@ -78,217 +76,206 @@ Public Module HelpSystem
 
             If simHelp = False Then
                 For Each cmd As String In definitions.Keys
-                    W("- {0}: ", False, "helpCmd", cmd) : W("{0}", True, "helpDef", definitions(cmd))
+                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, definitions(cmd))
                 Next
                 For Each cmd As String In moddefs.Keys
-                    W("- {0}: ", False, "helpCmd", cmd) : W("{0}", True, "helpDef", moddefs(cmd))
+                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, moddefs(cmd))
                 Next
                 For Each cmd As String In aliases.Keys
-                    W("- {0}: ", False, "helpCmd", cmd) : W("{0}", True, "helpDef", definitions(aliases(cmd)))
+                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, definitions(aliases(cmd)))
                 Next
-                W(DoTranslation("* You can use multiple commands using the colon between commands.", currentLang), True, "neutralText")
+                W(DoTranslation("* You can use multiple commands using the colon between commands.", currentLang), True, ColTypes.Neutral)
             Else
                 For Each cmd As String In aliases.Keys
-                    W("{0}({1}), ", False, "helpCmd", cmd, aliases(cmd))
+                    W("{0}({1}), ", False, ColTypes.HelpCmd, cmd, aliases(cmd))
                 Next
                 For Each cmd As String In moddefs.Keys
-                    W("{0}, ", False, "helpCmd", cmd)
+                    W("{0}, ", False, ColTypes.HelpCmd, cmd)
                 Next
-                W(String.Join(", ", availableCommands), True, "helpCmd")
+                W(String.Join(", ", availableCommands), True, ColTypes.HelpCmd)
             End If
 
         ElseIf command = "adduser" Then
 
-            W(DoTranslation("Usage:", currentLang) + " adduser <userName> [password] [confirm]", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " adduser <userName> [password] [confirm]", True, ColTypes.Neutral)
 
         ElseIf command = "alias" Then
 
-            W(DoTranslation("Usage:", currentLang) + " alias <rem/add> <alias> <cmd>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " alias <rem/add> <alias> <cmd>", True, ColTypes.Neutral)
 
         ElseIf command = "arginj" Then
 
             W(DoTranslation("Usage:", currentLang) + " arginj [Arguments separated by spaces]" + vbNewLine +
-                "       " + DoTranslation("where arguments will be {0}", currentLang), True, "neutralText", String.Join(", ", AvailableArgs))
+                "       " + DoTranslation("where arguments will be {0}", currentLang), True, ColTypes.Neutral, String.Join(", ", AvailableArgs))
 
         ElseIf command = "cdbglog" Then
 
-            W(DoTranslation("Usage:", currentLang) + " cdbglog: " + DoTranslation("Deletes everything in debug log", currentLang), True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " cdbglog: " + DoTranslation("Deletes everything in debug log", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "chdir" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chdir <directory/..>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " chdir <directory/..>", True, ColTypes.Neutral)
 
         ElseIf command = "chhostname" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chhostname <HostName>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " chhostname <HostName>", True, ColTypes.Neutral)
 
         ElseIf command = "chlang" Then
 
             W(DoTranslation("Usage:", currentLang) + " chlang <language>" + vbNewLine +
-                "<language>: " + String.Join("/", availableLangs), True, "neutralText")
+                "<language>: " + String.Join("/", availableLangs), True, ColTypes.Neutral)
 
         ElseIf command = "chmotd" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chmotd <Message>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " chmotd <Message>", True, ColTypes.Neutral)
 
         ElseIf command = "chmal" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chmal <Message>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " chmal <Message>", True, ColTypes.Neutral)
 
         ElseIf command = "chpwd" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chpwd <Username> <UserPass> <newPass> <confirm>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " chpwd <Username> <UserPass> <newPass> <confirm>", True, ColTypes.Neutral)
 
         ElseIf command = "chusrname" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chusrname <oldUserName> <newUserName>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " chusrname <oldUserName> <newUserName>", True, ColTypes.Neutral)
 
         ElseIf command = "cls" Then
 
-            W(DoTranslation("Usage:", currentLang) + " cls: " + DoTranslation("to clear screen.", currentLang), True, "neutralText")
-
-        ElseIf command = "currency" Then
-
-            W(DoTranslation("Usage:", currentLang) + " currency <SourceCountry3Letters> <DestCountry3Letters> <AmountOfMoney>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " cls: " + DoTranslation("to clear screen.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "debuglog" Then
 
-            W(DoTranslation("Usage:", currentLang) + " debuglog: " + DoTranslation("Shows you debug logs so you can send the log to us.", currentLang), True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " debuglog: " + DoTranslation("Shows you debug logs so you can send the log to us.", currentLang), True, ColTypes.Neutral)
+
+        ElseIf command = "disconndbgdev" Then
+
+            W(DoTranslation("Usage:", currentLang) + " disconndbgdev <ip>", True, ColTypes.Neutral)
 
         ElseIf command = "ftp" Then
 
-            W(DoTranslation("Usage:", currentLang) + " ftp: " + DoTranslation("Initializes the FTP shell.", currentLang), True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " ftp: " + DoTranslation("Initializes the FTP shell.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "list" Then
+
             W(DoTranslation("Usage:", currentLang) + " list [oneDirectory]" + vbNewLine +
-                "       list: " + DoTranslation("to get current directory.", currentLang), True, "neutralText")
+                "       list: " + DoTranslation("to get current directory.", currentLang), True, ColTypes.Neutral)
 
-        ElseIf command = "lscomp" Then
-            W(DoTranslation("Usage:", currentLang) + " lscomp: " + DoTranslation("Lists network information, as well as every computer.", currentLang) + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " lscomp: lsnet, lsnettree", True, "neutralText")
+        ElseIf command = "lsdbgdev" Then
 
-        ElseIf command = "lsnet" Then
-            W(DoTranslation("Usage:", currentLang) + " lsnet: " + DoTranslation("Lists network information, as well as every computer connected to a network.", currentLang) + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " lsnet: lscomp, lsnettree", True, "neutralText")
-
-        ElseIf command = "lsnettree" Then
-            W(DoTranslation("Usage:", currentLang) + " lsnettree: " + DoTranslation("Lists network information, as well as every computer connected to a network, in a tree form.", currentLang) + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " lsnettree: lscomp, lsnet", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " lsdbgdev", True, ColTypes.Neutral)
 
         ElseIf command = "reloadsaver" Then
 
             W(DoTranslation("Usage:", currentLang) + " reloadsaver <modNameSS.m>" + vbNewLine +
-                "       " + DoTranslation("where modnameSS.m will be", currentLang) + " {0}", True, "neutralText", String.Join(", ", wholesslist))
+                "       " + DoTranslation("where modnameSS.m will be", currentLang) + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
 
         ElseIf command = "lockscreen" Then
 
             W(DoTranslation("Usage:", currentLang) + " lockscreen: " + DoTranslation("Locks your screen with the password.", currentLang) + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " lockscreen: savescreen", True, "neutralText")
+                "       " + DoTranslation("Friends of", currentLang) + " lockscreen: savescreen", True, ColTypes.Neutral)
 
         ElseIf command = "logout" Then
 
             W(DoTranslation("Usage:", currentLang) + " logout: " + DoTranslation("Logs you out of the user.", currentLang) + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " logout: reboot, shutdown", True, "neutralText")
+                "       " + DoTranslation("Friends of", currentLang) + " logout: reboot, shutdown", True, ColTypes.Neutral)
 
         ElseIf command = "md" Then
 
-            W(DoTranslation("Usage:", currentLang) + " md <anything>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " md <anything>", True, ColTypes.Neutral)
 
         ElseIf command = "netinfo" Then
 
-            W(DoTranslation("Usage:", currentLang) + " netinfo: " + DoTranslation("Get every network information", currentLang), True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " netinfo: " + DoTranslation("Get every network information", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "noaliases" Then
 
-            W(DoTranslation("Usage:", currentLang) + " noaliases: " + DoTranslation("Shows forbidden list of aliases", currentLang), True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " noaliases: " + DoTranslation("Shows forbidden list of aliases", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "perm" Then
 
-            W(DoTranslation("Usage:", currentLang) + " perm <userName> <Admin/Disabled> <Allow/Disallow>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " perm <userName> <Admin/Disabled> <Allow/Disallow>", True, ColTypes.Neutral)
 
         ElseIf command = "ping" Then
 
-            W(DoTranslation("Usage:", currentLang) + " ping <Address> [repeatTimes]", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " ping <Address> [repeatTimes]", True, ColTypes.Neutral)
 
         ElseIf command = "rd" Then
 
-            W(DoTranslation("Usage:", currentLang) + " rd <directory>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " rd <directory>", True, ColTypes.Neutral)
 
         ElseIf command = "read" Then
 
-            W(DoTranslation("Usage:", currentLang) + " read <file>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " read <file>", True, ColTypes.Neutral)
 
         ElseIf command = "reboot" Then
 
             W(DoTranslation("Usage:", currentLang) + " reboot: " + DoTranslation("Restarts your simulated computer.", currentLang) + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " reboot: shutdown, logout", True, "neutralText")
+                "       " + DoTranslation("Friends of", currentLang) + " reboot: shutdown, logout", True, ColTypes.Neutral)
 
         ElseIf command = "reloadmods" Then
 
-            W(DoTranslation("Usage:", currentLang) + " reloadmods: " + DoTranslation("Reloads modifications.", currentLang), True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " reloadmods: " + DoTranslation("Reloads modifications.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "reloadconfig" Then
 
             W(DoTranslation("Usage:", currentLang) + " reloadconfig: " + DoTranslation("Reloads the configuration that is changed by the end-user or by tool.", currentLang) + vbNewLine +
-                "       " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart.", currentLang), True, "neutralText")
+                "       " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "rmuser" Then
 
-            W(DoTranslation("Usage:", currentLang) + " rmuser <Username>", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " rmuser <Username>", True, ColTypes.Neutral)
 
         ElseIf command = "savescreen" Then
 
             W(DoTranslation("Usage:", currentLang) + " savescreen: " + DoTranslation("shows you a selected screensaver, while protecting your screen from burn outs.", currentLang) + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " savescreen: lockscreen", True, "neutralText")
+                "       " + DoTranslation("Friends of", currentLang) + " savescreen: lockscreen", True, ColTypes.Neutral)
 
         ElseIf command = "setcolors" Then
 
             W(DoTranslation("Usage:", currentLang) + " setcolors <inputColor/def/RESET> <licenseColor/def/RESET> <contKernelErrorColor/def/RESET> <uncontKernelErrorColor/def/RESET> <hostNameShellColor/def/RESET> <userNameShellColor/def/RESET> <backgroundColor/def/RESET> <neutralTextColor/def/RESET> <cmdListColor/def/RESET> <cmdDefColor/def/RESET>" + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " setcolors: setthemes", True, "neutralText")
+                "       " + DoTranslation("Friends of", currentLang) + " setcolors: setthemes", True, ColTypes.Neutral)
 
         ElseIf command = "setsaver" Then
 
             W(DoTranslation("Usage:", currentLang) + " setsaver <modNameSS.m/matrix/disco/colorMix>" + vbNewLine +
-                "       " + DoTranslation("where modnameSS.m will be", currentLang) + " {0}", True, "neutralText", String.Join(", ", wholesslist))
+                "       " + DoTranslation("where modnameSS.m will be", currentLang) + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
 
         ElseIf command = "setthemes" Then
 
             W(DoTranslation("Usage:", currentLang) + " setthemes <Theme>" + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " setthemes: setcolors", True, "neutralText")
+                "       " + DoTranslation("Friends of", currentLang) + " setthemes: setcolors", True, ColTypes.Neutral)
 
         ElseIf command = "showaliases" Then
 
-            W(DoTranslation("Usage:", currentLang) + " showaliases: " + DoTranslation("Shows aliases", currentLang), True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " showaliases: " + DoTranslation("Shows aliases", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "showtd" Then
 
-            W(DoTranslation("Usage:", currentLang) + " showtd: " + DoTranslation("Shows the date and time.", currentLang), True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " showtd: " + DoTranslation("Shows the date and time.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "showtdzone" Then
 
-            W(DoTranslation("Usage:", currentLang) + " showtdzone: " + DoTranslation("Shows the date and time in zones.", currentLang), True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " showtdzone: " + DoTranslation("Shows the date and time in zones.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "shutdown" Then
 
             W(DoTranslation("Usage:", currentLang) + " shutdown: " + DoTranslation("Shuts down your simulated computer.", currentLang) + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " shutdown: reboot, logout", True, "neutralText")
+                "       " + DoTranslation("Friends of", currentLang) + " shutdown: reboot, logout", True, ColTypes.Neutral)
 
         ElseIf command = "sses" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sses: " + DoTranslation("Gets SSE versions", currentLang), True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " sses: " + DoTranslation("Gets SSE versions", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "sysinfo" Then
 
             W(DoTranslation("Usage:", currentLang) + " sysinfo: " + DoTranslation("Shows system information and versions.", currentLang) + vbNewLine +
-                "       " + DoTranslation("Friends of", currentLang) + " sysinfo: version", True, "neutralText")
-
-        ElseIf command = "useddeps" Then
-
-            W(DoTranslation("Usage:", currentLang) + " useddeps: " + DoTranslation("Shows open source libraries used", currentLang), True, "neutralText")
+                "       " + DoTranslation("Friends of", currentLang) + " sysinfo: version", True, ColTypes.Neutral)
 
         ElseIf command = "usermanual" Then
 
-            W(DoTranslation("Usage:", currentLang) + " usermanual", True, "neutralText")
+            W(DoTranslation("Usage:", currentLang) + " usermanual", True, ColTypes.Neutral)
 
         End If
 

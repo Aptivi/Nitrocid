@@ -31,13 +31,13 @@ Public Module Filesystem
             CurrDir = Parser.FullName.Replace("\", "/")
             InitStructure()
         Else
-            W(DoTranslation("Directory {0} not found", currentLang), True, "neutralText", dir)
+            W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Neutral, dir)
         End If
     End Sub
     Public Sub ReadContents(ByVal filename As String)
         Using FStream As New IO.StreamReader(filename)
             While Not FStream.EndOfStream
-                W(FStream.ReadLine, True, "neutralText")
+                W(FStream.ReadLine, True, ColTypes.Neutral)
             End While
         End Using
     End Sub
@@ -62,7 +62,7 @@ Public Module Filesystem
                             Dim FInfo As New IO.FileInfo(Entry)
 
                             'Print information
-                            W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, "neutralText",
+                            W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
                                 FormatNumber(FInfo.Length / 1024, 2), FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
                                                                       FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
                         ElseIf IO.Directory.Exists(Entry) Then
@@ -76,19 +76,19 @@ Public Module Filesystem
                             Next
 
                             'Print information
-                            W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, "neutralText",
+                            W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
                                 FormatNumber(TotalSize / 1024, 2), DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
                                                                    DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
                         End If
                     Catch ex As UnauthorizedAccessException 'Error while getting info
-                        W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, "neutralText", Entry)
+                        W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, ColTypes.Neutral, Entry)
                     End Try
                 Next
             Else
-                W(DoTranslation("Directory {0} not found", currentLang), True, "neutralText", folder)
+                W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Neutral, folder)
             End If
         Else
-            W(DoTranslation("{0} is not found.", currentLang), True, "neutralText", folder)
+            W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Neutral, folder)
         End If
     End Sub
 

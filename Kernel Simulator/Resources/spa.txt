@@ -372,3 +372,14 @@ Mods recargados.
 Se inició sesión correctamente como <usuario>
 MOTD / MAL es válido, pero el tipo de mensaje no es válido. 
 Intenté leer MOTD / MAL que es del tipo de mensaje no válido.
+Utrzymując stabilne połączenie, pobiera {0} do {1} ...
+Pobieranie zostało zakończone.
+Pobieranie nie powiodło się w próbie {0}: {1}
+Użyj „ftp”, jeśli zamierzasz pobierać pliki z serwera FTP.
+Pobiera plik do bieżącego katalogu roboczego
+Desconectar un dispositivo de depuración
+Enumera los dispositivos de depuración conectados
+Dispositivo de depuración {0} no encontrado.
+Dispositivo {0} desconectado.
+Error en la conexión: {0}
+Depure la escucha en todas las direcciones utilizando el puerto {0}.

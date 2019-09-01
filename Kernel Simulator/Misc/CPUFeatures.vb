@@ -62,7 +62,7 @@ Public Class CPUFeatures
         Loop
         W("SSE:  {0}" + vbNewLine +
           "SSE2: {1}" + vbNewLine +
-          "SSE3: {2}", True, "neutralText", SSE, SSE2, SSE3)
+          "SSE3: {2}", True, ColTypes.Neutral, SSE, SSE2, SSE3)
     End Sub
 
 End Class

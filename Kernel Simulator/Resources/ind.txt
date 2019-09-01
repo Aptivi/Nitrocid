@@ -372,3 +372,14 @@ karnel mein aapaka svaagat hai!
 <usair> ke roop mein saphalataapoorvak log in kiya
 motd / mal maany hai, lekin sandesh prakaar maany nahin hai. maan leejie ...
 motd / mal ko padhane kee koshish kee jo amaany sandesh prakaar kee hai.
+sthir kanekshan banae rakhate hue, yah {0} se {1} daunalod kar raha hai ...
+daunalod poora kar liya hai.
+daunalod karane mein viphal {0}: {1}
+yadi aap ftp sarvar se phail daunalod karane ja rahe hain to krpaya "ftp" ka upayog karen.
+vartamaan kaaryasheel nirdeshika ke lie ek fail daunalod karata hai
+dibag divais ko diskanekt karen
+jude dibaging upakaranon kee soochee deta hai
+deebag divais {0} nahin mila.
+divais {0} diskanekt ho gaya.
+kanekshan mein truti: {0}
+port {0} ka upayog karake sabhee pate par dibag sunana.

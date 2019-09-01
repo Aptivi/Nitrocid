@@ -43,12 +43,12 @@ Public Module TimeZones
 
         For Each timezone In zones
             If timezone.DisplayName = zone Then
-                W(DoTranslation("- Time of {0}: {1}", currentLang), True, "neutralText", zone, zoneTimes(zone).ToString())
+                W(DoTranslation("- Time of {0}: {1}", currentLang), True, ColTypes.Neutral, zone, zoneTimes(zone).ToString())
             End If
         Next
         If zone = "all" Then
             For Each timezone In zoneTimes.Keys
-                W(DoTranslation("- Time of {0}: {1}", currentLang), True, "neutralText", timezone, zoneTimes(timezone).ToString())
+                W(DoTranslation("- Time of {0}: {1}", currentLang), True, ColTypes.Neutral, timezone, zoneTimes(timezone).ToString())
             Next
         End If
 

@@ -53,18 +53,18 @@ Public Module AliasManager
         If mode = "add" Then
             'User tries to add an alias.
             If aliasTBA = cmd Then
-                W(DoTranslation("Alias can't be the same name as a command.", currentLang), True, "neutralText")
+                W(DoTranslation("Alias can't be the same name as a command.", currentLang), True, ColTypes.Neutral)
                 Wdbg("Assertion succeeded: {0} = {1}", aliasTBA, cmd)
             ElseIf Not availableCommands.Contains(cmd) Then
-                W(DoTranslation("Command not found to alias to {0}.", currentLang), True, "neutralText", aliasTBA)
+                W(DoTranslation("Command not found to alias to {0}.", currentLang), True, ColTypes.Neutral, aliasTBA)
                 Wdbg("availableCmds.Contains({0}) = false | No aliasing", cmd)
             ElseIf forbidden.Contains(cmd) Then
-                W(DoTranslation("Aliasing {0} to {1} is forbidden completely.", currentLang), True, "neutralText", cmd, aliasTBA)
+                W(DoTranslation("Aliasing {0} to {1} is forbidden completely.", currentLang), True, ColTypes.Neutral, cmd, aliasTBA)
                 Wdbg("forbid.Contains({0}) = true | No aliasing", cmd)
             Else
                 Wdbg("Assertion failed: {0} = {1}", aliasTBA, cmd)
                 aliases.Add(aliasTBA, cmd)
-                W(DoTranslation("You can now run ""{0}"" as a command: ""{1}"".", currentLang), True, "neutralText", aliasTBA, cmd)
+                W(DoTranslation("You can now run ""{0}"" as a command: ""{1}"".", currentLang), True, ColTypes.Neutral, aliasTBA, cmd)
             End If
         ElseIf mode = "rem" Then
             'user tries to remove an alias
@@ -72,14 +72,14 @@ Public Module AliasManager
                 cmd = aliases(aliasTBA)
                 Wdbg("aliases({0}) is found. That makes it {1}", aliasTBA, cmd)
                 aliases.Remove(aliasTBA)
-                W(DoTranslation("You can no longer use ""{0}"" as a command ""{1}"".", currentLang), True, "neutralText", aliasTBA, cmd)
+                W(DoTranslation("You can no longer use ""{0}"" as a command ""{1}"".", currentLang), True, ColTypes.Neutral, aliasTBA, cmd)
             Else
                 Wdbg("aliases({0}) is not found", aliasTBA)
-                W(DoTranslation("Alias {0} is not found to be removed.", currentLang), True, "neutralText", aliasTBA)
+                W(DoTranslation("Alias {0} is not found to be removed.", currentLang), True, ColTypes.Neutral, aliasTBA)
             End If
         Else
             Wdbg("Mode {0} was neither add nor rem.", mode)
-            W(DoTranslation("Invalid mode {0}.", currentLang), True, "neutralText", mode)
+            W(DoTranslation("Invalid mode {0}.", currentLang), True, ColTypes.Neutral, mode)
         End If
 
         'Save all aliases

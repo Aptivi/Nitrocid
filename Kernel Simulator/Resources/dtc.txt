@@ -372,3 +372,14 @@ Welkom bij Kernel!
 Succesvol aangemeld als <gebruiker>
 MOTD / MAL is geldig, maar het berichttype is niet geldig. 
 Probeerde MOTD / MAL te lezen van het ongeldige berichttype.
+Met behoud van een stabiele verbinding, downloadt het {0} naar {1} ...
+Downloaden is voltooid.
+Downloaden mislukt in probeer {0}: {1}
+Gebruik "ftp" als u bestanden van de FTP-server gaat downloaden.
+Download een bestand naar de huidige werkmap
+Koppel een foutopsporingsapparaat los
+Toont foutopsporingsapparaten aangesloten
+Foutopsporingsapparaat {0} niet gevonden.
+Apparaat {0} verbroken.
+Fout in verbinding: {0}
+Debug luisteren op alle adressen met behulp van poort {0}.

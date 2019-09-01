@@ -372,3 +372,14 @@ Willkommen im Kernel!
 Erfolgreich als <Benutzer> angemeldet
 MOTD / MAL ist gültig, aber der Nachrichtentyp ist ungültig. 
 Es wurde versucht, MOTD / MAL zu lesen, das vom ungültigen Nachrichtentyp ist.
+Während die Verbindung stabil bleibt, werden {0} nach {1} heruntergeladen ...
+Der Download ist abgeschlossen.
+Download in Versuch {0} fehlgeschlagen: {1}
+Bitte verwenden Sie "ftp", wenn Sie Dateien vom FTP-Server herunterladen möchten.
+Lädt eine Datei in das aktuelle Arbeitsverzeichnis herunter
+Trennen Sie ein Debug-Gerät
+Listet die verbundenen Debugging-Geräte auf
+Debug-Gerät {0} nicht gefunden.
+Gerät {0} nicht verbunden.
+Fehler in der Verbindung: {0}
+Debuggen Sie das Abhören aller Adressen über Port {0}.

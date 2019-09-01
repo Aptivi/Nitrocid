@@ -33,9 +33,9 @@ Public Module DisposeExit
             End If
             EventManager.RaiseGarbageCollected()
         Catch ex As Exception
-            W(DoTranslation("Error trying to free RAM: {0} - Continuing...", currentLang), True, "neutralText", Err.Description)
+            W(DoTranslation("Error trying to free RAM: {0} - Continuing...", currentLang), True, ColTypes.Neutral, Err.Description)
             If DebugMode = True Then
-                W(ex.StackTrace, True, "neutralText") : Wdbg("Error freeing RAM: {0}", Err.Description) : WStkTrc(ex)
+                W(ex.StackTrace, True, ColTypes.Neutral) : Wdbg("Error freeing RAM: {0}", Err.Description) : WStkTrc(ex)
             End If
         End Try
 

@@ -372,3 +372,14 @@ Bem vindo ao Kernel!
 Conectado com sucesso como <user>
 MOTD / MAL é válido, mas o tipo de mensagem não é válido. 
 Tentei ler MOTD / MAL que é do tipo de mensagem inválido.
+Sambil mempertahankan koneksi yang stabil, ia mengunduh {0} ke {1} ...
+Pengunduhan telah selesai.
+Gagal mengunduh dalam percobaan {0}: {1}
+Silakan gunakan "ftp" jika Anda akan mengunduh file dari server FTP.
+Unduh file ke direktori kerja saat ini
+Desconectar um dispositivo de depuração
+Lista os dispositivos de depuração conectados
+Dispositivo de depuração {0} não encontrado.
+Dispositivo {0} desconectado.
+Erro na conexão: {0}
+Depure a escuta em todos os endereços usando a porta {0}.

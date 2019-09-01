@@ -37,16 +37,16 @@ Public Module Config
                 'The Colors Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Colors",
-                        New IniKey(ksconf, "User Name Shell Color", userNameShellColor),
-                        New IniKey(ksconf, "Host Name Shell Color", hostNameShellColor),
-                        New IniKey(ksconf, "Continuable Kernel Error Color", contKernelErrorColor),
-                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", uncontKernelErrorColor),
-                        New IniKey(ksconf, "Text Color", neutralTextColor),
-                        New IniKey(ksconf, "License Color", licenseColor),
-                        New IniKey(ksconf, "Background Color", backgroundColor),
-                        New IniKey(ksconf, "Input Color", inputColor),
-                        New IniKey(ksconf, "Listed command in Help Color", cmdListColor),
-                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor)))
+                        New IniKey(ksconf, "User Name Shell Color", userNameShellColor.ToString),
+                        New IniKey(ksconf, "Host Name Shell Color", hostNameShellColor.ToString),
+                        New IniKey(ksconf, "Continuable Kernel Error Color", contKernelErrorColor.ToString),
+                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", uncontKernelErrorColor.ToString),
+                        New IniKey(ksconf, "Text Color", neutralTextColor.ToString),
+                        New IniKey(ksconf, "License Color", licenseColor.ToString),
+                        New IniKey(ksconf, "Background Color", backgroundColor.ToString),
+                        New IniKey(ksconf, "Input Color", inputColor.ToString),
+                        New IniKey(ksconf, "Listed command in Help Color", cmdListColor.ToString),
+                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString)))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -87,16 +87,16 @@ Public Module Config
                 'The Colors Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Colors",
-                        New IniKey(ksconf, "User Name Shell Color", userNameShellColor),
-                        New IniKey(ksconf, "Host Name Shell Color", hostNameShellColor),
-                        New IniKey(ksconf, "Continuable Kernel Error Color", contKernelErrorColor),
-                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", uncontKernelErrorColor),
-                        New IniKey(ksconf, "Text Color", neutralTextColor),
-                        New IniKey(ksconf, "License Color", licenseColor),
-                        New IniKey(ksconf, "Background Color", backgroundColor),
-                        New IniKey(ksconf, "Input Color", inputColor),
-                        New IniKey(ksconf, "Listed command in Help Color", cmdListColor),
-                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor)))
+                        New IniKey(ksconf, "User Name Shell Color", userNameShellColor.ToString),
+                        New IniKey(ksconf, "Host Name Shell Color", hostNameShellColor.ToString),
+                        New IniKey(ksconf, "Continuable Kernel Error Color", contKernelErrorColor.ToString),
+                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", uncontKernelErrorColor.ToString),
+                        New IniKey(ksconf, "Text Color", neutralTextColor.ToString),
+                        New IniKey(ksconf, "License Color", licenseColor.ToString),
+                        New IniKey(ksconf, "Background Color", backgroundColor.ToString),
+                        New IniKey(ksconf, "Input Color", inputColor.ToString),
+                        New IniKey(ksconf, "Listed command in Help Color", cmdListColor.ToString),
+                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString)))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -136,9 +136,9 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, "neutralText", Err.Description)
+                W(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, Err.Description)
             Else
-                W(DoTranslation("There is an error trying to create configuration.", currentLang), True, "neutralText")
+                W(DoTranslation("There is an error trying to create configuration.", currentLang), True, ColTypes.Neutral)
             End If
             If CmdArg = True Then
                 DisposeAll()
@@ -159,15 +159,15 @@ Public Module Config
             'Check to see if the kernel is outdated
             If configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
                 Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
-                W(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), True, "neutralText", configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
+                W(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), True, ColTypes.Neutral, configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
                 UpdateConfig()
             End If
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, "neutralText", Err.Description)
+                W(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, Err.Description)
             Else
-                W(DoTranslation("There is an error trying to update configuration.", currentLang), True, "neutralText")
+                W(DoTranslation("There is an error trying to update configuration.", currentLang), True, ColTypes.Neutral)
             End If
         End Try
     End Sub
@@ -234,9 +234,9 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, "neutralText", Err.Description)
+                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, Err.Description)
             Else
-                W(DoTranslation("There is an error trying to read configuration.", currentLang), True, "neutralText")
+                W(DoTranslation("There is an error trying to read configuration.", currentLang), True, ColTypes.Neutral)
             End If
         End Try
     End Sub

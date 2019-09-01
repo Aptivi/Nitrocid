@@ -372,3 +372,14 @@ Selamat datang ke Kernel!
 Log masuk berjaya sebagai <pengguna>
 MOTD / MAL adalah sah, tetapi jenis mesej tidak sah. 
 Cuba membaca MOTD / MAL yang merupakan jenis mesej tidak sah.
+Semasa mengekalkan sambungan yang stabil, ia memuat turun {0} ke {1} ...
+Muat turun telah selesai.
+Muat turun gagal dalam mencuba {0}: {1}
+Sila gunakan "ftp" jika anda akan memuat turun fail dari pelayan FTP.
+Muat turun fail ke direktori kerja semasa
+Putuskan sambungan peranti debug
+Senarai peranti debug yang disambungkan
+Peranti debug {0} tidak dijumpai.
+Peranti {0} terputus.
+Ralat berkaitan: {0}
+Mendengar debug pada semua alamat menggunakan port {0}.

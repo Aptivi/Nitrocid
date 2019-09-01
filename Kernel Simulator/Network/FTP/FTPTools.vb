@@ -20,7 +20,7 @@ Module FTPTools
 
     Public Sub TryToConnect(ByVal address As String)
         If connected = True Then
-            W(DoTranslation("You should disconnect from server before connecting to another server", currentLang), True, "neutralText")
+            W(DoTranslation("You should disconnect from server before connecting to another server", currentLang), True, ColTypes.Neutral)
         Else
             Try
                 'Create an FTP stream to connect to
@@ -38,10 +38,10 @@ Module FTPTools
 
                 'Prompt for username and for password
                 AddHandler ClientFTP.ValidateCertificate, New FtpSslValidation(AddressOf TryToValidate)
-                W(DoTranslation("Username for {0}: ", currentLang), False, "input", address)
+                W(DoTranslation("Username for {0}: ", currentLang), False, ColTypes.Input, address)
                 user = Console.ReadLine()
                 If user = "" Then user = "anonymous"
-                W(DoTranslation("Password for {0}: ", currentLang), False, "input", user)
+                W(DoTranslation("Password for {0}: ", currentLang), False, ColTypes.Input, user)
 
                 'Get input
                 While True
@@ -61,9 +61,9 @@ Module FTPTools
                 Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect
                 Dim profsel As FtpProfile
                 If profiles.Count > 1 Then 'More than one profile
-                    W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine, True, "neutralText")
+                    W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     For i As Integer = 1 To profiles.Count - 1
-                        W($"{i}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection.ToString}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption.ToString}, {profiles(i).Protocols.ToString}", True, "neutralText")
+                        W($"{i}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection.ToString}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption.ToString}, {profiles(i).Protocols.ToString}", True, ColTypes.Neutral)
                     Next
                 Else
                     profsel = profiles(0) 'Select first profile
@@ -73,7 +73,7 @@ Module FTPTools
                 ClientFTP.Connect(profsel)
 
                 'Show that it's connected
-                W(DoTranslation("Connected to {0}", currentLang), True, "neutralText", address)
+                W(DoTranslation("Connected to {0}", currentLang), True, ColTypes.Neutral, address)
                 connected = True
 
                 'Prepare to print current FTP directory
@@ -84,9 +84,9 @@ Module FTPTools
                 WStkTrc(ex)
                 If DebugMode = True Then
                     W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang) + vbNewLine +
-                      DoTranslation("Stack Trace: {2}", currentLang), True, "neutralText", address, ex.Message, ex.StackTrace)
+                      DoTranslation("Stack Trace: {2}", currentLang), True, ColTypes.Neutral, address, ex.Message, ex.StackTrace)
                 Else
-                    W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang), True, "neutralText", address, ex.Message)
+                    W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang), True, ColTypes.Neutral, address, ex.Message)
                 End If
             End Try
         End If

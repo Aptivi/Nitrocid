@@ -372,3 +372,14 @@ Dobrodošli u Kernel!
 Uspješno ste prijavljeni kao <user>
 MOTD / MAL je valjana, ali vrsta poruke nije valjana. 
 Pokušao je pročitati MOTD / MAL koji je nevažeća vrsta poruke.
+Iako održava stabilnu vezu, preuzima se od {0} do {1} ...
+Preuzimanje je dovršeno.
+Preuzimanje nije uspjelo u pokušaju {0}: {1}
+Upotrijebite "ftp" ako želite preuzeti datoteke s FTP poslužitelja.
+Preuzima datoteku u trenutni radni direktorij
+Odspojite uređaj za uklanjanje pogrešaka
+Popis povezanih uređaja za uklanjanje pogrešaka
+Uređaj za uklanjanje pogrešaka {0} nije pronađen.
+Uređaj {0} isključen.
+Pogreška u vezi: {0}
+Otklanjanje pogrešaka na svim adresama putem porta {0}.

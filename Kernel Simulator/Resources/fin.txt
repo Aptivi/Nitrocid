@@ -372,3 +372,14 @@ Tervetuloa Kerneliin!
 Sisäänkirjautunut onnistuneesti nimellä <käyttäjä>
 MOTD / MAL on kelvollinen, mutta viestin tyyppi ei ole kelvollinen. 
 Yritettiin lukea MOTD / MAL, joka on virheellinen viestityyppi.
+Säilyttäen vakaan yhteyden, se lataa {0} kansioon {1} ...
+Lataus on valmis.
+Lataus epäonnistui kokeilussa {0}: {1}
+Käytä "ftp", jos aiot ladata tiedostoja FTP-palvelimelta.
+Lataa tiedosto nykyiseen työhakemistoon
+Irrota virheenkorjauslaite
+Näyttää liitettyjen virheenkorjauslaitteiden
+Debug-laitetta {0} ei löydy.
+Laite {0} irrotettu.
+Virhe yhteydessä: {0}
+Debug-kuuntelu kaikissa osoitteissa käyttämällä porttia {0}.

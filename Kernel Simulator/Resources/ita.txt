@@ -372,3 +372,14 @@ Benvenuto in Kernel!
 Accesso eseguito correttamente come <utente>
 MOTD / MAL è valido, ma il tipo di messaggio non è valido. 
 Ho provato a leggere MOTD / MAL che è del tipo di messaggio non valido.
+Pur mantenendo una connessione stabile, sta scaricando da {0} a {1} ...
+Download completato.
+Download non riuscito nel tentativo {0}: {1}
+Utilizzare "ftp" se si intende scaricare file dal server FTP.
+Scarica un file nella directory di lavoro corrente
+Disconnetti un dispositivo di debug
+Elenca i dispositivi di debug collegati
+Dispositivo di debug {0} non trovato.
+Dispositivo {0} disconnesso.
+Errore nella connessione: {0}
+Debug in ascolto su tutti gli indirizzi utilizzando la porta {0}.

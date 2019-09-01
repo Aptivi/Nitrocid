@@ -372,3 +372,14 @@ Modlar yeniden yüklendi.
 <user> olarak başarıyla giriş yapıldı
 MOTD / MAL geçerlidir, ancak mesaj tipi geçerli değildir. 
 Geçersiz ileti türündeki MOTD / MAL'yi okumayı denedi.
+În timp ce mențineți o conexiune stabilă, se descarcă {0} pe {1} ...
+Descărcarea s-a finalizat.
+Descărcarea a eșuat în încercarea {0}: {1}
+Vă rugăm să folosiți „ftp” dacă doriți să descărcați fișiere de pe serverul FTP.
+Descarcă un fișier în directorul de lucru curent
+Bir hata ayıklama cihazının bağlantısını kesin
+Bağlı olan hata ayıklama cihazlarını listeler
+Hata ayıklama cihazı {0} bulunamadı.
+{0} cihazı bağlantısı kesildi.
+Bağlantıda hata: {0}
+{0} bağlantı noktasını kullanarak tüm adresleri dinlerken hata ayıkla.

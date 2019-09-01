@@ -1,0 +1,385 @@
+﻿Dostępne polecenia: {0}
+Napisz polecenie:
+Wprowadzanie poleceń zostało anulowane.
+Oddziel argumenty rozruchowe przecinkami bez spacji, na przykład „motd, gpuprobe”
+Oddzielne polecenia na „cmdinject” z dwukropkami ze spacjami, na przykład „cmdinject setthemes Hacker: beep 1024 0,5”
+Zauważ, że argument „debugowanie” nie obejmuje w pełni jądra.
+bargs: Żądany argument {0} nie został znaleziony.
+bargs: Nieodwracalny błąd w argumencie:
+Dostępne argumenty: {0}
+Argumenty („pomoc” dla pomocy):
+Wstrzyknięte argumenty zostaną zaplanowane do uruchomienia przy następnym restarcie.
+Wtrysk argumentu został anulowany.
+Błąd podczas analizowania rzeczywistych argumentów wiersza polecenia: {0}
+Nieprawidłowy szablon kolorów {0}
+Domyślna
+Zwyczaj
+hwprobe: Twój sprzęt zostanie przetestowany. Proszę czekać...
+hwprobe: Sprzęt już sondowany.
+hwprobe: Sprzęt nie jest sondowany. Sonda za pomocą „hwprobe”
+Procesor: co najmniej jeden z rdzeni procesora nie został zbadany. Mimo to pokazywanie informacji ...
+RAM: Jeden lub więcej układów RAM nie zostało zbadanych. Mimo to pokazywanie informacji ...
+HDD: Jeden lub więcej dysków twardych nie zostało sondowanych. Mimo to pokazywanie informacji ...
+Procesor: łączna liczba procesorów: {0}
+Procesor: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: używane gniazda (według nazw): {0}
+RAM: używane miejsca (według liczb): {0} / {1} ({2}%)
+RAM: Status próbkowania jest przestarzały i zostanie usunięty w przyszłej wersji.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} cylindry | {5} głów | {6} sektorów
+HDD: CHS: {3} cylindry | {4} głowy | {5} sektorów
+hwprobe: Sondowanie nie jest obsługiwane, ponieważ nie jest przeznaczone do uruchamiania sond w systemie Unix.
+Wprowadź hasło administratora w celu konserwacji.
+Na liście nie ma już użytkowników.
+Błąd jądra podczas uruchamiania: {0}
+DOUBLE PANIC: Czas restartu przekracza maksymalny dozwolony czas restartu błędu {0}. Znalazłeś błąd jądra.
+[{0}] panika: ponowne uruchomienie włączone z powodu poziomu błędu {0}.
+[{0}] panika: czas do ponownego uruchomienia: {1} sekund, przekracza 1 godzinę. Jest ustawiony na 1 minutę.
+DOUBLE PANIC: Niepoprawny typ błędu {0}.
+[{0}] dpanic: {1} - Ponowne uruchomienie za {2} sekund ...
+[{0}] panika: Ponowne uruchomienie wyłączone z powodu poziomu błędu {0}.
+[{0}] panic: {1} - Naciśnij dowolny klawisz, aby kontynuować korzystanie z jądra.
+[{0}] panic: {1} - Naciśnij dowolny klawisz, aby zamknąć.
+[{0}] panika: {1} - Ponowne uruchomienie za {2} sekund ...
+DOUBLE PANIC: Błąd jądra: {0}
+Wyłączanie...
+Ponowne uruchamianie ...
+--- === +++> Witaj w jądrze | Wersja {0} <+++ === ---
+Inna instancja Kernel Simulator jest uruchomiona. Wyłączanie w przypadku zakłóceń.
+Użytkownik {0} został dodany do listy administratorów.
+Użytkownik {0} został dodany do listy wyłączonych.
+Nie udało się dodać użytkownika do list uprawnień: nieprawidłowy typ {0}
+Nie udało się dodać użytkownika do list uprawnień: nieprawidłowy użytkownik {0}
+Użytkownik {0} został usunięty z listy administratorów.
+Użytkownik {0} został usunięty z listy wyłączonych.
+Nie udało się usunąć użytkownika z list uprawnień: nieprawidłowy typ {0}
+Jesteś już zalogowany.
+Nie udało się usunąć użytkownika z list uprawnień: nieprawidłowy użytkownik {0}
+Znalazłeś błąd w systemie uprawnień: tryb nieprawidłowy {0}
+Znalazłeś błąd lub uprawnienia, które próbujesz dodać lub usunąć, zostały już wykonane lub inny błąd.
+Błąd {0}: {1}
+Znalazłeś błąd lub uprawnienia, które próbowałeś edytować dla nowego użytkownika, nie powiodły się.
+Dostępne nazwy użytkowników: {0}
+Nazwa Użytkownika:
+Spacje nie są dozwolone.
+Znaki specjalne nie są dozwolone.
+Hasło {0}:
+Złe hasło.
+Użytkownik jest wyłączony.
+Zła nazwa użytkownika.
+Błąd podczas próby przetworzenia symboli zastępczych. {0} - Ślad stosu:
+Błąd podczas próby przetworzenia symboli zastępczych. {0}
+Błąd podczas próby dodania nazwy użytkownika.
+usrmgr: Tworzenie nazwy użytkownika {0} ...
+Pusta nazwa użytkownika.
+Nie znaleziono użytkownika {0}.
+Użytkownik {0} nie może zostać usunięty.
+Użytkownik {0} jest już zalogowany. Wyloguj się i zaloguj jako inny administrator.
+Usunięto użytkownika {0}.
+Błąd podczas próby usunięcia nazwy użytkownika.
+{0} z {1} = {2}
+Próba podzielenia przez zero jest niedozwolona.
+Podejrzewano próbę obliczenia, która spowodowała przepełnienie.
+Wystąpił błąd podczas obliczania: {0}
+Nie można przekonwertować {0} na {1}.
+Albo źródło
+ lub miejsce docelowe
+ nie istnieje na serwerze.
+{0} do {1}: {2}
+Błąd podczas próby konwersji z {0} na {1}: {2}
+Błąd
+Żądany wygaszacz ekranu {0} nie został znaleziony.
+{0} został poprawnie zainicjowany.
+{0} nie zainicjował się. Kod wygaszacza ekranu mógł napotkać błąd podczas inicjowania.
+Wygaszacz ekranu {0} nie istnieje.
+{0} jest ustawiony na domyślny wygaszacz ekranu.
+Nie znaleziono wygaszacza ekranu {0} w bazie danych. Zainicjuj za pomocą „loadsaver {0}”.
+Nie można załadować wygaszacza ekranu z następujących powodów:
+Wystąpił poważny błąd podczas drukowania tekstu.
+Wystąpił błąd podczas próby utworzenia konfiguracji.
+Wystąpił błąd podczas próby utworzenia konfiguracji: {0}
+Wykryto aktualizację z {0} do {1}. Aktualizowanie konfiguracji ...
+Wystąpił błąd podczas próby aktualizacji konfiguracji: {0}.
+Wystąpił błąd podczas próby aktualizacji konfiguracji.
+Wystąpił błąd podczas próby odczytania konfiguracji.
+Wystąpił błąd podczas próby odczytania konfiguracji: {0}
+Błąd podczas próby zwolnienia pamięci RAM: {0} - kontynuowanie ...
+Modu nie można załadować z następujących powodów:
+mod: ładowanie modów ...
+mod: Zatrzymywanie modów ...
+Mod {0} nie ma nazwy. Przejrzyj kod źródłowy.
+Mod {0} nie ma wersji.
+Uruchomiono {0} v {1}
+Brak definicji dla polecenia {0}.
+Polecenie zdefiniowane przez
+Powinieneś rozłączyć się z serwerem przed połączeniem z innym serwerem
+Nazwa użytkownika dla {0}:
+Hasło do {0}:
+Połączono z {0}
+Błąd podczas próby połączenia z {0}: {1}
+Ślad stosu: {2}
+Wprowadź serwer FTP.
+Katalog lokalny {0} nie istnieje.
+Wprowadź lokalny katalog. ".." wrócić.
+Katalog {0} nie został znaleziony.
+Wprowadź zdalny katalog. ".." wrócić
+Musisz połączyć się z serwerem przed zmianą katalogu
+Katalog lokalny: {0}
+Zdalny katalog: {0}
+Musisz połączyć się z serwerem przed uzyskaniem bieżącego katalogu zdalnego.
+Usuwanie pliku {0} ...
+Czy na pewno chcesz usunąć plik {0} <t / n>?
+Usunięty plik {0}
+Przed usunięciem należy połączyć się z serwerem z uprawnieniami administratora.
+Wprowadź plik do usunięcia.
+Musisz mieć uprawnienia administracyjne do zalogowanej nazwy użytkownika, aby móc ją usunąć.
+Odłączono od {0}
+Nie masz jeszcze połączenia z żadnym serwerem
+Pobieranie pliku {0} ...
+Pobrany plik {0}.
+Pobieranie nie powiodło się dla pliku {0}, ponieważ plik lokalny jest uszkodzony.
+Musisz połączyć się z serwerem przed wykonaniem transmisji.
+Wprowadź plik do pobrania do lokalnego katalogu.
+{0} KB | Zmodyfikowano w: {1}
+Powinieneś połączyć się z serwerem przed wyświetleniem wszystkich zdalnych plików.
+Zmiana nazwy pliku {0} na {1} ...
+Zmiana nazwy powiodła się
+Wprowadź plik i nową nazwę pliku.
+Przesyłanie pliku {0} ...
+Przesłany plik {0}
+Wprowadź plik do przesłania do zdalnego katalogu. prześlij <plik> <katalog>
+Błąd podczas próby wykonania polecenia FTP
+(Wewnętrzny:
+{0} folderów, {1} plików
+(Brak dostępu)
+{0} KB, utworzono w {1} {2}, zmodyfikowano w {3} {4}
+Pobiera bieżący katalog lokalny
+Pobiera bieżący zdalny katalog
+Łączy się z serwerem FTP (musi zaczynać się od „ftp: //” lub „ftps: //”)
+Zmienia lokalny katalog do pobrania lub przesłania z
+Zmienia zdalny katalog do pobrania lub przesłania do
+Usuwa zdalny plik z serwera
+Rozłącza się z serwerem
+Pobiera zdalny plik do katalogu lokalnego za pomocą pliku binarnego lub tekstowego
+Wychodzi z powłoki FTP i wraca do jądra
+Wyświetla ekran pomocy
+Wyświetla lokalny katalog
+Wyświetla zdalny katalog
+Zmienia nazwę określonego pliku lub katalogu
+Przesyła plik lokalny do zdalnego katalogu za pomocą pliku binarnego lub tekstowego
+Wystąpił błąd w powłoce FTP.
+Komunikat FTP: Żądane polecenie {0} nie zostało znalezione. Zobacz „pomoc”, aby uzyskać listę dostępnych poleceń określonych w powłoce FTP.
+net: Otrzymałem odpowiedź od {0} w {1} ms
+Przekroczono limit czasu, odłączono lub serwer offline.
+net: nazwa twojego komputera w sieci to {0}
+net: Twoja nazwa hosta to {1}
+net: Wygląda na to, że komputery znajdują się w domenie lub grupie roboczej:
+net: WiFi lub Ethernet jest odłączony.
+net: Wygląda na to, że komputery są podłączone poniżej:
+net: Adres routera: {0}
+Nie można uzyskać właściwości adaptera {0}
+Numer adaptera:
+Nazwa adaptera:
+Maksymalna jednostka transmisji: {2} jednostek
+DHCP włączone:
+Pakiety bez emisji pojedynczej:
+Pakiety Unicast:
+Błąd pakietów przychodzących / wychodzących:
+Alias ​​nie może mieć takiej samej nazwy jak polecenie.
+Nie znaleziono polecenia do aliasu do {0}.
+Aliasing {0} do {1} jest całkowicie zabroniony.
+Możesz teraz uruchomić „{0}” jako polecenie: „{1}”.
+Nie można już używać „{0}” jako polecenia „{1}”.
+Alias ​​{0} nie został usunięty.
+Nieprawidłowy tryb {0}.
+Wstrzyknięte argumenty {0} zostaną zaplanowane do uruchomienia przy następnym uruchomieniu.
+Argumentów było za mało. Zobacz poniżej użycie:
+Katalog {0} nie został znaleziony
+Pusta nazwa hosta.
+Zmiana z: {0} na {1} ...
+Pusta wiadomość dnia.
+Pusty MAL po zalogowaniu.
+Zmiana MAL z {0} na {1} ...
+Błędne hasło użytkownika.
+Hasła się nie zgadzają.
+Nazwa użytkownika została zmieniona na {0}!
+Nowa nazwa, którą wpisałeś, została już znaleziona.
+Komputery z listą nie są jeszcze obsługiwane w systemie Unix.
+Aliasy, które są zabronione: {0}
+{0} nie został znaleziony.
+Konfiguracja została ponownie załadowana. Konieczne może być ponowne uruchomienie jądra, aby niektóre zmiany zaczęły obowiązywać.
+Wszystko jest resetowane do normalnych ustawień.
+Jeden lub więcej kolorów jest nieprawidłowy.
+Kolory nie są dostępne. Włącz kolorową powłokę w konfiguracji jądra.
+Nie znaleziono wygaszacza ekranu {0}.
+{0} [Ustawienia jądra (działające na {1})]
+Wersja jądra:
+Tryb debugowania:
+Kolorowa skorupa:
+Argumenty podczas uruchamiania:
+Uproszczone polecenie pomocy:
+MOTD przy logowaniu:
+Czas / data w rogu:
+Sondowany sprzęt:
+Aktualny temat:
+[Ustawienia sprzętu] {0}
+{0} [Ustawienia użytkownika]
+Obecna nazwa użytkownika:
+Aktualna nazwa hosta:
+Dostępne nazwy użytkownika:
+Nazwa hosta komputera:
+{0} [Ustawienia wiadomości]
+Kod źródłowy:
+Prawo autorskie (c)
+Licencja
+teraźniejszość
+Błąd podczas próby wykonania polecenia
+Dodaje użytkowników (tylko administratorzy mogą uzyskać dostęp do tego polecenia)
+Dodaje aliasy do poleceń (tylko administratorzy mogą uzyskać dostęp do tego polecenia)
+Wstrzykuje argumenty do jądra (wymagane ponowne uruchomienie, tylko administratorzy)
+Prosty kalkulator
+Zmienia katalog
+Zmienia nazwę hosta (tylko administratorzy)
+Zmienia MAL, MOTD po zalogowaniu (tylko administratorzy)
+Zmienia MOTD, wiadomość dnia (tylko administratorzy)
+Zmienia hasło dla bieżącego użytkownika
+Zmienia nazwę użytkownika (tylko administratorzy)
+Czyści ekran
+Przelicz walutę
+Pokazuje dzienniki debugowania (tylko administratorzy)
+Użyj powłoki FTP do interakcji z serwerami
+Strona pomocy
+Sonduj sprzęt ręcznie (jeden raz w jądrze „nohwprobe”)
+Wyświetl zawartość pliku / folderu w bieżącym folderze
+Ponownie ładuje plik wygaszacza ekranu w% USERPROFILE% \ KSMods
+Blokuje ekran hasłem
+Wylogowuje cię
+Wyświetla listę wszystkich urządzeń sieciowych, które są online (i offline w domenach)
+Wyświetla wszystkie adresy sieciowe na hoście
+Wyświetla listę wszystkich adresów sieciowych na hoście przy użyciu drzewa
+Tworzy katalog
+Wyświetla informacje o wszystkich dostępnych interfejsach
+Pokazuje zabronioną listę aliasów
+Zarządzaj uprawnieniami użytkowników (tylko administratorzy mogą uzyskać dostęp do tego polecenia)
+Sprawdź, czy podany adres jest dostępny
+Zapisuje zawartość pliku do konsoli
+Ponownie uruchamia komputer (OSTRZEŻENIE: Brak synchronizacji, ponieważ nie jest to ostateczne jądro)
+Ponownie ładuje edytowany plik konfiguracyjny.
+Usuwa katalog
+Usuwa użytkownika z listy (tylko administratorzy)
+Zapisuje ekran przed wypaleniem
+Kalkulator naukowy. Konwerter jednostek jest rozdzielony na inne polecenie
+Ustawia kolory jądra
+Konfiguruje wygaszacze ekranu jądra
+Ustawia kompozycje jądra
+Pokazuje aliasy
+Pokazuje MOTD po zalogowaniu ustawionym przez użytkownika lub jądro
+Wyświetla wiadomość dnia ustawioną przez użytkownika lub jądro
+Pokazuje datę i godzinę
+Pokazuje datę i godzinę w strefach
+Jądro zostanie zamknięte
+Informacje o systemie
+Konwerter jednostek, który jest oddzielony od scicalc.
+Pokazuje używane zależności typu open source
+Bardzo opisowa instrukcja obsługi.
+* Możesz używać wielu poleceń za pomocą dwukropka między poleceniami.
+Dostępne polecenia:
+Polecenia modowe:
+Aliasy do poleceń:
+Stosowanie:
+Argumenty oddzielone przecinkami
+gdzie argumentami będzie {0}
+aby uzyskać bieżący katalog
+W którym źródłem i miejscem docelowym są 3 duże litery kursu wymiany
+Lista wszystkich identyfikatorów i nazw:
+Pokazuje dzienniki debugowania, dzięki czemu możesz wysłać dziennik do nas.
+Inicjuje powłokę FTP.
+Sondy sprzętowe (Działa tylko, gdy sprzęt nie jest sondowany, a program hwprobe nie jest wykonywany).
+Wyświetla informacje o sieci, a także każdy komputer podłączony do sieci.
+Przyjaciele
+Wyświetla informacje o sieci, a także każdy komputer podłączony do sieci, w formie drzewa.
+Wyświetla informacje o sieci, a także o każdym komputerze.
+gdzie będzie modnameSS.m
+Blokuje ekran hasłem.
+Wylogowuje cię z użytkownika.
+Uzyskaj wszystkie informacje o sieci
+Ponownie uruchamia symulowany komputer.
+Ponownie ładuje konfigurację, która została zmieniona przez użytkownika końcowego lub narzędzie.
+Kolory nie wymagają ponownego uruchomienia, ale większość ustawień wymaga ponownego uruchomienia.
+pokazuje wybrany wygaszacz ekranu, jednocześnie chroniąc ekran przed wypaleniem.
+Pokazuje datę i godzinę.
+Pokazuje datę i godzinę w strefach.
+Zamyka symulowany komputer.
+Pokazuje informacje o systemie i wersje.
+Pokazuje używane biblioteki typu open source
+Wystąpił błąd w powłoce.
+Nie masz uprawnień do korzystania z {0}
+Komunikat powłoki: Żądane polecenie {0} nie może działać w trybie konserwacji.
+Komunikat powłoki: Żądane polecenie {0} nie zostało znalezione. Zobacz „pomoc” dla dostępnych poleceń.
+Komunikat powłoki: Komenda {0} nie może być uruchamiana podczas logowania.
+Komunikat powłoki: Żądane polecenie {0} nie zostało znalezione.
+Błąd podczas próby wykonania polecenia.
+datetime: czas to {0}
+datetime: Dzisiaj jest {0}
+datetime: Strefa czasowa: {0}
+- Czas {0}: {1}
+wyczyścić ekran.
+Wygląda na to, że nie znaleziono strony podręcznika {0}.
+Wystąpił błąd podczas próby załadowania strony podręcznika {0}, ponieważ {1}.
+Ta strona podręcznika jest niekompletna z następujących powodów:
+Naciśnij dowolny klawisz, aby kontynuować...
+ | {0} słów | Wersja v {1} | {2} sekcje
+Ten tytuł strony podręcznika nie został napisany
+Ta strona podręcznika ({0}) nie zawiera tekstu podstawowego. Usuwam stronę ...
+Ta strona podręcznika ({0}) nie zawiera żadnej sekcji. Usuwam stronę ...
+Działa na {0}
+Nie masz uprawnień do uzyskania informacji o {0}.
+To polecenie jest przestarzałe i zostanie usunięte w przyszłej wersji.
+Nie masz uprawnień do zmiany hasła {0}, ponieważ celem był administrator.
+Przeliczaj pieniądze z kraju na kraj
+Waluty:
+usrmgr: nazwa użytkownika {0} została już znaleziona
+Wprowadź swój klucz API:
+Nie można uzyskać komputerów. Jeśli używasz najnowszej wersji systemu Windows 10, musisz włączyć SMBv1. Ten protokół jest jednak niepewny i postaramy się rozwiązać ten problem.
+Usuwa wszystko z dziennika debugowania
+Pobiera wersje SSE
+Niepoprawny język
+Zmienia język
+Być może w systemie nie zainstalowano libcpanel-json-xs-perl. Informacje na temat instalacji można uzyskać od menedżera pakietów. W przypadku systemów Debian (i pochodnych) możesz chcieć uruchomić „sudo apt install libcpanel-json-xs-perl” w emulatorze terminali. Więcej szczegółów błędu:
+----------------------------- Zrzut paniki jądra ------------------ -----------
+>> Informacje o panice <<
+> Opis: {0}
+> Typ błędu: {1}
+> Data i godzina: {2}
+>> Informacje o wyjątkach <<
+> Wyjątek: {0}
+> Opis: {1}
+> HRESULT: {2}
+> Źródło: {3}
+> Stos śladu <
+>> Informacje o wewnętrznym wyjątku {0} <<
+>> Wyjątek {0} jest główną przyczyną <<
+>> Bez wyjątku; może to być błąd jądra. <<
+>> Ramy, pliki, linie i kolumny <<
+> Ramka {0}: Plik: {1} | Wiersz: {2} | Kolumna: {3}
+> Wystąpił błąd podczas próby uzyskania informacji o ramce. {0}: {1}
+Ustawiłeś język systemu na inny niż angielski. Przepraszamy za niedogodności, ale wydaje się, że Google i jego tłumacz bardzo dziwnie tłumaczą bloki kodu dla dowolnego języka programowania. Chociaż naprawiamy wszystkie bloki kodu dla przetłumaczonych stron podręcznika, sugerujemy otworzyć bilet do Tłumacza Google w celu przetłumaczenia bloków kodu, które nie są przeznaczone do przetłumaczenia, i ustaw język systemu na angielski, jeśli to mówisz.
+Przeładowuje mody.
+Mody ponownie załadowane.
+Witaj w jądrze!
+Zalogowano pomyślnie jako <użytkownik>
+MOTD / MAL jest poprawny, ale typ komunikatu jest niepoprawny. Zakładając MOTD ...
+Próbowałem odczytać MOTD / MAL, który jest niepoprawnego typu komunikatu.
+Utrzymując stabilne połączenie, pobiera {0} do {1} ...
+Pobieranie zostało zakończone.
+Pobieranie nie powiodło się w próbie {0}: {1}
+Użyj „ftp”, jeśli zamierzasz pobierać pliki z serwera FTP.
+Pobiera plik do bieżącego katalogu roboczego
+Odłącz urządzenie debugujące
+Wyświetla listę podłączonych urządzeń do debugowania
+Nie znaleziono urządzenia debugującego {0}.
+Urządzenie {0} zostało odłączone.
+Błąd połączenia: {0}
+Debuguj nasłuchiwanie na wszystkich adresach przy użyciu portu {0}.

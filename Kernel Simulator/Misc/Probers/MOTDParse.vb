@@ -41,7 +41,7 @@ Module MOTDParse
             MOTDStreamW.Write(MOTD)
             MAL = MOTD
         Else
-            W(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...", currentLang), True, "neutralText")
+            W(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...", currentLang), True, ColTypes.Neutral)
             MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
             MOTDStreamW.WriteLine(MOTD)
             MOTDMessage = MOTD
@@ -61,7 +61,7 @@ Module MOTDParse
             MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
             MAL = MOTDBuilder.ToString
         Else
-            W(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type.", currentLang), True, "neutralText")
+            W(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type.", currentLang), True, ColTypes.Neutral)
         End If
         MOTDStreamR.Close()
     End Sub

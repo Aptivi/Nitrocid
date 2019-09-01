@@ -43,24 +43,18 @@ Public Module GetCommand
         Dim eargs() As String = strArgs.Split({" "c})
 
         '4a. Debug: get all arguments from args()
-        Wdbg("Arguments parsed from args():")
-        For Each arg As String In args
-            Wdbg(arg)
-        Next
+        Wdbg("Arguments parsed from args(): " + String.Join(", ", args))
 
         '4b. Debug: get all arguments from eargs()
-        Wdbg("Arguments parsed from eargs():")
-        For Each earg As String In eargs
-            Wdbg(earg)
-        Next
+        Wdbg("Arguments parsed from eargs(): " + String.Join(", ", eargs))
 
         'The command is done
         Dim Done As Boolean = False
 
-        '5. Check to see is a requested command is obsolete
+        '5. Check to see if a requested command is obsolete
         If obsoleteCmds.Contains(words(0)) Then
             Wdbg("The command requested {0} is obsolete", words(0))
-            W(DoTranslation("This command is obsolete and will be removed in a future release.", currentLang), True, "neutralText")
+            W(DoTranslation("This command is obsolete and will be removed in a future release.", currentLang), True, ColTypes.Neutral)
         End If
 
         '6. Execute a command
@@ -89,7 +83,7 @@ Public Module GetCommand
                             Adduser(args(0), args(1))
                             Done = True
                         Else
-                            W(DoTranslation("Passwords doesn't match.", currentLang), True, "neutralText")
+                            W(DoTranslation("Passwords doesn't match.", currentLang), True, ColTypes.Neutral)
                             Done = True
                         End If
                     End If
@@ -118,7 +112,7 @@ Public Module GetCommand
                     If args.Count - 1 >= 0 Then
                         answerargs = String.Join(",", args)
                         argsInjected = True
-                        W(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot.", currentLang), True, "neutralText", answerargs)
+                        W(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot.", currentLang), True, ColTypes.Neutral, answerargs)
                         Done = True
                     End If
                 End If
@@ -140,12 +134,12 @@ Public Module GetCommand
 
                 If requestedCommand <> "chhostname" Then
                     If words(1) = "" Then
-                        W(DoTranslation("Blank host name.", currentLang), True, "neutralText")
+                        W(DoTranslation("Blank host name.", currentLang), True, ColTypes.Neutral)
                     ElseIf words(1).IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-                        W(DoTranslation("Special characters are not allowed.", currentLang), True, "neutralText")
+                        W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Neutral)
                     Else
                         Done = True
-                        W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, "neutralText", HName, words(1))
+                        W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, HName, words(1))
                         HName = words(1)
                         Dim ksconf As New IniFile()
                         Dim pathConfig As String = paths("Configuration")
@@ -166,9 +160,9 @@ Public Module GetCommand
 
                 If requestedCommand <> "chmotd" Then
                     If strArgs = "" Then
-                        W(DoTranslation("Blank message of the day.", currentLang), True, "neutralText")
+                        W(DoTranslation("Blank message of the day.", currentLang), True, ColTypes.Neutral)
                     Else
-                        W(DoTranslation("Changing MOTD...", currentLang), True, "neutralText")
+                        W(DoTranslation("Changing MOTD...", currentLang), True, ColTypes.Neutral)
                         SetMOTD(strArgs, MessageType.MOTD)
                         Done = True
                     End If
@@ -178,9 +172,9 @@ Public Module GetCommand
 
                 If requestedCommand <> "chmal" Then
                     If strArgs = "" Then
-                        W(DoTranslation("Blank MAL After Login.", currentLang), True, "neutralText")
+                        W(DoTranslation("Blank MAL After Login.", currentLang), True, ColTypes.Neutral)
                     Else
-                        W(DoTranslation("Changing MAL...", currentLang), True, "neutralText")
+                        W(DoTranslation("Changing MAL...", currentLang), True, ColTypes.Neutral)
                         SetMOTD(strArgs, MessageType.MAL)
                         Done = True
                     End If
@@ -191,19 +185,19 @@ Public Module GetCommand
                 If requestedCommand <> "chpwd" Then
                     If eargs.Count - 1 = 3 Then
                         If InStr(eargs(3), " ") > 0 Then
-                            W(DoTranslation("Spaces are not allowed.", currentLang), True, "neutralText")
+                            W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
                         ElseIf eargs(3) = eargs(2) Then
                             If eargs(1) = userword(eargs(0)) Then
                                 If adminList(eargs(0)) And adminList(signedinusrnm) Then
                                     userword.Item(eargs(0)) = eargs(2)
                                 ElseIf adminList(eargs(0)) And Not adminList(signedinusrnm) Then
-                                    W(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang), True, "neutralText", eargs(0))
+                                    W(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang), True, ColTypes.Neutral, eargs(0))
                                 End If
                             Else
-                                W(DoTranslation("Wrong user password.", currentLang), True, "neutralText")
+                                W(DoTranslation("Wrong user password.", currentLang), True, ColTypes.Neutral)
                             End If
                         ElseIf eargs(3) <> eargs(2) Then
-                            W(DoTranslation("Passwords doesn't match.", currentLang), True, "neutralText")
+                            W(DoTranslation("Passwords doesn't match.", currentLang), True, ColTypes.Neutral)
                         End If
                         Done = True
                     End If
@@ -221,17 +215,17 @@ Public Module GetCommand
                                 userword.Remove(args(0))
                                 userword.Add(args(1), temporary)
                                 PermissionEditForNewUser(args(0), args(1))
-                                W(DoTranslation("Username has been changed to {0}!", currentLang), True, "neutralText", args(1))
+                                W(DoTranslation("Username has been changed to {0}!", currentLang), True, ColTypes.Neutral, args(1))
                                 If args(0) = signedinusrnm Then
                                     LoginPrompt()
                                 End If
                             Else
-                                W(DoTranslation("The new name you entered is already found.", currentLang), True, "neutralText")
+                                W(DoTranslation("The new name you entered is already found.", currentLang), True, ColTypes.Neutral)
                                 Exit Sub
                             End If
                         End If
                         If DoneFlag = False Then
-                            W(DoTranslation("User {0} not found.", currentLang), True, "neutralText", args(0))
+                            W(DoTranslation("User {0} not found.", currentLang), True, ColTypes.Neutral, args(0))
                         End If
                         Done = True
                     End If
@@ -247,11 +241,20 @@ Public Module GetCommand
                 Using dbglog = File.Open(paths("Debugging"), FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
                     line = reader.ReadLine()
                     Do While reader.EndOfStream <> True
-                        W(line, True, "neutralText")
+                        W(line, True, ColTypes.Neutral)
                         line = reader.ReadLine
                     Loop
                 End Using
                 Done = True
+
+            ElseIf words(0) = "disconndbgdev" Then
+
+                If requestedCommand <> "disconndbgdev" Then
+                    If args.Count - 1 = 0 Then
+                        DisconnectDbgDevCmd(args(0))
+                        Done = True
+                    End If
+                End If
 
             ElseIf words(0) = "ftp" Then
 
@@ -260,6 +263,11 @@ Public Module GetCommand
                 Else
                     InitiateShell(True, words(1))
                 End If
+                Done = True
+
+            ElseIf words(0) = "get" Then
+
+                DownloadFile(strArgs)
                 Done = True
 
             ElseIf requestedCommand = "lockscreen" Then
@@ -286,6 +294,13 @@ Public Module GetCommand
                 Done = True
                 LogoutRequested = True
 
+            ElseIf requestedCommand = "lsdbgdev" Then
+
+                Done = True
+                For Each DebugDevice As Sockets.Socket In DebugDevices
+                    W($"- {DebugDevice.RemoteEndPoint.ToString.Remove(DebugDevice.RemoteEndPoint.ToString.IndexOf(":"))}", True, ColTypes.HelpCmd)
+                Next
+
             ElseIf requestedCommand = "netinfo" Then
 
                 GetProperties()
@@ -303,7 +318,7 @@ Public Module GetCommand
 
             ElseIf requestedCommand = "noaliases" Then
 
-                W(DoTranslation("Aliases that are forbidden: {0}", currentLang), True, "neutralText", String.Join(", ", forbidden))
+                W(DoTranslation("Aliases that are forbidden: {0}", currentLang), True, ColTypes.Neutral, String.Join(", ", forbidden))
                 Done = True
 
             ElseIf words(0) = "perm" Then
@@ -322,7 +337,7 @@ Public Module GetCommand
                         If CurrDirStructure.Contains($"{CurrDir}/{strArgs}") Then
                             ReadContents($"{CurrDir}/{strArgs}")
                         Else
-                            W(DoTranslation("{0} is not found.", currentLang), True, "neutralText", strArgs)
+                            W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Neutral, strArgs)
                         End If
                         Done = True
                     End If
@@ -333,7 +348,7 @@ Public Module GetCommand
                 'Reload configuration
                 Done = True
                 InitializeConfig()
-                W(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", currentLang), True, "neutralText")
+                W(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", currentLang), True, ColTypes.Neutral)
 
             ElseIf requestedCommand = "reboot" Then
 
@@ -346,7 +361,7 @@ Public Module GetCommand
                 'Reload mods
                 Done = True
                 ReloadMods()
-                W(DoTranslation("Mods reloaded.", currentLang), True, "neutralText")
+                W(DoTranslation("Mods reloaded.", currentLang), True, ColTypes.Neutral)
 
             ElseIf words(0) = "reloadsaver" Then
 
@@ -401,7 +416,7 @@ Public Module GetCommand
                                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), args(8)), ConsoleColor)
                                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), args(9)), ConsoleColor)
                                 Load()
-                            ElseIf args.Contains("def") Then
+                            ElseIf args.Contains(ColTypes.Gray) Then
                                 If Array.IndexOf(args, "") = 0 Then
                                     args(0) = "White"
                                     inputColor = CType([Enum].Parse(GetType(ConsoleColor), args(0)), ConsoleColor)
@@ -436,13 +451,13 @@ Public Module GetCommand
                                 End If
                             ElseIf args.Contains("RESET") Then
                                 ResetColors()
-                                W(DoTranslation("Everything is reset to normal settings.", currentLang), True, "neutralText")
+                                W(DoTranslation("Everything is reset to normal settings.", currentLang), True, ColTypes.Neutral)
                             Else
-                                W(DoTranslation("One or more of the colors is invalid.", currentLang), True, "neutralText")
+                                W(DoTranslation("One or more of the colors is invalid.", currentLang), True, ColTypes.Neutral)
                             End If
                             MakePermanent()
                         Else
-                            W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), True, "neutralText")
+                            W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), True, ColTypes.Neutral)
                         End If
                     End If
                 End If
@@ -458,7 +473,7 @@ Public Module GetCommand
                             If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") Then
                                 SetDefaultScreensaver(strArgs)
                             Else
-                                W(DoTranslation("Screensaver {0} not found.", currentLang), True, "neutralText", strArgs)
+                                W(DoTranslation("Screensaver {0} not found.", currentLang), True, ColTypes.Neutral, strArgs)
                             End If
                         End If
                         Done = True
@@ -469,7 +484,7 @@ Public Module GetCommand
 
                 If requestedCommand <> "setthemes" Then
                     If args.Count - 1 = 0 Then
-                        If ColoredShell = True Then TemplateSet(args(0)) Else W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), True, "neutralText")
+                        If ColoredShell = True Then TemplateSet(args(0)) Else W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), True, ColTypes.Neutral)
                         Done = True
                     End If
                 End If
@@ -501,13 +516,13 @@ Public Module GetCommand
             ElseIf requestedCommand = "showmotd" Then
 
                 'Show changes to MOTD, or current
-                W(ProbePlaces(MOTDMessage), True, "neutralText")
+                W(ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
                 Done = True
 
             ElseIf requestedCommand = "showmal" Then
 
                 'Show changes to MAL, or current
-                W(ProbePlaces(MAL), True, "neutralText")
+                W(ProbePlaces(MAL), True, ColTypes.Neutral)
                 Done = True
 
             ElseIf requestedCommand = "shutdown" Then
@@ -523,7 +538,7 @@ Public Module GetCommand
                 Else
                     W("SSE:  {0}" + vbNewLine +
                       "SSE2: {1}" + vbNewLine +
-                      "SSE3: {2}", True, "neutralText", CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMIAvailable),
+                      "SSE3: {2}", True, ColTypes.Neutral, CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMIAvailable),
                                                         CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available),
                                                         CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsSSE3Available))
                 End If
@@ -534,7 +549,7 @@ Public Module GetCommand
                 Done = True
 
                 'Shows system information
-                W(DoTranslation("{0}[ Kernel settings (Running on {1}) ]", currentLang), True, "helpCmd", vbNewLine, EnvironmentOSType)
+                W(DoTranslation("{0}[ Kernel settings (Running on {1}) ]", currentLang), True, ColTypes.HelpCmd, vbNewLine, EnvironmentOSType)
 
                 'Kernel section
                 W(vbNewLine + DoTranslation("Kernel Version:", currentLang) + " {0}" + vbNewLine +
@@ -544,10 +559,10 @@ Public Module GetCommand
                                 DoTranslation("Help command simplified:", currentLang) + " {4}" + vbNewLine +
                                 DoTranslation("MOTD on Login:", currentLang) + " {5}" + vbNewLine +
                                 DoTranslation("Time/Date on corner:", currentLang) + " {6}" + vbNewLine +
-                                DoTranslation("Current theme:", currentLang) + " {7}" + vbNewLine, True, "neutralText", KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString, currentTheme)
+                                DoTranslation("Current theme:", currentLang) + " {7}" + vbNewLine, True, ColTypes.Neutral, KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString, currentTheme)
 
                 'Hardware section
-                W(DoTranslation("[ Hardware settings ]{0}", currentLang), True, "helpCmd", vbNewLine)
+                W(DoTranslation("[ Hardware settings ]{0}", currentLang), True, ColTypes.HelpCmd, vbNewLine)
                 If Not EnvironmentOSType.Contains("Unix") Then
                     ListDrivers()
                 Else
@@ -555,34 +570,17 @@ Public Module GetCommand
                 End If
 
                 'User section
-                W(DoTranslation("{0}[ User settings ]", currentLang), True, "helpCmd", vbNewLine)
+                W(DoTranslation("{0}[ User settings ]", currentLang), True, ColTypes.HelpCmd, vbNewLine)
                 W(vbNewLine + DoTranslation("Current user name:", currentLang) + " {0}" + vbNewLine +
                                 DoTranslation("Current host name:", currentLang) + " {1}" + vbNewLine +
                                 DoTranslation("Available usernames:", currentLang) + " {2}" + vbNewLine +
-                                DoTranslation("Computer host name:", currentLang) + " {3}", True, "neutralText", signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
+                                DoTranslation("Computer host name:", currentLang) + " {3}", True, ColTypes.Neutral, signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
 
                 'Messages Section
-                W(vbNewLine + "[ MOTD ]", True, "helpCmd")
-                W(vbNewLine + ProbePlaces(MOTDMessage), True, "neutralText")
-                W(vbNewLine + "[ MAL ]", True, "helpCmd")
-                W(vbNewLine + ProbePlaces(MAL), True, "neutralText")
-
-            ElseIf requestedCommand = "useddeps" Then
-
-                Done = True
-                W("MadMilkman.Ini" + vbNewLine +
-                  DoTranslation("Source code:", currentLang) + " https://github.com/MarioZ/MadMilkman.Ini" + vbNewLine +
-                  DoTranslation("Copyright (c)", currentLang) + " 2016, Mario Zorica" + vbNewLine +
-                  DoTranslation("License", currentLang) + " (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE" + vbNewLine +
-                  "Newtonsoft.Json" + vbNewLine +
-                  DoTranslation("Source code:", currentLang) + " https://github.com/JamesNK/Newtonsoft.Json" + vbNewLine +
-                  DoTranslation("Copyright (c)", currentLang) + " 2007, James Newton-King" + vbNewLine +
-                  DoTranslation("License", currentLang) + " (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md" + vbNewLine +
-                  "FluentFTP" + vbNewLine +
-                  DoTranslation("Source code:", currentLang) + " https://github.com/robinrodricks/FluentFTP" + vbNewLine +
-                  DoTranslation("Copyright (c)", currentLang) + " 2011-2016, J.P. Trosclair" + vbNewLine +
-                  DoTranslation("Copyright (c)", currentLang) + " 2016-2019" + ", Robin Rodricks" + vbNewLine +
-                  DoTranslation("License", currentLang) + " (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT", True, "neutralText")
+                W(vbNewLine + "[ MOTD ]", True, ColTypes.HelpCmd)
+                W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
+                W(vbNewLine + "[ MAL ]", True, ColTypes.HelpCmd)
+                W(vbNewLine + ProbePlaces(MAL), True, ColTypes.Neutral)
 
             ElseIf words(0) = "usermanual" Then
 
@@ -595,15 +593,15 @@ Public Module GetCommand
             End If
         Catch neaex As EventsAndExceptions.NotEnoughArgumentsException
             Wdbg("User hasn't provided enough arguments for {0}", words(0))
-            W(neaex.Message, True, "neutralText")
+            W(neaex.Message, True, ColTypes.Neutral)
             ShowHelp(words(0))
         Catch ex As Exception
             If DebugMode = True Then
-                W(DoTranslation("Error trying to execute command", currentLang) + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, "neutralText",
+                W(DoTranslation("Error trying to execute command", currentLang) + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral,
                     Err.Number, Err.Description, ex.StackTrace, words(0))
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command", currentLang) + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, "neutralText", Err.Number, Err.Description, words(0))
+                W(DoTranslation("Error trying to execute command", currentLang) + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description, words(0))
             End If
         End Try
     End Sub

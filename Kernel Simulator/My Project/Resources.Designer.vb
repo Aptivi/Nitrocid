@@ -136,7 +136,17 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 癁楡慬汢⁥潣浭湡獤›ほൽ圊楲整挠浯慭摮›਍潃浭湡⁤湩敪瑣潩⁮慨⁳敢湥挠湡散汬摥മ匊灥牡瑡⁥潢瑯愠杲浵湥獴眠瑩⁨潣浭獡眠瑩潨瑵猠慰散ⱳ映牯攠慸灭敬‬洧瑯Ɽ灧灵潲敢ധ匊灥牡瑡⁥潣浭湡獤漠⁮挧摭湩敪瑣‧楷桴挠汯湯⁳楷桴猠慰散ⱳ映牯攠慸灭敬‬挧摭湩敪瑣猠瑥桴浥獥䠠捡敫⁲›敢灥ㄠ㈰‴⸰✵਍潎整琠慨⁴桴⁥搧扥杵‧牡畧敭瑮搠敯⁳潮⁴畦汬⁹潣敶⁲桴⁥敫湲汥മ戊牡獧›桔⁥敲畱獥整⁤牡畧敭瑮笠細椠⁳潮⁴潦湵⹤਍慢杲㩳唠牮捥癯牥扡敬攠牲牯椠⁮牡畧敭瑮›਍癁楡慬汢⁥牡畧敭瑮㩳笠細਍牁畧敭瑮⁳✨敨灬‧潦⁲敨灬㨩ഠ䤊橮捥整⁤牡畧敭瑮⁳楷汬戠⁥捳敨畤敬⁤潴爠湵愠⁴敮瑸爠扥潯⹴਍牁畧敭瑮䤠橮捥楴湯栠獡戠敥⁮慣据汥敬⹤਍牅潲⁲桷汩⁥慰獲湩⁧敲污挠浯慭摮氭湩⁥牡畧敭瑮㩳笠細਍湉慶楬⁤潣潬⁲整灭慬整笠細਍敄慦汵൴䌊獵潴൭栊灷潲敢›潙牵栠牡睤牡⁥楷汬戠⁥牰扯摥‮汐慥敳眠楡⹴⸮਍睨牰扯㩥䠠牡睤牡⁥污敲摡⁹牰扯摥മ栊灷潲敢›慈摲慷敲椠⁳潮⁴牰扯摥‮牐扯⁥獵湩⁧栧灷潲敢ധ䌊啐›湏⁥牯洠牯⁥景琠敨䌠啐挠牯獥映楡敬⁤潴戠⁥牰扯摥‮桓睯湩⁧湩潦浲瑡潩⁮湡睹祡⸮മ刊䵁›湏⁥牯洠牯⁥景琠敨删䵁挠楨獰映楡敬⁤潴戠⁥牰扯摥‮桓睯湩⁧湩潦浲瑡潩⁮湡睹祡⸮മ䠊䑄›湏⁥牯洠 [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to Available commands: {0}
+        '''Write command: 
+        '''Command injection has been cancelled.
+        '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;
+        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;
+        '''Note that the &apos;debug&apos; argument does not fully cover the kernel.
+        '''bargs: The requested argument {0} is not found.
+        '''bargs: Unrecoverable error in argument: 
+        '''Available arguments: {0}
+        '''Arguments (&apos;help&apos; for help): 
+        '''Injected arguments  [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property eng() As String
             Get
@@ -255,6 +265,43 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Perintah yang tersedia: {0}
+        '''Tulis perintah:
+        '''Perintah injeksi telah dibatalkan.
+        '''Pisahkan argumen boot dengan koma tanpa spasi, misalnya, &apos;motd, gpuprobe&apos;
+        '''Pisahkan perintah pada &apos;cmdinject&apos; dengan titik dua dengan spasi, misalnya, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Perhatikan bahwa argumen &apos;debug&apos; tidak sepenuhnya mencakup kernel.
+        '''bargs: Argumen yang diminta {0} tidak ditemukan.
+        '''bargs: Kesalahan yang tidak dapat dipulihkan dalam argumen:
+        '''Argumen yang tersedia: {0}
+        '''Argumen (&apos;bantuan&apos; untuk ba [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ndo() As String
+            Get
+                Return ResourceManager.GetString("ndo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dostępne polecenia: {0}
+        '''Napisz polecenie:
+        '''Wprowadzanie poleceń zostało anulowane.
+        '''Oddziel argumenty rozruchowe przecinkami bez spacji, na przykład „motd, gpuprobe”
+        '''Oddzielne polecenia na „cmdinject” z dwukropkami ze spacjami, na przykład „cmdinject setthemes Hacker: beep 1024 0,5”
+        '''Zauważ, że argument „debugowanie” nie obejmuje w pełni jądra.
+        '''bargs: Żądany argument {0} nie został znaleziony.
+        '''bargs: Nieodwracalny błąd w argumencie:
+        '''Dostępne argumenty: {0}
+        '''Argumenty („pomoc” dla pomocy):
+        '''Wstrzyknięte [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property pol() As String
+            Get
+                Return ResourceManager.GetString("pol", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Comandos disponíveis: {0}
         '''Comando de gravação: 
         '''A injeção de comando foi cancelada.
@@ -269,6 +316,25 @@ Namespace My.Resources
         Friend ReadOnly Property ptg() As String
             Get
                 Return ResourceManager.GetString("ptg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Comenzi disponibile: {0}
+        '''Comanda de scriere:
+        '''Injectarea comenzii a fost anulată.
+        '''Separați argumentele de pornire cu virgule fără spații, de exemplu, &apos;motd, gpuprobe&apos;
+        '''Separa comenzile de pe „cmdinject” cu coloane cu spații, de exemplu, „cmdinject setthemes Hacker: bip 1024 0.5”
+        '''Rețineți că argumentul „debug” nu acoperă complet nucleul.
+        '''bargs: Argumentul solicitat {0} nu este găsit.
+        '''bargs: eroare care nu poate fi recuperată în argument:
+        '''Argumente disponibile: {0}
+        '''Argumente („ajutor” pentru ajutor):
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property rmn() As String
+            Get
+                Return ResourceManager.GetString("rmn", resourceCulture)
             End Get
         End Property
         
@@ -324,6 +390,24 @@ Namespace My.Resources
         Friend ReadOnly Property tky() As String
             Get
                 Return ResourceManager.GetString("tky", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Mavjud buyruqlar: {0}
+        '''Yozish buyrug&apos;i:
+        '''Buyruqni kiritish bekor qilindi.
+        '''Bo&apos;sh joylarsiz vergul bilan alohida yuklash argumentlari, masalan, &quot;motd, gpuprobe&quot;
+        '''&quot;Cmdinject&quot; dagi alohida buyruqlar bo&apos;sh joy qoldirilgan ustunlar bilan, masalan, &quot;cmdinject sxemalari Hacker: signal 1024 0.5&quot;
+        '''E&apos;tibor bering, &quot;disk raskadrovka&quot; argumenti yadroni to&apos;liq qamrab olmaydi.
+        '''bargs: Talab qilingan {0} argument topilmadi.
+        '''Bars: argumentda tuzatib bo&apos;lmaydigan xato:
+        '''Mavjud dalillar: {0}
+        '''Dalillar (yordam uchun &apos;yordam&apos; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property uzb() As String
+            Get
+                Return ResourceManager.GetString("uzb", resourceCulture)
             End Get
         End Property
     End Module

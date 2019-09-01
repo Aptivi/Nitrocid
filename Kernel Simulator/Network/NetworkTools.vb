@@ -29,7 +29,7 @@ Public Module NetworkTools
         For Each adapter As NetworkInterface In adapters
             adapterNumber += 1
             If adapter.Supports(NetworkInterfaceComponent.IPv4) = False Then
-                Wdbg("{0} doesn't support IPv4 because ASSERT(adapter.Supp(IPv4) = True) = False.", adapter.Description)
+                Wdbg("{0} doesn't support IPv4.", adapter.Description)
             ElseIf adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
                     adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet3Megabit Or
                     adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetFx Or
@@ -40,9 +40,9 @@ Public Module NetworkTools
                 Dim p As IPv4InterfaceProperties = adapterProperties.GetIPv4Properties
                 Dim s As IPv4InterfaceStatistics = adapter.GetIPv4Statistics
                 If p Is Nothing Then
-                    W(DoTranslation("Failed to get properties for adapter {0}", currentLang), True, "neutralText", adapter.Description)
+                    W(DoTranslation("Failed to get properties for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
                 ElseIf s Is Nothing Then
-                    W(DoTranslation("Failed to get statistics for adapter {0}", currentLang), True, "neutralText", adapter.Description)
+                    W(DoTranslation("Failed to get statistics for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
                 End If
                 W(DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
                   DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
@@ -50,13 +50,34 @@ Public Module NetworkTools
                   DoTranslation("DHCP Enabled:", currentLang) + " {3}" + vbNewLine +
                   DoTranslation("Non-unicast packets:", currentLang) + " {4}/{5}" + vbNewLine +
                   DoTranslation("Unicast packets:", currentLang) + " {6}/{7}" + vbNewLine +
-                  DoTranslation("Error incoming/outgoing packets:", currentLang) + " {8}/{9}", True, "neutralText",
+                  DoTranslation("Error incoming/outgoing packets:", currentLang) + " {8}/{9}", True, ColTypes.Neutral,
                   adapterNumber, adapter.Description, p.Mtu, p.IsDhcpEnabled, s.NonUnicastPacketsSent, s.NonUnicastPacketsReceived,
                   s.UnicastPacketsSent, s.UnicastPacketsReceived, s.IncomingPacketsWithErrors, s.OutgoingPacketsWithErrors)
             Else
                 Wdbg("Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType)
             End If
         Next
+    End Sub
+
+    Sub DownloadFile(ByVal URL As String)
+        Dim Retries As Integer = 3 'TODO: Make this customizable
+        Dim RetryCount As Integer = 1
+        While Not RetryCount > Retries
+            Try
+                If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://") Or URL.StartsWith("sftp://")) Then
+                    W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, URL.Split("/").Last(), CurrDir)
+                    Dim WClient As New WebClient
+                    WClient.DownloadFile(URL, CurrDir + "/" + URL.Split("/").Last())
+                    W(DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
+                Else
+                    W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server.", currentLang), True, ColTypes.Neutral)
+                End If
+                Exit Sub
+            Catch ex As Exception
+                W(DoTranslation("Download failed in try {0}: {1}", currentLang), True, ColTypes.Neutral, RetryCount, ex.Message)
+                RetryCount += 1
+            End Try
+        End While
     End Sub
 
 End Module

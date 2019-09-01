@@ -20,7 +20,7 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.7.0</Version>
+    <Version>0.0.7.1</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -184,7 +184,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>27.0.2</Version>
+      <Version>27.0.3</Version>
     </PackageReference>
     <PackageReference Include="MadMilkman.Ini">
       <Version>1.0.6</Version>
@@ -247,6 +247,7 @@
     <Compile Include="Network\FTP\FTPShell.vb" />
     <Compile Include="Network\FTP\FTPTools.vb" />
     <Compile Include="Network\NetworkTools.vb" />
+    <Compile Include="Network\RemoteDebug\RemoteDebugger.vb" />
     <Compile Include="Shell\AliasManager.vb" />
     <Compile Include="Shell\GetCommand.vb" />
     <Compile Include="Hardware\HardwareProbe.vb" />
@@ -315,6 +316,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\cro.txt" />
+    <Content Include="Resources\ndo.txt" />
+    <Content Include="Resources\pol.txt" />
+    <Content Include="Resources\rmn.txt" />
+    <Content Include="Resources\uzb.txt" />
     <None Include="Resources\cze.txt" />
     <None Include="Resources\tky.txt" />
     <None Include="Resources\swe.txt" />

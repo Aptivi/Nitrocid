@@ -33,11 +33,11 @@ Public Module UserManagement
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
-                    DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, "neutralText", Err.Number, Err.Description, ex.StackTrace)
+                    DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, Err.Description, ex.StackTrace)
                 WStkTrc(ex)
             Else
                 W(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
-                    DoTranslation("Error {0}: {1}", currentLang), True, "neutralText", Err.Number, Err.Description)
+                    DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description)
             End If
         End Try
 
@@ -47,7 +47,7 @@ Public Module UserManagement
 
         'Adds users
         If Quiet = False Then
-            W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, "neutralText", newUser)
+            W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, ColTypes.Neutral, newUser)
         End If
         If Not userword.ContainsKey(newUser) Then
             If newPassword = Nothing Then
@@ -56,7 +56,7 @@ Public Module UserManagement
                 InitializeUser(newUser, newPassword)
             End If
         Else
-            If Not Quiet Then W(DoTranslation("usrmgr: Username {0} is already found", currentLang), True, "neutralText", newUser)
+            If Not Quiet Then W(DoTranslation("usrmgr: Username {0} is already found", currentLang), True, ColTypes.Neutral, newUser)
         End If
 
     End Sub
@@ -67,29 +67,29 @@ Public Module UserManagement
         Try
             Dim DoneFlag As String = "No"
             If InStr(user, " ") > 0 Then
-                W(DoTranslation("Spaces are not allowed.", currentLang), True, "neutralText")
+                W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
             ElseIf user = "q" Then
                 DoneFlag = "Cancelled"
             ElseIf user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-                W(DoTranslation("Special characters are not allowed.", currentLang), True, "neutralText")
+                W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Neutral)
             ElseIf user = Nothing Then
-                W(DoTranslation("Blank username.", currentLang), True, "neutralText")
+                W(DoTranslation("Blank username.", currentLang), True, ColTypes.Neutral)
             ElseIf userword.ContainsKey(user) = False Then
                 Wdbg("ASSERT(isFound({0})) = False", user)
-                W(DoTranslation("User {0} not found.", currentLang), True, "neutralText", user)
+                W(DoTranslation("User {0} not found.", currentLang), True, ColTypes.Neutral, user)
             Else
                 For Each usersRemove As String In userword.Keys.ToArray
                     If usersRemove = user And user = "root" Then
-                        W(DoTranslation("User {0} isn't allowed to be removed.", currentLang), True, "neutralText", user)
+                        W(DoTranslation("User {0} isn't allowed to be removed.", currentLang), True, ColTypes.Neutral, user)
                     ElseIf user = usersRemove And usersRemove = signedinusrnm Then
-                        W(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin.", currentLang), True, "neutralText", user)
+                        W(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin.", currentLang), True, ColTypes.Neutral, user)
                         Wdbg("ASSERT({0}.isLoggedIn(ASSERT({0} = {1}) = True)) = True", user, signedinusrnm)
                     ElseIf usersRemove = user And user <> "root" Then
                         adminList.Remove(user)
                         disabledList.Remove(user)
                         Wdbg("userword.ToBeRemoved = {0}", String.Join(", ", userword(user).ToArray))
                         userword.Remove(user)
-                        W(DoTranslation("User {0} removed.", currentLang), True, "neutralText", user)
+                        W(DoTranslation("User {0} removed.", currentLang), True, ColTypes.Neutral, user)
                         DoneFlag = "Yes"
                     End If
                 Next
@@ -97,11 +97,11 @@ Public Module UserManagement
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("Error trying to remove username.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, "neutralText", Err.Number, Err.Description, ex.StackTrace)
+                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, Err.Description, ex.StackTrace)
                 WStkTrc(ex)
             Else
                 W(DoTranslation("Error trying to remove username.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang), True, "neutralText", Err.Number, Err.Description)
+                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description)
             End If
         End Try
     End Sub
@@ -122,18 +122,18 @@ Public Module UserManagement
                             adminList(username) = True
                             Wdbg("adminList.Added = {0}", adminList(username))
                             If quiet = False Then
-                                W(DoTranslation("The user {0} has been added to the admin list.", currentLang), True, "neutralText", username)
+                                W(DoTranslation("The user {0} has been added to the admin list.", currentLang), True, ColTypes.Neutral, username)
                             End If
                         ElseIf type = "Disabled" Then
                             DoneFlag = True
                             disabledList(username) = True
                             Wdbg("disabledList.Added = {0}", disabledList(username))
                             If quiet = False Then
-                                W(DoTranslation("The user {0} has been added to the disabled list.", currentLang), True, "neutralText", username)
+                                W(DoTranslation("The user {0} has been added to the disabled list.", currentLang), True, ColTypes.Neutral, username)
                             End If
                         Else
                             If quiet = False Then
-                                W(DoTranslation("Failed to add user into permission lists: invalid type {0}", currentLang), True, "neutralText", type)
+                                W(DoTranslation("Failed to add user into permission lists: invalid type {0}", currentLang), True, ColTypes.Neutral, type)
                             End If
                             Exit Sub
                         End If
@@ -141,7 +141,7 @@ Public Module UserManagement
                 Next
                 If DoneFlag = False And quiet = False Then
                     Wdbg("ASSERT(isFound({0})) = False", username)
-                    W(DoTranslation("Failed to add user into permission lists: invalid user {0}", currentLang), True, "neutralText", username)
+                    W(DoTranslation("Failed to add user into permission lists: invalid user {0}", currentLang), True, ColTypes.Neutral, username)
                 End If
             ElseIf mode = "Disallow" Then
                 For Each availableUsers As String In userword.Keys.ToArray
@@ -151,43 +151,43 @@ Public Module UserManagement
                             Wdbg("adminList.ToBeRemoved = {0}", username)
                             adminList(username) = False
                             If quiet = False Then
-                                W(DoTranslation("The user {0} has been removed from the admin list.", currentLang), True, "neutralText", username)
+                                W(DoTranslation("The user {0} has been removed from the admin list.", currentLang), True, ColTypes.Neutral, username)
                             End If
                         ElseIf type = "Disabled" Then
                             DoneFlag = True
                             Wdbg("disabledList.ToBeRemoved = {0}", username)
                             disabledList(username) = False
                             If quiet = False Then
-                                W(DoTranslation("The user {0} has been removed from the disabled list.", currentLang), True, "neutralText", username)
+                                W(DoTranslation("The user {0} has been removed from the disabled list.", currentLang), True, ColTypes.Neutral, username)
                             End If
                         Else
                             If quiet = False Then
-                                W(DoTranslation("Failed to remove user from permission lists: invalid type {0}", currentLang), True, "neutralText", type)
+                                W(DoTranslation("Failed to remove user from permission lists: invalid type {0}", currentLang), True, ColTypes.Neutral, type)
                             End If
                             Exit Sub
                         End If
                     ElseIf username = signedinusrnm Then
-                        W(DoTranslation("You are already logged in.", currentLang), True, "neutralText")
+                        W(DoTranslation("You are already logged in.", currentLang), True, ColTypes.Neutral)
                         Exit Sub
                     End If
                 Next
                 If DoneFlag = False And quiet = False Then
                     Wdbg("ASSERT(isFound({0})) = False", username)
-                    W(DoTranslation("Failed to remove user from permission lists: invalid user {0}", currentLang), True, "neutralText", username)
+                    W(DoTranslation("Failed to remove user from permission lists: invalid user {0}", currentLang), True, ColTypes.Neutral, username)
                 End If
             Else
                 If quiet = False Then
-                    W(DoTranslation("You have found a bug in the permission system: invalid mode {0}", currentLang), True, "neutralText", mode)
+                    W(DoTranslation("You have found a bug in the permission system: invalid mode {0}", currentLang), True, ColTypes.Neutral, mode)
                 End If
             End If
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.", currentLang) + vbNewLine +
-                    DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, "neutralText", Err.Number, Err.Description, ex.StackTrace)
+                    DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, Err.Description, ex.StackTrace)
                 WStkTrc(ex)
             Else
                 W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.", currentLang) + vbNewLine +
-                    DoTranslation("Error {0}: {1}", currentLang), True, "neutralText", Err.Number, Err.Description)
+                    DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description)
             End If
         End Try
 
@@ -212,11 +212,11 @@ Public Module UserManagement
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.", currentLang) + vbNewLine +
-                    DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, "neutralText", Err.Number, Err.Description, ex.StackTrace)
+                    DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, Err.Description, ex.StackTrace)
                 WStkTrc(ex)
             Else
                 W(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.", currentLang) + vbNewLine +
-                    DoTranslation("Error {0}: {1}", currentLang), True, "neutralText", Err.Number, Err.Description)
+                    DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description)
             End If
         End Try
 

@@ -90,13 +90,13 @@ Public Module Kernel
                     LoginPrompt()
                 ElseIf LoginFlag = True And maintenance = True Then
                     LoginFlag = False
-                    W(DoTranslation("Enter the admin password for maintenance.", currentLang), True, "neutralText")
+                    W(DoTranslation("Enter the admin password for maintenance.", currentLang), True, ColTypes.Neutral)
                     answeruser = "root"
                     ShowPasswordPrompt(answeruser)
                 End If
             Catch ex As Exception
                 If DebugMode = True Then
-                    W(ex.StackTrace, True, "uncontError") : WStkTrc(ex)
+                    W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
                 End If
                 KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}", currentLang), ex, Err.Description)
             End Try

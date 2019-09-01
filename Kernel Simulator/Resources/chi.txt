@@ -372,3 +372,14 @@ Huānyíng lái dào nèihé!
 Yǐ <user>chénggōng dēnglù
 MOTD/ MAL yǒuxiào, dàn xiāoxī lèixíng wúxiào. Jiǎshè MOTD......
 Shìtú dòu qǔ wúxiào xiāoxī lèixíng de MOTD/ MAL.
+Zài bǎochí wěndìng liánjiē de tóngshí, jiāng {0} xiàzài dào {1}...
+Xiàzài yǐ wánchéng.
+Chángshì {0} xià zǎi shībài:{1}
+Rúguǒ yào cóng FTP fúwùqì xiàzài wénjiàn, qǐng shǐyòng “ftp”.
+Jiāng wénjiàn xiàzài dào dāngqián gōngzuò mùlù
+Duàn kāi tiáoshì shèbèi
+liè chū yǐ liánjiē de tiáoshì shèbèi
+zhǎo bù dào tiáoshì shèbèi {0}.
+Shèbèi {0} yǐ duàn kāi liánjiē.
+Liánjiē cuòwù:{0}
+Tiáoshì shǐyòng duānkǒu {0} zhēn tīng suǒyǒu dìzhǐ.

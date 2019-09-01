@@ -25,7 +25,7 @@ Public Module HardwareProbe
     Public Sub ProbeHW()
         Wdbg("QuietProbe = {0}.", quietProbe)
         If Not quietProbe Then
-            W(DoTranslation("hwprobe: Your hardware will be probed. Please wait...", currentLang), True, "neutralText")
+            W(DoTranslation("hwprobe: Your hardware will be probed. Please wait...", currentLang), True, ColTypes.Neutral)
             StartProbing()
         Else
             If Not EnvironmentOSType.Contains("Unix") Then
@@ -47,19 +47,19 @@ Public Module HardwareProbe
         'We are checking to see if any of the probers reported a failure starting with CPU
         If CPUDone = False Then
             Wdbg("CPU failed to probe.", KernelVersion)
-            W(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", currentLang), True, "neutralText")
+            W(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
         End If
 
         'then RAM
         If RAMDone = False Then
             Wdbg("RAM failed to probe.", KernelVersion)
-            W(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", currentLang), True, "neutralText")
+            W(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
         End If
 
         'and finally HDD
         If HDDDone = False Then
             Wdbg("HDD failed to probe.", KernelVersion)
-            W(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), True, "neutralText")
+            W(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
         End If
 
         'Print information about the probed hardware
@@ -96,7 +96,7 @@ Public Module HardwareProbe
                      HDDList(HDDList.Count - 1).Sectors)
             Catch ex As Exception
                 HDDDone = False
-                If DebugMode = True Then W(ex.StackTrace, True, "uncontError") : WStkTrc(ex)
+                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
                 Continue For
             End Try
         Next
@@ -108,7 +108,7 @@ Public Module HardwareProbe
                 Wdbg("CPU: CPU.Win32_Processor.Name = {0}, CPU.Win32_Processor.CurrentClockSpeed = {1}", CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
             Catch ex As Exception
                 CPUDone = False
-                If DebugMode = True Then W(ex.StackTrace, True, "uncontError") : WStkTrc(ex)
+                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
                 Continue For
             End Try
         Next
@@ -122,7 +122,7 @@ Public Module HardwareProbe
                 Wdbg("RAM.Win32_PhysicalMemory.Capacity = {0}", RAMList(RAMList.Count - 1).ChipCapacity)
             Catch ex As Exception
                 RAMDone = False
-                If DebugMode = True Then W(ex.StackTrace, True, "uncontError") : WStkTrc(ex)
+                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
                 Continue For
             End Try
         Next
@@ -137,7 +137,7 @@ Public Module HardwareProbe
                     Wdbg("Slot = Win32_PhysicalMemoryArray.MemoryDevices | totalSlots = {0}", totalSlots)
                 Catch ex As Exception
                     RAMDone = False
-                    If DebugMode Then W(ex.StackTrace, True, "uncontError") : WStkTrc(ex)
+                    If DebugMode Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
                     Continue For
                 End Try
             Next
@@ -177,7 +177,7 @@ Public Module HardwareProbe
             CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name, .SSE2 = SSE2})
         Catch ex As Exception
             CPUDone = False
-            If DebugMode = True Then W(ex.StackTrace, True, "uncontError") : WStkTrc(ex)
+            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
         End Try
 
         'RAM Prober
@@ -188,7 +188,7 @@ Public Module HardwareProbe
             RAMList.Add(New RAM_Linux With {.Capacity = mem})
         Catch ex As Exception
             RAMDone = False
-            If DebugMode = True Then W(ex.StackTrace, True, "uncontError") : WStkTrc(ex)
+            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
         End Try
 
         'HDD Prober (You need to have inxi and libcpanel-json-xs-perl installed)
@@ -205,7 +205,7 @@ Public Module HardwareProbe
             If Not inxiout.StartsWith("{") And Not inxiout.EndsWith("}") Then 'If an error appeared while running perl
                 HDDDone = False
                 Wdbg(inxiout)
-                W(DoTranslation("You may not have libcpanel-json-xs-perl installed on your system. Refer to your package manager for installation. For Debian (and derivatives) systems, you might want to run ""sudo apt install libcpanel-json-xs-perl"" in the terminal emulator. More details of an error:", currentLang) + vbNewLine + inxiout, True, "neutralText")
+                W(DoTranslation("You may not have libcpanel-json-xs-perl installed on your system. Refer to your package manager for installation. For Debian (and derivatives) systems, you might want to run ""sudo apt install libcpanel-json-xs-perl"" in the terminal emulator. More details of an error:", currentLang) + vbNewLine + inxiout, True, ColTypes.Neutral)
                 Exit Sub
             End If
             Dim inxitoken As JToken = JToken.Parse(inxiout)
@@ -218,7 +218,7 @@ Public Module HardwareProbe
             Next
         Catch ex As Exception
             HDDDone = False
-            If DebugMode = True Then W(ex.StackTrace, True, "uncontError") : WStkTrc(ex)
+            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
         End Try
     End Sub
 
@@ -232,17 +232,17 @@ Public Module HardwareProbe
         For Each processorinfo In CPUList
             Dim CPUName As String = processorinfo.Name
             If CPUName.Contains("@") And CPUName.EndsWith("GHz") Then
-                W("CPU: {0}", False, "neutralText", processorinfo.Name)
+                W("CPU: {0}", False, ColTypes.Neutral, processorinfo.Name)
             Else
-                W("CPU: {0} @ {1}MHz", False, "neutralText", processorinfo.Name, processorinfo.ClockSpeed)
+                W("CPU: {0} @ {1}MHz", False, ColTypes.Neutral, processorinfo.Name, processorinfo.ClockSpeed)
             End If
 
             'SSE2 availability
             If CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available) Then
-                W(" : SSE2", True, "neutralText")
+                W(" : SSE2", True, ColTypes.Neutral)
             End If
         Next
-        W(DoTranslation("CPU: Total number of processors: {0}", currentLang), True, "neutralText", Environment.ProcessorCount)
+        W(DoTranslation("CPU: Total number of processors: {0}", currentLang), True, ColTypes.Neutral, Environment.ProcessorCount)
 
         'This is an expression totalling a RAM to print string
         For Each capacity In Capacities
@@ -250,32 +250,32 @@ Public Module HardwareProbe
         Next
 
         'Print some info
-        W(DoTranslation("RAM: {0}MB = {1}MB", currentLang), True, "neutralText", CStr(total), String.Join("MB + ", Capacities))
+        W(DoTranslation("RAM: {0}MB = {1}MB", currentLang), True, ColTypes.Neutral, CStr(total), String.Join("MB + ", Capacities))
 
         'A loop to print names
         For Each slotname In RAMList
             If times = 1 Then
-                W(DoTranslation("RAM: Used slots (by names): {0}", currentLang), False, "neutralText", slotname.SlotName)
+                W(DoTranslation("RAM: Used slots (by names): {0}", currentLang), False, ColTypes.Neutral, slotname.SlotName)
             Else
-                W(" {0}", False, "neutralText", slotname.SlotName)
+                W(" {0}", False, ColTypes.Neutral, slotname.SlotName)
             End If
             times += 1
         Next
 
         'Number of slots used
-        W(vbNewLine + DoTranslation("RAM: Used slots (by numbers): {0} / {1} ({2}%)", currentLang), True, "neutralText", CStr(slotsUsedNum), totalSlots, FormatNumber(CStr(slotsUsedNum * 100 / totalSlots), 1))
+        W(vbNewLine + DoTranslation("RAM: Used slots (by numbers): {0} / {1} ({2}%)", currentLang), True, ColTypes.Neutral, CStr(slotsUsedNum), totalSlots, FormatNumber(CStr(slotsUsedNum * 100 / totalSlots), 1))
 
         'Drive Info
         For Each driveinfo In HDDList
             If driveinfo.Manufacturer = "(Standard disk drives)" Then
                 W(DoTranslation("HDD: {0} {1}GB {2}", currentLang) + vbNewLine +
-                    DoTranslation("HDD: CHS: {3} cylinders | {4} heads | {5} sectors", currentLang), True, "neutralText",
+                    DoTranslation("HDD: CHS: {3} cylinders | {4} heads | {5} sectors", currentLang), True, ColTypes.Neutral,
                     driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2),
                     driveinfo.InterfaceType, driveinfo.Cylinders,
                     driveinfo.Heads, driveinfo.Sectors)
             Else
                 W(DoTranslation("HDD: {0} {1} {2}GB {3}", currentLang) + vbNewLine +
-                    DoTranslation("HDD: CHS: {4} cylinders | {5} heads | {6} sectors", currentLang), True, "neutralText",
+                    DoTranslation("HDD: CHS: {4} cylinders | {5} heads | {6} sectors", currentLang), True, ColTypes.Neutral,
                     driveinfo.Manufacturer, driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2),
                     driveinfo.InterfaceType, driveinfo.Cylinders,
                     driveinfo.Heads, driveinfo.Sectors)
@@ -286,21 +286,21 @@ Public Module HardwareProbe
     Sub ListDrivers_Linux()
         'CPU List
         For Each info As CPU_Linux In CPUList
-            W("CPU: {0} {1} Mhz", False, "neutralText", info.CPUName, info.Clock)
+            W("CPU: {0} {1} Mhz", False, ColTypes.Neutral, info.CPUName, info.Clock)
             If info.SSE2 Then
-                W(" : SSE2", False, "neutralText")
+                W(" : SSE2", False, ColTypes.Neutral)
             End If
             Console.WriteLine()
         Next
 
         'HDD List
         For Each info As HDD_Linux In HDDList
-            W("HDD: {0} {1} {2}", True, "neutralText", info.Vendor_LNX, info.Model_LNX, info.Size_LNX)
+            W("HDD: {0} {1} {2}", True, ColTypes.Neutral, info.Vendor_LNX, info.Model_LNX, info.Size_LNX)
         Next
 
         'RAM List
         For Each info As RAM_Linux In RAMList
-            W("RAM: {0}", True, "neutralText", info.Capacity)
+            W("RAM: {0}", True, ColTypes.Neutral, info.Capacity)
         Next
     End Sub
 End Module

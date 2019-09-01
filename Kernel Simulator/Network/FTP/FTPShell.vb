@@ -61,9 +61,9 @@ Public Module FTPShell
             If Not Connects Then
                 Wdbg("Preparing prompt...")
                 If connected Then
-                    W("[", False, "def") : W("{0}", False, "userName", user) : W("@", False, "def") : W("{0}", False, "hostName", ftpsite) : W("]{0} ", False, "def", currentremoteDir)
+                    W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, user) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, ftpsite) : W("]{0} ", False, ColTypes.Gray, currentremoteDir)
                 Else
-                    W("{0}> ", False, "def", currDirect)
+                    W("{0}> ", False, ColTypes.Gray, currDirect)
                 End If
             End If
 
@@ -92,7 +92,7 @@ Public Module FTPShell
         If availftpcmds.Contains(words(0)) Then
             FTPGetCommand.ExecuteCommand(strcmd)
         Else
-            W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), True, "neutralText", strcmd)
+            W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), True, ColTypes.Neutral, strcmd)
         End If
     End Sub
 

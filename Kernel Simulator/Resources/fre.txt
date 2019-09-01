@@ -372,3 +372,14 @@ Bienvenue sur Kernel!
 Connecté avec succès en tant que <utilisateur>
 MOTD / MAL est valide, mais le type de message n'est pas valide. 
 J'ai essayé de lire MOTD / MAL dont le type de message était invalide.
+Tout en maintenant une connexion stable, il télécharge {0} sur {1} ...
+Le téléchargement est terminé.
+Le téléchargement a échoué lors de l'essai {0}: {1}
+Veuillez utiliser "ftp" si vous allez télécharger des fichiers depuis le serveur FTP.
+Télécharge un fichier dans le répertoire de travail courant
+Déconnecter un périphérique de débogage
+Répertorie les périphériques de débogage connectés
+Dispositif de débogage {0} introuvable.
+Périphérique {0} déconnecté.
+Erreur de connexion: {0}
+Déboguer l’écoute sur toutes les adresses en utilisant le port {0}.

@@ -30,7 +30,7 @@ Module ArgumentPrompt
         Else
             'Shows available arguments and prompts for it
             W(DoTranslation("Available arguments: {0}", currentLang) + vbNewLine +
-              DoTranslation("Arguments ('help' for help): ", currentLang), False, "input", String.Join(", ", AvailableArgs))
+              DoTranslation("Arguments ('help' for help): ", currentLang), False, ColTypes.Input, String.Join(", ", AvailableArgs))
             answerargs = Console.ReadLine()
 
             'Make a kernel check for arguments later if anything is entered
@@ -38,9 +38,9 @@ Module ArgumentPrompt
                 argsFlag = True
             ElseIf answerargs <> Nothing And InjMode = True Then
                 argsInjected = True
-                W(DoTranslation("Injected arguments will be scheduled to run at next reboot.", currentLang), True, "neutralText")
+                W(DoTranslation("Injected arguments will be scheduled to run at next reboot.", currentLang), True, ColTypes.Neutral)
             ElseIf answerargs = "q" And InjMode = True Then
-                W(DoTranslation("Argument Injection has been cancelled.", currentLang), True, "neutralText")
+                W(DoTranslation("Argument Injection has been cancelled.", currentLang), True, ColTypes.Neutral)
             End If
         End If
 

@@ -372,3 +372,14 @@ Välkommen till Kernel!
 Inloggad framgångsrik som <användare>
 MOTD / MAL är giltig, men meddelandetypen är inte giltig. 
 Försökte läsa MOTD / MAL som är av ogiltig meddelandetyp.
+Enquanto mantém a conexão estável, está baixando {0} para {1} ...
+O download foi concluído.
+Falha no download na tentativa {0}: {1}
+Por favor, use "ftp" se você deseja baixar arquivos do servidor FTP.
+Faz o download de um arquivo para o diretório de trabalho atual
+Koppla bort en felsökningsenhet
+Listar felsökningsenheter anslutna
+Felsökningsenhet {0} hittades inte.
+Enheten {0} är frånkopplad.
+Fel i anslutningen: {0}
+Felsökning lyssnar på alla adresser med port {0}.

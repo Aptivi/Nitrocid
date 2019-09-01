@@ -372,3 +372,14 @@ Vítejte v Kernelu!
 Úspěšně přihlášeno jako <user>
 MOTD / MAL je platný, ale typ zprávy není platný. 
 Pokusil se přečíst MOTD / MAL, který je neplatného typu zprávy.
+Při zachování stabilního připojení se stahuje {0} do {1} ...
+Stahování bylo dokončeno.
+Stažení se nezdařilo v pokusu {0}: {1}
+Pokud se chystáte stahovat soubory ze serveru FTP, použijte „ftp“.
+Stáhne soubor do aktuálního pracovního adresáře
+Odpojte ladicí zařízení
+Vypíše seznam ladících zařízení
+Ladicí zařízení {0} nebylo nalezeno.
+Zařízení {0} bylo odpojeno.
+Chyba ve spojení: {0}
+Ladění poslechu na všech adresách pomocí portu {0}.

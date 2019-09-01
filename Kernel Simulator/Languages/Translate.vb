@@ -19,7 +19,9 @@
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"chi", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "mal", "ptg", "spa", "swe", "tky"}
+    'TODO: Add Arabic and Japanese languages (Transliteration, not translations)
+    'TODO: Ask user if they want to use transliterated or translated
+    Public availableLangs() As String = {"chi", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "mal", "ndo", "pol", "ptg", "rmn", "spa", "swe", "tky", "uzb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
 
@@ -38,6 +40,7 @@ Public Module Translate
         If availableLangs.Contains(lang) And lang <> "eng" Then
             'Prepare dictionary
             translatedString = PrepareDict(lang)
+            Wdbg("Dictionary size: {0}", translatedString.Count)
 
             'Do translation
             If translatedString.Keys.Contains(text) Then
@@ -60,34 +63,42 @@ Public Module Translate
         Dim langStrings As New Dictionary(Of String, String)
         Dim translated As String = ""
         Select Case lang
-            Case "chi"
+            Case "chi" 'Chinese
                 translated = My.Resources.chi
-            Case "cro"
+            Case "cro" 'Croatian
                 translated = My.Resources.cro
-            Case "cze"
+            Case "cze" 'Czech
                 translated = My.Resources.cze
-            Case "dtc"
+            Case "dtc" 'Dutch
                 translated = My.Resources.dtc
-            Case "fre"
+            Case "fre" 'French
                 translated = My.Resources.fre
-            Case "fin"
+            Case "fin" 'Finnish
                 translated = My.Resources.fin
-            Case "ger"
+            Case "ger" 'Germany
                 translated = My.Resources.ger
-            Case "ind"
+            Case "ind" 'Hindi
                 translated = My.Resources.ind
-            Case "ita"
+            Case "ita" 'Italian
                 translated = My.Resources.ita
-            Case "mal"
+            Case "mal" 'Malay (not Malayalam)
                 translated = My.Resources.mal
-            Case "ptg"
+            Case "ndo" 'Indonesian
+                translated = My.Resources.ndo
+            Case "pol" 'Polish
+                translated = My.Resources.pol
+            Case "ptg" 'Portuguese
                 translated = My.Resources.ptg
-            Case "spa"
+            Case "rmn" 'Romanian
+                translated = My.Resources.rmn
+            Case "spa" 'Spanish
                 translated = My.Resources.spa
-            Case "swe"
+            Case "swe" 'Swedish
                 translated = My.Resources.swe
-            Case "tky"
+            Case "tky" 'Turkish
                 translated = My.Resources.tky
+            Case "uzb" 'Uzbekistan
+                translated = My.Resources.uzb
         End Select
 
         'Convert translated string list to Dictionary
@@ -103,7 +114,7 @@ Public Module Translate
     Public Sub SetLang(ByVal lang As String)
         If availableLangs.Contains(lang) Then
             'Set current language
-            W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, "neutralText", currentLang, lang)
+            W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, currentLang, lang)
             currentLang = lang
             Dim ksconf As New IniFile()
             Dim pathConfig As String = paths("Configuration")
@@ -115,7 +126,7 @@ Public Module Translate
             InitHelp()
             InitFTPHelp()
         Else
-            W(DoTranslation("Invalid language", currentLang), True, "neutralText")
+            W(DoTranslation("Invalid language", currentLang), True, ColTypes.Neutral)
         End If
     End Sub
 

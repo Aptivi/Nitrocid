@@ -1,0 +1,385 @@
+﻿Comenzi disponibile: {0}
+Comanda de scriere:
+Injectarea comenzii a fost anulată.
+Separați argumentele de pornire cu virgule fără spații, de exemplu, 'motd, gpuprobe'
+Separa comenzile de pe „cmdinject” cu coloane cu spații, de exemplu, „cmdinject setthemes Hacker: bip 1024 0.5”
+Rețineți că argumentul „debug” nu acoperă complet nucleul.
+bargs: Argumentul solicitat {0} nu este găsit.
+bargs: eroare care nu poate fi recuperată în argument:
+Argumente disponibile: {0}
+Argumente („ajutor” pentru ajutor):
+Argumentele injectate vor fi programate să ruleze la repornirea următoare.
+Injecția argumentului a fost anulată.
+Eroare la analizarea argumentelor reale ale liniei de comandă: {0}
+Șablon de culoare nevalid {0}
+Mod implicit
+Personalizat
+hwprobe: hardware-ul dvs. va fi testat. Te rog asteapta...
+hwprobe: Hardware sondat deja.
+hwprobe: Hardware-ul nu este probat. Sonda folosind „hwprobe”
+CPU: Unul sau mai multe nuclee ale procesorului nu au fost probate. Afișarea informațiilor oricum ...
+RAM: una sau mai multe dintre cipurile RAM nu au fost probate. Afișarea informațiilor oricum ...
+HDD: Unul sau mai multe dintre hard disk-urile nu au fost probate. Afișarea informațiilor oricum ...
+CPU: Număr total de procesoare: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: sloturi utilizate (după nume): {0}
+RAM: sloturi folosite (după numere): {0} / {1} ({2}%)
+RAM: starea probing-ului este învechită și va fi eliminată în versiunea viitoare.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} cilindri | {5} capete | {6} sectoare
+HDD: CHS: {3} cilindri | {4} capete | {5} sectoare
+hwprobe: Sondarea nu este acceptată, deoarece nu este proiectată pentru a rula probere pe Unix.
+Introduceți parola de administrare pentru întreținere.
+Nu mai rămân utilizatori în listă.
+Eroare a nucleului la pornire: {0}
+PANIC DOUBLE: Timpul de repornire depășește durata maximă permisă {0} de repornire a erorii. Ați găsit o eroare a kernel-ului.
+[{0}] panică: Reboot activat din cauza nivelului de eroare {0}.
+[{0}] panică: timpul de repornire: {1} secunde, depășește 1 oră. Este setat la 1 minut.
+PANIC DOUBLE: Tip de eroare {0} nevalid.
+[{0}] dpanic: {1} - Rebooting în {2} secunde ...
+[{0}] panică: Reboot dezactivat din cauza nivelului de eroare {0}.
+[{0}] panică: {1} - Apăsați orice tastă pentru a continua să utilizați nucleul.
+[{0}] panică: {1} - Apăsați orice tastă pentru a opri.
+[{0}] panică: {1} - Repornirea în {2} secunde ...
+DOUBLE PANIC: Bug-ul kernelului: {0}
+Oprirea ...
+Repornește ...
+--- === +++> Bine ați venit la sâmbure | Versiunea {0} <+++ === ---
+O altă instanță a Kernel Simulator rulează. Oprirea în caz de interferență.
+Utilizatorul {0} a fost adăugat la lista de admin.
+Utilizatorul {0} a fost adăugat la lista de dezactivate.
+Eroare la adăugarea utilizatorului în listele de permisiuni: tip nevalid {0}
+Eroare la adăugarea utilizatorului în listele de permisiuni: utilizator nevalid {0}
+Utilizatorul {0} a fost eliminat din lista de admin.
+Utilizatorul {0} a fost eliminat din lista de dezactivate.
+Nu a reușit să elimini utilizatorul din listele de permisiuni: tip nevalid {0}
+Sunteți deja conectat.
+Nu a reușit să elimini utilizatorul din listele de permisiuni: utilizator nevalid {0}
+Ați găsit o eroare în sistemul de permisiuni: modul invalid {0}
+Ați găsit fie o eroare, fie permisiunea pe care ați încercat să o adăugați sau să o eliminați este deja făcută, sau o altă eroare.
+Eroare {0}: {1}
+Ați găsit fie o eroare, fie permisiunea pe care ați încercat să o editați pentru un utilizator nou a eșuat.
+Numele de utilizator disponibile: {0}
+Nume de utilizator:
+Spațiile nu sunt permise.
+Caracterele speciale nu sunt permise.
+Parola {0}:
+Parola gresita.
+Utilizatorul este dezactivat.
+Nume greșit.
+A apărut o eroare la testarea locațiilor. {0} - Urmăritul stivei:
+A apărut o eroare la testarea locațiilor. {0}
+Eroare încercat să adăugați nume de utilizator.
+usrmgr: Crearea numelui de utilizator {0} ...
+Nume utilizator necompletat
+Utilizatorul {0} nu a fost găsit.
+Utilizatorul {0} nu are voie să fie eliminat.
+Utilizatorul {0} este deja conectat. Deconectați-vă și conectați-vă ca un alt administrator.
+Utilizatorul {0} a fost eliminat.
+Eroare la încercarea de a elimina numele de utilizator.
+{0} din {1} = {2}
+Nu este permisă încercarea de divizare la zero.
+A existat o suspiciune încercare de calcul care a dus la o revărsare.
+A apărut o eroare la calcularea: {0}
+{0} nu poate fi convertit în {1}.
+Ori sursa
+ sau destinație
+ nu există pe server.
+De la {0} la {1}: {2}
+Eroare la încercarea de a converti de la {0} la {1}: {2}
+Eroare
+Protectorul de ecran solicitat {0} nu este găsit.
+{0} a fost inițializat corect.
+{0} nu a inițializat. Este posibil ca codul de salvare să fi avut o eroare la inițializare.
+Screensaver {0} nu există.
+{0} este setat pe screensaver implicit.
+Screensaver {0} nu se găsește în baza de date. Inițializați cu „loadsaver {0}”.
+Screensaverul nu poate fi încărcat din următoarele:
+Există o eroare gravă la imprimarea textului.
+Există o eroare încercând să creeze configurație.
+Există o eroare încercând să creeze configurație: {0}
+A fost detectată o actualizare de la {0} la {1}. Se actualizează configurația ...
+Există o eroare încercând să actualizeze configurația: {0}.
+A apărut o eroare la încercarea de actualizare a configurației.
+A apărut o eroare la încercarea de a citi configurația.
+Există o eroare în încercarea de a citi configurația: {0}
+Eroare la încercarea de a elibera RAM: {0} - Continuarea ...
+Modul nu poate fi încărcat din următoarele:
+mod: Încărcarea modurilor ...
+mod: Oprirea modurilor ...
+Mod {0} nu are numele. Examinați codul sursă.
+Mod {0} nu are versiunea.
+{0} v {1} a început
+Nicio definiție pentru comanda {0}.
+Comanda definită de
+Ar trebui să vă deconectați de la server înainte de a vă conecta la un alt server
+Nume de utilizator pentru {0}:
+Parolă pentru {0}:
+Conectat la {0}
+Eroare când încercați să vă conectați la {0}: {1}
+Urmărit Stack: {2}
+Introduceți un server FTP.
+Directorul local {0} nu există.
+Introduceți un director local. ".." pentru a reveni.
+Directory {0} nu a fost găsit.
+Introduceți un director la distanță. ".." pentru a reveni
+Trebuie să vă conectați la un server înainte de a schimba directorul
+Director local: {0}
+Director la distanță: {0}
+Trebuie să vă conectați la server înainte de a obține directorul la distanță curent.
+Ștergerea fișierului {0} ...
+Sigur doriți să ștergeți fișierul {0} <y / n>?
+Fișier șters {0}
+Înainte de a efectua ștergerea, trebuie să vă conectați la server cu privilegii administrative.
+Introduceți un fișier pentru a elimina.
+Pentru a putea elimina, trebuie să aveți permisiuni administrative pe numele dvs. de utilizator conectat.
+Deconectat de la {0}
+Nu v-ați conectat încă la niciun server
+Se descarcă fișierul {0} ...
+Fișier descărcat {0}.
+Descărcarea a eșuat pentru fișierul {0}, deoarece fișierul local este corupt.
+Trebuie să vă conectați la server înainte de a efectua transmisia.
+Introduceți un fișier pentru a fi descărcat în directorul local.
+{0} KB | Modificat în: {1}
+Trebuie să vă conectați la server înainte de a enumera toate fișierele la distanță.
+Redenumirea fișierului {0} la {1} ...
+Redenumit cu succes
+Introduceți un fișier și noul nume de fișier.
+Se încarcă fișierul {0} ...
+Fișier încărcat {0}
+Introduceți un fișier de încărcat în directorul de la distanță. încărcați <fișier> <director>
+Eroare încercat să execute comanda FTP
+(Interior:
+{0} foldere, {1} fișiere
+(Acces interzis)
+{0} KB, creat în {1} {2}, modificat în {3} {4}
+Obține directorul local curent
+Obține directorul la distanță curent
+Se conectează la un server FTP (trebuie să înceapă cu "ftp: //" sau "ftps: //")
+Modifică directorul local pentru a fi descărcat sau încărcat din
+Modifică directorul la distanță pentru a fi descărcat sau încărcat în
+Șterge fișierul la distanță de pe server
+Se deconectează de la server
+Descarcă fișierul la distanță în directorul local folosind text binar sau text
+Părăsește shell-ul FTP și revine la kernel
+Afișează ecranul de ajutor
+Listează directorul local
+Listează directorul la distanță
+Redenumește fișier sau director specific
+Încarcă fișierul local într-un director de la distanță folosind text binar sau text
+A apărut o eroare în shell-ul FTP.
+Mesaj FTP: Comanda solicitată {0} nu este găsită. Consultați „ajutor” pentru o listă de comenzi disponibile specificate pe shell-ul FTP.
+net: Răspuns primit de la {0} în {1} ms
+Deconectat, deconectat sau server offline.
+net: numele computerului dvs. în rețea este {0}
+net: Numele dvs. de gazdă este {1}
+net: Se pare că calculatoarele sunt în domeniu sau grup de lucru:
+net: WiFi sau Ethernet este deconectat.
+net: Se pare că computerele sunt conectate mai jos:
+net: Router Address: {0}
+Eroare la obținerea proprietăților pentru adaptor {0}
+Numărul adaptorului:
+Nume adaptor:
+Unitate de transmisie maximă: {2} unități
+Activat DHCP:
+Pachete care nu sunt unicast:
+Pachete Unicast:
+Eroare pachetele de intrare / ieșire:
+Alias ​​nu poate fi același nume ca o comandă.
+Comanda nu a fost găsită pentru alias la {0}.
+Aliasingul de la 0 la {1} este interzis.
+Acum puteți rula „{0}” ca comandă: „{1}”.
+Nu mai puteți utiliza „{0}” ca comandă „{1}”.
+Alias ​​{0} nu a fost eliminat.
+Mod nevalid {0}.
+Argumentele injectate, {0}, vor fi programate să ruleze la repornirea următoare.
+Nu au fost suficiente argumente. Vezi mai jos pentru utilizare:
+Directory {0} nu a fost găsit
+Numele gazdelor necompletate.
+Schimbarea de la: {0} la {1} ...
+Mesaj gol al zilei.
+Blank MAL după autentificare.
+Schimbarea MAL de la {0} la {1} ...
+Parola de utilizator greșită.
+Parolele nu se potrivesc.
+Numele de utilizator a fost schimbat în {0}!
+Noul nume introdus este deja găsit.
+Listarea PC-urilor nu este încă acceptată pe Unix.
+Aliasuri interzise: {0}
+{0} nu este găsit.
+Configurarea reîncărcată. Este posibil să fie nevoie să reporniți nucleul pentru ca unele modificări să intre în vigoare.
+Totul este resetat la setările normale.
+Una sau mai multe culori nu sunt valide.
+Culorile nu sunt disponibile. Activați coajă colorată în configurația kernel-ului.
+Screensaver {0} nu a fost găsit.
+{0} [Setări ale kernelului (funcționare pe {1})]
+Versiunea nucleului:
+Modul de depanare:
+Coajă colorată:
+Argumente de pornire:
+Comanda de ajutor simplificată:
+MOTD la Logare:
+Ora / data la colț:
+Hardware sondat:
+Tema actuală:
+[Setări hardware] {0}
+{0} [Setări utilizator]
+Numele de utilizator curent:
+Numele gazdei curente:
+Numele de utilizator disponibile:
+Numele gazdei computerului:
+{0} [Setări mesaje]
+Cod sursa:
+Drepturi de autor (c)
+Licență
+prezent
+Eroare încercat să execute comanda
+Adăugă utilizatori (Doar administratorii pot accesa această comandă)
+Adăuga alias la comenzi (Doar administratorii pot accesa această comandă)
+Injectă argumente pentru kernel (este necesar să reporniți, numai admins)
+Calculator simplu
+Modifică directorul
+Modifică numele gazdelor (doar administratorii)
+Modifică MAL, MOTD după autentificare (doar administratorii)
+Modifică MOTD, mesajul zilei (doar administratorii)
+Schimbă parola pentru utilizatorul curent
+Modifică numele de utilizator (numai pentru administratori)
+Șterge ecranul
+Conversia monedei
+Prezintă jurnalele de depanare (doar administratorii)
+Utilizați un shell FTP pentru a interacționa cu serverele
+Pagina de ajutor
+Sonda hardware manual (o singură dată în nucleul „nohwprobe”)
+Listează conținutul fișierului / folderului în folderul curent
+Reîncarcă fișierul de salvare a ecranului în% USERPROFILE% \ KSMods
+Încuie ecranul cu o parolă
+Te loghează
+Listează toate dispozitivele de rețea care sunt online (și offline în domenii)
+Listează toate adresele de rețea din gazdă
+Listează toate adresele de rețea din gazdă folosind arborele
+Creează un director
+Listează informații despre toate interfețele disponibile
+Prezintă lista interzisă de pseudonime
+Gestionarea permisiunilor pentru utilizatori (Doar administratorii pot accesa această comandă)
+Verificați dacă este disponibilă o adresă specificată
+Scrie conținutul fișierului în consolă
+Reporni computerul (AVERTIZARE: Fără sincronizare, deoarece nu este un nucleu final)
+Reîncarcă fișierul de configurare care este editat.
+Îndepărtează un director
+Înlătură un utilizator din listă (numai administratorii)
+Salvează ecranul dvs. de la înregistrări
+Calculator stiintific. Convertorul de unitate este separat de o altă comandă
+Setează culorile sâmburelui
+Configurează protectorii de ecran pentru kernel
+Configurează teme de kernel
+Prezintă alias-uri
+Prezintă MOTD după conectarea setată de utilizator sau kernel
+Afișează mesajul zilei setat de utilizator sau kernel
+Afișează data și ora
+Afișează data și ora în zone
+Nucleul va fi oprit
+Informatii despre sistem
+Convertor de unitate care este separat de scicalc.
+Prezintă dependențele open source utilizate
+Un manual de utilizare foarte descriptiv.
+* Puteți utiliza mai multe comenzi folosind colonul dintre comenzi.
+Comenzi disponibile:
+Comenzi Mod:
+Alias ​​la comenzi:
+utilizare:
+Argumente separate prin virgule
+unde argumentele vor fi {0}
+pentru a obține directorul curent
+În care sursă și destinație se află 3 caractere UPPERCASE ale unei cursuri de schimb
+Lista tuturor ID-urilor și numele:
+Vă afișează jurnalele de depanare, astfel încât să ne puteți trimite jurnalul.
+Inițializează shell-ul FTP.
+Sonde hardware (funcționează numai atunci când hardware-ul nu este probat și hwprobe nu este executat).
+Listează informațiile din rețea, precum și fiecare computer conectat la o rețea.
+Prietenii lui
+Listează informațiile din rețea, precum și fiecare computer conectat la o rețea, într-o formă de copac.
+Listează informațiile din rețea, precum și fiecare computer.
+unde va fi modnameSS.m
+Încuie ecranul cu parola.
+Te scoate din uz.
+Obțineți toate informațiile din rețea
+Reporni computerul dvs. simulat.
+Reîncarcă configurația care este modificată de utilizatorul final sau de instrument.
+Culorile nu necesită o repornire, dar majoritatea setărilor necesită repornirea.
+vă arată un protector de ecran selectat, în timp ce vă protejați ecranul împotriva incendiilor.
+Afișează data și ora.
+Afișează data și ora în zone.
+Opri computerul dvs. simulat.
+Arată informațiile și versiunile sistemului.
+Prezintă bibliotecile open source utilizate
+A apărut o eroare în coajă.
+Nu aveți permisiunea de a utiliza {0}
+Mesaj Shell: Comanda solicitată {0} nu are voie să ruleze în modul de întreținere.
+Mesaj Shell: Comanda solicitată {0} nu este găsită. Consultați „ajutor” pentru comenzile disponibile.
+Mesaj Shell: Comanda {0} nu are voie să se execute la logare.
+Mesaj Shell: Comanda solicitată {0} nu este găsită.
+Eroare încercat să execute comanda.
+datetime: timpul este {0}
+datetime: Astăzi este {0}
+datetime: Fus orar: {0}
+- Ora {0}: {1}
+pentru a șterge ecranul.
+Se pare că pagina manuală {0} nu este găsită.
+Există o eroare atunci când încercați să încărcați pagina manuală {0} becuase {1}.
+Această pagină manuală este incompletă din următoarele motive:
+Apăsați orice tastă pentru a continua...
+ | {0} cuvinte | Revizuirea v {1} | {2} secțiuni
+Acest titlu al paginii manuale nu este scris
+Această pagină manuală ({0}) nu conține niciun text de corp. Ștergerea paginii ...
+Această pagină manuală ({0}) nu conține nicio secțiune. Ștergerea paginii ...
+Se execută pe {0}
+Nu sunteți autorizat să obțineți informații pentru {0}.
+Această comandă este învechită și va fi eliminată într-o versiune viitoare.
+Nu sunteți autorizat să schimbați parola de {0}, deoarece ținta a fost un administrator.
+Conversia sumei de bani dintr-o țară în alta
+valute:
+usrmgr: Numele de utilizator {0} este deja găsit
+Introduceți cheia API:
+Nu s-a putut lua calculatoare. Dacă executați cea mai recentă versiune a Windows 10, trebuie să activați SMBv1. Cu toate acestea, acest protocol este nesigur și vom încerca să rezolvăm această problemă.
+Șterge totul din jurnalul de depanare
+Obține versiuni SSE
+Limba nevalidă
+Schimbă limba
+Este posibil să nu aveți libcpanel-json-xs-perl instalat pe sistemul dvs. Consultați managerul de pachete pentru instalare. Pentru sistemele Debian (și derivate), poate doriți să rulați „sudo apt install libcpanel-json-xs-perl” în emulatorul terminal. Mai multe detalii despre o eroare:
+----------------------------- Kernel panic dump ------------------ -----------
+>> Informații de panică <<
+> Descriere: {0}
+> Tip de eroare: {1}
+> Data și ora: {2}
+>> Informații de excepție <<
+> Excepție: {0}
+> Descriere: {1}
+> HRESULT: {2}
+> Sursa: {3}
+> Urme de stivă <
+>> Excepție interioară {0} informații <<
+>> Excepție {0} este cauza principală <<
+>> Fără excepție; ar putea fi o eroare de nucleu. <<
+>> Cadre, fișiere, linii și coloane <<
+> Cadru {0}: Fișier: {1} | Linie: {2} | Coloana: {3}
+> Există o eroare când încercați să obțineți informații cadru. {0}: {1}
+Ați setat limba sistemului dvs. la orice altceva decât la engleză. Ne pare rău pentru inconveniente, dar se pare că Google și traducătorul său sunt foarte ciudat în ceea ce privește traducerea blocurilor de cod pentru orice limbaj de programare. În timp ce remediem toate blocurile de cod pentru paginile manuale traduse, vă sugerăm să deschideți un bilet la Google Translate pentru traducerea blocurilor de cod care nu sunt menite să fie traduse și să setați limba sistemului dvs. în engleză dacă o vorbiți.
+Reîncărcare mods.
+Moduri reîncărcate.
+Bine ați venit la Kernel!
+Autentificat cu succes ca <user>
+MOTD / MAL este valabil, dar tipul mesajului nu este valid. Presupunând MOTD ...
+Am încercat să citesc MOTD / MAL care este de tipul de mesaj nevalid.
+În timp ce mențineți o conexiune stabilă, se descarcă {0} pe {1} ...
+Descărcarea s-a finalizat.
+Descărcarea a eșuat în încercarea {0}: {1}
+Vă rugăm să folosiți „ftp” dacă veți descărca fișiere de pe serverul FTP.
+Descarcă un fișier în directorul de lucru curent
+Deconectați un dispozitiv de depanare
+Listează dispozitivele de depanare conectate
+Dispozitivul de depanare {0} nu a fost găsit.
+Dispozitivul {0} deconectat.
+Eroare în conexiune: {0}
+Debug ascultați pe toate adresele folosind portul {0}.

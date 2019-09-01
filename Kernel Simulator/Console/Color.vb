@@ -19,16 +19,16 @@
 Public Module Color
 
     'Variables for colors used by previous versions of Kernel.
-    Public inputColor As Object = ConsoleColor.White
-    Public licenseColor As Object = ConsoleColor.White
-    Public contKernelErrorColor As Object = ConsoleColor.Yellow
-    Public uncontKernelErrorColor As Object = ConsoleColor.Red
-    Public hostNameShellColor As Object = ConsoleColor.DarkGreen
-    Public userNameShellColor As Object = ConsoleColor.Green
-    Public backgroundColor As Object = ConsoleColor.Black
-    Public neutralTextColor As Object = ConsoleColor.Gray
-    Public cmdListColor As Object = ConsoleColor.DarkYellow
-    Public cmdDefColor As Object = ConsoleColor.DarkGray
+    Public inputColor As ConsoleColor = ConsoleColor.White
+    Public licenseColor As ConsoleColor = ConsoleColor.White
+    Public contKernelErrorColor As ConsoleColor = ConsoleColor.Yellow
+    Public uncontKernelErrorColor As ConsoleColor = ConsoleColor.Red
+    Public hostNameShellColor As ConsoleColor = ConsoleColor.DarkGreen
+    Public userNameShellColor As ConsoleColor = ConsoleColor.Green
+    Public backgroundColor As ConsoleColor = ConsoleColor.Black
+    Public neutralTextColor As ConsoleColor = ConsoleColor.Gray
+    Public cmdListColor As ConsoleColor = ConsoleColor.DarkYellow
+    Public cmdDefColor As ConsoleColor = ConsoleColor.DarkGray
 
     'Array for available colors
     Public availableColors() As String = {"White", "Black", "Gray", "DarkGray", "DarkRed", "Red", "DarkYellow", "Yellow", "DarkGreen", "Green",
@@ -38,89 +38,89 @@ Public Module Color
     Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "LinuxUncolored", "LinuxColoredDef"}
 
     'Variables for the "Default" theme
-    Public inputColorDef As Object = inputColor
-    Public licenseColorDef As Object = licenseColor
-    Public contKernelErrorColorDef As Object = contKernelErrorColor
-    Public uncontKernelErrorColorDef As Object = uncontKernelErrorColor
-    Public hostNameShellColorDef As Object = hostNameShellColor
-    Public userNameShellColorDef As Object = userNameShellColor
-    Public backgroundColorDef As Object = backgroundColor
-    Public neutralTextColorDef As Object = neutralTextColor
-    Public cmdListColorDef As Object = cmdListColor
-    Public cmdDefColorDef As Object = cmdDefColor
+    Public inputColorDef As ConsoleColor = inputColor
+    Public licenseColorDef As ConsoleColor = licenseColor
+    Public contKernelErrorColorDef As ConsoleColor = contKernelErrorColor
+    Public uncontKernelErrorColorDef As ConsoleColor = uncontKernelErrorColor
+    Public hostNameShellColorDef As ConsoleColor = hostNameShellColor
+    Public userNameShellColorDef As ConsoleColor = userNameShellColor
+    Public backgroundColorDef As ConsoleColor = backgroundColor
+    Public neutralTextColorDef As ConsoleColor = neutralTextColor
+    Public cmdListColorDef As ConsoleColor = cmdListColor
+    Public cmdDefColorDef As ConsoleColor = cmdDefColor
 
     'Variables for the "RedConsole" theme
-    Public inputColorRC As Object = ConsoleColor.Red
-    Public licenseColorRC As Object = ConsoleColor.Red
-    Public contKernelErrorColorRC As Object = ConsoleColor.Red
-    Public uncontKernelErrorColorRC As Object = ConsoleColor.DarkRed
-    Public hostNameShellColorRC As Object = ConsoleColor.DarkRed
-    Public userNameShellColorRC As Object = ConsoleColor.Red
-    Public backgroundColorRC As Object = ConsoleColor.Black
-    Public neutralTextColorRC As Object = ConsoleColor.Red
-    Public cmdListColorRC As Object = ConsoleColor.Red
-    Public cmdDefColorRC As Object = ConsoleColor.DarkRed
+    Public inputColorRC As ConsoleColor = ConsoleColor.Red
+    Public licenseColorRC As ConsoleColor = ConsoleColor.Red
+    Public contKernelErrorColorRC As ConsoleColor = ConsoleColor.Red
+    Public uncontKernelErrorColorRC As ConsoleColor = ConsoleColor.DarkRed
+    Public hostNameShellColorRC As ConsoleColor = ConsoleColor.DarkRed
+    Public userNameShellColorRC As ConsoleColor = ConsoleColor.Red
+    Public backgroundColorRC As ConsoleColor = ConsoleColor.Black
+    Public neutralTextColorRC As ConsoleColor = ConsoleColor.Red
+    Public cmdListColorRC As ConsoleColor = ConsoleColor.Red
+    Public cmdDefColorRC As ConsoleColor = ConsoleColor.DarkRed
 
     'Variables for the "Bluespire" theme
-    Public inputColorBS As Object = ConsoleColor.Cyan
-    Public licenseColorBS As Object = ConsoleColor.Cyan
-    Public contKernelErrorColorBS As Object = ConsoleColor.Blue
-    Public uncontKernelErrorColorBS As Object = ConsoleColor.Blue
-    Public hostNameShellColorBS As Object = ConsoleColor.Blue
-    Public userNameShellColorBS As Object = ConsoleColor.Blue
-    Public backgroundColorBS As Object = ConsoleColor.DarkCyan
-    Public neutralTextColorBS As Object = ConsoleColor.Cyan
-    Public cmdListColorBS As Object = ConsoleColor.Cyan
-    Public cmdDefColorBS As Object = ConsoleColor.Blue
+    Public inputColorBS As ConsoleColor = ConsoleColor.Cyan
+    Public licenseColorBS As ConsoleColor = ConsoleColor.Cyan
+    Public contKernelErrorColorBS As ConsoleColor = ConsoleColor.Blue
+    Public uncontKernelErrorColorBS As ConsoleColor = ConsoleColor.Blue
+    Public hostNameShellColorBS As ConsoleColor = ConsoleColor.Blue
+    Public userNameShellColorBS As ConsoleColor = ConsoleColor.Blue
+    Public backgroundColorBS As ConsoleColor = ConsoleColor.DarkCyan
+    Public neutralTextColorBS As ConsoleColor = ConsoleColor.Cyan
+    Public cmdListColorBS As ConsoleColor = ConsoleColor.Cyan
+    Public cmdDefColorBS As ConsoleColor = ConsoleColor.Blue
 
     'Variables for the "Hacker" theme
-    Public inputColorHckr As Object = ConsoleColor.Green
-    Public licenseColorHckr As Object = ConsoleColor.Green
-    Public contKernelErrorColorHckr As Object = ConsoleColor.Green
-    Public uncontKernelErrorColorHckr As Object = ConsoleColor.Green
-    Public hostNameShellColorHckr As Object = ConsoleColor.Green
-    Public userNameShellColorHckr As Object = ConsoleColor.Green
-    Public backgroundColorHckr As Object = ConsoleColor.DarkGray
-    Public neutralTextColorHckr As Object = ConsoleColor.Green
-    Public cmdListColorHckr As Object = ConsoleColor.DarkGreen
-    Public cmdDefColorHckr As Object = ConsoleColor.Green
+    Public inputColorHckr As ConsoleColor = ConsoleColor.Green
+    Public licenseColorHckr As ConsoleColor = ConsoleColor.Green
+    Public contKernelErrorColorHckr As ConsoleColor = ConsoleColor.Green
+    Public uncontKernelErrorColorHckr As ConsoleColor = ConsoleColor.Green
+    Public hostNameShellColorHckr As ConsoleColor = ConsoleColor.Green
+    Public userNameShellColorHckr As ConsoleColor = ConsoleColor.Green
+    Public backgroundColorHckr As ConsoleColor = ConsoleColor.DarkGray
+    Public neutralTextColorHckr As ConsoleColor = ConsoleColor.Green
+    Public cmdListColorHckr As ConsoleColor = ConsoleColor.DarkGreen
+    Public cmdDefColorHckr As ConsoleColor = ConsoleColor.Green
 
     'Variables for the "Ubuntu" theme
-    Public inputColorU As Object = ConsoleColor.White
-    Public licenseColorU As Object = ConsoleColor.White
-    Public contKernelErrorColorU As Object = ConsoleColor.White
-    Public uncontKernelErrorColorU As Object = ConsoleColor.White
-    Public hostNameShellColorU As Object = ConsoleColor.Gray
-    Public userNameShellColorU As Object = ConsoleColor.Gray
-    Public backgroundColorU As Object = ConsoleColor.DarkMagenta
-    Public neutralTextColorU As Object = ConsoleColor.White
-    Public cmdListColorU As Object = ConsoleColor.White
-    Public cmdDefColorU As Object = ConsoleColor.White
+    Public inputColorU As ConsoleColor = ConsoleColor.White
+    Public licenseColorU As ConsoleColor = ConsoleColor.White
+    Public contKernelErrorColorU As ConsoleColor = ConsoleColor.White
+    Public uncontKernelErrorColorU As ConsoleColor = ConsoleColor.White
+    Public hostNameShellColorU As ConsoleColor = ConsoleColor.Gray
+    Public userNameShellColorU As ConsoleColor = ConsoleColor.Gray
+    Public backgroundColorU As ConsoleColor = ConsoleColor.DarkMagenta
+    Public neutralTextColorU As ConsoleColor = ConsoleColor.White
+    Public cmdListColorU As ConsoleColor = ConsoleColor.White
+    Public cmdDefColorU As ConsoleColor = ConsoleColor.White
 
     'Variables for the "LinuxUncolored" theme
-    Public inputColorLUnc As Object = ConsoleColor.Gray
-    Public licenseColorLUnc As Object = ConsoleColor.Gray
-    Public contKernelErrorColorLUnc As Object = ConsoleColor.Gray
-    Public uncontKernelErrorColorLUnc As Object = ConsoleColor.Gray
-    Public hostNameShellColorLUnc As Object = ConsoleColor.Gray
-    Public userNameShellColorLUnc As Object = ConsoleColor.Gray
-    Public backgroundColorLUnc As Object = ConsoleColor.Black
-    Public neutralTextColorLUnc As Object = ConsoleColor.Gray
-    Public cmdListColorLUnc As Object = ConsoleColor.Gray
-    Public cmdDefColorLUnc As Object = ConsoleColor.Gray
+    Public inputColorLUnc As ConsoleColor = ConsoleColor.Gray
+    Public licenseColorLUnc As ConsoleColor = ConsoleColor.Gray
+    Public contKernelErrorColorLUnc As ConsoleColor = ConsoleColor.Gray
+    Public uncontKernelErrorColorLUnc As ConsoleColor = ConsoleColor.Gray
+    Public hostNameShellColorLUnc As ConsoleColor = ConsoleColor.Gray
+    Public userNameShellColorLUnc As ConsoleColor = ConsoleColor.Gray
+    Public backgroundColorLUnc As ConsoleColor = ConsoleColor.Black
+    Public neutralTextColorLUnc As ConsoleColor = ConsoleColor.Gray
+    Public cmdListColorLUnc As ConsoleColor = ConsoleColor.Gray
+    Public cmdDefColorLUnc As ConsoleColor = ConsoleColor.Gray
 
     'Variables for the "LinuxColoredDef" theme
     'If there is a mistake in colors, please fix it.
-    Public inputColorLcDef As Object = ConsoleColor.Gray
-    Public licenseColorLcDef As Object = ConsoleColor.Gray
-    Public contKernelErrorColorLcDef As Object = ConsoleColor.Gray
-    Public uncontKernelErrorColorLcDef As Object = ConsoleColor.Gray
-    Public hostNameShellColorLcDef As Object = ConsoleColor.Blue
-    Public userNameShellColorLcDef As Object = ConsoleColor.Blue
-    Public backgroundColorLcDef As Object = ConsoleColor.Black
-    Public neutralTextColorLcDef As Object = ConsoleColor.Gray
-    Public cmdListColorLcDef As Object = ConsoleColor.White
-    Public cmdDefColorLcDef As Object = ConsoleColor.Gray
+    Public inputColorLcDef As ConsoleColor = ConsoleColor.Gray
+    Public licenseColorLcDef As ConsoleColor = ConsoleColor.Gray
+    Public contKernelErrorColorLcDef As ConsoleColor = ConsoleColor.Gray
+    Public uncontKernelErrorColorLcDef As ConsoleColor = ConsoleColor.Gray
+    Public hostNameShellColorLcDef As ConsoleColor = ConsoleColor.Blue
+    Public userNameShellColorLcDef As ConsoleColor = ConsoleColor.Blue
+    Public backgroundColorLcDef As ConsoleColor = ConsoleColor.Black
+    Public neutralTextColorLcDef As ConsoleColor = ConsoleColor.Gray
+    Public cmdListColorLcDef As ConsoleColor = ConsoleColor.White
+    Public cmdDefColorLcDef As ConsoleColor = ConsoleColor.Gray
 
     'Variables
     Public currentTheme As String
@@ -222,7 +222,7 @@ Public Module Color
             MakePermanent()
             ParseCurrentTheme()
         Else
-            W(DoTranslation("Invalid color template {0}", currentLang), True, "neutralText", theme)
+            W(DoTranslation("Invalid color template {0}", currentLang), True, ColTypes.Neutral, theme)
         End If
     End Sub
 

@@ -372,3 +372,14 @@ Welcome to Kernel!
 Logged in successfully as <user>
 MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...
 Tried to read MOTD/MAL that is of the invalid message type.
+While maintaining stable connection, it is downloading {0} to {1}...
+Download has completed.
+Download failed in try {0}: {1}
+Please use "ftp" if you are going to download files from the FTP server.
+Downloads a file to current working directory
+Disconnect a debug device
+Lists debugging devices connected
+Debug device {0} not found.
+Device {0} disconnected.
+Error in connection: {0}
+Debug listening on all addresses using port {0}.

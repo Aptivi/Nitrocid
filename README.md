@@ -194,6 +194,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **8/30/2019 - 0.0.7:** Removed manual code and moved all the English docs to Wiki (reducing size to its initial size before manpages were released), Removed changelog viewing on config upgrade, Removed pinging and listing computers in the network, Added support for FTPS, Made use of Filesystem.List instead of its own listing in FTP, Fixed the list command not supporting directories that have spaces
 
+**8/31/2019 - 0.0.7.1:** Updated FluentFTP, Created `get` command to download something from the Internet, Removed useddeps as the devs are already credited in this README.md (no need to credit them for second time), Config now always creates with the string representation of the colors, Added Indonesian, Polish, Romanian, and Uzbekistan language, Implemented remote debugging support
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator
