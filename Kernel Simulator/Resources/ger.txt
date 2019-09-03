@@ -383,3 +383,11 @@ Debug-Gerät {0} nicht gefunden.
 Gerät {0} nicht verbunden.
 Fehler in der Verbindung: {0}
 Debuggen Sie das Abhören aller Adressen über Port {0}.
+Keine Argumente angegeben. Tipp: Geben Sie mehrere durch Leerzeichen getrennte Argumente an
+Alias bereits gefunden: {0}
+Debug-Protokoll entfernt. Alle angeschlossenen Debugging-Geräte können weiterhin Nachrichten anzeigen.
+Fehler beim Entfernen des Debug-Protokolls: {0}
+Das Ändern des Verzeichnisses ist fehlgeschlagen: {0}
+Benutzername ist falsch
+Geben Sie die Adresse an
+Verzeichnis kann nicht entfernt werden: {0}

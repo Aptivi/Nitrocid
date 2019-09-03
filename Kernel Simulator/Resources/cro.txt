@@ -383,3 +383,11 @@ Uređaj za uklanjanje pogrešaka {0} nije pronađen.
 Uređaj {0} isključen.
 Pogreška u vezi: {0}
 Otklanjanje pogrešaka na svim adresama putem porta {0}.
+Nisu navedeni argumenti. Savjet: Navedite više argumenata odvojenih razmacima
+Alias je već pronađen: {0}
+Dnevnik uklanjanja pogrešaka uklonjen. Svi povezani uređaji za uklanjanje pogrešaka i dalje mogu pregledavati poruke.
+Uklanjanje zapisa pogrešaka nije uspjelo: {0}
+Promjena imenika nije uspjela: {0}
+Korisničko ime nije u redu
+Navedite adresu
+Nije moguće ukloniti direktorij: {0}

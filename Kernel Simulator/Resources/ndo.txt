@@ -383,3 +383,11 @@ Perangkat debug {0} tidak ditemukan.
 Perangkat {0} terputus.
 Kesalahan dalam koneksi: {0}
 Debug mendengarkan semua alamat menggunakan port {0}.
+Tidak ada argumen yang ditentukan. Petunjuk: Tentukan beberapa argumen yang dipisahkan oleh spasi
+Alias sudah ditemukan: {0}
+Log debug dihapus. Semua perangkat debug yang terhubung masih dapat melihat pesan.
+Gagal menghapus log debug: {0}
+Mengubah direktori gagal: {0}
+Nama pengguna salah
+Tentukan alamatnya
+Tidak dapat menghapus direktori: {0}

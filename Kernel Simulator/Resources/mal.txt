@@ -383,3 +383,11 @@ Peranti debug {0} tidak dijumpai.
 Peranti {0} terputus.
 Ralat berkaitan: {0}
 Mendengar debug pada semua alamat menggunakan port {0}.
+Tiada hujah yang dinyatakan. Petunjuk: Tentukan pelbagai argumen yang dipisahkan oleh ruang
+Alias sudah dijumpai: {0}
+Log debug dikeluarkan. Semua peranti debugging yang disambungkan masih boleh melihat mesej.
+Penyingkiran log penghapusan gagal: {0}
+Mengubah direktori telah gagal: {0}
+Nama pengguna salah
+Tentukan alamat
+Tidak dapat menghapus direktori: {0}

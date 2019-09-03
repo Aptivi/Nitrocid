@@ -383,3 +383,11 @@ Nie znaleziono urządzenia debugującego {0}.
 Urządzenie {0} zostało odłączone.
 Błąd połączenia: {0}
 Debuguj nasłuchiwanie na wszystkich adresach przy użyciu portu {0}.
+Nie podano argumentów. Wskazówka: Podaj wiele argumentów oddzielonych spacjami
+Alias już znaleziony: {0}
+Dziennik debugowania został usunięty. Wszystkie podłączone urządzenia debugujące mogą nadal wyświetlać wiadomości.
+Usunięcie dziennika debugowania nie powiodło się: {0}
+Zmiana katalogu nie powiodła się: {0}
+Nazwa użytkownika jest niepoprawna
+Podaj adres
+Nie można usunąć katalogu: {0}

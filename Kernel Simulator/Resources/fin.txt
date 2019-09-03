@@ -383,3 +383,11 @@ Debug-laitetta {0} ei löydy.
 Laite {0} irrotettu.
 Virhe yhteydessä: {0}
 Debug-kuuntelu kaikissa osoitteissa käyttämällä porttia {0}.
+Ei argumentteja määritetty. Vihje: Määritä useita välein erotettuja argumentteja
+Alias löytyi jo: {0}
+Virheloki poistettu. Kaikki kytketyt virheenkorjauslaitteet voivat silti tarkastella viestejä.
+Virhelokin poistaminen epäonnistui: {0}
+Hakemiston vaihtaminen epäonnistui: {0}
+Käyttäjätunnus on väärä
+Määritä osoite
+Hakemistoa ei voi poistaa: {0}

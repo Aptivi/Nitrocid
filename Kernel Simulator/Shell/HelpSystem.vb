@@ -59,8 +59,6 @@ Public Module HelpSystem
                                                               {"setcolors", DoTranslation("Sets up kernel colors", currentLang)},
                                                               {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
                                                               {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
-                                                              {"showaliases", DoTranslation("Shows aliases", currentLang)},
-                                                              {"showmal", DoTranslation("Shows MOTD after login set by user or kernel", currentLang)},
                                                               {"showtd", DoTranslation("Shows date and time", currentLang)},
                                                               {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
                                                               {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
@@ -246,10 +244,6 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " setthemes <Theme>" + vbNewLine +
                 "       " + DoTranslation("Friends of", currentLang) + " setthemes: setcolors", True, ColTypes.Neutral)
-
-        ElseIf command = "showaliases" Then
-
-            W(DoTranslation("Usage:", currentLang) + " showaliases: " + DoTranslation("Shows aliases", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "showtd" Then
 

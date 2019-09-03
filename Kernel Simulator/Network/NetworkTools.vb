@@ -28,6 +28,7 @@ Public Module NetworkTools
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces
         For Each adapter As NetworkInterface In adapters
             adapterNumber += 1
+            W("==========================================", True, ColTypes.Neutral)
             If adapter.Supports(NetworkInterfaceComponent.IPv4) = False Then
                 Wdbg("{0} doesn't support IPv4.", adapter.Description)
             ElseIf adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
@@ -65,10 +66,14 @@ Public Module NetworkTools
         While Not RetryCount > Retries
             Try
                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://") Or URL.StartsWith("sftp://")) Then
-                    W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, URL.Split("/").Last(), CurrDir)
-                    Dim WClient As New WebClient
-                    WClient.DownloadFile(URL, CurrDir + "/" + URL.Split("/").Last())
-                    W(DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
+                    If Not URL.StartsWith(" ") Then
+                        W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, URL.Split("/").Last(), CurrDir)
+                        Dim WClient As New WebClient
+                        WClient.DownloadFile(URL, CurrDir + "/" + URL.Split("/").Last())
+                        W(DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
+                    Else
+                        W(DoTranslation("Specify the address", currentLang), True, ColTypes.Neutral)
+                    End If
                 Else
                     W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server.", currentLang), True, ColTypes.Neutral)
                 End If

@@ -383,3 +383,11 @@ Nosozliklarni tuzatish moslamalari ulandi
 {0} qurilmasi uzildi.
 Ulanishda xatolik: {0}
 {0} portidan foydalanib barcha manzillardagi nosozliklarni tuzatish
+Hech qanday dalil ko'rsatilmagan. Maslahat: Bo'shliqlar bilan ajratilgan bir nechta dalillarni ko'rsating
+Taxallus allaqachon topilgan: {0}
+Tuzatish jurnali olib tashlandi. Nosozliklarni tuzatish uchun barcha ulangan qurilmalar xabarlarni ko'rishlari mumkin.
+Nosozliklarni jurnaldan o'chirib bo'lmadi: {0}
+Katalogni o'zgartirish amalga oshmadi: {0}
+Foydalanuvchi nomi noto'g'ri
+Manzilni ko'rsating
+Katalogni olib tashlab bo'lmadi: {0}

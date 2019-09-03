@@ -383,3 +383,11 @@ Hata ayıklama cihazı {0} bulunamadı.
 {0} cihazı bağlantısı kesildi.
 Bağlantıda hata: {0}
 {0} bağlantı noktasını kullanarak tüm adresleri dinlerken hata ayıkla.
+Belirtilen bağımsız değişken yok. İpucu: Boşluklarla ayırarak birden fazla argüman belirtin
+Diğer ad zaten bulundu: {0}
+Hata ayıklama günlüğü kaldırıldı. Bağlı olan tüm hata ayıklama cihazları hala mesajları görüntüleyebilir.
+Hata ayıklama günlüğü kaldırma işlemi başarısız oldu: {0}
+Dizin değiştirilemedi: {0}
+Kullanıcı adı yanlış
+Adresi belirtin
+Dizin kaldırılamıyor: {0}

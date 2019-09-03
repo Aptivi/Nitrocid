@@ -383,3 +383,11 @@ zhǎo bù dào tiáoshì shèbèi {0}.
 Shèbèi {0} yǐ duàn kāi liánjiē.
 Liánjiē cuòwù:{0}
 Tiáoshì shǐyòng duānkǒu {0} zhēn tīng suǒyǒu dìzhǐ.
+Méiyǒu zhǐdìng cānshù. Tíshì: Zhǐdìng yóu kònggé fēngé de duō gè cānshù
+biémíng yǐ zhǎodào:{0}
+Tiáoshì rìzhì yǐ shānchú. Suǒyǒu liánjiē de tiáoshì shèbèi réng kěyǐ chákàn xiāoxī.
+Tiáoshì rìzhì shānchú shībài:{0}
+Gēnggǎi mùlù shībài:{0}
+Yònghù míng cuòle
+zhǐdìng dìzhǐ
+wúfǎ shānchú mùlù:{0}

@@ -383,3 +383,11 @@ deebag divais {0} nahin mila.
 divais {0} diskanekt ho gaya.
 kanekshan mein truti: {0}
 port {0} ka upayog karake sabhee pate par dibag sunana.
+koee tark nirdisht nahin. sanket: rikt sthaan dvaara alag kie gae kaee tarkon ko nirdisht karen
+pahale se hee paaya gaya upanaam: {0}
+dibag log hataaya gaya. sabhee kanekted deebaging divais abhee bhee sandesh dekh sakate hain.
+deebag log nikaalana viphal: {0}
+badalatee nirdeshika viphal rahee: {0}
+upayogakarta naam galat hai
+pata nirdisht karen
+nirdeshika nikaalane mein asamarth: {0}

@@ -383,3 +383,11 @@ Foutopsporingsapparaat {0} niet gevonden.
 Apparaat {0} verbroken.
 Fout in verbinding: {0}
 Debug luisteren op alle adressen met behulp van poort {0}.
+Geen argumenten opgegeven. Hint: specificeer meerdere argumenten gescheiden door spaties
+Alias al gevonden: {0}
+Foutopsporingslogboek verwijderd. Alle aangesloten foutopsporingsapparaten kunnen nog steeds berichten bekijken.
+Verwijderen van logboek voor foutopsporing is mislukt: {0}
+Het wijzigen van de map is mislukt: {0}
+Gebruikersnaam is verkeerd
+Geef het adres op
+Kan map niet verwijderen: {0}

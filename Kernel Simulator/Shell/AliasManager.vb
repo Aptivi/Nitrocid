@@ -61,10 +61,13 @@ Public Module AliasManager
             ElseIf forbidden.Contains(cmd) Then
                 W(DoTranslation("Aliasing {0} to {1} is forbidden completely.", currentLang), True, ColTypes.Neutral, cmd, aliasTBA)
                 Wdbg("forbid.Contains({0}) = true | No aliasing", cmd)
-            Else
+            ElseIf Not aliases.ContainsKey(aliasTBA) Then
                 Wdbg("Assertion failed: {0} = {1}", aliasTBA, cmd)
                 aliases.Add(aliasTBA, cmd)
                 W(DoTranslation("You can now run ""{0}"" as a command: ""{1}"".", currentLang), True, ColTypes.Neutral, aliasTBA, cmd)
+            Else
+                Wdbg("Alias {0} already found", aliasTBA)
+                W(DoTranslation("Alias already found: {0}", currentLang), True, ColTypes.Neutral, aliasTBA)
             End If
         ElseIf mode = "rem" Then
             'user tries to remove an alias

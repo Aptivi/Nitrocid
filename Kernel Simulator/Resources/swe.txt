@@ -383,3 +383,11 @@ Felsökningsenhet {0} hittades inte.
 Enheten {0} är frånkopplad.
 Fel i anslutningen: {0}
 Felsökning lyssnar på alla adresser med port {0}.
+Inga argument specificerade. Tips: Ange flera argument åtskilda med mellanslag
+Alias redan hittat: {0}
+Felsökningslogg tas bort. Alla anslutna felsökningsenheter kan fortfarande visa meddelanden.
+Avlägsnande av felsökningslogg misslyckades: {0}
+Ändring av katalog misslyckades: {0}
+Användarnamn är fel
+Ange adressen
+Det går inte att ta bort katalogen: {0}

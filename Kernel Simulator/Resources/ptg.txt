@@ -383,3 +383,11 @@ Dispositivo de depuração {0} não encontrado.
 Dispositivo {0} desconectado.
 Erro na conexão: {0}
 Depure a escuta em todos os endereços usando a porta {0}.
+Nenhum argumento especificado. Dica: especifique vários argumentos separados por espaços
+Alias já encontrado: {0}
+Log de depuração removido. Todos os dispositivos de depuração conectados ainda podem exibir mensagens.
+Falha na remoção do log de depuração: {0}
+A alteração do diretório falhou: {0}
+Nome de usuário incorreto
+Especifique o endereço
+Não foi possível remover o diretório: {0}

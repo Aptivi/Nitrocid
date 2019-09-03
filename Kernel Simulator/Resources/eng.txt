@@ -383,3 +383,11 @@ Debug device {0} not found.
 Device {0} disconnected.
 Error in connection: {0}
 Debug listening on all addresses using port {0}.
+No arguments specified. Hint: Specify multiple arguments separated by spaces
+Alias already found: {0}
+Debug log removed. All connected debugging devices may still view messages.
+Debug log removal failed: {0}
+Changing directory has failed: {0}
+Username is wrong
+Specify the address
+Unable to remove directory: {0}

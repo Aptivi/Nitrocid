@@ -383,3 +383,11 @@ Ladicí zařízení {0} nebylo nalezeno.
 Zařízení {0} bylo odpojeno.
 Chyba ve spojení: {0}
 Ladění poslechu na všech adresách pomocí portu {0}.
+Nebyly zadány žádné argumenty. Tip: Určete více argumentů oddělených mezerami
+Alias již nalezen: {0}
+Ladicí protokol byl odstraněn. Všechna připojená ladicí zařízení mohou stále zobrazit zprávy.
+Odebrání protokolu ladění se nezdařilo: {0}
+Změna adresáře se nezdařila: {0}
+Uživatelské jméno je špatné
+Zadejte adresu
+Adresář nelze odstranit: {0}

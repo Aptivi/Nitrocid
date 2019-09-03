@@ -383,3 +383,11 @@ Dispozitivul de depanare {0} nu a fost găsit.
 Dispozitivul {0} deconectat.
 Eroare în conexiune: {0}
 Debug ascultați pe toate adresele folosind portul {0}.
+Nu sunt specificate argumente. Sugestie: specificați mai multe argumente separate prin spații
+Alias a fost deja găsit: {0}
+Jurnalul de depanare a fost eliminat. Toate dispozitivele de depanare conectate pot vizualiza în continuare mesaje.
+Eliminarea jurnalului de depanare a eșuat: {0}
+Schimbarea directorului a eșuat: {0}
+Numele de utilizator este greșit
+Precizați adresa
+Imposibil de eliminat directorul: {0}

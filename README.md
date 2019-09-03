@@ -196,6 +196,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **8/31/2019 - 0.0.7.1:** Updated FluentFTP, Created `get` command to download something from the Internet, Removed useddeps as the devs are already credited in this README.md (no need to credit them for second time), Config now always creates with the string representation of the colors, Added Indonesian, Polish, Romanian, and Uzbekistan language, Implemented remote debugging support
 
+**9/3/2019 - 0.0.7.11:** Added handler for repeated alias addition, Now `arginj` checks for arguments before putting them to the answer field, `cdbglog` now shows a message when it finished or failed, Added `chdir` error handler and support for spaced folder names, Added `chpwd` user not found error handler, `get` will disallow all addresses starting with a space, `md` now can create directories that have spaces, `netinfo` is tidier, `rd` has an error handler about directories that didn't exist, Fixed `setcolors` not defaulting one of the colors or resetting them, Remnants of showmotd, showmal, and showaliases are removed, Added required arguments into `showtdzone`'s help entry, `showtdzone` can now show time in a specific zone
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator

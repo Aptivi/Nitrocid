@@ -383,3 +383,11 @@ Dispositivo di debug {0} non trovato.
 Dispositivo {0} disconnesso.
 Errore nella connessione: {0}
 Debug in ascolto su tutti gli indirizzi utilizzando la porta {0}.
+Nessun argomento specificato. Suggerimento: specificare più argomenti separati da spazi
+Alias già trovato: {0}
+Registro di debug rimosso. Tutti i dispositivi di debug collegati possono comunque visualizzare i messaggi.
+Rimozione del registro di debug non riuscita: {0}
+Modifica directory non riuscita: {0}
+Il nome utente è sbagliato
+Specifica l'indirizzo
+Impossibile rimuovere la directory: {0}

@@ -383,3 +383,11 @@ Dispositif de débogage {0} introuvable.
 Périphérique {0} déconnecté.
 Erreur de connexion: {0}
 Déboguer l’écoute sur toutes les adresses en utilisant le port {0}.
+Aucun argument spécifié. Astuce: spécifiez plusieurs arguments séparés par des espaces
+Alias déjà trouvé: {0}
+Journal de débogage supprimé. Tous les périphériques de débogage connectés peuvent toujours voir les messages.
+La suppression du journal de débogage a échoué: {0}
+Le changement de répertoire a échoué: {0}
+Le nom d'utilisateur est faux
+Spécifiez l'adresse
+Impossible de supprimer le répertoire: {0}
