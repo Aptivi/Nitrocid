@@ -22,7 +22,7 @@ Public Module NetworkTools
 
     'Variables
     Public adapterNumber As Long
-    Public Computers As String
+    Public DRetries As Integer = 3
 
     Public Sub GetProperties()
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces
@@ -61,15 +61,18 @@ Public Module NetworkTools
     End Sub
 
     Sub DownloadFile(ByVal URL As String)
-        Dim Retries As Integer = 3 'TODO: Make this customizable
         Dim RetryCount As Integer = 1
-        While Not RetryCount > Retries
+        While Not RetryCount > DRetries
             Try
                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://") Or URL.StartsWith("sftp://")) Then
                     If Not URL.StartsWith(" ") Then
-                        W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, URL.Split("/").Last(), CurrDir)
+                        Dim FileName As String = URL.Split("/").Last()
+                        If FileName.Contains("?") Then
+                            FileName = FileName.Remove(FileName.IndexOf("?"c))
+                        End If
+                        W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, CurrDir)
                         Dim WClient As New WebClient
-                        WClient.DownloadFile(URL, CurrDir + "/" + URL.Split("/").Last())
+                        WClient.DownloadFile(URL, CurrDir + "/" + FileName)
                         W(DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
                     Else
                         W(DoTranslation("Specify the address", currentLang), True, ColTypes.Neutral)

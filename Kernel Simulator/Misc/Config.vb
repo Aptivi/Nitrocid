@@ -72,6 +72,8 @@ Public Module Config
                     New IniSection(ksconf, "Misc",
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", CornerTD),
                         New IniKey(ksconf, "Screensaver", defSaverName),
+                        New IniKey(ksconf, "Debug Port", DebugPort),
+                        New IniKey(ksconf, "Download Retry Times", DRetries),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             Else '----------------------- If [Preserve] value is False, then don't preserve.
                 'The General Section
@@ -122,6 +124,8 @@ Public Module Config
                     New IniSection(ksconf, "Misc",
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", "False"),
                         New IniKey(ksconf, "Screensaver", "matrix"),
+                        New IniKey(ksconf, "Debug Port", 3014),
+                        New IniKey(ksconf, "Download Retry Times", 3),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
@@ -148,7 +152,6 @@ Public Module Config
     End Sub
 
     Public Sub CheckForUpgrade()
-        'Rewrite checker only when there is a necessary change.
         Try
             'Variables
             Dim configUpdater As New IniFile()
@@ -229,8 +232,10 @@ Public Module Config
             'Misc Section
             If configReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True" Then CornerTD = True Else CornerTD = False
             defSaverName = configReader.Sections("Misc").Keys("Screensaver").Value
+            If Integer.TryParse(configReader.Sections("Misc").Keys("Debug Port").Value, 0) Then DebugPort = configReader.Sections("Misc").Keys("Debug Port").Value
+            If Integer.TryParse(configReader.Sections("Misc").Keys("Download Retry Times").Value, 0) Then DRetries = configReader.Sections("Misc").Keys("Download Retry Times").Value
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
-            UpgradeConfig()
+            UpgradeConfig() 'Upgrades the config if there are any changes.
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)

@@ -221,7 +221,6 @@ Public Module KernelTools
         End If
         Erase BootArgs
         argsFlag = False
-        Computers = Nothing
         Quiet = False
         StopPanicAndGoToDoublePanic = False
         strcommand = Nothing

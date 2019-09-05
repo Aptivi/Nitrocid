@@ -198,6 +198,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **9/3/2019 - 0.0.7.11:** Added handler for repeated alias addition, Now `arginj` checks for arguments before putting them to the answer field, `cdbglog` now shows a message when it finished or failed, Added `chdir` error handler and support for spaced folder names, Added `chpwd` user not found error handler, `get` will disallow all addresses starting with a space, `md` now can create directories that have spaces, `netinfo` is tidier, `rd` has an error handler about directories that didn't exist, Fixed `setcolors` not defaulting one of the colors or resetting them, Remnants of showmotd, showmal, and showaliases are removed, Added required arguments into `showtdzone`'s help entry, `showtdzone` can now show time in a specific zone
 
+**9/5/2019 - 0.0.7.12:** Made debug port and download retry count customizable, Fixed `get` not downloading anything containing arguments
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator
