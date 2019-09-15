@@ -12,9 +12,7 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - We took out Windows XP support in 0.0.5.9 in favor of NuGet and .NET Framework 4.7.
 
-- Two documentations, faq and troubleshooting, are deleted because they are not updated regularly.
-
-- KS now supports NuGet and Chocolatey Gallery, however the instructions are not ready yet.
+- We implemented a chat system, but it seems that it won't work properly on 2 or more clients. We will find a fix in the future.
 
 ## |-----+--> _How to run/install_ <--+-----|
 
@@ -42,9 +40,9 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - For Windows systems
 
-1. Install Microsoft Visual Studio 2019, or higher.
+1. Install Microsoft Visual Studio 2017, or higher.
 
-2. After installation, extract the source code, open VS2019, and click on **Open Project...**
+2. After installation, extract the source code, open Visual Studio, and click on **Open Project...**
 
 3. Go to the source directory, and double-click the solution file
 
@@ -55,6 +53,8 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 6. Click on the **Build** menu bar, and click on **Build Kernel Simulator**
 
 7. In **Windows Explorer**, go to the build directory and then double-click on the executable file. 
+
+Notice: You must have **at least** Visual Studio 2017, because of how the syntax is formatted inside the project file, as well as the NuGet properties inside.
 
 - For Unix systems (MonoDevelop)
 
@@ -199,6 +199,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **9/3/2019 - 0.0.7.11:** Added handler for repeated alias addition, Now `arginj` checks for arguments before putting them to the answer field, `cdbglog` now shows a message when it finished or failed, Added `chdir` error handler and support for spaced folder names, Added `chpwd` user not found error handler, `get` will disallow all addresses starting with a space, `md` now can create directories that have spaces, `netinfo` is tidier, `rd` has an error handler about directories that didn't exist, Fixed `setcolors` not defaulting one of the colors or resetting them, Remnants of showmotd, showmal, and showaliases are removed, Added required arguments into `showtdzone`'s help entry, `showtdzone` can now show time in a specific zone
 
 **9/5/2019 - 0.0.7.12:** Made debug port and download retry count customizable, Fixed `get` not downloading anything containing arguments
+
+**9/15/2019 - 0.0.7.13:** Improved the quiet system so it no longer uses the old-fashioned flag system, Fixed the `NotEnoughArgumentsException` when the arguments specified were invalid, Added the built-in chat in **networked** debugger console (Not stable, Version 0.1)
 
 ## |-----+--> _Contributors_ <--+-----|
 

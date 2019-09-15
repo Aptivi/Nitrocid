@@ -19,7 +19,6 @@
 Module Flags
 
     'Variables
-    Public Quiet As Boolean = False                             'Quiet mode
     Public TimeDateIsSet As Boolean = False                     'To fix a bug after reboot
     Public StopPanicAndGoToDoublePanic As Boolean               'Double panic mode in kernel error
     Public DebugMode As Boolean = False                         'Toggle Debugging mode

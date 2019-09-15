@@ -233,7 +233,7 @@ Public Module Screensaver
             Dim namespc As String = GetType(ICustomSaver).Namespace
             Dim modCode() As String = New String() {"Imports " & namespc & vbNewLine & code}
             execCustomSaver = provider.CompileAssemblyFromSource(prm, modCode)
-            If execCustomSaver.Errors.HasErrors And (Quiet = False) Then
+            If execCustomSaver.Errors.HasErrors Then
                 W(DoTranslation("Screensaver can't be loaded because of the following: ", currentLang), True, ColTypes.Neutral)
                 For Each errorName In execCustomSaver.Errors
                     W(errorName.ToString, True, ColTypes.Neutral) : Wdbg(errorName.ToString, True)

@@ -120,6 +120,7 @@ Public Module GetCommand
                         Next
                         If FinalArgs.Count = 0 Then
                             W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces", currentLang), True, ColTypes.Neutral)
+                            Done = True
                         Else
                             answerargs = String.Join(",", FinalArgs)
                             argsInjected = True
@@ -323,8 +324,8 @@ Public Module GetCommand
             ElseIf requestedCommand = "lsdbgdev" Then
 
                 Done = True
-                For Each DebugDevice As Sockets.Socket In DebugDevices
-                    W($"- {DebugDevice.RemoteEndPoint.ToString.Remove(DebugDevice.RemoteEndPoint.ToString.IndexOf(":"))}", True, ColTypes.HelpCmd)
+                For Each DebugDevice As String In DebugDevices.Values
+                    W($"- {DebugDevice}", True, ColTypes.HelpCmd)
                 Next
 
             ElseIf requestedCommand = "netinfo" Then

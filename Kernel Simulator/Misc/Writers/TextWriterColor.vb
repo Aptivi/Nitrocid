@@ -23,7 +23,6 @@ Imports System.IO
 Public Module TextWriterColor
 
     Public dbgWriter As New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
-    Public dbgConns As New List(Of StreamWriter)
 
     Public Enum ColTypes As Integer
         Neutral = 1
@@ -55,21 +54,21 @@ Public Module TextWriterColor
             If Not Source Is Nothing And Not LineNum = 0 Then
                 'Debug to file and all connected debug devices (raw mode)
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
-                For Each dbgConn As StreamWriter In dbgConns
+                For i As Integer = 0 To dbgConns.Count - 1
                     Try
-                        dbgConn.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
+                        dbgConns(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
                     Catch ex As Exception
-                        OffendingIndex.Add(GetSWIndex(dbgConn))
+                        OffendingIndex.Add(GetSWIndex(dbgConns(i)))
                     End Try
                 Next
                 'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
             Else 'Rare case, unless debug symbol is not found on archives.
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
-                For Each dbgConn As StreamWriter In dbgConns
+                For i As Integer = 0 To dbgConns.Count - 1
                     Try
-                        dbgConn.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
+                        dbgConns(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
                     Catch ex As Exception
-                        OffendingIndex.Add(GetSWIndex(dbgConn))
+                        OffendingIndex.Add(GetSWIndex(dbgConns(i)))
                     End Try
                 Next
                 'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
@@ -78,10 +77,10 @@ Public Module TextWriterColor
             'Disconnect offending clients who are disconnected
             For Each i As Integer In OffendingIndex
                 If i <> -1 Then
-                    DebugDevices(i).Disconnect(True)
+                    DebugDevices.Keys(i).Disconnect(True)
                     dbgConns.RemoveAt(i)
-                    Wdbg("Debug device {0} disconnected.", DebugDevices(i).RemoteEndPoint.ToString.Remove(DebugDevices(i).RemoteEndPoint.ToString.IndexOf(":")))
-                    DebugDevices.RemoveAt(i)
+                    Wdbg("Debug device {0} disconnected.", DebugDevices.Values(i))
+                    DebugDevices.Remove(DebugDevices.Keys(i))
                 End If
             Next
             OffendingIndex.Clear()

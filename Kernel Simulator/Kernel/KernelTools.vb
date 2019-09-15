@@ -39,6 +39,9 @@ Public Module KernelTools
     ''' <remarks></remarks>
     Public Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal ParamArray Variables() As Object)
         Try
+            'Unquiet
+            Console.SetOut(DefConsoleOut)
+
             'Check error types and its capabilities
             If ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C" Then
                 If ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5 Then
@@ -221,7 +224,6 @@ Public Module KernelTools
         End If
         Erase BootArgs
         argsFlag = False
-        Quiet = False
         StopPanicAndGoToDoublePanic = False
         strcommand = Nothing
         slotsUsedName = Nothing

@@ -78,10 +78,10 @@ Public Module ModParser
         'Check to see if there are compilation errors
         Wdbg("Has errors: {0}", res.Errors.HasErrors)
         Wdbg("Has warnings: {0}", res.Errors.HasWarnings)
-        If res.Errors.HasErrors And (Quiet = False) Then
-            If Not Quiet Then W(DoTranslation("Mod can't be loaded because of the following: ", currentLang), True, ColTypes.Neutral)
+        If res.Errors.HasErrors Then
+            W(DoTranslation("Mod can't be loaded because of the following: ", currentLang), True, ColTypes.Neutral)
             For Each errorName In res.Errors
-                If Not Quiet Then W(errorName.ToString, True, ColTypes.Neutral)
+                W(errorName.ToString, True, ColTypes.Neutral)
                 Wdbg(errorName.ToString)
             Next
             Exit Function
@@ -96,10 +96,10 @@ Public Module ModParser
         'StartStop: If true, the mods start, otherwise, the mod stops.
         If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
         Dim count As Integer = FileIO.FileSystem.GetFiles(modPath).Count
-        If (Quiet = False) And (count <> 0) And StartStop = True Then
+        If (count <> 0) And StartStop = True Then
             W(DoTranslation("mod: Loading mods...", currentLang), True, ColTypes.Neutral)
             Wdbg("Mods are being loaded. Total mods with screensavers = {0}", count)
-        ElseIf (Quiet = False) And (count <> 0) And StartStop = False Then
+        ElseIf (count <> 0) And StartStop = False Then
             W(DoTranslation("mod: Stopping mods...", currentLang), True, ColTypes.Neutral)
             Wdbg("Mods are being stopped. Total mods with screensavers = {0}", count)
         End If
@@ -140,7 +140,7 @@ Public Module ModParser
             Wdbg("script.StartMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
             If script.Name = "" Then
                 Wdbg("No name for {0}", modFile)
-                If Not Quiet Then W(DoTranslation("Mod {0} does not have the name. Review the source code.", currentLang), True, ColTypes.Neutral, modFile)
+                W(DoTranslation("Mod {0} does not have the name. Review the source code.", currentLang), True, ColTypes.Neutral, modFile)
                 scripts.Add(script.Cmd, script)
             Else
                 Wdbg("There is a name for {0}", modFile)
@@ -148,15 +148,15 @@ Public Module ModParser
             End If
             If script.Version = "" And script.Name <> "" Then
                 Wdbg("{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
-                If Not Quiet Then W(DoTranslation("Mod {0} does not have the version.", currentLang), True, ColTypes.Neutral, script.Name)
+                W(DoTranslation("Mod {0} does not have the version.", currentLang), True, ColTypes.Neutral, script.Name)
             ElseIf script.Name <> "" And script.Version <> "" Then
                 Wdbg("{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
-                If Not Quiet Then W(DoTranslation("{0} v{1} started", currentLang), True, ColTypes.Neutral, script.Name, script.Version)
+                W(DoTranslation("{0} v{1} started", currentLang), True, ColTypes.Neutral, script.Name, script.Version)
             End If
             If script.Cmd <> "" And StartStop = True Then
                 modcmnds.Add(script.Cmd)
                 If script.Def = "" Then
-                    If Not Quiet Then W(DoTranslation("No definition for command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
+                    W(DoTranslation("No definition for command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
                     Wdbg("{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
                     script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
                 End If

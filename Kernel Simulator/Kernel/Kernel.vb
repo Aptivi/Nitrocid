@@ -66,7 +66,7 @@ Public Module Kernel
                 'Phase 2: Username management
                 Wdbg("- Kernel Phase 2: Manage internal usernames")
                 Adduser("root", RootPasswd)
-                Permission("Admin", "root", "Allow", Quiet)
+                Permission("Admin", "root", "Allow")
                 If enableDemo = True Then Adduser("demo")
                 LoginFlag = True
 
@@ -85,7 +85,8 @@ Public Module Kernel
 
                 'Phase 5: Log-in
                 Wdbg("- Kernel Phase 5: Log in")
-                If Not Quiet Then ShowTime()
+                Console.SetOut(DefConsoleOut)
+                ShowTime()
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
                 ElseIf LoginFlag = True And maintenance = True Then
