@@ -202,6 +202,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **9/15/2019 - 0.0.7.13:** Improved the quiet system so it no longer uses the old-fashioned flag system, Fixed the `NotEnoughArgumentsException` when the arguments specified were invalid, Added the built-in chat in **networked** debugger console (Not stable, Version 0.1)
 
+**9/21/2019 - 0.0.7.14:** Fixed chat system not sending messages properly when multiple users talk
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator

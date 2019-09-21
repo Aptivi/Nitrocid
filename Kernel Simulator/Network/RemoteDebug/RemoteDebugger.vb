@@ -50,7 +50,7 @@ Module RemoteDebugger
                     RDebugStream = New NetworkStream(RDebugClient)
                     dbgConns.Add(New StreamWriter(RDebugStream) With {.AutoFlush = True})
                     DebugDevices.Add(RDebugClient, RDebugClient.RemoteEndPoint.ToString.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":")))
-                    dbgConns.Last().WriteLine(">> Chat version 0.1") 'Increment each minor/major change(s)
+                    dbgConns.Last().WriteLine(">> Chat version 0.1.1") 'Increment each minor/major change(s)
                     Wdbg("Debug device {0} connected.", RDebugClient.RemoteEndPoint.ToString.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":")))
                 End If
             Catch ex As Exception
@@ -63,14 +63,29 @@ Module RemoteDebugger
         Thread.CurrentThread.Abort()
     End Sub
     Sub ReadAndBroadcastAsync()
+        Dim i As Integer = 0 'Because DebugDevices.Keys(i) is zero-based
         While True
-            For i As Integer = 0 To DebugDevices.Count - 1
+            If i > DebugDevices.Count - 1 Then
+                i = 0
+            Else
                 Dim buff(65536) As Byte
                 Dim streamnet As New NetworkStream(DebugDevices.Keys(i))
-                streamnet.Read(buff, 0, 65536)
-                Dim msg As String = Text.Encoding.Default.GetString(buff)
-                Wdbg("{0}> {1}", DebugDevices.Values(i), msg)
-            Next
+                Dim ip As String = DebugDevices.Values(i)
+                streamnet.ReadTimeout = 10 'Seems to have fixed it
+                i += 1
+                Try
+                    streamnet.Read(buff, 0, 65536)
+                    Dim msg As String = Text.Encoding.Default.GetString(buff)
+                    msg = msg.Replace(vbCr, vbNullChar) 'Remove all instances of vbCr (macOS newlines) } Windows hosts are affected, too, because it uses
+                    msg = msg.Replace(vbLf, vbNullChar) 'Remove all instances of vbLf (Linux newlines) } vbCrLf, which means (vbCr + vbLf)
+                    If Not msg.StartsWith(vbNullChar) Then Wdbg("{0}> {1}", ip, msg) 'Don't post message if it starts with a null character.
+                Catch ex As Exception
+                    Dim SE As SocketException = CType(ex.InnerException, SocketException)
+                    If Not IsNothing(SE) And Not SE.SocketErrorCode = SocketError.TimedOut Then
+                        Wdbg("Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
+                    End If
+                End Try
+            End If
         End While
     End Sub
     Sub DisconnectDbgDevCmd(ByVal IPAddr As String)
