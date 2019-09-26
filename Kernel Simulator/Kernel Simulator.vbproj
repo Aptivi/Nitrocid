@@ -20,7 +20,7 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.7.14</Version>
+    <Version>0.0.7.2</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -184,7 +184,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>27.0.3</Version>
+      <Version>27.1.2</Version>
     </PackageReference>
     <PackageReference Include="MadMilkman.Ini">
       <Version>1.0.6</Version>
@@ -316,6 +316,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\cro.txt" />
+    <None Include="Resources\jpn.txt" />
     <Content Include="Resources\ndo.txt" />
     <Content Include="Resources\pol.txt" />
     <Content Include="Resources\rmn.txt" />

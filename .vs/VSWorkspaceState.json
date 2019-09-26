@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Kernel Simulator",
-    "\\Kernel Simulator\\Network",
-    "\\Kernel Simulator\\Network\\RemoteDebug"
+    "\\Kernel Simulator"
   ],
   "SelectedNode": "\\Kernel Simulator\\Kernel Simulator.vbproj",
   "PreviewInSolutionExplorer": false

@@ -118,7 +118,11 @@ Public Module TextWriterColor
             ElseIf colorType = ColTypes.License Then
                 ForegroundColor = licenseColor
             ElseIf colorType = ColTypes.Gray Then
-                ForegroundColor = ConsoleColor.Gray
+                If backgroundColor = ConsoleColor.DarkYellow Or backgroundColor = ConsoleColor.Yellow Then
+                    ForegroundColor = neutralTextColor
+                Else
+                    ForegroundColor = ConsoleColor.Gray
+                End If
             ElseIf colorType = ColTypes.HelpDef Then
                 ForegroundColor = cmdDefColor
             ElseIf colorType = ColTypes.HelpCmd Then

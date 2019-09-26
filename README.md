@@ -204,6 +204,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **9/21/2019 - 0.0.7.14:** Fixed chat system not sending messages properly when multiple users talk
 
+**9/23/2019 - 0.0.7.2:** Updated FluentFTP, Added YellowFG and YellowBG themes, Fixed part of the shell prompt color on yellow light/dark backgrounds, Fixed time/date corner position overlapping existing text, Now time zone offsets are shown in each time zone view, Added Japanese language
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator

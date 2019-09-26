@@ -247,6 +247,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Riyō kanōna komando: {0}
+        '''Kakikomi komando: 
+        '''Komandoinjekushon wa kyanseru sa remashita. 
+        '''Būto hikisū o supēsu nashi no kanma de kugirimasu. Tatoeba, `motd, gpuprobe&apos;
+        '''&apos;cmdinject&apos; no komando o supēsu-tsuki no koron de kugirimasu. Tatoeba, &apos; cmdinject setthemes Hacker: beep 1024 0. 5&apos;
+        '''&apos;Debaggu&apos; hikisū wa kāneru o kanzen ni wa kabā shite inai koto ni chūi shite kudasai. 
+        '''Bargs: Yōkyū sa reta hikisū {0} ga mitsukarimasen. 
+        '''Bargs: Hikisū no kaifuku funōna erā: 
+        '''Riyō kanōna hikisū: {0} 
+        '''Hikisū (herupu wa&apos; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property jpn() As String
+            Get
+                Return ResourceManager.GetString("jpn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Perintah yang tersedia: {0}
         '''Tulis perintah:
         '''Suntikan arahan telah dibatalkan.

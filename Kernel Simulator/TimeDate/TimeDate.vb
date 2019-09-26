@@ -38,7 +38,7 @@ Public Module TimeDate
                 originalRow = Console.CursorTop
                 originalCol = Console.CursorLeft
                 If CornerTD = True Then
-                    Console.SetCursorPosition(Console.WindowWidth - 16, Console.WindowTop)
+                    Console.SetCursorPosition(Console.WindowWidth - 19, Console.WindowTop)
                     W("{0} {1}", True, ColTypes.Neutral, KernelDateTime.ToShortTimeString, KernelDateTime.ToShortDateString)
                     Console.SetCursorPosition(originalCol, originalRow)
                 End If
@@ -60,7 +60,7 @@ Public Module TimeDate
 
         W(DoTranslation("datetime: Time is {0}", currentLang), True, ColTypes.Neutral, KernelDateTime.ToLongTimeString)
         W(DoTranslation("datetime: Today is {0}", currentLang), True, ColTypes.Neutral, KernelDateTime.ToLongDateString)
-        W(DoTranslation("datetime: Time Zone: {0}", currentLang), True, ColTypes.Neutral, TimeZone.CurrentTimeZone.StandardName)
+        W(DoTranslation("datetime: Time Zone: {0}", currentLang) + " ({1})", True, ColTypes.Neutral, TimeZone.CurrentTimeZone.StandardName, TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime).ToString)
 
     End Sub
 

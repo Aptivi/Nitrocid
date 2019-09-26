@@ -1,0 +1,379 @@
+Riyō kanōna komando: {0}
+Kakikomi komando: 
+Komandoinjekushon wa kyanseru sa remashita. 
+Būto hikisū o supēsu nashi no kanma de kugirimasu. Tatoeba, `motd, gpuprobe'
+'cmdinject' no komando o supēsu-tsuki no koron de kugirimasu. Tatoeba, ' cmdinject setthemes Hacker: beep 1024 0. 5'
+'Debaggu' hikisū wa kāneru o kanzen ni wa kabā shite inai koto ni chūi shite kudasai. 
+Bargs: Yōkyū sa reta hikisū {0} ga mitsukarimasen. 
+Bargs: Hikisū no kaifuku funōna erā: 
+Riyō kanōna hikisū: {0} 
+Hikisū (herupu wa' help'): 
+Chūnyū sa reta hikisū wa, jikai no saikidōji ni jikkō sa reru yō ni sukejūru sa remasu. 
+Hikisū no sōnyū wa kyanseru sa remashita. 
+Jissai no komandorainhikisū no kaiseki-chū ni erā ga hassei shimashita: {0}
+Mukōna karātenpurēto {0} 
+deforuto
+kasutamu
+hwprobe: Hādou~ea ga purōbu sa remasu. Omachikudasai...
+Hwprobe: Hādou~ea wa sudeni purōbu sa rete imasu.
+Hwprobe: Hādou~ea wa purōbu sa remasen. `hwprobe' o shiyō shita purōbu
+CPU: 1Tsu ijō no CPU koa no purōbu ni shippai shimashita. Tonikaku jōhō o hyōji shite imasu...
+Ramu: 1Tsu ijō no ramu chippu no purōbu ni shippai shimashita. Tonikaku jōhō o hyōji shite imasu...
+Hado: 1Tsu matawa fukusū no hādodoraibu no purōbu ni shippai shimashita. Tonikaku jōhō o hyōji shite imasu...
+CPU: Purosessā no gōkei-sū: {0} 
+CPU: {0} {1} MHz 
+ramu: {0} MB = {1} MB 
+ramu: Shiyō-zumi surotto (namae-betsu): {0} 
+Ramu: Shiyō-zumi surotto (bangō jun): {0}/{1} ({2}%) 
+Ramu: Chōsa sutētasu wa hi suishōdeari, shōrai no rirīsu de sakujo sa reru yoteidesu. 
+Hado: {0} {1} GB {2} 
+hado: {0} {1} {2} GB {3} 
+hado: CHS: {4} Shirindā | {5} heddo | {6} sekutā 
+HDD: CHS: {3} Shirindā | {4} heddo | {5} sekutā 
+hwprobe: Unix de purōba o jikkō suru yō ni sekkei sa rete inai tame, purōbingu wa sapōto sa rete imasen.
+Mentenansu-yō no kanrisha pasuwādo o nyūryoku shimasu. 
+Risuto ni koreijō yūzā ga nokotte imasen. 
+Kidō-chū no kāneruerā: {0}
+Daburupanikku: Sakidō jikan ga saidaikyoyō {0} erā no sakidō jikan o koete imasu. Kāneru no bagu o mitsukemashita.
+[{0}] Panikku: Erāreberu ga {0} dearu tame, sakidō ga yūkō ni narimashita. 
+[{0}] Panikku: Sakidō no jikan: {1}-Byō, 1-jikan o koete imasu. 1-Bu ni settei sa rete imasu. 
+Daburupanikku: Erātaipu {0} ga mukōdesu. 
+[{0}] Dpanic: {1}-{2}-Byō de sakidō shite imasu... 
+[{0}] Panikku: Erāreberu ga {0} no tame, sakidō ga mukō ni natte imasu. 
+[{0}] Panic: {1} - Nin'i no kī o oshite, kāneru no shiyō o zokkō shimasu. 
+[{0}] Panikku: {1} - Nin'i no kī o oshite shattodaun shimasu. 
+[{0}] Panikku: {1}-{2}-Byō de sakidō shite imasu... 
+Daburupanikku: Kānerubagu: {0}
+Shattodaun shite imasu...
+Sakidō shite imasu...
+---===+++> Kāneru e yōkoso | bājon {0} <+++===--- 
+kānerushimyurēta no betsu no insutansu ga jikkō sa rete imasu. Kanshō ga hassei shita baai no shattodaun. 
+Yūzā {0} ga kanri risuto ni tsuika sa remashita. 
+Yūzā {0} ga mukōna risuto ni tsuika sa remashita. 
+Yūzā o kyoka risuto ni tsuika dekimasendeshita: Mukōna taipu {0} 
+yūzā o kyoka risuto ni tsuika dekimasendeshita: Mukōna yūzā {0} 
+yūzā {0} wa kanri risuto kara sakujosaremashita. 
+Yūzā {0} wa mukōna risuto kara sakujosaremashita. 
+Akusesu kyoka risuto kara yūzā o sakujo dekimasendeshita: Mukōna taipu {0} 
+anata wa sudeni roguin-zumidesu. 
+Akusesu kyoka risuto kara yūzā o sakujo dekimasendeshita: Mukōna yūzā {0} 
+kyoka shisutemu ni bagu ga mitsukarimashita: Mukōna mōdo {0} 
+bagu o hakken shita ka, tsuika matawa sakujo shiyou to shita kengen ga sudeni kanryō shite iru, matawa sonohoka no erā no izurekadesu. 
+Erā {0}: {1} 
+Bagu o hakken shita ka, atarashī yūzā no henshū o kokoromita kyoka ga shippai shimashita. 
+Riyō kanōna yūzā-mei: {0} 
+Yūzā-mei: 
+Supēsu wa shiyō dekimasen.
+Tokushu moji wa shiyō dekimasen.
+{0} No pasuwādo: 
+Machigatta pasuwādo. 
+Yūzā wa mukōdesu. 
+Machigatta yūzā-mei. 
+Purēsuhorudā no kaiseki-chū ni erā ga hassei shimashita. {0} - Sutakkutorēsu: 
+Purēsuhorudā no kaiseki-chū ni erā ga hassei shimashita. {0} 
+Yūzā-mei o tsuika shiyou to shite erā ga hassei shimashita. 
+Usrmgr: Yūzā-mei {0} o sakusei shite imasu... 
+Kūhaku no yūzā-mei. 
+Yūzā {0} ga mitsukarimasen. 
+Yūzā {0} wa sakujo dekimasen. 
+Yūzā {0} wa sudeni roguin shite imasu. Roguauto shite,-betsu no kanrisha to shite roguin shite kudasai. 
+Yūzā {0} ga sakujosaremashita. 
+Yūzā-mei o sakujo shiyou to shite erā ga hassei shimashita. 
+{1} No {0} = {2} 
+zero de josan suru koto wa dekimasen. 
+Ōbāfurō o hikiokosu keisan no utagai ga aru kokoromi ga arimashita. 
+Keisan-chū ni erā ga hassei shimashita: {0}
+{0} Wa {1} ni henkan dekimasen. 
+Sōsu no izureka 
+ matawa mokutekichi 
+ sābā-jō ni sonzai shimasen. 
+{0} Kara {1}: {2} 
+{0} Kara {1} e no henkan-chū ni erā ga hassei shimashita: {2} 
+Erā
+yōkyū sa reta sukurīnsēbā {0} ga mitsukarimasen. 
+{0} Wa tekisetsu ni shoki-ka sa remashita. 
+{0} Wa shoki-ka sa remasendeshita. Sukurīnsēbākōdo de shokka-chū ni erā ga hassei shita kanōsei ga arimasu. 
+Sukurīnsēbā {0} wa sonzai shimasen. 
+{0} Wa deforuto no sukurīnsēbā ni settei sa rete imasu. 
+Sukurīnsēbā {0} ga dētabēsu ni mitsukarimasen. `loadsaver {0}' de shoki-ka shimasu. 
+Tsugi no riyū ni yori, sukurīnsēbā o yomikomemasen. 
+Tekisuto no insatsu-ji ni jūdaina erā ga hassei shimashita. 
+Kōsei no sakusei-chū ni erā ga hassei shimashita. 
+Kōsei no sakusei-chū ni erā ga hassei shimashita: {0}
+{0} Kara {1} e no appugurēdo ga kenshutsu sa remashita. Settei o kōshin shite imasu...
+Kōsei no kōshin-chū ni erā ga hassei shimashita: {0}.
+Kōsei o kōshin shiyou to shite erā ga hassei shimashita.
+Kōsei no yomitori-chū ni erā ga hassei shimashita.
+Kōsei no yomitori-chū ni erā ga hassei shimashita: {0}
+Ramu no kaihō-chū ni erā ga hassei shimashita: {0} - Zokkō shite imasu...
+Tsugi no riyū ni yori, moddo o rōdo dekimasen.
+Mod: Mod o yomikonde imasu...
+Mod: Moddo o teishi shite imasu...
+Mod {0} ni wa namae ga arimasen. Sōsukōdo o kakunin shimasu.
+Mod {0} ni wa bājon ga arimasen.
+{0} v{1} ga kaishi shimashita
+komando {0} no teigi ga arimasen.
+Teigi sa reta komando-betsu
+no sābā ni setsuzoku suru mae ni sābā kara setsudan suru hitsuyō ga arimasu
+{0} no yūzā-mei:
+{0} No pasuwādo:
+{0} Ni setsuzoku shimashita
+{0} ni setsuzoku shiyou to shita toki no erā: {1}
+Sutakkutorēsu: {2}
+FTP sābā o nyūryoku shimasu.
+Rōkarudirekutori {0} wa sonzai shimasen.
+Rōkarudirekutori o nyūryoku shimasu. ".." Modoru.
+Direkutori {0} ga mitsukarimasen.
+Rimōtodirekutori o nyūryoku shimasu. ".." Modoru
+direkutori o henkō suru mae ni sābā ni setsuzoku suru hitsuyō ga arimasu
+rōkarudirekutori: {0}
+Rimōtodirekutori: {0}
+Genzai no rimōtodirekutori o shutoku suru mae ni, sābā ni setsuzoku suru hitsuyō ga arimasu.
+Fairu {0} o sakujo shite imasu...
+Fairu {0} <y/n> o sakujo shite mo yoroshīdesu ka?
+Sakujo sa reta fairu {0}
+sakujo o jikkō suru mae ni, kanrishakengen de sābā ni setsuzoku suru hitsuyō ga arimasu.
+Sakujo suru fairu o nyūryoku shite kudasai.
+Sakujo suru ni wa, roguin shite iru yūzā-mei no kanrishakengen ga hitsuyōdesu.
+{0} Kara setsudan sa remashita
+mada sābā ni setsuzoku shite imasen
+fairu {0} o daunrōdo shite imasu...
+Daunrōdo shita fairu {0}.
+Rōkarufairu ga hason shite iru tame, fairu {0} no daunrōdo ni shippai shimashita.
+Sōshin o jikkō suru mae ni sābā ni setsuzoku suru hitsuyō ga arimasu.
+Rōkarudirekutori ni daunrōdo suru fairu o nyūryoku shimasu.
+{0} KB | henkō-bi: {1}
+Subete no rimōtofairu o ichiran hyōji suru mae ni, sābā ni setsuzoku suru hitsuyō ga arimasu.
+Fairu {0} o {1} ni namae henkō shite imasu...
+Namae o henkō shimashita
+fairu to atarashī fairu-mei o nyūryoku shimasu.
+Fairu {0} o appurōdo shite imasu...
+Appurōdo sa reta fairu {0}
+rimōtodirekutori ni appurōdo suru fairu o nyūryoku shimasu. upload <fairu> <direkutori>
+FTP komando no jikkō-chū ni erā ga hassei shimashita
+(naibu:
+{0} Forudā, {1} fairu
+(akusesu ga kyohi sa remashita)
+{0} KB, {1} de sakusei {2}, {3} de henkō {4}
+genzai no rōkarudirekutori o shutoku shimasu
+genzai no rimōtodirekutori o shutoku shimasu
+FTP sābā ni setsuzoku shimasu (`ftp://' Matawa `ftps://' De hajimaru hitsuyō ga arimasu)
+rōkarudirekutori o henkō shite kara daunrōdo matawa appurōdo shimasu
+daunrōdo matawa appurōdo suru rimōtodirekutori o henkō shimasu
+sābā kara rimōtofairu o sakujo shimasu
+sābā kara setsudan shimasu
+bainari matawa tekisuto o shiyō shite, rimōtofairu o rōkarudirekutori ni daunrōdo shimasu.
+FTP sheru o shūryō shi, kāneru ni modorimasu herupu
+gamen o hyōji shimasu
+rōkarudirekutori o risuto shimasu
+rimōtodirekutori o risuto shimasu
+tokutei no fairu matawa direkutori no namae o henkō shimasu
+bainari matawa tekisuto o shiyō shite, rōkarufairu o rimōtodirekutori ni appurōdo shimasu
+FTP sheru de erā ga hassei shimashita.
+FTP messēji: Yōkyū sa reta komando {0} ga mitsukarimasen. FTP sheru de shitei sa reta shiyō kanōna komando no risuto ni tsuite wa,`help' o sanshō shite kudasai.
+Netto: {1} Miri byō de {0} kara ōtō ga arimashita
+Taimuauto, setsudan, matawa sābā ga ofuraindesu.
+Netto: Nettowāku-jō no konpyūtā-mei wa {0} desu
+netto: Hosuto-mei wa {1} desu
+netto: Konpyūtā wa domein matawa wākugurūpu ni zokushite iru yōdesu: 
+Netto: Waifai matawa īsanetto ga setsudan sa rete imasu.
+Netto: Konpyūtā wa ika de setsuzoku sa rete iru yōdesu:
+Netto: Rūtāadoresu: {0}
+Adaputa {0} no puropati o shutoku dekimasendeshita
+adaputā bangō: 
+Adaputā-mei: 
+Saidai densō yunitto: {2} Yunitto
+DHCP yūkō:
+Hi yunikyasutopaketto: 
+Yunikyasutopaketto: 
+Chakushin/hasshin paketto no erā: 
+Eiriasu o komando to onaji namae ni suru koto wa dekimasen.
+{0} Ni eiriasu suru komando ga mitsukarimasen.
+{0} Kara {1} e no eiriasu wa kanzen ni kinshi sa rete imasu.
+`{0}' O komando to shite jikkō dekiru yō ni narimashita: `{1}'.
+`{0}' O komando `{1}' to shite shiyō dekinaku narimashita.
+Eiriasu {0} wa sakujo sa rete imasen.
+Mukōna mōdo {0}.
+Chūnyū sa reta hikisū {0} wa, jikai no saikidōji ni jikkō sa reru yō ni sukejūru sa remasu.
+Jūbun'na hikisū ga arimasendeshita. Shiyō-hō ni tsuite wa ika o sanshō shite kudasai.
+Direkutori {0} ga mitsukarimasen
+kūhaku no hosuto-mei.
+Henkō: {0} Kara {1}...
+Sonohi no kūhaku no messēji.
+Roguin-go no kūhaku no MAL.
+MAL o {0} kara {1} ni henkō shite imasu...
+Machigatta yūzāpasuwādo.
+Pasuwādo ga itchi shimasen.
+Yūzā-mei ga {0} ni henkō sa remashita!
+Nyūryoku shita atarashī namae wa sudeni mitsukarimashita.
+Unixde wa, PC no risuto wa mada sapōto sa rete imasen.
+Kinshi sa rete iru eiriasu: {0}
+{0} Ga mitsukarimasen.
+Settei ga rirōdo sa remashita. Ichibu no henkō o yūkōnisuru ni wa, kāneru no sakidō ga hitsuyō ni naru baai ga arimasu.
+Subete ga tsūjō no settei ni risetto sa remasu.
+1Tsu ijō no iro ga mukōdesu.
+Iro wa shiyō dekimasen. Kāneru settei de irodzuki sheru o on ni shimasu.
+Sukurīnsēbā {0} ga mitsukarimasen.
+{0}[ Kāneru settei ({1} de jikkō-chū) ]
+kānerubājon: 
+Debaggumōdo: 
+Karāsheru: 
+Kidō-ji no hikisū: 
+Herupu komando no kanryaku-ka: 
+Roguin-ji no MOTD: 
+Kōnā no nichiji: 
+Purōbu sa reta hādou~ea: 
+Genzai no tēma: 
+[ Hādou~ea settei]{0}
+{0}[ yūzā settei ]
+genzai no yūzā-mei: 
+Genzai no hosuto-mei: 
+Riyō kanōna yūzā-mei: 
+Konpyūtā no hosuto-mei: 
+{0}[ Messēji settei ]
+sōsukōdo: 
+Chosakken (c) 
+raisensu
+purezento
+komando no jikkō-chū ni erā ga hassei shimashita
+yūzā o tsuika shimasu (kanrisha nomi ga kono komando ni akusesu dekimasu)
+eiriasu o komando ni tsuika shimasu (kanrisha nomi ga kono komando ni akusesu dekimasu)
+kāneru ni hikisū o chūnyū shimasu (sakidō ga hitsuyō, kanrisha nomi)
+Shinpuruna dentaku
+direkutori o henkō shimasu
+hosuto-mei no henkō (kanrisha nomi)
+MAL, roguin-go no MOTD no henkō (kanrisha nomi)
+MOTD, kyō no messēji o henkō (kanrisha nomi)
+genzai no yūzā no pasuwādo o henkō shimasu
+yūzā-mei no henkō (kanrisha nomi)
+gamen o kuria shimasu
+tsūka o henkan suru
+debaggurogu o hyōji shimasu (kanrisha nomi)
+FTP sheru o shiyō shite sābā to taiwa suru
+herupupēji
+hādou~ea o shudō de purōbu suru (`nohwprobe' kāneru de 1-kai)
+genzai no forudā-nai no fairu/ forudā no naiyō o ichiran hyōji suru-pāsento
+%USERPROFILE%\KSMods ni sukurīnsēbāfairu o sai yomikomi shimasu
+pasuwādo de gamen o rokku shimasu
+roguauto shimasu
+onrain (oyobi domein-nai de ofurain) no subete no nettowākudebaisu o ichiran hyōji shimasu
+hosuto-jō no subete no nettowākuadoresu
+o ichiran hyōji shimasu tsurī o shiyō shite hosuto-jō no subete no nettowākuadoresu o ichiran hyōji shimasu 
+direkutori o sakusei shimasu
+shiyō kanōna subete no intāfēsu ni kansuru jōhō o risuto shimasu
+eiriasu no kinshi risuto o hyōji shimasu
+yūzā no kengen o kanri suru (kanrisha nomi ga kono komando ni akusesu dekimasu)
+shitei shita adoresu ga riyō kanō ka dō ka o kakunin shimasu
+fairu no naiyō o konsōru ni kakikomimasu
+konpyūtā o sakidō shimasu (keikoku: Saishū kānerude wanai tame, dōki shimasen)
+henshū sa reta kōsei fairu o sai rōdo shimasu.
+Direkutori o sakujo shimasu
+risuto kara yūzā o sakujo shimasu (kanrisha nomi)
+shōzon kara gamen o hozon shimasu
+kansū dentaku. Tan'i henkan wa betsu no komando ni bunri sa remasu
+kāneru no iro o settei shimasu
+kānerusukurīnsēbā o settei shimasu
+kānerutēma o settei shimasu
+eiriasu o hyōji shimasu
+yūzā matawa kāneru ni yotte settei sa reta roguin-go ni MOTD o hyōji shimasu
+yūzā matawa kāneru ni yotte settei sa reta hi no messēji o hyōji shimasu
+hidzuke to jikoku o hyōji shimasu
+zōn de hidzuke to jikoku o hyōji shimasu
+kāneru wa shattodaun sa remasu
+shisutemuinfomēshon
+scicalc kara bunri sa reta tan'i konbātā.
+Shiyō sa rete iru ōpunsōsu no isonkankei o hyōji shimasu
+hijō ni setsumei-tekina yūzāmanyuaru.
+* Komando-kan ni koron o shiyō shite fukusū no komando o shiyō dekimasu.
+Riyō kanōna komando: 
+Mod komando: 
+Komando no eiriasu: 
+Shiyō-hō: 
+Konma de kugira reta hikisū
+hikisū wa {0} ni narimasu
+genzai no direkutori o shutoku suru
+hasshin-moto to atesaki ga kawase rēto no 3ttsu no daimonjidesu
+subete no ID to namae no risuto: 
+Rogu o sōshin dekiru yō ni, debaggurogu o hyōji shimasu.
+FTP sheru o shokka shimasu.
+Hādou~ea o purōbu shimasu (hādou~ea ga purōbu sa rezu, hwprobe ga jikkō sa renai baai ni nomi kinō shimasu).
+Nettowāku jōhō, oyobi nettowāku ni setsuzoku sa rete iru subete no konpyūtā o risuto shimasu.
+No tomodachi
+nettowāku jōhō, oyobi nettowāku ni setsuzoku sa rete iru subete no konpyūtā o tsurī keishiki de risuto shimasu.
+Nettowāku jōhō to subete no konpyūtā o risuto shimasu.
+modnameSS.m wa
+pasuwādo de gamen o rokku shimasu.
+Yūzā kara roguauto shimasu.
+Subete no nettowāku jōhō o shutoku suru
+shimyurēto sa reta konpyūtā o sakidō shimasu.
+Endoyūzā matawa tsūru ni yotte henkō sa reta kōsei o sai rōdo shimasu.
+Colors o sakidō suru hitsuyō wa arimasenga, hotondo no setteide wa sakidō ga hitsuyōdesu.
+Gamen o shōzon kara hogo shinagara, sentaku shita sukurīnsēbā o hyōji shimasu.
+Hidzuke to jikoku o hyōji shimasu.
+Hidzuke to jikoku o zōn de hyōji shimasu.
+Shimyurēto sa reta konpyūtā o shattodaun shimasu.
+Shisutemu jōhō to bājon o hyōji shimasu.
+Shiyō sa rete iru ōpunsōsuraiburari o hyōji shimasu
+sheru ni erā ga arimashita.
+{0} O shiyō suru kengen ga arimasen
+sherumessēji: Yōkyū sa reta komando {0} wa, mentenansumōdo de no jikkō ga kyoka sa rete imasen.
+Sherumessēji: Yōkyū sa reta komando {0} ga mitsukarimasen. Shiyō kanōna komando ni tsuite wa,`help' o sanshō shite kudasai.
+Sherumessēji: Komando {0} wa roguin-ji ni jikkō dekimasen.
+Sherumessēji: Yōkyū sa reta komando {0} ga mitsukarimasen.
+Komando no jikkō-chū ni erā ga hassei shimashita.
+Nichiji: Jikoku wa {0} desu
+datetime: Kyō wa {0} desu
+nichiji: Taimuzōn: {0}
+- {0} No jikan: {1}
+Gamen o kuria shimasu.
+Manyuarupēji {0} ga mitsukaranai yōdesu.
+{1} No tame, manyuarupēji {0} o rōdo shiyou to shita toki ni erā ga hassei shimashita.
+Kono manyuarupēji wa,-ji no riyū ni yori fukanzendesu.
+Nanika kī o osu to zokkō shimasu...
+ | {0} Wādo | kaitei v{1} | {2} sekushon
+kono manyuarupēji no taitoru wa kaka rete imasen
+kono manyuarupēji ({0}) ni wa honbun wa fukuma rete imasen. Pēji o sakujo shite imasu...
+Kono manyuarupēji ({0}) ni wa sekushon ga fukuma rete imasen. Pēji o sakujo shite imasu...
+{0} De jikkō-chū
+{0} no jōhō o shutoku suru kengen ga arimasen.
+Kono komando wa haishi sa rete ori, shōrai no rirīsu de sakujo sa reru yoteidesu.
+Tāgetto ga kanrishadatta tame, pasuwādo {0} o henkō suru kengen ga arimasen.
+Kingaku o kuni kara kuni ni henkan suru
+tsūka: 
+Usrmgr: Yūzā-mei {0} wa sudeni mitsukarimashita
+API kī o nyūryoku shimasu:
+Konpyūtā o shutoku dekimasendeshita. Windows 10 no saishin bājon o jikkō shite iru baai wa, SMBv1 o yūkōnisuru hitsuyō ga arimasu. Tadashi, kono purotokoru wa anzende wanai tame, kono mondai no kaiketsu o kokoromimasu.
+Debaggurogu no subete o sakujo shimasu
+SSE bājon o shutoku shimasu
+mukōna gengo
+gengo o henkō
+shisutemu ni libcpanel-json-xs-perl ga insutōru sa rete inai kanōsei ga arimasu. Insutōru ni tsuite wa, pakkējimanējā o sanshō shite kudasai. Debian (oyobi hasei) shisutemu no baai, tāminaruemyurēta de `sudo apt install libcpanel-json-xs-perl' o jikkō suru koto o o susume shimasu. Erā no shōsai: 
+----------------------------- Kānerupanikkudanpu -----------------------------
+>> panikku jōhō <<
+> setsumei: {0}
+> Erātaipu: {1}
+> Hidzuke to jikoku: {2}
+>> Reigai jōhō <<
+> reigai: {0}
+> Setsumei: {1}
+> Kekka: {2}
+> Sōsu: {3}
+> Sutakkutorēsu <
+>> naibu reigai {0} jōhō <<
+>> Reigai {0} ga konpon gen'in <<
+>> reigai nashi. Kāneruerā no kanōsei ga arimasu. <<
+>> Furēmu, fairu, gyō, retsu <<
+> furēmu {0}: Fairu: {1} | Gyō: {2} | Retsu: {3}
+> Furēmu jōhō o shutoku shiyou to shita toki ni erā ga hassei shimashita. {0}: {1}
+Shisutemu gengo o eigoigai ni settei shimashita. Go fuben o okake shite mōshiwakearimasenga, gūguru to sono hon'yaku-sha wa, puroguramingu gengo no kōdoburokku no hon'yaku ni tsuite hijō ni kimyōna yōdesu. Hon'yaku sa reta manyuarupēji no subete no kōdoburokku o shūsei shimasuga, hon'yaku taishōde wanai kōdoburokku o hon'yaku suru tame ni gūguru hon'yaku no chiketto o hiraki, shisutemu gengo o eigo ni settei suru koto o o susume shimasu.
+Mod o rirōdo shimasu.
+Mod ga rirōdo sa remashita.
+Kāneru e yōkoso!
+<Yūzā> to shite seijō ni roguin shimashita
+MOTD/MAL wa yūkōdesuga, messējitaipu wa mukōdesu. MOTD o sōtei...
+Mukōna messējitaipu no MOTD/MAL o yomitorou to shimashita.
+Antei shita setsuzoku o iji shinagara, {0} o {1} ni daunrōdo shite imasu...
+Daunrōdo ga kanryō shimashita.
+Shikō {0} de daunrōdo ni shippai shimashita: {1}
+FTP sābā kara fairu o daunrōdo suru baai wa, `ftp' o shiyō shite kudasai.
+Genzai no sagyō direkutori ni fairu o daunrōdo shimasu

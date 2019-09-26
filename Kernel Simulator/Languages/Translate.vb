@@ -19,9 +19,9 @@
 Public Module Translate
 
     'Variables
-    'TODO: Add Arabic and Japanese languages (Transliteration, not translations)
+    'TODO: Add Arabic language (Transliteration, not translations)
     'TODO: Ask user if they want to use transliterated or translated
-    Public availableLangs() As String = {"chi", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "mal", "ndo", "pol", "ptg", "rmn", "spa", "swe", "tky", "uzb"}
+    Public availableLangs() As String = {"chi", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "jpn", "mal", "ndo", "pol", "ptg", "rmn", "spa", "swe", "tky", "uzb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
 
@@ -81,6 +81,8 @@ Public Module Translate
                 translated = My.Resources.ind
             Case "ita" 'Italian
                 translated = My.Resources.ita
+            Case "jpn" 'Japanese
+                translated = My.Resources.jpn
             Case "mal" 'Malay (not Malayalam)
                 translated = My.Resources.mal
             Case "ndo" 'Indonesian
