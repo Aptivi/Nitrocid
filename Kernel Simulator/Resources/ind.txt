@@ -391,3 +391,6 @@ badalatee nirdeshika viphal rahee: {0}
 upayogakarta naam galat hai
 pata nirdisht karen
 nirdeshika nikaalane mein asamarth: {0}
+samayakshetr galat tareeke se nirdisht kiya gaya hai.
+amaany profail chayan.
+profail {1} se {0} se kanekt karane ka prayaas kar raha hai ...

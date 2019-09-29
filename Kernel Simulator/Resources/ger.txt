@@ -391,3 +391,6 @@ Das Ändern des Verzeichnisses ist fehlgeschlagen: {0}
 Benutzername ist falsch
 Geben Sie die Adresse an
 Verzeichnis kann nicht entfernt werden: {0}
+Die Zeitzone ist falsch angegeben.
+Ungültige Profilauswahl.
+Es wird versucht, eine Verbindung zu {0} mit dem Profil {1} herzustellen ...

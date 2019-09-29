@@ -544,6 +544,9 @@ Public Module GetCommand
                         If eargs(0) = "all" Then
                             ShowTimesInZones()
                             Done = True
+                        Else
+                            W(DoTranslation("Timezone is specified incorrectly.", currentLang), True, ColTypes.Neutral)
+                            Done = True
                         End If
                     End If
                 End If

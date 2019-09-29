@@ -59,17 +59,31 @@ Module FTPTools
 
                 'Prepare profiles
                 Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect
-                Dim profsel As FtpProfile
+                Dim profsel As New FtpProfile
                 If profiles.Count > 1 Then 'More than one profile
                     W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     For i As Integer = 1 To profiles.Count - 1
                         W($"{i}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection.ToString}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption.ToString}, {profiles(i).Protocols.ToString}", True, ColTypes.Neutral)
                     Next
+                    Dim profanswer As Char
+                    Dim profanswered As Boolean
+                    While profanswered
+                        profanswer = Console.ReadKey(True).KeyChar
+                        If IsNumeric(profanswer) Then
+                            Try
+                                profsel = profiles(Val(profanswer))
+                                profanswered = True
+                            Catch ex As Exception
+                                W(DoTranslation("Invalid profile selection.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            End Try
+                        End If
+                    End While
                 Else
                     profsel = profiles(0) 'Select first profile
                 End If
 
                 'Connect
+                W(DoTranslation("Trying to connect to {0} with profile {1}...", currentLang), True, ColTypes.Neutral, address, profiles.IndexOf(profsel))
                 ClientFTP.Connect(profsel)
 
                 'Show that it's connected

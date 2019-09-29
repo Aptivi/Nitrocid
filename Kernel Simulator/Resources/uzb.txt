@@ -391,3 +391,6 @@ Katalogni o'zgartirish amalga oshmadi: {0}
 Foydalanuvchi nomi noto'g'ri
 Manzilni ko'rsating
 Katalogni olib tashlab bo'lmadi: {0}
+Vaqt zonasi noto‘g‘ri ko‘rsatilgan.
+Profil tanlovi noto‘g‘ri.
+{0} profiliga {1} ulanishga harakat qilinmoqda ...

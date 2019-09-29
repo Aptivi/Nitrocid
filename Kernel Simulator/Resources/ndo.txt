@@ -391,3 +391,6 @@ Mengubah direktori gagal: {0}
 Nama pengguna salah
 Tentukan alamatnya
 Tidak dapat menghapus direktori: {0}
+Zona waktu ditentukan secara tidak benar.
+Pilihan profil tidak valid.
+Mencoba terhubung ke {0} dengan profil {1} ...

@@ -391,3 +391,6 @@ Het wijzigen van de map is mislukt: {0}
 Gebruikersnaam is verkeerd
 Geef het adres op
 Kan map niet verwijderen: {0}
+Tijdzone is onjuist opgegeven.
+Ongeldige profielselectie.
+Probeer verbinding te maken met {0} met profiel {1} ...

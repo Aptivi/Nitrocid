@@ -391,3 +391,6 @@ Změna adresáře se nezdařila: {0}
 Uživatelské jméno je špatné
 Zadejte adresu
 Adresář nelze odstranit: {0}
+Časové pásmo je zadáno nesprávně.
+Neplatný výběr profilu.
+Pokouší se připojit k {0} s profilem {1} ...

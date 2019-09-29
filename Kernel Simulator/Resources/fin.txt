@@ -391,3 +391,6 @@ Hakemiston vaihtaminen epäonnistui: {0}
 Käyttäjätunnus on väärä
 Määritä osoite
 Hakemistoa ei voi poistaa: {0}
+Aikavyöhyke on määritetty väärin.
+Virheellinen profiilivalinta.
+Yritetään muodostaa yhteys kohteeseen {0} profiililla {1} ...

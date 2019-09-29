@@ -377,3 +377,19 @@ Daunrōdo ga kanryō shimashita.
 Shikō {0} de daunrōdo ni shippai shimashita: {1}
 FTP sābā kara fairu o daunrōdo suru baai wa, `ftp' o shiyō shite kudasai.
 Genzai no sagyō direkutori ni fairu o daunrōdo shimasu
+Debaggudebaisu o setsudan suru
+setsuzoku sa rete iru debaggudebaisu o risuto shimasu
+debaggudebaisu {0} ga mitsukarimasen.
+Debaisu {0} ga setsudan sa remashita.
+Setsuzoku erā: {0}
+Pōto {0} o shiyō shite, subete no adoresu de rissun o debaggu shimasu.
+Hikisū ga shitei sa rete imasen. Hinto: Supēsu de kugira reta fukusū no hikisū o shitei shimasu
+eiriasu wa sudeni mitsukarimashita: {0}
+Debaggurogu ga sakujosaremashita. Setsuzoku sa rete iru subete no debaggudebaisu wa, hikitsudzuki messēji o hyōji dekimasu.
+Debaggurogu no sakujo ni shippai shimashita: {0}
+Direkutori no henkō ni shippai shimashita: {0}
+Yūzā-mei ga machigatte imasu
+jūsho o shitei shite kudasai
+direkutori o sakujo dekimasen: {0}
+Taimuzōn ga tadashiku shitei sa rete imasen.
+Mukōna Purofairu sentaku. Purofairu {1 } de {0 } ni setsuzoku shiyou to shite imasu...

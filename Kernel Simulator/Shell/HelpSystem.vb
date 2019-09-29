@@ -251,7 +251,7 @@ Public Module HelpSystem
 
         ElseIf command = "showtdzone" Then
 
-            W(DoTranslation("Usage:", currentLang) + " showtdzone: " + DoTranslation("Shows the date and time in zones.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " showtdzone <timezone/all>: " + DoTranslation("Shows the date and time in zones.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "shutdown" Then
 

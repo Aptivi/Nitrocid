@@ -391,3 +391,6 @@ El cambio de directorio ha fallado: {0}
 Nombre de usuario incorrecto
 Especifique la dirección
 No se puede eliminar el directorio: {0}
+La zona horaria está especificada incorrectamente.
+Selección de perfil no válida
+Intentando conectarse a {0} con el perfil {1} ...

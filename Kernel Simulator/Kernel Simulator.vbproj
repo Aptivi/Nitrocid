@@ -20,7 +20,7 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.7.2</Version>
+    <Version>0.0.7.21</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -28,7 +28,7 @@
     <!-- URL settings -->
     <PackageProjectUrl>https://github.com/EoflaOE/Kernel-Simulator</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/EoflaOE/Kernel-Simulator/master/Kernel%20Simulator/iconfinder_applications-utilities_8840.ico</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/EoflaOE/Kernel-Simulator/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicense>https://github.com/EoflaOE/Kernel-Simulator/blob/master/LICENSE</PackageLicense>
     <PackageReleaseNotes>https://github.com/EoflaOE/Kernel-Simulator/blob/master/README.md#--------history--------</PackageReleaseNotes>
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

@@ -391,3 +391,6 @@ Le changement de répertoire a échoué: {0}
 Le nom d'utilisateur est faux
 Spécifiez l'adresse
 Impossible de supprimer le répertoire: {0}
+Le fuseau horaire est spécifié de manière incorrecte.
+Sélection de profil invalide.
+Vous essayez de vous connecter à {0} avec le profil {1} ...

@@ -206,6 +206,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **9/23/2019 - 0.0.7.2:** Updated FluentFTP, Added YellowFG and YellowBG themes, Fixed part of the shell prompt color on yellow light/dark backgrounds, Fixed time/date corner position overlapping existing text, Now time zone offsets are shown in each time zone view, Added Japanese language
 
+**9/29/2019 - 0.0.7.21:** Added a message when specifying non-existent time zone in `showtdzone`, Fixed Japanese language missing latest locale additions, Added missing argument requirements in the help entry for `showtdzone`, Fixed FTP connection not prompting for profile selection (apparently, it's not written yet, but it's now written.)
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator

@@ -391,3 +391,6 @@ Zmiana katalogu nie powiodła się: {0}
 Nazwa użytkownika jest niepoprawna
 Podaj adres
 Nie można usunąć katalogu: {0}
+Strefa czasowa jest niepoprawnie określona.
+Nieprawidłowy wybór profilu.
+Próbuję połączyć się z {0} z profilem {1} ...

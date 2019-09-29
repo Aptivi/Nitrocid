@@ -391,3 +391,6 @@ Gēnggǎi mùlù shībài:{0}
 Yònghù míng cuòle
 zhǐdìng dìzhǐ
 wúfǎ shānchú mùlù:{0}
+Shíqū zhǐdìng bù zhèngquè.
+Wúxiào de pèizhì wénjiàn xuǎnzé.
+Chángshì shǐyòng pèizhì wénjiàn {1} liánjiē dào {0}...

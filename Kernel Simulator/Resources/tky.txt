@@ -391,3 +391,6 @@ Dizin değiştirilemedi: {0}
 Kullanıcı adı yanlış
 Adresi belirtin
 Dizin kaldırılamıyor: {0}
+Saat dilimi yanlış belirtildi.
+Geçersiz profil seçimi.
+{1} profiliyle {0} bağlanmaya çalışıyor ...

@@ -391,3 +391,6 @@ Modifica directory non riuscita: {0}
 Il nome utente è sbagliato
 Specifica l'indirizzo
 Impossibile rimuovere la directory: {0}
+Il fuso orario non è specificato correttamente.
+Selezione profilo non valida.
+Tentativo di connessione a {0} con il profilo {1} ...
