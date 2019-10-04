@@ -23,6 +23,7 @@ Imports System.IO
 Public Module TextWriterColor
 
     Public dbgWriter As New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
+    Public dbgLastTrace As String
 
     Public Enum ColTypes As Integer
         Neutral = 1
@@ -90,7 +91,8 @@ Public Module TextWriterColor
     Public Sub WStkTrc(ByVal Ex As Exception)
         If DebugMode Then
             'These two vbNewLines are padding for accurate stack tracing.
-            dbgWriter.WriteLine($"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}")
+            dbgLastTrace = $"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}"
+            dbgWriter.WriteLine(dbgLastTrace)
         End If
     End Sub
 

@@ -26,6 +26,7 @@ Module RemoteDebugger
     Public DebugTCP As TcpListener
     Public DebugDevices As New Dictionary(Of Socket, String)
     Public dbgConns As New List(Of StreamWriter)
+    Public DebugCmds As String() = {"trace", "help", "exit"}
 
     Sub StartRDebugThread()
         If DebugMode Then
@@ -78,11 +79,41 @@ Module RemoteDebugger
                     Dim msg As String = Text.Encoding.Default.GetString(buff)
                     msg = msg.Replace(vbCr, vbNullChar) 'Remove all instances of vbCr (macOS newlines) } Windows hosts are affected, too, because it uses
                     msg = msg.Replace(vbLf, vbNullChar) 'Remove all instances of vbLf (Linux newlines) } vbCrLf, which means (vbCr + vbLf)
-                    If Not msg.StartsWith(vbNullChar) Then Wdbg("{0}> {1}", ip, msg) 'Don't post message if it starts with a null character.
+                    If Not msg.StartsWith(vbNullChar) Then 'Don't post message if it starts with a null character.
+                        If msg.StartsWith("/") Then 'Message is a command
+                            Dim cmd As String = msg.Replace("/", "").Replace(vbNullChar, "")
+                            If DebugCmds.Contains(cmd) Then 'Command is found or not
+                                'Parsing starts here.
+                                'TODO: Move to separate sub in RemoteDebugCmd.vb
+                                If cmd = "trace" Then
+                                    'Print stack trace command code
+                                    If dbgLastTrace <> "" Then
+                                        dbgConns(i - 1).WriteLine(dbgLastTrace)
+                                    Else
+                                        dbgConns(i - 1).WriteLine("No stack trace")
+                                    End If
+                                ElseIf cmd = "help" Then
+                                    'Help command code
+                                    dbgConns(i - 1).WriteLine("- trace: Shows last stack trace on exception" + vbNewLine +
+                                                          "- exit: Disconnects you from the debugger")
+                                ElseIf cmd = "exit" Then
+                                    'Exit command code
+                                    DisconnectDbgDev(ip)
+                                End If
+                            End If
+                            Else
+                                Wdbg("{0}> {1}", ip, msg)
+                        End If
+                    End If
                 Catch ex As Exception
                     Dim SE As SocketException = CType(ex.InnerException, SocketException)
-                    If Not IsNothing(SE) And Not SE.SocketErrorCode = SocketError.TimedOut Then
-                        Wdbg("Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
+                    If Not IsNothing(SE) Then
+                        If Not SE.SocketErrorCode = SocketError.TimedOut Then
+                            Wdbg("Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
+                            WStkTrc(ex)
+                        End If
+                    Else
+                        WStkTrc(ex)
                     End If
                 End Try
             End If
@@ -101,6 +132,25 @@ Module RemoteDebugger
                     dbgConns.RemoveAt(i)
                     DebugDevices.Remove(DebugDevices.Keys(i))
                     W(DoTranslation("Device {0} disconnected.", currentLang), True, ColTypes.Neutral, IPAddr)
+                End If
+            End If
+        Next
+        If Not Found Then
+            W(DoTranslation("Debug device {0} not found.", currentLang), True, ColTypes.Neutral, IPAddr)
+        End If
+    End Sub
+    Sub DisconnectDbgDev(ByVal IPAddr As String)
+        Dim Found As Boolean
+        For i As Integer = 0 To DebugDevices.Count - 1
+            If Found Then
+                Exit Sub
+            Else
+                If IPAddr = DebugDevices.Values(i) Then
+                    Wdbg("Debug device {0} disconnected.", DebugDevices.Values(i))
+                    Found = True
+                    DebugDevices.Keys(i).Disconnect(True)
+                    dbgConns.RemoveAt(i)
+                    DebugDevices.Remove(DebugDevices.Keys(i))
                 End If
             End If
         Next

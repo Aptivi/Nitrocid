@@ -16,12 +16,13 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Text
+
 Public Module Translate
 
     'Variables
-    'TODO: Add Arabic language (Transliteration, not translations)
     'TODO: Ask user if they want to use transliterated or translated
-    Public availableLangs() As String = {"chi", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "jpn", "mal", "ndo", "pol", "ptg", "rmn", "spa", "swe", "tky", "uzb"}
+    Public availableLangs() As String = {"arb", "chi", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "jpn", "mal", "ndo", "pol", "ptg", "rmn", "spa", "swe", "tky", "uzb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
 
@@ -63,6 +64,8 @@ Public Module Translate
         Dim langStrings As New Dictionary(Of String, String)
         Dim translated As String = ""
         Select Case lang
+            Case "arb" 'Arabic (transliterated)
+                translated = My.Resources.arb
             Case "chi" 'Chinese
                 translated = My.Resources.chi
             Case "cro" 'Croatian

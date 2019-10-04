@@ -61,6 +61,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to al&apos;awamir almtaht: {0}
+        '''aktaba al&apos;amr:
+        '''tam &apos;iilgha&apos; haqn al&apos;awamir.
+        '''aifsil bayn wasaytat altamhid bifawasil bidun masafat , ealaa sabil almithal , &quot;motd ، gpuprobe&quot;
+        '''&apos;awamir munfasilat ealaa &apos;cmdinject&apos; mae colons bimasafat , ealaa sabil almithal , &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''lahaz &apos;ana alwasita &apos;debug&apos; la tughatiy alnawat bialkamil.
+        '''alsafaqat: alwasitat almatluba {0} ghyr mawjudatin.
+        '''alsfqat: khata ghyr qabil lilaistirdad fi alwsytt:
+        '''alwasayit almutahat: {0}
+        '''alhujaj (&quot;almusaedat&quot; lil [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property arb() As String
+            Get
+                Return ResourceManager.GetString("arb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Kěyòng mìnglìng: {0}
         '''Xiě mìnglìng: 
         '''Mìnglìng zhùrù yǐ bèi qǔxiāo.

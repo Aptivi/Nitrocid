@@ -208,6 +208,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **9/29/2019 - 0.0.7.21:** Added a message when specifying non-existent time zone in `showtdzone`, Fixed Japanese language missing latest locale additions, Added missing argument requirements in the help entry for `showtdzone`, Fixed FTP connection not prompting for profile selection (apparently, it's not written yet, but it's now written.)
 
+**10/4/2019 - 0.0.7.3:** Updated NuGet.Build.Tasks.Pack to version 5.3.0, Fixed empty address being accepted in FTP `connect` command, Fixed NullReferenceException when handling an error from socket connection that isn't a socket problem, Added basic command support for debugger (No argument system yet, only stack trace show, help, and exit), Added Arabic transliteration (all English letters)
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator
