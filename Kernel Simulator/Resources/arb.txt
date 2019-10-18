@@ -394,3 +394,4 @@ ghyr qadir ealaa 'iizalat aldlyl: {0}
 tama tahdid almintaqat alzamaniat bishakl ghyr sahihin.
 aikhtiar milafi taerif ghyr salih.
 tuhawil alaitisal b {0} mae almilafi alshakhsii {1} ...
+khata fi aikhtibar alwhdt: {0}

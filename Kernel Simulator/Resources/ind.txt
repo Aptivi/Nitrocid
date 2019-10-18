@@ -394,3 +394,4 @@ nirdeshika nikaalane mein asamarth: {0}
 samayakshetr galat tareeke se nirdisht kiya gaya hai.
 amaany profail chayan.
 profail {1} se {0} se kanekt karane ka prayaas kar raha hai ...
+ikaee pareekshan mein truti: {0}

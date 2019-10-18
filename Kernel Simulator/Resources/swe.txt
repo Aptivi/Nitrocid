@@ -394,3 +394,4 @@ Det går inte att ta bort katalogen: {0}
 Tidszon anges felaktigt.
 Ogiltigt profilval.
 Försöker ansluta till {0} med profilen {1} ...
+Fel vid enhetstest: {0}

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Kernel Simulator"
+    "\\Kernel Simulator",
+    "\\Kernel Simulator\\Tests",
+    "\\Kernel Simulator\\Tests\\Interaction"
   ],
   "SelectedNode": "\\Kernel Simulator\\Kernel Simulator.vbproj",
   "PreviewInSolutionExplorer": false

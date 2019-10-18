@@ -394,3 +394,4 @@ Tidak dapat menghapus direktori: {0}
 Waktu lapang dinyatakan dengan salah.
 Pemilihan profil tidak sah.
 Cuba untuk menyambung ke {0} dengan profil {1} ...
+Ralat dalam ujian unit: {0}

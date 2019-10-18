@@ -394,3 +394,4 @@ Nije moguće ukloniti direktorij: {0}
 Vremenska zona nije točno navedena.
 Nevažeći izbor profila.
 Pokušaj povezivanja sa {0} s profilom {1} ...
+Pogreška prilikom testiranja jedinice: {0}

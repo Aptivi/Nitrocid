@@ -33,6 +33,9 @@ Module CommandLineArgsParse
                     Else
                         Environment.Exit(0)
                     End If
+                ElseIf arg = "testInteractive" Then
+                    InitTShell()
+                    Environment.Exit(0)
                 End If
             End If
         Catch ex As Exception

@@ -275,6 +275,13 @@ Public Module KernelTools
         'Initialize aliases
         InitAliases()
 
+        'Initialize date and files
+        If Not TimeDateIsSet Then
+            InitTimeDate()
+            TimeDateIsSet = True
+        End If
+        InitFS()
+
         'Check for multiple instances of KS
         If instanceChecked = False Then MultiInstance()
 
@@ -315,13 +322,6 @@ Public Module KernelTools
         Wdbg("-------------------------------------------------------------------")
         Wdbg("Kernel initialized, version {0}.", KernelVersion)
         Wdbg("OS: {0}", EnvironmentOSType)
-
-        'Initialize date and files
-        If Not TimeDateIsSet Then
-            InitTimeDate()
-            TimeDateIsSet = True
-        End If
-        InitFS()
 
         'Parse current theme string
         ParseCurrentTheme()

@@ -16,7 +16,6 @@
     </ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>
-    </StartArguments>
+    <StartArguments>testInteractive</StartArguments>
   </PropertyGroup>
 </Project>

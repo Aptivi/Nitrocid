@@ -24,20 +24,20 @@ Public Module FTPGetCommand
     Public ClientFTP As FtpClient
 
     'To enable progress
-    Public Complete As New Progress(Of FtpProgress)(Sub(percentage)
-                                                        'If the progress is not defined, disable progress bar
-                                                        If percentage.Progress < 0 Then
-                                                            progressFlag = False
-                                                        Else
-                                                            ConsoleOriginalPosition_LEFT = Console.CursorLeft
-                                                            ConsoleOriginalPosition_TOP = Console.CursorTop
-                                                            If progressFlag = True And percentage.Progress <> 100 Then
-                                                                Console.Write("{0}% (ETA: {1} @ {2})             ", FormatNumber(percentage.Progress, 1), percentage.ETA, percentage.TransferSpeedToString)
-                                                                'W("{0}% (ETA: {1} @ {2})             ", False, ColTypes.Neutral, FormatNumber(percentage.Progress, 1), percentage.ETA, percentage.TransferSpeedToString)
-                                                            End If
-                                                            Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
-                                                        End If
-                                                    End Sub)
+    Public Complete As New Action(Of FtpProgress)(Sub(percentage)
+                                                      'If the progress is not defined, disable progress bar
+                                                      If percentage.Progress < 0 Then
+                                                          progressFlag = False
+                                                      Else
+                                                          ConsoleOriginalPosition_LEFT = Console.CursorLeft
+                                                          ConsoleOriginalPosition_TOP = Console.CursorTop
+                                                          If progressFlag = True And percentage.Progress <> 100 Then
+                                                              Console.Write("{0}% (ETA: {1} @ {2})             ", FormatNumber(percentage.Progress, 1), percentage.ETA, percentage.TransferSpeedToString)
+                                                              'W("{0}% (ETA: {1} @ {2})             ", False, ColTypes.Neutral, FormatNumber(percentage.Progress, 1), percentage.ETA, percentage.TransferSpeedToString)
+                                                          End If
+                                                          Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
+                                                      End If
+                                                  End Sub)
 
     Public Sub ExecuteCommand(ByVal cmd As String)
 

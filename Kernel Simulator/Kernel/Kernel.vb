@@ -25,7 +25,7 @@ Public Module Kernel
     Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
     Public BootArgs() As String
     Public AvailableArgs() As String = {"quiet", "cmdinject", "debug", "maintenance", "help"}
-    Public availableCMDLineArgs() As String = {"createConf", "testMod"}
+    Public availableCMDLineArgs() As String = {"createConf", "testMod", "testInteractive"}
     Public configReader As New IniFile()
     Public MOTDMessage, HName, MAL As String
     Public ReadOnly EnvironmentOSType As String = Environment.OSVersion.ToString

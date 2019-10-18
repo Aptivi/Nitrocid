@@ -394,3 +394,4 @@ Imposibil de eliminat directorul: {0}
 Fusul orar este specificat incorect.
 Selectarea nevalidă a profilului.
 Încercați să vă conectați la {0} cu profilul {1} ...
+Eroare la testarea unității: {0}

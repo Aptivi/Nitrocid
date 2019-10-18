@@ -24,6 +24,7 @@ Public Module TextWriterColor
 
     Public dbgWriter As New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
     Public dbgLastTrace As String
+    Public DebugQuota As Double = 1073741824 '1073741824 bytes = 1 GiB (1 GB for Windows)
 
     Public Enum ColTypes As Integer
         Neutral = 1
@@ -50,6 +51,9 @@ Public Module TextWriterColor
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
             Dim LineNum As String = STrace.GetFrame(1).GetFileLineNumber
             Dim OffendingIndex As New List(Of Integer)
+
+            'Check for debug quota
+            CheckForExceed()
 
             'For contributors who are testing new code: Uncomment the two Debug.WriteLine lines for immediate debugging (Immediate Window)
             If Not Source Is Nothing And Not LineNum = 0 Then
@@ -90,11 +94,41 @@ Public Module TextWriterColor
 
     Public Sub WStkTrc(ByVal Ex As Exception)
         If DebugMode Then
+            'Check for quota
+            CheckForExceed()
+
             'These two vbNewLines are padding for accurate stack tracing.
             dbgLastTrace = $"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}"
             dbgWriter.WriteLine(dbgLastTrace)
         End If
     End Sub
+
+    Public Sub CheckForExceed()
+        Try
+            Dim FInfo As New FileInfo(paths("Debugging"))
+            Dim OldSize As Double = FInfo.Length
+            Dim Lines() As String = ReadAllLinesNoBlock(paths("Debugging"))
+            If OldSize > DebugQuota Then
+                dbgWriter.Close()
+                dbgWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
+                For l As Integer = 5 To Lines.Length - 2 'Remove the first 5 lines from stream.
+                    dbgWriter.WriteLine(Lines(l))
+                Next
+                Wdbg("Max debug quota size exceeded, was {0} MB.", FormatNumber(OldSize / 1024 / 1024, 1))
+            End If
+        Catch ex As Exception
+            Exit Sub
+        End Try
+    End Sub
+
+    Private Function ReadAllLinesNoBlock(ByVal path As String) As String()
+        Dim AllLnList As New List(Of String)
+        Dim FOpen As New StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+        While Not FOpen.EndOfStream
+            AllLnList.Add(FOpen.ReadLine)
+        End While
+        Return AllLnList.ToArray
+    End Function
 
     ''' <summary>
     ''' Outputs the text into the terminal prompt, and sets colors as needed.

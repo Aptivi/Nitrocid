@@ -210,6 +210,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **10/4/2019 - 0.0.7.3:** Updated NuGet.Build.Tasks.Pack to version 5.3.0, Fixed empty address being accepted in FTP `connect` command, Fixed NullReferenceException when handling an error from socket connection that isn't a socket problem, Added basic command support for debugger (No argument system yet, only stack trace show, help, and exit), Added Arabic transliteration (all English letters)
 
+**10/18/2019 - 0.0.7.4:** Updated FluentFTP, Fixed license not showing in NuGet.org, Moved from the deprecated PackageIconUrl to PackageIcon, Added unit test shell (doesn't cover all functions currently, variables treated as texts), Added debug quota so the debugging logs aren't huge, Fixed debugger not flushing properly to the file after using `cdbglog` command
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator

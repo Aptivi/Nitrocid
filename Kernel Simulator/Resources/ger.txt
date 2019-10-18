@@ -394,3 +394,4 @@ Verzeichnis kann nicht entfernt werden: {0}
 Die Zeitzone ist falsch angegeben.
 Ungültige Profilauswahl.
 Es wird versucht, eine Verbindung zu {0} mit dem Profil {1} herzustellen ...
+Fehler beim Komponententest: {0}

@@ -394,3 +394,4 @@ Unable to remove directory: {0}
 Timezone is specified incorrectly.
 Invalid profile selection.
 Trying to connect to {0} with profile {1}...
+Error in unit testing: {0}

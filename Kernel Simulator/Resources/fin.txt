@@ -394,3 +394,4 @@ Hakemistoa ei voi poistaa: {0}
 Aikavyöhyke on määritetty väärin.
 Virheellinen profiilivalinta.
 Yritetään muodostaa yhteys kohteeseen {0} profiililla {1} ...
+Virhe yksikkötestauksessa: {0}

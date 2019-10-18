@@ -394,3 +394,4 @@ No se puede eliminar el directorio: {0}
 La zona horaria está especificada incorrectamente.
 Selección de perfil no válida
 Intentando conectarse a {0} con el perfil {1} ...
+Error en la prueba de la unidad: {0}

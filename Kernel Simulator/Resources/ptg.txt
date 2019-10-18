@@ -394,3 +394,4 @@ Não foi possível remover o diretório: {0}
 O fuso horário está especificado incorretamente.
 Seleção de perfil inválida.
 Tentando conectar-se a {0} com o perfil {1} ...
+Erro no teste de unidade: {0}

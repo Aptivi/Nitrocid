@@ -394,3 +394,4 @@ Impossible de supprimer le répertoire: {0}
 Le fuseau horaire est spécifié de manière incorrecte.
 Sélection de profil invalide.
 Vous essayez de vous connecter à {0} avec le profil {1} ...
+Erreur lors des tests unitaires: {0}

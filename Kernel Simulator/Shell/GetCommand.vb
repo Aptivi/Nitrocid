@@ -134,7 +134,7 @@ Public Module GetCommand
 
                 Try
                     dbgWriter.Close()
-                    dbgWriter = New StreamWriter(paths("Debugging"))
+                    dbgWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
                     W(DoTranslation("Debug log removed. All connected debugging devices may still view messages.", currentLang), True, ColTypes.Neutral)
                 Catch ex As Exception
                     W(DoTranslation("Debug log removal failed: {0}", currentLang), True, ColTypes.Neutral, ex.Message)

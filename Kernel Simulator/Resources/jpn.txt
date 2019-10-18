@@ -392,4 +392,5 @@ Yūzā-mei ga machigatte imasu
 jūsho o shitei shite kudasai
 direkutori o sakujo dekimasen: {0}
 Taimuzōn ga tadashiku shitei sa rete imasen.
-Mukōna Purofairu sentaku. Purofairu {1 } de {0 } ni setsuzoku shiyou to shite imasu...
+Mukōna Purofairu sentaku. Purofairu {1} de {0} ni setsuzoku shiyou to shite imasu...
+Tantaitesuto no erā: {0}
