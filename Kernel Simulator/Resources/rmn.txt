@@ -395,3 +395,4 @@ Fusul orar este specificat incorect.
 Selectarea nevalidă a profilului.
 Încercați să vă conectați la {0} cu profilul {1} ...
 Eroare la testarea unității: {0}
+Comanda {0} nu a fost găsită. Consultați comanda „help” pentru lista comenzilor.

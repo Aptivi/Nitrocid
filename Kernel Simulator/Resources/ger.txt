@@ -395,3 +395,4 @@ Die Zeitzone ist falsch angegeben.
 Ungültige Profilauswahl.
 Es wird versucht, eine Verbindung zu {0} mit dem Profil {1} herzustellen ...
 Fehler beim Komponententest: {0}
+Befehl {0} nicht gefunden. Eine Liste der Befehle finden Sie im Befehl "help".

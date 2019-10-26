@@ -26,7 +26,6 @@ Module RemoteDebugger
     Public DebugTCP As TcpListener
     Public DebugDevices As New Dictionary(Of Socket, String)
     Public dbgConns As New List(Of StreamWriter)
-    Public DebugCmds As String() = {"trace", "help", "exit"}
 
     Sub StartRDebugThread()
         If DebugMode Then
@@ -46,16 +45,19 @@ Module RemoteDebugger
             Try
                 Dim RDebugStream As NetworkStream
                 Dim RDebugClient As Socket
+                Dim RDebugIP As String
                 If DebugTCP.Pending Then
                     RDebugClient = DebugTCP.AcceptSocket
                     RDebugStream = New NetworkStream(RDebugClient)
+                    RDebugIP = RDebugClient.RemoteEndPoint.ToString.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":"))
                     dbgConns.Add(New StreamWriter(RDebugStream) With {.AutoFlush = True})
-                    DebugDevices.Add(RDebugClient, RDebugClient.RemoteEndPoint.ToString.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":")))
-                    dbgConns.Last().WriteLine(">> Chat version 0.1.1") 'Increment each minor/major change(s)
-                    Wdbg("Debug device {0} connected.", RDebugClient.RemoteEndPoint.ToString.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":")))
+                    DebugDevices.Add(RDebugClient, RDebugIP)
+                    dbgConns.Last().WriteLine(">> Chat version 0.2") 'Increment each minor/major change(s)
+                    Wdbg("Debug device {0} connected.", RDebugIP)
                 End If
             Catch ex As Exception
                 W(DoTranslation("Error in connection: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+                WStkTrc(ex)
             End Try
         End While
 
@@ -82,27 +84,14 @@ Module RemoteDebugger
                     If Not msg.StartsWith(vbNullChar) Then 'Don't post message if it starts with a null character.
                         If msg.StartsWith("/") Then 'Message is a command
                             Dim cmd As String = msg.Replace("/", "").Replace(vbNullChar, "")
-                            If DebugCmds.Contains(cmd) Then 'Command is found or not
+                            If DebugCmds.Contains(cmd.Split(" ")(0)) Then 'Command is found or not
                                 'Parsing starts here.
-                                'TODO: Move to separate sub in RemoteDebugCmd.vb
-                                If cmd = "trace" Then
-                                    'Print stack trace command code
-                                    If dbgLastTrace <> "" Then
-                                        dbgConns(i - 1).WriteLine(dbgLastTrace)
-                                    Else
-                                        dbgConns(i - 1).WriteLine("No stack trace")
-                                    End If
-                                ElseIf cmd = "help" Then
-                                    'Help command code
-                                    dbgConns(i - 1).WriteLine("- trace: Shows last stack trace on exception" + vbNewLine +
-                                                          "- exit: Disconnects you from the debugger")
-                                ElseIf cmd = "exit" Then
-                                    'Exit command code
-                                    DisconnectDbgDev(ip)
-                                End If
-                            End If
+                                ParseCmd(cmd, dbgConns(i - 1), ip)
                             Else
-                                Wdbg("{0}> {1}", ip, msg)
+                                dbgConns(i - 1).WriteLine("Command {0} not found.", cmd.Split(" ")(0))
+                            End If
+                        Else
+                            Wdbg("{0}> {1}", ip, msg)
                         End If
                     End If
                 Catch ex As Exception

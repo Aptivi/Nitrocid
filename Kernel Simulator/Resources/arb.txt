@@ -395,3 +395,4 @@ tama tahdid almintaqat alzamaniat bishakl ghyr sahihin.
 aikhtiar milafi taerif ghyr salih.
 tuhawil alaitisal b {0} mae almilafi alshakhsii {1} ...
 khata fi aikhtibar alwhdt: {0}
+lm yatim aleuthur ealaa al'amr {0}. rajie 'amr "help" lilhusul ealaa qayimat al'awamir.

@@ -395,3 +395,4 @@ La zona horaria está especificada incorrectamente.
 Selección de perfil no válida
 Intentando conectarse a {0} con el perfil {1} ...
 Error en la prueba de la unidad: {0}
+Comando {0} no encontrado. Consulte el comando "help" para ver la lista de comandos.

@@ -20,7 +20,7 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.7.41</Version>
+    <Version>0.0.7.5</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -33,7 +33,7 @@
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
-    <PackageOutputPath>KSNuget</PackageOutputPath>
+    <PackageOutputPath>KSBuild</PackageOutputPath>
     <!-- Dependencies set up -->
     <Dependencies>
       <dependency id="MadMilkman.Ini" version="1.0.6.0" />
@@ -250,6 +250,7 @@
     <Compile Include="Network\FTP\FTPShell.vb" />
     <Compile Include="Network\FTP\FTPTools.vb" />
     <Compile Include="Network\NetworkTools.vb" />
+    <Compile Include="Network\RemoteDebug\RemoteDebugCmd.vb" />
     <Compile Include="Network\RemoteDebug\RemoteDebugger.vb" />
     <Compile Include="Shell\AliasManager.vb" />
     <Compile Include="Shell\GetCommand.vb" />

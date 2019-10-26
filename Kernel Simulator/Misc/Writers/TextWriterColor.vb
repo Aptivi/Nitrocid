@@ -23,8 +23,8 @@ Imports System.IO
 Public Module TextWriterColor
 
     Public dbgWriter As New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
-    Public dbgLastTrace As String
     Public DebugQuota As Double = 1073741824 '1073741824 bytes = 1 GiB (1 GB for Windows)
+    Public dbgStackTraces As New List(Of String)
 
     Public Enum ColTypes As Integer
         Neutral = 1
@@ -50,7 +50,7 @@ Public Module TextWriterColor
             Dim STrace As New StackTrace(True)
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
             Dim LineNum As String = STrace.GetFrame(1).GetFileLineNumber
-            Dim OffendingIndex As New List(Of Integer)
+            Dim OffendingIndex As New List(Of String)
 
             'Check for debug quota
             CheckForExceed()
@@ -98,8 +98,8 @@ Public Module TextWriterColor
             CheckForExceed()
 
             'These two vbNewLines are padding for accurate stack tracing.
-            dbgLastTrace = $"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}"
-            dbgWriter.WriteLine(dbgLastTrace)
+            dbgStackTraces.Add($"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}")
+            dbgWriter.WriteLine(dbgStackTraces(0))
         End If
     End Sub
 

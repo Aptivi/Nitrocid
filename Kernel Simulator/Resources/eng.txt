@@ -395,3 +395,4 @@ Timezone is specified incorrectly.
 Invalid profile selection.
 Trying to connect to {0} with profile {1}...
 Error in unit testing: {0}
+Command {0} not found. See the "help" command for the list of commands.

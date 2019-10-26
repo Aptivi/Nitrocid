@@ -395,3 +395,4 @@ Aikavyöhyke on määritetty väärin.
 Virheellinen profiilivalinta.
 Yritetään muodostaa yhteys kohteeseen {0} profiililla {1} ...
 Virhe yksikkötestauksessa: {0}
+Komentoa {0} ei löytynyt. Katso komentojen luettelo "help" -komennosta.

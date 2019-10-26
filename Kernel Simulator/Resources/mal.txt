@@ -395,3 +395,4 @@ Waktu lapang dinyatakan dengan salah.
 Pemilihan profil tidak sah.
 Cuba untuk menyambung ke {0} dengan profil {1} ...
 Ralat dalam ujian unit: {0}
+Perintah {0} tidak dijumpai. Lihat arahan "help" untuk senarai arahan.

@@ -14,6 +14,18 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - We implemented a chat system, but it seems that it won't work properly on 2 or more clients. We will find a fix in the future.
 
+## |-----+--> _Virus Warning_ <--+-----|
+
+Unfortunately, some parts of KS have been taken by the malicious executable file called payslip.exe. It got its entries for the following cybersecurity analyzers:
+
+* Hybrid Analysis (downloadable for researchers): https://www.hybrid-analysis.com/sample/756b94b872cada97c6ebcbc65c47734e3238f171db719d428a42f6ac8bc93e4f
+
+* VirusTotal (downloadable for researchers): https://www.virustotal.com/gui/file/756b94b872cada97c6ebcbc65c47734e3238f171db719d428a42f6ac8bc93e4f/detection
+
+* ANY.RUN ([downloadable for registered users](https://app.any.run/tasks/567f7789-cf49-4602-8a73-0459eb11be49/)): https://any.run/report/fab1bf683a31f5f5249fd685b9b75ce92bd28e3ad2abae10a07407de4d42ad78/567f7789-cf49-4602-8a73-0459eb11be49
+
+For more information, inspect [this wiki page](https://github.com/EoflaOE/Kernel-Simulator/wiki/Studying-payslip-virus).
+
 ## |-----+--> _How to run/install_ <--+-----|
 
 * If you are going to install KS without building from source, either look at the Releases, or use the second link below.
@@ -213,6 +225,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **10/18/2019 - 0.0.7.4:** Updated FluentFTP, Fixed license not showing in NuGet.org, Moved from the deprecated PackageIconUrl to PackageIcon, Added unit test shell (doesn't cover all functions currently, variables treated as texts), Added debug quota so the debugging logs aren't huge, Fixed debugger not flushing properly to the file after using `cdbglog` command
 
 **10/19/2019 - 0.0.7.41:** Recent tests concluded that the FTP progress bar is now fixed (No duplication), Fixed the purple stain in progress bar writing, The ETA for FTP file transfer is now more clear
+
+**10/24/2019 - 0.0.7.5:** Added a new debugging command named `username` that shows current username, Fixed stack trace history not updating when there's an error in accepting new connections, Remote debug shell and the test shell now complain when the command is not found, Added argument support to the debug command, Stack traces are stored in a list and can be viewed in the remote debugger command `trace`
 
 ## |-----+--> _Contributors_ <--+-----|
 

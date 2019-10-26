@@ -395,3 +395,4 @@ Saat dilimi yanlış belirtildi.
 Geçersiz profil seçimi.
 {1} profiliyle {0} bağlanmaya çalışıyor ...
 Birim testinde hata: {0}
+{0} komutu bulunamadı. Komut listesi için "help" komutuna bakın.

@@ -395,3 +395,4 @@ Vaqt zonasi noto‘g‘ri ko‘rsatilgan.
 Profil tanlovi noto‘g‘ri.
 {0} profiliga {1} ulanishga harakat qilinmoqda ...
 Birlikni tekshirishda xato: {0}
+{0} buyrug'i topilmadi. Buyruqlar ro'yxati uchun "help" buyrug'iga qarang.

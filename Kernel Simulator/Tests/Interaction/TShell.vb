@@ -18,6 +18,7 @@
 
 Module TShell
 
+    Public TShellCmds As String() = {"print", "printf", "printd", "printdf", "testevent", "probehw", "garbage", "panic", "panicf", "translate", "places", "loadmods", "debug", "rdebug", "help", "exit"}
     Sub InitTShell()
         Dim ExitFlag As Boolean
         Dim FullCmd As String
@@ -25,7 +26,11 @@ Module TShell
             W("(t)> ", False, ColTypes.Input)
             FullCmd = Console.ReadLine
             Try
-                TParseCommand(FullCmd)
+                If TShellCmds.Contains(FullCmd.Split(" ")(0)) Then
+                    TParseCommand(FullCmd)
+                Else
+                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Neutral, FullCmd.Split(" ")(0))
+                End If
             Catch ex As Exception
                 W(DoTranslation("Error in unit testing: {0}"), True, ColTypes.Neutral, ex.Message)
                 Wdbg("Error: {0}", ex.Message)

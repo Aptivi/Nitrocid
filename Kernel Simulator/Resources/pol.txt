@@ -395,3 +395,4 @@ Strefa czasowa jest niepoprawnie określona.
 Nieprawidłowy wybór profilu.
 Próbuję połączyć się z {0} z profilem {1} ...
 Błąd w testowaniu jednostkowym: {0}
+Nie znaleziono polecenia {0}. Zobacz polecenie „help”, aby uzyskać listę poleceń.

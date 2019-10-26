@@ -395,3 +395,4 @@ Tidszon anges felaktigt.
 Ogiltigt profilval.
 Försöker ansluta till {0} med profilen {1} ...
 Fel vid enhetstest: {0}
+Kommando {0} hittades inte. Se kommandot "help" för listan med kommandon.

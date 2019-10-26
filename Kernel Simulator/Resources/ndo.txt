@@ -395,3 +395,4 @@ Zona waktu ditentukan secara tidak benar.
 Pilihan profil tidak valid.
 Mencoba terhubung ke {0} dengan profil {1} ...
 Kesalahan dalam pengujian unit: {0}
+Perintah {0} tidak ditemukan. Lihat perintah "help" untuk daftar perintah.

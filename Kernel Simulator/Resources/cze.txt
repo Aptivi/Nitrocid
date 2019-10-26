@@ -395,3 +395,4 @@ Adresář nelze odstranit: {0}
 Neplatný výběr profilu.
 Pokouší se připojit k {0} s profilem {1} ...
 Chyba při testování jednotky: {0}
+Příkaz {0} nebyl nalezen. Seznam příkazů naleznete v příkazu „help“.

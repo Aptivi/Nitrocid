@@ -579,13 +579,13 @@ Public Module GetCommand
 
                 'Kernel section
                 W(vbNewLine + DoTranslation("Kernel Version:", currentLang) + " {0}" + vbNewLine +
-                                DoTranslation("Debug Mode:", currentLang) + " {1}" + vbNewLine +
-                                DoTranslation("Colored Shell:", currentLang) + " {2}" + vbNewLine +
-                                DoTranslation("Arguments on Boot:", currentLang) + " {3}" + vbNewLine +
-                                DoTranslation("Help command simplified:", currentLang) + " {4}" + vbNewLine +
-                                DoTranslation("MOTD on Login:", currentLang) + " {5}" + vbNewLine +
-                                DoTranslation("Time/Date on corner:", currentLang) + " {6}" + vbNewLine +
-                                DoTranslation("Current theme:", currentLang) + " {7}" + vbNewLine, True, ColTypes.Neutral, KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString, currentTheme)
+                              DoTranslation("Debug Mode:", currentLang) + " {1}" + vbNewLine +
+                              DoTranslation("Colored Shell:", currentLang) + " {2}" + vbNewLine +
+                              DoTranslation("Arguments on Boot:", currentLang) + " {3}" + vbNewLine +
+                              DoTranslation("Help command simplified:", currentLang) + " {4}" + vbNewLine +
+                              DoTranslation("MOTD on Login:", currentLang) + " {5}" + vbNewLine +
+                              DoTranslation("Time/Date on corner:", currentLang) + " {6}" + vbNewLine +
+                              DoTranslation("Current theme:", currentLang) + " {7}" + vbNewLine, True, ColTypes.Neutral, KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString, currentTheme)
 
                 'Hardware section
                 W(DoTranslation("[ Hardware settings ]{0}", currentLang), True, ColTypes.HelpCmd, vbNewLine)
@@ -598,9 +598,9 @@ Public Module GetCommand
                 'User section
                 W(DoTranslation("{0}[ User settings ]", currentLang), True, ColTypes.HelpCmd, vbNewLine)
                 W(vbNewLine + DoTranslation("Current user name:", currentLang) + " {0}" + vbNewLine +
-                                DoTranslation("Current host name:", currentLang) + " {1}" + vbNewLine +
-                                DoTranslation("Available usernames:", currentLang) + " {2}" + vbNewLine +
-                                DoTranslation("Computer host name:", currentLang) + " {3}", True, ColTypes.Neutral, signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
+                              DoTranslation("Current host name:", currentLang) + " {1}" + vbNewLine +
+                              DoTranslation("Available usernames:", currentLang) + " {2}" + vbNewLine +
+                              DoTranslation("Computer host name:", currentLang) + " {3}", True, ColTypes.Neutral, signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
 
                 'Messages Section
                 W(vbNewLine + "[ MOTD ]", True, ColTypes.HelpCmd)
