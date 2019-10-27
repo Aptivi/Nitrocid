@@ -16,7 +16,7 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 ## |-----+--> _Virus Warning_ <--+-----|
 
-Unfortunately, some parts of KS have been taken by the malicious executable file called payslip.exe. It got its entries for the following cybersecurity analyzers:
+Unfortunately, some parts of KS have been taken to avoid detection in the source code of a malicious executable file called payslip.exe. It got its entries for the following cybersecurity analyzers:
 
 * Hybrid Analysis (downloadable for researchers): https://www.hybrid-analysis.com/sample/756b94b872cada97c6ebcbc65c47734e3238f171db719d428a42f6ac8bc93e4f
 
