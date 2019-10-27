@@ -12,8 +12,6 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - We took out Windows XP support in 0.0.5.9 in favor of NuGet and .NET Framework 4.7.
 
-- We implemented a chat system, but it seems that it won't work properly on 2 or more clients. We will find a fix in the future.
-
 ## |-----+--> _Virus Warning_ <--+-----|
 
 Unfortunately, some parts of KS have been taken to avoid detection in the source code of a malicious executable file called payslip.exe. It got its entries for the following cybersecurity analyzers:
