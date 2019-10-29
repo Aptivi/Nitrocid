@@ -95,7 +95,7 @@ Der angeforderte Bildschirmschoner {0} wurde nicht gefunden.
 {0} wurde nicht initialisiert. Der Bildschirmschonercode hat möglicherweise beim Initialisieren einen Fehler festgestellt.
 Der Bildschirmschoner {0} existiert nicht.
 {0} ist auf den Standard-Bildschirmschoner eingestellt.
-Der Bildschirmschoner {0} wurde nicht in der Datenbank gefunden. Initialisiere mit "Loosaver {0}".
+Der Bildschirmschoner {0} wurde nicht in der Datenbank gefunden. Überprüfen Sie den Namen und versuchen Sie es erneut.
 Der Bildschirmschoner kann aufgrund folgender Ursachen nicht geladen werden:
 Beim Drucken von Text ist ein schwerwiegender Fehler aufgetreten.
 Beim Erstellen der Konfiguration ist ein Fehler aufgetreten.
@@ -396,3 +396,8 @@ Ungültige Profilauswahl.
 Es wird versucht, eine Verbindung zu {0} mit dem Profil {1} herzustellen ...
 Fehler beim Komponententest: {0}
 Befehl {0} nicht gefunden. Eine Liste der Befehle finden Sie im Befehl "help".
+Fehler beim Abrufen der IPv6-Eigenschaften für Adapter {0}. Auch weiterhin...
+IPv4-Informationen:
+IPv6-Informationen:
+Adapter {0} unterstützt IPv6 nicht. Auch weiterhin...
+Adapter {0} unterstützt IPv4 nicht. Test fehlgeschlagen.

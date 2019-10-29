@@ -155,6 +155,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " ftp: " + DoTranslation("Initializes the FTP shell.", currentLang), True, ColTypes.Neutral)
 
+        ElseIf command = "get" Then
+
+            W(DoTranslation("Usage:", currentLang) + " get <URL>", True, ColTypes.Neutral)
+
         ElseIf command = "list" Then
 
             W(DoTranslation("Usage:", currentLang) + " list [oneDirectory]" + vbNewLine +

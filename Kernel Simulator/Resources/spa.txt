@@ -95,7 +95,7 @@ El protector de pantalla solicitado {0} no se encuentra.
 {0} no se inicializó. El código del protector de pantalla podría haber experimentado un error al inicializar.
 El protector de pantalla {0} no existe.
 {0} está configurado como protector de pantalla predeterminado.
-No se encontró el protector de pantalla {0} en la base de datos. Inicialice con "loadsaver {0}".
+No se encontró el protector de pantalla {0} en la base de datos. Verifique el nombre e intente nuevamente.
 El protector de pantalla no se puede cargar debido a lo siguiente: 
 Hay un error grave al imprimir texto.
 Hay un error al intentar crear la configuración.
@@ -396,3 +396,8 @@ Selección de perfil no válida
 Intentando conectarse a {0} con el perfil {1} ...
 Error en la prueba de la unidad: {0}
 Comando {0} no encontrado. Consulte el comando "help" para ver la lista de comandos.
+Error al obtener las propiedades de IPv6 para el adaptador {0}. Continuo...
+Información de IPv4:
+Información de IPv6:
+El adaptador {0} no es compatible con IPv6. Continuo...
+El adaptador {0} no es compatible con IPv4. La sonda falló.

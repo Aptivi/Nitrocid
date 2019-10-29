@@ -25,7 +25,7 @@ Module RemoteDebugger
     Public RDebugClient As Socket
     Public DebugTCP As TcpListener
     Public DebugDevices As New Dictionary(Of Socket, String)
-    Public dbgConns As New List(Of StreamWriter)
+    Public dbgConns As New Dictionary(Of StreamWriter, String)
 
     Sub StartRDebugThread()
         If DebugMode Then
@@ -44,16 +44,22 @@ Module RemoteDebugger
         While Not RebootRequested
             Try
                 Dim RDebugStream As NetworkStream
+                Dim RDebugSWriter As StreamWriter
                 Dim RDebugClient As Socket
                 Dim RDebugIP As String
+                Dim RDebugRandomID As Integer
+                Dim RDebugName As String
                 If DebugTCP.Pending Then
                     RDebugClient = DebugTCP.AcceptSocket
                     RDebugStream = New NetworkStream(RDebugClient)
+                    RDebugSWriter = New StreamWriter(RDebugStream) With {.AutoFlush = True}
                     RDebugIP = RDebugClient.RemoteEndPoint.ToString.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":"))
-                    dbgConns.Add(New StreamWriter(RDebugStream) With {.AutoFlush = True})
+                    RDebugRandomID = New Random(100000).Next(999999)
+                    RDebugName = RDebugDNP + CStr(RDebugRandomID)
+                    dbgConns.Add(RDebugSWriter, RDebugName)
                     DebugDevices.Add(RDebugClient, RDebugIP)
-                    dbgConns.Last().WriteLine(">> Chat version 0.2") 'Increment each minor/major change(s)
-                    Wdbg("Debug device {0} connected.", RDebugIP)
+                    dbgConns.Keys.Last.WriteLine(">> Chat version 0.3") 'Increment each minor/major change(s)
+                    Wdbg("Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
                 End If
             Catch ex As Exception
                 W(DoTranslation("Error in connection: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
@@ -74,6 +80,7 @@ Module RemoteDebugger
                 Dim buff(65536) As Byte
                 Dim streamnet As New NetworkStream(DebugDevices.Keys(i))
                 Dim ip As String = DebugDevices.Values(i)
+                Dim name As String = dbgConns.Values(i)
                 streamnet.ReadTimeout = 10 'Seems to have fixed it
                 i += 1
                 Try
@@ -86,12 +93,12 @@ Module RemoteDebugger
                             Dim cmd As String = msg.Replace("/", "").Replace(vbNullChar, "")
                             If DebugCmds.Contains(cmd.Split(" ")(0)) Then 'Command is found or not
                                 'Parsing starts here.
-                                ParseCmd(cmd, dbgConns(i - 1), ip)
+                                ParseCmd(cmd, dbgConns.Keys(i - 1), ip)
                             Else
-                                dbgConns(i - 1).WriteLine("Command {0} not found.", cmd.Split(" ")(0))
+                                dbgConns.Keys(i - 1).WriteLine("Command {0} not found.", cmd.Split(" ")(0))
                             End If
                         Else
-                            Wdbg("{0}> {1}", ip, msg)
+                            Wdbg("{0}> {1}", name, msg)
                         End If
                     End If
                 Catch ex As Exception
@@ -118,7 +125,7 @@ Module RemoteDebugger
                     Wdbg("Debug device {0} disconnected.", DebugDevices.Values(i))
                     Found = True
                     DebugDevices.Keys(i).Disconnect(True)
-                    dbgConns.RemoveAt(i)
+                    dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                     W(DoTranslation("Device {0} disconnected.", currentLang), True, ColTypes.Neutral, IPAddr)
                 End If
@@ -138,7 +145,7 @@ Module RemoteDebugger
                     Wdbg("Debug device {0} disconnected.", DebugDevices.Values(i))
                     Found = True
                     DebugDevices.Keys(i).Disconnect(True)
-                    dbgConns.RemoveAt(i)
+                    dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                 End If
             End If
@@ -149,7 +156,7 @@ Module RemoteDebugger
     End Sub
     Function GetSWIndex(ByVal SW As StreamWriter) As Integer
         For i As Integer = 0 To dbgConns.Count - 1
-            If SW.Equals(dbgConns(i)) Then
+            If SW.Equals(dbgConns.Keys(i)) Then
                 Return i
             End If
         Next

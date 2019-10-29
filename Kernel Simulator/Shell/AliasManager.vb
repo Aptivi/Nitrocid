@@ -90,6 +90,7 @@ Public Module AliasManager
     End Sub
     Sub ExecuteAlias(ByVal aliascmd As String)
         'If this sub worked properly, consider putting it to Shell directly
+        Wdbg("Translating alias {0} to {1}...", aliascmd, aliases(aliascmd))
         Dim actualCmd As String = strcommand.Replace(aliascmd, aliases(aliascmd))
         GetCommand.ExecuteCommand(actualCmd)
     End Sub

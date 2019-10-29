@@ -95,7 +95,7 @@ anurodh kiya gaya skreenasevar {0} nahin mila hai.
 {0} praarambh nahin hua. praarambh karane ke dauraan skreenasevar kod mein ek truti huee ho sakatee hai.
 skreenasevar {0} maujood nahin hai.
 {0} difolt skreenasevar par set hai.
-skreenasevar {0} detaabes mein nahin mila. "loadsaver {0}" ke saath aarambh karen.
+skreenasevar {0} detaabes mein nahin mila. naam kee jaanch karen aur punah prayaas karen.
 nimnalikhit ke kaaran skreenasevar lod nahin kiya ja sakata hai: 
 paath print karate samay ek gambheer truti hai.
 konfigareshan banaane ka prayaas karane mein truti huee hai.
@@ -396,3 +396,8 @@ amaany profail chayan.
 profail {1} se {0} se kanekt karane ka prayaas kar raha hai ...
 ikaee pareekshan mein truti: {0}
 kamaand {0} nahin milee. aadeshon kee soochee ke lie "help" kamaand dekhen.
+edaaptar {0} ke lie ipv6 gun praapt karane mein viphal. jaaree hai...
+ipv4 jaanakaaree:
+ipv6 jaanakaaree:
+edaaptar {0} ipv6 ka samarthan nahin karata hai. jaaree hai ...
+edaaptar {0} ipv4 ka samarthan nahin karata hai. jaanch viphal rahee.

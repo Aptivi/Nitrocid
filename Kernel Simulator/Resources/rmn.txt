@@ -95,7 +95,7 @@ Protectorul de ecran solicitat {0} nu este găsit.
 {0} nu a inițializat. Este posibil ca codul de salvare să fi avut o eroare la inițializare.
 Screensaver {0} nu există.
 {0} este setat pe screensaver implicit.
-Screensaver {0} nu se găsește în baza de date. Inițializați cu „loadsaver {0}”.
+Screensaver {0} nu se găsește în baza de date. Verificați numele și încercați din nou.
 Screensaverul nu poate fi încărcat din următoarele:
 Există o eroare gravă la imprimarea textului.
 Există o eroare încercând să creeze configurație.
@@ -396,3 +396,8 @@ Selectarea nevalidă a profilului.
 Încercați să vă conectați la {0} cu profilul {1} ...
 Eroare la testarea unității: {0}
 Comanda {0} nu a fost găsită. Consultați comanda „help” pentru lista comenzilor.
+Nu a reușit să obțineți proprietăți IPv6 pentru adaptor {0}. Continuarea ...
+Informații IPv4:
+Informații IPv6:
+Adaptorul {0} nu acceptă IPv6. Continuarea ...
+Adaptorul {0} nu acceptă IPv4. Sonda a eșuat.

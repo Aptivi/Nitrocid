@@ -95,7 +95,7 @@ Screensaver yang diminta {0} tidak ditemukan.
 {0} tidak menginisialisasi. Kode screensaver mungkin mengalami kesalahan saat inisialisasi.
 Screensaver {0} tidak ada.
 {0} diatur ke screensaver default.
-Screensaver {0} tidak ditemukan dalam database. Inisialisasi dengan "loadsaver {0}".
+Screensaver {0} tidak ditemukan dalam database. Periksa nama dan coba lagi.
 Screensaver tidak dapat dimuat karena hal berikut:
 Ada kesalahan serius saat mencetak teks.
 Ada kesalahan saat mencoba membuat konfigurasi.
@@ -396,3 +396,8 @@ Pilihan profil tidak valid.
 Mencoba terhubung ke {0} dengan profil {1} ...
 Kesalahan dalam pengujian unit: {0}
 Perintah {0} tidak ditemukan. Lihat perintah "help" untuk daftar perintah.
+Gagal mendapatkan properti IPv6 untuk adaptor {0}. Melanjutkan ...
+Informasi IPv4:
+Informasi IPv6:
+Adaptor {0} tidak mendukung IPv6. Melanjutkan ...
+Adaptor {0} tidak mendukung IPv4. Penyelidikan gagal.

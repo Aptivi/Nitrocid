@@ -95,7 +95,7 @@ tamat tahyia {0} bishakl sahihin.
 {0} lm yatima altahayyat. qad yakun ramz shashat altawaquf qad wajah khtaan 'athna' altahyyat.
 shashat altawaquf {0} ghyr mawjudatin.
 {0} madbut ealaa shashat altawaquf alaiftiradiat.
-shashat altawaquf {0} ghyr mawjudat fi qaeidat albayanat. altahyyat biastikhdam "loadsaver {0}".
+shashat altawaquf {0} ghyr mawjudat fi qaeidat albayanat. tuhaqiq min alaism wahawal maratan 'ukhraa.
 la yumkin tahmil shashat altawaquf bsbb ma yly:
 yujad khata khatir eind tabaeat alnas.
 yujad khata fi muhawalat takwin altawsif.
@@ -396,3 +396,8 @@ aikhtiar milafi taerif ghyr salih.
 tuhawil alaitisal b {0} mae almilafi alshakhsii {1} ...
 khata fi aikhtibar alwhdt: {0}
 lm yatim aleuthur ealaa al'amr {0}. rajie 'amr "help" lilhusul ealaa qayimat al'awamir.
+fashilun fi alhusul ealaa khasayis IPv6 lilmihwal {0}. jar alaistimrar...
+mielumat IPv4:
+mielumat IPv6:
+almahayi {0} la yadeam IPv6. jar alaistimrar ...
+almahayi {0} la yadeam IPv4. fashal fi 'tahqiq.

@@ -32,9 +32,11 @@ Module GetModCommand
         If cmd.StartsWith(parts(0) + " ") Then
             'These below will be executed if there are arguments
             Dim args As String = cmd.Replace($"{parts(0)} ", "")
+            Wdbg("Command {0} will be run with arguments: {1}", actualCmd, args)
             scripts(actualCmd).PerformCmd(args)
         Else
             'This will be executed if there are no arguments
+            Wdbg("Command {0} will be run.", actualCmd)
             scripts(actualCmd).PerformCmd()
         End If
         Wdbg("Command executed successfully.")

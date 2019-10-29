@@ -95,7 +95,7 @@ Screensaver yang diminta {0} tidak dijumpai.
 {0} tidak dimulakan. Kod screensaver mungkin mengalami ralat semasa menginisialisasi.
 Screensaver {0} tidak wujud.
 {0} ditetapkan kepada penanda lalai lalai.
-Screensaver {0} tidak dijumpai dalam pangkalan data. Inisialisasi dengan "loadsaver {0}".
+Screensaver {0} tidak dijumpai dalam pangkalan data. Semak nama dan cuba lagi.
 Screensaver tidak boleh dimuatkan kerana perkara berikut:
 Terdapat ralat yang serius apabila mencetak teks.
 Terdapat ralat cuba mencipta konfigurasi.
@@ -396,3 +396,8 @@ Pemilihan profil tidak sah.
 Cuba untuk menyambung ke {0} dengan profil {1} ...
 Ralat dalam ujian unit: {0}
 Perintah {0} tidak dijumpai. Lihat arahan "help" untuk senarai arahan.
+Gagal mendapatkan sifat IPv6 untuk penyesuai {0}. Meneruskan ...
+Maklumat IPv4:
+Maklumat IPv6:
+Adapter {0} tidak menyokong IPv6. Meneruskan ...
+Adapter {0} tidak menyokong IPv4. Probe gagal.

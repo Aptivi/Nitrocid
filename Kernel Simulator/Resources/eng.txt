@@ -95,7 +95,7 @@ The requested screensaver {0} is not found.
 {0} did not initialize. The screensaver code might have experienced an error while initializing.
 Screensaver {0} does not exist.
 {0} is set to default screensaver.
-Screensaver {0} not found in database. Initialize with "loadsaver {0}".
+Screensaver {0} not found in database. Check the name and try again.
 Screensaver can't be loaded because of the following: 
 There is a serious error when printing text.
 There is an error trying to create configuration.
@@ -396,3 +396,8 @@ Invalid profile selection.
 Trying to connect to {0} with profile {1}...
 Error in unit testing: {0}
 Command {0} not found. See the "help" command for the list of commands.
+Failed to get IPv6 properties for adapter {0}. Continuing...
+IPv4 information:
+IPv6 information:
+Adapter {0} doesn't support IPv6. Continuing...
+Adapter {0} doesn't support IPv4. Probe failed.

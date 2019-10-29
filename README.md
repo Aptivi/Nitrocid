@@ -226,6 +226,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **10/24/2019 - 0.0.7.5:** Added a new debugging command named `username` that shows current username, Fixed stack trace history not updating when there's an error in accepting new connections, Remote debug shell and the test shell now complain when the command is not found, Added argument support to the debug command, Stack traces are stored in a list and can be viewed in the remote debugger command `trace`
 
+**10/29/2019 - 0.0.7.6:** Added the experimental naming system for chat in remote debugger (Custom names not implemented yet), Added `lines` and `glitterMatrix` screensaver, Now screensavers have their own debugging messages, FluentFTP debugger messages are now redirected to the KS debugger, Now filesystem actions are debugged, Now `get` doesn't run if the URL is not specified, Added missing `get` help entry
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator

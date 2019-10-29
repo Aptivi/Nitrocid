@@ -95,7 +95,7 @@ yōkyū sa reta sukurīnsēbā {0} ga mitsukarimasen.
 {0} Wa shoki-ka sa remasendeshita. Sukurīnsēbākōdo de shokka-chū ni erā ga hassei shita kanōsei ga arimasu. 
 Sukurīnsēbā {0} wa sonzai shimasen. 
 {0} Wa deforuto no sukurīnsēbā ni settei sa rete imasu. 
-Sukurīnsēbā {0} ga dētabēsu ni mitsukarimasen. `loadsaver {0}' de shoki-ka shimasu. 
+Sukurīnsēbā {0} ga dētabēsu ni mitsukarimasen. Namae o kakunin shite sai shikō shite kudasai.
 Tsugi no riyū ni yori, sukurīnsēbā o yomikomemasen. 
 Tekisuto no insatsu-ji ni jūdaina erā ga hassei shimashita. 
 Kōsei no sakusei-chū ni erā ga hassei shimashita. 
@@ -395,3 +395,8 @@ Taimuzōn ga tadashiku shitei sa rete imasen.
 Mukōna Purofairu sentaku. Purofairu {1} de {0} ni setsuzoku shiyou to shite imasu...
 Tantaitesuto no erā: {0}
 Komando {0} ga mitsukarimasen. Komando no risuto ni tsuite wa,`help' komando o sanshō shite kudasai.
+Adaputā {0} no IPv6 puropati no shutoku ni shippai shimashita. Zokkō shite imasu...
+IPv4 jōhō:
+IPv6 jōhō:
+Adaputā {0} wa IPv6 o sapōto shite imasen. Zokkō shite imasu...
+Adaputā {0} wa IPv4 o sapōto shite imasen. Purōbu ni shippai shimashita.

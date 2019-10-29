@@ -95,7 +95,7 @@ So‘ralgan {0} ekran saqlovchisi topilmadi.
 {0} ishga tushmadi. Ekranni saqlash kodini ishga tushirishda xatolik yuz berishi mumkin.
 {0} ekran saqlagich mavjud emas.
 {0} standart ekran saqlovchisi sifatida o‘rnatilgan.
-{0} ekran tasviri ma'lumotlar bazasida topilmadi. "Loadsaver {0}" bilan boshlang.
+{0} ekran tasviri ma'lumotlar bazasida topilmadi. Ismni tekshiring va qaytadan urining.
 Ekran saqlagichini yuklab bo'lmaydi, chunki:
 Matnni chop etishda jiddiy xato mavjud.
 Konfiguratsiyani yaratishda xatolik yuz berdi.
@@ -396,3 +396,8 @@ Profil tanlovi noto‘g‘ri.
 {0} profiliga {1} ulanishga harakat qilinmoqda ...
 Birlikni tekshirishda xato: {0}
 {0} buyrug'i topilmadi. Buyruqlar ro'yxati uchun "help" buyrug'iga qarang.
+{0} adapteri uchun IPv6 xususiyatlarini olib bo'lmadi. Davomi ...
+IPv4 haqida ma'lumot:
+IPv6 haqida ma'lumot:
+{0} adapteri IPv6-ni qo'llab-quvvatlamaydi. Davomi ...
+{0} adapteri IPv4-ni qo'llab-quvvatlamaydi. Tekshiruv amalga oshmadi.

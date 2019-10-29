@@ -24,6 +24,7 @@ Public Module TextWriterColor
 
     Public dbgWriter As New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
     Public DebugQuota As Double = 1073741824 '1073741824 bytes = 1 GiB (1 GB for Windows)
+    Public RDebugDNP As String = "KSUser" 'Appended with random ID when new session arrives
     Public dbgStackTraces As New List(Of String)
 
     Public Enum ColTypes As Integer
@@ -61,9 +62,9 @@ Public Module TextWriterColor
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
                     Try
-                        dbgConns(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
+                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
                     Catch ex As Exception
-                        OffendingIndex.Add(GetSWIndex(dbgConns(i)))
+                        OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
                     End Try
                 Next
                 'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
@@ -71,9 +72,9 @@ Public Module TextWriterColor
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
                     Try
-                        dbgConns(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
+                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
                     Catch ex As Exception
-                        OffendingIndex.Add(GetSWIndex(dbgConns(i)))
+                        OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
                     End Try
                 Next
                 'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
@@ -83,8 +84,8 @@ Public Module TextWriterColor
             For Each i As Integer In OffendingIndex
                 If i <> -1 Then
                     DebugDevices.Keys(i).Disconnect(True)
-                    dbgConns.RemoveAt(i)
-                    Wdbg("Debug device {0} disconnected.", DebugDevices.Values(i))
+                    Wdbg("Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
+                    dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                 End If
             Next

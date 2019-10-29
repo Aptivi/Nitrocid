@@ -95,7 +95,7 @@ Lo screensaver richiesto {0} non è stato trovato.
 {0} non inizializzato. Il codice dello screensaver potrebbe aver subito un errore durante l'inizializzazione.
 Il salvaschermo {0} non esiste.
 {0} è impostato sullo screensaver predefinito.
-Screensaver {0} non trovato nel database. Inizializza con "loadaver {0}".
+Screensaver {0} non trovato nel database. Controlla il nome e riprova.
 Il salvaschermo non può essere caricato a causa di quanto segue:
 Si è verificato un errore grave durante la stampa del testo.
 Si è verificato un errore durante il tentativo di creare la configurazione.
@@ -396,3 +396,8 @@ Selezione profilo non valida.
 Tentativo di connessione a {0} con il profilo {1} ...
 Errore nel test dell'unità: {0}
 Comando {0} non trovato. Vedi il comando "help" per l'elenco dei comandi.
+Impossibile ottenere le proprietà IPv6 per l'adattatore {0}. Proseguendo ...
+Informazioni IPv4:
+Informazioni IPv6:
+L'adattatore {0} non supporta IPv6. Proseguendo ...
+L'adattatore {0} non supporta IPv4. Sonda non riuscita.

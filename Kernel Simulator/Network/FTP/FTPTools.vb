@@ -117,3 +117,13 @@ Module FTPTools
     End Sub
 
 End Module
+
+Class FTPTracer
+    Inherits TraceListener 'Both Write and WriteLine do exactly the same thing, which is writing to a debugger.
+    Public Overloads Overrides Sub Write(ByVal Message As String)
+        Wdbg(Message)
+    End Sub
+    Public Overloads Overrides Sub WriteLine(ByVal Message As String)
+        Wdbg(Message)
+    End Sub
+End Class

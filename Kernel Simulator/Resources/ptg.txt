@@ -95,7 +95,7 @@ O protetor de tela solicitado {0} não foi encontrado.
 {0} não inicializou. O código do protetor de tela pode ter sofrido um erro durante a inicialização.
 O protetor de tela {0} não existe.
 {0} está definido como protetor de tela padrão.
-Protetor de tela {0} não encontrado no banco de dados. Inicialize com "loadsaver {0}".
+Protetor de tela {0} não encontrado no banco de dados. Verifique o nome e tente novamente.
 O protetor de tela não pode ser carregado por causa do seguinte: 
 Há um erro sério ao imprimir texto.
 Há um erro ao tentar criar uma configuração.
@@ -396,3 +396,8 @@ Seleção de perfil inválida.
 Tentando conectar-se a {0} com o perfil {1} ...
 Erro no teste de unidade: {0}
 Comando {0} não encontrado. Veja o comando "help" para a lista de comandos.
+Falha ao obter propriedades IPv6 para o adaptador {0}. Continuando...
+Informações IPv4:
+Informações IPv6:
+O adaptador {0} não suporta IPv6. Continuando...
+O adaptador {0} não suporta IPv4. Falha na análise.

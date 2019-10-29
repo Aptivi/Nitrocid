@@ -95,7 +95,7 @@ L'économiseur d'écran demandé {0} est introuvable.
 {0} n'a pas été initialisé. Le code de l'économiseur d'écran a peut-être rencontré une erreur lors de l'initialisation.
 L'économiseur d'écran {0} n'existe pas.
 {0} est défini sur l'écran de veille par défaut.
-Économiseur d'écran {0} introuvable dans la base de données. Initialisez avec "loadsaver {0}".
+Économiseur d'écran {0} introuvable dans la base de données. Vérifiez le nom et réessayez.
 L'économiseur d'écran ne peut pas être chargé à cause des problèmes suivants: 
 Il y a une grave erreur lors de l’impression de texte.
 Une erreur s'est produite lors de la tentative de création de la configuration.
@@ -396,3 +396,8 @@ Sélection de profil invalide.
 Vous essayez de vous connecter à {0} avec le profil {1} ...
 Erreur lors des tests unitaires: {0}
 Commande {0} introuvable. Voir la commande "help" pour la liste des commandes.
+Échec d'obtention des propriétés IPv6 pour l'adaptateur {0}. En continuant ...
+Informations IPv4:
+Informations IPv6:
+L'adaptateur {0} ne prend pas en charge IPv6. En continuant ...
+L'adaptateur {0} ne prend pas en charge IPv4. La sonde a échoué.

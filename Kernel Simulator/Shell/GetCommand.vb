@@ -294,8 +294,10 @@ Public Module GetCommand
 
             ElseIf words(0) = "get" Then
 
-                DownloadFile(strArgs)
-                Done = True
+                If args.Count <> 0 Then
+                    DownloadFile(args(0))
+                    Done = True
+                End If
 
             ElseIf requestedCommand = "lockscreen" Then
 

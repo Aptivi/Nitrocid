@@ -28,8 +28,8 @@ Module Flags
     Public argsFlag As Boolean                                  'A flag for checking for an argument later
     Public argsInjected As Boolean                              'A flag for checking for an argument on reboot
     Public enableDemo As Boolean = True                         'Enable Demo Account
-    Public setRootPasswd As Boolean = False                     'Set Root Password
-    Public RootPasswd As String = ""                            'Set Root Password
+    Public setRootPasswd As Boolean = False                     'Set Root Password boolean
+    Public RootPasswd As String = ""                            'Set Root Password to any password
     Public maintenance As Boolean = False                       'Maintenance Mode
     Public argsOnBoot As Boolean = False                        'Arguments On Boot
     Public clsOnLogin As Boolean = False                        'Clear Screen On Log-in

@@ -95,7 +95,7 @@ Hata
 {0} başlatılmadı. Ekran koruyucu kodu, başlatılırken bir hatayla karşılaşmış olabilir.
 Ekran koruyucu {0} mevcut değil.
 {0} varsayılan ekran koruyucu olarak ayarlanmıştır.
-Ekran koruyucu {0} veritabanında bulunamadı. "Loadaver {0}" ile başlat.
+Ekran koruyucu {0} veritabanında bulunamadı. Adı kontrol edip tekrar deneyin.
 Ekran koruyucu, aşağıdakilerden dolayı yüklenemiyor:
 Metin yazdırırken ciddi bir hata var.
 Yapılandırma oluşturmaya çalışırken bir hata var.
@@ -396,3 +396,8 @@ Geçersiz profil seçimi.
 {1} profiliyle {0} bağlanmaya çalışıyor ...
 Birim testinde hata: {0}
 {0} komutu bulunamadı. Komut listesi için "help" komutuna bakın.
+{0} bağdaştırıcısının IPv6 özellikleri alınamadı. Devam ediyor...
+IPv4 bilgisi:
+IPv6 bilgisi:
+{0} bağdaştırıcısı IPv6'yı desteklemiyor. Devam ediyor...
+{0} bağdaştırıcısı IPv4'ü desteklemiyor. Prob başarısız oldu.

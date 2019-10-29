@@ -95,7 +95,7 @@ zhǎo bù dào qǐngqiú de píngmù bǎohù chéngxù {0}.
 {0} Wèi chūshǐhuà. Píngmù bǎohù chéngxù dàimǎ kěnéng zài chūshǐhuà shí yù dào cuòwù.
 Píngmù bǎohù chéngxù {0} bù cúnzài.
 {0} Shèzhì wèi mòrèn píngmù bǎohù chéngxù.
-Zài shùjùkù zhōng zhǎo bù dào píngmù bǎohù chéngxù {0}. Shǐyòng “loadsaver {0}” chūshǐhuà.
+Zài shùjùkù zhōng zhǎo bù dào píngmù bǎohù chéngxù {0}. Jiǎnchá míngchēng, ránhòu chóng shì.
 Yóuyú yǐxià yuányīn, wúfǎ jiāzài píngmù bǎohù chéngxù: 
 Dǎyìn wénběn shí chūxiàn yánzhòng cuòwù.
 Chángshì chuàngjiàn pèizhì shí chūcuò.
@@ -396,3 +396,8 @@ Wúxiào de pèizhì wénjiàn xuǎnzé.
 Chángshì shǐyòng pèizhì wénjiàn {1} liánjiē dào {0}...
 Dānyuán cèshì zhōng de cuòwù: {0}
 Zhǎo bù dào mìnglìng {0}. Yǒuguān mìnglìng lièbiǎo, qǐng cānjiàn “help” mìnglìng.
+Wúfǎ huòdé shìpèiqì {0} de IPv6 shǔxìng. Jìxù...
+IPv4 xìnxī:
+IPv6 xìnxī:
+Shìpèiqì {0} bù zhīchí IPv6. Jìxù...
+Shìpèiqì {0} bù zhīchí IPv4. Tàncè shībài.

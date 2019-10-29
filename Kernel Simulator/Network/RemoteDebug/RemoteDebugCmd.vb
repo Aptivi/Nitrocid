@@ -31,7 +31,7 @@ Module RemoteDebugCmd
                     Try
                         SocketStreamWriter.WriteLine(dbgStackTraces(CmdArgs(0)))
                     Catch ex As Exception
-                        SocketStreamWriter.WriteLine("Index {0} invalid. There are {1} stack traces.", CmdArgs(0), dbgStackTraces.Count)
+                        SocketStreamWriter.WriteLine("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.", CmdArgs(0), dbgStackTraces.Count)
                     End Try
                 Else
                     SocketStreamWriter.WriteLine(dbgStackTraces(0))

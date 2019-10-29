@@ -95,7 +95,7 @@ Pyydettyä näytönsäästäjää {0} ei löydy.
 {0} ei alustettu. Näytönsäästäjän koodi saattaa olla kokenut virheen alustuksen aikana.
 Näytönsäästäjä {0} ei ole olemassa.
 {0} on asetettu oletusnäyttöön.
-Näytönsäästäjä {0} ei löydy tietokannasta. Alusta "loadaver {0}".
+Näytönsäästäjä {0} ei löydy tietokannasta. Tarkista nimi ja yritä uudelleen.
 Näytönsäästäjää ei voi ladata seuraavista syistä:
 Tulostettaessa tekstiä on vakava virhe.
 Konfigurointia yritettäessä luodaan virhe.
@@ -396,3 +396,8 @@ Virheellinen profiilivalinta.
 Yritetään muodostaa yhteys kohteeseen {0} profiililla {1} ...
 Virhe yksikkötestauksessa: {0}
 Komentoa {0} ei löytynyt. Katso komentojen luettelo "help" -komennosta.
+Sovittimen {0} IPv6-ominaisuuksien saaminen epäonnistui. Jatkuvat ...
+IPv4-tiedot:
+IPv6-tiedot:
+Sovitin {0} ei tue IPv6: ta. Jatkuvat ...
+Sovitin {0} ei tue IPv4: tä. Koetin epäonnistui.

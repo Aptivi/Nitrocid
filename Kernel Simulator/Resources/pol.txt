@@ -95,7 +95,7 @@ Błąd
 {0} nie zainicjował się. Kod wygaszacza ekranu mógł napotkać błąd podczas inicjowania.
 Wygaszacz ekranu {0} nie istnieje.
 {0} jest ustawiony na domyślny wygaszacz ekranu.
-Nie znaleziono wygaszacza ekranu {0} w bazie danych. Zainicjuj za pomocą „loadsaver {0}”.
+Nie znaleziono wygaszacza ekranu {0} w bazie danych. Sprawdź nazwę i spróbuj ponownie.
 Nie można załadować wygaszacza ekranu z następujących powodów:
 Wystąpił poważny błąd podczas drukowania tekstu.
 Wystąpił błąd podczas próby utworzenia konfiguracji.
@@ -396,3 +396,8 @@ Nieprawidłowy wybór profilu.
 Próbuję połączyć się z {0} z profilem {1} ...
 Błąd w testowaniu jednostkowym: {0}
 Nie znaleziono polecenia {0}. Zobacz polecenie „help”, aby uzyskać listę poleceń.
+Nie można pobrać właściwości IPv6 dla adaptera {0}. Kontynuacja ...
+Informacje o IPv4:
+Informacje o IPv6:
+Adapter {0} nie obsługuje IPv6. Kontynuacja ...
+Adapter {0} nie obsługuje IPv4. Sonda nie powiodła się.

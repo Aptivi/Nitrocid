@@ -95,7 +95,7 @@ Den begärda skärmsläckaren {0} hittades inte.
 {0} inleddes inte. Skärmsläckarkoden kan ha upplevt ett fel vid initiering.
 Skärmsläckare {0} existerar inte.
 {0} är inställd på standard skärmsläckare.
-Skärmsläckare {0} hittades inte i databasen. Initiera med "Loadsaver {0}".
+Skärmsläckare {0} hittades inte i databasen. Kontrollera namnet och försök igen.
 Skärmsläckaren kan inte laddas på grund av följande:
 Det finns ett allvarligt fel vid utskrift av text.
 Det gick inte att försöka skapa konfiguration.
@@ -396,3 +396,8 @@ Ogiltigt profilval.
 Försöker ansluta till {0} med profilen {1} ...
 Fel vid enhetstest: {0}
 Kommando {0} hittades inte. Se kommandot "help" för listan med kommandon.
+Det gick inte att få IPv6-egenskaper för adapter {0}. Fortlöpande...
+IPv4-information:
+IPv6-information:
+Adapter {0} stöder inte IPv6. Fortlöpande...
+Adapter {0} stöder inte IPv4. Sonden misslyckades.

@@ -26,34 +26,67 @@ Public Module NetworkTools
 
     Public Sub GetProperties()
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces
+        Dim NoV4, NoV6, Failed As Boolean
         For Each adapter As NetworkInterface In adapters
             adapterNumber += 1
             W("==========================================", True, ColTypes.Neutral)
-            If adapter.Supports(NetworkInterfaceComponent.IPv4) = False Then
+            If Not adapter.Supports(NetworkInterfaceComponent.IPv6) Then
+                Wdbg("{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description)
+                W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing...", currentLang), True, ColTypes.Neutral, adapter.Description)
+                NoV6 = True
+            End If
+            If Not adapter.Supports(NetworkInterfaceComponent.IPv4) Then
                 Wdbg("{0} doesn't support IPv4.", adapter.Description)
-            ElseIf adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
-                    adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet3Megabit Or
-                    adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetFx Or
-                    adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetT Or
-                    adapter.NetworkInterfaceType = NetworkInterfaceType.GigabitEthernet Or
-                    adapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211 Then
+                W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed.", currentLang), True, ColTypes.Neutral, adapter.Description)
+                NoV4 = True
+            End If
+            If adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
+               adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet3Megabit Or
+               adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetFx Or
+               adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetT Or
+               adapter.NetworkInterfaceType = NetworkInterfaceType.GigabitEthernet Or
+               adapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211 And Not NoV4 Then
+                Wdbg("Adapter type of {0}: {1}", adapter.Description, adapter.NetworkInterfaceType.ToString)
                 Dim adapterProperties As IPInterfaceProperties = adapter.GetIPProperties()
-                Dim p As IPv4InterfaceProperties = adapterProperties.GetIPv4Properties
+                Dim p As IPv4InterfaceProperties
                 Dim s As IPv4InterfaceStatistics = adapter.GetIPv4Statistics
-                If p Is Nothing Then
-                    W(DoTranslation("Failed to get properties for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
-                ElseIf s Is Nothing Then
+                Dim p6 As IPv6InterfaceProperties
+                Try
+                    p = adapterProperties.GetIPv4Properties
+                    p6 = adapterProperties.GetIPv6Properties
+                Catch ex As NetworkInformationException
+                    If p6 Is Nothing Then
+                        W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing...", currentLang), True, ColTypes.Neutral, adapter.Description)
+                    End If
+                    If p Is Nothing Then
+                        W(DoTranslation("Failed to get properties for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
+                        Failed = True
+                    End If
+                End Try
+                'TODO: GetIPv6Statistics not implemented yet.
+                If s Is Nothing Then
                     W(DoTranslation("Failed to get statistics for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
+                    Failed = True
                 End If
-                W(DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
-                  DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
-                  DoTranslation("Maximum Transmission Unit: {2} Units", currentLang) + vbNewLine +
-                  DoTranslation("DHCP Enabled:", currentLang) + " {3}" + vbNewLine +
-                  DoTranslation("Non-unicast packets:", currentLang) + " {4}/{5}" + vbNewLine +
-                  DoTranslation("Unicast packets:", currentLang) + " {6}/{7}" + vbNewLine +
-                  DoTranslation("Error incoming/outgoing packets:", currentLang) + " {8}/{9}", True, ColTypes.Neutral,
-                  adapterNumber, adapter.Description, p.Mtu, p.IsDhcpEnabled, s.NonUnicastPacketsSent, s.NonUnicastPacketsReceived,
-                  s.UnicastPacketsSent, s.UnicastPacketsReceived, s.IncomingPacketsWithErrors, s.OutgoingPacketsWithErrors)
+                If Not Failed Then
+                    W(DoTranslation("IPv4 information:", currentLang) + vbNewLine +
+                      DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
+                      DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
+                      DoTranslation("Maximum Transmission Unit: {2} Units", currentLang) + vbNewLine +
+                      DoTranslation("DHCP Enabled:", currentLang) + " {3}" + vbNewLine +
+                      DoTranslation("Non-unicast packets:", currentLang) + " {4}/{5}" + vbNewLine +
+                      DoTranslation("Unicast packets:", currentLang) + " {6}/{7}" + vbNewLine +
+                      DoTranslation("Error incoming/outgoing packets:", currentLang) + " {8}/{9}", True, ColTypes.Neutral,
+                      adapterNumber, adapter.Description, p.Mtu, p.IsDhcpEnabled, s.NonUnicastPacketsSent, s.NonUnicastPacketsReceived,
+                      s.UnicastPacketsSent, s.UnicastPacketsReceived, s.IncomingPacketsWithErrors, s.OutgoingPacketsWithErrors)
+                    If Not NoV6 Then
+                        W(DoTranslation("IPv6 information:", currentLang) + vbNewLine +
+                          DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
+                          DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
+                          DoTranslation("Maximum Transmission Unit: {2} Units", currentLang), True, ColTypes.Neutral,
+                          adapterNumber, adapter.Description, p6.Mtu)
+                    End If
+                End If
             Else
                 Wdbg("Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType)
             End If

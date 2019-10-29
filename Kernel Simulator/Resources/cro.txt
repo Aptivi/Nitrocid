@@ -95,7 +95,7 @@ Zatraženi čuvar zaslona {0} nije pronađen.
 {0} se nije inicijalizirao. Kod čuvara zaslona mogao je doći do pogreške prilikom inicijalizacije.
 Čuvar zaslona {0} ne postoji.
 {0} je postavljena na zadanu čuvar zaslona.
-Čuvar zaslona {0} nije pronađen u bazi podataka. Inicijalizirajte s "loadsaver {0}".
+Čuvar zaslona {0} nije pronađen u bazi podataka. Provjerite ime i pokušajte ponovo.
 Čuvar zaslona ne može se učitati zbog sljedećeg:
 Pri ispisu teksta postoji ozbiljna pogreška.
 Došlo je do pogreške prilikom pokušaja stvaranja konfiguracije.
@@ -396,3 +396,8 @@ Nevažeći izbor profila.
 Pokušaj povezivanja sa {0} s profilom {1} ...
 Pogreška prilikom testiranja jedinice: {0}
 Naredba {0} nije pronađena. Pogledajte naredbu "help" za popis naredbi.
+Nije uspjelo dobiti svojstva IPv6 za adapter {0}. Nastavak ...
+IPv4 podaci:
+IPv6 podaci:
+Adapter {0} ne podržava IPv6. Nastavak ...
+Adapter {0} ne podržava IPv4. Sonda nije uspjela.

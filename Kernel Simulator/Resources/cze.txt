@@ -95,7 +95,7 @@ Požadovaný spořič obrazovky {0} nebyl nalezen.
 {0} nebyl inicializován. Kód spořiče obrazovky mohl při inicializaci zaznamenat chybu.
 Spořič obrazovky {0} neexistuje.
 {0} je nastaven na výchozí spořič obrazovky.
-Spořič obrazovky {0} nebyl nalezen v databázi. Inicializujte pomocí "loadaver {0}".
+Spořič obrazovky {0} nebyl nalezen v databázi. Zkontrolujte název a zkuste to znovu.
 Spořič obrazovky nelze načíst z následujících důvodů:
 Při tisku textu došlo k závažné chybě.
 Při pokusu o vytvoření konfigurace došlo k chybě.
@@ -396,3 +396,8 @@ Neplatný výběr profilu.
 Pokouší se připojit k {0} s profilem {1} ...
 Chyba při testování jednotky: {0}
 Příkaz {0} nebyl nalezen. Seznam příkazů naleznete v příkazu „help“.
+Nepodařilo se získat vlastnosti IPv6 pro adaptér {0}. Pokračování ...
+Informace IPv4:
+Informace IPv6:
+Adaptér {0} nepodporuje IPv6. Pokračování ...
+Adaptér {0} nepodporuje IPv4. Sonda selhala.
