@@ -24,6 +24,10 @@ Unfortunately, some parts of KS have been taken to avoid detection in the source
 
 For more information, inspect [this wiki page](https://github.com/EoflaOE/Kernel-Simulator/wiki/Studying-payslip-virus).
 
+## |-----+--> _Important announcement_ <--+-----|
+
+This is probably the last release of the 0.0.7.x series. We were bored for 2+ months, so we decided to put an end to this by making 0.0.8 in the next 4 months. That doesn't mean that KS is abandoned, but we will make commits for each feature addition, removal, improvement, fix, etc. instead of making the whole commit as the commit dedicated to each release. During 4 months, there will be no release. If you would like to see the aspects of 0.0.8, build from source. To see more, a page for it will come soon.
+
 ## |-----+--> _How to run/install_ <--+-----|
 
 * If you are going to install KS without building from source, either look at the Releases, or use the second link below.
