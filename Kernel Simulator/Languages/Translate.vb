@@ -19,7 +19,7 @@ Public Module Translate
 
     'Variables
     'TODO: Ask user if they want to use transliterated or translated
-    Public availableLangs() As String = {"arb", "chi", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "jpn", "mal", "ndo", "pol", "ptg", "rmn", "rus", "spa", "swe", "tky", "uzb"}
+    Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "mal", "ndo", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
 
@@ -63,8 +63,12 @@ Public Module Translate
         Select Case lang
             Case "arb" 'Arabic (transliterated)
                 translated = My.Resources.arb
-            Case "chi" 'Chinese
+            Case "arb-T" 'Arabic (translated)
+                translated = My.Resources.arb_T
+            Case "chi" 'Chinese (transliterated)
                 translated = My.Resources.chi
+            Case "chi-T" 'Chinese (translated)
+                translated = My.Resources.chi_T
             Case "cro" 'Croatian
                 translated = My.Resources.cro
             Case "cze" 'Czech
@@ -77,12 +81,16 @@ Public Module Translate
                 translated = My.Resources.fin
             Case "ger" 'Germany
                 translated = My.Resources.ger
-            Case "ind" 'Hindi
+            Case "ind" 'Hindi (transliterated)
                 translated = My.Resources.ind
+            Case "ind-T" 'Hindi (translated)
+                translated = My.Resources.ind_T
             Case "ita" 'Italian
                 translated = My.Resources.ita
-            Case "jpn" 'Japanese
+            Case "jpn" 'Japanese (transliterated)
                 translated = My.Resources.jpn
+            Case "jpn-T" 'Hindi (translated)
+                translated = My.Resources.jpn_T
             Case "mal" 'Malay (not Malayalam)
                 translated = My.Resources.mal
             Case "ndo" 'Indonesian
@@ -93,8 +101,10 @@ Public Module Translate
                 translated = My.Resources.ptg
             Case "rmn" 'Romanian
                 translated = My.Resources.rmn
-            Case "rus" 'Russian
+            Case "rus" 'Russian (transliterated)
                 translated = My.Resources.rus
+            Case "rus-T" 'Hindi (translated)
+                translated = My.Resources.rus_T
             Case "spa" 'Spanish
                 translated = My.Resources.spa
             Case "swe" 'Swedish
