@@ -253,7 +253,7 @@ Use un shell FTP para interactuar con los servidores
 Página de ayuda
 Probar el hardware manualmente (una vez en el núcleo 'nohwprobe')
 Lista de contenidos de carpetas / archivos en la carpeta actual
-KSMods
+Recarga el archivo del protector de pantalla en %USERPROFILE%\KSMods
 Bloquea tu pantalla con una contraseña
 Cierra la sesión
 Enumera todos los dispositivos de red que están en línea (y fuera de línea en los dominios)

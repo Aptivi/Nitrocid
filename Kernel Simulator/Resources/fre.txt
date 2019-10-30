@@ -253,7 +253,7 @@ Utiliser un shell FTP pour interagir avec les serveurs
 Page d'aide
 Sondage manuel du matériel (une fois dans le noyau 'nohwprobe')
 Liste le contenu du fichier / dossier dans le dossier actuel
-KSMods
+Recharge le fichier d'économiseur d'écran dans %USERPROFILE%\KSMods
 Verrouille votre écran avec un mot de passe
 Vous déconnecte
 Répertorie tous les périphériques réseau en ligne (et hors ligne dans les domaines)

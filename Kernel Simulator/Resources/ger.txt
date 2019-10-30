@@ -253,7 +253,7 @@ Verwenden Sie eine FTP-Shell, um mit Servern zu interagieren
 Hilfeseite
 Hardware manuell testen (einmal im 'nohwprobe' Kernel)
 Listet den Inhalt der Datei / des Ordners im aktuellen Ordner auf
-KSMods
+Lädt die Bildschirmschonerdatei in %USERPROFILE%\KSMods neu
 Sperrt Ihren Bildschirm mit einem Passwort
 Meldet dich ab
 Listet alle Netzwerkgeräte auf, die online (und offline in Domänen) sind

@@ -51,7 +51,7 @@ Public Module HelpSystem
                                                               {"read", DoTranslation("Writes file contents to the console", currentLang)},
                                                               {"reboot", DoTranslation("Restarts your computer (WARNING: No syncing, because it is not a final kernel)", currentLang)},
                                                               {"reloadconfig", DoTranslation("Reloads configuration file that is edited.", currentLang)},
-                                                              {"reloadmods", DoTranslation("Reloads modifications.", currentLang)},
+                                                              {"reloadmods", DoTranslation("Reloads mods.", currentLang)},
                                                               {"reloadsaver", DoTranslation("Reloads screensaver file in %USERPROFILE%\KSMods", currentLang)},
                                                               {"rd", DoTranslation("Removes a directory", currentLang)},
                                                               {"rmuser", DoTranslation("Removes a user from the list (Admins Only)", currentLang)},

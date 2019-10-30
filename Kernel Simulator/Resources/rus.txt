@@ -1,0 +1,403 @@
+Dostupnyye komandy: {0}
+Napisat' komandu:
+Komandnaya in"yektsiya byla otmenena.
+Otdel'nyye argumenty zagruzki s zapyatymi bez probelov, naprimer, 'motd, gpuprobe'
+Otdel'nyye komandy dlya «cmdinject» s dvoyetochiyami s probelami, naprimer, «cmdinject setthemes Hacker: beep 1024 0.5»
+Obratite vnimaniye, chto argument debug ne polnost'yu pokryvayet yadro.
+bargs: zaproshennyy argument {0} ne nayden.
+bargs: neispravimaya oshibka v argumente:
+Dostupnyye argumenty: {0}
+Argumenty («pomoshch'» dlya pomoshchi):
+Vvedennyye argumenty budut zaplanirovany dlya zapuska pri sleduyushchey perezagruzke.
+Argument In"yektsiya byla otmenena.
+Oshibka pri analize real'nykh argumentov komandnoy stroki: {0}
+Nevernyy tsvetovoy shablon {0}
+Po umolchaniyu
+izgotovlennyy na zakaz
+hwprobe: Vashe oborudovaniye budet provereno. Pozhaluysta, podozhdite...
+hwprobe: oborudovaniye uzhe issledovano.
+hwprobe: Oborudovaniye ne provereno. Zond s ispol'zovaniyem «hwprobe»
+CPU: odno ili neskol'ko yader TSP ne byli provereny. Pokaz informatsii v lyubom sluchaye ...
+OZU: odin ili neskol'ko chipov OZU ne byli provereny. Pokaz informatsii v lyubom sluchaye ...
+Zhestkiy disk: odin ili neskol'ko zhestkikh diskov ne byli provereny. Pokaz informatsii v lyubom sluchaye ...
+CPU: obshcheye kolichestvo protsessorov: {0}
+TSP: {0} {1} MGts
+OZU: {0} MB = {1} MB
+RAM: Ispol'zuyemyye sloty (po imenam): {0}
+RAM: Ispol'zuyemyye sloty (po nomeram): {0} / {1} ({2}%)
+OZU: status issledovaniya ustarel i budet udalen v sleduyushchem vypuske.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} tsilindry | {5} golovy | {6} sektory
+HDD: CHS: {3} tsilindry | {4} golovy | {5} sektory
+hwprobe: Zondy ne podderzhivayutsya, potomu chto oni ne prednaznacheny dlya zapuska probnikov v Unix.
+Vvedite parol' administratora dlya obsluzhivaniya.
+V spiske bol'she net pol'zovateley.
+Oshibka yadra pri zagruzke: {0}
+DVOYNAYA PANIKA: Vremya perezagruzki prevyshayet maksimal'no dopustimoye vremya perezagruzki {0}. Vy nashli oshibku v yadre.
+[{0}] panika: perezagruzka vklyuchena iz-za urovnya oshibki {0}.
+[{0}] panika: vremya perezagruzki: {1} sekund, prevyshayet 1 chas. On ustanovlen na 1 minutu.
+DOUBLE PANIC: Oshibka tipa {0} nedopustima.
+[{0}] dpanic: {1} - perezagruzka cherez {2} sekundy ...
+[{0}] panika: perezagruzka otklyuchena iz-za urovnya oshibki {0}.
+[{0}] panika: {1} - nazhmite lyubuyu klavishu, chtoby prodolzhit' ispol'zovaniye yadra.
+[{0}] panika: {1} - nazhmite lyubuyu klavishu dlya vyklyucheniya.
+[{0}] panika: {1} - perezagruzka cherez {2} sekundy ...
+DVOYNAYA PANIKA: Oshibka yadra: {0}
+Vyklyucheniye...
+Rebooting ...
+---===+++> Dobro pozhalovat' v yadro ​​| Versiya {0} <+++===---
+Yeshche odin ekzemplyar Kernel Simulator rabotayet. Vyklyucheniye v sluchaye pomekh.
+Pol'zovatel' {0} byl dobavlen v spisok administratorov.
+Pol'zovatel' {0} byl dobavlen v spisok otklyuchennykh.
+Ne udalos' dobavit' pol'zovatelya v spiski razresheniy: nedopustimyy tip {0}
+Ne udalos' dobavit' pol'zovatelya v spiski razresheniy: nedopustimyy pol'zovatel' {0}
+Pol'zovatel' {0} byl udalen iz spiska administratorov.
+Pol'zovatel' {0} byl udalen iz spiska otklyuchennykh.
+Ne udalos' udalit' pol'zovatelya iz spiskov razresheniy: nedopustimyy tip {0}
+Vy uzhe voshli v sistemu.
+Ne udalos' udalit' pol'zovatelya iz spiskov razresheniy: nedopustimyy pol'zovatel' {0}
+Vy obnaruzhili oshibku v sisteme razresheniy: nedopustimyy rezhim {0}
+Vy libo obnaruzhili oshibku, libo razresheniye, kotoroye vy pytalis' dobavit' ili udalit', uzhe sdelano, libo druguyu oshibku.
+Oshibka {0}: {1}
+Vy libo obnaruzhili oshibku, libo ne udalos' poluchit' razresheniye, kotoroye vy pytalis' redaktirovat' dlya novogo pol'zovatelya.
+Dostupnyye imena pol'zovateley: {0}
+Imya pol'zovatelya:
+Probely ne dopuskayutsya.
+Spetssimvoly ne dopustimy.
+Parol' {0}:
+Nepravil'nyy parol'.
+Pol'zovatel' otklyuchen.
+Nepravil'noye imya pol'zovatelya.
+Oshibka pri popytke proanalizirovat' zapolniteli. {0} - trassirovka steka:
+Oshibka pri popytke proanalizirovat' zapolniteli. {0}
+Oshibka pri popytke dobavit' imya pol'zovatelya.
+usrmgr: Sozdaniye imeni pol'zovatelya {0} ...
+Pustoye imya pol'zovatelya.
+Pol'zovatel' {0} ne nayden.
+Pol'zovatel' {0} ne mozhet byt' udalen.
+Pol'zovatel' {0} uzhe voshel v sistemu. Vyydite iz sistemy i voydite kak drugoy administrator.
+Pol'zovatel' {0} udalen.
+Oshibka pri popytke udalit' imya pol'zovatelya.
+{0} iz {1} = {2}
+Popytka delit' na nol' ne dopuskayetsya.
+Byla podozrevayemaya popytka vychisleniya, kotoraya privela k perepolneniyu.
+Pri vychislenii proizoshla oshibka: {0}
+{0} ne mozhet byt' preobrazovano v {1}.
+Libo istochnik
+ ili punkt naznacheniya
+ ne sushchestvuyet na servere.
+{0} v {1}: {2}
+Oshibka pri popytke preobrazovaniya iz {0} v {1}: {2}
+oshibka
+Zaproshennaya zastavka {0} ne naydena.
+{0} byl pravil'no initsializirovan.
+{0} ne initsializirovan. V kode zastavki mogla vozniknut' oshibka pri initsializatsii.
+Zastavka {0} ne sushchestvuyet.
+{0} ustanovlen na zastavku po umolchaniyu.
+Zastavka {0} ne naydena v baze dannykh. Prover'te imya i poprobuyte snova.
+Zastavka ne mozhet byt' zagruzhena iz-za sleduyushchego:
+Pri pechati teksta voznikayet ser'yeznaya oshibka.
+Pri popytke sozdat' konfiguratsiyu proizoshla oshibka.
+Proizoshla oshibka pri popytke sozdat' konfiguratsiyu: {0}
+Obnaruzheno obnovleniye s {0} do {1}. Obnovleniye konfiguratsii ...
+Proizoshla oshibka pri popytke obnovit' konfiguratsiyu: {0}.
+Pri popytke obnovit' konfiguratsiyu proizoshla oshibka.
+Pri popytke prochitat' konfiguratsiyu proizoshla oshibka.
+Proizoshla oshibka pri popytke prochitat' konfiguratsiyu: {0}
+Oshibka pri popytke osvobodit' OZU: {0} - prodolzheniye ...
+Mod ne mozhet byt' zagruzhen iz-za sleduyushchego:
+mod: zagruzka modov ...
+mod: Ostanovka modov ...
+Mod {0} ne imeyet imeni. Prosmotrite iskhodnyy kod.
+Mod {0} ne imeyet versii.
+{0} v {1} zapushchen
+Net opredeleniya dlya komandy {0}.
+Komanda opredelyayetsya
+Vy dolzhny otklyuchit'sya ot servera pered podklyucheniyem k drugomu serveru
+Imya pol'zovatelya dlya {0}:
+Parol' dlya {0}:
+Podklyucheno k {0}
+Oshibka pri popytke podklyucheniya k {0}: {1}
+Trassirovka steka: {2}
+Vvedite FTP-server.
+Lokal'nyy katalog {0} ne sushchestvuyet.
+Vvedite lokal'nyy katalog. ".." vernut'sya nazad.
+Katalog {0} ne nayden.
+Vvedite udalennyy katalog. ".." vernut'sya nazad
+Vy dolzhny podklyuchit'sya k serveru pered smenoy kataloga
+Lokal'nyy katalog: {0}
+Udalennyy katalog: {0}
+Vy dolzhny podklyuchit'sya k serveru do polucheniya tekushchego udalennogo kataloga.
+Udaleniye fayla {0} ...
+Vy uvereny, chto khotite udalit' fayl {0} <y / n>?
+Udalennyy fayl {0}
+Vy dolzhny podklyuchit'sya k serveru s pravami administratora pered vypolneniyem udaleniya.
+Vvedite fayl dlya udaleniya.
+U vas dolzhny byt' prava administratora dlya vashego imeni pol'zovatelya, kotoryy vy mozhete udalit'.
+Otklyucheno ot {0}
+Vy yeshche ne podklyuchilis' k kakomu-libo serveru
+Zagruzka fayla {0} ...
+Zagruzhennyy fayl {0}.
+Oshibka zagruzki dlya fayla {0}, poskol'ku lokal'nyy fayl povrezhden.
+Vy dolzhny podklyuchit'sya k serveru pered vypolneniyem peredachi.
+Vvedite fayl dlya zagruzki v lokal'nyy katalog.
+{0} Kb | Izmeneno v: {1}
+Vy dolzhny podklyuchit'sya k serveru, prezhde chem perechislyat' vse udalennyye fayly.
+Pereimenovaniye fayla {0} v {1} ...
+Uspeshno pereimenovan
+Vvedite fayl i novoye imya fayla.
+Zagruzka fayla {0} ...
+Zagruzhennyy fayl {0}
+Vvedite fayl dlya zagruzki v udalennyy katalog. zagruzit' <fayl> <katalog>
+Oshibka pri popytke vypolnit' komandu FTP
+(Inner:
+{0} papok, {1} faylov
+(Dostup ne razreshen)
+{0} KB, sozdano v {1} {2}, izmeneno v {3} {4}
+Poluchayet tekushchiy lokal'nyy katalog
+Poluchayet tekushchiy udalennyy katalog
+Podklyuchayetsya k FTP-serveru (on dolzhen nachinat'sya s «ftp: //» ili «ftps: //»)
+Izmenyayet lokal'nyy katalog dlya zagruzki ili zagruzki s
+Izmenyayet udalennyy katalog dlya zagruzki ili zagruzki v
+Udalyayet udalennyy fayl s servera
+Otklyuchayetsya ot servera
+Zagruzhayet udalennyy fayl v lokal'nyy katalog, ispol'zuya dvoichnyy ili tekstovyy
+Vykhodit iz obolochki FTP i vozvrashchayetsya v yadro
+Pokazyvayet ekran pomoshchi
+Spisok lokal'nykh katalogov
+Perechislyayet udalennyy katalog
+Pereimenovyvayet opredelennyy fayl ili katalog
+Zagruzhayet lokal'nyy fayl v udalennyy katalog, ispol'zuya dvoichnyy ili tekstovyy
+Proizoshla oshibka v obolochke FTP.
+Soobshcheniye FTP: Zaproshennaya komanda {0} ne naydena. Sm. «Spravku» dlya polucheniya spiska dostupnykh komand, ukazannykh v obolochke FTP.
+net: Poluchil otvet ot {0} v {1} ms
+Taym-aut, otklyuchen ili server otklyuchen.
+net: Imya vashego komp'yutera v seti: {0}
+net: Vashe imya khosta {1}
+net: Pokhozhe, chto komp'yutery nakhodyatsya v domene ili rabochey gruppe:
+net: WiFi ili Ethernet otklyucheny.
+net: Pokhozhe, chto komp'yutery podklyucheny nizhe:
+net: Adres marshrutizatora: {0}
+Ne udalos' poluchit' svoystva dlya adaptera {0}
+Nomer adaptera:
+Imya adaptera:
+Maksimal'naya yedinitsa peredachi: {2} yedinits
+DHCP vklyuchen:
+Neadresnyye pakety:
+Odnoadresnyye pakety:
+Oshibka vkhodyashchikh / iskhodyashchikh paketov:
+Psevdonim ne mozhet sovpadat' s imenem komandy.
+Komanda ne naydena dlya psevdonima {0}.
+Psevdonim {0} k {1} polnost'yu zapreshchen.
+Teper' vy mozhete zapustit' "{0}" kak komandu: "{1}".
+Vy bol'she ne mozhete ispol'zovat' "{0}" v kachestve komandy "{1}".
+Psevdonim {0} ne nayden dlya udaleniya.
+Nevernyy rezhim {0}.
+Vnedrennyye argumenty {0} budut zaplanirovany dlya zapuska pri sleduyushchey perezagruzke.
+Bylo nedostatochno argumentov. Smotrite nizhe dlya ispol'zovaniya:
+Katalog {0} ne nayden
+Pustoye imya khosta.
+Menyayetsya s: {0} na {1} ...
+Pustoye soobshcheniye dnya.
+Pustoy MAL posle vkhoda v sistemu.
+Izmeneniye znacheniya MAL s {0} na {1} ...
+Nevernyy parol' pol'zovatelya.
+Paroli ne sovpadayut.
+Imya pol'zovatelya bylo izmeneno na {0}!
+Vvedennoye vami novoye imya uzhe naydeno.
+Perechisleniye komp'yuterov yeshche ne podderzhivayetsya v Unix.
+Psevdonimy, kotoryye zapreshcheny: {0}
+{0} ne nayden.
+Konfiguratsiya perezagruzhena. Vam mozhet potrebovat'sya perezagruzit' yadro, chtoby izmeneniya vstupili v silu.
+Vse sbrasyvayetsya na normal'nyye nastroyki.
+Odin ili neskol'ko tsvetov nedopustimy.
+Tsveta ne dostupny. Vklyuchite tsvetnuyu obolochku v konfiguratsii yadra.
+Zastavka {0} ne naydena.
+{0} [Nastroyki yadra (rabotayet na {1})]
+Versiya yadra:
+Rezhim otladki:
+Tsvetnaya obolochka:
+Argumenty na zagruzku:
+Spravka po komande uproshchena:
+MOTD pri vkhode v sistemu:
+Vremya / Data na uglu:
+Apparatnoye zondirovaniye:
+Tekushchaya tema:
+[Nastroyki oborudovaniya] {0}
+{0} [Nastroyki pol'zovatelya]
+Tekushcheye imya pol'zovatelya:
+Tekushcheye imya khosta:
+Dostupnyye imena pol'zovateley:
+Imya khosta komp'yutera:
+{0} [Nastroyki soobshcheniy]
+Iskhodnyy kod:
+Avtorskoye pravo (s)
+Litsenziya
+nastoyashcheye vremya
+Oshibka pri popytke vypolnit' komandu
+Dobavlyayet pol'zovateley (tol'ko administratory mogut poluchit' dostup k etoy komande)
+Dobavlyayet psevdonimy k komandam (tol'ko administratory mogut poluchit' dostup k etoy komande)
+Vnedryayet argumenty v yadro ​​(trebuyetsya perezagruzka, tol'ko dlya administratorov)
+Prostoy kal'kulyator
+Katalog izmeneniy
+Izmenyayet imya khosta (tol'ko dlya administratorov)
+Izmenyayet MAL, MOTD posle vkhoda v sistemu (tol'ko dlya administratorov)
+Izmeneniya MOTD, soobshcheniye dnya (tol'ko dlya administratorov)
+Menyayet parol' dlya tekushchego pol'zovatelya
+Izmenyayet imya pol'zovatelya (tol'ko dlya administratorov)
+Ochishchayet ekran
+Konvertirovat' valyutu
+Pokazyvayet zhurnaly otladki (tol'ko dlya administratorov)
+Ispol'zuyte obolochku FTP dlya vzaimodeystviya s serverami
+Stranitsa spravki
+Apparatnoye obespecheniye zonda vruchnuyu (odin raz v yadre nohwprobe)
+Pokazat' soderzhimoye fayla / papki v tekushchey papke
+Perezagruzka fayla zastavki v %USERPROFILE%\KSMods
+Blokiruyet vash ekran s pomoshch'yu parolya
+Vykhodit iz sistemy
+Perechislyayet vse setevyye ustroystva, kotoryye nakhodyatsya v seti (i v avtonomnom rezhime v domenakh)
+Perechislyayet vse setevyye adresa na khoste
+Perechislyayet vse setevyye adresa na khoste, ispol'zuya derevo
+Sozdayet katalog
+Vyvodit informatsiyu obo vsekh dostupnykh interfeysakh
+Pokazyvayet zapreshchennyy spisok psevdonimov
+Upravleniye razresheniyami dlya pol'zovateley (tol'ko administratory mogut poluchit' dostup k etoy komande)
+Prover'te, dostupen li ukazannyy adres
+Zapisyvayet soderzhimoye fayla na konsol'
+Perezagruzka komp'yutera (VNIMANIYe: sinkhronizatsiya ne vypolnyayetsya, poskol'ku eto ne okonchatel'noye yadro)
+Perezagruzhayet fayl konfiguratsii, kotoryy otredaktirovan.
+Udalyayet katalog
+Udalyayet pol'zovatelya iz spiska (tol'ko dlya administratorov)
+Spasayet vash ekran ot vygoraniya
+Nauchnyy kal'kulyator. Preobrazovatel' yedinits razdelen na druguyu komandu
+Ustanavlivayet tsveta yadra
+Ustanavlivayet zastavki yadra
+Ustanavlivayet temy yadra
+Pokazyvayet psevdonimy
+Pokazyvayet MOTD posle vkhoda v sistemu, ustanovlennogo pol'zovatelem ili yadrom
+Pokazyvayet soobshcheniye dnya, ustanovlennogo pol'zovatelem ili yadrom
+Pokazyvayet datu i vremya
+Pokazyvayet datu i vremya v zonakh
+Yadro budet zakryto
+Sistemnaya informatsiya
+Konverter, kotoryy otdelen ot scicalc.
+Pokazyvayet ispol'zuyemyye zavisimosti s otkrytym iskhodnym kodom
+Ochen' naglyadnoye rukovodstvo pol'zovatelya.
+* Vy mozhete ispol'zovat' neskol'ko komand, ispol'zuya dvoyetochiye mezhdu komandami.
+Dostupnyye komandy:
+Komandy moda:
+Psevdonimy dlya komand:
+Ispol'zovaniye:
+Argumenty, razdelennyye zapyatymi
+gde argumenty budut {0}
+poluchit' tekushchiy katalog
+V kakom istochnike i punkte naznacheniya ukazan 3 UPPERCASE simvola obmennogo kursa
+Spisok vsekh identifikatorov i imen:
+Pokazyvayet zhurnaly otladki, chtoby vy mogli otpravit' nam zhurnal.
+Initsializiruyet obolochku FTP.
+Apparatnoye obespecheniye zondov (rabotayet tol'ko togda, kogda apparatnoye obespecheniye ne proveryayetsya i hwprobe ne vypolnyayetsya).
+Perechislyayet informatsiyu o seti, a takzhe o kazhdom komp'yutere, podklyuchennom k seti.
+Druz'ya
+Soderzhit informatsiyu o seti, a takzhe o kazhdom komp'yutere, podklyuchennom k seti, v vide dereva.
+Perechislyayet informatsiyu o seti, a takzhe o kazhdom komp'yutere.
+gde budet modnameSS.m
+Blokiruyet vash ekran s pomoshch'yu parolya.
+Vykhodit iz pol'zovatelya.
+Poluchit' informatsiyu o kazhdoy seti
+Perezagruzka vashego simulirovannogo komp'yutera.
+Perezagruzhayet konfiguratsiyu, kotoraya izmenena konechnym pol'zovatelem ili instrumentom.
+Tsveta ne trebuyut perezagruzki, no bol'shinstvo nastroyek trebuyut perezagruzki.
+pokazyvayet vybrannuyu zastavku, zashchishchaya vash ekran ot vygoraniya.
+Pokazyvayet datu i vremya.
+Pokazyvayet datu i vremya v zonakh.
+Vyklyuchayet vash simulirovannyy komp'yuter.
+Pokazyvayet sistemnuyu informatsiyu i versii.
+Pokazyvayet ispol'zuyemyye biblioteki s otkrytym iskhodnym kodom
+Proizoshla oshibka v obolochke.
+U vas net razresheniya na ispol'zovaniye {0}
+Soobshcheniye obolochki: Zaproshennaya komanda {0} ne mozhet byt' zapushchena v rezhime obsluzhivaniya.
+Soobshcheniye obolochki: zaproshennaya komanda {0} ne naydena. Smotrite «pomoshch'» dlya dostupnykh komand.
+Soobshcheniye obolochki: komanda {0} zapreshchena pri vkhode v sistemu.
+Soobshcheniye obolochki: zaproshennaya komanda {0} ne naydena.
+Oshibka pri popytke vypolnit' komandu.
+datetime: vremya {0}
+datetime: segodnya {0}
+datetime: chasovoy poyas: {0}
+- Vremya {0}: {1}
+ochistit' ekran.
+Kazhetsya, stranitsa spravochnika {0} ne naydena.
+Proizoshla oshibka pri popytke zagruzit' stranitsu spravochnika {0}, potomu chto {1}.
+Eta stranitsa rukovodstva nepolnaya po sleduyushchim prichinam:
+Nazhmite lyubuyu klavishu chtoby prodolzhit'...
+ | {0} slov | Redaktsiya v {1} | {2} sektsii
+Etot zagolovok stranitsy rukovodstva ne napisan
+Eta stranitsa rukovodstva ({0}) ne soderzhit osnovnogo teksta. Udaleniye stranitsy ...
+Eta stranitsa rukovodstva ({0}) ne soderzhit razdelov. Udaleniye stranitsy ...
+Rabotayet na {0}
+U vas net prav na polucheniye informatsii dlya {0}.
+Eta komanda ustarela i budet udalena v sleduyushchem vypuske.
+Vy ne avtorizovany dlya izmeneniya parolya {0}, potomu chto tsel'yu byl administrator.
+Konvertirovat' summu deneg iz strany v stranu
+Valyuta:
+usrmgr: imya pol'zovatelya {0} uzhe naydeno
+Vvedite svoy klyuch API:
+Ne udalos' poluchit' komp'yutery. Yesli vy ispol'zuyete poslednyuyu versiyu Windows 10, vam nuzhno vklyuchit' SMBv1. Odnako etot protokol nebezopasen, i my postarayemsya reshit' etu problemu.
+Udalyayet vse v zhurnale otladki
+Poluchayet versii SSE
+Nevernyy yazyk
+Menyayet yazyk
+Vozmozhno, v vashey sisteme ne ustanovlena ​​libcpanel-json-xs-perl. Obratites' k menedzheru paketov dlya ustanovki. Dlya sistem Debian (i proizvodnykh) vy mozhete zapustit' «sudo apt install libcpanel-json-xs-perl» v emulyatore terminala. Podrobneye ob oshibke:
+----------------------------- Panika dampa yadra ------------------------------
+>> Panika informatsiya <<
+> Opisaniye: {0}
+> Tip oshibki: {1}
+> Data i vremya: {2}
+>> Informatsiya ob isklyuchenii <<
+> Isklyucheniye: {0}
+> Opisaniye: {1}
+> HRESULT: {2}
+> Istochnik: {3}
+> Trassirovka steka <
+>> Vnutrennyaya isklyuchitel'naya {0} informatsiya <<
+>> Isklyucheniye {0} yavlyayetsya osnovnoy prichinoy <<
+>> Ne isklyucheniye; mozhet byt' oshibka yadra. <<
+>> Ramki, fayly, stroki i stolbtsy <<
+> Kadr {0}: Fayl: {1} | Stroka: {2} | Kolonka: {3}
+> Oshibka pri popytke poluchit' informatsiyu o kadre. {0}: {1}
+Vy ustanovili sistemnyy yazyk na chto ugodno, krome angliyskogo. Prinosim izvineniya za neudobstva, no kazhetsya, chto Google i yego perevodchik ochen' stranno perevodyat bloki koda dlya lyubogo yazyka programmirovaniya. Nesmotrya na to, chto my ispravlyayem vse bloki koda dlya perevedennykh stranits rukovodstva, my predlagayem vam otkryt' bilet v Google Translate dlya perevoda blokov koda, kotoryye ne prednaznacheny dlya perevoda, i ustanovit' yazyk vashey sistemy na angliyskiy, yesli vy govorite na nem.
+Perezagruzka modov.
+Mody perezagruzheny.
+Dobro pozhalovat' v Kernel!
+Vy uspeshno voshli kak <pol'zovatel'>
+MOTD / MAL deystvitelen, no tip soobshcheniya nedeystvitelen. Predpolagaya MOTD ...
+Popytalsya prochitat' MOTD / MAL, kotoryy imeyet nedopustimyy tip soobshcheniya.
+Podderzhivaya stabil'noye soyedineniye, on zagruzhayet {0} v {1} ...
+Zagruzka zavershena.
+Oshibka zagruzki pri popytke {0}: {1}
+Pozhaluysta, ispol'zuyte «ftp», yesli vy sobirayetes' zagruzhat' fayly s FTP-servera.
+Zagruzhayet fayl v tekushchiy rabochiy katalog
+Otklyuchit' otladochnoye ustroystvo
+Spiski ustroystv otladki podklyucheny
+Ustroystvo otladki {0} ne naydeno.
+Ustroystvo {0} otklyucheno.
+Oshibka v soyedinenii: {0}
+Otladka proslushivaniya vsekh adresov s ispol'zovaniyem porta {0}.
+Argumenty ne ukazany. Podskazka: ukazhite neskol'ko argumentov, razdelennykh probelami
+Psevdonim uzhe nayden: {0}
+Zhurnal otladki udalen. Vse podklyuchennyye otladochnyye ustroystva mogut po-prezhnemu prosmatrivat' soobshcheniya.
+Oshibka udaleniya zhurnala otladki: {0}
+Oshibka izmeneniya kataloga: {0}
+Nevernoye imya pol'zovatelya
+Ukazhite adres
+Nevozmozhno udalit' katalog: {0}
+Chasovoy poyas ukazan neverno.
+Nevernyy vybor profilya.
+Popytka podklyuchit'sya k {0} s profilem {1} ...
+Oshibka v modul'nom testirovanii: {0}
+Komanda {0} ne naydena. Sm. Komandu «help» dlya polucheniya spiska komand.
+Ne udalos' poluchit' svoystva IPv6 dlya adaptera {0}. Prodolzheniye ...
+Informatsiya IPv4:
+Informatsiya IPv6:
+Adapter {0} ne podderzhivayet IPv6. Prodolzheniye ...
+Adapter {0} ne podderzhivayet IPv4. Zond ne udalsya.

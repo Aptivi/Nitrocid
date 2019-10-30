@@ -20,7 +20,7 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.7.6</Version>
+    <Version>0.0.7.61</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -322,12 +322,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\arb-T.txt" />
     <Content Include="Resources\arb.txt" />
+    <None Include="Resources\chi-T.txt" />
     <Content Include="Resources\cro.txt" />
     <None Include="Resources\jpn.txt" />
+    <None Include="Resources\ind-T.txt" />
+    <None Include="Resources\jpn-T.txt" />
     <Content Include="Resources\ndo.txt" />
     <Content Include="Resources\pol.txt" />
     <Content Include="Resources\rmn.txt" />
+    <None Include="Resources\rus.txt" />
+    <None Include="Resources\rus-T.txt" />
     <Content Include="Resources\uzb.txt" />
     <None Include="Resources\cze.txt" />
     <None Include="Resources\tky.txt" />

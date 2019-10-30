@@ -253,7 +253,7 @@ sarvar ke saath sanvaad karane ke lie ek efateepee khol ka prayog karen
 sahaayata prshth
 haardaveyar mainyual roop se jaanchen (nohaprobob karnel mein ek baar)
 vartamaan foldar mein fail / foldar saamagree soocheebaddh karen
-KSMods mein skreenasevar fail punah lod karen
+%USERPROFILE%\KSMods mein skreenasevar fail punah lod karen
 paasavard ke saath apanee skreen ko lok karata hai
 aapako log aaut karata hai
 un sabhee netavark upakaranon ko soocheebaddh karata hai jo onalain hain (aur domen mein ophalain)

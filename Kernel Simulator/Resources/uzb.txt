@@ -253,7 +253,7 @@ Serverlar bilan o'zaro ishlash uchun FTP qobig'idan foydalaning
 Yordam sahifasi
 Prob apparati qo'lda ("nohwprobe" yadrosida bir marta)
 Joriy papkada fayl / papka tarkibini ro'yxatlang
-% USERPROFILE% \ KSMod-larda ekran saqlagich faylini qayta yuklaydi
+%USERPROFILE%\KSMod-larda ekran saqlagich faylini qayta yuklaydi
 Parolingizni ekran bilan qulflaydi
 Sizni tizimdan chiqaradi
 Onlayn (tarmoqdagi va oflayn rejimda) bo'lgan barcha tarmoq qurilmalarini ro'yxati.

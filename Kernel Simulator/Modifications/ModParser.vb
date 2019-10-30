@@ -111,7 +111,7 @@ Public Module ModParser
             Next
         Else
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
-                StartParse(modFile, StartStop)
+                StartParse(modFile.Replace("\", "/"), StartStop)
             Next
         End If
     End Sub

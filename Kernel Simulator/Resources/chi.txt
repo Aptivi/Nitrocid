@@ -253,7 +253,7 @@ shǐyòng FTP shell yǔ fúwùqì jìnxíng jiāohù
 bāngzhù yèmiàn
 shǒudòng tàncè yìngjiàn (zài'nohwprobe'nèihé zhōng yīcì)
 liè chū dāngqiáng wénjiàn jiā zhōng de wénjiàn/wénjiàn jiā nèiróng
-KSMods zhōng de píngmù bǎohù chéngxù wénjiàn
+%USERPROFILE%\KSMods zhōng de píngmù bǎohù chéngxù wénjiàn
 shǐyòng mìmǎ suǒdìng píngmù
 jìlù nǐ
 liè chū suǒyǒu liánjī (yǐjí yù zhōng tuō jī) de wǎngluò shèbèi

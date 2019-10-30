@@ -253,7 +253,7 @@ Gunakan shell FTP untuk berinteraksi dengan server
 Halaman bantuan
 Probe hardware secara manual (Satu kali dalam kernel 'nohwprobe')
 Daftar isi file / folder di folder saat ini
-Muat ulang file screensaver di% USERPROFILE% \ KSMods
+Muat ulang file screensaver di %USERPROFILE%\KSMods
 Mengunci layar Anda dengan kata sandi
 Keluar Anda
 Daftar semua perangkat jaringan yang sedang online (dan offline dalam domain)

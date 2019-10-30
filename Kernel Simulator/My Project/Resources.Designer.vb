@@ -79,6 +79,26 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to الأوامر المتاحة: {0}
+        '''اكتب الأمر:
+        '''تم إلغاء حقن الأوامر.
+        '''افصل بين وسيطات التمهيد بفواصل بدون مسافات ، على سبيل المثال ، &quot;motd ، gpuprobe&quot;
+        '''أوامر منفصلة على &apos;cmdinject&apos; مع colons بمسافات ، على سبيل المثال ، &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''لاحظ أن الوسيطة &apos;debug&apos; لا تغطي النواة بالكامل.
+        '''الصفقات: الوسيطة المطلوبة {0} غير موجودة.
+        '''الصفقات: خطأ غير قابل للاسترداد في الوسيطة:
+        '''الوسائط المتاحة: {0}
+        '''الحجج (&quot;المساعدة&quot; للمساعدة):
+        '''سيتم جدولة الحجج المحقونة لتشغيلها عند إعادة التمهيد التالي.
+        '''تم إلغاء  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property arb_T() As String
+            Get
+                Return ResourceManager.GetString("arb_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Kěyòng mìnglìng: {0}
         '''Xiě mìnglìng: 
         '''Mìnglìng zhùrù yǐ bèi qǔxiāo.
@@ -94,6 +114,39 @@ Namespace My.Resources
         Friend ReadOnly Property chi() As String
             Get
                 Return ResourceManager.GetString("chi", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 可用命令：{0}
+        '''编写命令：
+        '''命令注入已被取消。
+        '''引导参数之间用逗号分隔，不带空格，例如&apos;motd，gpuprobe&apos;
+        '''在&apos;cmdinject&apos;上用冒号分隔空格的命令，例如&apos;cmdinject setthemes Hacker：beep 1024 0.5&apos;
+        '''请注意，“ debug”参数不能完全覆盖内核。
+        '''bargs：找不到请求的参数{0}。
+        '''bargs：参数中无法恢复的错误：
+        '''可用参数：{0}
+        '''参数（“帮助”以获取帮助）：
+        '''注入的参数将计划在下次重新引导时运行。
+        '''参数注入已被取消。
+        '''解析实际的命令行参数时出错：{0}
+        '''无效的颜色模板{0}
+        '''默认
+        '''自订
+        '''hwprobe：将检测您的硬件。请耐心等待...
+        '''hwprobe：已检测到硬件。
+        '''hwprobe：未检测到硬件。使用“ hwprobe”进行探测
+        '''CPU：一个或多个CPU内核无法探测。仍在显示信息...
+        '''RAM：无法探测一个或多个RAM芯片。仍在显示信息...
+        '''HDD：无法探测一个或多个硬盘驱动器。仍在显示信息...
+        '''CPU：处理器总数：{0}
+        '''CPU：{0} {1} MHz
+        '''RAM：{0} MB = {1} MB [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property chi_T() As String
+            Get
+                Return ResourceManager.GetString("chi_T", resourceCulture)
             End Get
         End Property
         
@@ -247,6 +300,25 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to उपलब्ध आदेश: {0}
+        '''कमांड लिखें:
+        '''कमांड इंजेक्शन रद्द कर दिया गया है।
+        '''रिक्त स्थान के बिना अल्पविराम के साथ अलग बूट तर्क, उदाहरण के लिए, &apos;motd, gpuprobe&apos;
+        '''रिक्त स्थान के साथ कॉलन के साथ &apos;cmdinject&apos; पर अलग-अलग कमांड, उदाहरण के लिए, &apos;cmdinject से हैकर्स को हटाता है: 1024 x 1024&apos;
+        '''ध्यान दें कि &apos;डीबग&apos; तर्क पूरी तरह से कर्नेल को कवर नहीं करता है।
+        '''bargs: अनुरोधित तर्क {0} नहीं मिला है।
+        '''सौदेबाज़ी: तर्क में अपरिवर्तनीय त्रुटि:
+        '''उपलब्ध तर्क: {0}
+        '''तर्क (मदद के लिए &apos;सहायता):
+        '''इंजेक्ट किए गए तर्कों को अगले रिबूट पर चला [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ind_T() As String
+            Get
+                Return ResourceManager.GetString("ind_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Comandi disponibili: {0}
         '''Scrivi il comando:
         '''L&apos;iniezione del comando أ¨ stata annullata.
@@ -279,6 +351,33 @@ Namespace My.Resources
         Friend ReadOnly Property jpn() As String
             Get
                 Return ResourceManager.GetString("jpn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 利用可能なコマンド：{0}
+        '''書き込みコマンド：
+        '''コマンドインジェクションはキャンセルされました。
+        '''ブート引数をスペースなしのカンマで区切ります。たとえば、「motd、gpuprobe」
+        '''&apos;cmdinject&apos;のコマンドをスペース付きのコロンで区切ります。たとえば、 &apos;cmdinject setthemes Hacker：beep 1024 0.5&apos;
+        '''&apos;debug&apos;引数はカーネルを完全にはカバーしていないことに注意してください。
+        '''bargs：要求された引数{0}が見つかりません。
+        '''bargs：引数の回復不能なエラー：
+        '''利用可能な引数：{0}
+        '''引数（ヘルプは &apos;help&apos;）：
+        '''注入された引数は、次回の再起動時に実行されるようにスケジュールされます。
+        '''引数の挿入はキャンセルされました。
+        '''実際のコマンドライン引数の解析中にエラーが発生しました：{0}
+        '''無効なカラーテンプレート{0}
+        '''デフォルト
+        '''カスタム
+        '''hwprobe：ハードウェアがプローブされます。お待ちください...
+        '''hwprobe：ハードウェアはすでにプローブされています。
+        '''hwprobe：ハードウェアはプローブされません。 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property jpn_T() As String
+            Get
+                Return ResourceManager.GetString("jpn_T", resourceCulture)
             End Get
         End Property
         
@@ -371,6 +470,43 @@ Namespace My.Resources
         Friend ReadOnly Property rmn() As String
             Get
                 Return ResourceManager.GetString("rmn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dostupnyye komandy: {0}
+        '''Napisat&apos; komandu:
+        '''Komandnaya in&quot;yektsiya byla otmenena.
+        '''Otdel&apos;nyye argumenty zagruzki s zapyatymi bez probelov, naprimer, &apos;motd, gpuprobe&apos;
+        '''Otdel&apos;nyye komandy dlya «cmdinject» s dvoyetochiyami s probelami, naprimer, «cmdinject setthemes Hacker: beep 1024 0.5»
+        '''Obratite vnimaniye, chto argument debug ne polnost&apos;yu pokryvayet yadro.
+        '''bargs: zaproshennyy argument {0} ne nayden.
+        '''bargs: neispravimaya oshibka v argumente:
+        '''Dostupnyye argumenty: {0}
+        '''Argumenty («pomoshch&apos;» dlya pomoshch [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property rus() As String
+            Get
+                Return ResourceManager.GetString("rus", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Доступные команды: {0}
+        '''Написать команду:
+        '''Командная инъекция была отменена.
+        '''Отдельные аргументы загрузки с запятыми без пробелов, например, &apos;motd, gpuprobe&apos;
+        '''Отдельные команды для «cmdinject» с двоеточиями с пробелами, например, «cmdinject setthemes Hacker: beep 1024 0.5»
+        '''Обратите внимание, что аргумент debug не полностью покрывает ядро.
+        '''bargs: запрошенный аргумент {0} не найден.
+        '''bargs: неисправимая ошибка в аргументе:
+        '''Доступные аргументы: {0}
+        '''Аргументы («помощь» для помощи):
+        '''Введенные аргументы буд [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property rus_T() As String
+            Get
+                Return ResourceManager.GetString("rus_T", resourceCulture)
             End Get
         End Property
         

@@ -253,7 +253,7 @@ aistakhdam shell FTP liltafaeul mae alkhawadim
 safhat almusaeada
 daqaq fi al'ajhizat ydwyana (mrat wahidat fi nawat nohwprobe)
 srid muhtawiat almilafi / almujalid fi almajalid alhalii
-'iieadat tahmil milafun shashat altawaquf fi% USERPROFILE% \ KSMods
+'iieadat tahmil milafun shashat altawaquf fi %USERPROFILE%\KSMods
 'aqfal alshaashat bikalimat murur
 yusajil lak alkhuruj
 yusrid jmye 'ajhizat alshabakat almutasila (wghyr almutasilat fi almajalat)

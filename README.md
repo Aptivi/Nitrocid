@@ -228,6 +228,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **10/29/2019 - 0.0.7.6:** Added the experimental naming system for chat in remote debugger (Custom names not implemented yet), Added `lines` and `glitterMatrix` screensaver, Now screensavers have their own debugging messages, FluentFTP debugger messages are now redirected to the KS debugger, Now filesystem actions are debugged, Now `get` doesn't run if the URL is not specified, Added missing `get` help entry
 
+**10/30/2019 - 0.0.7.61:** Fixed mod reload help description not translating, Fixed Google's weirdness about `reloadsaver` help description on several language files, Fixed KS crashing on startup if the mods are inserted, Now cursor won't show up if the custom screensaver runs, Added transliterated Russian language
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator

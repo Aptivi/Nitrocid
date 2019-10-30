@@ -253,7 +253,7 @@ Użyj powłoki FTP do interakcji z serwerami
 Strona pomocy
 Sonduj sprzęt ręcznie (jeden raz w jądrze „nohwprobe”)
 Wyświetl zawartość pliku / folderu w bieżącym folderze
-Ponownie ładuje plik wygaszacza ekranu w% USERPROFILE% \ KSMods
+Ponownie ładuje plik wygaszacza ekranu w %USERPROFILE%\KSMods
 Blokuje ekran hasłem
 Wylogowuje cię
 Wyświetla listę wszystkich urządzeń sieciowych, które są online (i offline w domenach)

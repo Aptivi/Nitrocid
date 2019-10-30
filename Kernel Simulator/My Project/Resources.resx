@@ -181,4 +181,22 @@
   <data name="arb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arb.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="arb_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arb-T.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="chi_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chi-T.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ind_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ind-T.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="jpn_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jpn-T.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="rus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="rus_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rus-T.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

@@ -253,7 +253,7 @@ Utilizați un shell FTP pentru a interacționa cu serverele
 Pagina de ajutor
 Sonda hardware manual (o singură dată în nucleul „nohwprobe”)
 Listează conținutul fișierului / folderului în folderul curent
-Reîncarcă fișierul de salvare a ecranului în% USERPROFILE% \ KSMods
+Reîncarcă fișierul de salvare a ecranului în %USERPROFILE%\KSMods
 Încuie ecranul cu o parolă
 Te loghează
 Listează toate dispozitivele de rețea care sunt online (și offline în domenii)

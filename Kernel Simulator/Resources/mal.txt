@@ -253,7 +253,7 @@ Gunakan shell FTP untuk berinteraksi dengan pelayan
 Halaman bantuan
 Siasat perkakasan secara manual (Satu kali dalam kernel 'nohwprobe')
 Senaraikan kandungan fail / folder dalam folder semasa
-Muat semula fail screensaver dalam% USERPROFILE%\KSMods
+Muat semula fail screensaver dalam %USERPROFILE%\KSMods
 Mengunci skrin anda dengan kata laluan
 Log masuk anda
 Menyenaraikan semua peranti rangkaian yang dalam talian (dan di luar talian dalam domain)

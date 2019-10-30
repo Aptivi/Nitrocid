@@ -96,9 +96,10 @@ Public Module Screensaver
 
     Sub CompileCustom(ByVal file As String)
         Dim modPath As String = paths("Mods")
+        file = file.Replace("\", "/").Replace(modPath, "")
         If FileIO.FileSystem.FileExists(modPath + file) Then
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
-                modFile = modFile.Replace(modPath, "")
+                modFile = modFile.Replace("\", "/").Replace(modPath, "")
                 Wdbg("Parsing {0}...", modFile)
                 If modFile = file Then
                     If Not modFile.EndsWith("SS.m") Then

@@ -19,7 +19,7 @@ Public Module Translate
 
     'Variables
     'TODO: Ask user if they want to use transliterated or translated
-    Public availableLangs() As String = {"arb", "chi", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "jpn", "mal", "ndo", "pol", "ptg", "rmn", "spa", "swe", "tky", "uzb"}
+    Public availableLangs() As String = {"arb", "chi", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ita", "jpn", "mal", "ndo", "pol", "ptg", "rmn", "rus", "spa", "swe", "tky", "uzb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
 
@@ -93,6 +93,8 @@ Public Module Translate
                 translated = My.Resources.ptg
             Case "rmn" 'Romanian
                 translated = My.Resources.rmn
+            Case "rus" 'Russian
+                translated = My.Resources.rus
             Case "spa" 'Spanish
                 translated = My.Resources.spa
             Case "swe" 'Swedish

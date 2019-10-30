@@ -253,7 +253,7 @@ Use um shell de FTP para interagir com os servidores
 Página de ajuda
 Analisar hardware manualmente (uma vez no kernel 'nohwprobe')
 Listar o conteúdo do arquivo / pasta na pasta atual
-KSMods
+Recarrega o arquivo do protetor de tela em %USERPROFILE%\KSMods
 Bloqueia sua tela com uma senha
 Faz o logout
 Lista todos os dispositivos de rede que estão on-line (e off-line em domínios)
