@@ -127,6 +127,20 @@ Public Module Translate
 
     Public Sub SetLang(ByVal lang As String)
         If availableLangs.Contains(lang) Then
+            'Set appropriate codepage for incapable terminals
+            Select Case lang
+                Case "arb-T"
+                    Console.OutputEncoding = Text.Encoding.GetEncoding(1256)
+                Case "chi-T"
+                    Console.OutputEncoding = Text.Encoding.GetEncoding(936)
+                Case "jpn-T"
+                    Console.OutputEncoding = Text.Encoding.GetEncoding(932)
+                Case "rus-T"
+                    Console.OutputEncoding = Text.Encoding.GetEncoding(866)
+                Case Else
+                    Console.OutputEncoding = Text.Encoding.GetEncoding(720)
+            End Select
+
             'Set current language
             W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, currentLang, lang)
             currentLang = lang
