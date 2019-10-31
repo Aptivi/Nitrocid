@@ -234,7 +234,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **10/30/2019 - 0.0.7.61:** Fixed mod reload help description not translating, Fixed Google's weirdness about `reloadsaver` help description on several language files, Fixed KS crashing on startup if the mods are inserted, Now cursor won't show up if the custom screensaver runs, Added transliterated Russian language
 
-**10/30/2019 - WIP - 0.0.8:** Added translated versions of Arabic, Japanese, Chinese, Hindi, and Russian,
+**10/30/2019 - WIP - 0.0.8:** Added translated versions of Arabic, Japanese, Chinese, Hindi, and Russian, Added `debug` real command line argument, 
 
 ## |-----+--> _Contributors_ <--+-----|
 

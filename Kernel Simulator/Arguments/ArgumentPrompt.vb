@@ -20,6 +20,8 @@ Module ArgumentPrompt
 
     'Variables
     Public answerargs As String                                                     'Input for arguments
+    Public AvailableArgs() As String = {"quiet", "cmdinject", "debug", "maintenance", "help"}
+
 
     Sub PromptArgs(Optional ByVal InjMode As Boolean = False)
 
