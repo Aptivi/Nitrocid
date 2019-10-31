@@ -37,10 +37,10 @@ Public Module FTPShell
             'Complete initialization
             If initialized = False Then
                 Wdbg($"Completing initialization of FTP: {initialized}")
-                FtpTrace.AddListener(New FTPTracer) 'TODO: Let users configure their logging ways using kernel configuration
-                FtpTrace.LogUserName = True
-                FtpTrace.LogPassword = False 'Don't remove this or set it to True! It will introduce security problems.
-                FtpTrace.LogIP = False
+                FtpTrace.AddListener(New FTPTracer)
+                FtpTrace.LogUserName = FTPLoggerUsername
+                FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
+                FtpTrace.LogIP = FTPLoggerIP
                 currDirect = paths("Home")
                 initialized = True
             End If

@@ -41,5 +41,7 @@ Module Flags
     Public instanceChecked As Boolean = False                   'Instance checking
     Public LogoutRequested As Boolean = False                   'A signal when user logs out.
     Public RebootRequested As Boolean = False                   'Reboot requested
+    Public FTPLoggerUsername As Boolean                         'Log username for FTP
+    Public FTPLoggerIP As Boolean                               'Log IP address for FTP
 
 End Module

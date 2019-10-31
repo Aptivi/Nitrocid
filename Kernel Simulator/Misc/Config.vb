@@ -76,6 +76,8 @@ Public Module Config
                         New IniKey(ksconf, "Debug Size Quota in Bytes", DebugQuota),
                         New IniKey(ksconf, "Remote Debug Default Nick Prefix", RDebugDNP),
                         New IniKey(ksconf, "Download Retry Times", DRetries),
+                        New IniKey(ksconf, "Log FTP username", FTPLoggerUsername),
+                        New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             Else '----------------------- If [Preserve] value is False, then don't preserve.
                 'The General Section
@@ -130,6 +132,8 @@ Public Module Config
                         New IniKey(ksconf, "Debug Size Quota in Bytes", 1073741824),
                         New IniKey(ksconf, "Remote Debug Default Nick Prefix", "KSUser"),
                         New IniKey(ksconf, "Download Retry Times", 3),
+                        New IniKey(ksconf, "Log FTP username", "False"), 'Keep them off by default for privacy protection
+                        New IniKey(ksconf, "Log FTP IP address", "False"),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
@@ -240,6 +244,8 @@ Public Module Config
             If Integer.TryParse(configReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value, 0) Then DebugQuota = configReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value
             RDebugDNP = configReader.Sections("Misc").Keys("Remote Debug Default Nick Prefix").Value
             If Integer.TryParse(configReader.Sections("Misc").Keys("Download Retry Times").Value, 0) Then DRetries = configReader.Sections("Misc").Keys("Download Retry Times").Value
+            FTPLoggerUsername = configReader.Sections("Misc").Keys("Log FTP username").Value
+            FTPLoggerIP = configReader.Sections("Misc").Keys("Log FTP IP address").Value
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
             UpgradeConfig() 'Upgrades the config if there are any changes.
         Catch ex As Exception
