@@ -240,6 +240,7 @@ Public Module KernelTools
         HDDList.Clear()
         RAMList.Clear()
         CPUList.Clear()
+        Wdbg("All hardware reset")
 
         'Release RAM used
         DisposeAll()
@@ -247,15 +248,19 @@ Public Module KernelTools
 
         'Disconnect all hosts from remote debugger
         RebootRequested = True
+        Wdbg("Remote debugger stopped")
 
         'Close settings
         configReader = New IniFile()
+        Wdbg("Settings closed")
 
         'Stop all mods
         ParseMods(False)
+        Wdbg("Mods stopped")
 
         'Disable Debugger
         If DebugMode = True Then
+            Wdbg("Shutting down debugger")
             DebugMode = False
             dbgWriter.Close() : dbgWriter.Dispose()
         End If
