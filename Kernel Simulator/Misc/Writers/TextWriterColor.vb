@@ -18,6 +18,7 @@
 
 Imports System.Console
 Imports System.IO
+Imports System.Threading
 
 'This module is very important to reduce line numbers when there is color.
 Public Module TextWriterColor
@@ -180,6 +181,23 @@ Public Module TextWriterColor
             KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
         End Try
 
+    End Sub
+
+    Public Sub WriteSlowly(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ParamArray ByVal vars() As Object)
+        'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+        For v As Integer = 0 To vars.Length - 1
+            msg = msg.Replace("{" + CStr(v) + "}", vars(v).ToString)
+        Next
+
+        'Write text slowly
+        Dim chars As List(Of Char) = msg.ToCharArray.ToList
+        For Each ch As Char In chars
+            Thread.Sleep(MsEachLetter)
+            Write(ch)
+        Next
+        If Line Then
+            WriteLine()
+        End If
     End Sub
 
 End Module

@@ -26,6 +26,9 @@ Public Module ScreensaverDisplays
     Public WithEvents Disco As New BackgroundWorker
     Public WithEvents Lines As New BackgroundWorker
     Public WithEvents GlitterMatrix As New BackgroundWorker
+    Public WithEvents GlitterColor As New BackgroundWorker
+    Public WithEvents AptErrorSim As New BackgroundWorker
+    Public WithEvents HackUserFromAD As New BackgroundWorker
     Public WithEvents Custom As New BackgroundWorker
     Public finalSaver As ICustomSaver
 
@@ -183,6 +186,150 @@ Public Module ScreensaverDisplays
                 Console.SetCursorPosition(Left, Top)
                 Console.Write(CStr(RandomDriver.Next(2)))
             End If
+        Loop
+    End Sub
+
+    Sub AptErrorSim_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles AptErrorSim.DoWork
+        Console.CursorVisible = False
+        Do While True
+            Thread.Sleep(100)
+            If AptErrorSim.CancellationPending = True Then
+                Wdbg("Cancellation is pending. Cleaning everything up...")
+                e.Cancel = True
+                Console.Clear()
+                Console.ForegroundColor = inputColor
+                Console.BackgroundColor = backgroundColor
+                Load()
+                Console.CursorVisible = True
+                Wdbg("All clean. apt Error Simulator screensaver stopped.")
+                Exit Do
+            Else
+                Console.Clear()
+                Console.WriteLine("This screensaver is under development.")
+            End If
+        Loop
+    End Sub
+
+    Sub HackUserFromAD_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles HackUserFromAD.DoWork
+        Do While True
+            Thread.Sleep(1000)
+            If HackUserFromAD.CancellationPending = True Then
+                Wdbg("Cancellation is pending. Cleaning everything up...")
+                e.Cancel = True
+                Console.Clear()
+                Console.ForegroundColor = inputColor
+                Console.BackgroundColor = backgroundColor
+                Load()
+                Console.CursorVisible = True
+                Wdbg("All clean. Hacking Simulator for Active Domain users screensaver stopped.")
+                Exit Do
+            Else
+                Console.Clear()
+                Console.BackgroundColor = ConsoleColor.Black
+                Console.ForegroundColor = ConsoleColor.Green
+                Console.WriteLine("Microsoft Windows [Version 10.0.18362.239]" + vbNewLine +
+                                  "(c) 2019 Microsoft Corporation. All rights reserved." + vbNewLine)
+                Console.Write(CurrDir + ">")
+                Thread.Sleep(3000)
+                WriteSlowly("net user /domain", False, 100)
+                Thread.Sleep(200)
+                Console.WriteLine()
+                Thread.Sleep(50)
+                Console.WriteLine("The request will be processed at a domain controller for domain Community.Workspace." + vbNewLine)
+                Thread.Sleep(2000)
+                Console.WriteLine("User accounts for \\LOGON-HANDLER" + vbNewLine + vbNewLine +
+                                  "-------------------------------------------------------------------------------" + vbNewLine +
+                                  "Administrator            CommAdmin                EnterpriseManager" + vbNewLine +
+                                  "Guest                    UserEmployees            Work" + vbNewLine +
+                                  "The command completed successfully." + vbNewLine + vbNewLine)
+                Console.Write(CurrDir + ">")
+                Thread.Sleep(1000)
+                WriteSlowly("net user EnterpriseManager /domain", False, 125)
+                Thread.Sleep(325)
+                Console.WriteLine()
+                Thread.Sleep(50)
+                Console.WriteLine("The request will be processed at a domain controller for domain Community.Workspace." + vbNewLine)
+                Thread.Sleep(2000)
+                Console.WriteLine("User name                    EnterpriseManager" + vbNewLine +
+                                  "Full Name                    Enterprise Manager" + vbNewLine +
+                                  "Comment                      Only usable by IT experts" + vbNewLine +
+                                  "User's comment" + vbNewLine +
+                                  "Country/region code          000 (System Default)" + vbNewLine +
+                                  "Account active               Yes" + vbNewLine +
+                                  "Account expires              Never" + vbNewLine + vbNewLine +
+                                 $"Password last set            {FormatDateTime(KernelDateTime, DateFormat.ShortDate)} {FormatDateTime(KernelDateTime, DateFormat.LongTime)}" + vbNewLine +
+                                  "Password expires             Never" + vbNewLine +
+                                 $"Password changeable          ‎{FormatDateTime(KernelDateTime, DateFormat.ShortDate)} {FormatDateTime(KernelDateTime, DateFormat.LongTime)}" + vbNewLine +
+                                  "Password required            No" + vbNewLine +
+                                  "User may change password     Yes" + vbNewLine +
+                                  "Workstations allowed         All" + vbNewLine + vbNewLine +
+                                  "Logon script" + vbNewLine +
+                                  "User profile" + vbNewLine +
+                                  "Home directory               Z:\ENT\Private\EM" + vbNewLine +
+                                  "Last logon                   ‎2/27/‎2018 5:05:41 PM" + vbNewLine + vbNewLine +
+                                  "Logon hours allowed          All" + vbNewLine + vbNewLine +
+                                  "Local Group Memberships      *None" + vbNewLine +
+                                  "Global Group memberships     *Administrators" + vbNewLine +
+                                  "The command completed successfully." + vbNewLine + vbNewLine)
+                Console.Write(CurrDir + ">")
+                Thread.Sleep(1000)
+                WriteSlowly("ntlm.py dump --user=EnterpriseManager --domain=Community.Workspace", False, 85)
+                Thread.Sleep(130)
+                Console.WriteLine("Dumping NTLM Hash...")
+                Thread.Sleep(4000)
+                Console.WriteLine("Dump completed, and saved in ./Hash.txt")
+                Console.Write(CurrDir + ">")
+                Thread.Sleep(1000)
+                WriteSlowly("ntlm.py decrypt Hash.txt", False, 160)
+                Thread.Sleep(215)
+                Console.WriteLine("Trying to decrypt...")
+                Thread.Sleep(2150)
+                Console.WriteLine("Decryption complete. Plain-text password retrieved in ./Pass.txt")
+                Console.Write(CurrDir + ">")
+                Thread.Sleep(1000)
+                WriteSlowly("start.py --user=EnterpriseManager --pass=`write Pass.txt` ""start""", False, 130)
+                Thread.Sleep(115)
+                Console.WriteLine("Microsoft Windows [Version 10.0.18362.239]" + vbNewLine +
+                                  "(c) 2019 Microsoft Corporation. All rights reserved." + vbNewLine)
+                Console.Write("Z:\ENT\Private\EM>")
+                Thread.Sleep(3000)
+                WriteSlowly("shutdown /s /fw /t 00 /m \\LOGON-HANDLER", False, 130)
+                Thread.Sleep(115)
+                Console.WriteLine("LOGON-HANDLER: System shutdown is initiated.")
+                Thread.Sleep(115)
+                Console.Write("Z:\ENT\Private\EM>")
+                Thread.Sleep(5000)
+            End If
+        Loop
+    End Sub
+
+    Sub GlitterColor_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles GlitterColor.DoWork
+        Console.BackgroundColor = ConsoleColor.Black
+        Console.Clear()
+        Console.CursorVisible = False
+        Dim RandomDriver As New Random()
+        Wdbg("Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        Do While True
+            For Each color In colors
+                If GlitterColor.CancellationPending = True Then
+                    Wdbg("Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    Console.Clear()
+                    Console.ForegroundColor = inputColor
+                    Console.BackgroundColor = backgroundColor
+                    Load()
+                    Console.CursorVisible = True
+                    Wdbg("All clean. Glitter Color screensaver stopped.")
+                    Exit Do
+                Else
+                    Thread.Sleep(1)
+                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    Console.SetCursorPosition(Left, Top)
+                    Console.BackgroundColor = color
+                    Console.Write(" ")
+                End If
+            Next
         Loop
     End Sub
 

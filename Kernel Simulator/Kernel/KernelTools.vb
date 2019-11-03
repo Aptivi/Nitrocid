@@ -383,5 +383,26 @@ Public Module KernelTools
         'Now return compile date
         Return dt
     End Function
+    Function GetCompileDate(ByVal Asm As Assembly) As DateTime
+        'Variables and Constants
+        Const Offset As Integer = 60 : Const LTOff As Integer = 8
+        Dim asmByte(2047) As Byte : Dim asmStream As Stream
+        Dim codePath As Assembly = Asm
+
+        'Get compile date
+        asmStream = New FileStream(Path.GetFullPath(codePath.Location), FileMode.Open, FileAccess.Read)
+        asmStream.Read(asmByte, 0, 2048)
+        If Not asmStream Is Nothing Then asmStream.Close()
+
+        'We are almost there
+        Dim i64 As Integer = BitConverter.ToInt32(asmByte, Offset)
+        Dim compileseconds As Integer = BitConverter.ToInt32(asmByte, i64 + LTOff)
+        Dim dt As New DateTime(1970, 1, 1, 0, 0, 0)
+        dt = dt.AddSeconds(compileseconds)
+        dt = dt.AddHours(TimeZone.CurrentTimeZone.GetUtcOffset(dt).Hours)
+
+        'Now return compile date
+        Return dt
+    End Function
 
 End Module

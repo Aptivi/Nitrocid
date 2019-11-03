@@ -26,7 +26,8 @@ Public Module Screensaver
     Public LockMode As Boolean = False
     Public InSaver As Boolean = False
     Public defSaverName As String = "glitterMatrix"
-    Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False}, {"lines", False}}
+    Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False}, {"lines", False},
+                                                                 {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False}}
     Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
     Private execCustomSaver As CompilerResults
     Private DoneFlag As Boolean = False
@@ -77,6 +78,27 @@ Public Module Screensaver
             Wdbg("Lines started")
             Console.ReadKey()
             Lines.CancelAsync()
+            Thread.Sleep(150)
+        ElseIf saver = "glitterColor" Then
+            GlitterColor.WorkerSupportsCancellation = True
+            GlitterColor.RunWorkerAsync()
+            Wdbg("Glitter Color started")
+            Console.ReadKey()
+            GlitterColor.CancelAsync()
+            Thread.Sleep(150)
+        ElseIf saver = "aptErrorSim" Then
+            AptErrorSim.WorkerSupportsCancellation = True
+            AptErrorSim.RunWorkerAsync()
+            Wdbg("apt Error Simulator started")
+            Console.ReadKey()
+            AptErrorSim.CancelAsync()
+            Thread.Sleep(150)
+        ElseIf saver = "hackUserFromAD" Then
+            HackUserFromAD.WorkerSupportsCancellation = True
+            HackUserFromAD.RunWorkerAsync()
+            Wdbg("Hacking Simulator for Active Domain users started")
+            Console.ReadKey()
+            HackUserFromAD.CancelAsync()
             Thread.Sleep(150)
         ElseIf ScrnSvrdb.ContainsKey(saver) Then
             'Only one custom screensaver can be used.
