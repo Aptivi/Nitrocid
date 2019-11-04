@@ -301,7 +301,8 @@ Public Module KernelTools
         End If
 
         'Show welcome message. Don't remove license
-        W(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), True, ColTypes.Neutral, KernelVersion)
+        'TODO: Provide option to user if eyecandy is going to launch or not in Kernel Config
+        WriteSlowlyC(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), True, 10, ColTypes.Neutral, KernelVersion)
         W(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE" + vbNewLine +
                       "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +

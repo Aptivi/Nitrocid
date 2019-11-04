@@ -200,4 +200,49 @@ Public Module TextWriterColor
         End If
     End Sub
 
+    Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal colorType As ColTypes, ParamArray ByVal vars() As Object)
+        If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
+            ForegroundColor = neutralTextColor
+        ElseIf colorType = ColTypes.Continuable Then
+            ForegroundColor = contKernelErrorColor
+        ElseIf colorType = ColTypes.Uncontinuable Then
+            ForegroundColor = uncontKernelErrorColor
+        ElseIf colorType = ColTypes.HostName Then
+            ForegroundColor = hostNameShellColor
+        ElseIf colorType = ColTypes.UserName Then
+            ForegroundColor = userNameShellColor
+        ElseIf colorType = ColTypes.License Then
+            ForegroundColor = licenseColor
+        ElseIf colorType = ColTypes.Gray Then
+            If backgroundColor = ConsoleColor.DarkYellow Or backgroundColor = ConsoleColor.Yellow Then
+                ForegroundColor = neutralTextColor
+            Else
+                ForegroundColor = ConsoleColor.Gray
+            End If
+        ElseIf colorType = ColTypes.HelpDef Then
+            ForegroundColor = cmdDefColor
+        ElseIf colorType = ColTypes.HelpCmd Then
+            ForegroundColor = cmdListColor
+        Else
+            Exit Sub
+        End If
+
+        'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+        For v As Integer = 0 To vars.Length - 1
+            msg = msg.Replace("{" + CStr(v) + "}", vars(v).ToString)
+        Next
+
+        'Write text slowly
+        Dim chars As List(Of Char) = msg.ToCharArray.ToList
+        For Each ch As Char In chars
+            Thread.Sleep(MsEachLetter)
+            Write(ch)
+        Next
+        If Line Then
+            WriteLine()
+        End If
+        If Console.BackgroundColor = ConsoleColor.Black Then ResetColor()
+        If colorType = ColTypes.Input And ColoredShell = True Then ForegroundColor = inputColor
+    End Sub
+
 End Module
