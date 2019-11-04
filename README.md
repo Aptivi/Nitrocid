@@ -234,7 +234,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **10/30/2019 - 0.0.7.61:** Fixed mod reload help description not translating, Fixed Google's weirdness about `reloadsaver` help description on several language files, Fixed KS crashing on startup if the mods are inserted, Now cursor won't show up if the custom screensaver runs, Added transliterated Russian language
 
-**11/3/2019 - WIP - 0.0.8:** Added translated versions of Arabic, Japanese, Chinese, Hindi, and Russian, Added `debug` real command line argument, Updated FluentFTP and NewtonSoft.Json, Now the FTP shell lets you adjust logging options for username and IP address, Added `glitterColor`, `hackUserFromAD`, and `aptErrorSim` screensavers, Added `Windows95`, `GTASA`, `GrayOnYellow`, and `BlackOnWhite` themes, Fixed crash when opening second instance of KS, 
+**11/3/2019 - WIP - 0.0.8:** Added translated versions of Arabic, Japanese, Chinese, Hindi, and Russian, Added `debug` real command line argument, Updated FluentFTP and NewtonSoft.Json, Now the FTP shell lets you adjust logging options for username and IP address, Added `glitterColor`, `hackUserFromAD`, and `aptErrorSim` screensavers, Added `Windows95`, `GTASA`, `GrayOnYellow`, and `BlackOnWhite` themes, Fixed crash when opening second instance of KS, Passwords are encrypted,
 
 ## |-----+--> _Contributors_ <--+-----|
 

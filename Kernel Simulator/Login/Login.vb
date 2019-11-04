@@ -16,6 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Security.Cryptography
+Imports System.Text
+
 Public Module Login
 
     'Variables
@@ -110,6 +113,8 @@ Public Module Login
                         answerpass += character
                     End If
                 End While
+                Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(answerpass))
+                answerpass = GetArray(hashbyte)
 
                 'Parse password input
                 If InStr(answerpass, " ") > 0 Then

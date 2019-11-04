@@ -231,6 +231,7 @@
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Languages\Translate.vb" />
+    <Compile Include="Misc\Encryption\SHA256.vb" />
     <Compile Include="Misc\OldConfigUp.vb" />
     <Compile Include="Misc\Probers\MOTDParse.vb" />
     <Compile Include="Misc\Probers\PlaceParse.vb" />

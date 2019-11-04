@@ -16,6 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Security.Cryptography
+Imports System.Text
+
 Public Module UserManagement
 
     'Variables
@@ -26,6 +29,8 @@ Public Module UserManagement
     Public Sub InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")
 
         Try
+            Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(unpassword))
+            unpassword = GetArray(hashbyte)
             userword.Add(uninitUser, unpassword)
             Wdbg("Username {0} added. Readying permissions...", uninitUser)
             adminList.Add(uninitUser, False)
@@ -163,7 +168,7 @@ Public Module UserManagement
                 End If
             Else
                 W(DoTranslation("You have found a bug in the permission system: invalid mode {0}", currentLang), True, ColTypes.Neutral, mode)
-                End If
+            End If
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.", currentLang) + vbNewLine +
