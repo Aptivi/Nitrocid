@@ -290,6 +290,9 @@ Public Module KernelTools
         'Check for multiple instances of KS
         If instanceChecked = False Then MultiInstance()
 
+        'Open debugging stream
+        dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
+
         'Create config file and then read it
         InitializeConfig()
 

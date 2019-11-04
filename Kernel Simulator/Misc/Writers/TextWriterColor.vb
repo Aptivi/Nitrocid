@@ -23,7 +23,7 @@ Imports System.Threading
 'This module is very important to reduce line numbers when there is color.
 Public Module TextWriterColor
 
-    Public dbgWriter As New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
+    Public dbgWriter As StreamWriter
     Public DebugQuota As Double = 1073741824 '1073741824 bytes = 1 GiB (1 GB for Windows)
     Public RDebugDNP As String = "KSUser" 'Appended with random ID when new session arrives
     Public dbgStackTraces As New List(Of String)
