@@ -18,6 +18,7 @@
 
 Public Module Color
 
+    'TODO: Make W() with the "def" color write the text in black if it encountered a light background so the shell prompt is readable
     'Variables for colors used by previous versions of Kernel.
     Public inputColor As ConsoleColor = ConsoleColor.White
     Public licenseColor As ConsoleColor = ConsoleColor.White
@@ -35,7 +36,7 @@ Public Module Color
                                           "DarkCyan", "Cyan", "DarkBlue", "Blue", "DarkMagenta", "Magenta", "RESET"}
 
     'Templates array (available ones)
-    Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "LinuxUncolored", "LinuxColoredDef"}
+    Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "Windows95", "GTASA", "GrayOnYellow", "BlackOnWhite", "LinuxUncolored", "LinuxColoredDef"}
 
     'Variables for the "Default" theme
     Public inputColorDef As ConsoleColor = inputColor
@@ -120,6 +121,54 @@ Public Module Color
     Public neutralTextColorYBG As ConsoleColor = ConsoleColor.Black
     Public cmdListColorYBG As ConsoleColor = ConsoleColor.Black
     Public cmdDefColorYBG As ConsoleColor = ConsoleColor.Black
+
+    'Variables for the "Windows95" theme
+    Public inputColor95 As ConsoleColor = ConsoleColor.White
+    Public licenseColor95 As ConsoleColor = ConsoleColor.White
+    Public contKernelErrorColor95 As ConsoleColor = ConsoleColor.White
+    Public uncontKernelErrorColor95 As ConsoleColor = ConsoleColor.White
+    Public hostNameShellColor95 As ConsoleColor = ConsoleColor.White
+    Public userNameShellColor95 As ConsoleColor = ConsoleColor.White
+    Public backgroundColor95 As ConsoleColor = ConsoleColor.DarkCyan
+    Public neutralTextColor95 As ConsoleColor = ConsoleColor.White
+    Public cmdListColor95 As ConsoleColor = ConsoleColor.White
+    Public cmdDefColor95 As ConsoleColor = ConsoleColor.White
+
+    'Variables for the "GTASA" theme
+    Public inputColorSA As ConsoleColor = ConsoleColor.Yellow
+    Public licenseColorSA As ConsoleColor = ConsoleColor.Yellow
+    Public contKernelErrorColorSA As ConsoleColor = ConsoleColor.DarkYellow
+    Public uncontKernelErrorColorSA As ConsoleColor = ConsoleColor.DarkYellow
+    Public hostNameShellColorSA As ConsoleColor = ConsoleColor.Yellow
+    Public userNameShellColorSA As ConsoleColor = ConsoleColor.DarkYellow
+    Public backgroundColorSA As ConsoleColor = ConsoleColor.Black
+    Public neutralTextColorSA As ConsoleColor = ConsoleColor.White
+    Public cmdListColorSA As ConsoleColor = ConsoleColor.Yellow
+    Public cmdDefColorSA As ConsoleColor = ConsoleColor.DarkYellow
+
+    'Variables for the "GrayOnYellow" theme
+    Public inputColorGY As ConsoleColor = ConsoleColor.Gray
+    Public licenseColorGY As ConsoleColor = ConsoleColor.Gray
+    Public contKernelErrorColorGY As ConsoleColor = ConsoleColor.Gray
+    Public uncontKernelErrorColorGY As ConsoleColor = ConsoleColor.Gray
+    Public hostNameShellColorGY As ConsoleColor = ConsoleColor.Gray
+    Public userNameShellColorGY As ConsoleColor = ConsoleColor.Gray
+    Public backgroundColorGY As ConsoleColor = ConsoleColor.DarkYellow
+    Public neutralTextColorGY As ConsoleColor = ConsoleColor.Gray
+    Public cmdListColorGY As ConsoleColor = ConsoleColor.Gray
+    Public cmdDefColorGY As ConsoleColor = ConsoleColor.Gray
+
+    'Variables for the "BlackOnWhite" theme
+    Public inputColorBY As ConsoleColor = ConsoleColor.Black
+    Public licenseColorBY As ConsoleColor = ConsoleColor.Black
+    Public contKernelErrorColorBY As ConsoleColor = ConsoleColor.Black
+    Public uncontKernelErrorColorBY As ConsoleColor = ConsoleColor.Black
+    Public hostNameShellColorBY As ConsoleColor = ConsoleColor.Black
+    Public userNameShellColorBY As ConsoleColor = ConsoleColor.Black
+    Public backgroundColorBY As ConsoleColor = ConsoleColor.White
+    Public neutralTextColorBY As ConsoleColor = ConsoleColor.Black
+    Public cmdListColorBY As ConsoleColor = ConsoleColor.Black
+    Public cmdDefColorBY As ConsoleColor = ConsoleColor.Black
 
     'Variables for the "LinuxUncolored" theme
     Public inputColorLUnc As ConsoleColor = ConsoleColor.Gray
@@ -241,6 +290,54 @@ Public Module Color
                 neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColorYBG), ConsoleColor)
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), cmdListColorYBG), ConsoleColor)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), cmdDefColorYBG), ConsoleColor)
+                Load()
+            ElseIf theme = "Windows95" Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColor), inputColor95), ConsoleColor)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColor), licenseColor95), ConsoleColor)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), contKernelErrorColor95), ConsoleColor)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), uncontKernelErrorColor95), ConsoleColor)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), hostNameShellColor95), ConsoleColor)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), userNameShellColor95), ConsoleColor)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), backgroundColor95), ConsoleColor)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColor95), ConsoleColor)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), cmdListColor95), ConsoleColor)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), cmdDefColor95), ConsoleColor)
+                Load()
+            ElseIf theme = "GTASA" Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColor), inputColorSA), ConsoleColor)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColor), licenseColorSA), ConsoleColor)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), contKernelErrorColorSA), ConsoleColor)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), uncontKernelErrorColorSA), ConsoleColor)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), hostNameShellColorSA), ConsoleColor)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), userNameShellColorSA), ConsoleColor)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), backgroundColorSA), ConsoleColor)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColorSA), ConsoleColor)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), cmdListColorSA), ConsoleColor)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), cmdDefColorSA), ConsoleColor)
+                Load()
+            ElseIf theme = "GrayOnYellow" Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColor), inputColorGY), ConsoleColor)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColor), licenseColorGY), ConsoleColor)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), contKernelErrorColorGY), ConsoleColor)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), uncontKernelErrorColorGY), ConsoleColor)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), hostNameShellColorGY), ConsoleColor)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), userNameShellColorGY), ConsoleColor)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), backgroundColorGY), ConsoleColor)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColorGY), ConsoleColor)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), cmdListColorGY), ConsoleColor)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), cmdDefColorGY), ConsoleColor)
+                Load()
+            ElseIf theme = "BlackOnWhite" Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColor), inputColorBY), ConsoleColor)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColor), licenseColorBY), ConsoleColor)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), contKernelErrorColorBY), ConsoleColor)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), uncontKernelErrorColorBY), ConsoleColor)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), hostNameShellColorBY), ConsoleColor)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), userNameShellColorBY), ConsoleColor)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), backgroundColorBY), ConsoleColor)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), neutralTextColorBY), ConsoleColor)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), cmdListColorBY), ConsoleColor)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), cmdDefColorBY), ConsoleColor)
                 Load()
             ElseIf theme = "LinuxUncolored" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColor), inputColorLUnc), ConsoleColor)
@@ -372,6 +469,50 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorYBG.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorYBG.ToString Then
             currentTheme = "YellowBG"
+        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColor95.ToString And
+               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColor95.ToString And
+               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColor95.ToString And
+               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColor95.ToString And
+               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColor95.ToString And
+               ksconf.Sections("Colors").Keys("License Color").Value = licenseColor95.ToString And
+               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColor95.ToString And
+               ksconf.Sections("Colors").Keys("Input Color").Value = inputColor95.ToString And
+               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColor95.ToString And
+               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColor95.ToString Then
+            currentTheme = "Windows95"
+        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorSA.ToString And
+               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorSA.ToString And
+               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorSA.ToString And
+               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorSA.ToString And
+               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorSA.ToString And
+               ksconf.Sections("Colors").Keys("License Color").Value = licenseColorSA.ToString And
+               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorSA.ToString And
+               ksconf.Sections("Colors").Keys("Input Color").Value = inputColorSA.ToString And
+               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorSA.ToString And
+               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorSA.ToString Then
+            currentTheme = "GTASA"
+        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorGY.ToString And
+               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorGY.ToString And
+               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorGY.ToString And
+               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorGY.ToString And
+               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorGY.ToString And
+               ksconf.Sections("Colors").Keys("License Color").Value = licenseColorGY.ToString And
+               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorGY.ToString And
+               ksconf.Sections("Colors").Keys("Input Color").Value = inputColorGY.ToString And
+               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorGY.ToString And
+               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorGY.ToString Then
+            currentTheme = "GrayOnYellow"
+        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorBY.ToString And
+               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorBY.ToString And
+               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorBY.ToString And
+               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorBY.ToString And
+               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorBY.ToString And
+               ksconf.Sections("Colors").Keys("License Color").Value = licenseColorBY.ToString And
+               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorBY.ToString And
+               ksconf.Sections("Colors").Keys("Input Color").Value = inputColorBY.ToString And
+               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorBY.ToString And
+               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorBY.ToString Then
+            currentTheme = "BlackOnWhite"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorLUnc.ToString And
