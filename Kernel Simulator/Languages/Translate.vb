@@ -18,8 +18,8 @@
 Public Module Translate
 
     'Variables
-    'TODO: Ask user if they want to use transliterated or translated
     Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "mal", "ndo", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb"}
+    Public Transliterables() As String = {"arb", "chi", "ind", "jpn", "rus"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
 
@@ -127,7 +127,26 @@ Public Module Translate
     End Function
 
     Public Sub SetLang(ByVal lang As String)
-        If availableLangs.Contains(lang) Then
+        If availableLangs.Contains(lang) And Not lang.EndsWith("-T") Then 'The second condition prevents tricksters from using "chlang <lang>-T"
+            'Check to see if the language is transliterable
+            Wdbg("Transliterable? {0}", Transliterables.Contains(lang))
+            If Transliterables.Contains(lang) Then
+                W(DoTranslation("The language you've selected contains two variants. Select one:", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
+                W(DoTranslation("2. Translated", lang + "-T") + vbNewLine, True, ColTypes.Neutral)
+CHOICE:
+                W(DoTranslation("Select your choice:", currentLang), False, ColTypes.Input)
+                Dim cho As String = Console.ReadKey(True).KeyChar
+                Console.WriteLine()
+                Wdbg("Choice: {0}", cho)
+                If cho = "2" Then
+                    lang += "-T"
+                ElseIf Not cho = "1" Then
+                    W(DoTranslation("Invalid choice. Try again.", currentLang), True, ColTypes.Neutral)
+                    GoTo CHOICE
+                End If
+            End If
+
             'Set appropriate codepage for incapable terminals
             Select Case lang
                 Case "arb-T"
