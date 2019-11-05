@@ -291,7 +291,7 @@ Public Module KernelTools
         If instanceChecked = False Then MultiInstance()
 
         'Open debugging stream
-        dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
+        If dbgWriter Is Nothing Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
 
         'Create config file and then read it
         InitializeConfig()
@@ -309,6 +309,9 @@ Public Module KernelTools
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
         W("OS: " + DoTranslation("Running on {0}", currentLang), True, ColTypes.Neutral, EnvironmentOSType)
+#If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends, change the compiler constant value to "REL" to suppress this message out of stable versions
+        W(DoTranslation("Looks like you were running the development version of the next version. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version or lower.", currentLang), True, ColTypes.Neutral)
+#End If
 
         'Parse real command-line arguments
         For Each argu In Environment.GetCommandLineArgs
