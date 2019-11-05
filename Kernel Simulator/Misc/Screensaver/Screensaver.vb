@@ -41,79 +41,84 @@ Public Module Screensaver
     End Interface
 
     Sub ShowSavers(ByVal saver As String)
-        InSaver = True
-        EventManager.RaisePreShowScreensaver()
-        Wdbg("Requested screensaver: {0}", saver)
-        If saver = "colorMix" Then
-            ColorMix.WorkerSupportsCancellation = True
-            ColorMix.RunWorkerAsync()
-            Wdbg("ColorMix started")
-            Console.ReadKey()
-            ColorMix.CancelAsync()
-            Thread.Sleep(150)
-        ElseIf saver = "matrix" Then
-            Matrix.WorkerSupportsCancellation = True
-            Matrix.RunWorkerAsync()
-            Wdbg("Matrix started")
-            Console.ReadKey()
-            Matrix.CancelAsync()
-            Thread.Sleep(150)
-        ElseIf saver = "glitterMatrix" Then
-            GlitterMatrix.WorkerSupportsCancellation = True
-            GlitterMatrix.RunWorkerAsync()
-            Wdbg("Glitter Matrix started")
-            Console.ReadKey()
-            GlitterMatrix.CancelAsync()
-            Thread.Sleep(150)
-        ElseIf saver = "disco" Then
-            Disco.WorkerSupportsCancellation = True
-            Disco.RunWorkerAsync()
-            Wdbg("Disco started")
-            Console.ReadKey()
-            Disco.CancelAsync()
-            Thread.Sleep(150)
-        ElseIf saver = "lines" Then
-            Lines.WorkerSupportsCancellation = True
-            Lines.RunWorkerAsync()
-            Wdbg("Lines started")
-            Console.ReadKey()
-            Lines.CancelAsync()
-            Thread.Sleep(150)
-        ElseIf saver = "glitterColor" Then
-            GlitterColor.WorkerSupportsCancellation = True
-            GlitterColor.RunWorkerAsync()
-            Wdbg("Glitter Color started")
-            Console.ReadKey()
-            GlitterColor.CancelAsync()
-            Thread.Sleep(150)
-        ElseIf saver = "aptErrorSim" Then
-            AptErrorSim.WorkerSupportsCancellation = True
-            AptErrorSim.RunWorkerAsync()
-            Wdbg("apt Error Simulator started")
-            Console.ReadKey()
-            AptErrorSim.CancelAsync()
-            Thread.Sleep(150)
-        ElseIf saver = "hackUserFromAD" Then
-            HackUserFromAD.WorkerSupportsCancellation = True
-            HackUserFromAD.RunWorkerAsync()
-            Wdbg("Hacking Simulator for Active Domain users started")
-            Console.ReadKey()
-            HackUserFromAD.CancelAsync()
-            Thread.Sleep(150)
-        ElseIf ScrnSvrdb.ContainsKey(saver) Then
-            'Only one custom screensaver can be used.
-            Custom.WorkerSupportsCancellation = True
-            Custom.RunWorkerAsync()
-            Wdbg("Custom screensaver {0} started", saver)
-            Console.ReadKey()
-            Custom.CancelAsync()
-            Thread.Sleep(150)
-        Else
-            W(DoTranslation("The requested screensaver {0} is not found.", currentLang), True, ColTypes.Neutral, saver)
-            Wdbg("Screensaver {0} not found in the dictionary.", saver)
-        End If
-        EventManager.RaisePostShowScreensaver()
-        InSaver = False
+        Try
+            InSaver = True
+            EventManager.RaisePreShowScreensaver()
+            Wdbg("Requested screensaver: {0}", saver)
+            If saver = "colorMix" Then
+                ColorMix.WorkerSupportsCancellation = True
+                ColorMix.RunWorkerAsync()
+                Wdbg("ColorMix started")
+                Console.ReadKey()
+                ColorMix.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "matrix" Then
+                Matrix.WorkerSupportsCancellation = True
+                Matrix.RunWorkerAsync()
+                Wdbg("Matrix started")
+                Console.ReadKey()
+                Matrix.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "glitterMatrix" Then
+                GlitterMatrix.WorkerSupportsCancellation = True
+                GlitterMatrix.RunWorkerAsync()
+                Wdbg("Glitter Matrix started")
+                Console.ReadKey()
+                GlitterMatrix.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "disco" Then
+                Disco.WorkerSupportsCancellation = True
+                Disco.RunWorkerAsync()
+                Wdbg("Disco started")
+                Console.ReadKey()
+                Disco.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "lines" Then
+                Lines.WorkerSupportsCancellation = True
+                Lines.RunWorkerAsync()
+                Wdbg("Lines started")
+                Console.ReadKey()
+                Lines.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "glitterColor" Then
+                GlitterColor.WorkerSupportsCancellation = True
+                GlitterColor.RunWorkerAsync()
+                Wdbg("Glitter Color started")
+                Console.ReadKey()
+                GlitterColor.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "aptErrorSim" Then
+                AptErrorSim.WorkerSupportsCancellation = True
+                AptErrorSim.RunWorkerAsync()
+                Wdbg("apt Error Simulator started")
+                Console.ReadKey()
+                AptErrorSim.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "hackUserFromAD" Then
+                HackUserFromAD.WorkerSupportsCancellation = True
+                HackUserFromAD.RunWorkerAsync()
+                Wdbg("Hacking Simulator for Active Domain users started")
+                Console.ReadKey()
+                HackUserFromAD.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf ScrnSvrdb.ContainsKey(saver) Then
+                'Only one custom screensaver can be used.
+                Custom.WorkerSupportsCancellation = True
+                Custom.RunWorkerAsync()
+                Wdbg("Custom screensaver {0} started", saver)
+                Console.ReadKey()
+                Custom.CancelAsync()
+                Thread.Sleep(150)
+            Else
+                W(DoTranslation("The requested screensaver {0} is not found.", currentLang), True, ColTypes.Neutral, saver)
+                Wdbg("Screensaver {0} not found in the dictionary.", saver)
+            End If
+            EventManager.RaisePostShowScreensaver()
+            InSaver = False
+        Catch ex As InvalidOperationException
+            W(DoTranslation("Error when trying to start screensaver, because of an invalid operation.", currentLang), True, ColTypes.Neutral)
+            WStkTrc(ex)
+        End Try
     End Sub
 
     Sub CompileCustom(ByVal file As String)

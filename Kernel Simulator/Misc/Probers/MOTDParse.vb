@@ -30,39 +30,49 @@ Module MOTDParse
     End Enum
 
     Public Sub SetMOTD(ByVal MOTD As String, ByVal MType As MessageType)
-        MOTDFilePath = paths("Home") + "/MOTD.txt"
-        MALFilePath = paths("Home") + "/MAL.txt"
-        If MType = 1 Then
-            MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
-            MOTDStreamW.WriteLine(MOTD)
-            MOTDMessage = MOTD
-        ElseIf MType = 2 Then
-            MOTDStreamW = New IO.StreamWriter(MALFilePath) With {.AutoFlush = True}
-            MOTDStreamW.Write(MOTD)
-            MAL = MOTD
-        Else
-            W(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...", currentLang), True, ColTypes.Neutral)
-            MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
-            MOTDStreamW.WriteLine(MOTD)
-            MOTDMessage = MOTD
-        End If
-        MOTDStreamW.Close()
+        Try
+            MOTDFilePath = paths("Home") + "/MOTD.txt"
+            MALFilePath = paths("Home") + "/MAL.txt"
+            If MType = 1 Then
+                MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
+                MOTDStreamW.WriteLine(MOTD)
+                MOTDMessage = MOTD
+            ElseIf MType = 2 Then
+                MOTDStreamW = New IO.StreamWriter(MALFilePath) With {.AutoFlush = True}
+                MOTDStreamW.Write(MOTD)
+                MAL = MOTD
+            Else
+                W(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...", currentLang), True, ColTypes.Neutral)
+                MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
+                MOTDStreamW.WriteLine(MOTD)
+                MOTDMessage = MOTD
+            End If
+            MOTDStreamW.Close()
+        Catch ex As Exception
+            W(DoTranslation("Error when trying to set MOTD: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            WStkTrc(ex)
+        End Try
     End Sub
     Public Sub ReadMOTDFromFile(ByVal MType As MessageType)
-        MOTDFilePath = paths("Home") + "/MOTD.txt"
-        MALFilePath = paths("Home") + "/MAL.txt"
-        Dim MOTDBuilder As New Text.StringBuilder
-        If MType = 1 Then
-            MOTDStreamR = New IO.StreamReader(MOTDFilePath)
-            MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
-            MOTDMessage = MOTDBuilder.ToString
-        ElseIf MType = 2 Then
-            MOTDStreamR = New IO.StreamReader(MALFilePath)
-            MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
-            MAL = MOTDBuilder.ToString
-        Else
-            W(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type.", currentLang), True, ColTypes.Neutral)
-        End If
-        MOTDStreamR.Close()
+        Try
+            MOTDFilePath = paths("Home") + "/MOTD.txt"
+            MALFilePath = paths("Home") + "/MAL.txt"
+            Dim MOTDBuilder As New Text.StringBuilder
+            If MType = 1 Then
+                MOTDStreamR = New IO.StreamReader(MOTDFilePath)
+                MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
+                MOTDMessage = MOTDBuilder.ToString
+            ElseIf MType = 2 Then
+                MOTDStreamR = New IO.StreamReader(MALFilePath)
+                MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
+                MAL = MOTDBuilder.ToString
+            Else
+                W(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type.", currentLang), True, ColTypes.Neutral)
+            End If
+            MOTDStreamR.Close()
+        Catch ex As Exception
+            W(DoTranslation("Error when trying to get MOTD: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            WStkTrc(ex)
+        End Try
     End Sub
 End Module

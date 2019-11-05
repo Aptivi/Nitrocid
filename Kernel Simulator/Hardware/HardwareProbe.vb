@@ -177,6 +177,7 @@ Public Module HardwareProbe
             CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name, .SSE2 = SSE2})
         Catch ex As Exception
             CPUDone = False
+            KernelError("C", False, 0, DoTranslation("Error while checking CPU: {0}", currentLang), ex, ex.Message)
             If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
         End Try
 
@@ -188,6 +189,7 @@ Public Module HardwareProbe
             RAMList.Add(New RAM_Linux With {.Capacity = mem})
         Catch ex As Exception
             RAMDone = False
+            KernelError("C", False, 0, DoTranslation("Error while checking RAM: {0}", currentLang), ex, ex.Message)
             If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
         End Try
 
@@ -218,6 +220,7 @@ Public Module HardwareProbe
             Next
         Catch ex As Exception
             HDDDone = False
+            KernelError("C", False, 0, DoTranslation("Error while checking HDD: {0}", currentLang), ex, ex.Message)
             If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
         End Try
     End Sub
@@ -226,7 +229,7 @@ Public Module HardwareProbe
     Public Sub ListDrivers() 'Windows
         'Variables
         Dim times As Integer = 1
-        Dim total As UInt64
+        Dim total As ULong
 
         'CPU Info
         For Each processorinfo In CPUList
@@ -238,8 +241,10 @@ Public Module HardwareProbe
             End If
 
             'SSE2 availability
-            If CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available) Then
+            If CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available) Then 'After SSE2 requirement addition, remove the check.
                 W(" : SSE2", True, ColTypes.Neutral)
+            Else
+                W(DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Neutral)
             End If
         Next
         W(DoTranslation("CPU: Total number of processors: {0}", currentLang), True, ColTypes.Neutral, Environment.ProcessorCount)
@@ -287,8 +292,10 @@ Public Module HardwareProbe
         'CPU List
         For Each info As CPU_Linux In CPUList
             W("CPU: {0} {1} Mhz", False, ColTypes.Neutral, info.CPUName, info.Clock)
-            If info.SSE2 Then
+            If info.SSE2 Then 'After SSE2 requirement addition, remove the check.
                 W(" : SSE2", False, ColTypes.Neutral)
+            Else
+                W(DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Neutral)
             End If
             Console.WriteLine()
         Next

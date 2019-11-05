@@ -48,9 +48,9 @@ Public Module ModParser
             Exit Function
         End If
         Dim prm As New CompilerParameters With {
-                .GenerateExecutable = False,
-                .GenerateInMemory = True
-           }
+            .GenerateExecutable = False,
+            .GenerateInMemory = True
+        }
 
         'Add referenced assemblies
         Wdbg("Referenced assemblies will be added.")

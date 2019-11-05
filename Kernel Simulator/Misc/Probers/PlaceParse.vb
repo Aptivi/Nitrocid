@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Public Module PlaceParse
 
     'Placeholders (strings)
@@ -42,7 +44,17 @@ Public Module PlaceParse
             If text.Contains(stzplace) Then text = text.Replace(stzplace, TimeZone.CurrentTimeZone.DaylightName)
             If text.Contains(sysplace) Then text = text.Replace(sysplace, EnvironmentOSType)
             EventManager.RaisePlaceholderParsed()
-        Catch ex As NullReferenceException
+        Catch nre As NullReferenceException
+            Dim STrace As New StackTrace(True)
+            Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
+            Dim LineNum As String = STrace.GetFrame(1).GetFileLineNumber
+            WStkTrc(nre)
+            If DebugMode = True Then
+                W(DoTranslation("There is a null reference exception on {0}:{1} - Stack trace:", currentLang) + vbNewLine + nre.StackTrace, True, ColTypes.Neutral, Source, LineNum)
+            Else
+                W(DoTranslation("There is a null reference exception on {0}:{1}", currentLang), True, ColTypes.Neutral, Source, LineNum)
+            End If
+        Catch ex As Exception
             WStkTrc(ex)
             If DebugMode = True Then
                 W(DoTranslation("Error trying to parse placeholders. {0} - Stack trace:", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, ex.Message)

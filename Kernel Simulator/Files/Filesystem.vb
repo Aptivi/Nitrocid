@@ -28,10 +28,19 @@ Public Module Filesystem
         direct = $"{CurrDir}/{dir}"
         Wdbg("Directory {0} exists? {1}", direct, IO.Directory.Exists(direct))
         If IO.Directory.Exists(direct) Then
-            Dim Parser As New IO.DirectoryInfo(direct)
-            CurrDir = Parser.FullName.Replace("\", "/")
-            Wdbg("Initializing structure of {0}...", CurrDir)
-            InitStructure()
+            Try
+                Dim Parser As New IO.DirectoryInfo(direct)
+                CurrDir = Parser.FullName.Replace("\", "/")
+                Wdbg("Initializing structure of {0}...", CurrDir)
+                InitStructure()
+            Catch sex As Security.SecurityException
+                W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Neutral, direct, sex.Message)
+                W(DoTranslation("Permission {0} failed", currentLang), True, ColTypes.Neutral, sex.PermissionType)
+                WStkTrc(sex)
+            Catch ptlex As IO.PathTooLongException
+                W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Neutral)
+                WStkTrc(ptlex)
+            End Try
         Else
             W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Neutral, dir)
         End If
@@ -65,7 +74,26 @@ Public Module Filesystem
         Wdbg("Final folder: {0}", folder)
         If CurrDirStructure.Contains(folder) Then
             If IO.Directory.Exists(folder) Then
-                For Each Entry As String In IO.Directory.EnumerateFileSystemEntries(folder)
+                Dim enumeration As IEnumerable(Of String)
+                Try
+                    enumeration = IO.Directory.EnumerateFileSystemEntries(folder)
+                Catch sex As Security.SecurityException
+                    W(DoTranslation("You are unauthorized to list in {0}: {1}", currentLang), True, ColTypes.Neutral, folder, sex.Message)
+                    W(DoTranslation("Permission {0} failed", currentLang), True, ColTypes.Neutral, sex.PermissionType)
+                    WStkTrc(sex)
+                    Exit Sub
+                Catch ptlex As IO.PathTooLongException
+                    W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Neutral)
+                    WStkTrc(ptlex)
+                    Exit Sub
+                Catch ex As Exception
+                    W(DoTranslation("Unknown error while listing in directory: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+                    WStkTrc(ex)
+                    Exit Sub
+                End Try
+#Disable Warning BC42104
+                For Each Entry As String In enumeration
+#Enable Warning BC42104
                     Wdbg("Enumerating {0}...", Entry)
                     Try
                         If IO.File.Exists(Entry) Then

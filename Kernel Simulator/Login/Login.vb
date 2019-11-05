@@ -31,7 +31,7 @@ Public Module Login
 
     Sub LoginPrompt()
         While True
-
+            'Check to see if the reboot is requested
             If RebootRequested = True Then
                 RebootRequested = False
                 Exit Sub
@@ -81,7 +81,6 @@ Public Module Login
     End Sub
 
     Sub ShowPasswordPrompt(ByVal usernamerequested As String)
-
         'Error handler
         On Error Resume Next
 

@@ -127,68 +127,73 @@ Public Module KernelTools
     End Sub
 
     Sub GeneratePanicDump(ByVal Description As String, ByVal ErrorType As Char, ByVal Exc As Exception)
-        'Open a file stream for dump
-        Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{Date.Now.ToShortDateString.Replace("/", "-")}_{Date.Now.ToLongTimeString.Replace(":", "-")}.txt")
-        Wdbg("Opened file stream in home directory, saved as dmp_{0}_{1}.txt", $"{Date.Now.ToShortDateString.Replace("/", "-")}_{Date.Now.ToLongTimeString.Replace(":", "-")}")
+        Try
+            'Open a file stream for dump
+            Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{Date.Now.ToShortDateString.Replace("/", "-")}_{Date.Now.ToLongTimeString.Replace(":", "-")}.txt")
+            Wdbg("Opened file stream in home directory, saved as dmp_{0}_{1}.txt", $"{Date.Now.ToShortDateString.Replace("/", "-")}_{Date.Now.ToLongTimeString.Replace(":", "-")}")
 
-        'Write info (Header)
-        Dump.AutoFlush = True
-        Dump.WriteLine(DoTranslation("----------------------------- Kernel panic dump -----------------------------", currentLang) + vbNewLine + vbNewLine +
-                       DoTranslation(">> Panic information <<", currentLang) + vbNewLine +
-                       DoTranslation("> Description: {0}", currentLang) + vbNewLine +
-                       DoTranslation("> Error type: {1}", currentLang) + vbNewLine +
-                       DoTranslation("> Date and Time: {2}", currentLang) + vbNewLine, Description, ErrorType, FormatDateTime(Date.Now, DateFormat.GeneralDate))
+            'Write info (Header)
+            Dump.AutoFlush = True
+            Dump.WriteLine(DoTranslation("----------------------------- Kernel panic dump -----------------------------", currentLang) + vbNewLine + vbNewLine +
+                           DoTranslation(">> Panic information <<", currentLang) + vbNewLine +
+                           DoTranslation("> Description: {0}", currentLang) + vbNewLine +
+                           DoTranslation("> Error type: {1}", currentLang) + vbNewLine +
+                           DoTranslation("> Date and Time: {2}", currentLang) + vbNewLine, Description, ErrorType, FormatDateTime(Date.Now, DateFormat.GeneralDate))
 
-        'Write Info (Exception)
-        If Not IsNothing(Exc) Then
-            Dim Count As Integer = 1
-            Dump.WriteLine(DoTranslation(">> Exception information <<", currentLang) + vbNewLine +
-                           DoTranslation("> Exception: {0}", currentLang) + vbNewLine +
-                           DoTranslation("> Description: {1}", currentLang) + vbNewLine +
-                           DoTranslation("> HRESULT: {2}", currentLang) + vbNewLine +
-                           DoTranslation("> Source: {3}", currentLang) + vbNewLine + vbNewLine +
-                           DoTranslation("> Stack trace <", currentLang) + vbNewLine + vbNewLine +
-                           Exc.StackTrace + vbNewLine + vbNewLine +
-                           DoTranslation(">> Inner exception {0} information <<", currentLang), Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), Exc.Message, Exc.HResult, Exc.Source)
-
-            'Write info (Inner exceptions)
-            Dim InnerExc As Exception = Exc.InnerException
-            While Not InnerExc Is Nothing
-                Count += 1
-                Dump.WriteLine(DoTranslation("> Exception: {0}", currentLang) + vbNewLine +
+            'Write Info (Exception)
+            If Not IsNothing(Exc) Then
+                Dim Count As Integer = 1
+                Dump.WriteLine(DoTranslation(">> Exception information <<", currentLang) + vbNewLine +
+                               DoTranslation("> Exception: {0}", currentLang) + vbNewLine +
                                DoTranslation("> Description: {1}", currentLang) + vbNewLine +
                                DoTranslation("> HRESULT: {2}", currentLang) + vbNewLine +
                                DoTranslation("> Source: {3}", currentLang) + vbNewLine + vbNewLine +
                                DoTranslation("> Stack trace <", currentLang) + vbNewLine + vbNewLine +
-                               InnerExc.StackTrace + vbNewLine, InnerExc.ToString.Substring(0, InnerExc.ToString.IndexOf(":")), InnerExc.Message, InnerExc.HResult, InnerExc.Source)
-                InnerExc = InnerExc.InnerException
-                If Not InnerExc Is Nothing Then
-                    Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<", currentLang), Count)
-                Else
-                    Dump.WriteLine(DoTranslation(">> Exception {0} is the root cause <<", currentLang) + vbNewLine, Count)
-                End If
-            End While
-        Else
-            Dump.WriteLine(DoTranslation(">> No exception; might be a kernel error. <<", currentLang) + vbNewLine)
-        End If
+                               Exc.StackTrace + vbNewLine + vbNewLine +
+                               DoTranslation(">> Inner exception {0} information <<", currentLang), Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), Exc.Message, Exc.HResult, Exc.Source)
 
-        'Write info (Frames)
-        Dump.WriteLine(DoTranslation(">> Frames, files, lines, and columns <<", currentLang))
-        Try
-            Dim ExcTrace As New StackTrace(Exc, True)
-            Dim FrameNo As Integer = 1
-            For Each Frame As StackFrame In ExcTrace.GetFrames
-                Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}", currentLang), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
-                FrameNo += 1
-            Next
+                'Write info (Inner exceptions)
+                Dim InnerExc As Exception = Exc.InnerException
+                While Not InnerExc Is Nothing
+                    Count += 1
+                    Dump.WriteLine(DoTranslation("> Exception: {0}", currentLang) + vbNewLine +
+                                   DoTranslation("> Description: {1}", currentLang) + vbNewLine +
+                                   DoTranslation("> HRESULT: {2}", currentLang) + vbNewLine +
+                                   DoTranslation("> Source: {3}", currentLang) + vbNewLine + vbNewLine +
+                                   DoTranslation("> Stack trace <", currentLang) + vbNewLine + vbNewLine +
+                                   InnerExc.StackTrace + vbNewLine, InnerExc.ToString.Substring(0, InnerExc.ToString.IndexOf(":")), InnerExc.Message, InnerExc.HResult, InnerExc.Source)
+                    InnerExc = InnerExc.InnerException
+                    If Not InnerExc Is Nothing Then
+                        Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<", currentLang), Count)
+                    Else
+                        Dump.WriteLine(DoTranslation(">> Exception {0} is the root cause <<", currentLang) + vbNewLine, Count)
+                    End If
+                End While
+            Else
+                Dump.WriteLine(DoTranslation(">> No exception; might be a kernel error. <<", currentLang) + vbNewLine)
+            End If
+
+            'Write info (Frames)
+            Dump.WriteLine(DoTranslation(">> Frames, files, lines, and columns <<", currentLang))
+            Try
+                Dim ExcTrace As New StackTrace(Exc, True)
+                Dim FrameNo As Integer = 1
+                For Each Frame As StackFrame In ExcTrace.GetFrames
+                    Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}", currentLang), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
+                    FrameNo += 1
+                Next
+            Catch ex As Exception
+                WStkTrc(ex)
+                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}", currentLang), ex.ToString.Substring(0, ex.ToString.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
+            End Try
+
+            'Close stream
+            Wdbg("Closing file stream for dump...")
+            Dump.Flush() : Dump.Close()
         Catch ex As Exception
+            W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}", currentLang), True, ColTypes.Neutral, Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), ex.Message)
             WStkTrc(ex)
-            Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}", currentLang), ex.ToString.Substring(0, ex.ToString.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
         End Try
-
-        'Close stream
-        Wdbg("Closing file stream for dump...")
-        Dump.Flush() : Dump.Close()
     End Sub
 
     ' ----------------------------------------------- Power management -----------------------------------------------
@@ -370,7 +375,7 @@ Public Module KernelTools
         instanceChecked = True
     End Sub
 
-    Function GetCompileDate() As DateTime
+    Function GetCompileDate() As DateTime 'Always successful, no need to put Try Catch
         'Variables and Constants
         Const Offset As Integer = 60 : Const LTOff As Integer = 8
         Dim asmByte(2047) As Byte : Dim asmStream As Stream
@@ -391,26 +396,32 @@ Public Module KernelTools
         'Now return compile date
         Return dt
     End Function
-    Function GetCompileDate(ByVal Asm As Assembly) As DateTime
-        'Variables and Constants
-        Const Offset As Integer = 60 : Const LTOff As Integer = 8
-        Dim asmByte(2047) As Byte : Dim asmStream As Stream
-        Dim codePath As Assembly = Asm
-
-        'Get compile date
-        asmStream = New FileStream(Path.GetFullPath(codePath.Location), FileMode.Open, FileAccess.Read)
-        asmStream.Read(asmByte, 0, 2048)
-        If Not asmStream Is Nothing Then asmStream.Close()
-
-        'We are almost there
-        Dim i64 As Integer = BitConverter.ToInt32(asmByte, Offset)
-        Dim compileseconds As Integer = BitConverter.ToInt32(asmByte, i64 + LTOff)
+#If SPECIFIER = "DEV" Then
+    Function GetCompileDate(ByVal Asm As Assembly) As DateTime 'Only exists in development version.
         Dim dt As New DateTime(1970, 1, 1, 0, 0, 0)
-        dt = dt.AddSeconds(compileseconds)
-        dt = dt.AddHours(TimeZone.CurrentTimeZone.GetUtcOffset(dt).Hours)
+        Try
+            'Variables and Constants
+            Const Offset As Integer = 60 : Const LTOff As Integer = 8
+            Dim asmByte(2047) As Byte : Dim asmStream As Stream
+            Dim codePath As Assembly = Asm
+
+            'Get compile date
+            asmStream = New FileStream(Path.GetFullPath(codePath.Location), FileMode.Open, FileAccess.Read)
+            asmStream.Read(asmByte, 0, 2048)
+            If Not asmStream Is Nothing Then asmStream.Close()
+
+            'We are almost there
+            Dim i64 As Integer = BitConverter.ToInt32(asmByte, Offset)
+            Dim compileseconds As Integer = BitConverter.ToInt32(asmByte, i64 + LTOff)
+            dt = dt.AddSeconds(compileseconds)
+            dt = dt.AddHours(TimeZone.CurrentTimeZone.GetUtcOffset(dt).Hours)
+        Catch ex As Exception
+            W(DoTranslation("Error while trying to get compile date of assembly {0}: {1}", currentLang), True, ColTypes.Neutral, Asm.CodeBase, ex.Message)
+        End Try
 
         'Now return compile date
         Return dt
     End Function
+#End If
 
 End Module
