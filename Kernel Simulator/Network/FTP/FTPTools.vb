@@ -75,6 +75,7 @@ Module FTPTools
                                 profanswered = True
                             Catch ex As Exception
                                 W(DoTranslation("Invalid profile selection.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                                WStkTrc(ex)
                             End Try
                         End If
                     End While

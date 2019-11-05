@@ -182,6 +182,7 @@ Public Module KernelTools
                 FrameNo += 1
             Next
         Catch ex As Exception
+            WStkTrc(ex)
             Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}", currentLang), ex.ToString.Substring(0, ex.ToString.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
         End Try
 

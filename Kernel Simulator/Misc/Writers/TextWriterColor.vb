@@ -66,6 +66,7 @@ Public Module TextWriterColor
                         dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
                     Catch ex As Exception
                         OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
+                        WStkTrc(ex)
                     End Try
                 Next
                 'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
@@ -76,6 +77,7 @@ Public Module TextWriterColor
                         dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
                     Catch ex As Exception
                         OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
+                        WStkTrc(ex)
                     End Try
                 Next
                 'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
@@ -119,6 +121,7 @@ Public Module TextWriterColor
                 Wdbg("Max debug quota size exceeded, was {0} MB.", FormatNumber(OldSize / 1024 / 1024, 1))
             End If
         Catch ex As Exception
+            WStkTrc(ex)
             Exit Sub
         End Try
     End Sub
@@ -178,6 +181,7 @@ Public Module TextWriterColor
             If Console.BackgroundColor = ConsoleColor.Black Then ResetColor()
             If colorType = ColTypes.Input And ColoredShell = True Then ForegroundColor = inputColor
         Catch ex As Exception
+            WStkTrc(ex)
             KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
         End Try
 

@@ -62,6 +62,7 @@ Public Module NetworkTools
                         W(DoTranslation("Failed to get properties for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
                         Failed = True
                     End If
+                    WStkTrc(ex)
                 End Try
                 'TODO: GetIPv6Statistics not implemented yet.
                 If s Is Nothing Then
@@ -117,6 +118,7 @@ Public Module NetworkTools
             Catch ex As Exception
                 W(DoTranslation("Download failed in try {0}: {1}", currentLang), True, ColTypes.Neutral, RetryCount, ex.Message)
                 RetryCount += 1
+                WStkTrc(ex)
             End Try
         End While
     End Sub
