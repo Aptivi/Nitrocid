@@ -41,7 +41,9 @@ Public Module ScreensaverDisplays
         Console.CursorVisible = False
         finalSaver.PreDisplay()
         Do While True
-            'Thread.Sleep(1)
+            If Not finalSaver.DelayForEachWrite = Nothing Then
+                Thread.Sleep(finalSaver.DelayForEachWrite)
+            End If
             If Custom.CancellationPending = True Then
                 Wdbg("Cancellation requested. Showing ending...")
                 finalSaver.PostDisplay()

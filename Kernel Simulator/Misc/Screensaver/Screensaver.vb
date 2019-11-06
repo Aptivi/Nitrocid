@@ -39,6 +39,7 @@ Public Module Screensaver
         Sub PostDisplay() 'Code after stopping screensaver
         Sub ScrnSaver() 'Code during the screensaver
         Property Initialized As Boolean
+        Property DelayForEachWrite As Integer
     End Interface
 
     Sub ShowSavers(ByVal saver As String)
@@ -109,7 +110,7 @@ Public Module Screensaver
                 Wdbg("Custom screensaver {0} started", saver)
                 Console.ReadKey()
                 Custom.CancelAsync()
-                Thread.Sleep(150)
+                Thread.Sleep(150) 'Nothing to do with operation inside screensaver
             Else
                 W(DoTranslation("The requested screensaver {0} is not found.", currentLang), True, ColTypes.Neutral, saver)
                 Wdbg("Screensaver {0} not found in the dictionary.", saver)
