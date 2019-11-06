@@ -113,7 +113,7 @@ Public Module Login
                     End If
                 End While
                 Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(answerpass))
-                answerpass = GetArray(hashbyte)
+                answerpass = GetArraySHA256(hashbyte)
 
                 'Parse password input
                 If InStr(answerpass, " ") > 0 Then

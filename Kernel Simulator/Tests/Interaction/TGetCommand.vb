@@ -15,6 +15,9 @@
 '
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+Imports System.Security.Cryptography
+Imports System.Text
+
 Module TGetCommand
 
     Sub TParseCommand(ByVal FullCmd As String)
@@ -96,6 +99,20 @@ Module TGetCommand
             W(DoTranslation(Message, Lang), True, ColTypes.Neutral)
         ElseIf Cmd = "places" Then 'Usage: places <Message> | Same as print, but with no option to change colors, etc. Only message with placeholder support
             W(ProbePlaces(FullArgs), True, ColTypes.Neutral)
+        ElseIf Cmd = "testsha256" Then
+            Dim spent As New Stopwatch
+            spent.Start() 'Time when you're on a breakpoint is counted
+            Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(FullArgs))
+            W(GetArraySHA256(hashbyte), True, ColTypes.Neutral)
+            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+            spent.Stop()
+        ElseIf Cmd = "testmd5" Then
+            Dim spent As New Stopwatch
+            spent.Start() 'Time when you're on a breakpoint is counted
+            Dim hashbyte As Byte() = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(FullArgs))
+            W(GetArrayMD5(hashbyte), True, ColTypes.Neutral)
+            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+            spent.Stop()
         ElseIf Cmd = "loadmods" Then 'Usage: loadmods <Enable>
             If FullArgsL.Count - 1 = 0 Then ParseMods(FullArgsL(0))
         ElseIf Cmd = "debug" Then 'Usage: debug <Enable>
@@ -125,6 +142,8 @@ Module TGetCommand
               "- panic <ErrorType> <Reboot> <RebootTime> <Description>" + vbNewLine +
               "- panicf <ErrorType> <Reboot> <RebootTime> <Variable1;Variable2;Variable3;...> <Description>" + vbNewLine +
               "- translate <Lang> <Message>" + vbNewLine +
+              "- testsha256 <Message>" + vbNewLine +
+              "- testmd5 <Message>" + vbNewLine +
               "- debug <Enable>" + vbNewLine +
               "- rdebug <Enable>" + vbNewLine +
               "- testevent <Event>" + vbNewLine +

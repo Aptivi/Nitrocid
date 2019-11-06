@@ -16,8 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module KS_SHA256
-    Public Function GetArraySHA256(ByVal encrypted As Byte()) As String
+Module KS_MD5
+    Public Function GetArrayMD5(ByVal encrypted As Byte()) As String
         Dim hash As String = ""
         For i As Integer = 0 To encrypted.Length - 1
             hash += $"{encrypted(i):X2}"

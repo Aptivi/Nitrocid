@@ -30,7 +30,7 @@ Public Module UserManagement
 
         Try
             Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(unpassword))
-            unpassword = GetArray(hashbyte)
+            unpassword = GetArraySHA256(hashbyte)
             userword.Add(uninitUser, unpassword)
             Wdbg("Username {0} added. Readying permissions...", uninitUser)
             adminList.Add(uninitUser, False)
