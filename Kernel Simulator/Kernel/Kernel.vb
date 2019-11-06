@@ -73,11 +73,14 @@ Public Module Kernel
                 'Phase 3: Parse Mods and Screensavers
                 WriteWhere("3/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 3: Parse mods and screensavers")
-                ParseMods(True)
-                Dim modPath As String = paths("Mods")
-                For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
-                    CompileCustom(modFile.Replace(modPath, ""))
-                Next
+                Wdbg("Safe mode flag is set to {0}", SafeMode)
+                If Not SafeMode Then
+                    ParseMods(True)
+                    Dim modPath As String = paths("Mods")
+                    For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
+                        CompileCustom(modFile.Replace(modPath, ""))
+                    Next
+                End If
 
                 'Phase 4: Free unused RAM and raise the started event
                 WriteWhere("4/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)

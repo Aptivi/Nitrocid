@@ -387,14 +387,22 @@ Public Module GetCommand
 
                 'Reload mods
                 Done = True
-                ReloadMods()
-                W(DoTranslation("Mods reloaded.", currentLang), True, ColTypes.Neutral)
+                If Not SafeMode Then
+                    ReloadMods()
+                    W(DoTranslation("Mods reloaded.", currentLang), True, ColTypes.Neutral)
+                Else
+                    W(DoTranslation("Reloading not allowed in safe mode.", currentLang), True, ColTypes.Neutral)
+                End If
 
             ElseIf words(0) = "reloadsaver" Then
 
                 If requestedCommand <> "reloadsaver" Then
                     If args.Count - 1 >= 0 Then
-                        CompileCustom(strArgs)
+                        If Not SafeMode Then
+                            CompileCustom(strArgs)
+                        Else
+                            W(DoTranslation("Reloading not allowed in safe mode.", currentLang), True, ColTypes.Neutral)
+                        End If
                         Done = True
                     End If
                 End If
@@ -509,7 +517,7 @@ Public Module GetCommand
                         If ScrnSvrdb.ContainsKey(strArgs) Then
                             SetDefaultScreensaver(strArgs)
                         Else
-                            If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") Then
+                            If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") And Not SafeMode Then
                                 SetDefaultScreensaver(strArgs)
                             Else
                                 W(DoTranslation("Screensaver {0} not found.", currentLang), True, ColTypes.Neutral, strArgs)

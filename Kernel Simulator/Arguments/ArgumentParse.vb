@@ -66,6 +66,10 @@ Module ArgumentParse
 
                         maintenance = True
 
+                    ElseIf BootArgs(i) = "safe" Then
+
+                        SafeMode = True
+
                     ElseIf BootArgs(i) = "help" Then
 
                         W(DoTranslation("Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe'", currentLang) + vbNewLine +

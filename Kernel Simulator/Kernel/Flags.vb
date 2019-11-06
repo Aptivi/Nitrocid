@@ -43,5 +43,6 @@ Module Flags
     Public RebootRequested As Boolean = False                   'Reboot requested
     Public FTPLoggerUsername As Boolean                         'Log username for FTP
     Public FTPLoggerIP As Boolean                               'Log IP address for FTP
+    Public SafeMode As Boolean                                  'Whether safe mode is enabled
 
 End Module

@@ -55,6 +55,7 @@ Public Module NetworkTools
                     p = adapterProperties.GetIPv4Properties
                     p6 = adapterProperties.GetIPv6Properties
                 Catch ex As NetworkInformationException
+#Disable Warning BC42104
                     If p6 Is Nothing Then
                         W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing...", currentLang), True, ColTypes.Neutral, adapter.Description)
                     End If
@@ -63,6 +64,7 @@ Public Module NetworkTools
                         Failed = True
                     End If
                     WStkTrc(ex)
+#Enable Warning BC42104
                 End Try
                 'TODO: GetIPv6Statistics not implemented yet.
                 If s Is Nothing Then

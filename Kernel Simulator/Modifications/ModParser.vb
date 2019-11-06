@@ -94,25 +94,29 @@ Public Module ModParser
     '------------------------------------------- Parsers -------------------------------------------
     Sub ParseMods(ByVal StartStop As Boolean)
         'StartStop: If true, the mods start, otherwise, the mod stops.
-        If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
-        Dim count As Integer = FileIO.FileSystem.GetFiles(modPath).Count
-        If (count <> 0) And StartStop = True Then
-            W(DoTranslation("mod: Loading mods...", currentLang), True, ColTypes.Neutral)
-            Wdbg("Mods are being loaded. Total mods with screensavers = {0}", count)
-        ElseIf (count <> 0) And StartStop = False Then
-            W(DoTranslation("mod: Stopping mods...", currentLang), True, ColTypes.Neutral)
-            Wdbg("Mods are being stopped. Total mods with screensavers = {0}", count)
-        End If
-        If StartStop = False Then
-            For Each script As IScript In scripts.Values
-                script.StopMod()
-                Wdbg("script.StopMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
-                If script.Name <> "" And script.Version <> "" Then W("{0} v{1} stopped", True, ColTypes.Neutral, script.Name, script.Version)
-            Next
+        If Not SafeMode Then
+            If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
+            Dim count As Integer = FileIO.FileSystem.GetFiles(modPath).Count
+            If (count <> 0) And StartStop = True Then
+                W(DoTranslation("mod: Loading mods...", currentLang), True, ColTypes.Neutral)
+                Wdbg("Mods are being loaded. Total mods with screensavers = {0}", count)
+            ElseIf (count <> 0) And StartStop = False Then
+                W(DoTranslation("mod: Stopping mods...", currentLang), True, ColTypes.Neutral)
+                Wdbg("Mods are being stopped. Total mods with screensavers = {0}", count)
+            End If
+            If StartStop = False Then
+                For Each script As IScript In scripts.Values
+                    script.StopMod()
+                    Wdbg("script.StopMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
+                    If script.Name <> "" And script.Version <> "" Then W("{0} v{1} stopped", True, ColTypes.Neutral, script.Name, script.Version)
+                Next
+            Else
+                For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
+                    StartParse(modFile.Replace("\", "/"), StartStop)
+                Next
+            End If
         Else
-            For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
-                StartParse(modFile.Replace("\", "/"), StartStop)
-            Next
+            W(DoTranslation("Parsing mods not allowed on safe mode.", currentLang), True, ColTypes.Neutral)
         End If
     End Sub
     Sub StartParse(ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
