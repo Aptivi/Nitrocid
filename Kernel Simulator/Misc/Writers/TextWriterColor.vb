@@ -52,6 +52,7 @@ Public Module TextWriterColor
             Dim STrace As New StackTrace(True)
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
             Dim LineNum As String = STrace.GetFrame(1).GetFileLineNumber
+            Dim Func As String = STrace.GetFrame(1).GetMethod.Name
             Dim OffendingIndex As New List(Of String)
 
             'Check for debug quota
@@ -60,16 +61,16 @@ Public Module TextWriterColor
             'For contributors who are testing new code: Uncomment the two Debug.WriteLine lines for immediate debugging (Immediate Window)
             If Not Source Is Nothing And Not LineNum = 0 Then
                 'Debug to file and all connected debug devices (raw mode)
-                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
+                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Func} - {Source}:{LineNum}): {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
                     Try
-                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
+                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Func} - {Source}:{LineNum}): {text}", vars)
                     Catch ex As Exception
                         OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
                         WStkTrc(ex)
                     End Try
                 Next
-                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Source}:{LineNum}): {text}", vars)
+                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Func} - {Source}:{LineNum}): {text}", vars)
             Else 'Rare case, unless debug symbol is not found on archives.
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
