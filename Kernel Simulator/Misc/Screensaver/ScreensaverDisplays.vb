@@ -43,6 +43,8 @@ Public Module ScreensaverDisplays
         Do While True
             'Thread.Sleep(1)
             If Custom.CancellationPending = True Then
+                Wdbg("Cancellation requested. Showing ending...")
+                finalSaver.PostDisplay()
                 Wdbg("Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()

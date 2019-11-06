@@ -35,8 +35,9 @@ Public Module Screensaver
     'Interface
     Public Interface ICustomSaver
         Sub InitSaver()
-        Sub PreDisplay()
-        Sub ScrnSaver()
+        Sub PreDisplay() 'Code before starting screensaver
+        Sub PostDisplay() 'Code after stopping screensaver
+        Sub ScrnSaver() 'Code during the screensaver
         Property Initialized As Boolean
     End Interface
 
