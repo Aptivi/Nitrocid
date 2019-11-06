@@ -249,5 +249,44 @@ Public Module TextWriterColor
         If Console.BackgroundColor = ConsoleColor.Black Then ResetColor()
         If colorType = ColTypes.Input And ColoredShell = True Then ForegroundColor = inputColor
     End Sub
+    Public Sub WriteWhere(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
+        If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
+            ForegroundColor = neutralTextColor
+        ElseIf colorType = ColTypes.Continuable Then
+            ForegroundColor = contKernelErrorColor
+        ElseIf colorType = ColTypes.Uncontinuable Then
+            ForegroundColor = uncontKernelErrorColor
+        ElseIf colorType = ColTypes.HostName Then
+            ForegroundColor = hostNameShellColor
+        ElseIf colorType = ColTypes.UserName Then
+            ForegroundColor = userNameShellColor
+        ElseIf colorType = ColTypes.License Then
+            ForegroundColor = licenseColor
+        ElseIf colorType = ColTypes.Gray Then
+            If backgroundColor = ConsoleColor.DarkYellow Or backgroundColor = ConsoleColor.Yellow Then
+                ForegroundColor = neutralTextColor
+            Else
+                ForegroundColor = ConsoleColor.Gray
+            End If
+        ElseIf colorType = ColTypes.HelpDef Then
+            ForegroundColor = cmdDefColor
+        ElseIf colorType = ColTypes.HelpCmd Then
+            ForegroundColor = cmdListColor
+        Else
+            Exit Sub
+        End If
+
+        'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+        For v As Integer = 0 To vars.Length - 1
+            msg = msg.Replace("{" + CStr(v) + "}", vars(v).ToString)
+        Next
+
+        'Write text in another place
+        Dim OldLeft As Integer = CursorLeft
+        Dim OldTop As Integer = CursorTop
+        SetCursorPosition(Left, Top)
+        Write(msg)
+        SetCursorPosition(OldLeft, OldTop)
+    End Sub
 
 End Module

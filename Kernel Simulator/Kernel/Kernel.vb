@@ -58,10 +58,12 @@ Public Module Kernel
                 If Not IO.File.Exists(paths("Home") + "/MAL.txt") Then SetMOTD(DoTranslation("Logged in successfully as <user>", currentLang), MessageType.MAL)
 
                 'Phase 1: Probe hardware
+                WriteWhere("1/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 1: Probing hardware")
                 ProbeHW()
 
                 'Phase 2: Username management
+                WriteWhere("2/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 2: Manage internal usernames")
                 Adduser("root", RootPasswd)
                 Permission("Admin", "root", "Allow")
@@ -69,6 +71,7 @@ Public Module Kernel
                 LoginFlag = True
 
                 'Phase 3: Parse Mods and Screensavers
+                WriteWhere("3/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 3: Parse mods and screensavers")
                 ParseMods(True)
                 Dim modPath As String = paths("Mods")
@@ -77,14 +80,17 @@ Public Module Kernel
                 Next
 
                 'Phase 4: Free unused RAM and raise the started event
+                WriteWhere("4/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 4: Garbage collection starts and the events now work")
                 EventManager.RaiseStartKernel()
                 DisposeAll()
 
                 'Phase 5: Log-in
+                WriteWhere("5/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 5: Log in")
                 Console.SetOut(DefConsoleOut)
                 ShowTime()
+                WriteWhere("   ", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
                 ElseIf LoginFlag = True And maintenance = True Then

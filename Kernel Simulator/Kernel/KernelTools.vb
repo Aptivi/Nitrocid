@@ -324,6 +324,9 @@ Public Module KernelTools
             ParseCMDArguments(argu)
         Next
 
+        'Initialize stage counter
+        WriteWhere("0/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
+
         'Check arguments
         If argsOnBoot Then
             PromptArgs()
