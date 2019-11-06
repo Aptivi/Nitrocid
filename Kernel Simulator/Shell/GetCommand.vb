@@ -377,11 +377,15 @@ Public Module GetCommand
                 InitializeConfig()
                 W(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", currentLang), True, ColTypes.Neutral)
 
-            ElseIf requestedCommand = "reboot" Then
+            ElseIf words(0) = "reboot" Then
 
                 'Reboot the simulated system
                 Done = True
-                PowerManage("reboot")
+                If args(1) = "safe" Then
+                    PowerManage("rebootsafe")
+                Else
+                    PowerManage("reboot")
+                End If
 
             ElseIf words(0) = "reloadmods" Then
 

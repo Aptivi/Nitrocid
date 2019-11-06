@@ -201,7 +201,7 @@ Public Module KernelTools
     ''' <summary>
     ''' Manage computer's (actually, simulated computer) power
     ''' </summary>
-    ''' <param name="PowerMode">Whether it would be "shutdown" or "reboot"</param>
+    ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
     ''' <remarks></remarks>
     Public Sub PowerManage(ByVal PowerMode As String)
         Wdbg("Power management has the argument of {0}", PowerMode)
@@ -218,6 +218,14 @@ Public Module KernelTools
             EventManager.RaisePostReboot()
             Console.Clear()
             LogoutRequested = True
+        ElseIf PowerMode = "rebootsafe" Then
+            EventManager.RaisePreReboot()
+            W(DoTranslation("Rebooting...", currentLang), True, ColTypes.Neutral)
+            ResetEverything()
+            EventManager.RaisePostReboot()
+            Console.Clear()
+            LogoutRequested = True
+            SafeMode = True
         End If
     End Sub
 
@@ -270,6 +278,9 @@ Public Module KernelTools
             DebugMode = False
             dbgWriter.Close() : dbgWriter.Dispose()
         End If
+
+        'Disable safe mode
+        SafeMode = True
     End Sub
 
     Sub InitEverything()
