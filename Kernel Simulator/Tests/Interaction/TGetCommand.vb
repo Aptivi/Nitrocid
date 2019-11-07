@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 Imports System.Security.Cryptography
 Imports System.Text
+Imports System.Text.RegularExpressions
 
 Module TGetCommand
 
@@ -113,6 +114,16 @@ Module TGetCommand
             W(GetArrayMD5(hashbyte), True, ColTypes.Neutral)
             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
             spent.Stop()
+        ElseIf Cmd = "testregexp" Then 'Usage: testregexp <pattern> <string>
+            Dim Exp As String = FullArgsL(0)
+            Dim Reg As New Regex(Exp)
+            FullArgsL.RemoveAt(0)
+            Dim Matches As MatchCollection = Reg.Matches(FullArgs)
+            Dim MatchNum As Integer = 1
+            For Each Mat As Match In Matches
+                W(DoTranslation("Match {0} ({1}): {2}", currentLang), True, ColTypes.Neutral, MatchNum, Exp, Mat)
+                MatchNum += 1
+            Next
         ElseIf Cmd = "loadmods" Then 'Usage: loadmods <Enable>
             If FullArgsL.Count - 1 = 0 Then ParseMods(FullArgsL(0))
         ElseIf Cmd = "debug" Then 'Usage: debug <Enable>
@@ -142,6 +153,7 @@ Module TGetCommand
               "- panic <ErrorType> <Reboot> <RebootTime> <Description>" + vbNewLine +
               "- panicf <ErrorType> <Reboot> <RebootTime> <Variable1;Variable2;Variable3;...> <Description>" + vbNewLine +
               "- translate <Lang> <Message>" + vbNewLine +
+              "- testregexp <Pattern> <Message>" + vbNewLine +
               "- testsha256 <Message>" + vbNewLine +
               "- testmd5 <Message>" + vbNewLine +
               "- debug <Enable>" + vbNewLine +
