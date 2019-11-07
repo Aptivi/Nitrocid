@@ -433,7 +433,11 @@ Public Module GetCommand
 
                 If args.Count - 1 >= 0 Then
                     Try
-                        Directory.Delete($"{CurrDir}/{strArgs}", True)
+                        Dim Dir As String = $"{CurrDir}/{strArgs}"
+                        If Dir.Contains(CurrDir.Replace("\", "/")) Then
+                            Dir = Dir.Replace(CurrDir, "").Remove(0, 1)
+                        End If
+                        Directory.Delete(Dir, True)
                     Catch ex As Exception
                         W(DoTranslation("Unable to remove directory: {0}", currentLang), True, ColTypes.Neutral, strArgs)
                         WStkTrc(ex)

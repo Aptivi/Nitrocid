@@ -63,7 +63,19 @@ Public Module Filesystem
     End Sub
     Public Sub InitStructure()
         Wdbg("Populating list...")
-        CurrDirStructure.AddRange(IO.Directory.EnumerateFileSystemEntries(CurrDir, "*", IO.SearchOption.TopDirectoryOnly))
+        Dim DirStructure As New List(Of String)
+        DirStructure.AddRange(IO.Directory.EnumerateDirectories(CurrDir, "*", IO.SearchOption.TopDirectoryOnly))
+        For Each Dir As String In DirStructure
+            Try
+                'Why CurrDirStructure? Because "For Each" block doesn't support modifications inside the loop.
+                CurrDirStructure.AddRange(IO.Directory.EnumerateDirectories(Dir, "*", IO.SearchOption.AllDirectories))
+            Catch ex As UnauthorizedAccessException
+                Dim OffendingDir As String = ex.Message.Substring(ex.Message.IndexOf("'") + 1, ex.Message.LastIndexOf("'") - ex.Message.IndexOf("'"))
+                OffendingDir = OffendingDir.Replace("'", "")
+                Wdbg("Unauthorized to enumerate a directory. {0}", OffendingDir)
+            End Try
+        Next
+        CurrDirStructure.AddRange(DirStructure)
         CurrDirStructure.Add(CurrDir)
         Wdbg("All structures added with the count of {0}", CurrDirStructure.Count)
         For i As Integer = 0 To CurrDirStructure.Count - 1
@@ -73,7 +85,12 @@ Public Module Filesystem
     End Sub
     Public Sub List(ByVal folder As String)
         Wdbg("Folder {0} will be checked if it is empty or equals CurrDir ({1})...", folder, CurrDir)
-        If Not folder = CurrDir And Not folder = "" Then folder = $"{CurrDir}/{folder}"
+        If Not folder = CurrDir And Not folder = "" Then
+            folder = $"{CurrDir}/{folder}"
+            If folder.Contains(CurrDir.Replace("\", "/")) Then
+                folder = folder.Replace(CurrDir, "").Remove(0, 1)
+            End If
+        End If
         Wdbg("Final folder: {0}", folder)
         If CurrDirStructure.Contains(folder) Then
             If IO.Directory.Exists(folder) Then
