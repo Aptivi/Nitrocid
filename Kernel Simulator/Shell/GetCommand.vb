@@ -317,6 +317,24 @@ Public Module GetCommand
                     Done = True
                 End If
 
+            ElseIf words(0) = "lset" Then
+
+                If Not args.Count = 0 Then
+                    Done = True
+                    Try
+                        FullParseMode = args(0)
+                        Dim ksconf As New IniFile()
+                        Dim pathConfig As String = paths("Configuration")
+                        ksconf.Load(pathConfig)
+                        ksconf.Sections("Misc").Keys("Size parse mode").Value = FullParseMode
+                        ksconf.Save(pathConfig)
+                        W(DoTranslation("Set successfully.", currentLang), True, ColTypes.Neutral)
+                    Catch ex As Exception
+                        W(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.", currentLang), True, ColTypes.Neutral)
+                        WStkTrc(ex)
+                    End Try
+                End If
+
             ElseIf requestedCommand = "logout" Then
 
                 'Logs out of the user

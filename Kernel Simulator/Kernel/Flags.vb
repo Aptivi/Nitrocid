@@ -44,5 +44,6 @@ Module Flags
     Public FTPLoggerUsername As Boolean                         'Log username for FTP
     Public FTPLoggerIP As Boolean                               'Log IP address for FTP
     Public SafeMode As Boolean                                  'Whether safe mode is enabled
+    Public FullParseMode As Boolean                             'Whether or not to parse whole directory for size
 
 End Module

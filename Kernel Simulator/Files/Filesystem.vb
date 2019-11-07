@@ -26,6 +26,9 @@ Public Module Filesystem
     Public Sub SetCurrDir(ByVal dir As String)
         Dim direct As String
         direct = $"{CurrDir}/{dir}"
+        If direct.Contains(CurrDir.Replace("\", "/")) Then
+            direct = direct.Replace(CurrDir, "").Remove(0, 1)
+        End If
         Wdbg("Directory {0} exists? {1}", direct, IO.Directory.Exists(direct))
         If IO.Directory.Exists(direct) Then
             Try
@@ -107,8 +110,12 @@ Public Module Filesystem
                             Dim DInfo As New IO.DirectoryInfo(Entry)
 
                             'Get all file sizes in a folder
-                            'TODO: Let users choose between all directories or just the directory in kernel config and "lset" command.
-                            Dim Files As List(Of IO.FileInfo) = DInfo.EnumerateFiles("*", IO.SearchOption.AllDirectories).ToList
+                            Dim Files As List(Of IO.FileInfo)
+                            If FullParseMode Then
+                                Files = DInfo.EnumerateFiles("*", IO.SearchOption.AllDirectories).ToList
+                            Else
+                                Files = DInfo.EnumerateFiles("*", IO.SearchOption.TopDirectoryOnly).ToList
+                            End If
                             Dim TotalSize As Long = 0 'In bytes
                             For Each DFile As IO.FileInfo In Files
                                 TotalSize += DFile.Length
