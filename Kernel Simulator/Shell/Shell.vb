@@ -27,7 +27,7 @@ Public Module Shell
                                             "chhostname", "showtd", "chpwd", "sysinfo", "arginj", "setcolors", "rmuser", "cls", "perm", "chusrname",
                                             "setthemes", "netinfo", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
                                             "savescreen", "lockscreen", "setsaver", "reloadsaver", "noaliases", "ftp", "usermanual", "cdbglog", "sses",
-                                            "chlang", "reloadmods", "get", "lsdbgdev", "disconndbgdev", "lset", "move", "copy"}
+                                            "chlang", "reloadmods", "get", "lsdbgdev", "disconndbgdev", "lset", "move", "copy", "search"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
                                      "lset"}

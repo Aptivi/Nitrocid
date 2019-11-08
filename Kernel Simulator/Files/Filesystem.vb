@@ -25,6 +25,7 @@ Public Module Filesystem
     'Subs
     Public Sub SetCurrDir(ByVal dir As String)
         Dim direct As String
+        dir = dir.Replace("\", "/")
         direct = $"{CurrDir}/{dir}"
         If direct.Contains(CurrDir.Replace("\", "/")) Then
             direct = direct.Replace(CurrDir, "").Remove(0, 1)

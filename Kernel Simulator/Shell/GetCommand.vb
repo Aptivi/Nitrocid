@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Text.RegularExpressions
 Imports Microsoft.VisualBasic.FileIO
 
 Public Module GetCommand
@@ -56,6 +57,11 @@ Public Module GetCommand
         Parser.Delimiters = {" "}
         Parser.HasFieldsEnclosedInQuotes = True
         eqargs = Parser.ReadFields
+        If Not eqargs Is Nothing Then
+            For i As Integer = 0 To eqargs.Length - 1
+                eqargs(i).Replace("""", "")
+            Next
+        End If
 
         '5a. Debug: get all arguments from eqargs() (NOTICE: args() and eargs() will be removed in the future.)
         If Not eqargs Is Nothing Then Wdbg("Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
@@ -514,6 +520,26 @@ Public Module GetCommand
 
                 Done = True
                 ShowSavers(defSaverName)
+
+            ElseIf words(0) = "search" Then
+
+                If eqargs.Count = 2 Then
+                    Dim ToBeFound As String = eqargs(0)
+                    Dim dir As String
+                    If eqargs(1).Contains(CurrDir.Replace("\", "/")) Then
+                        eqargs(1) = eqargs(1).Replace(CurrDir, "").Remove(0, 1)
+                    End If
+                    dir = $"{CurrDir}/{eqargs(1)}"
+                    Dim Filebyte() As String = File.ReadAllLines(dir)
+                    Dim MatchNum As Integer = 1
+                    For Each Str As String In Filebyte
+                        If Str.Contains(ToBeFound) Then
+                            W(DoTranslation("Match {0}: {1}", currentLang), True, ColTypes.Neutral, MatchNum, Str)
+                            MatchNum += 1
+                        End If
+                    Next
+                    Done = True
+                End If
 
             ElseIf words(0) = "setcolors" Then
 
