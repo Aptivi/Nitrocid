@@ -35,6 +35,7 @@ Public Module HelpSystem
                                                               {"chpwd", DoTranslation("Changes password for current user", currentLang)},
                                                               {"chusrname", DoTranslation("Changes user name (Admins Only)", currentLang)},
                                                               {"cls", DoTranslation("Clears the screen", currentLang)},
+                                                              {"copy", DoTranslation("Creates another copy of a file under different directory or name.", currentLang)},
                                                               {"debuglog", DoTranslation("Shows debug logs (Admins Only)", currentLang)},
                                                               {"disconndbgdev", DoTranslation("Disconnect a debug device", currentLang)},
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
@@ -46,6 +47,7 @@ Public Module HelpSystem
                                                               {"lsdbgdev", DoTranslation("Lists debugging devices connected", currentLang)},
                                                               {"lset", DoTranslation("Parse whole directory for size or just the files in the current one.", currentLang)},
                                                               {"md", DoTranslation("Creates a directory", currentLang)},
+                                                              {"move", DoTranslation("Moves a file to another directory", currentLang)},
                                                               {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
                                                               {"noaliases", DoTranslation("Shows forbidden list of aliases", currentLang)},
                                                               {"perm", DoTranslation("Manage permissions for users (Only admins can access this command)", currentLang)},
@@ -144,6 +146,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " cls: " + DoTranslation("to clear screen.", currentLang), True, ColTypes.Neutral)
 
+        ElseIf command = "copy" Then
+
+            W(DoTranslation("Usage:", currentLang) + " copy <source> <target>: " + DoTranslation("To copy files to another directory or different name", currentLang), True, ColTypes.Neutral)
+
         ElseIf command = "debuglog" Then
 
             W(DoTranslation("Usage:", currentLang) + " debuglog: " + DoTranslation("Shows you debug logs so you can send the log to us.", currentLang), True, ColTypes.Neutral)
@@ -193,6 +199,10 @@ Public Module HelpSystem
         ElseIf command = "md" Then
 
             W(DoTranslation("Usage:", currentLang) + " md <anything>", True, ColTypes.Neutral)
+
+        ElseIf command = "move" Then
+
+            W(DoTranslation("Usage:", currentLang) + " move <source> <target>: " + DoTranslation("To move files to another directory", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "netinfo" Then
 

@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports Microsoft.VisualBasic.FileIO
 
 Public Module GetCommand
 
@@ -48,16 +49,27 @@ Public Module GetCommand
         '4b. Debug: get all arguments from eargs()
         Wdbg("Arguments parsed from eargs(): " + String.Join(", ", eargs))
 
+        '5. Split the arguments (again) this time with enclosed quotes
+        Dim eqargs() As String
+        Dim TStream As New MemoryStream(Text.Encoding.Default.GetBytes(strArgs))
+        Dim Parser As New TextFieldParser(TStream)
+        Parser.Delimiters = {" "}
+        Parser.HasFieldsEnclosedInQuotes = True
+        eqargs = Parser.ReadFields
+
+        '5a. Debug: get all arguments from eqargs() (NOTICE: args() and eargs() will be removed in the future.)
+        If Not eqargs Is Nothing Then Wdbg("Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+
         'The command is done
         Dim Done As Boolean = False
 
-        '5. Check to see if a requested command is obsolete
+        '6. Check to see if a requested command is obsolete
         If obsoleteCmds.Contains(words(0)) Then
             Wdbg("The command requested {0} is obsolete", words(0))
             W(DoTranslation("This command is obsolete and will be removed in a future release.", currentLang), True, ColTypes.Neutral)
         End If
 
-        '6. Execute a command
+        '7. Execute a command
         Try
             If words(0) = "help" Then
 
@@ -262,6 +274,29 @@ Public Module GetCommand
 
                 Console.Clear() : Done = True
 
+            ElseIf words(0) = "copy" Then
+
+                If eqargs.Count = 2 Then
+                    If eqargs(0).Contains(CurrDir.Replace("\", "/")) Then
+                        eqargs(0) = eqargs(0).Replace(CurrDir, "").Remove(0, 1)
+                    End If
+                    If eqargs(1).Contains(CurrDir.Replace("\", "/")) Then
+                        eqargs(1) = eqargs(1).Replace(CurrDir, "").Remove(0, 1)
+                    End If
+                    Dim source As String = CurrDir + "/" + eqargs(0)
+                    Dim target As String = CurrDir + "/" + eqargs(1)
+                    If Directory.Exists(source) And Directory.Exists(target) Then
+                        FileIO.FileSystem.CopyDirectory(source, target)
+                    ElseIf File.Exists(source) And Directory.Exists(target) Then
+                        FileIO.FileSystem.CopyFile(source, target)
+                    ElseIf File.Exists(source) Then
+                        FileIO.FileSystem.CopyFile(source, target)
+                    Else
+                        W(DoTranslation("The path is neither a file nor a directory.", currentLang), True, ColTypes.Neutral)
+                    End If
+                    Done = True
+                End If
+
             ElseIf requestedCommand = "debuglog" Then
 
                 Dim line As String
@@ -361,6 +396,23 @@ Public Module GetCommand
                     Done = True
                 End If
 
+            ElseIf words(0) = "move" Then
+
+                If eqargs.Count = 2 Then
+                    Dim source As String = eqargs(0)
+                    Dim target As String = eqargs(1)
+                    If Directory.Exists(source) And Directory.Exists(target) Then
+                        Directory.Move(source, target)
+                    ElseIf File.Exists(source) And Directory.Exists(target) Then
+                        File.Move(source, target)
+                    ElseIf File.Exists(source) And File.Exists(target) Then
+                        File.Move(source, target)
+                    Else
+                        W(DoTranslation("The path is neither a file nor a directory.", currentLang), True, ColTypes.Neutral)
+                    End If
+                    Done = True
+                End If
+
             ElseIf requestedCommand = "noaliases" Then
 
                 W(DoTranslation("Aliases that are forbidden: {0}", currentLang), True, ColTypes.Neutral, String.Join(", ", forbidden))
@@ -399,8 +451,12 @@ Public Module GetCommand
 
                 'Reboot the simulated system
                 Done = True
-                If args(1) = "safe" Then
-                    PowerManage("rebootsafe")
+                If Not args.Length = 0 Then
+                    If args(0) = "safe" Then
+                        PowerManage("rebootsafe")
+                    Else
+                        PowerManage("reboot")
+                    End If
                 Else
                     PowerManage("reboot")
                 End If
