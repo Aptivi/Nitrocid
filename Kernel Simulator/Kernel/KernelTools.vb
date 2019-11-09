@@ -297,12 +297,11 @@ Public Module KernelTools
         'Initialize aliases
         InitAliases()
 
-        'Initialize date and files
+        'Initialize date
         If Not TimeDateIsSet Then
             InitTimeDate()
             TimeDateIsSet = True
         End If
-        InitFS()
 
         'Check for multiple instances of KS
         If instanceChecked = False Then MultiInstance()
@@ -337,6 +336,8 @@ Public Module KernelTools
 
         'Initialize stage counter
         WriteWhere("0/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
+        W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
+        InitFS()
 
         'Check arguments
         If argsOnBoot Then
