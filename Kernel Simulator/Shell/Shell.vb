@@ -28,10 +28,10 @@ Public Module Shell
                                             "setthemes", "netinfo", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
                                             "savescreen", "lockscreen", "setsaver", "reloadsaver", "noaliases", "ftp", "usermanual", "cdbglog", "sses",
                                             "chlang", "reloadmods", "get", "lsdbgdev", "disconndbgdev", "lset", "move", "copy", "search", "listdrives",
-                                            "listparts", "sumfile"}
+                                            "listparts", "sumfile", "rdebug"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
-                                     "lset", "listdrives", "listparts"}
+                                     "lset", "listdrives", "listparts", "rdebug"}
     Public obsoleteCmds() As String = {}
     Public modcmnds As New ArrayList
 

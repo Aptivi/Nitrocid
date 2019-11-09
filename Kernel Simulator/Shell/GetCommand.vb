@@ -567,10 +567,20 @@ Public Module GetCommand
                         End If
                         Directory.Delete(Dir, True)
                     Catch ex As Exception
-                        W(DoTranslation("Unable to remove directory: {0}", currentLang), True, ColTypes.Neutral, strArgs)
+                        W(DoTranslation("Unable to remove directory: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
                         WStkTrc(ex)
                     End Try
                     Done = True
+                End If
+
+            ElseIf words(0) = "rdebug" Then
+
+                If DebugMode Then
+                    If RDebugThread.IsAlive Then
+                        StartRDebugThread(False)
+                    Else
+                        StartRDebugThread(True)
+                    End If
                 End If
 
             ElseIf words(0) = "rmuser" Then

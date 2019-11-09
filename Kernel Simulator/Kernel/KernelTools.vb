@@ -261,7 +261,7 @@ Public Module KernelTools
         Wdbg("Garbage collector finished")
 
         'Disconnect all hosts from remote debugger
-        RebootRequested = True
+        StartRDebugThread(False)
         Wdbg("Remote debugger stopped")
 
         'Close settings
@@ -350,7 +350,7 @@ Public Module KernelTools
         End If
 
         'Write header for debug
-        StartRDebugThread()
+        StartRDebugThread(True)
         Wdbg("-------------------------------------------------------------------")
         Wdbg("Kernel initialized, version {0}.", KernelVersion)
         Wdbg("OS: {0}", EnvironmentOSType)

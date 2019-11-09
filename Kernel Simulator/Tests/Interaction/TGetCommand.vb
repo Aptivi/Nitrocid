@@ -139,10 +139,9 @@ Module TGetCommand
         ElseIf Cmd = "rdebug" Then 'Usage: rdebug <Enable>
             If FullArgsL.Count - 1 = 0 Then
                 If FullArgsL(0) = True Then
-                    StartRDebugThread()
+                    StartRDebugThread(True)
                 Else
-                    RebootRequested = True 'Abort remote debugger
-                    RebootRequested = False
+                    StartRDebugThread(False)
                 End If
             End If
         ElseIf Cmd = "help" Then

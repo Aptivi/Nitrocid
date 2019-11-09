@@ -26,11 +26,16 @@ Module RemoteDebugger
     Public DebugTCP As TcpListener
     Public DebugDevices As New Dictionary(Of Socket, String)
     Public dbgConns As New Dictionary(Of StreamWriter, String)
+    Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
 
-    Sub StartRDebugThread()
+    Sub StartRDebugThread(ByVal DebugEnable As Boolean)
         If DebugMode Then
-            Dim RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
-            RDebugThread.Start()
+            If DebugEnable Then
+                RDebugThread.Start()
+            Else
+                RebootRequested = True
+                RebootRequested = False
+            End If
         End If
     End Sub
     Sub StartRDebugger()
@@ -61,12 +66,16 @@ Module RemoteDebugger
                     dbgConns.Keys.Last.WriteLine(">> Chat version 0.3") 'Increment each minor/major change(s)
                     Wdbg("Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
                 End If
+            Catch ae As ThreadAbortException
+                Exit While
             Catch ex As Exception
                 W(DoTranslation("Error in connection: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
                 WStkTrc(ex)
             End Try
         End While
 
+        'TODO: Uncomment below comment
+        'RebootRequested = False
         DebugTCP.Stop()
         dbgConns.Clear()
         Thread.CurrentThread.Abort()

@@ -59,6 +59,7 @@ Public Module HelpSystem
                                                               {"reloadmods", DoTranslation("Reloads mods.", currentLang)},
                                                               {"reloadsaver", DoTranslation("Reloads screensaver file in %USERPROFILE%\KSMods", currentLang)},
                                                               {"rd", DoTranslation("Removes a directory", currentLang)},
+                                                              {"rdebug", DoTranslation("Enables or disables remote debugging.", currentLang)},
                                                               {"rmuser", DoTranslation("Removes a user from the list (Admins Only)", currentLang)},
                                                               {"savescreen", DoTranslation("Saves your screen from burn outs", currentLang)},
                                                               {"setcolors", DoTranslation("Sets up kernel colors", currentLang)},
@@ -235,6 +236,10 @@ Public Module HelpSystem
         ElseIf command = "rd" Then
 
             W(DoTranslation("Usage:", currentLang) + " rd <directory>", True, ColTypes.Neutral)
+
+        ElseIf command = "rdebug" Then
+
+            W(DoTranslation("Usage:", currentLang) + " rdebug: " + DoTranslation("Enables or disables remote debugging.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "read" Then
 
