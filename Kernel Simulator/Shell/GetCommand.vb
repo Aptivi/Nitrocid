@@ -358,6 +358,51 @@ Public Module GetCommand
                     Done = True
                 End If
 
+            ElseIf words(0) = "listdrives" Then
+
+                Done = True
+                Dim DriveNum As Integer = 1
+                For Each HD As HDD In HDDList
+                    W("==========================================", True, ColTypes.Neutral)
+                    W(DoTranslation("Drive Number: {0}", currentLang), True, ColTypes.Neutral, DriveNum)
+                    W("ID: {0}", True, ColTypes.Neutral, HD.ID)
+                    W(DoTranslation("Manufacturer: {0}", currentLang), True, ColTypes.Neutral, HD.Manufacturer)
+                    W(DoTranslation("Model: {0}", currentLang), True, ColTypes.Neutral, HD.Model)
+                    W(DoTranslation("Capacity: {0} GB ({1}, {2}, {3})", currentLang), True, ColTypes.Neutral, FormatNumber(HD.Size / 1024 / 1024 / 1024, 2), HD.Cylinders, HD.Heads, HD.Sectors)
+                    W(DoTranslation("Interface Type: {0}", currentLang), True, ColTypes.Neutral, HD.InterfaceType)
+                    DriveNum += 1
+                Next
+                W("==========================================", True, ColTypes.Neutral)
+
+            ElseIf words(0) = "listparts" Then
+
+                If args.Count > 0 Then
+                    Done = True
+                    Dim PartNum As Integer = 1
+                    For Each P As Part In HDDList(args(0)).Parts
+                        W("==========================================", True, ColTypes.Neutral)
+                        W(DoTranslation("Physical partition: {0}", currentLang), True, ColTypes.Neutral, PartNum)
+                        W(DoTranslation("Boot flag: {0} ({1})", currentLang), True, ColTypes.Neutral, P.Boot, P.Bootable)
+                        W(DoTranslation("Primary flag: {0}", currentLang), True, ColTypes.Neutral, P.Primary)
+                        W(DoTranslation("Size: {0} GB", currentLang), True, ColTypes.Neutral, FormatNumber(P.Size / 1024 / 1024 / 1024, 2))
+                        PartNum += 1
+                    Next
+                    W("==========================================", True, ColTypes.Neutral)
+                    If EnvironmentOSType.Contains("Windows") Then
+                        PartNum = 1
+                        W(DoTranslation("Listing all logical partitions on all drives.", currentLang), True, ColTypes.Neutral)
+                        For Each LP As Logical In LogList
+                            W(DoTranslation("Logical partition: {0}", currentLang), True, ColTypes.Neutral, PartNum)
+                            W(DoTranslation("Compressed: {0}", currentLang), True, ColTypes.Neutral, LP.Compressed)
+                            W(DoTranslation("Name: {0}", currentLang), True, ColTypes.Neutral, LP.Name)
+                            W(DoTranslation("File system: {0}", currentLang), True, ColTypes.Neutral, LP.FileSystem)
+                            W(DoTranslation("Capacity: {0} GB free of {1} GB", currentLang), True, ColTypes.Neutral, FormatNumber(LP.Free / 1024 / 1024 / 1024, 2), FormatNumber(LP.Size / 1024 / 1024 / 1024, 2))
+                            W("==========================================", True, ColTypes.Neutral)
+                            PartNum += 1
+                        Next
+                    End If
+                End If
+
             ElseIf words(0) = "lset" Then
 
                 If Not args.Count = 0 Then

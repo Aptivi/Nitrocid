@@ -21,22 +21,39 @@ Module HardwareVars
         Public Model As String
         Public Manufacturer As String
         Public InterfaceType As String
-        Public Cylinders As UInt64
-        Public Heads As UInt32
-        Public Sectors As UInt64
-        Public Size As UInt64
+        Public Cylinders As ULong
+        Public Heads As UInteger
+        Public Sectors As ULong
+        Public Size As ULong
+        Public ID As String
+        Public Parts As New List(Of Part)
     End Class
     Public Class HDD_Linux
         Inherits HDD
         Public Size_LNX As String
         Public Model_LNX As String
         Public Vendor_LNX As String
+        Public Parts_LNX As New List(Of Part_Linux)
+    End Class
+    Public Class Part
+        Public Bootable, Boot, Primary As Boolean
+        Public Size As ULong
+        Public Type As String
+    End Class
+    Public Class Part_Linux
+        Inherits Part
+        'To be done
+    End Class
+    Public Class Logical
+        Public Compressed As Boolean
+        Public Size, Free As ULong
+        Public FileSystem, Name As String
     End Class
 
     'then CPU
     Public Class CPU
         Public Name As String
-        Public ClockSpeed As UInt64
+        Public ClockSpeed As ULong
     End Class
     Public Class CPU_Linux
         Inherits CPU
@@ -47,7 +64,7 @@ Module HardwareVars
 
     'then RAM
     Public Class RAM
-        Public ChipCapacity As UInt64
+        Public ChipCapacity As ULong
         Public SlotNumber As Integer
         Public SlotName As String
     End Class
@@ -58,6 +75,7 @@ Module HardwareVars
 
     'Hardware Lists
     Public HDDList As New List(Of HDD)
+    Public LogList As New List(Of Logical)
     Public CPUList As New List(Of CPU)
     Public RAMList As New List(Of RAM)
 
@@ -69,6 +87,7 @@ Module HardwareVars
 
     'These are used to check to see if probing specific hardware is done.
     Public CPUDone As Boolean = False
+    Public ParDone As Boolean = False
     Public RAMDone As Boolean = False
     Public HDDDone As Boolean = False
 

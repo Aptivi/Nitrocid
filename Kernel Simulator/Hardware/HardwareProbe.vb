@@ -74,6 +74,8 @@ Public Module HardwareProbe
     Public Sub ProbeHardware()
         'Variables
         Dim HDDSet As New ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive")
+        Dim PartsS As New ManagementObjectSearcher("SELECT * FROM Win32_DiskPartition")
+        Dim LogicS As New ManagementObjectSearcher("SELECT * FROM Win32_LogicalDisk")
         Dim CPUSet As New ManagementObjectSearcher("SELECT * FROM Win32_Processor")
         Dim MemSet As New ManagementObjectSearcher("SELECT * FROM Win32_PhysicalMemory")
         Dim SltSet As New ManagementObjectSearcher("SELECT * FROM Win32_PhysicalMemoryArray")
@@ -81,6 +83,7 @@ Public Module HardwareProbe
 
         'Done sets
         HDDDone = True
+        ParDone = True
         CPUDone = True
         RAMDone = True
 
@@ -89,13 +92,39 @@ Public Module HardwareProbe
             Try
                 HDDList.Add(New HDD With {.Model = Hdd("Model"), .Size = Hdd("Size"), .Manufacturer = Hdd("Manufacturer"),
                                           .Cylinders = Hdd("TotalCylinders"), .Heads = Hdd("TotalHeads"), .Sectors = Hdd("TotalSectors"),
-                                          .InterfaceType = Hdd("InterfaceType")})
-                Wdbg("HDD: Hdd.Win32_DiskDrive.Manufacturer = {2}, Hdd.Win32_DiskDrive.Model = {0}, Hdd.Win32_DiskDrive.Size = {1}, Hdd.Win32_DiskDrive.InterfaceType = {3}, CHS: {4}, {5}, {6}",
+                                          .InterfaceType = Hdd("InterfaceType"), .ID = Hdd("DeviceID")})
+                Wdbg("HDD: Manufacturer = {2}, Model = {0}, Size = {1}, InterfaceType = {3}, CHS: {4}, {5}, {6}, ID: {7}",
                      HDDList(HDDList.Count - 1).Model, HDDList(HDDList.Count - 1).Size, HDDList(HDDList.Count - 1).Manufacturer,
                      HDDList(HDDList.Count - 1).InterfaceType, HDDList(HDDList.Count - 1).Cylinders, HDDList(HDDList.Count - 1).Heads,
-                     HDDList(HDDList.Count - 1).Sectors)
+                     HDDList(HDDList.Count - 1).Sectors, HDDList(HDDList.Count - 1).ID)
             Catch ex As Exception
                 HDDDone = False
+                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+                Continue For
+            End Try
+        Next
+
+        'Partition Prober
+        Dim DriveNo As Integer
+        For Each Manage As ManagementBaseObject In PartsS.Get
+            Try
+                DriveNo = Manage("DiskIndex")
+                HDDList(DriveNo).Parts.Add(New Part With {.Boot = Manage("BootPartition"), .Bootable = Manage("Bootable"), .Primary = Manage("PrimaryPartition"),
+                                                          .Size = Manage("Size"), .Type = Manage("Type")})
+            Catch ex As Exception
+                ParDone = False
+                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+                Continue For
+            End Try
+        Next
+        For Each LogicM As ManagementBaseObject In LogicS.Get
+            Try
+                If LogicM("DriveType") = 3 Then
+                    LogList.Add(New Logical With {.Compressed = LogicM("Compressed"), .FileSystem = LogicM("FileSystem"), .Name = LogicM("Name"),
+                                                  .Size = LogicM("Size"), .Free = LogicM("FreeSpace")})
+                End If
+            Catch ex As Exception
+                ParDone = False
                 If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
                 Continue For
             End Try
@@ -105,7 +134,7 @@ Public Module HardwareProbe
         For Each CPU As ManagementBaseObject In CPUSet.Get
             Try
                 CPUList.Add(New CPU With {.Name = CPU("Name"), .ClockSpeed = CPU("CurrentClockSpeed")})
-                Wdbg("CPU: CPU.Win32_Processor.Name = {0}, CPU.Win32_Processor.CurrentClockSpeed = {1}", CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
+                Wdbg("CPU: Name = {0}, CurrentClockSpeed = {1}", CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
             Catch ex As Exception
                 CPUDone = False
                 If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
@@ -119,7 +148,7 @@ Public Module HardwareProbe
                 RAMList.Add(New RAM With {.ChipCapacity = RAM("Capacity"), .SlotName = "", .SlotNumber = 0})
                 If slotProbe = True Then RAMList(RAMList.Count - 1).SlotName = RAM("DeviceLocator")
                 temp += CStr(RAMList(RAMList.Count - 1).ChipCapacity / 1024 / 1024) + " "
-                Wdbg("RAM.Win32_PhysicalMemory.Capacity = {0}", RAMList(RAMList.Count - 1).ChipCapacity)
+                Wdbg("RAM: Capacity = {0}", RAMList(RAMList.Count - 1).ChipCapacity)
             Catch ex As Exception
                 RAMDone = False
                 If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
@@ -134,7 +163,7 @@ Public Module HardwareProbe
             For Each Slot As ManagementBaseObject In SltSet.Get
                 Try
                     totalSlots = Slot("MemoryDevices")
-                    Wdbg("Slot = Win32_PhysicalMemoryArray.MemoryDevices | totalSlots = {0}", totalSlots)
+                    Wdbg("RAM: totalSlots = {0}", totalSlots)
                 Catch ex As Exception
                     RAMDone = False
                     If DebugMode Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
@@ -237,7 +266,7 @@ Public Module HardwareProbe
             If CPUName.Contains("@") And CPUName.EndsWith("GHz") Then
                 W("CPU: {0}", False, ColTypes.Neutral, processorinfo.Name)
             Else
-                W("CPU: {0} @ {1}MHz", False, ColTypes.Neutral, processorinfo.Name, processorinfo.ClockSpeed)
+                W("CPU: {0} @ {1} MHz", False, ColTypes.Neutral, processorinfo.Name, processorinfo.ClockSpeed)
             End If
 
             'SSE2 availability
@@ -255,7 +284,7 @@ Public Module HardwareProbe
         Next
 
         'Print some info
-        W(DoTranslation("RAM: {0}MB = {1}MB", currentLang), True, ColTypes.Neutral, CStr(total), String.Join("MB + ", Capacities))
+        W(DoTranslation("RAM: {0} MB = {1} MB", currentLang), True, ColTypes.Neutral, CStr(total), String.Join("MB + ", Capacities))
 
         'A loop to print names
         For Each slotname In RAMList
@@ -273,17 +302,15 @@ Public Module HardwareProbe
         'Drive Info
         For Each driveinfo In HDDList
             If driveinfo.Manufacturer = "(Standard disk drives)" Then
-                W(DoTranslation("HDD: {0} {1}GB {2}", currentLang) + vbNewLine +
-                    DoTranslation("HDD: CHS: {3} cylinders | {4} heads | {5} sectors", currentLang), True, ColTypes.Neutral,
-                    driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2),
-                    driveinfo.InterfaceType, driveinfo.Cylinders,
-                    driveinfo.Heads, driveinfo.Sectors)
+                W("HDD: {0} {1} GB {2}" + vbNewLine +
+                  DoTranslation("HDD: CHS: {3} cylinders | {4} heads | {5} sectors", currentLang), True, ColTypes.Neutral,
+                  driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2),
+                  driveinfo.InterfaceType, driveinfo.Cylinders, driveinfo.Heads, driveinfo.Sectors)
             Else
-                W(DoTranslation("HDD: {0} {1} {2}GB {3}", currentLang) + vbNewLine +
-                    DoTranslation("HDD: CHS: {4} cylinders | {5} heads | {6} sectors", currentLang), True, ColTypes.Neutral,
-                    driveinfo.Manufacturer, driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2),
-                    driveinfo.InterfaceType, driveinfo.Cylinders,
-                    driveinfo.Heads, driveinfo.Sectors)
+                W("HDD: {0} {1} {2} GB {3}" + vbNewLine +
+                  DoTranslation("HDD: CHS: {4} cylinders | {5} heads | {6} sectors", currentLang), True, ColTypes.Neutral,
+                  driveinfo.Manufacturer, driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2),
+                  driveinfo.InterfaceType, driveinfo.Cylinders, driveinfo.Heads, driveinfo.Sectors)
             End If
         Next
     End Sub
