@@ -27,8 +27,8 @@ Public Module Filesystem
         Dim direct As String
         dir = dir.Replace("\", "/")
         direct = $"{CurrDir}/{dir}"
-        If direct.Contains(CurrDir.Replace("\", "/")) Then
-            direct = direct.Replace(CurrDir, "").Remove(0, 1)
+        If direct.Contains(CurrDir.Replace("\", "/")) And direct.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+            direct = ReplaceLastOccurrence(direct, CurrDir, "")
         End If
         Wdbg("Directory {0} exists? {1}", direct, IO.Directory.Exists(direct))
         If IO.Directory.Exists(direct) Then

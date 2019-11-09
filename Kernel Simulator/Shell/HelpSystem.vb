@@ -68,8 +68,9 @@ Public Module HelpSystem
                                                               {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
                                                               {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
                                                               {"sses", DoTranslation("Gets SSE versions", currentLang)},
+                                                              {"sumfile", DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang)},
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
-                                                              {"usermanual", DoTranslation("A very descriptive user manual.", currentLang)}}
+                                                              {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)}}
     End Sub
 
     Public Sub ShowHelp(Optional ByVal command As String = "")
@@ -294,14 +295,17 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " sses: " + DoTranslation("Gets SSE versions", currentLang), True, ColTypes.Neutral)
 
+        ElseIf command = "sumfile" Then
+
+            W(DoTranslation("Usage:", currentLang) + " sumfile <MD5/SHA256> <file>: " + DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang), True, ColTypes.Neutral)
+
         ElseIf command = "sysinfo" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sysinfo: " + DoTranslation("Shows system information and versions.", currentLang) + vbNewLine +
-              "       " + DoTranslation("Friends of", currentLang) + " sysinfo: version", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " sysinfo: " + DoTranslation("Shows system information and versions.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "usermanual" Then
 
-            W(DoTranslation("Usage:", currentLang) + " usermanual", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " usermanual: " + DoTranslation("Takes you to our GitHub Wiki.", currentLang), True, ColTypes.Neutral)
 
         End If
 

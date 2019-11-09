@@ -17,6 +17,8 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Security.Cryptography
+Imports System.Text
 Imports System.Text.RegularExpressions
 Imports Microsoft.VisualBasic.FileIO
 
@@ -52,10 +54,11 @@ Public Module GetCommand
 
         '5. Split the arguments (again) this time with enclosed quotes
         Dim eqargs() As String
-        Dim TStream As New MemoryStream(Text.Encoding.Default.GetBytes(strArgs))
-        Dim Parser As New TextFieldParser(TStream)
-        Parser.Delimiters = {" "}
-        Parser.HasFieldsEnclosedInQuotes = True
+        Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
+        Dim Parser As New TextFieldParser(TStream) With {
+            .Delimiters = {" "},
+            .HasFieldsEnclosedInQuotes = True
+        }
         eqargs = Parser.ReadFields
         If Not eqargs Is Nothing Then
             For i As Integer = 0 To eqargs.Length - 1
@@ -283,14 +286,16 @@ Public Module GetCommand
             ElseIf words(0) = "copy" Then
 
                 If eqargs.Count = 2 Then
-                    If eqargs(0).Contains(CurrDir.Replace("\", "/")) Then
-                        eqargs(0) = eqargs(0).Replace(CurrDir, "").Remove(0, 1)
+                    eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
+                    eqargs(1) = CurrDir + "/" + eqargs(1).Replace("\", "/")
+                    If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        eqargs(0) = ReplaceLastOccurrence(eqargs(0), CurrDir, "")
                     End If
-                    If eqargs(1).Contains(CurrDir.Replace("\", "/")) Then
-                        eqargs(1) = eqargs(1).Replace(CurrDir, "").Remove(0, 1)
+                    If eqargs(1).Contains(CurrDir.Replace("\", "/")) And eqargs(1).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        eqargs(1) = ReplaceLastOccurrence(eqargs(1), CurrDir, "")
                     End If
-                    Dim source As String = CurrDir + "/" + eqargs(0)
-                    Dim target As String = CurrDir + "/" + eqargs(1)
+                    Dim source As String = eqargs(0)
+                    Dim target As String = eqargs(1)
                     If Directory.Exists(source) And Directory.Exists(target) Then
                         FileIO.FileSystem.CopyDirectory(source, target)
                     ElseIf File.Exists(source) And Directory.Exists(target) Then
@@ -443,13 +448,25 @@ Public Module GetCommand
 
                 If eargs.Count - 1 >= 0 Then
                     'Create directory
-                    Directory.CreateDirectory($"{CurrDir}/{strArgs}")
+                    Dim direct As String = CurrDir + "/" + strArgs.Replace("\", "/")
+                    If direct.Contains(CurrDir.Replace("\", "/")) And direct.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        direct = ReplaceLastOccurrence(direct, CurrDir, "")
+                    End If
+                    Directory.CreateDirectory(direct)
                     Done = True
                 End If
 
             ElseIf words(0) = "move" Then
 
                 If eqargs.Count = 2 Then
+                    eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
+                    eqargs(1) = CurrDir + "/" + eqargs(1).Replace("\", "/")
+                    If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        eqargs(0) = ReplaceLastOccurrence(eqargs(0), CurrDir, "")
+                    End If
+                    If eqargs(1).Contains(CurrDir.Replace("\", "/")) And eqargs(1).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        eqargs(1) = ReplaceLastOccurrence(eqargs(1), CurrDir, "")
+                    End If
                     Dim source As String = eqargs(0)
                     Dim target As String = eqargs(1)
                     If Directory.Exists(source) And Directory.Exists(target) Then
@@ -482,8 +499,12 @@ Public Module GetCommand
 
                 If requestedCommand <> "read" Then
                     If args.Count - 1 = 0 Then
-                        If CurrDirStructure.Contains($"{CurrDir}/{strArgs}") Then
-                            ReadContents($"{CurrDir}/{strArgs}")
+                        Dim FileRead As String = CurrDir + "/" + strArgs.Replace("\", "/")
+                        If FileRead.Contains(CurrDir.Replace("\", "/")) And FileRead.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                            FileRead = ReplaceLastOccurrence(FileRead, CurrDir, "")
+                        End If
+                        If File.Exists(FileRead) Then
+                            ReadContents(FileRead)
                         Else
                             W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Neutral, strArgs)
                         End If
@@ -540,9 +561,9 @@ Public Module GetCommand
 
                 If args.Count - 1 >= 0 Then
                     Try
-                        Dim Dir As String = $"{CurrDir}/{strArgs}"
-                        If Dir.Contains(CurrDir.Replace("\", "/")) Then
-                            Dir = Dir.Replace(CurrDir, "").Remove(0, 1)
+                        Dim Dir As String = CurrDir + "/" + strArgs.Replace("\", "/")
+                        If Dir.Contains(CurrDir.Replace("\", "/")) And Dir.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                            Dir = ReplaceLastOccurrence(Dir, CurrDir, "")
                         End If
                         Directory.Delete(Dir, True)
                     Catch ex As Exception
@@ -570,12 +591,11 @@ Public Module GetCommand
 
                 If eqargs.Count = 2 Then
                     Dim ToBeFound As String = eqargs(0)
-                    Dim dir As String
-                    If eqargs(1).Contains(CurrDir.Replace("\", "/")) Then
-                        eqargs(1) = eqargs(1).Replace(CurrDir, "").Remove(0, 1)
+                    Dim Dir As String = CurrDir + "/" + eqargs(1).Replace("\", "/")
+                    If Dir.Contains(CurrDir.Replace("\", "/")) And Dir.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        Dir = ReplaceLastOccurrence(Dir, CurrDir, "")
                     End If
-                    dir = $"{CurrDir}/{eqargs(1)}"
-                    Dim Filebyte() As String = File.ReadAllLines(dir)
+                    Dim Filebyte() As String = File.ReadAllLines(Dir)
                     Dim MatchNum As Integer = 1
                     For Each Str As String In Filebyte
                         If Str.Contains(ToBeFound) Then
@@ -732,6 +752,37 @@ Public Module GetCommand
                                                         CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsSSE3Available))
                 End If
                 Done = True
+
+            ElseIf words(0) = "sumfile" Then
+
+                If args.Length >= 2 Then
+                    Done = True
+                    Dim file As String
+                    eqargs(1) = eqargs(1).Replace("\", "/")
+                    file = $"{CurrDir}/{eqargs(1)}"
+                    If file.Contains(CurrDir.Replace("\", "/")) And file.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        file = ReplaceLastOccurrence(file, CurrDir, "")
+                    End If
+                    If IO.File.Exists(file) Then
+                        If args(0) = "SHA256" Then
+                            Dim spent As New Stopwatch
+                            spent.Start() 'Time when you're on a breakpoint is counted
+                            Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
+                            W(GetArraySHA256(hashbyte), True, ColTypes.Neutral)
+                            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                            spent.Stop()
+                        ElseIf args(0) = "MD5" Then
+                            Dim spent As New Stopwatch
+                            spent.Start() 'Time when you're on a breakpoint is counted
+                            Dim hashbyte As Byte() = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
+                            W(GetArrayMD5(hashbyte), True, ColTypes.Neutral)
+                            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                            spent.Stop()
+                        Else
+                            W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Neutral)
+                        End If
+                    End If
+                End If
 
             ElseIf requestedCommand = "sysinfo" Then
 
