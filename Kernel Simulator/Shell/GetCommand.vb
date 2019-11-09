@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Security.Cryptography
+Imports System.Speech.Synthesis
 Imports System.Text
 Imports System.Text.RegularExpressions
 Imports Microsoft.VisualBasic.FileIO
@@ -344,6 +345,15 @@ Public Module GetCommand
                     DownloadFile(args(0))
                     Done = True
                 End If
+
+            ElseIf words(0) = "getvoices" Then
+
+                Dim VoiceNo As Integer = 1
+                For Each voice As InstalledVoice In GetVoices()
+                    W(DoTranslation("Voice {0}: {1} ({2})", currentLang), True, ColTypes.Neutral, VoiceNo, voice.VoiceInfo.Name, voice.VoiceInfo.Id)
+                    VoiceNo += 1
+                Next
+                Done = True
 
             ElseIf requestedCommand = "lockscreen" Then
 
@@ -744,10 +754,20 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "setvoice" Then
+
+                SetVoice(strArgs)
+                Done = True
+
             ElseIf requestedCommand = "shutdown" Then
 
                 'Shuts down the simulated system
                 PowerManage("shutdown")
+
+            ElseIf words(0) = "speak" Then
+
+                VoiceSynth.Speak(strArgs)
+                Done = True
 
             ElseIf requestedCommand = "sses" Then
 
@@ -758,8 +778,8 @@ Public Module GetCommand
                     W("SSE:  {0}" + vbNewLine +
                       "SSE2: {1}" + vbNewLine +
                       "SSE3: {2}", True, ColTypes.Neutral, CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMIAvailable),
-                                                        CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available),
-                                                        CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsSSE3Available))
+                                                           CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available),
+                                                           CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsSSE3Available))
                 End If
                 Done = True
 

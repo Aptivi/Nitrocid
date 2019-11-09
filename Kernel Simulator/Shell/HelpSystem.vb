@@ -40,6 +40,7 @@ Public Module HelpSystem
                                                               {"disconndbgdev", DoTranslation("Disconnect a debug device", currentLang)},
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                               {"get", DoTranslation("Downloads a file to current working directory", currentLang)},
+                                                              {"getvoices", DoTranslation("Gets installed voices")},
                                                               {"help", DoTranslation("Help page", currentLang)},
                                                               {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
                                                               {"listdrives", DoTranslation("Lists all probed drives.", currentLang)},
@@ -65,9 +66,11 @@ Public Module HelpSystem
                                                               {"setcolors", DoTranslation("Sets up kernel colors", currentLang)},
                                                               {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
                                                               {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
+                                                              {"setvoice", DoTranslation("Sets the default voice")},
                                                               {"showtd", DoTranslation("Shows date and time", currentLang)},
                                                               {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
                                                               {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
+                                                              {"speak", DoTranslation("Speaks your string using the default voice")},
                                                               {"sses", DoTranslation("Gets SSE versions", currentLang)},
                                                               {"sumfile", DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang)},
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
@@ -164,11 +167,15 @@ Public Module HelpSystem
 
         ElseIf command = "ftp" Then
 
-            W(DoTranslation("Usage:", currentLang) + " ftp: " + DoTranslation("Initializes the FTP shell.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " ftp <server>: " + DoTranslation("Initializes the FTP shell.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "get" Then
 
             W(DoTranslation("Usage:", currentLang) + " get <URL>", True, ColTypes.Neutral)
+
+        ElseIf command = "getvoices" Then
+
+            W(DoTranslation("Usage:", currentLang) + " getvoices: " + DoTranslation("Gets installed voices", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "list" Then
 
@@ -283,6 +290,10 @@ Public Module HelpSystem
             W(DoTranslation("Usage:", currentLang) + " setthemes <Theme>" + vbNewLine +
               "       " + DoTranslation("Friends of", currentLang) + " setthemes: setcolors", True, ColTypes.Neutral)
 
+        ElseIf command = "setvoice" Then
+
+            W(DoTranslation("Usage:", currentLang) + " setvoice <Voice>", True, ColTypes.Neutral)
+
         ElseIf command = "showtd" Then
 
             W(DoTranslation("Usage:", currentLang) + " showtd: " + DoTranslation("Shows the date and time.", currentLang), True, ColTypes.Neutral)
@@ -295,6 +306,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " shutdown: " + DoTranslation("Shuts down your simulated computer.", currentLang) + vbNewLine +
               "       " + DoTranslation("Friends of", currentLang) + " shutdown: reboot, logout", True, ColTypes.Neutral)
+
+        ElseIf command = "speak" Then
+
+            W(DoTranslation("Usage:", currentLang) + " speak <String>: " + DoTranslation("Speaks your string using the default voice", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "sses" Then
 
