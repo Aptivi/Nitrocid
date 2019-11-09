@@ -38,10 +38,12 @@ Public Module Kernel
                 InitPaths()
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
+#If SPECIFIER <> "DEV" Then 'INFO: If the SPECIFIER equals DEV, then the block of code is grayed out. This is by design and will not affect the functionality.
                 If Not IO.File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                     Dim pdbdown As New WebClient
                     pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
                 End If
+#End If
 
                 'Initialize everything
                 InitEverything()
