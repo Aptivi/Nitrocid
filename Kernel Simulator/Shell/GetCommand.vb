@@ -418,6 +418,11 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "loteresp" Then
+
+                Done = True
+                InitializeLoteresp()
+
             ElseIf words(0) = "lset" Then
 
                 If Not args.Count = 0 Then
@@ -453,6 +458,11 @@ Public Module GetCommand
 
                 GetProperties()
                 Done = True
+
+            ElseIf words(0) = "mathbee" Then
+
+                Done = True
+                InitializeSolver()
 
             ElseIf words(0) = "md" Then
 
@@ -768,6 +778,11 @@ Public Module GetCommand
 
                 VoiceSynth.Speak(strArgs)
                 Done = True
+
+            ElseIf words(0) = "spellbee" Then
+
+                Done = True
+                InitializeWords()
 
             ElseIf requestedCommand = "sses" Then
 

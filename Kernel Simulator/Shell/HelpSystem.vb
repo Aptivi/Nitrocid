@@ -47,8 +47,10 @@ Public Module HelpSystem
                                                               {"listparts", DoTranslation("Lists all probed partitions on a specific drive (and all logical partitions on all drives).", currentLang)},
                                                               {"lockscreen", DoTranslation("Locks your screen with a password", currentLang)},
                                                               {"logout", DoTranslation("Logs you out", currentLang)},
+                                                              {"loteresp", DoTranslation("Respond to love or hate comments.")},
                                                               {"lsdbgdev", DoTranslation("Lists debugging devices connected", currentLang)},
                                                               {"lset", DoTranslation("Parse whole directory for size or just the files in the current one.", currentLang)},
+                                                              {"mathbee", DoTranslation("See if you can solve mathematical equations on time")},
                                                               {"md", DoTranslation("Creates a directory", currentLang)},
                                                               {"move", DoTranslation("Moves a file to another directory", currentLang)},
                                                               {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
@@ -71,6 +73,7 @@ Public Module HelpSystem
                                                               {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
                                                               {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
                                                               {"speak", DoTranslation("Speaks your string using the default voice")},
+                                                              {"spellbee", DoTranslation("See if you can spell words correctly on time")},
                                                               {"sses", DoTranslation("Gets SSE versions", currentLang)},
                                                               {"sumfile", DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang)},
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
@@ -191,6 +194,10 @@ Public Module HelpSystem
             W(DoTranslation("Usage:", currentLang) + " listparts <Index>" + vbNewLine +
               "       listparts: " + DoTranslation("Lists all probed partitions on a specific drive (and all logical partitions on all drives).", currentLang), True, ColTypes.Neutral)
 
+        ElseIf command = "loteresp" Then
+
+            W(DoTranslation("Usage:", currentLang) + " loteresp: " + DoTranslation("Respond to love or hate comments.", currentLang), True, ColTypes.Neutral)
+
         ElseIf command = "lsdbgdev" Then
 
             W(DoTranslation("Usage:", currentLang) + " lsdbgdev" + vbNewLine +
@@ -215,6 +222,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " logout: " + DoTranslation("Logs you out of the user.", currentLang) + vbNewLine +
               "       " + DoTranslation("Friends of", currentLang) + " logout: reboot, shutdown", True, ColTypes.Neutral)
+
+        ElseIf command = "mathbee" Then
+
+            W(DoTranslation("Usage:", currentLang) + " mathbee: " + DoTranslation("See if you can solve mathematical equations on time", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "md" Then
 
@@ -306,6 +317,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " shutdown: " + DoTranslation("Shuts down your simulated computer.", currentLang) + vbNewLine +
               "       " + DoTranslation("Friends of", currentLang) + " shutdown: reboot, logout", True, ColTypes.Neutral)
+
+        ElseIf command = "spellbee" Then
+
+            W(DoTranslation("Usage:", currentLang) + " spellbee: " + DoTranslation("See if you can spell words correctly on time", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "speak" Then
 
