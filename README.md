@@ -12,6 +12,8 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - We took out Windows XP support in 0.0.5.9 in favor of NuGet and .NET Framework 4.7.
 
+- Regarding TTS support, we're looking for platform-independent text to speech library. Currently, it fails to compile on Mono on Linux.
+
 ## |-----+--> _Virus Warning_ <--+-----|
 
 Unfortunately, some parts of KS have been taken to avoid detection in the source code of a malicious executable file called payslip.exe. It got its entries for the following cybersecurity analyzers:
