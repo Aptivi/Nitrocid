@@ -23,6 +23,7 @@ Public Module NetworkTools
     'Variables
     Public adapterNumber As Long
     Public DRetries As Integer = 3
+    Private DFinish As Boolean
 
     Public Sub GetProperties()
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces
@@ -108,8 +109,10 @@ Public Module NetworkTools
                         End If
                         W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, CurrDir)
                         Dim WClient As New WebClient
-                        WClient.DownloadFile(URL, CurrDir + "/" + FileName)
-                        W(DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
+                        AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
+                        WClient.DownloadFileAsync(New Uri(URL), CurrDir + "/" + FileName)
+                        While Not DFinish
+                        End While
                     Else
                         W(DoTranslation("Specify the address", currentLang), True, ColTypes.Neutral)
                     End If
@@ -123,6 +126,17 @@ Public Module NetworkTools
                 WStkTrc(ex)
             End Try
         End While
+    End Sub
+
+    Private Sub DownloadManager(sender As Object, e As DownloadProgressChangedEventArgs)
+        If Not DFinish Then
+            Console.SetCursorPosition(0, Console.CursorTop)
+            W(DoTranslation("{0} MB of {1} MB downloaded.", currentLang) + "    ", False, ColTypes.Neutral, e.BytesReceived / 1024 / 1024, e.TotalBytesToReceive / 1024 / 1024)
+            If e.BytesReceived = e.TotalBytesToReceive Then
+                W(vbNewLine + DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
+                DFinish = True
+            End If
+        End If
     End Sub
 
 End Module
