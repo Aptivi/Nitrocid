@@ -546,6 +546,8 @@ Public Module GetCommand
                 If Not args.Length = 0 Then
                     If args(0) = "safe" Then
                         PowerManage("rebootsafe")
+                    ElseIf args(0) <> "" Then
+                        PowerManage("remotereboot", args(0))
                     Else
                         PowerManage("reboot")
                     End If
@@ -769,10 +771,18 @@ Public Module GetCommand
                 SetVoice(strArgs)
                 Done = True
 
-            ElseIf requestedCommand = "shutdown" Then
+            ElseIf words(0) = "shutdown" Then
 
                 'Shuts down the simulated system
-                PowerManage("shutdown")
+                Done = True
+                If Not args.Length = 0 Then
+                    If args(0) <> "" Then
+                        PowerManage("remoteshutdown", args(0))
+                    End If
+                Else
+                    PowerManage("shutdown")
+                End If
+
 
             ElseIf words(0) = "speak" Then
 

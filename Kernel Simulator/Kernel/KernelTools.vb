@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Net.Sockets
 Imports System.Reflection
 Imports System.Threading
 
@@ -203,7 +204,7 @@ Public Module KernelTools
     ''' </summary>
     ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
     ''' <remarks></remarks>
-    Public Sub PowerManage(ByVal PowerMode As String)
+    Public Sub PowerManage(ByVal PowerMode As String, Optional ByVal IP As String = "0.0.0.0")
         Wdbg("Power management has the argument of {0}", PowerMode)
         If PowerMode = "shutdown" Then
             EventManager.RaisePreShutdown()
@@ -226,6 +227,12 @@ Public Module KernelTools
             Console.Clear()
             LogoutRequested = True
             SafeMode = True
+        ElseIf PowerMode = "remoteshutdown" Then
+            W(DoTranslation("Shutting down...", currentLang), True, ColTypes.Neutral)
+            SendCommand("<Request:Shutdown>(" + IP + ")")
+        ElseIf PowerMode = "remoterestart" Then
+            W(DoTranslation("Rebooting...", currentLang), True, ColTypes.Neutral)
+            SendCommand("<Request:Reboot>(" + IP + ")")
         End If
     End Sub
 
@@ -355,6 +362,10 @@ Public Module KernelTools
         Wdbg("-------------------------------------------------------------------")
         Wdbg("Kernel initialized, version {0}.", KernelVersion)
         Wdbg("OS: {0}", EnvironmentOSType)
+
+        'Start RPC
+        W(DoTranslation("Starting RPC...", currentLang), True, ColTypes.Neutral)
+        StartRPC()
 
         'Parse current theme string
         ParseCurrentTheme()

@@ -262,6 +262,8 @@
     <Compile Include="Network\NetworkTools.vb" />
     <Compile Include="Network\RemoteDebug\RemoteDebugCmd.vb" />
     <Compile Include="Network\RemoteDebug\RemoteDebugger.vb" />
+    <Compile Include="Network\RPC\RemoteProcedure.vb" />
+    <Compile Include="Network\RPC\RPC-Commands.vb" />
     <Compile Include="Shell\AliasManager.vb" />
     <Compile Include="Shell\GetCommand.vb" />
     <Compile Include="Hardware\HardwareProbe.vb" />
