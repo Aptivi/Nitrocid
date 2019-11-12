@@ -75,6 +75,7 @@ Public Module HelpSystem
                                                               {"speak", DoTranslation("Speaks your string using the default voice")},
                                                               {"spellbee", DoTranslation("See if you can spell words correctly on time")},
                                                               {"sses", DoTranslation("Gets SSE versions", currentLang)},
+                                                              {"sshell", DoTranslation("Connects to an SSH server.")},
                                                               {"sumfile", DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang)},
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
                                                               {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)}}
@@ -329,6 +330,10 @@ Public Module HelpSystem
         ElseIf command = "sses" Then
 
             W(DoTranslation("Usage:", currentLang) + " sses: " + DoTranslation("Gets SSE versions", currentLang), True, ColTypes.Neutral)
+
+        ElseIf command = "sshell" Then
+
+            W(DoTranslation("Usage:", currentLang) + " sshell <address> <port> <username>: " + DoTranslation("Connects to an SSH server.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "sumfile" Then
 

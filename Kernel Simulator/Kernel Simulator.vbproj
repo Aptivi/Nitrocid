@@ -197,6 +197,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="SSH.NET">
+      <Version>2016.1.0</Version>
+    </PackageReference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.DirectoryServices" />
@@ -213,6 +216,7 @@
     <Import Include="MadMilkman.Ini" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="Newtonsoft.Json" />
+    <Import Include="Renci.SshNet" />
     <Import Include="System" />
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
@@ -264,6 +268,7 @@
     <Compile Include="Network\RemoteDebug\RemoteDebugger.vb" />
     <Compile Include="Network\RPC\RemoteProcedure.vb" />
     <Compile Include="Network\RPC\RPC-Commands.vb" />
+    <Compile Include="Network\SSH\SSH.vb" />
     <Compile Include="Shell\AliasManager.vb" />
     <Compile Include="Shell\GetCommand.vb" />
     <Compile Include="Hardware\HardwareProbe.vb" />

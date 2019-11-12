@@ -808,6 +808,13 @@ Public Module GetCommand
                 End If
                 Done = True
 
+            ElseIf words(0) = "sshell" Then
+
+                If eqargs.Length = 3 Then
+                    InitializeSSH(eqargs(0), eqargs(1), eqargs(2))
+                    Done = True
+                End If
+
             ElseIf words(0) = "sumfile" Then
 
                 If args.Length >= 2 Then
