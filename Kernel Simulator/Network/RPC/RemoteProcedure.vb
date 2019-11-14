@@ -26,6 +26,7 @@ Module RemoteProcedure
     Public RPCClient As Socket
     Public RPCPort As Integer = 12345
     Public RPCThread As New Thread(AddressOf ListenRPC) With {.IsBackground = True}
+    Public RPCStopping As Boolean
 
     Sub StartRPC()
         Try
@@ -41,7 +42,7 @@ Module RemoteProcedure
         RPCListener.Start()
         W(DoTranslation("RPC listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, RPCPort)
 
-        While Not RebootRequested
+        While Not RPCStopping
             Try
                 Dim RPCStream As NetworkStream
                 Dim RPCClient As Socket
@@ -60,8 +61,7 @@ Module RemoteProcedure
             End Try
         End While
 
-        'TODO: Uncomment below comment
-        'RebootRequested = False
+        RPCStopping = False
         RPCListen.Stop()
         RPCDrives.Clear()
         Thread.CurrentThread.Abort()

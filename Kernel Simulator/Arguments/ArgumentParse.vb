@@ -21,7 +21,6 @@ Module ArgumentParse
     'Variables
     Public argcommands As String                'Commands entered
     Public argcmds() As String
-    Public ReadOnly DefConsoleOut As IO.TextWriter = Console.Out
 
     Public Sub ParseArguments()
 
@@ -37,6 +36,7 @@ Module ArgumentParse
                 If AvailableArgs.Contains(BootArgs(i).Substring(0, indexArg)) Then
                     If BootArgs(i) = "quiet" Then
 
+                        DefConsoleOut = Console.Out
                         Console.SetOut(IO.StreamWriter.Null)
 
                     ElseIf BootArgs(i).Contains("cmdinject") Then

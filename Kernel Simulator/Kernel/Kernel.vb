@@ -28,6 +28,7 @@ Public Module Kernel
     Public MOTDMessage, HName, MAL As String
     Public ReadOnly EnvironmentOSType As String = Environment.OSVersion.ToString
     Public EventManager As New EventsAndExceptions
+    Public DefConsoleOut As IO.TextWriter
 
     Sub Main()
         'TODO: Re-write the whole kernel in Beta
@@ -93,7 +94,11 @@ Public Module Kernel
                 'Phase 5: Log-in
                 WriteWhere("5/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 5: Log in")
-                Console.SetOut(DefConsoleOut)
+                If Not BootArgs Is Nothing Then
+                    If BootArgs.Contains("quiet") Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
+                End If
                 ShowTime()
                 WriteWhere("   ", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
                 If LoginFlag = True And maintenance = False Then

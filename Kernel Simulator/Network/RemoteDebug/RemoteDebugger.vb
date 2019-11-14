@@ -27,14 +27,14 @@ Module RemoteDebugger
     Public DebugDevices As New Dictionary(Of Socket, String)
     Public dbgConns As New Dictionary(Of StreamWriter, String)
     Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
+    Public RDebugStopping As Boolean
 
     Sub StartRDebugThread(ByVal DebugEnable As Boolean)
         If DebugMode Then
             If DebugEnable Then
                 RDebugThread.Start()
             Else
-                RebootRequested = True
-                RebootRequested = False
+                RDebugStopping = True
             End If
         End If
     End Sub
@@ -46,7 +46,7 @@ Module RemoteDebugger
         RStream.Start()
         W(DoTranslation("Debug listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, DebugPort)
 
-        While Not RebootRequested
+        While Not RDebugStopping
             Try
                 Dim RDebugStream As NetworkStream
                 Dim RDebugSWriter As StreamWriter
@@ -74,8 +74,7 @@ Module RemoteDebugger
             End Try
         End While
 
-        'TODO: Uncomment below comment
-        'RebootRequested = False
+        RDebugStopping = False
         DebugTCP.Stop()
         dbgConns.Clear()
         Thread.CurrentThread.Abort()

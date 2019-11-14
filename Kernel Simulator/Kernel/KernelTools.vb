@@ -41,7 +41,11 @@ Public Module KernelTools
     Public Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal ParamArray Variables() As Object)
         Try
             'Unquiet
-            Console.SetOut(DefConsoleOut)
+            If Not BootArgs Is Nothing Then
+                If BootArgs.Contains("quiet") Then
+                    Console.SetOut(DefConsoleOut)
+                End If
+            End If
 
             'Check error types and its capabilities
             If ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C" Then
@@ -218,14 +222,14 @@ Public Module KernelTools
             ResetEverything()
             EventManager.RaisePostReboot()
             Console.Clear()
-            LogoutRequested = True
+            RebootRequested = True
         ElseIf PowerMode = "rebootsafe" Then
             EventManager.RaisePreReboot()
             W(DoTranslation("Rebooting...", currentLang), True, ColTypes.Neutral)
             ResetEverything()
             EventManager.RaisePostReboot()
             Console.Clear()
-            LogoutRequested = True
+            RebootRequested = True
             SafeMode = True
         ElseIf PowerMode = "remoteshutdown" Then
             W(DoTranslation("Shutting down...", currentLang), True, ColTypes.Neutral)
