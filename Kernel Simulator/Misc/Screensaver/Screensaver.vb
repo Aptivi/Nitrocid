@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.CodeDom.Compiler
+Imports System.ComponentModel
 Imports System.Reflection
 Imports System.Threading
 
@@ -29,6 +30,7 @@ Public Module Screensaver
     Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False}, {"lines", False},
                                                                  {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False}}
     Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
+    Public WithEvents Timeout As New BackgroundWorker
     Private execCustomSaver As CompilerResults
     Private DoneFlag As Boolean = False
 
@@ -42,9 +44,29 @@ Public Module Screensaver
         Property DelayForEachWrite As Integer
     End Interface
 
+    Sub HandleTimeout(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Timeout.DoWork
+        Dim time As Integer = 3600000
+        Dim count As Integer
+        Dim oldcursor As Integer = Console.CursorLeft
+        While True
+            If Not ScrnTimeReached Then
+                For count = 0 To time
+                    Thread.Sleep(1)
+                    If oldcursor <> Console.CursorLeft Then
+                        count = 0
+                    End If
+                    oldcursor = Console.CursorLeft
+                Next
+                If Not RebootRequested Then
+                    ShowSavers(defSaverName)
+                End If
+            End If
+        End While
+    End Sub
     Sub ShowSavers(ByVal saver As String)
         Try
             InSaver = True
+            ScrnTimeReached = True
             EventManager.RaisePreShowScreensaver()
             Wdbg("Requested screensaver: {0}", saver)
             If saver = "colorMix" Then
@@ -52,6 +74,7 @@ Public Module Screensaver
                 ColorMix.RunWorkerAsync()
                 Wdbg("ColorMix started")
                 Console.ReadKey()
+                ScrnTimeReached = False
                 ColorMix.CancelAsync()
                 Thread.Sleep(150)
             ElseIf saver = "matrix" Then
@@ -59,6 +82,7 @@ Public Module Screensaver
                 Matrix.RunWorkerAsync()
                 Wdbg("Matrix started")
                 Console.ReadKey()
+                ScrnTimeReached = False
                 Matrix.CancelAsync()
                 Thread.Sleep(150)
             ElseIf saver = "glitterMatrix" Then
@@ -66,6 +90,7 @@ Public Module Screensaver
                 GlitterMatrix.RunWorkerAsync()
                 Wdbg("Glitter Matrix started")
                 Console.ReadKey()
+                ScrnTimeReached = False
                 GlitterMatrix.CancelAsync()
                 Thread.Sleep(150)
             ElseIf saver = "disco" Then
@@ -73,6 +98,7 @@ Public Module Screensaver
                 Disco.RunWorkerAsync()
                 Wdbg("Disco started")
                 Console.ReadKey()
+                ScrnTimeReached = False
                 Disco.CancelAsync()
                 Thread.Sleep(150)
             ElseIf saver = "lines" Then
@@ -80,6 +106,7 @@ Public Module Screensaver
                 Lines.RunWorkerAsync()
                 Wdbg("Lines started")
                 Console.ReadKey()
+                ScrnTimeReached = False
                 Lines.CancelAsync()
                 Thread.Sleep(150)
             ElseIf saver = "glitterColor" Then
@@ -87,6 +114,7 @@ Public Module Screensaver
                 GlitterColor.RunWorkerAsync()
                 Wdbg("Glitter Color started")
                 Console.ReadKey()
+                ScrnTimeReached = False
                 GlitterColor.CancelAsync()
                 Thread.Sleep(150)
             ElseIf saver = "aptErrorSim" Then
@@ -94,6 +122,7 @@ Public Module Screensaver
                 AptErrorSim.RunWorkerAsync()
                 Wdbg("apt Error Simulator started")
                 Console.ReadKey()
+                ScrnTimeReached = False
                 AptErrorSim.CancelAsync()
                 Thread.Sleep(150)
             ElseIf saver = "hackUserFromAD" Then
@@ -101,6 +130,7 @@ Public Module Screensaver
                 HackUserFromAD.RunWorkerAsync()
                 Wdbg("Hacking Simulator for Active Domain users started")
                 Console.ReadKey()
+                ScrnTimeReached = False
                 HackUserFromAD.CancelAsync()
                 Thread.Sleep(150)
             ElseIf ScrnSvrdb.ContainsKey(saver) Then
@@ -109,6 +139,7 @@ Public Module Screensaver
                 Custom.RunWorkerAsync()
                 Wdbg("Custom screensaver {0} started", saver)
                 Console.ReadKey()
+                ScrnTimeReached = False
                 Custom.CancelAsync()
                 Thread.Sleep(150) 'Nothing to do with operation inside screensaver
             Else

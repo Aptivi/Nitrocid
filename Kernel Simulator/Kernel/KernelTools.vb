@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports System.Net.Sockets
 Imports System.Reflection
 Imports System.Threading
 
@@ -376,6 +375,9 @@ Public Module KernelTools
 
         'Parse current theme string
         ParseCurrentTheme()
+
+        'Start screensaver timeout
+        Timeout.RunWorkerAsync()
     End Sub
 
     Sub InitPaths()

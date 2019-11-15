@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Kernel Simulator"
+    "\\Kernel Simulator",
+    "\\Kernel Simulator\\Tests",
+    "\\Kernel Simulator\\Tests\\Interaction"
   ],
-  "SelectedNode": "\\.github",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }
