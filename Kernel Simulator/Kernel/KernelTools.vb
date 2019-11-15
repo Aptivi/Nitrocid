@@ -223,6 +223,7 @@ Public Module KernelTools
             EventManager.RaisePostReboot()
             Console.Clear()
             RebootRequested = True
+            LogoutRequested = True
         ElseIf PowerMode = "rebootsafe" Then
             EventManager.RaisePreReboot()
             W(DoTranslation("Rebooting...", currentLang), True, ColTypes.Neutral)
@@ -230,6 +231,7 @@ Public Module KernelTools
             EventManager.RaisePostReboot()
             Console.Clear()
             RebootRequested = True
+            LogoutRequested = True
             SafeMode = True
         ElseIf PowerMode = "remoteshutdown" Then
             W(DoTranslation("Shutting down...", currentLang), True, ColTypes.Neutral)
