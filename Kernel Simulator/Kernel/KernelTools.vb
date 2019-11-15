@@ -224,6 +224,7 @@ Public Module KernelTools
             Console.Clear()
             RebootRequested = True
             LogoutRequested = True
+            SafeMode = False
         ElseIf PowerMode = "rebootsafe" Then
             EventManager.RaisePreReboot()
             W(DoTranslation("Rebooting...", currentLang), True, ColTypes.Neutral)
