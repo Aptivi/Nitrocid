@@ -22,12 +22,12 @@ RAM: One or more of the RAM chips failed to be probed. Showing information anywa
 HDD: One or more of the hard drives failed to be probed. Showing information anyway...
 CPU: Total number of processors: {0}
 CPU: {0} {1}MHz
-RAM: {0}MB = {1}MB
+RAM: {0} MB = {1} MB
 RAM: Used slots (by names): {0}
 RAM: Used slots (by numbers): {0} / {1} ({2}%)
 RAM: Probing status is deprecated and will be removed in future release.
-HDD: {0} {1}GB {2}
-HDD: {0} {1} {2}GB {3}
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
 HDD: CHS: {4} cylinders | {5} heads | {6} sectors
 HDD: CHS: {3} cylinders | {4} heads | {5} sectors
 hwprobe: Probing not supported because it's not designed to run probers on Unix.

@@ -284,7 +284,7 @@ Public Module HardwareProbe
         Next
 
         'Print some info
-        W(DoTranslation("RAM: {0} MB = {1} MB", currentLang), True, ColTypes.Neutral, CStr(total), String.Join("MB + ", Capacities))
+        W(DoTranslation("RAM: {0} MB = {1} MB", currentLang), True, ColTypes.Neutral, CStr(total), String.Join(" MB + ", Capacities))
 
         'A loop to print names
         For Each slotname In RAMList
