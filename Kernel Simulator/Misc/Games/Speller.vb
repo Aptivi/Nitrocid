@@ -26,11 +26,13 @@ Module Speller
         Dim SpeltWord As String = ""
         W(DoTranslation("Write ""GetMeOut"" to exit.", currentLang), True, ColTypes.Neutral)
         If Words.Count = 0 Then
+            Wdbg("Downloading words...")
             Words.AddRange(Downloader.DownloadString("https://raw.githubusercontent.com/sindresorhus/word-list/master/words.txt").Replace(Chr(13), "").Split(Chr(10)).ToList)
             Downloader.Dispose()
         End If
         While True
             RandomWord = Words.ElementAt(RandomDriver.Next(Words.Count))
+            Wdbg("Word: {0}", RandomWord)
             W(RandomWord, True, ColTypes.Input)
             While True
                 Dim character As Char = Console.ReadKey(True).KeyChar
@@ -42,10 +44,13 @@ Module Speller
                 End If
             End While
             If SpeltWord = RandomWord Then
+                Wdbg("Spelt: {0} = {1}", SpeltWord, RandomWord)
                 W(DoTranslation("Spelt perfectly!", currentLang), True, ColTypes.Neutral)
             ElseIf SpeltWord = "GetMeOut" Then
+                Wdbg("Exit")
                 Exit Sub
             Else
+                Wdbg("Spelt: {0} != {1}", SpeltWord, RandomWord)
                 W(DoTranslation("Spelt incorrectly.", currentLang), True, ColTypes.Neutral)
             End If
             SpeltWord = ""

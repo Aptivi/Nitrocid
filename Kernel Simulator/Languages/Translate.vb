@@ -128,8 +128,10 @@ Public Module Translate
 
     Public Sub SetLang(ByVal lang As String, Optional ByVal Force As Boolean = False)
         If availableLangs.Contains(lang) Then
+            Wdbg("Forced {0}", Force)
             If Not Force Then
                 If lang.EndsWith("-T") Then 'The condition prevents tricksters from using "chlang <lang>-T", if not forced.
+                    Wdbg("Trying to bypass prompt.")
                     Exit Sub
                 Else
                     'Check to see if the language is transliterable
@@ -157,14 +159,19 @@ CHOICE:
             Select Case lang
                 Case "arb-T"
                     Console.OutputEncoding = Text.Encoding.GetEncoding(1256)
+                    Wdbg("Encoding set successfully for Arabic to {0}.", Console.OutputEncoding.EncodingName)
                 Case "chi-T"
                     Console.OutputEncoding = Text.Encoding.GetEncoding(936)
+                    Wdbg("Encoding set successfully for Chinese to {0}.", Console.OutputEncoding.EncodingName)
                 Case "jpn-T"
                     Console.OutputEncoding = Text.Encoding.GetEncoding(932)
+                    Wdbg("Encoding set successfully for Japanese to {0}.", Console.OutputEncoding.EncodingName)
                 Case "rus-T"
                     Console.OutputEncoding = Text.Encoding.GetEncoding(866)
+                    Wdbg("Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
                 Case Else
                     Console.OutputEncoding = Text.Encoding.GetEncoding(720)
+                    Wdbg("Encoding set successfully to {0}.", Console.OutputEncoding.EncodingName)
             End Select
 
             'Set current language
@@ -180,7 +187,7 @@ CHOICE:
             InitHelp()
             InitFTPHelp()
         Else
-            W(DoTranslation("Invalid language", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Neutral, lang)
         End If
     End Sub
 

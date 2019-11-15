@@ -29,7 +29,7 @@ Module StringExtensions
     <Runtime.CompilerServices.Extension>
     Public Iterator Function AllIndexesOf(ByVal str As String, ByVal value As String) As IEnumerable(Of Integer)
         If String.IsNullOrEmpty(value) Then
-            Throw New ArgumentException("the string to find may not be empty", "value")
+            Throw New ArgumentException(DoTranslation("Empty string specified", currentLang), "value")
         End If
         Dim index As Integer = 0
         Do

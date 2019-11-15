@@ -55,26 +55,36 @@ Module LoveHateRespond
             Type = Comments.ElementAt(RandomDriver.Next(Comments.Keys.Count)).Key
             RandomUser = Users.ElementAt(RandomDriver.Next(Users.Count))
             RandomComment = Comments(Type).ElementAt(RandomDriver.Next(Comments(Type).Count))
+            Wdbg("Comment type: {0}", Type)
+            Wdbg("Commenter: {0}", RandomUser)
+            Wdbg("Comment: {0}", RandomComment)
             W(DoTranslation("If someone made this comment to your video:", currentLang), True, ColTypes.Neutral)
             W("{0}: {1}", True, ColTypes.Neutral, RandomUser, RandomComment)
             W(DoTranslation("How would you respond?", currentLang) + " <R/T/Q> ", False, ColTypes.Input)
             Response = Console.ReadKey.KeyChar
             Console.WriteLine()
+            Wdbg("Response: {0}", Response)
             If Response = "R" Or Response = "r" Then
                 If Type = "Hate" Then
+                    Wdbg("Reported hate comment")
                     W(DoTranslation("Great! {0}'s comment will be removed for that.", currentLang), True, ColTypes.Neutral, RandomUser)
                 Else
+                    Wdbg("Reported love comment")
                     W(DoTranslation("You just reported the love comment!", currentLang), True, ColTypes.Neutral)
                 End If
             ElseIf Response = "T" Or Response = "t" Then
                 If Type = "Love" Then
+                    Wdbg("Thanked love comment")
                     W(DoTranslation("Great! {0} will appreciate your thanks.", currentLang), True, ColTypes.Neutral, RandomUser)
                 Else
+                    Wdbg("Thanked hate comment")
                     W(DoTranslation("You just replied to the hate comment!", currentLang), True, ColTypes.Neutral)
                 End If
             ElseIf Response = "Q" Or Response = "q" Then
+                Wdbg("Exit requested")
                 Exit Sub
             Else
+                Wdbg("No such selection")
                 W(DoTranslation("Invalid selection. Going to the next comment...", currentLang), True, ColTypes.Neutral)
             End If
         End While

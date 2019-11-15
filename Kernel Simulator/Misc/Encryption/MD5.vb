@@ -20,8 +20,10 @@ Module KS_MD5
     Public Function GetArrayMD5(ByVal encrypted As Byte()) As String
         Dim hash As String = ""
         For i As Integer = 0 To encrypted.Length - 1
+            Wdbg("Appending {0} to hash", encrypted(i))
             hash += $"{encrypted(i):X2}"
         Next
+        Wdbg("Final hash: {0}", hash)
         Return hash
     End Function
 End Module

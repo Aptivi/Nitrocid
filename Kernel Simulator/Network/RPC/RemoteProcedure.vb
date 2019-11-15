@@ -38,8 +38,10 @@ Module RemoteProcedure
     Sub ListenRPC()
         RPCListen = New TcpListener(New IPAddress({0, 0, 0, 0}), RPCPort)
         RPCListen.Start()
+        Wdbg("RPC: Listener started")
         Dim RPCListener As New Thread(AddressOf RecCommand)
         RPCListener.Start()
+        Wdbg("RPC: Thread started")
         W(DoTranslation("RPC listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, RPCPort)
 
         While Not RPCStopping
@@ -48,12 +50,16 @@ Module RemoteProcedure
                 Dim RPCClient As Socket
                 Dim RPCIP As String
                 RPCClient = RPCListen.AcceptSocket
+                Wdbg("RPC: Socket accepted")
                 RPCStream = New NetworkStream(RPCClient) With {.ReadTimeout = 50}
                 RPCIP = RPCClient.RemoteEndPoint.ToString.Remove(RPCClient.RemoteEndPoint.ToString.IndexOf(":"))
+                Wdbg("RPC: {0}", RPCIP)
                 If Not RPCDrives.Keys.Contains(RPCIP) Then
+                    Wdbg("RPC: New connection. Adding to list...")
                     RPCDrives.Add(RPCIP, RPCStream)
                 End If
             Catch ae As ThreadAbortException
+                Wdbg("RPC: Stopping...")
                 Exit While
             Catch ex As Exception
                 W(DoTranslation("Error in connection: {0}", currentLang), True, ColTypes.Neutral, ex.Message)

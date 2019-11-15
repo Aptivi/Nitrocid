@@ -27,19 +27,27 @@ Module RPC_Commands
 
     Sub SendCommand(ByVal Request As String)
         Dim Cmd As String = Request.Remove(Request.IndexOf("("))
+        Wdbg("Command: {0}", Cmd)
         Dim Arg As String = Request.Substring(Request.IndexOf("(") + 1)
+        Wdbg("Prototype Arg: {0}", Arg)
         Arg = Arg.Remove(Arg.Count - 1)
+        Wdbg("Finished Arg: {0}", Arg)
         If Commands.Contains(Cmd) Then
+            Wdbg("Command found.")
             If Cmd = "<Request:Shutdown>" Then
                 Dim remotestream As NetworkStream = RPCDrives(Arg)
+                Wdbg("Stream opened for device {0}", Arg)
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("ShutdownConfirm, " + Arg + vbNewLine)
                 Dim WResult As IAsyncResult = remotestream.BeginWrite(ByteMsg, 0, ByteMsg.Count, Nothing, Nothing)
+                Wdbg("Sending response to device...")
                 WResult.AsyncWaitHandle.WaitOne()
                 remotestream.EndWrite(WResult)
             ElseIf Cmd = "<Request:Reboot>" Then
                 Dim remotestream As NetworkStream = RPCDrives(Arg)
+                Wdbg("Stream opened for device {0}", Arg)
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
                 Dim WResult As IAsyncResult = remotestream.BeginWrite(ByteMsg, 0, ByteMsg.Count, Nothing, Nothing)
+                Wdbg("Sending response to device...")
                 WResult.AsyncWaitHandle.WaitOne()
                 remotestream.EndWrite(WResult)
             ElseIf Cmd = "<Request:Populate>" Then

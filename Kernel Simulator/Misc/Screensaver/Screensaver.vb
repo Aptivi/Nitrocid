@@ -58,6 +58,7 @@ Public Module Screensaver
                     oldcursor = Console.CursorLeft
                 Next
                 If Not RebootRequested Then
+                    Wdbg("Screen time has reached.")
                     ShowSavers(defSaverName)
                 End If
             End If

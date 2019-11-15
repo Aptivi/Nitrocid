@@ -21,11 +21,13 @@ Module Solver
     Sub InitializeSolver()
         Dim RandomDriver As New Random
         Dim RandomExpression As String
-        Dim UserEvaluated As String
+        Dim UserEvaluated As String = ""
         Dim Operations() As String = {"+", "-", "*", "/"}
+        Wdbg("Initialized expressions.")
         W(DoTranslation("Write ""GetMeOut"" to exit.", currentLang), True, ColTypes.Neutral)
         While True
             RandomExpression = CStr(RandomDriver.Next(1000)) + Operations.ElementAt(RandomDriver.Next(Operations.Count)) + CStr(RandomDriver.Next(1000))
+            Wdbg("Expression to be solved: {0}", RandomExpression)
             W(RandomExpression, True, ColTypes.Input)
             While True
                 Dim character As Char = Console.ReadKey(True).KeyChar
@@ -36,11 +38,15 @@ Module Solver
                     UserEvaluated += character
                 End If
             End While
+            Wdbg("Evaluated: {0}", UserEvaluated)
             If UserEvaluated = "GetMeOut" Then
+                Wdbg("Exit")
                 Exit Sub
             ElseIf CDbl(UserEvaluated) = New DataTable().Compute(RandomExpression, Nothing) Then
+                Wdbg("Expression is {0} and equals {1}", UserEvaluated, New DataTable().Compute(RandomExpression, Nothing))
                 W(DoTranslation("Solved perfectly!", currentLang), True, ColTypes.Neutral)
             Else
+                Wdbg("Expression is {0} and equals {1}", UserEvaluated, New DataTable().Compute(RandomExpression, Nothing))
                 W(DoTranslation("Solved incorrectly.", currentLang), True, ColTypes.Neutral)
             End If
             UserEvaluated = ""
