@@ -26,6 +26,7 @@ Public Module HelpSystem
         definitions = New Dictionary(Of String, String) From {{"adduser", DoTranslation("Adds users (Only admins can access this command)", currentLang)},
                                                               {"alias", DoTranslation("Adds aliases to commands (Only admins can access this command)", currentLang)},
                                                               {"arginj", DoTranslation("Injects arguments to the kernel (reboot required, admins only)", currentLang)},
+                                                              {"bsynth", DoTranslation("Loads the synth file and plays it.", currentLang)},
                                                               {"cdbglog", DoTranslation("Deletes everything in debug log", currentLang)},
                                                               {"chdir", DoTranslation("Changes directory", currentLang)},
                                                               {"chhostname", DoTranslation("Changes host name (Admins only)", currentLang)},
@@ -119,6 +120,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " arginj [Arguments separated by spaces]" + vbNewLine +
               "       " + DoTranslation("where arguments will be {0}", currentLang), True, ColTypes.Neutral, String.Join(", ", AvailableArgs))
+
+        ElseIf command = "bsynth" Then
+
+            W(DoTranslation("Usage:", currentLang) + " bsynth <script-file>", True, ColTypes.Neutral)
 
         ElseIf command = "cdbglog" Then
 

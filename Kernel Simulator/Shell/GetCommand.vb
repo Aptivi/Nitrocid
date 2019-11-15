@@ -152,6 +152,13 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "bsynth" Then
+
+                If eqargs.Count > 0 Then
+                    ProbeSynth(eqargs(0))
+                    Done = True
+                End If
+
             ElseIf requestedCommand = "cdbglog" Then
 
                 Try
