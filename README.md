@@ -14,8 +14,6 @@ This kernel simulator simulates our **future** kernel that is planned by us and 
 
 - Regarding TTS support, we're looking for platform-independent text to speech library. Currently, it fails to compile on Mono on Linux.
 
-- Regarding 256 colored console support, we're going to drop support for Windows 7, 8, and 8.1, leaving Windows 10 and Unix the only OS supported to run KS.
-
 ## |-----+--> _Virus Warning_ <--+-----|
 
 Unfortunately, some parts of KS have been taken to avoid detection in the source code of a malicious executable file called payslip.exe. It got its entries for the following cybersecurity analyzers:
