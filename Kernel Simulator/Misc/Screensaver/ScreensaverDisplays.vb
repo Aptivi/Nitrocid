@@ -219,6 +219,7 @@ Public Module ScreensaverDisplays
     Sub HackUserFromAD_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles HackUserFromAD.DoWork
         Do While True
             Thread.Sleep(1000)
+IFCANCEL:
             If HackUserFromAD.CancellationPending = True Then
                 Wdbg("Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
@@ -233,29 +234,46 @@ Public Module ScreensaverDisplays
                 Console.Clear()
                 Console.BackgroundColor = ConsoleColor.Black
                 Console.ForegroundColor = ConsoleColor.Green
-                Console.WriteLine("Microsoft Windows [Version 10.0.18362.239]" + vbNewLine +
+                Console.WriteLine("Microsoft Windows [Version 10.0.18362.449]" + vbNewLine +
                                   "(c) 2019 Microsoft Corporation. All rights reserved." + vbNewLine)
                 Console.Write(CurrDir + ">")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(3000)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 WriteSlowly("net user /domain", False, 100)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(200)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine()
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(50)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("The request will be processed at a domain controller for domain Community.Workspace." + vbNewLine)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(2000)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("User accounts for \\LOGON-HANDLER" + vbNewLine + vbNewLine +
                                   "-------------------------------------------------------------------------------" + vbNewLine +
                                   "Administrator            CommAdmin                EnterpriseManager" + vbNewLine +
                                   "Guest                    UserEmployees            Work" + vbNewLine +
                                   "The command completed successfully." + vbNewLine + vbNewLine)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.Write(CurrDir + ">")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(1000)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 WriteSlowly("net user EnterpriseManager /domain", False, 125)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(325)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine()
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(50)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("The request will be processed at a domain controller for domain Community.Workspace." + vbNewLine)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(2000)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("User name                    EnterpriseManager" + vbNewLine +
                                   "Full Name                    Enterprise Manager" + vbNewLine +
                                   "Comment                      Only usable by IT experts" + vbNewLine +
@@ -277,33 +295,59 @@ Public Module ScreensaverDisplays
                                   "Local Group Memberships      *None" + vbNewLine +
                                   "Global Group memberships     *Administrators" + vbNewLine +
                                   "The command completed successfully." + vbNewLine + vbNewLine)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.Write(CurrDir + ">")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(1000)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 WriteSlowly("ntlm.py dump --user=EnterpriseManager --domain=Community.Workspace", False, 85)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(130)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("Dumping NTLM Hash...")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(4000)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("Dump completed, and saved in ./Hash.txt")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.Write(CurrDir + ">")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(1000)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 WriteSlowly("ntlm.py decrypt Hash.txt", False, 160)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(215)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("Trying to decrypt...")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(2150)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("Decryption complete. Plain-text password retrieved in ./Pass.txt")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.Write(CurrDir + ">")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(1000)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 WriteSlowly("start.py --user=EnterpriseManager --pass=`write Pass.txt` ""start""", False, 130)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(115)
-                Console.WriteLine("Microsoft Windows [Version 10.0.18362.239]" + vbNewLine +
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
+                Console.WriteLine("Microsoft Windows [Version 10.0.18362.449]" + vbNewLine +
                                   "(c) 2019 Microsoft Corporation. All rights reserved." + vbNewLine)
                 Console.Write("Z:\ENT\Private\EM>")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(3000)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 WriteSlowly("shutdown /s /fw /t 00 /m \\LOGON-HANDLER", False, 130)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(115)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("LOGON-HANDLER: System shutdown is initiated.")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(115)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.Write("Z:\ENT\Private\EM>")
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(5000)
             End If
         Loop
