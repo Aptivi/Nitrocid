@@ -126,24 +126,30 @@ Public Module Translate
         Return langStrings
     End Function
 
-    Public Sub SetLang(ByVal lang As String)
-        If availableLangs.Contains(lang) And Not lang.EndsWith("-T") Then 'The second condition prevents tricksters from using "chlang <lang>-T"
-            'Check to see if the language is transliterable
-            Wdbg("Transliterable? {0}", Transliterables.Contains(lang))
-            If Transliterables.Contains(lang) Then
-                W(DoTranslation("The language you've selected contains two variants. Select one:", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
-                W(DoTranslation("2. Translated", lang + "-T") + vbNewLine, True, ColTypes.Neutral)
+    Public Sub SetLang(ByVal lang As String, Optional ByVal Force As Boolean = False)
+        If availableLangs.Contains(lang) Then
+            If Not Force Then
+                If lang.EndsWith("-T") Then 'The condition prevents tricksters from using "chlang <lang>-T", if not forced.
+                    Exit Sub
+                Else
+                    'Check to see if the language is transliterable
+                    Wdbg("Transliterable? {0}", Transliterables.Contains(lang))
+                    If Transliterables.Contains(lang) Then
+                        W(DoTranslation("The language you've selected contains two variants. Select one:", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
+                        W(DoTranslation("2. Translated", lang + "-T") + vbNewLine, True, ColTypes.Neutral)
 CHOICE:
-                W(DoTranslation("Select your choice:", currentLang), False, ColTypes.Input)
-                Dim cho As String = Console.ReadKey(True).KeyChar
-                Console.WriteLine()
-                Wdbg("Choice: {0}", cho)
-                If cho = "2" Then
-                    lang += "-T"
-                ElseIf Not cho = "1" Then
-                    W(DoTranslation("Invalid choice. Try again.", currentLang), True, ColTypes.Neutral)
-                    GoTo CHOICE
+                        W(DoTranslation("Select your choice:", currentLang), False, ColTypes.Input)
+                        Dim cho As String = Console.ReadKey(True).KeyChar
+                        Console.WriteLine()
+                        Wdbg("Choice: {0}", cho)
+                        If cho = "2" Then
+                            lang += "-T"
+                        ElseIf Not cho = "1" Then
+                            W(DoTranslation("Invalid choice. Try again.", currentLang), True, ColTypes.Neutral)
+                            GoTo CHOICE
+                        End If
+                    End If
                 End If
             End If
 

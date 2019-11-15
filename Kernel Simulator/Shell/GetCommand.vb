@@ -610,6 +610,7 @@ Public Module GetCommand
                     Else
                         StartRDebugThread(True)
                     End If
+                    Done = True
                 End If
 
             ElseIf words(0) = "rmuser" Then

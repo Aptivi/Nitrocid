@@ -225,7 +225,7 @@ Public Module Config
         Try
             '----------------------------- Important configuration -----------------------------
             'Language
-            SetLang(configReader.Sections("General").Keys("Language").Value)
+            SetLang(configReader.Sections("General").Keys("Language").Value, True)
 
             'Colored Shell
             If configReader.Sections("Shell").Keys("Colored Shell").Value = "False" Then
