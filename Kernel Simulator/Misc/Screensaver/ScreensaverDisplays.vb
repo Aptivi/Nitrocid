@@ -29,6 +29,8 @@ Public Module ScreensaverDisplays
     Public WithEvents GlitterColor As New BackgroundWorker
     Public WithEvents AptErrorSim As New BackgroundWorker
     Public WithEvents HackUserFromAD As New BackgroundWorker
+    Public WithEvents ColorMix255 As New BackgroundWorker
+    Public WithEvents GlitterColor255 As New BackgroundWorker
     Public WithEvents Custom As New BackgroundWorker
     Public finalSaver As ICustomSaver
 
@@ -332,6 +334,63 @@ Public Module ScreensaverDisplays
                     Console.SetCursorPosition(Left, Top)
                     Console.BackgroundColor = color
                     Console.Write(" ")
+                End If
+            Next
+        Loop
+    End Sub
+
+    Sub ColorMix255_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles ColorMix255.DoWork
+        Console.BackgroundColor = ConsoleColor.Black
+        Console.ForegroundColor = ConsoleColor.White
+        Dim RandomDriver As New Random
+        Console.Clear()
+        Console.CursorVisible = False
+        Do While True
+            Thread.Sleep(1)
+            If ColorMix255.CancellationPending = True Then
+                Wdbg("Cancellation is pending. Cleaning everything up...")
+                e.Cancel = True
+                Console.Clear()
+                Console.ForegroundColor = inputColor
+                Console.BackgroundColor = backgroundColor
+                Load()
+                Console.CursorVisible = True
+                Wdbg("All clean. Mix 255 Colors screensaver stopped.")
+                Exit Do
+            Else
+                Dim esc As Char = GetEsc()
+                Dim ColorNum As Integer = RandomDriver.Next(255)
+                Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+            End If
+        Loop
+    End Sub
+
+    Sub GlitterColor255_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles GlitterColor255.DoWork
+        Console.BackgroundColor = ConsoleColor.Black
+        Console.Clear()
+        Console.CursorVisible = False
+        Dim RandomDriver As New Random()
+        Wdbg("Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        Do While True
+            For Each color In colors
+                If GlitterColor255.CancellationPending = True Then
+                    Wdbg("Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    Console.Clear()
+                    Console.ForegroundColor = inputColor
+                    Console.BackgroundColor = backgroundColor
+                    Load()
+                    Console.CursorVisible = True
+                    Wdbg("All clean. Glitter 255 Colors screensaver stopped.")
+                    Exit Do
+                Else
+                    Thread.Sleep(1)
+                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    Console.SetCursorPosition(Left, Top)
+                    Dim esc As Char = GetEsc()
+                    Dim ColorNum As Integer = RandomDriver.Next(255)
+                    Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                 End If
             Next
         Loop

@@ -27,8 +27,9 @@ Public Module Screensaver
     Public LockMode As Boolean = False
     Public InSaver As Boolean = False
     Public defSaverName As String = "glitterMatrix"
-    Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False}, {"lines", False},
-                                                                 {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False}}
+    Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"colorMix255", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False},
+                                                                 {"lines", False}, {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False},
+                                                                 {"glitterColor255", False}}
     Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
     Public WithEvents Timeout As New BackgroundWorker
     Private execCustomSaver As CompilerResults
@@ -133,6 +134,22 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 HackUserFromAD.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "glitterColor255" Then
+                GlitterColor255.WorkerSupportsCancellation = True
+                GlitterColor255.RunWorkerAsync()
+                Wdbg("Glitter 255 Colors started")
+                Console.ReadKey()
+                ScrnTimeReached = False
+                GlitterColor255.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "colorMix255" Then
+                ColorMix255.WorkerSupportsCancellation = True
+                ColorMix255.RunWorkerAsync()
+                Wdbg("Mix 255 Colors started")
+                Console.ReadKey()
+                ScrnTimeReached = False
+                ColorMix255.CancelAsync()
                 Thread.Sleep(150)
             ElseIf ScrnSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.

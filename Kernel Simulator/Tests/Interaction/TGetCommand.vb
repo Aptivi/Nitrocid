@@ -19,20 +19,8 @@
 Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Text.RegularExpressions
-Imports System.Runtime.InteropServices
 
 Module TGetCommand
-
-    'Move three declarations to Console
-    <DllImport("kernel32.dll", SetLastError:=True)>
-    Public Function SetConsoleMode(ByVal hConsoleHandle As IntPtr, ByVal mode As Integer) As Boolean
-    End Function
-    <DllImport("kernel32.dll", SetLastError:=True)>
-    Public Function GetConsoleMode(ByVal handle As IntPtr, <Out()> ByRef mode As Integer) As Boolean
-    End Function
-    <DllImport("kernel32.dll", SetLastError:=True)>
-    Public Function GetStdHandle(ByVal handle As Integer) As IntPtr
-    End Function
 
     Sub TParseCommand(ByVal FullCmd As String)
         Dim FullArgs As String
@@ -158,15 +146,8 @@ Module TGetCommand
                 End If
             End If
         ElseIf Cmd = "colortest" Then 'Usage: colortest <index>
-            'TODO: Move enablement code block to separate file in Console
-            Dim handle = GetStdHandle(-11)
-            Dim mode As Integer
-            GetConsoleMode(handle, mode)
-            If Not mode = 7 Then
-                SetConsoleMode(handle, mode Or &H4)
-            End If
-            Dim esc As Char = ChrW(&H1B)
-            Console.Write(esc + "[38;5;" + FullArgsL(0) + "mIndex " + FullArgsL(0))
+            Dim esc As Char = GetEsc()
+            Console.WriteLine(esc + "[38;5;" + FullArgsL(0) + "mIndex " + FullArgsL(0))
         ElseIf Cmd = "help" Then
             W("- print <Color><Line><Message>" + vbNewLine +
               "- printf <Color><Line><Variable1;Variable2;Variable3;...><Message>" + vbNewLine +
