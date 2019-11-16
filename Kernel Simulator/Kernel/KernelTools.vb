@@ -348,7 +348,7 @@ Public Module KernelTools
         Next
 
         'Initialize stage counter
-        WriteWhere("0/5", Console.WindowWidth - 4, Console.WindowHeight - 1, ColTypes.Neutral)
+        WriteWhere("0/5", Console.WindowWidth - 3, Console.WindowHeight - 1, ColTypes.Neutral)
         W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
         InitFS()
 

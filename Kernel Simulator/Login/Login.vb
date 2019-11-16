@@ -98,7 +98,7 @@ Public Module Login
             password = userword.Item(usernamerequested)
 
             'Check if there's the password
-            If Not password = Nothing Then
+            If Not password = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855" Then 'No password
                 'Wait for input
                 W(DoTranslation("{0}'s password: ", currentLang), False, ColTypes.Input, usernamerequested)
 

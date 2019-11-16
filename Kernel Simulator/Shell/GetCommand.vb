@@ -239,8 +239,12 @@ Public Module GetCommand
                             If InStr(eargs(3), " ") > 0 Then
                                 W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
                             ElseIf eargs(3) = eargs(2) Then
+                                Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(eargs(1)))
+                                eargs(1) = GetArraySHA256(hashbyte)
                                 If eargs(1) = userword(eargs(0)) Then
                                     If adminList(eargs(0)) And adminList(signedinusrnm) Then
+                                        hashbyte = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(eargs(2)))
+                                        eargs(2) = GetArraySHA256(hashbyte)
                                         userword.Item(eargs(0)) = eargs(2)
                                     ElseIf adminList(eargs(0)) And Not adminList(signedinusrnm) Then
                                         W(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang), True, ColTypes.Neutral, eargs(0))

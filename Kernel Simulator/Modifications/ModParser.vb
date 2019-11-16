@@ -125,7 +125,7 @@ Public Module ModParser
             'Ignore all mods who doesn't end with .m
             Wdbg("Unsupported file type for mod file {0}.", modFile)
         ElseIf modFile.EndsWith("SS.m") Then
-            'Ignore all mods who ends with SS.m
+            'Ignore all mods who end with SS.m
             Wdbg("Mod file {0} is a screensaver and is ignored.", modFile)
         ElseIf modFile.EndsWith("CS.m") Then
             'Mod has a language of C#
