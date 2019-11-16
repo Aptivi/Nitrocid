@@ -22,8 +22,6 @@ Unfortunately, some parts of KS have been taken to avoid detection in the source
 
 * VirusTotal (downloadable for researchers): https://www.virustotal.com/gui/file/756b94b872cada97c6ebcbc65c47734e3238f171db719d428a42f6ac8bc93e4f/detection
 
-* ANY.RUN ([downloadable for registered users](https://app.any.run/tasks/567f7789-cf49-4602-8a73-0459eb11be49/)): https://any.run/report/fab1bf683a31f5f5249fd685b9b75ce92bd28e3ad2abae10a07407de4d42ad78/567f7789-cf49-4602-8a73-0459eb11be49
-
 For more information, inspect [this wiki page](https://github.com/EoflaOE/Kernel-Simulator/wiki/Studying-payslip-virus).
 
 ## |-----+--> _Important announcement_ <--+-----|
