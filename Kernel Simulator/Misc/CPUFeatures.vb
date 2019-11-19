@@ -41,28 +41,25 @@ Public Class CPUFeatures
     End Enum
 
     ' ----------------------------- Unix functions -----------------------------
-    Public Sub CheckSSEs()
+    Public Function CheckSSE(ByVal SSEVer As Integer) As Boolean
         Dim cpuinfo As New IO.StreamReader("/proc/cpuinfo")
-        Dim SSE, SSE2, SSE3 As Boolean
         Dim ln As String
         Do While Not cpuinfo.EndOfStream
             ln = cpuinfo.ReadLine
             If ln.StartsWith("flags") Then
-                If ln.Contains("sse") Then
-                    SSE = True
+                If ln.Contains("sse") And SSEVer = 1 Then
+                    Return True
                 End If
-                If ln.Contains("sse2") Then
-                    SSE2 = True
+                If ln.Contains("sse2") And SSEVer = 2 Then
+                    Return True
                 End If
-                If ln.Contains("sse3") Then
-                    SSE3 = True
+                If ln.Contains("sse3") And SSEVer = 3 Then
+                    Return True
                 End If
                 Exit Do
             End If
         Loop
-        W("SSE:  {0}" + vbNewLine +
-          "SSE2: {1}" + vbNewLine +
-          "SSE3: {2}", True, ColTypes.Neutral, SSE, SSE2, SSE3)
-    End Sub
+        Return False
+    End Function
 
 End Class

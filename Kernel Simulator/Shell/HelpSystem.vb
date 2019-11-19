@@ -55,7 +55,6 @@ Public Module HelpSystem
                                                               {"md", DoTranslation("Creates a directory", currentLang)},
                                                               {"move", DoTranslation("Moves a file to another directory", currentLang)},
                                                               {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
-                                                              {"noaliases", DoTranslation("Shows forbidden list of aliases", currentLang)},
                                                               {"perm", DoTranslation("Manage permissions for users (Only admins can access this command)", currentLang)},
                                                               {"read", DoTranslation("Writes file contents to the console", currentLang)},
                                                               {"reboot", DoTranslation("Restarts your computer (WARNING: No syncing, because it is not a final kernel)", currentLang)},
@@ -75,7 +74,6 @@ Public Module HelpSystem
                                                               {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
                                                               {"speak", DoTranslation("Speaks your string using the default voice", currentLang)},
                                                               {"spellbee", DoTranslation("See if you can spell words correctly on time", currentLang)},
-                                                              {"sses", DoTranslation("Gets SSE versions", currentLang)},
                                                               {"sshell", DoTranslation("Connects to an SSH server.", currentLang)},
                                                               {"sumfile", DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang)},
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
@@ -245,10 +243,6 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " netinfo: " + DoTranslation("Get every network information", currentLang), True, ColTypes.Neutral)
 
-        ElseIf command = "noaliases" Then
-
-            W(DoTranslation("Usage:", currentLang) + " noaliases: " + DoTranslation("Shows forbidden list of aliases", currentLang), True, ColTypes.Neutral)
-
         ElseIf command = "perm" Then
 
             W(DoTranslation("Usage:", currentLang) + " perm <userName> <Admin/Disabled> <Allow/Disallow>", True, ColTypes.Neutral)
@@ -331,10 +325,6 @@ Public Module HelpSystem
         ElseIf command = "speak" Then
 
             W(DoTranslation("Usage:", currentLang) + " speak <String>: " + DoTranslation("Speaks your string using the default voice", currentLang), True, ColTypes.Neutral)
-
-        ElseIf command = "sses" Then
-
-            W(DoTranslation("Usage:", currentLang) + " sses: " + DoTranslation("Gets SSE versions", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "sshell" Then
 

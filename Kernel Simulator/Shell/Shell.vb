@@ -26,14 +26,14 @@ Public Module Shell
     Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "shutdown", "reboot", "adduser", "chmotd",
                                             "chhostname", "showtd", "chpwd", "sysinfo", "arginj", "setcolors", "rmuser", "cls", "perm", "chusrname",
                                             "setthemes", "netinfo", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
-                                            "savescreen", "lockscreen", "setsaver", "reloadsaver", "noaliases", "ftp", "usermanual", "cdbglog", "sses",
-                                            "chlang", "reloadmods", "get", "lsdbgdev", "disconndbgdev", "lset", "move", "copy", "search", "listdrives",
+                                            "savescreen", "lockscreen", "setsaver", "reloadsaver", "ftp", "usermanual", "cdbglog", "sses", "chlang",
+                                            "reloadmods", "get", "lsdbgdev", "disconndbgdev", "lset", "move", "copy", "search", "listdrives",
                                             "listparts", "sumfile", "rdebug", "getvoices", "setvoice", "speak", "spellbee", "mathbee", "loteresp",
                                             "sshell", "bsynth"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
                                      "lset", "listdrives", "listparts", "rdebug"}
-    Public obsoleteCmds() As String = {"noaliases", "sses"}
+    Public obsoleteCmds() As String = {}
     Public modcmnds As New ArrayList
 
     'For contributors: For each added command, you should add a command to availableCommands array so there is no problems detecting your new command.

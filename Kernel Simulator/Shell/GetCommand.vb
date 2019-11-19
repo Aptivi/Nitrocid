@@ -20,7 +20,6 @@ Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Speech.Synthesis
 Imports System.Text
-Imports System.Text.RegularExpressions
 Imports Microsoft.VisualBasic.FileIO
 
 Public Module GetCommand
@@ -512,11 +511,6 @@ Public Module GetCommand
                     Done = True
                 End If
 
-            ElseIf requestedCommand = "noaliases" Then
-
-                W(DoTranslation("Aliases that are forbidden: {0}", currentLang), True, ColTypes.Neutral, String.Join(", ", forbidden))
-                Done = True
-
             ElseIf words(0) = "perm" Then
 
                 If requestedCommand <> "perm" Then
@@ -805,20 +799,6 @@ Public Module GetCommand
 
                 Done = True
                 InitializeWords()
-
-            ElseIf requestedCommand = "sses" Then
-
-                If EnvironmentOSType.Contains("Unix") Then
-                    Dim feat As New CPUFeatures
-                    feat.CheckSSEs()
-                Else
-                    W("SSE:  {0}" + vbNewLine +
-                      "SSE2: {1}" + vbNewLine +
-                      "SSE3: {2}", True, ColTypes.Neutral, CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMIAvailable),
-                                                           CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsXMMI64Available),
-                                                           CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsSSE3Available))
-                End If
-                Done = True
 
             ElseIf words(0) = "sshell" Then
 
