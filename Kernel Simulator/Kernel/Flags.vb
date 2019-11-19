@@ -46,5 +46,6 @@ Module Flags
     Public SafeMode As Boolean                                  'Whether safe mode is enabled
     Public FullParseMode As Boolean                             'Whether or not to parse whole directory for size
     Public ScrnTimeReached As Boolean                           'When the screensaver timer has reached
+    Public StartScroll As Boolean                               'Enable marquee on startup
 
 End Module

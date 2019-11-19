@@ -330,8 +330,11 @@ Public Module KernelTools
         End If
 
         'Show welcome message. Don't remove license
-        'TODO: Provide option to user if eyecandy is going to launch or not in Kernel Config
-        WriteSlowlyC(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), True, 10, ColTypes.Neutral, KernelVersion)
+        If StartScroll Then
+            WriteSlowlyC(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), True, 10, ColTypes.Neutral, KernelVersion)
+        Else
+            W(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), True, ColTypes.Neutral, KernelVersion)
+        End If
         W(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE" + vbNewLine +
                       "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
@@ -377,7 +380,7 @@ Public Module KernelTools
         ParseCurrentTheme()
 
         'Start screensaver timeout
-        Timeout.RunWorkerAsync()
+        If Not Timeout.IsBusy Then Timeout.RunWorkerAsync()
     End Sub
 
     Sub InitPaths()
