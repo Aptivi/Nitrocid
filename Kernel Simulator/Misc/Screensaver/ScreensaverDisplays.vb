@@ -80,7 +80,7 @@ Public Module ScreensaverDisplays
                 Console.BackgroundColor = backgroundColor
                 Load()
                 Console.CursorVisible = True
-                Wdbg("All clean. Custom screensaver stopped.")
+                Wdbg("All clean. Mix Colors screensaver stopped.")
                 Exit Do
             Else
                 Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor) : Console.Write(" ")
@@ -103,7 +103,7 @@ Public Module ScreensaverDisplays
                 Console.BackgroundColor = backgroundColor
                 Load()
                 Console.CursorVisible = True
-                Wdbg("All clean. Custom screensaver stopped.")
+                Wdbg("All clean. Matrix screensaver stopped.")
                 Exit Do
             Else
                 Thread.Sleep(1)
@@ -125,7 +125,7 @@ Public Module ScreensaverDisplays
                     Console.BackgroundColor = backgroundColor
                     Load()
                     Console.CursorVisible = True
-                    Wdbg("All clean. Custom screensaver stopped.")
+                    Wdbg("All clean. Disco screensaver stopped.")
                     Exit Do
                 Else
                     Console.BackgroundColor = color
@@ -149,7 +149,7 @@ Public Module ScreensaverDisplays
                     Console.BackgroundColor = backgroundColor
                     Load()
                     Console.CursorVisible = True
-                    Wdbg("All clean. Custom screensaver stopped.")
+                    Wdbg("All clean. Lines screensaver stopped.")
                     Exit Do
                 Else
                     Console.Clear()
