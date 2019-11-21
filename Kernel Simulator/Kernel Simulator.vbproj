@@ -249,7 +249,6 @@
     <Compile Include="Misc\Configuration\Config.vb" />
     <Compile Include="Misc\CPUFeatures.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
-    <Compile Include="Misc\DisposeExit.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverDisplays.vb" />
     <Compile Include="Misc\Scripts\BeepSynth.vb" />
     <Compile Include="Misc\Speech\VoiceManagement.vb" />

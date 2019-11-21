@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Reflection
 Imports System.Threading
+Imports System.Diagnostics.Process
 
 Public Module KernelTools
 
@@ -461,5 +462,26 @@ Public Module KernelTools
         Return dt
     End Function
 #End If
+
+    Private Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal hProcess As IntPtr, ByVal dwMinimumWorkingSetSize As Int32, ByVal dwMaximumWorkingSetSize As Int32) As Int32
+
+    Public Sub DisposeAll()
+
+        Try
+            Wdbg("Garbage collector starting... Max generators: {0}", GC.MaxGeneration.ToString)
+            GC.Collect()
+            GC.WaitForPendingFinalizers()
+            If EnvironmentOSType.Contains("NT") Then
+                SetProcessWorkingSetSize(GetCurrentProcess().Handle, -1, -1)
+            End If
+            EventManager.RaiseGarbageCollected()
+        Catch ex As Exception
+            W(DoTranslation("Error trying to free RAM: {0} - Continuing...", currentLang), True, ColTypes.Neutral, Err.Description)
+            If DebugMode = True Then
+                W(ex.StackTrace, True, ColTypes.Neutral) : Wdbg("Error freeing RAM: {0}", Err.Description) : WStkTrc(ex)
+            End If
+        End Try
+
+    End Sub
 
 End Module

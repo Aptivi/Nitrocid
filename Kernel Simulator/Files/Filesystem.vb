@@ -42,6 +42,7 @@ Public Module Filesystem
                 W(DoTranslation("Permission {0} failed", currentLang), True, ColTypes.Neutral, sex.PermissionType)
                 WStkTrc(sex)
             Catch ptlex As IO.PathTooLongException
+                Wdbg("Directory length: {0}", direct.Length)
                 W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Neutral)
                 WStkTrc(ptlex)
             End Try
