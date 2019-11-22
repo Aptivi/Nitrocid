@@ -16,34 +16,27 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Speech.Synthesis
-Imports System.Collections.ObjectModel
+Imports NAudio.Wave
 
 Public Module VoiceManagement
 
-    Public CurrentVoice As InstalledVoice
-    Public VoiceSynth As New SpeechSynthesizer
-    Public Function GetVoices() As List(Of InstalledVoice)
-        Dim Voices As ReadOnlyCollection(Of InstalledVoice) = VoiceSynth.GetInstalledVoices
-        Wdbg("{0} voices", Voices.Count)
-        Return Voices.ToList
-    End Function
-    Public Sub SetVoice(ByVal Voice As String)
-        Dim Done As Boolean
-        For Each IVoice As InstalledVoice In GetVoices()
-            Wdbg("Parsing voice {0}, expecting {1}", IVoice.VoiceInfo.Name, Voice)
-            If IVoice.VoiceInfo.Name = Voice Then
-                Done = True
-                VoiceSynth.SelectVoice(Voice)
-                Wdbg("Voice selected")
-                W(DoTranslation("Voice set", currentLang), True, ColTypes.Neutral)
-                Exit For
-            End If
-        Next
-        If Not Done Then
-            Wdbg("Voice not found")
-            W(DoTranslation("Invalid voice.", currentLang), True, ColTypes.Neutral)
-        End If
+    Public Sub Speak(ByVal Text As String)
+        Dim SpeakReq As New WebClient
+        SpeakReq.Headers.Add("Content-Type", "audio/mpeg")
+        SpeakReq.Headers.Add("User-Agent", "KS on (" + EnvironmentOSType + ")")
+        Wdbg("Headers required: {0}", SpeakReq.Headers.Count)
+        SpeakReq.DownloadFile("http://translate.google.com/translate_tts?tl=en&q=" + Text + "&client=gtx", Environ("TEMP") + "/tts.mpeg")
+        Dim AudioRead As New AudioFileReader(Environ("TEMP") + "/tts.mpeg")
+        Wdbg("AudioRead: {0}", AudioRead.TotalTime)
+        Dim WaveEvent As New WaveOutEvent()
+        WaveEvent.Init(AudioRead)
+        Wdbg("Initialized Wave Out using {0}", WaveEvent.DeviceNumber)
+        WaveEvent.Play()
+        While WaveEvent.PlaybackState = PlaybackState.Playing
+        End While
+        WaveEvent.Dispose()
+        AudioRead.Close()
+        IO.File.Delete(Environ("TEMP") + "/tts.mpeg")
     End Sub
 
 End Module

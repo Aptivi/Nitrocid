@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.Security.Cryptography
-Imports System.Speech.Synthesis
 Imports System.Text
 Imports Microsoft.VisualBasic.FileIO
 
@@ -355,15 +354,6 @@ Public Module GetCommand
                     DownloadFile(args(0))
                     Done = True
                 End If
-
-            ElseIf words(0) = "getvoices" Then
-
-                Dim VoiceNo As Integer = 1
-                For Each voice As InstalledVoice In GetVoices()
-                    W(DoTranslation("Voice {0}: {1} ({2})", currentLang), True, ColTypes.Neutral, VoiceNo, voice.VoiceInfo.Name, voice.VoiceInfo.Id)
-                    VoiceNo += 1
-                Next
-                Done = True
 
             ElseIf requestedCommand = "lockscreen" Then
 
@@ -772,11 +762,6 @@ Public Module GetCommand
                     End If
                 End If
 
-            ElseIf words(0) = "setvoice" Then
-
-                SetVoice(strArgs)
-                Done = True
-
             ElseIf words(0) = "shutdown" Then
 
                 'Shuts down the simulated system
@@ -792,7 +777,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "speak" Then
 
-                VoiceSynth.Speak(strArgs)
+                Speak(strArgs)
                 Done = True
 
             ElseIf words(0) = "spellbee" Then

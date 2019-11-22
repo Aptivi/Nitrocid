@@ -270,6 +270,22 @@ Copyright (c) 2016-present, Robin Rodricks
 
 License (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 
+NAudio
+
+Source code: https://github.com/naudio/NAudio
+
+Copyright (c) 2019, Mark Heath
+
+License (Microsoft Public License): https://github.com/naudio/NAudio/blob/master/license.txt
+
+SSH.NET
+
+Source code: https://github.com/sshnet/SSH.NET/
+
+Copyright (c) Renci
+
+License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
+
 ## |-----+--> _License - GNU GPL_ <--+-----|
 
     Kernel Simulator - Simulates our future planned Kernel

@@ -41,7 +41,6 @@ Public Module HelpSystem
                                                               {"disconndbgdev", DoTranslation("Disconnect a debug device", currentLang)},
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                               {"get", DoTranslation("Downloads a file to current working directory", currentLang)},
-                                                              {"getvoices", DoTranslation("Gets installed voices", currentLang)},
                                                               {"help", DoTranslation("Help page", currentLang)},
                                                               {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
                                                               {"listdrives", DoTranslation("Lists all probed drives.", currentLang)},
@@ -68,7 +67,6 @@ Public Module HelpSystem
                                                               {"setcolors", DoTranslation("Sets up kernel colors", currentLang)},
                                                               {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
                                                               {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
-                                                              {"setvoice", DoTranslation("Sets the default voice", currentLang)},
                                                               {"showtd", DoTranslation("Shows date and time", currentLang)},
                                                               {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
                                                               {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
@@ -179,10 +177,6 @@ Public Module HelpSystem
         ElseIf command = "get" Then
 
             W(DoTranslation("Usage:", currentLang) + " get <URL>", True, ColTypes.Neutral)
-
-        ElseIf command = "getvoices" Then
-
-            W(DoTranslation("Usage:", currentLang) + " getvoices: " + DoTranslation("Gets installed voices", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "list" Then
 
@@ -300,10 +294,6 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " setthemes <Theme>" + vbNewLine +
               "       " + DoTranslation("Friends of", currentLang) + " setthemes: setcolors", True, ColTypes.Neutral)
-
-        ElseIf command = "setvoice" Then
-
-            W(DoTranslation("Usage:", currentLang) + " setvoice <Voice>", True, ColTypes.Neutral)
 
         ElseIf command = "showtd" Then
 
