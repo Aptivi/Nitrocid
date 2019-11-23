@@ -29,7 +29,6 @@ Public Module Color255
     <DllImport("kernel32.dll", SetLastError:=True)>
     Public Function GetStdHandle(ByVal handle As Integer) As IntPtr
     End Function
-    Public Used255 As Boolean
     Sub Initialize255()
         Dim handle = GetStdHandle(-11)
         Wdbg("Integer pointer {0}", handle)
@@ -40,14 +39,9 @@ Public Module Color255
             SetConsoleMode(handle, mode Or &H4)
             Wdbg("Added support for VT escapes.")
         End If
-        Used255 = True
     End Sub
     Function GetEsc() As Char
-        If Used255 Then
-            Return ChrW(&H1B) 'ESC
-        Else
-            Return ChrW(0) 'vbNullChar
-        End If
+        Return ChrW(&H1B) 'ESC
     End Function
 
 End Module

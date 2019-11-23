@@ -37,7 +37,7 @@ Public Module Kernel
                 'A title
                 Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}" 'Does MonoDevelop have the ability to compile interpolated strings?
                 InitPaths()
-                Initialize255()
+                If Not EnvironmentOSType.Contains("Unix") Then Initialize255()
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
 #If SPECIFIER <> "DEV" Then 'INFO: If the SPECIFIER equals DEV, then the block of code is grayed out. This is by design and will not affect the functionality.
