@@ -31,6 +31,7 @@ Public Module ScreensaverDisplays
     Public WithEvents HackUserFromAD As New BackgroundWorker
     Public WithEvents ColorMix255 As New BackgroundWorker
     Public WithEvents GlitterColor255 As New BackgroundWorker
+    Public WithEvents Disco255 As New BackgroundWorker
     Public WithEvents Custom As New BackgroundWorker
     Public finalSaver As ICustomSaver
 
@@ -504,6 +505,30 @@ IFCANCEL:
                     Dim esc As Char = GetEsc()
                     Dim ColorNum As Integer = RandomDriver.Next(255)
                     Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                End If
+            Next
+        Loop
+    End Sub
+
+    Sub Disco255_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Disco255.DoWork
+        Console.CursorVisible = False
+        Do While True
+            For color As Integer = 0 To 255
+                Thread.Sleep(100)
+                If Disco255.CancellationPending = True Then
+                    Wdbg("Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    Console.Clear()
+                    Console.ForegroundColor = inputColor
+                    Console.BackgroundColor = backgroundColor
+                    Load()
+                    Console.CursorVisible = True
+                    Wdbg("All clean. Disco screensaver stopped.")
+                    Exit Do
+                Else
+                    Dim esc As Char = GetEsc()
+                    Console.Write(esc + "[48;5;" + CStr(color) + "m")
+                    Console.Clear()
                 End If
             Next
         Loop

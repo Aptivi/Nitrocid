@@ -287,7 +287,7 @@ Public Module HelpSystem
 
         ElseIf command = "setsaver" Then
 
-            W(DoTranslation("Usage:", currentLang) + " setsaver <modNameSS.m/matrix/disco/colorMix/colorMix255/glitterMatrix/lines/glitterColor/aptErrorSim/hackUserFromAD>" + vbNewLine +
+            W(DoTranslation("Usage:", currentLang) + " setsaver <modNameSS.m/matrix/disco/disco255/colorMix/colorMix255/glitterMatrix/lines/glitterColor/aptErrorSim/hackUserFromAD>" + vbNewLine +
               "       " + DoTranslation("where modnameSS.m will be", currentLang) + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
 
         ElseIf command = "setthemes" Then
