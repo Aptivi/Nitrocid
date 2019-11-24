@@ -523,7 +523,7 @@ IFCANCEL:
                     Console.BackgroundColor = backgroundColor
                     Load()
                     Console.CursorVisible = True
-                    Wdbg("All clean. Disco screensaver stopped.")
+                    Wdbg("All clean. Disco 255 screensaver stopped.")
                     Exit Do
                 Else
                     Dim esc As Char = GetEsc()
