@@ -106,7 +106,7 @@ Module RemoteDebugger
                                 dbgConns.Keys(i - 1).WriteLine("Command {0} not found.", cmd.Split(" ")(0))
                             End If
                         Else
-                            Wdbg("{0}> {1}", name, msg)
+                            Wdbg("{0}> {1}", name, msg.Replace(vbNullChar, ""))
                         End If
                     End If
                 Catch ex As Exception
