@@ -19,6 +19,7 @@
 Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Text.RegularExpressions
+Imports NAudio.Wave
 
 Module TGetCommand
 
@@ -148,6 +149,17 @@ Module TGetCommand
         ElseIf Cmd = "colortest" Then 'Usage: colortest <index>
             Dim esc As Char = GetEsc()
             Console.WriteLine(esc + "[38;5;" + FullArgsL(0) + "mIndex " + FullArgsL(0))
+        ElseIf Cmd = "soundtest" Then 'Usage: soundtest <file>
+            Dim AudioRead As New AudioFileReader(FullArgs)
+            Wdbg("AudioRead: {0}", AudioRead.TotalTime)
+            Dim WaveEvent As New WaveOutEvent()
+            WaveEvent.Init(AudioRead)
+            Wdbg("Initialized Wave Out using {0}", WaveEvent.DeviceNumber)
+            WaveEvent.Play()
+            While WaveEvent.PlaybackState = PlaybackState.Playing
+            End While
+            WaveEvent.Dispose()
+            AudioRead.Close()
         ElseIf Cmd = "help" Then
             W("- print <Color><Line><Message>" + vbNewLine +
               "- printf <Color><Line><Variable1;Variable2;Variable3;...><Message>" + vbNewLine +
@@ -160,6 +172,7 @@ Module TGetCommand
               "- testsha256 <Message>" + vbNewLine +
               "- testmd5 <Message>" + vbNewLine +
               "- colortest <index>" + vbNewLine +
+              "- soundtest <file>" + vbNewLine +
               "- debug <Enable>" + vbNewLine +
               "- rdebug <Enable>" + vbNewLine +
               "- testevent <Event>" + vbNewLine +
