@@ -393,12 +393,14 @@ Public Module KernelTools
             If Not paths.ContainsKey("Debugging") Then paths.Add("Debugging", Environ("HOME") + "/kernelDbg.log")
             If Not paths.ContainsKey("Aliases") Then paths.Add("Aliases", Environ("HOME") + "/aliases.csv")
             If Not paths.ContainsKey("Home") Then paths.Add("Home", Environ("HOME"))
+            If Not paths.ContainsKey("Temp") Then paths.Add("Temp", "/tmp")
         Else
-            If Not paths.ContainsKey("Mods") Then paths.Add("Mods", Environ("USERPROFILE").Replace("\", "/") + "\KSMods\".Replace("\", "/"))
-            If Not paths.ContainsKey("Configuration") Then paths.Add("Configuration", Environ("USERPROFILE").Replace("\", "/") + "\kernelConfig.ini".Replace("\", "/"))
-            If Not paths.ContainsKey("Debugging") Then paths.Add("Debugging", Environ("USERPROFILE").Replace("\", "/") + "\kernelDbg.log".Replace("\", "/"))
-            If Not paths.ContainsKey("Aliases") Then paths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + "\aliases.csv".Replace("\", "/"))
+            If Not paths.ContainsKey("Mods") Then paths.Add("Mods", Environ("USERPROFILE").Replace("\", "/") + "/KSMods/")
+            If Not paths.ContainsKey("Configuration") Then paths.Add("Configuration", Environ("USERPROFILE").Replace("\", "/") + "/kernelConfig.ini")
+            If Not paths.ContainsKey("Debugging") Then paths.Add("Debugging", Environ("USERPROFILE").Replace("\", "/") + "/kernelDbg.log")
+            If Not paths.ContainsKey("Aliases") Then paths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/aliases.csv")
             If Not paths.ContainsKey("Home") Then paths.Add("Home", Environ("USERPROFILE").Replace("\", "/"))
+            If Not paths.ContainsKey("Temp") Then paths.Add("Temp", Environ("TEMP").Replace("\", "/"))
         End If
     End Sub
 

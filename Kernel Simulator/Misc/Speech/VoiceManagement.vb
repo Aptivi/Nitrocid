@@ -25,8 +25,8 @@ Public Module VoiceManagement
         SpeakReq.Headers.Add("Content-Type", "audio/mpeg")
         SpeakReq.Headers.Add("User-Agent", "KS on (" + EnvironmentOSType + ")")
         Wdbg("Headers required: {0}", SpeakReq.Headers.Count)
-        SpeakReq.DownloadFile("http://translate.google.com/translate_tts?tl=en&q=" + Text + "&client=gtx", Environ("TEMP") + "/tts.mpeg")
-        Dim AudioRead As New AudioFileReader(Environ("TEMP") + "/tts.mpeg")
+        SpeakReq.DownloadFile("http://translate.google.com/translate_tts?tl=en&q=" + Text + "&client=gtx", paths("Temp") + "/tts.mpeg")
+        Dim AudioRead As New AudioFileReader(paths("Temp") + "/tts.mpeg")
         Wdbg("AudioRead: {0}", AudioRead.TotalTime)
         Dim WaveEvent As New WaveOutEvent()
         WaveEvent.Init(AudioRead)
@@ -36,7 +36,7 @@ Public Module VoiceManagement
         End While
         WaveEvent.Dispose()
         AudioRead.Close()
-        IO.File.Delete(Environ("TEMP") + "/tts.mpeg")
+        IO.File.Delete(paths("Temp") + "/tts.mpeg")
     End Sub
 
 End Module
