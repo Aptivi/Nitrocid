@@ -170,7 +170,7 @@ CHOICE:
                     Console.OutputEncoding = Text.Encoding.GetEncoding(866)
                     Wdbg("Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
                 Case Else
-                    Console.OutputEncoding = Text.Encoding.GetEncoding(720)
+                    Console.OutputEncoding = Text.Encoding.GetEncoding(65001)
                     Wdbg("Encoding set successfully to {0}.", Console.OutputEncoding.EncodingName)
             End Select
 
