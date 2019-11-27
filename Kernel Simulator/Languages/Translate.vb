@@ -156,23 +156,27 @@ CHOICE:
             End If
 
             'Set appropriate codepage for incapable terminals
-            Select Case lang
-                Case "arb-T"
-                    Console.OutputEncoding = Text.Encoding.GetEncoding(1256)
-                    Wdbg("Encoding set successfully for Arabic to {0}.", Console.OutputEncoding.EncodingName)
-                Case "chi-T"
-                    Console.OutputEncoding = Text.Encoding.GetEncoding(936)
-                    Wdbg("Encoding set successfully for Chinese to {0}.", Console.OutputEncoding.EncodingName)
-                Case "jpn-T"
-                    Console.OutputEncoding = Text.Encoding.GetEncoding(932)
-                    Wdbg("Encoding set successfully for Japanese to {0}.", Console.OutputEncoding.EncodingName)
-                Case "rus-T"
-                    Console.OutputEncoding = Text.Encoding.GetEncoding(866)
-                    Wdbg("Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
-                Case Else
-                    Console.OutputEncoding = Text.Encoding.GetEncoding(65001)
-                    Wdbg("Encoding set successfully to {0}.", Console.OutputEncoding.EncodingName)
-            End Select
+            Try
+                Select Case lang
+                    Case "arb-T"
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(1256)
+                        Wdbg("Encoding set successfully for Arabic to {0}.", Console.OutputEncoding.EncodingName)
+                    Case "chi-T"
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(936)
+                        Wdbg("Encoding set successfully for Chinese to {0}.", Console.OutputEncoding.EncodingName)
+                    Case "jpn-T"
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(932)
+                        Wdbg("Encoding set successfully for Japanese to {0}.", Console.OutputEncoding.EncodingName)
+                    Case "rus-T"
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(866)
+                        Wdbg("Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
+                    Case Else
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(65001)
+                        Wdbg("Encoding set successfully to {0}.", Console.OutputEncoding.EncodingName)
+                End Select
+            Catch ex As Exception
+                W(DoTranslation("Unable to set codepage. The language may not display properly.", currentLang), True, ColTypes.Neutral)
+            End Try
 
             'Set current language
             W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, currentLang, lang)
