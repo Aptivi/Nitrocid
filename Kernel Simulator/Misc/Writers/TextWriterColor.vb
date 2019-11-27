@@ -99,12 +99,32 @@ Public Module TextWriterColor
 
     Public Sub WStkTrc(ByVal Ex As Exception)
         If DebugMode Then
+            Dim OffendingIndex As New List(Of String)
+
             'Check for quota
             CheckForExceed()
 
             'These two vbNewLines are padding for accurate stack tracing.
             dbgStackTraces.Add($"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}")
             dbgWriter.WriteLine(dbgStackTraces(0))
+            For i As Integer = 0 To dbgConns.Count - 1
+                Try
+                    dbgConns.Keys(i).WriteLine(dbgStackTraces(0))
+                Catch exc As Exception
+                    OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
+                End Try
+            Next
+
+            'Disconnect offending clients who are disconnected
+            For Each i As Integer In OffendingIndex
+                If i <> -1 Then
+                    DebugDevices.Keys(i).Disconnect(True)
+                    Wdbg("Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
+                    dbgConns.Remove(dbgConns.Keys(i))
+                    DebugDevices.Remove(DebugDevices.Keys(i))
+                End If
+            Next
+            OffendingIndex.Clear()
         End If
     End Sub
 

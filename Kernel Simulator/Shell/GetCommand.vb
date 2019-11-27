@@ -295,7 +295,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "copy" Then
 
-                If eqargs.Count = 2 Then
+                If eqargs?.Length = 2 Then
                     eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
                     eqargs(1) = CurrDir + "/" + eqargs(1).Replace("\", "/")
                     If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
@@ -478,7 +478,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "move" Then
 
-                If eqargs.Count = 2 Then
+                If eqargs?.Length = 2 Then
                     eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
                     eqargs(1) = CurrDir + "/" + eqargs(1).Replace("\", "/")
                     If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
