@@ -94,69 +94,64 @@ Public Module Filesystem
             End If
         End If
         Wdbg("Final folder: {0}", folder)
-        If CurrDirStructure.Contains(folder) Then
-            If IO.Directory.Exists(folder) Then
-                Dim enumeration As IEnumerable(Of String)
-                Try
-                    enumeration = IO.Directory.EnumerateFileSystemEntries(folder)
-                Catch sex As Security.SecurityException
-                    W(DoTranslation("You are unauthorized to list in {0}: {1}", currentLang), True, ColTypes.Neutral, folder, sex.Message)
-                    W(DoTranslation("Permission {0} failed", currentLang), True, ColTypes.Neutral, sex.PermissionType)
-                    WStkTrc(sex)
-                    Exit Sub
-                Catch ptlex As IO.PathTooLongException
-                    W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Neutral)
-                    WStkTrc(ptlex)
-                    Exit Sub
-                Catch ex As Exception
-                    W(DoTranslation("Unknown error while listing in directory: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
-                    WStkTrc(ex)
-                    Exit Sub
-                End Try
+        If CurrDirStructure.Contains(folder) Or IO.Directory.Exists(folder) Then
+            Dim enumeration As IEnumerable(Of String)
+            Try
+                enumeration = IO.Directory.EnumerateFileSystemEntries(folder)
+            Catch sex As Security.SecurityException
+                W(DoTranslation("You are unauthorized to list in {0}: {1}", currentLang), True, ColTypes.Neutral, folder, sex.Message)
+                W(DoTranslation("Permission {0} failed", currentLang), True, ColTypes.Neutral, sex.PermissionType)
+                WStkTrc(sex)
+                Exit Sub
+            Catch ptlex As IO.PathTooLongException
+                W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Neutral)
+                WStkTrc(ptlex)
+                Exit Sub
+            Catch ex As Exception
+                W(DoTranslation("Unknown error while listing in directory: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+                WStkTrc(ex)
+                Exit Sub
+            End Try
 #Disable Warning BC42104
-                For Each Entry As String In enumeration
+            For Each Entry As String In enumeration
 #Enable Warning BC42104
-                    Wdbg("Enumerating {0}...", Entry)
-                    Try
-                        If IO.File.Exists(Entry) Then
-                            Dim FInfo As New IO.FileInfo(Entry)
+                Wdbg("Enumerating {0}...", Entry)
+                Try
+                    If IO.File.Exists(Entry) Then
+                        Dim FInfo As New IO.FileInfo(Entry)
 
-                            'Print information
-                            W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
-                                FormatNumber(FInfo.Length / 1024, 2), FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
-                                                                      FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
-                        ElseIf IO.Directory.Exists(Entry) Then
-                            Dim DInfo As New IO.DirectoryInfo(Entry)
+                        'Print information
+                        W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
+                            FormatNumber(FInfo.Length / 1024, 2), FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
+                                                                  FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
+                    ElseIf IO.Directory.Exists(Entry) Then
+                        Dim DInfo As New IO.DirectoryInfo(Entry)
 
-                            'Get all file sizes in a folder
-                            Dim Files As List(Of IO.FileInfo)
-                            If FullParseMode Then
-                                Files = DInfo.EnumerateFiles("*", IO.SearchOption.AllDirectories).ToList
-                            Else
-                                Files = DInfo.EnumerateFiles("*", IO.SearchOption.TopDirectoryOnly).ToList
-                            End If
-                            Dim TotalSize As Long = 0 'In bytes
-                            For Each DFile As IO.FileInfo In Files
-                                TotalSize += DFile.Length
-                            Next
-
-                            'Print information
-                            W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
-                                FormatNumber(TotalSize / 1024, 2), DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
-                                                                   DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
+                        'Get all file sizes in a folder
+                        Dim Files As List(Of IO.FileInfo)
+                        If FullParseMode Then
+                            Files = DInfo.EnumerateFiles("*", IO.SearchOption.AllDirectories).ToList
+                        Else
+                            Files = DInfo.EnumerateFiles("*", IO.SearchOption.TopDirectoryOnly).ToList
                         End If
-                    Catch ex As UnauthorizedAccessException 'Error while getting info
-                        W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, ColTypes.Neutral, Entry)
-                        WStkTrc(ex)
-                    End Try
-                Next
-            Else
-                W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Neutral, folder)
-                Wdbg("IO.Directory.Exists returned False")
-            End If
+                        Dim TotalSize As Long = 0 'In bytes
+                        For Each DFile As IO.FileInfo In Files
+                            TotalSize += DFile.Length
+                        Next
+
+                        'Print information
+                        W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
+                            FormatNumber(TotalSize / 1024, 2), DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
+                                                               DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
+                    End If
+                Catch ex As UnauthorizedAccessException 'Error while getting info
+                    W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, ColTypes.Neutral, Entry)
+                    WStkTrc(ex)
+                End Try
+            Next
         Else
-            W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Neutral, folder)
-            Wdbg("CurrDirStructure doesn't contain {0}.", folder)
+            W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Neutral, folder)
+            Wdbg("CurrDirStructure = {0}, IO.Directory.Exists = {1}", CurrDirStructure.Contains(folder), IO.Directory.Exists(folder))
         End If
     End Sub
 

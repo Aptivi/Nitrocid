@@ -35,12 +35,12 @@ Public Module Kernel
         While True
             Try
                 'A title
-                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}" 'Does MonoDevelop have the ability to compile interpolated strings?
+                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}"
                 InitPaths()
                 If Not EnvironmentOSType.Contains("Unix") Then Initialize255()
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-#If SPECIFIER <> "DEV" Then 'INFO: If the SPECIFIER equals DEV, then the block of code is grayed out. This is by design and will not affect the functionality.
+#If SPECIFIER <> "DEV" Then
                 If Not IO.File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                     Dim pdbdown As New WebClient
                     pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
