@@ -21,7 +21,7 @@ Module SSH
         'Authentication
         Wdbg("Address: {0}:{1}, Username: {2}", Address, Port, Username)
         W(DoTranslation("Enter the password for {0}: ", currentLang), False, ColTypes.Input, Username)
-        Dim Pass As String
+        Dim Pass As String = ""
         While True
             Dim character As Char = Console.ReadKey(True).KeyChar
             If character = vbCr Or character = vbLf Then
