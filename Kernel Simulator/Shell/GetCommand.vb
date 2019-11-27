@@ -598,8 +598,10 @@ Public Module GetCommand
                     Else
                         StartRDebugThread(True)
                     End If
-                    Done = True
+                Else
+                    W(DoTranslation("Debugging not enabled.", currentLang), True, ColTypes.Neutral)
                 End If
+                Done = True
 
             ElseIf words(0) = "rmuser" Then
 
