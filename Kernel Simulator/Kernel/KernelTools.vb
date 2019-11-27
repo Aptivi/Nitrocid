@@ -94,6 +94,8 @@ Public Module KernelTools
                 Thread.Sleep(RebootTime * 1000)
                 Wdbg("Rebooting")
                 PowerManage("reboot")
+                adminList.Clear()
+                disabledList.Clear()
             ElseIf StopPanicAndGoToDoublePanic = True Then
                 'Switch to Double Panic
                 Exit Sub
@@ -120,6 +122,8 @@ Public Module KernelTools
                 W(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds...", currentLang), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
                 PowerManage("reboot")
+                adminList.Clear()
+                disabledList.Clear()
             End If
         Catch ex As Exception
             If DebugMode = True Then
