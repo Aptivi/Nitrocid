@@ -40,7 +40,6 @@ Public Module ScreensaverDisplays
         '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
         '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
         '                           Substitute: TextWriterColor.W() with System.Console.WriteLine() or System.Console.Write().
-        'TODO: Let screensaver developers set delay, and end the screensaver.
         Console.CursorVisible = False
         finalSaver.PreDisplay()
         Do While True
