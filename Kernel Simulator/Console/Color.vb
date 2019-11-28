@@ -18,7 +18,6 @@
 
 Public Module Color
 
-    'TODO: Make W() with the "def" color write the text in black if it encountered a light background so the shell prompt is readable
     'Variables for colors used by previous versions of Kernel.
     Public inputColor As ConsoleColor = ConsoleColor.White
     Public licenseColor As ConsoleColor = ConsoleColor.White
