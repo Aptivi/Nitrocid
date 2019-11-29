@@ -103,7 +103,7 @@ Public Module GetCommand
                             Adduser(args(0), args(1))
                             Done = True
                         Else
-                            W(DoTranslation("Passwords doesn't match.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Passwords don't match.", currentLang), True, ColTypes.Neutral)
                             Done = True
                         End If
                     End If

@@ -203,7 +203,7 @@ Blank message of the day.
 Blank MAL After Login.
 Changing MAL from {0} to {1}...
 Wrong user password.
-Passwords doesn't match.
+Passwords don't match.
 Username has been changed to {0}!
 The new name you entered is already found.
 Listing PCs is not supported yet on Unix.
