@@ -46,7 +46,8 @@ Public Module NetworkTools
                adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetFx Or
                adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetT Or
                adapter.NetworkInterfaceType = NetworkInterfaceType.GigabitEthernet Or
-               adapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211 And Not NoV4 Then
+               adapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211 Or
+               adapter.NetworkInterfaceType = NetworkInterfaceType.Tunnel And Not NoV4 Then
                 Wdbg("Adapter type of {0}: {1}", adapter.Description, adapter.NetworkInterfaceType.ToString)
                 Dim adapterProperties As IPInterfaceProperties = adapter.GetIPProperties()
                 Dim p As IPv4InterfaceProperties

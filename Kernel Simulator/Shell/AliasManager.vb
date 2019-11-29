@@ -59,7 +59,7 @@ Public Module AliasManager
                 W(DoTranslation("Command not found to alias to {0}.", currentLang), True, ColTypes.Neutral, aliasTBA)
                 Wdbg("availableCmds.Contains({0}) = false | No aliasing", cmd)
             ElseIf forbidden.Contains(cmd) Then
-                W(DoTranslation("Aliasing {0} to {1} is forbidden completely.", currentLang), True, ColTypes.Neutral, cmd, aliasTBA)
+                W(DoTranslation("Aliasing {0} to {1} is forbidden.", currentLang), True, ColTypes.Neutral, cmd, aliasTBA)
                 Wdbg("forbid.Contains({0}) = true | No aliasing", cmd)
             ElseIf Not aliases.ContainsKey(aliasTBA) Then
                 Wdbg("Assertion failed: {0} = {1}", aliasTBA, cmd)
