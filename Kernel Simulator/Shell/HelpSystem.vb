@@ -293,6 +293,7 @@ Public Module HelpSystem
         ElseIf command = "setthemes" Then
 
             W(DoTranslation("Usage:", currentLang) + " setthemes <Theme>" + vbNewLine +
+              "       " + "<Theme>: " + String.Join(", ", colorTemplates) + vbNewLine +
               "       " + DoTranslation("Friends of", currentLang) + " setthemes: setcolors", True, ColTypes.Neutral)
 
         ElseIf command = "showtd" Then
