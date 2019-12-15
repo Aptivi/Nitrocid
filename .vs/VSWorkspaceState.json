@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Kernel Simulator",
+    "\\Kernel Simulator\\Misc",
+    "\\Kernel Simulator\\Misc\\Writers",
     "\\Kernel Simulator\\Tests",
     "\\Kernel Simulator\\Tests\\Interaction"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\Kernel Simulator\\Misc\\Writers\\TextWriterColor.vb",
   "PreviewInSolutionExplorer": false
 }
