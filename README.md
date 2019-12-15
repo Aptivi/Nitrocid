@@ -4,6 +4,8 @@
 
 This kernel simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal.
 
+It is currently on Milestone 1 of version 0.0.8.
+
 ## |-----+--> _Notes_ <--+-----|
 
 - This kernel simulator _will_ continue to be developed, even if we made the real PC version of Kernel.
