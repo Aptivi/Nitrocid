@@ -35,7 +35,7 @@ Public Module Kernel
         While True
             Try
                 'A title
-                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}"
+                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - Milestone 1"
                 InitPaths()
                 If Not EnvironmentOSType.Contains("Unix") Then Initialize255()
 

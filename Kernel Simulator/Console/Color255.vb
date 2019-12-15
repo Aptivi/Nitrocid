@@ -289,7 +289,7 @@ Public Module Color255
         Grey93
     End Enum
 
-    Sub Initialize255()
+    Sub Initialize255() 'Windows only
         Dim handle = GetStdHandle(-11)
         Wdbg("Integer pointer {0}", handle)
         Dim mode As Integer

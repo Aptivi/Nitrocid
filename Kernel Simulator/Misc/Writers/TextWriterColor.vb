@@ -166,29 +166,30 @@ Public Module TextWriterColor
     ''' <remarks>This is used to reduce number of lines containing "System.Console.ForegroundColor = " and "System.Console.ResetColor()" text.</remarks>
     Public Sub W(ByVal text As Object, ByVal Line As Boolean, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
 
+        Dim esc As Char = GetEsc()
         Try
             If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
-                ForegroundColor = neutralTextColor
+                Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
             ElseIf colorType = ColTypes.Continuable Then
-                ForegroundColor = contKernelErrorColor
+                Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
             ElseIf colorType = ColTypes.Uncontinuable Then
-                ForegroundColor = uncontKernelErrorColor
+                Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
             ElseIf colorType = ColTypes.HostName Then
-                ForegroundColor = hostNameShellColor
+                Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
             ElseIf colorType = ColTypes.UserName Then
-                ForegroundColor = userNameShellColor
+                Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
             ElseIf colorType = ColTypes.License Then
-                ForegroundColor = licenseColor
+                Write(esc + "[38;5;" + CStr(licenseColor) + "m")
             ElseIf colorType = ColTypes.Gray Then
-                If backgroundColor = ConsoleColor.DarkYellow Or backgroundColor = ConsoleColor.Yellow Or backgroundColor = ConsoleColor.White Then
-                    ForegroundColor = neutralTextColor
+                If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
+                    Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
                 Else
-                    ForegroundColor = ConsoleColor.Gray
+                    Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
                 End If
             ElseIf colorType = ColTypes.HelpDef Then
-                ForegroundColor = cmdDefColor
+                Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
             ElseIf colorType = ColTypes.HelpCmd Then
-                ForegroundColor = cmdListColor
+                Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
             Else
                 Exit Sub
             End If
@@ -226,28 +227,29 @@ Public Module TextWriterColor
     End Sub
 
     Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal colorType As ColTypes, ParamArray ByVal vars() As Object)
+        Dim esc As Char = GetEsc()
         If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
-            ForegroundColor = neutralTextColor
+            Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
         ElseIf colorType = ColTypes.Continuable Then
-            ForegroundColor = contKernelErrorColor
+            Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
         ElseIf colorType = ColTypes.Uncontinuable Then
-            ForegroundColor = uncontKernelErrorColor
+            Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
         ElseIf colorType = ColTypes.HostName Then
-            ForegroundColor = hostNameShellColor
+            Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
         ElseIf colorType = ColTypes.UserName Then
-            ForegroundColor = userNameShellColor
+            Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
         ElseIf colorType = ColTypes.License Then
-            ForegroundColor = licenseColor
+            Write(esc + "[38;5;" + CStr(licenseColor) + "m")
         ElseIf colorType = ColTypes.Gray Then
-            If backgroundColor = ConsoleColor.DarkYellow Or backgroundColor = ConsoleColor.Yellow Then
-                ForegroundColor = neutralTextColor
+            If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
+                Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
             Else
-                ForegroundColor = ConsoleColor.Gray
+                Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
             End If
         ElseIf colorType = ColTypes.HelpDef Then
-            ForegroundColor = cmdDefColor
+            Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
         ElseIf colorType = ColTypes.HelpCmd Then
-            ForegroundColor = cmdListColor
+            Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
         Else
             Exit Sub
         End If
@@ -270,28 +272,29 @@ Public Module TextWriterColor
         If colorType = ColTypes.Input And ColoredShell = True Then ForegroundColor = inputColor
     End Sub
     Public Sub WriteWhere(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
+        Dim esc As Char = GetEsc()
         If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
-            ForegroundColor = neutralTextColor
+            Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
         ElseIf colorType = ColTypes.Continuable Then
-            ForegroundColor = contKernelErrorColor
+            Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
         ElseIf colorType = ColTypes.Uncontinuable Then
-            ForegroundColor = uncontKernelErrorColor
+            Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
         ElseIf colorType = ColTypes.HostName Then
-            ForegroundColor = hostNameShellColor
+            Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
         ElseIf colorType = ColTypes.UserName Then
-            ForegroundColor = userNameShellColor
+            Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
         ElseIf colorType = ColTypes.License Then
-            ForegroundColor = licenseColor
+            Write(esc + "[38;5;" + CStr(licenseColor) + "m")
         ElseIf colorType = ColTypes.Gray Then
-            If backgroundColor = ConsoleColor.DarkYellow Or backgroundColor = ConsoleColor.Yellow Then
-                ForegroundColor = neutralTextColor
+            If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
+                Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
             Else
-                ForegroundColor = ConsoleColor.Gray
+                Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
             End If
         ElseIf colorType = ColTypes.HelpDef Then
-            ForegroundColor = cmdDefColor
+            Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
         ElseIf colorType = ColTypes.HelpCmd Then
-            ForegroundColor = cmdListColor
+            Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
         Else
             Exit Sub
         End If

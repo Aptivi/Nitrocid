@@ -648,59 +648,59 @@ Public Module GetCommand
                             ElseIf args.Contains("def") Then
                                 If args(0) = "def" Then
                                     args(0) = "White"
-                                    inputColor = CType([Enum].Parse(GetType(ConsoleColor), args(0)), ConsoleColor)
+                                    inputColor = CType([Enum].Parse(GetType(ConsoleColors), args(0)), ConsoleColors)
                                 End If
                                 If args(1) = "def" Then
                                     args(1) = "White"
-                                    licenseColor = CType([Enum].Parse(GetType(ConsoleColor), args(1)), ConsoleColor)
+                                    licenseColor = CType([Enum].Parse(GetType(ConsoleColors), args(1)), ConsoleColors)
                                 End If
                                 If args(2) = "def" Then
                                     args(2) = "Yellow"
-                                    contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(2)), ConsoleColor)
+                                    contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), args(2)), ConsoleColors)
                                 End If
                                 If args(3) = "def" Then
                                     args(3) = "Red"
-                                    uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(3)), ConsoleColor)
+                                    uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), args(3)), ConsoleColors)
                                 End If
                                 If args(4) = "def" Then
                                     args(4) = "DarkGreen"
-                                    hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(4)), ConsoleColor)
+                                    hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), args(4)), ConsoleColors)
                                 End If
                                 If args(5) = "def" Then
                                     args(5) = "Green"
-                                    userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(5)), ConsoleColor)
+                                    userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), args(5)), ConsoleColors)
                                 End If
                                 If args(6) = "def" Then
                                     args(6) = "Black"
-                                    backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), args(6)), ConsoleColor)
+                                    backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), args(6)), ConsoleColors)
                                     Load()
                                 End If
                                 If args(7) = "def" Then
                                     args(7) = "Gray"
-                                    neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), args(7)), ConsoleColor)
+                                    neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), args(7)), ConsoleColors)
                                 End If
                                 If args(8) = "def" Then
                                     args(8) = "DarkYellow"
-                                    cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), args(8)), ConsoleColor)
+                                    cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), args(8)), ConsoleColors)
                                 End If
                                 If args(9) = "def" Then
                                     args(9) = "DarkGray"
-                                    cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), args(9)), ConsoleColor)
+                                    cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), args(9)), ConsoleColors)
                                 End If
-                            ElseIf availableColors.Contains(args(0)) And availableColors.Contains(args(1)) And availableColors.Contains(args(2)) And
-                                availableColors.Contains(args(3)) And availableColors.Contains(args(4)) And availableColors.Contains(args(5)) And
-                                availableColors.Contains(args(6)) And availableColors.Contains(args(7)) And availableColors.Contains(args(8)) And
-                                availableColors.Contains(args(9)) Then
-                                inputColor = CType([Enum].Parse(GetType(ConsoleColor), args(0)), ConsoleColor)
-                                licenseColor = CType([Enum].Parse(GetType(ConsoleColor), args(1)), ConsoleColor)
-                                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(2)), ConsoleColor)
-                                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), args(3)), ConsoleColor)
-                                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(4)), ConsoleColor)
-                                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), args(5)), ConsoleColor)
-                                backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), args(6)), ConsoleColor)
-                                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), args(7)), ConsoleColor)
-                                cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), args(8)), ConsoleColor)
-                                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), args(9)), ConsoleColor)
+                            ElseIf IsNumeric(args(0)) And IsNumeric(args(1)) And IsNumeric(args(2)) And IsNumeric(args(3)) And IsNumeric(args(4)) And
+                                IsNumeric(args(5)) And IsNumeric(args(6)) And IsNumeric(args(7)) And IsNumeric(args(8)) And IsNumeric(args(9)) And
+                                args(0) <= 255 And args(1) <= 255 And args(2) <= 255 And args(3) <= 255 And args(4) <= 255 And args(5) <= 255 And
+                                args(6) <= 255 And args(7) <= 255 And args(8) <= 255 And args(9) <= 255 Then
+                                inputColor = CType([Enum].Parse(GetType(ConsoleColors), args(0)), ConsoleColors)
+                                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), args(1)), ConsoleColors)
+                                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), args(2)), ConsoleColors)
+                                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), args(3)), ConsoleColors)
+                                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), args(4)), ConsoleColors)
+                                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), args(5)), ConsoleColors)
+                                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), args(6)), ConsoleColors)
+                                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), args(7)), ConsoleColors)
+                                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), args(8)), ConsoleColors)
+                                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), args(9)), ConsoleColors)
                                 Load()
                             Else
                                 W(DoTranslation("One or more of the colors is invalid.", currentLang), True, ColTypes.Neutral)
