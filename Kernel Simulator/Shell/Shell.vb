@@ -61,7 +61,8 @@ Public Module Shell
 
                     'Set an input color
                     Wdbg("ColoredShell is {0}", ColoredShell)
-                    If ColoredShell = True Then Console.ForegroundColor = CType(inputColor, ConsoleColor)
+                    Dim esc As Char = GetEsc()
+                    If ColoredShell = True Then Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
 
                     'Wait for command
                     EventManager.RaiseShellInitialized()

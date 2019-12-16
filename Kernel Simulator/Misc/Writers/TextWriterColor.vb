@@ -200,8 +200,8 @@ Public Module TextWriterColor
             Next
 
             If Line Then WriteLine(text) Else Write(text)
-            If Console.BackgroundColor = ConsoleColor.Black Then ResetColor()
-            If colorType = ColTypes.Input And ColoredShell = True Then ForegroundColor = inputColor
+            If backgroundColor = ConsoleColors.Black Then ResetColor()
+            If colorType = ColTypes.Input And ColoredShell = True Then Write(esc + "[38;5;" + CStr(inputColor) + "m")
         Catch ex As Exception
             WStkTrc(ex)
             KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
@@ -268,8 +268,8 @@ Public Module TextWriterColor
         If Line Then
             WriteLine()
         End If
-        If Console.BackgroundColor = ConsoleColor.Black Then ResetColor()
-        If colorType = ColTypes.Input And ColoredShell = True Then ForegroundColor = inputColor
+        If backgroundColor = ConsoleColors.Black Then ResetColor()
+        If colorType = ColTypes.Input And ColoredShell = True Then Write(esc + "[38;5;" + CStr(inputColor) + "m")
     End Sub
     Public Sub WriteWhere(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
         Dim esc As Char = GetEsc()

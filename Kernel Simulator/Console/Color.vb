@@ -88,7 +88,7 @@ Public Module Color
     Public uncontKernelErrorColorU As ConsoleColors = ConsoleColors.White
     Public hostNameShellColorU As ConsoleColors = ConsoleColors.Gray
     Public userNameShellColorU As ConsoleColors = ConsoleColors.Gray
-    Public backgroundColorU As ConsoleColors = ConsoleColors.DarkMagenta
+    Public backgroundColorU As ConsoleColors = ConsoleColors.Purple3
     Public neutralTextColorU As ConsoleColors = ConsoleColors.White
     Public cmdListColorU As ConsoleColors = ConsoleColors.White
     Public cmdDefColorU As ConsoleColors = ConsoleColors.White
@@ -207,7 +207,8 @@ Public Module Color
         Load()
     End Sub
     Public Sub Load()
-        Console.BackgroundColor = backgroundColor
+        Dim esc As Char = GetEsc()
+        Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
         Console.Clear()
     End Sub
     Public Sub TemplateSet(ByVal theme As String)
