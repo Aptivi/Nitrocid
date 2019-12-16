@@ -30,28 +30,28 @@ Module OldConfigUp
                 End If
             End If
             If (line.Contains("User Name Shell Color = ")) Then
-                If ColoredShell = True Then userNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), line.Replace("User Name Shell Color = ", "")), ConsoleColor)
+                If ColoredShell = True Then userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("User Name Shell Color = ", "")), ConsoleColors)
             ElseIf (line.Contains("Host Name Shell Color = ")) Then
-                If ColoredShell = True Then hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColor), line.Replace("Host Name Shell Color = ", "")), ConsoleColor)
+                If ColoredShell = True Then hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Host Name Shell Color = ", "")), ConsoleColors)
             ElseIf (line.Contains("Continuable Kernel Error Color = ")) Then
-                If ColoredShell = True Then contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), line.Replace("Continuable Kernel Error Color = ", "")), ConsoleColor)
+                If ColoredShell = True Then contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Continuable Kernel Error Color = ", "")), ConsoleColors)
             ElseIf (line.Contains("Uncontinuable Kernel Error Color = ")) Then
-                If ColoredShell = True Then uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColor), line.Replace("Uncontinuable Kernel Error Color = ", "")), ConsoleColor)
+                If ColoredShell = True Then uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Uncontinuable Kernel Error Color = ", "")), ConsoleColors)
             ElseIf (line.Contains("Text Color = ")) Then
-                If ColoredShell = True Then neutralTextColor = CType([Enum].Parse(GetType(ConsoleColor), line.Replace("Text Color = ", "")), ConsoleColor)
+                If ColoredShell = True Then neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Text Color = ", "")), ConsoleColors)
             ElseIf (line.Contains("License Color = ")) Then
-                If ColoredShell = True Then licenseColor = CType([Enum].Parse(GetType(ConsoleColor), line.Replace("License Color = ", "")), ConsoleColor)
+                If ColoredShell = True Then licenseColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("License Color = ", "")), ConsoleColors)
             ElseIf (line.Contains("Background Color = ")) Then
                 If ColoredShell = True Then
-                    backgroundColor = CType([Enum].Parse(GetType(ConsoleColor), line.Replace("Background Color = ", "")), ConsoleColor)
+                    backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Background Color = ", "")), ConsoleColors)
                     'Load() 'This is removed, because this sub is supposed to upgrade config version. There is no reason to uncomment, except for debugging purposes.
                 End If
             ElseIf (line.Contains("Input Color = ")) Then
-                If ColoredShell = True Then inputColor = CType([Enum].Parse(GetType(ConsoleColor), line.Replace("Input Color = ", "")), ConsoleColor)
+                If ColoredShell = True Then inputColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Input Color = ", "")), ConsoleColors)
             ElseIf (line.Contains("Listed command in Help Color = ")) Then
-                If ColoredShell = True Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColor), line.Replace("Listed command in Help Color = ", "")), ConsoleColor)
+                If ColoredShell = True Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Listed command in Help Color = ", "")), ConsoleColors)
             ElseIf (line.Contains("Definition of command in Help Color = ")) Then
-                If ColoredShell = True Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColor), line.Replace("Definition of command in Help Color = ", "")), ConsoleColor)
+                If ColoredShell = True Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Definition of command in Help Color = ", "")), ConsoleColors)
             ElseIf (line.Contains("Create Demo Account = ")) Then
                 If (line.Replace("Create Demo Account = ", "") = "True") Then
                     enableDemo = True
