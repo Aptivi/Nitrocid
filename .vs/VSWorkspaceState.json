@@ -4,9 +4,10 @@
     "\\Kernel Simulator",
     "\\Kernel Simulator\\Misc",
     "\\Kernel Simulator\\Misc\\Writers",
+    "\\Kernel Simulator\\Shell",
     "\\Kernel Simulator\\Tests",
     "\\Kernel Simulator\\Tests\\Interaction"
   ],
-  "SelectedNode": "\\Kernel Simulator\\Misc\\Writers\\TextWriterColor.vb",
+  "SelectedNode": "\\Kernel Simulator\\Resources",
   "PreviewInSolutionExplorer": false
 }
