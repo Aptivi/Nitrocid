@@ -32,8 +32,11 @@ Public Module ScreensaverDisplays
     Public WithEvents ColorMix255 As New BackgroundWorker
     Public WithEvents GlitterColor255 As New BackgroundWorker
     Public WithEvents Disco255 As New BackgroundWorker
+    Public WithEvents Lines255 As New BackgroundWorker
     Public WithEvents Custom As New BackgroundWorker
     Public finalSaver As ICustomSaver
+    Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
+    Public colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
 
     Sub Custom_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Custom.DoWork
         'To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
@@ -52,8 +55,9 @@ Public Module ScreensaverDisplays
                 Wdbg("Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Console.ForegroundColor = inputColor
-                Console.BackgroundColor = backgroundColor
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                 Load()
                 Console.CursorVisible = True
                 Wdbg("All clean. Custom screensaver stopped.")
@@ -76,8 +80,9 @@ Public Module ScreensaverDisplays
                 Wdbg("Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Console.ForegroundColor = inputColor
-                Console.BackgroundColor = backgroundColor
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                 Load()
                 Console.CursorVisible = True
                 Wdbg("All clean. Mix Colors screensaver stopped.")
@@ -99,8 +104,9 @@ Public Module ScreensaverDisplays
                 Wdbg("Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Console.ForegroundColor = inputColor
-                Console.BackgroundColor = backgroundColor
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                 Load()
                 Console.CursorVisible = True
                 Wdbg("All clean. Matrix screensaver stopped.")
@@ -121,8 +127,9 @@ Public Module ScreensaverDisplays
                     Wdbg("Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
                     Console.Clear()
-                    Console.ForegroundColor = inputColor
-                    Console.BackgroundColor = backgroundColor
+                    Dim esc As Char = GetEsc()
+                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                     Load()
                     Console.CursorVisible = True
                     Wdbg("All clean. Disco screensaver stopped.")
@@ -140,13 +147,14 @@ Public Module ScreensaverDisplays
         Wdbg("Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Do While True
             For Each color In colors
-                Thread.Sleep(1000)
+                Thread.Sleep(500)
                 If Lines.CancellationPending = True Then
                     Wdbg("Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
                     Console.Clear()
-                    Console.ForegroundColor = inputColor
-                    Console.BackgroundColor = backgroundColor
+                    Dim esc As Char = GetEsc()
+                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                     Load()
                     Console.CursorVisible = True
                     Wdbg("All clean. Lines screensaver stopped.")
@@ -179,8 +187,9 @@ Public Module ScreensaverDisplays
                 Wdbg("Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Console.ForegroundColor = inputColor
-                Console.BackgroundColor = backgroundColor
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                 Load()
                 Console.CursorVisible = True
                 Wdbg("All clean. Glitter Matrix screensaver stopped.")
@@ -204,8 +213,9 @@ IFCANCEL:
                 Wdbg("Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Console.ForegroundColor = inputColor
-                Console.BackgroundColor = backgroundColor
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                 Load()
                 Console.CursorVisible = True
                 Wdbg("All clean. apt Error Simulator screensaver stopped.")
@@ -293,8 +303,9 @@ IFCANCEL:
                 Wdbg("Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Console.ForegroundColor = inputColor
-                Console.BackgroundColor = backgroundColor
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                 Load()
                 Console.CursorVisible = True
                 Wdbg("All clean. Hacking Simulator for Active Domain users screensaver stopped.")
@@ -434,8 +445,9 @@ IFCANCEL:
                     Wdbg("Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
                     Console.Clear()
-                    Console.ForegroundColor = inputColor
-                    Console.BackgroundColor = backgroundColor
+                    Dim esc As Char = GetEsc()
+                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                     Load()
                     Console.CursorVisible = True
                     Wdbg("All clean. Glitter Color screensaver stopped.")
@@ -464,8 +476,9 @@ IFCANCEL:
                 Wdbg("Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Console.ForegroundColor = inputColor
-                Console.BackgroundColor = backgroundColor
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                 Load()
                 Console.CursorVisible = True
                 Wdbg("All clean. Mix 255 Colors screensaver stopped.")
@@ -490,8 +503,9 @@ IFCANCEL:
                     Wdbg("Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
                     Console.Clear()
-                    Console.ForegroundColor = inputColor
-                    Console.BackgroundColor = backgroundColor
+                    Dim esc As Char = GetEsc()
+                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                     Load()
                     Console.CursorVisible = True
                     Wdbg("All clean. Glitter 255 Colors screensaver stopped.")
@@ -518,8 +532,9 @@ IFCANCEL:
                     Wdbg("Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
                     Console.Clear()
-                    Console.ForegroundColor = inputColor
-                    Console.BackgroundColor = backgroundColor
+                    Dim esc As Char = GetEsc()
+                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
                     Load()
                     Console.CursorVisible = True
                     Wdbg("All clean. Disco 255 screensaver stopped.")
@@ -528,6 +543,40 @@ IFCANCEL:
                     Dim esc As Char = GetEsc()
                     Console.Write(esc + "[48;5;" + CStr(color) + "m")
                     Console.Clear()
+                End If
+            Next
+        Loop
+    End Sub
+
+    Sub Lines255_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Lines255.DoWork
+        Console.CursorVisible = False
+        Wdbg("Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        Do While True
+            For Each color In colors255
+                Thread.Sleep(500)
+                If Lines255.CancellationPending = True Then
+                    Wdbg("Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    Console.Clear()
+                    Dim esc As Char = GetEsc()
+                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                    Load()
+                    Console.CursorVisible = True
+                    Wdbg("All clean. Lines 255 screensaver stopped.")
+                    Exit Do
+                Else
+                    Dim esc As Char = GetEsc()
+                    Console.BackgroundColor = ConsoleColor.Black
+                    Console.Clear()
+                    Console.Write(esc + "[38;5;" + CStr(color) + "m")
+                    Dim Line As String = ""
+                    Dim Top As Integer = New Random().Next(Console.WindowHeight)
+                    For i As Integer = 1 To Console.WindowWidth
+                        Line += "-"
+                    Next
+                    Console.SetCursorPosition(0, Top)
+                    Console.WriteLine(Line)
                 End If
             Next
         Loop

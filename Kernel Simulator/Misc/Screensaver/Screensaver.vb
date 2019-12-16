@@ -29,8 +29,7 @@ Public Module Screensaver
     Public defSaverName As String = "glitterMatrix"
     Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"colorMix255", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False},
                                                                  {"lines", False}, {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False},
-                                                                 {"glitterColor255", False}, {"disco255", False}}
-    Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())  'Console Colors
+                                                                 {"glitterColor255", False}, {"disco255", False}, {"lines255", False}}
     Public WithEvents Timeout As New BackgroundWorker
     Private execCustomSaver As CompilerResults
     Private DoneFlag As Boolean = False
@@ -158,6 +157,14 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Disco255.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "lines255" Then
+                Lines255.WorkerSupportsCancellation = True
+                Lines255.RunWorkerAsync()
+                Wdbg("Lines 255 Colors started")
+                Console.ReadKey()
+                ScrnTimeReached = False
+                Lines255.CancelAsync()
                 Thread.Sleep(150)
             ElseIf ScrnSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
