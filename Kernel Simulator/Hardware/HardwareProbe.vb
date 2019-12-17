@@ -225,7 +225,7 @@ Public Module HardwareProbe
         'HDD Prober (You need to have inxi and libcpanel-json-xs-perl installed)
         Try
             Dim inxi As New Process
-            Dim inxinfo As New ProcessStartInfo With {.FileName = "/usr/bin/inxi", .Arguments = "-D --output json --output-file print",
+            Dim inxinfo As New ProcessStartInfo With {.FileName = "/usr/bin/inxi", .Arguments = "-P -D --output json --output-file print",
                                                       .WindowStyle = ProcessWindowStyle.Hidden,
                                                       .CreateNoWindow = True,
                                                       .UseShellExecute = False,
@@ -246,6 +246,15 @@ Public Module HardwareProbe
                     HDDList.Add(New HDD_Linux With {.Size_LNX = inxidrvs("004#size"), .Model_LNX = inxidrvs("003#model"), .Vendor_LNX = inxidrvs("002#vendor")})
                 End If
                 inxiReady = True
+            Next
+            Dim OldDrvChar As Char = "a"
+            Dim DrvId As Integer = 0
+            For Each inxiparts In inxitoken.SelectToken("001#Partition")
+                Dim CurrDrvChar As Char = inxiparts("005#dev").ToString.Replace("/dev/sd", "").Remove(1)
+                If CurrDrvChar <> OldDrvChar Then
+                    DrvId += 1
+                End If
+                HDDList(DrvId).Parts.Add(New Part_Linux With {.Part = inxiparts("005#dev"), .FileSystem = inxiparts("004#fs"), .SizeMEAS = inxiparts("002#size"), .Used = inxiparts("003#used")})
             Next
         Catch ex As Exception
             HDDDone = False
@@ -328,8 +337,13 @@ Public Module HardwareProbe
         Next
 
         'HDD List
+        Dim CurrDrv As Integer = 0
         For Each info As HDD_Linux In HDDList
             W("HDD: {0} {1} {2}", True, ColTypes.Neutral, info.Vendor_LNX, info.Model_LNX, info.Size_LNX)
+            For Each part As Part_Linux In HDDList(CurrDrv).Parts
+                W("HDD ({4}): {0} {1} {2} {3}", True, ColTypes.Neutral, part.Part, part.FileSystem, part.SizeMEAS, part.Used, CurrDrv)
+            Next
+            CurrDrv += 1
         Next
 
         'RAM List

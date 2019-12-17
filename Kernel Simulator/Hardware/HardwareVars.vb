@@ -42,7 +42,7 @@ Module HardwareVars
     End Class
     Public Class Part_Linux
         Inherits Part
-        'To be done
+        Public Part, FileSystem, SizeMEAS, Used As String
     End Class
     Public Class Logical
         Public Compressed As Boolean
