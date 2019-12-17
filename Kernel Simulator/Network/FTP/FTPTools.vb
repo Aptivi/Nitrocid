@@ -49,6 +49,8 @@ Module FTPTools
                     If character = vbCr Or character = vbLf Then
                         Console.WriteLine()
                         Exit While
+                    ElseIf character = vbBack Then
+                        If Not pass.Length = 0 Then pass = pass.Remove(pass.Length - 1)
                     Else
                         pass += character
                     End If

@@ -39,6 +39,8 @@ Module Speller
                 If character = vbCr Or character = vbLf Then
                     Console.WriteLine()
                     Exit While
+                ElseIf character = vbBack Then
+                    If Not SpeltWord.Length = 0 Then SpeltWord = SpeltWord.Remove(SpeltWord.Length - 1)
                 Else
                     SpeltWord += character
                 End If
