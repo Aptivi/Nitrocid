@@ -80,6 +80,7 @@ Public Module Config
                         New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
                         New IniKey(ksconf, "Size parse mode", FullParseMode),
                         New IniKey(ksconf, "Marquee on startup", StartScroll),
+                        New IniKey(ksconf, "Long Time and Date", LongTimeDate),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             Else '----------------------- If [Preserve] value is False, then don't preserve.
                 'The General Section
@@ -138,6 +139,7 @@ Public Module Config
                         New IniKey(ksconf, "Log FTP IP address", "False"),
                         New IniKey(ksconf, "Size parse mode", "False"),
                         New IniKey(ksconf, "Marquee on startup", "True"),
+                        New IniKey(ksconf, "Long Time and Date", "True"),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
@@ -148,7 +150,7 @@ Public Module Config
             ksconf.Sections("General").Keys("Change Root Password").TrailingComment.Text = "Whether or not to change root password. If it is set to True, it will set the password to a password that will be set in the config entry below."
             ksconf.Sections("General").Keys("Maintenance Mode").TrailingComment.Text = "Whether or not to start the kernel in maintenance mode."
             ksconf.Sections("General").Keys("Prompt for Arguments on Boot").TrailingComment.Text = "Whether or not to prompt for arguments on boot to let you set arguments on the current boot"
-            ksconf.Sections("Colors").TrailingComment.Text = "Self-explanatory. You can just write the name of colors as specified in the ConsoleColor enumerator. See https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor"
+            ksconf.Sections("Colors").TrailingComment.Text = "Self-explanatory. You can just write the name of colors as specified in the ConsoleColors enumerator."
             ksconf.Sections("Login").TrailingComment.Text = "This section is the login settings that lets you control the host name and whether or not it shows MOTD and/or clears screen."
             ksconf.Sections("Login").Keys("Clear Screen on Log-in").TrailingComment.Text = "Whether or not it clears screen on sign-in."
             ksconf.Sections("Login").Keys("Show MOTD on Log-in").TrailingComment.Text = "Whether or not it shows MOTD on sign-in."
@@ -170,6 +172,7 @@ Public Module Config
             ksconf.Sections("Misc").Keys("Log FTP IP address").TrailingComment.Text = "Whether or not to log FTP IP address in the debugger log."
             ksconf.Sections("Misc").Keys("Size parse mode").TrailingComment.Text = "Parse whole directory for size. If set to False, it will parse just the surface."
             ksconf.Sections("Misc").Keys("Marquee on startup").TrailingComment.Text = "Whether or not to activate banner animation."
+            ksconf.Sections("Misc").Keys("Long Time and Date").TrailingComment.Text = "Whether or not to render time and date using long."
 
             'Save Config
             ksconf.Save(paths("Configuration"))
@@ -282,6 +285,7 @@ Public Module Config
             FTPLoggerIP = configReader.Sections("Misc").Keys("Log FTP IP address").Value
             FullParseMode = configReader.Sections("Misc").Keys("Size parse mode").Value
             StartScroll = configReader.Sections("Misc").Keys("Marquee on startup").Value
+            LongTimeDate = configReader.Sections("Misc").Keys("Long Time and Date").Value
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
             UpgradeConfig() 'Upgrades the config if there are any changes.
         Catch ex As Exception

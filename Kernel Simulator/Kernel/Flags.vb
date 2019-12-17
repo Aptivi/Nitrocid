@@ -47,5 +47,6 @@ Module Flags
     Public FullParseMode As Boolean                             'Whether or not to parse whole directory for size
     Public ScrnTimeReached As Boolean                           'When the screensaver timer has reached
     Public StartScroll As Boolean                               'Enable marquee on startup
+    Public LongTimeDate As Boolean                              'Whether or not to render time and dates short or long
 
 End Module

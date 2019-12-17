@@ -56,12 +56,41 @@ Public Module TimeDate
 
     End Sub
 
-    Public Sub ShowTime()
+    Public Sub CurrentTimes()
 
-        W(DoTranslation("datetime: Time is {0}", currentLang), True, ColTypes.Neutral, KernelDateTime.ToLongTimeString)
-        W(DoTranslation("datetime: Today is {0}", currentLang), True, ColTypes.Neutral, KernelDateTime.ToLongDateString)
+        W(DoTranslation("datetime: Time is {0}", currentLang), True, ColTypes.Neutral, RenderTime)
+        W(DoTranslation("datetime: Today is {0}", currentLang), True, ColTypes.Neutral, RenderDate)
         W(DoTranslation("datetime: Time Zone: {0}", currentLang) + " ({1})", True, ColTypes.Neutral, TimeZone.CurrentTimeZone.StandardName, TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime).ToString)
 
     End Sub
+
+    Public Function RenderTime()
+        If LongTimeDate Then
+            Return KernelDateTime.ToLongTimeString
+        Else
+            Return KernelDateTime.ToShortTimeString
+        End If
+    End Function
+    Public Function RenderTime(ByVal DT As Date)
+        If LongTimeDate Then
+            Return DT.ToLongTimeString
+        Else
+            Return DT.ToShortTimeString
+        End If
+    End Function
+    Public Function RenderDate()
+        If LongTimeDate Then
+            Return KernelDateTime.ToLongDateString
+        Else
+            Return KernelDateTime.ToShortDateString
+        End If
+    End Function
+    Public Function RenderDate(ByVal DT As Date)
+        If LongTimeDate Then
+            Return DT.ToLongDateString
+        Else
+            Return DT.ToShortDateString
+        End If
+    End Function
 
 End Module

@@ -100,7 +100,7 @@ Public Module Kernel
                         Console.SetOut(DefConsoleOut)
                     End If
                 End If
-                ShowTime()
+                CurrentTimes()
                 WriteWhere("   ", Console.WindowWidth - 3, Console.WindowHeight - 1, ColTypes.Neutral)
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
