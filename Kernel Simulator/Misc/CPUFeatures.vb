@@ -21,21 +21,21 @@ Imports System.Runtime.InteropServices
 Public Class CPUFeatures
 
     ' ----------------------------- Windows functions -----------------------------
-    <DllImport("kernel32.dll")> 'Check for specific processor feature
+    <DllImport("kernel32.dll")> 'Check for specific processor feature https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-isprocessorfeaturepresent
     Public Shared Function IsProcessorFeaturePresent(ByVal processorFeature As SSEnum) As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
 
     Public Enum SSEnum As UInteger
         ''' <summary>
-        ''' The SSE instruction set is available
+        ''' The SSE instruction set is available.
         ''' </summary>
-        InstructionsXMMIAvailable = 6
+        InstructionsSSEAvailable = 6
         ''' <summary>
-        ''' The SSE2 instruction set is available
+        ''' The SSE2 instruction set is available. (This is used in most apps nowadays, since recent processors have this capability.)
         ''' </summary>
-        InstructionsXMMI64Available = 10
+        InstructionsSSE2Available = 10
         ''' <summary>
-        ''' The SSE3 instruction set is available. (This feature is not supported until Windows Vista)
+        ''' The SSE3 instruction set is available.
         ''' </summary>
         InstructionsSSE3Available = 13
     End Enum
