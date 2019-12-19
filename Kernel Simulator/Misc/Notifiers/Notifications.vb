@@ -58,6 +58,7 @@ Public Module Notifications
     Public Sub NotifDismiss(ByVal ind As Integer)
         Try
             NotifRecents.RemoveAt(ind)
+            W(DoTranslation("Notification dismissed successfully.", currentLang), True, ColTypes.Neutral)
         Catch ex As Exception
             W(DoTranslation("Error trying to dismiss notification: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
             WStkTrc(ex)

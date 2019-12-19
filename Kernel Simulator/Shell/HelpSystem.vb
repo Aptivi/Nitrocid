@@ -39,6 +39,7 @@ Public Module HelpSystem
                                                               {"copy", DoTranslation("Creates another copy of a file under different directory or name.", currentLang)},
                                                               {"debuglog", DoTranslation("Shows debug logs (Admins Only)", currentLang)},
                                                               {"disconndbgdev", DoTranslation("Disconnect a debug device", currentLang)},
+                                                              {"dismissnotif", DoTranslation("Dismisses a notification", currentLang)},
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                               {"get", DoTranslation("Downloads a file to current working directory", currentLang)},
                                                               {"help", DoTranslation("Help page", currentLang)},
@@ -67,6 +68,7 @@ Public Module HelpSystem
                                                               {"setcolors", DoTranslation("Sets up kernel colors", currentLang)},
                                                               {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
                                                               {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
+                                                              {"shownotifs", DoTranslation("Shows all received notifications", currentLang)},
                                                               {"showtd", DoTranslation("Shows date and time", currentLang)},
                                                               {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
                                                               {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
@@ -165,6 +167,10 @@ Public Module HelpSystem
         ElseIf command = "debuglog" Then
 
             W(DoTranslation("Usage:", currentLang) + " debuglog: " + DoTranslation("Shows you debug logs so you can send the log to us.", currentLang), True, ColTypes.Neutral)
+
+        ElseIf command = "dismissnotif" Then
+
+            W(DoTranslation("Usage:", currentLang) + " dismissnotif: " + DoTranslation("Dismisses a notification", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "disconndbgdev" Then
 
@@ -295,6 +301,10 @@ Public Module HelpSystem
             W(DoTranslation("Usage:", currentLang) + " setthemes <Theme>" + vbNewLine +
               "       " + "<Theme>: " + String.Join(", ", colorTemplates) + vbNewLine +
               "       " + DoTranslation("Friends of", currentLang) + " setthemes: setcolors", True, ColTypes.Neutral)
+
+        ElseIf command = "shownotifs" Then
+
+            W(DoTranslation("Usage:", currentLang) + " shownotifs: " + DoTranslation("Shows all received notifications", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "showtd" Then
 

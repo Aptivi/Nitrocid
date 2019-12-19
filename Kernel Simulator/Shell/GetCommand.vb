@@ -330,6 +330,15 @@ Public Module GetCommand
                 End Using
                 Done = True
 
+            ElseIf words(0) = "dismissnotif" Then
+
+                If requestedCommand <> "dismissnotif" Then
+                    If args.Count - 1 = 0 Then
+                        NotifDismiss(args(0))
+                        Done = True
+                    End If
+                End If
+
             ElseIf words(0) = "disconndbgdev" Then
 
                 If requestedCommand <> "disconndbgdev" Then
@@ -738,6 +747,17 @@ Public Module GetCommand
                         Done = True
                     End If
                 End If
+
+            ElseIf words(0) = "shownotifs" Then
+
+                Dim Count As Integer = 1
+                For Each Notif As Notification In NotifRecents
+                    W($"{Count}: {Notif.Title}" + vbNewLine +
+                      $"{Count}: {Notif.Desc}" + vbNewLine +
+                      $"{Count}: {Notif.Priority.ToString}", True, ColTypes.Neutral)
+                    Count += 1
+                Next
+                Done = True
 
             ElseIf requestedCommand = "showtd" Then
 

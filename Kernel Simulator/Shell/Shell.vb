@@ -28,8 +28,8 @@ Public Module Shell
                                             "setthemes", "netinfo", "md", "rd", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
                                             "savescreen", "lockscreen", "setsaver", "reloadsaver", "ftp", "usermanual", "cdbglog", "sses", "chlang",
                                             "reloadmods", "get", "lsdbgdev", "disconndbgdev", "lset", "move", "copy", "search", "listdrives",
-                                            "listparts", "sumfile", "rdebug", "speak", "spellbee", "mathbee", "loteresp",
-                                            "sshell", "bsynth"}
+                                            "listparts", "sumfile", "rdebug", "speak", "spellbee", "mathbee", "loteresp", "sshell", "bsynth", "shownotifs",
+                                            "dismissnotif"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
                                      "lset", "listdrives", "listparts", "rdebug"}
