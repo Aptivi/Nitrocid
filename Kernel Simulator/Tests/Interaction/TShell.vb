@@ -19,10 +19,10 @@
 Module TShell
 
     Public TShellCmds As String() = {"print", "printf", "printd", "printdf", "testevent", "probehw", "garbage", "panic", "panicf", "translate", "places", "loadmods", "debug", "rdebug", "testmd5", "testsha256", "testregexp", "colortest", "soundtest", "sendnot", "help", "exit"}
+    Public TEST_ExitFlag As Boolean
     Sub InitTShell()
-        Dim ExitFlag As Boolean
         Dim FullCmd As String
-        While Not ExitFlag
+        While Not TEST_ExitFlag
             W("(t)> ", False, ColTypes.Input)
             FullCmd = Console.ReadLine
             Try

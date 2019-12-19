@@ -200,7 +200,7 @@ Module TGetCommand
               "- garbage" + vbNewLine +
               "- exit", True, ColTypes.Neutral)
         ElseIf Cmd = "exit" Then
-            Environment.Exit(0)
+            TEST_ExitFlag = True
         End If
     End Sub
 
