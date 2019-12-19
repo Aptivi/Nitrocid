@@ -24,8 +24,6 @@ Public Module TimeDate
     'Variables
     Public KernelDateTime As New Date
     Public WithEvents TimeDateChange As New BackgroundWorker
-    Private originalRow As Integer
-    Private originalCol As Integer
 
     Sub TimeDateChange_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles TimeDateChange.DoWork
 
@@ -35,12 +33,8 @@ Public Module TimeDate
                 Exit Do
             Else
                 KernelDateTime = Date.Now
-                originalRow = Console.CursorTop
-                originalCol = Console.CursorLeft
                 If CornerTD = True Then
-                    Console.SetCursorPosition(Console.WindowWidth - 19, Console.WindowTop)
-                    W("{0} {1}", True, ColTypes.Neutral, KernelDateTime.ToShortTimeString, KernelDateTime.ToShortDateString)
-                    Console.SetCursorPosition(originalCol, originalRow)
+                    WriteWhere(KernelDateTime.ToShortTimeString + " " + KernelDateTime.ToShortDateString + vbNewLine, Console.WindowWidth - 19, Console.WindowTop, ColTypes.Neutral)
                 End If
             End If
             Thread.Sleep(1000)

@@ -20,7 +20,7 @@ Imports System.Threading
 
 Public Module Notifications
 
-    'TODO: Implement showing notification on receive (corner). The position should not overlap the time/date corner.
+    'TODO: Notification strings should be wrapped with the "..." in the temporary notification display (corner)
     'Variables
     Public NotifRecents As New List(Of Notification)
     Public NotifThread As New Thread(AddressOf NotifListen)
@@ -45,12 +45,23 @@ Public Module Notifications
         While Not NotifThread.ThreadState = ThreadState.AbortRequested
             If NotifRecents.Count <> OldNCount Then
                 OldNCount = NotifRecents.Count
+                WriteWhere(NotifRecents(OldNCount - 1).Title, Console.WindowWidth - 30, Console.WindowTop + 2, ColTypes.Neutral)
+                WriteWhere(NotifRecents(OldNCount - 1).Desc, Console.WindowWidth - 30, Console.WindowTop + 3, ColTypes.Neutral)
                 For i As Integer = 1 To NotifRecents(OldNCount - 1).Priority
                     Console.Beep()
-                    Thread.Sleep(100)
                 Next
+                NotifClearArea(NotifRecents(OldNCount - 1).Title.Length, NotifRecents(OldNCount - 1).Desc.Length)
             End If
         End While
+    End Sub
+    Private Sub NotifClearArea(ByVal LenTitle As Integer, ByVal LenDesc As Integer)
+        Thread.Sleep(5000)
+        For i As Integer = 0 To LenTitle - 1
+            WriteWhere(" ", Console.WindowWidth - 30 + i, Console.WindowTop + 2, ColTypes.Neutral)
+        Next
+        For i As Integer = 0 To LenDesc - 1
+            WriteWhere(" ", Console.WindowWidth - 30 + i, Console.WindowTop + 3, ColTypes.Neutral)
+        Next
     End Sub
     Public Sub NotifySend(ByVal notif As Notification)
         If Not NotifRecents.Contains(notif) Then NotifRecents.Add(notif)
