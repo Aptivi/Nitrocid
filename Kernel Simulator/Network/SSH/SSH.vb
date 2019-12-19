@@ -22,15 +22,7 @@ Module SSH
         Wdbg("Address: {0}:{1}, Username: {2}", Address, Port, Username)
         W(DoTranslation("Enter the password for {0}: ", currentLang), False, ColTypes.Input, Username)
         Dim Pass As String = ""
-        While True
-            Dim character As Char = Console.ReadKey(True).KeyChar
-            If character = vbCr Or character = vbLf Then
-                Console.WriteLine()
-                Exit While
-            Else
-                Pass += character
-            End If
-        End While
+        Pass = ReadLineNoInput()
         Dim SSH As New SshClient(Address, Port, Username, Pass)
         SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(10)
         Wdbg("Connecting to {0}...", Address)

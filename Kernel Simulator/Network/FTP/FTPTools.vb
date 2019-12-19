@@ -44,17 +44,7 @@ Module FTPTools
                 W(DoTranslation("Password for {0}: ", currentLang), False, ColTypes.Input, user)
 
                 'Get input
-                While True
-                    Dim character As Char = Console.ReadKey(True).KeyChar
-                    If character = vbCr Or character = vbLf Then
-                        Console.WriteLine()
-                        Exit While
-                    ElseIf character = vbBack Then
-                        If Not pass.Length = 0 Then pass = pass.Remove(pass.Length - 1)
-                    Else
-                        pass += character
-                    End If
-                End While
+                pass = ReadLineNoInput()
 
                 'Set up credentials
                 ClientFTP.Credentials = New NetworkCredential(user, pass)

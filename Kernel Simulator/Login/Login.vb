@@ -103,18 +103,8 @@ Public Module Login
                 W(DoTranslation("{0}'s password: ", currentLang), False, ColTypes.Input, usernamerequested)
 
                 'Get input
-                'TODO: Move all instances of this block of code to Input.vb in Console.
-                While True
-                    Dim character As Char = Console.ReadKey(True).KeyChar
-                    If character = vbCr Or character = vbLf Then
-                        Console.WriteLine()
-                        Exit While
-                    ElseIf character = vbBack Then
-                        If Not answerpass.Length = 0 Then answerpass = answerpass.Remove(answerpass.Length - 1)
-                    Else
-                        answerpass += character
-                    End If
-                End While
+                answerpass = ReadLineNoInput()
+                Console.WriteLine()
                 Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(answerpass))
                 answerpass = GetArraySHA256(hashbyte)
 

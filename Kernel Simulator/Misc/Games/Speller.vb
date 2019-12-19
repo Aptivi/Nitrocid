@@ -34,17 +34,8 @@ Module Speller
             RandomWord = Words.ElementAt(RandomDriver.Next(Words.Count))
             Wdbg("Word: {0}", RandomWord)
             W(RandomWord, True, ColTypes.Input)
-            While True
-                Dim character As Char = Console.ReadKey(True).KeyChar
-                If character = vbCr Or character = vbLf Then
-                    Console.WriteLine()
-                    Exit While
-                ElseIf character = vbBack Then
-                    If Not SpeltWord.Length = 0 Then SpeltWord = SpeltWord.Remove(SpeltWord.Length - 1)
-                Else
-                    SpeltWord += character
-                End If
-            End While
+            SpeltWord = ReadLineNoInput()
+
             If SpeltWord = RandomWord Then
                 Wdbg("Spelt: {0} = {1}", SpeltWord, RandomWord)
                 W(DoTranslation("Spelt perfectly!", currentLang), True, ColTypes.Neutral)
