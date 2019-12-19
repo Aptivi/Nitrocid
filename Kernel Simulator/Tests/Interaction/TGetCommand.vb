@@ -16,9 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Text.RegularExpressions
+Imports Microsoft.VisualBasic.FileIO
 Imports NAudio.Wave
 
 Module TGetCommand
@@ -26,11 +28,23 @@ Module TGetCommand
     Sub TParseCommand(ByVal FullCmd As String)
         Dim FullArgs As String
         Dim FullArgsL As List(Of String)
+        Dim FullArgsQ As String()
         Dim Cmd As String
         FullArgsL = FullCmd.Split(" ").ToList
         FullArgsL.RemoveAt(0)
         FullArgs = String.Join(" ", FullArgsL)
         Cmd = FullCmd.Split(" ").ToList(0)
+        Dim TStream As New MemoryStream(Encoding.Default.GetBytes(FullArgs))
+        Dim Parser As New TextFieldParser(TStream) With {
+            .Delimiters = {" "},
+            .HasFieldsEnclosedInQuotes = True
+        }
+        FullArgsQ = Parser.ReadFields
+        If Not FullArgsQ Is Nothing Then
+            For i As Integer = 0 To FullArgsQ.Length - 1
+                FullArgsQ(i).Replace("""", "")
+            Next
+        End If
         If Cmd = "print" Then 'Usage: print <Color> <Line> <Message>
             If FullArgsL.Count - 1 >= 2 Then
                 Dim Parts As New List(Of String)(FullArgsL)
@@ -160,19 +174,25 @@ Module TGetCommand
             End While
             WaveEvent.Dispose()
             AudioRead.Close()
+        ElseIf Cmd = "sendnot" Then 'Usage: sendnot <Priority> <title> <desc>
+            Dim Notif As New Notification With {.Priority = FullArgsL(0),
+                                                .Title = FullArgsQ(1),
+                                                .Desc = FullArgsQ(2)}
+            NotifySend(Notif)
         ElseIf Cmd = "help" Then
-            W("- print <Color><Line><Message>" + vbNewLine +
-              "- printf <Color><Line><Variable1;Variable2;Variable3;...><Message>" + vbNewLine +
+            W("- print <Color> <Line> <Message>" + vbNewLine +
+              "- printf <Color> <Line> <Variable1;Variable2;Variable3;...> <Message>" + vbNewLine +
               "- printd <Message>" + vbNewLine +
-              "- printdf <Variable1;Variable2;Variable3;...><Message>" + vbNewLine +
-              "- panic <ErrorType><Reboot><RebootTime><Description>" + vbNewLine +
-              "- panicf <ErrorType><Reboot><RebootTime><Variable1;Variable2;Variable3;...><Description>" + vbNewLine +
-              "- translate <Lang><Message>" + vbNewLine +
-              "- testregexp <Pattern><Message>" + vbNewLine +
+              "- printdf <Variable1;Variable2;Variable3;...> <Message>" + vbNewLine +
+              "- panic <ErrorType> <Reboot> <RebootTime> <Description>" + vbNewLine +
+              "- panicf <ErrorType> <Reboot> <RebootTime> <Variable1;Variable2;Variable3;...> <Description>" + vbNewLine +
+              "- translate <Lang> <Message>" + vbNewLine +
+              "- testregexp <Pattern> <Message>" + vbNewLine +
               "- testsha256 <Message>" + vbNewLine +
               "- testmd5 <Message>" + vbNewLine +
               "- colortest <index>" + vbNewLine +
               "- soundtest <file>" + vbNewLine +
+              "- sendnot <Priority> <title> <desc>" + vbNewLine +
               "- debug <Enable>" + vbNewLine +
               "- rdebug <Enable>" + vbNewLine +
               "- testevent <Event>" + vbNewLine +
