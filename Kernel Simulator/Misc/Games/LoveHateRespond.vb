@@ -18,36 +18,35 @@
 
 Module LoveHateRespond
 
-    'TODO: Comments need localization
-    Dim LoveComments As New List(Of String) From {"Thanks! This is interesting.",
-                                                  "Everyone will support your video for this.",
-                                                  "I gave you the special file in your e-mail for your next video.",
-                                                  "Listen, haters, he is trying to help us, not scam.",
-                                                  "I don't know how much do I and my friends thank you for this video.",
-                                                  "I love you for this video.",
-                                                  "Keep going, don't stop.",
-                                                  "I will help you reach to 1M subscribers!",
-                                                  "My friends got their computer fixed because of you.",
-                                                  "Awesome prank! I shut down my enemy's PC.",
-                                                  "To haters: STOP HATING ON HIM",
-                                                  "To haters: GET TO WORK",
-                                                  "Nobody will notice this now thanks to your object hiding guide"}
-    Dim HateComments As New List(Of String) From {"I will stop watching your videos. Subscriber lost.",
-                                                  "What is this? This is unclear.",
-                                                  "This video is the worst!",
-                                                  "Everyone report this video!",
-                                                  "My friends are furious with you!",
-                                                  "Lovers will now hate you for this.",
-                                                  "Your friend will hate you for this.",
-                                                  "This prank made me unsubscribe to you.",
-                                                  "Mission failed, Respect -, Subscriber -",
-                                                  "Stop making this kind of video!!!",
-                                                  "Get back to your job, your videos are the worst!",
-                                                  "We prejudice on this video."}
+    Dim LoveComments As New List(Of String) From {DoTranslation("Thanks! This is interesting.", currentLang),
+                                                  DoTranslation("Everyone will support your video for this.", currentLang),
+                                                  DoTranslation("I gave you the special file in your e-mail for your next video.", currentLang),
+                                                  DoTranslation("Listen, haters, he is trying to help us, not scam.", currentLang),
+                                                  DoTranslation("I don't know how much do I and my friends thank you for this video.", currentLang),
+                                                  DoTranslation("I love you for this video.", currentLang),
+                                                  DoTranslation("Keep going, don't stop.", currentLang),
+                                                  DoTranslation("I will help you reach to 1M subscribers!", currentLang),
+                                                  DoTranslation("My friends got their computer fixed because of you.", currentLang),
+                                                  DoTranslation("Awesome prank! I shut down my enemy's PC.", currentLang),
+                                                  DoTranslation("To haters: STOP HATING ON HIM", currentLang),
+                                                  DoTranslation("To haters: GET TO WORK", currentLang),
+                                                  DoTranslation("Nobody will notice this now thanks to your object hiding guide")}
+    Dim HateComments As New List(Of String) From {DoTranslation("I will stop watching your videos. Subscriber lost.", currentLang),
+                                                  DoTranslation("What is this? This is unclear.", currentLang),
+                                                  DoTranslation("This video is the worst!", currentLang),
+                                                  DoTranslation("Everyone report this video!", currentLang),
+                                                  DoTranslation("My friends are furious with you!", currentLang),
+                                                  DoTranslation("Lovers will now hate you for this.", currentLang),
+                                                  DoTranslation("Your friend will hate you for this.", currentLang),
+                                                  DoTranslation("This prank made me unsubscribe to you.", currentLang),
+                                                  DoTranslation("Mission failed, Respect -, Subscriber -", currentLang),
+                                                  DoTranslation("Stop making this kind of video!!!", currentLang),
+                                                  DoTranslation("Get back to your job, your videos are the worst!", currentLang),
+                                                  DoTranslation("We prejudice on this video.", currentLang)}
     Dim Comments As New Dictionary(Of String, List(Of String)) From {{"Love", LoveComments}, {"Hate", HateComments}}
-    Dim Users As New List(Of String) From {"TheTrickster", "The Eagle", "ErrorStopper", "Losting - Computers, fixes, and more", "Windows", "CyberBully #2095", "Snap",
-                                           "ExtFS", "Elaine Stretch", "NFSMW2005", "WhatsUp", "BSearch - Beta hunting for GTA V, and more", "Wellington Marks", "Carbon",
-                                           "LinuxUser348", "Linux is Awesome", "The Matrix"}
+    Dim Users As New List(Of String) From {"GS4L", "The Eagle", "Vercity", "Losting - Computers, fixes, and more", "WillStrike", "CyberBully #2095", "ProGamer453",
+                                           "ExtFS", "Elaine Stretch", "NFSMW2005", "WhatsUp", "BSearch - Beta hunting for GTA, and more", "Wellington Marks", "CD-OS",
+                                           "LinuxUser348", "Speculate Ltd.", "The Matrix"}
     Sub InitializeLoteresp()
         Dim RandomDriver As New Random()
         Dim RandomUser, RandomComment, Type, Response As String
