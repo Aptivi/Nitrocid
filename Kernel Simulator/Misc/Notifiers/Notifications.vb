@@ -53,17 +53,19 @@ Public Module Notifications
                 For i As Integer = 1 To NotifRecents(OldNCount - 1).Priority
                     Console.Beep()
                 Next
-                NotifClearArea(Title.Length, Desc.Length)
+                NotifClearArea(Title.Length, Desc.Length, Console.WindowWidth - 30, Console.WindowTop + 2, Console.WindowTop + 3)
             End If
         End While
     End Sub
-    Private Sub NotifClearArea(ByVal LenTitle As Integer, ByVal LenDesc As Integer)
+    Private Sub NotifClearArea(ByVal LenTitle As Integer, ByVal LenDesc As Integer, ByVal Width As Integer, ByVal TopTitle As Integer, ByVal TopDesc As Integer)
         Thread.Sleep(5000)
         For i As Integer = 0 To LenTitle - 1
             WriteWhere(" ", Console.WindowWidth - 30 + i, Console.WindowTop + 2, ColTypes.Neutral)
+            WriteWhere(" ", Width + i, TopTitle, ColTypes.Neutral)
         Next
         For i As Integer = 0 To LenDesc - 1
             WriteWhere(" ", Console.WindowWidth - 30 + i, Console.WindowTop + 3, ColTypes.Neutral)
+            WriteWhere(" ", Width + i, TopDesc, ColTypes.Neutral)
         Next
     End Sub
     Public Sub NotifySend(ByVal notif As Notification)
