@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
+Imports System.Globalization
 Imports System.Threading
 
 Public Module TimeDate
@@ -79,12 +80,18 @@ Public Module TimeDate
             Return KernelDateTime.ToShortDateString
         End If
     End Function
+    Public Function RenderDate(ByVal Cult As CultureInfo) As String
+        Return KernelDateTime.ToString(Cult)
+    End Function
     Public Function RenderDate(ByVal DT As Date) As String
         If LongTimeDate Then
             Return DT.ToLongDateString
         Else
             Return DT.ToShortDateString
         End If
+    End Function
+    Public Function RenderDate(ByVal DT As Date, ByVal Cult As CultureInfo) As String
+        Return DT.ToString(Cult)
     End Function
 
 End Module

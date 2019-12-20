@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Globalization
 Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
@@ -179,6 +180,19 @@ Module TGetCommand
                                                 .Title = FullArgsQ(1),
                                                 .Desc = FullArgsQ(2)}
             NotifySend(Notif)
+        ElseIf Cmd = "dcalend" Then 'Usage: dcalend <CalendType>
+            If FullArgsL(0) = "Gregorian" Then
+                W(RenderDate(New CultureInfo("en-US")), True, ColTypes.Neutral)
+            ElseIf FullArgsL(0) = "Hijri" Then
+                Dim Cult As New CultureInfo("ar") : Cult.DateTimeFormat.Calendar = New HijriCalendar
+                W(RenderDate(Cult), True, ColTypes.Neutral)
+            ElseIf FullArgsL(0) = "Persian" Then
+                W(RenderDate(New CultureInfo("fa")), True, ColTypes.Neutral)
+            ElseIf FullArgsL(0) = "Saudi-Hijri" Then
+                W(RenderDate(New CultureInfo("ar-SA")), True, ColTypes.Neutral)
+            ElseIf FullArgsL(0) = "Thai-Buddhist" Then
+                W(RenderDate(New CultureInfo("th-TH")), True, ColTypes.Neutral)
+            End If
         ElseIf Cmd = "help" Then
             W("- print <Color> <Line> <Message>" + vbNewLine +
               "- printf <Color> <Line> <Variable1;Variable2;Variable3;...> <Message>" + vbNewLine +
@@ -200,7 +214,7 @@ Module TGetCommand
               "- garbage" + vbNewLine +
               "- exit", True, ColTypes.Neutral)
         ElseIf Cmd = "exit" Then
-            TEST_ExitFlag = True
+                TEST_ExitFlag = True
         End If
     End Sub
 
