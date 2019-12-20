@@ -28,6 +28,9 @@ Public Module NetworkTools
     Public Sub GetProperties()
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces
         Dim NoV4, NoV6, Failed As Boolean
+        Dim gp As IPGlobalProperties = IPGlobalProperties.GetIPGlobalProperties
+        Dim gs6 As IPGlobalStatistics = gp.GetIPv6GlobalStatistics
+        Dim gs4 As IPGlobalStatistics = gp.GetIPv4GlobalStatistics
         For Each adapter As NetworkInterface In adapters
             adapterNumber += 1
             W("==========================================", True, ColTypes.Neutral)
@@ -53,6 +56,7 @@ Public Module NetworkTools
                 Dim p As IPv4InterfaceProperties
                 Dim s As IPv4InterfaceStatistics = adapter.GetIPv4Statistics
                 Dim p6 As IPv6InterfaceProperties
+                'TODO: IPV6InterfaceStatistics is not implemented yet
                 Try
                     p = adapterProperties.GetIPv4Properties
                     p6 = adapterProperties.GetIPv6Properties
@@ -68,7 +72,6 @@ Public Module NetworkTools
                     WStkTrc(ex)
 #Enable Warning BC42104
                 End Try
-                'TODO: GetIPv6Statistics not implemented yet.
                 If s Is Nothing Then
                     W(DoTranslation("Failed to get statistics for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
                     Failed = True
@@ -96,6 +99,17 @@ Public Module NetworkTools
                 Wdbg("Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType)
             End If
         Next
+        W(DoTranslation("General IPv6 properties", currentLang) + vbNewLine +
+          DoTranslation("Packets (inbound):", currentLang) + " {0}/{1}" + vbNewLine +
+          DoTranslation("Packets (outbound):", currentLang) + " {2}/{3}" + vbNewLine +
+          DoTranslation("Errors in received packets:", currentLang) + " {4}/{5}/{6}" + vbNewLine +
+          DoTranslation("General IPv4 properties", currentLang) + vbNewLine +
+          DoTranslation("Packets (inbound):", currentLang) + " {7}/{8}" + vbNewLine +
+          DoTranslation("Packets (outbound):", currentLang) + " {9}/{10}" + vbNewLine +
+          DoTranslation("Errors in received packets:", currentLang) + " {11}/{12}/{13}", True, ColTypes.Neutral,
+          gs6.ReceivedPackets, gs6.ReceivedPacketsDelivered, gs6.OutputPacketRequests, gs6.OutputPacketsDiscarded, gs6.ReceivedPacketsWithAddressErrors,
+          gs6.ReceivedPacketsWithHeadersErrors, gs6.ReceivedPacketsWithUnknownProtocol, gs4.ReceivedPackets, gs4.ReceivedPacketsDelivered, gs4.OutputPacketRequests,
+          gs4.OutputPacketsDiscarded, gs4.ReceivedPacketsWithAddressErrors, gs4.ReceivedPacketsWithHeadersErrors, gs4.ReceivedPacketsWithUnknownProtocol)
     End Sub
 
     Sub DownloadFile(ByVal URL As String)
