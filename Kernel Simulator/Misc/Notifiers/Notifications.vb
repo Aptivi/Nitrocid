@@ -45,12 +45,15 @@ Public Module Notifications
         While Not NotifThread.ThreadState = ThreadState.AbortRequested
             If NotifRecents.Count <> OldNCount Then
                 OldNCount = NotifRecents.Count
-                WriteWhere(NotifRecents(OldNCount - 1).Title, Console.WindowWidth - 30, Console.WindowTop + 2, ColTypes.Neutral)
-                WriteWhere(NotifRecents(OldNCount - 1).Desc, Console.WindowWidth - 30, Console.WindowTop + 3, ColTypes.Neutral)
+                Dim Title, Desc As String
+                Title = NotifRecents(OldNCount - 1).Title.Truncate(27)
+                Desc = NotifRecents(OldNCount - 1).Desc.Truncate(27)
+                WriteWhere(Title, Console.WindowWidth - 30, Console.WindowTop + 2, ColTypes.Neutral)
+                WriteWhere(Desc, Console.WindowWidth - 30, Console.WindowTop + 3, ColTypes.Neutral)
                 For i As Integer = 1 To NotifRecents(OldNCount - 1).Priority
                     Console.Beep()
                 Next
-                NotifClearArea(NotifRecents(OldNCount - 1).Title.Length, NotifRecents(OldNCount - 1).Desc.Length)
+                NotifClearArea(Title.Length, Desc.Length)
             End If
         End While
     End Sub

@@ -42,4 +42,15 @@ Module StringExtensions
         Loop
     End Function
 
+    <Runtime.CompilerServices.Extension>
+    Public Function Truncate(ByVal str As String, ByVal threshold As Integer) As String
+        Dim result As String
+        If str.Length > threshold Then
+            result = str.Substring(0, threshold - 1) + "…"
+            Return result
+        Else
+            Return str
+        End If
+    End Function
+
 End Module
