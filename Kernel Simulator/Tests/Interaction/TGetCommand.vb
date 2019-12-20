@@ -120,14 +120,14 @@ Module TGetCommand
             Dim spent As New Stopwatch
             spent.Start() 'Time when you're on a breakpoint is counted
             Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(FullArgs))
-            W(GetArraySHA256(hashbyte), True, ColTypes.Neutral)
+            W(GetArrayEnc(hashbyte), True, ColTypes.Neutral)
             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
             spent.Stop()
         ElseIf Cmd = "testmd5" Then
             Dim spent As New Stopwatch
             spent.Start() 'Time when you're on a breakpoint is counted
             Dim hashbyte As Byte() = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(FullArgs))
-            W(GetArrayMD5(hashbyte), True, ColTypes.Neutral)
+            W(GetArrayEnc(hashbyte), True, ColTypes.Neutral)
             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
             spent.Stop()
         ElseIf Cmd = "testregexp" Then 'Usage: testregexp <pattern> <string>

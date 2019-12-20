@@ -20,7 +20,6 @@ Imports System.Threading
 
 Public Module Notifications
 
-    'TODO: Notification strings should be wrapped with the "..." in the temporary notification display (corner)
     'Variables
     Public NotifRecents As New List(Of Notification)
     Public NotifThread As New Thread(AddressOf NotifListen)

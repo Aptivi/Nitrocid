@@ -16,8 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module KS_MD5
-    Public Function GetArrayMD5(ByVal encrypted As Byte()) As String
+Module Encryption
+    Public Function GetArrayEnc(ByVal encrypted As Byte()) As String
         Dim hash As String = ""
         For i As Integer = 0 To encrypted.Length - 1
             Wdbg("Appending {0} to hash", encrypted(i))

@@ -241,8 +241,7 @@
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Languages\Translate.vb" />
-    <Compile Include="Misc\Encryption\MD5.vb" />
-    <Compile Include="Misc\Encryption\SHA256.vb" />
+    <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Configuration\OldConfigUp.vb" />
     <Compile Include="Misc\Games\LoveHateRespond.vb" />
     <Compile Include="Misc\Games\Solver.vb" />

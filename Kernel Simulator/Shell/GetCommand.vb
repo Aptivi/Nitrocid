@@ -238,11 +238,11 @@ Public Module GetCommand
                                 W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
                             ElseIf eargs(3) = eargs(2) Then
                                 Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(eargs(1)))
-                                eargs(1) = GetArraySHA256(hashbyte)
+                                eargs(1) = GetArrayEnc(hashbyte)
                                 If eargs(1) = userword(eargs(0)) Then
                                     If adminList(eargs(0)) And adminList(signedinusrnm) Then
                                         hashbyte = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(eargs(2)))
-                                        eargs(2) = GetArraySHA256(hashbyte)
+                                        eargs(2) = GetArrayEnc(hashbyte)
                                         userword.Item(eargs(0)) = eargs(2)
                                     ElseIf adminList(eargs(0)) And Not adminList(signedinusrnm) Then
                                         W(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang), True, ColTypes.Neutral, eargs(0))
@@ -829,14 +829,14 @@ Public Module GetCommand
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
                             Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
-                            W(GetArraySHA256(hashbyte), True, ColTypes.Neutral)
+                            W(GetArrayEnc(hashbyte), True, ColTypes.Neutral)
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         ElseIf args(0) = "MD5" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
                             Dim hashbyte As Byte() = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
-                            W(GetArrayMD5(hashbyte), True, ColTypes.Neutral)
+                            W(GetArrayEnc(hashbyte), True, ColTypes.Neutral)
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         Else
