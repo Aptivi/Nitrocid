@@ -58,28 +58,28 @@ Public Module TimeDate
 
     End Sub
 
-    Public Function RenderTime()
+    Public Function RenderTime() As String
         If LongTimeDate Then
             Return KernelDateTime.ToLongTimeString
         Else
             Return KernelDateTime.ToShortTimeString
         End If
     End Function
-    Public Function RenderTime(ByVal DT As Date)
+    Public Function RenderTime(ByVal DT As Date) As String
         If LongTimeDate Then
             Return DT.ToLongTimeString
         Else
             Return DT.ToShortTimeString
         End If
     End Function
-    Public Function RenderDate()
+    Public Function RenderDate() As String
         If LongTimeDate Then
             Return KernelDateTime.ToLongDateString
         Else
             Return KernelDateTime.ToShortDateString
         End If
     End Function
-    Public Function RenderDate(ByVal DT As Date)
+    Public Function RenderDate(ByVal DT As Date) As String
         If LongTimeDate Then
             Return DT.ToLongDateString
         Else

@@ -138,8 +138,8 @@ Public Module KernelTools
     Sub GeneratePanicDump(ByVal Description As String, ByVal ErrorType As Char, ByVal Exc As Exception)
         Try
             'Open a file stream for dump
-            Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{Date.Now.ToShortDateString.Replace("/", "-")}_{Date.Now.ToLongTimeString.Replace(":", "-")}.txt")
-            Wdbg("Opened file stream in home directory, saved as dmp_{0}_{1}.txt", $"{Date.Now.ToShortDateString.Replace("/", "-")}_{Date.Now.ToLongTimeString.Replace(":", "-")}")
+            Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{RenderDate.Replace("/", "-")}_{RenderTime.Replace(":", "-")}.txt")
+            Wdbg("Opened file stream in home directory, saved as dmp_{0}_{1}.txt", $"{RenderDate.Replace("/", "-")}_{RenderTime.Replace(":", "-")}")
 
             'Write info (Header)
             Dump.AutoFlush = True
@@ -188,7 +188,9 @@ Public Module KernelTools
                 Dim ExcTrace As New StackTrace(Exc, True)
                 Dim FrameNo As Integer = 1
                 For Each Frame As StackFrame In ExcTrace.GetFrames
-                    Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}", currentLang), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
+                    If Not (Frame.GetFileName = "" And Frame.GetFileLineNumber = 0 And Frame.GetFileColumnNumber = 0) Then
+                        Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}", currentLang), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
+                    End If
                     FrameNo += 1
                 Next
             Catch ex As Exception
