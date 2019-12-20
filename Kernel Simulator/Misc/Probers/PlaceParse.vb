@@ -26,6 +26,8 @@ Public Module PlaceParse
     Private ReadOnly ldateplace As String = "<longdate>"
     Private ReadOnly stimeplace As String = "<shorttime>"
     Private ReadOnly ltimeplace As String = "<longtime>"
+    Private ReadOnly dateplace As String = "<date>"
+    Private ReadOnly timeplace As String = "<time>"
     Private ReadOnly tzplace As String = "<timezone>"
     Private ReadOnly stzplace As String = "<summertimezone>"
     Private ReadOnly sysplace As String = "<system>"
@@ -40,6 +42,8 @@ Public Module PlaceParse
             If text.Contains(ldateplace) Then text = text.Replace(ldateplace, KernelDateTime.ToLongDateString)
             If text.Contains(stimeplace) Then text = text.Replace(stimeplace, KernelDateTime.ToShortTimeString)
             If text.Contains(ltimeplace) Then text = text.Replace(ltimeplace, KernelDateTime.ToShortDateString)
+            If text.Contains(dateplace) Then text = text.Replace(dateplace, RenderDate)
+            If text.Contains(timeplace) Then text = text.Replace(timeplace, RenderTime)
             If text.Contains(tzplace) Then text = text.Replace(tzplace, TimeZone.CurrentTimeZone.StandardName)
             If text.Contains(stzplace) Then text = text.Replace(stzplace, TimeZone.CurrentTimeZone.DaylightName)
             If text.Contains(sysplace) Then text = text.Replace(sysplace, EnvironmentOSType)
