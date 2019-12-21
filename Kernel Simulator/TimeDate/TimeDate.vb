@@ -34,7 +34,7 @@ Public Module TimeDate
                 Exit Do
             Else
                 KernelDateTime = Date.Now
-                If CornerTD = True Then
+                If CornerTD = True And Not InSaver Then
                     WriteWhere(KernelDateTime.ToShortTimeString + " " + KernelDateTime.ToShortDateString + vbNewLine, Console.WindowWidth - 19, Console.WindowTop, ColTypes.Neutral)
                 End If
             End If
