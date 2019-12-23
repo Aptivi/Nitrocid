@@ -120,58 +120,57 @@ Public Module ScreensaverDisplays
 
     Sub Disco_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Disco.DoWork
         Console.CursorVisible = False
+        Dim random As New Random()
         Do While True
-            For Each color In colors
-                Thread.Sleep(100)
-                If Disco.CancellationPending = True Then
-                    Wdbg("Cancellation is pending. Cleaning everything up...")
-                    e.Cancel = True
-                    Console.Clear()
-                    Dim esc As Char = GetEsc()
-                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                    Load()
-                    Console.CursorVisible = True
-                    Wdbg("All clean. Disco screensaver stopped.")
-                    Exit Do
-                Else
-                    Console.BackgroundColor = color
-                    Console.Clear()
-                End If
-            Next
+            Thread.Sleep(100)
+            If Disco.CancellationPending = True Then
+                Wdbg("Cancellation is pending. Cleaning everything up...")
+                e.Cancel = True
+                Console.Clear()
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Load()
+                Console.CursorVisible = True
+                Wdbg("All clean. Disco screensaver stopped.")
+                Exit Do
+            Else
+
+                Console.BackgroundColor = colors(random.Next(colors.Length - 1))
+                Console.Clear()
+            End If
         Loop
     End Sub
 
     Sub Lines_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Lines.DoWork
         Console.CursorVisible = False
+        Dim random As New Random()
         Wdbg("Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Do While True
-            For Each color In colors
-                Thread.Sleep(500)
-                If Lines.CancellationPending = True Then
-                    Wdbg("Cancellation is pending. Cleaning everything up...")
-                    e.Cancel = True
-                    Console.Clear()
-                    Dim esc As Char = GetEsc()
-                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                    Load()
-                    Console.CursorVisible = True
-                    Wdbg("All clean. Lines screensaver stopped.")
-                    Exit Do
-                Else
-                    Console.Clear()
-                    Console.BackgroundColor = ConsoleColor.Black
-                    Console.ForegroundColor = color
-                    Dim Line As String = ""
-                    Dim Top As Integer = New Random().Next(Console.WindowHeight)
-                    For i As Integer = 1 To Console.WindowWidth
-                        Line += "-"
-                    Next
-                    Console.SetCursorPosition(0, Top)
-                    Console.WriteLine(Line)
-                End If
-            Next
+            Thread.Sleep(500)
+            If Lines.CancellationPending = True Then
+                Wdbg("Cancellation is pending. Cleaning everything up...")
+                e.Cancel = True
+                Console.Clear()
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Load()
+                Console.CursorVisible = True
+                Wdbg("All clean. Lines screensaver stopped.")
+                Exit Do
+            Else
+                Console.Clear()
+                Console.BackgroundColor = ConsoleColor.Black
+                Console.ForegroundColor = colors(random.Next(colors.Length - 1))
+                Dim Line As String = ""
+                Dim Top As Integer = New Random().Next(Console.WindowHeight)
+                For i As Integer = 1 To Console.WindowWidth
+                    Line += "-"
+                Next
+                Console.SetCursorPosition(0, Top)
+                Console.WriteLine(Line)
+            End If
         Loop
     End Sub
 
@@ -440,27 +439,25 @@ IFCANCEL:
         Dim RandomDriver As New Random()
         Wdbg("Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Do While True
-            For Each color In colors
-                If GlitterColor.CancellationPending = True Then
-                    Wdbg("Cancellation is pending. Cleaning everything up...")
-                    e.Cancel = True
-                    Console.Clear()
-                    Dim esc As Char = GetEsc()
-                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                    Load()
-                    Console.CursorVisible = True
-                    Wdbg("All clean. Glitter Color screensaver stopped.")
-                    Exit Do
-                Else
-                    Thread.Sleep(1)
-                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                    Console.SetCursorPosition(Left, Top)
-                    Console.BackgroundColor = color
-                    Console.Write(" ")
-                End If
-            Next
+            If GlitterColor.CancellationPending = True Then
+                Wdbg("Cancellation is pending. Cleaning everything up...")
+                e.Cancel = True
+                Console.Clear()
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Load()
+                Console.CursorVisible = True
+                Wdbg("All clean. Glitter Color screensaver stopped.")
+                Exit Do
+            Else
+                Thread.Sleep(1)
+                Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                Console.SetCursorPosition(Left, Top)
+                Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                Console.Write(" ")
+            End If
         Loop
     End Sub
 
@@ -498,87 +495,85 @@ IFCANCEL:
         Dim RandomDriver As New Random()
         Wdbg("Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Do While True
-            For Each color In colors
-                If GlitterColor255.CancellationPending = True Then
-                    Wdbg("Cancellation is pending. Cleaning everything up...")
-                    e.Cancel = True
-                    Console.Clear()
-                    Dim esc As Char = GetEsc()
-                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                    Load()
-                    Console.CursorVisible = True
-                    Wdbg("All clean. Glitter 255 Colors screensaver stopped.")
-                    Exit Do
-                Else
-                    Thread.Sleep(1)
-                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                    Console.SetCursorPosition(Left, Top)
-                    Dim esc As Char = GetEsc()
-                    Dim ColorNum As Integer = RandomDriver.Next(255)
-                    Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
-                End If
-            Next
+            If GlitterColor255.CancellationPending = True Then
+                Wdbg("Cancellation is pending. Cleaning everything up...")
+                e.Cancel = True
+                Console.Clear()
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Load()
+                Console.CursorVisible = True
+                Wdbg("All clean. Glitter 255 Colors screensaver stopped.")
+                Exit Do
+            Else
+                Thread.Sleep(1)
+                Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                Console.SetCursorPosition(Left, Top)
+                Dim esc As Char = GetEsc()
+                Dim ColorNum As Integer = RandomDriver.Next(255)
+                Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+            End If
         Loop
     End Sub
 
     Sub Disco255_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Disco255.DoWork
         Console.CursorVisible = False
+        Dim random As New Random
         Do While True
-            For color As Integer = 0 To 255
-                Thread.Sleep(100)
-                If Disco255.CancellationPending = True Then
-                    Wdbg("Cancellation is pending. Cleaning everything up...")
-                    e.Cancel = True
-                    Console.Clear()
-                    Dim esc As Char = GetEsc()
-                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                    Load()
-                    Console.CursorVisible = True
-                    Wdbg("All clean. Disco 255 screensaver stopped.")
-                    Exit Do
-                Else
-                    Dim esc As Char = GetEsc()
-                    Console.Write(esc + "[48;5;" + CStr(color) + "m")
-                    Console.Clear()
-                End If
-            Next
+            Thread.Sleep(100)
+            If Disco255.CancellationPending = True Then
+                Wdbg("Cancellation is pending. Cleaning everything up...")
+                e.Cancel = True
+                Console.Clear()
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Load()
+                Console.CursorVisible = True
+                Wdbg("All clean. Disco 255 screensaver stopped.")
+                Exit Do
+            Else
+                Dim esc As Char = GetEsc()
+                Dim color As Integer = random.Next(255)
+                Console.Write(esc + "[48;5;" + CStr(color) + "m")
+                Console.Clear()
+            End If
         Loop
     End Sub
 
     Sub Lines255_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Lines255.DoWork
         Console.CursorVisible = False
+        Dim random As New Random
         Wdbg("Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Do While True
-            For Each color In colors255
-                Thread.Sleep(500)
-                If Lines255.CancellationPending = True Then
-                    Wdbg("Cancellation is pending. Cleaning everything up...")
-                    e.Cancel = True
-                    Console.Clear()
-                    Dim esc As Char = GetEsc()
-                    Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                    Load()
-                    Console.CursorVisible = True
-                    Wdbg("All clean. Lines 255 screensaver stopped.")
-                    Exit Do
-                Else
-                    Dim esc As Char = GetEsc()
-                    Console.BackgroundColor = ConsoleColor.Black
-                    Console.Clear()
-                    Console.Write(esc + "[38;5;" + CStr(color) + "m")
-                    Dim Line As String = ""
-                    Dim Top As Integer = New Random().Next(Console.WindowHeight)
-                    For i As Integer = 1 To Console.WindowWidth
-                        Line += "-"
-                    Next
-                    Console.SetCursorPosition(0, Top)
-                    Console.WriteLine(Line)
-                End If
-            Next
+            Thread.Sleep(500)
+            If Lines255.CancellationPending = True Then
+                Wdbg("Cancellation is pending. Cleaning everything up...")
+                e.Cancel = True
+                Console.Clear()
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Load()
+                Console.CursorVisible = True
+                Wdbg("All clean. Lines 255 screensaver stopped.")
+                Exit Do
+            Else
+                Dim esc As Char = GetEsc()
+                Console.BackgroundColor = ConsoleColor.Black
+                Console.Clear()
+                Dim color As Integer = random.Next(255)
+                Console.Write(esc + "[38;5;" + CStr(color) + "m")
+                Dim Line As String = ""
+                Dim Top As Integer = New Random().Next(Console.WindowHeight)
+                For i As Integer = 1 To Console.WindowWidth
+                    Line += "-"
+                Next
+                Console.SetCursorPosition(0, Top)
+                Console.WriteLine(Line)
+            End If
         Loop
     End Sub
 
