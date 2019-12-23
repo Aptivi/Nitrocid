@@ -165,40 +165,27 @@ Public Module FTPGetCommand
                     List(strArgs)
                 End If
             ElseIf words(0) = "listremote" Or words(0) = "lsr" Then
-                If cmd <> "listremote" Or cmd <> "lsr" Then
-                    If connected = True Then
-                        Dim FileSize As Long
-                        Dim ModDate As DateTime
-                        For Each DirListFTP As FtpListItem In ClientFTP.GetListing(strArgs)
-                            W($"- {DirListFTP.FullName}", False, ColTypes.Neutral)
-                            If DirListFTP.Type = FtpFileSystemObjectType.File Then
-                                W(": ", False, ColTypes.Neutral)
-                                FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
-                                ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
-                                W(DoTranslation("{0} KB | Modified in: {1}", currentLang), False, ColTypes.Neutral, FormatNumber(FileSize / 1024, 2), ModDate.ToString)
-                            End If
-                            Console.WriteLine()
-                        Next
+                If connected = True Then
+                    Dim FileSize As Long
+                    Dim ModDate As DateTime
+                    Dim Listing As FtpListItem()
+                    If cmd <> "listremote" Or cmd <> "lsr" Then
+                        Listing = ClientFTP.GetListing(strArgs)
                     Else
-                        W(DoTranslation("You should connect to server before listing all remote files.", currentLang), True, ColTypes.Neutral)
+                        Listing = ClientFTP.GetListing(currentremoteDir)
                     End If
+                    For Each DirListFTP As FtpListItem In Listing
+                        W($"- {DirListFTP.FullName.Remove(0, 1)}", False, ColTypes.Neutral)
+                        If DirListFTP.Type = FtpFileSystemObjectType.File Then
+                            W(": ", False, ColTypes.Neutral)
+                            FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
+                            ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
+                            W(DoTranslation("{0} KB | Modified in: {1}", currentLang), False, ColTypes.Neutral, FormatNumber(FileSize / 1024, 2), ModDate.ToString)
+                        End If
+                        Console.WriteLine()
+                    Next
                 Else
-                    If connected = True Then
-                        Dim FileSize As Long
-                        Dim ModDate As DateTime
-                        For Each DirListFTP As FtpListItem In ClientFTP.GetListing(currentremoteDir)
-                            W($"- {DirListFTP.FullName}", True, ColTypes.Neutral)
-                            If DirListFTP.Type = FtpFileSystemObjectType.File Then
-                                W(": ", True, ColTypes.Neutral)
-                                FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
-                                ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
-                                W(DoTranslation("{0} KB | Modified in: {1}", currentLang), True, ColTypes.Neutral, FormatNumber(FileSize / 1024, 2), ModDate.ToString)
-                            End If
-                            Console.WriteLine()
-                        Next
-                    Else
-                        W(DoTranslation("You should connect to server before listing all remote files.", currentLang), True, ColTypes.Neutral)
-                    End If
+                    W(DoTranslation("You should connect to server before listing all remote files.", currentLang), True, ColTypes.Neutral)
                 End If
             ElseIf words(0) = "rename" Or words(0) = "ren" Then
                 If cmd <> "rename" Or cmd <> "ren" Then
