@@ -18,7 +18,7 @@ Imports System.Reflection.Assembly
 
 'TODOs:
 '   TODO: Interactive host system file manager (Planned in the bootable version)
-'   TODO: Permanent list of usernames and passwords (passwords in encrypted form - in beta)
+'   TODO: Permanent list of usernames and passwords (passwords in encrypted form)
 Public Module Kernel
 
     'Variables
@@ -35,7 +35,7 @@ Public Module Kernel
         While True
             Try
                 'A title
-                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - Milestone 1"
+                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - Milestone 2"
                 If Not NotifThread.IsAlive Then NotifThread.Start()
                 InitPaths()
                 If Not EnvironmentOSType.Contains("Unix") Then Initialize255()
