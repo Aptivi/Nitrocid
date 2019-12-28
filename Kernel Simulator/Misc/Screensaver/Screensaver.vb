@@ -30,6 +30,7 @@ Public Module Screensaver
     Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"colorMix255", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False},
                                                                  {"lines", False}, {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False},
                                                                  {"glitterColor255", False}, {"disco255", False}, {"lines255", False}, {"2020", False}}
+    Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker
     Private execCustomSaver As CompilerResults
     Private DoneFlag As Boolean = False
@@ -176,6 +177,7 @@ Public Module Screensaver
                 Thread.Sleep(150)
             ElseIf ScrnSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
+                finalSaver = CSvrdb(saver)
                 Custom.WorkerSupportsCancellation = True
                 Custom.RunWorkerAsync()
                 Wdbg("Custom screensaver {0} started", saver)
@@ -216,9 +218,11 @@ Public Module Screensaver
                                     W(DoTranslation("{0} has been initialized properly.", currentLang), True, ColTypes.Neutral, modFile)
                                     Wdbg("{0} compiled correctly. Starting...", modFile)
                                     ScrnSvrdb.Add(modFile, False)
+                                    CSvrdb.Add(modFile, finalSaver)
                                 Else
                                     Wdbg("{0} already exists. Recompiling...", modFile)
                                     ScrnSvrdb.Remove(modFile)
+                                    CSvrdb.Remove(modFile)
                                     CompileCustom(file)
                                     Exit Sub
                                 End If
