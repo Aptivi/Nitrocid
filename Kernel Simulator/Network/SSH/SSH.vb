@@ -21,8 +21,7 @@ Module SSH
         'Authentication
         Wdbg("Address: {0}:{1}, Username: {2}", Address, Port, Username)
         W(DoTranslation("Enter the password for {0}: ", currentLang), False, ColTypes.Input, Username)
-        Dim Pass As String = ""
-        Pass = ReadLineNoInput()
+        Dim Pass As String = ReadLineNoInput()
         Dim SSH As New SshClient(Address, Port, Username, Pass)
         SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(10)
         Wdbg("Connecting to {0}...", Address)

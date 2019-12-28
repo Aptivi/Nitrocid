@@ -22,7 +22,6 @@ Module RPC_Commands
 
     Dim Commands As New List(Of String) From {"<Request:Shutdown>", 'Request will be like this: <Request:Shutdown>(IP)
                                               "<Request:Reboot>",   'Request will be like this: <Request:Reboot>(IP)
-                                              "<Request:Populate>", 'Request will be like this: <Request:Populate>(Hardware)
                                               "<Request:Exec>"}     'Request will be like this: <Request:Exec>(CMD)
 
     Sub SendCommand(ByVal Request As String)
@@ -44,8 +43,6 @@ Module RPC_Commands
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
                 RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
                 Wdbg("Sending response to device...")
-            ElseIf Cmd = "<Request:Populate>" Then
-                Wdbg("Tried to send a non-implemented request.") 'To be done
             ElseIf Cmd = "<Request:Exec>" Then
                 Wdbg("Tried to send a non-implemented request.") 'To be done
             Else

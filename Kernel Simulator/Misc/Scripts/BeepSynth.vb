@@ -43,7 +43,7 @@ Module BeepSynth
                             Console.Beep(freq, ms)
                             Wdbg("Got frequency {0} Hz and time {1} ms", freq, ms)
                         Catch ex As Exception
-                            Wdbg("Not a comment and not a synth line.")
+                            Wdbg("Not a comment and not a synth line. ({0})", line)
                             W(DoTranslation("Failed to probe a synth line.", currentLang), True, ColTypes.Neutral)
                         End Try
                     End If
