@@ -21,9 +21,8 @@ Imports System.Threading
 
 Module RemoteProcedure
 
-    Public RPCDrives As New Dictionary(Of String, NetworkStream)
-    Public RPCListen As TcpListener
-    Public RPCClient As Socket
+    Public RPCDrives As New List(Of String)
+    Public RPCListen As UdpClient
     Public RPCPort As Integer = 12345
     Public RPCThread As New Thread(AddressOf ListenRPC) With {.IsBackground = True}
     Public RPCStopping As Boolean
@@ -36,41 +35,13 @@ Module RemoteProcedure
         End Try
     End Sub
     Sub ListenRPC()
-        RPCListen = New TcpListener(New IPAddress({0, 0, 0, 0}), RPCPort)
-        RPCListen.Start()
+        RPCListen = New UdpClient(RPCPort)
+        RPCListen.EnableBroadcast = True
         Wdbg("RPC: Listener started")
-        Dim RPCListener As New Thread(AddressOf RecCommand)
+        Dim RPCListener As New Thread(AddressOf RecCommand) With {.IsBackground = True}
         RPCListener.Start()
         Wdbg("RPC: Thread started")
         W(DoTranslation("RPC listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, RPCPort)
-
-        While Not RPCStopping
-            Try
-                Dim RPCStream As NetworkStream
-                Dim RPCClient As Socket
-                Dim RPCIP As String
-                RPCClient = RPCListen.AcceptSocket
-                Wdbg("RPC: Socket accepted")
-                RPCStream = New NetworkStream(RPCClient) With {.ReadTimeout = 50}
-                RPCIP = RPCClient.RemoteEndPoint.ToString.Remove(RPCClient.RemoteEndPoint.ToString.IndexOf(":"))
-                Wdbg("RPC: {0}", RPCIP)
-                If Not RPCDrives.Keys.Contains(RPCIP) Then
-                    Wdbg("RPC: New connection. Adding to list...")
-                    RPCDrives.Add(RPCIP, RPCStream)
-                End If
-            Catch ae As ThreadAbortException
-                Wdbg("RPC: Stopping...")
-                Exit While
-            Catch ex As Exception
-                W(DoTranslation("Error in connection: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
-                WStkTrc(ex)
-            End Try
-        End While
-
-        RPCStopping = False
-        RPCListen.Stop()
-        RPCDrives.Clear()
-        Thread.CurrentThread.Abort()
     End Sub
 
 End Module

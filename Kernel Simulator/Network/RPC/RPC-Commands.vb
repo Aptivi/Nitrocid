@@ -35,21 +35,15 @@ Module RPC_Commands
         If Commands.Contains(Cmd) Then
             Wdbg("Command found.")
             If Cmd = "<Request:Shutdown>" Then
-                Dim remotestream As NetworkStream = RPCDrives(Arg)
                 Wdbg("Stream opened for device {0}", Arg)
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("ShutdownConfirm, " + Arg + vbNewLine)
-                Dim WResult As IAsyncResult = remotestream.BeginWrite(ByteMsg, 0, ByteMsg.Count, Nothing, Nothing)
+                RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
                 Wdbg("Sending response to device...")
-                WResult.AsyncWaitHandle.WaitOne()
-                remotestream.EndWrite(WResult)
             ElseIf Cmd = "<Request:Reboot>" Then
-                Dim remotestream As NetworkStream = RPCDrives(Arg)
                 Wdbg("Stream opened for device {0}", Arg)
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
-                Dim WResult As IAsyncResult = remotestream.BeginWrite(ByteMsg, 0, ByteMsg.Count, Nothing, Nothing)
+                RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
                 Wdbg("Sending response to device...")
-                WResult.AsyncWaitHandle.WaitOne()
-                remotestream.EndWrite(WResult)
             ElseIf Cmd = "<Request:Populate>" Then
                 Wdbg("Tried to send a non-implemented request.") 'To be done
             ElseIf Cmd = "<Request:Exec>" Then
@@ -60,43 +54,35 @@ Module RPC_Commands
         End If
     End Sub
     Sub RecCommand()
-        Dim i As Integer = 0
+        Dim endp As New IPEndPoint(IPAddress.Any, RPCPort)
         While True
-            If i > RPCDrives.Count - 1 Then
-                i = 0
-            Else
-                Dim buff(65535) As Byte
-                Dim streamnet As NetworkStream = RPCDrives.Values(i)
-                Dim ip As String = RPCDrives.Keys(i)
-                i += 1
-                Try
-                    streamnet.Read(buff, 0, 65536)
-                    Dim msg As String = Text.Encoding.Default.GetString(buff)
-                    msg = msg.Replace(vbCr, vbNullChar) 'Remove all instances of vbCr (macOS newlines) } Windows hosts are affected, too, because it uses
-                    msg = msg.Replace(vbLf, vbNullChar) 'Remove all instances of vbLf (Linux newlines) } vbCrLf, which means (vbCr + vbLf)
-                    If Not msg.StartsWith(vbNullChar) Then
-                        If msg.StartsWith("ShutdownConfirm") Then
-                            Wdbg("Shutdown confirmed from remote access.")
-                            PowerManage("shutdown")
-                        ElseIf msg.StartsWith("RebootConfirm") Then
-                            Wdbg("Reboot confirmed from remote access.")
-                            PowerManage("reboot")
-                        Else
-                            Wdbg("Not found")
-                        End If
-                    End If
-                Catch ex As Exception
-                    Dim SE As SocketException = CType(ex.InnerException, SocketException)
-                    If Not IsNothing(SE) Then
-                        If Not SE.SocketErrorCode = SocketError.TimedOut Then
-                            Wdbg("Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
-                            WStkTrc(ex)
-                        End If
+            Dim buff() As Byte
+            Dim ip As String
+            Try
+                buff = RPCListen.Receive(endp)
+                Dim msg As String = Text.Encoding.Default.GetString(buff)
+                If Not msg.StartsWith(vbNullChar) Then
+                    If msg.StartsWith("ShutdownConfirm") Then
+                        Wdbg("Shutdown confirmed from remote access.")
+                        PowerManage("shutdown")
+                    ElseIf msg.StartsWith("RebootConfirm") Then
+                        Wdbg("Reboot confirmed from remote access.")
+                        PowerManage("reboot")
                     Else
+                        Wdbg("Not found")
+                    End If
+                End If
+            Catch ex As Exception
+                Dim SE As SocketException = CType(ex.InnerException, SocketException)
+                If Not IsNothing(SE) Then
+                    If Not SE.SocketErrorCode = SocketError.TimedOut Then
+                        Wdbg("Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
                         WStkTrc(ex)
                     End If
-                End Try
-            End If
+                Else
+                    WStkTrc(ex)
+                End If
+            End Try
         End While
     End Sub
 
