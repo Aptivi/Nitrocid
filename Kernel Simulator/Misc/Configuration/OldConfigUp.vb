@@ -20,7 +20,7 @@ Module OldConfigUp
     'Taken from config.vb version 0.0.5.2 with some removals that reflect this version
     'Take configuration values, and port them to newer version
     Sub UpgradeConfig()
-        Dim OldConfigReader As IO.StreamReader = My.Computer.FileSystem.OpenTextFileReader(Environ("USERPROFILE") + "\kernelConfig.ini")
+        Dim OldConfigReader As IO.StreamReader = My.Computer.FileSystem.OpenTextFileReader(paths("Configuration"))
         Dim line As String = OldConfigReader.ReadLine
         Do While line <> ""
             If (line.Contains("Colored Shell = ")) Then
