@@ -551,7 +551,7 @@ Public Module GetCommand
                     If args(0) = "safe" Then
                         PowerManage("rebootsafe")
                     ElseIf args(0) <> "" Then
-                        PowerManage("remotereboot", args(0))
+                        PowerManage("remoterestart", args(0))
                     Else
                         PowerManage("reboot")
                     End If
