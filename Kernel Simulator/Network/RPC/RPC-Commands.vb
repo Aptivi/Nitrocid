@@ -61,16 +61,14 @@ Module RPC_Commands
             Try
                 buff = RPCListen.Receive(endp)
                 Dim msg As String = Text.Encoding.Default.GetString(buff)
-                If Not msg.StartsWith(vbNullChar) Then
-                    If msg.StartsWith("ShutdownConfirm") Then
-                        Wdbg("Shutdown confirmed from remote access.")
-                        PowerManage("shutdown")
-                    ElseIf msg.StartsWith("RebootConfirm") Then
-                        Wdbg("Reboot confirmed from remote access.")
-                        PowerManage("reboot")
-                    Else
-                        Wdbg("Not found")
-                    End If
+                If msg.StartsWith("ShutdownConfirm") Then
+                    Wdbg("Shutdown confirmed from remote access.")
+                    PowerManage("shutdown")
+                ElseIf msg.StartsWith("RebootConfirm") Then
+                    Wdbg("Reboot confirmed from remote access.")
+                    PowerManage("reboot")
+                Else
+                    Wdbg("Not found. Message was {0}", msg)
                 End If
             Catch ex As Exception
                 Dim SE As SocketException = CType(ex.InnerException, SocketException)

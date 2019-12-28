@@ -21,7 +21,6 @@ Imports System.Threading
 
 Module RemoteProcedure
 
-    Public RPCDrives As New List(Of String)
     Public RPCListen As UdpClient
     Public RPCPort As Integer = 12345
     Public RPCThread As New Thread(AddressOf ListenRPC) With {.IsBackground = True}
