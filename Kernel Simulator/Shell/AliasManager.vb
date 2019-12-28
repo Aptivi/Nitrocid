@@ -20,7 +20,7 @@ Public Module AliasManager
 
     Public aliases As New Dictionary(Of String, String)
     Public forbidden As String() = {"alias"}
-    Private aliastreamr As New IO.StreamReader($"{paths("Home")}/aliases.csv")
+    Private aliastreamr As New IO.StreamReader(paths("Aliases"))
 
     'Initializing and Saving
     Public Sub InitAliases()
@@ -44,8 +44,8 @@ Public Module AliasManager
 
         'Close the read stream, write all the lines, then open the read stream again
         aliastreamr.Close()
-        IO.File.WriteAllLines($"{paths("Home")}/aliases.csv", aliast)
-        aliastreamr = New IO.StreamReader($"{paths("Home")}/aliases.csv")
+        IO.File.WriteAllLines(paths("Aliases"), aliast)
+        aliastreamr = New IO.StreamReader(paths("Aliases"))
     End Sub
 
     'Management and Execution

@@ -310,8 +310,8 @@ Public Module KernelTools
         InitFTPHelp()
 
         'We need to create a file so InitAliases() won't give out an error
-        If Not File.Exists($"{paths("Home")}/aliases.csv") Then
-            Dim fstream As FileStream = File.Create($"{paths("Home")}/aliases.csv")
+        If Not File.Exists(paths("Aliases")) Then
+            Dim fstream As FileStream = File.Create(paths("Aliases"))
             fstream.Close()
         End If
 
