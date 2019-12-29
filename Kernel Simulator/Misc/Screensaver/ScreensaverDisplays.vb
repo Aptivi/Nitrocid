@@ -578,11 +578,91 @@ IFCANCEL:
         Loop
     End Sub
 
-    'TODO: Start developing this screensaver after M2.
+    'TODO: Remove after 1/1/2020
     Sub HNY2020_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles HNY2020.DoWork
         Console.CursorVisible = False
         Dim random As New Random
         Wdbg("Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        Dim hnyani As String() = {"                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "            :ohdddyo:           " + vbNewLine +
+                                  "          :mMMMddmMMMd`         " + vbNewLine +
+                                  "         .NMMd`   oMMMs         " + vbNewLine +
+                                  "         .///.    /MMMo         " + vbNewLine +
+                                  "                 +NMMh`         " + vbNewLine +
+                                  "               :dMMN+           " + vbNewLine +
+                                  "             -hMMNs`            " + vbNewLine +
+                                  "           .yMMMs.              " + vbNewLine +
+                                  "          sMMMMhsssssss.        " + vbNewLine +
+                                  "         `mNNNNNNNNNNNN-        " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                ",
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "            .oydddyo.           " + vbNewLine +
+                                  "          `yMMMmdmMMMy          " + vbNewLine +
+                                  "          sMMM:   /MMMo         " + vbNewLine +
+                                  "         `NMMd     mMMm         " + vbNewLine +
+                                  "         `MMMd     dMMN`        " + vbNewLine +
+                                  "         `MMMd     dMMN`        " + vbNewLine +
+                                  "         `MMMd     dMMN`        " + vbNewLine +
+                                  "          hMMN.   .NMMh         " + vbNewLine +
+                                  "          .mMMmo+omMMm.         " + vbNewLine +
+                                  "           `odNMMMNdo`          " + vbNewLine +
+                                  "               `.`              " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                ",
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "            :ohdddyo:           " + vbNewLine +
+                                  "          :mMMMddmMMMd`         " + vbNewLine +
+                                  "         .NMMd`   oMMMs         " + vbNewLine +
+                                  "         .///.    /MMMo         " + vbNewLine +
+                                  "                 +NMMh`         " + vbNewLine +
+                                  "               :dMMN+           " + vbNewLine +
+                                  "             -hMMNs`            " + vbNewLine +
+                                  "           .yMMMs.              " + vbNewLine +
+                                  "          sMMMMhsssssss.        " + vbNewLine +
+                                  "         `mNNNNNNNNNNNN-        " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                ",
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "            .oydddyo.           " + vbNewLine +
+                                  "          `yMMMmdmMMMy          " + vbNewLine +
+                                  "          sMMM:   /MMMo         " + vbNewLine +
+                                  "         `NMMd     mMMm         " + vbNewLine +
+                                  "         `MMMd     dMMN`        " + vbNewLine +
+                                  "         `MMMd     dMMN`        " + vbNewLine +
+                                  "         `MMMd     dMMN`        " + vbNewLine +
+                                  "          hMMN.   .NMMh         " + vbNewLine +
+                                  "          .mMMmo+omMMm.         " + vbNewLine +
+                                  "           `odNMMMNdo`          " + vbNewLine +
+                                  "               `.`              " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                ",
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                " + vbNewLine +
+                                  "                                "}
         Do While True
             Thread.Sleep(500)
             If HNY2020.CancellationPending = True Then
@@ -601,8 +681,19 @@ IFCANCEL:
                 Console.BackgroundColor = ConsoleColor.Black
                 Console.Clear()
                 Dim color As Integer = random.Next(255)
-                Console.Write(esc + "[38;5;" + CStr(color) + "m")
-                Console.WriteLine("ERROR: Screensaver in development!")
+                Dim NY As New Date(2020, 1, 1)
+                Dim NYTS As TimeSpan = NY - KernelDateTime
+                If NYTS.TotalDays <= 0 Then
+                    For CurrentStep = 0 To 4
+                        Console.Write(esc + "[38;5;" + CStr(color) + "m")
+                        Console.Write(hnyani(CurrentStep))
+                        Console.SetCursorPosition(0, 0)
+                        Thread.Sleep(150)
+                    Next
+                Else
+                    Console.Write(esc + "[38;5;" + CStr(color) + "m")
+                    Console.WriteLine(FormatNumber(NYTS.TotalSeconds, 0) + " seconds to reach year 2020!")
+                End If
             End If
         Loop
     End Sub
