@@ -14,7 +14,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-
 Module StringExtensions
 
     ' Credit: Mehang Rai | https://stackoverflow.com/questions/45831829/how-do-you-replace-the-last-occurance-of-a-with-the-word-and

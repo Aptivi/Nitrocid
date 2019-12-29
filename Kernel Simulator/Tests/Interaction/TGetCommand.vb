@@ -63,6 +63,9 @@ Module TGetCommand
                 Dim Line As Boolean = Parts(1)
                 Dim Vars As Object() = Parts(2).Split(";")
                 Dim Text As String
+                For i As Integer = 0 To Vars.Count - 1
+                    Vars(i) = Evaluate(Vars(i)).ToString
+                Next
                 Parts.RemoveAt(0) : Parts.RemoveAt(0) : Parts.RemoveAt(0)
                 Text = String.Join(" ", Parts)
                 W(Text, Line, Color, Vars)
@@ -74,6 +77,9 @@ Module TGetCommand
         ElseIf Cmd = "printdf" Then 'Usage: printdf <Variable1;Variable2;Variable3;...> <Message>
             If FullArgsL.Count - 1 >= 1 Then
                 Dim Vars As Object() = FullArgsL(0).Split(";")
+                For i As Integer = 0 To Vars.Count - 1
+                    Vars(i) = Evaluate(Vars(i)).ToString
+                Next
                 FullArgsL.RemoveAt(0)
                 Wdbg(String.Join(" ", FullArgsL), Vars)
             End If

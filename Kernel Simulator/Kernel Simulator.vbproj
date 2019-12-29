@@ -255,6 +255,7 @@
     <Compile Include="Misc\Screensaver\ScreensaverDisplays.vb" />
     <Compile Include="Misc\Scripts\BeepSynth.vb" />
     <Compile Include="Misc\Speech\VoiceManagement.vb" />
+    <Compile Include="Misc\StringEvaluators.vb" />
     <Compile Include="Misc\StringExtensions.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModParser.vb" />
