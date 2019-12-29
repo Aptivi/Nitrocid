@@ -87,11 +87,11 @@ Public Module FTPShell
             End If
 
             'Parse command
-            If Not (strcmd = Nothing Or strcmd.StartsWith(" ")) Then GetLine()
+            If Not (strcmd = Nothing Or strcmd.StartsWith(" ")) Then FTPGetLine()
         End While
     End Sub
 
-    Public Sub GetLine()
+    Public Sub FTPGetLine()
         Dim words As String() = strcmd.Split({" "c})
         Wdbg($"Is the command found? {availftpcmds.Contains(words(0))}")
         If availftpcmds.Contains(words(0)) Then

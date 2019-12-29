@@ -24,7 +24,7 @@ Module RPC_Commands
                                               "<Request:Reboot>",   'Request will be like this: <Request:Reboot>(IP)
                                               "<Request:Exec>"}     'Request will be like this: <Request:Exec>(CMD)
 
-    Sub SendCommand(ByVal Request As String)
+    Sub SendCommand(ByVal Request As String, ByVal IP As String)
         Dim Cmd As String = Request.Remove(Request.IndexOf("("))
         Wdbg("Command: {0}", Cmd)
         Dim Arg As String = Request.Substring(Request.IndexOf("(") + 1)
@@ -44,7 +44,10 @@ Module RPC_Commands
                 RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
                 Wdbg("Sending response to device...")
             ElseIf Cmd = "<Request:Exec>" Then
-                Wdbg("Tried to send a non-implemented request.") 'To be done
+                Wdbg("Stream opened for device {0} to execute ""{1}""", IP, Arg)
+                Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("ExecConfirm, " + Arg + vbNewLine)
+                RPCListen.Send(ByteMsg, ByteMsg.Length, IP, RPCPort)
+                Wdbg("Sending response to device...")
             Else
                 Wdbg("Malformed request.")
             End If
@@ -54,7 +57,7 @@ Module RPC_Commands
         Dim endp As New IPEndPoint(IPAddress.Any, RPCPort)
         While True
             Dim buff() As Byte
-            Dim ip As String
+            Dim ip As String = ""
             Try
                 buff = RPCListen.Receive(endp)
                 Dim msg As String = Text.Encoding.Default.GetString(buff)
@@ -64,6 +67,10 @@ Module RPC_Commands
                 ElseIf msg.StartsWith("RebootConfirm") Then
                     Wdbg("Reboot confirmed from remote access.")
                     PowerManage("reboot")
+                ElseIf msg.StartsWith("ExecConfirm") Then
+                    Wdbg("Exec confirmed from remote access.")
+                    Console.WriteLine()
+                    GetLine(msg.Replace("ExecConfirm, ", "").Replace(vbNewLine, ""))
                 Else
                     Wdbg("Not found. Message was {0}", msg)
                 End If

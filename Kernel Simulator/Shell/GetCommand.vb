@@ -583,6 +583,15 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "rexec" Then
+
+                If requestedCommand <> "rexec" Then
+                    If eqargs.Count > 1 Then
+                        Done = True
+                        SendCommand("<Request:Exec>(" + eqargs(1) + ")", args(0))
+                    End If
+                End If
+
             ElseIf words(0) = "rd" Then
 
                 If args.Count - 1 >= 0 Then

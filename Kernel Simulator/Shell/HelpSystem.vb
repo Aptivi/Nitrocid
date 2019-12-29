@@ -61,6 +61,7 @@ Public Module HelpSystem
                                                               {"reloadconfig", DoTranslation("Reloads configuration file that is edited.", currentLang)},
                                                               {"reloadmods", DoTranslation("Reloads mods.", currentLang)},
                                                               {"reloadsaver", DoTranslation("Reloads screensaver file in %USERPROFILE%\KSMods", currentLang)},
+                                                              {"rexec", DoTranslation("Remotely executes a command to remote PC", currentLang)},
                                                               {"rd", DoTranslation("Removes a directory", currentLang)},
                                                               {"rdebug", DoTranslation("Enables or disables remote debugging.", currentLang)},
                                                               {"rmuser", DoTranslation("Removes a user from the list (Admins Only)", currentLang)},
@@ -276,6 +277,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " reloadconfig: " + DoTranslation("Reloads the configuration that is changed by the end-user or by tool.", currentLang) + vbNewLine +
               "       " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart.", currentLang), True, ColTypes.Neutral)
+
+        ElseIf command = "rexec" Then
+
+            W(DoTranslation("Usage:", currentLang) + " rexec: " + DoTranslation("Remotely executes a command to remote PC", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "rmuser" Then
 

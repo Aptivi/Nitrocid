@@ -29,10 +29,10 @@ Public Module Shell
                                             "savescreen", "lockscreen", "setsaver", "reloadsaver", "ftp", "usermanual", "cdbglog", "sses", "chlang",
                                             "reloadmods", "get", "lsdbgdev", "disconndbgdev", "lset", "move", "copy", "search", "listdrives",
                                             "listparts", "sumfile", "rdebug", "speak", "spellbee", "mathbee", "loteresp", "sshell", "bsynth", "shownotifs",
-                                            "dismissnotif"}
+                                            "dismissnotif", "rexec"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
-                                     "lset", "listdrives", "listparts", "rdebug"}
+                                     "lset", "listdrives", "listparts", "rdebug", "rexec"}
     Public obsoleteCmds() As String = {}
     Public modcmnds As New ArrayList
 
@@ -93,7 +93,7 @@ Public Module Shell
                         Next
                         If Done = False Then
                             Wdbg("Executing built-in command")
-                            GetLine()
+                            GetLine(strcommand)
                         End If
                     End If
 
@@ -125,7 +125,7 @@ Public Module Shell
 
     End Sub
 
-    Public Sub GetLine(Optional ByVal ArgsMode As Boolean = False)
+    Public Sub GetLine(ByVal strcommand As String, Optional ByVal ArgsMode As Boolean = False)
 
         'Reads command written by user
         Try

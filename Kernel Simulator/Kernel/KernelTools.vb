@@ -244,10 +244,10 @@ Public Module KernelTools
             paths.Clear()
         ElseIf PowerMode = "remoteshutdown" Then
             W(DoTranslation("Shutting down...", currentLang), True, ColTypes.Neutral)
-            SendCommand("<Request:Shutdown>(" + IP + ")")
+            SendCommand("<Request:Shutdown>(" + IP + ")", IP)
         ElseIf PowerMode = "remoterestart" Then
             W(DoTranslation("Rebooting...", currentLang), True, ColTypes.Neutral)
-            SendCommand("<Request:Reboot>(" + IP + ")")
+            SendCommand("<Request:Reboot>(" + IP + ")", IP)
         End If
     End Sub
 
