@@ -158,6 +158,9 @@ Public Module Login
         CruserFlag = False
         signedinusrnm = Nothing
 
+        'Notifies the kernel that the user has signed in
+        LoggedIn = True
+
         'Sign in to user.
         signedinusrnm = signedInUser
         If LockMode = True Then LockMode = False

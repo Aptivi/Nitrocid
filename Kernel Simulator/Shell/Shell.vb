@@ -45,6 +45,7 @@ Public Module Shell
             If LogoutRequested Then
                 Wdbg("Requested log out: {0}", LogoutRequested)
                 LogoutRequested = False
+                LoggedIn = False
                 Exit Sub
             Else
                 Try

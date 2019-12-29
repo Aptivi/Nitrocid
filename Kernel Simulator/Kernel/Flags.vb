@@ -48,5 +48,6 @@ Module Flags
     Public ScrnTimeReached As Boolean                           'When the screensaver timer has reached
     Public StartScroll As Boolean                               'Enable marquee on startup
     Public LongTimeDate As Boolean                              'Whether or not to render time and dates short or long
+    Public LoggedIn As Boolean                                  'Whether or not to detect if the user is logged in
 
 End Module

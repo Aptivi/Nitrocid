@@ -68,9 +68,13 @@ Module RPC_Commands
                     Wdbg("Reboot confirmed from remote access.")
                     PowerManage("reboot")
                 ElseIf msg.StartsWith("ExecConfirm") Then
-                    Wdbg("Exec confirmed from remote access.")
-                    Console.WriteLine()
-                    GetLine(msg.Replace("ExecConfirm, ", "").Replace(vbNewLine, ""))
+                    If LoggedIn Then
+                        Wdbg("Exec confirmed from remote access.")
+                        Console.WriteLine()
+                        GetLine(msg.Replace("ExecConfirm, ", "").Replace(vbNewLine, ""))
+                    Else
+                        Wdbg("Tried to exec from remote access while not logged in. Dropping packet...")
+                    End If
                 Else
                     Wdbg("Not found. Message was {0}", msg)
                 End If
