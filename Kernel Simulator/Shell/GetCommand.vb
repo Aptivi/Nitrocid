@@ -770,7 +770,7 @@ Public Module GetCommand
 
             ElseIf requestedCommand = "showtd" Then
 
-                CurrentTimes()
+                ShowCurrentTimes()
                 Done = True
 
             ElseIf words(0) = "showtdzone" Then

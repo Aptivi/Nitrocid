@@ -55,7 +55,7 @@ Public Module TimeDate
 
     End Sub
 
-    Public Sub CurrentTimes()
+    Public Sub ShowCurrentTimes()
 
         W(DoTranslation("datetime: Time is {0}", currentLang), True, ColTypes.Neutral, RenderTime)
         W(DoTranslation("datetime: Today is {0}", currentLang), True, ColTypes.Neutral, RenderDate)

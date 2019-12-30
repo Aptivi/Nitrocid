@@ -63,12 +63,12 @@ Public Module Kernel
                 If Not IO.File.Exists(paths("Home") + "/MAL.txt") Then SetMOTD(DoTranslation("Logged in successfully as <user>", currentLang), MessageType.MAL)
 
                 'Phase 1: Probe hardware
-                If Not EnvironmentOSType.Contains("Unix") Then WriteWhere("1/5", Console.WindowWidth - 3, Console.WindowHeight - 1, ColTypes.Neutral)
+                W(vbNewLine + DoTranslation("- Stage 1: Hardware detection", currentLang), True, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 1: Probing hardware")
                 ProbeHW()
 
                 'Phase 2: Username management
-                If Not EnvironmentOSType.Contains("Unix") Then WriteWhere("2/5", Console.WindowWidth - 3, Console.WindowHeight - 1, ColTypes.Neutral)
+                W(vbNewLine + DoTranslation("- Stage 2: Internal username management", currentLang), True, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 2: Manage internal usernames")
                 Adduser("root", RootPasswd)
                 Permission("Admin", "root", "Allow")
@@ -76,7 +76,7 @@ Public Module Kernel
                 LoginFlag = True
 
                 'Phase 3: Parse Mods and Screensavers
-                If Not EnvironmentOSType.Contains("Unix") Then WriteWhere("3/5", Console.WindowWidth - 3, Console.WindowHeight - 1, ColTypes.Neutral)
+                W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection", currentLang), True, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg("Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
@@ -88,21 +88,24 @@ Public Module Kernel
                 End If
 
                 'Phase 4: Free unused RAM and raise the started event
-                If Not EnvironmentOSType.Contains("Unix") Then WriteWhere("4/5", Console.WindowWidth - 3, Console.WindowHeight - 1, ColTypes.Neutral)
+                W(vbNewLine + DoTranslation("- Stage 4: Garbage collection", currentLang), True, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 4: Garbage collection starts and the events now work")
+                Dim proc As Process = Process.GetCurrentProcess
+                W(DoTranslation("Before garbage collection: {0} bytes", currentLang), True, ColTypes.Neutral, proc.PrivateMemorySize64)
                 EventManager.RaiseStartKernel()
                 DisposeAll()
+                W(DoTranslation("After garbage collection: {0} bytes", currentLang), True, ColTypes.Neutral, proc.PrivateMemorySize64)
+                proc.Dispose()
 
                 'Phase 5: Log-in
-                If Not EnvironmentOSType.Contains("Unix") Then WriteWhere("5/5", Console.WindowWidth - 3, Console.WindowHeight - 1, ColTypes.Neutral)
+                W(vbNewLine + DoTranslation("- Stage 5: Log in", currentLang), True, ColTypes.Neutral)
                 Wdbg("- Kernel Phase 5: Log in")
                 If Not BootArgs Is Nothing Then
                     If BootArgs.Contains("quiet") Then
                         Console.SetOut(DefConsoleOut)
                     End If
                 End If
-                CurrentTimes()
-                If Not EnvironmentOSType.Contains("Unix") Then WriteWhere("   ", Console.WindowWidth - 3, Console.WindowHeight - 1, ColTypes.Neutral)
+                ShowCurrentTimes()
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
                 ElseIf LoginFlag = True And maintenance = True Then

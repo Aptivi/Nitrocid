@@ -359,7 +359,7 @@ Public Module KernelTools
         Next
 
         'Initialize stage counter
-        If Not EnvironmentOSType.Contains("Unix") Then WriteWhere("0/5", Console.WindowWidth - 3, Console.WindowHeight - 1, ColTypes.Neutral)
+        W(vbNewLine + DoTranslation("- Stage 0: System initialization", currentLang), True, ColTypes.Neutral)
         W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
         InitFS()
 
