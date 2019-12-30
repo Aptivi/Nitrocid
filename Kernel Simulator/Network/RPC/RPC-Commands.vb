@@ -49,7 +49,7 @@ Module RPC_Commands
                 RPCListen.Send(ByteMsg, ByteMsg.Length, IP, RPCPort)
                 Wdbg("Sending response to device...")
             Else
-                Wdbg("Malformed request.")
+                Wdbg("Malformed request. {0}", Cmd)
             End If
         End If
     End Sub
