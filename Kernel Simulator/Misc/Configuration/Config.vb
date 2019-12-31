@@ -46,7 +46,8 @@ Public Module Config
                         New IniKey(ksconf, "Background Color", backgroundColor.ToString),
                         New IniKey(ksconf, "Input Color", inputColor.ToString),
                         New IniKey(ksconf, "Listed command in Help Color", cmdListColor.ToString),
-                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString)))
+                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString),
+                        New IniKey(ksconf, "Kernel Stage Color", stageColor.ToString)))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -105,7 +106,8 @@ Public Module Config
                         New IniKey(ksconf, "Background Color", backgroundColor.ToString),
                         New IniKey(ksconf, "Input Color", inputColor.ToString),
                         New IniKey(ksconf, "Listed command in Help Color", cmdListColor.ToString),
-                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString)))
+                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString),
+                        New IniKey(ksconf, "Kernel Stage Color", stageColor.ToString)))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -254,6 +256,7 @@ Public Module Config
             If ColoredShell Then inputColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColors)
             If ColoredShell Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColors)
             If ColoredShell Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Definition of command in Help Color").Value), ConsoleColors)
+            If ColoredShell Then stageColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Kernel Stage Color").Value), ConsoleColors)
 
             'General Section
             If configReader.Sections("General").Keys("Create Demo Account").Value = "True" Then enableDemo = True Else enableDemo = False

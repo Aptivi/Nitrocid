@@ -39,6 +39,7 @@ Public Module TextWriterColor
         Gray = 8
         HelpDef = 9
         HelpCmd = 10
+        Stage = 11
     End Enum
 
     ''' <summary>
@@ -190,6 +191,8 @@ Public Module TextWriterColor
                 Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
             ElseIf colorType = ColTypes.HelpCmd Then
                 Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
+            ElseIf colorType = ColTypes.Stage Then
+                Write(esc + "[38;5;" + CStr(stageColor) + "m")
             Else
                 Exit Sub
             End If
@@ -250,6 +253,8 @@ Public Module TextWriterColor
             Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
         ElseIf colorType = ColTypes.HelpCmd Then
             Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
+        ElseIf colorType = ColTypes.Stage Then
+            Write(esc + "[38;5;" + CStr(stageColor) + "m")
         Else
             Exit Sub
         End If
@@ -295,6 +300,8 @@ Public Module TextWriterColor
             Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
         ElseIf colorType = ColTypes.HelpCmd Then
             Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
+        ElseIf colorType = ColTypes.Stage Then
+            Write(esc + "[38;5;" + CStr(stageColor) + "m")
         Else
             Exit Sub
         End If

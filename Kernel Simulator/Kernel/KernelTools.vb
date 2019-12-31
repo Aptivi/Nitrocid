@@ -359,7 +359,7 @@ Public Module KernelTools
         Next
 
         'Initialize stage counter
-        W(vbNewLine + DoTranslation("- Stage 0: System initialization", currentLang), True, ColTypes.Neutral)
+        W(vbNewLine + DoTranslation("- Stage 0: System initialization", currentLang), True, ColTypes.Stage)
         W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
         InitFS()
 
