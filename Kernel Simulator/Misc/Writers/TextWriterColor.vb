@@ -319,4 +319,25 @@ Public Module TextWriterColor
         SetCursorPosition(OldLeft, OldTop)
     End Sub
 
+    Public Sub WriteC(ByVal text As Object, ByVal Line As Boolean, ByVal color As ConsoleColors, ByVal ParamArray vars() As Object)
+
+        Dim esc As Char = GetEsc()
+        Try
+            'Try to write to console
+            Write(esc + "[38;5;" + CStr(color) + "m")
+
+            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+            For v As Integer = 0 To vars.Length - 1
+                text = text.Replace("{" + CStr(v) + "}", vars(v).ToString)
+            Next
+
+            If Line Then WriteLine(text) Else Write(text)
+            If backgroundColor = ConsoleColors.Black Then ResetColor()
+        Catch ex As Exception
+            WStkTrc(ex)
+            KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+        End Try
+
+    End Sub
+
 End Module
