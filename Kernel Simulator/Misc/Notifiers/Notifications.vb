@@ -43,15 +43,24 @@ Public Module Notifications
         Dim OldNCount As Integer = NotifRecents.Count
         While Not NotifThread.ThreadState = ThreadState.AbortRequested
             If NotifRecents.Count <> OldNCount Then
+                Wdbg("Notification received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNCount)
                 OldNCount = NotifRecents.Count
                 Dim Title, Desc As String
+                Wdbg("Title: {0}", NotifRecents(OldNCount - 1).Title)
+                Wdbg("Desc: {0}", NotifRecents(OldNCount - 1).Desc)
                 Title = NotifRecents(OldNCount - 1).Title.Truncate(27)
                 Desc = NotifRecents(OldNCount - 1).Desc.Truncate(27)
+                Wdbg("Truncated title: {0}", Title)
+                Wdbg("Truncated desc: {0}", Desc)
+                Wdbg("Where to store: {0}, Title: {1}, Desc: {2}", Console.WindowWidth - 30, Console.WindowTop + 2, Console.WindowTop + 3)
                 WriteWhere(Title, Console.WindowWidth - 30, Console.WindowTop + 2, ColTypes.Neutral)
                 WriteWhere(Desc, Console.WindowWidth - 30, Console.WindowTop + 3, ColTypes.Neutral)
+                Wdbg("Priority: {0}", NotifRecents(OldNCount - 1).Priority)
                 For i As Integer = 1 To NotifRecents(OldNCount - 1).Priority
                     Console.Beep()
                 Next
+                Wdbg("Truncated title length: {0}", Title.Length)
+                Wdbg("Truncated desc length: {0}", Desc.Length)
                 NotifClearArea(Title.Length, Desc.Length, Console.WindowWidth - 30, Console.WindowTop + 2, Console.WindowTop + 3)
             End If
         End While
@@ -68,11 +77,13 @@ Public Module Notifications
         Next
     End Sub
     Public Sub NotifySend(ByVal notif As Notification)
+        Wdbg("List contains this notification?", NotifRecents.Contains(notif))
         If Not NotifRecents.Contains(notif) Then NotifRecents.Add(notif)
     End Sub
     Public Sub NotifDismiss(ByVal ind As Integer)
         Try
             NotifRecents.RemoveAt(ind)
+            Wdbg("Removed index {0} from notification list", ind)
             W(DoTranslation("Notification dismissed successfully.", currentLang), True, ColTypes.Neutral)
         Catch ex As Exception
             W(DoTranslation("Error trying to dismiss notification: {0}", currentLang), True, ColTypes.Neutral, ex.Message)

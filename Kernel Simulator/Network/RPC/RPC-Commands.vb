@@ -61,6 +61,7 @@ Module RPC_Commands
             Try
                 buff = RPCListen.Receive(endp)
                 Dim msg As String = Text.Encoding.Default.GetString(buff)
+                Wdbg("RPC: Received message {0}", msg)
                 If msg.StartsWith("ShutdownConfirm") Then
                     Wdbg("Shutdown confirmed from remote access.")
                     PowerManage("shutdown")
