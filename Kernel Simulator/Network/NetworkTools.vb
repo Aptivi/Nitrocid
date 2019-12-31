@@ -119,9 +119,12 @@ Public Module NetworkTools
                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://") Or URL.StartsWith("sftp://")) Then
                     If Not URL.StartsWith(" ") Then
                         Dim FileName As String = URL.Split("/").Last()
+                        Wdbg("Prototype Filename: {0}", FileName)
                         If FileName.Contains("?") Then
                             FileName = FileName.Remove(FileName.IndexOf("?"c))
                         End If
+                        Wdbg("Finished Filename: {0}", FileName)
+                        Wdbg("Directory location: {0}", CurrDir)
                         W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, CurrDir)
                         Dim WClient As New WebClient
                         AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
@@ -138,6 +141,7 @@ Public Module NetworkTools
             Catch ex As Exception
                 W(DoTranslation("Download failed in try {0}: {1}", currentLang), True, ColTypes.Neutral, RetryCount, ex.Message)
                 RetryCount += 1
+                Wdbg("Try count: {0}", RetryCount)
                 WStkTrc(ex)
             End Try
         End While
