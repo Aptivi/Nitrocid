@@ -1,4 +1,4 @@
-﻿'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
+﻿'    Kernel Simulator  Copyright (C) 2018-2020  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '

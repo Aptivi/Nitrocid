@@ -14,7 +14,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Simulates our future kernel.")>
 <Assembly: AssemblyCompany("EoflaOE")> 
 <Assembly: AssemblyProduct("Kernel Simulator")>
-<Assembly: AssemblyCopyright("Copyright © EoflaOE 2018 - 2019")>
+<Assembly: AssemblyCopyright("Copyright © EoflaOE 2018 - 2020")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)> 

@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2020  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -343,7 +343,7 @@ Public Module KernelTools
         Else
             W(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), True, ColTypes.Neutral, KernelVersion)
         End If
-        W(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE" + vbNewLine +
+        W(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2020  EoflaOE" + vbNewLine +
                       "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +
