@@ -350,7 +350,7 @@ Public Module KernelTools
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
         W("OS: " + DoTranslation("Running on {0}", currentLang), True, ColTypes.Neutral, EnvironmentOSType)
 #If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends, change the compiler constant value to "REL" to suppress this message out of stable versions
-        W(DoTranslation("Looks like you were running the development version of the next version. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version or lower.", currentLang), True, ColTypes.Neutral)
+        W(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
 #End If
 
         'Parse real command-line arguments
