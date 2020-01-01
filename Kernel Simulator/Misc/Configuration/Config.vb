@@ -268,7 +268,11 @@ Public Module Config
             'Login Section
             If configReader.Sections("Login").Keys("Clear Screen on Log-in").Value = "True" Then clsOnLogin = True Else clsOnLogin = False
             If configReader.Sections("Login").Keys("Show MOTD on Log-in").Value = "True" Then showMOTD = True Else showMOTD = False
-            HName = configReader.Sections("Login").Keys("Host Name").Value
+            If Not configReader.Sections("Login").Keys("Host Name").Value = "" Then
+                HName = configReader.Sections("Login").Keys("Host Name").Value
+            Else
+                HName = "kernel"
+            End If
 
             'Shell Section
             If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
