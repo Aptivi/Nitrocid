@@ -34,6 +34,10 @@ Module SSH
 
         'Wait until disconnection
         While SSH.IsConnected
+            If Console.ReadKey(True).Key = ConsoleKey.Escape Then
+                SSHS.Stop()
+                SSH.Disconnect()
+            End If
         End While
         Wdbg("Connected: {0}", SSH.IsConnected)
         W(vbNewLine + DoTranslation("SSH Disconnected.", currentLang), True, ColTypes.Neutral)
