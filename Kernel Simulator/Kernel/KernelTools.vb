@@ -128,9 +128,9 @@ Public Module KernelTools
         Catch ex As Exception
             If DebugMode = True Then
                 W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
-                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), ex, Err.Description)
+                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), ex, ex.Message)
             Else
-                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), ex, Err.Description)
+                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), ex, ex.Message)
             End If
         End Try
     End Sub
@@ -485,9 +485,9 @@ Public Module KernelTools
             End If
             EventManager.RaiseGarbageCollected()
         Catch ex As Exception
-            W(DoTranslation("Error trying to free RAM: {0} - Continuing...", currentLang), True, ColTypes.Neutral, Err.Description)
+            W(DoTranslation("Error trying to free RAM: {0} - Continuing...", currentLang), True, ColTypes.Neutral, ex.Message)
             If DebugMode = True Then
-                W(ex.StackTrace, True, ColTypes.Neutral) : Wdbg("Error freeing RAM: {0}", Err.Description) : WStkTrc(ex)
+                W(ex.StackTrace, True, ColTypes.Neutral) : Wdbg("Error freeing RAM: {0}", ex.Message) : WStkTrc(ex)
             End If
         End Try
 

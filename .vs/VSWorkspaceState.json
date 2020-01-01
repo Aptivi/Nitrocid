@@ -3,6 +3,7 @@
     "",
     "\\Kernel Simulator",
     "\\Kernel Simulator\\Console",
+    "\\Kernel Simulator\\Kernel",
     "\\Kernel Simulator\\Misc",
     "\\Kernel Simulator\\Misc\\Configuration",
     "\\Kernel Simulator\\Misc\\Writers",
@@ -10,5 +11,6 @@
     "\\Kernel Simulator\\Tests",
     "\\Kernel Simulator\\Tests\\Interaction"
   ],
+  "SelectedNode": "\\Kernel Simulator\\Languages",
   "PreviewInSolutionExplorer": false
 }

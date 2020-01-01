@@ -38,11 +38,11 @@ Public Module UserManagement
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, Err.Description, ex.StackTrace)
+                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
                 W(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description)
+                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, ex.Message)
             End If
         End Try
 
@@ -100,11 +100,11 @@ Public Module UserManagement
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("Error trying to remove username.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, Err.Description, ex.StackTrace)
+                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
                 W(DoTranslation("Error trying to remove username.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description)
+                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, ex.Message)
             End If
         End Try
     End Sub
@@ -172,11 +172,11 @@ Public Module UserManagement
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, Err.Description, ex.StackTrace)
+                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
                 W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description)
+                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, ex.Message)
             End If
         End Try
 
@@ -201,11 +201,11 @@ Public Module UserManagement
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, Err.Description, ex.StackTrace)
+                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
                 W(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description)
+                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, ex.Message)
             End If
         End Try
 

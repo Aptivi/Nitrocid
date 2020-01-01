@@ -187,7 +187,7 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, Err.Description)
+                W(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, ex.Message)
             Else
                 W(DoTranslation("There is an error trying to create configuration.", currentLang), True, ColTypes.Neutral)
             End If
@@ -215,7 +215,7 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, Err.Description)
+                W(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, ex.Message)
             Else
                 W(DoTranslation("There is an error trying to update configuration.", currentLang), True, ColTypes.Neutral)
             End If
@@ -294,7 +294,7 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, Err.Description)
+                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, ex.Message)
             Else
                 W(DoTranslation("There is an error trying to read configuration.", currentLang), True, ColTypes.Neutral)
             End If

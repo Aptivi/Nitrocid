@@ -225,19 +225,19 @@ Public Module FTPGetCommand
             If DebugMode = True Then
                 If Not IsNothing(ex.InnerException) Then 'This is required to fix NullReferenceException when there is nothing in InnerException, so please don't remove.
                     W(DoTranslation("Error trying to execute FTP command {3}.", currentLang) + vbNewLine +
-                      DoTranslation("Error {0}: {1} ", currentLang) + DoTranslation("(Inner:", currentLang) + " {4})" + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, Err.Description, ex.StackTrace, words(0), ex.InnerException.Message)
+                      DoTranslation("Error {0}: {1} ", currentLang) + DoTranslation("(Inner:", currentLang) + " {4})" + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, ex.Message, ex.StackTrace, words(0), ex.InnerException.Message)
                 Else
                     W(DoTranslation("Error trying to execute FTP command {3}.", currentLang) + vbNewLine +
-                      DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, Err.Description, ex.StackTrace, words(0))
+                      DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, ex.Message, ex.StackTrace, words(0))
                 End If
                 WStkTrc(ex)
             Else
                 If Not IsNothing(ex.InnerException) Then
                     W(DoTranslation("Error trying to execute FTP command {2}.", currentLang) + vbNewLine +
-                      DoTranslation("Error {0}: {1} ", currentLang) + DoTranslation("(Inner:", currentLang) + "{3})", True, ColTypes.Neutral, Err.Number, Err.Description, words(0), ex.InnerException.Message)
+                      DoTranslation("Error {0}: {1} ", currentLang) + DoTranslation("(Inner:", currentLang) + "{3})", True, ColTypes.Neutral, Err.Number, ex.Message, words(0), ex.InnerException.Message)
                 Else
                     W(DoTranslation("Error trying to execute FTP command {2}.", currentLang) + vbNewLine +
-                      DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description, words(0))
+                      DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, ex.Message, words(0))
                 End If
             End If
             EventManager.RaiseFTPCommandError()

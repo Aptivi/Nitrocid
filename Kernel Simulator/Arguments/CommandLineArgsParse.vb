@@ -42,7 +42,7 @@ Module CommandLineArgsParse
                 End If
             End If
         Catch ex As Exception
-            W(DoTranslation("Error while parsing real command-line arguments: {0}", currentLang) + vbNewLine + "{1}", True, ColTypes.Neutral, Err.Description, ex.StackTrace)
+            W(DoTranslation("Error while parsing real command-line arguments: {0}", currentLang) + vbNewLine + "{1}", True, ColTypes.Neutral, ex.Message, ex.StackTrace)
             If arg = "testMod" Or arg = "createConf" Then
                 Environment.Exit(1)
             End If

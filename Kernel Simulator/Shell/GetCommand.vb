@@ -908,10 +908,10 @@ Public Module GetCommand
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("Error trying to execute command", currentLang) + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral,
-                    Err.Number, Err.Description, ex.StackTrace, words(0))
+                    Err.Number, ex.Message, ex.StackTrace, words(0))
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command", currentLang) + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, Err.Description, words(0))
+                W(DoTranslation("Error trying to execute command", currentLang) + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, ex.Message, words(0))
             End If
         End Try
     End Sub
