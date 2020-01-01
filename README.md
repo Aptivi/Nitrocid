@@ -276,7 +276,7 @@ NAudio
 
 Source code: https://github.com/naudio/NAudio
 
-Copyright (c) 2019, Mark Heath
+Copyright (c) 2019-2020, Mark Heath
 
 License (Microsoft Public License): https://github.com/naudio/NAudio/blob/master/license.txt
 
@@ -291,7 +291,7 @@ License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 ## |-----+--> _License - GNU GPL_ <--+-----|
 
     Kernel Simulator - Simulates our future planned Kernel
-    Copyright (C) 2018-2019  EoflaOE
+    Copyright (C) 2018-2020  EoflaOE
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
