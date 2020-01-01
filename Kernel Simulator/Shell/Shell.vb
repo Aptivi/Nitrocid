@@ -51,7 +51,7 @@ Public Module Shell
                 Try
                     'Try to probe injected commands
                     Wdbg("Probing injected commands using GetLine(True)...")
-                    GetLine(True)
+                    GetLine(True, "")
 
                     'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes.
                     Console.CursorVisible = True
@@ -94,7 +94,7 @@ Public Module Shell
                         Next
                         If Done = False Then
                             Wdbg("Executing built-in command")
-                            GetLine(strcommand)
+                            GetLine(False, strcommand)
                         End If
                     End If
 
@@ -126,7 +126,7 @@ Public Module Shell
 
     End Sub
 
-    Public Sub GetLine(ByVal strcommand As String, Optional ByVal ArgsMode As Boolean = False)
+    Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String)
 
         'Reads command written by user
         Try
