@@ -29,7 +29,7 @@ Public Module Screensaver
     Public defSaverName As String = "glitterMatrix"
     Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"colorMix255", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False},
                                                                  {"lines", False}, {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False},
-                                                                 {"glitterColor255", False}, {"disco255", False}, {"lines255", False}, {"2020", False}}
+                                                                 {"glitterColor255", False}, {"disco255", False}, {"lines255", False}}
     Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker
     Private execCustomSaver As CompilerResults
@@ -166,14 +166,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Lines255.CancelAsync()
-                Thread.Sleep(150)
-            ElseIf saver = "2020" Then
-                HNY2020.WorkerSupportsCancellation = True
-                HNY2020.RunWorkerAsync()
-                Wdbg("Celebration of the Happy New Year 2020, the End of Decade started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                HNY2020.CancelAsync()
                 Thread.Sleep(150)
             ElseIf ScrnSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
