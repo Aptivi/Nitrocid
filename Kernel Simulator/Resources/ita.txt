@@ -540,3 +540,4 @@ Esegue da remoto un comando sul PC remoto
 Prima della garbage collection: {0} byte
 Dopo la garbage collection: {0} byte
 Errore durante l'avvio di RPC: {0}
+Sembra che tu stia eseguendo la versione candidata al rilascio. Si consiglia di rimanere nella versione stabile.

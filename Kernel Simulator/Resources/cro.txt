@@ -540,3 +540,4 @@ Daljinski izvršava naredbu na udaljenom računalu
 Prije odvoza smeća: {0} bajtova
 Nakon odvoza smeća: {0} bajtova
 Pogreška kod pokretanja RPC-a: {0}
+Čini se da ste pokrenuli inačicu kandidata za izdanje. Preporučuje se ostati na stabilnoj verziji.

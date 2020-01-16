@@ -540,3 +540,4 @@ Uzak PC'ye uzaktan komut çalıştırır
 Çöp toplanmadan önce: {0} bayt
 Çöp toplandıktan sonra: {0} bayt
 RPC başlatılırken hata oluştu: {0}
+Siz nomzod versiyasini chiqayotganga o'xshaysiz. Barqaror versiyada qolish tavsiya etiladi....

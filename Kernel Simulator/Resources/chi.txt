@@ -540,3 +540,4 @@ yuǎnchéng zhíxíng mìnglìng dào yuǎnchéng PC
 Lèsè huíshōu zhīqián:{0} Gè zì jié
 lèsè huíshōu hòu:{0} Gè zì jié
 qǐdòng RPC shí chūcuò:{0}
+Kàn qǐlái nín zhèngzài yùnxíng hòuxuǎn fābù bǎnběn. Jiànyì nín shǐyòng wěndìng bǎnběn.

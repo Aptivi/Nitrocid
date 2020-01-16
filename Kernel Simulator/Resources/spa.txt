@@ -540,3 +540,4 @@ Ejecuta un comando de forma remota en una PC remota
 Перед сборкой мусора: {0} байт
 После сборки мусора: {0} байт
 Ошибка запуска RPC: {0}
+Parece que estabas ejecutando la versión candidata de lanzamiento. Se recomienda que permanezca en la versión estable.

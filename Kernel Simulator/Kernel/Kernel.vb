@@ -35,13 +35,13 @@ Public Module Kernel
         While True
             Try
                 'A title
-                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - Milestone 3"
+                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - Release Candidate 1"
                 If Not NotifThread.IsAlive Then NotifThread.Start()
                 InitPaths()
                 If Not EnvironmentOSType.Contains("Unix") Then Initialize255()
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-#If SPECIFIER <> "DEV" Then
+#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
                 If Not IO.File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                     Dim pdbdown As New WebClient
                     pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))

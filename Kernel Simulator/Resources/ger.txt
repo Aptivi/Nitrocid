@@ -540,3 +540,4 @@ Führt einen Remote-Befehl an den Remote-PC aus
 Vor der Garbage Collection: {0} Bytes
 Nach der Garbage Collection: {0} Bytes
 Fehler beim Starten von RPC: {0}
+Anscheinend haben Sie die Release Candidate-Version ausgeführt. Es wird empfohlen, auf der stabilen Version zu bleiben.

@@ -540,3 +540,4 @@ Etäkäyttää komennon etätietokoneeseen
 Ennen roskien keräystä: {0} tavua
 Jätekeräyksen jälkeen: {0} tavua
 Virhe RPC: n käynnistämisessä: {0}
+Näyttää siltä, että käytit julkaisuehdokasversiota. On suositeltavaa, että pysyt vakaana versiona.

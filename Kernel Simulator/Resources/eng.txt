@@ -540,3 +540,4 @@ Remotely executes a command to remote PC
 Before garbage collection: {0} bytes
 After garbage collection: {0} bytes
 Error starting RPC: {0}
+Looks like you were running the release candidate version. It is recommended that you stay on the stable version.

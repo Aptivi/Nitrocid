@@ -540,3 +540,4 @@ Jauh melaksanakan arahan untuk PC jauh
 Sebelum pengumpulan sampah: {0} bait
 Selepas pengumpulan sampah: {0} bait
 Ralat bermula RPC: {0}
+Nampaknya anda sedang menjalankan versi calon pembebasan. Adalah disyorkan agar anda tetap pada versi yang stabil.

@@ -540,3 +540,4 @@ Voert op afstand een opdracht uit naar een externe pc
 Voor het ophalen van afval: {0} bytes
 Na het ophalen van afval: {0} bytes
 Fout bij starten van RPC: {0}
+Het lijkt erop dat u de release-kandidaatversie gebruikte. Het wordt aanbevolen dat u op de stabiele versie blijft.

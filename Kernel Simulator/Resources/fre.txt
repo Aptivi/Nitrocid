@@ -540,3 +540,4 @@ Exécute à distance une commande vers un PC distant
 Ennen roskien keräystä: {0} tavua
 Jätekeräyksen jälkeen: {0} tavua
 Virhe RPC: n käynnistämisessä: {0}
+Il semble que vous exécutiez la version candidate à la sortie. Il est recommandé de rester sur la version stable.

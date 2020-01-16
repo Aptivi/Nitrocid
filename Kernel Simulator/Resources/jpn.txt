@@ -539,3 +539,4 @@ rimōto PC e no komando o rimōto de jikkō shimasu
 Gabējikorekushon no mae: {0} Baito
 gabējikorekushon-go: {0} Baito
 RPC no kidō erā: {0}
+Rirīsu kōho bājon o jikkō shite ita yōdesu. Anteihan o shiyō suru koto o o susume shimasu.
