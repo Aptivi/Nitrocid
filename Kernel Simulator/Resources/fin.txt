@@ -401,3 +401,142 @@ IPv4-tiedot:
 IPv6-tiedot:
 Sovitin {0} ei tue IPv6: ta. Jatkuvat ...
 Sovitin {0} ei tue IPv4: tä. Koetin epäonnistui.
+Näyttää siltä, ​​että käytit ytimen kehitysversiota. Vaikka näet näkökohdat, sitä päivitetään usein ja se saattaa aiheuttaa virheitä. On suositeltavaa, että pysyt vakaana versiona.
+Valitsemasi kieli sisältää kaksi vaihtoehtoa. Valitse yksi:
+1. Translitteroitu
+2. käännetty
+Valitse valintasi:
+Virheellinen valinta. Yritä uudelleen.
+Sinulla ei ole lupaa asettaa nykyisen hakemiston arvoksi {0}: {1}
+Lupa {0} epäonnistui
+Määrittämäsi polku on liian pitkä.
+Sinulla ei ole lupaa luetteloida {0}: {1}
+Virhe tarkistettaessa prosessoria: {0}
+Virhe tarkistettaessa RAM-muistia: {0}
+Virhe tarkistettaessa kiintolevyä: {0}
+CPU: VAROITUS: SSE2 vaaditaan tulevissa kehitysyhteistyötoimissa.
+Tietojen keräilijä kaatui yrittäessään saada tietoa tuotteesta {0}: {1}
+Virhe yritettäessä kääntää kokoamispäivämäärä {0}: {1}
+Virhe yritettäessä asettaa MOTD / MAL: {0}
+Virhe yritettäessä saada MOTD / MAL: {0}
+Kohdassa {0} on nolla viitepoikkeus: {1}
+Kohdassa {0} on nolla viitepoikkeus: {1} - pinon jäljitys:
+Virhe yritettäessä käynnistää näytönsäästäjä virheellisen toiminnan vuoksi.
+Uusinta ei ole sallittu vikasietotilassa.
+Modifikaatioiden jäsentäminen ei ole sallittua vikasietotilassa.
+Jäsentä koko hakemisto kokoa tai vain nykyisen tiedoston tiedostoja varten.
+Luettelee kaikki kytketyt virheenkorjauslaitteet.
+Virhe yritettäessä asettaa jäsentämistilaa. Tarkista arvo ja yritä uudelleen. Jos tämä on oikein, katso pinon jäljitys, kun ytimen virheenkorjaus on käytössä.
+Aseta onnistuneesti.
+Polku ei ole tiedosto eikä hakemisto.
+Luo toisen kopion tiedostosta eri hakemistossa tai nimellä.
+Siirtää tiedoston toiseen hakemistoon
+Tiedostojen kopioiminen toiseen hakemistoon tai eri nimeen
+Tiedostojen siirtäminen toiseen hakemistoon
+Ottelu {0} ({1}): {2}
+Ottelu {0}: {1}
+Käytetty aika: {0} millisekuntia
+Valmistaja: {0}
+Malli: {0}
+Kapasiteetti: {0} ({1}, {2}, {3})
+Rajapinnan tyyppi: {0}
+Aseman numero: {0}
+Käynnistyslippu: {0} ({1})
+Fyysinen osio: {0}
+Ensisijainen lippu: {0}
+Koko: {0} Gt
+Looginen osio: {0}
+Pakattu: {0}
+Nimi: {0}
+Tiedostojärjestelmä: {0}
+Kapasiteetti: {0} Gt ilmaista {1} Gt
+Listataan kaikki loogiset osiot kaikissa asemissa.
+Luettelee kaikki koetut asemat.
+Listaa kaikki tietyn aseman koetut osiot (ja kaikkien asemien kaikki loogiset osiot).
+Laskee tiedostojen summat joko MD5: llä tai SHA256: lla.
+Vie sinut GitHub-Wikiimme.
+Virheellinen salausalgoritmi.
+Ottaa käyttöön tai poistaa käytöstä etävirheen.
+Alustetaan tiedostojärjestelmää ...
+Saa asennetut äänet
+Asettaa oletusäänen
+Puhuu merkkijono oletusäänellä
+Ääni {0}: {1} ({2})
+Virheellinen ääni.
+Äänisarja
+Katso, pystytkö oikeinkirjoittamaan sanat oikeaan aikaan
+Katso, pystytkö ratkaisemaan matemaattiset yhtälöt ajoissa
+Vastaa rakkauteen tai vihaan kommentteja.
+Jos joku kommentoi tätä videota:
+Kuinka vastaat?
+Virheellinen valinta. Siirry seuraavaan kommenttiin ...
+Kerroit juuri rakkauskommentista!
+Vastatit juuri vihakommenttiin!
+Loistava! Kommentti {0} poistetaan siitä.
+Loistava! {0} arvostaa kiitoksiasi.
+Kirjoita "GetMeOut" poistuaksesi.
+Oikeinkirjoitettu!
+Kirjoitettu väärin.
+Ratkaistu täydellisesti!
+Ratkaistu väärin.
+{0} Mt {1} Mt ladattu.
+Lataus on valmis.
+RPC on jo käynnissä.
+RPC-kuuntelu kaikissa osoitteissa porttia {0} käyttämällä.
+Käynnistetään RPC ...
+Yhdistetään SSH-palvelimeen.
+Kirjoita {0}: n salasana:
+SSH irti.
+Lataa syntetiedosto ja toistaa sen.
+Komentotiedostoa {0} ei ole.
+Tiedosto ei ole komentosarjainen syntetiedosto.
+Synteettilinjan koettaminen epäonnistui.
+Tyhjä merkkijono määritetty
+Koodisivua ei voi asettaa. Kieli ei välttämättä näy oikein.
+Virheenkorjaus ei ole käytössä.
+{0} ei ole enää asetettu oletusnäytönsäästäjäksi.
+Kiitos! Tämä on mielenkiintoista.
+Kaikki tukevat videoitasi tätä varten.
+Annoin sinulle sähköpostissa erityisen tiedoston seuraavaa videota varten.
+Kuuntele, vihaajat, hän yrittää auttaa meitä, ei huijausta.
+En tiedä kuinka paljon minä ja ystäväni kiitämme sinua tästä videosta.
+Rakastan sinua tästä videosta.
+Jatka, älä lopeta.
+Autan sinua tavoittamaan 1 miljoonan tilaajan!
+Ystäväni saivat tietokoneensa korjaamaan sinusta johtuen.
+Mahtava kepponen! Sammutin viholliseni tietokoneen.
+Vihaajille: lopeta vihaaminen hänen päällään
+Vihaajille: JATKU TYÖTÄ
+Kukaan ei huomaa tätä nyt esineesi piilotusoppaan ansiosta
+Lopetan videoidesi katselemisen. Tilaaja hävisi.
+Mikä tämä on? Tämä on epäselvää.
+Tämä video on pahin!
+Kaikki ilmoittavat tästä videosta!
+Ystäväni ovat raivoissaan kanssasi!
+Rakastajat vihaavat sinua nyt tästä.
+Ystäväsi vihaa sinua tästä.
+Tämä kepponen sai minut tilaamaan tilauksen.
+Tehtävä epäonnistui, kunnioita -, tilaaja -
+Lopeta tällaisen videon tekeminen !!!
+Palaa takaisin työhösi, videosi ovat pahimmat!
+Uskomme tämän videon kanssa.
+{0} -kalvonimi {1} on kielletty.
+Virhe yritettäessä hylätä ilmoitus: {0}
+Näyttää kaikki vastaanotetut ilmoitukset
+Hylkää ilmoituksen
+Ilmoitus hylättiin onnistuneesti.
+Paketit (saapuvat):
+Paketit (lähtevät):
+Virheet vastaanotetuissa paketeissa:
+Yleiset IPv6-ominaisuudet
+Yleiset IPv4-ominaisuudet
+Etäkäyttää komennon etätietokoneeseen
+- Vaihe 0: Järjestelmän alustus
+- Vaihe 1: Laitteiden havaitseminen
+- Vaihe 2: Sisäinen käyttäjänimen hallinta
+- Vaihe 3: Modifikaatioiden ja näytönsäästäjien havaitseminen
+- Vaihe 4: Jätehuolto
+- Vaihe 5: Kirjaudu sisään
+Ennen roskien keräystä: {0} tavua
+Jätekeräyksen jälkeen: {0} tavua
+Virhe RPC: n käynnistämisessä: {0}

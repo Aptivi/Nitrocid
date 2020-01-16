@@ -401,3 +401,142 @@ mielumat IPv4:
 mielumat IPv6:
 almahayi {0} la yadeam IPv6. jar alaistimrar ...
 almahayi {0} la yadeam IPv4. fashal fi 'tahqiq.
+ybdw 'anak kunt tashghal nuskhat tatwir alnawati. ela alrghm mn 'anah yumkinuk ruyat aljawanib , 'illa 'anah ytmu tahdithaha bishakl mutakarir waqad yuqadim 'akhta'. yusaa bialbaqa' ealaa al'iisdar althaabit.
+tahtawi allughat alty hadadatha ealaa khiarina. akhtar wahidat:
+1. harafi
+2. almutarajima
+hadad aikhtiarak:
+aikhtiar ghyr salihin. hawal mujdada.
+'ant ghyr masrah lah bitaeyin aldalil alhalii ealaa {0}: {1}
+fashil al'iidhn {0}
+almasar aldhy hadadath tawil jdana.
+'ant ghyr masrah lah bialqayimat fi {0}: {1}
+khata 'athna' fahs wahdat almuealajat almarkaziat: {0}
+khata 'athna' altahaquq min dhakirat alwusul aleshwayy: {0}
+khata 'athna' fahs al'aqras alslbt: {0}
+wahdat almuealajat almarkziati: tahdhir: satakun SSE2 matlubatan fi eamaliat altatwir almustaqbaliati.
+tueatil 'adat tajmie maelumat altafrigh eind muhawalat alhusul ealaa maelumat hawl {0}: {1}
+khata 'athna' muhawalat alhusul ealaa tarikh altajmie {0}: {1}
+khata eind muhawalat dabt MOTD / MAL: {0}
+khata eind muhawalat alhusul ealaa MOTD / MAL: {0}
+yujad aistithna' marjie farigh fi {0}: {1}
+yujad aistithna' marjie farigh fi {0}: {1} - tatabie almakds:
+khata eind muhawalat bad' shashat altawaquf , bsbb eamaliat ghyr salihat.
+'iieadat tahmil ghyr masmuh biha fi alwade alamina.
+tahlil altaedil ghyr masmuh bih fi alwade alamina.
+tahlil aldalil bi'akmalih lihujm 'aw faqat almilaffat fi wahid alhali.
+yusarid jmye 'ajhizat tashih al'akhta' almutasalat.
+khata eind muhawalat dabt wade altahlil. tuhaqiq alqimat wahawal maratan 'ukhraa. 'iidha kan hdha shyhana , farajie tatabie almukadas eind tamkin tashih 'akhta' kernel.
+dubit binjahin.
+almasar lays milafun wala dalil.
+yunashiy nuskhatan 'ukhraa min almilafi taht aism 'aw dalil mukhtalf.
+yanqul milafun 'iilaa dalil akhar
+linasakh almilaffat 'iilaa dalil akhar 'aw aism mukhtalif
+linaql almilaffat 'iilaa dalil akhar
+almatabaqa {0} ({1}): {2}
+almtabq {0}: {1}
+alwaqt almstghrq: {0} mulliun thany
+alsharikat almsnet: {0}
+almwdyl: {0}
+alset: {0} ({1} , {2} , {3})
+nawe alwajht: {0}
+raqm muharak al'aqras: {0}
+'iisharat altamhid: {0} ({1})
+altaqsim almady: {0}
+aleallamat al'asasiat: {0}
+alhjm: {0} ghyghabayt
+altaqsim almntqy: {0}
+madghut: {0}
+alasm: {0}
+nizam almilafat: {0}
+alset: {0} ghyghabayt khaliat min {1} ghyghabayat
+sarid jmye al'aqsam almintaqiat ealaa jmye muhrakat al'aqrasi.
+qawayim jmye muhrakat altahqiq.
+yusarid jmye al'aqsam alty tama aikhtibaruha ealaa muharik 'aqras muhadad (wjamie al'aqsam almintaqiat ealaa jmye muharakat al'aqras).
+yahsab mijamie almilaffat 'iimaa biastikhdam MD5 'aw SHA256.
+yakhudhuk 'iilaa mawqieina jiathb wayaki.
+khuarizmiat tashfir ghyr salihatin.
+tamkin 'aw taetil tashih al'akhta' ean bued.
+tahyiat nizam almilaffat ...
+yahsul tathbit al'aswat
+yadbit alsawt al'iiftiradiu
+yatahadath silsilat alkhasi bik biastikhdam alsawt al'iiftiradii
+alsawt {0}: {1} ({2})
+sawt ghyr salihin.
+majmueat sawt
+maerifat ma 'iidha kan yumkinuk tahjiat alkalimat bishakl sahih fi alwaqt almuhadad
+maerifat ma 'iidha kan yumkinuk halu almueadalat alriyadiat fi alwaqt almuhadad
+alradu ealaa alhabi 'aw alkarahiat altaeliqat.
+'iidha 'adlaa shakhs ma bhdha altaeliq ealaa alfidyu alkhasi bk:
+kayf turd?
+aikhtiar ghyr salih. aldhahab 'iilaa altaeliq alttali ...
+laqad 'ablaghat lltw ean taeliq alhb!
+laqad 'ujibat lltw ealaa taeliq alkirahi!
+eazima! satatimu 'iizalat taeliq {0} lidhlik.
+eazim! {0} sayuqdar shukarik.
+aiktub "GetMeOut" lilkhuruj.
+maktubatan tmama!
+maktubat bishakl ghyr sahihin.
+haliha tamamana!
+haliha bishakl ghyr sahihin.
+{0} mighabayat min {1} tam tanzil mighabayat.
+aiktamal altanzil.
+RPC qayd altashghil bialfiel.
+alaistimae 'iilaa RPC ealaa jmye aleanawin biastikhdam almunafidh {0}.
+jar bad' RPC ...
+yatasil bakhadum SSH.
+'udkhul kalimat almurur l {0}:
+SSH ghyr mutasalin.
+yaqum bitahmil almilafi almarkab watashghilah.
+almilafu alnasi {0} ghyr mawjudin.
+almilafu lays milafu tawlif nasiy.
+fashil fi altahqiq fi khati muwalafat.
+silsilat farighat muhadada
+ghyr qadir ealaa taeyin mukhatat alshifrati. qad la yatimu earad allughat bishakl sahihin.
+altashih ghyr mumkinin.
+{0} lm yaeud mdbwtana ealaa shashat altawaquf alaiftiradiat.
+shukran! hdha muthir lilahtimam.
+aljamie sawf yadeam alfidyu alkhasi bik lhdha alghurd.
+'aetiatak almilafu alkhasu fi biridik al'iiliktrunii lilfidiu alttali alkhasu bika.
+'asmae , yakruh , 'iinah yuhawil musaeadatana , walays eamaliat aihtialin.
+la 'aerif kam 'ashkaruk 'ana wa'asdiqayiy ealaa hadha alfidyu.
+'ahabik ealaa hadha alfidyu.
+aistamara , la tatawaqaf.
+sawf 'usaeiduk fi alwusul 'iilaa 1 milyun mushtrak!
+'asdiqayiy hasaluu ealaa 'ajhizat alkimbiutir alkhasat bihim thabitat bisibbik.
+mazhat rhibata! laqad 'ughliqat jihaz alkambiutir alkhasi bi eadawi.
+'iilaa alhaqidin: 'uwqifuu alkirahia
+'iilaa alkarihin: abda aleamal
+ln yulahiz ahd hdha alan bifadl dalil 'iikhfa' alkayin
+sawf 'atawaqaf ean mushahadat maqatie alfidyu alkhasat bika. faqadat almushtarak.
+ma hadha? hdha ghyr wadihin.
+hadha alfidyu hu al'aswa!
+aljamie yablugh ean hdha alfaydayu!
+'asdiqayiy ghadibun maeak!
+sawf eashaq alan yukrihunak lhdha alghurd.
+sadiquk sawf yukrihuk lihadha.
+hadhih almuzhat jaealatni 'ulghi ashtirakik.
+fashila almuhimat , aihtiram - , almushtarak -
+altawaquf ean sune hdha alnawe min alfydiu!
+eud 'iilaa eamalik , maqatie alfidyu alkhasat bik hi al'aswa!
+nahn natahamal ealaa hadha alfidyu.
+alaism almustaear min {0} 'iilaa {1} mamnue.
+khata fi muhawalat rafad al'ishear: {0}
+yuzhir jmye al'iikhtarat almustalima
+yarfud 'iishear
+tam rafad al'iishear binajahin.
+alhuzm (alwardat):
+alhuzm (alsadirat):
+al'akhta' fi alhizm almustalimat:
+khasayis IPv6 aleama
+khasayis IPv4 aleama
+yunafidh ean baed 'amr lijihaz alkambiutir albaeid
+- almarhalat 0: tahyiat alnizam
+- almarhalat 1: alkashf ean al'ajhiza
+- almarhalat 2: 'iidarat aism almustakhdam alddakhilii
+- almarhalat 3: taedil wataedil shashat altawaquf
+- almarhalat 4: jame alqamama
+- almarhalat 5: tasjil aldukhul
+qabl tajmie albayanat almhmalat: {0} bayt
+baed tajmie albayanat almhmalat: {0} bayt
+khata fi bad' tashghil RPC: {0}

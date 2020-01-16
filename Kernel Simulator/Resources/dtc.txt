@@ -401,3 +401,142 @@ IPv4-informatie:
 IPv6-informatie:
 Adapter {0} ondersteunt geen IPv6. Voortzetting van ...
 Adapter {0} ondersteunt geen IPv4. Sonde is mislukt.
+Het lijkt erop dat je de ontwikkelingsversie van de kernel gebruikte. Hoewel je de aspecten kunt zien, wordt het regelmatig bijgewerkt en kunnen er bugs optreden. Het wordt aanbevolen dat u op de stabiele versie blijft.
+De geselecteerde taal bevat twee varianten. Kies een:
+1. Transliteratie
+2. Vertaald
+Selecteer uw keuze:
+Ongeldige keuze Probeer het opnieuw.
+U bent niet gemachtigd om de huidige map in te stellen op {0}: {1}
+Toestemming {0} is mislukt
+Het opgegeven pad is te lang.
+U bent niet bevoegd om te vermelden in {0}: {1}
+Fout bij het controleren van CPU: {0}
+Fout bij het controleren van RAM: {0}
+Fout bij het controleren van de HDD: {0}
+CPU: WAARSCHUWING: SSE2 is vereist voor toekomstige ontwikkelcommissies.
+Dump-informatieverzamelaar is gecrasht bij het proberen informatie te krijgen over {0}: {1}
+Fout bij het verkrijgen van compilatiedatum van vergadering {0}: {1}
+Fout bij het instellen van MOTD / MAL: {0}
+Fout bij het verkrijgen van MOTD / MAL: {0}
+Er is een nul referentie-uitzondering op {0}: {1}
+Er is een nul referentie-uitzondering op {0}: {1} - Stack trace:
+Fout bij het starten van de screensaver vanwege een ongeldige bewerking.
+Herladen niet toegestaan ​​in veilige modus.
+Mods voor parseren niet toegestaan ​​in veilige modus.
+Parseer hele map op grootte of alleen de bestanden in de huidige.
+Toont alle aangesloten foutopsporingsapparaten.
+Fout bij het proberen de parse-modus in te stellen. Controleer de waarde en probeer het opnieuw. Als dit correct is, raadpleegt u de stacktracering wanneer kernel-foutopsporing is ingeschakeld.
+Met succes ingesteld.
+Het pad is noch een bestand, noch een map.
+Maakt een andere kopie van een bestand onder een andere map of naam.
+Verplaatst een bestand naar een andere map
+Bestanden naar een andere map of een andere naam kopiëren
+Bestanden naar een andere map verplaatsen
+Match {0} ({1}): {2}
+Match {0}: {1}
+Bestede tijd: {0} milliseconden
+Fabrikant: {0}
+Model: {0}
+Capaciteit: {0} ({1}, {2}, {3})
+Interfacetype: {0}
+Drive nummer: {0}
+Bootvlag: {0} ({1})
+Fysieke partitie: {0}
+Primaire vlag: {0}
+Grootte: {0} GB
+Logische partitie: {0}
+Gecomprimeerd: {0}
+Naam: {0}
+Bestandssysteem: {0}
+Capaciteit: {0} GB vrij van {1} GB
+Alle logische partities op alle schijven weergeven.
+Toont alle onderzochte schijven.
+Toont alle onderzochte partities op een specifieke schijf (en alle logische partities op alle schijven).
+Berekent bestandssommen met MD5 of SHA256.
+Brengt je naar onze GitHub Wiki.
+Ongeldig coderingsalgoritme.
+Schakelt foutopsporing op afstand in of uit.
+Bestandssysteem initialiseren ...
+Krijgt geïnstalleerde stemmen
+Stelt de standaardstem in
+Spreekt uw string met behulp van de standaardstem
+Stem {0}: {1} ({2})
+Ongeldige stem.
+Voice set
+Kijk of je woorden op tijd correct kunt spellen
+Kijk of je wiskundige vergelijkingen op tijd kunt oplossen
+Reageer op liefde of haat reacties.
+Als iemand deze opmerking bij je video heeft gemaakt:
+Hoe zou u reageren?
+Ongeldige selectie. Naar de volgende reactie gaan ...
+Je hebt zojuist de liefdesreactie gemeld!
+Je hebt zojuist gereageerd op de haatreactie!
+Super goed! De reactie van {0} zal daarvoor worden verwijderd.
+Super goed! {0} zal uw dank waarderen.
+Schrijf "GetMeOut" om af te sluiten.
+Perfect gespeld!
+Onjuist gespeld.
+Perfect opgelost!
+Onjuist opgelost.
+{0} MB van {1} MB gedownload.
+Downloaden is voltooid.
+RPC is al actief.
+RPC luistert op alle adressen via poort {0}.
+RPC starten ...
+Maakt verbinding met een SSH-server.
+Voer het wachtwoord in voor {0}:
+SSH Verbinding verbroken.
+Laadt het synth-bestand en speelt het af.
+Scriptbestand {0} bestaat niet.
+Het bestand is geen gesynthetiseerd synth-bestand.
+Het is niet gelukt om een ​​synth-lijn te testen.
+Lege string opgegeven
+Kan codepagina niet instellen. De taal wordt mogelijk niet correct weergegeven.
+Foutopsporing niet ingeschakeld.
+{0} is niet langer ingesteld op standaardschermbeveiliging.
+Bedankt! Dit is interessant.
+Iedereen zal hiervoor je video ondersteunen.
+Ik gaf je het speciale bestand in je e-mail voor je volgende video.
+Luister, haters, hij probeert ons te helpen, niet oplichterij.
+Ik weet niet hoeveel ik en mijn vrienden je bedanken voor deze video.
+Ik hou van je voor deze video.
+Blijf doorgaan, stop niet.
+Ik zal je helpen om 1M-abonnees te bereiken!
+Mijn vrienden hebben hun computer gerepareerd vanwege jou.
+Geweldige grap! Ik heb de pc van mijn vijand afgesloten.
+Tegen haters: STOP MET HATEN OP HEM
+Tegen haters: AAN DE SLAG
+Niemand zal dit nu opmerken dankzij uw gids voor het verbergen van objecten
+Ik stop met het bekijken van je video's. Abonnee verloren.
+Wat is dit? Dit is onduidelijk.
+Deze video is het ergst!
+Iedereen meldt deze video!
+Mijn vrienden zijn woedend op jou!
+Liefhebbers zullen je hier nu om haten.
+Je vriend zal je hierom haten.
+Deze grap maakte me uitschrijven voor jou.
+Missie mislukt, respect -, abonnee -
+Stop met het maken van dit soort video's !!!
+Ga terug naar je werk, je video's zijn het slechtst!
+We hebben vooroordelen over deze video.
+Aliasing {0} naar {1} is verboden.
+Fout bij proberen om melding te negeren: {0}
+Toont alle ontvangen meldingen
+Wijst een melding af
+Melding met succes afgewezen.
+Pakketten (inkomend):
+Pakketten (uitgaand):
+Fouten in ontvangen pakketten:
+Algemene IPv6-eigenschappen
+Algemene IPv4-eigenschappen
+Voert op afstand een opdracht uit naar een externe pc
+- Fase 0: systeeminitialisatie
+- Fase 1: hardwaredetectie
+- Fase 2: intern gebruikersnaambeheer
+- Fase 3: detectie van mods en screensavers
+- Fase 4: Garbage collection
+- Fase 5: inloggen
+Voor het ophalen van afval: {0} bytes
+Na het ophalen van afval: {0} bytes
+Fout bij starten van RPC: {0}

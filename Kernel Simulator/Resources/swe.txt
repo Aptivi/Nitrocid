@@ -401,3 +401,142 @@ IPv4-information:
 IPv6-information:
 Adapter {0} stöder inte IPv6. Fortlöpande...
 Adapter {0} stöder inte IPv4. Sonden misslyckades.
+Det verkar som att du kör utvecklingsversionen av kärnan. Medan du kan se aspekterna uppdateras den ofta och kan introducera buggar. Vi rekommenderar att du håller dig på den stabila versionen.
+Det språk du har valt innehåller två varianter. Välj en:
+1. Translitererad
+2. Översatt
+Välj ditt val:
+Ogiltigt val. Försök igen.
+Du är obehörig att ställa den aktuella katalogen till {0}: {1}
+Tillstånd {0} misslyckades
+Sökvägen du har angett är för lång.
+Du är obehörig att lista i {0}: {1}
+Fel vid kontroll av CPU: {0}
+Fel vid RAM-kontroll: {0}
+Fel vid kontroll av HDD: {0}
+CPU: VARNING: SSE2 kommer att krävas i framtida utvecklingsåtaganden.
+Dump-informationssamlare kraschade när han försökte få information om {0}: {1}
+Fel vid försök att få sammanställningsdatum för montering {0}: {1}
+Fel vid försök att ställa in MOTD / MAL: {0}
+Fel vid försök att få MOTD / MAL: {0}
+Det finns ett nullreferensundantag på {0}: {1}
+Det finns ett nullreferensundantag för {0}: {1} - Stack trace:
+Fel vid försök att starta skärmsläckare på grund av en ogiltig åtgärd.
+Ladda om inte tillåtet i säkert läge.
+Parsningslägen är inte tillåtna i säkert läge.
+Analysera hela katalogen för storlek eller bara filerna i den nuvarande.
+Listar alla anslutna felsökningsenheter.
+Fel vid försök att ställa in analysläge. Kontrollera värdet och försök igen. Om detta är korrekt, se stapelspåret när felsökning av kärnor är aktiverad.
+Ställ in framgångsrikt.
+Sökvägen är varken en fil eller en katalog.
+Skapar en annan kopia av en fil under annan katalog eller namn.
+Flyttar en fil till en annan katalog
+För att kopiera filer till en annan katalog eller annat namn
+För att flytta filer till en annan katalog
+Match {0} ({1}): {2}
+Match {0}: {1}
+Tid: {0} millisekunder
+Tillverkare: {0}
+Modell: {0}
+Kapacitet: {0} ({1}, {2}, {3})
+Gränssnitttyp: {0}
+Drive Number: {0}
+Startflagga: {0} ({1})
+Fysisk partition: {0}
+Primär flagga: {0}
+Storlek: {0} GB
+Logisk partition: {0}
+Komprimerad: {0}
+Namn: {0}
+Filsystem: {0}
+Kapacitet: {0} GB utan {1} GB
+Visar alla logiska partitioner på alla enheter.
+Listar alla testade enheter.
+Listar alla testade partitioner på en specifik enhet (och alla logiska partitioner på alla enheter).
+Beräknar filsummor med antingen MD5 eller SHA256.
+Tar dig till vår GitHub Wiki.
+Ogiltig krypteringsalgoritm.
+Aktiverar eller inaktiverar fjärrfelsökning.
+Initierar filsystem ...
+Få installerade röster
+Ställer in standardröst
+Talar din sträng med standardröst
+Röst {0}: {1} ({2})
+Ogiltig röst.
+Röstuppsättning
+Se om du kan stava ord korrekt i tid
+Se om du kan lösa matematiska ekvationer i tid
+Svara på kommentarer om kärlek eller hat.
+Om någon kommenterade din video:
+Hur skulle du svara?
+Ogiltigt val. Gå till nästa kommentar ...
+Du rapporterade just kärlekskommentaren!
+Du svarade just på hatkommentaren!
+Bra! {0 }s kommentar kommer att tas bort för det.
+Bra! {0} kommer att uppskatta ditt tack.
+Skriv "GetMeOut" för att avsluta.
+Stava perfekt!
+Stava fel.
+Löst perfekt!
+Löst felaktigt.
+{0} MB av {1} MB laddas ner.
+Nedladdningen har slutförts.
+RPC körs redan.
+RPC lyssnar på alla adresser med port {0}.
+Börjar RPC ...
+Ansluter till en SSH-server.
+Ange lösenordet för {0}:
+SSH frånkopplad.
+Laddar synth-filen och spelar upp den.
+Skriptfil {0} finns inte.
+Filen är inte en skriptad synthfil.
+Det gick inte att undersöka en synth-linje.
+Tom sträng specificerad
+Det går inte att ställa in kodsidan. Språket visas kanske inte korrekt.
+Felsökning inte aktiverad.
+{0} är inte längre inställd på standard skärmsläckare.
+Tack! Det här är intressant.
+Alla kommer att stödja din video för detta.
+Jag gav dig den speciella filen i ditt e-postmeddelande till din nästa video.
+Lyssna, hatare, han försöker hjälpa oss, inte bedrägeri.
+Jag vet inte hur mycket jag och mina vänner tackar dig för den här videon.
+Jag älskar dig för den här videon.
+Fortsätt, sluta inte.
+Jag hjälper dig att nå 1M-prenumeranter!
+Mina vänner fixade sin dator på grund av dig.
+Fantastisk prank! Jag stänger av min fiendes dator.
+Till hatare: STOPP HATNING PÅ Honom
+Till hatare: FÅ ATT ARBETA
+Ingen kommer att märka detta nu tack vare din objekt dölja guide
+Jag kommer att sluta titta på dina videor. Abonnenten förlorade.
+Vad är detta? Detta är oklart.
+Den här videon är den värsta!
+Alla rapporterar den här videon!
+Mina vänner är rasande på dig!
+Älskare kommer nu att hata dig för detta.
+Din vän kommer att hata dig för detta.
+Den här prank fick mig att prenumerera på dig.
+Uppdraget misslyckades, Respekt -, prenumerant -
+Sluta göra den här typen av video !!!
+Gå tillbaka till ditt jobb, dina videor är de värsta!
+Vi fördomar på den här videon.
+Aliasing {0} till {1} ​​är förbjudet.
+Fel vid försök att avvisa avisering: {0}
+Visar alla mottagna aviseringar
+Avvisar ett meddelande
+Meddelandet avvisades framgångsrikt.
+Paket (inkommande):
+Paket (utgående):
+Fel i mottagna paket:
+Allmänna IPv6-egenskaper
+Allmänna IPv4-egenskaper
+Utför fjärr ett kommando till fjärrdatorn
+- Steg 0: Systeminitialisering
+- Steg 1: Hårdvarodetektering
+- Steg 2: Internt användarnamnhantering
+- Steg 3: Detektering av lägen och skärmsläckare
+- Steg 4: Avfallssamling
+- Steg 5: Logga in
+Före skräp: {0} byte
+Efter avfallsuppsamling: {0} byte
+Fel vid start av RPC: {0}

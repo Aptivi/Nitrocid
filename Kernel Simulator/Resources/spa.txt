@@ -401,3 +401,142 @@ Información de IPv4:
 Información de IPv6:
 El adaptador {0} no es compatible con IPv6. Continuo...
 El adaptador {0} no es compatible con IPv4. La sonda falló.
+Parece que estabas ejecutando la versión de desarrollo del kernel. Si bien puede ver los aspectos, se actualiza con frecuencia y puede introducir errores. Se recomienda que permanezca en la versión estable.
+El idioma que ha seleccionado contiene dos variantes. Seleccione uno:
+1. Transliterado
+2. Traducido
+Selecciona tu elección:
+Elección inválida. Inténtalo de nuevo.
+No está autorizado para establecer el directorio actual en {0}: {1}
+El permiso {0} falló
+La ruta que ha especificado es demasiado larga.
+No está autorizado para enumerar en {0}: {1}
+Error al verificar la CPU: {0}
+Error al verificar la RAM: {0}
+Error al verificar HDD: {0}
+CPU: ADVERTENCIA: SSE2 será necesario en futuras confirmaciones de desarrollo.
+El recopilador de información de volcado se bloqueó al intentar obtener información sobre {0}: {1}
+Error al intentar obtener la fecha de compilación del ensamblado {0}: {1}
+Error al intentar configurar MOTD / MAL: {0}
+Error al intentar obtener MOTD / MAL: {0}
+Hay una excepción de referencia nula en {0}: {1}
+Hay una excepción de referencia nula en {0}: {1} - Seguimiento de pila:
+Error al intentar iniciar el protector de pantalla, debido a una operación no válida.
+La recarga no está permitida en modo seguro.
+No se permiten las modificaciones de análisis en modo seguro.
+Analiza todo el directorio para ver el tamaño o solo los archivos en el actual.
+Enumera todos los dispositivos de depuración conectados.
+Error al intentar establecer el modo de análisis. Verifique el valor e intente nuevamente. Si esto es correcto, vea el seguimiento de la pila cuando la depuración del núcleo está habilitada.
+Establecer con éxito.
+La ruta no es ni un archivo ni un directorio.
+Crea otra copia de un archivo en un directorio o nombre diferente.
+Mueve un archivo a otro directorio
+Para copiar archivos a otro directorio o nombre diferente
+Para mover archivos a otro directorio
+Coincidencia {0} ({1}): {2}
+Coincidencia {0}: {1}
+Tiempo empleado: {0} milisegundos
+Fabricante: {0}
+Modelo: {0}
+Capacidad: {0} ({1}, {2}, {3})
+Tipo de interfaz: {0}
+Número de unidad: {0}
+Indicador de arranque: {0} ({1})
+Partición física: {0}
+Indicador principal: {0}
+Tamaño: {0} GB
+Partición lógica: {0}
+Comprimido: {0}
+Nombre: {0}
+Sistema de archivos: {0}
+Capacidad: {0} GB libre de {1} GB
+Listado de todas las particiones lógicas en todas las unidades.
+Enumera todas las unidades sondeadas.
+Enumera todas las particiones sondeadas en una unidad específica (y todas las particiones lógicas en todas las unidades).
+Calcula sumas de archivos usando MD5 o SHA256.
+Te lleva a nuestra Wiki de GitHub.
+Algoritmo de cifrado no válido
+Habilita o deshabilita la depuración remota.
+Inicializando el sistema de archivos ...
+Obtiene voces instaladas
+Establece la voz predeterminada
+Habla tu cadena usando la voz predeterminada
+Voz {0}: {1} ({2})
+Voz inválida.
+Conjunto de voz
+Vea si puede deletrear palabras correctamente a tiempo
+Vea si puede resolver ecuaciones matemáticas a tiempo
+Responda a los comentarios de amor u odio.
+Si alguien hizo este comentario a tu video:
+¿Cómo responderías?
+Selección invalida. Pasando al siguiente comentario ...
+¡Acabas de informar el comentario de amor!
+¡Acabas de responder al comentario de odio!
+¡Excelente! El comentario de {0} se eliminará para eso.
+¡Excelente! {0} apreciará tu agradecimiento.
+Escribe "GetMeOut" para salir.
+Deletreado perfectamente!
+Deletreado incorrectamente.
+Resuelto perfectamente!
+Resuelto incorrectamente
+{0} MB de {1} MB descargados.
+La descarga ha finalizado.
+RPC ya se está ejecutando.
+RPC escucha en todas las direcciones utilizando el puerto {0}.
+Iniciando RPC ...
+Se conecta a un servidor SSH.
+Ingrese la contraseña para {0}:
+SSH desconectado.
+Carga el archivo de sintetizador y lo reproduce.
+El archivo con script {0} no existe.
+El archivo no es un archivo de sintetizador con script.
+Error al sondear una línea de sintetizador.
+Cadena vacía especificada
+No se puede establecer la página de códigos. Es posible que el idioma no se muestre correctamente.
+Depuración no habilitada.
+{0} ya no está configurado como protector de pantalla predeterminado.
+¡Gracias! Esto es interesante.
+Todos apoyarán tu video para esto.
+Te di el archivo especial en tu correo electrónico para tu próximo video.
+Escuchen, enemigos, él está tratando de ayudarnos, no estafa.
+No sé cuánto les agradezco a mí y a mis amigos por este video.
+Te amo por este video
+Sigue adelante, no te detengas.
+¡Te ayudaré a llegar a 1 millón de suscriptores!
+Mis amigos arreglaron su computadora por tu culpa.
+Broma impresionante! Apagué la PC de mi enemigo.
+Para los que odian: DEJEN DE ODIARLO
+Para los que odian: LLEGAR AL TRABAJO
+Nadie lo notará ahora gracias a su guía de ocultación de objetos.
+Dejaré de ver tus videos. Suscriptor perdido.
+¿Que es esto? Esto no está claro.
+¡Este video es el peor!
+¡Todos denuncien este video!
+¡Mis amigos están furiosos contigo!
+Los amantes ahora te odiarán por esto.
+Tu amigo te odiará por esto.
+Esta broma me hizo darme de baja.
+Misión fallida, Respeto -, Suscriptor -
+Deja de hacer este tipo de video !!!
+¡Vuelve a tu trabajo, tus videos son los peores!
+Nos perjudicamos en este video.
+Se prohíbe el alias {0} a {1}.
+Error al intentar descartar la notificación: {0}
+Muestra todas las notificaciones recibidas.
+Descarta una notificación
+Notificación rechazada con éxito.
+Paquetes (entrantes):
+Paquetes (salientes):
+Errores en paquetes recibidos:
+Propiedades generales de IPv6
+Propiedades generales de IPv4
+Ejecuta un comando de forma remota en una PC remota
+- Etapa 0: inicialización del sistema
+- Etapa 1: detección de hardware
+- Etapa 2: gestión interna del nombre de usuario
+- Etapa 3: detección de modificaciones y salvapantallas
+- Etapa 4: recolección de basura
+- Etapa 5: Iniciar sesión
+Перед сборкой мусора: {0} байт
+После сборки мусора: {0} байт
+Ошибка запуска RPC: {0}

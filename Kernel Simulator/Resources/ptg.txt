@@ -401,3 +401,142 @@ Informações IPv4:
 Informações IPv6:
 O adaptador {0} não suporta IPv6. Continuando...
 O adaptador {0} não suporta IPv4. Falha na análise.
+Parece que você estava executando a versão de desenvolvimento do kernel. Embora você possa ver os aspectos, ele é frequentemente atualizado e pode apresentar bugs. É recomendável que você permaneça na versão estável.
+O idioma que você selecionou contém duas variantes. Selecione um:
+1. transliterado
+2. Traduzido
+Seleccione a sua escolha:
+Escolha inválida. Tente novamente.
+Você não está autorizado a definir o diretório atual como {0}: {1}
+Falha na permissão {0}
+O caminho que você especificou é muito longo.
+Você não está autorizado a listar em {0}: {1}
+Erro ao verificar a CPU: {0}
+Erro ao verificar a RAM: {0}
+Erro ao verificar o disco rígido: {0}
+CPU: AVISO: o SSE2 será necessário em confirmações de desenvolvimento futuras.
+O coletor de informações de despejo falhou ao tentar obter informações sobre {0}: {1}
+Erro ao tentar obter a data de compilação do assembly {0}: {1}
+Erro ao tentar definir MOTD / MAL: {0}
+Erro ao tentar obter MOTD / MAL: {0}
+Há uma exceção de referência nula em {0}: {1}
+Há uma exceção de referência nula em {0}: {1} - Rastreamento de pilha:
+Erro ao tentar iniciar o protetor de tela devido a uma operação inválida.
+Recarregar não permitido no modo de segurança.
+Mods de análise não permitidos no modo de segurança.
+Analise o diretório inteiro para obter o tamanho ou apenas os arquivos do atual.
+Lista todos os dispositivos de depuração conectados.
+Erro ao tentar definir o modo de análise. Verifique o valor e tente novamente. Se isso estiver correto, consulte o rastreamento de pilha quando a depuração do kernel estiver ativada.
+Definida com sucesso.
+O caminho não é um arquivo nem um diretório.
+Cria outra cópia de um arquivo em um diretório ou nome diferente.
+Move um arquivo para outro diretório
+Para copiar arquivos para outro diretório ou nome diferente
+Para mover arquivos para outro diretório
+Correspondência {0} ({1}): {2}
+Correspondência {0}: {1}
+Tempo gasto: {0} milissegundos
+Fabricante: {0}
+Modelo: {0}
+Capacidade: {0} ({1}, {2}, {3})
+Tipo de interface: {0}
+Número da unidade: {0}
+Sinalizador de inicialização: {0} ({1})
+Partição física: {0}
+Sinalizador principal: {0}
+Tamanho: {0} GB
+Partição lógica: {0}
+Comprimido: {0}
+Nome: {0}
+Sistema de arquivos: {0}
+Capacidade: {0} GB livre de {1} GB
+Listando todas as partições lógicas em todas as unidades.
+Lista todas as unidades testadas.
+Lista todas as partições detectadas em uma unidade específica (e todas as partições lógicas em todas as unidades).
+Calcula as somas dos arquivos usando MD5 ou SHA256.
+Leva você ao nosso Wiki do GitHub.
+Algoritmo de criptografia inválido.
+Ativa ou desativa a depuração remota.
+Inicializando o sistema de arquivos ...
+Obtém vozes instaladas
+Define a voz padrão
+Fala sua corda usando a voz padrão
+Voz {0}: {1} ({2})
+Voz inválida.
+set voz
+Veja se consegue escrever palavras corretamente a tempo
+Veja se você pode resolver equações matemáticas no prazo
+Responda a comentários de amor ou ódio.
+Se alguém fez este comentário no seu vídeo:
+Como você responderia?
+Seleção inválida. Indo para o próximo comentário ...
+Você acabou de relatar o comentário de amor!
+Você acabou de responder ao comentário de ódio!
+Ótimo! O comentário de {0} será removido para isso.
+Ótimo! {0} agradecerá seu agradecimento.
+Escreva "GetMeOut" para sair.
+Soletrado perfeitamente!
+Escrito incorretamente.
+Resolvido perfeitamente!
+Resolvido incorretamente.
+{0} MB de {1} MB baixados.
+Download for concluído.
+O RPC já está em execução.
+RPC escutando em todos os endereços usando a porta {0}.
+Começando RPC ...
+Conecta-se a um servidor SSH.
+Digite a senha para {0}:
+SSH desconectado.
+Carrega o arquivo de sintetizador e o reproduz.
+O arquivo com script {0} não existe.
+O arquivo não é um arquivo de sintetizador com script.
+Falha ao analisar uma linha de sintetizador.
+string vazia especificada
+Não foi possível definir a página de código. O idioma pode não ser exibido corretamente.
+Depuração não ativada.
+{0} não está mais definido como protetor de tela padrão.
+Obrigado! Isto é interessante.
+Todos apoiarão seu vídeo para isso.
+Eu lhe dei o arquivo especial em seu e-mail para o seu próximo vídeo.
+Escute, odiadores, ele está tentando nos ajudar, não farsa.
+Não sei quanto eu e meus amigos agradecemos por este vídeo.
+Eu te amo por este vídeo.
+Continue, não pare.
+Ajudarei você a alcançar 1 milhão de inscritos!
+Meus amigos consertaram o computador por sua causa.
+Brincadeira impressionante! Desliguei o PC do meu inimigo.
+Para quem odeia: PARE DE OBSERVAR
+Para quem odeia: COMEÇA A TRABALHAR
+Ninguém notará isso agora, graças ao seu guia de ocultação de objetos
+Vou parar de assistir seus vídeos. Assinante perdido.
+O que é isso? Isso não está claro.
+Este vídeo é o pior!
+Todos denunciam este vídeo!
+Meus amigos estão furiosos com você!
+Amantes agora vão te odiar por isso.
+Seu amigo vai te odiar por isso.
+Essa brincadeira me fez cancelar sua inscrição.
+Missão falhou, Respeito -, Assinante -
+Pare de fazer esse tipo de vídeo !!!
+Volte ao seu trabalho, seus vídeos são os piores!
+Temos preconceito neste vídeo.
+O alias de {0} a {1} é proibido.
+Erro ao tentar ignorar a notificação: {0}
+Mostra todas as notificações recebidas
+Ignora uma notificação
+Notificação rejeitada com sucesso.
+Pacotes (entrada):
+Pacotes (de saída):
+Erros nos pacotes recebidos:
+Propriedades gerais do IPv6
+Propriedades gerais do IPv4
+Executa remotamente um comando para PC remoto
+- Estágio 0: inicialização do sistema
+- Etapa 1: detecção de hardware
+- Etapa 2: gerenciamento interno de nome de usuário
+- Etapa 3: detecção de mods e protetores de tela
+- Etapa 4: coleta de lixo
+- Etapa 5: faça o login
+Antes da coleta de lixo: {0} bytes
+Após a coleta de lixo: {0} bytes
+Erro ao iniciar o RPC: {0}

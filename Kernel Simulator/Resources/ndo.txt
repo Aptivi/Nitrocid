@@ -401,3 +401,142 @@ Informasi IPv4:
 Informasi IPv6:
 Adaptor {0} tidak mendukung IPv6. Melanjutkan ...
 Adaptor {0} tidak mendukung IPv4. Penyelidikan gagal.
+Sepertinya Anda menjalankan versi pengembangan dari kernel. Meskipun Anda dapat melihat aspek-aspeknya, sering diperbarui dan mungkin menimbulkan bug. Disarankan agar Anda tetap pada versi stabil.
+Bahasa yang Anda pilih mengandung dua varian. Pilih satu:
+1. Diterjemahkan
+2. Diterjemahkan
+Pilih pilihan Anda:
+Pilihan tidak valid. Coba lagi.
+Anda tidak berwenang mengatur direktori saat ini ke {0}: {1}
+Izin {0} gagal
+Jalur yang Anda tentukan terlalu panjang.
+Anda tidak sah mendaftar di {0}: {1}
+Kesalahan saat memeriksa CPU: {0}
+Kesalahan saat memeriksa RAM: {0}
+Kesalahan saat memeriksa HDD: {0}
+CPU: PERINGATAN: SSE2 akan diperlukan dalam pengembangan di masa depan.
+Pengumpul informasi sampah jatuh ketika mencoba mendapatkan informasi tentang {0}: {1}
+Kesalahan saat mencoba mendapatkan tanggal kompilasi perakitan {0}: {1}
+Kesalahan saat mencoba mengatur MOTD / MAL: {0}
+Kesalahan saat mencoba mendapatkan MOTD / MAL: {0}
+Ada pengecualian referensi nol pada {0}: {1}
+Ada pengecualian referensi nol pada {0}: {1} - Jejak tumpukan:
+Kesalahan ketika mencoba memulai screensaver, karena operasi yang tidak valid.
+Memuat ulang tidak diizinkan dalam mode aman.
+Mod parsing tidak diizinkan pada mode aman.
+Parsing seluruh direktori untuk ukuran atau hanya file yang ada saat ini.
+Daftar semua perangkat debug yang terhubung.
+Kesalahan saat mencoba mengatur mode parse. Periksa nilainya dan coba lagi. Jika ini benar, lihat jejak stack ketika debugging kernel diaktifkan.
+Setel dengan sukses.
+Path bukanlah file atau direktori.
+Membuat salinan file lain di bawah direktori atau nama yang berbeda.
+Memindahkan file ke direktori lain
+Untuk menyalin file ke direktori lain atau nama lain
+Untuk memindahkan file ke direktori lain
+Cocok {0} ({1}): {2}
+Cocokkan {0}: {1}
+Waktu yang dihabiskan: {0} milidetik
+Pabrikan: {0}
+Model: {0}
+Kapasitas: {0} ({1}, {2}, {3})
+Tipe Antarmuka: {0}
+Nomor Drive: {0}
+Bendera boot: {0} ({1})
+Partisi fisik: {0}
+Bendera utama: {0}
+Ukuran: {0} GB
+Partisi logis: {0}
+Terkompresi: {0}
+Nama: {0}
+Sistem file: {0}
+Kapasitas: {0} GB gratis dari {1} GB
+Daftar semua partisi logis di semua drive.
+Daftar semua drive yang diperiksa.
+Daftar semua partisi yang diperiksa pada drive tertentu (dan semua partisi logis pada semua drive).
+Menghitung jumlah file menggunakan MD5 atau SHA256.
+Membawa Anda ke GitHub Wiki kami.
+Algoritma enkripsi tidak valid.
+Mengaktifkan atau menonaktifkan debugging jarak jauh.
+Menginisialisasi sistem file ...
+Mendapat suara yang dipasang
+Mengatur suara default
+Ucapkan string Anda menggunakan suara default
+Suara {0}: {1} ({2})
+Suara tidak valid.
+Perangkat suara
+Lihat apakah Anda dapat mengeja kata dengan tepat waktu
+Lihat apakah Anda dapat menyelesaikan persamaan matematika tepat waktu
+Menanggapi komentar cinta atau benci.
+Jika seseorang membuat komentar ini ke video Anda:
+Bagaimana tanggapan Anda?
+Pilihan tidak valid. Pergi ke komentar selanjutnya ...
+Anda baru saja melaporkan komentar cinta!
+Anda baru saja membalas komentar benci!
+Bagus! Komentar {0} akan dihapus untuk itu.
+Bagus! {0} akan menghargai terima kasih Anda.
+Tulis "GetMeOut" untuk keluar.
+Dieja dengan sempurna!
+Dieja dengan salah.
+Dipecahkan dengan sempurna!
+Diselesaikan dengan tidak benar.
+{0} MB dari {1} MB diunduh.
+Pengunduhan telah selesai.
+RPC sudah berjalan.
+RPC mendengarkan semua alamat menggunakan port {0}.
+Memulai RPC ...
+Terhubung ke server SSH.
+Masukkan kata sandi untuk {0}:
+SSH Terputus.
+Memuat file synth dan memainkannya.
+File skrip {0} tidak ada.
+File tersebut bukan file synth scripted.
+Gagal menyelidiki garis synth.
+String kosong ditentukan
+Tidak dapat mengatur codepage. Bahasa mungkin tidak ditampilkan dengan benar.
+Debugging tidak diaktifkan.
+{0} tidak lagi disetel ke screensaver default.
+Terima kasih! Ini menarik.
+Semua orang akan mendukung video Anda untuk ini.
+Saya memberi Anda file khusus dalam email Anda untuk video Anda berikutnya.
+Dengar, pembenci, dia mencoba membantu kita, bukan penipuan.
+Saya tidak tahu berapa banyak saya dan teman-teman saya berterima kasih atas video ini.
+Aku mencintaimu untuk video ini.
+Terus berjalan, jangan berhenti.
+Saya akan membantu Anda menjangkau 1 juta pelanggan!
+Teman-teman saya memperbaiki komputer mereka karena Anda.
+Prank mengagumkan! Saya mematikan PC musuh saya.
+Untuk para pembenci: BERHENTI MENGALAHKAN DIA
+Untuk pembenci: GET BEKERJA
+Tidak ada yang akan melihat ini sekarang berkat panduan menyembunyikan objek Anda
+Saya akan berhenti menonton video Anda. Pelanggan hilang.
+Apa ini? Ini tidak jelas.
+Video ini adalah yang terburuk!
+Semua orang melaporkan video ini!
+Teman-temanku marah padamu!
+Pecinta sekarang akan membencimu karena ini.
+Temanmu akan membencimu karena ini.
+Lelucon ini membuat saya berhenti berlangganan kepada Anda.
+Misi gagal, Dihormati -, Pelanggan -
+Berhenti membuat video semacam ini !!!
+Kembali ke pekerjaan Anda, video Anda adalah yang terburuk!
+Kami berprasangka terhadap video ini.
+Mengasingkan {0} ke {1} dilarang.
+Kesalahan saat mencoba mengabaikan pemberitahuan: {0}
+Menampilkan semua notifikasi yang diterima
+Menolak pemberitahuan
+Notifikasi berhasil diberhentikan.
+Paket (masuk):
+Paket (keluar):
+Kesalahan dalam paket yang diterima:
+Properti IPv6 umum
+Properti IPv4 umum
+Remotely mengeksekusi perintah ke PC jarak jauh
+- Tahap 0: Inisialisasi sistem
+- Tahap 1: Deteksi perangkat keras
+- Tahap 2: Manajemen nama pengguna internal
+- Tahap 3: Deteksi mod dan screensaver
+- Tahap 4: Pengumpulan sampah
+- Tahap 5: Masuk
+Sebelum pengumpulan sampah: {0} byte
+Setelah pengumpulan sampah: {0} byte
+Kesalahan memulai RPC: {0}

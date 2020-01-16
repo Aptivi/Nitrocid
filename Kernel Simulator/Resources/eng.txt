@@ -401,3 +401,142 @@ IPv4 information:
 IPv6 information:
 Adapter {0} doesn't support IPv6. Continuing...
 Adapter {0} doesn't support IPv4. Probe failed.
+Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version.
+The language you've selected contains two variants. Select one:
+1. Transliterated
+2. Translated
+Select your choice:
+Invalid choice. Try again.
+You are unauthorized to set current directory to {0}: {1}
+Permission {0} failed
+The path you've specified is too long.
+You are unauthorized to list in {0}: {1}
+Error while checking CPU: {0}
+Error while checking RAM: {0}
+Error while checking HDD: {0}
+CPU: WARNING: SSE2 will be required in future development commits.
+Dump information gatherer crashed when trying to get information about {0}: {1}
+Error while trying to get compile date of assembly {0}: {1}
+Error when trying to set MOTD/MAL: {0}
+Error when trying to get MOTD/MAL: {0}
+There is a null reference exception on {0}:{1}
+There is a null reference exception on {0}:{1} - Stack trace:
+Error when trying to start screensaver, because of an invalid operation.
+Reloading not allowed in safe mode.
+Parsing mods not allowed on safe mode.
+Parse whole directory for size or just the files in the current one.
+Lists all connected debugging devices.
+Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.
+Set successfully.
+The path is neither a file nor a directory.
+Creates another copy of a file under different directory or name.
+Moves a file to another directory
+To copy files to another directory or different name
+To move files to another directory
+Match {0} ({1}): {2}
+Match {0}: {1}
+Time spent: {0} milliseconds
+Manufacturer: {0}
+Model: {0}
+Capacity: {0} ({1}, {2}, {3})
+Interface Type: {0}
+Drive Number: {0}
+Boot flag: {0} ({1})
+Physical partition: {0}
+Primary flag: {0}
+Size: {0} GB
+Logical partition: {0}
+Compressed: {0}
+Name: {0}
+File system: {0}
+Capacity: {0} GB free of {1} GB
+Listing all logical partitions on all drives.
+Lists all probed drives.
+Lists all probed partitions on a specific drive (and all logical partitions on all drives).
+Calculates file sums using either MD5 or SHA256.
+Takes you to our GitHub Wiki.
+Invalid encryption algorithm.
+Enables or disables remote debugging.
+Initializing filesystem...
+Gets installed voices
+Sets the default voice
+Speaks your string using the default voice
+Voice {0}: {1} ({2})
+Invalid voice.
+Voice set
+See if you can spell words correctly on time
+See if you can solve mathematical equations on time
+Respond to love or hate comments.
+If someone made this comment to your video:
+How would you respond?
+Invalid selection. Going to the next comment...
+You just reported the love comment!
+You just replied to the hate comment!
+Great! {0}'s comment will be removed for that.
+Great! {0} will appreciate your thanks.
+Write "GetMeOut" to exit.
+Spelt perfectly!
+Spelt incorrectly.
+Solved perfectly!
+Solved incorrectly.
+{0} MB of {1} MB downloaded.
+Download has completed.
+RPC is already running.
+RPC listening on all addresses using port {0}.
+Starting RPC...
+Connects to an SSH server.
+Enter the password for {0}: 
+SSH Disconnected.
+Loads the synth file and plays it.
+Scripted file {0} does not exist.
+The file isn't a scripted synth file.
+Failed to probe a synth line.
+Empty string specified
+Unable to set codepage. The language may not display properly.
+Debugging not enabled.
+{0} is no longer set to default screensaver.
+Thanks! This is interesting.
+Everyone will support your video for this.
+I gave you the special file in your e-mail for your next video.
+Listen, haters, he is trying to help us, not scam.
+I don't know how much do I and my friends thank you for this video.
+I love you for this video.
+Keep going, don't stop.
+I will help you reach to 1M subscribers!
+My friends got their computer fixed because of you.
+Awesome prank! I shut down my enemy's PC.
+To haters: STOP HATING ON HIM
+To haters: GET TO WORK
+Nobody will notice this now thanks to your object hiding guide
+I will stop watching your videos. Subscriber lost.
+What is this? This is unclear.
+This video is the worst!
+Everyone report this video!
+My friends are furious with you!
+Lovers will now hate you for this.
+Your friend will hate you for this.
+This prank made me unsubscribe to you.
+Mission failed, Respect -, Subscriber -
+Stop making this kind of video!!!
+Get back to your job, your videos are the worst!
+We prejudice on this video.
+Aliasing {0} to {1} is forbidden.
+Error trying to dismiss notification: {0}
+Shows all received notifications
+Dismisses a notification
+Notification dismissed successfully.
+Packets (inbound):
+Packets (outbound):
+Errors in received packets:
+General IPv6 properties
+General IPv4 properties
+Remotely executes a command to remote PC
+- Stage 0: System initialization
+- Stage 1: Hardware detection
+- Stage 2: Internal username management
+- Stage 3: Mods and screensavers detection
+- Stage 4: Garbage collection
+- Stage 5: Log in
+Before garbage collection: {0} bytes
+After garbage collection: {0} bytes
+Error starting RPC: {0}

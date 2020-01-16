@@ -401,3 +401,142 @@ IPv4 podaci:
 IPv6 podaci:
 Adapter {0} ne podržava IPv6. Nastavak ...
 Adapter {0} ne podržava IPv4. Sonda nije uspjela.
+Čini se da ste pokrenuli razvojnu verziju kernela. Iako možete vidjeti aspekte, ona se često ažurira i može uvesti pogreške. Preporučuje se ostati na stabilnoj verziji.
+Jezik koji ste odabrali sadrži dvije varijante. Odaberi jedan:
+1. Transliteriran
+2. Prevedeno
+Odaberite svoj izbor:
+Nevažeći izbor. Pokušajte ponovo.
+Neovlašteno ste postavili trenutni direktorij na {0}: {1}
+Dozvola {0} nije uspjela
+Put koji ste odredili je predug.
+Neovlašteni ste za popis na adresi {0}: {1}
+Pogreška prilikom provjere CPU-a: {0}
+Pogreška prilikom provjere RAM-a: {0}
+Pogreška prilikom provjere tvrdog diska: {0}
+CPU: UPOZORENJE: u budućim razvojnim komisijama bit će potreban SSE2.
+Informacije o sakupljaču smeća srušile su se prilikom pokušaja dobivanja informacija o {0}: {1}
+Pogreška prilikom pokušaja prikupljanja datuma sastavljanja {0}: {1}
+Pogreška kod pokušaja postavljanja MOTD / MAL: {0}
+Pogreška kod pokušaja dobivanja MOTD / MAL: {0}
+Postoji nulta referentna iznimka na {0}: {1}
+Postoji nulta referentna iznimka na {0}: {1} - Trag snopa:
+Pogreška prilikom pokušaja pokretanja čuvara zaslona, ​​zbog nevaljane operacije.
+U sigurnom načinu rada nije dopušteno ponovno učitavanje.
+Modovi razvrstavanja nisu dopušteni u sigurnom načinu rada.
+Analizirajte cijeli imenik za veličinu ili samo datoteke u trenutnom.
+Navodi sve povezane uređaje za uklanjanje pogrešaka.
+Pogreška kod pokušaja postavljanja načina raščlanjivanja Provjerite vrijednost i pokušajte ponovo. Ako je ovo točno, pogledajte trag snopa kada je omogućena uklanjanje pogrešaka kernela.
+Postavite uspješno.
+Put nije ni datoteka niti mapa.
+Stvara drugu kopiju datoteke pod drugim direktorijima ili nazivom.
+Premješta datoteku u drugu mapu
+Za kopiranje datoteka u drugi imenik ili drugo ime
+Za premještanje datoteka u drugu mapu
+Utakmica {0} ({1}): {2}
+Utakmica {0}: {1}
+Vrijeme provedeno: {0} milisekundi
+Proizvođač: {0}
+Model: {0}
+Kapacitet: {0} ({1}, {2}, {3})
+Vrsta sučelja: {0}
+Broj pogona: {0}
+Zastavica za pokretanje: {0} ({1})
+Tjelesna particija: {0}
+Primarna zastava: {0}
+Veličina: {0} GB
+Logička particija: {0}
+Komprimirano: {0}
+Naziv: {0}
+Datotečni sustav: {0}
+Kapacitet: {0} GB bez {1} GB
+Popis svih logičkih particija na svim pogonima.
+Navodi sve ispitivane pogone.
+Navodi sve ispitivane particije na određenom pogonu (i sve logičke particije na svim diskovima).
+Izračunava sume datoteka koristeći MD5 ili SHA256.
+Vodi vas na naš GitHub Wiki.
+Nevažeći algoritam šifriranja.
+Omogućuje ili onemogućuje daljinsko uklanjanje pogrešaka.
+Inicijalizacija datotečnog sustava ...
+Dobiva instalirane glasove
+Postavlja zadani glas
+Govori niz koristeći zadani glas
+Glas {0}: {1} ({2})
+Nevažeći glas.
+Glasovni skup
+Pogledajte možete li pravilno pisati riječi na vrijeme
+Pogledajte možete li riješiti matematičke jednadžbe na vrijeme
+Odgovorite na komentare ljubavi ili mržnje.
+Ako je netko komentirao vaš videozapis:
+Kako biste odgovorili?
+Nevažeći izbor. Prelazimo na sljedeći komentar ...
+Upravo ste prijavili ljubavni komentar!
+Upravo ste odgovorili na komentar mržnje!
+Sjajno! {0} komentar će biti uklonjen zbog toga.
+Sjajno! {0} cijenit će vašu zahvalnost.
+Za izlaz napišite "GetMeOut".
+Napisano savršeno!
+Napisano pogrešno.
+Savršeno riješeno!
+Netočno riješeno.
+{0} Preuzeto je MB od {1} MB.
+Preuzimanje je dovršeno.
+RPC se već pokreće.
+Slušanje RPC-a na svim adresama putem porta {0}.
+Pokretanje RPC-a ...
+Povezuje se na SSH poslužitelj.
+Unesite lozinku za {0}:
+SSH isključen.
+Učitava se synth datoteka i reproducira je.
+Skriptirana datoteka {0} ne postoji.
+Datoteka nije skriptirana synth datoteka.
+Sinteza linija nije uspjela.
+Naveden prazan niz
+Nije moguće postaviti kodnu stranicu. Jezik se možda ne prikazuje ispravno.
+Otklanjanje pogrešaka nije omogućeno.
+{0} više nije postavljeno na zadanu čuvar zaslona.
+Hvala! Ovo je zanimljivo.
+Svi će podržati vaš videozapis za to.
+Dao sam vam posebnu datoteku u vašoj e-pošti za vaš sljedeći video.
+Slušajte, mrzitelji, on nam pokušava pomoći, a ne prijevara.
+Ne znam koliko vam i mojim prijateljima zahvaljujem na ovom videu.
+Volim te zbog ovog videa.
+Nastavite, nemojte prestati.
+Pomoći ću vam da dođete do pretplatnika 1M!
+Moji prijatelji su dobili kompjuter zbog tebe.
+Strašna ludost! Isključio sam neprijateljev PC.
+Mrziteljima: zaustavite mržnja na njemu
+Mrziteljima: DOBITE RADI
+Sada to nitko neće primijetiti zahvaljujući vašem vodiču za skrivanje predmeta
+Prestat ću gledati vaše videozapise. Pretplatnik je izgubljen.
+Što je to? Ovo je nejasno.
+Ovaj video je najgori!
+Svi prijavite ovaj video!
+Moji prijatelji su bijesni na vas!
+Ljubavnici će vas sada zbog ovoga mrziti.
+Vaš prijatelj će vas mrziti zbog ovoga.
+Zbog ove poteškoće natjerao sam se da se odjavim od vas.
+Misija nije uspjela, poštovanje -, pretplatnik -
+Prestanite stvarati ovakav video !!!
+Vratite se svom poslu, vaši su videozapisi najgori!
+Predrasude u ovom videu.
+Izrezivanje {0} do {1} zabranjeno je.
+Pogreška prilikom odbacivanja obavijesti: {0}
+Prikazuje sve primljene obavijesti
+Odbija obavijest
+Obavijest je uspješno odbačena.
+Paketi (ulazni):
+Paketi (odlazni):
+Pogreške u primljenim paketima:
+Opća svojstva IPv6
+Opća svojstva IPv4
+Daljinski izvršava naredbu na udaljenom računalu
+- Faza 0: Inicijalizacija sustava
+- Faza 1: Otkrivanje hardvera
+- Faza 2: Interno upravljanje korisničkim imenom
+- Faza 3: Otkrivanje modova i čuvara zaslona
+- Faza 4: Skupljanje smeća
+- Faza 5: Prijava
+Prije odvoza smeća: {0} bajtova
+Nakon odvoza smeća: {0} bajtova
+Pogreška kod pokretanja RPC-a: {0}

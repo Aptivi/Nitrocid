@@ -401,3 +401,142 @@ Informatsiya IPv4:
 Informatsiya IPv6:
 Adapter {0} ne podderzhivayet IPv6. Prodolzheniye ...
 Adapter {0} ne podderzhivayet IPv4. Zond ne udalsya.
+Pokhozhe, vy rabotali s versiyey razrabotki dlya yadra. Nesmotrya na to, chto vy mozhete videt' aspekty, oni chasto obnovlyayutsya i mogut soderzhat' oshibki. Rekomenduyetsya ostavat'sya na stabil'noy versii.
+Vybrannyy vami yazyk soderzhit dva varianta. Vyberite odin:
+1. Transliterirovannyy
+2. Perevedeno
+Vyberite vash vybor:
+Nevernyy vybor. Poprobuyte yeshche raz.
+Vy ne avtorizovany dlya ustanovki tekushchego kataloga na {0}: {1}
+Razresheniye {0} ne udalos'
+Ukazannyy vami put' slishkom dlinnyy.
+Vy ne avtorizovany dlya perechisleniya v {0}: {1}
+Oshibka pri proverke TSP: {0}
+Oshibka pri proverke OZU: {0}
+Oshibka pri proverke zhestkogo diska: {0}
+CPU: PREDUPREZHDENIYe: SSE2 potrebuyetsya v budushchikh kommitakh razrabotki.
+Sboy sborshchika informatsii o sboye pri popytke poluchit' informatsiyu o {0}: {1}
+Oshibka pri popytke poluchit' datu kompilyatsii sborki {0}: {1}
+Oshibka pri popytke ustanovit' MOTD / MAL: {0}
+Oshibka pri popytke poluchit' MOTD / MAL: {0}
+Dlya {0} sushchestvuyet isklyuchitel'naya situatsiya s nulevoy ssylkoy: {1}
+Isklyuchitel'naya situatsiya nulevoy ssylki v {0}: {1} - trassirovka steka:
+Oshibka pri popytke zapustit' zastavku iz-za nedopustimoy operatsii.
+Perezagruzka zapreshchena v bezopasnom rezhime.
+Parsing modov ne razreshen v bezopasnom rezhime.
+Razobrat' ves' katalog po razmeru ili tol'ko fayly v tekushchem.
+Perechislyayet vse podklyuchennyye ustroystva otladki.
+Oshibka pri popytke ustanovit' rezhim razbora. Prover'te znacheniye i poprobuyte snova. Yesli eto pravil'no, posmotrite trassirovku steka, kogda vklyuchena otladka yadra.
+Ustanovleno uspeshno.
+Put' ne yavlyayetsya ni faylom, ni katalogom.
+Sozdayet druguyu kopiyu fayla v drugom kataloge ili imeni.
+Peremeshchayet fayl v drugoy katalog
+Chtoby skopirovat' fayly v drugoy katalog ili drugoye imya
+Peremestit' fayly v drugoy katalog
+Sootvetstviye {0} ({1}): {2}
+Sootvetstviye {0}: {1}
+Zatrachennoye vremya: {0} millisekund
+Proizvoditel': {0}
+Model': {0}
+Yemkost': {0} ({1}, {2}, {3})
+Tip interfeysa: {0}
+Nomer diska: {0}
+Flag zagruzki: {0} ({1})
+Fizicheskiy razdel: {0}
+Osnovnoy flag: {0}
+Razmer: {0} GB
+Logicheskiy razdel: {0}
+Szhatyy: {0}
+Imya: {0}
+Faylovaya sistema: {0}
+Yemkost': {0} GB bez {1} GB
+Perechisleniye vsekh logicheskikh razdelov na vsekh diskakh.
+Perechislyayet vse proverennyye diski.
+Vyvodit spisok vsekh zondiruyemykh razdelov na konkretnom diske (i vsekh logicheskikh razdelov na vsekh diskakh).
+Vychislyayet summy faylov, ispol'zuya libo MD5, libo SHA256.
+Prinimayet vas v nashu GitHub Wiki.
+Nevernyy algoritm shifrovaniya.
+Vklyuchayet ili otklyuchayet udalennuyu otladku.
+Initsializatsiya faylovoy sistemy ...
+Poluchayet ustanovlennyye golosa
+Ustanavlivayet golos po umolchaniyu
+Govorit vashu stroku, ispol'zuya golos po umolchaniyu
+Golos {0}: {1} ({2})
+Nevernyy golos.
+Golosovoy nabor
+Posmotrite, smozhete li vy pravil'no napisat' slova po vremeni
+Posmotrim, smozhete li vy reshit' matematicheskiye uravneniya vovremya
+Otvechat' na lyubov' ili nenavidet' kommentarii.
+Yesli kto-to sdelal etot kommentariy k vashemu video:
+Kak by vy otvetili?
+Nevernyy vybor. Perekhodya k sleduyushchemu kommentariyu ...
+Vy tol'ko chto soobshchili o lyubovnom kommentarii!
+Vy tol'ko chto otvetili na kommentariy nenavisti!
+Bol'shoy! Kommentariy {0} budet udalen za eto.
+Bol'shoy! {0} otsenit vashu blagodarnost'.
+Napishite «GetMeOut» dlya vykhoda.
+Pishetsya otlichno!
+Napisano nepravil'no.
+Resheno otlichno!
+Resheno nepravil'no.
+{0} MB zagruzheno {1} MB.
+Zagruzka zavershena.
+RPC uzhe zapushchen.
+RPC proslushivayet vse adresa, ispol'zuya port {0}.
+Zapusk RPC ...
+Podklyuchayetsya k SSH serveru.
+Vvedite parol' dlya {0}:
+SSH otklyuchen.
+Zagruzhayet fayl sintezatora i vosproizvodit yego.
+Fayl stsenariya {0} ne sushchestvuyet.
+Fayl ne yavlyayetsya skriptovym faylom sintezatora.
+Ne udalos' proverit' stroku sintezatora.
+Ukazana pustaya stroka
+Nevozmozhno ustanovit' kodovuyu stranitsu. YAzyk mozhet otobrazhat'sya nepravil'no.
+Otladka ne vklyuchena.
+{0} bol'she ne ustanovlen na zastavku po umolchaniyu.
+Blagodarnost'! Eto interesno.
+Vse budut podderzhivat' vashe video dlya etogo.
+YA dal vam spetsial'nyy fayl v vashem elektronnom pis'me dlya vashego sleduyushchego video.
+Slushay, nenavistniki, on pytayetsya pomoch' nam, a ne afera.
+YA ne znayu, kak ya i moi druz'ya blagodarny za eto video.
+YA lyublyu tebya za eto video.
+Prodolzhay, ne ostanavlivaysya.
+YA pomogu vam dostich' 1M podpischikov!
+Moi druz'ya pochinili svoy komp'yuter iz-za tebya.
+Potryasayushchaya shutka! YA zakryl komp'yuter moyego vraga.
+Dlya nenavistnikov: prekratit' nenavist' k nemu
+Nenavistnikam: NACHAT' RABOTU
+Nikto ne zametit etogo seychas blagodarya vashemu rukovodstvu po skrytiyu ob"yektov
+YA perestanu smotret' tvoi video. Podpischik poteryan.
+Chto eto? Eto neyasno.
+Eto video khudsheye!
+Vse soobshchayut ob etom video!
+Moi druz'ya zlyatsya na tebya!
+Lyubovniki teper' budut nenavidet' tebya za eto.
+Tvoy drug budet nenavidet' tebya za eto.
+Eta shutka zastavila menya otpisat'sya ot vas.
+Missiya provalena, Respekt -, Podpischik -
+Prekratite delat' etot vid video !!!
+Vozvrashchaysya k svoyey rabote, tvoi video khudshiye!
+My predvzyato otnosimsya k etomu video.
+Psevdonim {0} k {1} zapreshchen.
+Oshibka pri popytke otklonit' uvedomleniye: {0}
+Pokazyvayet vse poluchennyye uvedomleniya
+Otklonit' uvedomleniye
+Uvedomleniye otkloneno uspeshno.
+Pakety (vkhodyashchiye):
+Pakety (iskhodyashchiye):
+Oshibki v poluchennykh paketakh:
+Obshchiye svoystva IPv6
+Obshchiye svoystva IPv4
+Udalenno vypolnyayet komandu na udalennom PK
+- Etap 0: initsializatsiya sistemy
+- Etap 1: obnaruzheniye oborudovaniya
+- Etap 2: upravleniye vnutrennim imenem pol'zovatelya
+- Stadiya 3: obnaruzheniye modov i zastavok
+- Etap 4: Sborka musora
+- Etap 5: Voyti
+Pered sborkoy musora: {0} bayt
+Posle sborki musora: {0} bayt
+Oshibka zapuska RPC: {0}

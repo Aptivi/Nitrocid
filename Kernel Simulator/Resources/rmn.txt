@@ -401,3 +401,142 @@ Informații IPv4:
 Informații IPv6:
 Adaptorul {0} nu acceptă IPv6. Continuarea ...
 Adaptorul {0} nu acceptă IPv4. Sonda a eșuat.
+Se pare că ați rulat versiunea de dezvoltare a kernel-ului. În timp ce puteți vedea aspectele, acesta este actualizat frecvent și poate introduce erori. Este recomandat să rămâneți pe versiunea stabilă.
+Limba selectată conține două variante. Alege unul:
+1. Transliterare
+2. Tradus
+Selectați alegerea dvs.:
+Alegere nevalidă. Încearcă din nou.
+Sunteți neautorizat să setați directorul curent pe {0}: {1}
+Permisul {0} a eșuat
+Calea pe care ai specificat-o este prea lungă.
+Nu sunteți autorizat să listați în {0}: {1}
+Eroare la verificarea procesorului: {0}
+Eroare la verificarea RAM: {0}
+Eroare la verificarea HDD: {0}
+CPU: AVERTISMENT: SSE2 va fi necesar în viitoarele comisii de dezvoltare.
+Colectorul de informații despre descărcare de gunoi s-a blocat când încercați să obțineți informații despre {0}: {1}
+Eroare în timp ce încercați să obțineți data de compilare a asamblării {0}: {1}
+Eroare când încercați să setați MOTD / MAL: {0}
+Eroare când încercați să obțineți MOTD / MAL: {0}
+Există o excepție de referință nulă pe {0}: {1}
+Există o excepție de referință nulă pe {0}: {1} - Urmărirea stivei:
+Eroare când încercați să porniți screensaver-ul, din cauza unei operațiuni nevalide.
+Reîncărcare nu este permisă în modul sigur.
+Analizarea modurilor nu este permisă în modul sigur.
+Analizați întregul director pentru dimensiune sau doar fișierele din cel curent.
+Listează toate dispozitivele de depanare conectate.
+Eroare când încercați să setați modul de analiză. Verificați valoarea și încercați din nou. Dacă acest lucru este corect, consultați urmele stivei atunci când este activată depanarea kernel-ului.
+Setați cu succes.
+Calea nu este nici un fișier și nici un director.
+Creează o altă copie a unui fișier sub un director sau nume diferit.
+Mută ​​un fișier într-un alt director
+Pentru a copia fișierele în alt director sau alt nume
+Pentru a muta fișierele într-un alt director
+Potrivire {0} ({1}): {2}
+Potrivire {0}: {1}
+Timpul petrecut: {0} milisecunde
+Producător: {0}
+Model: {0}
+Capacitate: {0} ({1}, {2}, {3})
+Tip de interfață: {0}
+Număr de unitate: {0}
+Steagul de pornire: {0} ({1})
+Partiție fizică: {0}
+Steagul principal: {0}
+Dimensiune: {0} GB
+Partiție logică: {0}
+Comprimat: {0}
+Nume: {0}
+Sistem de fișiere: {0}
+Capacitate: {0} GB fără {1} GB
+Listarea tuturor partițiilor logice pe toate unitățile.
+Listează toate unitățile sondate.
+Listează toate partițiile sondate pe o unitate specifică (și toate partițiile logice pe toate unitățile).
+Calculează sumele fișierelor folosind MD5 sau SHA256.
+Te duce la Wiki-ul nostru GitHub.
+Algoritmul de criptare nevalid.
+Activează sau dezactivează depanarea la distanță.
+Inițializarea sistemului de fișiere ...
+Obține voci instalate
+Setează vocea implicită
+Vorbește șirul folosind vocea implicită
+Voice {0}: {1} ({2})
+Voce nevalidă.
+Set vocal
+Vedeți dacă puteți scrie corect cuvintele la timp
+Vedeți dacă puteți rezolva ecuațiile matematice la timp
+Răspundeți la comentarii de dragoste sau ură.
+Dacă cineva a făcut acest comentariu videoclipului tău:
+Cum ai răspunde?
+Selectare nevalidă. Trecând la următorul comentariu ...
+Tocmai ai raportat comentariul de dragoste!
+Tocmai ai răspuns la comentariul de ură!
+Grozav! Comentariul {0} va fi eliminat pentru asta.
+Grozav! {0} vă va mulțumi mulțumirea.
+Scrieți „GetMeOut” pentru a ieși.
+Scrise perfect!
+Scris incorect.
+Rezolvat perfect!
+Soluționat incorect.
+{0} MB de {1} MB descărcate.
+Descărcarea s-a finalizat.
+RPC rulează deja.
+RPC ascultând toate adresele folosind portul {0}.
+Pornirea RPC ...
+Se conectează la un server SSH.
+Introduceți parola pentru {0}:
+SSH Deconectat
+Încarcă fișierul synth și îl redă.
+Fișierul script {0} nu există.
+Fișierul nu este un fișier sintetizat script.
+Nu s-a reușit sondarea unei linii sintetice.
+Șirul gol specificat
+Imposibil de setat codepage. Este posibil ca limba să nu se afișeze corect.
+Debugging-ul nu este activat.
+{0} nu mai este setat la screensaver implicit.
+Mulțumiri! Acest lucru este interesant.
+Toți vor susține videoclipul dvs. pentru acest lucru.
+V-am oferit fișierul special în e-mail pentru următorul videoclip.
+Ascultă, urâți, el încearcă să ne ajute, nu înșelătorie.
+Nu știu cât de mulțumesc eu și prietenii mei pentru acest videoclip.
+Te iubesc pentru acest videoclip.
+Continuă, nu te opri.
+Te voi ajuta să ajungi la abonații de 1M!
+Prietenii mei au luat computerul fix din cauza ta.
+Fata minunată! Am închis computerul inamicului meu.
+Pentru haters: STOP HATING ON HIM
+Pentru a urări: GET TO WORK
+Nimeni nu va observa acest lucru acum datorită ghidului tău de ascundere a obiectelor
+Voi înceta să vă vizionez videoclipurile. Abonatul a pierdut.
+Ce este asta? Acest lucru nu este clar.
+Acest videoclip este cel mai rău!
+Toată lumea raportează acest videoclip!
+Prietenii mei sunt furioși cu tine!
+Iubitorii te vor ura acum pentru asta.
+Prietenul tău te va urî pentru asta.
+Această faină m-a făcut să mă dezabonez.
+Misiunea a eșuat, respectul -, abonatul -
+Nu mai face acest gen de videoclipuri !!!
+Reveniți la locul de muncă, videoclipurile dvs. sunt cele mai rele!
+Prejudecăm acest videoclip.
+Aliasingul de la 0 la {1} este interzis.
+Eroare la încercarea de respingere a notificării: {0}
+Afișează toate notificările primite
+Respinge o notificare
+Notificarea a fost respinsă cu succes.
+Pachete (de intrare):
+Pachete (de ieșire):
+Erori la pachetele primite:
+Proprietăți IPv6 generale
+Proprietăți IPv4 generale
+Execută de la distanță o comandă pe un computer de la distanță
+- Etapa 0: Initializare sistem
+- Etapa 1: Detectare hardware
+- Etapa 2: Management intern al numelui de utilizator
+- Etapa 3: detectarea de mods și screensavere
+- Etapa 4: Colectarea gunoiului
+- Etapa 5: Autentificare
+Înainte de colectarea gunoiului: {0} octeți
+După colectarea gunoiului: {0} octeți
+Eroare la pornirea RPC: {0}

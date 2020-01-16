@@ -401,3 +401,142 @@ Informations IPv4:
 Informations IPv6:
 L'adaptateur {0} ne prend pas en charge IPv6. En continuant ...
 L'adaptateur {0} ne prend pas en charge IPv4. La sonde a échoué.
+Il semble que vous exécutiez la version de développement du noyau. Bien que vous puissiez voir les aspects, il est fréquemment mis à jour et peut introduire des bogues. Il est recommandé de rester sur la version stable.
+La langue que vous avez sélectionnée contient deux variantes. Sélectionnez-en un:
+1. Translittéré
+2. Traduit
+Sélectionnez votre choix:
+Choix invalide. Réessayer.
+Vous n'êtes pas autorisé à définir le répertoire actuel sur {0}: {1}
+Échec de l'autorisation {0}
+Le chemin que vous avez spécifié est trop long.
+Vous n'êtes pas autorisé à figurer dans {0}: {1}
+Erreur lors de la vérification du processeur: {0}
+Erreur lors de la vérification de la RAM: {0}
+Erreur lors de la vérification du disque dur: {0}
+CPU: AVERTISSEMENT: SSE2 sera requis dans les futures validations de développement.
+Le regroupeur d'informations de vidage s'est arrêté lors de la tentative d'obtention d'informations sur {0}: {1}
+Erreur lors de la tentative d'obtention de la date de compilation de l'assembly {0}: {1}
+Erreur lors de la tentative de définition de MOTD / MAL: {0}
+Erreur lors de la tentative d'obtention de MOTD / MAL: {0}
+Il existe une exception de référence nulle sur {0}: {1}
+Il existe une exception de référence nulle sur {0}: {1} - Trace de pile:
+Erreur lors de la tentative de démarrage de l'économiseur d'écran, en raison d'une opération non valide.
+Le rechargement n'est pas autorisé en mode sans échec.
+L'analyse des mods n'est pas autorisée en mode sans échec.
+Analyser le répertoire entier pour la taille ou seulement les fichiers dans le répertoire actuel.
+Répertorie tous les périphériques de débogage connectés.
+Erreur lors de la tentative de définition du mode d'analyse. Vérifiez la valeur et réessayez. Si cela est correct, consultez la trace de la pile lorsque le débogage du noyau est activé.
+Définir avec succès.
+Le chemin n'est ni un fichier ni un répertoire.
+Crée une autre copie d'un fichier sous un répertoire ou un nom différent.
+Déplace un fichier vers un autre répertoire
+Pour copier des fichiers dans un autre répertoire ou un nom différent
+Pour déplacer des fichiers vers un autre répertoire
+Correspondance {0} ({1}): {2}
+Correspondance {0}: {1}
+Temps passé: {0} millisecondes
+Fabricant: {0}
+Modèle: {0}
+Capacité: {0} ({1}, {2}, {3})
+Type d'interface: {0}
+Numéro de lecteur: {0}
+Indicateur de démarrage: {0} ({1})
+Partition physique: {0}
+Indicateur principal: {0}
+Taille: {0} Go
+Partition logique: {0}
+Compressé: {0}
+Nom: {0}
+Système de fichiers: {0}
+Capacité: {0} Go sans {1} Go
+Liste de toutes les partitions logiques sur tous les lecteurs.
+Répertorie tous les lecteurs sondés.
+Répertorie toutes les partitions sondées sur un lecteur spécifique (et toutes les partitions logiques sur tous les lecteurs).
+Calcule les sommes des fichiers à l'aide de MD5 ou SHA256.
+Vous amène à notre GitHub Wiki.
+Algorithme de chiffrement non valide.
+Active ou désactive le débogage distant.
+Initialisation du système de fichiers ...
+Obtient les voix installées
+Définit la voix par défaut
+Prononce votre chaîne en utilisant la voix par défaut
+Voix {0}: {1} ({2})
+Voix invalide.
+Ensemble de voix
+Voyez si vous pouvez épeler correctement les mots à temps
+Voyez si vous pouvez résoudre des équations mathématiques à temps
+Répondez aux commentaires d'amour ou de haine.
+Si quelqu'un a fait ce commentaire sur votre vidéo:
+Comment répondriez-vous?
+Selection invalide. Passer au commentaire suivant ...
+Vous venez de signaler le commentaire d'amour!
+Vous venez de répondre au commentaire de haine!
+Génial! Le commentaire de {0} sera supprimé pour cela.
+Génial! {0} appréciera vos remerciements.
+Écrivez "GetMeOut" pour quitter.
+Épelé parfaitement!
+Orthographe incorrecte.
+Résolu parfaitement!
+Résolu incorrectement.
+{0} Mo de {1} Mo téléchargés.
+Le téléchargement est terminé.
+RPC est déjà en cours d'exécution.
+Écoute RPC sur toutes les adresses utilisant le port {0}.
+Démarrage de RPC ...
+Se connecte à un serveur SSH.
+Entrez le mot de passe pour {0}:
+SSH déconnecté.
+Charge le fichier synthé et le joue.
+Le fichier scripté {0} n'existe pas.
+Le fichier n'est pas un fichier synthétisé par script.
+Impossible de sonder une ligne de synthé.
+Chaîne vide spécifiée
+Impossible de définir la page de code. La langue peut ne pas s'afficher correctement.
+Le débogage n'est pas activé.
+{0} n'est plus défini sur l'économiseur d'écran par défaut.
+Merci! C'est intéressant.
+Tout le monde soutiendra votre vidéo pour cela.
+Je vous ai donné le fichier spécial dans votre e-mail pour votre prochaine vidéo.
+Écoutez, haineux, il essaie de nous aider, pas d'escroquerie.
+Je ne sais pas combien moi et mes amis vous remercions pour cette vidéo.
+Je t'aime pour cette vidéo.
+Continuez, ne vous arrêtez pas.
+Je vais vous aider à atteindre 1M d'abonnés!
+Mes amis ont réparé leur ordinateur à cause de vous.
+Super blague! J'ai arrêté le PC de mon ennemi.
+Aux ennemis: ARRÊTEZ DE HAÏTRE SUR LUI
+Pour haineux: OBTENIR AU TRAVAIL
+Personne ne le remarquera maintenant grâce à votre guide de masquage d'objet
+Je vais arrêter de regarder vos vidéos. Abonné perdu.
+Qu'est-ce que c'est? Ce n'est pas clair.
+Cette vidéo est la pire!
+Tout le monde rapporte cette vidéo!
+Mes amis sont furieux contre vous!
+Les amoureux vous détesteront maintenant pour cela.
+Votre ami vous détestera pour cela.
+Cette farce m'a fait vous désinscrire.
+Mission échouée, Respect -, Abonné -
+Arrêtez de faire ce genre de vidéo !!!
+Revenez à votre travail, vos vidéos sont les pires!
+Nous préjugons sur cette vidéo.
+Les alias de {0} à {1} sont interdits.
+Erreur lors de la tentative de rejet de la notification: {0}
+Affiche toutes les notifications reçues
+Rejette une notification
+Notification rejetée avec succès.
+Paquets (entrants):
+Paquets (sortants):
+Erreurs dans les paquets reçus:
+Propriétés générales IPv6
+Propriétés IPv4 générales
+Exécute à distance une commande vers un PC distant
+- Étape 0: initialisation du système
+- Étape 1: détection matérielle
+- Étape 2: Gestion interne des noms d'utilisateur
+- Étape 3: Détection de mods et d'économiseurs d'écran
+- Étape 4: collecte des ordures
+- Étape 5: Connectez-vous
+Ennen roskien keräystä: {0} tavua
+Jätekeräyksen jälkeen: {0} tavua
+Virhe RPC: n käynnistämisessä: {0}

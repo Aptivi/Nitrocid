@@ -401,3 +401,142 @@ Maklumat IPv4:
 Maklumat IPv6:
 Adapter {0} tidak menyokong IPv6. Meneruskan ...
 Adapter {0} tidak menyokong IPv4. Probe gagal.
+Nampaknya anda sedang menjalankan versi pembangunan kernel. Walaupun anda dapat melihat aspek, ia sering dikemas kini dan mungkin memperkenalkan pepijat. Adalah disyorkan agar anda tetap pada versi yang stabil.
+Bahasa yang telah anda pilih mengandungi dua varian. Pilih satu:
+1. Transliterated
+2. Diterjemahkan
+Pilih pilihan anda:
+Pilihan tidak sah. Cuba lagi.
+Anda tidak dibenarkan untuk menetapkan direktori semasa ke {0}: {1}
+Kebenaran {0} gagal
+Jalan yang anda tentukan terlalu panjang.
+Anda tidak dibenarkan untuk disenaraikan dalam {0}: {1}
+Ralat semasa memeriksa CPU: {0}
+Ralat semasa menyemak RAM: {0}
+Ralat semasa menyemak HDD: {0}
+CPU: AMARAN: SSE2 diperlukan dalam pembangunan masa depan.
+Pengumpul maklumat sampah terhempas ketika cuba mendapatkan maklumat mengenai {0}: {1}
+Ralat semasa cuba mendapatkan tarikh kompilasi pemasangan {0}: {1}
+Ralat semasa cuba menetapkan MOTD / MAL: {0}
+Ralat semasa cuba mendapatkan MOTD / MAL: {0}
+Terdapat pengecualian rujukan null pada {0}: {1}
+Terdapat pengecualian rujukan null pada {0}: {1} - Jejak jejak:
+Ralat ketika cuba memulakan screensaver, kerana operasi tidak sah.
+Muat semula tidak dibenarkan dalam mod selamat.
+Mod parsing tidak dibenarkan pada mod selamat.
+Parse direktori keseluruhan untuk saiz atau hanya fail dalam satu semasa.
+Menyenaraikan semua peranti debug yang berkaitan.
+Ralat semasa cuba menetapkan mod parse. Semak nilai dan cuba lagi. Jika ini betul, lihat jejak tindanan apabila debugging kernel diaktifkan.
+Tetapkan dengan jayanya.
+Laluan bukan satu fail atau direktori.
+Membuat salinan fail lain di bawah direktori atau nama yang berlainan.
+Memindahkan fail ke direktori lain
+Untuk menyalin fail ke direktori lain atau nama lain
+Untuk memindahkan fail ke direktori lain
+Padan {0} ({1}): {2}
+Padan {0}: {1}
+Masa yang dibelanjakan: {0} milisaat
+Pengilang: {0}
+Model: {0}
+Kapasiti: {0} ({1}, {2}, {3})
+Jenis Antara Muka: {0}
+Nombor Drive: {0}
+Bendera Boot: {0} ({1})
+Partition fizikal: {0}
+Bendera utama: {0}
+Saiz: {0} GB
+Partition logikal: {0}
+Mampat: {0}
+Nama: {0}
+Sistem fail: {0}
+Kapasiti: {0} GB percuma {1} GB
+Menyenaraikan semua partisi logik pada semua pemacu.
+Menyenaraikan semua pemacu probed.
+Menyenaraikan semua partisyen probed pada pemacu tertentu (dan semua partisi logik pada semua pemacu).
+Kira jumlah fail menggunakan MD5 atau SHA256.
+Membawa anda ke Wiki GitHub kami.
+Algoritma penyulitan tidak sah.
+Membolehkan atau melumpuhkan debugging jauh.
+Inisialisasi sistem fail ...
+Mempunyai suara yang dipasang
+Menetapkan suara lalai
+Bercakap rentetan anda menggunakan suara lalai
+Suara {0}: {1} ({2})
+Suara tidak sah.
+Set suara
+Lihat jika anda boleh mengeja perkataan dengan tepat pada masanya
+Lihat jika anda boleh menyelesaikan persamaan matematik tepat pada masanya
+Berikan tanggapan terhadap cinta atau kebencian.
+Jika seseorang membuat ulasan ini pada video anda:
+Bagaimana anda akan bertindak balas?
+Pemilihan tidak sah. Pergi ke komen seterusnya ...
+Anda baru melaporkan ulasan cinta!
+Anda hanya membalas komen yang membenci!
+Hebat! Komen {0} akan dikeluarkan untuk itu.
+Hebat! {0} akan menghargai terima kasih anda.
+Tulis "GetMeOut" untuk keluar.
+Dikosongkan dengan sempurna!
+Spelled incorrectly.
+Selesaikan dengan sempurna!
+Tidak dapat diselesaikan dengan betul.
+{0} MB {1} MB dimuat turun.
+Muat turun telah selesai.
+RPC sudah berjalan.
+Mendengar RPC pada semua alamat menggunakan port {0}.
+Memulakan RPC ...
+Menyambung ke pelayan SSH.
+Masukkan kata laluan untuk {0}:
+SSH diputuskan.
+Muatkan fail sintaks dan mainkannya.
+Fail skrip {0} tidak wujud.
+Fail ini bukan fail sintetik skrip.
+Gagal meneliti garisan sintesis.
+Rentetan kosong dinyatakan
+Tidak dapat menetapkan codepage. Bahasa tidak boleh dipaparkan dengan betul.
+Debugging tidak didayakan.
+{0} tidak lagi ditetapkan kepada penggera lalai.
+Terima kasih! Ini menarik.
+Semua orang akan menyokong video anda untuk ini.
+Saya memberi anda fail khas dalam e-mel anda untuk video seterusnya.
+Dengar, pembenci, dia cuba membantu kami, bukan penipuan.
+Saya tidak tahu berapa banyak saya dan rakan-rakan saya terima kasih untuk video ini.
+Saya suka awak untuk video ini.
+Teruskan, jangan berhenti.
+Saya akan membantu anda sampai kepada pelanggan 1M!
+Rakan saya mendapat komputer mereka kerana anda.
+Gurauan Awesome! Saya mematikan PC musuh saya.
+Kepada pembenci: Hentikan HATING HIM
+Kepada pembenci: MENDAPATKAN KERJA
+Tiada siapa yang akan melihat ini sekarang terima kasih kepada panduan menyembunyikan objek anda
+Saya akan berhenti menonton video anda. Pelanggan hilang.
+Apakah ini? Ini tidak jelas.
+Video ini adalah yang paling teruk!
+Semua orang melaporkan video ini!
+Rakan-rakan saya marah dengan anda!
+Kekasih sekarang akan membenci anda untuk ini.
+Rakan anda akan membenci anda untuk ini.
+Prank ini membuatkan saya berhenti berlangganan.
+Misi gagal, Menghormati -, Pelanggan -
+Hentikan membuat video semacam ini !!!
+Kembali ke tugas anda, video anda adalah yang terburuk!
+Kami menjejaskan video ini.
+Aliasing {0} ke {1} dilarang.
+Ralat cuba menanggalkan pemberitahuan: {0}
+Menunjukkan semua pemberitahuan yang diterima
+Mengeluarkan pemberitahuan
+Pemberitahuan diberhentikan dengan jayanya.
+Paket (masuk):
+Paket (keluar):
+Ralat dalam paket yang diterima:
+Ciri-ciri IPv6 umum
+Ciri-ciri IPv4 umum
+Jauh melaksanakan arahan untuk PC jauh
+- Peringkat 0: Inisialisasi sistem
+- Peringkat 1: Pengesanan perkakasan
+- Peringkat 2: Pengurusan nama pengguna dalaman
+- Peringkat 3: Pengesanan mod dan screensavers
+- Peringkat 4: Pengumpulan sampah
+- Peringkat 5: Log masuk
+Sebelum pengumpulan sampah: {0} bait
+Selepas pengumpulan sampah: {0} bait
+Ralat bermula RPC: {0}

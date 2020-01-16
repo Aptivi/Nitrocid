@@ -401,3 +401,142 @@ Informacje o IPv4:
 Informacje o IPv6:
 Adapter {0} nie obsługuje IPv6. Kontynuacja ...
 Adapter {0} nie obsługuje IPv4. Sonda nie powiodła się.
+Wygląda na to, że korzystałeś z wersji rozwojowej jądra. Chociaż widać aspekty, jest często aktualizowane i może wprowadzać błędy. Zaleca się pozostanie w stabilnej wersji.
+Wybrany język zawiera dwa warianty. Wybierz jeden:
+1. Transliterowane
+2. Przetłumaczone
+Wybierz swój wybór:
+Nieprawidłowy wybór. Spróbuj ponownie.
+Nie masz uprawnień, aby ustawić bieżący katalog na {0}: {1}
+Licencja {0} nie powiodła się
+Podana ścieżka jest za długa.
+Nie masz uprawnień do umieszczenia na liście w {0}: {1}
+Błąd podczas sprawdzania procesora: {0}
+Błąd podczas sprawdzania pamięci RAM: {0}
+Błąd podczas sprawdzania dysku twardego: {0}
+CPU: OSTRZEŻENIE: SSE2 będzie wymagane w przyszłych zatwierdzeniach programistycznych.
+Zbieranie informacji o zrzutach uległo awarii podczas próby uzyskania informacji o {0}: {1}
+Błąd podczas próby uzyskania daty kompilacji zestawu {0}: {1}
+Błąd podczas próby ustawienia MOTD / MAL: {0}
+Błąd podczas próby uzyskania MOTD / MAL: {0}
+Wystąpił wyjątek zerowy w {0}: {1}
+Wystąpił wyjątek odniesienia zerowego w {0}: {1} - ślad stosu:
+Błąd podczas próby uruchomienia wygaszacza ekranu z powodu nieprawidłowej operacji.
+Ponowne ładowanie nie jest dozwolone w trybie awaryjnym.
+Parsowanie modów jest niedozwolone w trybie awaryjnym.
+Analizuj cały katalog pod kątem rozmiaru lub tylko pliki w bieżącym.
+Wyświetla listę wszystkich podłączonych urządzeń debugujących.
+Błąd podczas próby ustawienia trybu analizy. Sprawdź wartość i spróbuj ponownie. Jeśli jest to poprawne, zobacz śledzenie stosu, gdy debugowanie jądra jest włączone.
+Ustawiono pomyślnie.
+Ścieżka nie jest ani plikiem, ani katalogiem.
+Tworzy kolejną kopię pliku w innym katalogu lub nazwie.
+Przenosi plik do innego katalogu
+Aby skopiować pliki do innego katalogu lub innej nazwy
+Aby przenieść pliki do innego katalogu
+Dopasuj {0} ({1}): {2}
+Dopasuj {0}: {1}
+Czas spędzony: {0} milisekund
+Producent: {0}
+Model: {0}
+Pojemność: {0} ({1}, {2}, {3})
+Typ interfejsu: {0}
+Numer napędu: {0}
+Flaga rozruchowa: {0} ({1})
+Partycja fizyczna: {0}
+Flaga podstawowa: {0}
+Rozmiar: {0} GB
+Partycja logiczna: {0}
+Skompresowany: {0}
+Nazwa: {0}
+System plików: {0}
+Pojemność: {0} GB bezpłatnie z {1} GB
+Wyświetlanie wszystkich partycji logicznych na wszystkich dyskach.
+Wyświetla wszystkie sondowane dyski.
+Wyświetla wszystkie sondowane partycje na określonym dysku (i wszystkie partycje logiczne na wszystkich dyskach).
+Oblicza sumy plików przy użyciu MD5 lub SHA256.
+Zabierze Cię na naszą GitHub Wiki.
+Niepoprawny algorytm szyfrowania.
+Włącza lub wyłącza zdalne debugowanie.
+Inicjowanie systemu plików ...
+Pobiera zainstalowane głosy
+Ustawia domyślny głos
+Mówi Twój ciąg przy użyciu domyślnego głosu
+Głos {0}: {1} ({2})
+Niepoprawny głos.
+Zestaw głosowy
+Sprawdź, czy potrafisz poprawnie przeliterować słowa na czas
+Sprawdź, czy potrafisz rozwiązać równania matematyczne na czas
+Odpowiadaj na komentarze miłości i nienawiści.
+Jeśli ktoś skomentował ten film:
+Jak byś zareagował?
+Nieprawidłowy wybór. Przechodzę do następnego komentarza ...
+Właśnie zgłosiłeś komentarz o miłości!
+Właśnie odpowiedziałeś na komentarz do nienawiści!
+Świetny! Komentarz {0} zostanie z tego powodu usunięty.
+Świetny! {0} doceni twoje podziękowania.
+Napisz „GetMeOut”, aby wyjść.
+Perfekcyjnie napisane!
+Błędnie napisane.
+Rozwiązane idealnie!
+Rozwiązany niepoprawnie.
+Pobrano {0} MB z {1} MB.
+Pobieranie zostało zakończone.
+RPC już działa.
+RPC nasłuchuje na wszystkich adresach przy użyciu portu {0}.
+Uruchamianie RPC ...
+Łączy się z serwerem SSH.
+Wpisz hasło dla {0}:
+SSH Disconnected.
+Ładuje plik syntezatora i odtwarza go.
+Skryptowany plik {0} nie istnieje.
+Plik nie jest skryptowym plikiem syntezatora.
+Nie udało się sondować linii syntezatora.
+Podano pusty ciąg
+Nie można ustawić strony kodowej. Język może być wyświetlany niepoprawnie.
+Debugowanie nie jest włączone.
+{0} nie jest już ustawiony na domyślny wygaszacz ekranu.
+Dzięki! To jest interesujące.
+W tym celu wszyscy będą wspierać Twój film.
+W e-mailu dałem ci specjalny plik do następnego filmu.
+Słuchajcie, hejterzy, on próbuje nam pomóc, a nie przekrętowi.
+Nie wiem, jak bardzo ja i moi przyjaciele dziękuję za ten film.
+Kocham cię za ten film.
+Idź dalej, nie przestawaj.
+Pomogę Ci dotrzeć do subskrybentów 1M!
+Moi przyjaciele naprawili komputer przez ciebie.
+Niesamowity dowcip! Wyłączam komputer mojego wroga.
+Do hejterów: ZATRZYMAJ SIĘ NA NIM
+Do hejterów: GET TO WORK
+Nikt tego teraz nie zauważy dzięki przewodnikowi ukrywania obiektu
+Przestanę oglądać twoje filmy. Abonent utracił.
+Co to jest? To nie jest jasne.
+Ten film jest najgorszy!
+Wszyscy zgłaszają ten film!
+Moi przyjaciele są na ciebie wściekli!
+Kochankowie będą cię teraz za to nienawidzić.
+Twój przyjaciel będzie cię za to nienawidził.
+Ten dowcip zmusił mnie do rezygnacji z subskrypcji.
+Misja nieudana, Szacunek -, Subskrybent -
+Przestań robić tego rodzaju wideo !!!
+Wróć do pracy, twoje filmy są najgorsze!
+Przesądzamy o tym filmie.
+Aliasing {0} do {1} jest zabroniony.
+Błąd podczas próby odrzucenia powiadomienia: {0}
+Pokazuje wszystkie otrzymane powiadomienia
+Odrzuca powiadomienie
+Powiadomienie zostało pomyślnie odrzucone.
+Pakiety (przychodzące):
+Pakiety (wychodzące):
+Błędy w odebranych pakietach:
+Ogólne właściwości IPv6
+Ogólne właściwości IPv4
+Zdalnie wykonuje polecenie na zdalnym komputerze
+- Etap 0: Inicjalizacja systemu
+- Etap 1: Wykrywanie sprzętu
+- Etap 2: Wewnętrzne zarządzanie nazwą użytkownika
+- Etap 3: Wykrywanie modów i wygaszaczy ekranu
+- Etap 4: wywóz śmieci
+- Etap 5: Zaloguj się
+Przed wyrzucaniem elementów bezużytecznych: {0} bajtów
+Po wyrzuceniu elementów bezużytecznych: {0} bajtów
+Błąd uruchamiania RPC: {0}

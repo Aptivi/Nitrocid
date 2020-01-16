@@ -401,3 +401,142 @@ IPv4 bilgisi:
 IPv6 bilgisi:
 {0} bağdaştırıcısı IPv6'yı desteklemiyor. Devam ediyor...
 {0} bağdaştırıcısı IPv4'ü desteklemiyor. Prob başarısız oldu.
+Çekirdeğin geliştirme sürümünü çalıştırıyormuşsunuz gibi görünüyor. Yönleri görebildiğiniz halde, sık sık güncellenir ve hatalar getirebilir. Kararlı sürümde kalmanız önerilir.
+Seçtiğiniz dil iki varyant içeriyor. Birini seç:
+1. Harf çevirisi
+2. Çevrildi
+Seçiminizi yapın:
+Geçersiz seçim. Tekrar deneyin.
+Geçerli dizini {0} olarak ayarlama yetkiniz yok: {1}
+{0} izni başarısız oldu
+Belirttiğiniz yol çok uzun.
+{0} içinde listeleme yetkiniz yok: {1}
+CPU kontrol edilirken hata oluştu: {0}
+RAM kontrol edilirken hata oluştu: {0}
+HDD kontrol edilirken hata oluştu: {0}
+CPU: UYARI: Gelecekteki geliştirme taahhütlerinde SSE2 gerekli olacaktır.
+{0} hakkında bilgi almaya çalışırken döküm bilgi toplayıcısı çöktü: {1}
+Derleme tarihi {0} alınmaya çalışılırken hata oluştu: {1}
+MOTD / MAL ayarlanmaya çalışılırken hata oluştu: {0}
+MOTD / MAL almaya çalışırken hata oluştu: {0}
+{0} üzerinde boş bir başvuru istisnası var: {1}
+{0}: {1} üzerinde boş bir başvuru istisnası var - Yığın izleme:
+Geçersiz bir işlem nedeniyle ekran koruyucuyu başlatmaya çalışırken hata oluştu.
+Güvenli modda yeniden yüklemeye izin verilmiyor.
+Güvenli modda ayrıştırma modlarına izin verilmez.
+Tüm dizini boyut için veya yalnızca geçerli dizindeki dosyaları ayrıştırın.
+Bağlı tüm hata ayıklama aygıtlarını listeler.
+Ayrıştırma modunu ayarlamaya çalışırken hata oluştu. Değeri kontrol edip tekrar deneyin. Bu doğruysa, çekirdek hata ayıklaması etkinleştirildiğinde yığın izlemeye bakın.
+Başarıyla ayarlayın.
+Yol ne bir dosya ne de bir dizindir.
+Farklı dizin veya ad altında bir dosyanın başka bir kopyasını oluşturur.
+Dosyayı başka bir dizine taşır
+Dosyaları başka bir dizine veya farklı bir ada kopyalamak için
+Dosyaları başka bir dizine taşımak için
+{0} Eşleşmesi ({1}): {2}
+{0} Eşleşmesi: {1}
+Harcanan zaman: {0} milisaniye
+Üretici: {0}
+Model: {0}
+Kapasite: {0} ({1}, {2}, {3})
+Arayüz Türü: {0}
+Sürücü Numarası: {0}
+Önyükleme bayrağı: {0} ({1})
+Fiziksel bölüm: {0}
+Birincil bayrak: {0}
+Boyut: {0} GB
+Mantıksal bölüm: {0}
+Sıkıştırılmış: {0}
+İsim: {0}
+Dosya sistemi: {0}
+Kapasite: {0} GB ücretsiz {1} GB
+Tüm sürücülerdeki tüm mantıksal bölümleri listeleme.
+Tüm problanan sürücüleri listeler.
+Belirli bir sürücüdeki tüm problanan bölümleri (ve tüm sürücülerdeki tüm mantıksal bölümleri) listeler.
+MD5 veya SHA256'yı kullanarak dosya toplamlarını hesaplar.
+Sizi GitHub Wiki'ye götürür.
+Geçersiz şifreleme algoritması.
+Uzaktan hata ayıklamayı etkinleştirir veya devre dışı bırakır.
+Dosya sistemi başlatılıyor ...
+Kurulu sesleri alır
+Varsayılan sesi ayarlar
+Varsayılan sesi kullanarak dizenizi söyler
+Ses {0}: {1} ({2})
+Geçersiz ses.
+Ses seti
+Kelimeleri zamanında heceleyip yazamayacağınızı görün
+Matematiksel denklemleri zamanında çözüp çözemeyeceğinize bakın
+Yorumları sevmeye veya nefret etmeye yanıt verin.
+Birisi videonuza bu yorumu yaptıysa:
+Nasıl cevap verirdiniz?
+Geçersiz seçim. Bir sonraki yoruma gidiyoruz ...
+Sadece aşk yorumunu bildirdin!
+Sadece nefret yorumuna cevap verdin!
+Harika! {0} adlı kullanıcının yorumu bunun için kaldırılacak.
+Harika! {0} teşekkür ederiz.
+Çıkmak için "GetMeOut" yazın.
+Mükemmel hecelendi!
+Yanlış hecelendi.
+Mükemmel çözüldü!
+Yanlış çözüldü.
+{0} MB / {1} MB indirildi.
+İndirme işlemi tamamlandı.
+RPC zaten çalışıyor.
+{0} bağlantı noktasını kullanarak tüm adreslerde RPC dinleme.
+RPC başlatılıyor ...
+Bir SSH sunucusuna bağlanır.
+{0} için şifreyi girin:
+SSH Bağlantısı Kesildi.
+Synth dosyasını yükler ve oynatır.
+Komut dosyası {0} mevcut değil.
+Dosya, komut dosyası oluşturulmuş bir synth dosyası değil.
+Bir synth hattı incelenemedi.
+Boş dize belirtildi
+Kod sayfası ayarlanamıyor. Dil düzgün görüntülenmeyebilir.
+Hata ayıklama etkin değil.
+{0} artık varsayılan ekran koruyucusuna ayarlı değil.
+Teşekkürler! Bu ilginç.
+Herkes videonuzu bunun için destekleyecek.
+Bir sonraki videonuz için e-postanızdaki özel dosyayı verdim.
+Dinle, nefret edenler, aldatmaca değil, bize yardım etmeye çalışıyor.
+Bu video için sana ve arkadaşlarıma ne kadar teşekkür ettiğimi bilmiyorum.
+Bu video için seni seviyorum.
+Devam et, durma.
+1 milyon aboneye ulaşmanıza yardımcı olacağım!
+Arkadaşlarım senin yüzünden bilgisayarlarını tamir ettirdi.
+Harika şaka! Düşmanımın bilgisayarını kapattım.
+Nefretçilere: HIM'DEN NEFRETEN DUR
+Nefretçilere: İŞE GİT
+Nesne gizleme rehberiniz sayesinde bunu şimdi kimse fark etmeyecek
+Videolarınızı izlemeyi bırakacağım. Abone kayboldu.
+Bu nedir? Bu belli değil.
+Bu video en kötüsü!
+Herkes bu videoyu rapor etsin!
+Arkadaşlarım seninle öfkeli!
+Aşıklar şimdi bundan nefret edecekler.
+Arkadaşın bunun için senden nefret edecek.
+Bu şaka beni aboneliğimi iptal etti.
+Görev başarısız, Saygı -, Abone -
+Bu tür bir video yapmayı bırakın !!!
+İşinize geri dönün, videolarınız en kötüsü!
+Bu videoda önyargılar var.
+{0} ile {1} arasında takma ad yapmak yasaktır.
+Bildirimi reddetmeye çalışırken hata oluştu: {0}
+Alınan tüm bildirimleri gösterir
+Bir bildirimi kapatır
+Bildirim başarıyla reddedildi.
+Paketler (gelen):
+Paketler (giden):
+Alınan paketlerdeki hatalar:
+Genel IPv6 özellikleri
+Genel IPv4 özellikleri
+Uzak PC'ye uzaktan komut çalıştırır
+- Aşama 0: Sistem başlatma
+- Aşama 1: Donanım algılama
+- Aşama 2: Dahili kullanıcı adı yönetimi
+- Aşama 3: Modlar ve ekran koruyucular tespiti
+- Aşama 4: Çöp toplama
+- Aşama 5: Giriş
+Çöp toplanmadan önce: {0} bayt
+Çöp toplandıktan sonra: {0} bayt
+RPC başlatılırken hata oluştu: {0}

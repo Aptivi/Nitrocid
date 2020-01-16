@@ -401,3 +401,142 @@ IPv4 haqida ma'lumot:
 IPv6 haqida ma'lumot:
 {0} adapteri IPv6-ni qo'llab-quvvatlamaydi. Davomi ...
 {0} adapteri IPv4-ni qo'llab-quvvatlamaydi. Tekshiruv amalga oshmadi.
+Siz yadro dasturini ishlab chiqayotganga o'xshaysiz. Siz tomonlarini ko'rishingiz mumkin bo'lsa-da, u tez-tez yangilanadi va xatolarni ko'rsatishi mumkin. Barqaror versiyada qolish tavsiya etiladi.
+Siz tanlagan tilda ikkita variant mavjud. Birini tanlang:
+1. Tarjima qilingan
+2. Tarjima qilingan
+O'zingizning tanlovingizni tanlang:
+Noto‘g‘ri tanlov. Qayta urinib ko'ring.
+Sizda joriy katalogni {0}: {1} ga o'rnatish huquqi mavjud emas.
+{0} ruxsati amalga oshmadi
+Siz ko'rsatgan yo'l juda uzun.
+Sizda {0}: {1} ro'yxatiga kirish huquqi yo'q.
+CPU-ni tekshirishda xato: {0}
+Operativ xotirani tekshirishda xato: {0}
+HDD-ni tekshirishda xato: {0}
+CPU: DIQQAT: SSE2 kelajakdagi ishlab chiqishda talab qilinadi.
+Axlat yig'ish mashinasi {0}: {1} haqida ma'lumot olish paytida qulab tushdi.
+Jadvalni yig'ish vaqtini olishda xato {0}: {1}
+MOTD / MAL o'rnatishda xato: {0}
+MOTD / MAL olishda xato: {0}
+{0}: {1} uchun null namunaviy istisno mavjud
+{0}: {1} - null namunaviy istisno mavjud - Stack izi:
+Noto‘g‘ri operatsiya tufayli ekran saqlagichini ishga tushirishda xatolik yuz berdi.
+Xavfsiz rejimda qayta yuklashga ruxsat berilmagan.
+Xavfsiz rejimda sintaktik tahlil qilish taqiqlangan.
+Butun o'lcham uchun katalogni yoki faqat mavjud fayllarni tahlil qiling.
+Barcha nosozliklarni tuzatish moslamalari ro'yxati.
+Tuzatish rejimini o'rnatishda xatolik yuz berdi. Qiymatni tekshiring va qaytadan urining. Agar bu to'g'ri bo'lsa, yadroviy disk raskadrovka yoqilganda stack iziga qarang.
+Muvaffaqiyatli o'rnatildi.
+Yo'l na fayl, na katalog emas.
+Boshqa katalog yoki nom ostida faylning boshqa nusxasini yaratadi.
+Faylni boshqa katalogga ko'chiradi
+Fayllarni boshqa katalogga yoki boshqa nomga nusxalash uchun
+Fayllarni boshqa katalogga o'tkazish uchun
+Moslik {0} ({1}): {2}
+Moslik {0}: {1}
+Olingan vaqt: {0} millisekundlar
+Ishlab chiqaruvchi: {0}
+Model: {0}
+Imkoniyatlar: {0} ({1}, {2}, {3})
+Interfeys turi: {0}
+Disk raqami: {0}
+Boot bayrog'i: {0} ({1})
+Jismoniy bo'lim: {0}
+Asosiy bayroq: {0}
+Hajmi: {0} GB
+Mantiqiy qism: {0}
+Siqilgan: {0}
+Ism: {0}
+Fayl tizimi: {0}
+Sig'imi: {0} GB bepul {1} ​​GB
+Barcha disklardagi barcha mantiqiy bo'limlarni ro'yxati.
+Barcha tekshirilgan disklarning ro'yxati.
+Muayyan diskdagi barcha tekshirilgan bo'limlarni (va barcha drayvlardagi barcha mantiqiy bo'limlarni) ro'yxati.
+MD5 yoki SHA256 yordamida fayl yig'indisini hisoblaydi.
+Sizni bizning GitHub Wiki-ga olib boradi.
+Shifrlash algoritmi noto‘g‘ri.
+Masofaviy tuzatish dasturini yoqadi yoki o‘chiradi.
+Fayl tizimini ishga tushirmoqda ...
+O'rnatilgan ovozlarni qabul qiladi
+Birlamchi ovozni o'rnatadi
+Odatiy ovozdan foydalanib, sizning simlaringizni gapiradi
+Ovoz {0}: {1} ({2})
+Noto'g'ri ovoz.
+Ovoz to'plami
+Agar so'zlarni o'z vaqtida yozsangiz, ko'ring
+Matematik tenglamalarni o'z vaqtida echishingiz mumkinligini ko'rib chiqing
+Sevgi yoki nafrat sharhlariga javob bering.
+Agar kimdir sizning videongizga ushbu fikrni bildirgan bo'lsa:
+Siz bunga qanday javob bergan bo'lar edingiz?
+Noto‘g‘ri tanlov. Keyingi sharhga o'tilmoqda ...
+Siz shunchaki sevgi izohini xabar qildingiz!
+Siz shunchaki nafrat sharhiga javob yozdingiz!
+Ajoyib! Buning uchun {0} ning sharhi olib tashlanadi.
+Ajoyib! {0} rahmat.
+Chiqish uchun "GetMeOut" deb yozing.
+Ajoyib yozildi!
+Noto'g'ri yozilgan.
+Zo'r hal qilindi!
+Noto'g'ri hal qilindi.
+{0} MB {1} MB yuklab olindi.
+Yuklab olish tugallandi.
+RPC allaqachon ishlamoqda.
+{0} portidan foydalanib, barcha manzillarda RPC tinglash.
+RPC ishga tushirilmoqda ...
+SSH serveriga ulanadi.
+{0} uchun parolni kiriting:
+SSH uzildi.
+Synth faylini yuklaydi va uni o'ynaydi.
+Skriptlangan {0} fayli mavjud emas.
+Fayl skript qilingan sintaktik fayl emas.
+Sint chizig'ini tekshirib bo'lmadi.
+Bo‘sh qator ko‘rsatilgan
+Kod sahifasini o‘rnatib bo‘lmadi. Til to'g'ri ko'rsatilmasligi mumkin.
+Nosozliklarni tuzatish yoqilmagan.
+{0} endi standart ekran saqlagichiga o'rnatilmagan.
+Rahmat! Bu qiziq.
+Buning uchun hamma sizning videongizni qo'llab-quvvatlaydi.
+Men sizga keyingi videongiz uchun elektron pochtangizdagi maxsus faylni berdim.
+Eshiting, nafratlanuvchilar, u hünirini emas, balki bizga yordam berishga harakat qilmoqda.
+Men va do'stlarim ushbu video uchun sizga qancha minnatdorman.
+Ushbu video uchun sizni yaxshi ko'raman.
+Davom eting, to'xtamang.
+Men sizga 1M abonentlarga erishishingizga yordam beraman!
+Do'stlarim sizning kompyuteringizni o'rnatdilar.
+Ajoyib hazil! Dushmanimning kompyuterini o'chirib qo'ydim.
+Xush ko'ruvchilarga: UNING HATINI TO'PLASh
+Dushmanlarga: ISHGA OLING
+Ob'ektni yashirish bo'yicha ko'rsatma tufayli hozir hech kim buni sezmaydi
+Videolaringizni ko'rishni to'xtataman. Abonent yo'qoldi.
+Bu nima? Bu aniq emas.
+Bu video eng yomoni!
+Ushbu video haqida hamma xabar beradi!
+Do'stlarim sizdan g'azabda!
+Sevishganlar endi bu uchun sizni yomon ko'radilar.
+Buning uchun do'stingiz sizni yomon ko'radi.
+Bu hiyla-nayrang meni sizning obunangizni bekor qildi.
+Missiya bajarilmadi, hurmat -, obuna -
+Bunday video qilishni to'xtating !!!
+Ishingizga qaytib boring, videolaringiz eng yomoni!
+Ushbu videoga nisbatan noto'g'ri fikrdamiz.
+{0} ni {1} ga ajratish taqiqlangan.
+Bildirishnomani bekor qilishda xato: {0}
+Barcha qabul qilingan bildirishnomalarni ko'rsatadi
+Xabarnomani bekor qiladi
+Bildirishnoma muvaffaqiyatli olib tashlandi.
+Paketlar (kiruvchi):
+Paketlar (chiquvchi):
+Qabul qilingan paketlardagi xatolar:
+Umumiy IPv6 xususiyatlari
+Umumiy IPv4 xususiyatlari
+Masofadan kompyuterga masofadan turib buyruqni bajaradi
+- 0 bosqich: tizimni ishga tushirish
+- 1 bosqich: Uskunani aniqlash
+- 2-bosqich: Foydalanuvchi nomini boshqarish
+- 3-bosqich: Modlar va ekranni aniqlash
+- 4 bosqich: axlat yig'ish
+- 5 bosqich: Kirish
+Axlat yig'ishdan oldin: {0} bayt
+Axlat yig'ilgandan keyin: {0} bayt
+RPC-ni ishga tushirishda xato: {0}

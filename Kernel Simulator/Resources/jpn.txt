@@ -400,3 +400,142 @@ IPv4 jōhō:
 IPv6 jōhō:
 Adaputā {0} wa IPv6 o sapōto shite imasen. Zokkō shite imasu...
 Adaputā {0} wa IPv4 o sapōto shite imasen. Purōbu ni shippai shimashita.
+Kāneru no kaihatsu bājon o jikkō shite iru yōdesu. Asupekuto o miru koto ga dekimasuga, hinpan ni kōshin sa re, bagu ga hassei suru kanōsei ga arimasu. Anteihan o shiyō suru koto o o susume shimasu.
+Sentaku shita gengo ni wa 2tsu no barianto ga fukuma rete imasu. Hitotsu sentaku shite kudasai: 
+1. On'yaku
+2. Hon'yaku-zumi
+anata no sentaku o sentaku shite kudasai:
+Mukōna sentaku. Sai shikō.
+Genzai no direkutori o {0} ni settei suru kengen ga arimasen: {1}
+Kyoka {0} ga shippai shimashita
+shitei shita pasu ga naga sugimasu.
+{0} Ni risuto suru koto wa kyoka sa rete imasen: {1}
+CPU chekku-chū no erā: {0}
+Ramu chekku-chū no erā: {0}
+Hado chekku-chū no erā: {0}
+CPU: Keikoku: SSE2 wa kongo no kaihatsu komitto de hitsuyō ni narimasu.
+{0} Ni kansuru jōhō o shutoku shiyou to shita toki ni danpu jōhō shūshū puroguramu ga kurasshu shimashita: {1}
+Asenburi {0} no konpairu-bi o shutoku-chū ni erā ga hassei shimashita: {1}
+MOTD/MAL o settei shiyou to shita toki no erā: {0}
+MOTD/MAL o shutoku shiyou to shita toki no erā: {0}
+{0}:{1} Ni null sanshō reigai ga arimasu
+{0}:{1} Ni null sanshō reigai ga arimasu - sutakkutorēsu:
+Mukōna sōsa no tame, sukurīnsēbā o kaishi shiyou to shita toki ni erā ga hassei shimashita.
+Sēfumōdode wa sai yomikomi wa kyoka sa rete imasen.
+Mod no kaiseki wa sēfumōdode wa kyoka sa rete imasen.
+Direkutori zentai no saizu o kaiseki suru ka, genzai no fairunomi o kaiseki shimasu.
+Setsuzoku sa rete iru subete no debaggudebaisu o ichiran hyōji shimasu.
+Kaiseki mōdo o settei shiyou to shita toki ni erā ga hassei shimashita. Atai o kakunin shite, sai shikō shite kudasai. Kore ga tadashī baai wa, kānerudebaggu ga yūkō ni natte iru toki ni sutakkutorēsu o sanshō shite kudasai.
+Seijō ni settei sa remashita.
+Pasu wa fairu demo direkutori demo arimasen.
+Betsu no direkutori matawa namae de fairu no betsu no kopī o sakusei shimasu.
+Fairuwo-betsu no direkutori ni idō shimasu
+fairuwo-betsu no direkutori matawa betsu no namae ni kopī suru ni wa
+fairuwo-betsu no direkutori ni idō suru ni wa
+Itchi {0}({1}): {2}
+Itchi {0}: {1}
+Tsuiyasa reta jikan: {0} Miri
+byō mēkā: {0}
+Moderu: {0}
+Yōryō: {0}({1}, {2}, {3})
+Intāfeisutaipu: {0}
+Doraibu bangō: {0}
+Būtofuragu: {0}({1})
+Butsuri pātishon: {0}
+Puraimarifuragu: {0}
+Saizu: {0} GB
+ronri kukaku: {0}
+Asshuku-zumi: {0}
+Namae: {0}
+Fairu shisutemu: {0}
+Yōryō: {1} GB kara {0} GB muryō
+subete no doraibu-jō no subete no ronri pātishon o risuto shimasu.
+Purōbu sa reta subete no doraibu o risuto shimasu.
+Tokutei no doraibu-jō no purōbu sa reta subete no pātishon (oyobi subete no doraibu-jō no subete no ronri pātishon) o ichiran hyōji shimasu.
+MD5 matawa SHA256 o shiyō shite fairu no gōkei o keisan shimasu.
+GitHub Wiki ni idō shimasu.
+Angō-ka arugorizumu ga mukōdesu.
+Rimōtodebaggu o yūkō matawa mukō ni shimasu.
+Fairu shisutemu o shokka shite imasu...
+Insutōru sa reta onsei o shutoku shimasu
+deforuto no onsei o settei shimasu
+deforuto no onsei o shiyō shite mojiretsu o hanashimasu
+onsei {0}: {1}({2})
+Onsei ga mukōdesu.
+Onsei setto
+jikandōrini tango o tadashiku tsudzureru ka dō ka o kakunin suru sūgaku no hōteishiki o
+jikandōrini tokeru ka dō ka o kakunin suru komento o
+sukika kirai ka ni ōjite kudasai.
+Anata no dōga ni darekaga kono komento o shita baai:
+Dono yō ni taiō shimasu ka?
+Mukōna sentaku. Tsugi no komento ni iku...
+Ai no komento o hōkoku shimashita!
+Zōo no komento ni henshin shimashita!
+Sugoi! {0} No komento wa sakujo sa remasu.
+Sugoi! {0} Wa kansha shimasu.
+`GetMeOut' o kakikonde shūryō shimasu.
+Kanpekina superu!
+Superu ga machigatte imasu.
+Kanzen ni kaiketsu shimashita!
+Ayamatte kaiketsu shimashita.
+{0} MB no {1} MB ga daunrōdo sa remashita.
+Daunrōdo ga kanryō shimashita.
+RPC wa sudeni jikkō-chūdesu.
+Pōto {0} o shiyō suru subete no adoresu de rissun shite iru RPC.
+RPC o kaishi shite imasu...
+SSH sābā ni setsuzoku shimasu.
+{0} No pasuwādo o nyūryoku shite kudasai:
+SSH ga setsudan sa remashita.
+Shinsefairu o rōdo shite saisei shimasu.
+Sukuriputo fairu {0} wa sonzai shimasen.
+Fairu wa, sukuriputo-ka sa reta shinsefairude wa arimasen.
+Shinserain no purōbu ni shippai shimashita.
+Sora no mojiretsu ga shitei sa remashita
+kōdopēji o settei dekimasen. Gengo ga tadashiku hyōji sa renai baai ga arimasu.
+Debaggu wa yūkō ni natte imasen.
+{0} Wa deforuto no sukurīnsēbā ni settei sa renaku narimashita.
+Arigatō! Korehaomoshiroi.
+Daremoga kono tame ni anata no bideo o sapōto shimasu.
+Tsugi no dōga no tame ni, mēru de tokubetsuna fairu o teikyō shimashita.
+Kiite,-girai, kare wa sagide wa naku, watashitachi o tasukeyou to shite iru.
+Watashi to watashi no yūjin ga kono bideo ni dorehodo kansha shite iru ka wakaranai.
+Kono bideo de anata o aishiteimasu.
+Tsudzukete, tomaranai de.
+100 Man-ri no sabusukuraibā ni rīchi dekiru yō otetsudai shimasu!
+Watashi no yūjin wa anata no tame ni konpyūtā o shūri shimashita.
+Subarashī itazura! Teki no PC o shattodaun shimasu.
+Kirainahito e: Kare ni tsukiau no o yameru
+kirainahito e: Shigoto
+e obujekuto hi hyōji gaido no okage de, kore ni dare mo kidzukanaideshou
+anata no dōga no shichō o teishi shimasu. Kanyū-sha ga ushinawa remashita.
+Korehanandesuka? Kore wa fumeidesu.
+Kono bideo wa saiakudesu!
+Daremoga kono bideo o hōkoku shimasu!
+Watashi no yūjin wa anata ni gekido shite imasu!
+Aikō-ka wa kore de anata o kiraimasu.
+Anata no yūjin wa kore de anata o kiraimasu.
+Kono itazura ni yori, watashi wa anata o taikai sa semashita.
+Misshon shippai, sonkei -
+kanyū-sha - kono tane no bideo no sakusei o yamete kudasai!!!
+Anata no shigoto ni modotte kudasai, anata no bideo wa saiakudesu!
+Watashitachiha kono bideo ni henken o daite imasu.
+{0} Kara {1} e no eiriasu wa kinshi sa rete imasu.
+Tsūchi o haki shiyou to shite erā ga hassei shimashita: {0}
+Jushin shita subete no tsūchi o hyōji shimasu
+tsūchi o haki shimasu
+tsūchi wa seijō ni kyakka sa remashita.
+Paketto (inbaundo):
+Paketto (sōshin):
+Jushin paketto no erā:
+Ippantekina IPv6 puropati
+ippantekina IPv4 puropati
+rimōto PC e no komando o rimōto de jikkō shimasu
+- sutēji 0: Shisutemu no shokka
+- sutēji 1: Hādou~ea kenshutsu
+- sutēji 2: Naibu yūzā-mei kanri
+- sutēji 3: Mod to sukurīnsēbā no kenshutsu
+- sutēji 4: Gabējikorekushon
+- sutēji 5: Roguin
+Gabējikorekushon no mae: {0} Baito
+gabējikorekushon-go: {0} Baito
+RPC no kidō erā: {0}

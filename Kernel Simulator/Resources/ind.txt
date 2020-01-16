@@ -401,3 +401,142 @@ ipv4 jaanakaaree:
 ipv6 jaanakaaree:
 edaaptar {0} ipv6 ka samarthan nahin karata hai. jaaree hai ...
 edaaptar {0} ipv4 ka samarthan nahin karata hai. jaanch viphal rahee.
+aisa lagata hai ki aap karnel ka vikaas sanskaran chala rahe the. jab aap pahaluon ko dekh sakate hain, to yah aksar adyatan kiya jaata hai aur bag ka parichay de sakata hai. yah anushansa kee jaatee hai ki aap sthir sanskaran par rahen.
+aapake dvaara chunee gaee bhaasha mein do prakaar hote hain. ek chuno:
+1. anoodit
+2. anoodit
+apanee pasand ka chayan karen:
+amaany vikalp. punah prayaas karen.
+aap vartamaan nirdeshika ko {0}: {1} set karane ke lie anadhikrt hain
+anumati {0} viphal rahee
+aapake dvaara nirdisht path bahut lamba hai.
+aap {0}: {1} mein soocheebaddh karane ke lie anadhikrt hain
+chpu kee jaanch karate samay truti: {0}
+ram kee jaanch karate samay truti: {0}
+hdd kee jaanch karate samay truti: {0}
+seepeeyoo: chetaavanee: bhavishy ke vikaas ke kaamon mein ssai2 kee aavashyakata hogee.
+{0}: {1} ke baare mein jaanakaaree praapt karane ka prayaas karane par damp jaanakaaree ekatrit karane vaala durghatanaagrast ho gaya
+asembalee ka sankalan dinaank {0} praapt karane ka prayaas karate samay truti: {1}
+motd / mal: {0} set karane ka prayaas karate samay truti
+motd / mal paane ke lie prayaas karate samay truti: {0}
+{0}: {1} par ek shoony sandarbh apavaad hai
+{0}: {1} par ek shoony sandarbh apavaad hai - staik tres:
+amaany opareshan ke kaaran skreenasevar ko praarambh karane ka prayaas karate samay truti.
+surakshit mod mein riloding kee anumati nahin hai.
+surakshit mod par paarsing mod kee anumati nahin hai.
+aakaar ke lie pooree nirdeshika ya vartamaan mein keval phailen paars karen.
+sabhee jude dibaging upakaranon kee soochee deta hai.
+paars mod set karane ka prayaas karate samay truti. maan kee jaanch karen aur pun: prayaas karen. yadi yah sahee hai, to karnel deebaging saksham hone par staik tres dekhen.
+saphalataapoorvak set karen.
+raasta na to phail hai aur na hee daayarektaree.
+alag nirdeshika ya naam ke tahat ek fail kee ek aur pratilipi banaata hai.
+fail ko kisee any nirdeshika mein le jaata hai
+failon ko kisee any nirdeshika ya bhinn naam par kopee karane ke lie
+failon ko kisee any nirdeshika mein le jaane ke lie
+maich {0} ({1}): {2}
+maich {0}: {1}
+samay vyateet: {0} mileesekand
+nirmaata: {0}
+modal: {0}
+kshamata: {0} ({1}, {2}, {3})
+intarafes prakaar: {0}
+draiv nambar: {0}
+boot jhanda: {0} ({1})
+bhautik vibhaajan: {0}
+praathamik dhvaj: {0}
+aakaar: {0} jeebee
+taarkik vibhaajan: {0}
+sampeedit: {0}
+naam: {0}
+phail sistam: {0}
+kshamata: {0} jeebee {1} jeebee se mukt
+sabhee draiv par sabhee taarkik vibhaajan soocheebaddh karana.
+sabhee jaanch kee gaee draiv ko soocheebaddh karata hai.
+ek vishisht draiv par sabhee jaanch kie gae vibhaajan ko soocheebaddh karata hai (aur sabhee draiv par sabhee taarkik vibhaajan).
+md5 ya sha256 ka upayog karake fail rakam kee ganana karata hai.
+aapako hamaare github wiki mein le jaata hai.
+amaany enkripshan elgorithm.
+doorasth deebaging ko saksham ya aksham karata hai.
+fail sistam praarambh kar raha hai ...
+sthaapit aavaaj ho jaata hai
+difolt aavaaj set karata hai
+difolt aavaaj ka upayog karake apanee string bolata hai
+aavaaj {0}: {1} ({2})
+avaidh aavaaj.
+aavaaj set
+dekhen ki kya aap shabdon ko samay par sahee dhang se vartanee kar sakate hain
+dekhen ki kya aap samay par ganiteey sameekaran hal kar sakate hain
+pyaar ya napharat bharee tippaniyon ka javaab den.
+agar kisee ne aapake veediyo par yah tippanee kee hai:
+aap kaise pratikriya denge?
+amaany chayan. agalee tippanee par ja rahe hain ...
+aapane sirph prem tippanee kee soochana dee hai!
+aapane sirph abhadr tippanee ka javaab diya!
+mahaan! {0} kee tippanee ko isake lie hata diya jaega.
+mahaan! {0} aapake dhanyavaad kee saraahana karenge.
+baahar nikalane ke lie "gaitmaiout" likhen.
+pooree tarah se praayojit!
+galat tareeke se praayojit.
+pooree tarah se hal!
+galat tareeke se hal kiya.
+{0} mb ka {1} mb daunalod kiya gaya.
+daunalod poora kar liya hai.
+rpch pahale se chal rahee hai.
+port {0} ka upayog karake sabhee pate par aarapeesee sun raha hai.
+aarapeesee shuroo ...
+ek ssh sarvar se judata hai.
+{0} ke lie paasavard darj karen:
+ssh diskanekt kiya gaya.
+sanshleshan fail ko lod karata hai aur ise khelata hai.
+skript kee gaee fail {0} maujood nahin hai.
+phail ek skripted sinth phail nahin hai.
+ek sanshleshan lain kee jaanch karane mein viphal.
+khaalee string nirdisht
+kodaprshth set karane mein asamarth. ho sakata hai ki bhaasha theek se pradarshit na ho.
+dibaging saksham nahin hai.
+{0} ab difolt skreenasevar par set nahin hai.
+dhanyavaad! yah dilachasp hai.
+isake lie har koee aapake veediyo ka samarthan karega.
+mainne aapako apane agale veediyo ke lie apane ee-mel mein vishesh fail dee hai.
+suno, ghrna karo, vah hamaaree madad karane kee koshish kar raha hai, ghotaala nahin.
+mujhe nahin pata ki main aur mere dost is veediyo ke lie aapaka kitana dhanyavaad karate hain.
+aaee lav yoo is veediyo ke lie.
+chalate raho, rukana mat.
+main aapako 1m graahakon tak pahunchane mein madad karoonga!
+mere doston ne aapake kaaran aapaka kampyootar theek kar diya.
+bahut badhiya sharaarat! mainne apane dushman ke peesee ko band kar diya.
+napharat karane vaalon ke lie: him par napharat karana band karo
+napharat karane vaalon ke lie: kaam karane ke lie jao
+kisee ko bhee yah ab aapakee vastu chhupa gaid ke lie dhanyavaad notis hoga
+main aapake veediyo dekhana band kar doonga. sabaskraibar haar gaya.
+yah kya hai? yah aspasht hai.
+yah veediyo sabase kharaab hai!
+har koee is veediyo kee riport karata hai!
+mere dost aapase naaraaj hain!
+premee ab aapako isake lie napharat karenge.
+aapaka mitr isake lie aapase ghrna karega.
+is praink ne mujhe aapake lie anasabsakraib kar diya.
+mishan viphal, sammaan -, sabsakraibar -
+is tarah ke veediyo banaana band karo !!!
+apanee naukaree par vaapas jao, aapake veediyo sabase kharaab hain!
+ham is veediyo par poorvaagrah karate hain.
+aliasing {0} se {1} varjit hai.
+soochana ko khaarij karane kee koshish mein truti: {0}
+sabhee praapt soochanaen dikhaata hai
+ek adhisoochana ko khaarij karata hai
+adhisoochana saphalataapoorvak khaarij kar dee gaee.
+paiket (inabaund):
+paiket (aautabaund):
+praapt paiket mein trutiyaan:
+saamaany ipv6 gun
+saamaany ipv4 gun
+doorasth peesee par doorasth roop se ek kamaand nishpaadit karata hai
+- stej 0: sistam inishiyalaijeshan
+- stej 1: haardaveyar ka pata lagaana
+- stej 2: aantarik upayogakarta naam prabandhan
+- stej 3: mod aur skreenasevar ka pata lagaana
+- stej 4: kachara sangrah
+- stej 5: log in karen
+kachara sangrahan se pahale: {0} baits
+kachara sangrah ke baad: {0} baits
+rpch shuroo karane mein truti: {0}

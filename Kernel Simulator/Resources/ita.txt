@@ -401,3 +401,142 @@ Informazioni IPv4:
 Informazioni IPv6:
 L'adattatore {0} non supporta IPv6. Proseguendo ...
 L'adattatore {0} non supporta IPv4. Sonda non riuscita.
+Sembra che tu stia eseguendo la versione di sviluppo del kernel. Mentre puoi vedere gli aspetti, viene aggiornato frequentemente e potrebbe introdurre bug. Si consiglia di rimanere nella versione stabile.
+La lingua che hai selezionato contiene due varianti. Seleziona uno:
+1. Traslitterato
+2. Tradotto
+Seleziona la tua scelta:
+Scelta non valida. Riprova.
+Non sei autorizzato a impostare la directory corrente su {0}: {1}
+Autorizzazione {0} non riuscita
+Il percorso che hai specificato è troppo lungo.
+Non sei autorizzato a elencare in {0}: {1}
+Errore durante il controllo della CPU: {0}
+Errore durante il controllo della RAM: {0}
+Errore durante il controllo dell'HDD: {0}
+CPU: AVVERTENZA: SSE2 sarà richiesto nei futuri commit di sviluppo.
+Il raccoglitore di informazioni sul dump si è arrestato in modo anomalo durante il tentativo di ottenere informazioni su {0}: {1}
+Errore durante il tentativo di ottenere la data di compilazione dell'assembly {0}: {1}
+Errore durante il tentativo di impostare MOTD / MAL: {0}
+Errore durante il tentativo di ottenere MOTD / MAL: {0}
+Esiste un'eccezione di riferimento null su {0}: {1}
+Esiste un'eccezione di riferimento null su {0}: {1} - Traccia stack:
+Errore durante il tentativo di avvio dello screensaver, a causa di un'operazione non valida.
+Ricarica non consentita in modalità provvisoria.
+Mod di analisi non consentite in modalità provvisoria.
+Analizzare l'intera directory per dimensione o solo i file in quello corrente.
+Elenca tutti i dispositivi di debug collegati.
+Errore durante il tentativo di impostare la modalità di analisi. Verifica il valore e riprova. Se questo è corretto, vedere la traccia dello stack quando il debug del kernel è abilitato.
+Impostato correttamente.
+Il percorso non è né un file né una directory.
+Crea un'altra copia di un file con directory o nome diversi.
+Sposta un file in un'altra directory
+Per copiare file in un'altra directory o nome diverso
+Per spostare i file in un'altra directory
+Corrispondenza {0} ({1}): {2}
+Corrispondenza {0}: {1}
+Tempo trascorso: {0} millisecondi
+Produttore: {0}
+Modello: {0}
+Capacità: {0} ({1}, {2}, {3})
+Tipo di interfaccia: {0}
+Numero dell'unità: {0}
+Flag di avvio: {0} ({1})
+Partizione fisica: {0}
+Flag principale: {0}
+Dimensione: {0} GB
+Partizione logica: {0}
+Compresso: {0}
+Nome: {0}
+File system: {0}
+Capacità: {0} GB libero da {1} GB
+Elenco di tutte le partizioni logiche su tutte le unità.
+Elenca tutte le unità sondate.
+Elenca tutte le partizioni rilevate su un'unità specifica (e tutte le partizioni logiche su tutte le unità).
+Calcola le somme dei file utilizzando MD5 o SHA256.
+Ti porta al nostro GitHub Wiki.
+Algoritmo di crittografia non valido.
+Abilita o disabilita il debug remoto.
+Inizializzazione del filesystem ...
+Ottiene le voci installate
+Imposta la voce predefinita
+Pronuncia la tua stringa usando la voce predefinita
+Voce {0}: {1} ({2})
+Voce non valida
+Voice set
+Vedi se riesci a pronunciare correttamente le parole in tempo
+Vedi se riesci a risolvere le equazioni matematiche in tempo
+Rispondi ai commenti di amore o odio.
+Se qualcuno ha fatto questo commento al tuo video:
+Come risponderesti?
+Selezione non valida Andando al prossimo commento ...
+Hai appena segnalato il commento d'amore!
+Hai appena risposto al commento di odio!
+Grande! Il commento di {0} verrà rimosso per questo.
+Grande! {0} apprezzerà i tuoi ringraziamenti.
+Scrivi "GetMeOut" per uscire.
+Scritto perfettamente!
+Ortografia errata.
+Risolto perfettamente!
+Risolto in modo errato
+{0} MB di {1} MB scaricati.
+Download completato.
+RPC è già in esecuzione.
+Ascolto RPC su tutti gli indirizzi utilizzando la porta {0}.
+Avvio di RPC ...
+Si collega a un server SSH.
+Inserisci la password per {0}:
+SSH disconnesso.
+Carica il file synth e lo riproduce.
+Il file con script {0} non esiste.
+Il file non è un file synth con script.
+Impossibile sondare una linea synth.
+Specifica stringa vuota
+Impossibile impostare la tabella codici. La lingua potrebbe non essere visualizzata correttamente.
+Debug non abilitato.
+{0} non è più impostato sullo screensaver predefinito.
+Grazie! Questo è interessante.
+Tutti supporteranno il tuo video per questo.
+Ti ho dato il file speciale nella tua e-mail per il tuo prossimo video.
+Ascolta, odia, sta cercando di aiutarci, non di imbrogliare.
+Non so quanto io e i miei amici vi ringraziamo per questo video.
+Ti amo per questo video.
+Continua, non fermarti.
+Ti aiuterò a raggiungere gli abbonati 1M!
+I miei amici hanno riparato il loro computer grazie a te.
+Fantastico scherzo! Spengo il PC del mio nemico.
+Per gli odiatori: smettere di odiare su di lui
+Per gli odiatori: mettersi al lavoro
+Nessuno lo noterà ora grazie alla guida per nascondere gli oggetti
+Smetterò di guardare i tuoi video. Abbonato perso.
+Cos'è questo? Questo non è chiaro.
+Questo video è il peggiore!
+Tutti segnalano questo video!
+I miei amici sono furiosi con te!
+Gli amanti ora ti odieranno per questo.
+Il tuo amico ti odierà per questo.
+Questo scherzo mi ha fatto annullare l'iscrizione a te.
+Missione fallita, Rispetto -, Abbonato -
+Smetti di fare questo tipo di video !!!
+Torna al tuo lavoro, i tuoi video sono i peggiori!
+Preghiamo per questo video.
+L'aliasing da {0} a {1} è vietato.
+Errore durante il tentativo di chiudere la notifica: {0}
+Mostra tutte le notifiche ricevute
+Respinge una notifica
+Notifica respinta correttamente.
+Pacchetti (in entrata):
+Pacchetti (in uscita):
+Errori nei pacchetti ricevuti:
+Proprietà generali IPv6
+Proprietà generali di IPv4
+Esegue da remoto un comando sul PC remoto
+- Fase 0: inizializzazione del sistema
+- Fase 1: rilevamento dell'hardware
+- Fase 2: gestione interna del nome utente
+- Fase 3: rilevamento di mod e screensaver
+- Fase 4: raccolta dei rifiuti
+- Fase 5: accesso
+Prima della garbage collection: {0} byte
+Dopo la garbage collection: {0} byte
+Errore durante l'avvio di RPC: {0}

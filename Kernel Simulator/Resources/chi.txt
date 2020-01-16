@@ -401,3 +401,142 @@ IPv4 xìnxī:
 IPv6 xìnxī:
 Shìpèiqì {0} bù zhīchí IPv6. Jìxù...
 Shìpèiqì {0} bù zhīchí IPv4. Tàncè shībài.
+Kàn qǐlái nín zhèngzài yùnxíng nèihé de kāifā bǎnběn. Suīrán nín kěyǐ kàn dào gège fāngmiàn, dànshì tā jīngcháng gēngxīn, bìngqiě kěnéng huì yǐnrù cuòwù. Jiànyì nín shǐyòng wěndìng bǎnběn.
+Nín xuǎnzé de yǔyán bāohán liǎng zhǒng biàn tǐ. Xuǎnzé yīgè:
+1. Yīnyì
+2. Fānyì
+xuǎnzé nín de xuǎnzé:
+Xuǎnzé wúxiào. Zài shì yīcì.
+Nín wú quán jiāng dāngqián mùlù shèzhì wèi {0}:{1}
+Quánxiàn {0} shībài
+nín zhǐdìng de lùjìng tài zhǎng.
+Nín wú quán zài {0} zhōng liè chū:{1}
+Jiǎnchá CPU shí chūcuò:{0}
+Jiǎnchá RAM shí chūcuò:{0}
+Jiǎnchá yìngpán shí chūcuò:{0}
+CPU: Jǐnggào: Zài jiānglái de kāifā tíjiāo zhōng jiàng xūyào SSE2.
+Chángshì huòqǔ yǒuguān {0}:{1} De xìnxī shí, zhuǎn chǔ xìnxī shōují qì bēngkuì
+chángshì huòqǔ chéngxù jí {0} de biānyì rìqí shí chūcuò:{1}
+Chángshì shèzhì MOTD/ MAL shí chūcuò:{0}
+Chángshì huòqǔ MOTD/ MAL shí chūcuò:{0}
+{0}:{1} Shàng cúnzài kōng yǐnyòng yìcháng
+{0}:{1} Shàng cúnzài kōng yǐnyòng yìcháng-duīzhàn gēnzōng:
+Chángshì qǐdòng píngmù bǎohù chéngxù shí chūcuò, yīnwèi cāozuò wúxiào.
+Zài ānquán móshì xià bù yǔnxǔ chóngxīn jiāzài.
+Zài ānquán móshì xià bù yǔnxǔ jiěxī mod.
+Jiěxī zhěnggè mùlù yǐ huòqǔ dàxiǎo huò jǐn jiěxī dāngqián mùlù zhōng de wénjiàn.
+Liè chū suǒyǒu liánjiē de tiáoshì shèbèi.
+Chángshì shèzhì jiěxī móshì shí chūcuò. Jiǎnchá gāi zhí, ránhòu chóng shì. Rúguǒ zhèngquè, qǐng zài qǐyòng nèihé tiáoshì shí chákàn duīzhàn gēnzōng.
+Shèzhì chénggōng.
+Gāi lùjìng jì bùshì wénjiàn yě bùshì mùlù.
+Zài qítā mùlù huò míngchēng xià chuàngjiàn wénjiàn de lìng yīgè fùběn.
+Jiāng wénjiàn yídòng dào lìng yīgè mùlù
+yào jiāng wénjiàn fùzhì dào lìng yīgè mùlù huò qítā míngchēng
+yào jiāng wénjiàn yídòng dào lìng yīgè mùlù
+pǐpèi {0}({1}):{2}
+Pǐpèi {0}:{1}
+Huāfèi de shíjiān:{0} Háomiǎo
+zhìzào shāng:{0}
+Xínghào:{0}
+Róngliàng:{0}({1},{2},{3})
+Jiēkǒu lèixíng:{0}
+Qūdòngqì hào:{0}
+Yǐndǎo biāozhì:{0}({1})
+Wùlǐ fēnqū:{0}
+Zhǔ biāozhì:{0}
+Dàxiǎo:{0} GB
+luójí fēnqū:{0}
+Yāsuō:{0}
+Míngchēng:{0}
+Wénjiàn xìtǒng:{0}
+Róngliàng:{0} GB zhōng méiyǒu {1} GB
+liè chū suǒyǒu qūdòngqì shàng de suǒyǒu luójí fēnqū.
+Liè chū suǒyǒu tànchá de qūdòngqì.
+Liè chū tèdìng qūdòngqì shàng de suǒyǒu tàncè fēnqū (yǐjí suǒyǒu qūdòngqì shàng de suǒyǒu luójí fēnqū).
+Shǐyòng MD5 huò SHA256 jìsuàn wénjiàn zǒnghé.
+Dài nín dào wǒmen de GitHub Wiki.
+Wúxiào de jiāmì suànfǎ.
+Qǐyòng huò jìnyòng yuǎnchéng tiáoshì.
+Chūshǐhuà wénjiàn xìtǒng...
+Huòqǔ yǐ ānzhuāng de shēngyīn
+shèzhì mòrèn shēngyīn
+shǐyòng mòrèn yǔyīn shuō chū nín de zìfú chuàn
+yǔyīn {0}:{1}({2})
+Wúxiào de shēngyīn.
+Yǔyīn shè dìng
+kàn kàn nín néng fǒu ànshí zhèngquè pīnxiě dāncí
+kàn kàn nín néng fǒu ànshí qiú xiè shùxué fāngchéngshì
+huíyīng ài huò hèn de pínglùn.
+Rúguǒ yǒurén duì nín de shìpín fābiǎo pínglùn:
+Nín huì rúhé huíyīng?
+Xuǎnzé wúxiào. Zhuǎn dào xià yītiáo pínglùn...
+Nín gānggāng bàogàole ài de pínglùn!
+Nín gānggāng huífùle chóuhèn pínglùn!
+Dà! {0} De pínglùn jiāng yīncǐ bèi shānchú.
+Dà! {0} Jiāng gǎnxiè nín de gǎnxiè.
+Shūrù “GetMeOut” tuìchū.
+Pīnxiě wánměi!
+Pīnxiě cuòwù.
+Jiějué wánměi!
+Jiějué bù zhèngquè.
+Yǐ xiàzài {1} MB zhōng de {0} MB.
+Xiàzài yǐ wánchéng.
+RPC yǐjīng zài yùnxíng.
+RPC shǐyòng duānkǒu {0} zhēn tīng suǒyǒu dìzhǐ.
+Zhèngzài qǐdòng RPC...
+Liánjiē dào SSH fúwùqì.
+Shūrù {0} de mìmǎ:
+SSH duàn kāi liánjiē.
+Jiāzài héchéng wénjiàn bìng bòfàng.
+Jiǎoběn wénjiàn {0} bù cúnzài.
+Gāi wénjiàn bùshì jiǎoběn huà de héchéng wénjiàn.
+Wúfǎ tàncè héchéng xiàn.
+Zhǐdìngle kōng zìfú chuàn
+wúfǎ shèzhì dàimǎ yè. Yǔyán kěnéng wúfǎ zhèngquè xiǎnshì.
+Tiáoshì wèi qǐyòng.
+{0} Bù zài shèzhì wèi mòrèn píngmù bǎohù chéngxù.
+Xièxiè! Zhè shì yǒuqù de.
+Suǒyǒu rén dūhuì wèi cǐ tígōng zhīchí.
+Wǒ zài nín de diànzǐ yóujiàn zhōng wèi nín de xià yīgè shìpín tígōngle tèshū wénjiàn.
+Tīngzhe, tǎoyàn de rén, tā shì zài bāngzhù wǒmen, ér bùshì piànjú.
+Wǒ bù zhīdào wǒ hé wǒ de péngyǒumen duì zhè bù yǐngpiàn de gǎnxiè.
+Wǒ ài nǐ zhè bù yǐngpiàn.
+Jìxù qiánjìn, bùyào tíng xiàlái.
+Wǒ jiāng bāngzhù nín dádào 100 wàn dìnghù!
+Wǒ de péngyǒu yīnwèi nǐ ér bǎ diànnǎo xiūhǎole.
+Zhēn èzuòjù! Wǒ guānbìle dírén de diànnǎo.
+Yào tǎoyàn de rén: Tíngzhǐ duì tā de dǎjí
+tǎoyàn zhě: Kāishǐ gōngzuò
+yóuyú nín de duìxiàng yǐncáng zhǐnán, xiànzài méi rén huì zhùyì dào zhè yīdiǎn
+wǒ jiāng tíngzhǐ guānkàn nín de shìpín. Dìngyuè zhě diūshī.
+Zhè shì shénme? Zhè hái bù qīngchǔ.
+Zhè bù yǐngpiàn zuì zāogāo!
+Dàjiā jǔbào cǐ shìpín!
+Wǒ de péngyǒu duì nǐ hěn shēngqì!
+Liànrén xiànzài huì wèi cǐ ér hèn nǐ.
+Nín de péngyǒu huì wèi cǐ ér hèn nín.
+Zhège èzuòjù ràng wǒ tuì dìngle.
+Rènwù shībài, zūnjìng-, dìnghù-
+tíngzhǐ zhìzuò cǐ lèi shìpín!!!
+Huí dào nín de gōngzuò, nín de shìpín zuì zāogāo!
+Wǒmen duì zhè bù yǐngpiàn yǒu piānjiàn.
+Jìnzhǐ jiāng {0} biémíng wèi {1}.
+Chángshì guānbì tōngzhī shí chūcuò:{0}
+Xiǎnshì suǒyǒu shōu dào de tōngzhī
+qǔxiāo tōngzhī
+tōngzhī yǐ chénggōng jiěchú.
+Shùjù bāo (rù zhàn):
+Shùjù bāo (chū zhàn):
+Shōu dào de shùjù bāo zhōng de cuòwù:
+Chángguī IPv6 shǔxìng
+chángguī IPv4 shǔxìng
+yuǎnchéng zhíxíng mìnglìng dào yuǎnchéng PC
+-jiēduàn 0: Xìtǒng chūshǐhuà
+-jiēduàn 1: Yìngjiàn jiǎncè
+-jiēduàn 2: Nèibù yònghù míng guǎnlǐ
+-jiēduàn 3:Mod hé píngbǎo jiǎncè
+-jiēduàn 4: Lèsè shōují
+-jiēduàn 5: Dēnglù
+Lèsè huíshōu zhīqián:{0} Gè zì jié
+lèsè huíshōu hòu:{0} Gè zì jié
+qǐdòng RPC shí chūcuò:{0}

@@ -401,3 +401,142 @@ IPv4-Informationen:
 IPv6-Informationen:
 Adapter {0} unterstützt IPv6 nicht. Auch weiterhin...
 Adapter {0} unterstützt IPv4 nicht. Test fehlgeschlagen.
+Anscheinend haben Sie die Entwicklungsversion des Kernels ausgeführt. Sie sehen zwar die Aspekte, diese werden jedoch häufig aktualisiert und führen möglicherweise zu Fehlern. Es wird empfohlen, auf der stabilen Version zu bleiben.
+Die von Ihnen ausgewählte Sprache enthält zwei Varianten. Wähle eins:
+1. Transliteriert
+2. Übersetzt
+Wählen Sie Ihre Wahl:
+Ungültige Wahl. Versuch es noch einmal.
+Sie sind nicht berechtigt, das aktuelle Verzeichnis auf {0} zu setzen: {1}
+Berechtigung {0} fehlgeschlagen
+Der angegebene Pfad ist zu lang.
+Sie sind nicht berechtigt, in {0} eine Liste zu erstellen: {1}
+Fehler beim Überprüfen der CPU: {0}
+Fehler beim Überprüfen des Arbeitsspeichers: {0}
+Fehler beim Überprüfen der Festplatte: {0}
+CPU: WARNUNG: SSE2 wird für zukünftige Entwicklungs-Commits benötigt.
+Speicherauszugsinformationssammler stürzte ab, als versucht wurde, Informationen zu {0} abzurufen: {1}
+Fehler beim Abrufen des Kompilierungsdatums von Assembly {0}: {1}
+Fehler beim Versuch, MOTD / MAL einzustellen: {0}
+Fehler beim Abrufen von MOTD / MAL: {0}
+Es gibt eine Nullreferenzausnahme für {0}: {1}
+Es gibt eine Nullreferenzausnahme für {0}: {1} - Stack-Trace:
+Fehler beim Versuch, den Bildschirmschoner zu starten, aufgrund eines ungültigen Vorgangs.
+Nachladen im abgesicherten Modus nicht erlaubt.
+Parsing-Mods im abgesicherten Modus nicht erlaubt.
+Durchsuchen Sie das gesamte Verzeichnis nach der Größe oder nur nach den Dateien im aktuellen Verzeichnis.
+Listet alle angeschlossenen Debugging-Geräte auf.
+Fehler beim Versuch, den Analysemodus einzustellen. Überprüfen Sie den Wert und versuchen Sie es erneut. Wenn dies korrekt ist, lesen Sie den Stack-Trace, wenn das Kernel-Debugging aktiviert ist.
+Erfolgreich einstellen.
+Der Pfad ist weder eine Datei noch ein Verzeichnis.
+Erstellt eine weitere Kopie einer Datei unter einem anderen Verzeichnis oder Namen.
+Verschiebt eine Datei in ein anderes Verzeichnis
+Kopieren von Dateien in ein anderes Verzeichnis oder einen anderen Namen
+Dateien in ein anderes Verzeichnis verschieben
+Übereinstimmung {0} ({1}): {2}
+Übereinstimmung {0}: {1}
+Zeitaufwand: {0} Millisekunden
+Hersteller: {0}
+Modell: {0}
+Kapazität: {0} ({1}, {2}, {3})
+Schnittstellentyp: {0}
+Laufwerksnummer: {0}
+Boot-Flag: {0} ({1})
+Physische Partition: {0}
+Hauptflagge: {0}
+Größe: {0} GB
+Logische Partition: {0}
+Komprimiert: {0}
+Name: {0}
+Dateisystem: {0}
+Kapazität: {0} GB frei von {1} GB
+Auflisten aller logischen Partitionen auf allen Laufwerken.
+Listet alle getesteten Laufwerke auf.
+Listet alle getesteten Partitionen auf einem bestimmten Laufwerk (und alle logischen Partitionen auf allen Laufwerken) auf.
+Berechnet die Dateisummen mit MD5 oder SHA256.
+Führt Sie zu unserem GitHub Wiki.
+Ungültiger Verschlüsselungsalgorithmus.
+Aktiviert oder deaktiviert das Remote-Debugging.
+Dateisystem wird initialisiert ...
+Ruft installierte Stimmen ab
+Legt die Standardstimme fest
+Spricht Ihre Saite mit der Standardstimme
+Stimme {0}: {1} ({2})
+Ungültige Stimme
+Spracheinstellung
+Prüfen Sie, ob Sie Wörter rechtzeitig richtig buchstabieren können
+Finden Sie heraus, ob Sie mathematische Gleichungen rechtzeitig lösen können
+Antworten Sie auf Kommentare, die Sie lieben oder hassen.
+Wenn jemand diesen Kommentar zu deinem Video abgegeben hat:
+Wie würden Sie antworten?
+Ungültige Auswahl. Zum nächsten Kommentar gehen ...
+Du hast gerade den Liebeskommentar gemeldet!
+Sie haben gerade auf den Hasskommentar geantwortet!
+Groß! Der Kommentar von {0} wird dafür entfernt.
+Groß! {0} freut sich über Ihren Dank.
+Schreiben Sie "GetMeOut" zum Beenden.
+Perfekt geschrieben!
+Falsch geschrieben.
+Perfekt gelöst!
+Falsch gelöst.
+{0} MB von {1} MB heruntergeladen.
+Der Download ist abgeschlossen.
+RPC läuft bereits.
+RPC überwacht alle Adressen über Port {0}.
+RPC wird gestartet ...
+Stellt eine Verbindung zu einem SSH-Server her.
+Geben Sie das Passwort für {0} ein:
+SSH getrennt.
+Lädt die Synth-Datei und spielt sie ab.
+Skriptdatei {0} existiert nicht.
+Die Datei ist keine Skriptdatei.
+Fehler beim Prüfen einer Synth-Zeile.
+Leere Zeichenfolge angegeben
+Codepage kann nicht festgelegt werden. Die Sprache wird möglicherweise nicht richtig angezeigt.
+Debugging nicht aktiviert.
+{0} ist nicht mehr auf den Standard-Bildschirmschoner eingestellt.
+Vielen Dank! Das ist interessant.
+Jeder wird dein Video dafür unterstützen.
+Ich habe dir die spezielle Datei in deiner E-Mail für dein nächstes Video gegeben.
+Hören Sie, Hasser, er versucht uns zu helfen, nicht zu betrügen.
+Ich weiß nicht, wie sehr ich und meine Freunde Ihnen für dieses Video danken.
+Ich liebe dich für dieses Video.
+Mach weiter, hör nicht auf.
+Ich helfe Ihnen dabei, 1 Million Abonnenten zu erreichen!
+Meine Freunde haben ihren Computer wegen dir repariert.
+Toller Streich! Ich habe den PC meines Gegners heruntergefahren.
+Für Hasser: STOPPEN SIE IHN ZU HASSEN
+Für Hasser: GET TO WORK
+Niemand wird dies jetzt bemerken, dank der Anleitung zum Verstecken von Objekten
+Ich werde aufhören, deine Videos anzusehen. Abonnent verloren.
+Was ist das? Das ist unklar.
+Dieses Video ist das Schlimmste!
+Jeder meldet dieses Video!
+Meine Freunde sind wütend auf dich!
+Liebhaber werden dich jetzt dafür hassen.
+Dein Freund wird dich dafür hassen.
+Dieser Streich hat mich dazu gebracht, mich von dir abzumelden.
+Mission fehlgeschlagen, Respekt -, Abonnent -
+Hör auf, diese Art von Video zu machen !!!
+Kehren Sie zu Ihrer Arbeit zurück, Ihre Videos sind die schlechtesten!
+Wir haben Vorurteile gegenüber diesem Video.
+Das Aliasing von {0} auf {1} ist nicht zulässig.
+Fehler beim Abweisen der Benachrichtigung: {0}
+Zeigt alle empfangenen Benachrichtigungen an
+Lehnt eine Benachrichtigung ab
+Benachrichtigung erfolgreich abgewiesen.
+Pakete (eingehend):
+Pakete (ausgehend):
+Fehler in empfangenen Paketen:
+Allgemeine IPv6-Eigenschaften
+Allgemeine IPv4-Eigenschaften
+Führt einen Remote-Befehl an den Remote-PC aus
+- Stufe 0: Systeminitialisierung
+- Stufe 1: Hardwareerkennung
+- Stufe 2: Interne Benutzernamenverwaltung
+- Stufe 3: Erkennung von Mods und Bildschirmschonern
+- Stufe 4: Müllabfuhr
+- Stufe 5: Einloggen
+Vor der Garbage Collection: {0} Bytes
+Nach der Garbage Collection: {0} Bytes
+Fehler beim Starten von RPC: {0}

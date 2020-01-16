@@ -401,3 +401,142 @@ Informace IPv4:
 Informace IPv6:
 Adaptér {0} nepodporuje IPv6. Pokračování ...
 Adaptér {0} nepodporuje IPv4. Sonda selhala.
+Vypadá to, že jste provozovali vývojovou verzi jádra. I když vidíte aspekty, je často aktualizován a může představovat chyby. Doporučujeme, abyste zůstali ve stabilní verzi.
+Zvolený jazyk obsahuje dvě varianty. Vyber jeden:
+1. Přepis
+2. Přeloženo
+Vyberte si svůj výběr:
+Neplatná volba. Zkus to znovu.
+Nemáte oprávnění nastavit aktuální adresář na {0}: {1}
+Oprávnění {0} se nezdařilo
+Cesta, kterou jste zadali, je příliš dlouhá.
+Nemáte oprávnění k zařazení na seznam {0}: {1}
+Chyba při kontrole CPU: {0}
+Chyba při kontrole paměti RAM: {0}
+Chyba při kontrole pevného disku: {0}
+CPU: VAROVÁNÍ: SSE2 bude vyžadován v budoucích vývojových závazcích.
+Při pokusu získat informace o {0}: {1} došlo k selhání sběrače informací o výpisu
+Chyba při pokusu získat kompilační datum sestavení {0}: {1}
+Chyba při pokusu o nastavení MOTD / MAL: {0}
+Chyba při pokusu získat MOTD / MAL: {0}
+Na {0} existuje nulová referenční reference: {1}
+Na {0} existuje {0} neplatná výjimka: - Sledování zásobníku:
+Chyba při pokusu o spuštění spořiče obrazovky z důvodu neplatné operace.
+Obnovení není povoleno v nouzovém režimu.
+Režimy analýzy nejsou v bezpečném režimu povoleny.
+Analyzujte celý adresář podle velikosti nebo pouze souborů v aktuálním adresáři.
+Vypíše všechna připojená ladicí zařízení.
+Chyba při pokusu o nastavení režimu analýzy. Zkontrolujte hodnotu a akci opakujte. Pokud je to správné, podívejte se na trasování zásobníku, když je povoleno ladění jádra.
+Nastavit úspěšně.
+Cesta není ani soubor, ani adresář.
+Vytvoří další kopii souboru pod jiným adresářem nebo názvem.
+Přesune soubor do jiného adresáře
+Kopírování souborů do jiného adresáře nebo jiného názvu
+Přesunutí souborů do jiného adresáře
+Zápas {0} ({1}): {2}
+Zápas {0}: {1}
+Čas strávený: {0} milisekund
+Výrobce: {0}
+Model: {0}
+Kapacita: {0} ({1}, {2}, {3})
+Typ rozhraní: {0}
+Číslo jednotky: {0}
+Boot flag: {0} ({1})
+Fyzický oddíl: {0}
+Primární příznak: {0}
+Velikost: {0} GB
+Logický oddíl: {0}
+Komprimováno: {0}
+Název: {0}
+Systém souborů: {0}
+Kapacita: {0} GB bez {1} GB
+Výpis všech logických oddílů na všech jednotkách.
+Vypíše všechny sondované jednotky.
+Vypíše všechny testované oddíly na konkrétní jednotce (a všechny logické oddíly na všech jednotkách).
+Vypočítá součty souborů pomocí MD5 nebo SHA256.
+Vezme vás na naši GitHub Wiki.
+Neplatný šifrovací algoritmus.
+Povoluje nebo zakazuje vzdálené ladění.
+Inicializace souborového systému ...
+Získá nainstalované hlasy
+Nastaví výchozí hlas
+Mluví váš řetězec pomocí výchozího hlasu
+Hlas {0}: {1} ({2})
+Neplatný hlas.
+Hlasová sada
+Zjistěte, zda můžete správně hláskovat slova včas
+Podívejte se, jestli dokážete vyřešit matematické rovnice včas
+Reagujte na milostné nebo nenávistné komentáře.
+Pokud někdo k vašemu videu přidal tento komentář:
+Jak byste reagoval?
+Neplatný výběr. Přejít na další komentář ...
+Právě jste nahlásili milostný komentář!
+Právě jste odpověděli na komentář k nenávisti!
+Skvělý! Za tímto účelem bude odstraněn komentář {0}.
+Skvělý! {0} ocení vaše poděkování.
+Chcete-li ukončit, napište "GetMeOut".
+Napsáno dokonale!
+Pravopisně nesprávně.
+Vyřešeno dokonale!
+Nesprávně vyřešeno.
+Staženo {0} MB z {1} MB.
+Stahování bylo dokončeno.
+RPC již běží.
+Poslouchání RPC na všech adresách pomocí portu {0}.
+Spuštění RPC ...
+Připojení k serveru SSH.
+Zadejte heslo pro {0}:
+SSH odpojen.
+Načte syntetizační soubor a přehraje jej.
+Skriptovaný soubor {0} neexistuje.
+Soubor není skriptovaný syntézní soubor.
+Selhání sondy syntetizační linky.
+Zadán prázdný řetězec
+Nelze nastavit kódovou stránku. Jazyk se nemusí zobrazit správně.
+Ladění není povoleno.
+{0} již není nastaven na výchozí spořič obrazovky.
+Dík! To je zajímavé.
+Vaše video bude podporovat každý.
+Dal jsem vám speciální soubor ve vašem e-mailu pro vaše další video.
+Poslouchejte, nenávisti, snaží se nám pomoci, ne podvod.
+Nevím, jak moc já a moji přátelé děkuji za toto video.
+Miluji tě pro toto video.
+Pokračujte, nepřestávejte.
+Pomůžu vám oslovit 1M účastníky!
+Moji přátelé dostali kvůli vám počítač opravený.
+Úžasný žert! Vypnul jsem počítač svého nepřítele.
+Nenávidět: ZASTAVTE HATING NA HIM
+K nenávistníkům: ZÍSKEJTE PRÁCI
+Nikdo si to nyní nevšimne díky průvodci skrýváním objektů
+Přestanu sledovat vaše videa. Odběratel ztratil.
+Co je to? To není jasné.
+Toto video je nejhorší!
+Všichni nahlásit toto video!
+Moji přátelé zběsile s vámi!
+Milenci vás za to nyní nenávidí.
+Váš přítel vás za to nenávidí.
+Tento žert mě nutil k odhlášení.
+Mise selhala, Respekt -, Odběratel -
+Přestaňte dělat tento druh videa !!!
+Vraťte se zpět do své práce, vaše videa jsou nejhorší!
+Tímto videem předjímáme.
+Aliasing {0} až {1} je zakázán.
+Chyba při pokusu o zrušení oznámení: {0}
+Zobrazuje všechna přijatá oznámení
+Odmítne oznámení
+Oznámení bylo úspěšně zamítnuto.
+Pakety (příchozí):
+Pakety (odchozí):
+Chyby v přijatých paketech:
+Obecné vlastnosti IPv6
+Obecné vlastnosti IPv4
+Vzdáleně provede příkaz na vzdálené PC
+- Stupeň 0: Inicializace systému
+- Fáze 1: Detekce hardwaru
+- Etapa 2: Interní správa uživatelských jmen
+- Etapa 3: Detekce režimů a spořičů obrazovky
+- Etapa 4: Odpadky
+- Fáze 5: Přihlaste se
+Před sběrem odpadu: {0} bajtů
+Po vyzvednutí odpadu: {0} bajtů
+Chyba při spuštění RPC: {0}
