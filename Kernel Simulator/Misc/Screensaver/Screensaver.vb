@@ -43,6 +43,7 @@ Public Module Screensaver
         Sub ScrnSaver() 'Code during the screensaver
         Property Initialized As Boolean
         Property DelayForEachWrite As Integer
+        Property SaverName As String
     End Interface
 
     Sub HandleTimeout(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Timeout.DoWork
@@ -193,7 +194,7 @@ Public Module Screensaver
         Dim modPath As String = paths("Mods")
         file = file.Replace("\", "/").Replace(modPath, "")
         If FileIO.FileSystem.FileExists(modPath + file) Then
-            For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
+            For Each modFile As String In FileIO.FileSystem.GetFiles(modPath) 'TODO: Use GetFiles().Exists()
                 modFile = modFile.Replace("\", "/").Replace(modPath, "")
                 Wdbg("Parsing {0}...", modFile)
                 If modFile = file Then
@@ -205,22 +206,49 @@ Public Module Screensaver
                         If DoneFlag = True Then
                             Wdbg("{0} compiled correctly. Starting...", modFile)
                             finalSaver.InitSaver()
+                            Dim SaverName As String = finalSaver.SaverName
                             If finalSaver.Initialized = True Then
-                                If Not ScrnSvrdb.ContainsKey(modFile) Then
-                                    W(DoTranslation("{0} has been initialized properly.", currentLang), True, ColTypes.Neutral, modFile)
-                                    Wdbg("{0} compiled correctly. Starting...", modFile)
-                                    ScrnSvrdb.Add(modFile, False)
-                                    CSvrdb.Add(modFile, finalSaver)
+                                Dim IsFound As Boolean
+                                If Not SaverName = "" Then
+                                    IsFound = ScrnSvrdb.ContainsKey(SaverName)
                                 Else
-                                    Wdbg("{0} already exists. Recompiling...", modFile)
-                                    ScrnSvrdb.Remove(modFile)
-                                    CSvrdb.Remove(modFile)
-                                    CompileCustom(file)
-                                    Exit Sub
+                                    IsFound = ScrnSvrdb.ContainsKey(modFile)
+                                End If
+                                If Not IsFound Then
+                                    If Not SaverName = "" Then
+                                        W(DoTranslation("{0} has been initialized properly.", currentLang), True, ColTypes.Neutral, SaverName)
+                                        Wdbg("{0} ({1}) compiled correctly. Starting...", SaverName, modFile)
+                                        ScrnSvrdb.Add(SaverName, False)
+                                        CSvrdb.Add(SaverName, finalSaver)
+                                    Else
+                                        W(DoTranslation("{0} has been initialized properly.", currentLang), True, ColTypes.Neutral, modFile)
+                                        Wdbg("{0} compiled correctly. Starting...", modFile)
+                                        ScrnSvrdb.Add(modFile, False)
+                                        CSvrdb.Add(modFile, finalSaver)
+                                    End If
+                                Else
+                                    If Not SaverName = "" Then
+                                        Wdbg("{0} ({1}) already exists. Recompiling...", SaverName, modFile)
+                                        ScrnSvrdb.Remove(SaverName)
+                                        CSvrdb.Remove(SaverName)
+                                        CompileCustom(file)
+                                        Exit Sub
+                                    Else
+                                        Wdbg("{0} already exists. Recompiling...", modFile)
+                                        ScrnSvrdb.Remove(modFile)
+                                        CSvrdb.Remove(modFile)
+                                        CompileCustom(file)
+                                        Exit Sub
+                                    End If
                                 End If
                             Else
-                                W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, ColTypes.Neutral, modFile)
-                                Wdbg("{0} is compiled, but not initialized.", modFile)
+                                If Not SaverName = "" Then
+                                    W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, ColTypes.Neutral, SaverName)
+                                    Wdbg("{0} ({1}) is compiled, but not initialized.", SaverName, modFile)
+                                Else
+                                    W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, ColTypes.Neutral, modFile)
+                                    Wdbg("{0} is compiled, but not initialized.", modFile)
+                                End If
                             End If
                         End If
                     End If
