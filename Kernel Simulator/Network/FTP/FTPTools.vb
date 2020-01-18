@@ -45,6 +45,7 @@ Module FTPTools
 
                 'Get input
                 pass = ReadLineNoInput()
+                Console.WriteLine()
 
                 'Set up credentials
                 ClientFTP.Credentials = New NetworkCredential(user, pass)
