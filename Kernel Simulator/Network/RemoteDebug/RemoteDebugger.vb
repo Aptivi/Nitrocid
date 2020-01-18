@@ -63,8 +63,9 @@ Module RemoteDebugger
                     RDebugName = RDebugDNP + CStr(RDebugRandomID)
                     dbgConns.Add(RDebugSWriter, RDebugName)
                     DebugDevices.Add(RDebugClient, RDebugIP)
-                    dbgConns.Keys.Last.WriteLine(">> Chat version 0.3.1") 'Increment each minor/major change(s)
+                    dbgConns.Keys.Last.WriteLine(">> Chat version 0.3.2") 'Increment each minor/major change(s)
                     dbgConns.Keys.Last.WriteLine(">> Your address is {0}.", RDebugIP)
+                    dbgConns.Keys.Last.WriteLine(">> Your name is {0}.", RDebugName)
                     Wdbg("Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
                 End If
             Catch ae As ThreadAbortException
