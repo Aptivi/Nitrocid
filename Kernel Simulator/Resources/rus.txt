@@ -541,3 +541,4 @@ Pered sborkoy musora: {0} bayt
 Posle sborki musora: {0} bayt
 Oshibka zapuska RPC: {0}
 Pokhozhe, vy rabotali s versiyey-kandidatom. Rekomenduyetsya ostavat'sya na stabil'noy versii.
+Kazhetsya, chto zapolneniye faylovoy sistemy zanimayet slishkom mnogo vremeni.

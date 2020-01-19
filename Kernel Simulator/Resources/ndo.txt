@@ -541,3 +541,4 @@ Sebelum pengumpulan sampah: {0} byte
 Setelah pengumpulan sampah: {0} byte
 Kesalahan memulai RPC: {0}
 Sepertinya Anda menjalankan versi kandidat rilis. Disarankan agar Anda tetap pada versi stabil.
+Tampaknya populasi sistem file terlalu lama.

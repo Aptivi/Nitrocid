@@ -541,3 +541,4 @@ Axlat yig'ishdan oldin: {0} bayt
 Axlat yig'ilgandan keyin: {0} bayt
 RPC-ni ishga tushirishda xato: {0}
 Siz nomzod versiyasini chiqayotganga o'xshaysiz. Barqaror versiyada qolish tavsiya etiladi.
+Fayl tizimi to'laligicha ko'p vaqt talab qiladiganga o'xshaydi.

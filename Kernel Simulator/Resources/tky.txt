@@ -541,3 +541,4 @@ Uzak PC'ye uzaktan komut çalıştırır
 Çöp toplandıktan sonra: {0} bayt
 RPC başlatılırken hata oluştu: {0}
 Siz nomzod versiyasini chiqayotganga o'xshaysiz. Barqaror versiyada qolish tavsiya etiladi....
+Dosya sistemi nüfusu çok uzun sürüyor.

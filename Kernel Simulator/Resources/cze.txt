@@ -541,3 +541,4 @@ Před sběrem odpadu: {0} bajtů
 Po vyzvednutí odpadu: {0} bajtů
 Chyba při spuštění RPC: {0}
 Vypadá to, že jste používali kandidátní verzi vydání. Doporučujeme, abyste zůstali ve stabilní verzi.
+Zdá se, že populace systému souborů trvá příliš dlouho.

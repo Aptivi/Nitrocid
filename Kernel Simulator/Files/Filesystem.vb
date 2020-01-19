@@ -16,11 +16,15 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Threading
+
 Public Module Filesystem
 
     'Variables
     Public CurrDirStructure As New List(Of String)
     Public CurrDir As String
+    Public UACNotice As New Thread(AddressOf UACNoticeShow)
+
 
     'Subs
     Public Sub SetCurrDir(ByVal dir As String)
@@ -65,6 +69,7 @@ Public Module Filesystem
     End Sub
     Public Sub InitStructure()
         Wdbg("Populating list...")
+        UACNotice.Start()
         Dim DirStructure As New List(Of String)
         DirStructure.AddRange(IO.Directory.EnumerateDirectories(CurrDir, "*", IO.SearchOption.TopDirectoryOnly))
         For Each Dir As String In DirStructure
@@ -84,6 +89,8 @@ Public Module Filesystem
             CurrDirStructure(i) = CurrDirStructure(i).Replace("\", "/")
         Next
         Wdbg("All directories are made universal to all platforms.")
+        UACNotice.Abort()
+        UACNotice = New Thread(AddressOf UACNoticeShow)
     End Sub
     Public Sub List(ByVal folder As String)
         Wdbg("Folder {0} will be checked if it is empty or equals CurrDir ({1})...", folder, CurrDir)
@@ -153,6 +160,18 @@ Public Module Filesystem
             W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Neutral, folder)
             Wdbg("CurrDirStructure = {0}, IO.Directory.Exists = {1}", CurrDirStructure.Contains(folder), IO.Directory.Exists(folder))
         End If
+    End Sub
+    Private Sub UACNoticeShow()
+        Try
+            For i As Integer = 0 To 10
+                If i = 10 Then
+                    W(DoTranslation("It seems that the file system population takes too long.", currentLang), True, ColTypes.Neutral)
+                End If
+                Thread.Sleep(1000)
+            Next
+        Catch ex As Exception
+            Exit Sub
+        End Try
     End Sub
 
 End Module

@@ -541,3 +541,4 @@ Antes da coleta de lixo: {0} bytes
 Após a coleta de lixo: {0} bytes
 Erro ao iniciar o RPC: {0}
 Parece que você estava executando a versão do candidato a lançamento. É recomendável que você permaneça na versão estável.
+Parece que a população do sistema de arquivos leva muito tempo.
