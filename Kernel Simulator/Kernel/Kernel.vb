@@ -62,6 +62,13 @@ Public Module Kernel
                 If Not IO.File.Exists(paths("Home") + "/MOTD.txt") Then SetMOTD(DoTranslation("Welcome to Kernel!", currentLang), MessageType.MOTD)
                 If Not IO.File.Exists(paths("Home") + "/MAL.txt") Then SetMOTD(DoTranslation("Logged in successfully as <user>", currentLang), MessageType.MAL)
 
+                'Initialize stage counter
+                W(vbNewLine + DoTranslation("- Stage 0: System initialization", currentLang), True, ColTypes.Stage)
+                W(DoTranslation("Starting RPC...", currentLang), True, ColTypes.Neutral)
+                StartRPC()
+                W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
+                InitFS()
+
                 'Phase 1: Probe hardware
                 W(vbNewLine + DoTranslation("- Stage 1: Hardware detection", currentLang), True, ColTypes.Stage)
                 Wdbg("- Kernel Phase 1: Probing hardware")

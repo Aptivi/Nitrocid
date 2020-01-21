@@ -360,11 +360,6 @@ Public Module KernelTools
             ParseCMDArguments(argu)
         Next
 
-        'Initialize stage counter
-        W(vbNewLine + DoTranslation("- Stage 0: System initialization", currentLang), True, ColTypes.Stage)
-        W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
-        InitFS()
-
         'Check arguments
         If argsOnBoot Then
             PromptArgs()
@@ -381,10 +376,6 @@ Public Module KernelTools
         Wdbg("-------------------------------------------------------------------")
         Wdbg("Kernel initialized, version {0}.", KernelVersion)
         Wdbg("OS: {0}", EnvironmentOSType)
-
-        'Start RPC
-        W(DoTranslation("Starting RPC...", currentLang), True, ColTypes.Neutral)
-        StartRPC()
 
         'Parse current theme string
         ParseCurrentTheme()
