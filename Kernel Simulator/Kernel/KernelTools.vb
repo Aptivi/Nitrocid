@@ -330,6 +330,11 @@ Public Module KernelTools
         'Open debugging stream
         If dbgWriter Is Nothing Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
 
+        'Write headers for debug
+        Wdbg("-------------------------------------------------------------------")
+        Wdbg("Kernel initialized, version {0}.", KernelVersion)
+        Wdbg("OS: {0}", EnvironmentOSType)
+
         'Create config file and then read it
         InitializeConfig()
 
@@ -371,11 +376,8 @@ Public Module KernelTools
             argsInjected = False
         End If
 
-        'Write header for debug
+        'Start remote debugger
         StartRDebugThread(True)
-        Wdbg("-------------------------------------------------------------------")
-        Wdbg("Kernel initialized, version {0}.", KernelVersion)
-        Wdbg("OS: {0}", EnvironmentOSType)
 
         'Parse current theme string
         ParseCurrentTheme()
