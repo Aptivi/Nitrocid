@@ -43,14 +43,14 @@ Public Module Shell
     Public Sub InitializeShell()
         While True
             If LogoutRequested Then
-                Wdbg("Requested log out: {0}", LogoutRequested)
+                Wdbg("I", "Requested log out: {0}", LogoutRequested)
                 LogoutRequested = False
                 LoggedIn = False
                 Exit Sub
             Else
                 Try
                     'Try to probe injected commands
-                    Wdbg("Probing injected commands using GetLine(True)...")
+                    Wdbg("I", "Probing injected commands using GetLine(True)...")
                     GetLine(True, "")
 
                     'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes.
@@ -61,7 +61,7 @@ Public Module Shell
                     DisposeAll()
 
                     'Set an input color
-                    Wdbg("ColoredShell is {0}", ColoredShell)
+                    Wdbg("I", "ColoredShell is {0}", ColoredShell)
                     Dim esc As Char = GetEsc()
                     If ColoredShell = True Then Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
 
@@ -76,24 +76,24 @@ Public Module Shell
                     If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
                         Dim Done As Boolean = False
                         Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
-                        Wdbg("Mod commands probing started with {0}", strcommand)
+                        Wdbg("I", "Mod commands probing started with {0}", strcommand)
                         For Each c As String In modcmnds
                             If Parts(0) = c Then
                                 Done = True
-                                Wdbg("Mod command: {0}", strcommand)
+                                Wdbg("I", "Mod command: {0}", strcommand)
                                 ExecuteModCommand(strcommand)
                             End If
                         Next
-                        Wdbg("Aliases probing started with {0}", strcommand)
+                        Wdbg("I", "Aliases probing started with {0}", strcommand)
                         For Each a As String In aliases.Keys
                             If Parts(0) = a Then
                                 Done = True
-                                Wdbg("Alias: {0}", a)
+                                Wdbg("I", "Alias: {0}", a)
                                 ExecuteAlias(a)
                             End If
                         Next
                         If Done = False Then
-                            Wdbg("Executing built-in command")
+                            Wdbg("I", "Executing built-in command")
                             GetLine(False, strcommand)
                         End If
                     End If
@@ -137,23 +137,23 @@ Public Module Shell
                         'Get the index of the first space
                         Dim indexCmd As Integer = cmd.IndexOf(" ")
                         Dim cmdArgs As String = cmd 'Command with args
-                        Wdbg("Prototype indexCmd and cmd: {0}, {1}", indexCmd, cmd)
+                        Wdbg("I", "Prototype indexCmd and cmd: {0}, {1}", indexCmd, cmd)
                         If indexCmd = -1 Then indexCmd = cmd.Count
                         cmd = cmd.Substring(0, indexCmd)
-                        Wdbg("Finished indexCmd and cmd: {0}, {1}", indexCmd, cmd)
+                        Wdbg("I", "Finished indexCmd and cmd: {0}, {1}", indexCmd, cmd)
 
                         'Check to see if a user is able to execute a command
                         If adminList(signedinusrnm) = False And strictCmds.Contains(cmd) = True Then
-                            Wdbg("Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
+                            Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
                             W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Neutral, cmd)
                         ElseIf maintenance = True And cmd.Contains("logout") Then
-                            Wdbg("Cmd exec {0} failed: In maintenance mode. Assertion of input.Contains(""logout"") is True", cmd)
+                            Wdbg("W", "Cmd exec {0} failed: In maintenance mode. Assertion of input.Contains(""logout"") is True", cmd)
                             W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), True, ColTypes.Neutral, cmd)
                         ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(cmd) = True) Or availableCommands.Contains(cmd) Then
-                            Wdbg("Cmd exec {0} succeeded", cmd)
+                            Wdbg("W", "Cmd exec {0} succeeded", cmd)
                             GetCommand.ExecuteCommand(cmdArgs)
                         Else
-                            Wdbg("Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", cmd, indexCmd)
+                            Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", cmd, indexCmd)
                             W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), True, ColTypes.Neutral, cmd)
                         End If
                     Next
@@ -164,30 +164,30 @@ Public Module Shell
                     'Get the index of the first space
                     Dim indexCmd As Integer = cmd.IndexOf(" ")
                     Dim cmdArgs As String = cmd 'Command with args
-                    Wdbg("Prototype indexCmd and cmd: {0}, {1}", indexCmd, cmd)
+                    Wdbg("I", "Prototype indexCmd and cmd: {0}, {1}", indexCmd, cmd)
                     If indexCmd = -1 Then indexCmd = cmd.Count
                     cmd = cmd.Substring(0, indexCmd)
-                    Wdbg("Finished indexCmd and cmd: {0}, {1}", indexCmd, cmd)
+                    Wdbg("I", "Finished indexCmd and cmd: {0}, {1}", indexCmd, cmd)
 
                     'Check to see if a user is able to execute a command
                     If availableCommands.Contains(cmd) Then
                         If Not (cmdArgs = Nothing Or cmdArgs.StartsWith(" ") = True) Then
                             If adminList(signedinusrnm) = True And strictCmds.Contains(cmd) = True Then
-                                Wdbg("Cmd exec {0} succeeded", cmd)
+                                Wdbg("W", "Cmd exec {0} succeeded", cmd)
                                 GetCommand.ExecuteCommand(cmdArgs)
                             ElseIf adminList(signedinusrnm) = False And strictCmds.Contains(cmd) = True Then
-                                Wdbg("Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
+                                Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
                                 W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Neutral, cmd)
                             ElseIf cmd = "logout" Or cmd = "shutdown" Or cmd = "reboot" Then
-                                Wdbg("Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", cmd)
+                                Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", cmd)
                                 W(DoTranslation("Shell message: Command {0} is not allowed to run on log in.", currentLang), True, ColTypes.Neutral, cmd)
                             Else
-                                Wdbg("Cmd exec {0} succeeded", cmd)
+                                Wdbg("W", "Cmd exec {0} succeeded", cmd)
                                 GetCommand.ExecuteCommand(cmdArgs)
                             End If
                         End If
                     Else
-                        Wdbg("Cmd exec {0} failed: availableCmds.Contains({0}) is False", cmd)
+                        Wdbg("W", "Cmd exec {0} failed: availableCmds.Contains({0}) is False", cmd)
                         W(DoTranslation("Shell message: The requested command {0} is not found.", currentLang), True, ColTypes.Neutral, cmd)
                     End If
                 Next

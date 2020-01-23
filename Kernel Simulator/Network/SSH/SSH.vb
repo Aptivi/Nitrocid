@@ -19,16 +19,16 @@ Module SSH
 
     Sub InitializeSSH(ByVal Address As String, ByVal Port As Integer, ByVal Username As String)
         'Authentication
-        Wdbg("Address: {0}:{1}, Username: {2}", Address, Port, Username)
+        Wdbg("I", "Address: {0}:{1}, Username: {2}", Address, Port, Username)
         W(DoTranslation("Enter the password for {0}: ", currentLang), False, ColTypes.Input, Username)
         Dim Pass As String = ReadLineNoInput()
         Dim SSH As New SshClient(Address, Port, Username, Pass)
         SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(10)
-        Wdbg("Connecting to {0}...", Address)
+        Wdbg("I", "Connecting to {0}...", Address)
         SSH.Connect()
 
         'Shell creation
-        Wdbg("Opening shell...")
+        Wdbg("I", "Opening shell...")
         Dim SSHS As Renci.SshNet.Shell = SSH.CreateShell(Console.OpenStandardInput, Console.OpenStandardOutput, Console.OpenStandardError)
         SSHS.Start()
 
@@ -39,7 +39,7 @@ Module SSH
                 SSH.Disconnect()
             End If
         End While
-        Wdbg("Connected: {0}", SSH.IsConnected)
+        Wdbg("I", "Connected: {0}", SSH.IsConnected)
         W(vbNewLine + DoTranslation("SSH Disconnected.", currentLang), True, ColTypes.Neutral)
     End Sub
 

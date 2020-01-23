@@ -20,10 +20,10 @@ Module Encryption
     Public Function GetArrayEnc(ByVal encrypted As Byte()) As String
         Dim hash As String = ""
         For i As Integer = 0 To encrypted.Length - 1
-            Wdbg("Appending {0} to hash", encrypted(i))
+            Wdbg("I", "Appending {0} to hash", encrypted(i))
             hash += $"{encrypted(i):X2}"
         Next
-        Wdbg("Final hash: {0}", hash)
+        Wdbg("I", "Final hash: {0}", hash)
         Return hash
     End Function
 End Module

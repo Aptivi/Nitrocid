@@ -26,30 +26,30 @@ Module RPC_Commands
 
     Sub SendCommand(ByVal Request As String, ByVal IP As String)
         Dim Cmd As String = Request.Remove(Request.IndexOf("("))
-        Wdbg("Command: {0}", Cmd)
+        Wdbg("I", "Command: {0}", Cmd)
         Dim Arg As String = Request.Substring(Request.IndexOf("(") + 1)
-        Wdbg("Prototype Arg: {0}", Arg)
+        Wdbg("I", "Prototype Arg: {0}", Arg)
         Arg = Arg.Remove(Arg.Count - 1)
-        Wdbg("Finished Arg: {0}", Arg)
+        Wdbg("I", "Finished Arg: {0}", Arg)
         If Commands.Contains(Cmd) Then
-            Wdbg("Command found.")
+            Wdbg("I", "Command found.")
             If Cmd = "<Request:Shutdown>" Then
-                Wdbg("Stream opened for device {0}", Arg)
+                Wdbg("I", "Stream opened for device {0}", Arg)
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("ShutdownConfirm, " + Arg + vbNewLine)
                 RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
-                Wdbg("Sending response to device...")
+                Wdbg("I", "Sending response to device...")
             ElseIf Cmd = "<Request:Reboot>" Then
-                Wdbg("Stream opened for device {0}", Arg)
+                Wdbg("I", "Stream opened for device {0}", Arg)
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
                 RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
-                Wdbg("Sending response to device...")
+                Wdbg("I", "Sending response to device...")
             ElseIf Cmd = "<Request:Exec>" Then
-                Wdbg("Stream opened for device {0} to execute ""{1}""", IP, Arg)
+                Wdbg("I", "Stream opened for device {0} to execute ""{1}""", IP, Arg)
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("ExecConfirm, " + Arg + vbNewLine)
                 RPCListen.Send(ByteMsg, ByteMsg.Length, IP, RPCPort)
-                Wdbg("Sending response to device...")
+                Wdbg("I", "Sending response to device...")
             Else
-                Wdbg("Malformed request. {0}", Cmd)
+                Wdbg("E", "Malformed request. {0}", Cmd)
             End If
         End If
     End Sub
@@ -63,27 +63,27 @@ Module RPC_Commands
                 Dim msg As String = Text.Encoding.Default.GetString(buff)
                 Wdbg("RPC: Received message {0}", msg)
                 If msg.StartsWith("ShutdownConfirm") Then
-                    Wdbg("Shutdown confirmed from remote access.")
+                    Wdbg("I", "Shutdown confirmed from remote access.")
                     PowerManage("shutdown")
                 ElseIf msg.StartsWith("RebootConfirm") Then
-                    Wdbg("Reboot confirmed from remote access.")
+                    Wdbg("I", "Reboot confirmed from remote access.")
                     PowerManage("reboot")
                 ElseIf msg.StartsWith("ExecConfirm") Then
                     If LoggedIn Then
-                        Wdbg("Exec confirmed from remote access.")
+                        Wdbg("I", "Exec confirmed from remote access.")
                         Console.WriteLine()
                         GetLine(False, msg.Replace("ExecConfirm, ", "").Replace(vbNewLine, ""))
                     Else
-                        Wdbg("Tried to exec from remote access while not logged in. Dropping packet...")
+                        Wdbg("W", "Tried to exec from remote access while not logged in. Dropping packet...")
                     End If
                 Else
-                    Wdbg("Not found. Message was {0}", msg)
+                    Wdbg("W", "Not found. Message was {0}", msg)
                 End If
             Catch ex As Exception
                 Dim SE As SocketException = CType(ex.InnerException, SocketException)
                 If Not IsNothing(SE) Then
                     If Not SE.SocketErrorCode = SocketError.TimedOut Then
-                        Wdbg("Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
+                        Wdbg("E", "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
                         WStkTrc(ex)
                     End If
                 Else

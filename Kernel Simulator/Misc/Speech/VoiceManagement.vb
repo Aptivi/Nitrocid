@@ -24,13 +24,13 @@ Public Module VoiceManagement
         Dim SpeakReq As New WebClient
         SpeakReq.Headers.Add("Content-Type", "audio/mpeg")
         SpeakReq.Headers.Add("User-Agent", "KS on (" + EnvironmentOSType + ")")
-        Wdbg("Headers required: {0}", SpeakReq.Headers.Count)
+        Wdbg("I", "Headers required: {0}", SpeakReq.Headers.Count)
         SpeakReq.DownloadFile("http://translate.google.com/translate_tts?tl=en&q=" + Text + "&client=gtx", paths("Temp") + "/tts.mpeg")
         Dim AudioRead As New AudioFileReader(paths("Temp") + "/tts.mpeg")
-        Wdbg("AudioRead: {0}", AudioRead.TotalTime)
+        Wdbg("I", "AudioRead: {0}", AudioRead.TotalTime)
         Dim WaveEvent As New WaveOutEvent()
         WaveEvent.Init(AudioRead)
-        Wdbg("Initialized Wave Out using {0}", WaveEvent.DeviceNumber)
+        Wdbg("I", "Initialized Wave Out using {0}", WaveEvent.DeviceNumber)
         WaveEvent.Play()
         While WaveEvent.PlaybackState = PlaybackState.Playing
         End While

@@ -28,7 +28,7 @@ Public Module AliasManager
         While Not aliastreamr.EndOfStream
             Dim line As String = aliastreamr.ReadLine
             If Not aliases.ContainsKey(line.Remove(line.IndexOf(","c))) Then
-                Wdbg("Adding ""{0}, {1}"" to aliases.csv...", line.Remove(line.IndexOf(","c)), line.Substring(line.IndexOf(" "c) + 1))
+                Wdbg("I", "Adding ""{0}, {1}"" to aliases.csv...", line.Remove(line.IndexOf(","c)), line.Substring(line.IndexOf(" "c) + 1))
                 aliases.Add(line.Remove(line.IndexOf(","c)), line.Substring(line.IndexOf(" "c) + 1))
             End If
         End While
@@ -38,7 +38,7 @@ Public Module AliasManager
         'Save all aliases to file
         Dim aliast As New List(Of String)
         For i As Integer = 0 To aliases.Count - 1
-            Wdbg("Adding ""{0}, {1}"" to list...", aliases.Keys(i), aliases.Values(i))
+            Wdbg("I", "Adding ""{0}, {1}"" to list...", aliases.Keys(i), aliases.Values(i))
             aliast.Add($"{aliases.Keys(i)}, {aliases.Values(i)}")
         Next
 
@@ -54,34 +54,34 @@ Public Module AliasManager
             'User tries to add an alias.
             If aliasTBA = cmd Then
                 W(DoTranslation("Alias can't be the same name as a command.", currentLang), True, ColTypes.Neutral)
-                Wdbg("Assertion succeeded: {0} = {1}", aliasTBA, cmd)
+                Wdbg("I", "Assertion succeeded: {0} = {1}", aliasTBA, cmd)
             ElseIf Not availableCommands.Contains(cmd) Then
                 W(DoTranslation("Command not found to alias to {0}.", currentLang), True, ColTypes.Neutral, aliasTBA)
-                Wdbg("availableCmds.Contains({0}) = false | No aliasing", cmd)
+                Wdbg("W", "availableCmds.Contains({0}) = false | No aliasing", cmd)
             ElseIf forbidden.Contains(cmd) Then
                 W(DoTranslation("Aliasing {0} to {1} is forbidden.", currentLang), True, ColTypes.Neutral, cmd, aliasTBA)
-                Wdbg("forbid.Contains({0}) = true | No aliasing", cmd)
+                Wdbg("W", "forbid.Contains({0}) = true | No aliasing", cmd)
             ElseIf Not aliases.ContainsKey(aliasTBA) Then
-                Wdbg("Assertion failed: {0} = {1}", aliasTBA, cmd)
+                Wdbg("W", "Assertion failed: {0} = {1}", aliasTBA, cmd)
                 aliases.Add(aliasTBA, cmd)
                 W(DoTranslation("You can now run ""{0}"" as a command: ""{1}"".", currentLang), True, ColTypes.Neutral, aliasTBA, cmd)
             Else
-                Wdbg("Alias {0} already found", aliasTBA)
+                Wdbg("W", "Alias {0} already found", aliasTBA)
                 W(DoTranslation("Alias already found: {0}", currentLang), True, ColTypes.Neutral, aliasTBA)
             End If
         ElseIf mode = "rem" Then
             'user tries to remove an alias
             If aliases.ContainsKey(aliasTBA) Then
                 cmd = aliases(aliasTBA)
-                Wdbg("aliases({0}) is found. That makes it {1}", aliasTBA, cmd)
+                Wdbg("I", "aliases({0}) is found. That makes it {1}", aliasTBA, cmd)
                 aliases.Remove(aliasTBA)
                 W(DoTranslation("You can no longer use ""{0}"" as a command ""{1}"".", currentLang), True, ColTypes.Neutral, aliasTBA, cmd)
             Else
-                Wdbg("aliases({0}) is not found", aliasTBA)
+                Wdbg("W", "aliases({0}) is not found", aliasTBA)
                 W(DoTranslation("Alias {0} is not found to be removed.", currentLang), True, ColTypes.Neutral, aliasTBA)
             End If
         Else
-            Wdbg("Mode {0} was neither add nor rem.", mode)
+            Wdbg("E", "Mode {0} was neither add nor rem.", mode)
             W(DoTranslation("Invalid mode {0}.", currentLang), True, ColTypes.Neutral, mode)
         End If
 
@@ -90,7 +90,7 @@ Public Module AliasManager
     End Sub
     Sub ExecuteAlias(ByVal aliascmd As String)
         'If this sub worked properly, consider putting it to Shell directly
-        Wdbg("Translating alias {0} to {1}...", aliascmd, aliases(aliascmd))
+        Wdbg("I", "Translating alias {0} to {1}...", aliascmd, aliases(aliascmd))
         Dim actualCmd As String = strcommand.Replace(aliascmd, aliases(aliascmd))
         GetCommand.ExecuteCommand(actualCmd)
     End Sub

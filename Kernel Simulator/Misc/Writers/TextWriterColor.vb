@@ -48,7 +48,7 @@ Public Module TextWriterColor
     ''' <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     ''' <remarks></remarks>
-    Public Sub Wdbg(ByVal text As String, ByVal ParamArray vars() As Object)
+    Public Sub Wdbg(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
         If DebugMode Then
             Dim STrace As New StackTrace(True)
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
@@ -89,7 +89,7 @@ Public Module TextWriterColor
             For Each i As Integer In OffendingIndex
                 If i <> -1 Then
                     DebugDevices.Keys(i).Disconnect(True)
-                    Wdbg("Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
+                    Wdbg("W", "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
                     dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                 End If
@@ -120,7 +120,7 @@ Public Module TextWriterColor
             For Each i As Integer In OffendingIndex
                 If i <> -1 Then
                     DebugDevices.Keys(i).Disconnect(True)
-                    Wdbg("Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
+                    Wdbg("W", "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
                     dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                 End If
@@ -140,7 +140,7 @@ Public Module TextWriterColor
                 For l As Integer = 5 To Lines.Length - 2 'Remove the first 5 lines from stream.
                     dbgWriter.WriteLine(Lines(l))
                 Next
-                Wdbg("Max debug quota size exceeded, was {0} MB.", FormatNumber(OldSize / 1024 / 1024, 1))
+                Wdbg("W", "Max debug quota size exceeded, was {0} MB.", FormatNumber(OldSize / 1024 / 1024, 1))
             End If
         Catch ex As Exception
             WStkTrc(ex)

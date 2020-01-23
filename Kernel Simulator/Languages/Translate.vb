@@ -38,22 +38,22 @@ Public Module Translate
         If availableLangs.Contains(lang) And lang <> "eng" Then
             'Prepare dictionary
             translatedString = PrepareDict(lang)
-            Wdbg("Dictionary size: {0}", translatedString.Count)
+            Wdbg("I", "Dictionary size: {0}", translatedString.Count)
 
             'Do translation
             If translatedString.Keys.Contains(text) Then
-                Wdbg("Translating string to {0}: {1}", lang, text)
+                Wdbg("I", "Translating string to {0}: {1}", lang, text)
                 Return translatedString(text)
             Else 'String wasn't found
-                Wdbg("No string found in langlist. Lang: {0}, String: {1}", lang, text)
+                Wdbg("W", "No string found in langlist. Lang: {0}, String: {1}", lang, text)
                 text = " ! Needs Localization ! " + text
                 Return text
             End If
         ElseIf availableLangs.Contains(lang) And lang = "eng" Then 'If the language is available, but is English, don't translate
-            Wdbg("{0} is in language list but it's English", lang)
+            Wdbg("W", "{0} is in language list but it's English", lang)
             Return text
         Else 'If the language is invalid
-            Wdbg("{0} isn't in language list", lang)
+            Wdbg("E", "{0} isn't in language list", lang)
             Return text
         End If
     End Function
@@ -128,14 +128,14 @@ Public Module Translate
 
     Public Sub SetLang(ByVal lang As String, Optional ByVal Force As Boolean = False)
         If availableLangs.Contains(lang) Then
-            Wdbg("Forced {0}", Force)
+            Wdbg("I", "Forced {0}", Force)
             If Not Force Then
                 If lang.EndsWith("-T") Then 'The condition prevents tricksters from using "chlang <lang>-T", if not forced.
-                    Wdbg("Trying to bypass prompt.")
+                    Wdbg("W", "Trying to bypass prompt.")
                     Exit Sub
                 Else
                     'Check to see if the language is transliterable
-                    Wdbg("Transliterable? {0}", Transliterables.Contains(lang))
+                    Wdbg("I", "Transliterable? {0}", Transliterables.Contains(lang))
                     If Transliterables.Contains(lang) Then
                         W(DoTranslation("The language you've selected contains two variants. Select one:", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
@@ -144,7 +144,7 @@ CHOICE:
                         W(DoTranslation("Select your choice:", currentLang), False, ColTypes.Input)
                         Dim cho As String = Console.ReadKey(True).KeyChar
                         Console.WriteLine()
-                        Wdbg("Choice: {0}", cho)
+                        Wdbg("I", "Choice: {0}", cho)
                         If cho = "2" Then
                             lang += "-T"
                         ElseIf Not cho = "1" Then
@@ -161,23 +161,23 @@ CHOICE:
                     Case "arb-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(1256)
                         Console.InputEncoding = Text.Encoding.GetEncoding(1256)
-                        Wdbg("Encoding set successfully for Arabic to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg("I", "Encoding set successfully for Arabic to {0}.", Console.OutputEncoding.EncodingName)
                     Case "chi-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(936)
                         Console.InputEncoding = Text.Encoding.GetEncoding(936)
-                        Wdbg("Encoding set successfully for Chinese to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg("I", "Encoding set successfully for Chinese to {0}.", Console.OutputEncoding.EncodingName)
                     Case "jpn-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(932)
                         Console.InputEncoding = Text.Encoding.GetEncoding(932)
-                        Wdbg("Encoding set successfully for Japanese to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg("I", "Encoding set successfully for Japanese to {0}.", Console.OutputEncoding.EncodingName)
                     Case "rus-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(866)
                         Console.InputEncoding = Text.Encoding.GetEncoding(866)
-                        Wdbg("Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg("I", "Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
                     Case Else
                         Console.OutputEncoding = Text.Encoding.GetEncoding(65001)
                         Console.InputEncoding = Text.Encoding.GetEncoding(65001)
-                        Wdbg("Encoding set successfully to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg("I", "Encoding set successfully to {0}.", Console.OutputEncoding.EncodingName)
                 End Select
             Catch ex As Exception
                 W(DoTranslation("Unable to set codepage. The language may not display properly.", currentLang), True, ColTypes.Neutral)

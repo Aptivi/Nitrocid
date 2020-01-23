@@ -92,7 +92,7 @@ Public Module Login
                 Exit Sub
             End If
             answerpass = ""
-            Wdbg("User {0} is not disabled", usernamerequested)
+            Wdbg("I", "User {0} is not disabled", usernamerequested)
 
             'Get the password from dictionary
             password = userword.Item(usernamerequested)

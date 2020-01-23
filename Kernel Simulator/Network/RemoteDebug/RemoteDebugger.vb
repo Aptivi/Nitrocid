@@ -66,7 +66,7 @@ Module RemoteDebugger
                     dbgConns.Keys.Last.WriteLine(">> Chat version 0.3.2") 'Increment each minor/major change(s)
                     dbgConns.Keys.Last.WriteLine(">> Your address is {0}.", RDebugIP)
                     dbgConns.Keys.Last.WriteLine(">> Your name is {0}.", RDebugName)
-                    Wdbg("Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
+                    Wdbg("I", "Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
                 End If
             Catch ae As ThreadAbortException
                 Exit While
@@ -108,14 +108,14 @@ Module RemoteDebugger
                                 dbgConns.Keys(i - 1).WriteLine("Command {0} not found. Use ""/help"" to see the list.", cmd.Split(" ")(0))
                             End If
                         Else
-                            Wdbg("{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                            Wdbg("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
                         End If
                     End If
                 Catch ex As Exception
                     Dim SE As SocketException = CType(ex.InnerException, SocketException)
                     If Not IsNothing(SE) Then
                         If Not SE.SocketErrorCode = SocketError.TimedOut Then
-                            Wdbg("Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
+                            Wdbg("E", "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
                             WStkTrc(ex)
                         End If
                     Else
@@ -132,7 +132,7 @@ Module RemoteDebugger
                 Exit Sub
             Else
                 If IPAddr = DebugDevices.Values(i) Then
-                    Wdbg("Debug device {0} disconnected.", DebugDevices.Values(i))
+                    Wdbg("I", "Debug device {0} disconnected.", DebugDevices.Values(i))
                     Found = True
                     DebugDevices.Keys(i).Disconnect(True)
                     dbgConns.Remove(dbgConns.Keys(i))
@@ -152,7 +152,7 @@ Module RemoteDebugger
                 Exit Sub
             Else
                 If IPAddr = DebugDevices.Values(i) Then
-                    Wdbg("Debug device {0} disconnected.", DebugDevices.Values(i))
+                    Wdbg("I", "Debug device {0} disconnected.", DebugDevices.Values(i))
                     Found = True
                     DebugDevices.Keys(i).Disconnect(True)
                     dbgConns.Remove(dbgConns.Keys(i))

@@ -72,7 +72,7 @@ Module TGetCommand
             End If
         ElseIf Cmd = "printd" Then 'Usage: printd <Message>
             If FullArgsL.Count - 1 >= 0 Then
-                Wdbg(String.Join(" ", FullArgsL))
+                Wdbg("I", String.Join(" ", FullArgsL))
             End If
         ElseIf Cmd = "printdf" Then 'Usage: printdf <Variable1;Variable2;Variable3;...> <Message>
             If FullArgsL.Count - 1 >= 1 Then
@@ -81,7 +81,7 @@ Module TGetCommand
                     Vars(i) = Evaluate(Vars(i)).ToString
                 Next
                 FullArgsL.RemoveAt(0)
-                Wdbg(String.Join(" ", FullArgsL), Vars)
+                Wdbg("I", String.Join(" ", FullArgsL), Vars)
             End If
         ElseIf Cmd = "testevent" Then 'Usage: testevent <Event>
             If FullArgsL.Count - 1 = 0 Then
@@ -172,10 +172,10 @@ Module TGetCommand
             Console.WriteLine(esc + "[38;5;" + FullArgsL(0) + "mIndex " + FullArgsL(0))
         ElseIf Cmd = "soundtest" Then 'Usage: soundtest <file>
             Dim AudioRead As New AudioFileReader(FullArgs)
-            Wdbg("AudioRead: {0}", AudioRead.TotalTime)
+            Wdbg("I", "AudioRead: {0}", AudioRead.TotalTime)
             Dim WaveEvent As New WaveOutEvent()
             WaveEvent.Init(AudioRead)
-            Wdbg("Initialized Wave Out using {0}", WaveEvent.DeviceNumber)
+            Wdbg("I", "Initialized Wave Out using {0}", WaveEvent.DeviceNumber)
             WaveEvent.Play()
             While WaveEvent.PlaybackState = PlaybackState.Playing
             End While

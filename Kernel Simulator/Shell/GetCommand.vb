@@ -27,29 +27,29 @@ Public Module GetCommand
         '1. Get the index of the first space (Used for step 3)
         Dim index As Integer = requestedCommand.IndexOf(" ")
         If index = -1 Then index = requestedCommand.Length
-        Wdbg("Index: {0}", index)
+        Wdbg("I", "Index: {0}", index)
 
         '2. Split the requested command string into words
         Dim words() As String = requestedCommand.Split({" "c})
         For i As Integer = 0 To words.Length - 1
-            Wdbg("Word {0}: {1}", i + 1, words(i))
+            Wdbg("I", "Word {0}: {1}", i + 1, words(i))
         Next
 
         '3. Get the string of arguments
         Dim strArgs As String = requestedCommand.Substring(index)
-        Wdbg("Prototype strArgs: {0}", strArgs)
+        Wdbg("I", "Prototype strArgs: {0}", strArgs)
         If Not index = requestedCommand.Length Then strArgs = strArgs.Substring(1)
-        Wdbg("Finished strArgs: {0}", strArgs)
+        Wdbg("I", "Finished strArgs: {0}", strArgs)
 
         '4. Split the arguments string into array (args: No empty entries | eargs: Empty entries)
         Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
         Dim eargs() As String = strArgs.Split({" "c})
 
         '4a. Debug: get all arguments from args()
-        Wdbg("Arguments parsed from args(): " + String.Join(", ", args))
+        Wdbg("I", "Arguments parsed from args(): " + String.Join(", ", args))
 
         '4b. Debug: get all arguments from eargs()
-        Wdbg("Arguments parsed from eargs(): " + String.Join(", ", eargs))
+        Wdbg("I", "Arguments parsed from eargs(): " + String.Join(", ", eargs))
 
         '5. Split the arguments (again) this time with enclosed quotes
         Dim eqargs() As String
@@ -66,14 +66,14 @@ Public Module GetCommand
         End If
 
         '5a. Debug: get all arguments from eqargs() (NOTICE: args() and eargs() will be removed in the future.)
-        If Not eqargs Is Nothing Then Wdbg("Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+        If Not eqargs Is Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
 
         'The command is done
         Dim Done As Boolean = False
 
         '6. Check to see if a requested command is obsolete
         If obsoleteCmds.Contains(words(0)) Then
-            Wdbg("The command requested {0} is obsolete", words(0))
+            Wdbg("I", "The command requested {0} is obsolete", words(0))
             W(DoTranslation("This command is obsolete and will be removed in a future release.", currentLang), True, ColTypes.Neutral)
         End If
 
@@ -132,9 +132,9 @@ Public Module GetCommand
                     If args.Count - 1 >= 0 Then
                         Dim FinalArgs As New List(Of String)
                         For Each arg As String In args
-                            Wdbg("arginj: Parsing argument {0}...", arg)
+                            Wdbg("I", "Parsing argument {0}...", arg)
                             If AvailableArgs.Contains(arg) Then
-                                Wdbg("arginj: Adding argument {0}...", arg)
+                                Wdbg("I", "Adding argument {0}...", arg)
                                 FinalArgs.Add(arg)
                             End If
                         Next
@@ -902,7 +902,7 @@ Public Module GetCommand
                 Throw New EventsAndExceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:", currentLang))
             End If
         Catch neaex As EventsAndExceptions.NotEnoughArgumentsException
-            Wdbg("User hasn't provided enough arguments for {0}", words(0))
+            Wdbg("W", "User hasn't provided enough arguments for {0}", words(0))
             W(neaex.Message, True, ColTypes.Neutral)
             ShowHelp(words(0))
         Catch ex As Exception

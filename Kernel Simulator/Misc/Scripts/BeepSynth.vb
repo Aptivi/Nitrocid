@@ -25,35 +25,35 @@ Module BeepSynth
             file = ReplaceLastOccurrence(file, CurrDir, "")
 #Enable Warning IDE0059
         End If
-        Wdbg("Probing {0}...", file)
+        Wdbg("I", "Probing {0}...", file)
         If IO.File.Exists(file) Then
             Dim FStream As New IO.StreamReader(file)
-            Wdbg("Opened StreamReader(file) with the length of {0}", FStream.BaseStream.Length)
+            Wdbg("I", "Opened StreamReader(file) with the length of {0}", FStream.BaseStream.Length)
             If FStream.ReadLine = "KS-BSynth" Then
                 'Comments are ignored in the file. Comment format: - <message>
-                Wdbg("File is scripted")
+                Wdbg("I", "File is scripted")
                 While Not FStream.EndOfStream
                     Dim line As String = FStream.ReadLine
-                    Wdbg("Line: {0}", line)
+                    Wdbg("I", "Line: {0}", line)
                     If Not line.StartsWith("-") And Not line = "" Then
                         Try
-                            Wdbg("Not a comment. Getting frequency and time...")
+                            Wdbg("I", "Not a comment. Getting frequency and time...")
                             Dim freq As Integer = line.Remove(line.IndexOf(","))
                             Dim ms As Integer = line.Substring(line.IndexOf(",") + 1)
                             Console.Beep(freq, ms)
-                            Wdbg("Got frequency {0} Hz and time {1} ms", freq, ms)
+                            Wdbg("I", "Got frequency {0} Hz and time {1} ms", freq, ms)
                         Catch ex As Exception
-                            Wdbg("Not a comment and not a synth line. ({0})", line)
+                            Wdbg("E", "Not a comment and not a synth line. ({0})", line)
                             W(DoTranslation("Failed to probe a synth line.", currentLang), True, ColTypes.Neutral)
                         End Try
                     End If
                 End While
             Else
-                Wdbg("File is not scripted")
+                Wdbg("E", "File is not scripted")
                 W(DoTranslation("The file isn't a scripted synth file.", currentLang), True, ColTypes.Neutral)
             End If
         Else
-            Wdbg("File doesn't exist")
+            Wdbg("E", "File doesn't exist")
             W(DoTranslation("Scripted file {0} does not exist.", currentLang), True, ColTypes.Neutral, file)
         End If
     End Sub

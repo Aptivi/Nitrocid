@@ -23,7 +23,7 @@ Public Module HardwareProbe
 
     'TODO: Re-write in Beta
     Public Sub ProbeHW()
-        Wdbg("QuietProbe = {0}.", quietProbe)
+        Wdbg("I", "QuietProbe = {0}.", quietProbe)
         If Not quietProbe Then
             W(DoTranslation("hwprobe: Your hardware will be probed. Please wait...", currentLang), True, ColTypes.Neutral)
             StartProbing()
@@ -46,19 +46,19 @@ Public Module HardwareProbe
 
         'We are checking to see if any of the probers reported a failure starting with CPU
         If CPUDone = False Then
-            Wdbg("CPU failed to probe.", KernelVersion)
+            Wdbg("E", "CPU failed to probe.", KernelVersion)
             W(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
         End If
 
         'then RAM
         If RAMDone = False Then
-            Wdbg("RAM failed to probe.", KernelVersion)
+            Wdbg("E", "RAM failed to probe.", KernelVersion)
             W(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
         End If
 
         'and finally HDD
         If HDDDone = False Then
-            Wdbg("HDD failed to probe.", KernelVersion)
+            Wdbg("E", "HDD failed to probe.", KernelVersion)
             W(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
         End If
 
@@ -93,7 +93,7 @@ Public Module HardwareProbe
                 HDDList.Add(New HDD With {.Model = Hdd("Model"), .Size = Hdd("Size"), .Manufacturer = Hdd("Manufacturer"),
                                           .Cylinders = Hdd("TotalCylinders"), .Heads = Hdd("TotalHeads"), .Sectors = Hdd("TotalSectors"),
                                           .InterfaceType = Hdd("InterfaceType"), .ID = Hdd("DeviceID")})
-                Wdbg("HDD: Manufacturer = {2}, Model = {0}, Size = {1}, InterfaceType = {3}, CHS: {4}, {5}, {6}, ID: {7}",
+                Wdbg("I", "HDD: Manufacturer = {2}, Model = {0}, Size = {1}, InterfaceType = {3}, CHS: {4}, {5}, {6}, ID: {7}",
                      HDDList(HDDList.Count - 1).Model, HDDList(HDDList.Count - 1).Size, HDDList(HDDList.Count - 1).Manufacturer,
                      HDDList(HDDList.Count - 1).InterfaceType, HDDList(HDDList.Count - 1).Cylinders, HDDList(HDDList.Count - 1).Heads,
                      HDDList(HDDList.Count - 1).Sectors, HDDList(HDDList.Count - 1).ID)
@@ -134,7 +134,7 @@ Public Module HardwareProbe
         For Each CPU As ManagementBaseObject In CPUSet.Get
             Try
                 CPUList.Add(New CPU With {.Name = CPU("Name"), .ClockSpeed = CPU("CurrentClockSpeed")})
-                Wdbg("CPU: Name = {0}, CurrentClockSpeed = {1}", CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
+                Wdbg("I", "CPU: Name = {0}, CurrentClockSpeed = {1}", CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
             Catch ex As Exception
                 CPUDone = False
                 If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
@@ -148,7 +148,7 @@ Public Module HardwareProbe
                 RAMList.Add(New RAM With {.ChipCapacity = RAM("Capacity"), .SlotName = "", .SlotNumber = 0})
                 If slotProbe = True Then RAMList(RAMList.Count - 1).SlotName = RAM("DeviceLocator")
                 temp += CStr(RAMList(RAMList.Count - 1).ChipCapacity / 1024 / 1024) + " "
-                Wdbg("RAM: Capacity = {0}", RAMList(RAMList.Count - 1).ChipCapacity)
+                Wdbg("I", "RAM: Capacity = {0}", RAMList(RAMList.Count - 1).ChipCapacity)
             Catch ex As Exception
                 RAMDone = False
                 If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
@@ -163,7 +163,7 @@ Public Module HardwareProbe
             For Each Slot As ManagementBaseObject In SltSet.Get
                 Try
                     totalSlots = Slot("MemoryDevices")
-                    Wdbg("RAM: totalSlots = {0}", totalSlots)
+                    Wdbg("I", "RAM: totalSlots = {0}", totalSlots)
                 Catch ex As Exception
                     RAMDone = False
                     If DebugMode Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
@@ -235,7 +235,7 @@ Public Module HardwareProbe
             Dim inxiout As String = inxi.StandardOutput.ReadToEnd
             If Not inxiout.StartsWith("{") And Not inxiout.EndsWith("}") Then 'If an error appeared while running perl
                 HDDDone = False
-                Wdbg(inxiout)
+                Wdbg("I", inxiout)
                 W(DoTranslation("You may not have libcpanel-json-xs-perl installed on your system. Refer to your package manager for installation. For Debian (and derivatives) systems, you might want to run ""sudo apt install libcpanel-json-xs-perl"" in the terminal emulator. More details of an error:", currentLang) + vbNewLine + inxiout, True, ColTypes.Neutral)
                 Exit Sub
             End If

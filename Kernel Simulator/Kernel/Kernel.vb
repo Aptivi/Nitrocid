@@ -71,12 +71,12 @@ Public Module Kernel
 
                 'Phase 1: Probe hardware
                 W(vbNewLine + DoTranslation("- Stage 1: Hardware detection", currentLang), True, ColTypes.Stage)
-                Wdbg("- Kernel Phase 1: Probing hardware")
+                Wdbg("I", "- Kernel Phase 1: Probing hardware")
                 ProbeHW()
 
                 'Phase 2: Username management
                 W(vbNewLine + DoTranslation("- Stage 2: Internal username management", currentLang), True, ColTypes.Stage)
-                Wdbg("- Kernel Phase 2: Manage internal usernames")
+                Wdbg("I", "- Kernel Phase 2: Manage internal usernames")
                 Adduser("root", RootPasswd)
                 Permission("Admin", "root", "Allow")
                 If enableDemo = True Then Adduser("demo")
@@ -84,8 +84,8 @@ Public Module Kernel
 
                 'Phase 3: Parse Mods and Screensavers
                 W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection", currentLang), True, ColTypes.Stage)
-                Wdbg("- Kernel Phase 3: Parse mods and screensavers")
-                Wdbg("Safe mode flag is set to {0}", SafeMode)
+                Wdbg("I", "- Kernel Phase 3: Parse mods and screensavers")
+                Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
                     ParseMods(True)
                     Dim modPath As String = paths("Mods")
@@ -96,7 +96,7 @@ Public Module Kernel
 
                 'Phase 4: Free unused RAM and raise the started event
                 W(vbNewLine + DoTranslation("- Stage 4: Garbage collection", currentLang), True, ColTypes.Stage)
-                Wdbg("- Kernel Phase 4: Garbage collection starts and the events now work")
+                Wdbg("I", "- Kernel Phase 4: Garbage collection starts and the events now work")
                 Dim proc As Process = Process.GetCurrentProcess
                 W(DoTranslation("Before garbage collection: {0} bytes", currentLang), True, ColTypes.Neutral, proc.PrivateMemorySize64)
                 EventManager.RaiseStartKernel()
@@ -106,7 +106,7 @@ Public Module Kernel
 
                 'Phase 5: Log-in
                 W(vbNewLine + DoTranslation("- Stage 5: Log in", currentLang), True, ColTypes.Stage)
-                Wdbg("- Kernel Phase 5: Log in")
+                Wdbg("I", "- Kernel Phase 5: Log in")
                 If Not BootArgs Is Nothing Then
                     If BootArgs.Contains("quiet") Then
                         Console.SetOut(DefConsoleOut)

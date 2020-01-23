@@ -36,7 +36,7 @@ Public Module FTPShell
         While True
             'Complete initialization
             If initialized = False Then
-                Wdbg($"Completing initialization of FTP: {initialized}")
+                Wdbg("I", $"Completing initialization of FTP: {initialized}")
                 FtpTrace.AddListener(New FTPTracer)
                 FtpTrace.LogUserName = FTPLoggerUsername
                 FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
@@ -47,7 +47,7 @@ Public Module FTPShell
 
             'Check if the shell is going to exit
             If ftpexit = True Then
-                Wdbg("Exiting shell...")
+                Wdbg("W", "Exiting shell...")
                 connected = False
                 ClientFTP?.Disconnect()
                 ftpsite = ""
@@ -63,7 +63,7 @@ Public Module FTPShell
 
             'Prompt for command
             If Not Connects Then
-                Wdbg("Preparing prompt...")
+                Wdbg("I", "Preparing prompt...")
                 If connected Then
                     W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, user) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, ftpsite) : W("]{0} ", False, ColTypes.Gray, currentremoteDir)
                 Else
@@ -78,11 +78,11 @@ Public Module FTPShell
             Dim esc As Char = GetEsc()
             If ColoredShell = True Then Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
             If Connects Then
-                Wdbg($"Currently connecting to {Address} by ""ftp (address)""...")
+                Wdbg("I", $"Currently connecting to {Address} by ""ftp (address)""...")
                 strcmd = $"connect {Address}"
                 Connects = False
             Else
-                Wdbg("Normal shell")
+                Wdbg("I", "Normal shell")
                 strcmd = Console.ReadLine()
             End If
 
@@ -93,7 +93,7 @@ Public Module FTPShell
 
     Public Sub FTPGetLine()
         Dim words As String() = strcmd.Split({" "c})
-        Wdbg($"Is the command found? {availftpcmds.Contains(words(0))}")
+        Wdbg("I", $"Is the command found? {availftpcmds.Contains(words(0))}")
         If availftpcmds.Contains(words(0)) Then
             FTPGetCommand.ExecuteCommand(strcmd)
         Else

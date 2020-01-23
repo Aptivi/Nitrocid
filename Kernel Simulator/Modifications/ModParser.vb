@@ -39,7 +39,7 @@ Public Module ModParser
     '------------------------------------------- Generators -------------------------------------------
     Private Function GenMod(ByVal PLang As String, ByVal code As String) As IScript
         Dim provider As CodeDomProvider
-        Wdbg($"Language detected: {PLang}")
+        Wdbg("I", $"Language detected: {PLang}")
         If PLang = "C#" Then
             provider = New CSharpCodeProvider
         ElseIf PLang = "VB.NET" Then
@@ -53,7 +53,7 @@ Public Module ModParser
         }
 
         'Add referenced assemblies
-        Wdbg("Referenced assemblies will be added.")
+        Wdbg("I", "Referenced assemblies will be added.")
         prm.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly.Location) 'It should reference itself
         prm.ReferencedAssemblies.Add("System.dll")
         prm.ReferencedAssemblies.Add("System.Core.dll")
@@ -61,7 +61,7 @@ Public Module ModParser
         prm.ReferencedAssemblies.Add("System.DirectoryServices.dll")
         prm.ReferencedAssemblies.Add("System.Xml.dll")
         prm.ReferencedAssemblies.Add("System.Xml.Linq.dll")
-        Wdbg("Referenced assemblies added.")
+        Wdbg("I", "Referenced assemblies added.")
 
         'Try to compile
         Dim namespc As String = GetType(IScript).Namespace
@@ -76,13 +76,13 @@ Public Module ModParser
 #Enable Warning BC42104
 
         'Check to see if there are compilation errors
-        Wdbg("Has errors: {0}", res.Errors.HasErrors)
-        Wdbg("Has warnings: {0}", res.Errors.HasWarnings)
+        Wdbg("I", "Has errors: {0}", res.Errors.HasErrors)
+        Wdbg("I", "Has warnings: {0}", res.Errors.HasWarnings)
         If res.Errors.HasErrors Then
             W(DoTranslation("Mod can't be loaded because of the following: ", currentLang), True, ColTypes.Neutral)
             For Each errorName In res.Errors
                 W(errorName.ToString, True, ColTypes.Neutral)
-                Wdbg(errorName.ToString)
+                Wdbg("E", errorName.ToString)
             Next
             Exit Function
         End If
@@ -99,15 +99,15 @@ Public Module ModParser
             Dim count As Integer = FileIO.FileSystem.GetFiles(modPath).Count
             If (count <> 0) And StartStop = True Then
                 W(DoTranslation("mod: Loading mods...", currentLang), True, ColTypes.Neutral)
-                Wdbg("Mods are being loaded. Total mods with screensavers = {0}", count)
+                Wdbg("I", "Mods are being loaded. Total mods with screensavers = {0}", count)
             ElseIf (count <> 0) And StartStop = False Then
                 W(DoTranslation("mod: Stopping mods...", currentLang), True, ColTypes.Neutral)
-                Wdbg("Mods are being stopped. Total mods with screensavers = {0}", count)
+                Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
             End If
             If StartStop = False Then
                 For Each script As IScript In scripts.Values
                     script.StopMod()
-                    Wdbg("script.StopMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
+                    Wdbg("I", "script.StopMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
                     If script.Name <> "" And script.Version <> "" Then W("{0} v{1} stopped", True, ColTypes.Neutral, script.Name, script.Version)
                 Next
             Else
@@ -123,10 +123,10 @@ Public Module ModParser
         modFile = modFile.Replace(modPath, "")
         If Not modFile.EndsWith(".m") Then
             'Ignore all mods who doesn't end with .m
-            Wdbg("Unsupported file type for mod file {0}.", modFile)
+            Wdbg("W", "Unsupported file type for mod file {0}.", modFile)
         ElseIf modFile.EndsWith("SS.m") Then
             'Ignore all mods who end with SS.m
-            Wdbg("Mod file {0} is a screensaver and is ignored.", modFile)
+            Wdbg("W", "Mod file {0} is a screensaver and is ignored.", modFile)
         ElseIf modFile.EndsWith("CS.m") Then
             'Mod has a language of C#
             Dim script As IScript = GenMod("C#", IO.File.ReadAllText(modPath + modFile))
@@ -141,27 +141,27 @@ Public Module ModParser
     Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         If Not IsNothing(script) Then
             script.StartMod()
-            Wdbg("script.StartMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
+            Wdbg("I", "script.StartMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
             If script.Name = "" Then
-                Wdbg("No name for {0}", modFile)
+                Wdbg("W", "No name for {0}", modFile)
                 W(DoTranslation("Mod {0} does not have the name. Review the source code.", currentLang), True, ColTypes.Neutral, modFile)
                 scripts.Add(script.Cmd, script)
             Else
-                Wdbg("There is a name for {0}", modFile)
+                Wdbg("I", "There is a name for {0}", modFile)
                 scripts.Add(script.Name, script)
             End If
             If script.Version = "" And script.Name <> "" Then
-                Wdbg("{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
+                Wdbg("I", "{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
                 W(DoTranslation("Mod {0} does not have the version.", currentLang), True, ColTypes.Neutral, script.Name)
             ElseIf script.Name <> "" And script.Version <> "" Then
-                Wdbg("{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
+                Wdbg("I", "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
                 W(DoTranslation("{0} v{1} started", currentLang), True, ColTypes.Neutral, script.Name, script.Version)
             End If
             If script.Cmd <> "" And StartStop = True Then
                 modcmnds.Add(script.Cmd)
                 If script.Def = "" Then
                     W(DoTranslation("No definition for command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
-                    Wdbg("{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
+                    Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
                     script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
                 End If
                 moddefs.Add(script.Cmd, script.Def)

@@ -208,7 +208,7 @@ Public Module Config
 
             'Check to see if the kernel is outdated
             If configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
-                Wdbg("Kernel version upgraded to {0} from {1}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
+                Wdbg("W", "Kernel version upgraded from {1} to {0}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
                 W(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), True, ColTypes.Neutral, configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
                 UpdateConfig()
             End If

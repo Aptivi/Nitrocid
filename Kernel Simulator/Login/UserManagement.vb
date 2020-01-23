@@ -32,7 +32,7 @@ Public Module UserManagement
             Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(unpassword))
             unpassword = GetArrayEnc(hashbyte)
             userword.Add(uninitUser, unpassword)
-            Wdbg("Username {0} added. Readying permissions...", uninitUser)
+            Wdbg("I", "Username {0} added. Readying permissions...", uninitUser)
             adminList.Add(uninitUser, False)
             disabledList.Add(uninitUser, False)
         Catch ex As Exception
@@ -78,7 +78,7 @@ Public Module UserManagement
             ElseIf user = Nothing Then
                 W(DoTranslation("Blank username.", currentLang), True, ColTypes.Neutral)
             ElseIf userword.ContainsKey(user) = False Then
-                Wdbg("ASSERT(isFound({0})) = False", user)
+                Wdbg("I", "ASSERT(isFound({0})) = False", user)
                 W(DoTranslation("User {0} not found.", currentLang), True, ColTypes.Neutral, user)
             Else
                 For Each usersRemove As String In userword.Keys.ToArray
@@ -86,11 +86,11 @@ Public Module UserManagement
                         W(DoTranslation("User {0} isn't allowed to be removed.", currentLang), True, ColTypes.Neutral, user)
                     ElseIf user = usersRemove And usersRemove = signedinusrnm Then
                         W(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin.", currentLang), True, ColTypes.Neutral, user)
-                        Wdbg("ASSERT({0}.isLoggedIn(ASSERT({0} = {1}) = True)) = True", user, signedinusrnm)
+                        Wdbg("I", "ASSERT({0}.isLoggedIn(ASSERT({0} = {1}) = True)) = True", user, signedinusrnm)
                     ElseIf usersRemove = user And user <> "root" Then
                         adminList.Remove(user)
                         disabledList.Remove(user)
-                        Wdbg("userword.ToBeRemoved = {0}", String.Join(", ", userword(user).ToArray))
+                        Wdbg("I", "userword.ToBeRemoved = {0}", String.Join(", ", userword(user).ToArray))
                         userword.Remove(user)
                         W(DoTranslation("User {0} removed.", currentLang), True, ColTypes.Neutral, user)
                         DoneFlag = "Yes"
@@ -123,12 +123,12 @@ Public Module UserManagement
                         If type = "Admin" Then
                             DoneFlag = True
                             adminList(username) = True
-                            Wdbg("adminList.Added = {0}", adminList(username))
+                            Wdbg("I", "adminList.Added = {0}", adminList(username))
                             W(DoTranslation("The user {0} has been added to the admin list.", currentLang), True, ColTypes.Neutral, username)
                         ElseIf type = "Disabled" Then
                             DoneFlag = True
                             disabledList(username) = True
-                            Wdbg("disabledList.Added = {0}", disabledList(username))
+                            Wdbg("I", "disabledList.Added = {0}", disabledList(username))
                             W(DoTranslation("The user {0} has been added to the disabled list.", currentLang), True, ColTypes.Neutral, username)
                         Else
                             W(DoTranslation("Failed to add user into permission lists: invalid type {0}", currentLang), True, ColTypes.Neutral, type)
@@ -137,7 +137,7 @@ Public Module UserManagement
                     End If
                 Next
                 If DoneFlag = False Then
-                    Wdbg("ASSERT(isFound({0})) = False", username)
+                    Wdbg("I", "ASSERT(isFound({0})) = False", username)
                     W(DoTranslation("Failed to add user into permission lists: invalid user {0}", currentLang), True, ColTypes.Neutral, username)
                 End If
             ElseIf mode = "Disallow" Then
@@ -145,12 +145,12 @@ Public Module UserManagement
                     If username = availableUsers And username <> signedinusrnm Then
                         If type = "Admin" Then
                             DoneFlag = True
-                            Wdbg("adminList.ToBeRemoved = {0}", username)
+                            Wdbg("I", "adminList.ToBeRemoved = {0}", username)
                             adminList(username) = False
                             W(DoTranslation("The user {0} has been removed from the admin list.", currentLang), True, ColTypes.Neutral, username)
                         ElseIf type = "Disabled" Then
                             DoneFlag = True
-                            Wdbg("disabledList.ToBeRemoved = {0}", username)
+                            Wdbg("I", "disabledList.ToBeRemoved = {0}", username)
                             disabledList(username) = False
                             W(DoTranslation("The user {0} has been removed from the disabled list.", currentLang), True, ColTypes.Neutral, username)
                         Else
@@ -163,7 +163,7 @@ Public Module UserManagement
                     End If
                 Next
                 If Not DoneFlag Then
-                    Wdbg("ASSERT(isFound({0})) = False", username)
+                    Wdbg("I", "ASSERT(isFound({0})) = False", username)
                     W(DoTranslation("Failed to remove user from permission lists: invalid user {0}", currentLang), True, ColTypes.Neutral, username)
                 End If
             Else
@@ -189,14 +189,14 @@ Public Module UserManagement
             If adminList.ContainsKey(oldName) = True And disabledList.ContainsKey(oldName) = True Then
                 Dim temporary1 As Boolean = adminList(oldName)
                 Dim temporary2 As Boolean = disabledList(oldName)
-                Wdbg("adminList.ToBeRemoved = {0}", String.Join(", ", oldName))
-                Wdbg("disabledList.ToBeRemoved = {0}", String.Join(", ", oldName))
+                Wdbg("I", "adminList.ToBeRemoved = {0}", String.Join(", ", oldName))
+                Wdbg("I", "disabledList.ToBeRemoved = {0}", String.Join(", ", oldName))
                 adminList.Remove(oldName)
                 disabledList.Remove(oldName)
                 adminList.Add(username, temporary1)
                 disabledList.Add(username, temporary2)
-                Wdbg("adminList.Added = {0}", adminList(username))
-                Wdbg("disabledList.Added = {0}", disabledList(username))
+                Wdbg("I", "adminList.Added = {0}", adminList(username))
+                Wdbg("I", "disabledList.Added = {0}", disabledList(username))
             End If
         Catch ex As Exception
             If DebugMode = True Then

@@ -34,7 +34,7 @@ Module TShell
                 End If
             Catch ex As Exception
                 W(DoTranslation("Error in unit testing: {0}"), True, ColTypes.Neutral, ex.Message)
-                Wdbg("Error: {0}", ex.Message)
+                Wdbg("E", "Error: {0}", ex.Message)
                 WStkTrc(ex)
             End Try
         End While

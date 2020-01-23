@@ -51,284 +51,284 @@ Public Class EventsAndExceptions
     'These subs handle events
     Public Sub RespondStartKernel() Handles Me.KernelStarted
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event KernelStarted()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event KernelStarted()...", script.Name, script.Version)
             script.InitEvents("KernelStarted")
         Next
     End Sub
     Public Sub RespondPreLogin() Handles Me.PreLogin
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PreLogin()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PreLogin()...", script.Name, script.Version)
             script.InitEvents("PreLogin")
         Next
     End Sub
     Public Sub RespondPostLogin() Handles Me.PostLogin
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PostLogin()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PostLogin()...", script.Name, script.Version)
             script.InitEvents("PostLogin")
         Next
     End Sub
     Public Sub RespondShellInitialized() Handles Me.ShellInitialized
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event ShellInitialized()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event ShellInitialized()...", script.Name, script.Version)
             script.InitEvents("ShellInitialized")
         Next
     End Sub
     Public Sub RespondPreExecuteCommand() Handles Me.PreExecuteCommand
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PreExecuteCommand()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PreExecuteCommand()...", script.Name, script.Version)
             script.InitEvents("PreExecuteCommand")
         Next
     End Sub
     Public Sub RespondPostExecuteCommand() Handles Me.PostExecuteCommand
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PostExecuteCommand()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PostExecuteCommand()...", script.Name, script.Version)
             script.InitEvents("PostExecuteCommand")
         Next
     End Sub
     Public Sub RespondKernelError() Handles Me.KernelError
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event KernelError()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event KernelError()...", script.Name, script.Version)
             script.InitEvents("KernelError")
         Next
     End Sub
     Public Sub RespondContKernelError() Handles Me.ContKernelError
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event ContKernelError()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event ContKernelError()...", script.Name, script.Version)
             script.InitEvents("ContKernelError")
         Next
     End Sub
     Public Sub RespondPreShutdown() Handles Me.PreShutdown
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PreShutdown()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PreShutdown()...", script.Name, script.Version)
             script.InitEvents("PreShutdown")
         Next
     End Sub
     Public Sub RespondPostShutdown() Handles Me.PostShutdown
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PostShutdown()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PostShutdown()...", script.Name, script.Version)
             script.InitEvents("PostShutdown")
         Next
     End Sub
     Public Sub RespondPreReboot() Handles Me.PreReboot
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PreReboot()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PreReboot()...", script.Name, script.Version)
             script.InitEvents("PreReboot")
         Next
     End Sub
     Public Sub RespondPostReboot() Handles Me.PostReboot
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PostReboot()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PostReboot()...", script.Name, script.Version)
             script.InitEvents("PostReboot")
         Next
     End Sub
     Public Sub RespondPreShowScreensaver() Handles Me.PreShowScreensaver
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PreShowScreensaver()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PreShowScreensaver()...", script.Name, script.Version)
             script.InitEvents("PreShowScreensaver")
         Next
     End Sub
     Public Sub RespondPostShowScreensaver() Handles Me.PostShowScreensaver
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PostShowScreensaver()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PostShowScreensaver()...", script.Name, script.Version)
             script.InitEvents("PostShowScreensaver")
         Next
     End Sub
     Public Sub RespondPreUnlock() Handles Me.PreUnlock
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PreUnlock()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PreUnlock()...", script.Name, script.Version)
             script.InitEvents("PreUnlock")
         Next
     End Sub
     Public Sub RespondPostUnlock() Handles Me.PostUnlock
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PostUnlock()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PostUnlock()...", script.Name, script.Version)
             script.InitEvents("PostUnlock")
         Next
     End Sub
     Public Sub RespondCommandError() Handles Me.CommandError
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event CommandError()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event CommandError()...", script.Name, script.Version)
             script.InitEvents("CommandError")
         Next
     End Sub
     Public Sub RespondPreReloadConfig() Handles Me.PreReloadConfig
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PreReloadConfig()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PreReloadConfig()...", script.Name, script.Version)
             script.InitEvents("PreReloadConfig")
         Next
     End Sub
     Public Sub RespondPostReloadConfig() Handles Me.PostReloadConfig
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PostReloadConfig()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PostReloadConfig()...", script.Name, script.Version)
             script.InitEvents("PostReloadConfig")
         Next
     End Sub
     Public Sub RespondPreFetchNetworks() Handles Me.PreFetchNetworks
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PreFetchNetworks()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PreFetchNetworks()...", script.Name, script.Version)
             script.InitEvents("PreFetchNetworks")
         Next
     End Sub
     Public Sub RespondPostFetchNetworks() Handles Me.PostFetchNetworks
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PostFetchNetworks()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PostFetchNetworks()...", script.Name, script.Version)
             script.InitEvents("PostFetchNetworks")
         Next
     End Sub
     Public Sub RespondPlaceholderParsing() Handles Me.PlaceholderParsing
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PlaceholderParsing()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PlaceholderParsing()...", script.Name, script.Version)
             script.InitEvents("PlaceholderParsing")
         Next
     End Sub
     Public Sub RespondPlaceholderParsed() Handles Me.PlaceholderParsed
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event PlaceholderParsed()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event PlaceholderParsed()...", script.Name, script.Version)
             script.InitEvents("PlaceholderParsed")
         Next
     End Sub
     Public Sub RespondGarbageCollected() Handles Me.GarbageCollected
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event GarbageCollected()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event GarbageCollected()...", script.Name, script.Version)
             script.InitEvents("GarbageCollected")
         Next
     End Sub
     Public Sub RespondFTPShellInitialized() Handles Me.FTPShellInitialized
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event FTPShellInitialized()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event FTPShellInitialized()...", script.Name, script.Version)
             script.InitEvents("FTPShellInitialized")
         Next
     End Sub
     Public Sub RespondFTPPreExecuteCommand() Handles Me.FTPPreExecuteCommand
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event FTPPreExecuteCommand()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event FTPPreExecuteCommand()...", script.Name, script.Version)
             script.InitEvents("FTPPreExecuteCommand")
         Next
     End Sub
     Public Sub RespondFTPPostExecuteCommand() Handles Me.FTPPostExecuteCommand
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event FTPPostExecuteCommand()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event FTPPostExecuteCommand()...", script.Name, script.Version)
             script.InitEvents("FTPPostExecuteCommand")
         Next
     End Sub
     Public Sub RespondFTPCommandError() Handles Me.FTPCommandError
         For Each script As IScript In scripts.Values
-            Wdbg("Mod {0} v{1} responded to event FTPCommandError()...", script.Name, script.Version)
+            Wdbg("I", "Mod {0} v{1} responded to event FTPCommandError()...", script.Name, script.Version)
             script.InitEvents("FTPCommandError")
         Next
     End Sub
 
     'These subs are for raising events
     Public Sub RaiseStartKernel()
-        Wdbg("Raising event KernelStarted() and responding in RespondStartKernel()...")
+        Wdbg("I", "Raising event KernelStarted() and responding in RespondStartKernel()...")
         RaiseEvent KernelStarted()
     End Sub
     Public Sub RaisePreLogin()
-        Wdbg("Raising event PreLogin() and responding in RespondPreLogin()...")
+        Wdbg("I", "Raising event PreLogin() and responding in RespondPreLogin()...")
         RaiseEvent PreLogin()
     End Sub
     Public Sub RaisePostLogin()
-        Wdbg("Raising event PostLogin() and responding in RespondPostLogin()...")
+        Wdbg("I", "Raising event PostLogin() and responding in RespondPostLogin()...")
         RaiseEvent PostLogin()
     End Sub
     Public Sub RaiseShellInitialized()
-        Wdbg("Raising event ShellInitialized() and responding in RespondShellInitialized()...")
+        Wdbg("I", "Raising event ShellInitialized() and responding in RespondShellInitialized()...")
         RaiseEvent ShellInitialized()
     End Sub
     Public Sub RaisePreExecuteCommand()
-        Wdbg("Raising event PreExecuteCommand() and responding in RespondPreExecuteCommand()...")
+        Wdbg("I", "Raising event PreExecuteCommand() and responding in RespondPreExecuteCommand()...")
         RaiseEvent PreExecuteCommand()
     End Sub
     Public Sub RaisePostExecuteCommand()
-        Wdbg("Raising event PostExecuteCommand() and responding in RespondPostExecuteCommand()...")
+        Wdbg("I", "Raising event PostExecuteCommand() and responding in RespondPostExecuteCommand()...")
         RaiseEvent PostExecuteCommand()
     End Sub
     Public Sub RaiseKernelError()
-        Wdbg("Raising event KernelError() and responding in RespondKernelError()...")
+        Wdbg("I", "Raising event KernelError() and responding in RespondKernelError()...")
         RaiseEvent KernelError()
     End Sub
     Public Sub RaiseContKernelError()
-        Wdbg("Raising event ContKernelError() and responding in RespondContKernelError()...")
+        Wdbg("I", "Raising event ContKernelError() and responding in RespondContKernelError()...")
         RaiseEvent ContKernelError()
     End Sub
     Public Sub RaisePreShutdown()
-        Wdbg("Raising event PreShutdown() and responding in RespondPreShutdown()...")
+        Wdbg("I", "Raising event PreShutdown() and responding in RespondPreShutdown()...")
         RaiseEvent PreShutdown()
     End Sub
     Public Sub RaisePostShutdown()
-        Wdbg("Raising event PostShutdown() and responding in RespondPostShutdown()...")
+        Wdbg("I", "Raising event PostShutdown() and responding in RespondPostShutdown()...")
         RaiseEvent PostShutdown()
     End Sub
     Public Sub RaisePreReboot()
-        Wdbg("Raising event PreReboot() and responding in RespondPreReboot()...")
+        Wdbg("I", "Raising event PreReboot() and responding in RespondPreReboot()...")
         RaiseEvent PreReboot()
     End Sub
     Public Sub RaisePostReboot()
-        Wdbg("Raising event PostReboot() and responding in RespondPostReboot()...")
+        Wdbg("I", "Raising event PostReboot() and responding in RespondPostReboot()...")
         RaiseEvent PostReboot()
     End Sub
     Public Sub RaisePreShowScreensaver()
-        Wdbg("Raising event PreShowScreensaver() and responding in RespondPreShowScreensaver()...")
+        Wdbg("I", "Raising event PreShowScreensaver() and responding in RespondPreShowScreensaver()...")
         RaiseEvent PreShowScreensaver()
     End Sub
     Public Sub RaisePostShowScreensaver()
-        Wdbg("Raising event PostShowScreensaver() and responding in RespondPostShowScreensaver()...")
+        Wdbg("I", "Raising event PostShowScreensaver() and responding in RespondPostShowScreensaver()...")
         RaiseEvent PostShowScreensaver()
     End Sub
     Public Sub RaisePreUnlock()
-        Wdbg("Raising event PreUnlock() and responding in RespondPreUnlock()...")
+        Wdbg("I", "Raising event PreUnlock() and responding in RespondPreUnlock()...")
         RaiseEvent PreUnlock()
     End Sub
     Public Sub RaisePostUnlock()
-        Wdbg("Raising event PostUnlock() and responding in RespondPostUnlock()...")
+        Wdbg("I", "Raising event PostUnlock() and responding in RespondPostUnlock()...")
         RaiseEvent PostUnlock()
     End Sub
     Public Sub RaiseCommandError()
-        Wdbg("Raising event CommandError() and responding in RespondCommandError()...")
+        Wdbg("I", "Raising event CommandError() and responding in RespondCommandError()...")
         RaiseEvent CommandError()
     End Sub
     Public Sub RaisePreReloadConfig()
-        Wdbg("Raising event PreReloadConfig() and responding in RespondPreReloadConfig()...")
+        Wdbg("I", "Raising event PreReloadConfig() and responding in RespondPreReloadConfig()...")
         RaiseEvent PreReloadConfig()
     End Sub
     Public Sub RaisePostReloadConfig()
-        Wdbg("Raising event PostReloadConfig() and responding in RespondPostReloadConfig()...")
+        Wdbg("I", "Raising event PostReloadConfig() and responding in RespondPostReloadConfig()...")
         RaiseEvent PostReloadConfig()
     End Sub
     Public Sub RaisePreFetchNetworks()
-        Wdbg("Raising event PreFetchNetworks() and responding in RespondPreFetchNetworks()...")
+        Wdbg("I", "Raising event PreFetchNetworks() and responding in RespondPreFetchNetworks()...")
         RaiseEvent PreFetchNetworks()
     End Sub
     Public Sub RaisePostFetchNetworks()
-        Wdbg("Raising event PostFetchNetworks() and responding in RespondPostFetchNetworks()...")
+        Wdbg("I", "Raising event PostFetchNetworks() and responding in RespondPostFetchNetworks()...")
         RaiseEvent PostFetchNetworks()
     End Sub
     Public Sub RaisePlaceholderParsing()
-        Wdbg("Raising event PlaceholderParsing() and responding in RespondPlaceholderParsing()...")
+        Wdbg("I", "Raising event PlaceholderParsing() and responding in RespondPlaceholderParsing()...")
         RaiseEvent PlaceholderParsing()
     End Sub
     Public Sub RaisePlaceholderParsed()
-        Wdbg("Raising event PlaceholderParsed() and responding in RespondPlaceholderParsed()...")
+        Wdbg("I", "Raising event PlaceholderParsed() and responding in RespondPlaceholderParsed()...")
         RaiseEvent PlaceholderParsed()
     End Sub
     Public Sub RaiseGarbageCollected()
-        Wdbg("Raising event GarbageCollected() and responding in RespondGarbageCollected()...")
+        Wdbg("I", "Raising event GarbageCollected() and responding in RespondGarbageCollected()...")
         RaiseEvent GarbageCollected()
     End Sub
     Public Sub RaiseFTPShellInitialized()
-        Wdbg("Raising event FTPShellInitialized() and responding in RespondFTPShellInitialized()...")
+        Wdbg("I", "Raising event FTPShellInitialized() and responding in RespondFTPShellInitialized()...")
         RaiseEvent FTPShellInitialized()
     End Sub
     Public Sub RaiseFTPPreExecuteCommand()
-        Wdbg("Raising event FTPPreExecuteCommand() and responding in RespondFTPPreExecuteCommand()...")
+        Wdbg("I", "Raising event FTPPreExecuteCommand() and responding in RespondFTPPreExecuteCommand()...")
         RaiseEvent FTPPreExecuteCommand()
     End Sub
     Public Sub RaiseFTPPostExecuteCommand()
-        Wdbg("Raising event FTPPostExecuteCommand() and responding in RespondFTPPostExecuteCommand()...")
+        Wdbg("I", "Raising event FTPPostExecuteCommand() and responding in RespondFTPPostExecuteCommand()...")
         RaiseEvent FTPPostExecuteCommand()
     End Sub
     Public Sub RaiseFTPCommandError()
-        Wdbg("Raising event FTPCommandError() and responding in RespondFTPCommandError()...")
+        Wdbg("I", "Raising event FTPCommandError() and responding in RespondFTPCommandError()...")
         RaiseEvent FTPCommandError()
     End Sub
 

@@ -35,12 +35,12 @@ Public Module NetworkTools
             adapterNumber += 1
             W("==========================================", True, ColTypes.Neutral)
             If Not adapter.Supports(NetworkInterfaceComponent.IPv6) Then
-                Wdbg("{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description)
+                Wdbg("W", "{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description)
                 W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing...", currentLang), True, ColTypes.Neutral, adapter.Description)
                 NoV6 = True
             End If
             If Not adapter.Supports(NetworkInterfaceComponent.IPv4) Then
-                Wdbg("{0} doesn't support IPv4.", adapter.Description)
+                Wdbg("E", "{0} doesn't support IPv4.", adapter.Description)
                 W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed.", currentLang), True, ColTypes.Neutral, adapter.Description)
                 NoV4 = True
             End If
@@ -51,7 +51,7 @@ Public Module NetworkTools
                adapter.NetworkInterfaceType = NetworkInterfaceType.GigabitEthernet Or
                adapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211 Or
                adapter.NetworkInterfaceType = NetworkInterfaceType.Tunnel And Not NoV4 Then
-                Wdbg("Adapter type of {0}: {1}", adapter.Description, adapter.NetworkInterfaceType.ToString)
+                Wdbg("I", "Adapter type of {0}: {1}", adapter.Description, adapter.NetworkInterfaceType.ToString)
                 Dim adapterProperties As IPInterfaceProperties = adapter.GetIPProperties()
                 Dim p As IPv4InterfaceProperties
                 Dim s As IPv4InterfaceStatistics = adapter.GetIPv4Statistics
@@ -96,7 +96,7 @@ Public Module NetworkTools
                     End If
                 End If
             Else
-                Wdbg("Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType)
+                Wdbg("W", "Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType)
             End If
         Next
         W(DoTranslation("General IPv6 properties", currentLang) + vbNewLine +
@@ -119,12 +119,12 @@ Public Module NetworkTools
                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://") Or URL.StartsWith("sftp://")) Then
                     If Not URL.StartsWith(" ") Then
                         Dim FileName As String = URL.Split("/").Last()
-                        Wdbg("Prototype Filename: {0}", FileName)
+                        Wdbg("I", "Prototype Filename: {0}", FileName)
                         If FileName.Contains("?") Then
                             FileName = FileName.Remove(FileName.IndexOf("?"c))
                         End If
-                        Wdbg("Finished Filename: {0}", FileName)
-                        Wdbg("Directory location: {0}", CurrDir)
+                        Wdbg("I", "Finished Filename: {0}", FileName)
+                        Wdbg("I", "Directory location: {0}", CurrDir)
                         W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, CurrDir)
                         Dim WClient As New WebClient
                         AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
@@ -141,7 +141,7 @@ Public Module NetworkTools
             Catch ex As Exception
                 W(DoTranslation("Download failed in try {0}: {1}", currentLang), True, ColTypes.Neutral, RetryCount, ex.Message)
                 RetryCount += 1
-                Wdbg("Try count: {0}", RetryCount)
+                Wdbg("I", "Try count: {0}", RetryCount)
                 WStkTrc(ex)
             End Try
         End While

@@ -33,27 +33,27 @@ Module MOTDParse
         Try
             MOTDFilePath = paths("Home") + "/MOTD.txt"
             MALFilePath = paths("Home") + "/MAL.txt"
-            Wdbg("Paths: {0}, {1}", MOTDFilePath, MALFilePath)
-            Wdbg("Message type: {0}", MType)
+            Wdbg("I", "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
+            Wdbg("I", "Message type: {0}", MType)
             If MType = 1 Then
                 MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
-                Wdbg("Opened stream to MOTD path")
+                Wdbg("I", "Opened stream to MOTD path")
                 MOTDStreamW.WriteLine(MOTD)
                 MOTDMessage = MOTD
             ElseIf MType = 2 Then
                 MOTDStreamW = New IO.StreamWriter(MALFilePath) With {.AutoFlush = True}
-                Wdbg("Opened stream to MAL path")
+                Wdbg("I", "Opened stream to MAL path")
                 MOTDStreamW.Write(MOTD)
                 MAL = MOTD
             Else
                 W(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...", currentLang), True, ColTypes.Neutral)
                 MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
-                Wdbg("Opened stream to MOTD path")
+                Wdbg("I", "Opened stream to MOTD path")
                 MOTDStreamW.WriteLine(MOTD)
                 MOTDMessage = MOTD
             End If
             MOTDStreamW.Close()
-            Wdbg("Stream closed")
+            Wdbg("I", "Stream closed")
         Catch ex As Exception
             W(DoTranslation("Error when trying to set MOTD/MAL: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
             WStkTrc(ex)
@@ -63,24 +63,24 @@ Module MOTDParse
         Try
             MOTDFilePath = paths("Home") + "/MOTD.txt"
             MALFilePath = paths("Home") + "/MAL.txt"
-            Wdbg("Paths: {0}, {1}", MOTDFilePath, MALFilePath)
-            Wdbg("Message type: {0}", MType)
+            Wdbg("I", "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
+            Wdbg("I", "Message type: {0}", MType)
             Dim MOTDBuilder As New Text.StringBuilder
             If MType = 1 Then
                 MOTDStreamR = New IO.StreamReader(MOTDFilePath)
-                Wdbg("Opened stream to MOTD path")
+                Wdbg("W", "Opened stream to MOTD path")
                 MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
                 MOTDMessage = MOTDBuilder.ToString
             ElseIf MType = 2 Then
                 MOTDStreamR = New IO.StreamReader(MALFilePath)
-                Wdbg("Opened stream to MAL path")
+                Wdbg("W", "Opened stream to MAL path")
                 MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
                 MAL = MOTDBuilder.ToString
             Else
                 W(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type.", currentLang), True, ColTypes.Neutral)
             End If
             MOTDStreamR.Close()
-            Wdbg("Stream closed")
+            Wdbg("W", "Stream closed")
         Catch ex As Exception
             W(DoTranslation("Error when trying to get MOTD/MAL: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
             WStkTrc(ex)

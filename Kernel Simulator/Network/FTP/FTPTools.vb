@@ -88,7 +88,7 @@ Module FTPTools
                 currentremoteDir = ClientFTP.GetWorkingDirectory
                 ftpsite = ClientFTP.Host
             Catch ex As Exception
-                Wdbg("Error connecting to {0}: {1}", address, ex.Message)
+                Wdbg("W", "Error connecting to {0}: {1}", address, ex.Message)
                 WStkTrc(ex)
                 If DebugMode = True Then
                     W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang) + vbNewLine +
@@ -101,13 +101,13 @@ Module FTPTools
     End Sub
 
     Public Sub TryToValidate(control As FtpClient, e As FtpSslValidationEventArgs)
-        Wdbg("Certificate checks")
+        Wdbg("I", "Certificate checks")
         If e.PolicyErrors = Net.Security.SslPolicyErrors.None Then
-            Wdbg("Certificate accepted.")
-            Wdbg(e.Certificate.GetRawCertDataString)
+            Wdbg("I", "Certificate accepted.")
+            Wdbg("I", e.Certificate.GetRawCertDataString)
             e.Accept = True
         End If
-        Wdbg($"Certificate error is {e.PolicyErrors.ToString}")
+        Wdbg("W", $"Certificate error is {e.PolicyErrors.ToString}")
     End Sub
 
 End Module
@@ -115,9 +115,9 @@ End Module
 Class FTPTracer
     Inherits TraceListener 'Both Write and WriteLine do exactly the same thing, which is writing to a debugger.
     Public Overloads Overrides Sub Write(ByVal Message As String)
-        Wdbg(Message)
+        Wdbg("I", Message)
     End Sub
     Public Overloads Overrides Sub WriteLine(ByVal Message As String)
-        Wdbg(Message)
+        Wdbg("I", Message)
     End Sub
 End Class

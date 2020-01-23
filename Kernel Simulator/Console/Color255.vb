@@ -291,13 +291,13 @@ Public Module Color255
 
     Sub Initialize255() 'Windows only
         Dim handle = GetStdHandle(-11)
-        Wdbg("Integer pointer {0}", handle)
+        Wdbg("I", "Integer pointer {0}", handle)
         Dim mode As Integer
         GetConsoleMode(handle, mode)
-        Wdbg("Mode: {0}", mode)
+        Wdbg("I", "Mode: {0}", mode)
         If Not mode = 7 Then
             SetConsoleMode(handle, mode Or &H4)
-            Wdbg("Added support for VT escapes.")
+            Wdbg("I", "Added support for VT escapes.")
         End If
     End Sub
     Function GetEsc() As Char

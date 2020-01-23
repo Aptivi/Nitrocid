@@ -52,25 +52,25 @@ Public Module KernelTools
                 If ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5 Then
                     'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                     'generate a second kernel error stating that there is something wrong with the reboot time.
-                    Wdbg("Errors that have {0} type shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
+                    Wdbg("W", "Errors that have {0} type shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
                     KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.", currentLang), Nothing, CStr(ErrorType))
                     StopPanicAndGoToDoublePanic = True
                 ElseIf ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False Then
                     'If the error type is unrecoverable, or double, and the rebooting is false where it should
                     'not be false, then it can deal with this issue by enabling reboot.
-                    Wdbg("Errors that have {0} type enforced Reboot = True.", ErrorType)
+                    Wdbg("W", "Errors that have {0} type enforced Reboot = True.", ErrorType)
                     W(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}.", currentLang), True, ColTypes.Uncontinuable, ErrorType)
                     Reboot = True
                 End If
                 If RebootTime > 3600 Then
                     'If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
-                    Wdbg("RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime)
+                    Wdbg("W", "RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime)
                     W(DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.", currentLang), True, ColTypes.Uncontinuable, ErrorType, CStr(RebootTime))
                     RebootTime = 60
                 End If
             Else
                 'If the error type is other than D/F/C/U/S, then it will generate a second error.
-                Wdbg("Error type {0} is not valid.", ErrorType)
+                Wdbg("E", "Error type {0} is not valid.", ErrorType)
                 KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Error Type {0} invalid.", currentLang), Nothing, CStr(ErrorType))
                 StopPanicAndGoToDoublePanic = True
             End If
@@ -89,10 +89,10 @@ Public Module KernelTools
             'Check error capabilities
             If Description.Contains("DOUBLE PANIC: ") And ErrorType = "D" Then
                 'If the description has a double panic tag and the error type is Double
-                Wdbg("Double panic caused by bug in kernel crash.")
+                Wdbg("F", "Double panic caused by bug in kernel crash.")
                 W(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", currentLang), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
-                Wdbg("Rebooting")
+                Wdbg("F", "Rebooting")
                 PowerManage("reboot")
                 adminList.Clear()
                 disabledList.Clear()
@@ -101,7 +101,7 @@ Public Module KernelTools
                 Exit Sub
             ElseIf ErrorType = "C" And Reboot = True Then
                 'Check if error is Continuable and reboot is enabled
-                Wdbg("Continuable kernel errors shouldn't have Reboot = True.")
+                Wdbg("W", "Continuable kernel errors shouldn't have Reboot = True.")
                 W(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.", currentLang) + vbNewLine +
                   DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), True, ColTypes.Continuable, ErrorType, Description)
                 Console.ReadKey()
@@ -112,13 +112,13 @@ Public Module KernelTools
                 Console.ReadKey()
             ElseIf (Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C") Then
                 'If rebooting is disabled and the error type does not equal Double or Continuable
-                Wdbg("Reboot is False, ErrorType is not double or continuable.")
+                Wdbg("W", "Reboot is False, ErrorType is not double or continuable.")
                 W(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown.", currentLang), True, ColTypes.Uncontinuable, ErrorType, Description)
                 Console.ReadKey()
                 PowerManage("shutdown")
             Else
                 'Everything else.
-                Wdbg("Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
+                Wdbg("F", "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
                 W(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds...", currentLang), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
                 PowerManage("reboot")
@@ -139,7 +139,7 @@ Public Module KernelTools
         Try
             'Open a file stream for dump
             Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{RenderDate.Replace("/", "-")}_{RenderTime.Replace(":", "-")}.txt")
-            Wdbg("Opened file stream in home directory, saved as dmp_{0}_{1}.txt", $"{RenderDate.Replace("/", "-")}_{RenderTime.Replace(":", "-")}")
+            Wdbg("I", "Opened file stream in home directory, saved as dmp_{0}_{1}.txt", $"{RenderDate.Replace("/", "-")}_{RenderTime.Replace(":", "-")}")
 
             'Write info (Header)
             Dump.AutoFlush = True
@@ -199,7 +199,7 @@ Public Module KernelTools
             End Try
 
             'Close stream
-            Wdbg("Closing file stream for dump...")
+            Wdbg("I", "Closing file stream for dump...")
             Dump.Flush() : Dump.Close()
         Catch ex As Exception
             W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}", currentLang), True, ColTypes.Neutral, Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), ex.Message)
@@ -215,7 +215,7 @@ Public Module KernelTools
     ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
     ''' <remarks></remarks>
     Public Sub PowerManage(ByVal PowerMode As String, Optional ByVal IP As String = "0.0.0.0")
-        Wdbg("Power management has the argument of {0}", PowerMode)
+        Wdbg("I", "Power management has the argument of {0}", PowerMode)
         If PowerMode = "shutdown" Then
             EventManager.RaisePreShutdown()
             W(DoTranslation("Shutting down...", currentLang), True, ColTypes.Neutral)
@@ -269,33 +269,33 @@ Public Module KernelTools
         modcmnds.Clear()
         moddefs.Clear()
         scripts.Clear()
-        Wdbg("General variables reset")
+        Wdbg("I", "General variables reset")
 
         'Reset hardware info
         HDDList.Clear()
         RAMList.Clear()
         CPUList.Clear()
-        Wdbg("All hardware reset")
+        Wdbg("I", "All hardware reset")
 
         'Release RAM used
         DisposeAll()
-        Wdbg("Garbage collector finished")
+        Wdbg("I", "Garbage collector finished")
 
         'Disconnect all hosts from remote debugger
         StartRDebugThread(False)
-        Wdbg("Remote debugger stopped")
+        Wdbg("I", "Remote debugger stopped")
 
         'Close settings
         configReader = New IniFile()
-        Wdbg("Settings closed")
+        Wdbg("I", "Settings closed")
 
         'Stop all mods
         ParseMods(False)
-        Wdbg("Mods stopped")
+        Wdbg("I", "Mods stopped")
 
         'Disable Debugger
         If DebugMode = True Then
-            Wdbg("Shutting down debugger")
+            Wdbg("I", "Shutting down debugger")
             DebugMode = False
             dbgWriter.Close() : dbgWriter.Dispose()
         End If
@@ -331,9 +331,9 @@ Public Module KernelTools
         If dbgWriter Is Nothing Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
 
         'Write headers for debug
-        Wdbg("-------------------------------------------------------------------")
-        Wdbg("Kernel initialized, version {0}.", KernelVersion)
-        Wdbg("OS: {0}", EnvironmentOSType)
+        Wdbg("I", "-------------------------------------------------------------------")
+        Wdbg("I", "Kernel initialized, version {0}.", KernelVersion)
+        Wdbg("I", "OS: {0}", EnvironmentOSType)
 
         'Create config file and then read it
         InitializeConfig()
@@ -472,7 +472,7 @@ Public Module KernelTools
     Public Sub DisposeAll()
 
         Try
-            Wdbg("Garbage collector starting... Max generators: {0}", GC.MaxGeneration.ToString)
+            Wdbg("I", "Garbage collector starting... Max generators: {0}", GC.MaxGeneration.ToString)
             GC.Collect()
             GC.WaitForPendingFinalizers()
             If EnvironmentOSType.Contains("NT") Then

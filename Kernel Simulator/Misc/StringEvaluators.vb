@@ -38,9 +38,9 @@ Public Module StringEvaluators
                                  "End Class"
         Dim cr As CompilerResults = EvalP.CompileAssemblyFromSource(EvalCP, EvalCode)
         If cr.Errors.Count > 0 Then
-            Wdbg("Error in evaluation.")
+            Wdbg("E", "Error in evaluation.")
             For Each Errors In cr.Errors
-                Wdbg(Errors.ToString)
+                Wdbg("E", Errors.ToString)
             Next
             Return ""
         Else

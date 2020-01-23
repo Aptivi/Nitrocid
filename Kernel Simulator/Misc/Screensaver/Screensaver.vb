@@ -60,7 +60,7 @@ Public Module Screensaver
                     oldcursor = Console.CursorLeft
                 Next
                 If Not RebootRequested Then
-                    Wdbg("Screen time has reached.")
+                    Wdbg("W", "Screen time has reached.")
                     ShowSavers(defSaverName)
                 End If
             End If
@@ -71,11 +71,11 @@ Public Module Screensaver
             InSaver = True
             ScrnTimeReached = True
             EventManager.RaisePreShowScreensaver()
-            Wdbg("Requested screensaver: {0}", saver)
+            Wdbg("I", "Requested screensaver: {0}", saver)
             If saver = "colorMix" Then
                 ColorMix.WorkerSupportsCancellation = True
                 ColorMix.RunWorkerAsync()
-                Wdbg("ColorMix started")
+                Wdbg("I", "ColorMix started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 ColorMix.CancelAsync()
@@ -83,7 +83,7 @@ Public Module Screensaver
             ElseIf saver = "matrix" Then
                 Matrix.WorkerSupportsCancellation = True
                 Matrix.RunWorkerAsync()
-                Wdbg("Matrix started")
+                Wdbg("I", "Matrix started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Matrix.CancelAsync()
@@ -91,7 +91,7 @@ Public Module Screensaver
             ElseIf saver = "glitterMatrix" Then
                 GlitterMatrix.WorkerSupportsCancellation = True
                 GlitterMatrix.RunWorkerAsync()
-                Wdbg("Glitter Matrix started")
+                Wdbg("I", "Glitter Matrix started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 GlitterMatrix.CancelAsync()
@@ -99,7 +99,7 @@ Public Module Screensaver
             ElseIf saver = "disco" Then
                 Disco.WorkerSupportsCancellation = True
                 Disco.RunWorkerAsync()
-                Wdbg("Disco started")
+                Wdbg("I", "Disco started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Disco.CancelAsync()
@@ -107,7 +107,7 @@ Public Module Screensaver
             ElseIf saver = "lines" Then
                 Lines.WorkerSupportsCancellation = True
                 Lines.RunWorkerAsync()
-                Wdbg("Lines started")
+                Wdbg("I", "Lines started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Lines.CancelAsync()
@@ -115,7 +115,7 @@ Public Module Screensaver
             ElseIf saver = "glitterColor" Then
                 GlitterColor.WorkerSupportsCancellation = True
                 GlitterColor.RunWorkerAsync()
-                Wdbg("Glitter Color started")
+                Wdbg("I", "Glitter Color started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 GlitterColor.CancelAsync()
@@ -123,7 +123,7 @@ Public Module Screensaver
             ElseIf saver = "aptErrorSim" Then
                 AptErrorSim.WorkerSupportsCancellation = True
                 AptErrorSim.RunWorkerAsync()
-                Wdbg("apt Error Simulator started")
+                Wdbg("I", "apt Error Simulator started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 AptErrorSim.CancelAsync()
@@ -131,7 +131,7 @@ Public Module Screensaver
             ElseIf saver = "hackUserFromAD" Then
                 HackUserFromAD.WorkerSupportsCancellation = True
                 HackUserFromAD.RunWorkerAsync()
-                Wdbg("Hacking Simulator for Active Domain users started")
+                Wdbg("I", "Hacking Simulator for Active Domain users started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 HackUserFromAD.CancelAsync()
@@ -139,7 +139,7 @@ Public Module Screensaver
             ElseIf saver = "glitterColor255" Then
                 GlitterColor255.WorkerSupportsCancellation = True
                 GlitterColor255.RunWorkerAsync()
-                Wdbg("Glitter 255 Colors started")
+                Wdbg("I", "Glitter 255 Colors started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 GlitterColor255.CancelAsync()
@@ -147,7 +147,7 @@ Public Module Screensaver
             ElseIf saver = "colorMix255" Then
                 ColorMix255.WorkerSupportsCancellation = True
                 ColorMix255.RunWorkerAsync()
-                Wdbg("Mix 255 Colors started")
+                Wdbg("I", "Mix 255 Colors started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 ColorMix255.CancelAsync()
@@ -155,7 +155,7 @@ Public Module Screensaver
             ElseIf saver = "disco255" Then
                 Disco255.WorkerSupportsCancellation = True
                 Disco255.RunWorkerAsync()
-                Wdbg("Disco 255 Colors started")
+                Wdbg("I", "Disco 255 Colors started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Disco255.CancelAsync()
@@ -163,7 +163,7 @@ Public Module Screensaver
             ElseIf saver = "lines255" Then
                 Lines255.WorkerSupportsCancellation = True
                 Lines255.RunWorkerAsync()
-                Wdbg("Lines 255 Colors started")
+                Wdbg("I", "Lines 255 Colors started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Lines255.CancelAsync()
@@ -173,14 +173,14 @@ Public Module Screensaver
                 finalSaver = CSvrdb(saver)
                 Custom.WorkerSupportsCancellation = True
                 Custom.RunWorkerAsync()
-                Wdbg("Custom screensaver {0} started", saver)
+                Wdbg("I", "Custom screensaver {0} started", saver)
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Custom.CancelAsync()
                 Thread.Sleep(150) 'Nothing to do with operation inside screensaver
             Else
                 W(DoTranslation("The requested screensaver {0} is not found.", currentLang), True, ColTypes.Neutral, saver)
-                Wdbg("Screensaver {0} not found in the dictionary.", saver)
+                Wdbg("I", "Screensaver {0} not found in the dictionary.", saver)
             End If
             EventManager.RaisePostShowScreensaver()
             InSaver = False
@@ -196,15 +196,15 @@ Public Module Screensaver
         If FileIO.FileSystem.FileExists(modPath + file) Then
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath) 'TODO: Use GetFiles().Exists()
                 modFile = modFile.Replace("\", "/").Replace(modPath, "")
-                Wdbg("Parsing {0}...", modFile)
+                Wdbg("I", "Parsing {0}...", modFile)
                 If modFile = file Then
                     If Not modFile.EndsWith("SS.m") Then
-                        Wdbg("{0} is not a screensaver. A screensaver code should have ""SS.m"" at the end.", modFile)
+                        Wdbg("W", "{0} is not a screensaver. A screensaver code should have ""SS.m"" at the end.", modFile)
                     Else
-                        Wdbg("{0} is a valid screensaver. Generating...", modFile)
+                        Wdbg("W", "{0} is a valid screensaver. Generating...", modFile)
                         finalSaver = GenSaver(IO.File.ReadAllText(modPath + modFile))
                         If DoneFlag = True Then
-                            Wdbg("{0} compiled correctly. Starting...", modFile)
+                            Wdbg("I", "{0} compiled correctly. Starting...", modFile)
                             finalSaver.InitSaver()
                             Dim SaverName As String = finalSaver.SaverName
                             If finalSaver.Initialized = True Then
@@ -217,24 +217,24 @@ Public Module Screensaver
                                 If Not IsFound Then
                                     If Not SaverName = "" Then
                                         W(DoTranslation("{0} has been initialized properly.", currentLang), True, ColTypes.Neutral, SaverName)
-                                        Wdbg("{0} ({1}) compiled correctly. Starting...", SaverName, modFile)
+                                        Wdbg("I", "{0} ({1}) compiled correctly. Starting...", SaverName, modFile)
                                         ScrnSvrdb.Add(SaverName, False)
                                         CSvrdb.Add(SaverName, finalSaver)
                                     Else
                                         W(DoTranslation("{0} has been initialized properly.", currentLang), True, ColTypes.Neutral, modFile)
-                                        Wdbg("{0} compiled correctly. Starting...", modFile)
+                                        Wdbg("I", "{0} compiled correctly. Starting...", modFile)
                                         ScrnSvrdb.Add(modFile, False)
                                         CSvrdb.Add(modFile, finalSaver)
                                     End If
                                 Else
                                     If Not SaverName = "" Then
-                                        Wdbg("{0} ({1}) already exists. Recompiling...", SaverName, modFile)
+                                        Wdbg("W", "{0} ({1}) already exists. Recompiling...", SaverName, modFile)
                                         ScrnSvrdb.Remove(SaverName)
                                         CSvrdb.Remove(SaverName)
                                         CompileCustom(file)
                                         Exit Sub
                                     Else
-                                        Wdbg("{0} already exists. Recompiling...", modFile)
+                                        Wdbg("W", "{0} already exists. Recompiling...", modFile)
                                         ScrnSvrdb.Remove(modFile)
                                         CSvrdb.Remove(modFile)
                                         CompileCustom(file)
@@ -244,10 +244,10 @@ Public Module Screensaver
                             Else
                                 If Not SaverName = "" Then
                                     W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, ColTypes.Neutral, SaverName)
-                                    Wdbg("{0} ({1}) is compiled, but not initialized.", SaverName, modFile)
+                                    Wdbg("W", "{0} ({1}) is compiled, but not initialized.", SaverName, modFile)
                                 Else
                                     W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, ColTypes.Neutral, modFile)
-                                    Wdbg("{0} is compiled, but not initialized.", modFile)
+                                    Wdbg("W", "{0} is compiled, but not initialized.", modFile)
                                 End If
                             End If
                         End If
@@ -256,13 +256,13 @@ Public Module Screensaver
             Next
         Else
             W(DoTranslation("Screensaver {0} does not exist.", currentLang), True, ColTypes.Neutral, file)
-            Wdbg("The file {0} does not exist for compilation.", file)
+            Wdbg("E", "The file {0} does not exist for compilation.", file)
         End If
     End Sub
 
     Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
         If ScrnSvrdb.ContainsKey(saver) Then
-            Wdbg("{0} is found. (Un)Setting it to default...", saver)
+            Wdbg("I", "{0} is found. (Un)Setting it to default...", saver)
             Dim ksconf As New IniFile()
             Dim pathConfig As String = paths("Configuration")
             ksconf.Load(pathConfig)
@@ -277,7 +277,7 @@ Public Module Screensaver
                 W(DoTranslation("{0} is no longer set to default screensaver.", currentLang), True, ColTypes.Neutral, saver)
             End If
         Else
-            Wdbg("{0} is not found.", saver)
+            Wdbg("W", "{0} is not found.", saver)
             W(DoTranslation("Screensaver {0} not found in database. Check the name and try again.", currentLang), True, ColTypes.Neutral, saver)
         End If
     End Sub
@@ -296,23 +296,23 @@ Public Module Screensaver
             prm.ReferencedAssemblies.Add("System.DirectoryServices.dll")
             prm.ReferencedAssemblies.Add("System.Xml.dll")
             prm.ReferencedAssemblies.Add("System.Xml.Linq.dll")
-            Wdbg("All referenced assemblies prepared.")
+            Wdbg("I", "All referenced assemblies prepared.")
             Dim namespc As String = GetType(ICustomSaver).Namespace
             Dim modCode() As String = New String() {"Imports " & namespc & vbNewLine & code}
-            Wdbg("Compiling right now...")
+            Wdbg("I", "Compiling right now...")
             execCustomSaver = provider.CompileAssemblyFromSource(prm, modCode)
-            Wdbg("Compilation results: Errors? {0}, Warnings? {1} | Total: {2}", execCustomSaver.Errors.HasErrors, execCustomSaver.Errors.HasWarnings, execCustomSaver.Errors.Count)
+            Wdbg("I", "Compilation results: Errors? {0}, Warnings? {1} | Total: {2}", execCustomSaver.Errors.HasErrors, execCustomSaver.Errors.HasWarnings, execCustomSaver.Errors.Count)
             If execCustomSaver.Errors.HasErrors Then
                 W(DoTranslation("Screensaver can't be loaded because of the following: ", currentLang), True, ColTypes.Neutral)
-                Wdbg("Errors when compiling:")
+                Wdbg("E", "Errors when compiling:")
                 For Each errorName In execCustomSaver.Errors
-                    W(errorName.ToString, True, ColTypes.Neutral) : Wdbg(errorName.ToString, True)
+                    W(errorName.ToString, True, ColTypes.Neutral) : Wdbg("E", errorName.ToString, True)
                 Next
                 Exit Function
             Else
                 DoneFlag = True
             End If
-            Wdbg("Creating instance of type...")
+            Wdbg("I", "Creating instance of type...")
             For Each t As Type In execCustomSaver.CompiledAssembly.GetTypes()
                 If t.GetInterface(GetType(ICustomSaver).Name) IsNot Nothing Then Return CType(execCustomSaver.CompiledAssembly.CreateInstance(t.Name), ICustomSaver)
             Next
