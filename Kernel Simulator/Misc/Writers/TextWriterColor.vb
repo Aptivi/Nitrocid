@@ -62,27 +62,27 @@ Public Module TextWriterColor
             'For contributors who are testing new code: Uncomment the two Debug.WriteLine lines for immediate debugging (Immediate Window)
             If Not Source Is Nothing And Not LineNum = 0 Then
                 'Debug to file and all connected debug devices (raw mode)
-                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Func} - {Source}:{LineNum}): {text}", vars)
+                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
                     Try
-                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Func} - {Source}:{LineNum}): {text}", vars)
+                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
                     Catch ex As Exception
                         OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
                         WStkTrc(ex)
                     End Try
                 Next
-                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} ({Func} - {Source}:{LineNum}): {text}", vars)
+                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
             Else 'Rare case, unless debug symbol is not found on archives.
-                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
+                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
                     Try
-                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
+                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
                     Catch ex As Exception
                         OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
                         WStkTrc(ex)
                     End Try
                 Next
-                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: {text}", vars)
+                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
             End If
 
             'Disconnect offending clients who are disconnected
@@ -100,32 +100,14 @@ Public Module TextWriterColor
 
     Public Sub WStkTrc(ByVal Ex As Exception)
         If DebugMode Then
-            Dim OffendingIndex As New List(Of String)
-
-            'Check for quota
-            CheckForExceed()
-
             'These two vbNewLines are padding for accurate stack tracing.
             dbgStackTraces.Add($"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}")
-            dbgWriter.WriteLine(dbgStackTraces(0))
-            For i As Integer = 0 To dbgConns.Count - 1
-                Try
-                    dbgConns.Keys(i).WriteLine(dbgStackTraces(0))
-                Catch exc As Exception
-                    OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
-                End Try
-            Next
 
-            'Disconnect offending clients who are disconnected
-            For Each i As Integer In OffendingIndex
-                If i <> -1 Then
-                    DebugDevices.Keys(i).Disconnect(True)
-                    Wdbg("W", "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
-                    dbgConns.Remove(dbgConns.Keys(i))
-                    DebugDevices.Remove(DebugDevices.Keys(i))
-                End If
+            'Print stack trace to debugger
+            Dim StkTrcs As String() = dbgStackTraces(0).Replace(Chr(13), "").Split(Chr(10))
+            For i As Integer = 0 To StkTrcs.Length - 1
+                Wdbg("E", StkTrcs(i))
             Next
-            OffendingIndex.Clear()
         End If
     End Sub
 
