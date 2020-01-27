@@ -26,9 +26,13 @@ Module FTPTools
                 'Create an FTP stream to connect to
                 Dim FtpHost As String = address.Replace("ftps://", "").Replace(address.Substring(address.LastIndexOf(":")), "")
                 Dim FtpPort As String = address.Replace("ftps://", "").Replace(FtpHost + ":", "")
+
+                'Check to see if no port is provided by client
                 If FtpHost = FtpPort Then
-                    FtpPort = 0
+                    FtpPort = 0 'Used for detecting of SSL is being used or not dynamically on connection
                 End If
+
+                'Make a new FTP client object instance
                 ClientFTP = New FtpClient With {
                     .Host = FtpHost,
                     .Port = FtpPort,
@@ -36,11 +40,18 @@ Module FTPTools
                     .EncryptionMode = FtpEncryptionMode.Explicit
                 }
 
-                'Prompt for username and for password
+                'Add handler for SSL validation
                 AddHandler ClientFTP.ValidateCertificate, New FtpSslValidation(AddressOf TryToValidate)
+
+                'Prompt for username
                 W(DoTranslation("Username for {0}: ", currentLang), False, ColTypes.Input, address)
                 user = Console.ReadLine()
-                If user = "" Then user = "anonymous"
+                If user = "" Then
+                    Wdbg("W", "User is not provided. Fallback to ""anonymous""")
+                    user = "anonymous"
+                End If
+
+                'Prompt for password
                 W(DoTranslation("Password for {0}: ", currentLang), False, ColTypes.Input, user)
 
                 'Get input
@@ -51,8 +62,9 @@ Module FTPTools
                 ClientFTP.Credentials = New NetworkCredential(user, pass)
 
                 'Prepare profiles
-                Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect
+                Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect(False)
                 Dim profsel As New FtpProfile
+                Wdbg("I", "Profile count: {0}", profiles.Count)
                 If profiles.Count > 1 Then 'More than one profile
                     W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     For i As Integer = 1 To profiles.Count - 1
@@ -62,11 +74,14 @@ Module FTPTools
                     Dim profanswered As Boolean
                     While profanswered
                         profanswer = Console.ReadKey(True).KeyChar
+                        Wdbg("I", "Selection: {0}", profanswer)
                         If IsNumeric(profanswer) Then
                             Try
+                                Wdbg("I", "Profile selected")
                                 profsel = profiles(Val(profanswer))
                                 profanswered = True
                             Catch ex As Exception
+                                Wdbg("I", "Profile invalid")
                                 W(DoTranslation("Invalid profile selection.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                                 WStkTrc(ex)
                             End Try
@@ -78,10 +93,12 @@ Module FTPTools
 
                 'Connect
                 W(DoTranslation("Trying to connect to {0} with profile {1}...", currentLang), True, ColTypes.Neutral, address, profiles.IndexOf(profsel))
+                Wdbg("I", "Connecting to {0} with {1}...", address, profiles.IndexOf(profsel))
                 ClientFTP.Connect(profsel)
 
                 'Show that it's connected
                 W(DoTranslation("Connected to {0}", currentLang), True, ColTypes.Neutral, address)
+                Wdbg("I", "Connected.")
                 connected = True
 
                 'Prepare to print current FTP directory

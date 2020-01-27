@@ -45,7 +45,7 @@ Module StringExtensions
     Public Function Truncate(ByVal str As String, ByVal threshold As Integer) As String
         Dim result As String
         If str.Length > threshold Then
-            result = str.Substring(0, threshold - 1) + "…"
+            result = str.Substring(0, threshold - 1) + "..."
             Return result
         Else
             Return str

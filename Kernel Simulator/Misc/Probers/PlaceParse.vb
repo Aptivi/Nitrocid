@@ -37,16 +37,47 @@ Public Module PlaceParse
 
         EventManager.RaisePlaceholderParsing()
         Try
-            If text.Contains(userplace) Then text = text.Replace(userplace, signedinusrnm)
-            If text.Contains(sdateplace) Then text = text.Replace(sdateplace, KernelDateTime.ToShortDateString)
-            If text.Contains(ldateplace) Then text = text.Replace(ldateplace, KernelDateTime.ToLongDateString)
-            If text.Contains(stimeplace) Then text = text.Replace(stimeplace, KernelDateTime.ToShortTimeString)
-            If text.Contains(ltimeplace) Then text = text.Replace(ltimeplace, KernelDateTime.ToShortDateString)
-            If text.Contains(dateplace) Then text = text.Replace(dateplace, RenderDate)
-            If text.Contains(timeplace) Then text = text.Replace(timeplace, RenderTime)
-            If text.Contains(tzplace) Then text = text.Replace(tzplace, TimeZone.CurrentTimeZone.StandardName)
-            If text.Contains(stzplace) Then text = text.Replace(stzplace, TimeZone.CurrentTimeZone.DaylightName)
-            If text.Contains(sysplace) Then text = text.Replace(sysplace, EnvironmentOSType)
+            Wdbg("I", "Parsing text for placeholders...")
+            If text.Contains(userplace) Then
+                Wdbg("I", "Username placeholder found.")
+                text = text.Replace(userplace, signedinusrnm)
+            End If
+            If text.Contains(sdateplace) Then
+                Wdbg("I", "Short Date placeholder found.")
+                text = text.Replace(sdateplace, KernelDateTime.ToShortDateString)
+            End If
+            If text.Contains(ldateplace) Then
+                Wdbg("I", "Long Date placeholder found.")
+                text = text.Replace(ldateplace, KernelDateTime.ToLongDateString)
+            End If
+            If text.Contains(stimeplace) Then
+                Wdbg("I", "Short Time placeholder found.")
+                text = text.Replace(stimeplace, KernelDateTime.ToShortTimeString)
+            End If
+            If text.Contains(ltimeplace) Then
+                Wdbg("I", "Long Time placeholder found.")
+                text = text.Replace(ltimeplace, KernelDateTime.ToShortDateString)
+            End If
+            If text.Contains(dateplace) Then
+                Wdbg("I", "Rendered Date placeholder found.")
+                text = text.Replace(dateplace, RenderDate)
+            End If
+            If text.Contains(timeplace) Then
+                Wdbg("I", "Rendered Time placeholder found.")
+                text = text.Replace(timeplace, RenderTime)
+            End If
+            If text.Contains(tzplace) Then
+                Wdbg("I", "Standard Time Zone placeholder found.")
+                text = text.Replace(tzplace, TimeZone.CurrentTimeZone.StandardName)
+            End If
+            If text.Contains(stzplace) Then
+                Wdbg("I", "Summer Time Zone placeholder found.")
+                text = text.Replace(stzplace, TimeZone.CurrentTimeZone.DaylightName)
+            End If
+            If text.Contains(sysplace) Then
+                Wdbg("I", "System placeholder found.")
+                text = text.Replace(sysplace, EnvironmentOSType)
+            End If
             EventManager.RaisePlaceholderParsed()
         Catch nre As NullReferenceException
             Dim STrace As New StackTrace(True)

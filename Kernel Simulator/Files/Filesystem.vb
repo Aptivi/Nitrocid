@@ -31,10 +31,12 @@ Public Module Filesystem
         Dim direct As String
         dir = dir.Replace("\", "/")
         direct = $"{CurrDir}/{dir}"
+        Wdbg("I", "Prototype directory: {0}", direct)
         If direct.Contains(CurrDir.Replace("\", "/")) And direct.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
             direct = ReplaceLastOccurrence(direct, CurrDir, "")
         End If
-        Wdbg("I", "Directory {0} exists? {1}", direct, IO.Directory.Exists(direct))
+        Wdbg("I", "Final directory: {0}", direct)
+        Wdbg("I", "Directory exists? {1}", IO.Directory.Exists(direct))
         If IO.Directory.Exists(direct) Then
             Try
                 Dim Parser As New IO.DirectoryInfo(direct)
@@ -42,8 +44,8 @@ Public Module Filesystem
                 Wdbg("I", "Initializing structure of {0}...", CurrDir)
                 InitStructure()
             Catch sex As Security.SecurityException
+                Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
                 W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Neutral, direct, sex.Message)
-                W(DoTranslation("Permission {0} failed", currentLang), True, ColTypes.Neutral, sex.PermissionType)
                 WStkTrc(sex)
             Catch ptlex As IO.PathTooLongException
                 Wdbg("I", "Directory length: {0}", direct.Length)
@@ -71,10 +73,12 @@ Public Module Filesystem
         Wdbg("I", "Populating list...")
         UACNotice.Start()
         Dim DirStructure As New List(Of String)
+        Wdbg("I", "Populating directory structure...")
         DirStructure.AddRange(IO.Directory.EnumerateDirectories(CurrDir, "*", IO.SearchOption.TopDirectoryOnly))
         For Each Dir As String In DirStructure
             Try
                 'Why CurrDirStructure? Because "For Each" block doesn't support modifications inside the loop.
+                Wdbg("I", "Populating directory structure for ""{0}""...", Dir)
                 CurrDirStructure.AddRange(IO.Directory.EnumerateDirectories(Dir, "*", IO.SearchOption.AllDirectories))
             Catch ex As UnauthorizedAccessException
                 Dim OffendingDir As String = ex.Message.Substring(ex.Message.IndexOf("'") + 1, ex.Message.LastIndexOf("'") - ex.Message.IndexOf("'"))
@@ -141,8 +145,10 @@ Public Module Filesystem
                         Else
                             Files = DInfo.EnumerateFiles("*", IO.SearchOption.TopDirectoryOnly).ToList
                         End If
+                        Wdbg("I", "{0} files to be parsed", Files.Count)
                         Dim TotalSize As Long = 0 'In bytes
                         For Each DFile As IO.FileInfo In Files
+                            Wdbg("I", "File {0}, Size {1} bytes", DFile.Name, DFile.Length)
                             TotalSize += DFile.Length
                         Next
 

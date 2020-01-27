@@ -43,22 +43,24 @@ Public Module KernelTools
             'Unquiet
             If Not BootArgs Is Nothing Then
                 If BootArgs.Contains("quiet") Then
+                    Wdbg("I", "Removing quiet...")
                     Console.SetOut(DefConsoleOut)
                 End If
             End If
 
             'Check error types and its capabilities
+            Wdbg("I", "Error type: {0}", ErrorType)
             If ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C" Then
                 If ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5 Then
                     'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                     'generate a second kernel error stating that there is something wrong with the reboot time.
-                    Wdbg("W", "Errors that have {0} type shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
+                    Wdbg("W", "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
                     KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.", currentLang), Nothing, CStr(ErrorType))
                     StopPanicAndGoToDoublePanic = True
                 ElseIf ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False Then
                     'If the error type is unrecoverable, or double, and the rebooting is false where it should
                     'not be false, then it can deal with this issue by enabling reboot.
-                    Wdbg("W", "Errors that have {0} type enforced Reboot = True.", ErrorType)
+                    Wdbg("W", "Errors that have type {0} enforced Reboot = True.", ErrorType)
                     W(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}.", currentLang), True, ColTypes.Uncontinuable, ErrorType)
                     Reboot = True
                 End If
@@ -78,6 +80,7 @@ Public Module KernelTools
             'Parse variables ({0}, {1}, ...) in the "Description" string variable
             For v As Integer = 0 To Variables.Length - 1
                 Description = Description.Replace($"{{{CStr(v)}}}", Variables(v))
+                Wdbg("I", "Variable {0} parsed --> {1}", CStr(v), Variables(v))
             Next
 
             'Fire an event
@@ -243,10 +246,8 @@ Public Module KernelTools
             SafeMode = True
             paths.Clear()
         ElseIf PowerMode = "remoteshutdown" Then
-            W(DoTranslation("Shutting down...", currentLang), True, ColTypes.Neutral)
             SendCommand("<Request:Shutdown>(" + IP + ")", IP)
         ElseIf PowerMode = "remoterestart" Then
-            W(DoTranslation("Rebooting...", currentLang), True, ColTypes.Neutral)
             SendCommand("<Request:Reboot>(" + IP + ")", IP)
         End If
     End Sub

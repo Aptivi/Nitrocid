@@ -33,6 +33,7 @@ Public Module Login
         While True
             'Check to see if the reboot is requested
             If RebootRequested = True Then
+                Wdbg("W", "Reboot has been requested. Exiting...")
                 RebootRequested = False
                 Exit Sub
             End If
@@ -42,39 +43,53 @@ Public Module Login
 
             'Extremely rare under normal conditions except if modded: Check to see if there are any users
             If userword.Count = 0 Then 'Check if user amount is zero
+                Wdbg("F", "Shell reached rare state, because userword count is 0.")
                 Throw New EventsAndExceptions.NullUsersException(DoTranslation("There is no more users remaining in the list.", currentLang))
             End If
 
-            'Prompts user to log-in
+            'Clear console if clsOnLogin is set to True (If a user has enabled Clear Screen on Login)
             If clsOnLogin = True Then
+                Wdbg("I", "Clearing screen...")
                 Console.Clear()
             End If
 
             'Generate user list
+            'TODO: Make a config entry that allows the user to show the available usernames
             W(DoTranslation("Available usernames: {0}", currentLang), True, ColTypes.Neutral, String.Join(", ", userword.Keys))
 
-            'Login process
+            'Read MOTD and MAL
             ReadMOTDFromFile(MessageType.MOTD)
             ReadMOTDFromFile(MessageType.MAL)
+
+            'Show MOTD once
+            Wdbg("I", "showMOTDOnceFlag = {0}, showMOTD = {1}", showMOTDOnceFlag, showMOTD)
             If showMOTDOnceFlag = True And showMOTD = True Then
-                W(vbNewLine + ProbePlaces(MOTDMessage), False, ColTypes.Input)
+                W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
             End If
-            W(vbNewLine + DoTranslation("Username: ", currentLang), False, ColTypes.Input)
             showMOTDOnceFlag = False
+
+            'Prompt user to login
+            W(DoTranslation("Username: ", currentLang), False, ColTypes.Input)
             answeruser = Console.ReadLine()
 
             'Parse input
             If InStr(answeruser, " ") > 0 Then
+                Wdbg("W", "Spaces found in username.")
                 W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
             ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
+                Wdbg("W", "Unknown characters found in username.")
                 W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Neutral)
             ElseIf userword.ContainsKey(answeruser) Then
+                Wdbg("I", "Username correct. Finding if the user is disabled...")
                 If disabledList(answeruser) = False Then
+                    Wdbg("I", "User can log in. (User is not in disabled list)")
                     ShowPasswordPrompt(answeruser)
                 Else
+                    Wdbg("W", "User can't log in. (User is in disabled list)")
                     W(DoTranslation("User is disabled.", currentLang), True, ColTypes.Neutral)
                 End If
             Else
+                Wdbg("E", "Username not found.")
                 W(DoTranslation("Wrong username.", currentLang), True, ColTypes.Neutral)
             End If
         End While
@@ -86,52 +101,50 @@ Public Module Login
 
         'Prompts user to enter a user's password
         While True
+            'Check to see if reboot is requested
+            answerpass = ""
             If RebootRequested = True Then
-                answerpass = ""
+                Wdbg("W", "Reboot has been requested. Exiting...")
                 RebootRequested = False
                 Exit Sub
             End If
-            answerpass = ""
-            Wdbg("I", "User {0} is not disabled", usernamerequested)
 
             'Get the password from dictionary
             password = userword.Item(usernamerequested)
 
-            'Check if there's the password
+            'Check if there's a password
             If Not password = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855" Then 'No password
                 'Wait for input
+                Wdbg("I", "Password not empty")
                 W(DoTranslation("{0}'s password: ", currentLang), False, ColTypes.Input, usernamerequested)
 
                 'Get input
                 answerpass = ReadLineNoInput()
                 Console.WriteLine()
+
+                'Compute password hash
+                Wdbg("I", "Computing written password hash...")
                 Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(answerpass))
                 answerpass = GetArrayEnc(hashbyte)
 
                 'Parse password input
-                If InStr(answerpass, " ") > 0 Then
-                    W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
+                If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
+                    'Log-in instantly
+                    Wdbg("I", "Password written correctly. Entering shell...")
+                    SignIn(usernamerequested)
+                    Exit Sub
+                Else
+                    Wdbg("I", "Passowrd written wrong...")
+                    W(DoTranslation("Wrong password.", currentLang), True, ColTypes.Neutral)
                     If Not maintenance Then
                         If Not LockMode Then
                             Exit Sub
                         End If
                     End If
-                Else
-                    If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
-                        'Log-in instantly
-                        SignIn(usernamerequested)
-                        Exit Sub
-                    Else
-                        W(DoTranslation("Wrong password.", currentLang), True, ColTypes.Neutral)
-                        If Not maintenance Then
-                            If Not LockMode Then
-                                Exit Sub
-                            End If
-                        End If
-                    End If
                 End If
             Else
                 'Log-in instantly
+                Wdbg("I", "Password is empty")
                 SignIn(usernamerequested)
                 Exit Sub
             End If
@@ -143,6 +156,7 @@ Public Module Login
 
         'Release lock
         If LockMode Then
+            Wdbg("I", "Releasing lock and getting back to shell...")
             LockMode = False
             EventManager.RaisePostUnlock()
             Exit Sub
@@ -155,7 +169,6 @@ Public Module Login
         'Resets outputs
         password = Nothing
         LoginFlag = False
-        CruserFlag = False
         signedinusrnm = Nothing
 
         'Notifies the kernel that the user has signed in
@@ -164,6 +177,7 @@ Public Module Login
         'Sign in to user.
         signedinusrnm = signedInUser
         If LockMode = True Then LockMode = False
+        Wdbg("I", "Lock released.")
         showMOTDOnceFlag = True
         W(ProbePlaces(MAL), True, ColTypes.Neutral)
 
@@ -171,8 +185,8 @@ Public Module Login
         EventManager.RaisePostLogin()
 
         'Initialize shell
+        Wdbg("I", "Shell is being initialized...")
         InitializeShell()
-
     End Sub
 
 End Module

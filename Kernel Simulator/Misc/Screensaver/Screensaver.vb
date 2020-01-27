@@ -191,13 +191,16 @@ Public Module Screensaver
     End Sub
 
     Sub CompileCustom(ByVal file As String)
+        'Initialize path
         Dim modPath As String = paths("Mods")
         file = file.Replace("\", "/").Replace(modPath, "")
+
+        'Start parsing screensaver
         If FileIO.FileSystem.FileExists(modPath + file) Then
             For Each modFile As String In FileIO.FileSystem.GetFiles(modPath) 'TODO: Use GetFiles().Exists()
                 modFile = modFile.Replace("\", "/").Replace(modPath, "")
-                Wdbg("I", "Parsing {0}...", modFile)
                 If modFile = file Then
+                    Wdbg("I", "Parsing {0}...", modFile)
                     If Not modFile.EndsWith("SS.m") Then
                         Wdbg("W", "{0} is not a screensaver. A screensaver code should have ""SS.m"" at the end.", modFile)
                     Else
@@ -214,6 +217,7 @@ Public Module Screensaver
                                 Else
                                     IsFound = ScrnSvrdb.ContainsKey(modFile)
                                 End If
+                                Wdbg("I", "Is screensaver found? {0}", IsFound)
                                 If Not IsFound Then
                                     If Not SaverName = "" Then
                                         W(DoTranslation("{0} has been initialized properly.", currentLang), True, ColTypes.Neutral, SaverName)

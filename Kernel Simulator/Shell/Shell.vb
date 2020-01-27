@@ -66,6 +66,7 @@ Public Module Shell
                     If ColoredShell = True Then Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
 
                     'Wait for command
+                    Wdbg("I", "Waiting for command")
                     EventManager.RaiseShellInitialized()
                     strcommand = Console.ReadLine()
 

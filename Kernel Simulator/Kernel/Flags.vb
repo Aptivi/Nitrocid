@@ -24,7 +24,6 @@ Module Flags
     Public DebugMode As Boolean = False                         'Toggle Debugging mode
     Public LoginFlag As Boolean                                 'Flag for log-in
     Public CommandFlag As Boolean = False                       'A signal for command kernel argument
-    Public CruserFlag As Boolean = False                        'A signal to the kernel where user has to be created
     Public argsFlag As Boolean                                  'A flag for checking for an argument later
     Public argsInjected As Boolean                              'A flag for checking for an argument on reboot
     Public enableDemo As Boolean = True                         'Enable Demo Account

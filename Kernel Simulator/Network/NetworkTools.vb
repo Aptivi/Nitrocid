@@ -63,9 +63,11 @@ Public Module NetworkTools
                 Catch ex As NetworkInformationException
 #Disable Warning BC42104
                     If p6 Is Nothing Then
+                        Wdbg("W", "Failed to get IPv6 properties.")
                         W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing...", currentLang), True, ColTypes.Neutral, adapter.Description)
                     End If
                     If p Is Nothing Then
+                        Wdbg("E", "Failed to get IPv4 properties.")
                         W(DoTranslation("Failed to get properties for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
                         Failed = True
                     End If
@@ -73,6 +75,7 @@ Public Module NetworkTools
 #Enable Warning BC42104
                 End Try
                 If s Is Nothing Then
+                    Wdbg("E", "Failed to get statistics.")
                     W(DoTranslation("Failed to get statistics for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
                     Failed = True
                 End If
@@ -114,16 +117,20 @@ Public Module NetworkTools
 
     Sub DownloadFile(ByVal URL As String)
         Dim RetryCount As Integer = 1
+        Wdbg("I", "URL: {0}", URL)
         While Not RetryCount > DRetries
             Try
                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://") Or URL.StartsWith("sftp://")) Then
                     If Not URL.StartsWith(" ") Then
+                        'Limit the filename to the name without any URL arguments
                         Dim FileName As String = URL.Split("/").Last()
                         Wdbg("I", "Prototype Filename: {0}", FileName)
                         If FileName.Contains("?") Then
                             FileName = FileName.Remove(FileName.IndexOf("?"c))
                         End If
                         Wdbg("I", "Finished Filename: {0}", FileName)
+
+                        'Download a file
                         Wdbg("I", "Directory location: {0}", CurrDir)
                         W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, CurrDir)
                         Dim WClient As New WebClient

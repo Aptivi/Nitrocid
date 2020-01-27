@@ -77,13 +77,13 @@ Public Module Notifications
         Next
     End Sub
     Public Sub NotifySend(ByVal notif As Notification)
-        Wdbg("List contains this notification?", NotifRecents.Contains(notif))
+        Wdbg("I", "List contains this notification? {0}", NotifRecents.Contains(notif))
         If Not NotifRecents.Contains(notif) Then NotifRecents.Add(notif)
     End Sub
     Public Sub NotifDismiss(ByVal ind As Integer)
         Try
             NotifRecents.RemoveAt(ind)
-            Wdbg("Removed index {0} from notification list", ind)
+            Wdbg("I", "Removed index {0} from notification list", ind)
             W(DoTranslation("Notification dismissed successfully.", currentLang), True, ColTypes.Neutral)
         Catch ex As Exception
             W(DoTranslation("Error trying to dismiss notification: {0}", currentLang), True, ColTypes.Neutral, ex.Message)

@@ -28,9 +28,11 @@ Public Module TimeZones
 
         'Get all system time zones (IANA on Unix)
         zones = GetSystemTimeZones.ToArray
+        Wdbg("I", "Found {0} time zones.", zones.Count)
 
         'Run a cleanup in the list
         zoneTimes.Clear()
+        Wdbg("I", "Cleaned up zoneTimes.")
 
         'Adds date and time to every single time zone to the list
         For Each zone In zones

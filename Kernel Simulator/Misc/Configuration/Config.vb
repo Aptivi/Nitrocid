@@ -23,6 +23,7 @@ Public Module Config
     Public Sub CreateConfig(ByVal CmdArg As Boolean, ByVal Preserve As Boolean)
         Try
             Dim ksconf As New IniFile()
+            Wdbg("I", "Preserve: {0}", Preserve)
             If Preserve Then
                 'The General Section
                 ksconf.Sections.Add(
@@ -137,32 +138,42 @@ Public Module Config
                         New IniKey(ksconf, "Debug Size Quota in Bytes", 1073741824),
                         New IniKey(ksconf, "Remote Debug Default Nick Prefix", "KSUser"),
                         New IniKey(ksconf, "Download Retry Times", 3),
-                        New IniKey(ksconf, "Log FTP username", "False"), 'Keep them off by default for privacy protection
-                        New IniKey(ksconf, "Log FTP IP address", "False"),
+                        New IniKey(ksconf, "Log FTP username", "False"),   '> Keep them off by default
+                        New IniKey(ksconf, "Log FTP IP address", "False"), '> for privacy protection
                         New IniKey(ksconf, "Size parse mode", "False"),
                         New IniKey(ksconf, "Marquee on startup", "True"),
                         New IniKey(ksconf, "Long Time and Date", "True"),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
-            'Put comments before saving
+            'Put comments before saving. General
             ksconf.Sections("General").TrailingComment.Text = "This section is the general settings for KS. It controls boot settings and regional settings."
             ksconf.Sections("General").Keys("Prompt for Arguments on Boot").TrailingComment.Text = "If set to True, everytime the kernel boots, you'll be prompted for the kernel arguments."
             ksconf.Sections("General").Keys("Create Demo Account").TrailingComment.Text = "If set to True, it creates testing demonstration account to test the log-in system with the permissions. It will be removed in 0.0.8."
             ksconf.Sections("General").Keys("Change Root Password").TrailingComment.Text = "Whether or not to change root password. If it is set to True, it will set the password to a password that will be set in the config entry below."
             ksconf.Sections("General").Keys("Maintenance Mode").TrailingComment.Text = "Whether or not to start the kernel in maintenance mode."
             ksconf.Sections("General").Keys("Prompt for Arguments on Boot").TrailingComment.Text = "Whether or not to prompt for arguments on boot to let you set arguments on the current boot"
+
+            'Colors
             ksconf.Sections("Colors").TrailingComment.Text = "Self-explanatory. You can just write the name of colors as specified in the ConsoleColors enumerator."
+
+            'Login
             ksconf.Sections("Login").TrailingComment.Text = "This section is the login settings that lets you control the host name and whether or not it shows MOTD and/or clears screen."
             ksconf.Sections("Login").Keys("Clear Screen on Log-in").TrailingComment.Text = "Whether or not it clears screen on sign-in."
             ksconf.Sections("Login").Keys("Show MOTD on Log-in").TrailingComment.Text = "Whether or not it shows MOTD on sign-in."
             ksconf.Sections("Login").Keys("Host Name").TrailingComment.Text = "Custom host name. It will be used in the future for networking references, but is currently here to customize shell prompt."
+
+            'Shell
             ksconf.Sections("Shell").TrailingComment.Text = "This section is the shell settings that lets you control whether or not to enable simplified help command and/or colored shell."
             ksconf.Sections("Shell").Keys("Simplified Help Command").TrailingComment.Text = "Simplifies the ""help"" command so it only shows available commands."
             ksconf.Sections("Shell").Keys("Colored Shell").TrailingComment.Text = "Whether or not it supports colored shell."
+
+            'Hardware
             ksconf.Sections("Hardware").TrailingComment.Text = "This section is the hardware probing settings that lets you control whether or not to probe RAM slots and/or quietly probe hardware. This section and the two settings are deprecated."
             ksconf.Sections("Hardware").Keys("Probe Slots").TrailingComment.Text = "Whether or not to probe RAM slots on boot"
             ksconf.Sections("Hardware").Keys("Quiet Probe").TrailingComment.Text = "Whether or not to quietly probe hardware"
+
+            'Misc
             ksconf.Sections("Misc").TrailingComment.Text = "This section is the other settings that are not categorized yet."
             ksconf.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").TrailingComment.Text = "Whether or not it shows time and date on the upper right corner."
             ksconf.Sections("Misc").Keys("Screensaver").TrailingComment.Text = "Specifies the current screensaver."
@@ -233,16 +244,19 @@ Public Module Config
         Try
             '----------------------------- Important configuration -----------------------------
             'Language
+            Wdbg("I", "Language is {0}", configReader.Sections("General").Keys("Language").Value)
             SetLang(configReader.Sections("General").Keys("Language").Value, True)
 
             'Colored Shell
             If configReader.Sections("Shell").Keys("Colored Shell").Value = "False" Then
+                Wdbg("W", "Detected uncolored shell. Removing colors...")
                 TemplateSet("LinuxUncolored")
                 ColoredShell = False
             End If
 
             '----------------------------- General configuration -----------------------------
             'Colors Section
+            Wdbg("I", "Loading colors...")
             If ColoredShell Then userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("User Name Shell Color").Value), ConsoleColors)
             If ColoredShell Then hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Host Name Shell Color").Value), ConsoleColors)
             If ColoredShell Then contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value), ConsoleColors)
@@ -259,6 +273,7 @@ Public Module Config
             If ColoredShell Then stageColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Kernel Stage Color").Value), ConsoleColors)
 
             'General Section
+            Wdbg("I", "Parsing general section...")
             If configReader.Sections("General").Keys("Create Demo Account").Value = "True" Then enableDemo = True Else enableDemo = False
             If configReader.Sections("General").Keys("Change Root Password").Value = "True" Then setRootPasswd = True Else setRootPasswd = False
             If setRootPasswd = True Then RootPasswd = configReader.Sections("General").Keys("Set Root Password to").Value
@@ -266,6 +281,7 @@ Public Module Config
             If configReader.Sections("General").Keys("Prompt for Arguments on Boot").Value = "True" Then argsOnBoot = True Else argsOnBoot = False
 
             'Login Section
+            Wdbg("I", "Parsing login section...")
             If configReader.Sections("Login").Keys("Clear Screen on Log-in").Value = "True" Then clsOnLogin = True Else clsOnLogin = False
             If configReader.Sections("Login").Keys("Show MOTD on Log-in").Value = "True" Then showMOTD = True Else showMOTD = False
             If Not configReader.Sections("Login").Keys("Host Name").Value = "" Then
@@ -275,13 +291,16 @@ Public Module Config
             End If
 
             'Shell Section
+            Wdbg("I", "Parsing shell section...")
             If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
 
             'Hardware Section
+            Wdbg("I", "Parsing hardware section...")
             If configReader.Sections("Hardware").Keys("Probe Slots").Value = "True" Then slotProbe = True Else slotProbe = False
             If configReader.Sections("Hardware").Keys("Quiet Probe").Value = "True" Then quietProbe = True Else quietProbe = False
 
             'Misc Section
+            Wdbg("I", "Parsing misc section...")
             If configReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True" Then CornerTD = True Else CornerTD = False
             defSaverName = configReader.Sections("Misc").Keys("Screensaver").Value
             If Integer.TryParse(configReader.Sections("Misc").Keys("Debug Port").Value, 0) Then DebugPort = configReader.Sections("Misc").Keys("Debug Port").Value
@@ -294,23 +313,33 @@ Public Module Config
             StartScroll = configReader.Sections("Misc").Keys("Marquee on startup").Value
             LongTimeDate = configReader.Sections("Misc").Keys("Long Time and Date").Value
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
+            Wdbg("W", "Detected incompatible/old version of config. Renewing...")
             UpgradeConfig() 'Upgrades the config if there are any changes.
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
                 W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, ex.Message)
             Else
-                W(DoTranslation("There is an error trying to read configuration.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang), True, ColTypes.Neutral, ex.Message)
             End If
         End Try
     End Sub
 
     Sub InitializeConfig()
+        'Make a config file if not found
         Dim pathConfig As String = paths("Configuration")
-        If Not File.Exists(pathConfig) Then createConfig(False, False)
+        If Not File.Exists(pathConfig) Then
+            Wdbg("E", "No config file found. Creating...")
+            CreateConfig(False, False)
+        End If
+
+        'Load and read config
         configReader.Load(pathConfig)
+        Wdbg("I", "Config loaded with {0} sections", configReader.Sections.Count)
         ReadConfig()
-        checkForUpgrade()
+
+        'Check for updates for config
+        CheckForUpgrade()
     End Sub
 
 End Module

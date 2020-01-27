@@ -77,9 +77,9 @@ Public Module Kernel
                 'Phase 2: Username management
                 W(vbNewLine + DoTranslation("- Stage 2: Internal username management", currentLang), True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 2: Manage internal usernames")
-                Adduser("root", RootPasswd)
+                AddUser("root", RootPasswd)
                 Permission("Admin", "root", "Allow")
-                If enableDemo = True Then Adduser("demo")
+                If enableDemo = True Then AddUser("demo")
                 LoginFlag = True
 
                 'Phase 3: Parse Mods and Screensavers
@@ -112,7 +112,11 @@ Public Module Kernel
                         Console.SetOut(DefConsoleOut)
                     End If
                 End If
+
+                'Show current time
                 ShowCurrentTimes()
+
+                'Initialize login prompt
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
                 ElseIf LoginFlag = True And maintenance = True Then

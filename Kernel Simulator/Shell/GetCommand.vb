@@ -96,11 +96,11 @@ Public Module GetCommand
 
                 If requestedCommand <> "adduser" Then
                     If args.Count - 1 = 0 Then
-                        Adduser(args(0))
+                        AddUser(args(0))
                         Done = True
                     ElseIf args.Count - 1 = 2 Then
                         If args(1) = args(2) Then
-                            Adduser(args(0), args(1))
+                            AddUser(args(0), args(1))
                             Done = True
                         Else
                             W(DoTranslation("Passwords don't match.", currentLang), True, ColTypes.Neutral)

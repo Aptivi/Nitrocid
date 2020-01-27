@@ -27,6 +27,7 @@ Module TShell
             W("(t)> ", False, ColTypes.Input)
             FullCmd = Console.ReadLine
             Try
+                Wdbg("I", "Command: {0}", FullCmd)
                 If TShellCmds.Contains(FullCmd.Split(" ")(0)) Then
                     TParseCommand(FullCmd)
                 Else

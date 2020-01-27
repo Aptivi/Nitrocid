@@ -38,6 +38,8 @@ Public Module ModParser
 
     '------------------------------------------- Generators -------------------------------------------
     Private Function GenMod(ByVal PLang As String, ByVal code As String) As IScript
+
+        'Check language
         Dim provider As CodeDomProvider
         Wdbg("I", $"Language detected: {PLang}")
         If PLang = "C#" Then
@@ -47,6 +49,8 @@ Public Module ModParser
         Else
             Exit Function
         End If
+
+        'Declare new compiler parameter object
         Dim prm As New CompilerParameters With {
             .GenerateExecutable = False,
             .GenerateInMemory = True
@@ -72,6 +76,7 @@ Public Module ModParser
             modCode = {$"using {namespc};{vbNewLine}{code}"}
         End If
 #Disable Warning BC42104
+        Wdbg("I", "Compiling...")
         Dim res As CompilerResults = provider.CompileAssemblyFromSource(prm, modCode)
 #Enable Warning BC42104
 
@@ -86,6 +91,8 @@ Public Module ModParser
             Next
             Exit Function
         End If
+
+        'Make object type instance
         For Each t As Type In res.CompiledAssembly.GetTypes()
             If t.GetInterface(GetType(IScript).Name) IsNot Nothing Then Return CType(res.CompiledAssembly.CreateInstance(t.Name), IScript)
         Next
@@ -94,6 +101,7 @@ Public Module ModParser
     '------------------------------------------- Parsers -------------------------------------------
     Sub ParseMods(ByVal StartStop As Boolean)
         'StartStop: If true, the mods start, otherwise, the mod stops.
+        Wdbg("I", "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
             If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
             Dim count As Integer = FileIO.FileSystem.GetFiles(modPath).Count
@@ -183,6 +191,7 @@ Public Module ModParser
         ParseMods(True)
         Dim modPath As String = paths("Mods")
         For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
+            Wdbg("I", "Reloading mod {0}", modFile.Replace(modPath, ""))
             CompileCustom(modFile.Replace(modPath, ""))
         Next
     End Sub
