@@ -48,5 +48,6 @@ Module Flags
     Public StartScroll As Boolean                               'Enable marquee on startup
     Public LongTimeDate As Boolean                              'Whether or not to render time and dates short or long
     Public LoggedIn As Boolean                                  'Whether or not to detect if the user is logged in
+    Public ShowAvailableUsers As Boolean                        'Whether or not to show available usernames on login
 
 End Module

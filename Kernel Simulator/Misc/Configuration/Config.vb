@@ -61,7 +61,8 @@ Public Module Config
                     New IniSection(ksconf, "Login",
                         New IniKey(ksconf, "Show MOTD on Log-in", showMOTD),
                         New IniKey(ksconf, "Clear Screen on Log-in", clsOnLogin),
-                        New IniKey(ksconf, "Host Name", HName)))
+                        New IniKey(ksconf, "Host Name", HName),
+                        New IniKey(ksconf, "Show available usernames", ShowAvailableUsers)))
 
                 'The Shell Section
                 ksconf.Sections.Add(
@@ -121,7 +122,8 @@ Public Module Config
                     New IniSection(ksconf, "Login",
                         New IniKey(ksconf, "Show MOTD on Log-in", "True"),
                         New IniKey(ksconf, "Clear Screen on Log-in", "False"),
-                        New IniKey(ksconf, "Host Name", "kernel")))
+                        New IniKey(ksconf, "Host Name", "kernel"),
+                        New IniKey(ksconf, "Show available usernames", "True")))
 
                 'The Shell Section
                 ksconf.Sections.Add(
@@ -162,6 +164,7 @@ Public Module Config
             ksconf.Sections("Login").Keys("Clear Screen on Log-in").TrailingComment.Text = "Whether or not it clears screen on sign-in."
             ksconf.Sections("Login").Keys("Show MOTD on Log-in").TrailingComment.Text = "Whether or not it shows MOTD on sign-in."
             ksconf.Sections("Login").Keys("Host Name").TrailingComment.Text = "Custom host name. It will be used in the future for networking references, but is currently here to customize shell prompt."
+            ksconf.Sections("Login").Keys("Show available usernames").TrailingComment.Text = "Whether or not to show available usernames on login"
 
             'Shell
             ksconf.Sections("Shell").TrailingComment.Text = "This section is the shell settings that lets you control whether or not to enable simplified help command and/or colored shell."
@@ -284,6 +287,7 @@ Public Module Config
             Wdbg("I", "Parsing login section...")
             If configReader.Sections("Login").Keys("Clear Screen on Log-in").Value = "True" Then clsOnLogin = True Else clsOnLogin = False
             If configReader.Sections("Login").Keys("Show MOTD on Log-in").Value = "True" Then showMOTD = True Else showMOTD = False
+            If configReader.Sections("Login").Keys("Show available usernames").Value = "True" Then ShowAvailableUsers = True Else ShowAvailableUsers = False
             If Not configReader.Sections("Login").Keys("Host Name").Value = "" Then
                 HName = configReader.Sections("Login").Keys("Host Name").Value
             Else
@@ -309,6 +313,8 @@ Public Module Config
             If Integer.TryParse(configReader.Sections("Misc").Keys("Download Retry Times").Value, 0) Then DRetries = configReader.Sections("Misc").Keys("Download Retry Times").Value
             FTPLoggerUsername = configReader.Sections("Misc").Keys("Log FTP username").Value
             FTPLoggerIP = configReader.Sections("Misc").Keys("Log FTP IP address").Value
+
+            'TODO: Change those entries so it checks for boolean like the rest
             FullParseMode = configReader.Sections("Misc").Keys("Size parse mode").Value
             StartScroll = configReader.Sections("Misc").Keys("Marquee on startup").Value
             LongTimeDate = configReader.Sections("Misc").Keys("Long Time and Date").Value
