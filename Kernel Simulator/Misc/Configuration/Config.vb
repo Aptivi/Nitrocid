@@ -313,11 +313,9 @@ Public Module Config
             If Integer.TryParse(configReader.Sections("Misc").Keys("Download Retry Times").Value, 0) Then DRetries = configReader.Sections("Misc").Keys("Download Retry Times").Value
             FTPLoggerUsername = configReader.Sections("Misc").Keys("Log FTP username").Value
             FTPLoggerIP = configReader.Sections("Misc").Keys("Log FTP IP address").Value
-
-            'TODO: Change those entries so it checks for boolean like the rest
-            FullParseMode = configReader.Sections("Misc").Keys("Size parse mode").Value
-            StartScroll = configReader.Sections("Misc").Keys("Marquee on startup").Value
-            LongTimeDate = configReader.Sections("Misc").Keys("Long Time and Date").Value
+            If configReader.Sections("Misc").Keys("Size parse mode").Value = "True" Then FullParseMode = True Else FullParseMode = False
+            If configReader.Sections("Misc").Keys("Marquee on startup").Value = "True" Then StartScroll = True Else StartScroll = False
+            If configReader.Sections("Misc").Keys("Long Time and Date").Value = "True" Then LongTimeDate = True Else StartScroll = False
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
             Wdbg("W", "Detected incompatible/old version of config. Renewing...")
             UpgradeConfig() 'Upgrades the config if there are any changes.
