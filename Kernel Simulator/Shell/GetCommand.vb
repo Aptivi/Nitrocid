@@ -112,15 +112,19 @@ Public Module GetCommand
             ElseIf words(0) = "alias" Then
 
                 If requestedCommand <> "alias" Then
-                    If args.Count - 1 > 1 Then
-                        If args(0) = "add" Then
+                    If args.Count - 1 > 2 Then
+                        If args(0) = "add" And (args(1) = AliasType.Shell Or args(1) = AliasType.RDebug) Then
+                            ManageAlias(args(0), args(1), args(2), args(3))
+                            Done = True
+                        ElseIf args(0) = "add" And (args(1) <> AliasType.Shell Or args(1) <> AliasType.RDebug) Then
+                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Neutral, args(1))
+                        End If
+                    ElseIf args.Count - 1 = 2 Then
+                        If args(0) = "rem" And (args(1) = AliasType.Shell Or args(1) = AliasType.RDebug) Then
                             ManageAlias(args(0), args(1), args(2))
                             Done = True
-                        End If
-                    ElseIf args.Count - 1 = 1 Then
-                        If args(0) = "rem" Then
-                            ManageAlias(args(0), args(1))
-                            Done = True
+                        ElseIf args(0) = "rem" And (args(1) <> AliasType.Shell Or args(1) <> AliasType.RDebug) Then
+                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Neutral, args(1))
                         End If
                     End If
                 End If

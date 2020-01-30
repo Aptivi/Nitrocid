@@ -542,3 +542,4 @@ Uzak PC'ye uzaktan komut çalıştırır
 RPC başlatılırken hata oluştu: {0}
 Siz nomzod versiyasini chiqayotganga o'xshaysiz. Barqaror versiyada qolish tavsiya etiladi....
 Dosya sistemi nüfusu çok uzun sürüyor.
+Geçersiz tür {0}.

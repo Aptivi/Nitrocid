@@ -542,3 +542,4 @@ Después de la recolección de basura: {0} bytes
 Error al iniciar RPC: {0}
 Parece que estabas ejecutando la versión candidata de lanzamiento. Se recomienda que permanezca en la versión estable.
 Parece que la población del sistema de archivos tarda demasiado.
+Tipo no válido {0}.

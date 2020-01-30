@@ -541,3 +541,4 @@ gabējikorekushon-go: {0} Baito
 RPC no kidō erā: {0}
 Rirīsu kōho bājon o jikkō shite ita yōdesu. Anteihan o shiyō suru koto o o susume shimasu.
 Fairu shisutemu no torikomi ni jikan ga kakari sugiru yōdesu.
+Mukōna taipu {0}.

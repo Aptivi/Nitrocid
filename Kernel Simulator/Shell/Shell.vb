@@ -86,7 +86,7 @@ Public Module Shell
                             End If
                         Next
                         Wdbg("I", "Aliases probing started with {0}", strcommand)
-                        For Each a As String In aliases.Keys
+                        For Each a As String In Aliases.Keys
                             If Parts(0) = a Then
                                 Done = True
                                 Wdbg("I", "Alias: {0}", a)
@@ -203,6 +203,12 @@ Public Module Shell
             End If
         End Try
 
+    End Sub
+
+    Sub ExecuteAlias(ByVal aliascmd As String)
+        Wdbg("I", "Translating alias {0} to {1}...", aliascmd, Aliases(aliascmd))
+        Dim actualCmd As String = strcommand.Replace(aliascmd, Aliases(aliascmd))
+        GetCommand.ExecuteCommand(actualCmd)
     End Sub
 
 End Module

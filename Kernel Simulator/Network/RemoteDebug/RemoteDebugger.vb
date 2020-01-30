@@ -63,10 +63,11 @@ Module RemoteDebugger
                     RDebugName = RDebugDNP + CStr(RDebugRandomID)
                     dbgConns.Add(RDebugSWriter, RDebugName)
                     DebugDevices.Add(RDebugClient, RDebugIP)
-                    dbgConns.Keys.Last.WriteLine(">> Chat version 0.3.2") 'Increment each minor/major change(s)
-                    dbgConns.Keys.Last.WriteLine(">> Your address is {0}.", RDebugIP)
-                    dbgConns.Keys.Last.WriteLine(">> Your name is {0}.", RDebugName)
+                    RDebugSWriter.WriteLine(">> Chat version 0.4") 'Increment each minor/major change(s)
+                    RDebugSWriter.WriteLine(">> Your address is {0}.", RDebugIP)
+                    RDebugSWriter.WriteLine(">> Your name is {0}.", RDebugName)
                     Wdbg("I", "Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
+                    RDebugSWriter.Flush()
                 End If
             Catch ae As ThreadAbortException
                 Exit While
@@ -104,6 +105,9 @@ Module RemoteDebugger
                             If DebugCmds.Contains(cmd.Split(" ")(0)) Then 'Command is found or not
                                 'Parsing starts here.
                                 ParseCmd(cmd, dbgConns.Keys(i - 1), ip)
+                            ElseIf RemoteDebugAliases.Keys.Contains(cmd.Split(" ")(0)) Then
+                                'Alias parsing starts here.
+                                ExecuteRDAlias(cmd, dbgConns.Keys(i - 1), ip)
                             Else
                                 dbgConns.Keys(i - 1).WriteLine("Command {0} not found. Use ""/help"" to see the list.", cmd.Split(" ")(0))
                             End If

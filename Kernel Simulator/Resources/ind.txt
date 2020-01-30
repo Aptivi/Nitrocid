@@ -542,3 +542,4 @@ kachara sangrah ke baad: {0} baits
 rpch shuroo karane mein truti: {0}
 lagata hai ki aap rileez ummeedavaar sanskaran chala rahe the. yah anushansa kee jaatee hai ki aap sthir sanskaran par rahen.
 aisa lagata hai ki fail sistam kee aabaadee bahut lambee hai.
+amaany prakaar {0}.

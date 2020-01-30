@@ -542,3 +542,4 @@ Na het ophalen van afval: {0} bytes
 Fout bij starten van RPC: {0}
 Het lijkt erop dat u de release-kandidaatversie gebruikte. Het wordt aanbevolen dat u op de stabiele versie blijft.
 Het lijkt erop dat de bestandssysteempopulatie te lang duurt.
+Ongeldig type {0}.

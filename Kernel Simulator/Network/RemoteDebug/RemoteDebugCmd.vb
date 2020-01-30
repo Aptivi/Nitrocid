@@ -19,13 +19,12 @@
 Imports System.IO
 
 Module RemoteDebugCmd
-    'TODO: Custom aliases for r-debug command
-    Public DebugCmds As String() = {"trace", "t", "username", "usr", "help", "h", "exit", "e"}
+    Public DebugCmds As String() = {"trace", "username", "help", "exit"}
     Sub ParseCmd(ByVal CmdString As String, ByVal SocketStreamWriter As StreamWriter, ByVal Address As String)
         Dim CmdArgs As List(Of String) = CmdString.Split({" "c}, StringSplitOptions.RemoveEmptyEntries).ToList
         Dim CmdName As String = CmdArgs(0)
         CmdArgs.RemoveAt(0)
-        If CmdName = "trace" Or CmdName = "t" Then
+        If CmdName = "trace" Then
             'Print stack trace command code
             If dbgStackTraces.Count <> 0 Then
                 If CmdArgs.Count <> 0 Then
@@ -40,15 +39,15 @@ Module RemoteDebugCmd
             Else
                 SocketStreamWriter.WriteLine("No stack trace")
             End If
-        ElseIf CmdName = "username" Or CmdName = "usr" Then
+        ElseIf CmdName = "username" Then
             'Current username
             SocketStreamWriter.WriteLine(signedinusrnm)
-        ElseIf CmdName = "help" Or CmdName = "h" Then
+        ElseIf CmdName = "help" Then
             'Help command code
             SocketStreamWriter.WriteLine("- trace <TraceNumber>: Shows last stack trace on exception" + vbNewLine +
                                          "- username: Shows current username in the session" + vbNewLine +
                                          "- exit: Disconnects you from the debugger")
-        ElseIf CmdName = "exit" Or CmdName = "e" Then
+        ElseIf CmdName = "exit" Then
             'Exit command code
             DisconnectDbgDev(Address)
         End If

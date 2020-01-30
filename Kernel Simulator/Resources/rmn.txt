@@ -542,3 +542,4 @@ După colectarea gunoiului: {0} octeți
 Eroare la pornirea RPC: {0}
 Se pare că ați rulat versiunea de candidat la lansare. Este recomandat să rămâneți pe versiunea stabilă.
 Se pare că populația sistemului de fișiere durează prea mult.
+Tip nevalid {0}.

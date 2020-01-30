@@ -542,3 +542,4 @@ baed tajmie albayanat almhmalat: {0} bayt
 khata fi bad' tashghil RPC: {0}
 ybdw 'anak kunt tashghal nuskhatan murashah al'iisdar. yawsaa bialbaqa' ealaa al'iisdar althaabit.
 ybdw 'an mujtamae nizam almilaffat yastaghriq wqtana twylaan.
+nawe ghayr salih {0}.

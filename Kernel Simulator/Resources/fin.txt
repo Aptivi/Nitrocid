@@ -542,3 +542,4 @@ Jätekeräyksen jälkeen: {0} tavua
 Virhe RPC: n käynnistämisessä: {0}
 Näyttää siltä, että käytit julkaisuehdokasversiota. On suositeltavaa, että pysyt vakaana versiona.
 Näyttää siltä, että tiedostojärjestelmäpopulaatio vie liian kauan.
+Virheellinen tyyppi {0}.

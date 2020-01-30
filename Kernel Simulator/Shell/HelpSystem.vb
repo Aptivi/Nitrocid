@@ -93,13 +93,13 @@ Public Module HelpSystem
                 For Each cmd As String In moddefs.Keys
                     W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, moddefs(cmd))
                 Next
-                For Each cmd As String In aliases.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, definitions(aliases(cmd)))
+                For Each cmd As String In Aliases.Keys
+                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, definitions(Aliases(cmd)))
                 Next
                 W(DoTranslation("* You can use multiple commands using the colon between commands.", currentLang), True, ColTypes.Neutral)
             Else
-                For Each cmd As String In aliases.Keys
-                    W("{0}({1}), ", False, ColTypes.HelpCmd, cmd, aliases(cmd))
+                For Each cmd As String In Aliases.Keys
+                    W("{0}({1}), ", False, ColTypes.HelpCmd, cmd, Aliases(cmd))
                 Next
                 For Each cmd As String In moddefs.Keys
                     W("{0}, ", False, ColTypes.HelpCmd, cmd)
@@ -113,7 +113,7 @@ Public Module HelpSystem
 
         ElseIf command = "alias" Then
 
-            W(DoTranslation("Usage:", currentLang) + " alias <rem/add> <alias> <cmd>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " alias <rem/add> <1=Shell/2=RDebug> <alias> <cmd>", True, ColTypes.Neutral)
 
         ElseIf command = "arginj" Then
 

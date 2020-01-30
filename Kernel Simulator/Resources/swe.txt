@@ -542,3 +542,4 @@ Efter avfallsuppsamling: {0} byte
 Fel vid start av RPC: {0}
 Det verkar som att du kör versionskandidatversionen. Det rekommenderas att du fortsätter med den stabila versionen.
 Det verkar som att filsystemets befolkning tar för lång tid.
+Ogiltig typ {0}.
