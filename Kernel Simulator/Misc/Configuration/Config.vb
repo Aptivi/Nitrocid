@@ -84,6 +84,7 @@ Public Module Config
                         New IniKey(ksconf, "Size parse mode", FullParseMode),
                         New IniKey(ksconf, "Marquee on startup", StartScroll),
                         New IniKey(ksconf, "Long Time and Date", LongTimeDate),
+                        New IniKey(ksconf, "Show Hidden Files", HiddenFiles),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             Else '----------------------- If [Preserve] value is False, then don't preserve.
                 'The General Section
@@ -145,6 +146,7 @@ Public Module Config
                         New IniKey(ksconf, "Size parse mode", "False"),
                         New IniKey(ksconf, "Marquee on startup", "True"),
                         New IniKey(ksconf, "Long Time and Date", "True"),
+                        New IniKey(ksconf, "Show Hidden Files", "False"),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
@@ -189,6 +191,7 @@ Public Module Config
             ksconf.Sections("Misc").Keys("Size parse mode").TrailingComment.Text = "Parse whole directory for size. If set to False, it will parse just the surface."
             ksconf.Sections("Misc").Keys("Marquee on startup").TrailingComment.Text = "Whether or not to activate banner animation."
             ksconf.Sections("Misc").Keys("Long Time and Date").TrailingComment.Text = "Whether or not to render time and date using long."
+            ksconf.Sections("Misc").Keys("Show Hidden Files").TrailingComment.Text = "Whether or not to list hidden files."
 
             'Save Config
             ksconf.Save(paths("Configuration"))
@@ -315,7 +318,8 @@ Public Module Config
             FTPLoggerIP = configReader.Sections("Misc").Keys("Log FTP IP address").Value
             If configReader.Sections("Misc").Keys("Size parse mode").Value = "True" Then FullParseMode = True Else FullParseMode = False
             If configReader.Sections("Misc").Keys("Marquee on startup").Value = "True" Then StartScroll = True Else StartScroll = False
-            If configReader.Sections("Misc").Keys("Long Time and Date").Value = "True" Then LongTimeDate = True Else StartScroll = False
+            If configReader.Sections("Misc").Keys("Long Time and Date").Value = "True" Then LongTimeDate = True Else LongTimeDate = False
+            If configReader.Sections("Misc").Keys("Show Hidden Files").Value = "True" Then HiddenFiles = True Else HiddenFiles = False
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
             Wdbg("W", "Detected incompatible/old version of config. Renewing...")
             UpgradeConfig() 'Upgrades the config if there are any changes.

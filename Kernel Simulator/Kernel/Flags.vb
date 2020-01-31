@@ -49,5 +49,6 @@ Module Flags
     Public LongTimeDate As Boolean                              'Whether or not to render time and dates short or long
     Public LoggedIn As Boolean                                  'Whether or not to detect if the user is logged in
     Public ShowAvailableUsers As Boolean                        'Whether or not to show available usernames on login
+    Public HiddenFiles As Boolean                               'Whether or not to show hidden files
 
 End Module
