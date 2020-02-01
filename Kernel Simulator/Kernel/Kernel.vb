@@ -35,7 +35,7 @@ Public Module Kernel
         While True
             Try
                 'A title
-                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - Release Candidate 1"
+                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - Release Candidate 2"
                 If Not NotifThread.IsAlive Then NotifThread.Start()
                 InitPaths()
                 If Not EnvironmentOSType.Contains("Unix") Then Initialize255()

@@ -175,8 +175,8 @@ Public Module Filesystem
     End Sub
     Private Sub UACNoticeShow()
         Try
-            For i As Integer = 0 To 10
-                If i = 10 Then
+            For i As Integer = 0 To 30
+                If i = 30 Then
                     W(DoTranslation("It seems that the file system population takes too long.", currentLang), True, ColTypes.Neutral)
                 End If
                 Thread.Sleep(1000)
