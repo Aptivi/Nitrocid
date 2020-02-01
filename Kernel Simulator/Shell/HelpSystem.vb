@@ -84,11 +84,14 @@ Public Module HelpSystem
     Public Sub ShowHelp(Optional ByVal command As String = "")
 
         Dim wholesslist As String() = IO.Directory.GetFiles(paths("Mods"), "*SS.m", IO.SearchOption.TopDirectoryOnly)
+        Dim NormalUserCmds As New List(Of String)
         If command = "" Then
 
             If simHelp = False Then
                 For Each cmd As String In definitions.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, definitions(cmd))
+                    If (Not strictCmds.Contains(cmd)) Or (strictCmds.Contains(cmd) And adminList(signedinusrnm)) Then
+                        W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, definitions(cmd))
+                    End If
                 Next
                 For Each cmd As String In moddefs.Keys
                     W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, moddefs(cmd))
@@ -104,7 +107,12 @@ Public Module HelpSystem
                 For Each cmd As String In moddefs.Keys
                     W("{0}, ", False, ColTypes.HelpCmd, cmd)
                 Next
-                W(String.Join(", ", availableCommands), True, ColTypes.HelpCmd)
+                For Each cmd As String In availableCommands
+                    If (Not strictCmds.Contains(cmd)) Or (strictCmds.Contains(cmd) And adminList(signedinusrnm)) Then
+                        NormalUserCmds.Add(cmd)
+                    End If
+                Next
+                W(String.Join(", ", NormalUserCmds), True, ColTypes.HelpCmd)
             End If
 
         ElseIf command = "adduser" Then
