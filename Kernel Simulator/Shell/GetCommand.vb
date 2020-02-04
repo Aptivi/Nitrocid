@@ -407,14 +407,25 @@ Public Module GetCommand
                 If args.Count > 0 Then
                     Done = True
                     Dim PartNum As Integer = 1
-                    For Each P As Part In HDDList(args(0)).Parts
-                        W("==========================================", True, ColTypes.Neutral)
-                        W(DoTranslation("Physical partition: {0}", currentLang), True, ColTypes.Neutral, PartNum)
-                        W(DoTranslation("Boot flag: {0} ({1})", currentLang), True, ColTypes.Neutral, P.Boot, P.Bootable)
-                        W(DoTranslation("Primary flag: {0}", currentLang), True, ColTypes.Neutral, P.Primary)
-                        W(DoTranslation("Size: {0} GB", currentLang), True, ColTypes.Neutral, FormatNumber(P.Size / 1024 / 1024 / 1024, 2))
-                        PartNum += 1
-                    Next
+                    If EnvironmentOSType.Contains("Windows") Then
+                        For Each P As Part In HDDList(args(0)).Parts
+                            W("==========================================", True, ColTypes.Neutral)
+                            W(DoTranslation("Physical partition: {0}", currentLang), True, ColTypes.Neutral, PartNum)
+                            W(DoTranslation("Boot flag: {0} ({1})", currentLang), True, ColTypes.Neutral, P.Boot, P.Bootable)
+                            W(DoTranslation("Primary flag: {0}", currentLang), True, ColTypes.Neutral, P.Primary)
+                            W(DoTranslation("Size: {0} GB", currentLang), True, ColTypes.Neutral, FormatNumber(P.Size / 1024 / 1024 / 1024, 2))
+                            PartNum += 1
+                        Next
+                    ElseIf EnvironmentOSType.Contains("Unix") Then
+                        For Each P As Part_Linux In HDDList(args(0)).Parts
+                            W("==========================================", True, ColTypes.Neutral)
+                            W(DoTranslation("Physical partition: {0}", currentLang), True, ColTypes.Neutral, PartNum)
+                            W(DoTranslation("File system: {0}", currentLang), True, ColTypes.Neutral, P.FileSystem)
+                            W(DoTranslation("Size: {0}", currentLang), True, ColTypes.Neutral, P.SizeMEAS)
+                            W(DoTranslation("Used: {0}", currentLang), True, ColTypes.Neutral, P.Used)
+                            PartNum += 1
+                        Next
+                    End If
                     W("==========================================", True, ColTypes.Neutral)
                     If EnvironmentOSType.Contains("Windows") Then
                         PartNum = 1
