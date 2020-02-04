@@ -45,10 +45,10 @@ Module Flags
     Public SafeMode As Boolean                                  'Whether safe mode is enabled
     Public FullParseMode As Boolean                             'Whether or not to parse whole directory for size
     Public ScrnTimeReached As Boolean                           'When the screensaver timer has reached
-    Public StartScroll As Boolean                               'Enable marquee on startup
-    Public LongTimeDate As Boolean                              'Whether or not to render time and dates short or long
+    Public StartScroll As Boolean = True                        'Enable marquee on startup
+    Public LongTimeDate As Boolean = True                       'Whether or not to render time and dates short or long
     Public LoggedIn As Boolean                                  'Whether or not to detect if the user is logged in
-    Public ShowAvailableUsers As Boolean                        'Whether or not to show available usernames on login
+    Public ShowAvailableUsers As Boolean = True                 'Whether or not to show available usernames on login
     Public HiddenFiles As Boolean                               'Whether or not to show hidden files
 
 End Module

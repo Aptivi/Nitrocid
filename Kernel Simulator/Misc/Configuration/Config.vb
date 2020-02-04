@@ -260,6 +260,13 @@ Public Module Config
                 ColoredShell = False
             End If
 
+            'Hostname setting
+            If Not configReader.Sections("Login").Keys("Host Name").Value = "" Then
+                HName = configReader.Sections("Login").Keys("Host Name").Value
+            Else
+                HName = "kernel"
+            End If
+
             '----------------------------- General configuration -----------------------------
             'Colors Section
             Wdbg("I", "Loading colors...")
@@ -291,11 +298,6 @@ Public Module Config
             If configReader.Sections("Login").Keys("Clear Screen on Log-in").Value = "True" Then clsOnLogin = True Else clsOnLogin = False
             If configReader.Sections("Login").Keys("Show MOTD on Log-in").Value = "True" Then showMOTD = True Else showMOTD = False
             If configReader.Sections("Login").Keys("Show available usernames").Value = "True" Then ShowAvailableUsers = True Else ShowAvailableUsers = False
-            If Not configReader.Sections("Login").Keys("Host Name").Value = "" Then
-                HName = configReader.Sections("Login").Keys("Host Name").Value
-            Else
-                HName = "kernel"
-            End If
 
             'Shell Section
             Wdbg("I", "Parsing shell section...")
