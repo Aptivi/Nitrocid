@@ -543,3 +543,7 @@ Error al iniciar RPC: {0}
 Parece que estabas ejecutando la versión candidata de lanzamiento. Se recomienda que permanezca en la versión estable.
 Parece que la población del sistema de archivos tarda demasiado.
 Tipo no válido {0}.
+Capacidad: {0}
+Recuento de particiones: {0}
+Tamaño: {0}
+Usado: {0}

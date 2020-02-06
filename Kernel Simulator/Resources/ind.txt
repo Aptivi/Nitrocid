@@ -543,3 +543,7 @@ rpch shuroo karane mein truti: {0}
 lagata hai ki aap rileez ummeedavaar sanskaran chala rahe the. yah anushansa kee jaatee hai ki aap sthir sanskaran par rahen.
 aisa lagata hai ki fail sistam kee aabaadee bahut lambee hai.
 amaany prakaar {0}.
+kshamata: {0}
+vibhaajan kee sankhya: {0}
+aakaar: {0}
+istemaal kiya: {0}

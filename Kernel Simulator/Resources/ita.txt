@@ -543,3 +543,7 @@ Errore durante l'avvio di RPC: {0}
 Sembra che tu stia eseguendo la versione candidata al rilascio. Si consiglia di rimanere nella versione stabile.
 Sembra che la popolazione del file system impieghi troppo tempo.
 Tipo non valido {0}.
+Capacità: {0}
+Conteggio partizioni: {0}
+Dimensione: {0}
+Usato: {0}

@@ -543,3 +543,7 @@ qǐdòng RPC shí chūcuò:{0}
 Kàn qǐlái nín zhèngzài yùnxíng hòuxuǎn fābù bǎnběn. Jiànyì nín shǐyòng wěndìng bǎnběn.
 Wénjiàn xìtǒng tiánchōng sìhū huāfèile tài cháng shíjiān.
 Wúxiào de lèixíng {0}.
+Róngliàng: {0}
+Fēnqū shù: {0}
+Dàxiǎo: {0}
+Yǐ shǐyòng: {0}

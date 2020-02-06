@@ -543,3 +543,7 @@ Kesalahan memulai RPC: {0}
 Sepertinya Anda menjalankan versi kandidat rilis. Disarankan agar Anda tetap pada versi stabil.
 Tampaknya populasi sistem file terlalu lama.
 Jenis {0} tidak valid.
+Kapasitas: {0}
+Hitungan partisi: {0}
+Ukuran: {0}
+Digunakan: {0}

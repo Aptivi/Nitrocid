@@ -543,3 +543,7 @@ Fehler beim Starten von RPC: {0}
 Anscheinend haben Sie die Release Candidate-Version ausgeführt. Es wird empfohlen, auf der stabilen Version zu bleiben.
 Es scheint, dass das Auffüllen des Dateisystems zu lange dauert.
 Ungültiger Typ {0}.
+Kapazität: {0}
+Partitionsanzahl: {0}
+Größe: {0}
+Gebraucht: {0}

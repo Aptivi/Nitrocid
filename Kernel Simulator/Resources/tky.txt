@@ -543,3 +543,7 @@ RPC başlatılırken hata oluştu: {0}
 Siz nomzod versiyasini chiqayotganga o'xshaysiz. Barqaror versiyada qolish tavsiya etiladi....
 Dosya sistemi nüfusu çok uzun sürüyor.
 Geçersiz tür {0}.
+Kapasite: {0}
+Bölüm Sayısı: {0}
+Boyut: {0}
+Kullanılmış: {0}

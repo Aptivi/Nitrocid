@@ -543,3 +543,7 @@ Chyba při spuštění RPC: {0}
 Vypadá to, že jste používali kandidátní verzi vydání. Doporučujeme, abyste zůstali ve stabilní verzi.
 Zdá se, že populace systému souborů trvá příliš dlouho.
 Neplatný typ {0}.
+Kapacita: {0}
+Počet oddílů: {0}
+Velikost: {0}
+Použité: {0}

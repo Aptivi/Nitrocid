@@ -543,3 +543,7 @@ Error starting RPC: {0}
 Looks like you were running the release candidate version. It is recommended that you stay on the stable version.
 It seems that the file system population takes too long.
 Invalid type {0}.
+Capacity: {0}
+Partition Count: {0}
+Size: {0}
+Used: {0}

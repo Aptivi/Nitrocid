@@ -543,3 +543,7 @@ Oshibka zapuska RPC: {0}
 Pokhozhe, vy rabotali s versiyey-kandidatom. Rekomenduyetsya ostavat'sya na stabil'noy versii.
 Kazhetsya, chto zapolneniye faylovoy sistemy zanimayet slishkom mnogo vremeni.
 Nevernyy tip {0}.
+Yemkost': {0}
+Kolichestvo razdelov: {0}
+Razmer: {0}
+Ispol'zuyetsya: {0}

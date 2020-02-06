@@ -390,17 +390,30 @@ Public Module GetCommand
 
                 Done = True
                 Dim DriveNum As Integer = 1
-                For Each HD As HDD In HDDList
+                If EnvironmentOSType.Contains("Windows") Then
+                    For Each HD As HDD In HDDList
+                        W("==========================================", True, ColTypes.Neutral)
+                        W(DoTranslation("Drive Number: {0}", currentLang), True, ColTypes.Neutral, DriveNum)
+                        W("ID: {0}", True, ColTypes.Neutral, HD.ID)
+                        W(DoTranslation("Manufacturer: {0}", currentLang), True, ColTypes.Neutral, HD.Manufacturer)
+                        W(DoTranslation("Model: {0}", currentLang), True, ColTypes.Neutral, HD.Model)
+                        W(DoTranslation("Capacity: {0} GB ({1}, {2}, {3})", currentLang), True, ColTypes.Neutral, FormatNumber(HD.Size / 1024 / 1024 / 1024, 2), HD.Cylinders, HD.Heads, HD.Sectors)
+                        W(DoTranslation("Interface Type: {0}", currentLang), True, ColTypes.Neutral, HD.InterfaceType)
+                        DriveNum += 1
+                    Next
                     W("==========================================", True, ColTypes.Neutral)
-                    W(DoTranslation("Drive Number: {0}", currentLang), True, ColTypes.Neutral, DriveNum)
-                    W("ID: {0}", True, ColTypes.Neutral, HD.ID)
-                    W(DoTranslation("Manufacturer: {0}", currentLang), True, ColTypes.Neutral, HD.Manufacturer)
-                    W(DoTranslation("Model: {0}", currentLang), True, ColTypes.Neutral, HD.Model)
-                    W(DoTranslation("Capacity: {0} GB ({1}, {2}, {3})", currentLang), True, ColTypes.Neutral, FormatNumber(HD.Size / 1024 / 1024 / 1024, 2), HD.Cylinders, HD.Heads, HD.Sectors)
-                    W(DoTranslation("Interface Type: {0}", currentLang), True, ColTypes.Neutral, HD.InterfaceType)
-                    DriveNum += 1
-                Next
-                W("==========================================", True, ColTypes.Neutral)
+                ElseIf EnvironmentOSType.Contains("Unix") Then
+                    For Each HD As HDD_Linux In HDDList
+                        W("==========================================", True, ColTypes.Neutral)
+                        W(DoTranslation("Drive Number: {0}", currentLang), True, ColTypes.Neutral, DriveNum)
+                        W(DoTranslation("Manufacturer: {0}", currentLang), True, ColTypes.Neutral, HD.Vendor_LNX)
+                        W(DoTranslation("Model: {0}", currentLang), True, ColTypes.Neutral, HD.Model_LNX)
+                        W(DoTranslation("Capacity: {0}", currentLang), True, ColTypes.Neutral, HD.Size_LNX)
+                        W(DoTranslation("Partition Count: {0}", currentLang), True, ColTypes.Neutral, HD.Parts_LNX.Count)
+                        DriveNum += 1
+                    Next
+                    W("==========================================", True, ColTypes.Neutral)
+                End If
 
             ElseIf words(0) = "listparts" Then
 

@@ -543,3 +543,7 @@ Ralat bermula RPC: {0}
 Nampaknya anda sedang menjalankan versi calon pembebasan. Adalah disyorkan agar anda tetap pada versi yang stabil.
 Nampaknya populasi sistem fail terlalu lama.
 Jenis tidak sah {0}.
+Kapasiti: {0}
+Kiraan partition: {0}
+Saiz: {0}
+Digunakan: {0}

@@ -542,3 +542,7 @@ RPC no kidō erā: {0}
 Rirīsu kōho bājon o jikkō shite ita yōdesu. Anteihan o shiyō suru koto o o susume shimasu.
 Fairu shisutemu no torikomi ni jikan ga kakari sugiru yōdesu.
 Mukōna taipu {0}.
+Yōryō: {0}
+Pātishon-sū: {0}
+Saizu: {0}
+Shiyō-zumi: {0}

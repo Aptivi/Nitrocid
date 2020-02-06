@@ -543,3 +543,7 @@ Błąd uruchamiania RPC: {0}
 Wygląda na to, że korzystasz z wersji kandydującej do wydania. Zaleca się pozostanie w stabilnej wersji.
 Wygląda na to, że populacja systemu plików trwa zbyt długo.
 Niepoprawny typ {0}.
+Pojemność: {0}
+Liczba partycji: {0}
+Rozmiar: {0}
+Użyto: {0}

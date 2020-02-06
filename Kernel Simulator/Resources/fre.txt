@@ -543,3 +543,7 @@ Virhe RPC: n käynnistämisessä: {0}
 Il semble que vous exécutiez la version candidate à la sortie. Il est recommandé de rester sur la version stable.
 Il semble que la population du système de fichiers prenne trop de temps.
 Type non valide {0}.
+Capacité: {0}
+Nombre de partitions: {0}
+Taille: {0}
+Utilisé: {0}
