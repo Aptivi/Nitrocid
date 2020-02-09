@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Kernel Simulator",
-    "\\Kernel Simulator\\Kernel",
     "\\Kernel Simulator\\Misc",
     "\\Kernel Simulator\\Misc\\Configuration",
+    "\\Kernel Simulator\\Misc\\Speech",
     "\\Kernel Simulator\\Misc\\Writers",
+    "\\Kernel Simulator\\Resources",
     "\\Kernel Simulator\\Shell",
     "\\Kernel Simulator\\Tests",
     "\\Kernel Simulator\\Tests\\Interaction"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\Kernel Simulator\\Kernel Simulator.vbproj",
   "PreviewInSolutionExplorer": false
 }
