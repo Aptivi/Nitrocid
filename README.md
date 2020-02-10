@@ -272,13 +272,21 @@ Copyright (c) 2016-present, Robin Rodricks
 
 License (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 
-NAudio
+LibVLCSharp
 
-Source code: https://github.com/naudio/NAudio
+Source code: https://code.videolan.org/videolan/LibVLCSharp
 
-Copyright (c) 2019-2020, Mark Heath
+Copyright © 1996-2020 the VideoLAN team
 
-License (Microsoft Public License): https://github.com/naudio/NAudio/blob/master/license.txt
+License (LGPLv2.1): https://code.videolan.org/videolan/LibVLCSharp/blob/3.x/LICENSE
+
+VLC (used by LibVLCSharp)
+
+Source code: https://code.videolan.org/videolan/vlc
+
+Copyright © 1996-2020 the VideoLAN team
+
+License (GNU GPL 2.0): https://code.videolan.org/videolan/vlc/blob/master/COPYING
 
 SSH.NET
 
