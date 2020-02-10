@@ -21,6 +21,7 @@ Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Text.RegularExpressions
+Imports LibVLCSharp.Shared
 Imports Microsoft.VisualBasic.FileIO
 Imports NAudio.Wave
 
@@ -171,16 +172,15 @@ Module TGetCommand
             Dim esc As Char = GetEsc()
             Console.WriteLine(esc + "[38;5;" + FullArgsL(0) + "mIndex " + FullArgsL(0))
         ElseIf Cmd = "soundtest" Then 'Usage: soundtest <file>
-            Dim AudioRead As New AudioFileReader(FullArgs)
-            Wdbg("I", "AudioRead: {0}", AudioRead.TotalTime)
-            Dim WaveEvent As New WaveOutEvent()
-            WaveEvent.Init(AudioRead)
-            Wdbg("I", "Initialized Wave Out using {0}", WaveEvent.DeviceNumber)
-            WaveEvent.Play()
-            While WaveEvent.PlaybackState = PlaybackState.Playing
+            Core.Initialize()
+            Dim MLib As New LibVLC
+            Dim MP As New MediaPlayer(MLib)
+            AddHandler MLib.Log, Sub(sender, e) W($"{e.Level}@{e.Module}: {e.Message}", True, ColTypes.Neutral)
+            Dim MFile As New Media(MLib, FullArgs)
+            MP.Media = MFile
+            MP.Play()
+            While MP.State = VLCState.Playing
             End While
-            WaveEvent.Dispose()
-            AudioRead.Close()
         ElseIf Cmd = "sendnot" Then 'Usage: sendnot <Priority> <title> <desc>
             Dim Notif As New Notification With {.Priority = FullArgsL(0),
                                                 .Title = FullArgsQ(1),
