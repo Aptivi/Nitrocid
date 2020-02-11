@@ -32,6 +32,7 @@ Public Module Kernel
 
     Sub Main()
         'TODO: Re-write the whole kernel in Beta
+        'TODO: Target .NET Framework 4.8 on Day 12
         While True
             Try
                 'A title
