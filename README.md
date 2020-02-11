@@ -4,7 +4,7 @@
 
 This kernel simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal.
 
-Congratulations, we finally made it into Release Candidate 2 of Kernel Simulator version 0.0.8!
+Congratulations, we finally made it into Release Candidate 3 of Kernel Simulator version 0.0.8!
 
 ## |-----+--> _Notes_ <--+-----|
 
