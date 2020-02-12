@@ -480,7 +480,6 @@ Escrito incorretamente.
 Resolvido perfeitamente!
 Resolvido incorretamente.
 {0} MB de {1} MB baixados.
-Download for concluído.
 O RPC já está em execução.
 RPC escutando em todos os endereços usando a porta {0}.
 Começando RPC ...

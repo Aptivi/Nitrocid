@@ -480,7 +480,6 @@ Ortografia errata.
 Risolto perfettamente!
 Risolto in modo errato
 {0} MB di {1} MB scaricati.
-Download completato.
 RPC è già in esecuzione.
 Ascolto RPC su tutti gli indirizzi utilizzando la porta {0}.
 Avvio di RPC ...

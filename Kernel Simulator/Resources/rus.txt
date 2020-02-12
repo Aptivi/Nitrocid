@@ -480,7 +480,6 @@ Napisano nepravil'no.
 Resheno otlichno!
 Resheno nepravil'no.
 {0} MB zagruzheno {1} MB.
-Zagruzka zavershena.
 RPC uzhe zapushchen.
 RPC proslushivayet vse adresa, ispol'zuya port {0}.
 Zapusk RPC ...

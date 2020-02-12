@@ -480,7 +480,6 @@ Napisano pogrešno.
 Savršeno riješeno!
 Netočno riješeno.
 {0} Preuzeto je MB od {1} MB.
-Preuzimanje je dovršeno.
 RPC se već pokreće.
 Slušanje RPC-a na svim adresama putem porta {0}.
 Pokretanje RPC-a ...

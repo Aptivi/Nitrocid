@@ -480,7 +480,6 @@ Kirjoitettu väärin.
 Ratkaistu täydellisesti!
 Ratkaistu väärin.
 {0} Mt {1} Mt ladattu.
-Lataus on valmis.
 RPC on jo käynnissä.
 RPC-kuuntelu kaikissa osoitteissa porttia {0} käyttämällä.
 Käynnistetään RPC ...

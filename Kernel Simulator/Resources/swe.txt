@@ -480,7 +480,6 @@ Stava fel.
 Löst perfekt!
 Löst felaktigt.
 {0} MB av {1} MB laddas ner.
-Nedladdningen har slutförts.
 RPC körs redan.
 RPC lyssnar på alla adresser med port {0}.
 Börjar RPC ...

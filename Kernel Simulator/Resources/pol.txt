@@ -480,7 +480,6 @@ Błędnie napisane.
 Rozwiązane idealnie!
 Rozwiązany niepoprawnie.
 Pobrano {0} MB z {1} MB.
-Pobieranie zostało zakończone.
 RPC już działa.
 RPC nasłuchuje na wszystkich adresach przy użyciu portu {0}.
 Uruchamianie RPC ...

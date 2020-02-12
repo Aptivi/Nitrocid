@@ -480,7 +480,6 @@ Scris incorect.
 Rezolvat perfect!
 Soluționat incorect.
 {0} MB de {1} MB descărcate.
-Descărcarea s-a finalizat.
 RPC rulează deja.
 RPC ascultând toate adresele folosind portul {0}.
 Pornirea RPC ...

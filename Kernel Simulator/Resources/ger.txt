@@ -480,7 +480,6 @@ Falsch geschrieben.
 Perfekt gelöst!
 Falsch gelöst.
 {0} MB von {1} MB heruntergeladen.
-Der Download ist abgeschlossen.
 RPC läuft bereits.
 RPC überwacht alle Adressen über Port {0}.
 RPC wird gestartet ...

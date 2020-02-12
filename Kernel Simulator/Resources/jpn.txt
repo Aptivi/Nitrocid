@@ -480,7 +480,6 @@ Kanzen ni kaiketsu shimashita!
 Ayamatte kaiketsu shimashita.
 {0} MB no {1} MB ga daunrōdo sa remashita.
 Daunrōdo ga kanryō shimashita.
-RPC wa sudeni jikkō-chūdesu.
 Pōto {0} o shiyō suru subete no adoresu de rissun shite iru RPC.
 RPC o kaishi shite imasu...
 SSH sābā ni setsuzoku shimasu.

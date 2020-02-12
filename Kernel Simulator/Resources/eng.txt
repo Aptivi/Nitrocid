@@ -480,7 +480,6 @@ Spelt incorrectly.
 Solved perfectly!
 Solved incorrectly.
 {0} MB of {1} MB downloaded.
-Download has completed.
 RPC is already running.
 RPC listening on all addresses using port {0}.
 Starting RPC...

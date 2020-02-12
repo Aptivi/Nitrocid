@@ -480,7 +480,6 @@ maktubat bishakl ghyr sahihin.
 haliha tamamana!
 haliha bishakl ghyr sahihin.
 {0} mighabayat min {1} tam tanzil mighabayat.
-aiktamal altanzil.
 RPC qayd altashghil bialfiel.
 alaistimae 'iilaa RPC ealaa jmye aleanawin biastikhdam almunafidh {0}.
 jar bad' RPC ...
