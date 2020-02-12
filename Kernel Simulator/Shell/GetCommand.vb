@@ -156,7 +156,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "bsynth" Then
 
-                If eqargs.Count > 0 Then
+                If eqargs?.Count > 0 Then
                     ProbeSynth(eqargs(0))
                     Done = True
                 End If
