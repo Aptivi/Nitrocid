@@ -546,3 +546,4 @@ Pojemność: {0}
 Liczba partycji: {0}
 Rozmiar: {0}
 Użyto: {0}
+Katalog {0} już istnieje.

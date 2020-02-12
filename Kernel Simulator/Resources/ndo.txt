@@ -546,3 +546,4 @@ Kapasitas: {0}
 Hitungan partisi: {0}
 Ukuran: {0}
 Digunakan: {0}
+Direktori {0} sudah ada.

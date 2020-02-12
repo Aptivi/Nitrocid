@@ -546,3 +546,4 @@ Imkoniyatlar: {0}
 Bo'lim soni: {0}
 Hajmi: {0}
 Ishlatilgan: {0}
+{0} katalogi allaqachon mavjud.

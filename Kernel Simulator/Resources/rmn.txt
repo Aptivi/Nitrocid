@@ -546,3 +546,4 @@ Capacitate: {0}
 Număr partiție: {0}
 Dimensiune: {0}
 Folosit: {0}
+Directory {0} există deja.

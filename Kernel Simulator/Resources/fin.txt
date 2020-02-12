@@ -546,3 +546,4 @@ Kapasiteetti: {0}
 Osioiden lukumäärä: {0}
 Koko: {0}
 Käytetty: {0}
+Hakemisto {0} on jo olemassa.

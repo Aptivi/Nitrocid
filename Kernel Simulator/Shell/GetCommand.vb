@@ -503,13 +503,17 @@ Public Module GetCommand
 
             ElseIf words(0) = "md" Then
 
-                If eargs.Count - 1 >= 0 Then
+                If args.Count > 0 Then
                     'Create directory
                     Dim direct As String = CurrDir + "/" + strArgs.Replace("\", "/")
                     If direct.Contains(CurrDir.Replace("\", "/")) And direct.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
                         direct = ReplaceLastOccurrence(direct, CurrDir, "")
                     End If
-                    Directory.CreateDirectory(direct)
+                    If Not Directory.Exists(direct) Then
+                        Directory.CreateDirectory(direct)
+                    Else
+                        W(DoTranslation("Directory {0} already exists.", currentLang), True, ColTypes.Neutral, direct)
+                    End If
                     Done = True
                 End If
 

@@ -546,3 +546,4 @@ kshamata: {0}
 vibhaajan kee sankhya: {0}
 aakaar: {0}
 istemaal kiya: {0}
+nirdeshika {0} pahale se maujood hai.

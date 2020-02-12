@@ -546,3 +546,4 @@ Kapacitet: {0}
 Partitionsantal: {0}
 Storlek: {0}
 Använd: {0}
+Katalog {0} finns redan.

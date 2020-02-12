@@ -546,3 +546,4 @@ Kapacitet: {0}
 Broj particija: {0}
 Veličina: {0}
 Korišteno: {0}
+Imenik {0} već postoji.

@@ -546,3 +546,4 @@ Kapasite: {0}
 Bölüm Sayısı: {0}
 Boyut: {0}
 Kullanılmış: {0}
+{0} dizini zaten var.

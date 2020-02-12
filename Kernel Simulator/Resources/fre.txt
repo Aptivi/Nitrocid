@@ -546,3 +546,4 @@ Capacité: {0}
 Nombre de partitions: {0}
 Taille: {0}
 Utilisé: {0}
+Le répertoire {0} existe déjà.

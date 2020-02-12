@@ -546,3 +546,4 @@ Kapazität: {0}
 Partitionsanzahl: {0}
 Größe: {0}
 Gebraucht: {0}
+Das Verzeichnis {0} ist bereits vorhanden.

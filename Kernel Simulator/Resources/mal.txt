@@ -546,3 +546,4 @@ Kapasiti: {0}
 Kiraan partition: {0}
 Saiz: {0}
 Digunakan: {0}
+Direktori {0} sudah wujud.

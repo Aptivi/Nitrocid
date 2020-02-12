@@ -546,3 +546,4 @@ Kapacita: {0}
 Počet oddílů: {0}
 Velikost: {0}
 Použité: {0}
+Adresář {0} již existuje.

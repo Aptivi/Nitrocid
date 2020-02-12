@@ -546,3 +546,4 @@ Capaciteit: {0}
 Aantal partities: {0}
 Grootte: {0}
 Gebruikt: {0}
+Directory {0} bestaat al.

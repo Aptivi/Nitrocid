@@ -546,3 +546,4 @@ Yemkost': {0}
 Kolichestvo razdelov: {0}
 Razmer: {0}
 Ispol'zuyetsya: {0}
+Katalog {0} uzhe sushchestvuyet.

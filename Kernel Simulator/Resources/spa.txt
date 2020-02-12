@@ -546,3 +546,4 @@ Capacidad: {0}
 Recuento de particiones: {0}
 Tamaño: {0}
 Usado: {0}
+El directorio {0} ya existe.
