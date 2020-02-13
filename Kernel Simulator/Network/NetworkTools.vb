@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.ComponentModel
 Imports System.Net.NetworkInformation
 
 Public Module NetworkTools
@@ -115,6 +116,8 @@ Public Module NetworkTools
           gs4.OutputPacketsDiscarded, gs4.ReceivedPacketsWithAddressErrors, gs4.ReceivedPacketsWithHeadersErrors, gs4.ReceivedPacketsWithUnknownProtocol)
     End Sub
 
+    Dim IsError As Boolean
+    Dim ReasonError As Exception
     Sub DownloadFile(ByVal URL As String)
         Dim RetryCount As Integer = 1
         Wdbg("I", "URL: {0}", URL)
@@ -135,9 +138,13 @@ Public Module NetworkTools
                         W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, CurrDir)
                         Dim WClient As New WebClient
                         AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
+                        AddHandler WClient.DownloadFileCompleted, AddressOf DownloadChecker
                         WClient.DownloadFileAsync(New Uri(URL), CurrDir + "/" + FileName)
                         While Not DFinish
                         End While
+                        If IsError Then
+                            Throw ReasonError
+                        End If
                     Else
                         W(DoTranslation("Specify the address", currentLang), True, ColTypes.Neutral)
                     End If
@@ -146,12 +153,22 @@ Public Module NetworkTools
                 End If
                 Exit Sub
             Catch ex As Exception
+                DFinish = False
                 W(DoTranslation("Download failed in try {0}: {1}", currentLang), True, ColTypes.Neutral, RetryCount, ex.Message)
                 RetryCount += 1
                 Wdbg("I", "Try count: {0}", RetryCount)
                 WStkTrc(ex)
             End Try
         End While
+    End Sub
+
+    Private Sub DownloadChecker(sender As Object, e As AsyncCompletedEventArgs)
+        Wdbg("I", "Download complete. Error: {0}", e.Error?.Message)
+        If Not IsNothing(e.Error) Then
+            ReasonError = e.Error
+            IsError = True
+            DFinish = True
+        End If
     End Sub
 
     Private Sub DownloadManager(sender As Object, e As DownloadProgressChangedEventArgs)
