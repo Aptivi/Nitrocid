@@ -547,3 +547,4 @@ Hitungan partisi: {0}
 Ukuran: {0}
 Digunakan: {0}
 Direktori {0} sudah ada.
+Kesalahan saat mencoba terhubung ke {0}: Waktu habis koneksi atau koneksi terputus

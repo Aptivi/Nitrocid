@@ -547,3 +547,4 @@ Partition Count: {0}
 Size: {0}
 Used: {0}
 Directory {0} already exists.
+Error when trying to connect to {0}: Connection timeout or lost connection

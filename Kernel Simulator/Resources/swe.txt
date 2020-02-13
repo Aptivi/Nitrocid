@@ -547,3 +547,4 @@ Partitionsantal: {0}
 Storlek: {0}
 Använd: {0}
 Katalog {0} finns redan.
+Fel vid försök att ansluta till {0}: Timeout för anslutning eller förlorad anslutning

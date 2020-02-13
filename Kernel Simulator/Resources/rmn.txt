@@ -547,3 +547,4 @@ Număr partiție: {0}
 Dimensiune: {0}
 Folosit: {0}
 Directory {0} există deja.
+Eroare când încercați să vă conectați la {0}: expirarea conexiunii sau pierderea conexiunii

@@ -547,3 +547,4 @@ eadad al'aqsam: {0}
 alhajm: {0}
 mstakhdm: {0}
 aldalil {0} mawjud bialfiel.
+khata eind muhawalat alaitisal b {0}: muhlat alaitisal 'aw fiqdan alaitisal

@@ -547,3 +547,4 @@ Kiraan partition: {0}
 Saiz: {0}
 Digunakan: {0}
 Direktori {0} sudah wujud.
+Ralat semasa cuba menyambung ke {0}: Ralat sambungan atau sambungan hilang

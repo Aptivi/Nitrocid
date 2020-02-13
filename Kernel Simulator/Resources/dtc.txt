@@ -547,3 +547,4 @@ Aantal partities: {0}
 Grootte: {0}
 Gebruikt: {0}
 Directory {0} bestaat al.
+Fout bij verbinding met {0}: time-out verbinding of verbinding verbroken

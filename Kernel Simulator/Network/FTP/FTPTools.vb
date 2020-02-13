@@ -87,8 +87,11 @@ Module FTPTools
                             End Try
                         End If
                     End While
-                Else
+                ElseIf profiles.Count = 1 Then
                     profsel = profiles(0) 'Select first profile
+                Else 'Failed trying to get profiles
+                    W(DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection", currentLang), True, ColTypes.Neutral, address)
+                    Exit Sub
                 End If
 
                 'Connect

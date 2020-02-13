@@ -546,3 +546,4 @@ Pātishon-sū: {0}
 Saizu: {0}
 Shiyō-zumi: {0}
 Direkutori {0} wa sudeni sonzai shimasu.
+{0} Ni setsuzoku shiyou to shita toki no erā: Setsuzoku Taimuauto matawa setsuzoku no setsudan

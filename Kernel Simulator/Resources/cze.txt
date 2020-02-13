@@ -547,3 +547,4 @@ Počet oddílů: {0}
 Velikost: {0}
 Použité: {0}
 Adresář {0} již existuje.
+Chyba při pokusu o připojení k {0}: Prodleva připojení nebo ztracené připojení

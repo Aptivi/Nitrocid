@@ -547,3 +547,4 @@ Recuento de particiones: {0}
 Tamaño: {0}
 Usado: {0}
 El directorio {0} ya existe.
+Error al intentar conectarse a {0}: tiempo de espera de conexión o conexión perdida

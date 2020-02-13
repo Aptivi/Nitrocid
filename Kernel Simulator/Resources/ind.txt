@@ -547,3 +547,4 @@ vibhaajan kee sankhya: {0}
 aakaar: {0}
 istemaal kiya: {0}
 nirdeshika {0} pahale se maujood hai.
+{0} se kanekt karane ka prayaas karate samay truti: kanekshan taimaut ya khoya kanekshan
