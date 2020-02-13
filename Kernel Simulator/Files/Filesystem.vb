@@ -98,13 +98,6 @@ Public Module Filesystem
     End Sub
     Public Sub List(ByVal folder As String)
         Wdbg("I", "Folder {0} will be checked if it is empty or equals CurrDir ({1})...", folder, CurrDir)
-        If Not folder = CurrDir And Not folder = "" Then
-            folder = $"{CurrDir}/{folder}"
-            If folder.Contains(CurrDir.Replace("\", "/")) Then
-                folder = folder.Replace(CurrDir, "").Remove(0, 1)
-            End If
-        End If
-        Wdbg("I", "Final folder: {0}", folder)
         If CurrDirStructure.Contains(folder) Or IO.Directory.Exists(folder) Then
             Dim enumeration As IEnumerable(Of String)
             Try
@@ -133,7 +126,7 @@ Public Module Filesystem
 
                         'Print information
                         If (FInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not FInfo.Attributes.HasFlag(IO.FileAttributes.Hidden) Then
-                            W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
+                            W("- " + Entry.Replace("\", "/") + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
                               FormatNumber(FInfo.Length / 1024, 2), FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
                                                                     FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
                         End If
@@ -158,7 +151,7 @@ Public Module Filesystem
 
                         'Print information
                         If (DInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DInfo.Attributes.HasFlag(IO.FileAttributes.Hidden) Then
-                            W("- " + Entry + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
+                            W("- " + Entry.Replace("\", "/") + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
                               FormatNumber(TotalSize / 1024, 2), DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
                                                                  DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
                         End If

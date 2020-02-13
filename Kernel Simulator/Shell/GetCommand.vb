@@ -382,7 +382,11 @@ Public Module GetCommand
                     List(CurrDir)
                     Done = True
                 Else
-                    List(strArgs)
+                    Dim direct As String = CurrDir + "/" + strArgs.Replace("\", "/")
+                    If direct.Contains(CurrDir.Replace("\", "/")) And direct.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        direct = ReplaceLastOccurrence(direct, CurrDir, "")
+                    End If
+                    List(direct)
                     Done = True
                 End If
 
