@@ -23,7 +23,6 @@ Imports System.Text
 Imports System.Text.RegularExpressions
 Imports LibVLCSharp.Shared
 Imports Microsoft.VisualBasic.FileIO
-Imports NAudio.Wave
 
 Module TGetCommand
 
