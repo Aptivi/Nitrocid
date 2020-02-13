@@ -25,7 +25,7 @@ Module SSH
 
         'Connection
         Dim SSH As New SshClient(Address, Port, Username, Pass)
-        SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(10)
+        SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30)
         Wdbg("I", "Connecting to {0}...", Address)
         SSH.Connect()
 
