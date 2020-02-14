@@ -550,3 +550,4 @@ Hakemisto {0} on jo olemassa.
 Virhe yritettäessä muodostaa yhteyttä {0}: Yhteyden aikakatkaisu tai yhteys katkesi
 Laskin lausekkeiden laskemiseksi.
 Virhe laskelmassa.
+Kapasiteetti: {0} Gt ({1}, {2}, {3})

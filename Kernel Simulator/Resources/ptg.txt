@@ -550,3 +550,4 @@ O diretório {0} já existe.
 Erro ao tentar se conectar a {0}: Tempo limite da conexão ou conexão perdida
 Calculadora para calcular expressões.
 Erro no cálculo.
+Capacidade: {0} GB ({1}, {2}, {3})

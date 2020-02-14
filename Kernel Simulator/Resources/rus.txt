@@ -550,3 +550,4 @@ Katalog {0} uzhe sushchestvuyet.
 Oshibka pri popytke podklyucheniya k {0}: taym-aut soyedineniya ili poterya soyedineniya
 Kal'kulyator dlya rascheta vyrazheniy.
 Oshibka v raschete.
+Yemkost': {0} GB ({1}, {2}, {3})

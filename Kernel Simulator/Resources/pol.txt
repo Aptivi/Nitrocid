@@ -550,3 +550,4 @@ Katalog {0} już istnieje.
 Błąd podczas próby połączenia z {0}: Przekroczono limit czasu połączenia lub utracono połączenie
 Kalkulator do obliczania wyrażeń.
 Błąd w obliczeniach.
+Pojemność: {0} GB ({1}, {2}, {3})

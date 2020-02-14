@@ -550,3 +550,4 @@ Imenik {0} već postoji.
 Pogreška kod pokušaja povezivanja na {0}: Istek vremena veze ili izgubljena veza
 Kalkulator za računanje izraza.
 Pogreška u proračunu.
+Kapacitet: {0} GB ({1}, {2}, {3})

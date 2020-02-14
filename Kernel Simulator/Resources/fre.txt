@@ -550,3 +550,4 @@ Le répertoire {0} existe déjà.
 Erreur lors de la tentative de connexion à {0}: délai de connexion ou connexion perdue
 Calculatrice pour calculer les expressions.
 Erreur de calcul.
+Capacité: {0} Go ({1}, {2}, {3})

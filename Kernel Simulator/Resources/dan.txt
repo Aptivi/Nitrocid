@@ -550,3 +550,4 @@ Directory {0} findes allerede.
 Fejl, når du prøver at oprette forbindelse til {0}: Timeout for forbindelse eller mistet forbindelse
 Lommeregner til beregning af udtryk.
 Fejl i beregningen.
+Kapacitet: {0} GB ({1}, {2}, {3})

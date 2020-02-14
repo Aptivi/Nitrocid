@@ -550,3 +550,4 @@ Kullanılmış: {0}
 {0} 'a bağlanmaya çalışırken hata oluştu: Bağlantı zaman aşımı veya bağlantı kesildi
 İfadeleri hesaplamak için hesap makinesi.
 Hesaplama hatası.
+Kapasite: {0} GB ({1}, {2}, {3})

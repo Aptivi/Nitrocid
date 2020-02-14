@@ -550,3 +550,4 @@ Directory {0} există deja.
 Eroare când încercați să vă conectați la {0}: expirarea conexiunii sau pierderea conexiunii
 Calculator pentru calcularea expresiilor.
 Eroare la calcul.
+Capacitate: {0} GB ({1}, {2}, {3})

@@ -550,3 +550,4 @@ Mùlù {0} yǐ cúnzài.
 Chángshì liánjiē dào {0} shí chūcuò: Liánjiē chāoshí huò liánjiē diūshī
 Jìsuàn qì lái jìsuàn biǎodá shì.
 Jìsuàn cuòwù.
+Róngliàng: {0} GB ({1}, {2}, {3})

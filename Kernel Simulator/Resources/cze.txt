@@ -550,3 +550,4 @@ Adresář {0} již existuje.
 Chyba při pokusu o připojení k {0}: Prodleva připojení nebo ztracené připojení
 Kalkulačka pro výpočet výrazů.
 Chyba ve výpočtu.
+Kapacita: {0} GB ({1}, {2}, {3})

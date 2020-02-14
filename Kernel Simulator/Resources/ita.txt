@@ -550,3 +550,4 @@ La directory {0} esiste già.
 Errore durante il tentativo di connessione a {0}: timeout della connessione o connessione persa
 Calcolatrice per calcolare le espressioni.
 Errore nel calcolo.
+Capacità: {0} GB ({1}, {2}, {3})

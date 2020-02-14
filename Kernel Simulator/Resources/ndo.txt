@@ -550,3 +550,4 @@ Direktori {0} sudah ada.
 Kesalahan saat mencoba terhubung ke {0}: Waktu habis koneksi atau koneksi terputus
 Kalkulator untuk menghitung ekspresi.
 Kesalahan dalam perhitungan.
+Kapasitas: {0} GB ({1}, {2}, {3})

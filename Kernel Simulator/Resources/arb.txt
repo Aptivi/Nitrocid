@@ -550,3 +550,4 @@ aldalil {0} mawjud bialfiel.
 khata eind muhawalat alaitisal b {0}: muhlat alaitisal 'aw fiqdan alaitisal
 alat hasibat lihisab altaebirat.
 khata fi alhasab.
+alset: {0} ghyghabayt ({1} , {2} , {3})

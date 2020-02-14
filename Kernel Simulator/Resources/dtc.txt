@@ -550,3 +550,4 @@ Directory {0} bestaat al.
 Fout bij verbinding met {0}: time-out verbinding of verbinding verbroken
 Calculator om uitdrukkingen te berekenen.
 Fout in berekening.
+Capaciteit: {0} GB ({1}, {2}, {3})

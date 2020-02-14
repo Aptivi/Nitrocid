@@ -550,3 +550,4 @@ Direktori {0} sudah wujud.
 Ralat semasa cuba menyambung ke {0}: Ralat sambungan atau sambungan hilang
 Kalkulator untuk mengira ungkapan.
 Ralat dalam pengiraan.
+Kapasiti: {0} GB ({1}, {2}, {3})
