@@ -548,3 +548,5 @@ Hajmi: {0}
 Ishlatilgan: {0}
 {0} katalogi allaqachon mavjud.
 {0} ga ulanishda xato: ulanish tugadi yoki ulanish uzilib qoldi
+Ifodalarni hisoblash uchun kalkulyator.
+Hisoblashda xato.

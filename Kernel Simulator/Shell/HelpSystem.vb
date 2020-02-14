@@ -27,6 +27,7 @@ Public Module HelpSystem
                                                               {"alias", DoTranslation("Adds aliases to commands (Only admins can access this command)", currentLang)},
                                                               {"arginj", DoTranslation("Injects arguments to the kernel (reboot required, admins only)", currentLang)},
                                                               {"bsynth", DoTranslation("Loads the synth file and plays it.", currentLang)},
+                                                              {"calc", DoTranslation("Calculator to calculate expressions.", currentLang)},
                                                               {"cdbglog", DoTranslation("Deletes everything in debug log", currentLang)},
                                                               {"chdir", DoTranslation("Changes directory", currentLang)},
                                                               {"chhostname", DoTranslation("Changes host name (Admins only)", currentLang)},
@@ -131,6 +132,10 @@ Public Module HelpSystem
         ElseIf command = "bsynth" Then
 
             W(DoTranslation("Usage:", currentLang) + " bsynth <script-file>", True, ColTypes.Neutral)
+
+        ElseIf command = "calc" Then
+
+            W(DoTranslation("Usage:", currentLang) + " calc <expression>", True, ColTypes.Neutral)
 
         ElseIf command = "cdbglog" Then
 

@@ -548,3 +548,5 @@ Größe: {0}
 Gebraucht: {0}
 Das Verzeichnis {0} ist bereits vorhanden.
 Fehler beim Versuch, eine Verbindung zu {0} herzustellen: Verbindungszeitlimit oder Verbindungsverlust
+Rechner zur Berechnung von Ausdrücken.
+Fehler bei der Berechnung.

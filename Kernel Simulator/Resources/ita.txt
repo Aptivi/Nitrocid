@@ -548,3 +548,5 @@ Dimensione: {0}
 Usato: {0}
 La directory {0} esiste già.
 Errore durante il tentativo di connessione a {0}: timeout della connessione o connessione persa
+Calcolatrice per calcolare le espressioni.
+Errore nel calcolo.

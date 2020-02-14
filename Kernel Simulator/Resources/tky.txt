@@ -548,3 +548,5 @@ Boyut: {0}
 Kullanılmış: {0}
 {0} dizini zaten var.
 {0} 'a bağlanmaya çalışırken hata oluştu: Bağlantı zaman aşımı veya bağlantı kesildi
+İfadeleri hesaplamak için hesap makinesi.
+Hesaplama hatası.

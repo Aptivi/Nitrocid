@@ -548,3 +548,5 @@ Koko: {0}
 Käytetty: {0}
 Hakemisto {0} on jo olemassa.
 Virhe yritettäessä muodostaa yhteyttä {0}: Yhteyden aikakatkaisu tai yhteys katkesi
+Laskin lausekkeiden laskemiseksi.
+Virhe laskelmassa.

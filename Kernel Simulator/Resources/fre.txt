@@ -548,3 +548,5 @@ Taille: {0}
 Utilisé: {0}
 Le répertoire {0} existe déjà.
 Erreur lors de la tentative de connexion à {0}: délai de connexion ou connexion perdue
+Calculatrice pour calculer les expressions.
+Erreur de calcul.

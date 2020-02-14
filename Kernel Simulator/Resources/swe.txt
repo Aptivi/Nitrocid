@@ -548,3 +548,5 @@ Storlek: {0}
 Använd: {0}
 Katalog {0} finns redan.
 Fel vid försök att ansluta till {0}: Timeout för anslutning eller förlorad anslutning
+Kalkylator för att beräkna uttryck.
+Fel vid beräkningen.

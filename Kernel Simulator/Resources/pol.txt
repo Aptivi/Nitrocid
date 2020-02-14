@@ -548,3 +548,5 @@ Rozmiar: {0}
 Użyto: {0}
 Katalog {0} już istnieje.
 Błąd podczas próby połączenia z {0}: Przekroczono limit czasu połączenia lub utracono połączenie
+Kalkulator do obliczania wyrażeń.
+Błąd w obliczeniach.
