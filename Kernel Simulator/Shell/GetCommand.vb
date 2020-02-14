@@ -310,10 +310,11 @@ Public Module GetCommand
                     End If
                     Dim source As String = eqargs(0)
                     Dim target As String = eqargs(1)
+                    Dim filesrc As String = Path.GetFileName(source)
                     If Directory.Exists(source) And Directory.Exists(target) Then
-                        FileIO.FileSystem.CopyDirectory(source, target)
+                        FileIO.FileSystem.CopyDirectory(source, target + "/" + filesrc)
                     ElseIf File.Exists(source) And Directory.Exists(target) Then
-                        FileIO.FileSystem.CopyFile(source, target)
+                        FileIO.FileSystem.CopyFile(source, target + "/" + filesrc)
                     ElseIf File.Exists(source) Then
                         FileIO.FileSystem.CopyFile(source, target)
                     Else
