@@ -536,7 +536,7 @@ Public Module GetCommand
                     Dim target As String = eqargs(1)
                     Dim filesrc As String = Path.GetFileName(source)
                     If Directory.Exists(source) And Directory.Exists(target) Then
-                        Directory.Move(source, target)
+                        Directory.Move(source, target + "/" + filesrc)
                     ElseIf File.Exists(source) And Directory.Exists(target) Then
                         File.Move(source, target + "/" + filesrc)
                     ElseIf File.Exists(source) And Not File.Exists(target) Then
