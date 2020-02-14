@@ -18,7 +18,7 @@
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "mal", "ndo", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb"}
+    Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "mal", "ndo", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb"}
     Public Transliterables() As String = {"arb", "chi", "ind", "jpn", "rus"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -74,6 +74,8 @@ Public Module Translate
                 translated = My.Resources.cro
             Case "cze" 'Czech
                 translated = My.Resources.cze
+            Case "dan" 'Danish
+                translated = My.Resources.dan
             Case "dtc" 'Dutch
                 translated = My.Resources.dtc
             Case "fre" 'French
@@ -174,6 +176,10 @@ CHOICE:
                         Console.OutputEncoding = Text.Encoding.GetEncoding(866)
                         Console.InputEncoding = Text.Encoding.GetEncoding(866)
                         Wdbg("I", "Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
+                    Case "dan"
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(865)
+                        Console.InputEncoding = Text.Encoding.GetEncoding(865)
+                        Wdbg("I", "Encoding set successfully for Danish to {0}.", Console.OutputEncoding.EncodingName)
                     Case Else
                         Console.OutputEncoding = Text.Encoding.GetEncoding(65001)
                         Console.InputEncoding = Text.Encoding.GetEncoding(65001)

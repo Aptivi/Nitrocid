@@ -354,6 +354,7 @@
     <None Include="Resources\jpn.txt" />
     <None Include="Resources\ind-T.txt" />
     <None Include="Resources\jpn-T.txt" />
+    <None Include="Resources\dan.txt" />
     <Content Include="Resources\ndo.txt" />
     <Content Include="Resources\pol.txt" />
     <Content Include="Resources\rmn.txt" />

@@ -189,6 +189,25 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Tilgængelige kommandoer: {0}
+        '''Skriv kommando:
+        '''Kommandoinjektion er annulleret.
+        '''Adskil boot-argumenter med kommaer uden mellemrum, for eksempel &apos;motd, gpuprobe&apos;
+        '''Separate kommandoer på &apos;cmdinject&apos; med kolon med mellemrum, for eksempel &apos;cmdinject setthemes Hacker: bip 1024 0.5&apos;
+        '''Bemærk, at &apos;debug&apos; -argumentet ikke helt dækker kernen.
+        '''bargs: Det anmodede argument {0} findes ikke.
+        '''bargs: Ikke genvindbar fejl i argumentet:
+        '''Tilgængelige argumenter: {0}
+        '''Argumenter (&apos;hjælp&apos; til hjælp):
+        '''Injicerede argumenter  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property dan() As String
+            Get
+                Return ResourceManager.GetString("dan", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Beschikbare opdrachten: {0}
         '''Schrijf commando:
         '''Commando-injectie is geannuleerd.
