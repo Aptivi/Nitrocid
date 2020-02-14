@@ -164,7 +164,7 @@ Public Module GetCommand
             ElseIf words(0) = "calc" Then
 
                 If args.Count > 0 Then
-                    Dim Res As Dictionary(Of Integer, Boolean) = DoCalc(strArgs)
+                    Dim Res As Dictionary(Of Double, Boolean) = DoCalc(strArgs)
                     If Not Res.Values(0) Then 'If there is an error in calculation
                         W(DoTranslation("Error in calculation.", currentLang), True, ColTypes.Neutral)
                     Else 'Calculation done

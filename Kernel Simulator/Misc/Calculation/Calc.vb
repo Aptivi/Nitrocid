@@ -18,10 +18,10 @@
 
 Module Calc
 
-    Public Function DoCalc(ByVal Expression As String) As Dictionary(Of Integer, Boolean)
+    Public Function DoCalc(ByVal Expression As String) As Dictionary(Of Double, Boolean)
         Dim Calculated As Boolean
-        Dim Result As Integer
-        Dim DictCheck As New Dictionary(Of Integer, Boolean) 'Key: Result / Value: If True, then success. Else, failure.
+        Dim Result As Double
+        Dim DictCheck As New Dictionary(Of Double, Boolean) 'Key: Result / Value: If True, then success. Else, failure.
         Try
             Wdbg("I", "Expression: {0}", Expression)
             Result = New DataTable().Compute(Expression, Nothing)
