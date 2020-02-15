@@ -32,7 +32,7 @@ Public Module Color
     Public stageColor As ConsoleColors = ConsoleColors.Green
 
     'Templates array (available ones)
-    Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "Windows95", "GTASA", "GrayOnYellow", "BlackOnWhite", "LinuxUncolored", "LinuxColoredDef"}
+    Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "Windows95", "GTASA", "GrayOnYellow", "BlackOnWhite", "Valentine", "LinuxUncolored", "LinuxColoredDef"}
 
     'Variables for the "Default" theme
     Public inputColorDef As ConsoleColors = inputColor
