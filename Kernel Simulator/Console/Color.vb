@@ -178,17 +178,17 @@ Public Module Color
     Public stageColorBY As ConsoleColors = ConsoleColors.Black
 
     'Variables for the "Valentine" theme
-    Public inputColorV As ConsoleColors = ConsoleColors.Black
-    Public licenseColorV As ConsoleColors = ConsoleColors.Black
-    Public contKernelErrorColorV As ConsoleColors = ConsoleColors.Black
-    Public uncontKernelErrorColorV As ConsoleColors = ConsoleColors.Black
-    Public hostNameShellColorV As ConsoleColors = ConsoleColors.Black
-    Public userNameShellColorV As ConsoleColors = ConsoleColors.Black
-    Public backgroundColorV As ConsoleColors = ConsoleColors.White
-    Public neutralTextColorV As ConsoleColors = ConsoleColors.Black
-    Public cmdListColorV As ConsoleColors = ConsoleColors.Black
-    Public cmdDefColorV As ConsoleColors = ConsoleColors.Black
-    Public stageColorV As ConsoleColors = ConsoleColors.Black
+    Public inputColorV As ConsoleColors = ConsoleColors.Green
+    Public licenseColorV As ConsoleColors = ConsoleColors.Green
+    Public contKernelErrorColorV As ConsoleColors = ConsoleColors.White
+    Public uncontKernelErrorColorV As ConsoleColors = ConsoleColors.White
+    Public hostNameShellColorV As ConsoleColors = ConsoleColors.Green
+    Public userNameShellColorV As ConsoleColors = ConsoleColors.Green
+    Public backgroundColorV As ConsoleColors = ConsoleColors.Pink3
+    Public neutralTextColorV As ConsoleColors = ConsoleColors.White
+    Public cmdListColorV As ConsoleColors = ConsoleColors.Green
+    Public cmdDefColorV As ConsoleColors = ConsoleColors.White
+    Public stageColorV As ConsoleColors = ConsoleColors.Green
 
     'Variables for the "LinuxUncolored" theme
     Public inputColorLUnc As ConsoleColors = ConsoleColors.Gray
