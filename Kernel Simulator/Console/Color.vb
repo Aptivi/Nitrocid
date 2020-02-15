@@ -184,7 +184,7 @@ Public Module Color
     Public uncontKernelErrorColorV As ConsoleColors = ConsoleColors.White
     Public hostNameShellColorV As ConsoleColors = ConsoleColors.Green
     Public userNameShellColorV As ConsoleColors = ConsoleColors.Green
-    Public backgroundColorV As ConsoleColors = ConsoleColors.Pink3
+    Public backgroundColorV As ConsoleColors = ConsoleColors.Magenta3
     Public neutralTextColorV As ConsoleColors = ConsoleColors.White
     Public cmdListColorV As ConsoleColors = ConsoleColors.Green
     Public cmdDefColorV As ConsoleColors = ConsoleColors.White
