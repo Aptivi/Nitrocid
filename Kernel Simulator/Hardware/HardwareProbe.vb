@@ -279,7 +279,7 @@ Public Module HardwareProbe
             End If
 
             'SSE2 availability
-            If CPUFeatures.IsProcessorFeaturePresent(CPUFeatures.SSEnum.InstructionsSSE2Available) Then 'After SSE2 requirement addition, remove the check.
+            If CPUFeatures_Win.IsProcessorFeaturePresent(CPUFeatures_Win.SSEnum.InstructionsSSE2Available) Then 'After SSE2 requirement addition, remove the check.
                 W(" : SSE2", True, ColTypes.Neutral)
             Else
                 W(DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Neutral)

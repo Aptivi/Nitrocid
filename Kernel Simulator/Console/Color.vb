@@ -32,7 +32,7 @@ Public Module Color
     Public stageColor As ConsoleColors = ConsoleColors.Green
 
     'Templates array (available ones)
-    Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "Windows95", "GTASA", "GrayOnYellow", "BlackOnWhite", "Valentine", "LinuxUncolored", "LinuxColoredDef"}
+    Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "Windows95", "GTASA", "GrayOnYellow", "BlackOnWhite", "LinuxUncolored", "LinuxColoredDef"}
 
     'Variables for the "Default" theme
     Public inputColorDef As ConsoleColors = inputColor
@@ -176,19 +176,6 @@ Public Module Color
     Public cmdListColorBY As ConsoleColors = ConsoleColors.Black
     Public cmdDefColorBY As ConsoleColors = ConsoleColors.Black
     Public stageColorBY As ConsoleColors = ConsoleColors.Black
-
-    'Variables for the "Valentine" theme
-    Public inputColorV As ConsoleColors = ConsoleColors.Green
-    Public licenseColorV As ConsoleColors = ConsoleColors.Green
-    Public contKernelErrorColorV As ConsoleColors = ConsoleColors.White
-    Public uncontKernelErrorColorV As ConsoleColors = ConsoleColors.White
-    Public hostNameShellColorV As ConsoleColors = ConsoleColors.Green
-    Public userNameShellColorV As ConsoleColors = ConsoleColors.Green
-    Public backgroundColorV As ConsoleColors = ConsoleColors.Magenta3
-    Public neutralTextColorV As ConsoleColors = ConsoleColors.White
-    Public cmdListColorV As ConsoleColors = ConsoleColors.Green
-    Public cmdDefColorV As ConsoleColors = ConsoleColors.White
-    Public stageColorV As ConsoleColors = ConsoleColors.Green
 
     'Variables for the "LinuxUncolored" theme
     Public inputColorLUnc As ConsoleColors = ConsoleColors.Gray
@@ -376,19 +363,6 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorBY), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorBY), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorBY), ConsoleColors)
-                Load()
-            ElseIf theme = "Valentine" Then
-                inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorV), ConsoleColors)
-                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorV), ConsoleColors)
-                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), contKernelErrorColorV), ConsoleColors)
-                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), uncontKernelErrorColorV), ConsoleColors)
-                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), hostNameShellColorV), ConsoleColors)
-                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), userNameShellColorV), ConsoleColors)
-                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), backgroundColorV), ConsoleColors)
-                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), neutralTextColorV), ConsoleColors)
-                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorV), ConsoleColors)
-                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorV), ConsoleColors)
-                stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorV), ConsoleColors)
                 Load()
             ElseIf theme = "LinuxUncolored" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorLUnc), ConsoleColors)
@@ -591,19 +565,6 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorBY.ToString Then
             Wdbg("I", "Theme set to Black On White")
             currentTheme = "BlackOnWhite"
-        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorV.ToString And
-               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorV.ToString And
-               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorV.ToString And
-               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorV.ToString And
-               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorV.ToString And
-               ksconf.Sections("Colors").Keys("License Color").Value = licenseColorV.ToString And
-               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorV.ToString And
-               ksconf.Sections("Colors").Keys("Input Color").Value = inputColorV.ToString And
-               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorV.ToString And
-               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorV.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorv.ToString Then
-            Wdbg("I", "Theme set to Valentine")
-            currentTheme = "Valentine"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorLUnc.ToString And

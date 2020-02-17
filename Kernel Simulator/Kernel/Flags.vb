@@ -18,7 +18,7 @@
 
 Module Flags
 
-    'Variables
+    'Variables: Normal environment
     Public TimeDateIsSet As Boolean = False                     'To fix a bug after reboot
     Public StopPanicAndGoToDoublePanic As Boolean               'Double panic mode in kernel error
     Public DebugMode As Boolean = False                         'Toggle Debugging mode
@@ -50,5 +50,12 @@ Module Flags
     Public LoggedIn As Boolean                                  'Whether or not to detect if the user is logged in
     Public ShowAvailableUsers As Boolean = True                 'Whether or not to show available usernames on login
     Public HiddenFiles As Boolean                               'Whether or not to show hidden files
+
+    'Variables: CI environments
+    Public CI_TestWdbg As Boolean                               'Writes the debug log to the console then exits
+    Public CI_TestInit As Boolean                               'Prints initialization time then exits
+
+    'Stopwatch for CI_TestInit
+    Public CI_TestInitStopwatch As New Stopwatch()
 
 End Module

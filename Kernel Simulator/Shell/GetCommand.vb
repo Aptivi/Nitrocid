@@ -337,14 +337,7 @@ Public Module GetCommand
 
             ElseIf requestedCommand = "debuglog" Then
 
-                Dim line As String
-                Using dbglog = File.Open(paths("Debugging"), FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
-                    line = reader.ReadLine()
-                    Do While reader.EndOfStream <> True
-                        W(line, True, ColTypes.Neutral)
-                        line = reader.ReadLine
-                    Loop
-                End Using
+                PrintLog()
                 Done = True
 
             ElseIf words(0) = "dismissnotif" Then

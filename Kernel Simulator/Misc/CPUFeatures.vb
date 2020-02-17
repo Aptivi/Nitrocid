@@ -18,7 +18,7 @@
 
 Imports System.Runtime.InteropServices
 
-Public Class CPUFeatures
+Public Class CPUFeatures_Win
 
     ' ----------------------------- Windows functions -----------------------------
     <DllImport("kernel32.dll")> 'Check for specific processor feature https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-isprocessorfeaturepresent
@@ -40,26 +40,33 @@ Public Class CPUFeatures
         InstructionsSSE3Available = 13
     End Enum
 
-    ' ----------------------------- Unix functions -----------------------------
+End Class
+
+Module CPUFeatures_Linux
+
     Public Function CheckSSE(ByVal SSEVer As Integer) As Boolean
-        Dim cpuinfo As New IO.StreamReader("/proc/cpuinfo")
-        Dim ln As String
-        Do While Not cpuinfo.EndOfStream
-            ln = cpuinfo.ReadLine
-            If ln.StartsWith("flags") Then
-                If ln.Contains("sse") And SSEVer = 1 Then
-                    Return True
+        If EnvironmentOSType.Contains("Unix") Then
+            Dim cpuinfo As New IO.StreamReader("/proc/cpuinfo")
+            Dim ln As String
+            Do While Not cpuinfo.EndOfStream
+                ln = cpuinfo.ReadLine
+                If ln.StartsWith("flags") Then
+                    If ln.Contains("sse") And SSEVer = 1 Then
+                        Return True
+                    End If
+                    If ln.Contains("sse2") And SSEVer = 2 Then
+                        Return True
+                    End If
+                    If ln.Contains("sse3") And SSEVer = 3 Then
+                        Return True
+                    End If
+                    Exit Do
                 End If
-                If ln.Contains("sse2") And SSEVer = 2 Then
-                    Return True
-                End If
-                If ln.Contains("sse3") And SSEVer = 3 Then
-                    Return True
-                End If
-                Exit Do
-            End If
-        Loop
-        Return False
+            Loop
+            Return False
+        Else
+            Throw New PlatformNotSupportedException
+        End If
     End Function
 
-End Class
+End Module
