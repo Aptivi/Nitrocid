@@ -348,6 +348,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\vtn.txt" />
     <None Include="Resources\arb-T.txt" />
     <Content Include="Resources\arb.txt" />
     <None Include="Resources\chi-T.txt" />

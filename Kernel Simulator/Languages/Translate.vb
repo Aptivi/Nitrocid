@@ -18,7 +18,7 @@
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "mal", "ndo", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb"}
+    Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "mal", "ndo", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb", "vtn"}
     Public Transliterables() As String = {"arb", "chi", "ind", "jpn", "rus"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -116,6 +116,8 @@ Public Module Translate
                 translated = My.Resources.tky
             Case "uzb" 'Uzbekistan
                 translated = My.Resources.uzb
+            Case "vtn" 'Vietnamese
+                translated = My.Resources.vtn
         End Select
 
         'Convert translated string list to Dictionary
@@ -180,6 +182,10 @@ CHOICE:
                         Console.OutputEncoding = Text.Encoding.GetEncoding(865)
                         Console.InputEncoding = Text.Encoding.GetEncoding(865)
                         Wdbg("I", "Encoding set successfully for Danish to {0}.", Console.OutputEncoding.EncodingName)
+                    Case "vtn"
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(1163)
+                        Console.InputEncoding = Text.Encoding.GetEncoding(1163)
+                        Wdbg("I", "Encoding set successfully for Vietnamese to {0}.", Console.OutputEncoding.EncodingName)
                     Case Else
                         Console.OutputEncoding = Text.Encoding.GetEncoding(65001)
                         Console.InputEncoding = Text.Encoding.GetEncoding(65001)

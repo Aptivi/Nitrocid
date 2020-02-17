@@ -601,5 +601,24 @@ Namespace My.Resources
                 Return ResourceManager.GetString("uzb", resourceCulture)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Các lệnh khả dụng: {0}
+        '''Viết lệnh:
+        '''Lệnh tiêm đã bị hủy bỏ.
+        '''Các đối số khởi động riêng biệt với dấu phẩy không có dấu cách, ví dụ: &apos;motd,gpuprobe&apos;
+        '''Các lệnh riêng biệt trên &apos;cmdinject&apos; với dấu hai chấm có dấu cách, ví dụ: &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Lưu ý rằng đối số &apos;gỡ lỗi&apos; không bao gồm đầy đủ kernel.
+        '''xà lan: Không tìm thấy đối số được yêu cầu {0}.
+        '''xà lan: Lỗi không thể phục hồi trong đối số:
+        '''Đối số khả dụng: {0}
+        '''Đối số (&apos;trợ giúp&apos; để được giúp đỡ):
+        '''Các đối số được tiêm sẽ được lên [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property vtn() As String
+            Get
+                Return ResourceManager.GetString("vtn", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace
