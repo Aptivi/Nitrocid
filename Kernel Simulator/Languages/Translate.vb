@@ -183,8 +183,8 @@ CHOICE:
                         Console.InputEncoding = Text.Encoding.GetEncoding(865)
                         Wdbg("I", "Encoding set successfully for Danish to {0}.", Console.OutputEncoding.EncodingName)
                     Case "vtn"
-                        Console.OutputEncoding = Text.Encoding.GetEncoding(1163)
-                        Console.InputEncoding = Text.Encoding.GetEncoding(1163)
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(1258)
+                        Console.InputEncoding = Text.Encoding.GetEncoding(1258)
                         Wdbg("I", "Encoding set successfully for Vietnamese to {0}.", Console.OutputEncoding.EncodingName)
                     Case Else
                         Console.OutputEncoding = Text.Encoding.GetEncoding(65001)
