@@ -18,8 +18,8 @@
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "mal", "ndo", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb", "vtn"}
-    Public Transliterables() As String = {"arb", "chi", "ind", "jpn", "rus"}
+    Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb", "vtn"}
+    Public Transliterables() As String = {"arb", "chi", "ind", "jpn", "kor", "rus"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
 
@@ -92,8 +92,12 @@ Public Module Translate
                 translated = My.Resources.ita
             Case "jpn" 'Japanese (transliterated)
                 translated = My.Resources.jpn
-            Case "jpn-T" 'Hindi (translated)
+            Case "jpn-T" 'Japanese (translated)
                 translated = My.Resources.jpn_T
+            Case "kor" 'Korean (transliterated)
+                translated = My.Resources.kor
+            Case "kor-T" 'Korean (translated)
+                translated = My.Resources.kor_T
             Case "mal" 'Malay (not Malayalam)
                 translated = My.Resources.mal
             Case "ndo" 'Indonesian
@@ -174,6 +178,10 @@ CHOICE:
                         Console.OutputEncoding = Text.Encoding.GetEncoding(932)
                         Console.InputEncoding = Text.Encoding.GetEncoding(932)
                         Wdbg("I", "Encoding set successfully for Japanese to {0}.", Console.OutputEncoding.EncodingName)
+                    Case "kor-T"
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(949)
+                        Console.InputEncoding = Text.Encoding.GetEncoding(949)
+                        Wdbg("I", "Encoding set successfully for Korean to {0}.", Console.OutputEncoding.EncodingName)
                     Case "rus-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(866)
                         Console.InputEncoding = Text.Encoding.GetEncoding(866)

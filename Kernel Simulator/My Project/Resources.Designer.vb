@@ -401,6 +401,51 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to sayong ganeunghan myeonglyeong : {0}
+        '''sseugi myeonglyeong :
+        '''myeonglyeong ju-ib-i chwisodoeeossseubnida.
+        '''gongbaeg-eobs-i swimpyolo gubun doen buting insu (ye : &apos;motd, gpuprobe&apos;)
+        '''gongbaeg-iissneun kollon-eulo &apos;cmdinject&apos;myeonglyeong-eul gubunhasibsio (ye : &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;)
+        '''&apos;debug&apos;insuneun keoneol-eul wanjeonhi daluji anhseubnida.
+        '''bargs : yocheonghan insu {0}eul (leul) chaj-eul su eobs-seubnida.
+        '''bargs : insueseo boggu hal sueobsneun olyu :
+        '''sayong ganeunghan insu : {0}
+        '''insu  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property kor() As String
+            Get
+                Return ResourceManager.GetString("kor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 사용 가능한 명령 : {0}
+        '''쓰기 명령 :
+        '''명령 주입이 취소되었습니다.
+        '''공백없이 쉼표로 구분 된 부팅 인수 (예 : &apos;motd, gpuprobe&apos;)
+        '''공백이있는 콜론으로 &apos;cmdinject&apos;명령을 구분하십시오 (예 : &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;)
+        '''&apos;debug&apos;인수는 커널을 완전히 다루지 않습니다.
+        '''bargs : 요청한 인수 {0}을 (를) 찾을 수 없습니다.
+        '''bargs : 인수에서 복구 할 수없는 오류 :
+        '''사용 가능한 인수 : {0}
+        '''인수 ( &apos;도움말&apos;도움말) :
+        '''주입 된 인수는 다음에 다시 부팅 할 때 실행되도록 예약됩니다.
+        '''인수 주입이 취소되었습니다.
+        '''실제 명령 행 인수를 구문 분석하는 중에 오류가 발생했습니다 : {0}
+        '''잘못된 색상 템플릿 {0}
+        '''기본
+        '''커스텀
+        '''hwprobe : 하드웨어가 검사됩니다. 기다려주세요 ...
+        '''hwprobe : 하드웨어가 이미 검사되었습니다.
+        '''hwprobe : 하드웨어가 검사되지 않았습니다. [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property kor_T() As String
+            Get
+                Return ResourceManager.GetString("kor_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Perintah yang tersedia: {0}
         '''Tulis perintah:
         '''Suntikan arahan telah dibatalkan.

@@ -357,6 +357,8 @@
     <None Include="Resources\ind-T.txt" />
     <None Include="Resources\jpn-T.txt" />
     <None Include="Resources\dan.txt" />
+    <None Include="Resources\kor.txt" />
+    <None Include="Resources\kor-T.txt" />
     <Content Include="Resources\ndo.txt" />
     <Content Include="Resources\pol.txt" />
     <Content Include="Resources\rmn.txt" />

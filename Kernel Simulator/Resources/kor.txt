@@ -1,0 +1,552 @@
+sayong ganeunghan myeonglyeong : {0}
+sseugi myeonglyeong :
+myeonglyeong ju-ib-i chwisodoeeossseubnida.
+gongbaeg-eobs-i swimpyolo gubun doen buting insu (ye : 'motd, gpuprobe')
+gongbaeg-iissneun kollon-eulo 'cmdinject'myeonglyeong-eul gubunhasibsio (ye : 'cmdinject setthemes Hacker : beep 1024 0.5')
+'debug'insuneun keoneol-eul wanjeonhi daluji anhseubnida.
+bargs : yocheonghan insu {0}eul (leul) chaj-eul su eobs-seubnida.
+bargs : insueseo boggu hal sueobsneun olyu :
+sayong ganeunghan insu : {0}
+insu ( 'doummal'doummal) :
+ju-ib doen insuneun da-eum-e dasi buting hal ttae silhaengdoedolog yeyagdoebnida.
+insu ju-ib-i chwisodoeeossseubnida.
+silje myeonglyeong haeng insuleul gumun bunseoghaneun jung-e olyuga balsaenghaessseubnida : {0}
+jalmosdoen saegsang tempeullis {0}
+gibon
+keoseuteom
+hwprobe : hadeuweeoga geomsadoebnida. gidalyeojuseyo ...
+hwprobe : hadeuweeoga imi geomsadoeeossseubnida.
+hwprobe : hadeuweeoga geomsadoeji anh-assseubnida. 'hwprobe'leul sayonghan peulobeu
+CPU : hana isang-ui CPU ko-eoleul geomsahaji moshaessseubnida. eojjaessdeun jeongbo pyosi jung ...
+RAM : hana isang-ui RAM chib-eul geomsahaji moshaessseubnida. eojjaessdeun jeongbo pyosi jung ...
+HDD : hana isang-ui hadeu deulaibeuleul geomsahaji moshaessseubnida. eojjaessdeun jeongbo pyosi jung ...
+CPU : chong peuloseseo su : {0}
+CPU : {0} {1} MHz
+RAM : {0} MB = {1} MB
+RAM : sayong doen seullos (ileum) : {0}
+RAM : sayong doen seullos (beonho) : {0} / {1} ({2} %)
+RAM : peulobing sangtaega deo isang sayongdoeji anh-eumyeo hyanghu lilliseueseo jegeo doel yejeong-ibnida.
+HDD : {0} {1} GB {2}
+HDD : {0} {1} {2} GB {3}
+HDD : CHS : {4} sillindeo | {5} hedeu | {6} segteo
+HDD : CHS : {3} sillindeo | {4} hedeu | {5} segteo
+hwprobe : peulobeuneun Unixeseo peulo beoleul silhaenghadolog seolgyedoeji anh-assgi ttaemun-e jiwondoeji anhseubnida.
+yuji gwanlileul wihae gwanlija bimilbeonholeul iblyeoghasibsio.
+deo isang sayongjaga moglog-e nam-a issji anhseubnida.
+buting jung keoneol olyu : {0}
+ijung paenig : jaebuting sigan-i choedae heoyong {0} olyu jaebuting sigan-eul chogwahabnida. keoneol beogeuleul balgyeonhaessseubnida.
+[{0}] paenig : olyu lebel-i {0}imeulo jaebuting-i ganeunghabnida.
+[{0}] paenig : jaebuting sigan : {1} cho, 1 sigan-eul chogwahabnida. 1 bun-eulo seoljeongdoeeo issseubnida.
+ijung paenig : olyu yuhyeong {0}i (ga) yuhyohaji anhseubnida.
+[{0}] dpanic : {1}-{2} cho hue jaebuting jung ...
+[{0}] paenig : olyu lebel-i {0}imeulo jaebuting-i bihwalseonghwadoeeossseubnida.
+[{0}] paenig : {1}-keoneol-eul gyesog sayonghalyeomyeon amu kina nuleusibsio.
+[{0}] paenig : {1}-jonglyohalyeomyeon amu kina nuleusibsio.
+[{0}] paenig : {1}-{2} cho hue jaebuting jung ...
+ijung paenig : keoneol beogeu : {0}
+jonglyohaneun jung ...
+jaebuting jung ...
+--- === +++> keoneol-e osin geos-eul hwan-yeonghabnida | beojeon {0} <+++ === ---
+keoneol simyulleiteoui daleun inseuteonseuga silhaeng jung-ibnida. ganseob-i balsaenghamyeon jonglyohabnida.
+sayongja {0}i (ga) gwanlija moglog-e chugadoeeossseubnida.
+sayongja {0}i (ga) bihwalseonghwa doen moglog-e chugadoeeossseubnida.
+gwonhan moglog-e sayongjaleul chugahaji moshaessseubnida : yuhyohaji anh-eun yuhyeong {0}
+gwonhan moglog-e sayongjaleul chugahaji moshaessseubnida : yuhyohaji anh-eun sayongja {0}
+sayongja {0}i (ga) gwanli moglog-eseo jegeodoeeossseubnida.
+sayongja {0}i (ga) bihwalseonghwa doen moglog-eseo jegeodoeeossseubnida.
+gwonhan moglog-eseo sayongjaleul jegeohaji moshaessseubnida : yuhyohaji anh-eun yuhyeong {0}
+gwihaneun imi logeu-inhasyeossseubnida.
+gwonhan moglog-eseo sayongjaleul jegeohaji moshaessseubnida : yuhyohaji anh-eun sayongja {0}
+gwonhan siseutem-eseo beogeuleul balgyeonhaessseubnida : yuhyohaji anh-eun modeu {0}
+beogeuleul balgyeonhaessgeona chuga ttoneun jegeohalyeoneun gwonhan-i imi suhaengdoeeossgeona daleun olyuga balsaenghaessseubnida.
+olyu {0} : {1}
+beogeuleul balgyeonhaessgeona sae sayongja-e daehan pyeonjib gwonhan-i silpaehaessseubnida.
+sayong ganeunghan sayongja ileum : {0}
+sayongja ileum:
+gongbaeg-eun heoyongdoeji anhseubnida.
+teugsu munjaneun heoyongdoeji anhseubnida.
+{0}ui bimilbeonho :
+jalmosdoen bimilbeonho.
+sayongjaga bihwalseonghwadoeeossseubnida.
+sayongja ileum-i jalmosdoeeossseubnida.
+jali pyosijaleul gumun bunseoghaneun dong-an olyuga balsaenghaessseubnida. {0}-seutaeg chujeog :
+jali pyosijaleul gumun bunseoghaneun dong-an olyuga balsaenghaessseubnida. {0}
+sayongja ileum-eul chugahaneun jung olyuga balsaenghaessseubnida.
+usrmgr : sayongja ileum {0} jagseong jung ...
+bin sayongja ileum.
+{0} sayongjaleul chaj-eul su eobs-seubnida.
+sayongja {0}eul (leul) jegeo hal su eobs-seubnida.
+sayongja {0}i (ga) imi logeu-inhaessseubnida. daleun gwanlijalo logeu aushago logeu-inhasibsio.
+sayongja {0}i (ga) jegeodoeeossseubnida.
+sayongja ileum-eul jegeohaneun jung olyuga balsaenghaessseubnida.
+{1}ui {0} = {2}
+0eulo nanulyeoneun sidoneun heoyongdoeji anhseubnida.
+obeopeulloleul cholae han geos-eulo uisimdoeneun gyesan sidogaiss-eossseubnida.
+gyesanhaneun dong-an olyuga balsaenghaessseubnida : {0}
+{0}eul (leul) {1} (eu)lo byeonhwan hal su eobs-seubnida.
+soseu jung hana
+ ttoneun mogjeogji
+ seobeoe jonjaehaji anhseubnida.
+{0} ~ {1} : {2}
+{0}eseo {1} (eu)lo byeonhwanhaneun jung olyuga balsaenghaessseubnida : {2}
+olyu
+yocheonghan hwamyeon bohogi {0}eul (leul) chaj-eul su eobs-seubnida.
+{0}i (ga) olbaleuge chogihwadoeeossseubnida.
+{0}i (ga) chogihwadoeji anh-assseubnida. chogihwahaneun dong-an hwamyeon bohogi kodeue olyuga balsaenghaess-eul su issseubnida.
+seukeulin seibeo {0}i (ga) eobs-seubnida.
+{0}i gibon hwamyeon bohogilo seoljeongdoeeo issseubnida.
+deiteobeiseueseo hwamyeon bohogi {0}eul (leul) chaj-eul su eobs-seubnida. ileum-eul hwag-inhago dasi sidohasibsio.
+da-eum-eulo inhae seukeulin seibeoleullodeu hal su eobs-seubnida :
+tegseuteuleul inswae hal ttae simgaghan olyuga issseubnida.
+guseong-eul jagseonghaneun jung olyuga balsaenghaessseubnida.
+guseong-eul jagseonghaneun jung-e olyuga balsaenghaessseubnida : {0}
+{0}eseo {1} (eu) loui eobgeuleideuga gamjidoeeossseubnida. guseong eobdeiteu jung ...
+guseong-eul eobdeiteuhaneun jung-e olyuga balsaenghaessseubnida : {0}.
+guseong-eul eobdeiteuhaneun jung-e olyuga balsaenghaessseubnida.
+guseong-eul ilgneun jung olyuga balsaenghaessseubnida.
+guseong-eul ilgneun jung olyuga balsaenghaessseubnida : {0}
+RAMeul hwagbohaneun jung olyu : {0}-gyesog ...
+da-eumgwa gat-eun iyulo modeuleullodeu hal su eobs-seubnida :
+modeu : modeulodeu jung ...
+modeu : modeu jungji jung ...
+Mod {0}e ileum-i eobs-seubnida. soseu kodeuleul geomtohasibsio.
+Mod {0}eneun beojeon-i eobs-seubnida.
+{0} v {1}i (ga) sijagdoeeossseubnida
+{0} myeonglyeong-e daehan jeong-uiga eobs-seubnida.
+e uihae jeong-ui doen myeonglyeong
+daleun seobeoe yeongyeolhagi jeon-e seobeowaui yeongyeol-eul kkeunh-eoyahabnida
+{0}ui sayongja ileum :
+{0}ui bimilbeonho :
+{0}e yeongyeol
+{0}e yeongyeolhalyeogo hal ttae olyuga balsaenghaessseubnida : {1}
+seutaeg chujeog : {2}
+FTP seobeoleul iblyeoghasibsio.
+lokeol dilegtoli {0}i (ga) eobs-seubnida.
+lokeol dilegtolileul iblyeoghasibsio. ".."dol-a gagi
+{0} dilegtolileul chaj-eul su eobs-seubnida.
+wongyeog dilegtolileul iblyeoghasibsio. ".."dol-a gagi
+dilegtolileul byeongyeonghagi jeon-e seobeoe yeongyeolhaeyahabnida
+lokeol dilegtoli : {0}
+wongyeog dilegtoli : {0}
+hyeonjae wongyeog dilegtolileul gajyeo ogi jeon-e seobeoe yeongyeolhaeyahabnida.
+{0} pail sagje jung ...
+{0} <y / n> pail-eul sagje hasigessseubnikka?
+sagje doen pail {0}
+sagjeleul suhaenghagi jeon-e gwanlija gwonhan-eulo seobeoe yeongyeolhaeyahabnida.
+jegeo hal pail-eul iblyeoghasibsio.
+jegeohalyeomyeon logeu-in han sayongja ileum-e daehan gwanli gwonhan-i iss-eoyahabnida.
+{0}eseo yeongyeol-i kkeunh-eojyeossseubnida
+ajig seobeoe yeongyeolhaji anh-assseubnida
+{0} pail-eul daunlodeuhaneun jung ...
+{0} pail-eul daunlodeuhaessseubnida.
+lokeol pail-i sonsangdoeeo {0} pail-e daehan daunlodeue silpaehaessseubnida.
+jeonsong-eul suhaenghagi jeon-e seobeoe yeongyeolhaeyahabnida.
+lokeol dilegtolilo daunlodeu hal pail-eul iblyeoghasibsio.
+{0} KB | {1}eseo sujeong doem
+modeun wongyeog pail-eul nayeolhagi jeon-e seobeoe yeongyeolhaeyahabnida.
+pail {0}ui ileum-eul {1} (eu)lo bakkuneun jung ...
+ileum-i ba d
+pailgwa sae pail ileum-eul iblyeoghasibsio.
+{0} pail eoblodeu jung ...
+eoblodeu doen pail {0}
+wongyeog dilegtolie eoblodeu hal pail-eul iblyeoghasibsio. <pail> <dilegtoli> eoblodeu
+FTP myeonglyeong-eul silhaenghaneun jung olyuga balsaenghaessseubnida
+(an-ui:
+{0} poldeo, {1} pail
+(jeobgeun bulga)
+{0} KB, {1} {2}eseo jagseong, {3} {4}eseo sujeong doem
+hyeonjae lokeol dilegtolileul gajyeoobnida
+hyeonjae wongyeog dilegtolileul gajyeoobnida
+FTP seobeoe yeongyeolhabnida ( "ftp ://" ttoneun "ftps://" lo sijaghaeya ham)
+lokeol dilegtolieseo daunlodeuhageona eoblodeu hal dilegtolileul byeongyeonghabnida.
+daunlodeuhageona eoblodeu hal wongyeog dilegtolileul byeongyeonghabnida.
+seobeoeseo wongyeog pail-eul sagjehabnida
+seobeowaui yeongyeol-eul kkeunhseubnida
+baineoli ttoneun tegseuteuleul sayonghayeo wongyeog pail-eul lokeol dilegtolilo daunlodeu
+FTP swel-eul jonglyohago keoneollo dol-agabnida
+doummal hwamyeon-eul pyosihabnida
+lokeol dilegtolileul nayeolhabnida
+wongyeog dilegtolileul nayeolhabnida.
+teugjeong pail ttoneun dilegtoli ileum byeongyeong
+ijin ttoneun tegseuteuleul sayonghayeo lokeol pail-eul wongyeog dilegtolie eoblodeu
+FTP syel-e olyugaiss-eossseubnida.
+FTP mesiji : yocheong doen myeonglyeong {0}eul (leul) chaj-eul su eobs-seubnida. FTP swel-e jijeongdoen sayong ganeunghan myeonglyeong moglog-eun 'doummal'eul chamjohasibsio.
+net : {1} mseseo {0}eulobuteo eungdab-eul bad-assseubnida.
+sigan chogwa, yeongyeol kkeunhgi ttoneun seobeo opeulain
+net : neteuwokeusang-ui keompyuteo ileum-eun {0}ibnida.
+net : hoseuteu ileum-eun {1}ibnida
+net : keompyuteoga domein ttoneun jag-eob geulub-eissneun geos gatseubnida.
+net : WiFi ttoneun ideones yeongyeol-i kkeunh-eojyeossseubnida.
+net : keompyuteoga alaee yeongyeoldoen geos gatseubnida.
+net : lauteo juso : {0}
+{0} eodaebteoui teugseong-eul gajyeo oji moshaessseubnida.
+eodaebteo beonho :
+eodaebteo ileum :
+choedae jeonsong dan-wi : {2} dan-wi
+DHCP sayong :
+bi yuni kaeseuteu paekis :
+yuni kaeseuteu paekis :
+deul-eoogo naganeun paekis olyu :
+byeolmyeong-eun myeonglyeong-gwa gat-eun ileum il su eobs-seubnida.
+{0}ui byeolmyeong-eul jijeonghaneun myeonglyeong-eul chaj-eul su eobs-seubnida.
+{0}eseo {1}kkajiui aellieosing-eun wanjeonhi geumjidoeeo issseubnida.
+ije "{1}"myeonglyeong-eulo "{0}"eul (leul) silhaenghal su issseubnida.
+deo isang "{0}"eul (leul) "{1}"myeonglyeong-eulo sayonghal su eobs-seubnida.
+byeolmyeong {0}i (ga) jegeodoeji anh-assseubnida.
+yuhyohaji anh-eun modeu {0}.
+ju-ib doen insu {0}eun (neun) da-eum-e dasi buting hal ttae silhaengdoedolog yeyagdoebnida.
+insuga chungbunhaji anh-assseubnida. sayongbeob-eun alaeleul chamjohasibsio.
+{0} dilegtolileul chaj-eul su eobs-seubnida
+bin hoseuteu ileum.
+{0}eseo {1} (eu)lo byeongyeong jung ...
+oneul-ui bin mesiji.
+logeu-in hu bin MAL.
+MALeul {0}eseo {1} (eu)lo byeongyeonghaneun jung ...
+sayongja bimilbeonhoga jalmosdoeeossseubnida.
+bimilbeonhoga ilchihaji anhseubnida.
+sayongja ileum-i {0} (eu)lo byeongyeongdoeeossseubnida!
+iblyeog han sae ileum-i imi issseubnida.
+yunigseueseoneun PC liseuting-i ajig jiwondoeji anhseubnida.
+geumji doen byeolmyeong : {0}
+{0}eul (leul) chaj-eul su eobs-seubnida.
+guseong-i dasilodeudoeeossseubnida. ilbu byeongyeong sahang-eul jeog-yonghalyeomyeon keoneol-eul jaebutinghaeya hal sudo issseubnida.
+modeun geos-i ilban seoljeong-eulo jaeseoljeongdoebnida.
+hana isang-ui saegsang-i yuhyohaji anhseubnida.
+saegsang-eul sayonghal su eobs-seubnida. keoneol seoljeong-eseo keolleo swel-eul kyeosibsio.
+seukeulin seibeo {0}eul (leul) chaj-eul su eobs-seubnida.
+{0} [keoneol seoljeong ({1}eseo silhaeng)]]
+keoneol beojeon :
+dibeogeu modeu:
+chagsaeg doen potan :
+butingsi insu :
+doummal myeonglyeong dansunhwa :
+logeu-insi MOTD :
+koneo sigan / naljja :
+hadeuweeo peulobeu :
+hyeonjae tema :
+[hadeuweeo seoljeong] {0}
+{0} [sayongja seoljeong]
+hyeonjae sayongja ileum :
+hyeonjae hoseuteu ileum :
+sayong ganeunghan sayongja ileum :
+keompyuteo hoseuteu ileum :
+{0} [mesiji seoljeong]
+soseu kodeu:
+jeojaggwon (c)
+teugheo
+seonmul
+myeonglyeong-eul silhaenghaneun dong-an olyuga balsaenghaessseubnida
+sayongja chuga (gwanlija man-i myeonglyeong-e aegseseu hal su iss-eum)
+myeonglyeong-e byeolmyeong-eul chugahabnida (gwanlija man-i myeonglyeong-e aegseseu hal su iss-eum)
+keoneol-e insuleul sab-ibhabnida (jaebuting pil-yo, gwanlija man)
+gandanhan gyesangi
+dilegtoli byeongyeong
+hoseuteu ileum byeongyeong (gwanlija jeon-yong)
+logeu-in hu MOTD in MAL byeongyeong (gwanlija jeon-yong)
+oneul-ui mesiji MOTD byeongyeong (gwanlija jeon-yong)
+hyeonjae sayongjaui bimilbeonho byeongyeong
+sayongja ileum byeongyeong (gwanlija jeon-yong)
+hwamyeon-eul ji ubnida
+tonghwa byeonhwan
+dibeogeu logeuleul pyosihabnida (gwanlija jeon-yong)
+FTP swel-eul sayonghayeo seobeowa sangho jag-yong
+doummal peiji
+sudong hadeuweeo geomsa ( 'nohwprobe'keoneol-eseo han beon)
+hyeonjae poldeoui pail / poldeo naeyong nayeol
+%USERPROFILE%\KSMods eseo hwamyeon bohogi pail-eul dasilodeuhabnida.
+bimilbeonholo hwamyeon-eul jamgeubnida
+logeu aus
+onlain (mich domein-ui opeulain) in modeun neteuwokeu jangchileul nayeolhabnida.
+hoseuteuui modeun neteuwokeu jusoleul nayeolhabnida
+teulileul sayonghayeo hoseuteuui modeun neteuwokeu jusoleul nayeolhabnida
+dilegtolileul mandeubnida
+sayong ganeunghan modeun inteopeiseue daehan jeongboleul nayeolhabnida.
+geumji doen byeolching moglog pyosi
+sayongjaui gwonhan gwanli (gwanlija man-i myeonglyeong-e aegseseu hal su iss-eum)
+jijeongdoen jusoga sayong ganeunghanji hwag-inhasibsio
+konsol-e pail naeyong-eul sseubnida.
+keompyuteoleul dasi sijaghabnida (gyeong-go : choejong keoneol-i anigi ttaemun-e dong-gihwahaji anh-eum).
+pyeonjib doen guseong pail-eul dasilodeuhabnida.
+dilegtolileul jegeohabnida
+moglog-eseo sayongjaleul jegeohabnida (gwanlija jeon-yong)
+beon aus-eulobuteo hwamyeon-eul jeojanghabnida
+gwahagjeog-in gyesangi. dan-wi byeonhwangineun daleun myeonglyeong-eulo bunlidoebnida
+keoneol saegsang-eul seoljeonghabnida
+keoneol seukeulin seibeoleul seoljeonghabnida
+keoneol tema seoljeong
+byeolmyeong-eul pyosihabnida
+sayongja ttoneun keoneol-i seoljeong han logeu-in hu MOTD pyosi
+sayongja ttoneun keoneol-i seoljeong han oneul-ui mesijileul pyosihabnida
+naljjawa sigan-eul boyeojubnida
+yeong-yeog-e naljjawa sigan-eul pyosihabnida
+keoneol-i jonglyodoebnida
+siseutem jeongbo
+scicalcwa bunli doen dan-wi byeonhwangi.
+sayong doen opeun soseu jongsogseong pyosi
+maeu seolmyeongjeog-in sayongja maenyueol.
+* myeonglyeong saie kollon-eul sayonghayeo yeoleo myeonglyeong-eul sayonghal su issseubnida.
+sayong ganeunghan myeonglyeong :
+modeu myeonglyeong :
+myeonglyeong-ui byeolmyeong :
+yongbeob:
+swimpyolo gubun doen insu
+insuneun {0}ibnida.
+hyeonjae dilegtolileul eod-eulyeomyeon
+soseuwa daesang-i hwan-yul-ui daemunja 3jain gyeong-u
+modeun ID mich ileum moglog :
+uliege logeuleul bonael su issdolog dibeogeu logeuleul boyeojubnida.
+FTP swel-eul chogihwahabnida.
+peulobeu hadeuweeo (hadeuweeoga peulobeudoeji anhgo hwprobega silhaengdoeji anh-eun gyeong-ueman jagdong)
+neteuwokeu jeongbowa neteuwokeue yeongyeoldoen modeun keompyuteoleul nayeolhabnida.
+chingu
+neteuwokeu jeongbowa neteuwokeue yeongyeoldoen modeun keompyuteoleul teuli hyeongtaelo nayeolhabnida.
+modeun keompyuteoppunman anila neteuwokeu jeongboleul nayeolhabnida.
+yeogiseo modnameSS.meun
+bimilbeonholo hwamyeon-eul jamgeubnida.
+sayongjaleul logeu aushabnida.
+modeun neteuwokeu jeongbo eodgi
+simyulleisyeon keompyuteoleul dasi sijaghabnida.
+choejong sayongja na doguga byeongyeong han guseong-eul dasilodeuhabnida.
+saegsang-eul dasi sijaghal pil-yoneun eobsjiman daebubun-ui seoljeong-eul dasi sijaghaeyahabnida.
+hwamyeon-i beonjiji anhdolog bohohamyeonseo seontaeghan hwamyeon bohogileul pyosihabnida.
+naljjawa sigan-eul boyeojubnida.
+yeong-yeog-e naljjawa sigan-eul pyosihabnida.
+simyulleisyeon doen keompyuteoleul jonglyohabnida.
+siseutem jeongbo mich beojeon-eul pyosihabnida.
+sayong doen opeun soseu laibeuleolileul boyeojubnida.
+swel-e olyugaiss-eossseubnida.
+{0}eul (leul) sayonghal gwonhan-i eobs-seubnida
+swel mesiji : yocheong doen myeonglyeong {0}eul (leul) yuji bosu modeueseo silhaenghal su eobs-seubnida.
+swel mesiji : yocheong doen myeonglyeong {0}eul (leul) chaj-eul su eobs-seubnida. sayong ganeunghan myeonglyeong-eun 'doummal'eul chamjohasibsio.
+swel mesiji : logeu-insi {0} myeonglyeong-eul silhaenghal su eobs-seubnida.
+swel mesiji : yocheong doen myeonglyeong {0}eul (leul) chaj-eul su eobs-seubnida.
+myeonglyeong-eul silhaenghaneun jung olyuga balsaenghaessseubnida.
+datetime : sigan-eun {0}ibnida
+datetime : oneul-eun {0}ibnida
+naljja sigan : sigandae : {0}
+-{0} sigan : {1}
+hwamyeon-eul jiulyeomyeon
+maenyueol peiji {0}eul (leul) chaj-eul su eobs-seubnida.
+sudong peiji {0} (becuase {1})eullodeuhalyeogo hal ttae olyuga balsaenghaessseubnida.
+i maenyueol peijineun da-eumgwa gat-eun iyulo bul-wanjeonhabnida.
+gyesoghalyeomyeon amu kina nuleusibsio ...
+ | {0} dan-eo | gaejeongpan v {1} | {2} segsyeon
+i maenyueol peiji jemog-i jagseongdoeji anh-assseubnida
+i maenyueol peiji ({0})e bonmun-i eobs-seubnida. peiji sagje jung ...
+i maenyueol peiji ({0})e segsyeon-i eobs-seubnida. peiji sagje jung ...
+{0}eseo silhaeng
+{0}e daehan jeongboleul eod-eul gwonhan-i eobs-seubnida.
+i myeonglyeong-eun deo isang sayongdoeji anh-eumyeo hyanghu lilliseueseo jegeo doel yejeong-ibnida.
+daesang-i gwanlijaimeulo {0}ui bimilbeonholeul byeongyeonghal gwonhan-i eobs-seubnida.
+guggabyeollo geum-aeg-eul byeonhwan
+tonghwa :
+usrmgr : sayongja ileum {0}i (ga) imi issseubnida
+API kileul iblyeoghasibsio :
+keompyuteoleul eodji moshaessseubnida. choesin beojeon-ui Windows 10eul silhaengjung-in gyeong-u SMBv1eul hwalseonghwahaeyahabnida. geuleonai peulotokol-eun anjeonhaji anh-eumeuloi munjeleul haegyeolhalyeogohabnida.
+dibeogeu logeuui modeun naeyong-eul sagjehabnida
+SSE beojeon-eul gajyeoobnida
+jalmosdoen eon-eo
+eon-eo byeongyeong
+siseutem-e libcpanel-json-xs-perli seolchidoeeo issji anh-eul su issseubnida. seolchineun paekiji gwanlija-ege mun-uihasibsio. debian (mich pasaeng jepum) siseutem-ui gyeong-u teomineol emyulleiteoeseo "sudo apt install libcpanel-json-xs-perl"eul silhaenghal su issseubnida. olyue daehan jasehan naeyong :
+----------------------------- keoneol paenig deompeu ------------------ -----------
+>> gonghwang jeongbo <<
+> seolmyeong : {0}
+> olyu yuhyeong : {1}
+> naljja mich sigan : {2}
+>> ye-oe jeongbo <<
+> ye-oe : {0}
+> seolmyeong : {1}
+> gyeolgwa : {2}
+> chulcheo : {3}
+> seutaeg teuleiseu <
+>> naebu ye-oe {0} jeongbo <<
+>> ye-oe {0}i (ga) geunbon won-in-ibnida <<
+>> ye-oeneun eobs-seubnida. keoneol olyu il su issseubnida. <<
+>> peuleim, pail, seon mich yeol <<
+> peuleim {0} : pail : {1} | jul : {2} | yeol : {3}
+> peuleim jeongboleul gajyeo olyeogo hal ttae olyuga balsaenghaessseubnida. {0} : {1}
+siseutem eon-eoleul yeong-eo ioeui eon-eolo seoljeonghaessseubnida. bulpyeon-eul kkichyeo deulyeo joesonghajiman Googlegwa beon-yeog saneun peulogeulaeming eon-eoui kodeu beullog-eul beon-yeoghaneun de maeu isanghabnida. beon-yeog doen maenyueol peijie daehan modeun kodeu beullog-eul sujeonghaneun dong-an, beon-yeog hal uidoga-eobsneun kodeu beullog-eul beon-yeoghagi wihae Google Translate tikes-eul yeolgo malhamyeon siseutem eon-eoleul yeong-eolo seoljeonghaneun geos-i johseubnida.
+modeuleul dasilodeuhabnida.
+gaejo doen jangjeon.
+keoneol-e osin geos-eul hwan-yeonghabnida!
+<sayongja>lo seong-gongjeog-eulo logeu-in
+MOTD / MALeun yuhyohajiman mesiji yuhyeong-i yuhyohaji anhseubnida. MOTD gajeong ...
+mesiji yuhyeong-i jalmosdoen MOTD / MALeul ilg-eulyeogohaessseubnida.
+anjeongjeog-in yeongyeol-eul yujihamyeonseo {0}eul (leul) {1}e daunlodeu jung-ibnida ...
+daunlodeuga wanlyodoeeossseubnida.
+{0} sido-eseo daunlodeue silpaehaessseubnida : {1}
+FTP seobeoeseo pail-eul daunlodeuhalyeomyeon "ftp"leul sayonghasibsio.
+hyeonjae jag-eob dilegtolie pail-eul daunlodeu
+dibeogeu jangchi yeongyeol kkeunhgi
+yeongyeoldoen dibeoging jangchileul nayeolhabnida
+dibeogeu jangchi {0}eul (leul) chaj-eul su eobs-seubnida.
+jangchi {0}ui yeongyeol-i kkeunh-eojyeossseubnida.
+yeongyeol olyu : {0}
+poteu {0}eul (leul) sayonghayeo modeun juso-eseo cheongchwileul dibeogeuhasibsio.
+insuga jijeongdoeji anh-assseubnida. hinteu : gongbaeg-eulo gubun doen yeoleo insuleul jijeonghasibsio.
+byeolmyeong-eul imi chaj-assseubnida : {0}
+dibeogeu logeuga jegeodoeeossseubnida. yeongyeoldoen modeun dibeoging jangchiga yeojeonhi mesijileul bol su issseubnida.
+dibeogeu logeu jegeo silpae : {0}
+dilegtoli byeongyeong-e silpaehaessseubnida : {0}
+sayongja ileum-i jalmosdoeeossseubnida
+jusoleul jijeonghasibsio
+{0} dilegtolileul jegeo hal su eobs-seubnida
+sigandaega jalmos jijeongdoeeossseubnida.
+jalmosdoen peulopil seontaeg
+{1} peulopaillo {0}e yeongyeolhalyeogohabnida ...
+dan-wi teseuteu olyu : {0}
+{0} myeonglyeong-eul chaj-eul su eobs-seubnida. myeonglyeong moglog-eun "help"myeonglyeong-eul chamjohasibsio.
+eodaebteo {0}e daehan IPv6 teugseong-eul gajyeo oneun de silpaehaessseubnida. gyesog ...
+IPv4 jeongbo :
+IPv6 jeongbo :
+{0} eodaebteoneun IPv6eul jiwonhaji anhseubnida. gyesog ...
+{0} eodaebteoneun IPv4leul jiwonhaji anhseubnida. peulobeuga silpaehaessseubnida.
+keoneol-ui gaebal beojeon-eul silhaengjung-in geos gatseubnida. cheugmyeon-eul bol su issjiman jaju eobdeiteudoemyeo beogeuga balsaenghal su issseubnida. anjeongjeog-in beojeon-eul yujihaneun geos-i johseubnida.
+seontaeghan eon-eoeneun du gaji byeonhyeong-i issseubnida. hanaleul goleusi o:
+1. eum-yeog
+2. beon-yeog
+seontaeghasibsio :
+jalmosdoen seontaeg-ibnida. dasi sidohasibsio.
+hyeonjae dilegtolileul {0} (eu)lo seoljeonghal su-issneun gwonhan-i eobs-seubnida : {1}
+gwonhan {0}e silpaehaessseubnida
+jijeonghan gyeongloga neomu gibnida.
+{0}e deunglog hal gwonhan-i eobs-seubnida : {1}
+CPU hwag-in jung olyu : {0}
+RAM hwag-in jung olyu : {0}
+HDD hwag-in jung olyu : {0}
+CPU : gyeong-go : hyanghu gaebal keomis-eneun SSE2ga pil-yohabnida.
+{0}e daehan jeongboleul eod-eulyeogo hal ttae deompeu jeongbo sujibgiga chungdolhaessseubnida : {1}
+eosembeulli {0}ui keompail naljjaleul gajyeo oneun jung-e olyuga balsaenghaessseubnida : {1}
+MOTD / MAL seoljeong jung olyu : {0}
+MOTD / MALeul gajyeo oneun jung-e olyuga balsaenghaessseubnida : {0}
+{0}e neol chamjo ye-oega issseubnida. {1}
+{0}e neol chamjo ye-oega issseubnida. {1}-seutaeg chujeog :
+jalmosdoen jag-eob-eulo inhae hwamyeon bohogileul sijaghalyeogo hal ttae olyuga balsaenghaessseubnida.
+anjeon modeueseoneun jae jangjeon-i heoyongdoeji anhseubnida.
+anjeon modeueseoneun gumun bunseog modeuga heoyongdoeji anhseubnida.
+keugie daehan jeonche dilegtoli ttoneun hyeonjae dilegtoliui pail man gumun bunseoghasibsio.
+yeongyeoldoen modeun dibeoging jangchileul nayeolhabnida.
+gumun bunseog modeuleul seoljeonghalyeogo hal ttae olyuga balsaenghaessseubnida. gabs-eul hwag-inhago dasi sidohasibsio. igeos-i olbaleun gyeong-u keoneol dibeoging-i hwalseonghwa doel ttae seutaeg chujeog-eul chamjohasibsio.
+seong-gongjeog-eulo seoljeonghasibsio.
+gyeongloneun pail-ina dilegtoliga anibnida.
+daleun dilegtoli ttoneun ileum-eulo pail-ui daleun sabon-eul jagseonghabnida.
+pail-eul daleun dilegtolilo idong
+daleun dilegtoli ttoneun daleun ileum-eulo pail-eul bogsahalyeomyeon
+daleun dilegtolilo pail-eul idonghalyeomyeon
+{0} ({1}) ilchi : {2}
+{0} ilchi : {1}
+soyo sigan : {0} milli cho
+jejo-eobche : {0}
+model : {0}
+yonglyang : {0} ({1}, {2}, {3})
+inteopeiseu yuhyeong : {0}
+deulaibeu beonho : {0}
+buting peullaegeu : {0} ({1})
+mulli bunhal : {0}
+gibon peullaegeu : {0}
+keugi : {0} GB
+nonli patisyeon : {0}
+abchug : {0}
+ileum : {0}
+pail siseutem : {0}
+yonglyang : {0} GB {1} GB mulyo
+modeun deulaibeuui modeun nonli patisyeon-eul nayeolhabnida.
+modeun peulobeu deulaibeuleul nayeolhabnida.
+teugjeong deulaibeuui modeun peulobeu patisyeongwa modeun deulaibeuui modeun nonli patisyeon-eul nayeolhabnida.
+MD5 ttoneun SHA256eul sayonghayeo pail habgyeleul gyesanhabnida.
+GitHub Wikilo idonghabnida.
+yuhyohaji anh-eun amhohwa algolijeum.
+wongyeog dibeoging-eul hwalseonghwahageona bihwalseonghwahabnida.
+pail siseutem chogihwa jung ...
+seolchidoen mogsolileul eodseubnida
+gibon eumseong-eul seoljeonghabnida
+gibon eumseong-eul sayonghayeo jul-eul malhabnida
+eumseong {0} : {1} ({2})
+eumseong-i jalmosdoeeossseubnida.
+eumseong seteu
+jeongsie dan-eoleul jeonghwaghage iblyeog hal su issneunji hwag-inhasibsio
+sigan-e suhag bangjeongsig-eul pul su issneunji hwag-inhasibsio
+daesgeul-eul salanghageona miwohadolog eungdabhasibsio.
+nugungaga dong-yeongsang-ei daesgeul-eul ollin gyeong-u :
+eotteohge daedab hasigessseubnikka?
+jalmosdoen seontaeg-ibnida. da-eum daesgeullo idong ...
+dangsin-eun salang-ui uigyeon-eulbogohaessseubnida!
+dangsin-eun jeung-oui uigyeon-e dabhaessseubnida!
+keun! ie daehan {0}ui uigyeon-i jegeodoebnida.
+keun! {0} nim gamsahabnida.
+"GetMeOut"eul jagseonghayeo jonglyohasibsio.
+wanbyeoghage cheolja!
+cheoljaga jalmosdoeeossseubnida.
+wanbyeoghage haegyeoldoeeossseubnida!
+jalmos haegyeoldoeeossseubnida.
+{0} MBui {1} MBga daunlodeudoeeossseubnida.
+RPCga imi silhaeng jung-ibnida.
+poteu {0}eul (leul) sayonghaneun modeun juso-eseo RPC susin
+RPC sijag jung ...
+SSH seobeoe yeongyeolhabnida.
+{0}ui bimilbeonholeul iblyeoghasibsio.
+SSH yeongyeol-i kkeunh-eojyeossseubnida.
+sindisaijeo pail-eullodeuhayeo jaesaenghabnida.
+seukeulibteu pail {0}i (ga) eobs-seubnida.
+pail-i seukeulibteu sindisaijeo pail-i anibnida.
+sindisaijeo lain-eul geomsahaji moshaessseubnida.
+bin munjayeol-i jijeongdoeeossseubnida.
+kodeu peijileul seoljeonghal su eobs-seubnida. eon-eoga jedaelo pyosidoeji anh-eul su issseubnida.
+dibeoging-i hwalseonghwadoeji anh-assseubnida.
+{0}eun (neun) deo isang gibon hwamyeon bohogilo seoljeongdoeeo issji anhseubnida.
+gamsa! igeos-eun heungmi lobda.
+modeun salamdeul-ii bidioleul jiwonhal geos-ibnida.
+da-eum bidioleul wihae imeil-e teugbyeolhan pail-eul jwossseubnida.
+deul-eo bwa, jeung-o ya, sagiga anila ulileul dowa julyeogo nolyeoghae
+i bidio-e daehae jeowa je chingudeul-i eolmana gomawohaneunji moleugessseubnida.
+i bidioleul salanghabnida.
+gyesoghaseyo.
+1M gaibja-ege dodal hal su issdolog dowa deuligessseubnida!
+chingudeul-i dangsin ttaemun-e keompyuteoleul gochyeossseubnida.
+goengjanghan jangnan! jeog-ui PCleul jonglyohaessseubnida.
+jeung-o : HIMe meomchum jungji
+jeung-ohaneun salam : ilhagi
+gaegche sumgigi gaideu deogbun-e amudo igeos-eul al su eobs-seubnida.
+naneun dangsin-ui bidio sicheong-eul jungdanhabnida. gaibjaga sonsildoeeossseubnida.
+ige mwoya? igeos-eun hwagsilhaji anhseubnida.
+i bidioneun choeag-ibnida!
+modugai bidioleulbogohabnida!
+nae chinguneun dangsingwa bunno!
+yeon-indeul-eun ije dangsin-eul miwohal geos-ibnida.
+chinguga dangsin-eul miwohal geos-ibnida.
+i jangnan-eun dangsin-eul gudog chwisohage mandeul-eossseubnida.
+misyeon silpae, jonjung-, gudogja-
+ileon jonglyuui bidio jejag-eul jungdanhasibsio !!!
+jigjang-eulo dol-awa bidioga choeag-ibnida!
+i bidio-e daehan pyeongyeon-ibnida.
+{0}eseo {1}kkajiui aellieosing-eun geumjidoeeo issseubnida.
+allim-eul haejehaneun jung olyu balsaeng : {0}
+susin doen modeun allim-eul pyosihabnida
+allim-eul haejehabnida
+allim-i seong-gongjeog-eulo haejedoeeossseubnida.
+paekis (inbaundeu) :
+paekis (aus baundeu) :
+susin doen paekis-ui olyu :
+ilbanjeog-in IPv6 sogseong
+ilbanjeog-in IPv4 sogseong
+wongyeog PCe daehan myeonglyeong-eul wongyeog-eulo silhaeng
+-0 dangye : siseutem chogihwa
+-1 dangye : hadeuweeo gamji
+-2 dangye : naebu sayongja ileum gwanli
+-3 dangye : gaejo mich hwamyeon bohogi gamji
+-4 dangye : sseulegi sugeo
+-5 dangye : logeu-in
+gabiji sujib jeon : {0} baiteu
+gabiji sujib hu : {0} baiteu
+RPC sijag olyu : {0}
+lilliseu hubo beojeon-eul silhaengjung-in geos gatseubnida. anjeongjeog-in beojeon-eul yujihaneun geos-i johseubnida.
+pail siseutem inguga neomu olae geollin geos gatseubnida.
+yuhyohaji anh-eun yuhyeong {0}.
+suyong in-won : {0}
+patisyeon su : {0}
+keugi : {0}
+jung-go : {0}
+{0} dilegtoliga imi jonjaehabnida.
+{0}e yeongyeolhalyeogo hal ttae olyuga balsaenghaessseubnida : yeongyeol sigan-i chogwadoeeossgeona yeongyeol-i kkeunh-eojyeossseubnida
+sig-eul gyesanhaneun gyesangi.
+gyesan olyu.
