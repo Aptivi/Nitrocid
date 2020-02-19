@@ -60,9 +60,9 @@ Module CommandLineArgsParse
                     CI_TestInitStopwatch.Start()
                 ElseIf arg = "CI-TestEval" Then 'Tests string evaluation, then exits
                     Try
-                        W("KS.Flags.CornerTD = " + Evaluate("KS.Flags.CornerTD"), True, ColTypes.Neutral)
-                        W("KS.Color.inputColor = " + Evaluate("KS.Color.inputColor"), True, ColTypes.Neutral)
-                        W("KS.Shell.strictCmds.Length = " + Evaluate("KS.Shell.strictCmds.Length"), True, ColTypes.Neutral)
+                        W("KS.Flags.CornerTD = {0}", True, ColTypes.Neutral, Evaluate("KS.Flags.CornerTD"))
+                        W("KS.Color.inputColor = {0}", True, ColTypes.Neutral, Evaluate("KS.Color.inputColor"))
+                        W("KS.Shell.strictCmds.Length = {0}", True, ColTypes.Neutral, Evaluate("KS.Shell.strictCmds.Length"))
                         Environment.Exit(0)
                     Catch ex As Exception
                         W(ex.Message, True, ColTypes.Neutral)
