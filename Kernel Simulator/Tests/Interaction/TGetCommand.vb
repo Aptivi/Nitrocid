@@ -198,6 +198,11 @@ Module TGetCommand
             ElseIf FullArgsL(0) = "Thai-Buddhist" Then
                 W(RenderDate(New CultureInfo("th-TH")), True, ColTypes.Neutral)
             End If
+        ElseIf Cmd = "listcodepages" Then
+            Dim Encodings() As EncodingInfo = Encoding.GetEncodings
+            For Each Encoding As EncodingInfo In Encodings
+                W("{0}: {1} ({2})", True, ColTypes.Neutral, Encoding.CodePage, Encoding.Name, Encoding.DisplayName)
+            Next
         ElseIf Cmd = "help" Then
             W("- print <Color> <Line> <Message>" + vbNewLine +
               "- printf <Color> <Line> <Variable1;Variable2;Variable3;...> <Message>" + vbNewLine +
@@ -217,6 +222,7 @@ Module TGetCommand
               "- testevent <Event>" + vbNewLine +
               "- probehw" + vbNewLine +
               "- garbage" + vbNewLine +
+              "- listcodepages" + vbNewLine +
               "- exit", True, ColTypes.Neutral)
         ElseIf Cmd = "exit" Then
             TEST_ExitFlag = True
