@@ -482,6 +482,25 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Tilgjengelige kommandoer: {0}
+        '''Skriv kommando:
+        '''Kommandoinjeksjon er kansellert.
+        '''Separate startargumenter med komma uten mellomrom, for eksempel &apos;motd, gpuprobe&apos;
+        '''Separate kommandoer på &apos;cmdinject&apos; med kolon med mellomrom, for eksempel &apos;cmdinject setthemes Hacker: pip 1024 0.5&apos;
+        '''Merk at &quot;feilsøking&quot; -argumentet ikke dekker kjernen helt.
+        '''bargs: Det forespurte argumentet {0} ble ikke funnet.
+        '''bargs: Ikke gjenvinnbar argumentasjonsfeil:
+        '''Tilgjengelige argumenter: {0}
+        '''Argumenter (&apos;hjelp&apos; for hjelp):
+        '''Injiser [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property nwg() As String
+            Get
+                Return ResourceManager.GetString("nwg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Dostępne polecenia: {0}
         '''Napisz polecenie:
         '''Wprowadzanie poleceń zostało anulowane.

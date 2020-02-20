@@ -18,7 +18,7 @@
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb", "vtn"}
+    Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb", "vtn"}
     Public Transliterables() As String = {"arb", "chi", "ind", "jpn", "kor", "rus"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -102,6 +102,8 @@ Public Module Translate
                 translated = My.Resources.mal
             Case "ndo" 'Indonesian
                 translated = My.Resources.ndo
+            Case "nwg" 'Norwegian
+                translated = My.Resources.nwg
             Case "pol" 'Polish
                 translated = My.Resources.pol
             Case "ptg" 'Portuguese

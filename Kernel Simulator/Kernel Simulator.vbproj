@@ -360,6 +360,7 @@
     <None Include="Resources\kor.txt" />
     <None Include="Resources\kor-T.txt" />
     <Content Include="Resources\ndo.txt" />
+    <None Include="Resources\nwg.txt" />
     <Content Include="Resources\pol.txt" />
     <Content Include="Resources\rmn.txt" />
     <None Include="Resources\rus.txt" />
