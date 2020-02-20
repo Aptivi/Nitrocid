@@ -551,3 +551,4 @@ Error when trying to connect to {0}: Connection timeout or lost connection
 Calculator to calculate expressions.
 Error in calculation.
 Capacity: {0} GB ({1}, {2}, {3})
+Looks like you were running the nearing-release version. While it's safer to use now, it is recommended that you stay on the stable version.

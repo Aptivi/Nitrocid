@@ -359,6 +359,8 @@ Public Module KernelTools
         W(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
 #ElseIf SPECIFIER = "RC" Then
         W(DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
+#ElseIf SPECIFIER = "NEARING" Then
+        W(DoTranslation("Looks like you were running the nearing-release version. While it's safer to use now, it is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
 #End If
 
         'Parse real command-line arguments

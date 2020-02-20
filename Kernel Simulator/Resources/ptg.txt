@@ -551,3 +551,4 @@ Erro ao tentar se conectar a {0}: Tempo limite da conexão ou conexão perdida
 Calculadora para calcular expressões.
 Erro no cálculo.
 Capacidade: {0} GB ({1}, {2}, {3})
+Parece que você estava executando a versão de lançamento próximo. Embora seja mais seguro usar agora, é recomendável que você permaneça na versão estável.

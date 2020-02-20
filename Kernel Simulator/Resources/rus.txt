@@ -551,3 +551,4 @@ Oshibka pri popytke podklyucheniya k {0}: taym-aut soyedineniya ili poterya soye
 Kal'kulyator dlya rascheta vyrazheniy.
 Oshibka v raschete.
 Yemkost': {0} GB ({1}, {2}, {3})
+Pokhozhe, vy rabotali nad blizhayshey versiyey. Khotya seychas eto bezopasneye v ispol'zovanii, rekomenduyetsya sokhranit' stabil'nuyu versiyu.

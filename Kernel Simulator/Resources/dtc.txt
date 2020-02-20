@@ -551,3 +551,4 @@ Fout bij verbinding met {0}: time-out verbinding of verbinding verbroken
 Calculator om uitdrukkingen te berekenen.
 Fout in berekening.
 Capaciteit: {0} GB ({1}, {2}, {3})
+Het lijkt erop dat je de versie met bijna-release gebruikte. Hoewel het veiliger is om nu te gebruiken, wordt het aanbevolen om op de stabiele versie te blijven.

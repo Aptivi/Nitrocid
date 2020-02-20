@@ -551,3 +551,4 @@ Erreur lors de la tentative de connexion à {0}: délai de connexion ou connexio
 Calculatrice pour calculer les expressions.
 Erreur de calcul.
 Capacité: {0} Go ({1}, {2}, {3})
+On dirait que vous exécutiez la version imminente. Bien qu'il soit plus sûr d'utiliser maintenant, il est recommandé de rester sur la version stable.

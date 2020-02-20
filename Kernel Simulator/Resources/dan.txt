@@ -551,3 +551,4 @@ Fejl, når du prøver at oprette forbindelse til {0}: Timeout for forbindelse el
 Lommeregner til beregning af udtryk.
 Fejl i beregningen.
 Kapacitet: {0} GB ({1}, {2}, {3})
+Det ser ud til, at du kørte versionen til næsten frigivelse. Selvom det er mere sikkert at bruge nu, anbefales det, at du forbliver på den stabile version.

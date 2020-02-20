@@ -551,3 +551,4 @@ Virhe yritettäessä muodostaa yhteyttä {0}: Yhteyden aikakatkaisu tai yhteys k
 Laskin lausekkeiden laskemiseksi.
 Virhe laskelmassa.
 Kapasiteetti: {0} Gt ({1}, {2}, {3})
+Näyttää siltä, että käytit julkaisua lähes julkaisua. Vaikka nyt on turvallisempaa käyttää, on suositeltavaa pysyä vakaana versiona.

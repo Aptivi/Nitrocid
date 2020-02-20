@@ -551,3 +551,4 @@ Kesalahan saat mencoba terhubung ke {0}: Waktu habis koneksi atau koneksi terput
 Kalkulator untuk menghitung ekspresi.
 Kesalahan dalam perhitungan.
 Kapasitas: {0} GB ({1}, {2}, {3})
+Sepertinya Anda menjalankan versi rilis-dekat. Meskipun lebih aman untuk digunakan sekarang, Anda disarankan untuk tetap menggunakan versi stabil.

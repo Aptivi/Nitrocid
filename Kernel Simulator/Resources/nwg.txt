@@ -551,3 +551,4 @@ Feil når du prøver å koble til {0}: Timeout for tilkobling eller mistet tilko
 Kalkulator for å beregne uttrykk.
 Feil i beregningen.
 Kapasitet: {0} GB ({1}, {2}, {3})
+Ser ut som om du kjørte versjonen til nær utgivelse. Selv om det er tryggere å bruke nå, anbefales det at du holder deg på den stabile versjonen.

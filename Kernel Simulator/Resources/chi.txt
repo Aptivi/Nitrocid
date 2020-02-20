@@ -551,3 +551,4 @@ Chángshì liánjiē dào {0} shí chūcuò: Liánjiē chāoshí huò liánjiē 
 Jìsuàn qì lái jìsuàn biǎodá shì.
 Jìsuàn cuòwù.
 Róngliàng: {0} GB ({1}, {2}, {3})
+Kàn qǐlái nín zhèngzài yùnxíng jíjiāng fābù de bǎnběn. Suīrán xiànzài shǐyòng qǐlái gèng ānquán, dàn jiànyì nín jìxù shǐyòng wěndìng bǎnběn.

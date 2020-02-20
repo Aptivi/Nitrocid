@@ -551,3 +551,4 @@ Fehler beim Versuch, eine Verbindung zu {0} herzustellen: Verbindungszeitlimit o
 Rechner zur Berechnung von Ausdrücken.
 Fehler bei der Berechnung.
 Kapazität: {0} GB ({1}, {2}, {3})
+Sieht so aus, als hätten Sie die Nearing-Release-Version ausgeführt. Die Verwendung ist jetzt sicherer, es wird jedoch empfohlen, die stabile Version beizubehalten.

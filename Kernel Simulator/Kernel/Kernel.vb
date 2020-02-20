@@ -42,7 +42,7 @@ Public Module Kernel
                 If Not EnvironmentOSType.Contains("Unix") Then Initialize255()
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
+#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then
                 If Not IO.File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                     Dim pdbdown As New WebClient
                     pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))

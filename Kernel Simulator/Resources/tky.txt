@@ -551,3 +551,4 @@ Kullanılmış: {0}
 İfadeleri hesaplamak için hesap makinesi.
 Hesaplama hatası.
 Kapasite: {0} GB ({1}, {2}, {3})
+Görünüşe göre yaklaşan sürüm sürümünü çalıştırıyorsunuz. Şimdi kullanmak daha güvenli olsa da, kararlı sürümde kalmanız önerilir.

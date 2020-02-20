@@ -551,3 +551,4 @@ nirdeshika {0} pahale se maujood hai.
 bhaavon kee ganana karane ke lie kailakuletar.
 ganana mein truti.
 kshamata: {0} jeebee ({1}, {2}, {3})
+lagata hai ki aap paas-rileez sanskaran chala rahe the. haalaanki yah ab upayog karane ke lie surakshit hai, yah anushansa kee jaatee hai ki aap sthir sanskaran par rahen.

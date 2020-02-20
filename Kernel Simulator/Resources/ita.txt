@@ -551,3 +551,4 @@ Errore durante il tentativo di connessione a {0}: timeout della connessione o co
 Calcolatrice per calcolare le espressioni.
 Errore nel calcolo.
 Capacità: {0} GB ({1}, {2}, {3})
+Sembra che tu stia eseguendo la versione di rilascio prossima. Sebbene sia più sicuro da usare ora, si consiglia di rimanere nella versione stabile.

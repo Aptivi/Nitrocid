@@ -551,3 +551,4 @@ Ralat semasa cuba menyambung ke {0}: Ralat sambungan atau sambungan hilang
 Kalkulator untuk mengira ungkapan.
 Ralat dalam pengiraan.
 Kapasiti: {0} GB ({1}, {2}, {3})
+Nampaknya anda sedang menjalankan versi yang hampir dilepaskan. Walaupun selamat untuk digunakan sekarang, disarankan agar anda tetap pada versi yang stabil.

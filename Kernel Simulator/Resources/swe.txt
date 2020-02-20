@@ -551,3 +551,4 @@ Fel vid försök att ansluta till {0}: Timeout för anslutning eller förlorad a
 Kalkylator för att beräkna uttryck.
 Fel vid beräkningen.
 Kapacitet: {0} GB ({1}, {2}, {3})
+Det verkar som att du kör versionen för närmande utgåva. Det är säkrare att använda nu, men vi rekommenderar att du håller dig på den stabila versionen.

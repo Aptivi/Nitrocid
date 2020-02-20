@@ -551,3 +551,4 @@ Lỗi khi cố gắng kết nối với {0}: Hết thời gian kết nối hoặ
 Máy tính để tính biểu thức.
 Lỗi trong tính toán.
 Dung lượng: {0} GB ({1}, {2}, {3})
+Có vẻ như bạn đang chạy phiên bản phát hành gần. Mặc dù hiện tại an toàn hơn để sử dụng, nhưng bạn nên duy trì phiên bản ổn định.
