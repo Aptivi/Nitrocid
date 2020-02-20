@@ -29,10 +29,10 @@ Public Module Shell
                                             "savescreen", "lockscreen", "setsaver", "reloadsaver", "ftp", "usermanual", "cdbglog", "sses", "chlang",
                                             "reloadmods", "get", "lsdbgdev", "disconndbgdev", "lset", "move", "copy", "search", "listdrives",
                                             "listparts", "sumfile", "rdebug", "speak", "spellbee", "mathbee", "loteresp", "sshell", "bsynth", "shownotifs",
-                                            "dismissnotif", "rexec", "calc"}
+                                            "dismissnotif", "rexec", "calc", "update"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
-                                     "lset", "listdrives", "listparts", "rdebug", "rexec"}
+                                     "lset", "listdrives", "listparts", "rdebug", "rexec", "update"}
     Public obsoleteCmds() As String = {}
     Public modcmnds As New ArrayList
 

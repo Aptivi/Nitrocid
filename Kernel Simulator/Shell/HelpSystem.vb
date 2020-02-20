@@ -79,6 +79,7 @@ Public Module HelpSystem
                                                               {"sshell", DoTranslation("Connects to an SSH server.", currentLang)},
                                                               {"sumfile", DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang)},
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
+                                                              {"update", DoTranslation("System update", currentLang)},
                                                               {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)}}
     End Sub
 
@@ -356,6 +357,10 @@ Public Module HelpSystem
         ElseIf command = "sysinfo" Then
 
             W(DoTranslation("Usage:", currentLang) + " sysinfo: " + DoTranslation("Shows system information and versions.", currentLang), True, ColTypes.Neutral)
+
+        ElseIf command = "update" Then
+
+            W(DoTranslation("Usage:", currentLang) + " update: " + DoTranslation("System update", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "usermanual" Then
 

@@ -935,6 +935,11 @@ Public Module GetCommand
                 W(vbNewLine + "[ MAL ]", True, ColTypes.HelpCmd)
                 W(vbNewLine + ProbePlaces(MAL), True, ColTypes.Neutral)
 
+            ElseIf words(0) = "update" Then
+
+                Done = True
+                W("TBD", True, ColTypes.Neutral)
+
             ElseIf words(0) = "usermanual" Then
 
                 Done = True
