@@ -73,6 +73,7 @@ Public Module Kernel
                 StartRPC()
                 W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
                 InitFS()
+                CheckKernelUpdates()
 
                 'Phase 1: Probe hardware
                 W(vbNewLine + DoTranslation("- Stage 1: Hardware detection", currentLang), True, ColTypes.Stage)

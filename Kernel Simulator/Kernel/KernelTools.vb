@@ -20,6 +20,7 @@ Imports System.IO
 Imports System.Reflection
 Imports System.Threading
 Imports System.Diagnostics.Process
+Imports Newtonsoft.Json.Linq
 
 Public Module KernelTools
 
@@ -419,6 +420,29 @@ Public Module KernelTools
             KernelError("F", False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference.", currentLang), Nothing)
         End If
         instanceChecked = True
+    End Sub
+
+    Sub CheckKernelUpdates()
+        W(DoTranslation("Checking for system updates...", currentLang), True, ColTypes.Neutral)
+        Try
+            Dim UpdateDown As New WebClient
+            UpdateDown.Headers.Add(HttpRequestHeader.UserAgent, "EoflaOE") 'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs.
+            Dim UpdateStr As String = UpdateDown.DownloadString("https://api.github.com/repos/EoflaOE/Kernel-Simulator/releases")
+            Dim UpdateToken As JToken = JToken.Parse(UpdateStr)
+            Dim UpdateVer As String = UpdateToken.First.SelectToken("tag_name")
+            Dim UpdateURL As String = UpdateToken.First.SelectToken("html_url")
+            Dim CurrentVer As String = "v" + KernelVersion + "-alpha" 'We usually put -alpha in releases when we indicate that it's the alpha release.
+            If UpdateVer <> CurrentVer Then
+                'Found a new version
+                W(DoTranslation("Found new version: ", currentLang), False, ColTypes.HelpCmd)
+                W(UpdateVer, True, ColTypes.HelpDef)
+                W(DoTranslation("You can download it at: ", currentLang), False, ColTypes.HelpCmd)
+                W(UpdateURL, True, ColTypes.HelpDef)
+            End If
+        Catch ex As Exception
+            W(DoTranslation("Failed to check for updates: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            WStkTrc(ex)
+        End Try
     End Sub
 
     Function GetCompileDate() As DateTime 'Always successful, no need to put Try Catch

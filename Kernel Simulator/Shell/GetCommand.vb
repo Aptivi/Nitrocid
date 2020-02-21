@@ -946,7 +946,7 @@ Public Module GetCommand
             ElseIf words(0) = "update" Then
 
                 Done = True
-                W("TBD", True, ColTypes.Neutral)
+                CheckKernelUpdates()
 
             ElseIf words(0) = "usermanual" Then
 
