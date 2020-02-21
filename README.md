@@ -48,6 +48,12 @@ For more information, inspect [this wiki page](https://github.com/EoflaOE/Kernel
 
 - Any Unix system that contains the latest version of [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/). MonoDevelop(32-bit or 64-bit)/JetBrains Rider(64-bit) is required to build from source.
 
+- Microsoft.VisualBasic.dll 10.0 (Debian and its derivatives: `sudo apt install libmono-microsoft-visualbasic10.0-cil`)
+
+- VLC Media Player (For TTS and playback for test shell) (Debian and its derivatives: `sudo apt install vlc libvlc-dev gtk-sharp2`)
+
+- Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi`)
+
 ## |-----+--> _Build Instructions_ <--+-----|
 
 - For Windows systems
