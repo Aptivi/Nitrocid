@@ -50,6 +50,7 @@ Module Flags
     Public LoggedIn As Boolean                                  'Whether or not to detect if the user is logged in
     Public ShowAvailableUsers As Boolean = True                 'Whether or not to show available usernames on login
     Public HiddenFiles As Boolean                               'Whether or not to show hidden files
+    Public CheckUpdateStart As Boolean = True                   'Whether or not to ckeck for updates on startup
 
     'Variables: CI environments
     Public CI_TestWdbg As Boolean                               'Writes the debug log to the console then exits
