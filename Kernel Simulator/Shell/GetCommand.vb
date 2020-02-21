@@ -900,6 +900,8 @@ Public Module GetCommand
                         Else
                             W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Neutral)
                         End If
+                    Else
+                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Neutral, file)
                     End If
                 End If
 
