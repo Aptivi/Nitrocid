@@ -415,6 +415,7 @@ Public Module Color
         ksconf.Sections("Colors").Keys("Input Color").Value = inputColor.ToString
         ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColor.ToString
         ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColor.ToString
+        ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColor.ToString
         ksconf.Save(configPath)
     End Sub
 
