@@ -6,7 +6,7 @@
 
 This kernel simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal.
 
-Congratulations, we finally made it into Release Candidate 3 of Kernel Simulator version 0.0.8!
+Congratulations, we are near finishing release 0.0.8!
 
 ## |-----+--> _Notes_ <--+-----|
 
@@ -14,9 +14,7 @@ Congratulations, we finally made it into Release Candidate 3 of Kernel Simulator
 
 - It can only be Console at the moment, while we are developing a GUI for this simulator.
 
-- We took out Windows XP support in 0.0.5.9 in favor of NuGet and .NET Framework 4.7.
-
-- Regarding TTS support, we're looking for platform-independent text to speech library. Currently, it fails to compile on Mono on Linux.
+- We took out Windows XP support in 0.0.5.9 in favor of NuGet and .NET Framework 4.8.
 
 ## |-----+--> _Virus Warning_ <--+-----|
 
@@ -44,7 +42,7 @@ For more information, inspect [this wiki page](https://github.com/EoflaOE/Kernel
 
 - Windows 7 or higher
 
-- Microsoft .NET Framework 4.7 or higher
+- Microsoft .NET Framework 4.8 or higher
 
 2. For Unix systems
 
@@ -96,7 +94,7 @@ Notice: You must have **at least** Visual Studio 2017, because of how the syntax
 
 5. Write on the URL "https://github.com/EoflaOE/Kernel-Simulator.git" and press "Test" to verify your connectivity
 
-6. Press Clone, and git will download 100+ MB of data (because of archive branch), then Rider will open up. Don't worry if the progress bar stops moving. It's based on the amount of objects, not the size, because Rider and/or Git still hasn't implemented progress bar by repo size yet.
+6. Press Clone, and git will download 200+ MB of data (because of archive branch), then Rider will open up. Don't worry if the progress bar stops moving. It's based on the amount of objects, not the size, because Rider and/or Git still hasn't implemented progress bar by repo size yet.
 
 7. You will get some errors about the inability to resolve My.Computer. Ignore these, as they won't interrupt the compilation.
 
@@ -234,7 +232,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **10/30/2019 - 0.0.7.61:** Fixed mod reload help description not translating, Fixed Google's weirdness about `reloadsaver` help description on several language files, Fixed KS crashing on startup if the mods are inserted, Now cursor won't show up if the custom screensaver runs, Added transliterated Russian language
 
-**2/1/2020 - WIP - 0.0.8:** Reserved for renewal
+**2/22/2020 - WIP - 0.0.8:** Reserved for renewal
 
 ## |-----+--> _Contributors_ <--+-----|
 
