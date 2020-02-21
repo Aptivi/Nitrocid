@@ -126,7 +126,8 @@ Public Module Filesystem
 
                         'Print information
                         If (FInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not FInfo.Attributes.HasFlag(IO.FileAttributes.Hidden) Then
-                            W("- " + Entry.Replace("\", "/") + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
+                            W("- " + Entry.Replace("\", "/") + ": ", False, ColTypes.HelpCmd)
+                            W(DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.HelpDef,
                               FormatNumber(FInfo.Length / 1024, 2), FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
                                                                     FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
                         End If
@@ -151,13 +152,14 @@ Public Module Filesystem
 
                         'Print information
                         If (DInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DInfo.Attributes.HasFlag(IO.FileAttributes.Hidden) Then
-                            W("- " + Entry.Replace("\", "/") + ": " + DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.Neutral,
+                            W("- " + Entry.Replace("\", "/") + ": ", False, ColTypes.HelpCmd)
+                            W(DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.HelpDef,
                               FormatNumber(TotalSize / 1024, 2), DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
                                                                  DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
                         End If
                     End If
                 Catch ex As UnauthorizedAccessException 'Error while getting info
-                    W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, ColTypes.Neutral, Entry)
+                    W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, ColTypes.HelpCmd, Entry)
                     WStkTrc(ex)
                 End Try
             Next

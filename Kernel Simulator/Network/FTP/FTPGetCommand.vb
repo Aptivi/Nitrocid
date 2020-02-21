@@ -175,12 +175,12 @@ Public Module FTPGetCommand
                         Listing = ClientFTP.GetListing(currentremoteDir)
                     End If
                     For Each DirListFTP As FtpListItem In Listing
-                        W($"- {DirListFTP.FullName.Remove(0, 1)}", False, ColTypes.Neutral)
+                        W($"- {DirListFTP.FullName.Remove(0, 1)}", False, ColTypes.HelpCmd)
                         If DirListFTP.Type = FtpFileSystemObjectType.File Then
-                            W(": ", False, ColTypes.Neutral)
+                            W(": ", False, ColTypes.HelpCmd)
                             FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
                             ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
-                            W(DoTranslation("{0} KB | Modified in: {1}", currentLang), False, ColTypes.Neutral, FormatNumber(FileSize / 1024, 2), ModDate.ToString)
+                            W(DoTranslation("{0} KB | Modified in: {1}", currentLang), False, ColTypes.HelpDef, FormatNumber(FileSize / 1024, 2), ModDate.ToString)
                         End If
                         Console.WriteLine()
                     Next
