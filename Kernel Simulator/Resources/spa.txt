@@ -552,3 +552,7 @@ Calculadora para calcular expresiones.
 Error en el cálculo.
 Capacidad: {0} GB ({1}, {2}, {3})
 Parece que estabas ejecutando la versión de lanzamiento cercano. Si bien es más seguro usarlo ahora, se recomienda que permanezca en la versión estable.
+Buscando actualizaciones del sistema ...
+Nueva versión encontrada:
+Puedes descargarlo en:
+Error al buscar actualizaciones: {0}

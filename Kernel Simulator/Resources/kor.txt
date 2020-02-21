@@ -46,7 +46,7 @@ ijung paenig : olyu yuhyeong {0}i (ga) yuhyohaji anhseubnida.
 ijung paenig : keoneol beogeu : {0}
 jonglyohaneun jung ...
 jaebuting jung ...
---- === +++> keoneol-e osin geos-eul hwan-yeonghabnida | beojeon {0} <+++ === ---
+---===+++> keoneol-e osin geos-eul hwan-yeonghabnida | beojeon {0} <+++===---
 keoneol simyulleiteoui daleun inseuteonseuga silhaeng jung-ibnida. ganseob-i balsaenghamyeon jonglyohabnida.
 sayongja {0}i (ga) gwanlija moglog-e chugadoeeossseubnida.
 sayongja {0}i (ga) bihwalseonghwa doen moglog-e chugadoeeossseubnida.
@@ -551,3 +551,7 @@ jung-go : {0}
 sig-eul gyesanhaneun gyesangi.
 gyesan olyu.
 chulsi yejeong beojeon-eul silhaengjung-in geos gatseubnida. jigeum sayonghaneun geos-i deo anjeonhajiman anjeongjeog-in beojeon-eul yujihaneun geos-i johseubnida.
+siseutem eobdeiteu hwag-in jung ...
+sae beojeon-eul chaj-assseubnida.
+da-eum-eseo daunlodeu hal su issseubnida.
+eobdeiteuleul hwag-inhaji moshaessseubnida : {0}

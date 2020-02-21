@@ -552,3 +552,7 @@ alat hasibat lihisab altaebirat.
 khata fi alhasab.
 alset: {0} ghyghabayt ({1} , {2} , {3})
 ybdw 'anak tashghal 'iisdar al'iisdar alqarib. rghm 'anah 'akthar amanana lilaistikhdam alan , 'illa 'anah yuasaa bialbaqa' ealaa al'iisdar althaabit.
+jar albahth ean tahdithat alnizam ...
+aleuthur ealaa nuskhat jdydt:
+yumkinuk tanziluh ealaa:
+fashilu altahaquq min altahdithat: {0}

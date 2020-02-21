@@ -552,3 +552,7 @@ Kalkulator untuk menghitung ekspresi.
 Kesalahan dalam perhitungan.
 Kapasitas: {0} GB ({1}, {2}, {3})
 Sepertinya Anda menjalankan versi rilis-dekat. Meskipun lebih aman untuk digunakan sekarang, Anda disarankan untuk tetap menggunakan versi stabil.
+Memeriksa pembaruan sistem ...
+Menemukan versi baru:
+Anda dapat mengunduhnya di:
+Gagal memeriksa pembaruan: {0}

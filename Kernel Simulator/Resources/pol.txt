@@ -552,3 +552,7 @@ Kalkulator do obliczania wyrażeń.
 Błąd w obliczeniach.
 Pojemność: {0} GB ({1}, {2}, {3})
 Wygląda na to, że korzystasz z wersji zbliżającej się do wydania. Chociaż korzystanie z niego jest teraz bezpieczniejsze, zaleca się pozostanie w wersji stabilnej.
+Sprawdzanie aktualizacji systemu ...
+Znaleziono nową wersję:
+Możesz pobrać go z:
+Nie można sprawdzić aktualizacji: {0}

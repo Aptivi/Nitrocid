@@ -552,3 +552,7 @@ Kalkulator za računanje izraza.
 Pogreška u proračunu.
 Kapacitet: {0} GB ({1}, {2}, {3})
 Čini se da ste pokrenuli verziju približavanja izdanju. Iako je sada sigurnije koristiti, preporučuje se da ostanete na stabilnoj verziji.
+Provjera ažuriranja sustava ...
+Pronađena nova verzija:
+Možete je preuzeti na:
+Provjera ažuriranja nije uspjela: {0}

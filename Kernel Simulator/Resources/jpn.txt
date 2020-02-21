@@ -551,3 +551,7 @@ Shiki o keisan suru tame no keisanki.
 Keisan erā.
 Yōryō: {0} GB ({1}, {2}, {3})
 Rirīsu madjika no bājon o jikkō shite ita yōdesu. Ima wa anzen ni shiyō dekimasuga, anteihan o shiyō suru koto o o susume shimasu.
+Shisutemu no kōshin o kakunin shite imasu...
+Atarashī bājon ga mitsukarimashita: 
+Ika kara daunrōdo dekimasu: 
+Kōshin no kakunin ni shippai shimashita: {0}
