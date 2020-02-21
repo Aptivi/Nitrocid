@@ -556,3 +556,5 @@ Sprawdzanie aktualizacji systemu ...
 Znaleziono nową wersję:
 Możesz pobrać go z:
 Nie można sprawdzić aktualizacji: {0}
+Nie znaleziono dziennika debugowania
+Brak ostatnich powiadomień

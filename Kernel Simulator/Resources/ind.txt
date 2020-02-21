@@ -556,3 +556,5 @@ sistam apadet ke lie jaanch kee ja rahee hai ...
 naya sanskaran mila:
 aap ise yahaan daunalod kar sakate hain:
 adyatanon kee jaanch karane mein viphal: {0}
+dibag log nahin mila
+haal kee soochanaen nahin

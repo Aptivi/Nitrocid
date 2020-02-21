@@ -556,3 +556,5 @@ Tizim yangilanishlari tekshirilmoqda ...
 Yangi versiya topildi:
 Siz yuklab olishingiz mumkin:
 Yangilanishlarni tekshirib bo'lmadi: {0}
+Tuzatish jurnali topilmadi
+So'nggi bildirishnomalar yo'q

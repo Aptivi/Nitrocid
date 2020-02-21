@@ -556,3 +556,5 @@ jar albahth ean tahdithat alnizam ...
 aleuthur ealaa nuskhat jdydt:
 yumkinuk tanziluh ealaa:
 fashilu altahaquq min altahdithat: {0}
+sajal altashih ghyr mawjud
+la tujad 'iikhtarat haditha

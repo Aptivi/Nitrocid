@@ -556,3 +556,5 @@ Provjera ažuriranja sustava ...
 Pronađena nova verzija:
 Možete je preuzeti na:
 Provjera ažuriranja nije uspjela: {0}
+Dnevnik pogreške nije pronađen
+Nema nedavnih obavijesti

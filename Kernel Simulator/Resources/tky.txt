@@ -556,3 +556,5 @@ Sistem güncellemeleri kontrol ediliyor ...
 Yeni sürüm bulundu:
 Şuradan indirebilirsiniz:
 Güncellemeler kontrol edilemedi: {0}
+Hata ayıklama günlüğü bulunamadı
+Son bildirim yok

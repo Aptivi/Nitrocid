@@ -556,3 +556,5 @@ Zhèngzài jiǎnchá xìtǒng gēngxīn...
 Zhǎodào xīn bǎnběn:
 Nín kěyǐ zài yǐxià wèizhì xiàzài:
 Wúfǎ jiǎnchá gēngxīn:{0}
+Zhǎo bù dào tiáoshì rìzhì
+Zuìjìn méiyǒu tōngzhī

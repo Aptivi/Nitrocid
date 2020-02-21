@@ -556,3 +556,5 @@ Verifica aggiornamenti del sistema ...
 Trovato nuova versione:
 Puoi scaricarlo da:
 Impossibile controllare gli aggiornamenti: {0}
+Registro di debug non trovato
+Nessuna notifica recente

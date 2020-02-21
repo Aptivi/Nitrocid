@@ -556,3 +556,5 @@ Memeriksa kemas kini sistem ...
 Menemui versi baru:
 Anda boleh memuat turunnya di:
 Gagal menyemak kemas kini: {0}
+Log debug tidak dijumpai
+Tiada pemberitahuan baru-baru ini

@@ -554,4 +554,6 @@ chulsi yejeong beojeon-eul silhaengjung-in geos gatseubnida. jigeum sayonghaneun
 siseutem eobdeiteu hwag-in jung ...
 sae beojeon-eul chaj-assseubnida.
 da-eum-eseo daunlodeu hal su issseubnida.
-eobdeiteuleul hwag-inhaji moshaessseubnida : {0}
+eobdeiteuleul hwag-inhaji moshaessseubnida: {0}
+dibeogeu logeuleul chaj-eul su eobs-seubnida
+choegeun allim-i eobs-seubnida.

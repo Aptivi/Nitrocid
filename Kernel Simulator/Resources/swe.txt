@@ -556,3 +556,5 @@ Söker efter systemuppdateringar ...
 Hittade ny version:
 Du kan ladda ner den på:
 Det gick inte att leta efter uppdateringar: {0}
+Felsökningslogg hittades inte
+Inga senaste aviseringar

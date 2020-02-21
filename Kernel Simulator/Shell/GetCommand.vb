@@ -809,12 +809,16 @@ Public Module GetCommand
             ElseIf words(0) = "shownotifs" Then
 
                 Dim Count As Integer = 1
-                For Each Notif As Notification In NotifRecents
-                    W($"{Count}: {Notif.Title}" + vbNewLine +
-                      $"{Count}: {Notif.Desc}" + vbNewLine +
-                      $"{Count}: {Notif.Priority.ToString}", True, ColTypes.Neutral)
-                    Count += 1
-                Next
+                If Not NotifRecents.Count = 0 Then
+                    For Each Notif As Notification In NotifRecents
+                        W($"{Count}: {Notif.Title}" + vbNewLine +
+                          $"{Count}: {Notif.Desc}" + vbNewLine +
+                          $"{Count}: {Notif.Priority.ToString}", True, ColTypes.Neutral)
+                        Count += 1
+                    Next
+                Else
+                    W(DoTranslation("No recent notifications", currentLang), True, ColTypes.Neutral)
+                End If
                 Done = True
 
             ElseIf requestedCommand = "showtd" Then

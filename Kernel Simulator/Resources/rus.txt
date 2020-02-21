@@ -556,3 +556,5 @@ Proverka obnovleniy sistemy ...
 Naydena novaya versiya:
 Vy mozhete skachat' yego po adresu:
 Ne udalos' proverit' nalichiye obnovleniy: {0}
+Zhurnal otladki ne nayden
+Net nedavnikh uvedomleniy

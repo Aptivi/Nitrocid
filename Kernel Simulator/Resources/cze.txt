@@ -556,3 +556,5 @@ Probíhá kontrola aktualizací systému ...
 Nalezeno nové verze:
 Můžete si ji stáhnout na:
 Aktualizace se nezdařila: {0}
+Protokol ladění nebyl nalezen
+Žádná nedávná oznámení

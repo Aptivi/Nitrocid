@@ -556,3 +556,5 @@ Memeriksa pembaruan sistem ...
 Menemukan versi baru:
 Anda dapat mengunduhnya di:
 Gagal memeriksa pembaruan: {0}
+Log debug tidak ditemukan
+Tidak ada pemberitahuan terbaru

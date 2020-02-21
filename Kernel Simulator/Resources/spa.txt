@@ -556,3 +556,5 @@ Buscando actualizaciones del sistema ...
 Nueva versión encontrada:
 Puedes descargarlo en:
 Error al buscar actualizaciones: {0}
+Registro de depuración no encontrado
+No hay notificaciones recientes.

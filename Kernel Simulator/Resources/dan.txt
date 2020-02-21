@@ -556,3 +556,5 @@ Kontrollerer for systemopdateringer ...
 Fundet ny version:
 Du kan downloade det på:
 Kontrol af opdateringer kunne ikke kontrolleres: {0}
+Debug-log ikke fundet
+Ingen nylige meddelelser

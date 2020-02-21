@@ -556,3 +556,5 @@ Tarkistetaan järjestelmäpäivityksiä ...
 Löytyi uusi versio:
 Voit ladata sen osoitteesta:
 Päivitysten tarkistaminen epäonnistui: {0}
+Virhelokeja ei löydy
+Ei viimeaikaisia ilmoituksia

@@ -556,3 +556,5 @@ Søker etter systemoppdateringer ...
 Fant ny versjon:
 Du kan laste den ned på:
 Kunne ikke se etter oppdateringer: {0}
+Feilsøkingslogg ikke funnet
+Ingen nylige varsler

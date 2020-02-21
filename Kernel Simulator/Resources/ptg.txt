@@ -556,3 +556,5 @@ Verificando atualizações do sistema ...
 Nova versão encontrada:
 Você pode baixá-lo em:
 Falha ao verificar se há atualizações: {0}
+Log de depuração não encontrado
+Nenhuma notificação recente
