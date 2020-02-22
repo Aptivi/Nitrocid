@@ -4,15 +4,11 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master) [![Build Status](https://travis-ci.org/EoflaOE/Kernel-Simulator.svg?branch=master)](https://travis-ci.org/EoflaOE/Kernel-Simulator) ![GitHub repo size](https://img.shields.io/github/repo-size/EoflaOE/Kernel-Simulator?color=purple&label=size) [![GitHub All Releases](https://img.shields.io/github/downloads/EoflaOE/Kernel-Simulator/total?color=purple&label=d/l)](https://github.com/EoflaOE/Kernel-Simulator/releases) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/EoflaOE/Kernel-Simulator?color=purple&include_prereleases&label=github)](https://github.com/EoflaOE/Kernel-Simulator/releases/latest) [![Chocolatey Version (including pre-releases)](https://img.shields.io/chocolatey/v/ks?color=purple&include_prereleases)](https://chocolatey.org/packages/KS/) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/KS?color=purple)](https://www.nuget.org/packages/KS/) [![GitHub](https://img.shields.io/github/license/EoflaOE/Kernel-Simulator?color=purple)](https://github.com/EoflaOE/Kernel-Simulator/blob/master/LICENSE)
 
-This kernel simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal.
+This simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal. KS _will_ continue to be developed, even if we made the real PC version of Kernel.
 
-Congratulations, we are near finishing release 0.0.8!
+After 4 months of development, we are announcing that the kernel version 0.0.8 is finally finished! We are making releases as soon as we can.
 
 ## |-----+--> _Notes_ <--+-----|
-
-- This kernel simulator _will_ continue to be developed, even if we made the real PC version of Kernel.
-
-- It can only be Console at the moment, while we are developing a GUI for this simulator.
 
 - We took out Windows XP support in 0.0.5.9 in favor of NuGet and .NET Framework 4.8.
 
@@ -28,13 +24,11 @@ For more information, inspect [this wiki page](https://github.com/EoflaOE/Kernel
 
 ## |-----+--> _How to run/install_ <--+-----|
 
-* If you are going to install KS without building from source, either look at the Releases, or use the second link below.
+If you are going to install KS without building from source, either look at the Releases, or use [this link](https://chocolatey.org/packages/KS/). (`choco install ks`, Run using `Kernel Simulator` on the CMD or on Run.)
 
-* If you are going to install KS as a NuGet library when modding or integrating, use the first link below.
+If you are going to install KS as a NuGet library when modding or integrating, use [this link](https://www.nuget.org/packages/KS/).
 
-* NuGet Package: https://www.nuget.org/packages/KS/
-
-* Chocolatey: https://chocolatey.org/packages/KS/ (choco install ks, Run using "Kernel Simulator" on the CMD or on Run.)
+NOTE: Make sure to follow the prerequisites.
 
 ## |-----+--> _Prerequisites_ <--+-----|
 
@@ -76,7 +70,7 @@ Notice: You must have **at least** Visual Studio 2017, because of how the syntax
 
 - For Unix systems (MonoDevelop)
 
-1. Install [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/), libmono-microsoft-visualbasic10.0-cil, and MonoDevelop.
+1. Install [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/), `libmono-microsoft-visualbasic10.0-cil`, and MonoDevelop.
 
 2. After installation, extract the source code, open MonoDevelop, and click on **Open...**
 
@@ -90,7 +84,7 @@ Notice: You must have **at least** Visual Studio 2017, because of how the syntax
 
 * For Unix Systems that can do 64-bit (JetBrains Rider)
 
-1. Install [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/), Git, and libmono-microsoft-visualbasic10.0-cil. Remember to install Mono Runtime from the website, not your distro's repos. Mono 6.0.0 is at least required.
+1. Install [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/), Git, and `libmono-microsoft-visualbasic10.0-cil`. Remember to install Mono Runtime from the website, not your distro's repos. Mono 6.0.0 is at least required.
 
 2. Install JetBrains Rider from their website or snap if you use Ubuntu 64-bit
 
@@ -102,7 +96,7 @@ Notice: You must have **at least** Visual Studio 2017, because of how the syntax
 
 6. Press Clone, and git will download 200+ MB of data (because of archive branch), then Rider will open up. Don't worry if the progress bar stops moving. It's based on the amount of objects, not the size, because Rider and/or Git still hasn't implemented progress bar by repo size yet.
 
-7. You will get some errors about the inability to resolve My.Computer. Ignore these, as they won't interrupt the compilation.
+7. You will get some errors about the inability to resolve `My.Computer`. Ignore these, as they won't interrupt the compilation.
 
 8. Click on the hammer button to build, or the Run button. When the Edit configuration screen appears, tick the checkbox named "Use External Console".
 
@@ -238,7 +232,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **10/30/2019 - 0.0.7.61:** Fixed mod reload help description not translating, Fixed Google's weirdness about `reloadsaver` help description on several language files, Fixed KS crashing on startup if the mods are inserted, Now cursor won't show up if the custom screensaver runs, Added transliterated Russian language
 
-**2/22/2020 - WIP - 0.0.8:** Reserved for renewal
+**2/22/2020 - 0.0.8:** Added new commands, Added new languages, Added screensavers, Added stage counter, Added eyecandy on startup, Removed `sses` and `noaliases` commands, Added 255 color support (truecolor will be done on 0.0.9), Added beep synth, Added RPC and SSH, Now codepages will change accordingly when setting languages, Listing partitions and drives now added, Added new placeholders, Added global IPv6 and IPv4 properties, Updated libraries, Debug will have their error levels (commits 362d004f and 06d3fefb), Targeted .NET Framework 4.8, Restored calculator, Fixed `copy` and `move` commands working incorrectly, Bug and crash fixes, and many more to discover.
 
 ## |-----+--> _Contributors_ <--+-----|
 
@@ -248,7 +242,9 @@ Please note that dates mentioned here is for development date changes only. If y
 
 ## |-----+--> _Open Source Libraries used_ <--+-----|
 
-MadMilkman.Ini
+Below entries are the open source libraries that is used by KS. They are required for execution.
+
+### MadMilkman.Ini
 
 Source code: https://github.com/MarioZ/MadMilkman.Ini
 
@@ -256,7 +252,7 @@ Copyright (c) 2016, Mario Zorica
 
 License (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
 
-Newtonsoft.Json
+### Newtonsoft.Json
 
 Source code: https://github.com/JamesNK/Newtonsoft.Json
 
@@ -264,7 +260,7 @@ Copyright (c) 2007, James Newton-King
 
 License (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
 
-FluentFTP
+### FluentFTP
 
 Source code: https://github.com/robinrodricks/FluentFTP
 
@@ -274,7 +270,7 @@ Copyright (c) 2016-present, Robin Rodricks
 
 License (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 
-LibVLCSharp
+### LibVLCSharp
 
 Source code: https://code.videolan.org/videolan/LibVLCSharp
 
@@ -282,7 +278,7 @@ Copyright © 1996-2020 the VideoLAN team
 
 License (LGPLv2.1): https://code.videolan.org/videolan/LibVLCSharp/blob/3.x/LICENSE
 
-VLC (used by LibVLCSharp)
+### VLC (used by LibVLCSharp)
 
 Source code: https://code.videolan.org/videolan/vlc
 
@@ -290,7 +286,7 @@ Copyright © 1996-2020 the VideoLAN team
 
 License (GNU GPL 2.0): https://code.videolan.org/videolan/vlc/blob/master/COPYING
 
-SSH.NET
+### SSH.NET
 
 Source code: https://github.com/sshnet/SSH.NET/
 

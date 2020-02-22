@@ -169,7 +169,7 @@
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="NEARING"</DefineConstants>
+    <DefineConstants>SPECIFIER="REL"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
