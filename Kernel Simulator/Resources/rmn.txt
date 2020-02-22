@@ -552,6 +552,7 @@ Calculator pentru calcularea expresiilor.
 Eroare la calcul.
 Capacitate: {0} GB ({1}, {2}, {3})
 Se pare că ați rulat versiunea apropiată. Deși este mai sigur de utilizat acum, este recomandat să rămâneți pe versiunea stabilă.
+Actualizare de sistem
 Se verifică actualizările sistemului ...
 Nouă versiune găsită:
 Îl puteți descărca la:

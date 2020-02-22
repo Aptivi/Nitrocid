@@ -552,6 +552,7 @@ Máy tính để tính biểu thức.
 Lỗi trong tính toán.
 Dung lượng: {0} GB ({1}, {2}, {3})
 Có vẻ như bạn đang chạy phiên bản phát hành gần. Mặc dù hiện tại an toàn hơn để sử dụng, nhưng bạn nên duy trì phiên bản ổn định.
+Cập nhật hệ thống
 Đang kiểm tra cập nhật hệ thống ...
 Tìm thấy phiên bản mới:
 Bạn có thể tải xuống tại:

@@ -552,6 +552,7 @@ Laskin lausekkeiden laskemiseksi.
 Virhe laskelmassa.
 Kapasiteetti: {0} Gt ({1}, {2}, {3})
 Näyttää siltä, että käytit julkaisua lähes julkaisua. Vaikka nyt on turvallisempaa käyttää, on suositeltavaa pysyä vakaana versiona.
+Järjestelmän päivitys
 Tarkistetaan järjestelmäpäivityksiä ...
 Löytyi uusi versio:
 Voit ladata sen osoitteesta:

@@ -552,6 +552,7 @@ Kalkulator for å beregne uttrykk.
 Feil i beregningen.
 Kapasitet: {0} GB ({1}, {2}, {3})
 Ser ut som om du kjørte versjonen til nær utgivelse. Selv om det er tryggere å bruke nå, anbefales det at du holder deg på den stabile versjonen.
+System oppdatering
 Søker etter systemoppdateringer ...
 Fant ny versjon:
 Du kan laste den ned på:

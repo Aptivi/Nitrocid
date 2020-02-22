@@ -552,6 +552,7 @@ Kalkulator untuk mengira ungkapan.
 Ralat dalam pengiraan.
 Kapasiti: {0} GB ({1}, {2}, {3})
 Nampaknya anda sedang menjalankan versi yang hampir dilepaskan. Walaupun selamat untuk digunakan sekarang, disarankan agar anda tetap pada versi yang stabil.
+Kemas kini sistem
 Memeriksa kemas kini sistem ...
 Menemui versi baru:
 Anda boleh memuat turunnya di:

@@ -550,7 +550,9 @@ jung-go : {0}
 {0}e yeongyeolhalyeogo hal ttae olyuga balsaenghaessseubnida : yeongyeol sigan-i chogwadoeeossgeona yeongyeol-i kkeunh-eojyeossseubnida
 sig-eul gyesanhaneun gyesangi.
 gyesan olyu.
+yonglyang : {0} GB ({1}, {2}, {3})
 chulsi yejeong beojeon-eul silhaengjung-in geos gatseubnida. jigeum sayonghaneun geos-i deo anjeonhajiman anjeongjeog-in beojeon-eul yujihaneun geos-i johseubnida.
+siseutem eobdeiteu
 siseutem eobdeiteu hwag-in jung ...
 sae beojeon-eul chaj-assseubnida.
 da-eum-eseo daunlodeu hal su issseubnida.

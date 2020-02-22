@@ -552,6 +552,7 @@ Ifodalarni hisoblash uchun kalkulyator.
 Hisoblashda xato.
 Sig'imi: {0} GB ({1}, {2}, {3})
 Siz yaqinda chiqarilgan versiyani ishlatayotganga o'xshaysiz. Hozir foydalanish xavfsizroq bo'lsa-da, barqaror versiyada qolish tavsiya etiladi.
+Tizim yangilanishi
 Tizim yangilanishlari tekshirilmoqda ...
 Yangi versiya topildi:
 Siz yuklab olishingiz mumkin:
