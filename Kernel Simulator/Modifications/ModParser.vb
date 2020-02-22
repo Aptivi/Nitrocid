@@ -170,7 +170,7 @@ Public Module ModParser
                 If script.Def = "" Then
                     W(DoTranslation("No definition for command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
                     Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
-                    script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
+                    script.Def = DoTranslation("Command defined by ", currentLang) + script.Name 'TODO: Update the "Command defined by" part each time the user wants to change language
                 End If
                 moddefs.Add(script.Cmd, script.Def)
             End If
