@@ -38,6 +38,8 @@ NOTE: Make sure to follow the prerequisites.
 
 - Microsoft .NET Framework 4.8 or higher
 
+- If you are installing the release from `Archive` branch, you may find them **isolated**. Extract the `libvlc` folder from full releases to the root directory.
+
 2. For Unix systems
 
 - Any Unix system that contains the latest version of [Mono Runtime](http://www.mono-project.com/docs/about-mono/languages/visualbasic/). MonoDevelop(32-bit or 64-bit)/JetBrains Rider(64-bit) is required to build from source.
