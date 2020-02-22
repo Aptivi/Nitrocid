@@ -380,9 +380,6 @@ Public Module KernelTools
             argsInjected = False
         End If
 
-        'Start remote debugger
-        StartRDebugThread(True)
-
         'Parse current theme string
         ParseCurrentTheme()
 

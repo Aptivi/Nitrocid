@@ -69,6 +69,7 @@ Public Module Kernel
 
                 'Initialize stage counter
                 W(vbNewLine + DoTranslation("- Stage 0: System initialization", currentLang), True, ColTypes.Stage)
+                StartRDebugThread(True)
                 W(DoTranslation("Starting RPC...", currentLang), True, ColTypes.Neutral)
                 StartRPC()
                 W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
