@@ -27,6 +27,6 @@ jobs:
     - name: Package Publication
       run: |
         $path = "Kernel Simulator\KSBuild"
-        $FileName = Get-ChildItem -Path $path -Recurse -Filter "*symbols*"
+        $FileName = Get-ChildItem -Path $path -Recurse -Name -Filter "*symbols*"
         nuget push "$path\$FileName" -source "nuget.org"
         
