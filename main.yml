@@ -1,0 +1,24 @@
+name: NuGet Gallery Push
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: NuGet Installation
+      uses: warrenbuckley/Setup-Nuget@v1
+    - name: MSBuild Installation
+      uses: microsoft/setup-msbuild@v1.0.0
+    - name: Solution Compilation
+      run: msbuild "Kernel Simulator.sln"
+    - name: NuGet Preparation
+      run: nuget setApiKey ${{ secrets.NUGET_APIKEY }}
+    - name: Package Publication
+      run: nuget push "Kernel Simulator/KSBuild/KS.*.symbols.nupkg" -source "nuget.org"
+        
