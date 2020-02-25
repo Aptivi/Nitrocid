@@ -26,6 +26,7 @@ jobs:
       run: nuget setApiKey ${{ secrets.NUGET_APIKEY }}
     - name: Package Publication
       run: |
+        $path = "Kernel Simulator/KSBuild"
         $FileName = Get-ChildItem -Path $path -Recurse -Filter "*symbols*"
-        nuget push "Kernel Simulator/KSBuild/$FileName" -source "nuget.org"
+        nuget push "$path/$FileName" -source "nuget.org"
         
