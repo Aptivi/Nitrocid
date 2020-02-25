@@ -1,0 +1,29 @@
+name: Package Registry Push
+
+on:
+  release:
+    types: [published]
+  gollum:
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: NuGet Installation
+      uses: warrenbuckley/Setup-Nuget@v1
+    - name: MSBuild Installation
+      uses: microsoft/setup-msbuild@v1.0.0
+    - name: Dependency Restoration
+      run: nuget restore "Kernel Simulator.sln"
+    - name: Solution Compilation
+      run: msbuild "Kernel Simulator.sln"
+    - name: NuGet Preparation
+      run: nuget sources Add -Name "PackageRegistry" -Source "https://nuget.pkg.github.com/EoflaOE/index.json -username EoflaOE -password ${{ secrets.GITHUB_APIKEY }}
+    - name: Package Publication
+      run: |
+        $path = "Kernel Simulator\KSBuild"
+        $FileName = Get-ChildItem -Path $path -Recurse -Name -Filter "*symbols*"
+        nuget push "$path\$FileName" -source "PackageRegistry"
