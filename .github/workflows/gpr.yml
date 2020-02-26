@@ -21,7 +21,9 @@ jobs:
     - name: Solution Compilation
       run: msbuild "Kernel Simulator.sln"
     - name: NuGet Preparation
-      run: nuget sources Add -Name "PackageRegistry" -Source "https://nuget.pkg.github.com/EoflaOE/index.json" -username EoflaOE -password ${{ secrets.GITHUB_APIKEY }}
+      run: |
+        nuget sources Add -Name "PackageRegistry" -Source "https://nuget.pkg.github.com/EoflaOE/index.json" -username EoflaOE -password ${{ secrets.GITHUB_APIKEY }}
+        nuget setApiKey ${{ secrets.GITHUB_APIKEY }} -Source "PackageRegistry"
     - name: Package Publication
       run: |
         $path = "Kernel Simulator\KSBuild"
