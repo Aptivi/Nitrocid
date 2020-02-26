@@ -22,7 +22,7 @@ jobs:
       run: msbuild "Kernel Simulator.sln"
     - name: NuGet Preparation
       run: |
-        nuget sources Add -Name "PackageRegistry" -Source "https://nuget.pkg.github.com/EoflaOE/index.json" -username EoflaOE -password ${{ secrets.GITHUB_APIKEY }}
+        nuget sources Add -Name "PackageRegistry" -Source "https://nuget.pkg.github.com/EoflaOE/index.json" -username EoflaOE -password ${{ secrets.GITHUB_TOKEN }}
         nuget setApiKey ${{ secrets.GITHUB_APIKEY }} -Source "PackageRegistry"
     - name: Package Publication
       run: |
