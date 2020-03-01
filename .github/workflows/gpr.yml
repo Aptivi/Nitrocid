@@ -12,6 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: NuGet Installation
+      uses: warrenbuckley/Setup-Nuget@v1
     - name: CURL Installation
       run: choco install curl
     - name: MSBuild Installation
