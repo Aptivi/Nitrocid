@@ -3,7 +3,6 @@ name: Package Registry Push
 on:
   release:
     types: [published]
-  gollum:
 
 jobs:
   build:
