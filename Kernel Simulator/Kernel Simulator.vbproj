@@ -34,6 +34,9 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
     <PackageOutputPath>KSBuild</PackageOutputPath>
+    <!-- Repository set up -->
+    <RepositoryUrl>https://github.com/EoflaOE/Kernel-Simulator.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <!-- Dependencies set up -->
     <Dependencies>
       <dependency id="MadMilkman.Ini" version="1.0.6.0" />
