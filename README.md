@@ -48,7 +48,7 @@ NOTE: Make sure to follow the prerequisites.
 
 - VLC Media Player (For TTS and playback for test shell) (Debian and its derivatives: `sudo apt install vlc libvlc-dev gtk-sharp2`)
 
-- Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi`)
+- Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi libcpanel-json-xs-perl`)
 
 ## |-----+--> _Build Instructions_ <--+-----|
 
