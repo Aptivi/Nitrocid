@@ -236,6 +236,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **2/22/2020 - 0.0.8:** Added new commands, Added new languages, Added screensavers, Added stage counter, Added eyecandy on startup, Removed `sses` and `noaliases` commands, Added 255 color support (truecolor will be done on 0.0.9), Added beep synth, Added RPC and SSH, Now codepages will change accordingly when setting languages, Listing partitions and drives now added, Added new placeholders, Added global IPv6 and IPv4 properties, Updated libraries, Debug will have their error levels (commits 362d004f and 06d3fefb), Targeted .NET Framework 4.8, Restored calculator, Fixed `copy` and `move` commands working incorrectly, Bug and crash fixes, and many more to discover.
 
+**3/4/2020 - WIP - 0.0.8.1:**
+
 ## |-----+--> _Contributors_ <--+-----|
 
 **EoflaOE:** Owner of Kernel Simulator
