@@ -379,7 +379,6 @@
     <None Include="Resources\ita.txt" />
     <None Include="Resources\fin.txt" />
     <None Include="Resources\dtc.txt" />
-    <None Include="packages.config" />
     <None Include="Resources\eng.txt" />
     <None Include="Resources\spa.txt" />
     <None Include="Resources\ptg.txt" />
