@@ -24,8 +24,8 @@ Module FTPTools
         Else
             Try
                 'Create an FTP stream to connect to
-                Dim FtpHost As String = address.Replace("ftps://", "").Replace(address.Substring(address.LastIndexOf(":")), "")
-                Dim FtpPort As String = address.Replace("ftps://", "").Replace(FtpHost + ":", "")
+                Dim FtpHost As String = address.Replace("ftps://", "").Replace("ftp://", "").Replace(address.Substring(address.LastIndexOf(":")), "")
+                Dim FtpPort As String = address.Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "")
 
                 'Check to see if no port is provided by client
                 If FtpHost = FtpPort Then

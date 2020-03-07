@@ -51,7 +51,11 @@ Public Module FTPGetCommand
         Try
             If words(0) = "connect" Then
                 If args.Count <> 0 Then
-                    TryToConnect($"ftps://{args(0)}")
+                    If args(0).StartsWith("ftp://") Or args(0).StartsWith("ftps://") Then
+                        TryToConnect(args(0))
+                    Else
+                        TryToConnect($"ftps://{args(0)}")
+                    End If
                 Else
                     W(DoTranslation("Enter an FTP server.", currentLang), True, ColTypes.Neutral)
                 End If
