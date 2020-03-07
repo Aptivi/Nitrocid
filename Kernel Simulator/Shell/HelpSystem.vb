@@ -294,7 +294,7 @@ Public Module HelpSystem
 
         ElseIf command = "rexec" Then
 
-            W(DoTranslation("Usage:", currentLang) + " rexec: " + DoTranslation("Remotely executes a command to remote PC", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " rexec <address> <command>: " + DoTranslation("Remotely executes a command to remote PC", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "rmuser" Then
 
@@ -307,12 +307,12 @@ Public Module HelpSystem
 
         ElseIf command = "setcolors" Then
 
-            W(DoTranslation("Usage:", currentLang) + " setcolors <inputColor/def/RESET> <licenseColor/def/RESET> <contKernelErrorColor/def/RESET> <uncontKernelErrorColor/def/RESET> <hostNameShellColor/def/RESET> <userNameShellColor/def/RESET> <backgroundColor/def/RESET> <neutralTextColor/def/RESET> <cmdListColor/def/RESET> <cmdDefColor/def/RESET>" + vbNewLine +
+            W(DoTranslation("Usage:", currentLang) + " setcolors <inputColor/def/RESET> <licenseColor/def/RESET> <contKernelErrorColor/def/RESET> <uncontKernelErrorColor/def/RESET> <hostNameShellColor/def/RESET> <userNameShellColor/def/RESET> <backgroundColor/def/RESET> <neutralTextColor/def/RESET> <cmdListColor/def/RESET> <cmdDefColor/def/RESET> <stageColor/def/RESET>" + vbNewLine +
               "       " + DoTranslation("Friends of", currentLang) + " setcolors: setthemes", True, ColTypes.Neutral)
 
         ElseIf command = "setsaver" Then
 
-            W(DoTranslation("Usage:", currentLang) + " setsaver <modNameSS.m/matrix/disco/disco255/colorMix/colorMix255/glitterMatrix/lines/glitterColor/aptErrorSim/hackUserFromAD>" + vbNewLine +
+            W(DoTranslation("Usage:", currentLang) + " setsaver <modNameSS.m/matrix/disco/disco255/colorMix/colorMix255/glitterMatrix/lines/lines255/glitterColor/aptErrorSim/hackUserFromAD>" + vbNewLine +
               "       " + DoTranslation("where modnameSS.m will be", currentLang) + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
 
         ElseIf command = "setthemes" Then
