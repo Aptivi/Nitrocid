@@ -25,7 +25,7 @@ Public Module Filesystem
     Public CurrDir As String
     Public UACNotice As New Thread(AddressOf UACNoticeShow)
 
-
+    'TODO: Remove directory structure parsing as it's unnecessary; we already can do {File|Directory}.Exists on requested dirs and files on the next version.
     'Subs
     Public Sub SetCurrDir(ByVal dir As String)
         Dim direct As String
