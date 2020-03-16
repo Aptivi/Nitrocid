@@ -236,7 +236,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **2/22/2020 - 0.0.8:** Added new commands, Added new languages, Added screensavers, Added stage counter, Added eyecandy on startup, Removed `sses` and `noaliases` commands, Added 255 color support (truecolor will be done on 0.0.9), Added beep synth, Added RPC and SSH, Now codepages will change accordingly when setting languages, Listing partitions and drives now added, Added new placeholders, Added global IPv6 and IPv4 properties, Updated libraries, Debug will have their error levels (commits 362d004f and 06d3fefb), Targeted .NET Framework 4.8, Restored calculator, Fixed `copy` and `move` commands working incorrectly, Bug and crash fixes, and many more to discover.
 
-**3/4/2020 - WIP - 0.0.8.1:**
+**3/16/2020 - 0.0.8.1:** Removed remaining `sses` command, Updated FluentFTP and LibVLCSharp libraries, Now, the `ftp` command no longer reports an error if you have appended `ftp://` or `ftps://` before the IP address or hostname, Added `rexec` arguments to command help, Updated `setcolors` and `setsaver` help commands to their latest versions
 
 ## |-----+--> _Contributors_ <--+-----|
 
