@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>KS</id>
+    <version>0.0.8.5</version>
+    <packageSourceUrl>http://github.com/EoflaOE/Kernel-Simulator</packageSourceUrl>
+
+    <title>Kernel Simulator</title>
+    <authors>EoflaOE</authors>
+    <projectUrl>http://github.com/EoflaOE/Kernel-Simulator</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/EoflaOE/Kernel-Simulator/b0fc8a62db4c4106f1364e6b1706d3bfa018a2eb/Kernel%20Simulator/iconfinder_applications-utilities_8840.ico</iconUrl>
+    <copyright>Copyright © 2018-2020 EoflaOE and its companies, All rights reserved.</copyright>
+    <licenseUrl>https://github.com/EoflaOE/Kernel-Simulator/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <tags>ks kernel simulator vb.net</tags>
+    <summary>Simulates our future-planned kernel</summary>
+    <description>Kernel Simulator is the program that lets you simulate our early aspects of the kernel that will be made in the future. Please note that it is not automatically updated. For more information, please go to the project URL.</description>
+    <releaseNotes>https://github.com/EoflaOE/Kernel-Simulator/blob/master/README.md#--------history--------</releaseNotes>
+
+    <dependencies>
+      <dependency id="dotnetfx" version="4.8.0.20190930"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
