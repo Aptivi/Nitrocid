@@ -6,11 +6,7 @@
 
 This simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal. KS _will_ continue to be developed, even if we made the real PC version of Kernel.
 
-After 4 months of development, we are announcing that the kernel version 0.0.8 is finally finished! We are making releases as soon as we can.
-
-## |-----+--> _Notes_ <--+-----|
-
-- We took out Windows XP support in 0.0.5.9 in favor of NuGet and .NET Framework 4.8.
+The PPA for KS will come shortly as promised.
 
 ## |-----+--> _Virus Warning_ <--+-----|
 
@@ -24,7 +20,7 @@ For more information, inspect [this wiki page](https://github.com/EoflaOE/Kernel
 
 ## |-----+--> _How to run/install_ <--+-----|
 
-If you are going to install KS without building from source, either look at the Releases, or use [this link](https://chocolatey.org/packages/KS/). (`choco install ks`, Run using `Kernel Simulator` on the CMD or on Run.)
+If you are going to install KS without building from source, either look at the Releases, or use [this link](https://chocolatey.org/packages/KS/). (`choco install ks`, Run using `"Kernel Simulator"` on the CMD or on Run. Make sure to include double quotes.)
 
 If you are going to install KS as a NuGet library when modding or integrating, use [this link](https://www.nuget.org/packages/KS/).
 
@@ -49,6 +45,8 @@ NOTE: Make sure to follow the prerequisites.
 - VLC Media Player (For TTS and playback for test shell) (Debian and its derivatives: `sudo apt install vlc libvlc-dev gtk-sharp2`)
 
 - Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi libcpanel-json-xs-perl`)
+
+- Use the `isolated` binaries to get KS without Windows VLC dependencies.
 
 ## |-----+--> _Build Instructions_ <--+-----|
 
@@ -237,6 +235,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **2/22/2020 - 0.0.8:** Added new commands, Added new languages, Added screensavers, Added stage counter, Added eyecandy on startup, Removed `sses` and `noaliases` commands, Added 255 color support (truecolor will be done on 0.0.9), Added beep synth, Added RPC and SSH, Now codepages will change accordingly when setting languages, Listing partitions and drives now added, Added new placeholders, Added global IPv6 and IPv4 properties, Updated libraries, Debug will have their error levels (commits 362d004f and 06d3fefb), Targeted .NET Framework 4.8, Restored calculator, Fixed `copy` and `move` commands working incorrectly, Bug and crash fixes, and many more to discover.
 
 **3/16/2020 - 0.0.8.1:** Removed remaining `sses` command, Updated FluentFTP and LibVLCSharp libraries, Now, the `ftp` command no longer reports an error if you have appended `ftp://` or `ftps://` before the IP address or hostname, Added `rexec` arguments to command help, Updated `setcolors` and `setsaver` help commands to their latest versions
+
+**3/17/2020 - WIP - 0.0.8.5:**
 
 ## |-----+--> _Contributors_ <--+-----|
 

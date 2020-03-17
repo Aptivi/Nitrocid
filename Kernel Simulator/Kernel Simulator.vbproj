@@ -175,7 +175,7 @@
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="REL"</DefineConstants>
+    <DefineConstants>SPECIFIER="DEV"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -191,7 +191,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>32.2.1</Version>
+      <Version>32.2.2</Version>
     </PackageReference>
     <PackageReference Include="LibVLCSharp">
       <Version>3.4.3</Version>
