@@ -208,6 +208,7 @@ CHOICE:
 
             'Set current language
             W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, currentLang, lang)
+            Dim OldModDescGeneric As String = DoTranslation("Command defined by ", currentLang)
             currentLang = lang
             Dim ksconf As New IniFile()
             Dim pathConfig As String = paths("Configuration")
@@ -218,6 +219,7 @@ CHOICE:
             'Update help list for translated help
             InitHelp()
             InitFTPHelp()
+            ReloadGenericDefs(OldModDescGeneric)
         Else
             W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Neutral, lang)
         End If

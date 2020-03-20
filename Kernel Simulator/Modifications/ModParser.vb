@@ -170,7 +170,7 @@ Public Module ModParser
                 If script.Def = "" Then
                     W(DoTranslation("No definition for command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
                     Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
-                    script.Def = DoTranslation("Command defined by ", currentLang) + script.Name 'TODO: Update the "Command defined by" part each time the user wants to change language
+                    script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
                 End If
                 moddefs.Add(script.Cmd, script.Def)
             End If
@@ -193,6 +193,15 @@ Public Module ModParser
         For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
             Wdbg("I", "Reloading mod {0}", modFile.Replace(modPath, ""))
             CompileCustom(modFile.Replace(modPath, ""))
+        Next
+    End Sub
+
+    Sub ReloadGenericDefs(ByVal OldModDesc As String)
+        For i As Integer = 0 To moddefs.Keys.Count - 1
+            Dim Cmd As String = moddefs.Keys(i)
+            If moddefs(Cmd).Contains(OldModDesc) Then
+                moddefs(Cmd) = moddefs(Cmd).Replace(OldModDesc, DoTranslation("Command defined by ", currentLang))
+            End If
         Next
     End Sub
 
