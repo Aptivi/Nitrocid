@@ -294,9 +294,17 @@ License (GNU GPL 2.0): https://code.videolan.org/videolan/vlc/blob/master/COPYIN
 
 Source code: https://github.com/sshnet/SSH.NET/
 
-Copyright (c) Renci
+Copyright © Renci
 
 License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
+
+### Nuget.Build.Tasks.Pack (build dependency)
+
+Source code: https://github.com/NuGet/NuGet.Client
+
+Copyright © .NET Foundation. All rights reserved.
+
+License (Apache 2.0): https://github.com/NuGet/NuGet.Client/blob/dev/LICENSE.txt
 
 ## |-----+--> _License - GNU GPL_ <--+-----|
 

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Kernel Simulator"
+    "\\.github",
+    "\\ChocolateyPack\\tools"
   ],
+  "SelectedNode": "\\.github\\issue_template.md",
   "PreviewInSolutionExplorer": false
 }
