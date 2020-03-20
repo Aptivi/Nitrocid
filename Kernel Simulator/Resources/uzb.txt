@@ -554,8 +554,8 @@ Sig'imi: {0} GB ({1}, {2}, {3})
 Siz yaqinda chiqarilgan versiyani ishlatayotganga o'xshaysiz. Hozir foydalanish xavfsizroq bo'lsa-da, barqaror versiyada qolish tavsiya etiladi.
 Tizim yangilanishi
 Tizim yangilanishlari tekshirilmoqda ...
-Yangi versiya topildi:
-Siz yuklab olishingiz mumkin:
+Yangi versiya topildi: 
+Siz yuklab olishingiz mumkin: 
 Yangilanishlarni tekshirib bo'lmadi: {0}
 Tuzatish jurnali topilmadi
 So'nggi bildirishnomalar yo'q

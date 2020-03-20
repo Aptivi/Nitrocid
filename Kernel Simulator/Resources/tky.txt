@@ -554,8 +554,8 @@ Kapasite: {0} GB ({1}, {2}, {3})
 Görünüşe göre yaklaşan sürüm sürümünü çalıştırıyorsunuz. Şimdi kullanmak daha güvenli olsa da, kararlı sürümde kalmanız önerilir.
 Sistem güncellemesi
 Sistem güncellemeleri kontrol ediliyor ...
-Yeni sürüm bulundu:
-Şuradan indirebilirsiniz:
+Yeni sürüm bulundu: 
+Şuradan indirebilirsiniz: 
 Güncellemeler kontrol edilemedi: {0}
 Hata ayıklama günlüğü bulunamadı
 Son bildirim yok

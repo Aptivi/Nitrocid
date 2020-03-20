@@ -554,8 +554,8 @@ Pojemność: {0} GB ({1}, {2}, {3})
 Wygląda na to, że korzystasz z wersji zbliżającej się do wydania. Chociaż korzystanie z niego jest teraz bezpieczniejsze, zaleca się pozostanie w wersji stabilnej.
 Aktualizacja systemu
 Sprawdzanie aktualizacji systemu ...
-Znaleziono nową wersję:
-Możesz pobrać go z:
+Znaleziono nową wersję: 
+Możesz pobrać go z: 
 Nie można sprawdzić aktualizacji: {0}
 Nie znaleziono dziennika debugowania
 Brak ostatnich powiadomień

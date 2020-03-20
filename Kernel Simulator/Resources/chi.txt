@@ -554,8 +554,8 @@ Róngliàng: {0} GB ({1}, {2}, {3})
 Kàn qǐlái nín zhèngzài yùnxíng jíjiāng fābù de bǎnběn. Suīrán xiànzài shǐyòng qǐlái gèng ānquán, dàn jiànyì nín jìxù shǐyòng wěndìng bǎnběn.
 Xìtǒng gēngxīn
 Zhèngzài jiǎnchá xìtǒng gēngxīn...
-Zhǎodào xīn bǎnběn:
-Nín kěyǐ zài yǐxià wèizhì xiàzài:
-Wúfǎ jiǎnchá gēngxīn:{0}
+Zhǎodào xīn bǎnběn: 
+Nín kěyǐ zài yǐxià wèizhì xiàzài: 
+Wúfǎ jiǎnchá gēngxīn: {0}
 Zhǎo bù dào tiáoshì rìzhì
 Zuìjìn méiyǒu tōngzhī

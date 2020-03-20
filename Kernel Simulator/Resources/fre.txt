@@ -554,8 +554,8 @@ Capacité: {0} Go ({1}, {2}, {3})
 On dirait que vous exécutiez la version imminente. Bien qu'il soit plus sûr d'utiliser maintenant, il est recommandé de rester sur la version stable.
 Mise à jour du système
 Vérification des mises à jour du système ...
-Nouvelle version trouvée:
-Vous pouvez le télécharger sur:
+Nouvelle version trouvée: 
+Vous pouvez le télécharger sur: 
 Échec de la vérification des mises à jour: {0}
 Journal de débogage introuvable
 Aucune notification récente

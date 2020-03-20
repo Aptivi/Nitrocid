@@ -554,8 +554,8 @@ yonglyang : {0} GB ({1}, {2}, {3})
 chulsi yejeong beojeon-eul silhaengjung-in geos gatseubnida. jigeum sayonghaneun geos-i deo anjeonhajiman anjeongjeog-in beojeon-eul yujihaneun geos-i johseubnida.
 siseutem eobdeiteu
 siseutem eobdeiteu hwag-in jung ...
-sae beojeon-eul chaj-assseubnida.
-da-eum-eseo daunlodeu hal su issseubnida.
+sae beojeon-eul chaj-assseubnida: 
+da-eum-eseo daunlodeu hal su issseubnida: 
 eobdeiteuleul hwag-inhaji moshaessseubnida: {0}
 dibeogeu logeuleul chaj-eul su eobs-seubnida
 choegeun allim-i eobs-seubnida.

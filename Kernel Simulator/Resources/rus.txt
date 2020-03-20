@@ -554,8 +554,8 @@ Yemkost': {0} GB ({1}, {2}, {3})
 Pokhozhe, vy rabotali nad blizhayshey versiyey. Khotya seychas eto bezopasneye v ispol'zovanii, rekomenduyetsya sokhranit' stabil'nuyu versiyu.
 Sistemnoye obnovleniye
 Proverka obnovleniy sistemy ...
-Naydena novaya versiya:
-Vy mozhete skachat' yego po adresu:
+Naydena novaya versiya: 
+Vy mozhete skachat' yego po adresu: 
 Ne udalos' proverit' nalichiye obnovleniy: {0}
 Zhurnal otladki ne nayden
 Net nedavnikh uvedomleniy

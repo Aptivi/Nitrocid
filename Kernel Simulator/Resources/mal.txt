@@ -554,8 +554,8 @@ Kapasiti: {0} GB ({1}, {2}, {3})
 Nampaknya anda sedang menjalankan versi yang hampir dilepaskan. Walaupun selamat untuk digunakan sekarang, disarankan agar anda tetap pada versi yang stabil.
 Kemas kini sistem
 Memeriksa kemas kini sistem ...
-Menemui versi baru:
-Anda boleh memuat turunnya di:
+Menemui versi baru: 
+Anda boleh memuat turunnya di: 
 Gagal menyemak kemas kini: {0}
 Log debug tidak dijumpai
 Tiada pemberitahuan baru-baru ini

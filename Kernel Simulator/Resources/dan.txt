@@ -554,8 +554,8 @@ Kapacitet: {0} GB ({1}, {2}, {3})
 Det ser ud til, at du kørte versionen til næsten frigivelse. Selvom det er mere sikkert at bruge nu, anbefales det, at du forbliver på den stabile version.
 Systemopdatering
 Kontrollerer for systemopdateringer ...
-Fundet ny version:
-Du kan downloade det på:
+Fundet ny version: 
+Du kan downloade det på: 
 Kontrol af opdateringer kunne ikke kontrolleres: {0}
 Debug-log ikke fundet
 Ingen nylige meddelelser

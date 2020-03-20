@@ -554,8 +554,8 @@ Kapazität: {0} GB ({1}, {2}, {3})
 Sieht so aus, als hätten Sie die Nearing-Release-Version ausgeführt. Die Verwendung ist jetzt sicherer, es wird jedoch empfohlen, die stabile Version beizubehalten.
 Systemupdate
 Nach Systemupdates suchen ...
-Neue Version gefunden:
-Sie können es herunterladen unter:
+Neue Version gefunden: 
+Sie können es herunterladen unter: 
 Fehler beim Suchen nach Updates: {0}
 Debug-Protokoll nicht gefunden
 Keine aktuellen Benachrichtigungen

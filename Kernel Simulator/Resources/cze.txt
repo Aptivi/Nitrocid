@@ -554,8 +554,8 @@ Kapacita: {0} GB ({1}, {2}, {3})
 Vypadá to, že jste používali verzi blížící se verze. I když je nyní bezpečnější používat, doporučujeme vám zůstat ve stabilní verzi.
 Aktualizace systému
 Probíhá kontrola aktualizací systému ...
-Nalezeno nové verze:
-Můžete si ji stáhnout na:
+Nalezeno nové verze: 
+Můžete si ji stáhnout na: 
 Aktualizace se nezdařila: {0}
 Protokol ladění nebyl nalezen
 Žádná nedávná oznámení

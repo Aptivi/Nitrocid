@@ -554,8 +554,8 @@ Capaciteit: {0} GB ({1}, {2}, {3})
 Het lijkt erop dat je de versie met bijna-release gebruikte. Hoewel het veiliger is om nu te gebruiken, wordt het aanbevolen om op de stabiele versie te blijven.
 Systeem update
 Controleren op systeemupdates ...
-Nieuwe versie gevonden:
-Je kunt het downloaden op:
+Nieuwe versie gevonden: 
+Je kunt het downloaden op: 
 Kon niet controleren op updates: {0}
 Foutopsporingslogboek niet gevonden
 Geen recente meldingen

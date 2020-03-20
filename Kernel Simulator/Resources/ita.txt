@@ -554,8 +554,8 @@ Capacità: {0} GB ({1}, {2}, {3})
 Sembra che tu stia eseguendo la versione di rilascio prossima. Sebbene sia più sicuro da usare ora, si consiglia di rimanere nella versione stabile.
 Aggiornamento del sistema
 Verifica aggiornamenti del sistema ...
-Trovato nuova versione:
-Puoi scaricarlo da:
+Trovato nuova versione: 
+Puoi scaricarlo da: 
 Impossibile controllare gli aggiornamenti: {0}
 Registro di debug non trovato
 Nessuna notifica recente

@@ -554,8 +554,8 @@ kshamata: {0} jeebee ({1}, {2}, {3})
 lagata hai ki aap paas-rileez sanskaran chala rahe the. haalaanki yah ab upayog karane ke lie surakshit hai, yah anushansa kee jaatee hai ki aap sthir sanskaran par rahen.
 sistam adyatan
 sistam apadet ke lie jaanch kee ja rahee hai ...
-naya sanskaran mila:
-aap ise yahaan daunalod kar sakate hain:
+naya sanskaran mila: 
+aap ise yahaan daunalod kar sakate hain: 
 adyatanon kee jaanch karane mein viphal: {0}
 dibag log nahin mila
 haal kee soochanaen nahin

@@ -554,8 +554,8 @@ Kapasitet: {0} GB ({1}, {2}, {3})
 Ser ut som om du kjørte versjonen til nær utgivelse. Selv om det er tryggere å bruke nå, anbefales det at du holder deg på den stabile versjonen.
 System oppdatering
 Søker etter systemoppdateringer ...
-Fant ny versjon:
-Du kan laste den ned på:
+Fant ny versjon: 
+Du kan laste den ned på: 
 Kunne ikke se etter oppdateringer: {0}
 Feilsøkingslogg ikke funnet
 Ingen nylige varsler

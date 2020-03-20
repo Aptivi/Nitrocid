@@ -554,8 +554,8 @@ Kapasitas: {0} GB ({1}, {2}, {3})
 Sepertinya Anda menjalankan versi rilis-dekat. Meskipun lebih aman untuk digunakan sekarang, Anda disarankan untuk tetap menggunakan versi stabil.
 Pembaruan sistem
 Memeriksa pembaruan sistem ...
-Menemukan versi baru:
-Anda dapat mengunduhnya di:
+Menemukan versi baru: 
+Anda dapat mengunduhnya di: 
 Gagal memeriksa pembaruan: {0}
 Log debug tidak ditemukan
 Tidak ada pemberitahuan terbaru
