@@ -267,7 +267,6 @@ Public Module KernelTools
         slotsUsedName = Nothing
         slotsUsedNum = 0
         totalSlots = 0
-        CurrDirStructure.Clear()
         modcmnds.Clear()
         moddefs.Clear()
         scripts.Clear()

@@ -1,5 +1,4 @@
-﻿
-'    Kernel Simulator  Copyright (C) 2018-2020  EoflaOE
+﻿'    Kernel Simulator  Copyright (C) 2018-2020  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -16,16 +15,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Threading
-
 Public Module Filesystem
 
     'Variables
-    Public CurrDirStructure As New List(Of String)
     Public CurrDir As String
-    Public UACNotice As New Thread(AddressOf UACNoticeShow)
 
-    'TODO: Remove directory structure parsing as it's unnecessary; we already can do {File|Directory}.Exists on requested dirs and files on the next version.
     'Subs
     Public Sub SetCurrDir(ByVal dir As String)
         Dim direct As String
@@ -41,8 +35,6 @@ Public Module Filesystem
             Try
                 Dim Parser As New IO.DirectoryInfo(direct)
                 CurrDir = Parser.FullName.Replace("\", "/")
-                Wdbg("I", "Initializing structure of {0}...", CurrDir)
-                InitStructure()
             Catch sex As Security.SecurityException
                 Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
                 W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Neutral, direct, sex.Message)
@@ -66,39 +58,10 @@ Public Module Filesystem
     End Sub
     Public Sub InitFS()
         CurrDir = paths("Home")
-        Wdbg("I", "Initializing structure of {0}...", CurrDir)
-        InitStructure()
-    End Sub
-    Public Sub InitStructure()
-        Wdbg("I", "Populating list...")
-        UACNotice.Start()
-        Dim DirStructure As New List(Of String)
-        Wdbg("I", "Populating directory structure...")
-        DirStructure.AddRange(IO.Directory.EnumerateDirectories(CurrDir, "*", IO.SearchOption.TopDirectoryOnly))
-        For Each Dir As String In DirStructure
-            Try
-                'Why CurrDirStructure? Because "For Each" block doesn't support modifications inside the loop.
-                Wdbg("I", "Populating directory structure for ""{0}""...", Dir)
-                CurrDirStructure.AddRange(IO.Directory.EnumerateDirectories(Dir, "*", IO.SearchOption.AllDirectories))
-            Catch ex As UnauthorizedAccessException
-                Dim OffendingDir As String = ex.Message.Substring(ex.Message.IndexOf("'") + 1, ex.Message.LastIndexOf("'") - ex.Message.IndexOf("'"))
-                OffendingDir = OffendingDir.Replace("'", "")
-                Wdbg("E", "Unauthorized to enumerate a directory. {0}", OffendingDir)
-            End Try
-        Next
-        CurrDirStructure.AddRange(DirStructure)
-        CurrDirStructure.Add(CurrDir)
-        Wdbg("I", "All structures added with the count of {0}", CurrDirStructure.Count)
-        For i As Integer = 0 To CurrDirStructure.Count - 1
-            CurrDirStructure(i) = CurrDirStructure(i).Replace("\", "/")
-        Next
-        Wdbg("I", "All directories are made universal to all platforms.")
-        UACNotice.Abort()
-        UACNotice = New Thread(AddressOf UACNoticeShow)
     End Sub
     Public Sub List(ByVal folder As String)
         Wdbg("I", "Folder {0} will be checked if it is empty or equals CurrDir ({1})...", folder, CurrDir)
-        If CurrDirStructure.Contains(folder) Or IO.Directory.Exists(folder) Then
+        If IO.Directory.Exists(folder) Then
             Dim enumeration As IEnumerable(Of String)
             Try
                 enumeration = IO.Directory.EnumerateFileSystemEntries(folder)
@@ -165,20 +128,8 @@ Public Module Filesystem
             Next
         Else
             W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Neutral, folder)
-            Wdbg("I", "CurrDirStructure = {0}, IO.Directory.Exists = {1}", CurrDirStructure.Contains(folder), IO.Directory.Exists(folder))
+            Wdbg("I", "IO.Directory.Exists = {0}", IO.Directory.Exists(folder))
         End If
-    End Sub
-    Private Sub UACNoticeShow()
-        Try
-            For i As Integer = 0 To 30
-                If i = 30 Then
-                    W(DoTranslation("It seems that the file system population takes too long.", currentLang), True, ColTypes.Neutral)
-                End If
-                Thread.Sleep(1000)
-            Next
-        Catch ex As Exception
-            Exit Sub
-        End Try
     End Sub
 
 End Module
