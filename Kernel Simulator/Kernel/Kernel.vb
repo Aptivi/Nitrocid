@@ -18,7 +18,6 @@ Imports System.Reflection.Assembly
 
 'TODOs:
 '   TODO: Interactive host system file manager (Planned in the bootable version)
-'   TODO: Permanent list of usernames and passwords (passwords in encrypted form)
 Public Module Kernel
 
     'Variables
@@ -130,6 +129,7 @@ Public Module Kernel
                         Console.SetOut(DefConsoleOut)
                     End If
                 End If
+                InitializeUsers()
 
                 'Show current time
                 ShowCurrentTimes()

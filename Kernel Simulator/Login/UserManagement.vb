@@ -16,31 +16,44 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
+Imports System.Text.RegularExpressions
 
 Public Module UserManagement
 
     'Variables
     Public adminList As New Dictionary(Of String, Boolean)()         'Users that are allowed to have administrative access.
     Public disabledList As New Dictionary(Of String, Boolean)()      'Users that are unable to login
+    Public UsersWriter As StreamWriter
 
     '---------- User Management ----------
-    Public Sub InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "")
+    Public Sub InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "", Optional ByVal ComputationNeeded As Boolean = True)
 
         Try
             'Compute hash of a password
-            Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(unpassword))
-            unpassword = GetArrayEnc(hashbyte)
-            Wdbg("I", "Hash computed.")
+            Dim Regexp As New Regex("^([a-fA-F0-9]{64})$")
+            If ComputationNeeded Then
+                Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(unpassword))
+                unpassword = GetArrayEnc(hashbyte)
+                Wdbg("I", "Hash computed.")
+            ElseIf Not Regexp.IsMatch(unpassword) Then
+                Throw New InvalidOperationException("Trying to add unencrypted password to users list. That won't work properly, since login relies on encrypted passwords.")
+            End If
 
             'Add user
-            userword.Add(uninitUser, unpassword)
+            If Not File.Exists(paths("Users")) Then File.Create(paths("Users")).Close()
+            Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+            If Not userword.ContainsKey(uninitUser) Then userword.Add(uninitUser, unpassword)
+            UsersWriter = New StreamWriter(paths("Users"), True) With {.AutoFlush = True}
+            If Not UsersLines.Contains(uninitUser + "," + unpassword) Then UsersWriter.WriteLine(uninitUser + "," + unpassword)
+            UsersWriter.Close() : UsersWriter.Dispose()
 
             'Ready permissions
             Wdbg("I", "Username {0} added. Readying permissions...", uninitUser)
-            adminList.Add(uninitUser, False)
-            disabledList.Add(uninitUser, False)
+            If Not adminList.ContainsKey(uninitUser) Then adminList.Add(uninitUser, False)
+            If Not disabledList.ContainsKey(uninitUser) Then disabledList.Add(uninitUser, False)
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
@@ -52,6 +65,15 @@ Public Module UserManagement
             End If
         End Try
 
+    End Sub
+
+    'This time, this sub is different from first versions of KS. It reads the user file and adds them to the list.
+    Public Sub InitializeUsers()
+        'Opens file stream
+        Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+        For Each Line As String In UsersLines
+            InitializeUser(Line.Remove(Line.IndexOf(",")), Line.Substring(Line.IndexOf(",") + 1), False)
+        Next
     End Sub
 
     Public Sub AddUser(ByVal newUser As String, Optional ByVal newPassword As String = "")
@@ -105,6 +127,16 @@ Public Module UserManagement
                     'Remove user
                     Wdbg("I", "userword.ToBeRemoved = {0}", user)
                     userword.Remove(user)
+
+                    'Remove user from users.csv
+                    Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+                    For i As Integer = 0 To UsersLines.Count - 1
+                        If UsersLines(i).StartsWith($"{user},") Then
+                            UsersLines.RemoveAt(i)
+                            Exit For
+                        End If
+                    Next
+                    File.WriteAllLines(paths("Users"), UsersLines)
                     W(DoTranslation("User {0} removed.", currentLang), True, ColTypes.Neutral, user)
                 End If
             End If
