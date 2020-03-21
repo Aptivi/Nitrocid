@@ -99,6 +99,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Upalabdha kamānḍa: {0}
+        '''Ādēśa likhuna: 
+        '''Kamānḍa iñjēkaśana bātila karā haẏēchē.
+        '''Phām̐kā chāṛā&apos;i kamā diẏē buṭa ārgumēnṭaguli pr̥thaka karuna, udāharaṇasbarūpa, &apos;mōṭaḍa, jipuprōba&apos;
+        '''spēsa saha kōlana saha&apos;sēmiḍinajēkṭa&apos; ēra upara pr̥thaka pr̥thaka kamānḍa, udāharaṇasbarūpa, &apos;sēmiḍinajēkṭa hyākāra sēṭamimēsa: Bipa 1024 0.5&apos;
+        '''Manē rākhabēna yē&apos;ḍibāga&apos; yuktiṭi kārnēlaṭikē purōpuri kabhāra karē nā.
+        '''Bāragasa: Anurōdha karā ārgumēnṭa {0} not pā&apos;ōẏā yāẏa ni.
+        '''Bāragasa: Yuktitē apasāraṇayōgya truṭi:
+        '''Upalabdha ār [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ben() As String
+            Get
+                Return ResourceManager.GetString("ben", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to উপলব্ধ কমান্ড: {0}
+        '''আদেশ লিখুন:
+        '''কমান্ড ইঞ্জেকশন বাতিল করা হয়েছে।
+        '''ফাঁকা ছাড়াই কমা দিয়ে বুট আর্গুমেন্টগুলি পৃথক করুন, উদাহরণস্বরূপ, &apos;মোটড, জিপুপ্রোব&apos;
+        '''স্পেস সহ কোলন সহ &apos;সেমিডিনজেক্ট&apos; এর উপর পৃথক পৃথক কমান্ড, উদাহরণস্বরূপ, &apos;সেমিডিনজেক্ট হ্যাকার সেটমিমেস: বিপ 1024 0.5&apos;
+        '''মনে রাখবেন যে &apos;ডিবাগ&apos; যুক্তিটি কার্নেলটিকে পুরোপুরি কভার করে না।
+        '''বারগস: অনুরোধ করা আর্গুমেন্ট {0 not পাওয়া যায় নি।
+        '''বারগস: যুক্তিতে অপসারণযোগ্য ত্রুটি:
+        '''উপলব্ধ আর্গুমেন্ট: {0}
+        '''যুক্তি (সহায়তার জন্য &apos;সহায়তা&apos;):
+        '''ইনজেক্টেড আর্গুমেন্টগুলি  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ben_T() As String
+            Get
+                Return ResourceManager.GetString("ben_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Kěyòng mìnglìng: {0}
         '''Xiě mìnglìng: 
         '''Mìnglìng zhùrù yǐ bèi qǔxiāo.
@@ -534,6 +570,43 @@ Namespace My.Resources
         Friend ReadOnly Property ptg() As String
             Get
                 Return ResourceManager.GetString("ptg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Upalabadha kamāṇḍāṁ: {0}
+        '''Kamāṇḍa likhō:
+        '''Kamāṇḍa ijaikaśana rada kara ditā gi&apos;ā hai.
+        '''Bināṁ sapēsa dē kāmi&apos;āṁ nāla būṭa āragūmaiṇṭāṁ nū vakha karō, udāharaṇa vajōṁ, &apos;mōṭaḍa, jīpīparōba&apos;
+        '''kamāṇḍāṁ nū&apos;saimīḍanījaikaṭa&apos; &apos;tē khālī thānvāṁ nāla vakha karō, udāharaṇa vajōṁ,&apos; saimīḍīnējaikaṭa saiṭīmēsa haikara: Bīpa 1024 0.5&apos;
+        '''Yāda rakhō ki&apos;ḍībaga&apos; āragūmaiṇṭa karanala nū pūrī tar&apos;hāṁ kavara nahīṁ karadā.
+        '''Bāraja: Bēnatī kītī ga&apos;ī dalīla {0} not nahīṁ milī hai.
+        '''Bārāṁ: Dalīla vica aṇajāṇa galatī:
+        '''Upalabadha bahi [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property pun() As String
+            Get
+                Return ResourceManager.GetString("pun", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ਉਪਲਬਧ ਕਮਾਂਡਾਂ: {0}
+        '''ਕਮਾਂਡ ਲਿਖੋ:
+        '''ਕਮਾਂਡ ਇੰਜੈਕਸ਼ਨ ਰੱਦ ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ.
+        '''ਬਿਨਾਂ ਸਪੇਸ ਦੇ ਕਾਮਿਆਂ ਨਾਲ ਬੂਟ ਆਰਗੂਮੈਂਟਾਂ ਨੂੰ ਵੱਖ ਕਰੋ, ਉਦਾਹਰਣ ਵਜੋਂ, &apos;ਮੋਟਡ, ਜੀਪੀਪਰੋਬ&apos;
+        '''ਕਮਾਂਡਾਂ ਨੂੰ &apos;ਸੈਮੀਡਨੀਜੈਕਟ&apos; &apos;ਤੇ ਖਾਲੀ ਥਾਂਵਾਂ ਨਾਲ ਵੱਖ ਕਰੋ, ਉਦਾਹਰਣ ਵਜੋਂ,&apos; ਸੈਮੀਡੀਨੇਜੈਕਟ ਸੈਟੀਮੇਸ ਹੈਕਰ: ਬੀਪ 1024 0.5 &apos;
+        '''ਯਾਦ ਰੱਖੋ ਕਿ &apos;ਡੀਬੱਗ&apos; ਆਰਗੂਮੈਂਟ ਕਰਨਲ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਕਵਰ ਨਹੀਂ ਕਰਦਾ.
+        '''ਬਾਰਜ: ਬੇਨਤੀ ਕੀਤੀ ਗਈ ਦਲੀਲ {0 not ਨਹੀਂ ਮਿਲੀ ਹੈ.
+        '''ਬਾਰਾਂ: ਦਲੀਲ ਵਿੱਚ ਅਣਜਾਣ ਗਲਤੀ:
+        '''ਉਪਲਬਧ ਬਹਿਸ: {0}
+        '''ਆਰਗੂਮੈਂਟਸ (ਮਦਦ ਲਈ &apos;ਮਦਦ&apos;):
+        '''ਜ਼ਖ਼ਮੀ ਬਹਿਸਾਂ ਨੂੰ ਅਗਲੇ ਰੀਬੂਟ ਤੇ ਚਲਾਉਣ ਲਈ ਤਹਿ ਕੀਤਾ ਜਾਵੇਗਾ.
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property pun_T() As String
+            Get
+                Return ResourceManager.GetString("pun_T", resourceCulture)
             End Get
         End Property
         

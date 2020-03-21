@@ -18,8 +18,8 @@
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb", "vtn"}
-    Public Transliterables() As String = {"arb", "chi", "ind", "jpn", "kor", "rus"}
+    Public availableLangs() As String = {"arb", "arb-T", "ben", "ben-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "spa", "swe", "tky", "uzb", "vtn"}
+    Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
 
@@ -66,6 +66,10 @@ Public Module Translate
                 translated = My.Resources.arb
             Case "arb-T" 'Arabic (translated)
                 translated = My.Resources.arb_T
+            Case "ben" 'Bengali (transliterated)
+                translated = My.Resources.ben
+            Case "ben-T" 'Bengali (translated)
+                translated = My.Resources.ben_T
             Case "chi" 'Chinese (transliterated)
                 translated = My.Resources.chi
             Case "chi-T" 'Chinese (translated)
@@ -108,6 +112,10 @@ Public Module Translate
                 translated = My.Resources.pol
             Case "ptg" 'Portuguese
                 translated = My.Resources.ptg
+            Case "pun" 'Punjabi (transliterated)
+                translated = My.Resources.pun
+            Case "pun-T" 'Punjabi (translated)
+                translated = My.Resources.pun_T
             Case "rmn" 'Romanian
                 translated = My.Resources.rmn
             Case "rus" 'Russian (transliterated)
@@ -172,6 +180,10 @@ CHOICE:
                         Console.OutputEncoding = Text.Encoding.GetEncoding(1256)
                         Console.InputEncoding = Text.Encoding.GetEncoding(1256)
                         Wdbg("I", "Encoding set successfully for Arabic to {0}.", Console.OutputEncoding.EncodingName)
+                    Case "ben-T"
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(57003)
+                        Console.InputEncoding = Text.Encoding.GetEncoding(57003)
+                        Wdbg("I", "Encoding set successfully for Bengali to {0}.", Console.OutputEncoding.EncodingName)
                     Case "chi-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(936)
                         Console.InputEncoding = Text.Encoding.GetEncoding(936)
@@ -184,6 +196,10 @@ CHOICE:
                         Console.OutputEncoding = Text.Encoding.GetEncoding(949)
                         Console.InputEncoding = Text.Encoding.GetEncoding(949)
                         Wdbg("I", "Encoding set successfully for Korean to {0}.", Console.OutputEncoding.EncodingName)
+                    Case "pun-T"
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(57011)
+                        Console.InputEncoding = Text.Encoding.GetEncoding(57011)
+                        Wdbg("I", "Encoding set successfully for Punjabi to {0}.", Console.OutputEncoding.EncodingName)
                     Case "rus-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(866)
                         Console.InputEncoding = Text.Encoding.GetEncoding(866)

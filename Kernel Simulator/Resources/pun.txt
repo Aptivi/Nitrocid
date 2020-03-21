@@ -1,0 +1,561 @@
+Upalabadha kamāṇḍāṁ: {0}
+Kamāṇḍa likhō:
+Kamāṇḍa ijaikaśana rada kara ditā gi'ā hai.
+Bināṁ sapēsa dē kāmi'āṁ nāla būṭa āragūmaiṇṭāṁ nū vakha karō, udāharaṇa vajōṁ, 'mōṭaḍa, jīpīparōba'
+kamāṇḍāṁ nū'saimīḍanījaikaṭa' 'tē khālī thānvāṁ nāla vakha karō, udāharaṇa vajōṁ,' saimīḍīnējaikaṭa saiṭīmēsa haikara: Bīpa 1024 0.5'
+Yāda rakhō ki'ḍībaga' āragūmaiṇṭa karanala nū pūrī tar'hāṁ kavara nahīṁ karadā.
+Bāraja: Bēnatī kītī ga'ī dalīla {0} not nahīṁ milī hai.
+Bārāṁ: Dalīla vica aṇajāṇa galatī:
+Upalabadha bahisa: {0}
+Āragūmaiṇṭasa (madada la'ī'madada'): 
+Zaḵẖamī bahisāṁ nū agalē rībūṭa tē calā'uṇa la'ī tahi kītā jāvēgā.
+Āragūmaiṇṭa ijaikaśana rada kara ditā gi'ā hai.
+Asala kamāṇḍa-lā'īna āragūmaiṇṭasa pārasa karana vēlē galatī: {0}
+Avaidha raga namūnā {0}
+mūla
+prathā
+hwprobe: Tuhāḍē hāraḍavē'ara dī jān̄ca kītī jā'ēgī. Kripā karakē uḍīka karō...
+Hwprobe: Hāraḍavē'ara pahilāṁ hī jān̄ci'ā hō'i'ā hai.
+Hwprobe: Hāraḍavē'ara dī paṛatāla nahīṁ kītī jāndī. 'Hwprobe' dī varatōṁ karō
+sīpīyū: Ika jāṁ vadhērē sīpīyū kōra dī jān̄ca vica asaphala rihā. Kivēṁ vī jāṇakārī dikhā rihā hai...
+Raima: Raima cipāṁ vicōṁ ika jāṁ vadhērē dī jān̄ca vica asaphala rihā. Kivēṁ vī jāṇakārī dikhā rihā hai...
+Aica ḍī ḍī: Ika jāṁ vadhērē hāraḍa ḍarā'īvāṁ dī paṛatāla karana vica asaphala rihā. Kivēṁ vī jāṇakārī dikhā rihā hai...
+Sī pī yū: Prōsaisarāṁ dī kula sakhi'ā: {0}
+Sīpīyū: {0} {1} Maigāharaṭaza
+raima: {0} Aimabī = {1} aima bī
+raima: Varatē ga'ē salāṭa (nāvāṁ nāla): {0}
+Raima: Varatē ga'ē salāṭa (nabarāṁ du'ārā): {0}/ {1} ({2}%)
+Raima: Jān̄ca dī sathitī nū baratarafa kara ditā gi'ā hai atē bhavikha dē rīlīza vica haṭā ditā jāvēgā.
+Aica ḍī ḍī: {0} {1} Jībī {2}
+aica ḍī ḍī: {0} {1} {2} Jībī {3}
+aica ḍī ḍī: Sī'aica'aisa: {4} Silaḍara | {5} sira | {6} saikaṭara
+aica ḍī ḍī: Sī'aica'aisa: {3} Silaḍara | {4} sira | {5} saikaṭara
+hwprobe: Jān̄ca samarathita nahīṁ hai ki'uṅki iha yūnikasa utē prōbarāṁ nū calā'uṇa la'ī ti'āra nahīṁ kītī ga'ī hai.
+Dēkhabhāla la'ī aiḍamina pāsavaraḍa daraja karō.
+Sūcī vica kō'ī hōra upabhōgatā bākī nahīṁ hana.
+Būṭa karana vēlē karanala galatī: {0}
+Ḍabala painika: Rībūṭa ṭā'īma adhikatama āgi'ā prāpata {0} galatī dē muṛa cālū samēṁ tōṁ vadha gi'ā hai. Tuhānū ika karanala baga mili'ā hai.
+[{0}] Painika: Galatī dā padhara {0} hōṇa kārana rībūṭa yōga.
+[{0}] Painika: Rībūṭa karana dā samāṁ: {1} Sakiṭa, 1 ghaṭē tōṁ vadha gi'ā. Iha 1 miṭa saiṭa kītā gi'ā hai.
+Ḍabala painika: Galatī kisama {0} avaidha hai.
+[{0}] Ḍīpānika: {1} - {2} Sakiṭa vica rībūṭa hō rihā hai...
+[{0}] Painika: Galatī dā padhara {0} hōṇa kārana rībūṭa asamarathita.
+[{0}] Painika: {1} - Karanala dī varatōṁ jārī rakhaṇa la'ī kō'ī vī kujī dabā'ō.
+[{0}] Painika: {1} - Bada karana la'ī kō'ī vī baṭana dabā'ō.
+[{0}] Painika: {1} - {2} Sakiṭa vica rībūṭa hō rihā hai...
+Ḍabala painika: Karanala baga: {0}
+Bada hō rihā hai...
+Rībūṭa kara rihā hai...
+---===+++> Karanala vica tuhāḍā savāgata hai sasakaraṇa {0} <+++===---
+karanala simūlēṭara dī ika hōra udāharaṇa cala rahī hai. Dakhala dē māmalē vica bada hō rihā hai.
+Upabhōgatā {0} the nū prabadhaka sūcī vica śāmala kītā gi'ā hai.
+Upabhōgatā {0} nū ayōga sūcī vica śāmala kītā gi'ā hai.
+Upabhōgatā nū āgi'ā sūcī'āṁ vica śāmala karana vica asaphala: Ayōga kisama {0}
+upabhōgatā nū āgi'ā sūcī'āṁ vica śāmala karana vica asaphala: Ayōga upabhōgatā {0}
+upabhōgatā {0} the nū prabadhaka sūcī vicōṁ haṭā ditā gi'ā hai.
+Upabhōgatā {0} nū ayōga sūcī vicōṁ haṭā ditā gi'ā hai.
+Anumatī sūcī vicōṁ upabhōgatā nū haṭā'uṇa vica asaphala: Ayōga kisama {0}
+tusīṁ pahilāṁ hī lauga ina hō cukē hō.
+Anumatī sūcī vicōṁ upabhōgatā nū haṭā'uṇa vica asaphala: Ayōga upabhōgatā {0}
+tuhānū adhikāra sisaṭama vica ika baga mili'ā hai: Avaidha mōḍa {0}
+tusīṁ jāṁ tāṁ baga labha li'ā hai, jāṁ āgi'ā jō tusīṁ jōṛana jāṁ haṭā'uṇa dī kōśiśa kītī hai pahilāṁ hī hō ga'ī hai, jāṁ kō'ī hōra galatī.
+Galatī {0}: {1}
+Tusīṁ jāṁ tāṁ baga labha li'ā hai, jāṁ āgi'ā, jisa nū tusīṁ navēṁ upabhōgatā la'ī sapādita karana dī kōśiśa kītī sī uha asaphala hō ga'ī.
+Upalabadha upabhōgatā nāma: {0}
+Upabhōgatā nāma: 
+Khālī thānvāṁ dī āgi'ā nahīṁ hai.
+Viśēśa pātarāṁ dī āgi'ā nahīṁ hai.
+Password {0} dā pāsavaraḍa:
+Galata gupata - kōḍa.
+Upabhōgatā ayōga hai.
+Galata yūzara nāṁ
+sathānadhārakāṁ nū pārasa karana dī kōśiśa daurāna galatī. {0} - Saṭaika ṭarēsa: 
+Sathānadhārakāṁ nū pārasa karana dī kōśiśa daurāna galatī. {0}
+Upabhōgatā nāma jōṛana dī kōśiśa vica galatī.
+Usrmgr: Upabhōgatā nāma Creat {0} baṇā rihā hai...
+Khālī upayōgakaratā.
+Yūzara {0} Nahīṁ mili'ā hai.
+Upabhōgatā {0} nū haṭā'uṇa dī āgi'ā nahīṁ hai.
+Upabhōgatā {0} already pahilāṁ hī lauga ina hai. Lauga ā'uṭa atē dūjē praśāsaka dē taura tē lauga ina.
+Yūzara {0} Nū haṭā'i'ā gi'ā.
+Upabhōgatā nāma haṭā'uṇa dī kōśiśa daurāna galatī.
+{1} Dā {0} = {2}
+zīrō nāla vaḍaṇa dī kōśiśa dī āgi'ā nahīṁ hai.
+Hisāba lagā'uṇa dī ika śakī kōśiśa kītī ga'ī hai jisadē natījē vajōṁ ōvaraphalō'a hō gi'ā.
+Gaṇanā karana vēlē ika galatī ā'ī hai: {0}
+{0} Nū {1} vica badali'ā nahīṁ jā sakadā.
+Jāṁ tāṁ sarōta
+ jāṁ mazila
+ saravara utē maujūda nahīṁ hai.
+{0} Tōṁ {1}: {2}
+{0} Tōṁ {1}: {2} Vica tabadīla karana dī kōśiśa daurāna galatī
+galatī
+bēnatī kītī sakarīna-sēvara {0} nahīṁ mili'ā hai.
+{0} Properly nū ṭhīka tarāṁ śurū kītā gi'ā hai.
+Initial {0} Ārabha nahīṁ hō'i'ā. Sakarīna sēvara kōḍa nū arabha karana vēlē ika galatī ā'ī hai.
+Sakarīna-sēvara {0} maujūda nahīṁ hai.
+Default {0} default nū ḍiphālaṭa sakrīnasēvara tē saiṭa kītā gi'ā hai.
+Sakarīnasēvara {0} ḍāṭābēsa vica nahīṁ labhi'ā. Nāma dī jān̄ca karō atē dubārā kōśiśa karō.
+Sakrīnasēvara hēṭha ditē kārana lōḍa nahīṁ kītā jā sakadā: 
+Ṭaikasaṭa chāpaṇa vēlē ika gabhīra aśudhī hai.
+Kaunaphigarēśana baṇā'uṇa dī kōśiśa karadi'āṁ ika galatī hai.
+Ithē kaunaphigarēśana baṇā'uṇa dī kōśiśa karadi'āṁ ika galatī hai: {0}
+An {0} tōṁ {1} taka dā apagrēḍa pā'i'ā gi'ā. Kaumphigarēśana apaḍēṭa kara rihā hai...
+Kaunaphigarēśana nū apaḍēṭa karana dī kōśiśa karana vica ika galatī hai: {0}.
+Kaumphigarēśana nū apaḍēṭa karana dī kōśiśa karadi'āṁ ika galatī hai.
+Kaunaphigarēśana nū paṛhana dī kōśiśa karana vica ika galatī hai.
+Kaunaphigarēśana nū paṛhana dī kōśiśa karana vica ika galatī hai: {0}
+Raima nū azāda karana dī kōśiśa daurāna galatī: {0} - Jārī hai...
+Hēṭha likhi'āṁ karakē māḍa nū lōḍa nahīṁ kītā jā sakadā: 
+Māḍa: Mōḍa lōḍa hō rahē hana...
+Māḍa: Māḍasa nū rōka rihā hai...
+Mōḍa {0} dā nāma nahīṁ hai. Sarōta kōḍa dī samīkhi'ā karō.
+Mod {0} dā sasakaraṇa nahīṁ hai.
+{0} V {1} śurū hō'i'ā
+kamāṇḍa {0} la'ī kō'ī paribhāśā nahīṁ.
+Kamāṇḍa du'ārā prabhāśita
+kisē hōra saravara nāla kanaikaṭa karana tōṁ pahilāṁ tuhānū saravara tōṁ ḍisakanaikaṭa karanā cāhīdā hai
+Name {0} la'ī upabhōgatā nāma: 
+Password {0} la'ī pāsavaraḍa: 
+{0} Nāla juṛi'ā
+galatī jadōṁ {0}: {1} To nāla juṛana dī kōśiśa kītī ga'ī
+saṭaika ṭarēsa: {2}
+Ika FTP saravara dākhala karō.
+Sathānaka ḍā'iraikaṭarī {0} maujūda nahīṁ hai.
+Ika sathānaka ḍā'iraikaṭarī di'ō. ".." Vāpasa jāṇa la'ī.
+Ḍā'iraikaṭarī {0} nahīṁ labhī.
+Ika rimōṭa ḍā'iraikaṭarī di'ō. ".." Vāpasa jāṇa la'ī
+ḍā'iraikaṭarī badalaṇa tōṁ pahilāṁ tuhānū saravara nāla juṛanā cāhīdā hai
+sathānaka ḍā'iraikaṭarī: {0}
+Rimōṭa ḍā'iraikaṭarī: {0}
+Maujūdā rimōṭa ḍā'iraikaṭarī prāpata karana tōṁ pahilāṁ tuhānū saravara nāla juṛanā cāhīdā hai.
+Phā'īla le {0} miṭā rahī hai...
+Kī tusīṁ phā'īla file {0} <y/n> nū haṭā'uṇā cāhudē hō?
+Haṭā'ī ga'ī phā'īla {0}
+haṭā'uṇa tōṁ pahilāṁ tuhānū prabadhakī adhikārāṁ nāla saravara nāla juṛanā cāhīdā hai.
+Haṭā'uṇa la'ī ika phā'īla dākhala karō.
+Haṭā'uṇa dē yōga hōṇa la'ī tuhāḍē kōla tuhāḍē lāga'ina kītē upabhōgatā nāma tē prabadhakī adhikāra hōṇē cāhīdē hana.
+{0} Nāla juṛa gi'ā
+tusīṁ ajē kisē saravara nāla juṛi'ā nahīṁ hai
+phā'īla Download 0} ḍā Downloadnalōḍa kītī jā rahī hai...
+Ḍāednalōḍa kītī phā'ila {0}.
+Ḍā filenalōḍa phā'ila {0 for la'ī asaphala ki'uṅki sathānaka phā'īla kharāba hai.
+Sacāra karana tōṁ pahilāṁ tuhānū saravara nāla juṛanā lāzamī hai.
+Sathānaka ḍā'iraikaṭarī vica ḍā downloadnalōḍa karana la'ī ika phā'īla dākhala karō.
+{0} Kēbī | isa vica sōdhi'ā: {1}
+Sārī'āṁ rimōṭa phā'īlāṁ dī sūcī baṇā'uṇa tōṁ pahilāṁ tuhānū saravara nāla juṛanā cāhīdā hai.
+Phā'īla Ren 0} dā nāma badala kē {1}...
+Saphalatāpūravaka nāma badali'ā
+ika phā'īla atē navīṁ phā'īla dā nāma daraja karō.
+Phā'īla Upload 0} apalōḍa kītī jā rahī hai...
+Apalōḍa kītī phā'īla {0}
+rimōṭa ḍā'iraikaṭarī vica apalōḍa karana la'ī ika phā'īla dākhala karō. <Phā'īla> <ḍā'iraikaṭarī> apalōḍa karō
+FTP kamāṇḍa nū calā'uṇa dī kōśiśa daurāna galatī
+(adarūnī:
+{0} Phōlaḍara, {1} phā'īlāṁ
+(aikasēsa ḍinā'iḍa)
+{0} KB, {1} {2} vica baṇā'i'ā gi'ā, {3} {4} vica sōdhi'ā gi'ā
+maujūdā sathānaka ḍā'iraikaṭarī prāpata karadā hai
+maujūdā rimōṭa ḍā'iraikaṭarī prāpata karadā hai
+ika FTP saravara nāla juṛadā hai (iha "ftp://" Jāṁ "ftps://" Nāla arabha hōṇā cāhīdā hai)
+tōṁ ḍā downloadnalōḍa karana jāṁ apalōḍa karana la'ī sathānaka ḍā'iraikaṭarī nū badaladā hai
+tōṁ ḍā downloadnalōḍa karana jāṁ apalōḍa karana la'ī rimōṭa ḍā'iraikaṭarī badaladī hai
+saravara tōṁ rimōṭa phā'īla miṭā'undī hai
+saravara tōṁ juṛadā hai
+rimōṭa phā'īla nū sathānaka ḍā'iraikaṭarī vica bā'īnarī jāṁ ṭaikasaṭa dī varatōṁ karakē ḍāsnalōḍa karadā hai
+aiphaṭīpī śaila tōṁ bāhara ā'undā hai atē karanala tē vāpasa ā'undā hai
+sahā'itā sakrīna dikhā'undī hai
+sathānaka ḍā'iraikaṭarī dī sūcī hai
+rimōṭa ḍā'iraikaṭarī dī sūcī hai
+khāsa phā'īla jāṁ ḍā'iraikaṭarī dā nāma badaladā hai
+bā'īnarī jāṁ ṭaikasaṭa dī varatōṁ karadi'āṁ rimōṭa ḍā'iraikaṭarī vica sathānaka phā'īla nū apalōḍa karadā hai
+FTP śaila vica ika galatī hai.
+FTP sunēhā: Bēnatī kītī kamāṇḍa {0} not nahīṁ milī hai. Aiphaṭīpī śaila tē niradhārata kītī'āṁ kamāṇḍāṁ dī sūcī la'ī'sahā'itā' vēkhō.
+Śudha: {1} Milīsakiṭa vica {0} tōṁ javāba mili'ā
+samāṁ samāpata, ḍisakanaikaṭa, jāṁ saravara offlinephalā'īna.
+Naiṭa: Naiṭavaraka tē tuhāḍē kapi computerṭara dā nāma {0} hai
+naiṭa: Tuhāḍē hōsaṭa dā nāma {1} is hai
+śudha: Iha jāpadā hai ki kapi theṭara ḍōmēna jāṁ varaka samūha vica hana:
+Naiṭa: Vā'īphā'ī jāṁ ītharanaiṭa ḍisakanaikaṭa hai.
+Śudha: Iha jāpadā hai ki kapi computersṭara hēṭhāṁ juṛē hō'ē hana:
+Jāla: Rāterṭara patā: {0}
+Aḍaipaṭara properties {0} for la'ī viśēśatāvāṁ prāpata karana vica asaphala
+aḍaipaṭara nabara:
+Aḍaipaṭara dā nāma:
+Vadha tōṁ vadha prasāraṇa ikā'ī: {2} Ikā'ī'āṁ
+DHCP yōga:
+Gaira-yūnīkāsaṭa paikēṭa:
+Yūnīkāsaṭa paikēṭa:
+Ā'uṇa/ jāṇa vālē paikēṭa galatī:
+Ēlī'asa kamāṇḍa dē nāma tē ikō jihā nahīṁ hō sakadā.
+Kamāṇḍa upa urapha nū {0} nahīṁ milī.
+Ali {0} tōṁ {1} nū alaga karanā pūrī tar'hāṁ varajita hai.
+Tusīṁ huṇa "{0}" nū ika kamāṇḍa dē taura tē calā sakadē hō: "{1}".
+Tusīṁ huṇa "{0}" nū "{1}" kamāṇḍa dē taura tē nahīṁ varata sakadē.
+Upanāma {0} haṭā'i'ā nahīṁ jā saki'ā hai.
+Galata modega {0}
+Ijaikaṭaḍa āragūmaiṇṭasa, {0 next, nū agalē rībūṭa tē calā'uṇa la'ī tahi kītā jāvēgā.
+Kāfī dalīlāṁ nahīṁ sana. Varatōṁ la'ī hēṭhāṁ vēkhō:
+Ḍā'iraikaṭarī {0} nahīṁ labhī
+khālī hōsaṭa dā nāma.
+Tōṁ badala rihā hai: {0} Tōṁ {1}...
+Aja dā khālī sadēśa
+lāga'ina karana tōṁ bā'ada khālī mala.
+MAL nū {0} tōṁ {1} taka badala rihā hai...
+Galata yūzara pāsavaraḍa.
+Pāsavaraḍa mēla nahīṁ khāndā.
+Upabhōgatā nāma name {0} vica badali'ā gi'ā hai!
+Tuhāḍē du'ārā dākhala kītā navāṁ nāma pahilāṁ hī mili'ā hai.
+Sūcīkarana karana vālē pīsī hālē yūnikasa tē samarathata nahīṁ hana.
+Upanāma jō varajita hana: {0}
+{0} Nahīṁ mili'ā hai.
+Kaunaphigarēśana muṛa lōḍa kītī ga'ī. Kujha tabadīlī'āṁ lāgū karana la'ī tuhānū karanala nū muṛa cālū karana dī zarūrata pai sakadī hai.
+Sabha kujha sadhāraṇa saiṭigāṁ tē rīsaiṭa kītā gi'ā hai.
+Ika jāṁ vadhērē raga avaidha hana.
+Raga upalabadha nahīṁ hana. Karanala dī saracanā vica ragīna śaila cālū karō.
+Sakarīnasēvara {0} Nahīṁ mili'ā.
+{0} [Karanala saiṭigaza ({1} tē cala rahī hai]]
+karanala varajana:
+Ḍībaga mōḍa:
+Ragadāra śaila:
+Būṭa hōṇa tē dalīlāṁ:
+Sahā'itā kamāṇḍa nū sarala baṇā'i'ā gi'ā:
+Lauga'ina tē mōṭa:
+Kōnē'tē samāṁ/ tārīkha:
+Hāraḍavē'ara dī paṛatāla kītī ga'ī:
+Maujūdā thīma:
+[Hāraḍavē'ara saiṭigāṁ] {0}
+User {0} [upabhōgatā saiṭigāṁ]
+maujūdā upabhōgatā nāma:
+Maujūdā hōsaṭa dā nāma:
+Upalabadha upayōgakaratā nāma:
+Kapi Computerṭara hōsaṭa dā nāma:
+Mess {0} [sunēhē saiṭigāṁ]
+sūtara sakētāvalī:
+Kāpīrā'īṭa (c)
+lā'isainsa
+maujūda
+kamāṇḍa nū calā'uṇa dī kōśiśa daurāna galatī
+upabhōgatā śāmala karadē hana (sirapha prabadhaka isa kamāṇḍa taka pahuca sakadē hana)
+kamāṇḍāṁ vica upanāma jōṛadē hana (sirapha prabadhaka isa kamāṇḍa taka pahuca sakadē hana)
+karanala la'ī āragūmaiṇṭa inajaikaṭa karadā hai (rībūṭa lōṛīndā hai, sirapha aiḍamina)
+sadhāraṇa kailakulēṭara
+ḍā'iraikaṭarī badalō
+hōsaṭa dā nāma badaladā hai (sirapha parabadhaka)
+aima aila, lauga'ina tōṁ bā'ada mōṭa badalā'ō (sirapha prabadhana)
+aima ō ṭī ḍī badalā'ō, divasa dā sadēśa (sirapha prabadhana)
+maujūdā upabhōgatā la'ī pāsavaraḍa badaladā hai
+upabhōgatā dā nāma badaladā hai (sirapha prabadhana)
+paradā sāfa karadā hai
+mudarā nū tabadīla karō
+ḍībaga laugaza dikhā'undē hana (sirapha prabadhana)
+saravarāṁ nāla galabāta karana la'ī ika FTP śaila dī varatōṁ karō
+Sahā'itā pēja
+hathīṁ jān̄ca karō (ika vāra'nohwprobe' karanala vica)
+maujūdā phōlaḍara vica phā'īla/ phōlaḍara dē bhāgāṁ dī sūcī
+%USERPROFILE%\KSMods vica sakrīnasēvara phā'īla nū rīlōḍa karadā hai
+tuhāḍī sakrīna nū pāsavaraḍa nāla lāka kara didā hai
+tuhānū lauga ā'uṭa karadā hai
+uhanāṁ sārē naiṭavaraka ḍivā'īsāṁ dī sūcī baṇā'ō jō isnalā'īna hana (atē ḍōmēnāṁ vica offlinephalā'īna)
+hōsaṭa tē sārē naiṭavaraka pati'āṁ dī sūcī baṇā'ō
+rukha dī varatōṁ karakē hōsaṭa tē sārē naiṭavaraka patē dī sūcī baṇā'ō
+ika ḍā'iraikaṭarī baṇā'undā hai
+sārē upalabadha iṭaraphēsāṁ bārē jāṇakārī dī sūcī baṇā'undā hai
+upanāmi'āṁ dī varajita sūcī vēkhā'ō
+upabhōgatāvāṁ la'ī adhikārāṁ dā prabadhana karō (sirapha prabadhaka isa kamāṇḍa taka pahuca sakadē hana)
+niradhārata aiḍaraisa upalabadha hai jāṁ nahīṁ isa bārē jān̄ca karō
+kasōla tē phā'īla samagarī likhadā hai
+tuhāḍē kapi computerṭara nū muṛa cālū karadā hai (cētāvanī: Kō'ī sika nahīṁ kara rihā, ki'uṅki iha atama karanala nahīṁ hai)
+sapādita kītī ga'ī kanaphigarēśana phā'īla nū rīlōḍa karadā hai.
+Ika ḍā'iraikaṭarī haṭā'ō
+ika upabhōgatā nū sūcī vicōṁ haṭā'undā hai (sirapha prabadhana)
+tuhāḍī sakrīna nū barana ā outsṭasa tōṁ bacā'undā hai
+vigi'ānaka kailakulēṭara yūniṭa kanavaraṭara nū ika hōra kamāṇḍa nāla vakha kītā gi'ā hai
+karanala dē raga niradhārata karadā hai
+karanala sakarīna-sēvara saiṭa karō
+karanala thīma saiṭa karadā hai
+upanāma dikhā'undā hai
+upabhōgatā jāṁ karanala du'ārā lauga'ina saiṭa kītē jāṇa tōṁ bā'ada aima'ōṭīḍī dikhā'undā hai
+dina dā sunēhā upabhōgatā jāṁ karanala du'ārā niradhārata karadā hai
+mitī atē samāṁ darasā'undā hai
+zōnāṁ vica mitī atē samāṁ darasā'undā hai
+karanala bada hō jāvēgā
+sisaṭama jāṇakārī
+yūniṭa kanavaraṭara jō ki sikalaika tōṁ vakha hai.
+Ōpana sōrasa dī nirabharatā varatī jāndī hai
+ika bahuta hī varaṇana yōga yūzara mainū'ala.
+Kamāṇḍāṁ dē vicakāra tusīṁ kōlana dī varatōṁ karakē malaṭīpala kamāṇḍāṁ dī varatōṁ kara sakadē hō.
+Upalabadha kamāṇḍāṁ:
+Māḍa kamāṇḍāṁ:
+Kamāṇḍāṁ dē upanāma:
+Upayōgatā:
+Āragūmaiṇṭāṁ nū kāmi'āṁ du'ārā vakha kītā gi'ā
+jithē dalīlāṁ {0} hōṇagī'āṁ
+maujūdā ḍā'iraikaṭarī prāpata karana la'ī
+jisa vica sarōta atē mazila ika aikasacēn̄ja rēṭa dē 3 UPPERCASE akhara hana
+sārē ā'īḍī atē nāma dī sūcī:
+Tuhānū ḍībaga laugasa dikhā'undā hai tāṁ jō tusīṁ sānū lauga bhēja sakō.
+FTP śaila ārabha karadā hai.
+Paṛatāla hāraḍavē'ara (sirapha tāṁ hī kama karadā hai jadōṁ hāraḍavē'ara dī jān̄ca nahīṁ kītī jāndī atē hwprobe nū calā'i'ā nahīṁ jāndā hai).
+Naiṭavaraka dī jāṇakārī dē nāla nāla harēka naiṭavaraka nāla juṛē hara kapi computerṭara dī sūcī baṇā'undā hai.
+Dē dōsata
+naiṭavaraka dī jāṇakārī dē nāla nāla harēka kapi computerṭara nū ika ṭrī dē rūpa vica ika naiṭavaraka nāla jōṛi'ā gi'ā hai.
+Naiṭavaraka dī jāṇakārī dē nāla nāla harēka kapi computerṭara dī sūcī baṇā'undā hai.
+Jithē modnameSS.m hōvēgā
+tuhāḍē sakarīna nū pāsavaraḍa nāla lāka kara didā hai.
+Tuhānū upabhōgatā tōṁ bāhara bhējadā hai.
+Naiṭavaraka dī hara jāṇakārī prāpata karō
+tuhāḍē simūlēṭa kapi.Ṭara nū muṛa cālū karadā hai.
+Ata nū-upabhōgatā du'ārā jāṁ ṭūla du'ārā badalī ga'ī kaumphigarēśana nū rīlōḍa karadā hai.
+Ragāṁ nū muṛa cālū karana dī zarūrata nahīṁ hudī, para zi'ādātara saiṭigāṁ la'ī tuhānū muṛa cālū karana dī lōṛa hudī hai.
+Tuhāḍī sakrīna sēvara nū barana ā'uṭasa tōṁ bacā'uṇa daurāna tuhānū dikhā'undā hai.
+Tārīkha atē samāṁ darasā'undā hai.
+Zōnāṁ vica tārīkha atē samāṁ darasā'undā hai.
+Tuhāḍē simūlēṭa kapi computerṭara nū bada karadā hai.
+Sisaṭama jāṇakārī atē sasakaraṇa dikhā'undā hai.
+Varatī'āṁ jāndī'āṁ ōpana sōrasa lā'ibrērī'āṁ dikhā'ō
+śaila vica ika galatī sī.
+Tuhāḍē kōla {0} use varataṇa dī ijāzata nahīṁ hai
+śaila sadēśa: Bēnatī kītī kamāṇḍa {0} nū rakha-rakhāva mōḍa vica calaṇa dī āgi'ā nahīṁ hai.
+Śaila sunēhā: Bēnatī kītī kamāṇḍa {0} not nahīṁ milī hai. Upalabadha kamāṇḍāṁ la'ī'madada' vēkhō.
+Śaila sunēhā: Kamāṇḍa {0} nū lauga ina karana tē calaṇa dī āgi'ā nahīṁ hai.
+Śaila sunēhā: Bēnatī kītī kamāṇḍa {0} not nahīṁ milī hai.
+Kamāṇḍa nū calā'uṇa dī kōśiśa daurāna galatī.
+Tārīkha dā samāṁ: Samāṁ {0} is hai
+tārīkha dā samāṁ: Aja {0} hai
+tārīkha: Samāṁ khētara: {0}
+- {0} Dā samāṁ: {1}
+Sakarīna sāfa karana la'ī.
+Ajihā lagadā hai ki mainū'ala panā {0. Nahīṁ mili'ā hai.
+Mainū'ala pēja load {0} Becuase {1} nū lōḍa karana dī kōśiśa karadi'āṁ ika galatī hō'ī hai.
+Iha dasatāvēza panā hēṭhāṁ ditē kāranāṁ karakē adhūrā hai:
+Jārī rakhaṇa la'ī kō'ī kujī dabā'ō...
+ | {0} Śabada | sōdha v {1} | {2} Bhāga
+iha mainū'ala pēja dā siralēkha nahīṁ likhi'ā gi'ā hai
+isa mainu'ala pēja ({0}) vica kō'ī sarīra dā pāṭha nahīṁ hai. Panā miṭā rihā hai...
+Iha dasatāvēza pēja ({0}) vica kō'ī bhāga nahīṁ hai. Panā miṭā rihā hai...
+{0} Tē cala rihā hai
+tuhānū {0} la'ī jāṇakārī prāpata karana dā adhikāra nahīṁ hai.
+Iha kamāṇḍa acānaka hai atē bhavikha vica jārī kītī jā'ēgī.
+Tuhānū {0} of dā pāsavaraḍa badalaṇa dā adhikāra nahīṁ hai ki'uṅki niśānā ika prabadhaka sī.
+Paisē dī ika dēśa tōṁ dēśa vica tabadīlī karō
+mudarā:
+Usrmgr: Upabhōgatā nāma {0} already pahilāṁ hī mili'ā hai
+āpaṇī ēpī'ā'ī kujī daraja karō:
+Kapi getṭara prāpata nahīṁ kara saki'ā. Jē tusīṁ viḍōza 10 dā navīnatama sasakaraṇa calā rahē hō, tāṁ tuhānū aisa'aimabīvī 1 nū samaratha karana dī zarūrata hai. Iha prōṭōkōla hālāṅki asurakhi'ata hai atē asīṁ isa samasi'ā nū hala karana dī kōśiśa karāṅgē.
+Ḍībaga lauga vica sabha kujha miṭā'undā hai
+aisa aisa ī sasakaraṇa prāpata karadā hai
+galata bhāśā
+bhāśā badaladī hai
+tuhāḍē kōla āpaṇē sisaṭama tē libcpanel-json-xs-perl sathāpata nahīṁ hō sakadī. Isaṭālēśana la'ī āpaṇē paikēja mainējara nū vēkhō. Ḍēbī'ana (atē ḍairīvēṭivaza) praṇālī'āṁ la'ī, tusīṁ ṭaramīnala īmūlēṭara vica"sudo apt install libcpanel-json-xs-perl" calā'uṇā cāha sakadē hō. Galatī dē vadhērē vēravē:
+----------------------------- Karanala painika ḍapa ------------------------------
+>> painika jāṇakārī <<
+> vēravā: {0}
+> Galatī dī kisama: {1}
+> Tārīkha atē samāṁ: {2}
+>> Apavāda dī jāṇakārī <<
+> apavāda: {0}
+> Vēravā: {1}
+> Harīsalaṭa: {2}
+> Sarōta: {3}
+> Saṭaika ṭarēsa <
+>> adarūnī apavāda {0} jāṇakārī <<
+>> apavāda {0} mūla kārana hai <<
+>> kō'ī apavāda nahīṁ; karanala galatī hō sakadī hai. <<
+>> Pharēma, phā'īlāṁ, lā'īnāṁ atē kālama <<
+> pharēma {0}: Phā'īla: {1} | Lā'īna: {2} | Kālama: {3}
+> Pharēma jāṇakārī prāpata karana dī kōśiśa karana vēlē ika taruṭī paidā hō'ī. {0}: {1}
+Tusīṁ āpaṇī sisaṭama dī bhāśā nū agarēzī tōṁ ilāvā kisē vī cīza la'ī saiṭa kara ditā hai. Asuvidhā la'ī mu'āpha karanā, para ajihā lagadā hai ki gūgala atē isadē anuvādaka kisē vī prōgrāmiga bhāśā la'ī kōḍa balākāṁ dā anuvāda karana bārē bahuta ajība hana. Jadōṁ ki asīṁ anuvāda kītē ga'ē mainu'ala pējāṁ la'ī sārē kōḍa balākāṁ nū ṭhīka karadē hāṁ, asīṁ tuhānū gūgala ṭrānsalēṭa vica kōḍa balākāṁ dā anuvāda karana la'ī ika ṭikaṭa khōl'haṇa dā sujhā'a didē hāṁ, jisadā anuvāda nahīṁ hudā, atē āpaṇī sisaṭama dī bhāśā agarēzī vica niradhārata karadē hō jē tusīṁ isa nū bōladē hō.
+Rīlāṇḍa māḍasa.
+Mōḍasa muṛa lōḍa kītē ga'ē.
+Jī ā'i'āṁ nū karanala jī!
+<Yūzara> dē taura tē saphalatāpūravaka lauga'ina kītā
+MOTD/MAL vaidha hai, para sadēśa dī kisama vaidha nahīṁ hai. Mani'ā jā rihā mōṭa...
+MOTD/MAL nū paṛhana dī kōśiśa kītī jō avaidha sadēśa kisama dī hai.
+Sathira kanaikaśana nū baṇā'ī rakhadē hō'ē, iha {0} tōṁ {1} ḍā downloadnalōḍa kara rihā hai...
+Ḍā'unalōḍa pūrā hō gi'ā hai.
+Ḍā'unalōḍa kōśiśa failed 0} vica asaphala: {1} Download
+jē tusīṁ aiphaṭīpī saravara tōṁ phā'īlāṁ ḍā downloadnalōḍa karana jā rahē hō tāṁ kirapā karakē"aiphaṭīpī" dī varatōṁ karō.
+Maujūdā varakiga ḍā'iraikaṭarī vica ika phā'īla ḍāsnalōḍa karadā hai
+ika ḍībaga ḍivā'īsa nū ḍisakanaikaṭa karō
+juṛē hō'ē ḍībagiga upakaraṇāṁ dī sūcī
+ḍībaga jatara {0} nahīṁ mili'ā.
+Jatara {0} nāla kunaikaśana bada hō gi'ā.
+Kunaikaśana vica galatī: {0}
+Pōraṭa using {0} dī varatōṁ karakē sārē pati'āṁ tē ḍībaga suṇanā.
+Kō'ī dalīla niradhārata nahīṁ kītī. Sakēta: Sapēsa nāla vakha kītē ka'ī āragūmiṭa di'ō
+upanāma pahilāṁ hī mili'ā hai: {0}
+Ḍībaga lauga haṭā'i'ā gi'ā. Sārē juṛē ḍībagiga upakaraṇa ajē vī sunēhē dēkha sakadē hana.
+Ḍībaga lauga haṭā'uṇā asaphala: {0}
+Ḍā'iraikaṭarī badalaṇī asaphala rahī hai: {0}
+Upayōgakaratā nāma galata hai
+patā dasō
+ḍā'iraikaṭarī haṭā'uṇa la'ī asamaratha: {0}
+Ṭā'īmazōna galata tarīkē nāla ditā gi'ā hai.
+Ayōga prōphā'īla cōṇa.
+Prōphā'īla {1} nāla {0} to nāla juṛana dī kōśiśa kara rihā hai...
+Yūniṭa ṭaisaṭiga vica galatī: {0}
+Kamāṇḍa. {0} Nahīṁ milī. Kamāṇḍāṁ dī sūcī la'ī"sahā'itā" kamāṇḍa vēkhō.
+Aḍaipaṭara for {0} la'ī IPv6 viśēśatāvāṁ prāpata karana vica asaphala. Jārī rakha rihā hai...
+IPv4 jāṇakārī:
+IPv6 jāṇakārī:
+Aḍaipaṭara {0} ā'īpīvī 6 dā samarathana nahīṁ karadā. Jārī rakha rihā hai...
+Aḍaipaṭara {0} IPv4 dā samarathana nahīṁ karadā. Paṛatāla phēl'ha hō'ī.
+Ijha jāpadā hai ki tusīṁ karanala dā vikāsa sasakaraṇa calā rahē hō. Jadōṁ tusīṁ pahilū'āṁ nū vēkha sakadē hō, iha akasara apaḍēṭa hudā hai atē hō sakadā hai bagāṁ nū pēśa karadā hai. Iha siphāraśa kītī jāndī hai ki tusīṁ sathira sasakaraṇa'tē rahō.
+Jihaṛī bhāśā tusīṁ cuṇī hai usa vica dō rūpa hana. Ika cuṇa:
+1. Lipī atarana
+2. Anuvāda
+āpaṇī pasada dī cōṇa karō:
+Avaidha cōṇa phira kōśiśa karō.
+Tusīṁ maujūdā ḍā'iraikaṭarī nū {0}: {1} To tē saiṭa karana la'ī aṇa'adhikārata hō
+adhikāra. {0} Phēl'ha hō'i'ā
+tuhāḍē du'ārā niradhārata rasatā bahuta lamā hai.
+Tusīṁ list {0}: {1} Vica sūcīkarana la'ī aṇa'adhikārata hō
+sīpīyū dī jān̄ca daurāna galatī: {0}
+Raima dī jān̄ca karana vēlē galatī: {0}
+Aica ḍī ḍī dī jān̄ca karana daurāna galatī: {0}
+Sī pī yū: Cētāvanī: Aisa aisa ī 2 bhavikha dē vikāsa sabadhī samajhauti'āṁ vica lōṛīndā hōvēgā.
+Ump {0}: {1} About bārē jāṇakārī prāpata karana dī kōśiśa karadi'āṁ ḍapa jāṇakārī ikaṭhī karana vālā karaiśa hō gi'ā
+asaimbalī ile 0}: {1 Of dī kapā'īla mitī prāpata karana dī kōśiśa daurāna galatī.
+MOTD/ MAL saiṭa karana dī kōśiśa karana vēlē galatī: {0}
+MOTD/ MAL laiṇa dī kōśiśa karana vēlē galatī: {0}
+{0}: {1} On tē ika sakēta havālā apavāda hai
+{0}: A {1} tē ika sakēta havālā apavāda hai - saṭaika ṭarēsa:
+Ika galata ōparēśana karakē, jadōṁ sakrīnasēvara cālū karana dī kōśiśa kītī ga'ī.
+Surakhi'ata mōḍa vica rīlōḍiga dī āgi'ā nahīṁ hai.
+Surakhi'ata mōḍa tē pārasa karana vālē mōḍāṁ dī āgi'ā nahīṁ hai.
+Akāra la'ī pūrī ḍā'iraikaṭarī jāṁ maujūdā ḍā'iraikaṭarī vica phā'īlāṁ nū pārasa karō.
+Sārē juṛē ḍībagiga yatarāṁ dī sūcī baṇā'ō.
+Pārasa mōḍa saiṭa karana dī kōśiśa karana vēlē galatī. Mula dī jān̄ca karō atē dubārā kōśiśa karō. Jē iha sahī hai, tāṁ saṭaika ṭarēsa vēkhō jadōṁ karanala ḍībagiga samarathita hai.
+Saphalatāpūravaka saiṭa karō.
+Māraga nā tāṁ ika phā'īla hai atē nā hī ika ḍā'iraikaṭarī.
+Vakharī ḍā'iraikaṭarī jāṁ nāma dē adhīna ika phā'īla dī ika hōra kāpī baṇā'undā hai.
+Ika phā'īla nū dūjī ḍā'iraikaṭarī vica bhējadā hai
+phā'īlāṁ nū kisē hōra ḍā'iraikaṭarī jāṁ vakharē nāma tē nakala karana la'ī
+phā'īlāṁ nū kisē hōra ḍā'iraikaṭarī vica bhējaṇā
+maica {0} ({1}): {2}
+Maica {0}: {1}
+Samāṁ bitā'i'ā: {0} Milīsakiṭa
+niramātā: {0}
+Māḍala: {0}
+Samarathā: {0} ({1}, {2}, {3})
+Iṭaraphēsa kisama: {0}
+Ḍrā'iva nabara: {0}
+Būṭa phalaiga: {0} ({1})
+Sarīraka vibhājana: {0}
+Pramukha jhaḍā: {0}
+Ākāra: {0} Jī.Bī.
+Lāzīkala bhāga: {0}
+Sakucita: {0}
+Nāma: {0}
+Phā'īla sisaṭama: {0}
+Samarathā: {0} Jībī muphata {1} jībī
+sārī'āṁ ḍarā'īvāṁ tē lāzīkala bhāgāṁ dī sūcī hai.
+Sārī'āṁ paṛatālī'āṁ ḍarā'īvāṁ dī sūcī hai.
+Ika khāsa ḍarā'iva tē sārē paṛatālē bhāgāṁ dī sūcī hai (atē sabha ḍarā'ivāṁ tē sārē lāzīkala bhāga).
+MD5 jāṁ SHA256 jāṁ tāṁ varatadē hō'ē phā'īla rakama dī gaṇanā karadā hai.
+Tuhānū sāḍē gīṭahaba vikī tē lai jāndā hai.
+Avaidha inakripaśana ailagōridama.
+Rimōṭa ḍībagiga nū samaratha jāṁ asamaratha baṇā'undā hai.
+Phā'īla sisaṭama nū arabha kara rihā hai...
+Sathāpita āvāzāṁ prāpata karadā hai
+ḍiphaulaṭa avāza saiṭa karadā hai
+ḍiphaulaṭa avāza dī varatōṁ karakē tuhāḍī satara bōladā hai
+avāza {0}: {1} ({2})
+Avaidha āvāza.
+Vau'isa saiṭa
+vēkhō ki kī tusīṁ samēṁ tē śabadāṁ nū sahī tar'hāṁ likha sakadē hō
+vēkhō ki kī tusīṁ samēṁ tē gaṇita dē samīkaraṇāṁ nū hala kara sakadē hō
+pi'āra karō jāṁ nafarata bharī'āṁ ṭipaṇī'āṁ dā javāba di'ō.
+Jē kisē nē tuhāḍī vīḍī'ō'tē iha ṭipaṇī kītī hai:
+Tusīṁ kī javāba di'ōgē?
+Avaidha cōṇa agalī ṭipaṇī tē jā rahē hāṁ...
+Tusīṁ huṇē pi'āra dī ṭipaṇī dī jāṇakārī ditī hai!
+Tusīṁ basa nafarata dī ṭipaṇī dā javāba ditā!
+Mahāna! Usa la'ī comment {0} comment dī ṭipaṇī nū haṭā ditā jāvēgā.
+Mahāna! Thanks {0} your tuhāḍē dhanavāda dī kadara karēgā.
+Bāhara jāṇa la'ī "getMeOut" likhō.
+Bilakula sapaila!
+Galata śabada jōṛa.
+Bilakula hala kītā!
+Galata olvedga nāla hala kītā.
+{1} Aimabī dā {0} aimabī ḍā downloadnalōḍa kītā gi'ā.
+Ārapīsī pahilāṁ hī cala rahī hai.
+Ārapīsī pōraṭa using {0} dī varatōṁ karakē sārē pati'āṁ tē suṇa rihā hai.
+Ārapīsī arabha kara rihā hai...
+Ika aisa'aisa'aica saravara nāla juṛadā hai.
+Pāsavaraḍa {0} la'ī bharō:
+Aisa aisa aica nāla juṛi'ā.
+Sitha phā'īla lōḍa karadā hai atē isanū calā'undā hai.
+Sakripaṭaḍa phā'ila {0} Maujūda nahīṁ hai.
+Phā'īla ika sakripaṭaḍa sitha phā'īla nahīṁ hai.
+Ika sitha lā'īna dī paṛatāla karana vica asaphala.
+Khālī satara niradhārata kītī
+kōḍapēja saiṭa karana vica asamaratha. Bhāśā sahī tar'hāṁ pradaraśita nahīṁ hō sakadī.
+Ḍībagiga samarathita nahīṁ hai.
+Default {0} huṇa ḍiphālaṭa sakrīnasēvara tē saiṭa nahīṁ hai.
+Dhanavāda! Iha dilacasapa hai.
+Hara kō'ī isadē la'ī tuhāḍē vīḍī'ō dā samarathana karēgā.
+Maiṁ tuhānū tuhāḍē agalē vīḍī'ō la'ī tuhāḍē ī-mēla vica viśēśa phā'īla dē ditī hai.
+Suṇō, nafarata karana vālē, uha sāḍī sahā'itā karana dī kōśiśa kara rihā hai, ghuṭālā nahīṁ.
+Mainū nahīṁ patā ki maiṁ atē mērē dōsata isa vīḍī'ō la'ī tuhāḍā kinā dhanavāda karadē hāṁ.
+Maiṁ tuhānū isa vīḍī'ō la'ī pi'āra karadā hāṁ.
+Caladē rahō, nā rukō.
+Maiṁ tuhānū 1 aima gāhakāṁ taka pahucaṇa vica sahā'itā karāṅgā!
+Mērē dōsata tuhāḍē kārana unhāṁ dā kapi fixedṭara phikasa kara ga'ē hana.
+Bahuta vadhī'ā maiṁ āpaṇē duśamaṇa dā pīsī bada kara ditā.
+Vaira karana vāli'āṁ la'ī: Usa nāla nafarata karanā bada karō
+nafarata karana vālē: Kama tē jā'ō
+tuhāḍī ābajaikaṭa lukōṇa vālī gā'īḍa la'ī huṇa kō'ī vī isa nū nōṭisa nahīṁ karēgā
+maiṁ tuhāḍē viḍī'ō vēkhaṇā bada karāṅgā. Gāhaka khatama hō ga'ē.
+Iha kī hai? Iha asapaśaṭa hai.
+Iha vīḍī'ō sabha tōṁ bhaiṛī hai!
+Hara kō'ī isa vīḍī'ō nū ripōraṭa karadā hai!
+Mērē dōsata tuhāḍē nāla gusē hana!
+Prēmī huṇa isadē la'ī tuhānū nafarata karanagē.
+Tuhāḍā dōsata isa la'ī tuhānū nafarata karēgā.
+Isa prank nē mainū tuhāḍē la'ī gāhakī baṇā ditā.
+Miśana asaphala, satikāra -, gāhaka -
+isa kisama dī vīḍī'ō baṇā'uṇā bada karō!!!
+Āpaṇī naukarī tē vāpasa jā'ō, tuhāḍē vīḍī'ō sabha tōṁ bhaiṛē hana!
+Asīṁ isa vīḍī'ō'tē pakhapāta karadē hāṁ.
+Ali {0} tōṁ {1} jōṛanā varajita hai.
+Nōṭīphikēśana rada karana dī kōśiśa karana daurāna galatī: {0}
+Prāpata hō'ī'āṁ sārī'āṁ sūcanāvāṁ dikhā'undā hai
+ika nōṭīphikēśana khāraja karadā hai
+sūcanā saphalatāpūravaka khāraja kītī ga'ī.
+Paikēṭa (adara vala):
+Paikēṭa (bāharī):
+Prāpata paikaṭāṁ vica galatī'āṁ:
+Āma ā'īpīvī 6 viśēśatāvāṁ
+āma ā'īpīvī 4 viśēśatā
+rimōṭa pīsī la'ī rimōṭa kamāṇḍa calā'undā hai
+- paṛā'a 0: Sisaṭama ārabhaka
+- paṛā'a 1: Hāraḍavē'ara khōja
+- paṛā'a 2: Adarūnī upabhōgatā prabadhana
+- paṛā'a 3: Mōḍasa atē sakrīnasēvara khōja
+- paṛā'a 4: Kūṛā cukaṇā
+- paṛā'a 5: Lauga ina karō
+kūṛā cukaṇa tōṁ pahilāṁ: {0} Bā'īṭa
+kūṛā cukaṇa tōṁ bā'ada: {0} Bā'īṭa
+ārapīsī śurū karana vēlē galatī: {0}
+Lagadā hai ki tusīṁ rīlīza umīdavārāṁ dā sasakaraṇa calā rahē hō. Iha siphāraśa kītī jāndī hai ki tusīṁ sathira sasakaraṇa'tē rahō.
+Ija jāpadā hai ki phā'īla sisaṭama ābādī bahuta lamā samāṁ laindī hai.
+Galata kisama {0}.
+Samarathā: {0}
+Bhāga dī giṇatī: {0}
+Ākāra: {0}
+Varatī ga'ī: {0}
+Ḍā'iraikaṭarī {0} pahilāṁ hī maujūda hai.
+{0} Nāla kanaikaṭa karana dī kōśiśa karana vēlē galatī: Kunaikaśana dā samāṁ khatama hō gi'ā jāṁ kunaikaśana khatama hō gi'ā
+samīkarana dī gaṇanā karana la'ī kailakulēṭara.
+Gaṇanā vica galatī.
+Samarathā: {0} Jībī ({1}, {2}, {3})
+ija jāpadā hai ki tusīṁ nazadīkī rīliza varazana calā rahē hō. Hālāṅki huṇa varataṇā surakhi'ata hai, isa dī siphāraśa kītī jāndī hai ki tusīṁ sathira sasakaraṇa'tē rahō.
+Sisaṭama apaḍēṭa
+sisaṭama apaḍēṭāṁ dī jān̄ca kara rihā hai...
+Mili'ā navāṁ sasakaraṇa:
+Tusīṁ isanū ithē ḍā downloadnalōḍa kara sakadē hō:
+Apaḍēṭāṁ dī jān̄ca karana vica asaphala: {0}
+Ḍībaga lauga nahīṁ mili'ā
+kō'ī hālī'ā sūcanāvāṁ nahīṁ

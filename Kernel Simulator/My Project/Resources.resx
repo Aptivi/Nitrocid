@@ -214,4 +214,16 @@
   <data name="nwg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nwg.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="ben" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ben.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ben_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ben-T.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="pun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pun.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="pun_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pun-T.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

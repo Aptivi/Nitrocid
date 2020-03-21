@@ -8,6 +8,12 @@ This simulator simulates our **future** kernel that is planned by us and is not 
 
 The PPA for KS will come shortly as promised.
 
+## |-----+--> _Notices_ <--+-----|
+
+- If you are going to use Chinese/Japanese/Korean language in their translated forms, use `SimSun` or other appropriate font.
+
+- If you are going to use Hindi/Bengali/Punjabi language in their translated forms, use `Unifont` or other appropriate font.
+
 ## |-----+--> _Virus Warning_ <--+-----|
 
 Unfortunately, some parts of KS have been taken to avoid detection in the source code of a malicious executable file called payslip.exe. It got its entries for the following cybersecurity analyzers:

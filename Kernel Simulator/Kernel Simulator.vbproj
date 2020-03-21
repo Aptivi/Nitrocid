@@ -358,6 +358,8 @@
     <None Include="Resources\arb-T.txt" />
     <Content Include="Resources\arb.txt" />
     <None Include="Resources\chi-T.txt" />
+    <None Include="Resources\ben.txt" />
+    <None Include="Resources\ben-T.txt" />
     <Content Include="Resources\cro.txt" />
     <None Include="Resources\jpn.txt" />
     <None Include="Resources\ind-T.txt" />
@@ -368,6 +370,8 @@
     <Content Include="Resources\ndo.txt" />
     <None Include="Resources\nwg.txt" />
     <Content Include="Resources\pol.txt" />
+    <None Include="Resources\pun.txt" />
+    <None Include="Resources\pun-T.txt" />
     <Content Include="Resources\rmn.txt" />
     <None Include="Resources\rus.txt" />
     <None Include="Resources\rus-T.txt" />
