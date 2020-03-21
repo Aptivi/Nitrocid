@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\.github",
-    "\\ChocolateyPack\\tools"
+    ""
   ],
-  "SelectedNode": "\\.github\\issue_template.md",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

@@ -42,6 +42,7 @@ Public Module Notifications
     Private Sub NotifListen()
         Dim OldNCount As Integer = NotifRecents.Count
         While Not NotifThread.ThreadState = ThreadState.AbortRequested
+            Thread.Sleep(10)
             If NotifRecents.Count <> OldNCount Then
                 Wdbg("W", "Notification received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNCount)
                 OldNCount = NotifRecents.Count
