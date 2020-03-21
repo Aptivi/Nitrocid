@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Kernel Simulator",
+    "\\Kernel Simulator\\Languages",
+    "\\Kernel Simulator\\Resources"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\Kernel Simulator\\Languages",
   "PreviewInSolutionExplorer": false
 }

@@ -18,7 +18,7 @@
 
 Module CommandLineArgsParse
 
-    Public availableCMDLineArgs() As String = {"createConf", "testMod", "testInteractive", "debug", 'Normal kernel arguments
+    Public availableCMDLineArgs() As String = {"createConf", "testMod", "testInteractive", "debug", "args", 'Normal kernel arguments
                                                "CI-TestPrint", "CI-TestWdbg", "CI-TestConfig", "CI-TestInitialize", "CI-TestEval", 'CI test artifacts
                                                "CI-TestStrTrunc", "CI-TestSSEs", "CI-TestMOTD", "CI-TestMAL", "CI-TestPlace", "CI-TestCalc"} 'TODO: Add more artifacts
     Sub ParseCMDArguments(ByVal arg As String)
@@ -41,6 +41,8 @@ Module CommandLineArgsParse
                     Environment.Exit(0)
                 ElseIf arg = "debug" Then
                     DebugMode = True
+                ElseIf arg = "args" Then
+                    argsOnBoot = True
                     '-------------- Only use these in CI Tests and Artifacts --------------
                 ElseIf arg = "CI-TestPrint" Then
                     W("Test print in CI terminal output.", True, ColTypes.Neutral)
