@@ -19,7 +19,7 @@
 Module TShell
 
     Public TShellCmds As String() = {"print", "printf", "printd", "printdf", "testevent", "probehw", "garbage", "panic", "panicf", "translate", "places", "loadmods",
-                                     "debug", "rdebug", "testmd5", "testsha256", "testregexp", "colortest", "soundtest", "sendnot", "dcalend", "listcodepages", "help", "exit"}
+                                     "debug", "rdebug", "testmd5", "testsha256", "testregexp", "colortest", "colortruetest", "soundtest", "sendnot", "dcalend", "listcodepages", "help", "exit"}
     Public TEST_ExitFlag As Boolean
     Sub InitTShell()
         Dim FullCmd As String

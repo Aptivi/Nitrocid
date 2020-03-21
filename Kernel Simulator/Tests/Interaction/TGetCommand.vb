@@ -170,6 +170,9 @@ Module TGetCommand
         ElseIf Cmd = "colortest" Then 'Usage: colortest <index>
             Dim esc As Char = GetEsc()
             Console.WriteLine(esc + "[38;5;" + FullArgsL(0) + "mIndex " + FullArgsL(0))
+        ElseIf Cmd = "colortruetest" Then 'Usage: colortruetest <R;G;B>
+            Dim esc As Char = GetEsc()
+            Console.WriteLine(esc + "[38;2;" + FullArgsL(0) + "mIndex " + FullArgsL(0))
         ElseIf Cmd = "soundtest" Then 'Usage: soundtest <file>
             Core.Initialize()
             Dim MLib As New LibVLC
@@ -215,6 +218,7 @@ Module TGetCommand
               "- testsha256 <Message>" + vbNewLine +
               "- testmd5 <Message>" + vbNewLine +
               "- colortest <index>" + vbNewLine +
+              "- colortruetest <R;G;B>" + vbNewLine +
               "- soundtest <file>" + vbNewLine +
               "- sendnot <Priority> <title> <desc>" + vbNewLine +
               "- debug <Enable>" + vbNewLine +
