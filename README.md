@@ -34,6 +34,8 @@ NOTE: Make sure to follow the prerequisites.
 
 - Microsoft .NET Framework 4.8 or higher
 
+- A console that supports native VT escape sequences, like [ConEmu](https://conemu.github.io/), Windows 10's new Command Prompt, and so on.
+
 - If you are installing the release from `Archive` branch, you may find them **isolated**. Extract the `libvlc` folder from full releases to the root directory.
 
 2. For Unix systems
@@ -45,6 +47,8 @@ NOTE: Make sure to follow the prerequisites.
 - VLC Media Player (For TTS and playback for test shell) (Debian and its derivatives: `sudo apt install vlc libvlc-dev gtk-sharp2`)
 
 - Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi libcpanel-json-xs-perl`)
+
+- A console that supports native VT escape sequences, like [Konsole](https://konsole.kde.org/), [GNOME Terminal](https://wiki.gnome.org/Apps/Terminal), and so on.
 
 - Use the `isolated` binaries to get KS without Windows VLC dependencies.
 
