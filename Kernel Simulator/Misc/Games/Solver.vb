@@ -29,7 +29,7 @@ Module Solver
             RandomExpression = CStr(RandomDriver.Next(1000)) + Operations.ElementAt(RandomDriver.Next(Operations.Count)) + CStr(RandomDriver.Next(1000))
             Wdbg("I", "Expression to be solved: {0}", RandomExpression)
             W(RandomExpression, True, ColTypes.Input)
-            UserEvaluated = ReadLineNoInput()
+            UserEvaluated = ReadLineNoInput("")
             Wdbg("I", "Evaluated: {0}", UserEvaluated)
             If UserEvaluated = "GetMeOut" Then
                 Wdbg("I", "Exit")

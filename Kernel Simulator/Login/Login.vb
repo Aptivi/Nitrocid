@@ -118,7 +118,7 @@ Public Module Login
                 W(DoTranslation("{0}'s password: ", currentLang), False, ColTypes.Input, usernamerequested)
 
                 'Get input
-                answerpass = ReadLineNoInput()
+                answerpass = ReadLineNoInput("*"c)
                 Console.WriteLine()
 
                 'Compute password hash

@@ -55,7 +55,7 @@ Module FTPTools
                 W(DoTranslation("Password for {0}: ", currentLang), False, ColTypes.Input, user)
 
                 'Get input
-                pass = ReadLineNoInput()
+                pass = ReadLineNoInput("*")
                 Console.WriteLine()
 
                 'Set up credentials

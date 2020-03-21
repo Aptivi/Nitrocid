@@ -1,5 +1,4 @@
-﻿
-'    Kernel Simulator  Copyright (C) 2018-2020  EoflaOE
+﻿'    Kernel Simulator  Copyright (C) 2018-2020  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -16,23 +15,28 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Runtime.CompilerServices
-
 Public Module Input
 
     ''' <summary>
     ''' Reads the next line of characters from the standard input stream without showing input being written by user.
     ''' </summary>
-    Public Function ReadLineNoInput() As String
+    Public Function ReadLineNoInput(ByVal MaskChar As Char) As String
         Dim Final As String = ""
         While True
             Dim character As Char = Console.ReadKey(True).KeyChar
             If character = vbCr Or character = vbLf Then
                 Exit While
             ElseIf character = vbBack Then
-                If Not Final.Length = 0 Then Final = Final.Remove(Final.Length - 1)
+                If Not Final.Length = 0 Then
+                    Final = Final.Remove(Final.Length - 1)
+                    If Not MaskChar = vbNullChar Then
+                        Console.Write(GetEsc() + "D") 'Cursor backwards by one character
+                        Console.Write(GetEsc() + "[1X") 'Remove a character
+                    End If
+                End If
             Else
                 Final += character
+                If Not MaskChar = vbNullChar Then Console.Write(MaskChar)
             End If
         End While
         Return Final

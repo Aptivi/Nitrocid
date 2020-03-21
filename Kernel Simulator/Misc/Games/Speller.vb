@@ -34,7 +34,7 @@ Module Speller
             RandomWord = Words.ElementAt(RandomDriver.Next(Words.Count))
             Wdbg("I", "Word: {0}", RandomWord)
             W(RandomWord, True, ColTypes.Input)
-            SpeltWord = ReadLineNoInput()
+            SpeltWord = ReadLineNoInput("")
 
             If SpeltWord = RandomWord Then
                 Wdbg("I", "Spelt: {0} = {1}", SpeltWord, RandomWord)
