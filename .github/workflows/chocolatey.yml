@@ -2,7 +2,7 @@ name: Chocolatey Gallery Push
 
 on:
   release:
-    types: [published]
+    types: [published, edited]
 
 jobs:
   build:
