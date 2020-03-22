@@ -12,18 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: NuGet Installation
-      uses: warrenbuckley/Setup-Nuget@v1
-    - name: MSBuild Installation
-      uses: microsoft/setup-msbuild@v1.0.0
-    - name: Dependency Restoration
-      run: nuget restore "Kernel Simulator.sln"
-    - name: Solution Compilation
-      run: msbuild "Kernel Simulator.sln"
     - name: Package Publication
       run: |
         $path = "ChocolateyPack"
         $FileName = Get-ChildItem -Path $pwd.Path -Recurse -Name -Filter "KS*"
-        choco apikey -k ${{ secrets.CHOCO_APIKEY }} -s https://push.chocolatey.org/
+        choco apikey -k="${{ secrets.CHOCO_APIKEY }}" -s="https://push.chocolatey.org/"
         choco pack (Get-Item $path + "\ks.nuspec").FullName
         choco push (Get-Item $pwd.Path + "\" + $FileName).FullName
