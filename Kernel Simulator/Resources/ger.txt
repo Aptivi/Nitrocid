@@ -559,3 +559,4 @@ Sie können es herunterladen unter:
 Fehler beim Suchen nach Updates: {0}
 Debug-Protokoll nicht gefunden
 Keine aktuellen Benachrichtigungen
+Sucht nach einer bestimmten Zeichenfolge in der bereitgestellten Datei

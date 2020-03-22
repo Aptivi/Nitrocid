@@ -67,6 +67,7 @@ Public Module HelpSystem
                                                               {"rdebug", DoTranslation("Enables or disables remote debugging.", currentLang)},
                                                               {"rmuser", DoTranslation("Removes a user from the list (Admins Only)", currentLang)},
                                                               {"savescreen", DoTranslation("Saves your screen from burn outs", currentLang)},
+                                                              {"search", DoTranslation("Searches for specified string in the provided file", currentLang)},
                                                               {"setcolors", DoTranslation("Sets up kernel colors", currentLang)},
                                                               {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
                                                               {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
@@ -304,6 +305,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " savescreen: " + DoTranslation("shows you a selected screensaver, while protecting your screen from burn outs.", currentLang) + vbNewLine +
               "       " + DoTranslation("Friends of", currentLang) + " savescreen: lockscreen", True, ColTypes.Neutral)
+
+        ElseIf command = "search" Then
+
+            W(DoTranslation("Usage:", currentLang) + " search <StringEnclosedInDoubleQuotes> <File>", True, ColTypes.Neutral)
 
         ElseIf command = "setcolors" Then
 

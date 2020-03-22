@@ -559,3 +559,4 @@ Vous pouvez le télécharger sur:
 Échec de la vérification des mises à jour: {0}
 Journal de débogage introuvable
 Aucune notification récente
+Recherche une chaîne spécifique dans le fichier fourni

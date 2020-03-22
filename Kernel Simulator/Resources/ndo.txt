@@ -559,3 +559,4 @@ Anda dapat mengunduhnya di:
 Gagal memeriksa pembaruan: {0}
 Log debug tidak ditemukan
 Tidak ada pemberitahuan terbaru
+Mencari string tertentu dalam file yang disediakan

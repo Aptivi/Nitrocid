@@ -559,3 +559,4 @@ Je kunt het downloaden op:
 Kon niet controleren op updates: {0}
 Foutopsporingslogboek niet gevonden
 Geen recente meldingen
+Zoekt naar een specifieke string in het opgegeven bestand

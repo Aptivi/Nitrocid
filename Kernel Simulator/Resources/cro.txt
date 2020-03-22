@@ -559,3 +559,4 @@ Možete je preuzeti na:
 Provjera ažuriranja nije uspjela: {0}
 Dnevnik pogreške nije pronađen
 Nema nedavnih obavijesti
+Pretražuje određeni niz u datoj datoteci

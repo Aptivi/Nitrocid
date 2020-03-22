@@ -680,7 +680,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "search" Then
 
-                If eqargs.Count = 2 Then
+                If eqargs?.Count = 2 Then
                     Dim ToBeFound As String = eqargs(0)
                     Dim Dir As String = CurrDir + "/" + eqargs(1).Replace("\", "/")
                     If Dir.Contains(CurrDir.Replace("\", "/")) And Dir.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then

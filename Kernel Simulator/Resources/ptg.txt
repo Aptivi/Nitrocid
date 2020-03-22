@@ -559,3 +559,4 @@ Você pode baixá-lo em:
 Falha ao verificar se há atualizações: {0}
 Log de depuração não encontrado
 Nenhuma notificação recente
+Procura por sequência específica no arquivo fornecido

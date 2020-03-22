@@ -559,3 +559,4 @@ Ika kara daunrōdo dekimasu:
 Kōshin no kakunin ni shippai shimashita: {0}
 Debaggurogu ga mitsukarimasen
 saikin no tsūchi wa arimasen
+Shitei sa reta fairu-nai no tokutei no mojiretsu o kensaku shimasu

@@ -559,3 +559,4 @@ Siz yuklab olishingiz mumkin:
 Yangilanishlarni tekshirib bo'lmadi: {0}
 Tuzatish jurnali topilmadi
 So'nggi bildirishnomalar yo'q
+Taqdim etilgan faylda aniq satrni qidirish

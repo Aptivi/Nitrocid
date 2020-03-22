@@ -559,3 +559,4 @@ Nouă versiune găsită:
 Eroare la verificarea actualizărilor: {0}
 Jurnalul de depanare nu a fost găsit
 Nu există notificări recente
+Căutări pentru șiruri specifice în fișierul furnizat

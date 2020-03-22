@@ -559,3 +559,4 @@ Puedes descargarlo en:
 Error al buscar actualizaciones: {0}
 Registro de depuración no encontrado
 No hay notificaciones recientes.
+Busca una cadena específica en el archivo proporcionado

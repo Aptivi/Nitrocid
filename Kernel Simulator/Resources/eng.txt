@@ -559,3 +559,4 @@ You can download it at:
 Failed to check for updates: {0}
 Debug log not found
 No recent notifications
+Searches for specified string in the provided file

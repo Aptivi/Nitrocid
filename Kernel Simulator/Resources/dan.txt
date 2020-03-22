@@ -559,3 +559,4 @@ Du kan downloade det på:
 Kontrol af opdateringer kunne ikke kontrolleres: {0}
 Debug-log ikke fundet
 Ingen nylige meddelelser
+Søger efter specifik streng i den medfølgende fil

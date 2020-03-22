@@ -559,3 +559,4 @@ Můžete si ji stáhnout na:
 Aktualizace se nezdařila: {0}
 Protokol ladění nebyl nalezen
 Žádná nedávná oznámení
+Hledá konkrétní řetězec v zadaném souboru

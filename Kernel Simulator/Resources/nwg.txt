@@ -559,3 +559,4 @@ Du kan laste den ned på:
 Kunne ikke se etter oppdateringer: {0}
 Feilsøkingslogg ikke funnet
 Ingen nylige varsler
+Søker etter spesifikk streng i den medfølgende filen

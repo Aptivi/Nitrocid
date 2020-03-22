@@ -559,3 +559,4 @@ aap ise yahaan daunalod kar sakate hain:
 adyatanon kee jaanch karane mein viphal: {0}
 dibag log nahin mila
 haal kee soochanaen nahin
+pradaan kee gaee fail mein vishisht string kee khoj karata hai

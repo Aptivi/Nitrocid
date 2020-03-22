@@ -559,3 +559,4 @@ Yeni sürüm bulundu:
 Güncellemeler kontrol edilemedi: {0}
 Hata ayıklama günlüğü bulunamadı
 Son bildirim yok
+Sağlanan dosyada belirli bir dizeyi arar

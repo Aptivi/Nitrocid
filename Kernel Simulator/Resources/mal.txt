@@ -559,3 +559,4 @@ Anda boleh memuat turunnya di:
 Gagal menyemak kemas kini: {0}
 Log debug tidak dijumpai
 Tiada pemberitahuan baru-baru ini
+Mencari rentetan tertentu dalam fail yang disediakan

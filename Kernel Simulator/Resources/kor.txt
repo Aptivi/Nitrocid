@@ -559,3 +559,4 @@ da-eum-eseo daunlodeu hal su issseubnida:
 eobdeiteuleul hwag-inhaji moshaessseubnida: {0}
 dibeogeu logeuleul chaj-eul su eobs-seubnida
 choegeun allim-i eobs-seubnida.
+jegongdoen pail-eseo teugjeong munjayeol-eul geomsaeghabnida.

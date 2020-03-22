@@ -559,3 +559,4 @@ Du kan ladda ner den på:
 Det gick inte att leta efter uppdateringar: {0}
 Felsökningslogg hittades inte
 Inga senaste aviseringar
+Söker efter en specifik sträng i den medföljande filen

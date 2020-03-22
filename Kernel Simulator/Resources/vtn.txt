@@ -559,3 +559,4 @@ Bạn có thể tải xuống tại:
 Không thể kiểm tra cập nhật: {0}
 Không tìm thấy nhật ký gỡ lỗi
 Không có thông báo gần đây
+Tìm kiếm chuỗi cụ thể trong tệp được cung cấp

@@ -559,3 +559,4 @@ Voit ladata sen osoitteesta:
 Päivitysten tarkistaminen epäonnistui: {0}
 Virhelokeja ei löydy
 Ei viimeaikaisia ilmoituksia
+Etsii tarjottua tiedostoa tiettyä merkkijonoa

@@ -559,3 +559,4 @@ Puoi scaricarlo da:
 Impossibile controllare gli aggiornamenti: {0}
 Registro di debug non trovato
 Nessuna notifica recente
+Cerca una stringa specifica nel file fornito
