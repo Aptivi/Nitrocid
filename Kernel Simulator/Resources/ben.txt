@@ -453,7 +453,7 @@ Kṣamatā: {1} Jibi bināmūlyē of {0} jibi
 samasta ḍrā'ibhē samasta lajikyāla pārṭiśana tālikābhukta karā hacchē.
 Samasta tadantayukta ḍrā'ibhēra tālikābad'dha karuna.
 Ēkaṭi nirdiṣṭa ḍrā'ibhē samasta anusandhānī pārṭiśana tālikābhukta karē (ēbaṁ samasta ḍrā'ibhē samasta lajikyāla pārṭiśana)
-MD5 bā SHA256 byabahāra karē phā'ilēra aṅkēra gaṇanā karē.
+Phā'ilēra aṅkēra gaṇanā karē.
 Āpanākē āmādēra giṭahāba u'ikitē niẏē yāẏa.
 Abaidha ēnakripaśana ayālagaridama.
 Rimōṭa ḍibāgiṁ sakṣama bā akṣama karē.
@@ -560,3 +560,4 @@ Natuna sanskaraṇa pā'ōẏā gēchē:
 Ḍibāga laga pā'ōẏā yāẏa ni
 sāmpratika kōna'ō bijñapti nē'i
 Pradatta phā'ilē nirdiṣṭa sṭrinẏēra sandhāna karē
+Nirdiṣṭa ḍirēkṭaritē phā'ilēra parimāṇēra gaṇanā karē.

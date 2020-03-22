@@ -453,7 +453,7 @@ Kapasitet: {0} GB uten {1} GB
 Viser alle logiske partisjoner på alle stasjoner.
 Viser alle sonderte stasjoner.
 Viser alle sonderte partisjoner på en spesifikk stasjon (og alle logiske partisjoner på alle stasjoner).
-Beregner filsummer ved å bruke enten MD5 eller SHA256.
+Beregner filsummer.
 Tar deg til vår GitHub Wiki.
 Ugyldig krypteringsalgoritme.
 Aktiverer eller deaktiverer ekstern feilsøking.
@@ -560,3 +560,4 @@ Kunne ikke se etter oppdateringer: {0}
 Feilsøkingslogg ikke funnet
 Ingen nylige varsler
 Søker etter spesifikk streng i den medfølgende filen
+Beregner summer av filer i spesifisert katalog.

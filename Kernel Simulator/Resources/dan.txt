@@ -453,7 +453,7 @@ Kapacitet: {0} GB fri for {1} GB
 Viser alle logiske partitioner på alle drev.
 Viser alle sonderede drev.
 Viser alle efterprøvede partitioner på et specifikt drev (og alle logiske partitioner på alle drev).
-Beregner filsummer ved hjælp af enten MD5 eller SHA256.
+Beregner filsummer.
 Bringer dig til vores GitHub Wiki.
 Ugyldig krypteringsalgoritme.
 Aktiverer eller deaktiverer ekstern debugging.
@@ -560,3 +560,4 @@ Kontrol af opdateringer kunne ikke kontrolleres: {0}
 Debug-log ikke fundet
 Ingen nylige meddelelser
 Søger efter specifik streng i den medfølgende fil
+Beregner summer af filer i det specificerede bibliotek.

@@ -453,7 +453,7 @@ Yōryō: {1} GB kara {0} GB muryō
 subete no doraibu-jō no subete no ronri pātishon o risuto shimasu.
 Purōbu sa reta subete no doraibu o risuto shimasu.
 Tokutei no doraibu-jō no purōbu sa reta subete no pātishon (oyobi subete no doraibu-jō no subete no ronri pātishon) o ichiran hyōji shimasu.
-MD5 matawa SHA256 o shiyō shite fairu no gōkei o keisan shimasu.
+Fairu no gōkei o keisan shimasu.
 GitHub Wiki ni idō shimasu.
 Angō-ka arugorizumu ga mukōdesu.
 Rimōtodebaggu o yūkō matawa mukō ni shimasu.
@@ -560,3 +560,4 @@ Kōshin no kakunin ni shippai shimashita: {0}
 Debaggurogu ga mitsukarimasen
 saikin no tsūchi wa arimasen
 Shitei sa reta fairu-nai no tokutei no mojiretsu o kensaku shimasu
+Shitei shita direkutori-nai no fairu no gōkei o keisan shimasu.

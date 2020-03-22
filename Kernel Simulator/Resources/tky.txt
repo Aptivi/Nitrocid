@@ -453,7 +453,7 @@ Kapasite: {0} GB ücretsiz {1} GB
 Tüm sürücülerdeki tüm mantıksal bölümleri listeleme.
 Tüm problanan sürücüleri listeler.
 Belirli bir sürücüdeki tüm problanan bölümleri (ve tüm sürücülerdeki tüm mantıksal bölümleri) listeler.
-MD5 veya SHA256'yı kullanarak dosya toplamlarını hesaplar.
+Dosya toplamlarını hesaplar.
 Sizi GitHub Wiki'ye götürür.
 Geçersiz şifreleme algoritması.
 Uzaktan hata ayıklamayı etkinleştirir veya devre dışı bırakır.
@@ -560,3 +560,4 @@ Güncellemeler kontrol edilemedi: {0}
 Hata ayıklama günlüğü bulunamadı
 Son bildirim yok
 Sağlanan dosyada belirli bir dizeyi arar
+Belirtilen dizindeki dosyaların toplamlarını hesaplar.

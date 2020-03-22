@@ -453,7 +453,7 @@ Pojemność: {0} GB bezpłatnie z {1} GB
 Wyświetlanie wszystkich partycji logicznych na wszystkich dyskach.
 Wyświetla wszystkie sondowane dyski.
 Wyświetla wszystkie sondowane partycje na określonym dysku (i wszystkie partycje logiczne na wszystkich dyskach).
-Oblicza sumy plików przy użyciu MD5 lub SHA256.
+Oblicza sumy plików.
 Zabierze Cię na naszą GitHub Wiki.
 Niepoprawny algorytm szyfrowania.
 Włącza lub wyłącza zdalne debugowanie.
@@ -560,3 +560,4 @@ Nie można sprawdzić aktualizacji: {0}
 Nie znaleziono dziennika debugowania
 Brak ostatnich powiadomień
 Wyszukuje określony ciąg w podanym pliku
+Oblicza sumy plików w określonym katalogu.

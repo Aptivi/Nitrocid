@@ -453,7 +453,7 @@ Capacità: {0} GB libero da {1} GB
 Elenco di tutte le partizioni logiche su tutte le unità.
 Elenca tutte le unità sondate.
 Elenca tutte le partizioni rilevate su un'unità specifica (e tutte le partizioni logiche su tutte le unità).
-Calcola le somme dei file utilizzando MD5 o SHA256.
+Calcola le somme dei file.
 Ti porta al nostro GitHub Wiki.
 Algoritmo di crittografia non valido.
 Abilita o disabilita il debug remoto.
@@ -560,3 +560,4 @@ Impossibile controllare gli aggiornamenti: {0}
 Registro di debug non trovato
 Nessuna notifica recente
 Cerca una stringa specifica nel file fornito
+Calcola le somme di file nella directory specificata.

@@ -453,7 +453,7 @@ Dung lượng: {0} GB miễn phí {1} GB
 Liệt kê tất cả các phân vùng hợp lý trên tất cả các ổ đĩa.
 Liệt kê tất cả các ổ đĩa được thăm dò.
 Liệt kê tất cả các phân vùng được thăm dò trên một ổ đĩa cụ thể (và tất cả các phân vùng hợp lý trên tất cả các ổ đĩa).
-Tính toán tổng số tệp bằng MD5 hoặc SHA256.
+Tính toán tổng số tập tin.
 Đưa bạn đến Wiki GitHub của chúng tôi.
 Thuật toán mã hóa không hợp lệ.
 Cho phép hoặc vô hiệu hóa gỡ lỗi từ xa.
@@ -560,3 +560,4 @@ Không thể kiểm tra cập nhật: {0}
 Không tìm thấy nhật ký gỡ lỗi
 Không có thông báo gần đây
 Tìm kiếm chuỗi cụ thể trong tệp được cung cấp
+Tính tổng các tập tin trong thư mục được chỉ định.

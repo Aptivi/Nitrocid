@@ -453,7 +453,7 @@ kshamata: {0} jeebee {1} jeebee se mukt
 sabhee draiv par sabhee taarkik vibhaajan soocheebaddh karana.
 sabhee jaanch kee gaee draiv ko soocheebaddh karata hai.
 ek vishisht draiv par sabhee jaanch kie gae vibhaajan ko soocheebaddh karata hai (aur sabhee draiv par sabhee taarkik vibhaajan).
-md5 ya sha256 ka upayog karake fail rakam kee ganana karata hai.
+fail rakam kee ganana karata hai.
 aapako hamaare github wiki mein le jaata hai.
 amaany enkripshan elgorithm.
 doorasth deebaging ko saksham ya aksham karata hai.
@@ -560,3 +560,4 @@ adyatanon kee jaanch karane mein viphal: {0}
 dibag log nahin mila
 haal kee soochanaen nahin
 pradaan kee gaee fail mein vishisht string kee khoj karata hai
+nirdisht nirdeshika mein failon kee rakam kee ganana karata hai.

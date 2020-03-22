@@ -453,7 +453,7 @@ Capacitate: {0} GB fără {1} GB
 Listarea tuturor partițiilor logice pe toate unitățile.
 Listează toate unitățile sondate.
 Listează toate partițiile sondate pe o unitate specifică (și toate partițiile logice pe toate unitățile).
-Calculează sumele fișierelor folosind MD5 sau SHA256.
+Calculează sumele fișierelor.
 Te duce la Wiki-ul nostru GitHub.
 Algoritmul de criptare nevalid.
 Activează sau dezactivează depanarea la distanță.
@@ -560,3 +560,4 @@ Eroare la verificarea actualizărilor: {0}
 Jurnalul de depanare nu a fost găsit
 Nu există notificări recente
 Căutări pentru șiruri specifice în fișierul furnizat
+Calculează sumele de fișiere dintr-un director specificat.

@@ -453,7 +453,7 @@ Sig'imi: {0} GB bepul {1} ​​GB
 Barcha disklardagi barcha mantiqiy bo'limlarni ro'yxati.
 Barcha tekshirilgan disklarning ro'yxati.
 Muayyan diskdagi barcha tekshirilgan bo'limlarni (va barcha drayvlardagi barcha mantiqiy bo'limlarni) ro'yxati.
-MD5 yoki SHA256 yordamida fayl yig'indisini hisoblaydi.
+Fayl yig'indisini hisoblaydi.
 Sizni bizning GitHub Wiki-ga olib boradi.
 Shifrlash algoritmi noto‘g‘ri.
 Masofaviy tuzatish dasturini yoqadi yoki o‘chiradi.
@@ -560,3 +560,4 @@ Yangilanishlarni tekshirib bo'lmadi: {0}
 Tuzatish jurnali topilmadi
 So'nggi bildirishnomalar yo'q
 Taqdim etilgan faylda aniq satrni qidirish
+Belgilangan katalogdagi fayllar yig'indisini hisoblaydi.

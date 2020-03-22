@@ -453,7 +453,7 @@ Kapacitet: {0} GB utan {1} GB
 Visar alla logiska partitioner på alla enheter.
 Listar alla testade enheter.
 Listar alla testade partitioner på en specifik enhet (och alla logiska partitioner på alla enheter).
-Beräknar filsummor med antingen MD5 eller SHA256.
+Beräknar filsummor.
 Tar dig till vår GitHub Wiki.
 Ogiltig krypteringsalgoritm.
 Aktiverar eller inaktiverar fjärrfelsökning.
@@ -560,3 +560,4 @@ Det gick inte att leta efter uppdateringar: {0}
 Felsökningslogg hittades inte
 Inga senaste aviseringar
 Söker efter en specifik sträng i den medföljande filen
+Beräknar summan av filer i specificerad katalog.

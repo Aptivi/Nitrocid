@@ -453,7 +453,7 @@ Kapacita: {0} GB bez {1} GB
 Výpis všech logických oddílů na všech jednotkách.
 Vypíše všechny sondované jednotky.
 Vypíše všechny testované oddíly na konkrétní jednotce (a všechny logické oddíly na všech jednotkách).
-Vypočítá součty souborů pomocí MD5 nebo SHA256.
+Vypočítá součty souborů.
 Vezme vás na naši GitHub Wiki.
 Neplatný šifrovací algoritmus.
 Povoluje nebo zakazuje vzdálené ladění.
@@ -560,3 +560,4 @@ Aktualizace se nezdařila: {0}
 Protokol ladění nebyl nalezen
 Žádná nedávná oznámení
 Hledá konkrétní řetězec v zadaném souboru
+Vypočítá součty souborů v zadaném adresáři.

@@ -453,7 +453,7 @@ Samarathā: {0} Jībī muphata {1} jībī
 sārī'āṁ ḍarā'īvāṁ tē lāzīkala bhāgāṁ dī sūcī hai.
 Sārī'āṁ paṛatālī'āṁ ḍarā'īvāṁ dī sūcī hai.
 Ika khāsa ḍarā'iva tē sārē paṛatālē bhāgāṁ dī sūcī hai (atē sabha ḍarā'ivāṁ tē sārē lāzīkala bhāga).
-MD5 jāṁ SHA256 jāṁ tāṁ varatadē hō'ē phā'īla rakama dī gaṇanā karadā hai.
+Phā'īla rakama dī gaṇanā karadā hai.
 Tuhānū sāḍē gīṭahaba vikī tē lai jāndā hai.
 Avaidha inakripaśana ailagōridama.
 Rimōṭa ḍībagiga nū samaratha jāṁ asamaratha baṇā'undā hai.
@@ -560,3 +560,4 @@ Apaḍēṭāṁ dī jān̄ca karana vica asaphala: {0}
 Ḍībaga lauga nahīṁ mili'ā
 kō'ī hālī'ā sūcanāvāṁ nahīṁ
 Pradāna kītī phā'īla vica khāsa satarāṁ dī khōja karadā hai
+Niradhārata ḍā'iraikaṭarī vica phā'īlāṁ dē jōṛa dī gaṇanā karadā hai.

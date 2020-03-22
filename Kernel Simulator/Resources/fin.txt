@@ -453,7 +453,7 @@ Kapasiteetti: {0} Gt ilmaista {1} Gt
 Listataan kaikki loogiset osiot kaikissa asemissa.
 Luettelee kaikki koetut asemat.
 Listaa kaikki tietyn aseman koetut osiot (ja kaikkien asemien kaikki loogiset osiot).
-Laskee tiedostojen summat joko MD5: llä tai SHA256: lla.
+Laskee tiedostojen summat.
 Vie sinut GitHub-Wikiimme.
 Virheellinen salausalgoritmi.
 Ottaa käyttöön tai poistaa käytöstä etävirheen.
@@ -560,3 +560,4 @@ Päivitysten tarkistaminen epäonnistui: {0}
 Virhelokeja ei löydy
 Ei viimeaikaisia ilmoituksia
 Etsii tarjottua tiedostoa tiettyä merkkijonoa
+Laskee tiedostojen summat määritettyyn hakemistoon.

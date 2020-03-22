@@ -453,7 +453,7 @@ yonglyang : {0} GB {1} GB mulyo
 modeun deulaibeuui modeun nonli patisyeon-eul nayeolhabnida.
 modeun peulobeu deulaibeuleul nayeolhabnida.
 teugjeong deulaibeuui modeun peulobeu patisyeongwa modeun deulaibeuui modeun nonli patisyeon-eul nayeolhabnida.
-MD5 ttoneun SHA256eul sayonghayeo pail habgyeleul gyesanhabnida.
+pail habgyeleul gyesanhabnida.
 GitHub Wikilo idonghabnida.
 yuhyohaji anh-eun amhohwa algolijeum.
 wongyeog dibeoging-eul hwalseonghwahageona bihwalseonghwahabnida.
@@ -560,3 +560,4 @@ eobdeiteuleul hwag-inhaji moshaessseubnida: {0}
 dibeogeu logeuleul chaj-eul su eobs-seubnida
 choegeun allim-i eobs-seubnida.
 jegongdoen pail-eseo teugjeong munjayeol-eul geomsaeghabnida.
+jijeongdoen dilegtoliui pail habgyeleul gyesanhabnida.

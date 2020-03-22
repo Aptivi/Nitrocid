@@ -453,7 +453,7 @@ Kapazität: {0} GB frei von {1} GB
 Auflisten aller logischen Partitionen auf allen Laufwerken.
 Listet alle getesteten Laufwerke auf.
 Listet alle getesteten Partitionen auf einem bestimmten Laufwerk (und alle logischen Partitionen auf allen Laufwerken) auf.
-Berechnet die Dateisummen mit MD5 oder SHA256.
+Berechnet die Dateisummen.
 Führt Sie zu unserem GitHub Wiki.
 Ungültiger Verschlüsselungsalgorithmus.
 Aktiviert oder deaktiviert das Remote-Debugging.
@@ -560,3 +560,4 @@ Fehler beim Suchen nach Updates: {0}
 Debug-Protokoll nicht gefunden
 Keine aktuellen Benachrichtigungen
 Sucht nach einer bestimmten Zeichenfolge in der bereitgestellten Datei
+Berechnet die Dateisummen im angegebenen Verzeichnis.

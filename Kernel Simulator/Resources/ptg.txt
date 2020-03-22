@@ -453,7 +453,7 @@ Capacidade: {0} GB livre de {1} GB
 Listando todas as partições lógicas em todas as unidades.
 Lista todas as unidades testadas.
 Lista todas as partições detectadas em uma unidade específica (e todas as partições lógicas em todas as unidades).
-Calcula as somas dos arquivos usando MD5 ou SHA256.
+Calcula as somas dos arquivos.
 Leva você ao nosso Wiki do GitHub.
 Algoritmo de criptografia inválido.
 Ativa ou desativa a depuração remota.
@@ -560,3 +560,4 @@ Falha ao verificar se há atualizações: {0}
 Log de depuração não encontrado
 Nenhuma notificação recente
 Procura por sequência específica no arquivo fornecido
+Calcula somas de arquivos no diretório especificado.

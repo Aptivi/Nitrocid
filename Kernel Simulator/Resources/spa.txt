@@ -453,7 +453,7 @@ Capacidad: {0} GB libre de {1} GB
 Listado de todas las particiones lógicas en todas las unidades.
 Enumera todas las unidades sondeadas.
 Enumera todas las particiones sondeadas en una unidad específica (y todas las particiones lógicas en todas las unidades).
-Calcula sumas de archivos usando MD5 o SHA256.
+Calcula sumas de archivos.
 Te lleva a nuestra Wiki de GitHub.
 Algoritmo de cifrado no válido
 Habilita o deshabilita la depuración remota.
@@ -560,3 +560,4 @@ Error al buscar actualizaciones: {0}
 Registro de depuración no encontrado
 No hay notificaciones recientes.
 Busca una cadena específica en el archivo proporcionado
+Calcula sumas de archivos en el directorio especificado.

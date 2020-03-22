@@ -453,7 +453,7 @@ Kapacitet: {0} GB bez {1} GB
 Popis svih logičkih particija na svim pogonima.
 Navodi sve ispitivane pogone.
 Navodi sve ispitivane particije na određenom pogonu (i sve logičke particije na svim diskovima).
-Izračunava sume datoteka koristeći MD5 ili SHA256.
+Izračunava sume datoteka.
 Vodi vas na naš GitHub Wiki.
 Nevažeći algoritam šifriranja.
 Omogućuje ili onemogućuje daljinsko uklanjanje pogrešaka.
@@ -560,3 +560,4 @@ Provjera ažuriranja nije uspjela: {0}
 Dnevnik pogreške nije pronađen
 Nema nedavnih obavijesti
 Pretražuje određeni niz u datoj datoteci
+Izračunava zbroj datoteka u navedenom direktoriju.

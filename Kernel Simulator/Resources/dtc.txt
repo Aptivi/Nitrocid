@@ -453,7 +453,7 @@ Capaciteit: {0} GB vrij van {1} GB
 Alle logische partities op alle schijven weergeven.
 Toont alle onderzochte schijven.
 Toont alle onderzochte partities op een specifieke schijf (en alle logische partities op alle schijven).
-Berekent bestandssommen met MD5 of SHA256.
+Berekent bestandssommen.
 Brengt je naar onze GitHub Wiki.
 Ongeldig coderingsalgoritme.
 Schakelt foutopsporing op afstand in of uit.
@@ -560,3 +560,4 @@ Kon niet controleren op updates: {0}
 Foutopsporingslogboek niet gevonden
 Geen recente meldingen
 Zoekt naar een specifieke string in het opgegeven bestand
+Berekent de som van bestanden in de opgegeven directory.

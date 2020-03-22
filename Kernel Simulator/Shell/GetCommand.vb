@@ -918,6 +918,70 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "sumfiles" Then
+
+                If args.Length >= 2 Then
+                    Done = True
+                    Dim folder As String
+                    Dim out As String = ""
+                    Dim FileBuilder As New StringBuilder
+                    eqargs(1) = eqargs(1).Replace("\", "/")
+                    folder = $"{CurrDir}/{eqargs(1)}"
+                    If Not eqargs.Length < 3 Then
+                        out = $"{CurrDir}/{eqargs(2)}"
+                    End If
+                    If folder.Contains(CurrDir.Replace("\", "/")) And folder.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        folder = ReplaceLastOccurrence(folder, CurrDir, "")
+                    End If
+                    If out.Contains(CurrDir.Replace("\", "/")) And out.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        out = ReplaceLastOccurrence(out, CurrDir, "")
+                    End If
+                    If Directory.Exists(folder) Then
+                        For Each file As String In Directory.EnumerateFiles(folder, "*", IO.SearchOption.TopDirectoryOnly)
+                            W("- {0}", True, ColTypes.Neutral, file)
+                            If args(0) = "SHA256" Then
+                                Dim spent As New Stopwatch
+                                spent.Start() 'Time when you're on a breakpoint is counted
+                                Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
+                                Dim encrypted As String = GetArrayEnc(hashbyte)
+                                W(encrypted, True, ColTypes.Neutral)
+                                W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
+                                spent.Stop()
+                            ElseIf args(0) = "SHA1" Then
+                                Dim spent As New Stopwatch
+                                spent.Start() 'Time when you're on a breakpoint is counted
+                                Dim hashbyte As Byte() = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
+                                Dim encrypted As String = GetArrayEnc(hashbyte)
+                                W(encrypted, True, ColTypes.Neutral)
+                                W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
+                                spent.Stop()
+                            ElseIf args(0) = "MD5" Then
+                                Dim spent As New Stopwatch
+                                spent.Start() 'Time when you're on a breakpoint is counted
+                                Dim hashbyte As Byte() = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
+                                Dim encrypted As String = GetArrayEnc(hashbyte)
+                                W(encrypted, True, ColTypes.Neutral)
+                                W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
+                                spent.Stop()
+                            Else
+                                W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Neutral)
+                                Exit For
+                            End If
+                            Console.WriteLine()
+                        Next
+                        If Not out = "" Then
+                            Dim FStream As New StreamWriter(out)
+                            FStream.Write(FileBuilder.ToString)
+                            FStream.Flush()
+                        End If
+                    Else
+                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Neutral, folder)
+                    End If
+                End If
+
             ElseIf requestedCommand = "sysinfo" Then
 
                 Done = True

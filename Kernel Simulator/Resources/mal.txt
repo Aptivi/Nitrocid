@@ -453,7 +453,7 @@ Kapasiti: {0} GB percuma {1} GB
 Menyenaraikan semua partisi logik pada semua pemacu.
 Menyenaraikan semua pemacu probed.
 Menyenaraikan semua partisyen probed pada pemacu tertentu (dan semua partisi logik pada semua pemacu).
-Kira jumlah fail menggunakan MD5 atau SHA256.
+Kira jumlah fail.
 Membawa anda ke Wiki GitHub kami.
 Algoritma penyulitan tidak sah.
 Membolehkan atau melumpuhkan debugging jauh.
@@ -560,3 +560,4 @@ Gagal menyemak kemas kini: {0}
 Log debug tidak dijumpai
 Tiada pemberitahuan baru-baru ini
 Mencari rentetan tertentu dalam fail yang disediakan
+Mengira jumlah fail dalam direktori yang ditentukan.

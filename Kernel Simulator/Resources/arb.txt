@@ -453,7 +453,7 @@ alset: {0} ghyghabayt khaliat min {1} ghyghabayat
 sarid jmye al'aqsam almintaqiat ealaa jmye muhrakat al'aqrasi.
 qawayim jmye muhrakat altahqiq.
 yusarid jmye al'aqsam alty tama aikhtibaruha ealaa muharik 'aqras muhadad (wjamie al'aqsam almintaqiat ealaa jmye muharakat al'aqras).
-yahsab mijamie almilaffat 'iimaa biastikhdam MD5 'aw SHA256.
+yahsab mijamie almilaffat.
 yakhudhuk 'iilaa mawqieina jiathb wayaki.
 khuarizmiat tashfir ghyr salihatin.
 tamkin 'aw taetil tashih al'akhta' ean bued.
@@ -560,3 +560,4 @@ fashilu altahaquq min altahdithat: {0}
 sajal altashih ghyr mawjud
 la tujad 'iikhtarat haditha
 yabhath ean silsilat muhadadat fi almilafi almuqadam
+yahsab majmue almilaffat fi aldalil almuhadad.

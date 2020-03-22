@@ -453,7 +453,7 @@ Kapasitas: {0} GB gratis dari {1} GB
 Daftar semua partisi logis di semua drive.
 Daftar semua drive yang diperiksa.
 Daftar semua partisi yang diperiksa pada drive tertentu (dan semua partisi logis pada semua drive).
-Menghitung jumlah file menggunakan MD5 atau SHA256.
+Menghitung jumlah file.
 Membawa Anda ke GitHub Wiki kami.
 Algoritma enkripsi tidak valid.
 Mengaktifkan atau menonaktifkan debugging jarak jauh.
@@ -560,3 +560,4 @@ Gagal memeriksa pembaruan: {0}
 Log debug tidak ditemukan
 Tidak ada pemberitahuan terbaru
 Mencari string tertentu dalam file yang disediakan
+Menghitung jumlah file dalam direktori yang ditentukan.

@@ -453,7 +453,7 @@ Capacité: {0} Go sans {1} Go
 Liste de toutes les partitions logiques sur tous les lecteurs.
 Répertorie tous les lecteurs sondés.
 Répertorie toutes les partitions sondées sur un lecteur spécifique (et toutes les partitions logiques sur tous les lecteurs).
-Calcule les sommes des fichiers à l'aide de MD5 ou SHA256.
+Calcule les sommes des fichiers.
 Vous amène à notre GitHub Wiki.
 Algorithme de chiffrement non valide.
 Active ou désactive le débogage distant.
@@ -560,3 +560,4 @@ Vous pouvez le télécharger sur:
 Journal de débogage introuvable
 Aucune notification récente
 Recherche une chaîne spécifique dans le fichier fourni
+Calcule les sommes des fichiers dans le répertoire spécifié.

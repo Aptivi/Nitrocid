@@ -78,7 +78,8 @@ Public Module HelpSystem
                                                               {"speak", DoTranslation("Speaks your string using the default voice", currentLang)},
                                                               {"spellbee", DoTranslation("See if you can spell words correctly on time", currentLang)},
                                                               {"sshell", DoTranslation("Connects to an SSH server.", currentLang)},
-                                                              {"sumfile", DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang)},
+                                                              {"sumfile", DoTranslation("Calculates file sums.", currentLang)},
+                                                              {"sumfiles", DoTranslation("Calculates sums of files in specified directory.", currentLang)},
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
                                                               {"update", DoTranslation("System update", currentLang)},
                                                               {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)}}
@@ -357,7 +358,11 @@ Public Module HelpSystem
 
         ElseIf command = "sumfile" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sumfile <MD5/SHA1/SHA256> <file>: " + DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " sumfile <MD5/SHA1/SHA256> <file>: " + DoTranslation("Calculates file sums.", currentLang), True, ColTypes.Neutral)
+
+        ElseIf command = "sumfiles" Then
+
+            W(DoTranslation("Usage:", currentLang) + " sumfiles <MD5/SHA1/SHA256> <dir> [outputFile]", True, ColTypes.Neutral)
 
         ElseIf command = "sysinfo" Then
 

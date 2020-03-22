@@ -453,7 +453,7 @@ Yemkost': {0} GB bez {1} GB
 Perechisleniye vsekh logicheskikh razdelov na vsekh diskakh.
 Perechislyayet vse proverennyye diski.
 Vyvodit spisok vsekh zondiruyemykh razdelov na konkretnom diske (i vsekh logicheskikh razdelov na vsekh diskakh).
-Vychislyayet summy faylov, ispol'zuya libo MD5, libo SHA256.
+Vychislyayet summy faylov.
 Prinimayet vas v nashu GitHub Wiki.
 Nevernyy algoritm shifrovaniya.
 Vklyuchayet ili otklyuchayet udalennuyu otladku.
@@ -560,3 +560,4 @@ Ne udalos' proverit' nalichiye obnovleniy: {0}
 Zhurnal otladki ne nayden
 Net nedavnikh uvedomleniy
 Ishchet konkretnuyu stroku v predostavlennom fayle
+Vychislyayet summy faylov v ukazannom kataloge.

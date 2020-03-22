@@ -453,7 +453,7 @@ Capacity: {0} GB free of {1} GB
 Listing all logical partitions on all drives.
 Lists all probed drives.
 Lists all probed partitions on a specific drive (and all logical partitions on all drives).
-Calculates file sums using either MD5 or SHA256.
+Calculates file sums.
 Takes you to our GitHub Wiki.
 Invalid encryption algorithm.
 Enables or disables remote debugging.
@@ -560,3 +560,4 @@ Failed to check for updates: {0}
 Debug log not found
 No recent notifications
 Searches for specified string in the provided file
+Calculates sums of files in specified directory.
