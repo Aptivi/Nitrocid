@@ -246,7 +246,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **3/16/2020 - 0.0.8.1:** Removed remaining `sses` command, Updated FluentFTP and LibVLCSharp libraries, Now, the `ftp` command no longer reports an error if you have appended `ftp://` or `ftps://` before the IP address or hostname, Added `rexec` arguments to command help, Updated `setcolors` and `setsaver` help commands to their latest versions
 
-**3/17/2020 - WIP - 0.0.8.5:**
+**3/22/2020 - 0.0.8.5:** Updated libraries, Removed filesystem structure parsing, Permanent list of usernames and passwords, Now, "Command defined by" part will update everytime a user wants to change language, Fixed CPU usage being high at all times; the Notifications will be listened to every 10 milliseconds instead of instantly, Added 24-bit true color testing test command. Use `testtruecolor <R;G;B>` to test, implying that R, G, and B isn't greater than 255 or less than 0, You can see passwords as stars, Added Bengali and Punjabi languages, Added `args` cmdline argument in case config can't be used, Made `search` show line number on every match, Added forgotten `search` help command, Added SHA1 algorithm to `sumfile` and test shell, Added `sumfiles` command
 
 ## |-----+--> _Contributors_ <--+-----|
 
