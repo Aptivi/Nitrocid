@@ -688,11 +688,13 @@ Public Module GetCommand
                     End If
                     Dim Filebyte() As String = File.ReadAllLines(Dir)
                     Dim MatchNum As Integer = 1
+                    Dim LineNumber As Integer = 1
                     For Each Str As String In Filebyte
                         If Str.Contains(ToBeFound) Then
-                            W(DoTranslation("Match {0}: {1}", currentLang), True, ColTypes.Neutral, MatchNum, Str)
+                            W("[{2}] " + DoTranslation("Match {0}: {1}", currentLang), True, ColTypes.Neutral, MatchNum, Str, LineNumber)
                             MatchNum += 1
                         End If
+                        LineNumber += 1
                     Next
                     Done = True
                 End If
