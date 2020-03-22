@@ -2,9 +2,8 @@ name: NuGet Gallery Push
 
 on:
   release:
-    types: [published, edited]
-  gollum:
-
+    types: [published]
+    
 jobs:
   build:
 
