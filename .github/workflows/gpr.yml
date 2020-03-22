@@ -2,9 +2,8 @@ name: Package Registry Push
 
 on:
   release:
-    types: [published, edited]
-  gollum:
-
+    types: [published]
+    
 jobs:
   build:
 
