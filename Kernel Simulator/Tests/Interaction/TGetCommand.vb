@@ -130,6 +130,13 @@ Module TGetCommand
             W(GetArrayEnc(hashbyte), True, ColTypes.Neutral)
             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
             spent.Stop()
+        ElseIf Cmd = "testsha1" Then
+            Dim spent As New Stopwatch
+            spent.Start() 'Time when you're on a breakpoint is counted
+            Dim hashbyte As Byte() = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(FullArgs))
+            W(GetArrayEnc(hashbyte), True, ColTypes.Neutral)
+            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+            spent.Stop()
         ElseIf Cmd = "testmd5" Then
             Dim spent As New Stopwatch
             spent.Start() 'Time when you're on a breakpoint is counted
@@ -216,6 +223,7 @@ Module TGetCommand
               "- translate <Lang> <Message>" + vbNewLine +
               "- testregexp <Pattern> <Message>" + vbNewLine +
               "- testsha256 <Message>" + vbNewLine +
+              "- testsha1 <Message>" + vbNewLine +
               "- testmd5 <Message>" + vbNewLine +
               "- colortest <index>" + vbNewLine +
               "- colortruetest <R;G;B>" + vbNewLine +

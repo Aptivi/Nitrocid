@@ -357,7 +357,7 @@ Public Module HelpSystem
 
         ElseIf command = "sumfile" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sumfile <MD5/SHA256> <file>: " + DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " sumfile <MD5/SHA1/SHA256> <file>: " + DoTranslation("Calculates file sums using either MD5 or SHA256.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "sysinfo" Then
 
