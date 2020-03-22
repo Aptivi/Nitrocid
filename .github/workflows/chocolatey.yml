@@ -20,6 +20,5 @@ jobs:
         choco pack (Get-Item "$path\ks.nuspec").FullName
     - name: Package Publication
       run: |
-        ls
-        $FileName = Get-ChildItem -Path $pwd.Path -Name -Filter "KS*"
-        choco push (Get-Item "$pwd.Path\$FileName").FullName
+        $FileName = Get-ChildItem -Path $pwd.Path -Name -Filter "KS*.nupkg"
+        choco push "$pwd\$FileName"
