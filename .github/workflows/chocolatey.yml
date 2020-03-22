@@ -16,6 +16,6 @@ jobs:
       run: |
         $path = "ChocolateyPack"
         $FileName = Get-ChildItem -Path $pwd.Path -Recurse -Name -Filter "KS*"
-        choco apikey -k="${{ secrets.CHOCO_APIKEY }}" -s="https://push.chocolatey.org/"
+        choco apikey --key ${{ secrets.CHOCO_APIKEY }} --source https://push.chocolatey.org/
         choco pack (Get-Item $path + "\ks.nuspec").FullName
         choco push (Get-Item $pwd.Path + "\" + $FileName).FullName
