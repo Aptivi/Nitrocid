@@ -13,11 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: API Key Preparation
-      continue-on-error: true
       run: choco apikey --key ${{ secrets.CHOCO_APIKEY }} --source https://push.chocolatey.org/
-    - name: Package Publication
+    - name: Application Pack
       run: |
         $path = "ChocolateyPack"
-        $FileName = Get-ChildItem -Path $pwd.Path -Recurse -Name -Filter "KS*"
         choco pack (Get-Item $path + "\ks.nuspec").FullName
+    - name: Package Publication
+      run: |
+        $FileName = Get-ChildItem -Path $pwd.Path -Recurse -Name -Filter "KS*"
         choco push (Get-Item $pwd.Path + "\" + $FileName).FullName
