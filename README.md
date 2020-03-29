@@ -8,6 +8,10 @@ This simulator simulates our **future** kernel that is planned by us and is not 
 
 The PPA for KS will come shortly as promised.
 
+## |-----+--> _Announcement_ <--+-----|
+
+Due to time constraints, and the volume of work that we have, the development progress of 0.0.9 and the future versions will slow down until the end of June. Meanwhile, please stay tuned for more updates and progress on [our blog](https://eofla.wordpress.com). You can also make pull requests and issues, but we don't look at them more frequently.
+
 ## |-----+--> _Notices_ <--+-----|
 
 - If you are going to use Chinese/Japanese/Korean language in their translated forms, use `SimSun` or other appropriate font.
