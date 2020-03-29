@@ -488,6 +488,16 @@ Public Module GetCommand
                     End Try
                 End If
 
+            ElseIf words(0) = "lsmail" Then
+
+                If args.Count = 0 Then
+                    PromptUser()
+                    Done = True
+                ElseIf Not eqargs(0) = "" Then
+                    PromptPassword(eqargs(0))
+                    Done = True
+                End If
+
             ElseIf requestedCommand = "logout" Then
 
                 'Logs out of the user

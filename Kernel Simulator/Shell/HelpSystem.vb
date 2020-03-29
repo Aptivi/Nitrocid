@@ -51,6 +51,7 @@ Public Module HelpSystem
                                                               {"logout", DoTranslation("Logs you out", currentLang)},
                                                               {"loteresp", DoTranslation("Respond to love or hate comments.", currentLang)},
                                                               {"lsdbgdev", DoTranslation("Lists debugging devices connected", currentLang)},
+                                                              {"lsmail", DoTranslation("Lists all mails in the specific user.", currentLang)},
                                                               {"lset", DoTranslation("Parse whole directory for size or just the files in the current one.", currentLang)},
                                                               {"mathbee", DoTranslation("See if you can solve mathematical equations on time", currentLang)},
                                                               {"md", DoTranslation("Creates a directory", currentLang)},
@@ -228,6 +229,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " lset <True/False>" + vbNewLine +
               "       lsdbgdev: " + DoTranslation("Parse whole directory for size or just the files in the current one.", currentLang), True, ColTypes.Neutral)
+
+        ElseIf command = "lsmail" Then
+
+            W(DoTranslation("Usage:", currentLang) + " lsmail [emailAddress]", True, ColTypes.Neutral)
 
         ElseIf command = "reloadsaver" Then
 

@@ -309,6 +309,7 @@ Public Module KernelTools
         'Initialize help
         InitHelp()
         InitFTPHelp()
+        IMAPInitHelp()
 
         'We need to create a file so InitAliases() won't give out an error
         If Not File.Exists(paths("Aliases")) Then

@@ -199,6 +199,9 @@
     <PackageReference Include="MadMilkman.Ini">
       <Version>1.0.6</Version>
     </PackageReference>
+    <PackageReference Include="MailKit">
+      <Version>2.5.2</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>
@@ -284,6 +287,10 @@
     <Compile Include="Network\RemoteDebug\RemoteDebugger.vb" />
     <Compile Include="Network\RPC\RemoteProcedure.vb" />
     <Compile Include="Network\RPC\RPC-Commands.vb" />
+    <Compile Include="Network\IMAP\IMAPGetCommand.vb" />
+    <Compile Include="Network\IMAP\IMAPHelpSystem.vb" />
+    <Compile Include="Network\IMAP\IMAPLogin.vb" />
+    <Compile Include="Network\IMAP\IMAPShell.vb" />
     <Compile Include="Network\SSH\SSH.vb" />
     <Compile Include="Shell\AliasManager.vb" />
     <Compile Include="Shell\GetCommand.vb" />

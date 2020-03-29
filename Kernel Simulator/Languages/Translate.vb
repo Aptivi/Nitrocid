@@ -235,6 +235,7 @@ CHOICE:
             'Update help list for translated help
             InitHelp()
             InitFTPHelp()
+            IMAPInitHelp()
             ReloadGenericDefs(OldModDescGeneric)
         Else
             W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Neutral, lang)
