@@ -45,6 +45,7 @@ Module RemoteDebugger
             DebugTCP.Start()
         Catch sex As SocketException
             W(DoTranslation("Remote debug failed to start: {0}", currentLang), True, ColTypes.Neutral, sex.Message)
+            WStkTrc(sex)
         End Try
 
         'Start the listening thread

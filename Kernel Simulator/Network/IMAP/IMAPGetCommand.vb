@@ -23,73 +23,78 @@ Module IMAPGetCommand
     Sub IMAP_ExecuteCommand(ByVal cmd As String, ByVal args As String)
         Dim FullArgsL As List(Of String) = args.Split(" ").ToList
 
-        If cmd = "help" Then
-            IMAPShowHelp()
-        ElseIf cmd = "exit" Then
-            ExitRequested = True
-        ElseIf cmd = "list" Then
-            If FullArgsL(0).IsNumeric Then
-                Dim Page As Integer = FullArgsL(0)
-                If Page <= 0 Then
-                    W(DoTranslation("Page may not be negative or zero.", currentLang), True, ColTypes.Neutral)
-                    Exit Sub
-                End If
-                Dim MsgsLimitForPg As Integer = 10
-                Dim FirstIndex As Integer = (MsgsLimitForPg * Page) - 10
-                Dim LastIndex As Integer = (MsgsLimitForPg * Page) - 1
-                Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
-                For i As Integer = FirstIndex To LastIndex
-                    If Not i > MaxMessagesIndex Then
-                        Dim Msg As MimeMessage = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i))
-                        W("- [{0}] {1}: ", False, ColTypes.HelpCmd, i + 1, Msg.From) : W("{0}", True, ColTypes.HelpDef, Msg.Subject)
+        Try
+            If cmd = "help" Then
+                IMAPShowHelp()
+            ElseIf cmd = "exit" Then
+                ExitRequested = True
+            ElseIf cmd = "list" Then
+                If FullArgsL(0).IsNumeric Then
+                    Dim Page As Integer = FullArgsL(0)
+                    If Page <= 0 Then
+                        W(DoTranslation("Page may not be negative or zero.", currentLang), True, ColTypes.Neutral)
+                        Exit Sub
                     End If
-                Next
-            Else
-                W(DoTranslation("Page is not a numeric value.", currentLang), True, ColTypes.Neutral)
-            End If
-        ElseIf cmd = "read" Then
-            If FullArgsL(0).IsNumeric Then
-                Dim Message As Integer = FullArgsL(0) - 1
-                Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
-                If Message <= 0 Then
-                    W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Neutral)
-                    Exit Sub
-                ElseIf Message > MaxMessagesIndex Then
-                    W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Neutral)
-                    Exit Sub
+                    Dim MsgsLimitForPg As Integer = 10
+                    Dim FirstIndex As Integer = (MsgsLimitForPg * Page) - 10
+                    Dim LastIndex As Integer = (MsgsLimitForPg * Page) - 1
+                    Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
+                    For i As Integer = FirstIndex To LastIndex
+                        If Not i > MaxMessagesIndex Then
+                            Dim Msg As MimeMessage = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i))
+                            W("- [{0}] {1}: ", False, ColTypes.HelpCmd, i + 1, Msg.From) : W("{0}", True, ColTypes.HelpDef, Msg.Subject)
+                        End If
+                    Next
+                Else
+                    W(DoTranslation("Page is not a numeric value.", currentLang), True, ColTypes.Neutral)
                 End If
+            ElseIf cmd = "read" Then
+                If FullArgsL(0).IsNumeric Then
+                    Dim Message As Integer = FullArgsL(0) - 1
+                    Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
+                    If Message <= 0 Then
+                        W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Neutral)
+                        Exit Sub
+                    ElseIf Message > MaxMessagesIndex Then
+                        W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Neutral)
+                        Exit Sub
+                    End If
 
-                'Get message
-                Dim Msg As MimeMessage = IMAP_Client.Inbox.GetMessage(IMAP_Messages(Message))
+                    'Get message
+                    Dim Msg As MimeMessage = IMAP_Client.Inbox.GetMessage(IMAP_Messages(Message))
 
-                'Prepare view
-                Console.WriteLine()
+                    'Prepare view
+                    Console.WriteLine()
 
-                'Print all the addresses that sent the mail
-                For Each Address As InternetAddress In Msg.From
-                    W(DoTranslation("- From {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
-                Next
+                    'Print all the addresses that sent the mail
+                    For Each Address As InternetAddress In Msg.From
+                        W(DoTranslation("- From {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
+                    Next
 
-                'Print all the addresses that received the mail
-                For Each Address As InternetAddress In Msg.To
-                    W(DoTranslation("- To {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
-                Next
+                    'Print all the addresses that received the mail
+                    For Each Address As InternetAddress In Msg.To
+                        W(DoTranslation("- To {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
+                    Next
 
-                'Print the date and time when the user received the mail
-                W(DoTranslation("- Sent at {0} in {1}", currentLang), True, ColTypes.HelpCmd, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
+                    'Print the date and time when the user received the mail
+                    W(DoTranslation("- Sent at {0} in {1}", currentLang), True, ColTypes.HelpCmd, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
 
-                'Prepare subject
-                Console.WriteLine()
-                W($"- {Msg.Subject}", True, ColTypes.HelpCmd)
+                    'Prepare subject
+                    Console.WriteLine()
+                    W($"- {Msg.Subject}", True, ColTypes.HelpCmd)
 
-                'Prepare body
-                Console.WriteLine()
-                W(Msg.GetTextBody(Text.TextFormat.Plain), True, ColTypes.HelpDef)
-                Console.WriteLine()
-            Else
-                W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Neutral)
+                    'Prepare body
+                    Console.WriteLine()
+                    W(Msg.GetTextBody(Text.TextFormat.Plain), True, ColTypes.HelpDef)
+                    Console.WriteLine()
+                Else
+                    W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Neutral)
+                End If
             End If
-        End If
+        Catch ex As Exception
+            W(DoTranslation("Error executing IMAP command: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            WStkTrc(ex)
+        End Try
     End Sub
 
 End Module
