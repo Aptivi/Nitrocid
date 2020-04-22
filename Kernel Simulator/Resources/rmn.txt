@@ -561,3 +561,24 @@ Jurnalul de depanare nu a fost găsit
 Nu există notificări recente
 Căutări pentru șiruri specifice în fișierul furnizat
 Calculează sumele de fișiere dintr-un director specificat.
+Listează toate mesajele de e-mail ale utilizatorului specific.
+Introdu numele de utilizator sau adresa de e-mail:
+Introdu parola:
+Introduceți adresa și portul serverului (<adresă> sau <adresă>:[port]):
+Eroare la conectarea la {0}: {1}
+Se conectează la {0} ...
+Autentifică ...
+Ieșește shell-ul IMAP
+Lista comenzilor
+Descărcați mesaje și enumerați-le
+Deschide un mesaj
+Pagina nu poate fi negativă sau zero.
+Pagina nu este o valoare numerică.
+Numărul mesajului nu poate fi negativ sau zero.
+Numărul mesajului nu este o valoare numerică.
+- De la {0}
+- Pentru {0}
+- Trimis la {0} în {1}
+Mesajul specificat nu este găsit.
+Debugul la distanță nu a reușit: {0}
+Eroare la executarea comenzii IMAP: {0}

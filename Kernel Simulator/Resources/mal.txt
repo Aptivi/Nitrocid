@@ -561,3 +561,24 @@ Log debug tidak dijumpai
 Tiada pemberitahuan baru-baru ini
 Mencari rentetan tertentu dalam fail yang disediakan
 Mengira jumlah fail dalam direktori yang ditentukan.
+Menyenaraikan semua e-mel dalam pengguna tertentu.
+Masukkan nama pengguna atau alamat e-mel:
+Masukkan kata laluan:
+Masukkan alamat dan port pelayan (<alamat> atau <alamat>:[port]):
+Ralat semasa menyambung ke {0}: {1}
+Menyambung ke {0} ...
+Mengesahkan ...
+Keluar dari shell IMAP
+Senarai arahan
+Muat turun mesej dan senaraikannya
+Membuka mesej
+Halaman mungkin tidak negatif atau sifar.
+Halaman bukan nilai berangka.
+Nombor mesej mungkin tidak negatif atau sifar.
+Nombor mesej bukan nilai angka.
+- Dari {0}
+- Ke {0}
+- Dihantar pada {0} pada {1}
+Mesej yang ditentukan tidak dijumpai.
+Debug jarak jauh gagal dimulakan: {0}
+Ralat semasa melaksanakan arahan IMAP: {0}

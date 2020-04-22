@@ -561,3 +561,24 @@ Nie znaleziono dziennika debugowania
 Brak ostatnich powiadomień
 Wyszukuje określony ciąg w podanym pliku
 Oblicza sumy plików w określonym katalogu.
+Wyświetla wszystkie wiadomości e-mail określonego użytkownika.
+Wpisz nazwę użytkownika lub adres e-mail:
+Wprowadź hasło:
+Wprowadź adres i port serwera (<adres> lub <adres>:[port]):
+Błąd podczas łączenia z {0}: {1}
+Łączę z {0} ...
+Uwierzytelnianie ...
+Wychodzi z powłoki IMAP
+Lista poleceń
+Pobiera wiadomości i wyświetla je
+Otwiera wiadomość
+Strona nie może być ujemna ani zero.
+Strona nie jest wartością liczbową.
+Numer wiadomości nie może być ujemny ani zero.
+Numer wiadomości nie jest wartością liczbową.
+- Od {0}
+- Do {0}
+- Wysłano o {0} w {1}
+Określona wiadomość nie została znaleziona.
+Nie można uruchomić zdalnego debugowania: {0}
+Błąd podczas wykonywania polecenia IMAP: {0}

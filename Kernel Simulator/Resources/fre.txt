@@ -561,3 +561,24 @@ Journal de débogage introuvable
 Aucune notification récente
 Recherche une chaîne spécifique dans le fichier fourni
 Calcule les sommes des fichiers dans le répertoire spécifié.
+Répertorie tous les e-mails de l'utilisateur spécifique.
+Entrez votre nom d'utilisateur ou votre adresse e-mail:
+Entrer le mot de passe:
+Saisissez l'adresse et le port du serveur (<adresse> ou <adresse>:[port]):
+Erreur lors de la connexion à {0}: {1}
+Connexion à {0} ...
+Authentification ...
+Quitte le shell IMAP
+Liste des commandes
+Télécharge les messages et les répertorie
+Ouvre un message
+La page peut ne pas être négative ou nulle.
+La page n'est pas une valeur numérique.
+Le numéro du message peut ne pas être négatif ou nul.
+Le numéro de message n'est pas une valeur numérique.
+- À partir de {0}
+- À {0}
+- Envoyé à {0} en {1}
+Le message spécifié est introuvable.
+Le débogage à distance n'a pas pu démarrer: {0}
+Erreur lors de l'exécution de la commande IMAP: {0}

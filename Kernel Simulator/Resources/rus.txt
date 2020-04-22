@@ -561,3 +561,24 @@ Zhurnal otladki ne nayden
 Net nedavnikh uvedomleniy
 Ishchet konkretnuyu stroku v predostavlennom fayle
 Vychislyayet summy faylov v ukazannom kataloge.
+Perechislyayet vse pis'ma opredelennogo pol'zovatelya.
+Vvedite imya pol'zovatelya ili adres elektronnoy pochty:
+Vvedite parol':
+Vvedite adres i port servera (<adres> ili <adres>:[port]):
+Oshibka pri podklyuchenii k {0}: {1}
+Podklyucheniye k {0} ...
+Proverka podlinnosti ...
+Vykhod iz obolochki IMAP
+Spisok komand
+Zagruzhayet soobshcheniya i perechislyayet ikh
+Otkryvayet soobshcheniye
+Stranitsa ne mozhet byt' otritsatel'noy ili nulevoy.
+Stranitsa ne yavlyayetsya chislovym znacheniyem.
+Nomer soobshcheniya ne mozhet byt' otritsatel'nym ili nulevym.
+Nomer soobshcheniya ne yavlyayetsya chislovym znacheniyem.
+- Ot {0}
+- do {0}
+- Otpravleno v {0} v {1}
+Ukazannoye soobshcheniye ne naydeno.
+Ne udalos' zapustit' udalennuyu otladku: {0}
+Oshibka pri vypolnenii komandy IMAP: {0}

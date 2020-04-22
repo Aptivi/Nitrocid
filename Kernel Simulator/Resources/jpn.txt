@@ -561,3 +561,24 @@ Debaggurogu ga mitsukarimasen
 saikin no tsūchi wa arimasen
 Shitei sa reta fairu-nai no tokutei no mojiretsu o kensaku shimasu
 Shitei shita direkutori-nai no fairu no gōkei o keisan shimasu.
+Tokutei no yūzā no subete no mēru o ichiran hyōji shimasu.
+Yūzā-mei matawa mēruadoresu o nyūryoku shite kudasai: 
+Pasuwādo o nyūryoku suru: 
+Sābā no adoresu to pōto o nyūryoku (<adoresu> matawa <adoresu>:[Port]): 
+{0} E no setsuzoku-chū ni erā ga hassei shimashita: {1}
+{0} Ni setsuzoku shite imasu... 
+Ninshō-chū... 
+Aimappu sheru o shūryō shimasu
+komando no risuto
+messēji o daunrōdo shite ichiran hyōji shimasu
+messēji o hirakimasu
+pēji wa fu matawa zerodeatte wa narimasen.
+Pēji wa sūchide wa arimasen.
+Messēji bangō wa fu matawa zerodeatte wa narimasen.
+Messēji bangō wa sūchide wa arimasen.
+- {0} Kara
+- {0}
+- {1} no {0} ni sōshin
+shitei sa reta messēji ga mitsukarimasen.
+Rimōtodebaggu o kaishi dekimasendeshita: {0}
+Aimappu komando no jikkō erā: {0}

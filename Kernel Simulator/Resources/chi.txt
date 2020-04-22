@@ -561,3 +561,24 @@ Zhǎo bù dào tiáoshì rìzhì
 Zuìjìn méiyǒu tōngzhī
 Zài tígōng de wénjiàn zhōng sōusuǒ tèdìng de zìfú chuàn
 Jìsuàn zhǐdìng mùlù zhōng wénjiàn de zǒnghé.
+Liè chū tèdìng yònghù zhōng de suǒyǒu yóujiàn.
+Shūrù yònghù míng huò yóujiàn dìzhǐ:
+Shūrù mìmǎ:
+Shūrù fúwùqì dìzhǐ hé duānkǒu (<dìzhǐ> huò <dìzhǐ>:[Duānkǒu]):
+Liánjiē dào {0} shí chūcuò: {1}
+Zhèngzài liánjiē dào {0}...
+Zhèngzài yànzhèng...
+Tuìchū IMAP Shell
+mìnglìng qīngdān
+xiàzài xiāoxī bìng liè chū tāmen
+dǎkāi yītiáo xiāoxī
+yèmiàn bùnéng wéi fùshù huò líng.
+Yèmiàn bùshì shùzhí.
+Xiāoxī hào bùnéng wéi fù huò líng.
+Xiāoxī hào bùshì shùzì zhí.
+- Cóng {0} qǐ
+- zhì {0}
+- zài {1} zhōng de {0} fāsòng
+zhǎo bù dào zhǐdìng de xiāoxī.
+Yuǎnchéng tiáoshì wúfǎ qǐdòng:{0}
+Zhíxíng IMAP mìnglìng shí chūcuò:{0}

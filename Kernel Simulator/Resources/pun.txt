@@ -561,3 +561,24 @@ Apaḍēṭāṁ dī jān̄ca karana vica asaphala: {0}
 kō'ī hālī'ā sūcanāvāṁ nahīṁ
 Pradāna kītī phā'īla vica khāsa satarāṁ dī khōja karadā hai
 Niradhārata ḍā'iraikaṭarī vica phā'īlāṁ dē jōṛa dī gaṇanā karadā hai.
+Khāsa upabhōgatā dī'āṁ sārī'āṁ mēlāṁ dī sūcī baṇā'ō.
+Upabhōgatā nāma jāṁ mēla patā daraja karō:
+Pāsavaraḍa daraja karō:
+Saravara patā atē pōraṭa dākhala karō (<aiḍaraisa> jāṁ <aiḍaraisa>:[Pōraṭa]):
+{0}: {1 To nāla kanaikaṭa karana daurāna galatī
+{0} nāla juṛa rihā hai...
+Pramāṇita kara rihā hai...
+IMAP śaila tōṁ bāhara ā'undā hai
+kamāṇḍāṁ dī sūcī
+sunēhē ḍā'unalōḍa karadā hai atē uhanāṁ nū sūcībadha karadā hai
+ika sunēhā khōl'hadā hai
+panā nakārātamaka jāṁ zīrō nahīṁ hō sakadā.
+Panā ika sakhi'ātamaka mula nahīṁ hai.
+Sadēśa nabara nakārātamaka jāṁ zīrō nahīṁ hō sakadā.
+Sunēhā nabara ika sakhi'ātamaka mula nahīṁ hai.
+- {0} Tōṁ
+- tōṁ {0}
+- {1} vica {0} tē bhēji'ā gi'ā
+ditā sunēhā nahīṁ mili'ā hai.
+Rimōṭa ḍībaga arabha karana vica asaphala: {0}
+IMAP kamāṇḍa calā'uṇa daurāna galatī: {0}

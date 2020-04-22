@@ -561,3 +561,24 @@ Hata ayıklama günlüğü bulunamadı
 Son bildirim yok
 Sağlanan dosyada belirli bir dizeyi arar
 Belirtilen dizindeki dosyaların toplamlarını hesaplar.
+Belirli bir kullanıcıdaki tüm postaları listeler.
+Kullanıcı adını veya posta adresini girin:
+Parolanı Gir:
+Sunucu adresini ve bağlantı noktasını girin (<adres> veya <adres>:[bağlantı noktası]):
+{0} 'a bağlanırken hata oluştu: {1}
+{0} ağına bağlanıyor ...
+Kimlik doğrulanıyor ...
+IMAP kabuğundan çıkar
+Komutların listesi
+İletileri indirir ve listeler
+Bir mesaj açar
+Sayfa negatif veya sıfır olmayabilir.
+Sayfa sayısal bir değer değil.
+Mesaj numarası negatif veya sıfır olmayabilir.
+Mesaj numarası sayısal bir değer değil.
+- {0} tarihinden itibaren
+- {0} 'a
+- {1} içinde {0} tarihinde gönderildi
+Belirtilen mesaj bulunamadı.
+Uzaktan hata ayıklama başlatılamadı: {0}
+IMAP komutu yürütülürken hata oluştu: {0}

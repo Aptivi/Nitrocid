@@ -561,3 +561,24 @@ dibeogeu logeuleul chaj-eul su eobs-seubnida
 choegeun allim-i eobs-seubnida.
 jegongdoen pail-eseo teugjeong munjayeol-eul geomsaeghabnida.
 jijeongdoen dilegtoliui pail habgyeleul gyesanhabnida.
+teugjeong sayongjaui modeun meil-eul nayeolhabnida.
+sayongja ileum ttoneun meil jusoleul iblyeoghasibsio :
+amholeul iblyeog:
+seobeo jusowa poteuleul iblyeoghasibsio (<juso> ttoneun <juso>:[poteu]).
+{0}e yeongyeolhaneun dong-an olyuga balsaenghaessseubnida: {1}
+{0}e yeongyeolhaneun jung ...
+injeung jung ...
+IMAP swel-eul jonglyohabnida
+myeonglyeong moglog
+mesijileul daunlodeuhayeo nayeol
+mesijileul yeobni da
+peijiga eumsu-igeona 0i anil su issseubnida.
+peijiga susja gabs-i anibnida.
+mesiji beonhoneun eumsu-igeona 0i anil su issseubnida.
+mesiji beonhoneun susja gabs-i anibnida.
+- {0} buteo
+- {0} kkaji
+- {1} ui {0}e bonaem
+jijeongdoen mesijileul chaj-eul su eobs-seubnida.
+wongyeog dibeogeuleul sijaghaji moshaessseubnida : {0}
+IMAP myeonglyeong silhaeng jung olyu : {0}

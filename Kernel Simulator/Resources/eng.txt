@@ -561,3 +561,24 @@ Debug log not found
 No recent notifications
 Searches for specified string in the provided file
 Calculates sums of files in specified directory.
+Lists all mails in the specific user.
+Enter username or mail address: 
+Enter password: 
+Enter server address and port (<address> or <address>:[port]): 
+Error while connecting to {0}: {1}
+Connecting to {0}...
+Authenticating...
+Exits the IMAP shell
+List of commands
+Downloads messages and lists them
+Opens a message
+Page may not be negative or zero.
+Page is not a numeric value.
+Message number may not be negative or zero.
+Message number is not a numeric value.
+- From {0}
+- To {0}
+- Sent at {0} in {1}
+Message specified is not found.
+Remote debug failed to start: {0}
+Error executing IMAP command: {0}

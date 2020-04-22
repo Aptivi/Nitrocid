@@ -561,3 +561,24 @@ Debug-Protokoll nicht gefunden
 Keine aktuellen Benachrichtigungen
 Sucht nach einer bestimmten Zeichenfolge in der bereitgestellten Datei
 Berechnet die Dateisummen im angegebenen Verzeichnis.
+Listet alle E-Mails des jeweiligen Benutzers auf.
+Geben Sie den Benutzernamen oder die E-Mail-Adresse ein:
+Passwort eingeben:
+Geben Sie die Serveradresse und den Port ein (<Adresse> oder <Adresse>:[Port]):
+Fehler beim Herstellen einer Verbindung zu {0}: {1}
+Verbindung zu {0} herstellen ...
+Authentifizierung ...
+Beendet die IMAP-Shell
+Liste der Befehle
+Lädt Nachrichten herunter und listet sie auf
+Öffnet eine Nachricht
+Die Seite darf nicht negativ oder null sein.
+Seite ist kein numerischer Wert.
+Die Nachrichtennummer darf nicht negativ oder null sein.
+Die Nachrichtennummer ist kein numerischer Wert.
+- Von {0}
+- Zu {0}
+- Gesendet um {0} in {1}
+Die angegebene Nachricht wurde nicht gefunden.
+Remote-Debug konnte nicht gestartet werden: {0}
+Fehler beim Ausführen des IMAP-Befehls: {0}

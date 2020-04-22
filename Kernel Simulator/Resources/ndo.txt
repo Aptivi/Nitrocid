@@ -561,3 +561,24 @@ Log debug tidak ditemukan
 Tidak ada pemberitahuan terbaru
 Mencari string tertentu dalam file yang disediakan
 Menghitung jumlah file dalam direktori yang ditentukan.
+Daftar semua email di pengguna tertentu.
+Masukkan nama pengguna atau alamat surat:
+Masukkan kata kunci:
+Masukkan alamat dan port server (<address> atau <address>:[port]):
+Kesalahan saat menyambung ke {0}: {1}
+Menghubungkan ke {0} ...
+Mengautentikasi ...
+Keluar dari shell IMAP
+Daftar perintah
+Unduh pesan dan daftarkan mereka
+Buka pesan
+Halaman mungkin tidak negatif atau nol.
+Halaman bukan nilai numerik.
+Nomor pesan mungkin tidak negatif atau nol.
+Nomor pesan bukan nilai numerik.
+- Dari {0}
+- Ke {0}
+- Dikirim pada {0} dalam {1}
+Pesan yang ditentukan tidak ditemukan.
+Debug jarak jauh gagal memulai: {0}
+Kesalahan saat menjalankan perintah IMAP: {0}

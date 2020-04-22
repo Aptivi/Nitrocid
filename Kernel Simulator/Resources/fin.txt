@@ -561,3 +561,24 @@ Virhelokeja ei löydy
 Ei viimeaikaisia ilmoituksia
 Etsii tarjottua tiedostoa tiettyä merkkijonoa
 Laskee tiedostojen summat määritettyyn hakemistoon.
+Listaa kaikki tietyn käyttäjän viestit.
+Kirjoita käyttäjänimi tai sähköpostiosoite:
+Kirjoita salasana:
+Kirjoita palvelimen osoite ja portti (<osoite> tai <osoite>:[portti]):
+Virhe muodostettaessa yhteyttä verkkoon {0}: {1}
+Yhdistetään kohteeseen {0} ...
+Todennusmoduuli ...
+Poistuu IMAP-kuoresta
+Luettelo komennoista
+Lataa viestit ja luettelee ne
+Avaa viestin
+Sivu ei saa olla negatiivinen tai nolla.
+Sivu ei ole numeerinen arvo.
+Viestin numero ei saa olla negatiivinen tai nolla.
+Viestin numero ei ole numeerinen arvo.
+- Alkaen {0}
+- Kohteeseen {0}
+- Lähetetty {0} {1}
+Määritettyä viestiä ei löydy.
+Etä debug-käynnistys epäonnistui: {0}
+IMAP-komennon suorittamisessa tapahtui virhe: {0}

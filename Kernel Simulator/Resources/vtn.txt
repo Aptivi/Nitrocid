@@ -561,3 +561,24 @@ Không tìm thấy nhật ký gỡ lỗi
 Không có thông báo gần đây
 Tìm kiếm chuỗi cụ thể trong tệp được cung cấp
 Tính tổng các tập tin trong thư mục được chỉ định.
+Liệt kê tất cả các thư trong người dùng cụ thể.
+Nhập tên người dùng hoặc địa chỉ thư:
+Nhập mật khẩu:
+Nhập địa chỉ máy chủ và cổng (<địa chỉ> hoặc <địa chỉ>:[cổng]):
+Lỗi khi kết nối với {0}: {1}
+Đang kết nối với {0} ...
+Xác thực ...
+Thoát khỏi vỏ IMAP
+Danh sách các lệnh
+Tải tin nhắn và liệt kê chúng
+Mở một tin nhắn
+Trang có thể không âm hoặc bằng không.
+Trang không phải là một giá trị số.
+Số tin nhắn có thể không âm hoặc bằng không.
+Số tin nhắn không phải là một giá trị số.
+- Từ {0}
+- Đến {0}
+- Đã gửi tại {0} trong {1}
+Tin nhắn được chỉ định không được tìm thấy.
+Gỡ lỗi từ xa không bắt đầu: {0}
+Lỗi khi thực thi lệnh IMAP: {0}

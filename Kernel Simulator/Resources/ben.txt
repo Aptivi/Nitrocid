@@ -561,3 +561,24 @@ Natuna sanskaraṇa pā'ōẏā gēchē:
 sāmpratika kōna'ō bijñapti nē'i
 Pradatta phā'ilē nirdiṣṭa sṭrinẏēra sandhāna karē
 Nirdiṣṭa ḍirēkṭaritē phā'ilēra parimāṇēra gaṇanā karē.
+Nirdiṣṭa byabahārakārīra samasta mēla tālikābhukta karē.
+Byabahārakārīra nāma bā mēla ṭhikānā likhuna:
+Pāsa'ōẏārḍa likhuna:
+Sārbhārēra ṭhikānā ēbaṁ pōrṭa prabēśa karuna (<ṭhikānā> bā <ṭhikānā>:[Pōrṭa]):
+{0} Ēra sāthē sanyōga karāra samaẏa truṭi: {1}
+{0} Ēra sāthē sanyukta hacchē...
+Pramāṇa karā hacchē...
+IMAP śēlaṭi prasthāna karē
+kamānḍēra tālikā
+bārtā ḍā'unalōḍa karē sēguli tālikābhukta karē
+ēkaṭi bārtā khōlē
+pr̥ṣṭhāṭi nētibācaka bā śūn'ya nā'ō hatē pārē.
+Pr̥ṣṭhā kōna'ō saṅkhyāra māna naẏa.
+Bārtā nambara negativeṇātmaka bā śūn'ya nā'ō hatē pārē.
+Bārtā nambara ēkaṭi saṅkhyāgata māna naẏa.
+- {0} Thēkē
+- thēkē {0}
+- {1} ē {0} ē prēraṇa
+nirdiṣṭa bārtā pā'ōẏā yāẏa ni.
+Rimōṭa ḍibāga śuru karatē byartha: {0}
+IMAP kamānḍa kāryakara karatē truṭi: {0}

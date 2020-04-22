@@ -561,3 +561,24 @@ Foutopsporingslogboek niet gevonden
 Geen recente meldingen
 Zoekt naar een specifieke string in het opgegeven bestand
 Berekent de som van bestanden in de opgegeven directory.
+Geeft alle e-mails van de specifieke gebruiker weer.
+Voer gebruikersnaam of e-mailadres in:
+Voer wachtwoord in:
+Voer het serveradres en de poort in (<adres> of <adres>:[poort]):
+Fout bij verbinden met {0}: {1}
+Verbinding maken met {0} ...
+Verifiëren ...
+Verlaat de IMAP-shell
+Lijst met opdrachten
+Downloadt berichten en geeft ze weer
+Opent een bericht
+Pagina mag niet negatief of nul zijn.
+Pagina is geen numerieke waarde.
+Berichtnummer mag niet negatief of nul zijn.
+Berichtnummer is geen numerieke waarde.
+- Van {0}
+- Om {0}
+- Verzonden om {0} in {1}
+Het opgegeven bericht is niet gevonden.
+Foutopsporing op afstand kan niet starten: {0}
+Fout bij het uitvoeren van IMAP-opdracht: {0}

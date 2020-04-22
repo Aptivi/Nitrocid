@@ -561,3 +561,24 @@ Debug-log ikke fundet
 Ingen nylige meddelelser
 Søger efter specifik streng i den medfølgende fil
 Beregner summer af filer i det specificerede bibliotek.
+Viser alle mails i den specifikke bruger.
+Indtast brugernavn eller e-mail-adresse:
+Indtast adgangskode:
+Indtast serveradresse og port (<adresse> eller <adresse>:[port]):
+Fejl under forbindelse til {0}: {1}
+Opretter forbindelse til {0} ...
+Godkender ...
+Forlader IMAP-shell
+Liste over kommandoer
+Downloader beskeder og lister dem
+Åbner en meddelelse
+Siden er muligvis ikke negativ eller nul.
+Side er ikke en numerisk værdi.
+Meddelelsesnummeret er muligvis ikke negativt eller nul.
+Meddelelsesnummer er ikke en numerisk værdi.
+- Fra {0}
+- Til {0}
+- Sendt kl {0} om {1}
+Den angivne meddelelse findes ikke.
+Fjern debug startede ikke: {0}
+Fejl ved udførelse af IMAP-kommando: {0}

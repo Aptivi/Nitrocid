@@ -561,3 +561,24 @@ Tuzatish jurnali topilmadi
 So'nggi bildirishnomalar yo'q
 Taqdim etilgan faylda aniq satrni qidirish
 Belgilangan katalogdagi fayllar yig'indisini hisoblaydi.
+Muayyan foydalanuvchidagi barcha xatlar ro'yxati.
+Foydalanuvchi nomi yoki pochta manzilini kiriting:
+Parolni kiriting:
+Server manzili va portni kiriting (<manzil> yoki <manzil>:[port]):
+{0} ga ulanishda xato: {1}
+{0} ga ulanmoqda ...
+Haqiqiylik tekshirilmoqda ...
+IMAP qobig'idan chiqadi
+Buyruqlar ro'yxati
+Xabarlarni yuklab oladi va ularni ro'yxatlaydi
+Xabar ochadi
+Sahifa salbiy yoki nol bo'lmasligi mumkin.
+Sahifa raqamli qiymat emas.
+Xabar raqami salbiy yoki nol bo'lmasligi mumkin.
+Xabar raqami raqamli qiymat emas.
+- {0} dan
+- {0} ga
+- {1} ichida {0} yuborilgan
+Ko‘rsatilgan xabar topilmadi.
+Masofaviy nosozliklarni boshlab bo'lmadi: {0}
+IMAP buyrug'ini bajarishda xato: {0}

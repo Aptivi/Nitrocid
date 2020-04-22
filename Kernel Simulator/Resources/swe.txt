@@ -561,3 +561,24 @@ Felsökningslogg hittades inte
 Inga senaste aviseringar
 Söker efter en specifik sträng i den medföljande filen
 Beräknar summan av filer i specificerad katalog.
+Listar alla e-postmeddelanden i den specifika användaren.
+Ange användarnamn eller e-postadress:
+Skriv in lösenord:
+Ange serveradress och port (<adress> eller <adress>:[port]):
+Fel vid anslutning till {0}: {1}
+Ansluter till {0} ...
+Autentiserings ...
+Utgår från IMAP-skalet
+Lista över kommandon
+Hämtar meddelanden och listar dem
+Öppnar ett meddelande
+Sidan kanske inte är negativ eller noll.
+Sidan är inte ett numeriskt värde.
+Meddelandenumret kanske inte är negativt eller noll.
+Meddelandenumret är inte ett numeriskt värde.
+- Från {0}
+- Till {0}
+- Skickat kl {0} in {1}
+Meddelandet som anges hittades inte.
+Fjärrfelsökning kunde inte starta: {0}
+Fel vid körning av IMAP-kommando: {0}

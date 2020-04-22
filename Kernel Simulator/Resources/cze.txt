@@ -561,3 +561,24 @@ Protokol ladění nebyl nalezen
 Žádná nedávná oznámení
 Hledá konkrétní řetězec v zadaném souboru
 Vypočítá součty souborů v zadaném adresáři.
+Vypíše všechny e-maily u konkrétního uživatele.
+Zadejte uživatelské jméno nebo e-mailovou adresu:
+Zadejte heslo:
+Zadejte adresu serveru a port (<adresa> nebo <adresa>:[port]):
+Chyba při připojení k {0}: {1}
+Připojuji se k {0} ...
+Ověřování ...
+Ukončí prostředí IMAP
+Seznam příkazů
+Stáhne zprávy a vypíše je
+Otevře zprávu
+Stránka nesmí být záporná nebo nulová.
+Stránka není číselná hodnota.
+Číslo zprávy nesmí být záporné nebo nulové.
+Číslo zprávy není číselná hodnota.
+- Od {0}
+- Do {0}
+- Odesláno {0} v {1}
+Zadaná zpráva nebyla nalezena.
+Spuštění vzdáleného ladění se nezdařilo: {0}
+Chyba při provádění příkazu IMAP: {0}

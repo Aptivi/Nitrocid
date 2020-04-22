@@ -561,3 +561,24 @@ Dnevnik pogreške nije pronađen
 Nema nedavnih obavijesti
 Pretražuje određeni niz u datoj datoteci
 Izračunava zbroj datoteka u navedenom direktoriju.
+Navodi sve mailove određenog korisnika.
+Unesite korisničko ime ili adresu e-pošte:
+Upišite lozinku:
+Unesite adresu i port poslužitelja (<adresa> ili <adresa>:[port]):
+Pogreška prilikom povezivanja na {0}: {1}
+Povezivanje sa {0} ...
+Autentikacija ...
+Izlazi iz ljuske IMAP
+Popis naredbi
+Preuzima poruke i navodi ih
+Otvara poruku
+Stranica može biti negativna ili nula.
+Stranica nije brojčana vrijednost.
+Broj poruke može biti negativan ili nula.
+Broj poruke nije brojčana vrijednost.
+- Od {0}
+- Za {0}
+- Poslano u {0} u {1}
+Navedena poruka nije pronađena.
+Nije uspjelo pokretanje daljinske pogreške: {0}
+Pogreška pri izvršavanju naredbe IMAP: {0}

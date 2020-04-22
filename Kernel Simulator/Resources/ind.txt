@@ -561,3 +561,24 @@ dibag log nahin mila
 haal kee soochanaen nahin
 pradaan kee gaee fail mein vishisht string kee khoj karata hai
 nirdisht nirdeshika mein failon kee rakam kee ganana karata hai.
+vishisht upayogakarta ke sabhee mel soocheebaddh karata hai.
+upayogakarta naam ya mel pata darj karen:
+paas vard darj karen:
+sarvar pata aur port darj karen (<pata> ya <pata>:[port]):
+{0}: {1} se kanekt karate samay truti
+{0} se kanekt ho raha hai ...
+pramaanit kar raha hai ...
+imap shel se baahar nikalata hai
+aadeshon kee soochee
+sandesh daunalod karata hai aur unhen soocheebaddh karata hai
+ek sandesh kholata hai
+prshth nakaaraatmak ya shoony nahin ho sakata hai.
+prshth ek sankhyaatmak maan nahin hai.
+sandesh sankhya rnaatmak ya shoony nahin ho sakatee hai.
+sandesh sankhya ek sankhyaatmak maan nahin hai.
+- {0} se
+- {0} ke lie
+- {0} mein {1} par bheja gaya
+nirdisht sandesh nahin mila hai.
+doorasth deebag praarambh karane mein viphal: {0}
+imap kamaand nishpaadit karane mein truti: {0}

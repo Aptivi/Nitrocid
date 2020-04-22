@@ -561,3 +561,24 @@ Feilsøkingslogg ikke funnet
 Ingen nylige varsler
 Søker etter spesifikk streng i den medfølgende filen
 Beregner summer av filer i spesifisert katalog.
+Viser alle postene i den spesifikke brukeren.
+Skriv inn brukernavn eller e-postadresse:
+Oppgi passord:
+Angi serveradresse og port (<adresse> eller <adresse>:[port]):
+Feil under tilkobling til {0}: {1}
+Kobler til {0} ...
+Godkjenner ...
+Gå ut av IMAP-skallet
+Liste over kommandoer
+Last ned meldinger og lister dem
+Åpner en melding
+Siden er kanskje ikke negativ eller null.
+Side er ikke en numerisk verdi.
+Meldingsnummeret er kanskje ikke negativt eller null.
+Meldingsnummer er ikke en numerisk verdi.
+- Fra {0}
+- Til {0}
+- Sendt kl {0} om {1}
+Melding angitt er ikke funnet.
+Ekstern debug kunne ikke starte: {0}
+Feil ved utføring av IMAP-kommando: {0}

@@ -561,3 +561,24 @@ sajal altashih ghyr mawjud
 la tujad 'iikhtarat haditha
 yabhath ean silsilat muhadadat fi almilafi almuqadam
 yahsab majmue almilaffat fi aldalil almuhadad.
+yusrid jmye rasayil albarid alkhasat bialmustakhdam almuhadad.
+'udkhul aism almustakhdam 'aw eunwan albarid:
+'udkhul kalimat almurur:
+'udkhul eunwan alkhadim walmunafidh (<aleunwan> 'aw <aleanwan>:[almnfdh]):
+khata 'athna' alaitisal b {0}: {1}
+jar alaitisal b {0} ...
+musadaqa ...
+yakhruj min qadhifat IMAP
+qayimat al'awamir
+tanzil alrasayil wa'iidrajiha
+yaftah risalatan
+la yajuz 'an takun alsafhat salbiatan 'aw sifrin.
+alsafhat laysat qimatan raqmiatin.
+qad la yakun raqm alrisalat salbana 'aw sfrana.
+raqm alrisalat lays qimatan raqmiatin.
+- min {0}
+- 'iilaa {0}
+- tama al'iirsal fi {0} fi {1}
+lm yatim aleuthur ealaa alrisalat almuhdadat.
+fashilu bad' tashih al'akhta' ean bued: {0}
+khata fi tanfidh 'amr IMAP: {0}

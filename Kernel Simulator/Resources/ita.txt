@@ -561,3 +561,24 @@ Registro di debug non trovato
 Nessuna notifica recente
 Cerca una stringa specifica nel file fornito
 Calcola le somme di file nella directory specificata.
+Elenca tutte le mail dell'utente specifico.
+Inserisci nome utente o indirizzo e-mail:
+Inserire la password:
+Immettere l'indirizzo e la porta del server (<indirizzo> o <indirizzo>:[porta]):
+Errore durante la connessione a {0}: {1}
+Connessione a {0} ...
+Autenticazione in ...
+Esce dalla shell IMAP
+Elenco dei comandi
+Scarica i messaggi e li elenca
+Apre un messaggio
+La pagina potrebbe non essere negativa o zero.
+La pagina non è un valore numerico.
+Il numero del messaggio potrebbe non essere negativo o zero.
+Il numero del messaggio non è un valore numerico.
+- Da {0}
+- A {0}
+- Inviato a {0} in {1}
+Il messaggio specificato non è stato trovato.
+Impossibile avviare il debug remoto: {0}
+Errore durante l'esecuzione del comando IMAP: {0}

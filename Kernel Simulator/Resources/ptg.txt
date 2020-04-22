@@ -561,3 +561,24 @@ Log de depuração não encontrado
 Nenhuma notificação recente
 Procura por sequência específica no arquivo fornecido
 Calcula somas de arquivos no diretório especificado.
+Lista todos os emails no usuário específico.
+Digite o nome de usuário ou endereço de email:
+Digite a senha:
+Digite o endereço e a porta do servidor (<endereço> ou <endereço>:[porta]):
+Erro ao conectar-se a {0}: {1}
+Conectando a {0} ...
+Autenticando ...
+Sai do shell IMAP
+Lista de comandos
+Faz o download das mensagens e as lista
+Abre uma mensagem
+A página pode não ser negativa ou zero.
+Página não é um valor numérico.
+O número da mensagem pode não ser negativo ou zero.
+O número da mensagem não é um valor numérico.
+- De {0}
+- para {0}
+- Enviado às {0} em {1}
+A mensagem especificada não foi encontrada.
+A depuração remota falhou ao iniciar: {0}
+Erro ao executar o comando IMAP: {0}

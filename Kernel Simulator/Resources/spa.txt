@@ -561,3 +561,24 @@ Registro de depuración no encontrado
 No hay notificaciones recientes.
 Busca una cadena específica en el archivo proporcionado
 Calcula sumas de archivos en el directorio especificado.
+Enumera todos los correos del usuario específico.
+Ingrese nombre de usuario o dirección de correo electrónico:
+Introducir la contraseña:
+Ingrese la dirección del servidor y el puerto (<dirección> o <dirección>:[puerto]):
+Error al conectarse a {0}: {1}
+Conectando a {0} ...
+Autenticando ...
+Sale del shell IMAP
+Lista de comandos
+Descarga mensajes y los enumera
+Abre un mensaje
+La página puede no ser negativa o cero.
+La página no es un valor numérico.
+El número de mensaje puede no ser negativo o cero.
+El número de mensaje no es un valor numérico.
+- De {0}
+- A {0}
+- Enviado a {0} en {1}
+El mensaje especificado no se encuentra.
+Error al iniciar la depuración remota: {0}
+Error al ejecutar el comando IMAP: {0}
