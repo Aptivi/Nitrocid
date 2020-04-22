@@ -40,8 +40,14 @@ Module RemoteDebugger
     End Sub
     Sub StartRDebugger()
         'Listen to a current IP address
-        DebugTCP = New TcpListener(New IPAddress({0, 0, 0, 0}), DebugPort)
-        DebugTCP.Start()
+        Try
+            DebugTCP = New TcpListener(New IPAddress({0, 0, 0, 0}), DebugPort)
+            DebugTCP.Start()
+        Catch sex As SocketException
+            W(DoTranslation("Remote debug failed to start: {0}", currentLang), True, ColTypes.Neutral, sex.Message)
+        End Try
+
+        'Start the listening thread
         Dim RStream As New Thread(AddressOf ReadAndBroadcastAsync)
         RStream.Start()
         W(DoTranslation("Debug listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, DebugPort)
