@@ -667,6 +667,25 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Dostupné príkazy: {0}
+        '''Príkaz na napísanie:
+        '''Injekcia príkazu bola zrušená.
+        '''Oddeľte zavádzacie argumenty čiarkami bez medzier, napríklad „motd, gpuprobe“
+        '''Oddeľte príkazy na &apos;cmdinject&apos; dvojbodkami s medzerami, napríklad &apos;cmdinject setthemes Hacker: pípnutie 1024 0,5&apos;
+        '''Všimnite si, že argument &apos;debug&apos; nepokrýva celé jadro.
+        '''bargs: Požadovaný argument {0} nebol nájdený.
+        '''Bargs: Neopraviteľná chyba v argumente:
+        '''Dostupné argumenty: {0}
+        '''Argumenty („pomoc“ pre pomoc):
+        '''Injektované argumenty budú naplánované n [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property slo() As String
+            Get
+                Return ResourceManager.GetString("slo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Comandos disponibles: {0}
         '''Comando de escritura: 
         '''La inyección de comandos ha sido cancelada.

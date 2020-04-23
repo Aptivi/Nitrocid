@@ -382,6 +382,7 @@
     <Content Include="Resources\rmn.txt" />
     <None Include="Resources\rus.txt" />
     <None Include="Resources\rus-T.txt" />
+    <None Include="Resources\slo.txt" />
     <Content Include="Resources\uzb.txt" />
     <None Include="Resources\cze.txt" />
     <None Include="Resources\tky.txt" />

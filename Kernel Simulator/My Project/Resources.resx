@@ -226,4 +226,7 @@
   <data name="pun_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pun-T.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="slo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\slo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

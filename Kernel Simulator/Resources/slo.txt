@@ -1,0 +1,584 @@
+Dostupné príkazy: {0}
+Príkaz na napísanie:
+Injekcia príkazu bola zrušená.
+Oddeľte zavádzacie argumenty čiarkami bez medzier, napríklad „motd, gpuprobe“
+Oddeľte príkazy na 'cmdinject' dvojbodkami s medzerami, napríklad 'cmdinject setthemes Hacker: pípnutie 1024 0,5'
+Všimnite si, že argument 'debug' nepokrýva celé jadro.
+bargs: Požadovaný argument {0} nebol nájdený.
+Bargs: Neopraviteľná chyba v argumente:
+Dostupné argumenty: {0}
+Argumenty („pomoc“ pre pomoc):
+Injektované argumenty budú naplánované na spustenie pri nasledujúcom reštarte.
+Vstrekovanie argumentu bolo zrušené.
+Chyba pri analýze skutočných argumentov príkazového riadku: {0}
+Neplatná farebná šablóna {0}
+štandardné
+zvyk
+hwprobe: Váš hardvér bude skúšaný. Prosím čakajte...
+hwprobe: Hardvér už bol testovaný.
+hwprobe: Hardvér nie je skúšaný. Sonda používajúca „hwprobe“
+CPU: Jedno alebo viac jadier CPU sa nepodarilo testovať. Zobrazujú sa informácie napriek tomu ...
+RAM: Jeden alebo viac čipov RAM sa nepodarilo testovať. Zobrazujú sa informácie napriek tomu ...
+HDD: Jeden alebo viac pevných diskov sa nepodarilo otestovať. Zobrazujú sa informácie napriek tomu ...
+CPU: Celkový počet procesorov: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: Použité sloty (podľa mien): {0}
+RAM: Použité sloty (podľa čísel): {0} / {1} ({2}%)
+RAM: Stav sondy je zastaraný a v budúcom vydaní bude odstránený.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} valce | {5} hláv | {6} sektorov
+HDD: CHS: {3} valce | {4} hlavy | {5} sektorov
+hwprobe: Sondovanie nie je podporované, pretože nie je navrhnuté na spúšťanie sond v Unixe.
+Z dôvodu údržby zadajte heslo správcu.
+V zozname už nie sú žiadni ostatní používatelia.
+Chyba jadra pri zavádzaní systému: {0}
+DOUBLE PANIC: Čas reštartu prekračuje maximálny povolený čas {0} chyby reštartu chyby. Našli ste chybu jadra.
+[{0}] panika: Reštart je povolený kvôli chybe {0}.
+[{0}] panika: Čas na reštartovanie: {1} sekúnd, presahuje 1 hodinu. Je nastavená na 1 minútu.
+DOUBLE PANIC: Typ chyby {0} je neplatný.
+[{0}] dpanic: {1} - Reštartuje sa za {2} sekundy ...
+[{0}] panika: Reštartovanie je zakázané kvôli chybe {0}.
+[{0}] panika: {1} - Stlačením ľubovoľného klávesu pokračujte v používaní jadra.
+[{0}] panika: {1} - Stlačením ľubovoľného klávesu vypnete.
+[{0}] panika: {1} - Reštartuje sa za {2} sekundy ...
+DVOJITÝ PANIK: Chyba jadra: {0}
+Vypínať...
+Reštartovanie ...
+---===+++> Vitajte v jadre | Verzia {0} <+++===---
+Je spustená ďalšia inštancia jadra. Vypnutie v prípade rušenia.
+Používateľ {0} bol pridaný do zoznamu správcov.
+Používateľ {0} bol pridaný do zoznamu zakázaných.
+Nepodarilo sa pridať používateľa do zoznamov povolení: neplatný typ {0}
+Nepodarilo sa pridať používateľa do zoznamov povolení: neplatný používateľ {0}
+Používateľ {0} bol odstránený zo zoznamu správcov.
+Používateľ {0} bol odstránený zo zoznamu zakázaných.
+Nepodarilo sa odstrániť používateľa zo zoznamov povolení: neplatný typ {0}
+Už ste prihlásený.
+Nepodarilo sa odstrániť používateľa zo zoznamov povolení: neplatný používateľ {0}
+V systéme povolení ste našli chybu: neplatný režim {0}
+Buď ste našli chybu, alebo už ste urobili povolenie, ktoré ste sa pokúsili pridať alebo odstrániť, alebo inú chybu.
+Chyba {0}: {1}
+Buď ste našli chybu alebo povolenie, ktoré ste sa pokúsili upraviť pre nového používateľa, zlyhalo.
+Dostupné používateľské mená: {0}
+Užívateľské meno:
+Priestory nie sú povolené.
+Špeciálne znaky nie sú povolené.
+Heslo používateľa {0}:
+Zlé heslo.
+Používateľ je zakázaný.
+Nesprávne používateľské meno.
+Chyba pri pokuse o analýzu zástupných symbolov. {0} - Sledovanie zásobníka:
+Chyba pri pokuse o analýzu zástupných symbolov. {0}
+Pri pokuse o pridanie používateľského mena sa vyskytla chyba.
+usrmgr: Vytvára sa používateľské meno {0} ...
+Prázdne používateľské meno.
+Používateľ {0} sa nenašiel.
+Používateľ {0} nemá povolenie na odstránenie.
+Používateľ {0} je už prihlásený. Odhláste sa a prihláste sa ako iný správca.
+Používateľ {0} bol odstránený.
+Pri pokuse o odstránenie používateľského mena sa vyskytla chyba.
+{0} z {1} = {2}
+Pokus o delenie nulou nie je povolený.
+Došlo k podozreniu na výpočet, ktorý vyústil do pretečenia.
+Pri výpočte sa vyskytla chyba: {0}
+{0} nie je možné previesť na {1}.
+Buď zdroj
+ alebo cieľ
+ na serveri neexistuje.
+{0} až {1}: {2}
+Chyba pri pokuse o konverziu z {0} na {1}: {2}
+Chyba
+Požadovaný šetrič obrazovky {0} sa nenašiel.
+{0} bol správne inicializovaný.
+{0} sa neinicializoval. Pri inicializácii sa pravdepodobne vyskytol chyba šetriča obrazovky.
+Šetrič obrazovky {0} neexistuje.
+{0} je nastavený na predvolený šetrič obrazovky.
+Šetrič obrazovky {0} sa nenašiel v databáze. Skontrolujte meno a skúste to znova.
+Šetrič obrazovky nie je možné načítať z nasledujúcich dôvodov:
+Pri tlači textu sa vyskytla závažná chyba.
+Pri pokuse o vytvorenie konfigurácie došlo k chybe.
+Pri vytváraní konfigurácie sa vyskytla chyba: {0}
+Bola zistená inovácia z {0} na {1}. Aktualizácia konfigurácie ...
+Pri pokuse o aktualizáciu konfigurácie došlo k chybe: {0}.
+Pri pokuse o aktualizáciu konfigurácie došlo k chybe.
+Pri načítaní konfigurácie sa vyskytla chyba.
+Pri načítaní konfigurácie sa vyskytla chyba: {0}
+Chyba pri pokuse o uvoľnenie pamäte RAM: {0} - Pokračuje ...
+Mod sa nedá načítať z nasledujúcich dôvodov:
+mod: Načítavajú sa režimy ...
+mod: Zastavuje sa režim ...
+Mod {0} nemá meno. Skontrolujte zdrojový kód.
+Mod {0} nemá verziu.
+{0} v {1} sa začalo
+Pre príkaz {0} neexistuje žiadna definícia.
+Príkaz definovaný v
+Pred pripojením k inému serveru by ste sa mali odpojiť od servera
+Používateľské meno pre {0}:
+Heslo pre {0}:
+Pripojené k {0}
+Chyba pri pokuse o pripojenie k službe {0}: {1}
+Stopa zásobníka: {2}
+Zadajte FTP server.
+Miestny adresár {0} neexistuje.
+Zadajte miestny adresár. ".." ísť späť.
+Adresár {0} sa nenašiel.
+Zadajte vzdialený adresár. ".." ísť späť
+Pred zmenou adresára sa musíte pripojiť k serveru
+Miestny adresár: {0}
+Vzdialený adresár: {0}
+Pred získaním aktuálneho vzdialeného adresára sa musíte pripojiť k serveru.
+Odstraňuje sa súbor {0} ...
+Naozaj chcete odstrániť súbor {0} <y/n>?
+Odstránený súbor {0}
+Pred odstránením sa musíte pripojiť k serveru s oprávneniami správcu.
+Zadajte súbor, ktorý chcete odstrániť.
+Na prihlásenie musíte mať administrátorské oprávnenie, aby ste ho mohli odstrániť.
+Odpojené od {0}
+Zatiaľ ste sa nepripojili k žiadnemu serveru
+Sťahuje sa súbor {0} ...
+Stiahnutý súbor {0}.
+Sťahovanie zlyhalo pre súbor {0}, pretože miestny súbor je poškodený.
+Pred prenosom sa musíte pripojiť k serveru.
+Zadajte súbor na stiahnutie do miestneho adresára.
+{0} KB | Upravené v: {1}
+Pred vypísaním všetkých vzdialených súborov by ste sa mali pripojiť k serveru.
+Premenuje sa súbor {0} na {1} ...
+Premenovanie bolo úspešne
+Zadajte súbor a nový názov súboru.
+Odovzdáva sa súbor {0} ...
+Nahraný súbor {0}
+Zadajte súbor, ktorý chcete nahrať do vzdialeného adresára. nahrajte <súbor> <adresár>
+Pri pokuse o vykonanie príkazu FTP sa vyskytla chyba
+(Vnútorné:
+{0} priečinky, {1} súbory
+(Prístup zamietnutý)
+{0} KB, Vytvorené v {1} {2}, Upravené v {3} {4}
+Získa aktuálny miestny adresár
+Získa aktuálny vzdialený adresár
+Pripája sa k FTP serveru (musí začínať reťazcom „ftp://“ alebo „ftps://“)
+Zmení miestny adresár, z ktorého sa bude sťahovať alebo odosielať
+Zmení vzdialený adresár, z ktorého sa bude sťahovať alebo nahrávať
+Odstráni vzdialený súbor zo servera
+Odpojí sa od servera
+Stiahne vzdialený súbor do miestneho adresára pomocou binárneho alebo textového súboru
+Ukončí FTP shell a vráti sa do jadra
+Zobrazí obrazovku pomocníka
+Vypíše miestny adresár
+Vypíše vzdialený adresár
+Premenuje konkrétny súbor alebo adresár
+Odovzdá miestny súbor do vzdialeného adresára pomocou binárneho alebo textového súboru
+V kryte FTP sa vyskytla chyba.
+Správa FTP: Požadovaný príkaz {0} sa nenašiel. Zoznam dostupných príkazov zadaných v FTP shell nájdete v 'help'.
+net: Dostali sme odpoveď od {0} o {1} ms
+Časový limit, odpojenie alebo server offline.
+net: Názov vášho počítača v sieti je {0}
+net: Vaše meno hostiteľa je {1}
+net: Zdá sa, že počítače sú v doméne alebo pracovnej skupine:
+net: Wi-Fi alebo Ethernet je odpojený.
+net: Zdá sa, že počítače sú pripojené nižšie:
+net: Router Address: {0}
+Nepodarilo sa získať vlastnosti pre adaptér {0}
+Číslo adaptéra:
+Názov adaptéra:
+Maximálna prenosová jednotka: {2} jednotky
+Povolené DHCP:
+Balíky bez unicast:
+Balíky Unicast:
+Chyba prichádzajúcich / odchádzajúcich paketov:
+Alias ​​nemôže byť rovnaké ako príkaz.
+Príkaz nebol nájdený ako alias pre {0}.
+Aliasing {0} až {1} je úplne zakázaný.
+Teraz môžete spustiť príkaz „{0}“ ako príkaz: „{1}“.
+"{0}" už nemôžete používať ako príkaz "{1}".
+Alias ​​{0} nebol odstránený.
+Neplatný režim {0}.
+Injektované argumenty {0} budú naplánované na spustenie pri nasledujúcom reštarte.
+Nebolo dostatok argumentov. Pre použitie pozri nižšie:
+Adresár {0} sa nenašiel
+Prázdne meno hostiteľa.
+Prebieha zmena z: {0} na {1} ...
+Prázdna správa dňa.
+Prázdna MAL po prihlásení.
+Prebieha zmena MAL z {0} na {1} ...
+Chybné heslo používateľa.
+Heslá sa nezhodujú.
+Používateľské meno bolo zmenené na {0}!
+Zadané nové meno je už nájdené.
+Výpis počítačov zatiaľ nie je podporovaný v systéme Unix.
+Zakázané aliasy: {0}
+{0} sa nenašiel.
+Konfigurácia bola obnovená. Aby sa niektoré zmeny prejavili, bude možno potrebné reštartovať jadro.
+Všetko je obnovené na normálne nastavenia.
+Jedna alebo viac farieb je neplatná.
+Farby nie sú k dispozícii. Zapnite farebnú škrupinu v konfigurácii jadra.
+Šetrič obrazovky {0} sa nenašiel.
+{0} [Nastavenia jadra (beží na {1})]
+Verzia jadra:
+Režim ladenia:
+Farebná škrupina:
+Argumenty pri zavádzaní:
+Zjednodušený príkaz pomocníka:
+MOTD pri prihlásení:
+Čas / dátum na rohu:
+Hardvérová sonda:
+Aktuálna téma:
+[Hardvérové ​​nastavenia] {0}
+{0} [Nastavenia používateľa]
+Aktuálne užívateľské meno:
+Aktuálny názov hostiteľa:
+Dostupné používateľské mená:
+Názov počítača:
+{0} [Nastavenia správ]
+Zdrojový kód:
+Autorské práva (c)
+licencie
+prítomný
+Pri pokuse o vykonanie príkazu sa vyskytla chyba
+Pridá používateľov (k tomuto príkazu majú prístup iba správcovia)
+Pridá aliasy k príkazom (k tomuto príkazu majú prístup iba správcovia)
+Vloží argumenty do jadra (vyžaduje sa reštart, len administrátori)
+Jednoduchá kalkulačka
+Zmena adresára
+Zmena názvu hostiteľa (iba správcovia)
+MAL, MOTD po prihlásení (iba správcovia)
+Mení MOTD, správu dňa (iba správcovia)
+Zmena hesla pre aktuálneho používateľa
+Mení meno používateľa (iba správcovia)
+Vymaže obrazovku
+Prevod meny
+Zobrazuje protokoly ladenia (iba správcovia)
+Na komunikáciu so servermi použite shell FTP
+Stránka pomocníka
+Hardvér sondujte manuálne (raz v jadre 'nohwprobe')
+Zoznam obsahu súborov / priečinkov v aktuálnom priečinku
+Obnoví súbor šetriča obrazovky v% USERPROFILE% \ KSMods
+Uzamkne obrazovku pomocou hesla
+Odhlási vás
+Zoznam všetkých sieťových zariadení, ktoré sú online (a offline v doménach)
+Uvádza všetky sieťové adresy na hostiteľovi
+Zoznam všetkých sieťových adries hostiteľa pomocou stromu
+Vytvorí adresár
+Uvádza informácie o všetkých dostupných rozhraniach
+Zobrazuje zakázaný zoznam prezývok
+Správa povolení pre používateľov (k tomuto príkazu majú prístup iba správcovia)
+Skontrolujte, či je zadaná adresa k dispozícii
+Zapíše obsah súboru do konzoly
+Reštartuje počítač (VAROVANIE: Žiadna synchronizácia, pretože nejde o finálne jadro)
+Obnoví sa upravený konfiguračný súbor.
+Odstráni adresár
+Odstráni používateľa zo zoznamu (iba správcovia)
+Zachráni obrazovku pred vypálením
+Vedecká kalkulačka. Prevodník jednotiek je oddelený od iného príkazu
+Nastavuje farby jadra
+Nastaví šetriče obrazovky jadra
+Nastavuje témy jadra
+Zobrazuje aliasy
+Zobrazuje MOTD po prihlásení nastavenom používateľom alebo jadrom
+Zobrazuje správu dňa nastaveného používateľom alebo jadrom
+Zobrazuje dátum a čas
+Zobrazuje dátum a čas v zónach
+Jadro sa vypne
+Systémové informácie
+Prevodník jednotiek, ktorý je oddelený od scicalc.
+Zobrazuje použité závislosti otvoreného zdroja
+Veľmi popisný návod na použitie.
+* Pomocou dvojbodky medzi príkazmi môžete použiť viacero príkazov.
+Dostupné príkazy:
+Príkazy mod:
+Prezývky k príkazom:
+využitie:
+Argumenty oddelené čiarkami
+kde argumenty budú {0}
+získať aktuálny adresár
+V ktorom zdroji a cieli sú 3 UPPERCASE znaky výmenného kurzu
+Zoznam všetkých ID a mien:
+Ukazuje vám ladiace protokoly, takže nám ich môžete poslať.
+Inicializuje shell FTP.
+Hardvér sondy (funguje iba v prípade, že hardvér nie je testovaný a hwprobe sa nevykonáva).
+Uvádza informácie o sieti, ako aj o všetkých počítačoch pripojených k sieti.
+Priatelia
+Uvádza zoznam sieťových informácií, ako aj všetkých počítačov pripojených k sieti v stromovej forme.
+Uvádza informácie o sieti, ako aj o každom počítači.
+kde bude modnameSS.m
+Uzamkne obrazovku pomocou hesla.
+Odhlási vás od používateľa.
+Získajte všetky informácie o sieti
+Reštartuje simulovaný počítač.
+Znovu načíta konfiguráciu, ktorú zmenil koncový používateľ alebo nástroj.
+Farby nevyžadujú reštart, ale väčšina nastavení vyžaduje reštart.
+vám ukáže vybraný šetrič obrazovky a zároveň chráni obrazovku pred vypálením.
+Zobrazuje dátum a čas.
+Zobrazuje dátum a čas v zónach.
+Vypne simulovaný počítač.
+Zobrazuje systémové informácie a verzie.
+Zobrazuje použité otvorené knižnice zdrojov
+V plášti sa vyskytla chyba.
+Nemáte povolenie na použitie {0}
+Shell message: Požadovaný príkaz {0} nie je povolený na vykonávanie v režime údržby.
+Shell message: Požadovaný príkaz {0} nebol nájdený. Dostupné príkazy nájdete v časti „pomoc“.
+Shell message: Príkaz {0} nie je povolený na prihlásenie.
+Shell message: Požadovaný príkaz {0} nebol nájdený.
+Pri pokuse o vykonanie príkazu sa vyskytla chyba.
+datetime: Čas je {0}
+datetime: Dnes je {0}
+datetime: Časové pásmo: {0}
+- Čas {0}: {1}
+vymazať obrazovku.
+Zdá sa, že stránka manuálu {0} sa nenašla.
+Pri pokuse o načítanie manuálovej stránky {0} kvôli {1} došlo k chybe.
+Táto stránka manuálu je neúplná z nasledujúcich dôvodov:
+Pre pokračovanie stlačte ľubovolnú klávesu...
+ | {0} slov | Revízia v {1} | {2} sekciách
+Tento nadpis manuálu nie je napísaný
+Táto stránka manuálu ({0}) neobsahuje žiadny text tela. Odstraňuje sa stránka ...
+Táto stránka manuálu ({0}) neobsahuje žiadnu časť. Odstraňuje sa stránka ...
+Beží na {0}
+Nemáte oprávnenie na získanie informácií pre {0}.
+Tento príkaz je zastaraný a v budúcom vydaní bude odstránený.
+Nemáte oprávnenie na zmenu hesla {0}, pretože cieľom bol správca.
+Preveďte množstvo peňazí z krajiny do krajiny
+meny:
+usrmgr: Už bolo nájdené používateľské meno {0}
+Zadajte kľúč rozhrania API:
+Počítač sa nepodarilo získať. Ak používate najnovšiu verziu systému Windows 10, musíte povoliť SMBv1. Tento protokol je však neistý a my sa pokúsime tento problém vyriešiť.
+Odstráni všetko v protokole ladenia
+Získa verzie SSE
+Neplatný jazyk
+Zmena jazyka
+Možno nemáte nainštalovaný libcpanel-json-xs-perl vo vašom systéme. Inštaláciu nájdete v správcovi balíkov. Pre systémy Debian (a ich deriváty) môžete chcieť spustiť „sudo apt install libcpanel-json-xs-perl“ v emulátore terminálov. Ďalšie podrobnosti o chybe:
+----------------------------- Panikový výpis jadra ------------------------------
+>> Panické informácie <<
+> Popis: {0}
+> Typ chyby: {1}
+> Dátum a čas: {2}
+>> Informácie o výnimkách <<
+> Výnimka: {0}
+> Popis: {1}
+> HRESULT: {2}
+> Zdroj: {3}
+> Sledovanie zásobníka <
+>> Vnútorná výnimka {0} informácie <<
+>> Výnimka {0} je hlavnou príčinou <<
+>> Bez výnimky; môže ísť o chybu jadra. <<
+>> Rámčeky, súbory, riadky a stĺpce <<
+> Frame {0}: File: {1} | Riadok: {2} | Stĺpec: {3}
+> Pri pokuse o získanie rámcových informácií došlo k chybe. {0}: {1}
+Nastavili ste systémový jazyk na niečo iné ako angličtinu. Ospravedlňujeme sa za nepríjemnosti, ale zdá sa, že spoločnosť Google a jej prekladateľ sú veľmi čudní v preklade kódových blokov pre akýkoľvek programovací jazyk. Aj keď opravujeme všetky blokovania kódov preložených manuálových stránok, odporúčame vám otvoriť lístok do služby Prekladač Google, ktorý umožňuje preklad kódových blokov, ktoré nie sú určené na preklad, a ak hovoríte, nastavíte váš systémový jazyk na angličtinu.
+Obnoví režimy.
+Režimy sa znova načítali.
+Vitajte v jadre!
+Úspešne sa prihlásil ako používateľ
+MOTD / MAL je platný, ale typ správy nie je platný. Za predpokladu, že ...
+Pokúsil sa prečítať MOTD / MAL, ktorý je neplatného typu správy.
+Pri zachovaní stabilného pripojenia sa sťahuje {0} do {1} ...
+Sťahovanie bolo dokončené.
+Sťahovanie zlyhalo v skúške {0}: {1}
+Ak sa chystáte sťahovať súbory z FTP servera, použite „ftp“.
+Stiahne súbor do aktuálneho pracovného adresára
+Odpojte ladiace zariadenie
+Zoznam pripojených ladiacich zariadení
+Ladiace zariadenie {0} sa nenašlo.
+Zariadenie {0} bolo odpojené.
+Chyba pripojenia: {0}
+Ladenie počúvania na všetkých adresách pomocou portu {0}.
+Neboli zadané žiadne argumenty. Pomôcka: Zadajte viac argumentov oddelených medzerami
+Alias ​​už bol nájdený: {0}
+Protokol ladenia bol odstránený. Všetky pripojené ladiace zariadenia môžu stále zobraziť správy.
+Odstránenie denníka ladenia zlyhalo: {0}
+Zmena adresára zlyhala: {0}
+Používateľské meno je nesprávne
+Zadajte adresu
+Nemožno odstrániť adresár: {0}
+Časové pásmo je zadané nesprávne.
+Neplatný výber profilu.
+Pokúšam sa pripojiť k {0} s profilom {1} ...
+Chyba pri testovaní jednotky: {0}
+Príkaz {0} sa nenašiel. Zoznam príkazov nájdete v príkaze „help“.
+Nepodarilo sa získať vlastnosti IPv6 pre adaptér {0}. Pokračovanie ...
+Informácie IPv4:
+Informácie IPv6:
+Adaptér {0} nepodporuje IPv6. Pokračovanie ...
+Adaptér {0} nepodporuje IPv4. Sonda zlyhala.
+Zdá sa, že ste spúšťali vývojovú verziu jadra. Aj keď vidíte aspekty, sú často aktualizované a môžu predstavovať chyby. Odporúča sa, aby ste zostali na stabilnej verzii.
+Jazyk, ktorý ste vybrali, obsahuje dve varianty. Vyber jeden:
+1. Prepis
+2. Preložené
+Vyberte si svoj výber:
+Neplatná voľba. Skúste to znova.
+Nemáte oprávnenie nastaviť aktuálny adresár na {0}: {1}
+Povolenie {0} zlyhalo
+Cesta, ktorú ste zadali, je príliš dlhá.
+Nie ste oprávnený na zoznam v zozname {0}: {1}
+Chyba pri kontrole CPU: {0}
+Chyba pri kontrole pamäte RAM: {0}
+Chyba pri kontrole pevného disku: {0}
+CPU: VAROVANIE: SSE2 sa bude vyžadovať v budúcich vývojových záväzkoch.
+Zberač výpisu informácií zlyhal pri pokuse získať informácie o {0}: {1}
+Chyba pri pokuse získať kompilačný dátum zostavenia {0}: {1}
+Chyba pri pokuse o nastavenie MOTD/MAL: {0}
+Chyba pri pokuse získať MOTD/MAL: {0}
+Na {0} existuje nulová referenčná výnimka: {1}
+Na {0}: {1} - Stopa zásobníka:
+Chyba pri pokuse o spustenie šetriča obrazovky z dôvodu neplatnej operácie.
+Obnovenie nie je povolené v bezpečnom režime.
+Režimy analýzy nie sú v bezpečnom režime povolené.
+Analyzujte veľkosť celého adresára alebo iba súbory v aktuálnom adresári.
+Zoznam všetkých pripojených ladiacich zariadení.
+Chyba pri pokuse o nastavenie režimu analýzy. Skontrolujte hodnotu a skúste to znova. Ak je to správne, pozrite si stopu zásobníka, keď je aktivované ladenie jadra.
+Nastaviť úspešne.
+Cesta nie je ani súbor, ani adresár.
+Vytvorí ďalšiu kópiu súboru pod iným adresárom alebo menom.
+Presunie súbor do iného adresára
+Kopírovanie súborov do iného adresára alebo iného názvu
+Presunutie súborov do iného adresára
+Zhoda {0} ({1}): {2}
+Zhoda {0}: {1}
+Čas strávený: {0} milisekúnd
+Výrobca: {0}
+Model: {0}
+Kapacita: {0} ({1}, {2}, {3})
+Typ rozhrania: {0}
+Číslo jednotky: {0}
+Boot flag: {0} ({1})
+Fyzický oddiel: {0}
+Primárny príznak: {0}
+Veľkosť: {0} GB
+Logický oddiel: {0}
+Komprimované: {0}
+Názov: {0}
+Systém súborov: {0}
+Kapacita: {0} GB bez {1} GB
+Zoznam všetkých logických oddielov na všetkých jednotkách.
+Zoznam všetkých sondovaných jednotiek.
+Uvádza všetky testované oddiely na konkrétnej jednotke (a všetky logické oddiely na všetkých jednotkách).
+Vypočíta súčty súborov.
+Zavedie vás na našu GitHub Wiki.
+Neplatný šifrovací algoritmus.
+Povolí alebo zakáže diaľkové ladenie.
+Inicializácia súborového systému ...
+Získa nainštalované hlasy
+Nastaví predvolený hlas
+Hovorí váš reťazec pomocou predvoleného hlasu
+Hlas {0}: {1} ({2})
+Neplatný hlas.
+Hlasová súprava
+Uvidíte, či dokážete správne písať slová včas
+Pozrite sa, či dokážete vyriešiť matematické rovnice včas
+Reagujte na milostné alebo nenávistné komentáre.
+Ak niekto k vášmu videu pridal komentár:
+Ako by si odpovedal?
+Neplatný výber. Prejdem na ďalší komentár ...
+Práve ste nahlásili milostný komentár!
+Práve ste odpovedali na komentár k nenávisti!
+Skvelé! Komentár {0} bude odstránený.
+Skvelé! {0} ocení vaše poďakovanie.
+Ak chcete program ukončiť, napíšte „GetMeOut“.
+Napísané dokonale!
+Nesprávne napísané slovo.
+Vyriešené dokonale!
+Riešenie je nesprávne.
+Stiahnutých bolo {0} MB z {1} MB.
+RPC už beží.
+Počúvanie RPC na všetkých adresách pomocou portu {0}.
+Spúšťa sa RPC ...
+Pripája sa k serveru SSH.
+Zadajte heslo pre {0}:
+SSH odpojený.
+Načíta syntetizačný súbor a prehrá ho.
+Skriptovaný súbor {0} neexistuje.
+Súbor nie je skriptovaný súbor syntézy.
+Nepodarilo sa zistiť sondu syntézy.
+Zadaný prázdny reťazec
+Nie je možné nastaviť kódovú stránku. Jazyk sa nemusí zobraziť správne.
+Ladenie nie je povolené.
+{0} už nie je nastavený na predvolený šetrič obrazovky.
+Vďaka! Toto je zaujímavé.
+Vaše video to bude podporovať každý.
+Dal som ti špeciálny súbor vo vašom e-maile pre ďalšie video.
+Počúvaj, nenávisť, snaží sa nám pomôcť, nie podvod.
+Neviem, ako veľmi ďakujem za toto video mne a mojim priateľom.
+Milujem ťa za toto video.
+Pokračujte, neprestávajte.
+Pomôžem vám osloviť 1M účastníkov!
+Moji priatelia dostali počítač opravený kvôli vám.
+Úžasné žart! Vypol som počítač môjho nepriateľa.
+Neznášajúcim: ZASTAVTE HATING NA HIM
+Neznášajúcim: ZÍSKAJTE PRÁCI
+Nikto si to teraz nevšimne vďaka sprievodcovi skrytím predmetov
+Zastavím sledovanie vašich videí. Predplatiteľ stratil.
+Čo to je? To nie je jasné.
+Toto video je najhoršie!
+Každý nahlási toto video!
+Moji priatelia sa na vás rozzúria!
+Milovníci vás za to teraz budú nenávidieť.
+Váš priateľ vás za to bude nenávidieť.
+Tento žart ma prinútil zrušiť váš odber.
+Misia zlyhala, Respekt -, Predplatiteľ -
+Prestaňte robiť tento druh videa !!!
+Vráťte sa späť k svojej práci, vaše videá sú najhoršie!
+Toto video by sa malo dotknúť.
+Aliasing {0} na {1} je zakázaný.
+Chyba pri pokuse o zrušenie oznámenia: {0}
+Zobrazuje všetky prijaté oznámenia
+Zamietne oznámenie
+Oznámenie bolo úspešne zamietnuté.
+Pakety (prichádzajúce):
+Balíky (odchádzajúce):
+Chyby v prijatých paketoch:
+Všeobecné vlastnosti IPv6
+Všeobecné vlastnosti IPv4
+Diaľkovo vykoná príkaz na vzdialené PC
+- Etapa 0: Inicializácia systému
+- Etapa 1: Detekcia hardvéru
+- Etapa 2: Interná správa používateľských mien
+- Etapa 3: Detekcia režimov a šetričov obrazovky
+- Etapa 4: Zber odpadu
+- Etapa 5: Prihláste sa
+Pred zberom odpadu: {0} bajtov
+Po zbere odpadu: {0} bajtov
+Chyba pri spustení RPC: {0}
+Zdá sa, že ste spustili kandidátsku verziu vydania. Odporúča sa, aby ste zostali na stabilnej verzii.
+Zdá sa, že populácia súborového systému trvá príliš dlho.
+Neplatný typ {0}.
+Kapacita: {0}
+Počet oddielov: {0}
+Veľkosť: {0}
+Použité: {0}
+Adresár {0} už existuje.
+Chyba pri pokuse o pripojenie k {0}: Časový limit pripojenia alebo stratené pripojenie
+Kalkulačka na výpočet výrazov.
+Chyba pri výpočte.
+Kapacita: {0} GB ({1}, {2}, {3})
+Zdá sa, že ste spustili verziu blížiaceho sa vydania. Aj keď je teraz bezpečnejšie používať, odporúčame vám, aby ste zostali na stabilnej verzii.
+Aktualizácia systému
+Prebieha kontrola aktualizácií systému ...
+Nájdená nová verzia:
+Môžete si ho stiahnuť na adrese:
+Nepodarilo sa skontrolovať aktualizácie: {0}
+Denník ladenia sa nenašiel
+Žiadne posledné oznámenia
+Vyhľadá zadaný reťazec v poskytnutom súbore
+Vypočíta sumy súborov v zadanom adresári.
+Zoznam všetkých správ konkrétneho používateľa.
+Zadajte používateľské meno alebo e-mailovú adresu:
+Zadajte heslo:
+Zadajte adresu servera a port (<adresa> alebo <adresa>:[port]):
+Chyba pri pripájaní k {0}: {1}
+Pripája sa k {0} ...
+Overujúce ...
+Ukončí shell IMAP
+Zoznam príkazov
+Stiahne správy a zobrazí ich zoznam
+Otvorí správu
+Stránka nesmie byť záporná alebo nulová.
+Stránka nie je číselná hodnota.
+Číslo správy nesmie byť záporné alebo nulové.
+Číslo správy nie je číselná hodnota.
+- Od {0}
+- Do {0}
+- Odoslané o {0} o {1}
+Zadaná správa sa nenašla.
+Spustenie vzdialeného ladenia zlyhalo: {0}
+Chyba pri vykonávaní príkazu IMAP: {0}

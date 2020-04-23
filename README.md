@@ -10,13 +10,15 @@ The PPA for KS will come shortly as promised.
 
 ## |-----+--> _Announcement_ <--+-----|
 
-Due to time constraints, and the volume of work that we have, the development progress of 0.0.9 and the future versions will slow down until the end of June. Meanwhile, please stay tuned for more updates and progress on [our blog](https://eofla.wordpress.com). You can also make pull requests and issues, but we don't look at them more frequently.
+Due to time constraints, and the volume of work that we have, the development progress of the future versions will slow down until the end of June. Meanwhile, please stay tuned for more updates and progress on [our blog](https://eofla.wordpress.com). You can also make pull requests and issues, but we don't look at them more frequently.
 
 ## |-----+--> _Notices_ <--+-----|
 
-- If you are going to use Chinese/Japanese/Korean language in their translated forms, use `SimSun` or other appropriate font.
+- If you are going to use Chinese/Japanese/Korean languages in their translated forms, use `SimSun` or other appropriate font.
 
-- If you are going to use Hindi/Bengali/Punjabi language in their translated forms, use `Unifont` or other appropriate font.
+- If you are going to use Hindi/Bengali/Punjabi languages in their translated forms, use `Unifont` or other appropriate font.
+
+- If you are going to use Czech/Slovak languages, use `Unifont`, `SimSun`, or other appropriate font.
 
 ## |-----+--> _Virus Warning_ <--+-----|
 
@@ -252,7 +254,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **3/22/2020 - 0.0.8.5:** Updated libraries, Removed filesystem structure parsing, Permanent list of usernames and passwords, Now, "Command defined by" part will update everytime a user wants to change language, Fixed CPU usage being high at all times; the Notifications will be listened to every 10 milliseconds instead of instantly, Added 24-bit true color testing test command. Use `testtruecolor <R;G;B>` to test, implying that R, G, and B isn't greater than 255 or less than 0, You can see passwords as stars, Added Bengali and Punjabi languages, Added `args` cmdline argument in case config can't be used, Made `search` show line number on every match, Added forgotten `search` help command, Added SHA1 algorithm to `sumfile` and test shell, Added `sumfiles` command
 
-**4/23/2020 - 0.0.9:** Updated libraries, added IMAP shell, and fixed kernel crash if remote debugger failed to start
+**4/23/2020 - 0.0.9:** Updated libraries, added IMAP shell, added Slovak language, and fixed kernel crash if remote debugger failed to start
 
 ## |-----+--> _Contributors_ <--+-----|
 
