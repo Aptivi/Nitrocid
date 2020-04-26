@@ -30,7 +30,8 @@ Module IMAPGetCommand
                 ExitRequested = True
             ElseIf cmd = "list" Then
                 If FullArgsL(0).IsNumeric Then
-                    Dim Page As Integer = FullArgsL(0)
+                    Dim Page As Integer
+                    If FullArgsL(0) = "" Then Page = 1 Else Page = FullArgsL(0)
                     If Page <= 0 Then
                         W(DoTranslation("Page may not be negative or zero.", currentLang), True, ColTypes.Neutral)
                         Exit Sub
