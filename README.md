@@ -258,6 +258,8 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **5/6/2020 - 0.0.9.1:** Updated FluentFTP, Fixed `list` crashing if no page number is specified (*)
 
+** 5/6/2020 - WIP - 0.0.10:**
+
 Items with asterisk means that the specified change/fix will be backported to previous version of KS which doesn't have it (only for Ubuntu PPA version, backports as Debian patches)
 
 ## |-----+--> _Contributors_ <--+-----|

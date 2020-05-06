@@ -3,7 +3,6 @@ name: NuGet Gallery Push
 on:
   release:
     types: [published]
-  gollum:
     
 jobs:
   build:
