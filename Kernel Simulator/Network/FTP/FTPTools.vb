@@ -24,8 +24,8 @@ Module FTPTools
         Else
             Try
                 'Create an FTP stream to connect to
-                Dim FtpHost As String = address.Replace("ftps://", "").Replace("ftp://", "").Replace(address.Substring(address.LastIndexOf(":")), "")
-                Dim FtpPort As String = address.Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "")
+                Dim FtpHost As String = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(address.Substring(address.LastIndexOf(":")), "")
+                Dim FtpPort As String = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "")
 
                 'Check to see if no port is provided by client
                 If FtpHost = FtpPort Then
@@ -62,6 +62,7 @@ Module FTPTools
                 ClientFTP.Credentials = New NetworkCredential(user, pass)
 
                 'Prepare profiles
+                W(DoTranslation("Preparing profiles... It could take several minutes...", currentLang), True, ColTypes.Neutral)
                 Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect(False)
                 Dim profsel As New FtpProfile
                 Wdbg("I", "Profile count: {0}", profiles.Count)
@@ -72,7 +73,7 @@ Module FTPTools
                     Next
                     Dim profanswer As Char
                     Dim profanswered As Boolean
-                    While profanswered
+                    While Not profanswered
                         profanswer = Console.ReadKey(True).KeyChar
                         Wdbg("I", "Selection: {0}", profanswer)
                         If IsNumeric(profanswer) Then
