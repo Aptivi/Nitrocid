@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module Encryption
+Public Module Encryption
     Public Function GetArrayEnc(ByVal encrypted As Byte()) As String
         Dim hash As String = ""
         For i As Integer = 0 To encrypted.Length - 1
