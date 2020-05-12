@@ -253,12 +253,10 @@ Public Module GetCommand
                             If InStr(eargs(3), " ") > 0 Then
                                 W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
                             ElseIf eargs(3) = eargs(2) Then
-                                Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(eargs(1)))
-                                eargs(1) = GetArrayEnc(hashbyte)
+                                eargs(1) = GetEncryptedString(eargs(1), Algorithms.SHA256)
                                 If eargs(1) = userword(eargs(0)) Then
                                     If adminList(eargs(0)) And adminList(signedinusrnm) Then
-                                        hashbyte = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(eargs(2)))
-                                        eargs(2) = GetArrayEnc(hashbyte)
+                                        eargs(2) = GetEncryptedString(eargs(2), Algorithms.SHA256)
                                         userword.Item(eargs(0)) = eargs(2)
                                     ElseIf adminList(eargs(0)) And Not adminList(signedinusrnm) Then
                                         W(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang), True, ColTypes.Neutral, eargs(0))
@@ -902,22 +900,19 @@ Public Module GetCommand
                         If args(0) = "SHA256" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
-                            Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
-                            W(GetArrayEnc(hashbyte), True, ColTypes.Neutral)
+                            W(GetEncryptedString(IO.File.ReadAllText(file), Algorithms.SHA256), True, ColTypes.Neutral)
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         ElseIf args(0) = "SHA1" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
-                            Dim hashbyte As Byte() = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
-                            W(GetArrayEnc(hashbyte), True, ColTypes.Neutral)
+                            W(GetEncryptedString(IO.File.ReadAllText(file), Algorithms.SHA1), True, ColTypes.Neutral)
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         ElseIf args(0) = "MD5" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
-                            Dim hashbyte As Byte() = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
-                            W(GetArrayEnc(hashbyte), True, ColTypes.Neutral)
+                            W(GetEncryptedString(IO.File.ReadAllText(file), Algorithms.MD5), True, ColTypes.Neutral)
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         Else
@@ -952,8 +947,7 @@ Public Module GetCommand
                             If args(0) = "SHA256" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
-                                Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
-                                Dim encrypted As String = GetArrayEnc(hashbyte)
+                                Dim encrypted As String = GetEncryptedString(IO.File.ReadAllText(file), Algorithms.SHA256)
                                 W(encrypted, True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
@@ -961,8 +955,7 @@ Public Module GetCommand
                             ElseIf args(0) = "SHA1" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
-                                Dim hashbyte As Byte() = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
-                                Dim encrypted As String = GetArrayEnc(hashbyte)
+                                Dim encrypted As String = GetEncryptedString(IO.File.ReadAllText(file), Algorithms.SHA1)
                                 W(encrypted, True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
@@ -970,8 +963,7 @@ Public Module GetCommand
                             ElseIf args(0) = "MD5" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
-                                Dim hashbyte As Byte() = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(IO.File.ReadAllText(file)))
-                                Dim encrypted As String = GetArrayEnc(hashbyte)
+                                Dim encrypted As String = GetEncryptedString(IO.File.ReadAllText(file), Algorithms.MD5)
                                 W(encrypted, True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")

@@ -35,8 +35,7 @@ Public Module UserManagement
             'Compute hash of a password
             Dim Regexp As New Regex("^([a-fA-F0-9]{64})$")
             If ComputationNeeded Then
-                Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(unpassword))
-                unpassword = GetArrayEnc(hashbyte)
+                unpassword = GetEncryptedString(unpassword, Algorithms.SHA256)
                 Wdbg("I", "Hash computed.")
             ElseIf Not Regexp.IsMatch(unpassword) Then
                 Throw New InvalidOperationException("Trying to add unencrypted password to users list. That won't work properly, since login relies on encrypted passwords.")

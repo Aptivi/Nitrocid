@@ -123,8 +123,7 @@ Public Module Login
 
                 'Compute password hash
                 Wdbg("I", "Computing written password hash...")
-                Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(answerpass))
-                answerpass = GetArrayEnc(hashbyte)
+                answerpass = GetEncryptedString(answerpass, Algorithms.SHA256)
 
                 'Parse password input
                 If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
