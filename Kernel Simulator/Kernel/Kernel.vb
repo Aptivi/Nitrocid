@@ -72,7 +72,9 @@ Public Module Kernel
                 StartRPC()
                 W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
                 InitFS()
+#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then
                 If CheckUpdateStart Then CheckKernelUpdates()
+#End If
 
                 'Phase 1: Probe hardware
                 W(vbNewLine + DoTranslation("- Stage 1: Hardware detection", currentLang), True, ColTypes.Stage)
