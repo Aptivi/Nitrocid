@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\Kernel Simulator"
   ],
-  "SelectedNode": "\\_config.yml",
+  "SelectedNode": "\\Kernel Simulator\\Kernel Simulator.vbproj",
   "PreviewInSolutionExplorer": false
 }
