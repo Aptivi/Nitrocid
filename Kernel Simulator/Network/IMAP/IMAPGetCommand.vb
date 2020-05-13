@@ -53,7 +53,7 @@ Module IMAPGetCommand
                 If FullArgsL(0).IsNumeric Then
                     Dim Message As Integer = FullArgsL(0) - 1
                     Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
-                    If Message <= 0 Then
+                    If Message < 0 Then
                         W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Neutral)
                         Exit Sub
                     ElseIf Message > MaxMessagesIndex Then
@@ -82,12 +82,32 @@ Module IMAPGetCommand
 
                     'Prepare subject
                     Console.WriteLine()
-                    W($"- {Msg.Subject}", True, ColTypes.HelpCmd)
+                    W($"- {Msg.Subject}", False, ColTypes.HelpCmd)
+
+                    'Write a sign after the subject if attachments are found
+                    If Msg.Attachments.Count > 0 Then
+                        W(" - [*]", True, ColTypes.HelpCmd)
+                    Else
+                        Console.WriteLine()
+                    End If
 
                     'Prepare body
                     Console.WriteLine()
                     W(Msg.GetTextBody(Text.TextFormat.Plain), True, ColTypes.HelpDef)
                     Console.WriteLine()
+
+                    'Populate attachments
+                    If Msg.Attachments.Count > 0 Then
+                        W(DoTranslation("Attachments:", currentLang), True, ColTypes.Neutral)
+                        For Each Attachment As MimeEntity In Msg.Attachments
+                            If TypeOf Attachment Is MessagePart Then
+                                W($"- {Attachment.ContentDisposition?.FileName}", True, ColTypes.Neutral)
+                            Else
+                                Dim AttachmentPart As MimePart = Attachment
+                                W($"- {AttachmentPart.FileName}", True, ColTypes.Neutral)
+                            End If
+                        Next
+                    End If
                 Else
                     W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Neutral)
                 End If
