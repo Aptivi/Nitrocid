@@ -3,8 +3,10 @@
     "",
     "\\.github",
     "\\.github\\workflows",
-    "\\Kernel Simulator"
+    "\\Kernel Simulator",
+    "\\Kernel Simulator\\Network",
+    "\\Kernel Simulator\\Network\\FTP"
   ],
-  "SelectedNode": "\\Kernel Simulator\\Kernel Simulator.vbproj",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

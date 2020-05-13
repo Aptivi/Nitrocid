@@ -495,6 +495,9 @@ Public Module KernelTools
 
     Private Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal hProcess As IntPtr, ByVal dwMinimumWorkingSetSize As Int32, ByVal dwMaximumWorkingSetSize As Int32) As Int32
 
+    ''' <summary>
+    ''' Disposes all unused memory.
+    ''' </summary>
     Public Sub DisposeAll()
 
         Try

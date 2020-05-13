@@ -67,7 +67,8 @@ Module FTPTools
                 Dim profsel As New FtpProfile
                 Wdbg("I", "Profile count: {0}", profiles.Count)
                 If profiles.Count > 1 Then 'More than one profile
-                    W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine +
+                      "#, " + DoTranslation("Host Name, Username, Data Type, Encoding, Encryption, Protocols", currentLang), True, ColTypes.Neutral)
                     For i As Integer = 1 To profiles.Count - 1
                         W($"{i}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection.ToString}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption.ToString}, {profiles(i).Protocols.ToString}", True, ColTypes.Neutral)
                     Next
