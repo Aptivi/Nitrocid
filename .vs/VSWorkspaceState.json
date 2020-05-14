@@ -5,8 +5,9 @@
     "\\.github\\workflows",
     "\\Kernel Simulator",
     "\\Kernel Simulator\\Network",
-    "\\Kernel Simulator\\Network\\FTP"
+    "\\Kernel Simulator\\Network\\FTP",
+    "\\Kernel Simulator\\Network\\IMAP"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\Kernel Simulator\\Login",
   "PreviewInSolutionExplorer": false
 }

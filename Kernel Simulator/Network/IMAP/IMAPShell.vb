@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Threading
 Imports MailKit
 Imports MailKit.Search
 
@@ -24,10 +25,14 @@ Module IMAPShell
     'Variables
     Public IMAP_AvailableCommands() As String = {"help", "exit", "list", "read"}
     Public IMAP_Messages As IList(Of UniqueId)
+    Public IMAP_NoOp As New Thread(AddressOf KeepConnection)
     Friend ExitRequested As Boolean
 
     Sub OpenShell(Address As String)
         While Not ExitRequested
+            'Send ping to keep the connection alive
+            IMAP_NoOp.Start()
+
             'Populate messages
             'TODO: Populate also all folders, not just Inbox.
             IMAP_Client.Inbox.Open(FolderAccess.ReadOnly)
@@ -53,6 +58,14 @@ Module IMAPShell
         End While
 
         IMAP_Client.Disconnect(True)
+    End Sub
+
+    Sub KeepConnection()
+        'Every 10 seconds, send a ping to IMAP server
+        While Not ExitRequested
+            Thread.Sleep(10000)
+            IMAP_Client.NoOp()
+        End While
     End Sub
 
 End Module
