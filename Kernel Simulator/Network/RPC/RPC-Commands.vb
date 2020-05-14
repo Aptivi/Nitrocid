@@ -87,6 +87,7 @@ Module RPC_Commands
                         WStkTrc(ex)
                     End If
                 Else
+                    Wdbg("E", "Fatal error: {0}", ex.Message)
                     WStkTrc(ex)
                 End If
             End Try
