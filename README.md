@@ -258,7 +258,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **5/6/2020 - 0.0.9.1:** Updated FluentFTP, Fixed `list` crashing if no page number is specified (*)
 
-**5/13/2020 - WIP - 0.0.10:** Updated libraries, Fixed mods not being able to access the Encryption class, Simplified encryption code for mods, improved list of filesystems, fixed FTP crash when faced with multiple profiles, Now FTP addresses starting with ftpes:// will also be accepted, Made FTP profile listing more clear, Now the IMAP client will tell you if there's an attachment when reading, fixed misleading message when reading the first message, fixed IMAP shell crash when idle
+**5/15/2020 - WIP - 0.0.10:** Updated libraries, Fixed mods not being able to access the Encryption class, Simplified encryption code for mods, improved list of filesystems, fixed FTP crash when faced with multiple profiles, Now FTP addresses starting with ftpes:// will also be accepted, Made FTP profile listing more clear, Now the IMAP client will tell you if there's an attachment when reading, fixed misleading message when reading the first message, fixed IMAP shell crash when idle, added scripting support
 
 Items with asterisk means that the specified change/fix will be backported to previous version of KS which doesn't have it (only for Ubuntu PPA version, backports as Debian patches)
 

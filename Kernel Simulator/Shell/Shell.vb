@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Public Module Shell
 
     'Available Commands  (availableCommands)
@@ -153,6 +155,9 @@ Public Module Shell
                         ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(cmd) = True) Or availableCommands.Contains(cmd) Then
                             Wdbg("W", "Cmd exec {0} succeeded", cmd)
                             GetCommand.ExecuteCommand(cmdArgs)
+                        ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + cmd)) And cmd.EndsWith(".uesh") Then 'TODO: Support script files with space in it
+                            Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", cmd)
+                            Execute(Path.GetFullPath(CurrDir + "/" + cmd))
                         Else
                             Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", cmd, indexCmd)
                             W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), True, ColTypes.Neutral, cmd)
@@ -182,6 +187,9 @@ Public Module Shell
                             ElseIf cmd = "logout" Or cmd = "shutdown" Or cmd = "reboot" Then
                                 Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", cmd)
                                 W(DoTranslation("Shell message: Command {0} is not allowed to run on log in.", currentLang), True, ColTypes.Neutral, cmd)
+                            ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + cmd)) And cmd.EndsWith(".uesh") Then 'TODO: Support script files with space in it
+                                Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", cmd)
+                                Execute(Path.GetFullPath(CurrDir + "/" + cmd))
                             Else
                                 Wdbg("W", "Cmd exec {0} succeeded", cmd)
                                 GetCommand.ExecuteCommand(cmdArgs)

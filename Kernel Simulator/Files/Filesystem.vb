@@ -89,7 +89,11 @@ Public Module Filesystem
 
                         'Print information
                         If (FInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not FInfo.Attributes.HasFlag(IO.FileAttributes.Hidden) Then
-                            W("- " + FInfo.Name + ": ", False, ColTypes.HelpCmd)
+                            If FInfo.Name.EndsWith(".uesh") Then
+                                W("- " + FInfo.Name + ": ", False, ColTypes.Stage)
+                            Else
+                                W("- " + FInfo.Name + ": ", False, ColTypes.HelpCmd)
+                            End If
                             W(DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.HelpDef,
                               FormatNumber(FInfo.Length / 1024, 2), FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
                                                                     FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)

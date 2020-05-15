@@ -6,8 +6,9 @@
     "\\Kernel Simulator",
     "\\Kernel Simulator\\Network",
     "\\Kernel Simulator\\Network\\FTP",
-    "\\Kernel Simulator\\Network\\IMAP"
+    "\\Kernel Simulator\\Network\\IMAP",
+    "\\Kernel Simulator\\Network\\RPC"
   ],
-  "SelectedNode": "\\Kernel Simulator\\Login",
+  "SelectedNode": "\\Kernel Simulator\\Network\\RPC\\RPC-Commands.vb",
   "PreviewInSolutionExplorer": false
 }
