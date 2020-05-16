@@ -263,7 +263,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "choice" Then
 
-                If args.Count > 1 Then
+                If args.Count > 2 Then
                     While True
                         'Variables
                         Dim question As String = strArgs.Replace(args(0) + " " + args(1) + " ", "")
@@ -423,6 +423,32 @@ Public Module GetCommand
 
                 If args.Count <> 0 Then
                     DownloadFile(args(0))
+                    Done = True
+                End If
+
+            ElseIf words(0) = "input" Then
+
+                If args.Count > 1 Then
+                    While True
+                        'Variables
+                        Dim question As String = strArgs.Replace(args(0) + " ", "")
+                        Dim answer As String
+                        Wdbg("I", "Removed ""{0} "" from strArgs. Result: {1}", args(0), question)
+
+                        'Ask a question
+                        W(question, False, ColTypes.Neutral)
+
+                        'Wait for an answer
+                        answer = Console.ReadLine
+
+                        'Check if script variable is initialized. If not, exits the program.
+                        If ScriptVariables.ContainsKey(args(0)) Then
+                            SetVariable(args(0), answer)
+                            Exit While
+                        Else
+                            Exit While
+                        End If
+                    End While
                     Done = True
                 End If
 

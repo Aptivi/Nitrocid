@@ -47,6 +47,7 @@ Public Module HelpSystem
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                               {"get", DoTranslation("Downloads a file to current working directory", currentLang)},
                                                               {"help", DoTranslation("Help page", currentLang)},
+                                                              {"input", DoTranslation("Allows user to enter input", currentLang)},
                                                               {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
                                                               {"listdrives", DoTranslation("Lists all probed drives.", currentLang)},
                                                               {"listparts", DoTranslation("Lists all probed partitions on a specific drive (and all logical partitions on all drives).", currentLang)},
@@ -218,6 +219,10 @@ Public Module HelpSystem
         ElseIf command = "get" Then
 
             W(DoTranslation("Usage:", currentLang) + " get <URL>", True, ColTypes.Neutral)
+
+        ElseIf command = "input" Then
+
+            W(DoTranslation("Usage:", currentLang) + " input <$variable> <question>", True, ColTypes.Neutral)
 
         ElseIf command = "list" Then
 
