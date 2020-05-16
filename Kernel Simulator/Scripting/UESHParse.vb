@@ -29,11 +29,37 @@ Public Module UESHParse
             Dim LineNo As Integer = 1
             Wdbg("I", "Stream opened. Parsing script")
 
+            'Look for $variables and initialize them
+            While Not FileStream.EndOfStream
+                'Get line
+                Dim Line As String = FileStream.ReadLine
+                Wdbg("I", "Line {0}: ""{1}""", LineNo, Line)
+
+                'If $variable is found in string, initialize it
+                Dim SplitWords() As String = Line.Split(" ")
+                For i As Integer = 0 To SplitWords.Count - 1
+                    If Not ScriptVariables.ContainsKey(SplitWords(i)) And SplitWords(i).StartsWith("$") Then
+                        InitializeVariable(SplitWords(i))
+                    End If
+                Next
+            End While
+
+            'Seek to the beginning
+            FileStream.BaseStream.Seek(0, SeekOrigin.Begin)
+
             'Get all lines, parse comments, and parse commands
             While Not FileStream.EndOfStream
                 'Get line
                 Dim Line As String = FileStream.ReadLine
                 Wdbg("I", "Line {0}: ""{1}""", LineNo, Line)
+
+                'See if the line contains variable, and replace every instance of it with its value
+                Dim SplitWords() As String = Line.Split(" ")
+                For i As Integer = 0 To SplitWords.Count - 1
+                    If SplitWords(i).StartsWith("$") Then
+                        Line = GetVariable(SplitWords(i), Line)
+                    End If
+                Next
 
                 'See if the line is a comment or command
                 If Not Line.StartsWith("#") And Not Line.StartsWith(" ") Then

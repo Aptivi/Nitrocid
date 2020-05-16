@@ -18,7 +18,6 @@
 
 Module UESHVariables
 
-    'They are not used yet. They will be used in later development builds.
     Public ScriptVariables As New Dictionary(Of String, String)
     Public Sub InitializeVariable(ByVal var As String)
         If Not ScriptVariables.ContainsKey(var) Then
@@ -33,7 +32,7 @@ Module UESHVariables
             Wdbg("I", "Replaced variable {0} with their values. Result: {1}", var, newcmd)
             Return newcmd
         End If
-        Return var
+        Return cmd
     End Function
 
     Public Sub SetVariable(ByVal var As String, ByVal value As String)
