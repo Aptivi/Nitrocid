@@ -31,14 +31,14 @@ Public Module Shell
                                             "savescreen", "lockscreen", "setsaver", "reloadsaver", "ftp", "usermanual", "cdbglog", "chlang",
                                             "reloadmods", "get", "lsdbgdev", "disconndbgdev", "lset", "move", "copy", "search", "listdrives",
                                             "listparts", "sumfile", "rdebug", "speak", "spellbee", "mathbee", "loteresp", "sshell", "bsynth", "shownotifs",
-                                            "dismissnotif", "rexec", "calc", "update", "sumfiles", "lsmail"}
+                                            "dismissnotif", "rexec", "calc", "update", "sumfiles", "lsmail", "echo", "choice", "beep"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
                                      "lset", "listdrives", "listparts", "rdebug", "rexec", "update"}
     Public obsoleteCmds() As String = {}
     Public modcmnds As New ArrayList
 
-    'For contributors: For each added command, you should add a command to availableCommands array so there is no problems detecting your new command.
+    'For contributors: For each added command, you should add a command to availableCommands array so there are no problems detecting your new command.
     '                  For each added admin command, you should add a command to strictCmds array after performing above procedure so there are no problems checking if user has Admin permission to use your new admin command.
     '                  For each obsolete command, you should add a command to obsoleteCmds array so there are no problems checking if your command is obsolete.
     'Initialize Shell

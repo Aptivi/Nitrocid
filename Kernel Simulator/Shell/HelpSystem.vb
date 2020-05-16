@@ -26,6 +26,7 @@ Public Module HelpSystem
         definitions = New Dictionary(Of String, String) From {{"adduser", DoTranslation("Adds users (Only admins can access this command)", currentLang)},
                                                               {"alias", DoTranslation("Adds aliases to commands (Only admins can access this command)", currentLang)},
                                                               {"arginj", DoTranslation("Injects arguments to the kernel (reboot required, admins only)", currentLang)},
+                                                              {"beep", DoTranslation("Beep in 'n' Hz and time in 'n' milliseconds", currentLang)},
                                                               {"bsynth", DoTranslation("Loads the synth file and plays it.", currentLang)},
                                                               {"calc", DoTranslation("Calculator to calculate expressions.", currentLang)},
                                                               {"cdbglog", DoTranslation("Deletes everything in debug log", currentLang)},
@@ -34,6 +35,7 @@ Public Module HelpSystem
                                                               {"chlang", DoTranslation("Changes language", currentLang)},
                                                               {"chmal", DoTranslation("Changes MAL, the MOTD After Login (Admins only)", currentLang)},
                                                               {"chmotd", DoTranslation("Changes MOTD, the Message Of The Day (Admins only)", currentLang)},
+                                                              {"choice", DoTranslation("Makes user choices", currentLang)},
                                                               {"chpwd", DoTranslation("Changes password for current user", currentLang)},
                                                               {"chusrname", DoTranslation("Changes user name (Admins Only)", currentLang)},
                                                               {"cls", DoTranslation("Clears the screen", currentLang)},
@@ -41,6 +43,7 @@ Public Module HelpSystem
                                                               {"debuglog", DoTranslation("Shows debug logs (Admins Only)", currentLang)},
                                                               {"disconndbgdev", DoTranslation("Disconnect a debug device", currentLang)},
                                                               {"dismissnotif", DoTranslation("Dismisses a notification", currentLang)},
+                                                              {"echo", DoTranslation("Writes text into the console", currentLang)},
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                               {"get", DoTranslation("Downloads a file to current working directory", currentLang)},
                                                               {"help", DoTranslation("Help page", currentLang)},
@@ -133,6 +136,10 @@ Public Module HelpSystem
             W(DoTranslation("Usage:", currentLang) + " arginj [Arguments separated by spaces]" + vbNewLine +
               "       " + DoTranslation("where arguments will be {0}", currentLang), True, ColTypes.Neutral, String.Join(", ", AvailableArgs))
 
+        ElseIf command = "beep" Then
+
+            W(DoTranslation("Usage:", currentLang) + " beep <37-32767 Hz> <milliseconds>", True, ColTypes.Neutral)
+
         ElseIf command = "bsynth" Then
 
             W(DoTranslation("Usage:", currentLang) + " bsynth <script-file>", True, ColTypes.Neutral)
@@ -166,6 +173,12 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " chmal <Message>", True, ColTypes.Neutral)
 
+        ElseIf command = "choice" Then
+
+            W(DoTranslation("Usage:", currentLang) + " choice <$variable> <answers> <input>" + vbNewLine +
+              "       " + DoTranslation("where <$variable> is any variable that will be used to store response", currentLang) + vbNewLine +
+              "       " + DoTranslation("where <answers> are one-lettered answers of the question separated in slashes", currentLang), True, ColTypes.Neutral)
+
         ElseIf command = "chpwd" Then
 
             W(DoTranslation("Usage:", currentLang) + " chpwd <Username> <UserPass> <newPass> <confirm>", True, ColTypes.Neutral)
@@ -193,6 +206,10 @@ Public Module HelpSystem
         ElseIf command = "disconndbgdev" Then
 
             W(DoTranslation("Usage:", currentLang) + " disconndbgdev <ip>", True, ColTypes.Neutral)
+
+        ElseIf command = "echo" Then
+
+            W(DoTranslation("Usage:", currentLang) + " echo <text>", True, ColTypes.Neutral)
 
         ElseIf command = "ftp" Then
 

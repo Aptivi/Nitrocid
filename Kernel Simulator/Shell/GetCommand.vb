@@ -154,6 +154,21 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "beep" Then
+
+                If args.Count > 1 Then
+                    If args(0).IsNumeric And CInt(args(0)) >= 37 And CInt(args(0)) <= 32767 Then 'Frequency must be numeric, and must be >= 37 and <= 32767
+                        If args(1).IsNumeric Then 'Time must be numeric
+                            Console.Beep(args(0), args(1))
+                        Else
+                            W(DoTranslation("Time must be numeric.", currentLang), True, ColTypes.Err)
+                        End If
+                    Else
+                        W(DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767.", currentLang), True, ColTypes.Err)
+                    End If
+                    Done = True
+                End If
+
             ElseIf words(0) = "bsynth" Then
 
                 If eqargs?.Count > 0 Then
@@ -165,6 +180,7 @@ Public Module GetCommand
 
                 If args.Count > 0 Then
                     Dim Res As Dictionary(Of Double, Boolean) = DoCalc(strArgs)
+                    Wdbg("I", "Res.Values(0) = {0}", Res.Values(0))
                     If Not Res.Values(0) Then 'If there is an error in calculation
                         W(DoTranslation("Error in calculation.", currentLang), True, ColTypes.Neutral)
                     Else 'Calculation done
@@ -245,13 +261,46 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "choice" Then
+
+                If args.Count > 1 Then
+                    While True
+                        'Variables
+                        Dim question As String = strArgs.Replace(args(0) + " " + args(1) + " ", "")
+                        Dim answers As String()
+                        Dim answer As String
+                        Wdbg("I", "Removed ""{0} {1} "" from strArgs. Result: {2}", args(0), args(1), question)
+
+                        'Ask a question
+                        W(question, True, ColTypes.Neutral)
+                        W("<{0}> ", False, ColTypes.Input, args(1))
+                        answers = args(1).Split("/")
+
+                        'Wait for an answer
+                        answer = Console.ReadKey.KeyChar
+                        Console.WriteLine()
+
+                        'Check if script variable is initialized. If not, exits the program.
+                        If ScriptVariables.ContainsKey(args(0)) Then
+                            'Check if answer if correct.
+                            If answers.Contains(answer) Then
+                                SetVariable(args(0), answer)
+                                Exit While
+                            End If
+                        Else
+                            Exit While
+                        End If
+                    End While
+                    Done = True
+                End If
+
             ElseIf words(0) = "chpwd" Then
 
                 If requestedCommand <> "chpwd" Then
                     If eargs.Count - 1 = 3 Then
                         Try
                             If InStr(eargs(3), " ") > 0 Then
-                                W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
+                                W(DoTranslation("Spaces are Not allowed.", currentLang), True, ColTypes.Neutral)
                             ElseIf eargs(3) = eargs(2) Then
                                 eargs(1) = GetEncryptedString(eargs(1), Algorithms.SHA256)
                                 If eargs(1) = userword(eargs(0)) Then
@@ -259,7 +308,7 @@ Public Module GetCommand
                                         eargs(2) = GetEncryptedString(eargs(2), Algorithms.SHA256)
                                         userword.Item(eargs(0)) = eargs(2)
                                     ElseIf adminList(eargs(0)) And Not adminList(signedinusrnm) Then
-                                        W(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang), True, ColTypes.Neutral, eargs(0))
+                                        W(DoTranslation("You are Not authorized to change password of {0} because the target was an admin.", currentLang), True, ColTypes.Neutral, eargs(0))
                                     End If
                                 Else
                                     W(DoTranslation("Wrong user password.", currentLang), True, ColTypes.Neutral)
@@ -355,6 +404,11 @@ Public Module GetCommand
                         Done = True
                     End If
                 End If
+
+            ElseIf words(0) = "echo" Then
+
+                W(strArgs, True, ColTypes.Neutral)
+                Done = True
 
             ElseIf words(0) = "ftp" Then
 

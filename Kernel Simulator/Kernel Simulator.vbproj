@@ -293,6 +293,7 @@
     <Compile Include="Network\IMAP\IMAPShell.vb" />
     <Compile Include="Network\SSH\SSH.vb" />
     <Compile Include="Scripting\UESHParse.vb" />
+    <Compile Include="Scripting\UESHVariables.vb" />
     <Compile Include="Shell\AliasManager.vb" />
     <Compile Include="Shell\GetCommand.vb" />
     <Compile Include="Hardware\HardwareProbe.vb" />
