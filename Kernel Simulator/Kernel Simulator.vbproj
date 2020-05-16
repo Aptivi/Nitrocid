@@ -191,7 +191,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>32.4.0</Version>
+      <Version>32.4.1</Version>
     </PackageReference>
     <PackageReference Include="LibVLCSharp">
       <Version>3.4.5</Version>
