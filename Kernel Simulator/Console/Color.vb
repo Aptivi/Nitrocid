@@ -419,7 +419,7 @@ Public Module Color
         ksconf.Save(configPath)
     End Sub
 
-    Sub ParseCurrentTheme()
+    Public Sub ParseCurrentTheme()
         Dim ksconf As New IniFile()
         Dim configPath As String = paths("Configuration")
         ksconf.Load(configPath)

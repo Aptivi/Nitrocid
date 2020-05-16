@@ -300,7 +300,7 @@ Public Module Color255
             Wdbg("I", "Added support for VT escapes.")
         End If
     End Sub
-    Function GetEsc() As Char
+    Public Function GetEsc() As Char
         Return ChrW(&H1B) 'ESC
     End Function
 
