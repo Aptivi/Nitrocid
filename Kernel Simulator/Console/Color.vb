@@ -30,9 +30,11 @@ Public Module Color
     Public cmdListColor As ConsoleColors = ConsoleColors.DarkYellow
     Public cmdDefColor As ConsoleColors = ConsoleColors.DarkGray
     Public stageColor As ConsoleColors = ConsoleColors.Green
+    Public errorColor As ConsoleColors = ConsoleColors.Red
 
     'Templates array (available ones)
-    Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "Windows95", "GTASA", "GrayOnYellow", "BlackOnWhite", "LinuxUncolored", "LinuxColoredDef"}
+    Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "Windows95", "GTASA", "GrayOnYellow",
+                                         "BlackOnWhite", "LinuxUncolored", "LinuxColoredDef"}
 
     'Variables for the "Default" theme
     Public inputColorDef As ConsoleColors = inputColor
@@ -46,6 +48,7 @@ Public Module Color
     Public cmdListColorDef As ConsoleColors = cmdListColor
     Public cmdDefColorDef As ConsoleColors = cmdDefColor
     Public stageColorDef As ConsoleColors = stageColor
+    Public errorColorDef As ConsoleColors = errorColor
 
     'Variables for the "RedConsole" theme
     Public inputColorRC As ConsoleColors = ConsoleColors.Red
@@ -59,6 +62,7 @@ Public Module Color
     Public cmdListColorRC As ConsoleColors = ConsoleColors.Red
     Public cmdDefColorRC As ConsoleColors = ConsoleColors.DarkRed
     Public stageColorRC As ConsoleColors = ConsoleColors.Red
+    Public errorColorRC As ConsoleColors = ConsoleColors.DarkRed
 
     'Variables for the "Bluespire" theme
     Public inputColorBS As ConsoleColors = ConsoleColors.Cyan
@@ -72,6 +76,7 @@ Public Module Color
     Public cmdListColorBS As ConsoleColors = ConsoleColors.Cyan
     Public cmdDefColorBS As ConsoleColors = ConsoleColors.Blue
     Public stageColorBS As ConsoleColors = ConsoleColors.Cyan
+    Public errorColorBS As ConsoleColors = ConsoleColors.Blue
 
     'Variables for the "Hacker" theme
     Public inputColorHckr As ConsoleColors = ConsoleColors.Green
@@ -85,6 +90,7 @@ Public Module Color
     Public cmdListColorHckr As ConsoleColors = ConsoleColors.DarkGreen
     Public cmdDefColorHckr As ConsoleColors = ConsoleColors.Green
     Public stageColorHckr As ConsoleColors = ConsoleColors.DarkGreen
+    Public errorColorHckr As ConsoleColors = ConsoleColors.DarkGreen
 
     'Variables for the "Ubuntu" theme
     Public inputColorU As ConsoleColors = ConsoleColors.White
@@ -98,6 +104,7 @@ Public Module Color
     Public cmdListColorU As ConsoleColors = ConsoleColors.White
     Public cmdDefColorU As ConsoleColors = ConsoleColors.White
     Public stageColorU As ConsoleColors = ConsoleColors.White
+    Public errorColorU As ConsoleColors = ConsoleColors.Gray
 
     'Variables for the "YellowFG" theme
     Public inputColorYFG As ConsoleColors = ConsoleColors.Yellow
@@ -111,6 +118,7 @@ Public Module Color
     Public cmdListColorYFG As ConsoleColors = ConsoleColors.Yellow
     Public cmdDefColorYFG As ConsoleColors = ConsoleColors.DarkYellow
     Public stageColorYFG As ConsoleColors = ConsoleColors.Yellow
+    Public errorColorYFG As ConsoleColors = ConsoleColors.DarkYellow
 
     'Variables for the "YellowBG" theme
     Public inputColorYBG As ConsoleColors = ConsoleColors.Black
@@ -124,6 +132,7 @@ Public Module Color
     Public cmdListColorYBG As ConsoleColors = ConsoleColors.Black
     Public cmdDefColorYBG As ConsoleColors = ConsoleColors.Black
     Public stageColorYBG As ConsoleColors = ConsoleColors.Black
+    Public errorColorYBG As ConsoleColors = ConsoleColors.Black
 
     'Variables for the "Windows95" theme
     Public inputColor95 As ConsoleColors = ConsoleColors.White
@@ -137,6 +146,7 @@ Public Module Color
     Public cmdListColor95 As ConsoleColors = ConsoleColors.White
     Public cmdDefColor95 As ConsoleColors = ConsoleColors.White
     Public stageColor95 As ConsoleColors = ConsoleColors.White
+    Public errorColor95 As ConsoleColors = ConsoleColors.White
 
     'Variables for the "GTASA" theme
     Public inputColorSA As ConsoleColors = ConsoleColors.Yellow
@@ -150,6 +160,7 @@ Public Module Color
     Public cmdListColorSA As ConsoleColors = ConsoleColors.Yellow
     Public cmdDefColorSA As ConsoleColors = ConsoleColors.DarkYellow
     Public stageColorSA As ConsoleColors = ConsoleColors.Yellow
+    Public errorColorSA As ConsoleColors = ConsoleColors.DarkYellow
 
     'Variables for the "GrayOnYellow" theme
     Public inputColorGY As ConsoleColors = ConsoleColors.Gray
@@ -163,6 +174,7 @@ Public Module Color
     Public cmdListColorGY As ConsoleColors = ConsoleColors.Gray
     Public cmdDefColorGY As ConsoleColors = ConsoleColors.Gray
     Public stageColorGY As ConsoleColors = ConsoleColors.Gray
+    Public errorColorGY As ConsoleColors = ConsoleColors.Gray
 
     'Variables for the "BlackOnWhite" theme
     Public inputColorBY As ConsoleColors = ConsoleColors.Black
@@ -176,6 +188,7 @@ Public Module Color
     Public cmdListColorBY As ConsoleColors = ConsoleColors.Black
     Public cmdDefColorBY As ConsoleColors = ConsoleColors.Black
     Public stageColorBY As ConsoleColors = ConsoleColors.Black
+    Public errorColorBY As ConsoleColors = ConsoleColors.Black
 
     'Variables for the "LinuxUncolored" theme
     Public inputColorLUnc As ConsoleColors = ConsoleColors.Gray
@@ -189,6 +202,7 @@ Public Module Color
     Public cmdListColorLUnc As ConsoleColors = ConsoleColors.Gray
     Public cmdDefColorLUnc As ConsoleColors = ConsoleColors.Gray
     Public stageColorLUnc As ConsoleColors = ConsoleColors.Gray
+    Public errorColorLUnc As ConsoleColors = ConsoleColors.Gray
 
     'Variables for the "LinuxColoredDef" theme
     'If there is a mistake in colors, please fix it.
@@ -203,6 +217,7 @@ Public Module Color
     Public cmdListColorLcDef As ConsoleColors = ConsoleColors.White
     Public cmdDefColorLcDef As ConsoleColors = ConsoleColors.Gray
     Public stageColorLcDef As ConsoleColors = ConsoleColors.White
+    Public errorColorLcDef As ConsoleColors = ConsoleColors.Gray
 
     'Variables
     Public currentTheme As String
@@ -220,6 +235,7 @@ Public Module Color
         cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorDef), ConsoleColors)
         cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorDef), ConsoleColors)
         stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorDef), ConsoleColors)
+        errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorDef), ConsoleColors)
         Load()
     End Sub
     Public Sub Load()
@@ -246,6 +262,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorRC), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorRC), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorRC), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorRC), ConsoleColors)
                 Load()
             ElseIf theme = "Bluespire" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorBS), ConsoleColors)
@@ -259,6 +276,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorBS), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorBS), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorBS), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorBS), ConsoleColors)
                 Load()
             ElseIf theme = "Hacker" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorHckr), ConsoleColors)
@@ -272,6 +290,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorHckr), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorHckr), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorHckr), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorHckr), ConsoleColors)
                 Load()
             ElseIf theme = "Ubuntu" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorU), ConsoleColors)
@@ -285,6 +304,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorU), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorU), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorU), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorU), ConsoleColors)
                 Load()
             ElseIf theme = "YellowFG" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorYFG), ConsoleColors)
@@ -298,6 +318,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorYFG), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorYFG), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorYFG), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorYFG), ConsoleColors)
                 Load()
             ElseIf theme = "YellowBG" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorYBG), ConsoleColors)
@@ -311,6 +332,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorYBG), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorYBG), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorYBG), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorYBG), ConsoleColors)
                 Load()
             ElseIf theme = "Windows95" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColor95), ConsoleColors)
@@ -324,6 +346,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColor95), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColor95), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColor95), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), stageColor95), ConsoleColors)
                 Load()
             ElseIf theme = "GTASA" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorSA), ConsoleColors)
@@ -337,6 +360,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorSA), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorSA), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorSA), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorSA), ConsoleColors)
                 Load()
             ElseIf theme = "GrayOnYellow" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorGY), ConsoleColors)
@@ -350,6 +374,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorGY), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorGY), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorGY), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorGY), ConsoleColors)
                 Load()
             ElseIf theme = "BlackOnWhite" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorBY), ConsoleColors)
@@ -363,6 +388,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorBY), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorBY), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorBY), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorBY), ConsoleColors)
                 Load()
             ElseIf theme = "LinuxUncolored" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorLUnc), ConsoleColors)
@@ -376,6 +402,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorLUnc), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorLUnc), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorLUnc), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorLUnc), ConsoleColors)
                 Load()
             ElseIf theme = "LinuxColoredDef" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorLcDef), ConsoleColors)
@@ -389,6 +416,7 @@ Public Module Color
                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorLcDef), ConsoleColors)
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorLcDef), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorLcDef), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorLcDef), ConsoleColors)
                 Load()
             End If
             Wdbg("I", "Saving theme")
@@ -416,6 +444,7 @@ Public Module Color
         ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColor.ToString
         ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColor.ToString
         ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColor.ToString
+        ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColor.ToString
         ksconf.Save(configPath)
     End Sub
 
@@ -433,7 +462,8 @@ Public Module Color
            ksconf.Sections("Colors").Keys("Input Color").Value = ConsoleColors.White.ToString And
            ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = ConsoleColors.DarkYellow.ToString And
            ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = ConsoleColors.DarkGray.ToString And
-           ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = ConsoleColors.Green.ToString Then
+           ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = ConsoleColors.Green.ToString And
+           ksconf.Sections("Colors").Keys("Error Text Color").Value = ConsoleColors.Red.ToString Then
             Wdbg("I", "Theme set to Default")
             currentTheme = "Default"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorRC.ToString And
@@ -446,7 +476,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorRC.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorRC.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorRC.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorRC.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorRC.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorRC.ToString Then
             Wdbg("I", "Theme set to RedConsole")
             currentTheme = "RedConsole"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorBS.ToString And
@@ -459,7 +490,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorBS.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorBS.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorBS.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorBS.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorBS.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorbs.ToString Then
             Wdbg("I", "Theme set to BlueSpire")
             currentTheme = "BlueSpire"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorHckr.ToString And
@@ -472,7 +504,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorHckr.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorHckr.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorHckr.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorHckr.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorHckr.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorhckr.ToString Then
             Wdbg("I", "Theme set to Hacker")
             currentTheme = "Hacker"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorU.ToString And
@@ -485,7 +518,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorU.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorU.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorU.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorU.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorU.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColoru.ToString Then
             Wdbg("I", "Theme set to Ubuntu")
             currentTheme = "Ubuntu"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorYFG.ToString And
@@ -498,7 +532,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorYFG.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorYFG.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorYFG.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorYFG.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorYFG.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColoryfg.ToString Then
             Wdbg("I", "Theme set to YellowFG")
             currentTheme = "YellowFG"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorYBG.ToString And
@@ -511,7 +546,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorYBG.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorYBG.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorYBG.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorYBG.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorYBG.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorybg.ToString Then
             Wdbg("I", "Theme set to YellowBG")
             currentTheme = "YellowBG"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColor95.ToString And
@@ -524,7 +560,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColor95.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColor95.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColor95.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColor95.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColor95.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColor95.ToString Then
             Wdbg("I", "Theme set to Windows 95")
             currentTheme = "Windows95"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorSA.ToString And
@@ -537,7 +574,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorSA.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorSA.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorSA.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorSA.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorSA.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorsa.ToString Then
             Wdbg("I", "Theme set to GTA: SA")
             currentTheme = "GTASA"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorGY.ToString And
@@ -550,7 +588,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorGY.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorGY.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorGY.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorGY.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorGY.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorgy.ToString Then
             Wdbg("I", "Theme set to Gray on Yellow")
             currentTheme = "GrayOnYellow"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorBY.ToString And
@@ -563,7 +602,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorBY.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorBY.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorBY.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorBY.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorBY.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorby.ToString Then
             Wdbg("I", "Theme set to Black On White")
             currentTheme = "BlackOnWhite"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLUnc.ToString And
@@ -576,7 +616,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorLUnc.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorLUnc.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorLUnc.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorlunc.ToString Then
             Wdbg("I", "Theme set to LinuxUncolored")
             currentTheme = "LinuxUncolored"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLcDef.ToString And
@@ -589,7 +630,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorLcDef.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorLcDef.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorLcDef.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorLcDef.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorLcDef.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorlcdef.ToString Then
             Wdbg("I", "Theme set to LinuxColoredDef")
             currentTheme = "LinuxColoredDef"
         Else

@@ -18,6 +18,7 @@ Imports System.Reflection.Assembly
 
 'TODOs:
 '   TODO: Interactive host system file manager (Planned in the bootable version)
+'   TODO: Code documentation for all functions, subs, enums, etc.
 Public Module Kernel
 
     'Variables

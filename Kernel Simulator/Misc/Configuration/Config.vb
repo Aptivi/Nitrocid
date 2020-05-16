@@ -49,7 +49,8 @@ Public Module Config
                         New IniKey(ksconf, "Input Color", inputColor.ToString),
                         New IniKey(ksconf, "Listed command in Help Color", cmdListColor.ToString),
                         New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString),
-                        New IniKey(ksconf, "Kernel Stage Color", stageColor.ToString)))
+                        New IniKey(ksconf, "Kernel Stage Color", stageColor.ToString),
+                        New IniKey(ksconf, "Error Text Color", errorColor.ToString)))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -112,7 +113,8 @@ Public Module Config
                         New IniKey(ksconf, "Input Color", inputColor.ToString),
                         New IniKey(ksconf, "Listed command in Help Color", cmdListColor.ToString),
                         New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString),
-                        New IniKey(ksconf, "Kernel Stage Color", stageColor.ToString)))
+                        New IniKey(ksconf, "Kernel Stage Color", stageColor.ToString),
+                        New IniKey(ksconf, "Error Text Color", errorColor.ToString)))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -289,6 +291,7 @@ Public Module Config
                 If ColoredShell Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColors)
                 If ColoredShell Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Definition of command in Help Color").Value), ConsoleColors)
                 If ColoredShell Then stageColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Kernel Stage Color").Value), ConsoleColors)
+                If ColoredShell Then errorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Error Text Color").Value), ConsoleColors)
             Else
                 Wdbg("W", "Running on CI environment. Ignoring...")
             End If

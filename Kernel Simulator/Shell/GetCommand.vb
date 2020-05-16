@@ -710,7 +710,7 @@ Public Module GetCommand
             ElseIf words(0) = "setcolors" Then
 
                 If requestedCommand <> "setcolors" Then
-                    If args.Count - 1 = 10 Then
+                    If args.Count - 1 = 11 Then
                         Done = True
                         If ColoredShell = True Then
                             If args.Contains("RESET") Then
@@ -762,11 +762,15 @@ Public Module GetCommand
                                     args(10) = "Green"
                                     stageColor = CType([Enum].Parse(GetType(ConsoleColors), args(10)), ConsoleColors)
                                 End If
+                                If args(11) = "def" Then
+                                    args(11) = "Red"
+                                    errorColor = CType([Enum].Parse(GetType(ConsoleColors), args(11)), ConsoleColors)
+                                End If
                             ElseIf IsNumeric(args(0)) And IsNumeric(args(1)) And IsNumeric(args(2)) And IsNumeric(args(3)) And IsNumeric(args(4)) And
                                 IsNumeric(args(5)) And IsNumeric(args(6)) And IsNumeric(args(7)) And IsNumeric(args(8)) And IsNumeric(args(9)) And
-                                IsNumeric(args(10)) And
+                                IsNumeric(args(10)) And IsNumeric(args(11)) And
                                 args(0) <= 255 And args(1) <= 255 And args(2) <= 255 And args(3) <= 255 And args(4) <= 255 And args(5) <= 255 And
-                                args(6) <= 255 And args(7) <= 255 And args(8) <= 255 And args(9) <= 255 And args(10) <= 255 Then
+                                args(6) <= 255 And args(7) <= 255 And args(8) <= 255 And args(9) <= 255 And args(10) <= 255 And args(11) <= 255 Then
                                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), args(0)), ConsoleColors)
                                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), args(1)), ConsoleColors)
                                 contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), args(2)), ConsoleColors)
@@ -778,6 +782,7 @@ Public Module GetCommand
                                 cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), args(8)), ConsoleColors)
                                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), args(9)), ConsoleColors)
                                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), args(10)), ConsoleColors)
+                                errorColor = CType([Enum].Parse(GetType(ConsoleColors), args(11)), ConsoleColors)
                                 Load()
                             Else
                                 W(DoTranslation("One or more of the colors is invalid.", currentLang), True, ColTypes.Neutral)
