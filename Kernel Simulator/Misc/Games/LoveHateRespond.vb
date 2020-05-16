@@ -45,8 +45,8 @@ Module LoveHateRespond
                                                   DoTranslation("We prejudice on this video.", currentLang)}
     Dim Comments As New Dictionary(Of String, List(Of String)) From {{"Love", LoveComments}, {"Hate", HateComments}}
     Dim Users As New List(Of String) From {"GS4L", "The Eagle", "Vercity", "Losting - Computers, fixes, and more", "WillStrike", "CyberBully #2095", "ProGamer453",
-                                           "ExtFS", "Elaine Stretch", "NFSMW2005", "WhatsUp", "BSearch - Beta hunting for GTA, and more", "Wellington Marks", "CD-OS",
-                                           "LinuxUser348", "Speculate Ltd.", "The Matrix"}
+                                           "ExtFS", "Elaine Stretch", "NFSMW2005", "WhatsUp", "BSearch", "Wellington Marks", "CD-OS", "LinuxUser348", "Speculate Ltd.",
+                                           "The Matrix"}
     Sub InitializeLoteresp()
         Dim RandomDriver As New Random()
         Dim RandomUser, RandomComment, Type, Response As String
@@ -84,7 +84,7 @@ Module LoveHateRespond
                 Exit Sub
             Else
                 Wdbg("I", "No such selection")
-                W(DoTranslation("Invalid selection. Going to the next comment...", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Invalid selection. Going to the next comment...", currentLang), True, ColTypes.Err)
             End If
         End While
     End Sub

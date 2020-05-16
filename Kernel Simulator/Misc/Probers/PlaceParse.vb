@@ -85,16 +85,16 @@ Public Module PlaceParse
             Dim LineNum As String = STrace.GetFrame(1).GetFileLineNumber
             WStkTrc(nre)
             If DebugMode = True Then
-                W(DoTranslation("There is a null reference exception on {0}:{1} - Stack trace:", currentLang) + vbNewLine + nre.StackTrace, True, ColTypes.Neutral, Source, LineNum)
+                W(DoTranslation("There is a null reference exception on {0}:{1} - Stack trace:", currentLang) + vbNewLine + nre.StackTrace, True, ColTypes.Err, Source, LineNum)
             Else
-                W(DoTranslation("There is a null reference exception on {0}:{1}", currentLang), True, ColTypes.Neutral, Source, LineNum)
+                W(DoTranslation("There is a null reference exception on {0}:{1}", currentLang), True, ColTypes.Err, Source, LineNum)
             End If
         Catch ex As Exception
             WStkTrc(ex)
             If DebugMode = True Then
-                W(DoTranslation("Error trying to parse placeholders. {0} - Stack trace:", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, ex.Message)
+                W(DoTranslation("Error trying to parse placeholders. {0} - Stack trace:", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Err, ex.Message)
             Else
-                W(DoTranslation("Error trying to parse placeholders. {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+                W(DoTranslation("Error trying to parse placeholders. {0}", currentLang), True, ColTypes.Err, ex.Message)
             End If
         End Try
         Return text

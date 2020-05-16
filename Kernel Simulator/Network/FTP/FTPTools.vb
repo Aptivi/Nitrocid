@@ -20,7 +20,7 @@ Module FTPTools
 
     Public Sub TryToConnect(ByVal address As String)
         If connected = True Then
-            W(DoTranslation("You should disconnect from server before connecting to another server", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("You should disconnect from server before connecting to another server", currentLang), True, ColTypes.Err)
         Else
             Try
                 'Create an FTP stream to connect to
@@ -84,7 +84,7 @@ Module FTPTools
                                 profanswered = True
                             Catch ex As Exception
                                 Wdbg("I", "Profile invalid")
-                                W(DoTranslation("Invalid profile selection.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                                W(DoTranslation("Invalid profile selection.", currentLang) + vbNewLine, True, ColTypes.Err)
                                 WStkTrc(ex)
                             End Try
                         End If
@@ -92,7 +92,7 @@ Module FTPTools
                 ElseIf profiles.Count = 1 Then
                     profsel = profiles(0) 'Select first profile
                 Else 'Failed trying to get profiles
-                    W(DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection", currentLang), True, ColTypes.Neutral, address)
+                    W(DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection", currentLang), True, ColTypes.Err, address)
                     Exit Sub
                 End If
 
@@ -114,9 +114,9 @@ Module FTPTools
                 WStkTrc(ex)
                 If DebugMode = True Then
                     W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang) + vbNewLine +
-                      DoTranslation("Stack Trace: {2}", currentLang), True, ColTypes.Neutral, address, ex.Message, ex.StackTrace)
+                      DoTranslation("Stack Trace: {2}", currentLang), True, ColTypes.Err, address, ex.Message, ex.StackTrace)
                 Else
-                    W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang), True, ColTypes.Neutral, address, ex.Message)
+                    W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang), True, ColTypes.Err, address, ex.Message)
                 End If
             End Try
         End If

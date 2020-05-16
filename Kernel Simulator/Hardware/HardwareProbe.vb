@@ -99,7 +99,7 @@ Public Module HardwareProbe
                      HDDList(HDDList.Count - 1).Sectors, HDDList(HDDList.Count - 1).ID)
             Catch ex As Exception
                 HDDDone = False
-                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
                 Continue For
             End Try
         Next
@@ -113,7 +113,7 @@ Public Module HardwareProbe
                                                           .Size = Manage("Size"), .Type = Manage("Type")})
             Catch ex As Exception
                 ParDone = False
-                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
                 Continue For
             End Try
         Next
@@ -125,7 +125,7 @@ Public Module HardwareProbe
                 End If
             Catch ex As Exception
                 ParDone = False
-                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
                 Continue For
             End Try
         Next
@@ -137,7 +137,7 @@ Public Module HardwareProbe
                 Wdbg("I", "CPU: Name = {0}, CurrentClockSpeed = {1}", CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
             Catch ex As Exception
                 CPUDone = False
-                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
                 Continue For
             End Try
         Next
@@ -151,7 +151,7 @@ Public Module HardwareProbe
                 Wdbg("I", "RAM: Capacity = {0}", RAMList(RAMList.Count - 1).ChipCapacity)
             Catch ex As Exception
                 RAMDone = False
-                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+                If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
                 Continue For
             End Try
         Next
@@ -166,7 +166,7 @@ Public Module HardwareProbe
                     Wdbg("I", "RAM: totalSlots = {0}", totalSlots)
                 Catch ex As Exception
                     RAMDone = False
-                    If DebugMode Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+                    If DebugMode Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
                     Continue For
                 End Try
             Next
@@ -207,7 +207,7 @@ Public Module HardwareProbe
         Catch ex As Exception
             CPUDone = False
             KernelError("C", False, 0, DoTranslation("Error while checking CPU: {0}", currentLang), ex, ex.Message)
-            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
         End Try
 
         'RAM Prober
@@ -219,7 +219,7 @@ Public Module HardwareProbe
         Catch ex As Exception
             RAMDone = False
             KernelError("C", False, 0, DoTranslation("Error while checking RAM: {0}", currentLang), ex, ex.Message)
-            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
         End Try
 
         'HDD Prober (You need to have inxi and libcpanel-json-xs-perl installed)
@@ -236,7 +236,7 @@ Public Module HardwareProbe
             If Not inxiout.StartsWith("{") And Not inxiout.EndsWith("}") Then 'If an error appeared while running perl
                 HDDDone = False
                 Wdbg("I", inxiout)
-                W(DoTranslation("You may not have libcpanel-json-xs-perl installed on your system. Refer to your package manager for installation. For Debian (and derivatives) systems, you might want to run ""sudo apt install libcpanel-json-xs-perl"" in the terminal emulator. More details of an error:", currentLang) + vbNewLine + inxiout, True, ColTypes.Neutral)
+                W(DoTranslation("You may not have libcpanel-json-xs-perl installed on your system. Refer to your package manager for installation. For Debian (and derivatives) systems, you might want to run ""sudo apt install libcpanel-json-xs-perl"" in the terminal emulator. More details of an error:", currentLang) + vbNewLine + inxiout, True, ColTypes.Err)
                 Exit Sub
             End If
             Dim inxitoken As JToken = JToken.Parse(inxiout)
@@ -282,7 +282,7 @@ Public Module HardwareProbe
             If CPUFeatures_Win.IsProcessorFeaturePresent(CPUFeatures_Win.SSEnum.InstructionsSSE2Available) Then 'After SSE2 requirement addition, remove the check.
                 W(" : SSE2", True, ColTypes.Neutral)
             Else
-                W(vbNewLine + DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Neutral)
+                W(vbNewLine + DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Err)
             End If
         Next
         W(DoTranslation("CPU: Total number of processors: {0}", currentLang), True, ColTypes.Neutral, Environment.ProcessorCount)
@@ -331,7 +331,7 @@ Public Module HardwareProbe
             If info.SSE2 Then 'After SSE2 requirement addition, remove the check.
                 W(" : SSE2", False, ColTypes.Neutral)
             Else
-                W(DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Err)
             End If
             Console.WriteLine()
         Next

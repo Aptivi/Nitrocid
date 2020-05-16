@@ -209,9 +209,9 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, ex.Message)
+                W(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Err, ex.Message)
             Else
-                W(DoTranslation("There is an error trying to create configuration.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("There is an error trying to create configuration.", currentLang), True, ColTypes.Err)
             End If
             If CmdArg = True Then
                 DisposeAll()
@@ -237,9 +237,9 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, ex.Message)
+                W(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Err, ex.Message)
             Else
-                W(DoTranslation("There is an error trying to update configuration.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("There is an error trying to update configuration.", currentLang), True, ColTypes.Err)
             End If
         End Try
     End Sub
@@ -340,9 +340,9 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Neutral, ex.Message)
+                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Err, ex.Message)
             Else
-                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang), True, ColTypes.Neutral, ex.Message)
+                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang), True, ColTypes.Err, ex.Message)
             End If
         End Try
     End Sub

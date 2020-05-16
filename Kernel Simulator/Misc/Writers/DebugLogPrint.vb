@@ -31,7 +31,7 @@ Module DebugLogPrint
                 Loop
             End Using
         Catch ex As Exception
-            W(DoTranslation("Debug log not found", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Debug log not found", currentLang), True, ColTypes.Err)
             WStkTrc(ex)
         End Try
     End Sub

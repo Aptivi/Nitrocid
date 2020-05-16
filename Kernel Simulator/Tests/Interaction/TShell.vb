@@ -32,10 +32,10 @@ Module TShell
                 If TShellCmds.Contains(FullCmd.Split(" ")(0)) Then
                     TParseCommand(FullCmd)
                 Else
-                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Neutral, FullCmd.Split(" ")(0))
+                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, FullCmd.Split(" ")(0))
                 End If
             Catch ex As Exception
-                W(DoTranslation("Error in unit testing: {0}"), True, ColTypes.Neutral, ex.Message)
+                W(DoTranslation("Error in unit testing: {0}"), True, ColTypes.Err, ex.Message)
                 Wdbg("E", "Error: {0}", ex.Message)
                 WStkTrc(ex)
             End Try

@@ -44,17 +44,17 @@ Module BeepSynth
                             Wdbg("I", "Got frequency {0} Hz and time {1} ms", freq, ms)
                         Catch ex As Exception
                             Wdbg("E", "Not a comment and not a synth line. ({0})", line)
-                            W(DoTranslation("Failed to probe a synth line.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Failed to probe a synth line.", currentLang), True, ColTypes.Err)
                         End Try
                     End If
                 End While
             Else
                 Wdbg("E", "File is not scripted")
-                W(DoTranslation("The file isn't a scripted synth file.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("The file isn't a scripted synth file.", currentLang), True, ColTypes.Err)
             End If
         Else
             Wdbg("E", "File doesn't exist")
-            W(DoTranslation("Scripted file {0} does not exist.", currentLang), True, ColTypes.Neutral, file)
+            W(DoTranslation("Scripted file {0} does not exist.", currentLang), True, ColTypes.Err, file)
         End If
     End Sub
 

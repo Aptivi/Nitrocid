@@ -44,7 +44,7 @@ Module RemoteDebugger
             DebugTCP = New TcpListener(New IPAddress({0, 0, 0, 0}), DebugPort)
             DebugTCP.Start()
         Catch sex As SocketException
-            W(DoTranslation("Remote debug failed to start: {0}", currentLang), True, ColTypes.Neutral, sex.Message)
+            W(DoTranslation("Remote debug failed to start: {0}", currentLang), True, ColTypes.Err, sex.Message)
             WStkTrc(sex)
         End Try
 
@@ -79,7 +79,7 @@ Module RemoteDebugger
             Catch ae As ThreadAbortException
                 Exit While
             Catch ex As Exception
-                W(DoTranslation("Error in connection: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+                W(DoTranslation("Error in connection: {0}", currentLang), True, ColTypes.Err, ex.Message)
                 WStkTrc(ex)
             End Try
         End While
@@ -153,7 +153,7 @@ Module RemoteDebugger
             End If
         Next
         If Not Found Then
-            W(DoTranslation("Debug device {0} not found.", currentLang), True, ColTypes.Neutral, IPAddr)
+            W(DoTranslation("Debug device {0} not found.", currentLang), True, ColTypes.Err, IPAddr)
         End If
     End Sub
     Sub DisconnectDbgDev(ByVal IPAddr As String)
@@ -172,7 +172,7 @@ Module RemoteDebugger
             End If
         Next
         If Not Found Then
-            W(DoTranslation("Debug device {0} not found.", currentLang), True, ColTypes.Neutral, IPAddr)
+            W(DoTranslation("Debug device {0} not found.", currentLang), True, ColTypes.Err, IPAddr)
         End If
     End Sub
     Function GetSWIndex(ByVal SW As StreamWriter) As Integer

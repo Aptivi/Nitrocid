@@ -107,10 +107,10 @@ Public Module Kernel
                 Wdbg("I", "- Kernel Phase 4: Garbage collection starts and the events now work")
                 Dim proc As Process = Process.GetCurrentProcess
                 W(DoTranslation("Before garbage collection: {0} bytes", currentLang), True, ColTypes.Neutral, proc.PrivateMemorySize64)
-                EventManager.RaiseStartKernel()
                 DisposeAll()
                 W(DoTranslation("After garbage collection: {0} bytes", currentLang), True, ColTypes.Neutral, proc.PrivateMemorySize64)
                 proc.Dispose()
+                EventManager.RaiseStartKernel()
 
                 'Check to see if CI flags were enabled
                 If CI_TestWdbg Then
@@ -148,7 +148,7 @@ Public Module Kernel
                 End If
             Catch ex As Exception
                 If DebugMode = True Then
-                    W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+                    W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
                 End If
                 KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}", currentLang), ex, ex.Message)
             End Try

@@ -84,9 +84,9 @@ Public Module ModParser
         Wdbg("I", "Has errors: {0}", res.Errors.HasErrors)
         Wdbg("I", "Has warnings: {0}", res.Errors.HasWarnings)
         If res.Errors.HasErrors Then
-            W(DoTranslation("Mod can't be loaded because of the following: ", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Mod can't be loaded because of the following: ", currentLang), True, ColTypes.Err)
             For Each errorName In res.Errors
-                W(errorName.ToString, True, ColTypes.Neutral)
+                W(errorName.ToString, True, ColTypes.Err)
                 Wdbg("E", errorName.ToString)
             Next
             Exit Function
@@ -124,7 +124,7 @@ Public Module ModParser
                 Next
             End If
         Else
-            W(DoTranslation("Parsing mods not allowed on safe mode.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Parsing mods not allowed on safe mode.", currentLang), True, ColTypes.Err)
         End If
     End Sub
     Sub StartParse(ByVal modFile As String, Optional ByVal StartStop As Boolean = True)

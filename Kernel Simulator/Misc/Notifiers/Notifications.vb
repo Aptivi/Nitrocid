@@ -87,7 +87,7 @@ Public Module Notifications
             Wdbg("I", "Removed index {0} from notification list", ind)
             W(DoTranslation("Notification dismissed successfully.", currentLang), True, ColTypes.Neutral)
         Catch ex As Exception
-            W(DoTranslation("Error trying to dismiss notification: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            W(DoTranslation("Error trying to dismiss notification: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

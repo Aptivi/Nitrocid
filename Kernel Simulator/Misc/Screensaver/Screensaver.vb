@@ -179,13 +179,13 @@ Public Module Screensaver
                 Custom.CancelAsync()
                 Thread.Sleep(150) 'Nothing to do with operation inside screensaver
             Else
-                W(DoTranslation("The requested screensaver {0} is not found.", currentLang), True, ColTypes.Neutral, saver)
+                W(DoTranslation("The requested screensaver {0} is not found.", currentLang), True, ColTypes.Err, saver)
                 Wdbg("I", "Screensaver {0} not found in the dictionary.", saver)
             End If
             EventManager.RaisePostShowScreensaver()
             InSaver = False
         Catch ex As InvalidOperationException
-            W(DoTranslation("Error when trying to start screensaver, because of an invalid operation.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Error when trying to start screensaver, because of an invalid operation.", currentLang), True, ColTypes.Err)
             WStkTrc(ex)
         End Try
     End Sub
@@ -244,17 +244,17 @@ Public Module Screensaver
                         End If
                     Else
                         If Not SaverName = "" Then
-                            W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, ColTypes.Neutral, SaverName)
+                            W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, ColTypes.Err, SaverName)
                             Wdbg("W", "{0} ({1}) is compiled, but not initialized.", SaverName, file)
                         Else
-                            W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, ColTypes.Neutral, file)
+                            W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing.", currentLang), True, ColTypes.Err, file)
                             Wdbg("W", "{0} is compiled, but not initialized.", file)
                         End If
                     End If
                 End If
             End If
         Else
-            W(DoTranslation("Screensaver {0} does not exist.", currentLang), True, ColTypes.Neutral, file)
+            W(DoTranslation("Screensaver {0} does not exist.", currentLang), True, ColTypes.Err, file)
             Wdbg("E", "The file {0} does not exist for compilation.", file)
         End If
     End Sub
@@ -277,7 +277,7 @@ Public Module Screensaver
             End If
         Else
             Wdbg("W", "{0} is not found.", saver)
-            W(DoTranslation("Screensaver {0} not found in database. Check the name and try again.", currentLang), True, ColTypes.Neutral, saver)
+            W(DoTranslation("Screensaver {0} not found in database. Check the name and try again.", currentLang), True, ColTypes.Err, saver)
         End If
     End Sub
 
@@ -302,10 +302,10 @@ Public Module Screensaver
             execCustomSaver = provider.CompileAssemblyFromSource(prm, modCode)
             Wdbg("I", "Compilation results: Errors? {0}, Warnings? {1} | Total: {2}", execCustomSaver.Errors.HasErrors, execCustomSaver.Errors.HasWarnings, execCustomSaver.Errors.Count)
             If execCustomSaver.Errors.HasErrors Then
-                W(DoTranslation("Screensaver can't be loaded because of the following: ", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Screensaver can't be loaded because of the following: ", currentLang), True, ColTypes.Err)
                 Wdbg("E", "Errors when compiling:")
                 For Each errorName In execCustomSaver.Errors
-                    W(errorName.ToString, True, ColTypes.Neutral) : Wdbg("E", errorName.ToString, True)
+                    W(errorName.ToString, True, ColTypes.Err) : Wdbg("E", errorName.ToString, True)
                 Next
                 Exit Function
             Else

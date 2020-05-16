@@ -31,7 +31,7 @@ Module RemoteProcedure
             Wdbg("I", "RPC: Starting...")
             RPCThread.Start()
         Catch ex As ThreadStateException
-            W(DoTranslation("RPC is already running.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("RPC is already running.", currentLang), True, ColTypes.Err)
             WStkTrc(ex)
         End Try
     End Sub
@@ -45,7 +45,7 @@ Module RemoteProcedure
             Wdbg("I", "RPC: Thread started")
             W(DoTranslation("RPC listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, RPCPort)
         Catch ex As Exception
-            W(DoTranslation("Error starting RPC: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            W(DoTranslation("Error starting RPC: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

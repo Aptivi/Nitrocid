@@ -424,7 +424,7 @@ Public Module Color
             Wdbg("I", "System information changing for theme")
             ParseCurrentTheme()
         Else
-            W(DoTranslation("Invalid color template {0}", currentLang), True, ColTypes.Neutral, theme)
+            W(DoTranslation("Invalid color template {0}", currentLang), True, ColTypes.Err, theme)
             Wdbg("E", "Theme not found.")
         End If
     End Sub

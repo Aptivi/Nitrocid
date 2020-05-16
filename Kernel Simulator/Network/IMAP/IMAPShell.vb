@@ -53,7 +53,7 @@ Module IMAPShell
             If IMAP_AvailableCommands.Contains(cmd) Then
                 IMAP_ExecuteCommand(cmd, args)
             ElseIf Not cmd.StartsWith(" ") Then
-                W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Neutral, cmd)
+                W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, cmd)
             End If
         End While
 

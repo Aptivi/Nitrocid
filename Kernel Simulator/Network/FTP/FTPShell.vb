@@ -97,7 +97,7 @@ Public Module FTPShell
         If availftpcmds.Contains(words(0)) Then
             FTPGetCommand.ExecuteCommand(strcmd)
         Else
-            W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), True, ColTypes.Neutral, strcmd)
+            W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), True, ColTypes.Err, strcmd)
         End If
     End Sub
 

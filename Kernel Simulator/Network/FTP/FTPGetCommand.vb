@@ -69,10 +69,10 @@ Public Module FTPGetCommand
                         Dim parser As New IO.DirectoryInfo(targetDir)
                         currDirect = parser.FullName
                     Else
-                        W(DoTranslation("Local directory {0} doesn't exist.", currentLang), True, ColTypes.Neutral, strArgs)
+                        W(DoTranslation("Local directory {0} doesn't exist.", currentLang), True, ColTypes.Err, strArgs)
                     End If
                 Else
-                    W(DoTranslation("Enter a local directory. "".."" to go back.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Enter a local directory. "".."" to go back.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "changeremotedir" Or words(0) = "cdr" Then
                 If connected = True Then
@@ -83,13 +83,13 @@ Public Module FTPGetCommand
                             currentremoteDir = ClientFTP.GetWorkingDirectory
                         Else
                             'Directory doesn't exist, go to the old directory
-                            W(DoTranslation("Directory {0} not found.", currentLang), True, ColTypes.Neutral, strArgs)
+                            W(DoTranslation("Directory {0} not found.", currentLang), True, ColTypes.Err, strArgs)
                         End If
                     Else
-                        W(DoTranslation("Enter a remote directory. "".."" to go back", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Enter a remote directory. "".."" to go back", currentLang), True, ColTypes.Err)
                     End If
                 Else
-                    W(DoTranslation("You must connect to a server before changing directory", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("You must connect to a server before changing directory", currentLang), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "currlocaldir" Or words(0) = "pwdl" Then
                 W(DoTranslation("Local directory: {0}", currentLang), True, ColTypes.Neutral, currDirect)
@@ -97,7 +97,7 @@ Public Module FTPGetCommand
                 If connected = True Then
                     W(DoTranslation("Remote directory: {0}", currentLang), True, ColTypes.Neutral, currentremoteDir)
                 Else
-                    W(DoTranslation("You must connect to server before getting current remote directory.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("You must connect to server before getting current remote directory.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "delete" Or words(0) = "del" Then
                 If cmd <> "delete" Or cmd <> "del" Then
@@ -115,10 +115,10 @@ Public Module FTPGetCommand
                             W(vbNewLine + DoTranslation("Deleted file {0}", currentLang), True, ColTypes.Neutral, strArgs)
                         End If
                     Else
-                        W(DoTranslation("You must connect to server with administrative privileges before performing the deletion.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("You must connect to server with administrative privileges before performing the deletion.", currentLang), True, ColTypes.Err)
                     End If
                 Else
-                    W(DoTranslation("Enter a file to remove. You must have administrative permissions on your logged in username to be able to remove.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Enter a file to remove. You must have administrative permissions on your logged in username to be able to remove.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf cmd = "disconnect" Then
                 If connected = True Then
@@ -133,7 +133,7 @@ Public Module FTPGetCommand
                     user = ""
                     pass = ""
                 Else
-                    W(DoTranslation("You haven't connected to any server yet", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("You haven't connected to any server yet", currentLang), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "download" Or words(0) = "get" Then
                 If cmd <> "download" Or cmd <> "get" Then
@@ -149,13 +149,13 @@ Public Module FTPGetCommand
                             Console.WriteLine()
                             W(DoTranslation("Downloaded file {0}.", currentLang), True, ColTypes.Neutral, strArgs)
                         Catch ex As Exception
-                            W(DoTranslation("Download failed for file {0} because the local file is corrupt.", currentLang), True, ColTypes.Neutral, strArgs)
+                            W(DoTranslation("Download failed for file {0} because the local file is corrupt.", currentLang), True, ColTypes.Err, strArgs)
                         End Try
                     Else
-                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
                     End If
                 Else
-                    W(DoTranslation("Enter a file to download to local directory.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Enter a file to download to local directory.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf cmd = "exit" Then
                 'Set a flag
@@ -194,7 +194,7 @@ Public Module FTPGetCommand
                         Console.WriteLine()
                     Next
                 Else
-                    W(DoTranslation("You should connect to server before listing all remote files.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("You should connect to server before listing all remote files.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "rename" Or words(0) = "ren" Then
                 If cmd <> "rename" Or cmd <> "ren" Then
@@ -207,10 +207,10 @@ Public Module FTPGetCommand
                         'Show a message
                         W(vbNewLine + DoTranslation("Renamed successfully", currentLang), True, ColTypes.Neutral)
                     Else
-                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
                     End If
                 Else
-                    W(DoTranslation("Enter a file and the new file name.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Enter a file and the new file name.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "upload" Or words(0) = "put" Then
                 If cmd <> "upload" Or cmd <> "put" Then
@@ -224,29 +224,29 @@ Public Module FTPGetCommand
                         'Show a message
                         W(vbNewLine + DoTranslation("Uploaded file {0}", currentLang), True, ColTypes.Neutral, strArgs)
                     Else
-                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
                     End If
                 Else
-                    W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>", currentLang), True, ColTypes.Err)
                 End If
             End If
         Catch ex As Exception 'The InnerException CAN be Nothing
             If DebugMode = True Then
                 If Not IsNothing(ex.InnerException) Then 'This is required to fix NullReferenceException when there is nothing in InnerException, so please don't remove.
                     W(DoTranslation("Error trying to execute FTP command {3}.", currentLang) + vbNewLine +
-                      DoTranslation("Error {0}: {1} ", currentLang) + DoTranslation("(Inner:", currentLang) + " {4})" + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, ex.Message, ex.StackTrace, words(0), ex.InnerException.Message)
+                      DoTranslation("Error {0}: {1} ", currentLang) + DoTranslation("(Inner:", currentLang) + " {4})" + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace, words(0), ex.InnerException.Message)
                 Else
                     W(DoTranslation("Error trying to execute FTP command {3}.", currentLang) + vbNewLine +
-                      DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral, Err.Number, ex.Message, ex.StackTrace, words(0))
+                      DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace, words(0))
                 End If
                 WStkTrc(ex)
             Else
                 If Not IsNothing(ex.InnerException) Then
                     W(DoTranslation("Error trying to execute FTP command {2}.", currentLang) + vbNewLine +
-                      DoTranslation("Error {0}: {1} ", currentLang) + DoTranslation("(Inner:", currentLang) + "{3})", True, ColTypes.Neutral, Err.Number, ex.Message, words(0), ex.InnerException.Message)
+                      DoTranslation("Error {0}: {1} ", currentLang) + DoTranslation("(Inner:", currentLang) + "{3})", True, ColTypes.Err, Err.Number, ex.Message, words(0), ex.InnerException.Message)
                 Else
                     W(DoTranslation("Error trying to execute FTP command {2}.", currentLang) + vbNewLine +
-                      DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, ex.Message, words(0))
+                      DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message, words(0))
                 End If
             End If
             EventManager.RaiseFTPCommandError()

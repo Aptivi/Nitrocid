@@ -103,7 +103,7 @@ Public Module GetCommand
                             AddUser(args(0), args(1))
                             Done = True
                         Else
-                            W(DoTranslation("Passwords don't match.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Passwords don't match.", currentLang), True, ColTypes.Err)
                             Done = True
                         End If
                     End If
@@ -117,14 +117,14 @@ Public Module GetCommand
                             ManageAlias(args(0), args(1), args(2), args(3))
                             Done = True
                         ElseIf args(0) = "add" And (args(1) <> AliasType.Shell Or args(1) <> AliasType.RDebug) Then
-                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Neutral, args(1))
+                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, args(1))
                         End If
                     ElseIf args.Count - 1 = 2 Then
                         If args(0) = "rem" And (args(1) = AliasType.Shell Or args(1) = AliasType.RDebug) Then
                             ManageAlias(args(0), args(1), args(2))
                             Done = True
                         ElseIf args(0) = "rem" And (args(1) <> AliasType.Shell Or args(1) <> AliasType.RDebug) Then
-                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Neutral, args(1))
+                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, args(1))
                         End If
                     End If
                 End If
@@ -143,7 +143,7 @@ Public Module GetCommand
                             End If
                         Next
                         If FinalArgs.Count = 0 Then
-                            W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces", currentLang), True, ColTypes.Err)
                             Done = True
                         Else
                             answerargs = String.Join(",", FinalArgs)
@@ -182,7 +182,7 @@ Public Module GetCommand
                     Dim Res As Dictionary(Of Double, Boolean) = DoCalc(strArgs)
                     Wdbg("I", "Res.Values(0) = {0}", Res.Values(0))
                     If Not Res.Values(0) Then 'If there is an error in calculation
-                        W(DoTranslation("Error in calculation.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Error in calculation.", currentLang), True, ColTypes.Err)
                     Else 'Calculation done
                         W(strArgs + " = " + CStr(Res.Keys(0)), True, ColTypes.Neutral)
                     End If
@@ -196,7 +196,7 @@ Public Module GetCommand
                     dbgWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
                     W(DoTranslation("Debug log removed. All connected debugging devices may still view messages.", currentLang), True, ColTypes.Neutral)
                 Catch ex As Exception
-                    W(DoTranslation("Debug log removal failed: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+                    W(DoTranslation("Debug log removal failed: {0}", currentLang), True, ColTypes.Err, ex.Message)
                     WStkTrc(ex)
                 End Try
                 Done = True
@@ -206,7 +206,7 @@ Public Module GetCommand
                 Try
                     SetCurrDir(strArgs)
                 Catch ex As Exception
-                    W(DoTranslation("Changing directory has failed: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+                    W(DoTranslation("Changing directory has failed: {0}", currentLang), True, ColTypes.Err, ex.Message)
                     WStkTrc(ex)
                 End Try
                 Done = True
@@ -215,9 +215,9 @@ Public Module GetCommand
 
                 If requestedCommand <> "chhostname" Then
                     If words(1) = "" Then
-                        W(DoTranslation("Blank host name.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Blank host name.", currentLang), True, ColTypes.Err)
                     ElseIf words(1).IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-                        W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Err)
                     Else
                         Done = True
                         W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, HName, words(1))
@@ -241,7 +241,7 @@ Public Module GetCommand
 
                 If requestedCommand <> "chmotd" Then
                     If strArgs = "" Then
-                        W(DoTranslation("Blank message of the day.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Blank message of the day.", currentLang), True, ColTypes.Err)
                     Else
                         W(DoTranslation("Changing MOTD...", currentLang), True, ColTypes.Neutral)
                         SetMOTD(strArgs, MessageType.MOTD)
@@ -253,7 +253,7 @@ Public Module GetCommand
 
                 If requestedCommand <> "chmal" Then
                     If strArgs = "" Then
-                        W(DoTranslation("Blank MAL After Login.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Blank MAL After Login.", currentLang), True, ColTypes.Err)
                     Else
                         W(DoTranslation("Changing MAL...", currentLang), True, ColTypes.Neutral)
                         SetMOTD(strArgs, MessageType.MAL)
@@ -300,7 +300,7 @@ Public Module GetCommand
                     If eargs.Count - 1 = 3 Then
                         Try
                             If InStr(eargs(3), " ") > 0 Then
-                                W(DoTranslation("Spaces are Not allowed.", currentLang), True, ColTypes.Neutral)
+                                W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Err)
                             ElseIf eargs(3) = eargs(2) Then
                                 eargs(1) = GetEncryptedString(eargs(1), Algorithms.SHA256)
                                 If eargs(1) = userword(eargs(0)) Then
@@ -308,16 +308,16 @@ Public Module GetCommand
                                         eargs(2) = GetEncryptedString(eargs(2), Algorithms.SHA256)
                                         userword.Item(eargs(0)) = eargs(2)
                                     ElseIf adminList(eargs(0)) And Not adminList(signedinusrnm) Then
-                                        W(DoTranslation("You are Not authorized to change password of {0} because the target was an admin.", currentLang), True, ColTypes.Neutral, eargs(0))
+                                        W(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang), True, ColTypes.Err, eargs(0))
                                     End If
                                 Else
-                                    W(DoTranslation("Wrong user password.", currentLang), True, ColTypes.Neutral)
+                                    W(DoTranslation("Wrong user password.", currentLang), True, ColTypes.Err)
                                 End If
                             ElseIf eargs(3) <> eargs(2) Then
-                                W(DoTranslation("Passwords doesn't match.", currentLang), True, ColTypes.Neutral)
+                                W(DoTranslation("Passwords doesn't match.", currentLang), True, ColTypes.Err)
                             End If
                         Catch ex As KeyNotFoundException
-                            W(DoTranslation("Username is wrong", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Username is wrong", currentLang), True, ColTypes.Err)
                             WStkTrc(ex)
                         End Try
                         Done = True
@@ -341,12 +341,12 @@ Public Module GetCommand
                                     LoginPrompt()
                                 End If
                             Else
-                                W(DoTranslation("The new name you entered is already found.", currentLang), True, ColTypes.Neutral)
+                                W(DoTranslation("The new name you entered is already found.", currentLang), True, ColTypes.Err)
                                 Exit Sub
                             End If
                         End If
                         If DoneFlag = False Then
-                            W(DoTranslation("User {0} not found.", currentLang), True, ColTypes.Neutral, args(0))
+                            W(DoTranslation("User {0} not found.", currentLang), True, ColTypes.Err, args(0))
                         End If
                         Done = True
                     End If
@@ -377,7 +377,7 @@ Public Module GetCommand
                     ElseIf File.Exists(source) Then
                         FileIO.FileSystem.CopyFile(source, target)
                     Else
-                        W(DoTranslation("The path is neither a file nor a directory.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("The path is neither a file nor a directory.", currentLang), True, ColTypes.Err)
                     End If
                     Done = True
                 End If
@@ -535,7 +535,7 @@ Public Module GetCommand
                         ksconf.Save(pathConfig)
                         W(DoTranslation("Set successfully.", currentLang), True, ColTypes.Neutral)
                     Catch ex As Exception
-                        W(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.", currentLang), True, ColTypes.Err)
                         WStkTrc(ex)
                     End Try
                 End If
@@ -584,7 +584,7 @@ Public Module GetCommand
                     If Not Directory.Exists(direct) Then
                         Directory.CreateDirectory(direct)
                     Else
-                        W(DoTranslation("Directory {0} already exists.", currentLang), True, ColTypes.Neutral, direct)
+                        W(DoTranslation("Directory {0} already exists.", currentLang), True, ColTypes.Err, direct)
                     End If
                     Done = True
                 End If
@@ -610,7 +610,7 @@ Public Module GetCommand
                     ElseIf File.Exists(source) And Not File.Exists(target) Then
                         File.Move(source, target)
                     Else
-                        W(DoTranslation("The path is neither a file nor a directory.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("The path is neither a file nor a directory.", currentLang), True, ColTypes.Err)
                     End If
                     Done = True
                 End If
@@ -635,7 +635,7 @@ Public Module GetCommand
                         If File.Exists(FileRead) Then
                             ReadContents(FileRead)
                         Else
-                            W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Neutral, strArgs)
+                            W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Err, strArgs)
                         End If
                         Done = True
                     End If
@@ -672,7 +672,7 @@ Public Module GetCommand
                     ReloadMods()
                     W(DoTranslation("Mods reloaded.", currentLang), True, ColTypes.Neutral)
                 Else
-                    W(DoTranslation("Reloading not allowed in safe mode.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Reloading not allowed in safe mode.", currentLang), True, ColTypes.Err)
                 End If
 
             ElseIf words(0) = "reloadsaver" Then
@@ -682,7 +682,7 @@ Public Module GetCommand
                         If Not SafeMode Then
                             CompileCustom(strArgs)
                         Else
-                            W(DoTranslation("Reloading not allowed in safe mode.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Reloading not allowed in safe mode.", currentLang), True, ColTypes.Err)
                         End If
                         Done = True
                     End If
@@ -707,7 +707,7 @@ Public Module GetCommand
                         End If
                         Directory.Delete(Dir, True)
                     Catch ex As Exception
-                        W(DoTranslation("Unable to remove directory: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+                        W(DoTranslation("Unable to remove directory: {0}", currentLang), True, ColTypes.Err, ex.Message)
                         WStkTrc(ex)
                     End Try
                     Done = True
@@ -722,7 +722,7 @@ Public Module GetCommand
                         StartRDebugThread(True)
                     End If
                 Else
-                    W(DoTranslation("Debugging not enabled.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Debugging not enabled.", currentLang), True, ColTypes.Err)
                 End If
                 Done = True
 
@@ -839,11 +839,11 @@ Public Module GetCommand
                                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), args(11)), ConsoleColors)
                                 Load()
                             Else
-                                W(DoTranslation("One or more of the colors is invalid.", currentLang), True, ColTypes.Neutral)
+                                W(DoTranslation("One or more of the colors is invalid.", currentLang), True, ColTypes.Err)
                             End If
                             MakePermanent()
                         Else
-                            W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), True, ColTypes.Err)
                         End If
                     End If
                 End If
@@ -859,7 +859,7 @@ Public Module GetCommand
                             If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") And Not SafeMode Then
                                 SetDefaultScreensaver(strArgs)
                             Else
-                                W(DoTranslation("Screensaver {0} not found.", currentLang), True, ColTypes.Neutral, strArgs)
+                                W(DoTranslation("Screensaver {0} not found.", currentLang), True, ColTypes.Err, strArgs)
                             End If
                         End If
                         Done = True
@@ -909,7 +909,7 @@ Public Module GetCommand
                             ShowTimesInZones()
                             Done = True
                         Else
-                            W(DoTranslation("Timezone is specified incorrectly.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Timezone is specified incorrectly.", currentLang), True, ColTypes.Err)
                             Done = True
                         End If
                     End If
@@ -975,10 +975,10 @@ Public Module GetCommand
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         Else
-                            W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Err)
                         End If
                     Else
-                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Neutral, file)
+                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Err, file)
                     End If
                 End If
 
@@ -1028,7 +1028,7 @@ Public Module GetCommand
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
                                 spent.Stop()
                             Else
-                                W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Neutral)
+                                W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Err)
                                 Exit For
                             End If
                             Console.WriteLine()
@@ -1039,7 +1039,7 @@ Public Module GetCommand
                             FStream.Flush()
                         End If
                     Else
-                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Neutral, folder)
+                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Err, folder)
                     End If
                 End If
 
@@ -1101,11 +1101,11 @@ Public Module GetCommand
             ShowHelp(words(0))
         Catch ex As Exception
             If DebugMode = True Then
-                W(DoTranslation("Error trying to execute command", currentLang) + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral,
-                    Err.Number, ex.Message, ex.StackTrace, words(0))
+                W(DoTranslation("Error trying to execute command", currentLang) + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err,
+                  Err.Number, ex.Message, ex.StackTrace, words(0))
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command", currentLang) + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, ex.Message, words(0))
+                W(DoTranslation("Error trying to execute command", currentLang) + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message, words(0))
             End If
         End Try
     End Sub

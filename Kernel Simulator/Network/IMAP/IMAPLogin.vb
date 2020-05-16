@@ -65,7 +65,7 @@ Module IMAPLogin
             'Initialize shell
             OpenShell(Address)
         Catch ex As Exception
-            W(DoTranslation("Error while connecting to {0}: {1}", currentLang), True, ColTypes.Neutral, Address, ex.Message)
+            W(DoTranslation("Error while connecting to {0}: {1}", currentLang), True, ColTypes.Err, Address, ex.Message)
             WStkTrc(ex)
             IMAP_Client.Disconnect(True)
         End Try

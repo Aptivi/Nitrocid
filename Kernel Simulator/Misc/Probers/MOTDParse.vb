@@ -46,7 +46,7 @@ Module MOTDParse
                 MOTDStreamW.Write(MOTD)
                 MAL = MOTD
             Else
-                W(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...", currentLang), True, ColTypes.Err)
                 MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
                 Wdbg("I", "Opened stream to MOTD path")
                 MOTDStreamW.WriteLine(MOTD)
@@ -55,7 +55,7 @@ Module MOTDParse
             MOTDStreamW.Close()
             Wdbg("I", "Stream closed")
         Catch ex As Exception
-            W(DoTranslation("Error when trying to set MOTD/MAL: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            W(DoTranslation("Error when trying to set MOTD/MAL: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub
@@ -77,12 +77,12 @@ Module MOTDParse
                 MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
                 MAL = MOTDBuilder.ToString
             Else
-                W(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type.", currentLang), True, ColTypes.Err)
             End If
             MOTDStreamR.Close()
             Wdbg("W", "Stream closed")
         Catch ex As Exception
-            W(DoTranslation("Error when trying to get MOTD/MAL: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            W(DoTranslation("Error when trying to get MOTD/MAL: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

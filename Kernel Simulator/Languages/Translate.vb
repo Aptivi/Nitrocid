@@ -168,7 +168,7 @@ CHOICE:
                         If cho = "2" Then
                             lang += "-T"
                         ElseIf Not cho = "1" Then
-                            W(DoTranslation("Invalid choice. Try again.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Invalid choice. Try again.", currentLang), True, ColTypes.Err)
                             GoTo CHOICE
                         End If
                     End If
@@ -240,7 +240,7 @@ CHOICE:
             IMAPInitHelp()
             ReloadGenericDefs(OldModDescGeneric)
         Else
-            W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Neutral, lang)
+            W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Err, lang)
         End If
     End Sub
 

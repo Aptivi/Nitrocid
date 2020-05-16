@@ -89,7 +89,7 @@ Module TGetCommand
                     Dim SubName As String = "Raise" + FullArgsL(0)
                     CallByName(New EventsAndExceptions, SubName, CallType.Method)
                 Catch ex As Exception
-                    W(DoTranslation("Failure to raise event {0}: {1}", currentLang), True, ColTypes.Neutral, FullArgsL(0))
+                    W(DoTranslation("Failure to raise event {0}: {1}", currentLang), True, ColTypes.Err, FullArgsL(0))
                 End Try
             End If
         ElseIf Cmd = "probehw" Then

@@ -37,12 +37,12 @@ Public Module NetworkTools
             W("==========================================", True, ColTypes.Neutral)
             If Not adapter.Supports(NetworkInterfaceComponent.IPv6) Then
                 Wdbg("W", "{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description)
-                W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing...", currentLang), True, ColTypes.Neutral, adapter.Description)
+                W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing...", currentLang), True, ColTypes.Err, adapter.Description)
                 NoV6 = True
             End If
             If Not adapter.Supports(NetworkInterfaceComponent.IPv4) Then
                 Wdbg("E", "{0} doesn't support IPv4.", adapter.Description)
-                W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed.", currentLang), True, ColTypes.Neutral, adapter.Description)
+                W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed.", currentLang), True, ColTypes.Err, adapter.Description)
                 NoV4 = True
             End If
             If adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
@@ -65,11 +65,11 @@ Public Module NetworkTools
 #Disable Warning BC42104
                     If p6 Is Nothing Then
                         Wdbg("W", "Failed to get IPv6 properties.")
-                        W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing...", currentLang), True, ColTypes.Neutral, adapter.Description)
+                        W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing...", currentLang), True, ColTypes.Err, adapter.Description)
                     End If
                     If p Is Nothing Then
                         Wdbg("E", "Failed to get IPv4 properties.")
-                        W(DoTranslation("Failed to get properties for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
+                        W(DoTranslation("Failed to get properties for adapter {0}", currentLang), True, ColTypes.Err, adapter.Description)
                         Failed = True
                     End If
                     WStkTrc(ex)
@@ -77,7 +77,7 @@ Public Module NetworkTools
                 End Try
                 If s Is Nothing Then
                     Wdbg("E", "Failed to get statistics.")
-                    W(DoTranslation("Failed to get statistics for adapter {0}", currentLang), True, ColTypes.Neutral, adapter.Description)
+                    W(DoTranslation("Failed to get statistics for adapter {0}", currentLang), True, ColTypes.Err, adapter.Description)
                     Failed = True
                 End If
                 If Not Failed Then
@@ -123,7 +123,7 @@ Public Module NetworkTools
         Wdbg("I", "URL: {0}", URL)
         While Not RetryCount > DRetries
             Try
-                If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://") Or URL.StartsWith("sftp://")) Then
+                If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                     If Not URL.StartsWith(" ") Then
                         'Limit the filename to the name without any URL arguments
                         Dim FileName As String = URL.Split("/").Last()
@@ -146,15 +146,15 @@ Public Module NetworkTools
                             Throw ReasonError
                         End If
                     Else
-                        W(DoTranslation("Specify the address", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Specify the address", currentLang), True, ColTypes.Err)
                     End If
                 Else
-                    W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server.", currentLang), True, ColTypes.Err)
                 End If
                 Exit Sub
             Catch ex As Exception
                 DFinish = False
-                W(DoTranslation("Download failed in try {0}: {1}", currentLang), True, ColTypes.Neutral, RetryCount, ex.Message)
+                W(DoTranslation("Download failed in try {0}: {1}", currentLang), True, ColTypes.Err, RetryCount, ex.Message)
                 RetryCount += 1
                 Wdbg("I", "Try count: {0}", RetryCount)
                 WStkTrc(ex)

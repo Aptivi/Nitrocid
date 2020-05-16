@@ -18,31 +18,36 @@
 Module SSH
 
     Sub InitializeSSH(ByVal Address As String, ByVal Port As Integer, ByVal Username As String)
-        'Authentication
-        Wdbg("I", "Address: {0}:{1}, Username: {2}", Address, Port, Username)
-        W(DoTranslation("Enter the password for {0}: ", currentLang), False, ColTypes.Input, Username)
-        Dim Pass As String = ReadLineNoInput("*")
+        Try
+            'Authentication
+            Wdbg("I", "Address: {0}:{1}, Username: {2}", Address, Port, Username)
+            W(DoTranslation("Enter the password for {0}: ", currentLang), False, ColTypes.Input, Username)
+            Dim Pass As String = ReadLineNoInput("*")
 
-        'Connection
-        Dim SSH As New SshClient(Address, Port, Username, Pass)
-        SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30)
-        Wdbg("I", "Connecting to {0}...", Address)
-        SSH.Connect()
+            'Connection
+            Dim SSH As New SshClient(Address, Port, Username, Pass)
+            SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30)
+            Wdbg("I", "Connecting to {0}...", Address)
+            SSH.Connect()
 
-        'Shell creation
-        Wdbg("I", "Opening shell...")
-        Dim SSHS As Renci.SshNet.Shell = SSH.CreateShell(Console.OpenStandardInput, Console.OpenStandardOutput, Console.OpenStandardError)
-        SSHS.Start()
+            'Shell creation
+            Wdbg("I", "Opening shell...")
+            Dim SSHS As Renci.SshNet.Shell = SSH.CreateShell(Console.OpenStandardInput, Console.OpenStandardOutput, Console.OpenStandardError)
+            SSHS.Start()
 
-        'Wait until disconnection
-        While SSH.IsConnected
-            If Console.ReadKey(True).Key = ConsoleKey.Escape Then
-                SSHS.Stop()
-                SSH.Disconnect()
-            End If
-        End While
-        Wdbg("I", "Connected: {0}", SSH.IsConnected)
-        W(vbNewLine + DoTranslation("SSH Disconnected.", currentLang), True, ColTypes.Neutral)
+            'Wait until disconnection
+            While SSH.IsConnected
+                If Console.ReadKey(True).Key = ConsoleKey.Escape Then
+                    SSHS.Stop()
+                    SSH.Disconnect()
+                End If
+            End While
+            Wdbg("I", "Connected: {0}", SSH.IsConnected)
+            W(vbNewLine + DoTranslation("SSH Disconnected.", currentLang), True, ColTypes.Neutral)
+        Catch ex As Exception
+            W(DoTranslation("Error trying to connect to SSH server: {0}", currentLang), True, ColTypes.Err, ex.Message)
+            WStkTrc(ex)
+        End Try
     End Sub
 
 End Module

@@ -74,10 +74,10 @@ Public Module Login
             'Parse input
             If InStr(answeruser, " ") > 0 Then
                 Wdbg("W", "Spaces found in username.")
-                W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Err)
             ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                 Wdbg("W", "Unknown characters found in username.")
-                W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Err)
             ElseIf userword.ContainsKey(answeruser) Then
                 Wdbg("I", "Username correct. Finding if the user is disabled...")
                 If disabledList(answeruser) = False Then
@@ -85,11 +85,11 @@ Public Module Login
                     ShowPasswordPrompt(answeruser)
                 Else
                     Wdbg("W", "User can't log in. (User is in disabled list)")
-                    W(DoTranslation("User is disabled.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("User is disabled.", currentLang), True, ColTypes.Err)
                 End If
             Else
                 Wdbg("E", "Username not found.")
-                W(DoTranslation("Wrong username.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Wrong username.", currentLang), True, ColTypes.Err)
             End If
         End While
     End Sub
@@ -133,7 +133,7 @@ Public Module Login
                     Exit Sub
                 Else
                     Wdbg("I", "Passowrd written wrong...")
-                    W(DoTranslation("Wrong password.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Wrong password.", currentLang), True, ColTypes.Err)
                     If Not maintenance Then
                         If Not LockMode Then
                             Exit Sub

@@ -37,15 +37,15 @@ Public Module Filesystem
                 CurrDir = Parser.FullName.Replace("\", "/")
             Catch sex As Security.SecurityException
                 Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
-                W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Neutral, direct, sex.Message)
+                W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, direct, sex.Message)
                 WStkTrc(sex)
             Catch ptlex As IO.PathTooLongException
                 Wdbg("I", "Directory length: {0}", direct.Length)
-                W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Err)
                 WStkTrc(ptlex)
             End Try
         Else
-            W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Neutral, dir)
+            W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Err, dir)
         End If
     End Sub
     Public Sub ReadContents(ByVal filename As String)
@@ -66,16 +66,16 @@ Public Module Filesystem
             Try
                 enumeration = IO.Directory.EnumerateFileSystemEntries(folder)
             Catch sex As Security.SecurityException
-                W(DoTranslation("You are unauthorized to list in {0}: {1}", currentLang), True, ColTypes.Neutral, folder, sex.Message)
-                W(DoTranslation("Permission {0} failed", currentLang), True, ColTypes.Neutral, sex.PermissionType)
+                W(DoTranslation("You are unauthorized to list in {0}: {1}", currentLang), True, ColTypes.Err, folder, sex.Message)
+                W(DoTranslation("Permission {0} failed", currentLang), True, ColTypes.Err, sex.PermissionType)
                 WStkTrc(sex)
                 Exit Sub
             Catch ptlex As IO.PathTooLongException
-                W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Err)
                 WStkTrc(ptlex)
                 Exit Sub
             Catch ex As Exception
-                W(DoTranslation("Unknown error while listing in directory: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+                W(DoTranslation("Unknown error while listing in directory: {0}", currentLang), True, ColTypes.Err, ex.Message)
                 WStkTrc(ex)
                 Exit Sub
             End Try
@@ -127,12 +127,12 @@ Public Module Filesystem
                     End If
                 Catch ex As UnauthorizedAccessException 'Error while getting info
                     Dim Directory As String = Entry.Replace("\", "/").Split("/")(Entry.Replace("\", "/").Split("/").Length - 1)
-                    W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, ColTypes.HelpCmd, Directory)
+                    W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, ColTypes.Err, Directory)
                     WStkTrc(ex)
                 End Try
             Next
         Else
-            W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Neutral, folder)
+            W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Err, folder)
             Wdbg("I", "IO.Directory.Exists = {0}", IO.Directory.Exists(folder))
         End If
     End Sub

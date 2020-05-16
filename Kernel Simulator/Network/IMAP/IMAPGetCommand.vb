@@ -33,7 +33,7 @@ Module IMAPGetCommand
                     Dim Page As Integer
                     If FullArgsL(0) = "" Then Page = 1 Else Page = FullArgsL(0)
                     If Page <= 0 Then
-                        W(DoTranslation("Page may not be negative or zero.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Page may not be negative or zero.", currentLang), True, ColTypes.Err)
                         Exit Sub
                     End If
                     Dim MsgsLimitForPg As Integer = 10
@@ -47,17 +47,17 @@ Module IMAPGetCommand
                         End If
                     Next
                 Else
-                    W(DoTranslation("Page is not a numeric value.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Page is not a numeric value.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf cmd = "read" Then
                 If FullArgsL(0).IsNumeric Then
                     Dim Message As Integer = FullArgsL(0) - 1
                     Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
                     If Message < 0 Then
-                        W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Err)
                         Exit Sub
                     ElseIf Message > MaxMessagesIndex Then
-                        W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Err)
                         Exit Sub
                     End If
 
@@ -109,11 +109,11 @@ Module IMAPGetCommand
                         Next
                     End If
                 Else
-                    W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
                 End If
             End If
         Catch ex As Exception
-            W(DoTranslation("Error executing IMAP command: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            W(DoTranslation("Error executing IMAP command: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

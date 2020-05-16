@@ -44,7 +44,7 @@ Public Module UESHParse
                 End If
             End While
         Catch ex As Exception
-            W(DoTranslation("Error trying to execute script: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            W(DoTranslation("Error trying to execute script: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

@@ -206,7 +206,7 @@ Public Module KernelTools
             Wdbg("I", "Closing file stream for dump...")
             Dump.Flush() : Dump.Close()
         Catch ex As Exception
-            W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}", currentLang), True, ColTypes.Neutral, Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), ex.Message)
+            W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}", currentLang), True, ColTypes.Err, Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), ex.Message)
             WStkTrc(ex)
         End Try
     End Sub
@@ -439,7 +439,7 @@ Public Module KernelTools
                 W(UpdateURL, True, ColTypes.HelpDef)
             End If
         Catch ex As Exception
-            W(DoTranslation("Failed to check for updates: {0}", currentLang), True, ColTypes.Neutral, ex.Message)
+            W(DoTranslation("Failed to check for updates: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub
@@ -485,7 +485,7 @@ Public Module KernelTools
             dt = dt.AddSeconds(compileseconds)
             dt = dt.AddHours(TimeZone.CurrentTimeZone.GetUtcOffset(dt).Hours)
         Catch ex As Exception
-            W(DoTranslation("Error while trying to get compile date of assembly {0}: {1}", currentLang), True, ColTypes.Neutral, Asm.CodeBase, ex.Message)
+            W(DoTranslation("Error while trying to get compile date of assembly {0}: {1}", currentLang), True, ColTypes.Err, Asm.CodeBase, ex.Message)
         End Try
 
         'Now return compile date
@@ -509,7 +509,7 @@ Public Module KernelTools
             End If
             EventManager.RaiseGarbageCollected()
         Catch ex As Exception
-            W(DoTranslation("Error trying to free RAM: {0} - Continuing...", currentLang), True, ColTypes.Neutral, ex.Message)
+            W(DoTranslation("Error trying to free RAM: {0} - Continuing...", currentLang), True, ColTypes.Err, ex.Message)
             If DebugMode = True Then
                 W(ex.StackTrace, True, ColTypes.Neutral) : Wdbg("Error freeing RAM: {0}", ex.Message) : WStkTrc(ex)
             End If

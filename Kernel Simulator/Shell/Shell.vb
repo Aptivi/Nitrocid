@@ -105,11 +105,11 @@ Public Module Shell
                     EventManager.RaisePostExecuteCommand()
                 Catch ex As Exception
                     If DebugMode = True Then
-                        W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", True, ColTypes.Neutral,
+                        W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", True, ColTypes.Err,
                             Err.Number, ex.Message, ex.StackTrace)
                         WStkTrc(ex)
                     Else
-                        W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}", True, ColTypes.Neutral, Err.Number, ex.Message)
+                        W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}", True, ColTypes.Err, Err.Number, ex.Message)
                     End If
                     Continue While
                 End Try
@@ -148,10 +148,10 @@ Public Module Shell
                         'Check to see if a user is able to execute a command
                         If adminList(signedinusrnm) = False And strictCmds.Contains(cmd) = True Then
                             Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
-                            W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Neutral, cmd)
+                            W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Err, cmd)
                         ElseIf maintenance = True And cmd.Contains("logout") Then
                             Wdbg("W", "Cmd exec {0} failed: In maintenance mode. Assertion of input.Contains(""logout"") is True", cmd)
-                            W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), True, ColTypes.Neutral, cmd)
+                            W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), True, ColTypes.Err, cmd)
                         ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(cmd) = True) Or availableCommands.Contains(cmd) Then
                             Wdbg("W", "Cmd exec {0} succeeded", cmd)
                             GetCommand.ExecuteCommand(cmdArgs)
@@ -160,7 +160,7 @@ Public Module Shell
                             Execute(Path.GetFullPath(CurrDir + "/" + cmd))
                         Else
                             Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", cmd, indexCmd)
-                            W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), True, ColTypes.Neutral, cmd)
+                            W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), True, ColTypes.Err, cmd)
                         End If
                     Next
                 End If
@@ -183,10 +183,10 @@ Public Module Shell
                                 GetCommand.ExecuteCommand(cmdArgs)
                             ElseIf adminList(signedinusrnm) = False And strictCmds.Contains(cmd) = True Then
                                 Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
-                                W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Neutral, cmd)
+                                W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Err, cmd)
                             ElseIf cmd = "logout" Or cmd = "shutdown" Or cmd = "reboot" Then
                                 Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", cmd)
-                                W(DoTranslation("Shell message: Command {0} is not allowed to run on log in.", currentLang), True, ColTypes.Neutral, cmd)
+                                W(DoTranslation("Shell message: Command {0} is not allowed to run on log in.", currentLang), True, ColTypes.Err, cmd)
                             ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + cmd)) And cmd.EndsWith(".uesh") Then 'TODO: Support script files with space in it
                                 Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", cmd)
                                 Execute(Path.GetFullPath(CurrDir + "/" + cmd))
@@ -197,17 +197,17 @@ Public Module Shell
                         End If
                     Else
                         Wdbg("W", "Cmd exec {0} failed: availableCmds.Contains({0}) is False", cmd)
-                        W(DoTranslation("Shell message: The requested command {0} is not found.", currentLang), True, ColTypes.Neutral, cmd)
+                        W(DoTranslation("Shell message: The requested command {0} is not found.", currentLang), True, ColTypes.Err, cmd)
                     End If
                 Next
             End If
         Catch ex As Exception
             If DebugMode = True Then
-                W(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Neutral,
+                W(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err,
                   Err.Number, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Neutral, Err.Number, ex.Message)
+                W(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message)
             End If
         End Try
 

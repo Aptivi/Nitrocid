@@ -99,13 +99,13 @@ Public Module AliasManager
             If mode = "add" Then
                 'User tries to add an alias.
                 If AliasCmd = DestCmd Then
-                    W(DoTranslation("Alias can't be the same name as a command.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Alias can't be the same name as a command.", currentLang), True, ColTypes.Err)
                     Wdbg("I", "Assertion succeeded: {0} = {1}", AliasCmd, DestCmd)
                 ElseIf Not availableCommands.Contains(DestCmd) And Not DebugCmds.Contains(DestCmd) Then
-                    W(DoTranslation("Command not found to alias to {0}.", currentLang), True, ColTypes.Neutral, AliasCmd)
+                    W(DoTranslation("Command not found to alias to {0}.", currentLang), True, ColTypes.Err, AliasCmd)
                     Wdbg("W", "{0} not found in either list of availableCmds or DebugCmds", DestCmd)
                 ElseIf Forbidden.Contains(DestCmd) Then
-                    W(DoTranslation("Aliasing {0} to {1} is forbidden.", currentLang), True, ColTypes.Neutral, DestCmd, AliasCmd)
+                    W(DoTranslation("Aliasing {0} to {1} is forbidden.", currentLang), True, ColTypes.Err, DestCmd, AliasCmd)
                     Wdbg("W", "forbid.Contains({0}) = true | No aliasing", DestCmd)
                 ElseIf Not Aliases.ContainsKey(AliasCmd) Or Not RemoteDebugAliases.ContainsKey(AliasCmd) Then
                     Wdbg("W", "Assertion failed: {0} = {1}", AliasCmd, DestCmd)
@@ -117,7 +117,7 @@ Public Module AliasManager
                     W(DoTranslation("You can now run ""{0}"" as a command: ""{1}"".", currentLang), True, ColTypes.Neutral, AliasCmd, DestCmd)
                 Else
                     Wdbg("W", "Alias {0} already found", AliasCmd)
-                    W(DoTranslation("Alias already found: {0}", currentLang), True, ColTypes.Neutral, AliasCmd)
+                    W(DoTranslation("Alias already found: {0}", currentLang), True, ColTypes.Err, AliasCmd)
                 End If
             ElseIf mode = "rem" Then
                 'user tries to remove an alias
@@ -125,21 +125,21 @@ Public Module AliasManager
                     DestCmd = Aliases(AliasCmd)
                     Wdbg("I", "aliases({0}) is found. That makes it {1}", AliasCmd, DestCmd)
                     Aliases.Remove(AliasCmd)
-                    W(DoTranslation("You can no longer use ""{0}"" as a command ""{1}"".", currentLang), True, ColTypes.Neutral, AliasCmd, DestCmd)
+                    W(DoTranslation("You can no longer use ""{0}"" as a command ""{1}"".", currentLang), True, ColTypes.Err, AliasCmd, DestCmd)
                 Else
                     Wdbg("W", "aliases({0}) is not found", AliasCmd)
-                    W(DoTranslation("Alias {0} is not found to be removed.", currentLang), True, ColTypes.Neutral, AliasCmd)
+                    W(DoTranslation("Alias {0} is not found to be removed.", currentLang), True, ColTypes.Err, AliasCmd)
                 End If
             Else
                 Wdbg("E", "Mode {0} was neither add nor rem.", mode)
-                W(DoTranslation("Invalid mode {0}.", currentLang), True, ColTypes.Neutral, mode)
+                W(DoTranslation("Invalid mode {0}.", currentLang), True, ColTypes.Err, mode)
             End If
 
             'Save all aliases
             SaveAliases()
         Else
             Wdbg("E", "Type {0} not found.", Type)
-            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Neutral, Type)
+            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, Type)
         End If
     End Sub
     Sub ExecuteRDAlias(ByVal aliascmd As String, ByVal SocketStream As IO.StreamWriter, ByVal Address As String)
