@@ -23,8 +23,9 @@ Imports MailKit.Search
 Module IMAPShell
 
     'Variables
-    Public IMAP_AvailableCommands() As String = {"help", "exit", "list", "read"}
+    Public IMAP_AvailableCommands() As String = {"help", "cd", "lsdirs", "exit", "list", "read"}
     Public IMAP_Messages As IEnumerable(Of UniqueId)
+    Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested As Boolean
 
     Sub OpenShell(Address As String)
@@ -35,14 +36,20 @@ Module IMAPShell
 
         While Not ExitRequested
             'Populate messages
-            'TODO: Populate also all folders, not just Inbox.
-            IMAP_Client.Inbox.Open(FolderAccess.ReadOnly)
-            Wdbg("I", "Opened inbox")
-            IMAP_Messages = IMAP_Client.Inbox.Search(SearchQuery.All).Reverse
-            Wdbg("I", "Messages count: {0} messages", IMAP_Messages.LongCount)
+            If IMAP_CurrentDirectory = "" Or IMAP_CurrentDirectory = "Inbox" Then
+                IMAP_Client.Inbox.Open(FolderAccess.ReadOnly)
+                Wdbg("I", "Opened inbox")
+                IMAP_Messages = IMAP_Client.Inbox.Search(SearchQuery.All).Reverse
+                Wdbg("I", "Messages count: {0} messages", IMAP_Messages.LongCount)
+            Else
+                Dim Folder As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                Wdbg("I", "Opened {0}", IMAP_CurrentDirectory)
+                IMAP_Messages = Folder.Search(SearchQuery.All).Reverse
+                Wdbg("I", "Messages count: {0} messages", IMAP_Messages.LongCount)
+            End If
 
             'Initialize prompt
-            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, IMAP_Authentication.UserName) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray)
+            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, IMAP_Authentication.UserName) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray) : W("{0} > ", False, ColTypes.Input, IMAP_CurrentDirectory)
 
             'Listen for a command
             Dim cmd As String = Console.ReadLine
@@ -67,6 +74,7 @@ Module IMAPShell
         End While
 
         'Disconnect the session
+        IMAP_CurrentDirectory = "Inbox"
         Wdbg("W", "Exit requested. Disconnecting host...")
         IMAP_Client.Disconnect(True)
     End Sub
@@ -76,12 +84,54 @@ Module IMAPShell
         While IMAP_Client.IsConnected
             Thread.Sleep(10000)
             If IMAP_Client.IsConnected Then
-                IMAP_Client.NoOp()
+                SyncLock IMAP_Client.SyncRoot
+                    IMAP_Client.NoOp()
+                End SyncLock
             Else
                 Wdbg("W", "Connection state is inconsistent. Stopping KeepConnection()...")
                 Thread.CurrentThread.Abort()
             End If
         End While
     End Sub
+
+    Public Function OpenFolder(ByVal FolderString As String) As MailFolder
+        Dim Opened As MailFolder
+        Wdbg("I", "Personal namespace collection parsing started.")
+        For Each nmspc As FolderNamespace In IMAP_Client.PersonalNamespaces
+            Wdbg("I", "Namespace: {0}", nmspc.Path)
+            For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
+                If dir.Name = FolderString Then
+                    dir.Open(FolderAccess.ReadOnly)
+                    Opened = dir
+                End If
+            Next
+        Next
+
+        Wdbg("I", "Shared namespace collection parsing started.")
+        For Each nmspc As FolderNamespace In IMAP_Client.SharedNamespaces
+            Wdbg("I", "Namespace: {0}", nmspc.Path)
+            For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
+                If dir.Name = FolderString Then
+                    dir.Open(FolderAccess.ReadOnly)
+                    Opened = dir
+                End If
+            Next
+        Next
+
+        Wdbg("I", "Other namespace collection parsing started.")
+        For Each nmspc As FolderNamespace In IMAP_Client.OtherNamespaces
+            Wdbg("I", "Namespace: {0}", nmspc.Path)
+            For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
+                If dir.Name = FolderString Then
+                    dir.Open(FolderAccess.ReadOnly)
+                    Opened = dir
+                End If
+            Next
+        Next
+
+#Disable Warning BC42104
+        Return Opened
+#Enable Warning BC42104
+    End Function
 
 End Module

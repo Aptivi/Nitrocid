@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports MailKit
 Imports MimeKit
 
 Module IMAPGetCommand
@@ -27,6 +28,19 @@ Module IMAPGetCommand
         Try
             If cmd = "help" Then
                 IMAPShowHelp()
+            ElseIf cmd = "cd" Then
+                Wdbg("I", "Opening folder: {0}", FullArgsL(0))
+                Try
+                    SyncLock IMAP_Client.SyncRoot
+                        OpenFolder(FullArgsL(0))
+                    End SyncLock
+                    IMAP_CurrentDirectory = FullArgsL(0)
+                    Wdbg("I", "Current directory changed.")
+                Catch ex As Exception
+                    Wdbg("I", "Failed to open folder {0}: {1}", FullArgsL(0), ex.Message)
+                    W(DoTranslation("Unable to open mail folder {0}: {1}", currentLang), True, ColTypes.Err, FullArgsL(0), ex.Message)
+                    WStkTrc(ex)
+                End Try
             ElseIf cmd = "exit" Then
                 ExitRequested = True
             ElseIf cmd = "list" Then
@@ -48,11 +62,19 @@ Module IMAPGetCommand
                     For i As Integer = FirstIndex To LastIndex
                         If Not i > MaxMessagesIndex Then
                             Wdbg("I", "Getting message {0}...", i)
-                            Dim Msg As MimeMessage = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i))
-                            Dim MsgFrom As String = Msg.From.ToString
-                            Dim MsgSubject As String = Msg.Subject
-                            Wdbg("I", "From {0}: {1}", MsgFrom, MsgSubject)
-                            W("- [{0}] {1}: ", False, ColTypes.HelpCmd, i + 1, Msg.From) : W("{0}", True, ColTypes.HelpDef, Msg.Subject)
+                            SyncLock IMAP_Client.SyncRoot
+                                Dim Msg As MimeMessage
+                                If Not IMAP_CurrentDirectory = "" Or Not IMAP_CurrentDirectory = "Inbox" Then
+                                    Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                                    Msg = Dir.GetMessage(IMAP_Messages(i))
+                                Else
+                                    Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i))
+                                End If
+                                Dim MsgFrom As String = Msg.From.ToString
+                                Dim MsgSubject As String = Msg.Subject
+                                Wdbg("I", "From {0}: {1}", MsgFrom, MsgSubject)
+                                W("- [{0}] {1}: ", False, ColTypes.HelpCmd, i + 1, Msg.From) : W("{0}", True, ColTypes.HelpDef, Msg.Subject)
+                            End SyncLock
                         Else
                             Wdbg("W", "Reached max message limit. Message number {0}", i)
                         End If
@@ -60,6 +82,38 @@ Module IMAPGetCommand
                 Else
                     W(DoTranslation("Page is not a numeric value.", currentLang), True, ColTypes.Err)
                 End If
+            ElseIf cmd = "lsdirs" Then
+                SyncLock IMAP_Client.SyncRoot
+                    Wdbg("I", "Personal namespace collection parsing started.")
+                    For Each nmspc As FolderNamespace In IMAP_Client.PersonalNamespaces
+                        Wdbg("I", "Namespace: {0}", nmspc.Path)
+                        W("- {0}", True, ColTypes.HelpCmd, nmspc.Path)
+                        For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
+                            Wdbg("I", "Folder: {0}", dir.Name)
+                            W("  - {0}", True, ColTypes.HelpDef, dir.Name)
+                        Next
+                    Next
+
+                    Wdbg("I", "Shared namespace collection parsing started.")
+                    For Each nmspc As FolderNamespace In IMAP_Client.SharedNamespaces
+                        Wdbg("I", "Namespace: {0}", nmspc.Path)
+                        W("- {0}", True, ColTypes.HelpCmd, nmspc.Path)
+                        For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
+                            Wdbg("I", "Folder: {0}", dir.Name)
+                            W("  - {0}", True, ColTypes.HelpDef, dir.Name)
+                        Next
+                    Next
+
+                    Wdbg("I", "Other namespace collection parsing started.")
+                    For Each nmspc As FolderNamespace In IMAP_Client.OtherNamespaces
+                        Wdbg("I", "Namespace: {0}", nmspc.Path)
+                        W("- {0}", True, ColTypes.HelpCmd, nmspc.Path)
+                        For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
+                            Wdbg("I", "Folder: {0}", dir.Name)
+                            W("  - {0}", True, ColTypes.HelpDef, dir.Name)
+                        Next
+                    Next
+                End SyncLock
             ElseIf cmd = "read" Then
                 Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
                 If FullArgsL(0).IsNumeric Then
@@ -76,65 +130,73 @@ Module IMAPGetCommand
                         Exit Sub
                     End If
 
-                    'Get message
-                    Wdbg("I", "Getting message...")
-                    Dim Msg As MimeMessage = IMAP_Client.Inbox.GetMessage(IMAP_Messages(Message))
+                    SyncLock IMAP_Client.SyncRoot
+                        'Get message
+                        Wdbg("I", "Getting message...")
+                        Dim Msg As MimeMessage
+                        If Not IMAP_CurrentDirectory = "" Or Not IMAP_CurrentDirectory = "Inbox" Then
+                            Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                            Msg = Dir.GetMessage(IMAP_Messages(Message))
+                        Else
+                            Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(Message))
+                        End If
 
-                    'Prepare view
-                    Console.WriteLine()
-
-                    'Print all the addresses that sent the mail
-                    Wdbg("I", "{0} senders.", Msg.From.Count)
-                    For Each Address As InternetAddress In Msg.From
-                        Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                        W(DoTranslation("- From {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
-                    Next
-
-                    'Print all the addresses that received the mail
-                    Wdbg("I", "{0} receivers.", Msg.To.Count)
-                    For Each Address As InternetAddress In Msg.To
-                        Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                        W(DoTranslation("- To {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
-                    Next
-
-                    'Print the date and time when the user received the mail
-                    Wdbg("I", "Rendering time and date of {0}.", Msg.Date.DateTime.ToString)
-                    W(DoTranslation("- Sent at {0} in {1}", currentLang), True, ColTypes.HelpCmd, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
-
-                    'Prepare subject
-                    Console.WriteLine()
-                    Wdbg("I", "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject)
-                    W($"- {Msg.Subject}", False, ColTypes.HelpCmd)
-
-                    'Write a sign after the subject if attachments are found
-                    Wdbg("I", "Attachments count: {0}", Msg.Attachments.Count)
-                    If Msg.Attachments.Count > 0 Then
-                        W(" - [*]", True, ColTypes.HelpCmd)
-                    Else
+                        'Prepare view
                         Console.WriteLine()
-                    End If
 
-                    'Prepare body
-                    Console.WriteLine()
-                    Wdbg("I", "Displaying body...")
-                    W(Msg.GetTextBody(Text.TextFormat.Plain), True, ColTypes.HelpDef)
-                    Console.WriteLine()
-
-                    'Populate attachments
-                    If Msg.Attachments.Count > 0 Then
-                        W(DoTranslation("Attachments:", currentLang), True, ColTypes.Neutral)
-                        For Each Attachment As MimeEntity In Msg.Attachments
-                            Wdbg("I", "Attachment ID: {0}", Attachment.ContentId)
-                            If TypeOf Attachment Is MessagePart Then
-                                Wdbg("I", "Attachment is a message.")
-                                W($"- {Attachment.ContentDisposition?.FileName}", True, ColTypes.Neutral)
-                            Else
-                                Wdbg("I", "Attachment is a file.")
-                                Dim AttachmentPart As MimePart = Attachment
-                                W($"- {AttachmentPart.FileName}", True, ColTypes.Neutral)
-                            End If
+                        'Print all the addresses that sent the mail
+                        Wdbg("I", "{0} senders.", Msg.From.Count)
+                        For Each Address As InternetAddress In Msg.From
+                            Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
+                            W(DoTranslation("- From {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
                         Next
-                    End If
+
+                        'Print all the addresses that received the mail
+                        Wdbg("I", "{0} receivers.", Msg.To.Count)
+                        For Each Address As InternetAddress In Msg.To
+                            Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
+                            W(DoTranslation("- To {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
+                        Next
+
+                        'Print the date and time when the user received the mail
+                        Wdbg("I", "Rendering time and date of {0}.", Msg.Date.DateTime.ToString)
+                        W(DoTranslation("- Sent at {0} in {1}", currentLang), True, ColTypes.HelpCmd, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
+
+                        'Prepare subject
+                        Console.WriteLine()
+                        Wdbg("I", "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject)
+                        W($"- {Msg.Subject}", False, ColTypes.HelpCmd)
+
+                        'Write a sign after the subject if attachments are found
+                        Wdbg("I", "Attachments count: {0}", Msg.Attachments.Count)
+                        If Msg.Attachments.Count > 0 Then
+                            W(" - [*]", True, ColTypes.HelpCmd)
+                        Else
+                            Console.WriteLine()
+                        End If
+
+                        'Prepare body
+                        Console.WriteLine()
+                        Wdbg("I", "Displaying body...")
+                        W(Msg.GetTextBody(Text.TextFormat.Plain), True, ColTypes.HelpDef)
+                        Console.WriteLine()
+
+                        'Populate attachments
+                        If Msg.Attachments.Count > 0 Then
+                            W(DoTranslation("Attachments:", currentLang), True, ColTypes.Neutral)
+                            For Each Attachment As MimeEntity In Msg.Attachments
+                                Wdbg("I", "Attachment ID: {0}", Attachment.ContentId)
+                                If TypeOf Attachment Is MessagePart Then
+                                    Wdbg("I", "Attachment is a message.")
+                                    W($"- {Attachment.ContentDisposition?.FileName}", True, ColTypes.Neutral)
+                                Else
+                                    Wdbg("I", "Attachment is a file.")
+                                    Dim AttachmentPart As MimePart = Attachment
+                                    W($"- {AttachmentPart.FileName}", True, ColTypes.Neutral)
+                                End If
+                            Next
+                        End If
+                    End SyncLock
                 Else
                     W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
                 End If

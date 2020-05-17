@@ -22,9 +22,11 @@ Public Module IMAPHelpSystem
     Public IMAP_definitions As Dictionary(Of String, String)
 
     Public Sub IMAPInitHelp()
-        IMAP_definitions = New Dictionary(Of String, String) From {{"exit", DoTranslation("Exits the IMAP shell", currentLang)},
+        IMAP_definitions = New Dictionary(Of String, String) From {{"cd", DoTranslation("Changes current mail directory", currentLang)},
+                                                                   {"exit", DoTranslation("Exits the IMAP shell", currentLang)},
                                                                    {"help", DoTranslation("List of commands", currentLang)},
                                                                    {"list", DoTranslation("Downloads messages and lists them", currentLang)},
+                                                                   {"lsdirs", DoTranslation("Lists directories in your mail address", currentLang)},
                                                                    {"read", DoTranslation("Opens a message", currentLang)}}
     End Sub
 
@@ -33,10 +35,14 @@ Public Module IMAPHelpSystem
             For Each cmnd As String In IMAP_definitions.Keys
                 W("- {0}: ", False, ColTypes.HelpCmd, cmnd) : W("{0}", True, ColTypes.HelpDef, IMAP_definitions(cmnd))
             Next
+        ElseIf cmd = "cd" Then
+            W(DoTranslation("Usage:", currentLang) + " cd <folder>: " + DoTranslation("Changes current mail directory", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "exit" Then
             W(DoTranslation("Usage:", currentLang) + " exit: " + DoTranslation("Exits the IMAP shell", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "list" Then
             W(DoTranslation("Usage:", currentLang) + " list [pagenum]: " + DoTranslation("Downloads messages and lists them", currentLang), True, ColTypes.Neutral)
+        ElseIf cmd = "ls" Then
+            W(DoTranslation("Usage:", currentLang) + " lsdirs: " + DoTranslation("Lists directories in your mail address", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "read" Then
             W(DoTranslation("Usage:", currentLang) + " read <mailid>: " + DoTranslation("Opens a message", currentLang), True, ColTypes.Neutral)
         End If
