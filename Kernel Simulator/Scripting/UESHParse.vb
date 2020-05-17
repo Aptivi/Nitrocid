@@ -20,7 +20,7 @@ Imports System.IO
 
 Public Module UESHParse
 
-    'TODO: Support arguments and variables parsing
+    'TODO: Support arguments parsing
     'TODO: Make documentation at the end of development of 0.0.10
     Public Sub Execute(ByVal scriptpath As String)
         Try
