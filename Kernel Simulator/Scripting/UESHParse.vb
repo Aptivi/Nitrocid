@@ -20,9 +20,8 @@ Imports System.IO
 
 Public Module UESHParse
 
-    'TODO: Support arguments parsing
     'TODO: Make documentation at the end of development of 0.0.10
-    Public Sub Execute(ByVal scriptpath As String)
+    Public Sub Execute(ByVal scriptpath As String, ByVal scriptarguments As String)
         Try
             'Open the script file for reading
             Dim FileStream As New StreamReader(scriptpath)
@@ -47,7 +46,7 @@ Public Module UESHParse
             'Seek to the beginning
             FileStream.BaseStream.Seek(0, SeekOrigin.Begin)
 
-            'Get all lines, parse comments, and parse commands
+            'Get all lines and parse comments, commands, and arguments
             While Not FileStream.EndOfStream
                 'Get line
                 Dim Line As String = FileStream.ReadLine
@@ -59,6 +58,16 @@ Public Module UESHParse
                     If SplitWords(i).StartsWith("$") Then
                         Line = GetVariable(SplitWords(i), Line)
                     End If
+                Next
+
+                'See if the line contains argument placeholder, and replace every instance of it with its value
+                Dim SplitArguments() As String = scriptarguments.Split(" ")
+                For i As Integer = 0 To SplitWords.Count - 1
+                    For j As Integer = 0 To SplitArguments.Count - 1
+                        If SplitWords(i) = $"{{{j}}}" Then
+                            Line = Line.Replace(SplitWords(i), SplitArguments(j))
+                        End If
+                    Next
                 Next
 
                 'See if the line is a comment or command

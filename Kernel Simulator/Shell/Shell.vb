@@ -136,6 +136,9 @@ Public Module Shell
             If ArgsMode = False Then
                 If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
                     Dim groupCmds() As String = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
+                    Dim scriptArgs As List(Of String) = strcommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
+                    Dim scriptCmd As String = scriptArgs(0) + ".uesh"
+                    scriptArgs.RemoveAt(0)
                     For Each cmd In groupCmds
                         'Get the index of the first space
                         Dim indexCmd As Integer = cmd.IndexOf(" ")
@@ -155,9 +158,9 @@ Public Module Shell
                         ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(cmd) = True) Or availableCommands.Contains(cmd) Then
                             Wdbg("W", "Cmd exec {0} succeeded", cmd)
                             GetCommand.ExecuteCommand(cmdArgs)
-                        ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) And strcommand.EndsWith(".uesh") Then
-                            Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
-                            Execute(Path.GetFullPath(CurrDir + "/" + strcommand))
+                        ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + scriptCmd)) And scriptCmd.EndsWith(".uesh") Then
+                            Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", scriptCmd)
+                            Execute(Path.GetFullPath(CurrDir + "/" + scriptCmd), scriptArgs.Join(" "))
                         Else
                             Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", cmd, indexCmd)
                             W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), True, ColTypes.Err, cmd)
@@ -167,6 +170,10 @@ Public Module Shell
             ElseIf ArgsMode = True And CommandFlag = True Then
                 CommandFlag = False
                 For Each cmd In argcmds
+                    Dim scriptArgs As List(Of String) = strcommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
+                    Dim scriptCmd As String = scriptArgs(0) + ".uesh"
+                    scriptArgs.RemoveAt(0)
+
                     'Get the index of the first space
                     Dim indexCmd As Integer = cmd.IndexOf(" ")
                     Dim cmdArgs As String = cmd 'Command with args
@@ -189,7 +196,7 @@ Public Module Shell
                                 W(DoTranslation("Shell message: Command {0} is not allowed to run on log in.", currentLang), True, ColTypes.Err, cmd)
                             ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) And strcommand.EndsWith(".uesh") Then
                                 Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
-                                Execute(Path.GetFullPath(CurrDir + "/" + strcommand))
+                                Execute(Path.GetFullPath(CurrDir + "/" + strcommand), scriptArgs.Join(" "))
                             Else
                                 Wdbg("W", "Cmd exec {0} succeeded", cmd)
                                 GetCommand.ExecuteCommand(cmdArgs)
