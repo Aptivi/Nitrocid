@@ -23,20 +23,21 @@ Imports MailKit.Search
 Module IMAPShell
 
     'Variables
+    'TODO: Put debug messages related to IMAP
     Public IMAP_AvailableCommands() As String = {"help", "exit", "list", "read"}
-    Public IMAP_Messages As IList(Of UniqueId)
-    Public IMAP_NoOp As New Thread(AddressOf KeepConnection)
+    Public IMAP_Messages As IEnumerable(Of UniqueId)
     Friend ExitRequested As Boolean
 
     Sub OpenShell(Address As String)
         While Not ExitRequested
             'Send ping to keep the connection alive
+            Dim IMAP_NoOp As New Thread(AddressOf KeepConnection)
             IMAP_NoOp.Start()
 
             'Populate messages
             'TODO: Populate also all folders, not just Inbox.
             IMAP_Client.Inbox.Open(FolderAccess.ReadOnly)
-            IMAP_Messages = IMAP_Client.Inbox.Search(SearchQuery.All)
+            IMAP_Messages = IMAP_Client.Inbox.Search(SearchQuery.All).Reverse
 
             'Initialize prompt
             W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, IMAP_Authentication.UserName) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray)
@@ -62,9 +63,13 @@ Module IMAPShell
 
     Sub KeepConnection()
         'Every 10 seconds, send a ping to IMAP server
-        While Not ExitRequested
+        While IMAP_Client.IsConnected
             Thread.Sleep(10000)
-            IMAP_Client.NoOp()
+            If IMAP_Client.IsConnected Then
+                IMAP_Client.NoOp()
+            Else
+                Thread.CurrentThread.Abort()
+            End If
         End While
     End Sub
 
