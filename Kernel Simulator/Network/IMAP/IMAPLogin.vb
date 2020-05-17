@@ -32,6 +32,7 @@ Module IMAPLogin
 
     Sub PromptPassword(ByVal Username As String)
         'Password
+        Wdbg("I", "Username: {0}", Username)
         IMAP_Authentication.UserName = Username
         W(DoTranslation("Enter password: ", currentLang), False, ColTypes.Input)
         IMAP_Authentication.Password = ReadLineNoInput("*")
@@ -41,11 +42,14 @@ Module IMAPLogin
         W(DoTranslation("Enter server address and port (<address> or <address>:[port]): ", currentLang), False, ColTypes.Input)
         Dim IMAP_Address As String = Console.ReadLine
         Dim IMAP_Port As Integer = 0
+        Wdbg("I", "IMAP Server: ""{0}""", IMAP_Address)
 
         'If the address is <address>:[port]
         If IMAP_Address.Contains(":") Then
+            Wdbg("I", "Found colon in address. Separating...", Username)
             IMAP_Address = IMAP_Address.Remove(IMAP_Address.IndexOf(":"))
             IMAP_Port = CInt(IMAP_Address.Substring(IMAP_Address.IndexOf(":") + 1))
+            Wdbg("I", "Final address: {0}, Final port: {1}", IMAP_Address, IMAP_Port)
         End If
 
         'Try to connect
@@ -56,13 +60,16 @@ Module IMAPLogin
         Try
             'Connection
             W(DoTranslation("Connecting to {0}...", currentLang), True, ColTypes.Neutral, Address)
+            Wdbg("I", "Connecting to {0}:{1} with SSL...", Address, Port)
             IMAP_Client.Connect(Address, Port, MailKit.Security.SecureSocketOptions.SslOnConnect)
 
             'Authentication
             W(DoTranslation("Authenticating...", currentLang), True, ColTypes.Neutral)
+            Wdbg("I", "Connection succeeded. Authenticating {0}...", IMAP_Authentication.UserName)
             IMAP_Client.Authenticate(IMAP_Authentication)
 
             'Initialize shell
+            Wdbg("I", "Authentication succeeded. Opening shell...")
             OpenShell(Address)
         Catch ex As Exception
             W(DoTranslation("Error while connecting to {0}: {1}", currentLang), True, ColTypes.Err, Address, ex.Message)
