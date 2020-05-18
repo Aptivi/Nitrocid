@@ -403,7 +403,7 @@ Public Module GetCommand
 
                 If requestedCommand <> "disconndbgdev" Then
                     If args.Count - 1 = 0 Then
-                        DisconnectDbgDevCmd(args(0))
+                        DisconnectDbgDev(args(0), True)
                         Done = True
                     End If
                 End If

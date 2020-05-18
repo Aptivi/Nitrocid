@@ -56,7 +56,7 @@ Module RemoteDebugCmd
                                          "- exit: Disconnects you from the debugger")
         ElseIf CmdName = "exit" Then
             'Exit command code
-            DisconnectDbgDev(Address)
+            DisconnectDbgDev(Address, False)
         End If
     End Sub
 End Module

@@ -149,37 +149,11 @@ Module RemoteDebugger
         End While
     End Sub
 
-    'TODO: Merge DisconnectDbgDev and DisconnectDbgDevCmd
-    ''' <summary>
-    ''' Disconnects a specified debug device (command-line version)
-    ''' </summary>
-    ''' <param name="IPAddr">An IP address of the connected debug device</param>
-    Sub DisconnectDbgDevCmd(ByVal IPAddr As String)
-        Dim Found As Boolean
-        For i As Integer = 0 To DebugDevices.Count - 1
-            If Found Then
-                Exit Sub
-            Else
-                If IPAddr = DebugDevices.Values(i) Then
-                    Wdbg("I", "Debug device {0} disconnected.", DebugDevices.Values(i))
-                    Found = True
-                    DebugDevices.Keys(i).Disconnect(True)
-                    dbgConns.Remove(dbgConns.Keys(i))
-                    DebugDevices.Remove(DebugDevices.Keys(i))
-                    W(DoTranslation("Device {0} disconnected.", currentLang), True, ColTypes.Neutral, IPAddr)
-                End If
-            End If
-        Next
-        If Not Found Then
-            W(DoTranslation("Debug device {0} not found.", currentLang), True, ColTypes.Err, IPAddr)
-        End If
-    End Sub
-
     ''' <summary>
     ''' Disconnects a specified debug device
     ''' </summary>
     ''' <param name="IPAddr">An IP address of the connected debug device</param>
-    Sub DisconnectDbgDev(ByVal IPAddr As String)
+    Sub DisconnectDbgDev(ByVal IPAddr As String, ByVal CmdLine As Boolean)
         Dim Found As Boolean
         For i As Integer = 0 To DebugDevices.Count - 1
             If Found Then
@@ -191,6 +165,7 @@ Module RemoteDebugger
                     DebugDevices.Keys(i).Disconnect(True)
                     dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
+                    If CmdLine Then W(DoTranslation("Device {0} disconnected.", currentLang), True, ColTypes.Neutral, IPAddr)
                 End If
             End If
         Next
