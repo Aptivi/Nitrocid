@@ -400,7 +400,6 @@ Public Module KernelTools
     ''' Initializes the paths
     ''' </summary>
     Sub InitPaths()
-        'TODO: Make dirs to more appropriate dirs
         If EnvironmentOSType.Contains("Unix") Then
             If Not paths.ContainsKey("Mods") Then paths.Add("Mods", Environ("HOME") + "/KSMods/")
             If Not paths.ContainsKey("Configuration") Then paths.Add("Configuration", Environ("HOME") + "/kernelConfig.ini")
