@@ -582,3 +582,19 @@ Viestin numero ei ole numeerinen arvo.
 Määritettyä viestiä ei löydy.
 Etä debug-käynnistys epäonnistui: {0}
 IMAP-komennon suorittamisessa tapahtui virhe: {0}
+Profiilien valmistelu ... Se voi viedä useita minuutteja ...
+Isäntänimi, käyttäjänimi, tietotyyppi, koodaus, salaus, protokollat
+Virhe yritettäessä suorittaa komentosarja: {0}
+Kirjoittaa tekstin konsoliin
+Tekee käyttäjän valinnat
+Piippaus 'n' Hz: ssä ja aika 'n' millisekunnissa
+missä <$muuttuja> on mikä tahansa muuttuja, jota käytetään vastauksen tallentamiseen
+Taajuuden on oltava numeerinen. Jos se on numeerinen, varmista, että se on >= 37 ja <= 32767.
+Ajan on oltava numeerinen.
+jossa <vastaukset> ovat yhden kirjaimen vastaukset kysymykseen viivoin erottuna
+Virhe yritettäessä muodostaa yhteys SSH-palvelimeen: {0}
+Tyhjä MOTD kirjautumisen jälkeen.
+Antaa käyttäjän syöttää syötteen
+Vaihtaa nykyisen postihakemiston
+Sähköpostikansiota {0} ei voi avata: {1}
+Listaa luettelot postiosoitteestasi

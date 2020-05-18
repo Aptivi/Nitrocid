@@ -582,3 +582,19 @@ raqm alrisalat lays qimatan raqmiatin.
 lm yatim aleuthur ealaa alrisalat almuhdadat.
 fashilu bad' tashih al'akhta' ean bued: {0}
 khata fi tanfidh 'amr IMAP: {0}
+jar tahdir almilaffat alshakhsia ... qad yastaghriq al'amr edt daqayiq ...
+aism almudif , aism almustakhdam , nawe albayanat , altashfir , altashfir , albrutukulat
+khata fi muhawalat tanfidh albarnamaj alnasi: {0}
+yaktub alnasi fi wahdat altahakum
+yajeal khiarat almustakhdam
+sufayr fi 'n' hrtz walwaqt fi 'n' mulaliin thany
+hayth <$variable> hu 'ay mutaghayir sayatimu aistikhdamih litakhzin alaistijaba
+yjb 'an yakun altaradud rqmyana. 'iidha kanat raqmiat , fata'akad min 'anaha >= 37 w <= 32767.
+yjb 'an yakun alwaqt rqmyana.
+hayth <alajwbt> hi 'iijabat min harf wahid lilsuwal mafsulat bikhati mayil
+khata fi muhawalat alaitisal bikhadum SSH: {0}
+MOTD farighat baed tasjil aldukhul.
+yasmah lilmustakhdam bi'iidkhal al'iidkhal
+taghyir dalil albarid alhalii
+taeadhar fath mujalad albryd {0}: {1}
+yusarid aldalayil fi eunwan baridik

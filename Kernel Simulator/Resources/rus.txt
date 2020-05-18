@@ -582,3 +582,19 @@ Nomer soobshcheniya ne yavlyayetsya chislovym znacheniyem.
 Ukazannoye soobshcheniye ne naydeno.
 Ne udalos' zapustit' udalennuyu otladku: {0}
 Oshibka pri vypolnenii komandy IMAP: {0}
+Podgotovka profiley ... Eto mozhet zanyat' neskol'ko minut ...
+Imya khosta, imya pol'zovatelya, tip dannykh, kodirovka, shifrovaniye, protokoly
+Oshibka pri popytke vypolnit' skript: {0}
+Pishet tekst v konsol'
+Delayet vybor pol'zovatelya
+Zvukovoy signal v 'n' Gts i vremya v 'n' millisekundakh
+gde <$variable> - lyubaya peremennaya, kotoraya budet ispol'zovat'sya dlya khraneniya otveta
+Chastota dolzhna byt' chislovoy. Yesli on chislovoy, ubedites', chto on >= 37 i <= 32767.
+Vremya dolzhno byt' chislovym.
+gde <otvety> - odnobukvennyye otvety na vopros, razdelennyye kosoy chertoy
+Oshibka pri popytke podklyuchit'sya k serveru SSH: {0}
+Pustoy MOTD posle vkhoda v sistemu.
+Pozvolyayet pol'zovatelyu vvodit' dannyye
+Izmenyayet tekushchiy pochtovyy katalog
+Nevozmozhno otkryt' pochtovuyu papku {0}: {1}
+Spiski katalogov v vashem pochtovom adrese

@@ -582,3 +582,19 @@ Le numéro de message n'est pas une valeur numérique.
 Le message spécifié est introuvable.
 Le débogage à distance n'a pas pu démarrer: {0}
 Erreur lors de l'exécution de la commande IMAP: {0}
+Préparation des profils ... Cela peut prendre plusieurs minutes ...
+Nom d'hôte, nom d'utilisateur, type de données, codage, cryptage, protocoles
+Erreur lors de la tentative d'exécution du script: {0}
+Écrit du texte dans la console
+Fait des choix d'utilisateur
+Bip en 'n' Hz et temps en 'n' millisecondes
+où <$variable> est une variable qui sera utilisée pour stocker la réponse
+La fréquence doit être numérique. S'il est numérique, assurez-vous qu'il est >= 37 et <= 32767.
+L'heure doit être numérique.
+où <réponses> sont des réponses à une lettre de la question séparées par des barres obliques
+Erreur lors de la tentative de connexion au serveur SSH: {0}
+MOTD vierge après la connexion.
+Permet à l'utilisateur d'entrer une entrée
+Modifie le répertoire de messagerie actuel
+Impossible d'ouvrir le dossier de messagerie {0}: {1}
+Répertorie les répertoires de votre adresse e-mail

@@ -582,3 +582,19 @@ Xabar raqami raqamli qiymat emas.
 Ko‘rsatilgan xabar topilmadi.
 Masofaviy nosozliklarni boshlab bo'lmadi: {0}
 IMAP buyrug'ini bajarishda xato: {0}
+Profil tayyorlanmoqda ... Bir necha daqiqa vaqt olishi mumkin ...
+Xost nomi, foydalanuvchi ismi, ma'lumotlar turi, kodlash, shifrlash, protokollar
+Skriptni bajarishda xatolik yuz berdi: {0}
+Matnni konsolga yozadi
+Foydalanuvchi tanlovini amalga oshiradi
+'N' Hz va 'n' millisekundda vaqtni bildiring
+bu erda <$o'zgaruvchisi> javobni saqlash uchun ishlatiladigan har qanday o'zgaruvchi
+Chastotani sonli bo'lishi kerak. Agar u raqamli bo'lsa, uning >= 37 va <= 32767 ekanligiga ishonch hosil qiling.
+Vaqt raqamli bo'lishi kerak.
+bu erda <wanswers> bir-harfli javob bo'lib, kesilgan joylarga bo'linadi
+SSH serveriga ulanishda xato: {0}
+Kirishdan keyin bo'sh MOTD.
+Foydalanuvchiga kirishga ruxsat beradi
+Joriy pochta katalogini o'zgartiradi
+{0} pochta jildini ochib bo'lmadi: {1}
+Pochta manzilingizdagi kataloglarning ro'yxati

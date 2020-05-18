@@ -582,3 +582,19 @@ Bārtā nambara ēkaṭi saṅkhyāgata māna naẏa.
 nirdiṣṭa bārtā pā'ōẏā yāẏa ni.
 Rimōṭa ḍibāga śuru karatē byartha: {0}
 IMAP kamānḍa kāryakara karatē truṭi: {0}
+Prōphā'ila tairi hacchē... Ēṭi kaẏēka miniṭa samaẏa nitē pārē...
+Hōsṭēra nāma, byabahārakārīra nāma, ḍēṭā ṭā'ipa, ēnakōḍiṁ, ēnakripaśana, prōṭōkala
+skripṭa kāryakara karāra cēṣṭā karāra samaẏa truṭi: {0}
+Kanasōlē pāṭhya likhē
+byabahārakārīra pachandaguli karē
+'ēna' hārjēḍē bīpa ēbaṁ samaẏa'ēna' milisēkēnḍē
+yēkhānē <$bhēriẏēbala> kōna'ō paribartanaśīla yā pratikriẏā sañcaẏa karatē byabahr̥ta habē
+phrikōẏēnsi abaśya'i saṅkhyāsūcaka hatē habē. Yadi ēṭi saṅkhyāsūcaka haẏa tabē tā niścita haẏē nina yē ēṭi >= 37 ēbaṁ <= 32767.
+Samaẏa abaśya'i saṅkhyāsūcaka hatē habē.
+Yēkhānē <uttara >> slyāśē pr̥thaka karā praśnēra ēka-barṇayukta uttara
+ēsa'ēsa'ē'ica sārbhārēra sāthē sanyōgēra cēṣṭā karāra samaẏa truṭi: {0}
+Laga'ina karāra parē phām̐kā MOTD.
+Byabahārakārīkē inapuṭa prabēśēra anumati dēẏa
+bartamāna mēla ḍirēkṭari paribartana karē
+mēla phōlḍāra open 0} khulatē akṣama: {1}
+Āpanāra mē'ila ​​ṭhikānāẏa ḍirēkṭari tālikā

@@ -582,3 +582,19 @@ Broj poruke nije brojčana vrijednost.
 Navedena poruka nije pronađena.
 Nije uspjelo pokretanje daljinske pogreške: {0}
 Pogreška pri izvršavanju naredbe IMAP: {0}
+Priprema profila ... To bi moglo potrajati nekoliko minuta ...
+Ime domaćina, korisničko ime, vrsta podataka, kodiranje, šifriranje, protokoli
+Pogreška prilikom pokušaja izvršavanja skripte: {0}
+Piše tekst u konzolu
+Odlučuje o izboru korisnika
+Bip u 'n' Hz i vrijeme u 'n' milisekundi
+gdje je <$varijabla> bilo koja varijabla koja će se koristiti za spremanje odgovora
+Učestalost mora biti numerička. Ako je numerički, provjerite da je >= 37 i <= 32767.
+Vrijeme mora biti brojčano.
+gdje su <answers> jednoslojni odgovori na pitanje odvojeni koso
+Pogreška pri pokušaju povezivanja na SSH poslužitelj: {0}
+Prazan MOTD nakon prijave.
+Omogućuje korisniku da unese unos
+Mijenja trenutni direktorij pošte
+Nije moguće otvoriti mapu pošte {0}: {1}
+Navodi adrese u vašoj adresi e-pošte

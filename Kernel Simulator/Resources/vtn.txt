@@ -582,3 +582,19 @@ Số tin nhắn không phải là một giá trị số.
 Tin nhắn được chỉ định không được tìm thấy.
 Gỡ lỗi từ xa không bắt đầu: {0}
 Lỗi khi thực thi lệnh IMAP: {0}
+Chuẩn bị hồ sơ ... Có thể mất vài phút ...
+Tên máy chủ, tên người dùng, loại dữ liệu, mã hóa, mã hóa, giao thức
+Lỗi khi cố thực thi tập lệnh: {0}
+Viết văn bản vào bảng điều khiển
+Làm cho người dùng lựa chọn
+Tiếng bíp trong 'n' Hz và thời gian tính bằng 'n' mili giây
+trong đó <$biến> là bất kỳ biến nào sẽ được sử dụng để lưu trữ phản hồi
+Tần số phải là số. Nếu là số, hãy đảm bảo rằng đó là >= 37 và <= 32767.
+Thời gian phải là số.
+trong đó <answer> là các câu trả lời một chữ cái của câu hỏi được phân tách bằng dấu gạch chéo
+Lỗi khi cố gắng kết nối với máy chủ SSH: {0}
+Trống MOTD sau khi đăng nhập.
+Cho phép người dùng nhập dữ liệu đầu vào
+Thay đổi thư mục thư hiện tại
+Không thể mở thư mục thư {0}: {1}
+Liệt kê các thư mục trong địa chỉ mail của bạn

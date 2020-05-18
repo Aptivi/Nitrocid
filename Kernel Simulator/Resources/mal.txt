@@ -582,3 +582,19 @@ Nombor mesej bukan nilai angka.
 Mesej yang ditentukan tidak dijumpai.
 Debug jarak jauh gagal dimulakan: {0}
 Ralat semasa melaksanakan arahan IMAP: {0}
+Menyiapkan profil ... Mungkin memerlukan beberapa minit ...
+Nama Hos, Nama Pengguna, Jenis Data, Pengekodan, Penyulitan, Protokol
+Ralat semasa menjalankan skrip: {0}
+Menulis teks ke dalam konsol
+Membuat pilihan pengguna
+Bip dalam 'n' Hz dan masa dalam 'n' milisaat
+di mana <$variabel> adalah sebarang pemboleh ubah yang akan digunakan untuk menyimpan tindak balas
+Kekerapan mestilah berangka. Sekiranya ia berangka, pastikan bahawa ia adalah >= 37 dan <= 32767.
+Masa mesti berangka.
+di mana <answers> adalah jawapan satu huruf bagi soalan yang dipisahkan dalam garis miring
+Ralat semasa menyambung ke pelayan SSH: {0}
+MOTD Kosong Selepas Masuk.
+Membolehkan pengguna memasukkan input
+Menukar direktori mel semasa
+Tidak dapat membuka folder mel {0}: {1}
+Menyenaraikan direktori di alamat mel anda

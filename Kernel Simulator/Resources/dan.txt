@@ -582,3 +582,19 @@ Meddelelsesnummer er ikke en numerisk værdi.
 Den angivne meddelelse findes ikke.
 Fjern debug startede ikke: {0}
 Fejl ved udførelse af IMAP-kommando: {0}
+Klargøring af profiler ... Det kan tage flere minutter ...
+Værtsnavn, brugernavn, datatype, kodning, kryptering, protokoller
+Fejl ved forsøg på at udføre script: {0}
+Skriver tekst til konsollen
+Gør brugervalg
+Bip i 'n' Hz og tid i 'n' millisekunder
+hvor <$variabel> er en hvilken som helst variabel, der vil blive brugt til at gemme respons
+Frekvensen skal være numerisk. Hvis det er numerisk, skal du sikre dig, at det er >= 37 og <= 32767.
+Tiden skal være numerisk.
+hvor <besvar> er et-bogstavet svar på spørgsmålet adskilt i skråstreger
+Fejl ved forsøg på at oprette forbindelse til SSH-server: {0}
+Blank MOTD Efter login.
+Tillader bruger at indtaste input
+Ændrer det aktuelle mail-bibliotek
+Kan ikke åbne e-mail-mappen {0}: {1}
+Viser mapper i din mail-adresse

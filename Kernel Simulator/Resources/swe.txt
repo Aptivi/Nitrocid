@@ -582,3 +582,19 @@ Meddelandenumret är inte ett numeriskt värde.
 Meddelandet som anges hittades inte.
 Fjärrfelsökning kunde inte starta: {0}
 Fel vid körning av IMAP-kommando: {0}
+Förbereder profiler ... Det kan ta flera minuter ...
+Värdnamn, användarnamn, datatyp, kodning, kryptering, protokoll
+Fel vid försök att köra skript: {0}
+Skriver text i konsolen
+Gör användarval
+Pipa i 'n' Hz och tid i 'n' millisekunder
+där <$variabel> är alla variabler som kommer att användas för att lagra svar
+Frekvensen måste vara numerisk. Om det är numeriskt, se till att det är >= 37 och <= 32767.
+Tiden måste vara numerisk.
+där <svar> är enbokstävera svar på frågan separerade i snedstreck
+Fel vid försök att ansluta till SSH-servern: {0}
+Tom MOTD efter inloggning.
+Tillåter användaren att ange ingång
+Ändrar aktuell postkatalog
+Det går inte att öppna e-postmappen {0}: {1}
+Listar kataloger i din e-postadress

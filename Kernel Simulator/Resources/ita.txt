@@ -582,3 +582,19 @@ Il numero del messaggio non è un valore numerico.
 Il messaggio specificato non è stato trovato.
 Impossibile avviare il debug remoto: {0}
 Errore durante l'esecuzione del comando IMAP: {0}
+Preparazione dei profili ... Potrebbero essere necessari diversi minuti ...
+Nome host, nome utente, tipo di dati, codifica, crittografia, protocolli
+Errore durante il tentativo di eseguire lo script: {0}
+Scrive il testo nella console
+Fa le scelte dell'utente
+Segnale acustico in 'n' Hz e tempo in 'n' millisecondi
+dove <$ variabile> è qualsiasi variabile che verrà utilizzata per memorizzare la risposta
+La frequenza deve essere numerica. Se è numerico, assicurarsi che sia> = 37 e <= 32767.
+Il tempo deve essere numerico.
+dove <risposte> sono le risposte di una lettera della domanda separate da barre
+Errore durante il tentativo di connessione al server SSH: {0}
+MOTD vuoto dopo l'accesso.
+Consente all'utente di inserire input
+Cambia la directory di posta corrente
+Impossibile aprire la cartella di posta {0}: {1}
+Elenca le directory nel tuo indirizzo e-mail

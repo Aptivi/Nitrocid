@@ -582,3 +582,19 @@ Message number is not a numeric value.
 Message specified is not found.
 Remote debug failed to start: {0}
 Error executing IMAP command: {0}
+Preparing profiles... It could take several minutes...
+Host Name, Username, Data Type, Encoding, Encryption, Protocols
+Error trying to execute script: {0}
+Writes text into the console
+Makes user choices
+Beep in 'n' Hz and time in 'n' milliseconds
+where <$variable> is any variable that will be used to store response
+Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767.
+Time must be numeric.
+where <answers> are one-lettered answers of the question separated in slashes
+Error trying to connect to SSH server: {0}
+Blank MOTD After Login.
+Allows user to enter input
+Changes current mail directory
+Unable to open mail folder {0}: {1}
+Lists directories in your mail address

@@ -582,3 +582,19 @@ Mesaj numarası sayısal bir değer değil.
 Belirtilen mesaj bulunamadı.
 Uzaktan hata ayıklama başlatılamadı: {0}
 IMAP komutu yürütülürken hata oluştu: {0}
+Profiller hazırlanıyor ... Birkaç dakika sürebilir ...
+Ana Bilgisayar Adı, Kullanıcı Adı, Veri Türü, Kodlama, Şifreleme, Protokoller
+Komut dosyası yürütülmeye çalışılırken hata oluştu: {0}
+Konsola metin yazar
+Kullanıcı seçimlerini yapar
+'N' Hz'de bip sesi ve 'n' milisaniye cinsinden süre
+burada <$değişken> yanıtı depolamak için kullanılacak herhangi bir değişkendir
+Frekans sayısal olmalıdır. Sayısalsa, >= 37 ve <= 32767 olduğundan emin olun.
+Zaman sayısal olmalıdır.
+burada <answers> eğik çizgilerle ayrılmış sorunun tek harfli cevaplarıdır
+SSH sunucusuna bağlanmaya çalışırken hata oluştu: {0}
+Giriş yaptıktan sonra boş MOTD.
+Kullanıcının giriş girmesine izin verir
+Geçerli posta dizinini değiştirir
+{0} posta klasörü açılamıyor: {1}
+Posta adresinizdeki dizinleri listeler

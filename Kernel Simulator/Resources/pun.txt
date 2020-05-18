@@ -582,3 +582,19 @@ Sunēhā nabara ika sakhi'ātamaka mula nahīṁ hai.
 ditā sunēhā nahīṁ mili'ā hai.
 Rimōṭa ḍībaga arabha karana vica asaphala: {0}
 IMAP kamāṇḍa calā'uṇa daurāna galatī: {0}
+Prōphā'īla ti'āra kara rihā hai... Isa vica ka'īṁ miṭa laga sakadē hana...
+Hōsaṭa dā nāma, upabhōgatā nāma, ḍēṭā prakāra, ainakōḍiga, inakripaśana, prōṭōkōla
+sakripaṭa nū calā'uṇa dī kōśiśa daurāna galatī: {0}
+Kasōla vica ṭaikasaṭa likhadā hai
+upabhōgatā dī'āṁ cōṇāṁ karadā hai
+'aina' harajaṭa vica bīpa atē samāṁ'aina' milīsakiṭa vica
+jithē ki <$vērī'ēbala> kō'ī vī vērī'ēbala hai jō javāba nū saṭōra karana la'ī varati'ā jā'ēgā
+bārabāratā sakhi'ātamaka hōṇī cāhīdī hai. Jē iha sakhi'ātamaka hai, tāṁ iha suniśacita karō ki iha >= 37 atē <= 32767 hai.
+Samāṁ sakhi'ātamaka hōṇā cāhīdā hai.
+Jithē <utara> salaiśa vica vakharē praśana dē ika-akhara utara hana
+SSH saravara nāla juṛana dī kōśiśa daurāna galatī: {0}
+Lauga'ina tōṁ bā'ada khālī mōṭa.
+Upabhōgatā nū ipuṭa dākhala hōṇa dī āgi'ā didā hai
+maujūdā mēla ḍā'iraikaṭarī badaladī hai
+mēla phōlaḍara to 0}: {1 Open khōl'haṇa vica asamaratha
+tuhāḍē mēla patē vica ḍā'iraikaṭarī'āṁ dī sūcī hai

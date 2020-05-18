@@ -582,3 +582,19 @@ Numer wiadomości nie jest wartością liczbową.
 Określona wiadomość nie została znaleziona.
 Nie można uruchomić zdalnego debugowania: {0}
 Błąd podczas wykonywania polecenia IMAP: {0}
+Przygotowywanie profili ... Może to potrwać kilka minut ...
+Nazwa hosta, nazwa użytkownika, typ danych, kodowanie, szyfrowanie, protokoły
+Błąd podczas próby wykonania skryptu: {0}
+Zapisuje tekst w konsoli
+Dokonuje wyborów użytkownika
+Sygnał dźwiękowy w 'n' Hz i czas w 'n' milisekundach
+gdzie <$zmienna> to dowolna zmienna, która zostanie użyta do przechowywania odpowiedzi
+Częstotliwość musi być liczbowa. Jeśli jest liczbowy, upewnij się, że jest >= 37 i <= 32767.
+Czas musi być liczbowy.
+gdzie <odpowiedzi> to jednoliterowe odpowiedzi na pytanie rozdzielone ukośnikami
+Błąd podczas próby połączenia z serwerem SSH: {0}
+Pusty MOTD po zalogowaniu.
+Pozwala użytkownikowi wprowadzić dane wejściowe
+Zmienia bieżący katalog poczty
+Nie można otworzyć folderu poczty {0}: {1}
+Wyświetla katalogi w twoim adresie e-mail

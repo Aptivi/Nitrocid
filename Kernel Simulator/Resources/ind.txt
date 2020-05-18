@@ -582,3 +582,19 @@ sandesh sankhya ek sankhyaatmak maan nahin hai.
 nirdisht sandesh nahin mila hai.
 doorasth deebag praarambh karane mein viphal: {0}
 imap kamaand nishpaadit karane mein truti: {0}
+profail taiyaar kar raha hai ... isamen kaee minat lag sakate hain ...
+host naam, upayogakarta naam, deta prakaar, enkoding, enkripshan, protokol
+skript nishpaadit karane mein truti: {0}
+kansol mein tekst likhata hai
+upayogakarta kee pasand banaata hai
+n hartj mein beep aur n mileesekand mein samay
+jahaan <$char> koee bhee char hai jisaka upayog pratikriya ko sangraheet karane ke lie kiya jaega
+phreekvensee nyoomerik honee chaahie. yadi yah sankhyaatmak hai, to sunishchit karen ki yah >= 37 aur <= 32767 hai.
+samay saankhyik hona chaahie.
+jahaan <uttar> prashn ke ek-akshar vaale uttar ko slaish mein alag kiya jaata hai
+ssh sarvar se kanekt karane ka prayaas karane mein truti: {0}
+login ke baad khaalee mataka.
+upayogakarta ko inaput darj karane kee anumati deta hai
+vartamaan mel nirdeshika ko badalata hai
+mel foldar kholane mein asamarth {0}: {1}
+apane mel pate mein nirdeshikaon ko soocheebaddh karata hai

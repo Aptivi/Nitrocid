@@ -582,3 +582,19 @@ Stránka nie je číselná hodnota.
 Zadaná správa sa nenašla.
 Spustenie vzdialeného ladenia zlyhalo: {0}
 Chyba pri vykonávaní príkazu IMAP: {0}
+Priprava profilov ... Lahko traja nekaj minut ...
+Ime gostitelja, uporabniško ime, vrsta podatkov, kodiranje, šifriranje, protokoli
+Napaka pri poskusu izvajanja skripta: {0}
+Besedilo napiše v konzolo
+Izbira uporabnika
+Beep v 'n' Hz in čas v 'n' milisekundah
+kjer je <$spremenljivka> vsaka spremenljivka, ki bo uporabljena za shranjevanje odgovora
+Pogostost mora biti številčna. Če je številčna, se prepričajte, da je >= 37 in <= 32767.
+Čas mora biti številčen.
+kjer so <answers> enoodgovorni odgovori na vprašanje, ločeno v poševnicah
+Napaka pri poskusu povezave s strežnikom SSH: {0}
+Prazen MOTD po prijavi.
+Uporabniku omogoča vnos vnosa
+Spremeni trenutni imenik pošte
+Mape poštnih sporočil ni mogoče odpreti {0}: {1}
+Navaja imenike v vašem e-poštnem naslovu

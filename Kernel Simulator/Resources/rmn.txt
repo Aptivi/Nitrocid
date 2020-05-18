@@ -582,3 +582,19 @@ Numărul mesajului nu este o valoare numerică.
 Mesajul specificat nu este găsit.
 Debugul la distanță nu a reușit: {0}
 Eroare la executarea comenzii IMAP: {0}
+Pregătirea profilurilor ... Poate dura câteva minute ...
+Nume gazdă, nume de utilizator, tip de date, codificare, criptare, protocoale
+Eroare la încercarea de a executa scriptul: {0}
+Scrie text în consolă
+Face alegeri pentru utilizatori
+Sună în 'n' Hz și timp în 'n' milisecunde
+unde <$variabilă> este orice variabilă care va fi folosită pentru stocarea răspunsului
+Frecvența trebuie să fie numerică. Dacă este numerică, asigurați-vă că este >= 37 și <= 32767.
+Timpul trebuie să fie numeric.
+unde <answers> sunt răspunsuri cu o singură literă a întrebării, separate în linii clare
+Eroare la încercarea de conectare la serverul SSH: {0}
+Blank MOTD după autentificare.
+Permite utilizatorului să intre
+Modifică directorul de e-mail curent
+Imposibil de deschis folderul de e-mail {0}: {1}
+Listează directoarele din adresa dvs. de e-mail

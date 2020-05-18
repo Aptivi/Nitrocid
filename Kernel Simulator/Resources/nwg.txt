@@ -582,3 +582,19 @@ Meldingsnummer er ikke en numerisk verdi.
 Melding angitt er ikke funnet.
 Ekstern debug kunne ikke starte: {0}
 Feil ved utføring av IMAP-kommando: {0}
+Forbereder profiler ... Det kan ta flere minutter ...
+Vertsnavn, brukernavn, datatype, koding, kryptering, protokoller
+Feil ved forsøk på å utføre skript: {0}
+Skriver tekst inn i konsollen
+Gjør brukervalg
+Pip i 'n' Hz og tid i 'n' millisekunder
+der <$variabel> er en hvilken som helst variabel som vil bli brukt til å lagre respons
+Frekvensen må være numerisk. Hvis den er numerisk, må du forsikre deg om at den er >= 37 og <= 32767.
+Tiden må være numerisk.
+der <svar> er enbokstret svar på spørsmålet atskilt i skråstreker
+Feil ved forsøk på å koble til SSH-serveren: {0}
+Blank MOTD etter innlogging.
+Lar brukeren legge inn innspill
+Endrer gjeldende postkatalog
+Kan ikke åpne postmappen {0}: {1}
+Viser kataloger i postadressen din

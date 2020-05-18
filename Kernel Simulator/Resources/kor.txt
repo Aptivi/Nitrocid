@@ -582,3 +582,19 @@ mesiji beonhoneun susja gabs-i anibnida.
 jijeongdoen mesijileul chaj-eul su eobs-seubnida.
 wongyeog dibeogeuleul sijaghaji moshaessseubnida : {0}
 IMAP myeonglyeong silhaeng jung olyu : {0}
+peulopil junbi jung ... myeoch bun-i geollil su issseubnida ...
+hoseuteu ileum, sayongja ileum, deiteo yuhyeong, inkoding, amhohwa, peulotokol
+seukeulibteuleul silhaenghaneun dong-an olyuga balsaenghaessseubnida : {0}
+konsol-e tegseuteuleul sseubnida
+sayongja seontaeg
+'n'Hzui sinho-eum mich 'n'milli choui sigan
+yeogiseo <$variable> eun eungdab-eul jeojanghaneun de sayongdoel byeonsu-ibnida.
+bindoneun susja yeoyahabnida. susja in gyeong-u >= 37 mich <= 32767inji hwag-inhasibsio.
+sigan-eun susja yeoyahabnida.
+yeogiseo <answers>neun seullaesilo gubun doen jilmun-e daehan hangeul dabbyeon-ibnida.
+SSH seobeoe yeongyeolhaneun jung olyuga balsaenghaessseubnida : {0}
+logeu-in hu bin MOTD.
+sayongjaga iblyeog-eul iblyeog hal su issseubnida
+hyeonjae meil dilegtolileul byeongyeonghabnida
+meil poldeo {0}eul (leul) yeol su eobs-seubnida : {1}
+meil juso-e dilegtolileul nayeolhabnida

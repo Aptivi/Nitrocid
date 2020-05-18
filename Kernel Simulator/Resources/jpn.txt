@@ -582,3 +582,19 @@ Messēji bangō wa sūchide wa arimasen.
 shitei sa reta messēji ga mitsukarimasen.
 Rimōtodebaggu o kaishi dekimasendeshita: {0}
 Aimappu komando no jikkō erā: {0}
+Purofairu o junbi shite imasu...Sū-bu kakaru baai ga arimasu...
+Hosuto-mei, yūzā-mei, dētataipu, enkōdingu, angō-ka, purotokoru
+sukuriputo no jikkō-chū ni erā ga hassei shimashita: {0}
+Konsōru ni tekisuto o kakikomimasu
+yūzā no sentaku o okonaimasu
+`n ' Hz no bīpu-on to `n ' miri byō no jikan
+koko de,<$vu~ariaburu> wa, ōtō o kakunō suru tame ni shiyō sa reru nin'i no hensūdesu
+hindo wa sūchidenakereba narimasen. Sūchi no baai wa, 37 ijō katsu 32767 ikadearu koto o kakuninshitekudasai.
+-Jikan wa sūchidenakereba narimasen.
+<Answers> wa, surasshu de kugira reta shitsumon no 1 moji no kaitōdesu.
+SSH sābā ni setsuzoku shiyou to shite erā ga hassei shimashita: {0}
+Roguin-go no kūhaku no MOTD.
+Yūzā ga nyūryoku o nyūryoku dekiru yō ni shimasu
+genzai no mērudirekutori o henkō shimasu
+mēruforuda {0} o akemasen: {1}
+Mēruadoresu no direkutori o ichiran hyōji shimasu

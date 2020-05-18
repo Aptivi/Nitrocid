@@ -582,3 +582,19 @@ Berichtnummer is geen numerieke waarde.
 Het opgegeven bericht is niet gevonden.
 Foutopsporing op afstand kan niet starten: {0}
 Fout bij het uitvoeren van IMAP-opdracht: {0}
+Profielen voorbereiden ... Het kan enkele minuten duren ...
+Hostnaam, gebruikersnaam, gegevenstype, codering, codering, protocollen
+Fout bij het uitvoeren van script: {0}
+Schrijft tekst in de console
+Maakt keuzes voor gebruikers
+Piept in 'n' Hz en tijd in 'n' milliseconden
+waarbij <$variabele> elke variabele is die zal worden gebruikt om de reactie op te slaan
+Frequentie moet numeriek zijn. Als het numeriek is, zorg er dan voor dat het >= 37 en <= 32767 is.
+Tijd moet numeriek zijn.
+waar <antwoorden> zijn antwoorden met één letter van de vraag, gescheiden door schuine strepen
+Fout bij verbinding maken met SSH-server: {0}
+Leeg MOTD na inloggen.
+Hiermee kan de gebruiker invoer invoeren
+Verandert de huidige mail directory
+Kan e-mailmap niet openen {0}: {1}
+Geeft mappen in uw e-mailadres weer

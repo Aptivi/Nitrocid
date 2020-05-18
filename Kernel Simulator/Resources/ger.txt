@@ -582,3 +582,19 @@ Die Nachrichtennummer ist kein numerischer Wert.
 Die angegebene Nachricht wurde nicht gefunden.
 Remote-Debug konnte nicht gestartet werden: {0}
 Fehler beim Ausführen des IMAP-Befehls: {0}
+Profile vorbereiten ... Es kann einige Minuten dauern ...
+Hostname, Benutzername, Datentyp, Codierung, Verschlüsselung, Protokolle
+Fehler beim Ausführen des Skripts: {0}
+Schreibt Text in die Konsole
+Trifft Benutzerauswahl
+Piepton in 'n' Hz und Zeit in 'n' Millisekunden
+Dabei ist <$variable> eine beliebige Variable, die zum Speichern der Antwort verwendet wird
+Die Frequenz muss numerisch sein. Wenn es numerisch ist, stellen Sie sicher, dass es >= 37 und <= 32767 ist.
+Die Zeit muss numerisch sein.
+Dabei sind <Antworten> Antworten mit einem Buchstaben auf die Frage, die durch Schrägstriche getrennt sind
+Fehler beim Versuch, eine Verbindung zum SSH-Server herzustellen: {0}
+Leere MOTD nach dem Login.
+Ermöglicht dem Benutzer die Eingabe
+Ändert das aktuelle Mail-Verzeichnis
+E-Mail-Ordner {0} kann nicht geöffnet werden: {1}
+Listet Verzeichnisse in Ihrer E-Mail-Adresse auf

@@ -582,3 +582,19 @@ El número de mensaje no es un valor numérico.
 El mensaje especificado no se encuentra.
 Error al iniciar la depuración remota: {0}
 Error al ejecutar el comando IMAP: {0}
+Preparando perfiles ... Podría tomar varios minutos ...
+Nombre de host, nombre de usuario, tipo de datos, codificación, cifrado, protocolos
+Error al intentar ejecutar el script: {0}
+Escribe texto en la consola
+Hace elecciones de usuario
+Pitido en 'n' Hz y tiempo en 'n' milisegundos
+donde <$variable> es cualquier variable que se utilizará para almacenar la respuesta
+La frecuencia debe ser numérica. Si es numérico, asegúrese de que sea >= 37 y <= 32767.
+El tiempo debe ser numérico.
+donde <answers> son respuestas con una letra de la pregunta separadas en barras
+Error al intentar conectarse al servidor SSH: {0}
+MOTD en blanco después de iniciar sesión.
+Permite al usuario ingresar la entrada
+Cambia el directorio de correo actual
+No se puede abrir la carpeta de correo {0}: {1}
+Enumera directorios en su dirección de correo

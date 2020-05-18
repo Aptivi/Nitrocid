@@ -582,3 +582,19 @@ Xiāoxī hào bùshì shùzì zhí.
 zhǎo bù dào zhǐdìng de xiāoxī.
 Yuǎnchéng tiáoshì wúfǎ qǐdòng:{0}
 Zhíxíng IMAP mìnglìng shí chūcuò:{0}
+Zhèngzài zhǔnbèi gèrén zīliào... Kěnéng xūyào jǐ fēnzhōng de shíjiān...
+Zhǔjī míng, yònghù míng, shùjù lèixíng, biānmǎ, jiāmì, xiéyì
+chángshì zhíxíng jiǎoběn shí chūcuò:{0}
+Jiāng wénběn xiě rù kòngzhì tái
+zuò chū yònghù xuǎnzé
+fāchū “n” hèzī de fēng míng, yǐ “n” háomiǎo wèi dānwèi de shíjiān
+qízhōng <$variable>shì jiāng yòng yú cúnchú xiǎngyìng de rènhé biànliàng
+pínlǜ bìxū shì shùzì. Rúguǒ shì shùzì, qǐng quèbǎo tā shì >= 37 hé <= 32767.
+Shíjiān bìxū shì shùzì.
+Qízhōng <answers>shì yòng xié gāng fēngé de wèntí de zìmǔ dá'àn
+chángshì liánjiē SSH fúwùqì shí chūcuò:{0}
+Dēnglù hòu wèi kòngbái MOTD.
+Yǔnxǔ yònghù shūrù shūrù
+gēnggǎi dāngqián yóujiàn mùlù
+wúfǎ dǎkāi yóujiàn wénjiàn jiā {0}:{1}
+Liè chū nín de yóujiàn dìzhǐ zhōng de mùlù

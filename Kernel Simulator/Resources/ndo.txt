@@ -582,3 +582,19 @@ Nomor pesan bukan nilai numerik.
 Pesan yang ditentukan tidak ditemukan.
 Debug jarak jauh gagal memulai: {0}
 Kesalahan saat menjalankan perintah IMAP: {0}
+Mempersiapkan profil ... Mungkin perlu beberapa menit ...
+Nama Host, Nama Pengguna, Tipe Data, Pengkodean, Enkripsi, Protokol
+Kesalahan saat mencoba menjalankan skrip: {0}
+Menulis teks ke konsol
+Membuat pilihan pengguna
+Bip dalam 'n' Hz dan waktu dalam 'n' milidetik
+di mana <$variabel> adalah variabel apa pun yang akan digunakan untuk menyimpan respons
+Frekuensi harus berupa angka. Jika ini numerik, pastikan itu >= 37 dan <= 32767.
+Waktu harus numerik.
+di mana <answer> adalah jawaban satu huruf dari pertanyaan yang dipisahkan menjadi garis miring
+Kesalahan saat mencoba terhubung ke server SSH: {0}
+MOTD Kosong Setelah Masuk.
+Mengizinkan pengguna memasukkan input
+Mengubah direktori email saat ini
+Tidak dapat membuka folder email {0}: {1}
+Daftar direktori di alamat email Anda

@@ -582,3 +582,19 @@ Stránka není číselná hodnota.
 Zadaná zpráva nebyla nalezena.
 Spuštění vzdáleného ladění se nezdařilo: {0}
 Chyba při provádění příkazu IMAP: {0}
+Příprava profilů ... Může to trvat několik minut ...
+Název hostitele, uživatelské jméno, typ dat, kódování, šifrování, protokoly
+Chyba při pokusu o spuštění skriptu: {0}
+Zapíše text do konzole
+Umožňuje výběr uživatelů
+Pípněte v 'n' Hz a čas v 'n' milisekundách
+kde <$proměnná> je libovolná proměnná, která bude použita k uložení odpovědi
+Frekvence musí být číselná. Pokud je číselný, ujistěte se, že je >= 37 a <= 32767.
+Čas musí být číselný.
+kde <answer> jsou jednopísmenné odpovědi na otázku oddělenou lomítky
+Chyba při pokusu o připojení k serveru SSH: {0}
+Prázdné MOTD po přihlášení.
+Umožňuje uživateli zadat vstup
+Změní aktuální poštovní adresář
+Nelze otevřít poštovní složku {0}: {1}
+Uvádí adresáře ve vaší e-mailové adrese
