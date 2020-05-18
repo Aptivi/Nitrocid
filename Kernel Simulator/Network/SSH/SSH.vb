@@ -17,6 +17,12 @@
 
 Module SSH
 
+    ''' <summary>
+    ''' Opens a session to specified address using the specified port and the username
+    ''' </summary>
+    ''' <param name="Address">An IP address or hostname</param>
+    ''' <param name="Port">A port of the SSH server. It's usually 22</param>
+    ''' <param name="Username">A username to authenticate with</param>
     Sub InitializeSSH(ByVal Address As String, ByVal Port As Integer, ByVal Username As String)
         Try
             'Authentication

@@ -23,12 +23,19 @@ Module MOTDParse
     Public MOTDStreamW As IO.StreamWriter
     Public MOTDFilePath, MALFilePath As String
 
-    'Enumerators (Type of message)
+    ''' <summary>
+    ''' Types of message
+    ''' </summary>
     Public Enum MessageType As Integer
         MOTD = 1
         MAL = 2
     End Enum
 
+    ''' <summary>
+    ''' Sets the Message of the Day or MAL
+    ''' </summary>
+    ''' <param name="MOTD">A message of the day before/after login</param>
+    ''' <param name="MType">Message type</param>
     Public Sub SetMOTD(ByVal MOTD As String, ByVal MType As MessageType)
         Try
             MOTDFilePath = paths("Home") + "/MOTD.txt"
@@ -59,6 +66,11 @@ Module MOTDParse
             WStkTrc(ex)
         End Try
     End Sub
+
+    ''' <summary>
+    ''' Reads the message of the day before/after login
+    ''' </summary>
+    ''' <param name="MType">Message type</param>
     Public Sub ReadMOTDFromFile(ByVal MType As MessageType)
         Try
             MOTDFilePath = paths("Home") + "/MOTD.txt"

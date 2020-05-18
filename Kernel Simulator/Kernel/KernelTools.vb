@@ -38,7 +38,6 @@ Public Module KernelTools
     ''' <param name="Description">Explanation of what happened when it errored.</param>
     ''' <param name="Exc">An exception to get stack traces, etc. Used for dump files currently.</param>
     ''' <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
-    ''' <remarks></remarks>
     Public Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal ParamArray Variables() As Object)
         Try
             'Unquiet
@@ -139,6 +138,12 @@ Public Module KernelTools
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Generates the stack trace dump file for kernel panics
+    ''' </summary>
+    ''' <param name="Description">Error description</param>
+    ''' <param name="ErrorType">Error type</param>
+    ''' <param name="Exc">Exception</param>
     Sub GeneratePanicDump(ByVal Description As String, ByVal ErrorType As Char, ByVal Exc As Exception)
         Try
             'Open a file stream for dump
@@ -217,7 +222,6 @@ Public Module KernelTools
     ''' Manage computer's (actually, simulated computer) power
     ''' </summary>
     ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
-    ''' <remarks></remarks>
     Public Sub PowerManage(ByVal PowerMode As String, Optional ByVal IP As String = "0.0.0.0")
         Wdbg("I", "Power management has the argument of {0}", PowerMode)
         If PowerMode = "shutdown" Then
@@ -254,7 +258,9 @@ Public Module KernelTools
     End Sub
 
     ' ----------------------------------------------- Init and reset -----------------------------------------------
-
+    ''' <summary>
+    ''' Reset everything for the next restart
+    ''' </summary>
     Sub ResetEverything()
         'Reset every variable that is resettable
         If argsInjected = False Then
@@ -305,6 +311,9 @@ Public Module KernelTools
         SafeMode = True
     End Sub
 
+    ''' <summary>
+    ''' Initializes everything
+    ''' </summary>
     Sub InitEverything()
         'Initialize help
         InitHelp()
@@ -387,6 +396,9 @@ Public Module KernelTools
         If Not Timeout.IsBusy Then Timeout.RunWorkerAsync()
     End Sub
 
+    ''' <summary>
+    ''' Initializes the paths
+    ''' </summary>
     Sub InitPaths()
         'TODO: Make dirs to more appropriate dirs
         If EnvironmentOSType.Contains("Unix") Then

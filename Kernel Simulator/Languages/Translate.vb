@@ -24,12 +24,11 @@ Public Module Translate
     Public currentLang As String = "eng" 'Default to English
 
     ''' <summary>
-    ''' Translate string into another language, or to English if the language wasn't specified or if it's invalid.
+    ''' Translates string into another language, or to English if the language wasn't specified or if it's invalid.
     ''' </summary>
     ''' <param name="text">Any string that exists in Kernel Simulator's translation files</param>
     ''' <param name="lang">3 letter language</param>
     ''' <returns>Translated string</returns>
-    ''' <remarks></remarks>
     Public Function DoTranslation(ByVal text As String, Optional ByVal lang As String = "eng") As String
         'Get language string and translate
         Dim translatedString As Dictionary(Of String, String)
@@ -58,6 +57,11 @@ Public Module Translate
         End If
     End Function
 
+    ''' <summary>
+    ''' Prepares the translation dictionary for a language
+    ''' </summary>
+    ''' <param name="lang">A specified language</param>
+    ''' <returns>A dictionary of English strings and translated strings</returns>
     Private Function PrepareDict(ByVal lang As String) As Dictionary(Of String, String)
         Dim langStrings As New Dictionary(Of String, String)
         Dim translated As String = ""
@@ -146,6 +150,11 @@ Public Module Translate
         Return langStrings
     End Function
 
+    ''' <summary>
+    ''' Sets a system language permanently
+    ''' </summary>
+    ''' <param name="lang">A specified language</param>
+    ''' <param name="Force">Force changes</param>
     Public Sub SetLang(ByVal lang As String, Optional ByVal Force As Boolean = False)
         If availableLangs.Contains(lang) Then
             Wdbg("I", "Forced {0}", Force)

@@ -22,7 +22,10 @@ Module ArgumentPrompt
     Public answerargs As String                                                     'Input for arguments
     Public AvailableArgs() As String = {"quiet", "cmdinject", "debug", "maintenance", "safe", "help"}
 
-
+    ''' <summary>
+    ''' Prompts user for arguments
+    ''' </summary>
+    ''' <param name="InjMode">Argument injection mode (usually by "arginj" command)</param>
     Sub PromptArgs(Optional ByVal InjMode As Boolean = False)
 
         'Checks if the arguments are injected

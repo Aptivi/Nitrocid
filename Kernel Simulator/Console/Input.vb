@@ -20,6 +20,7 @@ Public Module Input
     ''' <summary>
     ''' Reads the next line of characters from the standard input stream without showing input being written by user.
     ''' </summary>
+    ''' <param name="MaskChar">Specifies the password mask character</param>
     Public Function ReadLineNoInput(ByVal MaskChar As Char) As String
         Dim Final As String = ""
         While True

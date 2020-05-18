@@ -38,6 +38,9 @@ Public Module ScreensaverDisplays
     Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
     Public colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
 
+    ''' <summary>
+    ''' Handles custom screensaver code
+    ''' </summary>
     Sub Custom_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Custom.DoWork
         'To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
         '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
@@ -58,7 +61,7 @@ Public Module ScreensaverDisplays
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Custom screensaver stopped.")
                 Exit Do
@@ -68,6 +71,9 @@ Public Module ScreensaverDisplays
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of ColorMix
+    ''' </summary>
     Sub ColorMix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles ColorMix.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.White
@@ -83,7 +89,7 @@ Public Module ScreensaverDisplays
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Mix Colors screensaver stopped.")
                 Exit Do
@@ -93,6 +99,9 @@ Public Module ScreensaverDisplays
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of Matrix
+    ''' </summary>
     Sub Matrix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Matrix.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.Green
@@ -107,7 +116,7 @@ Public Module ScreensaverDisplays
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Matrix screensaver stopped.")
                 Exit Do
@@ -118,6 +127,9 @@ Public Module ScreensaverDisplays
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of Disco
+    ''' </summary>
     Sub Disco_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Disco.DoWork
         Console.CursorVisible = False
         Dim random As New Random()
@@ -130,7 +142,7 @@ Public Module ScreensaverDisplays
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Disco screensaver stopped.")
                 Exit Do
@@ -142,6 +154,9 @@ Public Module ScreensaverDisplays
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of Lines
+    ''' </summary>
     Sub Lines_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Lines.DoWork
         Console.CursorVisible = False
         Dim random As New Random()
@@ -155,7 +170,7 @@ Public Module ScreensaverDisplays
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Lines screensaver stopped.")
                 Exit Do
@@ -174,6 +189,9 @@ Public Module ScreensaverDisplays
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of Glitter Matrix
+    ''' </summary>
     Sub GlitterMatrix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles GlitterMatrix.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.Green
@@ -189,7 +207,7 @@ Public Module ScreensaverDisplays
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Glitter Matrix screensaver stopped.")
                 Exit Do
@@ -203,6 +221,9 @@ Public Module ScreensaverDisplays
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of APT Error Sim
+    ''' </summary>
     Sub AptErrorSim_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles AptErrorSim.DoWork
         Console.CursorVisible = False
         Do While True
@@ -215,7 +236,7 @@ IFCANCEL:
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. apt Error Simulator screensaver stopped.")
                 Exit Do
@@ -294,6 +315,9 @@ IFCANCEL:
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of Hack User from AD simulator
+    ''' </summary>
     Sub HackUserFromAD_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles HackUserFromAD.DoWork
         Do While True
             Thread.Sleep(1000)
@@ -305,7 +329,7 @@ IFCANCEL:
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Hacking Simulator for Active Domain users screensaver stopped.")
                 Exit Do
@@ -432,6 +456,9 @@ IFCANCEL:
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of Glitter Colors
+    ''' </summary>
     Sub GlitterColor_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles GlitterColor.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.Clear()
@@ -446,7 +473,7 @@ IFCANCEL:
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Glitter Color screensaver stopped.")
                 Exit Do
@@ -461,6 +488,9 @@ IFCANCEL:
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of Color Mix 255
+    ''' </summary>
     Sub ColorMix255_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles ColorMix255.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.White
@@ -476,7 +506,7 @@ IFCANCEL:
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Mix 255 Colors screensaver stopped.")
                 Exit Do
@@ -488,6 +518,9 @@ IFCANCEL:
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of Glitter Colors 255
+    ''' </summary>
     Sub GlitterColor255_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles GlitterColor255.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.Clear()
@@ -502,7 +535,7 @@ IFCANCEL:
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Glitter 255 Colors screensaver stopped.")
                 Exit Do
@@ -518,6 +551,9 @@ IFCANCEL:
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of Disco 255
+    ''' </summary>
     Sub Disco255_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Disco255.DoWork
         Console.CursorVisible = False
         Dim random As New Random
@@ -530,7 +566,7 @@ IFCANCEL:
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Disco 255 screensaver stopped.")
                 Exit Do
@@ -543,6 +579,9 @@ IFCANCEL:
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Handles the code of Lines 255
+    ''' </summary>
     Sub Lines255_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Lines255.DoWork
         Console.CursorVisible = False
         Dim random As New Random
@@ -556,7 +595,7 @@ IFCANCEL:
                 Dim esc As Char = GetEsc()
                 Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                Load()
+                LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Lines 255 screensaver stopped.")
                 Exit Do

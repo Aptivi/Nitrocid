@@ -29,6 +29,9 @@ Public Module Login
     Public signedinusrnm As String                              'Username that is signed in
     Private showMOTDOnceFlag As Boolean = True                  'Show MOTD every LoginPrompt() session
 
+    ''' <summary>
+    ''' Prompts user for login information
+    ''' </summary>
     Sub LoginPrompt()
         While True
             'Check to see if the reboot is requested
@@ -94,7 +97,11 @@ Public Module Login
         End While
     End Sub
 
-    Sub ShowPasswordPrompt(ByVal usernamerequested As String)
+    ''' <summary>
+    ''' Prompts user for password
+    ''' </summary>
+    ''' <param name="usernamerequested">A username that is about to be logged in</param>
+    Public Sub ShowPasswordPrompt(ByVal usernamerequested As String)
         'Error handler
         On Error Resume Next
 
@@ -150,6 +157,10 @@ Public Module Login
 
     End Sub
 
+    ''' <summary>
+    ''' Signs in to the username
+    ''' </summary>
+    ''' <param name="signedInUser">A specified username</param>
     Public Sub SignIn(ByVal signedInUser As String)
 
         'Release lock

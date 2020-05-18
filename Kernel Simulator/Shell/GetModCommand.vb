@@ -18,6 +18,10 @@
 
 Module GetModCommand
 
+    ''' <summary>
+    ''' Executes the command provided by a mod
+    ''' </summary>
+    ''' <param name="cmd">A mod command with arguments</param>
     Sub ExecuteModCommand(ByVal cmd As String)
 
         Dim parts As String() = cmd.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)

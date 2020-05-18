@@ -20,6 +20,13 @@ Imports System.IO
 
 Module RemoteDebugCmd
     Public DebugCmds As String() = {"trace", "username", "help", "exit"}
+
+    ''' <summary>
+    ''' Client command parsing.
+    ''' </summary>
+    ''' <param name="CmdString">A specified command. It may contain arguments.</param>
+    ''' <param name="SocketStreamWriter">A socket stream writer</param>
+    ''' <param name="Address">An IP address</param>
     Sub ParseCmd(ByVal CmdString As String, ByVal SocketStreamWriter As StreamWriter, ByVal Address As String)
         Dim CmdArgs As List(Of String) = CmdString.Split({" "c}, StringSplitOptions.RemoveEmptyEntries).ToList
         Dim CmdName As String = CmdArgs(0)

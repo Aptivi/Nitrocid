@@ -27,6 +27,12 @@ Public Module UserManagement
     Public UsersWriter As StreamWriter
 
     '---------- User Management ----------
+    ''' <summary>
+    ''' Initializes the uninitialized user (usually a new user)
+    ''' </summary>
+    ''' <param name="uninitUser">A new user</param>
+    ''' <param name="unpassword">A password of a user in encrypted form</param>
+    ''' <param name="ComputationNeeded">Whether or not a password encryption is needed</param>
     Public Sub InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "", Optional ByVal ComputationNeeded As Boolean = True)
 
         Try
@@ -64,7 +70,9 @@ Public Module UserManagement
 
     End Sub
 
-    'This time, this sub is different from first versions of KS. It reads the user file and adds them to the list.
+    ''' <summary>
+    ''' Reads the user file and adds them to the list.
+    ''' </summary>
     Public Sub InitializeUsers()
         'Opens file stream
         Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
@@ -73,6 +81,11 @@ Public Module UserManagement
         Next
     End Sub
 
+    ''' <summary>
+    ''' Adds a new user
+    ''' </summary>
+    ''' <param name="newUser">A new user</param>
+    ''' <param name="newPassword">A password</param>
     Public Sub AddUser(ByVal newUser As String, Optional ByVal newPassword As String = "")
 
         'Adds user
@@ -93,7 +106,11 @@ Public Module UserManagement
 
     End Sub
 
-    'This sub is an accomplice of in-shell command arguments.
+    ''' <summary>
+    ''' Removes a user from users database
+    ''' </summary>
+    ''' <param name="user">A user</param>
+    ''' <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
     Public Sub RemoveUserFromDatabase(ByVal user As String)
         Try
             If InStr(user, " ") > 0 Then
@@ -150,6 +167,12 @@ Public Module UserManagement
     End Sub
 
     '---------- Previously on Groups.vb ----------
+    ''' <summary>
+    ''' Manages permissions
+    ''' </summary>
+    ''' <param name="type">A type of permission</param>
+    ''' <param name="username">A specified username</param>
+    ''' <param name="mode">Whether to allow or disallow a specified type for a user</param>
     Public Sub Permission(ByVal type As String, ByVal username As String, ByVal mode As String)
 
         'Adds user into permission lists.
@@ -215,6 +238,11 @@ Public Module UserManagement
 
     End Sub
 
+    ''' <summary>
+    ''' Edits the permission database for new user name
+    ''' </summary>
+    ''' <param name="oldName">Old username</param>
+    ''' <param name="username">New username</param>
     Public Sub PermissionEditForNewUser(ByVal oldName As String, ByVal username As String)
 
         'Edit username (continuation for changeName() sub)

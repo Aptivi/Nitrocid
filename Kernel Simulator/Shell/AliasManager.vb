@@ -23,16 +23,20 @@ Public Module AliasManager
     Public Forbidden As String() = {"alias"}
     Private AliasStreamReader As New IO.StreamReader(paths("Aliases"))
 
-    'Types of aliases:
+    ''' <summary>
+    ''' Aliases type
+    ''' </summary>
     Enum AliasType
         Shell = 1
         RDebug
     End Enum
 
-    'Initializing and Saving
     'Alias format: {Alias Type}, {Alias Command}, {Actual Command}
     'Example:      Shell, h, help
     'Example 2:    Remote, e, exit
+    ''' <summary>
+    ''' Initializes aliases
+    ''' </summary>
     Public Sub InitAliases()
         'Get all aliases from file
         While Not AliasStreamReader.EndOfStream
@@ -71,6 +75,10 @@ Public Module AliasManager
         End While
         AliasStreamReader.BaseStream.Seek(0, IO.SeekOrigin.Begin)
     End Sub
+
+    ''' <summary>
+    ''' Saves aliases
+    ''' </summary>
     Public Sub SaveAliases()
         'Variables
         Dim aliast As New List(Of String)
@@ -93,7 +101,13 @@ Public Module AliasManager
         AliasStreamReader = New IO.StreamReader(paths("Aliases"))
     End Sub
 
-    'Management and Execution
+    ''' <summary>
+    ''' Manages the alias
+    ''' </summary>
+    ''' <param name="mode">Either add or rem</param>
+    ''' <param name="Type">Alias type (Shell or Remote Debug)</param>
+    ''' <param name="AliasCmd">A specified alias</param>
+    ''' <param name="DestCmd">A destination command (target)</param>
     Public Sub ManageAlias(ByVal mode As String, ByVal Type As AliasType, ByVal AliasCmd As String, Optional ByVal DestCmd As String = "")
         If Type = AliasType.Shell Or Type = AliasType.RDebug Then
             If mode = "add" Then
@@ -142,6 +156,13 @@ Public Module AliasManager
             W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, Type)
         End If
     End Sub
+
+    ''' <summary>
+    ''' Executes the remote debugger alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    ''' <param name="SocketStream">A socket stream writer</param>
+    ''' <param name="Address">IP Address</param>
     Sub ExecuteRDAlias(ByVal aliascmd As String, ByVal SocketStream As IO.StreamWriter, ByVal Address As String)
         'If this sub worked properly, consider putting it to RemoteDebugShell directly
         Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)

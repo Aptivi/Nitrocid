@@ -17,8 +17,10 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Module OldConfigUp
-    'Taken from config.vb version 0.0.5.2 with some removals that reflect this version
-    'Take configuration values, and port them to newer version
+
+    ''' <summary>
+    ''' Takes configuration values, and ports them to newer version. Taken from config.vb version 0.0.5.2 with some removals that reflect this version
+    ''' </summary>
     Sub UpgradeConfig()
         Dim OldConfigReader As IO.StreamReader = My.Computer.FileSystem.OpenTextFileReader(paths("Configuration"))
         Dim line As String = OldConfigReader.ReadLine
@@ -134,4 +136,5 @@ Module OldConfigUp
         'Reboot
         PowerManage("reboot")
     End Sub
+
 End Module

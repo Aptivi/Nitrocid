@@ -21,6 +21,10 @@ Public Module Filesystem
     Public CurrDir As String
 
     'Subs
+    ''' <summary>
+    ''' Sets the current working directory
+    ''' </summary>
+    ''' <param name="dir">A directory</param>
     Public Sub SetCurrDir(ByVal dir As String)
         Dim direct As String
         dir = dir.Replace("\", "/")
@@ -48,6 +52,11 @@ Public Module Filesystem
             W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Err, dir)
         End If
     End Sub
+
+    ''' <summary>
+    ''' Reads the contents of a file and writes it to the console
+    ''' </summary>
+    ''' <param name="filename">Full path to file</param>
     Public Sub ReadContents(ByVal filename As String)
         Using FStream As New IO.StreamReader(filename)
             Wdbg("I", "Stream to file {0} opened.", filename)
@@ -56,9 +65,20 @@ Public Module Filesystem
             End While
         End Using
     End Sub
+
+    ''' <summary>
+    ''' Initializes the filesystem
+    ''' </summary>
+    ''' <remarks>Obsolete because it got one-line.</remarks>
+    <Obsolete>
     Public Sub InitFS()
         CurrDir = paths("Home")
     End Sub
+
+    ''' <summary>
+    ''' List all files and folders in a specified folder
+    ''' </summary>
+    ''' <param name="folder">Full path to folder</param>
     Public Sub List(ByVal folder As String)
         Wdbg("I", "Folder {0} will be checked if it is empty or equals CurrDir ({1})...", folder, CurrDir)
         If IO.Directory.Exists(folder) Then

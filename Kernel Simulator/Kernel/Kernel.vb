@@ -18,7 +18,6 @@ Imports System.Reflection.Assembly
 
 'TODOs:
 '   TODO: Interactive host system file manager (Planned in the bootable version)
-'   TODO: Code documentation for all functions, subs, enums, etc.
 Public Module Kernel
 
     'Variables
@@ -30,6 +29,9 @@ Public Module Kernel
     Public EventManager As New EventsAndExceptions
     Public DefConsoleOut As IO.TextWriter
 
+    ''' <summary>
+    ''' Entry point
+    ''' </summary>
     Sub Main()
         'TODO: Re-write the whole kernel in Beta
         While True

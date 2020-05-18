@@ -28,6 +28,9 @@ Public Module TextWriterColor
     Public RDebugDNP As String = "KSUser" 'Appended with random ID when new session arrives
     Public dbgStackTraces As New List(Of String)
 
+    ''' <summary>
+    ''' Enumeration for color types
+    ''' </summary>
     Public Enum ColTypes As Integer
         Neutral = 1
         Input = 2
@@ -48,7 +51,6 @@ Public Module TextWriterColor
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    ''' <remarks></remarks>
     Public Sub Wdbg(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
         If DebugMode Then
             Dim STrace As New StackTrace(True)
@@ -99,6 +101,10 @@ Public Module TextWriterColor
         End If
     End Sub
 
+    ''' <summary>
+    ''' Writes the exception's stack trace to the debugger
+    ''' </summary>
+    ''' <param name="Ex">An exception</param>
     Public Sub WStkTrc(ByVal Ex As Exception)
         If DebugMode Then
             'These two vbNewLines are padding for accurate stack tracing.
@@ -112,6 +118,9 @@ Public Module TextWriterColor
         End If
     End Sub
 
+    ''' <summary>
+    ''' Checks to see if the debug file exceeds the quota
+    ''' </summary>
     Public Sub CheckForExceed()
         Try
             Dim FInfo As New FileInfo(paths("Debugging"))
@@ -131,6 +140,11 @@ Public Module TextWriterColor
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Opens a file, reads all lines, and returns the array of lines
+    ''' </summary>
+    ''' <param name="path">Path to file</param>
+    ''' <returns>Array of lines</returns>
     Private Function ReadAllLinesNoBlock(ByVal path As String) As String()
         Dim AllLnList As New List(Of String)
         Dim FOpen As New StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -147,7 +161,6 @@ Public Module TextWriterColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="colorType">A type of colors that will be changed.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    ''' <remarks>This is used to reduce number of lines containing "System.Console.ForegroundColor = " and "System.Console.ResetColor()" text.</remarks>
     Public Sub W(ByVal text As Object, ByVal Line As Boolean, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
 
         Dim esc As Char = GetEsc()
@@ -197,6 +210,13 @@ Public Module TextWriterColor
 
     End Sub
 
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt slowly with no color support.
+    ''' </summary>
+    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     Public Sub WriteSlowly(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ParamArray ByVal vars() As Object)
         'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
         For v As Integer = 0 To vars.Length - 1
@@ -214,6 +234,14 @@ Public Module TextWriterColor
         End If
     End Sub
 
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt slowly with color support.
+    ''' </summary>
+    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+    ''' <param name="colorType">A type of colors that will be changed.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal colorType As ColTypes, ParamArray ByVal vars() As Object)
         Dim esc As Char = GetEsc()
         If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
@@ -263,6 +291,15 @@ Public Module TextWriterColor
         If backgroundColor = ConsoleColors.Black Then ResetColor()
         If colorType = ColTypes.Input And ColoredShell = True Then Write(esc + "[38;5;" + CStr(inputColor) + "m")
     End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+    ''' </summary>
+    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Left">Column number in console</param>
+    ''' <param name="Top">Row number in console</param>
+    ''' <param name="colorType">A type of colors that will be changed.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     Public Sub WriteWhere(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
         Dim esc As Char = GetEsc()
         If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
@@ -308,6 +345,13 @@ Public Module TextWriterColor
         SetCursorPosition(OldLeft, OldTop)
     End Sub
 
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="color">A color that will be changed to.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     Public Sub WriteC(ByVal text As Object, ByVal Line As Boolean, ByVal color As ConsoleColors, ByVal ParamArray vars() As Object)
 
         Dim esc As Char = GetEsc()

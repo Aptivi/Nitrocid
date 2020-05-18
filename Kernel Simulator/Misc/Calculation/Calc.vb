@@ -18,6 +18,11 @@
 
 Module Calc
 
+    ''' <summary>
+    ''' Try to calculate an expression
+    ''' </summary>
+    ''' <param name="Expression">An expression</param>
+    ''' <returns>A dictionary of results and success/failure</returns>
     Public Function DoCalc(ByVal Expression As String) As Dictionary(Of Double, Boolean)
         Dim Calculated As Boolean
         Dim Result As Double

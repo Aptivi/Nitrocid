@@ -20,6 +20,11 @@ Imports System.IO
 
 Public Module Config
 
+    ''' <summary>
+    ''' Creates the kernel configuration file
+    ''' </summary>
+    ''' <param name="CmdArg">Specifies whether or not it's called from real command-line argument</param>
+    ''' <param name="Preserve">Preserves configuration values</param>
     Public Sub CreateConfig(ByVal CmdArg As Boolean, ByVal Preserve As Boolean)
         Try
             Dim ksconf As New IniFile()
@@ -220,6 +225,9 @@ Public Module Config
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Checks the config file for mismatched version and upgrades it
+    ''' </summary>
     Public Sub CheckForUpgrade()
         Try
             'Variables
@@ -244,6 +252,9 @@ Public Module Config
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Updates the configuration file and reboots the simulated system
+    ''' </summary>
     Public Sub UpdateConfig()
 
         CreateConfig(False, True)
@@ -251,6 +262,9 @@ Public Module Config
 
     End Sub
 
+    ''' <summary>
+    ''' Configures the kernel according to the kernel configuration file
+    ''' </summary>
     Public Sub ReadConfig()
         Try
             '----------------------------- Important configuration -----------------------------
@@ -285,7 +299,7 @@ Public Module Config
                 If ColoredShell Then licenseColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("License Color").Value), ConsoleColors)
                 If ColoredShell Then
                     backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Background Color").Value), ConsoleColors)
-                    Load()
+                    LoadBack()
                 End If
                 If ColoredShell Then inputColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColors)
                 If ColoredShell Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColors)
@@ -347,6 +361,9 @@ Public Module Config
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Main loader for configuration file
+    ''' </summary>
     Sub InitializeConfig()
         'Make a config file if not found
         Dim pathConfig As String = paths("Configuration")

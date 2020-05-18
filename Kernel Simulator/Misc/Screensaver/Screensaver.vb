@@ -35,7 +35,9 @@ Public Module Screensaver
     Private execCustomSaver As CompilerResults
     Private DoneFlag As Boolean = False
 
-    'Interface
+    ''' <summary>
+    ''' Custom screensaver interface with groups of subs and properties
+    ''' </summary>
     Public Interface ICustomSaver
         Sub InitSaver()
         Sub PreDisplay() 'Code before starting screensaver
@@ -46,6 +48,9 @@ Public Module Screensaver
         Property SaverName As String
     End Interface
 
+    ''' <summary>
+    ''' Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
+    ''' </summary>
     Sub HandleTimeout(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Timeout.DoWork
         Dim time As Integer = 3600000
         Dim count As Integer
@@ -66,6 +71,11 @@ Public Module Screensaver
             End If
         End While
     End Sub
+
+    ''' <summary>
+    ''' Shows the screensaver
+    ''' </summary>
+    ''' <param name="saver">A specified screensaver</param>
     Sub ShowSavers(ByVal saver As String)
         Try
             InSaver = True
@@ -190,6 +200,10 @@ Public Module Screensaver
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Compiles the custom screensaver file and configures it so it can be viewed
+    ''' </summary>
+    ''' <param name="file">File name with SS.m</param>
     Sub CompileCustom(ByVal file As String)
         'Initialize path
         Dim modPath As String = paths("Mods")
@@ -259,6 +273,11 @@ Public Module Screensaver
         End If
     End Sub
 
+    ''' <summary>
+    ''' Sets the default screensaver
+    ''' </summary>
+    ''' <param name="saver">Specified screensaver</param>
+    ''' <param name="setDef">Whether or not to set the default screensaver</param>
     Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
         If ScrnSvrdb.ContainsKey(saver) Then
             Wdbg("I", "{0} is found. (Un)Setting it to default...", saver)
@@ -281,6 +300,11 @@ Public Module Screensaver
         End If
     End Sub
 
+    ''' <summary>
+    ''' Compiles the screensaver and returns the instance of custom saver interface
+    ''' </summary>
+    ''' <param name="code">Screensaver code</param>
+    ''' <returns>Interface of the compiled custom saver</returns>
     Function GenSaver(ByVal code As String) As ICustomSaver
         DoneFlag = False
         Using provider As New VBCodeProvider()

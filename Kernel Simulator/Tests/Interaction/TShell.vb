@@ -22,6 +22,10 @@ Module TShell
                                      "debug", "rdebug", "testmd5", "testsha256", "testsha1", "testregexp", "colortest", "colortruetest", "soundtest", "sendnot", "dcalend",
                                      "listcodepages", "help", "exit"}
     Public TEST_ExitFlag As Boolean
+
+    ''' <summary>
+    ''' Initiates the test shell
+    ''' </summary>
     Sub InitTShell()
         Dim FullCmd As String
         While Not TEST_ExitFlag

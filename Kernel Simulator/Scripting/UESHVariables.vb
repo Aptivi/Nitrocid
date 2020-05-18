@@ -19,6 +19,11 @@
 Module UESHVariables
 
     Public ScriptVariables As New Dictionary(Of String, String)
+
+    ''' <summary>
+    ''' Initializes a $variable
+    ''' </summary>
+    ''' <param name="var">A $variable</param>
     Public Sub InitializeVariable(ByVal var As String)
         If Not ScriptVariables.ContainsKey(var) Then
             ScriptVariables.Add(var, "")
@@ -26,6 +31,12 @@ Module UESHVariables
         End If
     End Sub
 
+    ''' <summary>
+    ''' Gets a value of a $variable
+    ''' </summary>
+    ''' <param name="var">A $variable</param>
+    ''' <param name="cmd">A command line in script</param>
+    ''' <returns>A command line in script that has a value of $variable</returns>
     Public Function GetVariable(ByVal var As String, ByVal cmd As String) As String
         If Not cmd.StartsWith($"choice {var}") Then
             Dim newcmd As String = cmd.Replace(var, ScriptVariables(var))
@@ -35,6 +46,11 @@ Module UESHVariables
         Return cmd
     End Function
 
+    ''' <summary>
+    ''' Sets a $variable
+    ''' </summary>
+    ''' <param name="var">A $variable</param>
+    ''' <param name="value">A value to set to $variable</param>
     Public Sub SetVariable(ByVal var As String, ByVal value As String)
         ScriptVariables(var) = value
         Wdbg("I", "Set variable {0} to {1}", var, value)

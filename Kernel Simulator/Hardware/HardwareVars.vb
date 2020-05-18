@@ -16,7 +16,9 @@
 
 Module HardwareVars
 
-    'Hardware Classes. We start with HDD class
+    ''' <summary>
+    ''' [Windows] Hard drive
+    ''' </summary>
     Public Class HDD
         Public Model As String
         Public Manufacturer As String
@@ -28,6 +30,10 @@ Module HardwareVars
         Public ID As String
         Public Parts As New List(Of Part)
     End Class
+
+    ''' <summary>
+    ''' [Linux] Hard drive
+    ''' </summary>
     Public Class HDD_Linux
         Inherits HDD
         Public Size_LNX As String
@@ -35,26 +41,44 @@ Module HardwareVars
         Public Vendor_LNX As String
         Public Parts_LNX As New List(Of Part_Linux)
     End Class
+
+    ''' <summary>
+    ''' [Windows] Partition
+    ''' </summary>
     Public Class Part
         Public Bootable, Boot, Primary As Boolean
         Public Size As ULong
         Public Type As String
     End Class
+
+    ''' <summary>
+    ''' [Linux] Partition
+    ''' </summary>
     Public Class Part_Linux
         Inherits Part
         Public Part, FileSystem, SizeMEAS, Used As String
     End Class
+
+    ''' <summary>
+    ''' [Windows] Logical partition
+    ''' </summary>
     Public Class Logical
         Public Compressed As Boolean
         Public Size, Free As ULong
         Public FileSystem, Name As String
     End Class
 
-    'then CPU
+    ''' <summary>
+    ''' [Windows] CPU
+    ''' </summary>
     Public Class CPU
         Public Name As String
         Public ClockSpeed As ULong
     End Class
+
+    ''' <summary>
+    ''' [Linux] CPU
+    ''' </summary>
     Public Class CPU_Linux
         Inherits CPU
         Public CPUName As String
@@ -62,12 +86,18 @@ Module HardwareVars
         Public SSE2 As Boolean
     End Class
 
-    'then RAM
+    ''' <summary>
+    ''' [Windows] RAM
+    ''' </summary>
     Public Class RAM
         Public ChipCapacity As ULong
         Public SlotNumber As Integer
         Public SlotName As String
     End Class
+
+    ''' <summary>
+    ''' [Linux] RAM
+    ''' </summary>
     Public Class RAM_Linux
         Inherits RAM
         Public Capacity As String

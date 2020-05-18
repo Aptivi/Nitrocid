@@ -21,6 +21,11 @@ Imports MimeKit
 
 Module IMAPGetCommand
 
+    ''' <summary>
+    ''' Parses and executes the specified command with arguments
+    ''' </summary>
+    ''' <param name="cmd">A command</param>
+    ''' <param name="args">Arguments</param>
     Sub IMAP_ExecuteCommand(ByVal cmd As String, ByVal args As String)
         Dim FullArgsL As List(Of String) = args.Split(" ").ToList
         Wdbg("I", "Arguments count: {0}", FullArgsL.Count)

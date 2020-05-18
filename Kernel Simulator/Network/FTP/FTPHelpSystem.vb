@@ -21,6 +21,9 @@ Public Module FTPHelpSystem
     'This dictionary is the definitions for commands.
     Public ftpDefinitions As Dictionary(Of String, String)
 
+    ''' <summary>
+    ''' Updates the help definition so it reflects the available commands
+    ''' </summary>
     Public Sub InitFTPHelp()
         ftpDefinitions = New Dictionary(Of String, String) From {{"currlocaldir (Alias: pwdl)", DoTranslation("Gets current local directory", currentLang)},
                                                                  {"currremotedir (Alias: pwdr)", DoTranslation("Gets current remote directory", currentLang)},
@@ -38,6 +41,10 @@ Public Module FTPHelpSystem
                                                                  {"upload (Alias: put)", DoTranslation("Uploads local file to remote directory using binary or text", currentLang)}}
     End Sub
 
+    'TODO: Make a help usage for each command.
+    ''' <summary>
+    ''' Shows the list of commands.
+    ''' </summary>
     Public Sub FTPShowHelp()
 
         If simHelp = False Then

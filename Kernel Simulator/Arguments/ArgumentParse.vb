@@ -22,6 +22,9 @@ Module ArgumentParse
     Public argcommands As String                'Commands entered
     Public argcmds() As String
 
+    ''' <summary>
+    ''' Parses specified arguments
+    ''' </summary>
     Public Sub ParseArguments()
 
         'Check for the arguments written by the user

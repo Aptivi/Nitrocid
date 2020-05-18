@@ -26,6 +26,9 @@ Module RemoteProcedure
     Public RPCThread As New Thread(AddressOf ListenRPC) With {.IsBackground = True}
     Public RPCStopping As Boolean
 
+    ''' <summary>
+    ''' A sub to start the RPC listener
+    ''' </summary>
     Sub StartRPC()
         Try
             Wdbg("I", "RPC: Starting...")
@@ -35,6 +38,10 @@ Module RemoteProcedure
             WStkTrc(ex)
         End Try
     End Sub
+
+    ''' <summary>
+    ''' Thread to try to start the RPC server
+    ''' </summary>
     Sub ListenRPC()
         Try
             RPCListen = New UdpClient(RPCPort)

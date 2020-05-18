@@ -32,7 +32,11 @@ Public Module PlaceParse
     Private ReadOnly stzplace As String = "<summertimezone>"
     Private ReadOnly sysplace As String = "<system>"
 
-    'Probing code
+    ''' <summary>
+    ''' Probes the placeholders found in string
+    ''' </summary>
+    ''' <param name="text">Specified string</param>
+    ''' <returns>A string that has the parsed placeholders</returns>
     Public Function ProbePlaces(ByVal text As String) As String
 
         EventManager.RaisePlaceholderParsing()

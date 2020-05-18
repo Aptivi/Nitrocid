@@ -20,6 +20,10 @@ Imports LibVLCSharp.Shared
 
 Public Module VoiceManagement
 
+    ''' <summary>
+    ''' Converts specified text to speech, and plays it back
+    ''' </summary>
+    ''' <param name="Text">Any text</param>
     Public Sub Speak(ByVal Text As String)
         'Download required file
         Dim SpeakReq As New WebClient

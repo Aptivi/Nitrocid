@@ -16,9 +16,13 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module BeepSynth
+Public Module BeepSynth
 
-    Sub ProbeSynth(ByVal file As String)
+    ''' <summary>
+    ''' Probes the synth file and plays it back using the console PC speaker
+    ''' </summary>
+    ''' <param name="file">A file name in current shell path</param>
+    Public Sub ProbeSynth(ByVal file As String)
         file = CurrDir + "/" + file.Replace("\", "/")
         If file.Contains(CurrDir.Replace("\", "/")) And file.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
 #Disable Warning IDE0059
@@ -40,8 +44,8 @@ Module BeepSynth
                             Wdbg("I", "Not a comment. Getting frequency and time...")
                             Dim freq As Integer = line.Remove(line.IndexOf(","))
                             Dim ms As Integer = line.Substring(line.IndexOf(",") + 1)
-                            Console.Beep(freq, ms)
                             Wdbg("I", "Got frequency {0} Hz and time {1} ms", freq, ms)
+                            Console.Beep(freq, ms)
                         Catch ex As Exception
                             Wdbg("E", "Not a comment and not a synth line. ({0})", line)
                             W(DoTranslation("Failed to probe a synth line.", currentLang), True, ColTypes.Err)

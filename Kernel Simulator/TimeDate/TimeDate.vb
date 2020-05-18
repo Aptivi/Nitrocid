@@ -26,6 +26,11 @@ Public Module TimeDate
     Public KernelDateTime As New Date
     Public WithEvents TimeDateChange As New BackgroundWorker
 
+    ''' <summary>
+    ''' Updates the time and date. Also updates the time and date corner if it was enabled in kernel configuration.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Sub TimeDateChange_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles TimeDateChange.DoWork
 
         Dim oldWid, oldTop As Integer
@@ -47,6 +52,9 @@ Public Module TimeDate
 
     End Sub
 
+    ''' <summary>
+    ''' Updates the KernelDateTime so it reflects the current time, and runs the updater.
+    ''' </summary>
     Sub InitTimeDate()
 
         KernelDateTime = Date.Now
@@ -55,6 +63,9 @@ Public Module TimeDate
 
     End Sub
 
+    ''' <summary>
+    ''' Shows current time, date, and timezone.
+    ''' </summary>
     Public Sub ShowCurrentTimes()
 
         W(DoTranslation("datetime: Time is {0}", currentLang), True, ColTypes.Neutral, RenderTime)
@@ -63,6 +74,10 @@ Public Module TimeDate
 
     End Sub
 
+    ''' <summary>
+    ''' Renders the current time based on kernel config (long or short)
+    ''' </summary>
+    ''' <returns>A long or short time</returns>
     Public Function RenderTime() As String
         If LongTimeDate Then
             Return KernelDateTime.ToLongTimeString
@@ -70,6 +85,12 @@ Public Module TimeDate
             Return KernelDateTime.ToShortTimeString
         End If
     End Function
+
+    ''' <summary>
+    ''' Renders the time based on specified time using the kernel config (long or short)
+    ''' </summary>
+    ''' <param name="DT">Specified time</param>
+    ''' <returns>A long or short time</returns>
     Public Function RenderTime(ByVal DT As Date) As String
         If LongTimeDate Then
             Return DT.ToLongTimeString
@@ -77,6 +98,11 @@ Public Module TimeDate
             Return DT.ToShortTimeString
         End If
     End Function
+
+    ''' <summary>
+    ''' Renders the current date based on kernel config (long or short)
+    ''' </summary>
+    ''' <returns>A long or short date</returns>
     Public Function RenderDate() As String
         If LongTimeDate Then
             Return KernelDateTime.ToLongDateString
@@ -84,9 +110,21 @@ Public Module TimeDate
             Return KernelDateTime.ToShortDateString
         End If
     End Function
+
+    ''' <summary>
+    ''' Renders the current date based on specified culture
+    ''' </summary>
+    ''' <param name="Cult">A culture.</param>
+    ''' <returns>A date</returns>
     Public Function RenderDate(ByVal Cult As CultureInfo) As String
         Return KernelDateTime.ToString(Cult)
     End Function
+
+    ''' <summary>
+    ''' Renders the date based on specified date using the kernel config (long or short)
+    ''' </summary>
+    ''' <param name="DT">Specified date</param>
+    ''' <returns>A long or short date</returns>
     Public Function RenderDate(ByVal DT As Date) As String
         If LongTimeDate Then
             Return DT.ToLongDateString
@@ -94,6 +132,13 @@ Public Module TimeDate
             Return DT.ToShortDateString
         End If
     End Function
+
+    ''' <summary>
+    ''' Renders the date based on specified date and culture using the kernel config (long or short)
+    ''' </summary>
+    ''' <param name="DT">Specified date</param>
+    ''' <param name="Cult">A culture</param>
+    ''' <returns>A date</returns>
     Public Function RenderDate(ByVal DT As Date, ByVal Cult As CultureInfo) As String
         Return DT.ToString(Cult)
     End Function

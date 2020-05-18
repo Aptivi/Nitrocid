@@ -21,6 +21,11 @@ Module CommandLineArgsParse
     Public availableCMDLineArgs() As String = {"createConf", "testMod", "testInteractive", "debug", "args", 'Normal kernel arguments
                                                "CI-TestPrint", "CI-TestWdbg", "CI-TestConfig", "CI-TestInitialize", "CI-TestEval", 'CI test artifacts
                                                "CI-TestStrTrunc", "CI-TestSSEs", "CI-TestMOTD", "CI-TestMAL", "CI-TestPlace", "CI-TestCalc"} 'TODO: Add more artifacts
+
+    ''' <summary>
+    ''' Parses the command line arguments
+    ''' </summary>
+    ''' <param name="arg">Argument</param>
     Sub ParseCMDArguments(ByVal arg As String)
         Try
             If Environment.GetCommandLineArgs.Length <> 0 And availableCMDLineArgs.Contains(arg) = True Then

@@ -21,6 +21,11 @@ Imports System.IO
 Public Module UESHParse
 
     'TODO: Make documentation at the end of development of 0.0.10
+    ''' <summary>
+    ''' Executes the UESH script
+    ''' </summary>
+    ''' <param name="scriptpath">Full path to script</param>
+    ''' <param name="scriptarguments">Script arguments</param>
     Public Sub Execute(ByVal scriptpath As String, ByVal scriptarguments As String)
         Try
             'Open the script file for reading

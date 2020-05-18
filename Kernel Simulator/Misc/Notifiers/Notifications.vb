@@ -24,21 +24,27 @@ Public Module Notifications
     Public NotifRecents As New List(Of Notification)
     Public NotifThread As New Thread(AddressOf NotifListen)
 
-    'Priority enumeration
+    ''' <summary>
+    ''' Notification priority
+    ''' </summary>
     Public Enum NotifPriority
         Low = 1
         Medium = 2
         High = 3
     End Enum
 
-    'Notification holder class
+    ''' <summary>
+    ''' Notification holder with title, description, and priority
+    ''' </summary>
     Public Class Notification
         Property Title As String
         Property Desc As String
         Property Priority As NotifPriority
     End Class
 
-    'Subs
+    ''' <summary>
+    ''' Listens for notifications and notifies the user if one has been found
+    ''' </summary>
     Private Sub NotifListen()
         Dim OldNCount As Integer = NotifRecents.Count
         While Not NotifThread.ThreadState = ThreadState.AbortRequested
@@ -66,6 +72,15 @@ Public Module Notifications
             End If
         End While
     End Sub
+
+    ''' <summary>
+    ''' Clears the area of the displayed notification
+    ''' </summary>
+    ''' <param name="LenTitle">String length of the title</param>
+    ''' <param name="LenDesc">String length of the description</param>
+    ''' <param name="Width">Console width</param>
+    ''' <param name="TopTitle">Vertical location of title</param>
+    ''' <param name="TopDesc">Vertical location of description</param>
     Private Sub NotifClearArea(ByVal LenTitle As Integer, ByVal LenDesc As Integer, ByVal Width As Integer, ByVal TopTitle As Integer, ByVal TopDesc As Integer)
         Thread.Sleep(5000)
         For i As Integer = 0 To LenTitle - 1
@@ -77,10 +92,20 @@ Public Module Notifications
             WriteWhere(" ", Width + i, TopDesc, ColTypes.Neutral)
         Next
     End Sub
+
+    ''' <summary>
+    ''' Sends notification
+    ''' </summary>
+    ''' <param name="notif">Instance of notification holder</param>
     Public Sub NotifySend(ByVal notif As Notification)
         Wdbg("I", "List contains this notification? {0}", NotifRecents.Contains(notif))
         If Not NotifRecents.Contains(notif) Then NotifRecents.Add(notif)
     End Sub
+
+    ''' <summary>
+    ''' Dismisses notification
+    ''' </summary>
+    ''' <param name="ind">Index of notification</param>
     Public Sub NotifDismiss(ByVal ind As Integer)
         Try
             NotifRecents.RemoveAt(ind)

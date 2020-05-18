@@ -38,6 +38,10 @@ Public Module FTPGetCommand
                                                       End If
                                                   End Sub)
 
+    ''' <summary>
+    ''' Parses and executes the FTP command
+    ''' </summary>
+    ''' <param name="cmd">A command. It may come with arguments</param>
     Public Sub ExecuteCommand(ByVal cmd As String)
 
         Dim index As Integer = cmd.IndexOf(" ")

@@ -16,8 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module FTPTools
+Public Module FTPTools
 
+    ''' <summary>
+    ''' Tries to connect to the FTP server
+    ''' </summary>
+    ''' <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
     Public Sub TryToConnect(ByVal address As String)
         If connected = True Then
             W(DoTranslation("You should disconnect from server before connecting to another server", currentLang), True, ColTypes.Err)
@@ -122,6 +126,9 @@ Module FTPTools
         End If
     End Sub
 
+    ''' <summary>
+    ''' Tries to validate certificate
+    ''' </summary>
     Public Sub TryToValidate(control As FtpClient, e As FtpSslValidationEventArgs)
         Wdbg("I", "Certificate checks")
         If e.PolicyErrors = Net.Security.SslPolicyErrors.None Then
@@ -136,9 +143,19 @@ End Module
 
 Class FTPTracer
     Inherits TraceListener 'Both Write and WriteLine do exactly the same thing, which is writing to a debugger.
+
+    ''' <summary>
+    ''' Writes any message that the tracer has received to the debugger.
+    ''' </summary>
+    ''' <param name="Message">A message</param>
     Public Overloads Overrides Sub Write(ByVal Message As String)
         Wdbg("I", Message)
     End Sub
+
+    ''' <summary>
+    ''' Writes any message that the tracer has received to the debugger. Please note that this does exactly as Write() since the debugger only supports writing with newlines.
+    ''' </summary>
+    ''' <param name="Message">A message</param>
     Public Overloads Overrides Sub WriteLine(ByVal Message As String)
         Wdbg("I", Message)
     End Sub

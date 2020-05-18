@@ -20,30 +20,42 @@ Imports System.Runtime.InteropServices
 
 Public Class CPUFeatures_Win
 
-    ' ----------------------------- Windows functions -----------------------------
-    <DllImport("kernel32.dll")> 'Check for specific processor feature https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-isprocessorfeaturepresent
+    ''' <summary>
+    ''' [Windows] Check for specific processor feature. More info: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-isprocessorfeaturepresent
+    ''' </summary>
+    ''' <param name="processorFeature">An SSE version</param>
+    ''' <returns>True if supported, false if not supported</returns>
+    <DllImport("kernel32.dll")>
     Public Shared Function IsProcessorFeaturePresent(ByVal processorFeature As SSEnum) As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
 
+    ''' <summary>
+    ''' [Windows] Collection of SSE versions
+    ''' </summary>
     Public Enum SSEnum As UInteger
         ''' <summary>
-        ''' The SSE instruction set is available.
+        ''' [Windows] The SSE instruction set is available.
         ''' </summary>
         InstructionsSSEAvailable = 6
         ''' <summary>
-        ''' The SSE2 instruction set is available. (This is used in most apps nowadays, since recent processors have this capability.)
+        ''' [Windows] The SSE2 instruction set is available. (This is used in most apps nowadays, since recent processors have this capability.)
         ''' </summary>
         InstructionsSSE2Available = 10
         ''' <summary>
-        ''' The SSE3 instruction set is available.
+        ''' [Windows] The SSE3 instruction set is available.
         ''' </summary>
         InstructionsSSE3Available = 13
     End Enum
 
 End Class
 
-Module CPUFeatures_Linux
+Public Module CPUFeatures_Linux
 
+    ''' <summary>
+    ''' [Linux] Checks for a specified CPU SSE version
+    ''' </summary>
+    ''' <param name="SSEVer">SSE version</param>
+    ''' <returns>True if supported, false if not supported</returns>
     Public Function CheckSSE(ByVal SSEVer As Integer) As Boolean
         If EnvironmentOSType.Contains("Unix") Then
             Dim cpuinfo As New IO.StreamReader("/proc/cpuinfo")

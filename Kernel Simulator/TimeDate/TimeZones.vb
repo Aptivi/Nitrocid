@@ -24,6 +24,9 @@ Public Module TimeZones
     Public zones As TimeZoneInfo()
     Public zoneTimes As New Dictionary(Of String, DateTime)
 
+    ''' <summary>
+    ''' Populates current time in all of the time zones (IANA on Unix).
+    ''' </summary>
     Public Sub InitTimesInZones()
 
         'Get all system time zones (IANA on Unix)
@@ -41,6 +44,10 @@ Public Module TimeZones
 
     End Sub
 
+    ''' <summary>
+    ''' Shows current time in selected time zone, or all of them if zone was "all" 
+    ''' </summary>
+    ''' <param name="zone">Time zone</param>
     Public Sub ShowTimesInZones(Optional ByVal zone As String = "all")
 
         If zoneTimes.Keys.Contains(zone) Then

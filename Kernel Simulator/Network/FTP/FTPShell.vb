@@ -32,6 +32,11 @@ Public Module FTPShell
     Private strcmd As String
     Public ftpexit As Boolean = False
 
+    ''' <summary>
+    ''' Initializes the FTP shell
+    ''' </summary>
+    ''' <param name="Connects">Specifies whether the FTP client is currently connecting</param>
+    ''' <param name="Address">An IP address</param>
     Public Sub InitiateShell(Optional ByVal Connects As Boolean = False, Optional ByVal Address As String = "")
         While True
             'Complete initialization
@@ -91,6 +96,9 @@ Public Module FTPShell
         End While
     End Sub
 
+    ''' <summary>
+    ''' Parses a command line from FTP shell
+    ''' </summary>
     Public Sub FTPGetLine()
         Dim words As String() = strcmd.Split({" "c})
         Wdbg("I", $"Is the command found? {availftpcmds.Contains(words(0))}")

@@ -21,6 +21,9 @@ Public Module IMAPHelpSystem
     'This dictionary is the definitions for commands.
     Public IMAP_definitions As Dictionary(Of String, String)
 
+    ''' <summary>
+    ''' Updates the definition dictionary to make it full of available commands.
+    ''' </summary>
     Public Sub IMAPInitHelp()
         IMAP_definitions = New Dictionary(Of String, String) From {{"cd", DoTranslation("Changes current mail directory", currentLang)},
                                                                    {"exit", DoTranslation("Exits the IMAP shell", currentLang)},
@@ -30,6 +33,10 @@ Public Module IMAPHelpSystem
                                                                    {"read", DoTranslation("Opens a message", currentLang)}}
     End Sub
 
+    ''' <summary>
+    ''' Shows the help and usage for a specified command, or displays a list of commands when nothing is specified.
+    ''' </summary>
+    ''' <param name="cmd">A command</param>
     Public Sub IMAPShowHelp(Optional ByVal cmd As String = "")
         If cmd = "" Then
             For Each cmnd As String In IMAP_definitions.Keys

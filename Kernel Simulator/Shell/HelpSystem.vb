@@ -22,6 +22,9 @@ Public Module HelpSystem
     Public definitions As Dictionary(Of String, String)
     Public moddefs As New Dictionary(Of String, String)
 
+    ''' <summary>
+    ''' Updates the shell help dictionary to reflect the available commands
+    ''' </summary>
     Public Sub InitHelp()
         definitions = New Dictionary(Of String, String) From {{"adduser", DoTranslation("Adds users (Only admins can access this command)", currentLang)},
                                                               {"alias", DoTranslation("Adds aliases to commands (Only admins can access this command)", currentLang)},
@@ -90,6 +93,10 @@ Public Module HelpSystem
                                                               {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)}}
     End Sub
 
+    ''' <summary>
+    ''' Shows the help of a command, or command list if nothing is specified
+    ''' </summary>
+    ''' <param name="command">A specified command</param>
     Public Sub ShowHelp(Optional ByVal command As String = "")
 
         Dim wholesslist As String() = IO.Directory.GetFiles(paths("Mods"), "*SS.m", IO.SearchOption.TopDirectoryOnly)

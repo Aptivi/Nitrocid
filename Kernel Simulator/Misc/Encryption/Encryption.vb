@@ -20,12 +20,21 @@ Imports System.Security.Cryptography
 Imports System.Text
 
 Public Module Encryption
+
+    ''' <summary>
+    ''' Encryption algorithms supported by KS
+    ''' </summary>
     Public Enum Algorithms
         MD5
         SHA1
         SHA256
     End Enum
 
+    ''' <summary>
+    ''' Translates the array of encrypted bytes to string
+    ''' </summary>
+    ''' <param name="encrypted">Array of encrypted bytes</param>
+    ''' <returns>A string representation of hash sum</returns>
     Function GetArrayEnc(ByVal encrypted As Byte()) As String
         Dim hash As String = ""
         For i As Integer = 0 To encrypted.Length - 1
@@ -36,6 +45,12 @@ Public Module Encryption
         Return hash
     End Function
 
+    ''' <summary>
+    ''' Encrypts a string
+    ''' </summary>
+    ''' <param name="str">Source string</param>
+    ''' <param name="algorithm">Algorithm</param>
+    ''' <returns>Encrypted string</returns>
     Public Function GetEncryptedString(ByVal str As String, ByVal algorithm As Algorithms) As String
         Wdbg("I", "Selected algorithm: {0}", algorithm.ToString)
         Wdbg("I", "String length: {0}", str.Length)
@@ -52,4 +67,5 @@ Public Module Encryption
         End Select
         Return ""
     End Function
+
 End Module

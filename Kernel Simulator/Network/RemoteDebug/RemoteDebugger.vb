@@ -29,6 +29,10 @@ Module RemoteDebugger
     Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
     Public RDebugStopping As Boolean
 
+    ''' <summary>
+    ''' Whether to start or stop the remote debugger
+    ''' </summary>
+    ''' <param name="DebugEnable">If true, starts the Remote Debugger. If false, stops it.</param>
     Sub StartRDebugThread(ByVal DebugEnable As Boolean)
         If DebugMode Then
             If DebugEnable Then
@@ -38,6 +42,10 @@ Module RemoteDebugger
             End If
         End If
     End Sub
+
+    ''' <summary>
+    ''' Thread to accept connections after the listener starts
+    ''' </summary>
     Sub StartRDebugger()
         'Listen to a current IP address
         Try
@@ -89,6 +97,10 @@ Module RemoteDebugger
         dbgConns.Clear()
         Thread.CurrentThread.Abort()
     End Sub
+
+    ''' <summary>
+    ''' Thread to listen to messages and post them to the debugger
+    ''' </summary>
     Sub ReadAndBroadcastAsync()
         Dim i As Integer = 0 'Because DebugDevices.Keys(i) is zero-based
         While True
@@ -136,6 +148,12 @@ Module RemoteDebugger
             End If
         End While
     End Sub
+
+    'TODO: Merge DisconnectDbgDev and DisconnectDbgDevCmd
+    ''' <summary>
+    ''' Disconnects a specified debug device (command-line version)
+    ''' </summary>
+    ''' <param name="IPAddr">An IP address of the connected debug device</param>
     Sub DisconnectDbgDevCmd(ByVal IPAddr As String)
         Dim Found As Boolean
         For i As Integer = 0 To DebugDevices.Count - 1
@@ -156,6 +174,11 @@ Module RemoteDebugger
             W(DoTranslation("Debug device {0} not found.", currentLang), True, ColTypes.Err, IPAddr)
         End If
     End Sub
+
+    ''' <summary>
+    ''' Disconnects a specified debug device
+    ''' </summary>
+    ''' <param name="IPAddr">An IP address of the connected debug device</param>
     Sub DisconnectDbgDev(ByVal IPAddr As String)
         Dim Found As Boolean
         For i As Integer = 0 To DebugDevices.Count - 1
@@ -175,6 +198,12 @@ Module RemoteDebugger
             W(DoTranslation("Debug device {0} not found.", currentLang), True, ColTypes.Err, IPAddr)
         End If
     End Sub
+
+    ''' <summary>
+    ''' Gets the index from an instance of StreamWriter
+    ''' </summary>
+    ''' <param name="SW">A stream writer</param>
+    ''' <returns>An index of it, or -1 if not found.</returns>
     Function GetSWIndex(ByVal SW As StreamWriter) As Integer
         For i As Integer = 0 To dbgConns.Count - 1
             If SW.Equals(dbgConns.Keys(i)) Then
@@ -183,4 +212,5 @@ Module RemoteDebugger
         Next
         Return -1
     End Function
+
 End Module

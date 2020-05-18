@@ -26,6 +26,9 @@ Public Module NetworkTools
     Public DRetries As Integer = 3
     Private DFinish As Boolean
 
+    ''' <summary>
+    ''' Print each of adapters' properties to the console.
+    ''' </summary>
     Public Sub GetProperties()
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces
         Dim NoV4, NoV6, Failed As Boolean
@@ -118,6 +121,11 @@ Public Module NetworkTools
 
     Dim IsError As Boolean
     Dim ReasonError As Exception
+
+    ''' <summary>
+    ''' Downloads a file to the current working directory.
+    ''' </summary>
+    ''' <param name="URL">A URL to a file</param>
     Sub DownloadFile(ByVal URL As String)
         Dim RetryCount As Integer = 1
         Wdbg("I", "URL: {0}", URL)
@@ -162,6 +170,9 @@ Public Module NetworkTools
         End While
     End Sub
 
+    ''' <summary>
+    ''' Thread to check for errors on download completion.
+    ''' </summary>
     Private Sub DownloadChecker(sender As Object, e As AsyncCompletedEventArgs)
         Wdbg("I", "Download complete. Error: {0}", e.Error?.Message)
         If Not IsNothing(e.Error) Then
@@ -171,6 +182,9 @@ Public Module NetworkTools
         End If
     End Sub
 
+    ''' <summary>
+    ''' Thread to repeatedly report the download progress to the console.
+    ''' </summary>
     Private Sub DownloadManager(sender As Object, e As DownloadProgressChangedEventArgs)
         If Not DFinish Then
             Console.SetCursorPosition(0, Console.CursorTop)

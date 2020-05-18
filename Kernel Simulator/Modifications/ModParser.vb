@@ -37,6 +37,12 @@ Public Module ModParser
     Private ReadOnly modPath As String = paths("Mods")
 
     '------------------------------------------- Generators -------------------------------------------
+    ''' <summary>
+    ''' Compiles the script and returns the instance of script interface
+    ''' </summary>
+    ''' <param name="PLang">Specified programming language for scripts (C# or VB.NET)</param>
+    ''' <param name="code">Code blocks from script</param>
+    ''' <returns></returns>
     Private Function GenMod(ByVal PLang As String, ByVal code As String) As IScript
 
         'Check language
@@ -99,8 +105,11 @@ Public Module ModParser
     End Function
 
     '------------------------------------------- Parsers -------------------------------------------
+    ''' <summary>
+    ''' Loads or stops all mods in KSMods
+    ''' </summary>
+    ''' <param name="StartStop">If true, the mods start, otherwise, the mod stops.</param>
     Sub ParseMods(ByVal StartStop As Boolean)
-        'StartStop: If true, the mods start, otherwise, the mod stops.
         Wdbg("I", "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
             If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
@@ -127,10 +136,16 @@ Public Module ModParser
             W(DoTranslation("Parsing mods not allowed on safe mode.", currentLang), True, ColTypes.Err)
         End If
     End Sub
+
+    ''' <summary>
+    ''' Starts to parse the mod, and configures it so it can be used
+    ''' </summary>
+    ''' <param name="modFile">Mod file name with extension. It should end with .m, SS.m, or CS.m</param>
+    ''' <param name="StartStop">Whether to start or stop mods</param>
     Sub StartParse(ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         modFile = modFile.Replace(modPath, "")
         If Not modFile.EndsWith(".m") Then
-            'Ignore all mods who doesn't end with .m
+            'Ignore all mods who don't end with .m
             Wdbg("W", "Unsupported file type for mod file {0}.", modFile)
         ElseIf modFile.EndsWith("SS.m") Then
             'Ignore all mods who end with SS.m
@@ -146,6 +161,12 @@ Public Module ModParser
     End Sub
 
     '------------------------------------------- Finalizer -------------------------------------------
+    ''' <summary>
+    ''' Configures the mod so it can be used
+    ''' </summary>
+    ''' <param name="script">Instance of script</param>
+    ''' <param name="modFile">Mod file name with extension. It should end with .m, SS.m, or CS.m</param>
+    ''' <param name="StartStop">Whether to start or stop mods</param>
     Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         If Not IsNothing(script) Then
             script.StartMod()
@@ -178,6 +199,9 @@ Public Module ModParser
     End Sub
 
     '------------------------------------------- Reloader -------------------------------------------
+    ''' <summary>
+    ''' Reloads all mods
+    ''' </summary>
     Sub ReloadMods()
         'Clear all scripts, commands, and defs
         modcmnds.Clear()
@@ -196,6 +220,10 @@ Public Module ModParser
         Next
     End Sub
 
+    ''' <summary>
+    ''' Reloads all generic definitions so it can be updated with language change
+    ''' </summary>
+    ''' <param name="OldModDesc">Old mod command description</param>
     Sub ReloadGenericDefs(ByVal OldModDesc As String)
         For i As Integer = 0 To moddefs.Keys.Count - 1
             Dim Cmd As String = moddefs.Keys(i)

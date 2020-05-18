@@ -28,6 +28,10 @@ Module IMAPShell
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested As Boolean
 
+    ''' <summary>
+    ''' Initializes the shell of the IMAP client
+    ''' </summary>
+    ''' <param name="Address">An e-mail address or username. This is used to show address in command input.</param>
     Sub OpenShell(Address As String)
         'Send ping to keep the connection alive
         Dim IMAP_NoOp As New Thread(AddressOf KeepConnection)
@@ -79,6 +83,9 @@ Module IMAPShell
         IMAP_Client.Disconnect(True)
     End Sub
 
+    ''' <summary>
+    ''' Tries to keep the connection going
+    ''' </summary>
     Sub KeepConnection()
         'Every 10 seconds, send a ping to IMAP server
         While IMAP_Client.IsConnected
@@ -94,6 +101,11 @@ Module IMAPShell
         End While
     End Sub
 
+    ''' <summary>
+    ''' Locates the normal (not special) folder and opens it.
+    ''' </summary>
+    ''' <param name="FolderString">A folder to open (not a path)</param>
+    ''' <returns>A folder</returns>
     Public Function OpenFolder(ByVal FolderString As String) As MailFolder
         Dim Opened As MailFolder
         Wdbg("I", "Personal namespace collection parsing started.")

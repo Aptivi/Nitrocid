@@ -19,6 +19,11 @@ Imports System.Reflection
 
 Public Module StringEvaluators
 
+    ''' <summary>
+    ''' Evaluates a variable
+    ''' </summary>
+    ''' <param name="Var">A full path to variable</param>
+    ''' <returns></returns>
     Public Function Evaluate(ByVal Var As String) As Object
         Dim EvalP As New VBCodeProvider
         Dim EvalCP As New CompilerParameters With {.GenerateExecutable = False,

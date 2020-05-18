@@ -24,6 +24,11 @@ Module RPC_Commands
                                               "<Request:Reboot>",   'Request will be like this: <Request:Reboot>(IP)
                                               "<Request:Exec>"}     'Request will be like this: <Request:Exec>(CMD)
 
+    ''' <summary>
+    ''' Send an RPC command to another instance of KS using the specified address
+    ''' </summary>
+    ''' <param name="Request">A request</param>
+    ''' <param name="IP">An IP address which the RPC is hosted</param>
     Sub SendCommand(ByVal Request As String, ByVal IP As String)
         Dim Cmd As String = Request.Remove(Request.IndexOf("("))
         Wdbg("I", "Command: {0}", Cmd)
@@ -53,6 +58,10 @@ Module RPC_Commands
             End If
         End If
     End Sub
+
+    ''' <summary>
+    ''' Thread to listen to commands.
+    ''' </summary>
     Sub RecCommand()
         Dim endp As New IPEndPoint(IPAddress.Any, RPCPort)
         While True

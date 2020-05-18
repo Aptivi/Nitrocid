@@ -222,6 +222,9 @@ Public Module Color
     'Variables
     Public currentTheme As String
 
+    ''' <summary>
+    ''' Resets all colors to default
+    ''' </summary>
     Public Sub ResetColors()
         Wdbg("I", "Resetting colors")
         inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorDef), ConsoleColors)
@@ -236,14 +239,23 @@ Public Module Color
         cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorDef), ConsoleColors)
         stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorDef), ConsoleColors)
         errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorDef), ConsoleColors)
-        Load()
+        LoadBack()
     End Sub
-    Public Sub Load()
+
+    ''' <summary>
+    ''' Loads the background
+    ''' </summary>
+    Public Sub LoadBack()
         Wdbg("I", "Filling background with background color")
         Dim esc As Char = GetEsc()
         Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
         Console.Clear()
     End Sub
+
+    ''' <summary>
+    ''' Sets system colors according to the programmed templates
+    ''' </summary>
+    ''' <param name="theme">A specified theme</param>
     Public Sub TemplateSet(ByVal theme As String)
         Wdbg("I", "Theme: {0}", theme)
         If colorTemplates.Contains(theme) Then
@@ -263,7 +275,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorRC), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorRC), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorRC), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "Bluespire" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorBS), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorBS), ConsoleColors)
@@ -277,7 +289,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorBS), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorBS), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorBS), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "Hacker" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorHckr), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorHckr), ConsoleColors)
@@ -291,7 +303,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorHckr), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorHckr), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorHckr), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "Ubuntu" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorU), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorU), ConsoleColors)
@@ -305,7 +317,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorU), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorU), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorU), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "YellowFG" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorYFG), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorYFG), ConsoleColors)
@@ -319,7 +331,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorYFG), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorYFG), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorYFG), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "YellowBG" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorYBG), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorYBG), ConsoleColors)
@@ -333,7 +345,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorYBG), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorYBG), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorYBG), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "Windows95" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColor95), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColor95), ConsoleColors)
@@ -347,7 +359,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColor95), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColor95), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), stageColor95), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "GTASA" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorSA), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorSA), ConsoleColors)
@@ -361,7 +373,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorSA), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorSA), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorSA), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "GrayOnYellow" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorGY), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorGY), ConsoleColors)
@@ -375,7 +387,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorGY), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorGY), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorGY), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "BlackOnWhite" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorBY), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorBY), ConsoleColors)
@@ -389,7 +401,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorBY), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorBY), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorBY), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "LinuxUncolored" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorLUnc), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorLUnc), ConsoleColors)
@@ -403,7 +415,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorLUnc), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorLUnc), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorLUnc), ConsoleColors)
-                Load()
+                LoadBack()
             ElseIf theme = "LinuxColoredDef" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorLcDef), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorLcDef), ConsoleColors)
@@ -417,7 +429,7 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorLcDef), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorLcDef), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorLcDef), ConsoleColors)
-                Load()
+                LoadBack()
             End If
             Wdbg("I", "Saving theme")
             MakePermanent()
@@ -429,6 +441,9 @@ Public Module Color
         End If
     End Sub
 
+    ''' <summary>
+    ''' Makes the color configuration permanent
+    ''' </summary>
     Public Sub MakePermanent()
         Dim ksconf As New IniFile()
         Dim configPath As String = paths("Configuration")
@@ -448,6 +463,9 @@ Public Module Color
         ksconf.Save(configPath)
     End Sub
 
+    ''' <summary>
+    ''' Parses the current theme for sysinfo
+    ''' </summary>
     Public Sub ParseCurrentTheme()
         Dim ksconf As New IniFile()
         Dim configPath As String = paths("Configuration")

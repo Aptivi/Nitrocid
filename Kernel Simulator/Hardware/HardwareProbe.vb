@@ -22,6 +22,9 @@ Imports Newtonsoft.Json.Linq
 Public Module HardwareProbe
 
     'TODO: Re-write in Beta
+    ''' <summary>
+    ''' Starts probing hardware (entry-point)
+    ''' </summary>
     Public Sub ProbeHW()
         Wdbg("I", "QuietProbe = {0}.", quietProbe)
         If Not quietProbe Then
@@ -36,6 +39,9 @@ Public Module HardwareProbe
         End If
     End Sub
 
+    ''' <summary>
+    ''' Starts probing hardware
+    ''' </summary>
     Public Sub StartProbing()
         'We will probe hardware
         If Not EnvironmentOSType.Contains("Unix") Then
@@ -71,6 +77,9 @@ Public Module HardwareProbe
     End Sub
 
     '----------> Windows hardware probers <----------
+    ''' <summary>
+    ''' [Windows] Probes hardware
+    ''' </summary>
     Public Sub ProbeHardware()
         'Variables
         Dim HDDSet As New ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive")
@@ -180,7 +189,10 @@ Public Module HardwareProbe
     End Sub
 
     '----------> Linux hardware prober <----------
-    'This uses inxi to get information about HDD. If you don't have it installed, use your appropriate package manager to install inxi or build from source.
+    ''' <summary>
+    ''' [Linux] Probes hardware
+    ''' </summary>
+    ''' <remarks>This uses inxi to get information about HDD. If you don't have it installed, use your appropriate package manager to install inxi or build from source.</remarks>
     Public Sub ProbeHardwareLinux()
         'Done sets
         HDDDone = True
@@ -264,7 +276,10 @@ Public Module HardwareProbe
     End Sub
 
     '----------> Hardware lists <----------
-    Public Sub ListDrivers() 'Windows
+    ''' <summary>
+    ''' [Windows] Lists all drivers
+    ''' </summary>
+    Public Sub ListDrivers()
         'Variables
         Dim times As Integer = 1
         Dim total As ULong
@@ -324,6 +339,9 @@ Public Module HardwareProbe
         Next
     End Sub
 
+    ''' <summary>
+    ''' [Linux] Lists all drivers
+    ''' </summary>
     Sub ListDrivers_Linux()
         'CPU List
         For Each info As CPU_Linux In CPUList

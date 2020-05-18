@@ -20,16 +20,38 @@ Imports System.Runtime.InteropServices
 
 Public Module Color255
 
+    ''' <summary>
+    ''' [Windows] Sets console mode
+    ''' </summary>
+    ''' <param name="hConsoleHandle">Console Handle</param>
+    ''' <param name="mode">Mode</param>
+    ''' <returns>True if succeeded, false if failed</returns>
     <DllImport("kernel32.dll", SetLastError:=True)>
     Public Function SetConsoleMode(ByVal hConsoleHandle As IntPtr, ByVal mode As Integer) As Boolean
     End Function
+
+    ''' <summary>
+    ''' [Windows] Gets console mode
+    ''' </summary>
+    ''' <param name="handle">Console handle</param>
+    ''' <param name="mode">Mode</param>
+    ''' <returns>True if succeeded, false if failed</returns>
     <DllImport("kernel32.dll", SetLastError:=True)>
     Public Function GetConsoleMode(ByVal handle As IntPtr, <Out()> ByRef mode As Integer) As Boolean
     End Function
+
+    ''' <summary>
+    ''' [Windows] Gets console handle
+    ''' </summary>
+    ''' <param name="handle">Handle number</param>
+    ''' <returns>True if succeeded, false if failed</returns>
     <DllImport("kernel32.dll", SetLastError:=True)>
     Public Function GetStdHandle(ByVal handle As Integer) As IntPtr
     End Function
 
+    ''' <summary>
+    ''' All 255 console colors
+    ''' </summary>
     Public Enum ConsoleColors As Integer
         Black = 0
         DarkRed = 1
@@ -289,7 +311,10 @@ Public Module Color255
         Grey93
     End Enum
 
-    Sub Initialize255() 'Windows only
+    ''' <summary>
+    ''' [Windows] Initializes 255 color support
+    ''' </summary>
+    Sub Initialize255()
         Dim handle = GetStdHandle(-11)
         Wdbg("I", "Integer pointer {0}", handle)
         Dim mode As Integer
@@ -300,8 +325,13 @@ Public Module Color255
             Wdbg("I", "Added support for VT escapes.")
         End If
     End Sub
+
+    ''' <summary>
+    ''' A simplification for ChrW function to return the ESC character
+    ''' </summary>
+    ''' <returns>ESC</returns>
     Public Function GetEsc() As Char
-        Return ChrW(&H1B) 'ESC
+        Return ChrW(&H1B)
     End Function
 
 End Module

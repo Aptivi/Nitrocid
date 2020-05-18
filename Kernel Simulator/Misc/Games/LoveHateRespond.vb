@@ -47,6 +47,10 @@ Module LoveHateRespond
     Dim Users As New List(Of String) From {"GS4L", "The Eagle", "Vercity", "Losting - Computers, fixes, and more", "WillStrike", "CyberBully #2095", "ProGamer453",
                                            "ExtFS", "Elaine Stretch", "NFSMW2005", "WhatsUp", "BSearch", "Wellington Marks", "CD-OS", "LinuxUser348", "Speculate Ltd.",
                                            "The Matrix"}
+
+    ''' <summary>
+    ''' Initializes the game
+    ''' </summary>
     Sub InitializeLoteresp()
         Dim RandomDriver As New Random()
         Dim RandomUser, RandomComment, Type, Response As String

@@ -19,6 +19,10 @@
 Module Speller
 
     Public Words As New List(Of String)
+
+    ''' <summary>
+    ''' Initializes the game
+    ''' </summary>
     Sub InitializeWords()
         Dim Downloader As New WebClient
         Dim RandomDriver As New Random

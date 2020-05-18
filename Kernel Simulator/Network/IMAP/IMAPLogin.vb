@@ -24,12 +24,19 @@ Module IMAPLogin
     Public IMAP_Client As New ImapClient()
     Friend IMAP_Authentication As New NetworkCredential()
 
+    ''' <summary>
+    ''' Prompts user to enter username or e-mail address
+    ''' </summary>
     Sub PromptUser()
         'Username or mail address
         W(DoTranslation("Enter username or mail address: ", currentLang), False, ColTypes.Input)
         PromptPassword(Console.ReadLine)
     End Sub
 
+    ''' <summary>
+    ''' Prompts user to enter password
+    ''' </summary>
+    ''' <param name="Username">Specified username</param>
     Sub PromptPassword(ByVal Username As String)
         'Password
         Wdbg("I", "Username: {0}", Username)
@@ -56,6 +63,11 @@ Module IMAPLogin
         ConnectShell(IMAP_Address, IMAP_Port)
     End Sub
 
+    ''' <summary>
+    ''' Tries to connect tospecified address and port with specified credentials
+    ''' </summary>
+    ''' <param name="Address">An IP address of the IMAP server</param>
+    ''' <param name="Port">A port of the IMAP server</param>
     Sub ConnectShell(ByVal Address As String, ByVal Port As Integer)
         Try
             'Connection

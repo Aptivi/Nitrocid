@@ -17,12 +17,15 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports System.Security.Cryptography
 Imports System.Text
 Imports Microsoft.VisualBasic.FileIO
 
 Public Module GetCommand
 
+    ''' <summary>
+    ''' Executes a command
+    ''' </summary>
+    ''' <param name="requestedCommand">A command. It may contain arguments</param>
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
         '1. Get the index of the first space (Used for step 3)
         Dim index As Integer = requestedCommand.IndexOf(" ")
@@ -824,7 +827,7 @@ Public Module GetCommand
                                 If args(6) = "def" Then
                                     args(6) = "Black"
                                     backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), args(6)), ConsoleColors)
-                                    Load()
+                                    LoadBack()
                                 End If
                                 If args(7) = "def" Then
                                     args(7) = "Gray"
@@ -863,7 +866,7 @@ Public Module GetCommand
                                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), args(9)), ConsoleColors)
                                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), args(10)), ConsoleColors)
                                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), args(11)), ConsoleColors)
-                                Load()
+                                LoadBack()
                             Else
                                 W(DoTranslation("One or more of the colors is invalid.", currentLang), True, ColTypes.Err)
                             End If

@@ -18,6 +18,9 @@
 
 Module Solver
 
+    ''' <summary>
+    ''' Initializes the game
+    ''' </summary>
     Sub InitializeSolver()
         Dim RandomDriver As New Random
         Dim RandomExpression As String

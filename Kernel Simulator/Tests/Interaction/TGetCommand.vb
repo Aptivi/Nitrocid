@@ -18,7 +18,6 @@
 
 Imports System.Globalization
 Imports System.IO
-Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Text.RegularExpressions
 Imports LibVLCSharp.Shared
@@ -26,6 +25,10 @@ Imports Microsoft.VisualBasic.FileIO
 
 Module TGetCommand
 
+    ''' <summary>
+    ''' Parses the specified command and executes it
+    ''' </summary>
+    ''' <param name="FullCmd">A command to be executed. It may come with arguments</param>
     Sub TParseCommand(ByVal FullCmd As String)
         Dim FullArgs As String
         Dim FullArgsL As List(Of String)

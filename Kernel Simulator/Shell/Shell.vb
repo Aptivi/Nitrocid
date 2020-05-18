@@ -23,6 +23,9 @@ Public Module Shell
     'Available Commands  (availableCommands)
     'Admin-Only commands (strictCmds)
     'Obsolete commands   (obsoleteCmds)
+    'For contributors: For each added command, you should add a command to availableCommands array so there are no problems detecting your new command.
+    '                  For each added admin command, you should add a command to strictCmds array after performing above procedure so there are no problems checking if user has Admin permission to use your new admin command.
+    '                  For each obsolete command, you should add a command to obsoleteCmds array so there are no problems checking if your command is obsolete.
     Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
     Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "shutdown", "reboot", "adduser", "chmotd",
@@ -38,10 +41,9 @@ Public Module Shell
     Public obsoleteCmds() As String = {}
     Public modcmnds As New ArrayList
 
-    'For contributors: For each added command, you should add a command to availableCommands array so there are no problems detecting your new command.
-    '                  For each added admin command, you should add a command to strictCmds array after performing above procedure so there are no problems checking if user has Admin permission to use your new admin command.
-    '                  For each obsolete command, you should add a command to obsoleteCmds array so there are no problems checking if your command is obsolete.
-    'Initialize Shell
+    ''' <summary>
+    ''' Initializes the shell.
+    ''' </summary>
     Public Sub InitializeShell()
         While True
             If LogoutRequested Then
@@ -117,18 +119,26 @@ Public Module Shell
         End While
     End Sub
 
+    ''' <summary>
+    ''' Writes the input for command prompt
+    ''' </summary>
     Public Sub CommandPromptWrite()
 
         If adminList(signedinusrnm) = True Then
             W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, signedinusrnm) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0} # ", False, ColTypes.Gray, CurrDir)
         ElseIf maintenance = True Then
-            W("Maintenance Mode>", False, ColTypes.Gray)
+            W("Maintenance Mode> ", False, ColTypes.Gray)
         Else
             W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, signedinusrnm) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0} $ ", False, ColTypes.Gray, CurrDir)
         End If
 
     End Sub
 
+    ''' <summary>
+    ''' Parses a specified command.
+    ''' </summary>
+    ''' <param name="ArgsMode">Specify if it runs using arguments</param>
+    ''' <param name="strcommand">Specify command</param>
     Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String)
 
         'Reads command written by user
@@ -220,6 +230,10 @@ Public Module Shell
 
     End Sub
 
+    ''' <summary>
+    ''' Translates alias to actual command, preserving arguments
+    ''' </summary>
+    ''' <param name="aliascmd">Specifies the alias with arguments</param>
     Sub ExecuteAlias(ByVal aliascmd As String)
         Wdbg("I", "Translating alias {0} to {1}...", aliascmd, Aliases(aliascmd))
         Dim actualCmd As String = strcommand.Replace(aliascmd, Aliases(aliascmd))
