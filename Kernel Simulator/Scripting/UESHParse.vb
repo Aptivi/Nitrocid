@@ -20,7 +20,6 @@ Imports System.IO
 
 Public Module UESHParse
 
-    'TODO: Make documentation at the end of development of 0.0.10
     ''' <summary>
     ''' Executes the UESH script
     ''' </summary>
