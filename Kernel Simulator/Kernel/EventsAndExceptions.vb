@@ -47,6 +47,26 @@ Public Class EventsAndExceptions
     Public Event FTPPreExecuteCommand()
     Public Event FTPPostExecuteCommand()
     Public Event FTPCommandError()
+    Public Event FTPPreDownload()
+    Public Event FTPPostDownload()
+    Public Event FTPPreUpload()
+    Public Event FTPPostUpload()
+    Public Event IMAPShellInitialized()
+    Public Event IMAPPreExecuteCommand()
+    Public Event IMAPPostExecuteCommand()
+    Public Event IMAPCommandError()
+    Public Event RemoteDebugConnectionAccepted()
+    Public Event RemoteDebugConnectionDisconnected()
+    Public Event RemoteDebugExecuteCommand()
+    Public Event RemoteDebugCommandError()
+    Public Event RPCCommandSent()
+    Public Event RPCCommandReceived()
+    Public Event RPCCommandError()
+    Public Event SSHConnected()
+    Public Event SSHDisconnected()
+    Public Event SSHError()
+    Public Event UESHPreExecute()
+    Public Event UESHPostExecute()
 
     ''' <summary>
     ''' Makes the mod respond to the event of kernel start
@@ -300,6 +320,186 @@ Public Class EventsAndExceptions
             script.InitEvents("FTPCommandError")
         Next
     End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of FTP pre-download
+    ''' </summary>
+    Public Sub RespondFTPPreDownload() Handles Me.FTPPreDownload
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event FTPPreDownload()...", script.Name, script.Version)
+            script.InitEvents("FTPPreDownload")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of FTP post-download
+    ''' </summary>
+    Public Sub RespondFTPPostDownload() Handles Me.FTPPostDownload
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event FTPPostDownload()...", script.Name, script.Version)
+            script.InitEvents("FTPPostDownload")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of FTP pre-upload
+    ''' </summary>
+    Public Sub RespondFTPPreUpload() Handles Me.FTPPreUpload
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event FTPPreUpload()...", script.Name, script.Version)
+            script.InitEvents("FTPPreUpload")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of FTP post-upload
+    ''' </summary>
+    Public Sub RespondFTPPostUpload() Handles Me.FTPPostUpload
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event FTPPostUpload()...", script.Name, script.Version)
+            script.InitEvents("FTPPostUpload")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of IMAP shell initialized
+    ''' </summary>
+    Public Sub RespondIMAPShellInitialized() Handles Me.IMAPShellInitialized
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event IMAPShellInitialized()...", script.Name, script.Version)
+            script.InitEvents("IMAPShellInitialized")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of IMAP pre-command execution
+    ''' </summary>
+    Public Sub RespondIMAPPreExecuteCommand() Handles Me.IMAPPreExecuteCommand
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event IMAPPreExecuteCommand()...", script.Name, script.Version)
+            script.InitEvents("IMAPPreExecuteCommand")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of IMAP post-command execution
+    ''' </summary>
+    Public Sub RespondIMAPPostExecuteCommand() Handles Me.IMAPPostExecuteCommand
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event IMAPPostExecuteCommand()...", script.Name, script.Version)
+            script.InitEvents("IMAPPostExecuteCommand")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of IMAP command error
+    ''' </summary>
+    Public Sub RespondIMAPCommandError() Handles Me.IMAPCommandError
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event IMAPCommandError()...", script.Name, script.Version)
+            script.InitEvents("IMAPCommandError")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of remote debugging connection accepted
+    ''' </summary>
+    Public Sub RespondRemoteDebugConnectionAccepted() Handles Me.RemoteDebugConnectionAccepted
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event RemoteDebugConnectionAccepted()...", script.Name, script.Version)
+            script.InitEvents("RemoteDebugConnectionAccepted")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of remote debugging connection disconnected
+    ''' </summary>
+    Public Sub RespondRemoteDebugConnectionDisconnected() Handles Me.RemoteDebugConnectionDisconnected
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event RemoteDebugConnectionDisconnected()...", script.Name, script.Version)
+            script.InitEvents("RemoteDebugConnectionDisconnected")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of remote debugging command execution
+    ''' </summary>
+    Public Sub RespondRemoteDebugExecuteCommand() Handles Me.RemoteDebugExecuteCommand
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event RemoteDebugExecuteCommand()...", script.Name, script.Version)
+            script.InitEvents("RemoteDebugExecuteCommand")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of remote debugging command error
+    ''' </summary>
+    Public Sub RespondRemoteDebugCommandError() Handles Me.RemoteDebugCommandError
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event RemoteDebugCommandError()...", script.Name, script.Version)
+            script.InitEvents("RemoteDebugCommandError")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of RPC command sent
+    ''' </summary>
+    Public Sub RespondRPCCommandSent() Handles Me.RPCCommandSent
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event RPCCommandSent()...", script.Name, script.Version)
+            script.InitEvents("RPCCommandSent")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of RPC command received
+    ''' </summary>
+    Public Sub RespondRPCCommandReceived() Handles Me.RPCCommandReceived
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event RPCCommandReceived()...", script.Name, script.Version)
+            script.InitEvents("RPCCommandReceived")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of RPC command error
+    ''' </summary>
+    Public Sub RespondRPCCommandError() Handles Me.RPCCommandError
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event RPCCommandError()...", script.Name, script.Version)
+            script.InitEvents("RPCCommandError")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SSH being connected
+    ''' </summary>
+    Public Sub RespondSSHConnected() Handles Me.SSHConnected
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event SSHConnected()...", script.Name, script.Version)
+            script.InitEvents("SSHConnected")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SSH being disconnected
+    ''' </summary>
+    Public Sub RespondSSHDisconnected() Handles Me.SSHDisconnected
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event SSHDisconnected()...", script.Name, script.Version)
+            script.InitEvents("SSHDisconnected")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SSH error
+    ''' </summary>
+    Public Sub RespondSSHError() Handles Me.SSHError
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event SSHError()...", script.Name, script.Version)
+            script.InitEvents("SSHError")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of UESH pre-execute
+    ''' </summary>
+    Public Sub RespondUESHPreExecute() Handles Me.UESHPreExecute
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event UESHPreExecute()...", script.Name, script.Version)
+            script.InitEvents("UESHPreExecute")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of UESH post-execute
+    ''' </summary>
+    Public Sub RespondUESHPostExecute() Handles Me.UESHPostExecute
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event UESHPostExecute()...", script.Name, script.Version)
+            script.InitEvents("UESHPostExecute")
+        Next
+    End Sub
 
     'These subs are for raising events
     ''' <summary>
@@ -497,6 +697,146 @@ Public Class EventsAndExceptions
     Public Sub RaiseFTPCommandError()
         Wdbg("I", "Raising event FTPCommandError() and responding in RespondFTPCommandError()...")
         RaiseEvent FTPCommandError()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of FTP pre-download
+    ''' </summary>
+    Public Sub RaiseFTPPreDownload()
+        Wdbg("I", "Raising event FTPPreDownload() and responding in RespondFTPPreDownload()...")
+        RaiseEvent FTPPreDownload()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of FTP post-download
+    ''' </summary>
+    Public Sub RaiseFTPPostDownload()
+        Wdbg("I", "Raising event FTPPostDownload() and responding in RespondFTPPostDownload()...")
+        RaiseEvent FTPPostDownload()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of FTP pre-upload
+    ''' </summary>
+    Public Sub RaiseFTPPreUpload()
+        Wdbg("I", "Raising event FTPPreUpload() and responding in RespondFTPPreUpload()...")
+        RaiseEvent FTPPreUpload()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of FTP post-upload
+    ''' </summary>
+    Public Sub RaiseFTPPostUpload()
+        Wdbg("I", "Raising event FTPPostUpload() and responding in RespondFTPPostUpload()...")
+        RaiseEvent FTPPostUpload()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of IMAP shell initialized
+    ''' </summary>
+    Public Sub RaiseIMAPShellInitialized()
+        Wdbg("I", "Raising event IMAPShellInitialized() and responding in RespondIMAPShellInitialized()...")
+        RaiseEvent IMAPShellInitialized()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of IMAP pre-command execution
+    ''' </summary>
+    Public Sub RaiseIMAPPreExecuteCommand()
+        Wdbg("I", "Raising event IMAPPreExecuteCommand() and responding in RespondIMAPPreExecuteCommand()...")
+        RaiseEvent IMAPPreExecuteCommand()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of IMAP post-command execution
+    ''' </summary>
+    Public Sub RaiseIMAPPostExecuteCommand()
+        Wdbg("I", "Raising event IMAPPostExecuteCommand() and responding in RespondIMAPPostExecuteCommand()...")
+        RaiseEvent IMAPPostExecuteCommand()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of IMAP command error
+    ''' </summary>
+    Public Sub RaiseIMAPCommandError()
+        Wdbg("I", "Raising event IMAPCommandError() and responding in RespondIMAPCommandError()...")
+        RaiseEvent IMAPCommandError()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of remote debugging connection accepted
+    ''' </summary>
+    Public Sub RaiseRemoteDebugConnectionAccepted()
+        Wdbg("I", "Raising event RemoteDebugConnectionAccepted() and responding in RespondRemoteDebugConnectionAccepted()...")
+        RaiseEvent RemoteDebugConnectionAccepted()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of remote debugging connection disconnected
+    ''' </summary>
+    Public Sub RaiseRemoteDebugConnectionDisconnected()
+        Wdbg("I", "Raising event RemoteDebugConnectionDisconnected() and responding in RespondRemoteDebugConnectionDisconnected()...")
+        RaiseEvent RemoteDebugConnectionDisconnected()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of remote debugging command execution
+    ''' </summary>
+    Public Sub RaiseRemoteDebugExecuteCommand()
+        Wdbg("I", "Raising event RemoteDebugExecuteCommand() and responding in RespondRemoteDebugExecuteCommand()...")
+        RaiseEvent RemoteDebugExecuteCommand()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of remote debugging command error
+    ''' </summary>
+    Public Sub RaiseRemoteDebugCommandError()
+        Wdbg("I", "Raising event RemoteDebugCommandError() and responding in RespondRemoteDebugCommandError()...")
+        RaiseEvent RemoteDebugCommandError()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of RPC command sent
+    ''' </summary>
+    Public Sub RaiseRPCCommandSent()
+        Wdbg("I", "Raising event RPCCommandSent() and responding in RespondRPCCommandSent()...")
+        RaiseEvent RPCCommandSent()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of RPC command received
+    ''' </summary>
+    Public Sub RaiseRPCCommandReceived()
+        Wdbg("I", "Raising event RPCCommandReceived() and responding in RespondRPCCommandReceived()...")
+        RaiseEvent RPCCommandReceived()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of RPC command error
+    ''' </summary>
+    Public Sub RaiseRPCCommandError()
+        Wdbg("I", "Raising event RPCCommandError() and responding in RespondRPCCommandError()...")
+        RaiseEvent RPCCommandError()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SSH being connected
+    ''' </summary>
+    Public Sub RaiseSSHConnected()
+        Wdbg("I", "Raising event SSHConnected() and responding in RespondSSHConnected()...")
+        RaiseEvent SSHConnected()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SSH being disconnected
+    ''' </summary>
+    Public Sub RaiseSSHDisconnected()
+        Wdbg("I", "Raising event SSHDisconnected() and responding in RespondSSHDisconnected()...")
+        RaiseEvent SSHDisconnected()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SSH error
+    ''' </summary>
+    Public Sub RaiseSSHError()
+        Wdbg("I", "Raising event SSHError() and responding in RespondSSHError()...")
+        RaiseEvent SSHError()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of UESH pre-execute
+    ''' </summary>
+    Public Sub RaiseUESHPreExecute()
+        Wdbg("I", "Raising event UESHPreExecute() and responding in RespondUESHPreExecute()...")
+        RaiseEvent UESHPreExecute()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of UESH post-execute
+    ''' </summary>
+    Public Sub RaiseUESHPostExecute()
+        Wdbg("I", "Raising event UESHPostExecute() and responding in RespondUESHPostExecute()...")
+        RaiseEvent UESHPostExecute()
     End Sub
 
     'These classes are for exceptions. (For developers of mods: Only use if your mod is an extension to the kernel)
