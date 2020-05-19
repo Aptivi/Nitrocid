@@ -19,8 +19,8 @@
 Module CommandLineArgsParse
 
     Public availableCMDLineArgs() As String = {"createConf", "testMod", "testInteractive", "debug", "args", 'Normal kernel arguments
-                                               "CI-TestPrint", "CI-TestWdbg", "CI-TestConfig", "CI-TestInitialize", "CI-TestEval", 'CI test artifacts
-                                               "CI-TestStrTrunc", "CI-TestSSEs", "CI-TestMOTD", "CI-TestMAL", "CI-TestPlace", "CI-TestCalc"} 'TODO: Add more artifacts
+                                               "CI-TestPrint", "CI-TestWdbg", "CI-TestConfig", "CI-TestInitialize", "CI-TestEval", 'CI test tests
+                                               "CI-TestStrTrunc", "CI-TestSSEs", "CI-TestMOTD", "CI-TestMAL", "CI-TestPlace", "CI-TestCalc"} 'TODO: Add more tests
 
     ''' <summary>
     ''' Parses the command line arguments
