@@ -1,9 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github",
-    "\\.github\\workflows",
-    "\\Kernel Simulator",
     "\\Kernel Simulator\\Network",
     "\\Kernel Simulator\\Network\\FTP",
     "\\Kernel Simulator\\Network\\IMAP",
