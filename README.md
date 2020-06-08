@@ -6,11 +6,12 @@
 
 This simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal. KS _will_ continue to be developed, even if we made the real PC version of Kernel.
 
-The PPA for KS will come shortly as promised.
 
 ## |-----+--> _Announcement_ <--+-----|
 
 Due to time constraints, and the volume of work that we have, the development progress of the future versions will slow down until the end of June. Meanwhile, please stay tuned for more updates and progress on [our blog](https://eofla.wordpress.com). You can also make pull requests and issues, but we don't look at them more frequently.
+
+We have recently managed to get Kernel Simulator to build on Launchpad PPA. See its home page [here](https://launchpad.net/~eofla/+archive/ubuntu/kernel-sim).
 
 ## |-----+--> _Notices_ <--+-----|
 
@@ -35,6 +36,14 @@ For more information, inspect [this wiki page](https://github.com/EoflaOE/Kernel
 If you are going to install KS without building from source, either look at the Releases, or use [this link](https://chocolatey.org/packages/KS/). (`choco install ks`, Run using `"Kernel Simulator"` on the CMD or on Run. Make sure to include double quotes.)
 
 If you are going to install KS as a NuGet library when modding or integrating, use [this link](https://www.nuget.org/packages/KS/).
+
+If you are going to install KS on Ubuntu Focal Fossa or later using `apt`, follow the steps:
+
+1. Open the terminal emulator
+1. Run `sudo add-apt-repository ppa:eofla/kernel-sim`
+1. Confirm the addition of the PPA. It should update your package cache
+1. Run `sudo apt install kernel-simulator`
+1. Run `ks`
 
 NOTE: Make sure to follow the prerequisites.
 

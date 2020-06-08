@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Kernel Simulator",
     "\\Kernel Simulator\\Network",
     "\\Kernel Simulator\\Network\\FTP",
     "\\Kernel Simulator\\Network\\IMAP",
     "\\Kernel Simulator\\Network\\RPC"
   ],
-  "SelectedNode": "\\.github",
   "PreviewInSolutionExplorer": false
 }
