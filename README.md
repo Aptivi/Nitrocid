@@ -9,9 +9,7 @@ This simulator simulates our **future** kernel that is planned by us and is not 
 
 ## |-----+--> _Announcement_ <--+-----|
 
-Due to time constraints, and the volume of work that we have, the development progress of the future versions will slow down until the end of June. Meanwhile, please stay tuned for more updates and progress on [our blog](https://eofla.wordpress.com). You can also make pull requests and issues, but we don't look at them more frequently.
-
-We have recently managed to get Kernel Simulator to build on Launchpad PPA. See its home page [here](https://launchpad.net/~eofla/+archive/ubuntu/kernel-sim).
+We have recently managed to get Kernel Simulator to build on Launchpad PPA. See the home page [here](https://launchpad.net/~eofla/+archive/ubuntu/kernel-sim) and the project page [here](https://launchpad.net/kernel-sim).
 
 ## |-----+--> _Notices_ <--+-----|
 
