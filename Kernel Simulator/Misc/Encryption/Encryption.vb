@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
 
@@ -50,7 +51,7 @@ Public Module Encryption
     ''' </summary>
     ''' <param name="str">Source string</param>
     ''' <param name="algorithm">Algorithm</param>
-    ''' <returns>Encrypted string</returns>
+    ''' <returns>Encrypted hash sum</returns>
     Public Function GetEncryptedString(ByVal str As String, ByVal algorithm As Algorithms) As String
         Wdbg("I", "Selected algorithm: {0}", algorithm.ToString)
         Wdbg("I", "String length: {0}", str.Length)
@@ -63,6 +64,29 @@ Public Module Encryption
                 Return GetArrayEnc(hashbyte)
             Case 2
                 Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(str))
+                Return GetArrayEnc(hashbyte)
+        End Select
+        Return ""
+    End Function
+
+    ''' <summary>
+    ''' Encrypts a file
+    ''' </summary>
+    ''' <param name="str">Source stream</param>
+    ''' <param name="algorithm">Algorithm</param>
+    ''' <returns>Encrypted hash sum</returns>
+    Public Function GetEncryptedFile(ByVal str As Stream, ByVal algorithm As Algorithms) As String
+        Wdbg("I", "Selected algorithm: {0}", algorithm.ToString)
+        Wdbg("I", "Stream length: {0}", str.Length)
+        Select Case algorithm
+            Case 0
+                Dim hashbyte As Byte() = MD5.Create().ComputeHash(str)
+                Return GetArrayEnc(hashbyte)
+            Case 1
+                Dim hashbyte As Byte() = SHA1.Create().ComputeHash(str)
+                Return GetArrayEnc(hashbyte)
+            Case 2
+                Dim hashbyte As Byte() = SHA256.Create().ComputeHash(str)
                 Return GetArrayEnc(hashbyte)
         End Select
         Return ""

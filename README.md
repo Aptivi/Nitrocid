@@ -6,7 +6,6 @@
 
 This simulator simulates our **future** kernel that is planned by us and is not a final planned version of Kernel, since it was minimal. KS _will_ continue to be developed, even if we made the real PC version of Kernel.
 
-
 ## |-----+--> _Announcement_ <--+-----|
 
 We have recently managed to get Kernel Simulator to build on Launchpad PPA. See the home page [here](https://launchpad.net/~eofla/+archive/ubuntu/kernel-sim) and the project page [here](https://launchpad.net/kernel-sim).
@@ -267,7 +266,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **5/19/2020 - 0.0.10:** Updated libraries, Fixed mods not being able to access the Encryption class, Simplified encryption code for mods, improved list of filesystems, fixed FTP crash when faced with multiple profiles, Now FTP addresses starting with ftpes:// will also be accepted, Made FTP profile listing more clear, Now the IMAP client will tell you if there's an attachment when reading, fixed misleading message when reading the first message, fixed IMAP shell crash when idle, added scripting support, now error messages have their own color, Restored `echo`, `beep`, and `choice` commands from 0.0.1 for script implementation, Added `input` command, Now IMAP client shows newest messages first, Fixed unexpected kernel crash when the IMAP shell crashed, Added debugging messages in IMAP shell, Added other folder support to IMAP client, Added code documentation for modders and developers using Visual Studio, Added usage commands support for FTP, Added new events for mods
 
-**6/8/2020 - WIP - 0.0.10.1:**
+**7/7/2020 - WIP - 0.0.10.1:** Fixed OutOfMemoryException when hashing large files
 
 Items with asterisk means that the specified change/fix will be backported to previous version of KS which doesn't have it (only for Ubuntu PPA version, backports as Debian patches)
 

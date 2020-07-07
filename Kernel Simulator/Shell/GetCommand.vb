@@ -985,22 +985,23 @@ Public Module GetCommand
                         file = ReplaceLastOccurrence(file, CurrDir, "")
                     End If
                     If IO.File.Exists(file) Then
+                        Dim stream As New StreamReader(file)
                         If args(0) = "SHA256" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
-                            W(GetEncryptedString(IO.File.ReadAllText(file), Algorithms.SHA256), True, ColTypes.Neutral)
+                            W(GetEncryptedFile(stream.BaseStream, Algorithms.SHA256), True, ColTypes.Neutral)
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         ElseIf args(0) = "SHA1" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
-                            W(GetEncryptedString(IO.File.ReadAllText(file), Algorithms.SHA1), True, ColTypes.Neutral)
+                            W(GetEncryptedFile(stream.BaseStream, Algorithms.SHA1), True, ColTypes.Neutral)
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         ElseIf args(0) = "MD5" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
-                            W(GetEncryptedString(IO.File.ReadAllText(file), Algorithms.MD5), True, ColTypes.Neutral)
+                            W(GetEncryptedFile(stream.BaseStream, Algorithms.MD5), True, ColTypes.Neutral)
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         Else
@@ -1032,10 +1033,11 @@ Public Module GetCommand
                     If Directory.Exists(folder) Then
                         For Each file As String In Directory.EnumerateFiles(folder, "*", IO.SearchOption.TopDirectoryOnly)
                             W("- {0}", True, ColTypes.Neutral, file)
+                            Dim stream As New StreamReader(file)
                             If args(0) = "SHA256" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
-                                Dim encrypted As String = GetEncryptedString(IO.File.ReadAllText(file), Algorithms.SHA256)
+                                Dim encrypted As String = GetEncryptedFile(stream.BaseStream, Algorithms.SHA256)
                                 W(encrypted, True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
@@ -1043,7 +1045,7 @@ Public Module GetCommand
                             ElseIf args(0) = "SHA1" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
-                                Dim encrypted As String = GetEncryptedString(IO.File.ReadAllText(file), Algorithms.SHA1)
+                                Dim encrypted As String = GetEncryptedFile(stream.BaseStream, Algorithms.SHA1)
                                 W(encrypted, True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
@@ -1051,7 +1053,7 @@ Public Module GetCommand
                             ElseIf args(0) = "MD5" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
-                                Dim encrypted As String = GetEncryptedString(IO.File.ReadAllText(file), Algorithms.MD5)
+                                Dim encrypted As String = GetEncryptedFile(stream.BaseStream, Algorithms.MD5)
                                 W(encrypted, True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
