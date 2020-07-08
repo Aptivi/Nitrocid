@@ -20,7 +20,8 @@ Module CommandLineArgsParse
 
     Public availableCMDLineArgs() As String = {"createConf", "testMod", "testInteractive", "debug", "args", 'Normal kernel arguments
                                                "CI-TestPrint", "CI-TestWdbg", "CI-TestConfig", "CI-TestInitialize", "CI-TestEval", 'CI test tests
-                                               "CI-TestStrTrunc", "CI-TestSSEs", "CI-TestMOTD", "CI-TestMAL", "CI-TestPlace", "CI-TestCalc"} 'TODO: Add more tests
+                                               "CI-TestStrTrunc", "CI-TestSSEs", "CI-TestMOTD", "CI-TestMAL", "CI-TestPlace", "CI-TestCalc",
+                                               "CI-TestEncryptString"}
 
     ''' <summary>
     ''' Parses the command line arguments
@@ -104,6 +105,11 @@ Module CommandLineArgsParse
                     W("3 * 6 = {0}", True, ColTypes.Neutral, DoCalc("3*6").Keys(0))
                     W("16 / 4 = {0}", True, ColTypes.Neutral, DoCalc("16/4").Keys(0))
                     W("6 - 2 = {0}", True, ColTypes.Neutral, DoCalc("6-2").Keys(0))
+                    Environment.Exit(0)
+                ElseIf arg = "CI-TestEncryptString" Then
+                    W("MD5: {0}", True, ColTypes.Neutral, GetEncryptedString("Kernel Simulator", Algorithms.MD5))
+                    W("SHA1: {0}", True, ColTypes.Neutral, GetEncryptedString("Kernel Simulator", Algorithms.SHA1))
+                    W("SHA256: {0}", True, ColTypes.Neutral, GetEncryptedString("Kernel Simulator", Algorithms.SHA256))
                     Environment.Exit(0)
                 End If
             End If
