@@ -18,9 +18,12 @@
 
 Imports System.IO
 Imports System.Text
+Imports System.Threading
 Imports Microsoft.VisualBasic.FileIO
 
 Public Module GetCommand
+
+    Public StartCommandThread As New Thread(AddressOf ExecuteCommand)
 
     ''' <summary>
     ''' Executes a command
@@ -79,6 +82,9 @@ Public Module GetCommand
             Wdbg("I", "The command requested {0} is obsolete", words(0))
             W(DoTranslation("This command is obsolete and will be removed in a future release.", currentLang), True, ColTypes.Neutral)
         End If
+
+        'Let CTRL+C cancel running command
+        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
 
         '7. Execute a command
         Try
@@ -1130,6 +1136,8 @@ Public Module GetCommand
             Wdbg("W", "User hasn't provided enough arguments for {0}", words(0))
             W(neaex.Message, True, ColTypes.Neutral)
             ShowHelp(words(0))
+        Catch taex As ThreadAbortException
+            Exit Sub
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("Error trying to execute command", currentLang) + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err,
@@ -1139,6 +1147,19 @@ Public Module GetCommand
                 W(DoTranslation("Error trying to execute command", currentLang) + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message, words(0))
             End If
         End Try
+        StartCommandThread.Abort()
+    End Sub
+
+    ''' <summary>
+    ''' Cancels any running command
+    ''' </summary>
+    ''' <param name="sender">Sender object</param>
+    ''' <param name="e">Arguments of event</param>
+    Sub CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
+        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            e.Cancel = True
+            StartCommandThread.Abort()
+        End If
     End Sub
 
 End Module

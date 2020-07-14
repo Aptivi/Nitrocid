@@ -16,7 +16,10 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.ComponentModel
 Imports System.IO
+Imports System.Threading
+Imports System.Threading.Tasks
 
 Public Module Shell
 
@@ -167,7 +170,9 @@ Public Module Shell
                             W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), True, ColTypes.Err, cmd)
                         ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(cmd) = True) Or availableCommands.Contains(cmd) Then
                             Wdbg("W", "Cmd exec {0} succeeded", cmd)
-                            GetCommand.ExecuteCommand(cmdArgs)
+                            StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
+                            StartCommandThread.Start(cmdArgs)
+                            StartCommandThread.Join()
                         ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + scriptCmd)) And scriptCmd.EndsWith(".uesh") Then
                             Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", scriptCmd)
                             Execute(Path.GetFullPath(CurrDir + "/" + scriptCmd), scriptArgs.Join(" "))
@@ -197,7 +202,9 @@ Public Module Shell
                         If Not (cmdArgs = Nothing Or cmdArgs.StartsWith(" ") = True) Then
                             If adminList(signedinusrnm) = True And strictCmds.Contains(cmd) = True Then
                                 Wdbg("W", "Cmd exec {0} succeeded", cmd)
-                                GetCommand.ExecuteCommand(cmdArgs)
+                                StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
+                                StartCommandThread.Start(cmdArgs)
+                                StartCommandThread.Join()
                             ElseIf adminList(signedinusrnm) = False And strictCmds.Contains(cmd) = True Then
                                 Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
                                 W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Err, cmd)
@@ -209,7 +216,9 @@ Public Module Shell
                                 Execute(Path.GetFullPath(CurrDir + "/" + strcommand), scriptArgs.Join(" "))
                             Else
                                 Wdbg("W", "Cmd exec {0} succeeded", cmd)
-                                GetCommand.ExecuteCommand(cmdArgs)
+                                StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
+                                StartCommandThread.Start(cmdArgs)
+                                StartCommandThread.Join()
                             End If
                         End If
                     Else
@@ -237,7 +246,9 @@ Public Module Shell
     Sub ExecuteAlias(ByVal aliascmd As String)
         Wdbg("I", "Translating alias {0} to {1}...", aliascmd, Aliases(aliascmd))
         Dim actualCmd As String = strcommand.Replace(aliascmd, Aliases(aliascmd))
-        GetCommand.ExecuteCommand(actualCmd)
+        StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
+        StartCommandThread.Start(actualCmd)
+        StartCommandThread.Join()
     End Sub
 
 End Module
