@@ -67,15 +67,6 @@ Public Module Filesystem
     End Sub
 
     ''' <summary>
-    ''' Initializes the filesystem
-    ''' </summary>
-    ''' <remarks>Obsolete because it got one-line.</remarks>
-    <Obsolete>
-    Public Sub InitFS()
-        CurrDir = paths("Home")
-    End Sub
-
-    ''' <summary>
     ''' List all files and folders in a specified folder
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>

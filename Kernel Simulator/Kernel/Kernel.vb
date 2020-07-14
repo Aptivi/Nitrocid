@@ -74,7 +74,7 @@ Public Module Kernel
                 W(DoTranslation("Starting RPC...", currentLang), True, ColTypes.Neutral)
                 StartRPC()
                 W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
-                InitFS()
+                CurrDir = paths("Home")
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then
                 If CheckUpdateStart Then CheckKernelUpdates()
 #End If
