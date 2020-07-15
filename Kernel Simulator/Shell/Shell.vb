@@ -16,10 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
 Imports System.IO
 Imports System.Threading
-Imports System.Threading.Tasks
 
 Public Module Shell
 
@@ -119,7 +117,7 @@ Public Module Shell
                 Catch ex As Exception
                     If DebugMode = True Then
                         W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", True, ColTypes.Err,
-                            Err.Number, ex.Message, ex.StackTrace)
+                          Err.Number, ex.Message, ex.StackTrace)
                         WStkTrc(ex)
                     Else
                         W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}", True, ColTypes.Err, Err.Number, ex.Message)
