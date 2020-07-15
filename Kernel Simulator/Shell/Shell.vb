@@ -48,6 +48,9 @@ Public Module Shell
     ''' Initializes the shell.
     ''' </summary>
     Public Sub InitializeShell()
+        'Let CTRL+C cancel running command
+        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+
         While True
             If LogoutRequested Then
                 Wdbg("I", "Requested log out: {0}", LogoutRequested)
@@ -81,7 +84,7 @@ Public Module Shell
                     EventManager.RaisePreExecuteCommand()
 
                     'Check for a type of command
-                    If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
+                    If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
                         Dim Done As Boolean = False
                         Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
                         Wdbg("I", "Mod commands probing started with {0}", strcommand)
@@ -104,6 +107,11 @@ Public Module Shell
                             Wdbg("I", "Executing built-in command")
                             GetLine(False, strcommand)
                         End If
+                    End If
+
+                    'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
+                    If IsNothing(strcommand) Then
+                        Console.WriteLine()
                     End If
 
                     'Fire an event of PostExecuteCommand

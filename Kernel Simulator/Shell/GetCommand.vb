@@ -83,9 +83,6 @@ Public Module GetCommand
             W(DoTranslation("This command is obsolete and will be removed in a future release.", currentLang), True, ColTypes.Neutral)
         End If
 
-        'Let CTRL+C cancel running command
-        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-
         '7. Execute a command
         Try
             If words(0) = "help" Then
