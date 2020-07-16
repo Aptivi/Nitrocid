@@ -65,6 +65,9 @@ Public Module Shell
                     Console.CursorVisible = True
 
                     'Write a prompt
+                    If Not IsNothing(DefConsoleOut) Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
                     CommandPromptWrite()
                     DisposeAll()
 

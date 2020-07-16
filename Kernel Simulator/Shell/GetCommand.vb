@@ -1154,6 +1154,8 @@ Public Module GetCommand
     ''' <param name="e">Arguments of event</param>
     Sub CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
         If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            DefConsoleOut = Console.Out
+            Console.SetOut(StreamWriter.Null)
             e.Cancel = True
             StartCommandThread.Abort()
         End If
