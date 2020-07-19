@@ -20,10 +20,13 @@ Imports System.Globalization
 Imports System.IO
 Imports System.Text
 Imports System.Text.RegularExpressions
+Imports System.Threading
 Imports LibVLCSharp.Shared
 Imports Microsoft.VisualBasic.FileIO
 
 Module TGetCommand
+
+    Public TStartCommandThread As New Thread(AddressOf TParseCommand)
 
     ''' <summary>
     ''' Parses the specified command and executes it
@@ -238,6 +241,15 @@ Module TGetCommand
               "- exit", True, ColTypes.Neutral)
         ElseIf Cmd = "exit" Then
             TEST_ExitFlag = True
+        End If
+    End Sub
+
+    Sub TCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
+        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            DefConsoleOut = Console.Out
+            Console.SetOut(StreamWriter.Null)
+            e.Cancel = True
+            TStartCommandThread.Abort()
         End If
     End Sub
 

@@ -48,6 +48,7 @@ Public Module Shell
     Public Sub InitializeShell()
         'Let CTRL+C cancel running command
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+        RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
 
         While True
             If LogoutRequested Then
@@ -113,6 +114,7 @@ Public Module Shell
                     'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
                     If IsNothing(strcommand) Then
                         Console.WriteLine()
+                        Thread.Sleep(30) 'This is to fix race condition between shell initialization and starting the event handler thread
                     End If
 
                     'Fire an event of PostExecuteCommand

@@ -16,17 +16,22 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+Imports System.Threading
 Imports MailKit
 Imports MimeKit
 
 Module IMAPGetCommand
 
+    Public IMAPStartCommandThread As New Thread(AddressOf IMAP_ExecuteCommand)
+
     ''' <summary>
     ''' Parses and executes the specified command with arguments
     ''' </summary>
-    ''' <param name="cmd">A command</param>
-    ''' <param name="args">Arguments</param>
-    Sub IMAP_ExecuteCommand(ByVal cmd As String, ByVal args As String)
+    ''' <param name="Parameters">Two strings. The first one is the command string, and the other is the arguments string.</param>
+    Sub IMAP_ExecuteCommand(ByVal Parameters As String()) 'This is converted to String() to ensure compatibility with Threading.Thread.
+        Dim cmd As String = Parameters(0)
+        Dim args As String = Parameters(1)
         Dim FullArgsL As List(Of String) = args.Split(" ").ToList
         Wdbg("I", "Arguments count: {0}", FullArgsL.Count)
 
@@ -210,6 +215,15 @@ Module IMAPGetCommand
             W(DoTranslation("Error executing IMAP command: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
+    End Sub
+
+    Sub IMAPCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
+        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            DefConsoleOut = Console.Out
+            Console.SetOut(StreamWriter.Null)
+            e.Cancel = True
+            IMAPStartCommandThread.Abort()
+        End If
     End Sub
 
 End Module

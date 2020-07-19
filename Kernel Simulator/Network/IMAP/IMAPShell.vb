@@ -38,6 +38,10 @@ Module IMAPShell
         IMAP_NoOp.Start()
         Wdbg("I", "Made new thread about KeepConnection()")
 
+        'Add handler for IMAP
+        AddHandler Console.CancelKeyPress, AddressOf IMAPCancelCommand
+        RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+
         While Not ExitRequested
             'Populate messages
             If IMAP_CurrentDirectory = "" Or IMAP_CurrentDirectory = "Inbox" Then
@@ -53,27 +57,37 @@ Module IMAPShell
             End If
 
             'Initialize prompt
+            If Not IsNothing(DefConsoleOut) Then
+                Console.SetOut(DefConsoleOut)
+            End If
             W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, IMAP_Authentication.UserName) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray) : W("{0} > ", False, ColTypes.Input, IMAP_CurrentDirectory)
 
             'Listen for a command
             Dim cmd As String = Console.ReadLine
             Dim args As String = ""
-            Wdbg("I", "Original command: {0}", cmd)
-            If cmd.Contains(" ") And Not cmd.StartsWith(" ") Then
-                Wdbg("I", "Found arguments in command. Parsing...")
-                args = cmd.Substring(cmd.IndexOf(" ") + 1)
-                cmd = cmd.Remove(cmd.IndexOf(" "))
-                Wdbg("I", "Command: ""{0}"", Arguments: ""{1}""", cmd, args)
-            End If
+            If Not IsNothing(cmd) Then
+                Wdbg("I", "Original command: {0}", cmd)
+                If cmd.Contains(" ") And Not cmd.StartsWith(" ") Then
+                    Wdbg("I", "Found arguments in command. Parsing...")
+                    args = cmd.Substring(cmd.IndexOf(" ") + 1)
+                    cmd = cmd.Remove(cmd.IndexOf(" "))
+                    Wdbg("I", "Command: ""{0}"", Arguments: ""{1}""", cmd, args)
+                End If
 
-            'Execute a command
-            Wdbg("I", "Executing command...")
-            If IMAP_AvailableCommands.Contains(cmd) Then
-                Wdbg("I", "Command found.")
-                IMAP_ExecuteCommand(cmd, args)
-            ElseIf Not cmd.StartsWith(" ") Then
-                Wdbg("E", "Command not found. Reopening shell...")
-                W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, cmd)
+                'Execute a command
+                Wdbg("I", "Executing command...")
+                If IMAP_AvailableCommands.Contains(cmd) Then
+                    Wdbg("I", "Command found.")
+                    IMAPStartCommandThread = New Thread(AddressOf IMAP_ExecuteCommand)
+                    IMAPStartCommandThread.Start({cmd, args})
+                    IMAPStartCommandThread.Join()
+                ElseIf Not cmd.StartsWith(" ") Then
+                    Wdbg("E", "Command not found. Reopening shell...")
+                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, cmd)
+                End If
+            Else
+                Console.WriteLine()
+                Thread.Sleep(30) 'This is to fix race condition between IMAP shell initialization and starting the event handler thread
             End If
         End While
 
@@ -81,6 +95,10 @@ Module IMAPShell
         IMAP_CurrentDirectory = "Inbox"
         Wdbg("W", "Exit requested. Disconnecting host...")
         IMAP_Client.Disconnect(True)
+
+        'Restore handler
+        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+        RemoveHandler Console.CancelKeyPress, AddressOf IMAPCancelCommand
     End Sub
 
     ''' <summary>

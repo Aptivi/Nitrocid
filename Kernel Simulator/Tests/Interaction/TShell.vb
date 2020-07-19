@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Threading
+
 Module TShell
 
     Public TShellCmds As String() = {"print", "printf", "printd", "printdf", "testevent", "probehw", "garbage", "panic", "panicf", "translate", "places", "loadmods",
@@ -28,15 +30,27 @@ Module TShell
     ''' </summary>
     Sub InitTShell()
         Dim FullCmd As String
+        AddHandler Console.CancelKeyPress, AddressOf TCancelCommand
+
         While Not TEST_ExitFlag
+            If Not IsNothing(DefConsoleOut) Then
+                Console.SetOut(DefConsoleOut)
+            End If
             W("(t)> ", False, ColTypes.Input)
             FullCmd = Console.ReadLine
             Try
-                Wdbg("I", "Command: {0}", FullCmd)
-                If TShellCmds.Contains(FullCmd.Split(" ")(0)) Then
-                    TParseCommand(FullCmd)
+                If Not IsNothing(FullCmd) Then
+                    Wdbg("I", "Command: {0}", FullCmd)
+                    If TShellCmds.Contains(FullCmd.Split(" ")(0)) Then
+                        TStartCommandThread = New Thread(AddressOf TParseCommand)
+                        TStartCommandThread.Start(FullCmd)
+                        TStartCommandThread.Join()
+                    Else
+                        W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, FullCmd.Split(" ")(0))
+                    End If
                 Else
-                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, FullCmd.Split(" ")(0))
+                    Console.WriteLine()
+                    Thread.Sleep(30) 'This is to fix race condition between test shell initialization and starting the event handler thread
                 End If
             Catch ex As Exception
                 W(DoTranslation("Error in unit testing: {0}"), True, ColTypes.Err, ex.Message)

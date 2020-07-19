@@ -17,6 +17,8 @@
 
 Module SSH
 
+    Private DisconnectionRequested As Boolean
+
     ''' <summary>
     ''' Opens a session to specified address using the specified port and the username
     ''' </summary>
@@ -36,6 +38,10 @@ Module SSH
             Wdbg("I", "Connecting to {0}...", Address)
             SSH.Connect()
 
+            'Add handler for SSH
+            AddHandler Console.CancelKeyPress, AddressOf SSHDisconnect
+            RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+
             'Shell creation
             Wdbg("I", "Opening shell...")
             Dim SSHS As Renci.SshNet.Shell = SSH.CreateShell(Console.OpenStandardInput, Console.OpenStandardOutput, Console.OpenStandardError)
@@ -43,17 +49,29 @@ Module SSH
 
             'Wait until disconnection
             While SSH.IsConnected
-                If Console.ReadKey(True).Key = ConsoleKey.Escape Then
+                If DisconnectionRequested Then
                     SSHS.Stop()
                     SSH.Disconnect()
                 End If
             End While
             Wdbg("I", "Connected: {0}", SSH.IsConnected)
             W(vbNewLine + DoTranslation("SSH Disconnected.", currentLang), True, ColTypes.Neutral)
+            DisconnectionRequested = False
+
+            'Remove handler for SSH
+            AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+            RemoveHandler Console.CancelKeyPress, AddressOf SSHDisconnect
         Catch ex As Exception
             W(DoTranslation("Error trying to connect to SSH server: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
+    End Sub
+
+    Private Sub SSHDisconnect(sender As Object, e As ConsoleCancelEventArgs)
+        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            e.Cancel = True
+            DisconnectionRequested = True
+        End If
     End Sub
 
 End Module

@@ -15,13 +15,19 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+Imports System.Threading
+
 Public Module FTPGetCommand
 
     'Progress Bar Enabled
     Dim progressFlag As Boolean = True
     Dim ConsoleOriginalPosition_LEFT As Integer
     Dim ConsoleOriginalPosition_TOP As Integer
+
+    'FTP Client and thread
     Public ClientFTP As FtpClient
+    Public FTPStartCommandThread As New Thread(AddressOf ExecuteCommand)
 
     'To enable progress
     Public Complete As New Action(Of FtpProgress)(Sub(percentage)
@@ -256,6 +262,15 @@ Public Module FTPGetCommand
             EventManager.RaiseFTPCommandError()
         End Try
 
+    End Sub
+
+    Sub FTPCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
+        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            DefConsoleOut = Console.Out
+            Console.SetOut(StreamWriter.Null)
+            e.Cancel = True
+            FTPStartCommandThread.Abort()
+        End If
     End Sub
 
 End Module

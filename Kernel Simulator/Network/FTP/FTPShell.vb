@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Threading
+
 Public Module FTPShell
 
     Public ftpstream As FtpWebRequest
@@ -47,6 +49,11 @@ Public Module FTPShell
                 FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
                 FtpTrace.LogIP = FTPLoggerIP
                 currDirect = paths("Home")
+
+                'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:
+                'https://stackoverflow.com/a/22717063/6688914
+                AddHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                 initialized = True
             End If
 
@@ -63,10 +70,15 @@ Public Module FTPShell
                 strcmd = ""
                 ftpexit = False
                 initialized = False
+                AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 Exit Sub
             End If
 
             'Prompt for command
+            If Not IsNothing(DefConsoleOut) Then
+                Console.SetOut(DefConsoleOut)
+            End If
             If Not Connects Then
                 Wdbg("I", "Preparing prompt...")
                 If connected Then
@@ -92,7 +104,13 @@ Public Module FTPShell
             End If
 
             'Parse command
-            If Not (strcmd = Nothing Or strcmd.StartsWith(" ")) Then FTPGetLine()
+            If Not (strcmd = Nothing Or strcmd?.StartsWith(" ")) Then FTPGetLine()
+
+            'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
+            If IsNothing(strcmd) Then
+                Console.WriteLine()
+                Thread.Sleep(30) 'This is to fix race condition between FTP shell initialization and starting the event handler thread
+            End If
         End While
     End Sub
 
@@ -103,7 +121,9 @@ Public Module FTPShell
         Dim words As String() = strcmd.Split({" "c})
         Wdbg("I", $"Is the command found? {availftpcmds.Contains(words(0))}")
         If availftpcmds.Contains(words(0)) Then
-            FTPGetCommand.ExecuteCommand(strcmd)
+            FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand)
+            FTPStartCommandThread.Start(strcmd)
+            FTPStartCommandThread.Join()
         Else
             W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), True, ColTypes.Err, strcmd)
         End If
