@@ -238,8 +238,12 @@ Module TGetCommand
               "- probehw" + vbNewLine +
               "- garbage" + vbNewLine +
               "- listcodepages" + vbNewLine +
-              "- exit", True, ColTypes.Neutral)
+              "- exit" + vbNewLine +
+              "- shutdown", True, ColTypes.Neutral)
         ElseIf Cmd = "exit" Then
+            TEST_ExitFlag = True
+        ElseIf Cmd = "shutdown" Then
+            TEST_ShutdownFlag = True
             TEST_ExitFlag = True
         End If
     End Sub
