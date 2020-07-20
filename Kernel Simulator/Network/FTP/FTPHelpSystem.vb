@@ -37,6 +37,7 @@ Public Module FTPHelpSystem
                                                                  {"help", DoTranslation("Shows help screen", currentLang)},
                                                                  {"listlocal (Alias: lsl)", DoTranslation("Lists local directory", currentLang)},
                                                                  {"listremote (Alias: lsr)", DoTranslation("Lists remote directory", currentLang)},
+                                                                 {"quickconnect", DoTranslation("Uses information from Speed Dial to connect to any network quickly", currentLang)},
                                                                  {"rename (Alias: ren)", DoTranslation("Renames specific file or directory", currentLang)},
                                                                  {"upload (Alias: put)", DoTranslation("Uploads local file to remote directory using binary or text", currentLang)}}
     End Sub

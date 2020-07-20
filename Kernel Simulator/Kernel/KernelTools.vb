@@ -406,6 +406,7 @@ Public Module KernelTools
             If Not paths.ContainsKey("Debugging") Then paths.Add("Debugging", Environ("HOME") + "/kernelDbg.log")
             If Not paths.ContainsKey("Aliases") Then paths.Add("Aliases", Environ("HOME") + "/aliases.csv")
             If Not paths.ContainsKey("Users") Then paths.Add("Users", Environ("HOME") + "/users.csv")
+            If Not paths.ContainsKey("FTPSpeedDial") Then paths.Add("FTPSpeedDial", Environ("HOME") + "/ftp_speeddial.csv")
             If Not paths.ContainsKey("Home") Then paths.Add("Home", Environ("HOME"))
             If Not paths.ContainsKey("Temp") Then paths.Add("Temp", "/tmp")
         Else
@@ -414,6 +415,7 @@ Public Module KernelTools
             If Not paths.ContainsKey("Debugging") Then paths.Add("Debugging", Environ("USERPROFILE").Replace("\", "/") + "/kernelDbg.log")
             If Not paths.ContainsKey("Aliases") Then paths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/aliases.csv")
             If Not paths.ContainsKey("Users") Then paths.Add("Users", Environ("USERPROFILE") + "/users.csv")
+            If Not paths.ContainsKey("FTPSpeedDial") Then paths.Add("FTPSpeedDial", Environ("USERPROFILE") + "/ftp_speeddial.csv")
             If Not paths.ContainsKey("Home") Then paths.Add("Home", Environ("USERPROFILE").Replace("\", "/"))
             If Not paths.ContainsKey("Temp") Then paths.Add("Temp", Environ("TEMP").Replace("\", "/"))
         End If

@@ -16,7 +16,40 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Public Module FTPTools
+
+    ''' <summary>
+    ''' Prompts user for a password
+    ''' </summary>
+    ''' <param name="user">A user name</param>
+    ''' <param name="Address">A host address</param>
+    ''' <param name="Port">A port for the address</param>
+    Public Sub PromptForPassword(ByVal user As String, ByVal Address As String, ByVal Port As Integer)
+        'Make a new FTP client object instance (Used in case logging in using speed dial)
+        If IsNothing(ClientFTP) Then
+            ClientFTP = New FtpClient With {
+                            .Host = Address,
+                            .Port = Port,
+                            .RetryAttempts = 3,
+                            .EncryptionMode = FtpEncryptionMode.Explicit
+                        }
+        End If
+
+        'Prompt for password
+        W(DoTranslation("Password for {0}: ", currentLang), False, ColTypes.Input, user)
+
+        'Get input
+        pass = ReadLineNoInput("*")
+        Console.WriteLine()
+
+        'Set up credentials
+        ClientFTP.Credentials = New NetworkCredential(user, pass)
+
+        'Connect to FTP
+        ConnectFTP()
+    End Sub
 
     ''' <summary>
     ''' Tries to connect to the FTP server
@@ -55,64 +88,7 @@ Public Module FTPTools
                     user = "anonymous"
                 End If
 
-                'Prompt for password
-                W(DoTranslation("Password for {0}: ", currentLang), False, ColTypes.Input, user)
-
-                'Get input
-                pass = ReadLineNoInput("*")
-                Console.WriteLine()
-
-                'Set up credentials
-                ClientFTP.Credentials = New NetworkCredential(user, pass)
-
-                'Prepare profiles
-                W(DoTranslation("Preparing profiles... It could take several minutes...", currentLang), True, ColTypes.Neutral)
-                Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect(False)
-                Dim profsel As New FtpProfile
-                Wdbg("I", "Profile count: {0}", profiles.Count)
-                If profiles.Count > 1 Then 'More than one profile
-                    W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine +
-                      "#, " + DoTranslation("Host Name, Username, Data Type, Encoding, Encryption, Protocols", currentLang), True, ColTypes.Neutral)
-                    For i As Integer = 1 To profiles.Count - 1
-                        W($"{i}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection.ToString}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption.ToString}, {profiles(i).Protocols.ToString}", True, ColTypes.Neutral)
-                    Next
-                    Dim profanswer As Char
-                    Dim profanswered As Boolean
-                    While Not profanswered
-                        profanswer = Console.ReadKey(True).KeyChar
-                        Wdbg("I", "Selection: {0}", profanswer)
-                        If IsNumeric(profanswer) Then
-                            Try
-                                Wdbg("I", "Profile selected")
-                                profsel = profiles(Val(profanswer))
-                                profanswered = True
-                            Catch ex As Exception
-                                Wdbg("I", "Profile invalid")
-                                W(DoTranslation("Invalid profile selection.", currentLang) + vbNewLine, True, ColTypes.Err)
-                                WStkTrc(ex)
-                            End Try
-                        End If
-                    End While
-                ElseIf profiles.Count = 1 Then
-                    profsel = profiles(0) 'Select first profile
-                Else 'Failed trying to get profiles
-                    W(DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection", currentLang), True, ColTypes.Err, address)
-                    Exit Sub
-                End If
-
-                'Connect
-                W(DoTranslation("Trying to connect to {0} with profile {1}...", currentLang), True, ColTypes.Neutral, address, profiles.IndexOf(profsel))
-                Wdbg("I", "Connecting to {0} with {1}...", address, profiles.IndexOf(profsel))
-                ClientFTP.Connect(profsel)
-
-                'Show that it's connected
-                W(DoTranslation("Connected to {0}", currentLang), True, ColTypes.Neutral, address)
-                Wdbg("I", "Connected.")
-                connected = True
-
-                'Prepare to print current FTP directory
-                currentremoteDir = ClientFTP.GetWorkingDirectory
-                ftpsite = ClientFTP.Host
+                PromptForPassword(user, FtpHost, FtpPort)
             Catch ex As Exception
                 Wdbg("W", "Error connecting to {0}: {1}", address, ex.Message)
                 WStkTrc(ex)
@@ -123,6 +99,82 @@ Public Module FTPTools
                     W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang), True, ColTypes.Err, address, ex.Message)
                 End If
             End Try
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Tries to connect to the FTP server.
+    ''' </summary>
+    Private Sub ConnectFTP()
+        'Prepare profiles
+        W(DoTranslation("Preparing profiles... It could take several minutes...", currentLang), True, ColTypes.Neutral)
+        Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect(False)
+        Dim profsel As New FtpProfile
+        Wdbg("I", "Profile count: {0}", profiles.Count)
+        If profiles.Count > 1 Then 'More than one profile
+            W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine +
+              "#, " + DoTranslation("Host Name, Username, Data Type, Encoding, Encryption, Protocols", currentLang), True, ColTypes.Neutral)
+            For i As Integer = 1 To profiles.Count - 1
+                W($"{i}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection.ToString}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption.ToString}, {profiles(i).Protocols.ToString}", True, ColTypes.Neutral)
+            Next
+            Dim profanswer As Char
+            Dim profanswered As Boolean
+            While Not profanswered
+                profanswer = Console.ReadKey(True).KeyChar
+                Wdbg("I", "Selection: {0}", profanswer)
+                If IsNumeric(profanswer) Then
+                    Try
+                        Wdbg("I", "Profile selected")
+                        profsel = profiles(Val(profanswer))
+                        profanswered = True
+                    Catch ex As Exception
+                        Wdbg("I", "Profile invalid")
+                        W(DoTranslation("Invalid profile selection.", currentLang) + vbNewLine, True, ColTypes.Err)
+                        WStkTrc(ex)
+                    End Try
+                End If
+            End While
+        ElseIf profiles.Count = 1 Then
+            profsel = profiles(0) 'Select first profile
+        Else 'Failed trying to get profiles
+            W(DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection", currentLang), True, ColTypes.Err, ClientFTP.Host)
+            Exit Sub
+        End If
+
+        'Connect
+        W(DoTranslation("Trying to connect to {0} with profile {1}...", currentLang), True, ColTypes.Neutral, ClientFTP.Host, profiles.IndexOf(profsel))
+        Wdbg("I", "Connecting to {0} with {1}...", ClientFTP.Host, profiles.IndexOf(profsel))
+        ClientFTP.Connect(profsel)
+
+        'Show that it's connected
+        W(DoTranslation("Connected to {0}", currentLang), True, ColTypes.Neutral, ClientFTP.Host)
+        Wdbg("I", "Connected.")
+        connected = True
+
+        'Prepare to print current FTP directory
+        currentremoteDir = ClientFTP.GetWorkingDirectory
+        Wdbg("I", "Working directory: {0}", currentremoteDir)
+        ftpsite = ClientFTP.Host
+
+        'Write connection information to Speed Dial file if it doesn't exist there
+        If Not File.Exists(paths("FTPSpeedDial")) Then
+            Dim FileTemp As StreamWriter = File.CreateText(paths("FTPSpeedDial"))
+            FileTemp.Close()
+        End If
+        Dim SpeedDialLines As String() = File.ReadAllLines(paths("FTPSpeedDial"))
+        Wdbg("I", "Speed dial length: {0}", SpeedDialLines.Length)
+        If SpeedDialLines.Contains(ftpsite + "," + CStr(ClientFTP.Port) + "," + user) Then
+            Wdbg("I", "Site already there.")
+            Exit Sub
+        Else
+            'Speed dial format is below:
+            'Site,Port,Username
+            Dim SpeedDialWriter As New StreamWriter(paths("FTPSpeedDial")) With {.AutoFlush = True}
+            Wdbg("I", "Opened stream for speed dial.")
+            SpeedDialWriter.WriteLine(ftpsite + "," + CStr(ClientFTP.Port) + "," + user)
+            Wdbg("I", "Written information to file.")
+            SpeedDialWriter.Close()
+            Wdbg("I", "Closed stream for speed dial.")
         End If
     End Sub
 

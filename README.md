@@ -268,7 +268,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **7/8/2020 - 0.0.10.1:** Fixed OutOfMemoryException when hashing large files, Added a new CI test that encrypts a string
 
-**7/18/2020 - 0.0.11:** Added command cancellation when CTRL+C is pressed implementation, Added `shutdown` command to test shell, Made `exit` exit the test shell and start the kernel
+**7/18/2020 - 0.0.11:** Added command cancellation when CTRL+C is pressed implementation, Added `shutdown` command to test shell, Made `exit` exit the test shell and start the kernel, Implemented Speed Dial for FTP shell for faster connection
 
 Items with asterisk means that the specified change/fix will be backported to previous version of KS which doesn't have it (only for Ubuntu PPA version, backports as Debian patches)
 

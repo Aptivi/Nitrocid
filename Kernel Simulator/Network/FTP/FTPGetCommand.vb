@@ -206,6 +206,50 @@ Public Module FTPGetCommand
                 Else
                     W(DoTranslation("You should connect to server before listing all remote files.", currentLang), True, ColTypes.Err)
                 End If
+            ElseIf words(0) = "quickconnect" Then
+                If Not connected Then
+                    Dim SpeedDialLines As String() = File.ReadAllLines(paths("FTPSpeedDial"))
+                    Wdbg("I", "Speed dial length: {0}", SpeedDialLines.Length)
+                    Dim Counter As Integer = 1
+                    Dim Answer As String
+                    Dim Answering As Boolean = True
+                    For Each SpeedDialLine As String In SpeedDialLines
+                        Wdbg("I", "Speed dial line: {0}", SpeedDialLine)
+                        W(DoTranslation("Select an address to connect to:", currentLang), True, ColTypes.Neutral)
+                        W("{0}: {1}", True, ColTypes.Neutral, Counter, SpeedDialLine)
+                        Counter += 1
+                    Next
+                    While Answering
+                        W(">> ", False, ColTypes.Input)
+                        Answer = Console.ReadKey.KeyChar
+                        Wdbg("I", "Response: {0}", Answer)
+                        Console.WriteLine()
+                        If IsNumeric(Answer) Then
+                            Wdbg("I", "Response is numeric. IsNumeric(Answer) returned true. Checking to see if in-bounds...")
+                            Dim AnswerInt As Integer = Answer
+                            If AnswerInt <= SpeedDialLines.Length Then
+                                Answering = False
+                                Wdbg("I", "Response is in-bounds. Connecting...")
+                                Dim ChosenSpeedDialLine As String = SpeedDialLines(AnswerInt - 1)
+                                Wdbg("I", "Chosen connection: {0}", ChosenSpeedDialLine)
+                                Dim ChosenLineSeparation As String() = ChosenSpeedDialLine.Split(",")
+                                Dim Address As String = ChosenLineSeparation(0)
+                                Dim Port As String = ChosenLineSeparation(1)
+                                Dim Username As String = ChosenLineSeparation(2)
+                                Wdbg("I", "Address: {0}, Port: {1}, Username: {2}", Address, Port, Username)
+                                PromptForPassword(Username, Address, Port)
+                            Else
+                                Wdbg("I", "Response is out-of-bounds. Retrying...")
+                                W(DoTranslation("The selection is out of range. Select between 1-{0}. Try again.", currentLang), True, ColTypes.Err, SpeedDialLines.Length)
+                            End If
+                        Else
+                            Wdbg("W", "Response isn't numeric. IsNumeric(Answer) returned false.")
+                            W(DoTranslation("The selection is not a number. Try again.", currentLang), True, ColTypes.Err)
+                        End If
+                    End While
+                Else
+                    W(DoTranslation("You should disconnect from server before connecting to another server", currentLang), True, ColTypes.Err)
+                End If
             ElseIf words(0) = "rename" Or words(0) = "ren" Then
                 If cmd <> "rename" Or cmd <> "ren" Then
                     If connected = True Then
