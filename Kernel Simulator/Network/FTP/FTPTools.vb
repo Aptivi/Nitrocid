@@ -26,14 +26,14 @@ Public Module FTPTools
     ''' <param name="user">A user name</param>
     ''' <param name="Address">A host address</param>
     ''' <param name="Port">A port for the address</param>
-    Public Sub PromptForPassword(ByVal user As String, ByVal Address As String, ByVal Port As Integer)
+    Public Sub PromptForPassword(ByVal user As String, Optional ByVal Address As String = "", Optional ByVal Port As Integer = 0, Optional ByVal EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.Explicit)
         'Make a new FTP client object instance (Used in case logging in using speed dial)
         If IsNothing(ClientFTP) Then
             ClientFTP = New FtpClient With {
                             .Host = Address,
                             .Port = Port,
                             .RetryAttempts = 3,
-                            .EncryptionMode = FtpEncryptionMode.Explicit
+                            .EncryptionMode = EncryptionMode
                         }
         End If
 
@@ -77,6 +77,15 @@ Public Module FTPTools
                     .EncryptionMode = FtpEncryptionMode.Explicit
                 }
 
+                'Get encryption type from address
+                If address.StartsWith("ftp://") Then
+                    ClientFTP.EncryptionMode = FtpEncryptionMode.None
+                ElseIf address.StartsWith("ftps://") Then
+                    ClientFTP.EncryptionMode = FtpEncryptionMode.Implicit
+                ElseIf address.StartsWith("ftpes://") Then
+                    ClientFTP.EncryptionMode = FtpEncryptionMode.Explicit
+                End If
+
                 'Add handler for SSL validation
                 AddHandler ClientFTP.ValidateCertificate, New FtpSslValidation(AddressOf TryToValidate)
 
@@ -88,7 +97,7 @@ Public Module FTPTools
                     user = "anonymous"
                 End If
 
-                PromptForPassword(user, FtpHost, FtpPort)
+                PromptForPassword(user)
             Catch ex As Exception
                 Wdbg("W", "Error connecting to {0}: {1}", address, ex.Message)
                 WStkTrc(ex)
@@ -108,7 +117,7 @@ Public Module FTPTools
     Private Sub ConnectFTP()
         'Prepare profiles
         W(DoTranslation("Preparing profiles... It could take several minutes...", currentLang), True, ColTypes.Neutral)
-        Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect(False)
+        Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect(FTPFirstProfileOnly)
         Dim profsel As New FtpProfile
         Wdbg("I", "Profile count: {0}", profiles.Count)
         If profiles.Count > 1 Then 'More than one profile
@@ -168,10 +177,10 @@ Public Module FTPTools
             Exit Sub
         Else
             'Speed dial format is below:
-            'Site,Port,Username
+            'Site,Port,Username,Encryption
             Dim SpeedDialWriter As New StreamWriter(paths("FTPSpeedDial")) With {.AutoFlush = True}
             Wdbg("I", "Opened stream for speed dial.")
-            SpeedDialWriter.WriteLine(ftpsite + "," + CStr(ClientFTP.Port) + "," + user)
+            SpeedDialWriter.WriteLine(ftpsite + "," + CStr(ClientFTP.Port) + "," + user + "," + ClientFTP.EncryptionMode.ToString)
             Wdbg("I", "Written information to file.")
             SpeedDialWriter.Close()
             Wdbg("I", "Closed stream for speed dial.")

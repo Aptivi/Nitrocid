@@ -61,7 +61,7 @@ Public Module FTPGetCommand
         Try
             If words(0) = "connect" Then
                 If args.Count <> 0 Then
-                    If args(0).StartsWith("ftp://") Or args(0).StartsWith("ftps://") Then
+                    If args(0).StartsWith("ftp://") Or args(0).StartsWith("ftps://") Or args(0).StartsWith("ftpes://") Then
                         TryToConnect(args(0))
                     Else
                         TryToConnect($"ftps://{args(0)}")
@@ -236,8 +236,9 @@ Public Module FTPGetCommand
                                 Dim Address As String = ChosenLineSeparation(0)
                                 Dim Port As String = ChosenLineSeparation(1)
                                 Dim Username As String = ChosenLineSeparation(2)
-                                Wdbg("I", "Address: {0}, Port: {1}, Username: {2}", Address, Port, Username)
-                                PromptForPassword(Username, Address, Port)
+                                Dim Encryption As FtpEncryptionMode = ChosenLineSeparation(3)
+                                Wdbg("I", "Address: {0}, Port: {1}, Username: {2}, Encryption: {3}", Address, Port, Username, Encryption)
+                                PromptForPassword(Username, Address, Port, Encryption)
                             Else
                                 Wdbg("I", "Response is out-of-bounds. Retrying...")
                                 W(DoTranslation("The selection is out of range. Select between 1-{0}. Try again.", currentLang), True, ColTypes.Err, SpeedDialLines.Length)

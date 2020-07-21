@@ -77,17 +77,22 @@ Public Module Config
                         New IniKey(ksconf, "Colored Shell", ColoredShell),
                         New IniKey(ksconf, "Simplified Help Command", simHelp)))
 
+                'The Network Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Network",
+                        New IniKey(ksconf, "Debug Port", DebugPort),
+                        New IniKey(ksconf, "Remote Debug Default Nick Prefix", RDebugDNP),
+                        New IniKey(ksconf, "Download Retry Times", DRetries),
+                        New IniKey(ksconf, "Log FTP username", FTPLoggerUsername),
+                        New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
+                        New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly)))
+
                 'Misc Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Misc",
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", CornerTD),
                         New IniKey(ksconf, "Screensaver", defSaverName),
-                        New IniKey(ksconf, "Debug Port", DebugPort),
                         New IniKey(ksconf, "Debug Size Quota in Bytes", DebugQuota),
-                        New IniKey(ksconf, "Remote Debug Default Nick Prefix", RDebugDNP),
-                        New IniKey(ksconf, "Download Retry Times", DRetries),
-                        New IniKey(ksconf, "Log FTP username", FTPLoggerUsername),
-                        New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
                         New IniKey(ksconf, "Size parse mode", FullParseMode),
                         New IniKey(ksconf, "Marquee on startup", StartScroll),
                         New IniKey(ksconf, "Long Time and Date", LongTimeDate),
@@ -141,17 +146,22 @@ Public Module Config
                         New IniKey(ksconf, "Colored Shell", "True"),
                         New IniKey(ksconf, "Simplified Help Command", "False")))
 
+                'The Network Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Network",
+                        New IniKey(ksconf, "Debug Port", 3014),
+                        New IniKey(ksconf, "Remote Debug Default Nick Prefix", "KSUser"),
+                        New IniKey(ksconf, "Download Retry Times", 3),
+                        New IniKey(ksconf, "Log FTP username", "False"),
+                        New IniKey(ksconf, "Log FTP IP address", "False"),
+                        New IniKey(ksconf, "Return only first FTP profile", "False")))
+
                 'Misc Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Misc",
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", "False"),
                         New IniKey(ksconf, "Screensaver", "matrix"),
-                        New IniKey(ksconf, "Debug Port", 3014),
                         New IniKey(ksconf, "Debug Size Quota in Bytes", 1073741824),
-                        New IniKey(ksconf, "Remote Debug Default Nick Prefix", "KSUser"),
-                        New IniKey(ksconf, "Download Retry Times", 3),
-                        New IniKey(ksconf, "Log FTP username", "False"),   '> Keep them off by default
-                        New IniKey(ksconf, "Log FTP IP address", "False"), '> for privacy protection
                         New IniKey(ksconf, "Size parse mode", "False"),
                         New IniKey(ksconf, "Marquee on startup", "True"),
                         New IniKey(ksconf, "Long Time and Date", "True"),
@@ -188,16 +198,20 @@ Public Module Config
             ksconf.Sections("Hardware").Keys("Probe Slots").TrailingComment.Text = "Whether or not to probe RAM slots on boot"
             ksconf.Sections("Hardware").Keys("Quiet Probe").TrailingComment.Text = "Whether or not to quietly probe hardware"
 
+            'Network
+            ksconf.Sections("Network").TrailingComment.Text = "This section is the network settings."
+            ksconf.Sections("Network").Keys("Debug Port").TrailingComment.Text = "Specifies the remote debugger port."
+            ksconf.Sections("Network").Keys("Remote Debug Default Nick Prefix").TrailingComment.Text = "The name, which will be prepended to the random device ID."
+            ksconf.Sections("Network").Keys("Download Retry Times").TrailingComment.Text = "How many times does the ""get"" command retry the download before assuming failure?"
+            ksconf.Sections("Network").Keys("Log FTP username").TrailingComment.Text = "Whether or not to log FTP username in the debugger log."
+            ksconf.Sections("Network").Keys("Log FTP IP address").TrailingComment.Text = "Whether or not to log FTP IP address in the debugger log."
+            ksconf.Sections("Network").Keys("Return only first FTP profile").TrailingComment.Text = "Whether or not to return only first successful FTP profile when polling for profiles."
+
             'Misc
             ksconf.Sections("Misc").TrailingComment.Text = "This section is the other settings that are not categorized yet."
             ksconf.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").TrailingComment.Text = "Whether or not it shows time and date on the upper right corner."
             ksconf.Sections("Misc").Keys("Screensaver").TrailingComment.Text = "Specifies the current screensaver."
-            ksconf.Sections("Misc").Keys("Debug Port").TrailingComment.Text = "Specifies the remote debugger port."
             ksconf.Sections("Misc").Keys("Debug Size Quota in Bytes").TrailingComment.Text = "Specifies the maximum log size in bytes. If this was exceeded, it will remove the first 5 lines from the log to free up some space."
-            ksconf.Sections("Misc").Keys("Remote Debug Default Nick Prefix").TrailingComment.Text = "The name, which will be prepended to the random device ID."
-            ksconf.Sections("Misc").Keys("Download Retry Times").TrailingComment.Text = "How many times does the ""get"" command retry the download before assuming failure?"
-            ksconf.Sections("Misc").Keys("Log FTP username").TrailingComment.Text = "Whether or not to log FTP username in the debugger log."
-            ksconf.Sections("Misc").Keys("Log FTP IP address").TrailingComment.Text = "Whether or not to log FTP IP address in the debugger log."
             ksconf.Sections("Misc").Keys("Size parse mode").TrailingComment.Text = "Parse whole directory for size. If set to False, it will parse just the surface."
             ksconf.Sections("Misc").Keys("Marquee on startup").TrailingComment.Text = "Whether or not to activate banner animation."
             ksconf.Sections("Misc").Keys("Long Time and Date").TrailingComment.Text = "Whether or not to render time and date using long."
@@ -334,16 +348,20 @@ Public Module Config
             If configReader.Sections("Hardware").Keys("Probe Slots").Value = "True" Then slotProbe = True Else slotProbe = False
             If configReader.Sections("Hardware").Keys("Quiet Probe").Value = "True" Then quietProbe = True Else quietProbe = False
 
+            'Network Section
+            Wdbg("I", "Parsing network section...")
+            If Integer.TryParse(configReader.Sections("Network").Keys("Debug Port").Value, 0) Then DebugPort = configReader.Sections("Network").Keys("Debug Port").Value
+            RDebugDNP = configReader.Sections("Network").Keys("Remote Debug Default Nick Prefix").Value
+            If Integer.TryParse(configReader.Sections("Network").Keys("Download Retry Times").Value, 0) Then DRetries = configReader.Sections("Network").Keys("Download Retry Times").Value
+            FTPLoggerUsername = configReader.Sections("Network").Keys("Log FTP username").Value
+            FTPLoggerIP = configReader.Sections("Network").Keys("Log FTP IP address").Value
+            FTPFirstProfileOnly = configReader.Sections("Network").Keys("Return only first FTP profile").Value
+
             'Misc Section
             Wdbg("I", "Parsing misc section...")
             If configReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True" Then CornerTD = True Else CornerTD = False
             defSaverName = configReader.Sections("Misc").Keys("Screensaver").Value
-            If Integer.TryParse(configReader.Sections("Misc").Keys("Debug Port").Value, 0) Then DebugPort = configReader.Sections("Misc").Keys("Debug Port").Value
             If Integer.TryParse(configReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value, 0) Then DebugQuota = configReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value
-            RDebugDNP = configReader.Sections("Misc").Keys("Remote Debug Default Nick Prefix").Value
-            If Integer.TryParse(configReader.Sections("Misc").Keys("Download Retry Times").Value, 0) Then DRetries = configReader.Sections("Misc").Keys("Download Retry Times").Value
-            FTPLoggerUsername = configReader.Sections("Misc").Keys("Log FTP username").Value
-            FTPLoggerIP = configReader.Sections("Misc").Keys("Log FTP IP address").Value
             If configReader.Sections("Misc").Keys("Size parse mode").Value = "True" Then FullParseMode = True Else FullParseMode = False
             If configReader.Sections("Misc").Keys("Marquee on startup").Value = "True" Then StartScroll = True Else StartScroll = False
             If configReader.Sections("Misc").Keys("Long Time and Date").Value = "True" Then LongTimeDate = True Else LongTimeDate = False
