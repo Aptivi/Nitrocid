@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Net.Security
 
 Public Module FTPTools
 
@@ -192,12 +193,30 @@ Public Module FTPTools
     ''' </summary>
     Public Sub TryToValidate(control As FtpClient, e As FtpSslValidationEventArgs)
         Wdbg("I", "Certificate checks")
-        If e.PolicyErrors = Net.Security.SslPolicyErrors.None Then
+        If e.PolicyErrors = SslPolicyErrors.None Then
             Wdbg("I", "Certificate accepted.")
             Wdbg("I", e.Certificate.GetRawCertDataString)
             e.Accept = True
+        Else
+            Wdbg("W", $"Certificate error is {e.PolicyErrors}")
+            W(DoTranslation("During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:", currentLang), True, ColTypes.Err)
+            W("- {0}", True, ColTypes.Err, e.PolicyErrors.ToString)
+            Dim Answer As String = ""
+            Do Until Answer.ToLower = "y" Or Answer.ToLower = "n"
+                W(DoTranslation("Are you sure that you want to connect?", currentLang) + " (y/n) ", False, ColTypes.Input)
+                Answer = Console.ReadKey.KeyChar
+                Console.WriteLine()
+                Wdbg("I", $"Answer is {Answer}")
+                If Answer.ToLower = "y" Then
+                    Wdbg("W", "Certificate accepted, although there are errors.")
+                    Wdbg("I", e.Certificate.GetRawCertDataString)
+                    e.Accept = True
+                ElseIf Answer.ToLower <> "n" Then
+                    Wdbg("W", "Invalid answer.")
+                    W(DoTranslation("Invalid answer. Please try again.", currentLang), True, ColTypes.Err)
+                End If
+            Loop
         End If
-        Wdbg("W", $"Certificate error is {e.PolicyErrors.ToString}")
     End Sub
 
 End Module
