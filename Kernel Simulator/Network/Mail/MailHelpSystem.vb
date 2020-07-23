@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module IMAPHelpSystem
+Public Module MailHelpSystem
 
     'This dictionary is the definitions for commands.
     Public IMAP_definitions As Dictionary(Of String, String)

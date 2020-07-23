@@ -20,26 +20,29 @@ Imports System.Threading
 Imports MailKit
 Imports MailKit.Search
 
-Module IMAPShell
+Module MailShell
 
     'Variables
-    Public IMAP_AvailableCommands() As String = {"help", "cd", "lsdirs", "exit", "list", "read"}
+    Public Mail_AvailableCommands() As String = {"help", "cd", "lsdirs", "exit", "list", "read", "send"}
     Public IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested As Boolean
 
     ''' <summary>
-    ''' Initializes the shell of the IMAP client
+    ''' Initializes the shell of the mail client
     ''' </summary>
     ''' <param name="Address">An e-mail address or username. This is used to show address in command input.</param>
     Sub OpenShell(Address As String)
         'Send ping to keep the connection alive
-        Dim IMAP_NoOp As New Thread(AddressOf KeepConnection)
+        Dim IMAP_NoOp As New Thread(AddressOf IMAPKeepConnection)
         IMAP_NoOp.Start()
-        Wdbg("I", "Made new thread about KeepConnection()")
+        Wdbg("I", "Made new thread about IMAPKeepConnection()")
+        Dim SMTP_NoOp As New Thread(AddressOf SMTPKeepConnection)
+        SMTP_NoOp.Start()
+        Wdbg("I", "Made new thread about SMTPKeepConnection()")
 
-        'Add handler for IMAP
-        AddHandler Console.CancelKeyPress, AddressOf IMAPCancelCommand
+        'Add handler for IMAP and SMTP
+        AddHandler Console.CancelKeyPress, AddressOf MailCancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
 
         While Not ExitRequested
@@ -60,7 +63,7 @@ Module IMAPShell
             If Not IsNothing(DefConsoleOut) Then
                 Console.SetOut(DefConsoleOut)
             End If
-            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, IMAP_Authentication.UserName) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray) : W("{0} > ", False, ColTypes.Input, IMAP_CurrentDirectory)
+            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray) : W("{0} > ", False, ColTypes.Input, IMAP_CurrentDirectory)
 
             'Listen for a command
             Dim cmd As String = Console.ReadLine
@@ -76,18 +79,18 @@ Module IMAPShell
 
                 'Execute a command
                 Wdbg("I", "Executing command...")
-                If IMAP_AvailableCommands.Contains(cmd) Then
+                If Mail_AvailableCommands.Contains(cmd) Then
                     Wdbg("I", "Command found.")
-                    IMAPStartCommandThread = New Thread(AddressOf IMAP_ExecuteCommand)
-                    IMAPStartCommandThread.Start({cmd, args})
-                    IMAPStartCommandThread.Join()
+                    MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand)
+                    MailStartCommandThread.Start({cmd, args})
+                    MailStartCommandThread.Join()
                 ElseIf Not cmd.StartsWith(" ") Then
                     Wdbg("E", "Command not found. Reopening shell...")
                     W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, cmd)
                 End If
             Else
                 Console.WriteLine()
-                Thread.Sleep(30) 'This is to fix race condition between IMAP shell initialization and starting the event handler thread
+                Thread.Sleep(30) 'This is to fix race condition between mail shell initialization and starting the event handler thread
             End If
         End While
 
@@ -95,16 +98,17 @@ Module IMAPShell
         IMAP_CurrentDirectory = "Inbox"
         Wdbg("W", "Exit requested. Disconnecting host...")
         IMAP_Client.Disconnect(True)
+        SMTP_Client.Disconnect(True)
 
         'Restore handler
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf IMAPCancelCommand
+        RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
     End Sub
 
     ''' <summary>
-    ''' Tries to keep the connection going
+    ''' [IMAP] Tries to keep the connection going
     ''' </summary>
-    Sub KeepConnection()
+    Sub IMAPKeepConnection()
         'Every 10 seconds, send a ping to IMAP server
         While IMAP_Client.IsConnected
             Thread.Sleep(10000)
@@ -113,7 +117,25 @@ Module IMAPShell
                     IMAP_Client.NoOp()
                 End SyncLock
             Else
-                Wdbg("W", "Connection state is inconsistent. Stopping KeepConnection()...")
+                Wdbg("W", "Connection state is inconsistent. Stopping IMAPKeepConnection()...")
+                Thread.CurrentThread.Abort()
+            End If
+        End While
+    End Sub
+
+    ''' <summary>
+    ''' [SMTP] Tries to keep the connection going
+    ''' </summary>
+    Sub SMTPKeepConnection()
+        'Every 10 seconds, send a ping to IMAP server
+        While SMTP_Client.IsConnected
+            Thread.Sleep(10000)
+            If SMTP_Client.IsConnected Then
+                SyncLock SMTP_Client.SyncRoot
+                    SMTP_Client.NoOp()
+                End SyncLock
+            Else
+                Wdbg("W", "Connection state is inconsistent. Stopping SMTPKeepConnection()...")
                 Thread.CurrentThread.Abort()
             End If
         End While

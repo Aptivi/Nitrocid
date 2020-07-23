@@ -17,19 +17,21 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Text
 Imports System.Threading
 Imports MailKit
 Imports MimeKit
+Imports MimeKit.Text
 
-Module IMAPGetCommand
+Module MailGetCommand
 
-    Public IMAPStartCommandThread As New Thread(AddressOf IMAP_ExecuteCommand)
+    Public MailStartCommandThread As New Thread(AddressOf Mail_ExecuteCommand)
 
     ''' <summary>
     ''' Parses and executes the specified command with arguments
     ''' </summary>
     ''' <param name="Parameters">Two strings. The first one is the command string, and the other is the arguments string.</param>
-    Sub IMAP_ExecuteCommand(ByVal Parameters As String()) 'This is converted to String() to ensure compatibility with Threading.Thread.
+    Sub Mail_ExecuteCommand(ByVal Parameters As String()) 'This is converted to String() to ensure compatibility with Threading.Thread.
         Dim cmd As String = Parameters(0)
         Dim args As String = Parameters(1)
         Dim FullArgsL As List(Of String) = args.Split(" ").ToList
@@ -210,19 +212,72 @@ Module IMAPGetCommand
                 Else
                     W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
                 End If
+            ElseIf cmd = "send" Then
+                Dim Receiver, Subject As String
+                Dim Body As New StringBuilder
+
+                'Prompt for receiver e-mail address
+                W(DoTranslation("Enter recipient mail address:", currentLang) + " ", False, ColTypes.Input)
+                Receiver = Console.ReadLine
+                Wdbg("I", "Recipient: {0}", Receiver)
+
+                'Check for mail format
+                If Receiver.Contains("@") And Receiver.Substring(Receiver.IndexOf("@")).Contains(".") Then
+                    Wdbg("I", "Mail format satisfied. Contains ""@"" and contains ""."" in the second part after the ""@"" symbol.")
+
+                    'Prompt for subject
+                    W(DoTranslation("Enter the subject:", currentLang) + " ", False, ColTypes.Input)
+                    Subject = Console.ReadLine
+                    Wdbg("I", "Subject: {0} ({1} chars)", Subject, Subject.Length)
+
+                    'Prompt for body
+                    W(DoTranslation("Enter your message below. Write ""EOF"" to confirm.", currentLang), True, ColTypes.Input)
+                    Dim BodyLine As String = ""
+                    While Not BodyLine.ToUpper = "EOF"
+                        BodyLine = Console.ReadLine
+                        If Not BodyLine.ToUpper = "EOF" Then
+                            Wdbg("I", "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length)
+                            Body.AppendLine(BodyLine)
+                            Wdbg("I", "Body length: {0} chars", Body.Length)
+                        End If
+                    End While
+
+                    'Send the message
+                    Try
+                        W(DoTranslation("Sending message...", currentLang), True, ColTypes.Neutral)
+                        Dim FinalMessage As New MimeMessage
+                        FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
+                        Wdbg("I", "Added sender to FinalMessage.From.")
+                        FinalMessage.To.Add(MailboxAddress.Parse(Receiver))
+                        Wdbg("I", "Added address to FinalMessage.To.")
+                        FinalMessage.Subject = Subject
+                        Wdbg("I", "Added subject to FinalMessage.Subject.")
+                        FinalMessage.Body = New TextPart(TextFormat.Plain) With {.Text = Body.ToString}
+                        Wdbg("I", "Added body to FinalMessage.Body (plain text). Sending message...")
+                        SMTP_Client.Send(FinalMessage)
+                        W(DoTranslation("Message sent.", currentLang), True, ColTypes.Neutral)
+                    Catch ex As Exception
+                        W(DoTranslation("Error sending message: {0}", currentLang), True, ColTypes.Err, ex.Message)
+                        Wdbg("E", "Failed to send message: {0}", ex.Message)
+                        WStkTrc(ex)
+                    End Try
+                Else
+                    Wdbg("E", "Mail format unsatisfied.")
+                    W(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:", currentLang) + " john.s@example.com", True, ColTypes.Err)
+                End If
             End If
         Catch ex As Exception
-            W(DoTranslation("Error executing IMAP command: {0}", currentLang), True, ColTypes.Err, ex.Message)
+            W(DoTranslation("Error executing mail command: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub
 
-    Sub IMAPCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
+    Sub MailCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
         If e.SpecialKey = ConsoleSpecialKey.ControlC Then
             DefConsoleOut = Console.Out
             Console.SetOut(StreamWriter.Null)
             e.Cancel = True
-            IMAPStartCommandThread.Abort()
+            MailStartCommandThread.Abort()
         End If
     End Sub
 

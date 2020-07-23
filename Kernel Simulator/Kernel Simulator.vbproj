@@ -287,10 +287,10 @@
     <Compile Include="Network\RemoteDebug\RemoteDebugger.vb" />
     <Compile Include="Network\RPC\RemoteProcedure.vb" />
     <Compile Include="Network\RPC\RPC-Commands.vb" />
-    <Compile Include="Network\IMAP\IMAPGetCommand.vb" />
-    <Compile Include="Network\IMAP\IMAPHelpSystem.vb" />
-    <Compile Include="Network\IMAP\IMAPLogin.vb" />
-    <Compile Include="Network\IMAP\IMAPShell.vb" />
+    <Compile Include="Network\Mail\MailGetCommand.vb" />
+    <Compile Include="Network\Mail\MailHelpSystem.vb" />
+    <Compile Include="Network\Mail\MailLogin.vb" />
+    <Compile Include="Network\Mail\MailShell.vb" />
     <Compile Include="Network\SSH\SSH.vb" />
     <Compile Include="Scripting\UESHParse.vb" />
     <Compile Include="Scripting\UESHVariables.vb" />
