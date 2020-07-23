@@ -30,7 +30,8 @@ Public Module MailHelpSystem
                                                                    {"help", DoTranslation("List of commands", currentLang)},
                                                                    {"list", DoTranslation("Downloads messages and lists them", currentLang)},
                                                                    {"lsdirs", DoTranslation("Lists directories in your mail address", currentLang)},
-                                                                   {"read", DoTranslation("Opens a message", currentLang)}}
+                                                                   {"read", DoTranslation("Opens a message", currentLang)},
+                                                                   {"send", DoTranslation("Sends a message to an address", currentLang)}}
     End Sub
 
     ''' <summary>
@@ -52,6 +53,8 @@ Public Module MailHelpSystem
             W(DoTranslation("Usage:", currentLang) + " lsdirs: " + DoTranslation("Lists directories in your mail address", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "read" Then
             W(DoTranslation("Usage:", currentLang) + " read <mailid>: " + DoTranslation("Opens a message", currentLang), True, ColTypes.Neutral)
+        ElseIf cmd = "send" Then
+            W(DoTranslation("Usage:", currentLang) + " send: " + DoTranslation("Asks you to fill the required fields to send a message to an address", currentLang), True, ColTypes.Neutral)
         End If
     End Sub
 
