@@ -349,7 +349,7 @@ Public Module HardwareProbe
             If info.SSE2 Then 'After SSE2 requirement addition, remove the check.
                 W(" : SSE2", False, ColTypes.Neutral)
             Else
-                W(DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Err)
+                W(vbNewLine + DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Err)
             End If
             Console.WriteLine()
         Next
