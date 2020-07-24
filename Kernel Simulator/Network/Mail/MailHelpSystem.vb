@@ -31,6 +31,8 @@ Public Module MailHelpSystem
                                                                    {"list", DoTranslation("Downloads messages and lists them", currentLang)},
                                                                    {"lsdirs", DoTranslation("Lists directories in your mail address", currentLang)},
                                                                    {"read", DoTranslation("Opens a message", currentLang)},
+                                                                   {"rm", DoTranslation("Removes a message", currentLang)},
+                                                                   {"rmall", DoTranslation("Removes all messages from recipient", currentLang)},
                                                                    {"send", DoTranslation("Sends a message to an address", currentLang)}}
     End Sub
 
@@ -53,6 +55,10 @@ Public Module MailHelpSystem
             W(DoTranslation("Usage:", currentLang) + " lsdirs: " + DoTranslation("Lists directories in your mail address", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "read" Then
             W(DoTranslation("Usage:", currentLang) + " read <mailid>: " + DoTranslation("Opens a message", currentLang), True, ColTypes.Neutral)
+        ElseIf cmd = "rm" Then
+            W(DoTranslation("Usage:", currentLang) + " rm <mailid>: " + DoTranslation("Removes a message", currentLang), True, ColTypes.Neutral)
+        ElseIf cmd = "rmall" Then
+            W(DoTranslation("Usage:", currentLang) + " rmall <sendername>: " + DoTranslation("Removes all messages from recipient", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "send" Then
             W(DoTranslation("Usage:", currentLang) + " send: " + DoTranslation("Asks you to fill the required fields to send a message to an address", currentLang), True, ColTypes.Neutral)
         End If

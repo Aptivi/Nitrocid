@@ -76,7 +76,7 @@ Module MailGetCommand
                             Wdbg("I", "Getting message {0}...", i)
                             SyncLock IMAP_Client.SyncRoot
                                 Dim Msg As MimeMessage
-                                If Not IMAP_CurrentDirectory = "" Or Not IMAP_CurrentDirectory = "Inbox" Then
+                                If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
                                     Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
                                     Msg = Dir.GetMessage(IMAP_Messages(i))
                                 Else
@@ -146,7 +146,7 @@ Module MailGetCommand
                         'Get message
                         Wdbg("I", "Getting message...")
                         Dim Msg As MimeMessage
-                        If Not IMAP_CurrentDirectory = "" Or Not IMAP_CurrentDirectory = "Inbox" Then
+                        If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
                             Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
                             Msg = Dir.GetMessage(IMAP_Messages(Message))
                         Else
@@ -265,6 +265,81 @@ Module MailGetCommand
                     Wdbg("E", "Mail format unsatisfied.")
                     W(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:", currentLang) + " john.s@example.com", True, ColTypes.Err)
                 End If
+            ElseIf cmd = "rm" Then
+                Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
+                If FullArgsL(0).IsNumeric Then
+                    Dim Message As Integer = FullArgsL(0) - 1
+                    Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
+                    Wdbg("I", "Message number {0}", Message)
+                    If Message < 0 Then
+                        Wdbg("E", "Trying to remove message 0 or less than 0.")
+                        W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Err)
+                        Exit Sub
+                    ElseIf Message > MaxMessagesIndex Then
+                        Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
+                        W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Err)
+                        Exit Sub
+                    End If
+
+                    SyncLock IMAP_Client.SyncRoot
+                        If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                            Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+
+                            'Remove message
+                            Wdbg("I", "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, FullArgsL(0))
+                            Dir.AddFlags(Message, MessageFlags.Deleted, True)
+                            Wdbg("I", "Removed.")
+                            Dir.Expunge()
+                        Else
+                            'Remove message
+                            Wdbg("I", "Removing {0}...", FullArgsL(0))
+                            IMAP_Client.Inbox.AddFlags(Message, MessageFlags.Deleted, True)
+                            Wdbg("I", "Removed.")
+                            IMAP_Client.Inbox.Expunge()
+                        End If
+                    End SyncLock
+                Else
+                    W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
+                End If
+            ElseIf cmd = "rmall" Then
+                Wdbg("I", "All mail by {0} will be removed.", FullArgsL(0))
+                Dim DeletedMsgNumber As Integer = 1
+                Dim SteppedMsgNumber As Integer = 0
+                For Each MessageId As UniqueId In IMAP_Messages
+                    SyncLock IMAP_Client.SyncRoot
+                        Dim Msg As MimeMessage
+                        If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                            Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                            Msg = Dir.GetMessage(MessageId)
+                        Else
+                            Msg = IMAP_Client.Inbox.GetMessage(MessageId)
+                        End If
+                        SteppedMsgNumber += 1
+
+                        For Each address In Msg.From
+                            If address.Name = FullArgsL(0) Then
+                                If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                                    Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+
+                                    'Remove message
+                                    Wdbg("I", "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, FullArgsL(0))
+                                    Dir.AddFlags(MessageId, MessageFlags.Deleted, True)
+                                    Wdbg("I", "Removed.")
+                                    Dir.Expunge()
+                                    W(DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, FullArgsL(0), IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
+                                Else
+                                    'Remove message
+                                    Wdbg("I", "Removing {0}...", FullArgsL(0))
+                                    IMAP_Client.Inbox.AddFlags(MessageId, MessageFlags.Deleted, True)
+                                    Wdbg("I", "Removed.")
+                                    IMAP_Client.Inbox.Expunge()
+                                    W(DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, FullArgsL(0), IMAP_Messages.Count - SteppedMsgNumber)
+                                End If
+                                DeletedMsgNumber += 1
+                            End If
+                        Next
+                    End SyncLock
+                Next
             End If
         Catch ex As Exception
             W(DoTranslation("Error executing mail command: {0}", currentLang), True, ColTypes.Err, ex.Message)

@@ -23,7 +23,7 @@ Imports MailKit.Search
 Module MailShell
 
     'Variables
-    Public Mail_AvailableCommands() As String = {"help", "cd", "lsdirs", "exit", "list", "read", "send"}
+    Public Mail_AvailableCommands() As String = {"help", "cd", "lsdirs", "exit", "list", "read", "rm", "rmall", "send"}
     Public IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested As Boolean
@@ -48,7 +48,7 @@ Module MailShell
         While Not ExitRequested
             'Populate messages
             If IMAP_CurrentDirectory = "" Or IMAP_CurrentDirectory = "Inbox" Then
-                IMAP_Client.Inbox.Open(FolderAccess.ReadOnly)
+                IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
                 Wdbg("I", "Opened inbox")
                 IMAP_Messages = IMAP_Client.Inbox.Search(SearchQuery.All).Reverse
                 Wdbg("I", "Messages count: {0} messages", IMAP_Messages.LongCount)
@@ -109,9 +109,9 @@ Module MailShell
     ''' [IMAP] Tries to keep the connection going
     ''' </summary>
     Sub IMAPKeepConnection()
-        'Every 10 seconds, send a ping to IMAP server
+        'Every 30 seconds, send a ping to IMAP server
         While IMAP_Client.IsConnected
-            Thread.Sleep(10000)
+            Thread.Sleep(30000)
             If IMAP_Client.IsConnected Then
                 SyncLock IMAP_Client.SyncRoot
                     IMAP_Client.NoOp()
@@ -127,9 +127,9 @@ Module MailShell
     ''' [SMTP] Tries to keep the connection going
     ''' </summary>
     Sub SMTPKeepConnection()
-        'Every 10 seconds, send a ping to IMAP server
+        'Every 30 seconds, send a ping to IMAP server
         While SMTP_Client.IsConnected
-            Thread.Sleep(10000)
+            Thread.Sleep(30000)
             If SMTP_Client.IsConnected Then
                 SyncLock SMTP_Client.SyncRoot
                     SMTP_Client.NoOp()
