@@ -28,6 +28,7 @@ Public Module Kernel
     Public ReadOnly EnvironmentOSType As String = Environment.OSVersion.ToString
     Public EventManager As New EventsAndExceptions
     Public DefConsoleOut As IO.TextWriter
+    Public ScrnTimeout As Integer = 300000
 
     ''' <summary>
     ''' Entry point

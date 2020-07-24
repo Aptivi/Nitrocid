@@ -92,6 +92,7 @@ Public Module Config
                     New IniSection(ksconf, "Misc",
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", CornerTD),
                         New IniKey(ksconf, "Screensaver", defSaverName),
+                        New IniKey(ksconf, "Screensaver Timeout in ms", ScrnTimeout),
                         New IniKey(ksconf, "Debug Size Quota in Bytes", DebugQuota),
                         New IniKey(ksconf, "Size parse mode", FullParseMode),
                         New IniKey(ksconf, "Marquee on startup", StartScroll),
@@ -161,6 +162,7 @@ Public Module Config
                     New IniSection(ksconf, "Misc",
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", "False"),
                         New IniKey(ksconf, "Screensaver", "matrix"),
+                        New IniKey(ksconf, "Screensaver Timeout in ms", 300000),
                         New IniKey(ksconf, "Debug Size Quota in Bytes", 1073741824),
                         New IniKey(ksconf, "Size parse mode", "False"),
                         New IniKey(ksconf, "Marquee on startup", "True"),
@@ -211,6 +213,7 @@ Public Module Config
             ksconf.Sections("Misc").TrailingComment.Text = "This section is the other settings that are not categorized yet."
             ksconf.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").TrailingComment.Text = "Whether or not it shows time and date on the upper right corner."
             ksconf.Sections("Misc").Keys("Screensaver").TrailingComment.Text = "Specifies the current screensaver."
+            ksconf.Sections("Misc").Keys("Screensaver Timeout in ms").TrailingComment.Text = "After specified milliseconds, the screensaver will launch."
             ksconf.Sections("Misc").Keys("Debug Size Quota in Bytes").TrailingComment.Text = "Specifies the maximum log size in bytes. If this was exceeded, it will remove the first 5 lines from the log to free up some space."
             ksconf.Sections("Misc").Keys("Size parse mode").TrailingComment.Text = "Parse whole directory for size. If set to False, it will parse just the surface."
             ksconf.Sections("Misc").Keys("Marquee on startup").TrailingComment.Text = "Whether or not to activate banner animation."
@@ -361,6 +364,7 @@ Public Module Config
             Wdbg("I", "Parsing misc section...")
             If configReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True" Then CornerTD = True Else CornerTD = False
             defSaverName = configReader.Sections("Misc").Keys("Screensaver").Value
+            If Integer.TryParse(configReader.Sections("Misc").Keys("Screensaver Timeout in ms").Value, 0) Then ScrnTimeout = configReader.Sections("Misc").Keys("Screensaver Timeout in ms").Value
             If Integer.TryParse(configReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value, 0) Then DebugQuota = configReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value
             If configReader.Sections("Misc").Keys("Size parse mode").Value = "True" Then FullParseMode = True Else FullParseMode = False
             If configReader.Sections("Misc").Keys("Marquee on startup").Value = "True" Then StartScroll = True Else StartScroll = False
