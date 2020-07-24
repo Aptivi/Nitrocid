@@ -47,7 +47,7 @@ Public Module VoiceManagement
             Core.Initialize()
             Dim MLib As New LibVLC
             Dim MP As New MediaPlayer(MLib)
-            AddHandler MLib.Log, Sub(sender, e) W($"{e.Level}@{e.Module}: {e.Message}", True, ColTypes.Neutral)
+            AddHandler MLib.Log, Sub(sender, e) Wdbg(e.Level.ToString.Chars(0), $"{e.Module}: {e.Message}")
             Dim MFile As New Media(MLib, paths("Temp") + "/tts.mpeg")
             MP.Media = MFile
             MP.Play()
