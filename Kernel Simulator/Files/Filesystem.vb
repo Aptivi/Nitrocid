@@ -34,7 +34,7 @@ Public Module Filesystem
             direct = ReplaceLastOccurrence(direct, CurrDir, "")
         End If
         Wdbg("I", "Final directory: {0}", direct)
-        Wdbg("I", "Directory exists? {1}", IO.Directory.Exists(direct))
+        Wdbg("I", "Directory exists? {0}", IO.Directory.Exists(direct))
         If IO.Directory.Exists(direct) Then
             Try
                 Dim Parser As New IO.DirectoryInfo(direct)

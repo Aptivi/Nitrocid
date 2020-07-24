@@ -22,6 +22,7 @@ Imports Microsoft.CSharp
 
 Public Module ModParser
 
+    'TODO: Support more than one file in mod
     'Variables
     Public Interface IScript
         Sub StartMod()
