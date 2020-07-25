@@ -49,27 +49,27 @@ Public Module Notifications
         Dim OldNCount As Integer = NotifRecents.Count
         While Not NotifThread.ThreadState = ThreadState.AbortRequested
             Thread.Sleep(10)
-            If NotifRecents.Count <> OldNCount Then
+            If NotifRecents.Count > OldNCount Then
                 Wdbg("W", "Notification received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNCount)
-                OldNCount = NotifRecents.Count
                 Dim Title, Desc As String
-                Wdbg("I", "Title: {0}", NotifRecents(OldNCount - 1).Title)
-                Wdbg("I", "Desc: {0}", NotifRecents(OldNCount - 1).Desc)
-                Title = NotifRecents(OldNCount - 1).Title.Truncate(27)
-                Desc = NotifRecents(OldNCount - 1).Desc.Truncate(27)
+                Wdbg("I", "Title: {0}", NotifRecents(NotifRecents.Count - 1).Title)
+                Wdbg("I", "Desc: {0}", NotifRecents(NotifRecents.Count - 1).Desc)
+                Title = NotifRecents(NotifRecents.Count - 1).Title.Truncate(27)
+                Desc = NotifRecents(NotifRecents.Count - 1).Desc.Truncate(27)
                 Wdbg("I", "Truncated title: {0}", Title)
                 Wdbg("I", "Truncated desc: {0}", Desc)
                 Wdbg("I", "Where to store: {0}, Title: {1}, Desc: {2}", Console.WindowWidth - 30, Console.WindowTop + 2, Console.WindowTop + 3)
                 WriteWhere(Title, Console.WindowWidth - 30, Console.WindowTop + 2, ColTypes.Neutral)
                 WriteWhere(Desc, Console.WindowWidth - 30, Console.WindowTop + 3, ColTypes.Neutral)
-                Wdbg("I", "Priority: {0}", NotifRecents(OldNCount - 1).Priority)
-                For i As Integer = 1 To NotifRecents(OldNCount - 1).Priority
+                Wdbg("I", "Priority: {0}", NotifRecents(NotifRecents.Count - 1).Priority)
+                For i As Integer = 1 To NotifRecents(NotifRecents.Count - 1).Priority
                     Console.Beep()
                 Next
                 Wdbg("I", "Truncated title length: {0}", Title.Length)
                 Wdbg("I", "Truncated desc length: {0}", Desc.Length)
                 NotifClearArea(Title.Length, Desc.Length, Console.WindowWidth - 30, Console.WindowTop + 2, Console.WindowTop + 3)
             End If
+            OldNCount = NotifRecents.Count
         End While
     End Sub
 

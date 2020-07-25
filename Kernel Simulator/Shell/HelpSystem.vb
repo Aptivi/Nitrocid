@@ -30,6 +30,7 @@ Public Module HelpSystem
                                                               {"alias", DoTranslation("Adds aliases to commands (Only admins can access this command)", currentLang)},
                                                               {"arginj", DoTranslation("Injects arguments to the kernel (reboot required, admins only)", currentLang)},
                                                               {"beep", DoTranslation("Beep in 'n' Hz and time in 'n' milliseconds", currentLang)},
+                                                              {"blockdbgdev", DoTranslation("Block a debug device by IP address", currentLang)},
                                                               {"bsynth", DoTranslation("Loads the synth file and plays it.", currentLang)},
                                                               {"calc", DoTranslation("Calculator to calculate expressions.", currentLang)},
                                                               {"cdbglog", DoTranslation("Deletes everything in debug log", currentLang)},
@@ -90,6 +91,7 @@ Public Module HelpSystem
                                                               {"sumfile", DoTranslation("Calculates file sums.", currentLang)},
                                                               {"sumfiles", DoTranslation("Calculates sums of files in specified directory.", currentLang)},
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
+                                                              {"unblockdbgdev", DoTranslation("Unblock a debug device by IP address", currentLang)},
                                                               {"update", DoTranslation("System update", currentLang)},
                                                               {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)}}
     End Sub
@@ -148,6 +150,10 @@ Public Module HelpSystem
         ElseIf command = "beep" Then
 
             W(DoTranslation("Usage:", currentLang) + " beep <37-32767 Hz> <milliseconds>", True, ColTypes.Neutral)
+
+        ElseIf command = "blockdbgdev" Then
+
+            W(DoTranslation("Usage:", currentLang) + " blockdbgdev <ipaddress>", True, ColTypes.Neutral)
 
         ElseIf command = "bsynth" Then
 
@@ -406,6 +412,10 @@ Public Module HelpSystem
         ElseIf command = "sysinfo" Then
 
             W(DoTranslation("Usage:", currentLang) + " sysinfo: " + DoTranslation("Shows system information and versions.", currentLang), True, ColTypes.Neutral)
+
+        ElseIf command = "unblockdbgdev" Then
+
+            W(DoTranslation("Usage:", currentLang) + " unblockdbgdev <ipaddress>", True, ColTypes.Neutral)
 
         ElseIf command = "update" Then
 

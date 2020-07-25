@@ -27,6 +27,7 @@ Module RemoteDebugger
     Public DebugDevices As New Dictionary(Of Socket, String)
     Public dbgConns As New Dictionary(Of StreamWriter, String)
     Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
+    Public RDebugBlocked As New List(Of String)
     Public RDebugStopping As Boolean
 
     ''' <summary>
@@ -76,13 +77,18 @@ Module RemoteDebugger
                     RDebugIP = RDebugClient.RemoteEndPoint.ToString.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":"))
                     RDebugRandomID = New Random(100000).Next(999999)
                     RDebugName = RDebugDNP + CStr(RDebugRandomID)
-                    dbgConns.Add(RDebugSWriter, RDebugName)
-                    DebugDevices.Add(RDebugClient, RDebugIP)
-                    RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version", currentLang) + " 0.4") 'Increment each minor/major change(s)
-                    RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}.", currentLang), RDebugIP)
-                    RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}.", currentLang), RDebugName)
-                    Wdbg("I", "Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
-                    RDebugSWriter.Flush()
+                    If RDebugBlocked.Contains(RDebugIP) Then
+                        Wdbg("W", "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP)
+                        RDebugClient.Disconnect(True)
+                    Else
+                        dbgConns.Add(RDebugSWriter, RDebugName)
+                        DebugDevices.Add(RDebugClient, RDebugIP)
+                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version", currentLang) + " 0.4") 'Increment each minor/major change(s)
+                        RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}.", currentLang), RDebugIP)
+                        RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}.", currentLang), RDebugName)
+                        Wdbg("I", "Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
+                        RDebugSWriter.Flush()
+                    End If
                 End If
             Catch ae As ThreadAbortException
                 Exit While
