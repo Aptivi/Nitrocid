@@ -621,7 +621,7 @@ Alamat email tidak sah. Pastikan anda telah menulis alamat dengan betul dan sesu
 Mengeluarkan mesej
 Membuang semua mesej dari penerima
 Mesej {0} dari {1} dipadam dari {2}. {3} mesej akan dihuraikan.
-Mesej {0} dari {1} dipadamkan dari peti masuk. {3} mesej akan dihuraikan.
+Mesej {0} dari {1} dipadamkan dari peti masuk. {2} mesej akan dihuraikan.
 Menyunting fail teks
 Membuat fail baru
 Fail sudah ada.

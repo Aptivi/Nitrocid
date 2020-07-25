@@ -621,7 +621,7 @@ jalmosdoen imeil juso. jusoleul olbaleuge jagseonghaessneunjiwa pyosidoen yeui h
 mesijileul jegeohabnida
 susinjalobuteo modeun mesijileul jegeohabnida
 {1} ui {0} mesijiga {2} eseo sagjedoeeossseubnida. gumun bunseog-eul wihae nam-eun {3} mesiji.
-{1} ui {0} mesijigabad-eun pyeonjiham-eseo sagjedoeeossseubnida. gumun bunseog-eul wihae nam-eun {3} mesiji.
+{1} ui {0} mesijigabad-eun pyeonjiham-eseo sagjedoeeossseubnida. gumun bunseog-eul wihae nam-eun {2} mesiji.
 tegseuteu pail-eul pyeonjibhabnida
 saeloun pail-eul mandeubnida
 jonjaehaneun pail-ibnida.

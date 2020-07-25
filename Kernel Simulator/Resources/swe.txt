@@ -621,7 +621,7 @@ Ogiltig e-postadress. Se till att du har skrivit adressen korrekt och att den ma
 Tar bort ett meddelande
 Tar bort alla meddelanden från mottagaren
 Meddelande {0} från {1} raderat från {2}. {3} meddelanden kvar för att analysera.
-Meddelande {0} från {1} raderat från inkorgen. {3} meddelanden kvar för att analysera.
+Meddelande {0} från {1} raderat från inkorgen. {2} meddelanden kvar för att analysera.
 Redigerar en textfil
 Skapar en ny fil
 Filen finns redan.

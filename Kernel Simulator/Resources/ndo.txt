@@ -621,7 +621,7 @@ Alamat email salah. Pastikan Anda telah menulis alamat dengan benar dan cocok de
 Menghapus pesan
 Menghapus semua pesan dari penerima
 Pesan {0} dari {1} dihapus dari {2}. {3} pesan tersisa untuk diurai.
-Pesan {0} dari {1} dihapus dari kotak masuk. {3} pesan tersisa untuk diurai.
+Pesan {0} dari {1} dihapus dari kotak masuk. {2} pesan tersisa untuk diurai.
 Edit file teks
 Membuat file baru
 File sudah ada.

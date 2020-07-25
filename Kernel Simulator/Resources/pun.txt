@@ -621,7 +621,7 @@ Galata īmēla patā. Iha suniśacita karō ki tusīṁ patā sahī likhi'ā hai
 Ika sunēhā haṭā'undā hai
 sārē sunēhi'āṁ nū prāpata karana vālē tōṁ haṭā didā hai
 sunēhā {0} nū {1} tōṁ {2} tōṁ miṭā ditā gi'ā. Pārasa karana la'ī {3} sunēhē bākī hana.
-Sunēhā {0} in tōṁ box {1} inabākasa vicōṁ miṭā ditā gi'ā. Pārasa karana la'ī {3} sunēhē bākī hana.
+Sunēhā {0} in tōṁ box {1} inabākasa vicōṁ miṭā ditā gi'ā. Pārasa karana la'ī {2} sunēhē bākī hana.
 Ika ṭaikasaṭa phā'īla vica sōdha
 ika navīṁ phā'īla baṇā'undā hai
 phā'īla pahilāṁ hī maujūda hai.

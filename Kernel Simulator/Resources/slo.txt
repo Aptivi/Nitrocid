@@ -621,7 +621,7 @@ Neplatná emailová adresa. Uistite sa, že ste adresu napísali správne a či 
 Odstráni správu
 Odstráni všetky správy od príjemcu
 Správa {0} z {1} bola odstránená z {2}. {3} zostávajúce správy na analýzu.
-Správa {0} z {1} bola odstránená z doručenej pošty. {3} zostávajúce správy na analýzu.
+Správa {0} z {1} bola odstránená z doručenej pošty. {2} zostávajúce správy na analýzu.
 Upravuje textový súbor
 Vytvorí nový súbor
 Súbor už existuje.

@@ -621,7 +621,7 @@ Niepoprawny adres email. Upewnij się, że adres został wpisany poprawnie i pas
 Usuwa wiadomość
 Usuwa wszystkie wiadomości od odbiorcy
 Wiadomość {0} od {1} została usunięta z {2}. Pozostało {3} wiadomości do przeanalizowania.
-Wiadomość {0} od {1} została usunięta ze skrzynki odbiorczej. Pozostało {3} wiadomości do przeanalizowania.
+Wiadomość {0} od {1} została usunięta ze skrzynki odbiorczej. Pozostało {2} wiadomości do przeanalizowania.
 Edytuje plik tekstowy
 Tworzy nowy plik
 Plik już istnieje.

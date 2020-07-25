@@ -621,7 +621,7 @@ Invalid e-mail address. Make sure you've written the address correctly and that 
 Removes a message
 Removes all messages from recipient
 Message {0} from {1} deleted from {2}. {3} messages remaining to parse.
-Message {0} from {1} deleted from inbox. {3} messages remaining to parse.
+Message {0} from {1} deleted from inbox. {2} messages remaining to parse.
 Edits a text file
 Makes a new file
 File already exists.

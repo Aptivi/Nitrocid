@@ -621,7 +621,7 @@ Pogrešna email adresa. Proverite da li ste pravilno napisali adresu i da li odg
 Uklanja poruku
 Uklanja sve poruke primaoca
 Poruka {0} od {1} izbrisana je iz {2}. {3} preostale poruke za analizu.
-Poruka {0} od {1} izbrisana je u primljenoj pošti. {3} preostale poruke za analizu.
+Poruka {0} od {1} izbrisana je u primljenoj pošti. {2} preostale poruke za analizu.
 Uređuje tekstualnu datoteku
 Napravi novu datoteku
 Datoteka već postoji.

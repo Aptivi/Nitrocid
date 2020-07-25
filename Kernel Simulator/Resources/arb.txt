@@ -621,7 +621,7 @@ eunwan albarid al'iiliktruniu ghyr salh. ta'akad min kitabat aleunwan bishakl sa
 yazil risalatan
 yazil kl alrasayil min almustalim
 tam hadhif alrisala {0} min {1} min {2}. {3} min alrasayil almutabaqiyat liltahlil.
-tam hadhaf alrisala {0} min {1} min albarid alwarid. {3} min alrasayil almutabaqiyat liltahlil.
+tam hadhaf alrisala {0} min {1} min albarid alwarid. {2} min alrasayil almutabaqiyat liltahlil.
 yaqum bitahrir milafin nasiin
 yajeal milafun jadid
 almilafu mawjud bialfiel.

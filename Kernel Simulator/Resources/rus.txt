@@ -621,7 +621,7 @@ Nevernyy adres elektronnoy pochty. Ubedites', chto vy pravil'no napisali adres i
 Udalyayet soobshcheniye
 Udalyayet vse soobshcheniya ot poluchatelya
 Soobshcheniye {0} iz {1} udaleno iz {2}. Ostalos' {3} soobshcheniy dlya analiza.
-Soobshcheniye {0} iz {1} udaleno iz papki vkhodyashchikh soobshcheniy. Ostalos' {3} soobshcheniy dlya analiza.
+Soobshcheniye {0} iz {1} udaleno iz papki vkhodyashchikh soobshcheniy. Ostalos' {2} soobshcheniy dlya analiza.
 Redaktiruyet tekstovyy fayl
 Delayet novyy fayl
 Fayl uzhe sushchestvuyet.

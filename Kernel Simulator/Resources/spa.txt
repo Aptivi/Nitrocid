@@ -621,7 +621,7 @@ Dirección de correo electrónico no válida Asegúrese de haber escrito la dire
 Elimina un mensaje
 Elimina todos los mensajes del destinatario
 Mensaje {0} de {1} eliminado de {2}. Quedan {3} mensajes por analizar.
-Mensaje {0} de {1} eliminado de la bandeja de entrada. Quedan {3} mensajes por analizar.
+Mensaje {0} de {1} eliminado de la bandeja de entrada. Quedan {2} mensajes por analizar.
 Edita un archivo de texto
 Crea un nuevo archivo
 El archivo ya existe.

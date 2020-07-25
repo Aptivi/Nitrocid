@@ -621,7 +621,7 @@ Adresa email invalida. Asigurați-vă că ați scris adresa corect și că se po
 Înlătură un mesaj
 Înlătură toate mesajele de la destinatar
 Mesajul {0} din {1} șters din {2}. {3} mesaje rămase pentru a analiza.
-Mesajul {0} din {1} șters din căsuța de e-mail. {3} mesaje rămase pentru a analiza.
+Mesajul {0} din {1} șters din căsuța de e-mail. {2} mesaje rămase pentru a analiza.
 Editează un fișier text
 Creează un nou fișier
 Fisierul există deja.

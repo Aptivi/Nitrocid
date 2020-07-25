@@ -621,7 +621,7 @@ Adresse e-mail invalide. Assurez-vous que vous avez écrit l'adresse correctemen
 Supprime un message
 Supprime tous les messages du destinataire
 Message {0} de {1} supprimé de {2}. {3} messages restants à analyser.
-Message {0} de {1} supprimé de la boîte de réception. {3} messages restants à analyser.
+Message {0} de {1} supprimé de la boîte de réception. {2} messages restants à analyser.
 Modifie un fichier texte
 Crée un nouveau fichier
 Le fichier existe déjà.

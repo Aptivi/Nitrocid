@@ -621,7 +621,7 @@ Geçersiz e-posta adresi. Adresi doğru yazdığınızdan ve gösterilen örneğ
 Bir mesajı kaldırır
 Tüm mesajları alıcıdan kaldırır
 {1} 'den {0} mesajı {2}' den silindi. {3} ayrıştırılacak mesaj kaldı.
-{1} 'den gelen {0} mesajı gelen kutusundan silindi. {3} ayrıştırılacak mesaj kaldı.
+{1} 'den gelen {0} mesajı gelen kutusundan silindi. {2} ayrıştırılacak mesaj kaldı.
 Metin dosyasını düzenler
 Yeni bir dosya oluşturur
 Dosya zaten mevcut.

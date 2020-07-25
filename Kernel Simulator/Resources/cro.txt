@@ -621,7 +621,7 @@ Nevažeća adresa e-pošte. Provjerite jeste li ispravno napisali adresu i odgov
 Uklanja poruku
 Uklanja sve poruke od primatelja
 Poruka {0} od {1} izbrisana je iz {2}. {3} preostale poruke za analizu.
-Poruka {0} od {1} izbrisana je u pristigloj pošti. {3} preostale poruke za analizu.
+Poruka {0} od {1} izbrisana je u pristigloj pošti. {2} preostale poruke za analizu.
 Uređuje tekstualnu datoteku
 Izrađuje novu datoteku
 Datoteka već postoji.

@@ -621,7 +621,7 @@ Lỗi gửi tin nhắn: {0}
 Xóa tin nhắn
 Xóa tất cả tin nhắn khỏi người nhận
 Tin nhắn {0} từ {1} đã bị xóa khỏi {2}. {3} tin nhắn còn lại để phân tích.
-Tin nhắn {0} từ {1} đã bị xóa khỏi hộp thư đến. {3} tin nhắn còn lại để phân tích.
+Tin nhắn {0} từ {1} đã bị xóa khỏi hộp thư đến. {2} tin nhắn còn lại để phân tích.
 Chỉnh sửa tệp văn bản
 Tạo một tệp mới
 Tập tin đã tồn tại.

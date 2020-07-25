@@ -621,7 +621,7 @@ Neplatná emailová adresa. Ujistěte se, že jste adresu napsali správně a zd
 Odstraní zprávu
 Odstraní všechny zprávy od příjemce
 Zpráva {0} z {1} byla odstraněna z {2}. {3} zbývajících zpráv k analýze.
-Zpráva {0} od {1} byla odstraněna ze složky Doručená pošta. {3} zbývajících zpráv k analýze.
+Zpráva {0} od {1} byla odstraněna ze složky Doručená pošta. {2} zbývajících zpráv k analýze.
 Upravuje textový soubor
 Vytvoří nový soubor
 Soubor již existuje.

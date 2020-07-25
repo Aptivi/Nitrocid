@@ -621,7 +621,7 @@ Endereço de email invalido. Verifique se você escreveu o endereço corretament
 Remove uma mensagem
 Remove todas as mensagens do destinatário
 A mensagem {0} de {1} foi excluída de {2}. {3} mensagens restantes para analisar.
-A mensagem {0} de {1} foi excluída da caixa de entrada. {3} mensagens restantes para analisar.
+A mensagem {0} de {1} foi excluída da caixa de entrada. {2} mensagens restantes para analisar.
 Edita um arquivo de texto
 Cria um novo arquivo
 O arquivo já existe.

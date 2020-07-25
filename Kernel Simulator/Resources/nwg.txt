@@ -621,7 +621,7 @@ Ugyldig epostadresse. Forsikre deg om at du har skrevet adressen riktig, og at d
 Fjerner en melding
 Fjerner alle meldingene fra mottakeren
 Melding {0} fra {1} slettet fra {2}. {3} meldinger som gjenstår for å analysere.
-Melding {0} fra {1} er slettet fra innboksen. {3} meldinger som gjenstår for å analysere.
+Melding {0} fra {1} er slettet fra innboksen. {2} meldinger som gjenstår for å analysere.
 Redigerer en tekstfil
 Oppretter en ny fil
 Filen finnes allerede.

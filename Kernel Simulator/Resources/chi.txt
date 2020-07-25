@@ -621,7 +621,7 @@ Wúxiào de yóujiàn dìzhǐ. Quèbǎo nín zhèngquè shūrùle dìzhǐ, bìng
 Shānchú yītiáo xiāoxī
 cóng shōu jiàn rén zhōng shānchú suǒyǒu yóujiàn
 láizì {1} de xiāoxī {0} yǐ cóng {2} zhōng shānchú. Shèng xià {3} tiáo xiāoxī xūyào jiěxī.
-{1} Zhōng de xiāoxī {0} yǐ cóng shōu jiàn xiāng zhōng shānchú. Shèng xià {3} tiáo xiāoxī xūyào jiěxī.
+{1} Zhōng de xiāoxī {0} yǐ cóng shōu jiàn xiāng zhōng shānchú. Shèng xià {2} tiáo xiāoxī xūyào jiěxī.
 Biānjí wénběn wénjiàn
 zhìzuò yīgè xīn wénjiàn
 wénjiàn yǐ cúnzài.

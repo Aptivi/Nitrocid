@@ -621,7 +621,7 @@ Elektron pochta manzili noto'g'ri. Manzilni to'g'ri yozganingizga va u ko'rsatil
 Xabarni o'chiradi
 Qabul qiluvchidan barcha xabarlarni o'chiradi
 {1} dan {0} xabari {2} dan o'chirildi. Tuzatish uchun qolgan {3} xabarlar.
-{1} dan {0} xabari kirish qutisidan o'chirildi. Tuzatish uchun qolgan {3} xabarlar.
+{1} dan {0} xabari kirish qutisidan o'chirildi. Tuzatish uchun qolgan {2} xabarlar.
 Matn faylini tahrirlaydi
 Yangi faylni yaratadi
 Fayl allaqachon mavjud.

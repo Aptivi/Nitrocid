@@ -621,7 +621,7 @@ Akāryakara imē'ila ṭhikānā. Niścita karuna yē āpani ṭhikānāṭi sa�
 Ēkaṭi bārtā sariẏē dēẏa
 prāpaka thēkē samasta bārtā sariẏē dēẏa
 bārtā {1} thēkē {0} {2} thēkē muchē phēlā haẏēchē} Ars {3} bārtāguli biślēṣaṇē abaśiṣṭa raẏēchē.
-Inabaksa thēkē Message {1} thēkē bārtā {0}. Muchē phēlā haẏēchē. Ars {3} bārtāguli biślēṣaṇē abaśiṣṭa raẏēchē.
+Inabaksa thēkē Message {1} thēkē bārtā {0}. Muchē phēlā haẏēchē. Ars {2} bārtāguli biślēṣaṇē abaśiṣṭa raẏēchē.
 Ēkaṭi pāṭhya phā'ila sampādanā karē
 ēkaṭi natuna phā'ila tairi karē
 phā'ila itimadhyē bidyamāna.

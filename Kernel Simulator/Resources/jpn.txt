@@ -621,7 +621,7 @@ Mukōna mēruadoresu. Adoresu ga tadashiku kijutsu sa rete iru koto, oyobi hyōj
 Messēji o sakujo shimasu
 jushin-sha kara subete no messēji o sakujo shimasu
 {1} kara no messēji {0} ga {2} kara sakujosaremashita. {3} Kaiseki suru messēji ga nokotte imasu.
-{1} Kara no messēji {0} ga jushin torei kara sakujosaremashita. {3} Kaiseki suru messēji ga nokotte imasu.
+{1} Kara no messēji {0} ga jushin torei kara sakujosaremashita. {2} Kaiseki suru messēji ga nokotte imasu.
 Tekisutofairu o henshū shimasu
 atarashī fairu o sakusei shimasu
 fairu ga sudeni sonzai shimasu.

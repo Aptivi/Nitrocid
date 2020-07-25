@@ -621,7 +621,7 @@ Virheellinen sähköpostiosoite. Varmista, että olet kirjoittanut osoitteen oik
 Poistaa viestin
 Poistaa kaikki viestit vastaanottajalta
 Viesti {0} osoitteesta {1} poistettu kohdasta {2}. {3} viestiä jäljellä jäsentämistä varten.
-Viesti {0} osoitteesta {1} poistettu postilaatikosta. {3} viestiä jäljellä jäsentämistä varten.
+Viesti {0} osoitteesta {1} poistettu postilaatikosta. {2} viestiä jäljellä jäsentämistä varten.
 Muokkaa tekstitiedostoa
 Tekee uuden tiedoston
 Tiedosto on jo olemassa.

@@ -621,7 +621,7 @@ Ungültige E-Mail-Adresse. Stellen Sie sicher, dass Sie die Adresse richtig gesc
 Entfernt eine Nachricht
 Entfernt alle Nachrichten vom Empfänger
 Nachricht {0} von {1} von {2} gelöscht. {3} Nachrichten müssen noch analysiert werden.
-Nachricht {0} von {1} aus Posteingang gelöscht. {3} Nachrichten müssen noch analysiert werden.
+Nachricht {0} von {1} aus Posteingang gelöscht. {2} Nachrichten müssen noch analysiert werden.
 Bearbeitet eine Textdatei
 Erstellt eine neue Datei
 Die Datei existiert bereits.

@@ -621,7 +621,7 @@ amaany eemel pata. sunishchit karen ki aapane pata sahee likha hai aur yah dikha
 ek sandesh nikaalata hai
 praaptakarta se sabhee sandeshon ko nikaalata hai
 {1} se {0} sandesh {2} se hata diya gaya. {3} sandesh paars karane ke lie shesh hai.
-inaboks se {0} sandesh {0} hatae gae. {3} sandesh paars karane ke lie shesh hai.
+inaboks se {0} sandesh {0} hatae gae. {2} sandesh paars karane ke lie shesh hai.
 ek paath fail ko sampaadit karata hai
 ek naee fail banaata hai
 fail pahale se hee maujood hai.

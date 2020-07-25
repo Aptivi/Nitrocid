@@ -621,7 +621,7 @@ Indirizzo email non valido. Assicurati di aver scritto correttamente l'indirizzo
 Rimuove un messaggio
 Rimuove tutti i messaggi dal destinatario
 Messaggio {0} da {1} eliminato da {2}. {3} messaggi rimanenti da analizzare.
-Messaggio {0} da {1} eliminato dalla posta in arrivo. {3} messaggi rimanenti da analizzare.
+Messaggio {0} da {1} eliminato dalla posta in arrivo. {2} messaggi rimanenti da analizzare.
 Modifica un file di testo
 Crea un nuovo file
 Il file esiste già.

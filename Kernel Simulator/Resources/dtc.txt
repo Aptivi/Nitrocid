@@ -621,7 +621,7 @@ Ongeldig e-mailadres. Zorg ervoor dat je het adres correct hebt geschreven en da
 Verwijdert een bericht
 Verwijdert alle berichten van de ontvanger
 Bericht {0} van {1} verwijderd van {2}. {3} berichten die nog moeten worden geparseerd.
-Bericht {0} van {1} verwijderd uit inbox. {3} berichten die nog moeten worden geparseerd.
+Bericht {0} van {1} verwijderd uit inbox. {2} berichten die nog moeten worden geparseerd.
 Bewerkt een tekstbestand
 Maakt een nieuw bestand
 Bestand bestaat al.
