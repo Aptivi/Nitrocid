@@ -37,7 +37,6 @@ Public Module Config
                         New IniKey(ksconf, "Maintenance Mode", maintenance),
                         New IniKey(ksconf, "Change Root Password", setRootPasswd),
                         New IniKey(ksconf, "Set Root Password to", RootPasswd),
-                        New IniKey(ksconf, "Create Demo Account", enableDemo),
                         New IniKey(ksconf, "Check for Updates on Startup", CheckUpdateStart),
                         New IniKey(ksconf, "Language", currentLang)))
 
@@ -107,7 +106,6 @@ Public Module Config
                         New IniKey(ksconf, "Maintenance Mode", "False"),
                         New IniKey(ksconf, "Change Root Password", "False"),
                         New IniKey(ksconf, "Set Root Password to", "toor"),
-                        New IniKey(ksconf, "Create Demo Account", "True"),
                         New IniKey(ksconf, "Check for Updates on Startup", "True"),
                         New IniKey(ksconf, "Language", "eng")))
 
@@ -173,7 +171,6 @@ Public Module Config
 
             'Put comments before saving. General
             ksconf.Sections("General").TrailingComment.Text = "This section is the general settings for KS. It controls boot settings and regional settings."
-            ksconf.Sections("General").Keys("Create Demo Account").TrailingComment.Text = "If set to True, it creates testing demonstration account to test the log-in system with the permissions. It will be removed in 0.0.8."
             ksconf.Sections("General").Keys("Change Root Password").TrailingComment.Text = "Whether or not to change root password. If it is set to True, it will set the password to a password that will be set in the config entry below."
             ksconf.Sections("General").Keys("Maintenance Mode").TrailingComment.Text = "Whether or not to start the kernel in maintenance mode."
             ksconf.Sections("General").Keys("Prompt for Arguments on Boot").TrailingComment.Text = "Whether or not to prompt for arguments on boot to let you set arguments on the current boot"
@@ -329,7 +326,6 @@ Public Module Config
 
             'General Section
             Wdbg("I", "Parsing general section...")
-            If configReader.Sections("General").Keys("Create Demo Account").Value = "True" Then enableDemo = True Else enableDemo = False
             If configReader.Sections("General").Keys("Change Root Password").Value = "True" Then setRootPasswd = True Else setRootPasswd = False
             If setRootPasswd = True Then RootPasswd = configReader.Sections("General").Keys("Set Root Password to").Value
             If configReader.Sections("General").Keys("Maintenance Mode").Value = "True" Then maintenance = True Else maintenance = False

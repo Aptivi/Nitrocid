@@ -339,11 +339,6 @@ Public Module KernelTools
         'Check for multiple instances of KS
         If instanceChecked = False Then MultiInstance()
 
-        'Write headers for debug
-        Wdbg("I", "-------------------------------------------------------------------")
-        Wdbg("I", "Kernel initialized, version {0}.", KernelVersion)
-        Wdbg("I", "OS: {0}", EnvironmentOSType)
-
         'Create config file and then read it
         InitializeConfig()
 
@@ -386,6 +381,11 @@ Public Module KernelTools
             answerargs = ""
             argsInjected = False
         End If
+
+        'Write headers for debug
+        Wdbg("I", "-------------------------------------------------------------------")
+        Wdbg("I", "Kernel initialized, version {0}.", KernelVersion)
+        Wdbg("I", "OS: {0}", EnvironmentOSType)
 
         'Parse current theme string
         ParseCurrentTheme()

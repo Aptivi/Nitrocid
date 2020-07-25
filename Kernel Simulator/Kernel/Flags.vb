@@ -26,7 +26,6 @@ Module Flags
     Public CommandFlag As Boolean = False                       'A signal for command kernel argument
     Public argsFlag As Boolean                                  'A flag for checking for an argument later
     Public argsInjected As Boolean                              'A flag for checking for an argument on reboot
-    Public enableDemo As Boolean = True                         'Enable Demo Account
     Public setRootPasswd As Boolean = False                     'Set Root Password boolean
     Public RootPasswd As String = ""                            'Set Root Password to any password
     Public maintenance As Boolean = False                       'Maintenance Mode

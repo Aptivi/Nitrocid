@@ -90,7 +90,6 @@ Public Module Kernel
                 Wdbg("I", "- Kernel Phase 2: Manage internal usernames")
                 AddUser("root", RootPasswd)
                 Permission("Admin", "root", "Allow")
-                If enableDemo = True Then AddUser("demo")
                 LoginFlag = True
 
                 'Phase 3: Parse Mods and Screensavers

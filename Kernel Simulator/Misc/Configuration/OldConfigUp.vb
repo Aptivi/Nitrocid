@@ -54,12 +54,6 @@ Module OldConfigUp
                 If ColoredShell = True Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Listed command in Help Color = ", "")), ConsoleColors)
             ElseIf line.Contains("Definition of command in Help Color = ") Then
                 If ColoredShell = True Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Definition of command in Help Color = ", "")), ConsoleColors)
-            ElseIf line.Contains("Create Demo Account = ") Then
-                If line.Replace("Create Demo Account = ", "") = "True" Then
-                    enableDemo = True
-                ElseIf line.Replace("Create Demo Account = ", "") = "False" Then
-                    enableDemo = False
-                End If
             ElseIf line.Contains("Change Root Password = ") Then
                 If line.Replace("Change Root Password = ", "") = "True" Then
                     setRootPasswd = True
