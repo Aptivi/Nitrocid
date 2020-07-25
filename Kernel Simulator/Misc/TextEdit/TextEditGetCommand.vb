@@ -21,7 +21,7 @@ Imports System.Text
 Imports System.Threading
 Imports Microsoft.VisualBasic.FileIO
 
-Module TextEditGetCommand
+Public Module TextEditGetCommand
 
     'Variables
     Public TextEdit_CommandThread As New Thread(AddressOf TextEdit_ParseCommand)

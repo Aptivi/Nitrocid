@@ -19,7 +19,7 @@
 Imports System.IO
 Imports System.Text
 
-Module TextEditTools
+Public Module TextEditTools
 
     Public Function TextEdit_OpenTextFile(ByVal File As String) As Boolean
         Try

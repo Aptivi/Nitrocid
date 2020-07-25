@@ -90,7 +90,7 @@ Public Module GetCommand
                 If requestedCommand = "help" Then
                     ShowHelp()
                 Else
-                    If args.Count - 1 = 0 Then
+                    If args.Count - 1 >= 0 Then
                         ShowHelp(args(0))
                     Else
                         ShowHelp(words(0))
@@ -104,7 +104,7 @@ Public Module GetCommand
                     If args.Count - 1 = 0 Then
                         AddUser(args(0))
                         Done = True
-                    ElseIf args.Count - 1 = 2 Then
+                    ElseIf args.Count - 1 >= 2 Then
                         If args(1) = args(2) Then
                             AddUser(args(0), args(1))
                             Done = True
@@ -303,14 +303,14 @@ Public Module GetCommand
             ElseIf words(0) = "chpwd" Then
 
                 If requestedCommand <> "chpwd" Then
-                    If eargs.Count - 1 = 3 Then
+                    If eargs.Count - 1 >= 3 Then
                         Try
                             If InStr(eargs(3), " ") > 0 Then
                                 W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Err)
                             ElseIf eargs(3) = eargs(2) Then
                                 eargs(1) = GetEncryptedString(eargs(1), Algorithms.SHA256)
                                 If eargs(1) = userword(eargs(0)) Then
-                                    If adminList(eargs(0)) And adminList(signedinusrnm) Then
+                                    If adminList(signedinusrnm) Then
                                         eargs(2) = GetEncryptedString(eargs(2), Algorithms.SHA256)
                                         userword.Item(eargs(0)) = eargs(2)
                                     ElseIf adminList(eargs(0)) And Not adminList(signedinusrnm) Then
@@ -334,7 +334,7 @@ Public Module GetCommand
 
                 If requestedCommand <> "chusrname" Then
                     Dim DoneFlag As Boolean = False
-                    If args.Count - 1 = 1 Then
+                    If args.Count - 1 >= 1 Then
                         If userword.ContainsKey(args(0)) = True Then
                             If Not userword.ContainsKey(args(1)) = True Then
                                 DoneFlag = True
@@ -364,7 +364,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "copy" Then
 
-                If eqargs?.Length = 2 Then
+                If eqargs?.Length >= 2 Then
                     eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
                     eqargs(1) = CurrDir + "/" + eqargs(1).Replace("\", "/")
                     If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
@@ -396,7 +396,7 @@ Public Module GetCommand
             ElseIf words(0) = "dismissnotif" Then
 
                 If requestedCommand <> "dismissnotif" Then
-                    If args.Count - 1 = 0 Then
+                    If args.Count - 1 >= 0 Then
                         NotifDismiss(args(0))
                         Done = True
                     End If
@@ -405,7 +405,7 @@ Public Module GetCommand
             ElseIf words(0) = "disconndbgdev" Then
 
                 If requestedCommand <> "disconndbgdev" Then
-                    If args.Count - 1 = 0 Then
+                    If args.Count - 1 >= 0 Then
                         DisconnectDbgDev(args(0), True)
                         Done = True
                     End If
@@ -418,7 +418,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "edit" Then
 
-                If eqargs?.Count = 1 Then
+                If eqargs?.Count >= 1 Then
                     eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
                     If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
                         eqargs(0) = ReplaceLastOccurrence(eqargs(0), CurrDir, "")
@@ -639,7 +639,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "mkfile" Then
 
-                If eqargs?.Length = 1 Then
+                If eqargs?.Length >= 1 Then
                     eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
                     If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
                         eqargs(0) = ReplaceLastOccurrence(eqargs(0), CurrDir, "")
@@ -663,7 +663,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "move" Then
 
-                If eqargs?.Length = 2 Then
+                If eqargs?.Length >= 2 Then
                     eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
                     eqargs(1) = CurrDir + "/" + eqargs(1).Replace("\", "/")
                     If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
@@ -690,7 +690,7 @@ Public Module GetCommand
             ElseIf words(0) = "perm" Then
 
                 If requestedCommand <> "perm" Then
-                    If args.Count - 1 = 2 Then
+                    If args.Count - 1 >= 2 Then
                         Permission([Enum].Parse(GetType(PermissionType), args(1)), args(0), [Enum].Parse(GetType(PermissionManagementMode), args(2)))
                         Done = True
                     End If
@@ -699,18 +699,16 @@ Public Module GetCommand
             ElseIf words(0) = "read" Then
 
                 If requestedCommand <> "read" Then
-                    If args.Count - 1 = 0 Then
-                        Dim FileRead As String = CurrDir + "/" + strArgs.Replace("\", "/")
-                        If FileRead.Contains(CurrDir.Replace("\", "/")) And FileRead.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                            FileRead = ReplaceLastOccurrence(FileRead, CurrDir, "")
-                        End If
-                        If File.Exists(FileRead) Then
-                            ReadContents(FileRead)
-                        Else
-                            W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Err, strArgs)
-                        End If
-                        Done = True
+                    Dim FileRead As String = CurrDir + "/" + strArgs.Replace("\", "/")
+                    If FileRead.Contains(CurrDir.Replace("\", "/")) And FileRead.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                        FileRead = ReplaceLastOccurrence(FileRead, CurrDir, "")
                     End If
+                    If File.Exists(FileRead) Then
+                        ReadContents(FileRead)
+                    Else
+                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Err, strArgs)
+                    End If
+                    Done = True
                 End If
 
             ElseIf requestedCommand = "reloadconfig" Then
@@ -801,7 +799,7 @@ Public Module GetCommand
             ElseIf words(0) = "rmuser" Then
 
                 If requestedCommand <> "rmuser" Then
-                    If args.Count - 1 = 0 Then
+                    If args.Count - 1 >= 0 Then
                         RemoveUserFromDatabase(args(0))
                         Done = True
                     End If
@@ -814,7 +812,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "search" Then
 
-                If eqargs?.Count = 2 Then
+                If eqargs?.Count >= 2 Then
                     Dim ToBeFound As String = eqargs(0)
                     Dim Dir As String = CurrDir + "/" + eqargs(1).Replace("\", "/")
                     If Dir.Contains(CurrDir.Replace("\", "/")) And Dir.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
@@ -836,7 +834,7 @@ Public Module GetCommand
             ElseIf words(0) = "setcolors" Then
 
                 If requestedCommand <> "setcolors" Then
-                    If args.Count - 1 = 11 Then
+                    If args.Count - 1 >= 11 Then
                         Done = True
                         If ColoredShell = True Then
                             If args.Contains("RESET") Then
@@ -941,8 +939,12 @@ Public Module GetCommand
             ElseIf words(0) = "setthemes" Then
 
                 If requestedCommand <> "setthemes" Then
-                    If args.Count - 1 = 0 Then
-                        If ColoredShell = True Then TemplateSet(args(0)) Else W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), True, ColTypes.Neutral)
+                    If args.Count - 1 >= 0 Then
+                        If ColoredShell = True Then
+                            TemplateSet(args(0))
+                        Else
+                            W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), True, ColTypes.Neutral)
+                        End If
                         Done = True
                     End If
                 End If
@@ -954,7 +956,7 @@ Public Module GetCommand
                     For Each Notif As Notification In NotifRecents
                         W($"{Count}: {Notif.Title}" + vbNewLine +
                           $"{Count}: {Notif.Desc}" + vbNewLine +
-                          $"{Count}: {Notif.Priority.ToString}", True, ColTypes.Neutral)
+                          $"{Count}: {Notif.Priority}", True, ColTypes.Neutral)
                         Count += 1
                     Next
                 Else
@@ -1006,7 +1008,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "sshell" Then
 
-                If eqargs?.Length = 3 Then
+                If eqargs?.Length >= 3 Then
                     InitializeSSH(eqargs(0), eqargs(1), eqargs(2))
                     Done = True
                 End If
