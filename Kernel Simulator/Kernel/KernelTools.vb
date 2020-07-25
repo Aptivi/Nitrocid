@@ -340,7 +340,7 @@ Public Module KernelTools
         If instanceChecked = False Then MultiInstance()
 
         'Open debugging stream
-        If dbgWriter Is Nothing Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
+        If IsNothing(dbgWriter) And DebugMode Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
 
         'Write headers for debug
         Wdbg("I", "-------------------------------------------------------------------")
@@ -366,7 +366,7 @@ Public Module KernelTools
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
         W("OS: " + DoTranslation("Running on {0}", currentLang), True, ColTypes.Neutral, EnvironmentOSType)
-#If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends, change the compiler constant value to "REL" to suppress this message out of stable versions
+#If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends after "NEARING" stage, change the compiler constant value to "REL" to suppress this message out of stable versions
         W(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
 #ElseIf SPECIFIER = "RC" Then
         W(DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
