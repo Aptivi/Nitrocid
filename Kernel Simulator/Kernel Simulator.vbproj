@@ -382,6 +382,8 @@
     <None Include="Resources\rus.txt" />
     <None Include="Resources\rus-T.txt" />
     <None Include="Resources\slo.txt" />
+    <None Include="Resources\srb.txt" />
+    <None Include="Resources\srb-T.txt" />
     <Content Include="Resources\uzb.txt" />
     <None Include="Resources\cze.txt" />
     <None Include="Resources\tky.txt" />

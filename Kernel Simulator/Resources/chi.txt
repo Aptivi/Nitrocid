@@ -598,3 +598,59 @@ Yǔnxǔ yònghù shūrù shūrù
 gēnggǎi dāngqián yóujiàn mùlù
 wúfǎ dǎkāi yóujiàn wénjiàn jiā {0}:{1}
 Liè chū nín de yóujiàn dìzhǐ zhōng de mùlù
+Shǐyòng kuàisù bōhào zhōng de xìnxī kuàisù liánjiē dào rènhé wǎngluò
+xuǎnzé yīgè dìzhǐ liánjiē dào:
+Xuǎnzé chāochū fànwéi. Zài 1-{0} zhī jiān xuǎnzé. Zài shì yīcì.
+Gāi xuǎn zhái bu shì shùzì. Zài shì yīcì.
+Zhèngshū yànzhèng qíjiān, cúnzài zhèngshū cuòwù. Zhè kěnéng shì nín dì yī cì liánjiē dào fúwùqì, huòzhě zhèngshū kěnéng yǐ guòqí. Zhè shì yīgè cuòwù:
+Quèdìng yào liánjiē ma?
+Wúxiào de dá'àn. Qǐng zài shì yībiàn.
+Kuàisù bōhào wèi kōng. Liánjiē dào fúwùqì yǐ xiàng qí tiānjiā dìzhǐ.
+Kuàisù bōhào bù cúnzài. Liánjiē dào fúwùqì yǐ xiàng qí tiānjiā dìzhǐ.
+Shūrù IMAP fúwùqì dìzhǐ hé duānkǒu (<dìzhǐ >huò <dìzhǐ>:[Duānkǒu]):
+Shūrù SMTP fúwùqì dìzhǐ hé duānkǒu (<dìzhǐ >huò <dìzhǐ>:[Duānkǒu]):
+Yāoqiú nín tiánxiě bì tián zìduàn yǐ jiāng xiāoxī fāsòng dào dìzhǐ
+fāsòng xiāoxī dào yīgè dìzhǐ
+shūrù shōu jiàn rén de yóujiàn dìzhǐ:
+Shūrù zhǔtí:
+Zài xiàmiàn shūrù nín de xiāoxī. Shūrù “EOF” jìnxíng quèrèn.
+Zhèngzài chuánsòng xùnxí...
+Xùnxí yǐ fāsòng.
+Fāsòng xiāo xí shí chūcuò:{0}
+Wúxiào de yóujiàn dìzhǐ. Quèbǎo nín zhèngquè shūrùle dìzhǐ, bìngqiě gāi dìzhǐ yǔ suǒ shì shìlì de géshì pǐpèi:
+Shānchú yītiáo xiāoxī
+cóng shōu jiàn rén zhōng shānchú suǒyǒu yóujiàn
+láizì {1} de xiāoxī {0} yǐ cóng {2} zhōng shānchú. Shèng xià {3} tiáo xiāoxī xūyào jiěxī.
+{1} Zhōng de xiāoxī {0} yǐ cóng shōu jiàn xiāng zhōng shānchú. Shèng xià {3} tiáo xiāoxī xūyào jiěxī.
+Biānjí wénběn wénjiàn
+zhìzuò yīgè xīn wénjiàn
+wénjiàn yǐ cúnzài.
+Chángshì chuàngjiàn wénjiàn shí chūcuò:{0}
+Wúfǎ dǎkāi wénjiàn. Zhèngzài tuìchū wàiké...
+Zhǎo bù dào zhǐdìng de wénběn biānjí qì mìnglìng.
+Liè chū kěyòng de mìnglìng
+tuìchū wénběn biānjí qì bìng bǎocún wèi bǎocún de gēnggǎi
+jiāng dài yǒu xíng hào de wénjiàn nèiróng dǎyìn dào kòngzhì tái
+zài wénjiàn mòwěi tiānjiā dài yǒu wénběn de xīn xíng
+shānchú zhǐdìng de xíng hào
+yòng lìng yīgè tìhuàn yīgè dāncí huò duǎnyǔ
+cóng xíng hào shānchú dāncí huò duǎnyǔ
+cóng zhǐdìng xíng de zìfú hào zhōng shānchú zìfú
+shānchú xiàn.
+Zhǐdìng de xíng hào {0} bùshì yǒuxiào de hàomǎ.
+Bìxū de cānshù wèi chuándì dào mìnglìng {0}
+chángshì yùnxíng mìnglìng:{0} Shí chūcuò
+zài ānquán móshì xià yùnxíng. Tiàoguò jiēduàn...
+>>Yuǎnchéng tiáoshì hé liáotiān: Bǎnběn
+>>nín dì dìzhǐ wèi {0}.
+>>Nín de míngzì shì {0}.
+Zhǎo bù dào mìnglìng {0}. Shǐyòng “/help” chákàn lièbiǎo.
+Suǒyǐn {0} wúxiào. Yǒu {1} gè duīzhàn gēnzōng. Suǒyǐn cóng líng kāishǐ, yīncǐ qǐng chángshì jiǎn 1.
+Méiyǒu duīzhàn gēnzōng
+xiǎnshì yǒuguān yìcháng de zuìhòu duīzhàn gēnzōng
+zài huìhuà zhōng xiǎnshì dāngqián yònghù míng
+duàn kāi nín yǔ tiáoshì qì de liánjiē
+tōngguò IP dìzhǐ qǔxiāo zǔzhǐ tiáoshì shèbèi
+tōngguò IP dìzhǐ zǔzhǐ tiáoshì shèbèi
+{0} xiànzài kěyǐ zàicì jiārù yuǎnchéng tiáoshì.
+{0} Shàngwèi bèi zǔzhǐ.

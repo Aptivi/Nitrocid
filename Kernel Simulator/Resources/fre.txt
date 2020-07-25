@@ -598,3 +598,59 @@ Permet à l'utilisateur d'entrer une entrée
 Modifie le répertoire de messagerie actuel
 Impossible d'ouvrir le dossier de messagerie {0}: {1}
 Répertorie les répertoires de votre adresse e-mail
+Utilise les informations de Speed ​​Dial pour se connecter rapidement à n'importe quel réseau
+Sélectionnez une adresse à laquelle vous connecter:
+La sélection est hors de portée. Sélectionnez entre 1 et {0}. Réessayer.
+La sélection n'est pas un nombre. Réessayer.
+Lors de la validation du certificat, il y a des erreurs de certificat. Cela peut être la première fois que vous vous connectez au serveur ou le certificat a peut-être expiré. Voici une erreur:
+Êtes-vous sûr de vouloir vous connecter?
+Réponse invalide. Veuillez réessayer.
+Le numéro abrégé est vide. Connectez-vous à un serveur pour y ajouter une adresse.
+La numérotation abrégée n'existe pas. Connectez-vous à un serveur pour y ajouter une adresse.
+Entrez l'adresse et le port du serveur IMAP (<adresse> ou <adresse>: [port]):
+Entrez l'adresse et le port du serveur SMTP (<adresse> ou <adresse>: [port]):
+Vous demande de remplir les champs obligatoires pour envoyer un message à une adresse
+Envoie un message à une adresse
+Saisissez l'adresse e-mail du destinataire:
+Entrez le sujet:
+Entrez votre message ci-dessous. Écrivez «EOF» pour confirmer.
+Envoi du message...
+Message envoyé.
+Erreur lors de l'envoi du message: {0}
+Adresse e-mail invalide. Assurez-vous que vous avez écrit l'adresse correctement et qu'elle correspond au format de l'exemple montré:
+Supprime un message
+Supprime tous les messages du destinataire
+Message {0} de {1} supprimé de {2}. {3} messages restants à analyser.
+Message {0} de {1} supprimé de la boîte de réception. {3} messages restants à analyser.
+Modifie un fichier texte
+Crée un nouveau fichier
+Le fichier existe déjà.
+Erreur lors de la tentative de création d'un fichier: {0}
+Échec de l'ouverture du fichier. Sortie du shell ...
+La commande de l'éditeur de texte spécifiée est introuvable.
+Répertorie les commandes disponibles
+Quitte l'éditeur de texte et enregistre les modifications non enregistrées
+Imprime le contenu du fichier avec les numéros de ligne sur la console
+Ajoute une nouvelle ligne avec du texte à la fin du fichier
+Supprime le numéro de ligne spécifié
+Remplace un mot ou une phrase par un autre
+Supprime un mot ou une phrase du numéro de ligne
+Supprime un caractère du numéro de caractère dans la ligne spécifiée
+Ligne supprimée.
+Le numéro de ligne spécifié {0} n'est pas un nombre valide.
+Les arguments requis ne sont pas transmis à la commande {0}
+Erreur lors de la tentative d'exécution de la commande: {0}
+Exécution en mode sans échec. Sauter l'étape ...
+>> Débogage et discussion à distance: version
+>> Votre adresse est {0}.
+>> Votre nom est {0}.
+Commande {0} introuvable. Utilisez "/help" pour voir la liste.
+Index {0} non valide. Il existe {1} traces de pile. L'index est basé sur zéro, alors essayez de soustraire par 1.
+Aucune trace de pile
+Affiche la dernière trace de pile en cas d'exception
+Affiche le nom d'utilisateur actuel dans la session
+Vous déconnecte du débogueur
+Débloquer un périphérique de débogage par adresse IP
+Bloquer un périphérique de débogage par adresse IP
+{0} peut à nouveau rejoindre le débogage à distance.
+{0} n'est pas encore bloqué.

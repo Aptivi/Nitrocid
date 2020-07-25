@@ -598,3 +598,59 @@ Allows user to enter input
 Changes current mail directory
 Unable to open mail folder {0}: {1}
 Lists directories in your mail address
+Uses information from Speed Dial to connect to any network quickly
+Select an address to connect to:
+The selection is out of range. Select between 1-{0}. Try again.
+The selection is not a number. Try again.
+During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:
+Are you sure that you want to connect?
+Invalid answer. Please try again.
+Speed dial is empty. Connect to a server to add an address to it.
+Speed dial doesn't exist. Connect to a server to add an address to it.
+Enter IMAP server address and port (<address> or <address>:[port]): 
+Enter SMTP server address and port (<address> or <address>:[port]): 
+Asks you to fill the required fields to send a message to an address
+Sends a message to an address
+Enter recipient mail address:
+Enter the subject:
+Enter your message below. Write "EOF" to confirm.
+Sending message...
+Message sent.
+Error sending message: {0}
+Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:
+Removes a message
+Removes all messages from recipient
+Message {0} from {1} deleted from {2}. {3} messages remaining to parse.
+Message {0} from {1} deleted from inbox. {3} messages remaining to parse.
+Edits a text file
+Makes a new file
+File already exists.
+Error trying to create a file: {0}
+Failed to open file. Exiting shell...
+The specified text editor command is not found.
+Lists available commands
+Exits the text editor and save unsaved changes
+Prints the contents of the file with line numbers to the console
+Adds a new line with text at the end of the file
+Removes the specified line number
+Replaces a word or phrase with another one
+Deletes a word or phrase from line number
+Deletes a character from character number in specified line
+Removed line.
+Specified line number {0} is not a valid number.
+Required arguments are not passed to command {0}
+Error trying to run command: {0}
+Running in safe mode. Skipping stage...
+>> Remote Debug and Chat: version
+>> Your address is {0}.
+>> Your name is {0}.
+Command {0} not found. Use "/help" to see the list.
+Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.
+No stack trace
+Shows last stack trace on exception
+Shows current username in the session
+Disconnects you from the debugger
+Unblock a debug device by IP address
+Block a debug device by IP address
+{0} can now join remote debug again.
+{0} is not blocked yet.

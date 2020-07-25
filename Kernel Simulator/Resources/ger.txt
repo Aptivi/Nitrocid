@@ -598,3 +598,59 @@ Ermöglicht dem Benutzer die Eingabe
 Ändert das aktuelle Mail-Verzeichnis
 E-Mail-Ordner {0} kann nicht geöffnet werden: {1}
 Listet Verzeichnisse in Ihrer E-Mail-Adresse auf
+Verwendet Informationen von der Kurzwahl, um schnell eine Verbindung zu einem beliebigen Netzwerk herzustellen
+Wählen Sie eine Adresse aus, zu der eine Verbindung hergestellt werden soll:
+Die Auswahl liegt außerhalb des Bereichs. Wählen Sie zwischen 1- {0}. Versuch es noch einmal.
+Die Auswahl ist keine Zahl. Versuch es noch einmal.
+Während der Zertifikatsüberprüfung treten Zertifikatfehler auf. Es ist möglicherweise das erste Mal, dass Sie eine Verbindung zum Server herstellen, oder das Zertifikat ist abgelaufen. Hier ist ein Fehler:
+Sind Sie sicher, dass Sie eine Verbindung herstellen möchten?
+Ungültige Antwort. Bitte versuche es erneut.
+Kurzwahl ist leer. Stellen Sie eine Verbindung zu einem Server her, um ihm eine Adresse hinzuzufügen.
+Kurzwahl existiert nicht. Stellen Sie eine Verbindung zu einem Server her, um ihm eine Adresse hinzuzufügen.
+Geben Sie die Adresse und den Port des IMAP-Servers ein (<Adresse> oder <Adresse>: [Port]):
+Geben Sie die Adresse und den Port des SMTP-Servers ein (<Adresse> oder <Adresse>: [Port]):
+Bittet Sie, die erforderlichen Felder auszufüllen, um eine Nachricht an eine Adresse zu senden
+Sendet eine Nachricht an eine Adresse
+Geben Sie die E-Mail-Adresse des Empfängers ein:
+Geben Sie den Betreff ein:
+Geben Sie unten Ihre Nachricht ein. Schreiben Sie zur Bestätigung "EOF".
+Schicke Nachricht...
+Nachricht gesendet.
+Fehler beim Senden der Nachricht: {0}
+Ungültige E-Mail-Adresse. Stellen Sie sicher, dass Sie die Adresse richtig geschrieben haben und dass sie dem Format des gezeigten Beispiels entspricht:
+Entfernt eine Nachricht
+Entfernt alle Nachrichten vom Empfänger
+Nachricht {0} von {1} von {2} gelöscht. {3} Nachrichten müssen noch analysiert werden.
+Nachricht {0} von {1} aus Posteingang gelöscht. {3} Nachrichten müssen noch analysiert werden.
+Bearbeitet eine Textdatei
+Erstellt eine neue Datei
+Die Datei existiert bereits.
+Fehler beim Erstellen einer Datei: {0}
+Datei konnte nicht geöffnet werden. Shell verlassen ...
+Der angegebene Texteditorbefehl wurde nicht gefunden.
+Listet verfügbare Befehle auf
+Beendet den Texteditor und speichert nicht gespeicherte Änderungen
+Druckt den Inhalt der Datei mit Zeilennummern an die Konsole
+Fügt am Ende der Datei eine neue Zeile mit Text hinzu
+Entfernt die angegebene Zeilennummer
+Ersetzt ein Wort oder eine Phrase durch ein anderes
+Löscht ein Wort oder eine Phrase aus der Zeilennummer
+Löscht ein Zeichen aus der Zeichennummer in der angegebenen Zeile
+Zeile entfernt.
+Die angegebene Zeilennummer {0} ist keine gültige Nummer.
+Erforderliche Argumente werden nicht an den Befehl {0} übergeben.
+Fehler beim Ausführen des Befehls: {0}
+Laufen im abgesicherten Modus. Überspringphase ...
+>> Remote Debug und Chat: Version
+>> Ihre Adresse ist {0}.
+>> Ihr Name ist {0}.
+Befehl {0} nicht gefunden. Verwenden Sie "/help", um die Liste anzuzeigen.
+Index {0} ungültig. Es gibt {1} Stapelspuren. Der Index basiert auf Null. Versuchen Sie also, von 1 zu subtrahieren.
+Keine Stapelverfolgung
+Zeigt die letzte Stapelverfolgung in Ausnahmefällen an
+Zeigt den aktuellen Benutzernamen in der Sitzung an
+Trennt Sie vom Debugger
+Entsperren Sie ein Debug-Gerät anhand der IP-Adresse
+Blockieren Sie ein Debug-Gerät anhand der IP-Adresse
+{0} kann jetzt wieder dem Remote-Debug beitreten.
+{0} ist noch nicht blockiert.

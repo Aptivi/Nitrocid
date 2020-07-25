@@ -598,3 +598,59 @@ Permite que o usuário insira entrada
 Altera o diretório de mensagens atual
 Não foi possível abrir a pasta de correio {0}: {1}
 Lista diretórios no seu endereço de email
+Utiliza informações da Discagem rápida para conectar-se rapidamente a qualquer rede
+Selecione um endereço para se conectar:
+A seleção está fora de alcance. Selecione entre 1- {0}. Tente novamente.
+A seleção não é um número. Tente novamente.
+Durante a validação do certificado, há erros de certificado. Pode ser a primeira vez que você se conecta ao servidor ou o certificado pode ter expirado. Aqui está um erro:
+Tem certeza de que deseja se conectar?
+Resposta inválida. Por favor, tente novamente.
+A discagem rápida está vazia. Conecte-se a um servidor para adicionar um endereço a ele.
+A discagem rápida não existe. Conecte-se a um servidor para adicionar um endereço a ele.
+Digite o endereço e a porta do servidor IMAP (<endereço> ou <endereço>: [porta]):
+Digite o endereço e a porta do servidor SMTP (<endereço> ou <endereço>: [porta]):
+Solicita que você preencha os campos obrigatórios para enviar uma mensagem para um endereço
+Envia uma mensagem para um endereço
+Digite o endereço de e-mail do destinatário:
+Digite o assunto:
+Digite sua mensagem abaixo. Escreva "EOF" para confirmar.
+Enviando mensagem...
+Mensagem enviada.
+Erro ao enviar mensagem: {0}
+Endereço de email invalido. Verifique se você escreveu o endereço corretamente e se ele corresponde ao formato do exemplo mostrado:
+Remove uma mensagem
+Remove todas as mensagens do destinatário
+A mensagem {0} de {1} foi excluída de {2}. {3} mensagens restantes para analisar.
+A mensagem {0} de {1} foi excluída da caixa de entrada. {3} mensagens restantes para analisar.
+Edita um arquivo de texto
+Cria um novo arquivo
+O arquivo já existe.
+Erro ao tentar criar um arquivo: {0}
+Falha ao abrir arquivo. Saindo do shell ...
+O comando do editor de texto especificado não foi encontrado.
+Lista comandos disponíveis
+Sai do editor de texto e salva as alterações não salvas
+Imprime o conteúdo do arquivo com números de linha no console
+Adiciona uma nova linha com texto no final do arquivo
+Remove o número da linha especificado
+Substitui uma palavra ou frase por outra
+Exclui uma palavra ou frase do número da linha
+Exclui um caractere do número de caracteres na linha especificada
+Linha removida.
+O número da linha especificado {0} não é um número válido.
+Os argumentos necessários não são passados ​​para o comando {0}
+Erro ao tentar executar o comando: {0}
+Executando no modo de segurança. Ignorando o estágio ...
+>> Depuração remota e bate-papo: versão
+>> Seu endereço é {0}.
+>> Seu nome é {0}.
+Comando {0} não encontrado. Use "/help" para ver a lista.
+Índice {0} inválido. Existem {1} rastreios de pilha. O índice é baseado em zero; tente subtrair por 1.
+Sem rastreamento de pilha
+Mostra o último rastreamento de pilha na exceção
+Mostra o nome de usuário atual na sessão
+Desconecta você do depurador
+Desbloquear um dispositivo de depuração pelo endereço IP
+Bloquear um dispositivo de depuração pelo endereço IP
+{0} agora pode ingressar na depuração remota novamente.
+{0} ainda não está bloqueado.

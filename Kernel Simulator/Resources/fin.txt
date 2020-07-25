@@ -598,3 +598,59 @@ Antaa käyttäjän syöttää syötteen
 Vaihtaa nykyisen postihakemiston
 Sähköpostikansiota {0} ei voi avata: {1}
 Listaa luettelot postiosoitteestasi
+Käyttää pikavalinnan tietoja yhteyden muodostamiseen mihin tahansa verkkoon nopeasti
+Valitse osoite, johon haluat muodostaa yhteyden:
+Valinta on rajojen ulkopuolella. Valitse välillä 1- {0}. Yritä uudelleen.
+Valinta ei ole numero. Yritä uudelleen.
+Varmenteen validoinnin aikana on varmennevirheitä. Se voi olla ensimmäinen kerta, kun olet muodostanut yhteyden palvelimeen, tai sertifikaatti on voinut vanhentua. Tässä on virhe:
+Haluatko varmasti muodostaa yhteyden?
+Virheellinen vastaus. Yritä uudelleen.
+Pikavalinta on tyhjä. Yhdistä palvelimeen lisätäksesi osoitteen siihen.
+Pikavalintaa ei ole olemassa. Yhdistä palvelimeen lisätäksesi osoitteen siihen.
+Kirjoita IMAP-palvelimen osoite ja portti (<osoite> tai <osoite>: [portti]):
+Kirjoita SMTP-palvelimen osoite ja portti (<osoite> tai <osoite>: [portti]):
+Pyytää sinua täyttämään vaadittavat kentät viestin lähettämiseksi osoitteeseen
+Lähettää viestin osoitteeseen
+Anna vastaanottajan sähköpostiosoite:
+Kirjoita aihe:
+Kirjoita viestisi alle. Kirjoita "EOF" vahvistaaksesi.
+Lähetetään viestiä ...
+Viesti lähetetty.
+Virhe viestin lähettämisessä: {0}
+Virheellinen sähköpostiosoite. Varmista, että olet kirjoittanut osoitteen oikein ja että se vastaa esitetyn esimerkin muotoa:
+Poistaa viestin
+Poistaa kaikki viestit vastaanottajalta
+Viesti {0} osoitteesta {1} poistettu kohdasta {2}. {3} viestiä jäljellä jäsentämistä varten.
+Viesti {0} osoitteesta {1} poistettu postilaatikosta. {3} viestiä jäljellä jäsentämistä varten.
+Muokkaa tekstitiedostoa
+Tekee uuden tiedoston
+Tiedosto on jo olemassa.
+Virhe yrittäessä luoda tiedostoa: {0}
+Tiedoston avaaminen epäonnistui. Poistuu kuoresta ...
+Määritettyä tekstieditorinkomentoa ei löydy.
+Luettelee käytettävissä olevat komennot
+Poistuu tekstieditorista ja tallentaa tallentamattomat muutokset
+Tulostaa tiedoston sisällön ja rivinumeroita konsoliin
+Lisää uuden rivin, jonka teksti on tiedoston loppuun
+Poistaa määritetyn rivinumeron
+Korvaa sanan tai lauseen toisella
+Poistaa sanan tai lauseen rivinumerosta
+Poistaa merkin merkin numerosta määrätyllä rivillä
+Poistettu linja.
+Määritetty rivinumero {0} ei ole kelvollinen numero.
+Vaadittuja argumentteja ei välitetä komennolle {0}
+Virhe yritettäessä suorittaa komentoa: {0}
+Ajaminen turvatilassa. Ohitetaan vaihe ...
+>> Etävirhe ja keskustelu: versio
+>> Osoitteesi on {0}.
+>> Nimesi on {0}.
+Komentoa {0} ei löytynyt. Käytä "/help" nähdäksesi luettelon.
+Hakemisto {0} virheellinen. Pinojälkiä on {1}. Indeksi on nollapohjainen, joten kokeile vähentää luvulla 1.
+Ei pinojälkiä
+Näyttää viimeisen pinojäljen poikkeuksellisesti
+Näyttää istunnossa nykyisen käyttäjänimen
+Irrottaa sinut virheenkorjaimesta
+Poista debug-laitteen lukitus IP-osoitteen perusteella
+Estä vianetsintälaite IP-osoitteen perusteella
+{0} voi nyt liittyä uudelleen etävirheeseen.
+{0} ei ole vielä estetty.

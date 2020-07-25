@@ -229,4 +229,10 @@
   <data name="slo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\slo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="srb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\srb.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="srb_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\srb-T.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

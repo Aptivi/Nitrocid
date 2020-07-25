@@ -596,5 +596,61 @@ SSH saravara nāla juṛana dī kōśiśa daurāna galatī: {0}
 Lauga'ina tōṁ bā'ada khālī mōṭa.
 Upabhōgatā nū ipuṭa dākhala hōṇa dī āgi'ā didā hai
 maujūdā mēla ḍā'iraikaṭarī badaladī hai
-mēla phōlaḍara to 0}: {1 Open khōl'haṇa vica asamaratha
+mēla phōlaḍara to {0}: {1} Open khōl'haṇa vica asamaratha
 tuhāḍē mēla patē vica ḍā'iraikaṭarī'āṁ dī sūcī hai
+Kisē vī naiṭavaraka nāla jaladī juṛana la'ī sapīḍa ḍā'ila dī jāṇakārī varatadā hai
+nāla juṛana la'ī kō'ī patā cuṇō:
+Cōṇa sīmā tōṁ bāhara hai. 1-{0} Between dē vicakāra cuṇō. Phira kōśiśa karō.
+Cōṇa ika nabara nahīṁ hai. Phira kōśiśa karō.
+Saraṭīphikēṭa vaidhatā dē daurāna, saraṭīphikēṭa dī'āṁ galatī'āṁ hudī'āṁ hana. Iha śā'ida pahilī vāra hō sakadā hai jadōṁ tusīṁ saravara nāla juṛi'ā hō jāṁ saraṭīphikēṭa dī mi'āda khatama hō sakadī hai. Ithē ika galatī hai:
+Kī tusīṁ pakā juṛanā cāhudē hō?
+Galata javāba. Muṛa kōśisa karō jī.
+Sapīḍa ḍā'ila khālī hai. Isa vica patā śāmala karana la'ī saravara nāla juṛō.
+Sapīḍa ḍā'ila maujūda nahīṁ hai. Isa vica patā śāmala karana la'ī saravara nāla juṛō.
+IMAP saravara aiḍaraisa atē pōraṭa dākhala karō (<aiḍaraisa> jāṁ <aiḍaraisa>: [Pōraṭa]):
+SMTP saravara aiḍaraisa atē pōraṭa dākhala karō (<aiḍaraisa> jāṁ <aiḍaraisa>: [Pōraṭa]):
+Tuhānū ika patē tē sunēhā bhējaṇa la'ī lōṛīndē khētara bharana la'ī kahidā hai
+ika patē tē sunēhā bhējadā hai
+prāpatakaratā dā mēla patā dākhala karō:
+Viśā daraja karō:
+Āpaṇā sunēhā hēṭhāṁ daraja karō. Puśaṭī karana la'ī"EOF" likhō.
+Sunēhā bhēja rihā hai...
+Sunēhā bhēji'ā gi'ā.
+Sunēhā bhējaṇa daurāna galatī: {0}
+Galata īmēla patā. Iha suniśacita karō ki tusīṁ patā sahī likhi'ā hai atē iha darasā'ē ga'ē udāharaṇa dē phāramaiṭa nāla mēla khāndā hai:
+Ika sunēhā haṭā'undā hai
+sārē sunēhi'āṁ nū prāpata karana vālē tōṁ haṭā didā hai
+sunēhā {0} nū {1} tōṁ {2} tōṁ miṭā ditā gi'ā. Pārasa karana la'ī {3} sunēhē bākī hana.
+Sunēhā {0} in tōṁ box {1} inabākasa vicōṁ miṭā ditā gi'ā. Pārasa karana la'ī {3} sunēhē bākī hana.
+Ika ṭaikasaṭa phā'īla vica sōdha
+ika navīṁ phā'īla baṇā'undā hai
+phā'īla pahilāṁ hī maujūda hai.
+Ika phā'īla baṇā'uṇa dī kōśiśa vica galatī: {0}
+Phā'īla khōl'haṇa vica asaphala. Bada hō rihā śaila...
+Ditī ṭaikasaṭa aiḍīṭara kamāṇḍa nahīṁ milī hai.
+Upalabadha kamāṇḍāṁ dī sūcī hai
+ṭaikasaṭa aiḍīṭara tōṁ bāhara jā'ō atē asurakhi'ata badalā'a nū surakhi'ata karō
+kasōla tē lā'īna nabarāṁ dē nāla phā'īla dē bhāgāṁ nū priṭa karadā hai
+phā'īla dē ata vica ṭaikasaṭa dē nāla ika navīṁ lā'īna śāmala karadā hai
+niradhārata lā'īna nabara haṭā'undā hai
+kisē śabada jāṁ vākānśa nū dūjē śabada nāla badala didā hai
+lā'īna nabara tōṁ ika śabada jāṁ vākānśa nū miṭā'undā hai
+niradhārita lā'īna vica akhara nabara tōṁ ika akhara miṭā'undā hai
+haṭā'ī ga'ī lā'īna.
+Niradhārata lā'īna nabara {0} ika vaidha sakhi'ā nahīṁ hai.
+Lōṛīndī'āṁ dalīlāṁ kamāṇḍa {0} to nū pāsa nahīṁ kītī'āṁ jāndī'āṁ
+kamāṇḍa calā'uṇa dī kōśiśa daurāna galatī: {0}
+Sēpha mōḍa vica cala rihā hai. Paṛā'a chaḍa rihā hai...
+>> Rimōṭa ḍībaga atē caiṭa: Varajana
+>> tuhāḍā patā {0} hai.
+>> Tuhāḍā nāma {0} hai.
+Kamāṇḍa. {0} Nahīṁ milī. Sūcī vēkhaṇa la'ī"/help" dī varatōṁ karō.
+Iḍaikasa {0} avaidha hai. Ithē {1} saṭaika ṭarēsa hana. Iḍaikasa zīrō-bēsaḍa hai, isa la'ī 1 nāla ghaṭā'uṇa dī kōśiśa karō.
+Kō'ī saṭaika ṭarēsa nahīṁ
+apavāda tē ākharī saṭaika ṭarēsa dikhā'undā hai
+ajalāsa vica maujūdā yūzara nāṁ vēkhā'ō
+tuhānū ḍībagara tōṁ ḍisakanaikaṭa karadā hai
+IP aiḍaraisa du'ārā ḍībaga ḍivā'īsa nū anabalauka karō
+IP aiḍaraisa du'ārā ḍībaga ḍivā'īsa nū balauka karō
+{0} now huṇa rimōṭa ḍībaga vica dubārā śāmala hō sakadā hai.
+{0} Yet hālē taka balauka nahīṁ kītā gi'ā hai.

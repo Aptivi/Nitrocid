@@ -598,3 +598,59 @@ Yūzā ga nyūryoku o nyūryoku dekiru yō ni shimasu
 genzai no mērudirekutori o henkō shimasu
 mēruforuda {0} o akemasen: {1}
 Mēruadoresu no direkutori o ichiran hyōji shimasu
+Supīdodaiyaru no jōhō o shiyō shite, nettowāku ni subayaku setsuzoku shimasu
+setsuzoku suru adoresu o sentaku shite kudasai:
+Sentaku ga han'i-gaidesu. 1 - {0} Kara sentaku shimasu. Sai shikō.
+Sentaku wa sūchide wa arimasen. Sai shikō.
+Shōmei-sho no kenshō-chū ni, shōmei-sho erā ga arimasu. Sābā ni hajimete setsuzoku shita ka, shōmei-sho no yūkō kigen ga kirete iru kanōsei ga arimasu. Koko ni erā ga arimasu:
+Setsuzoku shite mo yoroshīdesu ka?
+Mukōna kaitōdesu. Mōichido o tameshi kudasai.
+Supīdodaiyaru ga soradesu. Sābā ni setsuzoku shite adoresu o tsuika shimasu.
+Supīdodaiyaru ga sonzai shimasen. Sābā ni setsuzoku shite adoresu o tsuika shimasu.
+IMAP sābā no adoresu to pōto o nyūryoku (<adoresu> matawa <adoresu>:[Port]): 
+SMTP sābā no adoresu to pōto o nyūryoku shimasu (<adoresu> matawa <adoresu>:[Port]): 
+Messēji o adoresu ni sōshin suru tame ni hitsuyōna fīrudo o umeru yō ni motomemasu
+adoresu ni messēji o sōshin shimasu
+jushin-sha no mēruadoresu o nyūryoku shite kudasai:
+Kenmei o nyūryoku shite kudasai:
+Ika ni messēji o nyūryoku shite kudasai. Kakunin no tame `EOF' to kaite kudasai.
+Messēji o sōshin shite imasu...
+Messēji o sōshin shimashita.
+Messēji sōshin erā: {0}
+Mukōna mēruadoresu. Adoresu ga tadashiku kijutsu sa rete iru koto, oyobi hyōji sa rete iru rei no keishiki to itchi shite iru koto o kakuninshitekudasai:
+Messēji o sakujo shimasu
+jushin-sha kara subete no messēji o sakujo shimasu
+{1} kara no messēji {0} ga {2} kara sakujosaremashita. {3} Kaiseki suru messēji ga nokotte imasu.
+{1} Kara no messēji {0} ga jushin torei kara sakujosaremashita. {3} Kaiseki suru messēji ga nokotte imasu.
+Tekisutofairu o henshū shimasu
+atarashī fairu o sakusei shimasu
+fairu ga sudeni sonzai shimasu.
+Fairu no sakusei-chū ni erā ga hassei shimashita: {0}
+Fairu o akemasendeshita. Sheru o shūryō shite imasu...
+Shitei sa reta tekisutoeditākomando ga mitsukarimasen.
+Shiyō kanōna komando o risuto shimasu
+tekisutoedita o shūryō shi, mi hozon no henkō o hozon shimasu
+fairu no naiyō o gyō bangō to tomoni konsōru ni shutsuryoku shimasu
+fairu no saigo ni tekisuto o fukumu atarashī gyō o tsuika shimasu
+shitei sa reta gyō bangō o sakujo shimasu
+tango matawa goku o betsu no goku ni okikaemasu
+gyō bangō kara tango matawa goku o sakujo shimasu
+shitei shita gyō no moji bangō kara moji o sakujo shimasu
+gyō o sakujo shimashita.
+Shitei sa reta gyō bangō {0} wa yūkōna bangōde wa arimasen.
+Hitsuyōna hikisū ga komando {0} ni watasa rete imasen
+komando no jikkō-chū ni erā ga hassei shimashita: {0}
+Sēfumōdo de jikkō shite imasu. Sutēji o sukippu shite imasu...
+>> Rimōtodebaggu to chatto: Bājon
+>> anata no jūsho wa {0} desu.
+>> Anata no namae wa {0} desu.
+Komando {0} ga mitsukarimasen. Risuto o hyōji suru ni wa,`/help' o shiyō shite kudasai.
+Indekkusu {0} wa mukōdesu. {1} No sutakkutorēsu ga arimasu. Indekkusu wa zerobēsunanode, 1 o hiite mite kudasai.
+Sutakkutorēsu nashi
+reigai-ji ni saigo no sutakkutorēsu o hyōji shimasu
+sesshon no genzai no yūzā-mei o hyōji shimasu
+debaggā kara setsudan shimasu
+aipīadoresu de debaggudebaisu no burokku o kaijo suru
+aipīadoresu de debaggudebaisu o burokku suru
+{0} wa futatabi rimōtodebaggu ni sanka dekiru yō ni narimashita.
+{0} Wa mada burokku sa rete imasen.

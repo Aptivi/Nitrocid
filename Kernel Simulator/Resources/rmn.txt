@@ -598,3 +598,59 @@ Permite utilizatorului să intre
 Modifică directorul de e-mail curent
 Imposibil de deschis folderul de e-mail {0}: {1}
 Listează directoarele din adresa dvs. de e-mail
+Utilizează informațiile de la Speed ​​Dial pentru a vă conecta rapid la orice rețea
+Selectați o adresă pentru a vă conecta la:
+Selecția este în afara domeniului. Selectați între 1- {0}. Încearcă din nou.
+Selecția nu este un număr. Încearcă din nou.
+În timpul validării certificatului, există erori de certificat. S-ar putea să fie prima dată când v-ați conectat la server sau s-ar putea ca certificatul să fi expirat. Iată o eroare:
+Ești sigur că vrei să te conectezi?
+Răspuns nevalid. Vă rugăm să încercați din nou.
+Apelarea rapidă este goală. Conectați-vă la un server pentru a adăuga o adresă la acesta.
+Apelarea rapidă nu există. Conectați-vă la un server pentru a adăuga o adresă la acesta.
+Introdu adresa și portul serverului IMAP (<address> sau <address>: [port]):
+Introduceți adresa și portul serverului SMTP (<address> sau <address>: [port]):
+Vă solicită să completați câmpurile necesare pentru a trimite un mesaj la o adresă
+Trimite un mesaj la o adresă
+Introdu adresa de e-mail a destinatarului:
+Introduceți subiectul:
+Introdu mesajul tău mai jos. Scrieți „EOF” pentru confirmare.
+Se trimite mesajul ...
+Mesaj trimis.
+Eroare la trimiterea mesajului: {0}
+Adresa email invalida. Asigurați-vă că ați scris adresa corect și că se potrivește cu formatul exemplului afișat:
+Înlătură un mesaj
+Înlătură toate mesajele de la destinatar
+Mesajul {0} din {1} șters din {2}. {3} mesaje rămase pentru a analiza.
+Mesajul {0} din {1} șters din căsuța de e-mail. {3} mesaje rămase pentru a analiza.
+Editează un fișier text
+Creează un nou fișier
+Fisierul există deja.
+Eroare la încercarea de a crea un fișier: {0}
+Deschiderea fișierului a eșuat. Ieșind din coajă ...
+Comanda editorului de text specificat nu este găsită.
+Listează comenzile disponibile
+Ieșește editorul de text și salvează modificările nesalvate
+Tipărește conținutul fișierului cu numere de linie în consolă
+Adaugă o nouă linie cu text la sfârșitul fișierului
+Elimină numărul de linie specificat
+Înlocuiește un cuvânt sau o frază cu altul
+Șterge un cuvânt sau o frază din numărul de linie
+Șterge un caracter din numărul de caractere din linia specificată
+Linia eliminată.
+Numărul de linie specificat {0} nu este un număr valid.
+Argumentele obligatorii nu sunt transmise la comanda {0}
+Eroare la încercarea de a rula comanda: {0}
+Funcționare în modul sigur. Etapa de sărituri ...
+>> Debug and Chat: versiune
+>> Adresa dvs. este {0}.
+>> Numele tău este {0}.
+Comanda {0} nu a fost găsită. Utilizați „/help” pentru a vedea lista.
+Index {0} nevalid. Există {1} urme de stivă. Indicele este bazat pe zero, așa că încercați scăzând cu 1.
+Fără urmă de stivă
+Afișează ultima excepție de urmărire a stivei
+Prezintă numele de utilizator curent în sesiune
+Te deconectează de la depanator
+Deblocați un dispozitiv de depanare după adresa IP
+Blocați un dispozitiv de depanare după adresa IP
+{0} se poate alătura din nou la depanare la distanță.
+{0} nu este încă blocat.

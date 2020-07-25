@@ -598,3 +598,59 @@ yasmah lilmustakhdam bi'iidkhal al'iidkhal
 taghyir dalil albarid alhalii
 taeadhar fath mujalad albryd {0}: {1}
 yusarid aldalayil fi eunwan baridik
+yustakhdam maelumat min alaitisal alsarie lilaitisal bi'ayi shabakat bsre
+hadad enwanana lilaitisal bh:
+altahdid kharij alnataq. hadad bayn 1-{0}. hawal mujdada.
+alaikhtiar lays rqmana. hawal mujdada.
+'athna' altahaquq min sihat alshahadat , hunak 'akhta' fi alshahadati. qad takun hadhih hi almarat al'uwlaa alty tatasil fiha bialkhadim 'aw rubama aintahat salahiat alshahadati. 'iilayk khata:
+hal 'ant mtakd min 'anak turid alaitisal?
+jawab ghyr salihin. hawal maratan akhraa.
+alaitisal alsarie fargha. 'atasil bikhadim li'iidafat eunwan 'iilayh.
+alaitisal alsarie ghyr mawjud. 'atasil bikhadum li'iidafat eunwan 'iilyh.
+'udkhul eunwan khadim IMAP walmanfudh (<address> 'aw <address>:[almnfdh]):
+'udkhul eunwan khadim SMTP walmunafidh (<aleunwan> 'aw <aleanwana>:[almnfdh]):
+yatlub mink mil' alhuqul almatlubat li'iirsal risalat 'iilaa eunwan
+yursal risalatan 'iilaa eunwan
+'udkhul eunwan barid almusatilm:
+'udkhul almawduea:
+'udkhul risalatak 'adnah. aiktub "EOF" liltaakid.
+'iirsal rasalat...
+tama alarsal.
+khata fi 'iirsal alrisalt: {0}
+eunwan albarid al'iiliktruniu ghyr salh. ta'akad min kitabat aleunwan bishakl sahih wa'anah yatatabaq mae tansiq almithal almaerud:
+yazil risalatan
+yazil kl alrasayil min almustalim
+tam hadhif alrisala {0} min {1} min {2}. {3} min alrasayil almutabaqiyat liltahlil.
+tam hadhaf alrisala {0} min {1} min albarid alwarid. {3} min alrasayil almutabaqiyat liltahlil.
+yaqum bitahrir milafin nasiin
+yajeal milafun jadid
+almilafu mawjud bialfiel.
+khata fi muhawalat 'iinsha' mlf: {0}
+fashilu fath milf. alkhuruj min alsudfa ...
+lm yatim aleuthur ealaa 'amr muharar alnusus almuhadad.
+yusarid al'awamir almutaha
+alkhuruj min muharir alnusus wahifz altaghyirat ghyr almahfuza
+yatbae muhtawiat almilafi bi'arqam al'ustur 'iilaa wahdat altahakum
+yudif strana jdydana yahtawi ealaa nasin fi nihayat almilafi
+yazil raqm alsatar almuhadad
+yastabdil kalimatan 'aw eibaratan bi'ukhraa
+hadhaf kalimat 'aw eibarat min raqm alsutar
+hadhaf harf min raqm alharaf fi alsitr almuhadad
+alsatar aldhy tamat 'iizalatah.
+raqm alsatar almuhadad {0} lays rqmana salhana.
+la yatimu tamrir alwasitat almatlubat lil'amr {0}
+khata fi muhawalat tashghil alamr: {0}
+yaemal fi alwade alamina. marhalat altakhatiy ...
+>> altashih albaeid waldrdsht: al'iisdar
+>> eunwanak hu {0}.
+>> aismak {0}.
+lm yatim aleuthur ealaa al'amr {0}. aistakhdam "/help" liruyat alqayimat.
+alfahras {0} ghyr salih. hunak {1} athar mukdis. alfahras qayim ealaa alsifr , lidha hawal tarh 1.
+la yujad 'athar mukadas
+'iizhar tatabie almukadas al'akhir eind alaistithna'
+yuearid aism almustakhdam alhalii fi aljalsa
+yufsiluk ean almusahah
+qum bi'iilgha' hazr jihaz tashih bwastt eunwan IP
+hazr jihaz tashih bieunwan IP
+yumkin l {0} alan alaindimam 'iilaa tashih al'akhta' ean bued marat 'ukhraa.
+{0} ghyr mahzur baed.

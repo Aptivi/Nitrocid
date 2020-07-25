@@ -598,3 +598,59 @@ Permite al usuario ingresar la entrada
 Cambia el directorio de correo actual
 No se puede abrir la carpeta de correo {0}: {1}
 Enumera directorios en su dirección de correo
+Utiliza información de Marcación rápida para conectarse a cualquier red rápidamente
+Seleccione una dirección para conectarse:
+La selección está fuera de rango. Seleccione entre 1- {0}. Inténtalo de nuevo.
+La selección no es un número. Inténtalo de nuevo.
+Durante la validación del certificado, hay errores de certificado. Es posible que sea la primera vez que se conecte al servidor o que el certificado haya caducado. Aquí hay un error:
+¿Estás seguro de que quieres conectarte?
+Respuesta invalida. Inténtalo de nuevo.
+La marcación rápida está vacía. Conéctese a un servidor para agregarle una dirección.
+La marcación rápida no existe. Conéctese a un servidor para agregarle una dirección.
+Ingrese la dirección del servidor IMAP y el puerto (<dirección> o <dirección>: [puerto]):
+Ingrese la dirección del servidor SMTP y el puerto (<dirección> o <dirección>: [puerto]):
+Le pide que complete los campos obligatorios para enviar un mensaje a una dirección.
+Envía un mensaje a una dirección
+Ingrese la dirección de correo del destinatario:
+Ingrese el tema:
+Ingrese su mensaje a continuación. Escriba "EOF" para confirmar.
+Enviando mensaje...
+Mensaje enviado.
+Error al enviar el mensaje: {0}
+Dirección de correo electrónico no válida Asegúrese de haber escrito la dirección correctamente y que coincida con el formato del ejemplo que se muestra:
+Elimina un mensaje
+Elimina todos los mensajes del destinatario
+Mensaje {0} de {1} eliminado de {2}. Quedan {3} mensajes por analizar.
+Mensaje {0} de {1} eliminado de la bandeja de entrada. Quedan {3} mensajes por analizar.
+Edita un archivo de texto
+Crea un nuevo archivo
+El archivo ya existe.
+Error al intentar crear un archivo: {0}
+Fallo al abrir el archivo. Saliendo de la carcasa ...
+No se encuentra el comando del editor de texto especificado.
+Enumera los comandos disponibles.
+Sale del editor de texto y guarda los cambios no guardados
+Imprime el contenido del archivo con números de línea en la consola
+Agrega una nueva línea con texto al final del archivo
+Elimina el número de línea especificado.
+Reemplaza una palabra o frase con otra
+Elimina una palabra o frase del número de línea.
+Elimina un carácter del número de carácter en la línea especificada
+Línea eliminada
+El número de línea especificado {0} no es un número válido.
+Los argumentos requeridos no se pasan al comando {0}
+Error al intentar ejecutar el comando: {0}
+Corriendo en modo seguro. Saltando la etapa ...
+>> Depuración remota y chat: versión
+>> Su dirección es {0}.
+>> Tu nombre es {0}.
+Comando {0} no encontrado. Use "/help" para ver la lista.
+Índice {0} inválido. Hay {1} trazas de pila. El índice está basado en cero, así que intenta restar por 1.
+Sin rastro de pila
+Muestra el último seguimiento de pila en la excepción
+Muestra el nombre de usuario actual en la sesión
+Te desconecta del depurador
+Desbloquee un dispositivo de depuración por dirección IP
+Bloquear un dispositivo de depuración por dirección IP
+{0} ahora puede unirse a la depuración remota nuevamente.
+{0} aún no está bloqueado.

@@ -18,8 +18,8 @@
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "ben", "ben-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "spa", "swe", "tky", "uzb", "vtn"}
-    Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus"}
+    Public availableLangs() As String = {"arb", "arb-T", "ben", "ben-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "spa", "srb", "srb-T", "swe", "tky", "uzb", "vtn"}
+    Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
 
@@ -130,6 +130,10 @@ Public Module Translate
                 translated = My.Resources.slo
             Case "spa" 'Spanish
                 translated = My.Resources.spa
+            Case "srb" 'Serbian (transliterated)
+                translated = My.Resources.srb
+            Case "srb-T" 'Serbian (translated)
+                translated = My.Resources.srb_T
             Case "swe" 'Swedish
                 translated = My.Resources.swe
             Case "tky" 'Turkish
@@ -215,6 +219,10 @@ CHOICE:
                         Console.OutputEncoding = Text.Encoding.GetEncoding(866)
                         Console.InputEncoding = Text.Encoding.GetEncoding(866)
                         Wdbg("I", "Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
+                    Case "srb-T"
+                        Console.OutputEncoding = Text.Encoding.GetEncoding(21025)
+                        Console.InputEncoding = Text.Encoding.GetEncoding(21025)
+                        Wdbg("I", "Encoding set successfully for Serbian to {0}.", Console.OutputEncoding.EncodingName)
                     Case "dan"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(865)
                         Console.InputEncoding = Text.Encoding.GetEncoding(865)

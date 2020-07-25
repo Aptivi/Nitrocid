@@ -598,3 +598,59 @@ Uporabniku omogoča vnos vnosa
 Spremeni trenutni imenik pošte
 Mape poštnih sporočil ni mogoče odpreti {0}: {1}
 Navaja imenike v vašem e-poštnem naslovu
+Na rýchle pripojenie k akejkoľvek sieti sa používajú informácie z funkcie Rýchla voľba
+Vyberte adresu, ku ktorej sa chcete pripojiť:
+Výber je mimo rozsahu. Vyberte medzi 1- {0}. Skúste to znova.
+Výber nie je číslo. Skúste to znova.
+Počas overovania certifikátu existujú chyby certifikátu. Je možné, že ste sa prvýkrát pripojili k serveru alebo platnosť certifikátu mohla uplynúť. Tu je chyba:
+Naozaj sa chcete pripojiť?
+Neplatná odpoveď. Prosím skúste znova.
+Rýchla voľba je prázdna. Pripojte sa k serveru a pridajte naň adresu.
+Rýchla voľba neexistuje. Pripojte sa k serveru a pridajte naň adresu.
+Zadajte adresu a port servera IMAP (<adresa> alebo <adresa>: [port]):
+Zadajte adresu a port servera SMTP (<adresa> alebo <adresa>: [port]):
+Požiada o vyplnenie požadovaných polí na odoslanie správy na adresu
+Odošle správu na adresu
+Zadajte e-mailovú adresu príjemcu:
+Zadajte predmet:
+Zadajte svoju správu nižšie. Potvrďte napísaním „EOF“.
+Posiela sa správa ...
+Správa poslaná.
+Chyba pri odosielaní správy: {0}
+Neplatná emailová adresa. Uistite sa, že ste adresu napísali správne a či sa zhoduje s formátom zobrazeného príkladu:
+Odstráni správu
+Odstráni všetky správy od príjemcu
+Správa {0} z {1} bola odstránená z {2}. {3} zostávajúce správy na analýzu.
+Správa {0} z {1} bola odstránená z doručenej pošty. {3} zostávajúce správy na analýzu.
+Upravuje textový súbor
+Vytvorí nový súbor
+Súbor už existuje.
+Chyba pri pokuse o vytvorenie súboru: {0}
+Nepodarilo sa otvoriť súbor. Opúšťa sa škrupina ...
+Zadaný príkaz textového editora nebol nájdený.
+Zoznam dostupných príkazov
+Ukončí textový editor a uloží neuložené zmeny
+Vytlačí obsah súboru s číslami riadkov na konzolu
+Na koniec súboru pridá nový riadok s textom
+Odstráni zadané číslo riadka
+Nahrádza slovo alebo frázu iným
+Odstráni slovo alebo frázu z čísla riadku
+Odstráni znak z čísla znaku na zadanom riadku
+Odstránená čiara.
+Zadané číslo riadku {0} nie je platné číslo.
+Povinné argumenty sa neodovzdajú príkazu {0}
+Chyba pri pokuse o spustenie príkazu: {0}
+Prevádzka v bezpečnom režime. Vynecháva sa fáza ...
+>> Vzdialený ladenie a chat: verzia
+>> Vaša adresa je {0}.
+>> Vaše meno je {0}.
+Príkaz {0} sa nenašiel. Zoznam zobrazíte kliknutím na „/help“.
+Index {0} neplatný. K dispozícii sú {1} stopy stôp. Index je nulový, preto skúste odpočítať 1.
+Žiadne sledovanie zásobníka
+Zobrazuje poslednú stopu zásobníka s výnimkou
+Zobrazuje aktuálne užívateľské meno v relácii
+Odpojí vás od ladiaceho programu
+Odblokujte ladiace zariadenie pomocou adresy IP
+Zablokujte ladiace zariadenie podľa adresy IP
+{0} sa teraz môže pripojiť k vzdialenému ladeniu.
+{0} ešte nie je zablokovaný.

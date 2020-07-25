@@ -598,3 +598,59 @@ Tillåter användaren att ange ingång
 Ändrar aktuell postkatalog
 Det går inte att öppna e-postmappen {0}: {1}
 Listar kataloger i din e-postadress
+Använder information från snabbuppringning för att snabbt ansluta till alla nätverk
+Välj en adress att ansluta till:
+Urvalet är utanför räckvidden. Välj mellan 1- {0}. Försök igen.
+Valet är inte ett nummer. Försök igen.
+Under certifikatvalidering finns certifikatfel. Det kan vara första gången du ansluter till servern eller certifikatet kan ha gått ut. Här är ett fel:
+Är du säker på att du vill ansluta?
+Ogiltigt svar. Var god försök igen.
+Kortnummer är tom. Anslut till en server för att lägga till en adress till den.
+Kortnummer finns inte. Anslut till en server för att lägga till en adress till den.
+Ange IMAP-serverns adress och port (<adress> eller <adress>: [port]):
+Ange SMTP-serverns adress och port (<adress> eller <adress>: [port]):
+Ber dig att fylla i de fält som krävs för att skicka ett meddelande till en adress
+Skickar ett meddelande till en adress
+Ange mottagarens e-postadress:
+Ange ämnet:
+Ange ditt meddelande nedan. Skriv "EOF" för att bekräfta.
+Skickar meddelande ...
+Meddelande skickat.
+Fel vid skicka meddelande: {0}
+Ogiltig e-postadress. Se till att du har skrivit adressen korrekt och att den matchar formatet i exemplet som visas:
+Tar bort ett meddelande
+Tar bort alla meddelanden från mottagaren
+Meddelande {0} från {1} raderat från {2}. {3} meddelanden kvar för att analysera.
+Meddelande {0} från {1} raderat från inkorgen. {3} meddelanden kvar för att analysera.
+Redigerar en textfil
+Skapar en ny fil
+Filen finns redan.
+Fel vid försök att skapa en fil: {0}
+Misslyckades med att öppna fil. Avslutande skal ...
+Det angivna kommandot för textredigerare hittas inte.
+Listar tillgängliga kommandon
+Stänger textredigeraren och sparar ändringar som inte är sparade
+Skriver ut innehållet i filen med radnummer på konsolen
+Lägger till en ny rad med text i slutet av filen
+Tar bort det angivna radnumret
+Ersätter ett ord eller en fras med ett annat
+Tar bort ett ord eller en fras från radnumret
+Tar bort ett tecken från teckennummer i den angivna raden
+Borttagen rad.
+Det specificerade radnumret {0} är inte ett giltigt nummer.
+Obligatoriska argument skickas inte till kommandot {0}
+Fel vid försök att köra kommandot: {0}
+Kör i säkert läge. Hoppar över scenen ...
+>> Fjärrfelsökning och chatt: version
+>> Din adress är {0}.
+>> Ditt namn är {0}.
+Kommando {0} hittades inte. Använd "/help" för att se listan.
+Index {0} ogiltigt. Det finns {1} stackspår. Index är nollbaserat, så försök att subtrahera med 1.
+Ingen stapelspår
+Visar sista stackspår på undantag
+Visar aktuellt användarnamn i sessionen
+Kopplar bort dig från felsökaren
+Avblockera en felsökningsenhet med IP-adress
+Blockera en felsökningsenhet med IP-adress
+{0} kan nu gå med i fjärrfelsökning igen.
+{0} är inte blockerad ännu.

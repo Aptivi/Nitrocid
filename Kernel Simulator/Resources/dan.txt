@@ -598,3 +598,59 @@ Tillader bruger at indtaste input
 Ændrer det aktuelle mail-bibliotek
 Kan ikke åbne e-mail-mappen {0}: {1}
 Viser mapper i din mail-adresse
+Bruger oplysninger fra hurtigopkald til hurtig forbindelse til ethvert netværk
+Vælg en adresse, du vil oprette forbindelse til:
+Valget er uden for rækkevidde. Vælg mellem 1-{0}. Prøv igen.
+Valget er ikke et tal. Prøv igen.
+Under certifikatvalidering er der certifikatfejl. Det er muligvis første gang, du opretter forbindelse til serveren, eller certifikatet er muligvis udløbet. Her er en fejl:
+Er du sikker på, at du vil oprette forbindelse?
+Ugyldigt svar. Prøv igen.
+Hurtigopkald er tomt. Opret forbindelse til en server for at tilføje en adresse til den.
+Hurtigopkald findes ikke. Opret forbindelse til en server for at tilføje en adresse til den.
+Indtast IMAP-serveradresse og -port (<adresse> eller <adresse>:[port]):
+Indtast SMTP-serveradresse og -port (<adresse> eller <adresse>:[port]):
+Beder dig om at udfylde de krævede felter for at sende en besked til en adresse
+Sender en meddelelse til en adresse
+Indtast modtagerens e-mail-adresse:
+Indtast emnet:
+Indtast din besked nedenfor. Skriv "EOF" for at bekræfte.
+Sender besked ...
+Besked sendt.
+Fejl ved afsendelse af besked: {0}
+Ugyldig emailadresse. Sørg for, at du har skrevet adressen korrekt, og at den stemmer overens med formatet på det viste eksempel:
+Fjerner en meddelelse
+Fjerner alle meddelelser fra modtageren
+Besked {0} fra {1} slettet fra {2}. {3} der er resterende meddelelser, der skal analyseres.
+Meddelelse {0} fra {1} er slettet fra indbakken. {3} der er resterende meddelelser, der skal analyseres.
+Redigerer en tekstfil
+Opretter en ny fil
+Fil findes allerede.
+Fejl ved forsøg på at oprette en fil: {0}
+Kunne ikke åbne filen. Spændende skal ...
+Den angivne teksteditor-kommando findes ikke.
+Viser tilgængelige kommandoer
+Forlader teksteditoren og gem ændringer, der ikke er gemt
+Udskriver filindholdet med linjenumre til konsollen
+Tilføjer en ny linje med tekst i slutningen af ​​filen
+Fjerner det specificerede linjenummer
+Erstatter et ord eller en sætning med et andet
+Sletter et ord eller en sætning fra linjenummer
+Sletter et tegn fra karakternummeret i den specificerede linje
+Fjernet linje.
+Det specificerede linienummer {0} er ikke et gyldigt nummer.
+Nødvendige argumenter overføres ikke til kommandoen {0}
+Fejl ved forsøg på at køre kommando: {0}
+Kører i sikker tilstand. Spring over etape ...
+>> Fjernfejl og chat: version
+>> Din adresse er {0}.
+>> Dit navn er {0}.
+Kommando {0} ikke fundet. Brug "/help" for at se listen.
+Indeks {0} ugyldigt. Der er {1} stakespor. Indeks er nulbaseret, så prøv at trække fra med 1.
+Ingen stakespor
+Viser sidste stakespor med undtagelse
+Viser det aktuelle brugernavn i sessionen
+Frakobler dig fra fejlsøgningen
+Fjern blokering af en debug-enhed med IP-adresse
+Bloker en debug-enhed efter IP-adresse
+{0} kan nu deltage i ekstern debug igen.
+{0} er ikke blokeret endnu.

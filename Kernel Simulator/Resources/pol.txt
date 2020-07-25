@@ -598,3 +598,59 @@ Pozwala użytkownikowi wprowadzić dane wejściowe
 Zmienia bieżący katalog poczty
 Nie można otworzyć folderu poczty {0}: {1}
 Wyświetla katalogi w twoim adresie e-mail
+Wykorzystuje informacje z szybkiego wybierania, aby szybko łączyć się z dowolną siecią
+Wybierz adres, z którym chcesz się połączyć:
+Wybór jest poza zakresem. Wybierz od 1 do {0}. Spróbuj ponownie.
+Wybór nie jest liczbą. Spróbuj ponownie.
+Podczas weryfikacji certyfikatu występują błędy certyfikatu. Może to być pierwsze połączenie z serwerem lub ważność certyfikatu. Oto błąd:
+Czy na pewno chcesz się połączyć?
+Nieprawidłowa odpowiedź. Proszę spróbuj ponownie.
+Szybkie wybieranie jest puste. Połącz się z serwerem, aby dodać do niego adres.
+Szybkie wybieranie nie istnieje. Połącz się z serwerem, aby dodać do niego adres.
+Wprowadź adres i port serwera IMAP (<adres> lub <address>: [port]):
+Wprowadź adres i port serwera SMTP (<adres> lub <address>: [port]):
+Prosi o wypełnienie wymaganych pól, aby wysłać wiadomość na adres
+Wysyła wiadomość na adres
+Wprowadź adres e-mail odbiorcy:
+Wpisz temat:
+Wpisz swoją wiadomość poniżej. Wpisz „EOF”, aby potwierdzić.
+Wysyłanie wiadomości...
+Wiadomość wysłana.
+Błąd podczas wysyłania wiadomości: {0}
+Niepoprawny adres email. Upewnij się, że adres został wpisany poprawnie i pasuje do formatu z pokazanego przykładu:
+Usuwa wiadomość
+Usuwa wszystkie wiadomości od odbiorcy
+Wiadomość {0} od {1} została usunięta z {2}. Pozostało {3} wiadomości do przeanalizowania.
+Wiadomość {0} od {1} została usunięta ze skrzynki odbiorczej. Pozostało {3} wiadomości do przeanalizowania.
+Edytuje plik tekstowy
+Tworzy nowy plik
+Plik już istnieje.
+Błąd podczas próby utworzenia pliku: {0}
+Nie udało się otworzyć pliku. Wychodzę z powłoki ...
+Nie znaleziono podanego polecenia edytora tekstu.
+Wyświetla dostępne polecenia
+Wychodzi z edytora tekstu i zapisuje niezapisane zmiany
+Wyświetla zawartość pliku z numerami wierszy na konsoli
+Dodaje nową linię z tekstem na końcu pliku
+Usuwa określony numer wiersza
+Zastępuje słowo lub frazę innym
+Usuwa słowo lub frazę z numeru wiersza
+Usuwa znak z numeru znaku w określonej linii
+Usunięta linia.
+Określony numer wiersza {0} nie jest prawidłowym numerem.
+Wymagane argumenty nie są przekazywane do polecenia {0}
+Błąd podczas próby uruchomienia polecenia: {0}
+Działa w trybie awaryjnym. Pomijanie etapu ...
+>> Zdalne debugowanie i czat: wersja
+>> Twój adres to {0}.
+>> Nazywasz się {0}.
+Nie znaleziono polecenia {0}. Użyj „/help”, aby wyświetlić listę.
+Indeks {0} jest nieprawidłowy. Istnieje {1} śladów stosu. Indeks jest liczony od zera, więc spróbuj odjąć go o 1.
+Brak śladu stosu
+Pokazuje ostatni ślad stosu w przypadku wyjątku
+Pokazuje aktualną nazwę użytkownika w sesji
+Odłącza Cię od debugera
+Odblokuj urządzenie do debugowania według adresu IP
+Zablokuj urządzenie do debugowania według adresu IP
+{0} może teraz ponownie dołączyć do zdalnego debugowania.
+Numer {0} nie jest jeszcze zablokowany.

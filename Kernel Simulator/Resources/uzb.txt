@@ -598,3 +598,59 @@ Foydalanuvchiga kirishga ruxsat beradi
 Joriy pochta katalogini o'zgartiradi
 {0} pochta jildini ochib bo'lmadi: {1}
 Pochta manzilingizdagi kataloglarning ro'yxati
+Har qanday tarmoqqa tezda ulanish uchun Tez terish ma'lumotidan foydalanadi
+Ulanish uchun manzilni tanlang:
+Tanlov doirasidan tashqarida. 1- {0} orasida tanlang. Qayta urinib ko'ring.
+Tanlov raqam emas. Qayta urinib ko'ring.
+Sertifikatni tekshirish paytida sertifikat xatolari mavjud. Bu siz birinchi marta serverga ulanganingizda yoki sertifikatning muddati o'tgan bo'lishi mumkin. Xato:
+Haqiqatan ham ulanmoqchimisiz?
+Javob noto‘g‘ri. Iltimos, yana bir bor urinib ko'ring.
+Tez terish bo'sh. Unga manzil qo'shish uchun serverga ulaning.
+Tez terish mavjud emas. Unga manzil qo'shish uchun serverga ulaning.
+IMAP server manzili va portini kiriting (<manzil> yoki <manzil>: [port]):
+SMTP server manzili va portini kiriting (<manzil> yoki <manzil>: [port]):
+Siz manzilga xabar yuborish uchun kerakli maydonlarni to'ldirishingizni so'raydi
+Bir manzilga xabar yuboradi
+Qabul qiluvchining pochta manzilini kiriting:
+Mavzuni kiriting:
+Xabaringizni quyida kiriting. Tasdiqlash uchun "EOF" deb yozing.
+Xabar yuborilmoqda ...
+Xabar yuborildi.
+Xabarni yuborishda xato: {0}
+Elektron pochta manzili noto'g'ri. Manzilni to'g'ri yozganingizga va u ko'rsatilgan misol formatiga mos kelishiga ishonch hosil qiling:
+Xabarni o'chiradi
+Qabul qiluvchidan barcha xabarlarni o'chiradi
+{1} dan {0} xabari {2} dan o'chirildi. Tuzatish uchun qolgan {3} xabarlar.
+{1} dan {0} xabari kirish qutisidan o'chirildi. Tuzatish uchun qolgan {3} xabarlar.
+Matn faylini tahrirlaydi
+Yangi faylni yaratadi
+Fayl allaqachon mavjud.
+Fayl yaratishda xato: {0}
+Faylni ochib bo'lmadi. Qobiq chiqmoqda ...
+Belgilangan matn muharriri buyrug'i topilmadi.
+Mavjud buyruqlar ro'yxati
+Matn muharriridan chiqadi va saqlanmagan o'zgarishlarni saqlaydi
+Konsolga satr raqamlari bilan fayl tarkibini chop etadi
+Fayl oxirida matn bilan yangi qator qo'shadi
+Belgilangan satr raqamini olib tashlaydi
+Bir so'z yoki iborani boshqasi bilan almashtiradi
+Satr raqamidan bir so'z yoki iborani o'chirib tashlaydi
+Belgilangan satrdagi belgilar sonidan belgini o'chiradi
+Olib tashlangan chiziq.
+Belgilangan chiziq raqami {0} haqiqiy raqam emas.
+Kerakli dalillar {0} buyrug'iga o'tkazilmaydi
+Buyruqni ishga tushirishda xato: {0}
+Xavfsiz rejimda ishlaydi. Bosib chiqarish bosqichi ...
+>> Masofadan tuzatish va chat: versiya
+>> Sizning manzilingiz {0}.
+>> Sizning ismingiz {0}.
+{0} buyrug'i topilmadi. Ro'yxatni ko'rish uchun "/help" -dan foydalaning.
+{0} indeksi noto‘g‘ri. {1} suyak izlari mavjud. Indeks nolga asoslangan, shuning uchun 1 ni olib tashlashga harakat qiling.
+Stack izi yo'q
+Istisno bo'yicha oxirgi izlarni ko'rsatadi
+Seansda joriy foydalanuvchi nomini ko'rsatadi
+Sizni tuzatuvchidan uzib qo'yadi
+Nosozliklarni tuzatish qurilmasini IP-manzil orqali blokdan chiqaring
+Nosozliklarni tuzatish moslamasini IP-manzil orqali blokirovka qiling
+{0} endi masofadan tuzatish dasturiga qo'shilishi mumkin.
+{0} hali bloklanmagan.

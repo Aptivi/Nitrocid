@@ -598,3 +598,59 @@ Lar brukeren legge inn innspill
 Endrer gjeldende postkatalog
 Kan ikke åpne postmappen {0}: {1}
 Viser kataloger i postadressen din
+Bruker informasjon fra hurtigvalg for å koble deg til ethvert nettverk raskt
+Velg en adresse du vil koble til:
+Utvalget er utenfor rekkevidde. Velg mellom 1- {0}. Prøv igjen.
+Utvalget er ikke et tall. Prøv igjen.
+Under sertifikatvalidering er det sertifikatfeil. Det kan være første gang du kobler deg til serveren, eller sertifikatet kan være utløpt. Her er en feil:
+Er du sikker på at du vil koble til?
+Ugyldig svar. Vær så snill, prøv på nytt.
+Hurtigvalg er tom. Koble til en server for å legge til en adresse til den.
+Hurtigvalg eksisterer ikke. Koble til en server for å legge til en adresse til den.
+Angi IMAP-serveradresse og port (<adresse> eller <adresse>: [port]):
+Skriv inn SMTP-serveradresse og -port (<adresse> eller <adresse>: [port]):
+Ber deg om å fylle de obligatoriske feltene for å sende en melding til en adresse
+Sender en melding til en adresse
+Angi mottakerens e-postadresse:
+Skriv inn emnet:
+Skriv inn meldingen nedenfor. Skriv "EOF" for å bekrefte.
+Sender melding ...
+Melding sendt.
+Feil ved sending av melding: {0}
+Ugyldig epostadresse. Forsikre deg om at du har skrevet adressen riktig, og at den samsvarer med formatet på eksemplet som vises:
+Fjerner en melding
+Fjerner alle meldingene fra mottakeren
+Melding {0} fra {1} slettet fra {2}. {3} meldinger som gjenstår for å analysere.
+Melding {0} fra {1} er slettet fra innboksen. {3} meldinger som gjenstår for å analysere.
+Redigerer en tekstfil
+Oppretter en ny fil
+Filen finnes allerede.
+Feil ved forsøk på å lage en fil: {0}
+Kunne ikke åpne filen. Spennende skall ...
+Den spesifiserte tekstredigererkommandoen er ikke funnet.
+Viser tilgjengelige kommandoer
+Gå ut av tekstredigeringsprogrammet og lagre ulagrede endringer
+Skriver ut innholdet i filen med linjenumre til konsollen
+Legger til en ny linje med tekst på slutten av filen
+Fjerner det angitte linjenummeret
+Erstatter et ord eller uttrykk med et annet
+Sletter et ord eller en setning fra linjenummer
+Sletter et tegn fra tegntallet på spesifisert linje
+Fjernet linje.
+Spesifisert linjenummer {0} er ikke et gyldig nummer.
+Nødvendige argumenter sendes ikke til kommandoen {0}
+Feil ved forsøk på å kjøre kommando: {0}
+Kjører i sikker modus. Hopper over scenen ...
+>> Ekstern feilsøking og chat: versjon
+>> Adressen din er {0}.
+>> Ditt navn er {0}.
+Kommando {0} ikke funnet. Bruk "/help" for å se listen.
+Indeks {0} ugyldig. Det er {1} stakkespor. Indeks er nullbasert, så prøv å trekke fra med 1.
+Ingen stabelspor
+Viser siste stack-spor på unntak
+Viser gjeldende brukernavn i økten
+Koble deg fra feilsøkeren
+Fjern blokkering av en feilsøkingsenhet etter IP-adresse
+Blokker en feilsøkingsenhet etter IP-adresse
+{0} kan nå bli med på ekstern feilsøking igjen.
+{0} er ikke blokkert ennå.

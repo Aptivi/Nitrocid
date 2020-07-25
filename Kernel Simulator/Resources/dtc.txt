@@ -598,3 +598,59 @@ Hiermee kan de gebruiker invoer invoeren
 Verandert de huidige mail directory
 Kan e-mailmap niet openen {0}: {1}
 Geeft mappen in uw e-mailadres weer
+Gebruikt informatie van snelkiezen om snel verbinding te maken met elk netwerk
+Selecteer een adres om verbinding mee te maken:
+De selectie valt buiten het bereik. Kies tussen 1- {0}. Probeer het opnieuw.
+De selectie is geen nummer. Probeer het opnieuw.
+Tijdens certificaatvalidatie zijn er certificaatfouten. Het is mogelijk de eerste keer dat u verbinding maakt met de server of het certificaat is mogelijk verlopen. Hier is een fout:
+Weet u zeker dat u verbinding wilt maken?
+Ongeldig antwoord. Probeer het alstublieft opnieuw.
+Snelkiezen is leeg. Maak verbinding met een server om er een adres aan toe te voegen.
+Snelkiezen bestaat niet. Maak verbinding met een server om er een adres aan toe te voegen.
+Voer het IMAP-serveradres en de poort in (<adres> of <adres>:[poort]):
+Voer het SMTP-serveradres en de poort in (<adres> of <adres>:[poort]):
+Vraagt ​​u om de verplichte velden in te vullen om een ​​bericht naar een adres te sturen
+Stuurt een bericht naar een adres
+Voer het e-mailadres van de ontvanger in:
+Voer het onderwerp in:
+Vul hieronder uw bericht in. Schrijf "EOF" om te bevestigen.
+Bericht versturen...
+Bericht verzonden.
+Fout bij verzenden van bericht: {0}
+Ongeldig e-mailadres. Zorg ervoor dat je het adres correct hebt geschreven en dat het overeenkomt met de indeling van het getoonde voorbeeld:
+Verwijdert een bericht
+Verwijdert alle berichten van de ontvanger
+Bericht {0} van {1} verwijderd van {2}. {3} berichten die nog moeten worden geparseerd.
+Bericht {0} van {1} verwijderd uit inbox. {3} berichten die nog moeten worden geparseerd.
+Bewerkt een tekstbestand
+Maakt een nieuw bestand
+Bestand bestaat al.
+Fout bij het maken van een bestand: {0}
+Gefaald om het document te openen. Shell afsluiten ...
+De opgegeven teksteditoropdracht is niet gevonden.
+Geeft beschikbare opdrachten weer
+Sluit de teksteditor af en sla niet-opgeslagen wijzigingen op
+Drukt de inhoud van het bestand met regelnummers af naar de console
+Voegt een nieuwe regel met tekst toe aan het einde van het bestand
+Verwijdert het opgegeven regelnummer
+Vervangt een woord of zin door een ander
+Verwijdert een woord of zin uit het regelnummer
+Verwijdert een teken uit het tekennummer op de opgegeven regel
+Lijn verwijderd.
+Opgegeven regelnummer {0} is geen geldig nummer.
+Vereiste argumenten worden niet doorgegeven aan opdracht {0}
+Fout bij het uitvoeren van opdracht: {0}
+Draait in veilige modus. Etappe overslaan ...
+>> Remote Debug and Chat: versie
+>> Uw adres is {0}.
+>> Je naam is {0}.
+Command {0} niet gevonden. Gebruik "/help" om de lijst te zien.
+Index {0} ongeldig. Er zijn {1} stacktraces. Index is op nul gebaseerd, dus probeer af te trekken met 1.
+Geen stacktracering
+Toont laatste stacktracering bij uitzondering
+Toont de huidige gebruikersnaam in de sessie
+Verbreekt de verbinding met de debugger
+Deblokkeer een debug-apparaat op IP-adres
+Blokkeer een apparaat voor foutopsporing op IP-adres
+{0} kan nu opnieuw deelnemen aan debuggen op afstand.
+{0} is nog niet geblokkeerd.

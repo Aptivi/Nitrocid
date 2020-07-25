@@ -598,3 +598,59 @@ Cho phép người dùng nhập dữ liệu đầu vào
 Thay đổi thư mục thư hiện tại
 Không thể mở thư mục thư {0}: {1}
 Liệt kê các thư mục trong địa chỉ mail của bạn
+Sử dụng thông tin từ Quay số nhanh để kết nối với bất kỳ mạng nào một cách nhanh chóng
+Chọn một địa chỉ để kết nối với:
+Lựa chọn nằm ngoài phạm vi. Chọn giữa 1- {0}. Thử lại.
+Lựa chọn không phải là một con số. Thử lại.
+Trong quá trình xác nhận chứng chỉ, có lỗi chứng chỉ. Đây có thể là lần đầu tiên bạn kết nối với máy chủ hoặc chứng chỉ có thể đã hết hạn. Đây là một lỗi:
+Bạn có chắc chắn rằng bạn muốn kết nối?
+Câu trả lời không hợp lệ. Vui lòng thử lại.
+Quay số nhanh là trống rỗng. Kết nối với một máy chủ để thêm một địa chỉ cho nó.
+Quay số nhanh không tồn tại. Kết nối với một máy chủ để thêm một địa chỉ cho nó.
+Nhập địa chỉ máy chủ IMAP và cổng (<địa chỉ> hoặc <địa chỉ>: [cổng]):
+Nhập địa chỉ và cổng máy chủ SMTP (<địa chỉ> hoặc <địa chỉ>: [cổng]):
+Yêu cầu bạn điền vào các trường bắt buộc để gửi tin nhắn đến một địa chỉ
+Gửi tin nhắn đến một địa chỉ
+Nhập địa chỉ thư người nhận:
+Nhập chủ đề:
+Nhập tin nhắn của bạn dưới đây. Viết "" EOF "" để xác nhận.
+Gửi tin nhắn ...
+Tin nhắn đã gửi.
+Lỗi gửi tin nhắn: {0}
+Địa chỉ email không hợp lệ. Hãy chắc chắn rằng bạn đã viết địa chỉ chính xác và nó phù hợp với định dạng của ví dụ được hiển thị:
+Xóa tin nhắn
+Xóa tất cả tin nhắn khỏi người nhận
+Tin nhắn {0} từ {1} đã bị xóa khỏi {2}. {3} tin nhắn còn lại để phân tích.
+Tin nhắn {0} từ {1} đã bị xóa khỏi hộp thư đến. {3} tin nhắn còn lại để phân tích.
+Chỉnh sửa tệp văn bản
+Tạo một tệp mới
+Tập tin đã tồn tại.
+Lỗi khi tạo tệp: {0}
+Không thể mở tập tin. Thoát khỏi vỏ ...
+Lệnh soạn thảo văn bản đã chỉ định không tìm thấy.
+Liệt kê các lệnh có sẵn
+Thoát khỏi trình soạn thảo văn bản và lưu các thay đổi chưa lưu
+In nội dung của tệp với số dòng vào bảng điều khiển
+Thêm một dòng mới với văn bản ở cuối tập tin
+Xóa số dòng được chỉ định
+Thay thế một từ hoặc cụm từ bằng một từ khác
+Xóa một từ hoặc cụm từ từ số dòng
+Xóa một ký tự khỏi số ký tự trong dòng được chỉ định
+Đã xóa dòng.
+Số dòng được chỉ định {0} không phải là số hợp lệ.
+Các đối số bắt buộc không được truyền cho lệnh {0}
+Lỗi khi chạy lệnh: {0}
+Chạy ở chế độ an toàn. Bỏ qua giai đoạn ...
+>> Gỡ lỗi và trò chuyện từ xa: phiên bản
+>> Địa chỉ của bạn là {0}.
+>> Tên của bạn là {0}.
+Lệnh {0} không tìm thấy. Sử dụng "/help" để xem danh sách.
+Chỉ số {0} không hợp lệ. Có {1} dấu vết ngăn xếp. Chỉ số là không dựa trên, vì vậy hãy thử trừ đi 1.
+Không có dấu vết ngăn xếp
+Hiển thị dấu vết ngăn xếp cuối cùng trên ngoại lệ
+Hiển thị tên người dùng hiện tại trong phiên
+Ngắt kết nối bạn khỏi trình gỡ lỗi
+Bỏ chặn một thiết bị gỡ lỗi bằng địa chỉ IP
+Chặn thiết bị gỡ lỗi theo địa chỉ IP
+{0} bây giờ có thể tham gia gỡ lỗi từ xa một lần nữa.
+{0} chưa bị chặn.

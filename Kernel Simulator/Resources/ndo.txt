@@ -598,3 +598,59 @@ Mengizinkan pengguna memasukkan input
 Mengubah direktori email saat ini
 Tidak dapat membuka folder email {0}: {1}
 Daftar direktori di alamat email Anda
+Menggunakan informasi dari Panggilan Cepat untuk terhubung ke jaringan apa pun dengan cepat
+Pilih alamat yang akan dihubungkan:
+Pilihannya di luar jangkauan. Pilih antara 1- {0}. Coba lagi.
+Pilihannya bukan angka. Coba lagi.
+Selama validasi sertifikat, ada kesalahan sertifikat. Mungkin ini pertama kalinya Anda terhubung ke server atau sertifikat mungkin telah kedaluwarsa. Inilah kesalahan:
+Apakah Anda yakin ingin terhubung?
+Jawaban tidak valid Silakan coba lagi.
+Panggilan cepat kosong. Sambungkan ke server untuk menambahkan alamat ke dalamnya.
+Panggilan cepat tidak ada. Sambungkan ke server untuk menambahkan alamat ke dalamnya.
+Masukkan alamat dan port server IMAP (<address> atau <address>: [port]):
+Masukkan alamat dan port server SMTP (<address> atau <address>: [port]):
+Meminta Anda untuk mengisi bidang yang diperlukan untuk mengirim pesan ke alamat
+Mengirim pesan ke alamat
+Masukkan alamat email penerima:
+Masukkan subjek:
+Masukkan pesan Anda di bawah ini. Tulis "EOF" untuk konfirmasi.
+Mengirim pesan...
+Pesan terkirim.
+Kesalahan mengirim pesan: {0}
+Alamat email salah. Pastikan Anda telah menulis alamat dengan benar dan cocok dengan format contoh yang ditunjukkan:
+Menghapus pesan
+Menghapus semua pesan dari penerima
+Pesan {0} dari {1} dihapus dari {2}. {3} pesan tersisa untuk diurai.
+Pesan {0} dari {1} dihapus dari kotak masuk. {3} pesan tersisa untuk diurai.
+Edit file teks
+Membuat file baru
+File sudah ada.
+Kesalahan saat mencoba membuat file: {0}
+Gagal membuka file. Keluar dari shell ...
+Perintah editor teks yang ditentukan tidak ditemukan.
+Daftar perintah yang tersedia
+Keluar dari editor teks dan simpan perubahan yang belum disimpan
+Mencetak isi file dengan nomor baris ke konsol
+Menambahkan baris baru dengan teks di akhir file
+Menghapus nomor baris yang ditentukan
+Mengganti kata atau frasa dengan yang lain
+Menghapus kata atau frasa dari nomor baris
+Menghapus karakter dari nomor karakter pada baris yang ditentukan
+Garis yang dihapus.
+Nomor baris yang ditentukan {0} bukan nomor yang valid.
+Argumen yang diperlukan tidak diteruskan ke perintah {0}
+Kesalahan saat mencoba menjalankan perintah: {0}
+Berjalan dalam mode aman. Melewati panggung ...
+>> Remote Debug dan Obrolan: versi
+>> Alamat Anda adalah {0}.
+>> Nama Anda adalah {0}.
+Perintah {0} tidak ditemukan. Gunakan "/help" untuk melihat daftar.
+Indeks {0} tidak valid. Ada {1} tumpukan jejak. Indeks berbasis nol, jadi coba kurangi dengan 1.
+Tidak ada jejak tumpukan
+Menampilkan jejak tumpukan terakhir dengan pengecualian
+Memperlihatkan nama pengguna saat ini di sesi
+Memutuskan Anda dari debugger
+Buka blokir perangkat debug berdasarkan alamat IP
+Blokir perangkat debug berdasarkan alamat IP
+{0} sekarang dapat bergabung lagi dengan debug jarak jauh.
+{0} belum diblokir.

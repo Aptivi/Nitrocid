@@ -598,3 +598,59 @@ Membolehkan pengguna memasukkan input
 Menukar direktori mel semasa
 Tidak dapat membuka folder mel {0}: {1}
 Menyenaraikan direktori di alamat mel anda
+Menggunakan maklumat dari Speed ​​Dial untuk menyambung ke mana-mana rangkaian dengan cepat
+Pilih alamat untuk disambungkan ke:
+Pilihannya di luar jangkauan. Pilih antara 1- {0}. Cuba lagi.
+Pemilihan bukan nombor. Cuba lagi.
+Semasa pengesahan sijil, terdapat kesalahan sijil. Ini mungkin kali pertama anda menyambung ke pelayan atau sijil mungkin telah tamat tempoh. Inilah ralat:
+Adakah anda pasti mahu menyambung?
+Jawapan tidak sah. Sila cuba lagi.
+Dail cepat kosong. Sambungkan ke pelayan untuk menambahkan alamat kepadanya.
+Dail cepat tidak wujud. Sambungkan ke pelayan untuk menambahkan alamat kepadanya.
+Masukkan alamat dan port pelayan IMAP (<address> atau <address>: [port]):
+Masukkan alamat dan port pelayan SMTP (<address> atau <address>: [port]):
+Meminta anda mengisi medan yang diperlukan untuk menghantar mesej ke alamat
+Menghantar mesej ke alamat
+Masukkan alamat e-mel penerima:
+Masukkan subjek:
+Masukkan mesej anda di bawah. Tulis "EOF" untuk mengesahkan.
+Menghantar mesej ...
+Pesanan dihantar.
+Ralat semasa menghantar mesej: {0}
+Alamat email tidak sah. Pastikan anda telah menulis alamat dengan betul dan sesuai dengan format contoh yang ditunjukkan:
+Mengeluarkan mesej
+Membuang semua mesej dari penerima
+Mesej {0} dari {1} dipadam dari {2}. {3} mesej akan dihuraikan.
+Mesej {0} dari {1} dipadamkan dari peti masuk. {3} mesej akan dihuraikan.
+Menyunting fail teks
+Membuat fail baru
+Fail sudah ada.
+Ralat semasa membuat fail: {0}
+Gagal membuka fail. Keluar dari cengkerang ...
+Perintah penyunting teks yang ditentukan tidak dijumpai.
+Menyenaraikan arahan yang ada
+Keluar dari penyunting teks dan simpan perubahan yang belum disimpan
+Mencetak kandungan fail dengan nombor baris ke konsol
+Menambah baris baru dengan teks di hujung fail
+Mengeluarkan nombor garis yang ditentukan
+Menggantikan perkataan atau frasa dengan yang lain
+Memadamkan perkataan atau frasa dari nombor baris
+Memadamkan watak dari nombor watak dalam baris yang ditentukan
+Talian dikeluarkan.
+Nombor baris yang ditentukan {0} bukan nombor yang sah.
+Argumen yang diperlukan tidak diserahkan kepada perintah {0}
+Ralat semasa menjalankan perintah: {0}
+Berjalan dalam mod selamat. Melangkau tahap ...
+>> Debug Jauh dan Sembang: versi
+>> Alamat anda ialah {0}.
+>> Nama anda {0}.
+Perintah {0} tidak dijumpai. Gunakan "/help" untuk melihat senarai.
+Indeks {0} tidak sah. Terdapat {1} jejak timbunan. Indeks berasaskan sifar, jadi cuba tolak dengan 1.
+Tiada jejak timbunan
+Menunjukkan jejak timbunan terakhir kecuali
+Menunjukkan nama pengguna semasa dalam sesi
+Putuskan hubungan anda dari penyahpepijat
+Buka sekatan peranti debug dengan alamat IP
+Sekat peranti debug mengikut alamat IP
+{0} kini boleh menyertai debug jauh lagi.
+{0} belum disekat.

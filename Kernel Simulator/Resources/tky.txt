@@ -598,3 +598,59 @@ Kullanıcının giriş girmesine izin verir
 Geçerli posta dizinini değiştirir
 {0} posta klasörü açılamıyor: {1}
 Posta adresinizdeki dizinleri listeler
+Herhangi bir ağa hızlı bir şekilde bağlanmak için Hızlı Arama bilgisini kullanır
+Bağlanmak için bir adres seçin:
+Seçim aralık dışında. 1- {0} arasından seçim yapın. Tekrar deneyin.
+Seçim bir sayı değil. Tekrar deneyin.
+Sertifika doğrulaması sırasında sertifika hataları var. Sunucuya ilk kez bağlandığınızda veya sertifikanızın süresi dolmuş olabilir. İşte bir hata:
+Bağlanmak istediğinizden emin misiniz?
+Geçersiz cevap. Lütfen tekrar deneyin.
+Hızlı arama boş. Bir adres eklemek için bir sunucuya bağlanın.
+Hızlı arama mevcut değil. Bir adres eklemek için bir sunucuya bağlanın.
+IMAP sunucusu adresini ve bağlantı noktasını (<adres> veya <adres>: [bağlantı noktası]) girin:
+SMTP sunucusu adresini ve bağlantı noktasını (<adres> veya <adres>: [bağlantı noktası]) girin:
+Bir adrese mesaj göndermek için gerekli alanları doldurmanızı ister
+Bir adrese mesaj gönderir
+Alıcının posta adresini girin:
+Konuyu girin:
+Mesajınızı aşağıya girin. Onaylamak için "EOF" yazın.
+Mesaj göndermek...
+Mesajı gönderildi.
+Mesaj gönderilirken hata oluştu: {0}
+Geçersiz e-posta adresi. Adresi doğru yazdığınızdan ve gösterilen örneğin biçimiyle eşleştiğinden emin olun:
+Bir mesajı kaldırır
+Tüm mesajları alıcıdan kaldırır
+{1} 'den {0} mesajı {2}' den silindi. {3} ayrıştırılacak mesaj kaldı.
+{1} 'den gelen {0} mesajı gelen kutusundan silindi. {3} ayrıştırılacak mesaj kaldı.
+Metin dosyasını düzenler
+Yeni bir dosya oluşturur
+Dosya zaten mevcut.
+Bir dosya oluşturulmaya çalışılırken hata oluştu: {0}
+Dosya açılamadı. Kabuktan çıkılıyor ...
+Belirtilen metin düzenleyici komutu bulunamadı.
+Kullanılabilir komutları listeler
+Metin düzenleyiciden çıkar ve kaydedilmemiş değişiklikleri kaydeder
+Satır numaraları içeren dosyanın içeriğini konsola yazdırır
+Dosyanın sonuna metin içeren yeni bir satır ekler
+Belirtilen satır numarasını kaldırır
+Bir kelimeyi veya ifadeyi başka bir kelimeyle değiştirir
+Satır numarasından bir kelime veya kelime öbeğini siler
+Bir karakteri belirtilen satırdaki karakter numarasından siler
+Kaldırılan hat.
+Belirtilen satır numarası {0} geçerli bir sayı değil.
+{0} komutuna gerekli bağımsız değişkenler iletilmedi
+Komutu çalıştırmaya çalışırken hata oluştu: {0}
+Güvenli modda çalışıyor. Aşama atlanıyor ...
+>> Uzaktan Hata Ayıklama ve Sohbet: sürüm
+>> Adresiniz {0}.
+>> Adınız {0}.
+{0} komutu bulunamadı. Listeyi görmek için "/help" kullanın.
+{0} dizini geçersiz. {1} yığın izleri var. Dizin sıfır tabanlıdır, bu nedenle 1 ile çıkarmayı deneyin.
+Yığın izi yok
+İstisnada son yığın izlemesini gösterir
+Oturumdaki mevcut kullanıcı adını gösterir
+Sizi hata ayıklayıcıdan ayırır
+Hata ayıklama aygıtının IP adresine göre engellemesini kaldırma
+Hata ayıklama aygıtını IP adresine göre engelleme
+{0} artık uzaktan hata ayıklamaya tekrar katılabilir.
+{0} henüz engellenmedi.

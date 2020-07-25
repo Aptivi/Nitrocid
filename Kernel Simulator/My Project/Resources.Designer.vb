@@ -102,12 +102,12 @@ Namespace My.Resources
         '''  Looks up a localized string similar to Upalabdha kamānḍa: {0}
         '''Ādēśa likhuna: 
         '''Kamānḍa iñjēkaśana bātila karā haẏēchē.
-        '''Phām̐kā chāṛā&apos;i kamā diẏē buṭa ārgumēnṭaguli pr̥thaka karuna, udāharaṇasbarūpa, &apos;mōṭaḍa, jipuprōba&apos;
-        '''spēsa saha kōlana saha&apos;sēmiḍinajēkṭa&apos; ēra upara pr̥thaka pr̥thaka kamānḍa, udāharaṇasbarūpa, &apos;sēmiḍinajēkṭa hyākāra sēṭamimēsa: Bipa 1024 0.5&apos;
+        '''Phām̐kā chāṛā&apos;i kamā diẏē buṭa ārgumēnṭaguli pr̥thaka karuna, udāharaṇasbarūpa, &apos;motd, gpuprobe&apos;
+        '''spēsa saha kōlana saha&apos;sēmiḍinajēkṭa&apos; ēra upara pr̥thaka pr̥thaka kamānḍa, udāharaṇasbarūpa, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
         '''Manē rākhabēna yē&apos;ḍibāga&apos; yuktiṭi kārnēlaṭikē purōpuri kabhāra karē nā.
         '''Bāragasa: Anurōdha karā ārgumēnṭa {0} not pā&apos;ōẏā yāẏa ni.
         '''Bāragasa: Yuktitē apasāraṇayōgya truṭi:
-        '''Upalabdha ār [rest of string was truncated]&quot;;.
+        '''Upalabdha ārgumēnṭa:  [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ben() As String
             Get
@@ -119,14 +119,14 @@ Namespace My.Resources
         '''  Looks up a localized string similar to উপলব্ধ কমান্ড: {0}
         '''আদেশ লিখুন:
         '''কমান্ড ইঞ্জেকশন বাতিল করা হয়েছে।
-        '''ফাঁকা ছাড়াই কমা দিয়ে বুট আর্গুমেন্টগুলি পৃথক করুন, উদাহরণস্বরূপ, &apos;মোটড, জিপুপ্রোব&apos;
-        '''স্পেস সহ কোলন সহ &apos;সেমিডিনজেক্ট&apos; এর উপর পৃথক পৃথক কমান্ড, উদাহরণস্বরূপ, &apos;সেমিডিনজেক্ট হ্যাকার সেটমিমেস: বিপ 1024 0.5&apos;
+        '''ফাঁকা ছাড়াই কমা দিয়ে বুট আর্গুমেন্টগুলি পৃথক করুন, উদাহরণস্বরূপ, &apos;motd, gpuprobe&apos;
+        '''স্পেস সহ কোলন সহ &apos;সেমিডিনজেক্ট&apos; এর উপর পৃথক পৃথক কমান্ড, উদাহরণস্বরূপ, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
         '''মনে রাখবেন যে &apos;ডিবাগ&apos; যুক্তিটি কার্নেলটিকে পুরোপুরি কভার করে না।
         '''বারগস: অনুরোধ করা আর্গুমেন্ট {0 not পাওয়া যায় নি।
         '''বারগস: যুক্তিতে অপসারণযোগ্য ত্রুটি:
         '''উপলব্ধ আর্গুমেন্ট: {0}
         '''যুক্তি (সহায়তার জন্য &apos;সহায়তা&apos;):
-        '''ইনজেক্টেড আর্গুমেন্টগুলি  [rest of string was truncated]&quot;;.
+        '''ইনজেক্টেড আর্গুমেন্টগুলি পরব [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ben_T() As String
             Get
@@ -700,6 +700,34 @@ Namespace My.Resources
         Friend ReadOnly Property spa() As String
             Get
                 Return ResourceManager.GetString("spa", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to .
+        '''</summary>
+        Friend ReadOnly Property srb() As String
+            Get
+                Return ResourceManager.GetString("srb", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Доступне команде: {0}
+        '''Врите цомманд:
+        '''Убацивање команде је отказано.
+        '''Раздвојите аргументе за покретање зарезима без размака, на пример, „мотд, гпупробе“
+        '''Одвојите команде на &apos;цмдињецт&apos; са колонама са размацима, на пример, &apos;цмдињецт сеттхемес Хацкер: биеп 1024 0.5&apos;
+        '''Имајте на уму да аргумент &apos;дебуг&apos; не покрива у потпуности кернел.
+        '''баргс: Тражени аргумент {0} није пронађен.
+        '''баргс: Нерешива грешка у аргументу:
+        '''Доступни аргументи: {0}
+        '''Аргументи („помоћ“ за помоћ):
+        '''Ињектирани аргументи ће се заказати при  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property srb_T() As String
+            Get
+                Return ResourceManager.GetString("srb_T", resourceCulture)
             End Get
         End Property
         

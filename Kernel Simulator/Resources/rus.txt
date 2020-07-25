@@ -598,3 +598,59 @@ Pozvolyayet pol'zovatelyu vvodit' dannyye
 Izmenyayet tekushchiy pochtovyy katalog
 Nevozmozhno otkryt' pochtovuyu papku {0}: {1}
 Spiski katalogov v vashem pochtovom adrese
+Ispol'zuyet informatsiyu iz bystrogo nabora dlya bystrogo podklyucheniya k lyuboy seti
+Vyberite adres dlya podklyucheniya:
+Vybor vne diapazona. Vyberite mezhdu 1- {0}. Poprobuy yeshche raz.
+Vybor ne yavlyayetsya chislom. Poprobuy yeshche raz.
+Vo vremya proverki sertifikata voznikayut oshibki sertifikata. Eto mozhet byt' pervyy raz, kogda vy podklyuchilis' k serveru, ili srok deystviya sertifikata istek. Vot oshibka:
+Vy uvereny, chto khotite podklyuchit'sya?
+Nevernyy otvet. Pozhaluysta, poprobuyte yeshche raz.
+Bystryy nabor pust. Podklyuchites' k serveru, chtoby dobavit' k nemu adres.
+Bystryy nabor ne sushchestvuyet. Podklyuchites' k serveru, chtoby dobavit' k nemu adres.
+Vvedite adres i port servera IMAP (<adres> ili <adres>: [port]):
+Vvedite adres i port SMTP-servera (<adres> ili <adres>: [port]):
+Prosit vas zapolnit' obyazatel'nyye polya dlya otpravki soobshcheniya na adres
+Otpravlyayet soobshcheniye na adres
+Vvedite adres elektronnoy pochty poluchatelya:
+Vvedite temu:
+Vvedite vashe soobshcheniye nizhe. Napishite «EOF» dlya podtverzhdeniya.
+Otpravka soobshcheniya...
+Soobshcheniye otpravleno.
+Oshibka otpravki soobshcheniya: {0}
+Nevernyy adres elektronnoy pochty. Ubedites', chto vy pravil'no napisali adres i sootvetstvuyet formatu pokazannogo primera:
+Udalyayet soobshcheniye
+Udalyayet vse soobshcheniya ot poluchatelya
+Soobshcheniye {0} iz {1} udaleno iz {2}. Ostalos' {3} soobshcheniy dlya analiza.
+Soobshcheniye {0} iz {1} udaleno iz papki vkhodyashchikh soobshcheniy. Ostalos' {3} soobshcheniy dlya analiza.
+Redaktiruyet tekstovyy fayl
+Delayet novyy fayl
+Fayl uzhe sushchestvuyet.
+Oshibka pri popytke sozdat' fayl: {0}
+Ne udalos' otkryt' fayl. Vykhod iz obolochki ...
+Ukazannaya komanda tekstovogo redaktora ne naydena.
+Spisok dostupnykh komand
+Vykhod iz tekstovogo redaktora i sokhraneniye nesokhranennykh izmeneniy.
+Vyvodit soderzhimoye fayla s nomerami strok na konsol'
+Dobavlyayet novuyu stroku s tekstom v kontse fayla
+Udalyayet ukazannyy nomer stroki
+Zamenyayet slovo ili frazu drugim
+Udalyayet slovo ili frazu iz nomera stroki
+Udalyayet simvol iz nomera simvola v ukazannoy stroke
+Udalena stroka.
+Ukazannyy nomer stroki {0} ne yavlyayetsya dopustimym nomerom.
+Obyazatel'nyye argumenty ne peredayutsya v komandu {0}
+Oshibka pri popytke vypolnit' komandu: {0}
+Rabotayet v bezopasnom rezhime. Propusk etapa ...
+>> Udalennaya otladka i chat: versiya
+>> Vash adres: {0}.
+>> Vashe imya {0}.
+Komanda {0} ne naydena. Ispol'zuyte "/help", chtoby uvidet' spisok.
+Indeks {0} nedeystvitelen. Yest' {1} sledov steka. Indeks nachinayetsya s nulya, poetomu poprobuyte vychest' 1.
+Net trassirovki steka
+Pokazyvayet poslednyuyu trassirovku steka pri isklyuchenii
+Pokazyvayet tekushcheye imya pol'zovatelya v seanse
+Otklyuchayet vas ot otladchika
+Razblokirovat' otladochnoye ustroystvo po IP-adresu
+Blokirovka ustroystva otladki po IP-adresu
+{0} teper' mozhet snova prisoyedinit'sya k udalennoy otladke.
+{0} yeshche ne zablokirovan.

@@ -598,3 +598,59 @@ upayogakarta ko inaput darj karane kee anumati deta hai
 vartamaan mel nirdeshika ko badalata hai
 mel foldar kholane mein asamarth {0}: {1}
 apane mel pate mein nirdeshikaon ko soocheebaddh karata hai
+kisee bhee netavark se jaldee kanekt hone ke lie speed daayal kee jaanakaaree ka upayog karata hai
+se kanekt karane ke lie ek pate ka chayan karen:
+chayan seema se baahar hai. 1- {0} ke beech chayan karen. punah prayaas karen.
+chayan ek sankhya nahin hai. punah prayaas karen.
+pramaanapatr satyaapan ke dauraan, pramaanapatr trutiyaan hain. yah pahalee baar ho sakata hai ki aap sarvar se jude hon ya pramaanapatr kee samay seema samaapt ho gaee ho. yahaan ek truti hai:
+kya aap vaakee kanekt karana chaahate hain?
+amaany uttar. krpaya pun: prayaas karen.
+speed daayal khaalee hai. isamen pata jodane ke lie sarvar se kanekt karen.
+speed daayal maujood nahin hai. isamen pata jodane ke lie sarvar se kanekt karen.
+imap sarvar pata aur port darj karen (<pata> ya <pata>: [port]):
+smtp sarvar pata aur port (<pata> ya <pata>: [port]) darj karen:
+aapako pata bhejane ke lie aavashyak feeld bharane ke lie poochhata hai
+ek pate par ek sandesh bhejata hai
+praaptakarta mel pata darj karen:
+vishay darj karen:
+apana sandesh neeche darj karen. pushti karane ke lie "EOF" likhen.
+sandesh bhejana...
+maisej beja gaya.
+sandesh bhejane mein truti: {0}
+amaany eemel pata. sunishchit karen ki aapane pata sahee likha hai aur yah dikhae gae udaaharan ke praaroop se mel khaata hai:
+ek sandesh nikaalata hai
+praaptakarta se sabhee sandeshon ko nikaalata hai
+{1} se {0} sandesh {2} se hata diya gaya. {3} sandesh paars karane ke lie shesh hai.
+inaboks se {0} sandesh {0} hatae gae. {3} sandesh paars karane ke lie shesh hai.
+ek paath fail ko sampaadit karata hai
+ek naee fail banaata hai
+fail pahale se hee maujood hai.
+fail banaane ka prayaas karane mein truti: {0}
+fail kholane mein asamarth. shel se baahar ...
+nirdisht paath sampaadak kamaand nahin mila hai.
+upalabdh aadeshon ko soocheebaddh karata hai
+paath sampaadak se baahar nikalata hai aur saheje gae parivartanon ko sahejata hai
+kansol ke lie lain nambar ke saath fail kee saamagree ko print karata hai
+fail ke ant mein paath ke saath ek naee pankti jodata hai
+nirdisht pankti sankhya ko nikaalata hai
+ek shabd ya vaakyaansh ko doosare ke saath badal deta hai
+kisee shabd ya vaakyaansh ko pankti sankhya se hataata hai
+nirdisht pankti mein varn sankhya se ek varn hataata hai
+hataee gaee lain.
+nirdisht pankti sankhya {0} ek maany sankhya nahin hai.
+aavashyak tark ko {0} kamaand karane ke lie paarit nahin kiya jaata hai
+kamaand chalaane mein truti: {0}
+surakshit mod mein chal raha hai. skiping stej ...
+>> doorasth dibag aur chait: sanskaran
+>> aapaka pata {0} hai.
+>> aapaka naam {0} hai.
+kamaand {0} nahin milee. soochee dekhane ke lie "/help" ka upayog karen.
+soochakaank {0} amaany hai. {1} staik ke nishaan hain. soochakaank shoony-aadhaarit hai, isalie 1 se ghataakar dekhen.
+koee staik tres nahin
+apavaad par antim staik tres dikhaata hai
+satr mein vartamaan upayogakarta naam dikhaata hai
+aapako dibagar se diskanekt karata hai
+ip pate dvaara dibag divais ko anablok karen
+ip pate dvaara dibag divais ko blok karen
+{0} ab phir se doorasth dibag mein shaamil ho sakate hain.
+{0} abhee tak avaruddh nahin hai.

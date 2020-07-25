@@ -598,3 +598,59 @@ Consente all'utente di inserire input
 Cambia la directory di posta corrente
 Impossibile aprire la cartella di posta {0}: {1}
 Elenca le directory nel tuo indirizzo e-mail
+Utilizza le informazioni di Chiamata veloce per connettersi rapidamente a qualsiasi rete
+Seleziona un indirizzo a cui connetterti:
+La selezione è fuori portata. Selezionare tra 1- {0}. Riprova.
+La selezione non è un numero. Riprova.
+Durante la convalida del certificato, ci sono errori di certificato. Potrebbe essere la prima volta che ti connetti al server o il certificato potrebbe essere scaduto. Ecco un errore:
+Sei sicuro di voler connetterti?
+Risposta non valida Per favore riprova.
+La composizione rapida è vuota. Connettiti a un server per aggiungere un indirizzo ad esso.
+La composizione rapida non esiste. Connettiti a un server per aggiungere un indirizzo ad esso.
+Immettere l'indirizzo e la porta del server IMAP (<indirizzo> o <indirizzo>: [porta]):
+Immettere l'indirizzo e la porta del server SMTP (<indirizzo> o <indirizzo>: [porta]):
+Ti chiede di compilare i campi richiesti per inviare un messaggio a un indirizzo
+Invia un messaggio a un indirizzo
+Inserisci l'indirizzo e-mail del destinatario:
+Inserisci l'oggetto:
+Inserisci il tuo messaggio qui sotto. Scrivi "EOF" per confermare.
+Invio messaggio in corso ...
+Messaggio inviato.
+Errore durante l'invio del messaggio: {0}
+Indirizzo email non valido. Assicurati di aver scritto correttamente l'indirizzo e che corrisponda al formato dell'esempio mostrato:
+Rimuove un messaggio
+Rimuove tutti i messaggi dal destinatario
+Messaggio {0} da {1} eliminato da {2}. {3} messaggi rimanenti da analizzare.
+Messaggio {0} da {1} eliminato dalla posta in arrivo. {3} messaggi rimanenti da analizzare.
+Modifica un file di testo
+Crea un nuovo file
+Il file esiste già.
+Errore durante il tentativo di creare un file: {0}
+Impossibile aprire il file. Uscita dalla shell ...
+Il comando dell'editor di testo specificato non è stato trovato.
+Elenca i comandi disponibili
+Esce dall'editor di testo e salva le modifiche non salvate
+Stampa il contenuto del file con i numeri di riga sulla console
+Aggiunge una nuova riga con testo alla fine del file
+Rimuove il numero di riga specificato
+Sostituisce una parola o una frase con un'altra
+Elimina una parola o una frase dal numero di riga
+Elimina un carattere dal numero di carattere nella riga specificata
+Linea rimossa.
+Il numero di riga specificato {0} non è un numero valido.
+Gli argomenti richiesti non vengono passati al comando {0}
+Errore durante il tentativo di eseguire il comando: {0}
+In esecuzione in modalità provvisoria. Saltare il palco ...
+>> Debug remoto e chat: versione
+>> Il tuo indirizzo è {0}.
+>> Il tuo nome è {0}.
+Comando {0} non trovato. Utilizzare "/help" per visualizzare l'elenco.
+Indice {0} non valido. Ci sono {1} tracce dello stack. L'indice è a base zero, quindi prova a sottrarre 1.
+Nessuna traccia dello stack
+Mostra l'ultima traccia dello stack su eccezione
+Mostra il nome utente corrente nella sessione
+Ti disconnette dal debugger
+Sblocca un dispositivo di debug in base all'indirizzo IP
+Blocca un dispositivo di debug per indirizzo IP
+{0} ora può ricollegarsi al debug remoto.
+{0} non è ancora bloccato.

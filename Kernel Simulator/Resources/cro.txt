@@ -598,3 +598,59 @@ Omogućuje korisniku da unese unos
 Mijenja trenutni direktorij pošte
 Nije moguće otvoriti mapu pošte {0}: {1}
 Navodi adrese u vašoj adresi e-pošte
+Koristi podatke s brzog biranja za brzo povezivanje s bilo kojom mrežom
+Odaberite adresu za povezivanje:
+Odabir je izvan raspona. Odaberite između 1-{0}. Pokušajte ponovo.
+Odabir nije broj. Pokušajte ponovo.
+Tijekom provjere valjanosti postoje certifikacijske pogreške. To bi moglo biti prvi put da ste se povezali s poslužiteljem ili je certifikat možda istekao. Evo pogreške:
+Jeste li sigurni da se želite povezati?
+Nevažeći odgovor. Molim te pokušaj ponovno.
+Brzo biranje je prazno. Spojite se na poslužitelj kako biste mu dodali adresu.
+Brzo biranje ne postoji. Spojite se na poslužitelj kako biste mu dodali adresu.
+Unesite adresu i port IMAP poslužitelja (<adresa> ili <adresa>:[port]):
+Unesite adresu i port SMTP poslužitelja (<adresa> ili <adresa>:[port]):
+Od vas traži da ispunite potrebna polja za slanje poruke na adresu
+Šalje poruku na adresu
+Unesite adresu e-pošte primatelja:
+Unesite temu:
+Unesite svoju poruku u nastavku. Za potvrdu napišite "EOF".
+Slanje poruke ...
+Poruka je poslana.
+Pogreška kod slanja poruke: {0}
+Nevažeća adresa e-pošte. Provjerite jeste li ispravno napisali adresu i odgovara li formatu prikazanog primjera:
+Uklanja poruku
+Uklanja sve poruke od primatelja
+Poruka {0} od {1} izbrisana je iz {2}. {3} preostale poruke za analizu.
+Poruka {0} od {1} izbrisana je u pristigloj pošti. {3} preostale poruke za analizu.
+Uređuje tekstualnu datoteku
+Izrađuje novu datoteku
+Datoteka već postoji.
+Pogreška prilikom pokušaja izrade datoteke: {0}
+Otvaranje datoteke nije uspjelo. Izlaz iz ljuske ...
+Navedena naredba za uređivanje teksta nije pronađena.
+Navodi dostupne naredbe
+Izlazi iz uređivača teksta i sprema nespremljene promjene
+Ispisuje sadržaj datoteke s brojevima linija na konzolu
+Dodaje novi redak s tekstom na kraju datoteke
+Uklanja navedeni broj retka
+Zamjenjuje riječ ili frazu drugom
+Izbriše riječ ili frazu iz broja retka
+Brisanje znaka iz broja znaka u navedenom retku
+Uklonjena je linija.
+Navedeni broj retka {0} nije važeći broj.
+Traženi argumenti se ne prosljeđuju naredbi {0}
+Pogreška pri pokušaju pokretanja naredbe: {0}
+Trčanje u sigurnom načinu rada. Preskakanje faze ...
+>> Daljinski ispravljanje pogrešaka i chat: verzija
+>> Vaša je adresa {0}.
+>> Vaše ime je {0}.
+Naredba {0} nije pronađena. Upotrijebite "/help" za prikaz popisa.
+Indeks {0} nije valjan. Postoje tragovi snopa {1}. Indeks se temelji na nuli pa pokušajte oduzeti 1.
+Nema traga staglu
+Pokazuje iznimku traga snopa osim iznimke
+Prikazuje trenutačno korisničko ime u sesiji
+Prekida vas vezu s ispravljačem greške
+Deblokirajte uređaj za uklanjanje pogrešaka prema IP adresi
+Blokirajte uređaj za uklanjanje pogrešaka prema IP adresi
+{0} sada se može ponovno pridružiti daljinskom uklanjanju pogrešaka.
+{0} još nije blokiran.

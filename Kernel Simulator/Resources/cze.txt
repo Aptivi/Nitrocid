@@ -598,3 +598,59 @@ Umožňuje uživateli zadat vstup
 Změní aktuální poštovní adresář
 Nelze otevřít poštovní složku {0}: {1}
 Uvádí adresáře ve vaší e-mailové adrese
+K rychlému připojení k jakékoli síti používá informace z rychlé volby
+Vyberte adresu, ke které se chcete připojit:
+Výběr je mimo rozsah. Vyberte mezi 1-{0}. Zkus to znovu.
+Výběr není číslo. Zkus to znovu.
+Během ověřování certifikátu existují chyby certifikátu. Může to být poprvé, kdy jste se připojili k serveru, nebo mohlo dojít k vypršení platnosti certifikátu. Zde je chyba:
+Jste si jisti, že se chcete připojit?
+Neplatná odpověď. Prosím zkuste to znovu.
+Rychlá volba je prázdná. Připojte se k serveru a přidejte na něj adresu.
+Rychlá volba neexistuje. Připojte se k serveru a přidejte na něj adresu.
+Zadejte adresu a port serveru IMAP (<adresa> nebo <adresa>:[port]):
+Zadejte adresu a port serveru SMTP (<adresa> nebo <adresa>:[port]):
+Požádá o vyplnění povinných polí pro odeslání zprávy na adresu
+Odešle zprávu na adresu
+Zadejte e-mailovou adresu příjemce:
+Zadejte předmět:
+Zadejte svou zprávu níže. Potvrďte "EOF".
+Odesílání zprávy ...
+Zpráva odeslána.
+Chyba při odesílání zprávy: {0}
+Neplatná emailová adresa. Ujistěte se, že jste adresu napsali správně a zda odpovídá formátu příkladu uvedeného na obrázku:
+Odstraní zprávu
+Odstraní všechny zprávy od příjemce
+Zpráva {0} z {1} byla odstraněna z {2}. {3} zbývajících zpráv k analýze.
+Zpráva {0} od {1} byla odstraněna ze složky Doručená pošta. {3} zbývajících zpráv k analýze.
+Upravuje textový soubor
+Vytvoří nový soubor
+Soubor již existuje.
+Chyba při pokusu o vytvoření souboru: {0}
+Otevření souboru se nezdařilo. Ukončení shellu ...
+Zadaný příkaz textového editoru nebyl nalezen.
+Vypíše dostupné příkazy
+Ukončí textový editor a uloží neuložené změny
+Vytiskne obsah souboru s čísly řádků na konzoli
+Na konec souboru přidá nový řádek s textem
+Odstraní zadané číslo řádku
+Nahrazuje slovo nebo frázi jiným
+Odstraní slovo nebo frázi z čísla řádku
+Odstraní znak z čísla znaku na zadaném řádku
+Řádek byl odstraněn.
+Zadané číslo řádku {0} není platné číslo.
+Požadované argumenty nejsou předány příkazu {0}
+Chyba při pokusu o spuštění příkazu: {0}
+Běží v nouzovém režimu. Přeskočení fáze ...
+>> Vzdálený ladění a chat: verze
+>> Vaše adresa je {0}.
+>> Vaše jméno je {0}.
+Příkaz {0} nebyl nalezen. Seznam zobrazíte kliknutím na "/help".
+Index {0} neplatný. Existují {1} stopy zásobníku. Index je nulový, takže zkuste odečíst 1.
+Žádné trasování zásobníku
+Zobrazuje poslední trasování zásobníku s výjimkou
+Zobrazuje aktuální uživatelské jméno v relaci
+Odpojí vás od debuggeru
+Odblokujte ladicí zařízení pomocí adresy IP
+Blokovat ladicí zařízení pomocí adresy IP
+{0} se nyní může připojit ke vzdálenému ladění.
+{0} dosud není blokován.
