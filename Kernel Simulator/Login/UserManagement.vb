@@ -166,6 +166,38 @@ Public Module UserManagement
         End Try
     End Sub
 
+    Public Sub ChangeUsername(ByVal OldName As String, ByVal Username As String)
+        If userword.ContainsKey(OldName) Then
+            If Not userword.ContainsKey(Username) Then
+                'Store user password
+                Dim Temporary As String = userword(OldName)
+
+                'Rename username in dictionary
+                userword.Remove(OldName)
+                userword.Add(Username, Temporary)
+                PermissionEditForNewUser(OldName, Username)
+
+                'Rename username in users.csv
+                Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+                For i As Integer = 0 To UsersLines.Count - 1
+                    If UsersLines(i).StartsWith($"{OldName},") Then
+                        UsersLines(i) = UsersLines(i).Replace(OldName, Username)
+                        Exit For
+                    End If
+                Next
+                File.WriteAllLines(paths("Users"), UsersLines)
+
+                'Inform user of changes
+                W(DoTranslation("Username has been changed to {0}!", currentLang), True, ColTypes.Neutral, Username)
+            Else
+                W(DoTranslation("The new name you entered is already found.", currentLang), True, ColTypes.Err)
+                Exit Sub
+            End If
+        Else
+            W(DoTranslation("User {0} not found.", currentLang), True, ColTypes.Err, OldName)
+        End If
+    End Sub
+
     '---------- Previously on Groups.vb ----------
     ''' <summary>
     ''' This enumeration lists all permission types.

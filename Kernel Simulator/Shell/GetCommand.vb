@@ -333,26 +333,10 @@ Public Module GetCommand
             ElseIf words(0) = "chusrname" Then
 
                 If requestedCommand <> "chusrname" Then
-                    Dim DoneFlag As Boolean = False
                     If args.Count - 1 >= 1 Then
-                        If userword.ContainsKey(args(0)) = True Then
-                            If Not userword.ContainsKey(args(1)) = True Then
-                                DoneFlag = True
-                                Dim temporary As String = userword(args(0))
-                                userword.Remove(args(0))
-                                userword.Add(args(1), temporary)
-                                PermissionEditForNewUser(args(0), args(1))
-                                W(DoTranslation("Username has been changed to {0}!", currentLang), True, ColTypes.Neutral, args(1))
-                                If args(0) = signedinusrnm Then
-                                    LoginPrompt()
-                                End If
-                            Else
-                                W(DoTranslation("The new name you entered is already found.", currentLang), True, ColTypes.Err)
-                                Exit Sub
-                            End If
-                        End If
-                        If DoneFlag = False Then
-                            W(DoTranslation("User {0} not found.", currentLang), True, ColTypes.Err, args(0))
+                        ChangeUsername(args(0), args(1))
+                        If args(0) = signedinusrnm Then
+                            LogoutRequested = True
                         End If
                         Done = True
                     End If
