@@ -339,9 +339,6 @@ Public Module KernelTools
         'Check for multiple instances of KS
         If instanceChecked = False Then MultiInstance()
 
-        'Open debugging stream
-        If IsNothing(dbgWriter) And DebugMode Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
-
         'Write headers for debug
         Wdbg("I", "-------------------------------------------------------------------")
         Wdbg("I", "Kernel initialized, version {0}.", KernelVersion)
