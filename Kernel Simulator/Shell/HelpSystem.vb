@@ -85,7 +85,6 @@ Public Module HelpSystem
                                                               {"showtd", DoTranslation("Shows date and time", currentLang)},
                                                               {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
                                                               {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
-                                                              {"speak", DoTranslation("Speaks your string using the default voice", currentLang)},
                                                               {"spellbee", DoTranslation("See if you can spell words correctly on time", currentLang)},
                                                               {"sshell", DoTranslation("Connects to an SSH server.", currentLang)},
                                                               {"sumfile", DoTranslation("Calculates file sums.", currentLang)},
@@ -391,10 +390,6 @@ Public Module HelpSystem
         ElseIf command = "spellbee" Then
 
             W(DoTranslation("Usage:", currentLang) + " spellbee: " + DoTranslation("See if you can spell words correctly on time", currentLang), True, ColTypes.Neutral)
-
-        ElseIf command = "speak" Then
-
-            W(DoTranslation("Usage:", currentLang) + " speak <String>: " + DoTranslation("Speaks your string using the default voice", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "sshell" Then
 

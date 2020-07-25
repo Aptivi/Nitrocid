@@ -10,6 +10,8 @@ This simulator simulates our **future** kernel that is planned by us and is not 
 
 We have recently managed to get Kernel Simulator to build on Launchpad PPA. See the home page [here](https://launchpad.net/~eofla/+archive/ubuntu/kernel-sim) and the project page [here](https://launchpad.net/kernel-sim).
 
+We are no longer providing KS with speak and soundtest commands because of odd errors in Windows platform and VLC library instabilities in Linux. We are working to restore it in future versions.
+
 ## |-----+--> _Notices_ <--+-----|
 
 - If you are going to use Chinese/Japanese/Korean languages in their translated forms, use `SimSun` or other appropriate font.
@@ -62,13 +64,9 @@ NOTE: Make sure to follow the prerequisites.
 
 - Microsoft.VisualBasic.dll 10.0 (Debian and its derivatives: `sudo apt install libmono-microsoft-visualbasic10.0-cil`)
 
-- VLC Media Player (For TTS and playback for test shell) (Debian and its derivatives: `sudo apt install vlc libvlc-dev gtk-sharp2`)
-
 - Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi libcpanel-json-xs-perl`)
 
 - A console that supports native VT escape sequences, like [Konsole](https://konsole.kde.org/), [GNOME Terminal](https://wiki.gnome.org/Apps/Terminal), and so on.
-
-- Use the `isolated` binaries to get KS without Windows VLC dependencies.
 
 ## |-----+--> _Build Instructions_ <--+-----|
 
@@ -268,7 +266,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **7/8/2020 - 0.0.10.1:** Fixed OutOfMemoryException when hashing large files, Added a new CI test that encrypts a string
 
-**7/25/2020 - 0.0.11:** Added command cancellation when CTRL+C is pressed implementation, Added `shutdown` command to test shell, Made `exit` exit the test shell and start the kernel, Implemented Speed Dial for FTP shell for faster connection, Fixed FTPS using wrong encryption type, Added simple send message to mail client (IMAP shell changed to mail shell), Fixed port parsing in mail shell, Made screensaver timeouts customizable, Added `mkfile` and `edit` commands, Added basic text editor
+**7/25/2020 - 0.0.11:** Added command cancellation when CTRL+C is pressed implementation, Added `shutdown` command to test shell, Made `exit` exit the test shell and start the kernel, Implemented Speed Dial for FTP shell for faster connection, Fixed FTPS using wrong encryption type, Added simple send message to mail client (IMAP shell changed to mail shell), Fixed port parsing in mail shell, Made screensaver timeouts customizable, Added `mkfile` and `edit` commands, Added basic text editor, Removed `speak` command and `soundtest` test command due to instabilities on sound library
 
 Items with asterisk means that the specified change/fix will be backported to previous version of KS which doesn't have it (only for Ubuntu PPA version, backports as Debian patches)
 

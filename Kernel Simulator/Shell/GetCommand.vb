@@ -999,12 +999,6 @@ Public Module GetCommand
                     PowerManage("shutdown")
                 End If
 
-
-            ElseIf words(0) = "speak" Then
-
-                Speak(strArgs)
-                Done = True
-
             ElseIf words(0) = "spellbee" Then
 
                 Done = True
