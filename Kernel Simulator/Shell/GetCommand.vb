@@ -691,7 +691,7 @@ Public Module GetCommand
 
                 If requestedCommand <> "perm" Then
                     If args.Count - 1 = 2 Then
-                        Permission(args(1), args(0), args(2))
+                        Permission([Enum].Parse(GetType(PermissionType), args(1)), args(0), [Enum].Parse(GetType(PermissionManagementMode), args(2)))
                         Done = True
                     End If
                 End If

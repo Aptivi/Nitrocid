@@ -305,7 +305,7 @@ Public Module HelpSystem
 
         ElseIf command = "perm" Then
 
-            W(DoTranslation("Usage:", currentLang) + " perm <userName> <Admin/Disabled> <Allow/Disallow>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " perm <userName> <Administrator/Disabled> <Allow/Disallow>", True, ColTypes.Neutral)
 
         ElseIf command = "ping" Then
 

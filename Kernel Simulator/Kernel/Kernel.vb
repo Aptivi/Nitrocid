@@ -89,7 +89,7 @@ Public Module Kernel
                 W(vbNewLine + DoTranslation("- Stage 2: Internal username management", currentLang), True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 2: Manage internal usernames")
                 AddUser("root", RootPasswd)
-                Permission("Admin", "root", "Allow")
+                Permission(PermissionType.Administrator, "root", PermissionManagementMode.Allow)
                 LoginFlag = True
 
                 'Phase 3: Parse Mods and Screensavers
@@ -102,6 +102,8 @@ Public Module Kernel
                     For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
                         CompileCustom(modFile.Replace(modPath, ""))
                     Next
+                Else
+                    W(DoTranslation("Running in safe mode. Skipping stage...", currentLang), True, ColTypes.Neutral)
                 End If
 
                 'Phase 4: Free unused RAM and raise the started event

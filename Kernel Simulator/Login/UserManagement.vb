@@ -168,62 +168,78 @@ Public Module UserManagement
 
     '---------- Previously on Groups.vb ----------
     ''' <summary>
+    ''' This enumeration lists all permission types.
+    ''' </summary>
+    Public Enum PermissionType As Integer
+        Administrator = 1
+        Disabled
+    End Enum
+
+    ''' <summary>
+    ''' It specifies whether or not to allow permission
+    ''' </summary>
+    Public Enum PermissionManagementMode As Integer
+        Allow = 1
+        Disallow
+    End Enum
+
+    ''' <summary>
     ''' Manages permissions
     ''' </summary>
-    ''' <param name="type">A type of permission</param>
-    ''' <param name="username">A specified username</param>
-    ''' <param name="mode">Whether to allow or disallow a specified type for a user</param>
-    Public Sub Permission(ByVal type As String, ByVal username As String, ByVal mode As String)
+    ''' <param name="PermType">A type of permission</param>
+    ''' <param name="Username">A specified username</param>
+    ''' <param name="PermissionMode">Whether to allow or disallow a specified type for a user</param>
+    Public Sub Permission(ByVal PermType As PermissionType, ByVal Username As String, ByVal PermissionMode As PermissionManagementMode)
 
         'Adds user into permission lists.
         Try
-            Wdbg("I", "Mode: {0}", mode)
-            If mode = "Allow" Then
-                If userword.Keys.ToArray.Contains(username) Then
-                    Wdbg("I", "Type is {0}", type)
-                    If type = "Admin" Then
-                        adminList(username) = True
-                        Wdbg("I", "User {0} allowed (Admin): {1}", username, adminList(username))
-                        W(DoTranslation("The user {0} has been added to the admin list.", currentLang), True, ColTypes.Neutral, username)
-                    ElseIf type = "Disabled" Then
-                        disabledList(username) = True
-                        Wdbg("I", "User {0} allowed (Disabled): {1}", username, disabledList(username))
-                        W(DoTranslation("The user {0} has been added to the disabled list.", currentLang), True, ColTypes.Neutral, username)
+            Wdbg("I", "Mode: {0}", PermissionMode)
+            If PermissionMode = PermissionManagementMode.Allow Then
+                If userword.Keys.ToArray.Contains(Username) Then
+                    Wdbg("I", "Type is {0}", PermType)
+                    If PermType = PermissionType.Administrator Then
+                        adminList(Username) = True
+                        Wdbg("I", "User {0} allowed (Admin): {1}", Username, adminList(Username))
+                        W(DoTranslation("The user {0} has been added to the admin list.", currentLang), True, ColTypes.Neutral, Username)
+                    ElseIf PermType = PermissionType.Disabled Then
+                        disabledList(Username) = True
+                        Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
+                        W(DoTranslation("The user {0} has been added to the disabled list.", currentLang), True, ColTypes.Neutral, Username)
                     Else
                         Wdbg("W", "Type is invalid")
-                        W(DoTranslation("Failed to add user into permission lists: invalid type {0}", currentLang), True, ColTypes.Err, type)
+                        W(DoTranslation("Failed to add user into permission lists: invalid type {0}", currentLang), True, ColTypes.Err, PermType)
                         Exit Sub
                     End If
                 Else
-                    Wdbg("W", "User {0} not found on list", username)
-                    W(DoTranslation("Failed to add user into permission lists: invalid user {0}", currentLang), True, ColTypes.Err, username)
+                    Wdbg("W", "User {0} not found on list", Username)
+                    W(DoTranslation("Failed to add user into permission lists: invalid user {0}", currentLang), True, ColTypes.Err, Username)
                 End If
-            ElseIf mode = "Disallow" Then
-                If userword.Keys.ToArray.Contains(username) And username <> signedinusrnm Then
-                    Wdbg("I", "Type is {0}", type)
-                    If type = "Admin" Then
-                        Wdbg("I", "User {0} allowed (Admin): {1}", username, adminList(username))
-                        adminList(username) = False
-                        W(DoTranslation("The user {0} has been removed from the admin list.", currentLang), True, ColTypes.Neutral, username)
-                    ElseIf type = "Disabled" Then
-                        Wdbg("I", "User {0} allowed (Disabled): {1}", username, disabledList(username))
-                        disabledList(username) = False
-                        W(DoTranslation("The user {0} has been removed from the disabled list.", currentLang), True, ColTypes.Neutral, username)
+            ElseIf PermissionMode = PermissionManagementMode.Disallow Then
+                If userword.Keys.ToArray.Contains(Username) And Username <> signedinusrnm Then
+                    Wdbg("I", "Type is {0}", PermType)
+                    If PermType = PermissionType.Administrator Then
+                        Wdbg("I", "User {0} allowed (Admin): {1}", Username, adminList(Username))
+                        adminList(Username) = False
+                        W(DoTranslation("The user {0} has been removed from the admin list.", currentLang), True, ColTypes.Neutral, Username)
+                    ElseIf PermType = PermissionType.Disabled Then
+                        Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
+                        disabledList(Username) = False
+                        W(DoTranslation("The user {0} has been removed from the disabled list.", currentLang), True, ColTypes.Neutral, Username)
                     Else
                         Wdbg("W", "Type is invalid")
-                        W(DoTranslation("Failed to remove user from permission lists: invalid type {0}", currentLang), True, ColTypes.Err, type)
+                        W(DoTranslation("Failed to remove user from permission lists: invalid type {0}", currentLang), True, ColTypes.Err, PermType)
                         Exit Sub
                     End If
-                ElseIf username = signedinusrnm Then
+                ElseIf Username = signedinusrnm Then
                     W(DoTranslation("You are already logged in.", currentLang), True, ColTypes.Err)
                     Exit Sub
                 Else
-                    Wdbg("W", "User {0} not found on list", username)
-                    W(DoTranslation("Failed to remove user from permission lists: invalid user {0}", currentLang), True, ColTypes.Err, username)
+                    Wdbg("W", "User {0} not found on list", Username)
+                    W(DoTranslation("Failed to remove user from permission lists: invalid user {0}", currentLang), True, ColTypes.Err, Username)
                 End If
             Else
                 Wdbg("W", "Mode is invalid")
-                W(DoTranslation("You have found a bug in the permission system: invalid mode {0}", currentLang), True, ColTypes.Err, mode)
+                W(DoTranslation("You have found a bug in the permission system: invalid mode {0}", currentLang), True, ColTypes.Err, PermissionMode)
             End If
         Catch ex As Exception
             If DebugMode = True Then
@@ -241,28 +257,28 @@ Public Module UserManagement
     ''' <summary>
     ''' Edits the permission database for new user name
     ''' </summary>
-    ''' <param name="oldName">Old username</param>
-    ''' <param name="username">New username</param>
-    Public Sub PermissionEditForNewUser(ByVal oldName As String, ByVal username As String)
+    ''' <param name="OldName">Old username</param>
+    ''' <param name="Username">New username</param>
+    Public Sub PermissionEditForNewUser(ByVal OldName As String, ByVal Username As String)
 
         'Edit username (continuation for changeName() sub)
         Try
-            If adminList.ContainsKey(oldName) = True And disabledList.ContainsKey(oldName) = True Then
+            If adminList.ContainsKey(OldName) = True And disabledList.ContainsKey(OldName) = True Then
                 'Store permissions
-                Dim temporary1 As Boolean = adminList(oldName)
-                Dim temporary2 As Boolean = disabledList(oldName)
+                Dim Temporary1 As Boolean = adminList(OldName)
+                Dim Temporary2 As Boolean = disabledList(OldName)
 
                 'Remove old user entry
-                Wdbg("I", "Removing {0} from Admin List", oldName)
-                adminList.Remove(oldName)
-                Wdbg("I", "Removing {0} from Disabled List", oldName)
-                disabledList.Remove(oldName)
+                Wdbg("I", "Removing {0} from Admin List", OldName)
+                adminList.Remove(OldName)
+                Wdbg("I", "Removing {0} from Disabled List", OldName)
+                disabledList.Remove(OldName)
 
                 'Add new user entry
-                adminList.Add(username, temporary1)
-                Wdbg("I", "Added {0} to Admin List with value of {1}", username, temporary1)
-                disabledList.Add(username, temporary2)
-                Wdbg("I", "Added {0} to Disabled List with value of {1}", username, temporary2)
+                adminList.Add(Username, Temporary1)
+                Wdbg("I", "Added {0} to Admin List with value of {1}", Username, Temporary1)
+                disabledList.Add(Username, Temporary2)
+                Wdbg("I", "Added {0} to Disabled List with value of {1}", Username, Temporary2)
             End If
         Catch ex As Exception
             If DebugMode = True Then
