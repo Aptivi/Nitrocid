@@ -78,9 +78,9 @@ Module RemoteDebugger
                     RDebugName = RDebugDNP + CStr(RDebugRandomID)
                     dbgConns.Add(RDebugSWriter, RDebugName)
                     DebugDevices.Add(RDebugClient, RDebugIP)
-                    RDebugSWriter.WriteLine(">> Chat version 0.4") 'Increment each minor/major change(s)
-                    RDebugSWriter.WriteLine(">> Your address is {0}.", RDebugIP)
-                    RDebugSWriter.WriteLine(">> Your name is {0}.", RDebugName)
+                    RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version", currentLang) + " 0.4") 'Increment each minor/major change(s)
+                    RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}.", currentLang), RDebugIP)
+                    RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}.", currentLang), RDebugName)
                     Wdbg("I", "Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
                     RDebugSWriter.Flush()
                 End If
@@ -128,7 +128,7 @@ Module RemoteDebugger
                                 'Alias parsing starts here.
                                 ExecuteRDAlias(cmd, dbgConns.Keys(i - 1), ip)
                             Else
-                                dbgConns.Keys(i - 1).WriteLine("Command {0} not found. Use ""/help"" to see the list.", cmd.Split(" ")(0))
+                                dbgConns.Keys(i - 1).WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list.", currentLang), cmd.Split(" ")(0))
                             End If
                         Else
                             Wdbg("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))

@@ -38,22 +38,22 @@ Module RemoteDebugCmd
                     Try
                         SocketStreamWriter.WriteLine(dbgStackTraces(CmdArgs(0)))
                     Catch ex As Exception
-                        SocketStreamWriter.WriteLine("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.", CmdArgs(0), dbgStackTraces.Count)
+                        SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.", currentLang), CmdArgs(0), dbgStackTraces.Count)
                     End Try
                 Else
                     SocketStreamWriter.WriteLine(dbgStackTraces(0))
                 End If
             Else
-                SocketStreamWriter.WriteLine("No stack trace")
+                SocketStreamWriter.WriteLine(DoTranslation("No stack trace", currentLang))
             End If
         ElseIf CmdName = "username" Then
             'Current username
             SocketStreamWriter.WriteLine(signedinusrnm)
         ElseIf CmdName = "help" Then
             'Help command code
-            SocketStreamWriter.WriteLine("- trace <TraceNumber>: Shows last stack trace on exception" + vbNewLine +
-                                         "- username: Shows current username in the session" + vbNewLine +
-                                         "- exit: Disconnects you from the debugger")
+            SocketStreamWriter.WriteLine("- /trace <TraceNumber>: " + DoTranslation("Shows last stack trace on exception", currentLang) + vbNewLine +
+                                         "- /username: " + DoTranslation("Shows current username in the session", currentLang) + vbNewLine +
+                                         "- /exit: " + DoTranslation("Disconnects you from the debugger", currentLang))
         ElseIf CmdName = "exit" Then
             'Exit command code
             DisconnectDbgDev(Address, False)

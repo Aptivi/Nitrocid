@@ -74,9 +74,9 @@ Public Module FTPGetCommand
                     'Check if folder exists
                     Dim targetDir As String
                     targetDir = $"{currDirect}/{strArgs}"
-                    If IO.Directory.Exists(targetDir) Then
+                    If Directory.Exists(targetDir) Then
                         'Parse written directory
-                        Dim parser As New IO.DirectoryInfo(targetDir)
+                        Dim parser As New DirectoryInfo(targetDir)
                         currDirect = parser.FullName
                     Else
                         W(DoTranslation("Local directory {0} doesn't exist.", currentLang), True, ColTypes.Err, strArgs)

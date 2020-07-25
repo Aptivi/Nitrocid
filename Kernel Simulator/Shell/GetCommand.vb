@@ -30,6 +30,7 @@ Public Module GetCommand
     ''' </summary>
     ''' <param name="requestedCommand">A command. It may contain arguments</param>
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
+        'TODO: Rework into how to parse arguments
         '1. Get the index of the first space (Used for step 3)
         Dim index As Integer = requestedCommand.IndexOf(" ")
         If index = -1 Then index = requestedCommand.Length

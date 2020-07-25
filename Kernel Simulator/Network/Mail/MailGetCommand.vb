@@ -34,67 +34,76 @@ Module MailGetCommand
     Sub Mail_ExecuteCommand(ByVal Parameters As String()) 'This is converted to String() to ensure compatibility with Threading.Thread.
         Dim cmd As String = Parameters(0)
         Dim args As String = Parameters(1)
-        Dim FullArgsL As List(Of String) = args.Split(" ").ToList
+        Dim FullArgsL As List(Of String) = args.Split({" "}, StringSplitOptions.RemoveEmptyEntries).ToList
+        Dim RequiredArgsProvided As Boolean
         Wdbg("I", "Arguments count: {0}", FullArgsL.Count)
 
         Try
             If cmd = "help" Then
+                RequiredArgsProvided = True
                 IMAPShowHelp()
             ElseIf cmd = "cd" Then
-                Wdbg("I", "Opening folder: {0}", FullArgsL(0))
-                Try
-                    SyncLock IMAP_Client.SyncRoot
-                        OpenFolder(FullArgsL(0))
-                    End SyncLock
-                    IMAP_CurrentDirectory = FullArgsL(0)
-                    Wdbg("I", "Current directory changed.")
-                Catch ex As Exception
-                    Wdbg("I", "Failed to open folder {0}: {1}", FullArgsL(0), ex.Message)
-                    W(DoTranslation("Unable to open mail folder {0}: {1}", currentLang), True, ColTypes.Err, FullArgsL(0), ex.Message)
-                    WStkTrc(ex)
-                End Try
+                If FullArgsL.Count > 0 Then
+                    RequiredArgsProvided = True
+                    Wdbg("I", "Opening folder: {0}", FullArgsL(0))
+                    Try
+                        SyncLock IMAP_Client.SyncRoot
+                            OpenFolder(FullArgsL(0))
+                        End SyncLock
+                        IMAP_CurrentDirectory = FullArgsL(0)
+                        Wdbg("I", "Current directory changed.")
+                    Catch ex As Exception
+                        Wdbg("I", "Failed to open folder {0}: {1}", FullArgsL(0), ex.Message)
+                        W(DoTranslation("Unable to open mail folder {0}: {1}", currentLang), True, ColTypes.Err, FullArgsL(0), ex.Message)
+                        WStkTrc(ex)
+                    End Try
+                End If
             ElseIf cmd = "exit" Then
+                RequiredArgsProvided = True
                 ExitRequested = True
             ElseIf cmd = "list" Then
-                Wdbg("I", "Page is numeric? {0}", FullArgsL(0).IsNumeric)
-                If FullArgsL(0).IsNumeric Then
-                    Dim Page As Integer
-                    If FullArgsL(0) = "" Then Page = 1 Else Page = FullArgsL(0)
-                    Wdbg("I", "Page number {0}", Page)
-                    If Page <= 0 Then
-                        Wdbg("E", "Trying to access page 0 or less than 0.")
-                        W(DoTranslation("Page may not be negative or zero.", currentLang), True, ColTypes.Err)
-                        Exit Sub
-                    End If
-                    Dim MsgsLimitForPg As Integer = 10
-                    Dim FirstIndex As Integer = (MsgsLimitForPg * Page) - 10
-                    Dim LastIndex As Integer = (MsgsLimitForPg * Page) - 1
-                    Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
-                    Wdbg("I", "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", MsgsLimitForPg, FirstIndex, LastIndex)
-                    For i As Integer = FirstIndex To LastIndex
-                        If Not i > MaxMessagesIndex Then
-                            Wdbg("I", "Getting message {0}...", i)
-                            SyncLock IMAP_Client.SyncRoot
-                                Dim Msg As MimeMessage
-                                If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                                    Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                                    Msg = Dir.GetMessage(IMAP_Messages(i))
-                                Else
-                                    Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i))
-                                End If
-                                Dim MsgFrom As String = Msg.From.ToString
-                                Dim MsgSubject As String = Msg.Subject
-                                Wdbg("I", "From {0}: {1}", MsgFrom, MsgSubject)
-                                W("- [{0}] {1}: ", False, ColTypes.HelpCmd, i + 1, Msg.From) : W("{0}", True, ColTypes.HelpDef, Msg.Subject)
-                            End SyncLock
-                        Else
-                            Wdbg("W", "Reached max message limit. Message number {0}", i)
+                If FullArgsL.Count > 0 Then
+                    Wdbg("I", "Page is numeric? {0}", FullArgsL(0).IsNumeric)
+                    If FullArgsL(0).IsNumeric Then
+                        Dim Page As Integer
+                        If FullArgsL(0) = "" Then Page = 1 Else Page = FullArgsL(0)
+                        Wdbg("I", "Page number {0}", Page)
+                        If Page <= 0 Then
+                            Wdbg("E", "Trying to access page 0 or less than 0.")
+                            W(DoTranslation("Page may not be negative or zero.", currentLang), True, ColTypes.Err)
+                            Exit Sub
                         End If
-                    Next
-                Else
-                    W(DoTranslation("Page is not a numeric value.", currentLang), True, ColTypes.Err)
+                        Dim MsgsLimitForPg As Integer = 10
+                        Dim FirstIndex As Integer = (MsgsLimitForPg * Page) - 10
+                        Dim LastIndex As Integer = (MsgsLimitForPg * Page) - 1
+                        Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
+                        Wdbg("I", "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", MsgsLimitForPg, FirstIndex, LastIndex)
+                        For i As Integer = FirstIndex To LastIndex
+                            If Not i > MaxMessagesIndex Then
+                                Wdbg("I", "Getting message {0}...", i)
+                                SyncLock IMAP_Client.SyncRoot
+                                    Dim Msg As MimeMessage
+                                    If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                                        Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                                        Msg = Dir.GetMessage(IMAP_Messages(i))
+                                    Else
+                                        Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i))
+                                    End If
+                                    Dim MsgFrom As String = Msg.From.ToString
+                                    Dim MsgSubject As String = Msg.Subject
+                                    Wdbg("I", "From {0}: {1}", MsgFrom, MsgSubject)
+                                    W("- [{0}] {1}: ", False, ColTypes.HelpCmd, i + 1, Msg.From) : W("{0}", True, ColTypes.HelpDef, Msg.Subject)
+                                End SyncLock
+                            Else
+                                Wdbg("W", "Reached max message limit. Message number {0}", i)
+                            End If
+                        Next
+                    Else
+                        W(DoTranslation("Page is not a numeric value.", currentLang), True, ColTypes.Err)
+                    End If
                 End If
             ElseIf cmd = "lsdirs" Then
+                RequiredArgsProvided = True
                 SyncLock IMAP_Client.SyncRoot
                     Wdbg("I", "Personal namespace collection parsing started.")
                     For Each nmspc As FolderNamespace In IMAP_Client.PersonalNamespaces
@@ -127,90 +136,93 @@ Module MailGetCommand
                     Next
                 End SyncLock
             ElseIf cmd = "read" Then
-                Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
-                If FullArgsL(0).IsNumeric Then
-                    Dim Message As Integer = FullArgsL(0) - 1
-                    Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
-                    Wdbg("I", "Message number {0}", Message)
-                    If Message < 0 Then
-                        Wdbg("E", "Trying to access message 0 or less than 0.")
-                        W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Err)
-                        Exit Sub
-                    ElseIf Message > MaxMessagesIndex Then
-                        Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-                        W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Err)
-                        Exit Sub
-                    End If
-
-                    SyncLock IMAP_Client.SyncRoot
-                        'Get message
-                        Wdbg("I", "Getting message...")
-                        Dim Msg As MimeMessage
-                        If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                            Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                            Msg = Dir.GetMessage(IMAP_Messages(Message))
-                        Else
-                            Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(Message))
+                If FullArgsL.Count > 0 Then
+                    RequiredArgsProvided = True
+                    Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
+                    If FullArgsL(0).IsNumeric Then
+                        Dim Message As Integer = FullArgsL(0) - 1
+                        Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
+                        Wdbg("I", "Message number {0}", Message)
+                        If Message < 0 Then
+                            Wdbg("E", "Trying to access message 0 or less than 0.")
+                            W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Err)
+                            Exit Sub
+                        ElseIf Message > MaxMessagesIndex Then
+                            Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
+                            W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Err)
+                            Exit Sub
                         End If
 
-                        'Prepare view
-                        Console.WriteLine()
+                        SyncLock IMAP_Client.SyncRoot
+                            'Get message
+                            Wdbg("I", "Getting message...")
+                            Dim Msg As MimeMessage
+                            If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                                Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                                Msg = Dir.GetMessage(IMAP_Messages(Message))
+                            Else
+                                Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(Message))
+                            End If
 
-                        'Print all the addresses that sent the mail
-                        Wdbg("I", "{0} senders.", Msg.From.Count)
-                        For Each Address As InternetAddress In Msg.From
-                            Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                            W(DoTranslation("- From {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
-                        Next
-
-                        'Print all the addresses that received the mail
-                        Wdbg("I", "{0} receivers.", Msg.To.Count)
-                        For Each Address As InternetAddress In Msg.To
-                            Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                            W(DoTranslation("- To {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
-                        Next
-
-                        'Print the date and time when the user received the mail
-                        Wdbg("I", "Rendering time and date of {0}.", Msg.Date.DateTime.ToString)
-                        W(DoTranslation("- Sent at {0} in {1}", currentLang), True, ColTypes.HelpCmd, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
-
-                        'Prepare subject
-                        Console.WriteLine()
-                        Wdbg("I", "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject)
-                        W($"- {Msg.Subject}", False, ColTypes.HelpCmd)
-
-                        'Write a sign after the subject if attachments are found
-                        Wdbg("I", "Attachments count: {0}", Msg.Attachments.Count)
-                        If Msg.Attachments.Count > 0 Then
-                            W(" - [*]", True, ColTypes.HelpCmd)
-                        Else
+                            'Prepare view
                             Console.WriteLine()
-                        End If
 
-                        'Prepare body
-                        Console.WriteLine()
-                        Wdbg("I", "Displaying body...")
-                        W(Msg.GetTextBody(Text.TextFormat.Plain), True, ColTypes.HelpDef)
-                        Console.WriteLine()
-
-                        'Populate attachments
-                        If Msg.Attachments.Count > 0 Then
-                            W(DoTranslation("Attachments:", currentLang), True, ColTypes.Neutral)
-                            For Each Attachment As MimeEntity In Msg.Attachments
-                                Wdbg("I", "Attachment ID: {0}", Attachment.ContentId)
-                                If TypeOf Attachment Is MessagePart Then
-                                    Wdbg("I", "Attachment is a message.")
-                                    W($"- {Attachment.ContentDisposition?.FileName}", True, ColTypes.Neutral)
-                                Else
-                                    Wdbg("I", "Attachment is a file.")
-                                    Dim AttachmentPart As MimePart = Attachment
-                                    W($"- {AttachmentPart.FileName}", True, ColTypes.Neutral)
-                                End If
+                            'Print all the addresses that sent the mail
+                            Wdbg("I", "{0} senders.", Msg.From.Count)
+                            For Each Address As InternetAddress In Msg.From
+                                Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
+                                W(DoTranslation("- From {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
                             Next
-                        End If
-                    End SyncLock
-                Else
-                    W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
+
+                            'Print all the addresses that received the mail
+                            Wdbg("I", "{0} receivers.", Msg.To.Count)
+                            For Each Address As InternetAddress In Msg.To
+                                Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
+                                W(DoTranslation("- To {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
+                            Next
+
+                            'Print the date and time when the user received the mail
+                            Wdbg("I", "Rendering time and date of {0}.", Msg.Date.DateTime.ToString)
+                            W(DoTranslation("- Sent at {0} in {1}", currentLang), True, ColTypes.HelpCmd, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
+
+                            'Prepare subject
+                            Console.WriteLine()
+                            Wdbg("I", "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject)
+                            W($"- {Msg.Subject}", False, ColTypes.HelpCmd)
+
+                            'Write a sign after the subject if attachments are found
+                            Wdbg("I", "Attachments count: {0}", Msg.Attachments.Count)
+                            If Msg.Attachments.Count > 0 Then
+                                W(" - [*]", True, ColTypes.HelpCmd)
+                            Else
+                                Console.WriteLine()
+                            End If
+
+                            'Prepare body
+                            Console.WriteLine()
+                            Wdbg("I", "Displaying body...")
+                            W(Msg.GetTextBody(Text.TextFormat.Plain), True, ColTypes.HelpDef)
+                            Console.WriteLine()
+
+                            'Populate attachments
+                            If Msg.Attachments.Count > 0 Then
+                                W(DoTranslation("Attachments:", currentLang), True, ColTypes.Neutral)
+                                For Each Attachment As MimeEntity In Msg.Attachments
+                                    Wdbg("I", "Attachment ID: {0}", Attachment.ContentId)
+                                    If TypeOf Attachment Is MessagePart Then
+                                        Wdbg("I", "Attachment is a message.")
+                                        W($"- {Attachment.ContentDisposition?.FileName}", True, ColTypes.Neutral)
+                                    Else
+                                        Wdbg("I", "Attachment is a file.")
+                                        Dim AttachmentPart As MimePart = Attachment
+                                        W($"- {AttachmentPart.FileName}", True, ColTypes.Neutral)
+                                    End If
+                                Next
+                            End If
+                        End SyncLock
+                    Else
+                        W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
+                    End If
                 End If
             ElseIf cmd = "send" Then
                 Dim Receiver, Subject As String
@@ -268,80 +280,92 @@ Module MailGetCommand
                     W(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:", currentLang) + " john.s@example.com", True, ColTypes.Err)
                 End If
             ElseIf cmd = "rm" Then
-                Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
-                If FullArgsL(0).IsNumeric Then
-                    Dim Message As Integer = FullArgsL(0) - 1
-                    Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
-                    Wdbg("I", "Message number {0}", Message)
-                    If Message < 0 Then
-                        Wdbg("E", "Trying to remove message 0 or less than 0.")
-                        W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Err)
-                        Exit Sub
-                    ElseIf Message > MaxMessagesIndex Then
-                        Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-                        W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Err)
-                        Exit Sub
-                    End If
-
-                    SyncLock IMAP_Client.SyncRoot
-                        If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                            Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-
-                            'Remove message
-                            Wdbg("I", "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, FullArgsL(0))
-                            Dir.AddFlags(Message, MessageFlags.Deleted, True)
-                            Wdbg("I", "Removed.")
-                            Dir.Expunge()
-                        Else
-                            'Remove message
-                            Wdbg("I", "Removing {0}...", FullArgsL(0))
-                            IMAP_Client.Inbox.AddFlags(Message, MessageFlags.Deleted, True)
-                            Wdbg("I", "Removed.")
-                            IMAP_Client.Inbox.Expunge()
+                If FullArgsL.Count > 0 Then
+                    RequiredArgsProvided = True
+                    Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
+                    If FullArgsL(0).IsNumeric Then
+                        Dim Message As Integer = FullArgsL(0) - 1
+                        Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
+                        Wdbg("I", "Message number {0}", Message)
+                        If Message < 0 Then
+                            Wdbg("E", "Trying to remove message 0 or less than 0.")
+                            W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Err)
+                            Exit Sub
+                        ElseIf Message > MaxMessagesIndex Then
+                            Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
+                            W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Err)
+                            Exit Sub
                         End If
-                    End SyncLock
-                Else
-                    W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
+
+                        SyncLock IMAP_Client.SyncRoot
+                            If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                                Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+
+                                'Remove message
+                                Wdbg("I", "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, FullArgsL(0))
+                                Dir.AddFlags(Message, MessageFlags.Deleted, True)
+                                Wdbg("I", "Removed.")
+                                Dir.Expunge()
+                            Else
+                                'Remove message
+                                Wdbg("I", "Removing {0}...", FullArgsL(0))
+                                IMAP_Client.Inbox.AddFlags(Message, MessageFlags.Deleted, True)
+                                Wdbg("I", "Removed.")
+                                IMAP_Client.Inbox.Expunge()
+                            End If
+                        End SyncLock
+                    Else
+                        W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
+                    End If
                 End If
             ElseIf cmd = "rmall" Then
-                Wdbg("I", "All mail by {0} will be removed.", FullArgsL(0))
-                Dim DeletedMsgNumber As Integer = 1
-                Dim SteppedMsgNumber As Integer = 0
-                For Each MessageId As UniqueId In IMAP_Messages
-                    SyncLock IMAP_Client.SyncRoot
-                        Dim Msg As MimeMessage
-                        If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                            Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                            Msg = Dir.GetMessage(MessageId)
-                        Else
-                            Msg = IMAP_Client.Inbox.GetMessage(MessageId)
-                        End If
-                        SteppedMsgNumber += 1
-
-                        For Each address In Msg.From
-                            If address.Name = FullArgsL(0) Then
-                                If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                                    Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-
-                                    'Remove message
-                                    Wdbg("I", "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, FullArgsL(0))
-                                    Dir.AddFlags(MessageId, MessageFlags.Deleted, True)
-                                    Wdbg("I", "Removed.")
-                                    Dir.Expunge()
-                                    W(DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, FullArgsL(0), IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
-                                Else
-                                    'Remove message
-                                    Wdbg("I", "Removing {0}...", FullArgsL(0))
-                                    IMAP_Client.Inbox.AddFlags(MessageId, MessageFlags.Deleted, True)
-                                    Wdbg("I", "Removed.")
-                                    IMAP_Client.Inbox.Expunge()
-                                    W(DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, FullArgsL(0), IMAP_Messages.Count - SteppedMsgNumber)
-                                End If
-                                DeletedMsgNumber += 1
+                If FullArgsL.Count > 0 Then
+                    RequiredArgsProvided = True
+                    Wdbg("I", "All mail by {0} will be removed.", FullArgsL(0))
+                    Dim DeletedMsgNumber As Integer = 1
+                    Dim SteppedMsgNumber As Integer = 0
+                    For Each MessageId As UniqueId In IMAP_Messages
+                        SyncLock IMAP_Client.SyncRoot
+                            Dim Msg As MimeMessage
+                            If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                                Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                                Msg = Dir.GetMessage(MessageId)
+                            Else
+                                Msg = IMAP_Client.Inbox.GetMessage(MessageId)
                             End If
-                        Next
-                    End SyncLock
-                Next
+                            SteppedMsgNumber += 1
+
+                            For Each address In Msg.From
+                                If address.Name = FullArgsL(0) Then
+                                    If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                                        Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+
+                                        'Remove message
+                                        Wdbg("I", "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, FullArgsL(0))
+                                        Dir.AddFlags(MessageId, MessageFlags.Deleted, True)
+                                        Wdbg("I", "Removed.")
+                                        Dir.Expunge()
+                                        W(DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, FullArgsL(0), IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
+                                    Else
+                                        'Remove message
+                                        Wdbg("I", "Removing {0}...", FullArgsL(0))
+                                        IMAP_Client.Inbox.AddFlags(MessageId, MessageFlags.Deleted, True)
+                                        Wdbg("I", "Removed.")
+                                        IMAP_Client.Inbox.Expunge()
+                                        W(DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, FullArgsL(0), IMAP_Messages.Count - SteppedMsgNumber)
+                                    End If
+                                    DeletedMsgNumber += 1
+                                End If
+                            Next
+                        End SyncLock
+                    Next
+                End If
+            End If
+
+            If Not RequiredArgsProvided Then
+                W(DoTranslation("Required arguments are not passed to command {0}", currentLang), True, ColTypes.Err, cmd)
+                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", cmd, FullArgsL.Count)
+                IMAPShowHelp(cmd)
             End If
         Catch ex As Exception
             W(DoTranslation("Error executing mail command: {0}", currentLang), True, ColTypes.Err, ex.Message)
