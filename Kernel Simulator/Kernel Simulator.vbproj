@@ -175,7 +175,7 @@
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="DEV"</DefineConstants>
+    <DefineConstants>SPECIFIER="NEARING"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -270,6 +270,10 @@
     <Compile Include="Misc\Speech\VoiceManagement.vb" />
     <Compile Include="Misc\StringEvaluators.vb" />
     <Compile Include="Misc\StringExtensions.vb" />
+    <Compile Include="Misc\TextEdit\TextEditGetCommand.vb" />
+    <Compile Include="Misc\TextEdit\TextEditHelpSystem.vb" />
+    <Compile Include="Misc\TextEdit\TextEditShell.vb" />
+    <Compile Include="Misc\TextEdit\TextEditTools.vb" />
     <Compile Include="Misc\Writers\DebugLogPrint.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModParser.vb" />

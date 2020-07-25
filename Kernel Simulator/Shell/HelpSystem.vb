@@ -47,6 +47,7 @@ Public Module HelpSystem
                                                               {"disconndbgdev", DoTranslation("Disconnect a debug device", currentLang)},
                                                               {"dismissnotif", DoTranslation("Dismisses a notification", currentLang)},
                                                               {"echo", DoTranslation("Writes text into the console", currentLang)},
+                                                              {"edit", DoTranslation("Edits a text file", currentLang)},
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                               {"get", DoTranslation("Downloads a file to current working directory", currentLang)},
                                                               {"help", DoTranslation("Help page", currentLang)},
@@ -62,6 +63,7 @@ Public Module HelpSystem
                                                               {"lset", DoTranslation("Parse whole directory for size or just the files in the current one.", currentLang)},
                                                               {"mathbee", DoTranslation("See if you can solve mathematical equations on time", currentLang)},
                                                               {"md", DoTranslation("Creates a directory", currentLang)},
+                                                              {"mkfile", DoTranslation("Makes a new file", currentLang)},
                                                               {"move", DoTranslation("Moves a file to another directory", currentLang)},
                                                               {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
                                                               {"perm", DoTranslation("Manage permissions for users (Only admins can access this command)", currentLang)},
@@ -219,6 +221,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " echo <text>", True, ColTypes.Neutral)
 
+        ElseIf command = "edit" Then
+
+            W(DoTranslation("Usage:", currentLang) + " edit <file>", True, ColTypes.Neutral)
+
         ElseIf command = "ftp" Then
 
             W(DoTranslation("Usage:", currentLang) + " ftp <server>: " + DoTranslation("Initializes the FTP shell.", currentLang), True, ColTypes.Neutral)
@@ -285,6 +291,10 @@ Public Module HelpSystem
         ElseIf command = "md" Then
 
             W(DoTranslation("Usage:", currentLang) + " md <anything>", True, ColTypes.Neutral)
+
+        ElseIf command = "mkfile" Then
+
+            W(DoTranslation("Usage:", currentLang) + " mkfile <anything>", True, ColTypes.Neutral)
 
         ElseIf command = "move" Then
 

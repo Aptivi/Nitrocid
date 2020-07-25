@@ -319,6 +319,7 @@ Public Module KernelTools
         InitHelp()
         InitFTPHelp()
         IMAPInitHelp()
+        TextEdit_UpdateHelp()
 
         'We need to create a file so InitAliases() won't give out an error
         If Not File.Exists(paths("Aliases")) Then

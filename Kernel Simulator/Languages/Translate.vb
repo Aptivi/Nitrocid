@@ -247,6 +247,7 @@ CHOICE:
             InitHelp()
             InitFTPHelp()
             IMAPInitHelp()
+            TextEdit_UpdateHelp()
             ReloadGenericDefs(OldModDescGeneric)
         Else
             W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Err, lang)
