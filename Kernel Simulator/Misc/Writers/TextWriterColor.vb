@@ -168,34 +168,37 @@ Public Module TextWriterColor
 
         Dim esc As Char = GetEsc()
         Try
-            If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
-                Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
-            ElseIf colorType = ColTypes.Continuable Then
-                Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
-            ElseIf colorType = ColTypes.Uncontinuable Then
-                Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
-            ElseIf colorType = ColTypes.HostName Then
-                Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
-            ElseIf colorType = ColTypes.UserName Then
-                Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
-            ElseIf colorType = ColTypes.License Then
-                Write(esc + "[38;5;" + CStr(licenseColor) + "m")
-            ElseIf colorType = ColTypes.Gray Then
-                If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
+            'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+                If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
                     Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
+                ElseIf colorType = ColTypes.Continuable Then
+                    Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
+                ElseIf colorType = ColTypes.Uncontinuable Then
+                    Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
+                ElseIf colorType = ColTypes.HostName Then
+                    Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
+                ElseIf colorType = ColTypes.UserName Then
+                    Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
+                ElseIf colorType = ColTypes.License Then
+                    Write(esc + "[38;5;" + CStr(licenseColor) + "m")
+                ElseIf colorType = ColTypes.Gray Then
+                    If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
+                        Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
+                    Else
+                        Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
+                    End If
+                ElseIf colorType = ColTypes.HelpDef Then
+                    Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
+                ElseIf colorType = ColTypes.HelpCmd Then
+                    Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
+                ElseIf colorType = ColTypes.Stage Then
+                    Write(esc + "[38;5;" + CStr(stageColor) + "m")
+                ElseIf colorType = ColTypes.Err Then
+                    Write(esc + "[38;5;" + CStr(errorColor) + "m")
                 Else
-                    Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
+                    Exit Sub
                 End If
-            ElseIf colorType = ColTypes.HelpDef Then
-                Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
-            ElseIf colorType = ColTypes.HelpCmd Then
-                Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
-            ElseIf colorType = ColTypes.Stage Then
-                Write(esc + "[38;5;" + CStr(stageColor) + "m")
-            ElseIf colorType = ColTypes.Err Then
-                Write(esc + "[38;5;" + CStr(errorColor) + "m")
-            Else
-                Exit Sub
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -205,7 +208,7 @@ Public Module TextWriterColor
 
             If Line Then WriteLine(text) Else Write(text)
             If backgroundColor = ConsoleColors.Black Then ResetColor()
-            If colorType = ColTypes.Input And ColoredShell = True Then Write(esc + "[38;5;" + CStr(inputColor) + "m")
+            If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then Write(esc + "[38;5;" + CStr(inputColor) + "m")
         Catch ex As Exception
             WStkTrc(ex)
             KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
@@ -247,34 +250,36 @@ Public Module TextWriterColor
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal colorType As ColTypes, ParamArray ByVal vars() As Object)
         Dim esc As Char = GetEsc()
-        If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
-            Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
-        ElseIf colorType = ColTypes.Continuable Then
-            Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
-        ElseIf colorType = ColTypes.Uncontinuable Then
-            Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
-        ElseIf colorType = ColTypes.HostName Then
-            Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
-        ElseIf colorType = ColTypes.UserName Then
-            Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
-        ElseIf colorType = ColTypes.License Then
-            Write(esc + "[38;5;" + CStr(licenseColor) + "m")
-        ElseIf colorType = ColTypes.Gray Then
-            If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
+        If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+            If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
                 Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
+            ElseIf colorType = ColTypes.Continuable Then
+                Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
+            ElseIf colorType = ColTypes.Uncontinuable Then
+                Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
+            ElseIf colorType = ColTypes.HostName Then
+                Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
+            ElseIf colorType = ColTypes.UserName Then
+                Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
+            ElseIf colorType = ColTypes.License Then
+                Write(esc + "[38;5;" + CStr(licenseColor) + "m")
+            ElseIf colorType = ColTypes.Gray Then
+                If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
+                    Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
+                Else
+                    Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
+                End If
+            ElseIf colorType = ColTypes.HelpDef Then
+                Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
+            ElseIf colorType = ColTypes.HelpCmd Then
+                Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
+            ElseIf colorType = ColTypes.Stage Then
+                Write(esc + "[38;5;" + CStr(stageColor) + "m")
+            ElseIf colorType = ColTypes.Err Then
+                Write(esc + "[38;5;" + CStr(errorColor) + "m")
             Else
-                Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
+                Exit Sub
             End If
-        ElseIf colorType = ColTypes.HelpDef Then
-            Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
-        ElseIf colorType = ColTypes.HelpCmd Then
-            Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
-        ElseIf colorType = ColTypes.Stage Then
-            Write(esc + "[38;5;" + CStr(stageColor) + "m")
-        ElseIf colorType = ColTypes.Err Then
-            Write(esc + "[38;5;" + CStr(errorColor) + "m")
-        Else
-            Exit Sub
         End If
 
         'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -292,7 +297,7 @@ Public Module TextWriterColor
             WriteLine()
         End If
         If backgroundColor = ConsoleColors.Black Then ResetColor()
-        If colorType = ColTypes.Input And ColoredShell = True Then Write(esc + "[38;5;" + CStr(inputColor) + "m")
+        If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then Write(esc + "[38;5;" + CStr(inputColor) + "m")
     End Sub
 
     ''' <summary>
@@ -305,34 +310,36 @@ Public Module TextWriterColor
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     Public Sub WriteWhere(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
         Dim esc As Char = GetEsc()
-        If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
-            Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
-        ElseIf colorType = ColTypes.Continuable Then
-            Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
-        ElseIf colorType = ColTypes.Uncontinuable Then
-            Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
-        ElseIf colorType = ColTypes.HostName Then
-            Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
-        ElseIf colorType = ColTypes.UserName Then
-            Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
-        ElseIf colorType = ColTypes.License Then
-            Write(esc + "[38;5;" + CStr(licenseColor) + "m")
-        ElseIf colorType = ColTypes.Gray Then
-            If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
+        If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+            If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
                 Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
+            ElseIf colorType = ColTypes.Continuable Then
+                Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
+            ElseIf colorType = ColTypes.Uncontinuable Then
+                Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
+            ElseIf colorType = ColTypes.HostName Then
+                Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
+            ElseIf colorType = ColTypes.UserName Then
+                Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
+            ElseIf colorType = ColTypes.License Then
+                Write(esc + "[38;5;" + CStr(licenseColor) + "m")
+            ElseIf colorType = ColTypes.Gray Then
+                If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
+                    Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
+                Else
+                    Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
+                End If
+            ElseIf colorType = ColTypes.HelpDef Then
+                Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
+            ElseIf colorType = ColTypes.HelpCmd Then
+                Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
+            ElseIf colorType = ColTypes.Stage Then
+                Write(esc + "[38;5;" + CStr(stageColor) + "m")
+            ElseIf colorType = ColTypes.Err Then
+                Write(esc + "[38;5;" + CStr(errorColor) + "m")
             Else
-                Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
+                Exit Sub
             End If
-        ElseIf colorType = ColTypes.HelpDef Then
-            Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
-        ElseIf colorType = ColTypes.HelpCmd Then
-            Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
-        ElseIf colorType = ColTypes.Stage Then
-            Write(esc + "[38;5;" + CStr(stageColor) + "m")
-        ElseIf colorType = ColTypes.Err Then
-            Write(esc + "[38;5;" + CStr(errorColor) + "m")
-        Else
-            Exit Sub
         End If
 
         'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -360,7 +367,9 @@ Public Module TextWriterColor
         Dim esc As Char = GetEsc()
         Try
             'Try to write to console
-            Write(esc + "[38;5;" + CStr(color) + "m")
+            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+                Write(esc + "[38;5;" + CStr(color) + "m")
+            End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
             For v As Integer = 0 To vars.Length - 1
