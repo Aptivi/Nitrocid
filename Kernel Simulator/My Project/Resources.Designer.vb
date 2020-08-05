@@ -704,7 +704,17 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to .
+        '''  Looks up a localized string similar to Dostupne komande: {0}
+        '''Vrite command:
+        '''Ubacivanje komande je otkazano.
+        '''Razdvojite argumente za pokretanje zarezima bez razmaka, na primer, „motd, gpuprobe“
+        '''Odvojite komande na &apos;cmdinject&apos; sa kolonama sa razmacima, na primer, &apos;cmdinject setthemes Hacker: biep 1024 0.5&apos;
+        '''Imajte na umu da argument &apos;debug&apos; ne pokriva u potpunosti kernel.
+        '''bargs: Traženi argument {0} nije pronađen.
+        '''bargs: Nerešiva greška u argumentu:
+        '''Dostupni argumenti: {0}
+        '''Argumenti („pomoć“ za pomoć):
+        '''Injektirani argumenti će se zakazati [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property srb() As String
             Get
@@ -747,24 +757,6 @@ Namespace My.Resources
         Friend ReadOnly Property swe() As String
             Get
                 Return ResourceManager.GetString("swe", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Kullanؤ±labilir komutlar: {0}
-        '''Yazma komutu:
-        '''Komut enjeksiyonu iptal edildi.
-        '''أ–nyأ¼kleme argأ¼manlarؤ±nؤ± boإںluksuz virgأ¼llerle ayؤ±rؤ±n, أ¶rneؤںin, &apos;motd, gpuprobe&apos;
-        '''&apos;cmdinject&apos; ifadesinde boإںluklu virgأ¼llerle ayrؤ± komutlar, أ¶rneؤںin &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''&apos;hata ayؤ±klama&apos; argأ¼manؤ±nؤ±n أ§ekirdeؤںi tamamen kapsamadؤ±ؤںؤ±nؤ± unutmayؤ±n.
-        '''bargs: ؤ°stenen argأ¼man {0} bulunamadؤ±.
-        '''bargs: Baؤںؤ±msؤ±z deؤںiإںkende kurtarؤ±lamaz hata:
-        '''Kullanؤ±labilir deؤںiإںkenler: {0}
-        '''Baؤںؤ±msؤ [rest of string was truncated]&quot;;.
-        '''</summary>
-        Friend ReadOnly Property tky() As String
-            Get
-                Return ResourceManager.GetString("tky", resourceCulture)
             End Get
         End Property
         

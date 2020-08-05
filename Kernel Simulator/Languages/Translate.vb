@@ -18,7 +18,7 @@
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "ben", "ben-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "spa", "srb", "srb-T", "swe", "tky", "uzb", "vtn"}
+    Public availableLangs() As String = {"arb", "arb-T", "ben", "ben-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "spa", "srb", "srb-T", "swe", "uzb", "vtn"}
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -136,8 +136,6 @@ Public Module Translate
                 translated = My.Resources.srb_T
             Case "swe" 'Swedish
                 translated = My.Resources.swe
-            Case "tky" 'Turkish
-                translated = My.Resources.tky
             Case "uzb" 'Uzbekistan
                 translated = My.Resources.uzb
             Case "vtn" 'Vietnamese
