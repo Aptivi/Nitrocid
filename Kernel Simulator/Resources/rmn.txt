@@ -654,3 +654,5 @@ Deblocați un dispozitiv de depanare după adresa IP
 Blocați un dispozitiv de depanare după adresa IP
 {0} se poate alătura din nou la depanare la distanță.
 {0} nu este încă blocat.
+Eroare la încărcarea setărilor
+A apărut o eroare la încărcarea setărilor. Este posibil să fie nevoie să verificați fișierul cu setări.

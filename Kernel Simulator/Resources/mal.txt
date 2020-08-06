@@ -654,3 +654,5 @@ Buka sekatan peranti debug dengan alamat IP
 Sekat peranti debug mengikut alamat IP
 {0} kini boleh menyertai debug jauh lagi.
 {0} belum disekat.
+Ralat memuatkan tetapan
+Terdapat ralat semasa memuatkan tetapan. Anda mungkin perlu memeriksa fail tetapan.

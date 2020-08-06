@@ -654,3 +654,5 @@ ip pate dvaara dibag divais ko anablok karen
 ip pate dvaara dibag divais ko blok karen
 {0} ab phir se doorasth dibag mein shaamil ho sakate hain.
 {0} abhee tak avaruddh nahin hai.
+seting lod karane mein truti huee
+seting lod karate samay ek truti huee hai. aapako setings fail kee jaanch karane kee aavashyakata ho sakatee hai.

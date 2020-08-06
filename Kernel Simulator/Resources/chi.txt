@@ -654,3 +654,5 @@ tōngguò IP dìzhǐ qǔxiāo zǔzhǐ tiáoshì shèbèi
 tōngguò IP dìzhǐ zǔzhǐ tiáoshì shèbèi
 {0} xiànzài kěyǐ zàicì jiārù yuǎnchéng tiáoshì.
 {0} Shàngwèi bèi zǔzhǐ.
+Jiāzài shèzhì cuòwù
+jiāzài shèzhì shí chūcuò. Nín kěnéng xūyào jiǎnchá shèzhì wénjiàn.

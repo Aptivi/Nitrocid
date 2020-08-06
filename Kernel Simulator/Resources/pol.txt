@@ -654,3 +654,5 @@ Odblokuj urządzenie do debugowania według adresu IP
 Zablokuj urządzenie do debugowania według adresu IP
 {0} może teraz ponownie dołączyć do zdalnego debugowania.
 Numer {0} nie jest jeszcze zablokowany.
+Błąd podczas ładowania ustawień
+Wystąpił błąd podczas ładowania ustawień. Konieczne może być sprawdzenie pliku ustawień.

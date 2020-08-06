@@ -654,3 +654,5 @@ Fjern blokering af en debug-enhed med IP-adresse
 Bloker en debug-enhed efter IP-adresse
 {0} kan nu deltage i ekstern debug igen.
 {0} er ikke blokeret endnu.
+Fejl ved indlæsning af indstillinger
+Der er en fejl under indlæsning af indstillinger. Du skal muligvis kontrollere indstillingsfilen.

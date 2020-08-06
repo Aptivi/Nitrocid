@@ -654,3 +654,5 @@ qum bi'iilgha' hazr jihaz tashih bwastt eunwan IP
 hazr jihaz tashih bieunwan IP
 yumkin l {0} alan alaindimam 'iilaa tashih al'akhta' ean bued marat 'ukhraa.
 {0} ghyr mahzur baed.
+khata fi tahmil al'iiedadat
+hadath khata 'athna' tahmil al'iiedadati. qad tahtaj 'iilaa altahaquq min milafi al'iiedadat.

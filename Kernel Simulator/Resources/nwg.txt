@@ -654,3 +654,5 @@ Fjern blokkering av en feilsøkingsenhet etter IP-adresse
 Blokker en feilsøkingsenhet etter IP-adresse
 {0} kan nå bli med på ekstern feilsøking igjen.
 {0} er ikke blokkert ennå.
+Feil ved lasting av innstillinger
+Det oppstod en feil under innlasting. Du må kanskje sjekke innstillingsfilen.

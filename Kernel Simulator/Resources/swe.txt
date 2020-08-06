@@ -654,3 +654,5 @@ Avblockera en felsökningsenhet med IP-adress
 Blockera en felsökningsenhet med IP-adress
 {0} kan nu gå med i fjärrfelsökning igen.
 {0} är inte blockerad ännu.
+Fel vid inläsning av inställningar
+Det finns ett fel när du laddar inställningar. Du kan behöva kontrollera inställningsfilen.

@@ -654,3 +654,5 @@ Nosozliklarni tuzatish qurilmasini IP-manzil orqali blokdan chiqaring
 Nosozliklarni tuzatish moslamasini IP-manzil orqali blokirovka qiling
 {0} endi masofadan tuzatish dasturiga qo'shilishi mumkin.
 {0} hali bloklanmagan.
+Sozlamalarni yuklashda xato
+Sozlamalarni yuklashda xatolik yuz berdi. Sozlamalar faylini tekshirishingiz kerak bo'lishi mumkin.

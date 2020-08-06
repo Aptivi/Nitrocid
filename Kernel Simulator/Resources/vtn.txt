@@ -654,3 +654,5 @@ Bỏ chặn một thiết bị gỡ lỗi bằng địa chỉ IP
 Chặn thiết bị gỡ lỗi theo địa chỉ IP
 {0} bây giờ có thể tham gia gỡ lỗi từ xa một lần nữa.
 {0} chưa bị chặn.
+Lỗi tải cài đặt
+Có lỗi trong khi tải cài đặt. Bạn có thể cần kiểm tra tập tin cài đặt.

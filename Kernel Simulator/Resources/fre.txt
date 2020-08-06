@@ -654,3 +654,5 @@ Débloquer un périphérique de débogage par adresse IP
 Bloquer un périphérique de débogage par adresse IP
 {0} peut à nouveau rejoindre le débogage à distance.
 {0} n'est pas encore bloqué.
+Erreur lors du chargement des paramètres
+Une erreur s'est produite lors du chargement des paramètres. Vous devrez peut-être vérifier le fichier de paramètres.

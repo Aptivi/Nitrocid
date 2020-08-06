@@ -654,3 +654,5 @@ Unblock a debug device by IP address
 Block a debug device by IP address
 {0} can now join remote debug again.
 {0} is not blocked yet.
+Error loading settings
+There is an error while loading settings. You may need to check the settings file.

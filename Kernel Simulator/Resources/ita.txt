@@ -654,3 +654,5 @@ Sblocca un dispositivo di debug in base all'indirizzo IP
 Blocca un dispositivo di debug per indirizzo IP
 {0} ora può ricollegarsi al debug remoto.
 {0} non è ancora bloccato.
+Errore durante il caricamento delle impostazioni
+Si è verificato un errore durante il caricamento delle impostazioni. Potrebbe essere necessario controllare il file delle impostazioni.

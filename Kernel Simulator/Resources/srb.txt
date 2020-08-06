@@ -654,3 +654,5 @@ Deblokirajte uređaj za uklanjanje pogrešaka prema IP adresi
 Blokirajte uređaj za uklanjanje pogrešaka prema IP adresi
 {0} sada se može ponovo pridružiti daljinskom otklanjanju greške.
 {0} još nije blokiran.
+Greška pri učitavanju postavki
+Došlo je do greške prilikom učitavanja postavki. Možda ćete morati da proverite datoteku sa podešavanjima.

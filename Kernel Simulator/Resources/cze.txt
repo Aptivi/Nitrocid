@@ -654,3 +654,5 @@ Odblokujte ladicí zařízení pomocí adresy IP
 Blokovat ladicí zařízení pomocí adresy IP
 {0} se nyní může připojit ke vzdálenému ladění.
 {0} dosud není blokován.
+Chyba při načítání nastavení
+Při načítání nastavení došlo k chybě. Možná budete muset zkontrolovat soubor nastavení.

@@ -654,3 +654,5 @@ Entsperren Sie ein Debug-Gerät anhand der IP-Adresse
 Blockieren Sie ein Debug-Gerät anhand der IP-Adresse
 {0} kann jetzt wieder dem Remote-Debug beitreten.
 {0} ist noch nicht blockiert.
+Fehler beim Laden der Einstellungen
+Beim Laden der Einstellungen ist ein Fehler aufgetreten. Möglicherweise müssen Sie die Einstellungsdatei überprüfen.

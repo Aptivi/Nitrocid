@@ -654,3 +654,5 @@ Buka blokir perangkat debug berdasarkan alamat IP
 Blokir perangkat debug berdasarkan alamat IP
 {0} sekarang dapat bergabung lagi dengan debug jarak jauh.
 {0} belum diblokir.
+Kesalahan memuat pengaturan
+Terjadi kesalahan saat memuat pengaturan. Anda mungkin perlu memeriksa file pengaturan.

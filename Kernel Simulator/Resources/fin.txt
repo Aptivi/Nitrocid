@@ -654,3 +654,5 @@ Poista debug-laitteen lukitus IP-osoitteen perusteella
 Estä vianetsintälaite IP-osoitteen perusteella
 {0} voi nyt liittyä uudelleen etävirheeseen.
 {0} ei ole vielä estetty.
+Virhe asetusten lataamisessa
+Asetusten lataamisessa tapahtui virhe. Saatat joutua tarkistamaan asetustiedoston.

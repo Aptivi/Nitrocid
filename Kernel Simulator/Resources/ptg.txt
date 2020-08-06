@@ -654,3 +654,5 @@ Desbloquear um dispositivo de depuração pelo endereço IP
 Bloquear um dispositivo de depuração pelo endereço IP
 {0} agora pode ingressar na depuração remota novamente.
 {0} ainda não está bloqueado.
+Erro ao carregar as configurações
+Ocorreu um erro ao carregar as configurações. Pode ser necessário verificar o arquivo de configurações.

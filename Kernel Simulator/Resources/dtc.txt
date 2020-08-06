@@ -654,3 +654,5 @@ Deblokkeer een debug-apparaat op IP-adres
 Blokkeer een apparaat voor foutopsporing op IP-adres
 {0} kan nu opnieuw deelnemen aan debuggen op afstand.
 {0} is nog niet geblokkeerd.
+Fout bij het laden van instellingen
+Er is een fout opgetreden bij het laden van instellingen. Mogelijk moet u het instellingenbestand controleren.

@@ -654,3 +654,5 @@ aipīadoresu de debaggudebaisu no burokku o kaijo suru
 aipīadoresu de debaggudebaisu o burokku suru
 {0} wa futatabi rimōtodebaggu ni sanka dekiru yō ni narimashita.
 {0} Wa mada burokku sa rete imasen.
+Settei no yomikomi-chū ni erā ga hassei shimashita
+Settei no yomikomi-chū ni erā ga hassei shimashita. Settei fairu o kakunin suruhitsuyōgāru kamo shiremasen.

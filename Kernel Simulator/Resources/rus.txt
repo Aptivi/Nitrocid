@@ -654,3 +654,5 @@ Razblokirovat' otladochnoye ustroystvo po IP-adresu
 Blokirovka ustroystva otladki po IP-adresu
 {0} teper' mozhet snova prisoyedinit'sya k udalennoy otladke.
 {0} yeshche ne zablokirovan.
+Oshibka zagruzki nastroyek
+Pri zagruzke nastroyek proizoshla oshibka. Vozmozhno, vam potrebuyetsya proverit' fayl nastroyek.

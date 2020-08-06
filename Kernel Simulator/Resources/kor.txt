@@ -654,3 +654,5 @@ IP jusolo dibeogeu jangchi chadan haeje
 IP jusolo dibeogeu jangchi chadan
 {0} eun ije wongyeog dibeogeue dasi cham-yeohal su issseubnida.
 {0} eun (neun) ajig chadandoeji anh-assseubnida.
+seoljeong-eullodeuhaneun jung-e olyuga balsaenghaessseubnida.
+seoljeong-eullodeuhaneun jung-e olyuga balsaenghaessseubnida. seoljeong pail-eul hwag-inhaeya hal sudo issseubnida.
