@@ -216,7 +216,7 @@ Public Module HelpSystem
 
         ElseIf command = "dismissnotif" Then
 
-            W(DoTranslation("Usage:", currentLang) + " dismissnotif: " + DoTranslation("Dismisses a notification", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " dismissnotif <notificationNumber>: " + DoTranslation("Dismisses a notification", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "disconndbgdev" Then
 

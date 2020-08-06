@@ -392,7 +392,7 @@ Public Module GetCommand
 
                 If requestedCommand <> "dismissnotif" Then
                     If args.Count - 1 >= 0 Then
-                        NotifDismiss(args(0))
+                        NotifDismiss(args(0) - 1)
                         Done = True
                     End If
                 End If
