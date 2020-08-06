@@ -59,4 +59,7 @@ Module Flags
     'Stopwatch for CI_TestInit
     Public CI_TestInitStopwatch As New Stopwatch()
 
+    'Private flags
+    Friend NotifyConfigError As Boolean                        'Notifies user as soon as the kernel finished booting if there is an error reading configuration.
+
 End Module

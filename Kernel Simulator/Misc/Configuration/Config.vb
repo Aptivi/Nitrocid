@@ -376,6 +376,7 @@ Public Module Config
             Else
                 W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang), True, ColTypes.Err, ex.Message)
             End If
+            NotifyConfigError = True
         End Try
     End Sub
 

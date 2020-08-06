@@ -141,6 +141,14 @@ Public Module Kernel
                 'Show current time
                 ShowCurrentTimes()
 
+                'Notify user if there is config error
+                If NotifyConfigError Then
+                    NotifyConfigError = False
+                    NotifySend(New Notification With {.Title = DoTranslation("Error loading settings", currentLang),
+                                                      .Desc = DoTranslation("There is an error while loading settings. You may need to check the settings file.", currentLang),
+                                                      .Priority = NotifPriority.Medium})
+                End If
+
                 'Initialize login prompt
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
