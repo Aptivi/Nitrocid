@@ -20,7 +20,7 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.11.1</Version>
+    <Version>0.0.12.0</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -42,13 +42,11 @@
       <dependency id="MadMilkman.Ini" version="1.0.6.0" />
       <dependency id="FluentFTP" version="30.0.0" />
       <dependency id="Newtonsoft.Json" version="12.0.0" />
-      <dependency id="LibVLCSharp" version="3.4.2" />
       <dependency id="SSH.NET" version="2016.1.0" />
-      <dependency id="VideoLAN.LibVLC.Windows" version="3.0.8.1" />
     </Dependencies>
     <!-- KS Nuget Information End -->
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>E:\Documents and Settings\EoflaOE\Desktop\visual basic projects\VB2010\Kernel Simulator\</PublishUrl>
+    <PublishUrl>C:\Users\EoflaOE\Desktop\visual basic projects\VB2010\Kernel Simulator\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>

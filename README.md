@@ -14,6 +14,8 @@ We are no longer providing KS with speak and soundtest commands because of odd e
 
 We have added console output redirection for some commands that didn't require user interaction. For more information, consult the Wiki.
 
+We will make an overhaul to README.md and various documentations during the development of 0.0.12.0.
+
 ## |-----+--> _Notices_ <--+-----|
 
 - If you are going to use Chinese/Japanese/Korean languages in their translated forms, use `SimSun` or other appropriate font.
@@ -271,6 +273,8 @@ Please note that dates mentioned here is for development date changes only. If y
 **7/25/2020 - 0.0.11:** Added command cancellation when CTRL+C is pressed implementation, Added `shutdown` command to test shell, Made `exit` exit the test shell and start the kernel, Implemented Speed Dial for FTP shell for faster connection, Fixed FTPS using wrong encryption type, Added simple send message to mail client (IMAP shell changed to mail shell), Fixed port parsing in mail shell, Made screensaver timeouts customizable, Added `mkfile` and `edit` commands, Added basic text editor, Removed `speak` command and `soundtest` test command due to instabilities on sound library, Removed demo account creation, Permission management for mods is now easier to use, Fixed `read` command not working with spaced filenames, Fixed invalid `Not enough arguments` message when providing more than enough arguments in some commands, Fixed `chusrname` not changing username permanently, Now in mail shell when you don't provide enough arguments it will automatically open a help page for the specified command, Now remote debugging user messages reflects the current kernel language used, Added temporary blocking/unblocking IP addresses for remote debugger (will be permanent in 0.0.12), Fixed notifications showing when dismissing them, Added Serbian language, Added console output redirection support for main shell commands
 
 **8/6/2020 - 0.0.11.1:** Fixed messup on console output redirection, Removed Turkish language, Added notification when config fails to be read
+
+**8/8/2020 - WIP - 0.0.12:** 
 
 Items with asterisk means that the specified change/fix will be backported to previous version of KS which doesn't have it (only for Ubuntu PPA version, backports as Debian patches)
 
