@@ -85,16 +85,9 @@ Public Module Kernel
                 Wdbg("I", "- Kernel Phase 1: Probing hardware")
                 ProbeHW()
 
-                'Phase 2: Username management
-                W(vbNewLine + DoTranslation("- Stage 2: Internal username management", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 2: Manage internal usernames")
-                AddUser("root", RootPasswd)
-                Permission(PermissionType.Administrator, "root", PermissionManagementMode.Allow)
-                LoginFlag = True
-
-                'Phase 3: Parse Mods and Screensavers
-                W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 3: Parse mods and screensavers")
+                'Phase 2: Parse Mods and Screensavers
+                W(vbNewLine + DoTranslation("- Stage 2: Mods and screensavers detection", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 2: Parse mods and screensavers")
                 Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
                     ParseMods(True)
@@ -106,9 +99,9 @@ Public Module Kernel
                     W(DoTranslation("Running in safe mode. Skipping stage...", currentLang), True, ColTypes.Neutral)
                 End If
 
-                'Phase 4: Free unused RAM and raise the started event
-                W(vbNewLine + DoTranslation("- Stage 4: Garbage collection", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 4: Garbage collection starts and the events now work")
+                'Phase 3: Free unused RAM and raise the started event
+                W(vbNewLine + DoTranslation("- Stage 3: Garbage collection", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 3: Garbage collection starts and the events now work")
                 Dim proc As Process = Process.GetCurrentProcess
                 W(DoTranslation("Before garbage collection: {0} bytes", currentLang), True, ColTypes.Neutral, proc.PrivateMemorySize64)
                 DisposeAll()
@@ -128,9 +121,12 @@ Public Module Kernel
                     PowerManage("shutdown")
                 End If
 
-                'Phase 5: Log-in
-                W(vbNewLine + DoTranslation("- Stage 5: Log in", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 5: Log in")
+                'Phase 4: Log-in
+                W(vbNewLine + DoTranslation("- Stage 4: Log in", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 4: Log in")
+                AddUser("root", RootPasswd)
+                Permission(PermissionType.Administrator, "root", PermissionManagementMode.Allow)
+                LoginFlag = True
                 If Not BootArgs Is Nothing Then
                     If BootArgs.Contains("quiet") Then
                         Console.SetOut(DefConsoleOut)
