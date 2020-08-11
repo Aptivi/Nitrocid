@@ -109,18 +109,6 @@ Public Module Kernel
                 proc.Dispose()
                 EventManager.RaiseStartKernel()
 
-                'Check to see if CI flags were enabled
-                If CI_TestWdbg Then
-                    StartRDebugThread(False)
-                    DebugMode = False
-                    PrintLog()
-                    PowerManage("shutdown")
-                ElseIf CI_TestInit Then
-                    CI_TestInitStopwatch.Stop()
-                    W(CStr(CI_TestInitStopwatch.ElapsedMilliseconds) + " ms", True, ColTypes.Neutral)
-                    PowerManage("shutdown")
-                End If
-
                 'Phase 4: Log-in
                 W(vbNewLine + DoTranslation("- Stage 4: Log in", currentLang), True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 4: Log in")
