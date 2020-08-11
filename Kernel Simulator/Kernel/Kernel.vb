@@ -133,6 +133,7 @@ Public Module Kernel
                     End If
                 End If
                 InitializeUsers()
+                LoadPermissions()
 
                 'Show current time
                 ShowCurrentTimes()

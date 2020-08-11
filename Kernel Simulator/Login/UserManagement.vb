@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Text.RegularExpressions
+Imports Microsoft.SqlServer.Server
 
 Public Module UserManagement
 
@@ -381,6 +382,23 @@ Public Module UserManagement
             W(DoTranslation("Failed to initialize permissions for user {0}: {1}", currentLang), True, ColTypes.Err, NewUser, ex.Message)
             WStkTrc(ex)
         End Try
+    End Sub
+
+    ''' <summary>
+    ''' Loads permissions for all users
+    ''' </summary>
+    Public Sub LoadPermissions()
+        Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+        Dim UserLine() As String = {}
+        For i As Integer = 0 To UsersLines.Count - 1
+            UserLine = UsersLines(i).Split(",")
+            Dim UserName As String = UserLine(0)
+            Dim AdminEnabled As String = UserLine(2)
+            Dim UserDisabled As String = UserLine(3)
+            adminList(UserName) = CType(AdminEnabled, Boolean)
+            disabledList(UserName) = CType(UserDisabled, Boolean)
+        Next
+        File.WriteAllLines(paths("Users"), UsersLines)
     End Sub
 
 End Module
