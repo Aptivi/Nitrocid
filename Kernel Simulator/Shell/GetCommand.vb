@@ -944,6 +944,11 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "settings" Then
+
+                OpenMainPage()
+                Done = True
+
             ElseIf words(0) = "shownotifs" Then
 
                 Dim Count As Integer = 1
