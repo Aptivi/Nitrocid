@@ -54,7 +54,7 @@ Public Module UserManagement
             UsersWriter = New StreamWriter(paths("Users"), True) With {.AutoFlush = True}
             If Not UsersLines.Count = 0 Then
                 For i As Integer = 0 To UsersLines.Count - 1
-                    If Not UsersLines(i).StartsWith(uninitUser + ",") Then
+                    If Not userword.ContainsKey(uninitUser) Then
                         UsersWriter.WriteLine(uninitUser + "," + unpassword)
                         Exit For
                     End If
