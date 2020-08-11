@@ -45,18 +45,28 @@ Public Module UserManagement
                 Throw New InvalidOperationException("Trying to add unencrypted password to users list. That won't work properly, since login relies on encrypted passwords.")
             End If
 
-            'Add user
+            'Add user locally
             If Not File.Exists(paths("Users")) Then File.Create(paths("Users")).Close()
             Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
             If Not userword.ContainsKey(uninitUser) Then userword.Add(uninitUser, unpassword)
+
+            'Add user globally
             UsersWriter = New StreamWriter(paths("Users"), True) With {.AutoFlush = True}
-            If Not UsersLines.Contains(uninitUser + "," + unpassword) Then UsersWriter.WriteLine(uninitUser + "," + unpassword)
+            If Not UsersLines.Count = 0 Then
+                For i As Integer = 0 To UsersLines.Count - 1
+                    If Not UsersLines(i).StartsWith(uninitUser + ",") Then
+                        UsersWriter.WriteLine(uninitUser + "," + unpassword)
+                        Exit For
+                    End If
+                Next
+            Else
+                UsersWriter.WriteLine(uninitUser + "," + unpassword)
+            End If
             UsersWriter.Close() : UsersWriter.Dispose()
 
             'Ready permissions
             Wdbg("I", "Username {0} added. Readying permissions...", uninitUser)
-            If Not adminList.ContainsKey(uninitUser) Then adminList.Add(uninitUser, False)
-            If Not disabledList.ContainsKey(uninitUser) Then disabledList.Add(uninitUser, False)
+            InitPermissionsForNewUser(uninitUser)
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
@@ -76,8 +86,10 @@ Public Module UserManagement
     Public Sub InitializeUsers()
         'Opens file stream
         Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+        Dim SplitEntries() As String
         For Each Line As String In UsersLines
-            InitializeUser(Line.Remove(Line.IndexOf(",")), Line.Substring(Line.IndexOf(",") + 1), False)
+            SplitEntries = Line.Split(",")
+            InitializeUser(SplitEntries(0), SplitEntries(1), False)
         Next
     End Sub
 
@@ -223,6 +235,16 @@ Public Module UserManagement
     ''' <param name="PermissionMode">Whether to allow or disallow a specified type for a user</param>
     Public Sub Permission(ByVal PermType As PermissionType, ByVal Username As String, ByVal PermissionMode As PermissionManagementMode)
 
+        'Open users.csv file
+        Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+        Dim UserLine As String() = {}
+        For i As Integer = 0 To UsersLines.Count - 1
+            If UsersLines(i).StartsWith($"{Username},") Then
+                UserLine = UsersLines(i).Split(",")
+                Exit For
+            End If
+        Next
+
         'Adds user into permission lists.
         Try
             Wdbg("I", "Mode: {0}", PermissionMode)
@@ -284,6 +306,17 @@ Public Module UserManagement
             End If
         End Try
 
+        'Save changes
+        For i As Integer = 0 To UsersLines.Count - 1
+            If UsersLines(i).StartsWith($"{Username},") Then
+                UserLine(2) = adminList(Username)
+                UserLine(3) = disabledList(Username)
+                UsersLines(i) = UserLine.Join(",")
+                Exit For
+            End If
+        Next
+        File.WriteAllLines(paths("Users"), UsersLines)
+
     End Sub
 
     ''' <summary>
@@ -323,6 +356,31 @@ Public Module UserManagement
             End If
         End Try
 
+    End Sub
+
+    ''' <summary>
+    ''' Initializes permissions for a new user with default settings
+    ''' </summary>
+    ''' <param name="NewUser">A new user name</param>
+    Public Sub InitPermissionsForNewUser(ByVal NewUser As String)
+        Try
+            'Initialize permissions locally
+            If Not adminList.ContainsKey(NewUser) Then adminList.Add(NewUser, False)
+            If Not disabledList.ContainsKey(NewUser) Then disabledList.Add(NewUser, False)
+
+            'Initialize permissions globally
+            Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+            For i As Integer = 0 To UsersLines.Count - 1
+                If UsersLines(i).StartsWith($"{NewUser},") And UsersLines(i).AllIndexesOf(",").Count = 1 Then
+                    UsersLines(i) = UsersLines(i) + ",False,False"
+                    Exit For
+                End If
+            Next
+            File.WriteAllLines(paths("Users"), UsersLines)
+        Catch ex As Exception
+            W(DoTranslation("Failed to initialize permissions for user {0}: {1}", currentLang), True, ColTypes.Err, NewUser, ex.Message)
+            WStkTrc(ex)
+        End Try
     End Sub
 
 End Module

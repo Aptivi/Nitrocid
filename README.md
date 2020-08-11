@@ -274,7 +274,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **8/6/2020 - 0.0.11.1:** Fixed messup on console output redirection, Removed Turkish language, Added notification when config fails to be read
 
-**8/8/2020 - WIP - 0.0.12:** Updated SSH.NET Library
+**8/10/2020 - WIP - 0.0.12:** Updated SSH.NET Library, Added builtin configuration tool, Added permanent permission support
 
 Items with asterisk means that the specified change/fix will be backported to previous version of KS which doesn't have it (only for Ubuntu PPA version, backports as Debian patches)
 
