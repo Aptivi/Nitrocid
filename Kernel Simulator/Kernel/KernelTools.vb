@@ -307,6 +307,11 @@ Public Module KernelTools
             dbgWriter.Close() : dbgWriter.Dispose()
         End If
 
+        'Stop RPC
+        RPCThread.Abort()
+        RPCListen.Close()
+        RPCThread = New Thread(AddressOf ListenRPC) With {.IsBackground = True}
+
         'Disable safe mode
         SafeMode = True
     End Sub
