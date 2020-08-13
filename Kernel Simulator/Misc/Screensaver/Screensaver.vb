@@ -27,9 +27,8 @@ Public Module Screensaver
     Public LockMode As Boolean = False
     Public InSaver As Boolean = False
     Public defSaverName As String = "glitterMatrix"
-    Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"colorMix255", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False},
-                                                                 {"lines", False}, {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False},
-                                                                 {"glitterColor255", False}, {"disco255", False}, {"lines255", False}}
+    Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False},
+                                                                 {"lines", False}, {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False}}
     Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker
     Private execCustomSaver As CompilerResults
@@ -39,13 +38,42 @@ Public Module Screensaver
     ''' Custom screensaver interface with groups of subs and properties
     ''' </summary>
     Public Interface ICustomSaver
+        ''' <summary>
+        ''' Initializes screensaver
+        ''' </summary>
         Sub InitSaver()
-        Sub PreDisplay() 'Code before starting screensaver
-        Sub PostDisplay() 'Code after stopping screensaver
-        Sub ScrnSaver() 'Code during the screensaver
+        ''' <summary>
+        ''' Do anything before displaying screensaver
+        ''' </summary>
+        Sub PreDisplay()
+        ''' <summary>
+        ''' Do anything after displaying screensaver
+        ''' </summary>
+        Sub PostDisplay()
+        ''' <summary>
+        ''' Display a screensaver
+        ''' </summary>
+        Sub ScrnSaver()
+        ''' <summary>
+        ''' Indicate whether or not the screensaver is initialized
+        ''' </summary>
+        ''' <returns>true if initialized, false if uninitialized</returns>
         Property Initialized As Boolean
+        ''' <summary>
+        ''' How many milliseconds to delay for each call to ScrnSaver
+        ''' </summary>
+        ''' <returns>A millisecond value</returns>
         Property DelayForEachWrite As Integer
+        ''' <summary>
+        ''' The name of screensaver
+        ''' </summary>
+        ''' <returns>The name</returns>
         Property SaverName As String
+        ''' <summary>
+        ''' Settings for custom screensaver
+        ''' </summary>
+        ''' <returns>A set of leys and values holding settings for the screensaver</returns>
+        Property SaverSettings As Dictionary(Of String, String)
     End Interface
 
     ''' <summary>
@@ -144,38 +172,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 HackUserFromAD.CancelAsync()
-                Thread.Sleep(150)
-            ElseIf saver = "glitterColor255" Then
-                GlitterColor255.WorkerSupportsCancellation = True
-                GlitterColor255.RunWorkerAsync()
-                Wdbg("I", "Glitter 255 Colors started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                GlitterColor255.CancelAsync()
-                Thread.Sleep(150)
-            ElseIf saver = "colorMix255" Then
-                ColorMix255.WorkerSupportsCancellation = True
-                ColorMix255.RunWorkerAsync()
-                Wdbg("I", "Mix 255 Colors started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                ColorMix255.CancelAsync()
-                Thread.Sleep(150)
-            ElseIf saver = "disco255" Then
-                Disco255.WorkerSupportsCancellation = True
-                Disco255.RunWorkerAsync()
-                Wdbg("I", "Disco 255 Colors started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                Disco255.CancelAsync()
-                Thread.Sleep(150)
-            ElseIf saver = "lines255" Then
-                Lines255.WorkerSupportsCancellation = True
-                Lines255.RunWorkerAsync()
-                Wdbg("I", "Lines 255 Colors started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                Lines255.CancelAsync()
                 Thread.Sleep(150)
             ElseIf ScrnSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
@@ -283,7 +279,7 @@ Public Module Screensaver
             Dim ksconf As New IniFile()
             Dim pathConfig As String = paths("Configuration")
             ksconf.Load(pathConfig)
-            ksconf.Sections("Misc").Keys("Screensaver").Value = saver
+            ksconf.Sections("Screensaver").Keys("Screensaver").Value = saver
             ksconf.Save(pathConfig)
             ScrnSvrdb(defSaverName) = False
             defSaverName = saver

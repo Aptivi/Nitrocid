@@ -86,12 +86,20 @@ Public Module Config
                         New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
                         New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly)))
 
+                'The Screensaver Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Screensaver",
+                        New IniKey(ksconf, "Screensaver", defSaverName),
+                        New IniKey(ksconf, "Screensaver Timeout in ms", ScrnTimeout),
+                        New IniKey(ksconf, "ColorMix - Activate 255 Color Mode", ColorMix255Colors),
+                        New IniKey(ksconf, "Disco - Activate 255 Color Mode", Disco255Colors),
+                        New IniKey(ksconf, "GlitterColor - Activate 255 Color Mode", GlitterColor255Colors),
+                        New IniKey(ksconf, "Lines - Activate 255 Color Mode", Lines255Colors)))
+
                 'Misc Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Misc",
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", CornerTD),
-                        New IniKey(ksconf, "Screensaver", defSaverName),
-                        New IniKey(ksconf, "Screensaver Timeout in ms", ScrnTimeout),
                         New IniKey(ksconf, "Debug Size Quota in Bytes", DebugQuota),
                         New IniKey(ksconf, "Size parse mode", FullParseMode),
                         New IniKey(ksconf, "Marquee on startup", StartScroll),
@@ -155,12 +163,20 @@ Public Module Config
                         New IniKey(ksconf, "Log FTP IP address", "False"),
                         New IniKey(ksconf, "Return only first FTP profile", "False")))
 
+                'The Screensaver Section
+                ksconf.Sections.Add(
+                    New IniSection(ksconf, "Screensaver",
+                        New IniKey(ksconf, "Screensaver", "matrix"),
+                        New IniKey(ksconf, "Screensaver Timeout in ms", 300000),
+                        New IniKey(ksconf, "ColorMix - Activate 255 Color Mode", "True"),
+                        New IniKey(ksconf, "Disco - Activate 255 Color Mode", "True"),
+                        New IniKey(ksconf, "GlitterColor - Activate 255 Color Mode", "True"),
+                        New IniKey(ksconf, "Lines - Activate 255 Color Mode", "True")))
+
                 'Misc Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Misc",
                         New IniKey(ksconf, "Show Time/Date on Upper Right Corner", "False"),
-                        New IniKey(ksconf, "Screensaver", "matrix"),
-                        New IniKey(ksconf, "Screensaver Timeout in ms", 300000),
                         New IniKey(ksconf, "Debug Size Quota in Bytes", 1073741824),
                         New IniKey(ksconf, "Size parse mode", "False"),
                         New IniKey(ksconf, "Marquee on startup", "True"),
@@ -206,11 +222,18 @@ Public Module Config
             ksconf.Sections("Network").Keys("Log FTP IP address").TrailingComment.Text = "Whether or not to log FTP IP address in the debugger log."
             ksconf.Sections("Network").Keys("Return only first FTP profile").TrailingComment.Text = "Whether or not to return only first successful FTP profile when polling for profiles."
 
+            'Screensaver
+            ksconf.Sections("Screensaver").TrailingComment.Text = "This section is the network settings."
+            ksconf.Sections("Screensaver").Keys("Screensaver").TrailingComment.Text = "Specifies the current screensaver."
+            ksconf.Sections("Screensaver").Keys("Screensaver Timeout in ms").TrailingComment.Text = "After specified milliseconds, the screensaver will launch."
+            ksconf.Sections("Screensaver").Keys("ColorMix - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for ColorMix"
+            ksconf.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Disco"
+            ksconf.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for GlitterColor"
+            ksconf.Sections("Screensaver").Keys("Lines - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Lines"
+
             'Misc
             ksconf.Sections("Misc").TrailingComment.Text = "This section is the other settings that are not categorized yet."
             ksconf.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").TrailingComment.Text = "Whether or not it shows time and date on the upper right corner."
-            ksconf.Sections("Misc").Keys("Screensaver").TrailingComment.Text = "Specifies the current screensaver."
-            ksconf.Sections("Misc").Keys("Screensaver Timeout in ms").TrailingComment.Text = "After specified milliseconds, the screensaver will launch."
             ksconf.Sections("Misc").Keys("Debug Size Quota in Bytes").TrailingComment.Text = "Specifies the maximum log size in bytes. If this was exceeded, it will remove the first 5 lines from the log to free up some space."
             ksconf.Sections("Misc").Keys("Size parse mode").TrailingComment.Text = "Parse whole directory for size. If set to False, it will parse just the surface."
             ksconf.Sections("Misc").Keys("Marquee on startup").TrailingComment.Text = "Whether or not to activate banner animation."
@@ -356,11 +379,17 @@ Public Module Config
             FTPLoggerIP = configReader.Sections("Network").Keys("Log FTP IP address").Value
             FTPFirstProfileOnly = configReader.Sections("Network").Keys("Return only first FTP profile").Value
 
+            'Screensaver Section
+            defSaverName = configReader.Sections("Screensaver").Keys("Screensaver").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value, 0) Then ScrnTimeout = configReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value
+            ColorMix255Colors = configReader.Sections("Screensaver").Keys("ColorMix - Activate 255 Color Mode").Value
+            Disco255Colors = configReader.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").Value
+            GlitterColor255Colors = configReader.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").Value
+            Lines255Colors = configReader.Sections("Screensaver").Keys("Lines - Activate 255 Color Mode").Value
+
             'Misc Section
             Wdbg("I", "Parsing misc section...")
             If configReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True" Then CornerTD = True Else CornerTD = False
-            defSaverName = configReader.Sections("Misc").Keys("Screensaver").Value
-            If Integer.TryParse(configReader.Sections("Misc").Keys("Screensaver Timeout in ms").Value, 0) Then ScrnTimeout = configReader.Sections("Misc").Keys("Screensaver Timeout in ms").Value
             If Integer.TryParse(configReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value, 0) Then DebugQuota = configReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value
             If configReader.Sections("Misc").Keys("Size parse mode").Value = "True" Then FullParseMode = True Else FullParseMode = False
             If configReader.Sections("Misc").Keys("Marquee on startup").Value = "True" Then StartScroll = True Else StartScroll = False
