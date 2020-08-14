@@ -61,6 +61,16 @@ Module MailGetCommand
             ElseIf cmd = "exit" Then
                 RequiredArgsProvided = True
                 ExitRequested = True
+                W(DoTranslation("Do you want to keep connected?", currentLang) + " <y/n> ", False, ColTypes.Input)
+                Dim Answer As Char = Console.ReadKey.KeyChar
+                Console.WriteLine()
+                If Answer = "y" Then
+                    KeepAlive = True
+                ElseIf Answer = "n" Then
+                    KeepAlive = False
+                Else
+                    W(DoTranslation("Invalid choice. Assuming no...", currentLang), True, ColTypes.Input)
+                End If
             ElseIf cmd = "list" Then
                 If FullArgsL.Count > 0 Then
                     Wdbg("I", "Page is numeric? {0}", FullArgsL(0).IsNumeric)

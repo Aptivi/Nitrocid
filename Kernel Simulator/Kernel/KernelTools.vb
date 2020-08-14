@@ -312,6 +312,10 @@ Public Module KernelTools
         RPCListen.Close()
         RPCThread = New Thread(AddressOf ListenRPC) With {.IsBackground = True}
 
+        'Disconnect from mail
+        IMAP_Client.Disconnect(True)
+        SMTP_Client.Disconnect(True)
+
         'Disable safe mode
         SafeMode = True
     End Sub

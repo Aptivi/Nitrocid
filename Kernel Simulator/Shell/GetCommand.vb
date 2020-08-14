@@ -585,12 +585,17 @@ Public Module GetCommand
 
             ElseIf words(0) = "lsmail" Then
 
-                If args.Count = 0 Then
-                    PromptUser()
+                If KeepAlive Then
+                    OpenShell(Mail_Authentication.Domain)
                     Done = True
-                ElseIf Not eqargs(0) = "" Then
-                    PromptPassword(eqargs(0))
-                    Done = True
+                Else
+                    If args.Count = 0 Then
+                        PromptUser()
+                        Done = True
+                    ElseIf Not eqargs(0) = "" Then
+                        PromptPassword(eqargs(0))
+                        Done = True
+                    End If
                 End If
 
             ElseIf requestedCommand = "logout" Then

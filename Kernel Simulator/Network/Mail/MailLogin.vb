@@ -76,6 +76,7 @@ Module MailLogin
         End If
 
         'Try to connect
+        Mail_Authentication.Domain = IMAP_Address
         ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port)
     End Sub
 
@@ -114,6 +115,7 @@ Module MailLogin
             W(DoTranslation("Error while connecting to {0}: {1}", currentLang), True, ColTypes.Err, Address, ex.Message)
             WStkTrc(ex)
             IMAP_Client.Disconnect(True)
+            SMTP_Client.Disconnect(True)
         End Try
     End Sub
 

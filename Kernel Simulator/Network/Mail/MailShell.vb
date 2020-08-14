@@ -26,7 +26,7 @@ Module MailShell
     Public Mail_AvailableCommands() As String = {"help", "cd", "lsdirs", "exit", "list", "read", "rm", "rmall", "send"}
     Public IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
-    Friend ExitRequested As Boolean
+    Friend ExitRequested, KeepAlive As Boolean
 
     ''' <summary>
     ''' Initializes the shell of the mail client
@@ -47,17 +47,7 @@ Module MailShell
 
         While Not ExitRequested
             'Populate messages
-            If IMAP_CurrentDirectory = "" Or IMAP_CurrentDirectory = "Inbox" Then
-                IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
-                Wdbg("I", "Opened inbox")
-                IMAP_Messages = IMAP_Client.Inbox.Search(SearchQuery.All).Reverse
-                Wdbg("I", "Messages count: {0} messages", IMAP_Messages.LongCount)
-            Else
-                Dim Folder As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                Wdbg("I", "Opened {0}", IMAP_CurrentDirectory)
-                IMAP_Messages = Folder.Search(SearchQuery.All).Reverse
-                Wdbg("I", "Messages count: {0} messages", IMAP_Messages.LongCount)
-            End If
+            PopulateMessages()
 
             'Initialize prompt
             If Not IsNothing(DefConsoleOut) Then
@@ -96,9 +86,14 @@ Module MailShell
 
         'Disconnect the session
         IMAP_CurrentDirectory = "Inbox"
-        Wdbg("W", "Exit requested. Disconnecting host...")
-        IMAP_Client.Disconnect(True)
-        SMTP_Client.Disconnect(True)
+        If KeepAlive Then
+            Wdbg("W", "Exit requested, but not disconnecting.")
+        Else
+            Wdbg("W", "Exit requested. Disconnecting host...")
+            IMAP_Client.Disconnect(True)
+            SMTP_Client.Disconnect(True)
+        End If
+        ExitRequested = False
 
         'Restore handler
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
@@ -116,6 +111,7 @@ Module MailShell
                 SyncLock IMAP_Client.SyncRoot
                     IMAP_Client.NoOp()
                 End SyncLock
+                PopulateMessages()
             Else
                 Wdbg("W", "Connection state is inconsistent. Stopping IMAPKeepConnection()...")
                 Thread.CurrentThread.Abort()
@@ -185,5 +181,26 @@ Module MailShell
         Return Opened
 #Enable Warning BC42104
     End Function
+
+    ''' <summary>
+    ''' Populates e-mail messages
+    ''' </summary>
+    Public Sub PopulateMessages()
+        If IMAP_Client.IsConnected Then
+            SyncLock IMAP_Client.SyncRoot
+                If IMAP_CurrentDirectory = "" Or IMAP_CurrentDirectory = "Inbox" Then
+                    IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
+                    Wdbg("I", "Opened inbox")
+                    IMAP_Messages = IMAP_Client.Inbox.Search(SearchQuery.All).Reverse
+                    Wdbg("I", "Messages count: {0} messages", IMAP_Messages.LongCount)
+                Else
+                    Dim Folder As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                    Wdbg("I", "Opened {0}", IMAP_CurrentDirectory)
+                    IMAP_Messages = Folder.Search(SearchQuery.All).Reverse
+                    Wdbg("I", "Messages count: {0} messages", IMAP_Messages.LongCount)
+                End If
+            End SyncLock
+        End If
+    End Sub
 
 End Module
