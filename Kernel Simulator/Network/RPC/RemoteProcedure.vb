@@ -33,6 +33,7 @@ Module RemoteProcedure
         Try
             Wdbg("I", "RPC: Starting...")
             RPCThread.Start()
+            RPCThread.Join()
         Catch ex As ThreadStateException
             W(DoTranslation("RPC is already running.", currentLang), True, ColTypes.Err)
             WStkTrc(ex)
