@@ -173,10 +173,21 @@ Public Module Shell
         Try
             If ArgsMode = False Then
                 If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
+                    'Split group of commands
                     Dim groupCmds() As String = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
+
+                    'Parse script command (if any)
                     Dim scriptArgs As List(Of String) = strcommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
-                    Dim scriptCmd As String = scriptArgs(0) + ".uesh"
+                    Dim scriptCmd As String = scriptArgs(0)
+                    If scriptCmd.StartsWith("""") And scriptCmd.EndsWith("""") Then
+                        scriptCmd = scriptCmd.Replace("""", "")
+                    End If
+                    If Not scriptCmd.EndsWith(".uesh") Then
+                        scriptCmd += ".uesh"
+                    End If
                     scriptArgs.RemoveAt(0)
+
+                    'Try to execute command
                     For Each cmd In groupCmds
                         'Get the index of the first space
                         Dim indexCmd As Integer = cmd.IndexOf(" ")
