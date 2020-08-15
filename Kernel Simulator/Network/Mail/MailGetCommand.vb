@@ -73,6 +73,7 @@ Module MailGetCommand
                 End If
             ElseIf cmd = "list" Then
                 If FullArgsL.Count > 0 Then
+                    RequiredArgsProvided = True
                     Wdbg("I", "Page is numeric? {0}", FullArgsL(0).IsNumeric)
                     If FullArgsL(0).IsNumeric Then
                         Dim Page As Integer
@@ -235,6 +236,7 @@ Module MailGetCommand
                     End If
                 End If
             ElseIf cmd = "send" Then
+                RequiredArgsProvided = True
                 Dim Receiver, Subject As String
                 Dim Body As New StringBuilder
 
