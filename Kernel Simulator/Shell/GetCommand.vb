@@ -525,8 +525,9 @@ Public Module GetCommand
                 If args.Count > 0 Then
                     Done = True
                     Dim PartNum As Integer = 1
+                    Dim DriveIndex As Integer = args(0) - 1
                     If EnvironmentOSType.Contains("Windows") Then
-                        For Each P As Part In HDDList(args(0)).Parts
+                        For Each P As Part In HDDList(DriveIndex).Parts
                             W("==========================================", True, ColTypes.Neutral)
                             W(DoTranslation("Physical partition: {0}", currentLang), True, ColTypes.Neutral, PartNum)
                             W(DoTranslation("Boot flag: {0} ({1})", currentLang), True, ColTypes.Neutral, P.Boot, P.Bootable)
@@ -535,7 +536,7 @@ Public Module GetCommand
                             PartNum += 1
                         Next
                     ElseIf EnvironmentOSType.Contains("Unix") Then
-                        For Each P As Part_Linux In HDDList(args(0)).Parts
+                        For Each P As Part_Linux In HDDList(DriveIndex).Parts
                             W("==========================================", True, ColTypes.Neutral)
                             W(DoTranslation("Physical partition: {0}", currentLang), True, ColTypes.Neutral, PartNum)
                             W(DoTranslation("File system: {0}", currentLang), True, ColTypes.Neutral, P.FileSystem)

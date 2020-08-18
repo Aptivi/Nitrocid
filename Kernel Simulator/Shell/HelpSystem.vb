@@ -254,7 +254,7 @@ Public Module HelpSystem
 
         ElseIf command = "listparts" Then
 
-            W(DoTranslation("Usage:", currentLang) + " listparts <Index>" + vbNewLine +
+            W(DoTranslation("Usage:", currentLang) + " listparts <DriveNumber>" + vbNewLine +
               "       listparts: " + DoTranslation("Lists all probed partitions on a specific drive (and all logical partitions on all drives).", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "loteresp" Then
