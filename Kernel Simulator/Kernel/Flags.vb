@@ -19,26 +19,26 @@
 Module Flags
 
     'Variables: Normal environment
-    Public TimeDateIsSet As Boolean = False                     'To fix a bug after reboot
+    Public TimeDateIsSet As Boolean                             'To fix a bug after reboot
     Public StopPanicAndGoToDoublePanic As Boolean               'Double panic mode in kernel error
-    Public DebugMode As Boolean = False                         'Toggle Debugging mode
+    Public DebugMode As Boolean                                 'Toggle Debugging mode
     Public LoginFlag As Boolean                                 'Flag for log-in
-    Public CommandFlag As Boolean = False                       'A signal for command kernel argument
+    Public CommandFlag As Boolean                               'A signal for command kernel argument
     Public argsFlag As Boolean                                  'A flag for checking for an argument later
     Public argsInjected As Boolean                              'A flag for checking for an argument on reboot
-    Public setRootPasswd As Boolean = False                     'Set Root Password boolean
+    Public setRootPasswd As Boolean                             'Set Root Password boolean
     Public RootPasswd As String = ""                            'Set Root Password to any password
-    Public maintenance As Boolean = False                       'Maintenance Mode
-    Public argsOnBoot As Boolean = False                        'Arguments On Boot
-    Public clsOnLogin As Boolean = False                        'Clear Screen On Log-in
+    Public maintenance As Boolean                               'Maintenance Mode
+    Public argsOnBoot As Boolean                                'Arguments On Boot
+    Public clsOnLogin As Boolean                                'Clear Screen On Log-in
     Public showMOTD As Boolean = True                           'Show MOTD on log-in
-    Public simHelp As Boolean = False                           'Simplified Help Command
+    Public simHelp As Boolean                                   'Simplified Help Command
     Public slotProbe As Boolean = True                          'Probe slots
-    Public quietProbe As Boolean = False                        'Probe quietly
-    Public CornerTD As Boolean = False                          'Show Time/Date on corner
-    Public instanceChecked As Boolean = False                   'Instance checking
-    Public LogoutRequested As Boolean = False                   'A signal when user logs out.
-    Public RebootRequested As Boolean = False                   'Reboot requested
+    Public quietProbe As Boolean                                'Probe quietly
+    Public CornerTD As Boolean                                  'Show Time/Date on corner
+    Public instanceChecked As Boolean                           'Instance checking
+    Public LogoutRequested As Boolean                           'A signal when user logs out.
+    Public RebootRequested As Boolean                           'Reboot requested
     Public FTPLoggerUsername As Boolean                         'Log username for FTP
     Public FTPLoggerIP As Boolean                               'Log IP address for FTP
     Public FTPFirstProfileOnly As Boolean                       'Only first profile will be returned
@@ -50,7 +50,8 @@ Module Flags
     Public LoggedIn As Boolean                                  'Whether or not to detect if the user is logged in
     Public ShowAvailableUsers As Boolean = True                 'Whether or not to show available usernames on login
     Public HiddenFiles As Boolean                               'Whether or not to show hidden files
-    Public CheckUpdateStart As Boolean = True                   'Whether or not to ckeck for updates on startup
+    Public CheckUpdateStart As Boolean = True                   'Whether or not to check for updates on startup
+    Public LangChangeCulture As Boolean                         'Change culture when changing language
     Public ColorMix255Colors As Boolean                         'Enable 255 color support for ColorMix
     Public Disco255Colors As Boolean                            'Enable 255 color support for Disco
     Public GlitterColor255Colors As Boolean                     'Enable 255 color support for GlitterColor

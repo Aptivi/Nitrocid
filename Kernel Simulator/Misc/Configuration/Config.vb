@@ -38,6 +38,7 @@ Public Module Config
                         New IniKey(ksconf, "Change Root Password", setRootPasswd),
                         New IniKey(ksconf, "Set Root Password to", RootPasswd),
                         New IniKey(ksconf, "Check for Updates on Startup", CheckUpdateStart),
+                        New IniKey(ksconf, "Change Culture when Switching Languages", LangChangeCulture),
                         New IniKey(ksconf, "Language", currentLang)))
 
                 'The Colors Section
@@ -115,6 +116,7 @@ Public Module Config
                         New IniKey(ksconf, "Change Root Password", "False"),
                         New IniKey(ksconf, "Set Root Password to", "toor"),
                         New IniKey(ksconf, "Check for Updates on Startup", "True"),
+                        New IniKey(ksconf, "Change Culture when Switching Languages", "False"),
                         New IniKey(ksconf, "Language", "eng")))
 
                 'The Colors Section
@@ -191,6 +193,7 @@ Public Module Config
             ksconf.Sections("General").Keys("Maintenance Mode").TrailingComment.Text = "Whether or not to start the kernel in maintenance mode."
             ksconf.Sections("General").Keys("Prompt for Arguments on Boot").TrailingComment.Text = "Whether or not to prompt for arguments on boot to let you set arguments on the current boot"
             ksconf.Sections("General").Keys("Check for Updates on Startup").TrailingComment.Text = "If set to True, everytime the kernel boots, it will check for new updates."
+            ksconf.Sections("General").Keys("Change Culture when Switching Languages").TrailingComment.Text = "Indicate if the kernel is allowed to localize time and date locally."
             ksconf.Sections("General").Keys("Language").TrailingComment.Text = "The three-letter language name should be written. All languages can be found in the chlang command wiki."
 
             'Colors
@@ -354,6 +357,7 @@ Public Module Config
             If configReader.Sections("General").Keys("Maintenance Mode").Value = "True" Then maintenance = True Else maintenance = False
             If configReader.Sections("General").Keys("Prompt for Arguments on Boot").Value = "True" Then argsOnBoot = True Else argsOnBoot = False
             If configReader.Sections("General").Keys("Check for Updates on Startup").Value = "True" Then CheckUpdateStart = True Else CheckUpdateStart = False
+            If configReader.Sections("General").Keys("Change Culture when Switching Languages").Value = "True" Then LangChangeCulture = True Else LangChangeCulture = False
 
             'Login Section
             Wdbg("I", "Parsing login section...")

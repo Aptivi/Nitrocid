@@ -75,39 +75,66 @@ Public Module TimeDate
     End Sub
 
     ''' <summary>
-    ''' Renders the current time based on kernel config (long or short)
+    ''' Renders the current time based on kernel config (long or short) and current culture
     ''' </summary>
     ''' <returns>A long or short time</returns>
     Public Function RenderTime() As String
         If LongTimeDate Then
-            Return KernelDateTime.ToLongTimeString
+            Return KernelDateTime.ToString(CurrentCult.DateTimeFormat.LongTimePattern, CurrentCult)
         Else
-            Return KernelDateTime.ToShortTimeString
+            Return KernelDateTime.ToString(CurrentCult.DateTimeFormat.ShortTimePattern, CurrentCult)
         End If
     End Function
 
     ''' <summary>
-    ''' Renders the time based on specified time using the kernel config (long or short)
+    ''' Renders the current time based on specified culture
+    ''' </summary>
+    ''' <param name="Cult">A culture.</param>
+    ''' <returns>A time</returns>
+    Public Function RenderTime(ByVal Cult As CultureInfo) As String
+        If LongTimeDate Then
+            Return KernelDateTime.ToString(Cult.DateTimeFormat.LongTimePattern, Cult)
+        Else
+            Return KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult)
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Renders the time based on specified time using the kernel config (long or short) and current culture
     ''' </summary>
     ''' <param name="DT">Specified time</param>
     ''' <returns>A long or short time</returns>
     Public Function RenderTime(ByVal DT As Date) As String
         If LongTimeDate Then
-            Return DT.ToLongTimeString
+            Return DT.ToString(CurrentCult.DateTimeFormat.LongTimePattern, CurrentCult)
         Else
-            Return DT.ToShortTimeString
+            Return DT.ToString(CurrentCult.DateTimeFormat.ShortTimePattern, CurrentCult)
         End If
     End Function
 
     ''' <summary>
-    ''' Renders the current date based on kernel config (long or short)
+    ''' Renders the time based on specified date and culture using the kernel config (long or short)
+    ''' </summary>
+    ''' <param name="DT">Specified time</param>
+    ''' <param name="Cult">A culture</param>
+    ''' <returns>A time</returns>
+    Public Function RenderTime(ByVal DT As Date, ByVal Cult As CultureInfo) As String
+        If LongTimeDate Then
+            Return DT.ToString(Cult.DateTimeFormat.LongTimePattern, Cult)
+        Else
+            Return DT.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult)
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Renders the current date based on kernel config (long or short) and current culture
     ''' </summary>
     ''' <returns>A long or short date</returns>
     Public Function RenderDate() As String
         If LongTimeDate Then
-            Return KernelDateTime.ToLongDateString
+            Return KernelDateTime.ToString(CurrentCult.DateTimeFormat.LongDatePattern, CurrentCult)
         Else
-            Return KernelDateTime.ToShortDateString
+            Return KernelDateTime.ToString(CurrentCult.DateTimeFormat.ShortDatePattern, CurrentCult)
         End If
     End Function
 
@@ -117,19 +144,23 @@ Public Module TimeDate
     ''' <param name="Cult">A culture.</param>
     ''' <returns>A date</returns>
     Public Function RenderDate(ByVal Cult As CultureInfo) As String
-        Return KernelDateTime.ToString(Cult)
+        If LongTimeDate Then
+            Return KernelDateTime.ToString(Cult.DateTimeFormat.LongDatePattern, Cult)
+        Else
+            Return KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult)
+        End If
     End Function
 
     ''' <summary>
-    ''' Renders the date based on specified date using the kernel config (long or short)
+    ''' Renders the date based on specified date using the kernel config (long or short) and current culture
     ''' </summary>
     ''' <param name="DT">Specified date</param>
     ''' <returns>A long or short date</returns>
     Public Function RenderDate(ByVal DT As Date) As String
         If LongTimeDate Then
-            Return DT.ToLongDateString
+            Return DT.ToString(CurrentCult.DateTimeFormat.LongDatePattern, CurrentCult)
         Else
-            Return DT.ToShortDateString
+            Return DT.ToString(CurrentCult.DateTimeFormat.ShortDatePattern, CurrentCult)
         End If
     End Function
 
@@ -140,7 +171,11 @@ Public Module TimeDate
     ''' <param name="Cult">A culture</param>
     ''' <returns>A date</returns>
     Public Function RenderDate(ByVal DT As Date, ByVal Cult As CultureInfo) As String
-        Return DT.ToString(Cult)
+        If LongTimeDate Then
+            Return DT.ToString(Cult.DateTimeFormat.LongDatePattern, Cult)
+        Else
+            Return DT.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult)
+        End If
     End Function
 
 End Module

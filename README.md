@@ -274,7 +274,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **8/6/2020 - 0.0.11.1:** Fixed messup on console output redirection, Removed Turkish language, Added notification when config fails to be read
 
-**8/15/2020 - WIP - 0.0.12:** Updated SSH.NET Library, Added builtin configuration tool, Added permanent permission support, Removed CI command-line args, Added settings support for screensavers, Improved script execution logic, Now users can keep connected to their e-mail upon exiting the mail shell, Fixed invalid `Argument not provided` on list and send commands, now `listpart` can take drive numbers and not indexes
+**8/16/2020 - WIP - 0.0.12:** Updated SSH.NET Library, Added builtin configuration tool, Added permanent permission support, Removed CI command-line args, Added settings support for screensavers, Improved script execution logic, Now users can keep connected to their e-mail upon exiting the mail shell, Fixed invalid `Argument not provided` on list and send commands, now `listpart` can take drive numbers and not indexes, date and time are now localizable,
 
 Items with asterisk means that the specified change/fix will be backported to previous version of KS which doesn't have it (only for Ubuntu PPA version, backports as Debian patches)
 

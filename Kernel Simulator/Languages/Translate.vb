@@ -15,6 +15,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Globalization
+
 Public Module Translate
 
     'Variables
@@ -22,6 +24,7 @@ Public Module Translate
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
+    Public CurrentCult As New CultureInfo("en-US")
 
     ''' <summary>
     ''' Translates string into another language, or to English if the language wasn't specified or if it's invalid.
@@ -242,12 +245,14 @@ CHOICE:
             'Set current language
             W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, currentLang, lang)
             Dim OldModDescGeneric As String = DoTranslation("Command defined by ", currentLang)
+            Wdbg("I", "Translating kernel to {0}.", lang)
             currentLang = lang
             Dim ksconf As New IniFile()
             Dim pathConfig As String = paths("Configuration")
             ksconf.Load(pathConfig)
             ksconf.Sections("General").Keys("Language").Value = currentLang
             ksconf.Save(pathConfig)
+            Wdbg("I", "Saved new language.")
 
             'Update help list for translated help
             InitHelp()
@@ -255,9 +260,101 @@ CHOICE:
             IMAPInitHelp()
             TextEdit_UpdateHelp()
             ReloadGenericDefs(OldModDescGeneric)
+
+            'Update Culture if applicable
+            If LangChangeCulture Then
+                Wdbg("I", "Updating culture.")
+                UpdateCulture()
+            End If
         Else
             W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Err, lang)
         End If
     End Sub
+
+    ''' <summary>
+    ''' Updates current culture based on current language
+    ''' </summary>
+    Public Sub UpdateCulture()
+        Dim StrCult As String = GetCultureFromLang()
+        Wdbg("I", "Culture for {0} is {1}", currentLang, StrCult)
+        Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
+        Wdbg("I", "Parsing {0} cultures for {1}", Cults.Length, StrCult)
+        For Each Cult As CultureInfo In Cults
+            If Cult.EnglishName = StrCult Then
+                Wdbg("I", "Found. Changing culture...")
+                CurrentCult = Cult
+                Exit For
+            End If
+        Next
+    End Sub
+
+    ''' <summary>
+    ''' Get culture from current language
+    ''' </summary>
+    ''' <returns>English culture name</returns>
+    Public Function GetCultureFromLang() As String
+        Select Case currentLang
+            Case "arb-T", "arb"
+                Return "Arabic (Saudi Arabia)"
+            Case "ben-T", "ben"
+                Return "Bangla (Bangladesh)"
+            Case "chi-T", "chi"
+                Return "Chinese (Simplified, China)"
+            Case "cro"
+                Return "Croatian (Croatia)"
+            Case "cze"
+                Return "Czech (Czech Republic)"
+            Case "dan"
+                Return "Danish (Denmark)"
+            Case "dtc"
+                Return "Dutch (Netherlands)"
+            Case "eng"
+                Return "English (United States)"
+            Case "fin"
+                Return "Finnish (Finland)"
+            Case "fre"
+                Return "French (France)"
+            Case "ger"
+                Return "German (Germany)"
+            Case "ind-T", "ind"
+                Return "Hindi (India)"
+            Case "ita"
+                Return "Italian (Italy)"
+            Case "jpn-T", "jpn"
+                Return "Japanese (Japan)"
+            Case "kor-T", "kor"
+                Return "Korean (Korea)"
+            Case "mal"
+                Return "Malay (Malaysia)"
+            Case "ndo"
+                Return "Indonesian (Indonesia)"
+            Case "nwg"
+                Return "Norwegian Bokmål (Norway)"
+            Case "pol"
+                Return "Polish (Poland)"
+            Case "ptg"
+                Return "Portuguese (Brazil)"
+            Case "pun-T", "pun"
+                Return "Punjabi (India)"
+            Case "rmn"
+                Return "Romanian (Romania)"
+            Case "rus-T", "rus"
+                Return "Russian (Russia)"
+            Case "slo"
+                Return "Slovak (Slovakia)"
+            Case "spa"
+                Return "Spanish (Spain, International Sort)"
+            Case "srb-T"
+                Return "Serbian (Cyrillic, Serbia)"
+            Case "srb"
+                Return "Serbian (Latin, Serbia)"
+            Case "swe"
+                Return "Swedish (Sweden)"
+            Case "uzb"
+                Return "Uzbek (Cyrillic)"
+            Case "vtn"
+                Return "Vietnamese (Vietnam)"
+        End Select
+    End Function
 
 End Module
