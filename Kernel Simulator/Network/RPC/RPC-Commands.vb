@@ -64,7 +64,7 @@ Module RPC_Commands
     ''' </summary>
     Sub RecCommand()
         Dim endp As New IPEndPoint(IPAddress.Any, RPCPort)
-        While True
+        While RPCThread.IsAlive
             Dim buff() As Byte
             Dim ip As String = ""
             Try

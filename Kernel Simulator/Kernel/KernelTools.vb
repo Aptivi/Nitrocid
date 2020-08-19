@@ -309,7 +309,7 @@ Public Module KernelTools
 
         'Stop RPC
         RPCThread.Abort()
-        RPCListen.Close()
+        RPCListen?.Close()
         RPCThread = New Thread(AddressOf ListenRPC) With {.IsBackground = True}
 
         'Disconnect from mail
