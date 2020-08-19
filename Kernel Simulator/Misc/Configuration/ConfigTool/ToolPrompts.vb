@@ -76,11 +76,12 @@ Module ToolPrompts
             W(DoTranslation("Select option:", currentLang) + vbNewLine, True, ColTypes.Neutral)
             Select Case SectionNum
                 Case 1 'General
-                    MaxOptions = 4
+                    MaxOptions = 5
                     W("1) " + DoTranslation("Prompt for Arguments on Boot", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("argsOnBoot"))
                     W("2) " + DoTranslation("Maintenance Mode Trigger", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("maintenance"))
                     W("3) " + DoTranslation("Change Root Password...", currentLang), True, ColTypes.Neutral)
-                    W("4) " + DoTranslation("Check for Updates on Startup", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("CheckUpdateStart"))
+                    W("4) " + DoTranslation("Check for Updates on Startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("CheckUpdateStart"))
+                    W("5) " + DoTranslation("Change Culture when Switching Languages", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("LangChangeCulture"))
                 Case 2 'Hardware
                     MaxOptions = 2
                     W("1) " + DoTranslation("Quiet Probe", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("quietProbe"))
@@ -176,6 +177,12 @@ Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "CheckUpdateStart"
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 5 'Change Culture when Switching Languages
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = "LangChangeCulture"
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
@@ -427,37 +434,8 @@ Module ToolPrompts
     End Sub
 
     Sub SetValue(ByVal Variable As String, ByVal VariableValue As Object)
-        'Get types of possible flag locations
-        Dim TypeOfFlags As Type = GetType(Flags)
-        Dim TypeOfKernel As Type = GetType(Kernel)
-        Dim TypeOfShell As Type = GetType(Shell)
-        Dim TypeOfRDebugger As Type = GetType(RemoteDebugger)
-        Dim TypeOfTextWriter As Type = GetType(TextWriterColor)
-        Dim TypeOfNetworkTools As Type = GetType(NetworkTools)
-
-        'Get fields of flag modules
-        Dim FieldFlags As FieldInfo = TypeOfFlags.GetField(Variable)
-        Dim FieldKernel As FieldInfo = TypeOfKernel.GetField(Variable)
-        Dim FieldShell As FieldInfo = TypeOfShell.GetField(Variable)
-        Dim FieldRDebugger As FieldInfo = TypeOfRDebugger.GetField(Variable)
-        Dim FieldTextWriter As FieldInfo = TypeOfTextWriter.GetField(Variable)
-        Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
-
-        'Check if any of them contains the specified variable
-        Dim TargetField As FieldInfo
-        If Not IsNothing(FieldFlags) Then
-            TargetField = FieldFlags
-        ElseIf Not IsNothing(FieldKernel) Then
-            TargetField = FieldKernel
-        ElseIf Not IsNothing(FieldShell) Then
-            TargetField = FieldShell
-        ElseIf Not IsNothing(FieldRDebugger) Then
-            TargetField = FieldRDebugger
-        ElseIf Not IsNothing(FieldTextWriter) Then
-            TargetField = FieldTextWriter
-        ElseIf Not IsNothing(FieldNetworkTools) Then
-            TargetField = FieldNetworkTools
-        End If
+        'Get field for specified variable
+        Dim TargetField As FieldInfo = GetField(Variable)
 
         'Set the variable if found
         If Not IsNothing(TargetField) Then
@@ -472,6 +450,23 @@ Module ToolPrompts
     End Sub
 
     Function GetValue(ByVal Variable As String) As Object
+        'Get field for specified variable
+        Dim TargetField As FieldInfo = GetField(Variable)
+
+        'Get the variable if found
+        If Not IsNothing(TargetField) Then
+            'The "obj" description says this: "The object whose field value will be returned."
+            'Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
+            'Unfortunately, there are no examples on the MSDN that showcases such situations; classes are being used.
+            Return TargetField.GetValue(Variable)
+        Else
+            'Variable not found on any of the "flag" modules.
+            W(DoTranslation("Variable {0} is not found on any of the modules.", currentLang), True, ColTypes.Err)
+            Return Nothing
+        End If
+    End Function
+
+    Function GetField(ByVal Variable As String) As FieldInfo
         'Get types of possible flag locations
         Dim TypeOfFlags As Type = GetType(Flags)
         Dim TypeOfKernel As Type = GetType(Kernel)
@@ -489,31 +484,18 @@ Module ToolPrompts
         Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
 
         'Check if any of them contains the specified variable
-        Dim TargetField As FieldInfo
         If Not IsNothing(FieldFlags) Then
-            TargetField = FieldFlags
+            Return FieldFlags
         ElseIf Not IsNothing(FieldKernel) Then
-            TargetField = FieldKernel
+            Return FieldKernel
         ElseIf Not IsNothing(FieldShell) Then
-            TargetField = FieldShell
+            Return FieldShell
         ElseIf Not IsNothing(FieldRDebugger) Then
-            TargetField = FieldRDebugger
+            Return FieldRDebugger
         ElseIf Not IsNothing(FieldTextWriter) Then
-            TargetField = FieldTextWriter
+            Return FieldTextWriter
         ElseIf Not IsNothing(FieldNetworkTools) Then
-            TargetField = FieldNetworkTools
-        End If
-
-        'Set the variable if found
-        If Not IsNothing(TargetField) Then
-            'The "obj" description says this: "The object whose field value will be returned."
-            'Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-            'Unfortunately, there are no examples on the MSDN that showcases such situations; classes are being used.
-            Return TargetField.GetValue(Variable)
-        Else
-            'Variable not found on any of the "flag" modules.
-            W(DoTranslation("Variable {0} is not found on any of the modules.", currentLang), True, ColTypes.Err)
-            Return Nothing
+            Return FieldNetworkTools
         End If
     End Function
 
