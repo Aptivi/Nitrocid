@@ -14,7 +14,7 @@ We are no longer providing KS with speak and soundtest commands because of odd e
 
 We have added console output redirection for some commands that didn't require user interaction. For more information, consult the Wiki.
 
-We will make an overhaul to README.md and various documentations during the development of 0.0.12.0.
+We will make an overhaul to README.md and various documentations during the development of 0.0.12.0. We will also make it more API-friendly.
 
 ## |-----+--> _Notices_ <--+-----|
 
