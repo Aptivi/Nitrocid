@@ -31,6 +31,7 @@ Module SSH
             Wdbg("I", "Address: {0}:{1}, Username: {2}", Address, Port, Username)
             W(DoTranslation("Enter the password for {0}: ", currentLang), False, ColTypes.Input, Username)
             Dim Pass As String = ReadLineNoInput("*")
+            Console.WriteLine()
 
             'Connection
             Dim SSH As New SshClient(Address, Port, Username, Pass)
