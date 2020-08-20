@@ -27,8 +27,7 @@ Module Speller
         Dim Downloader As New WebClient
         Dim RandomDriver As New Random
         Dim RandomWord As String
-        Dim SpeltWord As String = ""
-        W(DoTranslation("Write ""GetMeOut"" to exit.", currentLang), True, ColTypes.Neutral)
+        Dim SpeltWord As String
         If Words.Count = 0 Then
             Wdbg("I", "Downloading words...")
             Words.AddRange(Downloader.DownloadString("https://raw.githubusercontent.com/sindresorhus/word-list/master/words.txt").Replace(Chr(13), "").Split(Chr(10)).ToList)
@@ -43,14 +42,10 @@ Module Speller
             If SpeltWord = RandomWord Then
                 Wdbg("I", "Spelt: {0} = {1}", SpeltWord, RandomWord)
                 W(DoTranslation("Spelt perfectly!", currentLang), True, ColTypes.Neutral)
-            ElseIf SpeltWord = "GetMeOut" Then
-                Wdbg("I", "Exit")
-                Exit Sub
             Else
                 Wdbg("I", "Spelt: {0} != {1}", SpeltWord, RandomWord)
                 W(DoTranslation("Spelt incorrectly.", currentLang), True, ColTypes.Neutral)
             End If
-            SpeltWord = ""
         End While
     End Sub
 
