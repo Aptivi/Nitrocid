@@ -360,16 +360,8 @@ Public Module GetCommand
             ElseIf words(0) = "copy" Then
 
                 If eqargs?.Length >= 2 Then
-                    eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
-                    eqargs(1) = CurrDir + "/" + eqargs(1).Replace("\", "/")
-                    If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        eqargs(0) = ReplaceLastOccurrence(eqargs(0), CurrDir, "")
-                    End If
-                    If eqargs(1).Contains(CurrDir.Replace("\", "/")) And eqargs(1).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        eqargs(1) = ReplaceLastOccurrence(eqargs(1), CurrDir, "")
-                    End If
-                    Dim source As String = eqargs(0)
-                    Dim target As String = eqargs(1)
+                    Dim source As String = NeutralizePath(eqargs(0))
+                    Dim target As String = NeutralizePath(eqargs(1))
                     Dim filesrc As String = Path.GetFileName(source)
                     If Directory.Exists(source) And Directory.Exists(target) Then
                         FileIO.FileSystem.CopyDirectory(source, target + "/" + filesrc)
@@ -414,10 +406,7 @@ Public Module GetCommand
             ElseIf words(0) = "edit" Then
 
                 If eqargs?.Count >= 1 Then
-                    eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
-                    If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        eqargs(0) = ReplaceLastOccurrence(eqargs(0), CurrDir, "")
-                    End If
+                    eqargs(0) = NeutralizePath(eqargs(0))
                     Wdbg("I", "File path is {0} and .Exists is {0}", eqargs(0), File.Exists(eqargs(0)))
                     If File.Exists(eqargs(0)) Then
                         InitializeTextShell(eqargs(0))
@@ -483,10 +472,7 @@ Public Module GetCommand
                     List(CurrDir)
                     Done = True
                 Else
-                    Dim direct As String = CurrDir + "/" + strArgs.Replace("\", "/")
-                    If direct.Contains(CurrDir.Replace("\", "/")) And direct.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        direct = ReplaceLastOccurrence(direct, CurrDir, "")
-                    End If
+                    Dim direct As String = NeutralizePath(strArgs)
                     List(direct)
                     Done = True
                 End If
@@ -626,10 +612,7 @@ Public Module GetCommand
 
                 If args.Count > 0 Then
                     'Create directory
-                    Dim direct As String = CurrDir + "/" + strArgs.Replace("\", "/")
-                    If direct.Contains(CurrDir.Replace("\", "/")) And direct.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        direct = ReplaceLastOccurrence(direct, CurrDir, "")
-                    End If
+                    Dim direct As String = NeutralizePath(strArgs)
                     If Not Directory.Exists(direct) Then
                         Directory.CreateDirectory(direct)
                     Else
@@ -641,10 +624,7 @@ Public Module GetCommand
             ElseIf words(0) = "mkfile" Then
 
                 If eqargs?.Length >= 1 Then
-                    eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
-                    If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        eqargs(0) = ReplaceLastOccurrence(eqargs(0), CurrDir, "")
-                    End If
+                    eqargs(0) = NeutralizePath(eqargs(0))
                     Wdbg("I", "File path is {0} and .Exists is {0}", eqargs(0), File.Exists(eqargs(0)))
                     If Not File.Exists(eqargs(0)) Then
                         Try
@@ -665,16 +645,8 @@ Public Module GetCommand
             ElseIf words(0) = "move" Then
 
                 If eqargs?.Length >= 2 Then
-                    eqargs(0) = CurrDir + "/" + eqargs(0).Replace("\", "/")
-                    eqargs(1) = CurrDir + "/" + eqargs(1).Replace("\", "/")
-                    If eqargs(0).Contains(CurrDir.Replace("\", "/")) And eqargs(0).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        eqargs(0) = ReplaceLastOccurrence(eqargs(0), CurrDir, "")
-                    End If
-                    If eqargs(1).Contains(CurrDir.Replace("\", "/")) And eqargs(1).AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        eqargs(1) = ReplaceLastOccurrence(eqargs(1), CurrDir, "")
-                    End If
-                    Dim source As String = eqargs(0)
-                    Dim target As String = eqargs(1)
+                    Dim source As String = NeutralizePath(eqargs(0))
+                    Dim target As String = NeutralizePath(eqargs(1))
                     Dim filesrc As String = Path.GetFileName(source)
                     If Directory.Exists(source) And Directory.Exists(target) Then
                         Directory.Move(source, target + "/" + filesrc)
@@ -700,10 +672,7 @@ Public Module GetCommand
             ElseIf words(0) = "read" Then
 
                 If requestedCommand <> "read" Then
-                    Dim FileRead As String = CurrDir + "/" + strArgs.Replace("\", "/")
-                    If FileRead.Contains(CurrDir.Replace("\", "/")) And FileRead.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        FileRead = ReplaceLastOccurrence(FileRead, CurrDir, "")
-                    End If
+                    Dim FileRead As String = NeutralizePath(strArgs)
                     If File.Exists(FileRead) Then
                         ReadContents(FileRead)
                     Else
@@ -772,10 +741,7 @@ Public Module GetCommand
 
                 If args.Count - 1 >= 0 Then
                     Try
-                        Dim Dir As String = CurrDir + "/" + strArgs.Replace("\", "/")
-                        If Dir.Contains(CurrDir.Replace("\", "/")) And Dir.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                            Dir = ReplaceLastOccurrence(Dir, CurrDir, "")
-                        End If
+                        Dim Dir As String = NeutralizePath(strArgs)
                         Directory.Delete(Dir, True)
                     Catch ex As Exception
                         W(DoTranslation("Unable to remove directory: {0}", currentLang), True, ColTypes.Err, ex.Message)
@@ -815,10 +781,7 @@ Public Module GetCommand
 
                 If eqargs?.Count >= 2 Then
                     Dim ToBeFound As String = eqargs(0)
-                    Dim Dir As String = CurrDir + "/" + eqargs(1).Replace("\", "/")
-                    If Dir.Contains(CurrDir.Replace("\", "/")) And Dir.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        Dir = ReplaceLastOccurrence(Dir, CurrDir, "")
-                    End If
+                    Dim Dir As String = NeutralizePath(eqargs(1))
                     Dim Filebyte() As String = File.ReadAllLines(Dir)
                     Dim MatchNum As Integer = 1
                     Dim LineNumber As Integer = 1
@@ -1023,12 +986,7 @@ Public Module GetCommand
 
                 If args.Length >= 2 Then
                     Done = True
-                    Dim file As String
-                    eqargs(1) = eqargs(1).Replace("\", "/")
-                    file = $"{CurrDir}/{eqargs(1)}"
-                    If file.Contains(CurrDir.Replace("\", "/")) And file.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        file = ReplaceLastOccurrence(file, CurrDir, "")
-                    End If
+                    Dim file As String = NeutralizePath(eqargs(1))
                     If IO.File.Exists(file) Then
                         Dim stream As New StreamReader(file)
                         If args(0) = "SHA256" Then
@@ -1061,19 +1019,11 @@ Public Module GetCommand
 
                 If args.Length >= 2 Then
                     Done = True
-                    Dim folder As String
+                    Dim folder As String = NeutralizePath(eqargs(1))
                     Dim out As String = ""
                     Dim FileBuilder As New StringBuilder
-                    eqargs(1) = eqargs(1).Replace("\", "/")
-                    folder = $"{CurrDir}/{eqargs(1)}"
                     If Not eqargs.Length < 3 Then
-                        out = $"{CurrDir}/{eqargs(2)}"
-                    End If
-                    If folder.Contains(CurrDir.Replace("\", "/")) And folder.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        folder = ReplaceLastOccurrence(folder, CurrDir, "")
-                    End If
-                    If out.Contains(CurrDir.Replace("\", "/")) And out.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                        out = ReplaceLastOccurrence(out, CurrDir, "")
+                        out = NeutralizePath(eqargs(2))
                     End If
                     If Directory.Exists(folder) Then
                         For Each file As String In Directory.EnumerateFiles(folder, "*", IO.SearchOption.TopDirectoryOnly)

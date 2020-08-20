@@ -23,12 +23,7 @@ Public Module BeepSynth
     ''' </summary>
     ''' <param name="file">A file name in current shell path</param>
     Public Sub ProbeSynth(ByVal file As String)
-        file = CurrDir + "/" + file.Replace("\", "/")
-        If file.Contains(CurrDir.Replace("\", "/")) And file.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-#Disable Warning IDE0059
-            file = ReplaceLastOccurrence(file, CurrDir, "")
-#Enable Warning IDE0059
-        End If
+        file = NeutralizePath(file)
         Wdbg("I", "Probing {0}...", file)
         If IO.File.Exists(file) Then
             Dim FStream As New IO.StreamReader(file)

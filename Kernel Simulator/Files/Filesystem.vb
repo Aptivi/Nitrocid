@@ -26,25 +26,18 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="dir">A directory</param>
     Public Sub SetCurrDir(ByVal dir As String)
-        Dim direct As String
-        dir = dir.Replace("\", "/")
-        direct = $"{CurrDir}/{dir}"
-        Wdbg("I", "Prototype directory: {0}", direct)
-        If direct.Contains(CurrDir.Replace("\", "/")) And direct.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-            direct = ReplaceLastOccurrence(direct, CurrDir, "")
-        End If
-        Wdbg("I", "Final directory: {0}", direct)
-        Wdbg("I", "Directory exists? {0}", IO.Directory.Exists(direct))
-        If IO.Directory.Exists(direct) Then
+        dir = NeutralizePath(dir)
+        Wdbg("I", "Directory exists? {0}", IO.Directory.Exists(dir))
+        If IO.Directory.Exists(dir) Then
             Try
-                Dim Parser As New IO.DirectoryInfo(direct)
+                Dim Parser As New IO.DirectoryInfo(dir)
                 CurrDir = Parser.FullName.Replace("\", "/")
             Catch sex As Security.SecurityException
                 Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
-                W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, direct, sex.Message)
+                W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, dir, sex.Message)
                 WStkTrc(sex)
             Catch ptlex As IO.PathTooLongException
-                Wdbg("I", "Directory length: {0}", direct.Length)
+                Wdbg("I", "Directory length: {0}", dir.Length)
                 W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Err)
                 WStkTrc(ptlex)
             End Try
@@ -147,5 +140,23 @@ Public Module Filesystem
             Wdbg("I", "IO.Directory.Exists = {0}", IO.Directory.Exists(folder))
         End If
     End Sub
+
+    ''' <summary>
+    ''' Simplifies the path to the correct one. It converts the path format to the unified format.
+    ''' </summary>
+    ''' <param name="Path">Target path, be it a file or a folder</param>
+    ''' <returns>Absolute path</returns>
+    Public Function NeutralizePath(ByVal Path As String)
+        Path = Path.Replace("\", "/")
+        If (EnvironmentOSType.Contains("Windows") And Not Path.Contains(":/")) Or EnvironmentOSType.Contains("Unix") Then
+            Path = $"{CurrDir}/{Path}"
+        End If
+        Wdbg("I", "Prototype directory: {0}", Path)
+        If Path.Contains(CurrDir.Replace("\", "/")) And Path.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+            Path = ReplaceLastOccurrence(Path, CurrDir, "")
+        End If
+        Wdbg("I", "Final directory: {0}", Path)
+        Return Path
+    End Function
 
 End Module
