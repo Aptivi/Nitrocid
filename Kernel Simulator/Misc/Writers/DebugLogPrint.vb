@@ -21,7 +21,7 @@ Imports System.IO
 Module DebugLogPrint
 
     ''' <summary>
-    ''' [CI] Prints debugging log file to the console.
+    ''' Prints debugging log file to the console.
     ''' </summary>
     Sub PrintLog()
         Dim line As String

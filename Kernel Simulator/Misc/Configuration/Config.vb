@@ -310,6 +310,7 @@ Public Module Config
             '----------------------------- Important configuration -----------------------------
             'Language
             Wdbg("I", "Language is {0}", configReader.Sections("General").Keys("Language").Value)
+            If configReader.Sections("General").Keys("Change Culture when Switching Languages").Value = "True" Then LangChangeCulture = True Else LangChangeCulture = False
             SetLang(configReader.Sections("General").Keys("Language").Value, True)
 
             'Colored Shell
@@ -327,28 +328,23 @@ Public Module Config
             End If
 
             '----------------------------- General configuration -----------------------------
-            'Colors Section (Not loaded if there are CI arguments passed)
+            'Colors Section
             Wdbg("I", "Loading colors...")
-            If Not Environment.GetCommandLineArgs.Contains("CI-") Then
-                Wdbg("I", "Not on CI environment.")
-                If ColoredShell Then userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("User Name Shell Color").Value), ConsoleColors)
-                If ColoredShell Then hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Host Name Shell Color").Value), ConsoleColors)
-                If ColoredShell Then contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value), ConsoleColors)
-                If ColoredShell Then uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value), ConsoleColors)
-                If ColoredShell Then neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Text Color").Value), ConsoleColors)
-                If ColoredShell Then licenseColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("License Color").Value), ConsoleColors)
-                If ColoredShell Then
-                    backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Background Color").Value), ConsoleColors)
-                    LoadBack()
-                End If
-                If ColoredShell Then inputColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColors)
-                If ColoredShell Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColors)
-                If ColoredShell Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Definition of command in Help Color").Value), ConsoleColors)
-                If ColoredShell Then stageColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Kernel Stage Color").Value), ConsoleColors)
-                If ColoredShell Then errorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Error Text Color").Value), ConsoleColors)
-            Else
-                Wdbg("W", "Running on CI environment. Ignoring...")
+            If ColoredShell Then userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("User Name Shell Color").Value), ConsoleColors)
+            If ColoredShell Then hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Host Name Shell Color").Value), ConsoleColors)
+            If ColoredShell Then contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value), ConsoleColors)
+            If ColoredShell Then uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value), ConsoleColors)
+            If ColoredShell Then neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Text Color").Value), ConsoleColors)
+            If ColoredShell Then licenseColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("License Color").Value), ConsoleColors)
+            If ColoredShell Then
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Background Color").Value), ConsoleColors)
+                LoadBack()
             End If
+            If ColoredShell Then inputColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColors)
+            If ColoredShell Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColors)
+            If ColoredShell Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Definition of command in Help Color").Value), ConsoleColors)
+            If ColoredShell Then stageColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Kernel Stage Color").Value), ConsoleColors)
+            If ColoredShell Then errorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Error Text Color").Value), ConsoleColors)
 
             'General Section
             Wdbg("I", "Parsing general section...")
@@ -357,7 +353,6 @@ Public Module Config
             If configReader.Sections("General").Keys("Maintenance Mode").Value = "True" Then maintenance = True Else maintenance = False
             If configReader.Sections("General").Keys("Prompt for Arguments on Boot").Value = "True" Then argsOnBoot = True Else argsOnBoot = False
             If configReader.Sections("General").Keys("Check for Updates on Startup").Value = "True" Then CheckUpdateStart = True Else CheckUpdateStart = False
-            If configReader.Sections("General").Keys("Change Culture when Switching Languages").Value = "True" Then LangChangeCulture = True Else LangChangeCulture = False
 
             'Login Section
             Wdbg("I", "Parsing login section...")
