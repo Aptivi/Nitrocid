@@ -30,7 +30,7 @@ Module LoveHateRespond
                                                   DoTranslation("Awesome prank! I shut down my enemy's PC.", currentLang),
                                                   DoTranslation("To haters: STOP HATING ON HIM", currentLang),
                                                   DoTranslation("To haters: GET TO WORK", currentLang),
-                                                  DoTranslation("Nobody will notice this now thanks to your object hiding guide")}
+                                                  DoTranslation("Nobody will notice this now thanks to your object hiding guide", currentLang)}
     Dim HateComments As New List(Of String) From {DoTranslation("I will stop watching your videos. Subscriber lost.", currentLang),
                                                   DoTranslation("What is this? This is unclear.", currentLang),
                                                   DoTranslation("This video is the worst!", currentLang),
@@ -46,7 +46,7 @@ Module LoveHateRespond
     Dim Comments As New Dictionary(Of String, List(Of String)) From {{"Love", LoveComments}, {"Hate", HateComments}}
     Dim Users As New List(Of String) From {"GS4L", "The Eagle", "Vercity", "Losting - Computers, fixes, and more", "WillStrike", "CyberBully #2095", "ProGamer453",
                                            "ExtFS", "Elaine Stretch", "NFSMW2005", "WhatsUp", "BSearch", "Wellington Marks", "CD-OS", "LinuxUser348", "Speculate Ltd.",
-                                           "The Matrix"}
+                                           "The Matrix", "v2i0c2e3-cGiTtAy6"}
 
     ''' <summary>
     ''' Initializes the game
