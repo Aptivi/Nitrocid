@@ -47,19 +47,27 @@ Module ToolPrompts
             'Prompt user and check for input
             W("> ", False, ColTypes.Input)
             AnswerString = Console.ReadKey.KeyChar
+            Wdbg("I", "User answered {0}", AnswerString)
             Console.WriteLine()
 
+            Wdbg("I", "Is the answer numeric? {0}", IsNumeric(AnswerString))
             If Integer.TryParse(AnswerString, AnswerInt) Then
+                Wdbg("I", "Succeeded. Checking the answer if it points to the right direction...")
                 If AnswerInt >= 1 And AnswerInt <= 7 Then
+                    Wdbg("I", "Opening section {0}...", AnswerInt)
                     OpenSection(AnswerInt)
                 ElseIf AnswerInt = 8 Then 'Save Settings
+                    Wdbg("I", "Saving settings...")
                     CreateConfig(False, True)
                 ElseIf AnswerInt = 9 Then 'Exit
+                    Wdbg("W", "Exiting...")
                     PromptFinished = True
                 Else
+                    Wdbg("W", "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
                 End If
             Else
+                Wdbg("W", "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric.", currentLang), True, ColTypes.Err)
             End If
         End While
@@ -109,7 +117,7 @@ Module ToolPrompts
                     W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMix255Colors"))
                     W("3) [Disco] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Disco255Colors"))
                     W("4) [GlitterColor] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("GlitterColor255Colors"))
-                    W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("Lines255Colors"))
+                    W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Lines255Colors"))
                     W("6) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
                 Case 7 'Misc
                     MaxOptions = 6
@@ -123,25 +131,34 @@ Module ToolPrompts
                     W("X) " + DoTranslation("Invalid section entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
             End Select
             W("{0}) " + DoTranslation("Go Back...", currentLang) + vbNewLine, True, ColTypes.Neutral, MaxOptions + 1)
+            Wdbg("W", "Section {0} has {1} selections.", SectionNum, MaxOptions)
 
             'Prompt user and check for input
             W("> ", False, ColTypes.Input)
             AnswerString = Console.ReadKey.KeyChar
+            Wdbg("I", "User answered {0}", AnswerString)
             Console.WriteLine()
 
+            Wdbg("I", "Is the answer numeric? {0}", IsNumeric(AnswerString))
             If Integer.TryParse(AnswerString, AnswerInt) Then
+                Wdbg("I", "Succeeded. Checking the answer if it points to the right direction...")
                 If AnswerInt >= 1 And AnswerInt <= MaxOptions Then
                     If AnswerInt = 3 And SectionNum = 1 Then
+                        Wdbg("I", "Tried to open special section. Opening section 1.3...")
                         OpenKey(1.3, AnswerInt)
                     Else
+                        Wdbg("I", "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
                     End If
                 ElseIf AnswerInt = MaxOptions + 1 Then 'Go Back...
+                    Wdbg("I", "User requested exit. Returning...")
                     SectionFinished = True
                 Else
+                    Wdbg("W", "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
                 End If
             Else
+                Wdbg("W", "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric.", currentLang), True, ColTypes.Err)
             End If
         End While
@@ -151,7 +168,7 @@ Module ToolPrompts
         Dim MaxKeyOptions As Integer = 0
         Dim KeyFinished As Boolean
         Dim KeyType As SettingsKeyType
-        Dim KeyVar As String
+        Dim KeyVar As String = ""
         Dim AnswerString As String
         Dim AnswerInt As Integer
 
@@ -385,6 +402,8 @@ Module ToolPrompts
                     W("X) " + DoTranslation("Invalid section entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
             End Select
             W("{0}) " + DoTranslation("Go Back...", currentLang) + vbNewLine, True, ColTypes.Neutral, MaxKeyOptions + 1)
+            Wdbg("W", "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions)
+            Wdbg("W", "Target variable: {0}, Key Type: {1}", KeyVar, KeyType)
 
             'Prompt user
             W("> ", False, ColTypes.Input)
@@ -396,43 +415,61 @@ Module ToolPrompts
             Else
                 AnswerString = Console.ReadLine
             End If
+            Wdbg("I", "User answered {0}", AnswerString)
 
             'Check for input
+            Wdbg("I", "Is the answer numeric? {0}", IsNumeric(AnswerString))
             If Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SBoolean Then
+                Wdbg("I", "Answer is numeric and key is of the Boolean type.")
                 If AnswerInt >= 1 And AnswerInt <= MaxKeyOptions Then
+                    Wdbg("I", "Translating {0} to the boolean equivalent...", AnswerInt)
                     KeyFinished = True
                     Select Case AnswerInt
                         Case 1 'True
+                            Wdbg("I", "Setting to True...")
                             SetValue(KeyVar, True)
                         Case 2 'False
+                            Wdbg("I", "Setting to False...")
                             SetValue(KeyVar, False)
                     End Select
                 ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
+                    Wdbg("I", "User requested exit. Returning...")
                     KeyFinished = True
                 Else
+                    Wdbg("W", "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
                 End If
             ElseIf Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt Then
+                Wdbg("I", "Answer is numeric and key is of the Integer type.")
                 If AnswerInt >= 0 Then
+                    Wdbg("I", "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                     KeyFinished = True
                     SetValue(KeyVar, AnswerInt)
                 ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
+                    Wdbg("I", "User requested exit. Returning...")
                     KeyFinished = True
                 Else
+                    Wdbg("W", "Negative values are disallowed.")
                     W(DoTranslation("The answer may not be negative.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf KeyType = SettingsKeyType.SString Then
+                Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
                 KeyFinished = True
                 SetValue(KeyVar, AnswerString)
             ElseIf Section = 1.3 And KeyNumber = 3 Then
+                Wdbg("I", "Answer is not numeric and the user is on the special section.")
                 If AnswerInt >= 1 And AnswerInt <= 2 Then
+                    Wdbg("I", "AnswerInt is {0}. Opening key...", AnswerInt)
                     OpenKey(Section, AnswerInt)
                 ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
+                    Wdbg("I", "User requested exit. Returning...")
                     KeyFinished = True
                 Else
+                    Wdbg("W", "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
                 End If
             Else
+                Wdbg("W", "Answer is not valid.")
                 W(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers.", currentLang), True, ColTypes.Err)
             End If
         End While
@@ -447,10 +484,12 @@ Module ToolPrompts
             'The "obj" description says this: "The object whose field value will be set."
             'Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             'Unfortunately, there are no examples on the MSDN that showcases such situations; classes are being used.
+            Wdbg("I", "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue)
             TargetField.SetValue(Variable, VariableValue)
         Else
             'Variable not found on any of the "flag" modules.
-            W(DoTranslation("Variable {0} is not found on any of the modules.", currentLang), True, ColTypes.Err)
+            Wdbg("I", "Field {0} not found.", Variable)
+            W(DoTranslation("Variable {0} is not found on any of the modules.", currentLang), True, ColTypes.Err, Variable)
         End If
     End Sub
 
@@ -463,10 +502,12 @@ Module ToolPrompts
             'The "obj" description says this: "The object whose field value will be returned."
             'Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             'Unfortunately, there are no examples on the MSDN that showcases such situations; classes are being used.
+            Wdbg("I", "Got field {0}.", TargetField.Name)
             Return TargetField.GetValue(Variable)
         Else
             'Variable not found on any of the "flag" modules.
-            W(DoTranslation("Variable {0} is not found on any of the modules.", currentLang), True, ColTypes.Err)
+            Wdbg("I", "Field {0} not found.", Variable)
+            W(DoTranslation("Variable {0} is not found on any of the modules.", currentLang), True, ColTypes.Err, Variable)
             Return Nothing
         End If
     End Function

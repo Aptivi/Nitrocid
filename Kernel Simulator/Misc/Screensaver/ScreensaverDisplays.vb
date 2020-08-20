@@ -558,7 +558,7 @@ IFCANCEL:
                     ColumnLastLetter -= 1
                 End If
 
-                If RowText = Console.WindowHeight - 1 Then
+                If RowText = Console.WindowHeight - 2 Then
                     Direction = Direction.Replace("Bottom", "Top")
                 ElseIf RowText = 1 Then
                     Direction = Direction.Replace("Top", "Bottom")
