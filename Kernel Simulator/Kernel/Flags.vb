@@ -52,10 +52,6 @@ Module Flags
     Public HiddenFiles As Boolean                               'Whether or not to show hidden files
     Public CheckUpdateStart As Boolean = True                   'Whether or not to check for updates on startup
     Public LangChangeCulture As Boolean                         'Change culture when changing language
-    Public ColorMix255Colors As Boolean                         'Enable 255 color support for ColorMix
-    Public Disco255Colors As Boolean                            'Enable 255 color support for Disco
-    Public GlitterColor255Colors As Boolean                     'Enable 255 color support for GlitterColor
-    Public Lines255Colors As Boolean                            'Enable 255 color support for Lines
 
     'Private flags
     Friend NotifyConfigError As Boolean                        'Notifies user as soon as the kernel finished booting if there is an error reading configuration.

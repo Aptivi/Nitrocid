@@ -29,6 +29,7 @@ Public Module ScreensaverDisplays
     Public WithEvents GlitterColor As New BackgroundWorker
     Public WithEvents AptErrorSim As New BackgroundWorker
     Public WithEvents HackUserFromAD As New BackgroundWorker
+    Public WithEvents BouncingText As New BackgroundWorker
     Public WithEvents Custom As New BackgroundWorker
     Public finalSaver As ICustomSaver
     Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
@@ -504,6 +505,69 @@ IFCANCEL:
                 Else
                     Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
                     Console.Write(" ")
+                End If
+            End If
+        Loop
+    End Sub
+
+    ''' <summary>
+    ''' Handles the code of Bouncing Text
+    ''' </summary>
+    Sub BouncingText_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles BouncingText.DoWork
+        Console.BackgroundColor = ConsoleColor.Black
+        Console.ForegroundColor = ConsoleColor.White
+        Console.Clear()
+        Console.CursorVisible = False
+        Dim Direction As String = "BottomRight"
+        Dim RowText, ColumnFirstLetter, ColumnLastLetter As Integer
+        RowText = Console.WindowHeight / 2
+        ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
+        ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
+        Do While True
+            Thread.Sleep(10)
+            Console.Clear()
+            If BouncingText.CancellationPending = True Then
+                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                e.Cancel = True
+                Console.Clear()
+                Dim esc As Char = GetEsc()
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                LoadBack()
+                Console.CursorVisible = True
+                Wdbg("I", "All clean. Bouncing Text screensaver stopped.")
+                Exit Do
+            Else
+                WriteWhere(BouncingTextWrite, ColumnFirstLetter, RowText, ColTypes.Neutral)
+
+                If Direction = "BottomRight" Then
+                    RowText += 1
+                    ColumnFirstLetter += 1
+                    ColumnLastLetter += 1
+                ElseIf Direction = "BottomLeft" Then
+                    RowText += 1
+                    ColumnFirstLetter -= 1
+                    ColumnLastLetter -= 1
+                ElseIf Direction = "TopRight" Then
+                    RowText -= 1
+                    ColumnFirstLetter += 1
+                    ColumnLastLetter += 1
+                ElseIf Direction = "TopLeft" Then
+                    RowText -= 1
+                    ColumnFirstLetter -= 1
+                    ColumnLastLetter -= 1
+                End If
+
+                If RowText = Console.WindowHeight - 1 Then
+                    Direction = Direction.Replace("Bottom", "Top")
+                ElseIf RowText = 1 Then
+                    Direction = Direction.Replace("Top", "Bottom")
+                End If
+
+                If ColumnLastLetter = Console.WindowWidth - 1 Then
+                    Direction = Direction.Replace("Right", "Left")
+                ElseIf ColumnFirstLetter = 1 Then
+                    Direction = Direction.Replace("Left", "Right")
                 End If
             End If
         Loop

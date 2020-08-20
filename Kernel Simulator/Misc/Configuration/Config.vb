@@ -95,7 +95,8 @@ Public Module Config
                         New IniKey(ksconf, "ColorMix - Activate 255 Color Mode", ColorMix255Colors),
                         New IniKey(ksconf, "Disco - Activate 255 Color Mode", Disco255Colors),
                         New IniKey(ksconf, "GlitterColor - Activate 255 Color Mode", GlitterColor255Colors),
-                        New IniKey(ksconf, "Lines - Activate 255 Color Mode", Lines255Colors)))
+                        New IniKey(ksconf, "Lines - Activate 255 Color Mode", Lines255Colors),
+                        New IniKey(ksconf, "BouncingText - Text Shown", BouncingTextWrite)))
 
                 'Misc Section
                 ksconf.Sections.Add(
@@ -173,7 +174,7 @@ Public Module Config
                         New IniKey(ksconf, "ColorMix - Activate 255 Color Mode", "True"),
                         New IniKey(ksconf, "Disco - Activate 255 Color Mode", "True"),
                         New IniKey(ksconf, "GlitterColor - Activate 255 Color Mode", "True"),
-                        New IniKey(ksconf, "Lines - Activate 255 Color Mode", "True")))
+                        New IniKey(ksconf, "BouncingText - Text Shown", "Kernel Simulator")))
 
                 'Misc Section
                 ksconf.Sections.Add(
@@ -233,6 +234,7 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Disco"
             ksconf.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for GlitterColor"
             ksconf.Sections("Screensaver").Keys("Lines - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Lines"
+            ksconf.Sections("Screensaver").Keys("BouncingText - Text Shown").TrailingComment.Text = "Any text for BouncingText"
 
             'Misc
             ksconf.Sections("Misc").TrailingComment.Text = "This section is the other settings that are not categorized yet."
@@ -385,6 +387,7 @@ Public Module Config
             Disco255Colors = configReader.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").Value
             GlitterColor255Colors = configReader.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").Value
             Lines255Colors = configReader.Sections("Screensaver").Keys("Lines - Activate 255 Color Mode").Value
+            BouncingTextWrite = configReader.Sections("Screensaver").Keys("BouncingText - Text Shown").Value
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")

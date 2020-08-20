@@ -104,12 +104,13 @@ Module ToolPrompts
                     W("5) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerIP"))
                     W("6) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("FTPFirstProfileOnly"))
                 Case 6 'Screensaver
-                    MaxOptions = 5
+                    MaxOptions = 6
                     W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ScrnTimeout"))
                     W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMix255Colors"))
                     W("3) [Disco] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Disco255Colors"))
                     W("4) [GlitterColor] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("GlitterColor255Colors"))
                     W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("Lines255Colors"))
+                    W("6) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
                 Case 7 'Misc
                     MaxOptions = 6
                     W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("CornerTD"))
@@ -334,6 +335,10 @@ Module ToolPrompts
                             KeyVar = "Lines255Colors"
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 6 'Text shown
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = "BouncingTextWrite"
+                            W("*) " + DoTranslation("Write any text you want shown. Shorter is better.", currentLang), True, ColTypes.Neutral)
                         Case Else
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
@@ -474,6 +479,7 @@ Module ToolPrompts
         Dim TypeOfRDebugger As Type = GetType(RemoteDebugger)
         Dim TypeOfTextWriter As Type = GetType(TextWriterColor)
         Dim TypeOfNetworkTools As Type = GetType(NetworkTools)
+        Dim TypeOfScreensaverSettings As Type = GetType(ScreensaverSettings)
 
         'Get fields of flag modules
         Dim FieldFlags As FieldInfo = TypeOfFlags.GetField(Variable)
@@ -482,6 +488,7 @@ Module ToolPrompts
         Dim FieldRDebugger As FieldInfo = TypeOfRDebugger.GetField(Variable)
         Dim FieldTextWriter As FieldInfo = TypeOfTextWriter.GetField(Variable)
         Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
+        Dim FieldScreensaverSettings As FieldInfo = TypeOfScreensaverSettings.GetField(Variable)
 
         'Check if any of them contains the specified variable
         If Not IsNothing(FieldFlags) Then
@@ -496,6 +503,8 @@ Module ToolPrompts
             Return FieldTextWriter
         ElseIf Not IsNothing(FieldNetworkTools) Then
             Return FieldNetworkTools
+        ElseIf Not IsNothing(FieldScreensaverSettings) Then
+            Return FieldScreensaverSettings
         End If
     End Function
 
