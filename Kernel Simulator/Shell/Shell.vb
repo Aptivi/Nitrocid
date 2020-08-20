@@ -40,7 +40,7 @@ Public Module Shell
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
                                      "lset", "listdrives", "listparts", "rdebug", "rexec", "update", "blockdbgdev", "unblockdbgdev", "settings"}
-    Public obsoleteCmds() As String = {}
+    Public obsoleteCmds() As String = {"read"}
     Public modcmnds As New ArrayList
 
     ''' <summary>
