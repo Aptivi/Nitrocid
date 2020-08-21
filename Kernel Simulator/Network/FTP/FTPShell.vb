@@ -49,6 +49,7 @@ Public Module FTPShell
                 FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
                 FtpTrace.LogIP = FTPLoggerIP
                 currDirect = paths("Home")
+                EventManager.RaiseFTPShellInitialized()
 
                 'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:
                 'https://stackoverflow.com/a/22717063/6688914
@@ -102,9 +103,13 @@ Public Module FTPShell
                 Wdbg("I", "Normal shell")
                 strcmd = Console.ReadLine()
             End If
+            EventManager.RaiseFTPPreExecuteCommand()
 
             'Parse command
-            If Not (strcmd = Nothing Or strcmd?.StartsWith(" ")) Then FTPGetLine()
+            If Not (strcmd = Nothing Or strcmd?.StartsWith(" ")) Then
+                FTPGetLine()
+                EventManager.RaiseFTPPostExecuteCommand()
+            End If
 
             'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
             If IsNothing(strcmd) Then

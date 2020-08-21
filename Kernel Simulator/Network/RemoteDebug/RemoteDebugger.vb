@@ -88,6 +88,7 @@ Module RemoteDebugger
                         RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}.", currentLang), RDebugName)
                         Wdbg("I", "Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
                         RDebugSWriter.Flush()
+                        EventManager.RaiseRemoteDebugConnectionAccepted()
                     End If
                 End If
             Catch ae As ThreadAbortException
@@ -169,6 +170,7 @@ Module RemoteDebugger
                     Wdbg("I", "Debug device {0} disconnected.", DebugDevices.Values(i))
                     Found = True
                     DebugDevices.Keys(i).Disconnect(True)
+                    EventManager.RaiseRemoteDebugConnectionDisconnected()
                     dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                     If CmdLine Then W(DoTranslation("Device {0} disconnected.", currentLang), True, ColTypes.Neutral, IPAddr)

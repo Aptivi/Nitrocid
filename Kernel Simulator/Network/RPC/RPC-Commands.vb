@@ -43,16 +43,19 @@ Module RPC_Commands
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("ShutdownConfirm, " + Arg + vbNewLine)
                 RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
                 Wdbg("I", "Sending response to device...")
+                EventManager.RaiseRPCCommandSent()
             ElseIf Cmd = "<Request:Reboot>" Then
                 Wdbg("I", "Stream opened for device {0}", Arg)
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
                 RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
                 Wdbg("I", "Sending response to device...")
+                EventManager.RaiseRPCCommandSent()
             ElseIf Cmd = "<Request:Exec>" Then
                 Wdbg("I", "Stream opened for device {0} to execute ""{1}""", IP, Arg)
                 Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("ExecConfirm, " + Arg + vbNewLine)
                 RPCListen.Send(ByteMsg, ByteMsg.Length, IP, RPCPort)
                 Wdbg("I", "Sending response to device...")
+                EventManager.RaiseRPCCommandSent()
             Else
                 Wdbg("E", "Malformed request. {0}", Cmd)
             End If
@@ -71,6 +74,7 @@ Module RPC_Commands
                 buff = RPCListen.Receive(endp)
                 Dim msg As String = Text.Encoding.Default.GetString(buff)
                 Wdbg("RPC: Received message {0}", msg)
+                EventManager.RaiseRPCCommandReceived()
                 If msg.StartsWith("ShutdownConfirm") Then
                     Wdbg("I", "Shutdown confirmed from remote access.")
                     PowerManage("shutdown")
@@ -98,6 +102,7 @@ Module RPC_Commands
                 Else
                     Wdbg("E", "Fatal error: {0}", ex.Message)
                     WStkTrc(ex)
+                    EventManager.RaiseRPCCommandError()
                 End If
             End Try
         End While

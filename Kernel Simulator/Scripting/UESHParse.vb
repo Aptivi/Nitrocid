@@ -27,6 +27,9 @@ Public Module UESHParse
     ''' <param name="scriptarguments">Script arguments</param>
     Public Sub Execute(ByVal scriptpath As String, ByVal scriptarguments As String)
         Try
+            'Raise event
+            EventManager.RaiseUESHPreExecute()
+
             'Open the script file for reading
             Dim FileStream As New StreamReader(scriptpath)
             Dim LineNo As Integer = 1
@@ -82,7 +85,9 @@ Public Module UESHParse
                     Wdbg("I", "Line {0} is a comment.", Line)
                 End If
             End While
+            EventManager.RaiseUESHPostExecute()
         Catch ex As Exception
+            EventManager.RaiseUESHError()
             W(DoTranslation("Error trying to execute script: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try

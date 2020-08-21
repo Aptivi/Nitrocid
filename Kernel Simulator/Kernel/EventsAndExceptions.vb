@@ -38,8 +38,6 @@ Public Class EventsAndExceptions
     Public Event CommandError()
     Public Event PreReloadConfig()
     Public Event PostReloadConfig()
-    Public Event PreFetchNetworks()
-    Public Event PostFetchNetworks()
     Public Event PlaceholderParsing()
     Public Event PlaceholderParsed()
     Public Event GarbageCollected()
@@ -67,6 +65,11 @@ Public Class EventsAndExceptions
     Public Event SSHError()
     Public Event UESHPreExecute()
     Public Event UESHPostExecute()
+    Public Event UESHError()
+    Public Event TextShellInitialized()
+    Public Event TextPreExecuteCommand()
+    Public Event TextPostExecuteCommand()
+    Public Event TextCommandError()
 
     ''' <summary>
     ''' Makes the mod respond to the event of kernel start
@@ -237,24 +240,6 @@ Public Class EventsAndExceptions
         For Each script As IScript In scripts.Values
             Wdbg("I", "Mod {0} v{1} responded to event PostReloadConfig()...", script.Name, script.Version)
             script.InitEvents("PostReloadConfig")
-        Next
-    End Sub
-    ''' <summary>
-    ''' Makes the mod respond to the event of pre-fetch networks
-    ''' </summary>
-    Public Sub RespondPreFetchNetworks() Handles Me.PreFetchNetworks
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PreFetchNetworks()...", script.Name, script.Version)
-            script.InitEvents("PreFetchNetworks")
-        Next
-    End Sub
-    ''' <summary>
-    ''' Makes the mod respond to the event of post-fetch networks
-    ''' </summary>
-    Public Sub RespondPostFetchNetworks() Handles Me.PostFetchNetworks
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PostFetchNetworks()...", script.Name, script.Version)
-            script.InitEvents("PostFetchNetworks")
         Next
     End Sub
     ''' <summary>
@@ -500,6 +485,51 @@ Public Class EventsAndExceptions
             script.InitEvents("UESHPostExecute")
         Next
     End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of UESH post-execute
+    ''' </summary>
+    Public Sub RespondUESHError() Handles Me.UESHError
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event UESHError()...", script.Name, script.Version)
+            script.InitEvents("UESHError")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of text shell initialized
+    ''' </summary>
+    Public Sub RespondTextShellInitialized() Handles Me.TextShellInitialized
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event TextShellInitialized()...", script.Name, script.Version)
+            script.InitEvents("TextShellInitialized")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of text pre-command execution
+    ''' </summary>
+    Public Sub RespondTextPreExecuteCommand() Handles Me.TextPreExecuteCommand
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event TextPreExecuteCommand()...", script.Name, script.Version)
+            script.InitEvents("TextPreExecuteCommand")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of text post-command execution
+    ''' </summary>
+    Public Sub RespondTextPostExecuteCommand() Handles Me.TextPostExecuteCommand
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event TextPostExecuteCommand()...", script.Name, script.Version)
+            script.InitEvents("TextPostExecuteCommand")
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of text command error
+    ''' </summary>
+    Public Sub RespondTextCommandError() Handles Me.TextCommandError
+        For Each script As IScript In scripts.Values
+            Wdbg("I", "Mod {0} v{1} responded to event TextCommandError()...", script.Name, script.Version)
+            script.InitEvents("TextCommandError")
+        Next
+    End Sub
 
     'These subs are for raising events
     ''' <summary>
@@ -634,20 +664,6 @@ Public Class EventsAndExceptions
     Public Sub RaisePostReloadConfig()
         Wdbg("I", "Raising event PostReloadConfig() and responding in RespondPostReloadConfig()...")
         RaiseEvent PostReloadConfig()
-    End Sub
-    ''' <summary>
-    ''' Raise an event of pre-fetch networks
-    ''' </summary>
-    Public Sub RaisePreFetchNetworks()
-        Wdbg("I", "Raising event PreFetchNetworks() and responding in RespondPreFetchNetworks()...")
-        RaiseEvent PreFetchNetworks()
-    End Sub
-    ''' <summary>
-    ''' Raise an event of post-fetch networks
-    ''' </summary>
-    Public Sub RaisePostFetchNetworks()
-        Wdbg("I", "Raising event PostFetchNetworks() and responding in RespondPostFetchNetworks()...")
-        RaiseEvent PostFetchNetworks()
     End Sub
     ''' <summary>
     ''' Raise an event of placeholders being parsed
@@ -838,6 +854,41 @@ Public Class EventsAndExceptions
         Wdbg("I", "Raising event UESHPostExecute() and responding in RespondUESHPostExecute()...")
         RaiseEvent UESHPostExecute()
     End Sub
+    ''' <summary>
+    ''' Raise an event of UESH error
+    ''' </summary>
+    Public Sub RaiseUESHError()
+        Wdbg("I", "Raising event UESHError() and responding in RespondUESHError()...")
+        RaiseEvent UESHError()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of text shell initialized
+    ''' </summary>
+    Public Sub RaiseTextShellInitialized()
+        Wdbg("I", "Raising event TextShellInitialized() and responding in RespondTextShellInitialized()...")
+        RaiseEvent TextShellInitialized()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of text pre-command execution
+    ''' </summary>
+    Public Sub RaiseTextPreExecuteCommand()
+        Wdbg("I", "Raising event TextPreExecuteCommand() and responding in RespondTextPreExecuteCommand()...")
+        RaiseEvent TextPreExecuteCommand()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of text post-command execution
+    ''' </summary>
+    Public Sub RaiseTextPostExecuteCommand()
+        Wdbg("I", "Raising event TextPostExecuteCommand() and responding in RespondTextPostExecuteCommand()...")
+        RaiseEvent TextPostExecuteCommand()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of text command error
+    ''' </summary>
+    Public Sub RaiseTextCommandError()
+        Wdbg("I", "Raising event TextCommandError() and responding in RespondTextCommandError()...")
+        RaiseEvent TextCommandError()
+    End Sub
 
     'These classes are for exceptions. (For developers of mods: Only use if your mod is an extension to the kernel)
     ''' <summary>
@@ -857,7 +908,7 @@ Public Class EventsAndExceptions
     End Class
 
     ''' <summary>
-    ''' Not enough command arguments supplied in shell
+    ''' Not enough command arguments supplied in all shells
     ''' </summary>
     Public Class NotEnoughArgumentsException
         Inherits Exception

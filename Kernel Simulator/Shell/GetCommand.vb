@@ -463,6 +463,7 @@ Public Module GetCommand
                 Done = True
                 LockMode = True
                 ShowSavers(defSaverName)
+                EventManager.RaisePreUnlock()
                 ShowPasswordPrompt(signedinusrnm)
 
             ElseIf words(0) = "list" Then
@@ -685,7 +686,9 @@ Public Module GetCommand
 
                 'Reload configuration
                 Done = True
+                EventManager.RaisePreReloadConfig()
                 InitializeConfig()
+                EventManager.RaisePostReloadConfig()
                 W(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", currentLang), True, ColTypes.Neutral)
 
             ElseIf words(0) = "reboot" Then
@@ -1141,6 +1144,7 @@ Public Module GetCommand
         Catch taex As ThreadAbortException
             Exit Sub
         Catch ex As Exception
+            EventManager.RaiseCommandError()
             If DebugMode = True Then
                 W(DoTranslation("Error trying to execute command", currentLang) + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err,
                   Err.Number, ex.Message, ex.StackTrace, words(0))

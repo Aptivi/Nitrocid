@@ -42,6 +42,7 @@ Module SSH
             'Add handler for SSH
             AddHandler Console.CancelKeyPress, AddressOf SSHDisconnect
             RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+            EventManager.RaiseSSHConnected()
 
             'Shell creation
             Wdbg("I", "Opening shell...")
@@ -63,6 +64,7 @@ Module SSH
             AddHandler Console.CancelKeyPress, AddressOf CancelCommand
             RemoveHandler Console.CancelKeyPress, AddressOf SSHDisconnect
         Catch ex As Exception
+            EventManager.RaiseSSHError()
             W(DoTranslation("Error trying to connect to SSH server: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
@@ -72,6 +74,7 @@ Module SSH
         If e.SpecialKey = ConsoleSpecialKey.ControlC Then
             e.Cancel = True
             DisconnectionRequested = True
+            EventManager.RaiseSSHDisconnected()
         End If
     End Sub
 

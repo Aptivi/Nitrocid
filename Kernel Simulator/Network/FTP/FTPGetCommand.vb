@@ -150,6 +150,7 @@ Public Module FTPGetCommand
                     If connected = True Then
                         Try
                             'Show a message to download
+                            EventManager.RaiseFTPPreDownload()
                             W(DoTranslation("Downloading file {0}...", currentLang), False, ColTypes.Neutral, strArgs)
 
                             'Try to download 3 times
@@ -159,8 +160,9 @@ Public Module FTPGetCommand
                             Console.WriteLine()
                             W(DoTranslation("Downloaded file {0}.", currentLang), True, ColTypes.Neutral, strArgs)
                         Catch ex As Exception
-                            W(DoTranslation("Download failed for file {0} because the local file is corrupt.", currentLang), True, ColTypes.Err, strArgs)
+                            W(DoTranslation("Download failed for file {0}: {1}", currentLang), True, ColTypes.Err, strArgs, ex.Message)
                         End Try
+                        EventManager.RaiseFTPPostDownload()
                     Else
                         W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
                     End If
@@ -280,14 +282,22 @@ Public Module FTPGetCommand
             ElseIf words(0) = "upload" Or words(0) = "put" Then
                 If cmd <> "upload" Or cmd <> "put" Then
                     If connected = True Then
+                        EventManager.RaiseFTPPreUpload()
                         W(DoTranslation("Uploading file {0}...", currentLang), True, ColTypes.Neutral, strArgs)
 
                         'Begin the uploading process
-                        ClientFTP.UploadFile($"{currDirect}/{strArgs}", strArgs, True, True, FtpVerify.Retry, Complete)
-                        Console.WriteLine()
+                        If ClientFTP.UploadFile($"{currDirect}/{strArgs}", strArgs, True, True, FtpVerify.Retry, Complete) Then
+                            Console.WriteLine()
 
-                        'Show a message
-                        W(vbNewLine + DoTranslation("Uploaded file {0}", currentLang), True, ColTypes.Neutral, strArgs)
+                            'Show a message
+                            W(vbNewLine + DoTranslation("Uploaded file {0}", currentLang), True, ColTypes.Neutral, strArgs)
+                        Else
+                            Console.WriteLine()
+
+                            'Show a message
+                            W(vbNewLine + DoTranslation("Failed to upload {0}", currentLang), True, ColTypes.Neutral, strArgs)
+                        End If
+                        EventManager.RaiseFTPPostUpload()
                     Else
                         W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
                     End If

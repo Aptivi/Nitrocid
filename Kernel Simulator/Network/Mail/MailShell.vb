@@ -44,6 +44,7 @@ Module MailShell
         'Add handler for IMAP and SMTP
         AddHandler Console.CancelKeyPress, AddressOf MailCancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+        EventManager.RaiseIMAPShellInitialized()
 
         While Not ExitRequested
             'Populate messages
@@ -66,6 +67,7 @@ Module MailShell
                     cmd = cmd.Remove(cmd.IndexOf(" "))
                     Wdbg("I", "Command: ""{0}"", Arguments: ""{1}""", cmd, args)
                 End If
+                EventManager.RaiseIMAPPreExecuteCommand()
 
                 'Execute a command
                 Wdbg("I", "Executing command...")
@@ -78,6 +80,7 @@ Module MailShell
                     Wdbg("E", "Command not found. Reopening shell...")
                     W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, cmd)
                 End If
+                EventManager.RaiseIMAPPostExecuteCommand()
             Else
                 Console.WriteLine()
                 Thread.Sleep(30) 'This is to fix race condition between mail shell initialization and starting the event handler thread
