@@ -18,7 +18,7 @@
 
 Imports System.Reflection
 
-Module ToolPrompts
+Public Module ToolPrompts
 
     Enum SettingsKeyType
         SBoolean
@@ -475,7 +475,7 @@ Module ToolPrompts
         End While
     End Sub
 
-    Sub SetValue(ByVal Variable As String, ByVal VariableValue As Object)
+    Public Sub SetValue(ByVal Variable As String, ByVal VariableValue As Object)
         'Get field for specified variable
         Dim TargetField As FieldInfo = GetField(Variable)
 
@@ -493,7 +493,7 @@ Module ToolPrompts
         End If
     End Sub
 
-    Function GetValue(ByVal Variable As String) As Object
+    Public Function GetValue(ByVal Variable As String) As Object
         'Get field for specified variable
         Dim TargetField As FieldInfo = GetField(Variable)
 
@@ -512,7 +512,7 @@ Module ToolPrompts
         End If
     End Function
 
-    Function GetField(ByVal Variable As String) As FieldInfo
+    Public Function GetField(ByVal Variable As String) As FieldInfo
         'Get types of possible flag locations
         Dim TypeOfFlags As Type = GetType(Flags)
         Dim TypeOfKernel As Type = GetType(Kernel)

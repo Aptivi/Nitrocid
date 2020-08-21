@@ -23,10 +23,10 @@ Module StringExtensions
     ''' <param name="source">A string which has the specified text to replace</param>
     ''' <param name="searchText">A string to be replaced</param>
     ''' <param name="replace">A string to replace</param>
-    ''' <returns></returns>
+    ''' <returns>String that has its last occurrence of text replaced</returns>
     Public Function ReplaceLastOccurrence(ByVal source As String, ByVal searchText As String, ByVal replace As String) As String
         Dim position = source.LastIndexOf(searchText)
-        If (position = -1) Then Return source
+        If position = -1 Then Return source
         Dim result = source.Remove(position, searchText.Length).Insert(position, replace)
         Return result
     End Function
@@ -37,7 +37,7 @@ Module StringExtensions
     ''' </summary>
     ''' <param name="str">Source string</param>
     ''' <param name="value">A value</param>
-    ''' <returns></returns>
+    ''' <returns>Indexes of strings</returns>
     <Runtime.CompilerServices.Extension>
     Public Iterator Function AllIndexesOf(ByVal str As String, ByVal value As String) As IEnumerable(Of Integer)
         If String.IsNullOrEmpty(value) Then
@@ -59,7 +59,7 @@ Module StringExtensions
     ''' </summary>
     ''' <param name="str">Source string to truncate</param>
     ''' <param name="threshold">Max number of string characters</param>
-    ''' <returns></returns>
+    ''' <returns>Truncated string</returns>
     <Runtime.CompilerServices.Extension>
     Public Function Truncate(ByVal str As String, ByVal threshold As Integer) As String
         Dim result As String

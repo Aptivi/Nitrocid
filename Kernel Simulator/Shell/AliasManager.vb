@@ -26,7 +26,7 @@ Public Module AliasManager
     ''' <summary>
     ''' Aliases type
     ''' </summary>
-    Enum AliasType
+    Public Enum AliasType
         Shell = 1
         RDebug
     End Enum

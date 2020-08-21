@@ -274,7 +274,7 @@ Please note that dates mentioned here is for development date changes only. If y
 
 **8/6/2020 - 0.0.11.1:** Fixed messup on console output redirection, Removed Turkish language, Added notification when config fails to be read
 
-**8/20/2020 - WIP - 0.0.12:** Updated SSH.NET Library, Added builtin configuration tool, Added permanent permission support, Removed CI command-line args, Added settings support for screensavers, Improved script execution logic, Now users can keep connected to their e-mail upon exiting the mail shell, Fixed invalid `Argument not provided` on list and send commands, now `listpart` can take drive numbers and not indexes, date and time are now localizable, Terminal title now changes accordingly when executing commands, Fixed not being able to access files and folders outside current drives, Added bouncing text screensaver
+**8/21/2020 - WIP - 0.0.12:** Updated SSH.NET Library, Added builtin configuration tool, Added permanent permission support, Removed CI command-line args, Added settings support for screensavers, Improved script execution logic, Now users can keep connected to their e-mail upon exiting the mail shell, Fixed invalid `Argument not provided` on list and send commands, now `listpart` can take drive numbers and not indexes, date and time are now localizable, Terminal title now changes accordingly when executing commands, Fixed not being able to access files and folders outside current drives, Added bouncing text screensaver, Made more API-friendly
 
 Items with asterisk means that the specified change/fix will be backported to previous version of KS which doesn't have it (only for Ubuntu PPA version, backports as Debian patches)
 

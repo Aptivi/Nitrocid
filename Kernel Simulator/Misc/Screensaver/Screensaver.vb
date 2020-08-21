@@ -208,7 +208,7 @@ Public Module Screensaver
     ''' Compiles the custom screensaver file and configures it so it can be viewed
     ''' </summary>
     ''' <param name="file">File name with SS.m</param>
-    Sub CompileCustom(ByVal file As String)
+    Public Sub CompileCustom(ByVal file As String)
         'Initialize path
         Dim modPath As String = paths("Mods")
         file = file.Replace("\", "/").Replace(modPath, "")
@@ -282,7 +282,7 @@ Public Module Screensaver
     ''' </summary>
     ''' <param name="saver">Specified screensaver</param>
     ''' <param name="setDef">Whether or not to set the default screensaver</param>
-    Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
+    Public Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
         If ScrnSvrdb.ContainsKey(saver) Then
             Wdbg("I", "{0} is found. (Un)Setting it to default...", saver)
             Dim ksconf As New IniFile()
