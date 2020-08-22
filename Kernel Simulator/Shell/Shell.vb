@@ -156,17 +156,25 @@ Public Module Shell
     ''' <param name="strcommand">Specify command</param>
     Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String)
         'If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-        Wdbg("I", "Does the command contain the redirection sign "">>>""? {0}", strcommand.Contains(">>>"))
+        Wdbg("I", "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", strcommand.Contains(">>>"), strcommand.Contains(">>"))
         Dim OutputTextWriter As StreamWriter
         Dim OutputStream As FileStream
         If strcommand.Contains(">>>") Then
-            Wdbg("I", "Output redirection found.")
+            Wdbg("I", "Output redirection found with append.")
+            DefConsoleOut = Console.Out
+            Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 1)
+            OutputStream = New FileStream(CurrDir + "/" + OutputFileName, FileMode.Append, FileAccess.Write)
+            OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
+            Console.SetOut(OutputTextWriter)
+            strcommand = strcommand.Replace(" >>> " + OutputFileName, "")
+        ElseIf strcommand.Contains(">>") Then
+            Wdbg("I", "Output redirection found with overwrite.")
             DefConsoleOut = Console.Out
             Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 1)
             OutputStream = New FileStream(CurrDir + "/" + OutputFileName, FileMode.OpenOrCreate, FileAccess.Write)
             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
             Console.SetOut(OutputTextWriter)
-            strcommand = strcommand.Replace(">>>" + OutputFileName, "")
+            strcommand = strcommand.Replace(" >> " + OutputFileName, "")
         End If
 
         'Reads command written by user
