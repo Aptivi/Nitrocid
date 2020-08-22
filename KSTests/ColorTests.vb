@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports KS
 
 <TestClass()> Public Class ColorTests
@@ -29,6 +30,8 @@ Imports KS
             InitPaths()
             Dim ExpectedTemplates As New List(Of String)
             Dim ActualTemplates As New List(Of String)
+            Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
+            File.Copy(PathToTestConfig, paths("Configuration"))
             ExpectedTemplates.AddRange(colorTemplates)
             For Each Template As String In colorTemplates
                 TemplateSet(Template)
