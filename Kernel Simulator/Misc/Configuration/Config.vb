@@ -174,6 +174,7 @@ Public Module Config
                         New IniKey(ksconf, "ColorMix - Activate 255 Color Mode", "True"),
                         New IniKey(ksconf, "Disco - Activate 255 Color Mode", "True"),
                         New IniKey(ksconf, "GlitterColor - Activate 255 Color Mode", "True"),
+                        New IniKey(ksconf, "Lines - Activate 255 Color Mode", "True"),
                         New IniKey(ksconf, "BouncingText - Text Shown", "Kernel Simulator")))
 
                 'Misc Section
