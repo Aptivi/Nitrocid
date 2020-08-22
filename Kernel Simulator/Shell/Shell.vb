@@ -162,7 +162,7 @@ Public Module Shell
         If strcommand.Contains(">>>") Then
             Wdbg("I", "Output redirection found with append.")
             DefConsoleOut = Console.Out
-            Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 1)
+            Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 2)
             OutputStream = New FileStream(CurrDir + "/" + OutputFileName, FileMode.Append, FileAccess.Write)
             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
             Console.SetOut(OutputTextWriter)
@@ -170,7 +170,7 @@ Public Module Shell
         ElseIf strcommand.Contains(">>") Then
             Wdbg("I", "Output redirection found with overwrite.")
             DefConsoleOut = Console.Out
-            Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 1)
+            Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 2)
             OutputStream = New FileStream(CurrDir + "/" + OutputFileName, FileMode.OpenOrCreate, FileAccess.Write)
             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
             Console.SetOut(OutputTextWriter)
