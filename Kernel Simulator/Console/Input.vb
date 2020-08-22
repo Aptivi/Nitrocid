@@ -24,10 +24,12 @@ Public Module Input
     Public Function ReadLineNoInput(ByVal MaskChar As Char) As String
         Dim Final As String = ""
         While True
-            Dim character As Char = Console.ReadKey(True).KeyChar
-            If character = vbCr Or character = vbLf Then
+            Dim KeyInfo As ConsoleKeyInfo = Console.ReadKey(True)
+            Dim KeyCharacter As Char = KeyInfo.KeyChar
+            Wdbg("I", "Character is {0}", KeyInfo.Key.ToString)
+            If KeyCharacter = vbCr Or KeyCharacter = vbLf Then
                 Exit While
-            ElseIf character = vbBack Then
+            ElseIf KeyCharacter = vbBack Then
                 If Not Final.Length = 0 Then
                     Final = Final.Remove(Final.Length - 1)
                     If Not MaskChar = vbNullChar Then
@@ -36,7 +38,7 @@ Public Module Input
                     End If
                 End If
             Else
-                Final += character
+                Final += KeyCharacter
                 If Not MaskChar = vbNullChar Then Console.Write(MaskChar)
             End If
         End While
