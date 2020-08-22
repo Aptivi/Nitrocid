@@ -26,10 +26,9 @@ Public Module Input
         While True
             Dim KeyInfo As ConsoleKeyInfo = Console.ReadKey(True)
             Dim KeyCharacter As Char = KeyInfo.KeyChar
-            Wdbg("I", "Character is {0}", KeyInfo.Key.ToString)
             If KeyCharacter = vbCr Or KeyCharacter = vbLf Then
                 Exit While
-            ElseIf KeyCharacter = vbBack Then
+            ElseIf KeyInfo.Key = ConsoleKey.Backspace Then
                 If Not Final.Length = 0 Then
                     Final = Final.Remove(Final.Length - 1)
                     If Not MaskChar = vbNullChar Then
