@@ -276,6 +276,9 @@ Public Module KernelTools
         modcmnds.Clear()
         moddefs.Clear()
         scripts.Clear()
+        CloseAliasesFile()
+        Aliases.Clear()
+        RemoteDebugAliases.Clear()
         Wdbg("I", "General variables reset")
 
         'Reset hardware info

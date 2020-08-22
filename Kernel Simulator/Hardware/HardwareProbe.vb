@@ -218,7 +218,6 @@ Public Module HardwareProbe
             CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name, .SSE2 = SSE2})
         Catch ex As Exception
             CPUDone = False
-            KernelError("C", False, 0, DoTranslation("Error while checking CPU: {0}", currentLang), ex, ex.Message)
             If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
         End Try
 
@@ -230,7 +229,6 @@ Public Module HardwareProbe
             RAMList.Add(New RAM_Linux With {.Capacity = mem})
         Catch ex As Exception
             RAMDone = False
-            KernelError("C", False, 0, DoTranslation("Error while checking RAM: {0}", currentLang), ex, ex.Message)
             If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
         End Try
 
@@ -270,7 +268,6 @@ Public Module HardwareProbe
             Next
         Catch ex As Exception
             HDDDone = False
-            KernelError("C", False, 0, DoTranslation("Error while checking HDD: {0}", currentLang), ex, ex.Message)
             If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
         End Try
     End Sub

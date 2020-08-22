@@ -65,7 +65,7 @@ Public Module Translate
     ''' </summary>
     ''' <param name="lang">A specified language</param>
     ''' <returns>A dictionary of English strings and translated strings</returns>
-    Private Function PrepareDict(ByVal lang As String) As Dictionary(Of String, String)
+    Public Function PrepareDict(ByVal lang As String) As Dictionary(Of String, String)
         Dim langStrings As New Dictionary(Of String, String)
         Dim translated As String = ""
         Select Case lang

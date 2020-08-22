@@ -18,7 +18,7 @@
 
 Imports System.Net.Sockets
 
-Module RPC_Commands
+Public Module RPC_Commands
 
     Dim Commands As New List(Of String) From {"<Request:Shutdown>", 'Request will be like this: <Request:Shutdown>(IP)
                                               "<Request:Reboot>",   'Request will be like this: <Request:Reboot>(IP)
@@ -29,7 +29,7 @@ Module RPC_Commands
     ''' </summary>
     ''' <param name="Request">A request</param>
     ''' <param name="IP">An IP address which the RPC is hosted</param>
-    Sub SendCommand(ByVal Request As String, ByVal IP As String)
+    Public Sub SendCommand(ByVal Request As String, ByVal IP As String)
         Dim Cmd As String = Request.Remove(Request.IndexOf("("))
         Wdbg("I", "Command: {0}", Cmd)
         Dim Arg As String = Request.Substring(Request.IndexOf("(") + 1)

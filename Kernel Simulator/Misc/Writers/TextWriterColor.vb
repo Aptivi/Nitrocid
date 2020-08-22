@@ -95,6 +95,7 @@ Public Module TextWriterColor
             For Each i As Integer In OffendingIndex
                 If i <> -1 Then
                     DebugDevices.Keys(i).Disconnect(True)
+                    EventManager.RaiseRemoteDebugConnectionDisconnected()
                     Wdbg("W", "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
                     dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
@@ -148,7 +149,7 @@ Public Module TextWriterColor
     ''' </summary>
     ''' <param name="path">Path to file</param>
     ''' <returns>Array of lines</returns>
-    Private Function ReadAllLinesNoBlock(ByVal path As String) As String()
+    Public Function ReadAllLinesNoBlock(ByVal path As String) As String()
         Dim AllLnList As New List(Of String)
         Dim FOpen As New StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
         While Not FOpen.EndOfStream

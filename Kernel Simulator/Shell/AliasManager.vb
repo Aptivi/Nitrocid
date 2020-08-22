@@ -21,7 +21,7 @@ Public Module AliasManager
     Public Aliases As New Dictionary(Of String, String)
     Public RemoteDebugAliases As New Dictionary(Of String, String)
     Public Forbidden As String() = {"alias"}
-    Private AliasStreamReader As New IO.StreamReader(paths("Aliases"))
+    Private AliasStreamReader As IO.StreamReader
 
     ''' <summary>
     ''' Aliases type
@@ -39,6 +39,7 @@ Public Module AliasManager
     ''' </summary>
     Public Sub InitAliases()
         'Get all aliases from file
+        AliasStreamReader = New IO.StreamReader(paths("Aliases"))
         While Not AliasStreamReader.EndOfStream
             'Read line
             Dim line As String = AliasStreamReader.ReadLine
@@ -99,6 +100,13 @@ Public Module AliasManager
         AliasStreamReader.Close()
         IO.File.WriteAllLines(paths("Aliases"), aliast)
         AliasStreamReader = New IO.StreamReader(paths("Aliases"))
+    End Sub
+
+    ''' <summary>
+    ''' Closes aliases file
+    ''' </summary>
+    Public Sub CloseAliasesFile()
+        AliasStreamReader.Close()
     End Sub
 
     ''' <summary>

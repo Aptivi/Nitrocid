@@ -26,7 +26,7 @@ Namespace My.Resources
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
-    Friend Module Resources
+    Public Module Resources
         
         Private resourceMan As Global.System.Resources.ResourceManager
         
@@ -36,7 +36,7 @@ Namespace My.Resources
         '''  Returns the cached ResourceManager instance used by this class.
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
+        Public ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
                     Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("KS.Resources", GetType(Resources).Assembly)
@@ -51,7 +51,7 @@ Namespace My.Resources
         '''  resource lookups using this strongly typed resource class.
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Friend Property Culture() As Global.System.Globalization.CultureInfo
+        Public Property Culture() As Global.System.Globalization.CultureInfo
             Get
                 Return resourceCulture
             End Get
@@ -72,7 +72,7 @@ Namespace My.Resources
         '''alwasayit almutahat: {0}
         '''alhujaj (&quot;almusaedat&quot; lil [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property arb() As String
+        Public ReadOnly Property arb() As String
             Get
                 Return ResourceManager.GetString("arb", resourceCulture)
             End Get
@@ -92,7 +92,7 @@ Namespace My.Resources
         '''سيتم جدولة الحجج المحقونة لتشغيلها عند إعادة التمهيد التالي.
         '''تم إلغاء  [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property arb_T() As String
+        Public ReadOnly Property arb_T() As String
             Get
                 Return ResourceManager.GetString("arb_T", resourceCulture)
             End Get
@@ -109,7 +109,7 @@ Namespace My.Resources
         '''Bāragasa: Yuktitē apasāraṇayōgya truṭi:
         '''Upalabdha ārgumēnṭa:  [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property ben() As String
+        Public ReadOnly Property ben() As String
             Get
                 Return ResourceManager.GetString("ben", resourceCulture)
             End Get
@@ -128,7 +128,7 @@ Namespace My.Resources
         '''যুক্তি (সহায়তার জন্য &apos;সহায়তা&apos;):
         '''ইনজেক্টেড আর্গুমেন্টগুলি পরব [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property ben_T() As String
+        Public ReadOnly Property ben_T() As String
             Get
                 Return ResourceManager.GetString("ben_T", resourceCulture)
             End Get
@@ -147,7 +147,7 @@ Namespace My.Resources
         '''Cānshù (&apos;bāngzhù&apos;xúnqiú bāngzhù):
         '''Zhùrù de cānshù jiāng ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.        ''' [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property chi() As String
+        Public ReadOnly Property chi() As String
             Get
                 Return ResourceManager.GetString("chi", resourceCulture)
             End Get
@@ -180,7 +180,7 @@ Namespace My.Resources
         '''CPU：{0} {1} MHz
         '''RAM：{0} MB = {1} MB [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property chi_T() As String
+        Public ReadOnly Property chi_T() As String
             Get
                 Return ResourceManager.GetString("chi_T", resourceCulture)
             End Get
@@ -199,7 +199,7 @@ Namespace My.Resources
         '''Argumenti (&quot;pomoć&quot; za pomoć):
         '''Injektirani argumenti tr [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property cro() As String
+        Public ReadOnly Property cro() As String
             Get
                 Return ResourceManager.GetString("cro", resourceCulture)
             End Get
@@ -218,7 +218,7 @@ Namespace My.Resources
         '''Argumenty (nأ،povؤ›da â€‍helpâ€œ):
         '''Vloإ¾enأ [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property cze() As String
+        Public ReadOnly Property cze() As String
             Get
                 Return ResourceManager.GetString("cze", resourceCulture)
             End Get
@@ -237,7 +237,7 @@ Namespace My.Resources
         '''Argumenter (&apos;hjælp&apos; til hjælp):
         '''Injicerede argumenter  [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property dan() As String
+        Public ReadOnly Property dan() As String
             Get
                 Return ResourceManager.GetString("dan", resourceCulture)
             End Get
@@ -255,7 +255,7 @@ Namespace My.Resources
         '''Beschikbare argumenten: {0}
         '''Argumenten (&apos;help&apos; voor hulp [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property dtc() As String
+        Public ReadOnly Property dtc() As String
             Get
                 Return ResourceManager.GetString("dtc", resourceCulture)
             End Get
@@ -274,7 +274,7 @@ Namespace My.Resources
         '''Arguments (&apos;help&apos; for help): 
         '''Injected arguments  [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property eng() As String
+        Public ReadOnly Property eng() As String
             Get
                 Return ResourceManager.GetString("eng", resourceCulture)
             End Get
@@ -293,7 +293,7 @@ Namespace My.Resources
         '''Argumentit (&apos;help&apos; en ohje):
         '''Injektoid [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property fin() As String
+        Public ReadOnly Property fin() As String
             Get
                 Return ResourceManager.GetString("fin", resourceCulture)
             End Get
@@ -311,7 +311,7 @@ Namespace My.Resources
         '''Arguments disponibles: {0}
         '''A [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property fre() As String
+        Public ReadOnly Property fre() As String
             Get
                 Return ResourceManager.GetString("fre", resourceCulture)
             End Get
@@ -329,7 +329,7 @@ Namespace My.Resources
         '''Verfügbare Argumente: {0}
         '''Argumente (&apos;Hilfe [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property ger() As String
+        Public ReadOnly Property ger() As String
             Get
                 Return ResourceManager.GetString("ger", resourceCulture)
             End Get
@@ -348,7 +348,7 @@ Namespace My.Resources
         '''tark (sahaayata ke lie sahaayata): 
         '''in [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property ind() As String
+        Public ReadOnly Property ind() As String
             Get
                 Return ResourceManager.GetString("ind", resourceCulture)
             End Get
@@ -367,7 +367,7 @@ Namespace My.Resources
         '''तर्क (मदद के लिए &apos;सहायता):
         '''इंजेक्ट किए गए तर्कों को अगले रिबूट पर चला [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property ind_T() As String
+        Public ReadOnly Property ind_T() As String
             Get
                 Return ResourceManager.GetString("ind_T", resourceCulture)
             End Get
@@ -385,7 +385,7 @@ Namespace My.Resources
         '''Argomenti disponibili: {0}
         '''Argomenti (&apos;aiuto&apos; per  [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property ita() As String
+        Public ReadOnly Property ita() As String
             Get
                 Return ResourceManager.GetString("ita", resourceCulture)
             End Get
@@ -403,7 +403,7 @@ Namespace My.Resources
         '''Riyō kanōna hikisū: {0} 
         '''Hikisū (herupu wa&apos; [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property jpn() As String
+        Public ReadOnly Property jpn() As String
             Get
                 Return ResourceManager.GetString("jpn", resourceCulture)
             End Get
@@ -430,7 +430,7 @@ Namespace My.Resources
         '''hwprobe：ハードウェアはすでにプローブされています。
         '''hwprobe：ハードウェアはプローブされません。 [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property jpn_T() As String
+        Public ReadOnly Property jpn_T() As String
             Get
                 Return ResourceManager.GetString("jpn_T", resourceCulture)
             End Get
@@ -448,7 +448,7 @@ Namespace My.Resources
         '''sayong ganeunghan insu : {0}
         '''insu  [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property kor() As String
+        Public ReadOnly Property kor() As String
             Get
                 Return ResourceManager.GetString("kor", resourceCulture)
             End Get
@@ -475,7 +475,7 @@ Namespace My.Resources
         '''hwprobe : 하드웨어가 이미 검사되었습니다.
         '''hwprobe : 하드웨어가 검사되지 않았습니다. [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property kor_T() As String
+        Public ReadOnly Property kor_T() As String
             Get
                 Return ResourceManager.GetString("kor_T", resourceCulture)
             End Get
@@ -493,7 +493,7 @@ Namespace My.Resources
         '''Hujah yang tersedia: {0}
         '''Argumen (&apos;help&apos; untuk men [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property mal() As String
+        Public ReadOnly Property mal() As String
             Get
                 Return ResourceManager.GetString("mal", resourceCulture)
             End Get
@@ -511,7 +511,7 @@ Namespace My.Resources
         '''Argumen yang tersedia: {0}
         '''Argumen (&apos;bantuan&apos; untuk ba [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property ndo() As String
+        Public ReadOnly Property ndo() As String
             Get
                 Return ResourceManager.GetString("ndo", resourceCulture)
             End Get
@@ -530,7 +530,7 @@ Namespace My.Resources
         '''Argumenter (&apos;hjelp&apos; for hjelp):
         '''Injiser [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property nwg() As String
+        Public ReadOnly Property nwg() As String
             Get
                 Return ResourceManager.GetString("nwg", resourceCulture)
             End Get
@@ -549,7 +549,7 @@ Namespace My.Resources
         '''Argumenty („pomoc” dla pomocy):
         '''Wstrzyknięte [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property pol() As String
+        Public ReadOnly Property pol() As String
             Get
                 Return ResourceManager.GetString("pol", resourceCulture)
             End Get
@@ -567,7 +567,7 @@ Namespace My.Resources
         '''Argumentos disponíveis: {0}
         '''Argumentos (&apos;help&apos; f [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property ptg() As String
+        Public ReadOnly Property ptg() As String
             Get
                 Return ResourceManager.GetString("ptg", resourceCulture)
             End Get
@@ -584,7 +584,7 @@ Namespace My.Resources
         '''Bārāṁ: Dalīla vica aṇajāṇa galatī:
         '''Upalabadha bahi [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property pun() As String
+        Public ReadOnly Property pun() As String
             Get
                 Return ResourceManager.GetString("pun", resourceCulture)
             End Get
@@ -604,7 +604,7 @@ Namespace My.Resources
         '''ਜ਼ਖ਼ਮੀ ਬਹਿਸਾਂ ਨੂੰ ਅਗਲੇ ਰੀਬੂਟ ਤੇ ਚਲਾਉਣ ਲਈ ਤਹਿ ਕੀਤਾ ਜਾਵੇਗਾ.
         ''' [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property pun_T() As String
+        Public ReadOnly Property pun_T() As String
             Get
                 Return ResourceManager.GetString("pun_T", resourceCulture)
             End Get
@@ -623,7 +623,7 @@ Namespace My.Resources
         '''Argumente („ajutor” pentru ajutor):
         ''' [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property rmn() As String
+        Public ReadOnly Property rmn() As String
             Get
                 Return ResourceManager.GetString("rmn", resourceCulture)
             End Get
@@ -641,7 +641,7 @@ Namespace My.Resources
         '''Dostupnyye argumenty: {0}
         '''Argumenty («pomoshch&apos;» dlya pomoshch [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property rus() As String
+        Public ReadOnly Property rus() As String
             Get
                 Return ResourceManager.GetString("rus", resourceCulture)
             End Get
@@ -660,7 +660,7 @@ Namespace My.Resources
         '''Аргументы («помощь» для помощи):
         '''Введенные аргументы буд [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property rus_T() As String
+        Public ReadOnly Property rus_T() As String
             Get
                 Return ResourceManager.GetString("rus_T", resourceCulture)
             End Get
@@ -679,7 +679,7 @@ Namespace My.Resources
         '''Argumenty („pomoc“ pre pomoc):
         '''Injektované argumenty budú naplánované n [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property slo() As String
+        Public ReadOnly Property slo() As String
             Get
                 Return ResourceManager.GetString("slo", resourceCulture)
             End Get
@@ -697,7 +697,7 @@ Namespace My.Resources
         '''Argumentos disponibles: {0}
         ''' [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property spa() As String
+        Public ReadOnly Property spa() As String
             Get
                 Return ResourceManager.GetString("spa", resourceCulture)
             End Get
@@ -716,7 +716,7 @@ Namespace My.Resources
         '''Argumenti („pomoć“ za pomoć):
         '''Injektirani argumenti će se zakazati [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property srb() As String
+        Public ReadOnly Property srb() As String
             Get
                 Return ResourceManager.GetString("srb", resourceCulture)
             End Get
@@ -735,7 +735,7 @@ Namespace My.Resources
         '''Аргументи („помоћ“ за помоћ):
         '''Ињектирани аргументи ће се заказати при  [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property srb_T() As String
+        Public ReadOnly Property srb_T() As String
             Get
                 Return ResourceManager.GetString("srb_T", resourceCulture)
             End Get
@@ -754,7 +754,7 @@ Namespace My.Resources
         '''Argument (&apos;help&apos; fأ¶r hjأ¤lp):
         '''Injice [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property swe() As String
+        Public ReadOnly Property swe() As String
             Get
                 Return ResourceManager.GetString("swe", resourceCulture)
             End Get
@@ -772,7 +772,7 @@ Namespace My.Resources
         '''Mavjud dalillar: {0}
         '''Dalillar (yordam uchun &apos;yordam&apos; [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property uzb() As String
+        Public ReadOnly Property uzb() As String
             Get
                 Return ResourceManager.GetString("uzb", resourceCulture)
             End Get
@@ -791,7 +791,7 @@ Namespace My.Resources
         '''Đối số (&apos;trợ giúp&apos; để được giúp đỡ):
         '''Các đối số được tiêm sẽ được lên [rest of string was truncated]&quot;;.
         '''</summary>
-        Friend ReadOnly Property vtn() As String
+        Public ReadOnly Property vtn() As String
             Get
                 Return ResourceManager.GetString("vtn", resourceCulture)
             End Get

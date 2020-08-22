@@ -14,7 +14,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module StringExtensions
+Public Module StringExtensions
 
     ' Credit: Mehang Rai | https://stackoverflow.com/questions/45831829/how-do-you-replace-the-last-occurance-of-a-with-the-word-and
     ''' <summary>
@@ -24,6 +24,7 @@ Module StringExtensions
     ''' <param name="searchText">A string to be replaced</param>
     ''' <param name="replace">A string to replace</param>
     ''' <returns>String that has its last occurrence of text replaced</returns>
+    <Runtime.CompilerServices.Extension>
     Public Function ReplaceLastOccurrence(ByVal source As String, ByVal searchText As String, ByVal replace As String) As String
         Dim position = source.LastIndexOf(searchText)
         If position = -1 Then Return source

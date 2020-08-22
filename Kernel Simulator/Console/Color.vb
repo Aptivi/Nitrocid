@@ -246,10 +246,14 @@ Public Module Color
     ''' Loads the background
     ''' </summary>
     Public Sub LoadBack()
-        Wdbg("I", "Filling background with background color")
-        Dim esc As Char = GetEsc()
-        Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-        Console.Clear()
+        Try
+            Wdbg("I", "Filling background with background color")
+            Dim esc As Char = GetEsc()
+            Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            Console.Clear()
+        Catch ex As Exception
+            Wdbg("E", "Failed to set background: {0}", ex.Message)
+        End Try
     End Sub
 
     ''' <summary>

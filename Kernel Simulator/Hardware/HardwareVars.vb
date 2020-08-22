@@ -14,7 +14,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module HardwareVars
+Public Module HardwareVars
 
     ''' <summary>
     ''' [Windows] Hard drive
@@ -117,7 +117,7 @@ Module HardwareVars
 
     'These are used to check to see if probing specific hardware is done.
     Public CPUDone As Boolean = False
-    Public ParDone As Boolean = False
+    Public ParDone As Boolean = True
     Public RAMDone As Boolean = False
     Public HDDDone As Boolean = False
 
