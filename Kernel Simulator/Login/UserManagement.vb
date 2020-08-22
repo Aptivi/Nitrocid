@@ -94,6 +94,19 @@ Public Module UserManagement
         Next
     End Sub
 
+    Function GetUserEncryptedPassword(ByVal User As String)
+        'Opens file stream
+        Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+        Dim SplitEntries() As String
+        For Each Line As String In UsersLines
+            SplitEntries = Line.Split(",")
+            If SplitEntries(0) = User Then
+                Return SplitEntries(1)
+            End If
+        Next
+        Return ""
+    End Function
+
     ''' <summary>
     ''' Adds a new user
     ''' </summary>

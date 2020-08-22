@@ -117,7 +117,11 @@ Public Module Kernel
                 'Phase 4: Log-in
                 W(vbNewLine + DoTranslation("- Stage 4: Log in", currentLang), True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 4: Log in")
-                AddUser("root", RootPasswd)
+                If setRootPasswd Then
+                    AddUser("root", RootPasswd)
+                Else
+                    InitializeUser("root", GetUserEncryptedPassword("root"), False)
+                End If
                 Permission(PermissionType.Administrator, "root", PermissionManagementMode.Allow)
                 LoginFlag = True
                 If Not BootArgs Is Nothing Then
