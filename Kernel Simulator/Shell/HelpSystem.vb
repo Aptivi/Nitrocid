@@ -68,7 +68,6 @@ Public Module HelpSystem
                                                               {"move", DoTranslation("Moves a file to another directory", currentLang)},
                                                               {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
                                                               {"perm", DoTranslation("Manage permissions for users (Only admins can access this command)", currentLang)},
-                                                              {"read", DoTranslation("Writes file contents to the console", currentLang)},
                                                               {"reboot", DoTranslation("Restarts your computer (WARNING: No syncing, because it is not a final kernel)", currentLang)},
                                                               {"reloadconfig", DoTranslation("Reloads configuration file that is edited.", currentLang)},
                                                               {"reloadmods", DoTranslation("Reloads mods.", currentLang)},
@@ -325,10 +324,6 @@ Public Module HelpSystem
         ElseIf command = "rdebug" Then
 
             W(DoTranslation("Usage:", currentLang) + " rdebug: " + DoTranslation("Enables or disables remote debugging.", currentLang), True, ColTypes.Neutral)
-
-        ElseIf command = "read" Then
-
-            W(DoTranslation("Usage:", currentLang) + " read <file>", True, ColTypes.Neutral)
 
         ElseIf command = "reboot" Then
 

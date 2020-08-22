@@ -670,18 +670,6 @@ Public Module GetCommand
                     End If
                 End If
 
-            ElseIf words(0) = "read" Then
-
-                If requestedCommand <> "read" Then
-                    Dim FileRead As String = NeutralizePath(strArgs)
-                    If File.Exists(FileRead) Then
-                        ReadContents(FileRead)
-                    Else
-                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Err, strArgs)
-                    End If
-                    Done = True
-                End If
-
             ElseIf requestedCommand = "reloadconfig" Then
 
                 'Reload configuration
