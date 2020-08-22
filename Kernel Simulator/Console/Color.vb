@@ -474,8 +474,8 @@ Public Module Color
         Dim ksconf As New IniFile()
         Dim configPath As String = paths("Configuration")
         ksconf.Load(configPath)
-        If ksconf.Sections("Colors").Keys("User Name Shell Color").Value = ConsoleColors.DarkGreen.ToString And
-           ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = ConsoleColors.Green.ToString And
+        If ksconf.Sections("Colors").Keys("User Name Shell Color").Value = ConsoleColors.Green.ToString And
+           ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = ConsoleColors.DarkGreen.ToString And
            ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = ConsoleColors.Yellow.ToString And
            ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = ConsoleColors.Red.ToString And
            ksconf.Sections("Colors").Keys("Text Color").Value = ConsoleColors.Gray.ToString And
@@ -498,7 +498,7 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorRC.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorRC.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorRC.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorRC.ToString And
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorRC.ToString And
                ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorRC.ToString Then
             Wdbg("I", "Theme set to RedConsole")
             currentTheme = "RedConsole"
@@ -512,10 +512,10 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorBS.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorBS.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorBS.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorBS.ToString And
-               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorbs.ToString Then
-            Wdbg("I", "Theme set to BlueSpire")
-            currentTheme = "BlueSpire"
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorBS.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorBS.ToString Then
+            Wdbg("I", "Theme set to Bluespire")
+            currentTheme = "Bluespire"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorHckr.ToString And
                ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorHckr.ToString And
                ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorHckr.ToString And
@@ -526,8 +526,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorHckr.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorHckr.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorHckr.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorHckr.ToString And
-               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorhckr.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorHckr.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorHckr.ToString Then
             Wdbg("I", "Theme set to Hacker")
             currentTheme = "Hacker"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorU.ToString And
@@ -540,8 +540,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorU.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorU.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorU.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorU.ToString And
-               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColoru.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorU.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorU.ToString Then
             Wdbg("I", "Theme set to Ubuntu")
             currentTheme = "Ubuntu"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorYFG.ToString And
@@ -554,8 +554,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorYFG.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorYFG.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorYFG.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorYFG.ToString And
-               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColoryfg.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorYFG.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorYFG.ToString Then
             Wdbg("I", "Theme set to YellowFG")
             currentTheme = "YellowFG"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorYBG.ToString And
@@ -568,8 +568,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorYBG.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorYBG.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorYBG.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorYBG.ToString And
-               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorybg.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorYBG.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorYBG.ToString Then
             Wdbg("I", "Theme set to YellowBG")
             currentTheme = "YellowBG"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColor95.ToString And
@@ -582,7 +582,7 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColor95.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColor95.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColor95.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColor95.ToString And
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColor95.ToString And
                ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColor95.ToString Then
             Wdbg("I", "Theme set to Windows 95")
             currentTheme = "Windows95"
@@ -596,8 +596,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorSA.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorSA.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorSA.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorSA.ToString And
-               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorsa.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorSA.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorSA.ToString Then
             Wdbg("I", "Theme set to GTA: SA")
             currentTheme = "GTASA"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorGY.ToString And
@@ -610,8 +610,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorGY.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorGY.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorGY.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorGY.ToString And
-               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorgy.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorGY.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorGY.ToString Then
             Wdbg("I", "Theme set to Gray on Yellow")
             currentTheme = "GrayOnYellow"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorBY.ToString And
@@ -624,8 +624,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorBY.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorBY.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorBY.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorBY.ToString And
-               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorby.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorBY.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorBY.ToString Then
             Wdbg("I", "Theme set to Black On White")
             currentTheme = "BlackOnWhite"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLUnc.ToString And
@@ -638,8 +638,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorLUnc.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorLUnc.ToString And
-               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorlunc.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorLUnc.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorLUnc.ToString Then
             Wdbg("I", "Theme set to LinuxUncolored")
             currentTheme = "LinuxUncolored"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLcDef.ToString And
@@ -652,8 +652,8 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Input Color").Value = inputColorLcDef.ToString And
                ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorLcDef.ToString And
                ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorLcDef.ToString And
-               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = cmdDefColorLcDef.ToString And
-               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorlcdef.ToString Then
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorLcDef.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorLcDef.ToString Then
             Wdbg("I", "Theme set to LinuxColoredDef")
             currentTheme = "LinuxColoredDef"
         Else

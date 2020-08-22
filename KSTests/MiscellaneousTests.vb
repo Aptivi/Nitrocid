@@ -293,7 +293,7 @@ Imports KS
         Try
             Dim Source As String = "Kernel Simulation from Eofla Kernel"
             Dim Target As Integer = 20
-            Assert.AreEqual(Source.Truncate(Target), "Kernel Simulation fr...")
+            Assert.AreEqual(Source.Truncate(Target), "Kernel Simulation f...")
         Catch afex As AssertFailedException
             Assert.Fail("Truncation failed.")
         End Try
