@@ -47,4 +47,19 @@ Imports KS
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Tests current directory setting
+    ''' </summary>
+    <TestMethod()> Public Sub TestSetCurrDir()
+        Try
+            InitPaths()
+            CurrDir = paths("Home")
+            Dim Path As String = paths("Home") + "/Documents"
+            Assert.IsTrue(SetCurrDir(Path))
+            Assert.AreEqual(Path, CurrDir)
+        Catch afex As AssertFailedException
+            Assert.Fail("Current path is not properly set.")
+        End Try
+    End Sub
+
 End Class

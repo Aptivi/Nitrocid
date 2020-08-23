@@ -222,6 +222,14 @@ Public Module GetCommand
 
                 Try
                     SetCurrDir(strArgs)
+                Catch sex As Security.SecurityException
+                    Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
+                    W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, dir, sex.Message)
+                    WStkTrc(sex)
+                Catch ptlex As IO.PathTooLongException
+                    Wdbg("I", "Directory length: {0}", dir.Length)
+                    W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Err)
+                    WStkTrc(ptlex)
                 Catch ex As Exception
                     W(DoTranslation("Changing directory has failed: {0}", currentLang), True, ColTypes.Err, ex.Message)
                     WStkTrc(ex)
