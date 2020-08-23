@@ -83,7 +83,7 @@ Public Module Kernel
                 'Phase 1: Probe hardware
                 W(vbNewLine + DoTranslation("- Stage 1: Hardware detection", currentLang), True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 1: Probing hardware")
-                ProbeHW()
+                StartProbing()
 
                 'Phase 2: Parse Mods and Screensavers
                 W(vbNewLine + DoTranslation("- Stage 2: Mods and screensavers detection", currentLang), True, ColTypes.Stage)

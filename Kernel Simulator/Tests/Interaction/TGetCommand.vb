@@ -101,7 +101,7 @@ Module TGetCommand
             HDDList.Clear()
             CPUList.Clear()
             RAMList.Clear()
-            ProbeHW()
+            StartProbing()
         ElseIf Cmd = "garbage" Then
             DisposeAll()
         ElseIf Cmd = "panic" Then 'Usage: panic <ErrorType> <Reboot> <RebootTime> <Description>

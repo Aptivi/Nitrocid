@@ -23,26 +23,11 @@ Public Module HardwareProbe
 
     'TODO: Re-write in Beta
     ''' <summary>
-    ''' Starts probing hardware (entry-point)
-    ''' </summary>
-    Public Sub ProbeHW()
-        Wdbg("I", "QuietProbe = {0}.", quietProbe)
-        If Not quietProbe Then
-            W(DoTranslation("hwprobe: Your hardware will be probed. Please wait...", currentLang), True, ColTypes.Neutral)
-            StartProbing()
-        Else
-            If Not EnvironmentOSType.Contains("Unix") Then
-                ProbeHardware()
-            Else
-                ProbeHardwareLinux()
-            End If
-        End If
-    End Sub
-
-    ''' <summary>
     ''' Starts probing hardware
     ''' </summary>
     Public Sub StartProbing()
+        If Not quietProbe Then W(DoTranslation("hwprobe: Your hardware will be probed. Please wait...", currentLang), True, ColTypes.Neutral)
+
         'We will probe hardware
         If Not EnvironmentOSType.Contains("Unix") Then
             ProbeHardware()
@@ -50,29 +35,31 @@ Public Module HardwareProbe
             ProbeHardwareLinux()
         End If
 
-        'We are checking to see if any of the probers reported a failure starting with CPU
-        If CPUDone = False Then
-            Wdbg("E", "CPU failed to probe.", KernelVersion)
-            W(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
-        End If
+        If Not quietProbe Then
+            'We are checking to see if any of the probers reported a failure starting with CPU
+            If CPUDone = False Then
+                Wdbg("E", "CPU failed to probe.", KernelVersion)
+                W(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
+            End If
 
-        'then RAM
-        If RAMDone = False Then
-            Wdbg("E", "RAM failed to probe.", KernelVersion)
-            W(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
-        End If
+            'then RAM
+            If RAMDone = False Then
+                Wdbg("E", "RAM failed to probe.", KernelVersion)
+                W(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
+            End If
 
-        'and finally HDD
-        If HDDDone = False Then
-            Wdbg("E", "HDD failed to probe.", KernelVersion)
-            W(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
-        End If
+            'and finally HDD
+            If HDDDone = False Then
+                Wdbg("E", "HDD failed to probe.", KernelVersion)
+                W(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
+            End If
 
-        'Print information about the probed hardware
-        If Not EnvironmentOSType.Contains("Unix") Then
-            ListDrivers()
-        Else
-            ListDrivers_Linux()
+            'Print information about the probed hardware
+            If Not EnvironmentOSType.Contains("Unix") Then
+                ListDrivers()
+            Else
+                ListDrivers_Linux()
+            End If
         End If
     End Sub
 
