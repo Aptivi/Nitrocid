@@ -444,9 +444,13 @@ Public Module KernelTools
         instanceChecked = True
     End Sub
 
-    Sub CheckKernelUpdates()
-        W(DoTranslation("Checking for system updates...", currentLang), True, ColTypes.Neutral)
+    ''' <summary>
+    ''' Fetches the GitHub repo to see if there are any updates
+    ''' </summary>
+    ''' <returns>A list which contains both the version and the URL</returns>
+    Public Function FetchKernelUpdates() As List(Of String)
         Try
+            Dim UpdateSpecifier As New List(Of String)
             Dim UpdateDown As New WebClient
             UpdateDown.Headers.Add(HttpRequestHeader.UserAgent, "EoflaOE") 'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs.
             Dim UpdateStr As String = UpdateDown.DownloadString("https://api.github.com/repos/EoflaOE/Kernel-Simulator/releases")
@@ -456,15 +460,28 @@ Public Module KernelTools
             Dim CurrentVer As String = "v" + KernelVersion + "-alpha" 'We usually put -alpha in releases when we indicate that it's the alpha release.
             If UpdateVer <> CurrentVer Then
                 'Found a new version
-                W(DoTranslation("Found new version: ", currentLang), False, ColTypes.HelpCmd)
-                W(UpdateVer, True, ColTypes.HelpDef)
-                W(DoTranslation("You can download it at: ", currentLang), False, ColTypes.HelpCmd)
-                W(UpdateURL, True, ColTypes.HelpDef)
+                UpdateSpecifier.Add(UpdateVer)
+                UpdateSpecifier.Add(UpdateURL)
             End If
+            Return UpdateSpecifier
         Catch ex As Exception
-            W(DoTranslation("Failed to check for updates: {0}", currentLang), True, ColTypes.Err, ex.Message)
+            Wdbg("E", "Failed to check for updates: {0}", ex.Message)
             WStkTrc(ex)
         End Try
+        Return Nothing
+    End Function
+
+    Sub CheckKernelUpdates()
+        W(DoTranslation("Checking for system updates...", currentLang), True, ColTypes.Neutral)
+        Dim AvailableUpdates As List(Of String) = FetchKernelUpdates()
+        If Not IsNothing(AvailableUpdates) And AvailableUpdates.Count > 0 Then
+            W(DoTranslation("Found new version: ", currentLang), False, ColTypes.HelpCmd)
+            W(AvailableUpdates(0), True, ColTypes.HelpDef)
+            W(DoTranslation("You can download it at: ", currentLang), False, ColTypes.HelpCmd)
+            W(AvailableUpdates(1), True, ColTypes.HelpDef)
+        ElseIf IsNothing(AvailableUpdates) Then
+            W(DoTranslation("Failed to check for updates.", currentLang), True, ColTypes.Err)
+        End If
     End Sub
 
     Function GetCompileDate() As DateTime 'Always successful, no need to put Try Catch

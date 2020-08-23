@@ -88,21 +88,21 @@
     </Compile>
     <Compile Include="ColorTests.vb" />
     <Compile Include="HardwareTests.vb" />
-    <Compile Include="GarbageTests.vb" />
     <Compile Include="LocalizationTests.vb" />
     <Compile Include="MiscellaneousTests.vb" />
     <Compile Include="AliasTests.vb" />
     <Compile Include="HelpTests.vb" />
     <Compile Include="TimeTests.vb" />
+    <Compile Include="KernelTests.vb" />
     <Content Include="TestText.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestAliases.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-	<Content Include="TestConfig.ini">
+    <Content Include="TestConfig.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</Content>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

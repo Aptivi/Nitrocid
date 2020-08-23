@@ -76,8 +76,12 @@ Public Module Kernel
                 StartRPC()
                 W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
                 CurrDir = paths("Home")
+
+                'Check for kernel updates
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then
-                If CheckUpdateStart Then CheckKernelUpdates()
+                If CheckUpdateStart Then
+                    CheckKernelUpdates()
+                End If
 #End If
 
                 'Phase 1: Probe hardware

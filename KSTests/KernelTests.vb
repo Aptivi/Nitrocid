@@ -18,7 +18,15 @@
 
 Imports KS
 
-<TestClass()> Public Class GarbageTests
+<TestClass()> Public Class KernelTests
+
+    <TestMethod()> Public Sub TestFetchKernelUpdates()
+        Try
+            Assert.IsNotNull(FetchKernelUpdates)
+        Catch ex As Exception
+            Assert.Fail("Can't fetch kernel updates.")
+        End Try
+    End Sub
 
     <TestMethod()> Public Sub TestGarbageCollect()
         DisposeAll()
