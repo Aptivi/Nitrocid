@@ -57,7 +57,7 @@ Imports KS
             InitPaths()
             Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
             If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
-            SetLang("spa")
+            Assert.IsTrue(SetLang("spa"))
         Catch ex As Exception
             Assert.Fail("Setting language failed.")
         End Try

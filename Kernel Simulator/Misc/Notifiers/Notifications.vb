@@ -94,6 +94,19 @@ Public Module Notifications
     End Sub
 
     ''' <summary>
+    ''' Creates a notification
+    ''' </summary>
+    ''' <param name="Title">Title of notification</param>
+    ''' <param name="Desc">Description of notification</param>
+    ''' <param name="Priority">Priority of notification</param>
+    ''' <returns></returns>
+    Public Function NotifyCreate(ByVal Title As String, ByVal Desc As String, ByVal Priority As NotifPriority) As Notification
+        Return New Notification With {.Title = Title,
+                                      .Desc = Desc,
+                                      .Priority = Priority}
+    End Function
+
+    ''' <summary>
     ''' Sends notification
     ''' </summary>
     ''' <param name="notif">Instance of notification holder</param>
@@ -106,15 +119,16 @@ Public Module Notifications
     ''' Dismisses notification
     ''' </summary>
     ''' <param name="ind">Index of notification</param>
-    Public Sub NotifDismiss(ByVal ind As Integer)
+    Public Function NotifDismiss(ByVal ind As Integer) As Boolean
         Try
             NotifRecents.RemoveAt(ind)
             Wdbg("I", "Removed index {0} from notification list", ind)
-            W(DoTranslation("Notification dismissed successfully.", currentLang), True, ColTypes.Neutral)
+            Return True
         Catch ex As Exception
-            W(DoTranslation("Error trying to dismiss notification: {0}", currentLang), True, ColTypes.Err, ex.Message)
+            Wdbg("E", "Error trying to dismiss notification: {0}", ex.Message)
             WStkTrc(ex)
         End Try
-    End Sub
+        Return False
+    End Function
 
 End Module

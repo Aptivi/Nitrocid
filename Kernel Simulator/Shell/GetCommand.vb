@@ -392,7 +392,12 @@ Public Module GetCommand
 
                 If requestedCommand <> "dismissnotif" Then
                     If args.Count - 1 >= 0 Then
-                        NotifDismiss(args(0) - 1)
+                        Dim NotifIndex As Integer = args(0) - 1
+                        If NotifDismiss(NotifIndex) Then
+                            W(DoTranslation("Notification dismissed successfully.", currentLang), True, ColTypes.Neutral)
+                        Else
+                            W(DoTranslation("Error trying to dismiss notification.", currentLang), True, ColTypes.Err)
+                        End If
                         Done = True
                     End If
                 End If

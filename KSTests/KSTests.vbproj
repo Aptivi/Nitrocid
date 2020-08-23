@@ -94,6 +94,7 @@
     <Compile Include="HelpTests.vb" />
     <Compile Include="TimeTests.vb" />
     <Compile Include="KernelTests.vb" />
+    <Compile Include="NotificationTests.vb" />
     <Content Include="TestText.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
