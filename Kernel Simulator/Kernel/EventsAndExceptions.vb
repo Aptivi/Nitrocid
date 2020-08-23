@@ -923,4 +923,84 @@ Public Class EventsAndExceptions
         End Sub
     End Class
 
+    ''' <summary>
+    ''' Thrown when alias source and destination have the same name
+    ''' </summary>
+    Public Class AliasInvalidOperationException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when alias type is nonexistent
+    ''' </summary>
+    Public Class AliasNoSuchTypeException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when alias source command is nonexistent
+    ''' </summary>
+    Public Class AliasNoSuchCommandException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when alias already exists
+    ''' </summary>
+    Public Class AliasAlreadyExistsException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when alias is nonexistent
+    ''' </summary>
+    Public Class AliasNoSuchAliasException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
 End Class

@@ -203,9 +203,7 @@ Public Module TextWriterColor
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            For v As Integer = 0 To vars.Length - 1
-                text = text.Replace("{" + CStr(v) + "}", vars(v).ToString)
-            Next
+            text = text.ToString.FormatString(vars)
 
             If Line Then WriteLine(text) Else Write(text)
             If backgroundColor = ConsoleColors.Black Then ResetColor()
@@ -226,9 +224,7 @@ Public Module TextWriterColor
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     Public Sub WriteSlowly(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ParamArray ByVal vars() As Object)
         'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-        For v As Integer = 0 To vars.Length - 1
-            msg = msg.Replace("{" + CStr(v) + "}", vars(v).ToString)
-        Next
+        msg = msg.FormatString(vars)
 
         'Write text slowly
         Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -284,9 +280,7 @@ Public Module TextWriterColor
         End If
 
         'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-        For v As Integer = 0 To vars.Length - 1
-            msg = msg.Replace("{" + CStr(v) + "}", vars(v).ToString)
-        Next
+        msg = msg.FormatString(vars)
 
         'Write text slowly
         Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -344,9 +338,7 @@ Public Module TextWriterColor
         End If
 
         'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-        For v As Integer = 0 To vars.Length - 1
-            msg = msg.Replace("{" + CStr(v) + "}", vars(v).ToString)
-        Next
+        msg = msg.FormatString(vars)
 
         'Write text in another place
         Dim OldLeft As Integer = CursorLeft
@@ -373,9 +365,7 @@ Public Module TextWriterColor
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            For v As Integer = 0 To vars.Length - 1
-                text = text.Replace("{" + CStr(v) + "}", vars(v).ToString)
-            Next
+            text = text.ToString.FormatString(vars)
 
             If Line Then WriteLine(text) Else Write(text)
             If backgroundColor = ConsoleColors.Black Then ResetColor()

@@ -72,4 +72,18 @@ Public Module StringExtensions
         End If
     End Function
 
+    ''' <summary>
+    ''' Formats the string
+    ''' </summary>
+    ''' <param name="Str">Target string that has {0}, {1}, ...</param>
+    ''' <param name="Variables">Variables being used</param>
+    ''' <returns>Formatted string</returns>
+    <Runtime.CompilerServices.Extension>
+    Public Function FormatString(ByVal Str As String, ByVal ParamArray Variables() As Object) As String
+        For v As Integer = 0 To Variables.Length - 1
+            Str = Str.Replace("{" + CStr(v) + "}", Variables(v).ToString)
+        Next
+        Return Str
+    End Function
+
 End Module

@@ -54,4 +54,22 @@ Imports KS
         End Try
     End Sub
 
+    <TestMethod> Public Sub TestAddAlias()
+        Try
+            Assert.IsTrue(AddAlias("h", "help", AliasType.Shell))
+            Assert.IsTrue(AddAlias("e", "exit", AliasType.RDebug))
+        Catch ex As Exception
+            Assert.Fail("Adding aliases failed.")
+        End Try
+    End Sub
+
+    <TestMethod> Public Sub TestRemoveAlias()
+        Try
+            Assert.IsTrue(RemoveAlias("h", AliasType.Shell))
+            Assert.IsTrue(RemoveAlias("e", AliasType.RDebug))
+        Catch ex As Exception
+            Assert.Fail("Removing aliases failed.")
+        End Try
+    End Sub
+
 End Class

@@ -20,7 +20,6 @@ Public Module AliasManager
 
     Public Aliases As New Dictionary(Of String, String)
     Public RemoteDebugAliases As New Dictionary(Of String, String)
-    Public Forbidden As String() = {"alias"}
     Private AliasStreamReader As IO.StreamReader
 
     ''' <summary>
@@ -120,38 +119,24 @@ Public Module AliasManager
         If Type = AliasType.Shell Or Type = AliasType.RDebug Then
             If mode = "add" Then
                 'User tries to add an alias.
-                If AliasCmd = DestCmd Then
-                    W(DoTranslation("Alias can't be the same name as a command.", currentLang), True, ColTypes.Err)
-                    Wdbg("I", "Assertion succeeded: {0} = {1}", AliasCmd, DestCmd)
-                ElseIf Not availableCommands.Contains(DestCmd) And Not DebugCmds.Contains(DestCmd) Then
-                    W(DoTranslation("Command not found to alias to {0}.", currentLang), True, ColTypes.Err, AliasCmd)
-                    Wdbg("W", "{0} not found in either list of availableCmds or DebugCmds", DestCmd)
-                ElseIf Forbidden.Contains(DestCmd) Then
-                    W(DoTranslation("Aliasing {0} to {1} is forbidden.", currentLang), True, ColTypes.Err, DestCmd, AliasCmd)
-                    Wdbg("W", "forbid.Contains({0}) = true | No aliasing", DestCmd)
-                ElseIf Not Aliases.ContainsKey(AliasCmd) Or Not RemoteDebugAliases.ContainsKey(AliasCmd) Then
-                    Wdbg("W", "Assertion failed: {0} = {1}", AliasCmd, DestCmd)
-                    If Type = AliasType.Shell Then
-                        Aliases.Add(AliasCmd, DestCmd)
-                    ElseIf Type = AliasType.RDebug Then
-                        RemoteDebugAliases.Add(AliasCmd, DestCmd)
-                    End If
+                Try
+                    AddAlias(AliasCmd, DestCmd, Type)
                     W(DoTranslation("You can now run ""{0}"" as a command: ""{1}"".", currentLang), True, ColTypes.Neutral, AliasCmd, DestCmd)
-                Else
-                    Wdbg("W", "Alias {0} already found", AliasCmd)
-                    W(DoTranslation("Alias already found: {0}", currentLang), True, ColTypes.Err, AliasCmd)
-                End If
+                Catch ex As Exception
+                    Wdbg("E", "Failed to add alias. Stack trace written using WStkTrc().")
+                    WStkTrc(ex)
+                    W(ex.Message, True, ColTypes.Err)
+                End Try
             ElseIf mode = "rem" Then
                 'user tries to remove an alias
-                If Aliases.ContainsKey(AliasCmd) Then
-                    DestCmd = Aliases(AliasCmd)
-                    Wdbg("I", "aliases({0}) is found. That makes it {1}", AliasCmd, DestCmd)
-                    Aliases.Remove(AliasCmd)
-                    W(DoTranslation("You can no longer use ""{0}"" as a command ""{1}"".", currentLang), True, ColTypes.Err, AliasCmd, DestCmd)
-                Else
-                    Wdbg("W", "aliases({0}) is not found", AliasCmd)
-                    W(DoTranslation("Alias {0} is not found to be removed.", currentLang), True, ColTypes.Err, AliasCmd)
-                End If
+                Try
+                    RemoveAlias(AliasCmd, Type)
+                    W(DoTranslation("Removed alias {0} successfully.", currentLang), True, ColTypes.Err, AliasCmd)
+                Catch ex As Exception
+                    Wdbg("E", "Failed to remove alias. Stack trace written using WStkTrc().")
+                    WStkTrc(ex)
+                    W(ex.Message, True, ColTypes.Err)
+                End Try
             Else
                 Wdbg("E", "Mode {0} was neither add nor rem.", mode)
                 W(DoTranslation("Invalid mode {0}.", currentLang), True, ColTypes.Err, mode)
@@ -177,5 +162,79 @@ Public Module AliasManager
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, RemoteDebugAliases(FirstWordCmd))
         ParseCmd(actualCmd, SocketStream, Address)
     End Sub
+
+    ''' <summary>
+    ''' Adds alias to kernel
+    ''' </summary>
+    ''' <param name="SourceAlias">A command to be aliased. It should exist in both shell and remote debug.</param>
+    ''' <param name="Destination">A one-word ccommand to alias to.</param>
+    ''' <param name="Type">Alias type, whether it be shell or remote debug.</param>
+    ''' <returns>True if successful, False if unsuccessful.</returns>
+    ''' <exception cref="EventsAndExceptions.AliasInvalidOperationException"></exception>
+    ''' <exception cref="EventsAndExceptions.AliasNoSuchCommandException"></exception>
+    ''' <exception cref="EventsAndExceptions.AliasAlreadyExistsException"></exception>
+    ''' <exception cref="EventsAndExceptions.AliasNoSuchTypeException"></exception>
+    Public Function AddAlias(ByVal SourceAlias As String, ByVal Destination As String, ByVal Type As AliasType) As Boolean
+        If Type = AliasType.RDebug Or Type = AliasType.Shell Then
+            If SourceAlias = Destination Then
+                Wdbg("I", "Assertion succeeded: {0} = {1}", SourceAlias, Destination)
+                Throw New EventsAndExceptions.AliasInvalidOperationException(DoTranslation("Alias can't be the same name as a command.", currentLang))
+            ElseIf Not availableCommands.Contains(Destination) And Not DebugCmds.Contains(Destination) Then
+                Wdbg("W", "{0} not found in either list of availableCmds or DebugCmds", Destination)
+                Throw New EventsAndExceptions.AliasNoSuchCommandException(DoTranslation("Command not found to alias to {0}.", currentLang).FormatString(Destination))
+            ElseIf Aliases.ContainsKey(SourceAlias) Or RemoteDebugAliases.ContainsKey(SourceAlias) Then
+                Wdbg("W", "Alias {0} already found", SourceAlias)
+                Throw New EventsAndExceptions.AliasAlreadyExistsException(DoTranslation("Alias already found: {0}", currentLang).FormatString(SourceAlias))
+            Else
+                Wdbg("W", "Aliasing {0} to {1}", SourceAlias, Destination)
+                If Type = AliasType.Shell Then
+                    Aliases.Add(SourceAlias, Destination)
+                ElseIf Type = AliasType.RDebug Then
+                    RemoteDebugAliases.Add(SourceAlias, Destination)
+                End If
+                Return True
+            End If
+        Else
+            Wdbg("E", "Type {0} not found.", Type)
+            Throw New EventsAndExceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.", currentLang).FormatString(Type))
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Removes alias from kernel
+    ''' </summary>
+    ''' <param name="TargetAlias">An alias that needs to be removed.</param>
+    ''' <param name="Type">Alias type, whether it be shell or remote debug.</param>
+    ''' <returns>True if successful, False if unsuccessful.</returns>
+    ''' <exception cref="EventsAndExceptions.AliasNoSuchAliasException"></exception>
+    ''' <exception cref="EventsAndExceptions.AliasNoSuchTypeException"></exception>
+    Public Function RemoveAlias(ByVal TargetAlias As String, ByVal Type As AliasType) As Boolean
+        If Type = AliasType.RDebug Then
+            If RemoteDebugAliases.ContainsKey(TargetAlias) Then
+                Dim Aliased As String = RemoteDebugAliases(TargetAlias)
+                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                RemoteDebugAliases.Remove(TargetAlias)
+                Return True
+            Else
+                Wdbg("W", "{0} is not found in remote debug aliases", TargetAlias)
+                Throw New EventsAndExceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+            End If
+        ElseIf Type = AliasType.Shell Then
+            If Aliases.ContainsKey(TargetAlias) Then
+                Dim Aliased As String = Aliases(TargetAlias)
+                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                Aliases.Remove(TargetAlias)
+                Return True
+            Else
+                Wdbg("W", "{0} is not found in shell aliases", TargetAlias)
+                Throw New EventsAndExceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+            End If
+        Else
+            Wdbg("E", "Type {0} not found.", Type)
+            Throw New EventsAndExceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.", currentLang).FormatString(Type))
+        End If
+        Return False
+    End Function
 
 End Module
