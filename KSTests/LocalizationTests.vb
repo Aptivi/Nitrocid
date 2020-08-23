@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports KS
 
 <TestClass()> Public Class LocalizationTests
@@ -48,6 +49,17 @@ Imports KS
             Assert.AreEqual(ExpectedCulture, CurrentCult.EnglishName)
         Catch afex As AssertFailedException
             Assert.Fail("Culture update test is not done properly.")
+        End Try
+    End Sub
+
+    <TestMethod> Public Sub TestSetLang()
+        Try
+            InitPaths()
+            Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
+            If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
+            SetLang("spa")
+        Catch ex As Exception
+            Assert.Fail("Setting language failed.")
         End Try
     End Sub
 

@@ -258,7 +258,7 @@ Public Module GetCommand
             ElseIf words(0) = "chlang" Then
 
                 If requestedCommand <> "chlang" Then
-                    SetLang(words(1))
+                    PromptForSetLang(words(1))
                     Done = True
                 End If
 

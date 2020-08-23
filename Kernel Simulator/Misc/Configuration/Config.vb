@@ -314,7 +314,7 @@ Public Module Config
             'Language
             Wdbg("I", "Language is {0}", configReader.Sections("General").Keys("Language").Value)
             If configReader.Sections("General").Keys("Change Culture when Switching Languages").Value = "True" Then LangChangeCulture = True Else LangChangeCulture = False
-            SetLang(configReader.Sections("General").Keys("Language").Value, True)
+            SetLang(configReader.Sections("General").Keys("Language").Value)
 
             'Colored Shell
             If configReader.Sections("Shell").Keys("Colored Shell").Value = "False" Then

@@ -155,12 +155,14 @@ Public Module Translate
         Return langStrings
     End Function
 
+    Private NotifyCodepageError As Boolean
+
     ''' <summary>
-    ''' Sets a system language permanently
+    ''' Prompt for setting language
     ''' </summary>
     ''' <param name="lang">A specified language</param>
     ''' <param name="Force">Force changes</param>
-    Public Sub SetLang(ByVal lang As String, Optional ByVal Force As Boolean = False)
+    Sub PromptForSetLang(ByVal lang As String, Optional ByVal Force As Boolean = False)
         If availableLangs.Contains(lang) Then
             Wdbg("I", "Forced {0}", Force)
             If Not Force Then
@@ -189,6 +191,25 @@ CHOICE:
                 End If
             End If
 
+            W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, currentLang, lang)
+            If Not SetLang(lang) Then
+                W(DoTranslation("Failed to set language.", currentLang), True, ColTypes.Err)
+            End If
+            If NotifyCodepageError Then
+                W(DoTranslation("Unable to set codepage. The language may not display properly.", currentLang), True, ColTypes.Err)
+            End If
+        Else
+            W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Err, lang)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Sets a system language permanently
+    ''' </summary>
+    ''' <param name="lang">A specified language</param>
+    ''' <returns>True if successful, False if unsuccessful.</returns>
+    Public Function SetLang(ByVal lang As String) As Boolean
+        If availableLangs.Contains(lang) Then
             'Set appropriate codepage for incapable terminals
             Try
                 Select Case lang
@@ -238,38 +259,45 @@ CHOICE:
                         Wdbg("I", "Encoding set successfully to {0}.", Console.OutputEncoding.EncodingName)
                 End Select
             Catch ex As Exception
-                W(DoTranslation("Unable to set codepage. The language may not display properly.", currentLang), True, ColTypes.Neutral)
+                NotifyCodepageError = True
+                Wdbg("W", "Codepage can't be set. {0}", ex.Message)
                 WStkTrc(ex)
             End Try
 
             'Set current language
-            W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, currentLang, lang)
-            Dim OldModDescGeneric As String = DoTranslation("Command defined by ", currentLang)
-            Wdbg("I", "Translating kernel to {0}.", lang)
-            currentLang = lang
-            Dim ksconf As New IniFile()
-            Dim pathConfig As String = paths("Configuration")
-            ksconf.Load(pathConfig)
-            ksconf.Sections("General").Keys("Language").Value = currentLang
-            ksconf.Save(pathConfig)
-            Wdbg("I", "Saved new language.")
+            Try
+                Dim OldModDescGeneric As String = DoTranslation("Command defined by ", currentLang)
+                Wdbg("I", "Translating kernel to {0}.", lang)
+                currentLang = lang
+                Dim ksconf As New IniFile()
+                Dim pathConfig As String = paths("Configuration")
+                ksconf.Load(pathConfig)
+                ksconf.Sections("General").Keys("Language").Value = currentLang
+                ksconf.Save(pathConfig)
+                Wdbg("I", "Saved new language.")
 
-            'Update help list for translated help
-            InitHelp()
-            InitFTPHelp()
-            IMAPInitHelp()
-            TextEdit_UpdateHelp()
-            ReloadGenericDefs(OldModDescGeneric)
+                'Update help list for translated help
+                InitHelp()
+                InitFTPHelp()
+                IMAPInitHelp()
+                TextEdit_UpdateHelp()
+                ReloadGenericDefs(OldModDescGeneric)
 
-            'Update Culture if applicable
-            If LangChangeCulture Then
-                Wdbg("I", "Updating culture.")
-                UpdateCulture()
-            End If
+                'Update Culture if applicable
+                If LangChangeCulture Then
+                    Wdbg("I", "Updating culture.")
+                    UpdateCulture()
+                End If
+                Return True
+            Catch ex As Exception
+                Wdbg("W", "Language can't be set. {0}", ex.Message)
+                WStkTrc(ex)
+            End Try
         Else
-            W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Err, lang)
+            Throw New EventsAndExceptions.NoSuchLanguageException(DoTranslation("Invalid language", currentLang) + " {0}".FormatString(lang))
         End If
-    End Sub
+        Return False
+    End Function
 
     ''' <summary>
     ''' Updates current culture based on current language
