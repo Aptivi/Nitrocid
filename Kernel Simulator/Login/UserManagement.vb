@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.Text.RegularExpressions
-Imports Microsoft.SqlServer.Server
 
 Public Module UserManagement
 

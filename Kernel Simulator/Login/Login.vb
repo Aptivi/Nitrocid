@@ -47,7 +47,7 @@ Public Module Login
             'Extremely rare under normal conditions except if modded: Check to see if there are any users
             If userword.Count = 0 Then 'Check if user amount is zero
                 Wdbg("F", "Shell reached rare state, because userword count is 0.")
-                Throw New EventsAndExceptions.NullUsersException(DoTranslation("There is no more users remaining in the list.", currentLang))
+                Throw New EventsAndExceptions.NullUsersException(DoTranslation("There are no more users remaining in the list.", currentLang))
             End If
 
             'Clear console if clsOnLogin is set to True (If a user has enabled Clear Screen on Login)
