@@ -299,4 +299,17 @@ Imports KS
         End Try
     End Sub
 
+    <TestMethod()> Public Sub TestFormatString()
+        Try
+            Dim Expected As String = "Kernel Simulator 0.0.1 first launched 2/22/2018."
+            Dim Actual As String = "Kernel Simulator 0.0.1 first launched {0}/{1}/{2}."
+            Dim Day As Integer = 22
+            Dim Year As Integer = 2018
+            Dim Month As Integer = 2
+            Assert.AreEqual(Expected, Actual.FormatString(Month, Day, Year))
+        Catch afex As AssertFailedException
+            Assert.Fail("Format failed.")
+        End Try
+    End Sub
+
 End Class
