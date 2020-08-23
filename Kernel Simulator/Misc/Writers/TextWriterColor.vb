@@ -200,6 +200,7 @@ Public Module TextWriterColor
                 Else
                     Exit Sub
                 End If
+                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -277,6 +278,7 @@ Public Module TextWriterColor
             Else
                 Exit Sub
             End If
+            Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
         End If
 
         'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -335,6 +337,7 @@ Public Module TextWriterColor
             Else
                 Exit Sub
             End If
+            Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
         End If
 
         'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -362,6 +365,7 @@ Public Module TextWriterColor
             'Try to write to console
             If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
                 Write(esc + "[38;5;" + CStr(color) + "m")
+                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
