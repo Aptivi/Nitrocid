@@ -312,4 +312,14 @@ Imports KS
         End Try
     End Sub
 
+    <TestMethod()> Public Sub TestProbeSynth() 'If not working on AppVeyor, remove it.
+        Try
+            InitPaths()
+            CurrDir = paths("Home")
+            Assert.IsTrue(ProbeSynth(paths("Home") + "\TestSynth.txt"))
+        Catch afex As AssertFailedException
+            Assert.Fail("Synth probing failed.")
+        End Try
+    End Sub
+
 End Class

@@ -16,17 +16,22 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Public Module BeepSynth
 
     ''' <summary>
     ''' Probes the synth file and plays it back using the console PC speaker
     ''' </summary>
     ''' <param name="file">A file name in current shell path</param>
-    Public Sub ProbeSynth(ByVal file As String)
+    ''' <returns>True if successful, False if unsuccessful.</returns>
+    ''' <exception cref="EventsAndExceptions.InvalidSynthException"></exception>
+    ''' <exception cref="FileNotFoundException"></exception>
+    Public Function ProbeSynth(ByVal file As String) As Boolean
         file = NeutralizePath(file)
         Wdbg("I", "Probing {0}...", file)
         If IO.File.Exists(file) Then
-            Dim FStream As New IO.StreamReader(file)
+            Dim FStream As New StreamReader(file)
             Wdbg("I", "Opened StreamReader(file) with the length of {0}", FStream.BaseStream.Length)
             If FStream.ReadLine = "KS-BSynth" Then
                 'Comments are ignored in the file. Comment format: - <message>
@@ -43,18 +48,20 @@ Public Module BeepSynth
                             Console.Beep(freq, ms)
                         Catch ex As Exception
                             Wdbg("E", "Not a comment and not a synth line. ({0})", line)
-                            W(DoTranslation("Failed to probe a synth line.", currentLang), True, ColTypes.Err)
+                            Throw New EventsAndExceptions.InvalidSynthException(DoTranslation("Failed to probe a synth line.", currentLang))
                         End Try
                     End If
                 End While
+                Return True
             Else
                 Wdbg("E", "File is not scripted")
-                W(DoTranslation("The file isn't a scripted synth file.", currentLang), True, ColTypes.Err)
+                Throw New EventsAndExceptions.InvalidSynthException(DoTranslation("The file isn't a scripted synth file.", currentLang))
             End If
         Else
             Wdbg("E", "File doesn't exist")
-            W(DoTranslation("Scripted file {0} does not exist.", currentLang), True, ColTypes.Err, file)
+            Throw New FileNotFoundException(DoTranslation("Scripted file {0} does not exist.", currentLang).FormatString(file))
         End If
-    End Sub
+        Return False
+    End Function
 
 End Module

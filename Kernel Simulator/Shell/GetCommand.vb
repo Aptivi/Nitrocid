@@ -189,7 +189,11 @@ Public Module GetCommand
             ElseIf words(0) = "bsynth" Then
 
                 If eqargs?.Count > 0 Then
-                    ProbeSynth(eqargs(0))
+                    Try
+                        ProbeSynth(eqargs(0))
+                    Catch ex As Exception
+                        W(ex.Message, True, ColTypes.Err)
+                    End Try
                     Done = True
                 End If
 
