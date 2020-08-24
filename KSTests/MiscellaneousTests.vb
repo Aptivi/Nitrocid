@@ -316,7 +316,8 @@ Imports KS
         Try
             InitPaths()
             CurrDir = paths("Home")
-            Assert.IsTrue(ProbeSynth(paths("Home") + "\TestSynth.txt"))
+            Dim PathToTestSynth As String = Path.GetFullPath("TestSynth.txt")
+            Assert.IsTrue(ProbeSynth(PathToTestSynth))
         Catch afex As AssertFailedException
             Assert.Fail("Synth probing failed.")
         End Try
