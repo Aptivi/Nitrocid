@@ -897,9 +897,19 @@ Public Module GetCommand
                     If args.Count >= 0 Then
                         If ScrnSvrdb.ContainsKey(strArgs) Then
                             SetDefaultScreensaver(strArgs)
+                            If ScrnSvrdb(strArgs) Then
+                                W(DoTranslation("{0} is set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
+                            Else
+                                W(DoTranslation("{0} is no longer set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
+                            End If
                         Else
                             If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") And Not SafeMode Then
                                 SetDefaultScreensaver(strArgs)
+                                If ScrnSvrdb(strArgs) Then
+                                    W(DoTranslation("{0} is set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
+                                Else
+                                    W(DoTranslation("{0} is no longer set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
+                                End If
                             Else
                                 W(DoTranslation("Screensaver {0} not found.", currentLang), True, ColTypes.Err, strArgs)
                             End If

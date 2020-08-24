@@ -293,14 +293,9 @@ Public Module Screensaver
             ScrnSvrdb(defSaverName) = False
             defSaverName = saver
             ScrnSvrdb(saver) = setDef
-            If setDef Then
-                W(DoTranslation("{0} is set to default screensaver.", currentLang), True, ColTypes.Neutral, saver)
-            Else
-                W(DoTranslation("{0} is no longer set to default screensaver.", currentLang), True, ColTypes.Neutral, saver)
-            End If
         Else
             Wdbg("W", "{0} is not found.", saver)
-            W(DoTranslation("Screensaver {0} not found in database. Check the name and try again.", currentLang), True, ColTypes.Err, saver)
+            Throw New EventsAndExceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again.", currentLang).FormatString(saver))
         End If
     End Sub
 
