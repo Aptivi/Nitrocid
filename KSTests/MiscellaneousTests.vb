@@ -23,328 +23,224 @@ Imports KS
 <TestClass()> Public Class MiscellaneousTests
 
     <TestMethod()> Public Sub TestCalcSum()
-        Try
-            Dim ExpectedSum As Integer = 21
-            Dim ActualSum As Integer = DoCalc("13 + 8").Keys(0)
-            Assert.AreEqual(ExpectedSum, ActualSum)
-        Catch afex As AssertFailedException
-            Assert.Fail("DoCalc didn't calculate properly.")
-        End Try
+        Dim ExpectedSum As Integer = 21
+        Dim ActualSum As Integer = DoCalc("13 + 8").Keys(0)
+        Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
     <TestMethod()> Public Sub TestCalcSub()
-        Try
-            Dim ExpectedSum As Integer = 17
-            Dim ActualSum As Integer = DoCalc("42 - 25").Keys(0)
-            Assert.AreEqual(ExpectedSum, ActualSum)
-        Catch afex As AssertFailedException
-            Assert.Fail("DoCalc didn't calculate properly.")
-        End Try
+        Dim ExpectedSum As Integer = 17
+        Dim ActualSum As Integer = DoCalc("42 - 25").Keys(0)
+        Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
     <TestMethod()> Public Sub TestCalcMul()
-        Try
-            Dim ExpectedSum As Integer = 182
-            Dim ActualSum As Integer = DoCalc("91 * 2").Keys(0)
-            Assert.AreEqual(ExpectedSum, ActualSum)
-        Catch afex As AssertFailedException
-            Assert.Fail("DoCalc didn't calculate properly.")
-        End Try
+        Dim ExpectedSum As Integer = 182
+        Dim ActualSum As Integer = DoCalc("91 * 2").Keys(0)
+        Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
     <TestMethod()> Public Sub TestCalcDiv()
-        Try
-            Dim ExpectedSum As Integer = 5
-            Dim ActualSum As Integer = DoCalc("250 / 50").Keys(0)
-            Assert.AreEqual(ExpectedSum, ActualSum)
-        Catch afex As AssertFailedException
-            Assert.Fail("DoCalc didn't calculate properly.")
-        End Try
+        Dim ExpectedSum As Integer = 5
+        Dim ActualSum As Integer = DoCalc("250 / 50").Keys(0)
+        Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
     <TestMethod()> Public Sub TestCalcSumDbl()
-        Try
-            Dim ExpectedSum As Double = 64.9
-            Dim ActualSum As Double = DoCalc("32.4 + 32.5").Keys(0)
-            Assert.AreEqual(ExpectedSum, ActualSum)
-        Catch afex As AssertFailedException
-            Assert.Fail("DoCalc didn't calculate properly.")
-        End Try
+        Dim ExpectedSum As Double = 64.9
+        Dim ActualSum As Double = DoCalc("32.4 + 32.5").Keys(0)
+        Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
     <TestMethod()> Public Sub TestCalcSubDbl()
-        Try
-            Dim ExpectedSum As Double = 66.9
-            Dim ActualSum As Double = DoCalc("69 - 2.1").Keys(0)
-            Assert.AreEqual(ExpectedSum, ActualSum)
-        Catch afex As AssertFailedException
-            Assert.Fail("DoCalc didn't calculate properly.")
-        End Try
+        Dim ExpectedSum As Double = 66.9
+        Dim ActualSum As Double = DoCalc("69 - 2.1").Keys(0)
+        Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
     <TestMethod()> Public Sub TestCalcMulDbl()
-        Try
-            Dim ExpectedSum As Double = 4.8
-            Dim ActualSum As Double = DoCalc("1.2 * 4").Keys(0)
-            Assert.AreEqual(ExpectedSum, ActualSum)
-        Catch afex As AssertFailedException
-            Assert.Fail("DoCalc didn't calculate properly.")
-        End Try
+        Dim ExpectedSum As Double = 4.8
+        Dim ActualSum As Double = DoCalc("1.2 * 4").Keys(0)
+        Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
     <TestMethod()> Public Sub TestCalcDivDbl()
-        Try
-            Dim ExpectedSum As Double = 2.5
-            Dim ActualSum As Double = DoCalc("5 / 2").Keys(0)
-            Assert.AreEqual(ExpectedSum, ActualSum)
-        Catch afex As AssertFailedException
-            Assert.Fail("DoCalc didn't calculate properly.")
-        End Try
+        Dim ExpectedSum As Double = 2.5
+        Dim ActualSum As Double = DoCalc("5 / 2").Keys(0)
+        Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
     <TestMethod()> Public Sub TestGetValue()
-        Try
-            Dim Value As String = GetValue("HiddenFiles")
-            Assert.IsNotNull(Value)
-        Catch afex As AssertFailedException
-            Assert.Fail("Value of variable HiddenFiles isn't get properly.")
-        End Try
+        Dim Value As String = GetValue("HiddenFiles")
+        Assert.IsNotNull(Value, "Value of variable HiddenFiles isn't get properly. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestSetValue()
-        Try
-            SetValue("HiddenFiles", False)
-            Dim Value As String = GetValue("HiddenFiles")
-            Assert.AreEqual(Value, "False")
-        Catch afex As AssertFailedException
-            Assert.Fail("Value of variable HiddenFiles isn't set properly.")
-        End Try
+        SetValue("HiddenFiles", False)
+        Dim Value As String = GetValue("HiddenFiles")
+        Assert.AreEqual(Value, "False", "Value of variable HiddenFiles isn't set properly. Got {0}", Value)
     End Sub
 
     <TestMethod()> Public Sub TestGetField()
-        Try
-            Dim Field As FieldInfo = GetField("HiddenFiles")
-            Assert.IsTrue(Field.Name = "HiddenFiles")
-        Catch afex As AssertFailedException
-            Assert.Fail("Field HiddenFiles isn't get properly.")
-        End Try
+        Dim Field As FieldInfo = GetField("HiddenFiles")
+        Assert.IsTrue(Field.Name = "HiddenFiles", "Field HiddenFiles isn't get properly. Name: {0}", Field.Name)
     End Sub
 
     <TestMethod()> Public Sub TestGetEncryptedString()
-        Try
-            Dim TextHash As String = "Test hashing."
-            Dim TextHashMD5 As String = GetEncryptedString(TextHash, Algorithms.MD5)
-            Dim TextHashSHA1 As String = GetEncryptedString(TextHash, Algorithms.SHA1)
-            Dim TextHashSHA256 As String = GetEncryptedString(TextHash, Algorithms.SHA256)
-            Assert.IsTrue(TextHashMD5 = "C4C1867580D6D25B11210F84F935359A" And
-                          TextHashSHA1 = "CFF9FDA895B0B638957E17CF952457D81ADD622F" And
-                          TextHashSHA256 = "525514740C93C5442DBCB8FB92FB1B17B6F8B94B3C98E6F07CA8AEB093C2E79F")
-        Catch afex As AssertFailedException
-            Assert.Fail("Encrypted string hash isn't get properly")
-        End Try
+        Dim TextHash As String = "Test hashing."
+        Dim TextHashMD5 As String = GetEncryptedString(TextHash, Algorithms.MD5)
+        Dim TextHashSHA1 As String = GetEncryptedString(TextHash, Algorithms.SHA1)
+        Dim TextHashSHA256 As String = GetEncryptedString(TextHash, Algorithms.SHA256)
+        Assert.IsTrue(TextHashMD5 = "C4C1867580D6D25B11210F84F935359A" And
+                      TextHashSHA1 = "CFF9FDA895B0B638957E17CF952457D81ADD622F" And
+                      TextHashSHA256 = "525514740C93C5442DBCB8FB92FB1B17B6F8B94B3C98E6F07CA8AEB093C2E79F", "Encrypted string hash isn't get properly. Got:" + vbNewLine +
+                                                                                                           TextHashMD5 + vbNewLine +
+                                                                                                           TextHashSHA1 + vbNewLine +
+                                                                                                           TextHashSHA256)
     End Sub
 
     <TestMethod()> Public Sub TestGetEncryptedFile()
-        Try
-            InitPaths()
-            Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
-            FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing."), 0, 13)
-            FileStreamHash.Flush()
-            Dim FileHashMD5 As String = GetEncryptedFile(FileStreamHash, Algorithms.MD5)
-            Dim FileHashSHA1 As String = GetEncryptedFile(FileStreamHash, Algorithms.SHA1)
-            Dim FileHashSHA256 As String = GetEncryptedFile(FileStreamHash, Algorithms.SHA256)
-            FileStreamHash.Close()
-            File.Delete(paths("Home") + "/TestSum.txt")
-            Assert.IsTrue(FileHashMD5 = "D41D8CD98F00B204E9800998ECF8427E" And
-                          FileHashSHA1 = "DA39A3EE5E6B4B0D3255BFEF95601890AFD80709" And
-                          FileHashSHA256 = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855")
-        Catch afex As AssertFailedException
-            Assert.Fail("Encrypted file hash isn't get properly")
-        End Try
+        InitPaths()
+        Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
+        FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing."), 0, 13)
+        FileStreamHash.Flush()
+        Dim FileHashMD5 As String = GetEncryptedFile(FileStreamHash, Algorithms.MD5)
+        Dim FileHashSHA1 As String = GetEncryptedFile(FileStreamHash, Algorithms.SHA1)
+        Dim FileHashSHA256 As String = GetEncryptedFile(FileStreamHash, Algorithms.SHA256)
+        FileStreamHash.Close()
+        File.Delete(paths("Home") + "/TestSum.txt")
+        Assert.IsTrue(FileHashMD5 = "D41D8CD98F00B204E9800998ECF8427E" And
+                      FileHashSHA1 = "DA39A3EE5E6B4B0D3255BFEF95601890AFD80709" And
+                      FileHashSHA256 = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855", "Encrypted file hash isn't get properly. Got:" + vbNewLine +
+                                                                                                           FileHashMD5 + vbNewLine +
+                                                                                                           FileHashSHA1 + vbNewLine +
+                                                                                                           FileHashSHA256)
     End Sub
 
     <TestMethod()> Public Sub TestSetMOTD()
-        Try
-            InitPaths()
-            SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MOTD)
-            Dim MOTDFile As New StreamReader(paths("Home") + "/MOTD.txt")
-            Assert.IsTrue(MOTDFile.ReadLine = ProbePlaces("Hello, I am on <system>"))
-        Catch afex As AssertFailedException
-            Assert.Fail("Setting MOTD failed.")
-        End Try
+        InitPaths()
+        SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MOTD)
+        Dim MOTDFile As New StreamReader(paths("Home") + "/MOTD.txt")
+        Assert.IsTrue(MOTDFile.ReadLine = ProbePlaces("Hello, I am on <system>"), "Setting MOTD failed.")
     End Sub
 
     <TestMethod()> Public Sub TestSetMAL()
-        Try
-            InitPaths()
-            SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MAL)
-            Dim MALFile As New StreamReader(paths("Home") + "/MAL.txt")
-            Assert.IsTrue(MALFile.ReadLine = ProbePlaces("Hello, I am on <system>"))
-        Catch afex As AssertFailedException
-            Assert.Fail("Setting MAL failed.")
-        End Try
+        InitPaths()
+        SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MAL)
+        Dim MALFile As New StreamReader(paths("Home") + "/MAL.txt")
+        Assert.IsTrue(MALFile.ReadLine = ProbePlaces("Hello, I am on <system>"), "Setting MAL failed.")
     End Sub
 
     <TestMethod()> Public Sub TestReadMOTDFromFile()
-        Try
-            InitPaths()
-            ReadMOTDFromFile(MessageType.MOTD)
-            Dim MOTDFile As New StreamReader(paths("Home") + "/MOTD.txt")
-            Assert.IsTrue(MOTDFile.ReadLine = MOTDMessage.ReplaceLastOccurrence(Environment.NewLine, ""))
-        Catch afex As AssertFailedException
-            Assert.Fail("Reading MOTD failed.")
-        End Try
+        InitPaths()
+        ReadMOTDFromFile(MessageType.MOTD)
+        Dim MOTDLine As String = File.ReadAllText(paths("Home") + "/MOTD.txt")
+        Assert.IsTrue(MOTDLine = MOTDMessage, "Reading MOTD failed. Got:" + vbNewLine + MOTDLine)
     End Sub
 
     <TestMethod()> Public Sub TestReadMALFromFile()
-        Try
-            InitPaths()
-            ReadMOTDFromFile(MessageType.MAL)
-            Dim MALFile As New StreamReader(paths("Home") + "/MAL.txt")
-            Assert.IsTrue(MALFile.ReadLine = MAL)
-        Catch afex As AssertFailedException
-            Assert.Fail("Reading MAL failed.")
-        End Try
+        InitPaths()
+        ReadMOTDFromFile(MessageType.MAL)
+        Dim MALLine As String = File.ReadAllText(paths("Home") + "/MAL.txt")
+        Assert.IsTrue(MALLine = MAL, "Reading MAL failed. Got:" + vbNewLine + MALLine)
     End Sub
 
     <TestMethod()> Public Sub TestParsePlaceholders()
         Dim UnparsedStrings As New List(Of String)
-        Try
-            InitPaths() 'For some reason, ProbePlaces' event raise likes to use paths...
-            signedinusrnm = "Test"
-            Dim ParsedStrings As New List(Of String)
-            ParsedStrings.Add(ProbePlaces("Username is <user>"))
-            ParsedStrings.Add(ProbePlaces("Short date is <shortdate>"))
-            ParsedStrings.Add(ProbePlaces("Long date is <longdate>"))
-            ParsedStrings.Add(ProbePlaces("Short time is <shorttime>"))
-            ParsedStrings.Add(ProbePlaces("Long time is <longtime>"))
-            ParsedStrings.Add(ProbePlaces("Date is <date>"))
-            ParsedStrings.Add(ProbePlaces("Time is <time>"))
-            ParsedStrings.Add(ProbePlaces("Timezone is <timezone>"))
-            ParsedStrings.Add(ProbePlaces("Summer timezone is <summertimezone>"))
-            ParsedStrings.Add(ProbePlaces("Operating system is <system>"))
-            For Each ParsedString As String In ParsedStrings
-                If ParsedString.Contains("<") And ParsedString.Contains(">") Then
-                    UnparsedStrings.Add(ParsedString)
-                End If
-            Next
-            Assert.IsTrue(UnparsedStrings.Count = 0)
-        Catch afex As AssertFailedException
-            Assert.Fail("Parsing placeholders failed. Below strings are affected:" + vbNewLine + vbNewLine +
-                        "- " + String.Join(vbNewLine + "- ", UnparsedStrings.ToArray))
-        End Try
+        InitPaths() 'For some reason, ProbePlaces' event raise likes to use paths...
+        signedinusrnm = "Test"
+        Dim ParsedStrings As New List(Of String)
+        ParsedStrings.Add(ProbePlaces("Username is <user>"))
+        ParsedStrings.Add(ProbePlaces("Short date is <shortdate>"))
+        ParsedStrings.Add(ProbePlaces("Long date is <longdate>"))
+        ParsedStrings.Add(ProbePlaces("Short time is <shorttime>"))
+        ParsedStrings.Add(ProbePlaces("Long time is <longtime>"))
+        ParsedStrings.Add(ProbePlaces("Date is <date>"))
+        ParsedStrings.Add(ProbePlaces("Time is <time>"))
+        ParsedStrings.Add(ProbePlaces("Timezone is <timezone>"))
+        ParsedStrings.Add(ProbePlaces("Summer timezone is <summertimezone>"))
+        ParsedStrings.Add(ProbePlaces("Operating system is <system>"))
+        For Each ParsedString As String In ParsedStrings
+            If ParsedString.Contains("<") And ParsedString.Contains(">") Then
+                UnparsedStrings.Add(ParsedString)
+            End If
+        Next
+        Assert.IsTrue(UnparsedStrings.Count = 0, "Parsing placeholders failed. Below strings are affected:" + vbNewLine + vbNewLine +
+                                                 "- " + String.Join(vbNewLine + "- ", UnparsedStrings.ToArray))
     End Sub
 
     <TestMethod()> Public Sub TestOpenSaveCloseTextFile()
-        Dim CurrentState As String = "Opening"
-        Try
-            Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
-            Assert.IsTrue(TextEdit_OpenTextFile(PathToTestText))
-            CurrentState = "Saving"
-            TextEdit_FileLines.Add("Hello!")
-            Assert.IsTrue(TextEdit_SaveTextFile())
-            CurrentState = "Closing"
-            Assert.IsTrue(TextEdit_CloseTextFile())
-        Catch afex As AssertFailedException
-            Assert.Fail("{0} text file failed.", CurrentState)
-        End Try
+        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
+        Assert.IsTrue(TextEdit_OpenTextFile(PathToTestText), "Opening text file failed. Returned False.")
+        TextEdit_FileLines.Add("Hello!")
+        Assert.IsTrue(TextEdit_SaveTextFile(), "Saving text file failed. Returned False.")
+        Assert.IsTrue(TextEdit_CloseTextFile(), "Closing text file failed. Returned False.")
     End Sub
 
     <TestMethod()> Public Sub TestReadAllLinesNoBlock()
-        Try
-            Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
-            Dim LinesTestText As String() = ReadAllLinesNoBlock(PathToTestText)
-            Assert.IsInstanceOfType(LinesTestText, GetType(String()))
-        Catch afex As AssertFailedException
-            Assert.Fail("Reading all lines failed.")
-        End Try
+        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
+        Dim LinesTestText As String() = ReadAllLinesNoBlock(PathToTestText)
+        Assert.IsInstanceOfType(LinesTestText, GetType(String()), "Reading all lines failed.")
     End Sub
 
     <TestMethod()> Public Sub TestEvaluateString()
-        Try
-            Dim Evaluated As String = Evaluate("KS.Kernel.KernelVersion")
-            Assert.IsFalse(Evaluated = "")
-        Catch afex As AssertFailedException
-            Assert.Fail("String evaluation failed.")
-        End Try
+        Dim Evaluated As String = Evaluate("KS.Kernel.KernelVersion")
+        Assert.IsFalse(Evaluated = "", "String evaluation failed. Got ""{0}"".", Evaluated)
     End Sub
 
     <TestMethod()> Public Sub TestReplaceLastOccurrence()
-        Try
-            Dim Source As String = "Kernel Simulation from Eofla Kernel"
-            Dim Target As String = "Kernel"
-            Assert.AreEqual(Source.ReplaceLastOccurrence(Target, "OS"), "Kernel Simulation from Eofla OS")
-        Catch afex As AssertFailedException
-            Assert.Fail("Replacement failed.")
-        End Try
+        Dim Source As String = "Kernel Simulation from Eofla Kernel"
+        Dim Target As String = "Kernel"
+        Source = Source.ReplaceLastOccurrence(Target, "OS")
+        Assert.AreEqual(Source, "Kernel Simulation from Eofla OS", "Replacement failed. Got {0}", Source)
     End Sub
 
     <TestMethod()> Public Sub TestAllIndexesOf()
-        Try
-            Dim Source As String = "Kernel Simulation from Eofla Kernel"
-            Dim Target As String = "a"
-            Assert.AreEqual(Source.AllIndexesOf(Target).Count, 2)
-        Catch afex As AssertFailedException
-            Assert.Fail("Getting all indexes of a character failed.")
-        End Try
+        Dim Source As String = "Kernel Simulation from Eofla Kernel"
+        Dim Target As String = "a"
+        Dim Indexes As Integer = Source.AllIndexesOf(Target).Count
+        Assert.AreEqual(Indexes, 2, "Getting all indexes of a character failed. Expected 2, got {0}", Indexes)
     End Sub
 
     <TestMethod()> Public Sub TestTruncate()
-        Try
-            Dim Source As String = "Kernel Simulation from Eofla Kernel"
-            Dim Target As Integer = 20
-            Assert.AreEqual(Source.Truncate(Target), "Kernel Simulation f...")
-        Catch afex As AssertFailedException
-            Assert.Fail("Truncation failed.")
-        End Try
+        Dim Source As String = "Kernel Simulation from Eofla Kernel"
+        Dim Target As Integer = 20
+        Source = Source.Truncate(Target)
+        Assert.AreEqual(Source, "Kernel Simulation f...", "Truncation failed. Got {0}", Source)
     End Sub
 
     <TestMethod()> Public Sub TestFormatString()
-        Try
-            Dim Expected As String = "Kernel Simulator 0.0.1 first launched 2/22/2018."
-            Dim Actual As String = "Kernel Simulator 0.0.1 first launched {0}/{1}/{2}."
-            Dim Day As Integer = 22
-            Dim Year As Integer = 2018
-            Dim Month As Integer = 2
-            Assert.AreEqual(Expected, Actual.FormatString(Month, Day, Year))
-        Catch afex As AssertFailedException
-            Assert.Fail("Format failed.")
-        End Try
+        Dim Expected As String = "Kernel Simulator 0.0.1 first launched 2/22/2018."
+        Dim Actual As String = "Kernel Simulator 0.0.1 first launched {0}/{1}/{2}."
+        Dim Day As Integer = 22
+        Dim Year As Integer = 2018
+        Dim Month As Integer = 2
+        Actual = Actual.FormatString(Month, Day, Year)
+        Assert.AreEqual(Expected, Actual, "Format failed. Got {0}", Actual)
     End Sub
 
     <TestMethod()> Public Sub TestProbeSynth() 'If not working on AppVeyor, remove it.
-        Try
-            InitPaths()
-            CurrDir = paths("Home")
-            Dim PathToTestSynth As String = Path.GetFullPath("TestSynth.txt")
-            Assert.IsTrue(ProbeSynth(PathToTestSynth))
-        Catch afex As AssertFailedException
-            Assert.Fail("Synth probing failed.")
-        End Try
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim PathToTestSynth As String = Path.GetFullPath("TestSynth.txt")
+        Dim Successful As Boolean = ProbeSynth(PathToTestSynth)
+        Assert.IsTrue(Successful, "Synth probing failed. Expected True, got {0}", Successful)
     End Sub
 
     <TestMethod()> Public Sub TestSetDefaultScreensaver()
-        Try
-            InitPaths()
-            Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
-            If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
-            SetDefaultScreensaver("matrix")
-            Assert.IsTrue(ScrnSvrdb("matrix"))
-        Catch afex As AssertFailedException
-            Assert.Fail("Setting screensaver defaults failed.")
-        End Try
+        InitPaths()
+        Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
+        If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
+        SetDefaultScreensaver("matrix")
+        Assert.IsTrue(ScrnSvrdb("matrix"), "Setting screensaver defaults failed. Expected True, got {0}", ScrnSvrdb("matrix"))
     End Sub
 
     <TestMethod()> Public Sub TestUnsetDefaultScreensaver()
-        Try
-            InitPaths()
-            Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
-            If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
-            SetDefaultScreensaver("matrix", False)
-            Assert.IsFalse(ScrnSvrdb("matrix"))
-        Catch afex As AssertFailedException
-            Assert.Fail("Setting screensaver defaults failed.")
-        End Try
+        InitPaths()
+        Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
+        If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
+        SetDefaultScreensaver("matrix", False)
+        Assert.IsFalse(ScrnSvrdb("matrix"), "Setting screensaver defaults failed. Expected False, got {0}", ScrnSvrdb("matrix"))
     End Sub
 
     <TestMethod> Public Sub TestVariables()

@@ -21,11 +21,7 @@ Imports KS
 <TestClass()> Public Class KernelTests
 
     <TestMethod()> Public Sub TestFetchKernelUpdates()
-        Try
-            Assert.IsNotNull(FetchKernelUpdates)
-        Catch ex As Exception
-            Assert.Fail("Can't fetch kernel updates.")
-        End Try
+        Assert.IsNotNull(FetchKernelUpdates, "Can't fetch kernel updates. Make sure that your Internet connection is available. Returned null.")
     End Sub
 
     <TestMethod()> Public Sub TestGarbageCollect()

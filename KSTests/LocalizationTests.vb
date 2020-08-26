@@ -22,45 +22,29 @@ Imports KS
 <TestClass()> Public Class LocalizationTests
 
     <TestMethod()> Public Sub TestTranslate()
-        Try
-            Dim ExpectedTranslation As String = "---===+++> Bienvenido al kernel | Versión {0} <+++===---"
-            Dim ActualTranslation As String = DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", "spa")
-            Assert.AreEqual(ExpectedTranslation, ActualTranslation)
-        Catch afex As AssertFailedException
-            Assert.Fail("Translation test is not done properly.")
-        End Try
+        Dim ExpectedTranslation As String = "---===+++> Bienvenido al kernel | Versión {0} <+++===---"
+        Dim ActualTranslation As String = DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", "spa")
+        Assert.AreEqual(ExpectedTranslation, ActualTranslation, "Translation test is not done properly. Got {0}", ActualTranslation)
     End Sub
 
     <TestMethod> Public Sub TestPrepareDict()
-        Try
-            Dim ExpectedLength As Integer = KS.My.Resources.spa.Replace(Chr(13), "").Split(Chr(10)).ToList.Count
-            Dim ActualLength As Integer = PrepareDict("spa").Values.Count
-            Assert.AreEqual(ExpectedLength, ActualLength)
-        Catch afex As AssertFailedException
-            Assert.Fail("Dictionary preparation test is not done properly.")
-        End Try
+        Dim ExpectedLength As Integer = KS.My.Resources.spa.Replace(Chr(13), "").Split(Chr(10)).ToList.Count
+        Dim ActualLength As Integer = PrepareDict("spa").Values.Count
+        Assert.AreEqual(ExpectedLength, ActualLength, "Dictionary preparation test is not done properly. Expected {0}, Got {1}", ExpectedLength, ActualLength)
     End Sub
 
     <TestMethod> Public Sub TestUpdateCulture()
-        Try
-            currentLang = "spa"
-            Dim ExpectedCulture As String = "Spanish (Spain, International Sort)"
-            UpdateCulture()
-            Assert.AreEqual(ExpectedCulture, CurrentCult.EnglishName)
-        Catch afex As AssertFailedException
-            Assert.Fail("Culture update test is not done properly.")
-        End Try
+        currentLang = "spa"
+        Dim ExpectedCulture As String = "Spanish (Spain, International Sort)"
+        UpdateCulture()
+        Assert.AreEqual(ExpectedCulture, CurrentCult.EnglishName, "Culture update test is not done properly. Got {0}", CurrentCult.EnglishName)
     End Sub
 
     <TestMethod> Public Sub TestSetLang()
-        Try
-            InitPaths()
-            Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
-            If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
-            Assert.IsTrue(SetLang("spa"))
-        Catch ex As Exception
-            Assert.Fail("Setting language failed.")
-        End Try
+        InitPaths()
+        Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
+        If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
+        Assert.IsTrue(SetLang("spa"), "Setting language failed. Returned False.")
     End Sub
 
 End Class

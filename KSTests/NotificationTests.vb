@@ -21,31 +21,19 @@ Imports KS
 <TestClass()> Public Class NotificationTests
 
     <TestMethod()> Public Sub TestNotifyCreate()
-        Try
-            Assert.IsNotNull(NotifyCreate("This is the title.", "This is the description.", NotifPriority.Medium))
-        Catch ex As Exception
-            Assert.Fail("Notification creation failed.")
-        End Try
+        Assert.IsNotNull(NotifyCreate("This is the title.", "This is the description.", NotifPriority.Medium), "Notification creation failed. Got null.")
     End Sub
 
     <TestMethod> Public Sub TestNotifySend()
-        Try
-            Dim Notif As Notification = NotifyCreate("Notification title", "This is a high priority notification", NotifPriority.High)
-            NotifySend(Notif)
-            Assert.IsTrue(NotifRecents.Count > 0)
-        Catch ex As Exception
-            Assert.Fail("Notification sending failed.")
-        End Try
+        Dim Notif As Notification = NotifyCreate("Notification title", "This is a high priority notification", NotifPriority.High)
+        NotifySend(Notif)
+        Assert.IsTrue(NotifRecents.Count > 0, "Notification sending failed. Got {0}", NotifRecents.Count)
     End Sub
 
     <TestMethod> Public Sub TestNotifyDismiss()
-        Try
-            Dim Notif As Notification = NotifyCreate("Redundant title", "This is a redundant notification", NotifPriority.Low)
-            NotifySend(Notif)
-            Assert.IsTrue(NotifDismiss(NotifRecents.Count - 1))
-        Catch ex As Exception
-            Assert.Fail("Notification removal failed.")
-        End Try
+        Dim Notif As Notification = NotifyCreate("Redundant title", "This is a redundant notification", NotifPriority.Low)
+        NotifySend(Notif)
+        Assert.IsTrue(NotifDismiss(NotifRecents.Count - 1), "Notification removal failed. Expected True, got False.")
     End Sub
 
 End Class

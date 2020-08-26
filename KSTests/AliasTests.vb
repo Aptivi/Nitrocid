@@ -22,54 +22,38 @@ Imports KS
 <TestClass()> Public Class AliasTests
 
     <TestMethod()> Public Sub TestInitAliases()
-        Try
-            InitPaths()
-            Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.csv")
-            If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
-            InitAliases()
-            Assert.IsTrue(Aliases.Count > 0)
-            Assert.IsTrue(RemoteDebugAliases.Count > 0)
-            CloseAliasesFile()
-        Catch afex As AssertFailedException
-            Assert.Fail("Initialization of test aliases failed. Local and remote aliases below:" + vbNewLine + vbNewLine +
-                        "- " + String.Join(vbNewLine + "- ", Aliases.Keys) + vbNewLine + vbNewLine +
-                        "- " + String.Join(vbNewLine + "- ", RemoteDebugAliases.Keys))
-        End Try
+        InitPaths()
+        Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.csv")
+        If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
+        InitAliases()
+        Assert.IsTrue(Aliases.Count > 0, "Initialization of test aliases failed. Aliases.Count is {0}. Shell aliases below:" + vbNewLine + vbNewLine +
+                                         "- " + String.Join(vbNewLine + "- ", Aliases.Keys), Aliases.Count)
+        Assert.IsTrue(RemoteDebugAliases.Count > 0, "Initialization of test aliases failed. RemoteDebugAliases.Count is {0}. Remote aliases below:" + vbNewLine + vbNewLine +
+                                                    "- " + String.Join(vbNewLine + "- ", RemoteDebugAliases.Keys), RemoteDebugAliases.Count)
+        CloseAliasesFile()
     End Sub
 
     <TestMethod()> Public Sub TestInitAndSaveAliases()
-        Try
-            InitPaths()
-            Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.csv")
-            If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
-            InitAliases()
-            SaveAliases()
-            Assert.IsTrue(Aliases.Count > 0)
-            Assert.IsTrue(RemoteDebugAliases.Count > 0)
-            CloseAliasesFile()
-        Catch afex As AssertFailedException
-            Assert.Fail("Initialization and saving of test aliases failed. Local and remote aliases below:" + vbNewLine + vbNewLine +
-                        "- " + String.Join(vbNewLine + "- ", Aliases.Keys) + vbNewLine + vbNewLine +
-                        "- " + String.Join(vbNewLine + "- ", RemoteDebugAliases.Keys))
-        End Try
+        InitPaths()
+        Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.csv")
+        If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
+        InitAliases()
+        SaveAliases()
+        Assert.IsTrue(Aliases.Count > 0, "Initialization and saving of test aliases failed. Aliases.Count is {0}. Shell aliases below:" + vbNewLine + vbNewLine +
+                                         "- " + String.Join(vbNewLine + "- ", Aliases.Keys), Aliases.Count)
+        Assert.IsTrue(RemoteDebugAliases.Count > 0, "Initialization and saving of test aliases failed. RemoteDebugAliases.Count is {0}. Remote aliases below:" + vbNewLine + vbNewLine +
+                                                    "- " + String.Join(vbNewLine + "- ", RemoteDebugAliases.Keys), RemoteDebugAliases.Count)
+        CloseAliasesFile()
     End Sub
 
     <TestMethod> Public Sub TestAddAlias()
-        Try
-            Assert.IsTrue(AddAlias("ls", "list", AliasType.Shell))
-            Assert.IsTrue(AddAlias("trc", "trace", AliasType.RDebug))
-        Catch ex As Exception
-            Assert.Fail("Adding aliases failed.")
-        End Try
+        Assert.IsTrue(AddAlias("ls", "list", AliasType.Shell), "Adding shell alias failed. Returned False.")
+        Assert.IsTrue(AddAlias("trc", "trace", AliasType.RDebug), "Adding remote debug alias failed. Returned False.")
     End Sub
 
     <TestMethod> Public Sub TestRemoveAlias()
-        Try
-            Assert.IsTrue(RemoveAlias("ls", AliasType.Shell))
-            Assert.IsTrue(RemoveAlias("trc", AliasType.RDebug))
-        Catch ex As Exception
-            Assert.Fail("Removing aliases failed.")
-        End Try
+        Assert.IsTrue(RemoveAlias("ls", AliasType.Shell), "Removing shell alias failed. Returned False.")
+        Assert.IsTrue(RemoveAlias("trc", AliasType.RDebug), "Removing remote debug alias failed. Returned False.")
     End Sub
 
 End Class

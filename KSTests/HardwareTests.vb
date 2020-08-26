@@ -21,16 +21,13 @@ Imports KS
 <TestClass()> Public Class HardwareTests
 
     <TestMethod()> Public Sub TestProbeHardware()
-        Try
-            If Environment.OSVersion.ToString.Contains("Unix") Then
-                ProbeHardwareLinux()
-            Else
-                ProbeHardware()
-            End If
-            Assert.IsTrue(HDDDone And CPUDone And ParDone And RAMDone)
-        Catch afex As AssertFailedException
-            Assert.Fail("Hardware is not properly parsed.")
-        End Try
+        If Environment.OSVersion.ToString.Contains("Unix") Then
+            ProbeHardwareLinux()
+        Else
+            ProbeHardware()
+        End If
+        Dim AllDone As Boolean = HDDDone And CPUDone And ParDone And RAMDone
+        Assert.IsTrue(AllDone, "Hardware is not properly parsed. Expected True, got {0}", AllDone)
     End Sub
 
 End Class

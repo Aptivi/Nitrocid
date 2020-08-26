@@ -21,7 +21,7 @@ Imports KS
 <TestClass()> Public Class FilesystemTests
 
     ''' <summary>
-    ''' Gets home directory depending on platform
+    ''' Gets home directory depending on platform (not a test method)
     ''' </summary>
     ''' <returns>Home directory</returns>
     Public Function GetHome()
@@ -36,30 +36,22 @@ Imports KS
     ''' Tests path neutralization on a folder in home directory
     ''' </summary>
     <TestMethod()> Public Sub TestNeutralizePaths()
-        Try
-            CurrDir = GetHome()
-            Dim TestPath As String = "Documents"
-            Dim ExpectedPath As String = CurrDir + "/" + TestPath
-            Dim NeutPath As String = NeutralizePath(TestPath)
-            Assert.AreEqual(ExpectedPath, NeutPath)
-        Catch afex As AssertFailedException
-            Assert.Fail("Path is not properly neutralized.")
-        End Try
+        CurrDir = GetHome()
+        Dim TestPath As String = "Documents"
+        Dim ExpectedPath As String = CurrDir + "/" + TestPath
+        Dim NeutPath As String = NeutralizePath(TestPath)
+        Assert.AreEqual(ExpectedPath, NeutPath, "Path is not properly neutralized. Expected {0}, got {1}", ExpectedPath, NeutPath)
     End Sub
 
     ''' <summary>
     ''' Tests current directory setting
     ''' </summary>
     <TestMethod()> Public Sub TestSetCurrDir()
-        Try
-            InitPaths()
-            CurrDir = paths("Home")
-            Dim Path As String = paths("Home") + "/Documents"
-            Assert.IsTrue(SetCurrDir(Path))
-            Assert.AreEqual(Path, CurrDir)
-        Catch afex As AssertFailedException
-            Assert.Fail("Current path is not properly set.")
-        End Try
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim Path As String = paths("Home") + "/Documents"
+        Assert.IsTrue(SetCurrDir(Path))
+        Assert.AreEqual(Path, CurrDir, "Current path is not properly set. Expected {0}, got {1}", Path, CurrDir)
     End Sub
 
 End Class

@@ -22,89 +22,53 @@ Imports KS
 <TestClass()> Public Class TimeTests
 
     <TestMethod()> Public Sub TestRenderKernelDate()
-        Try
-            KernelDateTime = Date.Now
-            Assert.IsNotNull(RenderDate)
-        Catch ex As Exception
-            Assert.Fail("Rendering date failed")
-        End Try
+        KernelDateTime = Date.Now
+        Assert.IsNotNull(RenderDate, "Rendering date failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestRenderKernelDateCult()
-        Try
-            KernelDateTime = Date.Now
-            Dim TargetCult As New CultureInfo("es-ES")
-            Assert.IsNotNull(RenderDate(TargetCult))
-        Catch ex As Exception
-            Assert.Fail("Rendering date failed")
-        End Try
+        KernelDateTime = Date.Now
+        Dim TargetCult As New CultureInfo("es-ES")
+        Assert.IsNotNull(RenderDate(TargetCult), "Rendering date failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestRenderCustomDate()
-        Try
-            Dim TargetDate As New DateTime(2018, 2, 22)
-            Assert.IsNotNull(RenderDate(TargetDate))
-        Catch ex As Exception
-            Assert.Fail("Rendering date failed")
-        End Try
+        Dim TargetDate As New DateTime(2018, 2, 22)
+        Assert.IsNotNull(RenderDate(TargetDate), "Rendering date failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestRenderCustomDateCult()
-        Try
-            Dim TargetDate As New DateTime(2018, 2, 22)
-            Dim TargetCult As New CultureInfo("es-ES")
-            Assert.IsNotNull(RenderDate(TargetDate, TargetCult))
-        Catch ex As Exception
-            Assert.Fail("Rendering date failed")
-        End Try
+        Dim TargetDate As New DateTime(2018, 2, 22)
+        Dim TargetCult As New CultureInfo("es-ES")
+        Assert.IsNotNull(RenderDate(TargetDate, TargetCult), "Rendering date failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestRenderKernelTime()
-        Try
-            KernelDateTime = Date.Now
-            Assert.IsNotNull(RenderTime)
-        Catch ex As Exception
-            Assert.Fail("Rendering time failed")
-        End Try
+        KernelDateTime = Date.Now
+        Assert.IsNotNull(RenderTime, "Rendering time failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestRenderKernelTimeCult()
-        Try
-            KernelDateTime = Date.Now
-            Dim TargetCult As New CultureInfo("es-ES")
-            Assert.IsNotNull(RenderTime(TargetCult))
-        Catch ex As Exception
-            Assert.Fail("Rendering time failed")
-        End Try
+        KernelDateTime = Date.Now
+        Dim TargetCult As New CultureInfo("es-ES")
+        Assert.IsNotNull(RenderTime(TargetCult), "Rendering time failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestRenderCustomTime()
-        Try
-            Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
-            Assert.IsNotNull(RenderTime(TargetTime))
-        Catch ex As Exception
-            Assert.Fail("Rendering time failed")
-        End Try
+        Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
+        Assert.IsNotNull(RenderTime(TargetTime), "Rendering time failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestRenderCustomTimeCult()
-        Try
-            Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
-            Dim TargetCult As New CultureInfo("es-ES")
-            Assert.IsNotNull(RenderTime(TargetTime, TargetCult))
-        Catch ex As Exception
-            Assert.Fail("Rendering time failed")
-        End Try
+        Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
+        Dim TargetCult As New CultureInfo("es-ES")
+        Assert.IsNotNull(RenderTime(TargetTime, TargetCult), "Rendering time failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestInitTimesInZones()
-        Try
-            KernelDateTime = Date.Now
-            InitTimesInZones()
-            Assert.IsFalse(zoneTimes.Count = 0)
-        Catch ex As Exception
-            Assert.Fail("Initialization of current time in zones failed")
-        End Try
+        KernelDateTime = Date.Now
+        InitTimesInZones()
+        Assert.IsFalse(zoneTimes.Count = 0, "Initialization of current time in zones failed. Got 0.")
     End Sub
 
 End Class

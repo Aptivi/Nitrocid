@@ -26,24 +26,20 @@ Imports KS
     ''' </summary>
     <TestMethod()> Public Sub TestSetTemplate()
         Dim Comparison As String() = {}
-        Try
-            InitPaths()
-            Dim ExpectedTemplates As New List(Of String)
-            Dim ActualTemplates As New List(Of String)
-            Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
-            If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
-            ExpectedTemplates.AddRange(colorTemplates)
-            For Each Template As String In colorTemplates
-                TemplateSet(Template)
-                ActualTemplates.Add(currentTheme)
-            Next
-            Comparison = ExpectedTemplates.ToArray.Except(ActualTemplates.ToArray).ToArray
-            Assert.IsTrue(Comparison.Count = 0)
-        Catch afex As AssertFailedException
-            Assert.Fail("Themes are not properly parsed. Check the vars for below colors, the KS > Color > ParseCurrentTheme, and the KS > Color > TemplateSet." + vbNewLine + vbNewLine +
-                        "Themes that are parsed incorrectly will be written below:" + vbNewLine + vbNewLine +
-                        "- " + Join(Comparison, vbNewLine + "- "))
-        End Try
+        InitPaths()
+        Dim ExpectedTemplates As New List(Of String)
+        Dim ActualTemplates As New List(Of String)
+        Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
+        If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
+        ExpectedTemplates.AddRange(colorTemplates)
+        For Each Template As String In colorTemplates
+            TemplateSet(Template)
+            ActualTemplates.Add(currentTheme)
+        Next
+        Comparison = ExpectedTemplates.ToArray.Except(ActualTemplates.ToArray).ToArray
+        Assert.IsTrue(Comparison.Count = 0, "Themes are not properly parsed. Comparison count is {0} Check the vars for below colors, the KS > Color > ParseCurrentTheme, and the KS > Color > TemplateSet." + vbNewLine + vbNewLine +
+                                            "Themes that are parsed incorrectly will be written below:" + vbNewLine + vbNewLine +
+                                            "- " + Join(Comparison, vbNewLine + "- "), Comparison.Length)
     End Sub
 
 End Class

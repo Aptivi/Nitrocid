@@ -21,39 +21,23 @@ Imports KS
 <TestClass()> Public Class HelpTests
 
     <TestMethod()> Public Sub TestInitFTPHelp()
-        Try
-            InitFTPHelp()
-            Assert.IsNotNull(ftpDefinitions)
-        Catch afex As AssertFailedException
-            Assert.Fail("Initialization of FTP help failed")
-        End Try
+        InitFTPHelp()
+        Assert.IsNotNull(ftpDefinitions, "Initialization of FTP help failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestInitMailHelp()
-        Try
-            IMAPInitHelp()
-            Assert.IsNotNull(IMAP_definitions)
-        Catch afex As AssertFailedException
-            Assert.Fail("Initialization of mail help failed")
-        End Try
+        IMAPInitHelp()
+        Assert.IsNotNull(IMAP_definitions, "Initialization of mail help failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestInitShellHelp()
-        Try
-            InitHelp()
-            Assert.IsNotNull(definitions)
-        Catch afex As AssertFailedException
-            Assert.Fail("Initialization of shell help failed")
-        End Try
+        InitHelp()
+        Assert.IsNotNull(definitions, "Initialization of shell help failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestInitTextHelp()
-        Try
-            TextEdit_UpdateHelp()
-            Assert.IsNotNull(TextEdit_HelpEntries)
-        Catch afex As AssertFailedException
-            Assert.Fail("Initialization of text editor help failed")
-        End Try
+        TextEdit_UpdateHelp()
+        Assert.IsNotNull(TextEdit_HelpEntries, "Initialization of text editor help failed. Got null.")
     End Sub
 
 End Class
