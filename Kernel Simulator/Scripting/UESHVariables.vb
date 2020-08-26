@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module UESHVariables
+Public Module UESHVariables
 
     Public ScriptVariables As New Dictionary(Of String, String)
 
@@ -51,9 +51,15 @@ Module UESHVariables
     ''' </summary>
     ''' <param name="var">A $variable</param>
     ''' <param name="value">A value to set to $variable</param>
-    Public Sub SetVariable(ByVal var As String, ByVal value As String)
-        ScriptVariables(var) = value
-        Wdbg("I", "Set variable {0} to {1}", var, value)
-    End Sub
+    Public Function SetVariable(ByVal var As String, ByVal value As String) As Boolean
+        Try
+            ScriptVariables(var) = value
+            Wdbg("I", "Set variable {0} to {1}", var, value)
+            Return True
+        Catch ex As Exception
+            Wdbg("E", "Error setting variable {0}: {1}", var, ex.Message)
+        End Try
+        Return False
+    End Function
 
 End Module
