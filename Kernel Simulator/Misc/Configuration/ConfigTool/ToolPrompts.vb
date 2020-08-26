@@ -58,7 +58,12 @@ Public Module ToolPrompts
                     OpenSection(AnswerInt)
                 ElseIf AnswerInt = 8 Then 'Save Settings
                     Wdbg("I", "Saving settings...")
-                    CreateConfig(False, True)
+                    Try
+                        CreateConfig(True)
+                    Catch ex As EventsAndExceptions.ConfigException
+                        W(ex.Message, True, ColTypes.Err)
+                        WStkTrc(ex)
+                    End Try
                 ElseIf AnswerInt = 9 Then 'Exit
                     Wdbg("W", "Exiting...")
                     PromptFinished = True

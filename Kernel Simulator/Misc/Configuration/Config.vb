@@ -23,9 +23,10 @@ Public Module Config
     ''' <summary>
     ''' Creates the kernel configuration file
     ''' </summary>
-    ''' <param name="CmdArg">Specifies whether or not it's called from real command-line argument</param>
     ''' <param name="Preserve">Preserves configuration values</param>
-    Public Sub CreateConfig(ByVal CmdArg As Boolean, ByVal Preserve As Boolean)
+    ''' <returns>True if successful; False if unsuccessful.</returns>
+    ''' <exception cref="EventsAndExceptions.ConfigException"></exception>
+    Public Function CreateConfig(ByVal Preserve As Boolean) As Boolean
         Try
             Dim ksconf As New IniFile()
             Wdbg("I", "Preserve: {0}", Preserve)
@@ -248,30 +249,24 @@ Public Module Config
 
             'Save Config
             ksconf.Save(paths("Configuration"))
-
-            'Exit if it is executed using real command-line arguments
-            If CmdArg = True Then
-                DisposeAll()
-                Environment.Exit(0)
-            End If
+            Return True
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to create configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Err, ex.Message)
+                Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}.", currentLang).FormatString(ex.Message))
             Else
-                W(DoTranslation("There is an error trying to create configuration.", currentLang), True, ColTypes.Err)
-            End If
-            If CmdArg = True Then
-                DisposeAll()
-                Environment.Exit(2)
+                Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to create configuration.", currentLang))
             End If
         End Try
-    End Sub
+        Return False
+    End Function
 
     ''' <summary>
     ''' Checks the config file for mismatched version and upgrades it
     ''' </summary>
-    Public Sub CheckForUpgrade()
+    ''' <returns>True if there are updates, False if unsuccessful.</returns>
+    ''' <exception cref="EventsAndExceptions.ConfigException"></exception>
+    Public Function CheckForUpgrade() As Boolean
         Try
             'Variables
             Dim configUpdater As New IniFile()
@@ -282,25 +277,25 @@ Public Module Config
             'Check to see if the kernel is outdated
             If configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
                 Wdbg("W", "Kernel version upgraded from {1} to {0}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
-                W(DoTranslation("An upgrade from {0} to {1} was detected. Updating configuration...", currentLang), True, ColTypes.Neutral, configUpdater.Sections("Misc").Keys("Kernel Version").Value, KernelVersion)
-                UpdateConfig()
+                Return True
             End If
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                W(DoTranslation("There is an error trying to update configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Err, ex.Message)
+                Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to update configuration: {0}.", currentLang).FormatString(ex.Message))
             Else
-                W(DoTranslation("There is an error trying to update configuration.", currentLang), True, ColTypes.Err)
+                Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to update configuration.", currentLang))
             End If
         End Try
-    End Sub
+        Return False
+    End Function
 
     ''' <summary>
     ''' Updates the configuration file and reboots the simulated system
     ''' </summary>
     Public Sub UpdateConfig()
 
-        CreateConfig(False, True)
+        CreateConfig(True)
         PowerManage("reboot")
 
     End Sub
@@ -308,7 +303,9 @@ Public Module Config
     ''' <summary>
     ''' Configures the kernel according to the kernel configuration file
     ''' </summary>
-    Public Sub ReadConfig()
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="EventsAndExceptions.ConfigException"></exception>
+    Public Function ReadConfig() As Boolean
         Try
             '----------------------------- Important configuration -----------------------------
             'Language
@@ -398,19 +395,18 @@ Public Module Config
             If configReader.Sections("Misc").Keys("Marquee on startup").Value = "True" Then StartScroll = True Else StartScroll = False
             If configReader.Sections("Misc").Keys("Long Time and Date").Value = "True" Then LongTimeDate = True Else LongTimeDate = False
             If configReader.Sections("Misc").Keys("Show Hidden Files").Value = "True" Then HiddenFiles = True Else HiddenFiles = False
+
+            Return True
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
             Wdbg("W", "Detected incompatible/old version of config. Renewing...")
             UpgradeConfig() 'Upgrades the config if there are any changes.
         Catch ex As Exception
-            If DebugMode = True Then
-                WStkTrc(ex)
-                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Err, ex.Message)
-            Else
-                W(DoTranslation("There is an error trying to read configuration: {0}.", currentLang), True, ColTypes.Err, ex.Message)
-            End If
+            WStkTrc(ex)
             NotifyConfigError = True
+            Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}.", currentLang).FormatString(ex.Message))
         End Try
-    End Sub
+        Return False
+    End Function
 
     ''' <summary>
     ''' Main loader for configuration file
@@ -420,16 +416,24 @@ Public Module Config
         Dim pathConfig As String = paths("Configuration")
         If Not File.Exists(pathConfig) Then
             Wdbg("E", "No config file found. Creating...")
-            CreateConfig(False, False)
+            CreateConfig(False)
         End If
 
         'Load and read config
-        configReader.Load(pathConfig)
-        Wdbg("I", "Config loaded with {0} sections", configReader.Sections.Count)
-        ReadConfig()
+        Try
+            configReader.Load(pathConfig)
+            Wdbg("I", "Config loaded with {0} sections", configReader.Sections.Count)
+            ReadConfig()
+        Catch cex As EventsAndExceptions.ConfigException
+            W(cex.Message, True, ColTypes.Err)
+            WStkTrc(cex)
+        End Try
 
         'Check for updates for config
-        CheckForUpgrade()
+        If CheckForUpgrade() Then
+            W(DoTranslation("An upgrade to {0} is detected. Updating configuration...", currentLang), True, ColTypes.Neutral, KernelVersion)
+            UpdateConfig()
+        End If
     End Sub
 
 End Module

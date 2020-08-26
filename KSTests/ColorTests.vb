@@ -25,7 +25,7 @@ Imports KS
     ''' Tests template setting (all templates)
     ''' </summary>
     <TestMethod()> Public Sub TestSetTemplate()
-        Dim Comparison As String() = {}
+        Dim Comparison As String()
         InitPaths()
         Dim ExpectedTemplates As New List(Of String)
         Dim ActualTemplates As New List(Of String)

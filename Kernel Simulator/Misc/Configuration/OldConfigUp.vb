@@ -125,7 +125,7 @@ Module OldConfigUp
         OldConfigReader.Dispose()
 
         'Convert to new version
-        CreateConfig(False, True)
+        CreateConfig(True)
 
         'Reboot
         PowerManage("reboot")

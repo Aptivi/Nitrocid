@@ -31,7 +31,16 @@ Module CommandLineArgsParse
 
                 'Parse arguments
                 If arg = "createConf" Then
-                    If Not IO.File.Exists(paths("Configuration")) Then CreateConfig(True, False)
+                    If Not IO.File.Exists(paths("Configuration")) Then
+                        Try
+                            CreateConfig(False)
+                            DisposeAll()
+                            Environment.Exit(0)
+                        Catch cex As EventsAndExceptions.ConfigException
+                            DisposeAll()
+                            Environment.Exit(2)
+                        End Try
+                    End If
                 ElseIf arg = "testMod" Then
                     StartParse(argArgs)
                     If scripts.Count = 0 Then
