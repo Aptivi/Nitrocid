@@ -223,6 +223,20 @@ Public Module UserManagement
         End If
     End Sub
 
+    ''' <summary>
+    ''' Initializes root account
+    ''' </summary>
+    Sub InitializeSystemAccount()
+        If setRootPasswd Then
+            AddUser("root", RootPasswd)
+        ElseIf File.Exists(paths("Users")) Then
+            InitializeUser("root", GetUserEncryptedPassword("root"), False)
+        Else
+            AddUser("root")
+        End If
+        Permission(PermissionType.Administrator, "root", PermissionManagementMode.Allow)
+    End Sub
+
     '---------- Previously on Groups.vb ----------
     ''' <summary>
     ''' This enumeration lists all permission types.

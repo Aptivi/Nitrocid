@@ -14,6 +14,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports System.Reflection.Assembly
 
 'TODOs:
@@ -121,12 +122,7 @@ Public Module Kernel
                 'Phase 4: Log-in
                 W(vbNewLine + DoTranslation("- Stage 4: Log in", currentLang), True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 4: Log in")
-                If setRootPasswd Then
-                    AddUser("root", RootPasswd)
-                Else
-                    InitializeUser("root", GetUserEncryptedPassword("root"), False)
-                End If
-                Permission(PermissionType.Administrator, "root", PermissionManagementMode.Allow)
+                InitializeSystemAccount()
                 LoginFlag = True
                 If Not BootArgs Is Nothing Then
                     If BootArgs.Contains("quiet") Then
