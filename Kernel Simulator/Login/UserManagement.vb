@@ -33,8 +33,10 @@ Public Module UserManagement
     ''' <param name="uninitUser">A new user</param>
     ''' <param name="unpassword">A password of a user in encrypted form</param>
     ''' <param name="ComputationNeeded">Whether or not a password encryption is needed</param>
-    Public Sub InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "", Optional ByVal ComputationNeeded As Boolean = True)
-
+    ''' <returns>True if successful; False if successful</returns>
+    ''' <exception cref="InvalidOperationException"></exception>
+    ''' <exception cref="EventsAndExceptions.UserCreationException"></exception>
+    Function InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "", Optional ByVal ComputationNeeded As Boolean = True) As Boolean
         Try
             'Compute hash of a password
             Dim Regexp As New Regex("^([a-fA-F0-9]{64})$")
@@ -67,18 +69,14 @@ Public Module UserManagement
             'Ready permissions
             Wdbg("I", "Username {0} added. Readying permissions...", uninitUser)
             InitPermissionsForNewUser(uninitUser)
+            Return True
         Catch ex As Exception
-            If DebugMode = True Then
-                W(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace)
-                WStkTrc(ex)
-            Else
-                W(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message)
-            End If
+            Throw New EventsAndExceptions.UserCreationException(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
+                                                                DoTranslation("Error {0}: {1}", currentLang).FormatString(ex.Message))
+            WStkTrc(ex)
         End Try
-
-    End Sub
+        Return False
+    End Function
 
     ''' <summary>
     ''' Reads the user file and adds them to the list.
@@ -111,54 +109,71 @@ Public Module UserManagement
     ''' </summary>
     ''' <param name="newUser">A new user</param>
     ''' <param name="newPassword">A password</param>
-    Public Sub AddUser(ByVal newUser As String, Optional ByVal newPassword As String = "")
-
+    ''' <exception cref="EventsAndExceptions.UserCreationException"></exception>
+    Public Function AddUser(ByVal newUser As String, Optional ByVal newPassword As String = "") As Boolean
         'Adds user
-        W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, ColTypes.Neutral, newUser)
         Wdbg("I", "Creating user {0}...", newUser)
-        If Not userword.ContainsKey(newUser) Then
-            If newPassword = Nothing Then
-                Wdbg("W", "Initializing user with no password")
-                InitializeUser(newUser)
-            Else
-                Wdbg("I", "Initializing user with password")
-                InitializeUser(newUser, newPassword)
-            End If
+        If InStr(newUser, " ") > 0 Then
+            Wdbg("W", "There are spaces in username.")
+            Throw New EventsAndExceptions.UserCreationException(DoTranslation("Spaces are not allowed.", currentLang))
+        ElseIf newUser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
+            Wdbg("W", "There are special characters in username.")
+            Throw New EventsAndExceptions.UserCreationException(DoTranslation("Special characters are not allowed.", currentLang))
+        ElseIf newUser = Nothing Then
+            Wdbg("W", "Username is blank.")
+            Throw New EventsAndExceptions.UserCreationException(DoTranslation("Blank username.", currentLang))
+        ElseIf Not userword.ContainsKey(newUser) Then
+            Try
+                If newPassword = Nothing Then
+                    Wdbg("W", "Initializing user with no password")
+                    InitializeUser(newUser)
+                Else
+                    Wdbg("I", "Initializing user with password")
+                    InitializeUser(newUser, newPassword)
+                End If
+                Return True
+            Catch ex As Exception
+                Wdbg("E", "Failed to create user {0}: {1}", ex.Message)
+                WStkTrc(ex)
+                Throw New EventsAndExceptions.UserCreationException(DoTranslation("usrmgr: Failed to create username {0}: {1}", currentLang).FormatString(newUser, ex.Message))
+            End Try
         Else
-            Wdbg("I", "User {0} already found.", newUser)
-            W(DoTranslation("usrmgr: Username {0} is already found", currentLang), True, ColTypes.Err, newUser)
+            Wdbg("W", "User {0} already found.", newUser)
+            Throw New EventsAndExceptions.UserCreationException(DoTranslation("usrmgr: Username {0} is already found", currentLang).FormatString(newUser))
         End If
-
-    End Sub
+        Return False
+    End Function
 
     ''' <summary>
     ''' Removes a user from users database
     ''' </summary>
     ''' <param name="user">A user</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="EventsAndExceptions.UserManagementException"></exception>
     ''' <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
-    Public Sub RemoveUserFromDatabase(ByVal user As String)
-        Try
-            If InStr(user, " ") > 0 Then
-                Wdbg("W", "There are spaces in username.")
-                W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Err)
-            ElseIf user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-                Wdbg("W", "There are special characters in username.")
-                W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Err)
-            ElseIf user = Nothing Then
-                Wdbg("W", "Username is blank.")
-                W(DoTranslation("Blank username.", currentLang), True, ColTypes.Err)
-            ElseIf userword.ContainsKey(user) = False Then
-                Wdbg("W", "Username {0} not found in list", user)
-                W(DoTranslation("User {0} not found.", currentLang), True, ColTypes.Err, user)
-            Else
-                'Try to remove user
-                If userword.Keys.ToArray.Contains(user) And user = "root" Then
-                    Wdbg("W", "User is root, and is a system account")
-                    W(DoTranslation("User {0} isn't allowed to be removed.", currentLang), True, ColTypes.Err, user)
-                ElseIf userword.Keys.ToArray.Contains(user) And user = signedinusrnm Then
-                    Wdbg("W", "User has logged in, so can't delete self.")
-                    W(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin.", currentLang), True, ColTypes.Err, user)
-                ElseIf userword.Keys.ToArray.Contains(user) And user <> "root" Then
+    Public Function RemoveUser(ByVal user As String) As Boolean
+        If InStr(user, " ") > 0 Then
+            Wdbg("W", "There are spaces in username.")
+            Throw New EventsAndExceptions.UserManagementException(DoTranslation("Spaces are not allowed.", currentLang))
+        ElseIf user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
+            Wdbg("W", "There are special characters in username.")
+            Throw New EventsAndExceptions.UserManagementException(DoTranslation("Special characters are not allowed.", currentLang))
+        ElseIf user = Nothing Then
+            Wdbg("W", "Username is blank.")
+            Throw New EventsAndExceptions.UserManagementException(DoTranslation("Blank username.", currentLang))
+        ElseIf userword.ContainsKey(user) = False Then
+            Wdbg("W", "Username {0} not found in list", user)
+            Throw New EventsAndExceptions.UserManagementException(DoTranslation("User {0} not found.", currentLang).FormatString(user))
+        Else
+            'Try to remove user
+            If userword.Keys.ToArray.Contains(user) And user = "root" Then
+                Wdbg("W", "User is root, and is a system account")
+                Throw New EventsAndExceptions.UserManagementException(DoTranslation("User {0} isn't allowed to be removed.", currentLang).FormatString(user))
+            ElseIf userword.Keys.ToArray.Contains(user) And user = signedinusrnm Then
+                Wdbg("W", "User has logged in, so can't delete self.")
+                Throw New EventsAndExceptions.UserManagementException(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin.", currentLang).FormatString(user))
+            ElseIf userword.Keys.ToArray.Contains(user) And user <> "root" Then
+                Try
                     Wdbg("I", "Removing permissions...")
                     adminList.Remove(user)
                     disabledList.Remove(user)
@@ -176,52 +191,50 @@ Public Module UserManagement
                         End If
                     Next
                     File.WriteAllLines(paths("Users"), UsersLines)
-                    W(DoTranslation("User {0} removed.", currentLang), True, ColTypes.Neutral, user)
-                End If
+                    Return True
+                Catch ex As Exception
+                    Throw New EventsAndExceptions.UserManagementException(DoTranslation("Error trying to remove username.", currentLang) + vbNewLine +
+                                                                          DoTranslation("Error {0}: {1}", currentLang).FormatString(ex.Message))
+                    WStkTrc(ex)
+                End Try
             End If
-        Catch ex As Exception
-            If DebugMode = True Then
-                W(DoTranslation("Error trying to remove username.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace)
-                WStkTrc(ex)
-            Else
-                W(DoTranslation("Error trying to remove username.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message)
-            End If
-        End Try
-    End Sub
+        End If
+        Return False
+    End Function
 
-    Public Sub ChangeUsername(ByVal OldName As String, ByVal Username As String)
+    Public Function ChangeUsername(ByVal OldName As String, ByVal Username As String) As Boolean
         If userword.ContainsKey(OldName) Then
             If Not userword.ContainsKey(Username) Then
-                'Store user password
-                Dim Temporary As String = userword(OldName)
+                Try
+                    'Store user password
+                    Dim Temporary As String = userword(OldName)
 
-                'Rename username in dictionary
-                userword.Remove(OldName)
-                userword.Add(Username, Temporary)
-                PermissionEditForNewUser(OldName, Username)
+                    'Rename username in dictionary
+                    userword.Remove(OldName)
+                    userword.Add(Username, Temporary)
+                    PermissionEditForNewUser(OldName, Username)
 
-                'Rename username in users.csv
-                Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-                For i As Integer = 0 To UsersLines.Count - 1
-                    If UsersLines(i).StartsWith($"{OldName},") Then
-                        UsersLines(i) = UsersLines(i).Replace(OldName, Username)
-                        Exit For
-                    End If
-                Next
-                File.WriteAllLines(paths("Users"), UsersLines)
-
-                'Inform user of changes
-                W(DoTranslation("Username has been changed to {0}!", currentLang), True, ColTypes.Neutral, Username)
+                    'Rename username in users.csv
+                    Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+                    For i As Integer = 0 To UsersLines.Count - 1
+                        If UsersLines(i).StartsWith($"{OldName},") Then
+                            UsersLines(i) = UsersLines(i).Replace(OldName, Username)
+                            Exit For
+                        End If
+                    Next
+                    File.WriteAllLines(paths("Users"), UsersLines)
+                Catch ex As Exception
+                    WStkTrc(ex)
+                    Throw New EventsAndExceptions.UserManagementException(DoTranslation("Failed to rename user. {0}", currentLang).FormatString(ex.Message))
+                End Try
             Else
-                W(DoTranslation("The new name you entered is already found.", currentLang), True, ColTypes.Err)
-                Exit Sub
+                Throw New EventsAndExceptions.UserManagementException(DoTranslation("The new name you entered is already found.", currentLang))
             End If
         Else
-            W(DoTranslation("User {0} not found.", currentLang), True, ColTypes.Err, OldName)
+            Throw New EventsAndExceptions.UserManagementException(DoTranslation("User {0} not found.", currentLang).FormatString(OldName))
         End If
-    End Sub
+        Return False
+    End Function
 
     ''' <summary>
     ''' Initializes root account
@@ -235,196 +248,6 @@ Public Module UserManagement
             AddUser("root")
         End If
         Permission(PermissionType.Administrator, "root", PermissionManagementMode.Allow)
-    End Sub
-
-    '---------- Previously on Groups.vb ----------
-    ''' <summary>
-    ''' This enumeration lists all permission types.
-    ''' </summary>
-    Public Enum PermissionType As Integer
-        Administrator = 1
-        Disabled
-    End Enum
-
-    ''' <summary>
-    ''' It specifies whether or not to allow permission
-    ''' </summary>
-    Public Enum PermissionManagementMode As Integer
-        Allow = 1
-        Disallow
-    End Enum
-
-    ''' <summary>
-    ''' Manages permissions
-    ''' </summary>
-    ''' <param name="PermType">A type of permission</param>
-    ''' <param name="Username">A specified username</param>
-    ''' <param name="PermissionMode">Whether to allow or disallow a specified type for a user</param>
-    Public Sub Permission(ByVal PermType As PermissionType, ByVal Username As String, ByVal PermissionMode As PermissionManagementMode)
-
-        'Open users.csv file
-        Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-        Dim UserLine As String() = {}
-        For i As Integer = 0 To UsersLines.Count - 1
-            If UsersLines(i).StartsWith($"{Username},") Then
-                UserLine = UsersLines(i).Split(",")
-                Exit For
-            End If
-        Next
-
-        'Adds user into permission lists.
-        Try
-            Wdbg("I", "Mode: {0}", PermissionMode)
-            If PermissionMode = PermissionManagementMode.Allow Then
-                If userword.Keys.ToArray.Contains(Username) Then
-                    Wdbg("I", "Type is {0}", PermType)
-                    If PermType = PermissionType.Administrator Then
-                        adminList(Username) = True
-                        Wdbg("I", "User {0} allowed (Admin): {1}", Username, adminList(Username))
-                        W(DoTranslation("The user {0} has been added to the admin list.", currentLang), True, ColTypes.Neutral, Username)
-                    ElseIf PermType = PermissionType.Disabled Then
-                        disabledList(Username) = True
-                        Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
-                        W(DoTranslation("The user {0} has been added to the disabled list.", currentLang), True, ColTypes.Neutral, Username)
-                    Else
-                        Wdbg("W", "Type is invalid")
-                        W(DoTranslation("Failed to add user into permission lists: invalid type {0}", currentLang), True, ColTypes.Err, PermType)
-                        Exit Sub
-                    End If
-                Else
-                    Wdbg("W", "User {0} not found on list", Username)
-                    W(DoTranslation("Failed to add user into permission lists: invalid user {0}", currentLang), True, ColTypes.Err, Username)
-                End If
-            ElseIf PermissionMode = PermissionManagementMode.Disallow Then
-                If userword.Keys.ToArray.Contains(Username) And Username <> signedinusrnm Then
-                    Wdbg("I", "Type is {0}", PermType)
-                    If PermType = PermissionType.Administrator Then
-                        Wdbg("I", "User {0} allowed (Admin): {1}", Username, adminList(Username))
-                        adminList(Username) = False
-                        W(DoTranslation("The user {0} has been removed from the admin list.", currentLang), True, ColTypes.Neutral, Username)
-                    ElseIf PermType = PermissionType.Disabled Then
-                        Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
-                        disabledList(Username) = False
-                        W(DoTranslation("The user {0} has been removed from the disabled list.", currentLang), True, ColTypes.Neutral, Username)
-                    Else
-                        Wdbg("W", "Type is invalid")
-                        W(DoTranslation("Failed to remove user from permission lists: invalid type {0}", currentLang), True, ColTypes.Err, PermType)
-                        Exit Sub
-                    End If
-                ElseIf Username = signedinusrnm Then
-                    W(DoTranslation("You are already logged in.", currentLang), True, ColTypes.Err)
-                    Exit Sub
-                Else
-                    Wdbg("W", "User {0} not found on list", Username)
-                    W(DoTranslation("Failed to remove user from permission lists: invalid user {0}", currentLang), True, ColTypes.Err, Username)
-                End If
-            Else
-                Wdbg("W", "Mode is invalid")
-                W(DoTranslation("You have found a bug in the permission system: invalid mode {0}", currentLang), True, ColTypes.Err, PermissionMode)
-            End If
-        Catch ex As Exception
-            If DebugMode = True Then
-                W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace)
-                WStkTrc(ex)
-            Else
-                W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message)
-            End If
-        End Try
-
-        'Save changes
-        For i As Integer = 0 To UsersLines.Count - 1
-            If UsersLines(i).StartsWith($"{Username},") Then
-                UserLine(2) = adminList(Username)
-                UserLine(3) = disabledList(Username)
-                UsersLines(i) = UserLine.Join(",")
-                Exit For
-            End If
-        Next
-        File.WriteAllLines(paths("Users"), UsersLines)
-
-    End Sub
-
-    ''' <summary>
-    ''' Edits the permission database for new user name
-    ''' </summary>
-    ''' <param name="OldName">Old username</param>
-    ''' <param name="Username">New username</param>
-    Public Sub PermissionEditForNewUser(ByVal OldName As String, ByVal Username As String)
-
-        'Edit username (continuation for changeName() sub)
-        Try
-            If adminList.ContainsKey(OldName) = True And disabledList.ContainsKey(OldName) = True Then
-                'Store permissions
-                Dim Temporary1 As Boolean = adminList(OldName)
-                Dim Temporary2 As Boolean = disabledList(OldName)
-
-                'Remove old user entry
-                Wdbg("I", "Removing {0} from Admin List", OldName)
-                adminList.Remove(OldName)
-                Wdbg("I", "Removing {0} from Disabled List", OldName)
-                disabledList.Remove(OldName)
-
-                'Add new user entry
-                adminList.Add(Username, Temporary1)
-                Wdbg("I", "Added {0} to Admin List with value of {1}", Username, Temporary1)
-                disabledList.Add(Username, Temporary2)
-                Wdbg("I", "Added {0} to Disabled List with value of {1}", Username, Temporary2)
-            End If
-        Catch ex As Exception
-            If DebugMode = True Then
-                W(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace)
-                WStkTrc(ex)
-            Else
-                W(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message)
-            End If
-        End Try
-
-    End Sub
-
-    ''' <summary>
-    ''' Initializes permissions for a new user with default settings
-    ''' </summary>
-    ''' <param name="NewUser">A new user name</param>
-    Public Sub InitPermissionsForNewUser(ByVal NewUser As String)
-        Try
-            'Initialize permissions locally
-            If Not adminList.ContainsKey(NewUser) Then adminList.Add(NewUser, False)
-            If Not disabledList.ContainsKey(NewUser) Then disabledList.Add(NewUser, False)
-
-            'Initialize permissions globally
-            Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-            For i As Integer = 0 To UsersLines.Count - 1
-                If UsersLines(i).StartsWith($"{NewUser},") And UsersLines(i).AllIndexesOf(",").Count = 1 Then
-                    UsersLines(i) = UsersLines(i) + ",False,False"
-                    Exit For
-                End If
-            Next
-            File.WriteAllLines(paths("Users"), UsersLines)
-        Catch ex As Exception
-            W(DoTranslation("Failed to initialize permissions for user {0}: {1}", currentLang), True, ColTypes.Err, NewUser, ex.Message)
-            WStkTrc(ex)
-        End Try
-    End Sub
-
-    ''' <summary>
-    ''' Loads permissions for all users
-    ''' </summary>
-    Public Sub LoadPermissions()
-        Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-        Dim UserLine() As String = {}
-        For i As Integer = 0 To UsersLines.Count - 1
-            UserLine = UsersLines(i).Split(",")
-            Dim UserName As String = UserLine(0)
-            Dim AdminEnabled As String = UserLine(2)
-            Dim UserDisabled As String = UserLine(3)
-            adminList(UserName) = CType(AdminEnabled, Boolean)
-            disabledList(UserName) = CType(UserDisabled, Boolean)
-        Next
-        File.WriteAllLines(paths("Users"), UsersLines)
     End Sub
 
 End Module

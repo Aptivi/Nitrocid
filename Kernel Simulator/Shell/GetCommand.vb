@@ -103,10 +103,12 @@ Public Module GetCommand
 
                 If requestedCommand <> "adduser" Then
                     If args.Count - 1 = 0 Then
+                        W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, ColTypes.Neutral, args(0))
                         AddUser(args(0))
                         Done = True
                     ElseIf args.Count - 1 >= 2 Then
                         If args(1) = args(2) Then
+                            W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, ColTypes.Neutral, args(0))
                             AddUser(args(0), args(1))
                             Done = True
                         Else
@@ -358,6 +360,7 @@ Public Module GetCommand
                 If requestedCommand <> "chusrname" Then
                     If args.Count - 1 >= 1 Then
                         ChangeUsername(args(0), args(1))
+                        W(DoTranslation("Username has been changed to {0}!", currentLang), True, ColTypes.Neutral, args(1))
                         If args(0) = signedinusrnm Then
                             LogoutRequested = True
                         End If
@@ -775,7 +778,8 @@ Public Module GetCommand
 
                 If requestedCommand <> "rmuser" Then
                     If args.Count - 1 >= 0 Then
-                        RemoveUserFromDatabase(args(0))
+                        RemoveUser(args(0))
+                        W(DoTranslation("User {0} removed.", currentLang), True, ColTypes.Neutral, args(0))
                         Done = True
                     End If
                 End If

@@ -1067,4 +1067,52 @@ Public Class EventsAndExceptions
         End Sub
     End Class
 
+    ''' <summary>
+    ''' Thrown when there is a user creation error
+    ''' </summary>
+    Public Class UserCreationException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when there is a user management error
+    ''' </summary>
+    Public Class UserManagementException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when there is a user management error
+    ''' </summary>
+    Public Class PermissionManagementException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
 End Class

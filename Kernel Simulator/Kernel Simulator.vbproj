@@ -245,6 +245,7 @@
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Languages\Translate.vb" />
+    <Compile Include="Login\PermissionManagement.vb" />
     <Compile Include="Misc\Calculation\Calc.vb" />
     <Compile Include="Misc\Configuration\ConfigTool\ToolPrompts.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
