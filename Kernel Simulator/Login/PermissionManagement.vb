@@ -18,6 +18,7 @@
 
 Imports System.IO
 
+'TODO: Add unit tests
 Public Module PermissionManagement
 
     ''' <summary>

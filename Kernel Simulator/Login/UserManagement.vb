@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Text.RegularExpressions
 
+'TODO: Add unit tests
 Public Module UserManagement
 
     'Variables
