@@ -143,7 +143,7 @@ Public Module Filesystem
     ''' <returns>Absolute path</returns>
     Public Function NeutralizePath(ByVal Path As String)
         Path = Path.Replace("\", "/")
-        If (EnvironmentOSType.Contains("Windows") And Not Path.Contains(":/")) Or EnvironmentOSType.Contains("Unix") Then
+        If (EnvironmentOSType.Contains("Windows") And Not Path.Contains(":/")) Or (EnvironmentOSType.Contains("Unix") And Not Path.StartsWith("/")) Then
             Path = $"{CurrDir}/{Path}"
         End If
         Wdbg("I", "Prototype directory: {0}", Path)
