@@ -19,7 +19,6 @@
 Imports System.IO
 Imports System.Text.RegularExpressions
 
-'TODO: Add unit tests
 Public Module UserManagement
 
     'Variables
@@ -224,6 +223,7 @@ Public Module UserManagement
                         End If
                     Next
                     File.WriteAllLines(paths("Users"), UsersLines)
+                    Return True
                 Catch ex As Exception
                     WStkTrc(ex)
                     Throw New EventsAndExceptions.UserManagementException(DoTranslation("Failed to rename user. {0}", currentLang).FormatString(ex.Message))
