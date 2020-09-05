@@ -54,4 +54,33 @@ Public Module Commands
         End While
     End Sub
 
+    ''' <summary>
+    ''' Prompts user for input (answer the question with your own answers)
+    ''' </summary>
+    ''' <param name="ScriptVariable">An $variable</param>
+    Public Sub PromptInput(ByVal Question As String, ByVal ScriptVariable As String)
+        While True
+            'Variables
+            Dim Answer As String
+            Wdbg("I", "Script var: {0} ({1}), Question: {2}", ScriptVariable, ScriptVariables.ContainsKey(ScriptVariable), Question)
+
+            'Ask a question
+            W(Question, False, ColTypes.Input)
+
+            'Wait for an answer
+            Answer = Console.ReadLine
+            Wdbg("I", "Answer: {0}", Answer)
+
+            'Check if script variable is initialized. If not, exits the program.
+            If ScriptVariables.ContainsKey(ScriptVariable) Then
+                Wdbg("I", "Variable found. Setting {0} to {1}...", ScriptVariable, Answer)
+                SetVariable(ScriptVariable, Answer)
+                Exit While
+            Else
+                Wdbg("W", "Variable {0} not found.", ScriptVariable)
+                Exit While
+            End If
+        End While
+    End Sub
+
 End Module
