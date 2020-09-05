@@ -259,4 +259,43 @@ Public Module Filesystem
         Return False
     End Function
 
+    ''' <summary>
+    ''' Moves a file or directory
+    ''' </summary>
+    ''' <param name="Source">Source file or directory</param>
+    ''' <param name="Destination">Target file or directory</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="IOException"></exception>
+    Public Function MoveFileOrDir(ByVal Source As String, ByVal Destination As String) As Boolean
+        Try
+            Source = NeutralizePath(Source)
+            Wdbg("I", "Source directory: {0}", Source)
+            Destination = NeutralizePath(Destination)
+            Wdbg("I", "Target directory: {0}", Destination)
+            Dim FileName As String = Path.GetFileName(Source)
+            Wdbg("I", "Source file name: {0}", FileName)
+            If Directory.Exists(Source) Then
+                Wdbg("I", "Source and destination are directories")
+                Directory.Move(Source, Destination)
+                Return True
+            ElseIf File.Exists(Source) And Directory.Exists(Destination) Then
+                Wdbg("I", "Source is a file and destination is a directory")
+                File.Move(Source, Destination + "/" + FileName)
+                Return True
+            ElseIf File.Exists(Source) Then
+                Wdbg("I", "Source is a file and destination is a file")
+                File.Move(Source, Destination)
+                Return True
+            Else
+                Wdbg("E", "Source or destination are invalid.")
+                Throw New IOException(DoTranslation("The path is neither a file nor a directory.", currentLang))
+            End If
+        Catch ex As Exception
+            Wdbg("E", "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message)
+            WStkTrc(ex)
+            Throw New IOException(DoTranslation("Failed to move file or directory: {0}", currentLang).FormatString(ex.Message))
+        End Try
+        Return False
+    End Function
+
 End Module

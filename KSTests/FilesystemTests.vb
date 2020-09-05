@@ -117,4 +117,38 @@ Imports KS
         Assert.IsTrue(MakeFile("/NewFile.txt"), "Failed to create new file. Expected True, got False.")
     End Sub
 
+    ''' <summary>
+    ''' Tests moving directory to directory
+    ''' </summary>
+    <TestMethod()> Public Sub TestMoveDirectoryToDirectory()
+        InitPaths()
+        CurrDir = paths("Home")
+        IO.Directory.CreateDirectory(paths("Home") + "/TestDir")
+        Dim SourcePath As String = "/TestDir"
+        Dim TargetPath As String = "/TestDir2"
+        Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move directory ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+    End Sub
+
+    ''' <summary>
+    ''' Tests moving file to directory
+    ''' </summary>
+    <TestMethod()> Public Sub TestMoveFileToDirectory()
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
+        Dim TargetPath As String = "/Documents"
+        Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move file ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+    End Sub
+
+    ''' <summary>
+    ''' Tests moving file to file
+    ''' </summary>
+    <TestMethod()> Public Sub TestMoveFileToFile()
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim SourcePath As String = "/Documents/TestText.txt"
+        Dim TargetPath As String = IO.Path.GetFullPath("TestText.txt")
+        Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move file ""{0}"" to file ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+    End Sub
+
 End Class

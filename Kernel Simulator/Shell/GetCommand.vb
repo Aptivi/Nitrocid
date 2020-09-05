@@ -567,18 +567,7 @@ Public Module GetCommand
             ElseIf words(0) = "move" Then
 
                 If eqargs?.Length >= 2 Then
-                    Dim source As String = NeutralizePath(eqargs(0))
-                    Dim target As String = NeutralizePath(eqargs(1))
-                    Dim filesrc As String = Path.GetFileName(source)
-                    If Directory.Exists(source) And Directory.Exists(target) Then
-                        Directory.Move(source, target + "/" + filesrc)
-                    ElseIf File.Exists(source) And Directory.Exists(target) Then
-                        File.Move(source, target + "/" + filesrc)
-                    ElseIf File.Exists(source) And Not File.Exists(target) Then
-                        File.Move(source, target)
-                    Else
-                        W(DoTranslation("The path is neither a file nor a directory.", currentLang), True, ColTypes.Err)
-                    End If
+                    MoveFileOrDir(eqargs(0), eqargs(1))
                     Done = True
                 End If
 
