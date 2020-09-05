@@ -215,6 +215,12 @@ Public Module Filesystem
         Return False
     End Function
 
+    ''' <summary>
+    ''' Makes a directory
+    ''' </summary>
+    ''' <param name="NewDirectory">New directory</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="IOException"></exception>
     Public Function MakeDirectory(ByVal NewDirectory As String) As Boolean
         NewDirectory = NeutralizePath(NewDirectory)
         Wdbg("I", "New directory: {0} ({1})", NewDirectory, Directory.Exists(NewDirectory))
@@ -223,6 +229,32 @@ Public Module Filesystem
             Return True
         Else
             Throw New IOException(DoTranslation("Directory {0} already exists.", currentLang).FormatString(NewDirectory))
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Makes a file
+    ''' </summary>
+    ''' <param name="NewFile">New file</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="IOException"></exception>
+    Public Function MakeFile(ByVal NewFile As String) As Boolean
+        NewFile = NeutralizePath(NewFile)
+        Wdbg("I", "File path is {0} and .Exists is {0}", NewFile, File.Exists(NewFile))
+        If Not File.Exists(NewFile) Then
+            Try
+                Dim NewFileStream As FileStream = File.Create(NewFile)
+                Wdbg("I", "File created")
+                NewFileStream.Close()
+                Wdbg("I", "File closed")
+                Return True
+            Catch ex As Exception
+                WStkTrc(ex)
+                Throw New IOException(DoTranslation("Error trying to create a file: {0}", currentLang).FormatString(ex.Message))
+            End Try
+        Else
+            Throw New IOException(DoTranslation("File already exists.", currentLang))
         End If
         Return False
     End Function

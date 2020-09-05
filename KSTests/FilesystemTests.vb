@@ -89,7 +89,7 @@ Imports KS
     End Sub
 
     ''' <summary>
-    ''' Tests copying file to file
+    ''' Tests setting size parse mode
     ''' </summary>
     <TestMethod()> Public Sub TestSetSizeParseMode()
         InitPaths()
@@ -100,12 +100,21 @@ Imports KS
     End Sub
 
     ''' <summary>
-    ''' Tests copying file to file
+    ''' Tests making directory
     ''' </summary>
     <TestMethod()> Public Sub TestMakeDirectory()
         InitPaths()
         CurrDir = paths("Home")
-        Assert.IsTrue(MakeDirectory("/NewDirectory"), "Failed to set size parse mode to True. Expected True, got False.")
+        Assert.IsTrue(MakeDirectory("/NewDirectory"), "Failed to create new directory. Expected True, got False.")
+    End Sub
+
+    ''' <summary>
+    ''' Tests making file
+    ''' </summary>
+    <TestMethod()> Public Sub TestMakeFile()
+        InitPaths()
+        CurrDir = paths("Home")
+        Assert.IsTrue(MakeFile("/NewFile.txt"), "Failed to create new file. Expected True, got False.")
     End Sub
 
 End Class

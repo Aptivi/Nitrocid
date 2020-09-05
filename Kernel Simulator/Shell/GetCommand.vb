@@ -553,33 +553,14 @@ Public Module GetCommand
 
                 If args.Count > 0 Then
                     'Create directory
-                    Dim direct As String = NeutralizePath(strArgs)
-                    If Not Directory.Exists(direct) Then
-                        Directory.CreateDirectory(direct)
-                    Else
-                        W(DoTranslation("Directory {0} already exists.", currentLang), True, ColTypes.Err, direct)
-                    End If
+                    MakeDirectory(strArgs)
                     Done = True
                 End If
 
             ElseIf words(0) = "mkfile" Then
 
                 If eqargs?.Length >= 1 Then
-                    eqargs(0) = NeutralizePath(eqargs(0))
-                    Wdbg("I", "File path is {0} and .Exists is {0}", eqargs(0), File.Exists(eqargs(0)))
-                    If Not File.Exists(eqargs(0)) Then
-                        Try
-                            Dim NewFile As FileStream = File.Create(eqargs(0))
-                            Wdbg("I", "File created")
-                            NewFile.Close()
-                            Wdbg("I", "File closed")
-                        Catch ex As Exception
-                            W(DoTranslation("Error trying to create a file: {0}", currentLang), True, ColTypes.Err, ex.Message)
-                            WStkTrc(ex)
-                        End Try
-                    Else
-                        W(DoTranslation("File already exists.", currentLang), True, ColTypes.Err)
-                    End If
+                    MakeFile(eqargs(0))
                     Done = True
                 End If
 
