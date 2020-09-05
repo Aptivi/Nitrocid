@@ -29,8 +29,6 @@ Imports KS
         InitPaths()
         Dim ExpectedTemplates As New List(Of String)
         Dim ActualTemplates As New List(Of String)
-        Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
-        If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
         ExpectedTemplates.AddRange(colorTemplates)
         For Each Template As String In colorTemplates
             TemplateSet(Template)

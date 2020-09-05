@@ -229,16 +229,12 @@ Imports KS
 
     <TestMethod()> Public Sub TestSetDefaultScreensaver()
         InitPaths()
-        Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
-        If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
         SetDefaultScreensaver("matrix")
         Assert.IsTrue(ScrnSvrdb("matrix"), "Setting screensaver defaults failed. Expected True, got {0}", ScrnSvrdb("matrix"))
     End Sub
 
     <TestMethod()> Public Sub TestUnsetDefaultScreensaver()
         InitPaths()
-        Dim PathToTestConfig As String = Path.GetFullPath("TestConfig.ini")
-        If Not File.Exists(paths("Configuration")) Then File.Copy(PathToTestConfig, paths("Configuration"))
         SetDefaultScreensaver("matrix", False)
         Assert.IsFalse(ScrnSvrdb("matrix"), "Setting screensaver defaults failed. Expected False, got {0}", ScrnSvrdb("matrix"))
     End Sub
