@@ -506,18 +506,9 @@ Public Module GetCommand
 
                 If Not args.Count = 0 Then
                     Done = True
-                    Try
-                        FullParseMode = args(0)
-                        Dim ksconf As New IniFile()
-                        Dim pathConfig As String = paths("Configuration")
-                        ksconf.Load(pathConfig)
-                        ksconf.Sections("Misc").Keys("Size parse mode").Value = FullParseMode
-                        ksconf.Save(pathConfig)
+                    If SetSizeParseMode(args(0)) Then
                         W(DoTranslation("Set successfully.", currentLang), True, ColTypes.Neutral)
-                    Catch ex As Exception
-                        W(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.", currentLang), True, ColTypes.Err)
-                        WStkTrc(ex)
-                    End Try
+                    End If
                 End If
 
             ElseIf words(0) = "lsmail" Then

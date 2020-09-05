@@ -88,4 +88,15 @@ Imports KS
         Assert.IsTrue(CopyFileOrDir(SourcePath, TargetPath), "Failed to copy file ""{0}"" to file ""{1}"". Expected True, got False.", SourcePath, TargetPath)
     End Sub
 
+    ''' <summary>
+    ''' Tests copying file to file
+    ''' </summary>
+    <TestMethod()> Public Sub TestSetSizeParseMode()
+        InitPaths()
+        Assert.IsTrue(SetSizeParseMode(True), "Failed to set size parse mode to True. Expected True, got False.")
+        Assert.IsTrue(SetSizeParseMode(False), "Failed to set size parse mode to False. Expected True, got False.")
+        Assert.IsTrue(SetSizeParseMode(1), "Failed to set size parse mode to True using ""1"". Expected True, got False.")
+        Assert.IsTrue(SetSizeParseMode(0), "Failed to set size parse mode to False using ""0"". Expected True, got False.")
+    End Sub
+
 End Class

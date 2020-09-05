@@ -193,4 +193,26 @@ Public Module Filesystem
         Return False
     End Function
 
+    ''' <summary>
+    ''' Set size parse mode (whether to enable full size parse for directories or just the surface)
+    ''' </summary>
+    ''' <param name="Enable">To enable or to disable</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="IOException"></exception>
+    Public Function SetSizeParseMode(ByVal Enable As Boolean)
+        Try
+            FullParseMode = Enable
+            Dim ksconf As New IniFile()
+            Dim pathConfig As String = paths("Configuration")
+            ksconf.Load(pathConfig)
+            ksconf.Sections("Misc").Keys("Size parse mode").Value = FullParseMode
+            ksconf.Save(pathConfig)
+            Return True
+        Catch ex As Exception
+            Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.", currentLang))
+            WStkTrc(ex)
+        End Try
+        Return False
+    End Function
+
 End Module
