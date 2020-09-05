@@ -50,8 +50,42 @@ Imports KS
         InitPaths()
         CurrDir = paths("Home")
         Dim Path As String = paths("Home") + "/Documents"
-        Assert.IsTrue(SetCurrDir(Path))
+        Assert.IsTrue(SetCurrDir(Path), "Failed to set current path. Expected True, got False.")
         Assert.AreEqual(Path, CurrDir, "Current path is not properly set. Expected {0}, got {1}", Path, CurrDir)
+    End Sub
+
+    ''' <summary>
+    ''' Tests copying directory to directory
+    ''' </summary>
+    <TestMethod()> Public Sub TestCopyDirectoryToDirectory()
+        InitPaths()
+        CurrDir = paths("Home")
+        IO.Directory.CreateDirectory(paths("Home") + "/TestDir")
+        Dim SourcePath As String = "/TestDir"
+        Dim TargetPath As String = "/TestDir2"
+        Assert.IsTrue(CopyFileOrDir(SourcePath, TargetPath), "Failed to copy directory ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+    End Sub
+
+    ''' <summary>
+    ''' Tests copying file to directory
+    ''' </summary>
+    <TestMethod()> Public Sub TestCopyFileToDirectory()
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
+        Dim TargetPath As String = "/Documents"
+        Assert.IsTrue(CopyFileOrDir(SourcePath, TargetPath), "Failed to copy file ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+    End Sub
+
+    ''' <summary>
+    ''' Tests copying file to file
+    ''' </summary>
+    <TestMethod()> Public Sub TestCopyFileToFile()
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
+        Dim TargetPath As String = "/Documents/Text.txt"
+        Assert.IsTrue(CopyFileOrDir(SourcePath, TargetPath), "Failed to copy file ""{0}"" to file ""{1}"". Expected True, got False.", SourcePath, TargetPath)
     End Sub
 
 End Class

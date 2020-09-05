@@ -252,12 +252,7 @@ Public Module GetCommand
                     Else
                         Done = True
                         W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, HName, words(1))
-                        HName = words(1)
-                        Dim ksconf As New IniFile()
-                        Dim pathConfig As String = paths("Configuration")
-                        ksconf.Load(pathConfig)
-                        ksconf.Sections("Login").Keys("Host Name").Value = HName
-                        ksconf.Save(pathConfig)
+                        ChangeHostname(words(1))
                     End If
                 End If
 
@@ -295,33 +290,7 @@ Public Module GetCommand
             ElseIf words(0) = "choice" Then
 
                 If args.Count > 2 Then
-                    While True
-                        'Variables
-                        Dim question As String = strArgs.Replace(args(0) + " " + args(1) + " ", "")
-                        Dim answers As String()
-                        Dim answer As String
-                        Wdbg("I", "Removed ""{0} {1} "" from strArgs. Result: {2}", args(0), args(1), question)
-
-                        'Ask a question
-                        W(question, True, ColTypes.Neutral)
-                        W("<{0}> ", False, ColTypes.Input, args(1))
-                        answers = args(1).Split("/")
-
-                        'Wait for an answer
-                        answer = Console.ReadKey.KeyChar
-                        Console.WriteLine()
-
-                        'Check if script variable is initialized. If not, exits the program.
-                        If ScriptVariables.ContainsKey(args(0)) Then
-                            'Check if answer if correct.
-                            If answers.Contains(answer) Then
-                                SetVariable(args(0), answer)
-                                Exit While
-                            End If
-                        Else
-                            Exit While
-                        End If
-                    End While
+                    PromptChoice(strArgs, args(0), args(1))
                     Done = True
                 End If
 
@@ -333,22 +302,12 @@ Public Module GetCommand
                             If InStr(eargs(3), " ") > 0 Then
                                 W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Err)
                             ElseIf eargs(3) = eargs(2) Then
-                                eargs(1) = GetEncryptedString(eargs(1), Algorithms.SHA256)
-                                If eargs(1) = userword(eargs(0)) Then
-                                    If adminList(signedinusrnm) Then
-                                        eargs(2) = GetEncryptedString(eargs(2), Algorithms.SHA256)
-                                        userword.Item(eargs(0)) = eargs(2)
-                                    ElseIf adminList(eargs(0)) And Not adminList(signedinusrnm) Then
-                                        W(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang), True, ColTypes.Err, eargs(0))
-                                    End If
-                                Else
-                                    W(DoTranslation("Wrong user password.", currentLang), True, ColTypes.Err)
-                                End If
+                                ChangePassword(eargs(0), eargs(1), eargs(2))
                             ElseIf eargs(3) <> eargs(2) Then
                                 W(DoTranslation("Passwords doesn't match.", currentLang), True, ColTypes.Err)
                             End If
-                        Catch ex As KeyNotFoundException
-                            W(DoTranslation("Username is wrong", currentLang), True, ColTypes.Err)
+                        Catch ex As Exception
+                            W(DoTranslation("Failed to change password of username: {0}", currentLang), True, ColTypes.Err, ex.Message)
                             WStkTrc(ex)
                         End Try
                         Done = True
@@ -375,18 +334,7 @@ Public Module GetCommand
             ElseIf words(0) = "copy" Then
 
                 If eqargs?.Length >= 2 Then
-                    Dim source As String = NeutralizePath(eqargs(0))
-                    Dim target As String = NeutralizePath(eqargs(1))
-                    Dim filesrc As String = Path.GetFileName(source)
-                    If Directory.Exists(source) And Directory.Exists(target) Then
-                        FileIO.FileSystem.CopyDirectory(source, target + "/" + filesrc)
-                    ElseIf File.Exists(source) And Directory.Exists(target) Then
-                        FileIO.FileSystem.CopyFile(source, target + "/" + filesrc)
-                    ElseIf File.Exists(source) Then
-                        FileIO.FileSystem.CopyFile(source, target)
-                    Else
-                        W(DoTranslation("The path is neither a file nor a directory.", currentLang), True, ColTypes.Err)
-                    End If
+                    CopyFileOrDir(eqargs(0), eqargs(1))
                     Done = True
                 End If
 

@@ -251,4 +251,41 @@ Public Module UserManagement
         Permission(PermissionType.Administrator, "root", PermissionManagementMode.Allow)
     End Sub
 
+    ''' <summary>
+    ''' Changes user password
+    ''' </summary>
+    ''' <param name="Target">Tareget username</param>
+    ''' <param name="CurrentPass">Current user password</param>
+    ''' <param name="NewPass">New user password</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="EventsAndExceptions.UserManagementException"></exception>
+    Public Function ChangePassword(ByVal Target As String, ByVal CurrentPass As String, ByVal NewPass As String)
+        CurrentPass = GetEncryptedString(CurrentPass, Algorithms.SHA256)
+        If CurrentPass = userword(Target) Then
+            If adminList(signedinusrnm) And userword.ContainsKey(Target) Then
+                'Change password locally
+                NewPass = GetEncryptedString(NewPass, Algorithms.SHA256)
+                userword.Item(Target) = NewPass
+
+                'Change password globally
+                Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+                For i As Integer = 0 To UsersLines.Count - 1
+                    If UsersLines(i).StartsWith($"{Target},") Then
+                        UsersLines(i) = UsersLines(i).Replace(CurrentPass, NewPass)
+                        Exit For
+                    End If
+                Next
+                File.WriteAllLines(paths("Users"), UsersLines)
+                Return True
+            ElseIf adminList(signedinusrnm) And Not userword.ContainsKey(Target) Then
+                Throw New EventsAndExceptions.UserManagementException(DoTranslation("User not found", currentLang))
+            ElseIf adminList(Target) And Not adminList(signedinusrnm) Then
+                Throw New EventsAndExceptions.UserManagementException(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang).FormatString(Target))
+            End If
+        Else
+            Throw New EventsAndExceptions.UserManagementException(DoTranslation("Wrong user password.", currentLang))
+        End If
+        Return False
+    End Function
+
 End Module

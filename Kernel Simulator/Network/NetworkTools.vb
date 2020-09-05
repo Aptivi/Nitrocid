@@ -196,4 +196,26 @@ Public Module NetworkTools
         End If
     End Sub
 
+    ''' <summary>
+    ''' Changes host name
+    ''' </summary>
+    ''' <param name="NewHost">New host name</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function ChangeHostname(ByVal NewHost As String) As Boolean
+        Try
+            HName = NewHost
+            Dim ksconf As New IniFile()
+            Dim pathConfig As String = paths("Configuration")
+            ksconf.Load(pathConfig)
+            ksconf.Sections("Login").Keys("Host Name").Value = HName
+            ksconf.Save(pathConfig)
+            Return True
+        Catch ex As Exception
+            WStkTrc(ex)
+            Wdbg("E", "Failed to change hostname: {0}", ex.Message)
+            Throw New EventsAndExceptions.HostnameException(DoTranslation("Failed to change host name: {0}", currentLang).FormatString(ex.Message))
+        End Try
+        Return False
+    End Function
+
 End Module

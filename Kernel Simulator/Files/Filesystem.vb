@@ -154,4 +154,43 @@ Public Module Filesystem
         Return Path
     End Function
 
+    ''' <summary>
+    ''' Copies a file or directory
+    ''' </summary>
+    ''' <param name="Source">Source file or directory</param>
+    ''' <param name="Destination">Target file or directory</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="IOException"></exception>
+    Public Function CopyFileOrDir(ByVal Source As String, ByVal Destination As String)
+        Try
+            Source = NeutralizePath(Source)
+            Wdbg("I", "Source directory: {0}", Source)
+            Destination = NeutralizePath(Destination)
+            Wdbg("I", "Target directory: {0}", Destination)
+            Dim FileName As String = Path.GetFileName(Source)
+            Wdbg("I", "Source file name: {0}", FileName)
+            If Directory.Exists(Source) Then
+                Wdbg("I", "Source and destination are directories")
+                FileIO.FileSystem.CopyDirectory(Source, Destination, True) 'There is no IO.Directory.Copy yet.
+                Return True
+            ElseIf File.Exists(Source) And Directory.Exists(Destination) Then
+                Wdbg("I", "Source is a file and destination is a directory")
+                File.Copy(Source, Destination + "/" + FileName, True)
+                Return True
+            ElseIf File.Exists(Source) Then
+                Wdbg("I", "Source is a file and destination is a file")
+                File.Copy(Source, Destination, True)
+                Return True
+            Else
+                Wdbg("E", "Source or destination are invalid.")
+                Throw New IOException(DoTranslation("The path is neither a file nor a directory.", currentLang))
+            End If
+        Catch ex As Exception
+            Wdbg("E", "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message)
+            WStkTrc(ex)
+            Throw New IOException(DoTranslation("Failed to copy file or directory: {0}", currentLang).FormatString(ex.Message))
+        End Try
+        Return False
+    End Function
+
 End Module
