@@ -157,32 +157,6 @@ Module RemoteDebugger
     End Sub
 
     ''' <summary>
-    ''' Disconnects a specified debug device
-    ''' </summary>
-    ''' <param name="IPAddr">An IP address of the connected debug device</param>
-    Sub DisconnectDbgDev(ByVal IPAddr As String, ByVal CmdLine As Boolean)
-        Dim Found As Boolean
-        For i As Integer = 0 To DebugDevices.Count - 1
-            If Found Then
-                Exit Sub
-            Else
-                If IPAddr = DebugDevices.Values(i) Then
-                    Wdbg("I", "Debug device {0} disconnected.", DebugDevices.Values(i))
-                    Found = True
-                    DebugDevices.Keys(i).Disconnect(True)
-                    EventManager.RaiseRemoteDebugConnectionDisconnected()
-                    dbgConns.Remove(dbgConns.Keys(i))
-                    DebugDevices.Remove(DebugDevices.Keys(i))
-                    If CmdLine Then W(DoTranslation("Device {0} disconnected.", currentLang), True, ColTypes.Neutral, IPAddr)
-                End If
-            End If
-        Next
-        If Not Found Then
-            W(DoTranslation("Debug device {0} not found.", currentLang), True, ColTypes.Err, IPAddr)
-        End If
-    End Sub
-
-    ''' <summary>
     ''' Gets the index from an instance of StreamWriter
     ''' </summary>
     ''' <param name="SW">A stream writer</param>

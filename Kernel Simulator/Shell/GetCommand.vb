@@ -182,8 +182,7 @@ Public Module GetCommand
 
                 If requestedCommand <> "blockdbgdev" Then
                     If args.Count - 1 >= 0 Then
-                        DisconnectDbgDev(args(0), False)
-                        RDebugBlocked.Add(args(0))
+                        BlockDevice(args(0))
                         Done = True
                     End If
                 End If
@@ -361,7 +360,8 @@ Public Module GetCommand
 
                 If requestedCommand <> "disconndbgdev" Then
                     If args.Count - 1 >= 0 Then
-                        DisconnectDbgDev(args(0), True)
+                        DisconnectDbgDev(args(0))
+                        W(DoTranslation("Device {0} disconnected.", currentLang), True, ColTypes.Neutral, args(0))
                         Done = True
                     End If
                 End If
@@ -929,7 +929,7 @@ Public Module GetCommand
 
                 If requestedCommand <> "unblockdbgdev" Then
                     If args.Count - 1 >= 0 Then
-                        If RDebugBlocked.Remove(args(0)) Then
+                        If UnblockDevice(args(0)) Then
                             W(DoTranslation("{0} can now join remote debug again.", currentLang), True, ColTypes.Neutral, args(0))
                         Else
                             W(DoTranslation("{0} is not blocked yet.", currentLang), True, ColTypes.Neutral, args(0))

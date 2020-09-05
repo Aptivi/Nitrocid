@@ -58,7 +58,7 @@ Module RemoteDebugCmd
                                              "- /exit: " + DoTranslation("Disconnects you from the debugger", currentLang))
             ElseIf CmdName = "exit" Then
                 'Exit command code
-                DisconnectDbgDev(Address, False)
+                DisconnectDbgDev(Address)
             End If
         Catch ex As Exception
             SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}", currentLang), CmdName, ex.Message)
