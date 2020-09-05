@@ -99,4 +99,13 @@ Imports KS
         Assert.IsTrue(SetSizeParseMode(0), "Failed to set size parse mode to False using ""0"". Expected True, got False.")
     End Sub
 
+    ''' <summary>
+    ''' Tests copying file to file
+    ''' </summary>
+    <TestMethod()> Public Sub TestMakeDirectory()
+        InitPaths()
+        CurrDir = paths("Home")
+        Assert.IsTrue(MakeDirectory("/NewDirectory"), "Failed to set size parse mode to True. Expected True, got False.")
+    End Sub
+
 End Class

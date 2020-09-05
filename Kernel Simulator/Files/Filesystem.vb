@@ -161,7 +161,7 @@ Public Module Filesystem
     ''' <param name="Destination">Target file or directory</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="IOException"></exception>
-    Public Function CopyFileOrDir(ByVal Source As String, ByVal Destination As String)
+    Public Function CopyFileOrDir(ByVal Source As String, ByVal Destination As String) As Boolean
         Try
             Source = NeutralizePath(Source)
             Wdbg("I", "Source directory: {0}", Source)
@@ -199,7 +199,7 @@ Public Module Filesystem
     ''' <param name="Enable">To enable or to disable</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="IOException"></exception>
-    Public Function SetSizeParseMode(ByVal Enable As Boolean)
+    Public Function SetSizeParseMode(ByVal Enable As Boolean) As Boolean
         Try
             FullParseMode = Enable
             Dim ksconf As New IniFile()
@@ -212,6 +212,18 @@ Public Module Filesystem
             Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.", currentLang))
             WStkTrc(ex)
         End Try
+        Return False
+    End Function
+
+    Public Function MakeDirectory(ByVal NewDirectory As String) As Boolean
+        NewDirectory = NeutralizePath(NewDirectory)
+        Wdbg("I", "New directory: {0} ({1})", NewDirectory, Directory.Exists(NewDirectory))
+        If Not Directory.Exists(NewDirectory) Then
+            Directory.CreateDirectory(NewDirectory)
+            Return True
+        Else
+            Throw New IOException(DoTranslation("Directory {0} already exists.", currentLang).FormatString(NewDirectory))
+        End If
         Return False
     End Function
 
