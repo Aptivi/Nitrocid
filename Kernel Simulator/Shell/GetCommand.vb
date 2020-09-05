@@ -584,9 +584,7 @@ Public Module GetCommand
 
                 'Reload configuration
                 Done = True
-                EventManager.RaisePreReloadConfig()
-                InitializeConfig()
-                EventManager.RaisePostReloadConfig()
+                ReloadConfig()
                 W(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", currentLang), True, ColTypes.Neutral)
 
             ElseIf words(0) = "reboot" Then

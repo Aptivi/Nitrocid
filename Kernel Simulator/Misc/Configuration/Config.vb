@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports Org.BouncyCastle.Asn1.Eac
 
 Public Module Config
 
@@ -404,6 +405,23 @@ Public Module Config
             WStkTrc(ex)
             NotifyConfigError = True
             Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}.", currentLang).FormatString(ex.Message))
+        End Try
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Reloads config
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function ReloadConfig() As Boolean
+        Try
+            EventManager.RaisePreReloadConfig()
+            InitializeConfig()
+            EventManager.RaisePostReloadConfig()
+            Return True
+        Catch ex As Exception
+            Wdbg("E", "Failed to reload config: {0}", ex.Message)
+            WStkTrc(ex)
         End Try
         Return False
     End Function
