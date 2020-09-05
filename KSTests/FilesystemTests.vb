@@ -123,9 +123,9 @@ Imports KS
     <TestMethod()> Public Sub TestMoveDirectoryToDirectory()
         InitPaths()
         CurrDir = paths("Home")
-        IO.Directory.CreateDirectory(paths("Home") + "/TestDir")
-        Dim SourcePath As String = "/TestDir"
-        Dim TargetPath As String = "/TestDir2"
+        IO.Directory.CreateDirectory(paths("Home") + "/TestMovedDir")
+        Dim SourcePath As String = "/TestMovedDir"
+        Dim TargetPath As String = "/TestMovedDir2"
         Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move directory ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
     End Sub
 
@@ -135,7 +135,7 @@ Imports KS
     <TestMethod()> Public Sub TestMoveFileToDirectory()
         InitPaths()
         CurrDir = paths("Home")
-        Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
+        Dim SourcePath As String = IO.Path.GetFullPath("TestSynth.txt")
         Dim TargetPath As String = "/Documents"
         Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move file ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
     End Sub
@@ -146,9 +146,19 @@ Imports KS
     <TestMethod()> Public Sub TestMoveFileToFile()
         InitPaths()
         CurrDir = paths("Home")
-        Dim SourcePath As String = "/Documents/TestText.txt"
-        Dim TargetPath As String = IO.Path.GetFullPath("TestText.txt")
+        Dim SourcePath As String = "/Documents/TestSynth.txt"
+        Dim TargetPath As String = IO.Path.GetFullPath("TestSynth.txt")
         Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move file ""{0}"" to file ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+    End Sub
+
+    ''' <summary>
+    ''' Tests removing directory
+    ''' </summary>
+    <TestMethod()> Public Sub TestRemoveDirectory()
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim TargetPath As String = "/TestDir2"
+        Assert.IsTrue(RemoveDirectory(TargetPath), "Failed to remove directory ""{0}"". Expected True, got False.", TargetPath)
     End Sub
 
 End Class

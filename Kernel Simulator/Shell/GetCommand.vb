@@ -639,13 +639,7 @@ Public Module GetCommand
             ElseIf words(0) = "rd" Then
 
                 If args.Count - 1 >= 0 Then
-                    Try
-                        Dim Dir As String = NeutralizePath(strArgs)
-                        Directory.Delete(Dir, True)
-                    Catch ex As Exception
-                        W(DoTranslation("Unable to remove directory: {0}", currentLang), True, ColTypes.Err, ex.Message)
-                        WStkTrc(ex)
-                    End Try
+                    RemoveDirectory(strArgs)
                     Done = True
                 End If
 

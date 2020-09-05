@@ -209,7 +209,7 @@ Public Module Filesystem
             ksconf.Save(pathConfig)
             Return True
         Catch ex As Exception
-            Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.", currentLang))
+            Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.", currentLang) + " " + ex.Message)
             WStkTrc(ex)
         End Try
         Return False
@@ -294,6 +294,23 @@ Public Module Filesystem
             Wdbg("E", "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message)
             WStkTrc(ex)
             Throw New IOException(DoTranslation("Failed to move file or directory: {0}", currentLang).FormatString(ex.Message))
+        End Try
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Removes a directory
+    ''' </summary>
+    ''' <param name="Target">Target directory</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function RemoveDirectory(ByVal Target As String) As Boolean
+        Try
+            Dim Dir As String = NeutralizePath(Target)
+            Directory.Delete(Dir, True)
+            Return True
+        Catch ex As Exception
+            WStkTrc(ex)
+            Throw New IOException(DoTranslation("Unable to remove directory: {0}", currentLang).FormatString(ex.Message))
         End Try
         Return False
     End Function
