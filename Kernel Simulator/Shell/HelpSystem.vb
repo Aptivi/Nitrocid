@@ -358,7 +358,7 @@ Public Module HelpSystem
 
         ElseIf command = "setcolors" Then
 
-            W(DoTranslation("Usage:", currentLang) + " setcolors <inputColor/def/RESET> <licenseColor/def/RESET> <contKernelErrorColor/def/RESET> <uncontKernelErrorColor/def/RESET> <hostNameShellColor/def/RESET> <userNameShellColor/def/RESET> <backgroundColor/def/RESET> <neutralTextColor/def/RESET> <cmdListColor/def/RESET> <cmdDefColor/def/RESET> <stageColor/def/RESET> <errorColor/def/RESET>" + vbNewLine +
+            W(DoTranslation("Usage:", currentLang) + " setcolors <inputColor/def> <licenseColor/def> <contKernelErrorColor/def> <uncontKernelErrorColor/def> <hostNameShellColor/def> <userNameShellColor/def> <backgroundColor/def> <neutralTextColor/def> <cmdListColor/def> <cmdDefColor/def> <stageColor/def> <errorColor/def>" + vbNewLine +
               "       " + DoTranslation("Friends of", currentLang) + " setcolors: setthemes", True, ColTypes.Neutral)
 
         ElseIf command = "setsaver" Then

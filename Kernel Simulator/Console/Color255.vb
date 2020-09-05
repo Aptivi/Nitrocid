@@ -309,6 +309,7 @@ Public Module Color255
         Grey85
         Grey89
         Grey93
+        def = 999
     End Enum
 
     ''' <summary>

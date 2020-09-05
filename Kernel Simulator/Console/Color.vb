@@ -662,4 +662,93 @@ Public Module Color
         End If
     End Sub
 
+    ''' <summary>
+    ''' Sets custom colors. It only works if colored shell is enabled.
+    ''' </summary>
+    ''' <param name="InputC">Input color</param>
+    ''' <param name="LicenseC">License color</param>
+    ''' <param name="ContKernelErrorC">Continuable kernel error color</param>
+    ''' <param name="UncontKernelErrorC">Uncontinuable kernel error color</param>
+    ''' <param name="HostNameC">Host name color</param>
+    ''' <param name="UserNameC">User name color</param>
+    ''' <param name="BackC">Background color</param>
+    ''' <param name="NeutralTextC">Neutral text color</param>
+    ''' <param name="CmdListC">Command list color</param>
+    ''' <param name="CmdDefC">Command definition color</param>
+    ''' <param name="StageC">Stage color</param>
+    ''' <param name="ErrorC">Error color</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="InvalidOperationException"></exception>
+    ''' <exception cref="EventsAndExceptions.ColorException"></exception>
+    Public Function SetColors(InputC As ConsoleColors, LicenseC As ConsoleColors, ContKernelErrorC As ConsoleColors,
+                              UncontKernelErrorC As ConsoleColors, HostNameC As ConsoleColors, UserNameC As ConsoleColors,
+                              BackC As ConsoleColors, NeutralTextC As ConsoleColors, CmdListC As ConsoleColors,
+                              CmdDefC As ConsoleColors, StageC As ConsoleColors, ErrorC As ConsoleColors) As Boolean
+        If ColoredShell = True Then
+            If InputC = ConsoleColors.def Then
+                InputC = ConsoleColors.White
+            End If
+            If LicenseC = ConsoleColors.def Then
+                LicenseC = ConsoleColors.White
+            End If
+            If ContKernelErrorC = ConsoleColors.def Then
+                ContKernelErrorC = ConsoleColors.Yellow
+            End If
+            If UncontKernelErrorC = ConsoleColors.def Then
+                UncontKernelErrorC = ConsoleColors.Red
+            End If
+            If HostNameC = ConsoleColors.def Then
+                HostNameC = ConsoleColors.DarkGreen
+            End If
+            If UserNameC = ConsoleColors.def Then
+                UserNameC = ConsoleColors.Green
+            End If
+            If BackC = ConsoleColors.def Then
+                BackC = ConsoleColors.Black
+                LoadBack()
+            End If
+            If NeutralTextC = ConsoleColors.def Then
+                NeutralTextC = ConsoleColors.Gray
+            End If
+            If CmdListC = ConsoleColors.def Then
+                CmdListC = ConsoleColors.DarkYellow
+            End If
+            If CmdDefC = ConsoleColors.def Then
+                CmdDefC = ConsoleColors.DarkGray
+            End If
+            If StageC = ConsoleColors.def Then
+                StageC = ConsoleColors.Green
+            End If
+            If ErrorC = ConsoleColors.def Then
+                ErrorC = ConsoleColors.Red
+            End If
+            If IsNumeric(InputC) And IsNumeric(LicenseC) And IsNumeric(ContKernelErrorC) And IsNumeric(UncontKernelErrorC) And IsNumeric(HostNameC) And
+               IsNumeric(UserNameC) And IsNumeric(BackC) And IsNumeric(NeutralTextC) And IsNumeric(CmdListC) And IsNumeric(CmdDefC) And
+               IsNumeric(StageC) And IsNumeric(ErrorC) And
+               InputC <= 255 And LicenseC <= 255 And ContKernelErrorC <= 255 And UncontKernelErrorC <= 255 And HostNameC <= 255 And UserNameC <= 255 And
+               BackC <= 255 And NeutralTextC <= 255 And CmdListC <= 255 And CmdDefC <= 255 And StageC <= 255 And ErrorC <= 255 Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColors), InputC), ConsoleColors)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), LicenseC), ConsoleColors)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ContKernelErrorC), ConsoleColors)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), UncontKernelErrorC), ConsoleColors)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), HostNameC), ConsoleColors)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), UserNameC), ConsoleColors)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), BackC), ConsoleColors)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), NeutralTextC), ConsoleColors)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), CmdListC), ConsoleColors)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), CmdDefC), ConsoleColors)
+                stageColor = CType([Enum].Parse(GetType(ConsoleColors), StageC), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), ErrorC), ConsoleColors)
+                LoadBack()
+                MakePermanent()
+                Return True
+            Else
+                Throw New EventsAndExceptions.ColorException(DoTranslation("One or more of the colors is invalid.", currentLang))
+            End If
+        Else
+            Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang))
+        End If
+        Return False
+    End Function
+
 End Module
