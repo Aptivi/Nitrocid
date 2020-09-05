@@ -20,29 +20,9 @@ Imports System.Threading
 
 Public Module FTPGetCommand
 
-    'Progress Bar Enabled
-    Dim progressFlag As Boolean = True
-    Dim ConsoleOriginalPosition_LEFT As Integer
-    Dim ConsoleOriginalPosition_TOP As Integer
-
     'FTP Client and thread
     Public ClientFTP As FtpClient
     Public FTPStartCommandThread As New Thread(AddressOf ExecuteCommand)
-
-    'To enable progress
-    Public Complete As New Action(Of FtpProgress)(Sub(percentage)
-                                                      'If the progress is not defined, disable progress bar
-                                                      If percentage.Progress < 0 Then
-                                                          progressFlag = False
-                                                      Else
-                                                          ConsoleOriginalPosition_LEFT = Console.CursorLeft
-                                                          ConsoleOriginalPosition_TOP = Console.CursorTop
-                                                          If progressFlag = True And percentage.Progress <> 100 Then
-                                                              W(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Neutral, FormatNumber(percentage.Progress, 1), percentage.ETA.Days, percentage.ETA.Hours, percentage.ETA.Minutes, percentage.ETA.Seconds, percentage.TransferSpeedToString)
-                                                          End If
-                                                          Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
-                                                      End If
-                                                  End Sub)
 
     ''' <summary>
     ''' Parses and executes the FTP command
@@ -147,24 +127,12 @@ Public Module FTPGetCommand
                 End If
             ElseIf words(0) = "download" Or words(0) = "get" Then
                 If cmd <> "download" Or cmd <> "get" Then
-                    If connected = True Then
-                        Try
-                            'Show a message to download
-                            EventManager.RaiseFTPPreDownload()
-                            W(DoTranslation("Downloading file {0}...", currentLang), False, ColTypes.Neutral, strArgs)
-
-                            'Try to download 3 times
-                            ClientFTP.DownloadFile($"{currDirect}/{strArgs}", strArgs, True, FtpVerify.Retry + FtpVerify.Throw, Complete)
-
-                            'Show a message that it's downloaded
-                            Console.WriteLine()
-                            W(DoTranslation("Downloaded file {0}.", currentLang), True, ColTypes.Neutral, strArgs)
-                        Catch ex As Exception
-                            W(DoTranslation("Download failed for file {0}: {1}", currentLang), True, ColTypes.Err, strArgs, ex.Message)
-                        End Try
-                        EventManager.RaiseFTPPostDownload()
+                    W(DoTranslation("Downloading file {0}...", currentLang), False, ColTypes.Neutral, strArgs)
+                    If FTPGetFile(strArgs) Then
+                        Console.WriteLine()
+                        W(DoTranslation("Downloaded file {0}.", currentLang), True, ColTypes.Neutral, strArgs)
                     Else
-                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
+                        W(DoTranslation("Download failed for file {0}.", currentLang), True, ColTypes.Err, strArgs)
                     End If
                 Else
                     W(DoTranslation("Enter a file to download to local directory.", currentLang), True, ColTypes.Err)
@@ -281,25 +249,15 @@ Public Module FTPGetCommand
                 End If
             ElseIf words(0) = "upload" Or words(0) = "put" Then
                 If cmd <> "upload" Or cmd <> "put" Then
-                    If connected = True Then
-                        EventManager.RaiseFTPPreUpload()
-                        W(DoTranslation("Uploading file {0}...", currentLang), True, ColTypes.Neutral, strArgs)
+                    W(DoTranslation("Uploading file {0}...", currentLang), True, ColTypes.Neutral, strArgs)
 
-                        'Begin the uploading process
-                        If ClientFTP.UploadFile($"{currDirect}/{strArgs}", strArgs, True, True, FtpVerify.Retry, Complete) Then
-                            Console.WriteLine()
-
-                            'Show a message
-                            W(vbNewLine + DoTranslation("Uploaded file {0}", currentLang), True, ColTypes.Neutral, strArgs)
-                        Else
-                            Console.WriteLine()
-
-                            'Show a message
-                            W(vbNewLine + DoTranslation("Failed to upload {0}", currentLang), True, ColTypes.Neutral, strArgs)
-                        End If
-                        EventManager.RaiseFTPPostUpload()
+                    'Begin the uploading process
+                    If FTPUploadFile(strArgs) Then
+                        Console.WriteLine()
+                        W(vbNewLine + DoTranslation("Uploaded file {0}", currentLang), True, ColTypes.Neutral, strArgs)
                     Else
-                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
+                        Console.WriteLine()
+                        W(vbNewLine + DoTranslation("Failed to upload {0}", currentLang), True, ColTypes.Neutral, strArgs)
                     End If
                 Else
                     W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>", currentLang), True, ColTypes.Err)
