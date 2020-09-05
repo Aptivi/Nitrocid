@@ -674,17 +674,9 @@ Public Module GetCommand
             ElseIf words(0) = "search" Then
 
                 If eqargs?.Count >= 2 Then
-                    Dim ToBeFound As String = eqargs(0)
-                    Dim Dir As String = NeutralizePath(eqargs(1))
-                    Dim Filebyte() As String = File.ReadAllLines(Dir)
-                    Dim MatchNum As Integer = 1
-                    Dim LineNumber As Integer = 1
-                    For Each Str As String In Filebyte
-                        If Str.Contains(ToBeFound) Then
-                            W("[{2}] " + DoTranslation("Match {0}: {1}", currentLang), True, ColTypes.Neutral, MatchNum, Str, LineNumber)
-                            MatchNum += 1
-                        End If
-                        LineNumber += 1
+                    Dim Matches As List(Of String) = SearchFileForString(eqargs(1), eqargs(0))
+                    For Each Match As String In Matches
+                        W(Match, True, ColTypes.Neutral)
                     Next
                     Done = True
                 End If

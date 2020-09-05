@@ -161,4 +161,16 @@ Imports KS
         Assert.IsTrue(RemoveDirectory(TargetPath), "Failed to remove directory ""{0}"". Expected True, got False.", TargetPath)
     End Sub
 
+    ''' <summary>
+    ''' Tests searching file for string
+    ''' </summary>
+    <TestMethod()> Public Sub TestSearchFileForString()
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim TargetPath As String = IO.Path.GetFullPath("TestText.txt")
+        Dim Matches As List(Of String) = SearchFileForString(TargetPath, "test")
+        Assert.IsNotNull(Matches, "Failed to search file for matches.")
+        Assert.IsTrue(Matches.Count = 1, "Expected one instance of ""test"", got {0}", Matches.Count)
+    End Sub
+
 End Class

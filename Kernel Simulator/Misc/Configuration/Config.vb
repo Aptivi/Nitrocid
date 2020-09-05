@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports Org.BouncyCastle.Asn1.Eac
 
 Public Module Config
 

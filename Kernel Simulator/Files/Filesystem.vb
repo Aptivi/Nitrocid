@@ -315,4 +315,33 @@ Public Module Filesystem
         Return False
     End Function
 
+    ''' <summary>
+    ''' Searches a file for string
+    ''' </summary>
+    ''' <param name="FilePath">File path</param>
+    ''' <param name="StringLookup">String to find</param>
+    ''' <returns>The list if successful; null if unsuccessful</returns>
+    ''' <exception cref="IOException"></exception>
+    Public Function SearchFileForString(ByVal FilePath As String, ByVal StringLookup As String) As List(Of String)
+        Try
+            FilePath = NeutralizePath(FilePath)
+            Dim Matches As New List(Of String)
+            Dim Filebyte() As String = File.ReadAllLines(FilePath)
+            Dim MatchNum As Integer = 1
+            Dim LineNumber As Integer = 1
+            For Each Str As String In Filebyte
+                If Str.Contains(StringLookup) Then
+                    Matches.Add("[{0}] ".FormatString(LineNumber) + DoTranslation("Match {0}: {1}", currentLang).FormatString(MatchNum, Str))
+                    MatchNum += 1
+                End If
+                LineNumber += 1
+            Next
+            Return Matches
+        Catch ex As Exception
+            WStkTrc(ex)
+            Throw New IOException(DoTranslation("Unable to find file to match string ""{0}"": {1}", currentLang).FormatString(StringLookup, ex.Message))
+        End Try
+        Return Nothing
+    End Function
+
 End Module
