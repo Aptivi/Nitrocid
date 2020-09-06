@@ -45,18 +45,7 @@ Module MailGetCommand
             ElseIf cmd = "cd" Then
                 If FullArgsL.Count > 0 Then
                     RequiredArgsProvided = True
-                    Wdbg("I", "Opening folder: {0}", FullArgsL(0))
-                    Try
-                        SyncLock IMAP_Client.SyncRoot
-                            OpenFolder(FullArgsL(0))
-                        End SyncLock
-                        IMAP_CurrentDirectory = FullArgsL(0)
-                        Wdbg("I", "Current directory changed.")
-                    Catch ex As Exception
-                        Wdbg("I", "Failed to open folder {0}: {1}", FullArgsL(0), ex.Message)
-                        W(DoTranslation("Unable to open mail folder {0}: {1}", currentLang), True, ColTypes.Err, FullArgsL(0), ex.Message)
-                        WStkTrc(ex)
-                    End Try
+                    MailChangeDirectory(FullArgsL(0))
                 End If
             ElseIf cmd = "exit" Then
                 RequiredArgsProvided = True
@@ -115,37 +104,7 @@ Module MailGetCommand
                 End If
             ElseIf cmd = "lsdirs" Then
                 RequiredArgsProvided = True
-                SyncLock IMAP_Client.SyncRoot
-                    Wdbg("I", "Personal namespace collection parsing started.")
-                    For Each nmspc As FolderNamespace In IMAP_Client.PersonalNamespaces
-                        Wdbg("I", "Namespace: {0}", nmspc.Path)
-                        W("- {0}", True, ColTypes.HelpCmd, nmspc.Path)
-                        For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                            Wdbg("I", "Folder: {0}", dir.Name)
-                            W("  - {0}", True, ColTypes.HelpDef, dir.Name)
-                        Next
-                    Next
-
-                    Wdbg("I", "Shared namespace collection parsing started.")
-                    For Each nmspc As FolderNamespace In IMAP_Client.SharedNamespaces
-                        Wdbg("I", "Namespace: {0}", nmspc.Path)
-                        W("- {0}", True, ColTypes.HelpCmd, nmspc.Path)
-                        For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                            Wdbg("I", "Folder: {0}", dir.Name)
-                            W("  - {0}", True, ColTypes.HelpDef, dir.Name)
-                        Next
-                    Next
-
-                    Wdbg("I", "Other namespace collection parsing started.")
-                    For Each nmspc As FolderNamespace In IMAP_Client.OtherNamespaces
-                        Wdbg("I", "Namespace: {0}", nmspc.Path)
-                        W("- {0}", True, ColTypes.HelpCmd, nmspc.Path)
-                        For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                            Wdbg("I", "Folder: {0}", dir.Name)
-                            W("  - {0}", True, ColTypes.HelpDef, dir.Name)
-                        Next
-                    Next
-                End SyncLock
+                W(MailListDirectories, False, ColTypes.Neutral)
             ElseIf cmd = "read" Then
                 If FullArgsL.Count > 0 Then
                     RequiredArgsProvided = True

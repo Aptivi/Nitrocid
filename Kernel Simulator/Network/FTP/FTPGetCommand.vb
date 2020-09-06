@@ -130,7 +130,7 @@ Public Module FTPGetCommand
                 Else
                     W(DoTranslation("You should disconnect from server before connecting to another server", currentLang), True, ColTypes.Err)
                 End If
-            ElseIf words(0) = "rename" Or words(0) = "ren" Then
+            ElseIf words(0) = "rename" Or words(0) = "ren" Then 'TODO: Replace with "move" and add "copy"
                 If cmd <> "rename" Or cmd <> "ren" Then
                     If connected = True Then
                         W(DoTranslation("Renaming file {0} to {1}...", currentLang), True, ColTypes.Neutral, args(0), args(1))

@@ -141,51 +141,6 @@ Module MailShell
     End Sub
 
     ''' <summary>
-    ''' Locates the normal (not special) folder and opens it.
-    ''' </summary>
-    ''' <param name="FolderString">A folder to open (not a path)</param>
-    ''' <returns>A folder</returns>
-    Public Function OpenFolder(ByVal FolderString As String) As MailFolder
-        Dim Opened As MailFolder
-        Wdbg("I", "Personal namespace collection parsing started.")
-        For Each nmspc As FolderNamespace In IMAP_Client.PersonalNamespaces
-            Wdbg("I", "Namespace: {0}", nmspc.Path)
-            For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                If dir.Name = FolderString Then
-                    dir.Open(FolderAccess.ReadOnly)
-                    Opened = dir
-                End If
-            Next
-        Next
-
-        Wdbg("I", "Shared namespace collection parsing started.")
-        For Each nmspc As FolderNamespace In IMAP_Client.SharedNamespaces
-            Wdbg("I", "Namespace: {0}", nmspc.Path)
-            For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                If dir.Name = FolderString Then
-                    dir.Open(FolderAccess.ReadOnly)
-                    Opened = dir
-                End If
-            Next
-        Next
-
-        Wdbg("I", "Other namespace collection parsing started.")
-        For Each nmspc As FolderNamespace In IMAP_Client.OtherNamespaces
-            Wdbg("I", "Namespace: {0}", nmspc.Path)
-            For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                If dir.Name = FolderString Then
-                    dir.Open(FolderAccess.ReadOnly)
-                    Opened = dir
-                End If
-            Next
-        Next
-
-#Disable Warning BC42104
-        Return Opened
-#Enable Warning BC42104
-    End Function
-
-    ''' <summary>
     ''' Populates e-mail messages
     ''' </summary>
     Public Sub PopulateMessages()
