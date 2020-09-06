@@ -23,7 +23,7 @@ Public Module FTPShell
     Public ftpstream As FtpWebRequest
     Public availftpcmds As String() = {"currlocaldir", "currremotedir", "connect", "changelocaldir", "changeremotedir", "cdl",
                                        "cdr", "delete", "del", "disconnect", "download", "exit", "get", "help", "listlocal", "lsl",
-                                       "listremote", "lsr", "put", "pwdl", "pwdr", "rename", "ren", "upload", "quickconnect"}
+                                       "listremote", "lsr", "put", "pwdl", "pwdr", "move", "mv", "copy", "cp", "upload", "quickconnect"}
     Public connected As Boolean = False
     Private initialized As Boolean = False
     Public ftpsite As String

@@ -53,6 +53,21 @@ Public Module FTPGetCommand
                 FTPChangeLocalDir(strArgs)
             ElseIf words(0) = "changeremotedir" Or words(0) = "cdr" Then
                 FTPChangeRemoteDir(strArgs)
+            ElseIf words(0) = "copy" Or words(0) = "cp" Then
+                If cmd <> "copy" Or cmd <> "cp" Then
+                    If connected Then
+                        W(DoTranslation("Copying {0} to {1}...", currentLang), True, ColTypes.Neutral, args(0), args(1))
+                        If FTPCopyItem(args(0), args(1)) Then
+                            W(vbNewLine + DoTranslation("Copied successfully", currentLang), True, ColTypes.Neutral)
+                        Else
+                            W(vbNewLine + DoTranslation("Failed to copy {0} to {1}.", currentLang), True, ColTypes.Neutral, args(0), args(1))
+                        End If
+                    Else
+                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
+                    End If
+                Else
+                    W(DoTranslation("Enter a source path and a destination path.", currentLang), True, ColTypes.Err)
+                End If
             ElseIf words(0) = "currlocaldir" Or words(0) = "pwdl" Then
                 W(DoTranslation("Local directory: {0}", currentLang), True, ColTypes.Neutral, currDirect)
             ElseIf words(0) = "currremotedir" Or words(0) = "pwdr" Then
@@ -124,27 +139,26 @@ Public Module FTPGetCommand
                 For Each Entry As String In Entries
                     W(Entry, True, ColTypes.Neutral)
                 Next
+            ElseIf words(0) = "move" Or words(0) = "mv" Then
+                If cmd <> "move" Or cmd <> "mv" Then
+                    If connected Then
+                        W(DoTranslation("Moving {0} to {1}...", currentLang), True, ColTypes.Neutral, args(0), args(1))
+                        If FTPMoveItem(args(0), args(1)) Then
+                            W(vbNewLine + DoTranslation("Moved successfully", currentLang), True, ColTypes.Neutral)
+                        Else
+                            W(vbNewLine + DoTranslation("Failed to move {0} to {1}.", currentLang), True, ColTypes.Neutral, args(0), args(1))
+                        End If
+                    Else
+                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
+                    End If
+                Else
+                    W(DoTranslation("Enter a source path and a destination path.", currentLang), True, ColTypes.Err)
+                End If
             ElseIf words(0) = "quickconnect" Then
                 If Not connected Then
                     QuickConnect()
                 Else
                     W(DoTranslation("You should disconnect from server before connecting to another server", currentLang), True, ColTypes.Err)
-                End If
-            ElseIf words(0) = "rename" Or words(0) = "ren" Then 'TODO: Replace with "move" and add "copy"
-                If cmd <> "rename" Or cmd <> "ren" Then
-                    If connected = True Then
-                        W(DoTranslation("Renaming file {0} to {1}...", currentLang), True, ColTypes.Neutral, args(0), args(1))
-
-                        'Begin the renaming process
-                        ClientFTP.Rename(args(0), args(1))
-
-                        'Show a message
-                        W(vbNewLine + DoTranslation("Renamed successfully", currentLang), True, ColTypes.Neutral)
-                    Else
-                        W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
-                    End If
-                Else
-                    W(DoTranslation("Enter a file and the new file name.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "upload" Or words(0) = "put" Then
                 If cmd <> "upload" Or cmd <> "put" Then

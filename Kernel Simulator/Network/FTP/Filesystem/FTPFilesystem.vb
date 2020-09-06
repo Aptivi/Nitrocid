@@ -145,4 +145,83 @@ Module FTPFilesystem
         Return False
     End Function
 
+    ''' <summary>
+    ''' Move file or directory to another area, or rename the file
+    ''' </summary>
+    ''' <param name="Source">Source file or folder</param>
+    ''' <param name="Target">Target file or folder</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="InvalidOperationException"></exception>
+    Public Function FTPMoveItem(ByVal Source As String, ByVal Target As String) As Boolean
+        If connected Then
+            Dim Success As Boolean
+
+            'Begin the moving process
+            Dim SourceFile As String = Source.Split("/").Last
+            Wdbg("I", "Moving from {0} to {1} with the source file of {2}...", Source, Target, SourceFile)
+            If ClientFTP.DirectoryExists(Source) Then
+                Success = ClientFTP.MoveDirectory(Source, Target)
+            ElseIf ClientFTP.FileExists(Source) And ClientFTP.DirectoryExists(Target) Then
+                Success = ClientFTP.MoveFile(Source, Target + SourceFile)
+            ElseIf ClientFTP.FileExists(Source) Then
+                Success = ClientFTP.MoveFile(Source, Target)
+            End If
+            Wdbg("I", "Moved. Result: {0}", Success)
+            Return Success
+        Else
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission.", currentLang))
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Copy file or directory to another area, or rename the file
+    ''' </summary>
+    ''' <param name="Source">Source file or folder</param>
+    ''' <param name="Target">Target file or folder</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="InvalidOperationException"></exception>
+    Public Function FTPCopyItem(ByVal Source As String, ByVal Target As String) As Boolean
+        If connected Then
+            Dim Success As Boolean = True
+            Dim Result As Object
+
+            'Begin the copying process
+            'TODO: FluentFTP currently doesn't support .CopyFile and .CopyDirectory
+            Dim SourceFile As String = Source.Split("/").Last
+            Wdbg("I", "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile)
+            If ClientFTP.DirectoryExists(Source) Then
+                ClientFTP.DownloadDirectory(paths("Temp") + "/FTPTransfer", Source)
+                Result = ClientFTP.UploadDirectory(paths("Temp") + "/FTPTransfer", Target)
+            ElseIf ClientFTP.FileExists(Source) And ClientFTP.DirectoryExists(Target) Then
+                ClientFTP.DownloadFile(paths("Temp") + "/FTPTransfer/" + SourceFile, Source)
+                Result = ClientFTP.UploadFile(paths("Temp") + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile)
+            ElseIf ClientFTP.FileExists(Source) Then
+                ClientFTP.DownloadFile(paths("Temp") + "/FTPTransfer/" + SourceFile, Source)
+                Result = ClientFTP.UploadFile(paths("Temp") + "/FTPTransfer/" + SourceFile, Target)
+            End If
+
+            'See if copied successfully
+            If Result.GetType = GetType(List(Of FtpResult)) Then
+                For Each FileResult As FtpResult In Result
+                    If FileResult.IsFailed Then
+                        Wdbg("E", "Transfer for {0} failed: {1}", FileResult.Name, FileResult.Exception.Message)
+                        WStkTrc(FileResult.Exception)
+                        Success = False
+                    End If
+                Next
+            ElseIf Result.GetType = GetType(FtpStatus) Then
+                If CType(Result, FtpStatus).IsFailure Then
+                    Wdbg("E", "Transfer failed")
+                    Success = False
+                End If
+            End If
+            Wdbg("I", "Copied. Result: {0}", Success)
+            Return Success
+        Else
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission.", currentLang))
+        End If
+        Return False
+    End Function
+
 End Module
