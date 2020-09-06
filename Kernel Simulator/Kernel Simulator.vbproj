@@ -282,7 +282,8 @@
     <Compile Include="Network\FTP\FTPShell.vb" />
     <Compile Include="Network\FTP\FTPTools.vb" />
     <Compile Include="Network\FTP\Transfer\FTPTransfer.vb" />
-    <Compile Include="Network\Mail\Directory\MailDirectory.vb" />
+    <Compile Include="Network\Mail\MailDirectory\MailDirectory.vb" />
+    <Compile Include="Network\Mail\MailDirectory\MailManager.vb" />
     <Compile Include="Network\NetworkTools.vb" />
     <Compile Include="Network\RemoteDebug\RemoteDebugCmd.vb" />
     <Compile Include="Network\RemoteDebug\RemoteDebugger.vb" />

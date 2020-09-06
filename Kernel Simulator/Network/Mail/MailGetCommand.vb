@@ -65,39 +65,7 @@ Module MailGetCommand
                     RequiredArgsProvided = True
                     Wdbg("I", "Page is numeric? {0}", FullArgsL(0).IsNumeric)
                     If FullArgsL(0).IsNumeric Then
-                        Dim Page As Integer
-                        If FullArgsL(0) = "" Then Page = 1 Else Page = FullArgsL(0)
-                        Wdbg("I", "Page number {0}", Page)
-                        If Page <= 0 Then
-                            Wdbg("E", "Trying to access page 0 or less than 0.")
-                            W(DoTranslation("Page may not be negative or zero.", currentLang), True, ColTypes.Err)
-                            Exit Sub
-                        End If
-                        Dim MsgsLimitForPg As Integer = 10
-                        Dim FirstIndex As Integer = (MsgsLimitForPg * Page) - 10
-                        Dim LastIndex As Integer = (MsgsLimitForPg * Page) - 1
-                        Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
-                        Wdbg("I", "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", MsgsLimitForPg, FirstIndex, LastIndex)
-                        For i As Integer = FirstIndex To LastIndex
-                            If Not i > MaxMessagesIndex Then
-                                Wdbg("I", "Getting message {0}...", i)
-                                SyncLock IMAP_Client.SyncRoot
-                                    Dim Msg As MimeMessage
-                                    If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                                        Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                                        Msg = Dir.GetMessage(IMAP_Messages(i))
-                                    Else
-                                        Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i))
-                                    End If
-                                    Dim MsgFrom As String = Msg.From.ToString
-                                    Dim MsgSubject As String = Msg.Subject
-                                    Wdbg("I", "From {0}: {1}", MsgFrom, MsgSubject)
-                                    W("- [{0}] {1}: ", False, ColTypes.HelpCmd, i + 1, Msg.From) : W("{0}", True, ColTypes.HelpDef, Msg.Subject)
-                                End SyncLock
-                            Else
-                                Wdbg("W", "Reached max message limit. Message number {0}", i)
-                            End If
-                        Next
+                        W(MailListMessages(FullArgsL(0)), False, ColTypes.Neutral)
                     Else
                         W(DoTranslation("Page is not a numeric value.", currentLang), True, ColTypes.Err)
                     End If
@@ -255,36 +223,7 @@ Module MailGetCommand
                     RequiredArgsProvided = True
                     Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
                     If FullArgsL(0).IsNumeric Then
-                        Dim Message As Integer = FullArgsL(0) - 1
-                        Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
-                        Wdbg("I", "Message number {0}", Message)
-                        If Message < 0 Then
-                            Wdbg("E", "Trying to remove message 0 or less than 0.")
-                            W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Err)
-                            Exit Sub
-                        ElseIf Message > MaxMessagesIndex Then
-                            Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-                            W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Err)
-                            Exit Sub
-                        End If
-
-                        SyncLock IMAP_Client.SyncRoot
-                            If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                                Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-
-                                'Remove message
-                                Wdbg("I", "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, FullArgsL(0))
-                                Dir.AddFlags(Message, MessageFlags.Deleted, True)
-                                Wdbg("I", "Removed.")
-                                Dir.Expunge()
-                            Else
-                                'Remove message
-                                Wdbg("I", "Removing {0}...", FullArgsL(0))
-                                IMAP_Client.Inbox.AddFlags(Message, MessageFlags.Deleted, True)
-                                Wdbg("I", "Removed.")
-                                IMAP_Client.Inbox.Expunge()
-                            End If
-                        End SyncLock
+                        MailRemoveMessage(FullArgsL(0))
                     Else
                         W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
                     End If
