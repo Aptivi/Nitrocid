@@ -93,22 +93,21 @@ Public Module FTPGetCommand
                 If cmd <> "delete" Or cmd <> "del" Then
                     If connected = True Then
                         'Print a message
-                        W(DoTranslation("Deleting file {0}...", currentLang), True, ColTypes.Neutral, strArgs)
+                        W(DoTranslation("Deleting {0}...", currentLang), True, ColTypes.Neutral, strArgs)
 
-                        'Make a confirmation message so user will not accidentally delete a file
-                        W(DoTranslation("Are you sure you want to delete file {0} <y/n>?", currentLang), False, ColTypes.Input, strArgs)
+                        'Make a confirmation message so user will not accidentally delete a file or folder
+                        W(DoTranslation("Are you sure you want to delete {0} <y/n>?", currentLang), False, ColTypes.Input, strArgs)
                         Dim answer As String = Console.ReadKey.KeyChar
-
-                        'If the answer is "y", then delete a file
-                        If answer = "y" Then
-                            ClientFTP.DeleteFile(strArgs)
-                            W(vbNewLine + DoTranslation("Deleted file {0}", currentLang), True, ColTypes.Neutral, strArgs)
-                        End If
+                        Try
+                            FTPDeleteRemote(strArgs)
+                        Catch ex As Exception
+                            W(ex.Message, True, ColTypes.Err)
+                        End Try
                     Else
                         W(DoTranslation("You must connect to server with administrative privileges before performing the deletion.", currentLang), True, ColTypes.Err)
                     End If
                 Else
-                    W(DoTranslation("Enter a file to remove. You must have administrative permissions on your logged in username to be able to remove.", currentLang), True, ColTypes.Err)
+                    W(DoTranslation("Enter a file or folder to remove. You must have administrative permissions on your account to be able to remove.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf cmd = "disconnect" Then
                 If connected = True Then

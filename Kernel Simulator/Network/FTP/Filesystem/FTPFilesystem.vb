@@ -19,6 +19,13 @@ Imports System.Text
 
 Module FTPFilesystem
 
+    ''' <summary>
+    ''' Lists remote folders and files
+    ''' </summary>
+    ''' <param name="Path">Path to folder</param>
+    ''' <returns>The list if successful; null if unsuccessful</returns>
+    ''' <exception cref="EventsAndExceptions.FTPFilesystemException"></exception>
+    ''' <exception cref="InvalidOperationException"></exception>
     Public Function FTPListRemote(ByVal Path As String) As List(Of String)
         If connected Then
             Dim EntryBuilder As New StringBuilder
@@ -58,6 +65,34 @@ Module FTPFilesystem
             Throw New InvalidOperationException(DoTranslation("You should connect to server before listing all remote files.", currentLang))
         End If
         Return Nothing
+    End Function
+
+    ''' <summary>
+    ''' Removes remote file or folder
+    ''' </summary>
+    ''' <param name="Target">Target folder or file</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function FTPDeleteRemote(ByVal Target As String) As Boolean
+        If connected Then
+            Wdbg("I", "Deleting {0}...", Target)
+
+            'Delete a file or folder
+            If ClientFTP.FileExists(Target) Then
+                Wdbg("I", "{0} is a file.", Target)
+                ClientFTP.DeleteFile(Target)
+            ElseIf ClientFTP.DirectoryExists(Target) Then
+                Wdbg("I", "{0} is a folder.", Target)
+                ClientFTP.DeleteDirectory(Target)
+            Else
+                Wdbg("E", "{0} is not found.", Target)
+                Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server.", currentLang).FormatString(Target))
+            End If
+            Wdbg("I", "Deleted {0}", Target)
+            Return True
+        Else
+            Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("You must connect to server with administrative privileges before performing the deletion.", currentLang))
+        End If
+        Return False
     End Function
 
 End Module
