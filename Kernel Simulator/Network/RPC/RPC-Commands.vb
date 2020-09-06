@@ -94,10 +94,7 @@ Public Module RPC_Commands
                     PowerManage("reboot")
                 ElseIf msg.StartsWith("LockConfirm") Then
                     Wdbg("I", "Lock confirmed from remote access.")
-                    LockMode = True
-                    ShowSavers(defSaverName)
-                    EventManager.RaisePreUnlock()
-                    ShowPasswordPrompt(signedinusrnm)
+                    LockScreen()
                 ElseIf msg.StartsWith("SaveScrConfirm") Then
                     Wdbg("I", "Save screen confirmed from remote access.")
                     ShowSavers(defSaverName)

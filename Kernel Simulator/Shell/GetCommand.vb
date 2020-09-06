@@ -410,10 +410,7 @@ Public Module GetCommand
             ElseIf requestedCommand = "lockscreen" Then
 
                 Done = True
-                LockMode = True
-                ShowSavers(defSaverName)
-                EventManager.RaisePreUnlock()
-                ShowPasswordPrompt(signedinusrnm)
+                LockScreen()
 
             ElseIf words(0) = "list" Then
 

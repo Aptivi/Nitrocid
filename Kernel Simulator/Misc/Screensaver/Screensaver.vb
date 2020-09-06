@@ -341,4 +341,14 @@ Public Module Screensaver
         End Using
     End Function
 
+    ''' <summary>
+    ''' Locks the screen. The password will be required when unlocking.
+    ''' </summary>
+    Public Sub LockScreen()
+        LockMode = True
+        ShowSavers(defSaverName)
+        EventManager.RaisePreUnlock()
+        ShowPasswordPrompt(signedinusrnm)
+    End Sub
+
 End Module
