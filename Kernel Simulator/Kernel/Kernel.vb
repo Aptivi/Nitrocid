@@ -40,9 +40,16 @@ Public Module Kernel
             Try
                 'A title
                 Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}"
+
+                'Initialize crucial things
                 If Not NotifThread.IsAlive Then NotifThread.Start()
                 InitPaths()
                 If Not EnvironmentOSType.Contains("Unix") Then Initialize255()
+
+                'Check if factory reset is required
+                If Environment.GetCommandLineArgs.Contains("reset") Then
+                    FactoryReset()
+                End If
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then

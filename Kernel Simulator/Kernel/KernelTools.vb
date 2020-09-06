@@ -557,4 +557,16 @@ Public Module KernelTools
 
     End Sub
 
+    Sub FactoryReset()
+        File.Delete(paths("Aliases"))
+        File.Delete(paths("Configuration"))
+        File.Delete(paths("Debugging"))
+        File.Delete(paths("Users"))
+        File.Delete(paths("FTPSpeedDial"))
+        File.Delete(paths("Home") + "/MOTD.txt")
+        File.Delete(paths("Home") + "/MAL.txt")
+        Directory.Delete(paths("Mods"))
+        Environment.Exit(0)
+    End Sub
+
 End Module
