@@ -276,6 +276,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Network\FTP\Filesystem\FTPFilesystem.vb" />
     <Compile Include="Network\FTP\FTPGetCommand.vb" />
     <Compile Include="Network\FTP\FTPHelpSystem.vb" />
     <Compile Include="Network\FTP\FTPShell.vb" />
