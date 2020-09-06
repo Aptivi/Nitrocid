@@ -29,7 +29,7 @@ Public Module NetworkTools
     ''' <summary>
     ''' Print each of adapters' properties to the console.
     ''' </summary>
-    Public Sub GetProperties()
+    Public Sub GetProperties() 'TODO: Split to multiple functions for easier debugging
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces
         Dim NoV4, NoV6, Failed As Boolean
         Dim gp As IPGlobalProperties = IPGlobalProperties.GetIPGlobalProperties
