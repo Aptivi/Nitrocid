@@ -231,44 +231,11 @@ Module MailGetCommand
             ElseIf cmd = "rmall" Then
                 If FullArgsL.Count > 0 Then
                     RequiredArgsProvided = True
-                    Wdbg("I", "All mail by {0} will be removed.", FullArgsL(0))
-                    Dim DeletedMsgNumber As Integer = 1
-                    Dim SteppedMsgNumber As Integer = 0
-                    For Each MessageId As UniqueId In IMAP_Messages
-                        SyncLock IMAP_Client.SyncRoot
-                            Dim Msg As MimeMessage
-                            If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                                Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                                Msg = Dir.GetMessage(MessageId)
-                            Else
-                                Msg = IMAP_Client.Inbox.GetMessage(MessageId)
-                            End If
-                            SteppedMsgNumber += 1
-
-                            For Each address In Msg.From
-                                If address.Name = FullArgsL(0) Then
-                                    If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                                        Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-
-                                        'Remove message
-                                        Wdbg("I", "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, FullArgsL(0))
-                                        Dir.AddFlags(MessageId, MessageFlags.Deleted, True)
-                                        Wdbg("I", "Removed.")
-                                        Dir.Expunge()
-                                        W(DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, FullArgsL(0), IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
-                                    Else
-                                        'Remove message
-                                        Wdbg("I", "Removing {0}...", FullArgsL(0))
-                                        IMAP_Client.Inbox.AddFlags(MessageId, MessageFlags.Deleted, True)
-                                        Wdbg("I", "Removed.")
-                                        IMAP_Client.Inbox.Expunge()
-                                        W(DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, FullArgsL(0), IMAP_Messages.Count - SteppedMsgNumber)
-                                    End If
-                                    DeletedMsgNumber += 1
-                                End If
-                            Next
-                        End SyncLock
-                    Next
+                    If MailRemoveAllBySender(FullArgsL(0)) Then
+                        W(DoTranslation("All mail made by {0} are removed successfully.", currentLang), True, ColTypes.Neutral, FullArgsL(0))
+                    Else
+                        W(DoTranslation("Failed to remove all made made by {0}.", currentLang), True, ColTypes.Neutral, FullArgsL(0))
+                    End If
                 End If
             End If
 

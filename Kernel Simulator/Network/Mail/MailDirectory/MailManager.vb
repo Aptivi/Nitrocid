@@ -104,4 +104,57 @@ Public Module MailManager
         Return True
     End Function
 
+    ''' <summary>
+    ''' Removes all mail that the specified sender has sent
+    ''' </summary>
+    ''' <param name="Sender">The sender name</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function MailRemoveAllBySender(ByVal Sender As String) As Boolean
+        Wdbg("I", "All mail by {0} will be removed.", Sender)
+        Dim DeletedMsgNumber As Integer = 1
+        Dim SteppedMsgNumber As Integer = 0
+        For i As Integer = 0 To IMAP_Messages.Count
+            Try
+                SyncLock IMAP_Client.SyncRoot
+                    Dim MessageId As UniqueId = IMAP_Messages(i)
+                    Dim Msg As MimeMessage
+                    If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                        Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                        Msg = Dir.GetMessage(MessageId)
+                    Else
+                        Msg = IMAP_Client.Inbox.GetMessage(MessageId)
+                    End If
+                    SteppedMsgNumber += 1
+
+                    For Each address In Msg.From
+                        If address.Name = Sender Then
+                            If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                                Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+
+                                'Remove message
+                                Wdbg("I", "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, Sender)
+                                Dir.AddFlags(MessageId, MessageFlags.Deleted, True)
+                                Wdbg("I", "Removed.")
+                                Dir.Expunge()
+                                Wdbg("I", "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
+                            Else
+                                'Remove message
+                                Wdbg("I", "Removing {0}...", Sender)
+                                IMAP_Client.Inbox.AddFlags(MessageId, MessageFlags.Deleted, True)
+                                Wdbg("I", "Removed.")
+                                IMAP_Client.Inbox.Expunge()
+                                Wdbg("I", "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
+                            End If
+                            DeletedMsgNumber += 1
+                        End If
+                    Next
+                End SyncLock
+            Catch ex As Exception
+                WStkTrc(ex)
+                Return False
+            End Try
+        Next
+        Return True
+    End Function
+
 End Module
