@@ -72,6 +72,7 @@ Module FTPFilesystem
     ''' </summary>
     ''' <param name="Target">Target folder or file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="EventsAndExceptions.FTPFilesystemException"></exception>
     Public Function FTPDeleteRemote(ByVal Target As String) As Boolean
         If connected Then
             Wdbg("I", "Deleting {0}...", Target)
@@ -86,11 +87,60 @@ Module FTPFilesystem
             Else
                 Wdbg("E", "{0} is not found.", Target)
                 Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server.", currentLang).FormatString(Target))
+                Return False
             End If
             Wdbg("I", "Deleted {0}", Target)
             Return True
         Else
             Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("You must connect to server with administrative privileges before performing the deletion.", currentLang))
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Changes FTP remote directory
+    ''' </summary>
+    ''' <param name="Directory">Remote directory</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="EventsAndExceptions.FTPFilesystemException"></exception>
+    ''' <exception cref="InvalidOperationException"></exception>
+    ''' <exception cref="ArgumentNullException"></exception>
+    Public Function FTPChangeRemoteDir(ByVal Directory As String) As Boolean
+        If connected = True Then
+            If Directory <> "" Then
+                If ClientFTP.DirectoryExists(Directory) Then
+                    'Directory exists, go to the new directory
+                    ClientFTP.SetWorkingDirectory(Directory)
+                    currentremoteDir = ClientFTP.GetWorkingDirectory
+                    Return True
+                Else
+                    'Directory doesn't exist, go to the old directory
+                    Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("Directory {0} not found.", currentLang).FormatString(Directory))
+                End If
+            Else
+                Throw New ArgumentNullException(DoTranslation("Enter a remote directory. "".."" to go back", currentLang))
+            End If
+        Else
+            Throw New InvalidOperationException(DoTranslation("You must connect to a server before changing directory", currentLang))
+        End If
+        Return False
+    End Function
+
+    Public Function FTPChangeLocalDir(ByVal Directory As String) As Boolean
+        If Directory <> "" Then
+            'Check if folder exists
+            Dim targetDir As String
+            targetDir = $"{currDirect}/{Directory}"
+            If IO.Directory.Exists(targetDir) Then
+                'Parse written directory
+                Dim parser As New IO.DirectoryInfo(targetDir)
+                currDirect = parser.FullName
+                Return True
+            Else
+                Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("Local directory {0} doesn't exist.", currentLang).FormatString(Directory))
+            End If
+        Else
+            Throw New ArgumentNullException(DoTranslation("Enter a local directory. "".."" to go back.", currentLang))
         End If
         Return False
     End Function

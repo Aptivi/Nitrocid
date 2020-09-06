@@ -50,37 +50,9 @@ Public Module FTPGetCommand
                     W(DoTranslation("Enter an FTP server.", currentLang), True, ColTypes.Neutral)
                 End If
             ElseIf words(0) = "changelocaldir" Or words(0) = "cdl" Then
-                If cmd <> "changelocaldir" Or cmd <> "cdl" Then
-                    'Check if folder exists
-                    Dim targetDir As String
-                    targetDir = $"{currDirect}/{strArgs}"
-                    If Directory.Exists(targetDir) Then
-                        'Parse written directory
-                        Dim parser As New DirectoryInfo(targetDir)
-                        currDirect = parser.FullName
-                    Else
-                        W(DoTranslation("Local directory {0} doesn't exist.", currentLang), True, ColTypes.Err, strArgs)
-                    End If
-                Else
-                    W(DoTranslation("Enter a local directory. "".."" to go back.", currentLang), True, ColTypes.Err)
-                End If
+                FTPChangeLocalDir(strArgs)
             ElseIf words(0) = "changeremotedir" Or words(0) = "cdr" Then
-                If connected = True Then
-                    If cmd <> "changeremotedir" Or cmd <> "cdr" Then
-                        If ClientFTP.DirectoryExists(strArgs) = True Then
-                            'Directory exists, go to the new directory
-                            ClientFTP.SetWorkingDirectory(strArgs)
-                            currentremoteDir = ClientFTP.GetWorkingDirectory
-                        Else
-                            'Directory doesn't exist, go to the old directory
-                            W(DoTranslation("Directory {0} not found.", currentLang), True, ColTypes.Err, strArgs)
-                        End If
-                    Else
-                        W(DoTranslation("Enter a remote directory. "".."" to go back", currentLang), True, ColTypes.Err)
-                    End If
-                Else
-                    W(DoTranslation("You must connect to a server before changing directory", currentLang), True, ColTypes.Err)
-                End If
+                FTPChangeRemoteDir(strArgs)
             ElseIf words(0) = "currlocaldir" Or words(0) = "pwdl" Then
                 W(DoTranslation("Local directory: {0}", currentLang), True, ColTypes.Neutral, currDirect)
             ElseIf words(0) = "currremotedir" Or words(0) = "pwdr" Then
