@@ -137,6 +137,7 @@ Public Module MailManager
                                 Wdbg("I", "Removed.")
                                 Dir.Expunge()
                                 Wdbg("I", "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
+                                W(DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
                             Else
                                 'Remove message
                                 Wdbg("I", "Removing {0}...", Sender)
@@ -144,6 +145,7 @@ Public Module MailManager
                                 Wdbg("I", "Removed.")
                                 IMAP_Client.Inbox.Expunge()
                                 Wdbg("I", "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
+                                W(DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
                             End If
                             DeletedMsgNumber += 1
                         End If
