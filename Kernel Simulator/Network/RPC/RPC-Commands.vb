@@ -22,6 +22,8 @@ Public Module RPC_Commands
 
     Dim Commands As New List(Of String) From {"<Request:Shutdown>", 'Request will be like this: <Request:Shutdown>(IP)
                                               "<Request:Reboot>",   'Request will be like this: <Request:Reboot>(IP)
+                                              "<Request:Lock>",     'Request will be like this: <Request:Lock>(IP)
+                                              "<Request:SaveScr>",  'Request will be like this: <Request:SaveScr>(IP)
                                               "<Request:Exec>"}     'Request will be like this: <Request:Exec>(CMD)
 
     ''' <summary>
@@ -36,28 +38,37 @@ Public Module RPC_Commands
         Wdbg("I", "Prototype Arg: {0}", Arg)
         Arg = Arg.Remove(Arg.Count - 1)
         Wdbg("I", "Finished Arg: {0}", Arg)
+        Dim Malformed As Boolean
         If Commands.Contains(Cmd) Then
             Wdbg("I", "Command found.")
+            Dim ByteMsg() As Byte = {}
             If Cmd = "<Request:Shutdown>" Then
                 Wdbg("I", "Stream opened for device {0}", Arg)
-                Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("ShutdownConfirm, " + Arg + vbNewLine)
-                RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
-                Wdbg("I", "Sending response to device...")
-                EventManager.RaiseRPCCommandSent()
+                ByteMsg = Text.Encoding.Default.GetBytes("ShutdownConfirm, " + Arg + vbNewLine)
             ElseIf Cmd = "<Request:Reboot>" Then
                 Wdbg("I", "Stream opened for device {0}", Arg)
-                Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
-                RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
-                Wdbg("I", "Sending response to device...")
-                EventManager.RaiseRPCCommandSent()
+                ByteMsg = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
+            ElseIf Cmd = "<Request:Lock>" Then
+                Wdbg("I", "Stream opened for device {0}", Arg)
+                ByteMsg = Text.Encoding.Default.GetBytes("LockConfirm, " + Arg + vbNewLine)
+            ElseIf Cmd = "<Request:SaveScr>" Then
+                Wdbg("I", "Stream opened for device {0}", Arg)
+                ByteMsg = Text.Encoding.Default.GetBytes("SaveScrConfirm, " + Arg + vbNewLine)
             ElseIf Cmd = "<Request:Exec>" Then
                 Wdbg("I", "Stream opened for device {0} to execute ""{1}""", IP, Arg)
-                Dim ByteMsg() As Byte = Text.Encoding.Default.GetBytes("ExecConfirm, " + Arg + vbNewLine)
-                RPCListen.Send(ByteMsg, ByteMsg.Length, IP, RPCPort)
-                Wdbg("I", "Sending response to device...")
-                EventManager.RaiseRPCCommandSent()
+                ByteMsg = Text.Encoding.Default.GetBytes("ExecConfirm, " + Arg + vbNewLine)
             Else
                 Wdbg("E", "Malformed request. {0}", Cmd)
+                Malformed = True
+            End If
+            If Not Malformed Then
+                Wdbg("I", "Sending response to device...")
+                If Not Cmd = "<Request:Exec>" Then
+                    RPCListen.Send(ByteMsg, ByteMsg.Length, IP, RPCPort)
+                Else
+                    RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
+                End If
+                EventManager.RaiseRPCCommandSent()
             End If
         End If
     End Sub
@@ -81,6 +92,15 @@ Public Module RPC_Commands
                 ElseIf msg.StartsWith("RebootConfirm") Then
                     Wdbg("I", "Reboot confirmed from remote access.")
                     PowerManage("reboot")
+                ElseIf msg.StartsWith("LockConfirm") Then
+                    Wdbg("I", "Lock confirmed from remote access.")
+                    LockMode = True
+                    ShowSavers(defSaverName)
+                    EventManager.RaisePreUnlock()
+                    ShowPasswordPrompt(signedinusrnm)
+                ElseIf msg.StartsWith("SaveScrConfirm") Then
+                    Wdbg("I", "Save screen confirmed from remote access.")
+                    ShowSavers(defSaverName)
                 ElseIf msg.StartsWith("ExecConfirm") Then
                     If LoggedIn Then
                         Wdbg("I", "Exec confirmed from remote access.")
