@@ -29,32 +29,34 @@ Public Module NetworkTools
     ''' <summary>
     ''' Print each of adapters' properties to the console.
     ''' </summary>
-    Public Sub GetProperties() 'TODO: Split to multiple functions for easier debugging
+    Public Sub PrintAdapterProperties()
         Dim adapters As NetworkInterface() = NetworkInterface.GetAllNetworkInterfaces
         Dim NoV4, NoV6, Failed As Boolean
         Dim gp As IPGlobalProperties = IPGlobalProperties.GetIPGlobalProperties
         Dim gs6 As IPGlobalStatistics = gp.GetIPv6GlobalStatistics
         Dim gs4 As IPGlobalStatistics = gp.GetIPv4GlobalStatistics
+
+        'Probe for adapter capabilities
         For Each adapter As NetworkInterface In adapters
             adapterNumber += 1
             W("==========================================", True, ColTypes.Neutral)
+
+            'See if it supports IPv6
             If Not adapter.Supports(NetworkInterfaceComponent.IPv6) Then
                 Wdbg("W", "{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description)
                 W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing...", currentLang), True, ColTypes.Err, adapter.Description)
                 NoV6 = True
             End If
+
+            'See if it supports IPv4
             If Not adapter.Supports(NetworkInterfaceComponent.IPv4) Then
                 Wdbg("E", "{0} doesn't support IPv4.", adapter.Description)
                 W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed.", currentLang), True, ColTypes.Err, adapter.Description)
                 NoV4 = True
             End If
-            If adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
-               adapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet3Megabit Or
-               adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetFx Or
-               adapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetT Or
-               adapter.NetworkInterfaceType = NetworkInterfaceType.GigabitEthernet Or
-               adapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211 Or
-               adapter.NetworkInterfaceType = NetworkInterfaceType.Tunnel And Not NoV4 Then
+
+            'Get adapter IPv(4/6) properties
+            If IsInternetAdapter(adapter) And Not NoV4 Then
                 Wdbg("I", "Adapter type of {0}: {1}", adapter.Description, adapter.NetworkInterfaceType.ToString)
                 Dim adapterProperties As IPInterfaceProperties = adapter.GetIPProperties()
                 Dim p As IPv4InterfaceProperties
@@ -78,34 +80,70 @@ Public Module NetworkTools
                     WStkTrc(ex)
 #Enable Warning BC42104
                 End Try
+
+                'Check if statistics is nothing
                 If s Is Nothing Then
                     Wdbg("E", "Failed to get statistics.")
                     W(DoTranslation("Failed to get statistics for adapter {0}", currentLang), True, ColTypes.Err, adapter.Description)
                     Failed = True
                 End If
+
+                'Print adapter infos if not failed
                 If Not Failed Then
-                    W(DoTranslation("IPv4 information:", currentLang) + vbNewLine +
-                      DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
-                      DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
-                      DoTranslation("Maximum Transmission Unit: {2} Units", currentLang) + vbNewLine +
-                      DoTranslation("DHCP Enabled:", currentLang) + " {3}" + vbNewLine +
-                      DoTranslation("Non-unicast packets:", currentLang) + " {4}/{5}" + vbNewLine +
-                      DoTranslation("Unicast packets:", currentLang) + " {6}/{7}" + vbNewLine +
-                      DoTranslation("Error incoming/outgoing packets:", currentLang) + " {8}/{9}", True, ColTypes.Neutral,
-                      adapterNumber, adapter.Description, p.Mtu, p.IsDhcpEnabled, s.NonUnicastPacketsSent, s.NonUnicastPacketsReceived,
-                      s.UnicastPacketsSent, s.UnicastPacketsReceived, s.IncomingPacketsWithErrors, s.OutgoingPacketsWithErrors)
+                    PrintAdapterIPv4Info(adapter, p, s)
+                    'Additionally, print adapter IPv6 infos if available
                     If Not NoV6 Then
-                        W(DoTranslation("IPv6 information:", currentLang) + vbNewLine +
-                          DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
-                          DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
-                          DoTranslation("Maximum Transmission Unit: {2} Units", currentLang), True, ColTypes.Neutral,
-                          adapterNumber, adapter.Description, p6.Mtu)
+                        PrintAdapterIPv6Info(adapter, p6)
                     End If
                 End If
             Else
                 Wdbg("W", "Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType)
             End If
         Next
+
+        'Print general IPv4 and IPv6 information
+        W("==========================================", True, ColTypes.Neutral)
+        PrintGeneralNetInfo(gs4, gs6)
+    End Sub
+
+    ''' <summary>
+    ''' Prints IPv4 info for adapter
+    ''' </summary>
+    ''' <param name="NInterface">A network interface or adapter</param>
+    ''' <param name="Properties">Network properties</param>
+    ''' <param name="Statistics">Network statistics</param>
+    Sub PrintAdapterIPv4Info(ByVal NInterface As NetworkInterface, ByVal Properties As IPv4InterfaceProperties, ByVal Statistics As IPv4InterfaceStatistics)
+        W(DoTranslation("IPv4 information:", currentLang) + vbNewLine +
+          DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
+          DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
+          DoTranslation("Maximum Transmission Unit: {2} Units", currentLang) + vbNewLine +
+          DoTranslation("DHCP Enabled:", currentLang) + " {3}" + vbNewLine +
+          DoTranslation("Non-unicast packets:", currentLang) + " {4}/{5}" + vbNewLine +
+          DoTranslation("Unicast packets:", currentLang) + " {6}/{7}" + vbNewLine +
+          DoTranslation("Error incoming/outgoing packets:", currentLang) + " {8}/{9}", True, ColTypes.Neutral,
+          adapterNumber, NInterface.Description, Properties.Mtu, Properties.IsDhcpEnabled, Statistics.NonUnicastPacketsSent, Statistics.NonUnicastPacketsReceived,
+          Statistics.UnicastPacketsSent, Statistics.UnicastPacketsReceived, Statistics.IncomingPacketsWithErrors, Statistics.OutgoingPacketsWithErrors)
+    End Sub
+
+    ''' <summary>
+    ''' Prints IPv6 info for adapter
+    ''' </summary>
+    ''' <param name="NInterface">A network interface or adapter</param>
+    ''' <param name="Properties">Network properties</param>
+    Sub PrintAdapterIPv6Info(ByVal NInterface As NetworkInterface, ByVal Properties As IPv6InterfaceProperties)
+        W(DoTranslation("IPv6 information:", currentLang) + vbNewLine +
+          DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
+          DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
+          DoTranslation("Maximum Transmission Unit: {2} Units", currentLang), True, ColTypes.Neutral,
+          adapterNumber, NInterface.Description, Properties.Mtu)
+    End Sub
+
+    ''' <summary>
+    ''' Prints general network info
+    ''' </summary>
+    ''' <param name="IPv4Stat">IPv4 general statistics</param>
+    ''' <param name="IPv6Stat">IPv6 general statistics</param>
+    Sub PrintGeneralNetInfo(ByVal IPv4Stat As IPGlobalStatistics, ByVal IPv6Stat As IPGlobalStatistics)
         W(DoTranslation("General IPv6 properties", currentLang) + vbNewLine +
           DoTranslation("Packets (inbound):", currentLang) + " {0}/{1}" + vbNewLine +
           DoTranslation("Packets (outbound):", currentLang) + " {2}/{3}" + vbNewLine +
@@ -114,10 +152,20 @@ Public Module NetworkTools
           DoTranslation("Packets (inbound):", currentLang) + " {7}/{8}" + vbNewLine +
           DoTranslation("Packets (outbound):", currentLang) + " {9}/{10}" + vbNewLine +
           DoTranslation("Errors in received packets:", currentLang) + " {11}/{12}/{13}", True, ColTypes.Neutral,
-          gs6.ReceivedPackets, gs6.ReceivedPacketsDelivered, gs6.OutputPacketRequests, gs6.OutputPacketsDiscarded, gs6.ReceivedPacketsWithAddressErrors,
-          gs6.ReceivedPacketsWithHeadersErrors, gs6.ReceivedPacketsWithUnknownProtocol, gs4.ReceivedPackets, gs4.ReceivedPacketsDelivered, gs4.OutputPacketRequests,
-          gs4.OutputPacketsDiscarded, gs4.ReceivedPacketsWithAddressErrors, gs4.ReceivedPacketsWithHeadersErrors, gs4.ReceivedPacketsWithUnknownProtocol)
+          IPv6Stat.ReceivedPackets, IPv6Stat.ReceivedPacketsDelivered, IPv6Stat.OutputPacketRequests, IPv6Stat.OutputPacketsDiscarded, IPv6Stat.ReceivedPacketsWithAddressErrors,
+          IPv6Stat.ReceivedPacketsWithHeadersErrors, IPv6Stat.ReceivedPacketsWithUnknownProtocol, IPv4Stat.ReceivedPackets, IPv4Stat.ReceivedPacketsDelivered, IPv4Stat.OutputPacketRequests,
+          IPv4Stat.OutputPacketsDiscarded, IPv4Stat.ReceivedPacketsWithAddressErrors, IPv4Stat.ReceivedPacketsWithHeadersErrors, IPv4Stat.ReceivedPacketsWithUnknownProtocol)
     End Sub
+
+    Function IsInternetAdapter(ByVal InternetAdapter As NetworkInterface) As Boolean
+        Return InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
+               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet3Megabit Or
+               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetFx Or
+               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetT Or
+               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.GigabitEthernet Or
+               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211 Or
+               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Tunnel
+    End Function
 
     Dim IsError As Boolean
     Dim ReasonError As Exception

@@ -538,7 +538,7 @@ Public Module GetCommand
 
             ElseIf requestedCommand = "netinfo" Then
 
-                GetProperties()
+                PrintAdapterProperties()
                 Done = True
 
             ElseIf words(0) = "mathbee" Then
