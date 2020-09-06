@@ -115,26 +115,14 @@ Module MailGetCommand
                     End While
 
                     'Send the message
-                    SyncLock SMTP_Client.SyncRoot
-                        Try
-                            W(DoTranslation("Sending message...", currentLang), True, ColTypes.Neutral)
-                            Dim FinalMessage As New MimeMessage
-                            FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
-                            Wdbg("I", "Added sender to FinalMessage.From.")
-                            FinalMessage.To.Add(MailboxAddress.Parse(Receiver))
-                            Wdbg("I", "Added address to FinalMessage.To.")
-                            FinalMessage.Subject = Subject
-                            Wdbg("I", "Added subject to FinalMessage.Subject.")
-                            FinalMessage.Body = New TextPart(TextFormat.Plain) With {.Text = Body.ToString}
-                            Wdbg("I", "Added body to FinalMessage.Body (plain text). Sending message...")
-                            SMTP_Client.Send(FinalMessage)
-                            W(DoTranslation("Message sent.", currentLang), True, ColTypes.Neutral)
-                        Catch ex As Exception
-                            W(DoTranslation("Error sending message: {0}", currentLang), True, ColTypes.Err, ex.Message)
-                            Wdbg("E", "Failed to send message: {0}", ex.Message)
-                            WStkTrc(ex)
-                        End Try
-                    End SyncLock
+                    W(DoTranslation("Sending message...", currentLang), True, ColTypes.Neutral)
+                    If MailSendMessage(Receiver, Subject, BodyLine) Then
+                        Wdbg("I", "Message sent.")
+                        W(DoTranslation("Message sent.", currentLang), True, ColTypes.Neutral)
+                    Else
+                        Wdbg("E", "See debug output to find what's wrong.")
+                        W(DoTranslation("Error sending message.", currentLang), True, ColTypes.Err)
+                    End If
                 Else
                     Wdbg("E", "Mail format unsatisfied.")
                     W(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:", currentLang) + " john.s@example.com", True, ColTypes.Err)

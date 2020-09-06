@@ -18,6 +18,7 @@
 
 Imports MailKit
 Imports MimeKit
+Imports MimeKit.Text
 
 Public Module MailTransfer
 
@@ -107,5 +108,27 @@ Public Module MailTransfer
             End If
         End SyncLock
     End Sub
+
+    Public Function MailSendMessage(ByVal Recipient As String, ByVal Subject As String, ByVal Body As String) As String
+        SyncLock SMTP_Client.SyncRoot
+            Try
+                Dim FinalMessage As New MimeMessage
+                FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
+                Wdbg("I", "Added sender to FinalMessage.From.")
+                FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
+                Wdbg("I", "Added address to FinalMessage.To.")
+                FinalMessage.Subject = Subject
+                Wdbg("I", "Added subject to FinalMessage.Subject.")
+                FinalMessage.Body = New TextPart(TextFormat.Plain) With {.Text = Body.ToString}
+                Wdbg("I", "Added body to FinalMessage.Body (plain text). Sending message...")
+                SMTP_Client.Send(FinalMessage)
+                Return True
+            Catch ex As Exception
+                Wdbg("E", "Failed to send message: {0}", ex.Message)
+                WStkTrc(ex)
+            End Try
+            Return False
+        End SyncLock
+    End Function
 
 End Module
