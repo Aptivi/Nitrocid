@@ -202,6 +202,7 @@ Module FTPFilesystem
             End If
 
             'See if copied successfully
+#Disable Warning BC42104
             If Result.GetType = GetType(List(Of FtpResult)) Then
                 For Each FileResult As FtpResult In Result
                     If FileResult.IsFailed Then
@@ -216,6 +217,7 @@ Module FTPFilesystem
                     Success = False
                 End If
             End If
+#Enable Warning BC42104
             Wdbg("I", "Copied. Result: {0}", Success)
             Return Success
         Else
