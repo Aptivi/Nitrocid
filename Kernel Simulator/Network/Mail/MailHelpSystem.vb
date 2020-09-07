@@ -30,6 +30,8 @@ Public Module MailHelpSystem
                                                                    {"help", DoTranslation("List of commands", currentLang)},
                                                                    {"list", DoTranslation("Downloads messages and lists them", currentLang)},
                                                                    {"lsdirs", DoTranslation("Lists directories in your mail address", currentLang)},
+                                                                   {"mv", DoTranslation("Moves a message", currentLang)},
+                                                                   {"mvall", DoTranslation("Moves all messages from recipient", currentLang)},
                                                                    {"read", DoTranslation("Opens a message", currentLang)},
                                                                    {"rm", DoTranslation("Removes a message", currentLang)},
                                                                    {"rmall", DoTranslation("Removes all messages from recipient", currentLang)},
@@ -53,6 +55,10 @@ Public Module MailHelpSystem
             W(DoTranslation("Usage:", currentLang) + " list [pagenum]: " + DoTranslation("Downloads messages and lists them", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "ls" Then
             W(DoTranslation("Usage:", currentLang) + " lsdirs: " + DoTranslation("Lists directories in your mail address", currentLang), True, ColTypes.Neutral)
+        ElseIf cmd = "mv" Then
+            W(DoTranslation("Usage:", currentLang) + " mv <mailid> <targetfolder>: " + DoTranslation("Moves a message", currentLang), True, ColTypes.Neutral)
+        ElseIf cmd = "mvall" Then
+            W(DoTranslation("Usage:", currentLang) + " mvall <sendername> <targetfolder>: " + DoTranslation("Moves all messages from recipient", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "read" Then
             W(DoTranslation("Usage:", currentLang) + " read <mailid>: " + DoTranslation("Opens a message", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "rm" Then

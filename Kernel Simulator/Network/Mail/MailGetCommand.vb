@@ -19,9 +19,7 @@
 Imports System.IO
 Imports System.Text
 Imports System.Threading
-Imports MailKit
-Imports MimeKit
-Imports MimeKit.Text
+Imports Microsoft.VisualBasic.FileIO
 
 Module MailGetCommand
 
@@ -35,17 +33,30 @@ Module MailGetCommand
         Dim cmd As String = Parameters(0)
         Dim args As String = Parameters(1)
         Dim FullArgsL As List(Of String) = args.Split({" "}, StringSplitOptions.RemoveEmptyEntries).ToList
+        Dim FullArgsLQ() As String
+        Dim TStream As New MemoryStream(Encoding.Default.GetBytes(args))
+        Dim Parser As New TextFieldParser(TStream) With {
+            .Delimiters = {" "},
+            .HasFieldsEnclosedInQuotes = True
+        }
+        FullArgsLQ = Parser.ReadFields
+        If Not FullArgsLQ Is Nothing Then
+            For i As Integer = 0 To FullArgsLQ.Length - 1
+                FullArgsLQ(i).Replace("""", "")
+            Next
+        End If
         Dim RequiredArgsProvided As Boolean
         Wdbg("I", "Arguments count: {0}", FullArgsL.Count)
+        Wdbg("I", "Arguments with enclosed quotes count: {0}", FullArgsLQ?.Count)
 
         Try
             If cmd = "help" Then
                 RequiredArgsProvided = True
                 IMAPShowHelp()
             ElseIf cmd = "cd" Then
-                If FullArgsL.Count > 0 Then
+                If FullArgsLQ?.Count > 0 Then
                     RequiredArgsProvided = True
-                    MailChangeDirectory(FullArgsL(0))
+                    MailChangeDirectory(FullArgsLQ(0))
                 End If
             ElseIf cmd = "exit" Then
                 RequiredArgsProvided = True
@@ -140,10 +151,29 @@ Module MailGetCommand
             ElseIf cmd = "rmall" Then
                 If FullArgsL.Count > 0 Then
                     RequiredArgsProvided = True
-                    If MailRemoveAllBySender(FullArgsL(0)) Then
-                        W(DoTranslation("All mail made by {0} are removed successfully.", currentLang), True, ColTypes.Neutral, FullArgsL(0))
+                    If MailRemoveAllBySender(FullArgsLQ(0)) Then
+                        W(DoTranslation("All mail made by {0} are removed successfully.", currentLang), True, ColTypes.Neutral, FullArgsLQ(0))
                     Else
-                        W(DoTranslation("Failed to remove all made made by {0}.", currentLang), True, ColTypes.Neutral, FullArgsL(0))
+                        W(DoTranslation("Failed to remove all mail made by {0}.", currentLang), True, ColTypes.Neutral, FullArgsLQ(0))
+                    End If
+                End If
+            ElseIf cmd = "mv" Then
+                If FullArgsL.Count > 0 Then
+                    RequiredArgsProvided = True
+                    Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
+                    If FullArgsL(0).IsNumeric Then
+                        MailMoveMessage(FullArgsL(0), FullArgsLQ(1))
+                    Else
+                        W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
+                    End If
+                End If
+            ElseIf cmd = "mvall" Then
+                If FullArgsL.Count > 0 Then
+                    RequiredArgsProvided = True
+                    If MailMoveAllBySender(FullArgsLQ(0), FullArgsLQ(1)) Then
+                        W(DoTranslation("All mail made by {0} are moved successfully.", currentLang), True, ColTypes.Neutral, FullArgsLQ(0))
+                    Else
+                        W(DoTranslation("Failed to move all mail made by {0}.", currentLang), True, ColTypes.Neutral, FullArgsLQ(0))
                     End If
                 End If
             End If
