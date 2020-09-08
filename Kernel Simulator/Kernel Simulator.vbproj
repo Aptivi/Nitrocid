@@ -381,6 +381,8 @@
     <None Include="Resources\dan.txt" />
     <None Include="Resources\kor.txt" />
     <None Include="Resources\kor-T.txt" />
+    <None Include="Resources\flp.txt" />
+    <None Include="Resources\ctl.txt" />
     <Content Include="Resources\ndo.txt" />
     <None Include="Resources\nwg.txt" />
     <Content Include="Resources\pol.txt" />

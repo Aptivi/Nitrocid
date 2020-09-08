@@ -1,0 +1,658 @@
+Ordres disponibles: {0}
+Escriu l'ordre:
+La injecció d’ordres s’ha cancel·lat.
+Separeu els arguments d'arrencada amb comes sense espais, per exemple, 'motd, gpuprobe'
+Separeu les ordres de 'cmdinject' amb dos punts amb espais, per exemple, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Tingueu en compte que l'argument "depuració" no cobreix completament el nucli.
+bargs: no s'ha trobat l'argument sol·licitat {0}.
+bargs: Error irrecuperable en l'argument:
+Arguments disponibles: {0}
+Arguments ("help" per obtenir ajuda):
+Els arguments injectats es programaran per executar-se al proper reinici.
+La injecció d'arguments s'ha cancel·lat.
+Error en analitzar arguments de línia de comandes reals: {0}
+Plantilla de color no vàlida {0}
+Per defecte
+Personalitzat
+hwprobe: es revisarà el vostre maquinari. Espera ...
+hwprobe: maquinari ja sondejat.
+hwprobe: el maquinari no està provat. Sondeu amb 'hwprobe'
+CPU: un o més dels nuclis de CPU no han pogut ser sondejats. S'està mostrant informació de totes maneres ...
+RAM: un o més dels xips de RAM no han pogut ser sondejats. S'està mostrant informació de totes maneres ...
+Disc dur: no s'ha pogut sondejar un o més dels discs durs. S'està mostrant informació de totes maneres ...
+CPU: nombre total de processadors: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: ranures utilitzades (per noms): {0}
+RAM: ranures utilitzades (per números): {0} / {1} ({2}%)
+RAM: l'estat de la sonda està obsolet i s'eliminarà en la versió futura.
+Disc dur: {0} {1} GB {2}
+Disc dur: {0} {1} {2} GB {3}
+Disc dur: CHS: {4} cilindres | {5} caps | {6} sectors
+Disc dur: CHS: {3} cilindres | {4} caps | {5} sectors
+hwprobe: la prova no és compatible perquè no està dissenyada per executar proves a Unix.
+Introduïu la contrasenya d'administrador per al manteniment.
+Ja no queden més usuaris a la llista.
+Error del nucli en arrencar: {0}
+DOBLE PÀNIC: el temps de reinici supera el temps màxim de reinici d'error permès {0}. Heu trobat un error del nucli.
+[{0}] pànic: reinici habilitat perquè el nivell d'error és {0}.
+[{0}] pànic: temps de reinici: {1} segons, supera 1 hora. Està configurat a 1 minut.
+DOBLE PÀNIC: el tipus d'error {0} no és vàlid.
+[{0}] dpanic: {1}: es reinicia en {2} segons ...
+[{0}] pànic: el reinici està desactivat perquè el nivell d'error és {0}.
+[{0}] pànic: {1}: premeu qualsevol tecla per continuar utilitzant el nucli.
+[{0}] pànic: {1}: premeu qualsevol tecla per apagar.
+[{0}] pànic: {1}: es reinicia en {2} segons ...
+DOBLE PÀNIC: error del nucli: {0}
+Apagant...
+S'està reiniciant ...
+---===+++> Benvingut al nucli | Versió {0} <+++===---
+S’està executant una altra instància de Kernel Simulator. Tancament en cas d’interferència.
+S'ha afegit l'usuari {0} a la llista d'administradors.
+S'ha afegit l'usuari {0} a la llista desactivada.
+No s'ha pogut afegir l'usuari a les llistes de permisos: tipus invàlid {0}
+No s'ha pogut afegir l'usuari a les llistes de permisos: usuari no vàlid {0}
+L'usuari {0} s'ha eliminat de la llista d'administradors.
+L'usuari {0} s'ha eliminat de la llista desactivada.
+No s'ha pogut eliminar l'usuari de les llistes de permisos: tipus invàlid {0}
+Ja heu iniciat la sessió.
+No s'ha pogut eliminar l'usuari de les llistes de permisos: usuari no vàlid {0}
+Heu trobat un error al sistema de permisos: mode no vàlid {0}
+Ja heu trobat un error, o bé el permís que heu intentat afegir o eliminar ja està fet o un altre error.
+Error {0}: {1}
+Ja heu trobat un error o el permís que heu intentat editar per a un usuari nou ha fallat.
+Noms d'usuari disponibles: {0}
+Nom d'usuari:
+No s’admeten espais.
+No es permeten caràcters especials.
+Contrasenya de {0}:
+Contrasenya incorrecta.
+L'usuari està desactivat.
+Nom d'usuari incorrecte.
+Error en intentar analitzar els espais reservats. {0} - Traça de la pila:
+Error en intentar analitzar els espais reservats. {0}
+Error en provar d'afegir un nom d'usuari.
+usrmgr: S'està creant un nom d'usuari {0} ...
+Nom d'usuari en blanc.
+No s'ha trobat l'usuari {0}.
+No es pot eliminar l'usuari {0}.
+L'usuari {0} ja ha iniciat la sessió. Tanqueu la sessió i inicieu la sessió com a administrador més.
+S'ha suprimit l'usuari {0}.
+S'ha produït un error en intentar eliminar el nom d'usuari.
+{0} de {1} = {2}
+No es permet l’intent de dividir per zero.
+S’ha sospitat d’un intent de càlcul que va provocar un desbordament.
+Hi ha un error en calcular: {0}
+{0} no es pot convertir a {1}.
+Ja sigui la font
+ o destinació
+ no existeix al servidor.
+{0} a {1}: {2}
+Error en intentar convertir de {0} a {1}: {2}
+Error
+No s'ha trobat el salvapantalles sol·licitat {0}.
+{0} s'ha inicialitzat correctament.
+{0} no s'ha inicialitzat. És possible que el codi de l'estalvi de pantalla hagi experimentat un error durant la inicialització.
+El salvapantalles {0} no existeix.
+{0} està definit com a estalvi de pantalla predeterminat.
+No s'ha trobat l'estalvi de pantalla {0} a la base de dades. Comproveu el nom i torneu-ho a provar.
+El salvapantalles no es pot carregar a causa dels següents:
+Hi ha un greu error en imprimir text.
+Hi ha un error en intentar crear la configuració.
+Hi ha un error en intentar crear la configuració: {0}
+S'ha detectat una actualització de {0} a {1}. S'està actualitzant la configuració ...
+Hi ha un error en intentar actualitzar la configuració: {0}.
+Hi ha un error en intentar actualitzar la configuració.
+Hi ha un error en intentar llegir la configuració.
+Hi ha un error en intentar llegir la configuració: {0}
+Error en intentar alliberar RAM: {0}: continua ...
+No es pot carregar el modificador a causa del següent:
+mod: carregant modificacions ...
+mod: Aturant modificacions ...
+Mod {0} no té el nom. Reviseu el codi font.
+Mod {0} no té la versió.
+{0} v {1} va començar
+No hi ha definició de l'ordre {0}.
+Ordre definit per
+Heu de desconnectar del servidor abans de connectar-vos a un altre servidor
+Nom d'usuari de {0}:
+Contrasenya per a {0}:
+Connectat a {0}
+Error en intentar connectar-vos a {0}: {1}
+Traça de la pila: {2}
+Introduïu un servidor FTP.
+El directori local {0} no existeix.
+Introduïu un directori local. ".." tornar.
+No s'ha trobat el directori {0}.
+Introduïu un directori remot. ".." tornar
+Heu de connectar-vos a un servidor abans de canviar de directori
+Directori local: {0}
+Directori remot: {0}
+Heu de connectar-vos al servidor abans d’obtenir el directori remot actual.
+S'està suprimint el fitxer {0} ...
+Esteu segur que voleu suprimir el fitxer {0} <y/n>?
+Fitxer suprimit {0}
+Heu de connectar-vos al servidor amb privilegis administratius abans de realitzar la supressió.
+Introduïu un fitxer per eliminar.
+Per poder eliminar-lo, heu de tenir permisos administratius al nom d’usuari que hàgiu iniciat la sessió.
+Desconnectat de {0}
+Encara no us heu connectat a cap servidor
+S'està baixant el fitxer {0} ...
+Fitxer descarregat {0}.
+No s'ha pogut baixar el fitxer {0} perquè el fitxer local està malmès.
+Heu de connectar-vos al servidor abans de realitzar la transmissió.
+Introduïu un fitxer per descarregar al directori local.
+{0} KB | Modificat a: {1}
+Heu de connectar-vos al servidor abans d’enumerar tots els fitxers remots.
+S'està canviant el nom del fitxer {0} a {1} ...
+S'ha canviat el nom correctament
+Introduïu un fitxer i el nom del fitxer nou.
+S'està carregant el fitxer {0} ...
+Fitxer carregat {0}
+Introduïu un fitxer per penjar-lo al directori remot. pengeu <fitxer> <directori>
+Error en intentar executar l'ordre FTP
+(Interior:
+{0} carpetes, {1} fitxers
+(Accés denegat)
+{0} KB, creat a {1} {2}, modificat a {3} {4}
+Obté el directori local actual
+Obté el directori remot actual
+Es connecta a un servidor FTP (ha de començar amb "ftp://" o "ftps://")
+Canvia el directori local per baixar-lo o carregar-lo
+Canvia el directori remot per descarregar-lo o carregar-lo
+Suprimeix el fitxer remot del servidor
+Desconnecta del servidor
+Descarrega el fitxer remot al directori local mitjançant text binari o binari
+Surt de l'intèrpret d'ordres FTP i torna al nucli
+Mostra la pantalla d'ajuda
+Llista el directori local
+Llista el directori remot
+Canvia el nom del fitxer o directori específic
+Penja fitxers locals al directori remot mitjançant text binari o binari
+S'ha produït un error a l'intèrpret d'ordres FTP.
+Missatge FTP: l'ordre sol·licitada {0} no s'ha trobat. Vegeu 'ajuda' per obtenir una llista d'ordres disponibles especificades a l'intèrpret d'ordres FTP.
+net: obté la resposta de {0} en {1} ms
+Temps d'espera, desconnexió o servidor fora de línia.
+net: el nom del vostre ordinador a la xarxa és {0}
+net: El vostre nom d'amfitrió és {1}
+net: Sembla que els ordinadors es troben al domini o al grup de treball:
+net: WiFi o Ethernet estan desconnectats.
+net: Sembla que els ordinadors estan connectats a continuació:
+net: Adreça del router: {0}
+No s'han pogut obtenir les propietats de l'adaptador {0}
+Número d'adaptador:
+Nom de l'adaptador:
+Unitat màxima de transmissió: {2} unitats
+DHCP activat:
+Paquets no unicast:
+Paquets Unicast:
+Error dels paquets entrants/sortints:
+Àlies no pot ser el mateix nom que una ordre.
+No s'ha trobat l'ordre a l'àlies de {0}.
+L'aliasing de {0} a {1} està totalment prohibit.
+Ara podeu executar "{0}" com a ordre: "{1}".
+Ja no podeu utilitzar "{0}" com a ordre "{1}".
+No s'ha trobat que s'ha eliminat l'àlies {0}.
+Mode no vàlid {0}.
+Els arguments injectats, {0}, es programaran per executar-se al proper reinici.
+No hi havia prou arguments. Vegeu a continuació l’ús:
+No s'ha trobat el directori {0}
+Nom d'amfitrió en blanc.
+S'està canviant de: {0} a {1} ...
+Missatge en blanc del dia.
+MAL en blanc després de l'inici de sessió.
+S'està canviant MAL de {0} a {1} ...
+Contrasenya d'usuari incorrecta.
+Les contrasenyes no coincideixen.
+El nom d'usuari s'ha canviat a {0}.
+El nou nom que heu introduït ja s'ha trobat.
+El llistat de PC encara no és compatible a Unix.
+Àlies prohibits: {0}
+{0} no s'ha trobat.
+Configuració recarregada. És possible que hàgiu de reiniciar el nucli perquè alguns canvis tinguin efecte.
+Tot es restableix a la configuració normal.
+Un o més colors no són vàlids.
+Els colors no estan disponibles. Activeu l'intèrpret d'ordres de colors a la configuració del nucli.
+No s'ha trobat l'estalvi de pantalla {0}.
+{0} [ Configuració del nucli (funcionant a {1}) ]
+Versió del nucli:
+Mode de depuració:
+Carcassa de colors:
+Arguments en arrencar:
+Comanda d'ajuda simplificada:
+MOTD en iniciar sessió:
+Hora / data a la cantonada:
+Maquinari sondejat:
+Tema actual:
+[ Configuració del maquinari ] {0}
+{0} [ Configuració de l'usuari ]
+Nom d'usuari actual:
+Nom d'amfitrió actual:
+Noms d'usuari disponibles:
+Nom de l'amfitrió de l'ordinador:
+{0} [ Configuració de missatges ]
+Codi font:
+Copyright (c)
+Llicència
+present
+Error en intentar executar l'ordre
+Afegeix usuaris (només els administradors poden accedir a aquesta ordre)
+Afegeix àlies a les ordres (només els administradors poden accedir a aquesta ordre)
+Injecta arguments al nucli (cal reiniciar-lo, només administradors)
+Calculadora senzilla
+Canvia el directori
+Canvia el nom de l'amfitrió (només administradors)
+Canvia MAL, el MOTD després de l'inici de sessió (només per a administradors)
+Canvia MOTD, el missatge del dia (només per a administradors)
+Canvia la contrasenya de l'usuari actual
+Canvia el nom d'usuari (només per a administradors)
+Esborra la pantalla
+Converteix moneda
+Mostra els registres de depuració (només administradors)
+Utilitzeu un intèrpret d’ordres FTP per interactuar amb els servidors
+Pàgina d’ajuda
+Proveu manualment el maquinari (una vegada al nucli 'nohwprobe')
+Enumereu el contingut del fitxer/carpeta a la carpeta actual
+Torna a carregar el fitxer de protecció de pantalla a %USERPROFILE%\KSMods
+Bloqueja la pantalla amb una contrasenya
+Tanca la sessió
+Mostra tots els dispositius de xarxa que estan en línia (i fora de línia als dominis)
+Mostra totes les adreces de xarxa de l'amfitrió
+Llista totes les adreces de xarxa de l'amfitrió mitjançant l'arbre
+Crea un directori
+Llista informació sobre totes les interfícies disponibles
+Mostra la llista d’àlies prohibits
+Gestiona els permisos dels usuaris (només els administradors poden accedir a aquesta ordre)
+Comproveu si l'adreça especificada està disponible
+Escriu el contingut del fitxer a la consola
+Reinicia l'ordinador (ADVERTÈNCIA: no hi ha sincronització, perquè no és un nucli final)
+Torna a carregar el fitxer de configuració que s’edita.
+Elimina un directori
+Elimina un usuari de la llista (només administradors)
+Desa la pantalla dels burnouts
+Calculadora científica. El convertidor d’unitat està separat per una altra ordre
+Configura els colors del nucli
+Configura els estalvis de pantalla del nucli
+Configura els temes del nucli
+Mostra els àlies
+Mostra el MOTD després de l'inici de sessió definit per l'usuari o el nucli
+Mostra el missatge del dia definit per l'usuari o el nucli
+Mostra la data i l’hora
+Mostra la data i l'hora en zones
+El nucli es tancarà
+Informació del sistema
+Convertidor d’unitats que està separat de scicalc.
+Mostra les dependències de codi obert utilitzades
+Un manual d’usuari molt descriptiu.
+* Podeu utilitzar diverses ordres mitjançant els dos punts entre les ordres.
+Ordres disponibles:
+Ordres de modificació:
+Àlies de les ordres:
+Ús:
+Arguments separats per comes
+on hi haurà arguments {0}
+per obtenir el directori actual
+En quin origen i destinació hi ha 3 caràcters majúscules d’un tipus de canvi
+Llista de tots els identificadors i noms:
+Mostra els registres de depuració perquè ens pugueu enviar el registre.
+Inicialitza l'intèrpret d'ordres FTP.
+Maquinari de sonda (només funciona quan el maquinari no es prova i no s’executa hwprobe).
+Llista la informació de la xarxa, així com tots els equips connectats a una xarxa.
+Amics de
+Llista la informació de la xarxa, així com tots els equips connectats a una xarxa, en forma d’arbre.
+Llista la informació de la xarxa, així com tots els ordinadors.
+on hi haurà modnameSS.m
+Bloqueja la pantalla amb la contrasenya.
+Us desconnecta de l’usuari.
+Obteniu tota la informació de la xarxa
+Reinicia l'ordinador simulat.
+Torna a carregar la configuració que l'usuari final o l'eina canvien.
+Els colors no requereixen un reinici, però la majoria de la configuració requereix que reinicieu.
+us mostra un estalvi de pantalla seleccionat, alhora que protegiu la pantalla dels burnouts.
+Mostra la data i l'hora.
+Mostra la data i l'hora en zones.
+Apaga l’ordinador simulat.
+Mostra informació i versions del sistema.
+Mostra les biblioteques de codi obert utilitzades
+S'ha produït un error a l'intèrpret d'ordres.
+No teniu permís per utilitzar {0}
+Missatge de l'intèrpret d'ordres: l'ordre sol·licitada {0} no es pot executar en mode de manteniment.
+Missatge de l'intèrpret d'ordres: l'ordre sol·licitada {0} no s'ha trobat. Vegeu 'ajuda' per obtenir ordres disponibles.
+Missatge de l'intèrpret d'ordres: no es pot executar l'ordre {0} en iniciar la sessió.
+Missatge de l'intèrpret d'ordres: l'ordre sol·licitada {0} no s'ha trobat.
+Error en intentar executar l'ordre.
+datetime: l'hora és {0}
+datetime: avui és {0}
+datetime: zona horària: {0}
+- Hora de {0}: {1}
+per esborrar la pantalla.
+Sembla que no es troba la pàgina del manual {0}.
+Hi ha un error en intentar carregar la pàgina del manual {0} perquè {1}.
+Aquesta pàgina del manual està incompleta pels motius següents:
+Premeu qualsevol tecla per continuar ...
+ | {0} paraules | Revisió v {1} | {2} seccions
+Aquest títol de la pàgina del manual no està escrit
+Aquesta pàgina del manual ({0}) no conté cap text corporal. S'està suprimint la pàgina ...
+Aquesta pàgina del manual ({0}) no conté cap secció. S'està suprimint la pàgina ...
+S'està executant a {0}
+No teniu autorització per obtenir informació sobre {0}.
+Aquesta ordre està obsoleta i s'eliminarà en una versió futura.
+No teniu autorització per canviar la contrasenya de {0} perquè l'objectiu era un administrador.
+Convertiu la quantitat de diners d'un país a un altre
+Monedes:
+usrmgr: El nom d'usuari {0} ja s'ha trobat
+Introduïu la vostra clau API:
+No s'han pogut obtenir ordinadors. Si utilitzeu la versió més recent de Windows 10, heu d’habilitar SMBv1. No obstant això, aquest protocol no és segur i intentarem resoldre aquest problema.
+Suprimeix tot el registre de depuració
+Obté versions SSE
+Idioma no vàlid
+Canvia l'idioma
+És possible que no tingueu libcpanel-json-xs-perl instal·lat al vostre sistema. Consulteu el gestor de paquets per a la instal·lació. Per als sistemes Debian (i derivats), és possible que vulgueu executar "sudo apt install libcpanel-json-xs-perl" a l'emulador del terminal. Més detalls d'un error:
+----------------------------- Descàrrega de pànic del nucli ------------------------------
+>> Informació de pànic <<
+> Descripció: {0}
+> Tipus d'error: {1}
+> Data i hora: {2}
+>> Informació d'excepció <<
+> Excepció: {0}
+> Descripció: {1}
+> HRESULT: {2}
+> Font: {3}
+> Traça de la pila <
+>> Informació {0} d'excepció interna <<
+>> L'excepció {0} és la causa principal <<
+>> Cap excepció; pot ser un error del nucli. <<
+>> Marcs, fitxers, línies i columnes <<
+> Marc {0}: fitxer: {1} | Línia: {2} | Columna: {3}
+> Hi ha un error en intentar obtenir informació del marc. {0}: {1}
+Heu definit l'idioma del vostre sistema a qualsevol cosa que no sigui l'anglès. Disculpeu les molèsties, però sembla que Google i el seu traductor són molt estranys en la traducció de blocs de codi per a qualsevol llenguatge de programació. Tot i que solucionem tots els blocs de codi per a les pàgines de manuals traduïts, us suggerim que obriu un bitllet a Google Translate per traduir blocs de codi que no estan destinats a ser traduïts i que configureu l’idioma del vostre sistema a anglès si el parleu.
+Recarrega modificacions.
+Les modificacions es van tornar a carregar.
+Benvingut al nucli!
+Heu iniciat la sessió correctament com a <usuari>
+MOTD / MAL és vàlid, però el tipus de missatge no és vàlid. Suposant MOTD ...
+S'ha intentat llegir MOTD / MAL del tipus de missatge no vàlid.
+Tot i mantenir una connexió estable, es descarrega {0} a {1} ...
+La descàrrega s'ha completat.
+La descàrrega ha fallat en provar {0}: {1}
+Si us plau, utilitzeu "ftp" si voleu descarregar fitxers del servidor FTP.
+Descarrega un fitxer al directori de treball actual
+Desconnecteu un dispositiu de depuració
+Llista els dispositius de depuració connectats
+No s'ha trobat el dispositiu de depuració {0}.
+El dispositiu {0} s'ha desconnectat.
+Error de connexió: {0}
+Depuració de l'escolta en totes les adreces mitjançant el port {0}.
+No s'ha especificat cap argument. Consell: especifiqueu diversos arguments separats per espais
+Àlies ja trobat: {0}
+S'ha eliminat el registre de depuració. És possible que tots els dispositius de depuració connectats encara visualitzin missatges.
+S'ha produït un error en eliminar el registre de depuració: {0}
+No s'ha pogut canviar el directori: {0}
+El nom d'usuari és incorrecte
+Especifiqueu l'adreça
+No es pot eliminar el directori: {0}
+La zona horària s’especifica incorrectament.
+La selecció del perfil no és vàlida.
+S'està intentant connectar amb {0} amb el perfil {1} ​​...
+Error en les proves unitàries: {0}
+No s'ha trobat l'ordre {0}. Consulteu l'ordre "ajuda" per obtenir la llista d'ordres.
+No s'han pogut obtenir les propietats IPv6 de l'adaptador {0}. Continuant ...
+Informació IPv4:
+Informació IPv6:
+L'adaptador {0} no admet IPv6. Continuant ...
+L'adaptador {0} no admet IPv4. La sonda ha fallat.
+Sembla que executaves la versió de desenvolupament del nucli. Tot i que podeu veure els aspectes, sovint s’actualitza i pot introduir errors. Es recomana mantenir la versió estable.
+L'idioma que heu seleccionat conté dues variants. Tria una:
+1. Transliterat
+2. Traduït
+Seleccioneu la vostra opció:
+Elecció no vàlida. Torna-ho a provar.
+No està autoritzat a establir el directori actual a {0}: {1}
+El permís {0} ha fallat
+El camí que heu especificat és massa llarg.
+No esteu autoritzat a fer una llista a {0}: {1}
+Error en comprovar la CPU: {0}
+Error en comprovar la memòria RAM: {0}
+Error en comprovar el disc dur: {0}
+CPU: ADVERTÈNCIA: es requerirà SSE2 en futurs compromisos de desenvolupament.
+El recopilador d'informació d'abocament s'ha bloquejat en intentar obtenir informació sobre {0}: {1}
+Error en intentar obtenir la data de compilació del muntatge {0}: {1}
+Error en intentar configurar MOTD / MAL: {0}
+Error en intentar obtenir MOTD / MAL: {0}
+Hi ha una excepció de referència nul·la a {0}: {1}
+Hi ha una excepció de referència nul·la a {0}: {1} - Traça de la pila:
+S'ha produït un error en intentar iniciar l'estalvi de pantalla a causa d'una operació no vàlida.
+No es permet la recàrrega en mode segur.
+No es permet analitzar les modificacions en mode segur.
+Analitzeu el directori sencer per obtenir la mida o només els fitxers de l'actual.
+Mostra tots els dispositius de depuració connectats.
+S'ha produït un error en intentar configurar el mode d'anàlisi. Comproveu el valor i torneu-ho a provar. Si això és correcte, consulteu la traça de la pila quan la depuració del nucli estigui activada.
+Estableix correctament.
+El camí no és ni un fitxer ni un directori.
+Crea una altra còpia d’un fitxer amb un directori o un nom diferents.
+Moveu un fitxer a un altre directori
+Per copiar fitxers a un altre directori o a un altre nom
+Per moure fitxers a un altre directori
+Coincidència {0} ({1}): {2}
+Coincidència {0}: {1}
+Temps dedicat: {0} mil·lisegons
+Fabricant: {0}
+Model: {0}
+Capacitat: {0} ({1}, {2}, {3})
+Tipus d'interfície: {0}
+Número de la unitat: {0}
+Senyal d'arrencada: {0} ({1})
+Partició física: {0}
+Bandera principal: {0}
+Mida: {0} GB
+Partició lògica: {0}
+Comprimit: {0}
+Nom: {0}
+Sistema de fitxers: {0}
+Capacitat: {0} GB lliures de {1} GB
+Llistat de totes les particions lògiques de totes les unitats.
+Mostra totes les unitats sondejades.
+Llista totes les particions sondejades en una unitat específica (i totes les particions lògiques de totes les unitats).
+Calcula les sumes dels fitxers.
+Us porta a la nostra wiki GitHub.
+Algorisme de xifratge no vàlid.
+Activa o desactiva la depuració remota.
+S'està inicialitzant el sistema de fitxers ...
+Obté les veus instal·lades
+Estableix la veu per defecte
+Parla la vostra cadena amb la veu predeterminada
+Veu {0}: {1} ({2})
+La veu no és vàlida.
+Conjunt de veu
+Mireu si podeu lletrejar correctament les paraules a temps
+Mireu si podeu resoldre equacions matemàtiques a temps
+Respondre als comentaris d’amor o odi.
+Si algú ha fet aquest comentari al teu vídeo:
+Com respondríeu?
+La selecció no és vàlida. Anem al següent comentari ...
+Acabes d’informar del comentari d’amor.
+Acabes de respondre al comentari de l’odi.
+Genial! Per a això, se suprimirà el comentari de {0}.
+Genial! {0} agrairé el vostre agraïment.
+Escriviu "GetMeOut" per sortir.
+Escrit perfectament!
+Ortografia incorrecta.
+Resolt perfectament!
+Resolució incorrecta.
+{0} MB de {1} MB baixats.
+RPC ja s'està executant.
+Escolta RPC a totes les adreces mitjançant el port {0}.
+S'està iniciant RPC ...
+Es connecta a un servidor SSH.
+Introduïu la contrasenya per a {0}:
+SSH desconnectat.
+Carrega el fitxer synth i el reprodueix.
+El fitxer amb script {0} no existeix.
+El fitxer no és un fitxer de sintetitzador amb script.
+No s'ha pogut examinar una línia de sintetitzador.
+S'ha especificat una cadena buida
+No es pot definir la pàgina de codis. És possible que l’idioma no es mostri correctament.
+La depuració no està habilitada.
+{0} ja no està configurat com a estalvi de pantalla predeterminat.
+Gràcies! Això és interessant.
+Tothom donarà suport al vostre vídeo per això.
+Us vaig donar l'arxiu especial al vostre correu electrònic per al vostre proper vídeo.
+Escolta, odiadors, està intentant ajudar-nos, no una estafa.
+No sé quant agraeixo jo i els meus amics per aquest vídeo.
+T'estimo per aquest vídeo.
+Segueix endavant, no paris.
+Us ajudaré a arribar a 1 milió de subscriptors.
+Els meus amics van arreglar l’ordinador per culpa de vosaltres.
+Impressionant broma! Vaig apagar l’ordinador del meu enemic.
+Als odiadors: DEIXEU DE DETEGIR-LO
+Als odiadors: COMENÇA A TREBALLAR
+Ara ningú no ho notarà gràcies a la vostra guia d’amagatall d’objectes
+Deixaré de veure els teus vídeos. S'ha perdut el subscriptor.
+Què és això? Això no està clar.
+Aquest vídeo és el pitjor.
+Tothom denuncia aquest vídeo.
+Els meus amics estan furiosos amb tu!
+Els amants ara us odiaran per això.
+El vostre amic us odiarà per això.
+Aquesta broma em va fer donar-me de baixa.
+Missió fallida, Respecte -, Subscriptor -
+Deixa de fer aquest tipus de vídeo !!!
+Torna a la teva feina, els teus vídeos són els pitjors!
+Prejudiquem aquest vídeo.
+Està prohibit assignar {0} a {1}.
+Error en intentar ignorar la notificació: {0}
+Mostra totes les notificacions rebudes
+Rebutja una notificació
+La notificació s'ha desestimat correctament.
+Paquets (entrants):
+Paquets (de sortida):
+Errors en els paquets rebuts:
+Propietats generals d'IPv6
+Propietats generals d'IPv4
+Executa una ordre remotament a un ordinador remot
+- Etapa 0: inicialització del sistema
+- Etapa 1: detecció de maquinari
+- Etapa 2: Gestió interna del nom d'usuari
+- Etapa 3: detecció de modificacions i protectors de pantalla
+- Etapa 4: recollida d'escombraries
+- Etapa 5: Inicieu la sessió
+Abans de la recollida d'escombraries: {0} bytes
+Després de la recollida d'escombraries: {0} bytes
+Error en iniciar RPC: {0}
+Sembla que executaves la versió candidata a la versió. Es recomana mantenir la versió estable.
+Sembla que la població del sistema de fitxers triga massa.
+El tipus {0} no és vàlid.
+Capacitat: {0}
+Recompte de particions: {0}
+Mida: {0}
+Utilitzat: {0}
+El directori {0} ja existeix.
+Error en intentar connectar-vos a {0}: temps d'espera de connexió o connexió perduda
+Calculadora per calcular expressions.
+Error en el càlcul.
+Capacitat: {0} GB ({1}, {2}, {3})
+Sembla que executaves la versió de llançament proper. Tot i que ara és més segur d’utilitzar-lo, es recomana mantenir la versió estable.
+Actualització del sistema
+S'està comprovant si hi ha actualitzacions del sistema ...
+S'ha trobat una nova versió:
+El podeu descarregar a:
+No s'ha pogut comprovar si hi ha actualitzacions: {0}
+No s'ha trobat el registre de depuració
+No hi ha notificacions recents
+Cerca la cadena especificada al fitxer proporcionat
+Calcula les sumes de fitxers del directori especificat.
+Llista tots els correus de l'usuari específic.
+Introduïu el nom d'usuari o l'adreça de correu electrònic:
+Introduir la contrasenya:
+Introduïu l'adreça i el port del servidor (<adreça> o <adreça>:[port]):
+Error en connectar-se a {0}: {1}
+S'està connectant a {0} ...
+S'està autenticant ...
+Surt de l'intèrpret d'ordres IMAP
+Llista d'ordres
+Descarrega missatges i els llista
+Obre un missatge
+La pàgina pot no ser negativa ni zero.
+La pàgina no és un valor numèric.
+El número del missatge pot no ser negatiu ni zero.
+El número del missatge no és un valor numèric.
+- Des de {0}
+- A {0}
+- Enviat a {0} a {1}
+No s'ha trobat el missatge especificat.
+No s'ha pogut iniciar la depuració remota: {0}
+Error en executar l'ordre IMAP: {0}
+Preparant perfils ... Podrien trigar uns quants minuts ...
+Nom de l’amfitrió, nom d’usuari, tipus de dades, codificació, xifratge, protocols
+Error en intentar executar l'script: {0}
+Escriu text a la consola
+Pren decisions d’usuari
+Emet un so en 'n' Hz i el temps en 'n' mil·lisegons
+on <$variable> és qualsevol variable que s'utilitzarà per emmagatzemar la resposta
+La freqüència ha de ser numèrica. Si és numèric, assegureu-vos que sigui >= 37 i <= 32767.
+El temps ha de ser numèric.
+on <respostes> són respostes d'una lletra de la pregunta separades per barres incloses
+Error en intentar connectar-se al servidor SSH: {0}
+MOTD en blanc després de l'inici de sessió.
+Permet a l'usuari introduir l'entrada
+Canvia el directori de correu actual
+No es pot obrir la carpeta de correu {0}: {1}
+Llista els directoris de la vostra adreça de correu electrònic
+Utilitza la informació del Marcatge ràpid per connectar-se ràpidament a qualsevol xarxa
+Seleccioneu una adreça per connectar-vos:
+La selecció està fora de rang. Seleccioneu entre 1 i {0}. Torna-ho a provar.
+La selecció no és un número. Torna-ho a provar.
+Durant la validació del certificat, hi ha errors de certificat. Pot ser la primera vegada que us connecteu al servidor o bé el certificat ha caducat. Aquí hi ha un error:
+Esteu segur que us voleu connectar?
+Resposta no vàlida. Siusplau torna-ho a provar.
+El marcatge ràpid està buit. Connecteu-vos a un servidor per afegir-hi una adreça.
+El marcatge ràpid no existeix. Connecteu-vos a un servidor per afegir-hi una adreça.
+Introduïu l'adreça i el port del servidor IMAP (<adreça> o <adreça>:[port]):
+Introduïu l'adreça i el port del servidor SMTP (<adreça> o <adreça>:[port]):
+Us demana que empleneu els camps obligatoris per enviar un missatge a una adreça
+Envia un missatge a una adreça
+Introduïu l'adreça de correu electrònic del destinatari:
+Introduïu l'assumpte:
+Introduïu el missatge a continuació. Escriviu "EOF" per confirmar.
+S'està enviant el missatge ...
+Missatge enviat.
+Error en enviar el missatge: {0}
+Adressa de correu invàlida. Assegureu-vos que heu escrit l'adreça correctament i que coincideixi amb el format de l'exemple que es mostra:
+Elimina un missatge
+Elimina tots els missatges del destinatari
+El missatge {0} de {1} s'ha suprimit de {2}. Queden {3} missatges per analitzar.
+El missatge {0} de {1} s'ha suprimit de la safata d'entrada. Queden {2} missatges per analitzar.
+Edita un fitxer de text
+Crea un fitxer nou
+El fitxer ja existeix.
+Error en intentar crear un fitxer: {0}
+No s'ha pogut obrir el fitxer. S'està sortint de l'intèrpret d'ordres ...
+No es troba l'ordre especificada de l'editor de text.
+Llista les ordres disponibles
+Surt de l'editor de text i desa els canvis no desats
+Imprimeix el contingut del fitxer amb números de línia a la consola
+Afegeix una nova línia amb text al final del fitxer
+Elimina el número de línia especificat
+Substitueix una paraula o frase per una altra
+Suprimeix una paraula o frase del número de línia
+Suprimeix un caràcter del número de caràcter de la línia especificada
+Línia eliminada.
+El número de línia especificat {0} no és un número vàlid.
+Els arguments necessaris no es passen a l'ordre {0}
+Error en intentar executar l'ordre: {0}
+S’executa en mode segur. S'està saltant l'etapa ...
+>> Depuració remota i xat: versió
+>> La vostra adreça és {0}.
+>> El vostre nom és {0}.
+No s'ha trobat l'ordre {0}. Utilitzeu "/help" per veure la llista.
+L'índex {0} no és vàlid. Hi ha {1} rastres de pila. L'índex es basa en zero, així que proveu de restar per 1.
+No hi ha rastre de pila
+Mostra l'última traça de pila a l'excepció
+Mostra el nom d'usuari actual a la sessió
+Us desconnecta del depurador
+Desbloqueja un dispositiu de depuració per adreça IP
+Bloqueja un dispositiu de depuració per adreça IP
+{0} ara pot tornar a unir-se a la depuració remota.
+{0} encara no està bloquejat.
+S'ha produït un error en carregar la configuració
+Hi ha un error en carregar la configuració. Pot ser que hagueu de comprovar el fitxer de configuració.

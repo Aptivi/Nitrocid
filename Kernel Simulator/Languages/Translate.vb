@@ -20,7 +20,7 @@ Imports System.Globalization
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "ben", "ben-T", "chi", "chi-T", "cro", "cze", "dan", "dtc", "eng", "fin", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "spa", "srb", "srb-T", "swe", "uzb", "vtn"}
+    Public availableLangs() As String = {"arb", "arb-T", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "spa", "srb", "srb-T", "swe", "uzb", "vtn"}
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -83,6 +83,8 @@ Public Module Translate
                 translated = My.Resources.chi_T
             Case "cro" 'Croatian
                 translated = My.Resources.cro
+            Case "ctl" 'Catalan
+                translated = My.Resources.ctl
             Case "cze" 'Czech
                 translated = My.Resources.cze
             Case "dan" 'Danish
@@ -91,6 +93,8 @@ Public Module Translate
                 translated = My.Resources.dtc
             Case "fre" 'French
                 translated = My.Resources.fre
+            Case "flp" 'Filipino
+                translated = My.Resources.flp
             Case "fin" 'Finnish
                 translated = My.Resources.fin
             Case "ger" 'Germany
@@ -330,6 +334,8 @@ CHOICE:
                 Return "Chinese (Simplified, China)"
             Case "cro"
                 Return "Croatian (Croatia)"
+            Case "ctl"
+                Return "Catalan (Catalan)"
             Case "cze"
                 Return "Czech (Czech Republic)"
             Case "dan"
@@ -340,6 +346,8 @@ CHOICE:
                 Return "English (United States)"
             Case "fin"
                 Return "Finnish (Finland)"
+            Case "flp"
+                Return "Filipino (Philippines)"
             Case "fre"
                 Return "French (France)"
             Case "ger"

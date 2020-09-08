@@ -206,6 +206,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Ordres disponibles: {0}
+        '''Escriu l&apos;ordre:
+        '''La injecció d’ordres s’ha cancel·lat.
+        '''Separeu els arguments d&apos;arrencada amb comes sense espais, per exemple, &apos;motd, gpuprobe&apos;
+        '''Separeu les ordres de &apos;cmdinject&apos; amb dos punts amb espais, per exemple, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Tingueu en compte que l&apos;argument &quot;depuració&quot; no cobreix completament el nucli.
+        '''bargs: no s&apos;ha trobat l&apos;argument sol·licitat {0}.
+        '''bargs: Error irrecuperable en l&apos;argument:
+        '''Arguments disponibles: {0}
+        '''Arguments (&quot;help&quot; per  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ctl() As String
+            Get
+                Return ResourceManager.GetString("ctl", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Dostupnأ© pإ™أ­kazy: {0}
         '''Pإ™أ­kaz Write:
         '''Pإ™أ­kazovأ© injekce byla zruإ،ena.
@@ -296,6 +314,23 @@ Namespace My.Resources
         Public ReadOnly Property fin() As String
             Get
                 Return ResourceManager.GetString("fin", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Mga magagamit na utos: {0}
+        '''Sumulat ng utos:
+        '''Kinansela ang command injection.
+        '''Paghiwalayin ang mga argumento ng boot sa mga kuwit nang walang puwang, halimbawa, &apos;motd, gpuprobe&apos;
+        '''Paghiwalayin ang mga utos sa &apos;cmdinject&apos; na may mga colon na may puwang, halimbawa, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Tandaan na ang argumentong &apos;debug&apos; ay hindi kumpletong sumasaklaw sa kernel.
+        '''bargs: Ang hiniling na argumento {0} ay hindi natagpuan.
+        '''bargs: Hindi maibabalik na error sa argument:
+        '''Magagamit na mga ar [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property flp() As String
+            Get
+                Return ResourceManager.GetString("flp", resourceCulture)
             End Get
         End Property
         
