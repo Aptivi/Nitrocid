@@ -241,6 +241,7 @@
     <Compile Include="Console\Input.vb" />
     <Compile Include="Files\Filesystem.vb" />
     <Compile Include="Hardware\HardwareVars.vb" />
+    <Compile Include="Hardware\HDD\PrintHDDInfo.vb" />
     <Compile Include="Kernel\EventsAndExceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
