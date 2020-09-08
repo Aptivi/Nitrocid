@@ -250,6 +250,8 @@
     <Compile Include="Misc\Configuration\ConfigTool\ToolPrompts.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Configuration\OldConfigUp.vb" />
+    <Compile Include="Misc\Forecast\Forecast.vb" />
+    <Compile Include="Misc\Forecast\ForecastInfo.vb" />
     <Compile Include="Misc\Games\LoveHateRespond.vb" />
     <Compile Include="Misc\Games\Solver.vb" />
     <Compile Include="Misc\Games\Speller.vb" />

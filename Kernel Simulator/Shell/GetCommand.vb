@@ -945,6 +945,24 @@ Public Module GetCommand
                 Done = True
                 Process.Start("https://github.com/EoflaOE/Kernel-Simulator/wiki")
 
+            ElseIf words(0) = "weather" Then
+
+                If requestedCommand <> "weather" Then
+                    Done = True
+                    Dim APIKey As String
+                    W(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Enter your API key:", currentLang) + " ", False, ColTypes.Input)
+                    APIKey = ReadLineNoInput("*")
+                    Console.WriteLine()
+                    Dim WeatherInfo As ForecastInfo = GetWeatherInfo(args(0), APIKey, UnitMeasurement.Metric)
+                    W(DoTranslation("-- Weather info for {0} --", currentLang), True, ColTypes.Stage, WeatherInfo.CityName)
+                    W(DoTranslation("Weather: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Weather)
+                    W(DoTranslation("Temperature: {0} ({1} unit)", currentLang), True, ColTypes.Neutral, WeatherInfo.Temperature, WeatherInfo.TemperatureMeasurement)
+                    W(DoTranslation("Feels like: {0} ({1} unit)", currentLang), True, ColTypes.Neutral, WeatherInfo.FeelsLike, WeatherInfo.TemperatureMeasurement)
+                    W(DoTranslation("Pressure: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Pressure)
+                    W(DoTranslation("Humidity: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Humidity)
+                End If
+
             End If
             If Done = False Then
                 Throw New EventsAndExceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:", currentLang))

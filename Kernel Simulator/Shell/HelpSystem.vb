@@ -93,7 +93,8 @@ Public Module HelpSystem
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
                                                               {"unblockdbgdev", DoTranslation("Unblock a debug device by IP address", currentLang)},
                                                               {"update", DoTranslation("System update", currentLang)},
-                                                              {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)}}
+                                                              {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)},
+                                                              {"weather", DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang)}}
     End Sub
 
     ''' <summary>
@@ -424,6 +425,11 @@ Public Module HelpSystem
         ElseIf command = "usermanual" Then
 
             W(DoTranslation("Usage:", currentLang) + " usermanual: " + DoTranslation("Takes you to our GitHub Wiki.", currentLang), True, ColTypes.Neutral)
+
+        ElseIf command = "weather" Then
+
+            W(DoTranslation("Usage:", currentLang) + " weather <CityID>: " + DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang) +
+                                                                             DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.", currentLang), True, ColTypes.Neutral)
 
         End If
 
