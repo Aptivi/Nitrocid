@@ -93,6 +93,8 @@ This section covers how to build Kernel Simulator on your system. Please scroll 
 
 **Oxygen Team:** Icon creator
 
+**OpenWeatherMap:** Weather API
+
 **All contributors:** Contribution
 
 ## Open Source Libraries
