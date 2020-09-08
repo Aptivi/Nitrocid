@@ -61,15 +61,15 @@ Public Enum UnitMeasurement
     ''' <summary>
     ''' Default unit measurement for OWM
     ''' </summary>
-    Kelvin
-    ''' <summary>
-    ''' Imperial units (Fahrenheit)
-    ''' </summary>
-    Imperial
+    Kelvin = 1
     ''' <summary>
     ''' Metric units (Celsius)
     ''' </summary>
     Metric
+    ''' <summary>
+    ''' Imperial units (Fahrenheit)
+    ''' </summary>
+    Imperial
 End Enum
 
 ''' <summary>

@@ -896,7 +896,7 @@ Public Module GetCommand
                     W(DoTranslation("Enter your API key:", currentLang) + " ", False, ColTypes.Input)
                     APIKey = ReadLineNoInput("*")
                     Console.WriteLine()
-                    Dim WeatherInfo As ForecastInfo = GetWeatherInfo(args(0), APIKey, UnitMeasurement.Metric)
+                    Dim WeatherInfo As ForecastInfo = GetWeatherInfo(args(0), APIKey, PreferredUnit)
                     W(DoTranslation("-- Weather info for {0} --", currentLang), True, ColTypes.Stage, WeatherInfo.CityName)
                     W(DoTranslation("Weather: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Weather)
                     W(DoTranslation("Temperature: {0} ({1} unit)", currentLang), True, ColTypes.Neutral, WeatherInfo.Temperature, WeatherInfo.TemperatureMeasurement)

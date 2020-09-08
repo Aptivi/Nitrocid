@@ -24,6 +24,7 @@ Public Module ToolPrompts
         SBoolean
         SInt
         SString
+        SSelection
         SMenu
     End Enum
 
@@ -125,13 +126,14 @@ Public Module ToolPrompts
                     W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Lines255Colors"))
                     W("6) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
                 Case 7 'Misc
-                    MaxOptions = 6
+                    MaxOptions = 7
                     W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("CornerTD"))
                     W("2) " + DoTranslation("Debug Size Quota in Bytes", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DebugQuota"))
                     W("3) " + DoTranslation("Size parse mode", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FullParseMode"))
                     W("4) " + DoTranslation("Marquee on startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("StartScroll"))
                     W("5) " + DoTranslation("Long Time and Date", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("LongTimeDate"))
-                    W("6) " + DoTranslation("Show Hidden Files", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("HiddenFiles"))
+                    W("6) " + DoTranslation("Show Hidden Files", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("HiddenFiles"))
+                    W("7) " + DoTranslation("Preferred Unit for Temperature", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("PreferredUnit"))
                 Case Else 'Invalid section
                     W("X) " + DoTranslation("Invalid section entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
             End Select
@@ -400,6 +402,13 @@ Public Module ToolPrompts
                             KeyVar = "HiddenFiles"
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 7 'Preferred Unit for Temperature
+                            MaxKeyOptions = 3
+                            KeyType = SettingsKeyType.SSelection
+                            KeyVar = "PreferredUnit"
+                            W("1) " + DoTranslation("Kelvin", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Metric (Celsius)", currentLang), True, ColTypes.Neutral)
+                            W("3) " + DoTranslation("Imperial (Fahrenheit)", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
@@ -444,8 +453,9 @@ Public Module ToolPrompts
                     Wdbg("W", "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
                 End If
-            ElseIf Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt Then
-                Wdbg("I", "Answer is numeric and key is of the Integer type.")
+            ElseIf (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt) Or
+                   (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SSelection) Then
+                Wdbg("I", "Answer is numeric and key is of the {0} type.", KeyType)
                 If AnswerInt >= 0 Then
                     Wdbg("I", "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                     KeyFinished = True
@@ -526,6 +536,7 @@ Public Module ToolPrompts
         Dim TypeOfTextWriter As Type = GetType(TextWriterColor)
         Dim TypeOfNetworkTools As Type = GetType(NetworkTools)
         Dim TypeOfScreensaverSettings As Type = GetType(ScreensaverSettings)
+        Dim TypeOfForecast As Type = GetType(Forecast)
 
         'Get fields of flag modules
         Dim FieldFlags As FieldInfo = TypeOfFlags.GetField(Variable)
@@ -535,6 +546,7 @@ Public Module ToolPrompts
         Dim FieldTextWriter As FieldInfo = TypeOfTextWriter.GetField(Variable)
         Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
         Dim FieldScreensaverSettings As FieldInfo = TypeOfScreensaverSettings.GetField(Variable)
+        Dim FieldForecast As FieldInfo = TypeOfForecast.GetField(Variable)
 
         'Check if any of them contains the specified variable
         If Not IsNothing(FieldFlags) Then
@@ -551,6 +563,8 @@ Public Module ToolPrompts
             Return FieldNetworkTools
         ElseIf Not IsNothing(FieldScreensaverSettings) Then
             Return FieldScreensaverSettings
+        ElseIf Not IsNothing(FieldForecast) Then
+            Return FieldForecast
         End If
     End Function
 

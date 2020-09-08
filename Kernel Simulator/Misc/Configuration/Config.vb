@@ -108,6 +108,7 @@ Public Module Config
                         New IniKey(ksconf, "Marquee on startup", StartScroll),
                         New IniKey(ksconf, "Long Time and Date", LongTimeDate),
                         New IniKey(ksconf, "Show Hidden Files", HiddenFiles),
+                        New IniKey(ksconf, "Preferred Unit for Temperature", PreferredUnit),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             Else '----------------------- If [Preserve] value is False, then don't preserve.
                 'The General Section
@@ -187,6 +188,7 @@ Public Module Config
                         New IniKey(ksconf, "Marquee on startup", "True"),
                         New IniKey(ksconf, "Long Time and Date", "True"),
                         New IniKey(ksconf, "Show Hidden Files", "False"),
+                        New IniKey(ksconf, "Preferred Unit for Temperature", UnitMeasurement.Metric),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
@@ -246,6 +248,7 @@ Public Module Config
             ksconf.Sections("Misc").Keys("Marquee on startup").TrailingComment.Text = "Whether or not to activate banner animation."
             ksconf.Sections("Misc").Keys("Long Time and Date").TrailingComment.Text = "Whether or not to render time and date using long."
             ksconf.Sections("Misc").Keys("Show Hidden Files").TrailingComment.Text = "Whether or not to list hidden files."
+            ksconf.Sections("Misc").Keys("Preferred Unit for Temperature").TrailingComment.Text = "Choose either Kelvin, Celsius, or Fahrenheit for temperature measurement."
 
             'Save Config
             ksconf.Save(paths("Configuration"))
@@ -395,6 +398,7 @@ Public Module Config
             If configReader.Sections("Misc").Keys("Marquee on startup").Value = "True" Then StartScroll = True Else StartScroll = False
             If configReader.Sections("Misc").Keys("Long Time and Date").Value = "True" Then LongTimeDate = True Else LongTimeDate = False
             If configReader.Sections("Misc").Keys("Show Hidden Files").Value = "True" Then HiddenFiles = True Else HiddenFiles = False
+            PreferredUnit = configReader.Sections("Misc").Keys("Preferred Unit for Temperature").Value
 
             Return True
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.

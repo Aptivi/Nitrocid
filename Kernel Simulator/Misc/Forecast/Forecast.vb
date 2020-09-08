@@ -20,13 +20,15 @@ Imports Newtonsoft.Json.Linq
 
 Public Module Forecast
 
+    Public PreferredUnit As UnitMeasurement = UnitMeasurement.Metric
+
     ''' <summary>
     ''' Gets current weather info from OpenWeatherMap
     ''' </summary>
     ''' <param name="CityID">City ID</param>
     ''' <param name="APIKey">API key</param>
     ''' <returns>A class containing properties of weather information</returns>
-    Public Function GetWeatherInfo(ByVal CityID As Long, ByVal APIKey As String, ByVal Unit As UnitMeasurement) As ForecastInfo
+    Public Function GetWeatherInfo(ByVal CityID As Long, ByVal APIKey As String, Optional ByVal Unit As UnitMeasurement = UnitMeasurement.Metric) As ForecastInfo
         Dim WeatherInfo As New ForecastInfo With {.CityID = CityID, .TemperatureMeasurement = Unit}
         Dim WeatherURL As String = $"http://api.openweathermap.org/data/2.5/weather?id={CityID}&appid={APIKey}"
         Dim WeatherDownloader As New WebClient
