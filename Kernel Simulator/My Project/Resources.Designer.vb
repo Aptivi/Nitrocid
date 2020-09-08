@@ -721,6 +721,25 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Amarada la heli karo: {0}
+        '''Qor amar:
+        '''Cirbadda taliska waa la joojiyay.
+        '''Kala sooc dooda muranka leh hakad la&apos;aan, tusaale ahaan, &apos;motd, gpuprobe&apos;
+        '''Kala amar gaar ah oo ku saabsan &apos;cmdinject&apos; oo leh xiidmooyin leh meelo bannaan, tusaale ahaan, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Xusuusnow in doodda &apos;debug&apos; aysan si buuxda u daboolayn firida.
+        '''baararka: Doodda la codsaday {0} lama helin.
+        '''khaladaad: Khalad aan laga soo kaban karin dood ahaan:
+        '''Doodaha la heli karo: {0}
+        '''Doodaha (&apos;help&apos; caawimaad):
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property som() As String
+            Get
+                Return ResourceManager.GetString("som", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Comandos disponibles: {0}
         '''Comando de escritura: 
         '''La inyección de comandos ha sido cancelada.

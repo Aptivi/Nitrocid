@@ -397,6 +397,7 @@
     <None Include="Resources\slo.txt" />
     <None Include="Resources\srb.txt" />
     <None Include="Resources\srb-T.txt" />
+    <None Include="Resources\som.txt" />
     <Content Include="Resources\uzb.txt" />
     <None Include="Resources\cze.txt" />
     <None Include="Resources\swe.txt" />
