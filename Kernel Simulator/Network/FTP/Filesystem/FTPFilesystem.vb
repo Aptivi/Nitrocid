@@ -15,6 +15,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports System.Text
 
 Module FTPFilesystem
@@ -192,7 +193,7 @@ Module FTPFilesystem
             Wdbg("I", "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile)
             If ClientFTP.DirectoryExists(Source) Then
                 ClientFTP.DownloadDirectory(paths("Temp") + "/FTPTransfer", Source)
-                Result = ClientFTP.UploadDirectory(paths("Temp") + "/FTPTransfer", Target)
+                Result = ClientFTP.UploadDirectory(paths("Temp") + "/FTPTransfer/" + Source, Target)
             ElseIf ClientFTP.FileExists(Source) And ClientFTP.DirectoryExists(Target) Then
                 ClientFTP.DownloadFile(paths("Temp") + "/FTPTransfer/" + SourceFile, Source)
                 Result = ClientFTP.UploadFile(paths("Temp") + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile)
@@ -200,6 +201,7 @@ Module FTPFilesystem
                 ClientFTP.DownloadFile(paths("Temp") + "/FTPTransfer/" + SourceFile, Source)
                 Result = ClientFTP.UploadFile(paths("Temp") + "/FTPTransfer/" + SourceFile, Target)
             End If
+            Directory.Delete(paths("Temp") + "/FTPTransfer", True)
 
             'See if copied successfully
 #Disable Warning BC42104

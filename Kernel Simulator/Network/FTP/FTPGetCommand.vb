@@ -16,7 +16,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Text
 Imports System.Threading
+Imports Microsoft.VisualBasic.FileIO
 
 Public Module FTPGetCommand
 
@@ -36,6 +38,18 @@ Public Module FTPGetCommand
         Dim strArgs As String = cmd.Substring(index)
         If Not index = cmd.Length Then strArgs = strArgs.Substring(1)
         Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+        Dim ArgsQ() As String
+        Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
+        Dim Parser As New TextFieldParser(TStream) With {
+            .Delimiters = {" "},
+            .HasFieldsEnclosedInQuotes = True
+        }
+        ArgsQ = Parser.ReadFields
+        If Not ArgsQ Is Nothing Then
+            For i As Integer = 0 To ArgsQ.Length - 1
+                ArgsQ(i).Replace("""", "")
+            Next
+        End If
 
         'Command code
         Try
@@ -56,11 +70,11 @@ Public Module FTPGetCommand
             ElseIf words(0) = "copy" Or words(0) = "cp" Then
                 If cmd <> "copy" Or cmd <> "cp" Then
                     If connected Then
-                        W(DoTranslation("Copying {0} to {1}...", currentLang), True, ColTypes.Neutral, args(0), args(1))
-                        If FTPCopyItem(args(0), args(1)) Then
+                        W(DoTranslation("Copying {0} to {1}...", currentLang), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
+                        If FTPCopyItem(ArgsQ(0), ArgsQ(1)) Then
                             W(vbNewLine + DoTranslation("Copied successfully", currentLang), True, ColTypes.Neutral)
                         Else
-                            W(vbNewLine + DoTranslation("Failed to copy {0} to {1}.", currentLang), True, ColTypes.Neutral, args(0), args(1))
+                            W(vbNewLine + DoTranslation("Failed to copy {0} to {1}.", currentLang), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
                         End If
                     Else
                         W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
@@ -142,11 +156,11 @@ Public Module FTPGetCommand
             ElseIf words(0) = "move" Or words(0) = "mv" Then
                 If cmd <> "move" Or cmd <> "mv" Then
                     If connected Then
-                        W(DoTranslation("Moving {0} to {1}...", currentLang), True, ColTypes.Neutral, args(0), args(1))
-                        If FTPMoveItem(args(0), args(1)) Then
+                        W(DoTranslation("Moving {0} to {1}...", currentLang), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
+                        If FTPMoveItem(ArgsQ(0), ArgsQ(1)) Then
                             W(vbNewLine + DoTranslation("Moved successfully", currentLang), True, ColTypes.Neutral)
                         Else
-                            W(vbNewLine + DoTranslation("Failed to move {0} to {1}.", currentLang), True, ColTypes.Neutral, args(0), args(1))
+                            W(vbNewLine + DoTranslation("Failed to move {0} to {1}.", currentLang), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
                         End If
                     Else
                         W(DoTranslation("You must connect to server before performing transmission.", currentLang), True, ColTypes.Err)
