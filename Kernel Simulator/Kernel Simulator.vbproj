@@ -321,8 +321,8 @@
     <Compile Include="Shell\GetModCommand.vb" />
     <Compile Include="Shell\HelpSystem.vb" />
     <Compile Include="Shell\Shell.vb" />
-    <Compile Include="Tests\Interaction\TGetCommand.vb" />
-    <Compile Include="Tests\Interaction\TShell.vb" />
+    <Compile Include="TestShell\TestGetCommand.vb" />
+    <Compile Include="TestShell\TestShell.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />
     <Compile Include="TimeDate\TimeZones.vb" />
   </ItemGroup>

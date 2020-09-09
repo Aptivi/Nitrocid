@@ -18,7 +18,7 @@
 
 Imports System.Threading
 
-Module TShell
+Module TestShell
 
     Public TShellCmds As String() = {"print", "printf", "printd", "printdf", "testevent", "probehw", "garbage", "panic", "panicf", "translate", "places", "loadmods",
                                      "debug", "rdebug", "testmd5", "testsha256", "testsha1", "testregexp", "colortest", "colortruetest", "sendnot", "dcalend",

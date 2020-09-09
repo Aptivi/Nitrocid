@@ -23,7 +23,7 @@ Imports System.Text.RegularExpressions
 Imports System.Threading
 Imports Microsoft.VisualBasic.FileIO
 
-Module TGetCommand
+Module TestGetCommand
 
     Public TStartCommandThread As New Thread(AddressOf TParseCommand)
 
