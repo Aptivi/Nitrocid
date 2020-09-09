@@ -190,29 +190,29 @@ Public Module ModParser
             End If
             If script.Cmd <> "" And StartStop = True Then
                 If script.CmdType = ModType.Shell Then
-                    modcmnds.Add(script.Cmd)
+                    If Not modcmnds.Contains(script.Cmd) Then modcmnds.Add(script.Cmd)
                     If script.Def = "" Then
                         W(DoTranslation("No definition for custom shell command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
                         Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
                         script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
                     End If
-                    moddefs.Add(script.Cmd, script.Def)
+                    If Not moddefs.ContainsKey(script.Cmd) Then moddefs.Add(script.Cmd, script.Def)
                 ElseIf script.CmdType = ModType.FTPShell Then
-                    FTPModCommands.Add(script.Cmd)
+                    If Not FTPModCommands.Contains(script.Cmd) Then FTPModCommands.Add(script.Cmd)
                     If script.Def = "" Then
                         W(DoTranslation("No definition for custom FTP shell command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
                         Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
                         script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
                     End If
-                    FTPModDefs.Add(script.Cmd, script.Def)
+                    If Not FTPModDefs.ContainsKey(script.Cmd) Then FTPModDefs.Add(script.Cmd, script.Def)
                 ElseIf script.CmdType = ModType.MailShell Then
-                    MailModCommands.Add(script.Cmd)
+                    If Not MailModCommands.Contains(script.Cmd) Then MailModCommands.Add(script.Cmd)
                     If script.Def = "" Then
                         W(DoTranslation("No definition for custom mail shell command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
                         Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
                         script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
                     End If
-                    MailModDefs.Add(script.Cmd, script.Def)
+                    If Not MailModDefs.ContainsKey(script.Cmd) Then MailModDefs.Add(script.Cmd, script.Def)
                 End If
             End If
         End If
