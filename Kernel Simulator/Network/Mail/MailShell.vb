@@ -27,6 +27,7 @@ Module MailShell
     Public IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested, KeepAlive As Boolean
+    Public MailModCommands As New ArrayList
 
     ''' <summary>
     ''' Initializes the shell of the mail client
@@ -76,6 +77,9 @@ Module MailShell
                     MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand)
                     MailStartCommandThread.Start({cmd, args})
                     MailStartCommandThread.Join()
+                ElseIf MailModCommands.Contains(cmd) Then
+                    Wdbg("I", "Mod command found.")
+                    ExecuteModCommand(cmd + " " + args)
                 ElseIf Not cmd.StartsWith(" ") Then
                     Wdbg("E", "Command not found. Reopening shell...")
                     W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, cmd)

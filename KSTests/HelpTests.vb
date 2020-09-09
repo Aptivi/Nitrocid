@@ -22,12 +22,12 @@ Imports KS
 
     <TestMethod()> Public Sub TestInitFTPHelp()
         InitFTPHelp()
-        Assert.IsNotNull(ftpDefinitions, "Initialization of FTP help failed. Got null.")
+        Assert.IsNotNull(FTPDefinitions, "Initialization of FTP help failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestInitMailHelp()
         IMAPInitHelp()
-        Assert.IsNotNull(IMAP_definitions, "Initialization of mail help failed. Got null.")
+        Assert.IsNotNull(MailDefinitions, "Initialization of mail help failed. Got null.")
     End Sub
 
     <TestMethod()> Public Sub TestInitShellHelp()

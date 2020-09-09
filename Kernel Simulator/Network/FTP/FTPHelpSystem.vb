@@ -19,13 +19,14 @@
 Public Module FTPHelpSystem
 
     'This dictionary is the definitions for commands.
-    Public ftpDefinitions As Dictionary(Of String, String)
+    Public FTPDefinitions As Dictionary(Of String, String)
+    Public FTPModDefs As New Dictionary(Of String, String)
 
     ''' <summary>
     ''' Updates the help definition so it reflects the available commands
     ''' </summary>
     Public Sub InitFTPHelp()
-        ftpDefinitions = New Dictionary(Of String, String) From {{"currlocaldir (Alias: pwdl)", DoTranslation("Gets current local directory", currentLang)},
+        FTPDefinitions = New Dictionary(Of String, String) From {{"currlocaldir (Alias: pwdl)", DoTranslation("Gets current local directory", currentLang)},
                                                                  {"currremotedir (Alias: pwdr)", DoTranslation("Gets current remote directory", currentLang)},
                                                                  {"connect", DoTranslation("Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", currentLang)},
                                                                  {"changelocaldir (Alias: cdl)", DoTranslation("Changes local directory to download to or upload from", currentLang)},
@@ -51,11 +52,14 @@ Public Module FTPHelpSystem
 
         If command = "" Then
             If simHelp = False Then
-                For Each cmd As String In ftpDefinitions.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, ftpDefinitions(cmd))
+                For Each cmd As String In FTPDefinitions.Keys
+                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, FTPDefinitions(cmd))
+                Next
+                For Each cmd As String In FTPModDefs.Keys
+                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, FTPModDefs(cmd))
                 Next
             Else
-                W(String.Join(", ", availableCommands), True, ColTypes.Neutral)
+                W(String.Join(", ", availftpcmds), True, ColTypes.Neutral)
             End If
         ElseIf command = ("currlocaldir" Or "pwdl") Then
             W(DoTranslation("Usage:", currentLang) + " currlocaldir or pwdl", True, ColTypes.Neutral)

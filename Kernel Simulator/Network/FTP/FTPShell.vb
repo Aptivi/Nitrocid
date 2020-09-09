@@ -33,6 +33,7 @@ Public Module FTPShell
     Public pass As String
     Private strcmd As String
     Public ftpexit As Boolean = False
+    Public FTPModCommands As New ArrayList
 
     ''' <summary>
     ''' Initializes the FTP shell
@@ -126,11 +127,16 @@ Public Module FTPShell
         Dim words As String() = strcmd.Split({" "c})
         Wdbg("I", $"Is the command found? {availftpcmds.Contains(words(0))}")
         If availftpcmds.Contains(words(0)) Then
+            Wdbg("I", "Command found.")
             FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand)
             FTPStartCommandThread.Start(strcmd)
             FTPStartCommandThread.Join()
-        Else
-            W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), True, ColTypes.Err, strcmd)
+        ElseIf FTPModCommands.Contains(words(0)) Then
+            Wdbg("I", "Mod command found.")
+            ExecuteModCommand(strcmd)
+        ElseIf Not strcmd.StartsWith(" ") Then
+            Wdbg("E", "Command {0} not found.", strcmd)
+            W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), True, ColTypes.Err, words(0))
         End If
     End Sub
 

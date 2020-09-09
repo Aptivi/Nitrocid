@@ -16,14 +16,31 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module GetModCommand
+Public Module ModExecutor
+
+    ''' <summary>
+    ''' Mod command type
+    ''' </summary>
+    Public Enum ModType
+        ''' <summary>
+        ''' Normal UESH shell
+        ''' </summary>
+        Shell
+        ''' <summary>
+        ''' FTP shell
+        ''' </summary>
+        FTPShell
+        ''' <summary>
+        ''' Mail shell
+        ''' </summary>
+        MailShell
+    End Enum
 
     ''' <summary>
     ''' Executes the command provided by a mod
     ''' </summary>
     ''' <param name="cmd">A mod command with arguments</param>
     Sub ExecuteModCommand(ByVal cmd As String)
-
         Dim parts As String() = cmd.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
         Dim actualCmd As String = parts(0)
         Wdbg("I", "Command = {0}", actualCmd)
@@ -44,7 +61,6 @@ Module GetModCommand
             scripts(actualCmd).PerformCmd()
         End If
         Wdbg("I", "Command executed successfully.")
-
     End Sub
 
 End Module

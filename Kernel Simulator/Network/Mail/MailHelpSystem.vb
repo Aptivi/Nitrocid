@@ -19,23 +19,24 @@
 Public Module MailHelpSystem
 
     'This dictionary is the definitions for commands.
-    Public IMAP_definitions As Dictionary(Of String, String)
+    Public MailDefinitions As Dictionary(Of String, String)
+    Public MailModDefs As New Dictionary(Of String, String)
 
     ''' <summary>
     ''' Updates the definition dictionary to make it full of available commands.
     ''' </summary>
     Public Sub IMAPInitHelp()
-        IMAP_definitions = New Dictionary(Of String, String) From {{"cd", DoTranslation("Changes current mail directory", currentLang)},
-                                                                   {"exit", DoTranslation("Exits the IMAP shell", currentLang)},
-                                                                   {"help", DoTranslation("List of commands", currentLang)},
-                                                                   {"list", DoTranslation("Downloads messages and lists them", currentLang)},
-                                                                   {"lsdirs", DoTranslation("Lists directories in your mail address", currentLang)},
-                                                                   {"mv", DoTranslation("Moves a message", currentLang)},
-                                                                   {"mvall", DoTranslation("Moves all messages from recipient", currentLang)},
-                                                                   {"read", DoTranslation("Opens a message", currentLang)},
-                                                                   {"rm", DoTranslation("Removes a message", currentLang)},
-                                                                   {"rmall", DoTranslation("Removes all messages from recipient", currentLang)},
-                                                                   {"send", DoTranslation("Sends a message to an address", currentLang)}}
+        MailDefinitions = New Dictionary(Of String, String) From {{"cd", DoTranslation("Changes current mail directory", currentLang)},
+                                                                  {"exit", DoTranslation("Exits the IMAP shell", currentLang)},
+                                                                  {"help", DoTranslation("List of commands", currentLang)},
+                                                                  {"list", DoTranslation("Downloads messages and lists them", currentLang)},
+                                                                  {"lsdirs", DoTranslation("Lists directories in your mail address", currentLang)},
+                                                                  {"mv", DoTranslation("Moves a message", currentLang)},
+                                                                  {"mvall", DoTranslation("Moves all messages from recipient", currentLang)},
+                                                                  {"read", DoTranslation("Opens a message", currentLang)},
+                                                                  {"rm", DoTranslation("Removes a message", currentLang)},
+                                                                  {"rmall", DoTranslation("Removes all messages from recipient", currentLang)},
+                                                                  {"send", DoTranslation("Sends a message to an address", currentLang)}}
     End Sub
 
     ''' <summary>
@@ -44,8 +45,11 @@ Public Module MailHelpSystem
     ''' <param name="cmd">A command</param>
     Public Sub IMAPShowHelp(Optional ByVal cmd As String = "")
         If cmd = "" Then
-            For Each cmnd As String In IMAP_definitions.Keys
-                W("- {0}: ", False, ColTypes.HelpCmd, cmnd) : W("{0}", True, ColTypes.HelpDef, IMAP_definitions(cmnd))
+            For Each cmnd As String In MailDefinitions.Keys
+                W("- {0}: ", False, ColTypes.HelpCmd, cmnd) : W("{0}", True, ColTypes.HelpDef, MailDefinitions(cmnd))
+            Next
+            For Each cmnd As String In MailModDefs.Keys
+                W("- {0}: ", False, ColTypes.HelpCmd, cmnd) : W("{0}", True, ColTypes.HelpDef, MailModDefs(cmnd))
             Next
         ElseIf cmd = "cd" Then
             W(DoTranslation("Usage:", currentLang) + " cd <folder>: " + DoTranslation("Changes current mail directory", currentLang), True, ColTypes.Neutral)

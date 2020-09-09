@@ -28,6 +28,7 @@ Public Module ModParser
         Sub StartMod()
         Sub StopMod()
         Property Cmd As String
+        Property CmdType As ModType
         Property Def As String
         Property Name As String
         Property Version As String
@@ -188,13 +189,31 @@ Public Module ModParser
                 W(DoTranslation("{0} v{1} started", currentLang), True, ColTypes.Neutral, script.Name, script.Version)
             End If
             If script.Cmd <> "" And StartStop = True Then
-                modcmnds.Add(script.Cmd)
-                If script.Def = "" Then
-                    W(DoTranslation("No definition for command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
-                    Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
-                    script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
+                If script.CmdType = ModType.Shell Then
+                    modcmnds.Add(script.Cmd)
+                    If script.Def = "" Then
+                        W(DoTranslation("No definition for custom shell command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
+                        Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
+                        script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
+                    End If
+                    moddefs.Add(script.Cmd, script.Def)
+                ElseIf script.CmdType = ModType.FTPShell Then
+                    FTPModCommands.Add(script.Cmd)
+                    If script.Def = "" Then
+                        W(DoTranslation("No definition for custom FTP shell command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
+                        Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
+                        script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
+                    End If
+                    FTPModDefs.Add(script.Cmd, script.Def)
+                ElseIf script.CmdType = ModType.MailShell Then
+                    MailModCommands.Add(script.Cmd)
+                    If script.Def = "" Then
+                        W(DoTranslation("No definition for custom mail shell command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
+                        Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
+                        script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
+                    End If
+                    MailModDefs.Add(script.Cmd, script.Def)
                 End If
-                moddefs.Add(script.Cmd, script.Def)
             End If
         End If
     End Sub
