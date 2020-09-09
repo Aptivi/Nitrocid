@@ -197,7 +197,7 @@ Public Module Shell
 
                     'Try to execute command
                     For Each cmd In groupCmds
-                        Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - {cmd}"
+                        Console.Title = $"{ConsoleTitle} - {cmd}"
                         'Get the index of the first space
                         Dim indexCmd As Integer = cmd.IndexOf(" ")
                         Dim cmdArgs As String = cmd 'Command with args
@@ -230,7 +230,7 @@ Public Module Shell
             ElseIf ArgsMode = True And CommandFlag = True Then
                 CommandFlag = False
                 For Each cmd In argcmds
-                    Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - {cmd}"
+                    Console.Title = $"{ConsoleTitle} - {cmd}"
                     Dim scriptArgs As List(Of String) = strcommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
                     Dim scriptCmd As String = scriptArgs(0)
                     If scriptCmd.StartsWith("""") And scriptCmd.EndsWith("""") Then
@@ -288,7 +288,7 @@ Public Module Shell
                 W(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message)
             End If
         End Try
-        Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}"
+        Console.Title = ConsoleTitle
 
         'Restore console output to its original state if output redirection is used
 #Disable Warning BC42104

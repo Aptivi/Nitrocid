@@ -28,8 +28,9 @@ Public Module Kernel
     Public MOTDMessage, HName, MAL As String
     Public ReadOnly EnvironmentOSType As String = Environment.OSVersion.ToString
     Public EventManager As New EventsAndExceptions
-    Public DefConsoleOut As IO.TextWriter
+    Public DefConsoleOut As TextWriter
     Public ScrnTimeout As Integer = 300000
+    Public ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - Milestone 1"
 
     ''' <summary>
     ''' Entry point
@@ -39,7 +40,7 @@ Public Module Kernel
         While True
             Try
                 'A title
-                Console.Title = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}"
+                Console.Title = ConsoleTitle
 
                 'Initialize crucial things
                 If Not NotifThread.IsAlive Then NotifThread.Start()
