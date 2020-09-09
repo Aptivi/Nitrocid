@@ -34,6 +34,7 @@ Public Module ModParser
         Property Version As String
         Sub PerformCmd(Optional ByVal args As String = "")
         Sub InitEvents(ByVal ev As String)
+        Sub InitEvents(ByVal ev As String, ParamArray Args() As Object)
     End Interface
     Public scripts As New Dictionary(Of String, IScript)
     Private ReadOnly modPath As String = paths("Mods")

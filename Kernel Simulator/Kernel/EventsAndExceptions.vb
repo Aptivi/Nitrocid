@@ -46,9 +46,9 @@ Public Class EventsAndExceptions
     Public Event FTPPostExecuteCommand()
     Public Event FTPCommandError()
     Public Event FTPPreDownload()
-    Public Event FTPPostDownload()
+    Public Event FTPPostDownload(ByVal Success As Boolean)
     Public Event FTPPreUpload()
-    Public Event FTPPostUpload()
+    Public Event FTPPostUpload(ByVal Success As Boolean)
     Public Event IMAPShellInitialized()
     Public Event IMAPPreExecuteCommand()
     Public Event IMAPPostExecuteCommand()
@@ -317,10 +317,10 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Makes the mod respond to the event of FTP post-download
     ''' </summary>
-    Public Sub RespondFTPPostDownload() Handles Me.FTPPostDownload
+    Public Sub RespondFTPPostDownload(ByVal Success As Boolean) Handles Me.FTPPostDownload
         For Each script As IScript In scripts.Values
             Wdbg("I", "Mod {0} v{1} responded to event FTPPostDownload()...", script.Name, script.Version)
-            script.InitEvents("FTPPostDownload")
+            script.InitEvents("FTPPostDownload", Success)
         Next
     End Sub
     ''' <summary>
@@ -335,10 +335,10 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Makes the mod respond to the event of FTP post-upload
     ''' </summary>
-    Public Sub RespondFTPPostUpload() Handles Me.FTPPostUpload
+    Public Sub RespondFTPPostUpload(ByVal Success As Boolean) Handles Me.FTPPostUpload
         For Each script As IScript In scripts.Values
             Wdbg("I", "Mod {0} v{1} responded to event FTPPostUpload()...", script.Name, script.Version)
-            script.InitEvents("FTPPostUpload")
+            script.InitEvents("FTPPostUpload", Success)
         Next
     End Sub
     ''' <summary>
@@ -724,9 +724,9 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Raise an event of FTP post-download
     ''' </summary>
-    Public Sub RaiseFTPPostDownload()
+    Public Sub RaiseFTPPostDownload(ByVal Success As Boolean)
         Wdbg("I", "Raising event FTPPostDownload() and responding in RespondFTPPostDownload()...")
-        RaiseEvent FTPPostDownload()
+        RaiseEvent FTPPostDownload(Success)
     End Sub
     ''' <summary>
     ''' Raise an event of FTP pre-upload
@@ -738,9 +738,9 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Raise an event of FTP post-upload
     ''' </summary>
-    Public Sub RaiseFTPPostUpload()
+    Public Sub RaiseFTPPostUpload(ByVal Success As Boolean)
         Wdbg("I", "Raising event FTPPostUpload() and responding in RespondFTPPostUpload()...")
-        RaiseEvent FTPPostUpload()
+        RaiseEvent FTPPostUpload(Success)
     End Sub
     ''' <summary>
     ''' Raise an event of IMAP shell initialized
