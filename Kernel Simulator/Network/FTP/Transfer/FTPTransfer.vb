@@ -54,11 +54,12 @@ Public Module FTPTransfer
 
                 'Show a message that it's downloaded
                 Wdbg("I", "Downloaded file {0}.", File)
+                EventManager.RaiseFTPPostDownload()
                 Return True
             Catch ex As Exception
                 Wdbg("E", "Download failed for file {0}: {1}", File, ex.Message)
+                EventManager.RaiseFTPPostDownload()
             End Try
-            EventManager.RaiseFTPPostDownload()
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission.", currentLang))
         End If
@@ -77,8 +78,10 @@ Public Module FTPTransfer
             Wdbg("I", "Uploading file {0}...", File)
 
             'Try to upload
-            Return ClientFTP.UploadFile($"{currDirect}/{File}", File, True, True, FtpVerify.Retry, Complete)
+            Dim Success As Boolean = ClientFTP.UploadFile($"{currDirect}/{File}", File, True, True, FtpVerify.Retry, Complete)
             EventManager.RaiseFTPPostUpload()
+            Wdbg("I", "Uploaded file {0} with status {1}.", File, Success)
+            Return Success
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission.", currentLang))
         End If
