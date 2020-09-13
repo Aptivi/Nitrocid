@@ -34,6 +34,10 @@ Public Module ModExecutor
         ''' Mail shell
         ''' </summary>
         MailShell
+        ''' <summary>
+        ''' Text shell
+        ''' </summary>
+        TextShell
     End Enum
 
     ''' <summary>

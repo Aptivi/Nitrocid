@@ -24,6 +24,7 @@ Public Module TextEditShell
     'Variables
     Public TextEdit_Exiting As Boolean
     Public TextEdit_Commands As String() = {"help", "exit", "print", "addline", "delline", "replace", "delword", "delcharnum"}
+    Public TextEdit_ModCommands As New ArrayList
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)
 
@@ -61,6 +62,9 @@ Public Module TextEditShell
                     Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
                     TextEdit_CommandThread.Start(WrittenCommand)
                     TextEdit_CommandThread.Join()
+                ElseIf TextEdit_ModCommands.Contains(WrittenCommand.Split(" ")(0)) Then
+                    Wdbg("I", "Mod command {0} executing...", WrittenCommand.Split(" ")(0))
+                    ExecuteModCommand(WrittenCommand)
                 Else
                     W(DoTranslation("The specified text editor command is not found.", currentLang), True, ColTypes.Err)
                     Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Length)

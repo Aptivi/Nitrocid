@@ -19,6 +19,7 @@
 Public Module TextEditHelpSystem
 
     Public TextEdit_HelpEntries As Dictionary(Of String, String)
+    Public TextEdit_ModHelpEntries As New Dictionary(Of String, String)
 
     Public Sub TextEdit_UpdateHelp()
         TextEdit_HelpEntries = New Dictionary(Of String, String) From {{"help", DoTranslation("Lists available commands", currentLang)},
@@ -36,6 +37,10 @@ Public Module TextEditHelpSystem
             For Each HelpKey As String In TextEdit_HelpEntries.Keys
                 W("- {0}: ", False, ColTypes.HelpCmd, HelpKey)
                 W(TextEdit_HelpEntries(HelpKey), True, ColTypes.HelpDef)
+            Next
+            For Each HelpKey As String In TextEdit_ModHelpEntries.Keys
+                W("- {0}: ", False, ColTypes.HelpCmd, HelpKey)
+                W(TextEdit_ModHelpEntries(HelpKey), True, ColTypes.HelpDef)
             Next
         ElseIf Command = "help" Then
             W(DoTranslation("Usage:", currentLang) + " help [command]", True, ColTypes.Neutral)
