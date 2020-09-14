@@ -133,7 +133,7 @@ License (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TX
 
 Source code: https://code.videolan.org/videolan/LibVLCSharp
 
-Copyright © 1996-2020 the VideoLAN team
+Copyright (c) 1996-2020 the VideoLAN team
 
 License (LGPLv2.1): https://code.videolan.org/videolan/LibVLCSharp/blob/3.x/LICENSE
 
@@ -141,7 +141,7 @@ License (LGPLv2.1): https://code.videolan.org/videolan/LibVLCSharp/blob/3.x/LICE
 
 Source code: https://code.videolan.org/videolan/vlc
 
-Copyright © 1996-2020 the VideoLAN team
+Copyright (c) 1996-2020 the VideoLAN team
 
 License (GNU GPL 2.0): https://code.videolan.org/videolan/vlc/blob/master/COPYING
 
@@ -149,7 +149,7 @@ License (GNU GPL 2.0): https://code.videolan.org/videolan/vlc/blob/master/COPYIN
 
 Source code: https://github.com/sshnet/SSH.NET/
 
-Copyright © Renci
+Copyright (c) Renci
 
 License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 
@@ -157,7 +157,7 @@ License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 
 Source code: https://github.com/NuGet/NuGet.Client
 
-Copyright © .NET Foundation. All rights reserved.
+Copyright (c) .NET Foundation. All rights reserved.
 
 License (Apache 2.0): https://github.com/NuGet/NuGet.Client/blob/dev/LICENSE.txt
 
