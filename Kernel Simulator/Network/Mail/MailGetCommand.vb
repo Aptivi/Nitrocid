@@ -32,7 +32,6 @@ Module MailGetCommand
     Sub Mail_ExecuteCommand(ByVal Parameters As String()) 'This is converted to String() to ensure compatibility with Threading.Thread.
         Dim cmd As String = Parameters(0)
         Dim args As String = Parameters(1)
-        Dim FullArgsL As List(Of String) = args.Split({" "}, StringSplitOptions.RemoveEmptyEntries).ToList
         Dim FullArgsLQ() As String
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(args))
         Dim Parser As New TextFieldParser(TStream) With {
@@ -46,7 +45,6 @@ Module MailGetCommand
             Next
         End If
         Dim RequiredArgsProvided As Boolean
-        Wdbg("I", "Arguments count: {0}", FullArgsL.Count)
         Wdbg("I", "Arguments with enclosed quotes count: {0}", FullArgsLQ?.Count)
 
         Try
@@ -72,11 +70,11 @@ Module MailGetCommand
                     W(DoTranslation("Invalid choice. Assuming no...", currentLang), True, ColTypes.Input)
                 End If
             ElseIf cmd = "list" Then
-                If FullArgsL.Count > 0 Then
+                If FullArgsLQ?.Count > 0 Then
                     RequiredArgsProvided = True
-                    Wdbg("I", "Page is numeric? {0}", FullArgsL(0).IsNumeric)
-                    If FullArgsL(0).IsNumeric Then
-                        W(MailListMessages(FullArgsL(0)), False, ColTypes.Neutral)
+                    Wdbg("I", "Page is numeric? {0}", FullArgsLQ(0).IsNumeric)
+                    If FullArgsLQ(0).IsNumeric Then
+                        W(MailListMessages(FullArgsLQ(0)), False, ColTypes.Neutral)
                     Else
                         W(DoTranslation("Page is not a numeric value.", currentLang), True, ColTypes.Err)
                     End If
@@ -85,11 +83,11 @@ Module MailGetCommand
                 RequiredArgsProvided = True
                 W(MailListDirectories, False, ColTypes.Neutral)
             ElseIf cmd = "read" Then
-                If FullArgsL.Count > 0 Then
+                If FullArgsLQ?.Count > 0 Then
                     RequiredArgsProvided = True
-                    Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
-                    If FullArgsL(0).IsNumeric Then
-                        MailPrintMessage(FullArgsL(0))
+                    Wdbg("I", "Message number is numeric? {0}", FullArgsLQ(0).IsNumeric)
+                    If FullArgsLQ(0).IsNumeric Then
+                        MailPrintMessage(FullArgsLQ(0))
                     Else
                         W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
                     End If
@@ -139,17 +137,17 @@ Module MailGetCommand
                     W(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:", currentLang) + " john.s@example.com", True, ColTypes.Err)
                 End If
             ElseIf cmd = "rm" Then
-                If FullArgsL.Count > 0 Then
+                If FullArgsLQ?.Count > 0 Then
                     RequiredArgsProvided = True
-                    Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
-                    If FullArgsL(0).IsNumeric Then
-                        MailRemoveMessage(FullArgsL(0))
+                    Wdbg("I", "Message number is numeric? {0}", FullArgsLQ(0).IsNumeric)
+                    If FullArgsLQ(0).IsNumeric Then
+                        MailRemoveMessage(FullArgsLQ(0))
                     Else
                         W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
                     End If
                 End If
             ElseIf cmd = "rmall" Then
-                If FullArgsL.Count > 0 Then
+                If FullArgsLQ?.Count > 0 Then
                     RequiredArgsProvided = True
                     If MailRemoveAllBySender(FullArgsLQ(0)) Then
                         W(DoTranslation("All mail made by {0} are removed successfully.", currentLang), True, ColTypes.Neutral, FullArgsLQ(0))
@@ -158,17 +156,17 @@ Module MailGetCommand
                     End If
                 End If
             ElseIf cmd = "mv" Then
-                If FullArgsL.Count > 0 Then
+                If FullArgsLQ?.Count > 0 Then
                     RequiredArgsProvided = True
-                    Wdbg("I", "Message number is numeric? {0}", FullArgsL(0).IsNumeric)
-                    If FullArgsL(0).IsNumeric Then
-                        MailMoveMessage(FullArgsL(0), FullArgsLQ(1))
+                    Wdbg("I", "Message number is numeric? {0}", FullArgsLQ(0).IsNumeric)
+                    If FullArgsLQ(0).IsNumeric Then
+                        MailMoveMessage(FullArgsLQ(0), FullArgsLQ(1))
                     Else
                         W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
                     End If
                 End If
             ElseIf cmd = "mvall" Then
-                If FullArgsL.Count > 0 Then
+                If FullArgsLQ?.Count > 0 Then
                     RequiredArgsProvided = True
                     If MailMoveAllBySender(FullArgsLQ(0), FullArgsLQ(1)) Then
                         W(DoTranslation("All mail made by {0} are moved successfully.", currentLang), True, ColTypes.Neutral, FullArgsLQ(0))
@@ -180,7 +178,7 @@ Module MailGetCommand
 
             If Not RequiredArgsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}", currentLang), True, ColTypes.Err, cmd)
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", cmd, FullArgsL.Count)
+                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", cmd, FullArgsLQ?.Count)
                 IMAPShowHelp(cmd)
             End If
         Catch ex As Exception
