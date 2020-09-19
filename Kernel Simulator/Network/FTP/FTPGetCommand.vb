@@ -37,7 +37,6 @@ Public Module FTPGetCommand
         Dim words = cmd.Split({" "c})
         Dim strArgs As String = cmd.Substring(index)
         If Not index = cmd.Length Then strArgs = strArgs.Substring(1)
-        Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
         Dim ArgsQ() As String
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
         Dim Parser As New TextFieldParser(TStream) With {
@@ -54,11 +53,11 @@ Public Module FTPGetCommand
         'Command code
         Try
             If words(0) = "connect" Then
-                If args.Count <> 0 Then
-                    If args(0).StartsWith("ftp://") Or args(0).StartsWith("ftps://") Or args(0).StartsWith("ftpes://") Then
-                        TryToConnect(args(0))
+                If ArgsQ?.Count <> 0 Then
+                    If ArgsQ(0).StartsWith("ftp://") Or ArgsQ(0).StartsWith("ftps://") Or ArgsQ(0).StartsWith("ftpes://") Then
+                        TryToConnect(ArgsQ(0))
                     Else
-                        TryToConnect($"ftps://{args(0)}")
+                        TryToConnect($"ftps://{ArgsQ(0)}")
                     End If
                 Else
                     W(DoTranslation("Enter an FTP server.", currentLang), True, ColTypes.Neutral)
