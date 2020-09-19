@@ -30,7 +30,6 @@ Public Module GetCommand
     ''' </summary>
     ''' <param name="requestedCommand">A command. It may contain arguments</param>
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
-        'TODO: Rework into how to parse arguments in Milestone 1
         '1. Get the index of the first space (Used for step 3)
         Dim index As Integer = requestedCommand.IndexOf(" ")
         If index = -1 Then index = requestedCommand.Length
@@ -48,16 +47,6 @@ Public Module GetCommand
         If Not index = requestedCommand.Length Then strArgs = strArgs.Substring(1)
         Wdbg("I", "Finished strArgs: {0}", strArgs)
 
-        '4. Split the arguments string into array (args: No empty entries | eargs: Empty entries)
-        Dim args() As String = strArgs.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
-        Dim eargs() As String = strArgs.Split({" "c})
-
-        '4a. Debug: get all arguments from args()
-        Wdbg("I", "Arguments parsed from args(): " + String.Join(", ", args))
-
-        '4b. Debug: get all arguments from eargs()
-        Wdbg("I", "Arguments parsed from eargs(): " + String.Join(", ", eargs))
-
         '5. Split the arguments (again) this time with enclosed quotes
         Dim eqargs() As String
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
@@ -72,7 +61,7 @@ Public Module GetCommand
             Next
         End If
 
-        '5a. Debug: get all arguments from eqargs() (NOTICE: args() and eargs() will be removed in the future.)
+        '5a. Debug: get all arguments from eqargs()
         If Not eqargs Is Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
 
         'The command is done
@@ -91,8 +80,8 @@ Public Module GetCommand
                 If requestedCommand = "help" Then
                     ShowHelp()
                 Else
-                    If args.Count - 1 >= 0 Then
-                        ShowHelp(args(0))
+                    If eqargs?.Count - 1 >= 0 Then
+                        ShowHelp(eqargs(0))
                     Else
                         ShowHelp(words(0))
                     End If
@@ -102,14 +91,14 @@ Public Module GetCommand
             ElseIf words(0) = "adduser" Then
 
                 If requestedCommand <> "adduser" Then
-                    If args.Count - 1 = 0 Then
-                        W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, ColTypes.Neutral, args(0))
-                        AddUser(args(0))
+                    If eqargs?.Count - 1 = 0 Then
+                        W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, ColTypes.Neutral, eqargs(0))
+                        AddUser(eqargs(0))
                         Done = True
-                    ElseIf args.Count - 1 >= 2 Then
-                        If args(1) = args(2) Then
-                            W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, ColTypes.Neutral, args(0))
-                            AddUser(args(0), args(1))
+                    ElseIf eqargs.Count - 1 >= 2 Then
+                        If eqargs(1) = eqargs(2) Then
+                            W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, ColTypes.Neutral, eqargs(0))
+                            AddUser(eqargs(0), eqargs(1))
                             Done = True
                         Else
                             W(DoTranslation("Passwords don't match.", currentLang), True, ColTypes.Err)
@@ -121,19 +110,19 @@ Public Module GetCommand
             ElseIf words(0) = "alias" Then
 
                 If requestedCommand <> "alias" Then
-                    If args.Count - 1 > 2 Then
-                        If args(0) = "add" And (args(1) = AliasType.Shell Or args(1) = AliasType.RDebug) Then
-                            ManageAlias(args(0), args(1), args(2), args(3))
+                    If eqargs?.Count - 1 > 2 Then
+                        If eqargs(0) = "add" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug) Then
+                            ManageAlias(eqargs(0), eqargs(1), eqargs(2), eqargs(3))
                             Done = True
-                        ElseIf args(0) = "add" And (args(1) <> AliasType.Shell Or args(1) <> AliasType.RDebug) Then
-                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, args(1))
+                        ElseIf eqargs(0) = "add" And (eqargs(1) <> AliasType.Shell Or eqargs(1) <> AliasType.RDebug) Then
+                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, eqargs(1))
                         End If
-                    ElseIf args.Count - 1 = 2 Then
-                        If args(0) = "rem" And (args(1) = AliasType.Shell Or args(1) = AliasType.RDebug) Then
-                            ManageAlias(args(0), args(1), args(2))
+                    ElseIf eqargs?.Count - 1 = 2 Then
+                        If eqargs(0) = "rem" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug) Then
+                            ManageAlias(eqargs(0), eqargs(1), eqargs(2))
                             Done = True
-                        ElseIf args(0) = "rem" And (args(1) <> AliasType.Shell Or args(1) <> AliasType.RDebug) Then
-                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, args(1))
+                        ElseIf eqargs(0) = "rem" And (eqargs(1) <> AliasType.Shell Or eqargs(1) <> AliasType.RDebug) Then
+                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, eqargs(1))
                         End If
                     End If
                 End If
@@ -142,9 +131,9 @@ Public Module GetCommand
 
                 'Argument Injection
                 If requestedCommand <> "arginj" Then
-                    If args.Count - 1 >= 0 Then
+                    If eqargs?.Count - 1 >= 0 Then
                         Dim FinalArgs As New List(Of String)
-                        For Each arg As String In args
+                        For Each arg As String In eqargs
                             Wdbg("I", "Parsing argument {0}...", arg)
                             If AvailableArgs.Contains(arg) Then
                                 Wdbg("I", "Adding argument {0}...", arg)
@@ -165,10 +154,10 @@ Public Module GetCommand
 
             ElseIf words(0) = "beep" Then
 
-                If args.Count > 1 Then
-                    If args(0).IsNumeric And CInt(args(0)) >= 37 And CInt(args(0)) <= 32767 Then 'Frequency must be numeric, and must be >= 37 and <= 32767
-                        If args(1).IsNumeric Then 'Time must be numeric
-                            Console.Beep(args(0), args(1))
+                If eqargs?.Count > 1 Then
+                    If eqargs(0).IsNumeric And CInt(eqargs(0)) >= 37 And CInt(eqargs(0)) <= 32767 Then 'Frequency must be numeric, and must be >= 37 and <= 32767
+                        If eqargs(1).IsNumeric Then 'Time must be numeric
+                            Console.Beep(eqargs(0), eqargs(1))
                         Else
                             W(DoTranslation("Time must be numeric.", currentLang), True, ColTypes.Err)
                         End If
@@ -181,8 +170,8 @@ Public Module GetCommand
             ElseIf words(0) = "blockdbgdev" Then
 
                 If requestedCommand <> "blockdbgdev" Then
-                    If args.Count - 1 >= 0 Then
-                        BlockDevice(args(0))
+                    If eqargs?.Count - 1 >= 0 Then
+                        BlockDevice(eqargs(0))
                         Done = True
                     End If
                 End If
@@ -200,7 +189,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "calc" Then
 
-                If args.Count > 0 Then
+                If eqargs?.Count > 0 Then
                     Dim Res As Dictionary(Of Double, Boolean) = DoCalc(strArgs)
                     Wdbg("I", "Res.Values(0) = {0}", Res.Values(0))
                     If Not Res.Values(0) Then 'If there is an error in calculation
@@ -229,10 +218,10 @@ Public Module GetCommand
                     SetCurrDir(strArgs)
                 Catch sex As Security.SecurityException
                     Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
-                    W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, dir, sex.Message)
+                    W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, Dir, sex.Message)
                     WStkTrc(sex)
                 Catch ptlex As IO.PathTooLongException
-                    Wdbg("I", "Directory length: {0}", dir.Length)
+                    Wdbg("I", "Directory length: {0}", Dir.Length)
                     W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Err)
                     WStkTrc(ptlex)
                 Catch ex As Exception
@@ -288,21 +277,21 @@ Public Module GetCommand
 
             ElseIf words(0) = "choice" Then
 
-                If args.Count > 2 Then
-                    PromptChoice(strArgs, args(0), args(1))
+                If eqargs?.Count > 2 Then
+                    PromptChoice(strArgs, eqargs(0), eqargs(1))
                     Done = True
                 End If
 
             ElseIf words(0) = "chpwd" Then
 
                 If requestedCommand <> "chpwd" Then
-                    If eargs.Count - 1 >= 3 Then
+                    If eqargs?.Count - 1 >= 3 Then
                         Try
-                            If InStr(eargs(3), " ") > 0 Then
+                            If InStr(eqargs(3), " ") > 0 Then
                                 W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Err)
-                            ElseIf eargs(3) = eargs(2) Then
-                                ChangePassword(eargs(0), eargs(1), eargs(2))
-                            ElseIf eargs(3) <> eargs(2) Then
+                            ElseIf eqargs(3) = eqargs(2) Then
+                                ChangePassword(eqargs(0), eqargs(1), eqargs(2))
+                            ElseIf eqargs(3) <> eqargs(2) Then
                                 W(DoTranslation("Passwords doesn't match.", currentLang), True, ColTypes.Err)
                             End If
                         Catch ex As Exception
@@ -316,10 +305,10 @@ Public Module GetCommand
             ElseIf words(0) = "chusrname" Then
 
                 If requestedCommand <> "chusrname" Then
-                    If args.Count - 1 >= 1 Then
-                        ChangeUsername(args(0), args(1))
-                        W(DoTranslation("Username has been changed to {0}!", currentLang), True, ColTypes.Neutral, args(1))
-                        If args(0) = signedinusrnm Then
+                    If eqargs?.Count - 1 >= 1 Then
+                        ChangeUsername(eqargs(0), eqargs(1))
+                        W(DoTranslation("Username has been changed to {0}!", currentLang), True, ColTypes.Neutral, eqargs(1))
+                        If eqargs(0) = signedinusrnm Then
                             LogoutRequested = True
                         End If
                         Done = True
@@ -345,8 +334,8 @@ Public Module GetCommand
             ElseIf words(0) = "dismissnotif" Then
 
                 If requestedCommand <> "dismissnotif" Then
-                    If args.Count - 1 >= 0 Then
-                        Dim NotifIndex As Integer = args(0) - 1
+                    If eqargs?.Count - 1 >= 0 Then
+                        Dim NotifIndex As Integer = eqargs(0) - 1
                         If NotifDismiss(NotifIndex) Then
                             W(DoTranslation("Notification dismissed successfully.", currentLang), True, ColTypes.Neutral)
                         Else
@@ -359,9 +348,9 @@ Public Module GetCommand
             ElseIf words(0) = "disconndbgdev" Then
 
                 If requestedCommand <> "disconndbgdev" Then
-                    If args.Count - 1 >= 0 Then
-                        DisconnectDbgDev(args(0))
-                        W(DoTranslation("Device {0} disconnected.", currentLang), True, ColTypes.Neutral, args(0))
+                    If eqargs?.Count - 1 >= 0 Then
+                        DisconnectDbgDev(eqargs(0))
+                        W(DoTranslation("Device {0} disconnected.", currentLang), True, ColTypes.Neutral, eqargs(0))
                         Done = True
                     End If
                 End If
@@ -395,15 +384,15 @@ Public Module GetCommand
 
             ElseIf words(0) = "get" Then
 
-                If args.Count <> 0 Then
-                    DownloadFile(args(0))
+                If eqargs?.Count <> 0 Then
+                    DownloadFile(eqargs(0))
                     Done = True
                 End If
 
             ElseIf words(0) = "input" Then
 
-                If args.Count > 1 Then
-                    PromptInput(strArgs.Replace(args(0) + " ", ""), args(0))
+                If eqargs?.Count > 1 Then
+                    PromptInput(strArgs.Replace(eqargs(0) + " ", ""), eqargs(0))
                     Done = True
                 End If
 
@@ -431,9 +420,9 @@ Public Module GetCommand
 
             ElseIf words(0) = "listparts" Then
 
-                If args.Count > 0 Then
+                If eqargs?.Count > 0 Then
                     Done = True
-                    PrintPartitions(args(0))
+                    PrintPartitions(eqargs(0))
                 End If
 
             ElseIf words(0) = "loteresp" Then
@@ -443,9 +432,9 @@ Public Module GetCommand
 
             ElseIf words(0) = "lset" Then
 
-                If Not args.Count = 0 Then
+                If Not eqargs?.Count = 0 Then
                     Done = True
-                    If SetSizeParseMode(args(0)) Then
+                    If SetSizeParseMode(eqargs(0)) Then
                         W(DoTranslation("Set successfully.", currentLang), True, ColTypes.Neutral)
                     End If
                 End If
@@ -456,7 +445,7 @@ Public Module GetCommand
                     OpenShell(Mail_Authentication.Domain)
                     Done = True
                 Else
-                    If args.Count = 0 Then
+                    If eqargs?.Count = 0 Then
                         PromptUser()
                         Done = True
                     ElseIf Not eqargs(0) = "" Then
@@ -490,9 +479,9 @@ Public Module GetCommand
 
             ElseIf words(0) = "md" Then
 
-                If args.Count > 0 Then
+                If eqargs?.Count > 0 Then
                     'Create directory
-                    MakeDirectory(strArgs)
+                    MakeDirectory(eqargs(0))
                     Done = True
                 End If
 
@@ -513,8 +502,8 @@ Public Module GetCommand
             ElseIf words(0) = "perm" Then
 
                 If requestedCommand <> "perm" Then
-                    If args.Count - 1 >= 2 Then
-                        Permission([Enum].Parse(GetType(PermissionType), args(1)), args(0), [Enum].Parse(GetType(PermissionManagementMode), args(2)))
+                    If eqargs?.Count - 1 >= 2 Then
+                        Permission([Enum].Parse(GetType(PermissionType), eqargs(1)), eqargs(0), [Enum].Parse(GetType(PermissionManagementMode), eqargs(2)))
                         Done = True
                     End If
                 End If
@@ -530,11 +519,11 @@ Public Module GetCommand
 
                 'Reboot the simulated system
                 Done = True
-                If Not args.Length = 0 Then
-                    If args(0) = "safe" Then
+                If Not eqargs?.Length = 0 Then
+                    If eqargs(0) = "safe" Then
                         PowerManage("rebootsafe")
-                    ElseIf args(0) <> "" Then
-                        PowerManage("remoterestart", args(0))
+                    ElseIf eqargs(0) <> "" Then
+                        PowerManage("remoterestart", eqargs(0))
                     Else
                         PowerManage("reboot")
                     End If
@@ -556,9 +545,9 @@ Public Module GetCommand
             ElseIf words(0) = "reloadsaver" Then
 
                 If requestedCommand <> "reloadsaver" Then
-                    If args.Count - 1 >= 0 Then
+                    If eqargs?.Count - 1 >= 0 Then
                         If Not SafeMode Then
-                            CompileCustom(strArgs)
+                            CompileCustom(eqargs(0))
                         Else
                             W(DoTranslation("Reloading not allowed in safe mode.", currentLang), True, ColTypes.Err)
                         End If
@@ -571,14 +560,14 @@ Public Module GetCommand
                 If requestedCommand <> "rexec" Then
                     If eqargs.Count > 1 Then
                         Done = True
-                        SendCommand("<Request:Exec>(" + eqargs(1) + ")", args(0))
+                        SendCommand("<Request:Exec>(" + eqargs(1) + ")", eqargs(0))
                     End If
                 End If
 
             ElseIf words(0) = "rd" Then
 
-                If args.Count - 1 >= 0 Then
-                    RemoveDirectory(strArgs)
+                If eqargs.Count - 1 >= 0 Then
+                    RemoveDirectory(eqargs(0))
                     Done = True
                 End If
 
@@ -598,9 +587,9 @@ Public Module GetCommand
             ElseIf words(0) = "rmuser" Then
 
                 If requestedCommand <> "rmuser" Then
-                    If args.Count - 1 >= 0 Then
-                        RemoveUser(args(0))
-                        W(DoTranslation("User {0} removed.", currentLang), True, ColTypes.Neutral, args(0))
+                    If eqargs?.Count - 1 >= 0 Then
+                        RemoveUser(eqargs(0))
+                        W(DoTranslation("User {0} removed.", currentLang), True, ColTypes.Neutral, eqargs(0))
                         Done = True
                     End If
                 End If
@@ -623,9 +612,9 @@ Public Module GetCommand
             ElseIf words(0) = "setcolors" Then
 
                 If requestedCommand <> "setcolors" Then
-                    If args.Count - 1 >= 11 Then
+                    If eqargs?.Count - 1 >= 11 Then
                         Done = True
-                        SetColors(args(0), args(1), args(2), args(3), args(4), args(5), args(6), args(7), args(8), args(9), args(10), args(11))
+                        SetColors(eqargs(0), eqargs(1), eqargs(2), eqargs(3), eqargs(4), eqargs(5), eqargs(6), eqargs(7), eqargs(8), eqargs(9), eqargs(10), eqargs(11))
                     End If
                 End If
 
@@ -633,8 +622,15 @@ Public Module GetCommand
 
                 Dim modPath As String = paths("Mods")
                 If requestedCommand <> "setsaver" Then
-                    If args.Count >= 0 Then
-                        If ScrnSvrdb.ContainsKey(strArgs) Then
+                    If ScrnSvrdb.ContainsKey(strArgs) Then
+                        SetDefaultScreensaver(strArgs)
+                        If ScrnSvrdb(strArgs) Then
+                            W(DoTranslation("{0} is set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
+                        Else
+                            W(DoTranslation("{0} is no longer set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
+                        End If
+                    Else
+                        If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") And Not SafeMode Then
                             SetDefaultScreensaver(strArgs)
                             If ScrnSvrdb(strArgs) Then
                                 W(DoTranslation("{0} is set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
@@ -642,27 +638,18 @@ Public Module GetCommand
                                 W(DoTranslation("{0} is no longer set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
                             End If
                         Else
-                            If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") And Not SafeMode Then
-                                SetDefaultScreensaver(strArgs)
-                                If ScrnSvrdb(strArgs) Then
-                                    W(DoTranslation("{0} is set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
-                                Else
-                                    W(DoTranslation("{0} is no longer set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
-                                End If
-                            Else
-                                W(DoTranslation("Screensaver {0} not found.", currentLang), True, ColTypes.Err, strArgs)
-                            End If
+                            W(DoTranslation("Screensaver {0} not found.", currentLang), True, ColTypes.Err, strArgs)
                         End If
-                        Done = True
                     End If
+                    Done = True
                 End If
 
             ElseIf words(0) = "setthemes" Then
 
                 If requestedCommand <> "setthemes" Then
-                    If args.Count - 1 >= 0 Then
+                    If eqargs?.Count - 1 >= 0 Then
                         If ColoredShell = True Then
-                            TemplateSet(args(0))
+                            TemplateSet(eqargs(0))
                         Else
                             W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), True, ColTypes.Neutral)
                         End If
@@ -705,7 +692,7 @@ Public Module GetCommand
                         ShowTimesInZones(strArgs)
                     End If
                     If DoneFlag = False Then
-                        If eargs(0) = "all" Then
+                        If eqargs(0) = "all" Then
                             ShowTimesInZones()
                             Done = True
                         Else
@@ -719,9 +706,9 @@ Public Module GetCommand
 
                 'Shuts down the simulated system
                 Done = True
-                If Not args.Length = 0 Then
-                    If args(0) <> "" Then
-                        PowerManage("remoteshutdown", args(0))
+                If Not eqargs?.Length = 0 Then
+                    If eqargs(0) <> "" Then
+                        PowerManage("remoteshutdown", eqargs(0))
                     End If
                 Else
                     PowerManage("shutdown")
@@ -741,24 +728,24 @@ Public Module GetCommand
 
             ElseIf words(0) = "sumfile" Then
 
-                If args.Length >= 2 Then
+                If eqargs?.Length >= 2 Then
                     Done = True
                     Dim file As String = NeutralizePath(eqargs(1))
                     If IO.File.Exists(file) Then
                         Dim stream As New StreamReader(file)
-                        If args(0) = "SHA256" Then
+                        If eqargs(0) = "SHA256" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
                             W(GetEncryptedFile(stream.BaseStream, Algorithms.SHA256), True, ColTypes.Neutral)
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
-                        ElseIf args(0) = "SHA1" Then
+                        ElseIf eqargs(0) = "SHA1" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
                             W(GetEncryptedFile(stream.BaseStream, Algorithms.SHA1), True, ColTypes.Neutral)
                             W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
-                        ElseIf args(0) = "MD5" Then
+                        ElseIf eqargs(0) = "MD5" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
                             W(GetEncryptedFile(stream.BaseStream, Algorithms.MD5), True, ColTypes.Neutral)
@@ -774,7 +761,7 @@ Public Module GetCommand
 
             ElseIf words(0) = "sumfiles" Then
 
-                If args.Length >= 2 Then
+                If eqargs?.Length >= 2 Then
                     Done = True
                     Dim folder As String = NeutralizePath(eqargs(1))
                     Dim out As String = ""
@@ -786,29 +773,29 @@ Public Module GetCommand
                         For Each file As String In Directory.EnumerateFiles(folder, "*", IO.SearchOption.TopDirectoryOnly)
                             W("- {0}", True, ColTypes.Neutral, file)
                             Dim stream As New StreamReader(file)
-                            If args(0) = "SHA256" Then
+                            If eqargs(0) = "SHA256" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
                                 Dim encrypted As String = GetEncryptedFile(stream.BaseStream, Algorithms.SHA256)
                                 W(encrypted, True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
+                                FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
                                 spent.Stop()
-                            ElseIf args(0) = "SHA1" Then
+                            ElseIf eqargs(0) = "SHA1" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
                                 Dim encrypted As String = GetEncryptedFile(stream.BaseStream, Algorithms.SHA1)
                                 W(encrypted, True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
+                                FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
                                 spent.Stop()
-                            ElseIf args(0) = "MD5" Then
+                            ElseIf eqargs(0) = "MD5" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
                                 Dim encrypted As String = GetEncryptedFile(stream.BaseStream, Algorithms.MD5)
                                 W(encrypted, True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                FileBuilder.AppendLine($"- {file}: {encrypted} ({args(0)})")
+                                FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
                                 spent.Stop()
                             Else
                                 W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Err)
@@ -867,11 +854,11 @@ Public Module GetCommand
             ElseIf words(0) = "unblockdbgdev" Then
 
                 If requestedCommand <> "unblockdbgdev" Then
-                    If args.Count - 1 >= 0 Then
-                        If UnblockDevice(args(0)) Then
-                            W(DoTranslation("{0} can now join remote debug again.", currentLang), True, ColTypes.Neutral, args(0))
+                    If eqargs?.Count - 1 >= 0 Then
+                        If UnblockDevice(eqargs(0)) Then
+                            W(DoTranslation("{0} can now join remote debug again.", currentLang), True, ColTypes.Neutral, eqargs(0))
                         Else
-                            W(DoTranslation("{0} is not blocked yet.", currentLang), True, ColTypes.Neutral, args(0))
+                            W(DoTranslation("{0} is not blocked yet.", currentLang), True, ColTypes.Neutral, eqargs(0))
                         End If
                         Done = True
                     End If
@@ -896,7 +883,7 @@ Public Module GetCommand
                     W(DoTranslation("Enter your API key:", currentLang) + " ", False, ColTypes.Input)
                     APIKey = ReadLineNoInput("*")
                     Console.WriteLine()
-                    Dim WeatherInfo As ForecastInfo = GetWeatherInfo(args(0), APIKey, PreferredUnit)
+                    Dim WeatherInfo As ForecastInfo = GetWeatherInfo(eqargs(0), APIKey, PreferredUnit)
                     W(DoTranslation("-- Weather info for {0} --", currentLang), True, ColTypes.Stage, WeatherInfo.CityName)
                     W(DoTranslation("Weather: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Weather)
                     W(DoTranslation("Temperature: {0} ({1} unit)", currentLang), True, ColTypes.Neutral, WeatherInfo.Temperature, WeatherInfo.TemperatureMeasurement)
