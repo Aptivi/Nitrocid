@@ -200,6 +200,8 @@ Public Module NetworkTools
                         End While
                         If IsError Then
                             Throw ReasonError
+                        Else
+                            W(vbNewLine + DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
                         End If
                     Else
                         W(DoTranslation("Specify the address", currentLang), True, ColTypes.Err)
@@ -236,9 +238,8 @@ Public Module NetworkTools
     Private Sub DownloadManager(sender As Object, e As DownloadProgressChangedEventArgs)
         If Not DFinish Then
             Console.SetCursorPosition(0, Console.CursorTop)
-            W(DoTranslation("{0} MB of {1} MB downloaded.", currentLang) + "    ", False, ColTypes.Neutral, e.BytesReceived / 1024 / 1024, e.TotalBytesToReceive / 1024 / 1024)
+            WriteWhere(DoTranslation("{0} MB of {1} MB downloaded.", currentLang) + "    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesReceived / 1024 / 1024, 2), FormatNumber(e.TotalBytesToReceive / 1024 / 1024, 2))
             If e.BytesReceived = e.TotalBytesToReceive Then
-                W(vbNewLine + DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
                 DFinish = True
             End If
         End If
