@@ -17,8 +17,6 @@
 Imports System.IO
 Imports System.Reflection.Assembly
 
-'TODOs:
-'   TODO: Interactive host system file manager (Planned in the bootable version)
 Public Module Kernel
 
     'Variables
