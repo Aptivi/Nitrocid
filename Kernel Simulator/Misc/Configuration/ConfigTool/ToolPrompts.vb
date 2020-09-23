@@ -188,12 +188,14 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "argsOnBoot"
+                            W(DoTranslation("Sets up the kernel so it prompts you for argument on boot." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Maintenance Mode Trigger
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "maintenance"
+                            W(DoTranslation("Triggers maintenance mode. This disables multiple accounts." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 3 'Change Root Password
@@ -202,12 +204,14 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "CheckUpdateStart"
+                            W(DoTranslation("Each startup, it will check for updates." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 5 'Change Culture when Switching Languages
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "LangChangeCulture"
+                            W(DoTranslation("When switching languages, change the month names, calendar, etc." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
@@ -219,6 +223,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "setRootPasswd"
+                            W(DoTranslation("If the kernel is started, it will set root password." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2
@@ -243,12 +248,14 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "quietProbe"
+                            W(DoTranslation("Keep hardware probing messages silent." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Probe RAM Slots
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "slotProbe"
+                            W(DoTranslation("If enabled, it will probe the RAM slots along with the RAM." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
@@ -260,18 +267,21 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "showMOTD"
+                            W(DoTranslation("Show Message of the Day before displaying login screen." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Clear Screen on Log-in
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "clsOnLogin"
+                            W(DoTranslation("Clear screen before displaying login screen." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 3 'Show Available Usernames
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "ShowAvailableUsers"
+                            W(DoTranslation("Shows available users if enabled." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
@@ -283,12 +293,14 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "ColoredShell"
+                            W(DoTranslation("Gives the kernel color support" + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Simplified Help Command
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "simHelp"
+                            W(DoTranslation("Simplified help command for all the shells" + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
@@ -312,18 +324,21 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "FTPLoggerUsername"
+                            W(DoTranslation("Whether or not to log FTP username." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 5 'Log FTP IP address
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "FTPLoggerIP"
+                            W(DoTranslation("Whether or not to log FTP IP address." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 6 'Return only first FTP profile
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "FTPFirstProfileOnly"
+                            W(DoTranslation("Pick the first profile only when connecting." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
@@ -339,24 +354,28 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "ColorMix255Colors"
+                            W(DoTranslation("Activates 255 color support for ColorMix." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 3 'Disco: Activate 255 colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "Disco255Colors"
+                            W(DoTranslation("Activates 255 color support for Disco." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 4 'GlitterColor: Activate 255 colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "GlitterColor255Colors"
+                            W(DoTranslation("Activates 255 color support for GlitterColor." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 5 'Lines: Activate 255 colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "Lines255Colors"
+                            W(DoTranslation("Activates 255 color support for Lines." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 6 'Text shown
@@ -372,6 +391,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "CornerTD"
+                            W(DoTranslation("The time and date will be shown in the upper right corner of the screen" + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Debug Size Quota in Bytes
@@ -382,30 +402,35 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "FullParseMode"
+                            W(DoTranslation("If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 4 'Marquee on startup
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "StartScroll"
+                            W(DoTranslation("Enables eyecandy on startup" + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 5 'Long Time and Date
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "LongTimeDate"
+                            W(DoTranslation("The time and date will be longer, showing full month names, etc." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 6 'Show Hidden Files
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "HiddenFiles"
+                            W(DoTranslation("Shows hidden files." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 7 'Preferred Unit for Temperature
                             MaxKeyOptions = 3
                             KeyType = SettingsKeyType.SSelection
                             KeyVar = "PreferredUnit"
+                            W(DoTranslation("Select your preferred unit for temperature (this only applies to the ""weather"" command)" + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Kelvin", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Metric (Celsius)", currentLang), True, ColTypes.Neutral)
                             W("3) " + DoTranslation("Imperial (Fahrenheit)", currentLang) + vbNewLine, True, ColTypes.Neutral)
