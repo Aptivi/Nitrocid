@@ -49,26 +49,21 @@ Module TestGetCommand
         FullArgsQ.Remove(Cmd)
         If Cmd = "print" Then 'Usage: print <Color> <Line> <Message>
             If FullArgsQ?.Count - 1 >= 2 Then
-                Dim Parts As New List(Of String)(FullArgsQ)
-                Dim Color As ColTypes = Parts(0)
-                Dim Line As Boolean = Parts(1)
-                Dim Text As String
-                Parts.RemoveAt(0) : Parts.RemoveAt(0)
-                Text = String.Join(" ", Parts)
+                Dim Color As ColTypes = FullArgsQ(0)
+                Dim Line As Boolean = FullArgsQ(1)
+                Dim Text As String = FullArgsQ(2)
                 W(Text, Line, Color)
             End If
         ElseIf Cmd = "printf" Then 'Usage: printf <Color> <Line> <Variable1;Variable2;Variable3;...> <Message>
             If FullArgsQ?.Count - 1 >= 3 Then
                 Dim Parts As New List(Of String)(FullArgsQ)
-                Dim Color As ColTypes = Parts(0)
-                Dim Line As Boolean = Parts(1)
-                Dim Vars As Object() = Parts(2).Split(";")
-                Dim Text As String
+                Dim Color As ColTypes = FullArgsQ(0)
+                Dim Line As Boolean = FullArgsQ(1)
+                Dim Vars As Object() = FullArgsQ(2).Split(";")
+                Dim Text As String = FullArgsQ(3)
                 For i As Integer = 0 To Vars.Count - 1
                     Vars(i) = Evaluate(Vars(i)).ToString
                 Next
-                Parts.RemoveAt(0) : Parts.RemoveAt(0) : Parts.RemoveAt(0)
-                Text = String.Join(" ", Parts)
                 W(Text, Line, Color, Vars)
             End If
         ElseIf Cmd = "printd" Then 'Usage: printd <Message>
