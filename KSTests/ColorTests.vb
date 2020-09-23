@@ -40,6 +40,9 @@ Imports KS
                                             "- " + Join(Comparison, vbNewLine + "- "), Comparison.Length)
     End Sub
 
+    ''' <summary>
+    ''' Tests setting colors
+    ''' </summary>
     <TestMethod()> Public Sub TestSetColors()
         InitPaths()
         Assert.IsTrue(SetColors(ConsoleColors.White, ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Red, ConsoleColors.DarkGreen, ConsoleColors.Green,

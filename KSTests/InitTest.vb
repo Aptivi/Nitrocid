@@ -21,11 +21,18 @@ Imports KS
 
 <TestClass()> Public Class InitTest
 
+    ''' <summary>
+    ''' Initialize everything that is required before starting unit tests
+    ''' </summary>
+    ''' <param name="Context">Test context</param>
     <AssemblyInitialize()> Public Shared Sub ReadyEverything(Context As TestContext)
         InitPaths()
         CreateConfig(False)
     End Sub
 
+    ''' <summary>
+    ''' Clean up everything that the unit tests made
+    ''' </summary>
     <AssemblyCleanup()> Public Shared Sub CleanEverything()
         InitPaths()
         If File.Exists(paths("Home") + "/Documents/TestText.txt") Then File.Delete(paths("Home") + "/Documents/TestText.txt")

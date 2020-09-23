@@ -21,6 +21,9 @@ Imports KS
 
 <TestClass()> Public Class AliasTests
 
+    ''' <summary>
+    ''' Tests alias initialization
+    ''' </summary>
     <TestMethod()> Public Sub TestInitAliases()
         InitPaths()
         Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.csv")
@@ -33,6 +36,9 @@ Imports KS
         CloseAliasesFile()
     End Sub
 
+    ''' <summary>
+    ''' Tests alias initialization and saving
+    ''' </summary>
     <TestMethod()> Public Sub TestInitAndSaveAliases()
         InitPaths()
         Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.csv")
@@ -46,11 +52,17 @@ Imports KS
         CloseAliasesFile()
     End Sub
 
+    ''' <summary>
+    ''' Tests alias addition
+    ''' </summary>
     <TestMethod> Public Sub TestAddAlias()
         Assert.IsTrue(AddAlias("ls", "list", AliasType.Shell), "Adding shell alias failed. Returned False.")
         Assert.IsTrue(AddAlias("trc", "trace", AliasType.RDebug), "Adding remote debug alias failed. Returned False.")
     End Sub
 
+    ''' <summary>
+    ''' Tests alias removal
+    ''' </summary>
     <TestMethod> Public Sub TestRemoveAlias()
         Assert.IsTrue(RemoveAlias("ls", AliasType.Shell), "Removing shell alias failed. Returned False.")
         Assert.IsTrue(RemoveAlias("trc", AliasType.RDebug), "Removing remote debug alias failed. Returned False.")

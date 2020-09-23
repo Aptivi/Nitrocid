@@ -21,50 +21,77 @@ Imports KS
 
 <TestClass()> Public Class TimeTests
 
+    ''' <summary>
+    ''' Tests rendering kernel date
+    ''' </summary>
     <TestMethod()> Public Sub TestRenderKernelDate()
         KernelDateTime = Date.Now
         Assert.IsNotNull(RenderDate, "Rendering date failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests rendering kernel date with specified culture
+    ''' </summary>
     <TestMethod()> Public Sub TestRenderKernelDateCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         Assert.IsNotNull(RenderDate(TargetCult), "Rendering date failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests rendering custom date
+    ''' </summary>
     <TestMethod()> Public Sub TestRenderCustomDate()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Assert.IsNotNull(RenderDate(TargetDate), "Rendering date failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests rendering custom date with specified culture
+    ''' </summary>
     <TestMethod()> Public Sub TestRenderCustomDateCult()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         Assert.IsNotNull(RenderDate(TargetDate, TargetCult), "Rendering date failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests rendering kernel time
+    ''' </summary>
     <TestMethod()> Public Sub TestRenderKernelTime()
         KernelDateTime = Date.Now
         Assert.IsNotNull(RenderTime, "Rendering time failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests rendering kernel time with specified culture
+    ''' </summary>
     <TestMethod()> Public Sub TestRenderKernelTimeCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         Assert.IsNotNull(RenderTime(TargetCult), "Rendering time failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests rendering custom time
+    ''' </summary>
     <TestMethod()> Public Sub TestRenderCustomTime()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         Assert.IsNotNull(RenderTime(TargetTime), "Rendering time failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests rendering custom time with specified culture
+    ''' </summary>
     <TestMethod()> Public Sub TestRenderCustomTimeCult()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         Dim TargetCult As New CultureInfo("es-ES")
         Assert.IsNotNull(RenderTime(TargetTime, TargetCult), "Rendering time failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests initializing current times in all timezones
+    ''' </summary>
     <TestMethod()> Public Sub TestInitTimesInZones()
         KernelDateTime = Date.Now
         InitTimesInZones()

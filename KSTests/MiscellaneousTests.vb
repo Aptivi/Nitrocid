@@ -22,70 +22,106 @@ Imports KS
 
 <TestClass()> Public Class MiscellaneousTests
 
+    ''' <summary>
+    ''' Tests sum calculation (integers)
+    ''' </summary>
     <TestMethod()> Public Sub TestCalcSum()
         Dim ExpectedSum As Integer = 21
         Dim ActualSum As Integer = DoCalc("13 + 8").Keys(0)
         Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
+    ''' <summary>
+    ''' Tests sub calculation (integers)
+    ''' </summary>
     <TestMethod()> Public Sub TestCalcSub()
         Dim ExpectedSum As Integer = 17
         Dim ActualSum As Integer = DoCalc("42 - 25").Keys(0)
         Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
+    ''' <summary>
+    ''' Tests mul calculation (integers)
+    ''' </summary>
     <TestMethod()> Public Sub TestCalcMul()
         Dim ExpectedSum As Integer = 182
         Dim ActualSum As Integer = DoCalc("91 * 2").Keys(0)
         Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
+    ''' <summary>
+    ''' Tests div calculation (integers)
+    ''' </summary>
     <TestMethod()> Public Sub TestCalcDiv()
         Dim ExpectedSum As Integer = 5
         Dim ActualSum As Integer = DoCalc("250 / 50").Keys(0)
         Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
+    ''' <summary>
+    ''' Tests sum calculation (doubles)
+    ''' </summary>
     <TestMethod()> Public Sub TestCalcSumDbl()
         Dim ExpectedSum As Double = 64.9
         Dim ActualSum As Double = DoCalc("32.4 + 32.5").Keys(0)
         Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
+    ''' <summary>
+    ''' Tests sub calculation (doubles)
+    ''' </summary>
     <TestMethod()> Public Sub TestCalcSubDbl()
         Dim ExpectedSum As Double = 66.9
         Dim ActualSum As Double = DoCalc("69 - 2.1").Keys(0)
         Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
+    ''' <summary>
+    ''' Tests mul calculation (doubles)
+    ''' </summary>
     <TestMethod()> Public Sub TestCalcMulDbl()
         Dim ExpectedSum As Double = 4.8
         Dim ActualSum As Double = DoCalc("1.2 * 4").Keys(0)
         Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
+    ''' <summary>
+    ''' Tests div calculation (doubles)
+    ''' </summary>
     <TestMethod()> Public Sub TestCalcDivDbl()
         Dim ExpectedSum As Double = 2.5
         Dim ActualSum As Double = DoCalc("5 / 2").Keys(0)
         Assert.AreEqual(ExpectedSum, ActualSum, "DoCalc didn't calculate properly. Got {0}", ActualSum)
     End Sub
 
+    ''' <summary>
+    ''' Tests getting value
+    ''' </summary>
     <TestMethod()> Public Sub TestGetValue()
         Dim Value As String = GetValue("HiddenFiles")
         Assert.IsNotNull(Value, "Value of variable HiddenFiles isn't get properly. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests setting value
+    ''' </summary>
     <TestMethod()> Public Sub TestSetValue()
         SetValue("HiddenFiles", False)
         Dim Value As String = GetValue("HiddenFiles")
         Assert.AreEqual(Value, "False", "Value of variable HiddenFiles isn't set properly. Got {0}", Value)
     End Sub
 
+    ''' <summary>
+    ''' Tests getting variable
+    ''' </summary>
     <TestMethod()> Public Sub TestGetField()
         Dim Field As FieldInfo = GetField("HiddenFiles")
         Assert.IsTrue(Field.Name = "HiddenFiles", "Field HiddenFiles isn't get properly. Name: {0}", Field.Name)
     End Sub
 
+    ''' <summary>
+    ''' Tests string encryption
+    ''' </summary>
     <TestMethod()> Public Sub TestGetEncryptedString()
         Dim TextHash As String = "Test hashing."
         Dim TextHashMD5 As String = GetEncryptedString(TextHash, Algorithms.MD5)
@@ -99,6 +135,9 @@ Imports KS
                                                                                                            TextHashSHA256)
     End Sub
 
+    ''' <summary>
+    ''' Tests file encryption
+    ''' </summary>
     <TestMethod()> Public Sub TestGetEncryptedFile()
         InitPaths()
         Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
@@ -117,6 +156,9 @@ Imports KS
                                                                                                            FileHashSHA256)
     End Sub
 
+    ''' <summary>
+    ''' Tests setting MOTD
+    ''' </summary>
     <TestMethod()> Public Sub TestSetMOTD()
         InitPaths()
         SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MOTD)
@@ -124,6 +166,9 @@ Imports KS
         Assert.IsTrue(MOTDFile.ReadLine = ProbePlaces("Hello, I am on <system>"), "Setting MOTD failed.")
     End Sub
 
+    ''' <summary>
+    ''' Tests setting MAL
+    ''' </summary>
     <TestMethod()> Public Sub TestSetMAL()
         InitPaths()
         SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MAL)
@@ -131,6 +176,9 @@ Imports KS
         Assert.IsTrue(MALFile.ReadLine = ProbePlaces("Hello, I am on <system>"), "Setting MAL failed.")
     End Sub
 
+    ''' <summary>
+    ''' Tests reading MOTD from file
+    ''' </summary>
     <TestMethod()> Public Sub TestReadMOTDFromFile()
         InitPaths()
         ReadMOTDFromFile(MessageType.MOTD)
@@ -138,6 +186,9 @@ Imports KS
         Assert.IsTrue(MOTDLine = MOTDMessage, "Reading MOTD failed. Got:" + vbNewLine + MOTDLine)
     End Sub
 
+    ''' <summary>
+    ''' Tests reading MAL from file
+    ''' </summary>
     <TestMethod()> Public Sub TestReadMALFromFile()
         InitPaths()
         ReadMOTDFromFile(MessageType.MAL)
@@ -145,6 +196,9 @@ Imports KS
         Assert.IsTrue(MALLine = MAL, "Reading MAL failed. Got:" + vbNewLine + MALLine)
     End Sub
 
+    ''' <summary>
+    ''' Tests parsing placeholders
+    ''' </summary>
     <TestMethod()> Public Sub TestParsePlaceholders()
         Dim UnparsedStrings As New List(Of String)
         InitPaths() 'For some reason, ProbePlaces' event raise likes to use paths...
@@ -169,6 +223,9 @@ Imports KS
                                                  "- " + String.Join(vbNewLine + "- ", UnparsedStrings.ToArray))
     End Sub
 
+    ''' <summary>
+    ''' Tests opening, saving, and closing text file
+    ''' </summary>
     <TestMethod()> Public Sub TestOpenSaveCloseTextFile()
         Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
         Assert.IsTrue(TextEdit_OpenTextFile(PathToTestText), "Opening text file failed. Returned False.")
@@ -177,17 +234,26 @@ Imports KS
         Assert.IsTrue(TextEdit_CloseTextFile(), "Closing text file failed. Returned False.")
     End Sub
 
+    ''' <summary>
+    ''' Tests reading all lines without roadblocks
+    ''' </summary>
     <TestMethod()> Public Sub TestReadAllLinesNoBlock()
         Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
         Dim LinesTestText As String() = ReadAllLinesNoBlock(PathToTestText)
         Assert.IsInstanceOfType(LinesTestText, GetType(String()), "Reading all lines failed.")
     End Sub
 
+    ''' <summary>
+    ''' Tests variable evaluation
+    ''' </summary>
     <TestMethod()> Public Sub TestEvaluateString()
         Dim Evaluated As String = Evaluate("KS.Kernel.KernelVersion")
         Assert.IsFalse(Evaluated = "", "String evaluation failed. Got ""{0}"".", Evaluated)
     End Sub
 
+    ''' <summary>
+    ''' Tests replacing last occurrence
+    ''' </summary>
     <TestMethod()> Public Sub TestReplaceLastOccurrence()
         Dim Source As String = "Kernel Simulation from Eofla Kernel"
         Dim Target As String = "Kernel"
@@ -195,6 +261,9 @@ Imports KS
         Assert.AreEqual(Source, "Kernel Simulation from Eofla OS", "Replacement failed. Got {0}", Source)
     End Sub
 
+    ''' <summary>
+    ''' Tests getting all indexes of a character
+    ''' </summary>
     <TestMethod()> Public Sub TestAllIndexesOf()
         Dim Source As String = "Kernel Simulation from Eofla Kernel"
         Dim Target As String = "a"
@@ -202,6 +271,9 @@ Imports KS
         Assert.AreEqual(Indexes, 2, "Getting all indexes of a character failed. Expected 2, got {0}", Indexes)
     End Sub
 
+    ''' <summary>
+    ''' Tests truncating...
+    ''' </summary>
     <TestMethod()> Public Sub TestTruncate()
         Dim Source As String = "Kernel Simulation from Eofla Kernel"
         Dim Target As Integer = 20
@@ -209,6 +281,9 @@ Imports KS
         Assert.AreEqual(Source, "Kernel Simulation f...", "Truncation failed. Got {0}", Source)
     End Sub
 
+    ''' <summary>
+    ''' Tests string formatting
+    ''' </summary>
     <TestMethod()> Public Sub TestFormatString()
         Dim Expected As String = "Kernel Simulator 0.0.1 first launched 2/22/2018."
         Dim Actual As String = "Kernel Simulator 0.0.1 first launched {0}/{1}/{2}."
@@ -219,6 +294,9 @@ Imports KS
         Assert.AreEqual(Expected, Actual, "Format failed. Got {0}", Actual)
     End Sub
 
+    ''' <summary>
+    ''' Tests synth probing
+    ''' </summary>
     <TestMethod()> Public Sub TestProbeSynth() 'If not working on AppVeyor, remove it.
         InitPaths()
         CurrDir = paths("Home")
@@ -227,18 +305,27 @@ Imports KS
         Assert.IsTrue(Successful, "Synth probing failed. Expected True, got {0}", Successful)
     End Sub
 
+    ''' <summary>
+    ''' Tests setting default screensaver
+    ''' </summary>
     <TestMethod()> Public Sub TestSetDefaultScreensaver()
         InitPaths()
         SetDefaultScreensaver("matrix")
         Assert.IsTrue(ScrnSvrdb("matrix"), "Setting screensaver defaults failed. Expected True, got {0}", ScrnSvrdb("matrix"))
     End Sub
 
+    ''' <summary>
+    ''' Tests unsetting default screensaver
+    ''' </summary>
     <TestMethod()> Public Sub TestUnsetDefaultScreensaver()
         InitPaths()
         SetDefaultScreensaver("matrix", False)
         Assert.IsFalse(ScrnSvrdb("matrix"), "Setting screensaver defaults failed. Expected False, got {0}", ScrnSvrdb("matrix"))
     End Sub
 
+    ''' <summary>
+    ''' Tests initializing, setting, and getting $variable
+    ''' </summary>
     <TestMethod> Public Sub TestVariables()
         InitializeVariable("$test_var")
         Assert.IsTrue(ScriptVariables.Count > 0, "Initializing variable failed. Count is {0}", ScriptVariables.Count)

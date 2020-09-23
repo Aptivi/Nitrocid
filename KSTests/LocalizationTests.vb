@@ -21,18 +21,27 @@ Imports KS
 
 <TestClass()> Public Class LocalizationTests
 
+    ''' <summary>
+    ''' Tests string translation
+    ''' </summary>
     <TestMethod()> Public Sub TestTranslate()
         Dim ExpectedTranslation As String = "---===+++> Bienvenido al kernel | Versión {0} <+++===---"
         Dim ActualTranslation As String = DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", "spa")
         Assert.AreEqual(ExpectedTranslation, ActualTranslation, "Translation test is not done properly. Got {0}", ActualTranslation)
     End Sub
 
+    ''' <summary>
+    ''' Tests translation dictionary preparation
+    ''' </summary>
     <TestMethod> Public Sub TestPrepareDict()
         Dim ExpectedLength As Integer = KS.My.Resources.spa.Replace(Chr(13), "").Split(Chr(10)).ToList.Count
         Dim ActualLength As Integer = PrepareDict("spa").Values.Count
         Assert.AreEqual(ExpectedLength, ActualLength, "Dictionary preparation test is not done properly. Expected {0}, Got {1}", ExpectedLength, ActualLength)
     End Sub
 
+    ''' <summary>
+    ''' Tests updating the culture
+    ''' </summary>
     <TestMethod> Public Sub TestUpdateCulture()
         currentLang = "spa"
         Dim ExpectedCulture As String = "Spanish (Spain, International Sort)"
@@ -40,6 +49,9 @@ Imports KS
         Assert.AreEqual(ExpectedCulture, CurrentCult.EnglishName, "Culture update test is not done properly. Got {0}", CurrentCult.EnglishName)
     End Sub
 
+    ''' <summary>
+    ''' Tests language setting
+    ''' </summary>
     <TestMethod> Public Sub TestSetLang()
         InitPaths()
         Assert.IsTrue(SetLang("spa"), "Setting language failed. Returned False.")

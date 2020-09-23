@@ -20,6 +20,9 @@ Imports KS
 
 <TestClass()> Public Class NetworkTests
 
+    ''' <summary>
+    ''' Tests hostname change
+    ''' </summary>
     <TestMethod()> Public Sub TestChangeHostname()
         InitPaths()
         Assert.IsTrue(ChangeHostname("NewHost"), "Changing hostname failed. Expected True, got False.")

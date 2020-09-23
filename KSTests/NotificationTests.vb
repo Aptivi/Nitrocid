@@ -20,16 +20,25 @@ Imports KS
 
 <TestClass()> Public Class NotificationTests
 
+    ''' <summary>
+    ''' Tests notification creation
+    ''' </summary>
     <TestMethod()> Public Sub TestNotifyCreate()
         Assert.IsNotNull(NotifyCreate("This is the title.", "This is the description.", NotifPriority.Medium), "Notification creation failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests notifications sending
+    ''' </summary>
     <TestMethod> Public Sub TestNotifySend()
         Dim Notif As Notification = NotifyCreate("Notification title", "This is a high priority notification", NotifPriority.High)
         NotifySend(Notif)
         Assert.IsTrue(NotifRecents.Count > 0, "Notification sending failed. Got {0}", NotifRecents.Count)
     End Sub
 
+    ''' <summary>
+    ''' Tests notification dismiss
+    ''' </summary>
     <TestMethod> Public Sub TestNotifyDismiss()
         Dim Notif As Notification = NotifyCreate("Redundant title", "This is a redundant notification", NotifPriority.Low)
         NotifySend(Notif)

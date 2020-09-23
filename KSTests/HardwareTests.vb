@@ -20,6 +20,9 @@ Imports KS
 
 <TestClass()> Public Class HardwareTests
 
+    ''' <summary>
+    ''' Tests hardware probation
+    ''' </summary>
     <TestMethod()> Public Sub TestProbeHardware()
         If Environment.OSVersion.ToString.Contains("Unix") Then
             ProbeHardwareLinux()

@@ -20,21 +20,33 @@ Imports KS
 
 <TestClass()> Public Class HelpTests
 
+    ''' <summary>
+    ''' Tests initialization of FTP help
+    ''' </summary>
     <TestMethod()> Public Sub TestInitFTPHelp()
         InitFTPHelp()
         Assert.IsNotNull(FTPDefinitions, "Initialization of FTP help failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests initialization of mail help
+    ''' </summary>
     <TestMethod()> Public Sub TestInitMailHelp()
         IMAPInitHelp()
         Assert.IsNotNull(MailDefinitions, "Initialization of mail help failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests initialization of shell help
+    ''' </summary>
     <TestMethod()> Public Sub TestInitShellHelp()
         InitHelp()
         Assert.IsNotNull(definitions, "Initialization of shell help failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests initialization of text help
+    ''' </summary>
     <TestMethod()> Public Sub TestInitTextHelp()
         TextEdit_UpdateHelp()
         Assert.IsNotNull(TextEdit_HelpEntries, "Initialization of text editor help failed. Got null.")
