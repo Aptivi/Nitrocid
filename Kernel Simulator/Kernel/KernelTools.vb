@@ -78,10 +78,7 @@ Public Module KernelTools
             End If
 
             'Parse variables ({0}, {1}, ...) in the "Description" string variable
-            For v As Integer = 0 To Variables.Length - 1
-                Description = Description.Replace($"{{{CStr(v)}}}", Variables(v))
-                Wdbg("I", "Variable {0} parsed --> {1}", CStr(v), Variables(v))
-            Next
+            Description = Description.FormatString(Variables)
 
             'Fire an event
             EventManager.RaiseKernelError()
