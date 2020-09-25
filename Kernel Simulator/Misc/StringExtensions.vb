@@ -81,7 +81,11 @@ Public Module StringExtensions
     <Runtime.CompilerServices.Extension>
     Public Function FormatString(ByVal Str As String, ByVal ParamArray Variables() As Object) As String
         For v As Integer = 0 To Variables.Length - 1
-            Str = Str.Replace("{" + CStr(v) + "}", Variables(v).ToString)
+            If Not IsNothing(Variables(v).ToString) Then
+                Str = Str.Replace("{" + CStr(v) + "}", Variables(v).ToString)
+            Else
+                Str = Str.Replace("{" + CStr(v) + "}", "((Null))")
+            End If
         Next
         Return Str
     End Function
