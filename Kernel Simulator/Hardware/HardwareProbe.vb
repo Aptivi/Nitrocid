@@ -15,6 +15,7 @@
 '
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 Imports System.IO
 Imports System.Management
 Imports Newtonsoft.Json.Linq
@@ -73,6 +74,7 @@ Public Module HardwareProbe
         Dim PartsS As New ManagementObjectSearcher("SELECT * FROM Win32_DiskPartition")
         Dim LogicS As New ManagementObjectSearcher("SELECT * FROM Win32_LogicalDisk")
         Dim CPUSet As New ManagementObjectSearcher("SELECT * FROM Win32_Processor")
+        Dim System As New ManagementObjectSearcher("SELECT * FROM Win32_OperatingSystem")
         Dim MemSet As New ManagementObjectSearcher("SELECT * FROM Win32_PhysicalMemory")
         Dim SltSet As New ManagementObjectSearcher("SELECT * FROM Win32_PhysicalMemoryArray")
         Dim temp As String = ""
@@ -127,9 +129,13 @@ Public Module HardwareProbe
         Next
 
         'CPU Prober
+        Dim Arch As String = ""
+        For Each Sys As ManagementBaseObject In System.Get
+            Arch = Sys("OSArchitecture")
+        Next
         For Each CPU As ManagementBaseObject In CPUSet.Get
             Try
-                CPUList.Add(New CPU With {.Name = CPU("Name"), .ClockSpeed = CPU("CurrentClockSpeed")})
+                CPUList.Add(New CPU With {.Name = CPU("Name"), .ClockSpeed = CPU("CurrentClockSpeed"), .Arch = Arch})
                 Wdbg("I", "CPU: Name = {0}, CurrentClockSpeed = {1}", CPUList(CPUList.Count - 1).Name, CPUList(CPUList.Count - 1).ClockSpeed)
             Catch ex As Exception
                 CPUDone = False
@@ -189,7 +195,16 @@ Public Module HardwareProbe
         'CPU Prober
         Try
             Dim cpuinfo As New StreamReader("/proc/cpuinfo")
-            Dim Name = "", Clock = "", SSE2 = False, ln As String
+            Dim Name = "", Clock = "", Arch = "", SSE2 = False, ln As String
+            Dim CPUArch As New Process
+            Dim CPUArchInfo As New ProcessStartInfo With {.FileName = "uname", .Arguments = "-m",
+                                                          .WindowStyle = ProcessWindowStyle.Hidden,
+                                                          .CreateNoWindow = True,
+                                                          .UseShellExecute = False,
+                                                          .RedirectStandardOutput = True}
+            CPUArch.StartInfo = CPUArchInfo
+            CPUArch.Start() : CPUArch.WaitForExit()
+            Arch = CPUArch.StandardOutput.ReadToEnd
             Do While Not cpuinfo.EndOfStream
                 ln = cpuinfo.ReadLine()
                 If ln.StartsWith("model name") Then
@@ -202,7 +217,7 @@ Public Module HardwareProbe
                     End If
                 End If
             Loop
-            CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name, .SSE2 = SSE2})
+            CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name, .Arch = Arch, .SSE2 = SSE2})
         Catch ex As Exception
             CPUDone = False
             If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
@@ -279,8 +294,8 @@ Public Module HardwareProbe
 
             'SSE2 availability
             If CPUFeatures_Win.IsProcessorFeaturePresent(CPUFeatures_Win.SSEnum.InstructionsSSE2Available) Then 'After SSE2 requirement addition, remove the check.
-                W(" : SSE2", True, ColTypes.Neutral)
-            Else
+                W(" : SSE2 @ {0}", True, ColTypes.Neutral, processorinfo.Arch)
+            ElseIf Not processorinfo.Arch = "32-bit" Then
                 W(vbNewLine + DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Err)
             End If
         Next
@@ -331,8 +346,8 @@ Public Module HardwareProbe
         For Each info As CPU_Linux In CPUList
             W("CPU: {0} {1} Mhz", False, ColTypes.Neutral, info.CPUName, info.Clock)
             If info.SSE2 Then 'After SSE2 requirement addition, remove the check.
-                W(" : SSE2", False, ColTypes.Neutral)
-            Else
+                W(" : SSE2 @ {0}", False, ColTypes.Neutral, info.Arch)
+            ElseIf info.Arch = "i686" Or info.Arch = "i586" Or info.Arch = "i486" Or info.Arch = "i386" Then
                 W(vbNewLine + DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Err)
             End If
             Console.WriteLine()

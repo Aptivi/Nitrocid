@@ -74,6 +74,7 @@ Public Module HardwareVars
     Public Class CPU
         Public Name As String
         Public ClockSpeed As ULong
+        Public Arch As String
     End Class
 
     ''' <summary>
@@ -83,6 +84,7 @@ Public Module HardwareVars
         Inherits CPU
         Public CPUName As String
         Public Clock As String
+        Public Shadows Arch As String
         Public SSE2 As Boolean
     End Class
 
