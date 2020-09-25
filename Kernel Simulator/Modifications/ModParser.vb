@@ -22,21 +22,62 @@ Imports Microsoft.CSharp
 
 Public Module ModParser
 
-    'TODO: Support more than one file in mod
-    'Variables
+    ''' <summary>
+    ''' Interface for mods
+    ''' </summary>
     Public Interface IScript
-        Sub StartMod()
-        Sub StopMod()
+        ''' <summary>
+        ''' Command name for mod
+        ''' </summary>
         Property Cmd As String
+        ''' <summary>
+        ''' Command shell type for mod
+        ''' </summary>
         Property CmdType As ModType
+        ''' <summary>
+        ''' Command definition for mod
+        ''' </summary>
         Property Def As String
+        ''' <summary>
+        ''' Mod name
+        ''' </summary>
         Property Name As String
+        ''' <summary>
+        ''' Name of part of mod
+        ''' </summary>
+        Property ModPart As String
+        ''' <summary>
+        ''' Mod version
+        ''' </summary>
         Property Version As String
+        ''' <summary>
+        ''' Code executed when starting mod
+        ''' </summary>
+        Sub StartMod()
+        ''' <summary>
+        ''' Code executed when stopping mod
+        ''' </summary>
+        Sub StopMod()
+        ''' <summary>
+        ''' Code executed when performing command
+        ''' </summary>
+        ''' <param name="args">Arguments. Make sure to split your arguments if necessary.</param>
         Sub PerformCmd(Optional ByVal args As String = "")
+        ''' <summary>
+        ''' Code executed when initializing events
+        ''' </summary>
+        ''' <param name="ev">Event name. Look it up on EventsAndExceptions.vb</param>
         Sub InitEvents(ByVal ev As String)
+        ''' <summary>
+        ''' Code executed when initializing events
+        ''' </summary>
+        ''' <param name="ev">Event name. Look it up on EventsAndExceptions.vb</param>
+        ''' <param name="Args">Arguments.</param>
         Sub InitEvents(ByVal ev As String, ParamArray Args() As Object)
     End Interface
-    Public scripts As New Dictionary(Of String, IScript)
+
+    'Variables
+    Public scripts As New Dictionary(Of String, Dictionary(Of String, IScript))
     Private ReadOnly modPath As String = paths("Mods")
 
     '------------------------------------------- Generators -------------------------------------------
@@ -125,10 +166,16 @@ Public Module ModParser
                 Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
             End If
             If StartStop = False Then
-                For Each script As IScript In scripts.Values
-                    script.StopMod()
-                    Wdbg("I", "script.StopMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
-                    If script.Name <> "" And script.Version <> "" Then W("{0} v{1} stopped", True, ColTypes.Neutral, script.Name, script.Version)
+                For Each script As Dictionary(Of String, IScript) In scripts.Values
+                    Wdbg("I", "Stopping... Mod name: {0}", scripts.GetKeyFromValue(script))
+                    For Each ScriptPart As String In script.Keys
+                        Wdbg("I", "Stopping part {0} v{1}", script(ScriptPart).ModPart, script(ScriptPart).Version)
+                        script(ScriptPart).StopMod()
+                        If script(ScriptPart).Name <> "" And script(ScriptPart).Version <> "" Then
+                            W("{0} v{1} stopped", True, ColTypes.Neutral, script(ScriptPart).ModPart, script(ScriptPart).Version)
+                        End If
+                    Next
+                    W("Mod {0} stopped", True, ColTypes.Neutral, scripts.GetKeyFromValue(script))
                 Next
             Else
                 For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
@@ -171,16 +218,43 @@ Public Module ModParser
     ''' <param name="modFile">Mod file name with extension. It should end with .m, SS.m, or CS.m</param>
     ''' <param name="StartStop">Whether to start or stop mods</param>
     Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
+        Dim ModParts As New Dictionary(Of String, IScript)
         If Not IsNothing(script) Then
             script.StartMod()
-            Wdbg("I", "script.StartMod() initialized. Mod name: {0} | Version: {0}", script.Name, script.Version)
+            Wdbg("I", "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version)
+            If script.ModPart = "" Then
+                Wdbg("W", "No part name for {0}", modFile)
+                W(DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code.", currentLang), True, ColTypes.Neutral, modFile)
+                Exit Sub
+            End If
+            If script.Cmd = "" Then
+                Wdbg("W", "No command for {0}", modFile)
+                W(DoTranslation("Mod {0} does not have the command. Mod parsing failed. Review the source code.", currentLang), True, ColTypes.Neutral, modFile)
+                Exit Sub
+            End If
             If script.Name = "" Then
                 Wdbg("W", "No name for {0}", modFile)
                 W(DoTranslation("Mod {0} does not have the name. Review the source code.", currentLang), True, ColTypes.Neutral, modFile)
-                scripts.Add(script.Cmd, script)
+                Wdbg("I", "Checking to see if {0} exists in scripts...", script.Cmd)
+                If scripts.ContainsKey(script.Cmd) Then
+                    Wdbg("I", "Exists. Adding mod part {0}...", script.ModPart)
+                    scripts(script.Cmd).Add(script.ModPart, script)
+                Else
+                    Wdbg("I", "Adding mod with mod part {0}...", script.ModPart)
+                    ModParts.Add(script.ModPart, script)
+                    scripts.Add(script.Cmd, ModParts)
+                End If
             Else
                 Wdbg("I", "There is a name for {0}", modFile)
-                scripts.Add(script.Name, script)
+                Wdbg("I", "Checking to see if {0} exists in scripts...", script.Name)
+                If scripts.ContainsKey(script.Name) Then
+                    Wdbg("I", "Exists. Adding mod part {0}...", script.ModPart)
+                    scripts(script.Name).Add(script.ModPart, script)
+                Else
+                    Wdbg("I", "Adding mod with mod part {0}...", script.ModPart)
+                    ModParts.Add(script.ModPart, script)
+                    scripts.Add(script.Name, ModParts)
+                End If
             End If
             If script.Version = "" And script.Name <> "" Then
                 Wdbg("I", "{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
@@ -192,8 +266,8 @@ Public Module ModParser
             If script.Cmd <> "" And StartStop = True Then
                 If script.Def = "" Then
                     W(DoTranslation("No definition for command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
-                    Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1}""", script.Cmd, script.Name)
-                    script.Def = DoTranslation("Command defined by ", currentLang) + script.Name
+                    Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1} ({2})""", script.Cmd, script.Name, script.ModPart)
+                    script.Def = DoTranslation("Command defined by ", currentLang) + script.Name + " (" + script.ModPart + ")"
                 End If
                 If script.CmdType = ModType.Shell Then
                     If Not modcmnds.Contains(script.Cmd) Then modcmnds.Add(script.Cmd)

@@ -75,459 +75,561 @@ Public Class EventsAndExceptions
     ''' Makes the mod respond to the event of kernel start
     ''' </summary>
     Public Sub RespondStartKernel() Handles Me.KernelStarted
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event KernelStarted()...", script.Name, script.Version)
-            script.InitEvents("KernelStarted")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event KernelStarted()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("KernelStarted")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of pre-login
     ''' </summary>
     Public Sub RespondPreLogin() Handles Me.PreLogin
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PreLogin()...", script.Name, script.Version)
-            script.InitEvents("PreLogin")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PreLogin()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PreLogin")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-login
     ''' </summary>
     Public Sub RespondPostLogin() Handles Me.PostLogin
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PostLogin()...", script.Name, script.Version)
-            script.InitEvents("PostLogin")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PostLogin()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PostLogin")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of the shell being initialized
     ''' </summary>
     Public Sub RespondShellInitialized() Handles Me.ShellInitialized
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event ShellInitialized()...", script.Name, script.Version)
-            script.InitEvents("ShellInitialized")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ShellInitialized()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ShellInitialized")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of pre-execute command
     ''' </summary>
     Public Sub RespondPreExecuteCommand() Handles Me.PreExecuteCommand
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PreExecuteCommand()...", script.Name, script.Version)
-            script.InitEvents("PreExecuteCommand")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PreExecuteCommand")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-execute command
     ''' </summary>
     Public Sub RespondPostExecuteCommand() Handles Me.PostExecuteCommand
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PostExecuteCommand()...", script.Name, script.Version)
-            script.InitEvents("PostExecuteCommand")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PostExecuteCommand")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of kernel error
     ''' </summary>
     Public Sub RespondKernelError() Handles Me.KernelError
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event KernelError()...", script.Name, script.Version)
-            script.InitEvents("KernelError")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event KernelError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("KernelError")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of continuable kernel error
     ''' </summary>
     Public Sub RespondContKernelError() Handles Me.ContKernelError
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event ContKernelError()...", script.Name, script.Version)
-            script.InitEvents("ContKernelError")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ContKernelError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ContKernelError")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of pre-shutdown
     ''' </summary>
     Public Sub RespondPreShutdown() Handles Me.PreShutdown
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PreShutdown()...", script.Name, script.Version)
-            script.InitEvents("PreShutdown")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PreShutdown()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PreShutdown")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-shutdown
     ''' </summary>
     Public Sub RespondPostShutdown() Handles Me.PostShutdown
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PostShutdown()...", script.Name, script.Version)
-            script.InitEvents("PostShutdown")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PostShutdown()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PostShutdown")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of pre-reboot
     ''' </summary>
     Public Sub RespondPreReboot() Handles Me.PreReboot
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PreReboot()...", script.Name, script.Version)
-            script.InitEvents("PreReboot")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PreReboot()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PreReboot")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-reboot
     ''' </summary>
     Public Sub RespondPostReboot() Handles Me.PostReboot
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PostReboot()...", script.Name, script.Version)
-            script.InitEvents("PostReboot")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PostReboot()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PostReboot")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of pre-screensaver show
     ''' </summary>
     Public Sub RespondPreShowScreensaver() Handles Me.PreShowScreensaver
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PreShowScreensaver()...", script.Name, script.Version)
-            script.InitEvents("PreShowScreensaver")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PreShowScreensaver()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PreShowScreensaver")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-screensaver show
     ''' </summary>
     Public Sub RespondPostShowScreensaver() Handles Me.PostShowScreensaver
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PostShowScreensaver()...", script.Name, script.Version)
-            script.InitEvents("PostShowScreensaver")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PostShowScreensaver()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PostShowScreensaver")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of pre-unlock
     ''' </summary>
     Public Sub RespondPreUnlock() Handles Me.PreUnlock
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PreUnlock()...", script.Name, script.Version)
-            script.InitEvents("PreUnlock")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PreUnlock()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PreUnlock")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-unlock
     ''' </summary>
     Public Sub RespondPostUnlock() Handles Me.PostUnlock
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PostUnlock()...", script.Name, script.Version)
-            script.InitEvents("PostUnlock")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PostUnlock()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PostUnlock")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of command error
     ''' </summary>
     Public Sub RespondCommandError() Handles Me.CommandError
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event CommandError()...", script.Name, script.Version)
-            script.InitEvents("CommandError")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event CommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("CommandError")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of pre-reload config
     ''' </summary>
     Public Sub RespondPreReloadConfig() Handles Me.PreReloadConfig
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PreReloadConfig()...", script.Name, script.Version)
-            script.InitEvents("PreReloadConfig")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PreReloadConfig()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PreReloadConfig")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-reload config
     ''' </summary>
     Public Sub RespondPostReloadConfig() Handles Me.PostReloadConfig
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PostReloadConfig()...", script.Name, script.Version)
-            script.InitEvents("PostReloadConfig")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PostReloadConfig()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PostReloadConfig")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of a placeholder being parsed
     ''' </summary>
     Public Sub RespondPlaceholderParsing() Handles Me.PlaceholderParsing
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PlaceholderParsing()...", script.Name, script.Version)
-            script.InitEvents("PlaceholderParsing")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PlaceholderParsing()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PlaceholderParsing")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of a parsed placeholder
     ''' </summary>
     Public Sub RespondPlaceholderParsed() Handles Me.PlaceholderParsed
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event PlaceholderParsed()...", script.Name, script.Version)
-            script.InitEvents("PlaceholderParsed")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PlaceholderParsed()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PlaceholderParsed")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of garbage collection finish
     ''' </summary>
     Public Sub RespondGarbageCollected() Handles Me.GarbageCollected
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event GarbageCollected()...", script.Name, script.Version)
-            script.InitEvents("GarbageCollected")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event GarbageCollected()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("GarbageCollected")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP shell initialized
     ''' </summary>
     Public Sub RespondFTPShellInitialized() Handles Me.FTPShellInitialized
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event FTPShellInitialized()...", script.Name, script.Version)
-            script.InitEvents("FTPShellInitialized")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FTPShellInitialized()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FTPShellInitialized")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
     Public Sub RespondFTPPreExecuteCommand() Handles Me.FTPPreExecuteCommand
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event FTPPreExecuteCommand()...", script.Name, script.Version)
-            script.InitEvents("FTPPreExecuteCommand")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FTPPreExecuteCommand")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
     Public Sub RespondFTPPostExecuteCommand() Handles Me.FTPPostExecuteCommand
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event FTPPostExecuteCommand()...", script.Name, script.Version)
-            script.InitEvents("FTPPostExecuteCommand")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FTPPostExecuteCommand")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP command error
     ''' </summary>
     Public Sub RespondFTPCommandError() Handles Me.FTPCommandError
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event FTPCommandError()...", script.Name, script.Version)
-            script.InitEvents("FTPCommandError")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FTPCommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FTPCommandError")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP pre-download
     ''' </summary>
     Public Sub RespondFTPPreDownload() Handles Me.FTPPreDownload
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event FTPPreDownload()...", script.Name, script.Version)
-            script.InitEvents("FTPPreDownload")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPreDownload()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FTPPreDownload")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP post-download
     ''' </summary>
     Public Sub RespondFTPPostDownload(ByVal Success As Boolean) Handles Me.FTPPostDownload
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event FTPPostDownload()...", script.Name, script.Version)
-            script.InitEvents("FTPPostDownload", Success)
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPostDownload()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FTPPostDownload", Success)
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP pre-upload
     ''' </summary>
     Public Sub RespondFTPPreUpload() Handles Me.FTPPreUpload
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event FTPPreUpload()...", script.Name, script.Version)
-            script.InitEvents("FTPPreUpload")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPreUpload()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FTPPreUpload")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP post-upload
     ''' </summary>
     Public Sub RespondFTPPostUpload(ByVal Success As Boolean) Handles Me.FTPPostUpload
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event FTPPostUpload()...", script.Name, script.Version)
-            script.InitEvents("FTPPostUpload", Success)
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPostUpload()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FTPPostUpload", Success)
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of IMAP shell initialized
     ''' </summary>
     Public Sub RespondIMAPShellInitialized() Handles Me.IMAPShellInitialized
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event IMAPShellInitialized()...", script.Name, script.Version)
-            script.InitEvents("IMAPShellInitialized")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPShellInitialized()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("IMAPShellInitialized")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of IMAP pre-command execution
     ''' </summary>
     Public Sub RespondIMAPPreExecuteCommand() Handles Me.IMAPPreExecuteCommand
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event IMAPPreExecuteCommand()...", script.Name, script.Version)
-            script.InitEvents("IMAPPreExecuteCommand")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("IMAPPreExecuteCommand")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of IMAP post-command execution
     ''' </summary>
     Public Sub RespondIMAPPostExecuteCommand() Handles Me.IMAPPostExecuteCommand
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event IMAPPostExecuteCommand()...", script.Name, script.Version)
-            script.InitEvents("IMAPPostExecuteCommand")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("IMAPPostExecuteCommand")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of IMAP command error
     ''' </summary>
     Public Sub RespondIMAPCommandError() Handles Me.IMAPCommandError
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event IMAPCommandError()...", script.Name, script.Version)
-            script.InitEvents("IMAPCommandError")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPCommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("IMAPCommandError")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging connection accepted
     ''' </summary>
     Public Sub RespondRemoteDebugConnectionAccepted() Handles Me.RemoteDebugConnectionAccepted
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event RemoteDebugConnectionAccepted()...", script.Name, script.Version)
-            script.InitEvents("RemoteDebugConnectionAccepted")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugConnectionAccepted()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RemoteDebugConnectionAccepted")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging connection disconnected
     ''' </summary>
     Public Sub RespondRemoteDebugConnectionDisconnected() Handles Me.RemoteDebugConnectionDisconnected
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event RemoteDebugConnectionDisconnected()...", script.Name, script.Version)
-            script.InitEvents("RemoteDebugConnectionDisconnected")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugConnectionDisconnected()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RemoteDebugConnectionDisconnected")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging command execution
     ''' </summary>
     Public Sub RespondRemoteDebugExecuteCommand() Handles Me.RemoteDebugExecuteCommand
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event RemoteDebugExecuteCommand()...", script.Name, script.Version)
-            script.InitEvents("RemoteDebugExecuteCommand")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RemoteDebugExecuteCommand")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging command error
     ''' </summary>
     Public Sub RespondRemoteDebugCommandError() Handles Me.RemoteDebugCommandError
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event RemoteDebugCommandError()...", script.Name, script.Version)
-            script.InitEvents("RemoteDebugCommandError")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugCommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RemoteDebugCommandError")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command sent
     ''' </summary>
     Public Sub RespondRPCCommandSent() Handles Me.RPCCommandSent
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event RPCCommandSent()...", script.Name, script.Version)
-            script.InitEvents("RPCCommandSent")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RPCCommandSent()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RPCCommandSent")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command received
     ''' </summary>
     Public Sub RespondRPCCommandReceived() Handles Me.RPCCommandReceived
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event RPCCommandReceived()...", script.Name, script.Version)
-            script.InitEvents("RPCCommandReceived")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RPCCommandReceived()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RPCCommandReceived")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command error
     ''' </summary>
     Public Sub RespondRPCCommandError() Handles Me.RPCCommandError
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event RPCCommandError()...", script.Name, script.Version)
-            script.InitEvents("RPCCommandError")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RPCCommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RPCCommandError")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of SSH being connected
     ''' </summary>
     Public Sub RespondSSHConnected() Handles Me.SSHConnected
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event SSHConnected()...", script.Name, script.Version)
-            script.InitEvents("SSHConnected")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SSHConnected()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SSHConnected")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of SSH being disconnected
     ''' </summary>
     Public Sub RespondSSHDisconnected() Handles Me.SSHDisconnected
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event SSHDisconnected()...", script.Name, script.Version)
-            script.InitEvents("SSHDisconnected")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SSHDisconnected()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SSHDisconnected")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of SSH error
     ''' </summary>
     Public Sub RespondSSHError() Handles Me.SSHError
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event SSHError()...", script.Name, script.Version)
-            script.InitEvents("SSHError")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SSHError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SSHError")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of UESH pre-execute
     ''' </summary>
     Public Sub RespondUESHPreExecute() Handles Me.UESHPreExecute
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event UESHPreExecute()...", script.Name, script.Version)
-            script.InitEvents("UESHPreExecute")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event UESHPreExecute()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("UESHPreExecute")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of UESH post-execute
     ''' </summary>
     Public Sub RespondUESHPostExecute() Handles Me.UESHPostExecute
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event UESHPostExecute()...", script.Name, script.Version)
-            script.InitEvents("UESHPostExecute")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event UESHPostExecute()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("UESHPostExecute")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of UESH post-execute
     ''' </summary>
     Public Sub RespondUESHError() Handles Me.UESHError
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event UESHError()...", script.Name, script.Version)
-            script.InitEvents("UESHError")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event UESHError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("UESHError")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of text shell initialized
     ''' </summary>
     Public Sub RespondTextShellInitialized() Handles Me.TextShellInitialized
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event TextShellInitialized()...", script.Name, script.Version)
-            script.InitEvents("TextShellInitialized")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event TextShellInitialized()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("TextShellInitialized")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of text pre-command execution
     ''' </summary>
     Public Sub RespondTextPreExecuteCommand() Handles Me.TextPreExecuteCommand
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event TextPreExecuteCommand()...", script.Name, script.Version)
-            script.InitEvents("TextPreExecuteCommand")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event TextPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("TextPreExecuteCommand")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of text post-command execution
     ''' </summary>
     Public Sub RespondTextPostExecuteCommand() Handles Me.TextPostExecuteCommand
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event TextPostExecuteCommand()...", script.Name, script.Version)
-            script.InitEvents("TextPostExecuteCommand")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event TextPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("TextPostExecuteCommand")
+            Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of text command error
     ''' </summary>
     Public Sub RespondTextCommandError() Handles Me.TextCommandError
-        For Each script As IScript In scripts.Values
-            Wdbg("I", "Mod {0} v{1} responded to event TextCommandError()...", script.Name, script.Version)
-            script.InitEvents("TextCommandError")
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event TextCommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("TextCommandError")
+            Next
         Next
     End Sub
 

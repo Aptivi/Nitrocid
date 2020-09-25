@@ -249,6 +249,7 @@
     <Compile Include="Login\PermissionManagement.vb" />
     <Compile Include="Misc\Calculation\Calc.vb" />
     <Compile Include="Misc\Configuration\ConfigTool\ToolPrompts.vb" />
+    <Compile Include="Misc\DictionaryExtensions.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Configuration\OldConfigUp.vb" />
     <Compile Include="Misc\Forecast\Forecast.vb" />

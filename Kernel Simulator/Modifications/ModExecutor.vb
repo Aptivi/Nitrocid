@@ -48,21 +48,31 @@ Public Module ModExecutor
         Dim parts As String() = cmd.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
         Dim actualCmd As String = parts(0)
         Wdbg("I", "Command = {0}", actualCmd)
-        For Each script As IScript In scripts.Values
-            If (actualCmd = script.Cmd) And (script.Name <> Nothing) And (actualCmd <> script.Name) Then
-                Wdbg("I", "Command = {0}", actualCmd)
-                actualCmd = script.Name
-            End If
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                If (actualCmd = script.Cmd) And (script.Name <> Nothing) And (actualCmd <> script.Name) Then
+                    Wdbg("I", "Command = {0}", actualCmd)
+                    actualCmd = script.Name
+                End If
+            Next
         Next
         If cmd.StartsWith(parts(0) + " ") Then
             'These below will be executed if there are arguments
             Dim args As String = cmd.Replace($"{parts(0)} ", "")
             Wdbg("I", "Command {0} will be run with arguments: {1}", actualCmd, args)
-            scripts(actualCmd).PerformCmd(args)
+            For Each ModParts As String In scripts(actualCmd).Keys
+                If scripts(actualCmd)(ModParts).Cmd = parts(0) Then
+                    scripts(actualCmd)(ModParts).PerformCmd(args)
+                End If
+            Next
         Else
             'This will be executed if there are no arguments
             Wdbg("I", "Command {0} will be run.", actualCmd)
-            scripts(actualCmd).PerformCmd()
+            For Each ModParts As String In scripts(actualCmd).Keys
+                If scripts(actualCmd)(ModParts).Cmd = parts(0) Then
+                    scripts(actualCmd)(ModParts).PerformCmd()
+                End If
+            Next
         End If
         Wdbg("I", "Command executed successfully.")
     End Sub
