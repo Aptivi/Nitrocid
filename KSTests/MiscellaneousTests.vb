@@ -335,4 +335,14 @@ Imports KS
         Assert.AreEqual(ExpectedCommand, ActualCommand, "Getting variable failed ({0})", ActualCommand)
     End Sub
 
+    ''' <summary>
+    ''' Tests removing spaces from the beginning of the string
+    ''' </summary>
+    <TestMethod> Public Sub TestRemoveSpacesFromBeginning()
+        Dim ExpectedString As String = "Hello KS!"
+        Dim TargetString As String = "     Hello KS!"
+        TargetString = TargetString.RemoveSpacesFromBeginning
+        Assert.AreEqual(ExpectedString, TargetString, "Removing space from beginning of string failed. Got ""{0}""", TargetString)
+    End Sub
+
 End Class

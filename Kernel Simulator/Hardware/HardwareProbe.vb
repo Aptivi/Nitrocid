@@ -194,27 +194,40 @@ Public Module HardwareProbe
 
         'CPU Prober
         Try
-            Dim cpuinfo As New StreamReader("/proc/cpuinfo")
-            Dim Name = "", Clock = "", Arch = "", SSE2 = False, ln As String
-            Dim CPUArch As New Process
-            Dim CPUArchInfo As New ProcessStartInfo With {.FileName = "uname", .Arguments = "-m",
-                                                          .WindowStyle = ProcessWindowStyle.Hidden,
-                                                          .CreateNoWindow = True,
-                                                          .UseShellExecute = False,
-                                                          .RedirectStandardOutput = True}
-            CPUArch.StartInfo = CPUArchInfo
-            CPUArch.Start() : CPUArch.WaitForExit()
-            Arch = CPUArch.StandardOutput.ReadToEnd
-            Do While Not cpuinfo.EndOfStream
-                ln = cpuinfo.ReadLine()
-                If ln.StartsWith("model name") Then
-                    Name = ln.Replace("model name" + vbTab + ": ", "")
-                ElseIf ln.StartsWith("cpu MHz") Then
-                    Clock = ln.Substring(ln.IndexOfAny({"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}))
-                ElseIf ln.StartsWith("flags") Then
-                    If ln.Contains("sse2") Then
-                        SSE2 = True
-                    End If
+            Dim Name = "", Clock = "", Arch = "", SSE2 = False, Line As String
+            Dim LscpuStdout As StreamReader
+            Dim Lscpu As New Process
+            Dim LscpuInfo As New ProcessStartInfo With {.FileName = "/usr/bin/lscpu",
+                                                        .WindowStyle = ProcessWindowStyle.Hidden,
+                                                        .CreateNoWindow = True,
+                                                        .UseShellExecute = False,
+                                                        .RedirectStandardOutput = True}
+            Lscpu.StartInfo = LscpuInfo
+            Lscpu.Start() : Lscpu.WaitForExit()
+            LscpuStdout = Lscpu.StandardOutput
+            Do While Not LscpuStdout.EndOfStream
+                Line = LscpuStdout.ReadLine
+                If Line.StartsWith("Architecture:") Then
+                    Arch = Line.Replace("Architecture:", "").RemoveSpacesFromBeginning
+                    Wdbg("I", "Arch: {0}", Arch)
+                ElseIf Line.StartsWith("CPU max MHz:") Then 'For some systems that has max and min MHz, like some ARM and ARM64 systems
+                    Clock = Line.Replace("CPU max MHz:", "").RemoveSpacesFromBeginning
+                    Wdbg("I", "Clock: {0}", Clock)
+                ElseIf Line.StartsWith("CPU MHz:") Then 'Common architectures
+                    Clock = Line.Replace("CPU MHz:", "").RemoveSpacesFromBeginning
+                    Wdbg("I", "Clock: {0}", Clock)
+                ElseIf Line.StartsWith("CPU dynamic MHz:") Then 'For IBM System Z (S390X)
+                    Clock = Line.Replace("CPU dynamic MHz:", "").RemoveSpacesFromBeginning
+                    Wdbg("I", "Clock: {0}", Clock)
+                ElseIf Line.StartsWith("Model name:") Then
+                    Name = Line.Replace("Model name:", "").RemoveSpacesFromBeginning
+                    Wdbg("I", "Model name: {0}", Name)
+                ElseIf Line.StartsWith("Model:") And Arch.Contains("ppc") Then 'For PowerPC (PowerMac, etc.)
+                    Name = Line.Replace("Model:", "").RemoveSpacesFromBeginning
+                    Wdbg("I", "Model name: {0}", Name)
+                ElseIf Line.StartsWith("Flags:") And Line.Contains("sse2") Then
+                    SSE2 = True
+                    Wdbg("I", "Machine has SSE2.")
                 End If
             Loop
             If Clock = "" Then Clock = "0"

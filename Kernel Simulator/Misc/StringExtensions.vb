@@ -90,4 +90,15 @@ Public Module StringExtensions
         Return Str
     End Function
 
+    <Runtime.CompilerServices.Extension>
+    Public Function RemoveSpacesFromBeginning(ByVal Str As String) As String
+        Dim StrChars() As Char = Str.ToCharArray
+        Dim CharNum As Integer = 0
+        Do Until StrChars(CharNum) <> " "
+            StrChars(CharNum) = ""
+            CharNum += 1
+        Loop
+        Return String.Join("", StrChars).Replace(vbNullChar, "")
+    End Function
+
 End Module
