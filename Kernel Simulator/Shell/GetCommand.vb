@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.ComponentModel
 Imports System.IO
 Imports System.Text
 Imports System.Threading
@@ -202,14 +203,18 @@ Public Module GetCommand
 
             ElseIf requestedCommand = "cdbglog" Then
 
-                Try
-                    dbgWriter.Close()
-                    dbgWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
-                    W(DoTranslation("Debug log removed. All connected debugging devices may still view messages.", currentLang), True, ColTypes.Neutral)
-                Catch ex As Exception
-                    W(DoTranslation("Debug log removal failed: {0}", currentLang), True, ColTypes.Err, ex.Message)
-                    WStkTrc(ex)
-                End Try
+                If DebugMode Then
+                    Try
+                        dbgWriter.Close()
+                        dbgWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
+                        W(DoTranslation("Debug log removed. All connected debugging devices may still view messages.", currentLang), True, ColTypes.Neutral)
+                    Catch ex As Exception
+                        W(DoTranslation("Debug log removal failed: {0}", currentLang), True, ColTypes.Err, ex.Message)
+                        WStkTrc(ex)
+                    End Try
+                Else
+                    W(DoTranslation("You must turn on debug mode before you can clear debug log.", currentLang), True, ColTypes.Neutral)
+                End If
                 Done = True
 
             ElseIf words(0) = "chdir" Then
