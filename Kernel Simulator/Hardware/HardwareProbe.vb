@@ -217,6 +217,7 @@ Public Module HardwareProbe
                     End If
                 End If
             Loop
+            If Clock = "" Then Clock = "0"
             CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name, .Arch = Arch, .SSE2 = SSE2})
         Catch ex As Exception
             CPUDone = False
@@ -255,18 +256,44 @@ Public Module HardwareProbe
             Dim inxiReady As Boolean = False
             For Each inxidrvs In inxitoken.SelectToken("000#Drives")
                 If inxiReady Then
-                    HDDList.Add(New HDD_Linux With {.Size_LNX = inxidrvs("004#size"), .Model_LNX = inxidrvs("003#model"), .Vendor_LNX = inxidrvs("002#vendor")})
+                    Dim DriveSize As String = inxidrvs("004#size")
+                    Wdbg("I", "Prototype drive size: {0}", DriveSize)
+                    Dim DriveModel As String = inxidrvs("003#model")
+                    Wdbg("I", "Prototype drive model: {0}", DriveModel)
+                    Dim DriveVendor As String = inxidrvs("002#vendor")
+                    Wdbg("I", "Drive vendor: {0}", DriveVendor)
+                    If DriveVendor = "" Then
+                        DriveSize = inxidrvs("003#size")
+                        Wdbg("I", "Final drive size: {0}", DriveSize)
+                        DriveModel = inxidrvs("002#model")
+                        Wdbg("I", "Final drive model: {0}", DriveModel)
+                    End If
+                    HDDList.Add(New HDD_Linux With {.Size_LNX = DriveSize, .Model_LNX = DriveModel, .Vendor_LNX = DriveVendor})
                 End If
                 inxiReady = True
             Next
             Dim OldDrvChar As Char = "a"
             Dim DrvId As Integer = 0
             For Each inxiparts In inxitoken.SelectToken("001#Partition")
-                Dim CurrDrvChar As Char = inxiparts("005#dev").ToString.Replace("/dev/sd", "").Remove(1)
+                Dim DrvDevPath As String = inxiparts("005#dev").ToString
+                Dim CurrDrvChar As Char
+
+                Wdbg("I", "Prototype old / current dev path: {0} / {1}", OldDrvChar, CurrDrvChar)
+                If DrvDevPath.ContainsAny({"hd", "sd", "vd"}) Then '/dev/hdX, /dev/sdX, /dev/vdX
+                    Wdbg("I", "Drive seems to be one of /dev/(h|s|v)dXY format. {0}", DrvDevPath)
+                    CurrDrvChar = DrvDevPath.Replace("/dev/sd", "").Replace("/dev/hd", "").Replace("/dev/vd", "").Chars(0)
+                ElseIf DrvDevPath.Contains("mmcblk") Then '/dev/mmcblkXpY
+                    Wdbg("I", "Drive seems to be one of /dev/mmcblkXpY format. {0}", DrvDevPath)
+                    If Not OldDrvChar.ToString.IsNumeric Then OldDrvChar = "0"
+                    CurrDrvChar = DrvDevPath.Replace("/dev/mmcblk", "").Chars(0)
+                End If
                 If CurrDrvChar <> OldDrvChar Then
+                    Wdbg("I", "Transporting to another drive.")
                     DrvId += 1
                 End If
-                HDDList(DrvId).Parts.Add(New Part_Linux With {.Part = inxiparts("005#dev"), .FileSystem = inxiparts("004#fs"), .SizeMEAS = inxiparts("002#size"), .Used = inxiparts("003#used")})
+
+                Wdbg("I", "Adding drive with arguments [.Part = {0}, .FileSystem = {1}, .SizeMEAS = {2}, .Used = {3}] to partition list of drive {4}...", DrvDevPath, inxiparts("004#fs"), inxiparts("002#size"), inxiparts("003#used"), DrvId)
+                HDDList(DrvId).Parts.Add(New Part_Linux With {.Part = DrvDevPath, .FileSystem = inxiparts("004#fs"), .SizeMEAS = inxiparts("002#size"), .Used = inxiparts("003#used")})
             Next
         Catch ex As Exception
             HDDDone = False
