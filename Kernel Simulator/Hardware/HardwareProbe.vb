@@ -274,27 +274,30 @@ Public Module HardwareProbe
             Next
             Dim OldDrvChar As Char = "a"
             Dim DrvId As Integer = 0
-            For Each inxiparts In inxitoken.SelectToken("001#Partition")
-                Dim DrvDevPath As String = inxiparts("005#dev").ToString
-                Dim CurrDrvChar As Char
+            Dim PartitionToken As JToken = inxitoken.SelectToken("001#Partition")
+            If Not IsNothing(PartitionToken) Then
+                For Each inxiparts In PartitionToken
+                    Dim DrvDevPath As String = inxiparts("005#dev").ToString
+                    Dim CurrDrvChar As Char
 
-                Wdbg("I", "Prototype old / current dev path: {0} / {1}", OldDrvChar, CurrDrvChar)
-                If DrvDevPath.ContainsAny({"hd", "sd", "vd"}) Then '/dev/hdX, /dev/sdX, /dev/vdX
-                    Wdbg("I", "Drive seems to be one of /dev/(h|s|v)dXY format. {0}", DrvDevPath)
-                    CurrDrvChar = DrvDevPath.Replace("/dev/sd", "").Replace("/dev/hd", "").Replace("/dev/vd", "").Chars(0)
-                ElseIf DrvDevPath.Contains("mmcblk") Then '/dev/mmcblkXpY
-                    Wdbg("I", "Drive seems to be one of /dev/mmcblkXpY format. {0}", DrvDevPath)
-                    If Not OldDrvChar.ToString.IsNumeric Then OldDrvChar = "0"
-                    CurrDrvChar = DrvDevPath.Replace("/dev/mmcblk", "").Chars(0)
-                End If
-                If CurrDrvChar <> OldDrvChar Then
-                    Wdbg("I", "Transporting to another drive.")
-                    DrvId += 1
-                End If
+                    Wdbg("I", "Prototype old / current dev path: {0} / {1}", OldDrvChar, CurrDrvChar)
+                    If DrvDevPath.ContainsAny({"hd", "sd", "vd"}) Then '/dev/hdX, /dev/sdX, /dev/vdX
+                        Wdbg("I", "Drive seems to be one of /dev/(h|s|v)dXY format. {0}", DrvDevPath)
+                        CurrDrvChar = DrvDevPath.Replace("/dev/sd", "").Replace("/dev/hd", "").Replace("/dev/vd", "").Chars(0)
+                    ElseIf DrvDevPath.Contains("mmcblk") Then '/dev/mmcblkXpY
+                        Wdbg("I", "Drive seems to be one of /dev/mmcblkXpY format. {0}", DrvDevPath)
+                        If Not OldDrvChar.ToString.IsNumeric Then OldDrvChar = "0"
+                        CurrDrvChar = DrvDevPath.Replace("/dev/mmcblk", "").Chars(0)
+                    End If
+                    If CurrDrvChar <> OldDrvChar Then
+                        Wdbg("I", "Transporting to another drive.")
+                        DrvId += 1
+                    End If
 
-                Wdbg("I", "Adding drive with arguments [.Part = {0}, .FileSystem = {1}, .SizeMEAS = {2}, .Used = {3}] to partition list of drive {4}...", DrvDevPath, inxiparts("004#fs"), inxiparts("002#size"), inxiparts("003#used"), DrvId)
-                HDDList(DrvId).Parts.Add(New Part_Linux With {.Part = DrvDevPath, .FileSystem = inxiparts("004#fs"), .SizeMEAS = inxiparts("002#size"), .Used = inxiparts("003#used")})
-            Next
+                    Wdbg("I", "Adding drive with arguments [.Part = {0}, .FileSystem = {1}, .SizeMEAS = {2}, .Used = {3}] to partition list of drive {4}...", DrvDevPath, inxiparts("004#fs"), inxiparts("002#size"), inxiparts("003#used"), DrvId)
+                    HDDList(DrvId).Parts.Add(New Part_Linux With {.Part = DrvDevPath, .FileSystem = inxiparts("004#fs"), .SizeMEAS = inxiparts("002#size"), .Used = inxiparts("003#used")})
+                Next
+            End If
         Catch ex As Exception
             HDDDone = False
             If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
