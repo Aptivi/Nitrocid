@@ -54,20 +54,20 @@ Public Module Notifications
                 Dim Title, Desc As String
                 Wdbg("I", "Title: {0}", NotifRecents(NotifRecents.Count - 1).Title)
                 Wdbg("I", "Desc: {0}", NotifRecents(NotifRecents.Count - 1).Desc)
-                Title = NotifRecents(NotifRecents.Count - 1).Title.Truncate(27)
-                Desc = NotifRecents(NotifRecents.Count - 1).Desc.Truncate(27)
+                Title = NotifRecents(NotifRecents.Count - 1).Title.Truncate(37)
+                Desc = NotifRecents(NotifRecents.Count - 1).Desc.Truncate(37)
                 Wdbg("I", "Truncated title: {0}", Title)
                 Wdbg("I", "Truncated desc: {0}", Desc)
-                Wdbg("I", "Where to store: {0}, Title: {1}, Desc: {2}", Console.WindowWidth - 30, Console.WindowTop + 2, Console.WindowTop + 3)
-                WriteWhere(Title, Console.WindowWidth - 30, Console.WindowTop + 2, ColTypes.Neutral)
-                WriteWhere(Desc, Console.WindowWidth - 30, Console.WindowTop + 3, ColTypes.Neutral)
+                Wdbg("I", "Where to store: {0}, Title: {1}, Desc: {2}", Console.WindowWidth - 40, Console.WindowTop + 1, Console.WindowTop + 2)
+                WriteWhere(Title, Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral)
+                WriteWhere(Desc, Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
                 Wdbg("I", "Priority: {0}", NotifRecents(NotifRecents.Count - 1).Priority)
                 For i As Integer = 1 To NotifRecents(NotifRecents.Count - 1).Priority
                     Console.Beep()
                 Next
                 Wdbg("I", "Truncated title length: {0}", Title.Length)
                 Wdbg("I", "Truncated desc length: {0}", Desc.Length)
-                NotifClearArea(Title.Length, Desc.Length, Console.WindowWidth - 30, Console.WindowTop + 2, Console.WindowTop + 3)
+                NotifClearArea(Title.Length, Desc.Length, Console.WindowWidth - 40, Console.WindowTop + 1, Console.WindowTop + 2)
             End If
             OldNCount = NotifRecents.Count
         End While
@@ -84,11 +84,11 @@ Public Module Notifications
     Private Sub NotifClearArea(ByVal LenTitle As Integer, ByVal LenDesc As Integer, ByVal Width As Integer, ByVal TopTitle As Integer, ByVal TopDesc As Integer)
         Thread.Sleep(5000)
         For i As Integer = 0 To LenTitle - 1
-            WriteWhere(" ", Console.WindowWidth - 30 + i, Console.WindowTop + 2, ColTypes.Neutral)
+            WriteWhere(" ", Console.WindowWidth - 40 + i, Console.WindowTop + 1, ColTypes.Neutral)
             WriteWhere(" ", Width + i, TopTitle, ColTypes.Neutral)
         Next
         For i As Integer = 0 To LenDesc - 1
-            WriteWhere(" ", Console.WindowWidth - 30 + i, Console.WindowTop + 3, ColTypes.Neutral)
+            WriteWhere(" ", Console.WindowWidth - 40 + i, Console.WindowTop + 2, ColTypes.Neutral)
             WriteWhere(" ", Width + i, TopDesc, ColTypes.Neutral)
         Next
     End Sub

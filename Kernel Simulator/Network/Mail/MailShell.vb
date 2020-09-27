@@ -18,6 +18,7 @@
 
 Imports System.Threading
 Imports MailKit
+Imports MailKit.Net.Imap
 Imports MailKit.Search
 
 Module MailShell
@@ -50,6 +51,7 @@ Module MailShell
         While Not ExitRequested
             'Populate messages
             PopulateMessages()
+            InitializeHandlers()
 
             'Initialize prompt
             If Not IsNothing(DefConsoleOut) Then
@@ -163,6 +165,20 @@ Module MailShell
                 End If
             End SyncLock
         End If
+    End Sub
+
+    Private Sub OnCountChanged(ByVal Sender As Object, ByVal e As EventArgs)
+        Dim Folder As ImapFolder = Sender
+        If Folder.Count > IMAP_Messages.Count Then
+            Dim NewMessagesCount As Integer = Folder.Count - IMAP_Messages.Count
+            NotifySend(New Notification With {.Title = DoTranslation("{0} new messages arrived in inbox.", currentLang).FormatString(NewMessagesCount),
+                                              .Desc = DoTranslation("Open ""lsmail"" to see them.", currentLang),
+                                              .Priority = NotifPriority.Medium})
+        End If
+    End Sub
+
+    Public Sub InitializeHandlers()
+        AddHandler IMAP_Client.Inbox.CountChanged, AddressOf OnCountChanged
     End Sub
 
 End Module
