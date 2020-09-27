@@ -54,7 +54,7 @@ Public Module TextWriterColor
     Public Sub Wdbg(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
         If DebugMode Then
             'Open debugging stream
-            If IsNothing(dbgWriter) And DebugMode Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
+            If IsNothing(dbgWriter) Or IsNothing(dbgWriter?.BaseStream) Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
 
             Dim STrace As New StackTrace(True)
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)

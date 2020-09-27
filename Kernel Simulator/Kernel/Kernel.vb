@@ -114,20 +114,11 @@ Public Module Kernel
                 Else
                     W(DoTranslation("Running in safe mode. Skipping stage...", currentLang), True, ColTypes.Neutral)
                 End If
-
-                'Phase 3: Free unused RAM and raise the started event
-                W(vbNewLine + DoTranslation("- Stage 3: Garbage collection", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 3: Garbage collection starts and the events now work")
-                Dim proc As Process = Process.GetCurrentProcess
-                W(DoTranslation("Before garbage collection: {0} bytes", currentLang), True, ColTypes.Neutral, proc.PrivateMemorySize64)
-                DisposeAll()
-                W(DoTranslation("After garbage collection: {0} bytes", currentLang), True, ColTypes.Neutral, proc.PrivateMemorySize64)
-                proc.Dispose()
                 EventManager.RaiseStartKernel()
 
-                'Phase 4: Log-in
-                W(vbNewLine + DoTranslation("- Stage 4: Log in", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 4: Log in")
+                'Phase 3: Log-in
+                W(vbNewLine + DoTranslation("- Stage 3: Log in", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 3: Log in")
                 InitializeSystemAccount()
                 LoginFlag = True
                 If Not BootArgs Is Nothing Then
@@ -150,6 +141,7 @@ Public Module Kernel
                 End If
 
                 'Initialize login prompt
+                DisposeAll()
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
                 ElseIf LoginFlag = True And maintenance = True Then

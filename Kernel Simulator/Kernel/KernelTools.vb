@@ -538,12 +538,16 @@ Public Module KernelTools
     Public Sub DisposeAll()
 
         Try
+            Dim proc As Process = GetCurrentProcess()
+            Wdbg("I", "Before garbage collection: {0} bytes", proc.PrivateMemorySize64)
             Wdbg("I", "Garbage collector starting... Max generators: {0}", GC.MaxGeneration.ToString)
             GC.Collect()
             GC.WaitForPendingFinalizers()
             If EnvironmentOSType.Contains("NT") Then
                 SetProcessWorkingSetSize(GetCurrentProcess().Handle, -1, -1)
             End If
+            Wdbg("I", "After garbage collection: {0} bytes", proc.PrivateMemorySize64)
+            proc.Dispose()
             EventManager.RaiseGarbageCollected()
         Catch ex As Exception
             W(DoTranslation("Error trying to free RAM: {0} - Continuing...", currentLang), True, ColTypes.Err, ex.Message)
