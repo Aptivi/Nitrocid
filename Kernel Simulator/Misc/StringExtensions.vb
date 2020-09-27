@@ -90,6 +90,11 @@ Public Module StringExtensions
         Return Str
     End Function
 
+    ''' <summary>
+    ''' Removes spaces from the beginning of the string
+    ''' </summary>
+    ''' <param name="Str">Target string</param>
+    ''' <returns>Modified string</returns>
     <Runtime.CompilerServices.Extension>
     Public Function RemoveSpacesFromBeginning(ByVal Str As String) As String
         Dim StrChars() As Char = Str.ToCharArray

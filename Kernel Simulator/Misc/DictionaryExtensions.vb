@@ -16,6 +16,14 @@
 
 Public Module DictionaryExtensions
 
+    ''' <summary>
+    ''' Gets a key from a value from the dictionary
+    ''' </summary>
+    ''' <typeparam name="TKey">Key</typeparam>
+    ''' <typeparam name="TValue">Value</typeparam>
+    ''' <param name="Dict">Source dictionary</param>
+    ''' <param name="Value">Value</param>
+    ''' <returns>Key from value</returns>
     <Runtime.CompilerServices.Extension>
     Public Function GetKeyFromValue(Of TKey, TValue)(ByVal Dict As Dictionary(Of TKey, TValue), ByVal Value As Object) As Object
         For Each DictKey As Object In Dict.Keys
