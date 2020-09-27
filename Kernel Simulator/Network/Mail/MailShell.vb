@@ -101,6 +101,7 @@ Module MailShell
             Wdbg("W", "Exit requested. Disconnecting host...")
             IMAP_Client.Disconnect(True)
             SMTP_Client.Disconnect(True)
+            ReleaseHandlers()
         End If
         ExitRequested = False
 
@@ -167,6 +168,11 @@ Module MailShell
         End If
     End Sub
 
+    ''' <summary>
+    ''' Executed when the CountChanged event is fired.
+    ''' </summary>
+    ''' <param name="Sender">A folder</param>
+    ''' <param name="e">Event arguments</param>
     Private Sub OnCountChanged(ByVal Sender As Object, ByVal e As EventArgs)
         Dim Folder As ImapFolder = Sender
         If Folder.Count > IMAP_Messages.Count Then
@@ -177,8 +183,18 @@ Module MailShell
         End If
     End Sub
 
+    ''' <summary>
+    ''' Initializes the CountChanged handlers. Currently, it only supports inbox.
+    ''' </summary>
     Public Sub InitializeHandlers()
         AddHandler IMAP_Client.Inbox.CountChanged, AddressOf OnCountChanged
+    End Sub
+
+    ''' <summary>
+    ''' Releases the CountChanged handlers. Currently, it only supports inbox.
+    ''' </summary>
+    Public Sub ReleaseHandlers()
+        RemoveHandler IMAP_Client.Inbox.CountChanged, AddressOf OnCountChanged
     End Sub
 
 End Module
