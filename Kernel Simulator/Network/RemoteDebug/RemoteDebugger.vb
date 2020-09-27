@@ -40,6 +40,7 @@ Module RemoteDebugger
                 RDebugThread.Start()
             Else
                 RDebugStopping = True
+                RDebugThread = New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
             End If
         End If
     End Sub
