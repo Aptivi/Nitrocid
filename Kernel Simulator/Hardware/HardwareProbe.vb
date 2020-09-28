@@ -366,6 +366,7 @@ Public Module HardwareProbe
         W(vbNewLine + DoTranslation("RAM: Used slots (by numbers): {0} / {1} ({2}%)", currentLang), True, ColTypes.Neutral, CStr(slotsUsedNum), totalSlots, FormatNumber(CStr(slotsUsedNum * 100 / totalSlots), 1))
 
         'Drive Info
+        Dim DriveNum As Integer = 0
         For Each driveinfo In HDDList
             If driveinfo.Manufacturer = "(Standard disk drives)" Then
                 W("HDD: {0} {1} GB {2}" + vbNewLine +
@@ -378,6 +379,10 @@ Public Module HardwareProbe
                   driveinfo.Manufacturer, driveinfo.Model, FormatNumber(driveinfo.Size / 1024 / 1024 / 1024, 2),
                   driveinfo.InterfaceType, driveinfo.Cylinders, driveinfo.Heads, driveinfo.Sectors)
             End If
+            For Each PartInfo In HDDList(DriveNum).Parts
+                W("HDD ({5}): {0} {1} GB " + DoTranslation("Primary: {2} Bootable: {3} Boot partition: {4}", currentLang), True, ColTypes.Neutral, PartInfo.Type, FormatNumber(PartInfo.Size / 1024 / 1024 / 1024, 2), PartInfo.Primary, PartInfo.Bootable, PartInfo.Boot, DriveNum + 1)
+            Next
+            DriveNum += 1
         Next
     End Sub
 
@@ -389,11 +394,12 @@ Public Module HardwareProbe
         For Each info As CPU_Linux In CPUList
             W("CPU: {0} {1} Mhz", False, ColTypes.Neutral, info.CPUName, info.Clock)
             If info.SSE2 Then 'After SSE2 requirement addition, remove the check.
-                W(" : SSE2 @ {0}", False, ColTypes.Neutral, info.Arch)
+                W(" : SSE2 @ {0}", True, ColTypes.Neutral, info.Arch)
             ElseIf info.Arch = "i686" Or info.Arch = "i586" Or info.Arch = "i486" Or info.Arch = "i386" Then
                 W(vbNewLine + DoTranslation("CPU: WARNING: SSE2 will be required in future development commits.", currentLang), True, ColTypes.Err)
+            Else
+                Console.WriteLine()
             End If
-            Console.WriteLine()
         Next
 
         'HDD List
@@ -401,7 +407,7 @@ Public Module HardwareProbe
         For Each info As HDD_Linux In HDDList
             W("HDD: {0} {1} {2}", True, ColTypes.Neutral, info.Vendor_LNX, info.Model_LNX, info.Size_LNX)
             For Each part As Part_Linux In HDDList(CurrDrv).Parts
-                W("HDD ({4}): {0} {1} {2} {3}", True, ColTypes.Neutral, part.Part, part.FileSystem, part.SizeMEAS, part.Used, CurrDrv)
+                W("HDD ({4}): {0} {1} {2} {3}", True, ColTypes.Neutral, part.Part, part.FileSystem, part.SizeMEAS, part.Used, CurrDrv + 1)
             Next
             CurrDrv += 1
         Next
