@@ -450,7 +450,7 @@ Public Module GetCommand
                     OpenShell(Mail_Authentication.Domain)
                     Done = True
                 Else
-                    If eqargs?.Count = 0 Then
+                    If eqargs?.Count = 0 Or IsNothing(eqargs) Then
                         PromptUser()
                         Done = True
                     ElseIf Not eqargs(0) = "" Then
