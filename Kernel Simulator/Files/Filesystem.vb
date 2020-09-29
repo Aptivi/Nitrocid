@@ -316,6 +316,23 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
+    ''' Removes a file
+    ''' </summary>
+    ''' <param name="Target">Target directory</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function RemoveFile(ByVal Target As String) As Boolean
+        Try
+            Dim Dir As String = NeutralizePath(Target)
+            File.Delete(Dir)
+            Return True
+        Catch ex As Exception
+            WStkTrc(ex)
+            Throw New IOException(DoTranslation("Unable to remove file: {0}", currentLang).FormatString(ex.Message))
+        End Try
+        Return False
+    End Function
+
+    ''' <summary>
     ''' Searches a file for string
     ''' </summary>
     ''' <param name="FilePath">File path</param>

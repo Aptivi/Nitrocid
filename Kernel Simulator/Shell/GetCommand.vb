@@ -569,13 +569,6 @@ Public Module GetCommand
                     End If
                 End If
 
-            ElseIf words(0) = "rd" Then
-
-                If eqargs.Count - 1 >= 0 Then
-                    RemoveDirectory(eqargs(0))
-                    Done = True
-                End If
-
             ElseIf words(0) = "rdebug" Then
 
                 If DebugMode Then
@@ -588,6 +581,23 @@ Public Module GetCommand
                     W(DoTranslation("Debugging not enabled.", currentLang), True, ColTypes.Err)
                 End If
                 Done = True
+
+            ElseIf words(0) = "rm" Then
+
+                If eqargs?.Count - 1 >= 0 Then
+                    Dim NeutPath As String = NeutralizePath(eqargs(0))
+                    If File.Exists(NeutPath) Then
+                        Wdbg("I", "{0} is a file. Removing...", eqargs(0))
+                        RemoveFile(eqargs(0))
+                    ElseIf Directory.Exists(NeutPath) Then
+                        Wdbg("I", "{0} is a folder. Removing...", eqargs(0))
+                        RemoveDirectory(eqargs(0))
+                    Else
+                        Wdbg("W", "Trying to remove {0} which is not found.", eqargs(0))
+                        W(DoTranslation("Can't remove {0} because it doesn't exist.", currentLang), True, ColTypes.Err, eqargs(0))
+                    End If
+                    Done = True
+                End If
 
             ElseIf words(0) = "rmuser" Then
 

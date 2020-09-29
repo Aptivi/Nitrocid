@@ -73,7 +73,7 @@ Public Module HelpSystem
                                                               {"reloadmods", DoTranslation("Reloads mods.", currentLang)},
                                                               {"reloadsaver", DoTranslation("Reloads screensaver file in KSMods", currentLang)},
                                                               {"rexec", DoTranslation("Remotely executes a command to remote PC", currentLang)},
-                                                              {"rd", DoTranslation("Removes a directory", currentLang)},
+                                                              {"rm", DoTranslation("Removes a directory or a file", currentLang)},
                                                               {"rdebug", DoTranslation("Enables or disables remote debugging.", currentLang)},
                                                               {"rmuser", DoTranslation("Removes a user from the list", currentLang)},
                                                               {"savescreen", DoTranslation("Saves your screen from burn outs", currentLang)},
@@ -318,9 +318,9 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " ping <Address> [repeatTimes]", True, ColTypes.Neutral)
 
-        ElseIf command = "rd" Then
+        ElseIf command = "rm" Then
 
-            W(DoTranslation("Usage:", currentLang) + " rd <directory>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " rm <directory/file>", True, ColTypes.Neutral)
 
         ElseIf command = "rdebug" Then
 
