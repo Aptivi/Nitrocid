@@ -46,7 +46,10 @@ This section covers how to install Kernel Simulator on your system. Please scrol
 
 1. Download the Kernel Simulator binary files [here](https://github.com/EoflaOE/Kernel-Simulator/releases).
 2. Unzip the file to any directory
-3. Open terminal to the directory that contains KS, and run it using `mono "Kernel Simulator.exe"`
+3. Install the following programs:
+   - Microsoft.VisualBasic.dll 10.0 (Debian and its derivatives: `sudo apt install libmono-microsoft-visualbasic10.0-cil`)
+   - Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi libcpanel-json-xs-perl`)
+4. Open terminal to the directory that contains KS, and run it using `mono "Kernel Simulator.exe"`
 
 ### Linux systems (Second method - Ubuntu)
 
