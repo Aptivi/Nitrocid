@@ -95,7 +95,10 @@ Public Module FTPShell
 
             'Set input color
             Dim esc As Char = GetEsc()
-            If ColoredShell = True Then Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+            If ColoredShell = True Then
+                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            End If
             If Connects Then
                 Wdbg("I", $"Currently connecting to {Address} by ""ftp (address)""...")
                 strcmd = $"connect {Address}"

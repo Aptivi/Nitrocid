@@ -208,7 +208,10 @@ Public Module TextWriterColor
 
             If Line Then WriteLine(text) Else Write(text)
             If backgroundColor = ConsoleColors.Black Then ResetColor()
-            If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then Write(esc + "[38;5;" + CStr(inputColor) + "m")
+            If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            End If
         Catch ex As Exception
             WStkTrc(ex)
             KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
@@ -294,7 +297,10 @@ Public Module TextWriterColor
             WriteLine()
         End If
         If backgroundColor = ConsoleColors.Black Then ResetColor()
-        If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then Write(esc + "[38;5;" + CStr(inputColor) + "m")
+        If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+            Write(esc + "[38;5;" + CStr(inputColor) + "m")
+            Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+        End If
     End Sub
 
     ''' <summary>
@@ -349,6 +355,11 @@ Public Module TextWriterColor
         SetCursorPosition(Left, Top)
         Write(msg)
         SetCursorPosition(OldLeft, OldTop)
+        If backgroundColor = ConsoleColors.Black Then ResetColor()
+        If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+            Write(esc + "[38;5;" + CStr(inputColor) + "m")
+            Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+        End If
     End Sub
 
     ''' <summary>
