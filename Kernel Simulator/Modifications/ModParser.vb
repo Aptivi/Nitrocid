@@ -294,6 +294,12 @@ Public Module ModParser
         'Clear all scripts, commands, and defs
         modcmnds.Clear()
         moddefs.Clear()
+        FTPModCommands.Clear()
+        FTPModDefs.Clear()
+        MailModCommands.Clear()
+        MailModDefs.Clear()
+        TextEdit_ModCommands.Clear()
+        TextEdit_ModHelpEntries.Clear()
         scripts.Clear()
 
         'Stop all mods

@@ -272,6 +272,12 @@ Public Module KernelTools
         totalSlots = 0
         modcmnds.Clear()
         moddefs.Clear()
+        FTPModCommands.Clear()
+        FTPModDefs.Clear()
+        MailModCommands.Clear()
+        MailModDefs.Clear()
+        TextEdit_ModCommands.Clear()
+        TextEdit_ModHelpEntries.Clear()
         scripts.Clear()
         CloseAliasesFile()
         Aliases.Clear()
