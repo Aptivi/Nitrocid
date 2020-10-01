@@ -224,12 +224,12 @@ Public Module ModParser
             Wdbg("I", "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version)
             If script.ModPart = "" Then
                 Wdbg("W", "No part name for {0}", modFile)
-                W(DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code.", currentLang), True, ColTypes.Neutral, modFile)
+                W(DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code.", currentLang), True, ColTypes.Err, modFile)
                 Exit Sub
             End If
             If script.Cmd = "" Then
                 Wdbg("W", "No command for {0}", modFile)
-                W(DoTranslation("Mod {0} does not have the command. Mod parsing failed. Review the source code.", currentLang), True, ColTypes.Neutral, modFile)
+                W(DoTranslation("Mod {0} does not have the command. Mod parsing failed. Review the source code.", currentLang), True, ColTypes.Err, modFile)
                 Exit Sub
             End If
             If script.Name = "" Then
