@@ -251,8 +251,8 @@ Public Module GetCommand
 
             ElseIf words(0) = "chlang" Then
 
-                If requestedCommand <> "chlang" Then
-                    PromptForSetLang(words(1))
+                If eqargs?.Count > 1 Then
+                    PromptForSetLang(eqargs(0), False, eqargs(1))
                     Done = True
                 End If
 

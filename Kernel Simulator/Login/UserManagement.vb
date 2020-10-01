@@ -57,12 +57,12 @@ Public Module UserManagement
             If Not UsersLines.Count = 0 Then
                 For i As Integer = 0 To UsersLines.Count - 1
                     If Not userword.ContainsKey(uninitUser) Then
-                        UsersWriter.WriteLine(uninitUser + "," + unpassword)
+                        UsersWriter.WriteLine(uninitUser + "," + unpassword + "," + currentLang)
                         Exit For
                     End If
                 Next
             Else
-                UsersWriter.WriteLine(uninitUser + "," + unpassword)
+                UsersWriter.WriteLine(uninitUser + "," + unpassword + "," + currentLang)
             End If
             UsersWriter.Close() : UsersWriter.Dispose()
 
@@ -91,6 +91,11 @@ Public Module UserManagement
         Next
     End Sub
 
+    ''' <summary>
+    ''' Gets an encrypted password for a user
+    ''' </summary>
+    ''' <param name="User">A user</param>
+    ''' <returns>An encrypted password</returns>
     Function GetUserEncryptedPassword(ByVal User As String)
         'Opens file stream
         Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
@@ -105,10 +110,63 @@ Public Module UserManagement
     End Function
 
     ''' <summary>
+    ''' Gets the preferred language for a user
+    ''' </summary>
+    ''' <param name="User">A user</param>
+    ''' <returns>The preferred language</returns>
+    Public Function GetUserPreferredLanguage(ByVal User As String) As String
+        If userword.ContainsKey(User) Then
+            Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+            Dim SplitEntries() As String
+            For Each Line As String In UsersLines
+                SplitEntries = Line.Split(",")
+                If SplitEntries(0) = User Then
+                    Return SplitEntries(2)
+                End If
+            Next
+        Else
+            Throw New EventsAndExceptions.UserManagementException(DoTranslation("User not found.", currentLang))
+        End If
+        Return ""
+    End Function
+
+    ''' <summary>
+    ''' Sets the preferred language for a user
+    ''' </summary>
+    ''' <param name="User">A user</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function SetUserPreferredLanguage(ByVal User As String, ByVal Language As String) As Boolean
+        If userword.ContainsKey(User) Then
+            Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
+            For LineNum As Integer = 0 To UsersLines.Count - 1
+                If UsersLines(LineNum).Contains(User + ",") Then
+                    Dim SplitEntries() As String
+                    SplitEntries = UsersLines(LineNum).Split(",")
+                    UsersLines(LineNum) = UsersLines(LineNum).Replace(SplitEntries(2), Language)
+                    Return True
+                End If
+            Next
+        Else
+            Throw New EventsAndExceptions.UserManagementException(DoTranslation("User not found.", currentLang))
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Adapts language changes for user
+    ''' </summary>
+    ''' <param name="User">A user</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Function AdaptLanguageChangesForUser(ByVal User As String) As Boolean
+        Return SetLang(GetUserPreferredLanguage(User), False)
+    End Function
+
+    ''' <summary>
     ''' Adds a new user
     ''' </summary>
     ''' <param name="newUser">A new user</param>
     ''' <param name="newPassword">A password</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="EventsAndExceptions.UserCreationException"></exception>
     Public Function AddUser(ByVal newUser As String, Optional ByVal newPassword As String = "") As Boolean
         'Adds user

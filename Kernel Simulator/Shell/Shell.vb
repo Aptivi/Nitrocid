@@ -56,6 +56,11 @@ Public Module Shell
                 Wdbg("I", "Requested log out: {0}", LogoutRequested)
                 LogoutRequested = False
                 LoggedIn = False
+                Dim ksconf As New IniFile()
+                Dim SystemLang As String
+                ksconf.Load(paths("Configuration"))
+                SystemLang = ksconf.Sections("General").Keys("Language").Value
+                SetLang(SystemLang, False)
                 Exit Sub
             Else
                 Try
