@@ -90,6 +90,40 @@ Imports KS
     End Sub
 
     ''' <summary>
+    ''' Tests rendering kernel date
+    ''' </summary>
+    <TestMethod()> Public Sub TestRenderKernel()
+        KernelDateTime = Date.Now
+        Assert.IsNotNull(Render, "Rendering failed. Got null.")
+    End Sub
+
+    ''' <summary>
+    ''' Tests rendering kernel date with specified culture
+    ''' </summary>
+    <TestMethod()> Public Sub TestRenderKernelCult()
+        KernelDateTime = Date.Now
+        Dim TargetCult As New CultureInfo("es-ES")
+        Assert.IsNotNull(Render(TargetCult), "Rendering failed. Got null.")
+    End Sub
+
+    ''' <summary>
+    ''' Tests rendering custom date
+    ''' </summary>
+    <TestMethod()> Public Sub TestRenderCustom()
+        Dim TargetDate As New DateTime(2018, 2, 22)
+        Assert.IsNotNull(Render(TargetDate), "Rendering failed. Got null.")
+    End Sub
+
+    ''' <summary>
+    ''' Tests rendering custom date with specified culture
+    ''' </summary>
+    <TestMethod()> Public Sub TestRenderCustomCult()
+        Dim TargetDate As New DateTime(2018, 2, 22)
+        Dim TargetCult As New CultureInfo("es-ES")
+        Assert.IsNotNull(Render(TargetDate, TargetCult), "Rendering failed. Got null.")
+    End Sub
+
+    ''' <summary>
     ''' Tests initializing current times in all timezones
     ''' </summary>
     <TestMethod()> Public Sub TestInitTimesInZones()

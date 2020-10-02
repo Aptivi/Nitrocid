@@ -178,4 +178,56 @@ Public Module TimeDate
         End If
     End Function
 
+    ''' <summary>
+    ''' Renders the current time and date based on kernel config (long or short) and current culture
+    ''' </summary>
+    ''' <returns>A long or short time and date</returns>
+    Public Function Render() As String
+        If LongTimeDate Then
+            Return KernelDateTime.ToString(CurrentCult.DateTimeFormat.FullDateTimePattern, CurrentCult)
+        Else
+            Return KernelDateTime.ToString(CurrentCult.DateTimeFormat.ShortDatePattern, CurrentCult) + " " + KernelDateTime.ToString(CurrentCult.DateTimeFormat.ShortTimePattern, CurrentCult)
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Renders the current time and date based on specified culture
+    ''' </summary>
+    ''' <param name="Cult">A culture.</param>
+    ''' <returns>A time and date</returns>
+    Public Function Render(ByVal Cult As CultureInfo) As String
+        If LongTimeDate Then
+            Return KernelDateTime.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
+        Else
+            Return KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " " + KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult)
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Renders the time and date based on specified time using the kernel config (long or short) and current culture
+    ''' </summary>
+    ''' <param name="DT">Specified time and date</param>
+    ''' <returns>A long or short time and date</returns>
+    Public Function Render(ByVal DT As Date) As String
+        If LongTimeDate Then
+            Return DT.ToString(CurrentCult.DateTimeFormat.FullDateTimePattern, CurrentCult)
+        Else
+            Return DT.ToString(CurrentCult.DateTimeFormat.ShortDatePattern, CurrentCult) + " " + DT.ToString(CurrentCult.DateTimeFormat.ShortTimePattern, CurrentCult)
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Renders the time and date based on specified date and culture using the kernel config (long or short)
+    ''' </summary>
+    ''' <param name="DT">Specified time and date</param>
+    ''' <param name="Cult">A culture</param>
+    ''' <returns>A time and date</returns>
+    Public Function Render(ByVal DT As Date, ByVal Cult As CultureInfo) As String
+        If LongTimeDate Then
+            Return DT.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
+        Else
+            Return DT.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " " + DT.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult)
+        End If
+    End Function
+
 End Module

@@ -45,10 +45,12 @@ Public Module HelpSystem
                                                               {"cls", DoTranslation("Clears the screen", currentLang)},
                                                               {"copy", DoTranslation("Creates another copy of a file under different directory or name.", currentLang)},
                                                               {"debuglog", DoTranslation("Shows debug logs", currentLang)},
+                                                              {"dirinfo", DoTranslation("Provides information about a directory", currentLang)},
                                                               {"disconndbgdev", DoTranslation("Disconnect a debug device", currentLang)},
                                                               {"dismissnotif", DoTranslation("Dismisses a notification", currentLang)},
                                                               {"echo", DoTranslation("Writes text into the console", currentLang)},
                                                               {"edit", DoTranslation("Edits a text file", currentLang)},
+                                                              {"fileinfo", DoTranslation("Provides information about a file", currentLang)},
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                               {"get", DoTranslation("Downloads a file to current working directory", currentLang)},
                                                               {"help", DoTranslation("Help page", currentLang)},
@@ -215,6 +217,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " debuglog: " + DoTranslation("Shows you debug logs so you can send the log to us.", currentLang), True, ColTypes.Neutral)
 
+        ElseIf command = "dirinfo" Then
+
+            W(DoTranslation("Usage:", currentLang) + " dirinfo <directory>", True, ColTypes.Neutral)
+
         ElseIf command = "dismissnotif" Then
 
             W(DoTranslation("Usage:", currentLang) + " dismissnotif <notificationNumber>: " + DoTranslation("Dismisses a notification", currentLang), True, ColTypes.Neutral)
@@ -230,6 +236,10 @@ Public Module HelpSystem
         ElseIf command = "edit" Then
 
             W(DoTranslation("Usage:", currentLang) + " edit <file>", True, ColTypes.Neutral)
+
+        ElseIf command = "fileinfo" Then
+
+            W(DoTranslation("Usage:", currentLang) + " fileinfo <file>", True, ColTypes.Neutral)
 
         ElseIf command = "ftp" Then
 

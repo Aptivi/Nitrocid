@@ -336,6 +336,26 @@ Public Module GetCommand
                 PrintLog()
                 Done = True
 
+            ElseIf words(0) = "dirinfo" Then
+
+                If eqargs?.Length > 0 Then
+                    Dim DirectoryPath As String = NeutralizePath(eqargs(0))
+                    Wdbg("I", "Neutralized directory path: {0} ({1})", DirectoryPath, Directory.Exists(DirectoryPath))
+                    If Directory.Exists(DirectoryPath) Then
+                        Dim DirInfo As New DirectoryInfo(DirectoryPath)
+                        W(DoTranslation("Name: {0}", currentLang), True, ColTypes.Neutral, DirInfo.Name)
+                        W(DoTranslation("Full name: {0}", currentLang), True, ColTypes.Neutral, NeutralizePath(DirInfo.FullName))
+                        W(DoTranslation("Creation time: {0}", currentLang), True, ColTypes.Neutral, Render(DirInfo.CreationTime))
+                        W(DoTranslation("Last access time: {0}", currentLang), True, ColTypes.Neutral, Render(DirInfo.LastAccessTime))
+                        W(DoTranslation("Last write time: {0}", currentLang), True, ColTypes.Neutral, Render(DirInfo.LastWriteTime))
+                        W(DoTranslation("Attributes: {0}", currentLang), True, ColTypes.Neutral, DirInfo.Attributes)
+                        W(DoTranslation("Parent directory: {0}", currentLang), True, ColTypes.Neutral, NeutralizePath(DirInfo.Parent.FullName))
+                    Else
+                        W(DoTranslation("Can't get information about nonexistent directory.", currentLang), True, ColTypes.Err)
+                    End If
+                    Done = True
+                End If
+
             ElseIf words(0) = "dismissnotif" Then
 
                 If requestedCommand <> "dismissnotif" Then
@@ -374,6 +394,27 @@ Public Module GetCommand
                         InitializeTextShell(eqargs(0))
                     Else
                         W(DoTranslation("File doesn't exist.", currentLang), True, ColTypes.Err)
+                    End If
+                    Done = True
+                End If
+
+            ElseIf words(0) = "fileinfo" Then
+
+                If eqargs?.Length > 0 Then
+                    Dim FilePath As String = NeutralizePath(eqargs(0))
+                    Wdbg("I", "Neutralized file path: {0} ({1})", FilePath, Directory.Exists(FilePath))
+                    If File.Exists(FilePath) Then
+                        Dim FileInfo As New FileInfo(FilePath)
+                        W(DoTranslation("Name: {0}", currentLang), True, ColTypes.Neutral, FileInfo.Name)
+                        W(DoTranslation("Full name: {0}", currentLang), True, ColTypes.Neutral, NeutralizePath(FileInfo.FullName))
+                        W(DoTranslation("File size: {0}", currentLang) + " MB", True, ColTypes.Neutral, FormatNumber(FileInfo.Length / 1024 / 1024, 2))
+                        W(DoTranslation("Creation time: {0}", currentLang), True, ColTypes.Neutral, Render(FileInfo.CreationTime))
+                        W(DoTranslation("Last access time: {0}", currentLang), True, ColTypes.Neutral, Render(FileInfo.LastAccessTime))
+                        W(DoTranslation("Last write time: {0}", currentLang), True, ColTypes.Neutral, Render(FileInfo.LastWriteTime))
+                        W(DoTranslation("Attributes: {0}", currentLang), True, ColTypes.Neutral, FileInfo.Attributes)
+                        W(DoTranslation("Where to find: {0}", currentLang), True, ColTypes.Neutral, NeutralizePath(FileInfo.DirectoryName))
+                    Else
+                        W(DoTranslation("Can't get information about nonexistent file.", currentLang), True, ColTypes.Err)
                     End If
                     Done = True
                 End If

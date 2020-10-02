@@ -36,7 +36,7 @@ Public Module Shell
                                             "reloadmods", "get", "lsdbgdev", "disconndbgdev", "lset", "move", "copy", "search", "listdrives",
                                             "listparts", "sumfile", "rdebug", "spellbee", "mathbee", "loteresp", "sshell", "bsynth", "shownotifs",
                                             "dismissnotif", "rexec", "calc", "update", "sumfiles", "lsmail", "echo", "choice", "beep", "input", "mkfile",
-                                            "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather"}
+                                            "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather", "fileinfo", "dirinfo"}
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
                                      "lset", "listdrives", "listparts", "rdebug", "rexec", "update", "blockdbgdev", "unblockdbgdev", "settings"}
