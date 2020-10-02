@@ -17,11 +17,9 @@
 ### -+--> Steps to reproduce
 
 <!-- Provide clear step-by-step instructions on how do you reporduce this bug. -->
-**1.** 
-
-**2.** 
-
-**3.** 
+1. 
+1. 
+1. 
 
 ### -+--> System Information
 
@@ -32,6 +30,9 @@
 
 **RAM:** 
 
-### -+--> Project version (include commit number if applicable)
+**HDD:**
+
+### -+--> Version (include commit number if applicable)
 
 <!-- This should be in this format: <Version> (<Commit>). Commit number required for development builds. -->
+
