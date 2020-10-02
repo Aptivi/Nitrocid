@@ -163,6 +163,16 @@ Imports KS
     End Sub
 
     ''' <summary>
+    ''' Tests removing file
+    ''' </summary>
+    <TestMethod()> Public Sub TestRemoveFile()
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim TargetPath As String = "/Documents/Text.txt"
+        Assert.IsTrue(RemoveFile(TargetPath), "Failed to remove directory ""{0}"". Expected True, got False.", TargetPath)
+    End Sub
+
+    ''' <summary>
     ''' Tests searching file for string
     ''' </summary>
     <TestMethod()> Public Sub TestSearchFileForString()
