@@ -24,7 +24,6 @@ Public Module Login
     Public answerpass As String                                 'Input of password
     Public password As String                                   'Password for user we're logging in to
     Public signedinusrnm As String                              'Username that is signed in
-    Public PreferredLanguage As String                          'Preferred language for the current user
     Private showMOTDOnceFlag As Boolean = True                  'Show MOTD every LoginPrompt() session
 
     ''' <summary>
@@ -183,8 +182,6 @@ Public Module Login
 
         'Sign in to user.
         signedinusrnm = signedInUser
-        AdaptLanguageChangesForUser(signedinusrnm)
-        PreferredLanguage = GetUserPreferredLanguage(signedinusrnm)
         If LockMode = True Then LockMode = False
         Wdbg("I", "Lock released.")
         showMOTDOnceFlag = True

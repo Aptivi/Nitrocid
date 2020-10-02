@@ -118,8 +118,8 @@ Public Module PermissionManagement
         'Save changes
         For i As Integer = 0 To UsersLines.Count - 1
             If UsersLines(i).StartsWith($"{Username},") Then
-                UserLine(3) = adminList(Username)
-                UserLine(4) = disabledList(Username)
+                UserLine(2) = adminList(Username)
+                UserLine(3) = disabledList(Username)
                 UsersLines(i) = UserLine.Join(",")
                 Exit For
             End If
@@ -172,8 +172,8 @@ Public Module PermissionManagement
         'Save changes
         For i As Integer = 0 To UsersLines.Count - 1
             If UsersLines(i).StartsWith($"{Username},") Then
-                UserLine(3) = adminList(Username)
-                UserLine(4) = disabledList(Username)
+                UserLine(2) = adminList(Username)
+                UserLine(3) = disabledList(Username)
                 UsersLines(i) = UserLine.Join(",")
                 Exit For
             End If
@@ -261,8 +261,8 @@ Public Module PermissionManagement
             For i As Integer = 0 To UsersLines.Count - 1
                 UserLine = UsersLines(i).Split(",")
                 Dim UserName As String = UserLine(0)
-                Dim AdminEnabled As String = UserLine(3)
-                Dim UserDisabled As String = UserLine(4)
+                Dim AdminEnabled As String = UserLine(2)
+                Dim UserDisabled As String = UserLine(3)
                 adminList(UserName) = CType(AdminEnabled, Boolean)
                 disabledList(UserName) = CType(UserDisabled, Boolean)
             Next

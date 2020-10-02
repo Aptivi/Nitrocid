@@ -236,6 +236,7 @@ Public Module KernelTools
             RebootRequested = True
             LogoutRequested = True
             SafeMode = False
+            paths.Clear()
         ElseIf PowerMode = "rebootsafe" Then
             EventManager.RaisePreReboot()
             W(DoTranslation("Rebooting...", currentLang), True, ColTypes.Neutral)
@@ -245,6 +246,7 @@ Public Module KernelTools
             RebootRequested = True
             LogoutRequested = True
             SafeMode = True
+            paths.Clear()
         ElseIf PowerMode = "remoteshutdown" Then
             SendCommand("<Request:Shutdown>(" + IP + ")", IP)
         ElseIf PowerMode = "remoterestart" Then

@@ -178,7 +178,7 @@ Public Module HelpSystem
 
         ElseIf command = "chlang" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chlang <language> <SaveOnly=True/False>" + vbNewLine +
+            W(DoTranslation("Usage:", currentLang) + " chlang <language>" + vbNewLine +
               "<language>: " + String.Join("/", availableLangs), True, ColTypes.Neutral)
 
         ElseIf command = "chmotd" Then
