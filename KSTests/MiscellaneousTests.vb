@@ -203,17 +203,18 @@ Imports KS
         Dim UnparsedStrings As New List(Of String)
         InitPaths() 'For some reason, ProbePlaces' event raise likes to use paths...
         signedinusrnm = "Test"
-        Dim ParsedStrings As New List(Of String)
-        ParsedStrings.Add(ProbePlaces("Username is <user>"))
-        ParsedStrings.Add(ProbePlaces("Short date is <shortdate>"))
-        ParsedStrings.Add(ProbePlaces("Long date is <longdate>"))
-        ParsedStrings.Add(ProbePlaces("Short time is <shorttime>"))
-        ParsedStrings.Add(ProbePlaces("Long time is <longtime>"))
-        ParsedStrings.Add(ProbePlaces("Date is <date>"))
-        ParsedStrings.Add(ProbePlaces("Time is <time>"))
-        ParsedStrings.Add(ProbePlaces("Timezone is <timezone>"))
-        ParsedStrings.Add(ProbePlaces("Summer timezone is <summertimezone>"))
-        ParsedStrings.Add(ProbePlaces("Operating system is <system>"))
+        Dim ParsedStrings As New List(Of String) From {
+            ProbePlaces("Username is <user>"),
+            ProbePlaces("Short date is <shortdate>"),
+            ProbePlaces("Long date is <longdate>"),
+            ProbePlaces("Short time is <shorttime>"),
+            ProbePlaces("Long time is <longtime>"),
+            ProbePlaces("Date is <date>"),
+            ProbePlaces("Time is <time>"),
+            ProbePlaces("Timezone is <timezone>"),
+            ProbePlaces("Summer timezone is <summertimezone>"),
+            ProbePlaces("Operating system is <system>")
+        }
         For Each ParsedString As String In ParsedStrings
             If ParsedString.Contains("<") And ParsedString.Contains(">") Then
                 UnparsedStrings.Add(ParsedString)

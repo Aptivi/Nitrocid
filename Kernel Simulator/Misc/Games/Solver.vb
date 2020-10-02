@@ -26,6 +26,7 @@ Module Solver
         Dim RandomExpression As String
         Dim UserEvaluated As String
         Dim Operations() As String = {"+", "-", "*", "/"}
+        W(DoTranslation("Press CTRL+C to exit.", currentLang), True, ColTypes.Neutral)
         Wdbg("I", "Initialized expressions.")
         While True
             RandomExpression = CStr(RandomDriver.Next(1000)) + Operations.ElementAt(RandomDriver.Next(Operations.Count)) + CStr(RandomDriver.Next(1000))

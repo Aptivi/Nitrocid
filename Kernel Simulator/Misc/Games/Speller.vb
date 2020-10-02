@@ -28,6 +28,7 @@ Module Speller
         Dim RandomDriver As New Random
         Dim RandomWord As String
         Dim SpeltWord As String
+        W(DoTranslation("Press CTRL+C to exit.", currentLang), True, ColTypes.Neutral)
         If Words.Count = 0 Then
             Wdbg("I", "Downloading words...")
             Words.AddRange(Downloader.DownloadString("https://raw.githubusercontent.com/sindresorhus/word-list/master/words.txt").Replace(Chr(13), "").Split(Chr(10)).ToList)
