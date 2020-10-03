@@ -16,14 +16,16 @@ This section covers what you need to run Kernel Simulator. Please scroll down to
 
 ### Windows systems
 
-1. Windows 7 or later
+1. Windows 7 or later (Windows 10 recommended)
 2. .NET Framework 4.8
 3. Internet Connection
+4. Appropriate console that supports escape sequences and custom monotyped fonts for languages
 
 ### Linux systems
 
-1. Mono 6.0.0 or later
+1. Mono 5.10 or higher (6.0 or higher is recommended)
 2. Internet Connection
+3. Appropriate console that supports escape sequences and custom monotyped fonts for languages (Konsole, GNOME Terminal, ...)
 
 ## How to install
 
