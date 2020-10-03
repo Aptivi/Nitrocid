@@ -102,20 +102,7 @@ Public Module Filesystem
                         Dim DInfo As New DirectoryInfo(Entry)
 
                         'Get all file sizes in a folder
-                        Dim Files As List(Of FileInfo)
-                        If FullParseMode Then
-                            Files = DInfo.EnumerateFiles("*", SearchOption.AllDirectories).ToList
-                        Else
-                            Files = DInfo.EnumerateFiles("*", SearchOption.TopDirectoryOnly).ToList
-                        End If
-                        Wdbg("I", "{0} files to be parsed", Files.Count)
-                        Dim TotalSize As Long = 0 'In bytes
-                        For Each DFile As FileInfo In Files
-                            If (DFile.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DFile.Attributes.HasFlag(FileAttributes.Hidden) Then
-                                Wdbg("I", "File {0}, Size {1} bytes", DFile.Name, DFile.Length)
-                                TotalSize += DFile.Length
-                            End If
-                        Next
+                        Dim TotalSize As Long = GetAllSizesInFolder(DInfo)
 
                         'Print information
                         If (DInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
@@ -412,6 +399,38 @@ Public Module Filesystem
             WStkTrc(ex)
         End Try
         Return False
+    End Function
+
+    ''' <summary>
+    ''' Gets all file sizes in a folder, depending on the kernel setting <see cref="FullParseMode"/>
+    ''' </summary>
+    ''' <param name="DirectoryInfo">Directory information</param>
+    ''' <returns>Directory Size</returns>
+    Public Function GetAllSizesInFolder(ByVal DirectoryInfo As DirectoryInfo) As Long
+        Return GetAllSizesInFolder(DirectoryInfo, FullParseMode)
+    End Function
+
+    ''' <summary>
+    ''' Gets all file sizes in a folder, and optionally parses the entire folder
+    ''' </summary>
+    ''' <param name="DirectoryInfo">Directory information</param>
+    ''' <returns>Directory Size</returns>
+    Public Function GetAllSizesInFolder(ByVal DirectoryInfo As DirectoryInfo, ByVal FullParseMode As Boolean) As Long
+        Dim Files As List(Of FileInfo)
+        If FullParseMode Then
+            Files = DirectoryInfo.EnumerateFiles("*", SearchOption.AllDirectories).ToList
+        Else
+            Files = DirectoryInfo.EnumerateFiles("*", SearchOption.TopDirectoryOnly).ToList
+        End If
+        Wdbg("I", "{0} files to be parsed", Files.Count)
+        Dim TotalSize As Long = 0 'In bytes
+        For Each DFile As FileInfo In Files
+            If (DFile.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DFile.Attributes.HasFlag(FileAttributes.Hidden) Then
+                Wdbg("I", "File {0}, Size {1} bytes", DFile.Name, DFile.Length)
+                TotalSize += DFile.Length
+            End If
+        Next
+        Return TotalSize
     End Function
 
 End Module
