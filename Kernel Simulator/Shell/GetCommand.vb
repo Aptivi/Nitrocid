@@ -507,15 +507,6 @@ Public Module GetCommand
                 Done = True
                 InitializeLoteresp()
 
-            ElseIf words(0) = "lset" Then
-
-                If Not eqargs?.Count = 0 Then
-                    Done = True
-                    If SetSizeParseMode(eqargs(0)) Then
-                        W(DoTranslation("Set successfully.", currentLang), True, ColTypes.Neutral)
-                    End If
-                End If
-
             ElseIf words(0) = "lsmail" Then
 
                 If KeepAlive Then

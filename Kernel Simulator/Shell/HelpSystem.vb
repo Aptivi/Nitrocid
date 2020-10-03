@@ -64,7 +64,6 @@ Public Module HelpSystem
                                                               {"loteresp", DoTranslation("Respond to love or hate comments.", currentLang)},
                                                               {"lsdbgdev", DoTranslation("Lists debugging devices connected", currentLang)},
                                                               {"lsmail", DoTranslation("Lists all mails in the specific user.", currentLang)},
-                                                              {"lset", DoTranslation("Parse whole directory for size or just the files in the current one.", currentLang)},
                                                               {"mathbee", DoTranslation("See if you can solve mathematical equations on time", currentLang)},
                                                               {"md", DoTranslation("Creates a directory", currentLang)},
                                                               {"mkfile", DoTranslation("Makes a new file", currentLang)},
@@ -285,11 +284,6 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " lsdbgdev" + vbNewLine +
               "       lsdbgdev: " + DoTranslation("Lists all connected debugging devices.", currentLang), True, ColTypes.Neutral)
-
-        ElseIf command = "lset" Then
-
-            W(DoTranslation("Usage:", currentLang) + " lset <True/False>" + vbNewLine +
-              "       lset: " + DoTranslation("Parse whole directory for size or just the files in the current one.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "lsmail" Then
 
