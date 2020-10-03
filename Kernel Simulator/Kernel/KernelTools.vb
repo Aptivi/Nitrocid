@@ -458,12 +458,12 @@ Public Module KernelTools
             UpdateDown.Headers.Add(HttpRequestHeader.UserAgent, "EoflaOE") 'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs.
             Dim UpdateStr As String = UpdateDown.DownloadString("https://api.github.com/repos/EoflaOE/Kernel-Simulator/releases")
             Dim UpdateToken As JToken = JToken.Parse(UpdateStr)
-            Dim UpdateVer As String = UpdateToken.First.SelectToken("tag_name")
+            Dim UpdateVer As New Version(UpdateToken.First.SelectToken("tag_name").ToString.ReplaceAll({"v", "-alpha"}, ""))
             Dim UpdateURL As String = UpdateToken.First.SelectToken("html_url")
-            Dim CurrentVer As String = "v" + KernelVersion + "-alpha" 'We usually put -alpha in releases when we indicate that it's the alpha release.
-            If UpdateVer <> CurrentVer Then
+            Dim CurrentVer As New Version(KernelVersion)
+            If UpdateVer > CurrentVer Then
                 'Found a new version
-                UpdateSpecifier.Add(UpdateVer)
+                UpdateSpecifier.Add(UpdateVer.ToString)
                 UpdateSpecifier.Add(UpdateURL)
             End If
             Return UpdateSpecifier

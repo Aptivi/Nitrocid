@@ -106,4 +106,22 @@ Public Module StringExtensions
         Return String.Join("", StrChars).Replace(vbNullChar, "")
     End Function
 
+    ''' <summary>
+    ''' Replaces all the instances of strings with a string
+    ''' </summary>
+    ''' <param name="Str">Target string</param>
+    ''' <param name="ToBeReplaced">Strings to be replaced</param>
+    ''' <param name="ToReplace">String to replace with</param>
+    ''' <returns>Modified string</returns>
+    ''' <exception cref="ArgumentNullException"></exception>
+    <Runtime.CompilerServices.Extension>
+    Public Function ReplaceAll(ByVal Str As String, ByVal ToBeReplaced() As String, ByVal ToReplace As String) As String
+        If IsNothing(ToBeReplaced) Then Throw New ArgumentNullException("ToBeReplaced")
+        If ToBeReplaced.Count = 0 Then Throw New ArgumentNullException("ToBeReplaced")
+        For Each ReplaceTarget As String In ToBeReplaced
+            Str = Str.Replace(ReplaceTarget, ToReplace)
+        Next
+        Return Str
+    End Function
+
 End Module
