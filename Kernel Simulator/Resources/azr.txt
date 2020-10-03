@@ -1,0 +1,658 @@
+Mövcud əmrlər: {0}
+Komanda yazın:
+Komanda inyeksiyası ləğv edildi.
+Boşluqları vergüllə ayırın, məsələn 'motd, gpuprobe'
+'Cmdinject' əmrlərini boşluqlu nöqtələr ilə ayırın, məsələn, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Qeyd edək ki, 'debug' arqumenti nüvəni tam əhatə etmir.
+bargs: İstədiyiniz arqument {0} tapılmadı.
+barks: arqumentdə bərpa olunmayan səhv:
+Mövcud arqumentlər: {0}
+Mübahisələr (kömək üçün 'help'):
+Enjekte edilmiş arqumentlərin növbəti yenidən başlatma zamanı işə salınması planlaşdırılır.
+Arqument enjeksiyonu ləğv edildi.
+Həqiqi əmr sətri arqumentlərini təhlil edərkən səhv: {0}
+Yanlış rəng şablonu {0}
+Defolt
+Xüsusi
+hwprobe: Donanımınız yoxlanacaq. Zəhmət olmasa, gözləyin...
+hwprobe: Təchizat artıq sınaqdan keçirilmişdir.
+hwprobe: Təchizat yoxlanılmır. 'Hwprobe' istifadə edərək prob
+CPU: CPU nüvələrindən biri və ya daha çoxu yoxlanılmadı. Hər halda məlumat göstərilir ...
+RAM: RAM çiplərindən bir və ya bir neçəsi yoxlanılmadı. Hər halda məlumat göstərilir ...
+HDD: Bir və ya daha çox sabit disk yoxlanılmadı. Hər halda məlumat göstərilir ...
+CPU: Ümumi prosessorların sayı: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: İstifadə olunmuş yuvalar (adlara görə): {0}
+RAM: İstifadə olunmuş boşluqlar (nömrələrə görə): {0} / {1} ({2}%)
+RAM: Zondlama vəziyyəti ləğv edildi və gələcək buraxılışda silinəcəkdir.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} silindrlər | {5} baş | {6} sektor
+HDD: CHS: {3} silindrlər | {4} baş | {5} sektor
+hwprobe: Zondlama Unix-də yoxlamaq üçün nəzərdə tutulmadığı üçün dəstəklənmir.
+Baxım üçün admin parolunu daxil edin.
+Artıq siyahıda qalan istifadəçi yoxdur.
+Önyükləmə zamanı Kernel Xətası: {0}
+İKİ PANİK: Yenidən başlama vaxtı icazə verilən maksimum {0} səhv yenidən başlatma müddətini keçir. Bir kernel böcəyi tapdınız.
+[{0}] çaxnaşma: Yenidən başladın, səhv səviyyəsinin {0} olduğu üçün aktiv edildi.
+[{0}] çaxnaşma: Yenidən yükləmə vaxtı: {1} saniyə, 1 saatı keçir. 1 dəqiqəyə ayarlanıb.
+İKİ PANİK: Hata növü {0} etibarsızdır.
+[{0}] dpanik: {1} - {2} saniyəyə yenidən yüklənir ...
+[{0}] çaxnaşma: Yenidən başladın, səhv səviyyəsinin {0} olduğu üçün deaktiv edildi.
+[{0}] çaxnaşma: {1} - Çekirdəkdən istifadə etməyə davam etmək üçün istənilən düyməyə basın.
+[{0}] çaxnaşma: {1} - Bağlamaq üçün istənilən düyməyə basın.
+[{0}] çaxnaşma: {1} - {2} saniyəyə yenidən yüklənir ...
+İKİ PANİK: Kernel böcəyi: {0}
+Bağlanır ...
+Yenidən yüklənir ...
+---===+++> Nüvəyə xoş gəlmisiniz | Versiya {0} <+++===---
+Kernel Simulator-un başqa bir nümunəsi işləyir. Müdaxilə halında bağlanır.
+{0} istifadəçisi administrator siyahısına əlavə edildi.
+{0} istifadəçisi əlil siyahısına əlavə edildi.
+İstifadəçi icazə siyahısına əlavə edilə bilmədi: etibarsız növ {0}
+İstifadəçi icazə siyahılarına əlavə edilmədi: etibarsız istifadəçi {0}
+İstifadəçi {0} admin siyahısından çıxarıldı.
+{0} istifadəçisi deaktiv siyahıdan çıxarıldı.
+İstifadəçi icazə siyahılarından çıxarıla bilmədi: etibarsız növ {0}
+Artıq daxil olmusunuz
+İstifadəçi icazə siyahılarından silinmədi: etibarsız istifadəçi {0}
+İcazə sistemində bir səhv tapdınız: etibarsız rejim {0}
+Ya bir səhv tapdınız, ya da əlavə etməyə və ya silməyə çalışdığınız icazə artıq verildi və ya başqa bir səhv.
+Xəta {0}: {1}
+Ya bir səhv tapdınız, ya da yeni bir istifadəçi üçün düzəltməyə çalışdığınız icazə alınmadı.
+Mövcud istifadəçi adları: {0}
+İstifadəçi adı:
+Boşluqlara icazə verilmir.
+Xüsusi simvollara icazə verilmir.
+{0} -ın parolu:
+Parol səhvdir.
+İstifadəçi deaktivdir.
+Səhv istifadəçi adı.
+Yer saxlayıcıları təhlil etməyə cəhddə səhv. {0} - Yığın izi:
+Yer saxlayıcıları təhlil etməyə cəhddə səhv. {0}
+İstifadəçi adı əlavə olunarkən xəta baş verdi.
+usrmgr: İstifadəçi adı yaradılır {0} ...
+Boş istifadəçi adı.
+İstifadəçi {0} tapılmadı.
+İstifadəçinin {0} silinməsinə icazə verilmir.
+İstifadəçi {0} artıq daxil olub. Başqa bir administrator kimi çıxın və daxil olun.
+İstifadəçi {0} silindi.
+İstifadəçi adının silinməsi zamanı xəta baş verdi.
+{0} / {1} = {2}
+Sıfıra bölmək cəhdinə icazə verilmir.
+Daşma ilə nəticələnən şübhəli bir hesablama cəhdi var.
+Hesablanarkən xəta baş verdi: {0}
+{0} {1} -ə çevrilə bilməz.
+Ya mənbə
+ və ya təyinat
+ serverdə yoxdur.
+{0} - {1}: {2}
+{0} - dan {1} - ə çevrilməyə çalışarkən xəta baş verdi: {2}
+Xəta
+Tələb olunan ekran qoruyucu {0} tapılmadı.
+{0} düzgün şəkildə başlandı.
+{0} başlatmadı. Ekran qoruyucusu kodu işə salarkən bir səhv ola bilər.
+Ekran qoruyucu {0} mövcud deyil.
+{0} defolt ekran qoruyucu olaraq ayarlandı.
+Ekran qoruyucu {0} verilənlər bazasında tapılmadı. Adı yoxlayın və yenidən cəhd edin.
+Aşağıdakılara görə ekran qoruyucu yüklənə bilməz:
+Mətni çap edərkən ciddi bir səhv var.
+Konfiqurasiya yaratmağa çalışarkən bir səhv var.
+Konfiqurasiya hazırlanarkən bir səhv var: {0}
+{0} -dan {1} -ə yüksəlmə aşkar edildi. Konfiqurasiya güncəllənir ...
+Konfiqurasiyanı güncəlləməyə çalışarkən bir səhv var: {0}.
+Konfiqurasiyanı yeniləməyə çalışarkən bir səhv var.
+Konfiqurasiyanı oxumağa çalışarkən bir səhv var.
+Konfiqurasiyanı oxumaq zamanı bir səhv var: {0}
+RAM-ı boşaltmağa cəhd zamanı xəta: {0} - Davam edir ...
+Aşağıdakılara görə mod yüklənə bilməz:
+mod: Yüklənən modlar ...
+mod: Modların dayandırılması ...
+{0} modunun adı yoxdur. Mənbə kodunu nəzərdən keçirin.
+{0} modunun versiyası yoxdur.
+{0} v {1} başladı
+{0} əmri üçün heç bir tərif yoxdur.
+Tərəfindən təyin olunan əmr
+Başqa bir serverə qoşulmadan əvvəl serverdən ayrılmalısınız
+{0} üçün istifadəçi adı:
+{0} üçün parol:
+{0} ilə əlaqəli
+{0} ilə əlaqə qurmağa cəhd zamanı xəta: {1}
+Yığın izi: {2}
+Bir FTP server daxil edin.
+Yerli kataloqu {0} mövcud deyil.
+Yerli bir qovluq daxil edin. ".." geriyə qayıtmaq.
+{0} qovluğu tapılmadı.
+Uzaq bir qovluq daxil edin. ".." geriyə qayıtmaq
+Dizini dəyişdirmədən əvvəl bir serverə qoşulmalısınız
+Yerli kataloq: {0}
+Uzaq kataloq: {0}
+Cari uzaq qovluğu əldə etməzdən əvvəl serverə qoşulmalısınız.
+{0} faylı silinir ...
+{0} <y / n> sənədini silmək istədiyinizə əminsiniz?
+{0} faylı silindi
+Silməni həyata keçirmədən əvvəl inzibati imtiyazlarla serverə qoşulmalısınız.
+Silmək üçün bir sənəd daxil edin.
+Silə bilmək üçün daxil olduğunuz istifadəçi adınızda inzibati icazələrin olmalıdır.
+{0} ilə əlaqəsi kəsildi
+Hələ heç bir serverə qoşulmamısınız
+{0} faylı yüklənir ...
+{0} faylı yükləndi.
+Yerli fayl pozulduğu üçün {0} faylı üçün yükləmə baş tutmadı.
+Şanzımanı həyata keçirmədən əvvəl serverə qoşulmalısınız.
+Yerli qovluğa yükləmək üçün bir sənəd daxil edin.
+{0} KB | Dəyişdirilib: {1}
+Bütün uzaq faylları siyahıya almadan əvvəl serverə qoşulmalısınız.
+{0} sənədinin adı {1} olaraq dəyişdirilir ...
+Uğurla dəyişdirildi
+Bir faylı və yeni fayl adını daxil edin.
+{0} faylı yüklənir ...
+Yüklənmiş fayl {0}
+Uzaq qovluğa yükləmək üçün bir sənəd daxil edin. yükləyin <fayl> <direktoriya>
+FTP əmrini icra etməyə cəhd zamanı səhv
+(Daxili:
+{0} qovluqlar, {1} fayllar
+(Giriş qadağandır)
+{0} KB, {1} {2} tarixində yaradılıb, {3} {4} tarixində dəyişdirilib
+Cari yerli qovluğu alır
+Cari uzaq qovluğu alır
+Bir FTP serverinə qoşulur ("ftp://" və ya "ftps://" ilə başlamalıdır)
+Yükləmək və ya yükləmək üçün yerli qovluğu dəyişdirir
+Yükləmək və yükləmək üçün uzaq qovluğu dəyişdirir
+Uzaqdakı faylı serverdən silər
+Serverdən ayırır
+Uzaqdan olan faylı ikili və ya mətndən istifadə edərək yerli qovluğa yükləyir
+FTP qabığından çıxır və nüvəyə qayıdır
+Yardım ekranını göstərir
+Yerli qovluğu sadalayır
+Uzaq qovluğu sadalayır
+Xüsusi fayl və ya qovluğu dəyişdirir
+Yerli faylı ikili və ya mətn istifadə edərək uzaq qovluğa yükləyir
+FTP qabığında bir səhv oldu.
+FTP mesajı: İstədiyiniz {0} əmri tapılmadı. FTP qabığında göstərilən mövcud əmrlərin siyahısı üçün 'kömək' bölməsinə baxın.
+net: {0} -dən {1} ms-də cavab aldım
+Zamanı bitdi, əlaqəsi kəsildi və ya server oflayndır.
+net: Şəbəkədəki kompüterinizin adı: {0}
+xalis: Host adınız {1}
+net: Kompüterlərin etki və ya iş qrupunda olduğu görünür:
+net: WiFi və ya Ethernet əlaqəsi kəsilmişdir.
+net: Kompüterlərin aşağıda birləşdirildiyi görünür:
+net: Router Ünvan: {0}
+{0} adapteri üçün xüsusiyyətlər alınmadı
+Adapter nömrəsi:
+Adapter adı:
+Maksimum ötürmə vahidi: {2} vahid
+DHCP aktivdir:
+Unicast olmayan paketlər:
+Unicast paketləri:
+Gələn / gedən paketlərdə səhv:
+Takma adlar əmrlə eyni ad ola bilməz.
+{0} üçün ləqəbi əmr tapılmadı.
+{0} -dən {1} -ə dəyişdirmə tamamilə qadağandır.
+Artıq "{0}" əmrini işə sala bilərsiniz: "{1}".
+Artıq "{0}" əmrini "{1}" əmri kimi istifadə edə bilməzsiniz.
+Takma adın {0} silinməsi tapılmadı.
+Yanlış rejim {0}.
+Enjekte edilmiş arqumentlər, {0}, növbəti yenidən başlatma zamanı işə salınması planlaşdırılır.
+Mübahisələr yetərli deyildi. İstifadəsi üçün aşağıya baxın:
+{0} qovluğu tapılmadı
+Boş ev sahibi adı.
+Dəyişdirilir: {0} - {1} ...
+Günün boş mesajı.
+Girişdən sonra boş MAL.
+MAL {0} -dən {1} -ə dəyişdirilir ...
+Yanlış istifadəçi şifrəsi.
+Parollar uyğun gəlmir.
+İstifadəçi adı {0} olaraq dəyişdirildi!
+Girdiyiniz yeni ad artıq tapılıb.
+PC siyahıları hələ Unix-də dəstəklənmir.
+Qadağan olan ləqəblər: {0}
+{0} tapılmadı.
+Konfiqurasiya yenidən yükləndi. Bəzi dəyişikliklərin qüvvəyə minməsi üçün nüvəni yenidən yükləməlisiniz.
+Hər şey normal parametrlərə qaytarılır.
+Rənglərdən biri və ya bir neçəsi etibarsızdır.
+Rənglər mövcud deyil. Nüvə konfiqurasiyasında rəngli qabığı açın.
+Ekran qoruyucu {0} tapılmadı.
+{0} [ Kernel ayarları ({1} işləyir) ]
+Kernel Versiyası:
+Debaq rejimi:
+Rəngli Kabuk:
+Önyükleme Arqumentləri:
+Kömək əmri sadələşdirilmişdir:
+Girişdə MOTD:
+Saat / tarix küncdə:
+Cihaz sınaqdan keçirildi:
+Mövzu:
+[ Təchizat parametrləri ] {0}
+{0} [ İstifadəçi ayarları ]
+Cari istifadəçi adı:
+Cari host adı:
+Mövcud istifadəçi adları:
+Kompüter ana adı:
+{0} [ Mesajlar Ayarları ]
+Mənbə kodu:
+Müəllif hüquqları (c)
+Lisenziya
+indiki
+Komanda icra olunarkən xəta baş verdi
+İstifadəçiləri əlavə edir (Bu əmrə yalnız adminlər daxil ola bilər)
+Əmrlərə takma adlar əlavə edir (Bu əmrə yalnız adminlər daxil ola bilər)
+Dəlilləri kernelə vurur (yenidən başlatma tələb olunur, yalnız administratorlar)
+Sadə kalkulyator
+Dizini dəyişir
+Host adını dəyişir (yalnız Adminlər)
+Girişdən sonra MAL, MOTD dəyişir (yalnız administratorlar)
+Günün Mesajı olan MOTD-də dəyişikliklər (yalnız rəhbərlər)
+Cari istifadəçi üçün parol dəyişdirir
+İstifadəçi adını dəyişir (Yalnız Adminlər)
+Ekranı təmizləyir
+Valyuta çevir
+Debaq qeydlərini göstərir (Yalnız Adminlər)
+Serverlərlə qarşılıqlı əlaqə qurmaq üçün bir FTP qabığından istifadə edin
+Kömək səhifəsi
+Probe hardware əl ilə (Bir dəfə 'nohwprobe' kernelində)
+Cari qovluqdakı fayl/qovluq məzmununu siyahıya alın
+Ekran qoruyucu sənədini %USERPROFILE%\KSMods-da yenidən yükləyir
+Bir parol ilə ekranınızı kilidləyir
+Girişdən çıxırsınız
+Onlayn (və domenlərdə oflayn) olan bütün şəbəkə cihazlarını siyahıya alır
+Hostdakı bütün şəbəkə adreslərini sadalayır
+Ağacdan istifadə edərək hostdakı bütün şəbəkə adreslərini sadalayır
+Bir qovluq yaradır
+Bütün mövcud interfeyslər haqqında məlumatları sadalayır
+Qadağan takma adların siyahısını göstərir
+İstifadəçilər üçün icazələri idarə edin (Bu əmrə yalnız adminlər daxil ola bilər)
+Göstərilən ünvanın olub olmadığını yoxlayın
+Faylın məzmununu konsola yazır
+Kompüterinizi yenidən başladır (XƏBƏRDARLIQ: Sinxronizasiya edilmir, çünki son bir çekirdək deyil)
+Düzəliş edilmiş konfiqurasiya sənədini yenidən yükləyir.
+Bir qovluğu silir
+Bir istifadəçi siyahıdan silinir (Yalnız Adminlər)
+Ekranınızı yanmalardan qoruyur
+Elmi kalkulyator. Bölmə çeviricisi başqa bir əmrə ayrılır
+Çekirdek rənglərini qurur
+Nüvə ekran qoruyucularını quraşdırır
+Çekirdek temalarını qurur
+Takma adları göstərir
+İstifadəçi və ya kernel tərəfindən quraşdırılmış girişdən sonra MOTD-ni göstərir
+İstifadəçi və ya kernel tərəfindən təyin olunan günün mesajını göstərir
+Tarixi və saatı göstərir
+Zonalarda tarix və saatı göstərir
+Nüvə bağlanacaq
+Sistem məlumatı
+Scicalc-dən ayrılmış vahid çevirici.
+İstifadə olunmuş açıq mənbə asılılıqlarını göstərir
+Çox təsviri istifadəçi təlimatı.
+* Komutlar arasındakı iki nöqtədən istifadə edərək çoxsaylı əmrlərdən istifadə edə bilərsiniz.
+Mövcud əmrlər:
+Mod əmrləri:
+Əmrlərə taxma adlar:
+İstifadəsi:
+Arqumentlər vergüllə ayrılır
+arqumentlərin olduğu yer: {0}
+cari qovluğu almaq
+Hansı mənbədə və təyinat yerində bir məzənnənin 3 YÜKSƏK simvolu
+Bütün şəxsiyyət vəsiqələrinin siyahısı:
+Günlükləri bizə göndərə bilmək üçün günlük qeydlərini göstərir.
+FTP qabığını başlatır.
+Prob probları (Yalnızca cihaz yoxlanılmadıqda və hwprobe icra edilmədikdə işləyir).
+Şəbəkə məlumatlarını, eləcə də bir şəbəkəyə qoşulmuş hər bir kompüteri siyahıya alır.
+Dostları
+Şəbəkə məlumatlarını, eləcə də şəbəkəyə qoşulmuş hər bir kompüteri ağac şəklində sadalayır.
+Hər kompüterin yanında şəbəkə məlumatlarını da siyahıya alır.
+harada modnameSS.m olacaq
+Şifrə ilə ekranınızı kilidləyir.
+Sizi istifadəçidən çıxarır.
+Hər şəbəkə məlumatını əldə edin
+Süni kompüterinizi yenidən başladır.
+Son istifadəçi və ya alət tərəfindən dəyişdirilən konfiqurasiyanı yenidən yükləyir.
+Rənglər yenidən başlamağı tələb etmir, lakin parametrlərin əksəriyyəti yenidən başlamağınızı tələb edir.
+ekranınızı yanmalardan qoruyarkən seçilmiş bir ekran qoruyucu göstərir.
+Tarixi və saatı göstərir.
+Tarix və saatı zonalarda göstərir.
+Süni kompüterinizi bağlayır.
+Sistem məlumatlarını və versiyalarını göstərir.
+İstifadə olunan açıq mənbəli kitabxanaları göstərir
+Qabıqda bir xəta baş verdi.
+{0} istifadə etmək üçün icazəniz yoxdur
+Kabuk mesajı: İstədiyiniz {0} əmrinin baxım rejimində işləməsinə icazə verilmir.
+Shell mesajı: İstədiyiniz {0} əmri tapılmadı. Mövcud əmrlər üçün "yardıma" baxın.
+Kabuk mesajı: {0} əmrinin girişdə işləməsinə icazə verilmir.
+Shell mesajı: İstədiyiniz {0} əmri tapılmadı.
+Komanda icra olunarkən xəta baş verdi.
+datetime: vaxt: {0}
+datetime: bu gün {0}
+tarix vaxtı: Saat qurşağı: {0}
+- {0} vaxtı: {1}
+ekranı təmizləmək üçün.
+Görünür {0} dərslik səhifəsi tapılmadı.
+Əl səhifəsini yükləməyə çalışarkən bir səhv var {0} becuase {1}.
+Bu dərslik səhifəsi aşağıdakı səbəblərə görə natamamdır:
+Davam etmək üçün hər hansısa düyməni basın...
+ | {0} sözlər | Reviziya v {1} | {2} bölmə
+Bu dərslik səhifəsinin adı yazılmamışdır
+Bu dərslik səhifəsində ({0}) əsas mətn yoxdur. Səhifə silinir ...
+Bu dərslik səhifəsində ({0}) heç bir bölmə yoxdur. Səhifə silinir ...
+{0} üzərində işləyir
+{0} üçün məlumat əldə etmək səlahiyyətiniz yoxdur.
+Bu əmr köhnəlmişdir və gələcək buraxılışda silinəcəkdir.
+Hədəf bir admin olduğu üçün {0} şifrəsini dəyişdirmək səlahiyyətiniz yoxdur.
+Ölkədən ölkəyə pul miqdarını çevirin
+Valyutalar:
+usrmgr: İstifadəçi adı {0} artıq tapılıb
+API açarınızı daxil edin:
+Kompüterlər alınmadı. Windows 10-un ən son versiyasını işlədirsinizsə, SMBv1-i aktivləşdirməlisiniz. Bu protokol lakin etibarsızdır və biz bu problemi həll etməyə çalışacağıq.
+Ayıklama jurnalındakı hər şeyi silir
+SSE versiyalarını alır
+Yanlış dil
+Dili dəyişdirir
+Sisteminizdə libcpanel-json-xs-perl quraşdırılmış olmaya bilər. Quraşdırma üçün paket menecerinizə müraciət edin. Debian (və türevleri) sistemləri üçün terminal emulatorunda "sudo apt install libcpanel-json-xs-perl" çalıştırmak isteyebilirsiniz. Bir xətanın daha ətraflı məlumatları:
+----------------------------- Çekirdek çaxnaşması ------------------------------
+>> Panik məlumatı <<
+> Təsvir: {0}
+> Xəta növü: {1}
+> Tarix və Saat: {2}
+>> İstisna məlumatı <<
+> İstisna: {0}
+> Təsvir: {1}
+> HRESULT: {2}
+> Mənbə: {3}
+> Yığın izi <
+>> Daxili istisna {0} məlumat <<
+>> İstisna {0} kök səbəbdir <<
+>> İstisna yoxdur; bir kernel səhv ola bilər. <<
+>> Çerçevelər, fayllar, sətirlər və sütunlar <<
+> Çərçivə {0}: Fayl: {1} | Sətir: {2} | Sütun: {3}
+> Çərçivə məlumatını əldə etməyə çalışarkən bir səhv var. {0}: {1}
+Sistem dilinizi İngilis dilindən başqa bir şeyə qurdunuz. Narahatçılığa görə üzr istəyirik, lakin Google və onun tərcüməçisi hər hansı bir proqramlaşdırma dili üçün kod bloklarını tərcümə etməkdə çox qəribədirlər. Tərcümə olunmuş səhifələr üçün bütün kod bloklarını düzəltsək də, tərcümə edilməli olmayan kod bloklarını tərcümə etmək üçün Google Translate-ə bir bilet açmanızı və danışarsanız sistem dilinizi İngilis dilinə qoymanızı təklif edirik.
+Modları yenidən yükləyir.
+Modlar yenidən yükləndi.
+Kernelə xoş gəlmisiniz!
+<user> olaraq uğurla daxil oldunuz
+MOTD/MAL etibarlıdır, lakin mesaj növü etibarlı deyil. MOTD götürsək ...
+Etibarsız mesaj tipli MOTD/MAL oxumağa çalışdım.
+Sabit əlaqəni qoruyarkən, {0} -dan {1} -ə endirir ...
+Endirmə tamamlandı.
+Endirmə cəhdində uğursuz oldu {0}: {1}
+Xahiş edirəm FTP serverindən faylları yükləyəcəksinizsə "ftp" istifadə edin.
+Bir faylı cari iş qovluğuna yükləyir
+Ayıklama cihazını ayırın
+Bağlı ayıklama cihazlarını siyahıya alır
+Ayaq cihazı {0} tapılmadı.
+Cihaz {0} kəsildi.
+Bağlantıdakı xəta: {0}
+{0} limanından istifadə edərək bütün ünvanlarda dinləmə ayıklayın.
+Arqument göstərilməyib. İpucu: boşluqlarla ayrılmış çoxsaylı arqumentləri göstərin
+Takma adlar artıq tapılıb: {0}
+Hata ayağı qeyd silindi. Bütün qoşulmuş ayıklama cihazları mesajlara baxa bilər.
+Debaq jurnalının silinməsi uğursuz oldu: {0}
+Kataloq dəyişdirilə bilmədi: {0}
+İstifadəçi adı səhvdir
+Ünvanı daxil edin
+Kataloq silinmədi: {0}
+Saat qurşağı səhv göstərilib.
+Yanlış profil seçimi.
+{0} ilə {1} profil ilə əlaqə qurmağa çalışırsınız ...
+Vahid testində səhv: {0}
+{0} əmri tapılmadı. Komutların siyahısı üçün "kömək" əmrinə baxın.
+{0} adapteri üçün IPv6 xüsusiyyətləri əldə edilmədi. Davam edir ...
+IPv4 məlumatları:
+IPv6 məlumatları:
+Adapter {0} IPv6-nı dəstəkləmir. Davam edir ...
+Adapter {0} IPv4-i dəstəkləmir. Probe uğursuz oldu.
+Deyəsən kernelin inkişaf versiyasını idarə edirdiniz. Tərəflərini görə bildiyiniz halda, tez-tez yenilənir və səhvləri təqdim edə bilər. Sabit versiyada qalmağınız tövsiyə olunur.
+Seçdiyiniz dildə iki variant var. Birini seçin:
+1. Transliterated
+2. Tərcümə edilmişdir
+Seçiminizi seçin:
+Yanlış seçim. Yenidən cəhd elə.
+Cari qovluğu {0}: {1} olaraq təyin etmək icazəniz yoxdur
+İcazə alınmadı {0}
+Göstərdiyiniz yol çox uzundur.
+{0}: {1} siyahısını vermək icazəsizsiniz
+CPU yoxlanarkən xəta baş verdi: {0}
+RAM yoxlanarkən xəta baş verdi: {0}
+HDD yoxlanarkən xəta baş verdi: {0}
+CPU: XƏBƏRDARLIQ: SSE2 gələcək inkişaf öhdəliklərində tələb olunacaq.
+Zibillik məlumat toplayıcısı {0} haqqında məlumat almaq istəyərkən qəzaya uğradı: {1}
+Qurulma tarixini tərtib etməyə çalışarkən səhv baş verdi {0}: {1}
+MOTD/MAL ayarlanarkən səhv: {0}
+MOTD/MAL almaq istəyərkən səhv: {0}
+{0}: sıfır istinad istisnası var: {1}
+{0}: {1} - sıfır istinad istisnası var - Yığın izi:
+Etibarsız bir əməliyyat olduğu üçün ekran qoruyucusunu başlatmağa çalışarkən səhv.
+Təhlükəsiz rejimdə yenidən yüklənməyə icazə verilmir.
+Təhlükəsiz rejimdə modların ayrılmasına icazə verilmir.
+Ölçmə üçün bütün qovluğu və ya yalnız mövcud sənədləri təhlil edin.
+Bütün əlaqəli ayıklama cihazlarını sadalayır.
+Təhlil rejimini təyin etməyə çalışarkən səhv. Dəyəri yoxlayın və yenidən cəhd edin. Bu düzgündürsə, kernel ayıklaması aktiv edildikdə yığın izinə baxın.
+Uğurla qurun.
+Yol nə bir fayl, nə də bir qovluqdur.
+Fərqli bir qovluq və ya ad altında bir sənədin başqa bir nüsxəsini yaradır.
+Bir faylı başqa bir qovluğa köçürür
+Faylları başqa bir qovluğa və ya fərqli bir ada kopyalamaq üçün
+Faylları başqa bir qovluğa köçürmək üçün
+Qarşılaşma {0} ({1}): {2}
+Maç {0}: {1}
+Xərclənən vaxt: {0} milisaniyə
+İstehsalçı: {0}
+Model: {0}
+Tutum: {0} ({1}, {2}, {3})
+İnterfeys növü: {0}
+Sürücü Nömrəsi: {0}
+Önyükləmə bayrağı: {0} ({1})
+Fiziki bölmə: {0}
+Əsas bayraq: {0}
+Ölçü: {0} GB
+Məntiqi bölmə: {0}
+Sıxılmışdır: {0}
+Ad: {0}
+Fayl sistemi: {0}
+Tutum: {0} GB pulsuz, {1} GB
+Bütün sürücülərdəki bütün məntiqi bölmələrin siyahısı.
+Bütün yoxlanılan diskləri sadalayır.
+Müəyyən bir diskdəki bütün yoxlanılmış bölmələri (və bütün sürücülərdəki bütün məntiqi bölmələri) sadalayır.
+Fayl məbləğlərini hesablayır.
+Sizi GitHub Vikimizə aparır.
+Yanlış şifrələmə alqoritmi.
+Uzaqdan ayıklamanı aktivləşdirir və ya söndürür.
+Fayl sistemi işə salınır ...
+Qurulmuş səsləri alır
+Varsayılan səsi təyin edir
+Varsayılan səsdən istifadə edərək simli danışır
+Səs {0}: {1} ({2})
+Yanlış səs.
+Səs dəsti
+Sözləri vaxtında düzgün yaza biləcəyinizə baxın
+Riyazi tənlikləri vaxtında həll edə biləcəyinizə baxın
+Şərhlərə sevgi və ya nifrət cavab verin.
+Kimsə videonuza bu şərhi veribsə:
+Siz necə cavab verərdiniz?
+Yanlış seçim. Növbəti şərhə gedir ...
+Yeni sevgi şərhini bildirmisən!
+Sadəcə nifrət şərhinə cavab verdiniz!
+Əla! {0} adlı istifadəçinin şərhi bunun üçün silinəcəkdir.
+Əla! {0} təşəkkürlərinizi qiymətləndirəcəkdir.
+Çıxmaq üçün "GetMeOut" yazın.
+Mükəmməl yazılıb!
+Səhv yazılıb.
+Mükəmməl həll edildi!
+Yanlış həll edildi.
+{1} MB-dan {0} MB yükləndi.
+RPC artıq işləyir.
+RPC, {0} limanından istifadə edərək bütün ünvanları dinləyir.
+RPC başlayır ...
+SSH serverinə qoşulur.
+{0} üçün parol daxil edin:
+SSH əlaqəsi kəsildi.
+Sintez sənədini yükləyir və səsləndirir.
+Skriptli fayl {0} mövcud deyil.
+Fayl skript edilmiş bir sintez faylı deyil.
+Sinxronizasiya xətti yoxlanılmadı.
+Boş simli göstərilib
+Kod səhifəsini təyin etmək olmur. Dil düzgün göstərilməyə bilər.
+Hata düzəldilməsi aktiv deyil.
+{0} artıq defolt ekran qoruyucu kimi ayarlanmayıb.
+Təşəkkürlər! Bu maraqlıdır.
+Bunun üçün videonuzu hər kəs dəstəkləyəcək.
+Növbəti videonuz üçün sizə elektron poçtunuzdakı xüsusi faylı verdim.
+Dinlə, nifrət edənlər, o, fırıldaqçı deyil, bizə kömək etməyə çalışır.
+Bilmirəm mən və dostlarım bu videoya görə nə qədər təşəkkür edirik.
+Bu video üçün səni sevirəm.
+Davam et, dayanma.
+1M abunəçilərinə çatmağınıza kömək edəcəyəm!
+Dostlarım sənə görə kompüterlərini düzəltdilər.
+Zəhmli oyun! Düşmənimin kompüterini bağladım.
+Nifrət edənlərə: ONUN NƏFRƏTİNİ DURDUN
+Nifrət edənlərə: İŞLƏYİN
+İndi obyekt gizlətmə bələdçiniz sayəsində bunu heç kim görməyəcək
+Videolarınıza baxmağı dayandıracağam. Abunəçi itirdi.
+Bu nədir? Bu aydın deyil.
+Bu video ən pisdir!
+Hər kəs bu videonu bildirir!
+Dostlarım sənə hirslidir!
+Artıq sevgililər bunun üçün səndən nifrət edəcəklər.
+Dostun bunun üçün səndən nifrət edəcəkdir.
+Bu zarafat məni abunəliyimdən çıxartdı.
+Missiya baş tutmadı, Hörmət -, Abunəçi -
+Bu cür video hazırlamağı dayandırın !!!
+İşinizə qayıdın, videolarınız ən pisdir!
+Bu videoya qərəzli yanaşırıq.
+{0} - dan {1} - ə qədər dəyişdirmə qadağandır.
+Bildiriş ləğv edilərkən xəta baş verdi: {0}
+Bütün alınan bildirişləri göstərir
+Bildirişi rədd edir
+Bildiriş uğurla rədd edildi.
+Paketlər (gələn):
+Paketlər (gedən):
+Alınan paketlərdə səhvlər:
+Ümumi IPv6 xüsusiyyətləri
+Ümumi IPv4 xüsusiyyətləri
+Uzaqdan uzaq kompüterə bir əmr yerinə yetirir
+- Mərhələ 0: Sistem başlatma
+- Mərhələ 1: Avadanlıq aşkarlanması
+- Mərhələ 2: Daxili istifadəçi adının idarə edilməsi
+- Mərhələ 3: Modlar və ekran qoruyucuların aşkarlanması
+- Mərhələ 4: Zibil toplama
+- Mərhələ 5: Giriş
+Zibil yığmadan əvvəl: {0} bayt
+Zibil toplandıqdan sonra: {0} bayt
+RPC başlama xətası: {0}
+Göründüyü kimi buraxılış namizəd versiyasını idarə edirdiniz. Sabit versiyada qalmağınız tövsiyə olunur.
+Görünən budur ki, fayl sistemi populyasiyası çox uzun çəkir.
+Yanlış növü {0}.
+Tutum: {0}
+Bölmə sayı: {0}
+Ölçü: {0}
+İstifadə olunmuşdur: {0}
+{0} kataloqu artıq mövcuddur.
+{0} -ə qoşulmağa cəhd zamanı xəta: Bağlantı vaxtı keçdi və ya əlaqə kəsildi
+İfadələri hesablamaq üçün kalkulyator.
+Hesablamada səhv.
+Tutum: {0} GB ({1}, {2}, {3})
+Deyəsən buraxılışa yaxınlaşan versiyanı işlədirdiniz. İndi istifadə etmək daha təhlükəsiz olsa da, sabit versiyada qalmağınız tövsiyə olunur.
+Sistem yeniləməsi
+Sistem yeniləmələri yoxlanılır ...
+Yeni versiya tapıldı:
+Yükləyə bilərsiniz:
+Yeniləmələri yoxlamaq alınmadı: {0}
+Debaq qeydləri tapılmadı
+Son bildiriş yoxdur
+Təqdim olunan sənəddə müəyyən sətri axtarır
+Göstərilən qovluqdakı sənədlərin cəmini hesablayır.
+Xüsusi istifadəçidəki bütün poçtları sadalayır.
+İstifadəçi adı və ya poçt ünvanı daxil edin:
+Parol daxil edin:
+Server ünvanını və portu daxil edin (<adres> və ya <adres>:[port]):
+{0} ilə əlaqə qurarkən xəta baş verdi: {1}
+{0} şəbəkəsinə qoşulur ...
+Doğrulanır ...
+IMAP qabığından çıxır
+Əmrlərin siyahısı
+Mesajları yükləyir və onları siyahıya alır
+Mesaj açır
+Səhifə mənfi və ya sıfır olmaya bilər.
+Səhifə ədədi bir dəyər deyil.
+Mesaj nömrəsi mənfi və ya sıfır olmaya bilər.
+Mesaj nömrəsi ədədi bir dəyər deyil.
+- {0} -dan
+- {0} -ə
+- {1} daxilində {0} ünvanında göndərildi
+Göstərilən mesaj tapılmadı.
+Uzaqdan debaq başlaya bilmədi: {0}
+IMAP əmrini icra edərkən səhv: {0}
+Profillər hazırlanır ... Bir neçə dəqiqə çəkə bilər ...
+Host adı, istifadəçi adı, məlumat növü, kodlaşdırma, şifrələmə, protokollar
+Skript icra olunarkən xəta baş verdi: {0}
+Konsolu mətn yazır
+İstifadəçi seçimləri edir
+'N' Hz-də siqnal və 'n' milisaniyədə vaxt
+burada <$değişken> cavabı saxlamaq üçün istifadə ediləcək hər hansı bir dəyişkəndir
+Tezlik ədədi olmalıdır. Rəqəmsaldırsa, >= 37 və <= 32767 olduğundan əmin olun.
+Vaxt ədədi olmalıdır.
+burada <cavablar> əyri şəkildə ayrılmış sualın bir hərfli cavablarıdır
+SSH serverinə qoşulma xətası baş verdi: {0}
+Girişdən sonra boş MOTD.
+İstifadəçiyə giriş daxil etməyə imkan verir
+Mövcud poçt qovluğunu dəyişdirir
+Poçt qovluğu açıla bilmədi {0}: {1}
+Poçt adresinizdəki qovluqları sadalayır
+Hər hansı bir şəbəkəyə sürətli qoşulmaq üçün Speed ​​Dial-dan məlumat istifadə edir
+Qoşulmaq üçün bir ünvan seçin:
+Seçim üçündür. 1- {0} arasında seçin. Yenidən cəhd elə.
+Seçim bir rəqəm deyil. Yenidən cəhd elə.
+Sertifikatın təsdiqlənməsi zamanı sertifikat səhvləri olur. Serverə ilk dəfə qoşulduğunuz və ya sertifikatın vaxtı bitmiş ola bilər. Budur bir səhv:
+Bağlanmaq istədiyinizə əminsiniz?
+Yanlış cavab. Zəhmət olmasa bir daha cəhd edin.
+Sürətli yığım boşdur. Bir ünvan əlavə etmək üçün bir serverə qoşulun.
+Sürətli yığım mövcud deyil. Bir ünvan əlavə etmək üçün bir serverə qoşulun.
+IMAP server ünvanını və portunu daxil edin (<adres> və ya <adres>:[port]):
+SMTP server ünvanını və portunu daxil edin (<adres> və ya <adres>:[port]):
+Bir ünvana mesaj göndərmək üçün tələb olunan sahələri doldurmağınızı xahiş edir
+Bir ünvana mesaj göndərir
+Alıcının poçt ünvanını daxil edin:
+Mövzunu daxil edin:
+Mesajınızı aşağıya daxil edin. Təsdiqləmək üçün "EOF" yazın.
+Mesaj göndərilir ...
+Mesaj göndərildi.
+Mesaj göndərmə xətası: {0}
+E-mail ünvanı səhvdir. Ünvanı düzgün yazdığınızdan və göstərilən nümunənin formatına uyğun olduğundan əmin olun:
+Mesajı silər
+Bütün mesajları alıcıdan silər
+{1} adlı istifadəçidən {0} mesajı {2} hesabından silindi. {3} təhlil üçün qalan mesajlar.
+{1} -dən {0} mesajı gələnlər qutusundan silindi. {2} təhlil üçün qalan mesajlar.
+Mətn sənədini redaktə edir
+Yeni bir sənəd hazırlayır
+Fayl artıq mövcuddur.
+Fayl yaratmağa cəhd zamanı xəta baş verdi: {0}
+Fayl açılmadı. Qabıqdan çıxılır ...
+Göstərilən mətn redaktoru əmri tapılmadı.
+Mövcud əmrləri sadalayır
+Mətn redaktorundan çıxın və qeyd olunmayan dəyişiklikləri qeyd edin
+Faylın məzmununu xətt nömrələri ilə konsola yazdırır
+Faylın sonunda mətn ilə yeni bir sətir əlavə edir
+Göstərilən sətir nömrəsini silir
+Bir sözü və ya cümləni başqası ilə əvəz edir
+Sətir nömrəsindən bir söz və ya ifadəni silir
+Göstərilən sətirdə simvol nömrəsindən bir simvolu silir
+Xətt silindi.
+Göstərilən sətir nömrəsi {0} etibarlı bir rəqəm deyil.
+Tələb olunan arqumentlər {0} əmrinə verilmir
+Komanda işə salındıqda xəta baş verdi: {0}
+Təhlükəsiz rejimdə işləyir. Mərhələ atlanır ...
+>> Uzaqdan Ayıklama və Sohbet: versiya
+>> Ünvanınız {0}.
+>> Adınız {0}.
+{0} əmri tapılmadı. Siyahını görmək üçün "/help" istifadə edin.
+İndeks {0} etibarsızdır. {1} yığın izi var. İndeks sıfır əsaslıdır, buna görə 1-i çıxartmağa çalışın.
+Yığın izi yoxdur
+İstisnaya görə son yığın izini göstərir
+Sessiyada cari istifadəçi adını göstərir
+Sizi ayıklayıcıdan ayırır
+Ayıklama cihazını IP ünvanı ilə blokdan çıxarın
+IP ünvanı ilə bir ayıklama cihazını bloklayın
+{0} artıq yenidən uzaqdan deboqa qoşula bilər.
+{0} hələ bloklanmayıb.
+Ayarlar yüklənərkən xəta baş verdi
+Ayarları yükləyərkən bir səhv var. Ayarlar faylını yoxlamağınız lazım ola bilər.

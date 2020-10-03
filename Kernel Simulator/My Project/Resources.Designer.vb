@@ -99,6 +99,25 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Mövcud əmrlər: {0}
+        '''Komanda yazın:
+        '''Komanda inyeksiyası ləğv edildi.
+        '''Boşluqları vergüllə ayırın, məsələn &apos;motd, gpuprobe&apos;
+        '''&apos;Cmdinject&apos; əmrlərini boşluqlu nöqtələr ilə ayırın, məsələn, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Qeyd edək ki, &apos;debug&apos; arqumenti nüvəni tam əhatə etmir.
+        '''bargs: İstədiyiniz arqument {0} tapılmadı.
+        '''barks: arqumentdə bərpa olunmayan səhv:
+        '''Mövcud arqumentlər: {0}
+        '''Mübahisələr (kömək üçün &apos;help&apos;):
+        '''Enjekte edilmiş arqumentlərin növbəti yenidən başlatma zamanı işə salınması planl [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property azr() As String
+            Get
+                Return ResourceManager.GetString("azr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Upalabdha kamānḍa: {0}
         '''Ādēśa likhuna: 
         '''Kamānḍa iñjēkaśana bātila karā haẏēchē.

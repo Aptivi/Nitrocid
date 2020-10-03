@@ -378,6 +378,7 @@
     <None Include="Resources\chi-T.txt" />
     <None Include="Resources\ben.txt" />
     <None Include="Resources\ben-T.txt" />
+    <None Include="Resources\azr.txt" />
     <Content Include="Resources\cro.txt" />
     <None Include="Resources\jpn.txt" />
     <None Include="Resources\ind-T.txt" />

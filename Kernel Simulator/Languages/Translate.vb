@@ -20,7 +20,7 @@ Imports System.Globalization
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swe", "uzb", "vtn"}
+    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swe", "uzb", "vtn"}
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -73,6 +73,8 @@ Public Module Translate
                 translated = My.Resources.arb
             Case "arb-T" 'Arabic (translated)
                 translated = My.Resources.arb_T
+            Case "azr" 'Azerbaijani
+                translated = My.Resources.azr
             Case "ben" 'Bengali (transliterated)
                 translated = My.Resources.ben
             Case "ben-T" 'Bengali (translated)
@@ -330,6 +332,8 @@ CHOICE:
         Select Case currentLang
             Case "arb-T", "arb"
                 Return "Arabic (Saudi Arabia)"
+            Case "azr"
+                Return "Azerbaijani (Cyrillic, Azerbaijan)"
             Case "ben-T", "ben"
                 Return "Bangla (Bangladesh)"
             Case "chi-T", "chi"
