@@ -217,6 +217,35 @@ Public Module GetCommand
                 End If
                 Done = True
 
+            ElseIf words(0) = "chattr" Then
+
+                If eqargs?.Count > 1 Then
+                    Dim NeutralizedFilePath As String = NeutralizePath(eqargs(0))
+                    If File.Exists(NeutralizedFilePath) Then
+                        If eqargs(1).EndsWith("Normal") Or eqargs(1).EndsWith("ReadOnly") Or eqargs(1).EndsWith("Hidden") Or eqargs(1).EndsWith("Archive") Then
+                            If eqargs(1).StartsWith("+") Then
+                                Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), eqargs(1).Remove(0, 1))
+                                If AddAttributeToFile(NeutralizedFilePath, Attrib) Then
+                                    W(DoTranslation("Attribute has been added successfully.", currentLang), True, ColTypes.Neutral, eqargs(1))
+                                Else
+                                    W(DoTranslation("Failed to add attribute.", currentLang), True, ColTypes.Neutral, eqargs(1))
+                                End If
+                            ElseIf eqargs(1).StartsWith("-") Then
+                                Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), eqargs(1).Remove(0, 1))
+                                If RemoveAttributeFromFile(NeutralizedFilePath, Attrib) Then
+                                    W(DoTranslation("Attribute has been removed successfully.", currentLang), True, ColTypes.Neutral, eqargs(1))
+                                Else
+                                    W(DoTranslation("Failed to remove attribute.", currentLang), True, ColTypes.Neutral, eqargs(1))
+                                End If
+                            End If
+                        Else
+                            W(DoTranslation("Attribute ""{0}"" is invalid.", currentLang), True, ColTypes.Err, eqargs(1))
+                        End If
+                    Else
+                        W(DoTranslation("File not found.", currentLang), True, ColTypes.Err)
+                    End If
+                End If
+
             ElseIf words(0) = "chdir" Then
 
                 Try

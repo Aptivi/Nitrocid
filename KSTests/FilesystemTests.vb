@@ -184,4 +184,24 @@ Imports KS
         Assert.IsTrue(Matches.Count = 1, "Expected one instance of ""test"", got {0}", Matches.Count)
     End Sub
 
+    ''' <summary>
+    ''' Tests adding attribute
+    ''' </summary>
+    <TestMethod()> Public Sub TestAddAttribute()
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
+        Assert.IsTrue(AddAttributeToFile(SourcePath, IO.FileAttributes.Hidden), "Failed to add attrbute ""Hidden"" to file. Got {0}", IO.File.GetAttributes(SourcePath))
+    End Sub
+
+    ''' <summary>
+    ''' Tests deleting attribute
+    ''' </summary>
+    <TestMethod()> Public Sub TestDeleteAttribute()
+        InitPaths()
+        CurrDir = paths("Home")
+        Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
+        Assert.IsTrue(RemoveAttributeFromFile(SourcePath, IO.FileAttributes.Hidden), "Failed to remove attrbute ""Hidden"" to file. Got {0}", IO.File.GetAttributes(SourcePath))
+    End Sub
+
 End Class

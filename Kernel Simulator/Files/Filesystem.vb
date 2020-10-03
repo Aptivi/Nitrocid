@@ -16,6 +16,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Runtime.CompilerServices
 
 Public Module Filesystem
 
@@ -359,6 +360,58 @@ Public Module Filesystem
             Throw New IOException(DoTranslation("Unable to find file to match string ""{0}"": {1}", currentLang).FormatString(StringLookup, ex.Message))
         End Try
         Return Nothing
+    End Function
+
+    ''' <summary>
+    ''' Removes attribute
+    ''' </summary>
+    ''' <param name="attributes">All attributes</param>
+    ''' <param name="attributesToRemove">Attributes to remove</param>
+    ''' <returns>Attributes without target attribute</returns>
+    <Extension>
+    Public Function RemoveAttribute(ByVal attributes As FileAttributes, ByVal attributesToRemove As FileAttributes) As FileAttributes
+        Return attributes And (Not attributesToRemove)
+    End Function
+
+    ''' <summary>
+    ''' Adds attribute to file
+    ''' </summary>
+    ''' <param name="FilePath">File path</param>
+    ''' <param name="Attributes">Attributes</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function AddAttributeToFile(ByVal FilePath As String, ByVal Attributes As FileAttributes) As Boolean
+        Try
+            FilePath = NeutralizePath(FilePath)
+            Wdbg("I", "Setting file attribute to {0}...", Attributes)
+            File.SetAttributes(FilePath, Attributes)
+            Return True
+        Catch ex As Exception
+            Wdbg("E", "Failed to add attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)
+            WStkTrc(ex)
+        End Try
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Removes attribute from file
+    ''' </summary>
+    ''' <param name="FilePath">File path</param>
+    ''' <param name="Attributes">Attributes</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function RemoveAttributeFromFile(ByVal FilePath As String, ByVal Attributes As FileAttributes) As Boolean
+        Try
+            FilePath = NeutralizePath(FilePath)
+            Dim Attrib As FileAttributes = File.GetAttributes(FilePath)
+            Wdbg("I", "File attributes: {0}", Attrib)
+            Attrib = Attrib.RemoveAttribute(Attributes)
+            Wdbg("I", "Setting file attribute to {0}...", Attrib)
+            File.SetAttributes(FilePath, Attrib)
+            Return True
+        Catch ex As Exception
+            Wdbg("E", "Failed to remove attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)
+            WStkTrc(ex)
+        End Try
+        Return False
     End Function
 
 End Module
