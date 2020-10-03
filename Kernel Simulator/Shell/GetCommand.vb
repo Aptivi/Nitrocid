@@ -374,6 +374,7 @@ Public Module GetCommand
                         Dim DirInfo As New DirectoryInfo(DirectoryPath)
                         W(DoTranslation("Name: {0}", currentLang), True, ColTypes.Neutral, DirInfo.Name)
                         W(DoTranslation("Full name: {0}", currentLang), True, ColTypes.Neutral, NeutralizePath(DirInfo.FullName))
+                        W(DoTranslation("Size: {0}", currentLang) + "MB", True, ColTypes.Neutral, FormatNumber(GetAllSizesInFolder(DirInfo) / 1024 / 1024, 2))
                         W(DoTranslation("Creation time: {0}", currentLang), True, ColTypes.Neutral, Render(DirInfo.CreationTime))
                         W(DoTranslation("Last access time: {0}", currentLang), True, ColTypes.Neutral, Render(DirInfo.LastAccessTime))
                         W(DoTranslation("Last write time: {0}", currentLang), True, ColTypes.Neutral, Render(DirInfo.LastWriteTime))
