@@ -244,6 +244,7 @@ Public Module GetCommand
                     Else
                         W(DoTranslation("File not found.", currentLang), True, ColTypes.Err)
                     End If
+                    Done = True
                 End If
 
             ElseIf words(0) = "chdir" Then
