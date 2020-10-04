@@ -63,7 +63,7 @@ Public Module TextEditGetCommand
                 CommandDone = True
             ElseIf Command = "exit" Then
                 CommandDone = True
-                TextEdit_SaveTextFile()
+                TextEdit_SaveTextFile(True)
                 TextEdit_Exiting = True
             ElseIf Command = "print" Then
                 Dim LineNumber As Integer = 1

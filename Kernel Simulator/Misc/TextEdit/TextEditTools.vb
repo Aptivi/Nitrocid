@@ -67,7 +67,7 @@ Public Module TextEditTools
     ''' Saves text file
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function TextEdit_SaveTextFile() As Boolean
+    Public Function TextEdit_SaveTextFile(ByVal ClearLines As Boolean) As Boolean
         Try
             Wdbg("I", "Trying to save file...")
             TextEdit_FileStream.SetLength(0)
@@ -77,7 +77,7 @@ Public Module TextEditTools
             TextEdit_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length)
             TextEdit_FileStream.Flush()
             Wdbg("I", "File is saved.")
-            TextEdit_FileLines.Clear()
+            If ClearLines Then TextEdit_FileLines.Clear()
             Return True
         Catch ex As Exception
             Wdbg("E", "Saving file failed: {0}", ex.Message)
@@ -93,14 +93,7 @@ Public Module TextEditTools
         Try
             Threading.Thread.Sleep(60000)
             If Not IsNothing(TextEdit_FileStream) Then
-                Wdbg("I", "Trying to save file...")
-                TextEdit_FileStream.SetLength(0)
-                Wdbg("I", "Length set to 0.")
-                Dim FileLinesByte() As Byte = Encoding.Default.GetBytes(TextEdit_FileLines.ToArray.Join(vbNewLine))
-                Wdbg("I", "Converted lines to bytes. Length: {0}", FileLinesByte.Length)
-                TextEdit_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length)
-                TextEdit_FileStream.Flush()
-                Wdbg("I", "File is saved.")
+                TextEdit_SaveTextFile(False)
             End If
         Catch ex As Exception
             WStkTrc(ex)

@@ -231,7 +231,7 @@ Imports KS
         Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
         Assert.IsTrue(TextEdit_OpenTextFile(PathToTestText), "Opening text file failed. Returned False.")
         TextEdit_FileLines.Add("Hello!")
-        Assert.IsTrue(TextEdit_SaveTextFile(), "Saving text file failed. Returned False.")
+        Assert.IsTrue(TextEdit_SaveTextFile(False), "Saving text file failed. Returned False.")
         Assert.IsTrue(TextEdit_CloseTextFile(), "Closing text file failed. Returned False.")
     End Sub
 
