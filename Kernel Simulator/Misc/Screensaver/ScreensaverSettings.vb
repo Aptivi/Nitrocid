@@ -18,10 +18,14 @@
 
 Public Module ScreensaverSettings
 
-    Public ColorMix255Colors As Boolean                         'Enable 255 color support for ColorMix
-    Public Disco255Colors As Boolean                            'Enable 255 color support for Disco
-    Public GlitterColor255Colors As Boolean                     'Enable 255 color support for GlitterColor
-    Public Lines255Colors As Boolean                            'Enable 255 color support for Lines
+    Public ColorMix255Colors As Boolean                         'Enable 255 color support for ColorMix. Has a higher priority than 16 color support.
+    Public Disco255Colors As Boolean                            'Enable 255 color support for Disco. Has a higher priority than 16 color support.
+    Public GlitterColor255Colors As Boolean                     'Enable 255 color support for GlitterColor. Has a higher priority than 16 color support.
+    Public Lines255Colors As Boolean                            'Enable 255 color support for Lines. Has a higher priority than 16 color support.
+    Public ColorMixTrueColor As Boolean                         'Enable truecolor support for ColorMix. Has a higher priority than 255 color support.
+    Public DiscoTrueColor As Boolean                            'Enable truecolor support for Disco. Has a higher priority than 255 color support.
+    Public GlitterColorTrueColor As Boolean                     'Enable truecolor support for GlitterColor. Has a higher priority than 255 color support.
+    Public LinesTrueColor As Boolean                            'Enable truecolor support for Lines. Has a higher priority than 255 color support.
     Public BouncingTextWrite As String = "Kernel Simulator"     'Text for Bouncing Text
 
 End Module

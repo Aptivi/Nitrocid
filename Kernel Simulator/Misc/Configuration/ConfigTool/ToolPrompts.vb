@@ -47,7 +47,7 @@ Public Module ToolPrompts
 
             'Prompt user and check for input
             W("> ", False, ColTypes.Input)
-            AnswerString = Console.ReadKey.KeyChar
+            AnswerString = Console.ReadLine
             Wdbg("I", "User answered {0}", AnswerString)
             Console.WriteLine()
 
@@ -118,13 +118,17 @@ Public Module ToolPrompts
                     W("5) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerIP"))
                     W("6) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("FTPFirstProfileOnly"))
                 Case 6 'Screensaver
-                    MaxOptions = 6
+                    MaxOptions = 10
                     W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ScrnTimeout"))
                     W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMix255Colors"))
                     W("3) [Disco] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Disco255Colors"))
                     W("4) [GlitterColor] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("GlitterColor255Colors"))
                     W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Lines255Colors"))
-                    W("6) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
+                    W("6) [ColorMix] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMixTrueColor"))
+                    W("7) [Disco] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DiscoTrueColor"))
+                    W("8) [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("GlitterColorTrueColor"))
+                    W("9) [Lines] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("LinesTrueColor"))
+                    W("10) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
                 Case 7 'Misc
                     MaxOptions = 7
                     W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("CornerTD"))
@@ -142,7 +146,7 @@ Public Module ToolPrompts
 
             'Prompt user and check for input
             W("> ", False, ColTypes.Input)
-            AnswerString = Console.ReadKey.KeyChar
+            AnswerString = Console.ReadLine
             Wdbg("I", "User answered {0}", AnswerString)
             Console.WriteLine()
 
@@ -378,7 +382,35 @@ Public Module ToolPrompts
                             W(DoTranslation("Activates 255 color support for Lines." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 6 'Text shown
+                        Case 6 'ColorMix: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = "ColorMixTrueColor"
+                            W(DoTranslation("Activates true color support for ColorMix." + vbNewLine, currentLang), True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 7 'Disco: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = "DiscoTrueColor"
+                            W(DoTranslation("Activates true color support for Disco." + vbNewLine, currentLang), True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 8 'GlitterColor: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = "GlitterColorTrueColor"
+                            W(DoTranslation("Activates true color support for GlitterColor." + vbNewLine, currentLang), True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 9 'Lines: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = "LinesTrueColor"
+                            W(DoTranslation("Activates true color support for Lines." + vbNewLine, currentLang), True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 10 'Text shown
                             KeyType = SettingsKeyType.SString
                             KeyVar = "BouncingTextWrite"
                             W("*) " + DoTranslation("Write any text you want shown. Shorter is better.", currentLang), True, ColTypes.Neutral)
@@ -446,10 +478,7 @@ Public Module ToolPrompts
 
             'Prompt user
             W("> ", False, ColTypes.Input)
-            If KeyType = SettingsKeyType.SBoolean Or KeyType = SettingsKeyType.SMenu Then
-                AnswerString = Console.ReadKey.KeyChar
-                Console.WriteLine()
-            ElseIf KeyNumber = 2 And Section = 1.3 Then
+            If KeyNumber = 2 And Section = 1.3 Then
                 AnswerString = ReadLineNoInput("*")
             Else
                 AnswerString = Console.ReadLine

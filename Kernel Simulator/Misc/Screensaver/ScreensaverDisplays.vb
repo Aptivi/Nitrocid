@@ -91,7 +91,14 @@ Public Module ScreensaverDisplays
                 Wdbg("I", "All clean. Mix Colors screensaver stopped.")
                 Exit Do
             Else
-                If ColorMix255Colors Then
+                If ColorMixTrueColor Then
+                    Dim esc As Char = GetEsc()
+                    Dim RedColorNum As Integer = colorrand.Next(255)
+                    Dim GreenColorNum As Integer = colorrand.Next(255)
+                    Dim BlueColorNum As Integer = colorrand.Next(255)
+                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                    Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                ElseIf ColorMix255Colors Then
                     Dim esc As Char = GetEsc()
                     Dim ColorNum As Integer = colorrand.Next(255)
                     Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
@@ -150,7 +157,14 @@ Public Module ScreensaverDisplays
                 Wdbg("I", "All clean. Disco screensaver stopped.")
                 Exit Do
             Else
-                If Disco255Colors Then
+                If DiscoTrueColor Then
+                    Dim esc As Char = GetEsc()
+                    Dim RedColorNum As Integer = random.Next(255)
+                    Dim GreenColorNum As Integer = random.Next(255)
+                    Dim BlueColorNum As Integer = random.Next(255)
+                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                    Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
+                ElseIf Disco255Colors Then
                     Dim esc As Char = GetEsc()
                     Dim color As Integer = random.Next(255)
                     Console.Write(esc + "[48;5;" + CStr(color) + "m")
@@ -183,7 +197,16 @@ Public Module ScreensaverDisplays
                 Wdbg("I", "All clean. Lines screensaver stopped.")
                 Exit Do
             Else
-                If Lines255Colors Then
+                If LinesTrueColor Then
+                    Dim esc As Char = GetEsc()
+                    Console.BackgroundColor = ConsoleColor.Black
+                    Console.Clear()
+                    Dim RedColorNum As Integer = random.Next(255)
+                    Dim GreenColorNum As Integer = random.Next(255)
+                    Dim BlueColorNum As Integer = random.Next(255)
+                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                    Console.Write(esc + "[38;2;" + ColorStorage.ToString + "m")
+                ElseIf Lines255Colors Then
                     Dim esc As Char = GetEsc()
                     Console.BackgroundColor = ConsoleColor.Black
                     Console.Clear()
@@ -498,7 +521,16 @@ IFCANCEL:
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 Console.SetCursorPosition(Left, Top)
-                If GlitterColor255Colors Then
+                If GlitterColorTrueColor Then
+                    Dim esc As Char = GetEsc()
+                    Console.BackgroundColor = ConsoleColor.Black
+                    Console.Clear()
+                    Dim RedColorNum As Integer = RandomDriver.Next(255)
+                    Dim GreenColorNum As Integer = RandomDriver.Next(255)
+                    Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                    Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                ElseIf GlitterColor255Colors Then
                     Dim esc As Char = GetEsc()
                     Dim ColorNum As Integer = RandomDriver.Next(255)
                     Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
