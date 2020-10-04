@@ -67,12 +67,27 @@ Public Module TextEditGetCommand
                 TextEdit_Exiting = True
             ElseIf Command = "print" Then
                 Dim LineNumber As Integer = 1
-                For Each Line As String In TextEdit_FileLines
-                    Wdbg("I", "Line number: {0} ({1})", LineNumber, Line)
-                    W("- {0}: ", False, ColTypes.HelpCmd, LineNumber)
-                    W(Line, True, ColTypes.HelpDef)
-                    LineNumber += 1
-                Next
+                If Arguments?.Length > 0 Then
+                    Wdbg("I", "Line number provided: {0}", Arguments(0))
+                    Wdbg("I", "Is it numeric? {0}", Arguments(0).IsNumeric)
+                    If Arguments(0).IsNumeric Then
+                        LineNumber = Arguments(0)
+                        Dim Line As String = TextEdit_FileLines(LineNumber - 1)
+                        Wdbg("I", "Line number: {0} ({1})", LineNumber, Line)
+                        W("- {0}: ", False, ColTypes.HelpCmd, LineNumber)
+                        W(Line, True, ColTypes.HelpDef)
+                    Else
+                        W(DoTranslation("Specified line number {0} is not a valid number.", currentLang), True, ColTypes.Err, Arguments(0))
+                        Wdbg("E", "{0} is not a numeric value.", Arguments(0))
+                    End If
+                Else
+                    For Each Line As String In TextEdit_FileLines
+                        Wdbg("I", "Line number: {0} ({1})", LineNumber, Line)
+                        W("- {0}: ", False, ColTypes.HelpCmd, LineNumber)
+                        W(Line, True, ColTypes.HelpDef)
+                        LineNumber += 1
+                    Next
+                End If
                 CommandDone = True
             ElseIf Command = "addline" Then
                 If Arguments?.Length > 0 Then
@@ -112,6 +127,19 @@ Public Module TextEditGetCommand
                         Wdbg("I", "Replacing ""{0}"" with ""{1}"" in line {2}", Arguments(0), Arguments(1), LineIndex + 1)
                         TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Replace(Arguments(0), Arguments(1))
                     Next
+                End If
+            ElseIf Command = "replaceinline" Then
+                If Arguments?.Length > 2 Then
+                    CommandDone = True
+                    Wdbg("I", "Source: {0}, Target: {1}, Line Number: {2}", Arguments(0), Arguments(1), Arguments(2))
+                    If Arguments(2).IsNumeric Then
+                        Dim LineIndex As Long = Arguments(2) - 1
+                        Wdbg("I", "Replacing ""{0}"" with ""{1}"" in line {2}", Arguments(0), Arguments(1), LineIndex + 1)
+                        TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Replace(Arguments(0), Arguments(1))
+                    Else
+                        W(DoTranslation("Specified line number {0} is not a valid number.", currentLang), True, ColTypes.Err, Arguments(2))
+                        Wdbg("E", "{0} is not a numeric value.", Arguments(2))
+                    End If
                 End If
             ElseIf Command = "delword" Then
                 If Arguments?.Length > 1 Then
