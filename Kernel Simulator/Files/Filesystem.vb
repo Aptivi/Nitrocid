@@ -433,4 +433,18 @@ Public Module Filesystem
         Return TotalSize
     End Function
 
+    ''' <summary>
+    ''' Opens a file, reads all lines, and returns the array of lines
+    ''' </summary>
+    ''' <param name="path">Path to file</param>
+    ''' <returns>Array of lines</returns>
+    Public Function ReadAllLinesNoBlock(ByVal path As String) As String()
+        Dim AllLnList As New List(Of String)
+        Dim FOpen As New StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+        While Not FOpen.EndOfStream
+            AllLnList.Add(FOpen.ReadLine)
+        End While
+        Return AllLnList.ToArray
+    End Function
+
 End Module

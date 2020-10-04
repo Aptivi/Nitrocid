@@ -239,6 +239,7 @@
     <Compile Include="Console\Color.vb" />
     <Compile Include="Console\Color255.vb" />
     <Compile Include="Console\Input.vb" />
+    <Compile Include="Console\RGB.vb" />
     <Compile Include="Files\Filesystem.vb" />
     <Compile Include="Hardware\HardwareVars.vb" />
     <Compile Include="Hardware\HDD\PrintHDDInfo.vb" />
@@ -273,6 +274,7 @@
     <Compile Include="Misc\TextEdit\TextEditShell.vb" />
     <Compile Include="Misc\TextEdit\TextEditTools.vb" />
     <Compile Include="Misc\Writers\DebugLogPrint.vb" />
+    <Compile Include="Misc\Writers\DebugWriters.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />
     <Compile Include="Modifications\ModParser.vb" />

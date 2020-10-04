@@ -558,7 +558,7 @@ Public Module ToolPrompts
         Dim TypeOfKernel As Type = GetType(Kernel)
         Dim TypeOfShell As Type = GetType(Shell)
         Dim TypeOfRDebugger As Type = GetType(RemoteDebugger)
-        Dim TypeOfTextWriter As Type = GetType(TextWriterColor)
+        Dim TypeOfDebugWriters As Type = GetType(DebugWriters)
         Dim TypeOfNetworkTools As Type = GetType(NetworkTools)
         Dim TypeOfScreensaverSettings As Type = GetType(ScreensaverSettings)
         Dim TypeOfForecast As Type = GetType(Forecast)
@@ -568,7 +568,7 @@ Public Module ToolPrompts
         Dim FieldKernel As FieldInfo = TypeOfKernel.GetField(Variable)
         Dim FieldShell As FieldInfo = TypeOfShell.GetField(Variable)
         Dim FieldRDebugger As FieldInfo = TypeOfRDebugger.GetField(Variable)
-        Dim FieldTextWriter As FieldInfo = TypeOfTextWriter.GetField(Variable)
+        Dim FieldDebugWriters As FieldInfo = TypeOfDebugWriters.GetField(Variable)
         Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
         Dim FieldScreensaverSettings As FieldInfo = TypeOfScreensaverSettings.GetField(Variable)
         Dim FieldForecast As FieldInfo = TypeOfForecast.GetField(Variable)
@@ -582,8 +582,8 @@ Public Module ToolPrompts
             Return FieldShell
         ElseIf Not IsNothing(FieldRDebugger) Then
             Return FieldRDebugger
-        ElseIf Not IsNothing(FieldTextWriter) Then
-            Return FieldTextWriter
+        ElseIf Not IsNothing(FieldDebugWriters) Then
+            Return FieldDebugWriters
         ElseIf Not IsNothing(FieldNetworkTools) Then
             Return FieldNetworkTools
         ElseIf Not IsNothing(FieldScreensaverSettings) Then
