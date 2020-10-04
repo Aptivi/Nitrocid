@@ -27,6 +27,7 @@ Public Module TextEditShell
     Public TextEdit_ModCommands As New ArrayList
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)
+    Public TextEdit_AutoSave As New Thread(AddressOf TextEdit_HandleAutoSaveTextFile)
 
     Public Sub InitializeTextShell(ByVal FilePath As String)
         'Add handler for text editor shell
@@ -41,6 +42,7 @@ Public Module TextEditShell
                     W(DoTranslation("Failed to open file. Exiting shell...", currentLang), True, ColTypes.Err)
                     Exit While
                 End If
+                TextEdit_AutoSave.Start()
             End If
 
             'Prepare for prompt
@@ -80,6 +82,8 @@ Public Module TextEditShell
 
         'Close file
         TextEdit_CloseTextFile()
+        TextEdit_AutoSave.Abort()
+        TextEdit_AutoSave = New Thread(AddressOf TextEdit_HandleAutoSaveTextFile)
 
         'Remove handler for text editor shell
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand

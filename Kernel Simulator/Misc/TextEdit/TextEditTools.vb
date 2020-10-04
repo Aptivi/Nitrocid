@@ -21,6 +21,11 @@ Imports System.Text
 
 Public Module TextEditTools
 
+    ''' <summary>
+    ''' Opens the text file
+    ''' </summary>
+    ''' <param name="File">Target file. We recommend you to use <see cref="NeutralizePath(String)"></see> to neutralize path.</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function TextEdit_OpenTextFile(ByVal File As String) As Boolean
         Try
             Wdbg("I", "Trying to open file {0}...", File)
@@ -40,6 +45,10 @@ Public Module TextEditTools
         End Try
     End Function
 
+    ''' <summary>
+    ''' Closes text file
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function TextEdit_CloseTextFile() As Boolean
         Try
             Wdbg("I", "Trying to close file...")
@@ -54,6 +63,10 @@ Public Module TextEditTools
         End Try
     End Function
 
+    ''' <summary>
+    ''' Saves text file
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function TextEdit_SaveTextFile() As Boolean
         Try
             Wdbg("I", "Trying to save file...")
@@ -72,5 +85,26 @@ Public Module TextEditTools
             Return False
         End Try
     End Function
+
+    ''' <summary>
+    ''' Handles autosave
+    ''' </summary>
+    Public Sub TextEdit_HandleAutoSaveTextFile()
+        Try
+            Threading.Thread.Sleep(60000)
+            If Not IsNothing(TextEdit_FileStream) Then
+                Wdbg("I", "Trying to save file...")
+                TextEdit_FileStream.SetLength(0)
+                Wdbg("I", "Length set to 0.")
+                Dim FileLinesByte() As Byte = Encoding.Default.GetBytes(TextEdit_FileLines.ToArray.Join(vbNewLine))
+                Wdbg("I", "Converted lines to bytes. Length: {0}", FileLinesByte.Length)
+                TextEdit_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length)
+                TextEdit_FileStream.Flush()
+                Wdbg("I", "File is saved.")
+            End If
+        Catch ex As Exception
+            WStkTrc(ex)
+        End Try
+    End Sub
 
 End Module
