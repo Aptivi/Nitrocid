@@ -79,6 +79,7 @@ Public Module Filesystem
                 WStkTrc(ex)
                 Exit Sub
             End Try
+            W(">> {0}", True, ColTypes.Stage, folder)
 #Disable Warning BC42104
             For Each Entry As String In enumeration
 #Enable Warning BC42104
