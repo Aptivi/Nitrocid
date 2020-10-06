@@ -402,6 +402,9 @@ Public Module KernelTools
         Wdbg("I", "Kernel initialized, version {0}.", KernelVersion)
         Wdbg("I", "OS: {0}", EnvironmentOSType)
 
+        'Populate ban list for debug devices
+        PopulateBlockedDevices()
+
         'Parse current theme string
         ParseCurrentTheme()
 
@@ -420,6 +423,7 @@ Public Module KernelTools
             If Not paths.ContainsKey("Aliases") Then paths.Add("Aliases", Environ("HOME") + "/aliases.csv")
             If Not paths.ContainsKey("Users") Then paths.Add("Users", Environ("HOME") + "/users.csv")
             If Not paths.ContainsKey("FTPSpeedDial") Then paths.Add("FTPSpeedDial", Environ("HOME") + "/ftp_speeddial.csv")
+            If Not paths.ContainsKey("BlockedDevices") Then paths.Add("BlockedDevices", Environ("HOME") + "/blocked_devices.csv")
             If Not paths.ContainsKey("Home") Then paths.Add("Home", Environ("HOME"))
             If Not paths.ContainsKey("Temp") Then paths.Add("Temp", "/tmp")
         Else
@@ -429,6 +433,7 @@ Public Module KernelTools
             If Not paths.ContainsKey("Aliases") Then paths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/aliases.csv")
             If Not paths.ContainsKey("Users") Then paths.Add("Users", Environ("USERPROFILE") + "/users.csv")
             If Not paths.ContainsKey("FTPSpeedDial") Then paths.Add("FTPSpeedDial", Environ("USERPROFILE") + "/ftp_speeddial.csv")
+            If Not paths.ContainsKey("BlockedDevices") Then paths.Add("BlockedDevices", Environ("USERPROFILE") + "/blocked_devices.csv")
             If Not paths.ContainsKey("Home") Then paths.Add("Home", Environ("USERPROFILE").Replace("\", "/"))
             If Not paths.ContainsKey("Temp") Then paths.Add("Temp", Environ("TEMP").Replace("\", "/"))
         End If

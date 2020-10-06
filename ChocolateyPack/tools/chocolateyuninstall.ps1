@@ -20,27 +20,31 @@ if ($ConfigChoice = 0) {
     Write-Output "<*>  |"
     try{
       if (Test-Path $userProfile\aliases.csv) {
-        Write-Output "<+>  |-> Aliases........(aliases.csv)"
+        Write-Output "<+>  |-> Aliases.........(aliases.csv)"
         Remove-Item $userProfile\aliases.csv
       }
+      if (Test-Path $userProfile\blocked_devices.csv) {
+        Write-Output "<+>  |-> Blocked devices.(blocked_devices.csv)"
+        Remove-Item $userProfile\MAL.txt
+      }
       if (Test-Path $userProfile\kernelConfig.ini) {
-        Write-Output "<+>  |-> Configuration..(kernelConfig.ini)"
+        Write-Output "<+>  |-> Configuration...(kernelConfig.ini)"
         Remove-Item $userProfile\kernelConfig.ini
       }
       if (Test-Path $userProfile\kernelDbg.log) {
-        Write-Output "<+>  |-> Debugging logs.(kernelDbg.log)"
+        Write-Output "<+>  |-> Debugging logs..(kernelDbg.log)"
         Remove-Item $userProfile\kernelDbg.log
       }
       if (Test-Path $userProfile\MOTD.txt) {
-        Write-Output "<+>  |-> MOTD Text......(MOTD.txt)"
+        Write-Output "<+>  |-> MOTD Text.......(MOTD.txt)"
         Remove-Item $userProfile\MOTD.txt
       }
       if (Test-Path $userProfile\MAL.txt) {
-        Write-Output "<+>  |-> MAL Text.......(MAL.txt)"
+        Write-Output "<+>  |-> MAL Text........(MAL.txt)"
         Remove-Item $userProfile\MAL.txt
       }
       if (Test-Path $userProfile\users.csv) {
-        Write-Output "<+>  |-> Users..........(users.csv)"
+        Write-Output "<+>  |-> Users...........(users.csv)"
         Remove-Item $userProfile\MAL.txt
       }
       Write-Output "<*> Mods are in $userProfile\KSMods"

@@ -21,7 +21,7 @@ Imports System.Runtime.CompilerServices
 Public Module Filesystem
 
     'Variables
-    Public CurrDir As String
+    Public CurrDir As String = ""
 
     ''' <summary>
     ''' Sets the current working directory
@@ -136,8 +136,10 @@ Public Module Filesystem
             Path = $"{CurrDir}/{Path}"
         End If
         Wdbg("I", "Prototype directory: {0}", Path)
-        If Path.Contains(CurrDir.Replace("\", "/")) And Path.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-            Path = ReplaceLastOccurrence(Path, CurrDir, "")
+        If Not CurrDir = "" Then
+            If Path.Contains(CurrDir.Replace("\", "/")) And Path.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
+                Path = ReplaceLastOccurrence(Path, CurrDir, "")
+            End If
         End If
         Wdbg("I", "Final directory: {0}", Path)
         Return Path

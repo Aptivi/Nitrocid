@@ -27,7 +27,7 @@ Module RemoteDebugger
     Public DebugDevices As New Dictionary(Of Socket, String)
     Public dbgConns As New Dictionary(Of StreamWriter, String)
     Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
-    Public RDebugBlocked As New List(Of String)
+    Public RDebugBlocked As New List(Of String) 'Blocked IP addresses
     Public RDebugStopping As Boolean
 
     ''' <summary>

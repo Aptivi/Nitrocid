@@ -170,11 +170,17 @@ Public Module GetCommand
 
             ElseIf words(0) = "blockdbgdev" Then
 
-                If requestedCommand <> "blockdbgdev" Then
-                    If eqargs?.Count - 1 >= 0 Then
-                        BlockDevice(eqargs(0))
-                        Done = True
+                If eqargs?.Count - 1 >= 0 Then
+                    If Not RDebugBlocked.Contains(eqargs(0)) Then
+                        If BlockDevice(eqargs(0)) Then
+                            W(DoTranslation("{0} can't join remote debug now.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                        Else
+                            W(DoTranslation("Failed to block {0}.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                        End If
+                    Else
+                        W(DoTranslation("{0} is already blocked.", currentLang), True, ColTypes.Neutral, eqargs(0))
                     End If
+                    Done = True
                 End If
 
             ElseIf words(0) = "bsynth" Then
@@ -943,8 +949,12 @@ Public Module GetCommand
 
                 If requestedCommand <> "unblockdbgdev" Then
                     If eqargs?.Count - 1 >= 0 Then
-                        If UnblockDevice(eqargs(0)) Then
-                            W(DoTranslation("{0} can now join remote debug again.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                        If RDebugBlocked.Contains(eqargs(0)) Then
+                            If UnblockDevice(eqargs(0)) Then
+                                W(DoTranslation("{0} can now join remote debug again.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                            Else
+                                W(DoTranslation("Failed to unblock {0}.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                            End If
                         Else
                             W(DoTranslation("{0} is not blocked yet.", currentLang), True, ColTypes.Neutral, eqargs(0))
                         End If
