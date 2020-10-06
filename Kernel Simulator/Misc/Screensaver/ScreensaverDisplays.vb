@@ -208,6 +208,11 @@ Public Module ScreensaverDisplays
                     ElseIf CurrentColorG = 0 And CurrentColorR = 0 Then
                         CurrentColorB += 1
                     End If
+                    If CurrentColorB = 0 And CurrentColorG = 0 And CurrentColorR = 0 Then
+                        CurrentColorB = 0
+                        CurrentColorG = 0
+                        CurrentColorR = 0
+                    End If
                 Else
                     If CurrentColor >= MaximumColors Then
                         CurrentColor = 0
