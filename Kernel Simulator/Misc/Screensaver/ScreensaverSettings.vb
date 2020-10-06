@@ -26,6 +26,7 @@ Public Module ScreensaverSettings
     Public DiscoTrueColor As Boolean                            'Enable truecolor support for Disco. Has a higher priority than 255 color support.
     Public GlitterColorTrueColor As Boolean                     'Enable truecolor support for GlitterColor. Has a higher priority than 255 color support.
     Public LinesTrueColor As Boolean                            'Enable truecolor support for Lines. Has a higher priority than 255 color support.
+    Public DiscoCycleColors As Boolean                          'Enable color cycling for Disco
     Public BouncingTextWrite As String = "Kernel Simulator"     'Text for Bouncing Text
 
 End Module

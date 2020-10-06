@@ -142,6 +142,12 @@ Public Module ScreensaverDisplays
     ''' </summary>
     Sub Disco_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Disco.DoWork
         Console.CursorVisible = False
+        Dim MaximumColors As Integer = 15
+        Dim MaximumColorsR As Integer = 255
+        Dim MaximumColorsG As Integer = 255
+        Dim MaximumColorsB As Integer = 255
+        Dim CurrentColor As Integer = 0
+        Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
         Dim random As New Random()
         Do While True
             Thread.Sleep(100)
@@ -159,19 +165,56 @@ Public Module ScreensaverDisplays
             Else
                 If DiscoTrueColor Then
                     Dim esc As Char = GetEsc()
-                    Dim RedColorNum As Integer = random.Next(255)
-                    Dim GreenColorNum As Integer = random.Next(255)
-                    Dim BlueColorNum As Integer = random.Next(255)
-                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                    Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
+                    If Not DiscoCycleColors Then
+                        Dim RedColorNum As Integer = random.Next(255)
+                        Dim GreenColorNum As Integer = random.Next(255)
+                        Dim BlueColorNum As Integer = random.Next(255)
+                        Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
+                    Else
+                        Dim ColorStorage As New RGB(CurrentColorR, CurrentColorG, CurrentColorB)
+                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
+                    End If
                 ElseIf Disco255Colors Then
                     Dim esc As Char = GetEsc()
-                    Dim color As Integer = random.Next(255)
-                    Console.Write(esc + "[48;5;" + CStr(color) + "m")
+                    If Not DiscoCycleColors Then
+                        Dim color As Integer = random.Next(255)
+                        Console.Write(esc + "[48;5;" + CStr(color) + "m")
+                    Else
+                        MaximumColors = 255
+                        Console.Write(esc + "[48;5;" + CStr(CurrentColor) + "m")
+                    End If
                 Else
-                    Console.BackgroundColor = colors(random.Next(colors.Length - 1))
+                    If Not DiscoCycleColors Then
+                        Console.BackgroundColor = colors(random.Next(colors.Length - 1))
+                    Else
+                        Console.BackgroundColor = colors(CurrentColor)
+                    End If
                 End If
                 Console.Clear()
+                If DiscoTrueColor Then
+                    If CurrentColorR >= MaximumColorsR Then
+                        CurrentColorR = 0
+                    Else
+                        CurrentColorR += 1
+                    End If
+                    If CurrentColorG >= MaximumColorsG Then
+                        CurrentColorG = 0
+                    ElseIf CurrentColorR = 0 Then
+                        CurrentColorG += 1
+                    End If
+                    If CurrentColorB >= MaximumColorsB Then
+                        CurrentColorB = 0
+                    ElseIf CurrentColorG = 0 And CurrentColorR = 0 Then
+                        CurrentColorB += 1
+                    End If
+                Else
+                    If CurrentColor >= MaximumColors Then
+                        CurrentColor = 0
+                    Else
+                        CurrentColor += 1
+                    End If
+                End If
             End If
         Loop
     End Sub

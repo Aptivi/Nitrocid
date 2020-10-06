@@ -118,7 +118,7 @@ Public Module ToolPrompts
                     W("5) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerIP"))
                     W("6) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("FTPFirstProfileOnly"))
                 Case 6 'Screensaver
-                    MaxOptions = 10
+                    MaxOptions = 11
                     W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ScrnTimeout"))
                     W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMix255Colors"))
                     W("3) [Disco] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Disco255Colors"))
@@ -128,7 +128,8 @@ Public Module ToolPrompts
                     W("7) [Disco] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DiscoTrueColor"))
                     W("8) [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("GlitterColorTrueColor"))
                     W("9) [Lines] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("LinesTrueColor"))
-                    W("10) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
+                    W("10) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DiscoCycleColors"))
+                    W("11) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
                 Case 7 'Misc
                     MaxOptions = 7
                     W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("CornerTD"))
@@ -410,7 +411,14 @@ Public Module ToolPrompts
                             W(DoTranslation("Activates true color support for Lines." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 10 'Text shown
+                        Case 10 'Disco: Cycle colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = "DiscoCycleColors"
+                            W(DoTranslation("Disco will cycle colors when enabled. Otherwise, select random colors." + vbNewLine, currentLang), True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 11 'Text shown
                             KeyType = SettingsKeyType.SString
                             KeyVar = "BouncingTextWrite"
                             W("*) " + DoTranslation("Write any text you want shown. Shorter is better.", currentLang), True, ColTypes.Neutral)
@@ -552,7 +560,7 @@ Public Module ToolPrompts
         If Not IsNothing(TargetField) Then
             'The "obj" description says this: "The object whose field value will be set."
             'Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-            'Unfortunately, there are no examples on the MSDN that showcases such situations; classes are being used.
+            'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
             Wdbg("I", "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue)
             TargetField.SetValue(Variable, VariableValue)
         Else
@@ -570,7 +578,7 @@ Public Module ToolPrompts
         If Not IsNothing(TargetField) Then
             'The "obj" description says this: "The object whose field value will be returned."
             'Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-            'Unfortunately, there are no examples on the MSDN that showcases such situations; classes are being used.
+            'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
             Wdbg("I", "Got field {0}.", TargetField.Name)
             Return TargetField.GetValue(Variable)
         Else

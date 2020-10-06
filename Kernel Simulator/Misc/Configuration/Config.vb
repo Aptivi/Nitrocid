@@ -101,6 +101,7 @@ Public Module Config
                         New IniKey(ksconf, "Disco - Activate True Color Mode", DiscoTrueColor),
                         New IniKey(ksconf, "GlitterColor - Activate True Color Mode", GlitterColorTrueColor),
                         New IniKey(ksconf, "Lines - Activate True Color Mode", LinesTrueColor),
+                        New IniKey(ksconf, "Disco - Cycle Colors", DiscoCycleColors),
                         New IniKey(ksconf, "BouncingText - Text Shown", BouncingTextWrite)))
 
                 'Misc Section
@@ -185,6 +186,7 @@ Public Module Config
                         New IniKey(ksconf, "Disco - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "GlitterColor - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "Lines - Activate True Color Mode", "True"),
+                        New IniKey(ksconf, "Disco - Cycle Colors", "False"),
                         New IniKey(ksconf, "BouncingText - Text Shown", "Kernel Simulator")))
 
                 'Misc Section
@@ -250,6 +252,7 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("Disco - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Disco"
             ksconf.Sections("Screensaver").Keys("GlitterColor - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for GlitterColor"
             ksconf.Sections("Screensaver").Keys("Lines - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Lines"
+            ksconf.Sections("Screensaver").Keys("Disco - Cycle Colors").TrailingComment.Text = "Disco will cycle colors if it's enabled. Otherwise, select random colors."
             ksconf.Sections("Screensaver").Keys("BouncingText - Text Shown").TrailingComment.Text = "Any text for BouncingText"
 
             'Misc
@@ -404,6 +407,7 @@ Public Module Config
             DiscoTrueColor = configReader.Sections("Screensaver").Keys("Disco - Activate True Color Mode").Value
             GlitterColorTrueColor = configReader.Sections("Screensaver").Keys("GlitterColor - Activate True Color Mode").Value
             LinesTrueColor = configReader.Sections("Screensaver").Keys("Lines - Activate True Color Mode").Value
+            DiscoCycleColors = configReader.Sections("Screensaver").Keys("Disco - Cycle Colors").Value
             BouncingTextWrite = configReader.Sections("Screensaver").Keys("BouncingText - Text Shown").Value
 
             'Misc Section
