@@ -75,11 +75,7 @@ Public Module Shell
 
                     'Set an input color
                     Wdbg("I", "ColoredShell is {0}", ColoredShell)
-                    Dim esc As Char = GetEsc()
-                    If ColoredShell = True Then
-                        Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                        Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                    End If
+                    SetInputColor()
 
                     'Wait for command
                     Wdbg("I", "Waiting for command")

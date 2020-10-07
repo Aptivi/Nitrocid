@@ -50,6 +50,7 @@ Public Module TextEditShell
                 Console.SetOut(DefConsoleOut)
             End If
             W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, Path.GetFileName(FilePath)) : W("] > ", False, ColTypes.Gray)
+            SetInputColor()
 
             'Prompt for command
             Dim WrittenCommand As String = Console.ReadLine

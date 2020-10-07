@@ -751,4 +751,18 @@ Public Module Color
         Return False
     End Function
 
+    ''' <summary>
+    ''' Sets input color (only use for shells)
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function SetInputColor() As Boolean
+        Dim esc As Char = GetEsc()
+        If ColoredShell = True Then
+            Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
+            Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            Return True
+        End If
+        Return False
+    End Function
+
 End Module

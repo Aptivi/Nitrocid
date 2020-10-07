@@ -94,11 +94,9 @@ Public Module FTPShell
             DisposeAll()
 
             'Set input color
-            Dim esc As Char = GetEsc()
-            If ColoredShell = True Then
-                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-            End If
+            SetInputColor()
+
+            'Try to connect if IP address is specified.
             If Connects Then
                 Wdbg("I", $"Currently connecting to {Address} by ""ftp (address)""...")
                 strcmd = $"connect {Address}"
