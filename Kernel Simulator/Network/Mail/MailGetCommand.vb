@@ -20,6 +20,7 @@ Imports System.IO
 Imports System.Text
 Imports System.Threading
 Imports Microsoft.VisualBasic.FileIO
+Imports MimeKit
 
 Module MailGetCommand
 
@@ -95,7 +96,7 @@ Module MailGetCommand
             ElseIf cmd = "send" Then
                 RequiredArgsProvided = True
                 Dim Receiver, Subject As String
-                Dim Body As New StringBuilder
+                Dim Body As New BodyBuilder
 
                 'Prompt for receiver e-mail address
                 W(DoTranslation("Enter recipient mail address:", currentLang) + " ", False, ColTypes.Input)
@@ -118,14 +119,27 @@ Module MailGetCommand
                         BodyLine = Console.ReadLine
                         If Not BodyLine.ToUpper = "EOF" Then
                             Wdbg("I", "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length)
-                            Body.AppendLine(BodyLine)
-                            Wdbg("I", "Body length: {0} chars", Body.Length)
+                            Body.TextBody += BodyLine + vbNewLine
+                            Wdbg("I", "Body length: {0} chars", Body.TextBody.Length)
+                        End If
+                    End While
+
+                    W(DoTranslation("Enter file paths to attachments. Press ENTER on a blank path to confirm.", currentLang), True, ColTypes.Neutral)
+                    Dim PathLine As String = " "
+                    While Not PathLine = ""
+                        PathLine = Console.ReadLine
+                        If Not PathLine = "" Then
+                            PathLine = NeutralizePath(PathLine)
+                            Wdbg("I", "Path line: {0} ({1} chars)", PathLine, PathLine.Length)
+                            If File.Exists(PathLine) Then
+                                Body.Attachments.Add(PathLine)
+                            End If
                         End If
                     End While
 
                     'Send the message
                     W(DoTranslation("Sending message...", currentLang), True, ColTypes.Neutral)
-                    If MailSendMessage(Receiver, Subject, BodyLine) Then
+                    If MailSendMessage(Receiver, Subject, Body.ToMessageBody) Then
                         Wdbg("I", "Message sent.")
                         W(DoTranslation("Message sent.", currentLang), True, ColTypes.Neutral)
                     Else
