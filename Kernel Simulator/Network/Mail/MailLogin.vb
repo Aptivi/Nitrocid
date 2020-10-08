@@ -27,6 +27,11 @@ Module MailLogin
     Public SMTP_Client As New SmtpClient()
     Friend Mail_Authentication As New NetworkCredential()
 
+    Public Enum ServerType
+        IMAP
+        SMTP
+    End Enum
+
     ''' <summary>
     ''' Prompts user to enter username or e-mail address
     ''' </summary>
@@ -47,30 +52,43 @@ Module MailLogin
         W(DoTranslation("Enter password: ", currentLang), False, ColTypes.Input)
         Mail_Authentication.Password = ReadLineNoInput("*")
         Console.WriteLine()
+        Dim DynamicAddressIMAP As String = ServerDetect(Username, ServerType.IMAP)
+        Dim DynamicAddressSMTP As String = ServerDetect(Username, ServerType.SMTP)
+        If DynamicAddressIMAP <> "" And DynamicAddressSMTP <> "" Then
+            ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0)
+        Else
+            PromptServer()
+        End If
+    End Sub
 
+    ''' <summary>
+    ''' Prompts for server
+    ''' </summary>
+    Sub PromptServer()
         'IMAP Server address and port
         W(DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): ", currentLang), False, ColTypes.Input)
         Dim IMAP_Address As String = Console.ReadLine
         Dim IMAP_Port As Integer = 0
         Wdbg("I", "IMAP Server: ""{0}""", IMAP_Address)
+        W(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): ", currentLang), False, ColTypes.Input)
+        Dim SMTP_Address As String = Console.ReadLine
+        Dim SMTP_Port As Integer = 587
+        Wdbg("I", "SMTP Server: ""{0}""", SMTP_Address)
+        ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port)
+    End Sub
 
+    Sub ParseAddresses(ByVal IMAP_Address As String, ByVal IMAP_Port As Integer, ByVal SMTP_Address As String, ByVal SMTP_Port As Integer)
         'If the address is <address>:[port]
         If IMAP_Address.Contains(":") Then
-            Wdbg("I", "Found colon in address. Separating...", Username)
+            Wdbg("I", "Found colon in address. Separating...", Mail_Authentication.UserName)
             IMAP_Port = CInt(IMAP_Address.Substring(IMAP_Address.IndexOf(":") + 1))
             IMAP_Address = IMAP_Address.Remove(IMAP_Address.IndexOf(":"))
             Wdbg("I", "Final address: {0}, Final port: {1}", IMAP_Address, IMAP_Port)
         End If
 
-        'SMTP Server address and port
-        W(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): ", currentLang), False, ColTypes.Input)
-        Dim SMTP_Address As String = Console.ReadLine
-        Dim SMTP_Port As Integer = 587
-        Wdbg("I", "SMTP Server: ""{0}""", SMTP_Address)
-
         'If the address is <address>:[port]
         If SMTP_Address.Contains(":") Then
-            Wdbg("I", "Found colon in address. Separating...", Username)
+            Wdbg("I", "Found colon in address. Separating...", Mail_Authentication.UserName)
             SMTP_Port = CInt(SMTP_Address.Substring(SMTP_Address.IndexOf(":") + 1))
             SMTP_Address = SMTP_Address.Remove(SMTP_Address.IndexOf(":"))
             Wdbg("I", "Final address: {0}, Final port: {1}", SMTP_Address, SMTP_Port)
@@ -80,6 +98,120 @@ Module MailLogin
         Mail_Authentication.Domain = IMAP_Address
         ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port)
     End Sub
+
+    ''' <summary>
+    ''' Detects servers based on dictionary
+    ''' </summary>
+    ''' <param name="Address">E-mail address</param>
+    ''' <returns>Server address. Otherwise, null.</returns>
+    Public Function ServerDetect(ByVal Address As String, ByVal Type As ServerType) As String
+        If Address.EndsWith("@gmail.com") Or Address.EndsWith("@googlemail.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.gmail.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.gmail.com:587"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@aol.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.aol.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.aol.com:587"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@outlook.com") Or Address.EndsWith("@hotmail.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap-mail.outlook.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp-mail.outlook.com:587"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@yahoo.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.mail.yahoo.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.mail.yahoo.com"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@yahoo.co.uk") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.mail.yahoo.co.uk"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.mail.yahoo.co.uk"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@yahoo.au") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.mail.yahoo.au"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.mail.yahoo.au"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@verizon.net") Then
+            If Type = ServerType.IMAP Then
+                Return "incoming.verizon.net"
+            ElseIf Type = ServerType.SMTP Then
+                Return "outgoing.verizon.net:587"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@att.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.att.yahoo.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.att.yahoo.com"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@zoho.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.zoho.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.zoho.com"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@ntlworld.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.ntlworld.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.ntlworld.com"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@mail.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.mail.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.mail.com:587"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@fastmail.fm") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.fastmail.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.fastmail.com:587"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@gmx.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.gmx.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.gmx.com"
+            Else
+                Return ""
+            End If
+        End If
+        Return ""
+    End Function
 
     ''' <summary>
     ''' Tries to connect to specified address and port with specified credentials

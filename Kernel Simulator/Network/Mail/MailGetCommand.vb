@@ -127,6 +127,7 @@ Module MailGetCommand
                     W(DoTranslation("Enter file paths to attachments. Press ENTER on a blank path to confirm.", currentLang), True, ColTypes.Neutral)
                     Dim PathLine As String = " "
                     While Not PathLine = ""
+                        W("> ", False, ColTypes.Input)
                         PathLine = Console.ReadLine
                         If Not PathLine = "" Then
                             PathLine = NeutralizePath(PathLine)
