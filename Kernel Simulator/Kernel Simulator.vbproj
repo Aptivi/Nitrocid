@@ -291,6 +291,7 @@
     <Compile Include="Network\FTP\Transfer\FTPTransfer.vb" />
     <Compile Include="Network\Mail\MailDirectory\MailDirectory.vb" />
     <Compile Include="Network\Mail\MailDirectory\MailManager.vb" />
+    <Compile Include="Network\Mail\MailPGP\PGPContext.vb" />
     <Compile Include="Network\Mail\MailTransfer\MailTransfer.vb" />
     <Compile Include="Network\NetworkTools.vb" />
     <Compile Include="Network\RemoteDebug\RemoteDebugCmd.vb" />

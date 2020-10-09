@@ -21,6 +21,7 @@ Imports System.Text
 Imports System.Threading
 Imports Microsoft.VisualBasic.FileIO
 Imports MimeKit
+Imports MimeKit.Cryptography
 
 Module MailGetCommand
 
@@ -93,7 +94,17 @@ Module MailGetCommand
                         W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
                     End If
                 End If
-            ElseIf cmd = "send" Then
+            ElseIf cmd = "readenc" Then
+                If FullArgsLQ?.Count > 0 Then
+                    RequiredArgsProvided = True
+                    Wdbg("I", "Message number is numeric? {0}", FullArgsLQ(0).IsNumeric)
+                    If FullArgsLQ(0).IsNumeric Then
+                        MailPrintMessage(FullArgsLQ(0), True)
+                    Else
+                        W(DoTranslation("Message number is not a numeric value.", currentLang), True, ColTypes.Err)
+                    End If
+                End If
+            ElseIf cmd = "send" Or cmd = "sendenc" Then
                 RequiredArgsProvided = True
                 Dim Receiver, Subject As String
                 Dim Body As New BodyBuilder
@@ -140,12 +151,22 @@ Module MailGetCommand
 
                     'Send the message
                     W(DoTranslation("Sending message...", currentLang), True, ColTypes.Neutral)
-                    If MailSendMessage(Receiver, Subject, Body.ToMessageBody) Then
-                        Wdbg("I", "Message sent.")
-                        W(DoTranslation("Message sent.", currentLang), True, ColTypes.Neutral)
+                    If cmd = "sendenc" Then
+                        If MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody) Then
+                            Wdbg("I", "Message sent.")
+                            W(DoTranslation("Message sent.", currentLang), True, ColTypes.Neutral)
+                        Else
+                            Wdbg("E", "See debug output to find what's wrong.")
+                            W(DoTranslation("Error sending message.", currentLang), True, ColTypes.Err)
+                        End If
                     Else
-                        Wdbg("E", "See debug output to find what's wrong.")
-                        W(DoTranslation("Error sending message.", currentLang), True, ColTypes.Err)
+                        If MailSendMessage(Receiver, Subject, Body.ToMessageBody) Then
+                            Wdbg("I", "Message sent.")
+                            W(DoTranslation("Message sent.", currentLang), True, ColTypes.Neutral)
+                        Else
+                            Wdbg("E", "See debug output to find what's wrong.")
+                            W(DoTranslation("Error sending message.", currentLang), True, ColTypes.Err)
+                        End If
                     End If
                 Else
                     Wdbg("E", "Mail format unsatisfied.")

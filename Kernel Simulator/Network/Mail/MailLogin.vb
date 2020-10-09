@@ -18,6 +18,7 @@
 
 Imports MailKit.Net.Imap
 Imports MailKit.Net.Smtp
+Imports MimeKit.Cryptography
 
 Module MailLogin
 
@@ -222,6 +223,8 @@ Module MailLogin
     ''' <param name="SmtpPort">A port of the SMTP server</param>
     Sub ConnectShell(ByVal Address As String, ByVal Port As Integer, ByVal SmtpAddress As String, ByVal SmtpPort As Integer)
         Try
+            CryptographyContext.Register(GetType(PGPContext))
+
             'IMAP Connection
             W(DoTranslation("Connecting to {0}...", currentLang), True, ColTypes.Neutral, Address)
             Wdbg("I", "Connecting to IMAP Server {0}:{1} with SSL...", Address, Port)

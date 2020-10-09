@@ -16,8 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+Imports System.Text
 Imports MailKit
 Imports MimeKit
+Imports MimeKit.Cryptography
 Imports MimeKit.Text
 
 Public Module MailTransfer
@@ -26,7 +29,7 @@ Public Module MailTransfer
     ''' Prints content of message to console
     ''' </summary>
     ''' <param name="MessageNum">Message number</param>
-    Public Sub MailPrintMessage(ByVal MessageNum As Integer)
+    Public Sub MailPrintMessage(ByVal MessageNum As Integer, Optional ByVal Decrypt As Boolean = False)
         Dim Message As Integer = MessageNum - 1
         Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
         Wdbg("I", "Message number {0}", Message)
@@ -88,13 +91,31 @@ Public Module MailTransfer
             'Prepare body
             Console.WriteLine()
             Wdbg("I", "Displaying body...")
-            W(Msg.GetTextBody(Text.TextFormat.Plain), True, ColTypes.HelpDef)
+            Dim DecryptedMessage As Dictionary(Of String, MimeEntity)
+            If Decrypt Then
+                DecryptedMessage = DecryptMessage(Msg)
+                Dim DecryptedEntity As MimeEntity = DecryptedMessage("Body")
+                W(CType(DecryptedEntity, TextPart).Text, True, ColTypes.HelpDef)
+            Else
+                W(Msg.GetTextBody(TextFormat.Plain), True, ColTypes.HelpDef)
+            End If
             Console.WriteLine()
 
             'Populate attachments
+#Disable Warning BC42104
             If Msg.Attachments.Count > 0 Then
                 W(DoTranslation("Attachments:", currentLang), True, ColTypes.Neutral)
-                For Each Attachment As MimeEntity In Msg.Attachments
+                Dim AttachmentEntities As New List(Of MimeEntity)
+                If Decrypt Then
+                    For DecryptedEntityNumber As Integer = 0 To DecryptedMessage.Count - 1
+                        If DecryptedMessage.Keys(DecryptedEntityNumber).Contains("Attachment") Then
+                            AttachmentEntities.Add(DecryptedMessage("Attachment " & DecryptedEntityNumber))
+                        End If
+                    Next
+                Else
+                    AttachmentEntities = Msg.Attachments
+                End If
+                For Each Attachment As MimeEntity In AttachmentEntities
                     Wdbg("I", "Attachment ID: {0}", Attachment.ContentId)
                     If TypeOf Attachment Is MessagePart Then
                         Wdbg("I", "Attachment is a message.")
@@ -106,8 +127,35 @@ Public Module MailTransfer
                     End If
                 Next
             End If
+#Enable Warning BC42104
         End SyncLock
     End Sub
+
+    ''' <summary>
+    ''' Decrypts a message
+    ''' </summary>
+    ''' <param name="Text">Text part</param>
+    ''' <returns>A decrypted message, or null if unsuccessful.</returns>
+    Public Function DecryptMessage(ByVal Text As MimeMessage) As Dictionary(Of String, MimeEntity)
+        Dim EncryptedDict As New Dictionary(Of String, MimeEntity)
+        If TypeOf Text.Body Is MultipartEncrypted Then
+            Dim Encrypted = CType(Text.Body, MultipartEncrypted)
+            EncryptedDict.Add("Body", Encrypted.Decrypt(New PGPContext))
+        Else
+            EncryptedDict.Add("Body", Text.Body)
+        End If
+        Dim AttachmentNumber As Integer = 1
+        For Each TextAttachment As MimeEntity In Text.Attachments
+            If TypeOf TextAttachment Is MultipartEncrypted Then
+                Dim Encrypted = CType(TextAttachment, MultipartEncrypted)
+                EncryptedDict.Add("Attachment " & AttachmentNumber, Encrypted.Decrypt(New PGPContext))
+            Else
+                EncryptedDict.Add("Attachment " & AttachmentNumber, TextAttachment)
+            End If
+            AttachmentNumber += 1
+        Next
+        Return EncryptedDict
+    End Function
 
     ''' <summary>
     ''' Sends a message
@@ -156,6 +204,35 @@ Public Module MailTransfer
                 FinalMessage.Subject = Subject
                 Wdbg("I", "Added subject to FinalMessage.Subject.")
                 FinalMessage.Body = Body
+                Wdbg("I", "Added body to FinalMessage.Body (plain text). Sending message...")
+                SMTP_Client.Send(FinalMessage)
+                Return True
+            Catch ex As Exception
+                Wdbg("E", "Failed to send message: {0}", ex.Message)
+                WStkTrc(ex)
+            End Try
+            Return False
+        End SyncLock
+    End Function
+
+    ''' <summary>
+    ''' Sends an encrypted message with advanced features like attachments
+    ''' </summary>
+    ''' <param name="Recipient">Recipient name</param>
+    ''' <param name="Subject">Subject</param>
+    ''' <param name="Body">Body</param>
+    ''' <returns>True if successful; False if unsuccessful.</returns>
+    Public Function MailSendEncryptedMessage(ByVal Recipient As String, ByVal Subject As String, ByVal Body As MimeEntity) As String
+        SyncLock SMTP_Client.SyncRoot
+            Try
+                Dim FinalMessage As New MimeMessage
+                FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
+                Wdbg("I", "Added sender to FinalMessage.From.")
+                FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
+                Wdbg("I", "Added address to FinalMessage.To.")
+                FinalMessage.Subject = Subject
+                Wdbg("I", "Added subject to FinalMessage.Subject.")
+                FinalMessage.Body = MultipartEncrypted.Encrypt(New PGPContext, FinalMessage.To.Mailboxes, Body)
                 Wdbg("I", "Added body to FinalMessage.Body (plain text). Sending message...")
                 SMTP_Client.Send(FinalMessage)
                 Return True
