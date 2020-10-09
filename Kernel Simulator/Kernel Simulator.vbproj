@@ -189,7 +189,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>32.4.5</Version>
+      <Version>32.4.6</Version>
     </PackageReference>
     <PackageReference Include="MadMilkman.Ini">
       <Version>1.0.6</Version>
