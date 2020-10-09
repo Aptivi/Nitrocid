@@ -95,7 +95,27 @@ Public Module MailTransfer
             If Decrypt Then
                 DecryptedMessage = DecryptMessage(Msg)
                 Dim DecryptedEntity As MimeEntity = DecryptedMessage("Body")
-                W(CType(DecryptedEntity, TextPart).Text, True, ColTypes.HelpDef)
+                Dim DecryptedStream As New MemoryStream
+                If TypeOf DecryptedEntity Is Multipart Then
+                    Dim MultiEntity As Multipart = CType(DecryptedEntity, Multipart)
+                    If Not IsNothing(MultiEntity) Then
+                        For EntityNumber As Integer = 0 To MultiEntity.Count - 1
+                            If Not MultiEntity(EntityNumber).IsAttachment Then
+                                MultiEntity(EntityNumber).WriteTo(DecryptedStream, True)
+                                DecryptedStream.Position = 0
+                                Dim DecryptedByte(DecryptedStream.Length) As Byte
+                                DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
+                                W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.HelpDef)
+                            End If
+                        Next
+                    End If
+                Else
+                    DecryptedEntity.WriteTo(DecryptedStream, True)
+                    DecryptedStream.Position = 0
+                    Dim DecryptedByte(DecryptedStream.Length) As Byte
+                    DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
+                    W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.HelpDef)
+                End If
             Else
                 W(Msg.GetTextBody(TextFormat.Plain), True, ColTypes.HelpDef)
             End If
@@ -109,7 +129,16 @@ Public Module MailTransfer
                 If Decrypt Then
                     For DecryptedEntityNumber As Integer = 0 To DecryptedMessage.Count - 1
                         If DecryptedMessage.Keys(DecryptedEntityNumber).Contains("Attachment") Then
-                            AttachmentEntities.Add(DecryptedMessage("Attachment " & DecryptedEntityNumber))
+                            AttachmentEntities.Add(DecryptedMessage.Values(DecryptedEntityNumber))
+                        ElseIf DecryptedMessage.Keys(DecryptedEntityNumber) = "Body" And TypeOf DecryptedMessage("Body") Is Multipart Then
+                            Dim MultiEntity As Multipart = CType(DecryptedMessage("Body"), Multipart)
+                            If Not IsNothing(MultiEntity) Then
+                                For EntityNumber As Integer = 0 To MultiEntity.Count - 1
+                                    If MultiEntity(EntityNumber).IsAttachment Then
+                                        AttachmentEntities.Add(MultiEntity(EntityNumber))
+                                    End If
+                                Next
+                            End If
                         End If
                     Next
                 Else
