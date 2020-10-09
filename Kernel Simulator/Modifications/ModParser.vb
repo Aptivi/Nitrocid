@@ -172,10 +172,10 @@ Public Module ModParser
                         Wdbg("I", "Stopping part {0} v{1}", script(ScriptPart).ModPart, script(ScriptPart).Version)
                         script(ScriptPart).StopMod()
                         If script(ScriptPart).Name <> "" And script(ScriptPart).Version <> "" Then
-                            W("{0} v{1} stopped", True, ColTypes.Neutral, script(ScriptPart).ModPart, script(ScriptPart).Version)
+                            W(DoTranslation("{0} v{1} stopped", currentLang), True, ColTypes.Neutral, script(ScriptPart).ModPart, script(ScriptPart).Version)
                         End If
                     Next
-                    W("Mod {0} stopped", True, ColTypes.Neutral, scripts.GetKeyFromValue(script))
+                    W(DoTranslation("Mod {0} stopped", currentLang), True, ColTypes.Neutral, scripts.GetKeyFromValue(script))
                 Next
             Else
                 For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
@@ -261,7 +261,7 @@ Public Module ModParser
                 W(DoTranslation("Mod {0} does not have the version.", currentLang), True, ColTypes.Neutral, script.Name)
             ElseIf script.Name <> "" And script.Version <> "" Then
                 Wdbg("I", "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
-                W(DoTranslation("{0} v{1} started", currentLang), True, ColTypes.Neutral, script.Name, script.Version)
+                W(DoTranslation("{0} v{1} started", currentLang) + " ({2})", True, ColTypes.Neutral, script.Name, script.Version, script.ModPart)
             End If
             If script.Cmd <> "" And StartStop = True Then
                 If script.Def = "" Then
