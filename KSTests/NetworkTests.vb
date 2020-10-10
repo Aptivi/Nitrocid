@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS
+Imports System.Net.NetworkInformation
 
 <TestClass()> Public Class NetworkTests
 
@@ -36,6 +37,13 @@ Imports KS
         CurrDir = paths("Home")
         Assert.IsTrue(DownloadFile("https://datahub.io/datahq/1mb-test/r/1mb-test.csv", False), "Downloading file failed.")
         Assert.IsTrue(IO.File.Open(NeutralizePath("1mb-test.csv"), IO.FileMode.Open).Length <> 0, "Downloading file failed because length is zero.")
+    End Sub
+
+    ''' <summary>
+    ''' Tests pinging
+    ''' </summary>
+    <TestMethod()> Public Sub TestPingAddress()
+        Assert.IsTrue(PingAddress("www.google.com").Status = IPStatus.Success, "Pinging failed.")
     End Sub
 
 End Class
