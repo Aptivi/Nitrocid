@@ -18,6 +18,7 @@
 
 Imports System.ComponentModel
 Imports System.Net.NetworkInformation
+Imports System.Text
 
 Public Module NetworkTools
 
@@ -275,6 +276,19 @@ Public Module NetworkTools
             WriteWhere(DoTranslation("{0} MB of {1} MB uploaded.", currentLang) + "    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesSent / 1024 / 1024, 2), FormatNumber(e.TotalBytesToSend / 1024 / 1024, 2))
         End If
     End Sub
+
+    ''' <summary>
+    ''' Pings an address
+    ''' </summary>
+    ''' <param name="Address">Target address</param>
+    ''' <returns>A ping reply status</returns>
+    Public Function PingAddress(ByVal Address As String) As PingReply
+        Dim Pinger As New Ping
+        Dim PingerOpts As New PingOptions With {.DontFragment = True}
+        Dim PingBuffer() As Byte = Encoding.ASCII.GetBytes("Kernel Simulator")
+        Dim PingTimeout As Integer = 60000 '60 seconds = 1 minute. timeout of Pinger.Send() takes milliseconds.
+        Return Pinger.Send(Address, PingTimeout, PingBuffer, PingerOpts)
+    End Function
 
     ''' <summary>
     ''' Changes host name
