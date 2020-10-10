@@ -134,21 +134,13 @@ Copyright (c) 2016-present, Robin Rodricks
 
 License (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 
-### LibVLCSharp
+### MailKit
 
-Source code: https://code.videolan.org/videolan/LibVLCSharp
+Source code: https://github.com/jstedfast/MailKit/
 
-Copyright (c) 1996-2020 the VideoLAN team
+Copyright (c) 2013-present, .NET Foundation and Contributors
 
-License (LGPLv2.1): https://code.videolan.org/videolan/LibVLCSharp/blob/3.x/LICENSE
-
-### VLC (used by LibVLCSharp)
-
-Source code: https://code.videolan.org/videolan/vlc
-
-Copyright (c) 1996-2020 the VideoLAN team
-
-License (GNU GPL 2.0): https://code.videolan.org/videolan/vlc/blob/master/COPYING
+License (MIT): https://github.com/jstedfast/MailKit/blob/master/LICENSE
 
 ### SSH.NET
 
