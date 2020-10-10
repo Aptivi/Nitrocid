@@ -173,7 +173,7 @@ Public Module GetCommand
 
                 If eqargs?.Count - 1 >= 0 Then
                     If Not RDebugBlocked.Contains(eqargs(0)) Then
-                        If BlockDevice(eqargs(0)) Then
+                        If AddToBlockList(eqargs(0)) Then
                             W(DoTranslation("{0} can't join remote debug now.", currentLang), True, ColTypes.Neutral, eqargs(0))
                         Else
                             W(DoTranslation("Failed to block {0}.", currentLang), True, ColTypes.Neutral, eqargs(0))
@@ -1028,7 +1028,7 @@ Public Module GetCommand
                 If requestedCommand <> "unblockdbgdev" Then
                     If eqargs?.Count - 1 >= 0 Then
                         If RDebugBlocked.Contains(eqargs(0)) Then
-                            If UnblockDevice(eqargs(0)) Then
+                            If RemoveFromBlockList(eqargs(0)) Then
                                 W(DoTranslation("{0} can now join remote debug again.", currentLang), True, ColTypes.Neutral, eqargs(0))
                             Else
                                 W(DoTranslation("Failed to unblock {0}.", currentLang), True, ColTypes.Neutral, eqargs(0))

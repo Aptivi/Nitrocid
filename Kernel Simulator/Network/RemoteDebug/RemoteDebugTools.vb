@@ -19,16 +19,6 @@
 Public Module RemoteDebugTools
 
     ''' <summary>
-    ''' Blocks a remote debug device
-    ''' </summary>
-    ''' <param name="IP">An IP address for device</param>
-    ''' <returns>True if successful; False if unsuccessful.</returns>
-    <Obsolete("Use AddToBlockList.")>
-    Public Function BlockDevice(ByVal IP As String) As Boolean
-        Return AddToBlockList(IP)
-    End Function
-
-    ''' <summary>
     ''' Disconnects a specified debug device
     ''' </summary>
     ''' <param name="IPAddr">An IP address of the connected debug device</param>
@@ -52,16 +42,6 @@ Public Module RemoteDebugTools
             Throw New EventsAndExceptions.RemoteDebugDeviceNotFoundException(DoTranslation("Debug device {0} not found.", currentLang).FormatString(IPAddr))
         End If
     End Sub
-
-    ''' <summary>
-    ''' Unblocks a remote debug device
-    ''' </summary>
-    ''' <param name="IP">A blocked IP address for device</param>
-    ''' <returns>True if successful; False if unsuccessful.</returns>
-    <Obsolete("Use RemoveFromBlockList.")>
-    Public Function UnblockDevice(ByVal IP As String) As Boolean
-        Return RemoveFromBlockList(IP)
-    End Function
 
     ''' <summary>
     ''' Adds device to block list
