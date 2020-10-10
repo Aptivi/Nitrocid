@@ -192,6 +192,7 @@ Public Module NetworkTools
         WClient.DownloadFileAsync(New Uri(URL), NeutralizePath(FileName))
         While Not DFinish
         End While
+        DFinish = False
         If IsError Then
             Throw ReasonError
         Else
