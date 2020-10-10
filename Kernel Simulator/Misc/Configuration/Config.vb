@@ -84,6 +84,7 @@ Public Module Config
                         New IniKey(ksconf, "Debug Port", DebugPort),
                         New IniKey(ksconf, "Remote Debug Default Nick Prefix", RDebugDNP),
                         New IniKey(ksconf, "Download Retry Times", DRetries),
+                        New IniKey(ksconf, "Show progress bar while downloading from ""get"" command", ShowProgress),
                         New IniKey(ksconf, "Log FTP username", FTPLoggerUsername),
                         New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
                         New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly)))
@@ -169,6 +170,7 @@ Public Module Config
                         New IniKey(ksconf, "Debug Port", 3014),
                         New IniKey(ksconf, "Remote Debug Default Nick Prefix", "KSUser"),
                         New IniKey(ksconf, "Download Retry Times", 3),
+                        New IniKey(ksconf, "Show progress bar while downloading from ""get"" command", "True"),
                         New IniKey(ksconf, "Log FTP username", "False"),
                         New IniKey(ksconf, "Log FTP IP address", "False"),
                         New IniKey(ksconf, "Return only first FTP profile", "False")))
@@ -236,6 +238,7 @@ Public Module Config
             ksconf.Sections("Network").Keys("Debug Port").TrailingComment.Text = "Specifies the remote debugger port."
             ksconf.Sections("Network").Keys("Remote Debug Default Nick Prefix").TrailingComment.Text = "The name, which will be prepended to the random device ID."
             ksconf.Sections("Network").Keys("Download Retry Times").TrailingComment.Text = "How many times does the ""get"" command retry the download before assuming failure?"
+            ksconf.Sections("Network").Keys("Show progress bar while downloading from ""get"" command").TrailingComment.Text = "If true, it makes ""get"" show the progress bar while downloading."
             ksconf.Sections("Network").Keys("Log FTP username").TrailingComment.Text = "Whether or not to log FTP username in the debugger log."
             ksconf.Sections("Network").Keys("Log FTP IP address").TrailingComment.Text = "Whether or not to log FTP IP address in the debugger log."
             ksconf.Sections("Network").Keys("Return only first FTP profile").TrailingComment.Text = "Whether or not to return only first successful FTP profile when polling for profiles."
@@ -392,6 +395,7 @@ Public Module Config
             If Integer.TryParse(configReader.Sections("Network").Keys("Debug Port").Value, 0) Then DebugPort = configReader.Sections("Network").Keys("Debug Port").Value
             RDebugDNP = configReader.Sections("Network").Keys("Remote Debug Default Nick Prefix").Value
             If Integer.TryParse(configReader.Sections("Network").Keys("Download Retry Times").Value, 0) Then DRetries = configReader.Sections("Network").Keys("Download Retry Times").Value
+            ShowProgress = configReader.Sections("Network").Keys("Show progress bar while downloading from ""get"" command").Value
             FTPLoggerUsername = configReader.Sections("Network").Keys("Log FTP username").Value
             FTPLoggerIP = configReader.Sections("Network").Keys("Log FTP IP address").Value
             FTPFirstProfileOnly = configReader.Sections("Network").Keys("Return only first FTP profile").Value

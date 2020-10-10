@@ -24,7 +24,7 @@ Public Module NetworkTools
     'Variables
     Public adapterNumber As Long
     Public DRetries As Integer = 3
-    Private DFinish As Boolean
+    Friend DFinish As Boolean
 
     ''' <summary>
     ''' Print each of adapters' properties to the console.
@@ -167,58 +167,37 @@ Public Module NetworkTools
                InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Tunnel
     End Function
 
-    Dim IsError As Boolean
-    Dim ReasonError As Exception
+    Friend IsError As Boolean
+    Friend ReasonError As Exception
 
     ''' <summary>
     ''' Downloads a file to the current working directory.
     ''' </summary>
     ''' <param name="URL">A URL to a file</param>
-    Sub DownloadFile(ByVal URL As String)
-        Dim RetryCount As Integer = 1
-        Wdbg("I", "URL: {0}", URL)
-        While Not RetryCount > DRetries
-            Try
-                If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
-                    If Not URL.StartsWith(" ") Then
-                        'Limit the filename to the name without any URL arguments
-                        Dim FileName As String = URL.Split("/").Last()
-                        Wdbg("I", "Prototype Filename: {0}", FileName)
-                        If FileName.Contains("?") Then
-                            FileName = FileName.Remove(FileName.IndexOf("?"c))
-                        End If
-                        Wdbg("I", "Finished Filename: {0}", FileName)
+    ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
+    Public Function DownloadFile(ByVal URL As String, ByVal ShowProgress As Boolean) As Boolean
+        'Limit the filename to the name without any URL arguments
+        Dim FileName As String = URL.Split("/").Last()
+        Wdbg("I", "Prototype Filename: {0}", FileName)
+        If FileName.Contains("?") Then
+            FileName = FileName.Remove(FileName.IndexOf("?"c))
+        End If
+        Wdbg("I", "Finished Filename: {0}", FileName)
 
-                        'Download a file
-                        Wdbg("I", "Directory location: {0}", CurrDir)
-                        W(DoTranslation("While maintaining stable connection, it is downloading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, CurrDir)
-                        Dim WClient As New WebClient
-                        AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
-                        AddHandler WClient.DownloadFileCompleted, AddressOf DownloadChecker
-                        WClient.DownloadFileAsync(New Uri(URL), CurrDir + "/" + FileName)
-                        While Not DFinish
-                        End While
-                        If IsError Then
-                            Throw ReasonError
-                        Else
-                            W(vbNewLine + DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
-                        End If
-                    Else
-                        W(DoTranslation("Specify the address", currentLang), True, ColTypes.Err)
-                    End If
-                Else
-                    W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server.", currentLang), True, ColTypes.Err)
-                End If
-                Exit Sub
-            Catch ex As Exception
-                DFinish = False
-                W(DoTranslation("Download failed in try {0}: {1}", currentLang), True, ColTypes.Err, RetryCount, ex.Message)
-                RetryCount += 1
-                Wdbg("I", "Try count: {0}", RetryCount)
-                WStkTrc(ex)
-            End Try
+        'Download a file
+        Wdbg("I", "Directory location: {0}", CurrDir)
+        Dim WClient As New WebClient
+        If ShowProgress Then AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
+        AddHandler WClient.DownloadFileCompleted, AddressOf DownloadChecker
+        WClient.DownloadFileAsync(New Uri(URL), NeutralizePath(FileName))
+        While Not DFinish
         End While
-    End Sub
+        If IsError Then
+            Throw ReasonError
+        Else
+            Return True
+        End If
+    End Function
 
     ''' <summary>
     ''' Thread to check for errors on download completion.
@@ -228,8 +207,8 @@ Public Module NetworkTools
         If Not IsNothing(e.Error) Then
             ReasonError = e.Error
             IsError = True
-            DFinish = True
         End If
+        DFinish = True
     End Sub
 
     ''' <summary>
@@ -239,9 +218,6 @@ Public Module NetworkTools
         If Not DFinish Then
             Console.SetCursorPosition(0, Console.CursorTop)
             WriteWhere(DoTranslation("{0} MB of {1} MB downloaded.", currentLang) + "    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesReceived / 1024 / 1024, 2), FormatNumber(e.TotalBytesToReceive / 1024 / 1024, 2))
-            If e.BytesReceived = e.TotalBytesToReceive Then
-                DFinish = True
-            End If
         End If
     End Sub
 

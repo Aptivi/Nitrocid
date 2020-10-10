@@ -28,4 +28,14 @@ Imports KS
         Assert.IsTrue(ChangeHostname("NewHost"), "Changing hostname failed. Expected True, got False.")
     End Sub
 
+    ''' <summary>
+    ''' Tests file download
+    ''' </summary>
+    <TestMethod()> Public Sub TestDownloadFile()
+        InitPaths()
+        CurrDir = paths("Home")
+        Assert.IsTrue(DownloadFile("https://datahub.io/datahq/1mb-test/r/1mb-test.csv", False), "Downloading file failed.")
+        Assert.IsTrue(IO.File.Open(NeutralizePath("1mb-test.csv"), IO.FileMode.Open).Length <> 0, "Downloading file failed because length is zero.")
+    End Sub
+
 End Class

@@ -474,7 +474,32 @@ Public Module GetCommand
             ElseIf words(0) = "get" Then
 
                 If eqargs?.Count <> 0 Then
-                    DownloadFile(eqargs(0))
+                    Dim RetryCount As Integer = 1
+                    Dim URL As String = eqargs(0)
+                    Wdbg("I", "URL: {0}", URL)
+                    While Not RetryCount > DRetries
+                        Try
+                            If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
+                                If Not URL.StartsWith(" ") Then
+                                    W(DoTranslation("Downloading from {0}...", currentLang), True, ColTypes.Neutral, URL)
+                                    If DownloadFile(eqargs(0), ShowProgress) Then
+                                        W(vbNewLine + DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
+                                    End If
+                                Else
+                                    W(DoTranslation("Specify the address", currentLang), True, ColTypes.Err)
+                                End If
+                            Else
+                                W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server.", currentLang), True, ColTypes.Err)
+                            End If
+                            Exit Sub
+                        Catch ex As Exception
+                            DFinish = False
+                            W(DoTranslation("Download failed in try {0}: {1}", currentLang), True, ColTypes.Err, RetryCount, ex.Message)
+                            RetryCount += 1
+                            Wdbg("I", "Try count: {0}", RetryCount)
+                            WStkTrc(ex)
+                        End Try
+                    End While
                     Done = True
                 End If
 

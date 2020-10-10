@@ -52,6 +52,7 @@ Module Flags
     Public HiddenFiles As Boolean                               'Whether or not to show hidden files
     Public CheckUpdateStart As Boolean = True                   'Whether or not to check for updates on startup
     Public LangChangeCulture As Boolean                         'Change culture when changing language
+    Public ShowProgress As Boolean = True                       'Shows the progress bar while downloading using "get" command.
 
     'Private flags
     Friend NotifyConfigError As Boolean                        'Notifies user as soon as the kernel finished booting if there is an error reading configuration.
