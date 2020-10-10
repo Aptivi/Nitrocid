@@ -19,6 +19,7 @@
 Imports KS
 Imports System.Net.NetworkInformation
 
+'Warning: Don't implement the unit tests related to downloading or uploading files. This causes AppVeyor to choke.
 <TestClass()> Public Class NetworkTests
 
     ''' <summary>
