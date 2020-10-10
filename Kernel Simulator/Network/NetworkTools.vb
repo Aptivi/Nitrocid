@@ -24,7 +24,9 @@ Public Module NetworkTools
     'Variables
     Public adapterNumber As Long
     Public DRetries As Integer = 3
+    Public URetries As Integer = 3
     Friend DFinish As Boolean
+    Friend UFinish As Boolean
 
     ''' <summary>
     ''' Print each of adapters' properties to the console.
@@ -201,10 +203,62 @@ Public Module NetworkTools
     End Function
 
     ''' <summary>
+    ''' Uploads a file from the current working directory.
+    ''' </summary>
+    ''' <param name="URL">A URL</param>
+    ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
+    Public Function UploadFile(ByVal URL As String, ByVal ShowProgress As Boolean) As Boolean
+        'Limit the filename to the name without any URL arguments
+        Dim FileName As String = URL.Split("/").Last()
+        Wdbg("I", "Prototype Filename: {0}", FileName)
+        If FileName.Contains("?") Then
+            FileName = FileName.Remove(FileName.IndexOf("?"c))
+        End If
+        Wdbg("I", "Finished Filename: {0}", FileName)
+
+        'Download a file
+        Wdbg("I", "Directory location: {0}", CurrDir)
+        Dim WClient As New WebClient
+        If ShowProgress Then AddHandler WClient.UploadProgressChanged, AddressOf UploadManager
+        AddHandler WClient.UploadFileCompleted, AddressOf UploadChecker
+        WClient.UploadFileAsync(New Uri(URL), NeutralizePath(FileName))
+        While Not UFinish
+        End While
+        UFinish = False
+        If IsError Then
+            Throw ReasonError
+        Else
+            Return True
+        End If
+    End Function
+
+    ''' <summary>
     ''' Thread to check for errors on download completion.
     ''' </summary>
     Private Sub DownloadChecker(sender As Object, e As AsyncCompletedEventArgs)
         Wdbg("I", "Download complete. Error: {0}", e.Error?.Message)
+        If Not IsNothing(e.Error) Then
+            ReasonError = e.Error
+            IsError = True
+        End If
+        UFinish = True
+    End Sub
+
+    ''' <summary>
+    ''' Thread to repeatedly report the download progress to the console.
+    ''' </summary>
+    Private Sub DownloadManager(sender As Object, e As DownloadProgressChangedEventArgs)
+        If Not DFinish Then
+            Console.SetCursorPosition(0, Console.CursorTop)
+            WriteWhere(DoTranslation("{0} MB of {1} MB downloaded.", currentLang) + "    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesReceived / 1024 / 1024, 2), FormatNumber(e.TotalBytesToReceive / 1024 / 1024, 2))
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Thread to check for errors on download completion.
+    ''' </summary>
+    Private Sub UploadChecker(sender As Object, e As AsyncCompletedEventArgs)
+        Wdbg("I", "Upload complete. Error: {0}", e.Error?.Message)
         If Not IsNothing(e.Error) Then
             ReasonError = e.Error
             IsError = True
@@ -215,10 +269,10 @@ Public Module NetworkTools
     ''' <summary>
     ''' Thread to repeatedly report the download progress to the console.
     ''' </summary>
-    Private Sub DownloadManager(sender As Object, e As DownloadProgressChangedEventArgs)
+    Private Sub UploadManager(sender As Object, e As UploadProgressChangedEventArgs)
         If Not DFinish Then
             Console.SetCursorPosition(0, Console.CursorTop)
-            WriteWhere(DoTranslation("{0} MB of {1} MB downloaded.", currentLang) + "    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesReceived / 1024 / 1024, 2), FormatNumber(e.TotalBytesToReceive / 1024 / 1024, 2))
+            WriteWhere(DoTranslation("{0} MB of {1} MB uploaded.", currentLang) + "    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesSent / 1024 / 1024, 2), FormatNumber(e.TotalBytesToSend / 1024 / 1024, 2))
         End If
     End Sub
 

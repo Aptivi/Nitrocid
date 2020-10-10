@@ -615,6 +615,39 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "put" Then
+
+                If eqargs?.Count <> 0 Then
+                    Dim RetryCount As Integer = 1
+                    Dim FileName As String = NeutralizePath(eqargs(0))
+                    Dim URL As String = eqargs(1)
+                    Wdbg("I", "URL: {0}", URL)
+                    While Not RetryCount > URetries
+                        Try
+                            If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
+                                If Not URL.StartsWith(" ") Then
+                                    W(DoTranslation("Uploading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, URL)
+                                    If UploadFile(eqargs(0), ShowProgress) Then
+                                        W(vbNewLine + DoTranslation("Upload has completed.", currentLang), True, ColTypes.Neutral)
+                                    End If
+                                Else
+                                    W(DoTranslation("Specify the address", currentLang), True, ColTypes.Err)
+                                End If
+                            Else
+                                W(DoTranslation("Please use ""ftp"" if you are going to upload files to the FTP server.", currentLang), True, ColTypes.Err)
+                            End If
+                            Exit Sub
+                        Catch ex As Exception
+                            UFinish = False
+                            W(DoTranslation("Upload failed in try {0}: {1}", currentLang), True, ColTypes.Err, RetryCount, ex.Message)
+                            RetryCount += 1
+                            Wdbg("I", "Try count: {0}", RetryCount)
+                            WStkTrc(ex)
+                        End Try
+                    End While
+                    Done = True
+                End If
+
             ElseIf requestedCommand = "reloadconfig" Then
 
                 'Reload configuration

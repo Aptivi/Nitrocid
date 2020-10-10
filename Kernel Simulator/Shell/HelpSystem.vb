@@ -70,6 +70,8 @@ Public Module HelpSystem
                                                               {"move", DoTranslation("Moves a file to another directory", currentLang)},
                                                               {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
                                                               {"perm", DoTranslation("Manage permissions for users", currentLang)},
+                                                              {"ping", DoTranslation("Pings an address", currentLang)},
+                                                              {"put", DoTranslation("Uploads a file to specified website", currentLang)},
                                                               {"reboot", DoTranslation("Restarts your computer (WARNING: No syncing, because it is not a final kernel)", currentLang)},
                                                               {"reloadconfig", DoTranslation("Reloads configuration file that is edited.", currentLang)},
                                                               {"reloadmods", DoTranslation("Reloads mods.", currentLang)},
@@ -331,6 +333,10 @@ Public Module HelpSystem
         ElseIf command = "ping" Then
 
             W(DoTranslation("Usage:", currentLang) + " ping <Address> [repeatTimes]", True, ColTypes.Neutral)
+
+        ElseIf command = "put" Then
+
+            W(DoTranslation("Usage:", currentLang) + " put <FileName> <URL>", True, ColTypes.Neutral)
 
         ElseIf command = "rm" Then
 

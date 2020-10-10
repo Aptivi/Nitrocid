@@ -110,14 +110,15 @@ Public Module ToolPrompts
                     W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColoredShell"))
                     W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("simHelp"))
                 Case 5 'Network
-                    MaxOptions = 7
+                    MaxOptions = 8
                     W("1) " + DoTranslation("Debug Port", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DebugPort"))
                     W("2) " + DoTranslation("Remote Debug Default Nick Prefix", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("RDebugDNP"))
                     W("3) " + DoTranslation("Download Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DRetries"))
-                    W("4) " + DoTranslation("Show progress bar while downloading from ""get"" command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ShowProgress"))
-                    W("5) " + DoTranslation("Log FTP username", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerUsername"))
-                    W("6) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerIP"))
-                    W("7) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("FTPFirstProfileOnly"))
+                    W("4) " + DoTranslation("Upload Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("URetries"))
+                    W("5) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ShowProgress"))
+                    W("6) " + DoTranslation("Log FTP username", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerUsername"))
+                    W("7) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerIP"))
+                    W("8) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("FTPFirstProfileOnly"))
                 Case 6 'Screensaver
                     MaxOptions = 11
                     W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ScrnTimeout"))
@@ -326,11 +327,15 @@ Public Module ToolPrompts
                             KeyType = SettingsKeyType.SInt
                             KeyVar = "DRetries"
                             W("*) " + DoTranslation("Write how many times the ""get"" command should retry failed downloads. It must be numeric.", currentLang), True, ColTypes.Neutral)
-                        Case 4 'Show progress bar while downloading from "get" command
+                        Case 3 'Upload Retry Times
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = "URetries"
+                            W("*) " + DoTranslation("Write how many times the ""put"" command should retry failed uploads. It must be numeric.", currentLang), True, ColTypes.Neutral)
+                        Case 4 'Show progress bar while downloading or uploading from "get" or "put" command
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "ShowProgress"
-                            W(DoTranslation("If true, it makes ""get"" show the progress bar while downloading." + vbNewLine, currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("If true, it makes ""get"" or ""put"" show the progress bar while downloading or uploading." + vbNewLine, currentLang), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 5 'Log FTP username
