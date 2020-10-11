@@ -656,3 +656,232 @@ Bloquer un périphérique de débogage par adresse IP
 {0} n'est pas encore bloqué.
 Erreur lors du chargement des paramètres
 Une erreur s'est produite lors du chargement des paramètres. Vous devrez peut-être vérifier le fichier de paramètres.
+- Étape 2: détection des mods et des économiseurs d'écran
+- Étape 3: connexion
+Sélectionnez la section:
+Sélectionnez l'option:
+Réglages généraux...
+Paramètres matériels ...
+Paramètres de connexion ...
+Paramètres du shell ...
+Paramètres réseau...
+Paramètres divers ...
+Enregistrer les paramètres
+Sortie
+L'option spécifiée {0} n'est pas valide.
+La réponse doit être numérique.
+Demander des arguments au démarrage
+Déclencheur du mode maintenance
+Changer le mot de passe root ...
+Rechercher des mises à jour au démarrage
+Sonde silencieuse
+Probe RAM Slots
+Afficher MOTD lors de la connexion
+Effacer l'écran lors de la connexion
+Afficher les noms d'utilisateur disponibles
+Coquille colorée
+Commande d'aide simplifiée
+Port de débogage
+Préfixe Nick par défaut du débogage distant
+Télécharger les heures de réessai
+Enregistrer le nom d'utilisateur FTP
+Adresse IP FTP du journal
+Renvoyer uniquement le premier profil FTP
+Afficher l'heure / la date dans le coin supérieur droit
+Délai d'attente de l'économiseur d'écran en ms
+Quota de taille de débogage en octets
+Mode d'analyse de taille
+Marquee au démarrage
+Heure et date longues
+Montrer les fichiers cachés
+Section non valide saisie. Veuillez revenir en arrière.
+Retourner...
+Activer
+Désactiver
+Numéro de clé non valide saisi. Veuillez revenir en arrière.
+Écrivez le mot de passe root à définir. Ne t'inquiète pas; le mot de passe est affiché sous forme d'étoiles.
+Activez «Modifier le mot de passe racine» pour utiliser cette option. Veuillez revenir en arrière.
+Changer le mot de passe root?
+Définir le mot de passe root ...
+Ecrivez un port de débogage distant. Il doit être numérique et ne doit pas être déjà utilisé. Sinon, le débogueur distant ne parviendra pas à ouvrir le port.
+Écrivez le préfixe de surnom de débogage distant par défaut.
+Indiquez combien de fois la commande "" get "" doit réessayer les téléchargements ayant échoué. Il doit être numérique.
+Écrivez quand lancer l'économiseur d'écran après des millisecondes spécifiées. Il doit être numérique.
+Écrivez le nombre d'octets que le journal de débogage peut stocker. Il doit être numérique.
+La réponse n'est peut-être pas négative.
+La réponse est invalide. Assurez-vous que la réponse est numérique pour les entrées de configuration qui nécessitent des nombres comme réponses.
+La variable {0} n'est trouvée sur aucun des modules.
+Modifie la configuration du noyau
+Paramètres de l'économiseur d'écran ...
+Activer 255 couleurs
+Voulez-vous rester connecté?
+Choix invalide. En supposant que non ...
+Aucun mods détecté. Sauter l'étape ...
+Changer de culture lors du changement de langue
+Texte affiché
+Écrivez le texte que vous souhaitez afficher. Plus c'est court, c'est mieux.
+Échec de l'importation de {0}
+Échec du téléchargement pour le fichier {0}: {1}
+Erreur lors de l'exécution de la commande de débogage à distance {0}: {1}
+Ajoute des utilisateurs
+Ajoute des alias aux commandes
+Injecte des arguments dans le noyau (redémarrage requis)
+Modifie le nom d'hôte
+Modifie MAL, le MOTD après la connexion
+Change MOTD, le message du jour
+Modifie le nom d'utilisateur
+Affiche les journaux de débogage
+Gérer les autorisations des utilisateurs
+Recharge le fichier d'économiseur d'écran dans KSMods
+Supprime un utilisateur de la liste
+L'alias {0} a bien été supprimé.
+Échec de la vérification des mises à jour.
+Il ne reste plus d'utilisateurs dans la liste.
+Échec de la définition de la langue.
+Erreur lors de la tentative de rejet de la notification.
+Une mise à jour vers {0} est détectée. Mise à jour de la configuration ...
+usrmgr: échec de la création du nom d'utilisateur {0}: {1}
+Échec du changement de nom de l'utilisateur. {0}
+L'une des listes d'autorisations ne contient pas le nom d'utilisateur {0}.
+Échec du chargement des autorisations à partir du fichier: {0}
+Échec de la modification du nom d'hôte: {0}
+Utilisateur non trouvé
+Échec de la modification du mot de passe du nom d'utilisateur: {0}
+Échec de la copie du fichier ou du répertoire: {0}
+Échec du déplacement du fichier ou du répertoire: {0}
+Impossible de trouver le fichier correspondant à la chaîne "{0}": {1}
+Le téléchargement a échoué pour le fichier {0}.
+Échec de la liste des fichiers distants: {0}
+Entrez un fichier ou un dossier à supprimer. Vous devez disposer des autorisations administratives sur votre compte pour pouvoir supprimer.
+Voulez-vous vraiment supprimer {0} <y / n>?
+Suppression de {0} ...
+{0} est introuvable sur le serveur.
+Tous les messages envoyés par {0} ont été supprimés avec succès.
+Échec de la suppression de tous les messages envoyés par {0}.
+Erreur lors de l'envoi du message.
+Déplacement de {0} vers {1}…
+Déplacé avec succès
+Déplace le fichier ou le répertoire vers un autre fichier ou répertoire. Vous pouvez également l'utiliser pour renommer des fichiers.
+Échec du déplacement de {0} vers {1}.
+Entrez un chemin source et un chemin de destination.
+Copie de {0} vers {1}…
+Copié avec succès
+Copie le fichier ou le répertoire dans un autre fichier ou répertoire.
+Échec de la copie de {0} vers {1}.
+Déplace un message
+Déplace tous les messages du destinataire
+Tous les messages envoyés par {0} ont été déplacés avec succès.
+Échec du déplacement de tous les messages envoyés par {0}.
+Message {0} de {1} déplacé de {2}. {3} messages restants à analyser.
+Message {0} de {1} déplacé. {3} messages restants à analyser.
+Affiche les informations météorologiques pour la ville spécifiée. Utilise OpenWeatherMap.
+- Informations météo pour {0} -
+Météo: {0}
+Température: {0} ({1} unité)
+Ressenti comme: {0} ({1} unité)
+Pression: {0}
+Humidité: {0}
+Vous pouvez obtenir votre propre clé API sur https://home.openweathermap.org/api_keys.
+Vous pouvez toujours consulter http://bulk.openweathermap.org/sample/city.list.json.gz pour la liste des villes avec leurs identifiants.
+Unité préférée pour la température
+Kelvin
+Impérial (Fahrenheit)
+Métrique (Celsius)
+Configure le noyau pour qu'il vous demande un argument au démarrage.
+Déclenche le mode maintenance. Cela désactive plusieurs comptes.
+À chaque démarrage, il vérifiera les mises à jour.
+Lorsque vous changez de langue, changez les noms de mois, le calendrier, etc.
+Si le noyau est démarré, il définira le mot de passe root.
+Gardez les messages de détection du matériel silencieux.
+S'il est activé, il sondera les emplacements de RAM avec la RAM.
+Afficher le message du jour avant d'afficher l'écran de connexion.
+Effacer l'écran avant d'afficher l'écran de connexion.
+Affiche les utilisateurs disponibles si activé.
+Donne le support de la couleur du noyau
+Commande d'aide simplifiée pour tous les shells
+S'il faut ou non enregistrer le nom d'utilisateur FTP.
+S'il faut ou non enregistrer l'adresse IP FTP.
+Choisissez le premier profil uniquement lors de la connexion.
+Active la prise en charge de 255 couleurs pour ColorMix.
+Active la prise en charge de 255 couleurs pour Disco.
+Active la prise en charge de 255 couleurs pour GlitterColor.
+Active la prise en charge de 255 couleurs pour les lignes.
+L'heure et la date seront affichées dans le coin supérieur droit de l'écran
+Si activé, le noyau analysera le dossier entier pour sa taille totale. Sinon, analysera uniquement la surface.
+Active eyecandy au démarrage
+L'heure et la date seront plus longues, affichant les noms complets des mois, etc.
+Affiche les fichiers cachés.
+Sélectionnez votre unité préférée pour la température (cela s'applique uniquement à la commande "météo")
+Mod {0} arrêté
+{0} v {1} arrêté
+Le mod {0} n'a pas le nom de la pièce. L'analyse du mod a échoué. Vérifiez le code source.
+Le mod {0} n'a pas la commande. L'analyse du mod a échoué. Vérifiez le code source.
+Vous devez activer le mode débogage avant de pouvoir effacer le journal de débogage.
+{0} nouveaux messages sont arrivés dans la boîte de réception.
+Ouvrez «lsmail» pour les voir.
+Principal: {2} amorçable: {3} partition de démarrage: {4}
+Impossible de supprimer le fichier: {0}
+Supprime un répertoire ou un fichier
+Impossible de supprimer {0}, car il n'existe pas.
+Vous n'avez peut-être pas installé inxi sur votre système. Consultez votre gestionnaire de packages pour l'installation. Pour les systèmes Debian (et dérivés), vous pouvez exécuter "" sudo apt install inxi libcpanel-json-xs-perl "" dans l'émulateur de terminal.
+Langue définie avec succès sur {0}!
+Appuyez sur CTRL + C pour quitter.
+Fournit des informations sur un fichier
+Fournit des informations sur un annuaire
+Impossible d'obtenir des informations sur un répertoire inexistant.
+Impossible d'obtenir des informations sur un fichier inexistant.
+Nom complet: {0}
+Heure de création: {0}
+Heure du dernier accès: {0}
+Heure de la dernière écriture: {0}
+Attributs: {0}
+Répertoire parent: {0}
+Où trouver: {0}
+Taille du fichier: {0}
+Modifie l'attribut d'un fichier
+Fichier non trouvé.
+où <attributes> est l'un des suivants:
+Le fichier est un fichier normal
+Le fichier est un fichier en lecture seule
+Le fichier est un fichier caché
+Le fichier est une archive. Utilisé pour les sauvegardes.
+L'attribut "{0}" n'est pas valide.
+L'attribut a été ajouté avec succès.
+L'attribut a été supprimé avec succès.
+Échec de l'ajout de l'attribut.
+Échec de la suppression de l'attribut.
+Taille: {0}
+Remplace un mot ou une phrase par un autre dans une ligne
+Niveau de couleur rouge dépassé. C'était {0}.
+Niveau de couleur verte dépassé. C'était {0}.
+Niveau de couleur bleue dépassé. C'était {0}.
+Activez les vraies couleurs
+Active la vraie prise en charge des couleurs pour ColorMix.
+Active la vraie prise en charge des couleurs pour Disco.
+Active la vraie prise en charge des couleurs pour GlitterColor.
+Active la vraie prise en charge des couleurs pour les lignes.
+Échec du déblocage de {0}.
+{0} est déjà bloqué.
+{0} ne peut pas rejoindre le débogage à distance pour le moment.
+Échec du blocage de {0}.
+Couleurs du cycle
+Disco fera défiler les couleurs lorsqu'il est activé. Sinon, sélectionnez des couleurs aléatoires.
+Entrez les chemins de fichiers vers les pièces jointes. Appuyez sur ENTRÉE sur un chemin vierge pour confirmer.
+Ouvre un message chiffré
+Écrivez le mot de passe pour l'ID de clé {0}
+Envoie un message chiffré à une adresse
+Vous demande de remplir les champs obligatoires pour envoyer un message chiffré à une adresse
+Téléchargement depuis {0}…
+Afficher la barre de progression lors du téléchargement ou du téléversement à partir de la commande «get» ou «put»
+Si c'est vrai, cela fait "get" ou "put" afficher la barre de progression lors du téléchargement ou du téléchargement.
+Télécharge un fichier sur le site Web spécifié
+Pings une adresse
+Téléversement de {0} vers {1} ...
+Le téléchargement est terminé.
+Veuillez utiliser "ftp" si vous allez télécharger des fichiers sur le serveur FTP.
+Échec de l'importation lors de l'essai {0}: {1}
+{0} Mo sur {1} Mo importés.
+Écrivez combien de fois la commande "put" doit réessayer les téléchargements ayant échoué. Il doit être numérique.
+L'adresse n'est peut-être pas vide.
+Échec de l'envoi du ping {0}: {1}
+Le ping a réussi dans {0} ms.

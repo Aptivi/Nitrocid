@@ -656,3 +656,232 @@ Zablokuj urządzenie do debugowania według adresu IP
 Numer {0} nie jest jeszcze zablokowany.
 Błąd podczas ładowania ustawień
 Wystąpił błąd podczas ładowania ustawień. Konieczne może być sprawdzenie pliku ustawień.
+- Etap 2: Wykrywanie modów i wygaszaczy ekranu
+- Etap 3: Zaloguj się
+Wybierz sekcję:
+Wybierz opcję:
+Ustawienia główne...
+Ustawienia sprzętu ...
+Ustawienia logowania ...
+Ustawienia powłoki ...
+Ustawienia sieci...
+Różne ustawienia...
+Zapisz ustawienia
+Wyjście
+Określona opcja {0} jest nieprawidłowa.
+Odpowiedź musi być liczbowa.
+Monituj o argumenty podczas rozruchu
+Wyzwalacz trybu konserwacji
+Zmień hasło roota ...
+Sprawdź aktualizacje podczas uruchamiania
+Cicha sonda
+Gniazda RAM sondy
+Pokaż MOTD po zalogowaniu
+Wyczyść ekran po zalogowaniu
+Pokaż dostępne nazwy użytkowników
+Kolorowa skorupa
+Uproszczone polecenie pomocy
+Port debugowania
+Domyślny prefiks pseudonimu zdalnego debugowania
+Pobierz czasy ponownych prób
+Zaloguj nazwę użytkownika FTP
+Zaloguj adres IP FTP
+Zwróć tylko pierwszy profil FTP
+Pokaż godzinę / datę w prawym górnym rogu
+Limit czasu wygaszacza ekranu w ms
+Przydział rozmiaru debugowania w bajtach
+Tryb analizy rozmiaru
+Markiza przy uruchomieniu
+Długi czas i data
+Pokaż ukryte pliki
+Wprowadzono nieprawidłową sekcję. Wróć, proszę.
+Wróć...
+Włączyć
+Wyłączyć
+Wprowadzono nieprawidłowy numer klucza. Wróć, proszę.
+Wpisz hasło roota, które chcesz ustawić. Nie martw się; hasła są wyświetlane jako gwiazdki.
+Włącz opcję „Zmień hasło roota”, aby użyć tej opcji. Wróć, proszę.
+Zmienić hasło roota?
+Ustaw hasło roota ...
+Napisz port zdalnego debugera. Musi być numeryczny i nie może być już używany. W przeciwnym razie zdalny debugger nie otworzy portu.
+Napisz domyślny prefiks pseudonimu zdalnego debugowania.
+Napisz, ile razy polecenie „„ get ”” powinno ponawiać nieudane pobieranie. Musi być liczbą.
+Napisz, kiedy uruchomić wygaszacz ekranu po określonych milisekundach. Musi być liczbą.
+Napisz, ile bajtów może przechowywać dziennik debugowania. Musi być liczbą.
+Odpowiedź nie może być przecząca.
+Odpowiedź jest nieprawidłowa. Sprawdź, czy odpowiedź jest numeryczna w przypadku wpisów konfiguracji, które wymagają liczb jako odpowiedzi.
+Zmienna {0} nie została znaleziona w żadnym z modułów.
+Zmienia konfigurację jądra
+Ustawienia wygaszacza ekranu ...
+Aktywuj 255 kolorów
+Chcesz pozostać w kontakcie?
+Nieprawidłowy wybór. Zakładając, że nie ...
+Nie wykryto żadnych modów. Pomijanie etapu ...
+Zmień kulturę podczas zmiany języka
+Wyświetlany tekst
+Wpisz dowolny tekst, który chcesz wyświetlić. Krótszy znaczy lepszy.
+Nie udało się przesłać {0}
+Pobieranie pliku {0} nie powiodło się: {1}
+Błąd podczas wykonywania polecenia zdalnego debugowania {0}: {1}
+Dodaje użytkowników
+Dodaje aliasy do poleceń
+Wprowadza argumenty do jądra (wymagane ponowne uruchomienie)
+Zmienia nazwę hosta
+Zmienia MAL, MOTD po zalogowaniu
+Zmienia MOTD, przesłanie dnia
+Zmienia nazwę użytkownika
+Wyświetla dzienniki debugowania
+Zarządzaj uprawnieniami użytkowników
+Ponownie ładuje plik wygaszacza ekranu w KSMods
+Usuwa użytkownika z listy
+Usunięto alias {0} pomyślnie.
+Nie udało się sprawdzić aktualizacji.
+Na liście nie ma więcej użytkowników.
+Nie udało się ustawić języka.
+Błąd podczas próby odrzucenia powiadomienia.
+Wykryto aktualizację do {0}. Aktualizuję konfigurację ...
+usrmgr: nie udało się utworzyć nazwy użytkownika {0}: {1}
+Nie udało się zmienić nazwy użytkownika. {0}
+Jedna z list uprawnień nie zawiera nazwy użytkownika {0}.
+Nie udało się załadować uprawnień z pliku: {0}
+Nie udało się zmienić nazwy hosta: {0}
+Użytkownik nie znaleziony
+Nie udało się zmienić hasła dla nazwy użytkownika: {0}
+Nie udało się skopiować pliku lub katalogu: {0}
+Nie udało się przenieść pliku lub katalogu: {0}
+Nie można znaleźć pliku pasującego do ciągu „{0}”: {1}
+Pobieranie pliku {0} nie powiodło się.
+Nie udało się wyświetlić plików zdalnych: {0}
+Wprowadź plik lub folder do usunięcia. Aby móc usunąć, musisz mieć uprawnienia administracyjne na swoim koncie.
+Czy na pewno chcesz usunąć {0} <y / n>?
+Usuwanie {0} ...
+Nie znaleziono {0} na serwerze.
+Cała poczta wysłana przez {0} została pomyślnie usunięta.
+Nie udało się usunąć całej poczty wysłanej przez {0}.
+Błąd podczas wysyłania wiadomości.
+Przenoszę {0} do {1} ...
+Przeniesiono pomyślnie
+Przenosi plik lub katalog do innego pliku lub katalogu. Możesz także użyć tego do zmiany nazw plików.
+Nie udało się przenieść {0} do {1}.
+Wprowadź ścieżkę źródłową i ścieżkę docelową.
+Kopiowanie {0} do {1} ...
+Skopiowano pomyślnie
+Kopiuje plik lub katalog do innego pliku lub katalogu.
+Nie udało się skopiować {0} do {1}.
+Przenosi wiadomość
+Przenosi wszystkie wiadomości od odbiorcy
+Cała poczta wysłana przez {0} została pomyślnie przeniesiona.
+Nie udało się przenieść całej poczty wysłanej przez {0}.
+Wiadomość {0} od {1} została przeniesiona z {2}. Pozostało {3} wiadomości do przeanalizowania.
+Wiadomość {0} od {1} została przeniesiona. Pozostało {3} wiadomości do przeanalizowania.
+Pokazuje informacje o pogodzie dla określonego miasta. Używa OpenWeatherMap.
+- Informacje o pogodzie dla {0} -
+Pogoda: {0}
+Temperatura: {0} (jednostka {1})
+Wygląda na to: {0} (jednostka {1})
+Ciśnienie: {0}
+Wilgotność: {0}
+Możesz uzyskać własny klucz API na https://home.openweathermap.org/api_keys.
+Zawsze możesz zajrzeć na http://bulk.openweathermap.org/sample/city.list.json.gz, aby uzyskać listę miast wraz z ich identyfikatorami.
+Preferowana jednostka temperatury
+kelwin
+Imperialne (Fahrenheit)
+Metryczne (stopnie Celsjusza)
+Ustawia jądro tak, aby wyświetlało monit o podanie argumentu przy starcie.
+Tryb konserwacji wyzwalaczy. To wyłącza wiele kont.
+Przy każdym uruchomieniu będzie sprawdzać dostępność aktualizacji.
+Zmieniając języki, zmień nazwy miesięcy, kalendarza itp.
+Jeśli jądro jest uruchomione, ustawi hasło roota.
+Zachowaj ciszę wiadomości z sondowania sprzętu.
+Jeśli jest włączona, sonduje gniazda RAM wraz z pamięcią RAM.
+Pokaż wiadomość dnia przed wyświetleniem ekranu logowania.
+Wyczyść ekran przed wyświetleniem ekranu logowania.
+Pokazuje dostępnych użytkowników, jeśli są włączone.
+Zapewnia obsługę koloru jądra
+Uproszczone polecenie pomocy dla wszystkich powłok
+Czy rejestrować nazwę użytkownika FTP, czy nie.
+Czy rejestrować adres IP protokołu FTP.
+Wybierz pierwszy profil tylko podczas łączenia.
+Aktywuje obsługę 255 kolorów dla ColorMix.
+Aktywuje obsługę 255 kolorów dla Disco.
+Aktywuje obsługę 255 kolorów dla GlitterColor.
+Włącza obsługę 255 kolorów dla linii.
+Godzina i data zostaną wyświetlone w prawym górnym rogu ekranu
+Jeśli jest włączona, jądro przeanalizuje cały folder pod kątem jego całkowitego rozmiaru. W przeciwnym razie przeanalizuje tylko powierzchnię.
+Włącza lampkę przy uruchomieniu
+Czas i data będą dłuższe, pokazując pełne nazwy miesięcy itp.
+Pokazuje ukryte pliki.
+Wybierz preferowaną jednostkę temperatury (dotyczy to tylko polecenia „pogoda”)
+Mod {0} został zatrzymany
+Zatrzymano {0} v {1}
+Mod {0} nie ma nazwy części. Analiza modów nie powiodła się. Przejrzyj kod źródłowy.
+Mod {0} nie ma polecenia. Analiza modów nie powiodła się. Przejrzyj kod źródłowy.
+Aby wyczyścić dziennik debugowania, musisz włączyć tryb debugowania.
+Do skrzynki odbiorczej dotarło {0} nowych wiadomości.
+Otwórz „lsmail”, aby je zobaczyć.
+Podstawowa: {2} Rozruchowa: {3} Partycja rozruchowa: {4}
+Nie można usunąć pliku: {0}
+Usuwa katalog lub plik
+Nie można usunąć {0}, ponieważ nie istnieje.
+Być może nie masz zainstalowanego inxi w swoim systemie. W sprawie instalacji zapoznaj się z menedżerem pakietów. W przypadku systemów Debian (i pochodnych) możesz chcieć uruchomić "" sudo apt install inxi libcpanel-json-xs-perl "" w emulatorze terminala.
+Język został pomyślnie ustawiony na {0}!
+Naciśnij CTRL + C, aby wyjść.
+Zawiera informacje o pliku
+Zawiera informacje o katalogu
+Nie można uzyskać informacji o nieistniejącym katalogu.
+Nie można uzyskać informacji o nieistniejącym pliku.
+Imię i nazwisko: {0}
+Czas utworzenia: {0}
+Czas ostatniego dostępu: {0}
+Czas ostatniego zapisu: {0}
+Atrybuty: {0}
+Katalog nadrzędny: {0}
+Gdzie znaleźć: {0}
+Rozmiar pliku: {0}
+Zmienia atrybut pliku
+Nie znaleziono pliku.
+gdzie <attributes> jest jednym z następujących:
+Plik jest zwykłym plikiem
+Plik jest plikiem tylko do odczytu
+Plik jest plikiem ukrytym
+Plik jest archiwum. Używany do tworzenia kopii zapasowych.
+Atrybut „{0}” jest nieprawidłowy.
+Atrybut został pomyślnie dodany.
+Atrybut został pomyślnie usunięty.
+Nie udało się dodać atrybutu.
+Nie udało się usunąć atrybutu.
+Rozmiar: {0}
+Zastępuje słowo lub frazę innym w wierszu
+Przekroczono poziom koloru czerwonego. To było {0}.
+Przekroczono poziom koloru zielonego. To było {0}.
+Przekroczono poziom koloru niebieskiego. To było {0}.
+Aktywuj prawdziwe kolory
+Aktywuje obsługę prawdziwego koloru dla ColorMix.
+Aktywuje obsługę prawdziwych kolorów dla Disco.
+Aktywuje obsługę prawdziwych kolorów dla GlitterColor.
+Włącza obsługę prawdziwych kolorów dla linii.
+Nie udało się odblokować {0}.
+Numer {0} jest już zablokowany.
+{0} nie może teraz dołączyć do zdalnego debugowania.
+Nie udało się zablokować {0}.
+Cykl kolorów
+Disco zmieni kolory po włączeniu. W przeciwnym razie wybierz losowe kolory.
+Wprowadź ścieżki plików do załączników. Naciśnij klawisz ENTER na pustej ścieżce, aby potwierdzić.
+Otwiera zaszyfrowaną wiadomość
+Wpisz hasło dla identyfikatora klucza {0}
+Wysyła zaszyfrowaną wiadomość na adres
+Prosi o wypełnienie wymaganych pól, aby wysłać zaszyfrowaną wiadomość na adres
+Pobieranie z {0} ...
+Pokaż pasek postępu podczas pobierania lub wysyłania za pomocą polecenia „pobierz” lub „umieść”
+Jeśli tak, to powoduje, że „pobierz” lub „umieść” wyświetla pasek postępu podczas pobierania lub przesyłania.
+Przesyła plik do określonej witryny internetowej
+Pinguje adres
+Przesyłanie {0} do {1} ...
+Przesyłanie zakończone.
+Użyj "ftp", jeśli zamierzasz przesyłać pliki na serwer FTP.
+Przesyłanie nie powiodło się w próbie {0}: {1}
+Przesłano {0} MB z {1} MB.
+Napisz, ile razy polecenie „put” powinno ponawiać nieudane przesyłanie. Musi być liczbą.
+Adres nie może być pusty.
+Błąd pingowania {0}: {1}
+Ping powiódł się za {0} ms.

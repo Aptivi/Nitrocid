@@ -656,3 +656,232 @@ tōngguò IP dìzhǐ zǔzhǐ tiáoshì shèbèi
 {0} Shàngwèi bèi zǔzhǐ.
 Jiāzài shèzhì cuòwù
 jiāzài shèzhì shí chūcuò. Nín kěnéng xūyào jiǎnchá shèzhì wénjiàn.
+-Jiēduàn 2:Mod hé píngbǎo jiǎncè
+-jiēduàn 3: Dēnglù
+xuǎnzé bùfèn:
+Xuǎnzé xuǎnxiàng:
+Tōngyòng shèzhì...
+Yìngjiàn shèzhì...
+Dēnglù shèzhì...
+Wàiké shèzhì...
+Wǎngluò shèzhì...
+Záxiàng shèzhì...
+Bǎocún shèzhì
+chūkǒu
+zhǐdìng de xuǎnxiàng {0} wúxiào.
+Dá'àn bìxū shì shùzì.
+Zài qǐdòng shí tíshì shūrù cānshù
+wéihù móshì chùfā qì
+gēnggǎi gēn mìmǎ...
+Zài qǐdòng shí jiǎnchá gēngxīn
+ānjìng de tàn zhēn
+tàn zhēn RAM chā cáo
+zài dēnglù shí xiǎnshì MOTD
+dēnglù shí qīngchú píngmù
+xiǎnshì kěyòng de yònghù míng
+cǎi ké
+jiǎnhuà de bāngzhù mìnglìng
+tiáoshì duānkǒu
+yuǎnchéng tiáoshì mòrèn níkè qiánzhuì
+xiàzài chóng shì shíjiān
+jìlù FTP yònghù míng
+jìlù FTP IP dìzhǐ
+jǐn fǎnhuí dì yīgè FTP pèizhì wénjiàn
+zài yòushàng jiǎo xiǎnshì shíjiān/rìqí
+píngmù bǎohù chéngxù chāoshí (yǐ háomiǎo wèi dānwèi)
+tiáoshì dàxiǎo pèi'é (yǐ zì jié wèi dānwèi)
+dàxiǎo jiěxī móshì
+qǐdòng zìmù
+cháng shíjiān hé yuēhuì
+xiǎnshì yǐn zàng wénjiàn
+shūrù de bùfèn wúxiào. Qǐng huíqù.
+Huíqù...
+Qǐyòng
+jìnyòng
+shūrù liǎo wúxiào de mì yào hào. Qǐng huíqù.
+Shūrù yào shèzhì de root mìmǎ. Bùyòng dānxīn mìmǎ xiǎnshì wèi xīng hào.
+Qǐyòng “gēnggǎi gēn mìmǎ” yǐ shǐyòng cǐ xuǎnxiàng. Qǐng huíqù.
+Gēnggǎi gēn mìmǎ?
+Shèzhì gēn mìmǎ...
+Biānxiě yīgè yuǎnchéng tiáoshì qì duānkǒu. Tā bìxū shì shùzì, bìngqiě bùnéng yǐjīng shǐyòng. Fǒuzé, yuǎnchéng tiáoshì qì jiāng wúfǎ dǎkāi duānkǒu.
+Biānxiě mòrèn de yuǎnchéng tiáoshì nìchēng qiánzhuì.
+Xiě xià “get” mìnglìng yīng chóng shì shībài xiàzài de cìshù. Tā bìxū shì shùzì.
+Zhǐdìng zài zhǐdìng de háomiǎo hòu hé shí qǐdòng píngmù bǎohù chéngxù. Tā bìxū shì shùzì.
+Xiě tiáoshì rìzhì kěyǐ cúnchú duōshǎo zì jié. Tā bìxū shì shùzì.
+Dá'àn kěnéng bùshì kěndìng de.
+Dá'àn wúxiào. Jiǎnchá bìng quèbǎo xūyào shùzì zuòwéi dá'àn de pèizhì tiáomù dì dá'àn shì shùzì.
+Zài rènhé mókuài shàng jūn wèi zhǎodào biànliàng {0}.
+Gēnggǎi nèihé pèizhì
+píngmù bǎohù chéngxù shèzhì...
+Jīhuó 255 zhǒng yánsè
+nín xiǎng bǎochí liánxì ma?
+Xuǎnzé wúxiào. Jiǎshè méiyǒu...
+Wèi jiǎncè dào guófáng bù. Tiàoguò jiēduàn...
+Qiēhuàn yǔyán shí gǎibiàn wénhuà
+xiǎnshì wénzì
+xiě xià nín xiǎng yào xiǎnshì de rènhé wénběn. Yuè duǎn yuè hǎo.
+Wúfǎ shàngchuán {0}
+wénjiàn {0} xià zǎi shībài:{1}
+Zhíxíng yuǎnchéng tiáoshì mìnglìng {0} shí chūcuò:{1}
+Tiānjiā yònghù
+xiàng mìnglìng tiānjiā biémíng
+jiāng cānshù zhùrù nèihé (xūyào chóngxīn yǐndǎo)
+gēnggǎi zhǔjī míng
+dēnglù hòu gēnggǎi MAL,MOTD
+gēnggǎi MOTD, jírì xiāoxī
+gēnggǎi yònghù míng
+xiǎnshì tiáoshì rìzhì
+guǎnlǐ yònghù quánxiàn
+chóngxīn jiāzài KSMods zhōng de píngmù bǎohù chéngxù wénjiàn
+cóng lièbiǎo zhōng shānchú yònghù
+chénggōng shānchú biémíng {0}.
+Wúfǎ jiǎnchá gēngxīn.
+Lièbiǎo zhōng méiyǒu qítā yònghù.
+Shèzhì yǔyán shībài.
+Chángshì guānbì tōngzhī shí chūcuò.
+Jiǎncè dào shēngjí dào {0}. Zhèngzài gēngxīn pèizhì...
+Usrmgr: Wúfǎ chuàngjiàn yònghù míng {0}:{1}
+Zhòng mìngmíng yònghù shībài. {0}
+Quánxiàn lièbiǎo zhī yī bù bāohán yònghù míng {0}.
+Wúfǎ cóng wénjiàn {0} jiāzài quánxiàn
+gēnggǎi zhǔjī míng shībài:{0}
+Zhǎo bù dào shǐyòng zhě
+gēnggǎi yònghù míng {0} de mìmǎ shībài
+fùzhì wénjiàn huò mùlù shībài:{0}
+Wúfǎ yídòng wénjiàn huò mùlù:{0}
+Zhǎo bù dào yǔ zìfú chuàn “ {0}” pǐpèi de wénjiàn:{1}
+Wénjiàn {0} xià zǎi shībài.
+Wúfǎ liè chū yuǎnchéng wénjiàn:{0}
+Shūrù yào shānchú de wénjiàn huò wénjiàn jiā. Nín bìxū jùyǒu zhànghù de guǎnlǐ quánxiàn cáinéng shānchú.
+Nín quèdìng yào shānchú {0} <y/ n>ma?
+Zhèngzài shānchú {0}...
+Zài fúwùqì zhōng zhǎo bù dào {0}.
+Yóu {0} fāsòng de suǒyǒu yóujiàn jūn yǐ chénggōng shānchú.
+Wúfǎ shānchú suǒyǒu {0} fāsòng de yóujiàn.
+Fāsòng xiāo xí shí chūcuò.
+Zhèngzài jiāng {0} yí zhì {1}...
+Chénggōng yídòng
+jiāng wénjiàn huò mùlù yídòng dào lìng yīgè wénjiàn huò mùlù. Nín yě kěyǐ shǐyòng tā lái zhòng mìngmíng wénjiàn.
+Wúfǎ jiāng {0} yí zhì {1}.
+Shū rù yuán lùjìng hé mùbiāo lùjìng.
+Zhèngzài jiāng {0} fùzhì dào {1}...
+Fùzhì chénggōng
+jiāng wénjiàn huò mùlù fùzhì dào lìng yī gè wénjiàn huò mùlù.
+Wúfǎ jiāng {0} fùzhì dào {1}.
+Yídòng xiāoxī
+yídòng láizì shōu jiàn rén de suǒyǒu yóujiàn
+{0} fāsòng de suǒyǒu yóujiàn jūn yǐ chénggōng yídòng.
+Wúfǎ yídòng {0} fāsòng de suǒyǒu yóujiàn.
+Láizì {1} de xiāoxī {0} cóng {2} yídòng. Shèng xià {3} tiáo xiāoxī xūyào jiěxī.
+Láizì {1} de xiāoxī {0} yǐ yídòng. Shèng xià {3} tiáo xiāoxī xūyào jiěxī.
+Xiǎnshì zhǐdìng chéngshì de tiānqì xìnxī. Shǐyòng OpenWeatherMap.
+-{0} De tiānqì xìnxī-
+tiānqì:{0}
+Wēndù:{0}({1} Dānwèi)
+gǎnjué xiàng:{0}({1} Gè dānwèi)
+yālì:{0}
+Shīdù:{0}
+Nín kěyǐ zài https://home.openweathermap.org/api_keys huòdé zìjǐ de API mì yào.
+Nín kěyǐ suíshí fǎngwèn http://bulk.openweathermap.org/sample/city.list.json.gz yǐ huòdé dài yǒu ID de chéngshì lièbiǎo.
+Wēndù de shǒuxuǎn dānwèi
+kāi'ěrwén
+yīngzhì (huáshì dù)
+gōngzhì (shèshì)
+shèzhì nèihé, yǐbiàn zài qǐdòng shí tíshì nín shūrù cānshù.
+Chùfā wéihù móshì. Zhè jiāng jìnyòng duō gè zhànghù.
+Měi cì qǐdòng shí, tā jiāng jiǎnchá gēngxīn.
+Qiēhuàn yǔyán shí, qǐng gēnggǎi yuèfèn míngchēng, rìlì děng.
+Rúguǒ qǐdòng nèihé, tā jiāng shèzhì root mìmǎ.
+Shǐ yìngjiàn tàncè xiāoxī bǎochí chénmò.
+Rúguǒ qǐyòng, tā jiāng tàncè RAM chā cáo yǐjí RAM.
+Zài xiǎnshì dēnglù píngmù zhīqián xiǎnshì měi rì xiāoxī.
+Xiǎnshì dēnglù píngmù zhīqián xiān qīngchú píngmù.
+Rúguǒ qǐyòng, zé xiǎnshì kěyòng yònghù.
+Tígōng nèihé yánsè zhīchí
+suǒyǒu shell de jiǎnhuà bāngzhù mìnglìng
+shìfǒu dēnglù FTP yònghù míng.
+Shìfǒu jìlù FTP IP dìzhǐ.
+Jǐn zài liánjiē shí xuǎnzé dì yīgè pèizhì wénjiàn.
+Jīhuó duì ColorMix de 255 yánsè zhīchí.
+Jīhuó Disco de 255 yánsè zhīchí.
+Jīhuó 255 duì GlitterColor de yánsè zhīchí.
+Jīhuó xiàn de 255 zhǒng yánsè zhīchí.
+Shíjiān hé rìqí jiāng xiǎnshì zài píngmù de yòushàng jiǎo
+rúguǒ qǐyòng, nèihé jiāng jiěxī zhěnggè wénjiàn jiā de zǒng dàxiǎo. Fǒuzé, zhǐ huì jiěxī biǎomiàn.
+Zài qǐdòng shí ràng rén yǎnqián yī liàng
+shíjiān hé rìqí jiāng gèng zhǎng, xiǎnshì wánzhěng de yuèfèn míngchēng děng.
+Xiǎnshì yǐncáng de wénjiàn.
+Xuǎnzé nín xǐhuān de wēndù dānwèi (jǐn shìyòng yú “tiānqì” mìnglìng)
+Mod {0} yǐ tíngzhǐ
+{0} v {1} yǐ tíngzhǐ
+Mod {0} méiyǒu bùjiàn míngchēng. Mod jiěxī shībài. Chákàn yuán dàimǎ.
+Mod {0} méiyǒu gāi mìnglìng. Mod jiěxī shībài. Chákàn yuán dàimǎ.
+Nín bìxū xiān dǎkāi tiáoshì móshì, ránhòu cáinéng qīngchú tiáoshì rìzhì.
+{0} Tiáo xīn yóujiàn dàodá shōu jiàn xiāng.
+Dǎkāi “lsmail” yǐ chákàn tāmen.
+Zhǔ:{2} Kě qǐdòng:{3} Yǐndǎo fēnqū:{4}
+Wúfǎ shānchú wénjiàn:{0}
+Shānchú mùlù huò wénjiàn
+wúfǎ shānchú {0}, yīnwèi tā bù cúnzài.
+Nín de xìtǒng shàng kěnéng wèi ānzhuāng inxi. Qǐng cānkǎo ruǎnjiàn bāo guǎnlǐ qì jìnxíng ānzhuāng. Duìyú Debian(hé yǎnshēng chǎnpǐn) xìtǒng, nín kěnéng yào zài zhōngduān fǎngzhēn qì zhōng yùnxíng ““sudo apt install inxi libcpanel-json-xs-perl”“.
+Yǔyán yǐ chénggōng shèzhì wèi {0}!
+Àn CTRL + C tuìchū.
+Tígōng yǒuguān wénjiàn de xìnxī
+tígōng yǒuguān mùlù de xìnxī
+wúfǎ huòqǔ yǒuguān bù cúnzài mùlù de xìnxī.
+Wúfǎ huòqǔ yǒuguān bù cúnzài de wénjiàn de xìnxī.
+Quán míng:{0}
+Chuàngjiàn shíjiān:{0}
+Shàng cì fǎngwèn shíjiān:{0}
+Shàng cì xiě rù shíjiān:{0}
+Shǔxìng:{0}
+Fù mùlù:{0}
+Nǎlǐ kěyǐ zhǎodào:{0}
+Dǎng'àn dàxiǎo:{0}
+Wénjiàn de gēnggǎi shǔxìng
+wénjiàn wèi zhǎodào.
+Qízhōng <attributes>shì yǐxià zhī yī:
+Gāi wénjiàn shì pǔtōng wénjiàn
+gāi wénjiàn shì zhǐ dú wénjiàn
+gāi wénjiàn shì yǐn zàng wénjiàn
+gāi wénjiàn shì yīgè cúndàng. Yòng yú bèifèn.
+Shǔxìng “ {0}” wúxiào.
+Shǔxìng yǐ chénggōng tiānjiā.
+Shǔxìng yǐ chénggōng shānchú.
+Tiānjiā shǔxìng shībài.
+Wúfǎ shānchú shǔxìng.
+Dàxiǎo:{0}
+Yòng yīxíng zhōng de lìng yīgè tìhuàn dāncí huò duǎnyǔ
+chāochū hóngsè jíbié. Shì {0}.
+Chāochū lǜsè děngjí. Shì {0}.
+Chāochū lán sè jíbié. Shì {0}.
+Jīhuó zhēn cǎi
+jīhuó duì ColorMix de zhēn cǎisè zhīchí.
+Jīhuó duì Disco de zhēn cǎisè zhīchí.
+Jīhuó duì GlitterColor de zhēn cǎisè zhīchí.
+Jīhuó xiàn de zhēn cǎisè zhīchí.
+Wúfǎ jiěchú zǔzhǐ {0}.
+{0} Yǐ bèi zǔzhǐ.
+{0} Xiànzài wúfǎ jiārù yuǎnchéng tiáoshì.
+Wúfǎ zǔzhǐ {0}.
+Xúnhuán sè
+qǐyòng hòu,Disco jiāng xúnhuán yánsè. Fǒuzé, qǐng xuǎnzé suíjī yánsè.
+Shūrù fùjiàn de wénjiàn lùjìng. Zài kòngbái lùjìng shàng àn ENTER quèrèn.
+Dǎkāi yīgè jiāmì de xiāoxī
+wèi mì yào ID {0} xiě rù mìmǎ
+jiāng jiāmì de xiāoxī fāsòng dào yīgè dìzhǐ
+yāoqiú nín tiánxiě bì tián zìduàn yǐ jiāng jiāmì de xiāoxī fāsòng dào dìzhǐ
+zhèngzài cóng {0} xiàzài...
+Cóng “get” huò “put” mìnglìng xiàzài huò shàngchuán shí xiǎnshì jìndù tiáo
+rúguǒ wèi true, zé zài xiàzài huò shàngchuán shí shǐ “get” huò “put” xiǎnshì jìndù tiáo.
+Jiāng wénjiàn shàngchuán dào zhǐdìng de wǎngzhàn
+ping yī gè dìzhǐ
+zhèngzài jiāng {0} shàngchuán dào {1}...
+Shàngchuán yǐ wánchéng.
+Rúguǒ yào jiāng wénjiàn shàngchuán dào FTP fúwùqì, qǐng shǐyòng “ftp”.
+Chángshì {0} shàng zǎi shībài:{1}
+Yǐ shàngchuán {1} MB zhōng de {0} MB.
+Xiě xià “put” mìnglìng yīng chóng shì shībài de shàngchuán cìshù. Tā bìxū shì shùzì.
+Dìzhǐ bùnéng wéi kōng.
+Wúfǎ ping {0}:{1}
+Zài {0} háomiǎo nèi Ping chénggōng.

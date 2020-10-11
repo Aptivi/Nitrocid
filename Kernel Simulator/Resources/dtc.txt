@@ -656,3 +656,232 @@ Blokkeer een apparaat voor foutopsporing op IP-adres
 {0} is nog niet geblokkeerd.
 Fout bij het laden van instellingen
 Er is een fout opgetreden bij het laden van instellingen. Mogelijk moet u het instellingenbestand controleren.
+- Fase 2: detectie van mods en screensavers
+- Fase 3: Inloggen
+Selecteer sectie:
+Selecteer optie:
+Algemene instellingen...
+Hardware-instellingen ...
+Aanmeldingsinstellingen ...
+Shell-instellingen ...
+Netwerkinstellingen...
+Diverse instellingen ...
+Instellingen opslaan
+Uitgang
+Opgegeven optie {0} is ongeldig.
+Het antwoord moet numeriek zijn.
+Vragen om argumenten bij opstarten
+Trigger voor onderhoudsmodus
+Verander root wachtwoord ...
+Controleer op updates bij het opstarten
+Stille sonde
+Probe RAM-slots
+Toon MOTD bij inloggen
+Scherm wissen bij inloggen
+Toon beschikbare gebruikersnamen
+Gekleurde schelp
+Vereenvoudigde Help-opdracht
+Debug-poort
+Remote Debug Standaard Nick-voorvoegsel
+Download Retry Times
+Log FTP-gebruikersnaam
+Log FTP IP-adres
+Retourneer alleen het eerste FTP-profiel
+Toon tijd / datum in de rechterbovenhoek
+Screensaver Time-out in ms
+Foutopsporingsquotum in bytes
+Grootte parse-modus
+Selectiekader bij opstarten
+Lange tijd en datum
+Toon verborgen bestanden
+Ongeldige sectie ingevoerd. Ga alsjeblieft terug.
+Ga terug...
+Inschakelen
+Uitschakelen
+Ongeldig sleutelnummer ingevoerd. Ga alsjeblieft terug.
+Schrijf het root-wachtwoord dat moet worden ingesteld. Maak je geen zorgen; het wachtwoord wordt weergegeven als sterren.
+Schakel "Change Root Password" in om deze optie te gebruiken. Ga alsjeblieft terug.
+Root-wachtwoord wijzigen?
+Root-wachtwoord instellen ...
+Schrijf een poort voor foutopsporing op afstand. Het moet numeriek zijn en mag niet al worden gebruikt. Anders kan de externe debugger de poort niet openen.
+Schrijf het standaardvoorvoegsel voor de bijnaam voor foutopsporing op afstand.
+Schrijf op hoe vaak de opdracht "" get "" mislukte downloads opnieuw moet proberen. Het moet numeriek zijn.
+Schrijf wanneer de screensaver moet worden gestart na gespecificeerde milliseconden. Het moet numeriek zijn.
+Schrijf hoeveel bytes het foutopsporingslogboek kan opslaan. Het moet numeriek zijn.
+Het antwoord mag niet negatief zijn.
+Het antwoord is ongeldig. Controleer of het antwoord numeriek is voor configuratie-items die getallen nodig hebben als antwoorden.
+Variabele {0} is niet gevonden in een van de modules.
+Verandert de kernelconfiguratie
+Screensaver-instellingen ...
+Activeer 255 kleuren
+Wil je verbonden blijven?
+Ongeldige keuze. Ervan uitgaande dat ...
+Geen mods gedetecteerd. Fase overslaan ...
+Verander de cultuur bij het wisselen van taal
+Tekst getoond
+Schrijf elke gewenste tekst. Korter is beter.
+Uploaden van {0} is mislukt
+Downloaden mislukt voor bestand {0}: {1}
+Fout bij het uitvoeren van opdracht voor foutopsporing op afstand {0}: {1}
+Voegt gebruikers toe
+Voegt aliassen toe aan opdrachten
+Injecteert argumenten in de kernel (opnieuw opstarten vereist)
+Wijzigt de hostnaam
+Verandert MAL, de MOTD na inloggen
+Verandert MOTD, de boodschap van de dag
+Verandert gebruikersnaam
+Toont foutopsporingslogboeken
+Beheer machtigingen voor gebruikers
+Laadt het screensaver-bestand opnieuw in KSMods
+Verwijdert een gebruiker uit de lijst
+Alias ​​{0} verwijderd.
+Controleren op updates is mislukt.
+Er zijn geen gebruikers meer in de lijst.
+Instellen van taal is mislukt.
+Fout bij het negeren van melding.
+Er is een upgrade naar {0} gedetecteerd. Configuratie updaten ...
+usrmgr: kan geen gebruikersnaam {0} maken: {1}
+Het wijzigen van de naam van de gebruiker is mislukt. {0}
+Een van de toestemmingslijsten bevat geen gebruikersnaam {0}.
+Kan machtigingen niet laden uit bestand: {0}
+Kan hostnaam niet wijzigen: {0}
+Gebruiker niet gevonden
+Kan wachtwoord van gebruikersnaam niet wijzigen: {0}
+Kan bestand of directory niet kopiëren: {0}
+Kan bestand of directory niet verplaatsen: {0}
+Kan bestand niet vinden dat overeenkomt met tekenreeks "{0}": {1}
+Downloaden voor bestand {0} mislukt.
+Kan externe bestanden niet weergeven: {0}
+Voer een bestand of map in om te verwijderen. U moet beheerdersrechten voor uw account hebben om deze te kunnen verwijderen.
+Weet u zeker dat u {0} <y / n> wilt verwijderen?
+{0} verwijderen ...
+{0} is niet gevonden op de server.
+Alle e-mail van {0} is succesvol verwijderd.
+Kan niet alle e-mail verwijderen die is gemaakt door {0}.
+Fout bij verzenden van bericht.
+Verplaatsen {0} naar {1} ...
+Succesvol verplaatst
+Verplaatst bestand of map naar een ander bestand of map. U kunt dat ook gebruiken om bestanden te hernoemen.
+Verplaatsen van {0} naar {1} is mislukt.
+Voer een bronpad en een bestemmingspad in.
+Kopiëren van {0} naar {1} ...
+Succesvol gekopieerd
+Kopieert een bestand of map naar een ander bestand of map.
+Kopiëren van {0} naar {1} is mislukt.
+Verplaatst een bericht
+Verplaatst alle berichten van de ontvanger
+Alle e-mail die door {0} is gemaakt, is succesvol verplaatst.
+Kan niet alle e-mail verplaatsen die is gemaakt door {0}.
+Bericht {0} van {1} verplaatst van {2}. Nog {3} berichten om te ontleden.
+Bericht {0} van {1} verplaatst. Nog {3} berichten om te ontleden.
+Toont weersinformatie voor de opgegeven stad. Maakt gebruik van OpenWeatherMap.
+- Weersinformatie voor {0} -
+Weer: {0}
+Temperatuur: {0} ({1} eenheid)
+Voelt als: {0} ({1} eenheid)
+Druk: {0}
+Vochtigheid: {0}
+U kunt uw eigen API-sleutel krijgen op https://home.openweathermap.org/api_keys.
+U kunt altijd http://bulk.openweathermap.org/sample/city.list.json.gz raadplegen voor de lijst met steden met hun ID's.
+Voorkeurseenheid voor temperatuur
+Kelvin
+Imperial (Fahrenheit)
+Metrisch (Celsius)
+Stelt de kernel zo in dat hij bij het opstarten om een ​​argument vraagt.
+Activeert de onderhoudsmodus. Hierdoor worden meerdere accounts uitgeschakeld.
+Elke keer dat het opstart, controleert het op updates.
+Wijzig bij het wisselen van taal de maandnamen, de kalender, enz.
+Als de kernel wordt gestart, wordt het root-wachtwoord ingesteld.
+Houd hardware-onderzoekende berichten stil.
+Indien ingeschakeld, zal het de RAM-slots samen met het RAM onderzoeken.
+Toon het bericht van de dag voordat het inlogscherm wordt weergegeven.
+Scherm wissen voordat het inlogscherm wordt weergegeven.
+Toont beschikbare gebruikers indien ingeschakeld.
+Geeft de kernelkleurondersteuning
+Vereenvoudigde helpopdracht voor alle shells
+Of de FTP-gebruikersnaam moet worden geregistreerd.
+Of het FTP-IP-adres al dan niet moet worden geregistreerd.
+Kies alleen het eerste profiel wanneer u verbinding maakt.
+Activeert 255 kleurenondersteuning voor ColorMix.
+Activeert 255 kleurenondersteuning voor Disco.
+Activeert 255 kleurenondersteuning voor GlitterColor.
+Activeert 255 kleurenondersteuning voor lijnen.
+De tijd en datum worden in de rechterbovenhoek van het scherm weergegeven
+Indien ingeschakeld, zal de kernel de hele map ontleden voor zijn totale grootte. Anders ontleedt alleen het oppervlak.
+Maakt eyecandy mogelijk bij het opstarten
+De tijd en datum zijn langer, met volledige maandnamen, enz.
+Toont verborgen bestanden.
+Selecteer de gewenste eenheid voor temperatuur (dit geldt alleen voor het commando "weer")
+Mod {0} gestopt
+{0} v {1} gestopt
+Mod {0} heeft niet de onderdeelnaam. Mod-parsing is mislukt. Bekijk de broncode.
+Mod {0} heeft het commando niet. Mod-parsing is mislukt. Bekijk de broncode.
+U moet de foutopsporingsmodus inschakelen voordat u het foutopsporingslogboek kunt wissen.
+{0} nieuwe berichten zijn binnengekomen in de inbox.
+Open "lsmail" om ze te zien.
+Primair: {2} opstartbaar: {3} opstartpartitie: {4}
+Kan bestand niet verwijderen: {0}
+Verwijdert een map of een bestand
+Kan {0} niet verwijderen omdat het niet bestaat.
+Mogelijk hebt u inxi niet op uw systeem geïnstalleerd. Raadpleeg uw pakketbeheerder voor installatie. Voor Debian (en afgeleide) systemen, zou u "" sudo apt install inxi libcpanel-json-xs-perl "" in de terminalemulator kunnen willen draaien.
+Taal succesvol ingesteld op {0}!
+Druk op CTRL + C om af te sluiten.
+Geeft informatie over een bestand
+Geeft informatie over een directory
+Kan geen informatie krijgen over niet-bestaande directory.
+Kan geen informatie krijgen over niet-bestaand bestand.
+Volledige naam: {0}
+Aanmaaktijd: {0}
+Tijdstip laatste toegang: {0}
+Laatste schrijftijd: {0}
+Kenmerken: {0}
+Bovenliggende directory: {0}
+Waar te vinden: {0}
+Bestandsgrootte: {0}
+Wijzigt het kenmerk van een bestand
+Bestand niet gevonden.
+waarbij <attributes> een van de volgende is:
+Het bestand is een normaal bestand
+Het bestand is een alleen-lezen bestand
+Het bestand is een verborgen bestand
+Het bestand is een archief. Gebruikt voor back-ups.
+Kenmerk "{0}" is ongeldig.
+Kenmerk is succesvol toegevoegd.
+Kenmerk is succesvol verwijderd.
+Toevoegen van kenmerk is mislukt.
+Kan kenmerk niet verwijderen.
+Grootte: {0}
+Vervangt een woord of zin door een ander op een regel
+Kleurniveau rood overschreden. Het was {0}.
+Groen kleurniveau overschreden. Het was {0}.
+Blauw kleurniveau overschreden. Het was {0}.
+Activeer echte kleuren
+Activeert echte kleurondersteuning voor ColorMix.
+Activeert echte kleurondersteuning voor Disco.
+Activeert echte kleurondersteuning voor GlitterColor.
+Activeert echte kleurondersteuning voor lijnen.
+Deblokkeren van {0} is mislukt.
+{0} is al geblokkeerd.
+{0} kan nu niet deelnemen aan foutopsporing op afstand.
+Blokkeren van {0} is mislukt.
+Cyclus kleuren
+Disco wisselt van kleur indien ingeschakeld. Selecteer anders willekeurige kleuren.
+Voer bestandspaden naar bijlagen in. Druk op ENTER op een leeg pad om te bevestigen.
+Opent een versleuteld bericht
+Schrijf wachtwoord voor sleutel-ID {0}
+Stuurt een versleuteld bericht naar een adres
+Vraagt ​​u de vereiste velden in te vullen om een ​​versleuteld bericht naar een adres te sturen
+Downloaden van {0} ...
+Toon voortgangsbalk tijdens het downloaden of uploaden met de opdracht "get" of "put"
+Als dit waar is, laat het "get" of "put" de voortgangsbalk zien tijdens het downloaden of uploaden.
+Uploadt een bestand naar de opgegeven website
+Pingt een adres
+Uploaden {0} naar {1} ...
+Upload is voltooid.
+Gebruik "ftp" als u bestanden naar de FTP-server gaat uploaden.
+Uploaden mislukt in poging {0}: {1}
+{0} MB van {1} MB geüpload.
+Schrijf op hoe vaak het "put" -commando mislukte uploads opnieuw moet proberen. Het moet numeriek zijn.
+Adres mag niet leeg zijn.
+Kan {0} niet pingen: {1}
+Ping geslaagd in {0} ms.

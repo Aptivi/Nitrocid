@@ -656,3 +656,232 @@ ip pate dvaara dibag divais ko blok karen
 {0} abhee tak avaruddh nahin hai.
 seting lod karane mein truti huee
 seting lod karate samay ek truti huee hai. aapako setings fail kee jaanch karane kee aavashyakata ho sakatee hai.
+- stej 2: mod aur skreenasevar ka pata lagaana
+- stej 3: log in karen
+anubhaag chunen:
+vikalp chunen:
+saamaany setings...
+haardaveyar setings ...
+login setings ...
+shail setings ...
+netavark seting...
+vividh setings...
+samaayojan bachao
+baahar jaen
+nirdisht vikalp {0} amaany hai.
+uttar sankhyaatmak hona chaahie.
+boot par tark ke lie sheeghr
+rakharakhaav mod trigar
+root paasavard badalen ...
+staartap par apadet ke lie jaanch karen
+shaant jaanch
+jaanch raam slot
+log-in par motd dikhaen
+log-in par spasht skreen
+upalabdh upayogakarta naam dikhaen
+rangeen khol
+saraleekrt sahaayata kamaan
+dibag port
+doorasth dibag difolt nik upasarg
+ritree taims daunalod karen
+efateepee yoozaranem log in karen
+efateepee aaeepee pata log karen
+keval pahale efateepee profail par lauten
+ooparee daen kone par samay / dinaank dikhaen
+emes mein skreenasevar taimaut
+baits mein dibag aakaar kota
+aakaar paars mod
+staartap par maarkee
+lambe samay aur taareekh
+chhipee failen dekhen
+amaany anubhaag darj kiya gaya. krpaya vaapas jaen.
+vaapas jao...
+saksham karen
+aksham
+amaany kunjee nambar darj kiya gaya. krpaya vaapas jaen.
+root paasavard set karane ke lie likhen. chinta mat karo; paasavard ko sitaaron ke roop mein dikhaaya gaya hai.
+is vikalp ka upayog karane ke lie "root paasavard badalen" saksham karen. krpaya vaapas jaen.
+root paasavard badalen?
+root paasavard set karen ...
+ek doorasth deebagar port likhen. yah sankhyaatmak hona chaahie, aur pahale se hee upayog nahin kiya jaana chaahie. anyatha, doorasth deebagar port ko kholane mein viphal ho jaega.
+difolt doorasth deebag upanaam upasarg likhen.
+likhen ki kitanee baar "" praapt "" kamaand ko viphal daunalod punah praapt karana chaahie. yah nyoomerik hona chaahie.
+nirdisht mileesekand ke baad skreenasevar lonch karane ke lie kab likhen. yah nyoomerik hona chaahie.
+kitane baits dibag log stor kar sakate hain likhen. yah nyoomerik hona chaahie.
+uttar nakaaraatmak nahin ho sakata hai.
+uttar amaany hai. yah sunishchit karane ke lie jaanchen ki uttar konfigareshan pravishtiyon ke lie uttar sankhyaatmak hai jo uttar ke roop mein sankhyaon kee aavashyakata hai.
+parivartaneey {0} kisee bhee modyool par nahin paaya jaata hai.
+karnel konfigareshan badalata hai
+skreenasevar setings ...
+255 rangon ko sakriy karen
+kya aap jude rahana chaahate hain?
+amaany vikalp. nahin maan raha hai ...
+koee mod ka pata nahin chala. skiping stej ...
+bhaasha badalane par sanskrti badalen
+paath dikhaaya gaya
+aapake dvaara dikhae gae kisee bhee paath ko likhen. kam behatar hai.
+{0} apalod karane mein viphal
+fail ke lie daunalod viphal {0}: {1}
+doorasth dibag kamaand ko nishpaadit karane mein truti {0}: {1}
+upayogakartaon ko jodata hai
+upanaamon ko aagyaon mein jodata hai
+karnel ke tark ko khaarij karata hai (aavashyak reeboot)
+host naam badalata hai
+login ke baad mal, motd mein badalaav karata hai
+parivartan, din ka sandesh
+upayogakarta naam badalata hai
+deebag log dikhaata hai
+upayogakartaon ke lie anumatiyaan prabandhit karen
+ksmods mein skreenasevar fail ko punah lod karen
+upayogakarta ko soochee se nikaalata hai
+saphalataapoorvak nikaala gaya upanaam {0}.
+adyatanon kee jaanch karane mein viphal.
+soochee mein adhik upayogakarta shesh nahin hain.
+bhaasha set karane mein viphal.
+soochana ko khaarij karane kee koshish kar raha truti
+{0} mein apagred ka pata chala hai. konfigareshan apadet ho raha hai ...
+usrmgr: upayogakarta naam {0} banaane mein viphal: {1}
+upayogakarta ka naam badalane mein viphal. {0}
+anumati soochiyon mein se ek mein upayogakarta naam {0} nahin hai.
+fail se anumatiyaan lod karane mein viphal: {0}
+host naam badalane mein viphal: {0}
+upayogakarta nahin mila
+upayogakarta naam ka paasavard badalane mein viphal: {0}
+fail ya nirdeshika kee pratilipi banaane mein viphal: {0}
+fail ya nirdeshika le jaane mein viphal: {0}
+"{0}" se milaan karane ke lie fail khojane mein asamarth: {1}
+fail {0} ke lie daunalod viphal raha.
+doorasth failon ko soocheebaddh karane mein viphal: {0}
+nikaalane ke lie ek fail ya foldar darj karen. aapako hataane mein saksham hone ke lie aapake khaate par prashaasanik anumati honee chaahie.
+kya aap vaakee {0} <y / n> ko hataana chaahate hain?
+{0} hata raha hai ...
+{0} sarvar mein nahin paaya jaata hai.
+{0} dvaara kie gae sabhee mel saphalataapoorvak hata die jaate hain.
+{0} dvaara kie gae sabhee mel ko nikaalane mein viphal.
+sandesh bhejane mein truti
+mooving {0} se {1} ...
+saphalataapoorvak chala gaya
+fail ya nirdeshika ko kisee any fail ya nirdeshika mein le jaata hai. aap failon ka naam badalane ke lie bhee isaka upayog kar sakate hain.
+{0} ko {1} mein le jaane mein viphal.
+srot path aur gantavy path darj karen.
+{0} se {1} kopee karana ...
+saphalataapoorvak kopee kiya gaya
+fail ya nirdeshika ko kisee any fail ya nirdeshika mein kopee karata hai.
+{0} se {1} kopee karane mein viphal.
+ek sandesh le jaata hai
+praaptakarta ke sabhee sandeshon ko le jaata hai
+{0} dvaara kie gae sabhee mel saphalataapoorvak sthaanaantarit kar die gae hain.
+{0} dvaara kie gae sabhee mel ko sthaanaantarit karane mein viphal.
+{0} se {0} sandesh {2} se sthaanaantarit kiya gaya. {3} sandesh paars karane ke lie shesh hai.
+sandesh {0} se {1} chale gae. {3} sandesh paars karane ke lie shesh hai.
+nirdisht shahar ke lie mausam kee jaanakaaree dikhaata hai. opainwaiathairmap ka upayog karata hai.
+- {0} ke lie mausam kee jaanakaaree -
+mausam: {0}
+taapamaan: {0} ({1} ikaee)
+aisa lagata hai: {0} ({1} ikaee)
+dabaav: {0}
+aardrata: {0}
+aap https://home.openweathermap.org/api_keys par apanee khud kee epeeaee kunjee praapt kar sakate hain.
+aap hamesha apanee aaeedee ke saath shaharon kee soochee ke lie http://bulk.openweathermap.org/sample/city.list.json.gz se paraamarsh kar sakate hain.
+taapamaan ke lie pasandeeda ikaee
+kelvin
+shaahee (faarenahait)
+meetrik (selsiyas)
+karnel set karata hai taaki yah boot par tark ke lie aapako sanket de.
+trigar rakharakhaav mod. yah kaee khaaton ko nishkriy kar deta hai.
+pratyek staartap, yah apadet ke lie jaanch karega.
+bhaashaon ko svich karate samay, maheene ke naam, kailendar aadi ko badalen.
+yadi karnel shuroo kiya gaya hai, to yah root paasavard set karega.
+haardaveyar jaanch sandesh chup rakhen.
+yadi saksham hai, to yah raim ke saath-saath raim slot kee jaanch karega.
+login skreen pradarshit karane se pahale din ka sandesh dikhaen.
+login skreen pradarshit karane se pahale spasht skreen.
+saksham hone par upalabdh upayogakartaon ko dikhaata hai.
+karnel rang ka samarthan deta hai
+sabhee gole ke lie saraleekrt sahaayata kamaand
+efateepee yoozaranem log in karen ya nahin.
+efateepee aaeepee pate par log in karen ya nahin.
+kanekt karate samay pahalee profail chunen.
+cholormix ke lie 255 kalar saport sakriy karata hai.
+disko ke lie 255 rang samarthan sakriy karata hai.
+glittaircholor ke lie 255 rang samarthan sakriy karata hai.
+lainon ke lie 255 rang samarthan sakriy karata hai.
+samay aur taareekh skreen ke ooparee daen kone mein dikhaee jaegee
+yadi saksham hai, to karnel poore aakaar ke lie sampoorn foldar ko paars kar dega. els, keval satah ko paars karega.
+staartap par aiyaichandy ko saksham karata hai
+poore maheene ke naam ityaadi dikhaate hue samay aur taareekh lambee ho jaegee.
+chhipee huee phailen dikhaata hai.
+taapamaan ke lie apanee pasandeeda ikaee ka chayan karen (yah keval "mausam" kamaand par laagoo hota hai)
+mod {0} ruk gaya
+{0} v {1} ruka
+mod {0} ka paart naam nahin hai. mod paarsing viphal rahee. srot kod kee sameeksha karen.
+mod {0} ke paas kamaand nahin hai. mod paarsing viphal rahee. srot kod kee sameeksha karen.
+deebag log ko khaalee karane se pahale aapako deebag mod chaaloo karana hoga.
+{0} nae sandesh inaboks mein aae.
+unhen dekhane ke lie "lsmail" kholen.
+praathamik: {2} boot karane yogy: {3} boot vibhaajan: {4}
+fail nikaalane mein asamarth: {0}
+nirdeshika ya fail ko nikaalata hai
+{0} ko hata nahin sakate kyonki yah maujood nahin hai.
+aapake paas apane sistam par inxi sthaapit nahin ho sakata hai. sthaapana ke lie apane paikej prabandhak ka sandarbh len. debiyan (aur derivetiv) sistam ke lie, aap tarminal emuletar mein "sudo epti inaksee libaspainal-jsan-ekses-parl" chalaana chaah sakate hain.
+bhaasha saphalataapoorvak {0} par set hai!
+baahar nikalane ke lie chtrl + ch dabaen.
+ek fail ke baare mein jaanakaaree pradaan karata hai
+ek nirdeshika ke baare mein jaanakaaree pradaan karata hai
+koee bhee nirdeshika ke baare mein jaanakaaree praapt nahin kar sakate.
+koee nahin fail ke baare mein jaanakaaree nahin mil sakatee.
+poora naam: {0}
+nirmaan samay: {0}
+antim pahunch samay: {0}
+antim samay likhen: {0}
+visheshataen: {0}
+mool nirdeshika: {0}
+kahaan khojen: {0}
+fail ka aakaar: {0}
+kisee fail kee visheshata badal jaatee hai
+phail nahin milee.
+jahaan <visheshataen> nimnalikhit mein se ek hai:
+fail ek saamaany fail hai
+fail ek reed-onalee fail hai
+fail ek chhipee huee fail hai
+fail ek sangrah hai. baikap ke lie upayog kiya jaata hai.
+visheshata "{0}" amaany hai.
+visheshata ko saphalataapoorvak joda gaya hai.
+visheshata ko saphalataapoorvak hata diya gaya hai.
+visheshata jodane mein viphal.
+visheshata nikaalane mein viphal.
+aakaar: {0}
+kisee shabd ya vaakyaansh ko ek pankti mein doosare ke saath badalata hai
+laal rang ka star paar ho gaya. yah {0} tha.
+hare rang ka star paar ho gaya. yah {0} tha.
+neela rang ka star paar ho gaya. yah {0} tha.
+sachche rangon ko sakriy karen
+cholormix ke lie sahee rang samarthan sakriy karata hai.
+disko ke lie sahee rang samarthan sakriy karata hai.
+glittaircholor ke lie sahee rang samarthan sakriy karata hai.
+lainon ke lie sahee rang samarthan sakriy karata hai.
+{0} ko anavarodhit karane mein viphal.
+{0} pahale se avaruddh hai.
+{0} ab doorasth deebag mein shaamil nahin ho sakate.
+{0} blok karane mein viphal.
+saikil ke rang
+saksham hone par disko rang chakr karega. anyatha, yaadrchchhik rangon ka chayan karen.
+anulagnakon ke lie fail path darj karen. pushti karane ke lie rikt path par aintair dabaen.
+ek enkripted sandesh kholata hai
+kunjee aaeedee {0} ke lie paasavard likhen
+ek pate par ek enkripted sandesh bhejata hai
+ek pate par ek enkripted sandesh bhejane ke lie aavashyak feeld bharane ke lie poochhata hai
+{0} se daunalod ho raha hai ...
+"praapt" ya "put" kamaand se daunalod ya apalod karate samay pragati baar dikhaen
+yadi sahee hai, to yah daunalod ya apalod karate samay pragati baar ko "praapt" ya "put" dikhaata hai.
+nirdisht vebasait par ek fail apalod karata hai
+ek pata likhata hai
+{0} se {1} par apalod kar raha hai ...
+apalod poora ho gaya hai.
+yadi aap ftp sarvar par phail apalod karane ja rahe hain, to krpaya "ftp" ka upayog karen.
+apalod karane mein viphal {0}: {1}
+{0} mb ka {1} mb apalod kiya gaya.
+kitanee baar "put" kamaand ko viphal apalod ko phir se likhana chaahie. yah nyoomerik hona chaahie.
+pata khaalee nahin ho sakata.
+{0}: {1} ping karane mein viphal
+ping {0} emes mein saphal raha.

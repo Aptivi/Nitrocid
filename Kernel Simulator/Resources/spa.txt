@@ -656,3 +656,232 @@ Bloquear un dispositivo de depuración por dirección IP
 {0} aún no está bloqueado.
 Error al cargar la configuración
 Hay un error al cargar la configuración. Es posible que deba verificar el archivo de configuración.
+- Etapa 2: Detección de mods y salvapantallas
+- Etapa 3: Iniciar sesión
+Seleccionar sección:
+Seleccionar opción:
+Configuración general...
+Configuración de hardware ...
+Configuración de inicio de sesión ...
+Configuración de Shell ...
+Configuración de la red...
+Otras configuraciones...
+Guardar ajustes
+Salida
+La opción {0} especificada no es válida.
+La respuesta debe ser numérica.
+Solicitud de argumentos en el arranque
+Activador del modo de mantenimiento
+Cambiar la contraseña de root ...
+Buscar actualizaciones al iniciar
+Sonda silenciosa
+Ranuras de RAM de la sonda
+Mostrar MOTD al iniciar sesión
+Limpiar la pantalla al iniciar sesión
+Mostrar nombres de usuario disponibles
+Concha coloreada
+Comando de ayuda simplificado
+Puerto de depuración
+Prefijo de Nick predeterminado de depuración remota
+Descargar tiempos de reintento
+Registrar nombre de usuario FTP
+Registrar la dirección IP de FTP
+Devuelve solo el primer perfil FTP
+Mostrar hora / fecha en la esquina superior derecha
+Tiempo de espera del salvapantallas en ms
+Cuota de tamaño de depuración en bytes
+Modo de análisis de tamaño
+Marquesina al inicio
+Hora y fecha largas
+Mostrar archivos ocultos
+Se ingresó una sección no válida. Por favor regrese.
+Regresa...
+Habilitar
+Inhabilitar
+Se ingresó un número de clave no válido. Por favor regrese.
+Escriba la contraseña de root que se establecerá. No se preocupe; la contraseña se muestra como estrellas.
+Habilite "Cambiar contraseña de root" para usar esta opción. Por favor regrese.
+¿Cambiar la contraseña de root?
+Establecer contraseña de root ...
+Escribe un puerto depurador remoto. Debe ser numérico y no debe estar ya en uso. De lo contrario, el depurador remoto no podrá abrir el puerto.
+Escriba el prefijo de sobrenombre de depuración remota predeterminado.
+Escriba cuántas veces el comando "" get "" debe reintentar descargas fallidas. Debe ser numérico.
+Escriba cuándo iniciar el protector de pantalla después de milisegundos especificados. Debe ser numérico.
+Escriba cuántos bytes puede almacenar el registro de depuración. Debe ser numérico.
+Puede que la respuesta no sea negativa.
+La respuesta no es válida. Verifique para asegurarse de que la respuesta sea numérica para las entradas de configuración que necesitan números como respuestas.
+La variable {0} no se encuentra en ninguno de los módulos.
+Cambia la configuración del kernel
+Configuración del salvapantallas ...
+Activar 255 colores
+¿Quieres mantenerte conectado?
+Elección no válida Suponiendo que no ...
+No se detectaron modificaciones. Saltando etapa ...
+Cambiar de cultura al cambiar de idioma
+Texto mostrado
+Escriba el texto que desee que se muestre. Cuanto más corto, mejor.
+Error al cargar {0}
+Error al descargar el archivo {0}: {1}
+Error al ejecutar el comando de depuración remota {0}: {1}
+Agrega usuarios
+Agrega alias a los comandos
+Inyecta argumentos al kernel (es necesario reiniciar)
+Cambia el nombre de host
+Cambia MAL, el MOTD después de iniciar sesión
+Cambia MOTD, el mensaje del día
+Cambia el nombre de usuario
+Muestra registros de depuración
+Administrar permisos para usuarios
+Recarga el archivo de salvapantallas en KSMods
+Elimina un usuario de la lista.
+Se eliminó el alias {0} correctamente.
+Error al buscar actualizaciones.
+No quedan más usuarios en la lista.
+No se pudo establecer el idioma.
+Error al intentar ignorar la notificación.
+Se detecta una actualización a {0}. Actualizando configuración ...
+usrmgr: no se pudo crear el nombre de usuario {0}: {1}
+No se pudo cambiar el nombre del usuario. {0}
+Una de las listas de permisos no contiene el nombre de usuario {0}.
+No se pudieron cargar los permisos del archivo: {0}
+No se pudo cambiar el nombre de host: {0}
+Usuario no encontrado
+No se pudo cambiar la contraseña del nombre de usuario: {0}
+No se pudo copiar el archivo o directorio: {0}
+No se pudo mover el archivo o directorio: {0}
+No se pudo encontrar el archivo que coincida con la cadena "{0}": {1}
+Error al descargar el archivo {0}.
+No se pudieron enumerar los archivos remotos: {0}
+Ingrese un archivo o carpeta para eliminar. Debe tener permisos administrativos en su cuenta para poder eliminar.
+¿Está seguro de que desea eliminar {0} <y / n>?
+Eliminando {0} ...
+{0} no se encuentra en el servidor.
+Todos los correos enviados por {0} se eliminan correctamente.
+No se pudo eliminar todo el correo enviado por {0}.
+Error al enviar el mensaje.
+Moviendo {0} a {1} ...
+Movido exitosamente
+Mueve el archivo o directorio a otro archivo o directorio. También puede usar eso para cambiar el nombre de los archivos.
+No se pudo mover {0} a {1}.
+Introduzca una ruta de origen y una ruta de destino.
+Copiando {0} a {1} ...
+Copiado exitosamente
+Copia archivo o directorio a otro archivo o directorio.
+No se pudo copiar {0} a {1}.
+Mueve un mensaje
+Mueve todos los mensajes del destinatario
+Todo el correo realizado por {0} se mueve correctamente.
+No se pudo mover todo el correo enviado por {0}.
+Mensaje {0} de {1} movido de {2}. {3} mensajes restantes para analizar.
+Mensaje {0} de {1} movido. {3} mensajes restantes para analizar.
+Muestra información meteorológica para la ciudad especificada. Utiliza OpenWeatherMap.
+- Información meteorológica de {0} -
+Clima: {0}
+Temperatura: {0} ({1} unidad)
+Se siente como: {0} ({1} unidad)
+Presión: {0}
+Humedad: {0}
+Puede obtener su propia clave API en https://home.openweathermap.org/api_keys.
+Siempre puede consultar http://bulk.openweathermap.org/sample/city.list.json.gz para obtener la lista de ciudades con sus ID.
+Unidad preferida para temperatura
+Kelvin
+Imperial (Fahrenheit)
+Métrico (Celsius)
+Configura el kernel para que le solicite un argumento al arrancar.
+Activa el modo de mantenimiento. Esto deshabilita varias cuentas.
+Cada inicio, buscará actualizaciones.
+Al cambiar de idioma, cambie los nombres de los meses, el calendario, etc.
+Si se inicia el kernel, establecerá la contraseña de root.
+Mantenga los mensajes de prueba de hardware en silencio.
+Si está habilitado, sondeará las ranuras de RAM junto con la RAM.
+Muestra el mensaje del día antes de mostrar la pantalla de inicio de sesión.
+Limpiar la pantalla antes de mostrar la pantalla de inicio de sesión.
+Muestra los usuarios disponibles si está habilitado.
+Da soporte al color del kernel
+Comando de ayuda simplificado para todos los proyectiles
+Si se registra o no el nombre de usuario de FTP.
+Si se registra o no la dirección IP de FTP.
+Elija el primer perfil solo cuando se conecte.
+Activa la compatibilidad con 255 colores para ColorMix.
+Activa el soporte de 255 colores para Disco.
+Activa la compatibilidad con 255 colores para GlitterColor.
+Activa el soporte de 255 colores para líneas.
+La hora y la fecha se mostrarán en la esquina superior derecha de la pantalla.
+Si está habilitado, el kernel analizará la carpeta completa para su tamaño total. De lo contrario, solo analizará la superficie.
+Habilita eyecandy en el inicio
+La hora y la fecha serán más largas, mostrando los nombres de los meses completos, etc.
+Muestra archivos ocultos.
+Seleccione su unidad preferida para la temperatura (esto solo se aplica al comando "clima")
+Mod {0} detenido
+{0} v {1} detenido
+El mod {0} no tiene el nombre de la pieza. Error al analizar el mod. Revise el código fuente.
+El mod {0} no tiene el comando. Error al analizar el mod. Revise el código fuente.
+Debe activar el modo de depuración antes de poder borrar el registro de depuración.
+{0} mensajes nuevos llegaron a la bandeja de entrada.
+Abra "lsmail" para verlos.
+Principal: {2} de arranque: {3} partición de arranque: {4}
+No se puede eliminar el archivo: {0}
+Elimina un directorio o un archivo
+No se puede eliminar {0} porque no existe.
+Es posible que no tenga inxi instalado en su sistema. Consulte su administrador de paquetes para la instalación. Para los sistemas Debian (y derivados), es posible que desee ejecutar "" sudo apt install inxi libcpanel-json-xs-perl "" en el emulador de terminal.
+¡El idioma se estableció correctamente en {0}!
+Presione CTRL + C para salir.
+Proporciona información sobre un archivo.
+Proporciona información sobre un directorio.
+No se puede obtener información sobre un directorio inexistente.
+No se puede obtener información sobre un archivo inexistente.
+Nombre completo: {0}
+Hora de creación: {0}
+Hora del último acceso: {0}
+Hora de la última escritura: {0}
+Atributos: {0}
+Directorio principal: {0}
+Dónde encontrar: {0}
+Tamaño de archivo: {0}
+Cambia el atributo de un archivo
+Archivo no encontrado.
+donde <attributes> es uno de los siguientes:
+El archivo es un archivo normal
+El archivo es un archivo de solo lectura
+El archivo es un archivo oculto
+El archivo es un archivo. Se utiliza para copias de seguridad.
+El atributo "{0}" no es válido.
+El atributo se ha agregado correctamente.
+El atributo se ha eliminado correctamente.
+No se pudo agregar el atributo.
+No se pudo eliminar el atributo.
+Tamaño: {0}
+Reemplaza una palabra o frase por otra en una línea
+Se superó el nivel de color rojo. Fue {0}.
+Se superó el nivel de color verde. Fue {0}.
+Se superó el nivel de color azul. Fue {0}.
+Activar colores verdaderos
+Activa el soporte de color verdadero para ColorMix.
+Activa el soporte de color verdadero para Disco.
+Activa la compatibilidad con colores verdaderos para GlitterColor.
+Activa el soporte de color verdadero para líneas.
+No se pudo desbloquear {0}.
+{0} ya está bloqueado.
+{0} no puede unirse a la depuración remota ahora.
+No se pudo bloquear a {0}.
+Colores de ciclo
+Disco hará un ciclo de colores cuando esté habilitado. De lo contrario, seleccione colores aleatorios.
+Ingrese las rutas de los archivos a los adjuntos. Presione ENTER en una ruta en blanco para confirmar.
+Abre un mensaje encriptado
+Escriba la contraseña para el ID de clave {0}
+Envía un mensaje cifrado a una dirección
+Le pide que complete los campos obligatorios para enviar un mensaje cifrado a una dirección
+Descargando desde {0} ...
+Mostrar barra de progreso al descargar o cargar desde el comando "get" o "put"
+Si es verdadero, hace que "get" o "put" muestre la barra de progreso mientras se descarga o carga.
+Carga un archivo al sitio web especificado
+Hace ping a una dirección
+Subiendo {0} a {1} ...
+Se completó la carga.
+Utilice "ftp" si va a cargar archivos en el servidor FTP.
+La carga falló en el intento {0}: {1}
+{0} MB de {1} MB cargados.
+Escriba cuántas veces el comando "put" debe reintentar las cargas fallidas. Debe ser numérico.
+La dirección no puede estar vacía.
+Error al hacer ping {0}: {1}
+El ping se realizó correctamente en {0} ms.

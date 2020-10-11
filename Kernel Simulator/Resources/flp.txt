@@ -656,3 +656,232 @@ Maaari nang sumali muli ang {0} sa remote debug.
 Ang {0} ay hindi pa na-block.
 Error sa paglo-load ng mga setting
 Mayroong isang error habang naglo-load ng mga setting. Maaaring kailanganin mong suriin ang file ng mga setting.
+- Yugto 2: Mga mod at pagtuklas ng mga screensaver
+- Yugto 3: Mag-log in
+Piliin ang seksyon:
+Piliin ang pagpipilian:
+Pangkalahatang mga Setting...
+Mga Setting ng Hardware ...
+Mga Setting ng Pag-login ...
+Mga Setting ng Shell ...
+Mga Setting ng Network ...
+Sari-saring Setting ...
+I-save ang Mga Setting
+Lumabas
+Ang tinukoy na pagpipilian {0} ay hindi wasto.
+Ang sagot ay dapat na bilang.
+Prompt para sa Mga Argumento sa Boot
+Trigger ng Maintenance Mode
+Palitan ang Root Password ...
+Suriin ang mga Update sa Startup
+Tahimik na Probe
+Probe RAM Slots
+Ipakita ang MOTD sa Pag-log in
+I-clear ang Screen sa Pag-log in
+Ipakita ang magagamit na mga username
+May kulay na shell
+Pinasimple na Command ng Tulong
+Port ng Debug
+Remote na Pag-debug Default na Nick Prefix
+I-download ang Retry Times
+Mag-log FTP username
+Mag-log ng FTP IP address
+Ibalik lamang ang unang profile ng FTP
+Ipakita ang Oras / Petsa sa Itaas na Kanang Sulok
+Ang Pag-timeout ng Screensaver sa ms
+Ang laki ng Debug Quota sa Bytes
+Laki ng mode ng parse
+Marquee sa pagsisimula
+Mahabang Oras at Petsa
+Ipakita ang nakatagong dokumento
+Di-wastong seksyon na ipinasok. Mangyaring bumalik
+Bumalik ka...
+Paganahin
+Huwag paganahin
+Di-wastong key number ang ipinasok. Mangyaring bumalik
+Isulat ang root password na maitatakda. Huwag magalala; ang password ay ipinapakita bilang mga bituin.
+Paganahin ang "Baguhin ang Root Password" upang magamit ang opsyong ito. Mangyaring bumalik
+Palitan ang Root Password?
+Itakda ang Root Password ...
+Sumulat ng isang remote port ng debugger. Dapat itong numeric, at hindi dapat gamitin. Kung hindi man, mabibigo ang remote debugger na buksan ang port.
+Isulat ang default na remote na debug na nickname pref.
+Isulat kung gaano karaming beses dapat na subukang muli ng utos na "" makuha "" ang mga nabigong pag-download. Dapat ay numeric ito.
+Sumulat kung kailan ilulunsad ang screensaver pagkatapos ng mga tinukoy na milliseconds. Dapat ay numeric ito.
+Isulat kung ilang byte ang maaaring mag-store ng debug log. Dapat ay numeric ito.
+Ang sagot ay maaaring hindi negatibo.
+Ang sagot ay hindi wasto. Suriin upang matiyak na ang sagot ay bilang ng numero para sa mga config entry na nangangailangan ng mga bilang bilang mga sagot.
+Ang variable na {0} ay hindi matatagpuan sa alinman sa mga module.
+Binabago ang pagsasaayos ng kernel
+Mga Setting ng Screensaver ...
+Paganahin ang 255 mga kulay
+Nais mo bang manatiling konektado?
+Di-wastong pagpipilian. Ipagpalagay hindi ...
+Walang nakitang mods. Laktawan ang yugto ...
+Baguhin ang Kultura kapag Lumilipat ng Mga Wika
+Ipinakita ang teksto
+Sumulat ng anumang teksto na nais mong ipakita. Mas maigi ang mas maikli.
+Nabigong i-upload ang {0}
+Nabigo ang pag-download para sa file na {0}: {1}
+Error sa pagpapatupad ng remote na utos ng pag-debug {0}: {1}
+Nagdaragdag ng mga gumagamit
+Nagdaragdag ng mga alias sa mga utos
+Mga argumento ng paksa sa kernel (kinakailangan ng pag-reboot)
+Binabago ang pangalan ng host
+Binabago ang MAL, ang MOTD Pagkatapos ng Pag-login
+Binabago ang MOTD, ang Mensahe Ng Araw
+Binabago ang pangalan ng gumagamit
+Nagpapakita ng mga log ng pag-debug
+Pamahalaan ang mga pahintulot para sa mga gumagamit
+I-reload ang file ng screensaver sa KSMods
+Tinatanggal ang isang gumagamit sa listahan
+Matagumpay na naalis ang alyas {0}.
+Nabigong suriin para sa mga update.
+Wala nang natitirang mga gumagamit sa listahan.
+Nabigong magtakda ng wika.
+Error sa pagsubok sa pag-aalis ng notification.
+Ang isang pag-upgrade sa {0} ay nakita. Ina-update ang pagsasaayos ...
+usrmgr: Nabigong lumikha ng username {0}: {1}
+Nabigong palitan ang pangalan ng gumagamit. {0}
+Ang isa sa mga listahan ng pahintulot ay hindi naglalaman ng username {0}.
+Nabigong mag-load ng mga pahintulot mula sa file: {0}
+Nabigong baguhin ang pangalan ng host: {0}
+Hindi nahanap ang gumagamit
+Nabigong baguhin ang password ng username: {0}
+Nabigong kopyahin ang file o direktoryo: {0}
+Nabigong ilipat ang file o direktoryo: {0}
+Hindi mahanap ang file upang tumugma sa string na "{0}": {1}
+Nabigo ang pag-download para sa file na {0}.
+Nabigong nakalista ang mga malalayong file: {0}
+Magpasok ng isang file o folder upang alisin. Dapat ay mayroon kang mga pahintulot na pang-administratibo sa iyong account upang maalis.
+Sigurado ka bang nais mong tanggalin ang {0} <y / n>?
+Tinatanggal ang {0} ...
+Ang {0} ay hindi matatagpuan sa server.
+Ang lahat ng mail na ginawa ni {0} ay matagumpay na naalis.
+Nabigong alisin ang lahat ng mail na ginawa ni {0}.
+Error sa pagpapadala ng mensahe.
+Inililipat ang {0} sa {1} ...
+Matagumpay na inilipat
+Inililipat ang file o direktoryo sa isa pang file o direktoryo. Maaari mo ring gamitin iyon upang palitan ang pangalan ng mga file.
+Nabigong ilipat ang {0} sa {1}.
+Magpasok ng isang path ng pinagmulan at isang path ng patutunguhan.
+Kinokopya ang {0} sa {1} ...
+Matagumpay na nakopya
+Kinokopya ang file o direktoryo sa isa pang file o direktoryo.
+Nabigong kopyahin ang {0} sa {1}.
+Gumagalaw ng isang mensahe
+Inililipat ang lahat ng mga mensahe mula sa tatanggap
+Ang lahat ng mail na ginawa ng {0} ay matagumpay na inilipat.
+Nabigong ilipat ang lahat ng mail na ginawa ni {0}.
+Ang mensahe na {0} mula sa {1} ay inilipat mula sa {2}. {3} mga mensahe na natitira upang ma-parse.
+Ang mensahe na {0} mula sa {1} ay inilipat. {3} mga mensahe na natitira upang ma-parse.
+Nagpapakita ng impormasyon sa panahon para sa tinukoy na lungsod. Gumagamit ng OpenWeatherMap.
+- Impormasyon ng panahon para sa {0} -
+Panahon: {0}
+Temperatura: {0} ({1} yunit)
+Nararamdaman tulad ng: {0} ({1} unit)
+Presyon: {0}
+Humidity: {0}
+Maaari kang makakuha ng iyong sariling API key sa https://home.openweathermap.org/api_keys.
+Maaari mong laging kumunsulta sa http://bulk.openweathermap.org/sample/city.list.json.gz para sa listahan ng mga lungsod kasama ang kanilang mga ID.
+Ginustong Yunit para sa Temperatura
+Kelvin
+Imperyal (Fahrenheit)
+Sukatan (Celsius)
+Itinatakda ang kernel kaya't hinihikayat ka nito para sa pagtatalo sa boot.
+Pag-trigger ng mode ng pagpapanatili. Hindi pinagagana nito ang maraming account.
+Ang bawat pagsisimula, susuriin nito para sa mga pag-update.
+Kapag lumilipat ng mga wika, baguhin ang mga pangalan ng buwan, kalendaryo, atbp.
+Kung sinimulan ang kernel, magtatakda ito ng root password.
+Patahimikin ang mga mensahe sa pagsisiyasat ng hardware.
+Kung pinagana, iimbestigahan nito ang mga puwang ng RAM kasama ang RAM.
+Ipakita ang Mensahe ng Araw bago ipakita ang login screen.
+I-clear ang screen bago ipakita ang login screen.
+Ipinapakita ang mga magagamit na gumagamit kung pinagana.
+Nagbibigay ng suporta sa kulay ng kernel
+Pinasimple na utos ng tulong para sa lahat ng mga shell
+Kung mag-log FTP username o hindi.
+Kung mag-log ng FTP IP address o hindi.
+Piliin lamang ang unang profile kapag kumokonekta.
+Pinapagana ang suporta ng 255 na kulay para sa ColorMix.
+Pinapagana ang 255 suporta sa kulay para sa Disco.
+Pinapagana ang suporta ng 255 na kulay para sa GlitterColor.
+Pinapagana ang 255 suporta sa kulay para sa Mga Linya.
+Ipapakita ang oras at petsa sa kanang sulok sa itaas ng screen
+Kung pinagana, mai-parse ng kernel ang buong folder para sa kabuuang sukat nito. Iba pa, parse-parse lang ang ibabaw.
+Pinapagana ang eyecandy sa pagsisimula
+Ang oras at petsa ay magiging mas mahaba, na nagpapakita ng buong pangalan ng buwan, atbp.
+Nagpapakita ng mga nakatagong file.
+Piliin ang iyong ginustong unit para sa temperatura (nalalapat lamang ito sa "panahon" na utos)
+Huminto si Mod {0}
+Tumigil ang {0} v {1}
+Ang Mod {0} ay walang pangalan ng bahagi. Nabigo ang pag-parse ng mod. Suriin ang source code.
+Ang Mod {0} ay walang utos. Nabigo ang pag-parse ng mod. Suriin ang source code.
+Dapat mong i-on ang debug mode bago mo i-clear ang debug log.
+{0} mga bagong mensahe ang dumating sa inbox.
+Buksan ang "lsmail" upang makita ang mga ito.
+Pangunahing: {2} Bootable: {3} Boot na pagkahati: {4}
+Hindi matanggal ang file: {0}
+Tinatanggal ang isang direktoryo o isang file
+Hindi matanggal {0} dahil wala ito.
+Maaaring wala kang naka-install na inxi sa iyong system. Sumangguni sa iyong manager ng package para sa pag-install. Para sa mga system ng Debian (at derivatives), baka gusto mong patakbuhin ang "" sudo apt install inxi libcpanel-json-xs-perl "" sa terminal emulator.
+Matagumpay na naitakda ang wika sa {0}!
+Pindutin ang CTRL + C upang lumabas.
+Nagbibigay ng impormasyon tungkol sa isang file
+Nagbibigay ng impormasyon tungkol sa isang direktoryo
+Hindi makakuha ng impormasyon tungkol sa wala sa direktoryo.
+Hindi makakuha ng impormasyon tungkol sa wala na file.
+Buong pangalan: {0}
+Oras ng paglikha: {0}
+Huling oras ng pag-access: {0}
+Huling oras ng pagsulat: {0}
+Mga Katangian: {0}
+Direktoryo ng magulang: {0}
+Saan mahahanap: {0}
+Laki ng file: {0}
+Binabago ang katangian ng isang file
+Hindi nahanap ang file.
+kung saan ang <attribut> ay isa sa mga sumusunod:
+Ang file ay isang normal na file
+Ang file ay isang read-only na file
+Ang file ay isang nakatagong file
+Ang file ay isang archive. Ginamit para sa mga backup.
+Di-wasto ang katangiang "{0}".
+Matagumpay na naidagdag ang katangian.
+Matagumpay na naalis ang katangian.
+Nabigong magdagdag ng katangian.
+Nabigong alisin ang katangian.
+Laki: {0}
+Pinapalitan ang isang salita o parirala sa isa pa sa isang linya
+Lumagpas sa antas ng pulang kulay. Ito ay {0}.
+Lumagpas sa antas ng berdeng kulay. Ito ay {0}.
+Lumagpas sa antas ng asul na kulay. Ito ay {0}.
+Paganahin ang mga totoong kulay
+Pinapagana ang totoong suporta sa kulay para sa ColorMix.
+Pinapagana ang tunay na suporta sa kulay para sa Disco.
+Pinapagana ang totoong suporta sa kulay para sa GlitterColor.
+Pinapagana ang totoong suporta sa kulay para sa Mga Linya.
+Nabigong i-block ang {0}.
+Na-block na ang {0}.
+Hindi makasali si {0} sa malayuang pag-debug ngayon.
+Nabigong i-block ang {0}.
+Mga kulay ng ikot
+Ikot ikot ng Disco ang mga kulay kapag pinagana. Kung hindi man, pumili ng mga random na kulay.
+Ipasok ang mga file path sa mga kalakip. Pindutin ang ENTER sa isang blangko na landas upang kumpirmahin.
+Nagbubukas ng isang naka-encrypt na mensahe
+Sumulat ng password para sa key ID {0}
+Nagpapadala ng naka-encrypt na mensahe sa isang address
+Humihiling sa iyo na punan ang mga kinakailangang larangan upang magpadala ng isang naka-encrypt na mensahe sa isang address
+Nagda-download mula sa {0} ...
+Ipakita ang progress bar habang nagda-download o nag-a-upload mula sa "get" o "put" na command
+Kung totoo, ginagawang ipakita ang "get" o "put" ng progress bar habang nagda-download o nag-a-upload.
+Nag-a-upload ng isang file sa tinukoy na website
+Nag-ping ng isang address
+Ina-upload ang {0} sa {1} ...
+Nakumpleto na ang pag-upload.
+Mangyaring gamitin ang "ftp" kung mag-a-upload ka ng mga file sa FTP server.
+Nabigo ang pag-upload sa pagsubok {0}: {1}
+{0} MB ng {1} MB ang na-upload.
+Isulat kung gaano karaming beses dapat na subukang muli ng "put" na utos ang mga nabigong pag-upload. Dapat ay numeric ito.
+Ang address ay maaaring hindi walang laman.
+Nabigong i-ping {0}: {1}
+Nagtagumpay si Ping sa {0} ms.

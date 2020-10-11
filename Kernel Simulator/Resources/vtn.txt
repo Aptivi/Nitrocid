@@ -656,3 +656,232 @@ Chặn thiết bị gỡ lỗi theo địa chỉ IP
 {0} chưa bị chặn.
 Lỗi tải cài đặt
 Có lỗi trong khi tải cài đặt. Bạn có thể cần kiểm tra tập tin cài đặt.
+- Giai đoạn 2: Phát hiện mod và bảo vệ màn hình
+- Giai đoạn 3: Đăng nhập
+Chọn phần:
+Chọn tùy chọn:
+Cài đặt chung ...
+Cài đặt phần cứng ...
+Cài đặt Đăng nhập ...
+Cài đặt Shell ...
+Thiết lạp mạng lưới...
+Cài đặt linh tinh...
+Lưu các thiết lập
+Lối ra
+Tùy chọn đã chỉ định {0} không hợp lệ.
+Câu trả lời phải là số.
+Nhắc đối số khi khởi động
+Kích hoạt chế độ bảo trì
+Thay đổi mật khẩu gốc ...
+Kiểm tra các bản cập nhật khi khởi động
+Thăm dò yên lặng
+Thăm dò khe cắm RAM
+Hiển thị MOTD khi đăng nhập
+Xóa màn hình khi đăng nhập
+Hiển thị tên người dùng có sẵn
+Vỏ màu
+Lệnh trợ giúp được đơn giản hóa
+Cổng gỡ lỗi
+Tiền tố Nick mặc định gỡ lỗi từ xa
+Tải xuống thời gian thử lại
+Đăng nhập tên người dùng FTP
+Ghi địa chỉ IP FTP
+Chỉ trả lại hồ sơ FTP đầu tiên
+Hiển thị thời gian / ngày ở góc trên bên phải
+Thời gian chờ của trình bảo vệ màn hình tính bằng mili giây
+Hạn ngạch kích thước gỡ lỗi tính bằng byte
+Chế độ phân tích kích thước
+Marquee khi khởi động
+Thời gian và Ngày dài
+Hiển thị cac file bị ẩn
+Đã nhập phần không hợp lệ. Hãy quay lại.
+Quay lại...
+Kích hoạt
+Vô hiệu hóa
+Số khóa đã nhập không hợp lệ. Hãy quay lại.
+Viết mật khẩu gốc cần đặt. Đừng lo lắng; mật khẩu được hiển thị dưới dạng dấu sao.
+Bật "Thay đổi mật khẩu gốc" để sử dụng tùy chọn này. Hãy quay lại.
+Thay đổi mật khẩu gốc?
+Đặt mật khẩu gốc ...
+Viết một cổng gỡ lỗi từ xa. Nó phải là số và không được sử dụng. Nếu không, trình gỡ lỗi từ xa sẽ không mở được cổng.
+Viết tiền tố biệt hiệu gỡ lỗi từ xa mặc định.
+Viết số lần lệnh "" get "" sẽ thử lại các lần tải xuống không thành công. Nó phải là số.
+Viết thời điểm khởi chạy trình bảo vệ màn hình sau phần nghìn giây được chỉ định. Nó phải là số.
+Ghi bao nhiêu byte có thể lưu trữ nhật ký gỡ lỗi. Nó phải là số.
+Câu trả lời có thể không phủ định.
+Câu trả lời là không hợp lệ. Kiểm tra để đảm bảo rằng câu trả lời là số cho các mục nhập cấu hình cần số làm câu trả lời.
+Biến {0} không được tìm thấy trên bất kỳ mô-đun nào.
+Thay đổi cấu hình hạt nhân
+Cài đặt trình bảo vệ màn hình ...
+Kích hoạt 255 màu
+Bạn có muốn giữ kết nối không?
+Lựa chọn không hợp lệ. Giả sử không ...
+Không có mod nào được phát hiện. Đang bỏ qua giai đoạn ...
+Thay đổi văn hóa khi chuyển đổi ngôn ngữ
+Văn bản được hiển thị
+Viết bất kỳ văn bản nào bạn muốn hiển thị. Ngắn hơn là tốt hơn.
+Không tải lên được {0}
+Tải xuống không thành công cho tệp {0}: {1}
+Lỗi khi thực thi lệnh gỡ lỗi từ xa {0}: {1}
+Thêm người dùng
+Thêm bí danh vào lệnh
+Chèn đối số vào hạt nhân (yêu cầu khởi động lại)
+Thay đổi tên máy chủ
+Thay đổi MAL, MOTD sau khi đăng nhập
+Thay đổi MOTD, Thông điệp trong ngày
+Thay đổi tên người dùng
+Hiển thị nhật ký gỡ lỗi
+Quản lý quyền cho người dùng
+Tải lại tệp bảo vệ màn hình trong KSMods
+Xóa người dùng khỏi danh sách
+Đã xóa bí danh {0} thành công.
+Không thể kiểm tra các bản cập nhật.
+Không có người dùng nào còn lại trong danh sách.
+Không đặt được ngôn ngữ.
+Lỗi khi cố gắng loại bỏ thông báo.
+Đã phát hiện nâng cấp lên {0}. Đang cập nhật cấu hình ...
+usrmgr: Không tạo được tên người dùng {0}: {1}
+Không thể đổi tên người dùng. {0}
+Một trong các danh sách quyền không chứa tên người dùng {0}.
+Không tải được quyền từ tệp: {0}
+Không thay đổi được tên máy chủ: {0}
+Không tìm thấy người dùng
+Không thể thay đổi mật khẩu của tên người dùng: {0}
+Không sao chép được tệp hoặc thư mục: {0}
+Không di chuyển được tệp hoặc thư mục: {0}
+Không thể tìm thấy tệp để khớp với chuỗi "{0}": {1}
+Không tải xuống được tệp {0}.
+Không liệt kê được các tệp từ xa: {0}
+Nhập một tệp hoặc thư mục để xóa. Bạn phải có quyền quản trị trên tài khoản của mình để có thể xóa.
+Bạn có chắc chắn muốn xóa {0} <y / n> không?
+Đang xóa {0} ...
+{0} không được tìm thấy trong máy chủ.
+Tất cả thư do {0} tạo đều được xóa thành công.
+Không xóa được tất cả thư do {0} gửi.
+Lỗi khi gửi tin nhắn.
+Đang di chuyển {0} sang {1} ...
+Đã chuyển thành công
+Di chuyển tệp hoặc thư mục sang tệp hoặc thư mục khác. Bạn cũng có thể sử dụng nó để đổi tên tệp.
+Không chuyển được {0} sang {1}.
+Nhập đường dẫn nguồn và đường dẫn đích.
+Đang sao chép {0} sang {1} ...
+Đã sao chép thành công
+Sao chép tệp hoặc thư mục sang tệp hoặc thư mục khác.
+Không sao chép được {0} sang {1}.
+Chuyển một tin nhắn
+Di chuyển tất cả tin nhắn từ người nhận
+Tất cả thư do {0} thực hiện đều được chuyển thành công.
+Không chuyển được tất cả thư do {0} gửi.
+Thư {0} từ {1} được chuyển từ {2}. Còn lại {3} tin nhắn để phân tích cú pháp.
+Thư {0} từ {1} đã được chuyển. Còn lại {3} tin nhắn để phân tích cú pháp.
+Hiển thị thông tin thời tiết cho thành phố được chỉ định. Sử dụng OpenWeatherMap.
+- Thông tin thời tiết cho {0} -
+Thời tiết: {0}
+Nhiệt độ: {0} ({1} đơn vị)
+Cảm thấy như: {0} ({1} đơn vị)
+Áp lực: {0}
+Độ ẩm: {0}
+Bạn có thể lấy khóa API của riêng mình tại https://home.openweathermap.org/api_keys.
+Bạn luôn có thể tham khảo http://bulk.openweathermap.org/sample/city.list.json.gz để biết danh sách các thành phố có ID của họ.
+Đơn vị ưu tiên cho nhiệt độ
+Kelvin
+Imperial (Fahrenheit)
+Hệ mét (độ C)
+Thiết lập hạt nhân để nó nhắc bạn đối số khi khởi động.
+Kích hoạt chế độ bảo trì. Điều này vô hiệu hóa nhiều tài khoản.
+Mỗi lần khởi động, nó sẽ kiểm tra các bản cập nhật.
+Khi chuyển đổi ngôn ngữ, hãy thay đổi tên tháng, lịch, v.v.
+Nếu hạt nhân được khởi động, nó sẽ đặt mật khẩu gốc.
+Giữ im lặng các thông báo thăm dò phần cứng.
+Nếu được bật, nó sẽ thăm dò các khe RAM cùng với RAM.
+Hiển thị Thông báo trong ngày trước khi hiển thị màn hình đăng nhập.
+Xóa màn hình trước khi hiển thị màn hình đăng nhập.
+Hiển thị những người dùng hiện có nếu được bật.
+Cung cấp hỗ trợ màu hạt nhân
+Lệnh trợ giúp đơn giản hóa cho tất cả các shell
+Có đăng nhập tên người dùng FTP hay không.
+Có đăng nhập địa chỉ IP FTP hay không.
+Chỉ chọn hồ sơ đầu tiên khi kết nối.
+Kích hoạt hỗ trợ 255 màu cho ColorMix.
+Kích hoạt hỗ trợ 255 màu cho Disco.
+Kích hoạt hỗ trợ 255 màu cho GlitterColor.
+Kích hoạt hỗ trợ 255 màu cho Lines.
+Ngày và giờ sẽ được hiển thị ở góc trên bên phải của màn hình
+Nếu được bật, hạt nhân sẽ phân tích cú pháp toàn bộ thư mục cho tổng kích thước của nó. Khác, sẽ chỉ phân tích bề mặt.
+Bật chế độ mỏi mắt khi khởi động
+Ngày và giờ sẽ dài hơn, hiển thị tên tháng đầy đủ, v.v.
+Hiển thị các tệp ẩn.
+Chọn đơn vị ưa thích của bạn cho nhiệt độ (điều này chỉ áp dụng cho lệnh "thời tiết")
+Mod {0} đã dừng
+{0} v {1} đã dừng
+Mod {0} không có tên bộ phận. Phân tích cú pháp mod không thành công. Xem lại mã nguồn.
+Mod {0} không có lệnh. Phân tích cú pháp mod không thành công. Xem lại mã nguồn.
+Bạn phải bật chế độ gỡ lỗi trước khi có thể xóa nhật ký gỡ lỗi.
+{0} thư mới đã đến hộp thư đến.
+Mở "lsmail" để xem chúng.
+Chính: {2} Có thể khởi động: {3} Phân vùng khởi động: {4}
+Không thể xóa tệp: {0}
+Xóa một thư mục hoặc một tệp
+Không thể xóa {0} vì nó không tồn tại.
+Bạn có thể chưa cài đặt inxi trên hệ thống của mình. Tham khảo trình quản lý gói của bạn để cài đặt. Đối với hệ thống Debian (và các hệ thống phái sinh), bạn có thể muốn chạy "" sudo apt install inxi libcpanel-json-xs-perl "" trong trình mô phỏng đầu cuối.
+Đã đặt thành công ngôn ngữ thành {0}!
+Nhấn CTRL + C để thoát.
+Cung cấp thông tin về tệp
+Cung cấp thông tin về một thư mục
+Không thể lấy thông tin về thư mục không tồn tại.
+Không thể lấy thông tin về tệp không tồn tại.
+Tên đầy đủ: {0}
+Thời gian tạo: {0}
+Lần truy cập cuối cùng: {0}
+Lần viết cuối cùng: {0}
+Các thuộc tính: {0}
+Thư mục chính: {0}
+Tìm ở đâu: {0}
+Kích thước tệp: {0}
+Thay đổi thuộc tính của tệp
+Không tìm thấy tệp.
+trong đó <attributes> là một trong những điều sau:
+Tệp là một tệp bình thường
+Tệp là tệp chỉ đọc
+Tệp là một tệp ẩn
+Tệp là một kho lưu trữ. Được sử dụng để sao lưu.
+Thuộc tính "{0}" không hợp lệ.
+Thuộc tính đã được thêm thành công.
+Thuộc tính đã được xóa thành công.
+Không thêm được thuộc tính.
+Không xóa được thuộc tính.
+Kích thước: {0}
+Thay thế một từ hoặc cụm từ bằng một từ hoặc cụm từ khác trong một dòng
+Đã vượt quá mức màu đỏ. Đó là {0}.
+Đã vượt quá mức màu xanh lục. Đó là {0}.
+Đã vượt quá mức màu xanh lam. Đó là {0}.
+Kích hoạt màu sắc trung thực
+Kích hoạt hỗ trợ màu thực cho ColorMix.
+Kích hoạt hỗ trợ màu sắc trung thực cho Disco.
+Kích hoạt hỗ trợ màu sắc trung thực cho GlitterColor.
+Kích hoạt hỗ trợ màu thực cho Đường kẻ.
+Không thể bỏ chặn {0}.
+{0} đã bị chặn.
+{0} hiện không thể tham gia gỡ lỗi từ xa.
+Không chặn được {0}.
+Màu chu kỳ
+Disco sẽ chuyển màu khi được bật. Nếu không, hãy chọn màu ngẫu nhiên.
+Nhập đường dẫn tệp đến tệp đính kèm. Nhấn ENTER trên một đường dẫn trống để xác nhận.
+Mở một tin nhắn được mã hóa
+Viết mật khẩu cho ID khóa {0}
+Gửi một tin nhắn được mã hóa đến một địa chỉ
+Yêu cầu bạn điền vào các trường bắt buộc để gửi một tin nhắn được mã hóa đến một địa chỉ
+Đang tải xuống từ {0} ...
+Hiển thị thanh tiến trình trong khi tải xuống hoặc tải lên từ lệnh "get" hoặc "put"
+Nếu đúng, nó làm cho "get" hoặc "put" hiển thị thanh tiến trình trong khi tải xuống hoặc tải lên.
+Tải tệp lên trang web cụ thể
+Ping một địa chỉ
+Đang tải {0} lên {1} ...
+Tải lên đã hoàn tất.
+Vui lòng sử dụng "ftp" nếu bạn định tải tệp lên máy chủ FTP.
+Tải lên không thành công khi thử {0}: {1}
+Đã tải lên {0} MB / {1} MB.
+Viết số lần lệnh "put" sẽ thử lại các lần tải lên không thành công. Nó phải là số.
+Địa chỉ không được để trống.
+Không ping được {0}: {1}
+Ping thành công sau {0} mili giây.

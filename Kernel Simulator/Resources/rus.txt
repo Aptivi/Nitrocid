@@ -656,3 +656,232 @@ Blokirovka ustroystva otladki po IP-adresu
 {0} yeshche ne zablokirovan.
 Oshibka zagruzki nastroyek
 Pri zagruzke nastroyek proizoshla oshibka. Vozmozhno, vam potrebuyetsya proverit' fayl nastroyek.
+- Etap 2: Obnaruzheniye modov i zastavok
+- Etap 3: Voyti
+Vyberite razdel:
+Vyberite optsiyu:
+Obshchiye nastroyki...
+Parametry oborudovaniya ...
+Nastroyki vkhoda ...
+Nastroyki obolochki ...
+Nastroyki seti...
+Raznyye nastroyki ...
+Sokhranit' nastroyki
+Vykhod
+Ukazannaya optsiya {0} nedeystvitel'na.
+Otvet dolzhen byt' chislovym.
+Zapros argumentov pri zagruzke
+Trigger rezhima obsluzhivaniya
+Izmenit' parol' root ...
+Proveryat' obnovleniya pri zapuske
+Tikhiy zond
+Sloty OZU dlya datchikov
+Pokazyvat' MOTD pri vkhode v sistemu
+Ochistit' ekran pri vkhode v sistemu
+Pokazat' dostupnyye imena pol'zovateley
+Tsvetnaya obolochka
+Uproshchennaya komanda spravki
+Port otladki
+Prefiks psevdonima po umolchaniyu dlya udalennoy otladki
+Vremya povtora zagruzki
+Login FTP-pol'zovatelya
+Zhurnal IP-adresa FTP
+Vernut' tol'ko pervyy profil' FTP
+Pokazat' vremya / datu v verkhnem pravom uglu
+Taym-aut zastavki v ms
+Kvota razmera otladki v baytakh
+Rezhim analiza razmera
+Vydeleniye pri zapuske
+Dolgoye vremya i data
+Pokazat' skrytyye fayly
+Vveden nevernyy razdel. Pozhaluysta, vernis'.
+Vernites' nazad...
+vklyuchit'
+Otklyuchit'
+Vveden nevernyy klyuchevoy nomer. Pozhaluysta, vernis'.
+Napishite parol' root, kotoryy nuzhno ustanovit'. Ne volnuytes'; parol' pokazan zvezdochkami.
+Vklyuchite «Izmenit' parol' root», chtoby ispol'zovat' etu optsiyu. Pozhaluysta, vernis'.
+Izmenit' parol' root?
+Ustanovit' parol' root ...
+Napishite port udalennogo otladchika. On dolzhen byt' chislovym, i yego nel'zya uzhe ispol'zovat'. V protivnom sluchaye udalennyy otladchik ne smozhet otkryt' port.
+Zapishite prefiks psevdonima udalennoy otladki po umolchaniyu.
+Napishite, skol'ko raz komanda "" get "dolzhna povtoryat' popytki zagruzki posle sboya. On dolzhen byt' chislovym.
+Napishite, kogda zapuskat' zastavku cherez ukazannyye millisekundy. On dolzhen byt' chislovym.
+Napishite, skol'ko baytov mozhet khranit' zhurnal otladki. On dolzhen byt' chislovym.
+Otvet ne mozhet byt' otritsatel'nym.
+Otvet nevernyy. Ubedites', chto otvet yavlyayetsya chislovym dlya zapisey konfiguratsii, kotorym v kachestve otvetov nuzhny chisla.
+Peremennaya {0} ne naydena ni v odnom iz moduley.
+Izmenyayet konfiguratsiyu yadra
+Nastroyki zastavki ...
+Aktivirovat' 255 tsvetov
+Vy khotite ostavat'sya na svyazi?
+Nevernyy vybor. Predpolagaya, chto net ...
+Modov ne obnaruzheno. Propusk stadii ...
+Izmenite kul'turu pri pereklyuchenii yazykov
+Tekst pokazan
+Napishite lyuboy tekst, kotoryy khotite pokazat'. Koroche luchshe.
+Ne udalos' zagruzit' {0}
+Ne udalos' skachat' fayl {0}: {1}
+Oshibka pri vypolnenii komandy udalennoy otladki {0}: {1}
+Dobavlyayet pol'zovateley
+Dobavlyayet psevdonimy k komandam
+Vvodit argumenty v yadro ​​(trebuyetsya perezagruzka)
+Izmenyayet imya khosta
+Izmenyayet MAL, MOTD posle vkhoda v sistemu
+Izmeneniya MOTD, Soobshcheniye dnya
+Izmenyayet imya pol'zovatelya
+Pokazyvayet zhurnaly otladki
+Upravleniye razresheniyami dlya pol'zovateley
+Perezagruzhayet fayl zastavki v KSMods
+Udalyayet pol'zovatelya iz spiska
+Psevdonim {0} uspeshno udalen.
+Ne udalos' proverit' nalichiye obnovleniy.
+V spiske bol'she ne ostalos' pol'zovateley.
+Ne udalos' ustanovit' yazyk.
+Oshibka pri popytke zakryt' uvedomleniye.
+Obnaruzheno obnovleniye do {0}. Obnovleniye konfiguratsii ...
+usrmgr: ne udalos' sozdat' imya pol'zovatelya {0}: {1}
+Ne udalos' pereimenovat' pol'zovatelya. {0}
+Odin iz spiskov razresheniy ne soderzhit imeni pol'zovatelya {0}.
+Ne udalos' zagruzit' razresheniya iz fayla: {0}
+Ne udalos' izmenit' imya khosta: {0}
+Pol'zovatel' ne nayden
+Ne udalos' izmenit' parol' imeni pol'zovatelya: {0}
+Ne udalos' skopirovat' fayl ili katalog: {0}
+Ne udalos' peremestit' fayl ili katalog: {0}
+Nevozmozhno nayti fayl, sootvetstvuyushchiy stroke "{0}": {1}
+Ne udalos' skachat' fayl {0}.
+Ne udalos' perechislit' udalennyye fayly: {0}
+Vvedite fayl ili papku dlya udaleniya. U vas dolzhny byt' prava administratora dlya vashey uchetnoy zapisi, chtoby imet' vozmozhnost' udalit'.
+Vy deystvitel'no khotite udalit' {0} <y / n>?
+Udaleniye {0} ...
+{0} ne nayden na servere.
+Vsya pochta, otpravlennaya {0}, uspeshno udalyayetsya.
+Ne udalos' udalit' vsyu pochtu, otpravlennuyu {0}.
+Oshibka otpravki soobshcheniya.
+Peremeshcheniye {0} v {1} ...
+Uspeshno peremeshchen
+Peremeshchayet fayl ili katalog v drugoy fayl ili katalog. Vy takzhe mozhete ispol'zovat' eto dlya pereimenovaniya faylov.
+Ne udalos' peremestit' {0} v {1}.
+Vvedite iskhodnyy put' i put' naznacheniya.
+Kopirovaniye {0} v {1} ...
+Uspeshno skopirovano
+Kopiruyet fayl ili katalog v drugoy fayl ili katalog.
+Ne udalos' skopirovat' {0} v {1}.
+Peremeshchayet soobshcheniye
+Peremeshchayet vse soobshcheniya ot poluchatelya
+Vsya pochta, otpravlennaya {0}, uspeshno peremeshchena.
+Ne udalos' peremestit' vsyu pochtu, otpravlennuyu {0}.
+Soobshcheniye {0} ot {1} peremeshcheno iz {2}. Ostalos' proanalizirovat' {3} soobshcheniy.
+Soobshcheniye {0} ot {1} peremeshcheno. Ostalos' proanalizirovat' {3} soobshcheniy.
+Pokazyvayet informatsiyu o pogode dlya ukazannogo goroda. Ispol'zuyet OpenWeatherMap.
+- Informatsiya o pogode dlya {0} -
+Pogoda: {0}
+Temperatura: {0} ({1} yed.)
+Po oshchushcheniyam: {0} ({1} yed.)
+Davleniye: {0}
+Vlazhnost': {0}
+Vy mozhete poluchit' svoy sobstvennyy klyuch API na https://home.openweathermap.org/api_keys.
+Vy vsegda mozhete obratit'sya k http://bulk.openweathermap.org/sample/city.list.json.gz dlya polucheniya spiska gorodov s ikh identifikatorami.
+Predpochtitel'naya yedinitsa izmereniya temperatury
+Kel'vin
+Imperatorskiy (Farengeyt)
+Metricheskaya (Tsel'siya)
+Ustanavlivayet yadro ​​tak, chtoby ono zaprashivalo argument pri zagruzke.
+Zapuskayet rezhim obsluzhivaniya. Eto otklyuchayet neskol'ko uchetnykh zapisey.
+Pri kazhdom zapuske on budet proveryat' nalichiye obnovleniy.
+Pri pereklyuchenii yazykov izmenite nazvaniya mesyatsev, kalendar' i t. D.
+Yesli yadro ​​zapushcheno, ono ustanovit parol' root.
+Ne soobshchayte soobshcheniyam o proverke oborudovaniya.
+Yesli etot parametr vklyuchen, on budet proveryat' sloty RAM vmeste s RAM.
+Pokazat' soobshcheniye dnya pered otobrazheniyem ekrana vkhoda v sistemu.
+Ochistite ekran pered otobrazheniyem ekrana vkhoda v sistemu.
+Pokazyvayet dostupnykh pol'zovateley, yesli on vklyuchen.
+Predostavlyayet podderzhku tsveta yadra
+Uproshchennaya komanda spravki dlya vsekh obolochek
+Nuzhno li registrirovat' imya pol'zovatelya FTP.
+Registrirovat' IP-adres FTP ili net.
+Vybirat' pervyy profil' tol'ko pri podklyuchenii.
+Aktiviruyet podderzhku 255 tsvetov dlya ColorMix.
+Aktiviruyet podderzhku 255 tsvetov dlya Disco.
+Aktiviruyet podderzhku 255 tsvetov dlya GlitterColor.
+Aktiviruyet podderzhku 255 tsvetov dlya liniy.
+Vremya i data budut otobrazhat'sya v pravom verkhnem uglu ekrana.
+Yesli etot parametr vklyuchen, yadro ​​proanaliziruyet vsyu papku na predmet yeye obshchego razmera. V protivnom sluchaye budet analizirovat'sya tol'ko poverkhnost'.
+Vklyuchayet eyecandy pri zapuske
+Vremya i data budut dlinneye, budut otobrazhat'sya polnyye nazvaniya mesyatsev i t. D.
+Pokazyvayet skrytyye fayly.
+Vyberite predpochitayemuyu yedinitsu izmereniya temperatury (eto otnositsya tol'ko k komande «pogoda»).
+Mod {0} ostanovlen
+{0} v {1} ostanovlen
+U moda {0} net nazvaniya detali. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.
+U moda {0} net komandy. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.
+Pered ochistkoy zhurnala otladki neobkhodimo vklyuchit' rezhim otladki.
+Vo vkhodyashchiye postupilo novykh soobshcheniy: {0}.
+Otkroyte «lsmail», chtoby uvidet' ikh.
+Osnovnoy: {2} Zagruzochnyy: {3} Zagruzochnyy razdel: {4}
+Nevozmozhno udalit' fayl: {0}
+Udalyayet katalog ili fayl
+Nevozmozhno udalit' {0}, potomu chto on ne sushchestvuyet.
+Vozmozhno, v vashey sisteme ne ustanovlen inxi. Obratites' k svoyemu menedzheru paketov dlya ustanovki. Dlya sistem Debian (i proizvodnykh) vy mozhete zakhotet' zapustit' "" sudo apt install inxi libcpanel-json-xs-perl "" v emulyatore terminala.
+YAzyk uspeshno ustanovlen na {0}!
+Nazhmite CTRL + C, chtoby vyyti.
+Predostavlyayet informatsiyu o fayle
+Predostavlyayet informatsiyu o kataloge
+Ne mogu poluchit' informatsiyu o nesushchestvuyushchem kataloge.
+Ne mogu poluchit' informatsiyu o nesushchestvuyushchem fayle.
+Polnoye imya: {0}
+Vremya sozdaniya: {0}
+Vremya poslednego dostupa: {0}
+Vremya posledney zapisi: {0}
+Atributy: {0}
+Roditel'skiy katalog: {0}
+Gde nayti: {0}
+Razmer fayla: {0}
+Izmenyayet atribut fayla
+Fayl ne nayden.
+gde <atributy> - odno iz sleduyushchikh:
+Fayl obychnyy fayl
+Fayl dostupen tol'ko dlya chteniya
+Fayl yavlyayetsya skrytym
+Fayl predstavlyayet soboy arkhiv. Ispol'zuyetsya dlya rezervnogo kopirovaniya.
+Atribut "{0}" nedeystvitelen.
+Atribut uspeshno dobavlen.
+Atribut uspeshno udalen.
+Ne udalos' dobavit' atribut.
+Ne udalos' udalit' atribut.
+Razmer: {0}
+Zamenyayet slovo ili frazu drugim v stroke
+Prevyshen uroven' krasnogo tsveta. Eto bylo {0}.
+Prevyshen uroven' zelenogo tsveta. Eto bylo {0}.
+Prevyshen uroven' sinego tsveta. Eto bylo {0}.
+Aktivirovat' istinnyye tsveta
+Aktiviruyet podderzhku istinnogo tsveta dlya ColorMix.
+Aktiviruyet podderzhku istinnogo tsveta dlya Disco.
+Aktiviruyet podderzhku istinnogo tsveta dlya GlitterColor.
+Aktiviruyet podderzhku istinnogo tsveta dlya liniy.
+Ne udalos' razblokirovat' {0}.
+{0} uzhe zablokirovan.
+{0} seychas ne mozhet prisoyedinit'sya k udalennoy otladke.
+Ne udalos' zablokirovat' {0}.
+Tsveta tsikla
+Pri vklyuchenii Disco budet cheredovat' tsveta. V protivnom sluchaye vyberite sluchaynyye tsveta.
+Vvedite puti k faylam dlya vlozheniy. Nazhmite ENTER na pustom puti dlya podtverzhdeniya.
+Otkryvayet zashifrovannoye soobshcheniye
+Napishite parol' dlya identifikatora klyucha {0}
+Otpravlyayet zashifrovannoye soobshcheniye na adres
+Prosit vas zapolnit' obyazatel'nyye polya dlya otpravki zashifrovannogo soobshcheniya na adres
+Skachivaniye s {0} ...
+Pokazyvat' indikator vypolneniya pri zagruzke ili vygruzke s pomoshch'yu komandy "get" ili "put"
+Yesli eto pravda, eto zastavlyayet "poluchit'" ili "polozhit'" pokazyvat' indikator vypolneniya pri zagruzke ili zagruzke.
+Zagruzhayet fayl na ukazannyy sayt
+Pinguyet adres
+Zagruzka {0} v {1} ...
+Zagruzka zavershena.
+Pozhaluysta, ispol'zuyte "ftp", yesli vy sobirayetes' zagruzhat' fayly na FTP-server.
+Oshibka zagruzki pri popytke {0}: {1}
+Zagruzheno {0} MB iz {1} MB.
+Napishite, skol'ko raz komanda «polozhit'» dolzhna povtoryat' neudachnyye zagruzki. On dolzhen byt' chislovym.
+Adres ne mozhet byt' pustym.
+Ne udalos' proverit' svyaz' {0}: {1}
+Ping uspeshno zavershen cherez {0} ms.

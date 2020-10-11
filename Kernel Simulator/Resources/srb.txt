@@ -656,3 +656,232 @@ Blokirajte uređaj za uklanjanje pogrešaka prema IP adresi
 {0} još nije blokiran.
 Greška pri učitavanju postavki
 Došlo je do greške prilikom učitavanja postavki. Možda ćete morati da proverite datoteku sa podešavanjima.
+- Faza 2: Otkrivanje modova i čuvara ekrana
+- Faza 3: Prijavi se
+Izaberite odeljak:
+Izaberite opciju:
+Opšta podešavanja ...
+Postavke hardvera ...
+Podešavanja prijave ...
+Postavke školjke ...
+Mrežna podešavanja...
+Razna podešavanja ...
+Sačuvaj podešavanja
+Izlaz
+Navedena opcija {0} je nevažeća.
+Odgovor mora biti numerički.
+Upit za argumente pri pokretanju
+Okidač režima održavanja
+Promenite root lozinku ...
+Proverite da li postoje ispravke prilikom pokretanja
+Tiha sonda
+Sonda RAM slotovi
+Pokaži MOTD na prijavljivanju
+Obriši ekran pri prijavljivanju
+Prikaži dostupna korisnička imena
+Obojena školjka
+Pojednostavljena naredba za pomoć
+Port za otklanjanje grešaka
+Podrazumevani prefiks za udaljeno otklanjanje grešaka
+Preuzmite Retri Times
+Prijavite FTP korisničko ime
+Zabeležite FTP IP adresu
+Vrati samo prvi FTP profil
+Prikažite vreme / datum u gornjem desnom uglu
+Istek čuvara ekrana u ms
+Kvota veličine otklanjanja grešaka u bajtovima
+Režim analiziranja veličine
+Markuee pri pokretanju
+Dugo vreme i datum
+Prikaži skrivene datoteke
+Unesen je nevažeći odeljak. Molim te, vrati se.
+Vratiti se...
+Omogući
+Onemogući
+Unesen je nevažeći broj ključa. Molim te, vrati se.
+Napišite root lozinku koju želite postaviti. Ne brinite; lozinka je prikazana zvezdicama.
+Omogućite „Promeni root lozinku“ da biste koristili ovu opciju. Molim te, vrati se.
+Promeniti root lozinku?
+Postavi root lozinku ...
+Napišite daljinski port za otklanjanje grešaka. Mora biti numerički i ne sme se već koristiti. U suprotnom, udaljeni program za otklanjanje grešaka neće uspeti da otvori port.
+Napišite zadati prefiks nadimaka za udaljenu otklanjanje grešaka.
+Napišite koliko puta bi naredba "" get "" trebalo da pokuša ponovo neuspešna preuzimanja. Mora biti numerički.
+Napišite kada da pokrenete čuvar ekrana nakon određenih milisekundi. Mora biti numerički.
+Napišite koliko bajtova može zapisnik za otklanjanje grešaka sačuvati. Mora biti numerički.
+Odgovor možda nije negativan.
+Odgovor je nevažeći. Proverite da li je odgovor numerički za unose u konfiguraciji kojima su kao odgovori potrebni brojevi.
+Promenljiva {0} nije pronađena ni na jednom modulu.
+Menja konfiguraciju jezgra
+Podešavanja čuvara ekrana ...
+Aktivirajte 255 boja
+Da li želite da budete povezani?
+Nevažeći izbor. Pod pretpostavkom da ne ...
+Nisu otkriveni modovi. Preskakanje faze ...
+Promenite kulturu prilikom promene jezika
+Tekst prikazan
+Napišite bilo koji tekst koji želite da se prikaže. Kraće je bolje.
+Otpremanje {0} nije uspelo
+Preuzimanje datoteke {0}: {1} nije uspelo
+Greška u izvršavanju naredbe za udaljeno otklanjanje grešaka {0}: {1}
+Dodaje korisnike
+Komandama dodaje pseudonime
+Ubrizgava argumente u jezgro (potrebno je ponovno pokretanje)
+Menja ime hosta
+Menja MAL, MOTD nakon prijave
+Menja MOTD, poruku dana
+Menja korisničko ime
+Prikazuje dnevnike otklanjanja grešaka
+Upravljajte dozvolama za korisnike
+Ponovo učitava datoteku čuvara ekrana u KSMods-u
+Uklanja korisnika sa liste
+Umesto je uklonjen pseudonim {0}.
+Provera ažuriranja nije uspela.
+Na listi nema više korisnika.
+Postavljanje jezika nije uspelo.
+Greška pri pokušaju odbacivanja obaveštenja.
+Otkrivena je nadogradnja na {0}. Ažuriranje konfiguracije ...
+usrmgr: Nije uspelo kreiranje korisničkog imena {0}: {1}
+Preimenovanje korisnika nije uspelo. {0}
+Jedna od lista dozvola ne sadrži korisničko ime {0}.
+Učitavanje dozvola iz datoteke nije uspelo: {0}
+Promena imena hosta nije uspela: {0}
+Korisnik nije pronađen
+Promjena lozinke za korisničko ime nije uspjela: {0}
+Kopiranje datoteke ili direktorijuma nije uspelo: {0}
+Premeštanje datoteke ili direktorijuma nije uspelo: {0}
+Nije moguće pronaći datoteku koja odgovara nizu „{0}“: {1}
+Preuzimanje datoteke {0} nije uspelo.
+Navođenje udaljenih datoteka nije uspelo: {0}
+Unesite datoteku ili fasciklu za uklanjanje. Na svom nalogu morate imati administrativne dozvole da biste mogli da ga uklonite.
+Da li ste sigurni da želite da izbrišete {0} <i / n>?
+Brisanje {0} ...
+{0} nije pronađen na serveru.
+Sva pošta koju je poslao {0} je uspešno uklonjena.
+Uklanjanje sve pošte koju je poslao {0} nije uspelo.
+Greška pri slanju poruke.
+Premeštanje {0} u {1} ​​...
+Premešteno je uspešno
+Premešta datoteku ili direktorijum u drugu datoteku ili direktorijum. To takođe možete koristiti za preimenovanje datoteka.
+Premeštanje {0} u {1} ​​nije uspelo.
+Unesite izvornu i odredišnu putanju.
+Kopiranje {0} u {1} ​​...
+Uspešno kopirano
+Kopira datoteku ili direktorijum u drugu datoteku ili direktorijum.
+Kopiranje datoteke {0} u {1} ​​nije uspelo.
+Premešta poruku
+Premešta sve poruke od primaoca
+Sva pošta koju je poslao {0} se uspešno premešta.
+Premeštanje sve pošte koju je poslao {0} nije uspelo.
+Poruka {0} od {1} je premeštena iz {2}. Preostalo je {3} poruka za raščlanjivanje.
+Poruka {0} od {1} je premeštena. Preostalo je {3} poruka za raščlanjivanje.
+Prikazuje informacije o vremenu za određeni grad. Koristi OpenVeatherMap.
+- Informacije o vremenu za {0} -
+Vreme: {0}
+Temperatura: {0} ({1} jedinica)
+Osećaj je: {0} ({1} jedinica)
+Pritisak: {0}
+Vlažnost: {0}
+Svoj sopstveni API ključ možete dobiti na https://home.openweathermap.org/api_keys.
+Spisak gradova sa njihovim ID-ovima uvek možete potražiti na http://bulk.openweathermap.org/sample/city.list.json.gz.
+Poželjna jedinica za temperaturu
+Kelvin
+Carski (Fahrenheit)
+Metrički (Celzijus)
+Postavlja jezgro tako da vas pri pokretanju zatraži za argument.
+Pokreće režim održavanja. Ovo onemogućava više računa.
+Svako pokretanje će proveravati da li ima ažuriranja.
+Pri promeni jezika promenite nazive meseci, kalendar itd.
+Ako je kernel pokrenut, postaviće root lozinku.
+Neka poruke o ispitivanju hardvera budu tihe.
+Ako je omogućeno, ispitivaće RAM slotove zajedno sa RAM memorijom.
+Prikaži poruku dana pre prikazivanja ekrana za prijavu.
+Očistite ekran pre prikaza ekrana za prijavu.
+Prikazuje dostupne korisnike ako je omogućeno.
+Daje podršku jezgru u boji
+Pojednostavljena komanda za pomoć za sve ljuske
+Da li da prijavim FTP korisničko ime ili ne.
+Da li treba evidentirati FTP IP adresu ili ne.
+Izaberite prvi profil samo prilikom povezivanja.
+Aktivira 255 boja u podršci za ColorMik.
+Aktivira 255 podrške u boji za Disco.
+Aktivira 255 boja u boji za GlitterColor.
+Aktivira 255 podrške u boji za linije.
+Vreme i datum biće prikazani u gornjem desnom uglu ekrana
+Ako je omogućeno, kernel će raščlaniti celu fasciklu za njenu ukupnu veličinu. U suprotnom, samo će raščlaniti površinu.
+Omogućava eiecandi pri pokretanju
+Vreme i datum biće duži, prikazuju se puni nazivi meseci itd.
+Prikazuje skrivene datoteke.
+Izaberite željenu jedinicu za temperaturu (ovo se odnosi samo na naredbu „vremenska prognoza“)
+Mod {0} je zaustavljen
+{0} v {1} je zaustavljeno
+Mod {0} nema naziv dela. Raščlanjivanje moda nije uspelo. Pregledajte izvorni kod.
+Mod {0} nema komandu. Raščlanjivanje moda nije uspelo. Pregledajte izvorni kod.
+Morate da uključite režim otklanjanja grešaka da biste mogli da očistite dnevnik otklanjanja grešaka.
+{0} novih poruka je stiglo u prijemno sanduče.
+Otvorite „lsmail“ da biste ih videli.
+Primarno: {2} Pokretačko: {3} Podizanje particije: {4}
+Nije moguće ukloniti datoteku: {0}
+Uklanja direktorijum ili datoteku
+Nije moguće ukloniti {0} jer ne postoji.
+Možda na vašem sistemu nije instaliran inki. Za instalaciju se obratite svom menadžeru paketa. Za Debian (i derivate) sisteme, možda ćete želeti da pokrenete "" sudo apt install inki libcpanel-json-ks-perl "" u terminalskom emulatoru.
+Jezik je uspešno postavljen na {0}!
+Pritisnite CTRL + C da biste izašli.
+Pruža informacije o datoteci
+Pruža informacije o direktorijumu
+Ne mogu da dobijem informacije o nepostojećem direktorijumu.
+Ne mogu da dobijem informacije o nepostojećoj datoteci.
+Puno ime: {0}
+Vreme izrade: {0}
+Vreme poslednjeg pristupa: {0}
+Poslednje vreme pisanja: {0}
+Atributi: {0}
+Nadređeni direktorijum: {0}
+Gde pronaći: {0}
+Veličina datoteke: {0}
+Menja atribut datoteke
+Fajl nije pronađen.
+gde je <attributes> jedno od sledećeg:
+Datoteka je normalna datoteka
+Datoteka je datoteka samo za čitanje
+Datoteka je skrivena datoteka
+Datoteka je arhiva. Koristi se za rezervne kopije.
+Atribut „{0}“ je nevažeći.
+Atribut je uspešno dodat.
+Atribut je uspešno uklonjen.
+Dodavanje atributa nije uspelo.
+Uklanjanje atributa nije uspelo.
+Veličina: {0}
+Reč ili frazu zamenjuje drugom u redu
+Prekoračen nivo crvene boje. Bilo je {0}.
+Prekoračen nivo zelene boje. Bilo je {0}.
+Prekoračen nivo plave boje. Bilo je {0}.
+Aktivirajte prave boje
+Aktivira istinsku podršku u boji za ColorMik.
+Aktivira istinsku podršku u boji za Disco.
+Aktivira istinsku podršku u boji za GlitterColor.
+Aktivira pravu podršku za boje za linije.
+Deblokiranje {0} nije uspelo.
+{0} je već blokiran.
+{0} ne može da se pridruži udaljenom otklanjanju grešaka.
+Blokiranje korisnika {0} nije uspelo.
+Boje ciklusa
+Disko će pokretati boje kada je omogućeno. U suprotnom odaberite slučajne boje.
+Unesite putanje datoteka do priloga. Pritisnite ENTER na praznoj putanji da biste potvrdili.
+Otvara šifrovanu poruku
+Napišite lozinku za ID ključa {0}
+Šalje šifrovanu poruku na adresu
+Traži da popunite obavezna polja za slanje šifrovane poruke na adresu
+Preuzimanje sa {0} ...
+Prikažite traku napretka tokom preuzimanja ili otpremanja iz naredbe „get“ ili „put“
+Ako je tačno, čini da „preuzmi“ ili „stavi“ prikaže traku napretka tokom preuzimanja ili slanja.
+Otprema datoteku na određenu veb lokaciju
+Ping adresa
+Otpremanje {0} na {1} ...
+Otpremanje je završeno.
+Molimo koristite "ftp" ako ćete otpremati datoteke na FTP server.
+Otpremanje nije uspelo u pokušaju {0}: {1}
+Otpremljeno {0} MB od {1} MB.
+Napišite koliko puta bi naredba „put“ trebalo da pokuša ponovo neuspešno otpremanje. Mora biti numerički.
+Adresa mora biti prazna.
+Ping nije uspeo {0}: {1}
+Ping je uspeo za {0} ms.

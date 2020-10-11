@@ -656,3 +656,232 @@ Bloqueja un dispositiu de depuració per adreça IP
 {0} encara no està bloquejat.
 S'ha produït un error en carregar la configuració
 Hi ha un error en carregar la configuració. Pot ser que hagueu de comprovar el fitxer de configuració.
+- Etapa 2: detecció de modificacions i protectors de pantalla
+- Etapa 3: inicia la sessió
+Seleccioneu la secció:
+Seleccioneu l'opció:
+Configuració general...
+Configuració del maquinari ...
+Configuració d'inici de sessió ...
+Configuració de l'intèrpret d'ordres ...
+Configuració de xarxa ...
+Paràmetres diversos ...
+Desa la configuració
+Surt
+L'opció especificada {0} no és vàlida.
+La resposta ha de ser numèrica.
+Sol·licitud d'arguments a l'arrencada
+Activador del mode de manteniment
+Canvia la contrasenya arrel ...
+Comproveu si hi ha actualitzacions a l’inici
+Sonda tranquil·la
+Ranures de sonda RAM
+Mostra MOTD a l’inici de sessió
+Esborra la pantalla a l'inici de sessió
+Mostra els noms d’usuari disponibles
+Petxina de colors
+Ordre d'ajuda simplificat
+Port de depuració
+Prefix per defecte de depuració remota
+Baixeu els temps de reintent
+Registreu el nom d'usuari FTP
+Registre d’adreça IP FTP
+Retorna només el primer perfil FTP
+Mostra l'hora / la data a l'extrem superior dret
+Temps d'espera del salvapantalles en ms
+Quota de mida de depuració en bytes
+Mode d'anàlisi de mida
+Carpa en arrencada
+Llarg temps i data
+Mostra els fitxers ocults
+S'ha introduït una secció no vàlida. Si us plau, torneu enrere.
+Torna...
+Activa
+Desactivar
+S'ha introduït un número de clau no vàlid. Si us plau, torneu enrere.
+Escriviu la contrasenya de root que cal establir. No us preocupeu; la contrasenya es mostra com a estrelles.
+Activeu "Canvia la contrasenya d'arrel" per utilitzar aquesta opció. Si us plau, torneu enrere.
+Voleu canviar la contrasenya arrel?
+Estableix la contrasenya arrel ...
+Escriviu un port de depurador remot. Ha de ser numèric i no s’ha d’utilitzar ja. En cas contrari, el depurador remot no obrirà el port.
+Escriviu el prefix de sobrenom de depuració remota per defecte.
+Escriviu quantes vegades l'ordre "" get "" hauria de tornar a provar les baixades fallides. Ha de ser numèric.
+Escriviu quan s'iniciarà el salvapantalles després de mil·lisegons especificats. Ha de ser numèric.
+Escriviu quants bytes pot emmagatzemar el registre de depuració. Ha de ser numèric.
+La resposta pot no ser negativa.
+La resposta no és vàlida. Comproveu que la resposta sigui numèrica per a les entrades de configuració que necessiten números com a respostes.
+La variable {0} no es troba a cap dels mòduls.
+Canvia la configuració del nucli
+Configuració del salvapantalles ...
+Activeu 255 colors
+Vols estar connectat?
+Elecció no vàlida. Suposant que no ...
+No s'ha detectat cap modificació. S'està saltant l'etapa ...
+Canvieu la cultura en canviar d'idioma
+Es mostra el text
+Escriviu el text que vulgueu que es mostri. Més curt és millor.
+No s'ha pogut penjar {0}
+No s'ha pogut baixar el fitxer {0}: {1}
+Error en executar l'ordre de depuració remota {0}: {1}
+Afegeix usuaris
+Afegeix àlies a les ordres
+Injecta arguments al nucli (cal reiniciar-lo)
+Canvia el nom de l'amfitrió
+Canvia MAL, el MOTD després de l'inici de sessió
+Canvia MOTD, el missatge del dia
+Canvia el nom d'usuari
+Mostra els registres de depuració
+Gestioneu els permisos dels usuaris
+Recarrega el fitxer de salvapantalles a KSMods
+Elimina un usuari de la llista
+S'ha eliminat l'àlies {0} correctament.
+No s'ha pogut comprovar si hi ha actualitzacions.
+Ja no queden més usuaris a la llista.
+No s'ha pogut definir l'idioma.
+Error en intentar ignorar la notificació.
+Es detecta una actualització a {0}. S'està actualitzant la configuració ...
+usrmgr: No s'ha pogut crear el nom d'usuari {0}: {1}
+No s'ha pogut canviar el nom de l'usuari. {0}
+Una de les llistes de permisos no conté el nom d'usuari {0}.
+No s'han pogut carregar els permisos del fitxer: {0}
+No s'ha pogut canviar el nom de l'amfitrió: {0}
+Usuari no trobat
+No s'ha pogut canviar la contrasenya del nom d'usuari: {0}
+No s'ha pogut copiar el fitxer o el directori: {0}
+No s'ha pogut moure el fitxer o el directori: {0}
+No es pot trobar el fitxer que coincideixi amb la cadena "{0}": {1}
+No s'ha pogut baixar el fitxer {0}.
+No s'ha pogut enumerar els fitxers remots: {0}
+Introduïu un fitxer o carpeta que vulgueu eliminar. Per poder eliminar-lo, heu de tenir permisos administratius al vostre compte.
+Esteu segur que voleu suprimir {0} <y / n>?
+S'està suprimint {0} ...
+{0} no es troba al servidor.
+Tots els correus enviats per {0} s’eliminen correctament.
+No s'ha pogut eliminar tot el correu enviat per {0}.
+Error en enviar el missatge.
+S'està movent {0} a {1} ...
+S'ha mogut correctament
+Moveu el fitxer o el directori a un altre fitxer o directori. També podeu utilitzar-lo per canviar el nom dels fitxers.
+No s'ha pogut moure {0} a {1}.
+Introduïu un camí d'origen i un de destinació.
+S'està copiant {0} a {1} ...
+S'ha copiat correctament
+Copia un fitxer o directori a un altre fitxer o directori.
+No s'ha pogut copiar {0} a {1}.
+Moveu un missatge
+Mou tots els missatges del destinatari
+Tots els correus enviats per {0} es mouen correctament.
+No s'ha pogut moure tot el correu enviat per {0}.
+El missatge {0} de {1} s'ha mogut de {2}. Queden {3} missatges per analitzar.
+El missatge {0} de {1} s'ha mogut. Queden {3} missatges per analitzar.
+Mostra informació meteorològica de la ciutat especificada. Utilitza OpenWeatherMap.
+- Informació meteorològica per a {0} -
+Temps: {0}
+Temperatura: {0} ({1} unitat)
+Se sent com: {0} ({1} unitat)
+Pressió: {0}
+Humitat: {0}
+Podeu obtenir la vostra pròpia clau API a https://home.openweathermap.org/api_keys.
+Sempre podeu consultar http://bulk.openweathermap.org/sample/city.list.json.gz per obtenir la llista de ciutats amb els seus identificadors.
+Unitat preferida per a la temperatura
+Kelvin
+Imperial (Fahrenheit)
+Mètrica (centígrads)
+Configura el nucli de manera que us demani arguments en arrencar.
+Activa el mode de manteniment. Això desactiva diversos comptes.
+Cada inici, comprovarà si hi ha actualitzacions.
+Quan canvieu d'idioma, canvieu els noms del mes, el calendari, etc.
+Si s'inicia el nucli, definirà la contrasenya de root.
+Manteniu els missatges de sondeig de maquinari silenciosos.
+Si està activat, explorarà les ranures de RAM juntament amb la RAM.
+Mostra el missatge del dia abans de mostrar la pantalla d'inici de sessió.
+Esborreu la pantalla abans de mostrar la pantalla d'inici de sessió.
+Mostra els usuaris disponibles si està activat.
+Dóna suport al color del nucli
+Comanda d'ajuda simplificada per a totes les petxines
+Si es registra o no el nom d’usuari FTP.
+Si es registra o no l'adreça IP FTP.
+Trieu el primer perfil només quan us connecteu.
+Activa el suport de 255 colors per ColorMix.
+Activa el suport de 255 colors per a Disco.
+Activa el suport de 255 colors per a GlitterColor.
+Activa el suport de 255 colors per a les línies.
+L'hora i la data es mostraran a l'extrem superior dret de la pantalla
+Si està activat, el nucli analitzarà tota la carpeta per obtenir la seva mida total. Altrament, només analitzarà la superfície.
+Activa l'ocular a l'inici
+L’hora i la data seran més llargues, mostrant els noms del mes complet, etc.
+Mostra els fitxers ocults.
+Seleccioneu la unitat preferida per a la temperatura (això només s'aplica a l'ordre "temps")
+La modificació {0} s'ha aturat
+{0} v {1} s'ha aturat
+Mod {0} no té el nom de la peça. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.
+Mod {0} no té l'ordre. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.
+Per activar el registre de depuració, heu d'activar el mode de depuració.
+Han arribat {0} missatges nous a la safata d'entrada.
+Obriu "lsmail" per veure'ls.
+Principal: {2} Arrencable: {3} Partició d'arrencada: {4}
+No es pot eliminar el fitxer: {0}
+Elimina un directori o un fitxer
+No es pot eliminar {0} perquè no existeix.
+És possible que no tingueu instal·lat inxi al vostre sistema. Consulteu el gestor de paquets per a la instal·lació. Per als sistemes Debian (i derivats), "" podeu executar sudo apt install inxi libcpanel-json-xs-perl "" a l'emulador de terminal.
+L'idioma s'ha definit correctament a {0}.
+Premeu CTRL + C per sortir.
+Proporciona informació sobre un fitxer
+Proporciona informació sobre un directori
+No es pot obtenir informació sobre el directori inexistent.
+No es pot obtenir informació sobre el fitxer inexistent.
+Nom complet: {0}
+Temps de creació: {0}
+Darrera hora d'accés: {0}
+Darrera hora d'escriptura: {0}
+Atributs: {0}
+Directori principal: {0}
+On trobar: {0}
+Mida del fitxer: {0}
+Canvia l'atribut d'un fitxer
+Arxiu no trobat.
+on <atributs> és un dels següents:
+El fitxer és un fitxer normal
+El fitxer és un fitxer de només lectura
+El fitxer és un fitxer ocult
+El fitxer és un arxiu. S’utilitza per fer còpies de seguretat.
+L'atribut "{0}" no és vàlid.
+L'atribut s'ha afegit correctament.
+L'atribut s'ha eliminat correctament.
+No s'ha pogut afegir l'atribut.
+No s'ha pogut eliminar l'atribut.
+Mida: {0}
+Substitueix una paraula o frase per una altra en una línia
+S'ha superat el nivell de color vermell. Era {0}.
+S'ha superat el nivell de color verd. Era {0}.
+S'ha superat el nivell de color blau. Era {0}.
+Activeu els colors reals
+Activa el suport del color real per a ColorMix.
+Activa el suport del color real per a Disco.
+Activa el suport del color real per a GlitterColor.
+Activa el suport del color real per a les línies.
+No s'ha pogut desbloquejar {0}.
+{0} ja està bloquejat.
+{0} ara no es pot unir a la depuració remota.
+No s'ha pogut bloquejar {0}.
+Cicle de colors
+El disc farà un cicle de colors quan estigui activat. En cas contrari, seleccioneu colors aleatoris.
+Introduïu camins de fitxers als fitxers adjunts. Premeu ENTRAR en un camí en blanc per confirmar.
+Obre un missatge xifrat
+Escriviu una contrasenya per a l'identificador de clau {0}
+Envia un missatge xifrat a una adreça
+Us demana que empleneu els camps obligatoris per enviar un missatge xifrat a una adreça
+S'està baixant de {0} ...
+Mostra la barra de progrés mentre baixeu o pengeu des de l'ordre "get" o "put"
+Si és cert, fa que "obtenir" o "posar" mostri la barra de progrés mentre es descarrega o es penja.
+Penja un fitxer al lloc web especificat
+Ping una adreça
+S'està carregant {0} a {1} ...
+La càrrega s'ha completat.
+Utilitzeu "ftp" si voleu penjar fitxers al servidor FTP.
+La càrrega ha fallat en provar {0}: {1}
+{0} MB de {1} MB penjats.
+Escriviu quantes vegades l'ordre "put" hauria de tornar a provar les càrregues fallides. Ha de ser numèric.
+És possible que l'adreça no estigui buida.
+No s'ha pogut fer ping {0}: {1}
+Ping ha tingut èxit en {0} ms.

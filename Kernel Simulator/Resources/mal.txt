@@ -656,3 +656,232 @@ Sekat peranti debug mengikut alamat IP
 {0} belum disekat.
 Ralat memuatkan tetapan
 Terdapat ralat semasa memuatkan tetapan. Anda mungkin perlu memeriksa fail tetapan.
+- Stadju 2: Kxif ta 'mods u screensavers
+- Stadju 3: Idħol
+Agħżel sezzjoni:
+Agħżel l-għażla:
+Settings Ġenerali ...
+Settings tal-Hardware ...
+Settings tal-Login ...
+Settings tal-Qoxra ...
+Settings tan-Netwerk ...
+Settings Mixxellanji ...
+Save Settings
+Ħruġ
+L-għażla speċifikata {0} mhijiex valida.
+It-tweġiba għandha tkun numerika.
+Prompt għal Argumenti fuq Boot
+Trigger tal-Mod ta 'Manutenzjoni
+Ibdel il-Password tal-Għerq ...
+Iċċekkja għal Aġġornamenti mal-Istartjar
+Sonda Kwieta
+Sonda Slots RAM
+Uri MOTD fuq il-Log-in
+Skrin ċar fuq il-Log-in
+Uri l-usernames disponibbli
+Qoxra kkulurita
+Kmand tal-Għajnuna Simplifikata
+Debug Port
+Remote Debug Default Nick Prefix
+Niżżel il-Ħinijiet mill-Ġdid
+Irreġistra l-username tal-FTP
+Irreġistra l-indirizz IP FTP
+Irritorna biss l-ewwel profil FTP
+Uri Ħin / Data fir-Rokna ta 'Fuq tal-Lemin
+Screensaver Timeout fi ms
+Kwota tad-Daqs tad-Debug f'Bytes
+Mod ta 'parse tad-daqs
+Marquee mal-istartjar
+Żmien u Data Twila
+Uri Fajls Moħbija
+Sezzjoni invalida mdaħħla. Jekk jogħġbok mur lura.
+Mur lura...
+Enable
+Itfi
+Numru ewlieni invalidu mdaħħal. Jekk jogħġbok mur lura.
+Ikteb il-password tal-għerq li trid tiġi ssettjata. Tinkwetax; il-password tidher bħala stilel.
+Enable "Change Root Password" biex tuża din l-għażla. Jekk jogħġbok mur lura.
+Ibdel il-Password tal-Għerq?
+Issettja l-Password tal-Għerq ...
+Ikteb port debugger remot. Għandu jkun numeriku, u m'għandux ikun diġà użat. Inkella, id-debugger remot jonqos milli jiftaħ il-port.
+Ikteb il-prefiss tal-laqam tad-debug remot default.
+Ikteb kemm-il darba l-kmand "" ġib "" għandu jipprova jerġa 'jniżżel il-downloads. Għandu jkun numeriku.
+Ikteb meta tniedi screensaver wara millisekondi speċifikati. Għandu jkun numeriku.
+Ikteb kemm bytes jista 'jaħżen id-debug log. Għandu jkun numeriku.
+It-tweġiba tista 'ma tkunx negattiva.
+It-tweġiba mhix valida. Iċċekkja biex tiżgura li t-tweġiba hija numerika għal entrati ta 'konfigurazzjoni li jeħtieġu numri bħala tweġibiet.
+Il-varjabbli {0} ma tinstab fl-ebda modulu.
+Tibdil fil-konfigurazzjoni tal-qalba
+Settings ta 'Screensaver ...
+Attiva 255 kulur
+Trid tibqa 'konness?
+Għażla invalida. Jekk nassumu le ...
+L-ebda mods ma nstab. Jaqbeż l-istadju ...
+Ibdel il-Kultura meta taqleb il-Lingwi
+Test muri
+Ikteb kwalunkwe test li trid tidher. Iqsar huwa aħjar.
+Ma rnexxilekx ittella '{0}
+It-tniżżil ma rnexxiex għall-fajl {0}: {1}
+Żball waqt l-eżekuzzjoni tal-kmand debug remot {0}: {1}
+Iżżid l-utenti
+Iżżid psewdonimi mal-kmandi
+Tinjetta argumenti għall-kernel (reboot meħtieġ)
+Ibdel l-isem tal-ospitant
+Bidliet MAL, il-MOTD Wara l-Login
+Bidliet MOTD, il-Messaġġ tal-Ġurnata
+Ibdel l-isem tal-utent
+Juri z-zkuk tad-debug
+Immaniġġja l-permessi għall-utenti
+Reloads skreensaver file fil-KSMods
+Tneħħi utent mil-lista
+Imneħħi l-alias {0} b'suċċess.
+Naqas milli niċċekkja għal aġġornamenti.
+M'hemmx aktar utenti fil-lista.
+Naqas milli tissettja l-lingwa.
+Żball meta ppruvaw ineħħu n-notifika.
+Jinstab aġġornament għal {0}. Aġġornament tal-konfigurazzjoni ...
+usrmgr: Ma rnexxilux joħloq username {0}: {1}
+Ma rnexxilux ibiddel l-isem lill-utent. {0}
+Waħda mil-listi tal-permessi ma fihiex username {0}.
+Ma rnexxilekx tgħabbi l-permessi mill-fajl: {0}
+Ma rnexxilux ibiddel l-isem tal-host: {0}
+Utent mhux misjub
+Naqset milli tbiddel il-password tal-username: {0}
+Ma rnexxilekx tikkopja l-fajl jew id-direttorju: {0}
+Ma rnexxilekx tmexxi l-fajl jew id-direttorju: {0}
+Ma tistax issib fajl li jaqbel mas-sekwenza "{0}": {1}
+It-tniżżil ma rnexxiex għall-fajl {0}.
+Ma rnexxilekx telenka fajls remoti: {0}
+Daħħal fajl jew folder biex tneħħi. Irid ikollok permessi amministrattivi fuq il-kont tiegħek biex tkun tista 'tneħħi.
+Int żgur li trid tħassar {0} <y / n>?
+Tħassar {0} ...
+{0} ma tinstabx fis-server.
+Il-posta kollha magħmula minn {0} titneħħa b'suċċess.
+Ma rnexxilux ineħħi l-posta kollha magħmula minn {0}.
+Żball meta ntbagħat il-messaġġ.
+Nimxu {0} għal {1} ​​...
+Imċaqlaq b'suċċess
+Iċċaqlaq fajl jew direttorju għal fajl jew direttorju ieħor. Tista 'wkoll tuża dak biex tibdel isem il-fajls.
+Ma rnexxilekx timxi {0} għal {1}.
+Daħħal triq tas-sors u triq tad-destinazzjoni.
+Kopja {0} għal {1} ​​...
+Ikkupjat b'suċċess
+Ikkopja fajl jew direttorju għal fajl jew direttorju ieħor.
+Ma rnexxilekx tikkopja {0} għal {1}.
+Iċċaqlaq messaġġ
+Iċċaqlaq il-messaġġi kollha mir-riċevitur
+Il-posta kollha magħmula minn {0} titmexxa b'suċċess.
+Ma rnexxilekx tmexxi l-posta kollha magħmula minn {0}.
+Messaġġ {0} minn {1} imċaqlaq minn {2}. {3} messaġġi li fadal biex jiġu analizzati.
+Messaġġ {0} minn {1} imċaqlaq. {3} messaġġi li fadal biex jiġu analizzati.
+Turi informazzjoni dwar it-temp għal belt speċifikata. Juża OpenWeatherMap.
+- Informazzjoni dwar it-temp għal {0} -
+Temp: {0}
+Temperatura: {0} ({1} unità)
+Tħoss bħal: {0} ({1} unità)
+Pressjoni: {0}
+Umdità: {0}
+Tista 'tikseb iċ-ċavetta API tiegħek stess fuq https://home.openweathermap.org/api_keys.
+Dejjem tista 'tikkonsulta http://bulk.openweathermap.org/sample/city.list.json.gz għal-lista ta' bliet bl-IDs tagħhom.
+Unità Preferuta għat-Temperatura
+Kelvin
+Imperjali (Fahrenheit)
+Metrika (Celsius)
+Issettja l-għadma sabiex iġġiegħlek l-argument fuq l-ibbutjar.
+Triggers modalità ta 'manutenzjoni. Dan jiddiżattiva kontijiet multipli.
+Kull istartjar, jiċċekkja għal aġġornamenti.
+Meta taqleb il-lingwa, ibdel l-ismijiet tax-xahar, il-kalendarju, eċċ.
+Jekk il-qalba tinbeda, se tissettja l-password tal-għerq.
+Żomm il-messaġġi tas-sondaġġ tal-ħardwer siekta.
+Jekk tkun attivata, se tivverifika s-slots tal-RAM flimkien mar-RAM.
+Uri l-Messaġġ tal-Ġurnata qabel ma turi l-iskrin tal-login.
+Skrin ċar qabel ma turi l-iskrin tal-login.
+Juri l-utenti disponibbli jekk ikun attivat.
+Jagħti l-appoġġ tal-kulur tal-qalba
+Kmand tal-għajnuna ssimplifikat għall-qxur kollha
+Jekk jew le biex tilloggja l-username tal-FTP.
+Jekk tirreġistrax l-indirizz IP FTP jew le.
+Agħżel l-ewwel profil biss meta tikkonnettja.
+Jattiva 255 appoġġ tal-kulur għal ColorMix.
+Jattiva 255 appoġġ tal-kulur għal Disco.
+Jattiva 255 appoġġ tal-kulur għal GlitterColor.
+Jattiva 255 appoġġ tal-kulur għal-Linji.
+Il-ħin u d-data se jintwerew fir-rokna ta 'fuq tal-lemin ta' l-iskrin
+Jekk ikun attivat, il-qalba se teżamina l-folder kollu għad-daqs totali tiegħu. Inkella, se tittratta biss il-wiċċ.
+Jippermetti l-għajnejn fl-istartjar
+Il-ħin u d-data jkunu itwal, u juru ismijiet tax-xahar sħiħ, eċċ.
+Juri fajls moħbija.
+Agħżel l-unità preferuta tiegħek għat-temperatura (dan japplika biss għall-kmand tat-temp)
+Mod {0} waqaf
+{0} v {1} waqfet
+Mod {0} m'għandux l-isem tal-parti. L-analiżi tal-mod falliet. Irrevedi l-kodiċi tas-sors.
+Mod {0} m'għandux il-kmand. L-analiżi tal-mod falliet. Irrevedi l-kodiċi tas-sors.
+Int trid tixgħel il-mod ta 'debug qabel ma tkun tista' tnaddaf id-debug log.
+{0} messaġġi ġodda waslu fl-inbox.
+Iftaħ "lsmail" biex tarahom.
+Primarja: {2} Ibbutjar: {3} Partizzjoni tal-ibbutjar: {4}
+Ma jistax ineħħi l-fajl: {0}
+Tneħħi direttorju jew fajl
+Ma tistax tneħħi {0} għax ma teżistix.
+Jista 'jkun li m'għandekx inxi installat fis-sistema tiegħek. Irreferi għall-maniġer tal-pakkett tiegħek għall-installazzjoni. Għal sistemi Debian (u derivattivi), tista 'tkun trid tmexxi "" sudo apt install inxi libcpanel-json-xs-perl "" fl-emulatur tat-terminal.
+Lingwa stabbilita b'suċċess għal {0}!
+Agħfas CTRL + C biex toħroġ.
+Jipprovdi informazzjoni dwar fajl
+Jipprovdi informazzjoni dwar direttorju
+Ma nistax nikseb informazzjoni dwar direttorju ineżistenti.
+Ma nistax nikseb informazzjoni dwar fajl ineżistenti.
+Isem sħiħ: {0}
+Ħin tal-ħolqien: {0}
+L-aħħar ħin ta 'aċċess: {0}
+L-aħħar ħin tal-kitba: {0}
+Attributi: {0}
+Direttorju ġenitur: {0}
+Fejn issib: {0}
+Daqs tal-fajl: {0}
+Tibdil fl-attribut ta 'fajl
+Il-fajl ma nstabx.
+fejn <attributi> huwa wieħed minn dawn li ġejjin:
+Il-fajl huwa fajl normali
+Il-fajl huwa fajl li jinqara biss
+Il-fajl huwa fajl moħbi
+Il-fajl huwa arkivju. Użat għal backups.
+L-attribut "{0}" mhuwiex validu.
+Attribut ġie miżjud b'suċċess.
+L-attribut tneħħa b’suċċess.
+Naqas milli jżid l-attribut.
+Ma rnexxilux ineħħi l-attribut.
+Daqs: {0}
+Jissostitwixxi kelma jew frażi b'waħda oħra f'linja
+Inqabeż il-livell tal-kulur aħmar. Kien {0}.
+Inqabeż il-livell tal-kulur aħdar. Kien {0}.
+Inqabeż il-livell tal-kulur blu. Kien {0}.
+Attiva kuluri vera
+Jattiva l-appoġġ tal-kulur veru għal ColorMix.
+Jattiva l-appoġġ tal-kulur veru għal Disco.
+Jattiva l-appoġġ tal-kulur veru għal GlitterColor.
+Jattiva l-appoġġ tal-kulur veru għal-Linji.
+Naqas milli jiżblokka {0}.
+{0} huwa diġà mblukkat.
+{0} ma tistax tingħaqad ma 'debug remot issa.
+Naqas milli jimblokka {0}.
+Kuluri taċ-ċiklu
+Disco se jiċċikla l-kuluri meta jkun attivat. Inkella, agħżel kuluri każwali.
+Daħħal il-mogħdijiet tal-fajl għall-annessi. Agħfas ENTER fuq triq vojta biex tikkonferma.
+Tiftaħ messaġġ kriptat
+Ikteb il-password għall-ID taċ-ċavetta {0}
+Jibgħat messaġġ kriptat lil indirizz
+Jitolbok timla l-oqsma meħtieġa biex tibgħat messaġġ kriptat lil indirizz
+Tniżżil minn {0} ...
+Uri l-istrixxa tal-progress waqt li tniżżel jew ittella 'mill-kmand "ġib" jew "tpoġġi"
+Jekk veru, jagħmel "get" jew "put" juri l-istrixxa tal-progress waqt it-tniżżil jew it-tlugħ.
+Tella fajl fuq websajt speċifikata
+Iqajjem indirizz
+Tella '{0} għal {1} ​​...
+It-tlestija tlestiet.
+Jekk jogħġbok uża "ftp" jekk inti ser ittella 'fajls fuq is-server FTP.
+It-tlugħ ma rnexxilux tipprova {0}: {1}
+{0} MB ta '{1} MB imtella'.
+Ikteb kemm-il darba l-kmand "put" għandu jipprova jerġa 'jtella' l-uploads. Għandu jkun numeriku.
+L-indirizz jista 'ma jkunx vojt.
+Ma rnexxilekx tagħmel ping {0}: {1}
+Ping irnexxa f '{0} ms.

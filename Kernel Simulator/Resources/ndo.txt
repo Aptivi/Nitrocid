@@ -656,3 +656,232 @@ Blokir perangkat debug berdasarkan alamat IP
 {0} belum diblokir.
 Kesalahan memuat pengaturan
 Terjadi kesalahan saat memuat pengaturan. Anda mungkin perlu memeriksa file pengaturan.
+- Tahap 2: Deteksi modifikasi dan screensaver
+- Tahap 3: Masuk
+Pilih bagian:
+Pilih opsi:
+Pengaturan Umum...
+Pengaturan Perangkat Keras ...
+Pengaturan Login ...
+Pengaturan Shell ...
+Pengaturan jaringan...
+Pengaturan Miscellaneous ...
+Simpan Pengaturan
+Keluar
+Opsi yang ditentukan {0} tidak valid.
+Jawabannya harus numerik.
+Konfirmasi Argumen saat Boot
+Pemicu Mode Pemeliharaan
+Ubah Kata Sandi Root ...
+Periksa Pembaruan pada Startup
+Probe Tenang
+Periksa Slot RAM
+Tunjukkan MOTD saat Masuk
+Hapus Layar saat Masuk
+Tampilkan nama pengguna yang tersedia
+Kulit Berwarna
+Perintah Bantuan yang Disederhanakan
+Debug Port
+Awalan Nick Default Debug Jarak Jauh
+Unduh Retry Times
+Catat nama pengguna FTP
+Catat alamat IP FTP
+Kembalikan hanya profil FTP pertama
+Tunjukkan Waktu / Tanggal di Sudut Kanan Atas
+Screensaver Timeout dalam ms
+Kuota Ukuran Debug dalam Byte
+Mode parse ukuran
+Marquee saat memulai
+Waktu dan Tanggal Panjang
+Tampilkan File Tersembunyi
+Bagian yang dimasukkan tidak valid. Tolong kembali.
+Kembali...
+Memungkinkan
+Nonaktifkan
+Nomor kunci yang dimasukkan tidak valid. Tolong kembali.
+Tulis kata sandi root yang akan disetel. Jangan khawatir; kata sandi ditampilkan sebagai bintang.
+Aktifkan "Ubah Kata Sandi Root" untuk menggunakan opsi ini. Tolong kembali.
+Ubah Kata Sandi Root?
+Setel Kata Sandi Root ...
+Tulis port debugger jarak jauh. Ini harus numerik, dan belum pernah digunakan. Jika tidak, debugger jarak jauh akan gagal membuka port.
+Tulis awalan nama panggilan debug jarak jauh default.
+Tulis berapa kali perintah "" get "" harus mencoba ulang unduhan yang gagal. Itu harus numerik.
+Tulis kapan harus meluncurkan screensaver setelah milidetik yang ditentukan. Itu harus numerik.
+Tulis berapa banyak byte yang dapat disimpan oleh log debug. Itu harus numerik.
+Jawabannya mungkin tidak negatif.
+Jawabannya salah. Periksa untuk memastikan bahwa jawabannya adalah numerik untuk entri config yang membutuhkan angka sebagai jawaban.
+Variabel {0} tidak ditemukan di salah satu modul.
+Mengubah konfigurasi kernel
+Pengaturan Screensaver ...
+Aktifkan 255 warna
+Apakah Anda ingin tetap terhubung?
+Pilihan tidak valid. Dengan asumsi tidak ...
+Tidak ada mod yang terdeteksi. Melompati tahapan ...
+Ubah Budaya saat Mengganti Bahasa
+Teks ditampilkan
+Tulis teks apa pun yang ingin Anda tampilkan. Lebih pendek lebih baik.
+Gagal mengunggah {0}
+Download gagal untuk file {0}: {1}
+Galat menjalankan perintah debug jarak jauh {0}: {1}
+Menambahkan pengguna
+Menambahkan alias ke perintah
+Menyuntikkan argumen ke kernel (diperlukan booting ulang)
+Mengubah nama host
+Mengubah MAL, MOTD Setelah Login
+Mengubah MOTD, Pesan Hari Ini
+Ubah nama pengguna
+Menampilkan log debug
+Kelola izin untuk pengguna
+Reload file screensaver di KSMods
+Menghapus pengguna dari daftar
+Alias ​​{0} berhasil dihapus.
+Gagal memeriksa pembaruan.
+Tidak ada lagi pengguna yang tersisa di daftar.
+Gagal menyetel bahasa.
+Terjadi kesalahan saat mencoba menutup pemberitahuan.
+Terdeteksi peningkatan ke {0}. Memperbarui konfigurasi ...
+usrmgr: Gagal membuat nama pengguna {0}: {1}
+Gagal mengganti nama pengguna. {0}
+Salah satu daftar izin tidak berisi nama pengguna {0}.
+Gagal memuat izin dari file: {0}
+Gagal mengubah nama host: {0}
+Pengguna tidak ditemukan
+Gagal mengubah sandi nama pengguna: {0}
+Gagal menyalin file atau direktori: {0}
+Gagal memindahkan file atau direktori: {0}
+Tidak dapat menemukan berkas yang cocok dengan string "{0}": {1}
+Download gagal untuk file {0}.
+Gagal mencantumkan file jarak jauh: {0}
+Masukkan file atau folder untuk dihapus. Anda harus memiliki izin administratif pada akun Anda untuk dapat menghapus.
+Anda yakin ingin menghapus {0} <y / n>?
+Menghapus {0} ...
+{0} tidak ditemukan di server.
+Semua surat yang dibuat oleh {0} berhasil dihapus.
+Gagal menghapus semua surat yang dibuat oleh {0}.
+Terjadi kesalahan saat mengirim pesan.
+Pindah {0} ke {1} ...
+Berhasil dipindahkan
+Memindahkan file atau direktori ke file atau direktori lain. Anda juga dapat menggunakannya untuk mengganti nama file.
+Gagal memindahkan {0} ke {1}.
+Masukkan jalur sumber dan jalur tujuan.
+Menyalin {0} ke {1} ...
+Berhasil disalin
+Menyalin file atau direktori ke file atau direktori lain.
+Gagal menyalin {0} ke {1}.
+Memindahkan pesan
+Memindahkan semua pesan dari penerima
+Semua surat yang dibuat oleh {0} berhasil dipindahkan.
+Gagal memindahkan semua surat yang dibuat oleh {0}.
+Pesan {0} dari {1} dipindahkan dari {2}. {3} pesan tersisa untuk diurai.
+Pesan {0} dari {1} dipindahkan. {3} pesan tersisa untuk diurai.
+Menampilkan info cuaca untuk kota tertentu. Menggunakan OpenWeatherMap.
+- Info cuaca untuk {0} -
+Cuaca: {0}
+Suhu: {0} ({1} unit)
+Terasa seperti: {0} ({1} unit)
+Tekanan: {0}
+Kelembaban: {0}
+Anda bisa mendapatkan kunci API Anda sendiri di https://home.openweathermap.org/api_keys.
+Anda selalu dapat melihat http://bulk.openweathermap.org/sample/city.list.json.gz untuk daftar kota dengan ID-nya.
+Unit yang Disukai untuk Suhu
+Kelvin
+Imperial (Fahrenheit)
+Metrik (Celsius)
+Siapkan kernel agar meminta Anda memberikan argumen saat boot.
+Memicu mode pemeliharaan. Ini menonaktifkan banyak akun.
+Setiap startup, itu akan memeriksa pembaruan.
+Saat berpindah bahasa, ubah nama bulan, kalender, dll.
+Jika kernel dimulai, kata sandi root akan ditetapkan.
+Tetap diamkan pesan pemeriksaan perangkat keras.
+Jika diaktifkan, itu akan memeriksa slot RAM bersama dengan RAM.
+Tampilkan Pesan Hari Ini sebelum menampilkan layar login.
+Hapus layar sebelum menampilkan layar login.
+Menampilkan pengguna yang tersedia jika diaktifkan.
+Memberikan dukungan warna kernel
+Perintah bantuan yang disederhanakan untuk semua shell
+Apakah akan mencatat nama pengguna FTP atau tidak.
+Apakah akan mencatat alamat IP FTP atau tidak.
+Pilih profil pertama hanya saat menghubungkan.
+Mengaktifkan 255 dukungan warna untuk ColorMix.
+Mengaktifkan 255 dukungan warna untuk Disco.
+Mengaktifkan 255 dukungan warna untuk GlitterColor.
+Mengaktifkan 255 dukungan warna untuk Garis.
+Waktu dan tanggal akan ditampilkan di sudut kanan atas layar
+Jika diaktifkan, kernel akan mengurai seluruh folder untuk ukuran totalnya. Lain, hanya akan mengurai permukaan.
+Mengaktifkan eyecandy saat memulai
+Waktu dan tanggal akan lebih panjang, menampilkan nama bulan penuh, dll.
+Menampilkan file tersembunyi.
+Pilih satuan suhu yang Anda sukai (ini hanya berlaku untuk perintah "cuaca")
+Mod {0} berhenti
+{0} v {1} berhenti
+Mod {0} tidak memiliki nama bagian. Penguraian mod gagal. Tinjau kode sumbernya.
+Mod {0} tidak memiliki perintah. Penguraian mod gagal. Tinjau kode sumbernya.
+Anda harus mengaktifkan mode debug sebelum Anda dapat menghapus log debug.
+{0} pesan baru tiba di kotak masuk.
+Buka "lsmail" untuk melihatnya.
+Utama: {2} Dapat di-boot: {3} Partisi boot: {4}
+Tidak dapat menghapus file: {0}
+Menghapus direktori atau file
+Tidak dapat menghapus {0} karena tidak ada.
+Anda mungkin belum menginstal inxi di sistem Anda. Lihat manajer paket Anda untuk instalasi. Untuk sistem Debian (dan turunannya), Anda mungkin ingin menjalankan "" sudo apt install inxi libcpanel-json-xs-perl "" di emulator terminal.
+Bahasa berhasil disetel ke {0}!
+Tekan CTRL + C untuk keluar.
+Memberikan informasi tentang file
+Memberikan informasi tentang direktori
+Tidak bisa mendapatkan informasi tentang direktori yang tidak ada.
+Tidak bisa mendapatkan informasi tentang file yang tidak ada.
+Nama lengkap: {0}
+Waktu pembuatan: {0}
+Waktu akses terakhir: {0}
+Waktu tulis terakhir: {0}
+Atribut: {0}
+Direktori induk: {0}
+Di mana menemukan: {0}
+Ukuran berkas: {0}
+Mengubah atribut file
+Berkas tidak ditemukan.
+dengan <attributes> adalah salah satu dari berikut ini:
+File tersebut adalah file biasa
+File tersebut adalah file hanya-baca
+File tersebut adalah file tersembunyi
+File tersebut adalah arsip. Digunakan untuk backup.
+Atribut "{0}" tidak valid.
+Atribut berhasil ditambahkan.
+Atribut berhasil dihapus.
+Gagal menambahkan atribut.
+Gagal menghapus atribut.
+Ukuran: {0}
+Mengganti kata atau frase dengan yang lain dalam satu baris
+Tingkat warna merah terlampaui. Itu adalah {0}.
+Tingkat warna hijau terlampaui. Itu adalah {0}.
+Tingkat warna biru terlampaui. Itu adalah {0}.
+Aktifkan warna asli
+Mengaktifkan dukungan warna sebenarnya untuk ColorMix.
+Mengaktifkan dukungan warna sejati untuk Disco.
+Mengaktifkan dukungan warna sejati untuk GlitterColor.
+Mengaktifkan dukungan warna sebenarnya untuk Garis.
+Gagal membebaskan {0}.
+{0} sudah diblokir.
+{0} tidak dapat bergabung dengan debug jarak jauh sekarang.
+Gagal memblokir {0}.
+Warna siklus
+Disko akan mengubah warna saat diaktifkan. Jika tidak, pilih warna acak.
+Masukkan jalur file ke lampiran. Tekan ENTER di jalur kosong untuk mengonfirmasi.
+Membuka pesan terenkripsi
+Tulis sandi untuk ID kunci {0}
+Mengirim pesan terenkripsi ke sebuah alamat
+Meminta Anda mengisi kolom wajib untuk mengirim pesan terenkripsi ke sebuah alamat
+Mendownload dari {0} ...
+Tampilkan bilah kemajuan saat mengunduh atau mengunggah dari perintah "get" atau "put"
+Jika benar, itu membuat "get" atau "put" menunjukkan bilah kemajuan saat mengunduh atau mengunggah.
+Mengunggah file ke situs web tertentu
+Ping alamat
+Mengunggah {0} ke {1} ...
+Unggahan telah selesai.
+Gunakan "ftp" jika Anda akan mengupload file ke server FTP.
+Unggahan gagal dalam percobaan {0}: {1}
+{0} MB dari {1} MB diunggah.
+Tulis berapa kali perintah "put" harus mencoba kembali unggahan yang gagal. Itu harus numerik.
+Alamat tidak boleh kosong.
+Gagal melakukan ping {0}: {1}
+Ping berhasil dalam {0} md.

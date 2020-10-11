@@ -656,3 +656,232 @@ Estä vianetsintälaite IP-osoitteen perusteella
 {0} ei ole vielä estetty.
 Virhe asetusten lataamisessa
 Asetusten lataamisessa tapahtui virhe. Saatat joutua tarkistamaan asetustiedoston.
+- Vaihe 2: Modien ja näytönsäästäjien tunnistus
+- Vaihe 3: Kirjaudu sisään
+Valitse osio:
+Valitse vaihtoehto:
+Yleiset asetukset...
+Laitteistoasetukset ...
+Kirjautumisasetukset ...
+Kuoren asetukset ...
+Verkkoasetukset...
+Muut asetukset ...
+Tallenna asetukset
+Lopeta
+Määritetty vaihtoehto {0} on virheellinen.
+Vastauksen on oltava numeerinen.
+Kehota argumentteja käynnistettäessä
+Huoltotilan liipaisin
+Vaihda pääsalasana ...
+Tarkista päivitykset käynnistyksen yhteydessä
+Hiljainen koetin
+Koettimen RAM-paikat
+Näytä MOTD sisäänkirjautumisen yhteydessä
+Tyhjennä näyttö kirjautumisen yhteydessä
+Näytä käytettävissä olevat käyttäjänimet
+Värillinen kuori
+Yksinkertaistettu ohjekomento
+Virheenkorjausportti
+Etävianmääritys Oletus Nick-etuliite
+Lataa Retry Times
+Kirjaudu FTP-käyttäjänimi
+Loki FTP: n IP-osoite
+Palauta vain ensimmäinen FTP-profiili
+Näytä aika / päivämäärä oikeassa yläkulmassa
+Näytönsäästäjän aikakatkaisu ms
+Virheenkorjauskoon kiintiö tavuina
+Koko jäsennustila
+Teltta käynnistyksen yhteydessä
+Pitkä aika ja päivämäärä
+Näytä piilotetut tiedostot
+Virheellinen osa syötetty. Palaa takaisin.
+Mene takaisin...
+ota käyttöön
+Poista käytöstä
+Annettu virheellinen avaimen numero. Palaa takaisin.
+Kirjoita asetettava pääsalasana. Älä huoli; salasana näytetään tähtinä.
+Ota tämä vaihtoehto käyttöön valitsemalla "Vaihda pääsalasana". Palaa takaisin.
+Vaihdetaanko salasana?
+Aseta pääsalasana ...
+Kirjoita virheenkorjausportti. Sen on oltava numeerinen, eikä sitä saa käyttää jo. Muussa tapauksessa etävianetsintäohjelma ei onnistu avaamaan porttia.
+Kirjoita oletusvirheen virheenkorjauksen lempinimen etuliite.
+Kirjoita kuinka monta kertaa "" get "-komennon pitäisi yrittää epäonnistuneita latauksia uudelleen. Sen on oltava numeerinen.
+Kirjoita, milloin näytönsäästäjä käynnistetään tietyn millisekunnin kuluttua. Sen on oltava numeerinen.
+Kirjoita, kuinka monta tavua virheenkorjauslokitiedosto voi tallentaa. Sen on oltava numeerinen.
+Vastaus ei välttämättä ole kielteinen.
+Vastaus on virheellinen. Tarkista, että vastaus on numeerinen määritysmerkinnöille, jotka tarvitsevat numeroita vastauksina.
+Muuttujaa {0} ei löydy mistään moduuleista.
+Muuttaa ytimen kokoonpanoa
+Näytönsäästäjän asetukset ...
+Aktivoi 255 väriä
+Haluatko pitää yhteyttä?
+Virheellinen valinta. Olettaen, ettei ...
+Ei modeja havaittu. Ohitetaan vaihe ...
+Vaihda kulttuuria vaihdettaessa kieltä
+Näytetty teksti
+Kirjoita haluamasi teksti. Lyhyempi on parempi.
+{0} lataaminen epäonnistui
+Lataus epäonnistui tiedostolle {0}: {1}
+Virhe etävianetsintäkomennon suorittamisessa {0}: {1}
+Lisää käyttäjiä
+Lisää aliakset komentoihin
+Ruiskuttaa argumentteja ytimeen (uudelleenkäynnistys vaaditaan)
+Muuttaa isäntänimeä
+Muuttaa MAL, MOTD kirjautumisen jälkeen
+Muuttaa päivän viestiä MOTD
+Vaihtaa käyttäjänimen
+Näyttää virheenkorjauslokit
+Hallitse käyttäjien käyttöoikeuksia
+Lataa näytönsäästäjätiedosto uudelleen KSMod-tiedostoiksi
+Poistaa käyttäjän luettelosta
+Alias ​​{0} poistettiin.
+Päivitysten haku epäonnistui.
+Luettelossa ei ole enää käyttäjiä.
+Kielen asettaminen epäonnistui.
+Ilmoitus hylätessä tapahtui virhe.
+Päivitys versioon {0} havaitaan. Päivitetään kokoonpanoa ...
+usrmgr: Käyttäjänimen luominen epäonnistui {0}: {1}
+Käyttäjän nimeäminen uudelleen epäonnistui. {0}
+Yksi käyttöoikeusluetteloista ei sisällä käyttäjänimeä {0}.
+Lupien lataaminen tiedostosta epäonnistui: {0}
+Isäntänimen muuttaminen epäonnistui: {0}
+Käyttäjää ei löydy
+Käyttäjänimen salasanan vaihtaminen epäonnistui: {0}
+Tiedoston tai hakemiston kopiointi epäonnistui: {0}
+Tiedoston tai hakemiston siirtäminen epäonnistui: {0}
+Merkkijonoa "{0}" vastaavaa tiedostoa ei löydy: {1}
+Tiedoston {0} lataus epäonnistui.
+Etätiedostojen luettelointi epäonnistui: {0}
+Kirjoita poistettava tiedosto tai kansio. Sinulla on oltava tililläsi järjestelmänvalvojan oikeudet, jotta voit poistaa sen.
+Haluatko varmasti poistaa {0} <y / n>?
+Poistetaan kohdetta {0} ...
+{0} ei löydy palvelimelta.
+Kaikki käyttäjän {0} lähettämät viestit on poistettu.
+Kaikkien käyttäjän {0} lähettämien viestien poistaminen epäonnistui.
+Virhe viestin lähettämisessä.
+Siirretään {0} kansioon {1} ...
+Siirretty onnistuneesti
+Siirtää tiedoston tai hakemiston toiseen tiedostoon tai hakemistoon. Voit käyttää sitä myös tiedostojen uudelleennimeämiseen.
+Kohteen {0} siirtäminen kohteeseen {1} epäonnistui.
+Anna lähdepolku ja kohdepolku.
+Kopioidaan {0} kansioon {1} ...
+Kopiointi onnistui
+Kopioi tiedoston tai hakemiston toiseen tiedostoon tai hakemistoon.
+Kohteen {0} kopiointi kohteeseen {1} epäonnistui.
+Siirtää viestin
+Siirtää kaikki viestit vastaanottajalta
+Kaikki käyttäjän {0} lähettämät viestit on siirretty.
+Kaikkien käyttäjän {0} lähettämien viestien siirtäminen epäonnistui.
+Viesti {0} lähettäjältä {1} siirretty kansiosta {2}. {3} jäsennettävää viestiä jäljellä.
+Viesti {0} lähettäjältä {1} siirretty. {3} jäsennettävää viestiä jäljellä.
+Näyttää tietyn kaupungin säätiedot. Käyttää OpenWeatherMapia.
+- Säätiedot kohteelle {0} -
+Sää: {0}
+Lämpötila: {0} ({1} yksikkö)
+Tuntuu: {0} ({1} yksikkö)
+Paine: {0}
+Kosteus: {0}
+Voit hankkia oman API-avaimen osoitteesta https://home.openweathermap.org/api_keys.
+Voit aina tarkistaa osoitteesta http://bulk.openweathermap.org/sample/city.list.json.gz luettelon kaupungeista, joissa on heidän tunnuksensa.
+Lämpötilan ensisijainen yksikkö
+Kelvin
+Keisarillinen (Fahrenheit)
+Metrinen (Celsius)
+Asettaa ytimen niin, että se pyytää argumenttia käynnistettäessä.
+Käynnistää huoltotilan. Tämä poistaa useita tilejä käytöstä.
+Jokainen käynnistyksen yhteydessä se tarkistaa päivitykset.
+Kun vaihdat kieltä, vaihda kuukausien nimet, kalenteri jne.
+Jos ydin käynnistetään, se asettaa juurisalasanan.
+Pidä laitteistokokeiluviestit hiljaa.
+Jos se on käytössä, se tutkii RAM-paikat yhdessä RAM-muistin kanssa.
+Näytä päivän viesti ennen kirjautumisnäytön näyttämistä.
+Tyhjennä näyttö ennen kirjautumisnäytön näyttämistä.
+Näyttää käytettävissä olevat käyttäjät, jos se on käytössä.
+Antaa ytimen värien tuen
+Yksinkertaistettu komento kaikille kuoreille
+Kirjataanko FTP-käyttäjänimi.
+Kirjataanko FTP IP-osoite vai ei.
+Valitse ensimmäinen profiili vain, kun muodostat yhteyden.
+Aktivoi 255 väritukea ColorMixille.
+Aktivoi 255 väritukea Diskolle.
+Aktivoi 255 väritukea GlitterColorille.
+Aktivoi 255 väritukea linjoille.
+Aika ja päivämäärä näkyvät näytön oikeassa yläkulmassa
+Jos tämä on käytössä, ydin jäsentää koko kansion koko sen koon mukaan. Muuten vain jäsentää pinnan.
+Mahdollistaa eyecandyn käynnistyksen yhteydessä
+Aika ja päivämäärä ovat pidempiä, ja niissä näkyvät koko kuukauden nimet jne.
+Näyttää piilotetut tiedostot.
+Valitse haluamasi lämpötilan yksikkö (tämä koskee vain "sää" -komentoa)
+Mod {0} pysähtyi
+{0} v {1} lopetettu
+Modilla {0} ei ole osan nimeä. Modin jäsentäminen epäonnistui. Tarkista lähdekoodi.
+Modilla {0} ei ole komentoa. Modin jäsentäminen epäonnistui. Tarkista lähdekoodi.
+Virheenkorjaustila on otettava käyttöön, ennen kuin voit tyhjentää virhelokin.
+{0} uutta viestiä saapui postilaatikkoon.
+Avaa "lsmail" nähdäksesi ne.
+Ensisijainen: {2} Käynnistettävä: {3} Käynnistysosio: {4}
+Tiedostoa ei voi poistaa: {0}
+Poistaa hakemiston tai tiedoston
+{0} ei voi poistaa, koska sitä ei ole olemassa.
+Sinulla ei ehkä ole inxiä asennettuna järjestelmääsi. Katso asennusohjeet paketinhallinnasta. Debian (ja johdannaiset) -järjestelmissä saatat haluta suorittaa "" sudo apt install inxi libcpanel-json-xs-perl "" pääteemulaattorissa.
+Kieleksi asetettu {0}!
+Poistu painamalla CTRL + C.
+Antaa tietoja tiedostosta
+Tarjoaa tietoja hakemistosta
+Ei saada tietoa olemassa olevasta hakemistosta.
+Ei saada tietoja olemattomasta tiedostosta.
+Koko nimi: {0}
+Luomisaika: {0}
+Viimeisin käyttöaika: {0}
+Viimeisin kirjoitusaika: {0}
+Attribuutit: {0}
+Päähakemisto: {0}
+Mistä löytää: {0}
+Tiedoston koko: {0}
+Muuttaa tiedoston määritettä
+Tiedostoa ei löytynyt.
+missä <attributes> on yksi seuraavista:
+Tiedosto on normaali tiedosto
+Tiedosto on vain luku-tiedosto
+Tiedosto on piilotettu tiedosto
+Tiedosto on arkisto. Käytetään varmuuskopiointiin.
+Attribuutti "{0}" on virheellinen.
+Attribuutin lisääminen onnistui.
+Attribuutti on poistettu.
+Määritteen lisääminen epäonnistui.
+Määritteen poistaminen epäonnistui.
+Koko: {0}
+Korvaa sanan tai lauseen toisella rivillä
+Punainen väritaso ylitetty. Se oli {0}.
+Vihreän värin taso ylitetty. Se oli {0}.
+Sinisen väritaso ylitetty. Se oli {0}.
+Aktivoi todelliset värit
+Aktivoi todellisen ColorMix-värituen.
+Aktivoi todellisen värituki Diskolle.
+Aktivoi todellisen värituen GlitterColorille.
+Aktivoi todellisen väritukea viivoille.
+Kohteen {0} eston kumoaminen epäonnistui.
+{0} on jo estetty.
+{0} ei voi nyt liittyä etävianetsintään.
+Kohteen {0} estäminen epäonnistui.
+Syklin värit
+Disco kiertää värejä, kun se on käytössä. Muussa tapauksessa valitse satunnaiset värit.
+Syötä liitteiden tiedostopolut. Vahvista painamalla tyhjää polkua ENTER.
+Avaa salatun viestin
+Kirjoita salasana avaimen tunnukselle {0}
+Lähettää salatun viestin osoitteeseen
+Pyytää sinua täyttämään vaaditut kentät, jotta voit lähettää salatun viestin osoitteeseen
+Ladataan osoitteesta {0} ...
+Näytä edistymispalkki ladattaessa tai ladattaessa "get" - tai "put" -komennosta
+Jos totta, se saa "get" tai "put" näyttämään edistymispalkin lataamisen tai lataamisen aikana.
+Lataa tiedosto määritetylle verkkosivustolle
+Pings osoite
+Ladataan {0} kohteeseen {1} ...
+Lataus on valmis.
+Käytä "ftp", jos aiot ladata tiedostoja FTP-palvelimelle.
+Lataus epäonnistui kokeilemalla {0}: {1}
+Ladattu {0} Mt {1} Mt: sta.
+Kirjoita kuinka monta kertaa "put" -komennon pitäisi yrittää epäonnistuneita latauksia uudelleen. Sen on oltava numeerinen.
+Osoite ei voi olla tyhjä.
+Pingata {0} epäonnistui: {1}
+Ping onnistui {0} ms.

@@ -656,3 +656,232 @@ Ku xir qalabka khaladka cinwaanka IP
 {0} wali lama xanibin
 Cilad raritaanka dejinta
 Khalad ayaa jira intaad dejineyso dejinta. Waxaa laga yaabaa inaad u baahato inaad fiiriso faylka dejinta.
+- Marxaladda 2: Hababka iyo ogaanshaha shaashadaha
+- Marxaladda 3: Soo gal
+Xulo qaybta:
+Xullo xulasho:
+Goobaha Guud ...
+Dejinta Qalabka ...
+Dejinta Galitaanka ...
+Qalabka Shell ...
+Dejinta Shabakada ...
+Meelo kala duwan ...
+Keydso Dejinta
+Ka bax
+Ikhtiyaarka la cayimay {0} ma ansax yahay.
+Jawaabtu waa inay noqotaa tiro.
+Degdeg u ah doodaha kabaha
+Habka Dayactirka Kiciya
+Beddel Sirta xididka ...
+Hubi Cusboonaysiinta Bilawga
+Baaritaan Degan
+Baadhitaanada RAM
+Ku muuji MOTD Galitaanka
+Sharax nadiif ah Soo galista
+Muuji magacyada isticmaaleyaasha la heli karo
+Midab Shell
+Taliska Caawinta oo Fudud
+Deked Debug
+Remug Debug Default Nick Horgalaha
+Soodejiso Waqtiyada Iskudayada
+Gal magaca isticmaalaha FTP
+Gal cinwaanka FTP IP
+Soo celi kaliya FTP astaanta koowaad
+Muuji Waqtiga / Taariikhda Geeska Midig Sare
+Wakhtiga Ka-haynta Shaashadda ee ms
+Kootaa Qaddarka Qiyaasta ee Bytes
+Xajmiga xajmiga xajmiga
+Ku calaamadee bilowga
+Waqti Dheer iyo Taariikh
+Muuji Faylasha Qarsoon
+Qayb aan ansax ahayn ayaa la galay. Fadlan dib u noqo.
+Dib u laabo ...
+Daar
+Hawl gab
+Lambarka furaha aan ansax ahayn ayaa la galay. Fadlan dib u noqo.
+Qor lambarka sirta ah ee lagu dejinayo. Ha welwelin; lambarka sirta ah waxaa loo muujiyaa xiddigo.
+Awoodi "Beddel Sirta Root" si aad u adeegsato ikhtiyaarkan. Fadlan dib u noqo.
+Beddel erayga sirta ah?
+Calan Password xididka ...
+Qor deked khafiifisa fog. Waa inuu noqdaa lambar, waana inaan horay loo isticmaalin. Haddii kale, qalabka wax baabiiya ee fog ayaa ku guuldareysan doona inuu furo dekedda.
+Qor naaneyska khafiifinta khayaanada fog ee hore.
+Qor inta jeer ee amarka "" hel "" ay tahay inuu dib u tijaabiyo soo dejinta fashilantay. Waa inuu noqdaa tiro.
+Qor goorta la bilaabayo kaydinta shaashadda kadib markii la caddeeyo millisekonds. Waa inuu noqdaa tiro.
+Qor intee bayt oo qashin-qubka khaldami kara. Waa inuu noqdaa tiro.
+Jawaabtu ma noqon karto mid taban.
+Jawaabtu waa baadil. Hubi si aad u hubiso in jawaabtu ay tiro ahaan tahay gelitaanka isku xidhka ee u baahan lambarrada jawaabo ahaan.
+Isbadal {0} laguma helo mid ka mid ah modullada.
+Waxay bedeshaa qaabeynta kernel
+Dejinta Shaashadda ...
+Dhaqaaq 255 midab
+Ma rabtaa inaad isku xirnaato?
+Doorashada aan ansax ahayn Maya oo ...
+Wax mod ah lama oga. Ka gudubka marxaladda ...
+Beddel Dhaqanka markaad Bedelayso Afafka
+Qoraalka ayaa la muujiyay
+Qor qoraal kasta oo aad rabto in lagu tuso. Gaagaaban ayaa kafiican.
+Ku guuldareystay soo rarka {0}
+Soo dejinta ayaa ku fashilantay faylka {0}: {1}
+Cilad ku saabsan fulinta amarka khaladka fog {0}: {1}
+Waxay kudaraysaa isticmaaleyaasha
+Kudarsada magacyada amarrada
+Ku dura doodaha kernel (reboot loo baahan yahay)
+Isbedelada magaca martida loo yahay
+Isbedelada MAL, MOTD Ka Dib Soo Galida
+Isbedelada MOTD, Farriinta Maalinta
+Wuxuu badalaa magaca isticmaalaha
+Waxay muujineysaa diiwaanada khaladka
+Maamul rukhsadaha adeegsadayaasha
+Dib u soo cusbooneysiiya feylasha shaashadda ee KSMods
+Liistada ka saareysa isticmaale
+Waxaa meesha laga saaray magacyo {0} si guul leh.
+Ku guuldareystay inuu hubiyo cusbooneysiinta
+Ma jiraan isticmaaleyaal badan oo ku haray liiska.
+Ku guuldareystay dejinta luqadda
+Cilad ayaa la isku dayay in la diido ogeysiinta.
+U cusbooneysiin ku socota {0} ayaa la ogaaday. Cusbooneysiinta qaabeynta ...
+usrmgr: Waa lagu guuldaraystay in la abuuro magaca isticmaalaha {0}: {1}
+Wuu ku guuldareystay inuu magaca ka badalo isticmaalaha. {0}
+Mid ka mid ah liisaska rukhsadda kuma jiraan magaca adeegsade {0}.
+Waa lagu guuldareystay in laga rakibo rukhsadaha faylka: {0}
+Wuu ku guuldareystay inuu bedelo magaca martida: {0}
+Isticmaalaha lama helin
+Wuu ku guuldareystay inuu bedelo lambarka sirta ah ee magaca isticmaale: {0}
+Fashilmin nuqul feyl ama buugga: {0}
+Waa lagu guuldaraystay in la dhaqaajiyo faylka ama galka: {0}
+Awoodin in la helo fayl u dhigma xarig "{0}": {1}
+Soo dejinta ayaa ku fashilantay faylka {0}.
+Fashilantay liistada faylasha fog: {0}
+Gali fayl ama fayl si aad uga saarto. Waa inaad ku haysataa rukhsad maamul koontadaada si aad uga saari karto.
+Ma hubtaa inaad rabto inaad tirtirto {0} <y / n>?
+Tirtirayaa {0} ...
+{0} lagama helo serverka.
+Dhammaan waraaqaha ay sameeyeen {0} si guul leh ayaa looga saaray.
+Wuu ku guuldareystay inuu ka saaro dhammaan fariimaha uu sameeyay {0}.
+Khalad baa diraya fariinta.
+U guurista {0} ilaa {1} ...
+Si guul leh ayaa loo dhaqaaqay
+Waxay u guurisaa faylka ama galka faylka ama galka kale. Waxa kale oo aad u isticmaali kartaa in magaca faylasha.
+Ku guuldarreystay inuu u dhaqaaqo {0} illaa {1}.
+Gali dariiqa isha iyo wadada loo socdo.
+Nuqul ka ah {0} illaa {1} ...
+Guuriyay si guul leh
+Nuqulada faylka ama galka faylka ama galka kale.
+Ku guuldaraystay nuqul {0} ilaa {1}.
+Dhaqaaqo fariin
+Dhaqdhaqaaqa dhan fariimaha ka qaata
+Dhammaan waraaqaha ay sameeyeen {0} si guul leh ayaa loo dhaqaajiyay.
+Ku guuldaraystay inuu dhaqaajiyo dhammaan waraaqaha uu sameeyay {0}.
+Farriinta {0} ka socota {1} waxaa laga raray {2}. {3} farriimaha haray in la falanqeeyo.
+Farriinta {0} ka timid {1} waa la raray. {3} farriimaha haray in la falanqeeyo.
+Waxay muujineysaa macluumaadka cimilada magaalada la cayimay. Wuxuu adeegsadaa OpenWeatherMap.
+- Macluumaadka hawadda ee {0} -
+Cimilo: {0}
+Heerkulka: {0} ({1} halbeeg)
+Dareemo sida: {0} ({1} halbeeg)
+Cadaadis: {0}
+Uumi: {0}
+Waxaad ka heli kartaa furahaaga gaarka ah API https://home.openweathermap.org/api_keys.
+Waxaad had iyo jeer la tashan kartaa http://bulk.openweathermap.org/sample/city.list.json.gz liiska magaalooyinka wata aqoonsigooda.
+Qaybta laga doorbiday heerkulka
+Kelvin
+Imperial (Fahrenheit)
+Mitir (Celsius)
+Dejisaa guntinta si ay kuugu kallifto inaad ku doodo kabaha.
+Waxay kicineysaa habka dayactirka. Tani waxay joojineysaa koontooyin badan.
+Bilaabasho kasta, waxay hubin doontaa wixii cusbooneysiin ah.
+Markaad luqadaha beddelayso, beddel magacyada bisha, kalandarka, iwm.
+Haddii kernel la bilaabay, waxay dejin doontaa lambarka sirta ah.
+Aamus fariimaha baaritaanka qalabka.
+Haddii karti loo yeesho, waxay baari doontaa boosaska RAM iyo RAM.
+Muuji Farriinta Maalinta ka hor intaadan soo bandhigin shaashadda gelitaanka.
+Sharax nadiif ah ka hor intaadan soo bandhigin shaashadda soo galitaanka.
+Waxay muujineysaa isticmaaleyaasha la heli karo haddii la karti galiyo.
+Waxay siisaa taageerada midabka firida
+Amarka caawimaadda fudud ee dhammaan qolofka
+Inuu galo ama aanad galin magaca usbuuca FTP.
+Inuu galo iyo inkale cinwaanka FTP IP.
+Xulo muuqaalka koowaad marka aad isku xirmeyso.
+Waxay kicisaa taageerada midabka 255 ee ColorMix.
+Waxay kicisaa taageerada midabka 255 ee Diskoo.
+Waxay kicisaa 255 taageero midab ah GlitterColor.
+Waxay kicisaa 255 taageero midab Khadadka.
+Waqtiga iyo taariikhda waxaa lagu muujin doonaa geeska kore ee midig ee shaashadda
+Haddii la kartiyeeyo, firku wuxuu kala shaandheyn doonaa galka oo dhan cabbirkiisa guud. Haddii kale, kaliya ayaa marin doonta dusha sare.
+Waxay awood u siinaysaa indhashareerka bilowga
+Waqtiga iyo taariikhda ayaa sii dheeraan doona, oo muujinaya magacyada bisha oo buuxa, iwm.
+Waxay muujisaa faylal qarsoon.
+Xullo qeybta aad doorbideyso heerkulka (tani kaliya waxay khuseysaa amarka "cimilada")
+Habka {0} waa istaagay
+{0} v {1} istaagay
+Qaabka {0} ma laha magaca qeybta. Baaritaankii Mod ayaa fashilmay. Dib u eeg koodhka isha.
+Mod {0} ma laha amarka. Baaritaankii Mod ayaa fashilmay. Dib u eeg koodhka isha.
+Waa inaad daartaa qaabka khalad ka hor intaadan nadiifin qoritaanka khaladka.
+{0} farriimo cusub ayaa soo galay sanduuqa.
+Fur "lsmail" si aad u aragto.
+Aasaasiga ah: {2} Bootable: {3} Boot partition: {4}
+Waan saari kari waayey faylka: {0}
+Waxay tirtiraysaa galka ama feyl
+Ma saari karo {0} maxaa yeelay ma jiro.
+Waxaa laga yaabaa inaadan kuxiran inxi nidaamkaaga. U dir maareeyahaaga xirmada si aad u rakibto. Nidaamyada Debian (iyo kuwa deriska ah), waxaa laga yaabaa inaad rabto inaad ku shaqeyso "" sudo apt install inxi libcpanel-json-xs-perl "" emulatorka terminalka.
+Luqadda ayaa si guul leh loogu dejiyay {0}!
+Taabo CTRL + C si aad uga baxdo.
+Waxay bixisaa macluumaad ku saabsan feyl
+Waxay bixisaa macluumaad ku saabsan tusaha
+Ma heli karo macluumaad ku saabsan diiwaanka aan jirin.
+Ma heli karo macluumaad kusaabsan feyl aan jirin.
+Magaca oo buuxa: {0}
+Waqtiga abuurka: {0}
+Waqtiga ugu dambeeya ee la galayo: {0}
+Waqtiga qoristii ugu dambeysay: {0}
+Sifooyinka: {0}
+Buugga waalidka: {0}
+Meesha laga helo: {0}
+Cabirka faylka: {0}
+Isbedelada astaamaha faylka
+Faylka lama helin.
+meesha <attributes> ay tahay mid ka mid ah kuwan soo socda:
+Faylka waa fayl caadi ah
+Faylka waa feyl akhrin-keliya ah
+Faylka waa fayl qarsoon
+Faylka waa keyd. Loo adeegsaday kaydinta
+Sifada "{0}" ma ansax tahay
+Sifada si guul leh ayaa loogu daray.
+Sifada si guul leh ayaa looga saaray.
+Waa lagu guuldareystay in lagu daro astaamo.
+Ku guuldareystay inuu ka saaro sifada.
+Cabir: {0}
+Wuxuu ku badalayaa eray ama weedh mid kale safka
+Heerka midabka cas ayaa dhaafay. Waxay ahayd {0}.
+Heerka midabka cagaaran wuu dhaafay. Waxay ahayd {0}.
+Heerka midabka buluuga ah ayaa dhaafay. Waxay ahayd {0}.
+Dhaqaajiso midabada runta ah
+Waxay kicisaa taageerada midabka runta ah ee ColorMix.
+Waxay kicisaa taageerada midabka runta ah ee Diskooga.
+Waxay u ololeysaa taageerada midabka dhabta ah ee GlitterColor.
+Waxay kicisaa taageerada midabka runta ah ee Khadadka.
+Waa lagu guuldareystay in laga furo {0}.
+{0} horay baa loo xiray
+{0} kama mid noqon karo qalabixinta fog fog.
+Ku guuldareystay inuu joojiyo {0}.
+Midabada wareegga
+Disco waxay wareejin doontaa midabada markii la hawlgaliyo. Haddii kale, dooro midabyo aan kala sooc lahayn.
+Gali dariiqyada faylalka ku lifaaqan. Guji ENTER waddo maran si aad u xaqiijiso.
+Furaa farriin sir ah
+U qor ereyga sirta ah aqoonsiga furaha {0}
+Waxay cinwaan u dirtaa farriin sir ah
+Wuxuu kaa codsanayaa inaad buuxiso meelaha loo baahan yahay si aad cinwaan ugu dirto farriin sir ah
+Ka soo degsanaya {0} ...
+Muuji baarka horumarka intaad soo dejineyso ama aad wax ka soo dejineyso "get" ama "put" amarka
+Hadday run tahay, waxay ka dhigaysaa "hel" ama "dhig" muujisaa baarka horumarka intaad soo dejineyso ama aad wax soo dejiso
+Waxay u soo rartaa fayl degel websaydh cayiman
+Cinwaan ku qor
+U raraya {0} illaa {1} ...
+Raadintii waa la dhammaystiray
+Fadlan isticmaal "ftp" haddii aad faylalka u soo rareyso server-ka FTP.
+Soo rarkii ayaa ku guuldaraystay isku day {0}: {1}
+{0} MB ee {1} MB la soo rogay.
+Qor inta jeer ee amarka "put" ah inuu dib isugu dayo soo dejinta fashilmay. Waa inuu noqdaa tiro.
+Cinwaanka ma noqon karo mid madhan.
+Ku guuldaraystay binging {0}: {1}
+Ping wuxuu ku guuleystay {0} ms.

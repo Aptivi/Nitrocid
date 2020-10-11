@@ -656,3 +656,232 @@ Blockieren Sie ein Debug-Gerät anhand der IP-Adresse
 {0} ist noch nicht blockiert.
 Fehler beim Laden der Einstellungen
 Beim Laden der Einstellungen ist ein Fehler aufgetreten. Möglicherweise müssen Sie die Einstellungsdatei überprüfen.
+- Stufe 2: Erkennung von Mods und Bildschirmschonern
+- Stufe 3: Anmelden
+Abschnitt auswählen:
+Wähle eine Option:
+Allgemeine Einstellungen...
+Hardwareeinstellungen ...
+Login-Einstellungen ...
+Shell-Einstellungen ...
+Netzwerkeinstellungen...
+Verschiedene Einstellungen...
+Einstellungen speichern
+Ausgang
+Die angegebene Option {0} ist ungültig.
+Die Antwort muss numerisch sein.
+Beim Booten nach Argumenten fragen
+Wartungsmodus-Trigger
+Root-Passwort ändern ...
+Suchen Sie beim Start nach Updates
+Leise Sonde
+Probe RAM-Steckplätze
+MOTD beim Anmelden anzeigen
+Bildschirm beim Anmelden löschen
+Verfügbare Benutzernamen anzeigen
+Farbige Schale
+Vereinfachter Hilfebefehl
+Debug-Port
+Remote-Debug-Standard-Nick-Präfix
+Wiederholungszeiten herunterladen
+Protokollieren Sie den FTP-Benutzernamen
+Protokollieren Sie die FTP-IP-Adresse
+Gibt nur das erste FTP-Profil zurück
+Zeit / Datum in der oberen rechten Ecke anzeigen
+Bildschirmschoner-Timeout in ms
+Debug-Größenkontingent in Bytes
+Größenanalyse-Modus
+Festzelt beim Start
+Lange Zeit und Datum
+Zeige versteckte Dateien
+Ungültiger Abschnitt eingegeben. Bitte geh zurück.
+Geh zurück...
+Aktivieren
+Deaktivieren
+Ungültige Schlüsselnummer eingegeben. Bitte geh zurück.
+Schreiben Sie das einzustellende Root-Passwort. Mach dir keine Sorgen; Das Passwort wird als Sterne angezeigt.
+Aktivieren Sie "Root-Passwort ändern", um diese Option zu verwenden. Bitte geh zurück.
+Root-Passwort ändern?
+Root-Passwort festlegen ...
+Schreiben Sie einen Remote-Debugger-Port. Es muss numerisch sein und darf nicht bereits verwendet werden. Andernfalls kann der Remote-Debugger den Port nicht öffnen.
+Schreiben Sie das Standardpräfix für den Remote-Debug-Kurznamen.
+Schreiben Sie, wie oft der Befehl "" get "" fehlgeschlagene Downloads wiederholen soll. Es muss numerisch sein.
+Schreiben Sie, wann der Bildschirmschoner nach den angegebenen Millisekunden gestartet werden soll. Es muss numerisch sein.
+Schreiben Sie, wie viele Bytes der Debug-Protokollspeicher speichern kann. Es muss numerisch sein.
+Die Antwort darf nicht negativ sein.
+Die Antwort ist ungültig. Stellen Sie sicher, dass die Antwort für Konfigurationseinträge, für die Zahlen als Antworten erforderlich sind, numerisch ist.
+Die Variable {0} wurde in keinem der Module gefunden.
+Ändert die Kernelkonfiguration
+Bildschirmschoner-Einstellungen ...
+Aktiviere 255 Farben
+Möchten Sie in Verbindung bleiben?
+Ungültige Wahl. Vorausgesetzt nein ...
+Keine Mods erkannt. Überspringphase ...
+Kultur beim Sprachenwechsel ändern
+Text angezeigt
+Schreiben Sie einen beliebigen Text, den Sie anzeigen möchten. Kürzer ist besser.
+Fehler beim Hochladen von {0}
+Download für Datei {0} fehlgeschlagen: {1}
+Fehler beim Ausführen des Remote-Debug-Befehls {0}: {1}
+Fügt Benutzer hinzu
+Fügt Aliasnamen zu Befehlen hinzu
+Fügt dem Kernel Argumente hinzu (Neustart erforderlich)
+Ändert den Hostnamen
+Ändert MAL, die MOTD nach dem Login
+Ändert MOTD, die Botschaft des Tages
+Ändert den Benutzernamen
+Zeigt Debug-Protokolle an
+Verwalten von Berechtigungen für Benutzer
+Lädt die Bildschirmschonerdatei in KSMods neu
+Entfernt einen Benutzer aus der Liste
+Alias ​​{0} erfolgreich entfernt.
+Fehler beim Suchen nach Updates.
+Es sind keine Benutzer mehr in der Liste.
+Sprache konnte nicht eingestellt werden.
+Fehler beim Versuch, die Benachrichtigung zu schließen.
+Ein Upgrade auf {0} wurde erkannt. Konfiguration aktualisieren ...
+usrmgr: Benutzername {0} konnte nicht erstellt werden: {1}
+Benutzer konnte nicht umbenannt werden. {0}
+Eine der Berechtigungslisten enthält keinen Benutzernamen {0}.
+Fehler beim Laden der Berechtigungen aus der Datei: {0}
+Hostname konnte nicht geändert werden: {0}
+Benutzer nicht gefunden
+Fehler beim Ändern des Kennworts des Benutzernamens: {0}
+Fehler beim Kopieren der Datei oder des Verzeichnisses: {0}
+Datei oder Verzeichnis konnte nicht verschoben werden: {0}
+Datei kann nicht gefunden werden, die der Zeichenfolge "{0}" entspricht: {1}
+Download für Datei {0} fehlgeschlagen.
+Remote-Dateien konnten nicht aufgelistet werden: {0}
+Geben Sie eine Datei oder einen Ordner zum Entfernen ein. Sie müssen über Administratorrechte für Ihr Konto verfügen, um es entfernen zu können.
+Möchten Sie {0} <j / n> wirklich löschen?
+{0} löschen ...
+{0} wurde auf dem Server nicht gefunden.
+Alle von {0} erstellten E-Mails werden erfolgreich entfernt.
+Fehler beim Entfernen aller von {0} erstellten E-Mails.
+Fehler beim Senden der Nachricht.
+Verschieben von {0} nach {1} ...
+Erfolgreich umgezogen
+Verschiebt Datei oder Verzeichnis in eine andere Datei oder ein anderes Verzeichnis. Sie können damit auch Dateien umbenennen.
+{0} konnte nicht nach {1} verschoben werden.
+Geben Sie einen Quell- und einen Zielpfad ein.
+Kopieren von {0} nach {1} ...
+Erfolgreich kopiert
+Kopiert eine Datei oder ein Verzeichnis in eine andere Datei oder ein anderes Verzeichnis.
+{0} konnte nicht nach {1} kopiert werden.
+Verschiebt eine Nachricht
+Verschiebt alle Nachrichten vom Empfänger
+Alle von {0} erstellten E-Mails werden erfolgreich verschoben.
+Fehler beim Verschieben aller von {0} erstellten E-Mails.
+Nachricht {0} von {1} wurde von {2} verschoben. {3} Nachrichten müssen noch analysiert werden.
+Nachricht {0} von {1} verschoben. {3} Nachrichten müssen noch analysiert werden.
+Zeigt Wetterinformationen für die angegebene Stadt an. Verwendet OpenWeatherMap.
+- Wetterinformationen für {0} -
+Wetter: {0}
+Temperatur: {0} ({1} Einheit)
+Fühlt sich an wie: {0} ({1} Einheit)
+Druck: {0}
+Luftfeuchtigkeit: {0}
+Sie können Ihren eigenen API-Schlüssel unter https://home.openweathermap.org/api_keys erhalten.
+Die Liste der Städte mit ihren IDs finden Sie jederzeit unter http://bulk.openweathermap.org/sample/city.list.json.gz.
+Bevorzugte Einheit für die Temperatur
+Kelvin
+Imperial (Fahrenheit)
+Metrisch (Celsius)
+Richtet den Kernel so ein, dass Sie beim Booten zur Argumentation aufgefordert werden.
+Löst den Wartungsmodus aus. Dadurch werden mehrere Konten deaktiviert.
+Bei jedem Start wird nach Updates gesucht.
+Ändern Sie beim Wechseln der Sprache die Monatsnamen, den Kalender usw.
+Wenn der Kernel gestartet wird, wird das Root-Passwort festgelegt.
+Halten Sie Hardware-Prüfmeldungen stumm.
+Wenn diese Option aktiviert ist, werden die RAM-Steckplätze zusammen mit dem RAM geprüft.
+Nachricht des Tages anzeigen, bevor der Anmeldebildschirm angezeigt wird.
+Bildschirm löschen, bevor der Anmeldebildschirm angezeigt wird.
+Zeigt verfügbare Benutzer an, falls aktiviert.
+Gibt dem Kernel Farbunterstützung
+Vereinfachter Hilfebefehl für alle Shells
+Gibt an, ob der FTP-Benutzername protokolliert werden soll.
+Gibt an, ob die FTP-IP-Adresse protokolliert werden soll.
+Wählen Sie das erste Profil nur beim Verbinden.
+Aktiviert die 255-Farbunterstützung für ColorMix.
+Aktiviert die 255-Farbunterstützung für Disco.
+Aktiviert die 255-Farbunterstützung für GlitterColor.
+Aktiviert die 255-Farbunterstützung für Linien.
+Uhrzeit und Datum werden in der oberen rechten Ecke des Bildschirms angezeigt
+Wenn aktiviert, analysiert der Kernel den gesamten Ordner auf seine Gesamtgröße. Andernfalls wird nur die Oberfläche analysiert.
+Aktiviert Eyecandy beim Start
+Die Uhrzeit und das Datum sind länger und zeigen die vollständigen Monatsnamen usw. an.
+Zeigt versteckte Dateien an.
+Wählen Sie Ihre bevorzugte Einheit für die Temperatur (dies gilt nur für den Befehl "Wetter").
+Mod {0} gestoppt
+{0} v {1} gestoppt
+Mod {0} hat keinen Teilenamen. Mod-Analyse fehlgeschlagen. Überprüfen Sie den Quellcode.
+Mod {0} hat den Befehl nicht. Mod-Analyse fehlgeschlagen. Überprüfen Sie den Quellcode.
+Sie müssen den Debug-Modus aktivieren, bevor Sie das Debug-Protokoll löschen können.
+{0} Neue Nachrichten sind im Posteingang eingetroffen.
+Öffnen Sie "lsmail", um sie zu sehen.
+Primär: {2} Bootfähig: {3} Bootpartition: {4}
+Datei kann nicht entfernt werden: {0}
+Entfernt ein Verzeichnis oder eine Datei
+{0} kann nicht entfernt werden, da es nicht vorhanden ist.
+Möglicherweise ist inxi nicht auf Ihrem System installiert. Informationen zur Installation erhalten Sie von Ihrem Paketmanager. Für Debian-Systeme (und Derivate-Systeme) möchten Sie möglicherweise "" sudo apt install inxi libcpanel-json-xs-perl "" im Terminal-Emulator ausführen.
+Sprache erfolgreich auf {0} gesetzt!
+Drücken Sie STRG + C, um den Vorgang zu beenden.
+Bietet Informationen zu einer Datei
+Bietet Informationen zu einem Verzeichnis
+Informationen zu nicht vorhandenem Verzeichnis können nicht abgerufen werden.
+Informationen zu nicht vorhandenen Dateien können nicht abgerufen werden.
+Vollständiger Name: {0}
+Erstellungszeit: {0}
+Letzte Zugriffszeit: {0}
+Letzte Schreibzeit: {0}
+Attribute: {0}
+Übergeordnetes Verzeichnis: {0}
+Wo zu finden: {0}
+Dateigröße: {0}
+Ändert das Attribut einer Datei
+Datei nicht gefunden.
+Dabei ist <attributes> eine der folgenden Angaben:
+Die Datei ist eine normale Datei
+Die Datei ist schreibgeschützt
+Die Datei ist eine versteckte Datei
+Die Datei ist ein Archiv. Wird für Backups verwendet.
+Das Attribut "{0}" ist ungültig.
+Attribut wurde erfolgreich hinzugefügt.
+Attribut wurde erfolgreich entfernt.
+Attribut konnte nicht hinzugefügt werden.
+Attribut konnte nicht entfernt werden.
+Größe: {0}
+Ersetzt ein Wort oder eine Phrase durch ein anderes in einer Zeile
+Rote Farbe überschritten. Es war {0}.
+Grüne Farbe überschritten. Es war {0}.
+Blauer Farbpegel überschritten. Es war {0}.
+Aktivieren Sie echte Farben
+Aktiviert die Echtfarbenunterstützung für ColorMix.
+Aktiviert die Echtfarbenunterstützung für Disco.
+Aktiviert die Echtfarbenunterstützung für GlitterColor.
+Aktiviert die Echtfarbenunterstützung für Linien.
+{0} konnte nicht entsperrt werden.
+{0} ist bereits blockiert.
+{0} kann jetzt nicht am Remote-Debug teilnehmen.
+Fehler beim Blockieren von {0}.
+Zyklusfarben
+Disco wechselt die Farben, wenn es aktiviert ist. Andernfalls wählen Sie zufällige Farben.
+Geben Sie Dateipfade zu Anhängen ein. Drücken Sie zur Bestätigung ENTER auf einem leeren Pfad.
+Öffnet eine verschlüsselte Nachricht
+Schreiben Sie das Passwort für die Schlüssel-ID {0}
+Sendet eine verschlüsselte Nachricht an eine Adresse
+Fordert Sie auf, die erforderlichen Felder auszufüllen, um eine verschlüsselte Nachricht an eine Adresse zu senden
+Herunterladen von {0} ...
+Zeige den Fortschrittsbalken beim Herunterladen oder Hochladen vom Befehl "get" oder "put"
+Wenn dies der Fall ist, wird beim Herunterladen oder Hochladen "get" oder "put" der Fortschrittsbalken angezeigt.
+Lädt eine Datei auf die angegebene Website hoch
+Pingt eine Adresse an
+{0} auf {1} hochladen ...
+Der Upload ist abgeschlossen.
+Bitte verwenden Sie "ftp", wenn Sie Dateien auf den FTP-Server hochladen möchten.
+Upload beim Versuch {0} fehlgeschlagen: {1}
+{0} MB von {1} MB hochgeladen.
+Schreiben Sie, wie oft der Befehl "put" fehlgeschlagene Uploads wiederholen soll. Es muss numerisch sein.
+Die Adresse darf nicht leer sein.
+Fehler beim Pingen von {0}: {1}
+Ping war in {0} ms erfolgreich.

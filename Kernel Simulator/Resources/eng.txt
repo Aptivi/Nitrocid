@@ -656,3 +656,232 @@ Block a debug device by IP address
 {0} is not blocked yet.
 Error loading settings
 There is an error while loading settings. You may need to check the settings file.
+- Stage 2: Mods and screensavers detection
+- Stage 3: Log in
+Select section:
+Select option:
+General Settings...
+Hardware Settings...
+Login Settings...
+Shell Settings...
+Network Settings...
+Miscellaneous Settings...
+Save Settings
+Exit
+Specified option {0} is invalid.
+The answer must be numeric.
+Prompt for Arguments on Boot
+Maintenance Mode Trigger
+Change Root Password...
+Check for Updates on Startup
+Quiet Probe
+Probe RAM Slots
+Show MOTD on Log-in
+Clear Screen on Log-in
+Show available usernames
+Colored Shell
+Simplified Help Command
+Debug Port
+Remote Debug Default Nick Prefix
+Download Retry Times
+Log FTP username
+Log FTP IP address
+Return only first FTP profile
+Show Time/Date on Upper Right Corner
+Screensaver Timeout in ms
+Debug Size Quota in Bytes
+Size parse mode
+Marquee on startup
+Long Time and Date
+Show Hidden Files
+Invalid section entered. Please go back.
+Go Back...
+Enable
+Disable
+Invalid key number entered. Please go back.
+Write the root password to be set. Don't worry; the password are shown as stars.
+Enable "Change Root Password" to use this option. Please go back.
+Change Root Password?
+Set Root Password...
+Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port.
+Write the default remote debug nickname prefix.
+Write how many times the ""get"" command should retry failed downloads. It must be numeric.
+Write when to launch screensaver after specified milliseconds. It must be numeric.
+Write how many bytes can the debug log store. It must be numeric.
+The answer may not be negative.
+The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers.
+Variable {0} is not found on any of the modules.
+Changes kernel configuration
+Screensaver Settings...
+Activate 255 colors
+Do you want to keep connected?
+Invalid choice. Assuming no...
+No mods detected. Skipping stage...
+Change Culture when Switching Languages
+Text shown
+Write any text you want shown. Shorter is better.
+Failed to upload {0}
+Download failed for file {0}: {1}
+Error executing remote debug command {0}: {1}
+Adds users
+Adds aliases to commands
+Injects arguments to the kernel (reboot required)
+Changes host name
+Changes MAL, the MOTD After Login
+Changes MOTD, the Message Of The Day
+Changes user name
+Shows debug logs
+Manage permissions for users
+Reloads screensaver file in KSMods
+Removes a user from the list
+Removed alias {0} successfully.
+Failed to check for updates.
+There are no more users remaining in the list.
+Failed to set language.
+Error trying to dismiss notification.
+An upgrade to {0} is detected. Updating configuration...
+usrmgr: Failed to create username {0}: {1}
+Failed to rename user. {0}
+One of the permission lists doesn't contain username {0}.
+Failed to load permissions from file: {0}
+Failed to change host name: {0}
+User not found
+Failed to change password of username: {0}
+Failed to copy file or directory: {0}
+Failed to move file or directory: {0}
+Unable to find file to match string "{0}": {1}
+Download failed for file {0}.
+Failed to list remote files: {0}
+Enter a file or folder to remove. You must have administrative permissions on your account to be able to remove.
+Are you sure you want to delete {0} <y/n>?
+Deleting {0}...
+{0} is not found in the server.
+All mail made by {0} are removed successfully.
+Failed to remove all mail made by {0}.
+Error sending message.
+Moving {0} to {1}...
+Moved successfully
+Moves file or directory to another file or directory. You can also use that to rename files.
+Failed to move {0} to {1}.
+Enter a source path and a destination path.
+Copying {0} to {1}...
+Copied successfully
+Copies file or directory to another file or directory.
+Failed to copy {0} to {1}.
+Moves a message
+Moves all messages from recipient
+All mail made by {0} are moved successfully.
+Failed to move all mail made by {0}.
+Message {0} from {1} moved from {2}. {3} messages remaining to parse.
+Message {0} from {1} moved. {3} messages remaining to parse.
+Shows weather info for specified city. Uses OpenWeatherMap.
+-- Weather info for {0} --
+Weather: {0}
+Temperature: {0} ({1} unit)
+Feels like: {0} ({1} unit)
+Pressure: {0}
+Humidity: {0}
+You can get your own API key at https://home.openweathermap.org/api_keys.
+You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.
+Preferred Unit for Temperature
+Kelvin
+Imperial (Fahrenheit)
+Metric (Celsius)
+Sets up the kernel so it prompts you for argument on boot.
+Triggers maintenance mode. This disables multiple accounts.
+Each startup, it will check for updates.
+When switching languages, change the month names, calendar, etc.
+If the kernel is started, it will set root password.
+Keep hardware probing messages silent.
+If enabled, it will probe the RAM slots along with the RAM.
+Show Message of the Day before displaying login screen.
+Clear screen before displaying login screen.
+Shows available users if enabled.
+Gives the kernel color support
+Simplified help command for all the shells
+Whether or not to log FTP username.
+Whether or not to log FTP IP address.
+Pick the first profile only when connecting.
+Activates 255 color support for ColorMix.
+Activates 255 color support for Disco.
+Activates 255 color support for GlitterColor.
+Activates 255 color support for Lines.
+The time and date will be shown in the upper right corner of the screen
+If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface.
+Enables eyecandy on startup
+The time and date will be longer, showing full month names, etc.
+Shows hidden files.
+Select your preferred unit for temperature (this only applies to the "weather" command)
+Mod {0} stopped
+{0} v{1} stopped
+Mod {0} does not have the part name. Mod parsing failed. Review the source code.
+Mod {0} does not have the command. Mod parsing failed. Review the source code.
+You must turn on debug mode before you can clear debug log.
+{0} new messages arrived in inbox.
+Open "lsmail" to see them.
+Primary: {2} Bootable: {3} Boot partition: {4}
+Unable to remove file: {0}
+Removes a directory or a file
+Can't remove {0} because it doesn't exist.
+You may not have inxi installed on your system. Refer to your package manager for installation. For Debian (and derivatives) systems, you might want to run ""sudo apt install inxi libcpanel-json-xs-perl"" in the terminal emulator.
+Language set successfully to {0}!
+Press CTRL+C to exit.
+Provides information about a file
+Provides information about a directory
+Can't get information about nonexistent directory.
+Can't get information about nonexistent file.
+Full name: {0}
+Creation time: {0}
+Last access time: {0}
+Last write time: {0}
+Attributes: {0}
+Parent directory: {0}
+Where to find: {0}
+File size: {0}
+Changes attribute of a file
+File not found.
+where <attributes> is one of the following:
+The file is a normal file
+The file is a read-only file
+The file is a hidden file
+The file is an archive. Used for backups.
+Attribute "{0}" is invalid.
+Attribute has been added successfully.
+Attribute has been removed successfully.
+Failed to add attribute.
+Failed to remove attribute.
+Size: {0}
+Replaces a word or phrase with another one in a line
+Red color level exceeded. It was {0}.
+Green color level exceeded. It was {0}.
+Blue color level exceeded. It was {0}.
+Activate true colors
+Activates true color support for ColorMix.
+Activates true color support for Disco.
+Activates true color support for GlitterColor.
+Activates true color support for Lines.
+Failed to unblock {0}.
+{0} is already blocked.
+{0} can't join remote debug now.
+Failed to block {0}.
+Cycle colors
+Disco will cycle colors when enabled. Otherwise, select random colors.
+Enter file paths to attachments. Press ENTER on a blank path to confirm.
+Opens an encrypted message
+Write password for key ID {0}
+Sends an encrypted message to an address
+Asks you to fill the required fields to send an encrypted message to an address
+Downloading from {0}...
+Show progress bar while downloading or uploading from "get" or "put" command
+If true, it makes "get" or "put" show the progress bar while downloading or uploading.
+Uploads a file to specified website
+Pings an address
+Uploading {0} to {1}...
+Upload has completed.
+Please use "ftp" if you are going to upload files to the FTP server.
+Upload failed in try {0}: {1}
+{0} MB of {1} MB uploaded.
+Write how many times the "put" command should retry failed uploads. It must be numeric.
+Address may not be empty.
+Failed to ping {0}: {1}
+Ping succeeded in {0} ms.

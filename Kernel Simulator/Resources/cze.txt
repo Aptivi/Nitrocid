@@ -656,3 +656,232 @@ Blokovat ladicí zařízení pomocí adresy IP
 {0} dosud není blokován.
 Chyba při načítání nastavení
 Při načítání nastavení došlo k chybě. Možná budete muset zkontrolovat soubor nastavení.
+- Fáze 2: Detekce módů a spořičů obrazovky
+- Fáze 3: Přihlaste se
+Vyberte sekci:
+Vyberte možnost:
+Obecné nastavení...
+Nastavení hardwaru ...
+Nastavení přihlášení ...
+Nastavení prostředí ...
+Nastavení sítě...
+Různá nastavení ...
+Uložit nastavení
+Výstup
+Zadaná možnost {0} je neplatná.
+Odpověď musí být číselná.
+Výzva k argumentům při spuštění
+Spouštěcí režim údržby
+Změnit root heslo ...
+Zkontrolujte aktualizace při spuštění
+Tichá sonda
+Sloty RAM sloty
+Zobrazit MOTD při přihlášení
+Vymazat obrazovku při přihlášení
+Zobrazit dostupná uživatelská jména
+Barevná skořápka
+Zjednodušený příkaz nápovědy
+Debug Port
+Vzdálené ladění Výchozí předpona Nicku
+Stáhněte si časy opakování
+Logujte uživatelské jméno FTP
+Protokolujte IP adresu IP
+Vrátit pouze první profil FTP
+Zobrazit čas / datum v pravém horním rohu
+Časový limit spořiče obrazovky v ms
+Kvóta pro velikost ladění v bajtech
+Režim analýzy velikosti
+Značka při spuštění
+Dlouhý čas a datum
+Zobrazit skryté soubory
+Zadána neplatná část. Vraťte se zpět.
+Vraťte se zpět ...
+Umožnit
+Zakázat
+Bylo zadáno neplatné číslo klíče. Vraťte se zpět.
+Napište heslo uživatele root, které chcete nastavit. Nebojte se; heslo se zobrazí jako hvězdičky.
+Chcete-li použít tuto možnost, povolte možnost „Změnit heslo uživatele root“. Vraťte se zpět.
+Změnit root heslo?
+Nastavit root heslo ...
+Napište vzdálený port ladicího programu. Musí být číselné a nesmí být již použito. Jinak vzdálený ladicí program neotevře port.
+Napište výchozí předponu vzdálené ladicí přezdívky.
+Napište, kolikrát by měl příkaz "" dostat "" zkusit opakovat neúspěšná stahování. Musí to být číselné.
+Napište, kdy se má spořič obrazovky spustit po zadaných milisekundách. Musí to být číselné.
+Napište, kolik bytů může ukládat protokol ladění. Musí to být číselné.
+Odpověď nemusí být záporná.
+Odpověď je neplatná. Zkontrolujte, zda je číselná odpověď pro položky konfigurace, které jako odpověď vyžadují čísla.
+Proměnná {0} se nenachází na žádném z modulů.
+Změní konfiguraci jádra
+Nastavení spořiče obrazovky ...
+Aktivujte 255 barev
+Chcete zůstat ve spojení?
+Neplatná volba. Za předpokladu, že ne ...
+Nebyly zjištěny žádné mody. Fáze přeskakování ...
+Změnit kulturu při přepínání jazyků
+Zobrazený text
+Napište libovolný text, který chcete zobrazit. Kratší je lepší.
+Nepodařilo se nahrát {0}
+Stažení souboru {0} se nezdařilo: {1}
+Chyba při provádění vzdáleného ladicího příkazu {0}: {1}
+Přidá uživatele
+Přidává do příkazů aliasy
+Vloží argumenty do jádra (je vyžadován restart)
+Změní název hostitele
+Mění MAL, MOTD po přihlášení
+Změní MOTD, poselství dne
+Změní uživatelské jméno
+Zobrazuje protokoly ladění
+Spravujte oprávnění pro uživatele
+Znovu načte soubor spořiče obrazovky v KSMods
+Odebere uživatele ze seznamu
+Alias ​​{0} byl úspěšně odstraněn.
+Zkontrolovat aktualizace se nezdařilo.
+V seznamu již nezbývají žádní uživatelé.
+Nastavení jazyka se nezdařilo.
+Při pokusu o odmítnutí oznámení došlo k chybě.
+Byl zjištěn upgrade na {0}. Aktualizace konfigurace ...
+usrmgr: Nepodařilo se vytvořit uživatelské jméno {0}: {1}
+Nepodařilo se přejmenovat uživatele. {0}
+Jeden ze seznamů oprávnění neobsahuje uživatelské jméno {0}.
+Načtení oprávnění ze souboru se nezdařilo: {0}
+Nepodařilo se změnit název hostitele: {0}
+Uživatel nenalezen
+Nepodařilo se změnit heslo uživatelského jména: {0}
+Kopírování souboru nebo adresáře se nezdařilo: {0}
+Nepodařilo se přesunout soubor nebo adresář: {0}
+Nelze najít soubor, který by odpovídal řetězci „{0}“: {1}
+Stažení souboru {0} se nezdařilo.
+Seznam vzdálených souborů se nezdařil: {0}
+Zadejte soubor nebo složku, kterou chcete odebrat. Abyste mohli účet odebrat, musíte mít oprávnění správce.
+Opravdu chcete smazat {0} <y / n>?
+Mazání {0} ...
+{0} nebyl na serveru nalezen.
+Veškerá pošta od uživatele {0} byla úspěšně odstraněna.
+Odebrání veškeré pošty od uživatele {0} se nezdařilo.
+Chyba při odesílání zprávy.
+Přesouvání {0} do {1} ...
+Úspěšně přesunuto
+Přesune soubor nebo adresář do jiného souboru nebo adresáře. Můžete jej také použít k přejmenování souborů.
+Přesunutí {0} do {1} se nezdařilo.
+Zadejte cestu ke zdroji a cestu k cíli.
+Kopírování {0} do {1} ...
+Zkopírováno úspěšně
+Zkopíruje soubor nebo adresář do jiného souboru nebo adresáře.
+Kopírování souboru {0} do {1} se nezdařilo.
+Přesune zprávu
+Přesune všechny zprávy od příjemce
+Veškerá pošta od uživatele {0} je úspěšně přesunuta.
+Nepodařilo se přesunout veškerou poštu od uživatele {0}.
+Zpráva {0} z {1} přesunuta z {2}. Počet zbývajících zpráv k analýze: {3}.
+Zpráva {0} od uživatele {1} přesunuta. Počet zbývajících zpráv k analýze: {3}.
+Zobrazuje informace o počasí pro konkrétní město. Používá OpenWeatherMap.
+- Informace o počasí pro {0} -
+Počasí: {0}
+Teplota: {0} ({1} jednotka)
+Pocit jako: {0} ({1} jednotka)
+Tlak: {0}
+Vlhkost: {0}
+Svůj vlastní klíč API můžete získat na adrese https://home.openweathermap.org/api_keys.
+Seznam měst s jejich ID můžete vždy vyhledat na adrese http://bulk.openweathermap.org/sample/city.list.json.gz.
+Preferovaná jednotka teploty
+Kelvin
+Imperial (Fahrenheit)
+Metrické (Celsia)
+Nastaví jádro, takže vás vyzve k argumentu při spuštění.
+Spustí režim údržby. Tím se deaktivuje více účtů.
+Každé spuštění zkontroluje aktualizace.
+Při přepínání jazyků změňte názvy měsíců, kalendář atd.
+Pokud je jádro spuštěno, nastaví heslo root.
+Udržujte tiché zprávy o hardwaru.
+Pokud je povoleno, bude zkoumat sloty RAM spolu s RAM.
+Zobrazit zprávu dne před zobrazením přihlašovací obrazovky.
+Před zobrazením přihlašovací obrazovky vyčistěte obrazovku.
+Zobrazuje dostupné uživatele, pokud je povoleno.
+Poskytuje podporu barev jádra
+Zjednodušený příkaz nápovědy pro všechny granáty
+Zda se má přihlásit uživatelské jméno FTP.
+Zda se má protokolovat adresa IP FTP.
+První profil vyberte pouze při připojování.
+Aktivuje podporu 255 barev pro ColorMix.
+Aktivuje podporu 255 barev pro Disco.
+Aktivuje podporu 255 barev pro GlitterColor.
+Aktivuje podporu 255 barev pro řádky.
+Čas a datum se zobrazí v pravém horním rohu obrazovky
+Pokud je povoleno, jádro analyzuje celou složku na její celkovou velikost. Jinak bude analyzovat pouze povrch.
+Umožňuje eyecandy při spuštění
+Čas a datum budou delší, zobrazují se názvy celých měsíců atd.
+Zobrazuje skryté soubory.
+Vyberte preferovanou jednotku teploty (to platí pouze pro příkaz „počasí“)
+Mod {0} se zastavil
+{0} v {1} se zastavilo
+Mod {0} nemá název součásti. Analýza modů se nezdařila. Zkontrolujte zdrojový kód.
+Mod {0} nemá příkaz. Analýza modů se nezdařila. Zkontrolujte zdrojový kód.
+Než budete moci vymazat protokol ladění, musíte zapnout režim ladění.
+{0} nové zprávy dorazily do doručené pošty.
+Chcete-li je zobrazit, otevřete „lsmail“.
+Primární: {2} Zaváděcí: {3} Zaváděcí oddíl: {4}
+Nelze odebrat soubor: {0}
+Odebere adresář nebo soubor
+Aplikaci {0} nelze odebrat, protože neexistuje.
+Je možné, že ve svém systému nemáte nainstalovaný inxi. Ohledně instalace se obraťte na správce balíčků. Pro systémy Debian (a deriváty) možná budete chtít spustit "" sudo apt install inxi libcpanel-json-xs-perl "" v emulátoru terminálu.
+Jazyk byl úspěšně nastaven na {0}!
+Ukončete stisknutím kombinace kláves CTRL + C.
+Poskytuje informace o souboru
+Poskytuje informace o adresáři
+Nelze získat informace o neexistujícím adresáři.
+Nelze získat informace o neexistujícím souboru.
+Celé jméno: {0}
+Čas vytvoření: {0}
+Čas posledního přístupu: {0}
+Čas posledního zápisu: {0}
+Atributy: {0}
+Nadřazený adresář: {0}
+Kde najít: {0}
+Velikost souboru: {0}
+Změní atribut souboru
+Soubor nenalezen.
+kde <attributy> je jeden z následujících:
+Soubor je normální soubor
+Soubor je soubor jen pro čtení
+Soubor je skrytý
+Soubor je archiv. Používá se pro zálohování.
+Atribut „{0}“ je neplatný.
+Atribut byl úspěšně přidán.
+Atribut byl úspěšně odebrán.
+Nepodařilo se přidat atribut.
+Odebrání atributu se nezdařilo.
+Velikost: {0}
+Nahradí slovo nebo frázi jiným v řádku
+Byla překročena úroveň červené barvy. Bylo to {0}.
+Byla překročena úroveň zelené barvy. Bylo to {0}.
+Úroveň modré barvy překročena. Bylo to {0}.
+Aktivujte věrné barvy
+Aktivuje podporu skutečných barev pro ColorMix.
+Aktivuje podporu skutečných barev pro Disco.
+Aktivuje podporu skutečné barvy pro GlitterColor.
+Aktivuje podporu skutečných barev pro řádky.
+Odblokování uživatele {0} se nezdařilo.
+Web {0} je již zablokován.
+{0} se nyní nemůže připojit ke vzdálenému ladění.
+Blokování uživatele {0} se nezdařilo.
+Barvy cyklu
+Pokud je povoleno, diskotéka bude cyklovat barvy. Jinak vyberte náhodné barvy.
+Zadejte cesty k přílohám. Pro potvrzení stiskněte ENTER na prázdné cestě.
+Otevře zašifrovanou zprávu
+Napište heslo pro ID klíče {0}
+Odešle zašifrovanou zprávu na adresu
+Požádá vás o vyplnění požadovaných polí pro odeslání šifrované zprávy na adresu
+Stahování z {0} ...
+Zobrazit indikátor průběhu při stahování nebo nahrávání z příkazu „get“ nebo „put“
+Pokud je to pravda, způsobí to, že „get“ nebo „put“ zobrazí indikátor průběhu během stahování nebo nahrávání.
+Nahraje soubor na zadaný web
+Ping na adresu
+Nahrávání {0} do {1} ...
+Nahrávání bylo dokončeno.
+Pokud se chystáte nahrávat soubory na FTP server, použijte „ftp“.
+Nahrání se nezdařilo při pokusu {0}: {1}
+Nahráno {0} MB z {1} MB.
+Napište, kolikrát by měl příkaz „put“ zkusit opakovat neúspěšná nahrávání. Musí to být číselné.
+Adresa nemusí být prázdná.
+Nepodařilo se pingnout na {0}: {1}
+Ping byl úspěšný za {0} ms.

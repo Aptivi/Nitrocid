@@ -656,3 +656,232 @@ Blocați un dispozitiv de depanare după adresa IP
 {0} nu este încă blocat.
 Eroare la încărcarea setărilor
 A apărut o eroare la încărcarea setărilor. Este posibil să fie nevoie să verificați fișierul cu setări.
+- Etapa 2: detectarea modurilor și a protectorilor de ecran
+- Etapa 3: Conectați-vă
+Selectați secțiunea:
+Selectați opțiunea:
+Setari generale...
+Setări hardware ...
+Setări de conectare ...
+Setări Shell ...
+Setari de retea...
+Setări diverse ...
+Salvează setările
+Ieșire
+Opțiunea specificată {0} este nevalidă.
+Răspunsul trebuie să fie numeric.
+Solicitați argumente la pornire
+Declanșator mod de întreținere
+Schimbați parola rădăcină ...
+Verificați dacă există actualizări la pornire
+Sonda liniștită
+Sonde sloturi RAM
+Afișați MOTD la conectare
+Ștergeți ecranul la conectare
+Afișați numele de utilizator disponibile
+Coaja colorată
+Comandă de ajutor simplificată
+Port de depanare
+Depanare la distanță Implicit Nick Prefix
+Descărcați reîncercarea
+Înregistrați numele de utilizator FTP
+Înregistrați adresa IP FTP
+Returnează numai primul profil FTP
+Afișați Ora / Data în colțul din dreapta sus
+Screensaver Timeout în ms
+Cota de dimensiune a depanării în octeți
+Mod de analiză a dimensiunii
+Carpă la pornire
+Timp lung și dată
+Arată fișierele ascunse
+S-a introdus o secțiune nevalidă. Vă rog să vă întoarceți.
+Întoarce-te...
+Permite
+Dezactivează
+A fost introdus un număr de cheie nevalid. Vă rog să vă întoarceți.
+Scrieți parola de root care trebuie setată. Nu vă faceți griji; parola sunt afișate ca stele.
+Activați „Schimbați parola rădăcină” pentru a utiliza această opțiune. Vă rog să vă întoarceți.
+Schimbați parola rădăcină?
+Setați parola rădăcină ...
+Scrieți un port de depanare la distanță. Trebuie să fie numerică și să nu fie deja utilizată. În caz contrar, depanatorul la distanță nu va reuși să deschidă portul.
+Scrieți prefixul implicit de poreclă de depanare la distanță.
+Scrieți de câte ori comanda „„ obțineți ”„ ar trebui să reîncerce descărcările nereușite. Trebuie să fie numerică.
+Scrieți când să lansați screensaver după milisecunde specificate. Trebuie să fie numerică.
+Scrieți câte octeți poate stoca jurnalul de depanare. Trebuie să fie numerică.
+Răspunsul poate să nu fie negativ.
+Răspunsul este nevalid. Verificați pentru a vă asigura că răspunsul este numeric pentru intrările de configurare care au nevoie de numere ca răspunsuri.
+Variabila {0} nu se găsește pe niciunul dintre module.
+Modifică configurația nucleului
+Setări Screensaver ...
+Activați 255 de culori
+Doriți să rămâneți conectat?
+Alegere nevalidă. Presupunând că nu ...
+Nu s-au detectat modificări. Sare peste etapă ...
+Schimbați cultura la schimbarea limbii
+Text afișat
+Scrieți orice text doriți să fie afișat. Mai scurt este mai bine.
+Nu s-a încărcat {0}
+Descărcarea nu a reușit pentru fișierul {0}: {1}
+Eroare la executarea comenzii de depanare la distanță {0}: {1}
+Adaugă utilizatori
+Adaugă aliasuri la comenzi
+Injectează argumente la nucleu (este necesară repornirea)
+Modifică numele gazdei
+Modifică MAL, MOTD după autentificare
+Modifică MOTD, Mesajul Zilei
+Schimbă numele de utilizator
+Afișează jurnalele de depanare
+Gestionați permisiunile pentru utilizatori
+Reîncarcă fișierul screensaver în KSMods
+Elimină un utilizator din listă
+Aliasul a fost eliminat {0} cu succes.
+Nu s-a putut verifica actualizările.
+Nu mai există utilizatori în listă.
+Setarea limbii nu a reușit.
+Eroare la încercarea de a respinge notificarea.
+Este detectat un upgrade la {0}. Se actualizează configurația ...
+usrmgr: Nu s-a putut crea numele de utilizator {0}: {1}
+Nu s-a redenumit utilizatorul. {0}
+Una dintre listele de permisiuni nu conține numele de utilizator {0}.
+Nu s-au putut încărca permisiunile din fișier: {0}
+Nu s-a putut schimba numele gazdei: {0}
+Utilizator nu a fost găsit
+Nu s-a putut modifica parola numelui de utilizator: {0}
+Copierea fișierului sau a directorului nu a reușit: {0}
+Nu s-a putut muta fișierul sau directorul: {0}
+Imposibil de găsit fișierul care să corespundă șirului „{0}”: {1}
+Descărcarea nu a reușit pentru fișierul {0}.
+Listarea fișierelor la distanță nu a reușit: {0}
+Introduceți un fișier sau un folder de eliminat. Trebuie să aveți permisiuni administrative pentru contul dvs. pentru a putea elimina.
+Sigur doriți să ștergeți {0} <y / n>?
+Se șterge {0} ...
+{0} nu este găsit pe server.
+Toate mesajele trimise de {0} sunt eliminate cu succes.
+Nu s-a putut elimina toate mesajele trimise de {0}.
+Eroare la trimiterea mesajului.
+Se mută {0} la {1} ...
+Mutat cu succes
+Mută ​​fișierul sau directorul în alt fișier sau director. Puteți utiliza acest lucru și pentru a redenumi fișierele.
+Nu s-a putut muta {0} în {1}.
+Introduceți o cale sursă și o cale de destinație.
+Se copiază {0} în {1} ...
+Copiat cu succes
+Copiază fișierul sau directorul în alt fișier sau director.
+Copierea {0} în {1} nu a reușit.
+Mută ​​un mesaj
+Mută ​​toate mesajele de la destinatar
+Toate mesajele trimise de {0} sunt mutate cu succes.
+Nu s-au putut muta toate mesajele trimise de {0}.
+Mesajul {0} de la {1} mutat de la {2}. {3} mesaje rămase de analizat.
+Mesajul {0} de la {1} a fost mutat. {3} mesaje rămase de analizat.
+Afișează informații meteo pentru orașul specificat. Folosește OpenWeatherMap.
+- Informații despre vreme pentru {0} -
+Vremea: {0}
+Temperatură: {0} ({1} unitate)
+Se simte ca: {0} ({1} unitate)
+Presiune: {0}
+Umiditate: {0}
+Puteți obține propria cheie API la https://home.openweathermap.org/api_keys.
+Puteți consulta oricând http://bulk.openweathermap.org/sample/city.list.json.gz pentru lista orașelor cu ID-urile lor.
+Unitate preferată pentru temperatură
+Kelvin
+Imperial (Fahrenheit)
+Metrică (Celsius)
+Configurați nucleul astfel încât să vă solicite argumentul la pornire.
+Declanșează modul de întreținere. Aceasta dezactivează mai multe conturi.
+La fiecare pornire, va verifica actualizările.
+Când schimbați limba, modificați numele lunii, calendarul etc.
+Dacă nucleul este pornit, acesta va seta parola de root.
+Păstrați mesajele de sondare hardware tăcute.
+Dacă este activat, va testa sloturile RAM împreună cu memoria RAM.
+Afișați mesajul zilei înainte de a afișa ecranul de conectare.
+Ștergeți ecranul înainte de a afișa ecranul de conectare.
+Afișează utilizatorii disponibili, dacă este activat.
+Oferă suport pentru culoarea nucleului
+Comandă de ajutor simplificată pentru toate cochilii
+Dacă se înregistrează sau nu numele de utilizator FTP.
+Dacă se înregistrează sau nu adresa IP FTP.
+Alegeți primul profil numai atunci când vă conectați.
+Activează 255 de culori pentru ColorMix.
+Activează suportul de 255 culori pentru Disco.
+Activează suportul de 255 de culori pentru GlitterColor.
+Activează 255 de culori pentru linii.
+Ora și data vor fi afișate în colțul din dreapta sus al ecranului
+Dacă este activat, nucleul va analiza întregul folder pentru dimensiunea sa totală. Altfel, va analiza doar suprafața.
+Activează ocularitatea la pornire
+Ora și data vor fi mai lungi, arătând numele lunii complete etc.
+Afișează fișierele ascunse.
+Selectați unitatea preferată pentru temperatură (acest lucru se aplică numai comenzii „vreme”)
+Modul {0} s-a oprit
+{0} v {1} oprit
+Mod {0} nu are numele piesei. Analiza modului a eșuat. Examinați codul sursă.
+Mod {0} nu are comanda. Analiza modului a eșuat. Examinați codul sursă.
+Trebuie să activați modul de depanare înainte de a putea șterge jurnalul de depanare.
+{0} mesaje noi au sosit în căsuța de e-mail.
+Deschideți „lsmail” pentru a le vedea.
+Principal: {2} Bootable: {3} Boot partiție: {4}
+Imposibil de eliminat fișierul: {0}
+Elimină un director sau un fișier
+Nu se poate elimina {0} deoarece nu există.
+Este posibil să nu aveți instalat inxi pe sistemul dvs. Consultați managerul de pachete pentru instalare. Pentru sistemele Debian (și derivate), vă recomandăm să rulați "" sudo apt install inxi libcpanel-json-xs-perl "" în emulatorul terminal.
+Limba a fost setată cu succes la {0}!
+Apăsați CTRL + C pentru a ieși.
+Oferă informații despre un fișier
+Oferă informații despre un director
+Nu pot obține informații despre directorul inexistent.
+Nu pot obține informații despre fișierul inexistent.
+Numele complet: {0}
+Timp de creare: {0}
+Ultima oră de acces: {0}
+Ultima dată de scriere: {0}
+Atribute: {0}
+Director părinte: {0}
+Unde găsiți: {0}
+Dimensiunea fișierului: {0}
+Modifică atributul unui fișier
+Fișierul nu a fost găsit.
+unde <atribute> este una dintre următoarele:
+Fișierul este un fișier normal
+Fișierul este un fișier numai în citire
+Fișierul este un fișier ascuns
+Fișierul este o arhivă. Folosit pentru copii de rezervă.
+Atributul „{0}” este nevalid.
+Atributul a fost adăugat cu succes.
+Atributul a fost eliminat cu succes.
+Nu s-a putut adăuga atributul.
+Eliminarea atributului nu a reușit.
+Dimensiune: {0}
+Înlocuiește un cuvânt sau o frază cu altul dintr-o linie
+Nivelul de culoare roșie a fost depășit. A fost {0}.
+Nivelul de culoare verde a fost depășit. A fost {0}.
+Nivelul culorii albastru a fost depășit. A fost {0}.
+Activați culorile adevărate
+Activează suportul de culoare adevărată pentru ColorMix.
+Activează suportul de culoare adevărată pentru Disco.
+Activează suportul de culoare adevărată pentru GlitterColor.
+Activează suportul adevărat al culorilor pentru Liniile.
+Deblocarea {0} nu a reușit.
+{0} este deja blocat.
+{0} nu se poate alătura acum depanării la distanță.
+Blocarea {0} nu a reușit.
+Ciclul culorilor
+Discoteca va cicla culorile atunci când este activată. În caz contrar, selectați culorile aleatorii.
+Introduceți căile de fișiere către atașamente. Apăsați ENTER pe o cale goală pentru a confirma.
+Deschide un mesaj criptat
+Scrieți parola pentru ID-ul cheii {0}
+Trimite un mesaj criptat la o adresă
+Vă solicită să completați câmpurile necesare pentru a trimite un mesaj criptat la o adresă
+Se descarcă din {0} ...
+Afișați bara de progres în timp ce descărcați sau încărcați din comanda „obțineți” sau „puneți”
+Dacă este adevărat, face ca „obțineți” sau „puneți” să afișeze bara de progres în timp ce descărcați sau încărcați.
+Încarcă un fișier pe site-ul web specificat
+Pings o adresă
+Se încarcă {0} în {1} ...
+Încărcarea s-a finalizat.
+Vă rugăm să folosiți „ftp” dacă urmează să încărcați fișiere pe serverul FTP.
+Încărcarea nu a reușit în încercarea {0}: {1}
+{0} MB din {1} MB încărcați.
+Scrieți de câte ori comanda „pune” ar trebui să reîncerce încărcările nereușite. Trebuie să fie numerică.
+Este posibil ca adresa să nu fie goală.
+Eroare la ping {0}: {1}
+Ping a reușit în {0} ms.

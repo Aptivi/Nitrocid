@@ -656,3 +656,232 @@ IP ünvanı ilə bir ayıklama cihazını bloklayın
 {0} hələ bloklanmayıb.
 Ayarlar yüklənərkən xəta baş verdi
 Ayarları yükləyərkən bir səhv var. Ayarlar faylını yoxlamağınız lazım ola bilər.
+- Mərhələ 2: Modlar və ekran qoruyucuların aşkarlanması
+- Mərhələ 3: Giriş
+Bölmə seçin:
+Seçimi seçin:
+Ümumi ayarlar ...
+Təchizat Ayarları ...
+Giriş Ayarları ...
+Shell Ayarları ...
+Şəbəkə parametrləri ...
+Müxtəlif parametrlər ...
+Parametrləri saxla
+Çıx
+Göstərilən seçim {0} etibarsızdır.
+Cavab ədədi olmalıdır.
+Boot-da mübahisələr istəyin
+Baxım rejimi tetikleyicisi
+Kök parolunu dəyişdirin ...
+Başlanğıcda Yeniləmələri yoxlayın
+Sakit Probe
+Probe RAM Yuvaları
+Girişdə MOTD göstərin
+Girişdə ekranı silin
+Mövcud istifadəçi adlarını göstərin
+Rəngli Shell
+Sadələşdirilmiş kömək əmri
+Debaq Portu
+Uzaqdan Debaq Default Nick Prefiksi
+Yenidən cəhd vaxtını yükləyin
+FTP istifadəçi adını daxil edin
+FTP IP ünvanını daxil edin
+Yalnız ilk FTP profilini qaytarın
+Sağ üst küncdə vaxtı / tarixi göstərin
+MS-də ekran qoruyucu zaman aşımı
+Baytda Ayaq Ölçüsü Kvotası
+Ölçü təhlil rejimi
+Marquee başlanğıcda
+Uzun vaxt və tarix
+Gizli faylları göstərin
+Yanlış bölmə daxil edildi. Xahiş edirəm geri qayıdın.
+Qeri gayıt...
+Aktiv edin
+Deaktiv edin
+Yanlış açar nömrəsi daxil edildi. Xahiş edirəm geri qayıdın.
+Qurulacaq kök şifrəni yazın. Narahat olma; parol ulduz şəklində göstərilir.
+Bu seçimi istifadə etmək üçün "Kök Şifrəni Dəyişdir" i aktiv edin. Xahiş edirəm geri qayıdın.
+Kök Şifrə dəyişdirilsin?
+Kök şifrəsini təyin edin ...
+Uzaqdan bir ayıklayıcı portu yazın. Rəqəmsal olmalıdır və artıq istifadə edilməməlidir. Əks təqdirdə, uzaqdan ayıklayıcı portu aça bilmir.
+Varsayılan uzaqdan debaq ləqəb prefiksini yazın.
+"" Get "" əmrinin uğursuz yüklənmələri neçə dəfə təkrar etməsi lazım olduğunu yazın. Rəqəmsal olmalıdır.
+Müəyyən edilmiş millisaniyədən sonra ekran qoruyucusunu nə vaxt işə salacağınızı yazın. Rəqəmsal olmalıdır.
+Hata ayıklama jurnalının neçə bayt saxlaya biləcəyini yazın. Rəqəmsal olmalıdır.
+Cavab mənfi olmaya bilər.
+Cavab etibarsızdır. Cavab kimi nömrələrə ehtiyacı olan konfiqurasiya girişləri üçün cavabın ədədi olduğundan əmin olun.
+Dəyişən {0} modulların heç birində tapılmadı.
+Nüvə konfiqurasiyasını dəyişdirir
+Ekran qoruyucu parametrləri ...
+255 rəng aktivləşdirin
+Bağlı olmaq istəyirsiniz?
+Yanlış seçim. Xeyr ...
+Mod tapılmadı. Mərhələ atlanır ...
+Dilləri dəyişdirərkən mədəniyyəti dəyişdirin
+Mətn göstərildi
+Göstərilən istənilən mətni yazın. Qısa daha yaxşıdır.
+{0} yüklənmədi
+{0} faylı üçün yükləmə baş tutmadı: {1}
+Uzaqdan düzəltmə əmrini yerinə yetirmə xətası {0}: {1}
+İstifadəçilər əlavə edir
+Əmrlərə takma adlar əlavə edir
+Dəlilləri nüvəyə verir (yenidən başladın)
+Host adını dəyişir
+Girişdən sonra MAL, MOTD dəyişir
+Dəyişikliklər MOTD, Günün Mesajı
+İstifadəçi adını dəyişir
+Debaq qeydlərini göstərir
+İstifadəçilər üçün icazələri idarə edin
+Ekran qoruyucu sənədini KSModlarda yenidən yükləyir
+Bir istifadəçini siyahıdan çıxarır
+{0} təxəllüsü uğurla silindi.
+Yeniləmələri yoxlamaq alınmadı.
+Artıq siyahıda qalan istifadəçi yoxdur.
+Dil qurmaq alınmadı.
+Bildiriş ləğv edilərkən xəta baş verdi.
+{0} səviyyəsinə yüksəlmə aşkar edildi. Konfiqurasiya güncəllənir ...
+usrmgr: İstifadəçi adı yaradıla bilmədi {0}: {1}
+İstifadəçinin adı dəyişdirilə bilmədi. {0}
+İcazə siyahılarından birində {0} istifadəçi adı yoxdur.
+Fayldan icazələr yüklənmədi: {0}
+Host adını dəyişdirmək alınmadı: {0}
+İstifadəçi tapılmadı
+İstifadəçi adının şifrəsi dəyişdirilə bilmədi: {0}
+Fayl və ya qovluq çıxarıla bilmədi: {0}
+Fayl və ya qovluq köçürülə bilmədi: {0}
+"{0}" sətirinə uyğun fayl tapılmadı: {1}
+{0} faylı üçün yükləmə baş tutmadı.
+Uzaqdakı faylları siyahıya almaq alınmadı: {0}
+Silmək üçün bir sənəd və ya qovluq daxil edin. Silə bilmək üçün hesabınızda inzibati icazələr olmalıdır.
+{0} <y / n> silmək istədiyinizə əminsiniz?
+{0} silinir ...
+{0} serverdə tapılmadı.
+{0} tərəfindən göndərilən bütün poçtlar uğurla silinir.
+{0} tərəfindən göndərilən bütün poçtlar silinə bilmədi.
+Mesaj göndərmə xətası.
+{0} {1} tərəfə köçürülür ...
+Uğurla köçürüldü
+Fayl və ya qovluğu başqa bir fayla və ya qovluğa daşıyır. Bundan əlavə, faylların adını dəyişmək üçün də istifadə edə bilərsiniz.
+{0} {1} tərəfə köçürülmədi.
+Mənbə yolunu və təyinat yolunu daxil edin.
+{0} {1} kopyalanır ...
+Uğurla kopyalandı
+Fayl və ya qovluğu başqa bir fayla və ya qovluğa kopyalayır.
+{0} - ni {1} - ə kopyalamaq alınmadı.
+Mesajı daşıyır
+Bütün mesajları alıcıdan daşıyır
+{0} tərəfindən göndərilən bütün poçtlar uğurla köçürüldü.
+{0} tərəfindən göndərilən bütün poçtlar köçürülə bilmədi.
+{1} -dən {0} mesajı {2} qovluğundan köçürüldü. {3} təhlil üçün qalan mesajlar.
+{1} -dən {0} mesajı köçürüldü. {3} təhlil üçün qalan mesajlar.
+Müəyyən edilmiş şəhər üçün hava məlumatlarını göstərir. OpenWeatherMap istifadə edir.
+- {0} üçün hava məlumatı -
+Hava: {0}
+Temperatur: {0} ({1} vahid)
+Hiss olunur: {0} ({1} vahid)
+Təzyiq: {0}
+Rütubət: {0}
+Öz API açarınızı https://home.openweathermap.org/api_keys saytından əldə edə bilərsiniz.
+Şəxsiyyət vəsiqəsi olan şəhərlərin siyahısı üçün hər zaman http://bulk.openweathermap.org/sample/city.list.json.gz müraciət edə bilərsiniz.
+İstilik üçün üstünlük verilən vahid
+Kelvin
+İmperator (Fahrenhayt)
+Metrik (Selsi)
+Nüvəni quraşdırır ki, açılışda mübahisəni istəsin.
+Baxım rejimini işə salır. Bu birdən çox hesabı deaktiv edir.
+Hər başlanğıcda yeniləmələri yoxlayacaq.
+Dilləri dəyişdirərkən ay adlarını, təqvimini və s. Dəyişdirin.
+Nüvə başlasa, kök şifrəsini təyin edəcəkdir.
+Təchizat yoxlama mesajlarını səssiz saxlayın.
+Aktiv edildikdə, RAM ilə birlikdə RAM yuvalarını araşdıracaq.
+Giriş ekranını göstərmədən əvvəl Günün Mesajını göstərin.
+Giriş ekranını göstərmədən əvvəl ekranı silin.
+Aktiv olduqda mövcud istifadəçiləri göstərir.
+Çekirdek rəng dəstəyi verir
+Bütün qabıqlar üçün sadələşdirilmiş kömək əmri
+FTP istifadəçi adının daxil olub-olmaması.
+FTP IP ünvanının daxil olub-olmaması.
+İlk profili yalnız qoşulduqda seçin.
+ColorMix üçün 255 rəng dəstəyini aktivləşdirir.
+Disko üçün 255 rəng dəstəyini aktivləşdirir.
+GlitterColor üçün 255 rəng dəstəyini aktivləşdirir.
+Xəttlər üçün 255 rəng dəstəyini aktivləşdirir.
+Saat və tarix ekranın yuxarı sağ küncündə göstəriləcək
+Aktiv edildikdə, çekirdek bütün qovluğu ümumi ölçüsünə görə təhlil edəcəkdir. Başqa, yalnız səthi təhlil edəcək.
+Başlanğıcda göz qapağını aktivləşdirir
+Vaxt və tarix daha uzun olacaq, tam ay adlarını göstərmək və s.
+Gizli sənədləri göstərir.
+İstilik üçün üstünlük verdiyiniz bölməni seçin (bu yalnız "hava" əmrinə aiddir)
+Mod {0} dayandı
+{0} v {1} dayandı
+Modda {0} hissənin adı yoxdur. Mod təhlili alınmadı. Mənbə kodunu nəzərdən keçirin.
+Modda {0} əmri yoxdur. Mod təhlili alınmadı. Mənbə kodunu nəzərdən keçirin.
+Hata ayaqlama qeydini silməzdən əvvəl ayıklama rejimini açmalısınız.
+{0} yeni mesajlar gələnlər qutusuna gəldi.
+Onları görmək üçün "lsmail" açın.
+Əsas: {2} Önyüklenebilir: {3} Önyükleme bölməsi: {4}
+Fayl silinə bilmir: {0}
+Bir qovluğu və ya bir faylı silər
+Mövcud olmadığı üçün {0} silinə bilmir.
+Sisteminizdə inxi quraşdırılmış olmaya bilər. Quraşdırma üçün paket menecerinizə müraciət edin. Debian (və törəmələri) sistemləri üçün terminal emulyatorunda "" sudo apt install inxi libcpanel-json-xs-perl "" çalıştırmak isteyebilirsiniz.
+Dil uğurla {0} olaraq ayarlandı!
+Çıxmaq üçün CTRL + C düymələrinə basın.
+Bir fayl haqqında məlumat verir
+Bir kataloq haqqında məlumat verir
+Yoxdur qovluq haqqında məlumat əldə etmək olmur.
+Yoxdur fayl haqqında məlumat əldə etmək olmur.
+Tam ad: {0}
+Yaranma vaxtı: {0}
+Son giriş vaxtı: {0}
+Son yazma vaxtı: {0}
+Atributlar: {0}
+Ana qovluq: {0}
+Harada tapmaq olar: {0}
+Fayl ölçüsü: {0}
+Bir sənədin atributunu dəyişir
+Fayl tapılmadı.
+burada <Attributes> aşağıdakılardan biridir:
+Fayl normal bir sənəddir
+Fayl yalnız oxunan bir sənəddir
+Fayl gizli bir sənəddir
+Fayl bir arxivdir. Yedəkləmə üçün istifadə olunur.
+"{0}" atributu etibarsızdır.
+Atribut uğurla əlavə edildi.
+Atribut uğurla silindi.
+Atribut əlavə etmək alınmadı.
+Atribut silinə bilmədi.
+Ölçü: {0}
+Bir söz və ya ifadəni bir sətirdə başqası ilə əvəz edir
+Qırmızı rəng səviyyəsi aşıldı. {0} idi.
+Yaşıl rəng səviyyəsi aşıldı. {0} idi.
+Mavi rəng səviyyəsi aşıldı. {0} idi.
+Həqiqi rəngləri aktivləşdirin
+ColorMix üçün həqiqi rəng dəstəyini aktivləşdirir.
+Disko üçün həqiqi rəng dəstəyini aktivləşdirir.
+GlitterColor üçün həqiqi rəng dəstəyini aktivləşdirir.
+Xəttlər üçün həqiqi rəng dəstəyini aktivləşdirir.
+{0} blokdan çıxarmaq alınmadı.
+{0} artıq bloklanıb.
+{0} indi uzaqdan deboqa qoşula bilməz.
+{0} bloklana bilmədi.
+Rəngləri dövr edin
+Disko effektiv olduqda rəngləri dövrəyə salacaq. Əks təqdirdə təsadüfi rəngləri seçin.
+Əlavələrə fayl yollarını daxil edin. Təsdiqləmək üçün boş bir yolda ENTER düyməsini basın.
+Şifrələnmiş mesajı açır
+Açar ID üçün şifrə yazın {0}
+Bir ünvana şifrəli mesaj göndərir
+Bir ünvana şifrəli mesaj göndərmək üçün tələb olunan sahələri doldurmağınızı xahiş edir
+{0} yüklənir ...
+"Get" və ya "qoymaq" əmrini yükləyərkən və ya yükləyərkən irəliləyiş çubuğunu göstərin
+Doğrudursa, yükləmə və ya yükləmə zamanı "get" və ya "qoy" tərəqqi çubuğunu göstərir.
+Müəyyən veb saytına bir fayl yükləyir
+Bir ünvanı seçir
+{0} {1} cihazına yüklənir ...
+Yükləmə tamamlandı.
+Xahiş edirəm FTP serverinə fayl yükləyəcəksinizsə "ftp" istifadə edin.
+Yükləmə cəhdində uğursuz oldu {0}: {1}
+{1} MB-dan {0} MB yükləndi.
+"Qoyun" əmrinin uğursuz yüklənmələri neçə dəfə yenidən sınamalı olduğunu yazın. Rəqəmsal olmalıdır.
+Ünvan boş olmaya bilər.
+Ping edilmədi {0}: {1}
+Ping {0} ms-də uğurlu oldu.

@@ -656,3 +656,232 @@ Bloker en debug-enhed efter IP-adresse
 {0} er ikke blokeret endnu.
 Fejl ved indlæsning af indstillinger
 Der er en fejl under indlæsning af indstillinger. Du skal muligvis kontrollere indstillingsfilen.
+- Trin 2: Registrering af mods og pauseskærme
+- Trin 3: Log ind
+Vælg sektion:
+Vælg indstilling:
+Generelle indstillinger...
+Hardwareindstillinger ...
+Loginindstillinger ...
+Shell-indstillinger ...
+Netværks indstillinger...
+Diverse indstillinger ...
+Gem indstillinger
+Afslut
+Den angivne valgmulighed {0} er ugyldig.
+Svaret skal være numerisk.
+Spørg efter argumenter ved opstart
+Trigger til vedligeholdelsestilstand
+Skift rodadgangskode ...
+Se efter opdateringer ved opstart
+Stille sonde
+Probe RAM-slots
+Vis MOTD ved login
+Ryd skærm ved login
+Vis tilgængelige brugernavne
+Farvet skal
+Forenklet hjælpekommando
+Fejlfindingsport
+Fjernfejlfinding Standard Nick-præfiks
+Download Retry Times
+Log FTP-brugernavn
+Log FTP IP-adresse
+Returner kun den første FTP-profil
+Vis tid / dato i øverste højre hjørne
+Screensaver Timeout i ms
+Fejl i fejlfindingsstørrelse i byte
+Størrelse parse-tilstand
+Telt ved opstart
+Lang tid og dato
+Vis skjulte filer
+Ugyldig sektion angivet. Gå tilbage.
+Gå tilbage...
+Aktiver
+Deaktiver
+Ugyldigt indtastet nøglenummer. Gå tilbage.
+Skriv root-adgangskoden, der skal indstilles. Bare rolig; adgangskoden vises som stjerner.
+Aktivér "Skift rodadgangskode" for at bruge denne mulighed. Gå tilbage.
+Skift rodadgangskode?
+Indstil rodadgangskode ...
+Skriv en ekstern debugger-port. Det skal være numerisk og må ikke allerede bruges. Ellers kan fjernfejlfinder ikke åbne porten.
+Skriv præfikset for standardfejlretningskaldenavn.
+Skriv hvor mange gange kommandoen "" get "" skal prøve mislykkede downloads igen. Det skal være numerisk.
+Skriv hvornår du skal starte pauseskærm efter specificerede millisekunder. Det skal være numerisk.
+Skriv, hvor mange byte, der kan gemme fejlretningsloggen. Det skal være numerisk.
+Svaret er muligvis ikke negativt.
+Svaret er ugyldigt. Kontroller, at svaret er numerisk for konfigurationsindgange, der har brug for tal som svar.
+Variablen {0} findes ikke på nogen af ​​modulerne.
+Ændrer kernekonfiguration
+Indstillinger for pauseskærm ...
+Aktivér 255 farver
+Vil du holde forbindelsen?
+Ugyldigt valg. Antages nej ...
+Ingen mods fundet. Spring springet over ...
+Skift kultur, når du skifter sprog
+Tekst vist
+Skriv den tekst, du vil have vist. Kortere er bedre.
+Kunne ikke uploade {0}
+Download mislykkedes for fil {0}: {1}
+Fejl ved udførelse af fjernfejlkommando {0}: {1}
+Tilføjer brugere
+Føjer aliaser til kommandoer
+Injicerer argumenter til kernen (genstart kræves)
+Ændrer værtsnavn
+Ændrer MAL, MOTD efter login
+Ændrer MOTD, dagens budskab
+Ændrer brugernavn
+Viser debug-logfiler
+Administrer tilladelser for brugere
+Genindlæser pauseskærmfil i KSMods
+Fjerner en bruger fra listen
+Fjernet alias {0} med succes.
+Kunne ikke kontrollere for opdateringer.
+Der er ikke flere brugere tilbage på listen.
+Kunne ikke indstille sprog.
+Fejl ved forsøg på at afvise underretning.
+En opgradering til {0} registreres. Opdaterer konfiguration ...
+usrmgr: Kunne ikke oprette brugernavn {0}: {1}
+Kunne ikke omdøbe bruger. {0}
+En af tilladelseslisterne indeholder ikke brugernavn {0}.
+Kunne ikke indlæse tilladelser fra fil: {0}
+Kunne ikke ændre værtsnavn: {0}
+Bruger ikke fundet
+Kunne ikke ændre adgangskoden til brugernavnet: {0}
+Kunne ikke kopiere fil eller bibliotek: {0}
+Kunne ikke flytte fil eller bibliotek: {0}
+Kan ikke finde filen, der matcher strengen "{0}": {1}
+Download mislykkedes for fil {0}.
+Kunne ikke angive fjernfiler: {0}
+Indtast en fil eller mappe, der skal fjernes. Du skal have administrative tilladelser på din konto for at kunne fjerne.
+Er du sikker på, at du vil slette {0} <y / n>?
+Sletter {0} ...
+{0} findes ikke på serveren.
+Al e-mail oprettet af {0} fjernes med succes.
+Kunne ikke fjerne al e-mail oprettet af {0}.
+Fejl ved afsendelse af besked.
+Flytter {0} til {1} ​​...
+Flyttet med succes
+Flytter fil eller mappe til en anden fil eller mappe. Du kan også bruge det til at omdøbe filer.
+Kunne ikke flytte {0} til {1}.
+Indtast en kildesti og en destinationssti.
+Kopierer {0} til {1} ​​...
+Kopieret med succes
+Kopierer fil eller mappe til en anden fil eller mappe.
+Kunne ikke kopiere {0} til {1}.
+Flytter en besked
+Flytter alle meddelelser fra modtageren
+Al e-mail oprettet af {0} flyttes med succes.
+Kunne ikke flytte al e-mail oprettet af {0}.
+Besked {0} fra {1} flyttet fra {2}. {3} meddelelser tilbage til at parse.
+Meddelelsen {0} fra {1} blev flyttet. {3} meddelelser tilbage til at parse.
+Viser vejrinformation for den angivne by. Bruger OpenWeatherMap.
+- Vejrinformation for {0} -
+Vejr: {0}
+Temperatur: {0} ({1} enhed)
+Føles som: {0} ({1} enhed)
+Tryk: {0}
+Fugtighed: {0}
+Du kan få din egen API-nøgle på https://home.openweathermap.org/api_keys.
+Du kan altid se http://bulk.openweathermap.org/sample/city.list.json.gz for listen over byer med deres id'er.
+Foretrukken enhed til temperatur
+Kelvin
+Imperial (Fahrenheit)
+Metrisk (Celsius)
+Indstiller kernen, så den beder dig om argument ved opstart.
+Udløser vedligeholdelsestilstand. Dette deaktiverer flere konti.
+Hver opstart kontrollerer den for opdateringer.
+Når du skifter sprog, skal du ændre månedens navne, kalender osv.
+Hvis kernen startes, indstiller den rodadgangskoden.
+Hold besked om hardware-sondering tavs.
+Hvis det er aktiveret, undersøger det RAM-slots sammen med RAM.
+Vis dagens besked, inden loginskærmen vises.
+Ryd skærm, inden loginskærm vises.
+Viser tilgængelige brugere, hvis aktiveret.
+Giver kernefarvestøtte
+Forenklet hjælpekommando til alle skaller
+Om FTP-brugernavn skal logges eller ej.
+Om FTP IP-adresse skal logges eller ej.
+Vælg kun den første profil, når du opretter forbindelse.
+Aktiverer 255 farvesupport til ColorMix.
+Aktiverer 255 farvesupport til Disco.
+Aktiverer 255 farvesupport til GlitterColor.
+Aktiverer 255 farvesupport til linjer.
+Tid og dato vises i øverste højre hjørne af skærmen
+Hvis aktiveret, vil kernen analysere hele mappen for dens samlede størrelse. Ellers vil det kun analysere overfladen.
+Aktiverer eyecandy ved opstart
+Tid og dato vil være længere, viser fulde månedsnavne osv.
+Viser skjulte filer.
+Vælg din foretrukne enhed til temperatur (dette gælder kun kommandoen "vejr")
+Mod {0} stoppet
+{0} v {1} stoppet
+Mod {0} har ikke delnavnet. Mod-parsing mislykkedes. Gennemgå kildekoden.
+Mod {0} har ikke kommandoen. Mod-parsing mislykkedes. Gennemgå kildekoden.
+Du skal aktivere fejlretningstilstand, før du kan rydde fejlretningslog.
+{0} nye meddelelser ankom i indbakken.
+Åbn "lsmail" for at se dem.
+Primær: {2} Bootable: {3} Boot partition: {4}
+Kunne ikke fjerne filen: {0}
+Fjerner et bibliotek eller en fil
+Kan ikke fjerne {0}, fordi det ikke findes.
+Du har muligvis ikke inxi installeret på dit system. Henvis til din pakkehåndtering for installation. For Debian-systemer (og derivater) vil du muligvis køre "" sudo apt install inxi libcpanel-json-xs-perl "" i terminalemulatoren.
+Sprog indstillet til {0}!
+Tryk på CTRL + C for at afslutte.
+Giver oplysninger om en fil
+Giver oplysninger om et bibliotek
+Kan ikke få oplysninger om ikke-eksisterende bibliotek.
+Kan ikke få oplysninger om ikke-eksisterende fil.
+Fuldt navn: {0}
+Oprettelsestid: {0}
+Sidste adgangstid: {0}
+Sidste skrivetid: {0}
+Attributter: {0}
+Overordnet bibliotek: {0}
+Hvor finder du: {0}
+Filstørrelse: {0}
+Ændrer attribut for en fil
+Fil ikke fundet.
+hvor <attributter> er et af følgende:
+Filen er en normal fil
+Filen er en skrivebeskyttet fil
+Filen er en skjult fil
+Filen er et arkiv. Bruges til sikkerhedskopier.
+Attribut "{0}" er ugyldig.
+Attribut er tilføjet med succes.
+Attribut er blevet fjernet.
+Kunne ikke tilføje attribut.
+Kunne ikke fjerne attribut.
+Størrelse: {0}
+Erstatter et ord eller en sætning med et andet på en linje
+Rødt farveniveau overskredet. Det var {0}.
+Grønt farveniveau overskredet. Det var {0}.
+Blå farveniveau overskredet. Det var {0}.
+Aktivér ægte farver
+Aktiverer ægte farvesupport til ColorMix.
+Aktiverer ægte farvesupport til Disco.
+Aktiverer ægte farvesupport til GlitterColor.
+Aktiverer ægte farvesupport til linjer.
+Kunne ikke fjerne blokeringen af ​​{0}.
+{0} er allerede blokeret.
+{0} kan ikke deltage i ekstern fejlretning nu.
+Kunne ikke blokere {0}.
+Cyklus farver
+Disco cykler farver, når det er aktiveret. Ellers skal du vælge tilfældige farver.
+Indtast filstier til vedhæftede filer. Tryk på ENTER på en tom sti for at bekræfte.
+Åbner en krypteret besked
+Skriv adgangskode til nøgle-id {0}
+Sender en krypteret besked til en adresse
+Beder dig om at udfylde de krævede felter for at sende en krypteret besked til en adresse
+Downloades fra {0} ...
+Vis statuslinjen, mens du downloader eller uploader fra "get" eller "put" kommandoen
+Hvis det er sandt, får det "get" eller "put" til at vise statuslinjen, mens du downloader eller uploader.
+Uploader en fil til det angivne websted
+Pinger en adresse
+Uploader {0} til {1} ​​...
+Upload er afsluttet.
+Brug "ftp", hvis du vil uploade filer til FTP-serveren.
+Upload mislykkedes i prøve {0}: {1}
+{0} MB af {1} MB uploadet.
+Skriv hvor mange gange kommandoen "put" skal prøve igen mislykkede uploads. Det skal være numerisk.
+Adressen er muligvis ikke tom.
+Kunne ikke pinge {0}: {1}
+Ping lykkedes i {0} ms.

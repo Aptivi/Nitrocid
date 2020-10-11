@@ -656,3 +656,232 @@ Nosozliklarni tuzatish moslamasini IP-manzil orqali blokirovka qiling
 {0} hali bloklanmagan.
 Sozlamalarni yuklashda xato
 Sozlamalarni yuklashda xatolik yuz berdi. Sozlamalar faylini tekshirishingiz kerak bo'lishi mumkin.
+- 2-bosqich: Tartibni va ekran himoyachilarini aniqlash
+- 3-bosqich: Kirish
+Bo'limni tanlang:
+Variantni tanlang:
+Umumiy sozlamalar ...
+Uskuna sozlamalari ...
+Kirish sozlamalari ...
+Shell sozlamalari ...
+Tarmoq sozlamalari ...
+Turli xil sozlamalar ...
+Sozlamalarni saqlang
+Chiqish
+Belgilangan parametr {0} yaroqsiz.
+Javob raqamli bo'lishi kerak.
+Yuklashda argumentlarni chaqirish
+Xizmat ko'rsatish rejimini ishga tushirish
+Ildiz parolini o'zgartirish ...
+Ishga tushirishda yangilanishlarni tekshiring
+Jim Probe
+Probe RAM uyasi
+Kirish paytida MOTD-ni ko'rsating
+Kirish paytida ekranni tozalash
+Mavjud foydalanuvchi nomlarini ko'rsatish
+Rangli qobiq
+Soddalashtirilgan yordam buyrug'i
+Portni disk raskadrovka qilish
+Masofaviy disk raskadrovka bo'yicha standart Nik prefiksi
+Qayta urinish vaqtini yuklab oling
+FTP foydalanuvchi nomini kiriting
+FTP IP-manzilini kiriting
+Faqat birinchi FTP profilini qaytaring
+Yuqori o'ng burchakda vaqtni / sanani ko'rsating
+Skrinsaver Timeout-da ms
+Baytdagi disk raskadrovka hajmi kvotasi
+Hajmi tahlil qilish rejimi
+Marquee ishga tushirilayotganda
+Uzoq vaqt va sana
+Yashirin fayllarni ko'rsatish
+Noto'g'ri bo'lim kiritildi. Iltimos, orqaga qayting.
+Ortga qaytish...
+Yoqish
+O'chirish
+Kalit raqami yaroqsiz kiritildi. Iltimos, orqaga qayting.
+O'rnatiladigan ildiz parolini yozing. Xavotir olmang; parol yulduzcha sifatida ko'rsatilgan.
+Ushbu parametrdan foydalanish uchun "Ildiz parolini o'zgartirish" ni yoqing. Iltimos, orqaga qayting.
+Ildiz parolini o'zgartirish kerakmi?
+Ildiz parolini o'rnating ...
+Masofaviy tuzatuvchi portini yozing. Bu raqamli bo'lishi kerak va allaqachon ishlatilmasligi kerak. Aks holda, masofadan tuzatuvchi portni ocholmaydi.
+Standart masofadan disk raskadrovka taxallusining prefiksini yozing.
+"" Get "" buyrug'i necha marta muvaffaqiyatsiz yuklab olinganligini takrorlashi kerakligini yozing. Bu raqamli bo'lishi kerak.
+Belgilangan millisekundalardan so'ng ekranni qachon ishga tushirishni yozing. Bu raqamli bo'lishi kerak.
+Tuzatish jurnalini saqlash uchun qancha baytni yozishingiz mumkin. Bu raqamli bo'lishi kerak.
+Javob salbiy bo'lmasligi mumkin.
+Javob yaroqsiz. Javob sifatida raqamlar kerak bo'lgan konfiguratsiya yozuvlari uchun javob raqamli ekanligiga ishonch hosil qiling.
+{0} o'zgaruvchisi hech bir modulda topilmagan.
+Yadro konfiguratsiyasini o'zgartiradi
+Ekran pardasi sozlamalari ...
+255 rangni faollashtiring
+Siz aloqada bo'lishni xohlaysizmi?
+Tanlov yaroqsiz. Yo'q ...
+Hech qanday mod aniqlanmadi. Bosqich o‘tmoqda ...
+Tillarni almashtirishda madaniyatni o'zgartiring
+Matn ko'rsatilgan
+Ko'rsatishni istagan har qanday matnni yozing. Qisqasi yaxshiroq.
+{0} yuklanmadi
+{0} fayli uchun yuklab bo'lmadi: {1}
+Masofaviy disk raskadrovka buyrug'ini bajarishda xatolik yuz berdi {0}: {1}
+Foydalanuvchilarni qo'shadi
+Buyruqlarga taxalluslarni qo'shadi
+Yadroga argumentlarni kiritadi (qayta yuklash kerak)
+Xost nomini o'zgartiradi
+Kirishdan so'ng MAL, MOTD-ni o'zgartiradi
+O'zgarishlar MOTD, kunning xabari
+Foydalanuvchi nomini o'zgartiradi
+Tuzatish jurnallarini ko'rsatadi
+Foydalanuvchilar uchun ruxsatlarni boshqarish
+KSMods-da ekran pardasi faylini qayta yuklaydi
+Foydalanuvchini ro'yxatdan o'chiradi
+{0} taxallusi muvaffaqiyatli olib tashlandi.
+Yangilanishlarni tekshirib bo'lmadi.
+Ro'yxatda boshqa foydalanuvchilar qolmadi.
+Til o'rnatilmadi.
+Bildirishnomani bekor qilishga urinishda xatolik yuz berdi.
+{0} ga yangilanish aniqlandi. Konfiguratsiya yangilanmoqda ...
+usrmgr: foydalanuvchi nomi yaratilmadi {0}: {1}
+Foydalanuvchi nomini o'zgartirib bo'lmadi. {0}
+Ruxsat ro'yxatlaridan birida foydalanuvchi nomi {0} mavjud emas.
+Fayldan ruxsatlar yuklanmadi: {0}
+Xost nomi o'zgartirilmadi: {0}
+Foydalanuvchi topilmadi
+Parolni o'zgartirib bo'lmadi: {0}
+Fayl yoki katalog ko'chirilmadi: {0}
+Fayl yoki katalog ko'chirilmadi: {0}
+"{0}" qatoriga mos keladigan fayl topilmadi: {1}
+{0} fayli uchun yuklab olinmadi.
+Masofadagi fayllarni ro'yxatlab bo'lmadi: {0}
+O'chirish uchun fayl yoki papkani kiriting. O'chirish uchun hisobingizda ma'muriy ruxsatnomalar bo'lishi kerak.
+Haqiqatan ham {0} <y / n> ni o'chirib tashlamoqchimisiz?
+{0} o‘chirilmoqda ...
+{0} serverda topilmadi.
+{0} tomonidan yuborilgan barcha xatlar muvaffaqiyatli o'chirildi.
+{0} tomonidan yuborilgan barcha xatlarni olib tashlab bo'lmadi.
+Xabar yuborishda xatolik yuz berdi.
+{0} {1} ga ko'chirilmoqda ...
+Muvaffaqiyatli ko'chirildi
+Faylni yoki katalogni boshqa faylga yoki katalogga ko'chiradi. Bundan tashqari, fayl nomlarini o'zgartirish uchun foydalanishingiz mumkin.
+{0} ni {1} ga ko‘chirib bo‘lmadi.
+Manba yo'lini va boradigan joyni kiriting.
+{0} {1} ga ko'chirilmoqda ...
+Muvaffaqiyatli nusxa ko'chirildi
+Faylni yoki katalogni boshqa faylga yoki katalogga ko'chiradi.
+{0} - {1} ga nusxa olinmadi.
+Xabarni ko'chiradi
+Qabul qiluvchidan barcha xabarlarni ko'chiradi
+{0} tomonidan yuborilgan barcha xatlar muvaffaqiyatli ko'chirildi.
+{0} tomonidan yuborilgan barcha xatlar ko'chirilmadi.
+{1} dan {0} xabar {2} dan ko'chirildi. {3} xabarlarni tahlil qilish uchun qoldi.
+{1} dan {0} xabar ko'chirildi. {3} xabarlarni tahlil qilish uchun qoldi.
+Belgilangan shahar uchun ob-havo ma'lumotlarini ko'rsatadi. OpenWeatherMap-dan foydalanadi.
+- {0} uchun ob-havo ma'lumoti -
+Ob-havo: {0}
+Harorat: {0} ({1} birlik)
+Hissiyotlar: {0} ({1} birlik)
+Bosim: {0}
+Namlik: {0}
+O'zingizning API kalitingizni https://home.openweathermap.org/api_keys saytidan olishingiz mumkin.
+Shaxsiy guvohnomalari bo'lgan shaharlar ro'yxati uchun har doim http://bulk.openweathermap.org/sample/city.list.json.gz saytiga murojaat qilishingiz mumkin.
+Harorat uchun afzal qilingan birlik
+Kelvin
+Imperial (Farengeyt)
+Metrik (Selsiy)
+Yadroni o'rnatadi, shunda u sizni yuklashda argumentni taklif qiladi.
+Xizmat ko'rsatish rejimini ishga tushiradi. Bu bir nechta hisoblarni o'chirib qo'yadi.
+Har bir ishga tushirish, u yangilanishlarni tekshiradi.
+Tillarni almashtirishda oy nomlari, taqvim va boshqalarni o'zgartiring.
+Agar yadro ishga tushirilsa, u root parolini o'rnatadi.
+Jihozni tekshiruvchi xabarlarni jim turing.
+Agar yoqilgan bo'lsa, u RAM bilan birga RAM uyalarini tekshiradi.
+Kirish ekranini ko'rsatishdan oldin kunning xabarini ko'rsating.
+Kirish ekranini ko'rsatmasdan oldin ekranni tozalang.
+Agar yoqilgan bo'lsa, mavjud foydalanuvchilarni ko'rsatadi.
+Yadro rangini qo'llab-quvvatlaydi
+Barcha qobiqlar uchun soddalashtirilgan yordam buyrug'i
+FTP foydalanuvchi nomini qayd etish yoki kiritmaslik.
+FTP IP-manzilini ro'yxatdan o'tkazish yoki kiritmaslik.
+Birinchi profilni faqat ulanganda tanlang.
+ColorMix uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
+Disko uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
+GlitterColor uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
+Lines uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
+Vaqt va sana ekranning yuqori o'ng burchagida ko'rsatiladi
+Agar yoqilgan bo'lsa, yadro butun papkani umumiy hajmiga qarab ajratadi. Boshqa, faqat sirtni tahlil qiladi.
+Ishga tushirishda ko'z qopqog'ini yoqadi
+Vaqt va sana uzoqroq bo'ladi, to'liq oy nomlari va hk.
+Yashirin fayllarni ko'rsatadi.
+Harorat uchun afzal bo'lgan birlikni tanlang (bu faqat "ob-havo" buyrug'iga tegishli)
+{0} rejimi to'xtatildi
+{0} v {1} to'xtadi
+{0} modda qism nomi yo'q. Tartibni ajratib bo'lmadi. Manba kodini ko'rib chiqing.
+{0} rejimida buyruq yo'q. Tartibni ajratib bo'lmadi. Manba kodini ko'rib chiqing.
+Tuzatish jurnalini tozalashdan oldin siz disk raskadrovka rejimini yoqishingiz kerak.
+{0} yangi xabarlar pochta qutisiga keldi.
+Ularni ko'rish uchun "lsmail" ni oching.
+Asosiy: {2} Yuklash mumkin: {3} Yuklash bo'limi: {4}
+Fayl olib tashlanmadi: {0}
+Katalogni yoki faylni olib tashlaydi
+{0} olib tashlanmadi, chunki u mavjud emas.
+Sizning tizimingizda inxi o'rnatilmagan bo'lishi mumkin. O'rnatish uchun paket menejeriga murojaat qiling. Debian (va derivativlari) tizimlari uchun terminal emulyatorida "" sudo apt install inxi libcpanel-json-xs-perl "" ni ishga tushirishni xohlashingiz mumkin.
+Til {0} qilib o'rnatildi!
+Chiqish uchun CTRL + C tugmalarini bosing.
+Fayl haqida ma'lumot beradi
+Katalog haqida ma'lumot beradi
+Mavjud bo'lmagan katalog haqida ma'lumot ololmayapman.
+Mavjud bo'lmagan fayl haqida ma'lumot ololmayapman.
+To'liq ism: {0}
+Yaratilish vaqti: {0}
+Oxirgi kirish vaqti: {0}
+Oxirgi yozish vaqti: {0}
+Xususiyatlar: {0}
+Ota-onalar katalogi: {0}
+Qaerdan topish mumkin: {0}
+Fayl hajmi: {0}
+Fayl atributini o'zgartiradi
+Fayl topilmadi.
+bu erda <attributlar> quyidagilardan biri:
+Fayl oddiy fayl
+Fayl faqat o'qish uchun mo'ljallangan fayldir
+Fayl yashirin fayl
+Fayl arxivdir. Zaxira nusxalari uchun ishlatiladi.
+"{0}" atributi yaroqsiz.
+Xususiyat muvaffaqiyatli qo'shildi.
+Xususiyat muvaffaqiyatli olib tashlandi.
+Atribut qo'shilmadi.
+Xususiyat o'chirilmadi.
+Hajmi: {0}
+So'z yoki iborani qatorda boshqasi bilan almashtiradi
+Qizil rang darajasi oshib ketdi. Bu {0} edi.
+Yashil rang darajasi oshib ketdi. Bu {0} edi.
+Moviy rang darajasi oshib ketdi. Bu {0} edi.
+Haqiqiy ranglarni faollashtiring
+ColorMix uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+Disko uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+GlitterColor uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+Chiziqlar uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+{0} blokdan chiqarilmadi.
+{0} allaqachon bloklangan.
+{0} hozirdanoq masofadan disk raskadrovka xizmatiga ulana olmaydi.
+{0} bloklanmadi.
+Ranglarni aylantirish
+Disko yoqilganda ranglarni aylantiradi. Aks holda, tasodifiy ranglarni tanlang.
+Qo'shimchalarga fayl yo'llarini kiriting. Tasdiqlash uchun bo'sh yo'lda ENTER tugmasini bosing.
+Shifrlangan xabarni ochadi
+ID identifikatori uchun parolni yozing {0}
+Shifrlangan xabarni manzilga yuboradi
+Shifrlangan xabarni manzilga yuborish uchun kerakli maydonlarni to'ldirishingizni so'raydi
+{0} dan yuklab olinmoqda ...
+"Get" yoki "put" buyrug'ini yuklab olish yoki yuklash paytida taraqqiyot satrini ko'rsatish
+Agar rost bo'lsa, uni yuklab olish yoki yuklashda "get" yoki "put" ko'rsatmalar bajarilish satrini ko'rsatishi mumkin.
+Faylni belgilangan veb-saytga yuklaydi
+Manzilni belgilaydi
+{0} {1} ga yuklanmoqda ...
+Yuklash tugallandi.
+Fayllarni FTP-serverga yuklamoqchi bo'lsangiz, iltimos, "ftp" dan foydalaning.
+Yuklash amalga oshmadi: {0}: {1}
+{0} MB / {1} MB yuklandi.
+"Qo'yish" buyrug'i necha marta muvaffaqiyatsiz yuklanganlarni qayta urinishi kerakligini yozing. Bu raqamli bo'lishi kerak.
+Manzil bo'sh bo'lmasligi mumkin.
+Ping qilinmadi {0}: {1}
+Ping muvaffaqiyatli {0} ms.

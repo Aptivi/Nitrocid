@@ -656,3 +656,232 @@ Blocca un dispositivo di debug per indirizzo IP
 {0} non è ancora bloccato.
 Errore durante il caricamento delle impostazioni
 Si è verificato un errore durante il caricamento delle impostazioni. Potrebbe essere necessario controllare il file delle impostazioni.
+- Fase 2: rilevamento di mod e screensaver
+- Fase 3: accedi
+Seleziona sezione:
+Selezionare l'opzione:
+Impostazioni generali...
+Impostazioni hardware ...
+Impostazioni di accesso ...
+Impostazioni shell ...
+Impostazioni di rete...
+Impostazioni varie ...
+Salva le impostazioni
+Uscita
+L'opzione specificata {0} non è valida.
+La risposta deve essere numerica.
+Richiedi argomenti all'avvio
+Trigger della modalità di manutenzione
+Modifica password radice ...
+Verifica la disponibilità di aggiornamenti all'avvio
+Sonda silenziosa
+Sonda slot RAM
+Mostra MOTD all'accesso
+Cancella schermo all'accesso
+Mostra i nomi utente disponibili
+Guscio colorato
+Comando di aiuto semplificato
+Porta di debug
+Prefisso Nick predefinito per debug remoto
+Scarica i tempi di riprova
+Accedi al nome utente FTP
+Registra indirizzo IP FTP
+Restituisce solo il primo profilo FTP
+Mostra ora / data nell'angolo superiore destro
+Timeout salvaschermo in ms
+Quota dimensione di debug in byte
+Modalità di analisi delle dimensioni
+Marquee all'avvio
+Tempo e data lunghi
+Mostra file nascosti
+Sezione non valida inserita. Per favore torna indietro.
+Torna indietro...
+Abilitare
+disattivare
+Numero di chiave inserito non valido. Per favore torna indietro.
+Scrivi la password di root da impostare. Non preoccuparti; le password vengono visualizzate come stelle.
+Abilita "Modifica password radice" per utilizzare questa opzione. Per favore torna indietro.
+Modificare la password di root?
+Imposta password root ...
+Scrivi una porta del debugger remoto. Deve essere numerico e non deve essere già utilizzato. In caso contrario, il debugger remoto non riuscirà ad aprire la porta.
+Scrivi il prefisso del nickname di debug remoto predefinito.
+Scrivi quante volte il comando "" get "" deve ritentare i download non riusciti. Deve essere numerico.
+Scrivi quando avviare lo screensaver dopo i millisecondi specificati. Deve essere numerico.
+Scrivi quanti byte può memorizzare il log di debug. Deve essere numerico.
+La risposta potrebbe non essere negativa.
+La risposta non è valida. Verificare che la risposta sia numerica per le voci di configurazione che richiedono numeri come risposte.
+La variabile {0} non è stata trovata su nessuno dei moduli.
+Modifica la configurazione del kernel
+Impostazioni salvaschermo ...
+Attiva 255 colori
+Vuoi restare connesso?
+Scelta non valida. Supponendo no ...
+Nessun mod rilevato. Salto di tappa ...
+Cambia cultura quando si cambia lingua
+Testo mostrato
+Scrivi il testo che desideri venga mostrato. Più corto è meglio.
+Impossibile caricare {0}
+Download non riuscito per il file {0}: {1}
+Errore durante l'esecuzione del comando di debug remoto {0}: {1}
+Aggiunge utenti
+Aggiunge alias ai comandi
+Inserisce argomenti nel kernel (riavvio richiesto)
+Modifica il nome host
+Cambia MAL, il MOTD dopo il login
+Cambia MOTD, il messaggio del giorno
+Modifica il nome utente
+Mostra i log di debug
+Gestisci le autorizzazioni per gli utenti
+Ricarica il file del salvaschermo in KSMods
+Rimuove un utente dall'elenco
+Alias ​​rimosso {0} correttamente.
+Impossibile controllare gli aggiornamenti.
+Non ci sono più utenti rimasti nell'elenco.
+Impossibile impostare la lingua.
+Errore durante il tentativo di ignorare la notifica.
+È stato rilevato un upgrade a {0}. Aggiornamento della configurazione ...
+usrmgr: impossibile creare il nome utente {0}: {1}
+Impossibile rinominare l'utente. {0}
+Uno degli elenchi di autorizzazioni non contiene il nome utente {0}.
+Impossibile caricare le autorizzazioni dal file: {0}
+Impossibile modificare il nome host: {0}
+Utente non trovato
+Impossibile modificare la password del nome utente: {0}
+Impossibile copiare il file o la directory: {0}
+Impossibile spostare il file o la directory: {0}
+Impossibile trovare il file che corrisponda alla stringa "{0}": {1}
+Download non riuscito per il file {0}.
+Impossibile elencare i file remoti: {0}
+Immettere un file o una cartella da rimuovere. Devi disporre delle autorizzazioni amministrative per il tuo account per poterlo rimuovere.
+Sei sicuro di voler eliminare {0} <y / n>?
+Eliminazione di {0} in corso ...
+{0} non è stato trovato nel server.
+Tutta la posta inviata da {0} viene rimossa correttamente.
+Impossibile rimuovere tutta la posta inviata da {0}.
+Errore durante l'invio del messaggio.
+Spostamento di {0} in {1} ...
+Spostato con successo
+Sposta il file o la directory in un altro file o directory. Puoi anche usarlo per rinominare i file.
+Impossibile spostare {0} in {1}.
+Immettere un percorso di origine e un percorso di destinazione.
+Copia di {0} in {1} ...
+Copiato con successo
+Copia il file o la directory in un altro file o directory.
+Impossibile copiare {0} in {1}.
+Sposta un messaggio
+Sposta tutti i messaggi dal destinatario
+Tutta la posta creata da {0} viene spostata correttamente.
+Impossibile spostare tutta la posta inviata da {0}.
+Messaggio {0} da {1} spostato da {2}. {3} messaggi rimanenti da analizzare.
+Messaggio {0} da {1} spostato. {3} messaggi rimanenti da analizzare.
+Mostra le informazioni meteo per la città specificata. Utilizza OpenWeatherMap.
+- Informazioni meteo per {0} -
+Meteo: {0}
+Temperatura: {0} ({1} unità)
+Sembra: {0} ({1} unità)
+Pressione: {0}
+Umidità: {0}
+Puoi ottenere la tua chiave API su https://home.openweathermap.org/api_keys.
+Puoi sempre consultare http://bulk.openweathermap.org/sample/city.list.json.gz per l'elenco delle città con i loro ID.
+Unità preferita per la temperatura
+Kelvin
+Imperiale (Fahrenheit)
+Metrico (Celsius)
+Imposta il kernel in modo che richieda un argomento all'avvio.
+Attiva la modalità di manutenzione. Questo disabilita più account.
+Ad ogni avvio, verificherà la presenza di aggiornamenti.
+Quando si cambia lingua, modificare i nomi dei mesi, il calendario, ecc.
+Se il kernel viene avviato, imposterà la password di root.
+Mantieni silenziosi i messaggi di verifica hardware.
+Se abilitato, analizzerà gli slot RAM insieme alla RAM.
+Mostra il messaggio del giorno prima di visualizzare la schermata di accesso.
+Cancella lo schermo prima di visualizzare la schermata di accesso.
+Mostra gli utenti disponibili se abilitati.
+Fornisce il supporto per il colore del kernel
+Comando di aiuto semplificato per tutte le shell
+Se registrare o meno il nome utente FTP.
+Se registrare o meno l'indirizzo IP FTP.
+Scegli il primo profilo solo durante la connessione.
+Attiva il supporto di 255 colori per ColorMix.
+Attiva il supporto di 255 colori per Disco.
+Attiva il supporto di 255 colori per GlitterColor.
+Attiva il supporto di 255 colori per le linee.
+L'ora e la data verranno visualizzate nell'angolo in alto a destra dello schermo
+Se abilitato, il kernel analizzerà l'intera cartella per la sua dimensione totale. Altrimenti, analizzerà solo la superficie.
+Abilita eyecandy all'avvio
+L'ora e la data saranno più lunghe, mostrando i nomi completi dei mesi, ecc.
+Mostra i file nascosti.
+Seleziona la tua unità preferita per la temperatura (questo vale solo per il comando "meteo")
+Mod {0} interrotto
+{0} v {1} interrotto
+La mod {0} non ha il nome della parte. Analisi mod non riuscita. Rivedi il codice sorgente.
+Il mod {0} non ha il comando. Analisi mod non riuscita. Rivedi il codice sorgente.
+È necessario attivare la modalità di debug prima di poter cancellare il registro di debug.
+{0} nuovi messaggi sono arrivati ​​nella Posta in arrivo.
+Apri "lsmail" per vederli.
+Primario: {2} avviabile: {3} partizione di avvio: {4}
+Impossibile rimuovere il file: {0}
+Rimuove una directory o un file
+Impossibile rimuovere {0} perché non esiste.
+Potresti non avere inxi installato sul tuo sistema. Fare riferimento al gestore dei pacchetti per l'installazione. Per i sistemi Debian (e derivati), potresti voler eseguire "" sudo apt install inxi libcpanel-json-xs-perl "" nell'emulatore di terminale.
+Lingua impostata correttamente su {0}!
+Premere CTRL + C per uscire.
+Fornisce informazioni su un file
+Fornisce informazioni su una directory
+Impossibile ottenere informazioni su una directory inesistente.
+Impossibile ottenere informazioni su file inesistenti.
+Nome completo: {0}
+Ora di creazione: {0}
+Ora dell'ultimo accesso: {0}
+Ora ultima scrittura: {0}
+Attributi: {0}
+Directory principale: {0}
+Dove trovarlo: {0}
+Dimensioni file: {0}
+Modifica l'attributo di un file
+File non trovato.
+dove <attributes> è uno dei seguenti:
+Il file è un file normale
+Il file è un file di sola lettura
+Il file è un file nascosto
+Il file è un archivio. Utilizzato per i backup.
+L'attributo "{0}" non è valido.
+L'attributo è stato aggiunto con successo.
+L'attributo è stato rimosso con successo.
+Impossibile aggiungere l'attributo.
+Impossibile rimuovere l'attributo.
+Dimensioni: {0}
+Sostituisce una parola o una frase con un'altra in una riga
+Livello di colore rosso superato. Era {0}.
+Livello di colore verde superato. Era {0}.
+Livello di colore blu superato. Era {0}.
+Attiva i veri colori
+Attiva il supporto True Color per ColorMix.
+Attiva il supporto true color per Disco.
+Attiva il supporto True Color per GlitterColor.
+Attiva il supporto per i colori reali per le linee.
+Impossibile sbloccare {0}.
+{0} è già bloccato.
+{0} non può partecipare al debug remoto ora.
+Impossibile bloccare {0}.
+Colori del ciclo
+Disco farà scorrere i colori quando abilitato. Altrimenti, seleziona colori casuali.
+Immettere i percorsi dei file per gli allegati. Premere INVIO su un percorso vuoto per confermare.
+Apre un messaggio crittografato
+Scrivi la password per l'ID chiave {0}
+Invia un messaggio crittografato a un indirizzo
+Ti chiede di compilare i campi obbligatori per inviare un messaggio crittografato a un indirizzo
+Download da {0} ...
+Mostra la barra di avanzamento durante il download o il caricamento dal comando "get" o "put"
+Se è vero, "get" o "put" mostra la barra di avanzamento durante il download o il caricamento.
+Carica un file sul sito web specificato
+Ping un indirizzo
+Caricamento di {0} su {1} ...
+Il caricamento è stato completato.
+Usa "ftp" se intendi caricare file sul server FTP.
+Caricamento non riuscito durante la prova {0}: {1}
+{0} MB di {1} MB caricati.
+Scrivi quante volte il comando "put" deve ritentare i caricamenti non riusciti. Deve essere numerico.
+L'indirizzo non può essere vuoto.
+Impossibile eseguire il ping {0}: {1}
+Ping riuscito in {0} ms.

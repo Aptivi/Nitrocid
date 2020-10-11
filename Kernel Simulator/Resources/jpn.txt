@@ -656,3 +656,232 @@ aipīadoresu de debaggudebaisu o burokku suru
 {0} Wa mada burokku sa rete imasen.
 Settei no yomikomi-chū ni erā ga hassei shimashita
 Settei no yomikomi-chū ni erā ga hassei shimashita. Settei fairu o kakunin suruhitsuyōgāru kamo shiremasen.
+- Suteji 2 : Mod To Sukurinseba No Kenshutsu
+- Suteji 3 : Roguin
+Sekushon No Sentaku :
+Opushon O Sentaku Shimasu :
+Ippan Settei ...
+Hadowea Settei ...
+Roguin Settei ...
+Sheru Settei ...
+Nettowaku Settei ...
+Sonota No settei ...
+settei o hozon suru
+ideguchi
+shitei sareta Opushon {0} Wa Mukodesu .
+Kotae Wa Suchidenakerebanarimasen .
+Kido Ji Ni Hikisu No Puronputo
+Mentenansumodotoriga
+Ruto Pasuwado No Henko ...
+Kido Ji Ni Koshin O Kakunin Suru
+Shizukana Purobu
+Purobu RAM Surotto
+Roguin Ji Ni MOTD O Hyoji Suru
+Roguin Ji Ni Gamen O Kuria Suru
+Riyo Kanona Yuzamei O Hyoji Suru
+Kara Sheru
+Kanryaku Ka Sareta Herupu Komando
+Debaggu Poto
+Rimoto Debaggu No Deforuto No Nikku Purefikkusu
+RetryTimes O Daunrodo
+FTP Yuzamei O Rogu Ni Kiroku Suru
+FTPIP Adoresu O Rogu Ni Kiroku Suru
+Saisho No FTP Purofairu Nomi O Kaesu
+Migi Uesumi Ni Jikan / Hizuke O Hyoji
+Sukurinseba No Taimu Auto ( Miri Byo )
+Baito Tani No Debaggusaizukuota
+Saizu Kaiseki Modo
+Kido Ji No Maki
+Nagai Jikan To Hizuke
+Kakushi Fairu O Hyoji Suru
+Mukona Sekushon Ga Nyuryoku Saremashita . Modottekudasai .
+Modoru ...
+Yuko Ni Suru
+Muko Ni Suru
+Mukona Ki Bango Ga Nyuryoku Saremashita . Modottekudasai .
+Settei Suru Rot Pasuwado O Kinyu Shitekudasai . Shinpai Shinaidekudasai . Pasuwado Wa Hoshi Shirushi De Hyoji Saremasu .
+Kono Opushon O Shiyo Suru Ni Wa , " Ruto Pasuwado No Henko " O Yuko Ni Shimasu . modottekudasai .
+rū to pasu wā do o henkō shimasu ka ?
+Ruto Pasuwado O Settei ...
+Rimotodebaggapoto O Kijutsu Shimasu . Suchidearu Hitsuyo Ga Ari , Sudeni Shiyo Sarete Hanarimasen . So Shinaito , Rimotodebagga Wa Poto O Hiraku Koto Ga Dekimasen .
+Deforuto No Aruaiemuotiodiibaggunikkunemupurefikkusu O Kakikomimasu .
+" Get " Komando Ga Shippai Shita Daunrodo O Sai Shiko Suru Kaisu O Kakikomimasu . Suchidearu Hitsuyo Ga Arimasu .
+Shitei Sareta Miri Byo Go Ni Sukurinseba O Kido Suru Taimingu O Kijutsu Shimasu . Suchidearu Hitsuyo Ga Arimasu .
+Debaggu Rogu Ni Hozon Dekiru Baitosu O Kakikomimasu . Suchidearu Hitsuyo Ga Arimasu .
+Kotae Wa Hitei Tekide Hanai Kamo Shiremasen .
+Kotae Wa Mukodesu . Kaito Toshite Suji Ga Hitsuyona Kosei Entori No Kaito Ga Suchidearu Koto O Kakunin Shitekudasai .
+Hensu {0} Ga Dono Mojuru Ni Mo Mitsukarimasen .
+kāneru kōsei o henkō shimasu
+sukurīnsē bā no settei ...
+255 shoku o akutibu ni suru
+setsuzoku o iji shimasu ka ?
+sentaku ga mukōdesu . ī eto katei shite ...
+mod ga kenshutsu saremasendeshita . nawatobi ...
+gengo o kirikaeru toki ni bunka o kaeru
+hyōji sareru tekisuto
+Hyoji Shitai Tekisuto O Kakimasu . Mijikai Hodo Yoidesu .
+{0} No Appu Rodo Ni Shippai Shimashita
+Fairu {0} No Daunrodo Ni Shippai Shimashita : {1}
+Rimotodebaggukomando {0} No Jikko Chu Ni Era Ga Hassei Shimashita : {1}
+Yuza O tsuika shimasu
+Komando Ni Eiriasu O Tsuika Shimasu
+Kaneru Ni Hikisu O Sonyu Shimasu ( Sai Kido Ga Hitsuyodesu )
+Hosutomei O Henko Shimasu
+Roguin Go No Dearu MAL O Henko Shimasu
+MOTD , Kyo No Messeji O Henko Shimasu
+Yuzamei O Henko Shimasu
+Debaggu Rogu O Hyoji Shimasu
+Yuza No Kengen O Kanri Suru
+Sukurinsebafairu O KSMods Ni Rirodo Shimasu
+Risuto Kara Yuza O Sakujo Shimasu
+Eiriasu {0} O Seijo Ni Sakujo Shimashita .
+Koshin No Kakunin Ni Shippai Shimashita .
+Risuto Ni Nokotteiru Yuza Wa Mo Imasen .
+Gengo No Settei Ni Shippai Shimashita .
+Tsuchi O Kyakka Shiyo Toshite Era Ga Hassei Shimashita .
+{0} E No Appu Guredo Ga Kenshutsu Saremashita . Kosei O Koshin Shiteimasu ...
+Usrmgr : Yuzamei {0} No Sakusei Ni Shippai Shimashita : {1}
+Yuza No Namae Henko Ni Shippai Shimashita . {0}
+Kengenrisuto No Tsu Ni Yuzamei {0} Ga Fukumareteimasen .
+Fairu Kara Kengen O Yomikomemasendeshita : {0}
+Hosutomei No Henko Ni Shippai Shimashita : {0}
+Yuza Ga Mitsukarimasen
+Yuzamei No Pasuwado No Henko Ni Shippai Shimashita : {0}
+Fairu Mataha Direkutori No kopī ni shippai shimashita : {0}
+fairu mataha direkutori no idō ni shippai shimashita : {0}
+moji retsu "{0}" ni icchi suru fairu ga mitsukarimasen : {1}
+fairu {0} no da unrō do ni shippai shimashita .
+Rimōto fairu no ichiran hyōji ni shippai shimashita : {0}
+sakujo suru fairu mataha foruda o nyūryoku shimasu . Sakujo suru ni wa , akaunto no kanrisha kengen ga hitsuyōdesu .
+{0} o sakujo shite mo yoro shīdesu ka ?
+{0} o sakujo shiteimasu ...
+{0} ga sābā ni mitsukarimasen .
+{0} Niyotte Sakusei Sareta Subete No Meru Wa Seijo Ni Sakujo Saremasu .
+{0} Niyotte Sakusei Sareta Subete No Meru O Sakujo Dekimasendeshita .
+Messeji No Soshin Chu Ni Era Ga Hassei Shimashita .
+{0} O {1} Ni Ido Shiteimasu ...
+Seijo Ni idō shimashita
+Fairu Mataha Direkutori O Betsu No Fairu Mataha Direkutori Ni Ido Shimasu . Kore O Shiyo Shite Fairu No Namae O Henko Suru Koto Mo Dekimasu .
+{0} O {1} Ni Ido Dekimasendeshita .
+Sosu Pasu To Atesaki Pasu O Nyuryoku Shimasu .
+{0} o o {1} Ni Kopi Shiteimasu ...
+Seijo Ni Kopi Saremashita
+Fairu Mataha Direkutori O Betsu No Fairu Mataha Direkutori Ni Kopi Shimasu .
+{0} O {1} Ni Kopi Dekimasendeshita .
+Messeji O Ido Shimasu
+Jushinsha Kara No Subete No Messeji O Ido Shimasu
+{0} Niyotte Sakusei Sareta Subete no Meru wa Seijo ni Ido Saremasu .
+{0} Niyotte Sakusei Sareta Subete no Meru o Ido Dekimasendeshita .
+{1} kara no Messeji {0} ga {2} kara Ido Shimashita . {3} kaiseki suru Messeji ga nokotteimasu .
+{1} kara no Messeji {0} ga Ido Shimashita . {3} kaiseki suru Messeji ga Nokotteimasu .
+Shitei shita toshi no tenki Joho o Hyoji shimasu . Openweathermap o Shiyo shimasu .
+- {0} no tenki Joho -
+tenki : {0}
+ondo : {0} ({1} tani )
+Tsugi no Yo ni Kanjimasu : {0} ({1} tani )
+Atsuryoku : {0}
+Shitsudo : {0}
+https : // home . Openweathermap . Org / api _ keys de Dokuji no API Ki o shutoku dekimasu .
+ID o motsu toshi no risuto nitsuite Wa , Itsu Demo Http : // Bulk . Openweathermap . Org / Sample / City . List . Json . Gz O Sansho Dekimasu .
+Ondo No Yusen Tani
+Kerubin
+Inperiaru ( Kashi )
+Metoruho ( Sesshi )
+Kido Ji Ni Hikisu No Nyuryoku O Motomeru Yo Ni kāneru o settei Shimasu .
+Mentenansu Modo O Toriga Shimasu . Kore Niyori , Fukusu No Akaunto Ga Muko Ni Narimasu .
+Kido Suru Tabi Ni , Koshin O Kakunin Shimasu .
+Gengo O Kirikaeru Toki Wa , Tsuki No Namae Ya Karenda Nado O Henko Shitekudasai .
+Kaneru Ga Kido Suruto , Rot Pasuwado Ga Settei Saremasu .
+Hadoweapurobingumesseji O Sairento Ni Tamochimasu .
+Yuko Ni Suruto , RAM Totomoni RAM Surotto Ga Purobu Saremasu .
+Roguin Gamen O Hyoji Suru Mae Ni , Kyo No Messeji O Hyoji Shimasu .
+Roguin Gamen O Hyoji Suru Mae Ni Gamen O Kuria Shitekudasai .
+Yuko Ni Natteiru Bai , Riyo Kanona Yuza O Hyoji Shimasu .
+Kaneru Kara O Sapoto Shimasu
+Subete No Sheru No Kanryaku Ka Sareta Herupu Komando
+FTP Yuzamei O Rogu Ni Kiroku Suru Ka Do Ka .
+FTPIP Adoresu O Rogu Ni Kiroku Suru Ka Do Ka .
+Setsuzoku Ji Ni Nomi Saisho No Purofairu O Sentaku Shimasu .
+ColorMix No 255 Shoku No Sapoto O Akutibu Ni Shimasu .
+Disuko No 25 5 Shoku No Sapoto O Akutibu Ni Shimasu . GlitterColor No 255 Shoku No Sapoto O Akutibu Ni Shimasu . Lines No 255 shoku
+
+No Sapoto O Akutibu Ni Shimasu .
+Nichiji Wa Gamen Migi Jo Ni Hyoji Saremasu
+Yuko Ni Suruto , Kaneru Wa Foruda Zentai O Kaiseki Shite Gokei Saizu O Kakunin Shimasu . Sore Igai No Bai Wa , Safesu Nomi O Kaiseki Shimasu .
+Kido Ji Ni Aikyandi O Yuko Ni Shimasu
+Nichiji Ga Nagaku Nari , Kanzenna Tsuki No Namae Nado Ga Hyoji Saremasu .
+Kakushi Fairu O Hyoji Shimasu .
+Ondo No Tani O Sentaku Shimasu ( Kore Wa " Tenki " Komando Ni Nomi Tekiyo Saremasu )
+Mod {0} Ga Teishi Shimashita
+{0} v {1} Ga Teishi Shimashita
+Mod {0} Ni Wa Patsumei Ga Arimasen . Mod No Kaiseki Ni Shippai Shimashita . Sosu Kodo O Kakunin Shimasu .
+Mod {0} Ni Wa Komando Ga Arimasen . Mod No Kaiseki Ni Shippai Shimashita . Sosu Kodo O Kakunin shimasu .
+Debaggu Rogu O Kuria Suru Mae Ni , Debaggumodo O On Ni Suru Hitsuyo Ga Arimasu .
+{0} Atarashi Messeji Ga Jushin Torei Ni Todokimashita .
+" Lsmail " O Hiraite Hyoji Shimasu .
+Puraimari : {2} Kido Kano : {3} Kido Patishon : {4}
+Fairu O Sakujo Dekimasen : {0}
+Direkutori Mataha Fairu O Sakujo Shimasu
+{0} Ga Sonzai Shinai Tame , Sakujo Dekimasen .
+Shisutemu Ni Inxi Ga Insutoru Sareteinai Kanosei Ga Arimasu . Insutoru Nitsuite Wa , Pakkeji Maneja Ni O Toiawasekudasai . Debian ( Oyobi Hasei ) Shisutemu No Bai , Taminaru Emyureta De " Sudoapt Installinxilibcpanel - Json - Xs - Perl " O Jikko Suru Koto O O Susume Shimasu .
+Gengo Ga {0} Ni Seijo Ni Settei Saremashita !
+Ctrl + C o oshite shūryō shimasu .
+Fairu nikansuru jōhō o teikyō shimasu
+Direkutori Nikansuru Joho o Teikyo shimasu
+sonzai shinai Direkutori Nikansuru Joho o Shutoku Dekimasen .
+sonzai shinai Fairu Nikansuru Joho o Shutoku Dekimasen .
+Furunemu : {0}
+Sakusei jikan : {0}
+Saishu Akusesu jikan : {0}
+Saishu Kakikomi jikan : {0}
+Zokusei : {0}
+Shin Direkutori : {0}
+Mitsukeru Basho : {0}
+Fairusaizu : {0}
+Fairu No Zokusei O Henko Shimasu
+Fairu Ga Mitsukarimasen .
+Koko De , Wa Tsugi No Izure Kadesu .
+Fairu Wa Tsujo No Fairudesu
+Fairu Wa Yomitori Senyo fairudesu
+fairu wa kakushi Fairudesu
+Fairu Wa Akaibudesu . Bakkuappu Ni Shiyo Saremasu .
+Zokusei "{0}" Ga Mukodesu .
+Zokusei Ga Seijo Ni Tsuika Saremashita .
+Zokusei Wa Seijo Ni Sakujo Saremashita .
+Zokusei No Tsuika Ni Shippai Shimashita .
+Zokusei No Sakujo Ni Shippai Shimashita .
+Saizu : {0}
+Konai No Tango Mataha Furezu O Betsu No Tango Mataha Furezu Ni Okikaemasu
+Akairo Reberu O Koemashita . { 0 Deshita .
+Midori No Iro Reberu O Koemashita . { 0 Deshita .
+Ao No Iro Reberu O Koemashita . { 0 Deshita .
+Turukara O Yuko Ni Suru
+ColorMix No Turukarasapoto O Akutibu Ni Shimasu .
+Disuko No Turukarasapoto O Akutibu Ni Shimasu .
+GlitterColor No Turukarasapoto O Akutibu Ni Shimasu .
+Lines No Turukarasapoto O Akutibu Ni Shimasu .
+{0} No Burokku O Kaijo Dekimasendeshita .
+{0} Wa Sudeni Burokku Sareteimasu .
+{0} Wa Genzai Rimoto Debaggu Ni Sanka Dekimasen .
+{0} No Burokku Ni Shippai Shimashita .
+Saikuru Kara
+Disuko O Yuko Ni Suruto , Iro Ga Junkan Shimasu . Sore Igai No Bai Wa , Randamuna Iro O Sentaku Shimasu .
+Tenpu Fairu E No Fairu pasu O Nyuryoku Shimasu . Kuhaku No Pasu De Enter Ki O Oshite Kakunin Shimasu .
+Ango Ka Sareta Messeji O Hirakimasu
+Ki ID {0} No Pasuwado O Kakikomu
+Ango Ka Sareta Messeji O Adoresu Ni Soshin Shimasu
+Ango Ka Sareta Messeji O Adoresu Ni Soshin Suru Tame Ni Hitsuyona Firudo Ni Nyuryoku Suru Yo Ni Motomeraremasu
+{0} Kara Daunrodo Shiteimasu ...
+" Get " Mataha " Put " Komando Kara Daunrodo Mataha Appu Rodo Chu Ni Puroguresuba O Hyoji Suru
+True No Bai , Daunrodo Mataha Appu Rodo Chu Ni " Get " Mataha " put " Ni Puroguresuba Ga Hyoji Saremasu .
+Shitei Shita Webusaito Ni Fairu O Appu Rodo Shimasu
+Adoresu O Ping Shimasu
+{0} O {1} Ni Appu Rodo Shiteimasu ...
+Appu Rodo Ga Kanryo Shimashita .
+FTP Saba Ni Fairu O Appu Rodo Suru Bai Wa " ftp " O Shiyo Shitekudasai .
+Appu Rodo Wa Shiko {0} De Shippai Shimashita : {1}
+{1} MB No Uchi {0} MB Ga Appu Rodo Saremashita .
+" Put " Komando Ga Shippai Shita Appu Rodo O Sai Shiko Suru Kaisu O Kakikomimasu . sūchi dearu hit suyō ga arimasu .
+adoresu o sora ni suru koto wa dekimasen .
+{0} e no ping ni shippai shimashita : {1}
+ping wa {0} miri byō de seikō shimashita .

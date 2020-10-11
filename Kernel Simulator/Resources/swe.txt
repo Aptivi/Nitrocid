@@ -656,3 +656,232 @@ Blockera en felsökningsenhet med IP-adress
 {0} är inte blockerad ännu.
 Fel vid inläsning av inställningar
 Det finns ett fel när du laddar inställningar. Du kan behöva kontrollera inställningsfilen.
+- Steg 2: Upptäckt av mods och skärmsläckare
+- Steg 3: Logga in
+Välj avsnitt:
+Välj alternativ:
+Allmänna Inställningar...
+Hårdvaruinställningar ...
+Inloggningsinställningar ...
+Shell-inställningar ...
+Nätverksinställningar...
+Diverse inställningar ...
+Spara inställningar
+Utgång
+Det angivna alternativet {0} är ogiltigt.
+Svaret måste vara numeriskt.
+Fråga efter argument vid start
+Trigger för underhållsläge
+Ändra rotlösenord ...
+Sök efter uppdateringar vid start
+Tyst sond
+Probe RAM-kortplatser
+Visa MOTD vid inloggning
+Rensa skärmen vid inloggning
+Visa tillgängliga användarnamn
+Färgat skal
+Förenklat hjälpkommando
+Felsökningsport
+Fjärrfelsökning Nick-prefix
+Ladda ner Retry Times
+Logga in FTP-användarnamn
+Logga FTP IP-adress
+Returnera endast den första FTP-profilen
+Visa tid / datum i övre högra hörnet
+Skärmsläckare Timeout i ms
+Debug Storlekvot i byte
+Storleksanalysläge
+Partytält vid start
+Lång tid och datum
+Visa gömda filer
+Ogiltigt avsnitt angett. Snälla gå tillbaka.
+Gå tillbaka...
+Gör det möjligt
+Inaktivera
+Ogiltigt nyckelnummer har angetts. Snälla gå tillbaka.
+Skriv root-lösenordet som ska ställas in. Oroa dig inte; lösenordet visas som stjärnor.
+Aktivera "Ändra rotlösenord" för att använda detta alternativ. Snälla gå tillbaka.
+Ändra rotlösenord?
+Ställ in rotlösenord ...
+Skriv en extern felsökningsport. Det måste vara numeriskt och får inte redan användas. I annat fall kommer fjärrfelsökaren inte att öppna porten.
+Skriv standardprefixet för fjärrfelsökningsnamn.
+Skriv hur många gånger kommandot "" get "" ska försöka misslyckade nedladdningar. Det måste vara numeriskt.
+Skriv när skärmsläckare ska startas efter angivna millisekunder. Det måste vara numeriskt.
+Skriv hur många byte som kan felsöka loggen. Det måste vara numeriskt.
+Svaret kanske inte är negativt.
+Svaret är ogiltigt. Kontrollera att svaret är numeriskt för konfigurationsposter som behöver siffror som svar.
+Variabel {0} finns inte på någon av modulerna.
+Ändrar kärnkonfiguration
+Skärmsläckarinställningar ...
+Aktivera 255 färger
+Vill du hålla kontakten?
+Ogiltigt val. Antar nej ...
+Inga mods upptäcktes. Hoppar över scenen ...
+Ändra kultur när du byter språk
+Text som visas
+Skriv vilken text du vill visa. Kortare är bättre.
+Det gick inte att ladda upp {0}
+Nedladdningen misslyckades för filen {0}: {1}
+Fel vid körning av fjärrfelsökningskommandot {0}: {1}
+Lägger till användare
+Lägger till alias i kommandon
+Injicerar argument till kärnan (omstart krävs)
+Ändrar värdnamn
+Ändrar MAL, MOTD efter inloggning
+Ändrar MOTD, dagens meddelande
+Ändrar användarnamn
+Visar felsökningsloggar
+Hantera behörigheter för användare
+Ladda om skärmsläckarfilen i KSMods
+Tar bort en användare från listan
+Borttagen alias {0} lyckades.
+Det gick inte att söka efter uppdateringar.
+Det finns inga fler användare kvar i listan.
+Det gick inte att ställa in språk.
+Fel vid försök att avvisa meddelandet.
+En uppgradering till {0} upptäcks. Uppdaterar konfigurationen ...
+usrmgr: Det gick inte att skapa användarnamn {0}: {1}
+Det gick inte att byta namn på användaren. {0}
+En av behörighetslistorna innehåller inte användarnamn {0}.
+Det gick inte att läsa in behörigheter från filen: {0}
+Det gick inte att ändra värdnamn: {0}
+Användaren hittades inte
+Det gick inte att ändra lösenordet för användarnamnet: {0}
+Det gick inte att kopiera filen eller katalogen: {0}
+Det gick inte att flytta filen eller katalogen: {0}
+Det gick inte att hitta filen som matchar strängen "{0}": {1}
+Nedladdningen misslyckades för filen {0}.
+Det gick inte att lista fjärrfiler: {0}
+Ange en fil eller mapp som ska tas bort. Du måste ha administrativa behörigheter på ditt konto för att kunna ta bort.
+Är du säker på att du vill ta bort {0} <y / n>?
+Tar bort {0} ...
+{0} hittades inte på servern.
+All e-post från {0} har tagits bort.
+Det gick inte att ta bort all e-post från {0}.
+Fel vid sändning av meddelande.
+Flyttar {0} till {1} ​​...
+Flyttade framgångsrikt
+Flyttar fil eller katalog till en annan fil eller katalog. Du kan också använda det för att byta namn på filer.
+Det gick inte att flytta {0} till {1}.
+Ange en källväg och en destinationsväg.
+Kopierar {0} till {1} ​​...
+Kopierades framgångsrikt
+Kopierar fil eller katalog till en annan fil eller katalog.
+Det gick inte att kopiera {0} till {1}.
+Flyttar ett meddelande
+Flyttar alla meddelanden från mottagaren
+All e-post från {0} har flyttats.
+Det gick inte att flytta all e-post från {0}.
+Meddelande {0} från {1} flyttat från {2}. {3} meddelanden återstår att analysera.
+Meddelandet {0} från {1} har flyttats. {3} meddelanden återstår att analysera.
+Visar väderinformation för angiven stad. Använder OpenWeatherMap.
+- Väderinformation för {0} -
+Väder: {0}
+Temperatur: {0} ({1} enhet)
+Känns som: {0} ({1} enhet)
+Tryck: {0}
+Luftfuktighet: {0}
+Du kan få din egen API-nyckel på https://home.openweathermap.org/api_keys.
+Du kan alltid besöka http://bulk.openweathermap.org/sample/city.list.json.gz för en lista över städer med deras ID.
+Föredragen enhet för temperatur
+Kelvin
+Imperial (Fahrenheit)
+Metrisk (Celsius)
+Ställer in kärnan så att du uppmanas till argument vid start.
+Utlöser underhållsläge. Detta inaktiverar flera konton.
+Varje start kommer det att söka efter uppdateringar.
+När du byter språk, ändra månadens namn, kalender etc.
+Om kärnan startas ställer den in root-lösenordet.
+Håll meddelanden för maskinvarusondering tysta.
+Om det är aktiverat kommer det att undersöka RAM-kortplatserna tillsammans med RAM-minnet.
+Visa dagens meddelande innan inloggningsskärmen visas.
+Rensa skärmen innan inloggningsskärmen visas.
+Visar tillgängliga användare om de är aktiverade.
+Ger kärnfärgsstöd
+Förenklat hjälpkommando för alla skal
+Om du vill logga in FTP-användarnamn eller inte.
+Om du vill logga in FTP IP-adress eller inte.
+Välj bara den första profilen när du ansluter.
+Aktiverar 255 färgstöd för ColorMix.
+Aktiverar 255 färgstöd för Disco.
+Aktiverar 255 färgstöd för GlitterColor.
+Aktiverar 255 färgstöd för linjer.
+Tid och datum visas längst upp till höger på skärmen
+Om det är aktiverat analyserar kärnan hela mappen för dess totala storlek. Annars, kommer bara att analysera ytan.
+Aktiverar ögonblick vid start
+Tid och datum kommer att vara längre, med namn på hela månader etc.
+Visar dolda filer.
+Välj önskad temperaturenhet (detta gäller endast kommandot "väder")
+Mod {0} stoppade
+{0} v {1} stoppat
+Mod {0} har inte artikelnamnet. Modtolkning misslyckades. Granska källkoden.
+Mod {0} har inte kommandot. Modtolkning misslyckades. Granska källkoden.
+Du måste aktivera felsökningsläget innan du kan rensa felsökningsloggen.
+{0} nya meddelanden kom till inkorgen.
+Öppna "lsmail" för att se dem.
+Primär: {2} Startbar: {3} Startpartition: {4}
+Det gick inte att ta bort filen: {0}
+Tar bort en katalog eller en fil
+Det går inte att ta bort {0} eftersom det inte finns.
+Du kanske inte har inxi installerat på ditt system. Se din pakethanterare för installation. För Debian-system (och derivat) kanske du vill köra "" sudo apt install inxi libcpanel-json-xs-perl "" i terminalemulatorn.
+Språket har ställts in på {0}!
+Tryck på CTRL + C för att avsluta.
+Ger information om en fil
+Ger information om en katalog
+Kan inte få information om obefintlig katalog.
+Kan inte få information om obefintlig fil.
+Fullständigt namn: {0}
+Skapningstid: {0}
+Senaste åtkomsttid: {0}
+Senaste skrivtid: {0}
+Attribut: {0}
+Föräldrakatalog: {0}
+Var hittar du: {0}
+Filstorlek: {0}
+Ändrar attribut för en fil
+Filen hittades inte.
+där <attribut> är något av följande:
+Filen är en normal fil
+Filen är en skrivskyddad fil
+Filen är en dold fil
+Filen är ett arkiv. Används för säkerhetskopior.
+Attributet "{0}" är ogiltigt.
+Attribut har lagts till.
+Attribut har tagits bort.
+Det gick inte att lägga till attribut.
+Det gick inte att ta bort attributet.
+Storlek: {0}
+Ersätter ett ord eller en fras med ett annat i en rad
+Röd färgnivå överskred. Det var {0}.
+Grön färg har överskridits. Det var {0}.
+Blå färgnivå överskridits. Det var {0}.
+Aktivera sanna färger
+Aktiverar äkta färgstöd för ColorMix.
+Aktiverar äkta färgstöd för Disco.
+Aktiverar äkta färgstöd för GlitterColor.
+Aktiverar äkta färgstöd för linjer.
+Det gick inte att avblockera {0}.
+{0} är redan blockerad.
+{0} kan inte gå med i fjärrfelsökning nu.
+Det gick inte att blockera {0}.
+Cykla färger
+Disco cyklar färger när det är aktiverat. Annars väljer du slumpmässiga färger.
+Ange filvägar till bilagor. Tryck på ENTER på en tom sökväg för att bekräfta.
+Öppnar ett krypterat meddelande
+Skriv lösenord för nyckel-ID {0}
+Skickar ett krypterat meddelande till en adress
+Be dig fylla i de obligatoriska fälten för att skicka ett krypterat meddelande till en adress
+Hämtar från {0} ...
+Visa förloppsfältet medan du laddar ner eller laddar upp från kommandot "get" eller "put"
+Om det är sant, får det "get" eller "put" att visa förloppsindikatorn under nedladdning eller uppladdning.
+Överför en fil till den angivna webbplatsen
+Pingar en adress
+Laddar upp {0} till {1} ​​...
+Uppladdningen är klar.
+Använd "ftp" om du ska ladda upp filer till FTP-servern.
+Uppladdningen misslyckades i försök {0}: {1}
+{0} MB av {1} MB överfört.
+Skriv hur många gånger kommandot "put" ska försöka misslyckade uppladdningar. Det måste vara numeriskt.
+Adressen kanske inte är tom.
+Det gick inte att pinga {0}: {1}
+Ping lyckades i {0} ms.

@@ -656,3 +656,232 @@ Zablokujte ladiace zariadenie podľa adresy IP
 {0} ešte nie je zablokovaný.
 Pri načítavaní nastavení sa vyskytla chyba
 Pri načítavaní nastavení došlo k chybe. Možno budete musieť skontrolovať súbor nastavení.
+- Faza 2: Odkrivanje modov in ohranjevalnikov zaslona
+- Faza 3: Prijava
+Izberite razdelek:
+Izberite možnost:
+Splošne nastavitve...
+Nastavitve strojne opreme ...
+Nastavitve prijave ...
+Nastavitve lupine ...
+Omrežne nastavitve...
+Razne nastavitve ...
+Shrani nastavitve
+Izhod
+Navedena možnost {0} ni veljavna.
+Odgovor mora biti številčen.
+Poziv za argumente ob zagonu
+Sprožilec načina vzdrževanja
+Spremeni root geslo ...
+Preverite, ali so na voljo posodobitve ob zagonu
+Tiha sonda
+Reže za RAM sonde
+Pokaži MOTD ob prijavi
+Počisti zaslon ob prijavi
+Prikaži razpoložljiva uporabniška imena
+Barvna lupina
+Poenostavljeni ukaz za pomoč
+Vrata za odpravljanje napak
+Privzeta predpona za oddaljeno odpravljanje napak
+Prenesite Retry Times
+Prijavite uporabniško ime za FTP
+Dnevnik naslova FTP IP
+Vrni samo prvi profil FTP
+Prikažite uro / datum v zgornjem desnem kotu
+Časovna omejitev ohranjevalnika zaslona v ms
+Kvota velikosti za odpravljanje napak v bajtih
+Način razčlenitve velikosti
+Marquee ob zagonu
+Dolg čas in datum
+Pokaži skrite datoteke
+Vnesen neveljaven razdelek. Pojdi nazaj.
+Pojdi nazaj...
+Omogoči
+Onemogoči
+Vnesena je neveljavna številka ključa. Pojdi nazaj.
+Napišite root geslo, ki ga želite nastaviti. Ne skrbite; geslo so prikazane kot zvezdice.
+Če želite uporabiti to možnost, omogočite "Spremeni root geslo". Pojdi nazaj.
+Želite spremeniti root geslo?
+Nastavi root geslo ...
+Napišite vrata oddaljenega napak. Mora biti številčno in ne sme biti že uporabljeno. V nasprotnem primeru oddaljeni razhroščevalec ne bo mogel odpreti vrat.
+Napišite privzeto predpono vzdevka za odpravljanje napak.
+Napišite, kolikokrat naj ukaz "" dobi "" poskusi znova neuspešne prenose. Mora biti številčno.
+Napišite, kdaj zagnati ohranjevalnik zaslona po določenih milisekundah. Mora biti številčno.
+Napišite, koliko bajtov lahko shrani dnevnik odpravljanja napak. Mora biti številčno.
+Odgovor morda ni negativen.
+Odgovor je neveljaven. Preverite, ali je odgovor številčen za vnose konfiguracije, ki kot odgovore potrebujejo številke.
+Spremenljivke {0} ni mogoče najti v nobenem od modulov.
+Spremeni konfiguracijo jedra
+Nastavitve ohranjevalnika zaslona ...
+Aktivirajte 255 barv
+Ali želite ostati povezani?
+Neveljavna izbira. Ob predpostavki, da ne ...
+Ni zaznanih modov. Preskakanje faze ...
+Spremenite kulturo pri zamenjavi jezikov
+Prikazano besedilo
+Napišite katero koli besedilo, ki ga želite prikazati. Krajši je boljši.
+Nalaganja {0} ni uspelo
+Prenos datoteke {0} ni uspel: {1}
+Napaka pri izvajanju ukaza za oddaljeno odpravljanje napak {0}: {1}
+Doda uporabnike
+Ukazom doda vzdevke
+Vbrizga argumente v jedro (potreben je ponovni zagon)
+Spremeni ime gostitelja
+Spremeni MAL, MOTD po prijavi
+Spremeni MOTD, Sporočilo dneva
+Spremeni uporabniško ime
+Prikaže dnevnike odpravljanja napak
+Upravljanje dovoljenj za uporabnike
+Znova naloži datoteko ohranjevalnika zaslona v KSMods
+Odstrani uporabnika s seznama
+Vzdevek {0} je bil uspešno odstranjen.
+Preverjanja posodobitev ni uspelo.
+Na seznamu ni več uporabnikov.
+Nastavitve jezika ni uspelo.
+Napaka pri poskusu opustitve obvestila.
+Zaznana je nadgradnja na {0}. Posodabljanje konfiguracije ...
+usrmgr: Uporabniškega imena ni bilo mogoče ustvariti {0}: {1}
+Uporabnika ni bilo mogoče preimenovati. {0}
+Eden od seznamov dovoljenj ne vsebuje uporabniškega imena {0}.
+Dovoljenj iz datoteke ni bilo mogoče naložiti: {0}
+Imena gostitelja ni bilo mogoče spremeniti: {0}
+Uporabnik ni najden
+Gesla uporabniškega imena ni bilo mogoče spremeniti: {0}
+Kopiranje datoteke ali imenika ni uspelo: {0}
+Datoteke ali imenika ni bilo mogoče premakniti: {0}
+Ni mogoče najti datoteke, ki bi se ujemala z nizom "{0}": {1}
+Prenos datoteke {0} ni uspel.
+Oddaljenih datotek ni bilo mogoče našteti: {0}
+Vnesite datoteko ali mapo, ki jo želite odstraniti. Če želite odstraniti račun, morate imeti skrbniška dovoljenja.
+Ali ste prepričani, da želite izbrisati {0} <y / n>?
+Brisanje {0} ...
+{0} ni mogoče najti v strežniku.
+Vsa pošta, ki jo je poslal {0}, je bila uspešno odstranjena.
+Vse pošte, ki jo je ustvaril {0}, ni bilo mogoče odstraniti.
+Napaka pri pošiljanju sporočila.
+Premikanje {0} v {1} ...
+Premaknjeno uspešno
+Premakne datoteko ali imenik v drugo datoteko ali imenik. To lahko uporabite tudi za preimenovanje datotek.
+{0} ni bilo mogoče premakniti v {1}.
+Vnesite izvorno in ciljno pot.
+Kopiranje {0} v {1} ...
+Uspešno kopirano
+Kopira datoteko ali imenik v drugo datoteko ali imenik.
+Kopiranja {0} v {1} ni uspelo.
+Premakne sporočilo
+Premakne vsa sporočila prejemnika
+Vsa pošta, ki jo je poslal {0}, je uspešno premaknjena.
+Vse pošte, ki jo je ustvaril {0}, ni bilo mogoče premakniti.
+Sporočilo {0} pošiljatelja {1} je bilo premaknjeno iz {2}. Preostalo je še 3 sporočil za razčlenitev.
+Sporočilo {0} osebe {1} je premaknjeno. Preostalo je še 3 sporočil za razčlenitev.
+Prikaže informacije o vremenu za določeno mesto. Uporablja OpenWeatherMap.
+- Vremenske informacije za {0} -
+Vreme: {0}
+Temperatura: {0} ({1} enota)
+Počutite se kot: {0} ({1} enota)
+Tlak: {0}
+Vlažnost: {0}
+Svoj ključ API lahko dobite na https://home.openweathermap.org/api_keys.
+Seznam mest z njihovimi ID-ji se lahko vedno obrnete na http://bulk.openweathermap.org/sample/city.list.json.gz.
+Prednostna enota za temperaturo
+Kelvin
+Imperial (Fahrenheit)
+Metrična (Celzija)
+Nastavi jedro, tako da vas pozove k argumentu ob zagonu.
+Sproži način vzdrževanja. To onemogoči več računov.
+Pri vsakem zagonu bo preveril, ali so na voljo posodobitve.
+Pri menjavi jezikov spremenite imena mesecev, koledar itd.
+Če se jedro zažene, bo postavilo root geslo.
+Naj bodo sporočila tipala strojne opreme tiha.
+Če je omogočena, bo zaznal reže za RAM skupaj z RAM-om.
+Pred prikazom zaslona za prijavo prikaži sporočilo dneva.
+Počisti zaslon pred prikazom prijavnega zaslona.
+Prikaže razpoložljive uporabnike, če je omogočeno.
+Omogoča barvno podporo jedra
+Poenostavljeni ukaz za pomoč za vse lupine
+Ali želite prijaviti uporabniško ime za FTP ali ne.
+Ali želite zapisati naslov FTP IP ali ne.
+Izberite prvi profil samo pri povezovanju.
+Aktivira 255 barvnih podpor za ColorMix.
+Aktivira 255 barvnih podpor za Disco.
+Aktivira 255 barvnih podpor za GlitterColor.
+Aktivira 255 barvnih podpor za vrstice.
+Čas in datum bosta prikazana v zgornjem desnem kotu zaslona
+Če je omogočeno, bo jedro razčlenilo celotno mapo glede na njeno skupno velikost. V nasprotnem primeru bo le razčlenil površino.
+Omogoča eyecandy ob zagonu
+Čas in datum bosta daljša, prikazana bodo imena celotnih mesecev itd.
+Prikaže skrite datoteke.
+Izberite želeno enoto za temperaturo (to velja samo za ukaz "vreme")
+Mod {0} je ustavljen
+{0} v {1} se je ustavil
+Mod {0} nima imena dela. Razčlenjevanje modov ni uspelo. Preglejte izvorno kodo.
+Mod {0} nima ukaza. Razčlenjevanje modov ni uspelo. Preglejte izvorno kodo.
+Preden lahko počistite dnevnik odpravljanja napak, morate vklopiti način za odpravljanje napak.
+V mapo »Prejeto« je prispelo {0} novih sporočil
+Odprite "lsmail", da jih vidite.
+Primarno: {2} zagonski: {3} zagonska particija: {4}
+Datoteke ni mogoče odstraniti: {0}
+Odstrani imenik ali datoteko
+{0} ni mogoče odstraniti, ker ne obstaja.
+V vašem sistemu morda ni nameščen inxi. Za namestitev se obrnite na upravitelja paketov. Za sisteme Debian (in izpeljane) boste morda želeli zagnati sudo apt install inxi libcpanel-json-xs-perl v terminalskem emulatorju.
+Jezik je bil uspešno nastavljen na {0}!
+Pritisnite CTRL + C za izhod.
+Ponuja informacije o datoteki
+Ponuja informacije o imeniku
+Ne morem dobiti informacij o neobstoječem imeniku.
+Ne morem dobiti informacij o neobstoječi datoteki.
+Polno ime: {0}
+Čas ustvarjanja: {0}
+Čas zadnjega dostopa: {0}
+Čas zadnjega pisanja: {0}
+Atributi: {0}
+Nadrejeni imenik: {0}
+Kje najti: {0}
+Velikost datoteke: {0}
+Spremeni atribut datoteke
+Datoteka ni najdena.
+kjer je <atributi> eno od naslednjega:
+Datoteka je običajna datoteka
+Datoteka je samo za branje
+Datoteka je skrita datoteka
+Datoteka je arhiv. Uporablja se za varnostne kopije.
+Atribut "{0}" ni veljaven.
+Atribut je bil uspešno dodan.
+Atribut je bil uspešno odstranjen.
+Atributa ni bilo mogoče dodati.
+Atributa ni bilo mogoče odstraniti.
+Velikost: {0}
+Besedo ali besedno zvezo nadomesti z drugo v vrstici
+Rdeča barva je presežena. Bilo je {0}.
+Raven zelene barve presežena. Bilo je {0}.
+Presežena raven modre barve. Bilo je {0}.
+Aktivirajte prave barve
+Aktivira resnično barvno podporo za ColorMix.
+Aktivira resnično barvno podporo za Disco.
+Aktivira resnično barvno podporo za GlitterColor.
+Aktivira resnično barvno podporo za Lines.
+Odblokiranja {0} ni uspelo.
+{0} je že blokiran.
+{0} se zdaj ne more pridružiti oddaljenemu odpravljanju napak.
+Blokiranja {0} ni uspelo.
+Kolesarske barve
+Ko je omogočena, bo Disco krožil barve. V nasprotnem primeru izberite naključne barve.
+Vnesite poti datotek do prilog. Za potrditev pritisnite ENTER na prazni poti.
+Odpre šifrirano sporočilo
+Napišite geslo za ID ključa {0}
+Pošlje šifrirano sporočilo na naslov
+Zahteva, da izpolnite zahtevana polja za pošiljanje šifriranega sporočila na naslov
+Prenos iz {0} ...
+Med prenosom ali nalaganjem iz ukaza "get" ali "put" prikaži vrstico napredovanja
+Če je res, med prenosom ali nalaganjem prikaže vrstico napredovanja »get« ali »put«.
+Naloži datoteko na določeno spletno mesto
+Ping naslov
+Nalaganje {0} v {1} ...
+Nalaganje je končano.
+Prosimo, uporabite "ftp", če boste datoteke nalagali na strežnik FTP.
+Prenos ni uspel v poskusu {0}: {1}
+Naloženih {0} MB od {1} MB.
+Napišite, kolikokrat naj ukaz "put" poskusi znova neuspešne prenose. Mora biti številčno.
+Naslov ne sme biti prazen.
+Ni bilo mogoče pingati {0}: {1}
+Ping je uspel v {0} ms.
