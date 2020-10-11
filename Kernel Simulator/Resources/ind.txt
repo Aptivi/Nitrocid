@@ -850,7 +850,6 @@ visheshata ko saphalataapoorvak joda gaya hai.
 visheshata ko saphalataapoorvak hata diya gaya hai.
 visheshata jodane mein viphal.
 visheshata nikaalane mein viphal.
-aakaar: {0}
 kisee shabd ya vaakyaansh ko ek pankti mein doosare ke saath badalata hai
 laal rang ka star paar ho gaya. yah {0} tha.
 hare rang ka star paar ho gaya. yah {0} tha.

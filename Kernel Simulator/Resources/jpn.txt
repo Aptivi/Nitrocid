@@ -850,7 +850,6 @@ Zokusei Ga Seijo Ni Tsuika Saremashita .
 Zokusei Wa Seijo Ni Sakujo Saremashita .
 Zokusei No Tsuika Ni Shippai Shimashita .
 Zokusei No Sakujo Ni Shippai Shimashita .
-Saizu : {0}
 Konai No Tango Mataha Furezu O Betsu No Tango Mataha Furezu Ni Okikaemasu
 Akairo Reberu O Koemashita . { 0 Deshita .
 Midori No Iro Reberu O Koemashita . { 0 Deshita .

@@ -850,7 +850,6 @@ Atribut berhasil ditambahkan.
 Atribut berhasil dihapus.
 Gagal menambahkan atribut.
 Gagal menghapus atribut.
-Ukuran: {0}
 Mengganti kata atau frase dengan yang lain dalam satu baris
 Tingkat warna merah terlampaui. Itu adalah {0}.
 Tingkat warna hijau terlampaui. Itu adalah {0}.

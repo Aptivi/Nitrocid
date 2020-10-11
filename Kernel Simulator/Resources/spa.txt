@@ -850,7 +850,6 @@ El atributo se ha agregado correctamente.
 El atributo se ha eliminado correctamente.
 No se pudo agregar el atributo.
 No se pudo eliminar el atributo.
-Tamaño: {0}
 Reemplaza una palabra o frase por otra en una línea
 Se superó el nivel de color rojo. Fue {0}.
 Se superó el nivel de color verde. Fue {0}.

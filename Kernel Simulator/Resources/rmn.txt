@@ -850,7 +850,6 @@ Atributul a fost adăugat cu succes.
 Atributul a fost eliminat cu succes.
 Nu s-a putut adăuga atributul.
 Eliminarea atributului nu a reușit.
-Dimensiune: {0}
 Înlocuiește un cuvânt sau o frază cu altul dintr-o linie
 Nivelul de culoare roșie a fost depășit. A fost {0}.
 Nivelul de culoare verde a fost depășit. A fost {0}.

@@ -850,7 +850,6 @@ sogseong-i seong-gongjeog-eulo chugadoeeossseubnida.
 sogseong-i seong-gongjeog-eulo jegeodoeeossseubnida.
 sogseong-eul chugahaji moshaessseubnida.
 sogseong-eul jegeohaji moshaessseubnida.
-keugi : {0}
 han jul-eseo dan-eo na guleul daleun dan-eolo bakkubnida.
 ppalgansaeg sujun-i chogwadoeeossseubnida. {0}ieossseubnida.
 nogsaeg sujun-i chogwadoeeossseubnida. {0}ieossseubnida.

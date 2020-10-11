@@ -850,7 +850,6 @@ Attribut ġie miżjud b'suċċess.
 L-attribut tneħħa b’suċċess.
 Naqas milli jżid l-attribut.
 Ma rnexxilux ineħħi l-attribut.
-Daqs: {0}
 Jissostitwixxi kelma jew frażi b'waħda oħra f'linja
 Inqabeż il-livell tal-kulur aħmar. Kien {0}.
 Inqabeż il-livell tal-kulur aħdar. Kien {0}.

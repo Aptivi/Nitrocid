@@ -850,7 +850,6 @@ Attribute has been added successfully.
 Attribute has been removed successfully.
 Failed to add attribute.
 Failed to remove attribute.
-Size: {0}
 Replaces a word or phrase with another one in a line
 Red color level exceeded. It was {0}.
 Green color level exceeded. It was {0}.

@@ -850,7 +850,6 @@ Atribut je uspešno dodat.
 Atribut je uspešno uklonjen.
 Dodavanje atributa nije uspelo.
 Uklanjanje atributa nije uspelo.
-Veličina: {0}
 Reč ili frazu zamenjuje drugom u redu
 Prekoračen nivo crvene boje. Bilo je {0}.
 Prekoračen nivo zelene boje. Bilo je {0}.

@@ -850,7 +850,6 @@ Attribuutin lisääminen onnistui.
 Attribuutti on poistettu.
 Määritteen lisääminen epäonnistui.
 Määritteen poistaminen epäonnistui.
-Koko: {0}
 Korvaa sanan tai lauseen toisella rivillä
 Punainen väritaso ylitetty. Se oli {0}.
 Vihreän värin taso ylitetty. Se oli {0}.

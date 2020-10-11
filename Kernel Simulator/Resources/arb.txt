@@ -850,7 +850,6 @@ tamat 'iidafat alsimat binajahi.
 tamat 'iizalat alsimat binajahi.
 fashil 'iidafat alsamati.
 fashal 'iizalat alsamati.
-alhajma: {0}
 yustabdal kalimatan 'aw eibaratan bi'ukhraa fi satr
 tajawaz mustawaa allawn al'ahmaru. kan {0}.
 tajawaz mustawaa allawn al'akhdara. kan {0}.

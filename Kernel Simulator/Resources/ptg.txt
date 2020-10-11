@@ -850,7 +850,6 @@ O atributo foi adicionado com sucesso.
 O atributo foi removido com sucesso.
 Falha ao adicionar atributo.
 Falha ao remover atributo.
-Tamanho: {0}
 Substitui uma palavra ou frase por outra em uma linha
 Nível de cor vermelha excedido. Era {0}.
 Nível de cor verde excedido. Era {0}.

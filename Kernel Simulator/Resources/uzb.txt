@@ -850,7 +850,6 @@ Xususiyat muvaffaqiyatli qo'shildi.
 Xususiyat muvaffaqiyatli olib tashlandi.
 Atribut qo'shilmadi.
 Xususiyat o'chirilmadi.
-Hajmi: {0}
 So'z yoki iborani qatorda boshqasi bilan almashtiradi
 Qizil rang darajasi oshib ketdi. Bu {0} edi.
 Yashil rang darajasi oshib ketdi. Bu {0} edi.

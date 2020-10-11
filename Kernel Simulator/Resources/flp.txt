@@ -850,7 +850,6 @@ Matagumpay na naidagdag ang katangian.
 Matagumpay na naalis ang katangian.
 Nabigong magdagdag ng katangian.
 Nabigong alisin ang katangian.
-Laki: {0}
 Pinapalitan ang isang salita o parirala sa isa pa sa isang linya
 Lumagpas sa antas ng pulang kulay. Ito ay {0}.
 Lumagpas sa antas ng berdeng kulay. Ito ay {0}.

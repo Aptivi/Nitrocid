@@ -850,7 +850,6 @@ Attribut har lagts till.
 Attribut har tagits bort.
 Det gick inte att lägga till attribut.
 Det gick inte att ta bort attributet.
-Storlek: {0}
 Ersätter ett ord eller en fras med ett annat i en rad
 Röd färgnivå överskred. Det var {0}.
 Grön färg har överskridits. Det var {0}.

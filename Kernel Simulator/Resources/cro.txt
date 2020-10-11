@@ -850,7 +850,6 @@ Atribut je uspješno dodan.
 Atribut je uspješno uklonjen.
 Dodavanje atributa nije uspjelo.
 Uklanjanje atributa nije uspjelo.
-Veličina: {0}
 Riječ ili frazu zamjenjuje drugom u retku
 Premašena je razina crvene boje. Bilo je {0}.
 Prekoračena je razina zelene boje. Bilo je {0}.

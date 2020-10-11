@@ -850,7 +850,6 @@ L'attributo è stato aggiunto con successo.
 L'attributo è stato rimosso con successo.
 Impossibile aggiungere l'attributo.
 Impossibile rimuovere l'attributo.
-Dimensioni: {0}
 Sostituisce una parola o una frase con un'altra in una riga
 Livello di colore rosso superato. Era {0}.
 Livello di colore verde superato. Era {0}.

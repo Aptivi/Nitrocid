@@ -850,7 +850,6 @@ Atribut uğurla əlavə edildi.
 Atribut uğurla silindi.
 Atribut əlavə etmək alınmadı.
 Atribut silinə bilmədi.
-Ölçü: {0}
 Bir söz və ya ifadəni bir sətirdə başqası ilə əvəz edir
 Qırmızı rəng səviyyəsi aşıldı. {0} idi.
 Yaşıl rəng səviyyəsi aşıldı. {0} idi.

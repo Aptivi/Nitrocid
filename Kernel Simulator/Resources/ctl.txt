@@ -850,7 +850,6 @@ L'atribut s'ha afegit correctament.
 L'atribut s'ha eliminat correctament.
 No s'ha pogut afegir l'atribut.
 No s'ha pogut eliminar l'atribut.
-Mida: {0}
 Substitueix una paraula o frase per una altra en una línia
 S'ha superat el nivell de color vermell. Era {0}.
 S'ha superat el nivell de color verd. Era {0}.

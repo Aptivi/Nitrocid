@@ -850,7 +850,6 @@ Attribut er tilføjet med succes.
 Attribut er blevet fjernet.
 Kunne ikke tilføje attribut.
 Kunne ikke fjerne attribut.
-Størrelse: {0}
 Erstatter et ord eller en sætning med et andet på en linje
 Rødt farveniveau overskredet. Det var {0}.
 Grønt farveniveau overskredet. Det var {0}.

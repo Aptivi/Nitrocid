@@ -850,7 +850,6 @@ Atribut byl úspěšně přidán.
 Atribut byl úspěšně odebrán.
 Nepodařilo se přidat atribut.
 Odebrání atributu se nezdařilo.
-Velikost: {0}
 Nahradí slovo nebo frázi jiným v řádku
 Byla překročena úroveň červené barvy. Bylo to {0}.
 Byla překročena úroveň zelené barvy. Bylo to {0}.

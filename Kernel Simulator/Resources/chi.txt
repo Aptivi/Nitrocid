@@ -850,7 +850,6 @@ Shǔxìng yǐ chénggōng tiānjiā.
 Shǔxìng yǐ chénggōng shānchú.
 Tiānjiā shǔxìng shībài.
 Wúfǎ shānchú shǔxìng.
-Dàxiǎo:{0}
 Yòng yīxíng zhōng de lìng yīgè tìhuàn dāncí huò duǎnyǔ
 chāochū hóngsè jíbié. Shì {0}.
 Chāochū lǜsè děngjí. Shì {0}.

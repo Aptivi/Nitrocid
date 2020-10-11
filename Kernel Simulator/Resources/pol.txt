@@ -850,7 +850,6 @@ Atrybut został pomyślnie dodany.
 Atrybut został pomyślnie usunięty.
 Nie udało się dodać atrybutu.
 Nie udało się usunąć atrybutu.
-Rozmiar: {0}
 Zastępuje słowo lub frazę innym w wierszu
 Przekroczono poziom koloru czerwonego. To było {0}.
 Przekroczono poziom koloru zielonego. To było {0}.

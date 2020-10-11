@@ -850,7 +850,6 @@ Sāphalya sāphalyēra sāthē yukta karā haẏēchē.
 Sāphalya saphalabhābē muchē phēlā haẏēchē.
 Baiśiṣṭya yukta karatē byartha.
 Baiśiṣṭya apasāraṇa karatē byartha.
-Ākāra: {0}
 Ēkaṭi śabda bā bākya pratisthāpana karē ēkaṭi lā'inēra sāthē an'ya ēkaṭi diẏē
 lāla raṅēra stara chāṛiẏē gēchē. Ēṭi chila {0}.
 Sabuja raṅēra stara chāṛiẏē gēchē. Ēṭi chila {0}.

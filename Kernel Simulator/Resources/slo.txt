@@ -850,7 +850,6 @@ Atribut je bil uspešno dodan.
 Atribut je bil uspešno odstranjen.
 Atributa ni bilo mogoče dodati.
 Atributa ni bilo mogoče odstraniti.
-Velikost: {0}
 Besedo ali besedno zvezo nadomesti z drugo v vrstici
 Rdeča barva je presežena. Bilo je {0}.
 Raven zelene barve presežena. Bilo je {0}.

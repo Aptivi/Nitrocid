@@ -850,7 +850,6 @@ Attribut wurde erfolgreich hinzugefügt.
 Attribut wurde erfolgreich entfernt.
 Attribut konnte nicht hinzugefügt werden.
 Attribut konnte nicht entfernt werden.
-Größe: {0}
 Ersetzt ein Wort oder eine Phrase durch ein anderes in einer Zeile
 Rote Farbe überschritten. Es war {0}.
 Grüne Farbe überschritten. Es war {0}.

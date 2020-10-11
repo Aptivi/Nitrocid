@@ -850,7 +850,6 @@ Atribut uspeshno dobavlen.
 Atribut uspeshno udalen.
 Ne udalos' dobavit' atribut.
 Ne udalos' udalit' atribut.
-Razmer: {0}
 Zamenyayet slovo ili frazu drugim v stroke
 Prevyshen uroven' krasnogo tsveta. Eto bylo {0}.
 Prevyshen uroven' zelenogo tsveta. Eto bylo {0}.

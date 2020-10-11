@@ -850,7 +850,6 @@ Sifada si guul leh ayaa loogu daray.
 Sifada si guul leh ayaa looga saaray.
 Waa lagu guuldareystay in lagu daro astaamo.
 Ku guuldareystay inuu ka saaro sifada.
-Cabir: {0}
 Wuxuu ku badalayaa eray ama weedh mid kale safka
 Heerka midabka cas ayaa dhaafay. Waxay ahayd {0}.
 Heerka midabka cagaaran wuu dhaafay. Waxay ahayd {0}.

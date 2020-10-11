@@ -850,7 +850,6 @@ Kenmerk is succesvol toegevoegd.
 Kenmerk is succesvol verwijderd.
 Toevoegen van kenmerk is mislukt.
 Kan kenmerk niet verwijderen.
-Grootte: {0}
 Vervangt een woord of zin door een ander op een regel
 Kleurniveau rood overschreden. Het was {0}.
 Groen kleurniveau overschreden. Het was {0}.

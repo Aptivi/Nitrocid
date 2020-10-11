@@ -850,7 +850,6 @@ L'attribut a été ajouté avec succès.
 L'attribut a été supprimé avec succès.
 Échec de l'ajout de l'attribut.
 Échec de la suppression de l'attribut.
-Taille: {0}
 Remplace un mot ou une phrase par un autre dans une ligne
 Niveau de couleur rouge dépassé. C'était {0}.
 Niveau de couleur verte dépassé. C'était {0}.

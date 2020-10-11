@@ -850,7 +850,6 @@ Thuộc tính đã được thêm thành công.
 Thuộc tính đã được xóa thành công.
 Không thêm được thuộc tính.
 Không xóa được thuộc tính.
-Kích thước: {0}
 Thay thế một từ hoặc cụm từ bằng một từ hoặc cụm từ khác trong một dòng
 Đã vượt quá mức màu đỏ. Đó là {0}.
 Đã vượt quá mức màu xanh lục. Đó là {0}.
