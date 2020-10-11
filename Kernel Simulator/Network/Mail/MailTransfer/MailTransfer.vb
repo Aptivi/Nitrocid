@@ -92,28 +92,37 @@ Public Module MailTransfer
             Console.WriteLine()
             Wdbg("I", "Displaying body...")
             Dim DecryptedMessage As Dictionary(Of String, MimeEntity)
+            Wdbg("I", "To decrypt: {0}", Decrypt)
             If Decrypt Then
                 DecryptedMessage = DecryptMessage(Msg)
+                Wdbg("I", "Decrypted messages length: {0}", DecryptedMessage.Count)
                 Dim DecryptedEntity As MimeEntity = DecryptedMessage("Body")
                 Dim DecryptedStream As New MemoryStream
+                Wdbg("I", $"Decrypted message type: {If(TypeOf DecryptedEntity Is Multipart, "Multipart", "Singlepart")}")
                 If TypeOf DecryptedEntity Is Multipart Then
                     Dim MultiEntity As Multipart = CType(DecryptedEntity, Multipart)
+                    Wdbg("I", $"Decrypted message entity is {If(Not IsNothing(MultiEntity), "multipart", "nothing")}")
                     If Not IsNothing(MultiEntity) Then
                         For EntityNumber As Integer = 0 To MultiEntity.Count - 1
+                            Wdbg("I", $"Entity number {EntityNumber} is {If(MultiEntity(EntityNumber).IsAttachment, "an attachment", "not an attachment")}")
                             If Not MultiEntity(EntityNumber).IsAttachment Then
                                 MultiEntity(EntityNumber).WriteTo(DecryptedStream, True)
+                                Wdbg("I", "Written {0} bytes to stream.", DecryptedStream.Length)
                                 DecryptedStream.Position = 0
                                 Dim DecryptedByte(DecryptedStream.Length) As Byte
                                 DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
+                                Wdbg("I", "Written {0} bytes to buffer.", DecryptedByte.Length)
                                 W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.HelpDef)
                             End If
                         Next
                     End If
                 Else
                     DecryptedEntity.WriteTo(DecryptedStream, True)
+                    Wdbg("I", "Written {0} bytes to stream.", DecryptedStream.Length)
                     DecryptedStream.Position = 0
                     Dim DecryptedByte(DecryptedStream.Length) As Byte
                     DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
+                    Wdbg("I", "Written {0} bytes to buffer.", DecryptedByte.Length)
                     W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.HelpDef)
                 End If
             Else
@@ -127,14 +136,22 @@ Public Module MailTransfer
                 W(DoTranslation("Attachments:", currentLang), True, ColTypes.Neutral)
                 Dim AttachmentEntities As New List(Of MimeEntity)
                 If Decrypt Then
+                    Wdbg("I", "Parsing attachments...")
                     For DecryptedEntityNumber As Integer = 0 To DecryptedMessage.Count - 1
+                        Wdbg("I", "Is entity number {0} an attachment? {1}", DecryptedEntityNumber, DecryptedMessage.Keys(DecryptedEntityNumber).Contains("Attachment"))
+                        Wdbg("I", "Is entity number {0} a body that is a multipart? {1}", DecryptedEntityNumber, DecryptedMessage.Keys(DecryptedEntityNumber) = "Body" And TypeOf DecryptedMessage("Body") Is Multipart)
                         If DecryptedMessage.Keys(DecryptedEntityNumber).Contains("Attachment") Then
+                            Wdbg("I", "Adding entity {0} to attachment entities...", DecryptedEntityNumber)
                             AttachmentEntities.Add(DecryptedMessage.Values(DecryptedEntityNumber))
                         ElseIf DecryptedMessage.Keys(DecryptedEntityNumber) = "Body" And TypeOf DecryptedMessage("Body") Is Multipart Then
                             Dim MultiEntity As Multipart = CType(DecryptedMessage("Body"), Multipart)
+                            Wdbg("I", $"Decrypted message entity is {If(Not IsNothing(MultiEntity), "multipart", "nothing")}")
                             If Not IsNothing(MultiEntity) Then
+                                Wdbg("I", "{0} entities found.", MultiEntity.Count)
                                 For EntityNumber As Integer = 0 To MultiEntity.Count - 1
+                                    Wdbg("I", $"Entity number {EntityNumber} is {If(MultiEntity(EntityNumber).IsAttachment, "an attachment", "not an attachment")}")
                                     If MultiEntity(EntityNumber).IsAttachment Then
+                                        Wdbg("I", "Adding entity {0} to attachment list...", EntityNumber)
                                         AttachmentEntities.Add(MultiEntity(EntityNumber))
                                     End If
                                 Next
@@ -167,18 +184,27 @@ Public Module MailTransfer
     ''' <returns>A decrypted message, or null if unsuccessful.</returns>
     Public Function DecryptMessage(ByVal Text As MimeMessage) As Dictionary(Of String, MimeEntity)
         Dim EncryptedDict As New Dictionary(Of String, MimeEntity)
+        Wdbg("I", $"Encrypted message type: {If(TypeOf Text.Body Is MultipartEncrypted, "Multipart", "Singlepart")}")
         If TypeOf Text.Body Is MultipartEncrypted Then
             Dim Encrypted = CType(Text.Body, MultipartEncrypted)
+            Wdbg("I", $"Message type: {If(Not IsNothing(Encrypted), "MultipartEncrypted", "Nothing")}")
+            Wdbg("I", "Decrypting...")
             EncryptedDict.Add("Body", Encrypted.Decrypt(New PGPContext))
         Else
+            Wdbg("W", "Trying to decrypt plain text. Returning body...")
             EncryptedDict.Add("Body", Text.Body)
         End If
         Dim AttachmentNumber As Integer = 1
         For Each TextAttachment As MimeEntity In Text.Attachments
+            Wdbg("I", "Attachment number {0}", AttachmentNumber)
+            Wdbg("I", $"Encrypted attachment type: {If(TypeOf TextAttachment Is MultipartEncrypted, "Multipart", "Singlepart")}")
             If TypeOf TextAttachment Is MultipartEncrypted Then
                 Dim Encrypted = CType(TextAttachment, MultipartEncrypted)
+                Wdbg("I", $"Attachment type: {If(Not IsNothing(Encrypted), "MultipartEncrypted", "Nothing")}")
+                Wdbg("I", "Decrypting...")
                 EncryptedDict.Add("Attachment " & AttachmentNumber, Encrypted.Decrypt(New PGPContext))
             Else
+                Wdbg("W", "Trying to decrypt plain attachment. Returning body...")
                 EncryptedDict.Add("Attachment " & AttachmentNumber, TextAttachment)
             End If
             AttachmentNumber += 1
