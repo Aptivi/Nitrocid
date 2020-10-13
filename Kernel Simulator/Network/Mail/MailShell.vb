@@ -100,9 +100,9 @@ Module MailShell
             Wdbg("W", "Exit requested, but not disconnecting.")
         Else
             Wdbg("W", "Exit requested. Disconnecting host...")
+            ReleaseHandlers()
             IMAP_Client.Disconnect(True)
             SMTP_Client.Disconnect(True)
-            ReleaseHandlers()
         End If
         ExitRequested = False
 
