@@ -49,7 +49,7 @@ Public Module Notifications
         Dim OldNCount As Integer = NotifRecents.Count
         While Not NotifThread.ThreadState = ThreadState.AbortRequested
             Thread.Sleep(100)
-            If NotifRecents.Count > OldNCount Then
+            If NotifRecents.Count > OldNCount And Not InSaver Then
                 Wdbg("W", "Notification received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNCount)
                 Dim Title, Desc As String
                 Wdbg("I", "Title: {0}", NotifRecents(NotifRecents.Count - 1).Title)
