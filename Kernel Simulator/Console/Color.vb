@@ -34,7 +34,7 @@ Public Module Color
 
     'Templates array (available ones)
     Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "Windows95", "GTASA", "GrayOnYellow",
-                                         "BlackOnWhite", "LinuxUncolored", "LinuxColoredDef"}
+                                         "BlackOnWhite", "Debian", "LinuxUncolored", "LinuxColoredDef"}
 
     'Variables for the "Default" theme
     Public inputColorDef As ConsoleColors = inputColor
@@ -189,6 +189,20 @@ Public Module Color
     Public cmdDefColorBY As ConsoleColors = ConsoleColors.Black
     Public stageColorBY As ConsoleColors = ConsoleColors.Black
     Public errorColorBY As ConsoleColors = ConsoleColors.Black
+
+    'Variables for the "Debian" theme
+    Public inputColorD As ConsoleColors = ConsoleColors.White
+    Public licenseColorD As ConsoleColors = ConsoleColors.White
+    Public contKernelErrorColorD As ConsoleColors = ConsoleColors.White
+    Public uncontKernelErrorColorD As ConsoleColors = ConsoleColors.White
+    Public hostNameShellColorD As ConsoleColors = ConsoleColors.Gray
+    Public userNameShellColorD As ConsoleColors = ConsoleColors.Gray
+    Public backgroundColorD As ConsoleColors = ConsoleColors.DeepPink3
+    Public neutralTextColorD As ConsoleColors = ConsoleColors.White
+    Public cmdListColorD As ConsoleColors = ConsoleColors.White
+    Public cmdDefColorD As ConsoleColors = ConsoleColors.White
+    Public stageColorD As ConsoleColors = ConsoleColors.White
+    Public errorColorD As ConsoleColors = ConsoleColors.Gray
 
     'Variables for the "LinuxUncolored" theme
     Public inputColorLUnc As ConsoleColors = ConsoleColors.Gray
@@ -405,6 +419,20 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorBY), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorBY), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorBY), ConsoleColors)
+                LoadBack()
+            ElseIf theme = "Debian" Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorD), ConsoleColors)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorD), ConsoleColors)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), contKernelErrorColorD), ConsoleColors)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), uncontKernelErrorColorD), ConsoleColors)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), hostNameShellColorD), ConsoleColors)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), userNameShellColorD), ConsoleColors)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), backgroundColorD), ConsoleColors)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), neutralTextColorD), ConsoleColors)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorD), ConsoleColors)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorD), ConsoleColors)
+                stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorD), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorD), ConsoleColors)
                 LoadBack()
             ElseIf theme = "LinuxUncolored" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorLUnc), ConsoleColors)
@@ -628,6 +656,20 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorBY.ToString Then
             Wdbg("I", "Theme set to Black On White")
             currentTheme = "BlackOnWhite"
+        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorD.ToString And
+               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorD.ToString And
+               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorD.ToString And
+               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorD.ToString And
+               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorD.ToString And
+               ksconf.Sections("Colors").Keys("License Color").Value = licenseColorD.ToString And
+               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorD.ToString And
+               ksconf.Sections("Colors").Keys("Input Color").Value = inputColorD.ToString And
+               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorD.ToString And
+               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorD.ToString And
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorD.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorD.ToString Then
+            Wdbg("I", "Theme set to Debian")
+            currentTheme = "Debian"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorLUnc.ToString And
