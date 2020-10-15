@@ -196,11 +196,11 @@ Public Module HelpSystem
 
         ElseIf command = "chmotd" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chmotd <Message>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " chmotd [Message]", True, ColTypes.Neutral)
 
         ElseIf command = "chmal" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chmal <Message>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " chmal [Message]", True, ColTypes.Neutral)
 
         ElseIf command = "choice" Then
 

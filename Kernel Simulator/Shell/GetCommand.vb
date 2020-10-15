@@ -303,6 +303,11 @@ Public Module GetCommand
                         SetMOTD(strArgs, MessageType.MOTD)
                         Done = True
                     End If
+                Else
+                    InitializeTextShell(paths("Home") + "/MOTD.txt")
+                    W(DoTranslation("Changing MOTD...", currentLang), True, ColTypes.Neutral)
+                    ReadMOTDFromFile(MessageType.MOTD)
+                    Done = True
                 End If
 
             ElseIf words(0) = "chmal" Then
@@ -315,6 +320,11 @@ Public Module GetCommand
                         SetMOTD(strArgs, MessageType.MAL)
                         Done = True
                     End If
+                Else
+                    InitializeTextShell(paths("Home") + "/MAL.txt")
+                    W(DoTranslation("Changing MAL...", currentLang), True, ColTypes.Neutral)
+                    ReadMOTDFromFile(MessageType.MAL)
+                    Done = True
                 End If
 
             ElseIf words(0) = "choice" Then
