@@ -57,7 +57,7 @@ Public Module Shell
                 LogoutRequested = False
                 LoggedIn = False
                 Exit Sub
-            Else
+            ElseIf Not InSaver Then
                 Try
                     'Try to probe injected commands
                     Wdbg("I", "Probing injected commands using GetLine(True)...")
@@ -82,43 +82,45 @@ Public Module Shell
                     EventManager.RaiseShellInitialized()
                     strcommand = Console.ReadLine()
 
-                    'Fire event of PreRaiseCommand
-                    EventManager.RaisePreExecuteCommand()
+                    If Not InSaver Then
+                        'Fire event of PreRaiseCommand
+                        EventManager.RaisePreExecuteCommand()
 
-                    'Check for a type of command
-                    If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
-                        Dim Done As Boolean = False
-                        Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
-                        Wdbg("I", "Mod commands probing started with {0}", strcommand)
-                        For Each c As String In modcmnds
-                            If Parts(0) = c Then
-                                Done = True
-                                Wdbg("I", "Mod command: {0}", strcommand)
-                                ExecuteModCommand(strcommand)
+                        'Check for a type of command
+                        If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
+                            Dim Done As Boolean = False
+                            Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                            Wdbg("I", "Mod commands probing started with {0}", strcommand)
+                            For Each c As String In modcmnds
+                                If Parts(0) = c Then
+                                    Done = True
+                                    Wdbg("I", "Mod command: {0}", strcommand)
+                                    ExecuteModCommand(strcommand)
+                                End If
+                            Next
+                            Wdbg("I", "Aliases probing started with {0}", strcommand)
+                            For Each a As String In Aliases.Keys
+                                If Parts(0) = a Then
+                                    Done = True
+                                    Wdbg("I", "Alias: {0}", a)
+                                    ExecuteAlias(a)
+                                End If
+                            Next
+                            If Done = False Then
+                                Wdbg("I", "Executing built-in command")
+                                GetLine(False, strcommand)
                             End If
-                        Next
-                        Wdbg("I", "Aliases probing started with {0}", strcommand)
-                        For Each a As String In Aliases.Keys
-                            If Parts(0) = a Then
-                                Done = True
-                                Wdbg("I", "Alias: {0}", a)
-                                ExecuteAlias(a)
-                            End If
-                        Next
-                        If Done = False Then
-                            Wdbg("I", "Executing built-in command")
-                            GetLine(False, strcommand)
                         End If
-                    End If
 
-                    'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
-                    If IsNothing(strcommand) Then
-                        Console.WriteLine()
-                        Thread.Sleep(30) 'This is to fix race condition between shell initialization and starting the event handler thread
-                    End If
+                        'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
+                        If IsNothing(strcommand) Then
+                            Console.WriteLine()
+                            Thread.Sleep(30) 'This is to fix race condition between shell initialization and starting the event handler thread
+                        End If
 
-                    'Fire an event of PostExecuteCommand
-                    EventManager.RaisePostExecuteCommand()
+                        'Fire an event of PostExecuteCommand
+                        EventManager.RaisePostExecuteCommand()
+                    End If
                 Catch ex As Exception
                     If DebugMode = True Then
                         W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", True, ColTypes.Err,
