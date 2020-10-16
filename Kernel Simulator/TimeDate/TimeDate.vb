@@ -35,19 +35,20 @@ Public Module TimeDate
 
         Dim oldWid, oldTop As Integer
         Do While True
+            Dim TimeString As String = RenderTime() + " " + RenderDate()
             If TimeDateChange.CancellationPending = True Then
                 e.Cancel = True
                 Exit Do
             Else
                 KernelDateTime = Date.Now
                 If CornerTD = True And Not InSaver Then
-                    oldWid = Console.WindowWidth - 19
+                    oldWid = Console.WindowWidth - TimeString.Length - 1
                     oldTop = Console.WindowTop
-                    WriteWhere(KernelDateTime.ToShortTimeString + " " + KernelDateTime.ToShortDateString + vbNewLine, Console.WindowWidth - 19, Console.WindowTop, ColTypes.Neutral)
+                    WriteWhere(TimeString, Console.WindowWidth - TimeString.Length - 1, Console.WindowTop, ColTypes.Neutral)
                 End If
             End If
             Thread.Sleep(1000)
-            If oldWid <> 0 Then WriteWhere("                   ", oldWid, oldTop, ColTypes.Neutral)
+            If oldWid <> 0 Then WriteWhere(StrDup(TimeString.Length, " "), oldWid, oldTop, ColTypes.Neutral)
         Loop
 
     End Sub
