@@ -346,4 +346,14 @@ Imports KS
         Assert.AreEqual(ExpectedString, TargetString, "Removing space from beginning of string failed. Got ""{0}""", TargetString)
     End Sub
 
+    ''' <summary>
+    ''' Tests replacing all specified occurrences of strings with a single string
+    ''' </summary>
+    <TestMethod> Public Sub TestReplaceAll()
+        Dim ExpectedString As String = "Please test Kernel Simulator. This sub is a unit test."
+        Dim TargetString As String = "Please <replace> Kernel Simulator. This sub is a unit <replace2>."
+        TargetString = TargetString.ReplaceAll({"<replace>", "<replace2>"}, "test")
+        Assert.AreEqual(ExpectedString, TargetString, "String replacement failed. Got ""{0}""", TargetString)
+    End Sub
+
 End Class
