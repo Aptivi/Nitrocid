@@ -29,7 +29,7 @@
     <PackageProjectUrl>https://github.com/EoflaOE/Kernel-Simulator</PackageProjectUrl>
     <PackageIcon>iconfinder_applications-utilities_8840.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <PackageReleaseNotes>https://github.com/EoflaOE/Kernel-Simulator/blob/master/README.md#--------history--------</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/EoflaOE/Kernel-Simulator/wiki/History-of-KS#ks-00120-a-huge-release</PackageReleaseNotes>
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
