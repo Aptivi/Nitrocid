@@ -1082,12 +1082,12 @@ Public Module GetCommand
                         WeatherSpecifier += "F"
                         WindSpeedSpecifier = "mph"
                     End If
-                    W(DoTranslation("Temperature: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, WeatherInfo.Temperature)
-                    W(DoTranslation("Feels like: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, WeatherInfo.FeelsLike)
-                    W(DoTranslation("Wind speed: {0}", currentLang) + " hPa", True, ColTypes.Neutral, WeatherInfo.WindSpeed)
-                    W(DoTranslation("Wind direction: {0}", currentLang) + "°", True, ColTypes.Neutral, WeatherInfo.WindDirection)
-                    W(DoTranslation("Pressure: {0}", currentLang) + " hPa", True, ColTypes.Neutral, WeatherInfo.Pressure)
-                    W(DoTranslation("Humidity: {0}", currentLang) + "%", True, ColTypes.Neutral, WeatherInfo.Humidity)
+                    W(DoTranslation("Temperature: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, FormatNumber(WeatherInfo.Temperature, 2))
+                    W(DoTranslation("Feels like: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, FormatNumber(WeatherInfo.FeelsLike, 2))
+                    W(DoTranslation("Wind speed: {0}", currentLang) + " hPa", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindSpeed, 2))
+                    W(DoTranslation("Wind direction: {0}", currentLang) + "°", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindDirection, 2))
+                    W(DoTranslation("Pressure: {0}", currentLang) + " hPa", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Pressure, 2))
+                    W(DoTranslation("Humidity: {0}", currentLang) + "%", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Humidity, 2))
                 End If
 
             End If

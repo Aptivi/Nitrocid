@@ -50,12 +50,12 @@ Public Module Forecast
 
         'Put needed data to the class
         WeatherInfo.Weather = WeatherToken.SelectToken("weather").First.SelectToken("id").ToObject(GetType(WeatherCondition))
-        WeatherInfo.Temperature = WeatherToken.SelectToken("main").SelectToken("temp").ToObject(GetType(Long))
-        WeatherInfo.FeelsLike = WeatherToken.SelectToken("main").SelectToken("feels_like").ToObject(GetType(Long))
-        WeatherInfo.Pressure = WeatherToken.SelectToken("main").SelectToken("pressure").ToObject(GetType(Long))
-        WeatherInfo.Humidity = WeatherToken.SelectToken("main").SelectToken("humidity").ToObject(GetType(Long))
-        WeatherInfo.WindSpeed = WeatherToken.SelectToken("wind").SelectToken("speed").ToObject(GetType(Long))
-        WeatherInfo.WindDirection = WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(GetType(Long))
+        WeatherInfo.Temperature = WeatherToken.SelectToken("main").SelectToken("temp").ToObject(GetType(Double))
+        WeatherInfo.FeelsLike = WeatherToken.SelectToken("main").SelectToken("feels_like").ToObject(GetType(Double))
+        WeatherInfo.Pressure = WeatherToken.SelectToken("main").SelectToken("pressure").ToObject(GetType(Double))
+        WeatherInfo.Humidity = WeatherToken.SelectToken("main").SelectToken("humidity").ToObject(GetType(Double))
+        WeatherInfo.WindSpeed = WeatherToken.SelectToken("wind").SelectToken("speed").ToObject(GetType(Double))
+        WeatherInfo.WindDirection = WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(GetType(Double))
         WeatherInfo.CityName = WeatherToken.SelectToken("name").ToString
         Return WeatherInfo
     End Function
