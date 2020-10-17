@@ -1070,10 +1070,18 @@ Public Module GetCommand
                     APIKey = ReadLineNoInput("*")
                     Console.WriteLine()
                     Dim WeatherInfo As ForecastInfo = GetWeatherInfo(eqargs(0), APIKey, PreferredUnit)
+                    Dim WeatherSpecifier As String = "°"
                     W(DoTranslation("-- Weather info for {0} --", currentLang), True, ColTypes.Stage, WeatherInfo.CityName)
                     W(DoTranslation("Weather: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Weather)
-                    W(DoTranslation("Temperature: {0} ({1} unit)", currentLang), True, ColTypes.Neutral, WeatherInfo.Temperature, WeatherInfo.TemperatureMeasurement)
-                    W(DoTranslation("Feels like: {0} ({1} unit)", currentLang), True, ColTypes.Neutral, WeatherInfo.FeelsLike, WeatherInfo.TemperatureMeasurement)
+                    If WeatherInfo.TemperatureMeasurement = UnitMeasurement.Metric Then
+                        WeatherSpecifier += "C"
+                    ElseIf WeatherInfo.TemperatureMeasurement = UnitMeasurement.Kelvin Then
+                        WeatherSpecifier += "K"
+                    ElseIf WeatherInfo.TemperatureMeasurement = UnitMeasurement.Imperial Then
+                        WeatherSpecifier += "F"
+                    End If
+                    W(DoTranslation("Temperature: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, WeatherInfo.Temperature)
+                    W(DoTranslation("Feels like: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, WeatherInfo.FeelsLike)
                     W(DoTranslation("Pressure: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Pressure)
                     W(DoTranslation("Humidity: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Humidity)
                 End If

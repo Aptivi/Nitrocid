@@ -234,7 +234,8 @@ Public Module HardwareProbe
             CPUList.Add(New CPU_Linux With {.Clock = Clock, .CPUName = Name, .Arch = Arch, .SSE2 = SSE2})
         Catch ex As Exception
             CPUDone = False
-            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
+            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err)
+            WStkTrc(ex)
         End Try
 
         'RAM Prober
@@ -245,7 +246,8 @@ Public Module HardwareProbe
             RAMList.Add(New RAM_Linux With {.Capacity = mem})
         Catch ex As Exception
             RAMDone = False
-            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
+            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Err)
+            WStkTrc(ex)
         End Try
 
         'HDD Prober (You need to have inxi and libcpanel-json-xs-perl installed)
@@ -333,7 +335,8 @@ Public Module HardwareProbe
             End If
         Catch ex As Exception
             HDDDone = False
-            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
+            If DebugMode = True Then W(ex.StackTrace, True, ColTypes.Uncontinuable)
+            WStkTrc(ex)
         End Try
     End Sub
 
