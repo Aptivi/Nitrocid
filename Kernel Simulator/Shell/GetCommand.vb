@@ -1071,6 +1071,7 @@ Public Module GetCommand
                     Console.WriteLine()
                     Dim WeatherInfo As ForecastInfo = GetWeatherInfo(eqargs(0), APIKey, PreferredUnit)
                     Dim WeatherSpecifier As String = "°"
+                    Dim WindSpeedSpecifier As String = "m.s"
                     W(DoTranslation("-- Weather info for {0} --", currentLang), True, ColTypes.Stage, WeatherInfo.CityName)
                     W(DoTranslation("Weather: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Weather)
                     If WeatherInfo.TemperatureMeasurement = UnitMeasurement.Metric Then
@@ -1079,11 +1080,14 @@ Public Module GetCommand
                         WeatherSpecifier += "K"
                     ElseIf WeatherInfo.TemperatureMeasurement = UnitMeasurement.Imperial Then
                         WeatherSpecifier += "F"
+                        WindSpeedSpecifier = "mph"
                     End If
                     W(DoTranslation("Temperature: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, WeatherInfo.Temperature)
                     W(DoTranslation("Feels like: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, WeatherInfo.FeelsLike)
-                    W(DoTranslation("Pressure: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Pressure)
-                    W(DoTranslation("Humidity: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Humidity)
+                    W(DoTranslation("Wind speed: {0}", currentLang) + " hPa", True, ColTypes.Neutral, WeatherInfo.WindSpeed)
+                    W(DoTranslation("Wind direction: {0}", currentLang) + "°", True, ColTypes.Neutral, WeatherInfo.WindDirection)
+                    W(DoTranslation("Pressure: {0}", currentLang) + " hPa", True, ColTypes.Neutral, WeatherInfo.Pressure)
+                    W(DoTranslation("Humidity: {0}", currentLang) + "%", True, ColTypes.Neutral, WeatherInfo.Humidity)
                 End If
 
             End If

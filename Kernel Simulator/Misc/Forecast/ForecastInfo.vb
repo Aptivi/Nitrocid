@@ -45,13 +45,21 @@ Public Class ForecastInfo
     ''' </summary>
     Property FeelsLike As Double
     ''' <summary>
-    ''' Pressure
+    ''' Pressure in hPa
     ''' </summary>
     Property Pressure As Double
     ''' <summary>
-    ''' Humidity
+    ''' Humidity in percent
     ''' </summary>
     Property Humidity As Double
+    ''' <summary>
+    ''' Wind speed. Imperial: mph, Metric/Kelvin: m.s
+    ''' </summary>
+    Property WindSpeed As Double
+    ''' <summary>
+    ''' Wind direction in degrees
+    ''' </summary>
+    Property WindDirection As Double
 End Class
 
 ''' <summary>

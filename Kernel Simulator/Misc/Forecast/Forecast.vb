@@ -54,6 +54,8 @@ Public Module Forecast
         WeatherInfo.FeelsLike = WeatherToken.SelectToken("main").SelectToken("feels_like").ToObject(GetType(Long))
         WeatherInfo.Pressure = WeatherToken.SelectToken("main").SelectToken("pressure").ToObject(GetType(Long))
         WeatherInfo.Humidity = WeatherToken.SelectToken("main").SelectToken("humidity").ToObject(GetType(Long))
+        WeatherInfo.WindSpeed = WeatherToken.SelectToken("wind").SelectToken("speed").ToObject(GetType(Long))
+        WeatherInfo.WindDirection = WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(GetType(Long))
         WeatherInfo.CityName = WeatherToken.SelectToken("name").ToString
         Return WeatherInfo
     End Function
