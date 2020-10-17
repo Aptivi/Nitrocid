@@ -403,7 +403,7 @@ Public Module HardwareProbe
                   driveinfo.InterfaceType, driveinfo.Cylinders, driveinfo.Heads, driveinfo.Sectors)
             End If
             For Each PartInfo In HDDList(DriveNum).Parts
-                W("HDD ({5}): {0} {1} GB " + DoTranslation("Primary: {2} Bootable: {3} Boot partition: {4}", currentLang), True, ColTypes.Neutral, PartInfo.Type, FormatNumber(PartInfo.Size / 1024 / 1024 / 1024, 2), PartInfo.Primary, PartInfo.Bootable, PartInfo.Boot, DriveNum + 1)
+                W("HDD ({5}): {0} {1} GB | " + DoTranslation("Primary: {2} | Bootable: {3} | Boot partition: {4}", currentLang), True, ColTypes.Neutral, PartInfo.Type, FormatNumber(PartInfo.Size / 1024 / 1024 / 1024, 2), PartInfo.Primary, PartInfo.Bootable, PartInfo.Boot, DriveNum + 1)
             Next
             DriveNum += 1
         Next
