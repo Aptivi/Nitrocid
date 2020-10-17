@@ -492,8 +492,17 @@ Public Module GetCommand
                         Try
                             If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                                 If Not URL.StartsWith(" ") Then
+                                    Dim Credentials As NetworkCredential
+                                    If eqargs.Count > 1 Then 'Username specified
+                                        Credentials = New NetworkCredential With {
+                                            .UserName = eqargs(1)
+                                        }
+                                        W(DoTranslation("Enter password: ", currentLang), False, ColTypes.Input)
+                                        Credentials.Password = ReadLineNoInput("*")
+                                        Console.WriteLine()
+                                    End If
                                     W(DoTranslation("Downloading from {0}...", currentLang), True, ColTypes.Neutral, URL)
-                                    If DownloadFile(eqargs(0), ShowProgress) Then
+                                    If DownloadFile(eqargs(0), ShowProgress, Credentials) Then
                                         W(vbNewLine + DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
                                     End If
                                 Else
@@ -656,8 +665,17 @@ Public Module GetCommand
                         Try
                             If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                                 If Not URL.StartsWith(" ") Then
+                                    Dim Credentials As NetworkCredential
+                                    If eqargs.Count > 1 Then 'Username specified
+                                        Credentials = New NetworkCredential With {
+                                            .UserName = eqargs(1)
+                                        }
+                                        W(DoTranslation("Enter password: ", currentLang), False, ColTypes.Input)
+                                        Credentials.Password = ReadLineNoInput("*")
+                                        Console.WriteLine()
+                                    End If
                                     W(DoTranslation("Uploading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, URL)
-                                    If UploadFile(eqargs(0), ShowProgress) Then
+                                    If UploadFile(eqargs(0), ShowProgress, Credentials) Then
                                         W(vbNewLine + DoTranslation("Upload has completed.", currentLang), True, ColTypes.Neutral)
                                     End If
                                 Else
