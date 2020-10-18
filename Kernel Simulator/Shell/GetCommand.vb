@@ -483,7 +483,7 @@ Public Module GetCommand
                 Done = True
 
             ElseIf words(0) = "get" Then
-
+#Disable Warning BC42104
                 If eqargs?.Count <> 0 Then
                     Dim RetryCount As Integer = 1
                     Dim URL As String = eqargs(0)
@@ -522,7 +522,7 @@ Public Module GetCommand
                     End While
                     Done = True
                 End If
-
+#Enable Warning BC42104
             ElseIf words(0) = "input" Then
 
                 If eqargs?.Count > 1 Then
@@ -655,7 +655,7 @@ Public Module GetCommand
                 End If
 
             ElseIf words(0) = "put" Then
-
+#Disable Warning BC42104
                 If eqargs?.Count <> 0 Then
                     Dim RetryCount As Integer = 1
                     Dim FileName As String = NeutralizePath(eqargs(0))
@@ -695,7 +695,7 @@ Public Module GetCommand
                     End While
                     Done = True
                 End If
-
+#Enable Warning BC42104
             ElseIf requestedCommand = "reloadconfig" Then
 
                 'Reload configuration
