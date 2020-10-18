@@ -34,7 +34,7 @@ Public Module Color
 
     'Templates array (available ones)
     Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "Windows95", "GTASA", "GrayOnYellow",
-                                         "BlackOnWhite", "Debian", "LinuxUncolored", "LinuxColoredDef"}
+                                         "BlackOnWhite", "Debian", "NFSHP-Cop", "NFSHP-Racer", "LinuxUncolored", "LinuxColoredDef"}
 
     'Variables for the "Default" theme
     Public inputColorDef As ConsoleColors = inputColor
@@ -203,6 +203,34 @@ Public Module Color
     Public cmdDefColorD As ConsoleColors = ConsoleColors.White
     Public stageColorD As ConsoleColors = ConsoleColors.White
     Public errorColorD As ConsoleColors = ConsoleColors.Gray
+
+    'Variables for the "NFSHP-Cop" theme
+    Public inputColorNFSHPC As ConsoleColors = ConsoleColors.Red
+    Public licenseColorNFSHPC As ConsoleColors = ConsoleColors.Blue3
+    Public contKernelErrorColorNFSHPC As ConsoleColors = ConsoleColors.DarkBlue
+    Public uncontKernelErrorColorNFSHPC As ConsoleColors = ConsoleColors.DarkRed_870000
+    Public hostNameShellColorNFSHPC As ConsoleColors = ConsoleColors.DarkBlue
+    Public userNameShellColorNFSHPC As ConsoleColors = ConsoleColors.Red
+    Public backgroundColorNFSHPC As ConsoleColors = ConsoleColors.Black
+    Public neutralTextColorNFSHPC As ConsoleColors = ConsoleColors.DarkBlue
+    Public cmdListColorNFSHPC As ConsoleColors = ConsoleColors.DarkBlue
+    Public cmdDefColorNFSHPC As ConsoleColors = ConsoleColors.Red
+    Public stageColorNFSHPC As ConsoleColors = ConsoleColors.Red
+    Public errorColorNFSHPC As ConsoleColors = ConsoleColors.DarkRed_870000
+
+    'Variables for the "NFSHP-Racer" theme
+    Public inputColorNFSHPR As ConsoleColors = ConsoleColors.White
+    Public licenseColorNFSHPR As ConsoleColors = ConsoleColors.White
+    Public contKernelErrorColorNFSHPR As ConsoleColors = ConsoleColors.Orange4_875f00
+    Public uncontKernelErrorColorNFSHPR As ConsoleColors = ConsoleColors.DarkRed_870000
+    Public hostNameShellColorNFSHPR As ConsoleColors = ConsoleColors.Orange4_875f00
+    Public userNameShellColorNFSHPR As ConsoleColors = ConsoleColors.Orange3
+    Public backgroundColorNFSHPR As ConsoleColors = ConsoleColors.Black
+    Public neutralTextColorNFSHPR As ConsoleColors = ConsoleColors.Gold3_d7af00
+    Public cmdListColorNFSHPR As ConsoleColors = ConsoleColors.Orange4_875f00
+    Public cmdDefColorNFSHPR As ConsoleColors = ConsoleColors.White
+    Public stageColorNFSHPR As ConsoleColors = ConsoleColors.Yellow3_d7d700
+    Public errorColorNFSHPR As ConsoleColors = ConsoleColors.DarkRed_870000
 
     'Variables for the "LinuxUncolored" theme
     Public inputColorLUnc As ConsoleColors = ConsoleColors.Gray
@@ -433,6 +461,34 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorD), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorD), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorD), ConsoleColors)
+                LoadBack()
+            ElseIf theme = "NFSHP-Cop" Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorNFSHPC), ConsoleColors)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorNFSHPC), ConsoleColors)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), contKernelErrorColorNFSHPC), ConsoleColors)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), uncontKernelErrorColorNFSHPC), ConsoleColors)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), hostNameShellColorNFSHPC), ConsoleColors)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), userNameShellColorNFSHPC), ConsoleColors)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), backgroundColorNFSHPC), ConsoleColors)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), neutralTextColorNFSHPC), ConsoleColors)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorNFSHPC), ConsoleColors)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorNFSHPC), ConsoleColors)
+                stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorNFSHPC), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorNFSHPC), ConsoleColors)
+                LoadBack()
+            ElseIf theme = "NFSHP-Racer" Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorNFSHPR), ConsoleColors)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorNFSHPR), ConsoleColors)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), contKernelErrorColorNFSHPR), ConsoleColors)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), uncontKernelErrorColorNFSHPR), ConsoleColors)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), hostNameShellColorNFSHPR), ConsoleColors)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), userNameShellColorNFSHPR), ConsoleColors)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), backgroundColorNFSHPR), ConsoleColors)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), neutralTextColorNFSHPR), ConsoleColors)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorNFSHPR), ConsoleColors)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorNFSHPR), ConsoleColors)
+                stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorNFSHPR), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorNFSHPR), ConsoleColors)
                 LoadBack()
             ElseIf theme = "LinuxUncolored" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorLUnc), ConsoleColors)
@@ -670,6 +726,34 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorD.ToString Then
             Wdbg("I", "Theme set to Debian")
             currentTheme = "Debian"
+        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("License Color").Value = licenseColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("Input Color").Value = inputColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorNFSHPC.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorNFSHPC.ToString Then
+            Wdbg("I", "Theme set to Need for Speed: Hot Pursuit (Cop)")
+            currentTheme = "NFSHP-Cop"
+        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("License Color").Value = licenseColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("Input Color").Value = inputColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorNFSHPR.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorNFSHPR.ToString Then
+            Wdbg("I", "Theme set to Need for Speed: Hot Pursuit (Racer)")
+            currentTheme = "NFSHP-Racer"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorLUnc.ToString And
