@@ -146,6 +146,28 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
+    ''' Simplifies the path to the correct one. It converts the path format to the unified format.
+    ''' </summary>
+    ''' <param name="Path">Target path, be it a file or a folder</param>
+    ''' <param name="Source">Source path in which the target is found. Must be a directory</param>
+    ''' <returns>Absolute path</returns>
+    Public Function NeutralizePath(ByVal Path As String, ByVal Source As String)
+        Path = Path.Replace("\", "/")
+        Source = Source.Replace("\", "/")
+        If (EnvironmentOSType.Contains("Windows") And Not Path.Contains(":/")) Or (EnvironmentOSType.Contains("Unix") And Not Path.StartsWith("/")) Then
+            Path = $"{Source}/{Path}"
+        End If
+        Wdbg("I", "Prototype directory: {0}", Path)
+        If Not Source = "" Then
+            If Path.Contains(Source.Replace("\", "/")) And Path.AllIndexesOf(Source.Replace("\", "/")).Count > 1 Then
+                Path = ReplaceLastOccurrence(Path, Source, "")
+            End If
+        End If
+        Wdbg("I", "Final directory: {0}", Path)
+        Return Path
+    End Function
+
+    ''' <summary>
     ''' Copies a file or directory
     ''' </summary>
     ''' <param name="Source">Source file or directory</param>

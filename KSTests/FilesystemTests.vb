@@ -45,6 +45,16 @@ Imports KS
     End Sub
 
     ''' <summary>
+    ''' Tests path neutralization on a folder in a custom directory
+    ''' </summary>
+    <TestMethod()> Public Sub TestNeutralizePathsCustom()
+        Dim TestPath As String = "sources.list"
+        Dim TargetPath As String = "/etc/apt"
+        Dim NeutPath As String = NeutralizePath(TestPath, TargetPath)
+        Assert.AreEqual(TargetPath + "/" + TestPath, NeutPath, "Path is not properly neutralized. Expected {0}, got {1}", TargetPath + "/" + TestPath, NeutPath)
+    End Sub
+
+    ''' <summary>
     ''' Tests current directory setting
     ''' </summary>
     <TestMethod()> Public Sub TestSetCurrDir()
