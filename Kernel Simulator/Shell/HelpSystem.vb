@@ -258,7 +258,7 @@ Public Module HelpSystem
 
         ElseIf command = "get" Then
 
-            W(DoTranslation("Usage:", currentLang) + " get <URL>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " get <URL> [username]", True, ColTypes.Neutral)
 
         ElseIf command = "input" Then
 
@@ -336,7 +336,7 @@ Public Module HelpSystem
 
         ElseIf command = "put" Then
 
-            W(DoTranslation("Usage:", currentLang) + " put <FileName> <URL>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " put <FileName> <URL> [username]", True, ColTypes.Neutral)
 
         ElseIf command = "rm" Then
 
