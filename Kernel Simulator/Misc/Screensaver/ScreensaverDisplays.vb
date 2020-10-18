@@ -678,7 +678,7 @@ IFCANCEL:
                 Wdbg("I", "All clean. Dissolve screensaver stopped.")
                 Exit Do
             Else
-                Thread.Sleep(1)
+                If ColorFilled Then Thread.Sleep(1)
                 Dim EndLeft As Integer = Console.WindowWidth - 1
                 Dim EndTop As Integer = Console.WindowHeight - 1
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
