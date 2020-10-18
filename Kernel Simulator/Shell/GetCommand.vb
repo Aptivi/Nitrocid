@@ -666,16 +666,16 @@ Public Module GetCommand
                             If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                                 If Not URL.StartsWith(" ") Then
                                     Dim Credentials As NetworkCredential
-                                    If eqargs.Count > 1 Then 'Username specified
+                                    If eqargs.Count > 2 Then 'Username specified
                                         Credentials = New NetworkCredential With {
-                                            .UserName = eqargs(1)
+                                            .UserName = eqargs(2)
                                         }
                                         W(DoTranslation("Enter password: ", currentLang), False, ColTypes.Input)
                                         Credentials.Password = ReadLineNoInput("*")
                                         Console.WriteLine()
                                     End If
                                     W(DoTranslation("Uploading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, URL)
-                                    If UploadFile(eqargs(0), ShowProgress, Credentials) Then
+                                    If UploadFile(FileName, URL, ShowProgress, Credentials) Then
                                         W(vbNewLine + DoTranslation("Upload has completed.", currentLang), True, ColTypes.Neutral)
                                     End If
                                 Else

@@ -215,16 +215,8 @@ Public Module NetworkTools
     ''' <param name="ShowProgress">Whether or not to show progress bar</param>
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-    Public Function UploadFile(ByVal URL As String, ByVal ShowProgress As Boolean, Optional ByVal Credentials As NetworkCredential = Nothing) As Boolean
-        'Limit the filename to the name without any URL arguments
-        Dim FileName As String = URL.Split("/").Last()
-        Wdbg("I", "Prototype Filename: {0}", FileName)
-        If FileName.Contains("?") Then
-            FileName = FileName.Remove(FileName.IndexOf("?"c))
-        End If
-        Wdbg("I", "Finished Filename: {0}", FileName)
-
-        'Download a file
+    Public Function UploadFile(ByVal File As String, ByVal URL As String, ByVal ShowProgress As Boolean, Optional ByVal Credentials As NetworkCredential = Nothing) As Boolean
+        'Upload a file
         Wdbg("I", "Directory location: {0}", CurrDir)
         Dim WClient As New WebClient
         If Not IsNothing(Credentials) Then
@@ -232,7 +224,7 @@ Public Module NetworkTools
         End If
         If ShowProgress Then AddHandler WClient.UploadProgressChanged, AddressOf UploadManager
         AddHandler WClient.UploadFileCompleted, AddressOf UploadChecker
-        WClient.UploadFileAsync(New Uri(URL), NeutralizePath(FileName))
+        WClient.UploadFileAsync(New Uri(URL), File)
         While Not UFinish
         End While
         UFinish = False
