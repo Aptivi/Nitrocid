@@ -39,7 +39,7 @@ Public Module PlaceParse
     ''' <returns>A string that has the parsed placeholders</returns>
     Public Function ProbePlaces(ByVal text As String) As String
 
-        EventManager.RaisePlaceholderParsing()
+        EventManager.RaisePlaceholderParsing(text)
         Try
             Wdbg("I", "Parsing text for placeholders...")
             If text.Contains(userplace) Then
@@ -82,7 +82,7 @@ Public Module PlaceParse
                 Wdbg("I", "System placeholder found.")
                 text = text.Replace(sysplace, EnvironmentOSType)
             End If
-            EventManager.RaisePlaceholderParsed()
+            EventManager.RaisePlaceholderParsed(text)
         Catch nre As NullReferenceException
             Dim STrace As New StackTrace(True)
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)

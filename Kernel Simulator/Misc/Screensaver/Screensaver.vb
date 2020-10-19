@@ -108,7 +108,7 @@ Public Module Screensaver
         Try
             InSaver = True
             ScrnTimeReached = True
-            EventManager.RaisePreShowScreensaver()
+            EventManager.RaisePreShowScreensaver(saver)
             Wdbg("I", "Requested screensaver: {0}", saver)
             If saver = "colorMix" Then
                 ColorMix.WorkerSupportsCancellation = True
@@ -204,7 +204,7 @@ Public Module Screensaver
                 W(DoTranslation("The requested screensaver {0} is not found.", currentLang), True, ColTypes.Err, saver)
                 Wdbg("I", "Screensaver {0} not found in the dictionary.", saver)
             End If
-            EventManager.RaisePostShowScreensaver()
+            EventManager.RaisePostShowScreensaver(saver)
             InSaver = False
         Catch ex As InvalidOperationException
             W(DoTranslation("Error when trying to start screensaver, because of an invalid operation.", currentLang), True, ColTypes.Err)
@@ -355,7 +355,7 @@ Public Module Screensaver
     Public Sub LockScreen()
         LockMode = True
         ShowSavers(defSaverName)
-        EventManager.RaisePreUnlock()
+        EventManager.RaisePreUnlock(defSaverName)
         ShowPasswordPrompt(signedinusrnm)
     End Sub
 

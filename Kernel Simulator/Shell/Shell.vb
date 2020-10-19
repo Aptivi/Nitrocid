@@ -84,7 +84,7 @@ Public Module Shell
 
                     If Not InSaver Then
                         'Fire event of PreRaiseCommand
-                        EventManager.RaisePreExecuteCommand()
+                        EventManager.RaisePreExecuteCommand(strcommand)
 
                         'Check for a type of command
                         If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
@@ -119,7 +119,7 @@ Public Module Shell
                         End If
 
                         'Fire an event of PostExecuteCommand
-                        EventManager.RaisePostExecuteCommand()
+                        EventManager.RaisePostExecuteCommand(strcommand)
                     End If
                 Catch ex As Exception
                     If DebugMode = True Then

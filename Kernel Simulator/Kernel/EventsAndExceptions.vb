@@ -18,58 +18,58 @@
 
 Public Class EventsAndExceptions
 
-    'These events are fired by their Raise<EventName>() subs
+    'These events are fired by their Raise<EventName>() subs and are responded by their Respond<EventName>() subs.
     Public Event KernelStarted()
     Public Event PreLogin()
-    Public Event PostLogin()
+    Public Event PostLogin(ByVal Username As String)
     Public Event ShellInitialized()
-    Public Event PreExecuteCommand()
-    Public Event PostExecuteCommand()
-    Public Event KernelError()
-    Public Event ContKernelError()
+    Public Event PreExecuteCommand(ByVal Command As String)
+    Public Event PostExecuteCommand(ByVal Command As String)
+    Public Event KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object)
+    Public Event ContKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object)
     Public Event PreShutdown()
     Public Event PostShutdown()
     Public Event PreReboot()
     Public Event PostReboot()
-    Public Event PreShowScreensaver()
-    Public Event PostShowScreensaver() 'After a key is pressed after screensaver is shown
-    Public Event PreUnlock()
-    Public Event PostUnlock()
-    Public Event CommandError()
+    Public Event PreShowScreensaver(ByVal Screensaver As String)
+    Public Event PostShowScreensaver(ByVal Screensaver As String) 'After a key is pressed after screensaver is shown
+    Public Event PreUnlock(ByVal Screensaver As String)
+    Public Event PostUnlock(ByVal Screensaver As String)
+    Public Event CommandError(ByVal Command As String, ByVal Exception As Exception)
     Public Event PreReloadConfig()
     Public Event PostReloadConfig()
-    Public Event PlaceholderParsing()
-    Public Event PlaceholderParsed()
+    Public Event PlaceholderParsing(ByVal Target As String)
+    Public Event PlaceholderParsed(ByVal Target As String)
     Public Event GarbageCollected()
     Public Event FTPShellInitialized()
-    Public Event FTPPreExecuteCommand()
-    Public Event FTPPostExecuteCommand()
-    Public Event FTPCommandError()
-    Public Event FTPPreDownload()
-    Public Event FTPPostDownload(ByVal Success As Boolean)
-    Public Event FTPPreUpload()
-    Public Event FTPPostUpload(ByVal Success As Boolean)
+    Public Event FTPPreExecuteCommand(ByVal Command As String)
+    Public Event FTPPostExecuteCommand(ByVal Command As String)
+    Public Event FTPCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Event FTPPreDownload(ByVal File As String)
+    Public Event FTPPostDownload(ByVal File As String, ByVal Success As Boolean)
+    Public Event FTPPreUpload(ByVal File As String)
+    Public Event FTPPostUpload(ByVal File As String, ByVal Success As Boolean)
     Public Event IMAPShellInitialized()
-    Public Event IMAPPreExecuteCommand()
-    Public Event IMAPPostExecuteCommand()
-    Public Event IMAPCommandError()
-    Public Event RemoteDebugConnectionAccepted()
-    Public Event RemoteDebugConnectionDisconnected()
-    Public Event RemoteDebugExecuteCommand()
-    Public Event RemoteDebugCommandError()
-    Public Event RPCCommandSent()
-    Public Event RPCCommandReceived()
-    Public Event RPCCommandError()
-    Public Event SSHConnected()
+    Public Event IMAPPreExecuteCommand(ByVal Command As String)
+    Public Event IMAPPostExecuteCommand(ByVal Command As String)
+    Public Event IMAPCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Event RemoteDebugConnectionAccepted(ByVal IP As String)
+    Public Event RemoteDebugConnectionDisconnected(ByVal IP As String)
+    Public Event RemoteDebugExecuteCommand(ByVal IP As String, ByVal Command As String)
+    Public Event RemoteDebugCommandError(ByVal IP As String, ByVal Command As String, ByVal Exception As Exception)
+    Public Event RPCCommandSent(ByVal Command As String)
+    Public Event RPCCommandReceived(ByVal Command As String)
+    Public Event RPCCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Event SSHConnected(ByVal Target As String)
     Public Event SSHDisconnected()
-    Public Event SSHError()
-    Public Event UESHPreExecute()
-    Public Event UESHPostExecute()
-    Public Event UESHError()
+    Public Event SSHError(ByVal Exception As Exception)
+    Public Event UESHPreExecute(ByVal Command As String)
+    Public Event UESHPostExecute(ByVal Command As String)
+    Public Event UESHError(ByVal Command As String, ByVal Exception As Exception)
     Public Event TextShellInitialized()
-    Public Event TextPreExecuteCommand()
-    Public Event TextPostExecuteCommand()
-    Public Event TextCommandError()
+    Public Event TextPreExecuteCommand(ByVal Command As String)
+    Public Event TextPostExecuteCommand(ByVal Command As String)
+    Public Event TextCommandError(ByVal Command As String, ByVal Exception As Exception)
 
     ''' <summary>
     ''' Makes the mod respond to the event of kernel start
@@ -96,11 +96,11 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Makes the mod respond to the event of post-login
     ''' </summary>
-    Public Sub RespondPostLogin() Handles Me.PostLogin
+    Public Sub RespondPostLogin(ByVal Username As String) Handles Me.PostLogin
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostLogin()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostLogin")
+                script.InitEvents("PostLogin", Username)
             Next
         Next
     End Sub
@@ -118,44 +118,44 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Makes the mod respond to the event of pre-execute command
     ''' </summary>
-    Public Sub RespondPreExecuteCommand() Handles Me.PreExecuteCommand
+    Public Sub RespondPreExecuteCommand(ByVal Command As String) Handles Me.PreExecuteCommand
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreExecuteCommand")
+                script.InitEvents("PreExecuteCommand", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-execute command
     ''' </summary>
-    Public Sub RespondPostExecuteCommand() Handles Me.PostExecuteCommand
+    Public Sub RespondPostExecuteCommand(ByVal Command As String) Handles Me.PostExecuteCommand
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostExecuteCommand")
+                script.InitEvents("PostExecuteCommand", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of kernel error
     ''' </summary>
-    Public Sub RespondKernelError() Handles Me.KernelError
+    Public Sub RespondKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object) Handles Me.KernelError
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event KernelError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("KernelError")
+                script.InitEvents("KernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of continuable kernel error
     ''' </summary>
-    Public Sub RespondContKernelError() Handles Me.ContKernelError
+    Public Sub RespondContKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object) Handles Me.ContKernelError
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ContKernelError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ContKernelError")
+                script.InitEvents("ContKernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables)
             Next
         Next
     End Sub
@@ -206,55 +206,55 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Makes the mod respond to the event of pre-screensaver show
     ''' </summary>
-    Public Sub RespondPreShowScreensaver() Handles Me.PreShowScreensaver
+    Public Sub RespondPreShowScreensaver(ByVal Screensaver As String) Handles Me.PreShowScreensaver
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreShowScreensaver()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreShowScreensaver")
+                script.InitEvents("PreShowScreensaver", Screensaver)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-screensaver show
     ''' </summary>
-    Public Sub RespondPostShowScreensaver() Handles Me.PostShowScreensaver
+    Public Sub RespondPostShowScreensaver(ByVal Screensaver As String) Handles Me.PostShowScreensaver
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostShowScreensaver()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostShowScreensaver")
+                script.InitEvents("PostShowScreensaver", Screensaver)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of pre-unlock
     ''' </summary>
-    Public Sub RespondPreUnlock() Handles Me.PreUnlock
+    Public Sub RespondPreUnlock(ByVal Screensaver As String) Handles Me.PreUnlock
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreUnlock()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreUnlock")
+                script.InitEvents("PreUnlock", Screensaver)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-unlock
     ''' </summary>
-    Public Sub RespondPostUnlock() Handles Me.PostUnlock
+    Public Sub RespondPostUnlock(ByVal Screensaver As String) Handles Me.PostUnlock
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostUnlock()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostUnlock")
+                script.InitEvents("PostUnlock", Screensaver)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of command error
     ''' </summary>
-    Public Sub RespondCommandError() Handles Me.CommandError
+    Public Sub RespondCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.CommandError
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event CommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("CommandError")
+                script.InitEvents("CommandError", Command, Exception)
             Next
         Next
     End Sub
@@ -283,22 +283,22 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Makes the mod respond to the event of a placeholder being parsed
     ''' </summary>
-    Public Sub RespondPlaceholderParsing() Handles Me.PlaceholderParsing
+    Public Sub RespondPlaceholderParsing(ByVal Target As String) Handles Me.PlaceholderParsing
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PlaceholderParsing()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PlaceholderParsing")
+                script.InitEvents("PlaceholderParsing", Target)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of a parsed placeholder
     ''' </summary>
-    Public Sub RespondPlaceholderParsed() Handles Me.PlaceholderParsed
+    Public Sub RespondPlaceholderParsed(ByVal Target As String) Handles Me.PlaceholderParsed
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PlaceholderParsed()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PlaceholderParsed")
+                script.InitEvents("PlaceholderParsed", Target)
             Next
         Next
     End Sub
@@ -327,77 +327,77 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
-    Public Sub RespondFTPPreExecuteCommand() Handles Me.FTPPreExecuteCommand
+    Public Sub RespondFTPPreExecuteCommand(ByVal Command As String) Handles Me.FTPPreExecuteCommand
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPreExecuteCommand")
+                script.InitEvents("FTPPreExecuteCommand", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
-    Public Sub RespondFTPPostExecuteCommand() Handles Me.FTPPostExecuteCommand
+    Public Sub RespondFTPPostExecuteCommand(ByVal Command As String) Handles Me.FTPPostExecuteCommand
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPostExecuteCommand")
+                script.InitEvents("FTPPostExecuteCommand", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP command error
     ''' </summary>
-    Public Sub RespondFTPCommandError() Handles Me.FTPCommandError
+    Public Sub RespondFTPCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.FTPCommandError
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPCommandError")
+                script.InitEvents("FTPCommandError", Command, Exception)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP pre-download
     ''' </summary>
-    Public Sub RespondFTPPreDownload() Handles Me.FTPPreDownload
+    Public Sub RespondFTPPreDownload(ByVal File As String) Handles Me.FTPPreDownload
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPreDownload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPreDownload")
+                script.InitEvents("FTPPreDownload", File)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP post-download
     ''' </summary>
-    Public Sub RespondFTPPostDownload(ByVal Success As Boolean) Handles Me.FTPPostDownload
+    Public Sub RespondFTPPostDownload(ByVal File As String, ByVal Success As Boolean) Handles Me.FTPPostDownload
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPostDownload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPostDownload", Success)
+                script.InitEvents("FTPPostDownload", File, Success)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP pre-upload
     ''' </summary>
-    Public Sub RespondFTPPreUpload() Handles Me.FTPPreUpload
+    Public Sub RespondFTPPreUpload(ByVal File As String) Handles Me.FTPPreUpload
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPreUpload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPreUpload")
+                script.InitEvents("FTPPreUpload", File)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of FTP post-upload
     ''' </summary>
-    Public Sub RespondFTPPostUpload(ByVal Success As Boolean) Handles Me.FTPPostUpload
+    Public Sub RespondFTPPostUpload(ByVal File As String, ByVal Success As Boolean) Handles Me.FTPPostUpload
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPostUpload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPostUpload", Success)
+                script.InitEvents("FTPPostUpload", File, Success)
             Next
         Next
     End Sub
@@ -415,121 +415,121 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Makes the mod respond to the event of IMAP pre-command execution
     ''' </summary>
-    Public Sub RespondIMAPPreExecuteCommand() Handles Me.IMAPPreExecuteCommand
+    Public Sub RespondIMAPPreExecuteCommand(ByVal Command As String) Handles Me.IMAPPreExecuteCommand
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("IMAPPreExecuteCommand")
+                script.InitEvents("IMAPPreExecuteCommand", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of IMAP post-command execution
     ''' </summary>
-    Public Sub RespondIMAPPostExecuteCommand() Handles Me.IMAPPostExecuteCommand
+    Public Sub RespondIMAPPostExecuteCommand(ByVal Command As String) Handles Me.IMAPPostExecuteCommand
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("IMAPPostExecuteCommand")
+                script.InitEvents("IMAPPostExecuteCommand", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of IMAP command error
     ''' </summary>
-    Public Sub RespondIMAPCommandError() Handles Me.IMAPCommandError
+    Public Sub RespondIMAPCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.IMAPCommandError
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("IMAPCommandError")
+                script.InitEvents("IMAPCommandError", Command, Exception)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging connection accepted
     ''' </summary>
-    Public Sub RespondRemoteDebugConnectionAccepted() Handles Me.RemoteDebugConnectionAccepted
+    Public Sub RespondRemoteDebugConnectionAccepted(ByVal IP As String) Handles Me.RemoteDebugConnectionAccepted
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugConnectionAccepted()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RemoteDebugConnectionAccepted")
+                script.InitEvents("RemoteDebugConnectionAccepted", IP)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging connection disconnected
     ''' </summary>
-    Public Sub RespondRemoteDebugConnectionDisconnected() Handles Me.RemoteDebugConnectionDisconnected
+    Public Sub RespondRemoteDebugConnectionDisconnected(ByVal IP As String) Handles Me.RemoteDebugConnectionDisconnected
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugConnectionDisconnected()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RemoteDebugConnectionDisconnected")
+                script.InitEvents("RemoteDebugConnectionDisconnected", IP)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging command execution
     ''' </summary>
-    Public Sub RespondRemoteDebugExecuteCommand() Handles Me.RemoteDebugExecuteCommand
+    Public Sub RespondRemoteDebugExecuteCommand(ByVal IP As String, ByVal Command As String) Handles Me.RemoteDebugExecuteCommand
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RemoteDebugExecuteCommand")
+                script.InitEvents("RemoteDebugExecuteCommand", IP, Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging command error
     ''' </summary>
-    Public Sub RespondRemoteDebugCommandError() Handles Me.RemoteDebugCommandError
+    Public Sub RespondRemoteDebugCommandError(ByVal IP As String, ByVal Command As String, ByVal Exception As Exception) Handles Me.RemoteDebugCommandError
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RemoteDebugCommandError")
+                script.InitEvents("RemoteDebugCommandError", IP, Command, Exception)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command sent
     ''' </summary>
-    Public Sub RespondRPCCommandSent() Handles Me.RPCCommandSent
+    Public Sub RespondRPCCommandSent(ByVal Command As String) Handles Me.RPCCommandSent
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RPCCommandSent()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RPCCommandSent")
+                script.InitEvents("RPCCommandSent", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command received
     ''' </summary>
-    Public Sub RespondRPCCommandReceived() Handles Me.RPCCommandReceived
+    Public Sub RespondRPCCommandReceived(ByVal Command As String) Handles Me.RPCCommandReceived
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RPCCommandReceived()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RPCCommandReceived")
+                script.InitEvents("RPCCommandReceived", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command error
     ''' </summary>
-    Public Sub RespondRPCCommandError() Handles Me.RPCCommandError
+    Public Sub RespondRPCCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.RPCCommandError
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RPCCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RPCCommandError")
+                script.InitEvents("RPCCommandError", Command, Exception)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of SSH being connected
     ''' </summary>
-    Public Sub RespondSSHConnected() Handles Me.SSHConnected
+    Public Sub RespondSSHConnected(ByVal Target As String) Handles Me.SSHConnected
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SSHConnected()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SSHConnected")
+                script.InitEvents("SSHConnected", Target)
             Next
         Next
     End Sub
@@ -547,44 +547,44 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Makes the mod respond to the event of SSH error
     ''' </summary>
-    Public Sub RespondSSHError() Handles Me.SSHError
+    Public Sub RespondSSHError(ByVal Exception As Exception) Handles Me.SSHError
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SSHError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SSHError")
+                script.InitEvents("SSHError", Exception)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of UESH pre-execute
     ''' </summary>
-    Public Sub RespondUESHPreExecute() Handles Me.UESHPreExecute
+    Public Sub RespondUESHPreExecute(ByVal Command As String) Handles Me.UESHPreExecute
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event UESHPreExecute()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("UESHPreExecute")
+                script.InitEvents("UESHPreExecute", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of UESH post-execute
     ''' </summary>
-    Public Sub RespondUESHPostExecute() Handles Me.UESHPostExecute
+    Public Sub RespondUESHPostExecute(ByVal Command As String) Handles Me.UESHPostExecute
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event UESHPostExecute()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("UESHPostExecute")
+                script.InitEvents("UESHPostExecute", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of UESH post-execute
     ''' </summary>
-    Public Sub RespondUESHError() Handles Me.UESHError
+    Public Sub RespondUESHError(ByVal Command As String, ByVal Exception As Exception) Handles Me.UESHError
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event UESHError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("UESHError")
+                script.InitEvents("UESHError", Command, Exception)
             Next
         Next
     End Sub
@@ -602,33 +602,33 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Makes the mod respond to the event of text pre-command execution
     ''' </summary>
-    Public Sub RespondTextPreExecuteCommand() Handles Me.TextPreExecuteCommand
+    Public Sub RespondTextPreExecuteCommand(ByVal Command As String) Handles Me.TextPreExecuteCommand
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event TextPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("TextPreExecuteCommand")
+                script.InitEvents("TextPreExecuteCommand", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of text post-command execution
     ''' </summary>
-    Public Sub RespondTextPostExecuteCommand() Handles Me.TextPostExecuteCommand
+    Public Sub RespondTextPostExecuteCommand(ByVal Command As String) Handles Me.TextPostExecuteCommand
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event TextPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("TextPostExecuteCommand")
+                script.InitEvents("TextPostExecuteCommand", Command)
             Next
         Next
     End Sub
     ''' <summary>
     ''' Makes the mod respond to the event of text command error
     ''' </summary>
-    Public Sub RespondTextCommandError() Handles Me.TextCommandError
+    Public Sub RespondTextCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.TextCommandError
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event TextCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("TextCommandError")
+                script.InitEvents("TextCommandError", Command, Exception)
             Next
         Next
     End Sub
@@ -651,9 +651,9 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Raise an event of post-login
     ''' </summary>
-    Public Sub RaisePostLogin()
+    Public Sub RaisePostLogin(ByVal Username As String)
         Wdbg("I", "Raising event PostLogin() and responding in RespondPostLogin()...")
-        RaiseEvent PostLogin()
+        RaiseEvent PostLogin(Username)
     End Sub
     ''' <summary>
     ''' Raise an event of shell initialized
@@ -665,30 +665,30 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Raise an event of pre-command execution
     ''' </summary>
-    Public Sub RaisePreExecuteCommand()
+    Public Sub RaisePreExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event PreExecuteCommand() and responding in RespondPreExecuteCommand()...")
-        RaiseEvent PreExecuteCommand()
+        RaiseEvent PreExecuteCommand(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of post-command execution
     ''' </summary>
-    Public Sub RaisePostExecuteCommand()
+    Public Sub RaisePostExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event PostExecuteCommand() and responding in RespondPostExecuteCommand()...")
-        RaiseEvent PostExecuteCommand()
+        RaiseEvent PostExecuteCommand(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of kernel error
     ''' </summary>
-    Public Sub RaiseKernelError()
+    Public Sub RaiseKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object)
         Wdbg("I", "Raising event KernelError() and responding in RespondKernelError()...")
-        RaiseEvent KernelError()
+        RaiseEvent KernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
     End Sub
     ''' <summary>
     ''' Raise an event of continuable kernel error
     ''' </summary>
-    Public Sub RaiseContKernelError()
+    Public Sub RaiseContKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object)
         Wdbg("I", "Raising event ContKernelError() and responding in RespondContKernelError()...")
-        RaiseEvent ContKernelError()
+        RaiseEvent ContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
     End Sub
     ''' <summary>
     ''' Raise an event of pre-shutdown
@@ -721,37 +721,37 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Raise an event of pre-show screensaver
     ''' </summary>
-    Public Sub RaisePreShowScreensaver()
+    Public Sub RaisePreShowScreensaver(ByVal Screensaver As String)
         Wdbg("I", "Raising event PreShowScreensaver() and responding in RespondPreShowScreensaver()...")
-        RaiseEvent PreShowScreensaver()
+        RaiseEvent PreShowScreensaver(Screensaver)
     End Sub
     ''' <summary>
     ''' Raise an event of post-show screensaver
     ''' </summary>
-    Public Sub RaisePostShowScreensaver()
+    Public Sub RaisePostShowScreensaver(ByVal Screensaver As String)
         Wdbg("I", "Raising event PostShowScreensaver() and responding in RespondPostShowScreensaver()...")
-        RaiseEvent PostShowScreensaver()
+        RaiseEvent PostShowScreensaver(Screensaver)
     End Sub
     ''' <summary>
     ''' Raise an event of pre-unlock
     ''' </summary>
-    Public Sub RaisePreUnlock()
+    Public Sub RaisePreUnlock(ByVal Screensaver As String)
         Wdbg("I", "Raising event PreUnlock() and responding in RespondPreUnlock()...")
-        RaiseEvent PreUnlock()
+        RaiseEvent PreUnlock(Screensaver)
     End Sub
     ''' <summary>
     ''' Raise an event of post-unlock
     ''' </summary>
-    Public Sub RaisePostUnlock()
+    Public Sub RaisePostUnlock(ByVal Screensaver As String)
         Wdbg("I", "Raising event PostUnlock() and responding in RespondPostUnlock()...")
-        RaiseEvent PostUnlock()
+        RaiseEvent PostUnlock(Screensaver)
     End Sub
     ''' <summary>
     ''' Raise an event of command error
     ''' </summary>
-    Public Sub RaiseCommandError()
+    Public Sub RaiseCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event CommandError() and responding in RespondCommandError()...")
-        RaiseEvent CommandError()
+        RaiseEvent CommandError(Command, Exception)
     End Sub
     ''' <summary>
     ''' Raise an event of pre-reload config
@@ -770,16 +770,16 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Raise an event of placeholders being parsed
     ''' </summary>
-    Public Sub RaisePlaceholderParsing()
+    Public Sub RaisePlaceholderParsing(ByVal Target As String)
         Wdbg("I", "Raising event PlaceholderParsing() and responding in RespondPlaceholderParsing()...")
-        RaiseEvent PlaceholderParsing()
+        RaiseEvent PlaceholderParsing(Target)
     End Sub
     ''' <summary>
     ''' Raise an event of a parsed placeholder
     ''' </summary>
-    Public Sub RaisePlaceholderParsed()
+    Public Sub RaisePlaceholderParsed(ByVal Target As String)
         Wdbg("I", "Raising event PlaceholderParsed() and responding in RespondPlaceholderParsed()...")
-        RaiseEvent PlaceholderParsed()
+        RaiseEvent PlaceholderParsed(Target)
     End Sub
     ''' <summary>
     ''' Raise an event of garbage collection finish
@@ -798,51 +798,51 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Raise an event of FTP pre-execute command
     ''' </summary>
-    Public Sub RaiseFTPPreExecuteCommand()
+    Public Sub RaiseFTPPreExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event FTPPreExecuteCommand() and responding in RespondFTPPreExecuteCommand()...")
-        RaiseEvent FTPPreExecuteCommand()
+        RaiseEvent FTPPreExecuteCommand(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of FTP post-execute command
     ''' </summary>
-    Public Sub RaiseFTPPostExecuteCommand()
+    Public Sub RaiseFTPPostExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event FTPPostExecuteCommand() and responding in RespondFTPPostExecuteCommand()...")
-        RaiseEvent FTPPostExecuteCommand()
+        RaiseEvent FTPPostExecuteCommand(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of FTP command error
     ''' </summary>
-    Public Sub RaiseFTPCommandError()
+    Public Sub RaiseFTPCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event FTPCommandError() and responding in RespondFTPCommandError()...")
-        RaiseEvent FTPCommandError()
+        RaiseEvent FTPCommandError(Command, Exception)
     End Sub
     ''' <summary>
     ''' Raise an event of FTP pre-download
     ''' </summary>
-    Public Sub RaiseFTPPreDownload()
+    Public Sub RaiseFTPPreDownload(ByVal File As String)
         Wdbg("I", "Raising event FTPPreDownload() and responding in RespondFTPPreDownload()...")
-        RaiseEvent FTPPreDownload()
+        RaiseEvent FTPPreDownload(File)
     End Sub
     ''' <summary>
     ''' Raise an event of FTP post-download
     ''' </summary>
-    Public Sub RaiseFTPPostDownload(ByVal Success As Boolean)
+    Public Sub RaiseFTPPostDownload(ByVal File As String, ByVal Success As Boolean)
         Wdbg("I", "Raising event FTPPostDownload() and responding in RespondFTPPostDownload()...")
-        RaiseEvent FTPPostDownload(Success)
+        RaiseEvent FTPPostDownload(File, Success)
     End Sub
     ''' <summary>
     ''' Raise an event of FTP pre-upload
     ''' </summary>
-    Public Sub RaiseFTPPreUpload()
+    Public Sub RaiseFTPPreUpload(ByVal File As String)
         Wdbg("I", "Raising event FTPPreUpload() and responding in RespondFTPPreUpload()...")
-        RaiseEvent FTPPreUpload()
+        RaiseEvent FTPPreUpload(File)
     End Sub
     ''' <summary>
     ''' Raise an event of FTP post-upload
     ''' </summary>
-    Public Sub RaiseFTPPostUpload(ByVal Success As Boolean)
+    Public Sub RaiseFTPPostUpload(ByVal File As String, ByVal Success As Boolean)
         Wdbg("I", "Raising event FTPPostUpload() and responding in RespondFTPPostUpload()...")
-        RaiseEvent FTPPostUpload(Success)
+        RaiseEvent FTPPostUpload(File, Success)
     End Sub
     ''' <summary>
     ''' Raise an event of IMAP shell initialized
@@ -854,79 +854,79 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Raise an event of IMAP pre-command execution
     ''' </summary>
-    Public Sub RaiseIMAPPreExecuteCommand()
+    Public Sub RaiseIMAPPreExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event IMAPPreExecuteCommand() and responding in RespondIMAPPreExecuteCommand()...")
-        RaiseEvent IMAPPreExecuteCommand()
+        RaiseEvent IMAPPreExecuteCommand(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of IMAP post-command execution
     ''' </summary>
-    Public Sub RaiseIMAPPostExecuteCommand()
+    Public Sub RaiseIMAPPostExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event IMAPPostExecuteCommand() and responding in RespondIMAPPostExecuteCommand()...")
-        RaiseEvent IMAPPostExecuteCommand()
+        RaiseEvent IMAPPostExecuteCommand(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of IMAP command error
     ''' </summary>
-    Public Sub RaiseIMAPCommandError()
+    Public Sub RaiseIMAPCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event IMAPCommandError() and responding in RespondIMAPCommandError()...")
-        RaiseEvent IMAPCommandError()
+        RaiseEvent IMAPCommandError(Command, Exception)
     End Sub
     ''' <summary>
     ''' Raise an event of remote debugging connection accepted
     ''' </summary>
-    Public Sub RaiseRemoteDebugConnectionAccepted()
+    Public Sub RaiseRemoteDebugConnectionAccepted(ByVal IP As String)
         Wdbg("I", "Raising event RemoteDebugConnectionAccepted() and responding in RespondRemoteDebugConnectionAccepted()...")
-        RaiseEvent RemoteDebugConnectionAccepted()
+        RaiseEvent RemoteDebugConnectionAccepted(IP)
     End Sub
     ''' <summary>
     ''' Raise an event of remote debugging connection disconnected
     ''' </summary>
-    Public Sub RaiseRemoteDebugConnectionDisconnected()
+    Public Sub RaiseRemoteDebugConnectionDisconnected(ByVal IP As String)
         Wdbg("I", "Raising event RemoteDebugConnectionDisconnected() and responding in RespondRemoteDebugConnectionDisconnected()...")
-        RaiseEvent RemoteDebugConnectionDisconnected()
+        RaiseEvent RemoteDebugConnectionDisconnected(IP)
     End Sub
     ''' <summary>
     ''' Raise an event of remote debugging command execution
     ''' </summary>
-    Public Sub RaiseRemoteDebugExecuteCommand()
+    Public Sub RaiseRemoteDebugExecuteCommand(ByVal IP As String, ByVal Command As String)
         Wdbg("I", "Raising event RemoteDebugExecuteCommand() and responding in RespondRemoteDebugExecuteCommand()...")
-        RaiseEvent RemoteDebugExecuteCommand()
+        RaiseEvent RemoteDebugExecuteCommand(IP, Command)
     End Sub
     ''' <summary>
     ''' Raise an event of remote debugging command error
     ''' </summary>
-    Public Sub RaiseRemoteDebugCommandError()
+    Public Sub RaiseRemoteDebugCommandError(ByVal IP As String, ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event RemoteDebugCommandError() and responding in RespondRemoteDebugCommandError()...")
-        RaiseEvent RemoteDebugCommandError()
+        RaiseEvent RemoteDebugCommandError(IP, Command, Exception)
     End Sub
     ''' <summary>
     ''' Raise an event of RPC command sent
     ''' </summary>
-    Public Sub RaiseRPCCommandSent()
+    Public Sub RaiseRPCCommandSent(ByVal Command As String)
         Wdbg("I", "Raising event RPCCommandSent() and responding in RespondRPCCommandSent()...")
-        RaiseEvent RPCCommandSent()
+        RaiseEvent RPCCommandSent(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of RPC command received
     ''' </summary>
-    Public Sub RaiseRPCCommandReceived()
+    Public Sub RaiseRPCCommandReceived(ByVal Command As String)
         Wdbg("I", "Raising event RPCCommandReceived() and responding in RespondRPCCommandReceived()...")
-        RaiseEvent RPCCommandReceived()
+        RaiseEvent RPCCommandReceived(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of RPC command error
     ''' </summary>
-    Public Sub RaiseRPCCommandError()
+    Public Sub RaiseRPCCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event RPCCommandError() and responding in RespondRPCCommandError()...")
-        RaiseEvent RPCCommandError()
+        RaiseEvent RPCCommandError(Command, Exception)
     End Sub
     ''' <summary>
     ''' Raise an event of SSH being connected
     ''' </summary>
-    Public Sub RaiseSSHConnected()
+    Public Sub RaiseSSHConnected(ByVal Target As String)
         Wdbg("I", "Raising event SSHConnected() and responding in RespondSSHConnected()...")
-        RaiseEvent SSHConnected()
+        RaiseEvent SSHConnected(Target)
     End Sub
     ''' <summary>
     ''' Raise an event of SSH being disconnected
@@ -938,30 +938,30 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Raise an event of SSH error
     ''' </summary>
-    Public Sub RaiseSSHError()
+    Public Sub RaiseSSHError(ByVal Exception As Exception)
         Wdbg("I", "Raising event SSHError() and responding in RespondSSHError()...")
-        RaiseEvent SSHError()
+        RaiseEvent SSHError(Exception)
     End Sub
     ''' <summary>
     ''' Raise an event of UESH pre-execute
     ''' </summary>
-    Public Sub RaiseUESHPreExecute()
+    Public Sub RaiseUESHPreExecute(ByVal Command As String)
         Wdbg("I", "Raising event UESHPreExecute() and responding in RespondUESHPreExecute()...")
-        RaiseEvent UESHPreExecute()
+        RaiseEvent UESHPreExecute(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of UESH post-execute
     ''' </summary>
-    Public Sub RaiseUESHPostExecute()
+    Public Sub RaiseUESHPostExecute(ByVal Command As String)
         Wdbg("I", "Raising event UESHPostExecute() and responding in RespondUESHPostExecute()...")
-        RaiseEvent UESHPostExecute()
+        RaiseEvent UESHPostExecute(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of UESH error
     ''' </summary>
-    Public Sub RaiseUESHError()
+    Public Sub RaiseUESHError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event UESHError() and responding in RespondUESHError()...")
-        RaiseEvent UESHError()
+        RaiseEvent UESHError(Command, Exception)
     End Sub
     ''' <summary>
     ''' Raise an event of text shell initialized
@@ -973,23 +973,23 @@ Public Class EventsAndExceptions
     ''' <summary>
     ''' Raise an event of text pre-command execution
     ''' </summary>
-    Public Sub RaiseTextPreExecuteCommand()
+    Public Sub RaiseTextPreExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event TextPreExecuteCommand() and responding in RespondTextPreExecuteCommand()...")
-        RaiseEvent TextPreExecuteCommand()
+        RaiseEvent TextPreExecuteCommand(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of text post-command execution
     ''' </summary>
-    Public Sub RaiseTextPostExecuteCommand()
+    Public Sub RaiseTextPostExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event TextPostExecuteCommand() and responding in RespondTextPostExecuteCommand()...")
-        RaiseEvent TextPostExecuteCommand()
+        RaiseEvent TextPostExecuteCommand(Command)
     End Sub
     ''' <summary>
     ''' Raise an event of text command error
     ''' </summary>
-    Public Sub RaiseTextCommandError()
+    Public Sub RaiseTextCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event TextCommandError() and responding in RespondTextCommandError()...")
-        RaiseEvent TextCommandError()
+        RaiseEvent TextCommandError(Command, Exception)
     End Sub
 
     'These classes are for exceptions. (For developers of mods: Only use if your mod is an extension to the kernel)

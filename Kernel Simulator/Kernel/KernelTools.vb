@@ -81,7 +81,7 @@ Public Module KernelTools
             Description = Description.FormatString(Variables)
 
             'Fire an event
-            EventManager.RaiseKernelError()
+            EventManager.RaiseKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
 
             'Make a dump file
             GeneratePanicDump(Description, ErrorType, Exc)
@@ -107,7 +107,7 @@ Public Module KernelTools
                 Console.ReadKey()
             ElseIf ErrorType = "C" And Reboot = False Then
                 'Check if error is Continuable and reboot is disabled
-                EventManager.RaiseContKernelError()
+                EventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
                 W(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), True, ColTypes.Continuable, ErrorType, Description)
                 Console.ReadKey()
             ElseIf (Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C") Then

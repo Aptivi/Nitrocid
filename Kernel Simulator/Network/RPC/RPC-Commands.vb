@@ -68,7 +68,7 @@ Public Module RPC_Commands
                 Else
                     RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
                 End If
-                EventManager.RaiseRPCCommandSent()
+                EventManager.RaiseRPCCommandSent(Cmd)
             End If
         End If
     End Sub
@@ -81,11 +81,12 @@ Public Module RPC_Commands
         While RPCThread.IsAlive
             Dim buff() As Byte
             Dim ip As String = ""
+            Dim msg As String = ""
             Try
                 buff = RPCListen.Receive(endp)
-                Dim msg As String = Text.Encoding.Default.GetString(buff)
+                msg = Text.Encoding.Default.GetString(buff)
                 Wdbg("RPC: Received message {0}", msg)
-                EventManager.RaiseRPCCommandReceived()
+                EventManager.RaiseRPCCommandReceived(msg)
                 If msg.StartsWith("ShutdownConfirm") Then
                     Wdbg("I", "Shutdown confirmed from remote access.")
                     PowerManage("shutdown")
@@ -119,7 +120,7 @@ Public Module RPC_Commands
                 Else
                     Wdbg("E", "Fatal error: {0}", ex.Message)
                     WStkTrc(ex)
-                    EventManager.RaiseRPCCommandError()
+                    EventManager.RaiseRPCCommandError(msg, ex)
                 End If
             End Try
         End While

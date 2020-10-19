@@ -1119,7 +1119,7 @@ Public Module GetCommand
         Catch taex As ThreadAbortException
             Exit Sub
         Catch ex As Exception
-            EventManager.RaiseCommandError()
+            EventManager.RaiseCommandError(requestedCommand, ex)
             If DebugMode = True Then
                 W(DoTranslation("Error trying to execute command", currentLang) + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err,
                   Err.Number, ex.Message, ex.StackTrace, words(0))

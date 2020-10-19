@@ -89,7 +89,7 @@ Module RemoteDebugger
                         RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}.", currentLang), RDebugName)
                         Wdbg("I", "Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
                         RDebugSWriter.Flush()
-                        EventManager.RaiseRemoteDebugConnectionAccepted()
+                        EventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP)
                     End If
                 End If
             Catch ae As ThreadAbortException

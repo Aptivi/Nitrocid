@@ -46,7 +46,7 @@ Public Module FTPTransfer
         If connected Then
             Try
                 'Show a message to download
-                EventManager.RaiseFTPPreDownload()
+                EventManager.RaiseFTPPreDownload(File)
                 Wdbg("I", "Downloading file {0}...", File)
 
                 'Try to download 3 times
@@ -54,11 +54,11 @@ Public Module FTPTransfer
 
                 'Show a message that it's downloaded
                 Wdbg("I", "Downloaded file {0}.", File)
-                EventManager.RaiseFTPPostDownload(Result.IsSuccess)
+                EventManager.RaiseFTPPostDownload(File, Result.IsSuccess)
                 Return True
             Catch ex As Exception
                 Wdbg("E", "Download failed for file {0}: {1}", File, ex.Message)
-                EventManager.RaiseFTPPostDownload(False)
+                EventManager.RaiseFTPPostDownload(File, False)
             End Try
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission.", currentLang))
@@ -74,13 +74,13 @@ Public Module FTPTransfer
     Public Function FTPUploadFile(ByVal File As String) As Boolean
         If connected Then
             'Show a message to download
-            EventManager.RaiseFTPPreUpload()
+            EventManager.RaiseFTPPreUpload(File)
             Wdbg("I", "Uploading file {0}...", File)
 
             'Try to upload
             Dim Success As Boolean = ClientFTP.UploadFile($"{currDirect}/{File}", File, True, True, FtpVerify.Retry, Complete)
             Wdbg("I", "Uploaded file {0} with status {1}.", File, Success)
-            EventManager.RaiseFTPPostUpload(Success)
+            EventManager.RaiseFTPPostUpload(File, Success)
             Return Success
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission.", currentLang))

@@ -34,7 +34,7 @@ Public Module RemoteDebugTools
                     DebugDevices.Keys(i).Disconnect(True)
                     dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
-                    EventManager.RaiseRemoteDebugConnectionDisconnected()
+                    EventManager.RaiseRemoteDebugConnectionDisconnected(IPAddr)
                 End If
             End If
         Next

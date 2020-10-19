@@ -208,7 +208,7 @@ Public Module FTPGetCommand
                       DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message, words(0))
                 End If
             End If
-            EventManager.RaiseFTPCommandError()
+            EventManager.RaiseFTPCommandError(cmd, ex)
         End Try
 
     End Sub

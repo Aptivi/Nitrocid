@@ -164,7 +164,7 @@ Public Module Login
         If LockMode Then
             Wdbg("I", "Releasing lock and getting back to shell...")
             LockMode = False
-            EventManager.RaisePostUnlock()
+            EventManager.RaisePostUnlock(defSaverName)
             Exit Sub
         End If
 
@@ -188,7 +188,7 @@ Public Module Login
         W(ProbePlaces(MAL), True, ColTypes.Neutral)
 
         'Fire event PostLogin
-        EventManager.RaisePostLogin()
+        EventManager.RaisePostLogin(signedinusrnm)
 
         'Initialize shell
         Wdbg("I", "Shell is being initialized...")

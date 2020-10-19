@@ -74,7 +74,7 @@ Module DebugWriters
             For Each i As Integer In OffendingIndex
                 If i <> -1 Then
                     DebugDevices.Keys(i).Disconnect(True)
-                    EventManager.RaiseRemoteDebugConnectionDisconnected()
+                    EventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices.Values(i))
                     Wdbg("W", "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
                     dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))

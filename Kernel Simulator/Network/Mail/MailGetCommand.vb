@@ -218,7 +218,7 @@ Module MailGetCommand
                 IMAPShowHelp(cmd)
             End If
         Catch ex As Exception
-            EventManager.RaiseIMAPCommandError()
+            EventManager.RaiseIMAPCommandError(cmd + " " + args, ex)
             W(DoTranslation("Error executing mail command: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try

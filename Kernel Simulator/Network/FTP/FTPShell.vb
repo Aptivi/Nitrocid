@@ -105,12 +105,12 @@ Public Module FTPShell
                 Wdbg("I", "Normal shell")
                 strcmd = Console.ReadLine()
             End If
-            EventManager.RaiseFTPPreExecuteCommand()
+            EventManager.RaiseFTPPreExecuteCommand(strcmd)
 
             'Parse command
             If Not (strcmd = Nothing Or strcmd?.StartsWith(" ")) Then
                 FTPGetLine()
-                EventManager.RaiseFTPPostExecuteCommand()
+                EventManager.RaiseFTPPostExecuteCommand(strcmd)
             End If
 
             'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
