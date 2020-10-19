@@ -53,6 +53,7 @@ Public Module TextEditShell
             SetInputColor()
 
             'Prompt for command
+            EventManager.RaiseTextShellInitialized()
             Dim WrittenCommand As String = Console.ReadLine
 
             'Check to see if the command doesn't start with spaces or if the command is nothing
@@ -62,12 +63,16 @@ Public Module TextEditShell
                 If TextEdit_Commands.Contains(WrittenCommand.Split(" ")(0)) Then
                     Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Length)
                     TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand)
+                    EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
                     TextEdit_CommandThread.Start(WrittenCommand)
                     TextEdit_CommandThread.Join()
+                    EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                 ElseIf TextEdit_ModCommands.Contains(WrittenCommand.Split(" ")(0)) Then
                     Wdbg("I", "Mod command {0} executing...", WrittenCommand.Split(" ")(0))
+                    EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     ExecuteModCommand(WrittenCommand)
+                    EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                 Else
                     W(DoTranslation("The specified text editor command is not found.", currentLang), True, ColTypes.Err)
                     Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Length)

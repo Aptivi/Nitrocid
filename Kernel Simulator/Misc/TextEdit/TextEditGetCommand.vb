@@ -207,6 +207,7 @@ Public Module TextEditGetCommand
             W(DoTranslation("Error trying to run command: {0}", currentLang), True, ColTypes.Err, ex.Message)
             Wdbg("E", "Error running command {0}: {1}", CommandText.Split(" ")(0), ex.Message)
             WStkTrc(ex)
+            EventManager.RaiseTextCommandError(CommandText, ex)
         End Try
     End Sub
 
