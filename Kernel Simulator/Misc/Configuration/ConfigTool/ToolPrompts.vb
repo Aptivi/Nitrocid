@@ -32,7 +32,9 @@ Public Module ToolPrompts
         Dim PromptFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
+
         While Not PromptFinished
+            Console.Clear()
             'List sections
             W(DoTranslation("Select section:", currentLang) + vbNewLine, True, ColTypes.Neutral)
             W("1) " + DoTranslation("General Settings...", currentLang), True, ColTypes.Neutral)
@@ -71,10 +73,14 @@ Public Module ToolPrompts
                 Else
                     Wdbg("W", "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
+                    W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
+                    Console.ReadKey()
                 End If
             Else
                 Wdbg("W", "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
+                Console.ReadKey()
             End If
         End While
     End Sub
@@ -86,6 +92,7 @@ Public Module ToolPrompts
         Dim AnswerInt As Integer
 
         While Not SectionFinished
+            Console.Clear()
             'List options
             W(DoTranslation("Select option:", currentLang) + vbNewLine, True, ColTypes.Neutral)
             Select Case SectionNum
@@ -172,10 +179,14 @@ Public Module ToolPrompts
                 Else
                     Wdbg("W", "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
+                    W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
+                    Console.ReadKey()
                 End If
             Else
                 Wdbg("W", "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
+                Console.ReadKey()
             End If
         End While
     End Sub
@@ -189,6 +200,7 @@ Public Module ToolPrompts
         Dim AnswerInt As Integer
 
         While Not KeyFinished
+            Console.Clear()
             'List Keys for specified section
             Select Case Section
                 Case 1 'General
@@ -246,6 +258,7 @@ Public Module ToolPrompts
                         Case 3
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SMenu
+                            W(DoTranslation("Select option:", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Change Root Password?", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("setRootPasswd"))
                             W("2) " + DoTranslation("Set Root Password...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
@@ -517,6 +530,7 @@ Public Module ToolPrompts
             W("> ", False, ColTypes.Input)
             If KeyNumber = 2 And Section = 1.3 Then
                 AnswerString = ReadLineNoInput("*")
+                Console.WriteLine()
             Else
                 AnswerString = Console.ReadLine
             End If
@@ -543,6 +557,8 @@ Public Module ToolPrompts
                 Else
                     Wdbg("W", "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
+                    W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
+                    Console.ReadKey()
                 End If
             ElseIf (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt) Or
                    (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SSelection) Then
@@ -557,6 +573,8 @@ Public Module ToolPrompts
                 Else
                     Wdbg("W", "Negative values are disallowed.")
                     W(DoTranslation("The answer may not be negative.", currentLang), True, ColTypes.Err)
+                    W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
+                    Console.ReadKey()
                 End If
             ElseIf KeyType = SettingsKeyType.SString Then
                 Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
@@ -573,10 +591,14 @@ Public Module ToolPrompts
                 Else
                     Wdbg("W", "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
+                    W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
+                    Console.ReadKey()
                 End If
             Else
                 Wdbg("W", "Answer is not valid.")
                 W(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
+                Console.ReadKey()
             End If
         End While
     End Sub
