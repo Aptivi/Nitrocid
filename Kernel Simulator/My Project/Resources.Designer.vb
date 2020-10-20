@@ -554,6 +554,25 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Kmandi disponibbli: {0}
+        '''Ikteb kmand:
+        '''L-injezzjoni tal-kmand ġiet ikkanċellata.
+        '''Issepara argumenti tal-ibbutjar b&apos;virgoli mingħajr spazji, per eżempju, &apos;motd, gpuprobe&apos;
+        '''Kmandi separati fuq &apos;cmdinject&apos; bi kolonji bi spazji, per eżempju, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Innota li l-argument &apos;debug&apos; ma jkoprix kompletament il-qalba.
+        '''bargs: L-argument mitlub {0} ma jinstabx.
+        '''bargs: Żball li ma jistax jiġi rkuprat fl-argument:
+        '''Argumenti disponibbli: {0}
+        '''Argumenti (&apos;għajnuna&apos; għall-għajnuna):
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property mts() As String
+            Get
+                Return ResourceManager.GetString("mts", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Perintah yang tersedia: {0}
         '''Tulis perintah:
         '''Perintah injeksi telah dibatalkan.

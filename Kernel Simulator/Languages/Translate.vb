@@ -20,7 +20,7 @@ Imports System.Globalization
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swe", "uzb", "vtn"}
+    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swe", "uzb", "vtn"}
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -117,6 +117,8 @@ Public Module Translate
                 translated = My.Resources.kor_T
             Case "mal" 'Malay (not Malayalam)
                 translated = My.Resources.mal
+            Case "mts" 'Maltese
+                translated = My.Resources.mts
             Case "ndo" 'Indonesian
                 translated = My.Resources.ndo
             Case "nwg" 'Norwegian
@@ -368,6 +370,8 @@ CHOICE:
                 Return "Korean (Korea)"
             Case "mal"
                 Return "Malay (Malaysia)"
+            Case "mts"
+                Return "Maltest (Malta)"
             Case "ndo"
                 Return "Indonesian (Indonesia)"
             Case "nwg"

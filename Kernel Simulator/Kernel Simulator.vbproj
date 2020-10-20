@@ -393,6 +393,7 @@
     <None Include="Resources\kor-T.txt" />
     <None Include="Resources\flp.txt" />
     <None Include="Resources\ctl.txt" />
+    <None Include="Resources\mts.txt" />
     <Content Include="Resources\ndo.txt" />
     <None Include="Resources\nwg.txt" />
     <Content Include="Resources\pol.txt" />
