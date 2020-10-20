@@ -884,3 +884,12 @@ Qor inta jeer ee amarka "put" ah inuu dib isugu dayo soo dejinta fashilmay. Waa 
 Cinwaanka ma noqon karo mid madhan.
 Ku guuldaraystay binging {0}: {1}
 Ping wuxuu ku guuleystay {0} ms.
+Lambarka sadarka la cayimay ma ka weynaan karo lambarka xariiqa faylka ee ugu dambeeya.
+Dareemo sida: {0}
+Heerkulka: {0}
+Xawaaraha dabaysha: {0}
+Jihada dabaysha: {0}
+Horudhac ah: {2} | La raaci karo: {3} | Kabaha kabaha: {4}
+Waxay kicisaa 255 taageero midab ah Kala-diridda.
+Waxay u ololeysaa taageerada midabka runta ah ee Kala-dirista.
+Riix fure kasta si aad dib ugu noqoto.

@@ -884,3 +884,12 @@ Skriv hvor mange gange kommandoen "put" skal prøve igen mislykkede uploads. Det
 Adressen er muligvis ikke tom.
 Kunne ikke pinge {0}: {1}
 Ping lykkedes i {0} ms.
+Det angivne linjenummer er muligvis ikke større end det sidste fillinjenummer.
+Føles som: {0}
+Temperatur: {0}
+Vindhastighed: {0}
+Vindretning: {0}
+Primær: {2} | Startbar: {3} | Bootpartition: {4}
+Aktiverer 255 farvesupport til opløsning.
+Aktiverer ægte farvesupport til opløsning.
+Tryk på en vilkårlig tast for at gå tilbage.

@@ -884,3 +884,12 @@ kitanee baar "put" kamaand ko viphal apalod ko phir se likhana chaahie. yah nyoo
 pata khaalee nahin ho sakata.
 {0}: {1} ping karane mein viphal
 ping {0} emes mein saphal raha.
+nirdisht pankti sankhya antim fail lain sankhya se badee nahin ho sakatee hai.
+aisa lagata hai: {0}
+taapamaan: {0}
+hava kee gati: {0}
+hava kee disha: {0}
+praathamik: {2} | boot karane yogy: {3} | boot vibhaajan: {4}
+bhang ke lie 255 rang samarthan sakriy karata hai.
+disolv ke lie sahee rang samarthan sakriy karata hai.
+vaapas jaane ke lie koee bhee kunjee dabaen.

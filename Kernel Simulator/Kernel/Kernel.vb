@@ -28,7 +28,7 @@ Public Module Kernel
     Public EventManager As New EventsAndExceptions
     Public DefConsoleOut As TextWriter
     Public ScrnTimeout As Integer = 300000
-    Public ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - Release Candidate 1"
+    Public ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()} - Release Candidate 2"
 
     ''' <summary>
     ''' Entry point

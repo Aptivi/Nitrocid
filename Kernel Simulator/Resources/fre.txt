@@ -884,3 +884,12 @@ Veuillez utiliser "ftp" si vous allez télécharger des fichiers sur le serveur 
 L'adresse n'est peut-être pas vide.
 Échec de l'envoi du ping {0}: {1}
 Le ping a réussi dans {0} ms.
+Le numéro de ligne spécifié ne peut pas être supérieur au dernier numéro de ligne de fichier.
+Ressenti comme: {0}
+Température: {0}
+Vitesse du vent: {0}
+Direction du vent: {0}
+Primaire: {2} | Amorçable: {3} | Partition de démarrage: {4}
+Active la prise en charge de 255 couleurs pour Dissoudre.
+Active la prise en charge des couleurs réelles pour Dissoudre.
+Appuyez sur n'importe quelle touche pour revenir en arrière.

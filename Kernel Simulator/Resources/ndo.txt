@@ -884,3 +884,12 @@ Tulis berapa kali perintah "put" harus mencoba kembali unggahan yang gagal. Itu 
 Alamat tidak boleh kosong.
 Gagal melakukan ping {0}: {1}
 Ping berhasil dalam {0} md.
+Nomor baris yang ditentukan tidak boleh lebih besar dari nomor baris file terakhir.
+Terasa seperti: {0}
+Suhu: {0}
+Kecepatan angin: {0}
+Arah angin: {0}
+Utama: {2} | Dapat dibooting: {3} | Partisi boot: {4}
+Mengaktifkan 255 dukungan warna untuk Dissolve.
+Mengaktifkan dukungan warna asli untuk Dissolve.
+Tekan sembarang tombol untuk kembali.

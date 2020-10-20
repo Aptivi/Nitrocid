@@ -8,7 +8,7 @@ Kernel Simulator simulates the future of our planned kernel that's coming as soo
 
 Not only it has some basic commands, but it also provides script support, network support, and tons of awesome things.
 
-We have reached Release Candidate 1 of KS 0.0.12!
+We have reached Release Candidate 2 of KS 0.0.12!
 
 ## System Requirements
 

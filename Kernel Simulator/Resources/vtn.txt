@@ -884,3 +884,12 @@ Viết số lần lệnh "put" sẽ thử lại các lần tải lên không th�
 Địa chỉ không được để trống.
 Không ping được {0}: {1}
 Ping thành công sau {0} mili giây.
+Số dòng đã chỉ định không được lớn hơn số dòng cuối cùng của tệp.
+Cảm thấy như: {0}
+Nhiệt độ: {0}
+Tốc độ gió: {0}
+Hướng gió: {0}
+Chính: {2} | Có thể khởi động: {3} | Phân vùng khởi động: {4}
+Kích hoạt hỗ trợ 255 màu cho Hòa tan.
+Kích hoạt hỗ trợ màu sắc trung thực cho Hòa tan.
+Nhấn phím bất kỳ để quay lại.

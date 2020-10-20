@@ -884,3 +884,12 @@ Napište, kolikrát by měl příkaz „put“ zkusit opakovat neúspěšná nah
 Adresa nemusí být prázdná.
 Nepodařilo se pingnout na {0}: {1}
 Ping byl úspěšný za {0} ms.
+Zadané číslo řádku nesmí být větší než číslo posledního řádku souboru.
+Pocit jako: {0}
+Teplota: {0}
+Rychlost větru: {0}
+Směr větru: {0}
+Primární: {2} | Zaváděcí: {3} | Spouštěcí oddíl: {4}
+Aktivuje podporu 255 barev pro Dissolve.
+Aktivuje podporu skutečných barev pro Dissolve.
+Stisknutím libovolné klávesy se vrátíte zpět.

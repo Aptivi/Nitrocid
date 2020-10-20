@@ -884,3 +884,12 @@ auktub eadad almaraat alati yajib 'an yueid fiha al'amr "put" muhawalat altahmil
 yajib 'alaa yakun aleunwan farghana.
 fashal tanfidh al'amr ping {0}: {1}
 najah al'amr Ping fi {0} malili thaniatan.
+qad la yakun raqm alsatar almuhadad 'akbar min raqm satar almilafi al'akhir.
+yshbh: {0}
+darajat alhrart: {0}
+sureat alryah: {0}
+aitijah alriyah: {0}
+'asasi: {2} | qabil liltashghil: {3} | qism altmhyd: {4}
+yunshut daem 255 lwnana l Dissolve.
+yanshut daem allawn alhaqiqii l Dissolve.
+adghut ealaa 'ayi miftah lileawdat.

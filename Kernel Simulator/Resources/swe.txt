@@ -884,3 +884,12 @@ Skriv hur många gånger kommandot "put" ska försöka misslyckade uppladdningar
 Adressen kanske inte är tom.
 Det gick inte att pinga {0}: {1}
 Ping lyckades i {0} ms.
+Det angivna radnumret kanske inte är större än det senaste filradnumret.
+Känns som: {0}
+Temperatur: {0}
+Vindhastighet: {0}
+Vindriktning: {0}
+Primär: {2} | Startbar: {3} | Startpartition: {4}
+Aktiverar 255 färgstöd för upplösning.
+Aktiverar äkta färgstöd för upplösning.
+Tryck på valfri knapp för att gå tillbaka.

@@ -884,3 +884,12 @@ FTP seobeoe pail-eul eoblodeuhalyeomyeon "ftp"leul sayonghasibsio.
 jusoneun biwo dul su eobs-seubnida.
 {0} ping silpae : {1}
 {0} ms hue Ping-i seong-gonghaessseubnida.
+jijeongdoen jul beonhoneun majimag pail jul beonhoboda keul su eobs-seubnida.
+neukkim : {0}
+ondo : {0}
+pungsog : {0}
+punghyang : {0}
+gibon : {2} | buting ganeung : {3} | buting patisyeon : {4}
+dijolbeue daehan 255 saegsang jiwon-eul hwalseonghwahabnida.
+dijolbeue daehan teulu keolleo jiwon-eul hwalseonghwahabnida.
+dol-agalyeomyeon amu kina nuleusibsio.

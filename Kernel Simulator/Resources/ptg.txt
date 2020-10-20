@@ -884,3 +884,12 @@ Escreva quantas vezes o comando "put" deve repetir uploads com falha. Deve ser n
 O endereço não pode estar vazio.
 Falha ao fazer ping em {0}: {1}
 Ping teve sucesso em {0} ms.
+O número da linha especificado não pode ser maior que o último número da linha do arquivo.
+Parece: {0}
+Temperatura: {0}
+Velocidade do vento: {0}
+Direção do vento: {0}
+Primário: {2} | Inicializável: {3} | Partição de inicialização: {4}
+Ativa o suporte de 255 cores para Dissolver.
+Ativa o suporte true color para Dissolve.
+Pressione qualquer tecla para voltar.

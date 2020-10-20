@@ -884,3 +884,12 @@ Ikteb kemm-il darba l-kmand "put" għandu jipprova jerġa 'jtella' l-uploads. G�
 L-indirizz jista 'ma jkunx vojt.
 Ma rnexxilekx tagħmel ping {0}: {1}
 Ping irnexxa f '{0} ms.
+Nombor baris yang ditentukan mungkin tidak lebih besar daripada nombor baris fail terakhir.
+Rasanya seperti: {0}
+Suhu: {0}
+Kelajuan angin: {0}
+Arah angin: {0}
+Utama: {2} | Boleh boot: {3} | Partition but: {4}
+Mengaktifkan sokongan warna 255 untuk Dissolve.
+Mengaktifkan sokongan warna sebenar untuk Larutkan.
+Tekan sebarang kekunci untuk kembali.

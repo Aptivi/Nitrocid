@@ -884,3 +884,12 @@ Skriv hvor mange ganger kommandoen "put" skal prøve på nytt mislykkede opplast
 Adressen kan ikke være tom.
 Kunne ikke pinge {0}: {1}
 Ping lyktes i {0} ms.
+Det angitte linjenummeret kan ikke være større enn det siste fillinjenummeret.
+Føles som: {0}
+Temperatur: {0}
+Vindhastighet: {0}
+Vindretning: {0}
+Primær: {2} | Oppstartbar: {3} | Oppstartspartisjon: {4}
+Aktiverer 255 fargestøtte for oppløsning.
+Aktiverer ekte fargestøtte for Dissolve.
+Trykk på hvilken som helst tast for å gå tilbake.

@@ -884,3 +884,12 @@ Kirjoita kuinka monta kertaa "put" -komennon pitäisi yrittää epäonnistuneita
 Osoite ei voi olla tyhjä.
 Pingata {0} epäonnistui: {1}
 Ping onnistui {0} ms.
+Määritetty rivinumero ei saa olla suurempi kuin viimeinen tiedostorivinumero.
+Tuntuu: {0}
+Lämpötila: {0}
+Tuulennopeus: {0}
+Tuulen suunta: {0}
+Ensisijainen: {2} | Käynnistettävä: {3} | Käynnistysosio: {4}
+Aktivoi 255 väritukea liukenemiseen.
+Aktivoi todellisen väritukeen liukenemiseen.
+Paina mitä tahansa näppäintä palataksesi takaisin.

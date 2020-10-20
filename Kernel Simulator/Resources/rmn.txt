@@ -884,3 +884,12 @@ Scrieți de câte ori comanda „pune” ar trebui să reîncerce încărcările
 Este posibil ca adresa să nu fie goală.
 Eroare la ping {0}: {1}
 Ping a reușit în {0} ms.
+Numărul de linie specificat nu poate fi mai mare decât ultimul număr de linie de fișier.
+Se simte ca: {0}
+Temperatură: {0}
+Viteza vântului: {0}
+Direcția vântului: {0}
+Primar: {2} | Bootable: {3} | Partiție de pornire: {4}
+Activează suportul de 255 culori pentru Dissolve.
+Activează suportul de culoare adevărată pentru Dissolve.
+Apăsați orice tastă pentru a reveni înapoi.

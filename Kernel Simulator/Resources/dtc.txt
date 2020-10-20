@@ -884,3 +884,12 @@ Schrijf op hoe vaak het "put" -commando mislukte uploads opnieuw moet proberen. 
 Adres mag niet leeg zijn.
 Kan {0} niet pingen: {1}
 Ping geslaagd in {0} ms.
+Het opgegeven regelnummer mag niet groter zijn dan het laatste regelnummer van het bestand.
+Voelt als: {0}
+Temperatuur: {0}
+Windsnelheid: {0}
+Windrichting: {0}
+Primair: {2} | Opstartbaar: {3} | Opstartpartitie: {4}
+Activeert 255 kleurenondersteuning voor Dissolve.
+Activeert echte kleurondersteuning voor Dissolve.
+Druk op een willekeurige toets om terug te gaan.

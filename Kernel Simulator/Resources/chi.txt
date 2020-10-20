@@ -884,3 +884,12 @@ Xiě xià “put” mìnglìng yīng chóng shì shībài de shàngchuán cìsh�
 Dìzhǐ bùnéng wéi kōng.
 Wúfǎ ping {0}:{1}
 Zài {0} háomiǎo nèi Ping chénggōng.
+Zhǐdìng de xíng hào bùnéng dàyú zuìhòu yīgè wénjiàn de xíng hào.
+Gǎnjué xiàng: {0}
+Wēndù: {0}
+Fēngsù: {0}
+Fēngxiàng: {0}
+Xiǎoxué: {2} | Kě qǐdòng: {3} | Yǐndǎo fēnqū: {4}
+Jīhuó 255 zhǒng yánsè zhīchí yǐ róngjiě.
+Jīhuó duì Dissolve de zhēn cǎisè zhīchí.
+Àn rènyì jiàn fǎnhuí.

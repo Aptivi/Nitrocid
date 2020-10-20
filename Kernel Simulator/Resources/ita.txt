@@ -884,3 +884,12 @@ Scrivi quante volte il comando "put" deve ritentare i caricamenti non riusciti. 
 L'indirizzo non può essere vuoto.
 Impossibile eseguire il ping {0}: {1}
 Ping riuscito in {0} ms.
+Il numero di riga specificato non può essere maggiore dell'ultimo numero di riga del file.
+Sembra: {0}
+Temperatura: {0}
+Velocità del vento: {0}
+Direzione del vento: {0}
+Primario: {2} | Avviabile: {3} | Partizione di avvio: {4}
+Attiva il supporto di 255 colori per Dissolve.
+Attiva il supporto True Color per Dissolve.
+Premere un tasto qualsiasi per tornare indietro.

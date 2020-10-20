@@ -884,3 +884,12 @@ Likhō ki kinī vāra"puṭa" kamāṇḍa phēl'ha hō'ē apalōḍasa nū dub�
 Patā khālī nahīṁ hō sakadā.
 Piga karana vica asaphala Fa 0}: {1}
 Piga {0} milīsakiṭa vica saphala rahī.
+Niradhārata lā'īna nabara ākharī phā'īla lā'īna nabara tōṁ vaḍā nahīṁ hō sakadā.
+Lagadā hai: {0}
+Tāpamāna: {0}
+Havā dī gatī: {0}
+Havā dī diśā: {0}
+Prā'imarī: {2} | Būṭa hōṇa yōga: {3} | Būṭa bhāga: {4
+Bhaga la'ī 255 raga sahā'itā nū saragarama karadā hai.
+Ghulaṇa la'ī asala raga sahā'itā nū saragarama karadā hai.
+Vāpasa jāṇa la'ī kō'ī kujī dabā'ō.

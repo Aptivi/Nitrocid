@@ -884,3 +884,12 @@ Appu Rodo Wa Shiko {0} De Shippai Shimashita : {1}
 adoresu o sora ni suru koto wa dekimasen .
 {0} e no ping ni shippai shimashita : {1}
 ping wa {0} miri byō de seikō shimashita .
+Shitei sa reta gyō bangō wa, saigo no fairu no gyō bangō yori ōkiku suru koto wa dekimasen.
+No yō ni kanjiru: {0}
+Ondo: {0}
+Fūsoku: {0}
+Fūkō: {0}
+Puraimari: {2} | Kidō kanō: {3} | Būtopātishon: {4}
+Dizorubu no 255-shoku no sapōto o akutibu ni shimasu.
+Dizorubu no to~urūkarāsapōto o akutibu ni shimasu.
+Izureka no kī o oshite modorimasu.

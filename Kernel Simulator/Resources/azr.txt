@@ -884,3 +884,12 @@ Yükləmə cəhdində uğursuz oldu {0}: {1}
 Ünvan boş olmaya bilər.
 Ping edilmədi {0}: {1}
 Ping {0} ms-də uğurlu oldu.
+Göstərilən sətir nömrəsi son fayl sətri nömrəsindən böyük ola bilməz.
+Hiss olunur: {0}
+Temperatur: {0}
+Külək sürəti: {0}
+Külək istiqaməti: {0}
+Əsas: {2} | Önyüklenebilir: {3} | Önyükleme bölməsi: {4}
+Dissolve üçün 255 rəng dəstəyini aktivləşdirir.
+Dissolve üçün həqiqi rəng dəstəyini aktivləşdirir.
+Geri qayıtmaq üçün istənilən düyməyə basın.

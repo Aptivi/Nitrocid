@@ -884,3 +884,12 @@ Napišite, kolikokrat naj ukaz "put" poskusi znova neuspešne prenose. Mora biti
 Naslov ne sme biti prazen.
 Ni bilo mogoče pingati {0}: {1}
 Ping je uspel v {0} ms.
+Navedena številka vrstice ne sme biti večja od zadnje številke vrstice datoteke.
+Počutite se kot: {0}
+Temperatura: {0}
+Hitrost vetra: {0}
+Smer vetra: {0}
+Primarno: {2} | Zagon: {3} | Zagonska particija: {4}
+Aktivira 255 barvnih podpor za Dissolve.
+Aktivira resnično barvno podporo za Dissolve.
+Za vrnitev pritisnite katero koli tipko.

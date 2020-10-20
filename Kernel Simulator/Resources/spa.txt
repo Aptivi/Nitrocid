@@ -884,3 +884,12 @@ Escriba cuántas veces el comando "put" debe reintentar las cargas fallidas. Deb
 La dirección no puede estar vacía.
 Error al hacer ping {0}: {1}
 El ping se realizó correctamente en {0} ms.
+El número de línea especificado no puede ser mayor que el último número de línea del archivo.
+Se siente como: {0}
+Temperatura: {0}
+Velocidad del viento: {0}
+Dirección del viento: {0}
+Primario: {2} | Arrancable: {3} | Partición de arranque: {4}
+Activa la compatibilidad con 255 colores para Disolver.
+Activa el soporte de color verdadero para Disolver.
+Presione cualquier tecla para regresar.

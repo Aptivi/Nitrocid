@@ -884,3 +884,12 @@ Napishite, skol'ko raz komanda «polozhit'» dolzhna povtoryat' neudachnyye zagr
 Adres ne mozhet byt' pustym.
 Ne udalos' proverit' svyaz' {0}: {1}
 Ping uspeshno zavershen cherez {0} ms.
+Ukazannyy nomer stroki ne mozhet byt' bol'she, chem nomer stroki poslednego fayla.
+Po oshchushcheniyam: {0}
+Temperatura: {0}
+Skorost' vetra: {0}
+Napravleniye vetra: {0}
+Osnovnoy: {2} | Zagruzochnyy: {3} | Zagruzochnyy razdel: {4}
+Aktiviruyet podderzhku 255 tsvetov dlya rastvoreniya.
+Aktiviruyet podderzhku istinnogo tsveta dlya Dissolve.
+Nazhmite lyubuyu klavishu, chtoby vernut'sya.

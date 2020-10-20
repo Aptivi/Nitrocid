@@ -884,3 +884,12 @@ Upload 0 try: {1 Try cēṣṭā karē āpalōḍa byartha haẏēchē
 Ṭhikānā khāli nā'ō thākatē pārē.
 {0}: {1 P piṁ karatē byartha
 piṁ {0} ēma'ēsē sāphalya pēẏēchē.
+Nirdiṣṭa lā'ina nambaraṭi śēṣa phā'ila lā'ina saṅkhyāra cēẏē baṛa nā'ō hatē pārē.
+Manē hacchē: {0}
+Tāpamātrā: {0}
+Bātāsēra gati: {0}
+Bātāsēra dikanirdēśa: {0}
+Prāthamika: {2} | Buṭēbala: {3} | Buṭa pārṭiśana: {4}
+Drabībhūta karāra jan'ya 255 raṅa samarthana sakriẏa karē.
+Drabībhūta karāra jan'ya satya raṅa samarthana sakriẏa karē.
+Phirē yētē kōna'ō kī ṭipuna.

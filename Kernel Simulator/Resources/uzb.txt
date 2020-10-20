@@ -884,3 +884,12 @@ Yuklash amalga oshmadi: {0}: {1}
 Manzil bo'sh bo'lmasligi mumkin.
 Ping qilinmadi {0}: {1}
 Ping muvaffaqiyatli {0} ms.
+Belgilangan satr raqami oxirgi fayl satr raqamidan katta bo'lmasligi mumkin.
+Hissiyotlar: {0}
+Harorat: {0}
+Shamol tezligi: {0}
+Shamol yo'nalishi: {0}
+Asosiy: {2} | Yuklash mumkin: {3} | Yuklash bo'limi: {4}
+Dissolve uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
+Dissolve uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+Orqaga qaytish uchun istalgan tugmani bosing.

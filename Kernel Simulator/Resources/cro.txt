@@ -884,3 +884,12 @@ Napišite koliko puta bi naredba "put" trebala ponoviti neuspješne prijenose. M
 Adresa ne smije biti prazna.
 Nije uspjelo ping {0}: {1}
 Ping je uspio za {0} ms.
+Navedeni broj retka ne može biti veći od zadnjeg broja retka datoteke.
+Osjećaj poput: {0}
+Temperatura: {0}
+Brzina vjetra: {0}
+Smjer vjetra: {0}
+Primarno: {2} | Podizanje: {3} | Podizanje particije: {4}
+Aktivira 255 podrške u boji za Dissolve.
+Aktivira istinsku podršku u boji za Dissolve.
+Pritisnite bilo koju tipku za povratak.

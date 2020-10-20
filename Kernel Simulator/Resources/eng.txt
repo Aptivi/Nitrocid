@@ -884,3 +884,12 @@ Write how many times the "put" command should retry failed uploads. It must be n
 Address may not be empty.
 Failed to ping {0}: {1}
 Ping succeeded in {0} ms.
+The specified line number may not be larger than the last file line number.
+Feels like: {0}
+Temperature: {0}
+Wind speed: {0}
+Wind direction: {0}
+Primary: {2} | Bootable: {3} | Boot partition: {4}
+Activates 255 color support for Dissolve.
+Activates true color support for Dissolve.
+Press any key to go back.

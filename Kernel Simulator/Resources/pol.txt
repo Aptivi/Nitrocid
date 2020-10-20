@@ -884,3 +884,12 @@ Napisz, ile razy polecenie „put” powinno ponawiać nieudane przesyłanie. Mu
 Adres nie może być pusty.
 Błąd pingowania {0}: {1}
 Ping powiódł się za {0} ms.
+Podany numer linii nie może być większy niż numer linii ostatniego pliku.
+Czuje się jak: {0}
+Temperatura: {0}
+Prędkość wiatru: {0}
+Kierunek wiatru: {0}
+Główny: {2} | Rozruchowy: {3} | Partycja rozruchowa: {4}
+Aktywuje obsługę 255 kolorów dla Rozpuszczania.
+Aktywuje obsługę prawdziwych kolorów dla funkcji Dissolve.
+Naciśnij dowolny klawisz, aby wrócić.

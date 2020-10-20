@@ -884,3 +884,12 @@ Isulat kung gaano karaming beses dapat na subukang muli ng "put" na utos ang mga
 Ang address ay maaaring hindi walang laman.
 Nabigong i-ping {0}: {1}
 Nagtagumpay si Ping sa {0} ms.
+Ang tinukoy na numero ng linya ay maaaring hindi mas malaki kaysa sa huling numero ng linya ng file.
+Nararamdaman tulad ng: {0}
+Temperatura: {0}
+Bilis ng hangin: {0}
+Direksyon ng hangin: {0}
+Pangunahing: {2} | Bootable: {3} | Paghiwalay ng boot: {4}
+Pinapagana ang 255 suporta sa kulay para sa Dissolve.
+Pinapagana ang totoong suporta sa kulay para sa Dissolve.
+Pindutin ang anumang key upang bumalik.

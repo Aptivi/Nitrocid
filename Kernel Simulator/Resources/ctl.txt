@@ -884,3 +884,12 @@ Escriviu quantes vegades l'ordre "put" hauria de tornar a provar les càrregues 
 És possible que l'adreça no estigui buida.
 No s'ha pogut fer ping {0}: {1}
 Ping ha tingut èxit en {0} ms.
+El número de línia especificat pot no ser més gran que l'últim número de línia de fitxer.
+Se sent com: {0}
+Temperatura: {0}
+Velocitat del vent: {0}
+Direcció del vent: {0}
+Principal: {2} | Arrencable: {3} | Partició d'arrencada: {4}
+Activa el suport de 255 colors per Dissoldre.
+Activa el suport del color real per Dissoldre.
+Premeu qualsevol tecla per tornar enrere.

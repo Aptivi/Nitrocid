@@ -884,3 +884,12 @@ Schreiben Sie, wie oft der Befehl "put" fehlgeschlagene Uploads wiederholen soll
 Die Adresse darf nicht leer sein.
 Fehler beim Pingen von {0}: {1}
 Ping war in {0} ms erfolgreich.
+Die angegebene Zeilennummer darf nicht größer als die letzte Dateizeilennummer sein.
+Fühlt sich an wie: {0}
+Temperatur: {0}
+Windgeschwindigkeit: {0}
+Windrichtung: {0}
+Primär: {2} | Bootfähig: {3} | Boot-Partition: {4}
+Aktiviert die 255-Farbunterstützung für Auflösen.
+Aktiviert die True Color-Unterstützung für Dissolve.
+Drücken Sie eine beliebige Taste, um zurückzukehren.
