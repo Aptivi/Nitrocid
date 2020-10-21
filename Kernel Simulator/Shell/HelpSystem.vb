@@ -384,7 +384,7 @@ Public Module HelpSystem
 
         ElseIf command = "setsaver" Then
 
-            W(DoTranslation("Usage:", currentLang) + " setsaver <modNameSS.m/matrix/disco/disco255/colorMix/colorMix255/glitterMatrix/lines/lines255/glitterColor/aptErrorSim/hackUserFromAD>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " setsaver <modNameSS.m/{0}>", True, ColTypes.Neutral, String.Join("/", ScrnSvrdb.Keys))
             If wholesslist.Length > 0 Then
                 W("       " + DoTranslation("where modnameSS.m will be", currentLang) + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
             End If
