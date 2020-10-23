@@ -684,6 +684,7 @@ IFCANCEL:
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 If Not ColorFilled Then
+                    'NOTICE: Mono seems to have a bug in Console.CursorLeft and Console.CursorTop when printing with VT escape sequences.
                     If Not (Console.CursorLeft = EndLeft And Console.CursorTop = EndTop) Then
                         If DissolveTrueColor Then
                             Dim esc As Char = GetEsc()

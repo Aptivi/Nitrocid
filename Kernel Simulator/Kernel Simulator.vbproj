@@ -190,6 +190,9 @@
     <DefineConstants>SPECIFIER="RC"</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Extensification">
+      <Version>2020.0.0</Version>
+    </PackageReference>
     <PackageReference Include="FluentFTP">
       <Version>33.0.0</Version>
     </PackageReference>
@@ -220,6 +223,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="Extensification.DictionaryExts" />
+    <Import Include="Extensification.StringExts" />
     <Import Include="FluentFTP" />
     <Import Include="MadMilkman.Ini" />
     <Import Include="Microsoft.VisualBasic" />
@@ -252,7 +257,6 @@
     <Compile Include="Login\PermissionManagement.vb" />
     <Compile Include="Misc\Calculation\Calc.vb" />
     <Compile Include="Misc\Configuration\ConfigTool\ToolPrompts.vb" />
-    <Compile Include="Misc\DictionaryExtensions.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Configuration\OldConfigUp.vb" />
     <Compile Include="Misc\Forecast\Forecast.vb" />
@@ -270,7 +274,6 @@
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
     <Compile Include="Misc\Scripts\BeepSynth.vb" />
     <Compile Include="Misc\StringEvaluators.vb" />
-    <Compile Include="Misc\StringExtensions.vb" />
     <Compile Include="Misc\TextEdit\TextEditGetCommand.vb" />
     <Compile Include="Misc\TextEdit\TextEditHelpSystem.vb" />
     <Compile Include="Misc\TextEdit\TextEditShell.vb" />

@@ -150,6 +150,14 @@ Copyright (c) Renci
 
 License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 
+### Extensification
+
+Source code: https://github.com/EoflaOE/Extensification/
+
+Copyright (c) 2020 EoflaOE and its companies
+
+License (MIT): https://github.com/EoflaOE/Extensification/blob/master/LICENSE
+
 ### Nuget.Build.Tasks.Pack (build dependency)
 
 Source code: https://github.com/NuGet/NuGet.Client
