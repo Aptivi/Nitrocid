@@ -37,7 +37,7 @@ Public Module Shell
                                             "listparts", "sumfile", "rdebug", "spellbee", "mathbee", "loteresp", "sshell", "bsynth", "shownotifs",
                                             "dismissnotif", "rexec", "calc", "update", "sumfiles", "lsmail", "echo", "choice", "beep", "input", "mkfile",
                                             "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather", "fileinfo", "dirinfo", "chattr", "ping"}
-    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "rmuser", "netinfo", "debuglog",
+    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "chpwd", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
                                      "listdrives", "listparts", "rdebug", "rexec", "update", "blockdbgdev", "unblockdbgdev", "settings"}
     Public obsoleteCmds() As String = {}
