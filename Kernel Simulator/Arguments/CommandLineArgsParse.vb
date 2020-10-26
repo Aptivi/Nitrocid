@@ -20,7 +20,7 @@ Imports System.IO
 
 Module CommandLineArgsParse
 
-    Public availableCMDLineArgs() As String = {"createConf", "testMod", "testInteractive", "debug", "args"}
+    Public availableCMDLineArgs() As String = {"testMod", "testInteractive", "debug", "args"}
 
     ''' <summary>
     ''' Parses the command line arguments
@@ -32,18 +32,7 @@ Module CommandLineArgsParse
                 Dim argArgs As String = Environment.GetCommandLineArgs.Skip(2).ToArray.Join(" ")
 
                 'Parse arguments
-                If arg = "createConf" Then
-                    If Not File.Exists(paths("Configuration")) Then
-                        Try
-                            CreateConfig(False)
-                            DisposeAll()
-                            Environment.Exit(0)
-                        Catch cex As EventsAndExceptions.ConfigException
-                            DisposeAll()
-                            Environment.Exit(2)
-                        End Try
-                    End If
-                ElseIf arg = "testMod" Then
+                If arg = "testMod" Then
                     StartParse(argArgs)
                     If scripts.Count = 0 Then
                         Environment.Exit(1)
