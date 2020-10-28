@@ -21,7 +21,6 @@ Imports System.Text
 Imports System.Threading
 Imports Microsoft.VisualBasic.FileIO
 Imports MimeKit
-Imports MimeKit.Cryptography
 
 Module MailGetCommand
 
@@ -72,14 +71,16 @@ Module MailGetCommand
                     W(DoTranslation("Invalid choice. Assuming no...", currentLang), True, ColTypes.Input)
                 End If
             ElseIf cmd = "list" Then
+                RequiredArgsProvided = True
                 If FullArgsLQ?.Count > 0 Then
-                    RequiredArgsProvided = True
                     Wdbg("I", "Page is numeric? {0}", FullArgsLQ(0).IsNumeric)
                     If FullArgsLQ(0).IsNumeric Then
                         W(MailListMessages(FullArgsLQ(0)), False, ColTypes.Neutral)
                     Else
                         W(DoTranslation("Page is not a numeric value.", currentLang), True, ColTypes.Err)
                     End If
+                Else
+                    W(MailListMessages(1), False, ColTypes.Neutral)
                 End If
             ElseIf cmd = "lsdirs" Then
                 RequiredArgsProvided = True
