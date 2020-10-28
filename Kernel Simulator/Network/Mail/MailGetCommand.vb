@@ -210,6 +210,16 @@ Module MailGetCommand
                         W(DoTranslation("Failed to move all mail made by {0}.", currentLang), True, ColTypes.Neutral, FullArgsLQ(0))
                     End If
                 End If
+            ElseIf cmd = "mkdir" Then
+                If FullArgsLQ?.Count > 0 Then
+                    RequiredArgsProvided = True
+                    CreateMailDirectory(FullArgsLQ(0))
+                End If
+            ElseIf cmd = "rmdir" Then
+                If FullArgsLQ?.Count > 0 Then
+                    RequiredArgsProvided = True
+                    DeleteMailDirectory(FullArgsLQ(0))
+                End If
             End If
 
             If Not RequiredArgsProvided Then

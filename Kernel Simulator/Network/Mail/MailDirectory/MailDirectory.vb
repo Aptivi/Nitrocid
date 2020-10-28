@@ -22,6 +22,44 @@ Imports MailKit
 Public Module MailDirectory
 
     ''' <summary>
+    ''' Creates mail folder
+    ''' </summary>
+    ''' <param name="Directory">Directory name</param>
+    Public Sub CreateMailDirectory(ByVal Directory As String)
+        Wdbg("I", "Creating folder: {0}", Directory)
+        Try
+            Dim MailFolder As MailFolder
+            SyncLock IMAP_Client.SyncRoot
+                MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                MailFolder.Create(Directory, True)
+            End SyncLock
+        Catch ex As Exception
+            Wdbg("E", "Failed to create folder {0}: {1}", Directory, ex.Message)
+            WStkTrc(ex)
+            Throw New EventsAndExceptions.MailException(DoTranslation("Unable to create mail folder {0}: {1}", currentLang).FormatString(Directory, ex.Message))
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Deletes mail folder
+    ''' </summary>
+    ''' <param name="Directory">Directory name</param>
+    Public Sub DeleteMailDirectory(ByVal Directory As String)
+        Wdbg("I", "Deleting folder: {0}", Directory)
+        Try
+            Dim MailFolder As MailFolder
+            SyncLock IMAP_Client.SyncRoot
+                MailFolder = OpenFolder(Directory)
+                MailFolder.Delete()
+            End SyncLock
+        Catch ex As Exception
+            Wdbg("E", "Failed to delete folder {0}: {1}", Directory, ex.Message)
+            WStkTrc(ex)
+            Throw New EventsAndExceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}", currentLang).FormatString(Directory, ex.Message))
+        End Try
+    End Sub
+
+    ''' <summary>
     ''' Changes current mail directory
     ''' </summary>
     ''' <param name="Directory">A mail directory</param>
@@ -51,7 +89,7 @@ Public Module MailDirectory
         For Each nmspc As FolderNamespace In IMAP_Client.PersonalNamespaces
             Wdbg("I", "Namespace: {0}", nmspc.Path)
             For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                If dir.Name = FolderString Then
+                If dir.Name.ToLower = FolderString.ToLower Then
                     dir.Open(FolderMode)
                     Opened = dir
                 End If
@@ -62,7 +100,7 @@ Public Module MailDirectory
         For Each nmspc As FolderNamespace In IMAP_Client.SharedNamespaces
             Wdbg("I", "Namespace: {0}", nmspc.Path)
             For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                If dir.Name = FolderString Then
+                If dir.Name.ToLower = FolderString.ToLower Then
                     dir.Open(FolderMode)
                     Opened = dir
                 End If
@@ -73,7 +111,7 @@ Public Module MailDirectory
         For Each nmspc As FolderNamespace In IMAP_Client.OtherNamespaces
             Wdbg("I", "Namespace: {0}", nmspc.Path)
             For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                If dir.Name = FolderString Then
+                If dir.Name.ToLower = FolderString.ToLower Then
                     dir.Open(FolderMode)
                     Opened = dir
                 End If
@@ -81,7 +119,11 @@ Public Module MailDirectory
         Next
 
 #Disable Warning BC42104
-        Return Opened
+        If Not Opened Is Nothing Then
+            Return Opened
+        Else
+            Throw New EventsAndExceptions.NoSuchMailDirectoryException(DoTranslation("Mail folder {0} not found.", currentLang).FormatString(FolderString))
+        End If
 #Enable Warning BC42104
     End Function
 
