@@ -1,5 +1,9 @@
 ## General Contributions
 
+We are changing into how we organize releases for bug fixes and feature additions. We're going to separate between the master branch, which is where we're developing the major versions of kernel, and the servicing branch, which is where we're making minor versions of the kernel.
+
+Both branches get their own continuous integration builds.
+
 #### If you want to contribute to Kernel Simulator, the conditions below must be followed
 
 1. If you want to modify/recode the core kernel, make sure that you write the changes correctly and carefully, making sure that you don't damage the core kernel features.
