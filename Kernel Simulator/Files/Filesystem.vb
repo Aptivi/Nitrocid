@@ -95,9 +95,9 @@ Public Module Filesystem
                             Else
                                 W("- " + FInfo.Name + ": ", False, ColTypes.HelpCmd)
                             End If
-                            W(DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.HelpDef,
-                              FormatNumber(FInfo.Length / 1024, 2), FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
-                                                                    FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
+                            W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.HelpDef,
+                              FInfo.Length.FileSizeToString, FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
+                                                             FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
                         End If
                     ElseIf Directory.Exists(Entry) Then
                         Dim DInfo As New DirectoryInfo(Entry)
@@ -108,9 +108,9 @@ Public Module Filesystem
                         'Print information
                         If (DInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
                             W("- " + DInfo.Name + "/: ", False, ColTypes.HelpCmd)
-                            W(DoTranslation("{0} KB, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.HelpDef,
-                              FormatNumber(TotalSize / 1024, 2), DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
-                                                                 DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
+                            W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.HelpDef,
+                              TotalSize.FileSizeToString, DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
+                                                          DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
                         End If
                     End If
                 Catch ex As UnauthorizedAccessException 'Error while getting info
