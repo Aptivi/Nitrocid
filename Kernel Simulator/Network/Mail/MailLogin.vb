@@ -130,6 +130,22 @@ Module MailLogin
             Else
                 Return ""
             End If
+        ElseIf Address.EndsWith("@office365.com") Then
+            If Type = ServerType.IMAP Then
+                Return "outlook.office365.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.office365.com:587"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@bt.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap4.btconnect.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.btconnect.com:25"
+            Else
+                Return ""
+            End If
         ElseIf Address.EndsWith("@yahoo.com") Then
             If Type = ServerType.IMAP Then
                 Return "imap.mail.yahoo.com"
@@ -167,6 +183,38 @@ Module MailLogin
                 Return "imap.att.yahoo.com"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.att.yahoo.com"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@o2online.de") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.o2online.de"
+            ElseIf Type = ServerType.SMTP Then
+                Return "mail.o2online.de"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@t-online.de") Then
+            If Type = ServerType.IMAP Then
+                Return "secureimap.t-online.de"
+            ElseIf Type = ServerType.SMTP Then
+                Return "securesmtp.t-online.de:587"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@1und1.de") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.1und1.de"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.1und1.de:587"
+            Else
+                Return ""
+            End If
+        ElseIf Address.EndsWith("@ionos.com") Then
+            If Type = ServerType.IMAP Then
+                Return "imap.1and1.com"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.1and1.com:587"
             Else
                 Return ""
             End If
