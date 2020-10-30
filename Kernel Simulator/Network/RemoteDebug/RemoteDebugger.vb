@@ -64,6 +64,7 @@ Module RemoteDebugger
         W(DoTranslation("Debug listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, DebugPort)
 
         While Not RDebugStopping
+            Thread.Sleep(1)
             Try
                 Dim RDebugStream As NetworkStream
                 Dim RDebugSWriter As StreamWriter
@@ -112,6 +113,7 @@ Module RemoteDebugger
     Sub ReadAndBroadcastAsync()
         Dim i As Integer = 0 'Because DebugDevices.Keys(i) is zero-based
         While True
+            Thread.Sleep(1)
             If i > DebugDevices.Count - 1 Then
                 i = 0
             Else
