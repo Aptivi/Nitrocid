@@ -63,7 +63,7 @@ Module MailShell
             'Listen for a command
             Dim cmd As String = Console.ReadLine
             Dim args As String = ""
-            If Not IsNothing(cmd) Then
+            If Not (cmd = Nothing Or cmd?.StartsWith(" ") = True) Then
                 Wdbg("I", "Original command: {0}", cmd)
                 If cmd.Contains(" ") And Not cmd.StartsWith(" ") Then
                     Wdbg("I", "Found arguments in command. Parsing...")

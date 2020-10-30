@@ -40,7 +40,7 @@ Module TestShell
             W("(t)> ", False, ColTypes.Input)
             FullCmd = Console.ReadLine
             Try
-                If Not IsNothing(FullCmd) Then
+                If Not (FullCmd = Nothing Or FullCmd?.StartsWith(" ") = True) Then
                     Wdbg("I", "Command: {0}", FullCmd)
                     If TShellCmds.Contains(FullCmd.Split(" ")(0)) Then
                         TStartCommandThread = New Thread(AddressOf TParseCommand)
