@@ -66,12 +66,12 @@ Public Module ModParser
         ''' <summary>
         ''' Code executed when initializing events
         ''' </summary>
-        ''' <param name="ev">Event name. Look it up on EventsAndExceptions.vb</param>
+        ''' <param name="ev">Event name. Look it up on <see cref="EventsAndExceptions"/></param>
         Sub InitEvents(ByVal ev As String)
         ''' <summary>
         ''' Code executed when initializing events
         ''' </summary>
-        ''' <param name="ev">Event name. Look it up on EventsAndExceptions.vb</param>
+        ''' <param name="ev">Event name. Look it up on <see cref="EventsAndExceptions"/></param>
         ''' <param name="Args">Arguments.</param>
         Sub InitEvents(ByVal ev As String, ParamArray Args() As Object)
     End Interface
@@ -190,15 +190,15 @@ Public Module ModParser
     ''' <summary>
     ''' Starts to parse the mod, and configures it so it can be used
     ''' </summary>
-    ''' <param name="modFile">Mod file name with extension. It should end with .m, SS.m, or CS.m</param>
+    ''' <param name="modFile">Mod file name with extension. It should end with .m or CS.m</param>
     ''' <param name="StartStop">Whether to start or stop mods</param>
     Sub StartParse(ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         modFile = modFile.Replace(modPath, "")
         If Not modFile.EndsWith(".m") Then
-            'Ignore all mods who don't end with .m
+            'Ignore all mods that its file name doesn't end with .m
             Wdbg("W", "Unsupported file type for mod file {0}.", modFile)
         ElseIf modFile.EndsWith("SS.m") Then
-            'Ignore all mods who end with SS.m
+            'Ignore all mods that its file name ends with SS.m
             Wdbg("W", "Mod file {0} is a screensaver and is ignored.", modFile)
         ElseIf modFile.EndsWith("CS.m") Then
             'Mod has a language of C#
