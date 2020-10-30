@@ -300,6 +300,7 @@
     <Compile Include="Network\Mail\MailPGP\PGPContext.vb" />
     <Compile Include="Network\Mail\MailTransfer\MailTransfer.vb" />
     <Compile Include="Network\NetworkTools.vb" />
+    <Compile Include="Network\NetworkTransfer.vb" />
     <Compile Include="Network\RemoteDebug\RemoteDebugCmd.vb" />
     <Compile Include="Network\RemoteDebug\RemoteDebugger.vb" />
     <Compile Include="Network\RemoteDebug\RemoteDebugTools.vb" />
@@ -424,7 +425,6 @@
     <None Include="Resources\ger.txt" />
     <None Include="Resources\fre.txt" />
     <None Include="Resources\chi.txt" />
-    <None Include="COPYING" />
     <None Include="iconfinder_applications-utilities_8840.ico" Pack="true" PackagePath="\" />
     <None Include="iconfinder_applications-utilities_8840.png" Pack="true" PackagePath="\" />
   </ItemGroup>
