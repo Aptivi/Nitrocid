@@ -970,6 +970,7 @@ Public Module GetCommand
                     End If
                     If Directory.Exists(folder) Then
                         For Each file As String In Directory.EnumerateFiles(folder, "*", IO.SearchOption.TopDirectoryOnly)
+                            file = NeutralizePath(file)
                             W(">> {0}", True, ColTypes.Stage, file)
                             If eqargs(0) = "SHA256" Then
                                 Dim spent As New Stopwatch
