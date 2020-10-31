@@ -138,7 +138,7 @@ Imports KS
     ''' <summary>
     ''' Tests file encryption
     ''' </summary>
-    <TestMethod()> Public Sub TestGetEncryptedFile()
+    <TestMethod()> Public Sub TestGetEncryptedFileUsingStream()
         InitPaths()
         Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing."), 0, 13)
@@ -151,6 +151,27 @@ Imports KS
         Assert.IsTrue(FileHashMD5 = "D41D8CD98F00B204E9800998ECF8427E" And
                       FileHashSHA1 = "DA39A3EE5E6B4B0D3255BFEF95601890AFD80709" And
                       FileHashSHA256 = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855", "Encrypted file hash isn't get properly. Got:" + vbNewLine +
+                                                                                                           FileHashMD5 + vbNewLine +
+                                                                                                           FileHashSHA1 + vbNewLine +
+                                                                                                           FileHashSHA256)
+    End Sub
+
+    ''' <summary>
+    ''' Tests file encryption
+    ''' </summary>
+    <TestMethod()> Public Sub TestGetEncryptedFileUsingPath()
+        InitPaths()
+        Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
+        FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23)
+        FileStreamHash.Flush()
+        FileStreamHash.Close()
+        Dim FileHashMD5 As String = GetEncryptedFile(paths("Home") + "/TestSum.txt", Algorithms.MD5)
+        Dim FileHashSHA1 As String = GetEncryptedFile(paths("Home") + "/TestSum.txt", Algorithms.SHA1)
+        Dim FileHashSHA256 As String = GetEncryptedFile(paths("Home") + "/TestSum.txt", Algorithms.SHA256)
+        File.Delete(paths("Home") + "/TestSum.txt")
+        Assert.IsTrue(FileHashMD5 = "CD5578C85A4CF32E48D157746A90C7F6" And
+                      FileHashSHA1 = "36EBF31AF7234D6C99CA65DC4EDA524161600657" And
+                      FileHashSHA256 = "7E6857729A34755DE8C2C9E535A8765BDE241F593BE3588B8FA6D29D949EFADA", "Encrypted file hash isn't get properly. Got:" + vbNewLine +
                                                                                                            FileHashMD5 + vbNewLine +
                                                                                                            FileHashSHA1 + vbNewLine +
                                                                                                            FileHashSHA256)
