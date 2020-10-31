@@ -1076,6 +1076,74 @@ Public Module GetCommand
                 Done = True
                 Process.Start("https://github.com/EoflaOE/Kernel-Simulator/wiki")
 
+            ElseIf words(0) = "verify" Then
+
+                If eqargs?.Length >= 4 Then
+                    Done = True
+                    Dim file As String = NeutralizePath(eqargs(3))
+                    Dim HashFile As String = NeutralizePath(eqargs(2))
+                    Dim ExpectedHashLength As Integer
+                    Dim ExpectedHash As String = ""
+                    Dim ActualHash As String = ""
+                    If IO.File.Exists(file) Then
+                        If eqargs(0) = "SHA256" Then
+                            ExpectedHashLength = 64
+                        ElseIf eqargs(0) = "SHA1" Then
+                            ExpectedHashLength = 40
+                        ElseIf eqargs(0) = "MD5" Then
+                            ExpectedHashLength = 32
+                        Else
+                            W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Err)
+                            Exit Try
+                        End If
+
+                        'Verify the hash
+                        If IO.File.Exists(HashFile) Then
+                            Dim HashStream As New StreamReader(HashFile)
+                            Wdbg("I", "Stream length: {0}", HashStream.BaseStream.Length)
+                            Do While Not HashStream.EndOfStream
+                                'Check if made from KS, and take it from before-last split space. If not, take it from the beginning
+                                Dim StringLine As String = HashStream.ReadLine
+                                If StringLine.StartsWith("- ") Then
+                                    Wdbg("I", "Hashes file is of KS format")
+                                    If StringLine.StartsWith("- " + file) Then
+                                        Dim HashSplit() As String = StringLine.Split(" "c)
+                                        ExpectedHash = HashSplit(HashSplit.Length - 2).ToUpper
+                                        ActualHash = eqargs(1).ToUpper
+                                    End If
+                                Else
+                                    Wdbg("I", "Hashes file is of standard format")
+                                    If StringLine.EndsWith(Path.GetFileName(file)) Then
+                                        Dim HashSplit() As String = StringLine.Split(" "c)
+                                        ExpectedHash = HashSplit(0).ToUpper
+                                        ActualHash = eqargs(1).ToUpper
+                                    End If
+                                End If
+                            Loop
+                        Else
+                            ExpectedHash = eqargs(2).ToUpper
+                            ActualHash = eqargs(1).ToUpper
+                        End If
+
+                        If ActualHash.Length = ExpectedHashLength And ExpectedHash.Length = ExpectedHashLength Then
+                            Wdbg("I", "Hashes are consistent.")
+                            Wdbg("I", "Hashes {0} and {1}", ActualHash, ExpectedHash)
+                            If ActualHash = ExpectedHash Then
+                                Wdbg("I", "Hashes match.")
+                                W(DoTranslation("Hashes match.", currentLang), True, ColTypes.Neutral)
+                            Else
+                                Wdbg("W", "Hashes don't match.")
+                                W(DoTranslation("Hashes don't match.", currentLang), True, ColTypes.Neutral)
+                            End If
+                        Else
+                            Wdbg("E", "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, eqargs(0), ExpectedHashLength)
+                            W(DoTranslation("Hashes are malformed.", currentLang), True, ColTypes.Err)
+                        End If
+                    Else
+                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Err, file)
+                    End If
+                End If
+
             ElseIf words(0) = "weather" Then
 
                 If requestedCommand <> "weather" Then

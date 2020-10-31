@@ -98,6 +98,7 @@ Public Module HelpSystem
                                                               {"unblockdbgdev", DoTranslation("Unblock a debug device by IP address", currentLang)},
                                                               {"update", DoTranslation("System update", currentLang)},
                                                               {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)},
+                                                              {"verify", DoTranslation("Verifies sanity of the file", currentLang)},
                                                               {"weather", DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang)}}
     End Sub
 
@@ -447,6 +448,10 @@ Public Module HelpSystem
         ElseIf command = "usermanual" Then
 
             W(DoTranslation("Usage:", currentLang) + " usermanual: " + DoTranslation("Takes you to our GitHub Wiki.", currentLang), True, ColTypes.Neutral)
+
+        ElseIf command = "verify" Then
+
+            W(DoTranslation("Usage:", currentLang) + " verify <MD5/SHA1/SHA256> <calculatedhash> <hashfile/expectedhash> <file>", True, ColTypes.Neutral)
 
         ElseIf command = "weather" Then
 
