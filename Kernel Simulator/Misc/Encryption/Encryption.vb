@@ -92,4 +92,29 @@ Public Module Encryption
         Return ""
     End Function
 
+    ''' <summary>
+    ''' Encrypts a file
+    ''' </summary>
+    ''' <param name="Path">Relative path</param>
+    ''' <param name="algorithm">Algorithm</param>
+    ''' <returns>Encrypted hash sum</returns>
+    Public Function GetEncryptedFile(ByVal Path As String, ByVal algorithm As Algorithms) As String
+        Path = NeutralizePath(Path)
+        Dim Str As New FileStream(Path, FileMode.Open)
+        Wdbg("I", "Selected algorithm: {0}", algorithm.ToString)
+        Wdbg("I", "Stream length: {0}", Str.Length)
+        Select Case algorithm
+            Case 0
+                Dim hashbyte As Byte() = MD5.Create().ComputeHash(Str)
+                Return GetArrayEnc(hashbyte)
+            Case 1
+                Dim hashbyte As Byte() = SHA1.Create().ComputeHash(Str)
+                Return GetArrayEnc(hashbyte)
+            Case 2
+                Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Str)
+                Return GetArrayEnc(hashbyte)
+        End Select
+        Return ""
+    End Function
+
 End Module
