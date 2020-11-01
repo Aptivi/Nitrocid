@@ -221,6 +221,11 @@ Module MailGetCommand
                     RequiredArgsProvided = True
                     DeleteMailDirectory(FullArgsLQ(0))
                 End If
+            ElseIf cmd = "ren" Then
+                If FullArgsLQ?.Count > 1 Then
+                    RequiredArgsProvided = True
+                    RenameMailDirectory(FullArgsLQ(0), FullArgsLQ(1))
+                End If
             End If
 
             If Not RequiredArgsProvided Then

@@ -36,6 +36,7 @@ Public Module MailHelpSystem
                                                                   {"mvall", DoTranslation("Moves all messages from recipient", currentLang)},
                                                                   {"read", DoTranslation("Opens a message", currentLang)},
                                                                   {"readenc", DoTranslation("Opens an encrypted message", currentLang)},
+                                                                  {"ren", DoTranslation("Renames a folder", currentLang)},
                                                                   {"rm", DoTranslation("Removes a message", currentLang)},
                                                                   {"rmall", DoTranslation("Removes all messages from recipient", currentLang)},
                                                                   {"rmdir", DoTranslation("Removes a directory from the current working directory", currentLang)},
@@ -73,6 +74,8 @@ Public Module MailHelpSystem
             W(DoTranslation("Usage:", currentLang) + " read <mailid>: " + DoTranslation("Opens a message", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "readenc" Then
             W(DoTranslation("Usage:", currentLang) + " readenc <mailid>: " + DoTranslation("Opens an encrypted message", currentLang), True, ColTypes.Neutral)
+        ElseIf cmd = "ren" Then
+            W(DoTranslation("Usage:", currentLang) + " ren <oldfoldername> <newfoldername>: " + DoTranslation("Renames a folder", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "rm" Then
             W(DoTranslation("Usage:", currentLang) + " rm <mailid>: " + DoTranslation("Removes a message", currentLang), True, ColTypes.Neutral)
         ElseIf cmd = "rmall" Then

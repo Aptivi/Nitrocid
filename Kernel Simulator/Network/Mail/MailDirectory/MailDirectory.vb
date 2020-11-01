@@ -60,6 +60,25 @@ Public Module MailDirectory
     End Sub
 
     ''' <summary>
+    ''' Deletes mail folder
+    ''' </summary>
+    ''' <param name="Directory">Directory name</param>
+    Public Sub RenameMailDirectory(ByVal Directory As String, ByVal NewName As String)
+        Wdbg("I", "Renaming folder {0} to {1}", Directory, NewName)
+        Try
+            Dim MailFolder As MailFolder
+            SyncLock IMAP_Client.SyncRoot
+                MailFolder = OpenFolder(Directory)
+                MailFolder.Rename(MailFolder.ParentFolder, NewName)
+            End SyncLock
+        Catch ex As Exception
+            Wdbg("E", "Failed to delete folder {0}: {1}", Directory, ex.Message)
+            WStkTrc(ex)
+            Throw New EventsAndExceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}", currentLang).FormatString(Directory, ex.Message))
+        End Try
+    End Sub
+
+    ''' <summary>
     ''' Changes current mail directory
     ''' </summary>
     ''' <param name="Directory">A mail directory</param>

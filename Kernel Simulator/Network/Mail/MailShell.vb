@@ -24,7 +24,7 @@ Imports MailKit.Search
 Module MailShell
 
     'Variables
-    Public Mail_AvailableCommands() As String = {"help", "cd", "lsdirs", "exit", "list", "mkdir", "mv", "mvall", "read", "readenc", "rm", "rmall", "rmdir", "send", "sendenc"}
+    Public Mail_AvailableCommands() As String = {"help", "cd", "lsdirs", "exit", "list", "mkdir", "mv", "mvall", "read", "readenc", "ren", "rm", "rmall", "rmdir", "send", "sendenc"}
     Public IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested, KeepAlive As Boolean
