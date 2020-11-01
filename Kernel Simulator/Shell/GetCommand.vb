@@ -1169,7 +1169,7 @@ Public Module GetCommand
                     End If
                     W(DoTranslation("Temperature: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, FormatNumber(WeatherInfo.Temperature, 2))
                     W(DoTranslation("Feels like: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, FormatNumber(WeatherInfo.FeelsLike, 2))
-                    W(DoTranslation("Wind speed: {0}", currentLang) + " hPa", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindSpeed, 2))
+                    W(DoTranslation("Wind speed: {0}", currentLang) + " {1}", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindSpeed, 2), WindSpeedSpecifier)
                     W(DoTranslation("Wind direction: {0}", currentLang) + "°", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindDirection, 2))
                     W(DoTranslation("Pressure: {0}", currentLang) + " hPa", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Pressure, 2))
                     W(DoTranslation("Humidity: {0}", currentLang) + "%", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Humidity, 2))
