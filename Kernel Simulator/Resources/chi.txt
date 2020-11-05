@@ -893,3 +893,21 @@ Xiǎoxué: {2} | Kě qǐdòng: {3} | Yǐndǎo fēnqū: {4}
 Jīhuó 255 zhǒng yánsè zhīchí yǐ róngjiě.
 Jīhuó duì Dissolve de zhēn cǎisè zhīchí.
 Àn rènyì jiàn fǎnhuí.
+Wúfǎ chuàngjiàn yóujiàn wénjiàn jiā {0}:{1}
+Zài dāngqián gōngzuò mùlù zhōng chuàngjiàn mùlù
+cóng dāngqián gōngzuò mùlù zhōng shānchú mùlù
+zhǎo bù dào yóujiàn wénjiàn jiā {0}.
+Wúfǎ shānchú yóujiàn wénjiàn jiā {0}:{1}
+{0}, Zài {1} {2} zhōng chuàngjiàn, zài {3} {4} zhōng xiūgǎi
+yànzhèng wénjiàn de wánzhěng xìng
+hā xī géshì bù zhèngquè.
+Hā xī bù pǐpèi.
+Hā xī pǐpèi.
+Zhòng mìngmíng wénjiàn jiā
+běn jié liè chūle suǒyǒu chángguī nèihé shèzhì, zhǔyào yòng yú wéihù nèihé.
+Běn bùfèn gēnggǎi yìngjiàn tàn zhēn de xíngwéi.
+Cǐ bùfèn dàibiǎo dēnglù shèzhì. Zhùxiāo nín de zhànghù yǐ shǐ gēnggǎi shēngxiào.
+Běn jié liè chūle wàiké chéngxù shèzhì.
+Běn jié liè chūle wǎngluò shèzhì, lìrú FTP Shell, yǔ wǎngluò xiāngguān de mìnglìng shèzhì hé yuǎnchéng tiáoshì shèzhì.
+Běn jié liè chūle suǒyǒu píngmù bǎohù chéngxù jí qí kěyòng shèzhì.
+Bù shìyòng yú qí xiāngyìng bùfèn de shèzhì jiàng zài cǐ chù xiǎnshì.

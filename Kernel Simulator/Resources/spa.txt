@@ -893,3 +893,21 @@ Primario: {2} | Arrancable: {3} | Partición de arranque: {4}
 Activa la compatibilidad con 255 colores para Disolver.
 Activa el soporte de color verdadero para Disolver.
 Presione cualquier tecla para regresar.
+No se pudo crear la carpeta de correo {0}: {1}
+Hace un directorio en el directorio de trabajo actual
+Elimina un directorio del directorio de trabajo actual
+No se encontró la carpeta de correo {0}.
+No se puede eliminar la carpeta de correo {0}: {1}
+{0}, creado en {1} {2}, modificado en {3} {4}
+Verifica la cordura del archivo
+Los hashes están mal formados.
+Los hash no coinciden.
+Hashes coincide.
+Cambia el nombre de una carpeta
+Esta sección enumera todas las configuraciones generales del kernel, principalmente para mantener el kernel.
+Esta sección cambia el comportamiento de la sonda de hardware.
+Esta sección representa la configuración de inicio de sesión. Cierre sesión en su cuenta para que los cambios surtan efecto.
+Esta sección enumera la configuración del shell.
+Esta sección enumera la configuración de red, como el shell de FTP, la configuración de los comandos relacionados con la red y la configuración de depuración remota.
+Esta sección enumera todos los protectores de pantalla y sus configuraciones disponibles.
+Las configuraciones que no encajan en sus secciones apropiadas aterrizan aquí.

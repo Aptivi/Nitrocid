@@ -893,3 +893,21 @@ Primarno: {2} | Podizanje: {3} | Podizanje particije: {4}
 Aktivira 255 podrške u boji za Dissolve.
 Aktivira istinsku podršku u boji za Dissolve.
 Pritisnite bilo koji taster za povratak.
+Nije moguće napraviti direktorijum pošte {0}: {1}
+Izrađuje direktorijum u trenutnom radnom direktorijumu
+Uklanja direktorijum iz trenutnog radnog direktorija
+Direktorijum pošte {0} nije pronađen.
+Nije moguće izbrisati fasciklu pošte {0}: {1}
+{0}, napravljeno u {1} ​​{2}, izmenjeno u {3} {4}
+Proverava ispravnost datoteke
+Heševi su neispravni.
+Heševi se ne podudaraju.
+Poklapanje heša.
+Preimenuje fasciklu
+Ovaj odeljak navodi sva opšta podešavanja jezgra, uglavnom za održavanje jezgra.
+Ovaj odeljak menja ponašanje sonde hardvera.
+Ovaj odeljak predstavlja podešavanja za prijavljivanje. Odjavite se sa naloga da bi promene stupile na snagu.
+U ovom odeljku su navedena podešavanja ljuske.
+Ovaj odeljak navodi mrežne postavke, poput FTP ljuske, mrežne postavke komandi i postavke udaljenog otklanjanja grešaka.
+U ovom odeljku su navedeni svi čuvari ekrana i njihova dostupna podešavanja.
+Ovde padaju postavke koje se ne uklapaju u odgovarajuće odeljke.

@@ -893,3 +893,21 @@ Primair: {2} | Opstartbaar: {3} | Opstartpartitie: {4}
 Activeert 255 kleurenondersteuning voor Dissolve.
 Activeert echte kleurondersteuning voor Dissolve.
 Druk op een willekeurige toets om terug te gaan.
+Kan e-mailmap {0} niet maken: {1}
+Maakt een map in de huidige werkmap
+Verwijdert een map uit de huidige werkmap
+E-mailmap {0} niet gevonden.
+Kan e-mailmap {0} niet verwijderen: {1}
+{0}, gemaakt in {1} {2}, gewijzigd in {3} {4}
+Verifieert de gezondheid van het bestand
+Hashes zijn misvormd.
+Hashes komen niet overeen.
+Hashes komen overeen.
+Hernoemt een map
+Deze sectie geeft een overzicht van alle algemene kernelinstellingen, voornamelijk voor het onderhouden van de kernel.
+Deze sectie verandert het gedrag van de hardwaretaster.
+Dit gedeelte bevat de aanmeldingsinstellingen. Meld u af bij uw account om de wijzigingen door te voeren.
+Deze sectie bevat de shell-instellingen.
+Dit gedeelte bevat de netwerkinstellingen, zoals de FTP-shell, de netwerkgerelateerde opdrachtinstellingen en de instellingen voor foutopsporing op afstand.
+Dit gedeelte bevat alle screensavers en hun beschikbare instellingen.
+Instellingen die niet in de juiste secties passen, komen hier terecht.

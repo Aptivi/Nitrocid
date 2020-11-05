@@ -893,3 +893,21 @@ Primario: {2} | Avviabile: {3} | Partizione di avvio: {4}
 Attiva il supporto di 255 colori per Dissolve.
 Attiva il supporto True Color per Dissolve.
 Premere un tasto qualsiasi per tornare indietro.
+Impossibile creare la cartella di posta {0}: {1}
+Crea una directory nella directory di lavoro corrente
+Rimuove una directory dalla directory di lavoro corrente
+Cartella di posta {0} non trovata.
+Impossibile eliminare la cartella di posta {0}: {1}
+{0}, creato in {1} {2}, modificato in {3} {4}
+Verifica la sanità mentale del file
+Gli hash non sono corretti.
+Gli hash non corrispondono.
+Corrispondenza hash.
+Rinomina una cartella
+Questa sezione elenca tutte le impostazioni generali del kernel, principalmente per la manutenzione del kernel.
+Questa sezione modifica il comportamento del probe hardware.
+Questa sezione rappresenta le impostazioni di accesso. Esci dal tuo account per rendere effettive le modifiche.
+Questa sezione elenca le impostazioni della shell.
+Questa sezione elenca le impostazioni di rete, come la shell FTP, le impostazioni dei comandi relativi alla rete e le impostazioni di debug remoto.
+Questa sezione elenca tutti gli screensaver e le loro impostazioni disponibili.
+Le impostazioni che non rientrano nelle sezioni appropriate atterrano qui.

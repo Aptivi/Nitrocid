@@ -893,3 +893,21 @@ praathamik: {2} | boot karane yogy: {3} | boot vibhaajan: {4}
 bhang ke lie 255 rang samarthan sakriy karata hai.
 disolv ke lie sahee rang samarthan sakriy karata hai.
 vaapas jaane ke lie koee bhee kunjee dabaen.
+mel foldar banaane mein asamarth {0}: {1}
+vartamaan kaaryasheel nirdeshika mein ek nirdeshika banaata hai
+vartamaan kaaryasheel nirdeshika se ek nirdeshika nikaalata hai
+mel foldar {0} nahin mila.
+mel foldar {0}: {1} ko hataane mein asamarth
+{0}, {1} {2} mein banaaya gaya, {3} {4} mein sanshodhit
+fail kee pavitrata ko satyaapit karata hai
+chakatte vikrt hote hain.
+hosh mel nahin khaate.
+haish maich.
+ek foldar ka naam badalata hai
+yah khand mukhy roop se karnel ko banae rakhane ke lie sabhee saamaany karnel setings ko soocheebaddh karata hai.
+yah khand haardaveyar jaanch vyavahaar ko badalata hai.
+yah anubhaag login setings ka pratinidhitv karata hai. prabhaavee hone ke lie apane khaate se log aaut karen.
+yah khand shel setings ko soocheebaddh karata hai.
+yah khand netavark setings ko soocheebaddh karata hai, jaise efateepee shel, netavark se sambandhit kamaand setings aur doorasth deebag setings.
+yah khand sabhee skreenasevar aur unakee upalabdh setings ko soocheebaddh karata hai.
+setings jo unake upayukt vargon mein phit nahin hotee hain, ve yahaan jameen par hain.

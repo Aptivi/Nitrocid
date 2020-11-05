@@ -893,3 +893,21 @@ Ensisijainen: {2} | Käynnistettävä: {3} | Käynnistysosio: {4}
 Aktivoi 255 väritukea liukenemiseen.
 Aktivoi todellisen väritukeen liukenemiseen.
 Paina mitä tahansa näppäintä palataksesi takaisin.
+Postikansiota {0} ei voitu luoda: {1}
+Luo hakemiston nykyiseen työhakemistoon
+Poistaa hakemiston nykyisestä työhakemistosta
+Postikansiota {0} ei löydy.
+Postikansiota {0} ei voi poistaa: {1}
+{0}, luotu paikassa {1} {2}, muokattu paikassa {3} {4}
+Vahvistaa tiedoston järjen
+Hashes ovat epämuodostuneita.
+Hashes eivät täsmää.
+Hashes-ottelu.
+Nimeä kansio uudelleen
+Tässä osassa luetellaan kaikki ytimen yleiset asetukset, pääasiassa ytimen ylläpitoa varten.
+Tämä osio muuttaa laitteistokoettimen käyttäytymistä.
+Tämä osa kuvaa sisäänkirjautumisasetuksia. Kirjaudu ulos tililtäsi, jotta muutokset tulevat voimaan.
+Tässä osassa luetellaan kuoren asetukset.
+Tässä osassa luetellaan verkkoasetukset, kuten FTP-komentotulkki, verkkoon liittyvät komentoasetukset ja etävianmääritysasetukset.
+Tässä osassa luetellaan kaikki näytönsäästäjät ja niiden käytettävissä olevat asetukset.
+Asetukset, jotka eivät sovi asianmukaiseen osioon, laskeutuvat tänne.

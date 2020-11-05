@@ -893,3 +893,21 @@ Primaire: {2} | Amorçable: {3} | Partition de démarrage: {4}
 Active la prise en charge de 255 couleurs pour Dissoudre.
 Active la prise en charge des couleurs réelles pour Dissoudre.
 Appuyez sur n'importe quelle touche pour revenir en arrière.
+Impossible de créer le dossier de messagerie {0}: {1}
+Crée un répertoire dans le répertoire de travail courant
+Supprime un répertoire du répertoire de travail actuel
+Dossier de messagerie {0} introuvable.
+Impossible de supprimer le dossier de messagerie {0}: {1}
+{0}, créé en {1} {2}, modifié en {3} {4}
+Vérifie la validité du fichier
+Les hachages sont mal formés.
+Les hachages ne correspondent pas.
+Les hachages correspondent.
+Renomme un dossier
+Cette section répertorie tous les paramètres généraux du noyau, principalement pour la maintenance du noyau.
+Cette section modifie le comportement de la sonde matérielle.
+Cette section représente les paramètres de connexion. Déconnectez-vous de votre compte pour que les modifications prennent effet.
+Cette section répertorie les paramètres du shell.
+Cette section répertorie les paramètres réseau, comme le shell FTP, les paramètres de commande liés au réseau et les paramètres de débogage à distance.
+Cette section répertorie tous les économiseurs d'écran et leurs paramètres disponibles.
+Les paramètres qui ne correspondent pas à leurs sections appropriées arrivent ici.

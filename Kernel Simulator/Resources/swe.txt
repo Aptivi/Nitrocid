@@ -893,3 +893,21 @@ Primär: {2} | Startbar: {3} | Startpartition: {4}
 Aktiverar 255 färgstöd för upplösning.
 Aktiverar äkta färgstöd för upplösning.
 Tryck på valfri knapp för att gå tillbaka.
+Det gick inte att skapa e-postmappen {0}: {1}
+Gör en katalog i den aktuella arbetskatalogen
+Tar bort en katalog från den aktuella arbetskatalogen
+E-postmappen {0} hittades inte.
+Det gick inte att ta bort e-postmappen {0}: {1}
+{0}, Skapad i {1} {2}, modifierad i {3} {4}
+Verifierar förnuft i filen
+Hash är missbildade.
+Hashes matchar inte.
+Hashes matchar.
+Byt namn på en mapp
+Detta avsnitt listar alla allmänna kärninställningar, huvudsakligen för att underhålla kärnan.
+Det här avsnittet ändrar beteendet för maskinvarusonden.
+Detta avsnitt representerar inloggningsinställningarna. Logga ut från ditt konto för att ändringarna ska träda i kraft.
+Detta avsnitt listar skalinställningarna.
+Detta avsnitt listar nätverksinställningarna, som FTP-skalet, de nätverksrelaterade kommandoinställningarna och fjärrfelsökningsinställningarna.
+Detta avsnitt listar alla skärmsläckare och deras tillgängliga inställningar.
+Inställningar som inte passar i deras lämpliga sektioner landar här.

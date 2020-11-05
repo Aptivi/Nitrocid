@@ -893,3 +893,21 @@ Primar: {2} | Bootable: {3} | Partiție de pornire: {4}
 Activează suportul de 255 culori pentru Dissolve.
 Activează suportul de culoare adevărată pentru Dissolve.
 Apăsați orice tastă pentru a reveni înapoi.
+Imposibil de creat dosarul de poștă electronică {0}: {1}
+Realizează un director în directorul de lucru curent
+Elimină un director din directorul de lucru curent
+Dosarul de poștă electronică {0} nu a fost găsit.
+Imposibil de șters dosarul de e-mail {0}: {1}
+{0}, creat în {1} {2}, modificat în {3} {4}
+Verifică sănătatea fișierului
+Hash-urile sunt malformate.
+Hash-urile nu se potrivesc.
+Hash meci.
+Redenumește un folder
+Această secțiune listează toate setările generale ale nucleului, în principal pentru întreținerea nucleului.
+Această secțiune modifică comportamentul sondei hardware.
+Această secțiune reprezintă setările de conectare. Deconectați-vă de la cont pentru ca modificările să intre în vigoare.
+Această secțiune listează setările shell-ului.
+Această secțiune listează setările de rețea, cum ar fi shell-ul FTP, setările de comandă legate de rețea și setările de depanare la distanță.
+Această secțiune listează toate protectorile de ecran și setările disponibile.
+Setările care nu se încadrează în secțiunile lor corespunzătoare ajung aici.

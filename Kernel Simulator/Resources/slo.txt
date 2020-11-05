@@ -893,3 +893,21 @@ Primarno: {2} | Zagon: {3} | Zagonska particija: {4}
 Aktivira 255 barvnih podpor za Dissolve.
 Aktivira resnično barvno podporo za Dissolve.
 Za vrnitev pritisnite katero koli tipko.
+Nie je možné vytvoriť priečinok pošty {0}: {1}
+Vytvorí adresár v aktuálnom pracovnom adresári
+Odstráni adresár z aktuálneho pracovného adresára
+Priečinok pošty {0} sa nenašiel.
+Nie je možné odstrániť priečinok pošty {0}: {1}
+{0}, vytvorené v {1} {2}, upravené v {3} {4}
+Overuje rozumnosť súboru
+Haše sú chybne tvarované.
+Hashes sa nezhodujú.
+Hashš zápas.
+Premenuje priečinok
+Táto sekcia obsahuje zoznam všetkých všeobecných nastavení jadra, hlavne pre údržbu jadra.
+Táto časť mení správanie hardvérovej sondy.
+Táto časť predstavuje nastavenia prihlásenia. Aby sa zmeny prejavili, odhláste sa z účtu.
+Táto časť uvádza zoznam nastavení shellu.
+Táto časť obsahuje zoznam sieťových nastavení, ako je napríklad shell FTP, nastavenie príkazov týkajúcich sa siete a nastavenie vzdialeného ladenia.
+V tejto časti sú uvedené všetky šetriče obrazovky a ich dostupné nastavenia.
+Tu pristávajú nastavenia, ktoré sa nezmestia do príslušných sekcií.

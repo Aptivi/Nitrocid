@@ -893,3 +893,21 @@ Primarno: {2} | Podizanje: {3} | Podizanje particije: {4}
 Aktivira 255 podrške u boji za Dissolve.
 Aktivira istinsku podršku u boji za Dissolve.
 Pritisnite bilo koju tipku za povratak.
+Nije moguće stvoriti mapu za poštu {0}: {1}
+Izrađuje direktorij u trenutnom radnom direktoriju
+Uklanja direktorij iz trenutnog radnog direktorija
+Mapa mape {0} nije pronađena.
+Nije moguće izbrisati mapu pošte {0}: {1}
+{0}, stvoreno u {1} {2}, izmijenjeno u {3} {4}
+Provjerava ispravnost datoteke
+Heševi su neispravni.
+Hash-ovi se ne podudaraju.
+Podudaranje hasheva.
+Preimenuje mapu
+Ovaj odjeljak navodi sve opće postavke jezgre, uglavnom za održavanje jezgre.
+Ovaj odjeljak mijenja ponašanje hardverske sonde.
+Ovaj odjeljak predstavlja postavke prijave. Odjavite se s računa da bi promjene stupile na snagu.
+Ovaj odjeljak navodi postavke ljuske.
+Ovaj odjeljak navodi mrežne postavke, poput FTP ljuske, mrežne postavke naredbi i postavke udaljenog otklanjanja pogrešaka.
+U ovom su odjeljku navedeni svi čuvari zaslona i njihove dostupne postavke.
+Ovdje slijeću postavke koje se ne uklapaju u odgovarajuće odjeljke.

@@ -893,3 +893,21 @@ Prā'imarī: {2} | Būṭa hōṇa yōga: {3} | Būṭa bhāga: {4
 Bhaga la'ī 255 raga sahā'itā nū saragarama karadā hai.
 Ghulaṇa la'ī asala raga sahā'itā nū saragarama karadā hai.
 Vāpasa jāṇa la'ī kō'ī kujī dabā'ō.
+Mēla phōlaḍara create {0} baṇā'uṇa vica asamaratha: To {1}
+maujūdā kārajaśīla ḍā'iraikaṭarī vica ika ḍā'iraikaṭarī baṇā'undā hai
+maujūdā kārajakārī ḍā'iraikaṭarī tōṁ ika ḍā'iraikaṭarī haṭā'undī hai
+mēla phōlaḍara {0}. Nahīṁ mili'ā hai.
+Mēla phōlaḍara delete {0}: {1} Delete nū miṭā'uṇa vica asamaratha
+{0}, {1} {2} vica baṇā'i'ā gi'ā, {3} {4} vica sōdhi'ā gi'ā
+phā'īla dī savachatā dī puśaṭī karadā hai
+haiśa kharāba hana.
+Haiśa mēla nahīṁ khāndā.
+Haiśa maica.
+Ika phōlaḍara dā nāma badaladā hai
+iha bhāga karanala dī'āṁ sabha āma saiṭigāṁ vēkhā'undā hai, khāsa karakē karanala nū baṇā'ī rakhaṇa la'ī.
+Iha bhāga hāraḍavē'ara paṛatāla vivahāra nū badaladā hai.
+Iha bhāga lāga'ina saiṭigāṁ nū darasā'undā hai. Tabadīlī'āṁ dē prabhāva la'ī āpaṇē khātē vicōṁ lauga ā'uṭa karō.
+Iha bhāga śaila saiṭiga dī sūcī hai.
+Iha bhāga naiṭavaraka saiṭigāṁ, jivēṁ ki FTP śaila, naiṭavaraka-sabadhī kamāṇḍa saiṭigāṁ, atē rimōṭa ḍībaga saiṭigāṁ dī sūcī hai.
+Iha bhāga sārē sakrīna sēvarāṁ atē uhanāṁ dī'āṁ upalabadha saiṭigāṁ dī sūcī didā hai.
+Saiṭigaza jihaṛī'āṁ unhāṁ dē sectionsukavēṁ bhāgāṁ vica nahīṁ ā'undī'āṁ uha ithē ā'undī'āṁ hana.

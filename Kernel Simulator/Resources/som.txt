@@ -893,3 +893,21 @@ Horudhac ah: {2} | La raaci karo: {3} | Kabaha kabaha: {4}
 Waxay kicisaa 255 taageero midab ah Kala-diridda.
 Waxay u ololeysaa taageerada midabka runta ah ee Kala-dirista.
 Riix fure kasta si aad dib ugu noqoto.
+Aan la abuuri karin galka boostada {0}: {1}
+Waxay ka dhigaysaa tusaha galka shaqada ee hadda jira
+Waxay ka saaraysaa galka galka shaqeynaya hadda
+Faylka boostada {0} lama helin.
+Waan tirtiri kari waayey galka boostada {0}: {1}
+{0}, Lagu sameeyay {1} {2}, Waxkabadal lagu sameeyay {3} {4}
+Wuxuu xaqiijiyaa fayaqabka faylka
+Hashes waa cilladaysan tahay.
+Hashu isma waafaqdo.
+Xashiishka ayaa isku aada.
+Magacaabay fayl
+Qaybtani waxay taxaysaa dhammaan goobaha guud ee kernel, inta badan si loo ilaaliyo firida.
+Qaybtani waxay bedeshaa habdhaqanka baaritaanka qalabka.
+Qaybtani waxay u taagan tahay goobaha gelitaanka. Ka bax koontadaada si isbeddeladu u dhaqan galaan.
+Qaybtani waxay liis garaysaa goobaha qolofta.
+Qaybtani waxay liis garaysaa goobaha shabakadda, sida qolofka FTP, goobaha amarka ee shabakadda la xiriira, iyo dejinta qaladka fog.
+Qaybtani waxay taxaysaa dhammaan shaashadda iyo dejintooda la heli karo.
+Dejinta aan ku habboonayn qaybtooda ku habboon halkan ayey ku degtaa.

@@ -893,3 +893,21 @@ Puraimari: {2} | Kidō kanō: {3} | Būtopātishon: {4}
 Dizorubu no 255-shoku no sapōto o akutibu ni shimasu.
 Dizorubu no to~urūkarāsapōto o akutibu ni shimasu.
 Izureka no kī o oshite modorimasu.
+Mēruforuda o sakusei dekimasen {0}:{1}
+Genzai no sagyō direkutori ni direkutori o sakusei shimasu
+Genzai no sagyō direkutori kara direkutori o sakujo shimasu
+Mēruforuda {0} ga mitsukarimasen.
+Mēruforuda {0} o sakujo dekimasen: {1}
+{0},{1} {2} De sakusei,{3} {4} de henkō
+Fairu no kenzen-sei o kenshō shimasu
+Hasshu no keishiki ga tadashiku arimasen.
+Hasshu ga itchi shimasen.
+Hasshu ga itchi shimasu.
+Foruda no namae o henkō shimasu
+Kono sekushonde wa, omo ni kāneru o hoshu suru tame no, subete no ippantekina kāneru settei o risuto shimasu.
+Kono sekushonde wa, hādou~eapurōbu no dōsa o henkō shimasu.
+Kono sekushon wa, roguin settei o arawashimasu. Henkō o yūkōnisuru ni wa, akaunto kara roguauto shimasu.
+Kono sekushonde wa, sheru settei o ichiran hyōji shimasu.
+Kono sekushonde wa, FTP sheru, nettowāku kanren no komando settei, rimōtodebaggu settei nado no nettowāku settei o ichiran hyōji shimasu.
+Kono sekushon ni wa, subete no sukurīnsēbā toso no shiyō kanōna settei ga ichiran hyōji sa remasu.
+Tekisetsuna sekushon ni osamaranai settei ga koko ni hyōji sa remasu.

@@ -893,3 +893,21 @@ Utama: {2} | Boleh boot: {3} | Partition but: {4}
 Mengaktifkan sokongan warna 255 untuk Dissolve.
 Mengaktifkan sokongan warna sebenar untuk Larutkan.
 Tekan sebarang kekunci untuk kembali.
+Tidak dapat membuat folder mel {0}: {1}
+Membuat direktori dalam direktori kerja semasa
+Mengeluarkan direktori dari direktori yang berfungsi sekarang
+Folder mel {0} tidak dijumpai.
+Tidak dapat memadam folder mel {0}: {1}
+{0}, Dibuat dalam {1} {2}, Diubah suai dalam {3} {4}
+Mengesahkan kewajaran fail
+Hash tidak betul.
+Tudung tidak sepadan.
+Pertandingan bulu mata.
+Menamakan semula folder
+Bahagian ini menyenaraikan semua tetapan kernel umum, terutama untuk menjaga kernel.
+Bahagian ini mengubah tingkah laku probe perkakasan.
+Bahagian ini menunjukkan tetapan masuk. Log keluar dari akaun anda untuk perubahan tersebut berlaku.
+Bahagian ini menyenaraikan tetapan shell.
+Bahagian ini menyenaraikan tetapan rangkaian, seperti shell FTP, tetapan perintah yang berkaitan dengan rangkaian, dan tetapan debug jarak jauh.
+Bahagian ini menyenaraikan semua screensaver dan tetapannya yang tersedia.
+Tetapan yang tidak sesuai dengan bahagian yang sesuai terdapat di sini.

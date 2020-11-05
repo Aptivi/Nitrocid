@@ -893,3 +893,21 @@ Prāthamika: {2} | Buṭēbala: {3} | Buṭa pārṭiśana: {4}
 Drabībhūta karāra jan'ya 255 raṅa samarthana sakriẏa karē.
 Drabībhūta karāra jan'ya satya raṅa samarthana sakriẏa karē.
 Phirē yētē kōna'ō kī ṭipuna.
+Mēla phōlḍāra create {0} tairi karatē akṣama: {1}
+Bartamāna ōẏārkiṁ ḍirēkṭaritē ēkaṭi ḍirēkṭari tairi karē
+bartamāna kāryakārī ḍirēkṭari thēkē ēkaṭi ḍirēkṭari sarāna
+mēla phōlḍāra {0}. Pā'ōẏā yāẏa ni.
+Mēla phōlḍāra delete 0} muchē phēlatē akṣama: {1}
+{0}, {1} {2} Ē nirmita, {3} {4} in ē sanśōdhita
+phā'ilaṭira syāniṭi parīkṣā karē
+hyāśaguli truṭiyukta.
+Hyāśa milachē nā.
+Myāca hyāśa.
+Ēkaṭi phōlḍāraṭira nāma paribartana karē
+ē'i bibhāgē samasta sādhāraṇa kārnēla sēṭinsa, pradhānata kārnēla rakṣaṇābēkṣaṇēra jan'ya tālikābhukta karā haẏa.
+Ē'i bibhāgaṭi hārḍa'ōẏyāra prōba ācaraṇa paribartana karē.
+Ē'i bibhāgaṭi laga'ina sēṭinsēra pratinidhitba karē. Paribartanaguli kāryakara karatē āpanāra ayākā'unṭa thēkē laga ā'uṭa karuna.
+Ē'i bibhāgē śēla sēṭinsa tālikābhukta karā haẏa.
+Ē'i bibhāgaṭi ēphaṭipi śēla, nēṭa'ōẏārka-samparkita kamānḍa sēṭinsa ēbaṁ rimōṭa ḍibāga sēṭinsēra matō nēṭa'ōẏārka sēṭinsa tālikābhukta karē.
+Ē'i bibhāgē samasta skrīna ōbhāra ēbaṁ tādēra upalabdha sēṭinsēra tālikā raẏēchē.
+Sēṭinsa yā tādēra upayukta bibhāgagulitē phiṭa karē nā land

@@ -893,3 +893,21 @@ Asosiy: {2} | Yuklash mumkin: {3} | Yuklash bo'limi: {4}
 Dissolve uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
 Dissolve uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
 Orqaga qaytish uchun istalgan tugmani bosing.
+Pochta jildini yaratib bo'lmadi {0}: {1}
+Joriy ishchi katalogda katalog yaratadi
+Joriy ishchi katalogdan katalogni olib tashlaydi
+{0} pochta jildi topilmadi.
+{0} pochta jildini o'chirib bo'lmadi: {1}
+{0}, {1} {2} da yaratilgan, {3} {4} da o'zgartirilgan
+Faylning sog'lomligini tekshiradi
+Xashaklar noto'g'ri shakllangan.
+Xashlar mos kelmaydi.
+Xashlar mos keladi.
+Jildning nomini o'zgartiradi
+Ushbu bo'limda asosan yadroni saqlash uchun barcha umumiy yadro sozlamalari keltirilgan.
+Ushbu bo'lim apparat tekshiruvi ishini o'zgartiradi.
+Ushbu bo'lim kirish sozlamalarini aks ettiradi. O'zgarishlar kuchga kirishi uchun hisobingizdan chiqing.
+Ushbu bo'limda qobiq sozlamalari keltirilgan.
+Ushbu bo'limda FTP qobig'i, tarmoq bilan bog'liq buyruq sozlamalari va masofadan disk raskadrovka sozlamalari kabi tarmoq sozlamalari keltirilgan.
+Ushbu bo'limda barcha ekran saqlovchilari va ularning mavjud sozlamalari keltirilgan.
+O'zlarining tegishli bo'limlariga mos bo'lmagan sozlamalar shu erga to'g'ri keladi.

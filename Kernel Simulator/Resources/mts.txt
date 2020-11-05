@@ -893,3 +893,21 @@ Primarja: {2} | Ibbutjar: {3} | Partizzjoni tal-ibbutjar: {4}
 Jattiva 255 appoġġ tal-kulur għal Ħoll.
 Jattiva l-appoġġ tal-kulur veru għal Ħoll.
 Agħfas kwalunkwe ċavetta biex tmur lura.
+Ma jistax joħloq folder tal-posta {0}: {1}
+Jagħmel direttorju fid-direttorju tax-xogħol kurrenti
+Tneħħi direttorju mid-direttorju tax-xogħol kurrenti
+Il-folder tal-posta {0} ma nstabx.
+Ma tistax tħassar il-folder tal-posta {0}: {1}
+{0}, Maħluq f '{1} {2}, Modifikat f' {3} {4}
+Tivverifika s-sanità tal-fajl
+Hash huma malformati.
+Hash ma jaqblux.
+Logħba tal-ħaxix.
+Semmi mill-ġdid folder
+Din it-taqsima telenka l-issettjar ġenerali tal-qalba, l-aktar biex iżżomm il-qalba.
+Din it-taqsima tbiddel l-imġieba tas-sonda tal-ħardwer.
+Din it-taqsima tirrappreżenta l-issettjar tal-login. Log out mill-kont tiegħek biex il-bidliet jidħlu fis-seħħ.
+Din it-taqsima telenka l-issettjar tal-qoxra.
+Din it-taqsima telenka l-issettjar tan-netwerk, bħall-qoxra FTP, l-issettjar tal-kmand relatat man-netwerk, u s-settings tal-iddibaggjar mill-bogħod.
+Din it-taqsima telenka l-iskreensavers kollha u s-settings disponibbli tagħhom.
+Is-settings li ma joqogħdux fit-taqsimiet xierqa tagħhom jinżlu hawn.

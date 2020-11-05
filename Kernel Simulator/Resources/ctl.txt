@@ -893,3 +893,21 @@ Principal: {2} | Arrencable: {3} | Partició d'arrencada: {4}
 Activa el suport de 255 colors per Dissoldre.
 Activa el suport del color real per Dissoldre.
 Premeu qualsevol tecla per tornar enrere.
+No es pot crear la carpeta de correu {0}: {1}
+Crea un directori al directori de treball actual
+Elimina un directori del directori de treball actual
+No s'ha trobat la carpeta de correu {0}.
+No es pot suprimir la carpeta de correu {0}: {1}
+{0}, creat a {1} {2}, modificat a {3} {4}
+Verifica el seny del fitxer
+Els hash estan mal formats.
+Els hash no coincideixen.
+Hash coincideix.
+Canvia el nom d’una carpeta
+Aquesta secció llista tots els paràmetres generals del nucli, principalment per mantenir el nucli.
+Aquesta secció canvia el comportament de la sonda de maquinari.
+Aquesta secció representa la configuració d'inici de sessió. Tanqueu la sessió del compte perquè els canvis entrin en vigor.
+Aquesta secció llista els paràmetres de l'intèrpret d'ordres.
+En aquesta secció s'enumeren els paràmetres de xarxa, com ara l'intèrpret d'ordres FTP, els paràmetres d'ordres relacionats amb la xarxa i els paràmetres de depuració remota.
+En aquesta secció s’enumeren tots els estalvis de pantalla i els seus paràmetres disponibles.
+Aquí apareixen les opcions de configuració que no encaixen a les seccions adequades.

@@ -893,3 +893,21 @@ Primär: {2} | Bootfähig: {3} | Boot-Partition: {4}
 Aktiviert die 255-Farbunterstützung für Auflösen.
 Aktiviert die True Color-Unterstützung für Dissolve.
 Drücken Sie eine beliebige Taste, um zurückzukehren.
+E-Mail-Ordner {0} kann nicht erstellt werden: {1}
+Erstellt ein Verzeichnis im aktuellen Arbeitsverzeichnis
+Entfernt ein Verzeichnis aus dem aktuellen Arbeitsverzeichnis
+Mailordner {0} nicht gefunden.
+Mailordner {0} kann nicht gelöscht werden: {1}
+{0}, Erstellt in {1} {2}, Geändert in {3} {4}
+Überprüft die Richtigkeit der Datei
+Hashes sind missgebildet.
+Hashes passen nicht zusammen.
+Hashes passen zusammen.
+Benennt einen Ordner um
+In diesem Abschnitt werden alle allgemeinen Kerneleinstellungen aufgelistet, hauptsächlich zur Wartung des Kernels.
+Dieser Abschnitt ändert das Verhalten der Hardware-Sonde.
+Dieser Abschnitt enthält die Anmeldeeinstellungen. Melden Sie sich von Ihrem Konto ab, damit die Änderungen wirksam werden.
+Dieser Abschnitt listet die Shell-Einstellungen auf.
+In diesem Abschnitt werden die Netzwerkeinstellungen wie die FTP-Shell, die netzwerkbezogenen Befehlseinstellungen und die Remote-Debug-Einstellungen aufgelistet.
+In diesem Abschnitt werden alle Bildschirmschoner und ihre verfügbaren Einstellungen aufgelistet.
+Hier landen Einstellungen, die nicht in die entsprechenden Abschnitte passen.

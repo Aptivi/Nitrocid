@@ -893,3 +893,21 @@ Primário: {2} | Inicializável: {3} | Partição de inicialização: {4}
 Ativa o suporte de 255 cores para Dissolver.
 Ativa o suporte true color para Dissolve.
 Pressione qualquer tecla para voltar.
+Não foi possível criar a pasta de e-mail {0}: {1}
+Cria um diretório no diretório de trabalho atual
+Remove um diretório do diretório de trabalho atual
+Pasta de correio {0} não encontrada.
+Não foi possível excluir a pasta de e-mail {0}: {1}
+{0}, criado em {1} {2}, modificado em {3} {4}
+Verifica a integridade do arquivo
+Hashes estão malformados.
+Hashes não correspondem.
+Hashes correspondem.
+Renomeia uma pasta
+Esta seção lista todas as configurações gerais do kernel, principalmente para manter o kernel.
+Esta seção altera o comportamento da detecção de hardware.
+Esta seção representa as configurações de login. Saia da sua conta para que as alterações tenham efeito.
+Esta seção lista as configurações do shell.
+Esta seção lista as configurações de rede, como o shell do FTP, as configurações de comando relacionadas à rede e as configurações de depuração remota.
+Esta seção lista todos os protetores de tela e suas configurações disponíveis.
+Configurações que não se encaixam em suas seções apropriadas são colocadas aqui.

@@ -893,3 +893,21 @@ Külək istiqaməti: {0}
 Dissolve üçün 255 rəng dəstəyini aktivləşdirir.
 Dissolve üçün həqiqi rəng dəstəyini aktivləşdirir.
 Geri qayıtmaq üçün istənilən düyməyə basın.
+{0} poçt qovluğu yaratmaq mümkün deyil: {1}
+Cari iş qovluğunda bir qovluq edir
+Cari iş qovluğundan bir qovluğu silir
+{0} poçt qovluğu tapılmadı.
+Poçt qovluğunu silmək mümkün deyil {0}: {1}
+{0}, {1} {2} tarixində yaradılıb, {3} {4} tarixində dəyişdirilib
+Faylın sağlamlığını təsdiqləyir
+Zibillər düzgün qurulmayıb.
+Hashes uyğun gəlmir.
+Hashes matçı.
+Bir qovluğu dəyişdirir
+Bu bölmədə, əsasən kernelin saxlanılması üçün bütün ümumi kernel parametrləri sadalanır.
+Bu bölmə aparat sondası davranışını dəyişdirir.
+Bu bölmə giriş parametrlərini əks etdirir. Dəyişikliklərin qüvvəyə minməsi üçün hesabınızdan çıxın.
+Bu bölmə qabıq parametrlərini sadalayır.
+Bu bölmədə FTP qabığı, şəbəkə ilə əlaqəli əmr parametrləri və uzaqdan ayıklama parametrləri kimi şəbəkə parametrləri sadalanır.
+Bu bölmədə bütün ekran qoruyucuları və mövcud parametrləri sadalanır.
+Müvafiq hissələrinə sığmayan parametrlər buraya düşür.

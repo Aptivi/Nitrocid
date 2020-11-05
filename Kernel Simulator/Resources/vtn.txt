@@ -893,3 +893,21 @@ Chính: {2} | Có thể khởi động: {3} | Phân vùng khởi động: {4}
 Kích hoạt hỗ trợ 255 màu cho Hòa tan.
 Kích hoạt hỗ trợ màu sắc trung thực cho Hòa tan.
 Nhấn phím bất kỳ để quay lại.
+Không thể tạo thư mục thư {0}: {1}
+Tạo một thư mục trong thư mục làm việc hiện tại
+Xóa một thư mục khỏi thư mục làm việc hiện tại
+Thư mục thư {0} không được tìm thấy.
+Không thể xóa thư mục thư {0}: {1}
+{0}, Được tạo vào {1} {2}, Được sửa đổi trong {3} {4}
+Xác minh sự tỉnh táo của tệp
+Hàm băm không đúng định dạng.
+Hàm băm không khớp.
+Kết hợp băm.
+Đổi tên một thư mục
+Phần này liệt kê tất cả các cài đặt hạt nhân chung, chủ yếu để duy trì hạt nhân.
+Phần này thay đổi hành vi thăm dò phần cứng.
+Phần này đại diện cho cài đặt đăng nhập. Đăng xuất khỏi tài khoản của bạn để các thay đổi có hiệu lực.
+Phần này liệt kê các cài đặt shell.
+Phần này liệt kê các cài đặt mạng, như FTP shell, cài đặt lệnh liên quan đến mạng và cài đặt gỡ lỗi từ xa.
+Phần này liệt kê tất cả các trình bảo vệ màn hình và các cài đặt có sẵn của chúng.
+Các cài đặt không phù hợp với các phần thích hợp của chúng sẽ xuất hiện ở đây.

@@ -893,3 +893,21 @@ Utama: {2} | Dapat dibooting: {3} | Partisi boot: {4}
 Mengaktifkan 255 dukungan warna untuk Dissolve.
 Mengaktifkan dukungan warna asli untuk Dissolve.
 Tekan sembarang tombol untuk kembali.
+Tidak dapat membuat folder surat {0}: {1}
+Membuat direktori di direktori kerja saat ini
+Menghapus direktori dari direktori kerja saat ini
+Folder surat {0} tidak ditemukan.
+Tidak dapat menghapus folder surat {0}: {1}
+{0}, Dibuat di {1} {2}, Diubah di {3} {4}
+Memverifikasi kewarasan file
+Bentuk hash salah.
+Hash tidak cocok.
+Hash cocok.
+Ubah nama folder
+Bagian ini mencantumkan semua pengaturan kernel umum, terutama untuk memelihara kernel.
+Bagian ini mengubah perilaku probe perangkat keras.
+Bagian ini mewakili pengaturan login. Keluar dari akun Anda agar perubahan diterapkan.
+Bagian ini mencantumkan pengaturan shell.
+Bagian ini mencantumkan pengaturan jaringan, seperti shell FTP, pengaturan perintah terkait jaringan, dan pengaturan debug jarak jauh.
+Bagian ini mencantumkan semua screensaver dan pengaturan yang tersedia.
+Pengaturan yang tidak sesuai di bagian yang sesuai akan dibawa ke sini.

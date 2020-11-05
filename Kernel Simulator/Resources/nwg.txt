@@ -893,3 +893,21 @@ Primær: {2} | Oppstartbar: {3} | Oppstartspartisjon: {4}
 Aktiverer 255 fargestøtte for oppløsning.
 Aktiverer ekte fargestøtte for Dissolve.
 Trykk på hvilken som helst tast for å gå tilbake.
+Kan ikke opprette e-postmappe {0}: {1}
+Lag en katalog i gjeldende arbeidskatalog
+Fjerner en katalog fra gjeldende arbeidskatalog
+E-postmappen {0} ble ikke funnet.
+Kan ikke slette e-postmappen {0}: {1}
+{0}, opprettet i {1} {2}, endret i {3} {4}
+Verifiserer sunn fornuft i filen
+Hash er misdannet.
+Hashes stemmer ikke overens.
+Hashes match.
+Endrer navn på en mappe
+Denne delen viser alle generelle kjerneinnstillinger, hovedsakelig for å opprettholde kjernen.
+Denne delen endrer atferden til maskinvaresonden.
+Denne delen representerer innloggingsinnstillingene. Logg ut av kontoen din for at endringene skal tre i kraft.
+Denne delen viser skallinnstillingene.
+Denne delen viser nettverksinnstillingene, som FTP-skallet, nettverksrelaterte kommandoinnstillinger og eksterne feilsøkingsinnstillinger.
+Denne delen viser alle skjermsparere og deres tilgjengelige innstillinger.
+Innstillinger som ikke passer i de aktuelle delene, lander her.

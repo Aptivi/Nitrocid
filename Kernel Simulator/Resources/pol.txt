@@ -893,3 +893,21 @@ Główny: {2} | Rozruchowy: {3} | Partycja rozruchowa: {4}
 Aktywuje obsługę 255 kolorów dla Rozpuszczania.
 Aktywuje obsługę prawdziwych kolorów dla funkcji Dissolve.
 Naciśnij dowolny klawisz, aby wrócić.
+Nie można utworzyć folderu poczty {0}: {1}
+Tworzy katalog w bieżącym katalogu roboczym
+Usuwa katalog z bieżącego katalogu roboczego
+Nie znaleziono folderu poczty {0}.
+Nie można usunąć folderu poczty {0}: {1}
+{0}, utworzono w {1} {2}, zmodyfikowano w {3} {4}
+Weryfikuje poprawność pliku
+Hashe są zniekształcone.
+Hashe nie pasują.
+Hashe pasują.
+Zmienia nazwę folderu
+Ta sekcja zawiera wszystkie ogólne ustawienia jądra, głównie dotyczące jego obsługi.
+Ta sekcja zmienia zachowanie sondy sprzętowej.
+Ta sekcja przedstawia ustawienia logowania. Wyloguj się ze swojego konta, aby zmiany zaczęły obowiązywać.
+Ta sekcja zawiera listę ustawień powłoki.
+W tej sekcji wymieniono ustawienia sieciowe, takie jak powłoka FTP, ustawienia poleceń związanych z siecią oraz ustawienia zdalnego debugowania.
+Ta sekcja zawiera listę wszystkich wygaszaczy ekranu i ich dostępnych ustawień.
+Znajdują się tutaj ustawienia, które nie pasują do odpowiednich sekcji.

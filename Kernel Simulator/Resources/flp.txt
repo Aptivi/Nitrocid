@@ -893,3 +893,21 @@ Pangunahing: {2} | Bootable: {3} | Paghiwalay ng boot: {4}
 Pinapagana ang 255 suporta sa kulay para sa Dissolve.
 Pinapagana ang totoong suporta sa kulay para sa Dissolve.
 Pindutin ang anumang key upang bumalik.
+Hindi makalikha ng folder ng mail {0}: {1}
+Gumagawa ng isang direktoryo sa kasalukuyang gumaganang direktoryo
+Inaalis ang isang direktoryo mula sa kasalukuyang gumaganang direktoryo
+Ang mail folder na {0} ay hindi natagpuan.
+Hindi matanggal ang folder ng mail {0}: {1}
+{0}, Nilikha sa {1} {2}, Binago sa {3} {4}
+Pinapatunayan ang katinuan ng file
+Ang mga hash ay may maling anyo.
+Hindi tumutugma si Hashes.
+Tugma ni Hashes.
+Pangalanang muli ng isang folder
+Ang seksyon na ito ay naglilista ng lahat ng mga pangkalahatang setting ng kernel, pangunahin para sa pagpapanatili ng kernel.
+Binabago ng seksyong ito ang pag-uugali ng pag-imbestiga ng hardware.
+Kinakatawan ng seksyong ito ang mga setting ng pag-login. Mag-log out sa iyong account para magkabisa ang mga pagbabago.
+Ang seksyong ito ay naglilista ng mga setting ng shell.
+Inililista ng seksyong ito ang mga setting ng network, tulad ng FTP shell, mga setting ng utos na nauugnay sa network, at ang mga setting ng remote na pag-debug.
+Inililista ng seksyong ito ang lahat ng mga screensaver at ang kanilang mga magagamit na setting.
+Ang mga setting na hindi umaangkop sa kanilang naaangkop na mga seksyon ay nakarating dito.

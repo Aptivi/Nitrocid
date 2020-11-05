@@ -893,3 +893,21 @@ gibon : {2} | buting ganeung : {3} | buting patisyeon : {4}
 dijolbeue daehan 255 saegsang jiwon-eul hwalseonghwahabnida.
 dijolbeue daehan teulu keolleo jiwon-eul hwalseonghwahabnida.
 dol-agalyeomyeon amu kina nuleusibsio.
+meil poldeo {0}eul (leul) mandeul su eobs-seubnida. {1}
+hyeonjae jag-eob dilegtolie dilegtolileul mandeubnida.
+hyeonjae jag-eob dilegtolieseo dilegtolileul jegeohabnida.
+{0} meil poldeoleul chaj-eul su eobs-seubnida.
+meil poldeo {0}eul (leul) sagjehal su eobs-seubnida. {1}
+{0}, {1} {2}e saengseong, {3} {4}e sujeong doem
+pail-ui on jeonseong-eul hwag-inhabnida.
+haesi hyeongsig-i jalmosdoeeossseubnida.
+haesiga ilchihaji anhseubnida.
+haesiga ilchihabnida.
+poldeo ileum byeongyeong
+i segsyeon-eun julo keoneol yujileul-wihan modeun ilbanjeog-in keoneol seoljeong-eul nayeolhabnida.
+i segsyeon-eun hadeuweeo peulobeu dongjag-eul byeongyeonghabnida.
+i segsyeon-eun logeu-in seoljeong-eul natanaebnida. byeongyeong sahang-eul jeog-yonghalyeomyeon gyejeong-eseo logeu aushasibsio.
+i segsyeon-eneun syel seoljeong-i nayeoldoeeo issseubnida.
+i segsyeon-eneun FTP syel, neteuwokeu gwanlyeon myeonglyeong seoljeong mich wongyeog dibeogeu seoljeong-gwa gat-eun neteuwokeu seoljeong-i nayeoldoebnida.
+i segsyeon-eneun modeun hwamyeon bohogiwa sayong ganeunghan seoljeong-i nayeoldoebnida.
+jeogjeolhan segsyeon-e maj-ji anhneun seoljeong-i yeogie pyosidoebnida.

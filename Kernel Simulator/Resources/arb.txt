@@ -893,3 +893,21 @@ aitijah alriyah: {0}
 yunshut daem 255 lwnana l Dissolve.
 yanshut daem allawn alhaqiqii l Dissolve.
 adghut ealaa 'ayi miftah lileawdat.
+taeadhar 'iinsha' mujalad albryd {0}: {1}
+yajeal dalilanaan fi dalil aleamal alhalii
+yazil dalil min dalil aleamal alhalii
+mujalad albarid {0} ghyr mawjudin.
+taeadhar hadhf mujalad albryd {0}: {1}
+{0} , tama al'iinsha' fi {1} {2} , tama altaedil fi {3} {4}
+yatahaqaq min salamat almilafi
+altajziat mushawhat.
+tajziat la tatatabaq.
+mubarat tajziat.
+yueid tasmiatan mujalad
+yusarid hdha alqism jmye 'iiedadat kernel aleamat , bishakl 'asasiin lilhifaz ealaa kernel.
+yughayir hdha alqism saluwk musabaar al'ajhizat.
+yumathil hdha alqism 'iiedadat tasjil aldakhul. qum bitasjil alkhuruj min hisabik hataa tadkhul altaghyirat hayz altanfidh.
+yusrid hdha alqism 'iiedadat shell.
+yusarid hdha alqism 'iiedadat alshabakat , mithl ghulaf FTP , wa'iiedadat al'awamir almutaealiqat bialshabakat , wa'iiedadat tashih al'akhta' ean bued.
+yusrid hdha alqism jmye shashat altawaquf wal'iiedadat almutahat laha.
+al'iiedadat alty la tatanasab mae al'aqsam almunasibat mawjudat huna.

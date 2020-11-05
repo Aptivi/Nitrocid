@@ -893,3 +893,21 @@ Primær: {2} | Startbar: {3} | Bootpartition: {4}
 Aktiverer 255 farvesupport til opløsning.
 Aktiverer ægte farvesupport til opløsning.
 Tryk på en vilkårlig tast for at gå tilbage.
+Kunne ikke oprette mail-mappe {0}: {1}
+Opretter en mappe i den aktuelle arbejdsmappe
+Fjerner en mappe fra den aktuelle arbejdsmappe
+Mailmappen {0} blev ikke fundet.
+Kunne ikke slette mail-mappen {0}: {1}
+{0}, Oprettet i {1} {2}, ændret i {3} {4}
+Kontrollerer filens sundhed
+Hash er misdannet.
+Hashes stemmer ikke overens.
+Hashes matcher.
+Omdøber en mappe
+Dette afsnit viser alle generelle kerneindstillinger, hovedsageligt til vedligeholdelse af kernen.
+Dette afsnit ændrer hardware-probe-opførsel.
+Dette afsnit repræsenterer loginindstillingerne. Log ud af din konto for at ændringerne skal træde i kraft.
+Dette afsnit viser shellindstillingerne.
+Dette afsnit viser netværksindstillingerne som FTP-shell, de netværksrelaterede kommandoindstillinger og indstillingerne for fjernfejlsøgning.
+Dette afsnit viser alle pauseskærme og deres tilgængelige indstillinger.
+Indstillinger, der ikke passer i deres passende sektioner, lander her.

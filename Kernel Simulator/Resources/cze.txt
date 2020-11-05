@@ -893,3 +893,21 @@ Primární: {2} | Zaváděcí: {3} | Spouštěcí oddíl: {4}
 Aktivuje podporu 255 barev pro Dissolve.
 Aktivuje podporu skutečných barev pro Dissolve.
 Stisknutím libovolné klávesy se vrátíte zpět.
+Nelze vytvořit poštovní složku {0}: {1}
+Vytvoří adresář v aktuálním pracovním adresáři
+Odebere adresář z aktuálního pracovního adresáře
+Složka pošty {0} nebyla nalezena.
+Složku pošty nelze smazat {0}: {1}
+{0}, vytvořeno v {1} {2}, změněno v {3} {4}
+Ověřuje zdravý rozum souboru
+Mřížky jsou nesprávně tvarované.
+Hash se neshodují.
+Hashes zápas.
+Přejmenuje složku
+Tato část uvádí všechna obecná nastavení jádra, zejména pro údržbu jádra.
+Tato část mění chování hardwarové sondy.
+Tato část představuje nastavení přihlášení. Změny se projeví až po odhlášení z účtu.
+V této části je uvedeno nastavení prostředí.
+Tato část obsahuje seznam nastavení sítě, jako je prostředí FTP, nastavení příkazů souvisejících se sítí a nastavení vzdáleného ladění.
+V této části jsou uvedeny všechny spořiče obrazovky a jejich dostupná nastavení.
+Přistane zde nastavení, které se nevejde do příslušných částí.

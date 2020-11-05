@@ -893,3 +893,21 @@ Osnovnoy: {2} | Zagruzochnyy: {3} | Zagruzochnyy razdel: {4}
 Aktiviruyet podderzhku 255 tsvetov dlya rastvoreniya.
 Aktiviruyet podderzhku istinnogo tsveta dlya Dissolve.
 Nazhmite lyubuyu klavishu, chtoby vernut'sya.
+Nevozmozhno sozdat' pochtovuyu papku {0}: {1}
+Sozdayet katalog v tekushchem rabochem kataloge
+Udalyayet katalog iz tekushchego rabochego kataloga
+Papka pochty {0} ne naydena.
+Nevozmozhno udalit' pochtovuyu papku {0}: {1}
+{0}, sozdano v {1} {2}, izmeneno v {3} {4}
+Proveryayet rabotosposobnost' fayla
+Kheshi iskazheny.
+Kheshi ne sovpadayut.
+Kheshi sovpadayut.
+Pereimenovyvayet papku
+V etom razdele perechisleny vse obshchiye nastroyki yadra, v osnovnom dlya podderzhki yadra.
+Etot razdel izmenyayet povedeniye apparatnogo datchika.
+V etom razdele predstavleny nastroyki vkhoda v sistemu. Vyydite iz svoyey uchetnoy zapisi, chtoby izmeneniya vstupili v silu.
+V etom razdele perechisleny nastroyki obolochki.
+V etom razdele perechisleny parametry seti, takiye kak obolochka FTP, parametry setevykh komand i parametry udalennoy otladki.
+V etom razdele perechisleny vse zastavki i ikh dostupnyye nastroyki.
+Zdes' poyavlyayutsya nastroyki, kotoryye ne pomeshchayutsya v sootvetstvuyushchiye razdely.
