@@ -98,6 +98,7 @@ Public Module ToolPrompts
             Select Case SectionNum
                 Case 1 'General
                     MaxOptions = 5
+                    W(DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Prompt for Arguments on Boot", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("argsOnBoot"))
                     W("2) " + DoTranslation("Maintenance Mode Trigger", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("maintenance"))
                     W("3) " + DoTranslation("Change Root Password...", currentLang), True, ColTypes.Neutral)
@@ -105,19 +106,23 @@ Public Module ToolPrompts
                     W("5) " + DoTranslation("Change Culture when Switching Languages", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("LangChangeCulture"))
                 Case 2 'Hardware
                     MaxOptions = 2
+                    W(DoTranslation("This section changes hardware probe behavior.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Quiet Probe", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("quietProbe"))
                     W("2) " + DoTranslation("Probe RAM Slots", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("slotProbe"))
                 Case 3 'Login
                     MaxOptions = 3
+                    W(DoTranslation("This section represents the login settings. Log out of your account for the changes to take effect.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Show MOTD on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("showMOTD"))
                     W("2) " + DoTranslation("Clear Screen on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("clsOnLogin"))
                     W("3) " + DoTranslation("Show available usernames", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShowAvailableUsers"))
                 Case 4 'Shell
                     MaxOptions = 2
+                    W(DoTranslation("This section lists the shell settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColoredShell"))
                     W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("simHelp"))
                 Case 5 'Network
                     MaxOptions = 8
+                    W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Debug Port", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DebugPort"))
                     W("2) " + DoTranslation("Remote Debug Default Nick Prefix", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("RDebugDNP"))
                     W("3) " + DoTranslation("Download Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DRetries"))
@@ -128,6 +133,7 @@ Public Module ToolPrompts
                     W("8) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("FTPFirstProfileOnly"))
                 Case 6 'Screensaver
                     MaxOptions = 13
+                    W(DoTranslation("This section lists all the screensavers and their available settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ScrnTimeout"))
                     W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMix255Colors"))
                     W("3) [Disco] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Disco255Colors"))
@@ -143,6 +149,7 @@ Public Module ToolPrompts
                     W("13) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
                 Case 7 'Misc
                     MaxOptions = 7
+                    W(DoTranslation("Settings that don't fit in their appropriate sections land here.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("CornerTD"))
                     W("2) " + DoTranslation("Debug Size Quota in Bytes", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DebugQuota"))
                     W("3) " + DoTranslation("Size parse mode", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FullParseMode"))
