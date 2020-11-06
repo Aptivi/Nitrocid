@@ -11,6 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: servicing
     - name: NuGet Installation
       uses: warrenbuckley/Setup-Nuget@v1
     - name: MSBuild Installation

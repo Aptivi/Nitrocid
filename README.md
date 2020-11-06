@@ -8,6 +8,8 @@ Kernel Simulator simulates the future of our planned kernel that's coming as soo
 
 Not only it has some basic commands, but it also provides script support, network support, and tons of awesome things.
 
+This branch is for minor version development.
+
 ## System Requirements
 
 This section covers what you need to run Kernel Simulator. Please scroll down to your system below.
