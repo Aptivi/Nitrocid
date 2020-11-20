@@ -14,7 +14,9 @@ jobs:
       with:
         ref: servicing
     - name: NuGet Installation
-      uses: warrenbuckley/Setup-Nuget@v1
+      uses: nuget/setup-nuget@v1
+      with: 
+        nuget-version: "latest"
     - name: MSBuild Installation
       uses: microsoft/setup-msbuild@v1.0.0
     - name: Dependency Restoration

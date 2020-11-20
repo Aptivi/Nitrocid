@@ -14,7 +14,9 @@ jobs:
       with:
         ref: servicing
     - name: NuGet Installation
-      uses: warrenbuckley/Setup-Nuget@v1
+      uses: nuget/setup-nuget@v1
+      with: 
+        nuget-version: "latest"
     - name: CURL Installation
       run: choco install curl
     - name: MSBuild Installation
