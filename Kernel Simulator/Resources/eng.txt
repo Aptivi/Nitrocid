@@ -705,7 +705,7 @@ Change Root Password?
 Set Root Password...
 Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port.
 Write the default remote debug nickname prefix.
-Write how many times the ""get"" command should retry failed downloads. It must be numeric.
+Write how many times the "get" command should retry failed downloads. It must be numeric.
 Write when to launch screensaver after specified milliseconds. It must be numeric.
 Write how many bytes can the debug log store. It must be numeric.
 The answer may not be negative.
@@ -823,7 +823,7 @@ Primary: {2} Bootable: {3} Boot partition: {4}
 Unable to remove file: {0}
 Removes a directory or a file
 Can't remove {0} because it doesn't exist.
-You may not have inxi installed on your system. Refer to your package manager for installation. For Debian (and derivatives) systems, you might want to run ""sudo apt install inxi libcpanel-json-xs-perl"" in the terminal emulator.
+You may not have inxi installed on your system. Refer to your package manager for installation. For Debian (and derivatives) systems, you might want to run "sudo apt install inxi libcpanel-json-xs-perl" in the terminal emulator.
 Language set successfully to {0}!
 Press CTRL+C to exit.
 Provides information about a file
