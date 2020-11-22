@@ -40,4 +40,4 @@ assignees: ''
 
 ### -+--> Version (include commit number if applicable)
 
-<!-- This should be in this format: <Version> (<Commit>). Commit number required for development builds. -->
+<!-- This should be in this format: <Version> (<Commit>) (<Branch>). Commit number and branch required for development builds. -->

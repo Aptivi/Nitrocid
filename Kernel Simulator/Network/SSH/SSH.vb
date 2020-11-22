@@ -42,7 +42,7 @@ Module SSH
             'Add handler for SSH
             AddHandler Console.CancelKeyPress, AddressOf SSHDisconnect
             RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-            EventManager.RaiseSSHConnected(Address + ":" + Port)
+            EventManager.RaiseSSHConnected(Address + ":" + CStr(Port))
 
             'Shell creation
             Wdbg("I", "Opening shell...")
@@ -51,6 +51,7 @@ Module SSH
 
             'Wait until disconnection
             While SSH.IsConnected
+                Threading.Thread.Sleep(1)
                 If DisconnectionRequested Then
                     SSHS.Stop()
                     SSH.Disconnect()
