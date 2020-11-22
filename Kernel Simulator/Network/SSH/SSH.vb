@@ -51,6 +51,7 @@ Module SSH
 
             'Wait until disconnection
             While SSH.IsConnected
+                Threading.Thread.Sleep(1)
                 If DisconnectionRequested Then
                     SSHS.Stop()
                     SSH.Disconnect()
