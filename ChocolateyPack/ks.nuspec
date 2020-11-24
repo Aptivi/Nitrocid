@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>KS</id>
-    <version>0.0.12.1</version>
+    <version>0.0.12.2</version>
     <packageSourceUrl>http://github.com/EoflaOE/Kernel-Simulator</packageSourceUrl>
 
     <title>Kernel Simulator</title>
@@ -16,7 +16,7 @@
     <tags>ks kernel simulator vb.net</tags>
     <summary>Simulates our future-planned kernel</summary>
     <description>Kernel Simulator is the program that lets you simulate our early aspects of the kernel that will be made in the future. Please note that it is not automatically updated. For more information, please go to the project URL.</description>
-    <releaseNotes>https://github.com/EoflaOE/Kernel-Simulator/blob/master/README.md#--------history--------</releaseNotes>
+    <releaseNotes>https://github.com/EoflaOE/Kernel-Simulator/wiki/History-of-KS</releaseNotes>
 
     <dependencies>
       <dependency id="dotnetfx" version="4.8.0.20190930"/>
