@@ -20,7 +20,7 @@ jobs:
     - name: CURL Installation
       run: choco install curl
     - name: MSBuild Installation
-      uses: microsoft/setup-msbuild@v1.0.0
+      uses: microsoft/setup-msbuild@v1.0.2
     - name: Dependency Restoration
       run: nuget restore "Kernel Simulator.sln"
     - name: Solution Compilation
