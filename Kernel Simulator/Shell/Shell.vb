@@ -226,7 +226,7 @@ Public Module Shell
                 CommandFlag = False
                 For Each cmd In argcmds
                     Console.Title = $"{ConsoleTitle} - {cmd}"
-                    Dim scriptArgs As List(Of String) = strcommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
+                    Dim scriptArgs As List(Of String) = cmd.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
                     Dim scriptCmd As String = scriptArgs(0)
                     If scriptCmd.StartsWith("""") And scriptCmd.EndsWith("""") Then
                         scriptCmd = scriptCmd.Replace("""", "")
