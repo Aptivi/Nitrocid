@@ -89,27 +89,26 @@ Public Module Shell
                         'Check for a type of command
                         If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
                             Dim Done As Boolean = False
-                            Dim Parts As String() = strcommand.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
-                            Wdbg("I", "Mod commands probing started with {0}", strcommand)
-                            For Each c As String In modcmnds
-                                If Parts(0) = c Then
+                            Dim Commands As String() = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
+                            For Each Command As String In Commands
+                                Dim Parts As String() = Command.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                                Wdbg("I", "Mod commands probing started with {0} from {1}", Command, strcommand)
+                                If modcmnds.Contains(Parts(0)) Then
                                     Done = True
-                                    Wdbg("I", "Mod command: {0}", strcommand)
-                                    ExecuteModCommand(strcommand)
+                                    Wdbg("I", "Mod command: {0}", Parts(0))
+                                    ExecuteModCommand(Command)
+                                End If
+                                Wdbg("I", "Aliases probing started with {0} from {1}", Command, strcommand)
+                                If Aliases.Keys.Contains(Parts(0)) Then
+                                    Done = True
+                                    Wdbg("I", "Alias: {0}", Parts(0))
+                                    ExecuteAlias(Command, Parts(0))
+                                End If
+                                If Done = False Then
+                                    Wdbg("I", "Executing built-in command")
+                                    GetLine(False, Command)
                                 End If
                             Next
-                            Wdbg("I", "Aliases probing started with {0}", strcommand)
-                            For Each a As String In Aliases.Keys
-                                If Parts(0) = a Then
-                                    Done = True
-                                    Wdbg("I", "Alias: {0}", a)
-                                    ExecuteAlias(a)
-                                End If
-                            Next
-                            If Done = False Then
-                                Wdbg("I", "Executing built-in command")
-                                GetLine(False, strcommand)
-                            End If
                         End If
 
                         'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
@@ -182,52 +181,46 @@ Public Module Shell
         Try
             If ArgsMode = False Then
                 If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
-                    'Split group of commands
-                    Dim groupCmds() As String = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
+                    Console.Title = $"{ConsoleTitle} - {strcommand}"
 
-                    'Try to execute command
-                    For Each cmd In groupCmds
-                        Console.Title = $"{ConsoleTitle} - {cmd}"
+                    'Parse script command (if any)
+                    Dim scriptArgs As List(Of String) = strcommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
+                    Dim scriptCmd As String = scriptArgs(0)
+                    If scriptCmd.StartsWith("""") And scriptCmd.EndsWith("""") Then
+                        scriptCmd = scriptCmd.Replace("""", "")
+                    End If
+                    If Not scriptCmd.EndsWith(".uesh") Then
+                        scriptCmd += ".uesh"
+                    End If
+                    scriptArgs.RemoveAt(0)
 
-                        'Parse script command (if any)
-                        Dim scriptArgs As List(Of String) = cmd.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
-                        Dim scriptCmd As String = scriptArgs(0)
-                        If scriptCmd.StartsWith("""") And scriptCmd.EndsWith("""") Then
-                            scriptCmd = scriptCmd.Replace("""", "")
-                        End If
-                        If Not scriptCmd.EndsWith(".uesh") Then
-                            scriptCmd += ".uesh"
-                        End If
-                        scriptArgs.RemoveAt(0)
+                    'Get the index of the first space
+                    Dim indexCmd As Integer = strcommand.IndexOf(" ")
+                    Dim cmdArgs As String = strcommand 'Command with args
+                    Wdbg("I", "Prototype indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
+                    If indexCmd = -1 Then indexCmd = strcommand.Count
+                    strcommand = strcommand.Substring(0, indexCmd)
+                    Wdbg("I", "Finished indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
 
-                        'Get the index of the first space
-                        Dim indexCmd As Integer = cmd.IndexOf(" ")
-                        Dim cmdArgs As String = cmd 'Command with args
-                        Wdbg("I", "Prototype indexCmd and cmd: {0}, {1}", indexCmd, cmd)
-                        If indexCmd = -1 Then indexCmd = cmd.Count
-                        cmd = cmd.Substring(0, indexCmd)
-                        Wdbg("I", "Finished indexCmd and cmd: {0}, {1}", indexCmd, cmd)
-
-                        'Check to see if a user is able to execute a command
-                        If adminList(signedinusrnm) = False And strictCmds.Contains(cmd) = True Then
-                            Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
-                            W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Err, cmd)
-                        ElseIf maintenance = True And cmd.Contains("logout") Then
-                            Wdbg("W", "Cmd exec {0} failed: In maintenance mode. Assertion of input.Contains(""logout"") is True", cmd)
-                            W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), True, ColTypes.Err, cmd)
-                        ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(cmd) = True) Or availableCommands.Contains(cmd) Then
-                            Wdbg("W", "Cmd exec {0} succeeded", cmd)
-                            StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
-                            StartCommandThread.Start(cmdArgs)
-                            StartCommandThread.Join()
-                        ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + scriptCmd)) And scriptCmd.EndsWith(".uesh") Then
-                            Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", scriptCmd)
-                            Execute(Path.GetFullPath(CurrDir + "/" + scriptCmd), scriptArgs.Join(" "))
-                        Else
-                            Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", cmd, indexCmd)
-                            W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), True, ColTypes.Err, cmd)
-                        End If
-                    Next
+                    'Check to see if a user is able to execute a command
+                    If adminList(signedinusrnm) = False And strictCmds.Contains(strcommand) = True Then
+                        Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
+                        W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Err, strcommand)
+                    ElseIf maintenance = True And strcommand.Contains("logout") Then
+                        Wdbg("W", "Cmd exec {0} failed: In maintenance mode. Assertion of input.Contains(""logout"") is True", strcommand)
+                        W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), True, ColTypes.Err, strcommand)
+                    ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(strcommand) = True) Or availableCommands.Contains(strcommand) Then
+                        Wdbg("W", "Cmd exec {0} succeeded", strcommand)
+                        StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
+                        StartCommandThread.Start(cmdArgs)
+                        StartCommandThread.Join()
+                    ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + scriptCmd)) And scriptCmd.EndsWith(".uesh") Then
+                        Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", scriptCmd)
+                        Execute(Path.GetFullPath(CurrDir + "/" + scriptCmd), scriptArgs.Join(" "))
+                    Else
+                        Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
+                        W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), True, ColTypes.Err, strcommand)
+                    End If
                 End If
             ElseIf ArgsMode = True And CommandFlag = True Then
                 CommandFlag = False
@@ -305,9 +298,9 @@ Public Module Shell
     ''' Translates alias to actual command, preserving arguments
     ''' </summary>
     ''' <param name="aliascmd">Specifies the alias with arguments</param>
-    Sub ExecuteAlias(ByVal aliascmd As String)
+    Sub ExecuteAlias(Base As String, ByVal aliascmd As String)
         Wdbg("I", "Translating alias {0} to {1}...", aliascmd, Aliases(aliascmd))
-        Dim actualCmd As String = strcommand.Replace(aliascmd, Aliases(aliascmd))
+        Dim actualCmd As String = Base.Replace(aliascmd, Aliases(aliascmd))
         StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
         StartCommandThread.Start(actualCmd)
         StartCommandThread.Join()
