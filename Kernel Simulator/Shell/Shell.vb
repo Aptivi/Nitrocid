@@ -185,20 +185,21 @@ Public Module Shell
                     'Split group of commands
                     Dim groupCmds() As String = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
 
-                    'Parse script command (if any)
-                    Dim scriptArgs As List(Of String) = strcommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
-                    Dim scriptCmd As String = scriptArgs(0)
-                    If scriptCmd.StartsWith("""") And scriptCmd.EndsWith("""") Then
-                        scriptCmd = scriptCmd.Replace("""", "")
-                    End If
-                    If Not scriptCmd.EndsWith(".uesh") Then
-                        scriptCmd += ".uesh"
-                    End If
-                    scriptArgs.RemoveAt(0)
-
                     'Try to execute command
                     For Each cmd In groupCmds
                         Console.Title = $"{ConsoleTitle} - {cmd}"
+
+                        'Parse script command (if any)
+                        Dim scriptArgs As List(Of String) = cmd.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
+                        Dim scriptCmd As String = scriptArgs(0)
+                        If scriptCmd.StartsWith("""") And scriptCmd.EndsWith("""") Then
+                            scriptCmd = scriptCmd.Replace("""", "")
+                        End If
+                        If Not scriptCmd.EndsWith(".uesh") Then
+                            scriptCmd += ".uesh"
+                        End If
+                        scriptArgs.RemoveAt(0)
+
                         'Get the index of the first space
                         Dim indexCmd As Integer = cmd.IndexOf(" ")
                         Dim cmdArgs As String = cmd 'Command with args
