@@ -911,3 +911,8 @@ Ang seksyong ito ay naglilista ng mga setting ng shell.
 Inililista ng seksyong ito ang mga setting ng network, tulad ng FTP shell, mga setting ng utos na nauugnay sa network, at ang mga setting ng remote na pag-debug.
 Inililista ng seksyong ito ang lahat ng mga screensaver at ang kanilang mga magagamit na setting.
 Ang mga setting na hindi umaangkop sa kanilang naaangkop na mga seksyon ay nakarating dito.
+Sinusubukan ang mga mod sa pamamagitan ng pagbibigay ng mga mod file
+Nagbubukas ng isang test shell
+Pinapagana ang debug mode
+Mga prompt para sa mga argumento
+* Pindutin ang anumang key upang simulan ang kernel o ESC upang lumabas.

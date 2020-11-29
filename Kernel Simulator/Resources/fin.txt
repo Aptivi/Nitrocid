@@ -911,3 +911,8 @@ Tässä osassa luetellaan kuoren asetukset.
 Tässä osassa luetellaan verkkoasetukset, kuten FTP-komentotulkki, verkkoon liittyvät komentoasetukset ja etävianmääritysasetukset.
 Tässä osassa luetellaan kaikki näytönsäästäjät ja niiden käytettävissä olevat asetukset.
 Asetukset, jotka eivät sovi asianmukaiseen osioon, laskeutuvat tänne.
+Testaa modeja tarjoamalla mod-tiedostoja
+Avaa testikuoren
+Ottaa virheenkorjaustilan käyttöön
+Pyytää argumentteja
+* Käynnistä ydin painamalla mitä tahansa näppäintä tai poistuaksesi ESC: stä.

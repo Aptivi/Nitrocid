@@ -911,3 +911,8 @@ Ushbu bo'limda qobiq sozlamalari keltirilgan.
 Ushbu bo'limda FTP qobig'i, tarmoq bilan bog'liq buyruq sozlamalari va masofadan disk raskadrovka sozlamalari kabi tarmoq sozlamalari keltirilgan.
 Ushbu bo'limda barcha ekran saqlovchilari va ularning mavjud sozlamalari keltirilgan.
 O'zlarining tegishli bo'limlariga mos bo'lmagan sozlamalar shu erga to'g'ri keladi.
+Mod fayllarini taqdim etish orqali modlarni sinovdan o'tkazadi
+Sinov qobig'ini ochadi
+Tuzatish rejimini yoqadi
+Dalillarni talab qiladi
+* Yadroni ishga tushirish uchun biron bir tugmani bosing yoki chiqish uchun ESC.

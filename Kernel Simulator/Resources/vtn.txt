@@ -911,3 +911,8 @@ Phần này liệt kê các cài đặt shell.
 Phần này liệt kê các cài đặt mạng, như FTP shell, cài đặt lệnh liên quan đến mạng và cài đặt gỡ lỗi từ xa.
 Phần này liệt kê tất cả các trình bảo vệ màn hình và các cài đặt có sẵn của chúng.
 Các cài đặt không phù hợp với các phần thích hợp của chúng sẽ xuất hiện ở đây.
+Thử nghiệm các bản mod bằng cách cung cấp các tập tin mod
+Mở vỏ thử nghiệm
+Bật chế độ gỡ lỗi
+Lời nhắc đối số
+* Nhấn phím bất kỳ để khởi động nhân hoặc phím ESC để thoát.

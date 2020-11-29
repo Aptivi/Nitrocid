@@ -175,7 +175,7 @@
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="DEV"</DefineConstants>
+    <DefineConstants>SPECIFIER="REL"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -411,6 +411,7 @@
     <None Include="Resources\srb.txt" />
     <None Include="Resources\srb-T.txt" />
     <None Include="Resources\som.txt" />
+    <None Include="Resources\swa.txt" />
     <Content Include="Resources\uzb.txt" />
     <None Include="Resources\cze.txt" />
     <None Include="Resources\swe.txt" />

@@ -911,3 +911,8 @@ Běn jié liè chūle wàiké chéngxù shèzhì.
 Běn jié liè chūle wǎngluò shèzhì, lìrú FTP Shell, yǔ wǎngluò xiāngguān de mìnglìng shèzhì hé yuǎnchéng tiáoshì shèzhì.
 Běn jié liè chūle suǒyǒu píngmù bǎohù chéngxù jí qí kěyòng shèzhì.
 Bù shìyòng yú qí xiāngyìng bùfèn de shèzhì jiàng zài cǐ chù xiǎnshì.
+Tōngguò tígōng mod wénjiàn lái cèshì mod
+dǎkāi cèshì ké
+qǐyòng tiáoshì móshì
+tíshì shūrù cānshù
+*àn rènyì jiàn qǐdòng nèihé huò ESC tuìchū.

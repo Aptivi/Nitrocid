@@ -670,12 +670,11 @@ Namespace My.Resources
         '''ਬਿਨਾਂ ਸਪੇਸ ਦੇ ਕਾਮਿਆਂ ਨਾਲ ਬੂਟ ਆਰਗੂਮੈਂਟਾਂ ਨੂੰ ਵੱਖ ਕਰੋ, ਉਦਾਹਰਣ ਵਜੋਂ, &apos;ਮੋਟਡ, ਜੀਪੀਪਰੋਬ&apos;
         '''ਕਮਾਂਡਾਂ ਨੂੰ &apos;ਸੈਮੀਡਨੀਜੈਕਟ&apos; &apos;ਤੇ ਖਾਲੀ ਥਾਂਵਾਂ ਨਾਲ ਵੱਖ ਕਰੋ, ਉਦਾਹਰਣ ਵਜੋਂ,&apos; ਸੈਮੀਡੀਨੇਜੈਕਟ ਸੈਟੀਮੇਸ ਹੈਕਰ: ਬੀਪ 1024 0.5 &apos;
         '''ਯਾਦ ਰੱਖੋ ਕਿ &apos;ਡੀਬੱਗ&apos; ਆਰਗੂਮੈਂਟ ਕਰਨਲ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਕਵਰ ਨਹੀਂ ਕਰਦਾ.
-        '''ਬਾਰਜ: ਬੇਨਤੀ ਕੀਤੀ ਗਈ ਦਲੀਲ {0 not ਨਹੀਂ ਮਿਲੀ ਹੈ.
+        '''ਬਾਰਜ: ਬੇਨਤੀ ਕੀਤੀ ਗਈ ਦਲੀਲ {0} not ਨਹੀਂ ਮਿਲੀ ਹੈ.
         '''ਬਾਰਾਂ: ਦਲੀਲ ਵਿੱਚ ਅਣਜਾਣ ਗਲਤੀ:
         '''ਉਪਲਬਧ ਬਹਿਸ: {0}
         '''ਆਰਗੂਮੈਂਟਸ (ਮਦਦ ਲਈ &apos;ਮਦਦ&apos;):
-        '''ਜ਼ਖ਼ਮੀ ਬਹਿਸਾਂ ਨੂੰ ਅਗਲੇ ਰੀਬੂਟ ਤੇ ਚਲਾਉਣ ਲਈ ਤਹਿ ਕੀਤਾ ਜਾਵੇਗਾ.
-        ''' [rest of string was truncated]&quot;;.
+        '''ਜ਼ਖ਼ਮੀ ਬਹਿਸਾਂ ਨੂੰ ਅਗਲੇ ਰੀਬੂਟ ਤੇ ਚਲਾਉਣ ਲਈ ਤਹਿ ਕੀਤਾ ਜਾਵੇਗਾ.        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property pun_T() As String
             Get
@@ -830,6 +829,25 @@ Namespace My.Resources
         Public ReadOnly Property srb_T() As String
             Get
                 Return ResourceManager.GetString("srb_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Amri zinazopatikana: {0}
+        '''Andika amri:
+        '''Sindano ya amri imefutwa.
+        '''Tenga hoja za buti na koma bila nafasi, kwa mfano, &apos;motd, gpuprobe&apos;
+        '''Tenga amri kwenye &apos;cmdinject&apos; na koloni zilizo na nafasi, kwa mfano, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Kumbuka kuwa hoja ya &apos;utatuzi&apos; haifuniki kabisa kernel.
+        '''bargs: Hoja iliyoombwa {0} haipatikani.
+        '''bargs: Hitilafu isiyoweza kupatikana katika hoja:
+        '''Hoja zinazopatikana: {0}
+        '''Hoja (&apos;msaada&apos; kwa msaada):
+        '''Hoja za sindano zitapangiwa kuanza wakati wa kuwasha tena. [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property swa() As String
+            Get
+                Return ResourceManager.GetString("swa", resourceCulture)
             End Get
         End Property
         

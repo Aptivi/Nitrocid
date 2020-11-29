@@ -911,3 +911,8 @@ Detta avsnitt listar skalinställningarna.
 Detta avsnitt listar nätverksinställningarna, som FTP-skalet, de nätverksrelaterade kommandoinställningarna och fjärrfelsökningsinställningarna.
 Detta avsnitt listar alla skärmsläckare och deras tillgängliga inställningar.
 Inställningar som inte passar i deras lämpliga sektioner landar här.
+Testar mods genom att tillhandahålla modfiler
+Öppnar ett testskal
+Aktiverar felsökningsläge
+Uppmanar till argument
+* Tryck på valfri knapp för att starta kärnan eller ESC för att avsluta.

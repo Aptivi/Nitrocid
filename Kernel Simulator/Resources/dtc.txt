@@ -911,3 +911,8 @@ Deze sectie bevat de shell-instellingen.
 Dit gedeelte bevat de netwerkinstellingen, zoals de FTP-shell, de netwerkgerelateerde opdrachtinstellingen en de instellingen voor foutopsporing op afstand.
 Dit gedeelte bevat alle screensavers en hun beschikbare instellingen.
 Instellingen die niet in de juiste secties passen, komen hier terecht.
+Test mods door mod-bestanden aan te bieden
+Opent een testshell
+Schakelt de foutopsporingsmodus in
+Vraagt om argumenten
+* Druk op een willekeurige toets om de kernel te starten of op ESC om af te sluiten.

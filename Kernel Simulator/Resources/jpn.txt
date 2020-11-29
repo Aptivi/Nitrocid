@@ -911,3 +911,8 @@ Kono sekushonde wa, sheru settei o ichiran hyōji shimasu.
 Kono sekushonde wa, FTP sheru, nettowāku kanren no komando settei, rimōtodebaggu settei nado no nettowāku settei o ichiran hyōji shimasu.
 Kono sekushon ni wa, subete no sukurīnsēbā toso no shiyō kanōna settei ga ichiran hyōji sa remasu.
 Tekisetsuna sekushon ni osamaranai settei ga koko ni hyōji sa remasu.
+Mod fairu o teikyō shite mod o tesuto shimasu
+tesutosheru o hirakimasu
+debaggumōdo o yūkō ni shimasu
+hikisū no puronputo
+* nin'i no kī o oshite kāneru o kaishi suru ka, ESC o oshite shūryō shimasu.
