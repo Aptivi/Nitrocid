@@ -911,3 +911,8 @@ V etom razdele perechisleny nastroyki obolochki.
 V etom razdele perechisleny parametry seti, takiye kak obolochka FTP, parametry setevykh komand i parametry udalennoy otladki.
 V etom razdele perechisleny vse zastavki i ikh dostupnyye nastroyki.
 Zdes' poyavlyayutsya nastroyki, kotoryye ne pomeshchayutsya v sootvetstvuyushchiye razdely.
+Proveryayet mody, predostavlyaya fayly modov
+Otkryvayet testovuyu obolochku
+Vklyuchayet rezhim otladki
+Zaprosy argumentov
+* Nazhmite lyubuyu klavishu dlya zapuska yadra ili ESC dlya vykhoda.

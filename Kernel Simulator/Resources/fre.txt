@@ -911,3 +911,8 @@ Cette section répertorie les paramètres du shell.
 Cette section répertorie les paramètres réseau, comme le shell FTP, les paramètres de commande liés au réseau et les paramètres de débogage à distance.
 Cette section répertorie tous les économiseurs d'écran et leurs paramètres disponibles.
 Les paramètres qui ne correspondent pas à leurs sections appropriées arrivent ici.
+Teste les mods en fournissant des fichiers mod
+Ouvre un shell de test
+Active le mode de débogage
+Invite des arguments
+* Appuyez sur n'importe quelle touche pour démarrer le noyau ou sur ESC pour quitter.

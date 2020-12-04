@@ -911,3 +911,8 @@ Ovaj odjeljak navodi postavke ljuske.
 Ovaj odjeljak navodi mrežne postavke, poput FTP ljuske, mrežne postavke naredbi i postavke udaljenog otklanjanja pogrešaka.
 U ovom su odjeljku navedeni svi čuvari zaslona i njihove dostupne postavke.
 Ovdje slijeću postavke koje se ne uklapaju u odgovarajuće odjeljke.
+Testira modove pružajući mod datoteke
+Otvara test ljusku
+Omogućuje način otklanjanja pogrešaka
+Upiti za argumente
+* Pritisnite bilo koju tipku za pokretanje jezgre ili ESC za izlaz.

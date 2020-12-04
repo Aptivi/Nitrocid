@@ -911,3 +911,8 @@ Bahagian ini menyenaraikan tetapan shell.
 Bahagian ini menyenaraikan tetapan rangkaian, seperti shell FTP, tetapan perintah yang berkaitan dengan rangkaian, dan tetapan debug jarak jauh.
 Bahagian ini menyenaraikan semua screensaver dan tetapannya yang tersedia.
 Tetapan yang tidak sesuai dengan bahagian yang sesuai terdapat di sini.
+Menguji mod dengan menyediakan fail mod
+Membuka shell ujian
+Mendayakan mod debug
+Permintaan untuk hujah
+* Tekan sebarang kekunci untuk memulakan kernel atau ESC untuk keluar.

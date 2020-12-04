@@ -911,3 +911,8 @@ Dette afsnit viser shellindstillingerne.
 Dette afsnit viser netværksindstillingerne som FTP-shell, de netværksrelaterede kommandoindstillinger og indstillingerne for fjernfejlsøgning.
 Dette afsnit viser alle pauseskærme og deres tilgængelige indstillinger.
 Indstillinger, der ikke passer i deres passende sektioner, lander her.
+Tester mods ved at levere mod-filer
+Åbner en testskal
+Aktiverer fejlretningstilstand
+Beder om argumenter
+* Tryk på en vilkårlig tast for at starte kernen eller ESC for at afslutte.

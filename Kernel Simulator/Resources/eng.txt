@@ -911,3 +911,8 @@ This section lists the shell settings.
 This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.
 This section lists all the screensavers and their available settings.
 Settings that don't fit in their appropriate sections land here.
+Tests mods by providing mod files
+Opens a test shell
+Enables debug mode
+Prompts for arguments
+* Press any key to start the kernel or ESC to exit.

@@ -911,3 +911,8 @@ Dieser Abschnitt listet die Shell-Einstellungen auf.
 In diesem Abschnitt werden die Netzwerkeinstellungen wie die FTP-Shell, die netzwerkbezogenen Befehlseinstellungen und die Remote-Debug-Einstellungen aufgelistet.
 In diesem Abschnitt werden alle Bildschirmschoner und ihre verfügbaren Einstellungen aufgelistet.
 Hier landen Einstellungen, die nicht in die entsprechenden Abschnitte passen.
+Testet Mods durch Bereitstellung von Mod-Dateien
+Öffnet eine Testhülle
+Aktiviert den Debug-Modus
+Fordert zur Eingabe von Argumenten auf
+* Drücken Sie eine beliebige Taste, um den Kernel zu starten, oder ESC, um den Vorgang zu beenden.

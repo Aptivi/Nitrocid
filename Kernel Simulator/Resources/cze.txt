@@ -911,3 +911,8 @@ V této části je uvedeno nastavení prostředí.
 Tato část obsahuje seznam nastavení sítě, jako je prostředí FTP, nastavení příkazů souvisejících se sítí a nastavení vzdáleného ladění.
 V této části jsou uvedeny všechny spořiče obrazovky a jejich dostupná nastavení.
 Přistane zde nastavení, které se nevejde do příslušných částí.
+Testuje mody poskytováním mod souborů
+Otevře testovací prostředí
+Povolí režim ladění
+Výzvy pro argumenty
+* Stisknutím libovolné klávesy spustíte jádro nebo klávesu ESC opustíte.

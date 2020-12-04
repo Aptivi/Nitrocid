@@ -911,3 +911,8 @@ Bu bölmə qabıq parametrlərini sadalayır.
 Bu bölmədə FTP qabığı, şəbəkə ilə əlaqəli əmr parametrləri və uzaqdan ayıklama parametrləri kimi şəbəkə parametrləri sadalanır.
 Bu bölmədə bütün ekran qoruyucuları və mövcud parametrləri sadalanır.
 Müvafiq hissələrinə sığmayan parametrlər buraya düşür.
+Mod faylları təqdim edərək modları yoxlayır
+Test qabığını açır
+Ayıklama rejimini aktivləşdirir
+Mübahisələr axtarır
+* Nüvəni başlamaq üçün hər hansı bir düyməni basın və ya çıxmaq üçün ESC.

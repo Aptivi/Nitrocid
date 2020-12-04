@@ -911,3 +911,8 @@ i segsyeon-eneun syel seoljeong-i nayeoldoeeo issseubnida.
 i segsyeon-eneun FTP syel, neteuwokeu gwanlyeon myeonglyeong seoljeong mich wongyeog dibeogeu seoljeong-gwa gat-eun neteuwokeu seoljeong-i nayeoldoebnida.
 i segsyeon-eneun modeun hwamyeon bohogiwa sayong ganeunghan seoljeong-i nayeoldoebnida.
 jeogjeolhan segsyeon-e maj-ji anhneun seoljeong-i yeogie pyosidoebnida.
+modeu pail-eul jegonghayeo modeu teseuteu
+teseuteu syel-eul yeobni da.
+dibeogeu modeu hwalseonghwa
+insue daehan peulompeuteu
+* keoneol-eul sijaghalyeomyeon amu kina nuleugeona jonglyohalyeomyeon ESCleul nuleusibsio.

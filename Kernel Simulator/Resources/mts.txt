@@ -911,3 +911,8 @@ Din it-taqsima telenka l-issettjar tal-qoxra.
 Din it-taqsima telenka l-issettjar tan-netwerk, bħall-qoxra FTP, l-issettjar tal-kmand relatat man-netwerk, u s-settings tal-iddibaggjar mill-bogħod.
 Din it-taqsima telenka l-iskreensavers kollha u s-settings disponibbli tagħhom.
 Is-settings li ma joqogħdux fit-taqsimiet xierqa tagħhom jinżlu hawn.
+Testijiet tal-mods billi tipprovdi mod files
+Tiftaħ qoxra tat-test
+Jippermetti l-mod ta 'debug
+Prompti għal argumenti
+* Agħfas kwalunkwe ċavetta biex tibda l-għadma jew l-ESC biex toħroġ.

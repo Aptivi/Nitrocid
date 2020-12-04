@@ -911,3 +911,8 @@ Bagian ini mencantumkan pengaturan shell.
 Bagian ini mencantumkan pengaturan jaringan, seperti shell FTP, pengaturan perintah terkait jaringan, dan pengaturan debug jarak jauh.
 Bagian ini mencantumkan semua screensaver dan pengaturan yang tersedia.
 Pengaturan yang tidak sesuai di bagian yang sesuai akan dibawa ke sini.
+Menguji mod dengan menyediakan file mod
+Membuka cangkang uji
+Mengaktifkan mode debug
+Perintah untuk argumen
+* Tekan sembarang tombol untuk memulai kernel atau ESC untuk keluar.

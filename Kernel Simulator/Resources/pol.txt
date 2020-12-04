@@ -911,3 +911,8 @@ Ta sekcja zawiera listę ustawień powłoki.
 W tej sekcji wymieniono ustawienia sieciowe, takie jak powłoka FTP, ustawienia poleceń związanych z siecią oraz ustawienia zdalnego debugowania.
 Ta sekcja zawiera listę wszystkich wygaszaczy ekranu i ich dostępnych ustawień.
 Znajdują się tutaj ustawienia, które nie pasują do odpowiednich sekcji.
+Testuje mody, dostarczając pliki modów
+Otwiera powłokę testową
+Włącza tryb debugowania
+Monity o argumenty
+* Naciśnij dowolny klawisz, aby uruchomić jądro lub ESC, aby wyjść.

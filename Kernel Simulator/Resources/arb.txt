@@ -911,3 +911,8 @@ yusrid hdha alqism 'iiedadat shell.
 yusarid hdha alqism 'iiedadat alshabakat , mithl ghulaf FTP , wa'iiedadat al'awamir almutaealiqat bialshabakat , wa'iiedadat tashih al'akhta' ean bued.
 yusrid hdha alqism jmye shashat altawaquf wal'iiedadat almutahat laha.
 al'iiedadat alty la tatanasab mae al'aqsam almunasibat mawjudat huna.
+taedil alaikhtibarat min khilal tawfir milaffat altaedil
+yaftah qadhifat alaikhtibar
+litamkin wade altashih
+yutalib bialhajaj
+* aidghut ealaa 'ayi miftah libad' kernel 'aw ESC lilkhuruj.

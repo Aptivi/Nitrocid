@@ -911,3 +911,8 @@ yah khand shel setings ko soocheebaddh karata hai.
 yah khand netavark setings ko soocheebaddh karata hai, jaise efateepee shel, netavark se sambandhit kamaand setings aur doorasth deebag setings.
 yah khand sabhee skreenasevar aur unakee upalabdh setings ko soocheebaddh karata hai.
 setings jo unake upayukt vargon mein phit nahin hotee hain, ve yahaan jameen par hain.
+mod fail pradaan karake test mod
+ek pareekshan khol kholata hai
+deebag mod ko saksham karata hai
+tarkon ke lie sanket
+* baahar nikalane ke lie karnel ya aisch shuroo karane ke lie koee bhee kunjee dabaen.

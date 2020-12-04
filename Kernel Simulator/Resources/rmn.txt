@@ -911,3 +911,8 @@ Această secțiune listează setările shell-ului.
 Această secțiune listează setările de rețea, cum ar fi shell-ul FTP, setările de comandă legate de rețea și setările de depanare la distanță.
 Această secțiune listează toate protectorile de ecran și setările disponibile.
 Setările care nu se încadrează în secțiunile lor corespunzătoare ajung aici.
+Testează modurile oferind fișiere mod
+Deschide un shell de test
+Activează modul de depanare
+Invitări pentru argumente
+* Apăsați orice tastă pentru a porni nucleul sau ESC pentru a ieși.

@@ -911,3 +911,8 @@ Esta sección enumera la configuración del shell.
 Esta sección enumera la configuración de red, como el shell de FTP, la configuración de los comandos relacionados con la red y la configuración de depuración remota.
 Esta sección enumera todos los protectores de pantalla y sus configuraciones disponibles.
 Las configuraciones que no encajan en sus secciones apropiadas aterrizan aquí.
+Prueba mods proporcionando archivos mod
+Abre una carcasa de prueba
+Habilita el modo de depuración
+Solicitudes de argumentos
+* Presione cualquier tecla para iniciar el kernel o ESC para salir.

@@ -20,7 +20,7 @@ Imports System.Globalization
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swe", "uzb", "vtn"}
+    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn"}
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -147,6 +147,8 @@ Public Module Translate
                 translated = My.Resources.srb
             Case "srb-T" 'Serbian (translated)
                 translated = My.Resources.srb_T
+            Case "swa" 'Swahili
+                translated = My.Resources.swa
             Case "swe" 'Swedish
                 translated = My.Resources.swe
             Case "uzb" 'Uzbekistan
@@ -396,6 +398,8 @@ CHOICE:
                 Return "Serbian (Cyrillic, Serbia)"
             Case "srb"
                 Return "Serbian (Latin, Serbia)"
+            Case "swa"
+                Return "Kiswahili (Kenya)"
             Case "swe"
                 Return "Swedish (Sweden)"
             Case "uzb"

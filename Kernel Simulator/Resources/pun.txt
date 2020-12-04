@@ -911,3 +911,8 @@ Iha bhāga śaila saiṭiga dī sūcī hai.
 Iha bhāga naiṭavaraka saiṭigāṁ, jivēṁ ki FTP śaila, naiṭavaraka-sabadhī kamāṇḍa saiṭigāṁ, atē rimōṭa ḍībaga saiṭigāṁ dī sūcī hai.
 Iha bhāga sārē sakrīna sēvarāṁ atē uhanāṁ dī'āṁ upalabadha saiṭigāṁ dī sūcī didā hai.
 Saiṭigaza jihaṛī'āṁ unhāṁ dē sectionsukavēṁ bhāgāṁ vica nahīṁ ā'undī'āṁ uha ithē ā'undī'āṁ hana.
+Māḍa phā'īlāṁ pradāna karakē māḍaja dī jān̄ca karō
+ika ṭaisaṭa śaila khōl'hadā hai
+ḍībaga mōḍa nū samaratha baṇā'undā hai
+bahisa la'ī puchadā hai
+bāhara jāṇa la'ī karanala jāṁ ESC nū cālū karana la'ī kō'ī kujī dabā'ō.

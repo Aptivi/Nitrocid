@@ -911,3 +911,8 @@ Qaybtani waxay liis garaysaa goobaha qolofta.
 Qaybtani waxay liis garaysaa goobaha shabakadda, sida qolofka FTP, goobaha amarka ee shabakadda la xiriira, iyo dejinta qaladka fog.
 Qaybtani waxay taxaysaa dhammaan shaashadda iyo dejintooda la heli karo.
 Dejinta aan ku habboonayn qaybtooda ku habboon halkan ayey ku degtaa.
+Tijaabinta mods adoo siinaya feylasha moodeelka
+Wuxuu furaa qolof tijaabo ah
+Waxay u sahlaysaa qaabka cilad-bixinta
+Doodaha doodaha
+* Riix fure kasta si aad u bilowdid kernel ama ESC si aad uga baxdo.

@@ -911,3 +911,8 @@ Questa sezione elenca le impostazioni della shell.
 Questa sezione elenca le impostazioni di rete, come la shell FTP, le impostazioni dei comandi relativi alla rete e le impostazioni di debug remoto.
 Questa sezione elenca tutti gli screensaver e le loro impostazioni disponibili.
 Le impostazioni che non rientrano nelle sezioni appropriate atterrano qui.
+Verifica le mod fornendo file mod
+Apre una shell di prova
+Abilita la modalità di debug
+Richiede argomenti
+* Premere un tasto qualsiasi per avviare il kernel o ESC per uscire.

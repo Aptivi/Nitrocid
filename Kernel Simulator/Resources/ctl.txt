@@ -911,3 +911,8 @@ Aquesta secció llista els paràmetres de l'intèrpret d'ordres.
 En aquesta secció s'enumeren els paràmetres de xarxa, com ara l'intèrpret d'ordres FTP, els paràmetres d'ordres relacionats amb la xarxa i els paràmetres de depuració remota.
 En aquesta secció s’enumeren tots els estalvis de pantalla i els seus paràmetres disponibles.
 Aquí apareixen les opcions de configuració que no encaixen a les seccions adequades.
+Prova les modificacions proporcionant fitxers mod
+Obre un intèrpret d'ordres de prova
+Activa el mode de depuració
+Sol·licituds d'arguments
+* Premeu qualsevol tecla per iniciar el nucli o ESC per sortir.

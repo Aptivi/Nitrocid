@@ -911,3 +911,8 @@ Denne delen viser skallinnstillingene.
 Denne delen viser nettverksinnstillingene, som FTP-skallet, nettverksrelaterte kommandoinnstillinger og eksterne feilsøkingsinnstillinger.
 Denne delen viser alle skjermsparere og deres tilgjengelige innstillinger.
 Innstillinger som ikke passer i de aktuelle delene, lander her.
+Tester mods ved å tilby mod-filer
+Åpner et testskall
+Aktiverer feilsøkingsmodus
+Ber om argumenter
+* Trykk hvilken som helst tast for å starte kjernen eller ESC for å avslutte.

@@ -911,3 +911,8 @@ Táto časť uvádza zoznam nastavení shellu.
 Táto časť obsahuje zoznam sieťových nastavení, ako je napríklad shell FTP, nastavenie príkazov týkajúcich sa siete a nastavenie vzdialeného ladenia.
 V tejto časti sú uvedené všetky šetriče obrazovky a ich dostupné nastavenia.
 Tu pristávajú nastavenia, ktoré sa nezmestia do príslušných sekcií.
+Testuje mody poskytnutím súborov mod
+Otvára testovaciu škrupinu
+Povolí režim ladenia
+Výzvy na argumentáciu
+* Stlačením ľubovoľnej klávesy spustíte jadro alebo klávesom ESC ukončíte program.
