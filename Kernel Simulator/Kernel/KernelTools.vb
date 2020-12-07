@@ -314,7 +314,8 @@ Public Module KernelTools
         'Stop RPC
         RPCThread.Abort()
         RPCListen?.Close()
-        RPCThread = New Thread(AddressOf ListenRPC) With {.IsBackground = True}
+        RPCListen = Nothing
+        RPCThread = New Thread(AddressOf RecCommand) With {.IsBackground = True}
 
         'Disconnect from mail
         IMAP_Client.Disconnect(True)

@@ -23,7 +23,7 @@ Module RemoteProcedure
 
     Public RPCListen As UdpClient
     Public RPCPort As Integer = 12345
-    Public RPCThread As New Thread(AddressOf ListenRPC) With {.IsBackground = True}
+    Public RPCThread As New Thread(AddressOf RecCommand) With {.IsBackground = True}
     Public RPCStopping As Boolean
 
     ''' <summary>
@@ -32,28 +32,18 @@ Module RemoteProcedure
     Sub StartRPC()
         Try
             Wdbg("I", "RPC: Starting...")
-            RPCThread.Start()
-            RPCThread.Join()
+            If RPCListen Is Nothing Then
+                RPCListen = New UdpClient(RPCPort)
+                RPCListen.EnableBroadcast = True
+                Wdbg("I", "RPC: Listener started")
+                RPCThread.Start()
+                Wdbg("I", "RPC: Thread started")
+                W(DoTranslation("RPC listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, RPCPort)
+            Else
+                Throw New ThreadStateException()
+            End If
         Catch ex As ThreadStateException
             W(DoTranslation("RPC is already running.", currentLang), True, ColTypes.Err)
-            WStkTrc(ex)
-        End Try
-    End Sub
-
-    ''' <summary>
-    ''' Thread to try to start the RPC server
-    ''' </summary>
-    Sub ListenRPC()
-        Try
-            RPCListen = New UdpClient(RPCPort)
-            RPCListen.EnableBroadcast = True
-            Wdbg("I", "RPC: Listener started")
-            Dim RPCListener As New Thread(AddressOf RecCommand) With {.IsBackground = True}
-            RPCListener.Start()
-            Wdbg("I", "RPC: Thread started")
-            W(DoTranslation("RPC listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, RPCPort)
-        Catch ex As Exception
-            W(DoTranslation("Error starting RPC: {0}", currentLang), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub
