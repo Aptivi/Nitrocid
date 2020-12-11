@@ -22,7 +22,7 @@ Module TestShell
 
     Public TShellCmds As String() = {"print", "printf", "printd", "printdf", "testevent", "probehw", "garbage", "panic", "panicf", "translate", "places", "loadmods",
                                      "debug", "rdebug", "testmd5", "testsha256", "testsha1", "testregexp", "colortest", "colortruetest", "sendnot", "dcalend",
-                                     "listcodepages", "help", "exit", "shutdown"}
+                                     "listcodepages", "help", "exit", "shutdown", "testsha512"}
     Public TEST_ExitFlag As Boolean
     Public TEST_ShutdownFlag As Boolean
 
