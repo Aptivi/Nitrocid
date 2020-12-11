@@ -63,11 +63,7 @@ Public Module RPC_Commands
             End If
             If Not Malformed Then
                 Wdbg("I", "Sending response to device...")
-                If Not Cmd = "<Request:Exec>" Then
-                    RPCListen.Send(ByteMsg, ByteMsg.Length, IP, RPCPort)
-                Else
-                    RPCListen.Send(ByteMsg, ByteMsg.Length, Arg, RPCPort)
-                End If
+                RPCListen.Send(ByteMsg, ByteMsg.Length, IP, RPCPort)
                 EventManager.RaiseRPCCommandSent(Cmd)
             End If
         End If

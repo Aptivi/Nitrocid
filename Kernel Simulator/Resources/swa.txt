@@ -46,7 +46,7 @@ HABARI MBILI: Aina ya Hitilafu {0} ni batili.
 HABARI MBILI: Mdudu wa Kernel: {0}
 Inazima ...
 Inawasha upya ...
---- === +++> Karibu kwenye kiini | Toleo la {0} <+++ === ---
+---===+++> Karibu kwenye kiini | Toleo la {0} <+++===---
 Mfano mwingine wa Kernel Simulator inaendesha. Kuzima ikiwa kuna kuingiliwa.
 Mtumiaji {0} ameongezwa kwenye orodha ya wasimamizi.
 Mtumiaji {0} ameongezwa kwenye orodha ya walemavu.
@@ -130,7 +130,7 @@ Saraka ya eneo lako: {0}
 Saraka ya mbali: {0}
 Lazima uunganishe kwenye seva kabla ya kupata saraka ya mbali ya sasa.
 Inafuta faili {0} ...
-Je! Una uhakika unataka kufuta faili {0} <y / n>?
+Je! Una uhakika unataka kufuta faili {0} <y/n>?
 Imefuta faili {0}
 Lazima uunganishe kwenye seva na marupurupu ya kiutawala kabla ya kufanya ufutaji.
 Ingiza faili ili uondoe.
@@ -157,7 +157,7 @@ Hitilafu wakati wa kujaribu kutekeleza amri ya FTP
 {0} KB, Iliundwa katika {1} {2}, Imebadilishwa katika {3} {4}
 Inapata saraka ya sasa ya karibu
 Inapata saraka ya sasa ya mbali
-Inaunganisha kwa seva ya FTP (lazima ianze na "ftp: //" au "ftps: //")
+Inaunganisha kwa seva ya FTP (lazima ianze na "ftp://" au "ftps://")
 Inabadilisha saraka ya eneo kupakua au kupakia kutoka
 Inabadilisha saraka ya mbali ili kupakua kutoka au kupakia hadi
 Inafuta faili ya mbali kutoka kwa seva
@@ -253,7 +253,7 @@ Tumia ganda la FTP kuingiliana na seva
 Ukurasa wa usaidizi
 Vumbua vifaa kwa mikono (Wakati mmoja kwenye kernel ya 'nohwprobe')
 Orodhesha yaliyomo kwenye faili / folda kwenye folda ya sasa
-Inapakia tena faili ya skrini katika% USERPROFILE% \ KSMods
+Inapakia tena faili ya skrini katika %USERPROFILE%\KSMods
 Inafunga skrini yako na nywila
 Magogo wewe nje
 Orodhesha vifaa vyote vya mtandao ambavyo viko mkondoni (na nje ya mtandao katika vikoa)
@@ -348,7 +348,7 @@ Inapata matoleo ya SSE
 Lugha batili
 Inabadilisha lugha
 Labda huwezi kuwa na libcpanel-json-xs-perl iliyosanikishwa kwenye mfumo wako. Rejelea msimamizi wa kifurushi chako kwa usanikishaji. Kwa mifumo ya Debian (na derivatives), unaweza kutaka kuendesha "sudo apt install libcpanel-json-xs-perl" katika emulator ya terminal. Maelezo zaidi ya kosa:
------------------------------ Kernel dampo la hofu ------------------ -----------
+----------------------------- Kernel dampo la hofu ------------------------------
 >> Hofu habari <<
 > Maelezo: {0}
 > Aina ya hitilafu: {1}
@@ -564,7 +564,7 @@ Huhesabu hesabu za faili katika saraka maalum.
 Orodha zote barua pepe katika mtumiaji maalum.
 Ingiza jina la mtumiaji au anwani ya barua:
 Ingiza nywila:
-Ingiza anwani ya seva na bandari (<adress> au <adress>: [bandari]):
+Ingiza anwani ya seva na bandari (<adress> au <adress>:[bandari]):
 Hitilafu wakati wa kuunganisha kwenye {0}: {1}
 Inaunganisha kwa {0} ...
 Inathibitisha ...
@@ -588,8 +588,8 @@ Hitilafu wakati wa kujaribu kutekeleza hati: {0}
 Anaandika maandishi kwenye koni
 Inafanya uchaguzi wa mtumiaji
 Beep katika 'n' Hz na wakati katika 'n' milliseconds
-ambapo <$ variable> ni tofauti yoyote ambayo itatumika kuhifadhi majibu
-Mzunguko lazima uwe wa nambari. Ikiwa ni nambari, hakikisha kuwa ni> = 37 na <= 32767.
+ambapo <$variable> ni tofauti yoyote ambayo itatumika kuhifadhi majibu
+Mzunguko lazima uwe wa nambari. Ikiwa ni nambari, hakikisha kuwa ni >= 37 na <= 32767.
 Wakati lazima uwe nambari.
 ambapo <majibu> ni majibu yenye herufi moja ya swali lililotenganishwa kwa mpasuko
 Hitilafu wakati wa kujaribu kuunganisha kwenye seva ya SSH: {0}
@@ -600,15 +600,15 @@ Imeshindwa kufungua folda ya barua {0}: {1}
 Orodha saraka katika anwani yako ya barua
 Inatumia habari kutoka kwa Dial haraka ili kuungana na mtandao wowote haraka
 Chagua anwani ya kuunganisha kwa:
-Uteuzi uko nje ya anuwai. Chagua kati ya 1- {0}. Jaribu tena.
+Uteuzi uko nje ya anuwai. Chagua kati ya 1-{0}. Jaribu tena.
 Uteuzi sio nambari. Jaribu tena.
 Wakati wa uthibitishaji wa cheti, kuna makosa ya cheti. Inaweza kuwa mara ya kwanza umeunganisha kwenye seva au cheti inaweza kuwa imeisha muda. Hapa kuna hitilafu:
 Je! Una uhakika kuwa unataka kuungana?
 Jibu batili. Tafadhali jaribu tena.
 Upigaji wa kasi hauna kitu. Unganisha kwenye seva ili uongeze anwani yake.
 Upigaji wa kasi haupo. Unganisha kwenye seva ili uongeze anwani yake.
-Ingiza anwani ya seva ya IMAP na bandari (<adress> au <adress>: [bandari]):
-Ingiza anwani ya seva ya SMTP na bandari (<adress> au <anwani): [bandari]):
+Ingiza anwani ya seva ya IMAP na bandari (<adress> au <adress>:[bandari]):
+Ingiza anwani ya seva ya SMTP na bandari (<adress> au <anwani>:[bandari]):
 Inakuuliza ujaze sehemu zinazohitajika kutuma ujumbe kwa anwani
 Inatuma ujumbe kwa anwani
 Ingiza anwani ya barua ya mpokeaji:
@@ -644,7 +644,7 @@ Inaendesha katika hali salama. Kuruka hatua ...
 >> Utatuzi wa mbali na Gumzo: toleo
 >> Anwani yako ni {0}.
 >> Jina lako ni {0}.
-Amri {0} haipatikani. Tumia "/ msaada" kuona orodha.
+Amri {0} haipatikani. Tumia "/msaada" kuona orodha.
 Faharasa {0} ni batili. Kuna {1} athari za mkusanyiko. Index ni msingi wa sifuri, kwa hivyo jaribu kutoa kwa 1.
 Hakuna athari ya stack
 Inaonyesha athari ya mwisho kwa ubaguzi
@@ -753,7 +753,7 @@ Imeshindwa kupata faili inayolingana na kamba "{0}": {1}
 Upakuaji umeshindwa kwa faili {0}.
 Imeshindwa kuorodhesha faili za mbali: {0}
 Ingiza faili au folda ili uondoe. Lazima uwe na ruhusa za kiutawala kwenye akaunti yako ili uweze kuondoa.
-Je! Una uhakika unataka kufuta {0} <y / n>?
+Je! Una uhakika unataka kufuta {0} <y/n>?
 Inafuta {0} ...
 {0} haipatikani kwenye seva.
 Barua zote zilizotengenezwa na {0} zimeondolewa kwa mafanikio.
