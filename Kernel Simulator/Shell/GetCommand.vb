@@ -932,7 +932,13 @@ Public Module GetCommand
                     Done = True
                     Dim file As String = NeutralizePath(eqargs(1))
                     If IO.File.Exists(file) Then
-                        If eqargs(0) = "SHA256" Then
+                        If eqargs(0) = "SHA512" Then
+                            Dim spent As New Stopwatch
+                            spent.Start() 'Time when you're on a breakpoint is counted
+                            W(GetEncryptedFile(file, Algorithms.SHA512), True, ColTypes.Neutral)
+                            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                            spent.Stop()
+                        ElseIf eqargs(0) = "SHA256" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
                             W(GetEncryptedFile(file, Algorithms.SHA256), True, ColTypes.Neutral)
@@ -972,7 +978,15 @@ Public Module GetCommand
                         For Each file As String In Directory.EnumerateFiles(folder, "*", IO.SearchOption.TopDirectoryOnly)
                             file = NeutralizePath(file)
                             W(">> {0}", True, ColTypes.Stage, file)
-                            If eqargs(0) = "SHA256" Then
+                            If eqargs(0) = "SHA512" Then
+                                Dim spent As New Stopwatch
+                                spent.Start() 'Time when you're on a breakpoint is counted
+                                Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA512)
+                                W(encrypted, True, ColTypes.Neutral)
+                                W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
+                                spent.Stop()
+                            ElseIf eqargs(0) = "SHA256" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
                                 Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA256)
@@ -1087,7 +1101,9 @@ Public Module GetCommand
                     Dim ExpectedHash As String = ""
                     Dim ActualHash As String = ""
                     If IO.File.Exists(file) Then
-                        If eqargs(0) = "SHA256" Then
+                        If eqargs(0) = "SHA512" Then
+                            ExpectedHashLength = 128
+                        ElseIf eqargs(0) = "SHA256" Then
                             ExpectedHashLength = 64
                         ElseIf eqargs(0) = "SHA1" Then
                             ExpectedHashLength = 40

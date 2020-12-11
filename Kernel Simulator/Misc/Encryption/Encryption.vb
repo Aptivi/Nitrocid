@@ -29,6 +29,7 @@ Public Module Encryption
         MD5
         SHA1
         SHA256
+        SHA512
     End Enum
 
     ''' <summary>
@@ -65,6 +66,9 @@ Public Module Encryption
             Case 2
                 Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(str))
                 Return GetArrayEnc(hashbyte)
+            Case 3
+                Dim hashbyte As Byte() = SHA512.Create().ComputeHash(Encoding.UTF8.GetBytes(str))
+                Return GetArrayEnc(hashbyte)
         End Select
         Return ""
     End Function
@@ -87,6 +91,9 @@ Public Module Encryption
                 Return GetArrayEnc(hashbyte)
             Case 2
                 Dim hashbyte As Byte() = SHA256.Create().ComputeHash(str)
+                Return GetArrayEnc(hashbyte)
+            Case 3
+                Dim hashbyte As Byte() = SHA512.Create().ComputeHash(str)
                 Return GetArrayEnc(hashbyte)
         End Select
         Return ""
