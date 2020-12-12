@@ -862,6 +862,15 @@ Public Module GetCommand
                 OpenMainPage()
                 Done = True
 
+            ElseIf words(0) = "sftp" Then
+
+                If requestedCommand = "sftp" Then
+                    SFTPInitiateShell()
+                Else
+                    SFTPInitiateShell(True, words(1))
+                End If
+                Done = True
+
             ElseIf words(0) = "shownotifs" Then
 
                 Dim Count As Integer = 1

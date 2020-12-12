@@ -86,6 +86,7 @@ Public Module HelpSystem
                                                               {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
                                                               {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
                                                               {"settings", DoTranslation("Changes kernel configuration", currentLang)},
+                                                              {"sftp", DoTranslation("Lets you use an SSH FTP server", currentLang)},
                                                               {"shownotifs", DoTranslation("Shows all received notifications", currentLang)},
                                                               {"showtd", DoTranslation("Shows date and time", currentLang)},
                                                               {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
@@ -399,6 +400,10 @@ Public Module HelpSystem
         ElseIf command = "settings" Then
 
             W(DoTranslation("Usage:", currentLang) + " settings", True, ColTypes.Neutral)
+
+        ElseIf command = "sftp" Then
+
+            W(DoTranslation("Usage:", currentLang) + " sftp <server>: " + DoTranslation("Initializes the SFTP shell.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "shownotifs" Then
 

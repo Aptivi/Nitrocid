@@ -35,6 +35,10 @@ Public Module ModExecutor
         ''' </summary>
         MailShell
         ''' <summary>
+        ''' SFTP shell
+        ''' </summary>
+        SFTPShell
+        ''' <summary>
         ''' Text shell
         ''' </summary>
         TextShell

@@ -271,16 +271,19 @@ Public Module ModParser
                 End If
                 If script.CmdType = ModType.Shell Then
                     If Not modcmnds.Contains(script.Cmd) Then modcmnds.Add(script.Cmd)
-                    If Not moddefs.ContainsKey(script.Cmd) Then moddefs.Add(script.Cmd, script.Def)
+                    moddefs.AddIfNotFound(script.Cmd, script.Def)
                 ElseIf script.CmdType = ModType.FTPShell Then
                     If Not FTPModCommands.Contains(script.Cmd) Then FTPModCommands.Add(script.Cmd)
-                    If Not FTPModDefs.ContainsKey(script.Cmd) Then FTPModDefs.Add(script.Cmd, script.Def)
+                    FTPModDefs.AddIfNotFound(script.Cmd, script.Def)
                 ElseIf script.CmdType = ModType.MailShell Then
                     If Not MailModCommands.Contains(script.Cmd) Then MailModCommands.Add(script.Cmd)
-                    If Not MailModDefs.ContainsKey(script.Cmd) Then MailModDefs.Add(script.Cmd, script.Def)
+                    MailModDefs.AddIfNotFound(script.Cmd, script.Def)
+                ElseIf script.CmdType = ModType.SFTPShell Then
+                    If Not SFTPModCommands.Contains(script.Cmd) Then SFTPModCommands.Add(script.Cmd)
+                    SFTPModDefs.AddIfNotFound(script.Cmd, script.Def)
                 ElseIf script.CmdType = ModType.TextShell Then
                     If Not TextEdit_ModCommands.Contains(script.Cmd) Then TextEdit_ModCommands.Add(script.Cmd)
-                    If Not TextEdit_ModHelpEntries.ContainsKey(script.Cmd) Then TextEdit_ModHelpEntries.Add(script.Cmd, script.Def)
+                    TextEdit_ModHelpEntries.AddIfNotFound(script.Cmd, script.Def)
                 End If
             End If
         End If
