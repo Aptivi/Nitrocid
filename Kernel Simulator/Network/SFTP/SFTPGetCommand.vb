@@ -83,6 +83,8 @@ Public Module SFTPGetCommand
                         'Make a confirmation message so user will not accidentally delete a file or folder
                         W(DoTranslation("Are you sure you want to delete {0} <y/n>?", currentLang), False, ColTypes.Input, strArgs)
                         Dim answer As String = Console.ReadKey.KeyChar
+                        Console.WriteLine()
+
                         Try
                             SFTPDeleteRemote(strArgs)
                         Catch ex As Exception
@@ -116,6 +118,7 @@ Public Module SFTPGetCommand
                         Console.WriteLine()
                         W(DoTranslation("Downloaded file {0}.", currentLang), True, ColTypes.Neutral, strArgs)
                     Else
+                        Console.WriteLine()
                         W(DoTranslation("Download failed for file {0}.", currentLang), True, ColTypes.Err, strArgs)
                     End If
                 Else
