@@ -69,14 +69,14 @@ Public Module SFTPGetCommand
             ElseIf words(0) = "currlocaldir" Or words(0) = "pwdl" Then
                 W(DoTranslation("Local directory: {0}", currentLang), True, ColTypes.Neutral, SFTPCurrDirect)
             ElseIf words(0) = "currremotedir" Or words(0) = "pwdr" Then
-                If connected = True Then
+                If SFTPConnected = True Then
                     W(DoTranslation("Remote directory: {0}", currentLang), True, ColTypes.Neutral, SFTPCurrentRemoteDir)
                 Else
                     W(DoTranslation("You must connect to server before getting current remote directory.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "delete" Or words(0) = "del" Then
                 If cmd <> "delete" Or cmd <> "del" Then
-                    If connected = True Then
+                    If SFTPConnected = True Then
                         'Print a message
                         W(DoTranslation("Deleting {0}...", currentLang), True, ColTypes.Neutral, strArgs)
 
@@ -95,9 +95,9 @@ Public Module SFTPGetCommand
                     W(DoTranslation("Enter a file or folder to remove. You must have administrative permissions on your account to be able to remove.", currentLang), True, ColTypes.Err)
                 End If
             ElseIf cmd = "disconnect" Then
-                If connected = True Then
+                If SFTPConnected = True Then
                     'Set a connected flag to False
-                    connected = False
+                    SFTPConnected = False
                     ClientSFTP.Disconnect()
                     W(DoTranslation("Disconnected from {0}", currentLang), True, ColTypes.Neutral, ftpsite)
 

@@ -55,7 +55,7 @@ Public Module SFTPTools
 
                 'Check to see if no port is provided by client
                 If SftpHost = SftpPort Then
-                    SftpPort = 0 'Used for detecting of SSL is being used or not dynamically on connection
+                    SftpPort = 22
                 End If
 
                 'Prompt for username
@@ -98,6 +98,7 @@ Public Module SFTPTools
         SFTPCurrentRemoteDir = ClientSFTP.WorkingDirectory
         Wdbg("I", "Working directory: {0}", SFTPCurrentRemoteDir)
         sftpsite = ClientSFTP.ConnectionInfo.Host
+        SFTPUser = ClientSFTP.ConnectionInfo.Username
     End Sub
 
 End Module

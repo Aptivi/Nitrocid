@@ -23,15 +23,15 @@ Public Module SFTPTransfer
     ''' <param name="File">A remote file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function SFTPGetFile(ByVal File As String) As Boolean
-        If connected Then
+        If SFTPConnected Then
             Try
                 'Show a message to download
                 EventManager.RaiseSFTPPreDownload(File)
                 Wdbg("I", "Downloading file {0}...", File)
 
                 'Try to download
-                Dim DownloadFileStream As New IO.FileStream(File, IO.FileMode.OpenOrCreate)
-                ClientSFTP.DownloadFile($"{currDirect}/{File}", DownloadFileStream)
+                Dim DownloadFileStream As New IO.FileStream($"{SFTPCurrDirect}/{File}", IO.FileMode.OpenOrCreate)
+                ClientSFTP.DownloadFile($"{SFTPCurrentRemoteDir}/{File}", DownloadFileStream)
 
                 'Show a message that it's downloaded
                 Wdbg("I", "Downloaded file {0}.", File)
@@ -53,15 +53,15 @@ Public Module SFTPTransfer
     ''' <param name="File">A local file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function SFTPUploadFile(ByVal File As String) As Boolean
-        If connected Then
+        If SFTPConnected Then
             Try
                 'Show a message to download
                 EventManager.RaiseSFTPPreUpload(File)
                 Wdbg("I", "Uploading file {0}...", File)
 
                 'Try to upload
-                Dim UploadFileStream As New IO.FileStream(File, IO.FileMode.Open)
-                ClientSFTP.UploadFile(UploadFileStream, $"{currDirect}/{File}")
+                Dim UploadFileStream As New IO.FileStream($"{SFTPCurrDirect}/{File}", IO.FileMode.Open)
+                ClientSFTP.UploadFile(UploadFileStream, $"{SFTPCurrentRemoteDir}/{File}")
                 Wdbg("I", "Uploaded file {0}", File)
                 EventManager.RaiseSFTPPostUpload(File)
                 Return True

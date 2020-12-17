@@ -28,7 +28,7 @@ Module SFTPFilesystem
     ''' <exception cref="EventsAndExceptions.SFTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
     Public Function SFTPListRemote(ByVal Path As String) As List(Of String)
-        If connected Then
+        If SFTPConnected Then
             Dim EntryBuilder As New StringBuilder
             Dim Entries As New List(Of String)
             Dim FileSize As Long
@@ -39,7 +39,7 @@ Module SFTPFilesystem
                 If Path <> "" Then
                     Listing = ClientSFTP.ListDirectory(Path)
                 Else
-                    Listing = ClientSFTP.ListDirectory(currentremoteDir)
+                    Listing = ClientSFTP.ListDirectory(SFTPCurrentRemoteDir)
                 End If
                 For Each DirListSFTP As Sftp.SftpFile In Listing
                     EntryBuilder.Append($"- {DirListSFTP.Name}")
@@ -75,7 +75,7 @@ Module SFTPFilesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="EventsAndExceptions.SFTPFilesystemException"></exception>
     Public Function SFTPDeleteRemote(ByVal Target As String) As Boolean
-        If connected Then
+        If SFTPConnected Then
             Wdbg("I", "Deleting {0}...", Target)
 
             'Delete a file or folder
@@ -104,7 +104,7 @@ Module SFTPFilesystem
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="ArgumentNullException"></exception>
     Public Function SFTPChangeRemoteDir(ByVal Directory As String) As Boolean
-        If connected = True Then
+        If SFTPConnected = True Then
             If Directory <> "" Then
                 If ClientSFTP.Exists(Directory) Then
                     'Directory exists, go to the new directory
