@@ -21,14 +21,12 @@ Imports System.Threading
 
 Public Module Shell
 
-    'Available Commands  (availableCommands)
-    'Admin-Only commands (strictCmds)
-    'Obsolete commands   (obsoleteCmds)
-    'For contributors: For each added command, you should add a command to availableCommands array so there are no problems detecting your new command.
-    '                  For each added admin command, you should add a command to strictCmds array after performing above procedure so there are no problems checking if user has Admin permission to use your new admin command.
-    '                  For each obsolete command, you should add a command to obsoleteCmds array so there are no problems checking if your command is obsolete.
     Public ColoredShell As Boolean = True                   'To fix known bug
     Public strcommand As String                             'Written Command
+    Public ShellPromptStyle As String = ""                  'Shell prompt style
+    Public modcmnds As New ArrayList
+
+    'Available Commands
     Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "shutdown", "reboot", "adduser", "chmotd",
                                             "chhostname", "showtd", "chpwd", "sysinfo", "arginj", "setcolors", "rmuser", "cls", "perm", "chusrname",
                                             "setthemes", "netinfo", "md", "rm", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
@@ -38,11 +36,13 @@ Public Module Shell
                                             "dismissnotif", "rexec", "calc", "update", "sumfiles", "lsmail", "echo", "choice", "beep", "input", "mkfile",
                                             "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather", "fileinfo", "dirinfo", "chattr", "ping", "verify",
                                             "sftp"}
+    'Admin-Only commands
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "chpwd", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
                                      "listdrives", "listparts", "rdebug", "rexec", "update", "blockdbgdev", "unblockdbgdev", "settings"}
+    'Obsolete commands
     Public obsoleteCmds() As String = {}
-    Public modcmnds As New ArrayList
+
 
     ''' <summary>
     ''' Initializes the shell.
@@ -140,12 +140,24 @@ Public Module Shell
     ''' </summary>
     Public Sub CommandPromptWrite()
 
-        If adminList(signedinusrnm) = True Then
-            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, signedinusrnm) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0} # ", False, ColTypes.Gray, CurrDir)
-        ElseIf maintenance = True Then
-            W("Maintenance Mode> ", False, ColTypes.Gray)
+        If ShellPromptStyle <> "" And Not maintenance Then
+            'TODO: Currently, it doesn't support colors and shells other than the main shell.
+            W(ProbePlaces(ShellPromptStyle), False, ColTypes.Gray)
+            If adminList(signedinusrnm) = True Then
+                W(" # ", False, ColTypes.Gray)
+            Else
+                W(" $ ", False, ColTypes.Gray)
+            End If
+        ElseIf ShellPromptStyle = "" And Not maintenance Then
+            If adminList(signedinusrnm) = True Then
+                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, signedinusrnm) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0} # ", False, ColTypes.Gray, CurrDir)
+            ElseIf maintenance Then
+                W("Maintenance Mode> ", False, ColTypes.Gray)
+            Else
+                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, signedinusrnm) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0} $ ", False, ColTypes.Gray, CurrDir)
+            End If
         Else
-            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, signedinusrnm) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0} $ ", False, ColTypes.Gray, CurrDir)
+            W("Maintenance Mode> ", False, ColTypes.Gray)
         End If
 
     End Sub
