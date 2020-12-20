@@ -291,6 +291,7 @@ CHOICE:
                 'Update help list for translated help
                 InitHelp()
                 InitFTPHelp()
+                InitSFTPHelp()
                 IMAPInitHelp()
                 TextEdit_UpdateHelp()
                 ReloadGenericDefs(OldModDescGeneric)

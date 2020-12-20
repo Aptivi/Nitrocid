@@ -76,7 +76,8 @@ Public Module Config
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Shell",
                         New IniKey(ksconf, "Colored Shell", ColoredShell),
-                        New IniKey(ksconf, "Simplified Help Command", simHelp)))
+                        New IniKey(ksconf, "Simplified Help Command", simHelp),
+                        New IniKey(ksconf, "Prompt Style", ShellPromptStyle)))
 
                 'The Network Section
                 ksconf.Sections.Add(
@@ -165,7 +166,8 @@ Public Module Config
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Shell",
                         New IniKey(ksconf, "Colored Shell", "True"),
-                        New IniKey(ksconf, "Simplified Help Command", "False")))
+                        New IniKey(ksconf, "Simplified Help Command", "False"),
+                        New IniKey(ksconf, "Prompt Style", "")))
 
                 'The Network Section
                 ksconf.Sections.Add(
@@ -233,6 +235,7 @@ Public Module Config
             ksconf.Sections("Shell").TrailingComment.Text = "This section is the shell settings that lets you control whether or not to enable simplified help command and/or colored shell."
             ksconf.Sections("Shell").Keys("Simplified Help Command").TrailingComment.Text = "Simplifies the ""help"" command so it only shows available commands."
             ksconf.Sections("Shell").Keys("Colored Shell").TrailingComment.Text = "Whether or not it supports colored shell."
+            ksconf.Sections("Shell").Keys("Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the main shell. Placeholders here are parsed."
 
             'Hardware
             ksconf.Sections("Hardware").TrailingComment.Text = "This section is the hardware probing settings that lets you control whether or not to probe RAM slots and/or quietly probe hardware. This section and the two settings are deprecated."
@@ -393,6 +396,7 @@ Public Module Config
             'Shell Section
             Wdbg("I", "Parsing shell section...")
             If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
+            ShellPromptStyle = configReader.Sections("Shell").Keys("Prompt Style").Value
 
             'Hardware Section
             Wdbg("I", "Parsing hardware section...")

@@ -86,6 +86,7 @@ Public Module HelpSystem
                                                               {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
                                                               {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
                                                               {"settings", DoTranslation("Changes kernel configuration", currentLang)},
+                                                              {"sftp", DoTranslation("Lets you use an SSH FTP server", currentLang)},
                                                               {"shownotifs", DoTranslation("Shows all received notifications", currentLang)},
                                                               {"showtd", DoTranslation("Shows date and time", currentLang)},
                                                               {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
@@ -400,6 +401,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " settings", True, ColTypes.Neutral)
 
+        ElseIf command = "sftp" Then
+
+            W(DoTranslation("Usage:", currentLang) + " sftp <server>: " + DoTranslation("Initializes the SFTP shell.", currentLang), True, ColTypes.Neutral)
+
         ElseIf command = "shownotifs" Then
 
             W(DoTranslation("Usage:", currentLang) + " shownotifs: " + DoTranslation("Shows all received notifications", currentLang), True, ColTypes.Neutral)
@@ -427,11 +432,11 @@ Public Module HelpSystem
 
         ElseIf command = "sumfile" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sumfile <MD5/SHA1/SHA256> <file>: " + DoTranslation("Calculates file sums.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " sumfile <MD5/SHA1/SHA256/SHA512> <file>: " + DoTranslation("Calculates file sums.", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "sumfiles" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sumfiles <MD5/SHA1/SHA256> <dir> [outputFile]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " sumfiles <MD5/SHA1/SHA256/SHA512> <dir> [outputFile]", True, ColTypes.Neutral)
 
         ElseIf command = "sysinfo" Then
 
@@ -451,7 +456,7 @@ Public Module HelpSystem
 
         ElseIf command = "verify" Then
 
-            W(DoTranslation("Usage:", currentLang) + " verify <MD5/SHA1/SHA256> <calculatedhash> <hashfile/expectedhash> <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " verify <MD5/SHA1/SHA256/SHA512> <calculatedhash> <hashfile/expectedhash> <file>", True, ColTypes.Neutral)
 
         ElseIf command = "weather" Then
 

@@ -60,6 +60,16 @@ Public Class EventsAndExceptions
     Public Event RPCCommandSent(ByVal Command As String)
     Public Event RPCCommandReceived(ByVal Command As String)
     Public Event RPCCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Event SFTPShellInitialized()
+    Public Event SFTPPreExecuteCommand(ByVal Command As String)
+    Public Event SFTPPostExecuteCommand(ByVal Command As String)
+    Public Event SFTPCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Event SFTPPreDownload(ByVal File As String)
+    Public Event SFTPPostDownload(ByVal File As String)
+    Public Event SFTPDownloadError(ByVal File As String, ByVal Exception As Exception)
+    Public Event SFTPPreUpload(ByVal File As String)
+    Public Event SFTPPostUpload(ByVal File As String)
+    Public Event SFTPUploadError(ByVal File As String, ByVal Exception As Exception)
     Public Event SSHConnected(ByVal Target As String)
     Public Event SSHDisconnected()
     Public Event SSHError(ByVal Exception As Exception)
@@ -523,6 +533,116 @@ Public Class EventsAndExceptions
         Next
     End Sub
     ''' <summary>
+    ''' Makes the mod respond to the event of SFTP shell initialized
+    ''' </summary>
+    Public Sub RespondSFTPShellInitialized() Handles Me.SFTPShellInitialized
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPShellInitialized()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SFTPShellInitialized")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of pre-command execution
+    ''' </summary>
+    Public Sub RespondSFTPPreExecuteCommand(ByVal Command As String) Handles Me.SFTPPreExecuteCommand
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SFTPPreExecuteCommand", Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of post-command execution
+    ''' </summary>
+    Public Sub RespondSFTPPostExecuteCommand(ByVal Command As String) Handles Me.SFTPPostExecuteCommand
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SFTPPostExecuteCommand", Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SFTP command error
+    ''' </summary>
+    Public Sub RespondSFTPCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.SFTPCommandError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPCommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SFTPCommandError", Command, Exception)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SFTP pre-download
+    ''' </summary>
+    Public Sub RespondSFTPPreDownload(ByVal File As String) Handles Me.SFTPPreDownload
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPreDownload()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SFTPPreDownload", File)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SFTP post-download
+    ''' </summary>
+    Public Sub RespondSFTPPostDownload(ByVal File As String) Handles Me.SFTPPostDownload
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPostDownload()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SFTPPostDownload", File)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SFTP download error
+    ''' </summary>
+    Public Sub RespondSFTPDownloadError(ByVal File As String, ByVal Exception As Exception) Handles Me.SFTPDownloadError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPDownloadError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SFTPDownloadError", File, Exception)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SFTP pre-upload
+    ''' </summary>
+    Public Sub RespondSFTPPreUpload(ByVal File As String) Handles Me.SFTPPreUpload
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPreUpload()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SFTPPreUpload", File)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SFTP post-upload
+    ''' </summary>
+    Public Sub RespondSFTPPostUpload(ByVal File As String) Handles Me.SFTPPostUpload
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPostUpload()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SFTPPostUpload", File)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SFTP download error
+    ''' </summary>
+    Public Sub RespondSFTPUploadError(ByVal File As String, ByVal Exception As Exception) Handles Me.SFTPUploadError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPUploadError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SFTPUploadError", File, Exception)
+            Next
+        Next
+    End Sub
+    ''' <summary>
     ''' Makes the mod respond to the event of SSH being connected
     ''' </summary>
     Public Sub RespondSSHConnected(ByVal Target As String) Handles Me.SSHConnected
@@ -922,6 +1042,76 @@ Public Class EventsAndExceptions
         RaiseEvent RPCCommandError(Command, Exception)
     End Sub
     ''' <summary>
+    ''' Raise an event of SFTP shell initialized
+    ''' </summary>
+    Public Sub RaiseSFTPShellInitialized()
+        Wdbg("I", "Raising event SFTPShellInitialized() and responding in RespondSFTPShellInitialized()...")
+        RaiseEvent SFTPShellInitialized()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SFTP pre-execute command
+    ''' </summary>
+    Public Sub RaiseSFTPPreExecuteCommand(ByVal Command As String)
+        Wdbg("I", "Raising event SFTPPreExecuteCommand() and responding in RespondSFTPPreExecuteCommand()...")
+        RaiseEvent SFTPPreExecuteCommand(Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SFTP post-execute command
+    ''' </summary>
+    Public Sub RaiseSFTPPostExecuteCommand(ByVal Command As String)
+        Wdbg("I", "Raising event SFTPPostExecuteCommand() and responding in RespondSFTPPostExecuteCommand()...")
+        RaiseEvent SFTPPostExecuteCommand(Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SFTP command error
+    ''' </summary>
+    Public Sub RaiseSFTPCommandError(ByVal Command As String, ByVal Exception As Exception)
+        Wdbg("I", "Raising event SFTPCommandError() and responding in RespondSFTPCommandError()...")
+        RaiseEvent SFTPCommandError(Command, Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SFTP pre-download
+    ''' </summary>
+    Public Sub RaiseSFTPPreDownload(ByVal File As String)
+        Wdbg("I", "Raising event SFTPPreDownload() and responding in RespondSFTPPreDownload()...")
+        RaiseEvent SFTPPreDownload(File)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SFTP post-download
+    ''' </summary>
+    Public Sub RaiseSFTPPostDownload(ByVal File As String)
+        Wdbg("I", "Raising event SFTPPostDownload() and responding in RespondSFTPPostDownload()...")
+        RaiseEvent SFTPPostDownload(File)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SFTP download error
+    ''' </summary>
+    Public Sub RaiseSFTPDownloadError(ByVal File As String, ByVal Exception As Exception)
+        Wdbg("I", "Raising event SFTPDownloadError() and responding in RespondSFTPDownloadError()...")
+        RaiseEvent SFTPDownloadError(File, Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SFTP pre-upload
+    ''' </summary>
+    Public Sub RaiseSFTPPreUpload(ByVal File As String)
+        Wdbg("I", "Raising event SFTPPreUpload() and responding in RespondSFTPPreUpload()...")
+        RaiseEvent SFTPPreUpload(File)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SFTP post-upload
+    ''' </summary>
+    Public Sub RaiseSFTPPostUpload(ByVal File As String)
+        Wdbg("I", "Raising event SFTPPostUpload() and responding in RespondSFTPPostUpload()...")
+        RaiseEvent SFTPPostUpload(File)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SFTP upload error
+    ''' </summary>
+    Public Sub RaiseSFTPUploadError(ByVal File As String, ByVal Exception As Exception)
+        Wdbg("I", "Raising event SFTPUploadError() and responding in RespondSFTPUploadError()...")
+        RaiseEvent SFTPUploadError(File, Exception)
+    End Sub
+    ''' <summary>
     ''' Raise an event of SSH being connected
     ''' </summary>
     Public Sub RaiseSSHConnected(ByVal Target As String)
@@ -1269,6 +1459,22 @@ Public Class EventsAndExceptions
     ''' Thrown when there is an FTP filesystem error
     ''' </summary>
     Public Class FTPFilesystemException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when there is an SFTP filesystem error
+    ''' </summary>
+    Public Class SFTPFilesystemException
         Inherits Exception
         Public Sub New()
             MyBase.New()

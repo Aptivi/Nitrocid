@@ -332,6 +332,7 @@ Public Module KernelTools
         'Initialize help
         InitHelp()
         InitFTPHelp()
+        InitSFTPHelp()
         IMAPInitHelp()
         TextEdit_UpdateHelp()
 

@@ -23,6 +23,7 @@ Imports Newtonsoft.Json.Linq
 Public Module HardwareProbe
 
     'TODO: Re-write in Beta
+    'TODO: Re-write with Inxi.NET
     ''' <summary>
     ''' Starts probing hardware
     ''' </summary>

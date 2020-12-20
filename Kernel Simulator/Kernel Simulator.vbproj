@@ -20,7 +20,7 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.12.3</Version>
+    <Version>0.0.13.0</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -289,6 +289,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Network\SFTP\Filesystem\SFTPFilesystem.vb" />
+    <Compile Include="Network\SFTP\SFTPGetCommand.vb" />
+    <Compile Include="Network\SFTP\SFTPHelpSystem.vb" />
+    <Compile Include="Network\SFTP\SFTPShell.vb" />
+    <Compile Include="Network\SFTP\SFTPTools.vb" />
+    <Compile Include="Network\SFTP\Transfer\SFTPTransfer.vb" />
     <Compile Include="Network\FTP\Filesystem\FTPFilesystem.vb" />
     <Compile Include="Network\FTP\FTPGetCommand.vb" />
     <Compile Include="Network\FTP\FTPHelpSystem.vb" />

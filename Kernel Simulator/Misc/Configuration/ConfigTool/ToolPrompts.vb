@@ -116,10 +116,11 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Clear Screen on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("clsOnLogin"))
                     W("3) " + DoTranslation("Show available usernames", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShowAvailableUsers"))
                 Case 4 'Shell
-                    MaxOptions = 2
+                    MaxOptions = 3
                     W(DoTranslation("This section lists the shell settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColoredShell"))
-                    W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("simHelp"))
+                    W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("simHelp"))
+                    W("3) " + DoTranslation("Prompt Style", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShellPromptStyle"))
                 Case 5 'Network
                     MaxOptions = 8
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -332,6 +333,10 @@ Public Module ToolPrompts
                             W(DoTranslation("Simplified help command for all the shells", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 3 'Prompt Style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = "ShellPromptStyle"
+                            W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
                         Case Else
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select

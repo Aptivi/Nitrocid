@@ -119,6 +119,12 @@ Module TestGetCommand
             W(DoTranslation(Message, Lang), True, ColTypes.Neutral)
         ElseIf Cmd = "places" Then 'Usage: places <Message> | Same as print, but with no option to change colors, etc. Only message with placeholder support
             W(ProbePlaces(FullArgsQ(0)), True, ColTypes.Neutral)
+        ElseIf Cmd = "testsha512" Then
+            Dim spent As New Stopwatch
+            spent.Start() 'Time when you're on a breakpoint is counted
+            W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA512), True, ColTypes.Neutral)
+            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+            spent.Stop()
         ElseIf Cmd = "testsha256" Then
             Dim spent As New Stopwatch
             spent.Start() 'Time when you're on a breakpoint is counted

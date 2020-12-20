@@ -226,6 +226,7 @@ Imports KS
         signedinusrnm = "Test"
         Dim ParsedStrings As New List(Of String) From {
             ProbePlaces("Username is <user>"),
+            ProbePlaces("Hostname is <host>"),
             ProbePlaces("Short date is <shortdate>"),
             ProbePlaces("Long date is <longdate>"),
             ProbePlaces("Short time is <shorttime>"),
