@@ -43,7 +43,6 @@ Public Module Shell
     'Obsolete commands
     Public obsoleteCmds() As String = {}
 
-
     ''' <summary>
     ''' Initializes the shell.
     ''' </summary>

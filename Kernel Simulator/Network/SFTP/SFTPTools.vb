@@ -16,9 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.IO
-Imports System.Net.Security
-
 Public Module SFTPTools
 
     ''' <summary>
@@ -32,9 +29,9 @@ Public Module SFTPTools
         W(DoTranslation("Password for {0}: ", currentLang), False, ColTypes.Input, user)
 
         'Get input
-        pass = ReadLineNoInput("*")
+        SFTPPass = ReadLineNoInput("*")
         Console.WriteLine()
-        ClientSFTP = New SftpClient(Address, Port, user, pass)
+        ClientSFTP = New SftpClient(Address, Port, user, SFTPPass)
 
         'Connect to FTP
         ConnectSFTP()

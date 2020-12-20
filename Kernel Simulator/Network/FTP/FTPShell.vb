@@ -30,7 +30,7 @@ Public Module FTPShell
     Public currDirect As String 'Current Local Directory
     Public currentremoteDir As String 'Current Remote Directory
     Public user As String
-    Public pass As String
+    Friend pass As String
     Private strcmd As String
     Public ftpexit As Boolean = False
     Public FTPModCommands As New ArrayList

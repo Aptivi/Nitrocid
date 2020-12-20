@@ -30,7 +30,7 @@ Public Module SFTPShell
     Public SFTPCurrDirect As String 'Current Local Directory
     Public SFTPCurrentRemoteDir As String 'Current Remote Directory
     Public SFTPUser As String
-    Public SFTPPass As String
+    Friend SFTPPass As String
     Private SFTPStrCmd As String
     Public sftpexit As Boolean = False
     Public SFTPModCommands As New ArrayList
