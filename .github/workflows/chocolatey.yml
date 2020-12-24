@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: master
+        ref: ${{ github.ref }}
     - name: API Key Preparation
       run: choco apikey --key ${{ secrets.CHOCO_APIKEY }} --source https://push.chocolatey.org/
     - name: Application Pack

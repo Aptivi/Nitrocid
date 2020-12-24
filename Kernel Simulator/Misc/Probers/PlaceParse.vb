@@ -23,6 +23,7 @@ Public Module PlaceParse
     'Placeholders (strings)
     Private ReadOnly userplace As String = "<user>"
     Private ReadOnly hostplace As String = "<host>"
+    Private ReadOnly dirplace As String = "<currentdirectory>"
     Private ReadOnly sdateplace As String = "<shortdate>"
     Private ReadOnly ldateplace As String = "<longdate>"
     Private ReadOnly stimeplace As String = "<shorttime>"
@@ -50,6 +51,10 @@ Public Module PlaceParse
             If text.Contains(hostplace) Then
                 Wdbg("I", "Hostname placeholder found.")
                 text = text.Replace(hostplace, HName)
+            End If
+            If text.Contains(dirplace) Then
+                Wdbg("I", "Current directory placeholder found.")
+                text = text.Replace(dirplace, CurrDir)
             End If
             If text.Contains(sdateplace) Then
                 Wdbg("I", "Short Date placeholder found.")

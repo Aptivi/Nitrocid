@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: master
+        ref: ${{ github.ref }}
     - name: NuGet Installation
       uses: nuget/setup-nuget@v1
       with: 
