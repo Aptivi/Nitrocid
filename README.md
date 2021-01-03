@@ -152,7 +152,7 @@ License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 
 Source code: https://github.com/EoflaOE/Extensification/
 
-Copyright (c) 2020 EoflaOE and its companies
+Copyright (c) 2020-present EoflaOE and its companies
 
 License (MIT): https://github.com/EoflaOE/Extensification/blob/master/LICENSE
 
@@ -167,7 +167,7 @@ License (Apache 2.0): https://github.com/NuGet/NuGet.Client/blob/dev/LICENSE.txt
 ## License
 
     Kernel Simulator - Simulates our future planned Kernel
-    Copyright (C) 2018-2020  EoflaOE
+    Copyright (C) 2018-2021  EoflaOE
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
