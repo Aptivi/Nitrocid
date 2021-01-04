@@ -222,12 +222,39 @@ Public Module Shell
                         Wdbg("W", "Cmd exec {0} failed: In maintenance mode. Assertion of input.Contains(""logout"") is True", strcommand)
                         W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), True, ColTypes.Err, strcommand)
                     ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(strcommand) = True) Or availableCommands.Contains(strcommand) Then
-                        Wdbg("W", "Cmd exec {0} succeeded", strcommand)
+                        Wdbg("I", "Cmd exec {0} succeeded", strcommand)
                         StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
                         StartCommandThread.Start(cmdArgs)
                         StartCommandThread.Join()
+                    ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) Then
+                        Wdbg("I", "Cmd exec {0} succeeded because file is found.", strcommand)
+                        Try
+                            'Create a new instance of process
+                            Wdbg("I", "Command: {0}, Arguments: {1}", Path.GetFullPath(CurrDir + "/" + strcommand), cmdArgs.Replace(strcommand, ""))
+                            Dim CommandProcess As New Process
+                            Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
+                                                                                  .RedirectStandardOutput = True,
+                                                                                  .RedirectStandardError = True,
+                                                                                  .FileName = Path.GetFullPath(CurrDir + "/" + strcommand),
+                                                                                  .Arguments = cmdArgs.Replace(strcommand, ""),
+                                                                                  .CreateNoWindow = True,
+                                                                                  .WindowStyle = ProcessWindowStyle.Hidden,
+                                                                                  .UseShellExecute = False}
+                            CommandProcess.StartInfo = CommandProcessStart
+                            AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
+
+                            'Start the process
+                            Wdbg("I", "Starting...")
+                            CommandProcess.Start()
+                            CommandProcess.BeginOutputReadLine()
+                            CommandProcess.BeginErrorReadLine()
+                            CommandProcess.WaitForExit()
+                        Catch ex As Exception
+                            Wdbg("E", "Failed to start process: {0}", ex.Message)
+                            WStkTrc(ex)
+                        End Try
                     ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + scriptCmd)) And scriptCmd.EndsWith(".uesh") Then
-                        Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", scriptCmd)
+                        Wdbg("I", "Cmd exec {0} succeeded because it's a UESH script.", scriptCmd)
                         Execute(Path.GetFullPath(CurrDir + "/" + scriptCmd), scriptArgs.Join(" "))
                     Else
                         Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
@@ -270,11 +297,38 @@ Public Module Shell
                             ElseIf cmd = "logout" Or cmd = "shutdown" Or cmd = "reboot" Then
                                 Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", cmd)
                                 W(DoTranslation("Shell message: Command {0} is not allowed to run on log in.", currentLang), True, ColTypes.Err, cmd)
+                            ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) Then
+                                Wdbg("I", "Cmd exec {0} succeeded because file is found.", strcommand)
+                                Try
+                                    'Create a new instance of process
+                                    Wdbg("I", "Command: {0}, Arguments: {1}", Path.GetFullPath(CurrDir + "/" + strcommand), cmdArgs.Replace(strcommand, ""))
+                                    Dim CommandProcess As New Process
+                                    Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
+                                                                                          .RedirectStandardOutput = True,
+                                                                                          .RedirectStandardError = True,
+                                                                                          .FileName = Path.GetFullPath(CurrDir + "/" + strcommand),
+                                                                                          .Arguments = cmdArgs.Replace(strcommand, ""),
+                                                                                          .CreateNoWindow = True,
+                                                                                          .WindowStyle = ProcessWindowStyle.Hidden,
+                                                                                          .UseShellExecute = False}
+                                    CommandProcess.StartInfo = CommandProcessStart
+                                    AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
+
+                                    'Start the process
+                                    Wdbg("I", "Starting...")
+                                    CommandProcess.Start()
+                                    CommandProcess.BeginOutputReadLine()
+                                    CommandProcess.BeginErrorReadLine()
+                                    CommandProcess.WaitForExit()
+                                Catch ex As Exception
+                                    Wdbg("E", "Failed to start process: {0}", ex.Message)
+                                    WStkTrc(ex)
+                                End Try
                             ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) And strcommand.EndsWith(".uesh") Then
-                                Wdbg("W", "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
+                                Wdbg("I", "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
                                 Execute(Path.GetFullPath(CurrDir + "/" + strcommand), scriptArgs.Join(" "))
                             Else
-                                Wdbg("W", "Cmd exec {0} succeeded", cmd)
+                                Wdbg("I", "Cmd exec {0} succeeded", cmd)
                                 StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
                                 StartCommandThread.Start(cmdArgs)
                                 StartCommandThread.Join()
@@ -316,6 +370,11 @@ Public Module Shell
         StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
         StartCommandThread.Start(actualCmd)
         StartCommandThread.Join()
+    End Sub
+
+    Private Sub ExecutableOutput(sendingProcess As Object, outLine As DataReceivedEventArgs)
+        Wdbg("I", outLine.Data)
+        W(outLine.Data, True, ColTypes.Neutral)
     End Sub
 
 End Module
