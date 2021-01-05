@@ -251,6 +251,7 @@ Public Module Shell
                             CommandProcess.WaitForExit()
                         Catch ex As Exception
                             Wdbg("E", "Failed to start process: {0}", ex.Message)
+                            W(DoTranslation("Failed to start ""{0}"": {1}", currentLang), True, ColTypes.Err, strcommand, ex.Message)
                             WStkTrc(ex)
                         End Try
                     ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + scriptCmd)) And scriptCmd.EndsWith(".uesh") Then
@@ -322,6 +323,7 @@ Public Module Shell
                                     CommandProcess.WaitForExit()
                                 Catch ex As Exception
                                     Wdbg("E", "Failed to start process: {0}", ex.Message)
+                                    W(DoTranslation("Failed to start ""{0}"": {1}", currentLang), True, ColTypes.Err, strcommand, ex.Message)
                                     WStkTrc(ex)
                                 End Try
                             ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) And strcommand.EndsWith(".uesh") Then
