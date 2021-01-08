@@ -154,7 +154,15 @@ Source code: https://github.com/EoflaOE/Extensification/
 
 Copyright (c) 2020-present EoflaOE and its companies
 
-License (MIT): https://github.com/EoflaOE/Extensification/blob/master/LICENSE
+License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Extensification/blob/master/LICENSE
+
+### Inxi.NET
+
+Source code: https://github.com/EoflaOE/Inxi.NET/
+
+Copyriht (c) 2020-present EoflaOE and its companies
+
+License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Inxi.NET/blob/master/LICENSE
 
 ### Nuget.Build.Tasks.Pack (build dependency)
 
