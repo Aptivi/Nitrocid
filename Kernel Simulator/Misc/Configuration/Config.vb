@@ -89,7 +89,8 @@ Public Module Config
                         New IniKey(ksconf, "Show progress bar while downloading or uploading from ""get"" or ""put"" command", ShowProgress),
                         New IniKey(ksconf, "Log FTP username", FTPLoggerUsername),
                         New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
-                        New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly)))
+                        New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly),
+                        New IniKey(ksconf, "Show mail message preview", ShowPreview)))
 
                 'The Screensaver Section
                 ksconf.Sections.Add(
@@ -179,7 +180,8 @@ Public Module Config
                         New IniKey(ksconf, "Show progress bar while downloading or uploading from ""get"" or ""put"" command", "True"),
                         New IniKey(ksconf, "Log FTP username", "False"),
                         New IniKey(ksconf, "Log FTP IP address", "False"),
-                        New IniKey(ksconf, "Return only first FTP profile", "False")))
+                        New IniKey(ksconf, "Return only first FTP profile", "False"),
+                        New IniKey(ksconf, "Show mail message preview", "False")))
 
                 'The Screensaver Section
                 ksconf.Sections.Add(
@@ -252,6 +254,7 @@ Public Module Config
             ksconf.Sections("Network").Keys("Log FTP username").TrailingComment.Text = "Whether or not to log FTP username in the debugger log."
             ksconf.Sections("Network").Keys("Log FTP IP address").TrailingComment.Text = "Whether or not to log FTP IP address in the debugger log."
             ksconf.Sections("Network").Keys("Return only first FTP profile").TrailingComment.Text = "Whether or not to return only first successful FTP profile when polling for profiles."
+            ksconf.Sections("Network").Keys("Show mail message preview").TrailingComment.Text = "Whether or not to show mail message preview (body text truncated to 200 characters)."
 
             'Screensaver
             ksconf.Sections("Screensaver").TrailingComment.Text = "This section is the network settings."
@@ -413,6 +416,7 @@ Public Module Config
             FTPLoggerUsername = configReader.Sections("Network").Keys("Log FTP username").Value
             FTPLoggerIP = configReader.Sections("Network").Keys("Log FTP IP address").Value
             FTPFirstProfileOnly = configReader.Sections("Network").Keys("Return only first FTP profile").Value
+            ShowPreview = configReader.Sections("Network").Keys("Show mail message preview").Value
 
             'Screensaver Section
             defSaverName = configReader.Sections("Screensaver").Keys("Screensaver").Value

@@ -122,7 +122,7 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("simHelp"))
                     W("3) " + DoTranslation("Prompt Style", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShellPromptStyle"))
                 Case 5 'Network
-                    MaxOptions = 8
+                    MaxOptions = 9
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Debug Port", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DebugPort"))
                     W("2) " + DoTranslation("Remote Debug Default Nick Prefix", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("RDebugDNP"))
@@ -131,7 +131,8 @@ Public Module ToolPrompts
                     W("5) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ShowProgress"))
                     W("6) " + DoTranslation("Log FTP username", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerUsername"))
                     W("7) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerIP"))
-                    W("8) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("FTPFirstProfileOnly"))
+                    W("8) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPFirstProfileOnly"))
+                    W("9) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShowPreview"))
                 Case 6 'Screensaver
                     MaxOptions = 13
                     W(DoTranslation("This section lists all the screensavers and their available settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -354,36 +355,43 @@ Public Module ToolPrompts
                             KeyType = SettingsKeyType.SInt
                             KeyVar = "DRetries"
                             W("*) " + DoTranslation("Write how many times the ""get"" command should retry failed downloads. It must be numeric.", currentLang), True, ColTypes.Neutral)
-                        Case 3 'Upload Retry Times
+                        Case 4 'Upload Retry Times
                             KeyType = SettingsKeyType.SInt
                             KeyVar = "URetries"
                             W("*) " + DoTranslation("Write how many times the ""put"" command should retry failed uploads. It must be numeric.", currentLang), True, ColTypes.Neutral)
-                        Case 4 'Show progress bar while downloading or uploading from "get" or "put" command
+                        Case 5 'Show progress bar while downloading or uploading from "get" or "put" command
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "ShowProgress"
                             W(DoTranslation("If true, it makes ""get"" or ""put"" show the progress bar while downloading or uploading.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 5 'Log FTP username
+                        Case 6 'Log FTP username
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "FTPLoggerUsername"
                             W(DoTranslation("Whether or not to log FTP username.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 6 'Log FTP IP address
+                        Case 7 'Log FTP IP address
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "FTPLoggerIP"
                             W(DoTranslation("Whether or not to log FTP IP address.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 7 'Return only first FTP profile
+                        Case 8 'Return only first FTP profile
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "FTPFirstProfileOnly"
                             W(DoTranslation("Pick the first profile only when connecting.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 9 'Show mail message preview
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = "ShowPreview"
+                            W(DoTranslation("When listing mail messages, show body preview.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
@@ -662,6 +670,7 @@ Public Module ToolPrompts
         Dim TypeOfNetworkTools As Type = GetType(NetworkTools)
         Dim TypeOfScreensaverSettings As Type = GetType(ScreensaverSettings)
         Dim TypeOfForecast As Type = GetType(Forecast)
+        Dim TypeOfMailManager As Type = GetType(MailManager)
 
         'Get fields of flag modules
         Dim FieldFlags As FieldInfo = TypeOfFlags.GetField(Variable)
@@ -672,6 +681,7 @@ Public Module ToolPrompts
         Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
         Dim FieldScreensaverSettings As FieldInfo = TypeOfScreensaverSettings.GetField(Variable)
         Dim FieldForecast As FieldInfo = TypeOfForecast.GetField(Variable)
+        Dim FieldMailManager As FieldInfo = TypeOfMailManager.GetField(Variable)
 
         'Check if any of them contains the specified variable
         If Not IsNothing(FieldFlags) Then
@@ -690,6 +700,8 @@ Public Module ToolPrompts
             Return FieldScreensaverSettings
         ElseIf Not IsNothing(FieldForecast) Then
             Return FieldForecast
+        ElseIf Not IsNothing(FieldMailManager) Then
+            Return FieldMailManager
         End If
     End Function
 

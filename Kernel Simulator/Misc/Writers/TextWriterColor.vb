@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Console
-Imports System.IO
 Imports System.Threading
 
 'This module is very important to reduce line numbers when there is color.

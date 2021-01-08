@@ -22,11 +22,13 @@ Imports MimeKit
 
 Public Module MailManager
 
+    Public ShowPreview As Boolean
+
     ''' <summary>
     ''' Lists messages
     ''' </summary>
     ''' <param name="PageNum">Page number</param>
-    ''' <returns>String list of messages</returns>
+    ''' <returns>String list of messages and preview (optional)</returns>
     ''' <exception cref="ArgumentException"></exception>
     Public Function MailListMessages(ByVal PageNum As Integer) As String
         If PageNum <= 0 Then PageNum = 1
@@ -58,6 +60,17 @@ Public Module MailManager
                     Dim MsgSubject As String = Msg.Subject
                     Wdbg("I", "From {0}: {1}", MsgFrom, MsgSubject)
                     EntryBuilder.AppendLine($"- [{i + 1}] {Msg.From}: {Msg.Subject}")
+
+                    'TODO: For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
+                    '      this is impossible at this time because no server and no client support this extension. It supports the LAZY modifier. It only
+                    '      displays 200 character long body.
+                    '      Concept: Msg.Preview(LazyMode:=True)
+                    If ShowPreview Then
+                        Dim MsgPreview As String = Msg.GetTextBody(Text.TextFormat.Text).Truncate(200)
+                        'TODO: Add NoColor support for mods and no-color shells
+                        EntryBuilder.AppendLine($"{GetEsc()}[38;5;{CInt(cmdDefColor)}m{MsgPreview}")
+                        EntryBuilder.AppendLine($"{GetEsc()}[38;5;{CInt(neutralTextColor)}m")
+                    End If
                 End SyncLock
             Else
                 Wdbg("W", "Reached max message limit. Message number {0}", i)
