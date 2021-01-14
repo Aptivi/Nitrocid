@@ -16,7 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
 Imports System.IO
 Imports System.Net.NetworkInformation
 Imports System.Text
@@ -549,18 +548,6 @@ Public Module GetCommand
                     Next
                 End If
 
-            ElseIf words(0) = "listdrives" Then
-
-                Done = True
-                PrintDrives()
-
-            ElseIf words(0) = "listparts" Then
-
-                If eqargs?.Count > 0 Then
-                    Done = True
-                    PrintPartitions(eqargs(0))
-                End If
-
             ElseIf words(0) = "loteresp" Then
 
                 Done = True
@@ -1054,11 +1041,7 @@ Public Module GetCommand
 
                 'Hardware section
                 W(DoTranslation("[ Hardware settings ]{0}", currentLang), True, ColTypes.HelpCmd, vbNewLine)
-                If Not EnvironmentOSType.Contains("Unix") Then
-                    ListDrivers()
-                Else
-                    ListDrivers_Linux()
-                End If
+                ListDrivers()
 
                 'User section
                 W(DoTranslation("{0}[ User settings ]", currentLang), True, ColTypes.HelpCmd, vbNewLine)

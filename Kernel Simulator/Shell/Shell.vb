@@ -31,15 +31,14 @@ Public Module Shell
                                             "chhostname", "showtd", "chpwd", "sysinfo", "arginj", "setcolors", "rmuser", "cls", "perm", "chusrname",
                                             "setthemes", "netinfo", "md", "rm", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
                                             "savescreen", "lockscreen", "setsaver", "reloadsaver", "ftp", "usermanual", "cdbglog", "chlang",
-                                            "reloadmods", "get", "put", "lsdbgdev", "disconndbgdev", "move", "copy", "search", "listdrives",
-                                            "listparts", "sumfile", "rdebug", "spellbee", "mathbee", "loteresp", "sshell", "bsynth", "shownotifs",
-                                            "dismissnotif", "rexec", "calc", "update", "sumfiles", "lsmail", "echo", "choice", "beep", "input", "mkfile",
-                                            "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather", "fileinfo", "dirinfo", "chattr", "ping", "verify",
-                                            "sftp"}
+                                            "reloadmods", "get", "put", "lsdbgdev", "disconndbgdev", "move", "copy", "search", "sumfile", "rdebug", "spellbee",
+                                            "mathbee", "loteresp", "sshell", "bsynth", "shownotifs", "dismissnotif", "rexec", "calc", "update", "sumfiles",
+                                            "lsmail", "echo", "choice", "beep", "input", "mkfile", "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather",
+                                            "fileinfo", "dirinfo", "chattr", "ping", "verify", "sftp"}
     'Admin-Only commands
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "chpwd", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
-                                     "listdrives", "listparts", "rdebug", "rexec", "update", "blockdbgdev", "unblockdbgdev", "settings"}
+                                     "rdebug", "rexec", "update", "blockdbgdev", "unblockdbgdev", "settings"}
     'Obsolete commands
     Public obsoleteCmds() As String = {}
 

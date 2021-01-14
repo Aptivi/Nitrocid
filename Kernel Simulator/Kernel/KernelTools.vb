@@ -265,9 +265,6 @@ Public Module KernelTools
         argsFlag = False
         StopPanicAndGoToDoublePanic = False
         strcommand = Nothing
-        slotsUsedName = Nothing
-        slotsUsedNum = 0
-        totalSlots = 0
         modcmnds.Clear()
         moddefs.Clear()
         FTPModCommands.Clear()
@@ -281,12 +278,6 @@ Public Module KernelTools
         Aliases.Clear()
         RemoteDebugAliases.Clear()
         Wdbg("I", "General variables reset")
-
-        'Reset hardware info
-        HDDList.Clear()
-        RAMList.Clear()
-        CPUList.Clear()
-        Wdbg("I", "All hardware reset")
 
         'Release RAM used
         DisposeAll()
