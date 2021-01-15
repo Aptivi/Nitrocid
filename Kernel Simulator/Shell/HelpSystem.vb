@@ -57,8 +57,6 @@ Public Module HelpSystem
                                                               {"help", DoTranslation("Help page", currentLang)},
                                                               {"input", DoTranslation("Allows user to enter input", currentLang)},
                                                               {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
-                                                              {"listdrives", DoTranslation("Lists all probed drives.", currentLang)},
-                                                              {"listparts", DoTranslation("Lists all probed partitions on a specific drive (and all logical partitions on all drives).", currentLang)},
                                                               {"lockscreen", DoTranslation("Locks your screen with a password", currentLang)},
                                                               {"logout", DoTranslation("Logs you out", currentLang)},
                                                               {"loteresp", DoTranslation("Respond to love or hate comments.", currentLang)},
@@ -82,7 +80,6 @@ Public Module HelpSystem
                                                               {"rmuser", DoTranslation("Removes a user from the list", currentLang)},
                                                               {"savescreen", DoTranslation("Saves your screen from burn outs", currentLang)},
                                                               {"search", DoTranslation("Searches for specified string in the provided file", currentLang)},
-                                                              {"setcolors", DoTranslation("Sets up kernel colors", currentLang)},
                                                               {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
                                                               {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
                                                               {"settings", DoTranslation("Changes kernel configuration", currentLang)},
@@ -379,11 +376,6 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " search <StringEnclosedInDoubleQuotes> <File>", True, ColTypes.Neutral)
 
-        ElseIf command = "setcolors" Then
-
-            W(DoTranslation("Usage:", currentLang) + " setcolors <inputColor/def> <licenseColor/def> <contKernelErrorColor/def> <uncontKernelErrorColor/def> <hostNameShellColor/def> <userNameShellColor/def> <backgroundColor/def> <neutralTextColor/def> <cmdListColor/def> <cmdDefColor/def> <stageColor/def> <errorColor/def>" + vbNewLine +
-              "       " + DoTranslation("Friends of", currentLang) + " setcolors: setthemes", True, ColTypes.Neutral)
-
         ElseIf command = "setsaver" Then
 
             W(DoTranslation("Usage:", currentLang) + " setsaver <modNameSS.m/{0}>", True, ColTypes.Neutral, String.Join("/", ScrnSvrdb.Keys))
@@ -394,8 +386,7 @@ Public Module HelpSystem
         ElseIf command = "setthemes" Then
 
             W(DoTranslation("Usage:", currentLang) + " setthemes <Theme>" + vbNewLine +
-              "       " + "<Theme>: " + String.Join(", ", colorTemplates) + vbNewLine +
-              "       " + DoTranslation("Friends of", currentLang) + " setthemes: setcolors", True, ColTypes.Neutral)
+              "       " + "<Theme>: " + String.Join(", ", colorTemplates), True, ColTypes.Neutral)
 
         ElseIf command = "settings" Then
 

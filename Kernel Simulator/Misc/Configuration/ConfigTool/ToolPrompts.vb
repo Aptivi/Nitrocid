@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Reflection
+Imports Extensification.DictionaryExts
 
 Public Module ToolPrompts
 
@@ -24,6 +25,7 @@ Public Module ToolPrompts
         SBoolean
         SInt
         SString
+        SMultivar
         SSelection
         SMenu
     End Enum
@@ -116,11 +118,12 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Clear Screen on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("clsOnLogin"))
                     W("3) " + DoTranslation("Show available usernames", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShowAvailableUsers"))
                 Case 4 'Shell
-                    MaxOptions = 3
+                    MaxOptions = 4
                     W(DoTranslation("This section lists the shell settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColoredShell"))
                     W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("simHelp"))
-                    W("3) " + DoTranslation("Prompt Style", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShellPromptStyle"))
+                    W("3) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ShellPromptStyle"))
+                    W("4) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                 Case 5 'Network
                     MaxOptions = 9
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -178,6 +181,9 @@ Public Module ToolPrompts
                     If AnswerInt = 3 And SectionNum = 1 Then
                         Wdbg("I", "Tried to open special section. Opening section 1.3...")
                         OpenKey(1.3, AnswerInt)
+                    ElseIf AnswerInt = 4 And SectionNum = 4 Then
+                        Wdbg("I", "Tried to open special section. Opening section 4.4...")
+                        OpenKey(4.4, AnswerInt)
                     Else
                         Wdbg("I", "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
@@ -205,6 +211,8 @@ Public Module ToolPrompts
         Dim KeyFinished As Boolean
         Dim KeyType As SettingsKeyType
         Dim KeyVar As String = ""
+        Dim KeyVars As Dictionary(Of String, Object)
+        Dim MultivarCustomAction As String = ""
         Dim AnswerString As String
         Dim AnswerInt As Integer
 
@@ -341,6 +349,86 @@ Public Module ToolPrompts
                         Case Else
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
+                Case 4.4 'Shell -> Custom colors
+                    MaxKeyOptions = 12
+                    KeyType = SettingsKeyType.SMultivar
+                    KeyVars = New Dictionary(Of String, Object)
+                    MultivarCustomAction = "SetColors"
+                    Dim Response As String
+                    W("*) " + DoTranslation("Write a color as specified below:", currentLang), True, ColTypes.Neutral)
+                    W("*) " + String.Join(", ", [Enum].GetNames(GetType(ConsoleColors))) + vbNewLine, True, ColTypes.Neutral)
+
+                    ' Input color
+                    W("1) " + DoTranslation("Input color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("inputColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("inputColor")
+                    KeyVars.AddOrModify("inputColor", Response)
+
+                    ' License color
+                    W("2) " + DoTranslation("License color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("licenseColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("licenseColor")
+                    KeyVars.AddOrModify("licenseColor", Response)
+
+                    ' Continuable kernel error color
+                    W("3) " + DoTranslation("Continuable kernel error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("contKernelErrorColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("contKernelErrorColor")
+                    KeyVars.AddOrModify("contKernelErrorColor", Response)
+
+                    ' Unontinuable kernel error color
+                    W("4) " + DoTranslation("Uncontinuable kernel error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("uncontKernelErrorColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("uncontKernelErrorColor")
+                    KeyVars.AddOrModify("uncontKernelErrorColor", Response)
+
+                    ' Host name color
+                    W("5) " + DoTranslation("Host name color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("hostNameShellColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("hostNameShellColor")
+                    KeyVars.AddOrModify("hostNameShellColor", Response)
+
+                    ' User name color
+                    W("6) " + DoTranslation("User name color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("userNameShellColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("userNameShellColor")
+                    KeyVars.AddOrModify("userNameShellColor", Response)
+
+                    ' Background color
+                    W("7) " + DoTranslation("Background color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("backgroundColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("backgroundColor")
+                    KeyVars.AddOrModify("backgroundColor", Response)
+
+                    ' Neutral text color
+                    W("8) " + DoTranslation("Neutral text color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("neutralTextColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("neutralTextColor")
+                    KeyVars.AddOrModify("neutralTextColor", Response)
+
+                    ' Command list color
+                    W("9) " + DoTranslation("Command list color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("cmdListColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("cmdListColor")
+                    KeyVars.AddOrModify("cmdListColor", Response)
+
+                    ' Command definition color
+                    W("10) " + DoTranslation("Command definition color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("cmdDefColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("cmdDefColor")
+                    KeyVars.AddOrModify("cmdDefColor", Response)
+
+                    ' Stage color
+                    W("11) " + DoTranslation("Stage color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("stageColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("stageColor")
+                    KeyVars.AddOrModify("stageColor", Response)
+
+                    ' Error color
+                    W("12) " + DoTranslation("Error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("errorColor"))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("errorColor")
+                    KeyVars.AddOrModify("errorColor", Response)
                 Case 5 'Network
                     Select Case KeyNumber
                         Case 1 'Debug Port
@@ -614,6 +702,28 @@ Public Module ToolPrompts
                     W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
                     Console.ReadKey()
                 End If
+            ElseIf KeyType = SettingsKeyType.SMultivar And MultivarCustomAction = "SetColors" Then
+                Wdbg("I", "Multiple variables, and custom action was {0}.", MultivarCustomAction)
+                Wdbg("I", "Answer was {0}", AnswerInt)
+                If AnswerInt = 13 Then 'Go Back...
+                    Wdbg("W", "User requested exit. Returning...")
+                    KeyFinished = True
+                Else
+                    Wdbg("I", "Setting necessary variables...")
+                    Wdbg("I", "Variables: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}.", KeyVars("inputColor"), KeyVars("licenseColor"), KeyVars("contKernelErrorColor"),
+                         KeyVars("uncontKernelErrorColor"), KeyVars("hostNameShellColor"), KeyVars("userNameShellColor"), KeyVars("backgroundColor"), KeyVars("neutralTextColor"), KeyVars("cmdListColor"),
+                         KeyVars("cmdDefColor"), KeyVars("stageColor"), KeyVars("errorColor"))
+
+                    'This is cumbersome. This is worth an Extensification for [Enum].
+                    If SetColors([Enum].Parse(GetType(ConsoleColors), KeyVars("inputColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("licenseColor")),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars("contKernelErrorColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("uncontKernelErrorColor")),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars("hostNameShellColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("userNameShellColor")),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars("backgroundColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("neutralTextColor")),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars("cmdListColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("cmdDefColor")),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars("stageColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("errorColor"))) Then
+                        KeyFinished = True
+                    End If
+                End If
             Else
                 Wdbg("W", "Answer is not valid.")
                 W(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers.", currentLang), True, ColTypes.Err)
@@ -671,6 +781,7 @@ Public Module ToolPrompts
         Dim TypeOfScreensaverSettings As Type = GetType(ScreensaverSettings)
         Dim TypeOfForecast As Type = GetType(Forecast)
         Dim TypeOfMailManager As Type = GetType(MailManager)
+        Dim TypeOfColors As Type = GetType(Color)
 
         'Get fields of flag modules
         Dim FieldFlags As FieldInfo = TypeOfFlags.GetField(Variable)
@@ -682,6 +793,7 @@ Public Module ToolPrompts
         Dim FieldScreensaverSettings As FieldInfo = TypeOfScreensaverSettings.GetField(Variable)
         Dim FieldForecast As FieldInfo = TypeOfForecast.GetField(Variable)
         Dim FieldMailManager As FieldInfo = TypeOfMailManager.GetField(Variable)
+        Dim FieldColors As FieldInfo = TypeOfColors.GetField(Variable)
 
         'Check if any of them contains the specified variable
         If Not IsNothing(FieldFlags) Then
@@ -702,6 +814,8 @@ Public Module ToolPrompts
             Return FieldForecast
         ElseIf Not IsNothing(FieldMailManager) Then
             Return FieldMailManager
+        ElseIf Not IsNothing(FieldColors) Then
+            Return FieldColors
         End If
     End Function
 

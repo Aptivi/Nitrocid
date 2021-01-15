@@ -28,7 +28,7 @@ Public Module Shell
 
     'Available Commands
     Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "shutdown", "reboot", "adduser", "chmotd",
-                                            "chhostname", "showtd", "chpwd", "sysinfo", "arginj", "setcolors", "rmuser", "cls", "perm", "chusrname",
+                                            "chhostname", "showtd", "chpwd", "sysinfo", "arginj", "rmuser", "cls", "perm", "chusrname",
                                             "setthemes", "netinfo", "md", "rm", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
                                             "savescreen", "lockscreen", "setsaver", "reloadsaver", "ftp", "usermanual", "cdbglog", "chlang",
                                             "reloadmods", "get", "put", "lsdbgdev", "disconndbgdev", "move", "copy", "search", "sumfile", "rdebug", "spellbee",

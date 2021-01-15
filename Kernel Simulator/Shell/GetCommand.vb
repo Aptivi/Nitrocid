@@ -796,15 +796,6 @@ Public Module GetCommand
                     Done = True
                 End If
 
-            ElseIf words(0) = "setcolors" Then
-
-                If requestedCommand <> "setcolors" Then
-                    If eqargs?.Count - 1 >= 11 Then
-                        Done = True
-                        SetColors(eqargs(0), eqargs(1), eqargs(2), eqargs(3), eqargs(4), eqargs(5), eqargs(6), eqargs(7), eqargs(8), eqargs(9), eqargs(10), eqargs(11))
-                    End If
-                End If
-
             ElseIf words(0) = "setsaver" Then
 
                 Dim modPath As String = paths("Mods")
