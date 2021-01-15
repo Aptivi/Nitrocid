@@ -131,6 +131,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Inxi.NET">
+      <Version>2020.2.0.1</Version>
+    </PackageReference>
     <PackageReference Include="MSTest.TestAdapter">
       <Version>2.1.2</Version>
     </PackageReference>
