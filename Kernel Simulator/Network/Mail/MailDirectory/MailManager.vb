@@ -67,9 +67,12 @@ Public Module MailManager
                     '      Concept: Msg.Preview(LazyMode:=True)
                     If ShowPreview Then
                         Dim MsgPreview As String = Msg.GetTextBody(Text.TextFormat.Text).Truncate(200)
-                        'TODO: Add NoColor support for mods and no-color shells
-                        EntryBuilder.AppendLine($"{GetEsc()}[38;5;{CInt(cmdDefColor)}m{MsgPreview}")
-                        EntryBuilder.AppendLine($"{GetEsc()}[38;5;{CInt(neutralTextColor)}m")
+                        If ColoredShell Then
+                            EntryBuilder.AppendLine($"{GetEsc()}[38;5;{CInt(cmdDefColor)}m{MsgPreview}")
+                            EntryBuilder.AppendLine($"{GetEsc()}[38;5;{CInt(neutralTextColor)}m")
+                        Else
+                            EntryBuilder.AppendLine(MsgPreview)
+                        End If
                     End If
                 End SyncLock
             Else
