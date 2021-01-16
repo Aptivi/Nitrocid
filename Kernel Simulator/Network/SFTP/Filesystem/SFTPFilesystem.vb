@@ -16,6 +16,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Reflection
 Imports System.Text
 
 Module SFTPFilesystem
@@ -43,6 +44,21 @@ Module SFTPFilesystem
                 End If
                 For Each DirListSFTP As Sftp.SftpFile In Listing
                     EntryBuilder.Append($"- {DirListSFTP.Name}")
+                    'Check to see if the file that we're dealing with is a symbolic link
+                    If DirListSFTP.IsSymbolicLink Then
+                        EntryBuilder.Append(" >> ")
+
+                        ' This is cumbersome. AGAIN. GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
+                        Dim SFTPType As Type = ClientSFTP.GetType
+                        Dim SFTPSessionField As FieldInfo = SFTPType.GetField("_sftpSession", BindingFlags.Instance Or BindingFlags.NonPublic)
+                        Dim SFTPSession As Object = SFTPSessionField.GetValue(ClientSFTP)
+                        Dim SFTPSessionType As Type = SFTPSession.GetType
+                        Dim SFTPSessionCanon As MethodInfo = SFTPSessionType.GetMethod("GetCanonicalPath")
+                        Dim CanonicalPath As String = SFTPSessionCanon.Invoke(SFTPSession, New String() {DirListSFTP.FullName})
+                        Wdbg("I", "Canonical path: {0}", CanonicalPath)
+                        EntryBuilder.Append(CanonicalPath)
+                    End If
+
                     If DirListSFTP.IsRegularFile Then
                         EntryBuilder.Append(": ")
                         FileSize = DirListSFTP.Length
@@ -50,9 +66,6 @@ Module SFTPFilesystem
                         EntryBuilder.Append(DoTranslation("{0} KB | Modified in: {1}", currentLang).FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
                     ElseIf DirListSFTP.IsDirectory Then
                         EntryBuilder.Append("/")
-                    ElseIf DirListSFTP.IsSymbolicLink Then
-                        'TODO: Find a way to get what it's linked to.
-                        EntryBuilder.Append(">>")
                     End If
                     Entries.Add(EntryBuilder.ToString)
                     EntryBuilder.Clear()
@@ -109,7 +122,7 @@ Module SFTPFilesystem
                 If ClientSFTP.Exists(Directory) Then
                     'Directory exists, go to the new directory
                     ClientSFTP.ChangeDirectory(Directory)
-                    currentremoteDir = ClientFTP.GetWorkingDirectory
+                    SFTPCurrentRemoteDir = ClientSFTP.WorkingDirectory
                     Return True
                 Else
                     'Directory doesn't exist, go to the old directory
@@ -128,11 +141,11 @@ Module SFTPFilesystem
         If Directory <> "" Then
             'Check if folder exists
             Dim targetDir As String
-            targetDir = $"{currDirect}/{Directory}"
+            targetDir = $"{SFTPCurrDirect}/{Directory}"
             If IO.Directory.Exists(targetDir) Then
                 'Parse written directory
                 Dim parser As New IO.DirectoryInfo(targetDir)
-                currDirect = parser.FullName
+                SFTPCurrDirect = parser.FullName
                 Return True
             Else
                 Throw New EventsAndExceptions.SFTPFilesystemException(DoTranslation("Local directory {0} doesn't exist.", currentLang).FormatString(Directory))
