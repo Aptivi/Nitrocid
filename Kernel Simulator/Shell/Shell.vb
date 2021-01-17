@@ -139,8 +139,9 @@ Public Module Shell
     Public Sub CommandPromptWrite()
 
         If ShellPromptStyle <> "" And Not maintenance Then
-            'TODO: Currently, it doesn't support colors and shells other than the main shell.
-            W(ProbePlaces(ShellPromptStyle), False, ColTypes.Gray)
+            Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
+            ParsedPromptStyle.ConvertVTSequences
+            W(ParsedPromptStyle, False, ColTypes.Gray)
             If adminList(signedinusrnm) = True Then
                 W(" # ", False, ColTypes.Gray)
             Else
