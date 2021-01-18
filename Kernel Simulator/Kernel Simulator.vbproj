@@ -249,7 +249,6 @@
     <Compile Include="Misc\Probers\MOTDParse.vb" />
     <Compile Include="Misc\Probers\PlaceParse.vb" />
     <Compile Include="Misc\Configuration\Config.vb" />
-    <Compile Include="Misc\CPUFeatures.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverDisplays.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
