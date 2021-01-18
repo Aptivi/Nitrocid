@@ -630,6 +630,18 @@ Public Module ToolPrompts
                 Case Else
                     W("X) " + DoTranslation("Invalid section entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
             End Select
+
+            'If user is on color selection screen, we'll give a user a confirmation.
+            If Section = 4.4 Then
+                W(vbNewLine + "*) " + DoTranslation("Do these color choices look OK?", currentLang), True, ColTypes.Neutral)
+                For Each ColorType As String In KeyVars.Keys
+                    W("   - {0}: ", False, ColTypes.HelpCmd, ColorType)
+                    W(KeyVars(ColorType), True, ColTypes.HelpDef)
+                Next
+                W(vbNewLine + "*) " + DoTranslation("Answer {0} to go back. Otherwise, any answer means yes.", currentLang), True, ColTypes.Neutral, MaxKeyOptions + 1)
+            End If
+
+            'Add an option to go back.
             W("{0}) " + DoTranslation("Go Back...", currentLang) + vbNewLine, True, ColTypes.Neutral, MaxKeyOptions + 1)
             Wdbg("W", "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions)
             Wdbg("W", "Target variable: {0}, Key Type: {1}", KeyVar, KeyType)
