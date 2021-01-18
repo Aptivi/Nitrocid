@@ -34,6 +34,7 @@ Public Module SFTPShell
     Private SFTPStrCmd As String
     Public sftpexit As Boolean = False
     Public SFTPModCommands As New ArrayList
+    Public SFTPShellPromptStyle As String = ""
 
     ''' <summary>
     ''' Initializes the SFTP shell
@@ -80,7 +81,14 @@ Public Module SFTPShell
             If Not Connects Then
                 Wdbg("I", "Preparing prompt...")
                 If SFTPConnected Then
-                    W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, SFTPUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, sftpsite) : W("]{0} ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
+                    Wdbg("I", "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
+                    If SFTPShellPromptStyle = "" Then
+                        W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, SFTPUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, sftpsite) : W("]{0} ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
+                        ParsedPromptStyle.ConvertVTSequences
+                        W(ParsedPromptStyle, False, ColTypes.Gray)
+                    End If
                 Else
                     W("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
                 End If

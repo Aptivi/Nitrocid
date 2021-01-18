@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Reflection
-Imports Extensification.DictionaryExts
 
 Public Module ToolPrompts
 
@@ -118,12 +117,15 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Clear Screen on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("clsOnLogin"))
                     W("3) " + DoTranslation("Show available usernames", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShowAvailableUsers"))
                 Case 4 'Shell
-                    MaxOptions = 4
+                    MaxOptions = 7
                     W(DoTranslation("This section lists the shell settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColoredShell"))
                     W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("simHelp"))
                     W("3) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ShellPromptStyle"))
-                    W("4) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                    W("4) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPShellPromptStyle"))
+                    W("5) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("MailShellPromptStyle"))
+                    W("6) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("SFTPShellPromptStyle"))
+                    W("7) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                 Case 5 'Network
                     MaxOptions = 9
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -181,9 +183,9 @@ Public Module ToolPrompts
                     If AnswerInt = 3 And SectionNum = 1 Then
                         Wdbg("I", "Tried to open special section. Opening section 1.3...")
                         OpenKey(1.3, AnswerInt)
-                    ElseIf AnswerInt = 4 And SectionNum = 4 Then
-                        Wdbg("I", "Tried to open special section. Opening section 4.4...")
-                        OpenKey(4.4, AnswerInt)
+                    ElseIf AnswerInt = 7 And SectionNum = 4 Then
+                        Wdbg("I", "Tried to open special section. Opening section 4.7...")
+                        OpenKey(4.7, AnswerInt)
                     Else
                         Wdbg("I", "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
@@ -346,10 +348,22 @@ Public Module ToolPrompts
                             KeyType = SettingsKeyType.SString
                             KeyVar = "ShellPromptStyle"
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
+                        Case 4 'FTP Prompt Style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = "FTPShellPromptStyle"
+                            W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
+                        Case 5 'Mail Prompt Style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = "MailShellPromptStyle"
+                            W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
+                        Case 6 'SFTP Prompt Style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = "SFTPShellPromptStyle"
+                            W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
                         Case Else
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case 4.4 'Shell -> Custom colors
+                Case 4.7 'Shell -> Custom colors
                     MaxKeyOptions = 12
                     KeyType = SettingsKeyType.SMultivar
                     KeyVars = New Dictionary(Of String, Object)
@@ -632,7 +646,7 @@ Public Module ToolPrompts
             End Select
 
             'If user is on color selection screen, we'll give a user a confirmation.
-            If Section = 4.4 Then
+            If Section = 4.7 Then
                 W(vbNewLine + "*) " + DoTranslation("Do these color choices look OK?", currentLang), True, ColTypes.Neutral)
                 For Each ColorType As String In KeyVars.Keys
                     W("   - {0}: ", False, ColTypes.HelpCmd, ColorType)
@@ -787,6 +801,9 @@ Public Module ToolPrompts
         Dim TypeOfFlags As Type = GetType(Flags)
         Dim TypeOfKernel As Type = GetType(Kernel)
         Dim TypeOfShell As Type = GetType(Shell)
+        Dim TypeOfFTPShell As Type = GetType(FTPShell)
+        Dim TypeOfMailShell As Type = GetType(MailShell)
+        Dim TypeOfSFTPShell As Type = GetType(SFTPShell)
         Dim TypeOfRDebugger As Type = GetType(RemoteDebugger)
         Dim TypeOfDebugWriters As Type = GetType(DebugWriters)
         Dim TypeOfNetworkTools As Type = GetType(NetworkTools)
@@ -799,6 +816,9 @@ Public Module ToolPrompts
         Dim FieldFlags As FieldInfo = TypeOfFlags.GetField(Variable)
         Dim FieldKernel As FieldInfo = TypeOfKernel.GetField(Variable)
         Dim FieldShell As FieldInfo = TypeOfShell.GetField(Variable)
+        Dim FieldFTPShell As FieldInfo = TypeOfFTPShell.GetField(Variable)
+        Dim FieldMailShell As FieldInfo = TypeOfMailShell.GetField(Variable)
+        Dim FieldSFTPShell As FieldInfo = TypeOfSFTPShell.GetField(Variable)
         Dim FieldRDebugger As FieldInfo = TypeOfRDebugger.GetField(Variable)
         Dim FieldDebugWriters As FieldInfo = TypeOfDebugWriters.GetField(Variable)
         Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
@@ -814,6 +834,12 @@ Public Module ToolPrompts
             Return FieldKernel
         ElseIf Not IsNothing(FieldShell) Then
             Return FieldShell
+        ElseIf Not IsNothing(FieldFTPShell) Then
+            Return FieldFTPShell
+        ElseIf Not IsNothing(FieldMailShell) Then
+            Return FieldMailShell
+        ElseIf Not IsNothing(FieldSFTPShell) Then
+            Return FieldSFTPShell
         ElseIf Not IsNothing(FieldRDebugger) Then
             Return FieldRDebugger
         ElseIf Not IsNothing(FieldDebugWriters) Then

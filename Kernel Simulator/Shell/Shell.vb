@@ -138,6 +138,7 @@ Public Module Shell
     ''' </summary>
     Public Sub CommandPromptWrite()
 
+        Wdbg("I", "ShellPromptStyle = {0}", ShellPromptStyle)
         If ShellPromptStyle <> "" And Not maintenance Then
             Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
             ParsedPromptStyle.ConvertVTSequences

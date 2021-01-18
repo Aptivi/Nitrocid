@@ -29,6 +29,7 @@ Module MailShell
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested, KeepAlive As Boolean
     Public MailModCommands As New ArrayList
+    Public MailShellPromptStyle As String = ""
 
     ''' <summary>
     ''' Initializes the shell of the mail client
@@ -57,7 +58,14 @@ Module MailShell
             If Not IsNothing(DefConsoleOut) Then
                 Console.SetOut(DefConsoleOut)
             End If
-            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray) : W("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
+            Wdbg("I", "MailShellPromptStyle = {0}", MailShellPromptStyle)
+            If MailShellPromptStyle = "" Then
+                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray) : W("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
+            Else
+                Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
+                ParsedPromptStyle.ConvertVTSequences
+                W(ParsedPromptStyle, False, ColTypes.Gray)
+            End If
             SetInputColor()
 
             'Listen for a command

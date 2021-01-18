@@ -77,7 +77,10 @@ Public Module Config
                     New IniSection(ksconf, "Shell",
                         New IniKey(ksconf, "Colored Shell", ColoredShell),
                         New IniKey(ksconf, "Simplified Help Command", simHelp),
-                        New IniKey(ksconf, "Prompt Style", ShellPromptStyle)))
+                        New IniKey(ksconf, "Prompt Style", ShellPromptStyle),
+                        New IniKey(ksconf, "FTP Prompt Style", FTPShellPromptStyle),
+                        New IniKey(ksconf, "Mail Prompt Style", MailShellPromptStyle),
+                        New IniKey(ksconf, "SFTP Prompt Style", SFTPShellPromptStyle)))
 
                 'The Network Section
                 ksconf.Sections.Add(
@@ -168,7 +171,10 @@ Public Module Config
                     New IniSection(ksconf, "Shell",
                         New IniKey(ksconf, "Colored Shell", "True"),
                         New IniKey(ksconf, "Simplified Help Command", "False"),
-                        New IniKey(ksconf, "Prompt Style", "")))
+                        New IniKey(ksconf, "Prompt Style", ""),
+                        New IniKey(ksconf, "FTP Prompt Style", ""),
+                        New IniKey(ksconf, "Mail Prompt Style", ""),
+                        New IniKey(ksconf, "SFTP Prompt Style", "")))
 
                 'The Network Section
                 ksconf.Sections.Add(
@@ -238,6 +244,9 @@ Public Module Config
             ksconf.Sections("Shell").Keys("Simplified Help Command").TrailingComment.Text = "Simplifies the ""help"" command so it only shows available commands."
             ksconf.Sections("Shell").Keys("Colored Shell").TrailingComment.Text = "Whether or not it supports colored shell."
             ksconf.Sections("Shell").Keys("Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the main shell. Placeholders here are parsed."
+            ksconf.Sections("Shell").Keys("FTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the FTP shell. Placeholders here are parsed."
+            ksconf.Sections("Shell").Keys("Mail Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the mail shell. Placeholders here are parsed."
+            ksconf.Sections("Shell").Keys("SFTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the SFTP shell. Placeholders here are parsed."
 
             'Hardware
             ksconf.Sections("Hardware").TrailingComment.Text = "This section is the hardware probing settings that lets you control whether or not to probe RAM slots and/or quietly probe hardware. This section and the two settings are deprecated."
@@ -400,6 +409,9 @@ Public Module Config
             Wdbg("I", "Parsing shell section...")
             If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
             ShellPromptStyle = configReader.Sections("Shell").Keys("Prompt Style").Value
+            FTPShellPromptStyle = configReader.Sections("Shell").Keys("FTP Prompt Style").Value
+            MailShellPromptStyle = configReader.Sections("Shell").Keys("Mail Prompt Style").Value
+            SFTPShellPromptStyle = configReader.Sections("Shell").Keys("SFTP Prompt Style").Value
 
             'Hardware Section
             Wdbg("I", "Parsing hardware section...")

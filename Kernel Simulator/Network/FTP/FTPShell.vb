@@ -34,6 +34,7 @@ Public Module FTPShell
     Private strcmd As String
     Public ftpexit As Boolean = False
     Public FTPModCommands As New ArrayList
+    Public FTPShellPromptStyle As String = ""
 
     ''' <summary>
     ''' Initializes the FTP shell
@@ -84,7 +85,14 @@ Public Module FTPShell
             If Not Connects Then
                 Wdbg("I", "Preparing prompt...")
                 If connected Then
-                    W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, user) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, ftpsite) : W("]{0} ", False, ColTypes.Gray, currentremoteDir)
+                    Wdbg("I", "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
+                    If FTPShellPromptStyle = "" Then
+                        W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, user) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, ftpsite) : W("]{0} ", False, ColTypes.Gray, currentremoteDir)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
+                        ParsedPromptStyle.ConvertVTSequences
+                        W(ParsedPromptStyle, False, ColTypes.Gray)
+                    End If
                 Else
                     W("{0}> ", False, ColTypes.Gray, currDirect)
                 End If
