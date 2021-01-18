@@ -106,10 +106,9 @@ Public Module ToolPrompts
                     W("4) " + DoTranslation("Check for Updates on Startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("CheckUpdateStart"))
                     W("5) " + DoTranslation("Change Culture when Switching Languages", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("LangChangeCulture"))
                 Case 2 'Hardware
-                    MaxOptions = 2
+                    MaxOptions = 1
                     W(DoTranslation("This section changes hardware probe behavior.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Quiet Probe", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("quietProbe"))
-                    W("2) " + DoTranslation("Probe RAM Slots", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("slotProbe"))
                 Case 3 'Login
                     MaxOptions = 3
                     W(DoTranslation("This section represents the login settings. Log out of your account for the changes to take effect.", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -290,13 +289,6 @@ Public Module ToolPrompts
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "quietProbe"
                             W(DoTranslation("Keep hardware probing messages silent.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
-                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 2 'Probe RAM Slots
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "slotProbe"
-                            W(DoTranslation("If enabled, it will probe the RAM slots along with the RAM.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else

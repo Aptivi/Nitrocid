@@ -94,12 +94,6 @@ Module OldConfigUp
                 ElseIf line.Replace("Simplified Help Command = ", "") = "False" Then
                     simHelp = False
                 End If
-            ElseIf line.Contains("Probe Slots = ") Then
-                If line.Replace("Probe Slots = ", "") = "True" Then
-                    slotProbe = True
-                ElseIf line.Replace("Probe Slots = ", "") = "False" Then
-                    slotProbe = False
-                End If
             ElseIf line.Contains("Quiet Probe = ") Then
                 If line.Replace("Quiet Probe = ", "") = "True" Then
                     quietProbe = True

@@ -61,8 +61,7 @@ Public Module Config
                 'The Hardware Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Hardware",
-                        New IniKey(ksconf, "Quiet Probe", quietProbe),
-                        New IniKey(ksconf, "Probe Slots", slotProbe)))
+                        New IniKey(ksconf, "Quiet Probe", quietProbe)))
 
                 'The Login Section
                 ksconf.Sections.Add(
@@ -155,8 +154,7 @@ Public Module Config
                 'The Hardware Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Hardware",
-                        New IniKey(ksconf, "Quiet Probe", "False"),
-                        New IniKey(ksconf, "Probe Slots", "True")))
+                        New IniKey(ksconf, "Quiet Probe", "False")))
 
                 'The Login Section
                 ksconf.Sections.Add(
@@ -249,8 +247,7 @@ Public Module Config
             ksconf.Sections("Shell").Keys("SFTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the SFTP shell. Placeholders here are parsed."
 
             'Hardware
-            ksconf.Sections("Hardware").TrailingComment.Text = "This section is the hardware probing settings that lets you control whether or not to probe RAM slots and/or quietly probe hardware. This section and the two settings are deprecated."
-            ksconf.Sections("Hardware").Keys("Probe Slots").TrailingComment.Text = "Whether or not to probe RAM slots on boot"
+            ksconf.Sections("Hardware").TrailingComment.Text = "This section is the hardware probing settings."
             ksconf.Sections("Hardware").Keys("Quiet Probe").TrailingComment.Text = "Whether or not to quietly probe hardware"
 
             'Network
@@ -415,7 +412,6 @@ Public Module Config
 
             'Hardware Section
             Wdbg("I", "Parsing hardware section...")
-            If configReader.Sections("Hardware").Keys("Probe Slots").Value = "True" Then slotProbe = True Else slotProbe = False
             If configReader.Sections("Hardware").Keys("Quiet Probe").Value = "True" Then quietProbe = True Else quietProbe = False
 
             'Network Section
