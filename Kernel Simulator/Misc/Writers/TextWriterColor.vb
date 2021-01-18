@@ -20,6 +20,7 @@ Imports System.Console
 Imports System.Threading
 
 'This module is very important to reduce line numbers when there is color.
+'TODO: Move variants to their own code files
 Public Module TextWriterColor
 
     ''' <summary>
@@ -253,6 +254,73 @@ Public Module TextWriterColor
     End Sub
 
     ''' <summary>
+    ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+    ''' </summary>
+    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Left">Column number in console</param>
+    ''' <param name="Top">Row number in console</param>
+    ''' <param name="color">A color that will be changed to.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    Public Sub WriteWhereC(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal color As ConsoleColors, ByVal ParamArray vars() As Object)
+        Dim esc As Char = GetEsc()
+        If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+            Write(esc + "[38;5;" + CStr(color) + "m")
+            Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+        End If
+
+        'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+        If msg IsNot Nothing Then
+            msg = msg.ToString.FormatString(vars)
+        End If
+
+        'Write text in another place
+        Dim OldLeft As Integer = CursorLeft
+        Dim OldTop As Integer = CursorTop
+        SetCursorPosition(Left, Top)
+        Write(msg)
+        SetCursorPosition(OldLeft, OldTop)
+        If backgroundColor = ConsoleColors.Black Then ResetColor()
+        If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+            Write(esc + "[38;5;" + CStr(inputColor) + "m")
+            Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+    ''' </summary>
+    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Left">Column number in console</param>
+    ''' <param name="Top">Row number in console</param>
+    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    Public Sub WriteWhereC(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal ForegroundColor As ConsoleColors, ByVal BackgroundColor As ConsoleColors, ByVal ParamArray vars() As Object)
+        Dim esc As Char = GetEsc()
+        If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+            Write(esc + "[38;5;" + CStr(ForegroundColor) + "m")
+            Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
+        End If
+
+        'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+        If msg IsNot Nothing Then
+            msg = msg.ToString.FormatString(vars)
+        End If
+
+        'Write text in another place
+        Dim OldLeft As Integer = CursorLeft
+        Dim OldTop As Integer = CursorTop
+        SetCursorPosition(Left, Top)
+        Write(msg)
+        SetCursorPosition(OldLeft, OldTop)
+        If BackgroundColor = ConsoleColors.Black Then ResetColor()
+        If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+            Write(esc + "[38;5;" + CStr(inputColor) + "m")
+            Write(esc + "[48;5;" + CStr(Color.backgroundColor) + "m")
+        End If
+    End Sub
+
+    ''' <summary>
     ''' Outputs the text into the terminal prompt with custom color support.
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
@@ -279,6 +347,42 @@ Public Module TextWriterColor
             If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 Write(esc + "[38;5;" + CStr(inputColor) + "m")
                 Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            End If
+        Catch ex As Exception
+            WStkTrc(ex)
+            KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    Public Sub WriteC(ByVal text As Object, ByVal Line As Boolean, ByVal ForegroundColor As ConsoleColors, ByVal BackgroundColor As ConsoleColors, ByVal ParamArray vars() As Object)
+
+        Dim esc As Char = GetEsc()
+        Try
+            'Try to write to console
+            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+                Write(esc + "[38;5;" + CStr(ForegroundColor) + "m")
+                Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
+            End If
+
+            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+            If text IsNot Nothing Then
+                text = text.ToString.FormatString(vars)
+            End If
+
+            If Line Then WriteLine(text) Else Write(text)
+            If BackgroundColor = ConsoleColors.Black Then ResetColor()
+            If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                Write(esc + "[38;5;" + CStr(inputColor) + "m")
+                Write(esc + "[48;5;" + CStr(Color.backgroundColor) + "m")
             End If
         Catch ex As Exception
             WStkTrc(ex)
