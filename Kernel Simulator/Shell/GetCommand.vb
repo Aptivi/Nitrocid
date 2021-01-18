@@ -112,17 +112,17 @@ Public Module GetCommand
 
                 If requestedCommand <> "alias" Then
                     If eqargs?.Count - 1 > 2 Then
-                        If eqargs(0) = "add" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug) Then
+                        If eqargs(0) = "add" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug Or eqargs(1) = AliasType.FTPShell Or eqargs(1) = AliasType.SFTPShell Or eqargs(1) = AliasType.MailShell) Then
                             ManageAlias(eqargs(0), eqargs(1), eqargs(2), eqargs(3))
                             Done = True
-                        ElseIf eqargs(0) = "add" And (eqargs(1) <> AliasType.Shell Or eqargs(1) <> AliasType.RDebug) Then
+                        Else
                             W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, eqargs(1))
                         End If
                     ElseIf eqargs?.Count - 1 = 2 Then
-                        If eqargs(0) = "rem" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug) Then
+                        If eqargs(0) = "rem" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug Or eqargs(1) = AliasType.FTPShell Or eqargs(1) = AliasType.SFTPShell Or eqargs(1) = AliasType.MailShell) Then
                             ManageAlias(eqargs(0), eqargs(1), eqargs(2))
                             Done = True
-                        ElseIf eqargs(0) = "rem" And (eqargs(1) <> AliasType.Shell Or eqargs(1) <> AliasType.RDebug) Then
+                        Else
                             W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, eqargs(1))
                         End If
                     End If

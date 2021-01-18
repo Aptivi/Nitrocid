@@ -21,6 +21,7 @@ Imports System.Threading
 Imports System.IO
 
 Module RemoteDebugger
+
     Public DebugPort As Integer = 3014
     Public RDebugClient As Socket
     Public DebugTCP As TcpListener
@@ -157,6 +158,18 @@ Module RemoteDebugger
                 End Try
             End If
         End While
+    End Sub
+
+    ''' <summary>
+    ''' Executes the remote debugger alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    ''' <param name="SocketStream">A socket stream writer</param>
+    ''' <param name="Address">IP Address</param>
+    Sub ExecuteRDAlias(ByVal aliascmd As String, ByVal SocketStream As IO.StreamWriter, ByVal Address As String)
+        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, RemoteDebugAliases(FirstWordCmd))
+        ParseCmd(actualCmd, SocketStream, Address)
     End Sub
 
     ''' <summary>

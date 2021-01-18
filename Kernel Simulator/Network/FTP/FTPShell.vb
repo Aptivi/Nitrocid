@@ -143,10 +143,26 @@ Public Module FTPShell
         ElseIf FTPModCommands.Contains(words(0)) Then
             Wdbg("I", "Mod command found.")
             ExecuteModCommand(strcmd)
+        ElseIf FTPShellAliases.Keys.Contains(words(0)) Then
+            Wdbg("I", "FTP shell alias command found.")
+            ExecuteFTPAlias(strcmd)
         ElseIf Not strcmd.StartsWith(" ") Then
             Wdbg("E", "Command {0} not found.", strcmd)
             W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.", currentLang), True, ColTypes.Err, words(0))
         End If
+    End Sub
+
+    ''' <summary>
+    ''' Executes the FTP shell alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    Sub ExecuteFTPAlias(ByVal aliascmd As String)
+        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, FTPShellAliases(FirstWordCmd))
+        Wdbg("I", "Actual command: {0}", actualCmd)
+        FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand)
+        FTPStartCommandThread.Start(actualCmd)
+        FTPStartCommandThread.Join()
     End Sub
 
 End Module

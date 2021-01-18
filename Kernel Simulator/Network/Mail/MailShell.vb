@@ -91,6 +91,9 @@ Module MailShell
                 ElseIf MailModCommands.Contains(cmd) Then
                     Wdbg("I", "Mod command found.")
                     ExecuteModCommand(cmd + " " + args)
+                ElseIf MailShellAliases.Keys.Contains(cmd) Then
+                    Wdbg("I", "Mail shell alias command found.")
+                    ExecuteMailAlias(cmd + " " + args)
                 ElseIf Not cmd.StartsWith(" ") Then
                     Wdbg("E", "Command not found. Reopening shell...")
                     W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, cmd)
@@ -204,6 +207,19 @@ Module MailShell
     ''' </summary>
     Public Sub ReleaseHandlers()
         RemoveHandler IMAP_Client.Inbox.CountChanged, AddressOf OnCountChanged
+    End Sub
+
+    ''' <summary>
+    ''' Executes the mail shell alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    Sub ExecuteMailAlias(ByVal aliascmd As String)
+        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, MailShellAliases(FirstWordCmd))
+        Wdbg("I", "Actual command: {0}", actualCmd)
+        MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand)
+        MailStartCommandThread.Start({MailShellAliases(FirstWordCmd), actualCmd.Replace(MailShellAliases(FirstWordCmd), "")})
+        MailStartCommandThread.Join()
     End Sub
 
 End Module
