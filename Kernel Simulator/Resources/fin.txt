@@ -916,3 +916,27 @@ Avaa testikuoren
 Ottaa virheenkorjaustilan käyttöön
 Pyytää argumentteja
 * Käynnistä ydin painamalla mitä tahansa näppäintä tai poistuaksesi ESC: stä.
+Kohteen {0} käynnistäminen epäonnistui: {1}
+Näytä sähköpostiviestin esikatselu
+Kun luet postiviestejä, näytä rungon esikatselu.
+Välimuistissa oleva laitteistokoetin. Näytetään tietoja joka tapauksessa ...
+Kapasiteetti: {0} Gt
+Mukautetut värit ...
+Kirjoita väri seuraavalla tavalla:
+Syötteen väri
+Lisenssin väri
+Jatkuva ytimen virheen väri
+Ytimen virheen väri ei jatku
+Isäntänimen väri
+Käyttäjänimen väri
+Taustaväri
+Neutraali tekstin väri
+Komentoluettelon väri
+Komennon määrityksen väri
+Vaiheen väri
+Virheen väri
+Näyttävätkö nämä värivaihtoehdot OK?
+Vastaa {0} palataksesi takaisin. Muuten mikä tahansa vastaus tarkoittaa kyllä.
+FTP-kehotustyyli
+Postikehotustyyli
+SFTP-kehotustyyli

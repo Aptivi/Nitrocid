@@ -916,3 +916,27 @@ Membuka shell ujian
 Mendayakan mod debug
 Permintaan untuk hujah
 * Tekan sebarang kekunci untuk memulakan kernel atau ESC untuk keluar.
+Gagal memulakan "{0}": {1}
+Tunjukkan pratonton mesej mel
+Semasa menyenaraikan mesej mel, tunjukkan pratonton badan.
+Probe perkakasan cache. Bagaimanapun, menunjukkan maklumat ...
+Kapasiti: {0} GB
+Warna tersuai ...
+Tuliskan warna seperti yang dinyatakan di bawah:
+Warna input
+Warna lesen
+Warna ralat kernel yang berterusan
+Warna ralat kernel yang tidak dapat dipertahankan
+Warna nama hos
+Warna nama pengguna
+Warna latar belakang
+Warna teks neutral
+Warna senarai arahan
+Warna definisi arahan
+Warna pentas
+Warna ralat
+Adakah pilihan warna ini kelihatan OK?
+Jawab {0} untuk kembali. Jika tidak, sebarang jawapan bermaksud ya.
+Gaya Prompt FTP
+Gaya Permintaan Mel
+Gaya Prompt SFTP

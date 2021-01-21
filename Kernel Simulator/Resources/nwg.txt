@@ -916,3 +916,27 @@ Tester mods ved å tilby mod-filer
 Aktiverer feilsøkingsmodus
 Ber om argumenter
 * Trykk hvilken som helst tast for å starte kjernen eller ESC for å avslutte.
+Kunne ikke starte "{0}": {1}
+Vis forhåndsvisning av e-postmeldinger
+Når du lister opp e-postmeldinger, viser du forhåndsvisning av kroppen.
+Bufret maskinvaresonde. Viser allikevel informasjon ...
+Kapasitet: {0} GB
+Egendefinerte farger ...
+Skriv en farge som spesifisert nedenfor:
+Inngangsfarge
+Lisensfarge
+Fortsatt kjernefeilfarge
+Ikke-fortsettbar kjernefeilfarge
+Vertens fargen
+Brukernavn farge
+Bakgrunnsfarge
+Nøytral tekstfarge
+Kommandolistefarge
+Kommando definisjon farge
+Scenefarge
+Feilfarge
+Ser disse fargevalgene OK ut?
+Svar {0} for å gå tilbake. Ellers betyr ethvert svar ja.
+FTP Prompt Style
+E-postmeldingsstil
+SFTP Prompt Style

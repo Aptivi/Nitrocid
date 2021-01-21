@@ -916,3 +916,27 @@ Tester mods ved at levere mod-filer
 Aktiverer fejlretningstilstand
 Beder om argumenter
 * Tryk på en vilkårlig tast for at starte kernen eller ESC for at afslutte.
+Kunne ikke starte "{0}": {1}
+Vis forhåndsvisning af e-mail-beskeder
+Vis en forhåndsvisning af brødtekst, når du angiver e-mail-beskeder.
+Cachet hardware-probe. Viser alligevel information ...
+Kapacitet: {0} GB
+Brugerdefinerede farver ...
+Skriv en farve som angivet nedenfor:
+Indtastningsfarve
+Licensfarve
+Fortsat kernefejlfarve
+Kernefejlfarve, der ikke kan fortsættes
+Værtsnavnsfarve
+Brugernavnsfarve
+Baggrundsfarve
+Neutral tekstfarve
+Kommandolistefarve
+Definition af kommandofarve
+Scenefarve
+Fejlfarve
+Ser disse farvevalg OK ud?
+Svar {0} for at gå tilbage. Ellers betyder ethvert svar ja.
+FTP-prompt-stil
+Mail Prompt Style
+SFTP-prompt-stil

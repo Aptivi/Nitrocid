@@ -916,3 +916,27 @@ Opens a test shell
 Enables debug mode
 Prompts for arguments
 * Press any key to start the kernel or ESC to exit.
+Failed to start "{0}": {1}
+Show mail message preview
+When listing mail messages, show body preview.
+Cached hardware probe. Showing information anyway...
+Capacity: {0} GB
+Custom colors...
+Write a color as specified below:
+Input color
+License color
+Continuable kernel error color
+Uncontinuable kernel error color
+Host name color
+User name color
+Background color
+Neutral text color
+Command list color
+Command definition color
+Stage color
+Error color
+Do these color choices look OK?
+Answer {0} to go back. Otherwise, any answer means yes.
+FTP Prompt Style
+Mail Prompt Style
+SFTP Prompt Style

@@ -916,3 +916,27 @@ Abre um shell de teste
 Ativa o modo de depuração
 Solicita argumentos
 * Pressione qualquer tecla para iniciar o kernel ou ESC para sair.
+Falha ao iniciar "{0}": {1}
+Mostrar visualização da mensagem de e-mail
+Ao listar mensagens de correio, mostre a visualização do corpo.
+Sonda de hardware em cache. Mostrando informações mesmo assim ...
+Capacidade: {0} GB
+Cores personalizadas...
+Escreva uma cor conforme especificado abaixo:
+Cor de entrada
+Cor da licença
+Cor de erro de kernel continuável
+Cor de erro de kernel não continuável
+Cor do nome do host
+Cor do nome de usuário
+Cor de fundo
+Cor neutra do texto
+Cor da lista de comandos
+Cor de definição de comando
+Cor do palco
+Cor do erro
+Essas opções de cores parecem corretas?
+Responda {0} para voltar. Caso contrário, qualquer resposta significa sim.
+Estilo de solicitação de FTP
+Estilo do prompt de correio
+Estilo de solicitação de SFTP

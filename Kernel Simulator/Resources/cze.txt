@@ -916,3 +916,27 @@ Otevře testovací prostředí
 Povolí režim ladění
 Výzvy pro argumenty
 * Stisknutím libovolné klávesy spustíte jádro nebo klávesu ESC opustíte.
+Nepodařilo se spustit „{0}“: {1}
+Zobrazit náhled e-mailové zprávy
+Při výpisu e-mailových zpráv zobrazte náhled těla.
+Hardwarová sonda v mezipaměti. Přesto se zobrazují informace ...
+Kapacita: {0} GB
+Vlastní barvy ...
+Napište barvu, jak je uvedeno níže:
+Vstupní barva
+Barva licence
+Pokračovatelná barva chyby jádra
+Nepřetržitá barva chyby jádra
+Barva názvu hostitele
+Barva uživatelského jména
+Barva pozadí
+Neutrální barva textu
+Barva seznamu příkazů
+Barva definice příkazu
+Barva fáze
+Barva chyby
+Vypadají tyto volby barev v pořádku?
+Chcete-li se vrátit, odpovězte {0}. Jinak jakákoli odpověď znamená ano.
+Styl výzvy FTP
+Styl výzvy
+Styl výzvy SFTP

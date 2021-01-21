@@ -916,3 +916,27 @@ Mở vỏ thử nghiệm
 Bật chế độ gỡ lỗi
 Lời nhắc đối số
 * Nhấn phím bất kỳ để khởi động nhân hoặc phím ESC để thoát.
+Không khởi động được "{0}": {1}
+Hiển thị bản xem trước thư
+Khi liệt kê các thư, hãy hiển thị phần xem trước nội dung.
+Đầu dò phần cứng được lưu trong bộ nhớ cache. Vẫn hiển thị thông tin ...
+Dung lượng: {0} GB
+Màu sắc tùy chỉnh...
+Viết màu theo quy định dưới đây:
+Màu đầu vào
+Màu giấy phép
+Màu lỗi hạt nhân liên tục
+Màu lỗi hạt nhân không thể kiểm soát
+Màu tên máy chủ
+Màu tên người dùng
+Màu nền
+Màu văn bản trung tính
+Màu danh sách lệnh
+Màu định nghĩa lệnh
+Màu sân khấu
+Màu lỗi
+Các lựa chọn màu này có ổn không?
+Trả lời {0} để quay lại. Nếu không, bất kỳ câu trả lời nào có nghĩa là có.
+Kiểu lời nhắc FTP
+Kiểu Lời nhắc Thư
+Kiểu nhắc SFTP

@@ -916,3 +916,27 @@ dǎkāi cèshì ké
 qǐyòng tiáoshì móshì
 tíshì shūrù cānshù
 *àn rènyì jiàn qǐdòng nèihé huò ESC tuìchū.
+Wúfǎ qǐdòng “ {0}”:{1}
+Xiǎnshì yóujiàn yùlǎn
+liè chū yóujiàn shí, xiǎnshì zhèngwén yùlǎn.
+Gāosù huǎncún de yìngjiàn tàn zhēn. Réng zài xiǎnshì xìnxī...
+Róngliàng:{0} GB
+zì dìngyì yánsè...
+Biānxiě rúxià suǒ shì de yánsè:
+Shūrù yánsè
+zhízhào yánsè
+liánxù de nèihé cuòwù yánsè
+bùkě zhōngduàn de nèihé cuòwù yánsè
+zhǔjī míng yánsè
+yònghù míng yánsè
+bèijǐng yánsè
+zhōng xìng wénzì yánsè
+mìnglìng lièbiǎo yánsè
+mìnglìng dìngyì yánsè
+wǔtái yánsè
+cuòwù yánsè
+zhèxiē yánsè xuǎnzé kàn qǐlái hái kěyǐ ma?
+Huídá {0} fǎnhuí. Fǒuzé, rènhé dá'àn jūn shì.
+FTP tíshì yàngshì
+yóujiàn tíshì yàngshì
+SFTP tíshì yàngshì

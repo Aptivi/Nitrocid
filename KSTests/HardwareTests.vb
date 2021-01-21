@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS
+Imports InxiFrontend
 
 <TestClass()> Public Class HardwareTests
 
@@ -24,13 +24,10 @@ Imports KS
     ''' Tests hardware probation
     ''' </summary>
     <TestMethod()> Public Sub TestProbeHardware()
-        If Environment.OSVersion.ToString.Contains("Unix") Then
-            ProbeHardwareLinux()
-        Else
-            ProbeHardware()
-        End If
-        Dim AllDone As Boolean = HDDDone And CPUDone And ParDone And RAMDone
-        Assert.IsTrue(AllDone, "Hardware is not properly parsed. Expected True, got {0}", AllDone)
+        Dim TempHardwareInfo As New Inxi
+        Assert.IsFalse(TempHardwareInfo.Hardware.CPU Is Nothing Or (TempHardwareInfo.Hardware.CPU IsNot Nothing And TempHardwareInfo.Hardware.CPU.Count = 0), "CPU is not properly parsed.")
+        Assert.IsFalse(TempHardwareInfo.Hardware.HDD Is Nothing Or (TempHardwareInfo.Hardware.HDD IsNot Nothing And TempHardwareInfo.Hardware.HDD.Count = 0), "HDD is not properly parsed.")
+        Assert.IsFalse(TempHardwareInfo.Hardware.RAM Is Nothing, "RAM is not properly parsed.")
     End Sub
 
 End Class

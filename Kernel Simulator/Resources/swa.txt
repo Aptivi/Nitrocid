@@ -916,3 +916,27 @@ Hufungua ganda la jaribio
 Huwasha hali ya utatuaji
 Vidokezo vya hoja
 * Bonyeza kitufe chochote kuanza kernel au ESC ili kutoka.
+Imeshindwa kuanza "{0}": {1}
+Onyesha hakikisho la ujumbe wa barua
+Unapoorodhesha ujumbe wa barua, onyesha hakikisho la mwili.
+Probe ya vifaa vya akiba. Inaonyesha habari hata hivyo ...
+Uwezo: {0} GB
+Rangi maalum ...
+Andika rangi kama ilivyoainishwa hapa chini:
+Rangi ya kuingiza
+Rangi ya leseni
+Rangi ya hitilafu inayoendelea ya punje
+Rangi ya hitilafu ya punje isiyoendelea
+Rangi ya jina la mwenyeji
+Rangi ya jina la mtumiaji
+Rangi ya asili
+Rangi ya maandishi ya upande wowote
+Rangi ya orodha ya Amri
+Rangi ya ufafanuzi wa amri
+Rangi ya hatua
+Rangi ya makosa
+Je! Chaguo hizi za rangi zinaonekana sawa?
+Jibu {0} kurudi nyuma. Vinginevyo, jibu lolote linamaanisha ndiyo.
+Mtindo wa Haraka wa FTP
+Mtindo wa Haraka wa Barua
+Mtindo wa Haraka wa SFTP

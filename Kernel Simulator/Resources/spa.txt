@@ -916,3 +916,27 @@ Abre una carcasa de prueba
 Habilita el modo de depuración
 Solicitudes de argumentos
 * Presione cualquier tecla para iniciar el kernel o ESC para salir.
+No se pudo iniciar "{0}": {1}
+Mostrar vista previa del mensaje de correo
+Cuando enumere los mensajes de correo, muestre la vista previa del cuerpo.
+Sonda de hardware en caché. Mostrando información de todos modos ...
+Capacidad: {0} GB
+Colores personalizados...
+Escriba un color como se especifica a continuación:
+Color de entrada
+Color de la licencia
+Color de error de kernel continuable
+Color de error de kernel incontinible
+Color del nombre de host
+Color del nombre de usuario
+Color de fondo
+Color de texto neutro
+Color de la lista de comandos
+Color de definición de comando
+Color del escenario
+Color de error
+¿Estas opciones de color se ven bien?
+Responda {0} para volver. De lo contrario, cualquier respuesta significa que sí.
+Estilo de solicitud de FTP
+Estilo de mensaje de correo
+Estilo de mensaje SFTP

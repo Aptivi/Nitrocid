@@ -916,3 +916,27 @@ Test qabığını açır
 Ayıklama rejimini aktivləşdirir
 Mübahisələr axtarır
 * Nüvəni başlamaq üçün hər hansı bir düyməni basın və ya çıxmaq üçün ESC.
+"{0}" başlaya bilmədi: {1}
+Poçt mesajı önizləməsini göstərin
+Poçt mesajlarını sadalayarkən, bədən önizləməsini göstərin.
+Önbelleğe alınmış aparat sondası. Hər halda məlumat göstərilir ...
+Tutum: {0} GB
+Xüsusi rənglər ...
+Aşağıda göstərildiyi kimi bir rəng yazın:
+Giriş rəngi
+Lisenziyanın rəngi
+Davamlı kernel səhv rəngi
+Davamlı olmayan kernel səhv rəngi
+Host adının rəngi
+İstifadəçi adı rəng
+Fon rəngi
+Neytral mətn rəngi
+Komanda siyahısının rəngi
+Komanda tərifi rəngi
+Səhnə rəngi
+Xətanın rəngi
+Bu rəng seçimləri yaxşı görünür?
+Geri qayıtmaq üçün {0} cavab verin. Əks təqdirdə, istənilən cavab bəli deməkdir.
+FTP İstemi Stili
+Poçt istəyi stili
+SFTP İstemi Stili

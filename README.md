@@ -8,6 +8,8 @@ Kernel Simulator simulates the future of our planned kernel that's coming as soo
 
 Not only it has some basic commands, but it also provides script support, network support, and tons of awesome things.
 
+WARNING: Be aware that 0.0.14 will contain breaking changes.
+
 ## System Requirements
 
 This section covers what you need to run Kernel Simulator. Please scroll down to your system below.
@@ -152,9 +154,17 @@ License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 
 Source code: https://github.com/EoflaOE/Extensification/
 
-Copyright (c) 2020 EoflaOE and its companies
+Copyright (c) 2020-present EoflaOE and its companies
 
-License (MIT): https://github.com/EoflaOE/Extensification/blob/master/LICENSE
+License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Extensification/blob/master/LICENSE
+
+### Inxi.NET
+
+Source code: https://github.com/EoflaOE/Inxi.NET/
+
+Copyriht (c) 2020-present EoflaOE and its companies
+
+License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Inxi.NET/blob/master/LICENSE
 
 ### Nuget.Build.Tasks.Pack (build dependency)
 
@@ -167,7 +177,7 @@ License (Apache 2.0): https://github.com/NuGet/NuGet.Client/blob/dev/LICENSE.txt
 ## License
 
     Kernel Simulator - Simulates our future planned Kernel
-    Copyright (C) 2018-2020  EoflaOE
+    Copyright (C) 2018-2021  EoflaOE
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

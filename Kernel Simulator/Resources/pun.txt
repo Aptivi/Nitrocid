@@ -916,3 +916,27 @@ ika ṭaisaṭa śaila khōl'hadā hai
 ḍībaga mōḍa nū samaratha baṇā'undā hai
 bahisa la'ī puchadā hai
 bāhara jāṇa la'ī karanala jāṁ ESC nū cālū karana la'ī kō'ī kujī dabā'ō.
+"{0}": Start {1} start nū śurū karana vica asaphala
+mēla sunēhā jhalaka vēkhō
+mēla sunēhē sūcībadha karadē samēṁ, bāḍī prīvi preview dikhā'ō.
+Kaiśa kītī hāraḍavē'ara paṛatāla kivēṁ vī jāṇakārī dikhā rihā hai...
+Samarathā: {0} Jī.Bī.
+Kasaṭama raga...
+Hēṭha ditē anusāra ika raga likhō:
+Ipuṭa raga
+lā'isainsa dā raga
+niratara cālū karanala galatī raga
+bēkābū karanala galatī raga
+hōsaṭa nāma dā raga
+yūzara nāma raga
+pichōkaṛa dā raga
+nirapakha pāṭha dā raga
+kamāṇḍa sūcī dā raga
+kamāṇḍa paribhāśā raga
+saṭēja dā raga
+galatī dā raga
+kī iha raga cōṇāṁ sahī laga rahī'āṁ hana?
+Vāpasa jāṇa la'ī {0} Answer dā utara di'ō. Nahīṁ tāṁ, kisē vī javāba dā matalaba hāṁ hai.
+FTP prōmpaṭa śailī
+mēla prōmpaṭa śailī
+SFTP prōmpaṭa śailī

@@ -848,11 +848,10 @@ Public Module Color
             If ErrorC = ConsoleColors.def Then
                 ErrorC = ConsoleColors.Red
             End If
-            If IsNumeric(InputC) And IsNumeric(LicenseC) And IsNumeric(ContKernelErrorC) And IsNumeric(UncontKernelErrorC) And IsNumeric(HostNameC) And
-               IsNumeric(UserNameC) And IsNumeric(BackC) And IsNumeric(NeutralTextC) And IsNumeric(CmdListC) And IsNumeric(CmdDefC) And
-               IsNumeric(StageC) And IsNumeric(ErrorC) And
-               InputC <= 255 And LicenseC <= 255 And ContKernelErrorC <= 255 And UncontKernelErrorC <= 255 And HostNameC <= 255 And UserNameC <= 255 And
-               BackC <= 255 And NeutralTextC <= 255 And CmdListC <= 255 And CmdDefC <= 255 And StageC <= 255 And ErrorC <= 255 Then
+            If [Enum].IsDefined(GetType(ConsoleColors), InputC) And [Enum].IsDefined(GetType(ConsoleColors), LicenseC) And [Enum].IsDefined(GetType(ConsoleColors), ContKernelErrorC) And
+               [Enum].IsDefined(GetType(ConsoleColors), UncontKernelErrorC) And [Enum].IsDefined(GetType(ConsoleColors), HostNameC) And [Enum].IsDefined(GetType(ConsoleColors), UserNameC) And
+               [Enum].IsDefined(GetType(ConsoleColors), BackC) And [Enum].IsDefined(GetType(ConsoleColors), NeutralTextC) And [Enum].IsDefined(GetType(ConsoleColors), CmdListC) And
+               [Enum].IsDefined(GetType(ConsoleColors), CmdDefC) And [Enum].IsDefined(GetType(ConsoleColors), StageC) And [Enum].IsDefined(GetType(ConsoleColors), ErrorC) Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), InputC), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), LicenseC), ConsoleColors)
                 contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ContKernelErrorC), ConsoleColors)

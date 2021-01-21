@@ -16,14 +16,23 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.IO
-
 Public Module PlaceParse
 
     'Placeholders (strings)
     Private ReadOnly userplace As String = "<user>"
+    Private ReadOnly ftpuserplace As String = "<ftpuser>"
+    Private ReadOnly ftpaddrplace As String = "<ftpaddr>"
+    Private ReadOnly mailuserplace As String = "<mailuser>"
+    Private ReadOnly mailaddrplace As String = "<mailaddr>"
+    Private ReadOnly sftpuserplace As String = "<sftpuser>"
+    Private ReadOnly sftpaddrplace As String = "<sftpaddr>"
     Private ReadOnly hostplace As String = "<host>"
     Private ReadOnly dirplace As String = "<currentdirectory>"
+    Private ReadOnly ftpdirplace As String = "<currentftpdirectory>"
+    Private ReadOnly ftplocaldirplace As String = "<currentftplocaldirectory>"
+    Private ReadOnly maildirplace As String = "<currentmaildirectory>"
+    Private ReadOnly sftpdirplace As String = "<currentsftpdirectory>"
+    Private ReadOnly sftplocaldirplace As String = "<currentsftplocaldirectory>"
     Private ReadOnly sdateplace As String = "<shortdate>"
     Private ReadOnly ldateplace As String = "<longdate>"
     Private ReadOnly stimeplace As String = "<shorttime>"
@@ -47,6 +56,50 @@ Public Module PlaceParse
             If text.Contains(userplace) Then
                 Wdbg("I", "Username placeholder found.")
                 text = text.Replace(userplace, signedinusrnm)
+            End If
+            If text.Contains(ftpuserplace) Then
+                Wdbg("I", "FTP username placeholder found.")
+                text = text.Replace(ftpuserplace, user)
+            End If
+            If text.Contains(ftpaddrplace) Then
+                Wdbg("I", "FTP address placeholder found.")
+                text = text.Replace(ftpaddrplace, ftpsite)
+            End If
+            If text.Contains(ftpdirplace) Then
+                Wdbg("I", "FTP directory placeholder found.")
+                text = text.Replace(ftpdirplace, currentremoteDir)
+            End If
+            If text.Contains(ftplocaldirplace) Then
+                Wdbg("I", "FTP local directory placeholder found.")
+                text = text.Replace(ftplocaldirplace, currDirect)
+            End If
+            If text.Contains(sftpuserplace) Then
+                Wdbg("I", "SFTP username placeholder found.")
+                text = text.Replace(sftpuserplace, SFTPUser)
+            End If
+            If text.Contains(sftpaddrplace) Then
+                Wdbg("I", "SFTP address placeholder found.")
+                text = text.Replace(sftpaddrplace, sftpsite)
+            End If
+            If text.Contains(sftpdirplace) Then
+                Wdbg("I", "SFTP directory placeholder found.")
+                text = text.Replace(sftpdirplace, SFTPCurrentRemoteDir)
+            End If
+            If text.Contains(sftplocaldirplace) Then
+                Wdbg("I", "SFTP local directory placeholder found.")
+                text = text.Replace(sftplocaldirplace, SFTPCurrDirect)
+            End If
+            If text.Contains(mailuserplace) Then
+                Wdbg("I", "Mail username placeholder found.")
+                text = text.Replace(mailuserplace, Mail_Authentication.UserName)
+            End If
+            If text.Contains(mailaddrplace) Then
+                Wdbg("I", "Mail address placeholder found.")
+                text = text.Replace(mailaddrplace, Mail_Authentication.Domain)
+            End If
+            If text.Contains(maildirplace) Then
+                Wdbg("I", "Mail directory placeholder found.")
+                text = text.Replace(maildirplace, IMAP_CurrentDirectory)
             End If
             If text.Contains(hostplace) Then
                 Wdbg("I", "Hostname placeholder found.")
@@ -93,16 +146,6 @@ Public Module PlaceParse
                 text = text.Replace(sysplace, EnvironmentOSType)
             End If
             EventManager.RaisePlaceholderParsed(text)
-        Catch nre As NullReferenceException
-            Dim STrace As New StackTrace(True)
-            Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
-            Dim LineNum As String = STrace.GetFrame(1).GetFileLineNumber
-            WStkTrc(nre)
-            If DebugMode = True Then
-                W(DoTranslation("There is a null reference exception on {0}:{1} - Stack trace:", currentLang) + vbNewLine + nre.StackTrace, True, ColTypes.Err, Source, LineNum)
-            Else
-                W(DoTranslation("There is a null reference exception on {0}:{1}", currentLang), True, ColTypes.Err, Source, LineNum)
-            End If
         Catch ex As Exception
             WStkTrc(ex)
             If DebugMode = True Then

@@ -89,9 +89,6 @@ Module TestGetCommand
                 End Try
             End If
         ElseIf Cmd = "probehw" Then
-            HDDList.Clear()
-            CPUList.Clear()
-            RAMList.Clear()
             StartProbing()
         ElseIf Cmd = "garbage" Then
             DisposeAll()

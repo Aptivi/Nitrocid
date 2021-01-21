@@ -916,3 +916,27 @@ Wuxuu furaa qolof tijaabo ah
 Waxay u sahlaysaa qaabka cilad-bixinta
 Doodaha doodaha
 * Riix fure kasta si aad u bilowdid kernel ama ESC si aad uga baxdo.
+Wuu ku guuldareystay inuu bilaabo "{0}": {1}
+Muuji aragtida fariinta boostada
+Marka aad taxayso farriimaha boostada, muuji muuqaalka jirka.
+Baaritaanka qalabka keydka ah. Si kasta oo macluumaadka loo muujinayo ...
+Awoodda: {0} GB
+Midabada khaaska ah ...
+U qor midab sida hoos ku qeexan:
+Midabka galinta
+Midabka shatiga
+Midab qalad kernel la sii wadi karo
+Midab khaldan aan la joojin karin
+Midabka magaca martida loo yahay
+Midabka magaca isticmaalaha
+Midabka asalka
+Midab qoraal dhexdhexaad ah
+Midabka liiska amarka
+Midabka qeexida amarka
+Midabka masraxa
+Midab khaldan
+Xulashada midabkani ma umuuqdaan kuwo hagaagsan?
+Jawaab {0} inaad dib ugu laabato Haddii kale, jawaab kasta macnaheedu waa haa.
+Nooca FTP Degdega ah
+Nooca Boostada Degdega ah
+Nooca SFTP Degdega ah

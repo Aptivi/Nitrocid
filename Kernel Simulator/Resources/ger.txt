@@ -916,3 +916,27 @@ Testet Mods durch Bereitstellung von Mod-Dateien
 Aktiviert den Debug-Modus
 Fordert zur Eingabe von Argumenten auf
 * Drücken Sie eine beliebige Taste, um den Kernel zu starten, oder ESC, um den Vorgang zu beenden.
+Fehler beim Starten von "{0}": {1}
+Vorschau der E-Mail-Nachricht anzeigen
+Zeigen Sie beim Auflisten von E-Mail-Nachrichten die Vorschau des Körpers an.
+Zwischengespeicherte Hardware-Sonde. Informationen trotzdem anzeigen ...
+Kapazität: {0} GB
+Benutzerdefinierte Farben...
+Schreiben Sie eine Farbe wie unten angegeben:
+Eingabefarbe
+Lizenzfarbe
+Kontinuierliche Kernelfehlerfarbe
+Nicht fortlaufbare Kernelfehlerfarbe
+Farbe des Hostnamens
+Farbe des Benutzernamens
+Hintergrundfarbe
+Neutrale Textfarbe
+Befehlslistenfarbe
+Befehlsdefinitionsfarbe
+Bühnenfarbe
+Fehlerfarbe
+Sehen diese Farboptionen in Ordnung aus?
+Antworte {0}, um zurückzukehren. Ansonsten bedeutet jede Antwort ja.
+FTP-Eingabeaufforderungsstil
+Mail Prompt Style
+SFTP-Eingabeaufforderungsstil

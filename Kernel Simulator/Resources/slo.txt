@@ -916,3 +916,27 @@ Otvára testovaciu škrupinu
 Povolí režim ladenia
 Výzvy na argumentáciu
 * Stlačením ľubovoľnej klávesy spustíte jadro alebo klávesom ESC ukončíte program.
+Nepodarilo sa spustiť „{0}“: {1}
+Zobraziť ukážku e-mailovej správy
+Pri zostavovaní zoznamu e-mailových správ sa zobrazí ukážka tela.
+Hardvérová sonda vo vyrovnávacej pamäti. Aj tak sa zobrazujú informácie ...
+Kapacita: {0} GB
+Vlastné farby ...
+Napíšte farbu, ako je uvedené nižšie:
+Vstupná farba
+Farba preukazu
+Pokračujúca farba chyby jadra
+Farba chyby jadra, ktorá sa nedá pokračovať
+Farba názvu hostiteľa
+Farba mena používateľa
+Farba pozadia
+Neutrálna farba textu
+Farba zoznamu príkazov
+Farba definície príkazu
+Etapová farba
+Chyba farby
+Vyzerajú tieto možnosti farieb v poriadku?
+Odpovedzte {0} a vráťte sa späť. V opačnom prípade akákoľvek odpoveď znamená áno.
+Štýl výzvy FTP
+Štýl výzvy
+Štýl výzvy SFTP

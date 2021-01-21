@@ -916,3 +916,27 @@ Tiftaħ qoxra tat-test
 Jippermetti l-mod ta 'debug
 Prompti għal argumenti
 * Agħfas kwalunkwe ċavetta biex tibda l-għadma jew l-ESC biex toħroġ.
+Naqas milli jibda "{0}": {1}
+Uri preview tal-messaġġ bil-posta
+Meta telenka messaġġi bil-posta, uri preview tal-ġisem.
+Sonda tal-hardware fil-cache. Li turi informazzjoni xorta waħda ...
+Kapaċità: {0} GB
+Kuluri apposta ...
+Ikteb kulur kif speċifikat hawn taħt:
+Kulur tal-input
+Kulur tal-liċenzja
+Kulur ta 'żball kontinwu tal-qalba
+Kulur ta 'żball tal-qalba li ma jistax jitkompla
+Kulur tal-isem tal-ospitant
+Kulur tal-isem tal-utent
+Kulur tal-isfond
+Kulur tat-test newtrali
+Kulur tal-lista tal-kmand
+Kulur tad-definizzjoni tal-kmand
+Kulur tal-palk
+Kulur ta 'żball
+Dawn l-għażliet tal-kulur jidhru tajbin?
+Wieġeb {0} biex tmur lura. Inkella, kwalunkwe tweġiba tfisser iva.
+Stil ta 'Prompt FTP
+Mail Prompt Style
+Stil ta 'Prompt SFTP

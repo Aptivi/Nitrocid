@@ -61,8 +61,7 @@ Public Module Config
                 'The Hardware Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Hardware",
-                        New IniKey(ksconf, "Quiet Probe", quietProbe),
-                        New IniKey(ksconf, "Probe Slots", slotProbe)))
+                        New IniKey(ksconf, "Quiet Probe", quietProbe)))
 
                 'The Login Section
                 ksconf.Sections.Add(
@@ -77,7 +76,10 @@ Public Module Config
                     New IniSection(ksconf, "Shell",
                         New IniKey(ksconf, "Colored Shell", ColoredShell),
                         New IniKey(ksconf, "Simplified Help Command", simHelp),
-                        New IniKey(ksconf, "Prompt Style", ShellPromptStyle)))
+                        New IniKey(ksconf, "Prompt Style", ShellPromptStyle),
+                        New IniKey(ksconf, "FTP Prompt Style", FTPShellPromptStyle),
+                        New IniKey(ksconf, "Mail Prompt Style", MailShellPromptStyle),
+                        New IniKey(ksconf, "SFTP Prompt Style", SFTPShellPromptStyle)))
 
                 'The Network Section
                 ksconf.Sections.Add(
@@ -89,7 +91,8 @@ Public Module Config
                         New IniKey(ksconf, "Show progress bar while downloading or uploading from ""get"" or ""put"" command", ShowProgress),
                         New IniKey(ksconf, "Log FTP username", FTPLoggerUsername),
                         New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
-                        New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly)))
+                        New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly),
+                        New IniKey(ksconf, "Show mail message preview", ShowPreview)))
 
                 'The Screensaver Section
                 ksconf.Sections.Add(
@@ -151,8 +154,7 @@ Public Module Config
                 'The Hardware Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Hardware",
-                        New IniKey(ksconf, "Quiet Probe", "False"),
-                        New IniKey(ksconf, "Probe Slots", "True")))
+                        New IniKey(ksconf, "Quiet Probe", "False")))
 
                 'The Login Section
                 ksconf.Sections.Add(
@@ -167,7 +169,10 @@ Public Module Config
                     New IniSection(ksconf, "Shell",
                         New IniKey(ksconf, "Colored Shell", "True"),
                         New IniKey(ksconf, "Simplified Help Command", "False"),
-                        New IniKey(ksconf, "Prompt Style", "")))
+                        New IniKey(ksconf, "Prompt Style", ""),
+                        New IniKey(ksconf, "FTP Prompt Style", ""),
+                        New IniKey(ksconf, "Mail Prompt Style", ""),
+                        New IniKey(ksconf, "SFTP Prompt Style", "")))
 
                 'The Network Section
                 ksconf.Sections.Add(
@@ -179,7 +184,8 @@ Public Module Config
                         New IniKey(ksconf, "Show progress bar while downloading or uploading from ""get"" or ""put"" command", "True"),
                         New IniKey(ksconf, "Log FTP username", "False"),
                         New IniKey(ksconf, "Log FTP IP address", "False"),
-                        New IniKey(ksconf, "Return only first FTP profile", "False")))
+                        New IniKey(ksconf, "Return only first FTP profile", "False"),
+                        New IniKey(ksconf, "Show mail message preview", "False")))
 
                 'The Screensaver Section
                 ksconf.Sections.Add(
@@ -236,10 +242,12 @@ Public Module Config
             ksconf.Sections("Shell").Keys("Simplified Help Command").TrailingComment.Text = "Simplifies the ""help"" command so it only shows available commands."
             ksconf.Sections("Shell").Keys("Colored Shell").TrailingComment.Text = "Whether or not it supports colored shell."
             ksconf.Sections("Shell").Keys("Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the main shell. Placeholders here are parsed."
+            ksconf.Sections("Shell").Keys("FTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the FTP shell. Placeholders here are parsed."
+            ksconf.Sections("Shell").Keys("Mail Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the mail shell. Placeholders here are parsed."
+            ksconf.Sections("Shell").Keys("SFTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the SFTP shell. Placeholders here are parsed."
 
             'Hardware
-            ksconf.Sections("Hardware").TrailingComment.Text = "This section is the hardware probing settings that lets you control whether or not to probe RAM slots and/or quietly probe hardware. This section and the two settings are deprecated."
-            ksconf.Sections("Hardware").Keys("Probe Slots").TrailingComment.Text = "Whether or not to probe RAM slots on boot"
+            ksconf.Sections("Hardware").TrailingComment.Text = "This section is the hardware probing settings."
             ksconf.Sections("Hardware").Keys("Quiet Probe").TrailingComment.Text = "Whether or not to quietly probe hardware"
 
             'Network
@@ -252,6 +260,7 @@ Public Module Config
             ksconf.Sections("Network").Keys("Log FTP username").TrailingComment.Text = "Whether or not to log FTP username in the debugger log."
             ksconf.Sections("Network").Keys("Log FTP IP address").TrailingComment.Text = "Whether or not to log FTP IP address in the debugger log."
             ksconf.Sections("Network").Keys("Return only first FTP profile").TrailingComment.Text = "Whether or not to return only first successful FTP profile when polling for profiles."
+            ksconf.Sections("Network").Keys("Show mail message preview").TrailingComment.Text = "Whether or not to show mail message preview (body text truncated to 200 characters)."
 
             'Screensaver
             ksconf.Sections("Screensaver").TrailingComment.Text = "This section is the network settings."
@@ -397,10 +406,12 @@ Public Module Config
             Wdbg("I", "Parsing shell section...")
             If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
             ShellPromptStyle = configReader.Sections("Shell").Keys("Prompt Style").Value
+            FTPShellPromptStyle = configReader.Sections("Shell").Keys("FTP Prompt Style").Value
+            MailShellPromptStyle = configReader.Sections("Shell").Keys("Mail Prompt Style").Value
+            SFTPShellPromptStyle = configReader.Sections("Shell").Keys("SFTP Prompt Style").Value
 
             'Hardware Section
             Wdbg("I", "Parsing hardware section...")
-            If configReader.Sections("Hardware").Keys("Probe Slots").Value = "True" Then slotProbe = True Else slotProbe = False
             If configReader.Sections("Hardware").Keys("Quiet Probe").Value = "True" Then quietProbe = True Else quietProbe = False
 
             'Network Section
@@ -413,6 +424,7 @@ Public Module Config
             FTPLoggerUsername = configReader.Sections("Network").Keys("Log FTP username").Value
             FTPLoggerIP = configReader.Sections("Network").Keys("Log FTP IP address").Value
             FTPFirstProfileOnly = configReader.Sections("Network").Keys("Return only first FTP profile").Value
+            ShowPreview = configReader.Sections("Network").Keys("Show mail message preview").Value
 
             'Screensaver Section
             defSaverName = configReader.Sections("Screensaver").Keys("Screensaver").Value

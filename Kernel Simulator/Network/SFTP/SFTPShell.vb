@@ -34,6 +34,7 @@ Public Module SFTPShell
     Private SFTPStrCmd As String
     Public sftpexit As Boolean = False
     Public SFTPModCommands As New ArrayList
+    Public SFTPShellPromptStyle As String = ""
 
     ''' <summary>
     ''' Initializes the SFTP shell
@@ -80,7 +81,14 @@ Public Module SFTPShell
             If Not Connects Then
                 Wdbg("I", "Preparing prompt...")
                 If SFTPConnected Then
-                    W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, SFTPUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, sftpsite) : W("]{0} ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
+                    Wdbg("I", "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
+                    If SFTPShellPromptStyle = "" Then
+                        W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, SFTPUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, sftpsite) : W("]{0} ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
+                        ParsedPromptStyle.ConvertVTSequences
+                        W(ParsedPromptStyle, False, ColTypes.Gray)
+                    End If
                 Else
                     W("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
                 End If
@@ -122,19 +130,36 @@ Public Module SFTPShell
     ''' </summary>
     Public Sub SFTPGetLine()
         Dim words As String() = SFTPStrCmd.Split({" "c})
+        Wdbg("I", "Command: {0}", SFTPStrCmd)
         Wdbg("I", $"Is the command found? {availsftpcmds.Contains(words(0))}")
         If availsftpcmds.Contains(words(0)) Then
             Wdbg("I", "Command found.")
             SFTPStartCommandThread = New Thread(AddressOf SFTPGetCommand.ExecuteCommand)
             SFTPStartCommandThread.Start(SFTPStrCmd)
             SFTPStartCommandThread.Join()
-        ElseIf FTPModCommands.Contains(words(0)) Then
+        ElseIf SFTPModCommands.Contains(words(0)) Then
             Wdbg("I", "Mod command found.")
             ExecuteModCommand(SFTPStrCmd)
+        ElseIf SFTPShellAliases.Keys.Contains(words(0)) Then
+            Wdbg("I", "Aliased command found.")
+            ExecuteSFTPAlias(SFTPStrCmd)
         ElseIf Not SFTPStrCmd.StartsWith(" ") Then
             Wdbg("E", "Command {0} not found.", SFTPStrCmd)
             W(DoTranslation("SFTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on SFTP shell.", currentLang), True, ColTypes.Err, words(0))
         End If
+    End Sub
+
+    ''' <summary>
+    ''' Executes the SFTP shell alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    Sub ExecuteSFTPAlias(ByVal aliascmd As String)
+        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, SFTPShellAliases(FirstWordCmd))
+        Wdbg("I", "Actual command: {0}", actualCmd)
+        SFTPStartCommandThread = New Thread(AddressOf SFTPGetCommand.ExecuteCommand)
+        SFTPStartCommandThread.Start(actualCmd)
+        SFTPStartCommandThread.Join()
     End Sub
 
 End Module

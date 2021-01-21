@@ -916,3 +916,27 @@ Nagbubukas ng isang test shell
 Pinapagana ang debug mode
 Mga prompt para sa mga argumento
 * Pindutin ang anumang key upang simulan ang kernel o ESC upang lumabas.
+Nabigong simulan ang "{0}": {1}
+Ipakita ang preview ng mensahe ng mail
+Kapag naglilista ng mga mensahe sa mail, ipakita ang preview ng katawan.
+Nai-cache na probe ng hardware. Ipinapakita pa rin ang impormasyon ...
+Kapasidad: {0} GB
+Pasadyang mga kulay ...
+Sumulat ng isang kulay tulad ng tinukoy sa ibaba:
+Kulay ng pag-input
+Kulay ng lisensya
+Patuloy na kulay ng error ng kernel
+Hindi mapapatuloy na kulay ng error ng kernel
+Kulay ng pangalan ng host
+Kulay ng pangalan ng gumagamit
+Kulay ng background
+Kulay ng teksto na walang kinikilingan
+Kulay ng listahan ng utos
+Kulay ng kahulugan ng utos
+Kulay ng entablado
+Kulay ng error
+OK ba ang mga pagpipilian ng kulay na ito?
+Sagutin ang {0} upang bumalik. Kung hindi man, ang anumang sagot ay nangangahulugang oo.
+Estilo ng Prompt ng FTP
+Estilo ng Prompt ng Mail
+Estilo ng Prompt ng SFTP

@@ -916,3 +916,27 @@ Deschide un shell de test
 Activează modul de depanare
 Invitări pentru argumente
 * Apăsați orice tastă pentru a porni nucleul sau ESC pentru a ieși.
+Nu a putut porni „{0}”: {1}
+Afișați previzualizarea mesajului e-mail
+Când afișați mesaje de e-mail, afișați previzualizarea corpului.
+Sondă hardware stocată în cache. Se afișează informații oricum ...
+Capacitate: {0} GB
+Culori personalizate ...
+Scrieți o culoare după cum se specifică mai jos:
+Culoare de intrare
+Culoarea licenței
+Culoare de eroare continuă a nucleului
+Culoare de eroare necontinuabilă a nucleului
+Culoarea numelui gazdei
+Culoare nume utilizator
+Culoare de fundal
+Culoarea textului neutru
+Culoarea listei de comenzi
+Culoarea definiției comenzii
+Culoarea scenei
+Culoare eroare
+Aceste alegeri de culoare arată bine?
+Răspundeți {0} pentru a reveni. În caz contrar, orice răspuns înseamnă da.
+FTP Prompt Style
+Stil de promptare prin e-mail
+Stil de prompt SFTP

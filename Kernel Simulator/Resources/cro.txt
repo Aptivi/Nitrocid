@@ -916,3 +916,27 @@ Otvara test ljusku
 Omogućuje način otklanjanja pogrešaka
 Upiti za argumente
 * Pritisnite bilo koju tipku za pokretanje jezgre ili ESC za izlaz.
+Pokretanje "{0}" nije uspjelo: {1}
+Prikaži pregled e-pošte
+Kada navodite e-mail poruke, prikažite pregled tijela.
+Predmemorirana hardverska sonda. Podaci se ionako prikazuju ...
+Kapacitet: {0} GB
+Prilagođene boje ...
+Napišite boju kako je navedeno u nastavku:
+Ulazna boja
+Boja licence
+Neprekidna boja pogreške jezgre
+Neprekidna boja pogreške jezgre
+Boja imena domaćina
+Boja korisničkog imena
+Boja pozadine
+Neutralna boja teksta
+Boja popisa naredbi
+Boja definicije naredbe
+Boja scene
+Boja pogreške
+Izgledaju li ovi izbori boja u redu?
+Odgovorite {0} za povratak. Inače, svaki odgovor znači da.
+FTP promptni stil
+Stil upita za poštu
+SFTP promptni stil

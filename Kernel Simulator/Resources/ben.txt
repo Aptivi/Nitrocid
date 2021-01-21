@@ -916,3 +916,27 @@ Mōḍa phā'ila sarabarāha karē mōḍaguli parīkṣā karē
 ḍibāga mōḍa sakṣama karē
 yuktigulira jan'ya anurōdha jānānō haẏa
 * bērōnōra ​​jan'ya kārnēla bā ESC śuru karatē yē kōna'ō kī ṭipuna.
+"{0}" Śuru karatē byartha: {1}
+Mēla bārtā pūrbarūpa dēkhāna
+mēla bārtā tālikābhukta karāra samaẏa, baḍi pribhi'u dēkhāna.
+Kyāśēḍa hārḍa'ōẏāra prōba. Yā'ihōka tathya dēkhānō hacchē...
+Kṣamatā: {0} Gigābā'iṭa
+kāsṭama raṁ...
+Nīcē barṇita hisābē ēkaṭi raṅa likhuna:
+Inapuṭa raṅa
+lā'isēnsēra raṅa
+abicchinna kārnēla truṭira raṅa
+aniẏantrita kārnēla truṭira raṅa
+hōsṭa nāmēra raṅa
+byabahārakārīra nāma raṅa
+pēchanēra raṅa
+nirapēkṣa pāṭhyēra raṅa
+kamānḍa tālikāra raṅa
+kamānḍa san̄jñā raṅa
+mañcēra raṅa
+truṭira raṅa
+ē'i raṅa pachandaguli ki ṭhika āchē?
+Phirē yētē Answer {0} Answer uttara dina. An'yathāẏa, kōna'ō uttarēra artha hyām̐.
+Ēphaṭipi prampaṭa sṭā'ila
+mēla prampaṭa sṭā'ila
+ēsa'ēphaṭipi prampaṭa sṭā'ila
