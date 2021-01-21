@@ -916,3 +916,27 @@ Ouvre un shell de test
 Active le mode de débogage
 Invite des arguments
 * Appuyez sur n'importe quelle touche pour démarrer le noyau ou sur ESC pour quitter.
+Échec du démarrage de «{0}»: {1}
+Afficher l'aperçu du message électronique
+Lors de la liste des messages électroniques, affichez l'aperçu du corps.
+Sonde matérielle en cache. Affichage des informations quand même ...
+Capacité: {0} Go
+Couleurs personnalisées...
+Écrivez une couleur comme indiqué ci-dessous:
+Couleur d'entrée
+Couleur de la licence
+Couleur d'erreur continue du noyau
+Couleur d'erreur du noyau indisponible
+Couleur du nom d'hôte
+Couleur du nom d'utilisateur
+Couleur de l'arrière plan
+Couleur de texte neutre
+Couleur de la liste des commandes
+Couleur de définition de commande
+Couleur de la scène
+Couleur d'erreur
+Ces choix de couleurs semblent-ils corrects?
+Répondez à {0} pour revenir en arrière. Sinon, toute réponse signifie oui.
+Style d'invite FTP
+Style d'invite de courrier
+Style d'invite SFTP

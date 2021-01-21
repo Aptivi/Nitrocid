@@ -916,3 +916,27 @@ Otkryvayet testovuyu obolochku
 Vklyuchayet rezhim otladki
 Zaprosy argumentov
 * Nazhmite lyubuyu klavishu dlya zapuska yadra ili ESC dlya vykhoda.
+Ne udalos' zapustit' "{0}": {1}
+Pokazat' predvaritel'nyy prosmotr pochtovogo soobshcheniya
+Pri perechislenii pochtovykh soobshcheniy pokazyvat' predvaritel'nyy prosmotr tela.
+Keshirovannyy apparatnyy zond. Vse ravno otobrazhayetsya informatsiya ...
+Yemkost': {0} GB
+Pol'zovatel'skiye tsveta ...
+Napishite tsvet, kak ukazano nizhe:
+Tsvet vvoda
+Tsvet litsenzii
+Tsvet postoyannoy oshibki yadra
+Nepreryvnyy tsvet oshibki yadra
+Tsvet imeni khosta
+Tsvet imeni pol'zovatelya
+Fonovyy tsvet
+Neytral'nyy tsvet teksta
+Tsvet spiska komand
+Tsvet opredeleniya komandy
+Tsvet stseny
+Tsvet oshibki
+Eti tsveta vyglyadyat normal'no?
+Otvet'te {0}, chtoby vernut'sya. V protivnom sluchaye lyuboy otvet oznachayet da.
+Stil' priglasheniya FTP
+Stil' pochtovoy podskazki
+Stil' podskazki SFTP

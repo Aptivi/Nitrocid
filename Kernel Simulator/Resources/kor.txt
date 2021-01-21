@@ -916,3 +916,27 @@ teseuteu syel-eul yeobni da.
 dibeogeu modeu hwalseonghwa
 insue daehan peulompeuteu
 * keoneol-eul sijaghalyeomyeon amu kina nuleugeona jonglyohalyeomyeon ESCleul nuleusibsio.
+"{0}"sijag silpae : {1}
+meil mesiji milibogi pyosi
+meil mesijileul nayeol hal ttae bonmun milibogileul pyosihabnida.
+kaesi doen hadeuweeo peulobeu. eojjaessdeun jeongbo pyosi jung ...
+yonglyang : {0} GB
+majchum saegsang ...
+alaee jijeongdoendaelo saegsang-eul jagseonghasibsio.
+iblyeog saegsang
+laiseonseu saegsang
+jisog ganeunghan keoneol olyu saegsang
+gyesoghal sueobsneun keoneol olyu saegsang
+hoseuteu ileum saegsang
+sayongja ileum saegsang
+baegyeongsaeg
+junglibjeog in tegseuteu saegsang
+myeonglyeong moglog saegsang
+myeonglyeong jeong-ui saegsang
+mudae saegsang
+olyu saegsang
+ileohan saegsang seontaeg-i gwaenchanh-a boibnikka?
+dol-agalyeomyeon {0}lo daedabhaseyo. geuleohji anh-eumyeon modeun daedab-eun yeleul uimihabnida.
+FTP peulompeuteu seutail
+meil peulompeuteu seutail
+SFTP peulompeuteu seutail

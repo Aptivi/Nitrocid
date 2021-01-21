@@ -916,3 +916,27 @@ yaftah qadhifat alaikhtibar
 litamkin wade altashih
 yutalib bialhajaj
 * aidghut ealaa 'ayi miftah libad' kernel 'aw ESC lilkhuruj.
+fashil bad' "{0}": {1}
+'iizhar mueayinat risalat albarid
+eind surid rasayil albarid , 'aerad mueayinat alnas.
+misbar al'ajhizat almukhzanat mwqtana. 'iizhar almaelumat ealaa 'ayi hal ...
+alset: {0} ghyghabayt
+'alwan aleurfa...
+aktab lwnana kama hu muhadad 'adnah:
+lawn al'iidkhal
+lawn altarkhis
+lawn khata kernel mustamir
+lawn khata kernel la yumkin aistimrarah
+lawn aism almudif
+lawn aism almustakhdam
+lawn alkhalfia
+lawn nasi mahayid
+lawn qayimat al'awamir
+lawn taerif al'amr
+lawn almarhala
+lawn alkhata
+hal tabdu aikhtiarat al'alwan hadhih jyd?
+'ajb b {0} lileawdati. khilaf dhlk , 'ay 'iijabat taeni niem.
+namat muajah FTP
+namatu muajah albarid
+namat mutalabat SFTP

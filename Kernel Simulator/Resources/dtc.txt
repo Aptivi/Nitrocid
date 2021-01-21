@@ -916,3 +916,27 @@ Opent een testshell
 Schakelt de foutopsporingsmodus in
 Vraagt om argumenten
 * Druk op een willekeurige toets om de kernel te starten of op ESC om af te sluiten.
+Starten van "{0}" is mislukt: {1}
+Voorbeeld van e-mailbericht weergeven
+Geef bij het weergeven van e-mailberichten een voorbeeld van het hoofdgedeelte weer.
+Hardware-sonde in cache. Toch informatie weergeven ...
+Capaciteit: {0} GB
+Aangepaste kleuren...
+Schrijf een kleur zoals hieronder gespecificeerd:
+Invoerkleur
+Licentie kleur
+Kleur van aanhoudende kernelfout
+Kleur van onhoudbare kernelfout
+Hostnaam kleur
+Kleur gebruikersnaam
+Achtergrond kleur
+Neutrale tekstkleur
+Kleur van de opdrachtenlijst
+Kleur van opdrachtdefinitie
+Stage kleur
+Foutkleur
+Zien deze kleurkeuzes er goed uit?
+Antwoord {0} om terug te gaan. Anders betekent elk antwoord ja.
+FTP-promptstijl
+E-mailpromptstijl
+SFTP-promptstijl

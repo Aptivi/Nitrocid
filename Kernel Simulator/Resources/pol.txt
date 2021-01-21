@@ -916,3 +916,27 @@ Otwiera powłokę testową
 Włącza tryb debugowania
 Monity o argumenty
 * Naciśnij dowolny klawisz, aby uruchomić jądro lub ESC, aby wyjść.
+Nie udało się uruchomić „{0}”: {1}
+Pokaż podgląd wiadomości e-mail
+Wyświetlając wiadomości e-mail, pokaż podgląd treści.
+Sonda sprzętowa w pamięci podręcznej. Mimo to wyświetlam informacje ...
+Pojemność: {0} GB
+Kolory niestandardowe ...
+Napisz kolor, jak określono poniżej:
+Kolor wejściowy
+Kolor licencji
+Ciągły kolor błędu jądra
+Nieprzerwany kolor błędu jądra
+Kolor nazwy hosta
+Kolor nazwy użytkownika
+Kolor tła
+Neutralny kolor tekstu
+Kolor listy poleceń
+Kolor definicji polecenia
+Kolor sceny
+Kolor błędu
+Czy te kolory wyglądają dobrze?
+Odpowiedz {0}, aby wrócić. W przeciwnym razie każda odpowiedź oznacza tak.
+Styl podpowiedzi FTP
+Styl monitów pocztowych
+Styl monitu SFTP

@@ -916,3 +916,27 @@ tesutosheru o hirakimasu
 debaggumōdo o yūkō ni shimasu
 hikisū no puronputo
 * nin'i no kī o oshite kāneru o kaishi suru ka, ESC o oshite shūryō shimasu.
+Kaishi ni shippai shimashita"{0}":{1}
+Mērumessēji no purebyū o hyōji suru
+Mērumessēji o ichiran hyōji suru toki wa, honbun no purebyū o hyōji shimasu.
+Kyasshu sa reta hādou~eapurōbu. Tonikaku jōhō o hyōji shite imasu...
+Yōryō: {0} GB
+kasutamukarā...
+Ika no yō ni iro o kaite kudasai.
+Nyūryoku-iro
+raisensu no iro
+keizoku kanōna kāneruerā no iro
+keizoku dekinai kāneruerā no iro
+hosuto-mei no iro
+yūzā-mei no iro
+haikeiiro
+nyūtoraruna tekisuto no iro
+komando risuto no iro
+komando teigi no iro
+sutējikarā korera no iro
+erākarā korera no iro
+Korera no iro no sentaku wa mondainai yō ni miemasu ka?
+{0} Ni kotaete modorimasu. Sore igai no baai, kotaeha `hai' o imi shimasu.
+FTP puronputosutairu
+mērupuronputosutairu
+SFTP puronputosutairu

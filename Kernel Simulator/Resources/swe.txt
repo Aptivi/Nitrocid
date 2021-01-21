@@ -916,3 +916,27 @@ Testar mods genom att tillhandahålla modfiler
 Aktiverar felsökningsläge
 Uppmanar till argument
 * Tryck på valfri knapp för att starta kärnan eller ESC för att avsluta.
+Det gick inte att starta "{0}": {1}
+Visa förhandsgranskning av e-postmeddelande
+Visa kroppsförhandsgranskning när du listar e-postmeddelanden.
+Cachad hårdvarusond. Visar information ändå ...
+Kapacitet: {0} GB
+Anpassade färger ...
+Skriv en färg enligt nedan:
+Inmatningsfärg
+Licensfärg
+Fortsätt kärnfelfärg
+Oavbruten kärnfelfärg
+Värdens namnfärg
+Användarnamnsfärg
+Bakgrundsfärg
+Neutral textfärg
+Kommandolistens färg
+Definition färg för kommando
+Scenfärg
+Felfärg
+Ser dessa färgval OK ut?
+Svara {0} för att gå tillbaka. Annars betyder något svar ja.
+FTP-meddelandestil
+E-postmeddelandestil
+SFTP Prompt Style

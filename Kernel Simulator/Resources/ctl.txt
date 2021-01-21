@@ -916,3 +916,27 @@ Obre un intèrpret d'ordres de prova
 Activa el mode de depuració
 Sol·licituds d'arguments
 * Premeu qualsevol tecla per iniciar el nucli o ESC per sortir.
+No s'ha pogut iniciar "{0}": {1}
+Mostra la previsualització del missatge de correu electrònic
+En llistar missatges de correu electrònic, mostreu la previsualització del cos.
+Sonda de maquinari emmagatzemada a la memòria cau. S'està mostrant informació de totes maneres ...
+Capacitat: {0} GB
+Colors personalitzats ...
+Escriviu un color tal com s’especifica a continuació:
+Color d'entrada
+Color de la llicència
+Color d'error del nucli continuable
+Color d'error de nucli incontinuable
+Color del nom de l’amfitrió
+Color del nom d'usuari
+Color de fons
+Color de text neutre
+Color de la llista d’ordres
+Color de definició d’ordres
+Color de l’escenari
+Color d'error
+Aquestes opcions de color semblen correctes?
+Responeu {0} per tornar enrere. En cas contrari, qualsevol resposta vol dir que sí.
+Estil de sol·licitud FTP
+Estil de sol·licitud de correu electrònic
+Estil de sol·licitud SFTP

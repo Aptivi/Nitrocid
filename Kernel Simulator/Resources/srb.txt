@@ -916,3 +916,27 @@ Otvara test ljusku
 Omogućava režim otklanjanja grešaka
 Upiti za argumente
 * Pritisnite bilo koji taster za pokretanje kernela ili ESC za izlaz.
+Pokretanje „{0}“ nije uspelo: {1}
+Prikaži pregled poruke e-pošte
+Kada navodite poštanske poruke, prikažite pregled tela.
+Keširana hardverska sonda. Informacije se ipak prikazuju ...
+Kapacitet: {0} GB
+Prilagođene boje ...
+Napišite boju kao što je dole navedeno:
+Ulazna boja
+Boja licence
+Boja greške kontinuiranog jezgra
+Neprekidna boja greške jezgra
+Boja imena hosta
+Boja korisničkog imena
+Boja pozadine
+Neutralna boja teksta
+Boja liste naredbi
+Boja definicije naredbe
+Boja scene
+Boja greške
+Da li izgledaju dobro ovi izbori boja?
+Odgovorite {0} za povratak. Inače, bilo koji odgovor znači da.
+FTP prompt stil
+Mail Prompt Stile
+SFTP prompt stil

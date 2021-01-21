@@ -916,3 +916,27 @@ Sinov qobig'ini ochadi
 Tuzatish rejimini yoqadi
 Dalillarni talab qiladi
 * Yadroni ishga tushirish uchun biron bir tugmani bosing yoki chiqish uchun ESC.
+"{0}" ishga tushirilmadi: {1}
+Pochta xabarlarini oldindan ko'rishni ko'rsatish
+Pochta xabarlarini ro'yxatlashda tanani oldindan ko'rishni ko'rsating.
+Keshlangan apparat tekshiruvi. Baribir ma'lumot ko'rsatilmoqda ...
+Imkoniyatlar: {0} GB
+Maxsus ranglar ...
+Quyida ko'rsatilgan rangni yozing:
+Kirish rangi
+Litsenziyaning rangi
+Davomiy yadro xato rangi
+Uzluksiz yadro xato rangi
+Xost nomining rangi
+Foydalanuvchi nomi rangi
+Fon rangi
+Neytral matn rangi
+Buyruqlar ro'yxati rangi
+Buyruqning ta'rifi rangi
+Sahna rangi
+Xato rangi
+Ushbu rang tanlovlari yaxshi ko'rinishga egami?
+Orqaga qaytish uchun {0} ga javob bering. Aks holda, har qanday javob ha degan ma'noni anglatadi.
+FTP tezkor uslubi
+Pochta xabarlari uslubi
+SFTP tezkor uslubi

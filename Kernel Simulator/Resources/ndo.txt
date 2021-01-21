@@ -916,3 +916,27 @@ Membuka cangkang uji
 Mengaktifkan mode debug
 Perintah untuk argumen
 * Tekan sembarang tombol untuk memulai kernel atau ESC untuk keluar.
+Gagal memulai "{0}": {1}
+Tampilkan pratinjau pesan email
+Saat mencantumkan pesan email, tunjukkan pratinjau isi.
+Pemeriksaan perangkat keras dalam cache. Menampilkan informasi ...
+Kapasitas: {0} GB
+Warna khusus ...
+Tulis warna seperti yang ditentukan di bawah ini:
+Warna masukan
+Warna lisensi
+Warna kesalahan kernel yang berkelanjutan
+Warna kesalahan kernel tidak dapat dilanjutkan
+Warna nama host
+Warna nama pengguna
+Warna latar belakang
+Warna teks netral
+Warna daftar perintah
+Warna definisi perintah
+Warna panggung
+Warna kesalahan
+Apakah pilihan warna ini terlihat oke?
+Jawab {0} untuk kembali. Jika tidak, jawaban apa pun berarti ya.
+Gaya Prompt FTP
+Gaya Konfirmasi Surat
+Gaya Perintah SFTP

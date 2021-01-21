@@ -916,3 +916,27 @@ ek pareekshan khol kholata hai
 deebag mod ko saksham karata hai
 tarkon ke lie sanket
 * baahar nikalane ke lie karnel ya aisch shuroo karane ke lie koee bhee kunjee dabaen.
+"{0}" shuroo karane mein viphal: {1}
+mel sandesh poorvaavalokan dikhaen
+mel sandeshon ko soocheebaddh karate samay, nikaay poorvaavalokan dikhaen.
+kaishd haardaveyar jaanch. vaise bhee jaanakaaree dikha raha hai ...
+kshamata: {0} jeebee
+reeti rivaajon ke rang...
+neeche die gae anusaar ek rang likhen:
+inaput rang
+laisens ka rang
+nirantar karnel truti rang
+nirvivaad karnel truti rang
+host naam rang
+upayogakarta ka naam rang
+peechhe ka rang
+tatasth paath rang
+aadesh soochee ka rang
+kamaand paribhaasha rang
+manch ka rang
+truti rang
+kya ye rang pasand theek lagate hain?
+uttar {0} vaapas jaane ke lie. anyatha, kisee bhee uttar ka matalab haan hai.
+efateepee sheeghr shailee
+mel prompt stail
+sftp sheeghr shailee

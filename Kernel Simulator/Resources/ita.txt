@@ -916,3 +916,27 @@ Apre una shell di prova
 Abilita la modalità di debug
 Richiede argomenti
 * Premere un tasto qualsiasi per avviare il kernel o ESC per uscire.
+Impossibile avviare "{0}": {1}
+Mostra l'anteprima del messaggio di posta
+Quando si elencano i messaggi di posta, mostra l'anteprima del corpo.
+Sonda hardware memorizzata nella cache. Mostrando comunque le informazioni ...
+Capacità: {0} GB
+Colori personalizzati ...
+Scrivi un colore come specificato di seguito:
+Colore di input
+Colore della licenza
+Colore errore kernel continuativo
+Colore di errore del kernel irreversibile
+Colore del nome host
+Colore nome utente
+Colore di sfondo
+Colore del testo neutro
+Colore dell'elenco dei comandi
+Colore definizione comando
+Colore del palco
+Colore errore
+Queste scelte di colore sembrano OK?
+Rispondi {0} per tornare indietro. Altrimenti, qualsiasi risposta significa sì.
+Stile prompt FTP
+Stile messaggio di posta
+Stile prompt SFTP
