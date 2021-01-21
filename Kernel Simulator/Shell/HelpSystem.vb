@@ -144,7 +144,7 @@ Public Module HelpSystem
 
         ElseIf command = "alias" Then
 
-            W(DoTranslation("Usage:", currentLang) + " alias <rem/add> <1=Shell/2=RDebug> <alias> <cmd>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " alias <rem/add> <1=Shell/2=RDebug/3=FTPShell/4=SFTPShell/5=MailShell> <alias> <cmd>", True, ColTypes.Neutral)
 
         ElseIf command = "arginj" Then
 
