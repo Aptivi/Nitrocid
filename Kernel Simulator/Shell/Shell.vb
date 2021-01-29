@@ -278,6 +278,9 @@ Public Module Shell
                     If Not scriptCmd.EndsWith(".uesh") Then
                         scriptCmd += ".uesh"
                     End If
+                    If EnvironmentOSType.Contains("Windows") Then
+                        scriptCmd = scriptCmd.ReplaceAll({"\", "/", ":", "?", "*", """", "<", ">", "|"}, "")
+                    End If
                     scriptArgs.RemoveAt(0)
 
                     'Get the index of the first space
