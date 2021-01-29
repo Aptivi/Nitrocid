@@ -940,3 +940,5 @@ Svar {0} for å gå tilbake. Ellers betyr ethvert svar ja.
 FTP Prompt Style
 E-postmeldingsstil
 SFTP Prompt Style
+Aktiverer 255 fargestøtte for BouncingBlock.
+Aktiverer ekte fargestøtte for BouncingBlock.

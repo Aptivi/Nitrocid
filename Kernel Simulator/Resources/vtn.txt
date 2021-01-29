@@ -940,3 +940,5 @@ Trả lời {0} để quay lại. Nếu không, bất kỳ câu trả lời nào
 Kiểu lời nhắc FTP
 Kiểu Lời nhắc Thư
 Kiểu nhắc SFTP
+Kích hoạt hỗ trợ 255 màu cho BouncingBlock.
+Kích hoạt hỗ trợ màu sắc trung thực cho BouncingBlock.

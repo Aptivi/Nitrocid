@@ -940,3 +940,5 @@ Répondez à {0} pour revenir en arrière. Sinon, toute réponse signifie oui.
 Style d'invite FTP
 Style d'invite de courrier
 Style d'invite SFTP
+Active la prise en charge de 255 couleurs pour BouncingBlock.
+Active la vraie prise en charge des couleurs pour BouncingBlock.

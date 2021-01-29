@@ -940,3 +940,5 @@ hal tabdu aikhtiarat al'alwan hadhih jyd?
 namat muajah FTP
 namatu muajah albarid
 namat mutalabat SFTP
+yunshut daem 255 lwnana l BouncingBlock.
+yunshut daem allawn alhaqiqii l BouncingBlock.

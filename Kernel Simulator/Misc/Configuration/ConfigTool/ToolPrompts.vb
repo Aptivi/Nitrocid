@@ -20,6 +20,9 @@ Imports System.Reflection
 
 Public Module ToolPrompts
 
+    ''' <summary>
+    ''' Key type for settings entry
+    ''' </summary>
     Enum SettingsKeyType
         SBoolean
         SInt
@@ -29,6 +32,9 @@ Public Module ToolPrompts
         SMenu
     End Enum
 
+    ''' <summary>
+    ''' Main page
+    ''' </summary>
     Sub OpenMainPage()
         Dim PromptFinished As Boolean
         Dim AnswerString As String
@@ -86,6 +92,10 @@ Public Module ToolPrompts
         End While
     End Sub
 
+    ''' <summary>
+    ''' Open section
+    ''' </summary>
+    ''' <param name="SectionNum">Section number</param>
     Sub OpenSection(ByVal SectionNum As Integer)
         Dim MaxOptions As Integer = 0
         Dim SectionFinished As Boolean
@@ -138,7 +148,7 @@ Public Module ToolPrompts
                     W("8) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPFirstProfileOnly"))
                     W("9) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShowPreview"))
                 Case 6 'Screensaver
-                    MaxOptions = 13
+                    MaxOptions = 15
                     W(DoTranslation("This section lists all the screensavers and their available settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ScrnTimeout"))
                     W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMix255Colors"))
@@ -146,13 +156,15 @@ Public Module ToolPrompts
                     W("4) [GlitterColor] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("GlitterColor255Colors"))
                     W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Lines255Colors"))
                     W("6) [Dissolve] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Dissolve255Colors"))
-                    W("7) [ColorMix] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMixTrueColor"))
-                    W("8) [Disco] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DiscoTrueColor"))
-                    W("9) [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("GlitterColorTrueColor"))
-                    W("10) [Lines] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("LinesTrueColor"))
-                    W("11) [Dissolve] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DissolveTrueColor"))
-                    W("12) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DiscoCycleColors"))
-                    W("13) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
+                    W("7) [BouncingBlock] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("BouncingBlock255Colors"))
+                    W("8) [ColorMix] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMixTrueColor"))
+                    W("9) [Disco] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DiscoTrueColor"))
+                    W("10) [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("GlitterColorTrueColor"))
+                    W("11) [Lines] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("LinesTrueColor"))
+                    W("12) [Dissolve] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DissolveTrueColor"))
+                    W("13) [BouncingBlock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("BouncingBlockTrueColor"))
+                    W("14) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DiscoCycleColors"))
+                    W("15) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
                 Case 7 'Misc
                     MaxOptions = 7
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -207,6 +219,11 @@ Public Module ToolPrompts
         End While
     End Sub
 
+    ''' <summary>
+    ''' Open a key.
+    ''' </summary>
+    ''' <param name="Section">Section number</param>
+    ''' <param name="KeyNumber">Key number</param>
     Sub OpenKey(ByVal Section As Double, ByVal KeyNumber As Integer)
         Dim MaxKeyOptions As Integer = 0
         Dim KeyFinished As Boolean
@@ -532,49 +549,63 @@ Public Module ToolPrompts
                             W(DoTranslation("Activates 255 color support for Dissolve.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 7 'ColorMix: Activate true colors
+                        Case 7 'BouncingBlock: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = "BouncingBlock255Colors"
+                            W(DoTranslation("Activates 255 color support for BouncingBlock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 8 'ColorMix: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "ColorMixTrueColor"
                             W(DoTranslation("Activates true color support for ColorMix.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 8 'Disco: Activate true colors
+                        Case 9 'Disco: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "DiscoTrueColor"
                             W(DoTranslation("Activates true color support for Disco.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 9 'GlitterColor: Activate true colors
+                        Case 10 'GlitterColor: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "GlitterColorTrueColor"
                             W(DoTranslation("Activates true color support for GlitterColor.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 10 'Lines: Activate true colors
+                        Case 11 'Lines: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "LinesTrueColor"
                             W(DoTranslation("Activates true color support for Lines.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 11 'Dissolve: Activate true colors
+                        Case 12 'Dissolve: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "DissolveTrueColor"
                             W(DoTranslation("Activates true color support for Dissolve.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 12 'Disco: Cycle colors
+                        Case 13 'BouncingBlock: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = "BouncingBlockTrueColor"
+                            W(DoTranslation("Activates true color support for BouncingBlock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 14 'Disco: Cycle colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = "DiscoCycleColors"
                             W(DoTranslation("Disco will cycle colors when enabled. Otherwise, select random colors.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 13 'Text shown
+                        Case 15 'BouncingText: Text shown
                             KeyType = SettingsKeyType.SString
                             KeyVar = "BouncingTextWrite"
                             W("*) " + DoTranslation("Write any text you want shown. Shorter is better.", currentLang), True, ColTypes.Neutral)
@@ -640,7 +671,9 @@ Public Module ToolPrompts
             'If user is on color selection screen, we'll give a user a confirmation.
             If Section = 4.7 Then
                 W(vbNewLine + "*) " + DoTranslation("Do these color choices look OK?", currentLang), True, ColTypes.Neutral)
+#Disable Warning BC42104
                 For Each ColorType As String In KeyVars.Keys
+#Enable Warning BC42104
                     W("   - {0}: ", False, ColTypes.HelpCmd, ColorType)
                     W(KeyVars(ColorType), True, ColTypes.HelpDef)
                 Next
@@ -751,6 +784,12 @@ Public Module ToolPrompts
         End While
     End Sub
 
+    'TODO: Make calls to this function use NameOf
+    ''' <summary>
+    ''' Sets the value of a variable to the new value dynamically
+    ''' </summary>
+    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+    ''' <param name="VariableValue">New value of variable</param>
     Public Sub SetValue(ByVal Variable As String, ByVal VariableValue As Object)
         'Get field for specified variable
         Dim TargetField As FieldInfo = GetField(Variable)
@@ -769,6 +808,12 @@ Public Module ToolPrompts
         End If
     End Sub
 
+    'TODO: Make calls to this function use NameOf
+    ''' <summary>
+    ''' Gets the value of a variable dynamically 
+    ''' </summary>
+    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+    ''' <returns>Value of a variable</returns>
     Public Function GetValue(ByVal Variable As String) As Object
         'Get field for specified variable
         Dim TargetField As FieldInfo = GetField(Variable)
@@ -788,6 +833,11 @@ Public Module ToolPrompts
         End If
     End Function
 
+    ''' <summary>
+    ''' Gets a field from variable name
+    ''' </summary>
+    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+    ''' <returns>Field information</returns>
     Public Function GetField(ByVal Variable As String) As FieldInfo
         'Get types of possible flag locations
         Dim TypeOfFlags As Type = GetType(Flags)

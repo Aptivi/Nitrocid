@@ -940,3 +940,5 @@ Responeu {0} per tornar enrere. En cas contrari, qualsevol resposta vol dir que 
 Estil de sol·licitud FTP
 Estil de sol·licitud de correu electrònic
 Estil de sol·licitud SFTP
+Activa el suport de 255 colors per a BouncingBlock.
+Activa el suport del color real per a BouncingBlock.

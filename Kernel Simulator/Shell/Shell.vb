@@ -205,6 +205,9 @@ Public Module Shell
                     If Not scriptCmd.EndsWith(".uesh") Then
                         scriptCmd += ".uesh"
                     End If
+                    If EnvironmentOSType.Contains("Windows") Then
+                        scriptCmd = scriptCmd.ReplaceAll({"\", "/", ":", "?", "*", """", "<", ">", "|"}, "")
+                    End If
                     scriptArgs.RemoveAt(0)
 
                     'Get the index of the first space
@@ -274,6 +277,9 @@ Public Module Shell
                     End If
                     If Not scriptCmd.EndsWith(".uesh") Then
                         scriptCmd += ".uesh"
+                    End If
+                    If EnvironmentOSType.Contains("Windows") Then
+                        scriptCmd = scriptCmd.ReplaceAll({"\", "/", ":", "?", "*", """", "<", ">", "|"}, "")
                     End If
                     scriptArgs.RemoveAt(0)
 
@@ -375,6 +381,11 @@ Public Module Shell
         StartCommandThread.Join()
     End Sub
 
+    ''' <summary>
+    ''' Handles executable output
+    ''' </summary>
+    ''' <param name="sendingProcess">Sender</param>
+    ''' <param name="outLine">Output</param>
     Private Sub ExecutableOutput(sendingProcess As Object, outLine As DataReceivedEventArgs)
         Wdbg("I", outLine.Data)
         W(outLine.Data, True, ColTypes.Neutral)

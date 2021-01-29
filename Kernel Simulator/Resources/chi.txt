@@ -940,3 +940,5 @@ Huídá {0} fǎnhuí. Fǒuzé, rènhé dá'àn jūn shì.
 FTP tíshì yàngshì
 yóujiàn tíshì yàngshì
 SFTP tíshì yàngshì
+Wèi BouncingBlock jīhuó 255 zhǒng yánsè zhīchí.
+Jīhuó duì BouncingBlock de zhēn cǎisè zhīchí.

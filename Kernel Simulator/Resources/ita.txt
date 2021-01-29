@@ -940,3 +940,5 @@ Rispondi {0} per tornare indietro. Altrimenti, qualsiasi risposta significa sì.
 Stile prompt FTP
 Stile messaggio di posta
 Stile prompt SFTP
+Attiva il supporto di 255 colori per BouncingBlock.
+Attiva il supporto true color per BouncingBlock.

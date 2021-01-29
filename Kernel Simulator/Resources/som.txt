@@ -940,3 +940,5 @@ Jawaab {0} inaad dib ugu laabato Haddii kale, jawaab kasta macnaheedu waa haa.
 Nooca FTP Degdega ah
 Nooca Boostada Degdega ah
 Nooca SFTP Degdega ah
+Waxay kicisaa taageerada midabka 255 ee BouncingBlock.
+Waxay kicisaa taageerada midabka runta ah ee BouncingBlock.

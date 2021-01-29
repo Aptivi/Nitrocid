@@ -940,3 +940,5 @@ Jawab {0} untuk kembali. Jika tidak, sebarang jawapan bermaksud ya.
 Gaya Prompt FTP
 Gaya Permintaan Mel
 Gaya Prompt SFTP
+Mengaktifkan sokongan warna 255 untuk BouncingBlock.
+Mengaktifkan sokongan warna sebenar untuk BouncingBlock.

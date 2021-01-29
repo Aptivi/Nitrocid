@@ -940,3 +940,5 @@ Wieġeb {0} biex tmur lura. Inkella, kwalunkwe tweġiba tfisser iva.
 Stil ta 'Prompt FTP
 Mail Prompt Style
 Stil ta 'Prompt SFTP
+Jattiva 255 appoġġ tal-kulur għal BouncingBlock.
+Jattiva l-appoġġ tal-kulur veru għal BouncingBlock.
