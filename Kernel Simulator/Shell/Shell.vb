@@ -381,6 +381,11 @@ Public Module Shell
         StartCommandThread.Join()
     End Sub
 
+    ''' <summary>
+    ''' Handles executable output
+    ''' </summary>
+    ''' <param name="sendingProcess">Sender</param>
+    ''' <param name="outLine">Output</param>
     Private Sub ExecutableOutput(sendingProcess As Object, outLine As DataReceivedEventArgs)
         Wdbg("I", outLine.Data)
         W(outLine.Data, True, ColTypes.Neutral)

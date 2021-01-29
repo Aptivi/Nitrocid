@@ -175,10 +175,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " chattr <file> +/-<attributes>", True, ColTypes.Neutral)
             W(DoTranslation("where <attributes> is one of the following:", currentLang) + vbNewLine, True, ColTypes.Neutral)
-            W("- Normal: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a normal file", currentLang), True, ColTypes.HelpDef)                   'Normal     = 128
-            W("- ReadOnly: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a read-only file", currentLang), True, ColTypes.HelpDef)              'ReadOnly   = 1
-            W("- Hidden: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a hidden file", currentLang), True, ColTypes.HelpDef)                   'Hidden     = 2
-            W("- Archive: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is an archive. Used for backups.", currentLang), True, ColTypes.HelpDef)  'Archive    = 32
+            W("- Normal: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a normal file", currentLang), True, ColTypes.HelpDef)                   'Normal   = 128
+            W("- ReadOnly: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a read-only file", currentLang), True, ColTypes.HelpDef)              'ReadOnly = 1
+            W("- Hidden: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a hidden file", currentLang), True, ColTypes.HelpDef)                   'Hidden   = 2
+            W("- Archive: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is an archive. Used for backups.", currentLang), True, ColTypes.HelpDef)  'Archive  = 32
 
         ElseIf command = "chdir" Then
 
