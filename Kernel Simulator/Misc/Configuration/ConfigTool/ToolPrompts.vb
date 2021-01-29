@@ -640,7 +640,9 @@ Public Module ToolPrompts
             'If user is on color selection screen, we'll give a user a confirmation.
             If Section = 4.7 Then
                 W(vbNewLine + "*) " + DoTranslation("Do these color choices look OK?", currentLang), True, ColTypes.Neutral)
+#Disable Warning BC42104
                 For Each ColorType As String In KeyVars.Keys
+#Enable Warning BC42104
                     W("   - {0}: ", False, ColTypes.HelpCmd, ColorType)
                     W(KeyVars(ColorType), True, ColTypes.HelpDef)
                 Next
