@@ -940,3 +940,5 @@ Vastaa {0} palataksesi takaisin. Muuten mikä tahansa vastaus tarkoittaa kyllä.
 FTP-kehotustyyli
 Postikehotustyyli
 SFTP-kehotustyyli
+Aktivoi 255 väritukea BouncingBlockille.
+Aktivoi todellisen värituen BouncingBlockille.

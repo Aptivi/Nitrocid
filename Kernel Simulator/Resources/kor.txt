@@ -940,3 +940,5 @@ dol-agalyeomyeon {0}lo daedabhaseyo. geuleohji anh-eumyeon modeun daedab-eun yel
 FTP peulompeuteu seutail
 meil peulompeuteu seutail
 SFTP peulompeuteu seutail
+BouncingBlocke daehan 255 saegsang jiwon-eul hwalseonghwahabnida.
+BouncingBlocke daehan teulu keolleo jiwon-eul hwalseonghwahabnida.

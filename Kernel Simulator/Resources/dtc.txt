@@ -940,3 +940,5 @@ Antwoord {0} om terug te gaan. Anders betekent elk antwoord ja.
 FTP-promptstijl
 E-mailpromptstijl
 SFTP-promptstijl
+Activeert 255 kleurenondersteuning voor BouncingBlock.
+Activeert echte kleurondersteuning voor BouncingBlock.

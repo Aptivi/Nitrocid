@@ -940,3 +940,5 @@ Answer {0} to go back. Otherwise, any answer means yes.
 FTP Prompt Style
 Mail Prompt Style
 SFTP Prompt Style
+Activates 255 color support for BouncingBlock.
+Activates true color support for BouncingBlock.

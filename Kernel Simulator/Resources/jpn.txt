@@ -940,3 +940,5 @@ Korera no iro no sentaku wa mondainai yō ni miemasu ka?
 FTP puronputosutairu
 mērupuronputosutairu
 SFTP puronputosutairu
+BouncingBlock no 255-shoku no sapōto o akutibu ni shimasu.
+BouncingBlock no to~urūkarāsapōto o akutibu ni shimasu.

@@ -940,3 +940,5 @@ Otvet'te {0}, chtoby vernut'sya. V protivnom sluchaye lyuboy otvet oznachayet da
 Stil' priglasheniya FTP
 Stil' pochtovoy podskazki
 Stil' podskazki SFTP
+Aktiviruyet podderzhku 255 tsvetov dlya BouncingBlock.
+Aktiviruyet podderzhku istinnogo tsveta dlya BouncingBlock.

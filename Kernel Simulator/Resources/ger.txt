@@ -940,3 +940,5 @@ Antworte {0}, um zurückzukehren. Ansonsten bedeutet jede Antwort ja.
 FTP-Eingabeaufforderungsstil
 Mail Prompt Style
 SFTP-Eingabeaufforderungsstil
+Aktiviert die 255-Farbunterstützung für BouncingBlock.
+Aktiviert die Echtfarbenunterstützung für BouncingBlock.

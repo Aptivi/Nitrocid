@@ -940,3 +940,5 @@ ping一个地址
 FTP提示样式
 邮件提示样式
 SFTP提示样式
+为BouncingBlock激活255种颜色支持。
+激活对BouncingBlock的真彩色支持。

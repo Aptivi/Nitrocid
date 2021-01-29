@@ -940,3 +940,5 @@ Răspundeți {0} pentru a reveni. În caz contrar, orice răspuns înseamnă da.
 FTP Prompt Style
 Stil de promptare prin e-mail
 Stil de prompt SFTP
+Activează suportul de 255 de culori pentru BouncingBlock.
+Activează suportul de culoare adevărată pentru BouncingBlock.

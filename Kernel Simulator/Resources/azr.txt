@@ -940,3 +940,5 @@ Geri qayıtmaq üçün {0} cavab verin. Əks təqdirdə, istənilən cavab bəli
 FTP İstemi Stili
 Poçt istəyi stili
 SFTP İstemi Stili
+BouncingBlock üçün 255 rəng dəstəyini aktivləşdirir.
+BouncingBlock üçün həqiqi rəng dəstəyini aktivləşdirir.

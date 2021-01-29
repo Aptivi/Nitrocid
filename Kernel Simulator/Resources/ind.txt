@@ -940,3 +940,5 @@ uttar {0} vaapas jaane ke lie. anyatha, kisee bhee uttar ka matalab haan hai.
 efateepee sheeghr shailee
 mel prompt stail
 sftp sheeghr shailee
+baunsingablok ke lie 255 rang samarthan sakriy karata hai.
+baunsingablok ke lie sahee rang samarthan sakriy karata hai.

@@ -940,3 +940,5 @@ Odpowiedz {0}, aby wrócić. W przeciwnym razie każda odpowiedź oznacza tak.
 Styl podpowiedzi FTP
 Styl monitów pocztowych
 Styl monitu SFTP
+Aktywuje obsługę 255 kolorów dla BouncingBlock.
+Aktywuje obsługę prawdziwego koloru dla BouncingBlock.

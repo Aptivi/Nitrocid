@@ -940,3 +940,5 @@ Jibu {0} kurudi nyuma. Vinginevyo, jibu lolote linamaanisha ndiyo.
 Mtindo wa Haraka wa FTP
 Mtindo wa Haraka wa Barua
 Mtindo wa Haraka wa SFTP
+Inamsha msaada wa rangi 255 kwa BouncingBlock.
+Inamsha msaada wa rangi ya kweli kwa BouncingBlock.

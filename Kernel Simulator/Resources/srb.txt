@@ -940,3 +940,5 @@ Odgovorite {0} za povratak. Inače, bilo koji odgovor znači da.
 FTP prompt stil
 Mail Prompt Stile
 SFTP prompt stil
+Aktivira 255 podrške u boji za BouncingBlock.
+Aktivira istinsku podršku u boji za BouncingBlock.

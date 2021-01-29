@@ -55,6 +55,6 @@ Module Flags
     Public ShowProgress As Boolean = True                       'Shows the progress bar while downloading using "get" command.
 
     'Private flags
-    Friend NotifyConfigError As Boolean                        'Notifies user as soon as the kernel finished booting if there is an error reading configuration.
+    Friend NotifyConfigError As Boolean                         'Notifies user as soon as the kernel finished booting if there is an error reading configuration.
 
 End Module

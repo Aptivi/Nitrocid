@@ -940,3 +940,5 @@ Odpovedzte {0} a vráťte sa späť. V opačnom prípade akákoľvek odpoveď zn
 Štýl výzvy FTP
 Štýl výzvy
 Štýl výzvy SFTP
+Aktivuje podporu 255 farieb pre BouncingBlock.
+Aktivuje podporu skutočných farieb pre BouncingBlock.
