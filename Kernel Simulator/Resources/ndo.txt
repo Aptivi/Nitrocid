@@ -942,3 +942,4 @@ Gaya Konfirmasi Surat
 Gaya Perintah SFTP
 Mengaktifkan 255 dukungan warna untuk BouncingBlock.
 Mengaktifkan dukungan warna sebenarnya untuk BouncingBlock.
+Mencoba mengakses jalur yang tidak valid.

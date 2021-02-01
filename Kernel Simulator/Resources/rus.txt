@@ -942,3 +942,4 @@ Stil' pochtovoy podskazki
 Stil' podskazki SFTP
 Aktiviruyet podderzhku 255 tsvetov dlya BouncingBlock.
 Aktiviruyet podderzhku istinnogo tsveta dlya BouncingBlock.
+Popytka poluchit' dostup k nevernomu puti.

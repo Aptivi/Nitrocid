@@ -942,3 +942,4 @@ Mtindo wa Haraka wa Barua
 Mtindo wa Haraka wa SFTP
 Inamsha msaada wa rangi 255 kwa BouncingBlock.
 Inamsha msaada wa rangi ya kweli kwa BouncingBlock.
+Kujaribu kufikia njia batili.

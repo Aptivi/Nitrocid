@@ -942,3 +942,4 @@ Style d'invite de courrier
 Style d'invite SFTP
 Active la prise en charge de 255 couleurs pour BouncingBlock.
 Active la vraie prise en charge des couleurs pour BouncingBlock.
+Tentative d'accès à un chemin non valide.

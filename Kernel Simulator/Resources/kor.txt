@@ -942,3 +942,4 @@ meil peulompeuteu seutail
 SFTP peulompeuteu seutail
 BouncingBlocke daehan 255 saegsang jiwon-eul hwalseonghwahabnida.
 BouncingBlocke daehan teulu keolleo jiwon-eul hwalseonghwahabnida.
+jalmosdoen gyeonglo-e aegseseuhalyeogohabnida.

@@ -942,3 +942,4 @@ Styl výzvy
 Styl výzvy SFTP
 Aktivuje podporu 255 barev pro BouncingBlock.
 Aktivuje podporu skutečných barev pro BouncingBlock.
+Pokus o přístup k neplatné cestě.

@@ -942,3 +942,4 @@ Mail Prompt Style
 Stil ta 'Prompt SFTP
 Jattiva 255 appoġġ tal-kulur għal BouncingBlock.
 Jattiva l-appoġġ tal-kulur veru għal BouncingBlock.
+Tipprova taċċessa triq invalida.

@@ -942,3 +942,4 @@ E-mailpromptstijl
 SFTP-promptstijl
 Activeert 255 kleurenondersteuning voor BouncingBlock.
 Activeert echte kleurondersteuning voor BouncingBlock.
+Probeert toegang te krijgen tot een ongeldig pad.

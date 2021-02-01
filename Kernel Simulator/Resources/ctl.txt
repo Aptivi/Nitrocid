@@ -942,3 +942,4 @@ Estil de sol·licitud de correu electrònic
 Estil de sol·licitud SFTP
 Activa el suport de 255 colors per a BouncingBlock.
 Activa el suport del color real per a BouncingBlock.
+S'està intentant accedir a un camí no vàlid.

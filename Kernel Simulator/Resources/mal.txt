@@ -942,3 +942,4 @@ Gaya Permintaan Mel
 Gaya Prompt SFTP
 Mengaktifkan sokongan warna 255 untuk BouncingBlock.
 Mengaktifkan sokongan warna sebenar untuk BouncingBlock.
+Mencuba jalan masuk yang tidak sah.

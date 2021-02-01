@@ -942,3 +942,4 @@ Kiểu Lời nhắc Thư
 Kiểu nhắc SFTP
 Kích hoạt hỗ trợ 255 màu cho BouncingBlock.
 Kích hoạt hỗ trợ màu sắc trung thực cho BouncingBlock.
+Đang cố gắng truy cập đường dẫn không hợp lệ.

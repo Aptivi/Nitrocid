@@ -942,3 +942,4 @@ Styl monitów pocztowych
 Styl monitu SFTP
 Aktywuje obsługę 255 kolorów dla BouncingBlock.
 Aktywuje obsługę prawdziwego koloru dla BouncingBlock.
+Próbuję uzyskać dostęp do nieprawidłowej ścieżki.
