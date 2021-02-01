@@ -942,3 +942,4 @@ Mail Prompt Style
 SFTP-Eingabeaufforderungsstil
 Aktiviert die 255-Farbunterstützung für BouncingBlock.
 Aktiviert die Echtfarbenunterstützung für BouncingBlock.
+Versuch, auf einen ungültigen Pfad zuzugreifen.

@@ -942,3 +942,4 @@ Stil upita za poštu
 SFTP promptni stil
 Aktivira 255 podrške u boji za BouncingBlock.
 Aktivira istinsku podršku u boji za BouncingBlock.
+Pokušaj pristupa nevažećoj putanji.

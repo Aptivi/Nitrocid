@@ -942,3 +942,4 @@ Stile messaggio di posta
 Stile prompt SFTP
 Attiva il supporto di 255 colori per BouncingBlock.
 Attiva il supporto true color per BouncingBlock.
+Tentativo di accesso a un percorso non valido.

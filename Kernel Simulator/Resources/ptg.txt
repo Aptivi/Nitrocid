@@ -942,3 +942,4 @@ Estilo do prompt de correio
 Estilo de solicitação de SFTP
 Ativa o suporte de 255 cores para BouncingBlock.
 Ativa o suporte true color para BouncingBlock.
+Tentando acessar um caminho inválido.

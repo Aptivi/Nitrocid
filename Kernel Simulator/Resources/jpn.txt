@@ -942,3 +942,4 @@ mērupuronputosutairu
 SFTP puronputosutairu
 BouncingBlock no 255-shoku no sapōto o akutibu ni shimasu.
 BouncingBlock no to~urūkarāsapōto o akutibu ni shimasu.
+Mukōna pasu ni akusesu shiyou to shite imasu.

@@ -942,3 +942,4 @@ FTP提示样式
 SFTP提示样式
 为BouncingBlock激活255种颜色支持。
 激活对BouncingBlock的真彩色支持。
+尝试访问无效路径。

@@ -942,3 +942,4 @@ Estilo de mensaje de correo
 Estilo de mensaje SFTP
 Activa el soporte de 255 colores para BouncingBlock.
 Activa el soporte de color verdadero para BouncingBlock.
+Intentando acceder a una ruta no válida.

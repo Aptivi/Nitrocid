@@ -942,3 +942,4 @@ E-postmeddelandestil
 SFTP Prompt Style
 Aktiverar 255 färgstöd för BouncingBlock.
 Aktiverar äkta färgstöd för BouncingBlock.
+Försöker komma åt ogiltig sökväg.

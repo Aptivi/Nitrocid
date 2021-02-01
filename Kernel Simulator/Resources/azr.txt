@@ -942,3 +942,4 @@ Poçt istəyi stili
 SFTP İstemi Stili
 BouncingBlock üçün 255 rəng dəstəyini aktivləşdirir.
 BouncingBlock üçün həqiqi rəng dəstəyini aktivləşdirir.
+Etibarsız yola girməyə çalışırıq.

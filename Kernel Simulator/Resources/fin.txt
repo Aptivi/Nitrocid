@@ -942,3 +942,4 @@ Postikehotustyyli
 SFTP-kehotustyyli
 Aktivoi 255 väritukea BouncingBlockille.
 Aktivoi todellisen värituen BouncingBlockille.
+Yritetään käyttää virheellistä polkua.

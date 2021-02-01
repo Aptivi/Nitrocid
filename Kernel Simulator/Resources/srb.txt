@@ -942,3 +942,4 @@ Mail Prompt Stile
 SFTP prompt stil
 Aktivira 255 podrške u boji za BouncingBlock.
 Aktivira istinsku podršku u boji za BouncingBlock.
+Pokušaj pristupa nevažećoj putanji.

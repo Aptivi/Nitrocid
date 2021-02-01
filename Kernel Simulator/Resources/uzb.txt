@@ -942,3 +942,4 @@ Pochta xabarlari uslubi
 SFTP tezkor uslubi
 BouncingBlock uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
 BouncingBlock uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+Noto'g'ri yo'lga kirishga urinish.
