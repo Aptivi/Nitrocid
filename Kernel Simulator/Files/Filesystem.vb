@@ -47,11 +47,13 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="filename">Full path to file</param>
     Public Sub ReadContents(ByVal filename As String)
+#If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If EnvironmentOSType.Contains("Windows") And (filename.Contains("$i30") Or filename.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", filename)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
         End If
+#End If
 
         'Read the contents
         Using FStream As New StreamReader(filename)
@@ -69,11 +71,13 @@ Public Module Filesystem
     Public Sub List(ByVal folder As String)
         Wdbg("I", "Folder {0} will be checked if it is empty or equals CurrDir ({1})...", folder, CurrDir)
 
+#If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If EnvironmentOSType.Contains("Windows") And (folder.Contains("$i30") Or folder.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", folder)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
         End If
+#End If
 
         'List files and folders
         If Directory.Exists(folder) Then
@@ -144,11 +148,13 @@ Public Module Filesystem
     ''' <param name="Path">Target path, be it a file or a folder</param>
     ''' <returns>Absolute path</returns>
     Public Function NeutralizePath(ByVal Path As String)
+#If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If EnvironmentOSType.Contains("Windows") And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", Path)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
         End If
+#End If
 
         'Replace backslashes with slashes if any.
         Path = Path.Replace("\", "/")
@@ -178,12 +184,14 @@ Public Module Filesystem
     ''' <param name="Source">Source path in which the target is found. Must be a directory</param>
     ''' <returns>Absolute path</returns>
     Public Function NeutralizePath(ByVal Path As String, ByVal Source As String)
+#If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If EnvironmentOSType.Contains("Windows") And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect") Or
                                                       Source.Contains("$i30") Or Source.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", Path)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
         End If
+#End If
 
         'Replace backslashes with slashes if any.
         Path = Path.Replace("\", "/")
@@ -504,11 +512,13 @@ Public Module Filesystem
     ''' <param name="path">Path to file</param>
     ''' <returns>Array of lines</returns>
     Public Function ReadAllLinesNoBlock(ByVal path As String) As String()
+#If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If EnvironmentOSType.Contains("Windows") And (path.Contains("$i30") Or path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", path)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
         End If
+#End If
 
         'Read all the lines, bypassing the restrictions.
         Dim AllLnList As New List(Of String)
