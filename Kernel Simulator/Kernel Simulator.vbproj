@@ -248,8 +248,19 @@
     <Compile Include="Misc\Probers\MOTDParse.vb" />
     <Compile Include="Misc\Probers\PlaceParse.vb" />
     <Compile Include="Misc\Configuration\Config.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Dissolve.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Custom.vb" />
+    <Compile Include="Misc\Screensaver\Displays\BouncingBlock.vb" />
+    <Compile Include="Misc\Screensaver\Displays\BouncingText.vb" />
+    <Compile Include="Misc\Screensaver\Displays\HackUserFromAD.vb" />
+    <Compile Include="Misc\Screensaver\Displays\AptErrorSim.vb" />
+    <Compile Include="Misc\Screensaver\Displays\GlitterColor.vb" />
+    <Compile Include="Misc\Screensaver\Displays\GlitterMatrix.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Lines.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Disco.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Matrix.vb" />
+    <Compile Include="Misc\Screensaver\Displays\ColorMix.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
-    <Compile Include="Misc\Screensaver\ScreensaverDisplays.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
     <Compile Include="Misc\Scripts\BeepSynth.vb" />
     <Compile Include="Misc\StringEvaluators.vb" />
@@ -397,6 +408,7 @@
   <ItemGroup>
     <None Include="Resources\wls.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PreBuildEvent>echo "Building $(ProjectName) with config $(ConfigurationName) for $(PlatformName) in $(TargetDir)..."</PreBuildEvent>
