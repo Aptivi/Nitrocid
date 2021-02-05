@@ -34,7 +34,7 @@ Public Module Color
 
     'Templates array (available ones)
     Public colorTemplates() As String = {"Default", "RedConsole", "Bluespire", "Hacker", "Ubuntu", "YellowFG", "YellowBG", "Windows95", "GTASA", "GrayOnYellow",
-                                         "BlackOnWhite", "Debian", "NFSHP-Cop", "NFSHP-Racer", "LinuxUncolored", "LinuxColoredDef"}
+                                         "BlackOnWhite", "Debian", "NFSHP-Cop", "NFSHP-Racer", "TealerOS", "BedOS", "3Y-Diamond", "LinuxUncolored", "LinuxColoredDef"}
 
     'Variables for the "Default" theme
     Public inputColorDef As ConsoleColors = inputColor
@@ -231,6 +231,48 @@ Public Module Color
     Public cmdDefColorNFSHPR As ConsoleColors = ConsoleColors.White
     Public stageColorNFSHPR As ConsoleColors = ConsoleColors.Yellow3_d7d700
     Public errorColorNFSHPR As ConsoleColors = ConsoleColors.DarkRed_870000
+
+    'Variables for the "TealerOS" theme
+    Public inputColorTOS As ConsoleColors = ConsoleColors.SkyBlue3
+    Public licenseColorTOS As ConsoleColors = ConsoleColors.SkyBlue3
+    Public contKernelErrorColorTOS As ConsoleColors = ConsoleColors.DeepSkyBlue4_005f5f
+    Public uncontKernelErrorColorTOS As ConsoleColors = ConsoleColors.DeepSkyBlue4_005f5f
+    Public hostNameShellColorTOS As ConsoleColors = ConsoleColors.DeepSkyBlue4_005f5f
+    Public userNameShellColorTOS As ConsoleColors = ConsoleColors.SkyBlue3
+    Public backgroundColorTOS As ConsoleColors = ConsoleColors.Black
+    Public neutralTextColorTOS As ConsoleColors = ConsoleColors.SkyBlue3
+    Public cmdListColorTOS As ConsoleColors = ConsoleColors.DeepSkyBlue4_005f5f
+    Public cmdDefColorTOS As ConsoleColors = ConsoleColors.SkyBlue3
+    Public stageColorTOS As ConsoleColors = ConsoleColors.MediumTurquoise
+    Public errorColorTOS As ConsoleColors = ConsoleColors.DeepSkyBlue4_005f5f
+
+    'Variables for the "BedOS" theme
+    Public inputColorBOS As ConsoleColors = ConsoleColors.SkyBlue3
+    Public licenseColorBOS As ConsoleColors = ConsoleColors.Violet
+    Public contKernelErrorColorBOS As ConsoleColors = ConsoleColors.OrangeRed1
+    Public uncontKernelErrorColorBOS As ConsoleColors = ConsoleColors.OrangeRed1
+    Public hostNameShellColorBOS As ConsoleColors = ConsoleColors.DarkOrange3
+    Public userNameShellColorBOS As ConsoleColors = ConsoleColors.OrangeRed1
+    Public backgroundColorBOS As ConsoleColors = ConsoleColors.Black
+    Public neutralTextColorBOS As ConsoleColors = ConsoleColors.Violet
+    Public cmdListColorBOS As ConsoleColors = ConsoleColors.Blue
+    Public cmdDefColorBOS As ConsoleColors = ConsoleColors.MediumTurquoise
+    Public stageColorBOS As ConsoleColors = ConsoleColors.MediumTurquoise
+    Public errorColorBOS As ConsoleColors = ConsoleColors.OrangeRed1
+
+    'Variables for the "3Y-Diamond" theme
+    Public inputColor3YD As ConsoleColors = ConsoleColors.MediumPurple4
+    Public licenseColor3YD As ConsoleColors = ConsoleColors.DarkOliveGreen3_87d75f
+    Public contKernelErrorColor3YD As ConsoleColors = ConsoleColors.LightSteelBlue3
+    Public uncontKernelErrorColor3YD As ConsoleColors = ConsoleColors.LightSteelBlue3
+    Public hostNameShellColor3YD As ConsoleColors = ConsoleColors.MediumPurple4
+    Public userNameShellColor3YD As ConsoleColors = ConsoleColors.SpringGreen3_00af5f
+    Public backgroundColor3YD As ConsoleColors = ConsoleColors.Black
+    Public neutralTextColor3YD As ConsoleColors = ConsoleColors.DarkOliveGreen3_87d75f
+    Public cmdListColor3YD As ConsoleColors = ConsoleColors.DarkOliveGreen3_87d75f
+    Public cmdDefColor3YD As ConsoleColors = ConsoleColors.SpringGreen3_00af5f
+    Public stageColor3YD As ConsoleColors = ConsoleColors.LightSteelBlue3
+    Public errorColor3YD As ConsoleColors = ConsoleColors.LightSteelBlue3
 
     'Variables for the "LinuxUncolored" theme
     Public inputColorLUnc As ConsoleColors = ConsoleColors.Gray
@@ -489,6 +531,48 @@ Public Module Color
                 cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorNFSHPR), ConsoleColors)
                 stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorNFSHPR), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorNFSHPR), ConsoleColors)
+                LoadBack()
+            ElseIf theme = "TealerOS" Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorTOS), ConsoleColors)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorTOS), ConsoleColors)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), contKernelErrorColorTOS), ConsoleColors)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), uncontKernelErrorColorTOS), ConsoleColors)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), hostNameShellColorTOS), ConsoleColors)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), userNameShellColorTOS), ConsoleColors)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), backgroundColorTOS), ConsoleColors)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), neutralTextColorTOS), ConsoleColors)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorTOS), ConsoleColors)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorTOS), ConsoleColors)
+                stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorTOS), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorTOS), ConsoleColors)
+                LoadBack()
+            ElseIf theme = "BedOS" Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorBOS), ConsoleColors)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColorBOS), ConsoleColors)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), contKernelErrorColorBOS), ConsoleColors)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), uncontKernelErrorColorBOS), ConsoleColors)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), hostNameShellColorBOS), ConsoleColors)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), userNameShellColorBOS), ConsoleColors)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), backgroundColorBOS), ConsoleColors)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), neutralTextColorBOS), ConsoleColors)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColorBOS), ConsoleColors)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColorBOS), ConsoleColors)
+                stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColorBOS), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColorBOS), ConsoleColors)
+                LoadBack()
+            ElseIf theme = "3Y-Diamond" Then
+                inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColor3YD), ConsoleColors)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), licenseColor3YD), ConsoleColors)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), contKernelErrorColor3YD), ConsoleColors)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), uncontKernelErrorColor3YD), ConsoleColors)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), hostNameShellColor3YD), ConsoleColors)
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), userNameShellColor3YD), ConsoleColors)
+                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), backgroundColor3YD), ConsoleColors)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), neutralTextColor3YD), ConsoleColors)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), cmdListColor3YD), ConsoleColors)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), cmdDefColor3YD), ConsoleColors)
+                stageColor = CType([Enum].Parse(GetType(ConsoleColors), stageColor3YD), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), errorColor3YD), ConsoleColors)
                 LoadBack()
             ElseIf theme = "LinuxUncolored" Then
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), inputColorLUnc), ConsoleColors)
@@ -754,6 +838,48 @@ Public Module Color
                ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorNFSHPR.ToString Then
             Wdbg("I", "Theme set to Need for Speed: Hot Pursuit (Racer)")
             currentTheme = "NFSHP-Racer"
+        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("License Color").Value = licenseColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("Input Color").Value = inputColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorTOS.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorTOS.ToString Then
+            Wdbg("I", "Theme set to TealerOS")
+            currentTheme = "TealerOS"
+        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("License Color").Value = licenseColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("Input Color").Value = inputColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColorBOS.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColorBOS.ToString Then
+            Wdbg("I", "Theme set to BedOS")
+            currentTheme = "BedOS"
+        ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("License Color").Value = licenseColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("Input Color").Value = inputColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColor3YD.ToString And
+               ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColor3YD.ToString Then
+            Wdbg("I", "Theme set to 3Y-Diamond OS")
+            currentTheme = "3Y-Diamond"
         ElseIf ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColorLUnc.ToString And
                ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColorLUnc.ToString And
