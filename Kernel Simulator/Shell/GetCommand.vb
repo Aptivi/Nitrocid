@@ -1153,9 +1153,15 @@ Public Module GetCommand
                     W(DoTranslation("Enter your API key:", currentLang) + " ", False, ColTypes.Input)
                     APIKey = ReadLineNoInput("*")
                     Console.WriteLine()
-                    Dim WeatherInfo As ForecastInfo = GetWeatherInfo(eqargs(0), APIKey, PreferredUnit)
+                    Dim WeatherInfo As ForecastInfo
                     Dim WeatherSpecifier As String = "°"
                     Dim WindSpeedSpecifier As String = "m.s"
+                    If IsNumeric(eqargs(0)) Then
+                        WeatherInfo = GetWeatherInfo(CLng(eqargs(0)), APIKey, PreferredUnit)
+                    Else
+                        WeatherInfo = GetWeatherInfo(eqargs(0), APIKey, PreferredUnit)
+                    End If
+                    Wdbg("I", "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID)
                     W(DoTranslation("-- Weather info for {0} --", currentLang), True, ColTypes.Stage, WeatherInfo.CityName)
                     W(DoTranslation("Weather: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Weather)
                     If WeatherInfo.TemperatureMeasurement = UnitMeasurement.Metric Then
