@@ -428,6 +428,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Orduithe ar fáil: {0}
+        '''Scríobh ordú:
+        '''Tá instealladh ordaithe curtha ar ceal.
+        '''Argóintí tosaithe ar leithligh le camóga gan spásanna, mar shampla, &apos;motd, gpuprobe&apos;
+        '''Orduithe ar leithligh ar &apos;cmdinject&apos; le colúin le spásanna, mar shampla, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Tabhair faoi deara nach gclúdaíonn an argóint ‘dífhabhtaithe’ an t-eithne go hiomlán.
+        '''bargs: Ní fhaightear an argóint iarrtha {0}.
+        '''bargs: Earráid neamh-inghnóthaithe san argóint:
+        '''Argóintí atá ar fáil: {0}
+        '''Argóintí (&apos;cabhair&apos;  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property iri() As String
+            Get
+                Return ResourceManager.GetString("iri", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Comandi disponibili: {0}
         '''Scrivi il comando:
         '''L&apos;iniezione del comando أ¨ stata annullata.
@@ -904,6 +922,24 @@ Namespace My.Resources
         Public ReadOnly Property vtn() As String
             Get
                 Return ResourceManager.GetString("vtn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Gorchmynion sydd ar gael: {0}
+        '''Ysgrifennwch orchymyn:
+        '''Mae chwistrelliad gorchymyn wedi&apos;i ganslo.
+        '''Dadleuon cist ar wahân gyda choma heb ofodau, er enghraifft, &apos;motd, gpuprobe&apos;
+        '''Gorchmynion ar wahân ar &apos;cmdinject&apos; gyda cholonau gyda bylchau, er enghraifft, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Sylwch nad yw&apos;r ddadl &apos;dadfygio&apos; yn cwmpasu&apos;r cnewyllyn yn llawn.
+        '''bargs: Ni cheir hyd i&apos;r ddadl y gofynnwyd amdani {0}.
+        '''bargs: Gwall anadferadwy mewn dadl:
+        '''Dadleuon sydd ar gael: {0}
+        '''Dadleuon (&apos;help&apos; am hel [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property wls() As String
+            Get
+                Return ResourceManager.GetString("wls", resourceCulture)
             End Get
         End Property
     End Module

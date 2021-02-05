@@ -391,7 +391,12 @@
     <None Include="iconfinder_applications-utilities_8840.ico" Pack="true" PackagePath="\" />
     <None Include="iconfinder_applications-utilities_8840.png" Pack="true" PackagePath="\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\iri.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wls.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PreBuildEvent>echo "Building $(ProjectName) with config $(ConfigurationName) for $(PlatformName) in $(TargetDir)..."</PreBuildEvent>
