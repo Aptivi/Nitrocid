@@ -145,6 +145,8 @@ Public Module Kernel
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
                 ElseIf LoginFlag = True And maintenance = True Then
+                    ReadMOTDFromFile(MessageType.MOTD)
+                    ReadMOTDFromFile(MessageType.MAL)
                     LoginFlag = False
                     W(DoTranslation("Enter the admin password for maintenance.", currentLang), True, ColTypes.Neutral)
                     answeruser = "root"
