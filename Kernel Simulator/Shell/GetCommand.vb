@@ -189,6 +189,7 @@ Public Module GetCommand
                     Try
                         ProbeSynth(eqargs(0))
                     Catch ex As Exception
+                        WStkTrc(ex)
                         W(ex.Message, True, ColTypes.Err)
                     End Try
                     Done = True
@@ -197,13 +198,18 @@ Public Module GetCommand
             ElseIf words(0) = "calc" Then
 
                 If eqargs?.Count > 0 Then
-                    Dim Res As Dictionary(Of Double, Boolean) = DoCalc(strArgs)
-                    Wdbg("I", "Res.Values(0) = {0}", Res.Values(0))
-                    If Not Res.Values(0) Then 'If there is an error in calculation
+                    Try
+                        Dim Res As String = Evaluate(strArgs)
+                        Wdbg("I", "Res = {0}", Res)
+                        If Res = "" Then 'If there is an error in calculation
+                            W(DoTranslation("Error in calculation.", currentLang), True, ColTypes.Err)
+                        Else 'Calculation done
+                            W(strArgs + " = " + Res, True, ColTypes.Neutral)
+                        End If
+                    Catch ex As Exception
+                        WStkTrc(ex)
                         W(DoTranslation("Error in calculation.", currentLang), True, ColTypes.Err)
-                    Else 'Calculation done
-                        W(strArgs + " = " + CStr(Res.Keys(0)), True, ColTypes.Neutral)
-                    End If
+                    End Try
                     Done = True
                 End If
 
