@@ -268,7 +268,6 @@
     <Compile Include="Misc\TextEdit\TextEditHelpSystem.vb" />
     <Compile Include="Misc\TextEdit\TextEditShell.vb" />
     <Compile Include="Misc\TextEdit\TextEditTools.vb" />
-    <Compile Include="Misc\Writers\DebugLogPrint.vb" />
     <Compile Include="Misc\Writers\DebugWriters.vb" />
     <Compile Include="Misc\Writers\TextWriterColor.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />

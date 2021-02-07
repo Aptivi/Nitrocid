@@ -385,7 +385,19 @@ Public Module GetCommand
 
             ElseIf requestedCommand = "debuglog" Then
 
-                PrintLog()
+                Dim line As String
+                Try
+                    Using dbglog = File.Open(paths("Debugging"), FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
+                        line = reader.ReadLine()
+                        Do While reader.EndOfStream <> True
+                            W(line, True, ColTypes.Neutral)
+                            line = reader.ReadLine
+                        Loop
+                    End Using
+                Catch ex As Exception
+                    W(DoTranslation("Debug log not found", currentLang), True, ColTypes.Err)
+                    WStkTrc(ex)
+                End Try
                 Done = True
 
             ElseIf words(0) = "dirinfo" Then
