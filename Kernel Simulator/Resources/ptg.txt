@@ -530,12 +530,12 @@ Erros nos pacotes recebidos:
 Propriedades gerais do IPv6
 Propriedades gerais do IPv4
 Executa remotamente um comando para PC remoto
-- Estágio 0: inicialização do sistema
-- Etapa 1: detecção de hardware
-- Etapa 2: gerenciamento interno de nome de usuário
-- Etapa 3: detecção de mods e protetores de tela
-- Etapa 4: coleta de lixo
-- Etapa 5: faça o login
+- Estágio 1: inicialização do sistema
+- Estágio 2: detecção de hardware
+- Estágio 2: gerenciamento interno de nome de usuário
+- Estágio 3: detecção de mods e protetores de tela
+- Estágio 4: coleta de lixo
+- Estágio 4: faça o login
 Antes da coleta de lixo: {0} bytes
 Após a coleta de lixo: {0} bytes
 Erro ao iniciar o RPC: {0}

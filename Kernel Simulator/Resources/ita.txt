@@ -530,12 +530,12 @@ Errori nei pacchetti ricevuti:
 Proprietà generali IPv6
 Proprietà generali di IPv4
 Esegue da remoto un comando sul PC remoto
-- Fase 0: inizializzazione del sistema
-- Fase 1: rilevamento dell'hardware
+- Fase 1: inizializzazione del sistema
+- Fase 2: rilevamento dell'hardware
 - Fase 2: gestione interna del nome utente
 - Fase 3: rilevamento di mod e screensaver
 - Fase 4: raccolta dei rifiuti
-- Fase 5: accesso
+- Fase 4: accesso
 Prima della garbage collection: {0} byte
 Dopo la garbage collection: {0} byte
 Errore durante l'avvio di RPC: {0}

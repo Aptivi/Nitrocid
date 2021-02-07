@@ -530,12 +530,12 @@ Pakketti ('il barra):
 Propjetajiet ġenerali tal-IPv6
 Propjetajiet ġenerali tal-IPv4
 Teżegwixxi kmand mill-bogħod fuq PC remot
-- Stadju 0: Inizjalizzazzjoni tas-sistema
-- Stadju 1: Sejbien tal-Hardware
+- Stadju 1: Inizjalizzazzjoni tas-sistema
+- Stadju 2: Sejbien tal-Hardware
 - Stadju 2: Ġestjoni interna tal-username
 - Stadju 3: Kxif ta 'mods u screensavers
 - Stadju 4: Ġbir taż-żibel
-- Stadju 5: Idħol
+- Stadju 4: Idħol
 Qabel il-ġbir taż-żibel: {0} bytes
 Wara l-ġbir taż-żibel: {0} bytes
 Żball fil-bidu tal-RPC: {0}

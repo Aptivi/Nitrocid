@@ -530,12 +530,12 @@ Gwallau mewn pecynnau a dderbyniwyd:
 Priodweddau IPv6 cyffredinol
 Priodweddau IPv4 cyffredinol
 Yn gweithredu gorchymyn i gyfrifiadur personol o bell
-- Cam 0: Cychwyn system
-- Cam 1: Canfod caledwedd
+- Cam 1: Cychwyn system
+- Cam 2: Canfod caledwedd
 - Cam 2: Rheoli enw defnyddiwr mewnol
 - Cam 3: Canfod mods a arbedwyr sgrin
 - Cam 4: Casgliad sothach
-- Cam 5: Mewngofnodi
+- Cam 4: Mewngofnodi
 Cyn casglu sbwriel: {0} beit
 Ar ôl casglu sbwriel: {0} beit
 Gwall wrth gychwyn RPC: {0}

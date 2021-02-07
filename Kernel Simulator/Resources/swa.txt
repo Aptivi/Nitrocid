@@ -530,12 +530,12 @@ Makosa katika pakiti zilizopokelewa:
 Mali ya jumla ya IPv6
 Mali ya jumla ya IPv4
 Kwa mbali hufanya amri kwa PC ya mbali
-- Hatua ya 0: Uanzishaji wa mfumo
-- Hatua ya 1: Kugundua vifaa
+- Hatua ya 1: Uanzishaji wa mfumo
+- Hatua ya 2: Kugundua vifaa
 - Hatua ya 2: Usimamizi wa jina la mtumiaji la ndani
 - Hatua ya 3: Kugundua mods na skrini
 - Hatua ya 4: Ukusanyaji wa takataka
-- Hatua ya 5: Ingia
+- Hatua ya 4: Ingia
 Kabla ya kukusanya takataka: {0} baiti
 Baada ya kukusanya takataka: {0} baiti
 Hitilafu wakati wa kuanzisha RPC: {0}

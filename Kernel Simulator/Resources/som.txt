@@ -530,12 +530,12 @@ Khaladaadka ku jira baakadaha la helay:
 Guryaha guud IPv6
 Guud ahaan guryaha IPv4
 Meel fog ayaa amar ka qaata PC-ga fog
-- Marxaladda 0: Bilaabidda nidaamka
-- Marxaladda 1: Ogaanshaha qalabka
+- Marxaladda 1: Bilaabidda nidaamka
+- Marxaladda 2: Ogaanshaha qalabka
 - Marxaladda 2: Maareynta magaca isticmaale ee gudaha
 - Marxaladda 3: Hababka iyo ogaanshaha shaashadaha
-- Marxaladda 4aad: Qaadista qashinka
-- Marxaladda 5: Soo gal
+- Marxaladda 4: Qaadista qashinka
+- Marxaladda 4: Soo gal
 Qashinka ururinta kahor: {0} bytes
 Qashin ururinta kadib: {0} bytes
 Cilad bilaabida RPC: {0}

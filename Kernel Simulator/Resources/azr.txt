@@ -530,12 +530,12 @@ Alınan paketlərdə səhvlər:
 Ümumi IPv6 xüsusiyyətləri
 Ümumi IPv4 xüsusiyyətləri
 Uzaqdan uzaq kompüterə bir əmr yerinə yetirir
-- Mərhələ 0: Sistem başlatma
-- Mərhələ 1: Avadanlıq aşkarlanması
+- Mərhələ 1: Sistem başlatma
+- Mərhələ 2: Avadanlıq aşkarlanması
 - Mərhələ 2: Daxili istifadəçi adının idarə edilməsi
 - Mərhələ 3: Modlar və ekran qoruyucuların aşkarlanması
 - Mərhələ 4: Zibil toplama
-- Mərhələ 5: Giriş
+- Mərhələ 4: Giriş
 Zibil yığmadan əvvəl: {0} bayt
 Zibil toplandıqdan sonra: {0} bayt
 RPC başlama xətası: {0}

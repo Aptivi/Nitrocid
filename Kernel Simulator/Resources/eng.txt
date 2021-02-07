@@ -530,12 +530,12 @@ Errors in received packets:
 General IPv6 properties
 General IPv4 properties
 Remotely executes a command to remote PC
-- Stage 0: System initialization
-- Stage 1: Hardware detection
+- Stage 1: System initialization
+- Stage 2: Hardware detection
 - Stage 2: Internal username management
 - Stage 3: Mods and screensavers detection
 - Stage 4: Garbage collection
-- Stage 5: Log in
+- Stage 4: Log in
 Before garbage collection: {0} bytes
 After garbage collection: {0} bytes
 Error starting RPC: {0}

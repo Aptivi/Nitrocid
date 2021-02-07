@@ -530,12 +530,12 @@ Qabul qilingan paketlardagi xatolar:
 Umumiy IPv6 xususiyatlari
 Umumiy IPv4 xususiyatlari
 Masofadan kompyuterga masofadan turib buyruqni bajaradi
-- 0 bosqich: tizimni ishga tushirish
-- 1 bosqich: Uskunani aniqlash
-- 2-bosqich: Foydalanuvchi nomini boshqarish
-- 3-bosqich: Modlar va ekranni aniqlash
+- 1 bosqich: tizimni ishga tushirish
+- 2 bosqich: Uskunani aniqlash
+- 2 bosqich: Foydalanuvchi nomini boshqarish
+- 3 bosqich: Modlar va ekranni aniqlash
 - 4 bosqich: axlat yig'ish
-- 5 bosqich: Kirish
+- 4 bosqich: Kirish
 Axlat yig'ishdan oldin: {0} bayt
 Axlat yig'ilgandan keyin: {0} bayt
 RPC-ni ishga tushirishda xato: {0}

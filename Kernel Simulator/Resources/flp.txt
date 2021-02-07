@@ -530,12 +530,12 @@ Mga error sa natanggap na mga packet:
 Pangkalahatang mga pag-aari ng IPv6
 Pangkalahatang mga pag-aari ng IPv4
 Malayuan na nagpapatupad ng isang utos sa remote PC
-- Stage 0: Simula ng system
-- Yugto 1: Pagtuklas ng hardware
+- Yugto 1: Simula ng system
+- Yugto 2: Pagtuklas ng hardware
 - Yugto 2: Pamamahala sa panloob na username
-- Stage 3: Mga mod at pagtuklas ng mga screensaver
-- Stage 4: Koleksyon ng basura
-- Stage 5: Mag-log in
+- Yugto 3: Mga mod at pagtuklas ng mga screensaver
+- Yugto 4: Koleksyon ng basura
+- Yugto 4: Mag-log in
 Bago ang pagkolekta ng basura: {0} mga byte
 Pagkatapos ng koleksyon ng basura: {0} mga byte
 Error sa pagsisimula ng RPC: {0}

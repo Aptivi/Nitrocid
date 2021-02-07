@@ -530,12 +530,12 @@ Chyby v přijatých paketech:
 Obecné vlastnosti IPv6
 Obecné vlastnosti IPv4
 Vzdáleně provede příkaz na vzdálené PC
-- Stupeň 0: Inicializace systému
-- Fáze 1: Detekce hardwaru
-- Etapa 2: Interní správa uživatelských jmen
-- Etapa 3: Detekce režimů a spořičů obrazovky
-- Etapa 4: Odpadky
-- Fáze 5: Přihlaste se
+- Fáze 1: Inicializace systému
+- Fáze 2: Detekce hardwaru
+- Fáze 2: Interní správa uživatelských jmen
+- Fáze 3: Detekce režimů a spořičů obrazovky
+- Fáze 4: Odpadky
+- Fáze 4: Přihlaste se
 Před sběrem odpadu: {0} bajtů
 Po vyzvednutí odpadu: {0} bajtů
 Chyba při spuštění RPC: {0}

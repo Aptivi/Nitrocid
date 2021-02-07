@@ -530,12 +530,12 @@ Earráidí sna paicéid a fuarthas:
 Airíonna ginearálta IPv6
 Airíonna ginearálta IPv4
 Forghníomhaíonn cianda ordú go cianda ríomhaire
-- Céim 0: Tosú an chórais
-- Céim 1: Brath crua-earraí
+- Céim 1: Tosú an chórais
+- Céim 2: Brath crua-earraí
 - Céim 2: Bainistíocht inmheánach ainm úsáideora
 - Céim 3: Brath mods agus spárálaíscáileáin
 - Céim 4: Bailiúchán truflais
-- Céim 5: Logáil isteach
+- Céim 4: Logáil isteach
 Roimh bhailiú truflais: {0} beart
 Tar éis bailiú truflais: {0} beart
 Earráid ag tosú RPC: {0}

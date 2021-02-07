@@ -77,7 +77,8 @@ Public Module Kernel
                 If Not File.Exists(paths("Home") + "/MAL.txt") Then SetMOTD(DoTranslation("Logged in successfully as <user>", currentLang), MessageType.MAL)
 
                 'Initialize stage counter
-                W(vbNewLine + DoTranslation("- Stage 0: System initialization", currentLang), True, ColTypes.Stage)
+                W(vbNewLine + DoTranslation("- Stage 1: System initialization", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 1: Initializing system")
                 StartRDebugThread(True)
                 W(DoTranslation("Starting RPC...", currentLang), True, ColTypes.Neutral)
                 StartRPC()
@@ -92,13 +93,13 @@ Public Module Kernel
 #End If
 
                 'Phase 1: Probe hardware
-                W(vbNewLine + DoTranslation("- Stage 1: Hardware detection", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 1: Probing hardware")
+                W(vbNewLine + DoTranslation("- Stage 2: Hardware detection", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 2: Probing hardware")
                 StartProbing()
 
                 'Phase 2: Parse Mods and Screensavers
-                W(vbNewLine + DoTranslation("- Stage 2: Mods and screensavers detection", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 2: Parse mods and screensavers")
+                W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
                     ParseMods(True)
@@ -117,8 +118,8 @@ Public Module Kernel
                 EventManager.RaiseStartKernel()
 
                 'Phase 3: Log-in
-                W(vbNewLine + DoTranslation("- Stage 3: Log in", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 3: Log in")
+                W(vbNewLine + DoTranslation("- Stage 4: Log in", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
                 LoginFlag = True
                 If Not BootArgs Is Nothing Then

@@ -530,12 +530,12 @@ susin doen paekis-ui olyu :
 ilbanjeog-in IPv6 sogseong
 ilbanjeog-in IPv4 sogseong
 wongyeog PCe daehan myeonglyeong-eul wongyeog-eulo silhaeng
--0 dangye : siseutem chogihwa
--1 dangye : hadeuweeo gamji
--2 dangye : naebu sayongja ileum gwanli
--3 dangye : gaejo mich hwamyeon bohogi gamji
--4 dangye : sseulegi sugeo
--5 dangye : logeu-in
+- 1 dangye : siseutem chogihwa
+- 2 dangye : hadeuweeo gamji
+- 2 dangye : naebu sayongja ileum gwanli
+- 3 dangye : gaejo mich hwamyeon bohogi gamji
+- 4 dangye : sseulegi sugeo
+- 4 dangye : logeu-in
 gabiji sujib jeon : {0} baiteu
 gabiji sujib hu : {0} baiteu
 RPC sijag olyu : {0}

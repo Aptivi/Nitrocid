@@ -530,12 +530,12 @@ Błędy w odebranych pakietach:
 Ogólne właściwości IPv6
 Ogólne właściwości IPv4
 Zdalnie wykonuje polecenie na zdalnym komputerze
-- Etap 0: Inicjalizacja systemu
-- Etap 1: Wykrywanie sprzętu
+- Etap 1: Inicjalizacja systemu
+- Etap 2: Wykrywanie sprzętu
 - Etap 2: Wewnętrzne zarządzanie nazwą użytkownika
 - Etap 3: Wykrywanie modów i wygaszaczy ekranu
 - Etap 4: wywóz śmieci
-- Etap 5: Zaloguj się
+- Etap 4: Zaloguj się
 Przed wyrzucaniem elementów bezużytecznych: {0} bajtów
 Po wyrzuceniu elementów bezużytecznych: {0} bajtów
 Błąd uruchamiania RPC: {0}

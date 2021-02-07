@@ -530,12 +530,12 @@ Fehler in empfangenen Paketen:
 Allgemeine IPv6-Eigenschaften
 Allgemeine IPv4-Eigenschaften
 Führt einen Remote-Befehl an den Remote-PC aus
-- Stufe 0: Systeminitialisierung
-- Stufe 1: Hardwareerkennung
+- Stufe 1: Systeminitialisierung
+- Stufe 2: Hardwareerkennung
 - Stufe 2: Interne Benutzernamenverwaltung
 - Stufe 3: Erkennung von Mods und Bildschirmschonern
 - Stufe 4: Müllabfuhr
-- Stufe 5: Einloggen
+- Stufe 4: Einloggen
 Vor der Garbage Collection: {0} Bytes
 Nach der Garbage Collection: {0} Bytes
 Fehler beim Starten von RPC: {0}

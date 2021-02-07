@@ -530,12 +530,12 @@ praapt paiket mein trutiyaan:
 saamaany ipv6 gun
 saamaany ipv4 gun
 doorasth peesee par doorasth roop se ek kamaand nishpaadit karata hai
-- stej 0: sistam inishiyalaijeshan
-- stej 1: haardaveyar ka pata lagaana
+- stej 1: sistam inishiyalaijeshan
+- stej 2: haardaveyar ka pata lagaana
 - stej 2: aantarik upayogakarta naam prabandhan
 - stej 3: mod aur skreenasevar ka pata lagaana
 - stej 4: kachara sangrah
-- stej 5: log in karen
+- stej 4: log in karen
 kachara sangrahan se pahale: {0} baits
 kachara sangrah ke baad: {0} baits
 rpch shuroo karane mein truti: {0}

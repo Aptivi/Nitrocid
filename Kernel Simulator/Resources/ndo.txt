@@ -530,12 +530,12 @@ Kesalahan dalam paket yang diterima:
 Properti IPv6 umum
 Properti IPv4 umum
 Remotely mengeksekusi perintah ke PC jarak jauh
-- Tahap 0: Inisialisasi sistem
-- Tahap 1: Deteksi perangkat keras
+- Tahap 1: Inisialisasi sistem
+- Tahap 2: Deteksi perangkat keras
 - Tahap 2: Manajemen nama pengguna internal
 - Tahap 3: Deteksi mod dan screensaver
 - Tahap 4: Pengumpulan sampah
-- Tahap 5: Masuk
+- Tahap 4: Masuk
 Sebelum pengumpulan sampah: {0} byte
 Setelah pengumpulan sampah: {0} byte
 Kesalahan memulai RPC: {0}

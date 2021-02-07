@@ -530,12 +530,12 @@ Virheet vastaanotetuissa paketeissa:
 Yleiset IPv6-ominaisuudet
 Yleiset IPv4-ominaisuudet
 Etäkäyttää komennon etätietokoneeseen
-- Vaihe 0: Järjestelmän alustus
-- Vaihe 1: Laitteiden havaitseminen
+- Vaihe 1: Järjestelmän alustus
+- Vaihe 2: Laitteiden havaitseminen
 - Vaihe 2: Sisäinen käyttäjänimen hallinta
 - Vaihe 3: Modifikaatioiden ja näytönsäästäjien havaitseminen
 - Vaihe 4: Jätehuolto
-- Vaihe 5: Kirjaudu sisään
+- Vaihe 4: Kirjaudu sisään
 Ennen roskien keräystä: {0} tavua
 Jätekeräyksen jälkeen: {0} tavua
 Virhe RPC: n käynnistämisessä: {0}
