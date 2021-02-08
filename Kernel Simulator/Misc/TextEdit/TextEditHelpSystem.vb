@@ -60,7 +60,7 @@ Public Module TextEditHelpSystem
         ElseIf Command = "replace" Then
             W(DoTranslation("Usage:", currentLang) + " replace ""<word/phrase>"" ""<word/phrase>""", True, ColTypes.Neutral)
         ElseIf Command = "replaceinline" Then
-            W(DoTranslation("Usage:", currentLang) + " replace ""<word/phrase>"" ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " replaceinline ""<word/phrase>"" ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
         ElseIf Command = "delword" Then
             W(DoTranslation("Usage:", currentLang) + " delword ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
         ElseIf Command = "delcharnum" Then
