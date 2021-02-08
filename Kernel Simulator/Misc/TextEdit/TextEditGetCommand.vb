@@ -198,6 +198,36 @@ Public Module TextEditGetCommand
                         Wdbg("E", "{0} is not a numeric value.", Arguments(1))
                     End If
                 End If
+            ElseIf Command = "querychar" Then
+                If Arguments?.Length > 1 Then
+                    CommandDone = True
+                    Wdbg("I", "Char: {0}, Line: {1} ({2})", Arguments(0), Arguments(1), IsNumeric(Arguments(1)))
+                    If IsNumeric(Arguments(1)) Then
+                        Dim LineIndex As Integer = Arguments(1) - 1
+                        Wdbg("I", "Got line index: {0}", LineIndex)
+                        Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+                        If CInt(Arguments(1)) <= TextEdit_FileLines.Count Then
+                            For CharIndex As Integer = 0 To TextEdit_FileLines(Arguments(1)).Length - 1
+                                If TextEdit_FileLines(Arguments(1))(CharIndex) = Arguments(0) Then
+                                    W("- {0}: ", False, ColTypes.HelpCmd, CharIndex)
+                                    W("{0} ({1})", True, ColTypes.HelpDef, Arguments(0), TextEdit_FileLines(Arguments(1)))
+                                End If
+                            Next
+                        Else
+                            W(DoTranslation("The specified line number may not be larger than the last file line number.", currentLang), True, ColTypes.Err)
+                        End If
+                    ElseIf Arguments(1).ToLower = "all" Then
+                        Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+                        For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
+                            For CharIndex As Integer = 0 To TextEdit_FileLines(LineIndex).Length - 1
+                                If TextEdit_FileLines(LineIndex)(CharIndex) = Arguments(0) Then
+                                    W("- {0}:{1}: ", False, ColTypes.HelpCmd, LineIndex, CharIndex)
+                                    W("{0} ({1})", True, ColTypes.HelpDef, Arguments(0), TextEdit_FileLines(LineIndex))
+                                End If
+                            Next
+                        Next
+                    End If
+                End If
             ElseIf Command = "clear" Then
                 TextEdit_FileLines.Clear()
             End If

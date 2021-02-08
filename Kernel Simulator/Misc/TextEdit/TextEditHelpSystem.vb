@@ -32,6 +32,7 @@ Public Module TextEditHelpSystem
                                                                        {"replaceinline", DoTranslation("Replaces a word or phrase with another one in a line", currentLang)},
                                                                        {"delword", DoTranslation("Deletes a word or phrase from line number", currentLang)},
                                                                        {"delcharnum", DoTranslation("Deletes a character from character number in specified line", currentLang)},
+                                                                       {"querychar", DoTranslation("Queries a character in a specified line or all lines", currentLang)},
                                                                        {"clear", DoTranslation("Clears the text file", currentLang)}}
     End Sub
 
@@ -65,6 +66,8 @@ Public Module TextEditHelpSystem
             W(DoTranslation("Usage:", currentLang) + " delword ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
         ElseIf Command = "delcharnum" Then
             W(DoTranslation("Usage:", currentLang) + " delcharnum <charnumber> <linenumber>", True, ColTypes.Neutral)
+        ElseIf Command = "querychar" Then
+            W(DoTranslation("Usage:", currentLang) + " querychar <char> <linenumber/all>", True, ColTypes.Neutral)
         ElseIf Command = "clear" Then
             W(DoTranslation("Usage:", currentLang) + " clear", True, ColTypes.Neutral)
         End If
