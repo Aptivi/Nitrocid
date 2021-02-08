@@ -24,13 +24,15 @@ Public Module TextEditHelpSystem
     Public Sub TextEdit_UpdateHelp()
         TextEdit_HelpEntries = New Dictionary(Of String, String) From {{"help", DoTranslation("Lists available commands", currentLang)},
                                                                        {"exit", DoTranslation("Exits the text editor and save unsaved changes", currentLang)},
+                                                                       {"exitnosave", DoTranslation("Exits the text editor", currentLang)},
                                                                        {"print", DoTranslation("Prints the contents of the file with line numbers to the console", currentLang)},
                                                                        {"addline", DoTranslation("Adds a new line with text at the end of the file", currentLang)},
                                                                        {"delline", DoTranslation("Removes the specified line number", currentLang)},
                                                                        {"replace", DoTranslation("Replaces a word or phrase with another one", currentLang)},
                                                                        {"replaceinline", DoTranslation("Replaces a word or phrase with another one in a line", currentLang)},
                                                                        {"delword", DoTranslation("Deletes a word or phrase from line number", currentLang)},
-                                                                       {"delcharnum", DoTranslation("Deletes a character from character number in specified line", currentLang)}}
+                                                                       {"delcharnum", DoTranslation("Deletes a character from character number in specified line", currentLang)},
+                                                                       {"clear", DoTranslation("Clears the text file", currentLang)}}
     End Sub
 
     Public Sub TextEdit_GetHelp(Optional ByVal Command As String = "")
@@ -47,6 +49,8 @@ Public Module TextEditHelpSystem
             W(DoTranslation("Usage:", currentLang) + " help [command]", True, ColTypes.Neutral)
         ElseIf Command = "exit" Then
             W(DoTranslation("Usage:", currentLang) + " exit", True, ColTypes.Neutral)
+        ElseIf Command = "exitnosave" Then
+            W(DoTranslation("Usage:", currentLang) + " exitnosave", True, ColTypes.Neutral)
         ElseIf Command = "print" Then
             W(DoTranslation("Usage:", currentLang) + " print [linenumber]", True, ColTypes.Neutral)
         ElseIf Command = "addline" Then
@@ -61,6 +65,8 @@ Public Module TextEditHelpSystem
             W(DoTranslation("Usage:", currentLang) + " delword ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
         ElseIf Command = "delcharnum" Then
             W(DoTranslation("Usage:", currentLang) + " delcharnum <charnumber> <linenumber>", True, ColTypes.Neutral)
+        ElseIf Command = "clear" Then
+            W(DoTranslation("Usage:", currentLang) + " clear", True, ColTypes.Neutral)
         End If
     End Sub
 

@@ -53,6 +53,7 @@ Public Module TextEditTools
         Try
             Wdbg("I", "Trying to close file...")
             TextEdit_FileStream.Close()
+            TextEdit_FileStream = Nothing
             Wdbg("I", "File is no longer open.")
             TextEdit_FileLines.Clear()
             Return True

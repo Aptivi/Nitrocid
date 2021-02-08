@@ -23,7 +23,7 @@ Public Module TextEditShell
 
     'Variables
     Public TextEdit_Exiting As Boolean
-    Public TextEdit_Commands As String() = {"help", "exit", "print", "addline", "delline", "replace", "replaceinline", "delword", "delcharnum"}
+    Public TextEdit_Commands As String() = {"help", "exit", "exitnosave", "print", "addline", "delline", "replace", "replaceinline", "delword", "delcharnum", "clear"}
     Public TextEdit_ModCommands As New ArrayList
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)

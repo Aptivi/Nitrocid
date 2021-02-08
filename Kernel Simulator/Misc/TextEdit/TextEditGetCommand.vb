@@ -65,6 +65,9 @@ Public Module TextEditGetCommand
                 CommandDone = True
                 TextEdit_SaveTextFile(True)
                 TextEdit_Exiting = True
+            ElseIf Command = "exitnosave" Then
+                CommandDone = True
+                TextEdit_Exiting = True
             ElseIf Command = "print" Then
                 Dim LineNumber As Integer = 1
                 If Arguments?.Length > 0 Then
@@ -195,6 +198,8 @@ Public Module TextEditGetCommand
                         Wdbg("E", "{0} is not a numeric value.", Arguments(1))
                     End If
                 End If
+            ElseIf Command = "clear" Then
+                TextEdit_FileLines.Clear()
             End If
 
             'See if the command is done (passed all required arguments)
