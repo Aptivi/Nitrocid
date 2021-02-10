@@ -76,13 +76,14 @@ Public Module Notifications
                 Dim Title, Desc As String
                 Wdbg("I", "Title: {0}", NotifRecents(NotifRecents.Count - 1).Title)
                 Wdbg("I", "Desc: {0}", NotifRecents(NotifRecents.Count - 1).Desc)
-                Title = NotifRecents(NotifRecents.Count - 1).Title.Truncate(37)
-                Desc = NotifRecents(NotifRecents.Count - 1).Desc.Truncate(37)
+                Title = NotifRecents(NotifRecents.Count - 1).Title.Truncate(36)
+                Desc = NotifRecents(NotifRecents.Count - 1).Desc.Truncate(36)
                 Wdbg("I", "Truncated title: {0}", Title)
                 Wdbg("I", "Truncated desc: {0}", Desc)
                 Wdbg("I", "Where to store: {0}, Title: {1}, Desc: {2}", Console.WindowWidth - 40, Console.WindowTop + 1, Console.WindowTop + 2)
-                WriteWhere(Title, Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral)
-                WriteWhere(Desc, Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
+                WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop, ColTypes.Neutral)
+                WriteWhere(Title + " ".Repeat(40 - Title.Length), Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral)
+                WriteWhere(Desc + " ".Repeat(40 - Desc.Length), Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
                 Wdbg("I", "Priority: {0}", NotifRecents(NotifRecents.Count - 1).Priority)
                 For i As Integer = 1 To NotifRecents(NotifRecents.Count - 1).Priority
                     Console.Beep()
@@ -93,8 +94,9 @@ Public Module Notifications
                     Do Until NotifRecents(NotifRecents.Count - 1).Progress >= 100 Or NotifRecents(NotifRecents.Count - 1).ProgressFailed
                         Wdbg("I", "Where to store progress: {0}:{1}", Console.WindowWidth - 40, Console.WindowTop + 3)
                         Wdbg("I", "Progress: {0}", NotifRecents(NotifRecents.Count - 1).Progress)
-                        WriteWhere(Title, Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral)
-                        WriteWhere(Desc, Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
+                        WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop, ColTypes.Neutral)
+                        WriteWhere(Title + " ".Repeat(40 - Title.Length), Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral)
+                        WriteWhere(Desc + " ".Repeat(40 - Desc.Length), Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
                         WriteWhere("{0}%", Console.WindowWidth - 40, Console.WindowTop + 3, ColTypes.Neutral, NotifRecents(NotifRecents.Count - 1).Progress)
                         Thread.Sleep(1)
                     Loop
