@@ -1085,7 +1085,11 @@ Public Module GetCommand
             ElseIf words(0) = "update" Then
 
                 Done = True
+#If SPECIFIER = "REL" Then
                 CheckKernelUpdates()
+#Else
+                W(DoTranslation("Checking for updates is disabled because you're running a development version.", currentLang), True, ColTypes.Err)
+#End If
 
             ElseIf words(0) = "usermanual" Then
 
