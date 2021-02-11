@@ -172,9 +172,9 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Debug Size Quota in Bytes", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DebugQuota)))
                     W("3) " + DoTranslation("Size parse mode", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FullParseMode)))
                     W("4) " + DoTranslation("Marquee on startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(StartScroll)))
-                    W("5) " + DoTranslation("Long Time And Date", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LongTimeDate)))
+                    W("5) " + DoTranslation("Long Time and Date", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LongTimeDate)))
                     W("6) " + DoTranslation("Show Hidden Files", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(HiddenFiles)))
-                    W("7) " + DoTranslation("Preferred Unit For Temperature", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(PreferredUnit)))
+                    W("7) " + DoTranslation("Preferred Unit for Temperature", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(PreferredUnit)))
                 Case Else 'Invalid section
                     W("X) " + DoTranslation("Invalid section entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
             End Select
@@ -189,31 +189,31 @@ Public Module ToolPrompts
 
             Wdbg("I", "Is the answer numeric? {0}", IsNumeric(AnswerString))
             If Integer.TryParse(AnswerString, AnswerInt) Then
-                Wdbg("I", "Succeeded. Checking the answer If it points To the right direction...")
+                Wdbg("I", "Succeeded. Checking the answer if it points to the right direction...")
                 If AnswerInt >= 1 And AnswerInt <= MaxOptions Then
                     If AnswerInt = 3 And SectionNum = 1 Then
-                        Wdbg("I", "Tried To open special section. Opening section 1.3...")
+                        Wdbg("I", "Tried to open special section. Opening section 1.3...")
                         OpenKey(1.3, AnswerInt)
                     ElseIf AnswerInt = 7 And SectionNum = 4 Then
-                        Wdbg("I", "Tried To open special section. Opening section 4.7...")
+                        Wdbg("I", "Tried to open special section. Opening section 4.7...")
                         OpenKey(4.7, AnswerInt)
                     Else
                         Wdbg("I", "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
                     End If
                 ElseIf AnswerInt = MaxOptions + 1 Then 'Go Back...
-                    Wdbg("I", "User requested Exit. Returning...")
+                    Wdbg("I", "User requested exit. Returning...")
                     SectionFinished = True
                 Else
-                    Wdbg("W", "Option Is Not valid. Returning...")
-                    W(DoTranslation("Specified Option {0} Is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
-                    W(DoTranslation("Press any key To go back.", currentLang), True, ColTypes.Err)
+                    Wdbg("W", "Option is not valid. Returning...")
+                    W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, AnswerInt)
+                    W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
                     Console.ReadKey()
                 End If
             Else
-                Wdbg("W", "Answer Is Not numeric.")
+                Wdbg("W", "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric.", currentLang), True, ColTypes.Err)
-                W(DoTranslation("Press any key To go back.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
                 Console.ReadKey()
             End If
         End While
@@ -244,7 +244,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(argsOnBoot)
-                            W(DoTranslation("Sets up the kernel so it prompts you For argument On boot.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Sets up the kernel so it prompts you for argument on boot.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Maintenance Mode Trigger
@@ -260,7 +260,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(CheckUpdateStart)
-                            W(DoTranslation("Each startup, it will check For updates.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Each startup, it will check for updates.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 5 'Change Culture when Switching Languages
@@ -279,14 +279,14 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(setRootPasswd)
-                            W(DoTranslation("If the kernel Is started, it will Set root password.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("If the kernel is started, it will set root password.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2
                             If GetValue(NameOf(setRootPasswd)) Then
                                 KeyType = SettingsKeyType.SString
                                 KeyVar = NameOf(RootPasswd)
-                                W("*) " + DoTranslation("Write the root password To be Set. Don't worry; the password are shown as stars.", currentLang), True, ColTypes.Neutral)
+                                W("*) " + DoTranslation("Write the root password to be set. Don't worry; the password are shown as stars.", currentLang), True, ColTypes.Neutral)
                             Else
                                 W("X) " + DoTranslation("Enable ""Change Root Password"" to use this option. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                             End If
