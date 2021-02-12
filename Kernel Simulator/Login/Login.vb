@@ -42,6 +42,7 @@ Public Module Login
             EventManager.RaisePreLogin()
 
             'Extremely rare under normal conditions except if modded: Check to see if there are any users
+            'TODO: Allow users to add users as part of an upcoming first-user trigger system.
             If userword.Count = 0 Then 'Check if user amount is zero
                 Wdbg("F", "Shell reached rare state, because userword count is 0.")
                 Throw New EventsAndExceptions.NullUsersException(DoTranslation("There are no more users remaining in the list.", currentLang))
