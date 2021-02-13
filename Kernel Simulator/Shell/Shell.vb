@@ -205,7 +205,7 @@ Public Module Shell
                     If Not scriptCmd.EndsWith(".uesh") Then
                         scriptCmd += ".uesh"
                     End If
-                    If EnvironmentOSType.Contains("Windows") Then
+                    If IsOnWindows() Then
                         scriptCmd = scriptCmd.ReplaceAll({"\", "/", ":", "?", "*", """", "<", ">", "|"}, "")
                     End If
                     scriptArgs.RemoveAt(0)
@@ -278,7 +278,7 @@ Public Module Shell
                     If Not scriptCmd.EndsWith(".uesh") Then
                         scriptCmd += ".uesh"
                     End If
-                    If EnvironmentOSType.Contains("Windows") Then
+                    If IsOnWindows() Then
                         scriptCmd = scriptCmd.ReplaceAll({"\", "/", ":", "?", "*", """", "<", ">", "|"}, "")
                     End If
                     scriptArgs.RemoveAt(0)

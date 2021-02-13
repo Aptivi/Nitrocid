@@ -143,7 +143,7 @@ Public Module PlaceParse
             End If
             If text.Contains(sysplace) Then
                 Wdbg("I", "System placeholder found.")
-                text = text.Replace(sysplace, EnvironmentOSType)
+                text = text.Replace(sysplace, Environment.OSVersion.ToString)
             End If
             EventManager.RaisePlaceholderParsed(text)
         Catch ex As Exception

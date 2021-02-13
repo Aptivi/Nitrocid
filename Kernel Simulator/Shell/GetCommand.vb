@@ -1036,7 +1036,7 @@ Public Module GetCommand
                 Done = True
 
                 'Shows system information
-                W(DoTranslation("{0}[ Kernel settings (Running on {1}) ]", currentLang), True, ColTypes.HelpCmd, vbNewLine, EnvironmentOSType)
+                W(DoTranslation("{0}[ Kernel settings (Running on {1}) ]", currentLang), True, ColTypes.HelpCmd, vbNewLine, Environment.OSVersion.ToString)
 
                 'Kernel section
                 W(vbNewLine + DoTranslation("Kernel Version:", currentLang) + " {0}" + vbNewLine +

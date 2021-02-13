@@ -49,7 +49,7 @@ Public Module Filesystem
     Public Sub ReadContents(ByVal filename As String)
 #If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-        If EnvironmentOSType.Contains("Windows") And (filename.Contains("$i30") Or filename.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
+        If IsOnWindows() And (filename.Contains("$i30") Or filename.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", filename)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
         End If
@@ -73,7 +73,7 @@ Public Module Filesystem
 
 #If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-        If EnvironmentOSType.Contains("Windows") And (folder.Contains("$i30") Or folder.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
+        If IsOnWindows() And (folder.Contains("$i30") Or folder.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", folder)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
         End If
@@ -150,7 +150,7 @@ Public Module Filesystem
     Public Function NeutralizePath(ByVal Path As String)
 #If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-        If EnvironmentOSType.Contains("Windows") And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
+        If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", Path)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
         End If
@@ -160,7 +160,7 @@ Public Module Filesystem
         Path = Path.Replace("\", "/")
 
         'Append current directory to path
-        If (EnvironmentOSType.Contains("Windows") And Not Path.Contains(":/")) Or (EnvironmentOSType.Contains("Unix") And Not Path.StartsWith("/")) Then
+        If (IsOnWindows() And Not Path.Contains(":/")) Or (IsOnUnix() And Not Path.StartsWith("/")) Then
             Path = $"{CurrDir}/{Path}"
         End If
         Wdbg("I", "Prototype path: {0}", Path)
@@ -186,7 +186,7 @@ Public Module Filesystem
     Public Function NeutralizePath(ByVal Path As String, ByVal Source As String)
 #If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-        If EnvironmentOSType.Contains("Windows") And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect") Or
+        If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect") Or
                                                       Source.Contains("$i30") Or Source.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", Path)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
@@ -198,7 +198,7 @@ Public Module Filesystem
         Source = Source.Replace("\", "/")
 
         'Append current directory to path
-        If (EnvironmentOSType.Contains("Windows") And Not Path.Contains(":/")) Or (EnvironmentOSType.Contains("Unix") And Not Path.StartsWith("/")) Then
+        If (IsOnWindows() And Not Path.Contains(":/")) Or (IsOnUnix() And Not Path.StartsWith("/")) Then
             Path = $"{Source}/{Path}"
         End If
         Wdbg("I", "Prototype path: {0}", Path)
@@ -514,7 +514,7 @@ Public Module Filesystem
     Public Function ReadAllLinesNoBlock(ByVal path As String) As String()
 #If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-        If EnvironmentOSType.Contains("Windows") And (path.Contains("$i30") Or path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
+        If IsOnWindows() And (path.Contains("$i30") Or path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", path)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
         End If

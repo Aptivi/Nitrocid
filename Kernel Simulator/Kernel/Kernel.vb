@@ -24,7 +24,6 @@ Public Module Kernel
     Public BootArgs() As String
     Public configReader As New IniFile()
     Public MOTDMessage, HName, MAL As String
-    Public ReadOnly EnvironmentOSType As String = Environment.OSVersion.ToString
     Public EventManager As New EventsAndExceptions
     Public DefConsoleOut As TextWriter
     Public ScrnTimeout As Integer = 300000
@@ -43,7 +42,7 @@ Public Module Kernel
                 'Initialize crucial things
                 If Not NotifThread.IsAlive Then NotifThread.Start()
                 InitPaths()
-                If Not EnvironmentOSType.Contains("Unix") Then Initialize255()
+                If Not IsOnUnix() Then Initialize255()
 
                 'Check if factory reset is required
                 If Environment.GetCommandLineArgs.Contains("reset") Then
@@ -161,5 +160,19 @@ Public Module Kernel
             End Try
         End While
     End Sub
+
+    ''' <summary>
+    ''' Is this system a Windows system?
+    ''' </summary>
+    Function IsOnWindows()
+        Return Environment.OSVersion.Platform = PlatformID.Win32NT
+    End Function
+
+    ''' <summary>
+    ''' Is this system a Unix system?
+    ''' </summary>
+    Function IsOnUnix()
+        Return Environment.OSVersion.Platform = PlatformID.Unix
+    End Function
 
 End Module

@@ -363,7 +363,7 @@ Public Module KernelTools
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
-        W("OS: " + DoTranslation("Running on {0}", currentLang), True, ColTypes.Neutral, EnvironmentOSType)
+        W("OS: " + DoTranslation("Running on {0}", currentLang), True, ColTypes.Neutral, Environment.OSVersion.ToString)
 #If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends after "NEARING" stage, change the compiler constant value to "REL" to suppress this message out of stable versions
         W(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
 #ElseIf SPECIFIER = "RC" Then
@@ -391,7 +391,7 @@ Public Module KernelTools
         'Write headers for debug
         Wdbg("I", "-------------------------------------------------------------------")
         Wdbg("I", "Kernel initialized, version {0}.", KernelVersion)
-        Wdbg("I", "OS: {0}", EnvironmentOSType)
+        Wdbg("I", "OS: {0}", Environment.OSVersion.ToString)
 
         'Populate ban list for debug devices
         PopulateBlockedDevices()
@@ -407,7 +407,7 @@ Public Module KernelTools
     ''' Initializes the paths
     ''' </summary>
     Sub InitPaths()
-        If EnvironmentOSType.Contains("Unix") Then
+        If IsOnUnix() Then
             paths.AddIfNotFound("Mods", Environ("HOME") + "/KSMods/")
             paths.AddIfNotFound("Configuration", Environ("HOME") + "/kernelConfig.ini")
             paths.AddIfNotFound("Debugging", Environ("HOME") + "/kernelDbg.log")
@@ -545,7 +545,7 @@ Public Module KernelTools
             Wdbg("I", "Garbage collector starting... Max generators: {0}", GC.MaxGeneration.ToString)
             GC.Collect()
             GC.WaitForPendingFinalizers()
-            If EnvironmentOSType.Contains("NT") Then
+            If IsOnWindows() Then
                 SetProcessWorkingSetSize(GetCurrentProcess().Handle, -1, -1)
             End If
             Wdbg("I", "After garbage collection: {0} bytes", proc.PrivateMemorySize64)
