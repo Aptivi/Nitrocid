@@ -23,7 +23,6 @@ Public Module HardwareProbe
 
     Public HardwareInfo As Inxi
 
-    'TODO: Re-write in Beta
     ''' <summary>
     ''' Starts probing hardware
     ''' </summary>
