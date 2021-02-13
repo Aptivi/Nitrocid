@@ -28,6 +28,7 @@ Public Module TextEditShell
     Public TextEdit_ModCommands As New ArrayList
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)
+    Friend TextEdit_FileLinesOrig As List(Of String)
     Public TextEdit_AutoSave As New Thread(AddressOf TextEdit_HandleAutoSaveTextFile)
     Public TextEdit_AutoSaveFlag As Boolean = True
     Public TextEdit_AutoSaveInterval As Integer = 60
@@ -52,7 +53,7 @@ Public Module TextEditShell
             If Not IsNothing(DefConsoleOut) Then
                 Console.SetOut(DefConsoleOut)
             End If
-            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, Path.GetFileName(FilePath)) : W("] > ", False, ColTypes.Gray)
+            W("[", False, ColTypes.Gray) : W("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : W("] > ", False, ColTypes.Gray)
             SetInputColor()
 
             'Prompt for command
