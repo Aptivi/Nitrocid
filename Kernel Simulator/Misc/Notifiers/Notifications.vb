@@ -101,7 +101,7 @@ Public Module Notifications
                         Thread.Sleep(1)
                     Loop
                 End If
-                NotifClearArea(Title.Length, Desc.Length, Console.WindowWidth - 40, Console.WindowTop + 1, Console.WindowTop + 2)
+                NotifClearArea(Title.Length, Desc.Length, Console.WindowWidth - 40, Console.WindowTop + 1, Console.WindowTop + 2, Console.WindowTop + 3)
             End If
             OldNCount = NotifRecents.Count
         End While
@@ -115,18 +115,14 @@ Public Module Notifications
     ''' <param name="Width">Console width</param>
     ''' <param name="TopTitle">Vertical location of title</param>
     ''' <param name="TopDesc">Vertical location of description</param>
-    Private Sub NotifClearArea(ByVal LenTitle As Integer, ByVal LenDesc As Integer, ByVal Width As Integer, ByVal TopTitle As Integer, ByVal TopDesc As Integer)
+    Private Sub NotifClearArea(ByVal LenTitle As Integer, ByVal LenDesc As Integer, ByVal Width As Integer, ByVal TopTitle As Integer, ByVal TopDesc As Integer, ByVal TopProg As Integer)
         Thread.Sleep(5000)
-        For i As Integer = 0 To LenTitle - 1
-            WriteWhere(" ", Console.WindowWidth - 40 + i, Console.WindowTop + 1, ColTypes.Neutral)
-            WriteWhere(" ", Width + i, TopTitle, ColTypes.Neutral)
-        Next
-        For i As Integer = 0 To LenDesc - 1
-            WriteWhere(" ", Console.WindowWidth - 40 + i, Console.WindowTop + 2, ColTypes.Neutral)
-            WriteWhere(" ", Width + i, TopDesc, ColTypes.Neutral)
-        Next
-        WriteWhere("     ", Console.WindowWidth - 40, Console.WindowTop + 3, ColTypes.Neutral)
-        WriteWhere("     ", Width, Console.WindowTop + 3, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(LenTitle), Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(LenTitle), Width, TopTitle, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(LenDesc), Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(LenDesc), Width, TopDesc, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop + 3, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(40), Width, TopProg, ColTypes.Neutral)
     End Sub
 
     ''' <summary>
