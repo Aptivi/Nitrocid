@@ -25,6 +25,7 @@ Public Module TextEditHelpSystem
         TextEdit_HelpEntries = New Dictionary(Of String, String) From {{"help", DoTranslation("Lists available commands", currentLang)},
                                                                        {"exit", DoTranslation("Exits the text editor and save unsaved changes", currentLang)},
                                                                        {"exitnosave", DoTranslation("Exits the text editor", currentLang)},
+                                                                       {"save", DoTranslation("Saves the file", currentLang)},
                                                                        {"print", DoTranslation("Prints the contents of the file with line numbers to the console", currentLang)},
                                                                        {"addline", DoTranslation("Adds a new line with text at the end of the file", currentLang)},
                                                                        {"delline", DoTranslation("Removes the specified line number", currentLang)},
@@ -52,6 +53,8 @@ Public Module TextEditHelpSystem
             W(DoTranslation("Usage:", currentLang) + " exit", True, ColTypes.Neutral)
         ElseIf Command = "exitnosave" Then
             W(DoTranslation("Usage:", currentLang) + " exitnosave", True, ColTypes.Neutral)
+        ElseIf Command = "save" Then
+            W(DoTranslation("Usage:", currentLang) + " save", True, ColTypes.Neutral)
         ElseIf Command = "print" Then
             W(DoTranslation("Usage:", currentLang) + " print [linenumber]", True, ColTypes.Neutral)
         ElseIf Command = "addline" Then

@@ -68,6 +68,9 @@ Public Module TextEditGetCommand
             ElseIf Command = "exitnosave" Then
                 CommandDone = True
                 TextEdit_Exiting = True
+            ElseIf Command = "save" Then
+                CommandDone = True
+                TextEdit_SaveTextFile(False)
             ElseIf Command = "print" Then
                 Dim LineNumber As Integer = 1
                 If Arguments?.Length > 0 Then
