@@ -124,6 +124,8 @@ Public Module Config
                         New IniKey(ksconf, "Long Time and Date", LongTimeDate),
                         New IniKey(ksconf, "Show Hidden Files", HiddenFiles),
                         New IniKey(ksconf, "Preferred Unit for Temperature", PreferredUnit),
+                        New IniKey(ksconf, "Enable text editor autosave", TextEdit_AutoSaveFlag),
+                        New IniKey(ksconf, "Text editor autosave interval", TextEdit_AutoSaveInterval),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             Else '----------------------- If [Preserve] value is False, then don't preserve.
                 'The General Section
@@ -219,6 +221,8 @@ Public Module Config
                         New IniKey(ksconf, "Long Time and Date", "True"),
                         New IniKey(ksconf, "Show Hidden Files", "False"),
                         New IniKey(ksconf, "Preferred Unit for Temperature", UnitMeasurement.Metric),
+                        New IniKey(ksconf, "Enable text editor autosave", "True"),
+                        New IniKey(ksconf, "Text editor autosave interval", "60"),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
@@ -294,6 +298,8 @@ Public Module Config
             ksconf.Sections("Misc").Keys("Long Time and Date").TrailingComment.Text = "Whether or not to render time and date using long."
             ksconf.Sections("Misc").Keys("Show Hidden Files").TrailingComment.Text = "Whether or not to list hidden files."
             ksconf.Sections("Misc").Keys("Preferred Unit for Temperature").TrailingComment.Text = "Choose either Kelvin, Celsius, or Fahrenheit for temperature measurement."
+            ksconf.Sections("Misc").Keys("Enable text editor autosave").TrailingComment.Text = "Turns on or off the text editor autosave feature."
+            ksconf.Sections("Misc").Keys("Text editor autosave interval").TrailingComment.Text = "If autosave is enabled, the text file will be saved for each ""n"" seconds."
 
             'Save Config
             ksconf.Save(paths("Configuration"))
@@ -459,6 +465,8 @@ Public Module Config
             If configReader.Sections("Misc").Keys("Long Time and Date").Value = "True" Then LongTimeDate = True Else LongTimeDate = False
             If configReader.Sections("Misc").Keys("Show Hidden Files").Value = "True" Then HiddenFiles = True Else HiddenFiles = False
             PreferredUnit = configReader.Sections("Misc").Keys("Preferred Unit for Temperature").Value
+            If configReader.Sections("Misc").Keys("Enable text editor autosave").Value = "True" Then TextEdit_AutoSaveFlag = True Else TextEdit_AutoSaveFlag = False
+            If Integer.TryParse(configReader.Sections("Misc").Keys("Text editor autosave interval").Value, 0) Then TextEdit_AutoSaveInterval = configReader.Sections("Misc").Keys("Text editor autosave interval").Value
 
             Return True
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.

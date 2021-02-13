@@ -91,14 +91,16 @@ Public Module TextEditTools
     ''' Handles autosave
     ''' </summary>
     Public Sub TextEdit_HandleAutoSaveTextFile()
-        Try
-            Threading.Thread.Sleep(60000)
-            If Not IsNothing(TextEdit_FileStream) Then
-                TextEdit_SaveTextFile(False)
-            End If
-        Catch ex As Exception
-            WStkTrc(ex)
-        End Try
+        If TextEdit_AutoSaveFlag Then
+            Try
+                Threading.Thread.Sleep(TextEdit_AutoSaveInterval * 1000)
+                If Not IsNothing(TextEdit_FileStream) Then
+                    TextEdit_SaveTextFile(False)
+                End If
+            Catch ex As Exception
+                WStkTrc(ex)
+            End Try
+        End If
     End Sub
 
 End Module

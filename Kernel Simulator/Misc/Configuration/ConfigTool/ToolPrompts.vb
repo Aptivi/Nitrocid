@@ -166,7 +166,7 @@ Public Module ToolPrompts
                     W("14) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoCycleColors)))
                     W("15) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(BouncingTextWrite)))
                 Case 7 'Misc
-                    MaxOptions = 7
+                    MaxOptions = 9
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(CornerTD)))
                     W("2) " + DoTranslation("Debug Size Quota in Bytes", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DebugQuota)))
@@ -174,7 +174,9 @@ Public Module ToolPrompts
                     W("4) " + DoTranslation("Marquee on startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(StartScroll)))
                     W("5) " + DoTranslation("Long Time and Date", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LongTimeDate)))
                     W("6) " + DoTranslation("Show Hidden Files", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(HiddenFiles)))
-                    W("7) " + DoTranslation("Preferred Unit for Temperature", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(PreferredUnit)))
+                    W("7) " + DoTranslation("Preferred Unit for Temperature", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(PreferredUnit)))
+                    W("8) " + DoTranslation("Enable text editor autosave", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(TextEdit_AutoSaveFlag)))
+                    W("9) " + DoTranslation("Text editor autosave interval", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(TextEdit_AutoSaveInterval)))
                 Case Else 'Invalid section
                     W("X) " + DoTranslation("Invalid section entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
             End Select
@@ -661,6 +663,17 @@ Public Module ToolPrompts
                             W("1) " + DoTranslation("Kelvin", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Metric (Celsius)", currentLang), True, ColTypes.Neutral)
                             W("3) " + DoTranslation("Imperial (Fahrenheit)", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 8 'Enable text editor autosave
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(TextEdit_AutoSaveFlag)
+                            W(DoTranslation("Turns on or off the text editor autosave feature.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 9 'Text editor autosave interval
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TextEdit_AutoSaveInterval)
+                            W("*) " + DoTranslation("If autosave is enabled, the text file will be saved for each ""n"" seconds.", currentLang), True, ColTypes.Neutral)
                         Case Else
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
@@ -844,6 +857,7 @@ Public Module ToolPrompts
         Dim TypeOfFTPShell As Type = GetType(FTPShell)
         Dim TypeOfMailShell As Type = GetType(MailShell)
         Dim TypeOfSFTPShell As Type = GetType(SFTPShell)
+        Dim TypeOfTextEditShell As Type = GetType(TextEditShell)
         Dim TypeOfRDebugger As Type = GetType(RemoteDebugger)
         Dim TypeOfDebugWriters As Type = GetType(DebugWriters)
         Dim TypeOfNetworkTools As Type = GetType(NetworkTools)
@@ -859,6 +873,7 @@ Public Module ToolPrompts
         Dim FieldFTPShell As FieldInfo = TypeOfFTPShell.GetField(Variable)
         Dim FieldMailShell As FieldInfo = TypeOfMailShell.GetField(Variable)
         Dim FieldSFTPShell As FieldInfo = TypeOfSFTPShell.GetField(Variable)
+        Dim FieldTextEditShell As FieldInfo = TypeOfTextEditShell.GetField(Variable)
         Dim FieldRDebugger As FieldInfo = TypeOfRDebugger.GetField(Variable)
         Dim FieldDebugWriters As FieldInfo = TypeOfDebugWriters.GetField(Variable)
         Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
@@ -880,6 +895,8 @@ Public Module ToolPrompts
             Return FieldMailShell
         ElseIf Not IsNothing(FieldSFTPShell) Then
             Return FieldSFTPShell
+        ElseIf Not IsNothing(FieldTextEditShell) Then
+            Return FieldTextEditShell
         ElseIf Not IsNothing(FieldRDebugger) Then
             Return FieldRDebugger
         ElseIf Not IsNothing(FieldDebugWriters) Then
