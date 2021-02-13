@@ -18,6 +18,24 @@
 
 Public Module Color
 
+    ''' <summary>
+    ''' Enumeration for color types
+    ''' </summary>
+    Public Enum ColTypes As Integer
+        Neutral = 1
+        Input = 2
+        Continuable = 3
+        Uncontinuable = 4
+        HostName = 5
+        UserName = 6
+        License = 7
+        Gray = 8
+        HelpDef = 9
+        HelpCmd = 10
+        Stage = 11
+        Err = 12
+    End Enum
+
     'Variables for colors used by previous versions of Kernel.
     Public inputColor As ConsoleColors = ConsoleColors.White
     Public licenseColor As ConsoleColors = ConsoleColors.White
