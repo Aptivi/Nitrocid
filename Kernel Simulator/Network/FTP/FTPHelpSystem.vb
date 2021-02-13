@@ -26,22 +26,22 @@ Public Module FTPHelpSystem
     ''' Updates the help definition so it reflects the available commands
     ''' </summary>
     Public Sub InitFTPHelp()
-        FTPDefinitions = New Dictionary(Of String, String) From {{"currlocaldir (Alias: pwdl)", DoTranslation("Gets current local directory", currentLang)},
-                                                                 {"currremotedir (Alias: pwdr)", DoTranslation("Gets current remote directory", currentLang)},
+        FTPDefinitions = New Dictionary(Of String, String) From {{"currlocaldir (pwdl)", DoTranslation("Gets current local directory", currentLang)},
+                                                                 {"currremotedir (pwdr)", DoTranslation("Gets current remote directory", currentLang)},
                                                                  {"connect", DoTranslation("Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", currentLang)},
-                                                                 {"changelocaldir (Alias: cdl)", DoTranslation("Changes local directory to download to or upload from", currentLang)},
-                                                                 {"changeremotedir (Alias: cdr)", DoTranslation("Changes remote directory to download from or upload to", currentLang)},
-                                                                 {"copy (Alias: cp)", DoTranslation("Copies file or directory to another file or directory.", currentLang)},
-                                                                 {"delete (Alias: del)", DoTranslation("Deletes remote file from server", currentLang)},
+                                                                 {"changelocaldir (cdl)", DoTranslation("Changes local directory to download to or upload from", currentLang)},
+                                                                 {"changeremotedir (cdr)", DoTranslation("Changes remote directory to download from or upload to", currentLang)},
+                                                                 {"copy (cp)", DoTranslation("Copies file or directory to another file or directory.", currentLang)},
+                                                                 {"delete (del)", DoTranslation("Deletes remote file from server", currentLang)},
                                                                  {"disconnect", DoTranslation("Disconnects from server", currentLang)},
-                                                                 {"download (Alias: get)", DoTranslation("Downloads remote file to local directory using binary or text", currentLang)},
+                                                                 {"download (get)", DoTranslation("Downloads remote file to local directory using binary or text", currentLang)},
                                                                  {"exit", DoTranslation("Exits FTP shell and returns to kernel", currentLang)},
                                                                  {"help", DoTranslation("Shows help screen", currentLang)},
-                                                                 {"listlocal (Alias: lsl)", DoTranslation("Lists local directory", currentLang)},
-                                                                 {"listremote (Alias: lsr)", DoTranslation("Lists remote directory", currentLang)},
-                                                                 {"move (Alias: mv)", DoTranslation("Moves file or directory to another file or directory. You can also use that to rename files.", currentLang)},
+                                                                 {"listlocal (lsl)", DoTranslation("Lists local directory", currentLang)},
+                                                                 {"listremote (lsr)", DoTranslation("Lists remote directory", currentLang)},
+                                                                 {"move (mv)", DoTranslation("Moves file or directory to another file or directory. You can also use that to rename files.", currentLang)},
                                                                  {"quickconnect", DoTranslation("Uses information from Speed Dial to connect to any network quickly", currentLang)},
-                                                                 {"upload (Alias: put)", DoTranslation("Uploads local file to remote directory using binary or text", currentLang)}}
+                                                                 {"upload (put)", DoTranslation("Uploads local file to remote directory using binary or text", currentLang)}}
     End Sub
 
     ''' <summary>
