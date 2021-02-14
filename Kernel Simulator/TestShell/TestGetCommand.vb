@@ -203,6 +203,18 @@ Module TestGetCommand
 #If NTFSCorruptionFix Then
             W("- NTFSCorruptionFix", True, ColTypes.Neutral)
 #End If
+#If NOWRITELOCK Then
+            W("- NOWRITELOCK", True, ColTypes.Neutral)
+#End If
+#If SPECIFIER = "DEV" Then
+            W("- SPECIFIER = ""DEV""", True, ColTypes.Neutral)
+#ElseIf SPECIFIER = "RC" Then
+            W("- SPECIFIER = ""RC""", True, ColTypes.Neutral)
+#ElseIf SPECIFIER = "NEARING" Then
+            W("- SPECIFIER = ""NEARING""", True, ColTypes.Neutral)
+#ElseIf SPECIFIER = "REL" Then
+            W("- SPECIFIER = ""REL""", True, ColTypes.Neutral)
+#End If
         ElseIf Cmd = "help" Then
             W("- print <Color> <Line> <Message>" + vbNewLine +
               "- printf <Color> <Line> <Variable1;Variable2;Variable3;...> <Message>" + vbNewLine +
