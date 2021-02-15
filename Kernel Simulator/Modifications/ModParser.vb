@@ -222,40 +222,57 @@ Public Module ModParser
         If Not IsNothing(script) Then
             script.StartMod()
             Wdbg("I", "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version)
+
+            'See if the mod has part name
             If script.ModPart = "" Then
                 Wdbg("W", "No part name for {0}", modFile)
                 W(DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code.", currentLang), True, ColTypes.Err, modFile)
                 Exit Sub
             End If
+
+            'See if the mod has command
             If script.Cmd = "" Then
                 Wdbg("W", "No command for {0}", modFile)
                 W(DoTranslation("Mod {0} does not have the command. Mod parsing failed. Review the source code.", currentLang), True, ColTypes.Err, modFile)
                 Exit Sub
             End If
-            If script.Name = "" Then
+
+            'See if the mod has name
+            Dim ModName As String = script.Name
+            If ModName = "" Then
+                ModName = script.Cmd
                 Wdbg("W", "No name for {0}", modFile)
                 W(DoTranslation("Mod {0} does not have the name. Review the source code.", currentLang), True, ColTypes.Neutral, modFile)
-                Wdbg("I", "Checking to see if {0} exists in scripts...", script.Cmd)
-                If scripts.ContainsKey(script.Cmd) Then
-                    Wdbg("I", "Exists. Adding mod part {0}...", script.ModPart)
-                    scripts(script.Cmd).Add(script.ModPart, script)
-                Else
-                    Wdbg("I", "Adding mod with mod part {0}...", script.ModPart)
-                    ModParts.Add(script.ModPart, script)
-                    scripts.Add(script.Cmd, ModParts)
-                End If
             Else
                 Wdbg("I", "There is a name for {0}", modFile)
-                Wdbg("I", "Checking to see if {0} exists in scripts...", script.Name)
-                If scripts.ContainsKey(script.Name) Then
-                    Wdbg("I", "Exists. Adding mod part {0}...", script.ModPart)
-                    scripts(script.Name).Add(script.ModPart, script)
-                Else
-                    Wdbg("I", "Adding mod with mod part {0}...", script.ModPart)
-                    ModParts.Add(script.ModPart, script)
-                    scripts.Add(script.Name, ModParts)
-                End If
             End If
+
+            'See if the mod part conflicts with existing parts
+            Wdbg("I", "Checking to see if {0} exists in scripts...", ModName)
+            If scripts.ContainsKey(ModName) Then
+                Wdbg("I", "Exists. Adding mod part {0}...", script.ModPart)
+                If Not scripts(ModName).ContainsKey(script.ModPart) Then
+                    Wdbg("I", "No conflict with {0}. Adding as is...", script.ModPart)
+                    scripts(ModName).Add(script.ModPart, script)
+                Else
+                    Wdbg("W", "There is a conflict with {0}. Appending item number...", script.ModPart)
+                    script.ModPart += CStr(scripts(ModName).Count)
+                    scripts(ModName).Add(script.ModPart, script)
+                End If
+            Else
+                Wdbg("I", "Adding mod with mod part {0}...", script.ModPart)
+                If Not ModParts.ContainsKey(script.ModPart) Then
+                    Wdbg("I", "No conflict with {0}. Adding as is...", script.ModPart)
+                    ModParts.Add(script.ModPart, script)
+                Else
+                    Wdbg("W", "There is a conflict with {0}. Appending item number...", script.ModPart)
+                    script.ModPart += CStr(scripts.Count)
+                    ModParts.Add(script.ModPart, script)
+                End If
+                scripts.Add(ModName, ModParts)
+            End If
+
+            'See if the mod has version
             If script.Version = "" And script.Name <> "" Then
                 Wdbg("I", "{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
                 W(DoTranslation("Mod {0} does not have the version.", currentLang), True, ColTypes.Neutral, script.Name)
@@ -263,6 +280,36 @@ Public Module ModParser
                 Wdbg("I", "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
                 W(DoTranslation("{0} v{1} started", currentLang) + " ({2})", True, ColTypes.Neutral, script.Name, script.Version, script.ModPart)
             End If
+
+            'See if the command conflicts with pre-existing shell commands
+            If script.CmdType = ModType.Shell Then
+                If availableCommands.Contains(script.Cmd) Then
+                    Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                    script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                End If
+            ElseIf script.CmdType = ModType.FTPShell Then
+                If availftpcmds.Contains(script.Cmd) Then
+                    Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                    script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                End If
+            ElseIf script.CmdType = ModType.MailShell Then
+                If Mail_AvailableCommands.Contains(script.Cmd) Then
+                    Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                    script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                End If
+            ElseIf script.CmdType = ModType.SFTPShell Then
+                If availsftpcmds.Contains(script.Cmd) Then
+                    Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                    script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                End If
+            ElseIf script.CmdType = ModType.TextShell Then
+                If TextEdit_Commands.Contains(script.Cmd) Then
+                    Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                    script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                End If
+            End If
+
+            'See if mod can be added to command list
             If script.Cmd <> "" And StartStop = True Then
                 If script.Def = "" Then
                     W(DoTranslation("No definition for command {0}.", currentLang), True, ColTypes.Neutral, script.Cmd)
