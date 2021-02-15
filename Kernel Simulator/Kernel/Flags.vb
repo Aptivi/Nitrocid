@@ -53,6 +53,7 @@ Module Flags
     Public CheckUpdateStart As Boolean = True                   'Whether or not to check for updates on startup
     Public LangChangeCulture As Boolean                         'Change culture when changing language
     Public ShowProgress As Boolean = True                       'Shows the progress bar while downloading using "get" command.
+    Public RecordChatToDebugLog As Boolean = True               'Records remote debug chat to debug log
 
     'Private flags
     Friend NotifyConfigError As Boolean                         'Notifies user as soon as the kernel finished booting if there is an error reading configuration.

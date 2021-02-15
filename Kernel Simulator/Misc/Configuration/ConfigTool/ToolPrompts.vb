@@ -136,7 +136,7 @@ Public Module ToolPrompts
                     W("6) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(SFTPShellPromptStyle)))
                     W("7) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                 Case 5 'Network
-                    MaxOptions = 9
+                    MaxOptions = 10
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Debug Port", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DebugPort)))
                     W("2) " + DoTranslation("Remote Debug Default Nick Prefix", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(RDebugDNP)))
@@ -146,7 +146,8 @@ Public Module ToolPrompts
                     W("6) " + DoTranslation("Log FTP username", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPLoggerUsername)))
                     W("7) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPLoggerIP)))
                     W("8) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPFirstProfileOnly)))
-                    W("9) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(ShowPreview)))
+                    W("9) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowPreview)))
+                    W("10) " + DoTranslation("Record chat to debug log", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(RecordChatToDebugLog)))
                 Case 6 'Screensaver
                     MaxOptions = 15
                     W(DoTranslation("This section lists all the screensavers and their available settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -505,6 +506,13 @@ Public Module ToolPrompts
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowPreview)
                             W(DoTranslation("When listing mail messages, show body preview.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 10 'Record chat to debug log
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(RecordChatToDebugLog)
+                            W(DoTranslation("Records remote debug chat to debug log.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
