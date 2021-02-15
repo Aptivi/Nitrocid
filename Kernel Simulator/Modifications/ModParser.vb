@@ -246,6 +246,7 @@ Public Module ModParser
             Else
                 Wdbg("I", "There is a name for {0}", modFile)
             End If
+            Wdbg("I", "Mod name: {0}", ModName)
 
             'See if the mod part conflicts with existing parts
             Wdbg("I", "Checking to see if {0} exists in scripts...", ModName)
@@ -316,19 +317,25 @@ Public Module ModParser
                     Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1} ({2})""", script.Cmd, script.Name, script.ModPart)
                     script.Def = DoTranslation("Command defined by ", currentLang) + script.Name + " (" + script.ModPart + ")"
                 End If
+                Wdbg("I", "Command type: {0}", script.CmdType)
                 If script.CmdType = ModType.Shell Then
+                    Wdbg("I", "Adding command {0} for main shell...", script.Cmd)
                     If Not modcmnds.Contains(script.Cmd) Then modcmnds.Add(script.Cmd)
                     moddefs.AddIfNotFound(script.Cmd, script.Def)
                 ElseIf script.CmdType = ModType.FTPShell Then
+                    Wdbg("I", "Adding command {0} for FTP shell...", script.Cmd)
                     If Not FTPModCommands.Contains(script.Cmd) Then FTPModCommands.Add(script.Cmd)
                     FTPModDefs.AddIfNotFound(script.Cmd, script.Def)
                 ElseIf script.CmdType = ModType.MailShell Then
+                    Wdbg("I", "Adding command {0} for mail shell...", script.Cmd)
                     If Not MailModCommands.Contains(script.Cmd) Then MailModCommands.Add(script.Cmd)
                     MailModDefs.AddIfNotFound(script.Cmd, script.Def)
                 ElseIf script.CmdType = ModType.SFTPShell Then
+                    Wdbg("I", "Adding command {0} for SFTP shell...", script.Cmd)
                     If Not SFTPModCommands.Contains(script.Cmd) Then SFTPModCommands.Add(script.Cmd)
                     SFTPModDefs.AddIfNotFound(script.Cmd, script.Def)
                 ElseIf script.CmdType = ModType.TextShell Then
+                    Wdbg("I", "Adding command {0} for text editor shell...", script.Cmd)
                     If Not TextEdit_ModCommands.Contains(script.Cmd) Then TextEdit_ModCommands.Add(script.Cmd)
                     TextEdit_ModHelpEntries.AddIfNotFound(script.Cmd, script.Def)
                 End If
@@ -344,16 +351,25 @@ Public Module ModParser
         'Clear all scripts, commands, and defs
         modcmnds.Clear()
         moddefs.Clear()
+        Wdbg("I", "Mod commands for main shell cleared.")
         FTPModCommands.Clear()
         FTPModDefs.Clear()
+        Wdbg("I", "Mod commands for FTP shell cleared.")
         MailModCommands.Clear()
         MailModDefs.Clear()
+        Wdbg("I", "Mod commands for mail shell cleared.")
+        SFTPModCommands.Clear()
+        SFTPModDefs.Clear()
+        Wdbg("I", "Mod commands for SFTP shell cleared.")
         TextEdit_ModCommands.Clear()
         TextEdit_ModHelpEntries.Clear()
+        Wdbg("I", "Mod commands for text editor shell cleared.")
         scripts.Clear()
+        Wdbg("I", "Mod scripts cleared.")
 
         'Stop all mods
         ParseMods(False)
+        Wdbg("I", "All mods stopped.")
 
         'Start all mods
         ParseMods(True)
@@ -362,6 +378,7 @@ Public Module ModParser
             Wdbg("I", "Reloading mod {0}", modFile.Replace(modPath, ""))
             CompileCustom(modFile.Replace(modPath, ""))
         Next
+        Wdbg("I", "All mods restarted.")
     End Sub
 
     ''' <summary>
@@ -370,9 +387,12 @@ Public Module ModParser
     ''' <param name="OldModDesc">Old mod command description</param>
     Sub ReloadGenericDefs(ByVal OldModDesc As String)
         For i As Integer = 0 To moddefs.Keys.Count - 1
+            Wdbg("I", "Replacing ""{0}""...", OldModDesc)
             Dim Cmd As String = moddefs.Keys(i)
             If moddefs(Cmd).Contains(OldModDesc) Then
+                Wdbg("I", "Old Definition: {0}", moddefs(Cmd))
                 moddefs(Cmd) = moddefs(Cmd).Replace(OldModDesc, DoTranslation("Command defined by ", currentLang))
+                Wdbg("I", "New Definition: {0}", moddefs(Cmd))
             End If
         Next
     End Sub

@@ -55,7 +55,6 @@ Public Module ModExecutor
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 If (actualCmd = script.Cmd) And (script.Name <> Nothing) And (actualCmd <> script.Name) Then
-                    Wdbg("I", "Command = {0}", actualCmd)
                     actualCmd = script.Name
                 End If
             Next
@@ -66,6 +65,7 @@ Public Module ModExecutor
             Wdbg("I", "Command {0} will be run with arguments: {1}", actualCmd, args)
             For Each ModParts As String In scripts(actualCmd).Keys
                 If scripts(actualCmd)(ModParts).Cmd = parts(0) Then
+                    Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
                     scripts(actualCmd)(ModParts).PerformCmd(args)
                 End If
             Next
@@ -74,6 +74,7 @@ Public Module ModExecutor
             Wdbg("I", "Command {0} will be run.", actualCmd)
             For Each ModParts As String In scripts(actualCmd).Keys
                 If scripts(actualCmd)(ModParts).Cmd = parts(0) Then
+                    Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
                     scripts(actualCmd)(ModParts).PerformCmd()
                 End If
             Next
