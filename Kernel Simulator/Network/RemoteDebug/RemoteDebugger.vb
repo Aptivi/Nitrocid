@@ -145,7 +145,7 @@ Module RemoteDebugger
                             If RecordChatToDebugLog Then
                                 Wdbg("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
                             Else
-                                dbgConns.Keys(i - 1).WriteLine("[{0}] {1}> {2}", RenderTime(), name, msg.Replace(vbNullChar, ""))
+                                WdbgDevicesOnly("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
                             End If
                         End If
                     End If

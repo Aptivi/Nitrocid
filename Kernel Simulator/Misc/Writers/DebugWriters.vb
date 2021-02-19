@@ -63,10 +63,10 @@ Module DebugWriters
                 Next
                 'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
             Else 'Rare case, unless debug symbol is not found on archives.
-                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
+                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
                     Try
-                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
+                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
                     Catch ex As Exception
                         OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
                         WStkTrc(ex)
@@ -74,6 +74,40 @@ Module DebugWriters
                 Next
                 'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
             End If
+
+            'Disconnect offending clients who are disconnected
+            For Each i As Integer In OffendingIndex
+                If i <> -1 Then
+                    DebugDevices.Keys(i).Disconnect(True)
+                    EventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices.Values(i))
+                    Wdbg("W", "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
+                    dbgConns.Remove(dbgConns.Keys(i))
+                    DebugDevices.Remove(DebugDevices.Keys(i))
+                End If
+            Next
+            OffendingIndex.Clear()
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the debugger devices, and sets the time stamp. Note that it doesn't print where did the debugger debug in source files.
+    ''' </summary>
+    ''' <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    Public Sub WdbgDevicesOnly(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
+        If DebugMode Then
+            Dim OffendingIndex As New List(Of String)
+
+            'For contributors who are testing new code: Uncomment the two Debug.WriteLine lines for immediate debugging (Immediate Window)
+            For i As Integer = 0 To dbgConns.Count - 1
+                Try
+                    dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
+                Catch ex As Exception
+                    OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
+                    WStkTrc(ex)
+                End Try
+            Next
+            'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
 
             'Disconnect offending clients who are disconnected
             For Each i As Integer In OffendingIndex
