@@ -152,7 +152,7 @@ Module RemoteDebugger
                 Catch ex As Exception
                     Dim SE As SocketException = CType(ex.InnerException, SocketException)
                     If Not IsNothing(SE) Then
-                        If Not SE.SocketErrorCode = SocketError.TimedOut Then
+                        If Not SE.SocketErrorCode = SocketError.TimedOut And Not SE.SocketErrorCode = SocketError.WouldBlock Then
                             Wdbg("E", "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
                             WStkTrc(ex)
                         End If
