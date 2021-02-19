@@ -303,7 +303,7 @@ Public Module KernelTools
         End If
 
         'Stop RPC
-        RPCThread.Abort()
+        RPCThread.Abort() 'FIXME: Remote shutdown gets stuck here.
         RPCListen?.Close()
         RPCListen = Nothing
         RPCThread = New Thread(AddressOf RecCommand) With {.IsBackground = True}
@@ -313,7 +313,7 @@ Public Module KernelTools
         SMTP_Client.Disconnect(True)
 
         'Disable safe mode
-        SafeMode = True
+        SafeMode = False
     End Sub
 
     ''' <summary>
