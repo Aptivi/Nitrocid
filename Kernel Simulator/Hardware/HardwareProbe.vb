@@ -91,18 +91,18 @@ Public Module HardwareProbe
         W(DoTranslation("CPU: Total number of processors: {0}", currentLang), True, ColTypes.Neutral, Environment.ProcessorCount)
 
         'Print some info
-        W("RAM: {0} MB", True, ColTypes.Neutral, FormatNumber(HardwareInfo.Hardware.RAM.TotalMemory / 1024, 2))
+        W("RAM: {0} MB", True, ColTypes.Neutral, If(IsNumeric(HardwareInfo.Hardware.RAM.TotalMemory), FormatNumber(HardwareInfo.Hardware.RAM.TotalMemory / 1024, 2), HardwareInfo.Hardware.RAM.TotalMemory))
 
         'Drive Info
         For Each driveinfo In HardwareInfo.Hardware.HDD.Keys
             If HardwareInfo.Hardware.HDD(driveinfo).Vendor = "(Standard disk drives)" Then
-                W("HDD: {0} {1} GB", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(driveinfo).Model, FormatNumber(HardwareInfo.Hardware.HDD(driveinfo).Size / 1024 / 1024 / 1024, 2))
+                W("HDD: {0} {1} GB", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(driveinfo).Model, If(IsNumeric(HardwareInfo.Hardware.HDD(driveinfo).Size), FormatNumber(HardwareInfo.Hardware.HDD(driveinfo).Size / 1024 / 1024 / 1024, 2), HardwareInfo.Hardware.HDD(driveinfo).Size))
             Else
-                W("HDD: {0} {1} {2} GB", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(driveinfo).Vendor, HardwareInfo.Hardware.HDD(driveinfo).Model, FormatNumber(HardwareInfo.Hardware.HDD(driveinfo).Size / 1024 / 1024 / 1024, 2))
+                W("HDD: {0} {1} {2} GB", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(driveinfo).Vendor, HardwareInfo.Hardware.HDD(driveinfo).Model, If(IsNumeric(HardwareInfo.Hardware.HDD(driveinfo).Size), FormatNumber(HardwareInfo.Hardware.HDD(driveinfo).Size / 1024 / 1024 / 1024, 2), HardwareInfo.Hardware.HDD(driveinfo).Size))
             End If
             For Each PartInfo In HardwareInfo.Hardware.HDD(driveinfo).Partitions.Keys
                 W("HDD ({2}): {0} {1} GB", True, ColTypes.Neutral,
-                  HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).FileSystem, FormatNumber(HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).Size / 1024 / 1024 / 1024, 2), HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).ID)
+                  HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).FileSystem, If(IsNumeric(HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).Size), FormatNumber(HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).Size / 1024 / 1024 / 1024, 2), HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).Size), HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).ID)
             Next
         Next
     End Sub
