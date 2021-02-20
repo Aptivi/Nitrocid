@@ -262,7 +262,7 @@ Public Module GetCommand
             ElseIf words(0) = "chdir" Then
 
                 Try
-                    SetCurrDir(strArgs)
+                    SetCurrDir(eqargs(0))
                 Catch sex As Security.SecurityException
                     Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
                     W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, Dir, sex.Message)
