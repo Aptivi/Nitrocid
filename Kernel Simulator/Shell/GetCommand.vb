@@ -265,10 +265,10 @@ Public Module GetCommand
                     SetCurrDir(eqargs(0))
                 Catch sex As Security.SecurityException
                     Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
-                    W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, Dir, sex.Message)
+                    W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, eqargs(0), sex.Message)
                     WStkTrc(sex)
                 Catch ptlex As PathTooLongException
-                    Wdbg("I", "Directory length: {0}", Dir.Length)
+                    Wdbg("I", "Directory length: {0}", NeutralizePath(eqargs(0)).Length)
                     W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Err)
                     WStkTrc(ptlex)
                 Catch ex As Exception
