@@ -84,9 +84,9 @@ Public Module TextEditTools
             Wdbg("I", "File is saved.")
             If ClearLines Then
                 TextEdit_FileLines.Clear()
-                TextEdit_FileLinesOrig.Clear()
             End If
-            TextEdit_FileLinesOrig = TextEdit_FileLines
+            TextEdit_FileLinesOrig.Clear()
+            TextEdit_FileLinesOrig.AddRange(TextEdit_FileLines)
             Return True
         Catch ex As Exception
             Wdbg("E", "Saving file failed: {0}", ex.Message)
