@@ -113,6 +113,14 @@ Public Module Config
                         New IniKey(ksconf, "Dissolve - Activate True Color Mode", DissolveTrueColor),
                         New IniKey(ksconf, "BouncingBlock - Activate True Color Mode", BouncingBlockTrueColor),
                         New IniKey(ksconf, "Disco - Cycle Colors", DiscoCycleColors),
+                        New IniKey(ksconf, "BouncingBlock - Delay in Milliseconds", BouncingBlockDelay),
+                        New IniKey(ksconf, "BouncingText - Delay in Milliseconds", BouncingTextDelay),
+                        New IniKey(ksconf, "ColorMix - Delay in Milliseconds", ColorMixDelay),
+                        New IniKey(ksconf, "Disco - Delay in Milliseconds", DiscoDelay),
+                        New IniKey(ksconf, "GlitterColor - Delay in Milliseconds", GlitterColorDelay),
+                        New IniKey(ksconf, "GlitterMatrix - Delay in Milliseconds", GlitterMatrixDelay),
+                        New IniKey(ksconf, "Lines - Delay in Milliseconds", LinesDelay),
+                        New IniKey(ksconf, "Matrix - Delay in Milliseconds", MatrixDelay),
                         New IniKey(ksconf, "BouncingText - Text Shown", BouncingTextWrite)))
 
                 'Misc Section
@@ -211,6 +219,14 @@ Public Module Config
                         New IniKey(ksconf, "Dissolve - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "BouncingBlock - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "Disco - Cycle Colors", "False"),
+                        New IniKey(ksconf, "BouncingBlock - Delay in Milliseconds", 10),
+                        New IniKey(ksconf, "BouncingText - Delay in Milliseconds", 10),
+                        New IniKey(ksconf, "ColorMix - Delay in Milliseconds", 1),
+                        New IniKey(ksconf, "Disco - Delay in Milliseconds", 100),
+                        New IniKey(ksconf, "GlitterColor - Delay in Milliseconds", 1),
+                        New IniKey(ksconf, "GlitterMatrix - Delay in Milliseconds", 1),
+                        New IniKey(ksconf, "Lines - Delay in Milliseconds", 500),
+                        New IniKey(ksconf, "Matrix - Delay in Milliseconds", 1),
                         New IniKey(ksconf, "BouncingText - Text Shown", "Kernel Simulator")))
 
                 'Misc Section
@@ -277,6 +293,8 @@ Public Module Config
             ksconf.Sections("Screensaver").TrailingComment.Text = "This section is the network settings."
             ksconf.Sections("Screensaver").Keys("Screensaver").TrailingComment.Text = "Specifies the current screensaver."
             ksconf.Sections("Screensaver").Keys("Screensaver Timeout in ms").TrailingComment.Text = "After specified milliseconds, the screensaver will launch."
+
+            'Screensaver: Colors
             ksconf.Sections("Screensaver").Keys("ColorMix - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for ColorMix"
             ksconf.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Disco"
             ksconf.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for GlitterColor"
@@ -290,6 +308,18 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("Dissolve - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Dissolve"
             ksconf.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for BouncingBlock"
             ksconf.Sections("Screensaver").Keys("Disco - Cycle Colors").TrailingComment.Text = "Disco will cycle colors if it's enabled. Otherwise, select random colors."
+
+            'Screensaver: Delays
+            ksconf.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in BouncingBlock?"
+            ksconf.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in BouncingText?"
+            ksconf.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in ColorMix?"
+            ksconf.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Disco?"
+            ksconf.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in GlitterColor?"
+            ksconf.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in GlitterMatrix?"
+            ksconf.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Lines?"
+            ksconf.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Matrix?"
+
+            'Screensaver: Texts
             ksconf.Sections("Screensaver").Keys("BouncingText - Text Shown").TrailingComment.Text = "Any text for BouncingText"
 
             'Misc
@@ -445,6 +475,8 @@ Public Module Config
             'Screensaver Section
             defSaverName = configReader.Sections("Screensaver").Keys("Screensaver").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value, 0) Then ScrnTimeout = configReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value
+
+            'Screensaver: Colors
             ColorMix255Colors = configReader.Sections("Screensaver").Keys("ColorMix - Activate 255 Color Mode").Value
             Disco255Colors = configReader.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").Value
             GlitterColor255Colors = configReader.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").Value
@@ -458,6 +490,18 @@ Public Module Config
             DissolveTrueColor = configReader.Sections("Screensaver").Keys("Dissolve - Activate True Color Mode").Value
             BouncingBlockTrueColor = configReader.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").Value
             DiscoCycleColors = configReader.Sections("Screensaver").Keys("Disco - Cycle Colors").Value
+
+            'Screensaver: Delays
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").Value, 0) Then BouncingBlockDelay = configReader.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").Value, 0) Then BouncingTextDelay = configReader.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").Value, 0) Then ColorMixDelay = configReader.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").Value, 0) Then DiscoDelay = configReader.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").Value, 0) Then GlitterColorDelay = configReader.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").Value, 0) Then GlitterMatrixDelay = configReader.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value, 0) Then LinesDelay = configReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value, 0) Then MatrixDelay = configReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value
+
+            'Screensaver: Texts
             BouncingTextWrite = configReader.Sections("Screensaver").Keys("BouncingText - Text Shown").Value
 
             'Misc Section

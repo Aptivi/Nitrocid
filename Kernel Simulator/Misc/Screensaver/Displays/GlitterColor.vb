@@ -45,7 +45,7 @@ Module GlitterColorDisplay
                 Wdbg("I", "All clean. Glitter Color screensaver stopped.")
                 Exit Do
             Else
-                Thread.Sleep(1)
+                Thread.Sleep(GlitterColorDelay)
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 Console.SetCursorPosition(Left, Top)

@@ -37,7 +37,7 @@ Module BouncingBlockDisplay
         RowBlock = Console.WindowHeight / 2
         ColumnBlock = Console.WindowWidth / 2
         Do While True
-            Thread.Sleep(10)
+            Thread.Sleep(BouncingBlockDelay)
             Console.Clear()
             If BouncingBlock.CancellationPending = True Then
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")

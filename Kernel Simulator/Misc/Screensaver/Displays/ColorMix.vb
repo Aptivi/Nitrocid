@@ -33,7 +33,7 @@ Module ColorMixDisplay
         Console.CursorVisible = False
         Dim colorrand As New Random()
         Do While True
-            Thread.Sleep(1)
+            Thread.Sleep(ColorMixDelay)
             If ColorMix.CancellationPending = True Then
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True

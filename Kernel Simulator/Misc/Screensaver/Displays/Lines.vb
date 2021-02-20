@@ -31,7 +31,7 @@ Module LinesDisplay
         Dim random As New Random()
         Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Do While True
-            Thread.Sleep(500)
+            Thread.Sleep(LinesDelay)
             If Lines.CancellationPending = True Then
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True

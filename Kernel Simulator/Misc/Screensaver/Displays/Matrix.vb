@@ -45,7 +45,7 @@ Module MatrixDisplay
                 Wdbg("I", "All clean. Matrix screensaver stopped.")
                 Exit Do
             Else
-                Thread.Sleep(1)
+                Thread.Sleep(MatrixDelay)
                 Console.Write(CStr(random.Next(2)))
             End If
         Loop

@@ -149,9 +149,11 @@ Public Module ToolPrompts
                     W("9) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowPreview)))
                     W("10) " + DoTranslation("Record chat to debug log", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(RecordChatToDebugLog)))
                 Case 6 'Screensaver
-                    MaxOptions = 15
+                    MaxOptions = 23
                     W(DoTranslation("This section lists all the screensavers and their available settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ScrnTimeout)))
+
+                    'Screensaver: Colors
                     W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMix255Colors)))
                     W("3) [Disco] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(Disco255Colors)))
                     W("4) [GlitterColor] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColor255Colors)))
@@ -165,7 +167,19 @@ Public Module ToolPrompts
                     W("12) [Dissolve] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DissolveTrueColor)))
                     W("13) [BouncingBlock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlockTrueColor)))
                     W("14) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoCycleColors)))
-                    W("15) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(BouncingTextWrite)))
+
+                    'Screensaver: Delays
+                    W("15) [BouncingBlock] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlockDelay)))
+                    W("16) [BouncingText] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingTextDelay)))
+                    W("17) [ColorMix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMixDelay)))
+                    W("18) [Disco] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoDelay)))
+                    W("19) [GlitterColor] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColorDelay)))
+                    W("20) [GlitterMatrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterMatrixDelay)))
+                    W("21) [Lines] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LinesDelay)))
+                    W("22) [Matrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(MatrixDelay)))
+
+                    'Screensaver: Texts
+                    W("23) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(BouncingTextWrite)))
                 Case 7 'Misc
                     MaxOptions = 9
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -615,7 +629,39 @@ Public Module ToolPrompts
                             W(DoTranslation("Disco will cycle colors when enabled. Otherwise, select random colors.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 15 'BouncingText: Text shown
+                        Case 15 'BouncingBlock - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 16 'BouncingText - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 17 'ColorMix - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 18 'Disco - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DiscoDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 19 'GlitterColor - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 20 'GlitterMatrix - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterMatrixDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 21 'Lines - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 22 'Matrix - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MatrixDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 23 'BouncingText: Text shown
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(BouncingTextWrite)
                             W("*) " + DoTranslation("Write any text you want shown. Shorter is better.", currentLang), True, ColTypes.Neutral)

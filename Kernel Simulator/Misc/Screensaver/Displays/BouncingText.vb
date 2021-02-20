@@ -37,7 +37,7 @@ Module BouncingTextDisplay
         ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
         ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
         Do While True
-            Thread.Sleep(10)
+            Thread.Sleep(BouncingTextDelay)
             Console.Clear()
             If BouncingText.CancellationPending = True Then
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")

@@ -36,7 +36,7 @@ Module DiscoDisplay
         Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
         Dim random As New Random()
         Do While True
-            Thread.Sleep(100)
+            Thread.Sleep(DiscoDelay)
             If Disco.CancellationPending = True Then
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True

@@ -46,7 +46,7 @@ Module GlitterMatrixDisplay
                 Wdbg("I", "All clean. Glitter Matrix screensaver stopped.")
                 Exit Do
             Else
-                Thread.Sleep(1)
+                Thread.Sleep(GlitterMatrixDelay)
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 Console.SetCursorPosition(Left, Top)

@@ -18,19 +18,98 @@
 
 Public Module ScreensaverSettings
 
-    Public ColorMix255Colors As Boolean                         'Enable 255 color support for ColorMix. Has a higher priority than 16 color support.
-    Public Disco255Colors As Boolean                            'Enable 255 color support for Disco. Has a higher priority than 16 color support.
-    Public GlitterColor255Colors As Boolean                     'Enable 255 color support for GlitterColor. Has a higher priority than 16 color support.
-    Public Lines255Colors As Boolean                            'Enable 255 color support for Lines. Has a higher priority than 16 color support.
-    Public Dissolve255Colors As Boolean                         'Enable 255 color support for Dissolve. Has a higher priority than 16 color support.
-    Public BouncingBlock255Colors As Boolean                    'Enable 255 color support for BouncingBlock. Has a higher priority than 16 color support.
-    Public ColorMixTrueColor As Boolean                         'Enable truecolor support for ColorMix. Has a higher priority than 255 color support.
-    Public DiscoTrueColor As Boolean                            'Enable truecolor support for Disco. Has a higher priority than 255 color support.
-    Public GlitterColorTrueColor As Boolean                     'Enable truecolor support for GlitterColor. Has a higher priority than 255 color support.
-    Public LinesTrueColor As Boolean                            'Enable truecolor support for Lines. Has a higher priority than 255 color support.
-    Public DissolveTrueColor As Boolean                         'Enable truecolor support for Dissolve. Has a higher priority than 255 color support.
-    Public BouncingBlockTrueColor As Boolean                    'Enable truecolor support for BouncingBlock. Has a higher priority than 16 color support.
-    Public DiscoCycleColors As Boolean                          'Enable color cycling for Disco
-    Public BouncingTextWrite As String = "Kernel Simulator"     'Text for Bouncing Text
+    '-> Color Settings
+    ''' <summary>
+    ''' [ColorMix] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public ColorMix255Colors As Boolean
+    ''' <summary>
+    ''' [ColorMix] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public ColorMixTrueColor As Boolean
+    ''' <summary>
+    ''' [Disco] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Disco255Colors As Boolean
+    ''' <summary>
+    ''' [Disco] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public DiscoTrueColor As Boolean
+    ''' <summary>
+    ''' [GlitterColor] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public GlitterColor255Colors As Boolean
+    ''' <summary>
+    ''' [GlitterColor] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public GlitterColorTrueColor As Boolean
+    ''' <summary>
+    ''' [Lines] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Lines255Colors As Boolean
+    ''' <summary>
+    ''' [Lines] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public LinesTrueColor As Boolean
+    ''' <summary>
+    ''' [Dissolve] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Dissolve255Colors As Boolean
+    ''' <summary>
+    ''' [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public DissolveTrueColor As Boolean
+    ''' <summary>
+    ''' [BouncingBlock] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public BouncingBlock255Colors As Boolean
+    ''' <summary>
+    ''' [BouncingBlock] Enable truecolor support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public BouncingBlockTrueColor As Boolean
+    ''' <summary>
+    ''' [Disco] Enable color cycling
+    ''' </summary>
+    Public DiscoCycleColors As Boolean
+
+    '-> Delays
+    ''' <summary>
+    ''' [BouncingBlock] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public BouncingBlockDelay As Integer = 10
+    ''' <summary>
+    ''' [BouncingText] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public BouncingTextDelay As Integer = 10
+    ''' <summary>
+    ''' [ColorMix] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public ColorMixDelay As Integer = 1
+    ''' <summary>
+    ''' [Disco] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public DiscoDelay As Integer = 100
+    ''' <summary>
+    ''' [GlitterColor] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public GlitterColorDelay As Integer = 1
+    ''' <summary>
+    ''' [GlitterMatrix] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public GlitterMatrixDelay As Integer = 1
+    ''' <summary>
+    ''' [Lines] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public LinesDelay As Integer = 500
+    ''' <summary>
+    ''' [Matrix] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public MatrixDelay As Integer = 1
+
+    '-> Texts
+    ''' <summary>
+    ''' [BouncingText] Text for Bouncing Text
+    ''' </summary>
+    Public BouncingTextWrite As String = "Kernel Simulator"
 
 End Module
