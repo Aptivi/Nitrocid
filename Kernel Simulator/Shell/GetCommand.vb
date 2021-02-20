@@ -59,14 +59,14 @@ Public Module GetCommand
             .HasFieldsEnclosedInQuotes = True
         }
         eqargs = Parser.ReadFields
-        If Not eqargs Is Nothing Then
+        If eqargs IsNot Nothing Then
             For i As Integer = 0 To eqargs.Length - 1
                 eqargs(i).Replace("""", "")
             Next
         End If
 
         '4a. Debug: get all arguments from eqargs()
-        If Not eqargs Is Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+        If eqargs IsNot Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
 
         '5. Check to see if a requested command is obsolete
         If obsoleteCmds.Contains(words(0)) Then

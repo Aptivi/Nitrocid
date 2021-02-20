@@ -40,7 +40,7 @@ Public Module TextEditGetCommand
                 .HasFieldsEnclosedInQuotes = True
             }
             Arguments = Parser.ReadFields
-            If Not Arguments Is Nothing Then
+            If Arguments IsNot Nothing Then
                 For i As Integer = 0 To Arguments.Length - 1
                     Arguments(i).Replace("""", "")
                 Next

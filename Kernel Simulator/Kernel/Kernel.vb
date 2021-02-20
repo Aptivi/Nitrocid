@@ -120,7 +120,7 @@ Public Module Kernel
                 Wdbg("I", "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
                 LoginFlag = True
-                If Not BootArgs Is Nothing Then
+                If BootArgs IsNot Nothing Then
                     If BootArgs.Contains("quiet") Then
                         Console.SetOut(DefConsoleOut)
                     End If
