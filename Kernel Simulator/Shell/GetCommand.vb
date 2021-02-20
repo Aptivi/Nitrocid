@@ -645,13 +645,18 @@ Public Module GetCommand
                 If eqargs?.Count > 0 Then
                     For Each PingedAddress As String In eqargs
                         If PingedAddress <> "" Then
-                            W(">> {0}", True, ColTypes.Stage, PingedAddress)
-                            Dim PingReplied As PingReply = PingAddress(PingedAddress)
-                            If PingReplied.Status = IPStatus.Success Then
-                                W(DoTranslation("Ping succeeded in {0} ms.", currentLang), True, ColTypes.Neutral, PingReplied.RoundtripTime)
-                            Else
-                                W(DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, PingReplied.Status)
-                            End If
+                            Try
+                                W(">> {0}", True, ColTypes.Stage, PingedAddress)
+                                Dim PingReplied As PingReply = PingAddress(PingedAddress)
+                                If PingReplied.Status = IPStatus.Success Then
+                                    W(DoTranslation("Ping succeeded in {0} ms.", currentLang), True, ColTypes.Neutral, PingReplied.RoundtripTime)
+                                Else
+                                    W(DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, PingReplied.Status)
+                                End If
+                            Catch ex As Exception
+                                W(DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, ex.Message)
+                                WStkTrc(ex)
+                            End Try
                         Else
                             W(DoTranslation("Address may not be empty.", currentLang), True, ColTypes.Err)
                         End If
