@@ -31,6 +31,9 @@ Public Module GetCommand
     ''' </summary>
     ''' <param name="requestedCommand">A command. It may contain arguments</param>
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
+        'Variables
+        Dim Done As Boolean = False
+
         '1. Get the index of the first space (Used for step 3)
         Dim index As Integer = requestedCommand.IndexOf(" ")
         If index = -1 Then index = requestedCommand.Length
@@ -48,7 +51,7 @@ Public Module GetCommand
         If Not index = requestedCommand.Length Then strArgs = strArgs.Substring(1)
         Wdbg("I", "Finished strArgs: {0}", strArgs)
 
-        '5. Split the arguments (again) this time with enclosed quotes
+        '4. Split the arguments (again) this time with enclosed quotes
         Dim eqargs() As String
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
         Dim Parser As New TextFieldParser(TStream) With {
@@ -62,19 +65,16 @@ Public Module GetCommand
             Next
         End If
 
-        '5a. Debug: get all arguments from eqargs()
+        '4a. Debug: get all arguments from eqargs()
         If Not eqargs Is Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
 
-        'The command is done
-        Dim Done As Boolean = False
-
-        '6. Check to see if a requested command is obsolete
+        '5. Check to see if a requested command is obsolete
         If obsoleteCmds.Contains(words(0)) Then
             Wdbg("I", "The command requested {0} is obsolete", words(0))
             W(DoTranslation("This command is obsolete and will be removed in a future release.", currentLang), True, ColTypes.Neutral)
         End If
 
-        '7. Execute a command
+        '6. Execute a command
         Try
             If words(0) = "help" Then
 
