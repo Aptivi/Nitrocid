@@ -17,11 +17,14 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
+Imports System.Threading
 
 Public Module NetworkTransfer
 
     Friend IsError As Boolean
     Friend ReasonError As Exception
+    Friend CancellationToken As New CancellationTokenSource
+    Friend WClient As New WebClient
 
     ''' <summary>
     ''' Downloads a file to the current working directory.
@@ -31,6 +34,8 @@ Public Module NetworkTransfer
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
     Public Function DownloadFile(ByVal URL As String, ByVal ShowProgress As Boolean, Optional ByVal Credentials As NetworkCredential = Nothing) As Boolean
+        WClient = New WebClient
+
         'Limit the filename to the name without any URL arguments
         Dim FileName As String = URL.Split("/").Last()
         Wdbg("I", "Prototype Filename: {0}", FileName)
@@ -41,17 +46,20 @@ Public Module NetworkTransfer
 
         'Download a file
         Wdbg("I", "Directory location: {0}", CurrDir)
-        Dim WClient As New WebClient
         If Not IsNothing(Credentials) Then
             WClient.Credentials = Credentials
         End If
         If ShowProgress Then AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
         AddHandler WClient.DownloadFileCompleted, AddressOf DownloadChecker
-        WClient.DownloadFileAsync(New Uri(URL), NeutralizePath(FileName))
+        WClient.DownloadFileAsync(New Uri(URL), NeutralizePath(FileName), CancellationToken.Token)
         While Not DFinish
+            If CancelRequested Then
+                CancellationToken.Cancel()
+            End If
         End While
         DFinish = False
         If IsError Then
+            CancellationToken.Cancel()
             Throw ReasonError
         Else
             Return True
@@ -67,19 +75,24 @@ Public Module NetworkTransfer
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
     Public Function UploadFile(ByVal File As String, ByVal URL As String, ByVal ShowProgress As Boolean, Optional ByVal Credentials As NetworkCredential = Nothing) As Boolean
+        WClient = New WebClient
+
         'Upload a file
         Wdbg("I", "Directory location: {0}", CurrDir)
-        Dim WClient As New WebClient
         If Not IsNothing(Credentials) Then
             WClient.Credentials = Credentials
         End If
         If ShowProgress Then AddHandler WClient.UploadProgressChanged, AddressOf UploadManager
         AddHandler WClient.UploadFileCompleted, AddressOf UploadChecker
-        WClient.UploadFileAsync(New Uri(URL), File)
+        WClient.UploadFileAsync(New Uri(URL), Nothing, File, CancellationToken.Token)
         While Not UFinish
+            If CancelRequested Then
+                CancellationToken.Cancel()
+            End If
         End While
         UFinish = False
         If IsError Then
+            CancellationToken.Cancel()
             Throw ReasonError
         Else
             Return True
@@ -102,6 +115,9 @@ Public Module NetworkTransfer
     ''' Thread to repeatedly report the download progress to the console.
     ''' </summary>
     Private Sub DownloadManager(sender As Object, e As DownloadProgressChangedEventArgs)
+        If CancellationToken.Token.IsCancellationRequested Then
+            WClient.CancelAsync()
+        End If
         If Not DFinish Then
             Console.SetCursorPosition(0, Console.CursorTop)
             WriteWhere(DoTranslation("{0} MB of {1} MB downloaded.", currentLang) + " | {2}%    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesReceived / 1024 / 1024, 2), FormatNumber(e.TotalBytesToReceive / 1024 / 1024, 2), e.ProgressPercentage)
@@ -124,6 +140,9 @@ Public Module NetworkTransfer
     ''' Thread to repeatedly report the download progress to the console.
     ''' </summary>
     Private Sub UploadManager(sender As Object, e As UploadProgressChangedEventArgs)
+        If CancellationToken.Token.IsCancellationRequested Then
+            WClient.CancelAsync()
+        End If
         If Not DFinish Then
             Console.SetCursorPosition(0, Console.CursorTop)
             WriteWhere(DoTranslation("{0} MB of {1} MB uploaded.", currentLang) + " | {2}%    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesSent / 1024 / 1024, 2), FormatNumber(e.TotalBytesToSend / 1024 / 1024, 2), e.ProgressPercentage)

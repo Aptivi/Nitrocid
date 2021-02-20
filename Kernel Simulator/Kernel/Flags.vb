@@ -57,5 +57,6 @@ Module Flags
 
     'Private flags
     Friend NotifyConfigError As Boolean                         'Notifies user as soon as the kernel finished booting if there is an error reading configuration.
+    Friend CancelRequested As Boolean                           'When the command cancel is requested
 
 End Module

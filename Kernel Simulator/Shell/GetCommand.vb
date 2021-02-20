@@ -1211,6 +1211,7 @@ Public Module GetCommand
             W(neaex.Message, True, ColTypes.Neutral)
             ShowHelp(words(0))
         Catch taex As ThreadAbortException
+            CancelRequested = False
             Exit Sub
         Catch ex As Exception
             EventManager.RaiseCommandError(requestedCommand, ex)
@@ -1232,6 +1233,7 @@ Public Module GetCommand
     ''' <param name="e">Arguments of event</param>
     Sub CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
         If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            CancelRequested = True
             DefConsoleOut = Console.Out
             Console.SetOut(StreamWriter.Null)
             e.Cancel = True
