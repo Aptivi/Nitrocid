@@ -60,4 +60,42 @@ Public Module Forecast
         Return WeatherInfo
     End Function
 
+    ''' <summary>
+    ''' Gets current weather info from OpenWeatherMap
+    ''' </summary>
+    ''' <param name="CityName">City name</param>
+    ''' <param name="APIKey">API Key</param>
+    ''' <returns>A class containing properties of weather information</returns>
+    Public Function GetWeatherInfo(ByVal CityName As String, ByVal APIKey As String, Optional ByVal Unit As UnitMeasurement = UnitMeasurement.Metric) As ForecastInfo
+        Dim WeatherInfo As New ForecastInfo With {.CityName = CityName, .TemperatureMeasurement = Unit}
+        Dim WeatherURL As String = $"http://api.openweathermap.org/data/2.5/weather?q={CityName}&appid={APIKey}"
+        Dim WeatherDownloader As New WebClient
+        Dim WeatherData As String
+        Dim WeatherToken As JToken
+        Wdbg("I", "Made new instance of class with {0} and {1}", CityName, Unit)
+        Wdbg("I", "Weather URL: {0}", WeatherURL)
+
+        'Deal with measurements
+        If Unit = UnitMeasurement.Imperial Then
+            WeatherURL += "&units=imperial"
+        Else
+            WeatherURL += "&units=metric"
+        End If
+
+        'Download and parse JSON data
+        WeatherData = WeatherDownloader.DownloadString(WeatherURL)
+        WeatherToken = JToken.Parse(WeatherData)
+
+        'Put needed data to the class
+        WeatherInfo.Weather = WeatherToken.SelectToken("weather").First.SelectToken("id").ToObject(GetType(WeatherCondition))
+        WeatherInfo.Temperature = WeatherToken.SelectToken("main").SelectToken("temp").ToObject(GetType(Double))
+        WeatherInfo.FeelsLike = WeatherToken.SelectToken("main").SelectToken("feels_like").ToObject(GetType(Double))
+        WeatherInfo.Pressure = WeatherToken.SelectToken("main").SelectToken("pressure").ToObject(GetType(Double))
+        WeatherInfo.Humidity = WeatherToken.SelectToken("main").SelectToken("humidity").ToObject(GetType(Double))
+        WeatherInfo.WindSpeed = WeatherToken.SelectToken("wind").SelectToken("speed").ToObject(GetType(Double))
+        WeatherInfo.WindDirection = WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(GetType(Double))
+        WeatherInfo.CityID = WeatherToken.SelectToken("id").ToObject(GetType(Long))
+        Return WeatherInfo
+    End Function
+
 End Module

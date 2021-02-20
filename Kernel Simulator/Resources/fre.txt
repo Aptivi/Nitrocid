@@ -110,8 +110,8 @@ Mod ne peut pas être chargé pour les raisons suivantes:
 mod: Chargement des mods ...
 mod: Arrêter les mods ...
 Mod {0} n'a pas le nom. Vérifiez le code source.
-Mod {0} n'a pas le nom. Vérifiez le code source....
-{0} Le mod {0} n'a pas la version....
+Mod {0} n'a pas la version.
+{0} v {1} a commencé
 Aucune définition pour la commande {0}.
 Commande définie par 
 Vous devez vous déconnecter du serveur avant de vous connecter à un autre serveur.
@@ -530,12 +530,12 @@ Erreurs dans les paquets reçus:
 Propriétés générales IPv6
 Propriétés IPv4 générales
 Exécute à distance une commande vers un PC distant
-- Étape 0: initialisation du système
-- Étape 1: détection matérielle
-- Étape 2: Gestion interne des noms d'utilisateur
-- Étape 3: Détection de mods et d'économiseurs d'écran
-- Étape 4: collecte des ordures
-- Étape 5: Connectez-vous
+- Étage 1: Initialisation du système
+- Étage 2: Détection matérielle
+- Étage 2: Gestion interne des noms d'utilisateur
+- Étage 3: Détection de mods et d'économiseurs d'écran
+- Étage 4: Collecte des ordures
+- Étage 4: Connectez-vous
 Ennen roskien keräystä: {0} tavua
 Jätekeräyksen jälkeen: {0} tavua
 Virhe RPC: n käynnistämisessä: {0}
@@ -640,7 +640,7 @@ Ligne supprimée.
 Le numéro de ligne spécifié {0} n'est pas un nombre valide.
 Les arguments requis ne sont pas transmis à la commande {0}
 Erreur lors de la tentative d'exécution de la commande: {0}
-Exécution en mode sans échec. Sauter l'étape ...
+Exécution en mode sans échec. Sauter l'étage ...
 >> Débogage et discussion à distance: version
 >> Votre adresse est {0}.
 >> Votre nom est {0}.
@@ -656,8 +656,8 @@ Bloquer un périphérique de débogage par adresse IP
 {0} n'est pas encore bloqué.
 Erreur lors du chargement des paramètres
 Une erreur s'est produite lors du chargement des paramètres. Vous devrez peut-être vérifier le fichier de paramètres.
-- Étape 2: détection des mods et des économiseurs d'écran
-- Étape 3: connexion
+- Étage 2: détection des mods et des économiseurs d'écran
+- Étage 3: connexion
 Sélectionnez la section:
 Sélectionnez l'option:
 Réglages généraux...
@@ -716,7 +716,7 @@ Paramètres de l'économiseur d'écran ...
 Activer 255 couleurs
 Voulez-vous rester connecté?
 Choix invalide. En supposant que non ...
-Aucun mods détecté. Sauter l'étape ...
+Aucun mods détecté. Sauter l'étage ...
 Changer de culture lors du changement de langue
 Texte affiché
 Écrivez le texte que vous souhaitez afficher. Plus c'est court, c'est mieux.

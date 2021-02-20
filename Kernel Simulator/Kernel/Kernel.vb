@@ -24,7 +24,6 @@ Public Module Kernel
     Public BootArgs() As String
     Public configReader As New IniFile()
     Public MOTDMessage, HName, MAL As String
-    Public ReadOnly EnvironmentOSType As String = Environment.OSVersion.ToString
     Public EventManager As New EventsAndExceptions
     Public DefConsoleOut As TextWriter
     Public ScrnTimeout As Integer = 300000
@@ -34,7 +33,6 @@ Public Module Kernel
     ''' Entry point
     ''' </summary>
     Sub Main()
-        'TODO: Re-write the whole kernel in Beta
         While True
             Try
                 'A title
@@ -43,7 +41,7 @@ Public Module Kernel
                 'Initialize crucial things
                 If Not NotifThread.IsAlive Then NotifThread.Start()
                 InitPaths()
-                If Not EnvironmentOSType.Contains("Unix") Then Initialize255()
+                If Not IsOnUnix() Then Initialize255()
 
                 'Check if factory reset is required
                 If Environment.GetCommandLineArgs.Contains("reset") Then
@@ -77,7 +75,8 @@ Public Module Kernel
                 If Not File.Exists(paths("Home") + "/MAL.txt") Then SetMOTD(DoTranslation("Logged in successfully as <user>", currentLang), MessageType.MAL)
 
                 'Initialize stage counter
-                W(vbNewLine + DoTranslation("- Stage 0: System initialization", currentLang), True, ColTypes.Stage)
+                W(vbNewLine + DoTranslation("- Stage 1: System initialization", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 1: Initializing system")
                 StartRDebugThread(True)
                 W(DoTranslation("Starting RPC...", currentLang), True, ColTypes.Neutral)
                 StartRPC()
@@ -92,13 +91,13 @@ Public Module Kernel
 #End If
 
                 'Phase 1: Probe hardware
-                W(vbNewLine + DoTranslation("- Stage 1: Hardware detection", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 1: Probing hardware")
+                W(vbNewLine + DoTranslation("- Stage 2: Hardware detection", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 2: Probing hardware")
                 StartProbing()
 
                 'Phase 2: Parse Mods and Screensavers
-                W(vbNewLine + DoTranslation("- Stage 2: Mods and screensavers detection", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 2: Parse mods and screensavers")
+                W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
                     ParseMods(True)
@@ -117,11 +116,11 @@ Public Module Kernel
                 EventManager.RaiseStartKernel()
 
                 'Phase 3: Log-in
-                W(vbNewLine + DoTranslation("- Stage 3: Log in", currentLang), True, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 3: Log in")
+                W(vbNewLine + DoTranslation("- Stage 4: Log in", currentLang), True, ColTypes.Stage)
+                Wdbg("I", "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
                 LoginFlag = True
-                If Not BootArgs Is Nothing Then
+                If BootArgs IsNot Nothing Then
                     If BootArgs.Contains("quiet") Then
                         Console.SetOut(DefConsoleOut)
                     End If
@@ -145,6 +144,8 @@ Public Module Kernel
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
                 ElseIf LoginFlag = True And maintenance = True Then
+                    ReadMOTDFromFile(MessageType.MOTD)
+                    ReadMOTDFromFile(MessageType.MAL)
                     LoginFlag = False
                     W(DoTranslation("Enter the admin password for maintenance.", currentLang), True, ColTypes.Neutral)
                     answeruser = "root"
@@ -158,5 +159,19 @@ Public Module Kernel
             End Try
         End While
     End Sub
+
+    ''' <summary>
+    ''' Is this system a Windows system?
+    ''' </summary>
+    Function IsOnWindows()
+        Return Environment.OSVersion.Platform = PlatformID.Win32NT
+    End Function
+
+    ''' <summary>
+    ''' Is this system a Unix system?
+    ''' </summary>
+    Function IsOnUnix()
+        Return Environment.OSVersion.Platform = PlatformID.Unix
+    End Function
 
 End Module

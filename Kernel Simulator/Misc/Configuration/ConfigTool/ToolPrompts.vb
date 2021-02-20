@@ -110,71 +110,88 @@ Public Module ToolPrompts
                 Case 1 'General
                     MaxOptions = 5
                     W(DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Prompt for Arguments on Boot", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("argsOnBoot"))
-                    W("2) " + DoTranslation("Maintenance Mode Trigger", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("maintenance"))
+                    W("1) " + DoTranslation("Prompt for Arguments on Boot", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(argsOnBoot)))
+                    W("2) " + DoTranslation("Maintenance Mode Trigger", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(maintenance)))
                     W("3) " + DoTranslation("Change Root Password...", currentLang), True, ColTypes.Neutral)
-                    W("4) " + DoTranslation("Check for Updates on Startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("CheckUpdateStart"))
-                    W("5) " + DoTranslation("Change Culture when Switching Languages", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("LangChangeCulture"))
+                    W("4) " + DoTranslation("Check for Updates on Startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(CheckUpdateStart)))
+                    W("5) " + DoTranslation("Change Culture when Switching Languages", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(LangChangeCulture)))
                 Case 2 'Hardware
                     MaxOptions = 1
                     W(DoTranslation("This section changes hardware probe behavior.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Quiet Probe", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("quietProbe"))
+                    W("1) " + DoTranslation("Quiet Probe", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(quietProbe)))
                 Case 3 'Login
                     MaxOptions = 3
                     W(DoTranslation("This section represents the login settings. Log out of your account for the changes to take effect.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Show MOTD on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("showMOTD"))
-                    W("2) " + DoTranslation("Clear Screen on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("clsOnLogin"))
-                    W("3) " + DoTranslation("Show available usernames", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShowAvailableUsers"))
+                    W("1) " + DoTranslation("Show MOTD on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(showMOTD)))
+                    W("2) " + DoTranslation("Clear Screen on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(clsOnLogin)))
+                    W("3) " + DoTranslation("Show available usernames", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(ShowAvailableUsers)))
                 Case 4 'Shell
                     MaxOptions = 7
                     W(DoTranslation("This section lists the shell settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColoredShell"))
-                    W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("simHelp"))
-                    W("3) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ShellPromptStyle"))
-                    W("4) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPShellPromptStyle"))
-                    W("5) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("MailShellPromptStyle"))
-                    W("6) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("SFTPShellPromptStyle"))
+                    W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColoredShell)))
+                    W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(simHelp)))
+                    W("3) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShellPromptStyle)))
+                    W("4) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPShellPromptStyle)))
+                    W("5) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(MailShellPromptStyle)))
+                    W("6) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(SFTPShellPromptStyle)))
                     W("7) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                 Case 5 'Network
-                    MaxOptions = 9
+                    MaxOptions = 10
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Debug Port", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DebugPort"))
-                    W("2) " + DoTranslation("Remote Debug Default Nick Prefix", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("RDebugDNP"))
-                    W("3) " + DoTranslation("Download Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DRetries"))
-                    W("4) " + DoTranslation("Upload Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("URetries"))
-                    W("5) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ShowProgress"))
-                    W("6) " + DoTranslation("Log FTP username", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerUsername"))
-                    W("7) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPLoggerIP"))
-                    W("8) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FTPFirstProfileOnly"))
-                    W("9) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("ShowPreview"))
+                    W("1) " + DoTranslation("Debug Port", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DebugPort)))
+                    W("2) " + DoTranslation("Remote Debug Default Nick Prefix", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(RDebugDNP)))
+                    W("3) " + DoTranslation("Download Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DRetries)))
+                    W("4) " + DoTranslation("Upload Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(URetries)))
+                    W("5) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowProgress)))
+                    W("6) " + DoTranslation("Log FTP username", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPLoggerUsername)))
+                    W("7) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPLoggerIP)))
+                    W("8) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPFirstProfileOnly)))
+                    W("9) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowPreview)))
+                    W("10) " + DoTranslation("Record chat to debug log", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(RecordChatToDebugLog)))
                 Case 6 'Screensaver
-                    MaxOptions = 15
+                    MaxOptions = 23
                     W(DoTranslation("This section lists all the screensavers and their available settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ScrnTimeout"))
-                    W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMix255Colors"))
-                    W("3) [Disco] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Disco255Colors"))
-                    W("4) [GlitterColor] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("GlitterColor255Colors"))
-                    W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Lines255Colors"))
-                    W("6) [Dissolve] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("Dissolve255Colors"))
-                    W("7) [BouncingBlock] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("BouncingBlock255Colors"))
-                    W("8) [ColorMix] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("ColorMixTrueColor"))
-                    W("9) [Disco] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DiscoTrueColor"))
-                    W("10) [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("GlitterColorTrueColor"))
-                    W("11) [Lines] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("LinesTrueColor"))
-                    W("12) [Dissolve] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DissolveTrueColor"))
-                    W("13) [BouncingBlock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("BouncingBlockTrueColor"))
-                    W("14) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DiscoCycleColors"))
-                    W("15) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("BouncingTextWrite"))
+                    W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ScrnTimeout)))
+
+                    'Screensaver: Colors
+                    W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMix255Colors)))
+                    W("3) [Disco] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(Disco255Colors)))
+                    W("4) [GlitterColor] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColor255Colors)))
+                    W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(Lines255Colors)))
+                    W("6) [Dissolve] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(Dissolve255Colors)))
+                    W("7) [BouncingBlock] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlock255Colors)))
+                    W("8) [ColorMix] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMixTrueColor)))
+                    W("9) [Disco] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoTrueColor)))
+                    W("10) [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColorTrueColor)))
+                    W("11) [Lines] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LinesTrueColor)))
+                    W("12) [Dissolve] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DissolveTrueColor)))
+                    W("13) [BouncingBlock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlockTrueColor)))
+                    W("14) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoCycleColors)))
+
+                    'Screensaver: Delays
+                    W("15) [BouncingBlock] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlockDelay)))
+                    W("16) [BouncingText] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingTextDelay)))
+                    W("17) [ColorMix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMixDelay)))
+                    W("18) [Disco] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoDelay)))
+                    W("19) [GlitterColor] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColorDelay)))
+                    W("20) [GlitterMatrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterMatrixDelay)))
+                    W("21) [Lines] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LinesDelay)))
+                    W("22) [Matrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(MatrixDelay)))
+
+                    'Screensaver: Texts
+                    W("23) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(BouncingTextWrite)))
                 Case 7 'Misc
-                    MaxOptions = 7
+                    MaxOptions = 9
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("CornerTD"))
-                    W("2) " + DoTranslation("Debug Size Quota in Bytes", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("DebugQuota"))
-                    W("3) " + DoTranslation("Size parse mode", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("FullParseMode"))
-                    W("4) " + DoTranslation("Marquee on startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("StartScroll"))
-                    W("5) " + DoTranslation("Long Time and Date", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("LongTimeDate"))
-                    W("6) " + DoTranslation("Show Hidden Files", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("HiddenFiles"))
-                    W("7) " + DoTranslation("Preferred Unit for Temperature", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue("PreferredUnit"))
+                    W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(CornerTD)))
+                    W("2) " + DoTranslation("Debug Size Quota in Bytes", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DebugQuota)))
+                    W("3) " + DoTranslation("Size parse mode", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FullParseMode)))
+                    W("4) " + DoTranslation("Marquee on startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(StartScroll)))
+                    W("5) " + DoTranslation("Long Time and Date", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LongTimeDate)))
+                    W("6) " + DoTranslation("Show Hidden Files", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(HiddenFiles)))
+                    W("7) " + DoTranslation("Preferred Unit for Temperature", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(PreferredUnit)))
+                    W("8) " + DoTranslation("Enable text editor autosave", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(TextEdit_AutoSaveFlag)))
+                    W("9) " + DoTranslation("Text editor autosave interval", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(TextEdit_AutoSaveInterval)))
                 Case Else 'Invalid section
                     W("X) " + DoTranslation("Invalid section entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
             End Select
@@ -243,14 +260,14 @@ Public Module ToolPrompts
                         Case 1 'Prompt for Arguments on Boot
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "argsOnBoot"
+                            KeyVar = NameOf(argsOnBoot)
                             W(DoTranslation("Sets up the kernel so it prompts you for argument on boot.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Maintenance Mode Trigger
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "maintenance"
+                            KeyVar = NameOf(maintenance)
                             W(DoTranslation("Triggers maintenance mode. This disables multiple accounts.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -259,14 +276,14 @@ Public Module ToolPrompts
                         Case 4 'Check for Updates on Startup
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "CheckUpdateStart"
+                            KeyVar = NameOf(CheckUpdateStart)
                             W(DoTranslation("Each startup, it will check for updates.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 5 'Change Culture when Switching Languages
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "LangChangeCulture"
+                            KeyVar = NameOf(LangChangeCulture)
                             W(DoTranslation("When switching languages, change the month names, calendar, etc.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -278,14 +295,14 @@ Public Module ToolPrompts
                         Case 1
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "setRootPasswd"
+                            KeyVar = NameOf(setRootPasswd)
                             W(DoTranslation("If the kernel is started, it will set root password.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2
-                            If GetValue("setRootPasswd") Then
+                            If GetValue(NameOf(setRootPasswd)) Then
                                 KeyType = SettingsKeyType.SString
-                                KeyVar = "RootPasswd"
+                                KeyVar = NameOf(RootPasswd)
                                 W("*) " + DoTranslation("Write the root password to be set. Don't worry; the password are shown as stars.", currentLang), True, ColTypes.Neutral)
                             Else
                                 W("X) " + DoTranslation("Enable ""Change Root Password"" to use this option. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
@@ -304,7 +321,7 @@ Public Module ToolPrompts
                         Case 1 'Quiet Probe
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "quietProbe"
+                            KeyVar = NameOf(quietProbe)
                             W(DoTranslation("Keep hardware probing messages silent.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -316,21 +333,21 @@ Public Module ToolPrompts
                         Case 1 'Show MOTD on Log-in
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "showMOTD"
+                            KeyVar = NameOf(showMOTD)
                             W(DoTranslation("Show Message of the Day before displaying login screen.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Clear Screen on Log-in
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "clsOnLogin"
+                            KeyVar = NameOf(clsOnLogin)
                             W(DoTranslation("Clear screen before displaying login screen.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 3 'Show Available Usernames
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "ShowAvailableUsers"
+                            KeyVar = NameOf(ShowAvailableUsers)
                             W(DoTranslation("Shows available users if enabled.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -342,32 +359,32 @@ Public Module ToolPrompts
                         Case 1 'Colored Shell
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "ColoredShell"
+                            KeyVar = NameOf(ColoredShell)
                             W(DoTranslation("Gives the kernel color support", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Simplified Help Command
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "simHelp"
+                            KeyVar = NameOf(simHelp)
                             W(DoTranslation("Simplified help command for all the shells", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 3 'Prompt Style
                             KeyType = SettingsKeyType.SString
-                            KeyVar = "ShellPromptStyle"
+                            KeyVar = NameOf(ShellPromptStyle)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
                         Case 4 'FTP Prompt Style
                             KeyType = SettingsKeyType.SString
-                            KeyVar = "FTPShellPromptStyle"
+                            KeyVar = NameOf(FTPShellPromptStyle)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
                         Case 5 'Mail Prompt Style
                             KeyType = SettingsKeyType.SString
-                            KeyVar = "MailShellPromptStyle"
+                            KeyVar = NameOf(MailShellPromptStyle)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
                         Case 6 'SFTP Prompt Style
                             KeyType = SettingsKeyType.SString
-                            KeyVar = "SFTPShellPromptStyle"
+                            KeyVar = NameOf(SFTPShellPromptStyle)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
                         Case Else
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
@@ -382,127 +399,134 @@ Public Module ToolPrompts
                     W("*) " + String.Join(", ", [Enum].GetNames(GetType(ConsoleColors))) + vbNewLine, True, ColTypes.Neutral)
 
                     ' Input color
-                    W("1) " + DoTranslation("Input color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("inputColor"))
+                    W("1) " + DoTranslation("Input color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(inputColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("inputColor")
-                    KeyVars.AddOrModify("inputColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(inputColor))
+                    KeyVars.AddOrModify(NameOf(inputColor), Response)
 
                     ' License color
-                    W("2) " + DoTranslation("License color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("licenseColor"))
+                    W("2) " + DoTranslation("License color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(licenseColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("licenseColor")
-                    KeyVars.AddOrModify("licenseColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(licenseColor))
+                    KeyVars.AddOrModify(NameOf(licenseColor), Response)
 
                     ' Continuable kernel error color
-                    W("3) " + DoTranslation("Continuable kernel error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("contKernelErrorColor"))
+                    W("3) " + DoTranslation("Continuable kernel error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(contKernelErrorColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("contKernelErrorColor")
-                    KeyVars.AddOrModify("contKernelErrorColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(contKernelErrorColor))
+                    KeyVars.AddOrModify(NameOf(contKernelErrorColor), Response)
 
                     ' Unontinuable kernel error color
-                    W("4) " + DoTranslation("Uncontinuable kernel error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("uncontKernelErrorColor"))
+                    W("4) " + DoTranslation("Uncontinuable kernel error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(uncontKernelErrorColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("uncontKernelErrorColor")
-                    KeyVars.AddOrModify("uncontKernelErrorColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(uncontKernelErrorColor))
+                    KeyVars.AddOrModify(NameOf(uncontKernelErrorColor), Response)
 
                     ' Host name color
-                    W("5) " + DoTranslation("Host name color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("hostNameShellColor"))
+                    W("5) " + DoTranslation("Host name color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(hostNameShellColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("hostNameShellColor")
-                    KeyVars.AddOrModify("hostNameShellColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(hostNameShellColor))
+                    KeyVars.AddOrModify(NameOf(hostNameShellColor), Response)
 
                     ' User name color
-                    W("6) " + DoTranslation("User name color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("userNameShellColor"))
+                    W("6) " + DoTranslation("User name color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(userNameShellColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("userNameShellColor")
-                    KeyVars.AddOrModify("userNameShellColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(userNameShellColor))
+                    KeyVars.AddOrModify(NameOf(userNameShellColor), Response)
 
                     ' Background color
-                    W("7) " + DoTranslation("Background color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("backgroundColor"))
+                    W("7) " + DoTranslation("Background color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(backgroundColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("backgroundColor")
-                    KeyVars.AddOrModify("backgroundColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(backgroundColor))
+                    KeyVars.AddOrModify(NameOf(backgroundColor), Response)
 
                     ' Neutral text color
-                    W("8) " + DoTranslation("Neutral text color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("neutralTextColor"))
+                    W("8) " + DoTranslation("Neutral text color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(neutralTextColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("neutralTextColor")
-                    KeyVars.AddOrModify("neutralTextColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(neutralTextColor))
+                    KeyVars.AddOrModify(NameOf(neutralTextColor), Response)
 
                     ' Command list color
-                    W("9) " + DoTranslation("Command list color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("cmdListColor"))
+                    W("9) " + DoTranslation("Command list color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(cmdListColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("cmdListColor")
-                    KeyVars.AddOrModify("cmdListColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(cmdListColor))
+                    KeyVars.AddOrModify(NameOf(cmdListColor), Response)
 
                     ' Command definition color
-                    W("10) " + DoTranslation("Command definition color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("cmdDefColor"))
+                    W("10) " + DoTranslation("Command definition color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(cmdDefColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("cmdDefColor")
-                    KeyVars.AddOrModify("cmdDefColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(cmdDefColor))
+                    KeyVars.AddOrModify(NameOf(cmdDefColor), Response)
 
                     ' Stage color
-                    W("11) " + DoTranslation("Stage color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("stageColor"))
+                    W("11) " + DoTranslation("Stage color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(stageColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("stageColor")
-                    KeyVars.AddOrModify("stageColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(stageColor))
+                    KeyVars.AddOrModify(NameOf(stageColor), Response)
 
                     ' Error color
-                    W("12) " + DoTranslation("Error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue("errorColor"))
+                    W("12) " + DoTranslation("Error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(errorColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue("errorColor")
-                    KeyVars.AddOrModify("errorColor", Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(errorColor))
+                    KeyVars.AddOrModify(NameOf(errorColor), Response)
                 Case 5 'Network
                     Select Case KeyNumber
                         Case 1 'Debug Port
                             KeyType = SettingsKeyType.SInt
-                            KeyVar = "DebugPort"
+                            KeyVar = NameOf(DebugPort)
                             W("*) " + DoTranslation("Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port.", currentLang), True, ColTypes.Neutral)
                         Case 2 'Remote Debug Default Nick Prefix
                             KeyType = SettingsKeyType.SString
-                            KeyVar = "RDebugDNP"
+                            KeyVar = NameOf(RDebugDNP)
                             W("*) " + DoTranslation("Write the default remote debug nickname prefix.", currentLang), True, ColTypes.Neutral)
                         Case 3 'Download Retry Times
                             KeyType = SettingsKeyType.SInt
-                            KeyVar = "DRetries"
+                            KeyVar = NameOf(DRetries)
                             W("*) " + DoTranslation("Write how many times the ""get"" command should retry failed downloads. It must be numeric.", currentLang), True, ColTypes.Neutral)
                         Case 4 'Upload Retry Times
                             KeyType = SettingsKeyType.SInt
-                            KeyVar = "URetries"
+                            KeyVar = NameOf(URetries)
                             W("*) " + DoTranslation("Write how many times the ""put"" command should retry failed uploads. It must be numeric.", currentLang), True, ColTypes.Neutral)
                         Case 5 'Show progress bar while downloading or uploading from "get" or "put" command
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "ShowProgress"
+                            KeyVar = NameOf(ShowProgress)
                             W(DoTranslation("If true, it makes ""get"" or ""put"" show the progress bar while downloading or uploading.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 6 'Log FTP username
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "FTPLoggerUsername"
+                            KeyVar = NameOf(FTPLoggerUsername)
                             W(DoTranslation("Whether or not to log FTP username.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 7 'Log FTP IP address
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "FTPLoggerIP"
+                            KeyVar = NameOf(FTPLoggerIP)
                             W(DoTranslation("Whether or not to log FTP IP address.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 8 'Return only first FTP profile
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "FTPFirstProfileOnly"
+                            KeyVar = NameOf(FTPFirstProfileOnly)
                             W(DoTranslation("Pick the first profile only when connecting.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 9 'Show mail message preview
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "ShowPreview"
+                            KeyVar = NameOf(ShowPreview)
                             W(DoTranslation("When listing mail messages, show body preview.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 10 'Record chat to debug log
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(RecordChatToDebugLog)
+                            W(DoTranslation("Records remote debug chat to debug log.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
@@ -512,102 +536,134 @@ Public Module ToolPrompts
                     Select Case KeyNumber
                         Case 1 'Screensaver Timeout in ms
                             KeyType = SettingsKeyType.SInt
-                            KeyVar = "ScrnTimeout"
+                            KeyVar = NameOf(ScrnTimeout)
                             W("*) " + DoTranslation("Write when to launch screensaver after specified milliseconds. It must be numeric.", currentLang), True, ColTypes.Neutral)
                         Case 2 'ColorMix: Activate 255 colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "ColorMix255Colors"
+                            KeyVar = NameOf(ColorMix255Colors)
                             W(DoTranslation("Activates 255 color support for ColorMix.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 3 'Disco: Activate 255 colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "Disco255Colors"
+                            KeyVar = NameOf(Disco255Colors)
                             W(DoTranslation("Activates 255 color support for Disco.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 4 'GlitterColor: Activate 255 colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "GlitterColor255Colors"
+                            KeyVar = NameOf(GlitterColor255Colors)
                             W(DoTranslation("Activates 255 color support for GlitterColor.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 5 'Lines: Activate 255 colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "Lines255Colors"
+                            KeyVar = NameOf(Lines255Colors)
                             W(DoTranslation("Activates 255 color support for Lines.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 6 'Dissolve: Activate 255 colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "Dissolve255Colors"
+                            KeyVar = NameOf(Dissolve255Colors)
                             W(DoTranslation("Activates 255 color support for Dissolve.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 7 'BouncingBlock: Activate 255 colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "BouncingBlock255Colors"
+                            KeyVar = NameOf(BouncingBlock255Colors)
                             W(DoTranslation("Activates 255 color support for BouncingBlock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 8 'ColorMix: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "ColorMixTrueColor"
+                            KeyVar = NameOf(ColorMixTrueColor)
                             W(DoTranslation("Activates true color support for ColorMix.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 9 'Disco: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "DiscoTrueColor"
+                            KeyVar = NameOf(DiscoTrueColor)
                             W(DoTranslation("Activates true color support for Disco.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 10 'GlitterColor: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "GlitterColorTrueColor"
+                            KeyVar = NameOf(GlitterColorTrueColor)
                             W(DoTranslation("Activates true color support for GlitterColor.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 11 'Lines: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "LinesTrueColor"
+                            KeyVar = NameOf(LinesTrueColor)
                             W(DoTranslation("Activates true color support for Lines.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 12 'Dissolve: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "DissolveTrueColor"
+                            KeyVar = NameOf(DissolveTrueColor)
                             W(DoTranslation("Activates true color support for Dissolve.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 13 'BouncingBlock: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "BouncingBlockTrueColor"
+                            KeyVar = NameOf(BouncingBlockTrueColor)
                             W(DoTranslation("Activates true color support for BouncingBlock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 14 'Disco: Cycle colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "DiscoCycleColors"
+                            KeyVar = NameOf(DiscoCycleColors)
                             W(DoTranslation("Disco will cycle colors when enabled. Otherwise, select random colors.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 15 'BouncingText: Text shown
+                        Case 15 'BouncingBlock - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 16 'BouncingText - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 17 'ColorMix - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 18 'Disco - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DiscoDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 19 'GlitterColor - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 20 'GlitterMatrix - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterMatrixDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 21 'Lines - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 22 'Matrix - Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MatrixDelay)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
+                        Case 23 'BouncingText: Text shown
                             KeyType = SettingsKeyType.SString
-                            KeyVar = "BouncingTextWrite"
+                            KeyVar = NameOf(BouncingTextWrite)
                             W("*) " + DoTranslation("Write any text you want shown. Shorter is better.", currentLang), True, ColTypes.Neutral)
                         Case Else
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
@@ -617,50 +673,61 @@ Public Module ToolPrompts
                         Case 1 'Show Time/Date on Upper Right Corner
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "CornerTD"
+                            KeyVar = NameOf(CornerTD)
                             W(DoTranslation("The time and date will be shown in the upper right corner of the screen", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Debug Size Quota in Bytes
                             KeyType = SettingsKeyType.SInt
-                            KeyVar = "DebugQuota"
+                            KeyVar = NameOf(DebugQuota)
                             W("*) " + DoTranslation("Write how many bytes can the debug log store. It must be numeric.", currentLang), True, ColTypes.Neutral)
                         Case 3 'Size parse mode
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "FullParseMode"
+                            KeyVar = NameOf(FullParseMode)
                             W(DoTranslation("If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 4 'Marquee on startup
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "StartScroll"
+                            KeyVar = NameOf(StartScroll)
                             W(DoTranslation("Enables eyecandy on startup", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 5 'Long Time and Date
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "LongTimeDate"
+                            KeyVar = NameOf(LongTimeDate)
                             W(DoTranslation("The time and date will be longer, showing full month names, etc.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 6 'Show Hidden Files
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = "HiddenFiles"
+                            KeyVar = NameOf(HiddenFiles)
                             W(DoTranslation("Shows hidden files.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 7 'Preferred Unit for Temperature
                             MaxKeyOptions = 3
                             KeyType = SettingsKeyType.SSelection
-                            KeyVar = "PreferredUnit"
+                            KeyVar = NameOf(PreferredUnit)
                             W(DoTranslation("Select your preferred unit for temperature (this only applies to the ""weather"" command)", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Kelvin", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Metric (Celsius)", currentLang), True, ColTypes.Neutral)
                             W("3) " + DoTranslation("Imperial (Fahrenheit)", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 8 'Enable text editor autosave
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(TextEdit_AutoSaveFlag)
+                            W(DoTranslation("Turns on or off the text editor autosave feature.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 9 'Text editor autosave interval
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TextEdit_AutoSaveInterval)
+                            W("*) " + DoTranslation("If autosave is enabled, the text file will be saved for each ""n"" seconds.", currentLang), True, ColTypes.Neutral)
                         Case Else
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
@@ -761,17 +828,17 @@ Public Module ToolPrompts
                     KeyFinished = True
                 Else
                     Wdbg("I", "Setting necessary variables...")
-                    Wdbg("I", "Variables: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}.", KeyVars("inputColor"), KeyVars("licenseColor"), KeyVars("contKernelErrorColor"),
-                         KeyVars("uncontKernelErrorColor"), KeyVars("hostNameShellColor"), KeyVars("userNameShellColor"), KeyVars("backgroundColor"), KeyVars("neutralTextColor"), KeyVars("cmdListColor"),
-                         KeyVars("cmdDefColor"), KeyVars("stageColor"), KeyVars("errorColor"))
+                    Wdbg("I", "Variables: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}.", KeyVars(NameOf(inputColor)), KeyVars(NameOf(licenseColor)), KeyVars(NameOf(contKernelErrorColor)),
+                         KeyVars(NameOf(uncontKernelErrorColor)), KeyVars(NameOf(hostNameShellColor)), KeyVars(NameOf(userNameShellColor)), KeyVars(NameOf(backgroundColor)), KeyVars(NameOf(neutralTextColor)),
+                         KeyVars(NameOf(cmdListColor)), KeyVars(NameOf(cmdDefColor)), KeyVars(NameOf(stageColor)), KeyVars(NameOf(errorColor)))
 
                     'This is cumbersome. This is worth an Extensification for [Enum].
-                    If SetColors([Enum].Parse(GetType(ConsoleColors), KeyVars("inputColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("licenseColor")),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars("contKernelErrorColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("uncontKernelErrorColor")),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars("hostNameShellColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("userNameShellColor")),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars("backgroundColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("neutralTextColor")),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars("cmdListColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("cmdDefColor")),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars("stageColor")), [Enum].Parse(GetType(ConsoleColors), KeyVars("errorColor"))) Then
+                    If SetColors([Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(inputColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(licenseColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(contKernelErrorColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(uncontKernelErrorColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(hostNameShellColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(userNameShellColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(backgroundColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(neutralTextColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(cmdListColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(cmdDefColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(stageColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(errorColor)))) Then
                         KeyFinished = True
                     End If
                 End If
@@ -784,7 +851,6 @@ Public Module ToolPrompts
         End While
     End Sub
 
-    'TODO: Make calls to this function use NameOf
     ''' <summary>
     ''' Sets the value of a variable to the new value dynamically
     ''' </summary>
@@ -808,7 +874,6 @@ Public Module ToolPrompts
         End If
     End Sub
 
-    'TODO: Make calls to this function use NameOf
     ''' <summary>
     ''' Gets the value of a variable dynamically 
     ''' </summary>
@@ -846,6 +911,7 @@ Public Module ToolPrompts
         Dim TypeOfFTPShell As Type = GetType(FTPShell)
         Dim TypeOfMailShell As Type = GetType(MailShell)
         Dim TypeOfSFTPShell As Type = GetType(SFTPShell)
+        Dim TypeOfTextEditShell As Type = GetType(TextEditShell)
         Dim TypeOfRDebugger As Type = GetType(RemoteDebugger)
         Dim TypeOfDebugWriters As Type = GetType(DebugWriters)
         Dim TypeOfNetworkTools As Type = GetType(NetworkTools)
@@ -861,6 +927,7 @@ Public Module ToolPrompts
         Dim FieldFTPShell As FieldInfo = TypeOfFTPShell.GetField(Variable)
         Dim FieldMailShell As FieldInfo = TypeOfMailShell.GetField(Variable)
         Dim FieldSFTPShell As FieldInfo = TypeOfSFTPShell.GetField(Variable)
+        Dim FieldTextEditShell As FieldInfo = TypeOfTextEditShell.GetField(Variable)
         Dim FieldRDebugger As FieldInfo = TypeOfRDebugger.GetField(Variable)
         Dim FieldDebugWriters As FieldInfo = TypeOfDebugWriters.GetField(Variable)
         Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
@@ -882,6 +949,8 @@ Public Module ToolPrompts
             Return FieldMailShell
         ElseIf Not IsNothing(FieldSFTPShell) Then
             Return FieldSFTPShell
+        ElseIf Not IsNothing(FieldTextEditShell) Then
+            Return FieldTextEditShell
         ElseIf Not IsNothing(FieldRDebugger) Then
             Return FieldRDebugger
         ElseIf Not IsNothing(FieldDebugWriters) Then

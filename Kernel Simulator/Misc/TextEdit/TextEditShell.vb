@@ -23,11 +23,15 @@ Public Module TextEditShell
 
     'Variables
     Public TextEdit_Exiting As Boolean
-    Public TextEdit_Commands As String() = {"help", "exit", "print", "addline", "delline", "replace", "replaceinline", "delword", "delcharnum"}
+    Public TextEdit_Commands As String() = {"help", "exit", "exitnosave", "print", "addline", "delline", "replace", "replaceinline", "delword", "delcharnum", "clear",
+                                            "querychar", "save"}
     Public TextEdit_ModCommands As New ArrayList
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)
+    Friend TextEdit_FileLinesOrig As List(Of String)
     Public TextEdit_AutoSave As New Thread(AddressOf TextEdit_HandleAutoSaveTextFile)
+    Public TextEdit_AutoSaveFlag As Boolean = True
+    Public TextEdit_AutoSaveInterval As Integer = 60
 
     Public Sub InitializeTextShell(ByVal FilePath As String)
         'Add handler for text editor shell
@@ -49,7 +53,7 @@ Public Module TextEditShell
             If Not IsNothing(DefConsoleOut) Then
                 Console.SetOut(DefConsoleOut)
             End If
-            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, Path.GetFileName(FilePath)) : W("] > ", False, ColTypes.Gray)
+            W("[", False, ColTypes.Gray) : W("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : W("] > ", False, ColTypes.Gray)
             SetInputColor()
 
             'Prompt for command

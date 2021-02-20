@@ -530,12 +530,12 @@ Prāpta pyākēṭē truṭi:
 Sādhāraṇa ā'ipibhi 6 baiśiṣṭya
 sādhāraṇa ā'ipibhi 4 baiśiṣṭya
 dūrabartī pisitē dūrabartībhābē ēkaṭi kamānḍa kāryakara karē
-- paryāẏa 0: Sisṭēma sūcanā
-- mañca 1: Hārḍa'ōẏyāra sanāktakaraṇa
-- dbitīẏa paryāẏa: Abhyantarīṇa byabahārakārīra paricālanā
+- paryāẏa 1: Sisṭēma sūcanā
+- mañca 2: Hārḍa'ōẏyāra sanāktakaraṇa
+- paryāẏa 2: Abhyantarīṇa byabahārakārīra paricālanā
 - mañca 3: Mōḍa ēbaṁ skrīnasēbhāra sanāktakaraṇa
 - mañca 4: Ābarjanā saṅgraha
-- mañca 5: Laga ina karuna
+- mañca 4: Laga ina karuna
 ābarjanā saṅgrahēra āgē: {0} Bā'iṭa
 ābarjanā saṅgrahēra parē: {0} Bā'iṭa
 ārapisi śuru karāra samaẏa truṭi: {0}

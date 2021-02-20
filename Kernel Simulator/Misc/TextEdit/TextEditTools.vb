@@ -31,10 +31,13 @@ Public Module TextEditTools
             Wdbg("I", "Trying to open file {0}...", File)
             TextEdit_FileStream = New FileStream(File, FileMode.Open)
             If IsNothing(TextEdit_FileLines) Then TextEdit_FileLines = New List(Of String)
+            If IsNothing(TextEdit_FileLinesOrig) Then TextEdit_FileLinesOrig = New List(Of String)
             Wdbg("I", "File {0} is open. Length: {1}, Pos: {2}", File, TextEdit_FileStream.Length, TextEdit_FileStream.Position)
             Dim TextFileStreamReader As New StreamReader(TextEdit_FileStream)
             Do While Not TextFileStreamReader.EndOfStream
-                TextEdit_FileLines.Add(TextFileStreamReader.ReadLine)
+                Dim StreamLine As String = TextFileStreamReader.ReadLine
+                TextEdit_FileLines.Add(StreamLine)
+                TextEdit_FileLinesOrig.Add(StreamLine)
             Loop
             TextEdit_FileStream.Seek(0, SeekOrigin.Begin)
             Return True
@@ -53,8 +56,10 @@ Public Module TextEditTools
         Try
             Wdbg("I", "Trying to close file...")
             TextEdit_FileStream.Close()
+            TextEdit_FileStream = Nothing
             Wdbg("I", "File is no longer open.")
             TextEdit_FileLines.Clear()
+            TextEdit_FileLinesOrig.Clear()
             Return True
         Catch ex As Exception
             Wdbg("E", "Closing file failed: {0}", ex.Message)
@@ -77,7 +82,11 @@ Public Module TextEditTools
             TextEdit_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length)
             TextEdit_FileStream.Flush()
             Wdbg("I", "File is saved.")
-            If ClearLines Then TextEdit_FileLines.Clear()
+            If ClearLines Then
+                TextEdit_FileLines.Clear()
+            End If
+            TextEdit_FileLinesOrig.Clear()
+            TextEdit_FileLinesOrig.AddRange(TextEdit_FileLines)
             Return True
         Catch ex As Exception
             Wdbg("E", "Saving file failed: {0}", ex.Message)
@@ -90,14 +99,26 @@ Public Module TextEditTools
     ''' Handles autosave
     ''' </summary>
     Public Sub TextEdit_HandleAutoSaveTextFile()
-        Try
-            Threading.Thread.Sleep(60000)
-            If Not IsNothing(TextEdit_FileStream) Then
-                TextEdit_SaveTextFile(False)
-            End If
-        Catch ex As Exception
-            WStkTrc(ex)
-        End Try
+        If TextEdit_AutoSaveFlag Then
+            Try
+                Threading.Thread.Sleep(TextEdit_AutoSaveInterval * 1000)
+                If Not IsNothing(TextEdit_FileStream) Then
+                    TextEdit_SaveTextFile(False)
+                End If
+            Catch ex As Exception
+                WStkTrc(ex)
+            End Try
+        End If
     End Sub
+
+    ''' <summary>
+    ''' Was text edited?
+    ''' </summary>
+    Function TextEdit_WasTextEdited() As Boolean
+        If TextEdit_FileLines IsNot Nothing And TextEdit_FileLinesOrig IsNot Nothing Then
+            Return Not TextEdit_FileLines.SequenceEqual(TextEdit_FileLinesOrig)
+        End If
+        Return False
+    End Function
 
 End Module

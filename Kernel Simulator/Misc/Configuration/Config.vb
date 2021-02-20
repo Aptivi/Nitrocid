@@ -92,7 +92,8 @@ Public Module Config
                         New IniKey(ksconf, "Log FTP username", FTPLoggerUsername),
                         New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
                         New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly),
-                        New IniKey(ksconf, "Show mail message preview", ShowPreview)))
+                        New IniKey(ksconf, "Show mail message preview", ShowPreview),
+                        New IniKey(ksconf, "Record chat to debug log", RecordChatToDebugLog)))
 
                 'The Screensaver Section
                 ksconf.Sections.Add(
@@ -112,6 +113,14 @@ Public Module Config
                         New IniKey(ksconf, "Dissolve - Activate True Color Mode", DissolveTrueColor),
                         New IniKey(ksconf, "BouncingBlock - Activate True Color Mode", BouncingBlockTrueColor),
                         New IniKey(ksconf, "Disco - Cycle Colors", DiscoCycleColors),
+                        New IniKey(ksconf, "BouncingBlock - Delay in Milliseconds", BouncingBlockDelay),
+                        New IniKey(ksconf, "BouncingText - Delay in Milliseconds", BouncingTextDelay),
+                        New IniKey(ksconf, "ColorMix - Delay in Milliseconds", ColorMixDelay),
+                        New IniKey(ksconf, "Disco - Delay in Milliseconds", DiscoDelay),
+                        New IniKey(ksconf, "GlitterColor - Delay in Milliseconds", GlitterColorDelay),
+                        New IniKey(ksconf, "GlitterMatrix - Delay in Milliseconds", GlitterMatrixDelay),
+                        New IniKey(ksconf, "Lines - Delay in Milliseconds", LinesDelay),
+                        New IniKey(ksconf, "Matrix - Delay in Milliseconds", MatrixDelay),
                         New IniKey(ksconf, "BouncingText - Text Shown", BouncingTextWrite)))
 
                 'Misc Section
@@ -124,6 +133,8 @@ Public Module Config
                         New IniKey(ksconf, "Long Time and Date", LongTimeDate),
                         New IniKey(ksconf, "Show Hidden Files", HiddenFiles),
                         New IniKey(ksconf, "Preferred Unit for Temperature", PreferredUnit),
+                        New IniKey(ksconf, "Enable text editor autosave", TextEdit_AutoSaveFlag),
+                        New IniKey(ksconf, "Text editor autosave interval", TextEdit_AutoSaveInterval),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             Else '----------------------- If [Preserve] value is False, then don't preserve.
                 'The General Section
@@ -187,7 +198,8 @@ Public Module Config
                         New IniKey(ksconf, "Log FTP username", "False"),
                         New IniKey(ksconf, "Log FTP IP address", "False"),
                         New IniKey(ksconf, "Return only first FTP profile", "False"),
-                        New IniKey(ksconf, "Show mail message preview", "False")))
+                        New IniKey(ksconf, "Show mail message preview", "False"),
+                        New IniKey(ksconf, "Record chat to debug log", "True")))
 
                 'The Screensaver Section
                 ksconf.Sections.Add(
@@ -207,6 +219,14 @@ Public Module Config
                         New IniKey(ksconf, "Dissolve - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "BouncingBlock - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "Disco - Cycle Colors", "False"),
+                        New IniKey(ksconf, "BouncingBlock - Delay in Milliseconds", 10),
+                        New IniKey(ksconf, "BouncingText - Delay in Milliseconds", 10),
+                        New IniKey(ksconf, "ColorMix - Delay in Milliseconds", 1),
+                        New IniKey(ksconf, "Disco - Delay in Milliseconds", 100),
+                        New IniKey(ksconf, "GlitterColor - Delay in Milliseconds", 1),
+                        New IniKey(ksconf, "GlitterMatrix - Delay in Milliseconds", 1),
+                        New IniKey(ksconf, "Lines - Delay in Milliseconds", 500),
+                        New IniKey(ksconf, "Matrix - Delay in Milliseconds", 1),
                         New IniKey(ksconf, "BouncingText - Text Shown", "Kernel Simulator")))
 
                 'Misc Section
@@ -219,6 +239,8 @@ Public Module Config
                         New IniKey(ksconf, "Long Time and Date", "True"),
                         New IniKey(ksconf, "Show Hidden Files", "False"),
                         New IniKey(ksconf, "Preferred Unit for Temperature", UnitMeasurement.Metric),
+                        New IniKey(ksconf, "Enable text editor autosave", "True"),
+                        New IniKey(ksconf, "Text editor autosave interval", "60"),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
@@ -265,11 +287,14 @@ Public Module Config
             ksconf.Sections("Network").Keys("Log FTP IP address").TrailingComment.Text = "Whether or not to log FTP IP address in the debugger log."
             ksconf.Sections("Network").Keys("Return only first FTP profile").TrailingComment.Text = "Whether or not to return only first successful FTP profile when polling for profiles."
             ksconf.Sections("Network").Keys("Show mail message preview").TrailingComment.Text = "Whether or not to show mail message preview (body text truncated to 200 characters)."
+            ksconf.Sections("Network").Keys("Record chat to debug log").TrailingComment.Text = "Records remote debug chat to debug log."
 
             'Screensaver
             ksconf.Sections("Screensaver").TrailingComment.Text = "This section is the network settings."
             ksconf.Sections("Screensaver").Keys("Screensaver").TrailingComment.Text = "Specifies the current screensaver."
             ksconf.Sections("Screensaver").Keys("Screensaver Timeout in ms").TrailingComment.Text = "After specified milliseconds, the screensaver will launch."
+
+            'Screensaver: Colors
             ksconf.Sections("Screensaver").Keys("ColorMix - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for ColorMix"
             ksconf.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Disco"
             ksconf.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for GlitterColor"
@@ -283,6 +308,18 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("Dissolve - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Dissolve"
             ksconf.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for BouncingBlock"
             ksconf.Sections("Screensaver").Keys("Disco - Cycle Colors").TrailingComment.Text = "Disco will cycle colors if it's enabled. Otherwise, select random colors."
+
+            'Screensaver: Delays
+            ksconf.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in BouncingBlock?"
+            ksconf.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in BouncingText?"
+            ksconf.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in ColorMix?"
+            ksconf.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Disco?"
+            ksconf.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in GlitterColor?"
+            ksconf.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in GlitterMatrix?"
+            ksconf.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Lines?"
+            ksconf.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Matrix?"
+
+            'Screensaver: Texts
             ksconf.Sections("Screensaver").Keys("BouncingText - Text Shown").TrailingComment.Text = "Any text for BouncingText"
 
             'Misc
@@ -294,6 +331,8 @@ Public Module Config
             ksconf.Sections("Misc").Keys("Long Time and Date").TrailingComment.Text = "Whether or not to render time and date using long."
             ksconf.Sections("Misc").Keys("Show Hidden Files").TrailingComment.Text = "Whether or not to list hidden files."
             ksconf.Sections("Misc").Keys("Preferred Unit for Temperature").TrailingComment.Text = "Choose either Kelvin, Celsius, or Fahrenheit for temperature measurement."
+            ksconf.Sections("Misc").Keys("Enable text editor autosave").TrailingComment.Text = "Turns on or off the text editor autosave feature."
+            ksconf.Sections("Misc").Keys("Text editor autosave interval").TrailingComment.Text = "If autosave is enabled, the text file will be saved for each ""n"" seconds."
 
             'Save Config
             ksconf.Save(paths("Configuration"))
@@ -431,10 +470,13 @@ Public Module Config
             FTPLoggerIP = configReader.Sections("Network").Keys("Log FTP IP address").Value
             FTPFirstProfileOnly = configReader.Sections("Network").Keys("Return only first FTP profile").Value
             ShowPreview = configReader.Sections("Network").Keys("Show mail message preview").Value
+            RecordChatToDebugLog = configReader.Sections("Network").Keys("Record chat to debug log").Value
 
             'Screensaver Section
             defSaverName = configReader.Sections("Screensaver").Keys("Screensaver").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value, 0) Then ScrnTimeout = configReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value
+
+            'Screensaver: Colors
             ColorMix255Colors = configReader.Sections("Screensaver").Keys("ColorMix - Activate 255 Color Mode").Value
             Disco255Colors = configReader.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").Value
             GlitterColor255Colors = configReader.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").Value
@@ -448,6 +490,18 @@ Public Module Config
             DissolveTrueColor = configReader.Sections("Screensaver").Keys("Dissolve - Activate True Color Mode").Value
             BouncingBlockTrueColor = configReader.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").Value
             DiscoCycleColors = configReader.Sections("Screensaver").Keys("Disco - Cycle Colors").Value
+
+            'Screensaver: Delays
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").Value, 0) Then BouncingBlockDelay = configReader.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").Value, 0) Then BouncingTextDelay = configReader.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").Value, 0) Then ColorMixDelay = configReader.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").Value, 0) Then DiscoDelay = configReader.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").Value, 0) Then GlitterColorDelay = configReader.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").Value, 0) Then GlitterMatrixDelay = configReader.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value, 0) Then LinesDelay = configReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value, 0) Then MatrixDelay = configReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value
+
+            'Screensaver: Texts
             BouncingTextWrite = configReader.Sections("Screensaver").Keys("BouncingText - Text Shown").Value
 
             'Misc Section
@@ -459,6 +513,8 @@ Public Module Config
             If configReader.Sections("Misc").Keys("Long Time and Date").Value = "True" Then LongTimeDate = True Else LongTimeDate = False
             If configReader.Sections("Misc").Keys("Show Hidden Files").Value = "True" Then HiddenFiles = True Else HiddenFiles = False
             PreferredUnit = configReader.Sections("Misc").Keys("Preferred Unit for Temperature").Value
+            If configReader.Sections("Misc").Keys("Enable text editor autosave").Value = "True" Then TextEdit_AutoSaveFlag = True Else TextEdit_AutoSaveFlag = False
+            If Integer.TryParse(configReader.Sections("Misc").Keys("Text editor autosave interval").Value, 0) Then TextEdit_AutoSaveInterval = configReader.Sections("Misc").Keys("Text editor autosave interval").Value
 
             Return True
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.

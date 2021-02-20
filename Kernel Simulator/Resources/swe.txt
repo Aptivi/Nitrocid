@@ -530,12 +530,12 @@ Fel i mottagna paket:
 Allmänna IPv6-egenskaper
 Allmänna IPv4-egenskaper
 Utför fjärr ett kommando till fjärrdatorn
-- Steg 0: Systeminitialisering
-- Steg 1: Hårdvarodetektering
+- Steg 1: Systeminitialisering
+- Steg 2: Hårdvarodetektering
 - Steg 2: Internt användarnamnhantering
 - Steg 3: Detektering av lägen och skärmsläckare
 - Steg 4: Avfallssamling
-- Steg 5: Logga in
+- Steg 4: Logga in
 Före skräp: {0} byte
 Efter avfallsuppsamling: {0} byte
 Fel vid start av RPC: {0}

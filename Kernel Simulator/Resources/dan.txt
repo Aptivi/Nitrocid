@@ -530,12 +530,12 @@ Fejl i modtagne pakker:
 Generelle IPv6-egenskaber
 Generelle IPv4-egenskaber
 Eksternt udfører en kommando til ekstern pc
-- Trin 0: Systeminitialisering
-- Trin 1: Hardware-registrering
-- Fase 2: Intern brugerhåndtering
+- Trin 1: Systeminitialisering
+- Trin 2: Hardware-registrering
+- Trin 2: Intern brugerhåndtering
 - Trin 3: Opdagelse af tilstande og pauseskærme
 - Trin 4: Affaldsopsamling
-- Trin 5: Log ind
+- Trin 4: Log ind
 Før opsamling af affald: {0} bytes
 Efter opsamling af affald: {0} bytes
 Fejl ved start af RPC: {0}

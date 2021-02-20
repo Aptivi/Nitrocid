@@ -199,6 +199,22 @@ Module TestGetCommand
             For Each Encoding As EncodingInfo In Encodings
                 W("{0}: {1} ({2})", True, ColTypes.Neutral, Encoding.CodePage, Encoding.Name, Encoding.DisplayName)
             Next
+        ElseIf Cmd = "lscompilervars" Then
+#If NTFSCorruptionFix Then
+            W("- NTFSCorruptionFix", True, ColTypes.Neutral)
+#End If
+#If NOWRITELOCK Then
+            W("- NOWRITELOCK", True, ColTypes.Neutral)
+#End If
+#If SPECIFIER = "DEV" Then
+            W("- SPECIFIER = ""DEV""", True, ColTypes.Neutral)
+#ElseIf SPECIFIER = "RC" Then
+            W("- SPECIFIER = ""RC""", True, ColTypes.Neutral)
+#ElseIf SPECIFIER = "NEARING" Then
+            W("- SPECIFIER = ""NEARING""", True, ColTypes.Neutral)
+#ElseIf SPECIFIER = "REL" Then
+            W("- SPECIFIER = ""REL""", True, ColTypes.Neutral)
+#End If
         ElseIf Cmd = "help" Then
             W("- print <Color> <Line> <Message>" + vbNewLine +
               "- printf <Color> <Line> <Variable1;Variable2;Variable3;...> <Message>" + vbNewLine +
@@ -220,6 +236,7 @@ Module TestGetCommand
               "- probehw" + vbNewLine +
               "- garbage" + vbNewLine +
               "- listcodepages" + vbNewLine +
+              "- lscompilervars" + vbNewLine +
               "- exit" + vbNewLine +
               "- shutdown", True, ColTypes.Neutral)
         ElseIf Cmd = "exit" Then

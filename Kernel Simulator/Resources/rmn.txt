@@ -530,12 +530,12 @@ Erori la pachetele primite:
 Proprietăți IPv6 generale
 Proprietăți IPv4 generale
 Execută de la distanță o comandă pe un computer de la distanță
-- Etapa 0: Initializare sistem
-- Etapa 1: Detectare hardware
+- Etapa 1: Initializare sistem
+- Etapa 2: Detectare hardware
 - Etapa 2: Management intern al numelui de utilizator
 - Etapa 3: detectarea de mods și screensavere
 - Etapa 4: Colectarea gunoiului
-- Etapa 5: Autentificare
+- Etapa 4: Autentificare
 Înainte de colectarea gunoiului: {0} octeți
 După colectarea gunoiului: {0} octeți
 Eroare la pornirea RPC: {0}

@@ -26,19 +26,19 @@ Public Module SFTPHelpSystem
     ''' Updates the help definition so it reflects the available commands
     ''' </summary>
     Public Sub InitSFTPHelp()
-        SFTPDefinitions = New Dictionary(Of String, String) From {{"currlocaldir (Alias: pwdl)", DoTranslation("Gets current local directory", currentLang)},
-                                                                  {"currremotedir (Alias: pwdr)", DoTranslation("Gets current remote directory", currentLang)},
+        SFTPDefinitions = New Dictionary(Of String, String) From {{"currlocaldir (pwdl)", DoTranslation("Gets current local directory", currentLang)},
+                                                                  {"currremotedir (pwdr)", DoTranslation("Gets current remote directory", currentLang)},
                                                                   {"connect", DoTranslation("Connects to an SFTP server (it must start with ""sftp://"")", currentLang)},
-                                                                  {"changelocaldir (Alias: cdl)", DoTranslation("Changes local directory to download to or upload from", currentLang)},
-                                                                  {"changeremotedir (Alias: cdr)", DoTranslation("Changes remote directory to download from or upload to", currentLang)},
-                                                                  {"delete (Alias: del)", DoTranslation("Deletes remote file from server", currentLang)},
+                                                                  {"changelocaldir (cdl)", DoTranslation("Changes local directory to download to or upload from", currentLang)},
+                                                                  {"changeremotedir (cdr)", DoTranslation("Changes remote directory to download from or upload to", currentLang)},
+                                                                  {"delete (del)", DoTranslation("Deletes remote file from server", currentLang)},
                                                                   {"disconnect", DoTranslation("Disconnects from server", currentLang)},
-                                                                  {"download (Alias: get)", DoTranslation("Downloads remote file to local directory using binary or text", currentLang)},
+                                                                  {"download (get)", DoTranslation("Downloads remote file to local directory using binary or text", currentLang)},
                                                                   {"exit", DoTranslation("Exits SFTP shell and returns to kernel", currentLang)},
                                                                   {"help", DoTranslation("Shows help screen", currentLang)},
-                                                                  {"listlocal (Alias: lsl)", DoTranslation("Lists local directory", currentLang)},
-                                                                  {"listremote (Alias: lsr)", DoTranslation("Lists remote directory", currentLang)},
-                                                                  {"upload (Alias: put)", DoTranslation("Uploads local file to remote directory using binary or text", currentLang)}}
+                                                                  {"listlocal (lsl)", DoTranslation("Lists local directory", currentLang)},
+                                                                  {"listremote (lsr)", DoTranslation("Lists remote directory", currentLang)},
+                                                                  {"upload (put)", DoTranslation("Uploads local file to remote directory using binary or text", currentLang)}}
     End Sub
 
     ''' <summary>

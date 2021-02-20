@@ -32,6 +32,9 @@ Public Module Screensaver
                                                                  {"bouncingText", False}, {"dissolve", False}, {"bouncingBlock", False}}
     Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker
+    Public finalSaver As ICustomSaver
+    Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
+    Public colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
     Private execCustomSaver As CompilerResults
     Private DoneFlag As Boolean = False
 

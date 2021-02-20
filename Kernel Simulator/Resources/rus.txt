@@ -530,12 +530,12 @@ Oshibki v poluchennykh paketakh:
 Obshchiye svoystva IPv6
 Obshchiye svoystva IPv4
 Udalenno vypolnyayet komandu na udalennom PK
-- Etap 0: initsializatsiya sistemy
-- Etap 1: obnaruzheniye oborudovaniya
+- Etap 1: initsializatsiya sistemy
+- Etap 2: obnaruzheniye oborudovaniya
 - Etap 2: upravleniye vnutrennim imenem pol'zovatelya
-- Stadiya 3: obnaruzheniye modov i zastavok
+- Etap 3: obnaruzheniye modov i zastavok
 - Etap 4: Sborka musora
-- Etap 5: Voyti
+- Etap 4: Voyti
 Pered sborkoy musora: {0} bayt
 Posle sborki musora: {0} bayt
 Oshibka zapuska RPC: {0}

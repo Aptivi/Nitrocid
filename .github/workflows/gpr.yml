@@ -24,7 +24,7 @@ jobs:
     - name: Dependency Restoration
       run: nuget restore "Kernel Simulator.sln"
     - name: Solution Compilation
-      run: msbuild "Kernel Simulator.sln"
+      run: msbuild "Kernel Simulator.sln" /p:DefineConstants=NTFSCorruptionFix
     - name: Package Publication
       run: |
         $path = "Kernel Simulator\KSBuild"

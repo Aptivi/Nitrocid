@@ -530,12 +530,12 @@ al'akhta' fi alhizm almustalimat:
 khasayis IPv6 aleama
 khasayis IPv4 aleama
 yunafidh ean baed 'amr lijihaz alkambiutir albaeid
-- almarhalat 0: tahyiat alnizam
-- almarhalat 1: alkashf ean al'ajhiza
+- almarhalat 1: tahyiat alnizam
+- almarhalat 2: alkashf ean al'ajhiza
 - almarhalat 2: 'iidarat aism almustakhdam alddakhilii
 - almarhalat 3: taedil wataedil shashat altawaquf
 - almarhalat 4: jame alqamama
-- almarhalat 5: tasjil aldukhul
+- almarhalat 4: tasjil aldukhul
 qabl tajmie albayanat almhmalat: {0} bayt
 baed tajmie albayanat almhmalat: {0} bayt
 khata fi bad' tashghil RPC: {0}

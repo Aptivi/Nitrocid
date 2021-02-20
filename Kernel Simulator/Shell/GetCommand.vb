@@ -31,6 +31,9 @@ Public Module GetCommand
     ''' </summary>
     ''' <param name="requestedCommand">A command. It may contain arguments</param>
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
+        'Variables
+        Dim Done As Boolean = False
+
         '1. Get the index of the first space (Used for step 3)
         Dim index As Integer = requestedCommand.IndexOf(" ")
         If index = -1 Then index = requestedCommand.Length
@@ -48,7 +51,7 @@ Public Module GetCommand
         If Not index = requestedCommand.Length Then strArgs = strArgs.Substring(1)
         Wdbg("I", "Finished strArgs: {0}", strArgs)
 
-        '5. Split the arguments (again) this time with enclosed quotes
+        '4. Split the arguments (again) this time with enclosed quotes
         Dim eqargs() As String
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
         Dim Parser As New TextFieldParser(TStream) With {
@@ -56,25 +59,22 @@ Public Module GetCommand
             .HasFieldsEnclosedInQuotes = True
         }
         eqargs = Parser.ReadFields
-        If Not eqargs Is Nothing Then
+        If eqargs IsNot Nothing Then
             For i As Integer = 0 To eqargs.Length - 1
                 eqargs(i).Replace("""", "")
             Next
         End If
 
-        '5a. Debug: get all arguments from eqargs()
-        If Not eqargs Is Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+        '4a. Debug: get all arguments from eqargs()
+        If eqargs IsNot Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
 
-        'The command is done
-        Dim Done As Boolean = False
-
-        '6. Check to see if a requested command is obsolete
+        '5. Check to see if a requested command is obsolete
         If obsoleteCmds.Contains(words(0)) Then
             Wdbg("I", "The command requested {0} is obsolete", words(0))
             W(DoTranslation("This command is obsolete and will be removed in a future release.", currentLang), True, ColTypes.Neutral)
         End If
 
-        '7. Execute a command
+        '6. Execute a command
         Try
             If words(0) = "help" Then
 
@@ -189,6 +189,7 @@ Public Module GetCommand
                     Try
                         ProbeSynth(eqargs(0))
                     Catch ex As Exception
+                        WStkTrc(ex)
                         W(ex.Message, True, ColTypes.Err)
                     End Try
                     Done = True
@@ -197,13 +198,18 @@ Public Module GetCommand
             ElseIf words(0) = "calc" Then
 
                 If eqargs?.Count > 0 Then
-                    Dim Res As Dictionary(Of Double, Boolean) = DoCalc(strArgs)
-                    Wdbg("I", "Res.Values(0) = {0}", Res.Values(0))
-                    If Not Res.Values(0) Then 'If there is an error in calculation
+                    Try
+                        Dim Res As String = Evaluate(strArgs)
+                        Wdbg("I", "Res = {0}", Res)
+                        If Res = "" Then 'If there is an error in calculation
+                            W(DoTranslation("Error in calculation.", currentLang), True, ColTypes.Err)
+                        Else 'Calculation done
+                            W(strArgs + " = " + Res, True, ColTypes.Neutral)
+                        End If
+                    Catch ex As Exception
+                        WStkTrc(ex)
                         W(DoTranslation("Error in calculation.", currentLang), True, ColTypes.Err)
-                    Else 'Calculation done
-                        W(strArgs + " = " + CStr(Res.Keys(0)), True, ColTypes.Neutral)
-                    End If
+                    End Try
                     Done = True
                 End If
 
@@ -256,13 +262,13 @@ Public Module GetCommand
             ElseIf words(0) = "chdir" Then
 
                 Try
-                    SetCurrDir(strArgs)
+                    SetCurrDir(eqargs(0))
                 Catch sex As Security.SecurityException
                     Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
-                    W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, Dir, sex.Message)
+                    W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, eqargs(0), sex.Message)
                     WStkTrc(sex)
                 Catch ptlex As PathTooLongException
-                    Wdbg("I", "Directory length: {0}", Dir.Length)
+                    Wdbg("I", "Directory length: {0}", NeutralizePath(eqargs(0)).Length)
                     W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Err)
                     WStkTrc(ptlex)
                 Catch ex As Exception
@@ -379,7 +385,19 @@ Public Module GetCommand
 
             ElseIf requestedCommand = "debuglog" Then
 
-                PrintLog()
+                Dim line As String
+                Try
+                    Using dbglog = File.Open(paths("Debugging"), FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite), reader As New StreamReader(dbglog)
+                        line = reader.ReadLine()
+                        Do While reader.EndOfStream <> True
+                            W(line, True, ColTypes.Neutral)
+                            line = reader.ReadLine
+                        Loop
+                    End Using
+                Catch ex As Exception
+                    W(DoTranslation("Debug log not found", currentLang), True, ColTypes.Err)
+                    WStkTrc(ex)
+                End Try
                 Done = True
 
             ElseIf words(0) = "dirinfo" Then
@@ -627,13 +645,18 @@ Public Module GetCommand
                 If eqargs?.Count > 0 Then
                     For Each PingedAddress As String In eqargs
                         If PingedAddress <> "" Then
-                            W(">> {0}", True, ColTypes.Stage, PingedAddress)
-                            Dim PingReplied As PingReply = PingAddress(PingedAddress)
-                            If PingReplied.Status = IPStatus.Success Then
-                                W(DoTranslation("Ping succeeded in {0} ms.", currentLang), True, ColTypes.Neutral, PingReplied.RoundtripTime)
-                            Else
-                                W(DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, PingReplied.Status)
-                            End If
+                            Try
+                                W(">> {0}", True, ColTypes.Stage, PingedAddress)
+                                Dim PingReplied As PingReply = PingAddress(PingedAddress)
+                                If PingReplied.Status = IPStatus.Success Then
+                                    W(DoTranslation("Ping succeeded in {0} ms.", currentLang), True, ColTypes.Neutral, PingReplied.RoundtripTime)
+                                Else
+                                    W(DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, PingReplied.Status)
+                                End If
+                            Catch ex As Exception
+                                W(DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, ex.Message)
+                                WStkTrc(ex)
+                            End Try
                         Else
                             W(DoTranslation("Address may not be empty.", currentLang), True, ColTypes.Err)
                         End If
@@ -1018,7 +1041,7 @@ Public Module GetCommand
                 Done = True
 
                 'Shows system information
-                W(DoTranslation("{0}[ Kernel settings (Running on {1}) ]", currentLang), True, ColTypes.HelpCmd, vbNewLine, EnvironmentOSType)
+                W(DoTranslation("{0}[ Kernel settings (Running on {1}) ]", currentLang), True, ColTypes.HelpCmd, vbNewLine, Environment.OSVersion.ToString)
 
                 'Kernel section
                 W(vbNewLine + DoTranslation("Kernel Version:", currentLang) + " {0}" + vbNewLine +
@@ -1067,7 +1090,11 @@ Public Module GetCommand
             ElseIf words(0) = "update" Then
 
                 Done = True
+#If SPECIFIER = "REL" Then
                 CheckKernelUpdates()
+#Else
+                W(DoTranslation("Checking for updates is disabled because you're running a development version.", currentLang), True, ColTypes.Err)
+#End If
 
             ElseIf words(0) = "usermanual" Then
 
@@ -1153,9 +1180,15 @@ Public Module GetCommand
                     W(DoTranslation("Enter your API key:", currentLang) + " ", False, ColTypes.Input)
                     APIKey = ReadLineNoInput("*")
                     Console.WriteLine()
-                    Dim WeatherInfo As ForecastInfo = GetWeatherInfo(eqargs(0), APIKey, PreferredUnit)
+                    Dim WeatherInfo As ForecastInfo
                     Dim WeatherSpecifier As String = "°"
                     Dim WindSpeedSpecifier As String = "m.s"
+                    If IsNumeric(eqargs(0)) Then
+                        WeatherInfo = GetWeatherInfo(CLng(eqargs(0)), APIKey, PreferredUnit)
+                    Else
+                        WeatherInfo = GetWeatherInfo(eqargs(0), APIKey, PreferredUnit)
+                    End If
+                    Wdbg("I", "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID)
                     W(DoTranslation("-- Weather info for {0} --", currentLang), True, ColTypes.Stage, WeatherInfo.CityName)
                     W(DoTranslation("Weather: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Weather)
                     If WeatherInfo.TemperatureMeasurement = UnitMeasurement.Metric Then
@@ -1183,6 +1216,7 @@ Public Module GetCommand
             W(neaex.Message, True, ColTypes.Neutral)
             ShowHelp(words(0))
         Catch taex As ThreadAbortException
+            CancelRequested = False
             Exit Sub
         Catch ex As Exception
             EventManager.RaiseCommandError(requestedCommand, ex)
@@ -1204,6 +1238,7 @@ Public Module GetCommand
     ''' <param name="e">Arguments of event</param>
     Sub CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
         If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            CancelRequested = True
             DefConsoleOut = Console.Out
             Console.SetOut(StreamWriter.Null)
             e.Cancel = True

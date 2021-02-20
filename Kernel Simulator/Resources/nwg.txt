@@ -530,12 +530,12 @@ Feil i mottatte pakker:
 Generelle IPv6-egenskaper
 Generelle IPv4-egenskaper
 Ekstern kjører en kommando til ekstern PC
-- Fase 0: Systeminitialisering
-- Trinn 1: Melding om maskinvare
+- Fase 1: Systeminitialisering
+- Fase 2: Melding om maskinvare
 - Fase 2: Intern brukerhåndtering
-- Trinn 3: Oppdagelse av modi og skjermsparere
+- Fase 3: Oppdagelse av modi og skjermsparere
 - Fase 4: Søppelinnsamling
-- Fase 5: Logg inn
+- Fase 4: Logg inn
 Før søppelinnsamling: {0} byte
 Etter søppelinnsamling: {0} byte
 Feil ved start av RPC: {0}

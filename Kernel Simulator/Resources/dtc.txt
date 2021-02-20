@@ -530,12 +530,12 @@ Fouten in ontvangen pakketten:
 Algemene IPv6-eigenschappen
 Algemene IPv4-eigenschappen
 Voert op afstand een opdracht uit naar een externe pc
-- Fase 0: systeeminitialisatie
-- Fase 1: hardwaredetectie
+- Fase 1: systeeminitialisatie
+- Fase 2: hardwaredetectie
 - Fase 2: intern gebruikersnaambeheer
 - Fase 3: detectie van mods en screensavers
 - Fase 4: Garbage collection
-- Fase 5: inloggen
+- Fase 4: inloggen
 Voor het ophalen van afval: {0} bytes
 Na het ophalen van afval: {0} bytes
 Fout bij starten van RPC: {0}

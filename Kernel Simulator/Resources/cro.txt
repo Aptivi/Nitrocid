@@ -530,12 +530,12 @@ Pogreške u primljenim paketima:
 Opća svojstva IPv6
 Opća svojstva IPv4
 Daljinski izvršava naredbu na udaljenom računalu
-- Faza 0: Inicijalizacija sustava
-- Faza 1: Otkrivanje hardvera
+- Faza 1: Inicijalizacija sustava
+- Faza 2: Otkrivanje hardvera
 - Faza 2: Interno upravljanje korisničkim imenom
 - Faza 3: Otkrivanje modova i čuvara zaslona
 - Faza 4: Skupljanje smeća
-- Faza 5: Prijava
+- Faza 4: Prijava
 Prije odvoza smeća: {0} bajtova
 Nakon odvoza smeća: {0} bajtova
 Pogreška kod pokretanja RPC-a: {0}

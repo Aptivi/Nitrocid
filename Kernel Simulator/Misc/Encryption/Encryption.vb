@@ -113,4 +113,13 @@ Public Module Encryption
         Return Encrypted
     End Function
 
+    ''' <summary>
+    ''' Gets empty hash
+    ''' </summary>
+    ''' <param name="Algorithm">Algorithm</param>
+    ''' <returns>Empty hash</returns>
+    Public Function GetEmptyHash(ByVal Algorithm As Algorithms) As String
+        Return GetEncryptedString("", Algorithm)
+    End Function
+
 End Module

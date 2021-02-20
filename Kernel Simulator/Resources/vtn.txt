@@ -530,12 +530,12 @@ Lỗi trong các gói đã nhận:
 Thuộc tính IPv6 chung
 Thuộc tính chung của IPv4
 Điều khiển từ xa một lệnh đến PC từ xa
-- Giai đoạn 0: Khởi tạo hệ thống
-- Giai đoạn 1: Phát hiện phần cứng
+- Giai đoạn 1: Khởi tạo hệ thống
+- Giai đoạn 2: Phát hiện phần cứng
 - Giai đoạn 2: Quản lý tên người dùng nội bộ
 - Giai đoạn 3: Phát hiện mod và trình bảo vệ màn hình
 - Giai đoạn 4: Thu gom rác
-- Giai đoạn 5: Đăng nhập
+- Giai đoạn 4: Đăng nhập
 Trước khi thu gom rác: {0} byte
 Sau khi thu gom rác: {0} byte
 Lỗi khi bắt đầu RPC: {0}

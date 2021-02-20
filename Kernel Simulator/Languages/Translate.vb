@@ -20,7 +20,7 @@ Imports System.Globalization
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn"}
+    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "iri", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn", "wls"}
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -105,6 +105,8 @@ Public Module Translate
                 translated = My.Resources.ind
             Case "ind-T" 'Hindi (translated)
                 translated = My.Resources.ind_T
+            Case "iri" 'Irish
+                translated = My.Resources.iri
             Case "ita" 'Italian
                 translated = My.Resources.ita
             Case "jpn" 'Japanese (transliterated)
@@ -155,6 +157,8 @@ Public Module Translate
                 translated = My.Resources.uzb
             Case "vtn" 'Vietnamese
                 translated = My.Resources.vtn
+            Case "wls" 'Welsh
+                translated = My.Resources.wls
         End Select
 
         'Convert translated string list to Dictionary
@@ -365,6 +369,8 @@ CHOICE:
                 Return "German (Germany)"
             Case "ind-T", "ind"
                 Return "Hindi (India)"
+            Case "iri"
+                Return "Irish (Ireland)"
             Case "ita"
                 Return "Italian (Italy)"
             Case "jpn-T", "jpn"
@@ -407,6 +413,8 @@ CHOICE:
                 Return "Uzbek (Cyrillic)"
             Case "vtn"
                 Return "Vietnamese (Vietnam)"
+            Case "wls"
+                Return "Welsh (United Kingdom)"
         End Select
     End Function
 

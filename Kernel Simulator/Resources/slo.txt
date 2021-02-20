@@ -530,12 +530,12 @@ Chyby v prijatých paketoch:
 Všeobecné vlastnosti IPv6
 Všeobecné vlastnosti IPv4
 Diaľkovo vykoná príkaz na vzdialené PC
-- Etapa 0: Inicializácia systému
-- Etapa 1: Detekcia hardvéru
+- Etapa 1: Inicializácia systému
+- Etapa 2: Detekcia hardvéru
 - Etapa 2: Interná správa používateľských mien
 - Etapa 3: Detekcia režimov a šetričov obrazovky
 - Etapa 4: Zber odpadu
-- Etapa 5: Prihláste sa
+- Etapa 4: Prihláste sa
 Pred zberom odpadu: {0} bajtov
 Po zbere odpadu: {0} bajtov
 Chyba pri spustení RPC: {0}

@@ -530,12 +530,12 @@ Greške u primljenim paketima:
 Opšta IPv6 svojstva
 Opšta IPv4 svojstva
 Daljinski izvršava naredbu na udaljenom PC-u
-- Faza 0: Inicijalizacija sistema
-- 1. faza: Detekcija hardvera
+- Faza 1: Inicijalizacija sistema
+- Faza 2: Detekcija hardvera
 - Faza 2: Interno upravljanje korisničkim imenom
 - Faza 3: Otkrivanje modova i čuvara zaslona
 - Faza 4: Prikupljanje smeća
-- Faza 5: Prijavite se
+- Faza 4: Prijavite se
 Pre sakupljanja smeća: {0} bajtova
 Nakon odvoza smeća: {0} bajtova
 Greška kod pokretanja RPC-a: {0}

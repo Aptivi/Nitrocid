@@ -20,7 +20,7 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.14.2</Version>
+    <Version>0.0.15.0</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -42,9 +42,9 @@
       <dependency id="MadMilkman.Ini" version="1.0.6.0" />
       <dependency id="FluentFTP" version="33.0.3" />
       <dependency id="Newtonsoft.Json" version="12.0.0" />
-      <dependency id="SSH.NET" version="2020.0.0" />
+      <dependency id="SSH.NET" version="2020.0.1" />
       <dependency id="MailKit" version="2.10.1" />
-      <dependency id="Extensification" version="2021.0.0" />
+      <dependency id="Extensification" version="2021.1.0" />
       <dependency id="Inxi.NET" version="2020.2.0.2" />
     </Dependencies>
     <!-- KS Nuget Information End -->
@@ -154,7 +154,7 @@
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="REL"</DefineConstants>
+    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -167,11 +167,11 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
-    <DefineConstants>SPECIFIER="REL"</DefineConstants>
+    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Extensification">
-      <Version>2021.0.0</Version>
+      <Version>2021.1.0</Version>
     </PackageReference>
     <PackageReference Include="FluentFTP">
       <Version>33.0.3</Version>
@@ -193,7 +193,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="SSH.NET">
-      <Version>2020.0.0</Version>
+      <Version>2020.0.1</Version>
     </PackageReference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -236,7 +236,6 @@
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Languages\Translate.vb" />
     <Compile Include="Login\PermissionManagement.vb" />
-    <Compile Include="Misc\Calculation\Calc.vb" />
     <Compile Include="Misc\Configuration\ConfigTool\ToolPrompts.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Configuration\OldConfigUp.vb" />
@@ -249,8 +248,19 @@
     <Compile Include="Misc\Probers\MOTDParse.vb" />
     <Compile Include="Misc\Probers\PlaceParse.vb" />
     <Compile Include="Misc\Configuration\Config.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Dissolve.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Custom.vb" />
+    <Compile Include="Misc\Screensaver\Displays\BouncingBlock.vb" />
+    <Compile Include="Misc\Screensaver\Displays\BouncingText.vb" />
+    <Compile Include="Misc\Screensaver\Displays\HackUserFromAD.vb" />
+    <Compile Include="Misc\Screensaver\Displays\AptErrorSim.vb" />
+    <Compile Include="Misc\Screensaver\Displays\GlitterColor.vb" />
+    <Compile Include="Misc\Screensaver\Displays\GlitterMatrix.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Lines.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Disco.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Matrix.vb" />
+    <Compile Include="Misc\Screensaver\Displays\ColorMix.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
-    <Compile Include="Misc\Screensaver\ScreensaverDisplays.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
     <Compile Include="Misc\Scripts\BeepSynth.vb" />
     <Compile Include="Misc\StringEvaluators.vb" />
@@ -258,9 +268,10 @@
     <Compile Include="Misc\TextEdit\TextEditHelpSystem.vb" />
     <Compile Include="Misc\TextEdit\TextEditShell.vb" />
     <Compile Include="Misc\TextEdit\TextEditTools.vb" />
-    <Compile Include="Misc\Writers\DebugLogPrint.vb" />
+    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterSlowColor.vb" />
+    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWhereColor.vb" />
     <Compile Include="Misc\Writers\DebugWriters.vb" />
-    <Compile Include="Misc\Writers\TextWriterColor.vb" />
+    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterColor.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />
     <Compile Include="Modifications\ModParser.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
@@ -391,6 +402,12 @@
     <None Include="Resources\chi.txt" />
     <None Include="iconfinder_applications-utilities_8840.ico" Pack="true" PackagePath="\" />
     <None Include="iconfinder_applications-utilities_8840.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iri.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wls.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

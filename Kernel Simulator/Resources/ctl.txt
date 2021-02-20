@@ -530,12 +530,12 @@ Errors en els paquets rebuts:
 Propietats generals d'IPv6
 Propietats generals d'IPv4
 Executa una ordre remotament a un ordinador remot
-- Etapa 0: inicialització del sistema
-- Etapa 1: detecció de maquinari
+- Etapa 1: inicialització del sistema
+- Etapa 2: detecció de maquinari
 - Etapa 2: Gestió interna del nom d'usuari
 - Etapa 3: detecció de modificacions i protectors de pantalla
 - Etapa 4: recollida d'escombraries
-- Etapa 5: Inicieu la sessió
+- Etapa 4: Inicieu la sessió
 Abans de la recollida d'escombraries: {0} bytes
 Després de la recollida d'escombraries: {0} bytes
 Error en iniciar RPC: {0}

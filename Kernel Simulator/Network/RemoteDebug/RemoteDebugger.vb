@@ -142,13 +142,17 @@ Module RemoteDebugger
                                 dbgConns.Keys(i - 1).WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list.", currentLang), cmd.Split(" ")(0))
                             End If
                         Else
-                            Wdbg("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                            If RecordChatToDebugLog Then
+                                Wdbg("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                            Else
+                                WdbgDevicesOnly("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                            End If
                         End If
                     End If
                 Catch ex As Exception
                     Dim SE As SocketException = CType(ex.InnerException, SocketException)
                     If Not IsNothing(SE) Then
-                        If Not SE.SocketErrorCode = SocketError.TimedOut Then
+                        If Not SE.SocketErrorCode = SocketError.TimedOut And Not SE.SocketErrorCode = SocketError.WouldBlock Then
                             Wdbg("E", "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
                             WStkTrc(ex)
                         End If

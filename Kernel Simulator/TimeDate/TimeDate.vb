@@ -71,7 +71,7 @@ Public Module TimeDate
 
         W(DoTranslation("datetime: Time is {0}", currentLang), True, ColTypes.Neutral, RenderTime)
         W(DoTranslation("datetime: Today is {0}", currentLang), True, ColTypes.Neutral, RenderDate)
-        W(DoTranslation("datetime: Time Zone: {0}", currentLang) + " ({1})", True, ColTypes.Neutral, TimeZone.CurrentTimeZone.StandardName, TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime).ToString)
+        W(DoTranslation("datetime: Time Zone: {0}", currentLang) + " ({1})", True, ColTypes.Neutral, TimeZone.CurrentTimeZone.StandardName, TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime).ToString(If(TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime) < TimeSpan.Zero, "\-", "\+") + "hh\:mm\:ss"))
 
     End Sub
 

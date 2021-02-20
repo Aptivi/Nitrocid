@@ -451,8 +451,8 @@ Public Module HelpSystem
 
         ElseIf command = "weather" Then
 
-            W(DoTranslation("Usage:", currentLang) + " weather <CityID>: " + DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang) + vbNewLine +
-                                                                             DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " weather <CityID/CityName>: " + DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang) + vbNewLine +
+                                                                                      DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.", currentLang), True, ColTypes.Neutral)
 
         End If
 

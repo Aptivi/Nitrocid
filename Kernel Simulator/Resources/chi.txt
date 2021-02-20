@@ -530,12 +530,12 @@ Shōu dào de shùjù bāo zhōng de cuòwù:
 Chángguī IPv6 shǔxìng
 chángguī IPv4 shǔxìng
 yuǎnchéng zhíxíng mìnglìng dào yuǎnchéng PC
--jiēduàn 0: Xìtǒng chūshǐhuà
--jiēduàn 1: Yìngjiàn jiǎncè
+-jiēduàn 1: Xìtǒng chūshǐhuà
+-jiēduàn 2: Yìngjiàn jiǎncè
 -jiēduàn 2: Nèibù yònghù míng guǎnlǐ
--jiēduàn 3:Mod hé píngbǎo jiǎncè
+-jiēduàn 3: Mod hé píngbǎo jiǎncè
 -jiēduàn 4: Lèsè shōují
--jiēduàn 5: Dēnglù
+-jiēduàn 4: Dēnglù
 Lèsè huíshōu zhīqián:{0} Gè zì jié
 lèsè huíshōu hòu:{0} Gè zì jié
 qǐdòng RPC shí chūcuò:{0}

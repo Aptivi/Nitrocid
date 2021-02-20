@@ -530,12 +530,12 @@ Errores en paquetes recibidos:
 Propiedades generales de IPv6
 Propiedades generales de IPv4
 Ejecuta un comando de forma remota en una PC remota
-- Etapa 0: inicialización del sistema
-- Etapa 1: detección de hardware
+- Etapa 1: inicialización del sistema
+- Etapa 2: detección de hardware
 - Etapa 2: gestión interna del nombre de usuario
 - Etapa 3: detección de modificaciones y salvapantallas
 - Etapa 4: recolección de basura
-- Etapa 5: Iniciar sesión
+- Etapa 4: Iniciar sesión
 Antes de la recolección de basura: {0} bytes
 Después de la recolección de basura: {0} bytes
 Error al iniciar RPC: {0}

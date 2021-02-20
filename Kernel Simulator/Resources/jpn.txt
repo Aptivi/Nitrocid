@@ -530,12 +530,12 @@ Jushin paketto no erā:
 Ippantekina IPv6 puropati
 ippantekina IPv4 puropati
 rimōto PC e no komando o rimōto de jikkō shimasu
-- sutēji 0: Shisutemu no shokka
-- sutēji 1: Hādou~ea kenshutsu
+- sutēji 1: Shisutemu no shokka
+- sutēji 2: Hādou~ea kenshutsu
 - sutēji 2: Naibu yūzā-mei kanri
 - sutēji 3: Mod to sukurīnsēbā no kenshutsu
 - sutēji 4: Gabējikorekushon
-- sutēji 5: Roguin
+- sutēji 4: Roguin
 Gabējikorekushon no mae: {0} Baito
 gabējikorekushon-go: {0} Baito
 RPC no kidō erā: {0}

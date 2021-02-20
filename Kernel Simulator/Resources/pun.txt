@@ -530,12 +530,12 @@ Prāpata paikaṭāṁ vica galatī'āṁ:
 Āma ā'īpīvī 6 viśēśatāvāṁ
 āma ā'īpīvī 4 viśēśatā
 rimōṭa pīsī la'ī rimōṭa kamāṇḍa calā'undā hai
-- paṛā'a 0: Sisaṭama ārabhaka
-- paṛā'a 1: Hāraḍavē'ara khōja
+- paṛā'a 1: Sisaṭama ārabhaka
+- paṛā'a 2: Hāraḍavē'ara khōja
 - paṛā'a 2: Adarūnī upabhōgatā prabadhana
 - paṛā'a 3: Mōḍasa atē sakrīnasēvara khōja
 - paṛā'a 4: Kūṛā cukaṇā
-- paṛā'a 5: Lauga ina karō
+- paṛā'a 4: Lauga ina karō
 kūṛā cukaṇa tōṁ pahilāṁ: {0} Bā'īṭa
 kūṛā cukaṇa tōṁ bā'ada: {0} Bā'īṭa
 ārapīsī śurū karana vēlē galatī: {0}

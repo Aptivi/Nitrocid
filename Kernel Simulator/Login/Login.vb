@@ -42,6 +42,7 @@ Public Module Login
             EventManager.RaisePreLogin()
 
             'Extremely rare under normal conditions except if modded: Check to see if there are any users
+            'TODO: Allow users to add users as part of an upcoming first-user trigger system.
             If userword.Count = 0 Then 'Check if user amount is zero
                 Wdbg("F", "Shell reached rare state, because userword count is 0.")
                 Throw New EventsAndExceptions.NullUsersException(DoTranslation("There are no more users remaining in the list.", currentLang))
@@ -116,7 +117,7 @@ Public Module Login
             password = userword.Item(usernamerequested)
 
             'Check if there's a password
-            If Not password = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855" Then 'No password
+            If Not password = GetEmptyHash(Algorithms.SHA256) Then 'No password
                 'Wait for input
                 Wdbg("I", "Password not empty")
                 W(DoTranslation("{0}'s password: ", currentLang), False, ColTypes.Input, usernamerequested)
