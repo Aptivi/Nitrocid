@@ -2,13 +2,20 @@
 
 ![Kernel startup](https://i.imgur.com/KO1v1Kg.png)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing) [![Build Status](https://travis-ci.org/EoflaOE/Kernel-Simulator.svg?branch=servicing)](https://travis-ci.org/EoflaOE/Kernel-Simulator) ![GitHub repo size](https://img.shields.io/github/repo-size/EoflaOE/Kernel-Simulator?color=purple&label=size) [![GitHub All Releases](https://img.shields.io/github/downloads/EoflaOE/Kernel-Simulator/total?color=purple&label=d/l)](https://github.com/EoflaOE/Kernel-Simulator/releases) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/EoflaOE/Kernel-Simulator?color=purple&include_prereleases&label=github)](https://github.com/EoflaOE/Kernel-Simulator/releases/latest) [![Chocolatey Version (including pre-releases)](https://img.shields.io/chocolatey/v/ks?color=purple&include_prereleases)](https://chocolatey.org/packages/KS/) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/KS?color=purple)](https://www.nuget.org/packages/KS/)
+![GitHub repo size](https://img.shields.io/github/repo-size/EoflaOE/Kernel-Simulator?color=purple&label=size) [![GitHub All Releases](https://img.shields.io/github/downloads/EoflaOE/Kernel-Simulator/total?color=purple&label=d/l)](https://github.com/EoflaOE/Kernel-Simulator/releases) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/EoflaOE/Kernel-Simulator?color=purple&include_prereleases&label=github)](https://github.com/EoflaOE/Kernel-Simulator/releases/latest) [![Chocolatey Version (including pre-releases)](https://img.shields.io/chocolatey/v/ks?color=purple&include_prereleases)](https://chocolatey.org/packages/KS/) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/KS?color=purple)](https://www.nuget.org/packages/KS/)
 
 Kernel Simulator simulates the future of our planned kernel that's coming as soon as it's finished. It consists of the kernel, the built-in shell known as UESH, and the built-in applications.
 
 Not only it has some basic commands, but it also provides script support, network support, and tons of awesome things.
 
-WARNING: Be aware that 0.0.14 will contain breaking changes.
+## Build Status
+
+Here are all the CI build status for all KS branches.
+
+| Branch      | AppVeyor | Travis CI
+|-------------|----------|------------
+| master      | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master) | [![Build Status](https://travis-ci.org/EoflaOE/Kernel-Simulator.svg?branch=master)](https://travis-ci.org/EoflaOE/Kernel-Simulator)
+| servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Kernel-Simulator.svg?branch=servicing)](https://travis-ci.org/EoflaOE/Kernel-Simulator)
 
 ## System Requirements
 
