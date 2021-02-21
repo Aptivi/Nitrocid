@@ -943,3 +943,17 @@ SFTP peulompeuteu seutail
 BouncingBlocke daehan 255 saegsang jiwon-eul hwalseonghwahabnida.
 BouncingBlocke daehan teulu keolleo jiwon-eul hwalseonghwahabnida.
 jalmosdoen gyeonglo-e aegseseuhalyeogohabnida.
+tegseuteu pail-eul ji ubnida.
+tegseuteu pyeonjibgileul jonglyohabnida.
+jijeongdoen jul ttoneun modeun jul-ui munjaleul kwolihabnida.
+jijeongdoen munja beonho {0}eun (neun) yuhyohan susjaga anibnida.
+gaebal beojeon-eul silhaeng jung-imeulo eobdeiteu hwag-in-i bihwalseonghwadoeeo issseubnida.
+tegseuteu pyeonjibgi jadong jeojang gineung-eul kyeogeona kkeubnida.
+jadong jeojang-i hwalseonghwa doen gyeong-u tegseuteu pail-eun "n"chomada jeojangdoebnida.
+tegseuteu pyeonjibgi jadong jeojang sayong
+tegseuteu pyeonjibgi jadong jeojang gangyeog
+pail-eul jeojanghabnida
+dibeogeu logeue chaeting gilog
+wongyeog dibeogeu chaeting-eul dibeogeu logeue giloghabnida.
+milli cho dan-wiui jiyeon
+da-eum sseugileulhagi jeon-e myeoch milli choleul gidalyeoyahabnikka?

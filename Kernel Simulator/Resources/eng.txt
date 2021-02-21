@@ -943,3 +943,17 @@ SFTP Prompt Style
 Activates 255 color support for BouncingBlock.
 Activates true color support for BouncingBlock.
 Trying to access invalid path.
+Clears the text file
+Exits the text editor
+Queries a character in a specified line or all lines
+Specified character number {0} is not a valid number.
+Checking for updates is disabled because you're running a development version.
+Turns on or off the text editor autosave feature.
+If autosave is enabled, the text file will be saved for each "n" seconds.
+Enable text editor autosave
+Text editor autosave interval
+Saves the file
+Record chat to debug log
+Records remote debug chat to debug log.
+Delay in Milliseconds
+How many milliseconds to wait before making the next write?

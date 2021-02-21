@@ -943,3 +943,17 @@ SFTP-prompt-stil
 Aktiverer 255 farvesupport til BouncingBlock.
 Aktiverer ægte farvesupport til BouncingBlock.
 Forsøger at få adgang til ugyldig sti.
+Rydder tekstfilen
+Afslutter teksteditoren
+Forespørger på et tegn i en bestemt linje eller alle linjer
+Det angivne tegnnummer {0} er ikke et gyldigt nummer.
+Kontroller for opdateringer er deaktiveret, fordi du kører en udviklingsversion.
+Aktiverer eller deaktiverer funktionen til automatisk lagring af teksteditor.
+Hvis autosave er aktiveret, gemmes tekstfilen for hvert "n" sekund.
+Aktivér automatisk redigering af teksteditor
+Teksteditor autosave interval
+Gemmer filen
+Optag chat til fejlretningslog
+Optager ekstern debug-chat til debug-log.
+Forsinkelse i millisekunder
+Hvor mange millisekunder skal du vente, før du skriver næste gang?

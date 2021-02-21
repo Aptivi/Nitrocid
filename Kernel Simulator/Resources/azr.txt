@@ -943,3 +943,17 @@ SFTP İstemi Stili
 BouncingBlock üçün 255 rəng dəstəyini aktivləşdirir.
 BouncingBlock üçün həqiqi rəng dəstəyini aktivləşdirir.
 Etibarsız yola girməyə çalışırıq.
+Mətn sənədini təmizləyir
+Mətn redaktorundan çıxır
+Müəyyən edilmiş sətirdə və ya bütün sətirlərdə bir xarakter sorğu edir
+Göstərilən simvol nömrəsi {0} etibarlı bir rəqəm deyil.
+İnkişaf versiyasını işlədiyiniz üçün yeniləmələrin yoxlanılması ləğv edildi.
+Mətn redaktorunun avtomatik saxlama xüsusiyyətini açar və ya söndürər.
+Avtomatik saxlama aktivdirsə, mətn faylı hər "n" saniyə üçün qeyd olunur.
+Mətn redaktorunun avtomatik saxlamasını aktivləşdirin
+Mətn redaktoru avtomatik saxlama intervalı
+Faylı saxlayır
+Günlükdən çıxmaq üçün söhbəti qeyd edin
+Günlükdən çıxmaq üçün uzaqdan çıxan sohbəti qeyd edir.
+Milisaniyədə gecikmə
+Növbəti yazmadan əvvəl neçə milisaniyə gözləmək lazımdır?

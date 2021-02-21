@@ -943,3 +943,17 @@ SFTP tíshì yàngshì
 Wèi BouncingBlock jīhuó 255 zhǒng yánsè zhīchí.
 Jīhuó duì BouncingBlock de zhēn cǎisè zhīchí.
 Chángshì fǎngwèn wúxiào lùjìng.
+Qīngchú wénběn wénjiàn
+tuìchū wénběn biānjí qì
+cháxún zhǐdìng xíng huò suǒyǒu xíng zhōng de zìfú
+zhǐdìng de zìfú hào {0} bùshì yǒuxiào shùzì.
+Yóuyú nín zhèngzài yùnxíng kāifā bǎnběn, yīncǐ jìnyòng jiǎnchá gēngxīn.
+Dǎkāi huò guānbì wénběn biānjí qì zìdòng bǎocún gōngnéng.
+Rúguǒ qǐyòngle zìdòng bǎocún, zé wénběn wénjiàn jiāng měi “n” miǎo bǎocún yīcì.
+Qǐyòng wénběn biānjí qì zìdòng bǎocún
+wénběn biānjí qì zìdòng bǎocún jiàngé
+bǎocún wénjiàn
+jìlù liáotiān yǐ tiáoshì rìzhì
+jìlù yuǎnchéng tiáoshì liáotiān jìlù dào tiáoshì rìzhì.
+Yánchí háomiǎo
+jìnxíng xià yīcì xiě rù zhīqián yào děngdài jǐ háomiǎo?

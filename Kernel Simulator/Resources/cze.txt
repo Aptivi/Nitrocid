@@ -943,3 +943,17 @@ Styl výzvy SFTP
 Aktivuje podporu 255 barev pro BouncingBlock.
 Aktivuje podporu skutečných barev pro BouncingBlock.
 Pokus o přístup k neplatné cestě.
+Vymaže textový soubor
+Ukončí textový editor
+Dotazy na znak v zadaném řádku nebo na všech řádcích
+Zadané číslo znaku {0} není platné číslo.
+Kontrola aktualizací je zakázána, protože používáte vývojovou verzi.
+Zapíná nebo vypíná funkci automatického ukládání textového editoru.
+Pokud je povoleno automatické ukládání, textový soubor se uloží na každých „n“ sekund.
+Povolit automatické ukládání textového editoru
+Interval automatického ukládání textového editoru
+Uloží soubor
+Zaznamenejte chat do protokolu ladění
+Zaznamenává vzdálený ladicí chat do protokolu ladění.
+Zpoždění v milisekundách
+Kolik milisekund čekat před dalším zápisem?

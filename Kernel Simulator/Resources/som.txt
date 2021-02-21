@@ -943,3 +943,17 @@ Nooca SFTP Degdega ah
 Waxay kicisaa taageerada midabka 255 ee BouncingBlock.
 Waxay kicisaa taageerada midabka runta ah ee BouncingBlock.
 Isku dayga marinka marin aan sax ahayn.
+Wuxuu tirtirayaa feylka qoraalka
+Ka baxa tifaftiraha qoraalka
+Weydiiso dabeecad xariiq cayiman ama dhammaan khadadka
+Lambarka xaddidan ee cayiman {0} ma aha tiro ansax ah.
+Hubinta cusbooneysiinta waa la joojiyay sababtoo ah waxaad wadataa nooc horumarineed.
+Daaraa ama damiyaa tifaftiraha qoraalka iskiis udambeyntiisa.
+Haddii keydinta ottawa la hawlgasho, faylka qoraalka ayaa la keydinayaa ilbiriqsi kasta "n".
+Daar tifaftiraha qoraalka is keydinta
+Tifatiraha qoraalka isbadal udambeeya
+Keydiyaa faylka
+Ku qor sheekaysiga si aad khalad uga dhigto
+Diiwaangelinta wada sheekaysiga khaladka fog ee khaladaadka qorista.
+Dib udhac ku dhaca Millisekonds
+Immisa milliseconds ah in la sugo ka hor inta aan la samayn qorista xigta?

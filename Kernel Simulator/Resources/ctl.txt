@@ -943,3 +943,17 @@ Estil de sol·licitud SFTP
 Activa el suport de 255 colors per a BouncingBlock.
 Activa el suport del color real per a BouncingBlock.
 S'està intentant accedir a un camí no vàlid.
+Esborra el fitxer de text
+Surt de l'editor de text
+Consulta un caràcter en una línia especificada o en totes les línies
+El número de caràcter especificat {0} no és un número vàlid.
+La comprovació de les actualitzacions està desactivada perquè executeu una versió de desenvolupament.
+Activa o desactiva la funció de desat automàtic de l'editor de text.
+Si el desat automàtic està habilitat, el fitxer de text es desarà cada "n" segons.
+Activa el desat automàtic de l'editor de text
+Interval de desat automàtic de l’editor de text
+Desa el fitxer
+Enregistreu el xat al registre de depuració
+Enregistra el xat de depuració remota al registre de depuració.
+Retard en mil·lisegons
+Quants mil·lisegons cal esperar abans de fer la següent escriptura?

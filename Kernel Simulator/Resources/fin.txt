@@ -943,3 +943,17 @@ SFTP-kehotustyyli
 Aktivoi 255 väritukea BouncingBlockille.
 Aktivoi todellisen värituen BouncingBlockille.
 Yritetään käyttää virheellistä polkua.
+Tyhjentää tekstitiedoston
+Poistu tekstieditorista
+Kyselee määritetyn rivin tai kaikkien rivien merkkiä
+Määritetty merkinumero {0} ei ole kelvollinen numero.
+Päivitysten etsiminen on poistettu käytöstä, koska käytössäsi on kehitysversio.
+Ottaa tekstieditorin automaattisen tallennuksen käyttöön tai poistaa sen käytöstä.
+Jos automaattinen tallennus on käytössä, tekstitiedosto tallennetaan jokaista "n" sekuntia kohden.
+Ota tekstieditorin automaattinen tallennus käyttöön
+Tekstieditorin automaattisen tallennuksen väli
+Tallentaa tiedoston
+Tallenna keskustelu virheenkorjauslokiin
+Tallentaa virheenkorjauskeskustelun virheenkorjauslokiin.
+Viive millisekunneissa
+Kuinka monta millisekuntia odottaa ennen seuraavan kirjoituksen kirjoittamista?

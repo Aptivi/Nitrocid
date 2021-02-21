@@ -943,3 +943,17 @@ Stil ta 'Prompt SFTP
 Jattiva 255 appoġġ tal-kulur għal BouncingBlock.
 Jattiva l-appoġġ tal-kulur veru għal BouncingBlock.
 Tipprova taċċessa triq invalida.
+Tħassar il-fajl tat-test
+Joħroġ mill-editur tat-test
+Jistaqsi karattru f'linja speċifikata jew il-linji kollha
+Numru tal-karattru speċifikat {0} mhuwiex numru validu.
+L-iċċekkjar għal aġġornamenti huwa diżattivat għax qed tmexxi verżjoni għall-iżvilupp.
+Ixgħel jew itfi l-funzjoni ta 'salvataġġ awtomatiku tal-editur tat-test.
+Jekk is-salvataġġ awtomatiku huwa attivat, il-fajl tat-test jiġi ssejvjat għal kull "n" sekonda.
+Jippermetti l-editur tat-test li jsalva awtomatikament
+Editur tat-test intervall ta 'salvataġġ awtomatiku
+Isalva l-fajl
+Irrekordja chat biex tiddibaggja l-log
+Irrekordja remug debug chat biex jiddibaggja log.
+Dewmien f'millisekondi
+Kemm millisekondi tistenna qabel ma tagħmel il-kitba li jmiss?

@@ -943,3 +943,17 @@ Arddull Prydlon SFTP
 Yn actifadu cefnogaeth lliw 255 ar gyfer BouncingBlock.
 Yn actifadu gwir gefnogaeth lliw ar gyfer BouncingBlock.
 Ceisio cyrchu llwybr annilys.
+Yn clirio'r ffeil testun
+Yn gadael y golygydd testun
+Ymholi cymeriad mewn llinell benodol neu bob llinell
+Nid yw rhif cymeriad penodedig {0} yn rhif dilys.
+Mae gwirio am ddiweddariadau yn anabl oherwydd eich bod yn rhedeg fersiwn datblygu.
+Yn troi ar neu oddi ar nodwedd autosave golygydd testun.
+Os yw autosave wedi'i alluogi, bydd y ffeil testun yn cael ei chadw am bob eiliad "n".
+Galluogi autosave golygydd testun
+Cyfnodydd autosave golygydd testun
+Yn arbed y ffeil
+Recordio sgwrs i log dadfygio
+Yn recordio sgwrsio dadfygio o bell i log dadfygio.
+Oedi yn Milliseconds
+Sawl milieiliad i aros cyn gwneud yr ysgrifen nesaf?

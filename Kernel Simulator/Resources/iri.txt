@@ -943,3 +943,17 @@ Stíl Pras SFTP
 Gníomhaíonn 255 tacaíocht dathanna do BouncingBlock.
 Gníomhaíonn sé fíor-thacaíocht dathanna do BouncingBlock.
 Ag iarraidh rochtain a fháil ar chosán neamhbhailí.
+Glanann an comhad téacs
+Scoir an t-eagarthóir téacs
+Ceistíonn sé carachtar i líne shonraithe nó i ngach líne
+Ní uimhir bhailí í uimhir shonraithe an charachtair {0}.
+Tá seiceáil le haghaidh nuashonruithe díchumasaithe toisc go bhfuil leagan forbartha á rith agat.
+Casadh ar nó as gné autosave an eagarthóra téacs.
+Má tá autosave cumasaithe, sábhálfar an comhad téacs ar feadh gach soicind "n".
+Cumasaigh autosave eagarthóir téacs
+Eatramh autosave eagarthóir téacs
+Sábhálann an comhad
+Comhrá a thaifeadadh chun logáil dífhabhtaithe
+Déan comhrá iargúlta dífhabhtaithe a thaifeadadh chuig logáil dífhabhtaithe.
+Moill i Milliseconds
+Cé mhéad milleasoicind atá le fanacht sula ndéanfaidh tú an chéad scríbhinn eile?

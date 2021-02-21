@@ -943,3 +943,17 @@ SFTP prompt stil
 Aktivira 255 podrške u boji za BouncingBlock.
 Aktivira istinsku podršku u boji za BouncingBlock.
 Pokušaj pristupa nevažećoj putanji.
+Briše tekstualnu datoteku
+Izlazi iz uređivača teksta
+Pita znak u navedenom redu ili svim redovima
+Navedeni broj znaka {0} nije važeći broj.
+Provera ažuriranja je onemogućena jer koristite razvojnu verziju.
+Uključuje ili isključuje funkciju automatskog čuvanja uređivača teksta.
+Ako je omogućeno automatsko čuvanje, tekstualna datoteka će se čuvati svake "n" sekunde.
+Omogućite automatsko čuvanje uređivača teksta
+Interval automatskog čuvanja uređivača teksta
+Čuva datoteku
+Snimite ćaskanje u dnevnik otklanjanja grešaka
+Snima chat za udaljeno otklanjanje grešaka u dnevnik otklanjanja grešaka.
+Kašnjenje u milisekundama
+Koliko milisekundi treba sačekati pre sledećeg pisanja?

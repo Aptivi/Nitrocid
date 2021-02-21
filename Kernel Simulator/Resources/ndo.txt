@@ -943,3 +943,17 @@ Gaya Perintah SFTP
 Mengaktifkan 255 dukungan warna untuk BouncingBlock.
 Mengaktifkan dukungan warna sebenarnya untuk BouncingBlock.
 Mencoba mengakses jalur yang tidak valid.
+Menghapus file teks
+Keluar dari editor teks
+Kueri karakter dalam baris tertentu atau semua baris
+Nomor karakter yang ditentukan {0} bukanlah angka yang valid.
+Memeriksa pembaruan dinonaktifkan karena Anda menjalankan versi pengembangan.
+Mengaktifkan atau menonaktifkan fitur penyimpanan otomatis editor teks.
+Jika penyimpanan otomatis diaktifkan, file teks akan disimpan untuk setiap detik "n".
+Aktifkan penyimpanan otomatis editor teks
+Interval penyimpanan otomatis editor teks
+Menyimpan file
+Rekam obrolan ke log debug
+Merekam obrolan debug jarak jauh ke log debug.
+Penundaan dalam Milidetik
+Berapa milidetik untuk menunggu sebelum membuat tulisan berikutnya?

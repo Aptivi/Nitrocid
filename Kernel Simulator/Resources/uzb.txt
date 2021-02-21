@@ -943,3 +943,17 @@ SFTP tezkor uslubi
 BouncingBlock uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
 BouncingBlock uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
 Noto'g'ri yo'lga kirishga urinish.
+Xóa tệp văn bản
+Thoát khỏi trình soạn thảo văn bản
+Truy vấn một ký tự trong một dòng cụ thể hoặc tất cả các dòng
+Số ký tự đã chỉ định {0} không phải là số hợp lệ.
+Kiểm tra các bản cập nhật bị tắt vì bạn đang chạy phiên bản phát triển.
+Bật hoặc tắt tính năng tự động lưu của trình soạn thảo văn bản.
+Nếu tính năng lưu tự động được bật, tệp văn bản sẽ được lưu trong mỗi "n" giây.
+Bật tính năng tự động lưu của trình soạn thảo văn bản
+Khoảng thời gian tự động lưu của trình soạn thảo văn bản
+Lưu tệp
+Ghi lại cuộc trò chuyện vào nhật ký gỡ lỗi
+Ghi lại cuộc trò chuyện gỡ lỗi từ xa vào nhật ký gỡ lỗi.
+Độ trễ tính bằng mili giây
+Phải đợi bao nhiêu mili giây trước khi thực hiện lần viết tiếp theo?

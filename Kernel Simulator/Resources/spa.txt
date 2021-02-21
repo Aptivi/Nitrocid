@@ -943,3 +943,17 @@ Estilo de mensaje SFTP
 Activa el soporte de 255 colores para BouncingBlock.
 Activa el soporte de color verdadero para BouncingBlock.
 Intentando acceder a una ruta no válida.
+Borra el archivo de texto
+Sale del editor de texto.
+Consulta un carácter en una línea específica o en todas las líneas
+El número de carácter especificado {0} no es un número válido.
+La búsqueda de actualizaciones está deshabilitada porque está ejecutando una versión de desarrollo.
+Activa o desactiva la función de guardado automático del editor de texto.
+Si el guardado automático está habilitado, el archivo de texto se guardará por cada "n" segundos.
+Habilitar el guardado automático del editor de texto
+Intervalo de autoguardado del editor de texto
+Guarda el archivo
+Grabar chat para depurar el registro
+Registra el chat de depuración remota para depurar el registro.
+Retraso en milisegundos
+¿Cuántos milisegundos esperar antes de realizar la siguiente escritura?

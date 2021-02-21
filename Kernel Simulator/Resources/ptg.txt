@@ -943,3 +943,17 @@ Estilo de solicitação de SFTP
 Ativa o suporte de 255 cores para BouncingBlock.
 Ativa o suporte true color para BouncingBlock.
 Tentando acessar um caminho inválido.
+Limpa o arquivo de texto
+Sai do editor de texto
+Consulta um caractere em uma linha especificada ou em todas as linhas
+O número do caractere especificado {0} não é um número válido.
+A verificação de atualizações está desativada porque você está executando uma versão de desenvolvimento.
+Ativa ou desativa o recurso de salvamento automático do editor de texto.
+Se o salvamento automático estiver ativado, o arquivo de texto será salvo a cada "n" segundos.
+Habilitar salvamento automático do editor de texto
+Intervalo de salvamento automático do editor de texto
+Salva o arquivo
+Grave o bate-papo no registro de depuração
+Grava o bate-papo de depuração remota no log de depuração.
+Atraso em Milissegundos
+Quantos milissegundos esperar antes de fazer a próxima gravação?
