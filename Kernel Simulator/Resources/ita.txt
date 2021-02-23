@@ -943,3 +943,18 @@ Stile prompt SFTP
 Attiva il supporto di 255 colori per BouncingBlock.
 Attiva il supporto true color per BouncingBlock.
 Tentativo di accesso a un percorso non valido.
+Cancella il file di testo
+Esce dall'editor di testo
+Interroga un carattere in una riga specificata o in tutte le righe
+Il numero di carattere specificato {0} non è un numero valido.
+Il controllo degli aggiornamenti è disabilitato perché stai eseguendo una versione di sviluppo.
+Attiva o disattiva la funzione di salvataggio automatico dell'editor di testo.
+Se il salvataggio automatico è abilitato, il file di testo verrà salvato per ogni "n" secondi.
+Abilita il salvataggio automatico dell'editor di testo
+Intervallo di salvataggio automatico dell'editor di testo
+Salva il file
+Registra la chat nel registro di debug
+Registra la chat di debug remota nel registro di debug.
+Ritardo in millisecondi
+Quanti millisecondi attendere prima di effettuare la successiva scrittura?
+Consente di utilizzare un server FTP SSH

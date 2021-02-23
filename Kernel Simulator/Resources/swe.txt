@@ -943,3 +943,18 @@ SFTP Prompt Style
 Aktiverar 255 färgstöd för BouncingBlock.
 Aktiverar äkta färgstöd för BouncingBlock.
 Försöker komma åt ogiltig sökväg.
+Rensar textfilen
+Avslutar textredigeraren
+Frågar efter ett tecken i en angiven rad eller alla rader
+Det angivna teckennumret {0} är inte ett giltigt nummer.
+Kontroll av uppdateringar är inaktiverad eftersom du kör en utvecklingsversion.
+Aktiverar eller inaktiverar automatisk redigering av textredigeraren.
+Om autospara är aktiverat sparas textfilen för varje "n" sekund.
+Aktivera automatisk redigering av textredigerare
+Intervall för textredigerare automatiskt
+Sparar filen
+Spela in chatt till felsökningslogg
+Registrerar fjärrfelsökningschatt till felsökningslogg.
+Fördröjning i millisekunder
+Hur många millisekunder väntar du innan du skriver nästa gång?
+Låter dig använda en SSH FTP-server

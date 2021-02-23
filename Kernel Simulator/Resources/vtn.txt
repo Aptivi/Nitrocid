@@ -943,3 +943,18 @@ Kiểu nhắc SFTP
 Kích hoạt hỗ trợ 255 màu cho BouncingBlock.
 Kích hoạt hỗ trợ màu sắc trung thực cho BouncingBlock.
 Đang cố gắng truy cập đường dẫn không hợp lệ.
+Xóa tệp văn bản
+Thoát khỏi trình soạn thảo văn bản
+Truy vấn một ký tự trong một dòng cụ thể hoặc tất cả các dòng
+Số ký tự đã chỉ định {0} không phải là số hợp lệ.
+Kiểm tra các bản cập nhật bị tắt vì bạn đang chạy phiên bản phát triển.
+Bật hoặc tắt tính năng tự động lưu của trình soạn thảo văn bản.
+Nếu tính năng lưu tự động được bật, tệp văn bản sẽ được lưu trong mỗi "n" giây.
+Bật tính năng tự động lưu của trình soạn thảo văn bản
+Khoảng thời gian tự động lưu của trình soạn thảo văn bản
+Lưu tệp
+Ghi lại cuộc trò chuyện vào nhật ký gỡ lỗi
+Ghi lại cuộc trò chuyện gỡ lỗi từ xa vào nhật ký gỡ lỗi.
+Độ trễ tính bằng mili giây
+Phải đợi bao nhiêu mili giây trước khi thực hiện lần viết tiếp theo?
+Cho phép bạn sử dụng máy chủ SSH FTP

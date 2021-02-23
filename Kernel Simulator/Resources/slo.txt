@@ -943,3 +943,18 @@ Odpovedzte {0} a vráťte sa späť. V opačnom prípade akákoľvek odpoveď zn
 Aktivuje podporu 255 farieb pre BouncingBlock.
 Aktivuje podporu skutočných farieb pre BouncingBlock.
 Pokúšam sa získať prístup k neplatnej ceste.
+Počisti besedilno datoteko
+Zapre urejevalnik besedila
+Poizveduje znak v določeni vrstici ali vseh vrsticah
+Navedena številka znaka {0} ni veljavna številka.
+Preverjanje posodobitev je onemogočeno, ker uporabljate razvojno različico.
+Vklopi ali izklopi funkcijo samodejnega shranjevanja urejevalnika besedil.
+Če je omogočeno samodejno shranjevanje, se besedilna datoteka shrani vsakih "n" sekund.
+Omogoči samodejno shranjevanje urejevalnika besedil
+Interval samodejnega shranjevanja urejevalnika besedil
+Shrani datoteko
+Snemajte klepet v dnevnik odpravljanja napak
+Snema klepet za odpravljanje napak v dnevnik odpravljanja napak.
+Zamuda v milisekundah
+Koliko milisekund čakati pred naslednjim pisanjem?
+Umožňuje vám používať server SSH FTP

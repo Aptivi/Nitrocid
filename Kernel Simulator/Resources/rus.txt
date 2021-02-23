@@ -943,3 +943,18 @@ Stil' podskazki SFTP
 Aktiviruyet podderzhku 255 tsvetov dlya BouncingBlock.
 Aktiviruyet podderzhku istinnogo tsveta dlya BouncingBlock.
 Popytka poluchit' dostup k nevernomu puti.
+Ochishchayet tekstovyy fayl
+Vykhod iz tekstovogo redaktora
+Zaprashivayet simvol v ukazannoy stroke ili vo vsekh strokakh
+Ukazannyy nomer simvola {0} ne yavlyayetsya dopustimym chislom.
+Proverka obnovleniy otklyuchena, potomu chto vy ispol'zuyete versiyu dlya razrabotki.
+Vklyuchayet ili vyklyuchayet funktsiyu avtosokhraneniya tekstovogo redaktora.
+Yesli avtosokhraneniye vklyucheno, tekstovyy fayl budet sokhranyat'sya kazhdyye «n» sekund.
+Vklyuchit' avtosokhraneniye tekstovogo redaktora
+Interval avtosokhraneniya tekstovogo redaktora
+Sokhranyayet fayl
+Zapisat' chat v zhurnal otladki
+Zapisyvayet udalennyy chat otladki v zhurnal otladki.
+Zaderzhka v millisekundakh
+Skol'ko millisekund zhdat' pered sleduyushchey zapis'yu?
+Pozvolyayet ispol'zovat' SSH FTP-server

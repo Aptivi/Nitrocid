@@ -943,3 +943,18 @@ SFTP Prompt Style
 Aktiverer 255 fargestøtte for BouncingBlock.
 Aktiverer ekte fargestøtte for BouncingBlock.
 Prøver å få tilgang til ugyldig bane.
+Tømmer tekstfilen
+Avslutter teksteditoren
+Spørger et tegn i en spesifisert linje eller alle linjer
+Spesifisert tegnnummer {0} er ikke et gyldig nummer.
+Å se etter oppdateringer er deaktivert fordi du kjører en utviklingsversjon.
+Slår av eller på automatisk lagring av tekstredigeringsfunksjonen.
+Hvis autolagring er aktivert, lagres tekstfilen for hvert "n" sekund.
+Aktiver automatisk lagring av tekstredigerer
+Intervall for automatisk lagring av tekstredigerer
+Lagrer filen
+Ta opp chat til feilsøkingslogg
+Registrerer ekstern feilsøkingschat til feilsøkingslogg.
+Forsinkelse i millisekunder
+Hvor mange millisekunder å vente før du skriver neste gang?
+Lar deg bruke en SSH FTP-server

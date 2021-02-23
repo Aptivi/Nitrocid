@@ -943,3 +943,18 @@ Mtindo wa Haraka wa SFTP
 Inamsha msaada wa rangi 255 kwa BouncingBlock.
 Inamsha msaada wa rangi ya kweli kwa BouncingBlock.
 Kujaribu kufikia njia batili.
+Hufuta faili ya maandishi
+Toka kihariri cha maandishi
+Maswali ya mhusika katika laini maalum au mistari yote
+Nambari maalum ya herufi {0} sio nambari halali.
+Kuangalia sasisho kumezimwa kwa sababu unatumia toleo la maendeleo.
+Huwasha au kuzima kihariri cha kiotomatiki kuhifadhi kiotomatiki.
+Ikihifadhiwa kiotomatiki, faili ya maandishi itahifadhiwa kwa kila sekunde "n".
+Washa kihifadhi kiotomatiki kiotomatiki
+Kihariri cha maandishi kihifadhi muda
+Huhifadhi faili
+Rekodi gumzo kwenye kumbukumbu ya utatuzi
+Hurekodi gumzo la utatuzi wa mbali kwa kumbukumbu ya utatuzi.
+Kucheleweshwa kwa Milisekunde
+Ni millisecond ngapi za kusubiri kabla ya kuandika ijayo?
+Inakuwezesha kutumia seva ya SSH FTP

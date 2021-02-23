@@ -943,3 +943,18 @@ SFTP-promptstijl
 Activeert 255 kleurenondersteuning voor BouncingBlock.
 Activeert echte kleurondersteuning voor BouncingBlock.
 Probeert toegang te krijgen tot een ongeldig pad.
+Wist het tekstbestand
+Verlaat de teksteditor
+Zoekt een teken op een opgegeven regel of alle regels
+Opgegeven tekennummer {0} is geen geldig nummer.
+Controleren op updates is uitgeschakeld omdat u een ontwikkelingsversie gebruikt.
+Schakelt de functie voor automatisch opslaan van de teksteditor in of uit.
+Als autosave is ingeschakeld, wordt het tekstbestand elke "n" seconden bewaard.
+Schakel teksteditor automatisch opslaan in
+Interval voor automatisch opslaan van teksteditor
+Slaat het bestand op
+Chat opnemen om logboek te debuggen
+Registreert debug-chat op afstand in het debug-logboek
+Vertraging in milliseconden
+Hoeveel milliseconden moet ik wachten voordat ik de volgende keer schrijf?
+Hiermee kunt u een SSH FTP-server gebruiken

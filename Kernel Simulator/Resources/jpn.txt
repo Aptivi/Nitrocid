@@ -943,3 +943,18 @@ SFTP puronputosutairu
 BouncingBlock no 255-shoku no sapōto o akutibu ni shimasu.
 BouncingBlock no to~urūkarāsapōto o akutibu ni shimasu.
 Mukōna pasu ni akusesu shiyou to shite imasu.
+Tekisutofairu o kuria shimasu
+tekisutoedita o shūryō shimasu
+shitei sa reta gyō matawa subete no gyō no moji o shōkai shimasu
+shitei sa reta moji bangō {0} wa yūkōna bangōde wa arimasen.
+Kaihatsu bājon o jikkō shite iru tame, kōshin no kakunin wa mukō ni natte imasu.
+Tekisutoedita no jidō hozon kinō o onmatahaofu ni shimasu.
+Jidō hozon ga yūkō ni natte iru baai, tekisutofairu wa `n ' byō-goto ni hozon sa remasu.
+Tekisutoedita no jidō hozon o yūkōnisuru
+tekisutoedita no jidō hozon kankaku
+fairu o hozon shimasu
+chatto o kiroku shite rogu o debaggu suru
+rimōtodebagguchatto o debaggurogu ni kiroku shimasu.
+Miri byō tan'i no chien
+ji no kakikomi o okonau made ni nan-miri byō taiki shimasu ka?
+SSH FTP sābā o shiyō dekimasu

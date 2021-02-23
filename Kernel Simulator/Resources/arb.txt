@@ -943,3 +943,18 @@ namat mutalabat SFTP
 yunshut daem 255 lwnana l BouncingBlock.
 yunshut daem allawn alhaqiqii l BouncingBlock.
 tuhawil alwusul 'iilaa masar ghyr salih.
+yamsah almilafu alnasia
+yakhruj min muharar alnusus
+lilaistielam ean harf fi satar muhadad 'aw kl alsutur
+raqm alharf almuhadad {0} lays rqmana salhana.
+albahth ean altahdithat mueatil li'anak taqum bitashghil 'iisdar tatwir.
+litashghil 'aw 'iiqaf tashghil mayazat alhafz altalqayiyi limaharir alnusus.
+'iidha tama tamkin alhifz altalqayiyi , fasayatim hifz almilafi alnasii likuli thany "n".
+tafeil alhifz altiliqayiyi limuharar alnusus
+alfasil alzamaniu lilhifz altiliqayiyi limuharar alnusus
+yahfaz almilafa
+sajal alduradishat litasjil altashih
+yusajil muhadathat tashih al'akhta' ean bued lisijal altashih.
+altaakhir fi mili thany
+kam mili thanyt yjb alaintizar qabl 'iijra' alkitabat altalia?
+yutih lak aistikhdam khadim SSH FTP

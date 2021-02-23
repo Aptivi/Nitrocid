@@ -943,3 +943,18 @@ Gaya Prompt SFTP
 Mengaktifkan sokongan warna 255 untuk BouncingBlock.
 Mengaktifkan sokongan warna sebenar untuk BouncingBlock.
 Mencuba jalan masuk yang tidak sah.
+Kosongkan fail teks
+Keluar dari penyunting teks
+Pertanyaan watak dalam baris yang ditentukan atau semua baris
+Nombor watak yang ditentukan {0} bukan nombor yang sah.
+Memeriksa kemas kini dilumpuhkan kerana anda menjalankan versi pengembangan.
+Menghidupkan atau mematikan ciri penyimpan automatik penyunting teks.
+Sekiranya penyimpanan automatik diaktifkan, fail teks akan disimpan untuk setiap "n" saat.
+Dayakan penyimpanan teks editor automatik
+Selang penyimpanan teks editor automatik
+Menyimpan fail
+Rakam sembang ke log debug
+Merakam sembang debug jarak jauh ke log debug.
+Kelewatan dalam Milisaat
+Berapa milisaat yang perlu ditunggu sebelum membuat penulisan seterusnya?
+Membolehkan anda menggunakan pelayan SSH FTP

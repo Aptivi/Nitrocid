@@ -943,3 +943,18 @@ Style d'invite SFTP
 Active la prise en charge de 255 couleurs pour BouncingBlock.
 Active la vraie prise en charge des couleurs pour BouncingBlock.
 Tentative d'accès à un chemin non valide.
+Efface le fichier texte
+Quitte l'éditeur de texte
+Interroge un caractère dans une ligne spécifiée ou sur toutes les lignes
+Le numéro de caractère spécifié {0} n'est pas un nombre valide.
+La recherche de mises à jour est désactivée car vous exécutez une version de développement.
+Active ou désactive la fonction d'enregistrement automatique de l'éditeur de texte.
+Si l'enregistrement automatique est activé, le fichier texte sera enregistré toutes les «n» secondes.
+Activer l'enregistrement automatique de l'éditeur de texte
+Intervalle d'enregistrement automatique de l'éditeur de texte
+Enregistre le fichier
+Enregistrer le chat dans le journal de débogage
+Enregistre la discussion de débogage à distance dans le journal de débogage.
+Retard en millisecondes
+Combien de millisecondes attendre avant de faire la prochaine écriture?
+Vous permet d'utiliser un serveur FTP SSH

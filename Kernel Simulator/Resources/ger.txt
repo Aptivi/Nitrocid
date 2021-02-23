@@ -943,3 +943,18 @@ SFTP-Eingabeaufforderungsstil
 Aktiviert die 255-Farbunterstützung für BouncingBlock.
 Aktiviert die Echtfarbenunterstützung für BouncingBlock.
 Versuch, auf einen ungültigen Pfad zuzugreifen.
+Löscht die Textdatei
+Beendet den Texteditor
+Fragt ein Zeichen in einer bestimmten Zeile oder in allen Zeilen ab
+Die angegebene Zeichennummer {0} ist keine gültige Nummer.
+Das Suchen nach Updates ist deaktiviert, da Sie eine Entwicklungsversion ausführen.
+Aktiviert oder deaktiviert die automatische Speicherfunktion des Texteditors.
+Wenn die automatische Speicherung aktiviert ist, wird die Textdatei alle "n" Sekunden gespeichert.
+Aktivieren Sie die automatische Speicherung des Texteditors
+Intervall für die automatische Speicherung des Texteditors
+Speichert die Datei
+Chat aufzeichnen, um das Protokoll zu debuggen
+Zeichnet den Remote-Debug-Chat im Debug-Protokoll auf.
+Verzögerung in Millisekunden
+Wie viele Millisekunden müssen Sie warten, bevor Sie das nächste Mal schreiben?
+Ermöglicht die Verwendung eines SSH-FTP-Servers

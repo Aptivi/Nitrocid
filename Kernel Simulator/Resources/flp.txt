@@ -943,3 +943,18 @@ Estilo ng Prompt ng SFTP
 Pinapagana ang 255 suporta sa kulay para sa BouncingBlock.
 Pinapagana ang totoong suporta sa kulay para sa BouncingBlock.
 Sinusubukan na ma-access ang hindi wastong landas.
+Nililinis ang file ng teksto
+Lumalabas sa text editor
+Nagtatanong ng isang character sa isang tinukoy na linya o lahat ng mga linya
+Ang tinukoy na numero ng character na {0} ay hindi wastong numero.
+Hindi pinagana ang pagsuri para sa mga update dahil nagpapatakbo ka ng isang bersyon ng pag-unlad.
+Ini-on o naka-on ang tampok na autosave ng text editor.
+Kung pinagana ang autosave, mai-save ang text file para sa bawat "n" na segundo.
+Paganahin ang autosave ng text editor
+Agwat ng autosave ng text editor
+Nai-save ang file
+Itala ang chat sa pag-log ng pag-debug
+Nagtala ng malayuang debug chat sa pag-log ng pag-debug.
+Pagkaantala sa Milliseconds
+Ilang milliseconds ang maghihintay bago gawin ang susunod na pagsulat?
+Hinahayaan kang gumamit ng isang SSH FTP server

@@ -943,3 +943,18 @@ Styl monitu SFTP
 Aktywuje obsługę 255 kolorów dla BouncingBlock.
 Aktywuje obsługę prawdziwego koloru dla BouncingBlock.
 Próbuję uzyskać dostęp do nieprawidłowej ścieżki.
+Czyści plik tekstowy
+Wychodzi z edytora tekstu
+Zapytanie o znak w określonym wierszu lub we wszystkich wierszach
+Określona liczba znaku {0} nie jest prawidłową liczbą.
+Sprawdzanie dostępności aktualizacji jest wyłączone, ponieważ używasz wersji rozwojowej.
+Włącza lub wyłącza funkcję automatycznego zapisywania w edytorze tekstu.
+Jeśli automatyczne zapisywanie jest włączone, plik tekstowy będzie zapisywany co „n” sekund.
+Włącz automatyczne zapisywanie w edytorze tekstu
+Interwał automatycznego zapisywania w edytorze tekstu
+Zapisuje plik
+Nagraj czat, aby dziennik debugowania
+Rejestruje zdalny czat debugowania, aby dziennik debugowania.
+Opóźnienie w milisekundach
+Ile milisekund trzeba czekać przed wykonaniem następnego zapisu?
+Umożliwia korzystanie z serwera FTP SSH

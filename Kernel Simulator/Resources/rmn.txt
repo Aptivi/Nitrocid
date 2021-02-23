@@ -943,3 +943,18 @@ Stil de prompt SFTP
 Activează suportul de 255 de culori pentru BouncingBlock.
 Activează suportul de culoare adevărată pentru BouncingBlock.
 Se încearcă accesarea unei căi nevalide.
+Șterge fișierul text
+Iese din editorul de text
+Interogă un caracter într-o linie specificată sau în toate liniile
+Numărul de caractere specificat {0} nu este un număr valid.
+Verificarea actualizărilor este dezactivată deoarece rulați o versiune de dezvoltare.
+Activează sau dezactivează funcția de salvare automată a editorului de text.
+Dacă salvarea automată este activată, fișierul text va fi salvat pentru fiecare „n” secundă.
+Activați salvarea automată a editorului de text
+Interval de salvare automată a editorului de text
+Salvează fișierul
+Înregistrați chatul pentru jurnalul de depanare
+Înregistrează chat-ul de depanare la distanță pentru jurnalul de depanare.
+Întârziere în milisecunde
+Câte milisecunde trebuie să aștepți înainte de a scrie următoarea scriere?
+Vă permite să utilizați un server FTP SSH

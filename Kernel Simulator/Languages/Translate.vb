@@ -48,7 +48,7 @@ Public Module Translate
                 Return translatedString(text)
             Else 'String wasn't found
                 Wdbg("W", "No string found in langlist. Lang: {0}, String: {1}", lang, text)
-                text = " ! Needs Localization ! " + text
+                text = "(( " + text + " ))"
                 Return text
             End If
         ElseIf availableLangs.Contains(lang) And lang = "eng" Then 'If the language is available, but is English, don't translate

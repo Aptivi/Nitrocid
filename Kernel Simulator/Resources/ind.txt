@@ -943,3 +943,18 @@ sftp sheeghr shailee
 baunsingablok ke lie 255 rang samarthan sakriy karata hai.
 baunsingablok ke lie sahee rang samarthan sakriy karata hai.
 amaany path tak pahunchane ka prayaas kar raha hai.
+paath fail ko saaf karata hai
+paath sampaadak se baahar nikalata hai
+kisee varn ko kisee nirdisht pankti ya sabhee panktiyon mein likhata hai
+nirdisht varn sankhya {0} ek maany sankhya nahin hai.
+apadet kee jaanch karana aksham hai kyonki aap ek vikaas sanskaran chala rahe hain.
+paath sampaadak otosaiv suvidha ko chaaloo ya band karata hai.
+yadi otosaiv saksham hai, to paath fail pratyek "n" sekand ke lie sahejee jaegee.
+paath sampaadak otosaiv saksham karen
+paath sampaadak otosaiv antaraal
+fail sahejata hai
+log deebag karane ke lie rikord chait
+rikord doorasth deebag chait deebag log karane ke lie.
+mileesekand mein deree
+agala lekhan karane se pahale kitane mileesekand tak prateeksha karanee hogee?
+aapako ssh ftp sarvar ka upayog karane deta hai
