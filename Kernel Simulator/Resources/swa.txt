@@ -957,3 +957,4 @@ Rekodi gumzo kwenye kumbukumbu ya utatuzi
 Hurekodi gumzo la utatuzi wa mbali kwa kumbukumbu ya utatuzi.
 Kucheleweshwa kwa Milisekunde
 Ni millisecond ngapi za kusubiri kabla ya kuandika ijayo?
+Inakuwezesha kutumia seva ya SSH FTP

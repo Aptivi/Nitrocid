@@ -957,3 +957,4 @@ Grabar chat para depurar el registro
 Registra el chat de depuración remota para depurar el registro.
 Retraso en milisegundos
 ¿Cuántos milisegundos esperar antes de realizar la siguiente escritura?
+Le permite utilizar un servidor FTP SSH

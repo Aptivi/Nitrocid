@@ -957,3 +957,4 @@ Zapisat' chat v zhurnal otladki
 Zapisyvayet udalennyy chat otladki v zhurnal otladki.
 Zaderzhka v millisekundakh
 Skol'ko millisekund zhdat' pered sleduyushchey zapis'yu?
+Pozvolyayet ispol'zovat' SSH FTP-server

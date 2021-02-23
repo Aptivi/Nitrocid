@@ -957,3 +957,4 @@ Chat aufzeichnen, um das Protokoll zu debuggen
 Zeichnet den Remote-Debug-Chat im Debug-Protokoll auf.
 Verzögerung in Millisekunden
 Wie viele Millisekunden müssen Sie warten, bevor Sie das nächste Mal schreiben?
+Ermöglicht die Verwendung eines SSH-FTP-Servers

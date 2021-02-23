@@ -957,3 +957,4 @@ sajal alduradishat litasjil altashih
 yusajil muhadathat tashih al'akhta' ean bued lisijal altashih.
 altaakhir fi mili thany
 kam mili thanyt yjb alaintizar qabl 'iijra' alkitabat altalia?
+yutih lak aistikhdam khadim SSH FTP

@@ -957,3 +957,4 @@ Spela in chatt till felsökningslogg
 Registrerar fjärrfelsökningschatt till felsökningslogg.
 Fördröjning i millisekunder
 Hur många millisekunder väntar du innan du skriver nästa gång?
+Låter dig använda en SSH FTP-server

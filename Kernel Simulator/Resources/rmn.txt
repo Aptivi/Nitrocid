@@ -957,3 +957,4 @@ Salvează fișierul
 Înregistrează chat-ul de depanare la distanță pentru jurnalul de depanare.
 Întârziere în milisecunde
 Câte milisecunde trebuie să aștepți înainte de a scrie următoarea scriere?
+Vă permite să utilizați un server FTP SSH

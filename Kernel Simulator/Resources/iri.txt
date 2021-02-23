@@ -957,3 +957,4 @@ Comhrá a thaifeadadh chun logáil dífhabhtaithe
 Déan comhrá iargúlta dífhabhtaithe a thaifeadadh chuig logáil dífhabhtaithe.
 Moill i Milliseconds
 Cé mhéad milleasoicind atá le fanacht sula ndéanfaidh tú an chéad scríbhinn eile?
+Ligeann tú duit freastalaí SSH FTP a úsáid

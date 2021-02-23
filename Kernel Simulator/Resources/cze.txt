@@ -957,3 +957,4 @@ Zaznamenejte chat do protokolu ladění
 Zaznamenává vzdálený ladicí chat do protokolu ladění.
 Zpoždění v milisekundách
 Kolik milisekund čekat před dalším zápisem?
+Umožňuje použít server SSH FTP

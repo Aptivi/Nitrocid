@@ -957,3 +957,4 @@ Nagraj czat, aby dziennik debugowania
 Rejestruje zdalny czat debugowania, aby dziennik debugowania.
 Opóźnienie w milisekundach
 Ile milisekund trzeba czekać przed wykonaniem następnego zapisu?
+Umożliwia korzystanie z serwera FTP SSH

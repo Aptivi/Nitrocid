@@ -957,3 +957,4 @@ chatto o kiroku shite rogu o debaggu suru
 rimōtodebagguchatto o debaggurogu ni kiroku shimasu.
 Miri byō tan'i no chien
 ji no kakikomi o okonau made ni nan-miri byō taiki shimasu ka?
+SSH FTP sābā o shiyō dekimasu

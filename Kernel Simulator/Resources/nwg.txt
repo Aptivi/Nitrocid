@@ -957,3 +957,4 @@ Ta opp chat til feilsøkingslogg
 Registrerer ekstern feilsøkingschat til feilsøkingslogg.
 Forsinkelse i millisekunder
 Hvor mange millisekunder å vente før du skriver neste gang?
+Lar deg bruke en SSH FTP-server

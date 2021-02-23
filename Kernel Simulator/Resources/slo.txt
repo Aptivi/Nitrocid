@@ -957,3 +957,4 @@ Snemajte klepet v dnevnik odpravljanja napak
 Snema klepet za odpravljanje napak v dnevnik odpravljanja napak.
 Zamuda v milisekundah
 Koliko milisekund čakati pred naslednjim pisanjem?
+Umožňuje vám používať server SSH FTP

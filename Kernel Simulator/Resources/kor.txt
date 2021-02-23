@@ -957,3 +957,4 @@ dibeogeu logeue chaeting gilog
 wongyeog dibeogeu chaeting-eul dibeogeu logeue giloghabnida.
 milli cho dan-wiui jiyeon
 da-eum sseugileulhagi jeon-e myeoch milli choleul gidalyeoyahabnikka?
+SSH FTP seobeoleul sayonghal su issseubnida.

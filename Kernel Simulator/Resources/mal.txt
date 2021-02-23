@@ -957,3 +957,4 @@ Rakam sembang ke log debug
 Merakam sembang debug jarak jauh ke log debug.
 Kelewatan dalam Milisaat
 Berapa milisaat yang perlu ditunggu sebelum membuat penulisan seterusnya?
+Membolehkan anda menggunakan pelayan SSH FTP

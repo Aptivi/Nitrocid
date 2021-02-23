@@ -957,3 +957,4 @@ Ghi lại cuộc trò chuyện vào nhật ký gỡ lỗi
 Ghi lại cuộc trò chuyện gỡ lỗi từ xa vào nhật ký gỡ lỗi.
 Độ trễ tính bằng mili giây
 Phải đợi bao nhiêu mili giây trước khi thực hiện lần viết tiếp theo?
+Cho phép bạn sử dụng máy chủ SSH FTP

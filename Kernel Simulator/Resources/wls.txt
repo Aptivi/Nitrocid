@@ -957,3 +957,4 @@ Recordio sgwrs i log dadfygio
 Yn recordio sgwrsio dadfygio o bell i log dadfygio.
 Oedi yn Milliseconds
 Sawl milieiliad i aros cyn gwneud yr ysgrifen nesaf?
+Yn gadael i chi ddefnyddio gweinydd SSH FTP

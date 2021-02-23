@@ -957,3 +957,4 @@ Ku qor sheekaysiga si aad khalad uga dhigto
 Diiwaangelinta wada sheekaysiga khaladka fog ee khaladaadka qorista.
 Dib udhac ku dhaca Millisekonds
 Immisa milliseconds ah in la sugo ka hor inta aan la samayn qorista xigta?
+Waxay kuu ogolaaneysaa inaad isticmaasho server-ka SSH FTP
