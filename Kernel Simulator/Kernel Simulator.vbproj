@@ -20,7 +20,7 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.15.1</Version>
+    <Version>0.0.15.2</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -154,7 +154,7 @@
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
+    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -167,7 +167,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
-    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
+    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Extensification">
