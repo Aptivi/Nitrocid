@@ -106,13 +106,21 @@ Public Module Config
                         New IniKey(ksconf, "Lines - Activate 255 Color Mode", Lines255Colors),
                         New IniKey(ksconf, "Dissolve - Activate 255 Color Mode", Dissolve255Colors),
                         New IniKey(ksconf, "BouncingBlock - Activate 255 Color Mode", BouncingBlock255Colors),
+                        New IniKey(ksconf, "ProgressClock - Activate 255 Color Mode", ProgressClock255Colors),
                         New IniKey(ksconf, "ColorMix - Activate True Color Mode", ColorMixTrueColor),
                         New IniKey(ksconf, "Disco - Activate True Color Mode", DiscoTrueColor),
                         New IniKey(ksconf, "GlitterColor - Activate True Color Mode", GlitterColorTrueColor),
                         New IniKey(ksconf, "Lines - Activate True Color Mode", LinesTrueColor),
                         New IniKey(ksconf, "Dissolve - Activate True Color Mode", DissolveTrueColor),
                         New IniKey(ksconf, "BouncingBlock - Activate True Color Mode", BouncingBlockTrueColor),
+                        New IniKey(ksconf, "ProgressClock - Activate True Color Mode", ProgressClockTrueColor),
                         New IniKey(ksconf, "Disco - Cycle Colors", DiscoCycleColors),
+                        New IniKey(ksconf, "ProgressClock - Cycle Colors", ProgressClockCycleColors),
+                        New IniKey(ksconf, "ProgressClock - Ticks to change color", ProgressClockCycleColorsTicks),
+                        New IniKey(ksconf, "ProgressClock - Color of Seconds Bar", ProgressClockSecondsProgressColor),
+                        New IniKey(ksconf, "ProgressClock - Color of Minutes Bar", ProgressClockMinutesProgressColor),
+                        New IniKey(ksconf, "ProgressClock - Color of Hours Bar", ProgressClockHoursProgressColor),
+                        New IniKey(ksconf, "ProgressClock - Color of Information", ProgressClockProgressColor),
                         New IniKey(ksconf, "BouncingBlock - Delay in Milliseconds", BouncingBlockDelay),
                         New IniKey(ksconf, "BouncingText - Delay in Milliseconds", BouncingTextDelay),
                         New IniKey(ksconf, "ColorMix - Delay in Milliseconds", ColorMixDelay),
@@ -212,13 +220,21 @@ Public Module Config
                         New IniKey(ksconf, "Lines - Activate 255 Color Mode", "False"),
                         New IniKey(ksconf, "Dissolve - Activate 255 Color Mode", "False"),
                         New IniKey(ksconf, "BouncingBlock - Activate 255 Color Mode", "False"),
+                        New IniKey(ksconf, "ProgressClock - Activate 255 Color Mode", "False"),
                         New IniKey(ksconf, "ColorMix - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "Disco - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "GlitterColor - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "Lines - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "Dissolve - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "BouncingBlock - Activate True Color Mode", "True"),
+                        New IniKey(ksconf, "ProgressClock - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "Disco - Cycle Colors", "False"),
+                        New IniKey(ksconf, "ProgressClock - Cycle Colors", "True"),
+                        New IniKey(ksconf, "ProgressClock - Ticks to change color", 20),
+                        New IniKey(ksconf, "ProgressClock - Color of Seconds Bar", 4),
+                        New IniKey(ksconf, "ProgressClock - Color of Minutes Bar", 5),
+                        New IniKey(ksconf, "ProgressClock - Color of Hours Bar", 6),
+                        New IniKey(ksconf, "ProgressClock - Color of Information", 7),
                         New IniKey(ksconf, "BouncingBlock - Delay in Milliseconds", 10),
                         New IniKey(ksconf, "BouncingText - Delay in Milliseconds", 10),
                         New IniKey(ksconf, "ColorMix - Delay in Milliseconds", 1),
@@ -301,13 +317,20 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("Lines - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Lines"
             ksconf.Sections("Screensaver").Keys("Dissolve - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Dissolve"
             ksconf.Sections("Screensaver").Keys("BouncingBlock - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for BouncingBlock"
+            ksconf.Sections("Screensaver").Keys("ProgressClock - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for ProgressColor"
             ksconf.Sections("Screensaver").Keys("ColorMix - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for ColorMix"
             ksconf.Sections("Screensaver").Keys("Disco - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Disco"
             ksconf.Sections("Screensaver").Keys("GlitterColor - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for GlitterColor"
             ksconf.Sections("Screensaver").Keys("Lines - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Lines"
             ksconf.Sections("Screensaver").Keys("Dissolve - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Dissolve"
             ksconf.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for BouncingBlock"
+            ksconf.Sections("Screensaver").Keys("ProgressClock - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for ProgressColor"
             ksconf.Sections("Screensaver").Keys("Disco - Cycle Colors").TrailingComment.Text = "Disco will cycle colors if it's enabled. Otherwise, select random colors."
+            ksconf.Sections("Screensaver").Keys("ProgressClock - Cycle Colors").TrailingComment.Text = "ProgressClock will select random colors if it's enabled. Otherwise, use colors from config."
+            ksconf.Sections("Screensaver").Keys("ProgressClock - Color of Seconds Bar").TrailingComment.Text = "The color of seconds progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."
+            ksconf.Sections("Screensaver").Keys("ProgressClock - Color of Minutes Bar").TrailingComment.Text = "The color of minutes progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."
+            ksconf.Sections("Screensaver").Keys("ProgressClock - Color of Hours Bar").TrailingComment.Text = "The color of hours progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."
+            ksconf.Sections("Screensaver").Keys("ProgressClock - Color of Information").TrailingComment.Text = "The color of date information. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."
 
             'Screensaver: Delays
             ksconf.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in BouncingBlock?"
@@ -318,6 +341,7 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in GlitterMatrix?"
             ksconf.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Lines?"
             ksconf.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Matrix?"
+            ksconf.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").TrailingComment.Text = "If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds"
 
             'Screensaver: Texts
             ksconf.Sections("Screensaver").Keys("BouncingText - Text Shown").TrailingComment.Text = "Any text for BouncingText"
@@ -483,13 +507,20 @@ Public Module Config
             Lines255Colors = configReader.Sections("Screensaver").Keys("Lines - Activate 255 Color Mode").Value
             Dissolve255Colors = configReader.Sections("Screensaver").Keys("Dissolve - Activate 255 Color Mode").Value
             BouncingBlock255Colors = configReader.Sections("Screensaver").Keys("BouncingBlock - Activate 255 Color Mode").Value
+            ProgressClock255Colors = configReader.Sections("Screensaver").Keys("ProgressClock - Activate 255 Color Mode").Value
             ColorMixTrueColor = configReader.Sections("Screensaver").Keys("ColorMix - Activate True Color Mode").Value
             DiscoTrueColor = configReader.Sections("Screensaver").Keys("Disco - Activate True Color Mode").Value
             GlitterColorTrueColor = configReader.Sections("Screensaver").Keys("GlitterColor - Activate True Color Mode").Value
             LinesTrueColor = configReader.Sections("Screensaver").Keys("Lines - Activate True Color Mode").Value
             DissolveTrueColor = configReader.Sections("Screensaver").Keys("Dissolve - Activate True Color Mode").Value
             BouncingBlockTrueColor = configReader.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").Value
+            ProgressClockTrueColor = configReader.Sections("Screensaver").Keys("ProgressClock - Activate True Color Mode").Value
             DiscoCycleColors = configReader.Sections("Screensaver").Keys("Disco - Cycle Colors").Value
+            ProgressClockCycleColors = configReader.Sections("Screensaver").Keys("ProgressClock - Cycle Colors").Value
+            ProgressClockSecondsProgressColor = configReader.Sections("Screensaver").Keys("ProgressClock - Color of Seconds Bar").Value
+            ProgressClockMinutesProgressColor = configReader.Sections("Screensaver").Keys("ProgressClock - Color of Minutes Bar").Value
+            ProgressClockHoursProgressColor = configReader.Sections("Screensaver").Keys("ProgressClock - Color of Hours Bar").Value
+            ProgressClockProgressColor = configReader.Sections("Screensaver").Keys("ProgressClock - Color of Information").Value
 
             'Screensaver: Delays
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").Value, 0) Then BouncingBlockDelay = configReader.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").Value
@@ -500,6 +531,7 @@ Public Module Config
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").Value, 0) Then GlitterMatrixDelay = configReader.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value, 0) Then LinesDelay = configReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value, 0) Then MatrixDelay = configReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").Value, 0) Then ProgressClockCycleColorsTicks = configReader.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").Value
 
             'Screensaver: Texts
             BouncingTextWrite = configReader.Sections("Screensaver").Keys("BouncingText - Text Shown").Value

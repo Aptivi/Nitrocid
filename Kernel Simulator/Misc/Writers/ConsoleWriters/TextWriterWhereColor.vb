@@ -95,6 +95,79 @@ Module TextWriterWhereColor
     ''' <param name="Top">Row number in console</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    Public Sub WriteWhereC16(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Console.BackgroundColor = If(backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), backgroundColor), ConsoleColor.Black)
+            Console.ForegroundColor = color
+
+            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+            If msg IsNot Nothing Then
+                msg = msg.ToString.FormatString(vars)
+            End If
+
+            'Write text in another place
+            Dim OldLeft As Integer = CursorLeft
+            Dim OldTop As Integer = CursorTop
+            SetCursorPosition(Left, Top)
+            Write(msg)
+            SetCursorPosition(OldLeft, OldTop)
+            If backgroundColor = ConsoleColors.Black Then ResetColor()
+            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                Console.BackgroundColor = If(backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), backgroundColor), ConsoleColor.Black)
+                Console.ForegroundColor = If(inputColor <= 15, [Enum].Parse(GetType(ConsoleColor), inputColor), ConsoleColor.White)
+            End If
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+    ''' </summary>
+    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Left">Column number in console</param>
+    ''' <param name="Top">Row number in console</param>
+    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    Public Sub WriteWhereC16(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Console.BackgroundColor = BackgroundColor
+            Console.ForegroundColor = ForegroundColor
+
+            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+            If msg IsNot Nothing Then
+                msg = msg.ToString.FormatString(vars)
+            End If
+
+            'Write text in another place
+            Dim OldLeft As Integer = CursorLeft
+            Dim OldTop As Integer = CursorTop
+            SetCursorPosition(Left, Top)
+            Write(msg)
+            SetCursorPosition(OldLeft, OldTop)
+            If BackgroundColor = ConsoleColors.Black Then ResetColor()
+            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                Console.BackgroundColor = If(Color.backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), Color.backgroundColor), ConsoleColor.Black)
+                Console.ForegroundColor = If(inputColor <= 15, [Enum].Parse(GetType(ConsoleColor), inputColor), ConsoleColor.White)
+            End If
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+    ''' </summary>
+    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Left">Column number in console</param>
+    ''' <param name="Top">Row number in console</param>
+    ''' <param name="color">A color that will be changed to.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     Public Sub WriteWhereC(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal color As ConsoleColors, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock

@@ -29,7 +29,7 @@ Public Module Screensaver
     Public defSaverName As String = "glitterMatrix"
     Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False},
                                                                  {"lines", False}, {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False},
-                                                                 {"bouncingText", False}, {"dissolve", False}, {"bouncingBlock", False}}
+                                                                 {"bouncingText", False}, {"dissolve", False}, {"bouncingBlock", False}, {"progressClock", False}}
     Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker
     Public finalSaver As ICustomSaver
@@ -200,6 +200,14 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 BouncingBlock.CancelAsync()
+                Thread.Sleep(150)
+            ElseIf saver = "progressClock" Then
+                ProgressClock.WorkerSupportsCancellation = True
+                ProgressClock.RunWorkerAsync()
+                Wdbg("I", "Progress Clock started")
+                Console.ReadKey()
+                ScrnTimeReached = False
+                ProgressClock.CancelAsync()
                 Thread.Sleep(150)
             ElseIf ScrnSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.

@@ -149,7 +149,7 @@ Public Module ToolPrompts
                     W("9) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowPreview)))
                     W("10) " + DoTranslation("Record chat to debug log", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(RecordChatToDebugLog)))
                 Case 6 'Screensaver
-                    MaxOptions = 23
+                    MaxOptions = 31
                     W(DoTranslation("This section lists all the screensavers and their available settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ScrnTimeout)))
 
@@ -160,26 +160,34 @@ Public Module ToolPrompts
                     W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(Lines255Colors)))
                     W("6) [Dissolve] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(Dissolve255Colors)))
                     W("7) [BouncingBlock] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlock255Colors)))
-                    W("8) [ColorMix] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMixTrueColor)))
-                    W("9) [Disco] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoTrueColor)))
-                    W("10) [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColorTrueColor)))
-                    W("11) [Lines] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LinesTrueColor)))
-                    W("12) [Dissolve] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DissolveTrueColor)))
-                    W("13) [BouncingBlock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlockTrueColor)))
-                    W("14) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoCycleColors)))
+                    W("8) [ProgressClock] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClock255Colors)))
+                    W("9) [ColorMix] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMixTrueColor)))
+                    W("10) [Disco] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoTrueColor)))
+                    W("11) [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColorTrueColor)))
+                    W("12) [Lines] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LinesTrueColor)))
+                    W("13) [Dissolve] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DissolveTrueColor)))
+                    W("14) [BouncingBlock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlockTrueColor)))
+                    W("15) [ProgressClock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockTrueColor)))
+                    W("16) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoCycleColors)))
+                    W("17) [ProgressClock] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockCycleColors)))
+                    W("18) [ProgressClock] " + DoTranslation("Color of Seconds Bar", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockSecondsProgressColor)))
+                    W("19) [ProgressClock] " + DoTranslation("Color of Minutes Bar", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockMinutesProgressColor)))
+                    W("20) [ProgressClock] " + DoTranslation("Color of Hours Bar", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockHoursProgressColor)))
+                    W("21) [ProgressClock] " + DoTranslation("Color of Information", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockProgressColor)))
 
                     'Screensaver: Delays
-                    W("15) [BouncingBlock] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlockDelay)))
-                    W("16) [BouncingText] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingTextDelay)))
-                    W("17) [ColorMix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMixDelay)))
-                    W("18) [Disco] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoDelay)))
-                    W("19) [GlitterColor] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColorDelay)))
-                    W("20) [GlitterMatrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterMatrixDelay)))
-                    W("21) [Lines] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LinesDelay)))
-                    W("22) [Matrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(MatrixDelay)))
+                    W("22) [BouncingBlock] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlockDelay)))
+                    W("23) [BouncingText] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingTextDelay)))
+                    W("24) [ColorMix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMixDelay)))
+                    W("25) [Disco] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoDelay)))
+                    W("26) [GlitterColor] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColorDelay)))
+                    W("27) [GlitterMatrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterMatrixDelay)))
+                    W("28) [Lines] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LinesDelay)))
+                    W("29) [Matrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(MatrixDelay)))
+                    W("30) [ProgressClock] " + DoTranslation("Ticks to change color", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockCycleColorsTicks)))
 
                     'Screensaver: Texts
-                    W("23) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(BouncingTextWrite)))
+                    W("31) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(BouncingTextWrite)))
                 Case 7 'Misc
                     MaxOptions = 9
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -580,88 +588,129 @@ Public Module ToolPrompts
                             W(DoTranslation("Activates 255 color support for BouncingBlock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 8 'ColorMix: Activate true colors
+                        Case 8 'ProgressClock: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ProgressClock255Colors)
+                            W(DoTranslation("Activates 255 color support for ProgressClock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 9 'ColorMix: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ColorMixTrueColor)
                             W(DoTranslation("Activates true color support for ColorMix.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 9 'Disco: Activate true colors
+                        Case 10 'Disco: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DiscoTrueColor)
                             W(DoTranslation("Activates true color support for Disco.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 10 'GlitterColor: Activate true colors
+                        Case 11 'GlitterColor: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(GlitterColorTrueColor)
                             W(DoTranslation("Activates true color support for GlitterColor.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 11 'Lines: Activate true colors
+                        Case 12 'Lines: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(LinesTrueColor)
                             W(DoTranslation("Activates true color support for Lines.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 12 'Dissolve: Activate true colors
+                        Case 13 'Dissolve: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DissolveTrueColor)
                             W(DoTranslation("Activates true color support for Dissolve.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 13 'BouncingBlock: Activate true colors
+                        Case 14 'BouncingBlock: Activate true colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(BouncingBlockTrueColor)
                             W(DoTranslation("Activates true color support for BouncingBlock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 14 'Disco: Cycle colors
+                        Case 15 'ProgressClock: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ProgressClockTrueColor)
+                            W(DoTranslation("Activates true color support for ProgressClock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 16 'Disco: Cycle colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DiscoCycleColors)
                             W(DoTranslation("Disco will cycle colors when enabled. Otherwise, select random colors.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 15 'BouncingBlock - Delay in Milliseconds
+                        Case 17 'ProgressClock: Cycle colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ProgressClockCycleColors)
+                            W(DoTranslation("ProgressClock will select random colors if it's enabled. Otherwise, use colors from config.", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
+                            W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        Case 18 'ProgressClock: Color of Seconds Bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockSecondsProgressColor)
+                            W("*) " + DoTranslation("The color of seconds progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255"".", currentLang), True, ColTypes.Neutral)
+                        Case 19 'ProgressClock: Color of Minutes Bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockMinutesProgressColor)
+                            W("*) " + DoTranslation("The color of minutes progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255"".", currentLang), True, ColTypes.Neutral)
+                        Case 20 'ProgressClock: Color of Hours Bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockHoursProgressColor)
+                            W("*) " + DoTranslation("The color of hours progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255"".", currentLang), True, ColTypes.Neutral)
+                        Case 21 'ProgressClock: Color of Information
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockProgressColor)
+                            W("*) " + DoTranslation("The color of date information. It can be 1-16, 1-255, or ""1-255;1-255;1-255"".", currentLang), True, ColTypes.Neutral)
+                        Case 22 'BouncingBlock: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(BouncingBlockDelay)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
-                        Case 16 'BouncingText - Delay in Milliseconds
+                        Case 23 'BouncingText: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(BouncingTextDelay)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
-                        Case 17 'ColorMix - Delay in Milliseconds
+                        Case 24 'ColorMix: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ColorMixDelay)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
-                        Case 18 'Disco - Delay in Milliseconds
+                        Case 25 'Disco: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DiscoDelay)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
-                        Case 19 'GlitterColor - Delay in Milliseconds
+                        Case 26 'GlitterColor: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(GlitterColorDelay)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
-                        Case 20 'GlitterMatrix - Delay in Milliseconds
+                        Case 27 'GlitterMatrix: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(GlitterMatrixDelay)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
-                        Case 21 'Lines - Delay in Milliseconds
+                        Case 28 'Lines: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(LinesDelay)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
-                        Case 22 'Matrix - Delay in Milliseconds
+                        Case 29 'Matrix: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(MatrixDelay)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
-                        Case 23 'BouncingText: Text shown
+                        Case 30 'ProgressClock: Ticks to change color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockCycleColorsTicks)
+                            W("*) " + DoTranslation("If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds", currentLang), True, ColTypes.Neutral)
+                        Case 31 'BouncingText: Text shown
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(BouncingTextWrite)
                             W("*) " + DoTranslation("Write any text you want shown. Shorter is better.", currentLang), True, ColTypes.Neutral)

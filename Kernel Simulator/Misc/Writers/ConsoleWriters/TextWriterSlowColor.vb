@@ -129,6 +129,85 @@ Module TextWriterSlowColor
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    Public Sub WriteSlowlyC16(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Console.BackgroundColor = If(backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), backgroundColor), ConsoleColor.Black)
+            Console.ForegroundColor = color
+
+            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+            If msg IsNot Nothing Then
+                msg = msg.ToString.FormatString(vars)
+            End If
+
+            'Write text slowly
+            Dim chars As List(Of Char) = msg.ToCharArray.ToList
+            For Each ch As Char In chars
+                Thread.Sleep(MsEachLetter)
+                Write(ch)
+            Next
+            If Line Then
+                WriteLine()
+            End If
+            If backgroundColor = ConsoleColors.Black Then ResetColor()
+            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                Console.BackgroundColor = If(backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), backgroundColor), ConsoleColor.Black)
+                Console.ForegroundColor = If(inputColor <= 15, [Enum].Parse(GetType(ConsoleColor), inputColor), ConsoleColor.White)
+            End If
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt slowly with color support.
+    ''' </summary>
+    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    Public Sub WriteSlowlyC16(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Console.BackgroundColor = BackgroundColor
+            Console.ForegroundColor = ForegroundColor
+
+            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+            If msg IsNot Nothing Then
+                msg = msg.ToString.FormatString(vars)
+            End If
+
+            'Write text slowly
+            Dim chars As List(Of Char) = msg.ToCharArray.ToList
+            For Each ch As Char In chars
+                Thread.Sleep(MsEachLetter)
+                Write(ch)
+            Next
+            If Line Then
+                WriteLine()
+            End If
+            If BackgroundColor = ConsoleColors.Black Then ResetColor()
+            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                Console.BackgroundColor = If(Color.backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), Color.backgroundColor), ConsoleColor.Black)
+                Console.ForegroundColor = If(inputColor <= 15, [Enum].Parse(GetType(ConsoleColor), inputColor), ConsoleColor.White)
+            End If
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt slowly with color support.
+    ''' </summary>
+    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+    ''' <param name="color">A color that will be changed to.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal color As ConsoleColors, ParamArray ByVal vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock

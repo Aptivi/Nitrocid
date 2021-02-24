@@ -71,13 +71,37 @@ Public Class RGB
     ''' <summary>
     ''' Makes a new instance of the RGB color storage
     ''' </summary>
-    ''' <param name="RedLevel">Red level</param>
-    ''' <param name="GreenLevel">Green level</param>
-    ''' <param name="BlueLevel">Blue level</param>
+    ''' <param name="RedLevel">Red color level of 0-255</param>
+    ''' <param name="GreenLevel">Green color level of 0-255</param>
+    ''' <param name="BlueLevel">Blue color level of 0-255</param>
     Public Sub New(ByVal RedLevel As Short, ByVal GreenLevel As Short, ByVal BlueLevel As Short)
         Red = RedLevel
         Green = GreenLevel
         Blue = BlueLevel
+    End Sub
+
+    ''' <summary>
+    ''' Makes a new instance of the RGB color storage
+    ''' </summary>
+    ''' <param name="RGBString">A VT-sequence-compatible RGB color pattern. For example, RRR;GGG;BBB, which:
+    ''' <br>RRR: a red color level of 0-255</br>
+    ''' <br>GGG: a green color level of 0-255</br>
+    ''' <br>BBB: a blue color level of 0-255</br></param>
+    Public Sub New(ByVal RGBString As String)
+        Dim RGBStringArray() As String = RGBString.Split(";")
+        If RGBStringArray.Length = 3 Then
+            If IsNumeric(RGBStringArray(0)) Then
+                Red = RGBStringArray(0)
+            End If
+            If IsNumeric(RGBStringArray(1)) Then
+                Green = RGBStringArray(1)
+            End If
+            If IsNumeric(RGBStringArray(2)) Then
+                Blue = RGBStringArray(2)
+            End If
+        Else
+            Throw New ArgumentException(DoTranslation("Invalid VT sequence for RGB color.", currentLang))
+        End If
     End Sub
 
     ''' <summary>

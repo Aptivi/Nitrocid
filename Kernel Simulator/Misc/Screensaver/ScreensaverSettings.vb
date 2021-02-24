@@ -68,9 +68,37 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public BouncingBlockTrueColor As Boolean
     ''' <summary>
+    ''' [ProgressClock] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public ProgressClock255Colors As Boolean
+    ''' <summary>
+    ''' [ProgressClock] Enable truecolor support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public ProgressClockTrueColor As Boolean
+    ''' <summary>
     ''' [Disco] Enable color cycling
     ''' </summary>
     Public DiscoCycleColors As Boolean
+    ''' <summary>
+    ''' [ProgressClock] Enable color cycling (uses RNG. If disabled, uses the <see cref="ProgressClockSecondsProgressColor"/>, <see cref="ProgressClockMinutesProgressColor"/>, and <see cref="ProgressClockHoursProgressColor"/> colors.)
+    ''' </summary>
+    Public ProgressClockCycleColors As Boolean = True
+    ''' <summary>
+    ''' [ProgressClock] The color of seconds progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+    ''' </summary>
+    Public ProgressClockSecondsProgressColor As String
+    ''' <summary>
+    ''' [ProgressClock] The color of minutes progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+    ''' </summary>
+    Public ProgressClockMinutesProgressColor As String
+    ''' <summary>
+    ''' [ProgressClock] The color of hours progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+    ''' </summary>
+    Public ProgressClockHoursProgressColor As String
+    ''' <summary>
+    ''' [ProgressClock] The color of date information. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+    ''' </summary>
+    Public ProgressClockProgressColor As String
 
     '-> Delays
     ''' <summary>
@@ -105,6 +133,10 @@ Public Module ScreensaverSettings
     ''' [Matrix] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public MatrixDelay As Integer = 1
+    ''' <summary>
+    ''' [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
+    ''' </summary>
+    Public ProgressClockCycleColorsTicks As Long = 20
 
     '-> Texts
     ''' <summary>

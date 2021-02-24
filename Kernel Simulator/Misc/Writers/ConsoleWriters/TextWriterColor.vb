@@ -98,6 +98,81 @@ Public Module TextWriterColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    Public Sub WriteC16(ByVal text As Object, ByVal Line As Boolean, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Dim esc As Char = GetEsc()
+            Try
+                'Try to write to console
+                Console.BackgroundColor = If(backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), backgroundColor), ConsoleColor.Black)
+                Console.ForegroundColor = color
+
+                'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+                If text IsNot Nothing Then
+                    text = text.ToString.FormatString(vars)
+                End If
+
+                If Line Then WriteLine(text) Else Write(text)
+                If backgroundColor = ConsoleColors.Black Then ResetColor()
+                If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                    Console.BackgroundColor = If(backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), backgroundColor), ConsoleColor.Black)
+                    Console.ForegroundColor = If(inputColor <= 15, [Enum].Parse(GetType(ConsoleColor), inputColor), ConsoleColor.White)
+                End If
+            Catch ex As Exception
+                WStkTrc(ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    Public Sub WriteC16(ByVal text As Object, ByVal Line As Boolean, ByVal ForegroundColor As ConsoleColors, ByVal BackgroundColor As ConsoleColors, ByVal ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Dim esc As Char = GetEsc()
+            Try
+                'Try to write to console
+                Console.BackgroundColor = BackgroundColor
+                Console.ForegroundColor = ForegroundColor
+
+                'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
+                If text IsNot Nothing Then
+                    text = text.ToString.FormatString(vars)
+                End If
+
+                If Line Then WriteLine(text) Else Write(text)
+                If BackgroundColor = ConsoleColors.Black Then ResetColor()
+                If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                    Console.BackgroundColor = If(BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black)
+                    Console.ForegroundColor = If(inputColor <= 15, [Enum].Parse(GetType(ConsoleColor), inputColor), ConsoleColor.White)
+                End If
+            Catch ex As Exception
+                WStkTrc(ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="color">A color that will be changed to.</param>
+    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
     Public Sub WriteC(ByVal text As Object, ByVal Line As Boolean, ByVal color As ConsoleColors, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
