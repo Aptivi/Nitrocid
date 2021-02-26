@@ -95,9 +95,9 @@ Public Module Notifications
                         Wdbg("I", "Where to store progress: {0}:{1}", Console.WindowWidth - 40, Console.WindowTop + 3)
                         Wdbg("I", "Progress: {0}", NotifRecents(NotifRecents.Count - 1).Progress)
                         WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop, ColTypes.Neutral)
-                        WriteWhere(Title + " ".Repeat(40 - Title.Length), Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral)
+                        WriteWhere(Title + " ({0}%)" + " ".Repeat(40 - (Title + " (" + CStr(NotifRecents(NotifRecents.Count - 1).Progress) + "%) ").Length), Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral, NotifRecents(NotifRecents.Count - 1).Progress)
                         WriteWhere(Desc + " ".Repeat(40 - Desc.Length), Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
-                        WriteWhere("{0}%", Console.WindowWidth - 40, Console.WindowTop + 3, ColTypes.Neutral, NotifRecents(NotifRecents.Count - 1).Progress)
+                        WriteWhere("*".Repeat(NotifRecents(NotifRecents.Count - 1).Progress * 100 / 100 * (38 / 100)), Console.WindowWidth - 40, Console.WindowTop + 3, ColTypes.Neutral)
                         Thread.Sleep(1)
                     Loop
                 End If
