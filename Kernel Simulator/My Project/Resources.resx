@@ -256,4 +256,61 @@
   <data name="wls" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wls.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="BedOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\BedOS.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="BlackOnWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\BlackOnWhite.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Bluespire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Bluespire.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Debian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Debian.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="GrayOnYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\GrayOnYellow.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="GTASA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\GTASA.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Hacker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Hacker.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="LinuxColoredDef" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\LinuxColoredDef.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="LinuxUncolored" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\LinuxUncolored.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="NFSHP_Cop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\NFSHP-Cop.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="NFSHP_Racer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\NFSHP-Racer.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="RedConsole" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\RedConsole.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="TealerOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\TealerOS.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Ubuntu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Ubuntu.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Windows95" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Windows95.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="YellowBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\YellowBG.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="YellowFG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\YellowFG.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="_3Y_Diamond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\3Y-Diamond.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Default.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>

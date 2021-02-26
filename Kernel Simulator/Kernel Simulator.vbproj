@@ -230,6 +230,7 @@
     <Compile Include="Console\Color255.vb" />
     <Compile Include="Console\Input.vb" />
     <Compile Include="Console\RGB.vb" />
+    <Compile Include="Console\Themes\ThemeInfo.vb" />
     <Compile Include="Files\Filesystem.vb" />
     <Compile Include="Kernel\EventsAndExceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />
@@ -355,8 +356,26 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Resources\Themes\YellowBG.json" />
+    <None Include="Resources\Themes\YellowFG.json" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Themes\3Y-Diamond.json" />
+    <None Include="Resources\Themes\BedOS.json" />
+    <None Include="Resources\Themes\BlackOnWhite.json" />
+    <None Include="Resources\Themes\Bluespire.json" />
+    <None Include="Resources\Themes\Debian.json" />
+    <None Include="Resources\Themes\Default.json" />
+    <None Include="Resources\Themes\GrayOnYellow.json" />
+    <None Include="Resources\Themes\GTASA.json" />
+    <None Include="Resources\Themes\Hacker.json" />
+    <None Include="Resources\Themes\LinuxColoredDef.json" />
+    <None Include="Resources\Themes\LinuxUncolored.json" />
+    <None Include="Resources\Themes\NFSHP-Cop.json" />
+    <None Include="Resources\Themes\NFSHP-Racer.json" />
+    <None Include="Resources\Themes\RedConsole.json" />
+    <None Include="Resources\Themes\TealerOS.json" />
+    <None Include="Resources\Themes\Ubuntu.json" />
     <None Include="Resources\vtn.txt" />
     <None Include="Resources\arb-T.txt" />
     <None Include="Resources\arb.txt" />
@@ -408,6 +427,7 @@
     <None Include="Resources\iri.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Themes\Windows95.json" />
     <None Include="Resources\wls.txt" />
   </ItemGroup>
   <ItemGroup />

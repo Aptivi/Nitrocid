@@ -1,0 +1,14 @@
+{
+    "InputColor": "SkyBlue3",
+    "LicenseColor": "SkyBlue3",
+    "ContKernelErrorColor": "DeepSkyBlue4_005f5f",
+    "UncontKernelErrorColor": "DeepSkyBlue4_005f5f",
+    "HostNameShellColor": "DeepSkyBlue4_005f5f",
+    "UserNameShellColor": "SkyBlue3",
+    "BackgroundColor": "Black",
+    "NeutralTextColor": "SkyBlue3",
+    "CmdListColor": "DeepSkyBlue4_005f5f",
+    "CmdDefColor": "SkyBlue3",
+    "StageColor": "MediumTurquoise",
+    "ErrorColor": "DeepSkyBlue4_005f5f"
+}

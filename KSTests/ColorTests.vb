@@ -16,29 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.IO
 Imports KS
 
 <TestClass()> Public Class ColorTests
-
-    ''' <summary>
-    ''' Tests template setting (all templates)
-    ''' </summary>
-    <TestMethod()> Public Sub TestSetTemplate()
-        Dim Comparison As String()
-        InitPaths()
-        Dim ExpectedTemplates As New List(Of String)
-        Dim ActualTemplates As New List(Of String)
-        ExpectedTemplates.AddRange(colorTemplates)
-        For Each Template As String In colorTemplates
-            TemplateSet(Template)
-            ActualTemplates.Add(currentTheme)
-        Next
-        Comparison = ExpectedTemplates.ToArray.Except(ActualTemplates.ToArray).ToArray
-        Assert.IsTrue(Comparison.Count = 0, "Themes are not properly parsed. Comparison count is {0} Check the vars for below colors, the KS > Color > ParseCurrentTheme, and the KS > Color > TemplateSet." + vbNewLine + vbNewLine +
-                                            "Themes that are parsed incorrectly will be written below:" + vbNewLine + vbNewLine +
-                                            "- " + Join(Comparison, vbNewLine + "- "), Comparison.Length)
-    End Sub
 
     ''' <summary>
     ''' Tests setting colors

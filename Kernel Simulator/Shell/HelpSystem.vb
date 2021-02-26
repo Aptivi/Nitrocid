@@ -386,7 +386,7 @@ Public Module HelpSystem
         ElseIf command = "setthemes" Then
 
             W(DoTranslation("Usage:", currentLang) + " setthemes <Theme>" + vbNewLine +
-              "       " + "<Theme>: " + String.Join(", ", colorTemplates), True, ColTypes.Neutral)
+              "       " + "<Theme>: " + String.Join(", ", colorTemplates.Keys), True, ColTypes.Neutral)
 
         ElseIf command = "settings" Then
 

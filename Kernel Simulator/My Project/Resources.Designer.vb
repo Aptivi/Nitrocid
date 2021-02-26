@@ -61,6 +61,49 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;MediumPurple4&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;DarkOliveGreen3_87d75f&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;LightSteelBlue3&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;LightSteelBlue3&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;MediumPurple4&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;SpringGreen3_00af5f&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;DarkOliveGreen3_87d75f&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;DarkOliveGreen3_87d75f&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;SpringGreen3_00af5f&quot;,
+        '''    &quot;StageColor&quot;: &quot;LightSteelBlue3&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;Lig [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property _3Y_Diamond() As String
+            Get
+                Return ResourceManager.GetString("_3Y_Diamond", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;White&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;White&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;Red&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;DarkGreen&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Green&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Gray&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;DarkGray&quot;,
+        '''    &quot;StageColor&quot;: &quot;Green&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;Red&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property _Default() As String
+            Get
+                Return ResourceManager.GetString("_Default", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to al&apos;awamir almtaht: {0}
         '''aktaba al&apos;amr:
         '''tam &apos;iilgha&apos; haqn al&apos;awamir.
@@ -118,6 +161,28 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;SkyBlue3&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Violet&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;OrangeRed1&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;OrangeRed1&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;DarkOrange3&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;OrangeRed1&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Violet&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;Blue&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;MediumTurquoise&quot;,
+        '''    &quot;StageColor&quot;: &quot;MediumTurquoise&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;OrangeRed1&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property BedOS() As String
+            Get
+                Return ResourceManager.GetString("BedOS", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Upalabdha kamānḍa: {0}
         '''Ādēśa likhuna: 
         '''Kamānḍa iñjēkaśana bātila karā haẏēchē.
@@ -150,6 +215,50 @@ Namespace My.Resources
         Public ReadOnly Property ben_T() As String
             Get
                 Return ResourceManager.GetString("ben_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Black&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Black&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Black&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;Black&quot;,
+        '''    &quot;HostNameShellColor&quot;:&quot;Black&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Black&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;White&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Black&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;Black&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;Black&quot;,
+        '''    &quot;StageColor&quot;: &quot;Black&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;Black&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property BlackOnWhite() As String
+            Get
+                Return ResourceManager.GetString("BlackOnWhite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Cyan&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Cyan&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Blue&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;Blue&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;Blue&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Blue&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;DarkCyan&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Cyan&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;Cyan&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;Blue&quot;,
+        '''    &quot;StageColor&quot;: &quot;Cyan&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;Blue&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property Bluespire() As String
+            Get
+                Return ResourceManager.GetString("Bluespire", resourceCulture)
             End Get
         End Property
         
@@ -281,6 +390,28 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;White&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;White&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;White&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;White&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;Gray&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Gray&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;DeepPink3&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;White&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;White&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;White&quot;,
+        '''    &quot;StageColor&quot;: &quot;White&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;Gray&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property Debian() As String
+            Get
+                Return ResourceManager.GetString("Debian", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Beschikbare opdrachten: {0}
         '''Schrijf commando:
         '''Commando-injectie is geannuleerd.
@@ -386,6 +517,72 @@ Namespace My.Resources
         Public ReadOnly Property ger() As String
             Get
                 Return ResourceManager.GetString("ger", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Gray&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Gray&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Gray&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;Gray&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;Gray&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Gray&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Gray&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;Gray&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;Gray&quot;,
+        '''    &quot;StageColor&quot;: &quot;Gray&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;Gray&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property GrayOnYellow() As String
+            Get
+                Return ResourceManager.GetString("GrayOnYellow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;White&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;StageColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;DarkYellow&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property GTASA() As String
+            Get
+                Return ResourceManager.GetString("GTASA", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Green&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Green&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Green&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;Green&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;Green&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Green&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;DarkGray&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Green&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;DarkGreen&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;Green&quot;,
+        '''    &quot;StageColor&quot;: &quot;DarkGreen&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;DarkGreen&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property Hacker() As String
+            Get
+                Return ResourceManager.GetString("Hacker", resourceCulture)
             End Get
         End Property
         
@@ -554,6 +751,50 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Gray&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Gray&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Gray&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;Gray&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;Blue&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Blue&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Gray&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;White&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;Gray&quot;,
+        '''    &quot;StageColor&quot;: &quot;White&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;Gray&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property LinuxColoredDef() As String
+            Get
+                Return ResourceManager.GetString("LinuxColoredDef", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Gray&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Gray&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Gray&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;Gray&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;Gray&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Gray&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Gray&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;Gray&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;Gray&quot;,
+        '''    &quot;StageColor&quot;: &quot;Gray&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;Gray&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property LinuxUncolored() As String
+            Get
+                Return ResourceManager.GetString("LinuxUncolored", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Perintah yang tersedia: {0}
         '''Tulis perintah:
         '''Suntikan arahan telah dibatalkan.
@@ -605,6 +846,50 @@ Namespace My.Resources
         Public ReadOnly Property ndo() As String
             Get
                 Return ResourceManager.GetString("ndo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Red&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Blue3&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;DarkBlue&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;DarkRed_870000&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;DarkBlue&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Red&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;DarkBlue&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;DarkBlue&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;Red&quot;,
+        '''    &quot;StageColor&quot;: &quot;Red&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;DarkRed_870000&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property NFSHP_Cop() As String
+            Get
+                Return ResourceManager.GetString("NFSHP_Cop", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;White&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;White&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Orange4_875f00&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;DarkRed_870000&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;Orange4_875f00&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Orange3&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Gold3_d7af00&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;Orange4_875f00&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;White&quot;,
+        '''    &quot;StageColor&quot;: &quot;Yellow3_d7d700&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;DarkRed_870000&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property NFSHP_Racer() As String
+            Get
+                Return ResourceManager.GetString("NFSHP_Racer", resourceCulture)
             End Get
         End Property
         
@@ -697,6 +982,28 @@ Namespace My.Resources
         Public ReadOnly Property pun_T() As String
             Get
                 Return ResourceManager.GetString("pun_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Red&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Red&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Red&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;DarkRed&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;DarkRed&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Red&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Red&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;Red&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;DarkRed&quot;,
+        '''    &quot;StageColor&quot;: &quot;Red&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;DarkRed&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property RedConsole() As String
+            Get
+                Return ResourceManager.GetString("RedConsole", resourceCulture)
             End Get
         End Property
         
@@ -889,6 +1196,50 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;SkyBlue3&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;SkyBlue3&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;DeepSkyBlue4_005f5f&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;DeepSkyBlue4_005f5f&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;DeepSkyBlue4_005f5f&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;SkyBlue3&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;SkyBlue3&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;DeepSkyBlue4_005f5f&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;SkyBlue3&quot;,
+        '''    &quot;StageColor&quot;: &quot;MediumTurquoise&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;DeepSkyBlue4_005f5f&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property TealerOS() As String
+            Get
+                Return ResourceManager.GetString("TealerOS", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;White&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;White&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;White&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;White&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;Gray&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Gray&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;DeepPink4&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;White&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;White&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;White&quot;,
+        '''    &quot;StageColor&quot;: &quot;White&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;Gray&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property Ubuntu() As String
+            Get
+                Return ResourceManager.GetString("Ubuntu", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Mavjud buyruqlar: {0}
         '''Yozish buyrug&apos;i:
         '''Buyruqni kiritish bekor qilindi.
@@ -926,6 +1277,28 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;White&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;White&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;White&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;White&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;White&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;White&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;DarkCyan&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;White&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;White&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;White&quot;,
+        '''    &quot;StageColor&quot;: &quot;White&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;White&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property Windows95() As String
+            Get
+                Return ResourceManager.GetString("Windows95", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Gorchmynion sydd ar gael: {0}
         '''Ysgrifennwch orchymyn:
         '''Mae chwistrelliad gorchymyn wedi&apos;i ganslo.
@@ -940,6 +1313,50 @@ Namespace My.Resources
         Public ReadOnly Property wls() As String
             Get
                 Return ResourceManager.GetString("wls", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Black&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;Black&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Black&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;Black&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;Black&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;Black&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Black&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;Black&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;Black&quot;,
+        '''    &quot;StageColor&quot;: &quot;Black&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;Black&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property YellowBG() As String
+            Get
+                Return ResourceManager.GetString("YellowBG", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;DarkYellow&quot;,
+        '''    &quot;StageColor&quot;: &quot;Yellow&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;DarkYellow&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property YellowFG() As String
+            Get
+                Return ResourceManager.GetString("YellowFG", resourceCulture)
             End Get
         End Property
     End Module

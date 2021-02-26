@@ -1,0 +1,14 @@
+{
+    "InputColor": "Cyan",
+    "LicenseColor": "Cyan",
+    "ContKernelErrorColor": "Blue",
+    "UncontKernelErrorColor": "Blue",
+    "HostNameShellColor": "Blue",
+    "UserNameShellColor": "Blue",
+    "BackgroundColor": "DarkCyan",
+    "NeutralTextColor": "Cyan",
+    "CmdListColor": "Cyan",
+    "CmdDefColor": "Blue",
+    "StageColor": "Cyan",
+    "ErrorColor": "Blue"
+}

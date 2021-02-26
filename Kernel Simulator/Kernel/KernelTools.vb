@@ -396,9 +396,6 @@ Public Module KernelTools
         'Populate ban list for debug devices
         PopulateBlockedDevices()
 
-        'Parse current theme string
-        ParseCurrentTheme()
-
         'Start screensaver timeout
         If Not Timeout.IsBusy Then Timeout.RunWorkerAsync()
     End Sub

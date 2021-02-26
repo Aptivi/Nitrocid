@@ -1,0 +1,14 @@
+{
+    "InputColor": "Yellow",
+    "LicenseColor": "DarkYellow",
+    "ContKernelErrorColor": "Yellow",
+    "UncontKernelErrorColor": "Yellow",
+    "HostNameShellColor": "DarkYellow",
+    "UserNameShellColor": "DarkYellow",
+    "BackgroundColor": "Black",
+    "NeutralTextColor": "Yellow",
+    "CmdListColor": "Yellow",
+    "CmdDefColor": "DarkYellow",
+    "StageColor": "Yellow",
+    "ErrorColor": "DarkYellow"
+}

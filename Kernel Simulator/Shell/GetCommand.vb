@@ -1050,8 +1050,7 @@ Public Module GetCommand
                               DoTranslation("Arguments on Boot:", currentLang) + " {3}" + vbNewLine +
                               DoTranslation("Help command simplified:", currentLang) + " {4}" + vbNewLine +
                               DoTranslation("MOTD on Login:", currentLang) + " {5}" + vbNewLine +
-                              DoTranslation("Time/Date on corner:", currentLang) + " {6}" + vbNewLine +
-                              DoTranslation("Current theme:", currentLang) + " {7}" + vbNewLine, True, ColTypes.Neutral, KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString, currentTheme)
+                              DoTranslation("Time/Date on corner:", currentLang) + " {6}" + vbNewLine, True, ColTypes.Neutral, KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString)
 
                 'Hardware section
                 W(DoTranslation("[ Hardware settings ]{0}", currentLang), True, ColTypes.HelpCmd, vbNewLine)
