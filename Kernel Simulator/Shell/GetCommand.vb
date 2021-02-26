@@ -1061,8 +1061,7 @@ Public Module GetCommand
                 W(DoTranslation("{0}[ User settings ]", currentLang), True, ColTypes.HelpCmd, vbNewLine)
                 W(vbNewLine + DoTranslation("Current user name:", currentLang) + " {0}" + vbNewLine +
                               DoTranslation("Current host name:", currentLang) + " {1}" + vbNewLine +
-                              DoTranslation("Available usernames:", currentLang) + " {2}" + vbNewLine +
-                              DoTranslation("Computer host name:", currentLang) + " {3}", True, ColTypes.Neutral, signedinusrnm, HName, String.Join(", ", userword.Keys), My.Computer.Name)
+                              DoTranslation("Available usernames:", currentLang) + " {2}", True, ColTypes.Neutral, signedinusrnm, HName, String.Join(", ", userword.Keys))
 
                 'Messages Section
                 W(vbNewLine + "[ MOTD ]", True, ColTypes.HelpCmd)
