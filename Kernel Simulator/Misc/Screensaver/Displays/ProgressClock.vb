@@ -131,6 +131,11 @@ Module ProgressClockDisplay
                             ColorNum = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(255))
                             CurrentTicks = 0
                         End If
+                    Else
+                        ColorNumHours = [Enum].Parse(GetType(ConsoleColors), ProgressClockHoursProgressColor)
+                        ColorNumMinutes = [Enum].Parse(GetType(ConsoleColors), ProgressClockMinutesProgressColor)
+                        ColorNumSeconds = [Enum].Parse(GetType(ConsoleColors), ProgressClockSecondsProgressColor)
+                        ColorNum = [Enum].Parse(GetType(ConsoleColors), ProgressClockProgressColor)
                     End If
                     ProgressFillPositionHours = CInt(Console.WindowHeight / 2) - 10
                     ProgressFillPositionMinutes = CInt(Console.WindowHeight / 2) - 1
@@ -178,6 +183,11 @@ Module ProgressClockDisplay
                             ColorNum = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(15))
                             CurrentTicks = 0
                         End If
+                    Else
+                        ColorNumHours = [Enum].Parse(GetType(ConsoleColor), ProgressClockHoursProgressColor)
+                        ColorNumMinutes = [Enum].Parse(GetType(ConsoleColor), ProgressClockMinutesProgressColor)
+                        ColorNumSeconds = [Enum].Parse(GetType(ConsoleColor), ProgressClockSecondsProgressColor)
+                        ColorNum = [Enum].Parse(GetType(ConsoleColor), ProgressClockProgressColor)
                     End If
                     ProgressFillPositionHours = CInt(Console.WindowHeight / 2) - 10
                     ProgressFillPositionMinutes = CInt(Console.WindowHeight / 2) - 1
