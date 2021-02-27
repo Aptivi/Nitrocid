@@ -643,20 +643,28 @@ Public Module GetCommand
             ElseIf words(0) = "ping" Then
 
                 If eqargs?.Count > 0 Then
-                    For Each PingedAddress As String In eqargs
+                    'If the pinged address is actually a number of times
+                    Dim PingTimes As Integer = 4
+                    If IsNumeric(eqargs(0)) Then
+                        Wdbg("I", "eqargs(0) is numeric. Assuming number of times: {0}", eqargs(0))
+                        PingTimes = eqargs(0)
+                    End If
+                    For Each PingedAddress As String In eqargs.Skip(1)
                         If PingedAddress <> "" Then
-                            Try
-                                W(">> {0}", True, ColTypes.Stage, PingedAddress)
-                                Dim PingReplied As PingReply = PingAddress(PingedAddress)
-                                If PingReplied.Status = IPStatus.Success Then
-                                    W(DoTranslation("Ping succeeded in {0} ms.", currentLang), True, ColTypes.Neutral, PingReplied.RoundtripTime)
-                                Else
-                                    W(DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, PingReplied.Status)
-                                End If
-                            Catch ex As Exception
-                                W(DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, ex.Message)
-                                WStkTrc(ex)
-                            End Try
+                            W(">> {0}", True, ColTypes.Stage, PingedAddress)
+                            For CurrentTime As Integer = 1 To PingTimes
+                                Try
+                                    Dim PingReplied As PingReply = PingAddress(PingedAddress)
+                                    If PingReplied.Status = IPStatus.Success Then
+                                        W("[{1}] " + DoTranslation("Ping succeeded in {0} ms.", currentLang), True, ColTypes.Neutral, PingReplied.RoundtripTime, CurrentTime)
+                                    Else
+                                        W("[{2}] " + DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, PingReplied.Status, CurrentTime)
+                                    End If
+                                Catch ex As Exception
+                                    W("[{2}] " + DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, ex.Message, CurrentTime)
+                                    WStkTrc(ex)
+                                End Try
+                            Next
                         Else
                             W(DoTranslation("Address may not be empty.", currentLang), True, ColTypes.Err)
                         End If

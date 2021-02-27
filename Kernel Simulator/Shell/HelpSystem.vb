@@ -331,7 +331,7 @@ Public Module HelpSystem
 
         ElseIf command = "ping" Then
 
-            W(DoTranslation("Usage:", currentLang) + " ping <Address1> <Address2> ...", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:", currentLang) + " ping [times] <Address1> <Address2> ...", True, ColTypes.Neutral)
 
         ElseIf command = "put" Then
 
