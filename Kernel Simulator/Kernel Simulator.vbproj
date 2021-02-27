@@ -231,6 +231,8 @@
     <Compile Include="Console\Input.vb" />
     <Compile Include="Console\RGB.vb" />
     <Compile Include="Console\Themes\ThemeInfo.vb" />
+    <Compile Include="Console\Themes\ThemeStudio.vb" />
+    <Compile Include="Console\Themes\ThemeStudioTools.vb" />
     <Compile Include="Files\Filesystem.vb" />
     <Compile Include="Kernel\EventsAndExceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />

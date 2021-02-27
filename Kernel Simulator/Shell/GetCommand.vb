@@ -624,6 +624,13 @@ Public Module GetCommand
                     Done = True
                 End If
 
+            ElseIf words(0) = "mktheme" Then
+
+                If eqargs?.Length >= 1 Then
+                    StartThemeStudio(eqargs(0))
+                    Done = True
+                End If
+
             ElseIf words(0) = "move" Then
 
                 If eqargs?.Length >= 2 Then

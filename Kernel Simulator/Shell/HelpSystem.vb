@@ -65,6 +65,7 @@ Public Module HelpSystem
                                                               {"mathbee", DoTranslation("See if you can solve mathematical equations on time", currentLang)},
                                                               {"md", DoTranslation("Creates a directory", currentLang)},
                                                               {"mkfile", DoTranslation("Makes a new file", currentLang)},
+                                                              {"mktheme", DoTranslation("Makes a new theme", currentLang)},
                                                               {"move", DoTranslation("Moves a file to another directory", currentLang)},
                                                               {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
                                                               {"perm", DoTranslation("Manage permissions for users", currentLang)},
@@ -316,6 +317,10 @@ Public Module HelpSystem
         ElseIf command = "mkfile" Then
 
             W(DoTranslation("Usage:", currentLang) + " mkfile <anything>", True, ColTypes.Neutral)
+
+        ElseIf command = "mktheme" Then
+
+            W(DoTranslation("Usage:", currentLang) + " mktheme <themeName>", True, ColTypes.Neutral)
 
         ElseIf command = "move" Then
 
