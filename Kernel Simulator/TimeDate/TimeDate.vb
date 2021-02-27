@@ -187,7 +187,7 @@ Public Module TimeDate
         If LongTimeDate Then
             Return KernelDateTime.ToString(CurrentCult.DateTimeFormat.FullDateTimePattern, CurrentCult)
         Else
-            Return KernelDateTime.ToString(CurrentCult.DateTimeFormat.ShortDatePattern, CurrentCult) + " " + KernelDateTime.ToString(CurrentCult.DateTimeFormat.ShortTimePattern, CurrentCult)
+            Return KernelDateTime.ToString(CurrentCult.DateTimeFormat.ShortDatePattern, CurrentCult) + " - " + KernelDateTime.ToString(CurrentCult.DateTimeFormat.ShortTimePattern, CurrentCult)
         End If
     End Function
 
@@ -200,7 +200,7 @@ Public Module TimeDate
         If LongTimeDate Then
             Return KernelDateTime.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
         Else
-            Return KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " " + KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult)
+            Return KernelDateTime.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + KernelDateTime.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult)
         End If
     End Function
 
@@ -213,7 +213,7 @@ Public Module TimeDate
         If LongTimeDate Then
             Return DT.ToString(CurrentCult.DateTimeFormat.FullDateTimePattern, CurrentCult)
         Else
-            Return DT.ToString(CurrentCult.DateTimeFormat.ShortDatePattern, CurrentCult) + " " + DT.ToString(CurrentCult.DateTimeFormat.ShortTimePattern, CurrentCult)
+            Return DT.ToString(CurrentCult.DateTimeFormat.ShortDatePattern, CurrentCult) + " - " + DT.ToString(CurrentCult.DateTimeFormat.ShortTimePattern, CurrentCult)
         End If
     End Function
 
@@ -227,7 +227,7 @@ Public Module TimeDate
         If LongTimeDate Then
             Return DT.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
         Else
-            Return DT.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " " + DT.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult)
+            Return DT.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + DT.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult)
         End If
     End Function
 
