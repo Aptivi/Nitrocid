@@ -352,18 +352,22 @@ Public Module KernelTools
             Exit Sub
         End If
 
-        'Show welcome message. Don't remove license
+        'Show welcome message.
         If StartScroll Then
-            WriteSlowlyC(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), True, 10, ColTypes.Neutral, KernelVersion)
+            WriteSlowlyC(">> " + DoTranslation("Welcome to the kernel! - Version {0}", currentLang) + " ({1}) <<", True, 10, ColTypes.Neutral, KernelVersion, Render(GetCompileDate()))
         Else
-            W(DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", currentLang), True, ColTypes.Neutral, KernelVersion)
+            W(">> " + DoTranslation("Welcome to the kernel! - Version {0}", currentLang) + " ({1}) <<", True, ColTypes.Neutral, KernelVersion, Render(GetCompileDate()))
         End If
+
+        'Show license
         W(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE" + vbNewLine +
                       "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
         W("OS: " + DoTranslation("Running on {0}", currentLang), True, ColTypes.Neutral, Environment.OSVersion.ToString)
+
+        'Show dev version notice
 #If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends after "NEARING" stage, change the compiler constant value to "REL" to suppress this message out of stable versions
         W(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
 #ElseIf SPECIFIER = "RC" Then
