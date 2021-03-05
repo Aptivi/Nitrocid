@@ -45,26 +45,28 @@ Public Module HardwareProbe
         End Try
 
         If Not quietProbe Then
-            'We are checking to see if any of the probers reported a failure starting with CPU
-            If HardwareInfo.Hardware.CPU Is Nothing Or (HardwareInfo.Hardware.CPU IsNot Nothing And HardwareInfo.Hardware.CPU.Count = 0) Then
-                Wdbg("E", "CPU failed to probe.", KernelVersion)
-                W(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
-            End If
+            If HardwareInfo IsNot Nothing Then
+                'We are checking to see if any of the probers reported a failure starting with CPU
+                If HardwareInfo.Hardware.CPU Is Nothing Or (HardwareInfo.Hardware.CPU IsNot Nothing And HardwareInfo.Hardware.CPU.Count = 0) Then
+                    Wdbg("E", "CPU failed to probe.", KernelVersion)
+                    W(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
+                End If
 
-            'then RAM
-            If HardwareInfo.Hardware.RAM Is Nothing Then
-                Wdbg("E", "RAM failed to probe.", KernelVersion)
-                W(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
-            End If
+                'then RAM
+                If HardwareInfo.Hardware.RAM Is Nothing Then
+                    Wdbg("E", "RAM failed to probe.", KernelVersion)
+                    W(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
+                End If
 
-            'and finally HDD
-            If HardwareInfo.Hardware.HDD Is Nothing Or (HardwareInfo.Hardware.HDD IsNot Nothing And HardwareInfo.Hardware.HDD.Count = 0) Then
-                Wdbg("E", "HDD failed to probe.", KernelVersion)
-                W(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
-            End If
+                'and finally HDD
+                If HardwareInfo.Hardware.HDD Is Nothing Or (HardwareInfo.Hardware.HDD IsNot Nothing And HardwareInfo.Hardware.HDD.Count = 0) Then
+                    Wdbg("E", "HDD failed to probe.", KernelVersion)
+                    W(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
+                End If
 
-            'Print information about the probed hardware
-            ListDrivers()
+                'Print information about the probed hardware
+                ListDrivers()
+            End If
         End If
     End Sub
 
