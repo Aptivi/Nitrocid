@@ -214,7 +214,7 @@ Todo se restablece a la configuración normal.
 Uno o más de los colores no son válidos.
 Los colores no están disponibles. Activar shell coloreado en la configuración del kernel.
 Protector de pantalla {0} no encontrado.
-{0}[ Configuraciones del kernel (ejecutándose en {1}) ]
+[ Configuraciones del kernel (ejecutándose en {0}) ]
 Versión del kernel:
 Modo de depuración:
 Concha de color:

@@ -214,7 +214,7 @@ Mae popeth yn cael ei ailosod i leoliadau arferol.
 Mae un neu fwy o'r lliwiau yn annilys.
 Nid yw lliwiau ar gael. Trowch ar gragen lliw yn y config cnewyllyn.
 Ni ddarganfuwyd arbedwr sgrin {0}.
-{0} [Gosodiadau cnewyllyn (Rhedeg ar {1})]
+[ Gosodiadau cnewyllyn (Rhedeg ar {0}) ]
 Fersiwn Cnewyllyn:
 Modd Debug:
 Cregyn Lliw:
@@ -224,13 +224,13 @@ MOTD ar Mewngofnodi:
 Amser / Dyddiad ar y gornel:
 Profwyd caledwedd:
 Thema gyfredol:
-[Gosodiadau caledwedd] {0}
-{0} [Gosodiadau defnyddiwr]
+[ Gosodiadau caledwedd ] {0}
+{0}[ Gosodiadau defnyddiwr ]
 Enw defnyddiwr cyfredol:
 Enw gwesteiwr cyfredol:
 Enwau defnyddwyr sydd ar gael:
 Enw gwesteiwr cyfrifiadur:
-{0} [Gosodiadau Negeseuon]
+{0}[ Gosodiadau Negeseuon ]
 Cod ffynhonnell:
 Hawlfraint (c)
 Trwydded

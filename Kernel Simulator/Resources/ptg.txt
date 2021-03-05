@@ -214,7 +214,7 @@ Tudo é redefinido para as configurações normais.
 Uma ou mais cores são inválidas.
 Cores não estão disponíveis. Ative o shell colorido na configuração do kernel.
 Protetor de tela {0} não encontrado.
-{0}[ Configurações do kernel (executando em {1}) ]
+[ Configurações do kernel (executando em {0}) ]
 Versão do Kernel:
 Modo de Depuração:
 Concha Colorida:

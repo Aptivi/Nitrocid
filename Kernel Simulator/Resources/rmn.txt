@@ -214,7 +214,7 @@ Totul este resetat la setările normale.
 Una sau mai multe culori nu sunt valide.
 Culorile nu sunt disponibile. Activați coajă colorată în configurația kernel-ului.
 Screensaver {0} nu a fost găsit.
-{0} [Setări ale kernelului (funcționare pe {1})]
+[ Setări ale kernelului (funcționare pe {0}) ]
 Versiunea nucleului:
 Modul de depanare:
 Coajă colorată:
@@ -224,13 +224,13 @@ MOTD la Logare:
 Ora / data la colț:
 Hardware sondat:
 Tema actuală:
-[Setări hardware] {0}
-{0} [Setări utilizator]
+[ Setări hardware ] {0}
+{0}[ Setări utilizator ]
 Numele de utilizator curent:
 Numele gazdei curente:
 Numele de utilizator disponibile:
 Numele gazdei computerului:
-{0} [Setări mesaje]
+{0}[ Setări mesaje ]
 Cod sursa:
 Drepturi de autor (c)
 Licență

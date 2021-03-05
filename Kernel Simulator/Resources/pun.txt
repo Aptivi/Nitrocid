@@ -214,7 +214,7 @@ Sabha kujha sadhāraṇa saiṭigāṁ tē rīsaiṭa kītā gi'ā hai.
 Ika jāṁ vadhērē raga avaidha hana.
 Raga upalabadha nahīṁ hana. Karanala dī saracanā vica ragīna śaila cālū karō.
 Sakarīnasēvara {0} Nahīṁ mili'ā.
-{0} [Karanala saiṭigaza ({1} tē cala rahī hai]]
+[ Karanala saiṭigaza ({0} tē cala rahī hai) ]
 karanala varajana:
 Ḍībaga mōḍa:
 Ragadāra śaila:
@@ -224,13 +224,13 @@ Lauga'ina tē mōṭa:
 Kōnē'tē samāṁ/ tārīkha:
 Hāraḍavē'ara dī paṛatāla kītī ga'ī:
 Maujūdā thīma:
-[Hāraḍavē'ara saiṭigāṁ] {0}
-User {0} [upabhōgatā saiṭigāṁ]
+[ Hāraḍavē'ara saiṭigāṁ ] {0}
+{0}[ upabhōgatā saiṭigāṁ ]
 maujūdā upabhōgatā nāma:
 Maujūdā hōsaṭa dā nāma:
 Upalabadha upayōgakaratā nāma:
 Kapi Computerṭara hōsaṭa dā nāma:
-Mess {0} [sunēhē saiṭigāṁ]
+{0}[sunēhē saiṭigāṁ ]
 sūtara sakētāvalī:
 Kāpīrā'īṭa (c)
 lā'isainsa

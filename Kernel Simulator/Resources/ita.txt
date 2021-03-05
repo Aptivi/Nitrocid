@@ -214,7 +214,7 @@ Tutto viene ripristinato alle normali impostazioni.
 Uno o più colori non sono validi.
 I colori non sono disponibili. Attiva la shell colorata nella configurazione del kernel.
 Screensaver {0} non trovato.
-{0}[Impostazioni del kernel (in esecuzione su {1})]
+[ Impostazioni del kernel (in esecuzione su {0}) ]
 Versione del kernel:
 Modalità di debug:
 Guscio colorato:
@@ -224,13 +224,13 @@ MOTD on Login:
 Ora / data nell'angolo:
 Hardware rilevato:
 Tema attuale:
-[Impostazioni hardware] {0}
-{0}[Impostazioni utente]
+[ Impostazioni hardware ] {0}
+{0}[ Impostazioni utente ]
 Nome utente corrente:
 Nome host attuale:
 Nomi utente disponibili:
 Nome host del computer:
-{0}[Impostazioni messaggi]
+{0}[ Impostazioni messaggi ]
 Codice sorgente:
 Copyright (c)
 Licenza

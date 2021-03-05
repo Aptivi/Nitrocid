@@ -214,7 +214,7 @@ Everything is reset to normal settings.
 One or more of the colors is invalid.
 Colors are not available. Turn on colored shell in the kernel config.
 Screensaver {0} not found.
-{0}[ Kernel settings (Running on {1}) ]
+[ Kernel settings (Running on {0}) ]
 Kernel Version:
 Debug Mode:
 Colored Shell:

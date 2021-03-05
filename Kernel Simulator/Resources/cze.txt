@@ -214,7 +214,7 @@ Vše je obnoveno na normální nastavení.
 Jedna nebo více barev je neplatná.
 Barvy nejsou k dispozici. Zapněte barevný shell v konfiguraci jádra.
 Spořič obrazovky {0} nebyl nalezen.
-{0}[Nastavení jádra (běží na {1})]
+[ Nastavení jádra (běží na {0}) ]
 Verze jádra:
 Debugovací mód:
 Barevná skořepina:
@@ -224,13 +224,13 @@ MOTD při přihlášení:
 Čas / datum v rohu:
 Sondování hardwaru:
 Aktuální téma:
-[Hardwarová nastavení] {0}
-{0}[Uživatelské nastavení]
+[ Hardwarová nastavení ] {0}
+{0}[ Uživatelské nastavení ]
 Aktuální uživatelské jméno:
 Aktuální název hostitele:
 Dostupná uživatelská jména:
 Název hostitele počítače:
-{0}[Nastavení zpráv]
+{0}[ Nastavení zpráv ]
 Zdrojový kód:
 Copyright (c)
 Licence

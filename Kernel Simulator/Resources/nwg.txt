@@ -214,7 +214,7 @@ Alt tilbakestilles til normale innstillinger.
 En eller flere av fargene er ugyldige.
 Farger er ikke tilgjengelige. Slå på farget skall i kjernekonfigurasjonen.
 Screensaver {0} ikke funnet.
-{0} [Kernelinnstillinger (kjører på {1})]
+[ Kernelinnstillinger (kjører på {0}) ]
 Kernelversjon:
 Feilsøkingsmodus:
 Farget skall:
@@ -224,13 +224,13 @@ MOTD på innlogging:
 Tid / dato på hjørnet:
 Maskinvare testet:
 Nåværende tema:
-[Maskinvareinnstillinger] {0}
-{0} [Brukerinnstillinger]
+[ Maskinvareinnstillinger ] {0}
+{0}[ Brukerinnstillinger ]
 Gjeldende brukernavn:
 Nåværende vertsnavn:
 Tilgjengelige brukernavn:
 Datamaskinens vertsnavn:
-{0} [Meldingsinnstillinger]
+{0}[ Meldingsinnstillinger ]
 Kildekode:
 Copyright (c)
 Tillatelse

@@ -214,7 +214,7 @@ Sabakichu sbābhābika sēṭinsē punarāẏa sēṭa karā āchē.
 Ēka bā ēkādhika raṁ abaidha.
 Raṅa pā'ōẏā yāẏa nā. Kārnēla kanaphigārēśanē raṅina śēlaṭi cālu karuna.
 Skrinasēbhāra {0} pā'ōẏā yāẏa ni.
-{0} [Karnēla sēṭinsa ({1} ē calachē)]
+[ Karnēla sēṭinsa ({0} ē calachē) ]
 kārnēla sanskaraṇa:
 Sanśōdhanēra dhāpa:
 Raṅina śēla:
@@ -224,13 +224,13 @@ Laga'inē ēma'ōṭiḍi:
 Kōṇē samaẏa/ tārikha:
 Hārḍa'ōẏyāra anusandhāna:
 Bartamāna thima:
-[Hārḍa'ōẏyāra sēṭinsa] {0}
-{0} [byabahārakārīra sēṭinsa]
+[ Hārḍa'ōẏyāra sēṭinsa ] {0}
+{0}[ Byabahārakārīra sēṭinsa ]
 bartamāna byabahārakārīra nāma:
 Bartamāna hōsṭēra nāma:
 Upalabdha byabahārakārīra nāma:
 Kampi'uṭāra hōsṭēra nāma:
-{0} [Bārtā sēṭinsa]
+{0}[ Bārtā sēṭinsa ]
 sōrsa kōḍa:
 Kapirā'iṭa (si)
 lā'isēnsa

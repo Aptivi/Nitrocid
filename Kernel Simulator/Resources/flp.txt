@@ -214,7 +214,7 @@ Ang lahat ay na-reset sa normal na mga setting.
 Isa o higit pa sa mga kulay ay hindi wasto.
 Hindi magagamit ang mga kulay. I-on ang may kulay na shell sa kernel config.
 Hindi nahanap ang Screensaver {0}.
-{0}[ Mga setting ng Kernel (Tumatakbo sa {1}) ]
+[ Mga setting ng Kernel (Tumatakbo sa {0}) ]
 Bersyon ng Kernel:
 Mode ng Pag-debug:
 May kulay na shell:

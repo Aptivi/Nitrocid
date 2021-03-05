@@ -214,7 +214,7 @@ Wax walba waxaa dib loogu dejiyaa goobaha caadiga ah.
 Mid ama kabadan midabada mid aan ansax ahayn.
 Midabbo lama heli karo. Daar qolof midab leh oo ku jira qaybta 'kernel'.
 Sawir-qaadaha {0} lama helin.
-{0} [ Dejinta uurka (Waxay socotaa {1}) ]
+[ Dejinta uurka (Waxay socotaa {0}) ]
 Nooca Kernel:
 Habka khaladka:
 Shell midab leh:
@@ -225,12 +225,12 @@ Waqtiga/Taariikhda geeska:
 Qalabka lagu baaro:
 Mawduuca hadda jira:
 [ Dejinta qalabka ] {0}
-{0} [ Dejinta isticmaaleyaasha ]
+{0}[ Dejinta isticmaaleyaasha ]
 Magaca isticmaalaha hadda:
 Magaca martigaliyaha hadda:
 Magacyo adeegsi oo la heli karo:
 Magaca martigeliyaha kombiyuutarka:
-{0} [ Dejinta fariimaha ]
+{0}[ Dejinta fariimaha ]
 Koodhka isha:
 Xuquuqda daabacaadda (c)
 Shati

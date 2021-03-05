@@ -214,7 +214,7 @@ Semuanya diatur ulang ke pengaturan normal.
 Satu atau lebih warna tidak valid.
 Warna tidak tersedia. Hidupkan cangkang berwarna di konfigurasi kernel.
 Screensaver {0} tidak ditemukan.
-{0} [Pengaturan kernel (Berjalan pada {1})]
+[ Pengaturan kernel (Berjalan pada {0}) ]
 Versi Kernel:
 Mode Debug:
 Shell berwarna:
@@ -224,13 +224,13 @@ MOTD saat Masuk:
 Waktu / Tanggal di sudut:
 Perangkat keras diperiksa:
 Tema saat ini:
-[Pengaturan perangkat keras] {0}
-{0} [Pengaturan pengguna]
+[ Pengaturan perangkat keras ] {0}
+{0}[ Pengaturan pengguna ]
 Nama pengguna saat ini:
 Nama host saat ini:
 Nama pengguna yang tersedia:
 Nama host komputer:
-{0} [Pengaturan Pesan]
+{0}[ Pengaturan Pesan ]
 Kode sumber:
 Hak cipta (c)
 Lisensi
