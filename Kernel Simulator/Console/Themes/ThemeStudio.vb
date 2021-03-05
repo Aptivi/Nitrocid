@@ -25,7 +25,6 @@ Module ThemeStudio
     Sub StartThemeStudio(ByVal ThemeName As String)
         'Inform user that we're on the studio
         Wdbg("I", "Starting theme studio with theme name {0}", ThemeName)
-        W(DoTranslation("Making a new theme ""{0}"".", currentLang) + vbNewLine, True, ColTypes.Neutral, ThemeName)
         Dim Response As String
         Dim MaximumOptions As Integer = 15
         Dim StudioExiting As Boolean
@@ -33,6 +32,7 @@ Module ThemeStudio
         While Not StudioExiting
             Wdbg("I", "Studio not exiting yet. Populating {0} options...", MaximumOptions)
             Console.Clear()
+            W(DoTranslation("Making a new theme ""{0}"".", currentLang) + vbNewLine, True, ColTypes.Neutral, ThemeName)
 
             'List options
             W("1) " + DoTranslation("Input color", currentLang) + ": [{0}] ", True, ColTypes.HelpCmd, SelectedInputColor)
