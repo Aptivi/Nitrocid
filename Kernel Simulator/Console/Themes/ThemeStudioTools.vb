@@ -69,6 +69,14 @@ Module ThemeStudioTools
     ''' Selected error color for new theme
     ''' </summary>
     Friend SelectedErrorColor As ConsoleColors = errorColor
+    ''' <summary>
+    ''' Selected warning color for new theme
+    ''' </summary>
+    Friend SelectedWarningColor As ConsoleColors = WarningColor
+    ''' <summary>
+    ''' Selected option color for new theme
+    ''' </summary>
+    Friend SelectedOptionColor As ConsoleColors = OptionColor
 
     ''' <summary>
     ''' Saves theme to current directory under "<paramref name="Theme"/>.json."
@@ -105,7 +113,9 @@ Module ThemeStudioTools
                            New JProperty("CmdListColor", SelectedCmdListColor.ToString),
                            New JProperty("CmdDefColor", SelectedCmdDefColor.ToString),
                            New JProperty("StageColor", SelectedStageColor.ToString),
-                           New JProperty("ErrorColor", SelectedErrorColor.ToString))
+                           New JProperty("ErrorColor", SelectedErrorColor.ToString),
+                           New JProperty("WarningColor", SelectedWarningColor.ToString),
+                           New JProperty("OptionColor", SelectedOptionColor.ToString))
     End Function
 
 End Module

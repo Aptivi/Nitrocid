@@ -26,7 +26,7 @@ Module ThemeStudio
         'Inform user that we're on the studio
         Wdbg("I", "Starting theme studio with theme name {0}", ThemeName)
         Dim Response As String
-        Dim MaximumOptions As Integer = 15
+        Dim MaximumOptions As Integer = 17
         Dim StudioExiting As Boolean
 
         While Not StudioExiting
@@ -47,11 +47,13 @@ Module ThemeStudio
             W("10) " + DoTranslation("Command definition color", currentLang) + ": [{0}] ", True, ColTypes.HelpCmd, SelectedCmdDefColor)
             W("11) " + DoTranslation("Stage color", currentLang) + ": [{0}] ", True, ColTypes.HelpCmd, SelectedStageColor)
             W("12) " + DoTranslation("Error color", currentLang) + ": [{0}] " + vbNewLine, True, ColTypes.HelpCmd, SelectedErrorColor)
+            W("13) " + DoTranslation("Warning color", currentLang) + ": [{0}] ", True, ColTypes.HelpCmd, SelectedWarningColor)
+            W("14) " + DoTranslation("Option color", currentLang) + ": [{0}] " + vbNewLine, True, ColTypes.HelpCmd, SelectedOptionColor)
 
             'List saving options
-            W("13) " + DoTranslation("Save Theme to Current Directory", currentLang), True, ColTypes.HelpCmd)
-            W("14) " + DoTranslation("Save Theme to Another Directory", currentLang), True, ColTypes.HelpCmd)
-            W("15) " + DoTranslation("Exit", currentLang) + vbNewLine, True, ColTypes.HelpCmd)
+            W("15) " + DoTranslation("Save Theme to Current Directory", currentLang), True, ColTypes.HelpCmd)
+            W("16) " + DoTranslation("Save Theme to Another Directory", currentLang), True, ColTypes.HelpCmd)
+            W("17) " + DoTranslation("Exit", currentLang) + vbNewLine, True, ColTypes.HelpCmd)
 
             'Prompt user
             Wdbg("I", "Waiting for user input...")
@@ -64,8 +66,8 @@ Module ThemeStudio
                 Wdbg("I", "Response is numeric.")
                 Dim NumericResponse As Integer = Response
                 Wdbg("I", "Checking response...")
-                If NumericResponse >= 1 And NumericResponse <= 15 Then
-                    Wdbg("I", "Numeric response {0} is >= 1 and <= 15.", NumericResponse)
+                If NumericResponse >= 1 And NumericResponse <= 17 Then
+                    Wdbg("I", "Numeric response {0} is >= 1 and <= 17.", NumericResponse)
                     Select Case NumericResponse
                         Case 1 'Input color
                             Dim ColorWheelReturn As Integer = ColorWheel()
@@ -127,15 +129,25 @@ Module ThemeStudio
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedErrorColor = ColorWheelReturn
                             End If
-                        Case 13 'Save theme to current directory
+                        Case 13 'Warning color
+                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
+                                SelectedWarningColor = ColorWheelReturn
+                            End If
+                        Case 14 'Option color
+                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
+                                SelectedOptionColor = ColorWheelReturn
+                            End If
+                        Case 15 'Save theme to current directory
                             SaveThemeToCurrentDirectory(ThemeName)
-                        Case 14 'Save theme to another directory
+                        Case 16 'Save theme to another directory
                             Wdbg("I", "Prompting user for directory name...")
                             W(DoTranslation("Specify directory to save theme to:", currentLang) + " [{0}] ", False, ColTypes.Input, CurrDir)
                             Dim DirectoryName As String = Console.ReadLine
                             Wdbg("I", "Got directory name {0}.", DirectoryName)
                             SaveThemeToAnotherDirectory(ThemeName, DirectoryName)
-                        Case 15 'Exit
+                        Case 17 'Exit
                             Wdbg("I", "Exiting studio...")
                             StudioExiting = True
                     End Select
