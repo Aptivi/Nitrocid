@@ -180,6 +180,7 @@ Module ThemeStudio
             W(vbNewLine + " <", False, ColTypes.Gray)
             WriteWhereC(CurrentColor.ToString, (Console.CursorLeft + 30 - CurrentColor.ToString.Length) / 2, Console.CursorTop, CurrentColor)
             WriteWhere(">", Console.CursorLeft + 27, Console.CursorTop, ColTypes.Gray)
+            WriteC(vbNewLine + vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, CurrentColor)
             Dim ConsoleResponse As ConsoleKeyInfo = Console.ReadKey
             If ConsoleResponse.Key = ConsoleKey.LeftArrow Then
                 If CurrentColor = 0 Then
