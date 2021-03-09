@@ -10,5 +10,7 @@
     "CmdListColor": "Black",
     "CmdDefColor": "Black",
     "StageColor": "Black",
-    "ErrorColor": "Black"
+    "ErrorColor": "Black",
+    "WarningColor": "Black",
+    "OptionColor": "Black"
 }

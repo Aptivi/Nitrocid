@@ -10,5 +10,7 @@
     "CmdListColor": "DeepSkyBlue4_005f5f",
     "CmdDefColor": "SkyBlue3",
     "StageColor": "MediumTurquoise",
-    "ErrorColor": "DeepSkyBlue4_005f5f"
+    "ErrorColor": "DeepSkyBlue4_005f5f",
+    "WarningColor": "DeepSkyBlue4_005f5f",
+    "OptionColor": "DeepSkyBlue4_005f5f"
 }

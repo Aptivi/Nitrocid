@@ -26,7 +26,8 @@ Imports KS
     <TestMethod()> Public Sub TestSetColors()
         InitPaths()
         Assert.IsTrue(SetColors(ConsoleColors.White, ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Red, ConsoleColors.DarkGreen, ConsoleColors.Green,
-                                ConsoleColors.Black, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkGray, ConsoleColors.Green, ConsoleColors.Red),
+                                ConsoleColors.Black, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkGray, ConsoleColors.Green, ConsoleColors.Red,
+                                ConsoleColors.Yellow, ConsoleColors.DarkYellow),
                       "Colors are not set properly. The following colors are applied:" + vbNewLine + vbNewLine +
                       "- InputC = {0}" + vbNewLine +
                       "- LicenseC = {1}" + vbNewLine +
@@ -39,8 +40,10 @@ Imports KS
                       "- CmdListC = {8}" + vbNewLine +
                       "- CmdDefC = {9}" + vbNewLine +
                       "- StageC = {10}" + vbNewLine +
-                      "- ErrorC = {11}", inputColor, licenseColor, contKernelErrorColor, uncontKernelErrorColor, hostNameShellColor, userNameShellColor, backgroundColor,
-                                         neutralTextColor, cmdListColor, cmdDefColor, stageColor, errorColor)
+                      "- ErrorC = {11}" + vbNewLine +
+                      "- WarningC = {12}" + vbNewLine +
+                      "- OptionC = {13}", inputColor, licenseColor, contKernelErrorColor, uncontKernelErrorColor, hostNameShellColor, userNameShellColor, backgroundColor,
+                                          neutralTextColor, cmdListColor, cmdDefColor, stageColor, errorColor, WarningColor, OptionColor)
     End Sub
 
 End Class

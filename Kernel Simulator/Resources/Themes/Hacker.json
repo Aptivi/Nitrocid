@@ -10,5 +10,7 @@
     "CmdListColor": "DarkGreen",
     "CmdDefColor": "Green",
     "StageColor": "DarkGreen",
-    "ErrorColor": "DarkGreen"
+    "ErrorColor": "DarkGreen",
+    "WarningColor": "Green",
+    "OptionColor": "DarkGreen"
 }

@@ -10,5 +10,7 @@
     "CmdListColor": "Blue",
     "CmdDefColor": "MediumTurquoise",
     "StageColor": "MediumTurquoise",
-    "ErrorColor": "OrangeRed1"
+    "ErrorColor": "OrangeRed1",
+    "WarningColor": "OrangeRed1",
+    "OptionColor": "Blue"
 }

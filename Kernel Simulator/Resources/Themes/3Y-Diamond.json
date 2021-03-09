@@ -10,5 +10,7 @@
     "CmdListColor": "DarkOliveGreen3_87d75f",
     "CmdDefColor": "SpringGreen3_00af5f",
     "StageColor": "LightSteelBlue3",
-    "ErrorColor": "LightSteelBlue3"
+    "ErrorColor": "LightSteelBlue3",
+    "WarningColor": "LightSteelBlue3",
+    "OptionColor": "DarkOliveGreen3_87d75f"
 }

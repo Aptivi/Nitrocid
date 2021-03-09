@@ -69,6 +69,14 @@ Public Class ThemeInfo
     ''' General error color set by theme
     ''' </summary>
     Public ReadOnly Property ThemeErrorColor As ConsoleColors
+    ''' <summary>
+    ''' General warning color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeWarningColor As ConsoleColors
+    ''' <summary>
+    ''' Option color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeOptionColor As ConsoleColors
 
     ''' <summary>
     ''' Generates a new theme info from KS resources
@@ -88,6 +96,8 @@ Public Class ThemeInfo
         ThemeCmdDefColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("CmdDefColor").ToString)
         ThemeStageColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("StageColor").ToString)
         ThemeErrorColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("ErrorColor").ToString)
+        ThemeWarningColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("WarningColor").ToString)
+        ThemeOptionColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("OptionColor").ToString)
     End Sub
 
     ''' <summary>
@@ -108,6 +118,8 @@ Public Class ThemeInfo
         ThemeCmdDefColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("CmdDefColor").ToString)
         ThemeStageColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("StageColor").ToString)
         ThemeErrorColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("ErrorColor").ToString)
+        ThemeWarningColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("WarningColor").ToString)
+        ThemeOptionColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("OptionColor").ToString)
     End Sub
 
 End Class

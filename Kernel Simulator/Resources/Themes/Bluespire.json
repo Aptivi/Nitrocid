@@ -10,5 +10,7 @@
     "CmdListColor": "Cyan",
     "CmdDefColor": "Blue",
     "StageColor": "Cyan",
-    "ErrorColor": "Blue"
+    "ErrorColor": "Blue",
+    "WarningColor": "Blue",
+    "OptionColor": "Cyan"
 }

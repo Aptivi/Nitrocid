@@ -10,5 +10,7 @@
     "CmdListColor": "Orange4_875f00",
     "CmdDefColor": "White",
     "StageColor": "Yellow3_d7d700",
-    "ErrorColor": "DarkRed_870000"
+    "ErrorColor": "DarkRed_870000",
+    "WarningColor": "Orange4_875f00",
+    "OptionColor": "Orange4_875f00"
 }

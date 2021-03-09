@@ -56,7 +56,9 @@ Public Module Config
                         New IniKey(ksconf, "Listed command in Help Color", cmdListColor.ToString),
                         New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString),
                         New IniKey(ksconf, "Kernel Stage Color", stageColor.ToString),
-                        New IniKey(ksconf, "Error Text Color", errorColor.ToString)))
+                        New IniKey(ksconf, "Error Text Color", errorColor.ToString),
+                        New IniKey(ksconf, "Warning Text Color", WarningColor.ToString),
+                        New IniKey(ksconf, "Option Color", OptionColor.ToString)))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -170,7 +172,9 @@ Public Module Config
                         New IniKey(ksconf, "Listed command in Help Color", cmdListColor.ToString),
                         New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString),
                         New IniKey(ksconf, "Kernel Stage Color", stageColor.ToString),
-                        New IniKey(ksconf, "Error Text Color", errorColor.ToString)))
+                        New IniKey(ksconf, "Error Text Color", errorColor.ToString),
+                        New IniKey(ksconf, "Warning Text Color", WarningColor.ToString),
+                        New IniKey(ksconf, "Option Color", OptionColor.ToString)))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -441,21 +445,23 @@ Public Module Config
             '----------------------------- General configuration -----------------------------
             'Colors Section
             Wdbg("I", "Loading colors...")
-            If ColoredShell Then userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("User Name Shell Color").Value), ConsoleColors)
-            If ColoredShell Then hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Host Name Shell Color").Value), ConsoleColors)
-            If ColoredShell Then contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value), ConsoleColors)
-            If ColoredShell Then uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value), ConsoleColors)
-            If ColoredShell Then neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Text Color").Value), ConsoleColors)
-            If ColoredShell Then licenseColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("License Color").Value), ConsoleColors)
             If ColoredShell Then
+                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("User Name Shell Color").Value), ConsoleColors)
+                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Host Name Shell Color").Value), ConsoleColors)
+                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value), ConsoleColors)
+                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value), ConsoleColors)
+                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Text Color").Value), ConsoleColors)
+                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("License Color").Value), ConsoleColors)
                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Background Color").Value), ConsoleColors)
+                inputColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColors)
+                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColors)
+                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Definition of command in Help Color").Value), ConsoleColors)
+                stageColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Kernel Stage Color").Value), ConsoleColors)
+                errorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Error Text Color").Value), ConsoleColors)
+                WarningColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Warning Text Color").Value), ConsoleColors)
+                OptionColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Option Color").Value), ConsoleColors)
                 LoadBack()
             End If
-            If ColoredShell Then inputColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColors)
-            If ColoredShell Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColors)
-            If ColoredShell Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Definition of command in Help Color").Value), ConsoleColors)
-            If ColoredShell Then stageColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Kernel Stage Color").Value), ConsoleColors)
-            If ColoredShell Then errorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Error Text Color").Value), ConsoleColors)
 
             'General Section
             Wdbg("I", "Parsing general section...")

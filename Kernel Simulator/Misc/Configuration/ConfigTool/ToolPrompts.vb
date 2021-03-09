@@ -398,7 +398,7 @@ Public Module ToolPrompts
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case 4.7 'Shell -> Custom colors
-                    MaxKeyOptions = 12
+                    MaxKeyOptions = 14
                     KeyType = SettingsKeyType.SMultivar
                     KeyVars = New Dictionary(Of String, Object)
                     MultivarCustomAction = "SetColors"
@@ -477,6 +477,18 @@ Public Module ToolPrompts
                     Response = Console.ReadLine
                     If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(errorColor))
                     KeyVars.AddOrModify(NameOf(errorColor), Response)
+
+                    ' Warning color
+                    W("13) " + DoTranslation("Warning color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(WarningColor)))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(WarningColor))
+                    KeyVars.AddOrModify(NameOf(WarningColor), Response)
+
+                    ' Option color
+                    W("14) " + DoTranslation("Option color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(OptionColor)))
+                    Response = Console.ReadLine
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(OptionColor))
+                    KeyVars.AddOrModify(NameOf(OptionColor), Response)
                 Case 5 'Network
                     Select Case KeyNumber
                         Case 1 'Debug Port
@@ -877,9 +889,9 @@ Public Module ToolPrompts
                     KeyFinished = True
                 Else
                     Wdbg("I", "Setting necessary variables...")
-                    Wdbg("I", "Variables: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}.", KeyVars(NameOf(inputColor)), KeyVars(NameOf(licenseColor)), KeyVars(NameOf(contKernelErrorColor)),
+                    Wdbg("I", "Variables: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}.", KeyVars(NameOf(inputColor)), KeyVars(NameOf(licenseColor)), KeyVars(NameOf(contKernelErrorColor)),
                          KeyVars(NameOf(uncontKernelErrorColor)), KeyVars(NameOf(hostNameShellColor)), KeyVars(NameOf(userNameShellColor)), KeyVars(NameOf(backgroundColor)), KeyVars(NameOf(neutralTextColor)),
-                         KeyVars(NameOf(cmdListColor)), KeyVars(NameOf(cmdDefColor)), KeyVars(NameOf(stageColor)), KeyVars(NameOf(errorColor)))
+                         KeyVars(NameOf(cmdListColor)), KeyVars(NameOf(cmdDefColor)), KeyVars(NameOf(stageColor)), KeyVars(NameOf(errorColor)), KeyVars(NameOf(WarningColor)), KeyVars(NameOf(OptionColor)))
 
                     'This is cumbersome. This is worth an Extensification for [Enum].
                     If SetColors([Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(inputColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(licenseColor))),
@@ -887,7 +899,8 @@ Public Module ToolPrompts
                                  [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(hostNameShellColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(userNameShellColor))),
                                  [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(backgroundColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(neutralTextColor))),
                                  [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(cmdListColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(cmdDefColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(stageColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(errorColor)))) Then
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(stageColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(errorColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(WarningColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(OptionColor)))) Then
                         KeyFinished = True
                     End If
                 End If

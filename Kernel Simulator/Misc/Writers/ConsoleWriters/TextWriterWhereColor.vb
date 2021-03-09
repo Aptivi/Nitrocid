@@ -60,6 +60,10 @@ Module TextWriterWhereColor
                     Write(esc + "[38;5;" + CStr(stageColor) + "m")
                 ElseIf colorType = ColTypes.Err Then
                     Write(esc + "[38;5;" + CStr(errorColor) + "m")
+                ElseIf colorType = ColTypes.Warning Then
+                    Write(esc + "[38;5;" + CStr(WarningColor) + "m")
+                ElseIf colorType = ColTypes.Option Then
+                    Write(esc + "[38;5;" + CStr(OptionColor) + "m")
                 Else
                     Exit Sub
                 End If
