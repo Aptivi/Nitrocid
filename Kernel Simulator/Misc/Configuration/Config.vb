@@ -18,6 +18,7 @@
 
 Imports System.IO
 
+'TODO: Use JSON. Users will have to use our converter. This is to ensure that we can port KS to .NET 5.0
 Public Module Config
 
     ''' <summary>
