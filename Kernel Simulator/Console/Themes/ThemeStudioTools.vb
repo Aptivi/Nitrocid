@@ -84,7 +84,7 @@ Module ThemeStudioTools
     ''' <param name="Theme">Theme name</param>
     Sub SaveThemeToCurrentDirectory(ByVal Theme As String)
         Dim ThemeJson As JObject = GetThemeJson()
-        File.WriteAllText(NeutralizePath(Theme + ".json"), JsonConvert.SerializeObject(ThemeJson))
+        File.WriteAllText(NeutralizePath(Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented))
     End Sub
 
     ''' <summary>
@@ -94,7 +94,7 @@ Module ThemeStudioTools
     ''' <param name="Path">Path name. Neutralized by <see cref="NeutralizePath(String)"/></param>
     Sub SaveThemeToAnotherDirectory(ByVal Theme As String, ByVal Path As String)
         Dim ThemeJson As JObject = GetThemeJson()
-        File.WriteAllText(NeutralizePath(Path + "/" + Theme + ".json"), JsonConvert.SerializeObject(ThemeJson))
+        File.WriteAllText(NeutralizePath(Path + "/" + Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented))
     End Sub
 
     ''' <summary>
