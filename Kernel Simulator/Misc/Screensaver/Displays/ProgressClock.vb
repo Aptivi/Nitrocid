@@ -91,6 +91,7 @@ Module ProgressClockDisplay
                     InformationPositionMinutes = CInt(Console.WindowHeight / 2) - 3
                     InformationPositionSeconds = CInt(Console.WindowHeight / 2) + 6
 
+#Disable Warning BC42104
                     'Hours
                     WriteWhereTrueColor("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 9, ColorStorageHours)   'Top of Hours
                     WriteWhereTrueColor("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionHours, ColorStorageHours)            'Medium of Hours
@@ -105,7 +106,7 @@ Module ProgressClockDisplay
                     WriteWhereTrueColor("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) + 9, ColorStorageSeconds) 'Top of Seconds
                     WriteWhereTrueColor("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionSeconds, ColorStorageSeconds)        'Medium of Seconds
                     WriteWhereTrueColor("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) + 7, ColorStorageSeconds) 'Bottom of Seconds
-
+#Enable Warning BC42104
                     'Fill progress for hours, minutes, and seconds
                     If Not KernelDateTime.Hour = 0 Then WriteWhereTrueColor(" ".Repeat(KernelDateTime.Hour * 100 / 24 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionHours, New RGB(0, 0, 0), ColorStorageHours)
                     If Not KernelDateTime.Minute = 0 Then WriteWhereTrueColor(" ".Repeat(KernelDateTime.Minute * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionMinutes, New RGB(0, 0, 0), ColorStorageMinutes)

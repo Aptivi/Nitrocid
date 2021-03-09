@@ -164,6 +164,7 @@ Public Module Color
             End If
 
             If Not theme = "Default" Then
+#Disable Warning BC42104
                 'Set colors as appropriate
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeInputColor), ConsoleColors)
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeLicenseColor), ConsoleColors)
@@ -179,6 +180,7 @@ Public Module Color
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeErrorColor), ConsoleColors)
                 WarningColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeWarningColor), ConsoleColors)
                 OptionColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeOptionColor), ConsoleColors)
+#Enable Warning BC42104
 
                 'Load background
                 LoadBack()
