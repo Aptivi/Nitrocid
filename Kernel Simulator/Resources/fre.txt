@@ -214,7 +214,7 @@ Tout est réinitialisé aux paramètres normaux.
 Une ou plusieurs des couleurs sont invalides.
 Les couleurs ne sont pas disponibles. Activer le shell coloré dans la configuration du noyau.
 Économiseur d'écran {0} introuvable.
-{0}[ Paramètres du noyau (en cours d'exécution sur {1}) ]
+[ Paramètres du noyau (en cours d'exécution sur {0}) ]
 Version du noyau:
 Mode débogage:
 Coquille Colorée:

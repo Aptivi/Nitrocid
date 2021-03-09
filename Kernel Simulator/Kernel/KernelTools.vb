@@ -279,6 +279,10 @@ Public Module KernelTools
         RemoteDebugAliases.Clear()
         Wdbg("I", "General variables reset")
 
+        'Reset hardware info
+        HardwareInfo = Nothing
+        Wdbg("I", "Hardware info reset.")
+
         'Release RAM used
         DisposeAll()
         Wdbg("I", "Garbage collector finished")

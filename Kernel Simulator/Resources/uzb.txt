@@ -214,7 +214,7 @@ Hammasi normal sozlamalarga qaytarildi.
 Bir yoki bir nechta rang yaroqsiz.
 Ranglar mavjud emas. Yadro konfiguratsiyasida rangli qobiqni yoqing.
 {0} ekran saqlagichi topilmadi.
-{0} [Kernel sozlamalari ({1} da ishlaydi)]
+[ Kernel sozlamalari ({0} da ishlaydi) ]
 Yadro versiyasi:
 Tuzatish rejimi:
 Rangli qobiq:
@@ -224,13 +224,13 @@ Kirishda MOTD:
 Burchakdagi vaqt / sana:
 Uskuna tekshirildi:
 Joriy mavzu:
-[Uskuna sozlamalari] {0}
-{0} [Foydalanuvchi sozlamalari]
+[ Uskuna sozlamalari ]{0}
+{0}[ Foydalanuvchi sozlamalari ]
 Joriy foydalanuvchi ismi:
 Joriy host nomi:
 Mavjud foydalanuvchi nomlari:
 Kompyuterning xost nomi:
-{0} [Xabarlar sozlamalari]
+{0}[ Xabarlar sozlamalari ]
 Manba kodi:
 Mualliflik huquqi (c)
 Litsenziya

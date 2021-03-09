@@ -214,7 +214,7 @@ Tất cả mọi thứ được thiết lập lại để cài đặt bình thư
 Một hoặc nhiều màu không hợp lệ.
 Màu sắc không có sẵn. Bật vỏ màu trong cấu hình kernel.
 Trình bảo vệ màn hình {0} không tìm thấy.
-{0} [Cài đặt kernel (Chạy trên {1})]
+[ Cài đặt kernel (Chạy trên {0}) ]
 Phiên bản hạt nhân:
 Chế độ kiểm tra sửa lỗi:
 Vỏ màu:
@@ -224,13 +224,13 @@ MOTD khi đăng nhập:
 Thời gian / Ngày ở góc:
 Phần cứng được thăm dò:
 Chủ đề hiện tại:
-[Cài đặt phần cứng] {0}
-{0} [Cài đặt người dùng]
+[Cài đặt phần cứng ]{0}
+{0}[ Cài đặt người dùng ]
 Tên người dùng hiện tại:
 Tên máy chủ hiện tại:
 Tên người dùng có sẵn:
 Tên máy chủ
-{0} [Cài đặt tin nhắn]
+{0}[ Cài đặt tin nhắn ]
 Mã nguồn:
 Bản quyền (c)
 Giấy phép

@@ -214,7 +214,7 @@ Allt återställs till normala inställningar.
 En eller flera av färgerna är ogiltiga.
 Färger är inte tillgängliga. Slå på det färgade skalet i kärnans konfiguration.
 Skärmsläckare {0} hittades inte.
-{0}[Kärnan inställningar (körs på {1})]
+[ Kärnan inställningar (körs på {0}) ]
 Kernelversion:
 Debugläge:
 Färgad Shell:
@@ -224,13 +224,13 @@ MOTD på inloggning:
 Tid / datum på hörnet:
 Hårdvara probed:
 Aktuellt tema:
-[Hårdvaruinställningar] {0}
-{0}[Användarinställningar]
+[ Hårdvaruinställningar ] {0}
+{0}[ Användarinställningar ]
 Nuvarande användarnamn:
 Nuvarande värdnamn:
 Tillgängliga användarnamn:
 Dator värdnamn:
-{0}[Meddelanden Inställningar]
+{0}[ Meddelanden Inställningar ]
 Källkod:
 Upphovsrätt (c)
 Licens

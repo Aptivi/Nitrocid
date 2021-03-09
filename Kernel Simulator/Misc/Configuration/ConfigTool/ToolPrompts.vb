@@ -105,10 +105,10 @@ Public Module ToolPrompts
         While Not SectionFinished
             Console.Clear()
             'List options
-            W(DoTranslation("Select option:", currentLang) + vbNewLine, True, ColTypes.Neutral)
             Select Case SectionNum
                 Case 1 'General
                     MaxOptions = 5
+                    W("*) " + DoTranslation("General Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Prompt for Arguments on Boot", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(argsOnBoot)))
                     W("2) " + DoTranslation("Maintenance Mode Trigger", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(maintenance)))
@@ -117,16 +117,19 @@ Public Module ToolPrompts
                     W("5) " + DoTranslation("Change Culture when Switching Languages", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(LangChangeCulture)))
                 Case 2 'Hardware
                     MaxOptions = 1
+                    W("*) " + DoTranslation("Hardware Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section changes hardware probe behavior.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Quiet Probe", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(quietProbe)))
                 Case 3 'Login
                     MaxOptions = 3
+                    W("*) " + DoTranslation("Login Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section represents the login settings. Log out of your account for the changes to take effect.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Show MOTD on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(showMOTD)))
                     W("2) " + DoTranslation("Clear Screen on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(clsOnLogin)))
                     W("3) " + DoTranslation("Show available usernames", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(ShowAvailableUsers)))
                 Case 4 'Shell
                     MaxOptions = 7
+                    W("*) " + DoTranslation("Shell Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the shell settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColoredShell)))
                     W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(simHelp)))
@@ -137,6 +140,7 @@ Public Module ToolPrompts
                     W("7) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                 Case 5 'Network
                     MaxOptions = 10
+                    W("*) " + DoTranslation("Network Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Debug Port", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DebugPort)))
                     W("2) " + DoTranslation("Remote Debug Default Nick Prefix", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(RDebugDNP)))
@@ -150,6 +154,7 @@ Public Module ToolPrompts
                     W("10) " + DoTranslation("Record chat to debug log", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(RecordChatToDebugLog)))
                 Case 6 'Screensaver
                     MaxOptions = 31
+                    W("*) " + DoTranslation("Screensaver Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all the screensavers and their available settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ScrnTimeout)))
 
@@ -190,6 +195,7 @@ Public Module ToolPrompts
                     W("31) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(BouncingTextWrite)))
                 Case 7 'Misc
                     MaxOptions = 9
+                    W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(CornerTD)))
                     W("2) " + DoTranslation("Debug Size Quota in Bytes", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DebugQuota)))
@@ -201,6 +207,7 @@ Public Module ToolPrompts
                     W("8) " + DoTranslation("Enable text editor autosave", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(TextEdit_AutoSaveFlag)))
                     W("9) " + DoTranslation("Text editor autosave interval", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(TextEdit_AutoSaveInterval)))
                 Case Else 'Invalid section
+                    W("*) ???" + vbNewLine, True, ColTypes.Neutral)
                     W("X) " + DoTranslation("Invalid section entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
             End Select
             W("{0}) " + DoTranslation("Go Back...", currentLang) + vbNewLine, True, ColTypes.Neutral, MaxOptions + 1)
@@ -269,6 +276,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(argsOnBoot)
+                            W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Prompt for Arguments on Boot", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Sets up the kernel so it prompts you for argument on boot.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -276,6 +284,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(maintenance)
+                            W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Maintenance Mode Trigger", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Triggers maintenance mode. This disables multiple accounts.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -285,6 +294,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(CheckUpdateStart)
+                            W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Check for Updates on Startup", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Each startup, it will check for updates.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -292,10 +302,12 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(LangChangeCulture)
+                            W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Change Culture when Switching Languages", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("When switching languages, change the month names, calendar, etc.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
+                            W("*) " + DoTranslation("General Settings...", currentLang) + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case 1.3 'General -> Change Root Password
@@ -304,10 +316,12 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(setRootPasswd)
+                            W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Change Root Password...", currentLang) + " > " + DoTranslation("Change Root Password?", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If the kernel is started, it will set root password.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2
+                            W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Change Root Password...", currentLang) + " > " + DoTranslation("Set Root Password...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             If GetValue(NameOf(setRootPasswd)) Then
                                 KeyType = SettingsKeyType.SString
                                 KeyVar = NameOf(RootPasswd)
@@ -318,10 +332,12 @@ Public Module ToolPrompts
                         Case 3
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SMenu
+                            W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Change Root Password...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Select option:", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Change Root Password?", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("setRootPasswd"))
                             W("2) " + DoTranslation("Set Root Password...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
+                            W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Change Root Password...", currentLang) + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case 2 'Hardware
@@ -330,10 +346,12 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(quietProbe)
+                            W("*) " + DoTranslation("Hardware Settings...", currentLang) + " > " + DoTranslation("Quiet Probe", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Keep hardware probing messages silent.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
+                            W("*) " + DoTranslation("Hardware Settings...", currentLang) + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case 3 'Login
@@ -342,6 +360,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(showMOTD)
+                            W("*) " + DoTranslation("Login Settings...", currentLang) + " > " + DoTranslation("Show MOTD on Log-in", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Show Message of the Day before displaying login screen.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -349,6 +368,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(clsOnLogin)
+                            W("*) " + DoTranslation("Login Settings...", currentLang) + " > " + DoTranslation("Clear Screen on Log-in", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Clear screen before displaying login screen.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -356,10 +376,12 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowAvailableUsers)
+                            W("*) " + DoTranslation("Login Settings...", currentLang) + " > " + DoTranslation("Show available usernames", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Shows available users if enabled.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
+                            W("*) " + DoTranslation("Login Settings...", currentLang) + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case 4 'Shell
@@ -368,6 +390,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ColoredShell)
+                            W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("Colored Shell", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Gives the kernel color support", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -375,26 +398,32 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(simHelp)
+                            W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("Simplified Help Command", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Simplified help command for all the shells", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 3 'Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(ShellPromptStyle)
+                            W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("Prompt Style", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
                         Case 4 'FTP Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(FTPShellPromptStyle)
+                            W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("FTP Prompt Style", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
                         Case 5 'Mail Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(MailShellPromptStyle)
+                            W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("Mail Prompt Style", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
                         Case 6 'SFTP Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(SFTPShellPromptStyle)
+                            W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("SFTP Prompt Style", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
                         Case Else
+                            W("*) " + DoTranslation("Shell Settings...", currentLang) + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case 4.7 'Shell -> Custom colors
@@ -402,6 +431,7 @@ Public Module ToolPrompts
                     KeyType = SettingsKeyType.SMultivar
                     KeyVars = New Dictionary(Of String, Object)
                     MultivarCustomAction = "SetColors"
+                    W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     Dim Response As String
                     W("*) " + DoTranslation("Write a color as specified below:", currentLang), True, ColTypes.Neutral)
                     W("*) " + String.Join(", ", [Enum].GetNames(GetType(ConsoleColors))) + vbNewLine, True, ColTypes.Neutral)
@@ -494,23 +524,28 @@ Public Module ToolPrompts
                         Case 1 'Debug Port
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DebugPort)
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Debug Port", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port.", currentLang), True, ColTypes.Neutral)
                         Case 2 'Remote Debug Default Nick Prefix
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(RDebugDNP)
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Remote Debug Default Nick Prefix", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write the default remote debug nickname prefix.", currentLang), True, ColTypes.Neutral)
                         Case 3 'Download Retry Times
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DRetries)
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Download Retry Times", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how many times the ""get"" command should retry failed downloads. It must be numeric.", currentLang), True, ColTypes.Neutral)
                         Case 4 'Upload Retry Times
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(URetries)
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Upload Retry Times", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how many times the ""put"" command should retry failed uploads. It must be numeric.", currentLang), True, ColTypes.Neutral)
                         Case 5 'Show progress bar while downloading or uploading from "get" or "put" command
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowProgress)
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If true, it makes ""get"" or ""put"" show the progress bar while downloading or uploading.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -518,6 +553,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPLoggerUsername)
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Log FTP username", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Whether or not to log FTP username.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -525,6 +561,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPLoggerIP)
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Log FTP IP address", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Whether or not to log FTP IP address.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -532,6 +569,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPFirstProfileOnly)
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Return only first FTP profile", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Pick the first profile only when connecting.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -539,6 +577,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowPreview)
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Show mail message preview", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("When listing mail messages, show body preview.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -546,10 +585,12 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(RecordChatToDebugLog)
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Record chat to debug log", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Records remote debug chat to debug log.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
+                            W("*) " + DoTranslation("Network Settings...", currentLang) + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case 6 'Screensaver
@@ -557,11 +598,13 @@ Public Module ToolPrompts
                         Case 1 'Screensaver Timeout in ms
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ScrnTimeout)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > " + DoTranslation("Screensaver Timeout in ms", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write when to launch screensaver after specified milliseconds. It must be numeric.", currentLang), True, ColTypes.Neutral)
                         Case 2 'ColorMix: Activate 255 colors
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ColorMix255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for ColorMix.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -569,6 +612,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(Disco255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [Disco] " + DoTranslation("Activate 255 colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for Disco.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -576,6 +620,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(GlitterColor255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [GlitterColor] " + DoTranslation("Activate 255 colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for GlitterColor.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -583,6 +628,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(Lines255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [Lines] " + DoTranslation("Activate 255 colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for Lines.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -590,6 +636,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(Dissolve255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [Dissolve] " + DoTranslation("Activate 255 colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for Dissolve.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -597,6 +644,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(BouncingBlock255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [BouncingBlock] " + DoTranslation("Activate 255 colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for BouncingBlock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -604,6 +652,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ProgressClock255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ProgressClock] " + DoTranslation("Activate 255 colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for ProgressClock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -611,6 +660,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ColorMixTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ColorMix] " + DoTranslation("Activate true colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates true color support for ColorMix.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -618,6 +668,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DiscoTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [Disco] " + DoTranslation("Activate true colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates true color support for Disco.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -625,6 +676,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(GlitterColorTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates true color support for GlitterColor.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -632,6 +684,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(LinesTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [Lines] " + DoTranslation("Activate true colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates true color support for Lines.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -639,6 +692,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DissolveTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [Dissolve] " + DoTranslation("Activate true colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates true color support for Dissolve.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -646,6 +700,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(BouncingBlockTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [BouncingBlock] " + DoTranslation("Activate true colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates true color support for BouncingBlock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -653,6 +708,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ProgressClockTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ProgressClock] " + DoTranslation("Activate true colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates true color support for ProgressClock.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -660,6 +716,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DiscoCycleColors)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [Disco] " + DoTranslation("Cycle colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Disco will cycle colors when enabled. Otherwise, select random colors.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -667,66 +724,82 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ProgressClockCycleColors)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ProgressClock] " + DoTranslation("Cycle colors", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("ProgressClock will select random colors if it's enabled. Otherwise, use colors from config.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 18 'ProgressClock: Color of Seconds Bar
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(ProgressClockSecondsProgressColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ProgressClock] " + DoTranslation("Color of Seconds Bar", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("The color of seconds progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255"".", currentLang), True, ColTypes.Neutral)
                         Case 19 'ProgressClock: Color of Minutes Bar
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(ProgressClockMinutesProgressColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ProgressClock] " + DoTranslation("Color of Minutes Bar", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("The color of minutes progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255"".", currentLang), True, ColTypes.Neutral)
                         Case 20 'ProgressClock: Color of Hours Bar
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(ProgressClockHoursProgressColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ProgressClock] " + DoTranslation("Color of Hours Bar", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("The color of hours progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255"".", currentLang), True, ColTypes.Neutral)
                         Case 21 'ProgressClock: Color of Information
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(ProgressClockProgressColor)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ProgressClock] " + DoTranslation("Color of Information", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("The color of date information. It can be 1-16, 1-255, or ""1-255;1-255;1-255"".", currentLang), True, ColTypes.Neutral)
                         Case 22 'BouncingBlock: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(BouncingBlockDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [BouncingBlock] " + DoTranslation("Delay in Milliseconds", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
                         Case 23 'BouncingText: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(BouncingTextDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [BouncingText] " + DoTranslation("Delay in Milliseconds", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
                         Case 24 'ColorMix: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ColorMixDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ColorMix] " + DoTranslation("Delay in Milliseconds", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
                         Case 25 'Disco: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DiscoDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [Disco] " + DoTranslation("Delay in Milliseconds", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
                         Case 26 'GlitterColor: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(GlitterColorDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [GlitterColor] " + DoTranslation("Delay in Milliseconds", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
                         Case 27 'GlitterMatrix: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(GlitterMatrixDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [GlitterMatrix] " + DoTranslation("Delay in Milliseconds", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
                         Case 28 'Lines: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(LinesDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [Lines] " + DoTranslation("Delay in Milliseconds", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
                         Case 29 'Matrix: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(MatrixDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [Matrix] " + DoTranslation("Delay in Milliseconds", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?", currentLang), True, ColTypes.Neutral)
                         Case 30 'ProgressClock: Ticks to change color
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ProgressClockCycleColorsTicks)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [ProgressClock] " + DoTranslation("Ticks to change color", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds", currentLang), True, ColTypes.Neutral)
                         Case 31 'BouncingText: Text shown
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(BouncingTextWrite)
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > [BouncingText] " + DoTranslation("Text shown", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write any text you want shown. Shorter is better.", currentLang), True, ColTypes.Neutral)
                         Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...", currentLang) + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case 7 'Misc
@@ -735,17 +808,20 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(CornerTD)
+                            W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + " > " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("The time and date will be shown in the upper right corner of the screen", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2 'Debug Size Quota in Bytes
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DebugQuota)
+                            W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + " > " + DoTranslation("Debug Size Quota in Bytes", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how many bytes can the debug log store. It must be numeric.", currentLang), True, ColTypes.Neutral)
                         Case 3 'Size parse mode
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FullParseMode)
+                            W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + " > " + DoTranslation("Size parse mode", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -753,6 +829,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(StartScroll)
+                            W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + " > " + DoTranslation("Marquee on startup", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Enables eyecandy on startup", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -760,6 +837,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(LongTimeDate)
+                            W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + " > " + DoTranslation("Long Time and Date", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("The time and date will be longer, showing full month names, etc.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -767,6 +845,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(HiddenFiles)
+                            W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + " > " + DoTranslation("Show Hidden Files", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Shows hidden files.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -774,6 +853,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 3
                             KeyType = SettingsKeyType.SSelection
                             KeyVar = NameOf(PreferredUnit)
+                            W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + " > " + DoTranslation("Preferred Unit for Temperature", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Select your preferred unit for temperature (this only applies to the ""weather"" command)", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Kelvin", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Metric (Celsius)", currentLang), True, ColTypes.Neutral)
@@ -782,17 +862,21 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(TextEdit_AutoSaveFlag)
+                            W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + " > " + DoTranslation("Enable text editor autosave", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Turns on or off the text editor autosave feature.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 9 'Text editor autosave interval
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(TextEdit_AutoSaveInterval)
+                            W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + " > " + DoTranslation("Text editor autosave interval", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("If autosave is enabled, the text file will be saved for each ""n"" seconds.", currentLang), True, ColTypes.Neutral)
                         Case Else
+                            W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case Else
+                    W("*) ???" + vbNewLine, True, ColTypes.Neutral)
                     W("X) " + DoTranslation("Invalid section entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
             End Select
 

@@ -214,7 +214,7 @@ Sve se vraća na normalne postavke.
 Jedna ili više boja nisu valjane.
 Boje nisu dostupne. U konfiguraciji jezgre uključite obojenu ljusku.
 Čuvar zaslona {0} nije pronađen.
-{0} [Postavke kernela (radi u {1})]
+[ Postavke kernela (radi u {0}) ]
 Verzija kernela:
 Način uklanjanja pogrešaka:
 Obojena školjka:
@@ -224,13 +224,13 @@ MOTD za prijavu:
 Vrijeme / datum na uglu:
 Sondiranje hardvera:
 Trenutna tema:
-[Hardverske postavke] {0}
-{0} [Korisničke postavke]
+[ Hardverske postavke ] {0}
+{0}[ Korisničke postavke ]
 Trenutačno korisničko ime:
 Trenutačno ime domaćina:
 Dostupna korisnička imena:
 Naziv računala računala:
-{0} [Postavke poruka]
+{0}[ Postavke poruka ]
 Izvorni kod:
 Copyright (c)
 licenca

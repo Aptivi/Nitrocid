@@ -214,7 +214,7 @@ sab kuchh saamaany setings par reeset hai.
 rangon mein se ek ya adhik amaany hai. 
 rang upalabdh nahin hain. karnel konfigareshan mein rangeen khol ko chaaloo karen.
 skreenasevar {0} nahin mila.
-{0}[ karnel setings ({1} par chal rahee hain) ]
+[ karnel setings ({0} par chal rahee hain) ]
 karnel sanskaran:
 deebag mod:
 rangeen shail:

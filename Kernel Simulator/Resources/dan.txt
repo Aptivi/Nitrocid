@@ -214,7 +214,7 @@ Alt nulstilles til normale indstillinger.
 En eller flere af farverne er ugyldige.
 Farver er ikke tilgængelige. Tænd for farvet skal i kernekonfigurationen.
 Screensaver {0} ikke fundet.
-{0} [Kernelindstillinger (kører {1})]
+[ Kernelindstillinger (kører {0}) ]
 Kernel version:
 Fejlretningstilstand:
 Farvet skal:
@@ -224,13 +224,13 @@ MOTD ved login:
 Tid / dato på hjørnet:
 Hardware undersøgt:
 Aktuelt tema:
-[Hardwareindstillinger] {0}
-{0} [Brugerindstillinger]
+[ Hardwareindstillinger ] {0}
+{0}[ Brugerindstillinger ]
 Nuværende brugernavn:
 Nuværende værtsnavn:
 Tilgængelige brugernavne:
 Computerværtsnavn:
-{0} [Indstillinger for meddelelser]
+{0}[ Indstillinger for meddelelser ]
 Kildekode:
 Ophavsret (c)
 Licens

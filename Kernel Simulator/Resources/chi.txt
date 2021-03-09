@@ -214,7 +214,7 @@ Yīqiè dōu chóng zhì wèi zhèngcháng shèzhì.
 Yī zhǒng huò duō zhǒng yánsè wúxiào.
 Yánsè bùkěyòng. Zài nèihé pèizhì zhōng dǎkāi cǎisè shell.
 Píngmù bǎohù chéngxù {0} wèi zhǎodào.
-{0}[ Nèihé shèzhì (zài {1} shàng yùnxíng) ]
+[ Nèihé shèzhì (zài {0} shàng yùnxíng) ]
 Nèihé bǎnběn:
 Tiáoshì móshì:
 Cǎi ké:

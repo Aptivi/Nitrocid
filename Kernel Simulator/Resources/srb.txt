@@ -214,7 +214,7 @@ Sve se vraća na normalna podešavanja.
 Jedna ili više boja nije važeća.
 Boje nisu dostupne. Uključite obojenu ljusku u konfiguraciji kernel-a.
 Screensaver {0} nije pronađen.
-{0} [Podešavanja kernela (traje od {1})]
+[ Podešavanja kernela (traje od {0}) ]
 Verzija kernela:
 Način uklanjanja pogrešaka:
 Obojena školjka:
@@ -224,13 +224,13 @@ MOTD za prijavu:
 Vrijeme / datum na uglu:
 Sondiranje hardvera:
 Aktuelna tema:
-[Hardverska podešavanja] {0}
-{0} [Korisničke postavke]
+[ Hardverska podešavanja ]{0}
+{0}[ Korisničke postavke ]
 Trenutno korisničko ime:
 Trenutno ime domaćina:
 Dostupna korisnička imena:
 Ime računara:
-{0} [Podešavanja poruka]
+{0}[ Podešavanja poruka ]
 Izvorni kod:
 Copiright (c)
 Licenca

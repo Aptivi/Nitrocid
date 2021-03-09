@@ -214,7 +214,7 @@ modeun geos-i ilban seoljeong-eulo jaeseoljeongdoebnida.
 hana isang-ui saegsang-i yuhyohaji anhseubnida.
 saegsang-eul sayonghal su eobs-seubnida. keoneol seoljeong-eseo keolleo swel-eul kyeosibsio.
 seukeulin seibeo {0}eul (leul) chaj-eul su eobs-seubnida.
-{0} [keoneol seoljeong ({1}eseo silhaeng)]]
+[ keoneol seoljeong ({0}eseo silhaeng) ]
 keoneol beojeon :
 dibeogeu modeu:
 chagsaeg doen potan :
@@ -224,13 +224,13 @@ logeu-insi MOTD :
 koneo sigan / naljja :
 hadeuweeo peulobeu :
 hyeonjae tema :
-[hadeuweeo seoljeong] {0}
-{0} [sayongja seoljeong]
+[ hadeuweeo seoljeong ] {0}
+{0}[ sayongja seoljeong ]
 hyeonjae sayongja ileum :
 hyeonjae hoseuteu ileum :
 sayong ganeunghan sayongja ileum :
 keompyuteo hoseuteu ileum :
-{0} [mesiji seoljeong]
+{0}[ mesiji seoljeong ]
 soseu kodeu:
 jeojaggwon (c)
 teugheo

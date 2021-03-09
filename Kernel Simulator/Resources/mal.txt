@@ -214,7 +214,7 @@ Semuanya diset semula ke tetapan biasa.
 Satu atau lebih warna tidak sah.
 Warna tidak tersedia. Hidupkan shell berwarna dalam konfigurasi kernel.
 Screensaver {0} tidak dijumpai.
-{0}[Tetapan kernel (Running on {1})]
+[ Tetapan kernel (Running on {0}) ]
 Versi Kernel:
 Mod Debug:
 Shell berwarna:
@@ -224,13 +224,13 @@ MOTD pada Login:
 Masa / Tarikh di sudut:
 Perkakasan yang disiasat:
 Tema semasa:
-[Tetapan perkakasan] {0}
-{0}[Tetapan pengguna]
+[ Tetapan perkakasan ] {0}
+{0}[ Tetapan pengguna ]
 Nama pengguna semasa:
 Nama hos semasa:
 Nama pengguna yang tersedia:
 Nama tuan rumah komputer:
-{0}[Seting Mesej]
+{0}[ Seting Mesej ]
 Kod sumber:
 Hak cipta (c)
 Lesen

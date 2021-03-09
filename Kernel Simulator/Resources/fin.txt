@@ -214,7 +214,7 @@ Kaikki palautuu normaaleihin asetuksiin.
 Yksi tai useampi väri on virheellinen.
 Värit eivät ole käytettävissä. Kytke värillinen kuori ytimen kokoonpanossa.
 Näytönsäästäjä {0} ei löydy.
-{0}[Ytimen asetukset (käynnissä {1})]
+[ Ytimen asetukset (käynnissä {0}) ]
 Ytimen versio:
 Debug-tilassa:
 Värillinen kuori:
@@ -224,13 +224,13 @@ MOTD kirjautumisessa:
 Aika / päivä kulmassa:
 Laitteisto on testattu:
 Nykyinen teema:
-[Laitteiston asetukset] {0}
-{0}[Käyttäjän asetukset]
+[ Laitteiston asetukset ] {0}
+{0}[ Käyttäjän asetukset ]
 Nykyinen käyttäjänimi:
 Nykyinen isäntänimi:
 Käytettävissä olevat käyttäjätunnukset:
 Tietokoneen isäntänimi:
-{0}[Viestiasetukset]
+{0}[ Viestiasetukset ]
 Lähdekoodi:
 Tekijänoikeus (c)
 lisenssi

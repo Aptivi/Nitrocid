@@ -214,7 +214,7 @@ Tot es restableix a la configuració normal.
 Un o més colors no són vàlids.
 Els colors no estan disponibles. Activeu l'intèrpret d'ordres de colors a la configuració del nucli.
 No s'ha trobat l'estalvi de pantalla {0}.
-{0} [ Configuració del nucli (funcionant a {1}) ]
+[ Configuració del nucli (funcionant a {0}) ]
 Versió del nucli:
 Mode de depuració:
 Carcassa de colors:
@@ -225,12 +225,12 @@ Hora / data a la cantonada:
 Maquinari sondejat:
 Tema actual:
 [ Configuració del maquinari ] {0}
-{0} [ Configuració de l'usuari ]
+{0}[ Configuració de l'usuari ]
 Nom d'usuari actual:
 Nom d'amfitrió actual:
 Noms d'usuari disponibles:
 Nom de l'amfitrió de l'ordinador:
-{0} [ Configuració de missatges ]
+{0}[ Configuració de missatges ]
 Codi font:
 Copyright (c)
 Llicència

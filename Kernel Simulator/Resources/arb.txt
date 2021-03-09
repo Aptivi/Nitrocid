@@ -214,7 +214,7 @@ kli shay' hu 'iieadat taeyin 'iilaa al'iiedadat aleadiat.
 wahid 'aw 'akthar min al'alwan ghyr salihin.
 al'alwan ghyr mutawfaratin. bidawrih ealaa qadhifat mulawanat fi altakwin alnawat.
 lm yatim aleuthur ealaa shashat altawaquf {0}.
-{0} ['iieidadat Kernel (yeamal ealaa {1})]
+[ 'iieidadat Kernel (yeamal ealaa {0}) ]
 'iisdar alnawaat:
 wade altasahih:
 shali almalunat:
@@ -224,13 +224,13 @@ wizarat aldifae eind tasjil aldukhul:
 alwaqt / alttarikh fi alzaawiat:
 altahqiq alajihzat:
 almawdue alhali:
-['ieidadat alajihza] {0}
-{0} ['ieidadat almustkhdam]
+[ 'ieidadat alajihza ] {0}
+{0}[ 'ieidadat almustkhdam ]
 aism almustakhdam alhali:
 aism almudif alhali:
 'asma' almustakhdimin almtaht:
 aism madif alkambiutir:
-{0} ['iieidadat alrasayl]
+{0}[ 'iieidadat alrasayl ]
 masdar alrmz:
 huquq altabe walnashr (j)
 rukhsa

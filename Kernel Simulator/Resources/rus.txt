@@ -214,7 +214,7 @@ Vse sbrasyvayetsya na normal'nyye nastroyki.
 Odin ili neskol'ko tsvetov nedopustimy.
 Tsveta ne dostupny. Vklyuchite tsvetnuyu obolochku v konfiguratsii yadra.
 Zastavka {0} ne naydena.
-{0} [Nastroyki yadra (rabotayet na {1})]
+[ Nastroyki yadra (rabotayet na {0}) ]
 Versiya yadra:
 Rezhim otladki:
 Tsvetnaya obolochka:
@@ -224,13 +224,13 @@ MOTD pri vkhode v sistemu:
 Vremya / Data na uglu:
 Apparatnoye zondirovaniye:
 Tekushchaya tema:
-[Nastroyki oborudovaniya] {0}
-{0} [Nastroyki pol'zovatelya]
+[ Nastroyki oborudovaniya ] {0}
+{0}[ Nastroyki pol'zovatelya ]
 Tekushcheye imya pol'zovatelya:
 Tekushcheye imya khosta:
 Dostupnyye imena pol'zovateley:
 Imya khosta komp'yutera:
-{0} [Nastroyki soobshcheniy]
+{0}[ Nastroyki soobshcheniy ]
 Iskhodnyy kod:
 Avtorskoye pravo (s)
 Litsenziya

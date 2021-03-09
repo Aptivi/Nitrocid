@@ -214,7 +214,7 @@ Všetko je obnovené na normálne nastavenia.
 Jedna alebo viac farieb je neplatná.
 Farby nie sú k dispozícii. Zapnite farebnú škrupinu v konfigurácii jadra.
 Šetrič obrazovky {0} sa nenašiel.
-{0} [Nastavenia jadra (beží na {1})]
+[ Nastavenia jadra (beží na {0}) ]
 Verzia jadra:
 Režim ladenia:
 Farebná škrupina:
@@ -224,13 +224,13 @@ MOTD pri prihlásení:
 Čas / dátum na rohu:
 Hardvérová sonda:
 Aktuálna téma:
-[Hardvérové ​​nastavenia] {0}
-{0} [Nastavenia používateľa]
+[ Hardvérové ​​nastavenia ] {0}
+{0}[ Nastavenia používateľa ]
 Aktuálne užívateľské meno:
 Aktuálny názov hostiteľa:
 Dostupné používateľské mená:
 Názov počítača:
-{0} [Nastavenia správ]
+{0}[ Nastavenia správ ]
 Zdrojový kód:
 Autorské práva (c)
 licencie

@@ -214,7 +214,7 @@ Alles ist auf normale Einstellungen zurückgesetzt.
 Eine oder mehrere Farben sind ungültig.
 Farben sind nicht verfügbar. Aktivieren Sie die farbige Shell in der Kernel-Konfiguration.
 Bildschirmschoner {0} nicht gefunden.
-{0}[ Kernel-Einstellungen (läuft auf {1}) ]
+[ Kernel-Einstellungen (läuft auf {0}) ]
 Kernel-Version:
 Debug-Modus:
 Farbige Shell:

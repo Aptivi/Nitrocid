@@ -214,7 +214,7 @@ Alles wordt teruggezet naar de normale instellingen.
 Een of meer van de kleuren is ongeldig.
 Kleuren zijn niet beschikbaar. Schakel gekleurde shell in de kernelconfiguratie in.
 Screensaver {0} niet gevonden.
-{0}[Kernel-instellingen (werkt op {1})]
+[ Kernel-instellingen (werkt op {0}) ]
 Kernel-versie:
 Foutopsporingsmodus:
 Gekleurde Shell:
@@ -224,13 +224,13 @@ MOTD bij inloggen:
 Tijd / datum op hoek:
 Hardware gesondeerd:
 Huidige thema:
-[Hardware-instellingen] {0}
-{0}[Gebruikersinstellingen]
+[ Hardware-instellingen ] {0}
+{0}[ Gebruikersinstellingen ]
 Huidige gebruikersnaam:
 Huidige hostnaam:
 Beschikbare gebruikersnamen:
 Computer hostnaam:
-{0}[Berichteninstellingen]
+{0}[ Berichteninstellingen ]
 Broncode:
 Copyright (c)
 Licentie

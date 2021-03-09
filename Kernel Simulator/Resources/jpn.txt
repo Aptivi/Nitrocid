@@ -214,7 +214,7 @@ Subete ga tsūjō no settei ni risetto sa remasu.
 1Tsu ijō no iro ga mukōdesu.
 Iro wa shiyō dekimasen. Kāneru settei de irodzuki sheru o on ni shimasu.
 Sukurīnsēbā {0} ga mitsukarimasen.
-{0}[ Kāneru settei ({1} de jikkō-chū) ]
+[ Kāneru settei ({0} de jikkō-chū) ]
 kānerubājon: 
 Debaggumōdo: 
 Karāsheru: 
@@ -224,7 +224,7 @@ Roguin-ji no MOTD:
 Kōnā no nichiji: 
 Purōbu sa reta hādou~ea: 
 Genzai no tēma: 
-[ Hādou~ea settei]{0}
+[ Hādou~ea settei ]{0}
 {0}[ yūzā settei ]
 genzai no yūzā-mei: 
 Genzai no hosuto-mei: 

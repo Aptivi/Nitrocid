@@ -214,7 +214,7 @@ Kila kitu kimewekwa upya kwa mipangilio ya kawaida.
 Rangi moja au zaidi ni batili.
 Rangi hazipatikani. Washa ganda la rangi kwenye usanidi wa kernel.
 Bongo {0} haipatikani.
-{0} [Mipangilio ya Kernel (Inaendelea {1})]
+[ Mipangilio ya Kernel (Inaendelea {0}) ]
 Toleo la Kernel:
 Njia ya Kutatua:
 Ganda la rangi:
@@ -224,13 +224,13 @@ MOTD kwenye Kuingia:
 Saa / Tarehe kwenye kona:
 Vifaa vya uchunguzi:
 Mada ya sasa:
-[Mipangilio ya vifaa] {0}
-{0} [Mipangilio ya Mtumiaji]
+[ Mipangilio ya vifaa ] {0}
+{0}[ Mipangilio ya Mtumiaji ]
 Jina la mtumiaji la sasa:
 Jina la mwenyeji wa sasa:
 Majina ya watumiaji yanayopatikana:
 Jina la mwenyeji wa kompyuta:
-{0} [Mipangilio ya Ujumbe]
+{0}[ Mipangilio ya Ujumbe ]
 Nambari ya chanzo:
 Hakimiliki (c)
 Leseni

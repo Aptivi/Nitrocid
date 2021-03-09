@@ -214,7 +214,7 @@ Hər şey normal parametrlərə qaytarılır.
 Rənglərdən biri və ya bir neçəsi etibarsızdır.
 Rənglər mövcud deyil. Nüvə konfiqurasiyasında rəngli qabığı açın.
 Ekran qoruyucu {0} tapılmadı.
-{0} [ Kernel ayarları ({1} işləyir) ]
+[ Kernel ayarları ({0} işləyir) ]
 Kernel Versiyası:
 Debaq rejimi:
 Rəngli Kabuk:
@@ -225,12 +225,12 @@ Saat / tarix küncdə:
 Cihaz sınaqdan keçirildi:
 Mövzu:
 [ Təchizat parametrləri ] {0}
-{0} [ İstifadəçi ayarları ]
+{0}[ İstifadəçi ayarları ]
 Cari istifadəçi adı:
 Cari host adı:
 Mövcud istifadəçi adları:
 Kompüter ana adı:
-{0} [ Mesajlar Ayarları ]
+{0}[ Mesajlar Ayarları ]
 Mənbə kodu:
 Müəllif hüquqları (c)
 Lisenziya

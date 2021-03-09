@@ -214,7 +214,7 @@ Kollox huwa ssettjat mill-ġdid għal settings normali.
 Wieħed jew aktar mill-kuluri huwa invalidu.
 Il-kuluri mhumiex disponibbli. Ixgħel qoxra kkulurita fil-konfigurazzjoni tal-qalba.
 Screensaver {0} ma nstabx.
-{0} [Settings tal-Kernel (Tħaddem fuq {1})]
+[Settings tal-Kernel (Tħaddem fuq {0}) ]
 Verżjoni tal-Kernel:
 Mod ta 'Debug:
 Qoxra kkulurita:
@@ -224,13 +224,13 @@ MOTD meta tidħol:
 Ħin / Data fuq il-kantuniera:
 Hardware probed:
 Tema kurrenti:
-[Settings tal-ħardwer] {0}
-{0} [Settings tal-utent]
+[ Settings tal-ħardwer ]{0}
+{0}[ Settings tal-utent ]
 Isem tal-utent kurrenti:
 Isem ospitanti attwali:
 Usernames disponibbli:
 Isem tal-host tal-kompjuter:
-{0} [Settings tal-Messaġġi]
+{0}[ Settings tal-Messaġġi ]
 Kodiċi tas-sors:
 Copyright (c)
 Liċenzja

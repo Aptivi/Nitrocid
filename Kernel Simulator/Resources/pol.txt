@@ -214,7 +214,7 @@ Wszystko jest resetowane do normalnych ustawień.
 Jeden lub więcej kolorów jest nieprawidłowy.
 Kolory nie są dostępne. Włącz kolorową powłokę w konfiguracji jądra.
 Nie znaleziono wygaszacza ekranu {0}.
-{0} [Ustawienia jądra (działające na {1})]
+[ Ustawienia jądra (działające na {0}) ]
 Wersja jądra:
 Tryb debugowania:
 Kolorowa skorupa:
@@ -224,13 +224,13 @@ MOTD przy logowaniu:
 Czas / data w rogu:
 Sondowany sprzęt:
 Aktualny temat:
-[Ustawienia sprzętu] {0}
-{0} [Ustawienia użytkownika]
+[ Ustawienia sprzętu ] {0}
+{0}[ Ustawienia użytkownika ]
 Obecna nazwa użytkownika:
 Aktualna nazwa hosta:
 Dostępne nazwy użytkownika:
 Nazwa hosta komputera:
-{0} [Ustawienia wiadomości]
+{0}[ Ustawienia wiadomości ]
 Kod źródłowy:
 Prawo autorskie (c)
 Licencja

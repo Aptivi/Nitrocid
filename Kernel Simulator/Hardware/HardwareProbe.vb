@@ -31,13 +31,7 @@ Public Module HardwareProbe
 
         'We will probe hardware
         Try
-            If HardwareInfo Is Nothing Then
-                Wdbg("I", "HardwareInfo is Nothing.")
-                HardwareInfo = New Inxi
-            Else
-                Wdbg("I", "Cached hardware probe. HardwareInfo isn't Nothing.")
-                W(DoTranslation("Cached hardware probe. Showing information anyway...", currentLang), True, ColTypes.Neutral)
-            End If
+            HardwareInfo = New Inxi
         Catch ex As Exception
             Wdbg("E", "Failed to probe hardware: {0}", ex.Message)
             WStkTrc(ex)

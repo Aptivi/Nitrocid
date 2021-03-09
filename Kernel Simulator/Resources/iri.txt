@@ -214,7 +214,7 @@ Déantar gach rud a athshocrú go gnáthshocruithe.
 Tá ceann amháin nó níos mó de na dathanna neamhbhailí.
 Níl dathanna ar fáil. Cas ar bhlaosc daite i gcumraíocht an eithne.
 Ní bhfuarthas spárálaíscáileáin {0}.
-{0} [Socruithe eithne (Ag rith ar {1})]
+[ Socruithe eithne (Ag rith ar {0}) ]
 Leagan Eithne:
 Mód Dífhabhtaithe:
 Sliogán Daite:
@@ -224,13 +224,13 @@ MOTD ar Logáil Isteach:
 Am / Dáta ar an choirnéal:
 Crua-earraí faoi phromhadh:
 Téama reatha:
-[Socruithe crua-earraí] {0}
-{0} [Socruithe úsáideora]
+[ Socruithe crua-earraí ] {0}
+{0}[ Socruithe úsáideora ]
 Ainm úsáideora reatha:
 Ainm óstach reatha:
 Ainmneacha úsáideora atá ar fáil:
 Ainm óstach ríomhaire:
-{0} [Socruithe Teachtaireachtaí]
+{0}[ Socruithe Teachtaireachtaí ]
 Cód foinse:
 Cóipcheart (c)
 Ceadúnas
