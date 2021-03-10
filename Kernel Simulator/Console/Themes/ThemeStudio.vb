@@ -46,7 +46,7 @@ Module ThemeStudio
             W("9) " + DoTranslation("Command list color", currentLang) + ": [{0}] ", True, ColTypes.HelpCmd, SelectedCmdListColor)
             W("10) " + DoTranslation("Command definition color", currentLang) + ": [{0}] ", True, ColTypes.HelpCmd, SelectedCmdDefColor)
             W("11) " + DoTranslation("Stage color", currentLang) + ": [{0}] ", True, ColTypes.HelpCmd, SelectedStageColor)
-            W("12) " + DoTranslation("Error color", currentLang) + ": [{0}] " + vbNewLine, True, ColTypes.HelpCmd, SelectedErrorColor)
+            W("12) " + DoTranslation("Error color", currentLang) + ": [{0}] ", True, ColTypes.HelpCmd, SelectedErrorColor)
             W("13) " + DoTranslation("Warning color", currentLang) + ": [{0}] ", True, ColTypes.HelpCmd, SelectedWarningColor)
             W("14) " + DoTranslation("Option color", currentLang) + ": [{0}] " + vbNewLine, True, ColTypes.HelpCmd, SelectedOptionColor)
 
