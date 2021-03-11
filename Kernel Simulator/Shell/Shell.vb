@@ -34,7 +34,7 @@ Public Module Shell
                                             "reloadmods", "get", "put", "lsdbgdev", "disconndbgdev", "move", "copy", "search", "sumfile", "rdebug", "spellbee",
                                             "mathbee", "loteresp", "sshell", "bsynth", "shownotifs", "dismissnotif", "rexec", "calc", "update", "sumfiles",
                                             "lsmail", "echo", "choice", "beep", "input", "mkfile", "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather",
-                                            "fileinfo", "dirinfo", "chattr", "ping", "verify", "sftp", "mktheme"}
+                                            "fileinfo", "dirinfo", "chattr", "ping", "verify", "sftp", "mktheme", "hwinfo"}
     'Admin-Only commands
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "chpwd", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",

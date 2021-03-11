@@ -55,6 +55,7 @@ Public Module HelpSystem
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
                                                               {"get", DoTranslation("Downloads a file to current working directory", currentLang)},
                                                               {"help", DoTranslation("Help page", currentLang)},
+                                                              {"hwinfo", DoTranslation("Prints hardware information", currentLang)},
                                                               {"input", DoTranslation("Allows user to enter input", currentLang)},
                                                               {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
                                                               {"lockscreen", DoTranslation("Locks your screen with a password", currentLang)},
@@ -260,6 +261,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " get <URL> [username]", True, ColTypes.Neutral)
 
+        ElseIf command = "hwinfo" Then
+
+            W(DoTranslation("Usage:", currentLang) + " hwinfo: " + DoTranslation("Prints hardware information", currentLang), True, ColTypes.Neutral)
+
         ElseIf command = "input" Then
 
             W(DoTranslation("Usage:", currentLang) + " input <$variable> <question>", True, ColTypes.Neutral)
@@ -268,15 +273,6 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " list [oneDirectory]" + vbNewLine +
               "       list: " + DoTranslation("to get current directory.", currentLang), True, ColTypes.Neutral)
-
-        ElseIf command = "listdrives" Then
-
-            W(DoTranslation("Usage:", currentLang) + " listdrives: " + DoTranslation("Lists all probed drives.", currentLang), True, ColTypes.Neutral)
-
-        ElseIf command = "listparts" Then
-
-            W(DoTranslation("Usage:", currentLang) + " listparts <DriveNumber>" + vbNewLine +
-              "       listparts: " + DoTranslation("Lists all probed partitions on a specific drive (and all logical partitions on all drives).", currentLang), True, ColTypes.Neutral)
 
         ElseIf command = "loteresp" Then
 

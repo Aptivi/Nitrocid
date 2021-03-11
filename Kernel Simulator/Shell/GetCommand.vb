@@ -540,6 +540,53 @@ Public Module GetCommand
                     Done = True
                 End If
 #Enable Warning BC42104
+
+            ElseIf words(0) = "hwinfo" Then
+
+                'CPU information
+                W("- " + DoTranslation("CPU information:", currentLang), True, ColTypes.Neutral)
+                For Each Processor As String In HardwareInfo.Hardware.CPU.Keys
+                    W("  - " + DoTranslation("Processor name:", currentLang) + " {0}", True, ColTypes.Neutral, Processor)
+                    W("  - " + DoTranslation("Processor speed:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Speed)
+                    W("  - " + DoTranslation("Processor bits:", currentLang) + " {0}-bit", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Bits)
+                    W("  - " + DoTranslation("Processor rev:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).CPURev)
+                    W("  - " + DoTranslation("Processor topology:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Topology)
+                    W("  - " + DoTranslation("Processor type:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Type)
+                    W("  - " + DoTranslation("Processor milestone:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Milestone)
+                    W("  - " + DoTranslation("Processor BogoMips:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).CPUBogoMips)
+                    W("  - " + DoTranslation("Processor L2 cache size:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).L2)
+                    W("  - " + DoTranslation("Processor L3 cache size:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).L3)
+                    W("  - " + DoTranslation("Processor features:", currentLang) + " {0}", True, ColTypes.Neutral, Join(HardwareInfo.Hardware.CPU(Processor).Flags))
+                    Console.WriteLine()
+                Next
+
+                'HDD information
+                W("- " + DoTranslation("HDD information:", currentLang), True, ColTypes.Neutral)
+                For Each Drive As String In HardwareInfo.Hardware.HDD.Keys
+                    W("  - " + DoTranslation("Drive name:", currentLang) + " {0}", True, ColTypes.Neutral, Drive)
+                    W("  - " + DoTranslation("Drive model:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Model)
+                    W("  - " + DoTranslation("Drive vendor:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Vendor)
+                    W("  - " + DoTranslation("Drive speed:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Speed)
+                    W("  - " + DoTranslation("Drive size:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Size)
+                    W("  - " + DoTranslation("Drive serial:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Serial)
+                    W("  - " + DoTranslation("Drive ID:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).ID)
+                    W("  - " + DoTranslation("Drive partition count:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Partitions.Count)
+                    For PartitionIndex As Integer = 0 To HardwareInfo.Hardware.HDD(Drive).Partitions.Count - 1
+                        W("    - [{0}] " + DoTranslation("Partition ID:", currentLang) + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).ID)
+                        W("    - [{0}] " + DoTranslation("Partition filesystem:", currentLang) + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).FileSystem)
+                        W("    - [{0}] " + DoTranslation("Partition size:", currentLang) + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size)
+                        W("    - [{0}] " + DoTranslation("Partition used:", currentLang) + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Used)
+                    Next
+                    Console.WriteLine()
+                Next
+
+                'RAM information
+                W("- " + DoTranslation("RAM information:", currentLang), True, ColTypes.Neutral)
+                W("  - " + DoTranslation("RAM free:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.FreeMemory)
+                W("  - " + DoTranslation("RAM total:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.TotalMemory)
+                W("  - " + DoTranslation("RAM used:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.UsedMemory)
+                Console.WriteLine()
+
             ElseIf words(0) = "input" Then
 
                 If eqargs?.Count > 1 Then
@@ -1070,6 +1117,7 @@ Public Module GetCommand
                 'Hardware section
                 W(DoTranslation("[ Hardware settings ]{0}", currentLang), True, ColTypes.HelpCmd, vbNewLine)
                 ListDrivers()
+                W(DoTranslation("Use ""hwinfo"" for extended information about hardware.", currentLang), True, ColTypes.Neutral)
 
                 'User section
                 W(DoTranslation("{0}[ User settings ]", currentLang), True, ColTypes.HelpCmd, vbNewLine)
