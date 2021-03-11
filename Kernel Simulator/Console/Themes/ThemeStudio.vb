@@ -176,7 +176,7 @@ Module ThemeStudio
         Console.CursorVisible = False
         While Not ColorWheelExiting
             Console.Clear()
-            W(vbNewLine + DoTranslation("Select color using ""<-"" and ""->"" keys. Press ENTER to quit.", currentLang), True, ColTypes.Neutral)
+            W(vbNewLine + DoTranslation("Select color using ""<-"" and ""->"" keys. Press ENTER to quit. Press ""i"" to insert color number manually.", currentLang), True, ColTypes.Neutral)
             W(vbNewLine + " <", False, ColTypes.Gray)
             WriteWhereC(CurrentColor.ToString, (Console.CursorLeft + 30 - CurrentColor.ToString.Length) / 2, Console.CursorTop, CurrentColor)
             WriteWhere(">", Console.CursorLeft + 27, Console.CursorTop, ColTypes.Gray)
@@ -193,6 +193,14 @@ Module ThemeStudio
                     CurrentColor = 0
                 Else
                     CurrentColor += 1
+                End If
+            ElseIf ConsoleResponse.Key = ConsoleKey.I Then
+                WriteWhere(DoTranslation("Enter color number from 0 to 255:", currentLang) + " [{0}] ", 0, Console.WindowHeight - 2, ColTypes.Input, CInt(CurrentColor))
+                Dim ColorNum As String = Console.ReadLine
+                If IsNumeric(ColorNum) Then
+                    If ColorNum >= 0 And ColorNum <= 255 Then
+                        CurrentColor = ColorNum
+                    End If
                 End If
             ElseIf ConsoleResponse.Key = ConsoleKey.Enter Then
                 ColorWheelExiting = True
