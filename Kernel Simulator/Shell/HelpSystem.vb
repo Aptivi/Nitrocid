@@ -268,15 +268,6 @@ Public Module HelpSystem
             W(DoTranslation("Usage:", currentLang) + " list [oneDirectory]" + vbNewLine +
               "       list: " + DoTranslation("to get current directory.", currentLang), True, ColTypes.Neutral)
 
-        ElseIf command = "listdrives" Then
-
-            W(DoTranslation("Usage:", currentLang) + " listdrives: " + DoTranslation("Lists all probed drives.", currentLang), True, ColTypes.Neutral)
-
-        ElseIf command = "listparts" Then
-
-            W(DoTranslation("Usage:", currentLang) + " listparts <DriveNumber>" + vbNewLine +
-              "       listparts: " + DoTranslation("Lists all probed partitions on a specific drive (and all logical partitions on all drives).", currentLang), True, ColTypes.Neutral)
-
         ElseIf command = "loteresp" Then
 
             W(DoTranslation("Usage:", currentLang) + " loteresp: " + DoTranslation("Respond to love or hate comments.", currentLang), True, ColTypes.Neutral)
