@@ -359,6 +359,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Resources\Themes\NeonBreeze.json" />
+    <None Include="Resources\Themes\SolarizedDark.json" />
+    <None Include="Resources\Themes\SolarizedLight.json" />
     <None Include="Resources\Themes\YellowBG.json" />
     <None Include="Resources\Themes\YellowFG.json" />
   </ItemGroup>
@@ -379,6 +382,7 @@
     <None Include="Resources\Themes\RedConsole.json" />
     <None Include="Resources\Themes\TealerOS.json" />
     <None Include="Resources\Themes\Ubuntu.json" />
+    <None Include="Resources\Themes\TrafficLight.json" />
     <None Include="Resources\vtn.txt" />
     <None Include="Resources\arb-T.txt" />
     <None Include="Resources\arb.txt" />

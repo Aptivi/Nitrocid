@@ -313,4 +313,16 @@
   <data name="_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Default.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
+  <data name="NeonBreeze" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\NeonBreeze.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="SolarizedDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\SolarizedDark.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="SolarizedLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\SolarizedLight.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="TrafficLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\TrafficLight.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>

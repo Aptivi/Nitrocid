@@ -1,0 +1,16 @@
+{
+  "InputColor": "Magenta",
+  "LicenseColor": "Cyan",
+  "ContKernelErrorColor": "Magenta",
+  "UncontKernelErrorColor": "Magenta",
+  "HostNameShellColor": "Cyan",
+  "UserNameShellColor": "Cyan",
+  "BackgroundColor": "Grey23",
+  "NeutralTextColor": "Cyan",
+  "CmdListColor": "Magenta",
+  "CmdDefColor": "Cyan",
+  "StageColor": "Magenta",
+  "ErrorColor": "Magenta",
+  "WarningColor": "Magenta",
+  "OptionColor": "Cyan"
+}

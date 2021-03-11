@@ -1,0 +1,16 @@
+{
+  "InputColor": "DodgerBlue1",
+  "LicenseColor": "DeepPink4_af005f",
+  "ContKernelErrorColor": "DarkGoldenrod",
+  "UncontKernelErrorColor": "Red3",
+  "HostNameShellColor": "DodgerBlue1",
+  "UserNameShellColor": "LightSeaGreen",
+  "BackgroundColor": "Grey11",
+  "NeutralTextColor": "DodgerBlue1",
+  "CmdListColor": "DodgerBlue1",
+  "CmdDefColor": "LightSeaGreen",
+  "StageColor": "Chartreuse4",
+  "ErrorColor": "Red3",
+  "WarningColor": "DarkGoldenrod",
+  "OptionColor": "DodgerBlue1"
+}

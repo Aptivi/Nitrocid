@@ -62,6 +62,10 @@ Public Module Color
                                                                         {"Ubuntu", New ThemeInfo("Ubuntu")},
                                                                         {"YellowFG", New ThemeInfo("YellowFG")},
                                                                         {"YellowBG", New ThemeInfo("YellowBG")},
+                                                                        {"SolarizedDark", New ThemeInfo("SolarizedDark")},
+                                                                        {"SolarizedLight", New ThemeInfo("SolarizedLight")},
+                                                                        {"NeonBreeze", New ThemeInfo("NeonBreeze")},
+                                                                        {"TrafficLight", New ThemeInfo("TrafficLight")},
                                                                         {"Windows95", New ThemeInfo("Windows95")},
                                                                         {"GTASA", New ThemeInfo("GTASA")},
                                                                         {"GrayOnYellow", New ThemeInfo("GrayOnYellow")},
@@ -125,41 +129,13 @@ Public Module Color
             Dim ThemeInfo As ThemeInfo
             If theme = "Default" Then
                 ResetColors()
-            ElseIf theme = "RedConsole" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "Bluespire" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "Hacker" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "Ubuntu" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "YellowFG" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "YellowBG" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "Windows95" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "GTASA" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "GrayOnYellow" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "BlackOnWhite" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "Debian" Then
-                ThemeInfo = New ThemeInfo(theme)
             ElseIf theme = "NFSHP-Cop" Then
                 ThemeInfo = New ThemeInfo("NFSHP_Cop")
             ElseIf theme = "NFSHP-Racer" Then
                 ThemeInfo = New ThemeInfo("NFSHP_Racer")
-            ElseIf theme = "TealerOS" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "BedOS" Then
-                ThemeInfo = New ThemeInfo(theme)
             ElseIf theme = "3Y-Diamond" Then
                 ThemeInfo = New ThemeInfo("_3Y_Diamond")
-            ElseIf theme = "LinuxUncolored" Then
-                ThemeInfo = New ThemeInfo(theme)
-            ElseIf theme = "LinuxColoredDef" Then
+            Else
                 ThemeInfo = New ThemeInfo(theme)
             End If
 
