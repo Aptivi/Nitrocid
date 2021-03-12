@@ -42,19 +42,25 @@ Public Module HardwareProbe
             If HardwareInfo IsNot Nothing Then
                 'We are checking to see if any of the probers reported a failure starting with CPU
                 If HardwareInfo.Hardware.CPU Is Nothing Or (HardwareInfo.Hardware.CPU IsNot Nothing And HardwareInfo.Hardware.CPU.Count = 0) Then
-                    Wdbg("E", "CPU failed to probe.", KernelVersion)
+                    Wdbg("E", "CPU failed to probe.")
                     W(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
                 End If
 
                 'then RAM
                 If HardwareInfo.Hardware.RAM Is Nothing Then
-                    Wdbg("E", "RAM failed to probe.", KernelVersion)
+                    Wdbg("E", "RAM failed to probe.")
                     W(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
+                End If
+
+                'then GPU
+                If HardwareInfo.Hardware.GPU Is Nothing Then
+                    Wdbg("E", "GPU failed to probe.")
+                    W(DoTranslation("GPU: One or more of the graphics cards failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
                 End If
 
                 'and finally HDD
                 If HardwareInfo.Hardware.HDD Is Nothing Or (HardwareInfo.Hardware.HDD IsNot Nothing And HardwareInfo.Hardware.HDD.Count = 0) Then
-                    Wdbg("E", "HDD failed to probe.", KernelVersion)
+                    Wdbg("E", "HDD failed to probe.")
                     W(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
                 End If
 
@@ -86,8 +92,13 @@ Public Module HardwareProbe
         Next
         W(DoTranslation("CPU: Total number of processors: {0}", currentLang), True, ColTypes.Neutral, Environment.ProcessorCount)
 
-        'Print some info
+        'Print RAM info
         W(If(IsNumeric(HardwareInfo.Hardware.RAM.TotalMemory), "RAM: {0} MB", "RAM: {0}"), True, ColTypes.Neutral, If(IsNumeric(HardwareInfo.Hardware.RAM.TotalMemory), FormatNumber(HardwareInfo.Hardware.RAM.TotalMemory / 1024, 2), HardwareInfo.Hardware.RAM.TotalMemory))
+
+        'GPU info
+        For Each GPUInfo In HardwareInfo.Hardware.GPU.Keys
+            W("GPU: {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.GPU(GPUInfo).Name)
+        Next
 
         'Drive Info
         For Each driveinfo In HardwareInfo.Hardware.HDD.Keys

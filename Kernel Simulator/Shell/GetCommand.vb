@@ -580,6 +580,14 @@ Public Module GetCommand
                     Console.WriteLine()
                 Next
 
+                'GPU information
+                W(" - " + DoTranslation("GPU information:", currentLang), True, ColTypes.Neutral)
+                For Each GPU As String In HardwareInfo.Hardware.GPU.Keys
+                    W("  - " + DoTranslation("GPU name:", currentLang) + " {0}", True, ColTypes.Neutral, GPU)
+                    W("  - " + DoTranslation("GPU driver:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.GPU(GPU).Driver)
+                    W("  - " + DoTranslation("GPU version:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.GPU(GPU).DriverVersion)
+                Next
+
                 'RAM information
                 W("- " + DoTranslation("RAM information:", currentLang), True, ColTypes.Neutral)
                 W("  - " + DoTranslation("RAM free:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.FreeMemory)
