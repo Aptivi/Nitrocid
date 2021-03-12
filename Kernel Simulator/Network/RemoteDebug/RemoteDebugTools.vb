@@ -124,11 +124,14 @@ Public Module RemoteDebugTools
                 Dim BlockEntrySplit() As String = BlockEntry.Split(",")
                 AddToBlockList(BlockEntrySplit(0))
             Next
+            Return True
         Catch ex As Exception
             Wdbg("E", "Failed to populate block list: {0}", ex.Message)
             WStkTrc(ex)
         End Try
         Return False
     End Function
+
+
 
 End Module

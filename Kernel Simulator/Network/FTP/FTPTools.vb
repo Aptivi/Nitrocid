@@ -125,7 +125,7 @@ Public Module FTPTools
             W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine +
               "#, " + DoTranslation("Host Name, Username, Data Type, Encoding, Encryption, Protocols", currentLang), True, ColTypes.Neutral)
             For i As Integer = 1 To profiles.Count - 1
-                W($"{i}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection.ToString}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption.ToString}, {profiles(i).Protocols.ToString}", True, ColTypes.Neutral)
+                W($"{i}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption}, {profiles(i).Protocols}", True, ColTypes.Neutral)
             Next
             Dim profanswer As Char
             Dim profanswered As Boolean

@@ -420,6 +420,7 @@ Public Module KernelTools
             paths.AddIfNotFound("Users", Environ("HOME") + "/users.csv")
             paths.AddIfNotFound("FTPSpeedDial", Environ("HOME") + "/ftp_speeddial.csv")
             paths.AddIfNotFound("BlockedDevices", Environ("HOME") + "/blocked_devices.csv")
+            paths.AddIfNotFound("DebugDevNames", Environ("HOME") + "/DebugDeviceNames.json")
             paths.AddIfNotFound("Home", Environ("HOME"))
             paths.AddIfNotFound("Temp", "/tmp")
         Else
@@ -430,6 +431,7 @@ Public Module KernelTools
             paths.AddIfNotFound("Users", Environ("USERPROFILE").Replace("\", "/") + "/users.csv")
             paths.AddIfNotFound("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/ftp_speeddial.csv")
             paths.AddIfNotFound("BlockedDevices", Environ("USERPROFILE").Replace("\", "/") + "/blocked_devices.csv")
+            paths.AddIfNotFound("DebugDevNames", Environ("USERPROFILE") + "/DebugDeviceNames.json")
             paths.AddIfNotFound("Home", Environ("USERPROFILE").Replace("\", "/"))
             paths.AddIfNotFound("Temp", Environ("TEMP").Replace("\", "/"))
         End If
