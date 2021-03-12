@@ -50,6 +50,7 @@ Public Module ModExecutor
     ''' <param name="cmd">A mod command with arguments</param>
     Sub ExecuteModCommand(ByVal cmd As String)
         Dim parts As String() = cmd.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+        Dim args As String = ""
         Dim actualCmd As String = parts(0)
         Wdbg("I", "Command = {0}", actualCmd)
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
@@ -61,24 +62,15 @@ Public Module ModExecutor
         Next
         If cmd.StartsWith(parts(0) + " ") Then
             'These below will be executed if there are arguments
-            Dim args As String = cmd.Replace($"{parts(0)} ", "")
+            args = cmd.Replace($"{parts(0)} ", "")
             Wdbg("I", "Command {0} will be run with arguments: {1}", actualCmd, args)
-            For Each ModParts As String In scripts(actualCmd).Keys
-                If scripts(actualCmd)(ModParts).Cmd = parts(0) Then
-                    Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
-                    scripts(actualCmd)(ModParts).PerformCmd(args)
-                End If
-            Next
-        Else
-            'This will be executed if there are no arguments
-            Wdbg("I", "Command {0} will be run.", actualCmd)
-            For Each ModParts As String In scripts(actualCmd).Keys
-                If scripts(actualCmd)(ModParts).Cmd = parts(0) Then
-                    Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
-                    scripts(actualCmd)(ModParts).PerformCmd()
-                End If
-            Next
         End If
+        For Each ModParts As String In scripts(actualCmd).Keys
+            If scripts(actualCmd)(ModParts).Cmd = parts(0) Then
+                Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
+                scripts(actualCmd)(ModParts).PerformCmd(args)
+            End If
+        Next
         Wdbg("I", "Command executed successfully.")
     End Sub
 

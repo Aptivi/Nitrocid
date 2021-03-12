@@ -57,7 +57,7 @@ Public Module FTPGetCommand
                     If ArgsQ(0).StartsWith("ftp://") Or ArgsQ(0).StartsWith("ftps://") Or ArgsQ(0).StartsWith("ftpes://") Then
                         TryToConnect(ArgsQ(0))
                     Else
-                        TryToConnect($"ftps://{ArgsQ(0)}")
+                        TryToConnect($"ftp://{ArgsQ(0)}")
                     End If
                 Else
                     W(DoTranslation("Enter an FTP server.", currentLang), True, ColTypes.Neutral)
