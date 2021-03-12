@@ -19,7 +19,7 @@
 Imports System.IO
 
 Module RemoteDebugCmd
-    Public DebugCmds As String() = {"trace", "username", "help", "exit"}
+    Public DebugCmds As String() = {"trace", "username", "register", "help", "exit"}
 
     ''' <summary>
     ''' Client command parsing.
@@ -51,10 +51,22 @@ Module RemoteDebugCmd
             ElseIf CmdName = "username" Then
                 'Current username
                 SocketStreamWriter.WriteLine(signedinusrnm)
+            ElseIf CmdName = "register" Then
+                'Register to remote debugger so we can set device name
+                If String.IsNullOrWhiteSpace(GetDeviceProperty(Address, DeviceProperty.Name)) Then
+                    SetDeviceProperty(Address, DeviceProperty.Name, CmdArgs(0))
+                    'TODO: Uncomment line 59 and remove line 61 if fixed on Extensification.
+                    'dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
+                    SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(CmdArgs(0)))
+                    SocketStreamWriter.WriteLine(DoTranslation("You may need to restart your current session for changes to be applied.").FormatString(CmdArgs(0)))
+                Else
+                    SocketStreamWriter.WriteLine(DoTranslation("You're already registered."))
+                End If
             ElseIf CmdName = "help" Then
                 'Help command code
                 SocketStreamWriter.WriteLine("- /trace <TraceNumber>: " + DoTranslation("Shows last stack trace on exception", currentLang) + vbNewLine +
                                              "- /username: " + DoTranslation("Shows current username in the session", currentLang) + vbNewLine +
+                                             "- /register <name>: " + DoTranslation("Sets device username", currentLang) + vbNewLine +
                                              "- /exit: " + DoTranslation("Disconnects you from the debugger", currentLang))
             ElseIf CmdName = "exit" Then
                 'Exit command code

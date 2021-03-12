@@ -16,7 +16,24 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+Imports Newtonsoft.Json.Linq
+
 Public Module RemoteDebugTools
+
+    ''' <summary>
+    ''' Device property enumeration
+    ''' </summary>
+    Public Enum DeviceProperty
+        ''' <summary>
+        ''' Device name
+        ''' </summary>
+        Name
+        ''' <summary>
+        ''' Device chat history
+        ''' </summary>
+        ChatHistory
+    End Enum
 
     ''' <summary>
     ''' Disconnects a specified debug device
@@ -132,6 +149,74 @@ Public Module RemoteDebugTools
         Return False
     End Function
 
+    ''' <summary>
+    ''' Gets device property from device IP address
+    ''' </summary>
+    ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
+    ''' <param name="DeviceProperty">Device property</param>
+    ''' <returns>Device property if successful; nothing if unsuccessful.</returns>
+    Public Function GetDeviceProperty(ByVal DeviceIP As String, ByVal DeviceProperty As DeviceProperty) As Object
+        Dim DeviceNameToken As JObject = JObject.Parse(File.ReadAllText(paths("DebugDevNames")))
+        Dim DeviceProperties As JObject = TryCast(DeviceNameToken(DeviceIP), JObject)
+        If DeviceProperties IsNot Nothing Then
+            Select Case DeviceProperty
+                Case DeviceProperty.Name
+                    Return DeviceProperties.Property("Name").Value.ToString
+                Case DeviceProperty.ChatHistory
+                    Return DeviceProperties.Property("ChatHistory").Value.ToArray
+            End Select
+        Else
+            Throw New EventsAndExceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
+        End If
+        Return Nothing
+    End Function
 
+    ''' <summary>
+    ''' Sets device property from device IP address
+    ''' </summary>
+    ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
+    ''' <param name="DeviceProperty">Device property</param>
+    ''' <param name="Value">Value</param>
+    ''' <returns>True if successful; False if unsuccessful.</returns>
+    Public Function SetDeviceProperty(ByVal DeviceIP As String, ByVal DeviceProperty As DeviceProperty, ByVal Value As Object) As Boolean
+        Dim DeviceNameToken As JObject = JObject.Parse(File.ReadAllText(paths("DebugDevNames")))
+        Dim DeviceProperties As JObject = TryCast(DeviceNameToken(DeviceIP), JObject)
+        If DeviceProperties IsNot Nothing Then
+            Select Case DeviceProperty
+                Case DeviceProperty.Name
+                    DeviceProperties("Name") = JToken.FromObject(Value)
+                Case DeviceProperty.ChatHistory
+                    Dim ChatHistory As JArray = TryCast(DeviceProperties("ChatHistory"), JArray)
+                    ChatHistory.Add(Value)
+            End Select
+            File.WriteAllText(paths("DebugDevNames"), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
+            Return True
+        Else
+            Throw New EventsAndExceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
+            Return False
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Adds new device IP address to JSON
+    ''' </summary>
+    ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
+    ''' <param name="ThrowException">Optionally throw exception</param>
+    ''' <returns>True if successful; False if unsuccessful.</returns>
+    Public Function AddDeviceToJson(ByVal DeviceIP As String, Optional ThrowException As Boolean = True) As Boolean
+        If Not File.Exists(paths("DebugDevNames")) Then MakeFile(paths("DebugDevNames"))
+        Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
+        Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
+        If DeviceNameToken(DeviceIP) Is Nothing Then
+            Dim NewDevice As New JObject(New JProperty("Name", ""),
+                                         New JProperty("ChatHistory", New JArray()))
+            DeviceNameToken.Add(DeviceIP, NewDevice)
+            File.WriteAllText(paths("DebugDevNames"), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
+            Return True
+        Else
+            If ThrowException Then Throw New EventsAndExceptions.RemoteDebugDeviceAlreadyExistsException(DoTranslation("Device already exists."))
+            Return False
+        End If
+    End Function
 
 End Module

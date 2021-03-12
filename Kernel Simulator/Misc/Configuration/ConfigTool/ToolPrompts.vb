@@ -139,19 +139,18 @@ Public Module ToolPrompts
                     W("6) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(SFTPShellPromptStyle)))
                     W("7) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                 Case 5 'Network
-                    MaxOptions = 10
+                    MaxOptions = 9
                     W("*) " + DoTranslation("Network Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Debug Port", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DebugPort)))
-                    W("2) " + DoTranslation("Remote Debug Default Nick Prefix", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(RDebugDNP)))
-                    W("3) " + DoTranslation("Download Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DRetries)))
-                    W("4) " + DoTranslation("Upload Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(URetries)))
-                    W("5) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowProgress)))
-                    W("6) " + DoTranslation("Log FTP username", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPLoggerUsername)))
-                    W("7) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPLoggerIP)))
-                    W("8) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPFirstProfileOnly)))
-                    W("9) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowPreview)))
-                    W("10) " + DoTranslation("Record chat to debug log", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(RecordChatToDebugLog)))
+                    W("2) " + DoTranslation("Download Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DRetries)))
+                    W("3) " + DoTranslation("Upload Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(URetries)))
+                    W("4) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowProgress)))
+                    W("5) " + DoTranslation("Log FTP username", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPLoggerUsername)))
+                    W("6) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPLoggerIP)))
+                    W("7) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPFirstProfileOnly)))
+                    W("8) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowPreview)))
+                    W("9) " + DoTranslation("Record chat to debug log", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(RecordChatToDebugLog)))
                 Case 6 'Screensaver
                     MaxOptions = 31
                     W("*) " + DoTranslation("Screensaver Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -526,22 +525,17 @@ Public Module ToolPrompts
                             KeyVar = NameOf(DebugPort)
                             W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Debug Port", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port.", currentLang), True, ColTypes.Neutral)
-                        Case 2 'Remote Debug Default Nick Prefix
-                            KeyType = SettingsKeyType.SString
-                            KeyVar = NameOf(RDebugDNP)
-                            W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Remote Debug Default Nick Prefix", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("Write the default remote debug nickname prefix.", currentLang), True, ColTypes.Neutral)
-                        Case 3 'Download Retry Times
+                        Case 2 'Download Retry Times
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DRetries)
                             W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Download Retry Times", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how many times the ""get"" command should retry failed downloads. It must be numeric.", currentLang), True, ColTypes.Neutral)
-                        Case 4 'Upload Retry Times
+                        Case 3 'Upload Retry Times
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(URetries)
                             W("*) " + DoTranslation("Network Settings...", currentLang) + DoTranslation("Upload Retry Times", currentLang) + " > " + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how many times the ""put"" command should retry failed uploads. It must be numeric.", currentLang), True, ColTypes.Neutral)
-                        Case 5 'Show progress bar while downloading or uploading from "get" or "put" command
+                        Case 4 'Show progress bar while downloading or uploading from "get" or "put" command
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowProgress)
@@ -549,7 +543,7 @@ Public Module ToolPrompts
                             W(DoTranslation("If true, it makes ""get"" or ""put"" show the progress bar while downloading or uploading.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 6 'Log FTP username
+                        Case 5 'Log FTP username
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPLoggerUsername)
@@ -557,7 +551,7 @@ Public Module ToolPrompts
                             W(DoTranslation("Whether or not to log FTP username.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 7 'Log FTP IP address
+                        Case 6 'Log FTP IP address
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPLoggerIP)
@@ -565,7 +559,7 @@ Public Module ToolPrompts
                             W(DoTranslation("Whether or not to log FTP IP address.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 8 'Return only first FTP profile
+                        Case 7 'Return only first FTP profile
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPFirstProfileOnly)
@@ -573,7 +567,7 @@ Public Module ToolPrompts
                             W(DoTranslation("Pick the first profile only when connecting.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 9 'Show mail message preview
+                        Case 8 'Show mail message preview
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowPreview)
@@ -581,7 +575,7 @@ Public Module ToolPrompts
                             W(DoTranslation("When listing mail messages, show body preview.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 10 'Record chat to debug log
+                        Case 9 'Record chat to debug log
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(RecordChatToDebugLog)

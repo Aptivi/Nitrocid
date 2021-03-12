@@ -71,25 +71,33 @@ Module RemoteDebugger
                 Dim RDebugSWriter As StreamWriter
                 Dim RDebugClient As Socket
                 Dim RDebugIP As String
-                Dim RDebugRandomID As Integer
+                Dim RDebugEndpoint As String
                 Dim RDebugName As String
                 If DebugTCP.Pending Then
                     RDebugClient = DebugTCP.AcceptSocket
                     RDebugStream = New NetworkStream(RDebugClient)
                     RDebugSWriter = New StreamWriter(RDebugStream) With {.AutoFlush = True}
-                    RDebugIP = RDebugClient.RemoteEndPoint.ToString.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":"))
-                    RDebugRandomID = New Random(100000).Next(999999)
-                    RDebugName = RDebugDNP + CStr(RDebugRandomID)
+                    RDebugEndpoint = RDebugClient.RemoteEndPoint.ToString
+                    RDebugIP = RDebugEndpoint.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":"))
+                    AddDeviceToJson(RDebugIP, False)
+                    RDebugName = GetDeviceProperty(RDebugIP, DeviceProperty.Name)
+                    If String.IsNullOrEmpty(RDebugName) Then
+                        Wdbg("W", "Debug device {0} has no name. Prompting for name...", RDebugIP)
+                    End If
                     If RDebugBlocked.Contains(RDebugIP) Then
                         Wdbg("W", "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP)
                         RDebugClient.Disconnect(True)
                     Else
                         dbgConns.Add(RDebugSWriter, RDebugName)
                         DebugDevices.Add(RDebugClient, RDebugIP)
-                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version", currentLang) + " 0.4") 'Increment each minor/major change(s)
+                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version", currentLang) + " 0.5") 'Increment each minor/major change(s)
                         RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}.", currentLang), RDebugIP)
-                        RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}.", currentLang), RDebugName)
-                        Wdbg("I", "Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
+                        If String.IsNullOrEmpty(RDebugName) Then
+                            RDebugSWriter.WriteLine(DoTranslation(">> Welcome! This is your first time entering remote debug and chat. Use ""/register <name>"" to register.", currentLang) + " ", RDebugName)
+                        Else
+                            RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}.", currentLang), RDebugName)
+                        End If
+                        Wdbg("I", "Debug device ""{0}"" ({1}) connected.", RDebugName, RDebugIP)
                         RDebugSWriter.Flush()
                         EventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP)
                     End If
@@ -142,10 +150,13 @@ Module RemoteDebugger
                                 dbgConns.Keys(i - 1).WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list.", currentLang), cmd.Split(" ")(0))
                             End If
                         Else
-                            If RecordChatToDebugLog Then
-                                Wdbg("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
-                            Else
-                                WdbgDevicesOnly("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                            If Not String.IsNullOrEmpty(name) Then 'Prevent no-name people from chatting
+                                If RecordChatToDebugLog Then
+                                    Wdbg("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                                Else
+                                    WdbgDevicesOnly("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                                End If
+                                SetDeviceProperty(ip, DeviceProperty.ChatHistory, "[" + Render() + "] " + msg.Replace(vbNullChar, ""))
                             End If
                         End If
                     End If

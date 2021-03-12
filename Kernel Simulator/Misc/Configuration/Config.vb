@@ -88,7 +88,6 @@ Public Module Config
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Network",
                         New IniKey(ksconf, "Debug Port", DebugPort),
-                        New IniKey(ksconf, "Remote Debug Default Nick Prefix", RDebugDNP),
                         New IniKey(ksconf, "Download Retry Times", DRetries),
                         New IniKey(ksconf, "Upload Retry Times", URetries),
                         New IniKey(ksconf, "Show progress bar while downloading or uploading from ""get"" or ""put"" command", ShowProgress),
@@ -204,7 +203,6 @@ Public Module Config
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Network",
                         New IniKey(ksconf, "Debug Port", 3014),
-                        New IniKey(ksconf, "Remote Debug Default Nick Prefix", "KSUser"),
                         New IniKey(ksconf, "Download Retry Times", 3),
                         New IniKey(ksconf, "Upload Retry Times", 3),
                         New IniKey(ksconf, "Show progress bar while downloading or uploading from ""get"" or ""put"" command", "True"),
@@ -493,7 +491,6 @@ Public Module Config
             'Network Section
             Wdbg("I", "Parsing network section...")
             If Integer.TryParse(configReader.Sections("Network").Keys("Debug Port").Value, 0) Then DebugPort = configReader.Sections("Network").Keys("Debug Port").Value
-            RDebugDNP = configReader.Sections("Network").Keys("Remote Debug Default Nick Prefix").Value
             If Integer.TryParse(configReader.Sections("Network").Keys("Download Retry Times").Value, 0) Then DRetries = configReader.Sections("Network").Keys("Download Retry Times").Value
             If Integer.TryParse(configReader.Sections("Network").Keys("Upload Retry Times").Value, 0) Then URetries = configReader.Sections("Network").Keys("Upload Retry Times").Value
             ShowProgress = configReader.Sections("Network").Keys("Show progress bar while downloading or uploading from ""get"" or ""put"" command").Value
