@@ -298,7 +298,6 @@ Public Module Config
             'Network
             ksconf.Sections("Network").TrailingComment.Text = "This section is the network settings."
             ksconf.Sections("Network").Keys("Debug Port").TrailingComment.Text = "Specifies the remote debugger port."
-            ksconf.Sections("Network").Keys("Remote Debug Default Nick Prefix").TrailingComment.Text = "The name, which will be prepended to the random device ID."
             ksconf.Sections("Network").Keys("Download Retry Times").TrailingComment.Text = "How many times does the ""get"" command retry the download before assuming failure?"
             ksconf.Sections("Network").Keys("Upload Retry Times").TrailingComment.Text = "How many times does the ""put"" command retry the upload before assuming failure?"
             ksconf.Sections("Network").Keys("Show progress bar while downloading or uploading from ""get"" or ""put"" command").TrailingComment.Text = "If true, it makes ""get"" or ""put"" show the progress bar while downloading or uploading."

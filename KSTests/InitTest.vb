@@ -39,6 +39,7 @@ Imports KS
         If File.Exists(paths("Home") + "/Documents/Text.txt") Then File.Delete(paths("Home") + "/Documents/Text.txt")
         If File.Exists(paths("Home") + "/NewFile.txt") Then File.Delete(paths("Home") + "/NewFile.txt")
         If File.Exists(paths("Home") + "/1mb-test.csv") Then File.Delete(paths("Home") + "/1mb-test.csv")
+        If File.Exists(paths("Home") + "/DebugDeviceNames.json") Then File.Delete(paths("Home") + "/DebugDeviceNames.json")
         If Directory.Exists(paths("Home") + "/TestMovedDir2") Then Directory.Delete(paths("Home") + "/TestMovedDir2", True)
         If Directory.Exists(paths("Home") + "/NewDirectory") Then Directory.Delete(paths("Home") + "/NewDirectory", True)
         If Directory.Exists(paths("Home") + "/TestDir") Then Directory.Delete(paths("Home") + "/TestDir", True)

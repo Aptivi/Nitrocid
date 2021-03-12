@@ -37,4 +37,25 @@ Imports System.Net.NetworkInformation
         Assert.IsTrue(PingAddress("www.google.com").Status = IPStatus.Success, "Pinging failed.")
     End Sub
 
+    ''' <summary>
+    ''' Tests adding device to json
+    ''' </summary>
+    <TestMethod()> Public Sub TestAddDeviceToJson()
+        Assert.IsTrue(AddDeviceToJson("123.123.123.123"), "Adding device failed.")
+    End Sub
+
+    ''' <summary>
+    ''' Tests setting device property
+    ''' </summary>
+    <TestMethod()> Public Sub TestDeviceSetProperty()
+        Assert.IsTrue(SetDeviceProperty("123.123.123.123", DeviceProperty.Name, "TestUser"), "Setting device property failed.")
+    End Sub
+
+    ''' <summary>
+    ''' Tests getting device property
+    ''' </summary>
+    <TestMethod()> Public Sub TestGetDeviceProperty()
+        Assert.AreEqual("TestUser", GetDeviceProperty("123.123.123.123", DeviceProperty.Name), "Getting device property failed.")
+    End Sub
+
 End Class
