@@ -124,8 +124,8 @@ Public Module FTPTools
         If profiles.Count > 1 Then 'More than one profile
             W(DoTranslation("More than one profile found. Select one:", currentLang) + vbNewLine +
               "#, " + DoTranslation("Host Name, Username, Data Type, Encoding, Encryption, Protocols", currentLang), True, ColTypes.Neutral)
-            For i As Integer = 1 To profiles.Count - 1
-                W($"{i}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection.ToString}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption.ToString}, {profiles(i).Protocols.ToString}", True, ColTypes.Neutral)
+            For i As Integer = 0 To profiles.Count - 1
+                W($"{i + 1}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection.ToString}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption.ToString}, {profiles(i).Protocols.ToString}", True, ColTypes.Neutral)
             Next
             Dim profanswer As Char
             Dim profanswered As Boolean
@@ -135,7 +135,7 @@ Public Module FTPTools
                 If IsNumeric(profanswer) Then
                     Try
                         Wdbg("I", "Profile selected")
-                        profsel = profiles(Val(profanswer))
+                        profsel = profiles(Val(profanswer) - 1)
                         profanswered = True
                     Catch ex As Exception
                         Wdbg("I", "Profile invalid")
