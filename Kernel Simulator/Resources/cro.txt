@@ -958,3 +958,4 @@ Snima chat za uklanjanje pogrešaka u dnevnik pogrešaka.
 Kašnjenje u milisekundama
 Koliko milisekundi treba pričekati prije sljedećeg pisanja?
 Omogućuje vam upotrebu SSH FTP poslužitelja
+Nema pomoći za naredbu "{0}".

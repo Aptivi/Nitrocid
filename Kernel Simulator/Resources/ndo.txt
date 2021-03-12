@@ -958,3 +958,4 @@ Merekam obrolan debug jarak jauh ke log debug.
 Penundaan dalam Milidetik
 Berapa milidetik untuk menunggu sebelum membuat tulisan berikutnya?
 Memungkinkan Anda menggunakan server FTP SSH
+Tidak ada bantuan untuk perintah "{0}".

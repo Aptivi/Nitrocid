@@ -958,3 +958,4 @@ Nagtala ng malayuang debug chat sa pag-log ng pag-debug.
 Pagkaantala sa Milliseconds
 Ilang milliseconds ang maghihintay bago gawin ang susunod na pagsulat?
 Hinahayaan kang gumamit ng isang SSH FTP server
+Walang tulong para sa utos na "{0}".

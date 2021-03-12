@@ -958,3 +958,4 @@ phā'ila sanrakṣaṇa karē
 Milisēkēnḍē bilamba
 parabartī lēkhāra āgē kata milisēkēnḍa apēkṣā karatē habē?
 Āpanākē ēkaṭi ēsa'ēsa'ē'ica ēphaṭipi sārbhāra byabahāra karatē dēẏa
+"{0}" Kamānḍēra jan'ya kōna'ō sahāẏatā nē'i.

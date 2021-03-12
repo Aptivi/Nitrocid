@@ -958,3 +958,4 @@ rimōtodebagguchatto o debaggurogu ni kiroku shimasu.
 Miri byō tan'i no chien
 ji no kakikomi o okonau made ni nan-miri byō taiki shimasu ka?
 SSH FTP sābā o shiyō dekimasu
+Komando "{0}" no herupu wa arimasen.

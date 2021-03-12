@@ -958,3 +958,4 @@ rikord doorasth deebag chait deebag log karane ke lie.
 mileesekand mein deree
 agala lekhan karane se pahale kitane mileesekand tak prateeksha karanee hogee?
 aapako ssh ftp sarvar ka upayog karane deta hai
+"{0}" kamaand ke lie koee sahaayata nahin।

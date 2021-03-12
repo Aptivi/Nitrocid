@@ -958,3 +958,4 @@ Zaznamenává vzdálený ladicí chat do protokolu ladění.
 Zpoždění v milisekundách
 Kolik milisekund čekat před dalším zápisem?
 Umožňuje použít server SSH FTP
+Žádná nápověda pro příkaz „{0}“.

@@ -958,3 +958,4 @@ Optager ekstern debug-chat til debug-log.
 Forsinkelse i millisekunder
 Hvor mange millisekunder skal du vente, før du skriver næste gang?
 Giver dig mulighed for at bruge en SSH FTP-server
+Ingen hjælp til kommandoen "{0}".

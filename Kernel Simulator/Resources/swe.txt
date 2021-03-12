@@ -958,3 +958,4 @@ Registrerar fjärrfelsökningschatt till felsökningslogg.
 Fördröjning i millisekunder
 Hur många millisekunder väntar du innan du skriver nästa gång?
 Låter dig använda en SSH FTP-server
+Ingen hjälp för kommandot "{0}".
