@@ -958,3 +958,4 @@ Registreert debug-chat op afstand in het debug-logboek
 Vertraging in milliseconden
 Hoeveel milliseconden moet ik wachten voordat ik de volgende keer schrijf?
 Hiermee kunt u een SSH FTP-server gebruiken
+Geen hulp voor commando "{0}".

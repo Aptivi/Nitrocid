@@ -958,3 +958,4 @@ Enregistra el xat de depuració remota al registre de depuració.
 Retard en mil·lisegons
 Quants mil·lisegons cal esperar abans de fer la següent escriptura?
 Us permet utilitzar un servidor FTP SSH
+No hi ha ajuda per a l'ordre "{0}".

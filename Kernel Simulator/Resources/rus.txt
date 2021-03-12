@@ -958,3 +958,4 @@ Zapisyvayet udalennyy chat otladki v zhurnal otladki.
 Zaderzhka v millisekundakh
 Skol'ko millisekund zhdat' pered sleduyushchey zapis'yu?
 Pozvolyayet ispol'zovat' SSH FTP-server
+Net pomoshchi dlya komandy "{0}".

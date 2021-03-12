@@ -958,3 +958,4 @@ Günlükdən çıxmaq üçün uzaqdan çıxan sohbəti qeyd edir.
 Milisaniyədə gecikmə
 Növbəti yazmadan əvvəl neçə milisaniyə gözləmək lazımdır?
 SSH FTP serverindən istifadə etməyə imkan verir
+"{0}" əmri üçün kömək yoxdur.

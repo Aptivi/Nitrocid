@@ -958,3 +958,4 @@ Irrekordja remug debug chat biex jiddibaggja log.
 Dewmien f'millisekondi
 Kemm millisekondi tistenna qabel ma tagħmel il-kitba li jmiss?
 Ihallik tuża server FTP SSH
+L-ebda għajnuna għall-kmand "{0}".

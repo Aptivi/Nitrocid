@@ -958,3 +958,4 @@ Grava o bate-papo de depuração remota no log de depuração.
 Atraso em Milissegundos
 Quantos milissegundos esperar antes de fazer a próxima gravação?
 Permite usar um servidor SSH FTP
+Sem ajuda para o comando "{0}".

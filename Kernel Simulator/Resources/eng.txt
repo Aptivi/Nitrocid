@@ -958,3 +958,4 @@ Records remote debug chat to debug log.
 Delay in Milliseconds
 How many milliseconds to wait before making the next write?
 Lets you use an SSH FTP server
+No help for command "{0}".

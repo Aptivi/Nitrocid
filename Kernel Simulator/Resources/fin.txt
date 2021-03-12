@@ -958,3 +958,4 @@ Tallentaa virheenkorjauskeskustelun virheenkorjauslokiin.
 Viive millisekunneissa
 Kuinka monta millisekuntia odottaa ennen seuraavan kirjoituksen kirjoittamista?
 Voit käyttää SSH FTP -palvelinta
+Ei apua komennolle "{0}".

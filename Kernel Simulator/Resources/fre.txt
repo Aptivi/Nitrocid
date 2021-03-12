@@ -958,3 +958,4 @@ Enregistre la discussion de débogage à distance dans le journal de débogage.
 Retard en millisecondes
 Combien de millisecondes attendre avant de faire la prochaine écriture?
 Vous permet d'utiliser un serveur FTP SSH
+Aucune aide pour la commande "{0}".

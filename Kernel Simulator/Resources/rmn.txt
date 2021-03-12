@@ -958,3 +958,4 @@ Salvează fișierul
 Întârziere în milisecunde
 Câte milisecunde trebuie să aștepți înainte de a scrie următoarea scriere?
 Vă permite să utilizați un server FTP SSH
+Fără ajutor pentru comanda „{0}”.

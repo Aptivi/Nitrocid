@@ -958,3 +958,4 @@ Registra la chat di debug remota nel registro di debug.
 Ritardo in millisecondi
 Quanti millisecondi attendere prima di effettuare la successiva scrittura?
 Consente di utilizzare un server FTP SSH
+Nessun aiuto per il comando "{0}".
