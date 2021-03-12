@@ -32,7 +32,8 @@ Public Module Translate
     ''' <param name="text">Any string that exists in Kernel Simulator's translation files</param>
     ''' <param name="lang">3 letter language</param>
     ''' <returns>Translated string</returns>
-    Public Function DoTranslation(ByVal text As String, Optional ByVal lang As String = "eng") As String
+    Public Function DoTranslation(ByVal text As String, ByVal lang As String) As String
+        If String.IsNullOrWhiteSpace(lang) Then lang = "eng"
         'Get language string and translate
         Dim translatedString As Dictionary(Of String, String)
 
@@ -58,6 +59,15 @@ Public Module Translate
             Wdbg("E", "{0} isn't in language list", lang)
             Return text
         End If
+    End Function
+
+    ''' <summary>
+    ''' Translates string into current kernel language.
+    ''' </summary>
+    ''' <param name="text">Any string that exists in Kernel Simulator's translation files</param>
+    ''' <returns>Translated string</returns>
+    Public Function DoTranslation(ByVal text As String) As String
+        Return DoTranslation(text, currentLang)
     End Function
 
     ''' <summary>
