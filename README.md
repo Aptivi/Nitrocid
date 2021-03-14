@@ -8,6 +8,8 @@ Kernel Simulator simulates the future of our planned kernel that's coming as soo
 
 Not only it has some basic commands, but it also provides script support, network support, and tons of awesome things.
 
+WARNING: 0.0.16.x or later is not backwards-compatible with 0.0.15.x or below.
+
 ## Build Status
 
 Here are all the CI build status for all KS branches.
