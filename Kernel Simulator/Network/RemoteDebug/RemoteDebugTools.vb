@@ -30,6 +30,10 @@ Public Module RemoteDebugTools
         ''' </summary>
         Name
         ''' <summary>
+        ''' Is the device blocked?
+        ''' </summary>
+        Blocked
+        ''' <summary>
         ''' Device chat history
         ''' </summary>
         ChatHistory
@@ -67,16 +71,15 @@ Public Module RemoteDebugTools
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Public Function AddToBlockList(ByVal IP As String) As Boolean
         Try
-            Dim BlockedDevices As List(Of String) = IO.File.ReadAllLines(paths("BlockedDevices")).ToList
-            Wdbg("I", "Blocked devices count: {0}", BlockedDevices.Count)
-            If Not BlockedDevices.Contains(IP) Then
+            Dim BlockedDevices() As String = ListDevices()
+            Wdbg("I", "Devices count: {0}", BlockedDevices.Count)
+            If BlockedDevices.Contains(IP) And Not GetDeviceProperty(IP, DeviceProperty.Blocked) Then
                 Wdbg("I", "Device {0} will be blocked...", IP)
                 DisconnectDbgDev(IP)
-                BlockedDevices.Add(IP)
+                SetDeviceProperty(IP, DeviceProperty.Blocked, True)
                 RDebugBlocked.Add(IP)
-                IO.File.WriteAllLines(paths("BlockedDevices"), BlockedDevices)
                 Return True
-            Else
+            ElseIf BlockedDevices.Contains(IP) And GetDeviceProperty(IP, DeviceProperty.Blocked) Then
                 Wdbg("W", "Trying to add an already-blocked device {0}. Adding to list...", IP)
                 If Not RDebugBlocked.Contains(IP) Then
                     DisconnectDbgDev(IP)
@@ -101,26 +104,16 @@ Public Module RemoteDebugTools
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Public Function RemoveFromBlockList(ByVal IP As String) As Boolean
         Try
-            Dim BlockedDevices As List(Of String) = IO.File.ReadAllLines(paths("BlockedDevices")).ToList
-            Wdbg("I", "Blocked devices count: {0}", BlockedDevices.Count)
+            Dim BlockedDevices() As String = ListDevices()
+            Wdbg("I", "Devices count: {0}", BlockedDevices.Count)
             If BlockedDevices.Contains(IP) Then
                 Wdbg("I", "Device {0} found.", IP)
-                For BlockedDeviceNum As Integer = 0 To BlockedDevices.Count - 1
-                    Dim BlockedDevice As String = BlockedDevices(BlockedDeviceNum)
-                    If BlockedDevice.StartsWith(IP) Then
-                        Wdbg("I", "Removing device {0} from block list...", IP)
-                        BlockedDevices.Remove(BlockedDevice)
-                        RDebugBlocked.Remove(BlockedDevice)
-                    End If
-                Next
-                IO.File.WriteAllLines(paths("BlockedDevices"), BlockedDevices)
-                Return True
+                RDebugBlocked.Remove(IP)
+                Return SetDeviceProperty(IP, DeviceProperty.Blocked, False)
             Else
                 Wdbg("W", "Trying to remove an already-unblocked device {0}. Removing from list...", IP)
                 Return RDebugBlocked.Remove(IP)
             End If
-            Wdbg("E", "Device {0} not found.", IP)
-            Return False
         Catch ex As Exception
             Wdbg("E", "Failed to remove device from block list: {0}", ex.Message)
             WStkTrc(ex)
@@ -134,12 +127,10 @@ Public Module RemoteDebugTools
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Function PopulateBlockedDevices() As Boolean
         Try
-            If Not IO.File.Exists(paths("BlockedDevices")) Then MakeFile(paths("BlockedDevices"))
-            Dim BlockEntries() As String = IO.File.ReadAllLines(paths("BlockedDevices"))
-            Wdbg("I", "Blocked devices count: {0}", BlockEntries.Count)
+            Dim BlockEntries() As String = ListDevices()
+            Wdbg("I", "Devices count: {0}", BlockEntries.Count)
             For Each BlockEntry As String In BlockEntries
-                Dim BlockEntrySplit() As String = BlockEntry.Split(",")
-                AddToBlockList(BlockEntrySplit(0))
+                If GetDeviceProperty(BlockEntry, DeviceProperty.Blocked) Then AddToBlockList(BlockEntry)
             Next
             Return True
         Catch ex As Exception
@@ -162,6 +153,8 @@ Public Module RemoteDebugTools
             Select Case DeviceProperty
                 Case DeviceProperty.Name
                     Return DeviceProperties.Property("Name").Value.ToString
+                Case DeviceProperty.Blocked
+                    Return DeviceProperties.Property("Blocked").Value
                 Case DeviceProperty.ChatHistory
                     Return DeviceProperties.Property("ChatHistory").Value.ToArray
             End Select
@@ -185,6 +178,8 @@ Public Module RemoteDebugTools
             Select Case DeviceProperty
                 Case DeviceProperty.Name
                     DeviceProperties("Name") = JToken.FromObject(Value)
+                Case DeviceProperty.Blocked
+                    DeviceProperties("Blocked") = JToken.FromObject(Value)
                 Case DeviceProperty.ChatHistory
                     Dim ChatHistory As JArray = TryCast(DeviceProperties("ChatHistory"), JArray)
                     ChatHistory.Add(Value)
@@ -209,6 +204,7 @@ Public Module RemoteDebugTools
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         If DeviceNameToken(DeviceIP) Is Nothing Then
             Dim NewDevice As New JObject(New JProperty("Name", ""),
+                                         New JProperty("Blocked", False),
                                          New JProperty("ChatHistory", New JArray()))
             DeviceNameToken.Add(DeviceIP, NewDevice)
             File.WriteAllText(paths("DebugDevNames"), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
@@ -217,6 +213,16 @@ Public Module RemoteDebugTools
             If ThrowException Then Throw New EventsAndExceptions.RemoteDebugDeviceAlreadyExistsException(DoTranslation("Device already exists."))
             Return False
         End If
+    End Function
+
+    ''' <summary>
+    ''' Lists all devices and puts them into an array
+    ''' </summary>
+    Public Function ListDevices() As String()
+        If Not File.Exists(paths("DebugDevNames")) Then MakeFile(paths("DebugDevNames"))
+        Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
+        Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
+        Return DeviceNameToken.Properties.Select(Function(p) p.Name).ToArray
     End Function
 
 End Module
