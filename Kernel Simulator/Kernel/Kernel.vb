@@ -163,14 +163,14 @@ Public Module Kernel
     ''' <summary>
     ''' Is this system a Windows system?
     ''' </summary>
-    Function IsOnWindows()
+    Public Function IsOnWindows()
         Return Environment.OSVersion.Platform = PlatformID.Win32NT
     End Function
 
     ''' <summary>
     ''' Is this system a Unix system?
     ''' </summary>
-    Function IsOnUnix()
+    Public Function IsOnUnix()
         Return Environment.OSVersion.Platform = PlatformID.Unix
     End Function
 

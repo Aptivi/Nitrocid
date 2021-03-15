@@ -429,7 +429,7 @@ Public Module KernelTools
             paths.AddIfNotFound("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/aliases.csv")
             paths.AddIfNotFound("Users", Environ("USERPROFILE").Replace("\", "/") + "/users.csv")
             paths.AddIfNotFound("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/ftp_speeddial.csv")
-            paths.AddIfNotFound("DebugDevNames", Environ("USERPROFILE") + "/DebugDeviceNames.json")
+            paths.AddIfNotFound("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
             paths.AddIfNotFound("Home", Environ("USERPROFILE").Replace("\", "/"))
             paths.AddIfNotFound("Temp", Environ("TEMP").Replace("\", "/"))
         End If
