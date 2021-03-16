@@ -104,9 +104,6 @@
     <Content Include="TestAliases.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestConfig.ini">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="TestSynth.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
