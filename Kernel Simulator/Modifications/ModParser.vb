@@ -66,12 +66,12 @@ Public Module ModParser
         ''' <summary>
         ''' Code executed when initializing events
         ''' </summary>
-        ''' <param name="ev">Event name. Look it up on <see cref="EventsAndExceptions"/></param>
+        ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>
         Sub InitEvents(ByVal ev As String)
         ''' <summary>
         ''' Code executed when initializing events
         ''' </summary>
-        ''' <param name="ev">Event name. Look it up on <see cref="EventsAndExceptions"/></param>
+        ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>
         ''' <param name="Args">Arguments.</param>
         Sub InitEvents(ByVal ev As String, ParamArray Args() As Object)
     End Interface
