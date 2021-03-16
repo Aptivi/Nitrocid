@@ -75,17 +75,8 @@ Public Module FTPTools
                     .Host = FtpHost,
                     .Port = FtpPort,
                     .RetryAttempts = 3,
-                    .EncryptionMode = FtpEncryptionMode.Explicit
+                    .EncryptionMode = FtpEncryptionMode.Auto
                 }
-
-                'Get encryption type from address
-                If address.StartsWith("ftp://") Then
-                    ClientFTP.EncryptionMode = FtpEncryptionMode.None
-                ElseIf address.StartsWith("ftps://") Then
-                    ClientFTP.EncryptionMode = FtpEncryptionMode.Implicit
-                ElseIf address.StartsWith("ftpes://") Then
-                    ClientFTP.EncryptionMode = FtpEncryptionMode.Explicit
-                End If
 
                 'Add handler for SSL validation
                 AddHandler ClientFTP.ValidateCertificate, New FtpSslValidation(AddressOf TryToValidate)
