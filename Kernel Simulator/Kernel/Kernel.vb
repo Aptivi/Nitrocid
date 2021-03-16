@@ -24,7 +24,7 @@ Public Module Kernel
     Public BootArgs() As String
     Public configReader As New IniFile()
     Public MOTDMessage, HName, MAL As String
-    Public EventManager As New EventsAndExceptions
+    Public EventManager As New Events
     Public DefConsoleOut As TextWriter
     Public ScrnTimeout As Integer = 300000
     Public ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Milestone 1"

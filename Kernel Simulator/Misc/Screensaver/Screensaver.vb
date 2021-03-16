@@ -322,7 +322,7 @@ Public Module Screensaver
             ScrnSvrdb(saver) = setDef
         Else
             Wdbg("W", "{0} is not found.", saver)
-            Throw New EventsAndExceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again.", currentLang).FormatString(saver))
+            Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again.", currentLang).FormatString(saver))
         End If
     End Sub
 

@@ -211,23 +211,23 @@ Public Module AliasManager
     ''' <param name="Destination">A one-word ccommand to alias to.</param>
     ''' <param name="Type">Alias type, whether it be shell or remote debug.</param>
     ''' <returns>True if successful, False if unsuccessful.</returns>
-    ''' <exception cref="EventsAndExceptions.AliasInvalidOperationException"></exception>
-    ''' <exception cref="EventsAndExceptions.AliasNoSuchCommandException"></exception>
-    ''' <exception cref="EventsAndExceptions.AliasAlreadyExistsException"></exception>
-    ''' <exception cref="EventsAndExceptions.AliasNoSuchTypeException"></exception>
+    ''' <exception cref="Exceptions.AliasInvalidOperationException"></exception>
+    ''' <exception cref="Exceptions.AliasNoSuchCommandException"></exception>
+    ''' <exception cref="Exceptions.AliasAlreadyExistsException"></exception>
+    ''' <exception cref="Exceptions.AliasNoSuchTypeException"></exception>
     Public Function AddAlias(ByVal SourceAlias As String, ByVal Destination As String, ByVal Type As AliasType) As Boolean
         If Type = AliasType.RDebug Or Type = AliasType.Shell Or Type = AliasType.FTPShell Or Type = AliasType.SFTPShell Or Type = AliasType.MailShell Then
             If SourceAlias = Destination Then
                 Wdbg("I", "Assertion succeeded: {0} = {1}", SourceAlias, Destination)
-                Throw New EventsAndExceptions.AliasInvalidOperationException(DoTranslation("Alias can't be the same name as a command.", currentLang))
+                Throw New Exceptions.AliasInvalidOperationException(DoTranslation("Alias can't be the same name as a command.", currentLang))
             ElseIf Not availableCommands.Contains(Destination) And Not DebugCmds.Contains(Destination) And Not availsftpcmds.Contains(Destination) And
                    Not availftpcmds.Contains(Destination) And Not Mail_AvailableCommands.Contains(Destination) Then
                 Wdbg("W", "{0} not found in either list of availableCmds, Mail_AvailableCommands, availftpcmds, availsftpcmds, or DebugCmds", Destination)
-                Throw New EventsAndExceptions.AliasNoSuchCommandException(DoTranslation("Command not found to alias to {0}.", currentLang).FormatString(Destination))
+                Throw New Exceptions.AliasNoSuchCommandException(DoTranslation("Command not found to alias to {0}.", currentLang).FormatString(Destination))
             ElseIf Aliases.ContainsKey(SourceAlias) Or RemoteDebugAliases.ContainsKey(SourceAlias) Or FTPShellAliases.ContainsKey(SourceAlias) Or
                    SFTPShellAliases.ContainsKey(SourceAlias) Or MailShellAliases.ContainsKey(SourceAlias) Then
                 Wdbg("W", "Alias {0} already found", SourceAlias)
-                Throw New EventsAndExceptions.AliasAlreadyExistsException(DoTranslation("Alias already found: {0}", currentLang).FormatString(SourceAlias))
+                Throw New Exceptions.AliasAlreadyExistsException(DoTranslation("Alias already found: {0}", currentLang).FormatString(SourceAlias))
             Else
                 Wdbg("W", "Aliasing {0} to {1}", SourceAlias, Destination)
                 If Type = AliasType.Shell Then
@@ -245,7 +245,7 @@ Public Module AliasManager
             End If
         Else
             Wdbg("E", "Type {0} not found.", Type)
-            Throw New EventsAndExceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.", currentLang).FormatString(Type))
+            Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.", currentLang).FormatString(Type))
         End If
         Return False
     End Function
@@ -256,8 +256,8 @@ Public Module AliasManager
     ''' <param name="TargetAlias">An alias that needs to be removed.</param>
     ''' <param name="Type">Alias type, whether it be shell or remote debug.</param>
     ''' <returns>True if successful, False if unsuccessful.</returns>
-    ''' <exception cref="EventsAndExceptions.AliasNoSuchAliasException"></exception>
-    ''' <exception cref="EventsAndExceptions.AliasNoSuchTypeException"></exception>
+    ''' <exception cref="Exceptions.AliasNoSuchAliasException"></exception>
+    ''' <exception cref="Exceptions.AliasNoSuchTypeException"></exception>
     Public Function RemoveAlias(ByVal TargetAlias As String, ByVal Type As AliasType) As Boolean
         If Type = AliasType.RDebug Then
             If RemoteDebugAliases.ContainsKey(TargetAlias) Then
@@ -267,7 +267,7 @@ Public Module AliasManager
                 Return True
             Else
                 Wdbg("W", "{0} is not found in remote debug aliases", TargetAlias)
-                Throw New EventsAndExceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
             End If
         ElseIf Type = AliasType.Shell Then
             If Aliases.ContainsKey(TargetAlias) Then
@@ -277,7 +277,7 @@ Public Module AliasManager
                 Return True
             Else
                 Wdbg("W", "{0} is not found in shell aliases", TargetAlias)
-                Throw New EventsAndExceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
             End If
         ElseIf Type = AliasType.FTPShell Then
             If FTPShellAliases.ContainsKey(TargetAlias) Then
@@ -287,7 +287,7 @@ Public Module AliasManager
                 Return True
             Else
                 Wdbg("W", "{0} is not found in FTP shell aliases", TargetAlias)
-                Throw New EventsAndExceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
             End If
         ElseIf Type = AliasType.SFTPShell Then
             If SFTPShellAliases.ContainsKey(TargetAlias) Then
@@ -297,7 +297,7 @@ Public Module AliasManager
                 Return True
             Else
                 Wdbg("W", "{0} is not found in SFTP shell aliases", TargetAlias)
-                Throw New EventsAndExceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
             End If
         ElseIf Type = AliasType.MailShell Then
             If MailShellAliases.ContainsKey(TargetAlias) Then
@@ -307,11 +307,11 @@ Public Module AliasManager
                 Return True
             Else
                 Wdbg("W", "{0} is not found in mail shell aliases", TargetAlias)
-                Throw New EventsAndExceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
             End If
         Else
             Wdbg("E", "Type {0} not found.", Type)
-            Throw New EventsAndExceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.", currentLang).FormatString(Type))
+            Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.", currentLang).FormatString(Type))
         End If
         Return False
     End Function

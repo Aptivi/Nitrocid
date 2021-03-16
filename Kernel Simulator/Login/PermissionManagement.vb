@@ -83,7 +83,7 @@ Public Module PermissionManagement
     ''' <param name="PermType">Whether it be Admin or Disabled</param>
     ''' <param name="Username">A username to be managed</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.PermissionManagementException"></exception>
+    ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function AddPermission(ByVal PermType As PermissionType, ByVal Username As String)
         'Open users.csv file
         Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
@@ -106,12 +106,12 @@ Public Module PermissionManagement
                 Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
             Else
                 Wdbg("W", "Type is invalid")
-                Throw New EventsAndExceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}", currentLang).FormatString(PermType))
+                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}", currentLang).FormatString(PermType))
                 Return False
             End If
         Else
             Wdbg("W", "User {0} not found on list", Username)
-            Throw New EventsAndExceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid user {0}", currentLang).FormatString(Username))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid user {0}", currentLang).FormatString(Username))
             Return False
         End If
 
@@ -134,7 +134,7 @@ Public Module PermissionManagement
     ''' <param name="PermType">Whether it be Admin or Disabled</param>
     ''' <param name="Username">A username to be managed</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.PermissionManagementException"></exception>
+    ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function RemovePermission(ByVal PermType As PermissionType, ByVal Username As String)
         'Open users.csv file
         Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
@@ -157,15 +157,15 @@ Public Module PermissionManagement
                 disabledList(Username) = False
             Else
                 Wdbg("W", "Type is invalid")
-                Throw New EventsAndExceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}", currentLang).FormatString(PermType))
+                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}", currentLang).FormatString(PermType))
                 Return False
             End If
         ElseIf Username = signedinusrnm Then
-            Throw New EventsAndExceptions.PermissionManagementException(DoTranslation("You are already logged in.", currentLang))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("You are already logged in.", currentLang))
             Return False
         Else
             Wdbg("W", "User {0} not found on list", Username)
-            Throw New EventsAndExceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid user {0}", currentLang).FormatString(Username))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid user {0}", currentLang).FormatString(Username))
             Return False
         End If
 
@@ -188,7 +188,7 @@ Public Module PermissionManagement
     ''' <param name="OldName">Old username</param>
     ''' <param name="Username">New username</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.PermissionManagementException"></exception>
+    ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function PermissionEditForNewUser(ByVal OldName As String, ByVal Username As String) As Boolean
         'Edit username
         If adminList.ContainsKey(OldName) = True And disabledList.ContainsKey(OldName) = True Then
@@ -211,11 +211,11 @@ Public Module PermissionManagement
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New EventsAndExceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.", currentLang) + vbNewLine +
+                Throw New Exceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.", currentLang) + vbNewLine +
                                                                             DoTranslation("Error {0}: {1}", currentLang).FormatString(Err.Number, ex.Message))
             End Try
         Else
-            Throw New EventsAndExceptions.PermissionManagementException(DoTranslation("One of the permission lists doesn't contain username {0}.", currentLang))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("One of the permission lists doesn't contain username {0}.", currentLang))
         End If
         Return False
     End Function
@@ -225,7 +225,7 @@ Public Module PermissionManagement
     ''' </summary>
     ''' <param name="NewUser">A new user name</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.PermissionManagementException"></exception>
+    ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function InitPermissionsForNewUser(ByVal NewUser As String) As Boolean
         Try
             'Initialize permissions locally
@@ -244,7 +244,7 @@ Public Module PermissionManagement
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New EventsAndExceptions.PermissionManagementException(DoTranslation("Failed to initialize permissions for user {0}: {1}", currentLang).FormatString(NewUser, ex.Message))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to initialize permissions for user {0}: {1}", currentLang).FormatString(NewUser, ex.Message))
         End Try
         Return False
     End Function
@@ -253,7 +253,7 @@ Public Module PermissionManagement
     ''' Loads permissions for all users
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.PermissionManagementException"></exception>
+    ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function LoadPermissions() As Boolean
         Try
             Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
@@ -270,7 +270,7 @@ Public Module PermissionManagement
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New EventsAndExceptions.PermissionManagementException(DoTranslation("Failed to load permissions from file: {0}", currentLang).FormatString(ex.Message))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to load permissions from file: {0}", currentLang).FormatString(ex.Message))
         End Try
         Return False
     End Function

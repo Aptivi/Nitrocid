@@ -26,7 +26,7 @@ Public Module Config
     ''' </summary>
     ''' <param name="Preserve">Preserves configuration values</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
-    ''' <exception cref="EventsAndExceptions.ConfigException"></exception>
+    ''' <exception cref="Exceptions.ConfigException"></exception>
     Public Function CreateConfig(ByVal Preserve As Boolean) As Boolean
         Try
             Dim ksconf As New IniFile()
@@ -366,9 +366,9 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}.", currentLang).FormatString(ex.Message))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}.", currentLang).FormatString(ex.Message))
             Else
-                Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to create configuration.", currentLang))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration.", currentLang))
             End If
         End Try
         Return False
@@ -378,7 +378,7 @@ Public Module Config
     ''' Checks the config file for mismatched version and upgrades it
     ''' </summary>
     ''' <returns>True if there are updates, False if unsuccessful.</returns>
-    ''' <exception cref="EventsAndExceptions.ConfigException"></exception>
+    ''' <exception cref="Exceptions.ConfigException"></exception>
     Public Function CheckForUpgrade() As Boolean
         Try
             'Variables
@@ -395,9 +395,9 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to update configuration: {0}.", currentLang).FormatString(ex.Message))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration: {0}.", currentLang).FormatString(ex.Message))
             Else
-                Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to update configuration.", currentLang))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration.", currentLang))
             End If
         End Try
         Return False
@@ -417,7 +417,7 @@ Public Module Config
     ''' Configures the kernel according to the kernel configuration file
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.ConfigException"></exception>
+    ''' <exception cref="Exceptions.ConfigException"></exception>
     Public Function ReadConfig() As Boolean
         Try
             '----------------------------- Important configuration -----------------------------
@@ -558,7 +558,7 @@ Public Module Config
         Catch ex As Exception
             WStkTrc(ex)
             NotifyConfigError = True
-            Throw New EventsAndExceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}.", currentLang).FormatString(ex.Message))
+            Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}.", currentLang).FormatString(ex.Message))
         End Try
         Return False
     End Function
@@ -596,7 +596,7 @@ Public Module Config
             configReader.Load(pathConfig)
             Wdbg("I", "Config loaded with {0} sections", configReader.Sections.Count)
             ReadConfig()
-        Catch cex As EventsAndExceptions.ConfigException
+        Catch cex As Exceptions.ConfigException
             W(cex.Message, True, ColTypes.Err)
             WStkTrc(cex)
         End Try

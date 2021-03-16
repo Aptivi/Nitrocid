@@ -212,7 +212,7 @@ Public Module Color
     ''' <param name="ErrorC">Error color</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
-    ''' <exception cref="EventsAndExceptions.ColorException"></exception>
+    ''' <exception cref="Exceptions.ColorException"></exception>
     Public Function SetColors(InputC As ConsoleColors, LicenseC As ConsoleColors, ContKernelErrorC As ConsoleColors,
                               UncontKernelErrorC As ConsoleColors, HostNameC As ConsoleColors, UserNameC As ConsoleColors,
                               BackC As ConsoleColors, NeutralTextC As ConsoleColors, CmdListC As ConsoleColors,
@@ -285,7 +285,7 @@ Public Module Color
                 MakePermanent()
                 Return True
             Else
-                Throw New EventsAndExceptions.ColorException(DoTranslation("One or more of the colors is invalid.", currentLang))
+                Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.", currentLang))
             End If
         Else
             Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang))

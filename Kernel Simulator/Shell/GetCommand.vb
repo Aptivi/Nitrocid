@@ -1278,9 +1278,9 @@ Public Module GetCommand
 
             End If
             If Done = False Then
-                Throw New EventsAndExceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:", currentLang))
+                Throw New Exceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:", currentLang))
             End If
-        Catch neaex As EventsAndExceptions.NotEnoughArgumentsException
+        Catch neaex As Exceptions.NotEnoughArgumentsException
             Wdbg("W", "User hasn't provided enough arguments for {0}", words(0))
             W(neaex.Message, True, ColTypes.Neutral)
             ShowHelp(words(0))

@@ -60,7 +60,7 @@ Public Module RemoteDebugTools
             End If
         Next
         If Not Found Then
-            Throw New EventsAndExceptions.RemoteDebugDeviceNotFoundException(DoTranslation("Debug device {0} not found.", currentLang).FormatString(IPAddr))
+            Throw New Exceptions.RemoteDebugDeviceNotFoundException(DoTranslation("Debug device {0} not found.", currentLang).FormatString(IPAddr))
         End If
     End Sub
 
@@ -159,7 +159,7 @@ Public Module RemoteDebugTools
                     Return DeviceProperties.Property("ChatHistory").Value.ToArray
             End Select
         Else
-            Throw New EventsAndExceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
+            Throw New Exceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
         End If
         Return Nothing
     End Function
@@ -187,7 +187,7 @@ Public Module RemoteDebugTools
             File.WriteAllText(paths("DebugDevNames"), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
             Return True
         Else
-            Throw New EventsAndExceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
+            Throw New Exceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
             Return False
         End If
     End Function
@@ -210,7 +210,7 @@ Public Module RemoteDebugTools
             File.WriteAllText(paths("DebugDevNames"), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
             Return True
         Else
-            If ThrowException Then Throw New EventsAndExceptions.RemoteDebugDeviceAlreadyExistsException(DoTranslation("Device already exists."))
+            If ThrowException Then Throw New Exceptions.RemoteDebugDeviceAlreadyExistsException(DoTranslation("Device already exists."))
             Return False
         End If
     End Function

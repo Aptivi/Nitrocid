@@ -234,7 +234,8 @@
     <Compile Include="Console\Themes\ThemeStudio.vb" />
     <Compile Include="Console\Themes\ThemeStudioTools.vb" />
     <Compile Include="Files\Filesystem.vb" />
-    <Compile Include="Kernel\EventsAndExceptions.vb" />
+    <Compile Include="Kernel\Events.vb" />
+    <Compile Include="Kernel\Exceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Languages\Translate.vb" />

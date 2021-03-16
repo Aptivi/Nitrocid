@@ -199,7 +199,7 @@ Public Module NetworkTools
         Catch ex As Exception
             WStkTrc(ex)
             Wdbg("E", "Failed to change hostname: {0}", ex.Message)
-            Throw New EventsAndExceptions.HostnameException(DoTranslation("Failed to change host name: {0}", currentLang).FormatString(ex.Message))
+            Throw New Exceptions.HostnameException(DoTranslation("Failed to change host name: {0}", currentLang).FormatString(ex.Message))
         End Try
         Return False
     End Function

@@ -321,7 +321,7 @@ CHOICE:
                 WStkTrc(ex)
             End Try
         Else
-            Throw New EventsAndExceptions.NoSuchLanguageException(DoTranslation("Invalid language", currentLang) + " {0}".FormatString(lang))
+            Throw New Exceptions.NoSuchLanguageException(DoTranslation("Invalid language", currentLang) + " {0}".FormatString(lang))
         End If
         Return False
     End Function

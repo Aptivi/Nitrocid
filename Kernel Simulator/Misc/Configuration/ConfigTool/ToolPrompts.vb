@@ -70,7 +70,7 @@ Public Module ToolPrompts
                     Wdbg("I", "Saving settings...")
                     Try
                         CreateConfig(True)
-                    Catch ex As EventsAndExceptions.ConfigException
+                    Catch ex As Exceptions.ConfigException
                         W(ex.Message, True, ColTypes.Err)
                         WStkTrc(ex)
                     End Try

@@ -25,7 +25,7 @@ Module FTPFilesystem
     ''' </summary>
     ''' <param name="Path">Path to folder</param>
     ''' <returns>The list if successful; null if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.FTPFilesystemException"></exception>
+    ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
     Public Function FTPListRemote(ByVal Path As String) As List(Of String)
         If connected Then
@@ -60,7 +60,7 @@ Module FTPFilesystem
                 Return Entries
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("Failed to list remote files: {0}", currentLang).FormatString(ex.Message))
+                Throw New Exceptions.FTPFilesystemException(DoTranslation("Failed to list remote files: {0}", currentLang).FormatString(ex.Message))
             End Try
         Else
             Throw New InvalidOperationException(DoTranslation("You should connect to server before listing all remote files.", currentLang))
@@ -73,7 +73,7 @@ Module FTPFilesystem
     ''' </summary>
     ''' <param name="Target">Target folder or file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.FTPFilesystemException"></exception>
+    ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
     Public Function FTPDeleteRemote(ByVal Target As String) As Boolean
         If connected Then
             Wdbg("I", "Deleting {0}...", Target)
@@ -87,13 +87,13 @@ Module FTPFilesystem
                 ClientFTP.DeleteDirectory(Target)
             Else
                 Wdbg("E", "{0} is not found.", Target)
-                Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server.", currentLang).FormatString(Target))
+                Throw New Exceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server.", currentLang).FormatString(Target))
                 Return False
             End If
             Wdbg("I", "Deleted {0}", Target)
             Return True
         Else
-            Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("You must connect to server with administrative privileges before performing the deletion.", currentLang))
+            Throw New Exceptions.FTPFilesystemException(DoTranslation("You must connect to server with administrative privileges before performing the deletion.", currentLang))
         End If
         Return False
     End Function
@@ -103,7 +103,7 @@ Module FTPFilesystem
     ''' </summary>
     ''' <param name="Directory">Remote directory</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.FTPFilesystemException"></exception>
+    ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="ArgumentNullException"></exception>
     Public Function FTPChangeRemoteDir(ByVal Directory As String) As Boolean
@@ -116,7 +116,7 @@ Module FTPFilesystem
                     Return True
                 Else
                     'Directory doesn't exist, go to the old directory
-                    Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("Directory {0} not found.", currentLang).FormatString(Directory))
+                    Throw New Exceptions.FTPFilesystemException(DoTranslation("Directory {0} not found.", currentLang).FormatString(Directory))
                 End If
             Else
                 Throw New ArgumentNullException(DoTranslation("Enter a remote directory. "".."" to go back", currentLang))
@@ -147,7 +147,7 @@ Module FTPFilesystem
                 currDirect = parser.FullName
                 Return True
             Else
-                Throw New EventsAndExceptions.FTPFilesystemException(DoTranslation("Local directory {0} doesn't exist.", currentLang).FormatString(Directory))
+                Throw New Exceptions.FTPFilesystemException(DoTranslation("Local directory {0} doesn't exist.", currentLang).FormatString(Directory))
             End If
         Else
             Throw New ArgumentNullException(DoTranslation("Enter a local directory. "".."" to go back.", currentLang))

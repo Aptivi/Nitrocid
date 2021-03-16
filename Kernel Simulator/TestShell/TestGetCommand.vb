@@ -83,7 +83,7 @@ Module TestGetCommand
             If FullArgsQ?.Count - 1 = 0 Then
                 Try
                     Dim SubName As String = "Raise" + FullArgsQ(0)
-                    CallByName(New EventsAndExceptions, SubName, CallType.Method)
+                    CallByName(New Events, SubName, CallType.Method)
                 Catch ex As Exception
                     W(DoTranslation("Failure to raise event {0}: {1}", currentLang), True, ColTypes.Err, FullArgsQ(0))
                 End Try

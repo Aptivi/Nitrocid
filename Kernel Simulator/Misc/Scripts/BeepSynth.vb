@@ -25,7 +25,7 @@ Public Module BeepSynth
     ''' </summary>
     ''' <param name="file">A file name in current shell path</param>
     ''' <returns>True if successful, False if unsuccessful.</returns>
-    ''' <exception cref="EventsAndExceptions.InvalidSynthException"></exception>
+    ''' <exception cref="Exceptions.InvalidSynthException"></exception>
     ''' <exception cref="FileNotFoundException"></exception>
     Public Function ProbeSynth(ByVal file As String) As Boolean
         file = NeutralizePath(file)
@@ -48,14 +48,14 @@ Public Module BeepSynth
                             Console.Beep(freq, ms)
                         Catch ex As Exception
                             Wdbg("E", "Not a comment and not a synth line. ({0})", line)
-                            Throw New EventsAndExceptions.InvalidSynthException(DoTranslation("Failed to probe a synth line.", currentLang))
+                            Throw New Exceptions.InvalidSynthException(DoTranslation("Failed to probe a synth line.", currentLang))
                         End Try
                     End If
                 End While
                 Return True
             Else
                 Wdbg("E", "File is not scripted")
-                Throw New EventsAndExceptions.InvalidSynthException(DoTranslation("The file isn't a scripted synth file.", currentLang))
+                Throw New Exceptions.InvalidSynthException(DoTranslation("The file isn't a scripted synth file.", currentLang))
             End If
         Else
             Wdbg("E", "File doesn't exist")

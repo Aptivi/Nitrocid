@@ -88,7 +88,7 @@ Public Module MailManager
     ''' <param name="MsgNumber">Message number</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="ArgumentException"></exception>
-    ''' <exception cref="EventsAndExceptions.MailException"></exception>
+    ''' <exception cref="Exceptions.MailException"></exception>
     Public Function MailRemoveMessage(ByVal MsgNumber As Integer) As Boolean
         Dim Message As Integer = MsgNumber - 1
         Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
@@ -99,7 +99,7 @@ Public Module MailManager
             Return False
         ElseIf Message > MaxMessagesIndex Then
             Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-            Throw New EventsAndExceptions.MailException(DoTranslation("Message specified is not found.", currentLang))
+            Throw New Exceptions.MailException(DoTranslation("Message specified is not found.", currentLang))
             Return False
         End If
 
@@ -186,7 +186,7 @@ Public Module MailManager
     ''' <param name="TargetFolder">Target folder</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="ArgumentException"></exception>
-    ''' <exception cref="EventsAndExceptions.MailException"></exception>
+    ''' <exception cref="Exceptions.MailException"></exception>
     Public Function MailMoveMessage(ByVal MsgNumber As Integer, ByVal TargetFolder As String) As Boolean
         Dim Message As Integer = MsgNumber - 1
         Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
@@ -197,7 +197,7 @@ Public Module MailManager
             Return False
         ElseIf Message > MaxMessagesIndex Then
             Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-            Throw New EventsAndExceptions.MailException(DoTranslation("Message specified is not found.", currentLang))
+            Throw New Exceptions.MailException(DoTranslation("Message specified is not found.", currentLang))
             Return False
         End If
 

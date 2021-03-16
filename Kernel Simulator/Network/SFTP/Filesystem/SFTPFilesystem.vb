@@ -26,7 +26,7 @@ Module SFTPFilesystem
     ''' </summary>
     ''' <param name="Path">Path to folder</param>
     ''' <returns>The list if successful; null if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.SFTPFilesystemException"></exception>
+    ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
     Public Function SFTPListRemote(ByVal Path As String) As List(Of String)
         If SFTPConnected Then
@@ -73,7 +73,7 @@ Module SFTPFilesystem
                 Return Entries
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New EventsAndExceptions.SFTPFilesystemException(DoTranslation("Failed to list remote files: {0}", currentLang).FormatString(ex.Message))
+                Throw New Exceptions.SFTPFilesystemException(DoTranslation("Failed to list remote files: {0}", currentLang).FormatString(ex.Message))
             End Try
         Else
             Throw New InvalidOperationException(DoTranslation("You should connect to server before listing all remote files.", currentLang))
@@ -86,7 +86,7 @@ Module SFTPFilesystem
     ''' </summary>
     ''' <param name="Target">Target folder or file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.SFTPFilesystemException"></exception>
+    ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
     Public Function SFTPDeleteRemote(ByVal Target As String) As Boolean
         If SFTPConnected Then
             Wdbg("I", "Deleting {0}...", Target)
@@ -97,13 +97,13 @@ Module SFTPFilesystem
                 ClientSFTP.Delete(Target)
             Else
                 Wdbg("E", "{0} is not found.", Target)
-                Throw New EventsAndExceptions.SFTPFilesystemException(DoTranslation("{0} is not found in the server.", currentLang).FormatString(Target))
+                Throw New Exceptions.SFTPFilesystemException(DoTranslation("{0} is not found in the server.", currentLang).FormatString(Target))
                 Return False
             End If
             Wdbg("I", "Deleted {0}", Target)
             Return True
         Else
-            Throw New EventsAndExceptions.SFTPFilesystemException(DoTranslation("You must connect to server with administrative privileges before performing the deletion.", currentLang))
+            Throw New Exceptions.SFTPFilesystemException(DoTranslation("You must connect to server with administrative privileges before performing the deletion.", currentLang))
         End If
         Return False
     End Function
@@ -113,7 +113,7 @@ Module SFTPFilesystem
     ''' </summary>
     ''' <param name="Directory">Remote directory</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="EventsAndExceptions.SFTPFilesystemException"></exception>
+    ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="ArgumentNullException"></exception>
     Public Function SFTPChangeRemoteDir(ByVal Directory As String) As Boolean
@@ -126,7 +126,7 @@ Module SFTPFilesystem
                     Return True
                 Else
                     'Directory doesn't exist, go to the old directory
-                    Throw New EventsAndExceptions.SFTPFilesystemException(DoTranslation("Directory {0} not found.", currentLang).FormatString(Directory))
+                    Throw New Exceptions.SFTPFilesystemException(DoTranslation("Directory {0} not found.", currentLang).FormatString(Directory))
                 End If
             Else
                 Throw New ArgumentNullException(DoTranslation("Enter a remote directory. "".."" to go back", currentLang))
@@ -157,7 +157,7 @@ Module SFTPFilesystem
                 SFTPCurrDirect = parser.FullName
                 Return True
             Else
-                Throw New EventsAndExceptions.SFTPFilesystemException(DoTranslation("Local directory {0} doesn't exist.", currentLang).FormatString(Directory))
+                Throw New Exceptions.SFTPFilesystemException(DoTranslation("Local directory {0} doesn't exist.", currentLang).FormatString(Directory))
             End If
         Else
             Throw New ArgumentNullException(DoTranslation("Enter a local directory. "".."" to go back.", currentLang))
