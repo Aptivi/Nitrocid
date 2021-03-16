@@ -121,7 +121,8 @@ Public Module FTPTools
             Dim profanswer As Char
             Dim profanswered As Boolean
             While Not profanswered
-                profanswer = Console.ReadKey(True).KeyChar
+                W(">> ", False, ColTypes.Input)
+                profanswer = Console.ReadLine
                 Wdbg("I", "Selection: {0}", profanswer)
                 If IsNumeric(profanswer) Then
                     Try
