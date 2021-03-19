@@ -55,10 +55,8 @@ Module RemoteDebugCmd
                 'Register to remote debugger so we can set device name
                 If String.IsNullOrWhiteSpace(GetDeviceProperty(Address, DeviceProperty.Name)) Then
                     SetDeviceProperty(Address, DeviceProperty.Name, CmdArgs(0))
-                    'TODO: Uncomment line 59 and remove line 61 if fixed on Extensification.
-                    'dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
+                    dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
                     SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(CmdArgs(0)))
-                    SocketStreamWriter.WriteLine(DoTranslation("You may need to restart your current session for changes to be applied.").FormatString(CmdArgs(0)))
                 Else
                     SocketStreamWriter.WriteLine(DoTranslation("You're already registered."))
                 End If
