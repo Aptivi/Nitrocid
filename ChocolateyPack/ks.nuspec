@@ -3,14 +3,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>KS</id>
-    <version>0.0.15.6</version>
+    <version>0.0.15.7</version>
     <packageSourceUrl>http://github.com/EoflaOE/Kernel-Simulator</packageSourceUrl>
 
     <title>Kernel Simulator</title>
     <authors>EoflaOE</authors>
     <projectUrl>http://github.com/EoflaOE/Kernel-Simulator</projectUrl>
     <iconUrl>https://rawcdn.githack.com/EoflaOE/Kernel-Simulator/b0fc8a62db4c4106f1364e6b1706d3bfa018a2eb/Kernel%20Simulator/iconfinder_applications-utilities_8840.ico</iconUrl>
-    <copyright>Copyright © 2018-2020 EoflaOE and its companies, All rights reserved.</copyright>
+    <copyright>Copyright © 2018-2021 EoflaOE and its companies, All rights reserved.</copyright>
     <licenseUrl>https://github.com/EoflaOE/Kernel-Simulator/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <tags>ks kernel simulator vb.net</tags>
