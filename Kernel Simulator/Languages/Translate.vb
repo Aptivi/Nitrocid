@@ -25,6 +25,7 @@ Public Module Translate
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
     Public CurrentCult As New CultureInfo("en-US")
+    Private NotifyCodepageError As Boolean
 
     ''' <summary>
     ''' Translates string into another language, or to English if the language wasn't specified or if it's invalid.
@@ -53,7 +54,6 @@ Public Module Translate
                 Return text
             End If
         ElseIf availableLangs.Contains(lang) And lang = "eng" Then 'If the language is available, but is English, don't translate
-            Wdbg("W", "{0} is in language list but it's English", lang)
             Return text
         Else 'If the language is invalid
             Wdbg("E", "{0} isn't in language list", lang)
@@ -180,8 +180,6 @@ Public Module Translate
         Next
         Return langStrings
     End Function
-
-    Private NotifyCodepageError As Boolean
 
     ''' <summary>
     ''' Prompt for setting language
