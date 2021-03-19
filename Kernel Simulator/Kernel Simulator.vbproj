@@ -171,7 +171,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Extensification">
-      <Version>2021.2.0</Version>
+      <Version>2021.2.1</Version>
     </PackageReference>
     <PackageReference Include="FluentFTP">
       <Version>33.0.3</Version>
@@ -183,7 +183,7 @@
       <Version>1.0.6</Version>
     </PackageReference>
     <PackageReference Include="MailKit">
-      <Version>2.11.0</Version>
+      <Version>2.11.1</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
