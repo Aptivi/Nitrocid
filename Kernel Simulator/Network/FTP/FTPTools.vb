@@ -238,7 +238,7 @@ Public Module FTPTools
                             Dim Address As String = ChosenLineSeparation(0)
                             Dim Port As String = ChosenLineSeparation(1)
                             Dim Username As String = ChosenLineSeparation(2)
-                            Dim Encryption As FtpEncryptionMode = ChosenLineSeparation(3)
+                            Dim Encryption As FtpEncryptionMode = [Enum].Parse(GetType(FtpEncryptionMode), ChosenLineSeparation(3))
                             Wdbg("I", "Address: {0}, Port: {1}, Username: {2}, Encryption: {3}", Address, Port, Username, Encryption)
                             PromptForPassword(Username, Address, Port, Encryption)
                         Else

@@ -245,7 +245,7 @@ Public Module NetworkTools
     ''' <param name="SpeedDialType">Speed dial type</param>
     ''' <returns>A list</returns>
     Public Function ListSpeedDialEntries(ByVal SpeedDialType As SpeedDialType) As List(Of JToken)
-        Dim PathName As String = If(SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
+        Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
         If Not File.Exists(paths(PathName)) Then MakeFile(paths(PathName))
         Dim SpeedDialJsonContent As String = File.ReadAllText(paths(PathName))
         Dim SpeedDialToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "[]"))
