@@ -48,7 +48,7 @@ Module DebugWriters
             'Check for debug quota
             CheckForExceed()
 
-            'For contributors who are testing new code: Uncomment the two Debug.WriteLine lines for immediate debugging (Immediate Window)
+            'For contributors who are testing new code: Define ENABLEIMMEDITEWINDOWDEBUG for immediate debugging (Immediate Window)
             If Not Source Is Nothing And Not LineNum = 0 Then
                 'Debug to file and all connected debug devices (raw mode)
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
@@ -60,7 +60,9 @@ Module DebugWriters
                         WStkTrc(ex)
                     End Try
                 Next
-                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
+#If ENABLEIMMEDIATEWINDOWDEBUG Then
+                Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
+#End If
             Else 'Rare case, unless debug symbol is not found on archives.
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
@@ -71,7 +73,9 @@ Module DebugWriters
                         WStkTrc(ex)
                     End Try
                 Next
-                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
+#If ENABLEIMMEDIATEWINDOWDEBUG Then
+                Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
+#End If
             End If
 
             'Disconnect offending clients who are disconnected

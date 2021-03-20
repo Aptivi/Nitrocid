@@ -290,22 +290,22 @@ Public Module ModParser
                 End If
             ElseIf script.CmdType = ModType.FTPShell Then
                 If availftpcmds.Contains(script.Cmd) Then
-                    Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                    Wdbg("W", "Command {0} conflicts with available FTP shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                     script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                 End If
             ElseIf script.CmdType = ModType.MailShell Then
                 If Mail_AvailableCommands.Contains(script.Cmd) Then
-                    Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                    Wdbg("W", "Command {0} conflicts with available mail shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                     script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                 End If
             ElseIf script.CmdType = ModType.SFTPShell Then
                 If availsftpcmds.Contains(script.Cmd) Then
-                    Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                    Wdbg("W", "Command {0} conflicts with available SFTP shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                     script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                 End If
             ElseIf script.CmdType = ModType.TextShell Then
                 If TextEdit_Commands.Contains(script.Cmd) Then
-                    Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                    Wdbg("W", "Command {0} conflicts with available text shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                     script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                 End If
             End If
