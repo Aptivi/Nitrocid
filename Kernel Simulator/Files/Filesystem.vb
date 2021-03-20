@@ -56,6 +56,7 @@ Public Module Filesystem
 #End If
 
         'Read the contents
+        filename = NeutralizePath(filename)
         Using FStream As New StreamReader(filename)
             Wdbg("I", "Stream to file {0} opened.", filename)
             While Not FStream.EndOfStream
@@ -69,7 +70,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>
     Public Sub List(ByVal folder As String)
-        Wdbg("I", "Folder {0} will be checked if it is empty or equals CurrDir ({1})...", folder, CurrDir)
+        Wdbg("I", "Folder {0} will be listed...", folder)
 
 #If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
@@ -80,6 +81,7 @@ Public Module Filesystem
 #End If
 
         'List files and folders
+        folder = NeutralizePath(folder)
         If Directory.Exists(folder) Then
             Dim enumeration As IEnumerable(Of String)
             Try
@@ -521,6 +523,7 @@ Public Module Filesystem
 #End If
 
         'Read all the lines, bypassing the restrictions.
+        path = NeutralizePath(path)
         Dim AllLnList As New List(Of String)
         Dim FOpen As New StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
         While Not FOpen.EndOfStream

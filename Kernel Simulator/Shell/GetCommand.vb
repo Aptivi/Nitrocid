@@ -195,6 +195,18 @@ Public Module GetCommand
                     Done = True
                 End If
 
+            ElseIf words(0) = "cat" Then
+
+                If eqargs?.Count > 0 Then
+                    Try
+                        ReadContents(eqargs(0))
+                    Catch ex As Exception
+                        WStkTrc(ex)
+                        W(ex.Message, True, ColTypes.Err)
+                    End Try
+                    Done = True
+                End If
+
             ElseIf words(0) = "calc" Then
 
                 If eqargs?.Count > 0 Then

@@ -33,6 +33,7 @@ Public Module HelpSystem
                                                               {"blockdbgdev", DoTranslation("Block a debug device by IP address", currentLang)},
                                                               {"bsynth", DoTranslation("Loads the synth file and plays it.", currentLang)},
                                                               {"calc", DoTranslation("Calculator to calculate expressions.", currentLang)},
+                                                              {"cat", DoTranslation("Prints content of file to console")},
                                                               {"cdbglog", DoTranslation("Deletes everything in debug log", currentLang)},
                                                               {"chattr", DoTranslation("Changes attribute of a file", currentLang)},
                                                               {"chdir", DoTranslation("Changes directory", currentLang)},
@@ -164,6 +165,10 @@ Public Module HelpSystem
         ElseIf command = "bsynth" Then
 
             W(DoTranslation("Usage:", currentLang) + " bsynth <script-file>", True, ColTypes.Neutral)
+
+        ElseIf command = "cat" Then
+
+            W(DoTranslation("Usage:", currentLang) + " cat <file>", True, ColTypes.Neutral)
 
         ElseIf command = "calc" Then
 
