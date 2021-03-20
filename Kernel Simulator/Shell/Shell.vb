@@ -40,7 +40,7 @@ Public Module Shell
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
                                      "rdebug", "rexec", "update", "blockdbgdev", "unblockdbgdev", "settings"}
     'Obsolete commands
-    Public obsoleteCmds() As String = {}
+    Public obsoleteCmds() As String = {"debuglog"}
 
     ''' <summary>
     ''' Initializes the shell.
