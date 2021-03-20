@@ -294,7 +294,7 @@ Public Module Color
     End Function
 
     ''' <summary>
-    ''' Sets input color (only use for shells)
+    ''' Sets input color
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function SetInputColor() As Boolean

@@ -83,8 +83,7 @@ Public Module TextWriterColor
                 If Line Then WriteLine(text) Else Write(text)
                 If backgroundColor = ConsoleColors.Black Then ResetColor()
                 If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                    Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                    SetInputColor()
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
@@ -120,8 +119,7 @@ Public Module TextWriterColor
                 If Line Then WriteLine(text) Else Write(text)
                 If backgroundColor = ConsoleColors.Black Then ResetColor()
                 If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                    Console.BackgroundColor = If(backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), backgroundColor), ConsoleColor.Black)
-                    Console.ForegroundColor = If(inputColor <= 15, [Enum].Parse(GetType(ConsoleColor), inputColor), ConsoleColor.White)
+                    SetInputColor()
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
@@ -158,8 +156,7 @@ Public Module TextWriterColor
                 If Line Then WriteLine(text) Else Write(text)
                 If BackgroundColor = ConsoleColors.Black Then ResetColor()
                 If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                    Console.BackgroundColor = If(BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black)
-                    Console.ForegroundColor = If(inputColor <= 15, [Enum].Parse(GetType(ConsoleColor), inputColor), ConsoleColor.White)
+                    SetInputColor()
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
@@ -197,8 +194,7 @@ Public Module TextWriterColor
                 If Line Then WriteLine(text) Else Write(text)
                 If backgroundColor = ConsoleColors.Black Then ResetColor()
                 If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                    Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                    SetInputColor()
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
@@ -237,8 +233,7 @@ Public Module TextWriterColor
                 If Line Then WriteLine(text) Else Write(text)
                 If BackgroundColor = ConsoleColors.Black Then ResetColor()
                 If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                    Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Write(esc + "[48;5;" + CStr(Color.backgroundColor) + "m")
+                    SetInputColor()
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
@@ -277,8 +272,7 @@ Public Module TextWriterColor
                 If Line Then WriteLine(text) Else Write(text)
                 If backgroundColor = ConsoleColors.Black Then ResetColor()
                 If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                    Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                    SetInputColor()
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
@@ -316,8 +310,7 @@ Public Module TextWriterColor
                 If Line Then WriteLine(text) Else Write(text)
                 If backgroundColor = ConsoleColors.Black Then ResetColor()
                 If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                    Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                    Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                    SetInputColor()
                 End If
             Catch ex As Exception
                 WStkTrc(ex)

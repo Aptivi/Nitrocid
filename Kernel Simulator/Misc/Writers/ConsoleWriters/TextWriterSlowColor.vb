@@ -117,8 +117,7 @@ Module TextWriterSlowColor
             End If
             If backgroundColor = ConsoleColors.Black Then ResetColor()
             If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -156,8 +155,7 @@ Module TextWriterSlowColor
             End If
             If backgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Console.BackgroundColor = If(backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), backgroundColor), ConsoleColor.Black)
-                Console.ForegroundColor = If(inputColor <= 15, [Enum].Parse(GetType(ConsoleColor), inputColor), ConsoleColor.White)
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -196,8 +194,7 @@ Module TextWriterSlowColor
             End If
             If BackgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Console.BackgroundColor = If(Color.backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), Color.backgroundColor), ConsoleColor.Black)
-                Console.ForegroundColor = If(inputColor <= 15, [Enum].Parse(GetType(ConsoleColor), inputColor), ConsoleColor.White)
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -238,8 +235,7 @@ Module TextWriterSlowColor
             End If
             If backgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -281,8 +277,7 @@ Module TextWriterSlowColor
             End If
             If BackgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Write(esc + "[48;5;" + CStr(Color.backgroundColor) + "m")
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -323,8 +318,7 @@ Module TextWriterSlowColor
             End If
             If backgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -366,8 +360,7 @@ Module TextWriterSlowColor
             End If
             If backgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock

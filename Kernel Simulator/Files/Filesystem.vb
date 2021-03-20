@@ -21,6 +21,7 @@ Imports System.Runtime.CompilerServices
 Public Module Filesystem
 
     'Variables
+    'TODO: Use Directory.SetCurrentDirectory in 0.0.20.0.
     Public CurrDir As String = ""
 
     ''' <summary>
