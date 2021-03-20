@@ -133,7 +133,7 @@ Public Module SFTPTools
                 Next
                 While Answering
                     W(">> ", False, ColTypes.Input)
-                    Answer = Console.ReadKey.KeyChar
+                    Answer = Console.ReadLine
                     Wdbg("I", "Response: {0}", Answer)
                     Console.WriteLine()
                     If IsNumeric(Answer) Then
