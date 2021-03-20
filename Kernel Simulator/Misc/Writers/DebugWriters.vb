@@ -110,7 +110,9 @@ Module DebugWriters
                     WStkTrc(ex)
                 End Try
             Next
-            'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
+#If ENABLEIMMEDIATEWINDOWDEBUG Then
+            Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
+#End If
 
             'Disconnect offending clients who are disconnected
             For Each i As Integer In OffendingIndex

@@ -1256,36 +1256,20 @@ Public Module GetCommand
 
                 If requestedCommand <> "weather" Then
                     Done = True
-                    Dim APIKey As String
-                    W(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys.", currentLang), True, ColTypes.Neutral)
-                    W(DoTranslation("Enter your API key:", currentLang) + " ", False, ColTypes.Input)
-                    APIKey = ReadLineNoInput("*")
-                    Console.WriteLine()
-                    Dim WeatherInfo As ForecastInfo
-                    Dim WeatherSpecifier As String = "°"
-                    Dim WindSpeedSpecifier As String = "m.s"
-                    If IsNumeric(eqargs(0)) Then
-                        WeatherInfo = GetWeatherInfo(CLng(eqargs(0)), APIKey, PreferredUnit)
+                    If eqargs(0) = "listcities" Then
+                        Dim Cities As Dictionary(Of Long, String) = ListAllCities()
+                        For Each City As Long In Cities.Keys
+                            W("- {0}:", False, ColTypes.HelpCmd, City)
+                            W(Cities(City), True, ColTypes.HelpDef)
+                        Next
                     Else
-                        WeatherInfo = GetWeatherInfo(eqargs(0), APIKey, PreferredUnit)
+                        Dim APIKey As String
+                        W(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Enter your API key:", currentLang) + " ", False, ColTypes.Input)
+                        APIKey = ReadLineNoInput("*")
+                        Console.WriteLine()
+                        PrintWeatherInfo(eqargs(0), APIKey)
                     End If
-                    Wdbg("I", "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID)
-                    W(DoTranslation("-- Weather info for {0} --", currentLang), True, ColTypes.Stage, WeatherInfo.CityName)
-                    W(DoTranslation("Weather: {0}", currentLang), True, ColTypes.Neutral, WeatherInfo.Weather)
-                    If WeatherInfo.TemperatureMeasurement = UnitMeasurement.Metric Then
-                        WeatherSpecifier += "C"
-                    ElseIf WeatherInfo.TemperatureMeasurement = UnitMeasurement.Kelvin Then
-                        WeatherSpecifier += "K"
-                    ElseIf WeatherInfo.TemperatureMeasurement = UnitMeasurement.Imperial Then
-                        WeatherSpecifier += "F"
-                        WindSpeedSpecifier = "mph"
-                    End If
-                    W(DoTranslation("Temperature: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, FormatNumber(WeatherInfo.Temperature, 2))
-                    W(DoTranslation("Feels like: {0}", currentLang) + WeatherSpecifier, True, ColTypes.Neutral, FormatNumber(WeatherInfo.FeelsLike, 2))
-                    W(DoTranslation("Wind speed: {0}", currentLang) + " {1}", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindSpeed, 2), WindSpeedSpecifier)
-                    W(DoTranslation("Wind direction: {0}", currentLang) + "°", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindDirection, 2))
-                    W(DoTranslation("Pressure: {0}", currentLang) + " hPa", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Pressure, 2))
-                    W(DoTranslation("Humidity: {0}", currentLang) + "%", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Humidity, 2))
                 End If
 
             End If
