@@ -16,8 +16,10 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports System.Net.NetworkInformation
 Imports System.Text
+Imports Newtonsoft.Json.Linq
 
 Public Module NetworkTools
 
@@ -27,6 +29,17 @@ Public Module NetworkTools
     Public URetries As Integer = 3
     Friend DFinish As Boolean
     Friend UFinish As Boolean
+
+    Public Enum SpeedDialType
+        ''' <summary>
+        ''' FTP speed dial
+        ''' </summary>
+        FTP
+        ''' <summary>
+        ''' SFTP speed dial
+        ''' </summary>
+        SFTP
+    End Enum
 
     ''' <summary>
     ''' Print each of adapters' properties to the console.
@@ -202,6 +215,39 @@ Public Module NetworkTools
             Throw New Exceptions.HostnameException(DoTranslation("Failed to change host name: {0}", currentLang).FormatString(ex.Message))
         End Try
         Return False
+    End Function
+
+    ''' <summary>
+    ''' Adds an entry to speed dial
+    ''' </summary>
+    ''' <param name="Entry">A speed dial entry</param>
+    ''' <param name="SpeedDialType">Speed dial type</param>
+    ''' <param name="ThrowException">Optionally throw exception</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function AddEntryToSpeedDial(ByVal Entry As String, ByVal SpeedDialType As SpeedDialType, Optional ThrowException As Boolean = True) As Boolean
+        If Not File.Exists(paths("FTPSpeedDial")) Then MakeFile(paths("FTPSpeedDial"))
+        Dim SpeedDialJsonContent As String = File.ReadAllText(paths("FTPSpeedDial"))
+        Dim SpeedDialToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "[]"))
+        If Not SpeedDialToken.Contains(Entry) Then
+            SpeedDialToken.Add(Entry)
+            File.WriteAllText(paths("FTPSpeedDial"), JsonConvert.SerializeObject(SpeedDialToken, Formatting.Indented))
+            Return True
+        Else
+            If ThrowException Then Throw New Exceptions.FTPNetworkException(DoTranslation("Entry already exists."))
+            Return False
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Lists all speed dial entries
+    ''' </summary>
+    ''' <param name="SpeedDialType">Speed dial type</param>
+    ''' <returns>A list</returns>
+    Public Function ListSpeedDialEntries(ByVal SpeedDialType As SpeedDialType) As List(Of JToken)
+        If Not File.Exists(paths("FTPSpeedDial")) Then MakeFile(paths("FTPSpeedDial"))
+        Dim SpeedDialJsonContent As String = File.ReadAllText(paths("FTPSpeedDial"))
+        Dim SpeedDialToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "[]"))
+        Return SpeedDialToken.ToArray.ToList
     End Function
 
 End Module

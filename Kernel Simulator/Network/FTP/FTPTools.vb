@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Net.Security
+Imports Newtonsoft.Json.Linq
 
 Public Module FTPTools
 
@@ -159,24 +160,16 @@ Public Module FTPTools
         ftpsite = ClientFTP.Host
 
         'Write connection information to Speed Dial file if it doesn't exist there
-        If Not File.Exists(paths("FTPSpeedDial")) Then
-            Dim FileTemp As StreamWriter = File.CreateText(paths("FTPSpeedDial"))
-            FileTemp.Close()
-        End If
-        Dim SpeedDialLines As String() = File.ReadAllLines(paths("FTPSpeedDial"))
-        Wdbg("I", "Speed dial length: {0}", SpeedDialLines.Length)
-        If SpeedDialLines.Contains(ftpsite + "," + CStr(ClientFTP.Port) + "," + user) Then
+        Dim SpeedDialEntries As List(Of JToken) = ListSpeedDialEntries(SpeedDialType.FTP)
+        Dim SpeedDialEntry As String = ftpsite + "," + CStr(ClientFTP.Port) + "," + user + "," + ClientFTP.EncryptionMode.ToString
+        Wdbg("I", "Speed dial length: {0}", SpeedDialEntries.Count)
+        If SpeedDialEntries.Contains(SpeedDialEntry) Then
             Wdbg("I", "Site already there.")
             Exit Sub
         Else
             'Speed dial format is below:
             'Site,Port,Username,Encryption
-            Dim SpeedDialWriter As New StreamWriter(paths("FTPSpeedDial")) With {.AutoFlush = True}
-            Wdbg("I", "Opened stream for speed dial.")
-            SpeedDialWriter.WriteLine(ftpsite + "," + CStr(ClientFTP.Port) + "," + user + "," + ClientFTP.EncryptionMode.ToString)
-            Wdbg("I", "Written information to file.")
-            SpeedDialWriter.Close()
-            Wdbg("I", "Closed stream for speed dial.")
+            AddEntryToSpeedDial(SpeedDialEntry, SpeedDialType.FTP)
         End If
     End Sub
 
@@ -216,8 +209,8 @@ Public Module FTPTools
     ''' </summary>
     Sub QuickConnect()
         If File.Exists(paths("FTPSpeedDial")) Then
-            Dim SpeedDialLines As String() = File.ReadAllLines(paths("FTPSpeedDial"))
-            Wdbg("I", "Speed dial length: {0}", SpeedDialLines.Length)
+            Dim SpeedDialLines As List(Of JToken) = ListSpeedDialEntries(SpeedDialType.FTP)
+            Wdbg("I", "Speed dial length: {0}", SpeedDialLines.Count)
             Dim Counter As Integer = 1
             Dim Answer As String
             Dim Answering As Boolean = True
@@ -236,7 +229,7 @@ Public Module FTPTools
                     If IsNumeric(Answer) Then
                         Wdbg("I", "Response is numeric. IsNumeric(Answer) returned true. Checking to see if in-bounds...")
                         Dim AnswerInt As Integer = Answer
-                        If AnswerInt <= SpeedDialLines.Length Then
+                        If AnswerInt <= SpeedDialLines.Count Then
                             Answering = False
                             Wdbg("I", "Response is in-bounds. Connecting...")
                             Dim ChosenSpeedDialLine As String = SpeedDialLines(AnswerInt - 1)
@@ -250,7 +243,7 @@ Public Module FTPTools
                             PromptForPassword(Username, Address, Port, Encryption)
                         Else
                             Wdbg("I", "Response is out-of-bounds. Retrying...")
-                            W(DoTranslation("The selection is out of range. Select between 1-{0}. Try again.", currentLang), True, ColTypes.Err, SpeedDialLines.Length)
+                            W(DoTranslation("The selection is out of range. Select between 1-{0}. Try again.", currentLang), True, ColTypes.Err, SpeedDialLines.Count)
                         End If
                     Else
                         Wdbg("W", "Response isn't numeric. IsNumeric(Answer) returned false.")

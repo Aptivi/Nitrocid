@@ -18,6 +18,7 @@ Imports KS.TextWriterColor
 Imports KS.Color
 Imports KS.Kernel
 Imports KS.RemoteDebugTools
+Imports KS.NetworkTools
 Imports System.IO
 
 Module Converter
@@ -77,7 +78,6 @@ Module Converter
         End If
         Console.WriteLine()
 
-#If FTPSPEEDDIALNOTDONE = False Then
         'Import all FTP speed dial settings to JSON
         W("- Importing all FTP speed dial addresses to FTP_SpeedDial.json...", True, ColTypes.Stage)
         If File.Exists(ListOfBackups("FTPSpeedDial")) Then
@@ -96,7 +96,6 @@ Module Converter
             W("  - Warning: ftp_speeddial.csv not found in home directory.", True, ColTypes.Warning)
         End If
         Console.WriteLine()
-#End If
 
     End Sub
 
@@ -122,9 +121,7 @@ Module Converter
 #If USERSNOTDONE = False Then
             OldPaths.Add("Users", Environ("HOME") + $"{AppendedPath}/users.csv")
 #End If
-#If FTPSPEEDDIALNOTDONE = False Then
             OldPaths.Add("FTPSpeedDial", Environ("HOME") + $"{AppendedPath}/ftp_speeddial.csv")
-#End If
             OldPaths.Add("BlockedDevices", Environ("HOME") + $"{AppendedPath}/blocked_devices.csv")
         Else
 #If CONFIGNOTDONE = False Then
@@ -136,9 +133,7 @@ Module Converter
 #If USERSNOTDONE = False Then
             OldPaths.Add("Users", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/users.csv")
 #End If
-#If FTPSPEEDDIALNOTDONE = False Then
             OldPaths.Add("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/ftp_speeddial.csv")
-#End If
             OldPaths.Add("BlockedDevices", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/blocked_devices.csv")
         End If
 
@@ -164,9 +159,7 @@ Module Converter
 #If USERSNOTDONE = False Then
             NewPaths.Add("Users", Environ("HOME") + "/Users.json")
 #End If
-#If FTPSPEEDDIALNOTDONE = False Then
             NewPaths.Add("FTPSpeedDial", Environ("HOME") + "/FTP_SpeedDial.json")
-#End If
             NewPaths.Add("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
         Else
 #If CONFIGNOTDONE = False Then
@@ -178,9 +171,7 @@ Module Converter
 #If USERSNOTDONE = False Then
             NewPaths.Add("Users", Environ("USERPROFILE").Replace("\", "/") + "/Users.json")
 #End If
-#If FTPSPEEDDIALNOTDONE = False Then
             NewPaths.Add("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/FTP_SpeedDial.json")
-#End If
             NewPaths.Add("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
         End If
 

@@ -370,4 +370,68 @@ Public Class Exceptions
         End Sub
     End Class
 
+    ''' <summary>
+    ''' Thrown when there is an error in FTP shell
+    ''' </summary>
+    Public Class FTPShellException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when there is an error in SFTP shell
+    ''' </summary>
+    Public Class SFTPShellException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when there is an error in FTP network
+    ''' </summary>
+    Public Class FTPNetworkException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when there is an error in SFTP network
+    ''' </summary>
+    Public Class SFTPNetworkException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
 End Class
