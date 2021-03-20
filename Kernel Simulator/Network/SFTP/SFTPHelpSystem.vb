@@ -38,6 +38,7 @@ Public Module SFTPHelpSystem
                                                                   {"help", DoTranslation("Shows help screen", currentLang)},
                                                                   {"listlocal (lsl)", DoTranslation("Lists local directory", currentLang)},
                                                                   {"listremote (lsr)", DoTranslation("Lists remote directory", currentLang)},
+                                                                  {"quickconnect", DoTranslation("Uses information from Speed Dial to connect to any network quickly", currentLang)},
                                                                   {"upload (put)", DoTranslation("Uploads local file to remote directory using binary or text", currentLang)}}
     End Sub
 
@@ -82,6 +83,8 @@ Public Module SFTPHelpSystem
             W(DoTranslation("Usage:", currentLang) + " listremote [dir] or lsr [dir]", True, ColTypes.Neutral)
         ElseIf command = ("upload" Or "put") Then
             W(DoTranslation("Usage:", currentLang) + " upload <file> or put <file>", True, ColTypes.Neutral)
+        ElseIf command = "quickconnect" Then
+            W(DoTranslation("Usage:", currentLang) + " quickconnect", True, ColTypes.Neutral)
         End If
 
     End Sub

@@ -16,6 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+Imports Newtonsoft.Json.Linq
+
 Public Module SFTPTools
 
     ''' <summary>
@@ -96,6 +99,74 @@ Public Module SFTPTools
         Wdbg("I", "Working directory: {0}", SFTPCurrentRemoteDir)
         sftpsite = ClientSFTP.ConnectionInfo.Host
         SFTPUser = ClientSFTP.ConnectionInfo.Username
+
+        'Write connection information to Speed Dial file if it doesn't exist there
+        Dim SpeedDialEntries As List(Of JToken) = ListSpeedDialEntries(SpeedDialType.SFTP)
+        Dim SpeedDialEntry As String = sftpsite + "," + CStr(ClientSFTP.ConnectionInfo.Port) + "," + SFTPUser
+        Wdbg("I", "Speed dial length: {0}", SpeedDialEntries.Count)
+        If SpeedDialEntries.Contains(SpeedDialEntry) Then
+            Wdbg("I", "Site already there.")
+            Exit Sub
+        Else
+            'Speed dial format is below:
+            'Site,Port,Username
+            AddEntryToSpeedDial(SpeedDialEntry, SpeedDialType.SFTP)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Opens speed dial prompt
+    ''' </summary>
+    Sub SFTPQuickConnect()
+        If File.Exists(paths("SFTPSpeedDial")) Then
+            Dim SpeedDialLines As List(Of JToken) = ListSpeedDialEntries(SpeedDialType.SFTP)
+            Wdbg("I", "Speed dial length: {0}", SpeedDialLines.Count)
+            Dim Counter As Integer = 1
+            Dim Answer As String
+            Dim Answering As Boolean = True
+            If Not SpeedDialLines.Count = 0 Then
+                For Each SpeedDialLine As String In SpeedDialLines
+                    Wdbg("I", "Speed dial line: {0}", SpeedDialLine)
+                    W(DoTranslation("Select an address to connect to:", currentLang), True, ColTypes.Neutral)
+                    W("{0}: {1}", True, ColTypes.Neutral, Counter, SpeedDialLine)
+                    Counter += 1
+                Next
+                While Answering
+                    W(">> ", False, ColTypes.Input)
+                    Answer = Console.ReadKey.KeyChar
+                    Wdbg("I", "Response: {0}", Answer)
+                    Console.WriteLine()
+                    If IsNumeric(Answer) Then
+                        Wdbg("I", "Response is numeric. IsNumeric(Answer) returned true. Checking to see if in-bounds...")
+                        Dim AnswerInt As Integer = Answer
+                        If AnswerInt <= SpeedDialLines.Count Then
+                            Answering = False
+                            Wdbg("I", "Response is in-bounds. Connecting...")
+                            Dim ChosenSpeedDialLine As String = SpeedDialLines(AnswerInt - 1)
+                            Wdbg("I", "Chosen connection: {0}", ChosenSpeedDialLine)
+                            Dim ChosenLineSeparation As String() = ChosenSpeedDialLine.Split(",")
+                            Dim Address As String = ChosenLineSeparation(0)
+                            Dim Port As String = ChosenLineSeparation(1)
+                            Dim Username As String = ChosenLineSeparation(2)
+                            Wdbg("I", "Address: {0}, Port: {1}, Username: {2}", Address, Port, Username)
+                            SFTPPromptForPassword(Username, Address, Port)
+                        Else
+                            Wdbg("I", "Response is out-of-bounds. Retrying...")
+                            W(DoTranslation("The selection is out of range. Select between 1-{0}. Try again.", currentLang), True, ColTypes.Err, SpeedDialLines.Count)
+                        End If
+                    Else
+                        Wdbg("W", "Response isn't numeric. IsNumeric(Answer) returned false.")
+                        W(DoTranslation("The selection is not a number. Try again.", currentLang), True, ColTypes.Err)
+                    End If
+                End While
+            Else
+                Wdbg("E", "Speed dial is empty. Lines count is 0.")
+                W(DoTranslation("Speed dial is empty. Connect to a server to add an address to it.", currentLang), True, ColTypes.Err)
+            End If
+        Else
+            Wdbg("E", "File doesn't exist.")
+            W(DoTranslation("Speed dial doesn't exist. Connect to a server to add an address to it.", currentLang), True, ColTypes.Err)
+        End If
     End Sub
 
 End Module

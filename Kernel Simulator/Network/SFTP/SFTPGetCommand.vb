@@ -140,6 +140,12 @@ Public Module SFTPGetCommand
                 For Each Entry As String In Entries
                     W(Entry, True, ColTypes.Neutral)
                 Next
+            ElseIf words(0) = "quickconnect" Then
+                If Not connected Then
+                    SFTPQuickConnect()
+                Else
+                    W(DoTranslation("You should disconnect from server before connecting to another server", currentLang), True, ColTypes.Err)
+                End If
             ElseIf words(0) = "upload" Or words(0) = "put" Then
                 If cmd <> "upload" Or cmd <> "put" Then
                     W(DoTranslation("Uploading file {0}...", currentLang), True, ColTypes.Neutral, strArgs)

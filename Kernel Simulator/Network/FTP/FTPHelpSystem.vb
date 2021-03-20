@@ -89,6 +89,8 @@ Public Module FTPHelpSystem
             W(DoTranslation("Usage:", currentLang) + " move <sourcefileordir> <targetfileordir> or ren <sourcefileordir> <targetfileordir>", True, ColTypes.Neutral)
         ElseIf command = ("upload" Or "put") Then
             W(DoTranslation("Usage:", currentLang) + " upload <file> or put <file>", True, ColTypes.Neutral)
+        ElseIf command = "quickconnect" Then
+            W(DoTranslation("Usage:", currentLang) + " quickconnect", True, ColTypes.Neutral)
         End If
 
     End Sub
