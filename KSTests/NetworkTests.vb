@@ -58,4 +58,34 @@ Imports System.Net.NetworkInformation
         Assert.AreEqual("TestUser", GetDeviceProperty("123.123.123.123", DeviceProperty.Name), "Getting device property failed.")
     End Sub
 
+    ''' <summary>
+    ''' Tests adding FTP speed dial entry
+    ''' </summary>
+    <TestMethod> Public Sub TestAddEntryToFTPSpeedDial()
+        Assert.IsTrue(AddEntryToSpeedDial("ftp.riken.jp,21,anonymous,None", SpeedDialType.FTP, False))
+    End Sub
+
+    ''' <summary>
+    ''' Tests adding SFTP speed dial entry
+    ''' </summary>
+    <TestMethod> Public Sub TestAddEntryToSFTPSpeedDial()
+        Assert.IsTrue(AddEntryToSpeedDial("test.rebex.net,22,demo", SpeedDialType.SFTP, False))
+    End Sub
+
+    ''' <summary>
+    ''' Tests listing FTP speed dial entries
+    ''' </summary>
+    <TestMethod> Public Sub TestListFTPSpeedDialEntries()
+        Assert.IsTrue(ListSpeedDialEntries(SpeedDialType.FTP).Count > 0)
+        Debug.WriteLine(String.Join(" | ", ListSpeedDialEntries(SpeedDialType.FTP)))
+    End Sub
+
+    ''' <summary>
+    ''' Tests listing SFTP speed dial entries
+    ''' </summary>
+    <TestMethod> Public Sub TestListSFTPSpeedDialEntries()
+        Assert.IsTrue(ListSpeedDialEntries(SpeedDialType.SFTP).Count > 0)
+        Debug.WriteLine(String.Join(" | ", ListSpeedDialEntries(SpeedDialType.SFTP)))
+    End Sub
+
 End Class
