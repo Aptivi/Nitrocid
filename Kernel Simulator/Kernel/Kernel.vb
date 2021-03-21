@@ -80,8 +80,6 @@ Public Module Kernel
                 StartRDebugThread(True)
                 W(DoTranslation("Starting RPC...", currentLang), True, ColTypes.Neutral)
                 StartRPC()
-                W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
-                CurrDir = paths("Home")
 
                 'Check for kernel updates
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then

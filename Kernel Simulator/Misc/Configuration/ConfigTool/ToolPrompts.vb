@@ -128,16 +128,17 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Clear Screen on Log-in", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(clsOnLogin)))
                     W("3) " + DoTranslation("Show available usernames", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.HelpCmd, GetValue(NameOf(ShowAvailableUsers)))
                 Case 4 'Shell
-                    MaxOptions = 7
+                    MaxOptions = 8
                     W("*) " + DoTranslation("Shell Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the shell settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(ColoredShell)))
                     W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(simHelp)))
-                    W("3) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(ShellPromptStyle)))
-                    W("4) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(FTPShellPromptStyle)))
-                    W("5) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(MailShellPromptStyle)))
-                    W("6) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(SFTPShellPromptStyle)))
-                    W("7) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.HelpCmd)
+                    W("3) " + DoTranslation("Current Directory", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(CurrDir)))
+                    W("4) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(ShellPromptStyle)))
+                    W("5) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(FTPShellPromptStyle)))
+                    W("6) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(MailShellPromptStyle)))
+                    W("7) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetValue(NameOf(SFTPShellPromptStyle)))
+                    W("8) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.HelpCmd)
                 Case 5 'Network
                     MaxOptions = 10
                     W("*) " + DoTranslation("Network Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -218,9 +219,9 @@ Public Module ToolPrompts
                     If AnswerInt = 3 And SectionNum = 1 Then
                         Wdbg("I", "Tried to open special section. Opening section 1.3...")
                         OpenKey(1.3, AnswerInt)
-                    ElseIf AnswerInt = 7 And SectionNum = 4 Then
-                        Wdbg("I", "Tried to open special section. Opening section 4.7...")
-                        OpenKey(4.7, AnswerInt)
+                    ElseIf AnswerInt = 8 And SectionNum = 4 Then
+                        Wdbg("I", "Tried to open special section. Opening section 4.8...")
+                        OpenKey(4.8, AnswerInt)
                     Else
                         Wdbg("I", "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
@@ -394,22 +395,27 @@ Public Module ToolPrompts
                             W(DoTranslation("Simplified help command for all the shells", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable", currentLang), True, ColTypes.Neutral)
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                        Case 3 'Prompt Style
+                        Case 3 'Current Directory
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(CurrDir)
+                            W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("Current Directory", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Sets the shell's current directory. Write an absolute path to any existing directory.", currentLang), True, ColTypes.Neutral)
+                        Case 4 'Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(ShellPromptStyle)
                             W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("Prompt Style", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
-                        Case 4 'FTP Prompt Style
+                        Case 5 'FTP Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(FTPShellPromptStyle)
                             W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("FTP Prompt Style", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
-                        Case 5 'Mail Prompt Style
+                        Case 6 'Mail Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(MailShellPromptStyle)
                             W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("Mail Prompt Style", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed.", currentLang), True, ColTypes.Neutral)
-                        Case 6 'SFTP Prompt Style
+                        Case 7 'SFTP Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(SFTPShellPromptStyle)
                             W("*) " + DoTranslation("Shell Settings...", currentLang) + " > " + DoTranslation("SFTP Prompt Style", currentLang) + vbNewLine, True, ColTypes.Neutral)
@@ -418,7 +424,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Shell Settings...", currentLang) + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case 4.7 'Shell -> Custom colors
+                Case 4.8 'Shell -> Custom colors
                     MaxKeyOptions = 12
                     KeyType = SettingsKeyType.SMultivar
                     KeyVars = New Dictionary(Of String, Object)
@@ -812,7 +818,7 @@ Public Module ToolPrompts
             End Select
 
             'If user is on color selection screen, we'll give a user a confirmation.
-            If Section = 4.7 Then
+            If Section = 4.8 Then
                 W(vbNewLine + "*) " + DoTranslation("Do these color choices look OK?", currentLang), True, ColTypes.Neutral)
 #Disable Warning BC42104
                 For Each ColorType As String In KeyVars.Keys
@@ -991,6 +997,7 @@ Public Module ToolPrompts
         Dim TypeOfRDebugger As Type = GetType(RemoteDebugger)
         Dim TypeOfDebugWriters As Type = GetType(DebugWriters)
         Dim TypeOfNetworkTools As Type = GetType(NetworkTools)
+        Dim TypeOfFilesystem As Type = GetType(Filesystem)
         Dim TypeOfScreensaverSettings As Type = GetType(ScreensaverSettings)
         Dim TypeOfForecast As Type = GetType(Forecast)
         Dim TypeOfMailManager As Type = GetType(MailManager)
@@ -1007,6 +1014,7 @@ Public Module ToolPrompts
         Dim FieldRDebugger As FieldInfo = TypeOfRDebugger.GetField(Variable)
         Dim FieldDebugWriters As FieldInfo = TypeOfDebugWriters.GetField(Variable)
         Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
+        Dim FieldFilesystem As FieldInfo = TypeOfFilesystem.GetField(Variable)
         Dim FieldScreensaverSettings As FieldInfo = TypeOfScreensaverSettings.GetField(Variable)
         Dim FieldForecast As FieldInfo = TypeOfForecast.GetField(Variable)
         Dim FieldMailManager As FieldInfo = TypeOfMailManager.GetField(Variable)
@@ -1033,6 +1041,8 @@ Public Module ToolPrompts
             Return FieldDebugWriters
         ElseIf Not IsNothing(FieldNetworkTools) Then
             Return FieldNetworkTools
+        ElseIf Not IsNothing(FieldFilesystem) Then
+            Return FieldFilesystem
         ElseIf Not IsNothing(FieldScreensaverSettings) Then
             Return FieldScreensaverSettings
         ElseIf Not IsNothing(FieldForecast) Then

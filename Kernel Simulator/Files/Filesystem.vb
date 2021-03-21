@@ -21,7 +21,7 @@ Imports System.Runtime.CompilerServices
 Public Module Filesystem
 
     'Variables
-    Public CurrDir As String = ""
+    Public CurrDir As String = paths("Home")
 
     ''' <summary>
     ''' Sets the current working directory
