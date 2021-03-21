@@ -26,7 +26,7 @@ Imports KS
     ''' Tests getting value
     ''' </summary>
     <TestMethod()> Public Sub TestGetValue()
-        Dim Value As String = GetValue("HiddenFiles")
+        Dim Value As String = GetConfigValue("HiddenFiles")
         Assert.IsNotNull(Value, "Value of variable HiddenFiles isn't get properly. Got null.")
     End Sub
 
@@ -34,16 +34,16 @@ Imports KS
     ''' Tests setting value
     ''' </summary>
     <TestMethod()> Public Sub TestSetValue()
-        SetValue("HiddenFiles", False)
-        Dim Value As String = GetValue("HiddenFiles")
+        SetConfigValue("HiddenFiles", False)
+        Dim Value As String = GetConfigValue("HiddenFiles")
         Assert.AreEqual(Value, "False", "Value of variable HiddenFiles isn't set properly. Got {0}", Value)
     End Sub
 
     ''' <summary>
     ''' Tests getting variable
     ''' </summary>
-    <TestMethod()> Public Sub TestGetField()
-        Dim Field As FieldInfo = GetField("HiddenFiles")
+    <TestMethod()> Public Sub TestGetConfigField()
+        Dim Field As FieldInfo = GetConfigField("HiddenFiles")
         Assert.IsTrue(Field.Name = "HiddenFiles", "Field HiddenFiles isn't get properly. Name: {0}", Field.Name)
     End Sub
 
@@ -215,6 +215,14 @@ Imports KS
     ''' </summary>
     <TestMethod()> Public Sub TestEvaluateString()
         Dim Evaluated As String = Evaluate("KS.Kernel.KernelVersion")
+        Assert.IsFalse(Evaluated = "", "String evaluation failed. Got ""{0}"".", Evaluated)
+    End Sub
+
+    ''' <summary>
+    ''' Tests variable evaluation (fast)
+    ''' </summary>
+    <TestMethod()> Public Sub TestEvaluateFastString()
+        Dim Evaluated As String = EvaluateFast("KernelVersion", GetType(Kernel))
         Assert.IsFalse(Evaluated = "", "String evaluation failed. Got ""{0}"".", Evaluated)
     End Sub
 

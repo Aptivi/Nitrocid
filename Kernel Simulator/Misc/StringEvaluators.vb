@@ -23,7 +23,6 @@ Public Module StringEvaluators
     ''' Evaluates a variable
     ''' </summary>
     ''' <param name="Var">A full path to variable</param>
-    ''' <returns></returns>
     Public Function Evaluate(ByVal Var As String) As Object
         Dim EvalP As New VBCodeProvider
         Dim EvalCP As New CompilerParameters With {.GenerateExecutable = False,
@@ -52,6 +51,15 @@ Public Module StringEvaluators
             Dim methInfo As MethodInfo = cr.CompiledAssembly.GetType("Eval").GetMethod("Evaluate")
             Return methInfo.Invoke(Nothing, Nothing)
         End If
+    End Function
+
+    ''' <summary>
+    ''' Evaluates a variable quickly
+    ''' </summary>
+    ''' <param name="Var">A full path to variable</param>
+    ''' <param name="VarType">Variable type</param>
+    Public Function EvaluateFast(ByVal Var As String, ByVal VarType As Type) As Object
+        Return GetValue(Var, VarType)
     End Function
 
 End Module

@@ -110,101 +110,101 @@ Public Module ToolPrompts
                     MaxOptions = 5
                     W("*) " + DoTranslation("General Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Prompt for Arguments on Boot", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(argsOnBoot)))
-                    W("2) " + DoTranslation("Maintenance Mode Trigger", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(maintenance)))
+                    W("1) " + DoTranslation("Prompt for Arguments on Boot", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(argsOnBoot)))
+                    W("2) " + DoTranslation("Maintenance Mode Trigger", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(maintenance)))
                     W("3) " + DoTranslation("Change Root Password...", currentLang), True, ColTypes.Neutral)
-                    W("4) " + DoTranslation("Check for Updates on Startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(CheckUpdateStart)))
-                    W("5) " + DoTranslation("Change Culture when Switching Languages", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(LangChangeCulture)))
+                    W("4) " + DoTranslation("Check for Updates on Startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(CheckUpdateStart)))
+                    W("5) " + DoTranslation("Change Culture when Switching Languages", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetConfigValue(NameOf(LangChangeCulture)))
                 Case 2 'Hardware
                     MaxOptions = 1
                     W("*) " + DoTranslation("Hardware Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section changes hardware probe behavior.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Quiet Probe", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(quietProbe)))
+                    W("1) " + DoTranslation("Quiet Probe", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(quietProbe)))
                 Case 3 'Login
                     MaxOptions = 3
                     W("*) " + DoTranslation("Login Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section represents the login settings. Log out of your account for the changes to take effect.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Show MOTD on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(showMOTD)))
-                    W("2) " + DoTranslation("Clear Screen on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(clsOnLogin)))
-                    W("3) " + DoTranslation("Show available usernames", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(ShowAvailableUsers)))
+                    W("1) " + DoTranslation("Show MOTD on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(showMOTD)))
+                    W("2) " + DoTranslation("Clear Screen on Log-in", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(clsOnLogin)))
+                    W("3) " + DoTranslation("Show available usernames", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetConfigValue(NameOf(ShowAvailableUsers)))
                 Case 4 'Shell
                     MaxOptions = 7
                     W("*) " + DoTranslation("Shell Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the shell settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColoredShell)))
-                    W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(simHelp)))
-                    W("3) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShellPromptStyle)))
-                    W("4) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPShellPromptStyle)))
-                    W("5) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(MailShellPromptStyle)))
-                    W("6) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(SFTPShellPromptStyle)))
+                    W("1) " + DoTranslation("Colored Shell", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ColoredShell)))
+                    W("2) " + DoTranslation("Simplified Help Command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(simHelp)))
+                    W("3) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ShellPromptStyle)))
+                    W("4) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(FTPShellPromptStyle)))
+                    W("5) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(MailShellPromptStyle)))
+                    W("6) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(SFTPShellPromptStyle)))
                     W("7) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                 Case 5 'Network
                     MaxOptions = 9
                     W("*) " + DoTranslation("Network Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Debug Port", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DebugPort)))
-                    W("2) " + DoTranslation("Download Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DRetries)))
-                    W("3) " + DoTranslation("Upload Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(URetries)))
-                    W("4) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowProgress)))
-                    W("5) " + DoTranslation("Log FTP username", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPLoggerUsername)))
-                    W("6) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPLoggerIP)))
-                    W("7) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FTPFirstProfileOnly)))
-                    W("8) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ShowPreview)))
-                    W("9) " + DoTranslation("Record chat to debug log", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(RecordChatToDebugLog)))
+                    W("1) " + DoTranslation("Debug Port", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(DebugPort)))
+                    W("2) " + DoTranslation("Download Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(DRetries)))
+                    W("3) " + DoTranslation("Upload Retry Times", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(URetries)))
+                    W("4) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ShowProgress)))
+                    W("5) " + DoTranslation("Log FTP username", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(FTPLoggerUsername)))
+                    W("6) " + DoTranslation("Log FTP IP address", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(FTPLoggerIP)))
+                    W("7) " + DoTranslation("Return only first FTP profile", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(FTPFirstProfileOnly)))
+                    W("8) " + DoTranslation("Show mail message preview", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ShowPreview)))
+                    W("9) " + DoTranslation("Record chat to debug log", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetConfigValue(NameOf(RecordChatToDebugLog)))
                 Case 6 'Screensaver
                     MaxOptions = 31
                     W("*) " + DoTranslation("Screensaver Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all the screensavers and their available settings.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ScrnTimeout)))
+                    W("1) " + DoTranslation("Screensaver Timeout in ms", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ScrnTimeout)))
 
                     'Screensaver: Colors
-                    W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMix255Colors)))
-                    W("3) [Disco] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(Disco255Colors)))
-                    W("4) [GlitterColor] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColor255Colors)))
-                    W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(Lines255Colors)))
-                    W("6) [Dissolve] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(Dissolve255Colors)))
-                    W("7) [BouncingBlock] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlock255Colors)))
-                    W("8) [ProgressClock] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClock255Colors)))
-                    W("9) [ColorMix] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMixTrueColor)))
-                    W("10) [Disco] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoTrueColor)))
-                    W("11) [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColorTrueColor)))
-                    W("12) [Lines] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LinesTrueColor)))
-                    W("13) [Dissolve] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DissolveTrueColor)))
-                    W("14) [BouncingBlock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlockTrueColor)))
-                    W("15) [ProgressClock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockTrueColor)))
-                    W("16) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoCycleColors)))
-                    W("17) [ProgressClock] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockCycleColors)))
-                    W("18) [ProgressClock] " + DoTranslation("Color of Seconds Bar", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockSecondsProgressColor)))
-                    W("19) [ProgressClock] " + DoTranslation("Color of Minutes Bar", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockMinutesProgressColor)))
-                    W("20) [ProgressClock] " + DoTranslation("Color of Hours Bar", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockHoursProgressColor)))
-                    W("21) [ProgressClock] " + DoTranslation("Color of Information", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockProgressColor)))
+                    W("2) [ColorMix] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ColorMix255Colors)))
+                    W("3) [Disco] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(Disco255Colors)))
+                    W("4) [GlitterColor] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(GlitterColor255Colors)))
+                    W("5) [Lines] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(Lines255Colors)))
+                    W("6) [Dissolve] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(Dissolve255Colors)))
+                    W("7) [BouncingBlock] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(BouncingBlock255Colors)))
+                    W("8) [ProgressClock] " + DoTranslation("Activate 255 colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ProgressClock255Colors)))
+                    W("9) [ColorMix] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ColorMixTrueColor)))
+                    W("10) [Disco] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(DiscoTrueColor)))
+                    W("11) [GlitterColor] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(GlitterColorTrueColor)))
+                    W("12) [Lines] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(LinesTrueColor)))
+                    W("13) [Dissolve] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(DissolveTrueColor)))
+                    W("14) [BouncingBlock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(BouncingBlockTrueColor)))
+                    W("15) [ProgressClock] " + DoTranslation("Activate true colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ProgressClockTrueColor)))
+                    W("16) [Disco] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(DiscoCycleColors)))
+                    W("17) [ProgressClock] " + DoTranslation("Cycle colors", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ProgressClockCycleColors)))
+                    W("18) [ProgressClock] " + DoTranslation("Color of Seconds Bar", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ProgressClockSecondsProgressColor)))
+                    W("19) [ProgressClock] " + DoTranslation("Color of Minutes Bar", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ProgressClockMinutesProgressColor)))
+                    W("20) [ProgressClock] " + DoTranslation("Color of Hours Bar", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ProgressClockHoursProgressColor)))
+                    W("21) [ProgressClock] " + DoTranslation("Color of Information", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ProgressClockProgressColor)))
 
                     'Screensaver: Delays
-                    W("22) [BouncingBlock] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingBlockDelay)))
-                    W("23) [BouncingText] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(BouncingTextDelay)))
-                    W("24) [ColorMix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ColorMixDelay)))
-                    W("25) [Disco] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DiscoDelay)))
-                    W("26) [GlitterColor] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterColorDelay)))
-                    W("27) [GlitterMatrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(GlitterMatrixDelay)))
-                    W("28) [Lines] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LinesDelay)))
-                    W("29) [Matrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(MatrixDelay)))
-                    W("30) [ProgressClock] " + DoTranslation("Ticks to change color", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(ProgressClockCycleColorsTicks)))
+                    W("22) [BouncingBlock] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(BouncingBlockDelay)))
+                    W("23) [BouncingText] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(BouncingTextDelay)))
+                    W("24) [ColorMix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ColorMixDelay)))
+                    W("25) [Disco] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(DiscoDelay)))
+                    W("26) [GlitterColor] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(GlitterColorDelay)))
+                    W("27) [GlitterMatrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(GlitterMatrixDelay)))
+                    W("28) [Lines] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(LinesDelay)))
+                    W("29) [Matrix] " + DoTranslation("Delay in Milliseconds", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(MatrixDelay)))
+                    W("30) [ProgressClock] " + DoTranslation("Ticks to change color", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(ProgressClockCycleColorsTicks)))
 
                     'Screensaver: Texts
-                    W("31) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(BouncingTextWrite)))
+                    W("31) [BouncingText] " + DoTranslation("Text shown", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetConfigValue(NameOf(BouncingTextWrite)))
                 Case 7 'Misc
                     MaxOptions = 9
                     W("*) " + DoTranslation("Miscellaneous Settings...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(CornerTD)))
-                    W("2) " + DoTranslation("Debug Size Quota in Bytes", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(DebugQuota)))
-                    W("3) " + DoTranslation("Size parse mode", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(FullParseMode)))
-                    W("4) " + DoTranslation("Marquee on startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(StartScroll)))
-                    W("5) " + DoTranslation("Long Time and Date", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(LongTimeDate)))
-                    W("6) " + DoTranslation("Show Hidden Files", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(HiddenFiles)))
-                    W("7) " + DoTranslation("Preferred Unit for Temperature", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(PreferredUnit)))
-                    W("8) " + DoTranslation("Enable text editor autosave", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue(NameOf(TextEdit_AutoSaveFlag)))
-                    W("9) " + DoTranslation("Text editor autosave interval", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetValue(NameOf(TextEdit_AutoSaveInterval)))
+                    W("1) " + DoTranslation("Show Time/Date on Upper Right Corner", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(CornerTD)))
+                    W("2) " + DoTranslation("Debug Size Quota in Bytes", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(DebugQuota)))
+                    W("3) " + DoTranslation("Size parse mode", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(FullParseMode)))
+                    W("4) " + DoTranslation("Marquee on startup", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(StartScroll)))
+                    W("5) " + DoTranslation("Long Time and Date", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(LongTimeDate)))
+                    W("6) " + DoTranslation("Show Hidden Files", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(HiddenFiles)))
+                    W("7) " + DoTranslation("Preferred Unit for Temperature", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(PreferredUnit)))
+                    W("8) " + DoTranslation("Enable text editor autosave", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue(NameOf(TextEdit_AutoSaveFlag)))
+                    W("9) " + DoTranslation("Text editor autosave interval", currentLang) + " [{0}]" + vbNewLine, True, ColTypes.Neutral, GetConfigValue(NameOf(TextEdit_AutoSaveInterval)))
                 Case Else 'Invalid section
                     W("*) ???" + vbNewLine, True, ColTypes.Neutral)
                     W("X) " + DoTranslation("Invalid section entered. Please go back.", currentLang) + vbNewLine, True, ColTypes.Err)
@@ -321,7 +321,7 @@ Public Module ToolPrompts
                             W("2) " + DoTranslation("Disable", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case 2
                             W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Change Root Password...", currentLang) + " > " + DoTranslation("Set Root Password...", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                            If GetValue(NameOf(setRootPasswd)) Then
+                            If GetConfigValue(NameOf(setRootPasswd)) Then
                                 KeyType = SettingsKeyType.SString
                                 KeyVar = NameOf(RootPasswd)
                                 W("*) " + DoTranslation("Write the root password to be set. Don't worry; the password are shown as stars.", currentLang), True, ColTypes.Neutral)
@@ -333,7 +333,7 @@ Public Module ToolPrompts
                             KeyType = SettingsKeyType.SMenu
                             W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Change Root Password...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Select option:", currentLang) + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Change Root Password?", currentLang) + " [{0}]", True, ColTypes.Neutral, GetValue("setRootPasswd"))
+                            W("1) " + DoTranslation("Change Root Password?", currentLang) + " [{0}]", True, ColTypes.Neutral, GetConfigValue("setRootPasswd"))
                             W("2) " + DoTranslation("Set Root Password...", currentLang) + vbNewLine, True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("General Settings...", currentLang) + " > " + DoTranslation("Change Root Password...", currentLang) + " > ???" + vbNewLine, True, ColTypes.Neutral)
@@ -436,87 +436,87 @@ Public Module ToolPrompts
                     W("*) " + String.Join(", ", [Enum].GetNames(GetType(ConsoleColors))) + vbNewLine, True, ColTypes.Neutral)
 
                     ' Input color
-                    W("1) " + DoTranslation("Input color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(inputColor)))
+                    W("1) " + DoTranslation("Input color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(inputColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(inputColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(inputColor))
                     KeyVars.AddOrModify(NameOf(inputColor), Response)
 
                     ' License color
-                    W("2) " + DoTranslation("License color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(licenseColor)))
+                    W("2) " + DoTranslation("License color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(licenseColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(licenseColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(licenseColor))
                     KeyVars.AddOrModify(NameOf(licenseColor), Response)
 
                     ' Continuable kernel error color
-                    W("3) " + DoTranslation("Continuable kernel error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(contKernelErrorColor)))
+                    W("3) " + DoTranslation("Continuable kernel error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(contKernelErrorColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(contKernelErrorColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(contKernelErrorColor))
                     KeyVars.AddOrModify(NameOf(contKernelErrorColor), Response)
 
                     ' Unontinuable kernel error color
-                    W("4) " + DoTranslation("Uncontinuable kernel error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(uncontKernelErrorColor)))
+                    W("4) " + DoTranslation("Uncontinuable kernel error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(uncontKernelErrorColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(uncontKernelErrorColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(uncontKernelErrorColor))
                     KeyVars.AddOrModify(NameOf(uncontKernelErrorColor), Response)
 
                     ' Host name color
-                    W("5) " + DoTranslation("Host name color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(hostNameShellColor)))
+                    W("5) " + DoTranslation("Host name color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(hostNameShellColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(hostNameShellColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(hostNameShellColor))
                     KeyVars.AddOrModify(NameOf(hostNameShellColor), Response)
 
                     ' User name color
-                    W("6) " + DoTranslation("User name color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(userNameShellColor)))
+                    W("6) " + DoTranslation("User name color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(userNameShellColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(userNameShellColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(userNameShellColor))
                     KeyVars.AddOrModify(NameOf(userNameShellColor), Response)
 
                     ' Background color
-                    W("7) " + DoTranslation("Background color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(backgroundColor)))
+                    W("7) " + DoTranslation("Background color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(backgroundColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(backgroundColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(backgroundColor))
                     KeyVars.AddOrModify(NameOf(backgroundColor), Response)
 
                     ' Neutral text color
-                    W("8) " + DoTranslation("Neutral text color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(neutralTextColor)))
+                    W("8) " + DoTranslation("Neutral text color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(neutralTextColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(neutralTextColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(neutralTextColor))
                     KeyVars.AddOrModify(NameOf(neutralTextColor), Response)
 
                     ' Command list color
-                    W("9) " + DoTranslation("Command list color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(cmdListColor)))
+                    W("9) " + DoTranslation("Command list color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(cmdListColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(cmdListColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(cmdListColor))
                     KeyVars.AddOrModify(NameOf(cmdListColor), Response)
 
                     ' Command definition color
-                    W("10) " + DoTranslation("Command definition color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(cmdDefColor)))
+                    W("10) " + DoTranslation("Command definition color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(cmdDefColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(cmdDefColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(cmdDefColor))
                     KeyVars.AddOrModify(NameOf(cmdDefColor), Response)
 
                     ' Stage color
-                    W("11) " + DoTranslation("Stage color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(stageColor)))
+                    W("11) " + DoTranslation("Stage color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(stageColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(stageColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(stageColor))
                     KeyVars.AddOrModify(NameOf(stageColor), Response)
 
                     ' Error color
-                    W("12) " + DoTranslation("Error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(errorColor)))
+                    W("12) " + DoTranslation("Error color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(errorColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(errorColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(errorColor))
                     KeyVars.AddOrModify(NameOf(errorColor), Response)
 
                     ' Warning color
-                    W("13) " + DoTranslation("Warning color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(WarningColor)))
+                    W("13) " + DoTranslation("Warning color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(WarningColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(WarningColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(WarningColor))
                     KeyVars.AddOrModify(NameOf(WarningColor), Response)
 
                     ' Option color
-                    W("14) " + DoTranslation("Option color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetValue(NameOf(OptionColor)))
+                    W("14) " + DoTranslation("Option color", currentLang) + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(OptionColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetValue(NameOf(OptionColor))
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(OptionColor))
                     KeyVars.AddOrModify(NameOf(OptionColor), Response)
                 Case 5 'Network
                     Select Case KeyNumber
@@ -911,10 +911,10 @@ Public Module ToolPrompts
                     Select Case AnswerInt
                         Case 1 'True
                             Wdbg("I", "Setting to True...")
-                            SetValue(KeyVar, True)
+                            SetConfigValue(KeyVar, True)
                         Case 2 'False
                             Wdbg("I", "Setting to False...")
-                            SetValue(KeyVar, False)
+                            SetConfigValue(KeyVar, False)
                     End Select
                 ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
                     Wdbg("I", "User requested exit. Returning...")
@@ -931,7 +931,7 @@ Public Module ToolPrompts
                 If AnswerInt >= 0 Then
                     Wdbg("I", "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                     KeyFinished = True
-                    SetValue(KeyVar, AnswerInt)
+                    SetConfigValue(KeyVar, AnswerInt)
                 ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
                     Wdbg("I", "User requested exit. Returning...")
                     KeyFinished = True
@@ -944,7 +944,7 @@ Public Module ToolPrompts
             ElseIf KeyType = SettingsKeyType.SString Then
                 Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
                 KeyFinished = True
-                SetValue(KeyVar, AnswerString)
+                SetConfigValue(KeyVar, AnswerString)
             ElseIf Section = 1.3 And KeyNumber = 3 Then
                 Wdbg("I", "Answer is not numeric and the user is on the special section.")
                 If AnswerInt >= 1 And AnswerInt <= 2 Then
@@ -996,9 +996,9 @@ Public Module ToolPrompts
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="VariableValue">New value of variable</param>
-    Public Sub SetValue(ByVal Variable As String, ByVal VariableValue As Object)
+    Public Sub SetConfigValue(ByVal Variable As String, ByVal VariableValue As Object)
         'Get field for specified variable
-        Dim TargetField As FieldInfo = GetField(Variable)
+        Dim TargetField As FieldInfo = GetConfigField(Variable)
 
         'Set the variable if found
         If Not IsNothing(TargetField) Then
@@ -1019,9 +1019,9 @@ Public Module ToolPrompts
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <returns>Value of a variable</returns>
-    Public Function GetValue(ByVal Variable As String) As Object
+    Public Function GetConfigValue(ByVal Variable As String) As Object
         'Get field for specified variable
-        Dim TargetField As FieldInfo = GetField(Variable)
+        Dim TargetField As FieldInfo = GetConfigField(Variable)
 
         'Get the variable if found
         If Not IsNothing(TargetField) Then
@@ -1043,7 +1043,7 @@ Public Module ToolPrompts
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <returns>Field information</returns>
-    Public Function GetField(ByVal Variable As String) As FieldInfo
+    Public Function GetConfigField(ByVal Variable As String) As FieldInfo
         'Get types of possible flag locations
         Dim TypeOfFlags As Type = GetType(Flags)
         Dim TypeOfKernel As Type = GetType(Kernel)
