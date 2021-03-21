@@ -32,7 +32,7 @@ This section covers what you need to run Kernel Simulator. Please scroll down to
 
 ### Linux systems
 
-1. Mono 5.10 or higher (6.0 or higher is recommended)
+1. Mono 5.10 or higher (6.0 or higher is recommended) with mono-vbnc installed
 2. Internet Connection
 3. Appropriate console that supports escape sequences and custom monotyped fonts for languages (Konsole, GNOME Terminal, ...)
 
@@ -59,6 +59,8 @@ This section covers how to install Kernel Simulator on your system. Please scrol
 2. Unzip the file to any directory
 3. Install the following programs:
    - Microsoft.VisualBasic.dll 10.0 (Debian and its derivatives: `sudo apt install libmono-microsoft-visualbasic10.0-cil`)
+   - mono-vbnc (Debian and its derivatives: `sudo apt install mono-vbnc`)
+   - libcpanel-json-xs-perl (Debian and its derivatives: `sudo apt install libcpanel-json-xs-perl`)
    - Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi libcpanel-json-xs-perl`)
 4. Open terminal to the directory that contains KS, and run it using `mono "Kernel Simulator.exe"`
 
