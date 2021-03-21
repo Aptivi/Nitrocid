@@ -55,7 +55,7 @@ Public Module Kernel
                     Try
                         pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
                     Catch ex As Exception
-                        'Do nothing, because KS runs fine without debugging symbols
+                        NotifyDebugDownloadError = True
                     End Try
                 End If
 #End If
@@ -131,11 +131,17 @@ Public Module Kernel
                 'Show current time
                 ShowCurrentTimes()
 
-                'Notify user if there is config error
+                'Notify user of errors if appropriate
                 If NotifyConfigError Then
                     NotifyConfigError = False
                     NotifySend(New Notification With {.Title = DoTranslation("Error loading settings", currentLang),
                                                       .Desc = DoTranslation("There is an error while loading settings. You may need to check the settings file.", currentLang),
+                                                      .Priority = NotifPriority.Medium})
+                End If
+                If NotifyDebugDownloadError Then
+                    NotifyDebugDownloadError = False
+                    NotifySend(New Notification With {.Title = DoTranslation("Error downloading debug data", currentLang),
+                                                      .Desc = DoTranslation("There is an error while downloading debug data. Check your internet connection.", currentLang),
                                                       .Priority = NotifPriority.Medium})
                 End If
 

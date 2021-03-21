@@ -166,6 +166,10 @@ Module Flags
     ''' </summary>
     Friend NotifyConfigError As Boolean
     ''' <summary>
+    ''' Notifies user as soon as the kernel finished booting if there is an error downloading debugging data.
+    ''' </summary>
+    Friend NotifyDebugDownloadError As Boolean
+    ''' <summary>
     ''' When the command cancel is requested
     ''' </summary>
     Friend CancelRequested As Boolean
