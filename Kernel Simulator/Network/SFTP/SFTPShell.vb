@@ -145,7 +145,7 @@ Public Module SFTPShell
             ExecuteSFTPAlias(SFTPStrCmd)
         ElseIf Not SFTPStrCmd.StartsWith(" ") Then
             Wdbg("E", "Command {0} not found.", SFTPStrCmd)
-            W(DoTranslation("SFTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on SFTP shell.", currentLang), True, ColTypes.Err, words(0))
+            W(DoTranslation("SFTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on SFTP shell."), True, ColTypes.Err, words(0))
         End If
     End Sub
 

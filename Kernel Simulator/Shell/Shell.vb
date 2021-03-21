@@ -142,11 +142,11 @@ Public Module Shell
                     End If
                 Catch ex As Exception
                     If DebugMode = True Then
-                        W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", True, ColTypes.Err,
+                        W(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", True, ColTypes.Err,
                           Err.Number, ex.Message, ex.StackTrace)
                         WStkTrc(ex)
                     Else
-                        W(DoTranslation("There was an error in the shell.", currentLang) + vbNewLine + "Error {0}: {1}", True, ColTypes.Err, Err.Number, ex.Message)
+                        W(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}", True, ColTypes.Err, Err.Number, ex.Message)
                     End If
                     Continue While
                 End Try
@@ -251,10 +251,10 @@ Public Module Shell
                     'Check to see if a user is able to execute a command
                     If adminList(signedinusrnm) = False And strictCmds.Contains(strcommand) = True Then
                         Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
-                        W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Err, strcommand)
+                        W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, strcommand)
                     ElseIf maintenance = True And strcommand.Contains("logout") Then
                         Wdbg("W", "Cmd exec {0} failed: In maintenance mode. Assertion of input.Contains(""logout"") is True", strcommand)
-                        W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode.", currentLang), True, ColTypes.Err, strcommand)
+                        W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Err, strcommand)
                     ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(strcommand) = True) Or availableCommands.Contains(strcommand) Then
                         Wdbg("I", "Cmd exec {0} succeeded", strcommand)
                         StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
@@ -285,7 +285,7 @@ Public Module Shell
                             CommandProcess.WaitForExit()
                         Catch ex As Exception
                             Wdbg("E", "Failed to start process: {0}", ex.Message)
-                            W(DoTranslation("Failed to start ""{0}"": {1}", currentLang), True, ColTypes.Err, strcommand, ex.Message)
+                            W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Err, strcommand, ex.Message)
                             WStkTrc(ex)
                         End Try
                     ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + scriptCmd)) And scriptCmd.EndsWith(".uesh") Then
@@ -293,7 +293,7 @@ Public Module Shell
                         Execute(Path.GetFullPath(CurrDir + "/" + scriptCmd), scriptArgs.Join(" "))
                     Else
                         Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
-                        W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands.", currentLang), True, ColTypes.Err, strcommand)
+                        W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Err, strcommand)
                     End If
                 End If
             ElseIf ArgsMode = True And CommandFlag = True Then
@@ -331,10 +331,10 @@ Public Module Shell
                                 StartCommandThread.Join()
                             ElseIf adminList(signedinusrnm) = False And strictCmds.Contains(cmd) = True Then
                                 Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
-                                W(DoTranslation("You don't have permission to use {0}", currentLang), True, ColTypes.Err, cmd)
+                                W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, cmd)
                             ElseIf cmd = "logout" Or cmd = "shutdown" Or cmd = "reboot" Then
                                 Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", cmd)
-                                W(DoTranslation("Shell message: Command {0} is not allowed to run on log in.", currentLang), True, ColTypes.Err, cmd)
+                                W(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Err, cmd)
                             ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) Then
                                 Wdbg("I", "Cmd exec {0} succeeded because file is found.", strcommand)
                                 Try
@@ -360,7 +360,7 @@ Public Module Shell
                                     CommandProcess.WaitForExit()
                                 Catch ex As Exception
                                     Wdbg("E", "Failed to start process: {0}", ex.Message)
-                                    W(DoTranslation("Failed to start ""{0}"": {1}", currentLang), True, ColTypes.Err, strcommand, ex.Message)
+                                    W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Err, strcommand, ex.Message)
                                     WStkTrc(ex)
                                 End Try
                             ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) And strcommand.EndsWith(".uesh") Then
@@ -375,17 +375,17 @@ Public Module Shell
                         End If
                     Else
                         Wdbg("W", "Cmd exec {0} failed: availableCmds.Contains({0}) is False", cmd)
-                        W(DoTranslation("Shell message: The requested command {0} is not found.", currentLang), True, ColTypes.Err, cmd)
+                        W(DoTranslation("Shell message: The requested command {0} is not found."), True, ColTypes.Err, cmd)
                     End If
                 Next
             End If
         Catch ex As Exception
             If DebugMode = True Then
-                W(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err,
+                W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Err,
                   Err.Number, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command.", currentLang) + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message)
+                W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Err, Err.Number, ex.Message)
             End If
         End Try
         Console.Title = ConsoleTitle

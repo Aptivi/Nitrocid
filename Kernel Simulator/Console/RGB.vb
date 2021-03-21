@@ -33,7 +33,7 @@ Public Class RGB
             If Value >= 0 And Value <= 255 Then
                 _Red = Value
             Else
-                Throw New InvalidOperationException(DoTranslation("Red color level exceeded. It was {0}.", currentLang).FormatString(Value))
+                Throw New InvalidOperationException(DoTranslation("Red color level exceeded. It was {0}.").FormatString(Value))
             End If
         End Set
     End Property
@@ -48,7 +48,7 @@ Public Class RGB
             If Value >= 0 And Value <= 255 Then
                 _Green = Value
             Else
-                Throw New InvalidOperationException(DoTranslation("Green color level exceeded. It was {0}.", currentLang).FormatString(Value))
+                Throw New InvalidOperationException(DoTranslation("Green color level exceeded. It was {0}.").FormatString(Value))
             End If
         End Set
     End Property
@@ -63,7 +63,7 @@ Public Class RGB
             If Value >= 0 And Value <= 255 Then
                 _Blue = Value
             Else
-                Throw New InvalidOperationException(DoTranslation("Blue color level exceeded. It was {0}.", currentLang).FormatString(Value))
+                Throw New InvalidOperationException(DoTranslation("Blue color level exceeded. It was {0}.").FormatString(Value))
             End If
         End Set
     End Property
@@ -100,7 +100,7 @@ Public Class RGB
                 Blue = RGBStringArray(2)
             End If
         Else
-            Throw New ArgumentException(DoTranslation("Invalid VT sequence for RGB color.", currentLang))
+            Throw New ArgumentException(DoTranslation("Invalid VT sequence for RGB color."))
         End If
     End Sub
 

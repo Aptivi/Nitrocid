@@ -51,11 +51,11 @@ Public Module TimeZones
     Public Sub ShowTimesInZones(Optional ByVal zone As String = "all")
 
         If zoneTimes.Keys.Contains(zone) Then
-            W(DoTranslation("- Time of {0}: {1}", currentLang) + " ({2})", True, ColTypes.Neutral, zone, zoneTimes(zone).ToString(), FindSystemTimeZoneById(zone).GetUtcOffset(KernelDateTime).ToString)
+            W(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, zone, zoneTimes(zone).ToString(), FindSystemTimeZoneById(zone).GetUtcOffset(KernelDateTime).ToString)
         End If
         If zone = "all" Then
             For Each timezone In zoneTimes.Keys
-                W(DoTranslation("- Time of {0}: {1}", currentLang) + " ({2})", True, ColTypes.Neutral, timezone, zoneTimes(timezone).ToString(), FindSystemTimeZoneById(timezone).GetUtcOffset(KernelDateTime).ToString)
+                W(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, timezone, zoneTimes(timezone).ToString(), FindSystemTimeZoneById(timezone).GetUtcOffset(KernelDateTime).ToString)
             Next
         End If
 

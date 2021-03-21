@@ -42,7 +42,7 @@ Public Module SFTPTransfer
                 EventManager.RaiseSFTPDownloadError(File, ex)
             End Try
         Else
-            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission.", currentLang))
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
         End If
         Return False
     End Function
@@ -70,7 +70,7 @@ Public Module SFTPTransfer
                 EventManager.RaiseSFTPUploadError(File, ex)
             End Try
         Else
-            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission.", currentLang))
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
         End If
         Return False
     End Function

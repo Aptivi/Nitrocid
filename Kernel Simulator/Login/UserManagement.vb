@@ -71,8 +71,8 @@ Public Module UserManagement
             InitPermissionsForNewUser(uninitUser)
             Return True
         Catch ex As Exception
-            Throw New Exceptions.UserCreationException(DoTranslation("Error trying to add username.", currentLang) + vbNewLine +
-                                                                DoTranslation("Error {0}: {1}", currentLang).FormatString(ex.Message))
+            Throw New Exceptions.UserCreationException(DoTranslation("Error trying to add username.") + vbNewLine +
+                                                                DoTranslation("Error {0}: {1}").FormatString(ex.Message))
             WStkTrc(ex)
         End Try
         Return False
@@ -115,13 +115,13 @@ Public Module UserManagement
         Wdbg("I", "Creating user {0}...", newUser)
         If InStr(newUser, " ") > 0 Then
             Wdbg("W", "There are spaces in username.")
-            Throw New Exceptions.UserCreationException(DoTranslation("Spaces are not allowed.", currentLang))
+            Throw New Exceptions.UserCreationException(DoTranslation("Spaces are not allowed."))
         ElseIf newUser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
             Wdbg("W", "There are special characters in username.")
-            Throw New Exceptions.UserCreationException(DoTranslation("Special characters are not allowed.", currentLang))
+            Throw New Exceptions.UserCreationException(DoTranslation("Special characters are not allowed."))
         ElseIf newUser = Nothing Then
             Wdbg("W", "Username is blank.")
-            Throw New Exceptions.UserCreationException(DoTranslation("Blank username.", currentLang))
+            Throw New Exceptions.UserCreationException(DoTranslation("Blank username."))
         ElseIf Not userword.ContainsKey(newUser) Then
             Try
                 If newPassword = Nothing Then
@@ -135,11 +135,11 @@ Public Module UserManagement
             Catch ex As Exception
                 Wdbg("E", "Failed to create user {0}: {1}", ex.Message)
                 WStkTrc(ex)
-                Throw New Exceptions.UserCreationException(DoTranslation("usrmgr: Failed to create username {0}: {1}", currentLang).FormatString(newUser, ex.Message))
+                Throw New Exceptions.UserCreationException(DoTranslation("usrmgr: Failed to create username {0}: {1}").FormatString(newUser, ex.Message))
             End Try
         Else
             Wdbg("W", "User {0} already found.", newUser)
-            Throw New Exceptions.UserCreationException(DoTranslation("usrmgr: Username {0} is already found", currentLang).FormatString(newUser))
+            Throw New Exceptions.UserCreationException(DoTranslation("usrmgr: Username {0} is already found").FormatString(newUser))
         End If
         Return False
     End Function
@@ -154,24 +154,24 @@ Public Module UserManagement
     Public Function RemoveUser(ByVal user As String) As Boolean
         If InStr(user, " ") > 0 Then
             Wdbg("W", "There are spaces in username.")
-            Throw New Exceptions.UserManagementException(DoTranslation("Spaces are not allowed.", currentLang))
+            Throw New Exceptions.UserManagementException(DoTranslation("Spaces are not allowed."))
         ElseIf user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
             Wdbg("W", "There are special characters in username.")
-            Throw New Exceptions.UserManagementException(DoTranslation("Special characters are not allowed.", currentLang))
+            Throw New Exceptions.UserManagementException(DoTranslation("Special characters are not allowed."))
         ElseIf user = Nothing Then
             Wdbg("W", "Username is blank.")
-            Throw New Exceptions.UserManagementException(DoTranslation("Blank username.", currentLang))
+            Throw New Exceptions.UserManagementException(DoTranslation("Blank username."))
         ElseIf userword.ContainsKey(user) = False Then
             Wdbg("W", "Username {0} not found in list", user)
-            Throw New Exceptions.UserManagementException(DoTranslation("User {0} not found.", currentLang).FormatString(user))
+            Throw New Exceptions.UserManagementException(DoTranslation("User {0} not found.").FormatString(user))
         Else
             'Try to remove user
             If userword.Keys.ToArray.Contains(user) And user = "root" Then
                 Wdbg("W", "User is root, and is a system account")
-                Throw New Exceptions.UserManagementException(DoTranslation("User {0} isn't allowed to be removed.", currentLang).FormatString(user))
+                Throw New Exceptions.UserManagementException(DoTranslation("User {0} isn't allowed to be removed.").FormatString(user))
             ElseIf userword.Keys.ToArray.Contains(user) And user = signedinusrnm Then
                 Wdbg("W", "User has logged in, so can't delete self.")
-                Throw New Exceptions.UserManagementException(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin.", currentLang).FormatString(user))
+                Throw New Exceptions.UserManagementException(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin.").FormatString(user))
             ElseIf userword.Keys.ToArray.Contains(user) And user <> "root" Then
                 Try
                     Wdbg("I", "Removing permissions...")
@@ -193,8 +193,8 @@ Public Module UserManagement
                     File.WriteAllLines(paths("Users"), UsersLines)
                     Return True
                 Catch ex As Exception
-                    Throw New Exceptions.UserManagementException(DoTranslation("Error trying to remove username.", currentLang) + vbNewLine +
-                                                                          DoTranslation("Error {0}: {1}", currentLang).FormatString(ex.Message))
+                    Throw New Exceptions.UserManagementException(DoTranslation("Error trying to remove username.") + vbNewLine +
+                                                                          DoTranslation("Error {0}: {1}").FormatString(ex.Message))
                     WStkTrc(ex)
                 End Try
             End If
@@ -226,13 +226,13 @@ Public Module UserManagement
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
-                    Throw New Exceptions.UserManagementException(DoTranslation("Failed to rename user. {0}", currentLang).FormatString(ex.Message))
+                    Throw New Exceptions.UserManagementException(DoTranslation("Failed to rename user. {0}").FormatString(ex.Message))
                 End Try
             Else
-                Throw New Exceptions.UserManagementException(DoTranslation("The new name you entered is already found.", currentLang))
+                Throw New Exceptions.UserManagementException(DoTranslation("The new name you entered is already found."))
             End If
         Else
-            Throw New Exceptions.UserManagementException(DoTranslation("User {0} not found.", currentLang).FormatString(OldName))
+            Throw New Exceptions.UserManagementException(DoTranslation("User {0} not found.").FormatString(OldName))
         End If
         Return False
     End Function
@@ -278,12 +278,12 @@ Public Module UserManagement
                 File.WriteAllLines(paths("Users"), UsersLines)
                 Return True
             ElseIf adminList(signedinusrnm) And Not userword.ContainsKey(Target) Then
-                Throw New Exceptions.UserManagementException(DoTranslation("User not found", currentLang))
+                Throw New Exceptions.UserManagementException(DoTranslation("User not found"))
             ElseIf adminList(Target) And Not adminList(signedinusrnm) Then
-                Throw New Exceptions.UserManagementException(DoTranslation("You are not authorized to change password of {0} because the target was an admin.", currentLang).FormatString(Target))
+                Throw New Exceptions.UserManagementException(DoTranslation("You are not authorized to change password of {0} because the target was an admin.").FormatString(Target))
             End If
         Else
-            Throw New Exceptions.UserManagementException(DoTranslation("Wrong user password.", currentLang))
+            Throw New Exceptions.UserManagementException(DoTranslation("Wrong user password."))
         End If
         Return False
     End Function

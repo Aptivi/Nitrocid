@@ -197,33 +197,33 @@ Public Module Translate
                     'Check to see if the language is transliterable
                     Wdbg("I", "Transliterable? {0}", Transliterables.Contains(lang))
                     If Transliterables.Contains(lang) Then
-                        W(DoTranslation("The language you've selected contains two variants. Select one:", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                        W(DoTranslation("The language you've selected contains two variants. Select one:") + vbNewLine, True, ColTypes.Neutral)
                         W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
                         W(DoTranslation("2. Translated", lang + "-T") + vbNewLine, True, ColTypes.Neutral)
 CHOICE:
-                        W(DoTranslation("Select your choice:", currentLang), False, ColTypes.Input)
+                        W(DoTranslation("Select your choice:"), False, ColTypes.Input)
                         Dim cho As String = Console.ReadKey(True).KeyChar
                         Console.WriteLine()
                         Wdbg("I", "Choice: {0}", cho)
                         If cho = "2" Then
                             lang += "-T"
                         ElseIf Not cho = "1" Then
-                            W(DoTranslation("Invalid choice. Try again.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Invalid choice. Try again."), True, ColTypes.Err)
                             GoTo CHOICE
                         End If
                     End If
                 End If
             End If
 
-            W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, currentLang, lang)
+            W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, currentLang, lang)
             If Not SetLang(lang) Then
-                W(DoTranslation("Failed to set language.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Failed to set language."), True, ColTypes.Err)
             End If
             If NotifyCodepageError Then
-                W(DoTranslation("Unable to set codepage. The language may not display properly.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Unable to set codepage. The language may not display properly."), True, ColTypes.Err)
             End If
         Else
-            W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Err, lang)
+            W(DoTranslation("Invalid language") + " {0}", True, ColTypes.Err, lang)
         End If
     End Sub
 
@@ -290,7 +290,7 @@ CHOICE:
 
             'Set current language
             Try
-                Dim OldModDescGeneric As String = DoTranslation("Command defined by ", currentLang)
+                Dim OldModDescGeneric As String = DoTranslation("Command defined by ")
                 Wdbg("I", "Translating kernel to {0}.", lang)
                 currentLang = lang
                 Dim ksconf As New IniFile()
@@ -319,7 +319,7 @@ CHOICE:
                 WStkTrc(ex)
             End Try
         Else
-            Throw New Exceptions.NoSuchLanguageException(DoTranslation("Invalid language", currentLang) + " {0}".FormatString(lang))
+            Throw New Exceptions.NoSuchLanguageException(DoTranslation("Invalid language") + " {0}".FormatString(lang))
         End If
         Return False
     End Function

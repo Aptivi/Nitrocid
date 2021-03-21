@@ -38,12 +38,12 @@ Module RemoteProcedure
                 Wdbg("I", "RPC: Listener started")
                 RPCThread.Start()
                 Wdbg("I", "RPC: Thread started")
-                W(DoTranslation("RPC listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, RPCPort)
+                W(DoTranslation("RPC listening on all addresses using port {0}."), True, ColTypes.Neutral, RPCPort)
             Else
                 Throw New ThreadStateException()
             End If
         Catch ex As ThreadStateException
-            W(DoTranslation("RPC is already running.", currentLang), True, ColTypes.Err)
+            W(DoTranslation("RPC is already running."), True, ColTypes.Err)
             WStkTrc(ex)
         End Try
     End Sub

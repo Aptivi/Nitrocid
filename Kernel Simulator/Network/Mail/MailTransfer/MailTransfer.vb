@@ -35,11 +35,11 @@ Public Module MailTransfer
         Wdbg("I", "Message number {0}", Message)
         If Message < 0 Then
             Wdbg("E", "Trying to access message 0 or less than 0.")
-            W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Err)
+            W(DoTranslation("Message number may not be negative or zero."), True, ColTypes.Err)
             Exit Sub
         ElseIf Message > MaxMessagesIndex Then
             Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-            W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Err)
+            W(DoTranslation("Message specified is not found."), True, ColTypes.Err)
             Exit Sub
         End If
 
@@ -61,19 +61,19 @@ Public Module MailTransfer
             Wdbg("I", "{0} senders.", Msg.From.Count)
             For Each Address As InternetAddress In Msg.From
                 Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                W(DoTranslation("- From {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
+                W(DoTranslation("- From {0}"), True, ColTypes.HelpCmd, Address.ToString)
             Next
 
             'Print all the addresses that received the mail
             Wdbg("I", "{0} receivers.", Msg.To.Count)
             For Each Address As InternetAddress In Msg.To
                 Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                W(DoTranslation("- To {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
+                W(DoTranslation("- To {0}"), True, ColTypes.HelpCmd, Address.ToString)
             Next
 
             'Print the date and time when the user received the mail
             Wdbg("I", "Rendering time and date of {0}.", Msg.Date.DateTime.ToString)
-            W(DoTranslation("- Sent at {0} in {1}", currentLang), True, ColTypes.HelpCmd, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
+            W(DoTranslation("- Sent at {0} in {1}"), True, ColTypes.HelpCmd, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
 
             'Prepare subject
             Console.WriteLine()
@@ -133,7 +133,7 @@ Public Module MailTransfer
             'Populate attachments
 #Disable Warning BC42104
             If Msg.Attachments.Count > 0 Then
-                W(DoTranslation("Attachments:", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Attachments:"), True, ColTypes.Neutral)
                 Dim AttachmentEntities As New List(Of MimeEntity)
                 If Decrypt Then
                     Wdbg("I", "Parsing attachments...")

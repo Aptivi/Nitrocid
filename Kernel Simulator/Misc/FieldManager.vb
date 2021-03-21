@@ -38,7 +38,7 @@ Public Module FieldManager
         Else
             'Variable not found on any of the "flag" modules.
             Wdbg("I", "Field {0} not found.", Variable)
-            W(DoTranslation("Variable {0} is not found on any of the modules.", currentLang), True, ColTypes.Err, Variable)
+            W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Err, Variable)
         End If
     End Sub
 
@@ -62,7 +62,7 @@ Public Module FieldManager
         Else
             'Variable not found on any of the "flag" modules.
             Wdbg("I", "Field {0} not found.", Variable)
-            W(DoTranslation("Variable {0} is not found on any of the modules.", currentLang), True, ColTypes.Err, Variable)
+            W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Err, Variable)
             Return Nothing
         End If
     End Function

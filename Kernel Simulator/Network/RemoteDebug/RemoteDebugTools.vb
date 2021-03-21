@@ -60,7 +60,7 @@ Public Module RemoteDebugTools
             End If
         Next
         If Not Found Then
-            Throw New Exceptions.RemoteDebugDeviceNotFoundException(DoTranslation("Debug device {0} not found.", currentLang).FormatString(IPAddr))
+            Throw New Exceptions.RemoteDebugDeviceNotFoundException(DoTranslation("Debug device {0} not found.").FormatString(IPAddr))
         End If
     End Sub
 

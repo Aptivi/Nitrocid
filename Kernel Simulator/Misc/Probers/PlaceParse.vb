@@ -149,9 +149,9 @@ Public Module PlaceParse
         Catch ex As Exception
             WStkTrc(ex)
             If DebugMode = True Then
-                W(DoTranslation("Error trying to parse placeholders. {0} - Stack trace:", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Error trying to parse placeholders. {0} - Stack trace:") + vbNewLine + ex.StackTrace, True, ColTypes.Err, ex.Message)
             Else
-                W(DoTranslation("Error trying to parse placeholders. {0}", currentLang), True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Error trying to parse placeholders. {0}"), True, ColTypes.Err, ex.Message)
             End If
         End Try
         Return text

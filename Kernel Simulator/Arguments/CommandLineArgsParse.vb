@@ -45,18 +45,18 @@ Module CommandLineArgsParse
                 ElseIf arg = "args" Then
                     argsOnBoot = True
                 ElseIf arg = "help" Then
-                    W("- testMod: ", False, ColTypes.HelpCmd) : W(DoTranslation("Tests mods by providing mod files", currentLang), True, ColTypes.HelpDef)
-                    W("- testInteractive: ", False, ColTypes.HelpCmd) : W(DoTranslation("Opens a test shell", currentLang), True, ColTypes.HelpDef)
-                    W("- debug: ", False, ColTypes.HelpCmd) : W(DoTranslation("Enables debug mode", currentLang), True, ColTypes.HelpDef)
-                    W("- args: ", False, ColTypes.HelpCmd) : W(DoTranslation("Prompts for arguments", currentLang), True, ColTypes.HelpDef)
-                    W(DoTranslation("* Press any key to start the kernel or ESC to exit.", currentLang), True, ColTypes.Neutral)
+                    W("- testMod: ", False, ColTypes.HelpCmd) : W(DoTranslation("Tests mods by providing mod files"), True, ColTypes.HelpDef)
+                    W("- testInteractive: ", False, ColTypes.HelpCmd) : W(DoTranslation("Opens a test shell"), True, ColTypes.HelpDef)
+                    W("- debug: ", False, ColTypes.HelpCmd) : W(DoTranslation("Enables debug mode"), True, ColTypes.HelpDef)
+                    W("- args: ", False, ColTypes.HelpCmd) : W(DoTranslation("Prompts for arguments"), True, ColTypes.HelpDef)
+                    W(DoTranslation("* Press any key to start the kernel or ESC to exit."), True, ColTypes.Neutral)
                     If Console.ReadKey(True).Key = ConsoleKey.Escape Then
                         Environment.Exit(0)
                     End If
                 End If
             End If
         Catch ex As Exception
-            W(DoTranslation("Error while parsing real command-line arguments: {0}", currentLang) + vbNewLine + "{1}", True, ColTypes.Err, ex.Message, ex.StackTrace)
+            W(DoTranslation("Error while parsing real command-line arguments: {0}") + vbNewLine + "{1}", True, ColTypes.Err, ex.Message, ex.StackTrace)
             If arg = "testMod" Or arg = "createConf" Then
                 Environment.Exit(1)
             End If

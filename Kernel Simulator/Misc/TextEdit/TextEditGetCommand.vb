@@ -85,10 +85,10 @@ Public Module TextEditGetCommand
                             W("- {0}: ", False, ColTypes.HelpCmd, LineNumber)
                             W(Line, True, ColTypes.HelpDef)
                         Else
-                            W(DoTranslation("The specified line number may not be larger than the last file line number.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Err)
                         End If
                     Else
-                        W(DoTranslation("Specified line number {0} is not a valid number.", currentLang), True, ColTypes.Err, Arguments(0))
+                        W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Err, Arguments(0))
                         Wdbg("E", "{0} is not a numeric value.", Arguments(0))
                     End If
                 Else
@@ -125,12 +125,12 @@ Public Module TextEditGetCommand
                         If CInt(Arguments(0)) <= TextEdit_FileLines.Count Then
                             TextEdit_FileLines.RemoveAt(LineIndex)
                             Wdbg("I", "New file lines: {0}", TextEdit_FileLines.Count)
-                            W(DoTranslation("Removed line.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Removed line."), True, ColTypes.Neutral)
                         Else
-                            W(DoTranslation("The specified line number may not be larger than the last file line number.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Err)
                         End If
                     Else
-                        W(DoTranslation("Specified line number {0} is not a valid number.", currentLang), True, ColTypes.Err, Arguments(0))
+                        W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Err, Arguments(0))
                         Wdbg("E", "{0} is not a numeric value.", Arguments(0))
                     End If
                 End If
@@ -154,10 +154,10 @@ Public Module TextEditGetCommand
                             Wdbg("I", "Replacing ""{0}"" with ""{1}"" in line {2}", Arguments(0), Arguments(1), LineIndex + 1)
                             TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Replace(Arguments(0), Arguments(1))
                         Else
-                            W(DoTranslation("The specified line number may not be larger than the last file line number.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Err)
                         End If
                     Else
-                        W(DoTranslation("Specified line number {0} is not a valid number.", currentLang), True, ColTypes.Err, Arguments(2))
+                        W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Err, Arguments(2))
                         Wdbg("E", "{0} is not a numeric value.", Arguments(2))
                     End If
                 End If
@@ -173,10 +173,10 @@ Public Module TextEditGetCommand
                             TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Replace(Arguments(0), "")
                             Wdbg("I", "Removed {0}. Result: {1}", LineIndex, TextEdit_FileLines.Count)
                         Else
-                            W(DoTranslation("The specified line number may not be larger than the last file line number.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Err)
                         End If
                     Else
-                        W(DoTranslation("Specified line number {0} is not a valid number.", currentLang), True, ColTypes.Err, Arguments(1))
+                        W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Err, Arguments(1))
                         Wdbg("E", "{0} is not a numeric value.", Arguments(1))
                     End If
                 End If
@@ -194,10 +194,10 @@ Public Module TextEditGetCommand
                             TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Remove(CharIndex, 1)
                             Wdbg("I", "Removed {0}. Result: {1}", LineIndex, TextEdit_FileLines(LineIndex))
                         Else
-                            W(DoTranslation("The specified line number may not be larger than the last file line number.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Err)
                         End If
                     Else
-                        W(DoTranslation("Specified line number {0} is not a valid number.", currentLang), True, ColTypes.Err, Arguments(1))
+                        W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Err, Arguments(1))
                         Wdbg("E", "{0} is not a numeric value.", Arguments(1))
                     End If
                 End If
@@ -217,7 +217,7 @@ Public Module TextEditGetCommand
                                 End If
                             Next
                         Else
-                            W(DoTranslation("The specified line number may not be larger than the last file line number.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Err)
                         End If
                     ElseIf Arguments(1).ToLower = "all" Then
                         Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
@@ -237,12 +237,12 @@ Public Module TextEditGetCommand
 
             'See if the command is done (passed all required arguments)
             If Not CommandDone Then
-                W(DoTranslation("Required arguments are not passed to command {0}", currentLang), True, ColTypes.Err, Command)
+                W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Err, Command)
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments.Length)
                 TextEdit_GetHelp(Command)
             End If
         Catch ex As Exception
-            W(DoTranslation("Error trying to run command: {0}", currentLang), True, ColTypes.Err, ex.Message)
+            W(DoTranslation("Error trying to run command: {0}"), True, ColTypes.Err, ex.Message)
             Wdbg("E", "Error running command {0}: {1}", CommandText.Split(" ")(0), ex.Message)
             WStkTrc(ex)
             EventManager.RaiseTextCommandError(CommandText, ex)

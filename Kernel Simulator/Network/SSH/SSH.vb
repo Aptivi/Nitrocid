@@ -29,7 +29,7 @@ Module SSH
         Try
             'Authentication
             Wdbg("I", "Address: {0}:{1}, Username: {2}", Address, Port, Username)
-            W(DoTranslation("Enter the password for {0}: ", currentLang), False, ColTypes.Input, Username)
+            W(DoTranslation("Enter the password for {0}: "), False, ColTypes.Input, Username)
             Dim Pass As String = ReadLineNoInput("*")
             Console.WriteLine()
 
@@ -58,7 +58,7 @@ Module SSH
                 End If
             End While
             Wdbg("I", "Connected: {0}", SSH.IsConnected)
-            W(vbNewLine + DoTranslation("SSH Disconnected.", currentLang), True, ColTypes.Neutral)
+            W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
             DisconnectionRequested = False
 
             'Remove handler for SSH
@@ -66,7 +66,7 @@ Module SSH
             RemoveHandler Console.CancelKeyPress, AddressOf SSHDisconnect
         Catch ex As Exception
             EventManager.RaiseSSHError(ex)
-            W(DoTranslation("Error trying to connect to SSH server: {0}", currentLang), True, ColTypes.Err, ex.Message)
+            W(DoTranslation("Error trying to connect to SSH server: {0}"), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

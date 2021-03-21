@@ -96,7 +96,7 @@ Module MailShell
                     ExecuteMailAlias(cmd + " " + args)
                 ElseIf Not cmd.StartsWith(" ") Then
                     Wdbg("E", "Command not found. Reopening shell...")
-                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, cmd)
+                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Err, cmd)
                 End If
                 EventManager.RaiseIMAPPostExecuteCommand(cmd + " " + args)
             Else
@@ -189,8 +189,8 @@ Module MailShell
         Dim Folder As ImapFolder = Sender
         If Folder.Count > IMAP_Messages.Count Then
             Dim NewMessagesCount As Integer = Folder.Count - IMAP_Messages.Count
-            NotifySend(New Notification With {.Title = DoTranslation("{0} new messages arrived in inbox.", currentLang).FormatString(NewMessagesCount),
-                                              .Desc = DoTranslation("Open ""lsmail"" to see them.", currentLang),
+            NotifySend(New Notification With {.Title = DoTranslation("{0} new messages arrived in inbox.").FormatString(NewMessagesCount),
+                                              .Desc = DoTranslation("Open ""lsmail"" to see them."),
                                               .Priority = NotifPriority.Medium})
         End If
     End Sub

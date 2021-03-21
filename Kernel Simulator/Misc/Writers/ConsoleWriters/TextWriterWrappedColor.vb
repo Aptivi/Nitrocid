@@ -95,7 +95,7 @@ Public Module TextWriterWrappedColor
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -143,7 +143,7 @@ Public Module TextWriterWrappedColor
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -192,7 +192,7 @@ Public Module TextWriterWrappedColor
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -242,7 +242,7 @@ Public Module TextWriterWrappedColor
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -293,7 +293,7 @@ Public Module TextWriterWrappedColor
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -344,7 +344,7 @@ Public Module TextWriterWrappedColor
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -394,7 +394,7 @@ Public Module TextWriterWrappedColor
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text.", currentLang), ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock

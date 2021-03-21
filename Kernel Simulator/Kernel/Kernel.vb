@@ -71,16 +71,16 @@ Public Module Kernel
                 End If
 
                 'If the two files are not found, create two MOTD files with current config.
-                If Not File.Exists(paths("Home") + "/MOTD.txt") Then SetMOTD(DoTranslation("Welcome to Kernel!", currentLang), MessageType.MOTD)
-                If Not File.Exists(paths("Home") + "/MAL.txt") Then SetMOTD(DoTranslation("Logged in successfully as <user>", currentLang), MessageType.MAL)
+                If Not File.Exists(paths("Home") + "/MOTD.txt") Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
+                If Not File.Exists(paths("Home") + "/MAL.txt") Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
 
                 'Initialize stage counter
-                W(vbNewLine + DoTranslation("- Stage 1: System initialization", currentLang), True, ColTypes.Stage)
+                W(vbNewLine + DoTranslation("- Stage 1: System initialization"), True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 1: Initializing system")
                 StartRDebugThread(True)
-                W(DoTranslation("Starting RPC...", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Starting RPC..."), True, ColTypes.Neutral)
                 StartRPC()
-                W(DoTranslation("Initializing filesystem...", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Initializing filesystem..."), True, ColTypes.Neutral)
                 CurrDir = paths("Home")
 
                 'Check for kernel updates
@@ -91,12 +91,12 @@ Public Module Kernel
 #End If
 
                 'Phase 1: Probe hardware
-                W(vbNewLine + DoTranslation("- Stage 2: Hardware detection", currentLang), True, ColTypes.Stage)
+                W(vbNewLine + DoTranslation("- Stage 2: Hardware detection"), True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 2: Probing hardware")
                 StartProbing()
 
                 'Phase 2: Parse Mods and Screensavers
-                W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection", currentLang), True, ColTypes.Stage)
+                W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection"), True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
@@ -108,15 +108,15 @@ Public Module Kernel
                             CompileCustom(modFile.Replace(modPath, ""))
                         Next
                     Else
-                        W(DoTranslation("No mods detected. Skipping stage...", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("No mods detected. Skipping stage..."), True, ColTypes.Neutral)
                     End If
                 Else
-                    W(DoTranslation("Running in safe mode. Skipping stage...", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Running in safe mode. Skipping stage..."), True, ColTypes.Neutral)
                 End If
                 EventManager.RaiseStartKernel()
 
                 'Phase 3: Log-in
-                W(vbNewLine + DoTranslation("- Stage 4: Log in", currentLang), True, ColTypes.Stage)
+                W(vbNewLine + DoTranslation("- Stage 4: Log in"), True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
                 LoginFlag = True
@@ -134,14 +134,14 @@ Public Module Kernel
                 'Notify user of errors if appropriate
                 If NotifyConfigError Then
                     NotifyConfigError = False
-                    NotifySend(New Notification With {.Title = DoTranslation("Error loading settings", currentLang),
-                                                      .Desc = DoTranslation("There is an error while loading settings. You may need to check the settings file.", currentLang),
+                    NotifySend(New Notification With {.Title = DoTranslation("Error loading settings"),
+                                                      .Desc = DoTranslation("There is an error while loading settings. You may need to check the settings file."),
                                                       .Priority = NotifPriority.Medium})
                 End If
                 If NotifyDebugDownloadError Then
                     NotifyDebugDownloadError = False
-                    NotifySend(New Notification With {.Title = DoTranslation("Error downloading debug data", currentLang),
-                                                      .Desc = DoTranslation("There is an error while downloading debug data. Check your internet connection.", currentLang),
+                    NotifySend(New Notification With {.Title = DoTranslation("Error downloading debug data"),
+                                                      .Desc = DoTranslation("There is an error while downloading debug data. Check your internet connection."),
                                                       .Priority = NotifPriority.Medium})
                 End If
 
@@ -153,7 +153,7 @@ Public Module Kernel
                     ReadMOTDFromFile(MessageType.MOTD)
                     ReadMOTDFromFile(MessageType.MAL)
                     LoginFlag = False
-                    W(DoTranslation("Enter the admin password for maintenance.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
                     answeruser = "root"
                     ShowPasswordPrompt(answeruser)
                 End If
@@ -161,7 +161,7 @@ Public Module Kernel
                 If DebugMode = True Then
                     W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
                 End If
-                KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}", currentLang), ex, ex.Message)
+                KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message)
             End Try
         End While
     End Sub

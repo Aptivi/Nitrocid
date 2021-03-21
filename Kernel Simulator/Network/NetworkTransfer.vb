@@ -120,7 +120,7 @@ Public Module NetworkTransfer
         End If
         If Not DFinish Then
             Console.SetCursorPosition(0, Console.CursorTop)
-            WriteWhere(DoTranslation("{0} MB of {1} MB downloaded.", currentLang) + " | {2}%    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesReceived / 1024 / 1024, 2), FormatNumber(e.TotalBytesToReceive / 1024 / 1024, 2), e.ProgressPercentage)
+            WriteWhere(DoTranslation("{0} MB of {1} MB downloaded.") + " | {2}%    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesReceived / 1024 / 1024, 2), FormatNumber(e.TotalBytesToReceive / 1024 / 1024, 2), e.ProgressPercentage)
         End If
     End Sub
 
@@ -145,7 +145,7 @@ Public Module NetworkTransfer
         End If
         If Not DFinish Then
             Console.SetCursorPosition(0, Console.CursorTop)
-            WriteWhere(DoTranslation("{0} MB of {1} MB uploaded.", currentLang) + " | {2}%    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesSent / 1024 / 1024, 2), FormatNumber(e.TotalBytesToSend / 1024 / 1024, 2), e.ProgressPercentage)
+            WriteWhere(DoTranslation("{0} MB of {1} MB uploaded.") + " | {2}%    ", 0, Console.CursorTop, ColTypes.Neutral, FormatNumber(e.BytesSent / 1024 / 1024, 2), FormatNumber(e.TotalBytesToSend / 1024 / 1024, 2), e.ProgressPercentage)
         End If
     End Sub
 

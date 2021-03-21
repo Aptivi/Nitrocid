@@ -45,7 +45,7 @@ Public Module Login
             'TODO: Allow users to add users as part of an upcoming first-user trigger system.
             If userword.Count = 0 Then 'Check if user amount is zero
                 Wdbg("F", "Shell reached rare state, because userword count is 0.")
-                Throw New Exceptions.NullUsersException(DoTranslation("There are no more users remaining in the list.", currentLang))
+                Throw New Exceptions.NullUsersException(DoTranslation("There are no more users remaining in the list."))
             End If
 
             'Clear console if clsOnLogin is set to True (If a user has enabled Clear Screen on Login)
@@ -55,7 +55,7 @@ Public Module Login
             End If
 
             'Generate user list
-            If ShowAvailableUsers Then W(DoTranslation("Available usernames: {0}", currentLang), True, ColTypes.Neutral, String.Join(", ", userword.Keys))
+            If ShowAvailableUsers Then W(DoTranslation("Available usernames: {0}"), True, ColTypes.Neutral, String.Join(", ", userword.Keys))
 
             'Read MOTD and MAL
             ReadMOTDFromFile(MessageType.MOTD)
@@ -69,16 +69,16 @@ Public Module Login
             showMOTDOnceFlag = False
 
             'Prompt user to login
-            W(DoTranslation("Username: ", currentLang), False, ColTypes.Input)
+            W(DoTranslation("Username: "), False, ColTypes.Input)
             answeruser = Console.ReadLine()
 
             'Parse input
             If InStr(answeruser, " ") > 0 Then
                 Wdbg("W", "Spaces found in username.")
-                W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Spaces are not allowed."), True, ColTypes.Err)
             ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                 Wdbg("W", "Unknown characters found in username.")
-                W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Special characters are not allowed."), True, ColTypes.Err)
             ElseIf userword.ContainsKey(answeruser) Then
                 Wdbg("I", "Username correct. Finding if the user is disabled...")
                 If disabledList(answeruser) = False Then
@@ -86,11 +86,11 @@ Public Module Login
                     ShowPasswordPrompt(answeruser)
                 Else
                     Wdbg("W", "User can't log in. (User is in disabled list)")
-                    W(DoTranslation("User is disabled.", currentLang), True, ColTypes.Err)
+                    W(DoTranslation("User is disabled."), True, ColTypes.Err)
                 End If
             Else
                 Wdbg("E", "Username not found.")
-                W(DoTranslation("Wrong username.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Wrong username."), True, ColTypes.Err)
             End If
         End While
     End Sub
@@ -120,7 +120,7 @@ Public Module Login
             If Not password = GetEmptyHash(Algorithms.SHA256) Then 'No password
                 'Wait for input
                 Wdbg("I", "Password not empty")
-                W(DoTranslation("{0}'s password: ", currentLang), False, ColTypes.Input, usernamerequested)
+                W(DoTranslation("{0}'s password: "), False, ColTypes.Input, usernamerequested)
 
                 'Get input
                 answerpass = ReadLineNoInput("*"c)
@@ -138,7 +138,7 @@ Public Module Login
                     Exit Sub
                 Else
                     Wdbg("I", "Passowrd written wrong...")
-                    W(DoTranslation("Wrong password.", currentLang), True, ColTypes.Err)
+                    W(DoTranslation("Wrong password."), True, ColTypes.Err)
                     If Not maintenance Then
                         If Not LockMode Then
                             Exit Sub

@@ -85,7 +85,7 @@ Module TestGetCommand
                     Dim SubName As String = "Raise" + FullArgsQ(0)
                     CallByName(New Events, SubName, CallType.Method)
                 Catch ex As Exception
-                    W(DoTranslation("Failure to raise event {0}: {1}", currentLang), True, ColTypes.Err, FullArgsQ(0))
+                    W(DoTranslation("Failure to raise event {0}: {1}"), True, ColTypes.Err, FullArgsQ(0))
                 End Try
             End If
         ElseIf Cmd = "probehw" Then
@@ -120,25 +120,25 @@ Module TestGetCommand
             Dim spent As New Stopwatch
             spent.Start() 'Time when you're on a breakpoint is counted
             W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA512), True, ColTypes.Neutral)
-            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
             spent.Stop()
         ElseIf Cmd = "testsha256" Then
             Dim spent As New Stopwatch
             spent.Start() 'Time when you're on a breakpoint is counted
             W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA256), True, ColTypes.Neutral)
-            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
             spent.Stop()
         ElseIf Cmd = "testsha1" Then
             Dim spent As New Stopwatch
             spent.Start() 'Time when you're on a breakpoint is counted
             W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA1), True, ColTypes.Neutral)
-            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
             spent.Stop()
         ElseIf Cmd = "testmd5" Then
             Dim spent As New Stopwatch
             spent.Start() 'Time when you're on a breakpoint is counted
             W(GetEncryptedString(FullArgsQ(0), Algorithms.MD5), True, ColTypes.Neutral)
-            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
             spent.Stop()
         ElseIf Cmd = "testregexp" Then 'Usage: testregexp <pattern> <string>
             Dim Exp As String = FullArgsQ(0)
@@ -147,7 +147,7 @@ Module TestGetCommand
             Dim Matches As MatchCollection = Reg.Matches(FullArgsQ(0))
             Dim MatchNum As Integer = 1
             For Each Mat As Match In Matches
-                W(DoTranslation("Match {0} ({1}): {2}", currentLang), True, ColTypes.Neutral, MatchNum, Exp, Mat)
+                W(DoTranslation("Match {0} ({1}): {2}"), True, ColTypes.Neutral, MatchNum, Exp, Mat)
                 MatchNum += 1
             Next
         ElseIf Cmd = "loadmods" Then 'Usage: loadmods <Enable>

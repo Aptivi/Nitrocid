@@ -50,29 +50,29 @@ Public Module PermissionManagement
             If PermissionMode = PermissionManagementMode.Allow Then
                 AddPermission(PermType, Username)
                 If PermType = PermissionType.Administrator Then
-                    W(DoTranslation("The user {0} has been added to the admin list.", currentLang), True, ColTypes.Neutral, Username)
+                    W(DoTranslation("The user {0} has been added to the admin list."), True, ColTypes.Neutral, Username)
                 ElseIf PermType = PermissionType.Disabled Then
-                    W(DoTranslation("The user {0} has been added to the disabled list.", currentLang), True, ColTypes.Neutral, Username)
+                    W(DoTranslation("The user {0} has been added to the disabled list."), True, ColTypes.Neutral, Username)
                 End If
             ElseIf PermissionMode = PermissionManagementMode.Disallow Then
                 RemovePermission(PermType, Username)
                 If PermType = PermissionType.Administrator Then
-                    W(DoTranslation("The user {0} has been removed from the admin list.", currentLang), True, ColTypes.Neutral, Username)
+                    W(DoTranslation("The user {0} has been removed from the admin list."), True, ColTypes.Neutral, Username)
                 ElseIf PermType = PermissionType.Disabled Then
-                    W(DoTranslation("The user {0} has been removed from the disabled list.", currentLang), True, ColTypes.Neutral, Username)
+                    W(DoTranslation("The user {0} has been removed from the disabled list."), True, ColTypes.Neutral, Username)
                 End If
             Else
                 Wdbg("W", "Mode is invalid")
-                W(DoTranslation("You have found a bug in the permission system: invalid mode {0}", currentLang), True, ColTypes.Err, PermissionMode)
+                W(DoTranslation("You have found a bug in the permission system: invalid mode {0}"), True, ColTypes.Err, PermissionMode)
             End If
         Catch ex As Exception
             If DebugMode = True Then
-                W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace)
+                W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
+                  DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
-                W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.", currentLang) + vbNewLine +
-                  DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message)
+                W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
+                  DoTranslation("Error {0}: {1}"), True, ColTypes.Err, Err.Number, ex.Message)
             End If
         End Try
     End Sub
@@ -106,12 +106,12 @@ Public Module PermissionManagement
                 Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
             Else
                 Wdbg("W", "Type is invalid")
-                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}", currentLang).FormatString(PermType))
+                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}").FormatString(PermType))
                 Return False
             End If
         Else
             Wdbg("W", "User {0} not found on list", Username)
-            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid user {0}", currentLang).FormatString(Username))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid user {0}").FormatString(Username))
             Return False
         End If
 
@@ -157,15 +157,15 @@ Public Module PermissionManagement
                 disabledList(Username) = False
             Else
                 Wdbg("W", "Type is invalid")
-                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}", currentLang).FormatString(PermType))
+                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}").FormatString(PermType))
                 Return False
             End If
         ElseIf Username = signedinusrnm Then
-            Throw New Exceptions.PermissionManagementException(DoTranslation("You are already logged in.", currentLang))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("You are already logged in."))
             Return False
         Else
             Wdbg("W", "User {0} not found on list", Username)
-            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid user {0}", currentLang).FormatString(Username))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid user {0}").FormatString(Username))
             Return False
         End If
 
@@ -211,11 +211,11 @@ Public Module PermissionManagement
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New Exceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.", currentLang) + vbNewLine +
-                                                                            DoTranslation("Error {0}: {1}", currentLang).FormatString(Err.Number, ex.Message))
+                Throw New Exceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.") + vbNewLine +
+                                                                            DoTranslation("Error {0}: {1}").FormatString(Err.Number, ex.Message))
             End Try
         Else
-            Throw New Exceptions.PermissionManagementException(DoTranslation("One of the permission lists doesn't contain username {0}.", currentLang))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("One of the permission lists doesn't contain username {0}."))
         End If
         Return False
     End Function
@@ -244,7 +244,7 @@ Public Module PermissionManagement
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to initialize permissions for user {0}: {1}", currentLang).FormatString(NewUser, ex.Message))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to initialize permissions for user {0}: {1}").FormatString(NewUser, ex.Message))
         End Try
         Return False
     End Function
@@ -270,7 +270,7 @@ Public Module PermissionManagement
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to load permissions from file: {0}", currentLang).FormatString(ex.Message))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to load permissions from file: {0}").FormatString(ex.Message))
         End Try
         Return False
     End Function

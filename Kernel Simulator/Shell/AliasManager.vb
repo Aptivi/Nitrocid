@@ -175,7 +175,7 @@ Public Module AliasManager
                 'User tries to add an alias.
                 Try
                     AddAlias(AliasCmd, DestCmd, Type)
-                    W(DoTranslation("You can now run ""{0}"" as a command: ""{1}"".", currentLang), True, ColTypes.Neutral, AliasCmd, DestCmd)
+                    W(DoTranslation("You can now run ""{0}"" as a command: ""{1}""."), True, ColTypes.Neutral, AliasCmd, DestCmd)
                 Catch ex As Exception
                     Wdbg("E", "Failed to add alias. Stack trace written using WStkTrc().")
                     WStkTrc(ex)
@@ -185,7 +185,7 @@ Public Module AliasManager
                 'user tries to remove an alias
                 Try
                     RemoveAlias(AliasCmd, Type)
-                    W(DoTranslation("Removed alias {0} successfully.", currentLang), True, ColTypes.Err, AliasCmd)
+                    W(DoTranslation("Removed alias {0} successfully."), True, ColTypes.Err, AliasCmd)
                 Catch ex As Exception
                     Wdbg("E", "Failed to remove alias. Stack trace written using WStkTrc().")
                     WStkTrc(ex)
@@ -193,14 +193,14 @@ Public Module AliasManager
                 End Try
             Else
                 Wdbg("E", "Mode {0} was neither add nor rem.", mode)
-                W(DoTranslation("Invalid mode {0}.", currentLang), True, ColTypes.Err, mode)
+                W(DoTranslation("Invalid mode {0}."), True, ColTypes.Err, mode)
             End If
 
             'Save all aliases
             SaveAliases()
         Else
             Wdbg("E", "Type {0} not found.", Type)
-            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, Type)
+            W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, Type)
         End If
     End Sub
 
@@ -219,15 +219,15 @@ Public Module AliasManager
         If Type = AliasType.RDebug Or Type = AliasType.Shell Or Type = AliasType.FTPShell Or Type = AliasType.SFTPShell Or Type = AliasType.MailShell Then
             If SourceAlias = Destination Then
                 Wdbg("I", "Assertion succeeded: {0} = {1}", SourceAlias, Destination)
-                Throw New Exceptions.AliasInvalidOperationException(DoTranslation("Alias can't be the same name as a command.", currentLang))
+                Throw New Exceptions.AliasInvalidOperationException(DoTranslation("Alias can't be the same name as a command."))
             ElseIf Not availableCommands.Contains(Destination) And Not DebugCmds.Contains(Destination) And Not availsftpcmds.Contains(Destination) And
                    Not availftpcmds.Contains(Destination) And Not Mail_AvailableCommands.Contains(Destination) Then
                 Wdbg("W", "{0} not found in either list of availableCmds, Mail_AvailableCommands, availftpcmds, availsftpcmds, or DebugCmds", Destination)
-                Throw New Exceptions.AliasNoSuchCommandException(DoTranslation("Command not found to alias to {0}.", currentLang).FormatString(Destination))
+                Throw New Exceptions.AliasNoSuchCommandException(DoTranslation("Command not found to alias to {0}.").FormatString(Destination))
             ElseIf Aliases.ContainsKey(SourceAlias) Or RemoteDebugAliases.ContainsKey(SourceAlias) Or FTPShellAliases.ContainsKey(SourceAlias) Or
                    SFTPShellAliases.ContainsKey(SourceAlias) Or MailShellAliases.ContainsKey(SourceAlias) Then
                 Wdbg("W", "Alias {0} already found", SourceAlias)
-                Throw New Exceptions.AliasAlreadyExistsException(DoTranslation("Alias already found: {0}", currentLang).FormatString(SourceAlias))
+                Throw New Exceptions.AliasAlreadyExistsException(DoTranslation("Alias already found: {0}").FormatString(SourceAlias))
             Else
                 Wdbg("W", "Aliasing {0} to {1}", SourceAlias, Destination)
                 If Type = AliasType.Shell Then
@@ -245,7 +245,7 @@ Public Module AliasManager
             End If
         Else
             Wdbg("E", "Type {0} not found.", Type)
-            Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.", currentLang).FormatString(Type))
+            Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.").FormatString(Type))
         End If
         Return False
     End Function
@@ -267,7 +267,7 @@ Public Module AliasManager
                 Return True
             Else
                 Wdbg("W", "{0} is not found in remote debug aliases", TargetAlias)
-                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.").FormatString(TargetAlias))
             End If
         ElseIf Type = AliasType.Shell Then
             If Aliases.ContainsKey(TargetAlias) Then
@@ -277,7 +277,7 @@ Public Module AliasManager
                 Return True
             Else
                 Wdbg("W", "{0} is not found in shell aliases", TargetAlias)
-                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.").FormatString(TargetAlias))
             End If
         ElseIf Type = AliasType.FTPShell Then
             If FTPShellAliases.ContainsKey(TargetAlias) Then
@@ -287,7 +287,7 @@ Public Module AliasManager
                 Return True
             Else
                 Wdbg("W", "{0} is not found in FTP shell aliases", TargetAlias)
-                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.").FormatString(TargetAlias))
             End If
         ElseIf Type = AliasType.SFTPShell Then
             If SFTPShellAliases.ContainsKey(TargetAlias) Then
@@ -297,7 +297,7 @@ Public Module AliasManager
                 Return True
             Else
                 Wdbg("W", "{0} is not found in SFTP shell aliases", TargetAlias)
-                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.").FormatString(TargetAlias))
             End If
         ElseIf Type = AliasType.MailShell Then
             If MailShellAliases.ContainsKey(TargetAlias) Then
@@ -307,11 +307,11 @@ Public Module AliasManager
                 Return True
             Else
                 Wdbg("W", "{0} is not found in mail shell aliases", TargetAlias)
-                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.", currentLang).FormatString(TargetAlias))
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.").FormatString(TargetAlias))
             End If
         Else
             Wdbg("E", "Type {0} not found.", Type)
-            Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.", currentLang).FormatString(Type))
+            Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.").FormatString(Type))
         End If
         Return False
     End Function

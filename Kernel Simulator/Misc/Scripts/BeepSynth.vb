@@ -48,18 +48,18 @@ Public Module BeepSynth
                             Console.Beep(freq, ms)
                         Catch ex As Exception
                             Wdbg("E", "Not a comment and not a synth line. ({0})", line)
-                            Throw New Exceptions.InvalidSynthException(DoTranslation("Failed to probe a synth line.", currentLang))
+                            Throw New Exceptions.InvalidSynthException(DoTranslation("Failed to probe a synth line."))
                         End Try
                     End If
                 End While
                 Return True
             Else
                 Wdbg("E", "File is not scripted")
-                Throw New Exceptions.InvalidSynthException(DoTranslation("The file isn't a scripted synth file.", currentLang))
+                Throw New Exceptions.InvalidSynthException(DoTranslation("The file isn't a scripted synth file."))
             End If
         Else
             Wdbg("E", "File doesn't exist")
-            Throw New FileNotFoundException(DoTranslation("Scripted file {0} does not exist.", currentLang).FormatString(file))
+            Throw New FileNotFoundException(DoTranslation("Scripted file {0} does not exist.").FormatString(file))
         End If
         Return False
     End Function

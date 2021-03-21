@@ -47,7 +47,7 @@ Module TestShell
                         TStartCommandThread.Start(FullCmd)
                         TStartCommandThread.Join()
                     Else
-                        W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, FullCmd.Split(" ")(0))
+                        W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Err, FullCmd.Split(" ")(0))
                     End If
                 Else
                     Console.WriteLine()

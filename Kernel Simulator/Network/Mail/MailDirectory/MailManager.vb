@@ -35,7 +35,7 @@ Public Module MailManager
         Wdbg("I", "Page number {0}", PageNum)
         If PageNum <= 0 Then
             Wdbg("E", "Trying to access page 0 or less than 0.")
-            Throw New ArgumentException(DoTranslation("Page may not be negative or zero.", currentLang))
+            Throw New ArgumentException(DoTranslation("Page may not be negative or zero."))
             Return ""
         End If
 
@@ -95,11 +95,11 @@ Public Module MailManager
         Wdbg("I", "Message number {0}", Message)
         If Message < 0 Then
             Wdbg("E", "Trying to remove message 0 or less than 0.")
-            Throw New ArgumentException(DoTranslation("Message number may not be negative or zero.", currentLang))
+            Throw New ArgumentException(DoTranslation("Message number may not be negative or zero."))
             Return False
         ElseIf Message > MaxMessagesIndex Then
             Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-            Throw New Exceptions.MailException(DoTranslation("Message specified is not found.", currentLang))
+            Throw New Exceptions.MailException(DoTranslation("Message specified is not found."))
             Return False
         End If
 
@@ -156,7 +156,7 @@ Public Module MailManager
                                 Wdbg("I", "Removed.")
                                 Dir.Expunge()
                                 Wdbg("I", "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
-                                W(DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
+                                W(DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
                             Else
                                 'Remove message
                                 IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
@@ -165,7 +165,7 @@ Public Module MailManager
                                 Wdbg("I", "Removed.")
                                 IMAP_Client.Inbox.Expunge()
                                 Wdbg("I", "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
-                                W(DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
+                                W(DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
                             End If
                             DeletedMsgNumber += 1
                         End If
@@ -193,11 +193,11 @@ Public Module MailManager
         Wdbg("I", "Message number {0}", Message)
         If Message < 0 Then
             Wdbg("E", "Trying to move message 0 or less than 0.")
-            Throw New ArgumentException(DoTranslation("Message number may not be negative or zero.", currentLang))
+            Throw New ArgumentException(DoTranslation("Message number may not be negative or zero."))
             Return False
         ElseIf Message > MaxMessagesIndex Then
             Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-            Throw New Exceptions.MailException(DoTranslation("Message specified is not found.", currentLang))
+            Throw New Exceptions.MailException(DoTranslation("Message specified is not found."))
             Return False
         End If
 
@@ -254,7 +254,7 @@ Public Module MailManager
                                 Dir.MoveTo(MessageId, TargetF)
                                 Wdbg("I", "Moved.")
                                 Wdbg("I", "Message {0} from {1} moved from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
-                                W(DoTranslation("Message {0} from {1} moved from {2}. {3} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
+                                W(DoTranslation("Message {0} from {1} moved from {2}. {3} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
                             Else
                                 'Remove message
                                 Dim TargetF As MailFolder = OpenFolder(TargetFolder)
@@ -263,7 +263,7 @@ Public Module MailManager
                                 IMAP_Client.Inbox.MoveTo(MessageId, TargetF)
                                 Wdbg("I", "Moved.")
                                 Wdbg("I", "Message {0} from {1} moved. {2} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
-                                W(DoTranslation("Message {0} from {1} moved. {2} messages remaining to parse.", currentLang), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
+                                W(DoTranslation("Message {0} from {1} moved. {2} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
                             End If
                             DeletedMsgNumber += 1
                         End If

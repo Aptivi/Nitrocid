@@ -38,7 +38,7 @@ Public Module Filesystem
             CurrDir = Parser.FullName.Replace("\", "/")
             Return True
         Else
-            Throw New DirectoryNotFoundException(DoTranslation("Directory {0} not found", currentLang).FormatString(dir))
+            Throw New DirectoryNotFoundException(DoTranslation("Directory {0} not found").FormatString(dir))
         End If
         Return False
     End Function
@@ -52,7 +52,7 @@ Public Module Filesystem
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If IsOnWindows() And (filename.Contains("$i30") Or filename.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", filename)
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
+            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
         End If
 #End If
 
@@ -77,7 +77,7 @@ Public Module Filesystem
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If IsOnWindows() And (folder.Contains("$i30") Or folder.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", folder)
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
+            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
         End If
 #End If
 
@@ -88,16 +88,16 @@ Public Module Filesystem
             Try
                 enumeration = Directory.EnumerateFileSystemEntries(folder)
             Catch sex As Security.SecurityException
-                W(DoTranslation("You are unauthorized to list in {0}: {1}", currentLang), True, ColTypes.Err, folder, sex.Message)
-                W(DoTranslation("Permission {0} failed", currentLang), True, ColTypes.Err, sex.PermissionType)
+                W(DoTranslation("You are unauthorized to list in {0}: {1}"), True, ColTypes.Err, folder, sex.Message)
+                W(DoTranslation("Permission {0} failed"), True, ColTypes.Err, sex.PermissionType)
                 WStkTrc(sex)
                 Exit Sub
             Catch ptlex As PathTooLongException
-                W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("The path you've specified is too long."), True, ColTypes.Err)
                 WStkTrc(ptlex)
                 Exit Sub
             Catch ex As Exception
-                W(DoTranslation("Unknown error while listing in directory: {0}", currentLang), True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Err, ex.Message)
                 WStkTrc(ex)
                 Exit Sub
             End Try
@@ -115,7 +115,7 @@ Public Module Filesystem
                             Else
                                 W("- " + FInfo.Name + ": ", False, ColTypes.HelpCmd)
                             End If
-                            W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.HelpDef,
+                            W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.HelpDef,
                               FInfo.Length.FileSizeToString, FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
                                                              FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
                         End If
@@ -128,19 +128,19 @@ Public Module Filesystem
                         'Print information
                         If (DInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
                             W("- " + DInfo.Name + "/: ", False, ColTypes.HelpCmd)
-                            W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}", currentLang), True, ColTypes.HelpDef,
+                            W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.HelpDef,
                               TotalSize.FileSizeToString, DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
                                                           DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
                         End If
                     End If
                 Catch ex As UnauthorizedAccessException 'Error while getting info
                     Dim Directory As String = Entry.Replace("\", "/").Split("/")(Entry.Replace("\", "/").Split("/").Length - 1)
-                    W("- " + DoTranslation("You are not authorized to get info for {0}.", currentLang), True, ColTypes.Err, Directory)
+                    W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Err, Directory)
                     WStkTrc(ex)
                 End Try
             Next
         Else
-            W(DoTranslation("Directory {0} not found", currentLang), True, ColTypes.Err, folder)
+            W(DoTranslation("Directory {0} not found"), True, ColTypes.Err, folder)
             Wdbg("I", "IO.Directory.Exists = {0}", Directory.Exists(folder))
         End If
     End Sub
@@ -155,7 +155,7 @@ Public Module Filesystem
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", Path)
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
+            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
         End If
 #End If
 
@@ -192,7 +192,7 @@ Public Module Filesystem
         If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect") Or
                                                       Source.Contains("$i30") Or Source.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", Path)
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
+            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
         End If
 #End If
 
@@ -247,12 +247,12 @@ Public Module Filesystem
                 Return True
             Else
                 Wdbg("E", "Source or destination are invalid.")
-                Throw New IOException(DoTranslation("The path is neither a file nor a directory.", currentLang))
+                Throw New IOException(DoTranslation("The path is neither a file nor a directory."))
             End If
         Catch ex As Exception
             Wdbg("E", "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message)
             WStkTrc(ex)
-            Throw New IOException(DoTranslation("Failed to copy file or directory: {0}", currentLang).FormatString(ex.Message))
+            Throw New IOException(DoTranslation("Failed to copy file or directory: {0}").FormatString(ex.Message))
         End Try
         Return False
     End Function
@@ -273,7 +273,7 @@ Public Module Filesystem
             ksconf.Save(pathConfig)
             Return True
         Catch ex As Exception
-            Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.", currentLang) + " " + ex.Message)
+            Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.") + " " + ex.Message)
             WStkTrc(ex)
         End Try
         Return False
@@ -292,7 +292,7 @@ Public Module Filesystem
             Directory.CreateDirectory(NewDirectory)
             Return True
         Else
-            Throw New IOException(DoTranslation("Directory {0} already exists.", currentLang).FormatString(NewDirectory))
+            Throw New IOException(DoTranslation("Directory {0} already exists.").FormatString(NewDirectory))
         End If
         Return False
     End Function
@@ -315,10 +315,10 @@ Public Module Filesystem
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New IOException(DoTranslation("Error trying to create a file: {0}", currentLang).FormatString(ex.Message))
+                Throw New IOException(DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message))
             End Try
         Else
-            Throw New IOException(DoTranslation("File already exists.", currentLang))
+            Throw New IOException(DoTranslation("File already exists."))
         End If
         Return False
     End Function
@@ -352,12 +352,12 @@ Public Module Filesystem
                 Return True
             Else
                 Wdbg("E", "Source or destination are invalid.")
-                Throw New IOException(DoTranslation("The path is neither a file nor a directory.", currentLang))
+                Throw New IOException(DoTranslation("The path is neither a file nor a directory."))
             End If
         Catch ex As Exception
             Wdbg("E", "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message)
             WStkTrc(ex)
-            Throw New IOException(DoTranslation("Failed to move file or directory: {0}", currentLang).FormatString(ex.Message))
+            Throw New IOException(DoTranslation("Failed to move file or directory: {0}").FormatString(ex.Message))
         End Try
         Return False
     End Function
@@ -374,7 +374,7 @@ Public Module Filesystem
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New IOException(DoTranslation("Unable to remove directory: {0}", currentLang).FormatString(ex.Message))
+            Throw New IOException(DoTranslation("Unable to remove directory: {0}").FormatString(ex.Message))
         End Try
         Return False
     End Function
@@ -391,7 +391,7 @@ Public Module Filesystem
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New IOException(DoTranslation("Unable to remove file: {0}", currentLang).FormatString(ex.Message))
+            Throw New IOException(DoTranslation("Unable to remove file: {0}").FormatString(ex.Message))
         End Try
         Return False
     End Function
@@ -412,7 +412,7 @@ Public Module Filesystem
             Dim LineNumber As Integer = 1
             For Each Str As String In Filebyte
                 If Str.Contains(StringLookup) Then
-                    Matches.Add("[{0}] ".FormatString(LineNumber) + DoTranslation("Match {0}: {1}", currentLang).FormatString(MatchNum, Str))
+                    Matches.Add("[{0}] ".FormatString(LineNumber) + DoTranslation("Match {0}: {1}").FormatString(MatchNum, Str))
                     MatchNum += 1
                 End If
                 LineNumber += 1
@@ -420,7 +420,7 @@ Public Module Filesystem
             Return Matches
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New IOException(DoTranslation("Unable to find file to match string ""{0}"": {1}", currentLang).FormatString(StringLookup, ex.Message))
+            Throw New IOException(DoTranslation("Unable to find file to match string ""{0}"": {1}").FormatString(StringLookup, ex.Message))
         End Try
         Return Nothing
     End Function
@@ -519,7 +519,7 @@ Public Module Filesystem
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If IsOnWindows() And (path.Contains("$i30") Or path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg("F", "Trying to access invalid path. Path was {0}", path)
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path.", currentLang))
+            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
         End If
 #End If
 

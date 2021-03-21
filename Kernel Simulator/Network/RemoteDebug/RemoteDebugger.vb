@@ -55,14 +55,14 @@ Module RemoteDebugger
             DebugTCP = New TcpListener(New IPAddress({0, 0, 0, 0}), DebugPort)
             DebugTCP.Start()
         Catch sex As SocketException
-            W(DoTranslation("Remote debug failed to start: {0}", currentLang), True, ColTypes.Err, sex.Message)
+            W(DoTranslation("Remote debug failed to start: {0}"), True, ColTypes.Err, sex.Message)
             WStkTrc(sex)
         End Try
 
         'Start the listening thread
         Dim RStream As New Thread(AddressOf ReadAndBroadcastAsync)
         RStream.Start()
-        W(DoTranslation("Debug listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, DebugPort)
+        W(DoTranslation("Debug listening on all addresses using port {0}."), True, ColTypes.Neutral, DebugPort)
 
         While Not RDebugStopping
             Thread.Sleep(1)
@@ -90,12 +90,12 @@ Module RemoteDebugger
                     Else
                         dbgConns.Add(RDebugSWriter, RDebugName)
                         DebugDevices.Add(RDebugClient, RDebugIP)
-                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version", currentLang) + " 0.5") 'Increment each minor/major change(s)
-                        RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}.", currentLang), RDebugIP)
+                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version") + " 0.5") 'Increment each minor/major change(s)
+                        RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}."), RDebugIP)
                         If String.IsNullOrEmpty(RDebugName) Then
-                            RDebugSWriter.WriteLine(DoTranslation(">> Welcome! This is your first time entering remote debug and chat. Use ""/register <name>"" to register.", currentLang) + " ", RDebugName)
+                            RDebugSWriter.WriteLine(DoTranslation(">> Welcome! This is your first time entering remote debug and chat. Use ""/register <name>"" to register.") + " ", RDebugName)
                         Else
-                            RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}.", currentLang), RDebugName)
+                            RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}."), RDebugName)
                         End If
                         Wdbg("I", "Debug device ""{0}"" ({1}) connected.", RDebugName, RDebugIP)
                         RDebugSWriter.Flush()
@@ -105,7 +105,7 @@ Module RemoteDebugger
             Catch ae As ThreadAbortException
                 Exit While
             Catch ex As Exception
-                W(DoTranslation("Error in connection: {0}", currentLang), True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Error in connection: {0}"), True, ColTypes.Err, ex.Message)
                 WStkTrc(ex)
             End Try
         End While
@@ -147,7 +147,7 @@ Module RemoteDebugger
                                 'Alias parsing starts here.
                                 ExecuteRDAlias(cmd, dbgConns.Keys(i - 1), ip)
                             Else
-                                dbgConns.Keys(i - 1).WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list.", currentLang), cmd.Split(" ")(0))
+                                dbgConns.Keys(i - 1).WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list."), cmd.Split(" ")(0))
                             End If
                         Else
                             If Not String.IsNullOrEmpty(name) Then 'Prevent no-name people from chatting

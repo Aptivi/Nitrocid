@@ -40,13 +40,13 @@ Module RemoteDebugCmd
                         Try
                             SocketStreamWriter.WriteLine(dbgStackTraces(CmdArgs(0)))
                         Catch ex As Exception
-                            SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.", currentLang), CmdArgs(0), dbgStackTraces.Count)
+                            SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1."), CmdArgs(0), dbgStackTraces.Count)
                         End Try
                     Else
                         SocketStreamWriter.WriteLine(dbgStackTraces(0))
                     End If
                 Else
-                    SocketStreamWriter.WriteLine(DoTranslation("No stack trace", currentLang))
+                    SocketStreamWriter.WriteLine(DoTranslation("No stack trace"))
                 End If
             ElseIf CmdName = "username" Then
                 'Current username
@@ -62,16 +62,16 @@ Module RemoteDebugCmd
                 End If
             ElseIf CmdName = "help" Then
                 'Help command code
-                SocketStreamWriter.WriteLine("- /trace <TraceNumber>: " + DoTranslation("Shows last stack trace on exception", currentLang) + vbNewLine +
-                                             "- /username: " + DoTranslation("Shows current username in the session", currentLang) + vbNewLine +
-                                             "- /register <name>: " + DoTranslation("Sets device username", currentLang) + vbNewLine +
-                                             "- /exit: " + DoTranslation("Disconnects you from the debugger", currentLang))
+                SocketStreamWriter.WriteLine("- /trace <TraceNumber>: " + DoTranslation("Shows last stack trace on exception") + vbNewLine +
+                                             "- /username: " + DoTranslation("Shows current username in the session") + vbNewLine +
+                                             "- /register <name>: " + DoTranslation("Sets device username") + vbNewLine +
+                                             "- /exit: " + DoTranslation("Disconnects you from the debugger"))
             ElseIf CmdName = "exit" Then
                 'Exit command code
                 DisconnectDbgDev(Address)
             End If
         Catch ex As Exception
-            SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}", currentLang), CmdName, ex.Message)
+            SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), CmdName, ex.Message)
             EventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)
         End Try
     End Sub

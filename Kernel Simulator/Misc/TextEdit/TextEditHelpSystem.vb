@@ -22,19 +22,19 @@ Public Module TextEditHelpSystem
     Public TextEdit_ModHelpEntries As New Dictionary(Of String, String)
 
     Public Sub TextEdit_UpdateHelp()
-        TextEdit_HelpEntries = New Dictionary(Of String, String) From {{"help", DoTranslation("Lists available commands", currentLang)},
-                                                                       {"exit", DoTranslation("Exits the text editor and save unsaved changes", currentLang)},
-                                                                       {"exitnosave", DoTranslation("Exits the text editor", currentLang)},
-                                                                       {"save", DoTranslation("Saves the file", currentLang)},
-                                                                       {"print", DoTranslation("Prints the contents of the file with line numbers to the console", currentLang)},
-                                                                       {"addline", DoTranslation("Adds a new line with text at the end of the file", currentLang)},
-                                                                       {"delline", DoTranslation("Removes the specified line number", currentLang)},
-                                                                       {"replace", DoTranslation("Replaces a word or phrase with another one", currentLang)},
-                                                                       {"replaceinline", DoTranslation("Replaces a word or phrase with another one in a line", currentLang)},
-                                                                       {"delword", DoTranslation("Deletes a word or phrase from line number", currentLang)},
-                                                                       {"delcharnum", DoTranslation("Deletes a character from character number in specified line", currentLang)},
-                                                                       {"querychar", DoTranslation("Queries a character in a specified line or all lines", currentLang)},
-                                                                       {"clear", DoTranslation("Clears the text file", currentLang)}}
+        TextEdit_HelpEntries = New Dictionary(Of String, String) From {{"help", DoTranslation("Lists available commands")},
+                                                                       {"exit", DoTranslation("Exits the text editor and save unsaved changes")},
+                                                                       {"exitnosave", DoTranslation("Exits the text editor")},
+                                                                       {"save", DoTranslation("Saves the file")},
+                                                                       {"print", DoTranslation("Prints the contents of the file with line numbers to the console")},
+                                                                       {"addline", DoTranslation("Adds a new line with text at the end of the file")},
+                                                                       {"delline", DoTranslation("Removes the specified line number")},
+                                                                       {"replace", DoTranslation("Replaces a word or phrase with another one")},
+                                                                       {"replaceinline", DoTranslation("Replaces a word or phrase with another one in a line")},
+                                                                       {"delword", DoTranslation("Deletes a word or phrase from line number")},
+                                                                       {"delcharnum", DoTranslation("Deletes a character from character number in specified line")},
+                                                                       {"querychar", DoTranslation("Queries a character in a specified line or all lines")},
+                                                                       {"clear", DoTranslation("Clears the text file")}}
     End Sub
 
     Public Sub TextEdit_GetHelp(Optional ByVal Command As String = "")
@@ -48,31 +48,31 @@ Public Module TextEditHelpSystem
                 W(TextEdit_ModHelpEntries(HelpKey), True, ColTypes.HelpDef)
             Next
         ElseIf Command = "help" Then
-            W(DoTranslation("Usage:", currentLang) + " help [command]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)
         ElseIf Command = "exit" Then
-            W(DoTranslation("Usage:", currentLang) + " exit", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
         ElseIf Command = "exitnosave" Then
-            W(DoTranslation("Usage:", currentLang) + " exitnosave", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " exitnosave", True, ColTypes.Neutral)
         ElseIf Command = "save" Then
-            W(DoTranslation("Usage:", currentLang) + " save", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " save", True, ColTypes.Neutral)
         ElseIf Command = "print" Then
-            W(DoTranslation("Usage:", currentLang) + " print [linenumber]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " print [linenumber]", True, ColTypes.Neutral)
         ElseIf Command = "addline" Then
-            W(DoTranslation("Usage:", currentLang) + " addline ""<text>""", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " addline ""<text>""", True, ColTypes.Neutral)
         ElseIf Command = "delline" Then
-            W(DoTranslation("Usage:", currentLang) + " delline <linenumber>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " delline <linenumber>", True, ColTypes.Neutral)
         ElseIf Command = "replace" Then
-            W(DoTranslation("Usage:", currentLang) + " replace ""<word/phrase>"" ""<word/phrase>""", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " replace ""<word/phrase>"" ""<word/phrase>""", True, ColTypes.Neutral)
         ElseIf Command = "replaceinline" Then
-            W(DoTranslation("Usage:", currentLang) + " replaceinline ""<word/phrase>"" ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " replaceinline ""<word/phrase>"" ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
         ElseIf Command = "delword" Then
-            W(DoTranslation("Usage:", currentLang) + " delword ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " delword ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
         ElseIf Command = "delcharnum" Then
-            W(DoTranslation("Usage:", currentLang) + " delcharnum <charnumber> <linenumber>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " delcharnum <charnumber> <linenumber>", True, ColTypes.Neutral)
         ElseIf Command = "querychar" Then
-            W(DoTranslation("Usage:", currentLang) + " querychar <char> <linenumber/all>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " querychar <char> <linenumber/all>", True, ColTypes.Neutral)
         ElseIf Command = "clear" Then
-            W(DoTranslation("Usage:", currentLang) + " clear", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " clear", True, ColTypes.Neutral)
         End If
     End Sub
 

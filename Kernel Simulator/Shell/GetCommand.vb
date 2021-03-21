@@ -72,7 +72,7 @@ Public Module GetCommand
         '5. Check to see if a requested command is obsolete
         If obsoleteCmds.Contains(words(0)) Then
             Wdbg("I", "The command requested {0} is obsolete", words(0))
-            W(DoTranslation("This command is obsolete and will be removed in a future release.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
         End If
 
         '6. Execute a command
@@ -94,16 +94,16 @@ Public Module GetCommand
 
                 If requestedCommand <> "adduser" Then
                     If eqargs?.Count - 1 = 0 Then
-                        W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, ColTypes.Neutral, eqargs(0))
+                        W(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, eqargs(0))
                         AddUser(eqargs(0))
                         Done = True
                     ElseIf eqargs.Count - 1 >= 2 Then
                         If eqargs(1) = eqargs(2) Then
-                            W(DoTranslation("usrmgr: Creating username {0}...", currentLang), True, ColTypes.Neutral, eqargs(0))
+                            W(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, eqargs(0))
                             AddUser(eqargs(0), eqargs(1))
                             Done = True
                         Else
-                            W(DoTranslation("Passwords don't match.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Passwords don't match."), True, ColTypes.Err)
                             Done = True
                         End If
                     End If
@@ -117,14 +117,14 @@ Public Module GetCommand
                             ManageAlias(eqargs(0), eqargs(1), eqargs(2), eqargs(3))
                             Done = True
                         Else
-                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, eqargs(1))
+                            W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, eqargs(1))
                         End If
                     ElseIf eqargs?.Count - 1 = 2 Then
                         If eqargs(0) = "rem" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug Or eqargs(1) = AliasType.FTPShell Or eqargs(1) = AliasType.SFTPShell Or eqargs(1) = AliasType.MailShell) Then
                             ManageAlias(eqargs(0), eqargs(1), eqargs(2))
                             Done = True
                         Else
-                            W(DoTranslation("Invalid type {0}.", currentLang), True, ColTypes.Err, eqargs(1))
+                            W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, eqargs(1))
                         End If
                     End If
                 End If
@@ -143,12 +143,12 @@ Public Module GetCommand
                             End If
                         Next
                         If FinalArgs.Count = 0 Then
-                            W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces"), True, ColTypes.Err)
                             Done = True
                         Else
                             answerargs = String.Join(",", FinalArgs)
                             argsInjected = True
-                            W(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot.", currentLang), True, ColTypes.Neutral, answerargs)
+                            W(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), True, ColTypes.Neutral, answerargs)
                             Done = True
                         End If
                     End If
@@ -161,10 +161,10 @@ Public Module GetCommand
                         If eqargs(1).IsNumeric Then 'Time must be numeric
                             Console.Beep(eqargs(0), eqargs(1))
                         Else
-                            W(DoTranslation("Time must be numeric.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Time must be numeric."), True, ColTypes.Err)
                         End If
                     Else
-                        W(DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767.", currentLang), True, ColTypes.Err)
+                        W(DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767."), True, ColTypes.Err)
                     End If
                     Done = True
                 End If
@@ -174,12 +174,12 @@ Public Module GetCommand
                 If eqargs?.Count - 1 >= 0 Then
                     If Not RDebugBlocked.Contains(eqargs(0)) Then
                         If AddToBlockList(eqargs(0)) Then
-                            W(DoTranslation("{0} can't join remote debug now.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                            W(DoTranslation("{0} can't join remote debug now."), True, ColTypes.Neutral, eqargs(0))
                         Else
-                            W(DoTranslation("Failed to block {0}.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                            W(DoTranslation("Failed to block {0}."), True, ColTypes.Neutral, eqargs(0))
                         End If
                     Else
-                        W(DoTranslation("{0} is already blocked.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                        W(DoTranslation("{0} is already blocked."), True, ColTypes.Neutral, eqargs(0))
                     End If
                     Done = True
                 End If
@@ -215,13 +215,13 @@ Public Module GetCommand
                         Dim Res As String = Evaluate(strArgs)
                         Wdbg("I", "Res = {0}", Res)
                         If Res = "" Then 'If there is an error in calculation
-                            W(DoTranslation("Error in calculation.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Error in calculation."), True, ColTypes.Err)
                         Else 'Calculation done
                             W(strArgs + " = " + Res, True, ColTypes.Neutral)
                         End If
                     Catch ex As Exception
                         WStkTrc(ex)
-                        W(DoTranslation("Error in calculation.", currentLang), True, ColTypes.Err)
+                        W(DoTranslation("Error in calculation."), True, ColTypes.Err)
                     End Try
                     Done = True
                 End If
@@ -232,13 +232,13 @@ Public Module GetCommand
                     Try
                         dbgWriter.Close()
                         dbgWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
-                        W(DoTranslation("Debug log removed. All connected debugging devices may still view messages.", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Debug log removed. All connected debugging devices may still view messages."), True, ColTypes.Neutral)
                     Catch ex As Exception
-                        W(DoTranslation("Debug log removal failed: {0}", currentLang), True, ColTypes.Err, ex.Message)
+                        W(DoTranslation("Debug log removal failed: {0}"), True, ColTypes.Err, ex.Message)
                         WStkTrc(ex)
                     End Try
                 Else
-                    W(DoTranslation("You must turn on debug mode before you can clear debug log.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("You must turn on debug mode before you can clear debug log."), True, ColTypes.Neutral)
                 End If
                 Done = True
 
@@ -251,23 +251,23 @@ Public Module GetCommand
                             If eqargs(1).StartsWith("+") Then
                                 Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), eqargs(1).Remove(0, 1))
                                 If AddAttributeToFile(NeutralizedFilePath, Attrib) Then
-                                    W(DoTranslation("Attribute has been added successfully.", currentLang), True, ColTypes.Neutral, eqargs(1))
+                                    W(DoTranslation("Attribute has been added successfully."), True, ColTypes.Neutral, eqargs(1))
                                 Else
-                                    W(DoTranslation("Failed to add attribute.", currentLang), True, ColTypes.Neutral, eqargs(1))
+                                    W(DoTranslation("Failed to add attribute."), True, ColTypes.Neutral, eqargs(1))
                                 End If
                             ElseIf eqargs(1).StartsWith("-") Then
                                 Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), eqargs(1).Remove(0, 1))
                                 If RemoveAttributeFromFile(NeutralizedFilePath, Attrib) Then
-                                    W(DoTranslation("Attribute has been removed successfully.", currentLang), True, ColTypes.Neutral, eqargs(1))
+                                    W(DoTranslation("Attribute has been removed successfully."), True, ColTypes.Neutral, eqargs(1))
                                 Else
-                                    W(DoTranslation("Failed to remove attribute.", currentLang), True, ColTypes.Neutral, eqargs(1))
+                                    W(DoTranslation("Failed to remove attribute."), True, ColTypes.Neutral, eqargs(1))
                                 End If
                             End If
                         Else
-                            W(DoTranslation("Attribute ""{0}"" is invalid.", currentLang), True, ColTypes.Err, eqargs(1))
+                            W(DoTranslation("Attribute ""{0}"" is invalid."), True, ColTypes.Err, eqargs(1))
                         End If
                     Else
-                        W(DoTranslation("File not found.", currentLang), True, ColTypes.Err)
+                        W(DoTranslation("File not found."), True, ColTypes.Err)
                     End If
                     Done = True
                 End If
@@ -278,14 +278,14 @@ Public Module GetCommand
                     SetCurrDir(eqargs(0))
                 Catch sex As Security.SecurityException
                     Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
-                    W(DoTranslation("You are unauthorized to set current directory to {0}: {1}", currentLang), True, ColTypes.Err, eqargs(0), sex.Message)
+                    W(DoTranslation("You are unauthorized to set current directory to {0}: {1}"), True, ColTypes.Err, eqargs(0), sex.Message)
                     WStkTrc(sex)
                 Catch ptlex As PathTooLongException
                     Wdbg("I", "Directory length: {0}", NeutralizePath(eqargs(0)).Length)
-                    W(DoTranslation("The path you've specified is too long.", currentLang), True, ColTypes.Err)
+                    W(DoTranslation("The path you've specified is too long."), True, ColTypes.Err)
                     WStkTrc(ptlex)
                 Catch ex As Exception
-                    W(DoTranslation("Changing directory has failed: {0}", currentLang), True, ColTypes.Err, ex.Message)
+                    W(DoTranslation("Changing directory has failed: {0}"), True, ColTypes.Err, ex.Message)
                     WStkTrc(ex)
                 End Try
                 Done = True
@@ -294,12 +294,12 @@ Public Module GetCommand
 
                 If requestedCommand <> "chhostname" Then
                     If words(1) = "" Then
-                        W(DoTranslation("Blank host name.", currentLang), True, ColTypes.Err)
+                        W(DoTranslation("Blank host name."), True, ColTypes.Err)
                     ElseIf words(1).IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-                        W(DoTranslation("Special characters are not allowed.", currentLang), True, ColTypes.Err)
+                        W(DoTranslation("Special characters are not allowed."), True, ColTypes.Err)
                     Else
                         Done = True
-                        W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, HName, words(1))
+                        W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, HName, words(1))
                         ChangeHostname(words(1))
                     End If
                 End If
@@ -315,15 +315,15 @@ Public Module GetCommand
 
                 If requestedCommand <> "chmotd" Then
                     If strArgs = "" Then
-                        W(DoTranslation("Blank message of the day.", currentLang), True, ColTypes.Err)
+                        W(DoTranslation("Blank message of the day."), True, ColTypes.Err)
                     Else
-                        W(DoTranslation("Changing MOTD...", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
                         SetMOTD(strArgs, MessageType.MOTD)
                         Done = True
                     End If
                 Else
                     InitializeTextShell(paths("Home") + "/MOTD.txt")
-                    W(DoTranslation("Changing MOTD...", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
                     ReadMOTDFromFile(MessageType.MOTD)
                     Done = True
                 End If
@@ -332,15 +332,15 @@ Public Module GetCommand
 
                 If requestedCommand <> "chmal" Then
                     If strArgs = "" Then
-                        W(DoTranslation("Blank MAL After Login.", currentLang), True, ColTypes.Err)
+                        W(DoTranslation("Blank MAL After Login."), True, ColTypes.Err)
                     Else
-                        W(DoTranslation("Changing MAL...", currentLang), True, ColTypes.Neutral)
+                        W(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
                         SetMOTD(strArgs, MessageType.MAL)
                         Done = True
                     End If
                 Else
                     InitializeTextShell(paths("Home") + "/MAL.txt")
-                    W(DoTranslation("Changing MAL...", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
                     ReadMOTDFromFile(MessageType.MAL)
                     Done = True
                 End If
@@ -358,14 +358,14 @@ Public Module GetCommand
                     If eqargs?.Count - 1 >= 3 Then
                         Try
                             If InStr(eqargs(3), " ") > 0 Then
-                                W(DoTranslation("Spaces are not allowed.", currentLang), True, ColTypes.Err)
+                                W(DoTranslation("Spaces are not allowed."), True, ColTypes.Err)
                             ElseIf eqargs(3) = eqargs(2) Then
                                 ChangePassword(eqargs(0), eqargs(1), eqargs(2))
                             ElseIf eqargs(3) <> eqargs(2) Then
-                                W(DoTranslation("Passwords doesn't match.", currentLang), True, ColTypes.Err)
+                                W(DoTranslation("Passwords doesn't match."), True, ColTypes.Err)
                             End If
                         Catch ex As Exception
-                            W(DoTranslation("Failed to change password of username: {0}", currentLang), True, ColTypes.Err, ex.Message)
+                            W(DoTranslation("Failed to change password of username: {0}"), True, ColTypes.Err, ex.Message)
                             WStkTrc(ex)
                         End Try
                         Done = True
@@ -377,7 +377,7 @@ Public Module GetCommand
                 If requestedCommand <> "chusrname" Then
                     If eqargs?.Count - 1 >= 1 Then
                         ChangeUsername(eqargs(0), eqargs(1))
-                        W(DoTranslation("Username has been changed to {0}!", currentLang), True, ColTypes.Neutral, eqargs(1))
+                        W(DoTranslation("Username has been changed to {0}!"), True, ColTypes.Neutral, eqargs(1))
                         If eqargs(0) = signedinusrnm Then
                             LogoutRequested = True
                         End If
@@ -408,7 +408,7 @@ Public Module GetCommand
                         Loop
                     End Using
                 Catch ex As Exception
-                    W(DoTranslation("Debug log not found", currentLang), True, ColTypes.Err)
+                    W(DoTranslation("Debug log not found"), True, ColTypes.Err)
                     WStkTrc(ex)
                 End Try
                 Done = True
@@ -422,16 +422,16 @@ Public Module GetCommand
                         W(">> {0}", True, ColTypes.Stage, Dir)
                         If Directory.Exists(DirectoryPath) Then
                             Dim DirInfo As New DirectoryInfo(DirectoryPath)
-                            W(DoTranslation("Name: {0}", currentLang), True, ColTypes.Neutral, DirInfo.Name)
-                            W(DoTranslation("Full name: {0}", currentLang), True, ColTypes.Neutral, NeutralizePath(DirInfo.FullName))
-                            W(DoTranslation("Size: {0}", currentLang), True, ColTypes.Neutral, GetAllSizesInFolder(DirInfo).FileSizeToString)
-                            W(DoTranslation("Creation time: {0}", currentLang), True, ColTypes.Neutral, Render(DirInfo.CreationTime))
-                            W(DoTranslation("Last access time: {0}", currentLang), True, ColTypes.Neutral, Render(DirInfo.LastAccessTime))
-                            W(DoTranslation("Last write time: {0}", currentLang), True, ColTypes.Neutral, Render(DirInfo.LastWriteTime))
-                            W(DoTranslation("Attributes: {0}", currentLang), True, ColTypes.Neutral, DirInfo.Attributes)
-                            W(DoTranslation("Parent directory: {0}", currentLang), True, ColTypes.Neutral, NeutralizePath(DirInfo.Parent.FullName))
+                            W(DoTranslation("Name: {0}"), True, ColTypes.Neutral, DirInfo.Name)
+                            W(DoTranslation("Full name: {0}"), True, ColTypes.Neutral, NeutralizePath(DirInfo.FullName))
+                            W(DoTranslation("Size: {0}"), True, ColTypes.Neutral, GetAllSizesInFolder(DirInfo).FileSizeToString)
+                            W(DoTranslation("Creation time: {0}"), True, ColTypes.Neutral, Render(DirInfo.CreationTime))
+                            W(DoTranslation("Last access time: {0}"), True, ColTypes.Neutral, Render(DirInfo.LastAccessTime))
+                            W(DoTranslation("Last write time: {0}"), True, ColTypes.Neutral, Render(DirInfo.LastWriteTime))
+                            W(DoTranslation("Attributes: {0}"), True, ColTypes.Neutral, DirInfo.Attributes)
+                            W(DoTranslation("Parent directory: {0}"), True, ColTypes.Neutral, NeutralizePath(DirInfo.Parent.FullName))
                         Else
-                            W(DoTranslation("Can't get information about nonexistent directory.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Can't get information about nonexistent directory."), True, ColTypes.Err)
                         End If
                     Next
                     Done = True
@@ -443,9 +443,9 @@ Public Module GetCommand
                     If eqargs?.Count - 1 >= 0 Then
                         Dim NotifIndex As Integer = eqargs(0) - 1
                         If NotifDismiss(NotifIndex) Then
-                            W(DoTranslation("Notification dismissed successfully.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Notification dismissed successfully."), True, ColTypes.Neutral)
                         Else
-                            W(DoTranslation("Error trying to dismiss notification.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Error trying to dismiss notification."), True, ColTypes.Err)
                         End If
                         Done = True
                     End If
@@ -456,7 +456,7 @@ Public Module GetCommand
                 If requestedCommand <> "disconndbgdev" Then
                     If eqargs?.Count - 1 >= 0 Then
                         DisconnectDbgDev(eqargs(0))
-                        W(DoTranslation("Device {0} disconnected.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                        W(DoTranslation("Device {0} disconnected."), True, ColTypes.Neutral, eqargs(0))
                         Done = True
                     End If
                 End If
@@ -474,7 +474,7 @@ Public Module GetCommand
                     If File.Exists(eqargs(0)) Then
                         InitializeTextShell(eqargs(0))
                     Else
-                        W(DoTranslation("File doesn't exist.", currentLang), True, ColTypes.Err)
+                        W(DoTranslation("File doesn't exist."), True, ColTypes.Err)
                     End If
                     Done = True
                 End If
@@ -488,16 +488,16 @@ Public Module GetCommand
                         W(">> {0}", True, ColTypes.Stage, FileName)
                         If File.Exists(FilePath) Then
                             Dim FileInfo As New FileInfo(FilePath)
-                            W(DoTranslation("Name: {0}", currentLang), True, ColTypes.Neutral, FileInfo.Name)
-                            W(DoTranslation("Full name: {0}", currentLang), True, ColTypes.Neutral, NeutralizePath(FileInfo.FullName))
-                            W(DoTranslation("File size: {0}", currentLang), True, ColTypes.Neutral, FileInfo.Length.FileSizeToString)
-                            W(DoTranslation("Creation time: {0}", currentLang), True, ColTypes.Neutral, Render(FileInfo.CreationTime))
-                            W(DoTranslation("Last access time: {0}", currentLang), True, ColTypes.Neutral, Render(FileInfo.LastAccessTime))
-                            W(DoTranslation("Last write time: {0}", currentLang), True, ColTypes.Neutral, Render(FileInfo.LastWriteTime))
-                            W(DoTranslation("Attributes: {0}", currentLang), True, ColTypes.Neutral, FileInfo.Attributes)
-                            W(DoTranslation("Where to find: {0}", currentLang), True, ColTypes.Neutral, NeutralizePath(FileInfo.DirectoryName))
+                            W(DoTranslation("Name: {0}"), True, ColTypes.Neutral, FileInfo.Name)
+                            W(DoTranslation("Full name: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.FullName))
+                            W(DoTranslation("File size: {0}"), True, ColTypes.Neutral, FileInfo.Length.FileSizeToString)
+                            W(DoTranslation("Creation time: {0}"), True, ColTypes.Neutral, Render(FileInfo.CreationTime))
+                            W(DoTranslation("Last access time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastAccessTime))
+                            W(DoTranslation("Last write time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastWriteTime))
+                            W(DoTranslation("Attributes: {0}"), True, ColTypes.Neutral, FileInfo.Attributes)
+                            W(DoTranslation("Where to find: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.DirectoryName))
                         Else
-                            W(DoTranslation("Can't get information about nonexistent file.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Can't get information about nonexistent file."), True, ColTypes.Err)
                         End If
                     Next
                     Done = True
@@ -527,24 +527,24 @@ Public Module GetCommand
                                         Credentials = New NetworkCredential With {
                                             .UserName = eqargs(1)
                                         }
-                                        W(DoTranslation("Enter password: ", currentLang), False, ColTypes.Input)
+                                        W(DoTranslation("Enter password: "), False, ColTypes.Input)
                                         Credentials.Password = ReadLineNoInput("*")
                                         Console.WriteLine()
                                     End If
-                                    W(DoTranslation("Downloading from {0}...", currentLang), True, ColTypes.Neutral, URL)
+                                    W(DoTranslation("Downloading from {0}..."), True, ColTypes.Neutral, URL)
                                     If DownloadFile(eqargs(0), ShowProgress, Credentials) Then
-                                        W(vbNewLine + DoTranslation("Download has completed.", currentLang), True, ColTypes.Neutral)
+                                        W(vbNewLine + DoTranslation("Download has completed."), True, ColTypes.Neutral)
                                     End If
                                 Else
-                                    W(DoTranslation("Specify the address", currentLang), True, ColTypes.Err)
+                                    W(DoTranslation("Specify the address"), True, ColTypes.Err)
                                 End If
                             Else
-                                W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server.", currentLang), True, ColTypes.Err)
+                                W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server."), True, ColTypes.Err)
                             End If
                             Exit Sub
                         Catch ex As Exception
                             DFinish = False
-                            W(DoTranslation("Download failed in try {0}: {1}", currentLang), True, ColTypes.Err, RetryCount, ex.Message)
+                            W(DoTranslation("Download failed in try {0}: {1}"), True, ColTypes.Err, RetryCount, ex.Message)
                             RetryCount += 1
                             Wdbg("I", "Try count: {0}", RetryCount)
                             WStkTrc(ex)
@@ -557,55 +557,55 @@ Public Module GetCommand
             ElseIf words(0) = "hwinfo" Then
 
                 'CPU information
-                W("- " + DoTranslation("CPU information:", currentLang), True, ColTypes.Neutral)
+                W("- " + DoTranslation("CPU information:"), True, ColTypes.Neutral)
                 For Each Processor As String In HardwareInfo.Hardware.CPU.Keys
-                    W("  - " + DoTranslation("Processor name:", currentLang) + " {0}", True, ColTypes.Neutral, Processor)
-                    W("  - " + DoTranslation("Processor speed:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Speed)
-                    W("  - " + DoTranslation("Processor bits:", currentLang) + " {0}-bit", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Bits)
-                    W("  - " + DoTranslation("Processor rev:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).CPURev)
-                    W("  - " + DoTranslation("Processor topology:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Topology)
-                    W("  - " + DoTranslation("Processor type:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Type)
-                    W("  - " + DoTranslation("Processor milestone:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Milestone)
-                    W("  - " + DoTranslation("Processor BogoMips:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).CPUBogoMips)
-                    W("  - " + DoTranslation("Processor L2 cache size:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).L2)
-                    W("  - " + DoTranslation("Processor L3 cache size:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).L3)
-                    W("  - " + DoTranslation("Processor features:", currentLang) + " {0}", True, ColTypes.Neutral, Join(HardwareInfo.Hardware.CPU(Processor).Flags))
+                    W("  - " + DoTranslation("Processor name:") + " {0}", True, ColTypes.Neutral, Processor)
+                    W("  - " + DoTranslation("Processor speed:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Speed)
+                    W("  - " + DoTranslation("Processor bits:") + " {0}-bit", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Bits)
+                    W("  - " + DoTranslation("Processor rev:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).CPURev)
+                    W("  - " + DoTranslation("Processor topology:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Topology)
+                    W("  - " + DoTranslation("Processor type:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Type)
+                    W("  - " + DoTranslation("Processor milestone:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Milestone)
+                    W("  - " + DoTranslation("Processor BogoMips:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).CPUBogoMips)
+                    W("  - " + DoTranslation("Processor L2 cache size:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).L2)
+                    W("  - " + DoTranslation("Processor L3 cache size:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).L3)
+                    W("  - " + DoTranslation("Processor features:") + " {0}", True, ColTypes.Neutral, Join(HardwareInfo.Hardware.CPU(Processor).Flags))
                     Console.WriteLine()
                 Next
 
                 'HDD information
-                W("- " + DoTranslation("HDD information:", currentLang), True, ColTypes.Neutral)
+                W("- " + DoTranslation("HDD information:"), True, ColTypes.Neutral)
                 For Each Drive As String In HardwareInfo.Hardware.HDD.Keys
-                    W("  - " + DoTranslation("Drive name:", currentLang) + " {0}", True, ColTypes.Neutral, Drive)
-                    W("  - " + DoTranslation("Drive model:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Model)
-                    W("  - " + DoTranslation("Drive vendor:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Vendor)
-                    W("  - " + DoTranslation("Drive speed:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Speed)
-                    W("  - " + DoTranslation("Drive size:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Size)
-                    W("  - " + DoTranslation("Drive serial:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Serial)
-                    W("  - " + DoTranslation("Drive ID:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).ID)
-                    W("  - " + DoTranslation("Drive partition count:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Partitions.Count)
+                    W("  - " + DoTranslation("Drive name:") + " {0}", True, ColTypes.Neutral, Drive)
+                    W("  - " + DoTranslation("Drive model:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Model)
+                    W("  - " + DoTranslation("Drive vendor:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Vendor)
+                    W("  - " + DoTranslation("Drive speed:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Speed)
+                    W("  - " + DoTranslation("Drive size:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Size)
+                    W("  - " + DoTranslation("Drive serial:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Serial)
+                    W("  - " + DoTranslation("Drive ID:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).ID)
+                    W("  - " + DoTranslation("Drive partition count:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Partitions.Count)
                     For PartitionIndex As Integer = 0 To HardwareInfo.Hardware.HDD(Drive).Partitions.Count - 1
-                        W("    - [{0}] " + DoTranslation("Partition ID:", currentLang) + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).ID)
-                        W("    - [{0}] " + DoTranslation("Partition filesystem:", currentLang) + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).FileSystem)
-                        W("    - [{0}] " + DoTranslation("Partition size:", currentLang) + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size)
-                        W("    - [{0}] " + DoTranslation("Partition used:", currentLang) + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Used)
+                        W("    - [{0}] " + DoTranslation("Partition ID:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).ID)
+                        W("    - [{0}] " + DoTranslation("Partition filesystem:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).FileSystem)
+                        W("    - [{0}] " + DoTranslation("Partition size:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size)
+                        W("    - [{0}] " + DoTranslation("Partition used:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Used)
                     Next
                     Console.WriteLine()
                 Next
 
                 'GPU information
-                W(" - " + DoTranslation("GPU information:", currentLang), True, ColTypes.Neutral)
+                W(" - " + DoTranslation("GPU information:"), True, ColTypes.Neutral)
                 For Each GPU As String In HardwareInfo.Hardware.GPU.Keys
-                    W("  - " + DoTranslation("GPU name:", currentLang) + " {0}", True, ColTypes.Neutral, GPU)
-                    W("  - " + DoTranslation("GPU driver:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.GPU(GPU).Driver)
-                    W("  - " + DoTranslation("GPU version:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.GPU(GPU).DriverVersion)
+                    W("  - " + DoTranslation("GPU name:") + " {0}", True, ColTypes.Neutral, GPU)
+                    W("  - " + DoTranslation("GPU driver:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.GPU(GPU).Driver)
+                    W("  - " + DoTranslation("GPU version:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.GPU(GPU).DriverVersion)
                 Next
 
                 'RAM information
-                W("- " + DoTranslation("RAM information:", currentLang), True, ColTypes.Neutral)
-                W("  - " + DoTranslation("RAM free:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.FreeMemory)
-                W("  - " + DoTranslation("RAM total:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.TotalMemory)
-                W("  - " + DoTranslation("RAM used:", currentLang) + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.UsedMemory)
+                W("- " + DoTranslation("RAM information:"), True, ColTypes.Neutral)
+                W("  - " + DoTranslation("RAM free:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.FreeMemory)
+                W("  - " + DoTranslation("RAM total:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.TotalMemory)
+                W("  - " + DoTranslation("RAM used:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.UsedMemory)
                 Console.WriteLine()
 
             ElseIf words(0) = "input" Then
@@ -731,17 +731,17 @@ Public Module GetCommand
                                 Try
                                     Dim PingReplied As PingReply = PingAddress(PingedAddress)
                                     If PingReplied.Status = IPStatus.Success Then
-                                        W("[{1}] " + DoTranslation("Ping succeeded in {0} ms.", currentLang), True, ColTypes.Neutral, PingReplied.RoundtripTime, CurrentTime)
+                                        W("[{1}] " + DoTranslation("Ping succeeded in {0} ms."), True, ColTypes.Neutral, PingReplied.RoundtripTime, CurrentTime)
                                     Else
-                                        W("[{2}] " + DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, PingReplied.Status, CurrentTime)
+                                        W("[{2}] " + DoTranslation("Failed to ping {0}: {1}"), True, ColTypes.Err, PingedAddress, PingReplied.Status, CurrentTime)
                                     End If
                                 Catch ex As Exception
-                                    W("[{2}] " + DoTranslation("Failed to ping {0}: {1}", currentLang), True, ColTypes.Err, PingedAddress, ex.Message, CurrentTime)
+                                    W("[{2}] " + DoTranslation("Failed to ping {0}: {1}"), True, ColTypes.Err, PingedAddress, ex.Message, CurrentTime)
                                     WStkTrc(ex)
                                 End Try
                             Next
                         Else
-                            W(DoTranslation("Address may not be empty.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Address may not be empty."), True, ColTypes.Err)
                         End If
                     Next
                     Done = True
@@ -763,24 +763,24 @@ Public Module GetCommand
                                         Credentials = New NetworkCredential With {
                                             .UserName = eqargs(2)
                                         }
-                                        W(DoTranslation("Enter password: ", currentLang), False, ColTypes.Input)
+                                        W(DoTranslation("Enter password: "), False, ColTypes.Input)
                                         Credentials.Password = ReadLineNoInput("*")
                                         Console.WriteLine()
                                     End If
-                                    W(DoTranslation("Uploading {0} to {1}...", currentLang), True, ColTypes.Neutral, FileName, URL)
+                                    W(DoTranslation("Uploading {0} to {1}..."), True, ColTypes.Neutral, FileName, URL)
                                     If UploadFile(FileName, URL, ShowProgress, Credentials) Then
-                                        W(vbNewLine + DoTranslation("Upload has completed.", currentLang), True, ColTypes.Neutral)
+                                        W(vbNewLine + DoTranslation("Upload has completed."), True, ColTypes.Neutral)
                                     End If
                                 Else
-                                    W(DoTranslation("Specify the address", currentLang), True, ColTypes.Err)
+                                    W(DoTranslation("Specify the address"), True, ColTypes.Err)
                                 End If
                             Else
-                                W(DoTranslation("Please use ""ftp"" if you are going to upload files to the FTP server.", currentLang), True, ColTypes.Err)
+                                W(DoTranslation("Please use ""ftp"" if you are going to upload files to the FTP server."), True, ColTypes.Err)
                             End If
                             Exit Sub
                         Catch ex As Exception
                             UFinish = False
-                            W(DoTranslation("Upload failed in try {0}: {1}", currentLang), True, ColTypes.Err, RetryCount, ex.Message)
+                            W(DoTranslation("Upload failed in try {0}: {1}"), True, ColTypes.Err, RetryCount, ex.Message)
                             RetryCount += 1
                             Wdbg("I", "Try count: {0}", RetryCount)
                             WStkTrc(ex)
@@ -794,7 +794,7 @@ Public Module GetCommand
                 'Reload configuration
                 Done = True
                 ReloadConfig()
-                W(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."), True, ColTypes.Neutral)
 
             ElseIf words(0) = "reboot" Then
 
@@ -818,9 +818,9 @@ Public Module GetCommand
                 Done = True
                 If Not SafeMode Then
                     ReloadMods()
-                    W(DoTranslation("Mods reloaded.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Mods reloaded."), True, ColTypes.Neutral)
                 Else
-                    W(DoTranslation("Reloading not allowed in safe mode.", currentLang), True, ColTypes.Err)
+                    W(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Err)
                 End If
 
             ElseIf words(0) = "reloadsaver" Then
@@ -830,7 +830,7 @@ Public Module GetCommand
                         If Not SafeMode Then
                             CompileCustom(eqargs(0))
                         Else
-                            W(DoTranslation("Reloading not allowed in safe mode.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Err)
                         End If
                         Done = True
                     End If
@@ -854,7 +854,7 @@ Public Module GetCommand
                         StartRDebugThread(True)
                     End If
                 Else
-                    W(DoTranslation("Debugging not enabled.", currentLang), True, ColTypes.Err)
+                    W(DoTranslation("Debugging not enabled."), True, ColTypes.Err)
                 End If
                 Done = True
 
@@ -871,7 +871,7 @@ Public Module GetCommand
                             RemoveDirectory(Path)
                         Else
                             Wdbg("W", "Trying to remove {0} which is not found.", Path)
-                            W(DoTranslation("Can't remove {0} because it doesn't exist.", currentLang), True, ColTypes.Err, Path)
+                            W(DoTranslation("Can't remove {0} because it doesn't exist."), True, ColTypes.Err, Path)
                         End If
                     Next
                     Done = True
@@ -882,7 +882,7 @@ Public Module GetCommand
                 If requestedCommand <> "rmuser" Then
                     If eqargs?.Count - 1 >= 0 Then
                         RemoveUser(eqargs(0))
-                        W(DoTranslation("User {0} removed.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                        W(DoTranslation("User {0} removed."), True, ColTypes.Neutral, eqargs(0))
                         Done = True
                     End If
                 End If
@@ -909,20 +909,20 @@ Public Module GetCommand
                     If ScrnSvrdb.ContainsKey(strArgs) Then
                         SetDefaultScreensaver(strArgs)
                         If ScrnSvrdb(strArgs) Then
-                            W(DoTranslation("{0} is set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
+                            W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, strArgs)
                         Else
-                            W(DoTranslation("{0} is no longer set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
+                            W(DoTranslation("{0} is no longer set to default screensaver."), True, ColTypes.Neutral, strArgs)
                         End If
                     Else
                         If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") And Not SafeMode Then
                             SetDefaultScreensaver(strArgs)
                             If ScrnSvrdb(strArgs) Then
-                                W(DoTranslation("{0} is set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
+                                W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, strArgs)
                             Else
-                                W(DoTranslation("{0} is no longer set to default screensaver.", currentLang), True, ColTypes.Neutral, strArgs)
+                                W(DoTranslation("{0} is no longer set to default screensaver."), True, ColTypes.Neutral, strArgs)
                             End If
                         Else
-                            W(DoTranslation("Screensaver {0} not found.", currentLang), True, ColTypes.Err, strArgs)
+                            W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Err, strArgs)
                         End If
                     End If
                     Done = True
@@ -935,7 +935,7 @@ Public Module GetCommand
                         If ColoredShell = True Then
                             TemplateSet(eqargs(0))
                         Else
-                            W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang), True, ColTypes.Neutral)
+                            W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."), True, ColTypes.Neutral)
                         End If
                         Done = True
                     End If
@@ -966,7 +966,7 @@ Public Module GetCommand
                         Count += 1
                     Next
                 Else
-                    W(DoTranslation("No recent notifications", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("No recent notifications"), True, ColTypes.Neutral)
                 End If
                 Done = True
 
@@ -989,7 +989,7 @@ Public Module GetCommand
                             ShowTimesInZones()
                             Done = True
                         Else
-                            W(DoTranslation("Timezone is specified incorrectly.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Err)
                             Done = True
                         End If
                     End If
@@ -1029,31 +1029,31 @@ Public Module GetCommand
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
                             W(GetEncryptedFile(file, Algorithms.SHA512), True, ColTypes.Neutral)
-                            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         ElseIf eqargs(0) = "SHA256" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
                             W(GetEncryptedFile(file, Algorithms.SHA256), True, ColTypes.Neutral)
-                            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         ElseIf eqargs(0) = "SHA1" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
                             W(GetEncryptedFile(file, Algorithms.SHA1), True, ColTypes.Neutral)
-                            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         ElseIf eqargs(0) = "MD5" Then
                             Dim spent As New Stopwatch
                             spent.Start() 'Time when you're on a breakpoint is counted
                             W(GetEncryptedFile(file, Algorithms.MD5), True, ColTypes.Neutral)
-                            W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                             spent.Stop()
                         Else
-                            W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Err)
                         End If
                     Else
-                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Err, file)
+                        W(DoTranslation("{0} is not found."), True, ColTypes.Err, file)
                     End If
                 End If
 
@@ -1076,7 +1076,7 @@ Public Module GetCommand
                                 spent.Start() 'Time when you're on a breakpoint is counted
                                 Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA512)
                                 W(encrypted, True, ColTypes.Neutral)
-                                W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
                                 spent.Stop()
                             ElseIf eqargs(0) = "SHA256" Then
@@ -1084,7 +1084,7 @@ Public Module GetCommand
                                 spent.Start() 'Time when you're on a breakpoint is counted
                                 Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA256)
                                 W(encrypted, True, ColTypes.Neutral)
-                                W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
                                 spent.Stop()
                             ElseIf eqargs(0) = "SHA1" Then
@@ -1092,7 +1092,7 @@ Public Module GetCommand
                                 spent.Start() 'Time when you're on a breakpoint is counted
                                 Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA1)
                                 W(encrypted, True, ColTypes.Neutral)
-                                W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
                                 spent.Stop()
                             ElseIf eqargs(0) = "MD5" Then
@@ -1100,11 +1100,11 @@ Public Module GetCommand
                                 spent.Start() 'Time when you're on a breakpoint is counted
                                 Dim encrypted As String = GetEncryptedFile(file, Algorithms.MD5)
                                 W(encrypted, True, ColTypes.Neutral)
-                                W(DoTranslation("Time spent: {0} milliseconds", currentLang), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
                                 spent.Stop()
                             Else
-                                W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Err)
+                                W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Err)
                                 Exit For
                             End If
                             Console.WriteLine()
@@ -1115,7 +1115,7 @@ Public Module GetCommand
                             FStream.Flush()
                         End If
                     Else
-                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Err, folder)
+                        W(DoTranslation("{0} is not found."), True, ColTypes.Err, folder)
                     End If
                 End If
 
@@ -1124,27 +1124,27 @@ Public Module GetCommand
                 Done = True
 
                 'Shows system information
-                W(DoTranslation("[ Kernel settings (Running on {0}) ]", currentLang), True, ColTypes.HelpCmd, Environment.OSVersion.ToString)
+                W(DoTranslation("[ Kernel settings (Running on {0}) ]"), True, ColTypes.HelpCmd, Environment.OSVersion.ToString)
 
                 'Kernel section
-                W(vbNewLine + DoTranslation("Kernel Version:", currentLang) + " {0}" + vbNewLine +
-                              DoTranslation("Debug Mode:", currentLang) + " {1}" + vbNewLine +
-                              DoTranslation("Colored Shell:", currentLang) + " {2}" + vbNewLine +
-                              DoTranslation("Arguments on Boot:", currentLang) + " {3}" + vbNewLine +
-                              DoTranslation("Help command simplified:", currentLang) + " {4}" + vbNewLine +
-                              DoTranslation("MOTD on Login:", currentLang) + " {5}" + vbNewLine +
-                              DoTranslation("Time/Date on corner:", currentLang) + " {6}" + vbNewLine, True, ColTypes.Neutral, KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString)
+                W(vbNewLine + DoTranslation("Kernel Version:") + " {0}" + vbNewLine +
+                              DoTranslation("Debug Mode:") + " {1}" + vbNewLine +
+                              DoTranslation("Colored Shell:") + " {2}" + vbNewLine +
+                              DoTranslation("Arguments on Boot:") + " {3}" + vbNewLine +
+                              DoTranslation("Help command simplified:") + " {4}" + vbNewLine +
+                              DoTranslation("MOTD on Login:") + " {5}" + vbNewLine +
+                              DoTranslation("Time/Date on corner:") + " {6}" + vbNewLine, True, ColTypes.Neutral, KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString)
 
                 'Hardware section
-                W(DoTranslation("[ Hardware settings ]{0}", currentLang), True, ColTypes.HelpCmd, vbNewLine)
+                W(DoTranslation("[ Hardware settings ]{0}"), True, ColTypes.HelpCmd, vbNewLine)
                 ListDrivers()
-                W(DoTranslation("Use ""hwinfo"" for extended information about hardware.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Neutral)
 
                 'User section
-                W(DoTranslation("{0}[ User settings ]", currentLang), True, ColTypes.HelpCmd, vbNewLine)
-                W(vbNewLine + DoTranslation("Current user name:", currentLang) + " {0}" + vbNewLine +
-                              DoTranslation("Current host name:", currentLang) + " {1}" + vbNewLine +
-                              DoTranslation("Available usernames:", currentLang) + " {2}", True, ColTypes.Neutral, signedinusrnm, HName, String.Join(", ", userword.Keys))
+                W(DoTranslation("{0}[ User settings ]"), True, ColTypes.HelpCmd, vbNewLine)
+                W(vbNewLine + DoTranslation("Current user name:") + " {0}" + vbNewLine +
+                              DoTranslation("Current host name:") + " {1}" + vbNewLine +
+                              DoTranslation("Available usernames:") + " {2}", True, ColTypes.Neutral, signedinusrnm, HName, String.Join(", ", userword.Keys))
 
                 'Messages Section
                 W(vbNewLine + "[ MOTD ]", True, ColTypes.HelpCmd)
@@ -1158,12 +1158,12 @@ Public Module GetCommand
                     If eqargs?.Count - 1 >= 0 Then
                         If RDebugBlocked.Contains(eqargs(0)) Then
                             If RemoveFromBlockList(eqargs(0)) Then
-                                W(DoTranslation("{0} can now join remote debug again.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                                W(DoTranslation("{0} can now join remote debug again."), True, ColTypes.Neutral, eqargs(0))
                             Else
-                                W(DoTranslation("Failed to unblock {0}.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                                W(DoTranslation("Failed to unblock {0}."), True, ColTypes.Neutral, eqargs(0))
                             End If
                         Else
-                            W(DoTranslation("{0} is not blocked yet.", currentLang), True, ColTypes.Neutral, eqargs(0))
+                            W(DoTranslation("{0} is not blocked yet."), True, ColTypes.Neutral, eqargs(0))
                         End If
                         Done = True
                     End If
@@ -1192,7 +1192,7 @@ Public Module GetCommand
 #If SPECIFIER = "REL" Then
                 CheckKernelUpdates()
 #Else
-                W(DoTranslation("Checking for updates is disabled because you're running a development version.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Checking for updates is disabled because you're running a development version."), True, ColTypes.Err)
 #End If
 
             ElseIf words(0) = "usermanual" Then
@@ -1219,7 +1219,7 @@ Public Module GetCommand
                         ElseIf eqargs(0) = "MD5" Then
                             ExpectedHashLength = 32
                         Else
-                            W(DoTranslation("Invalid encryption algorithm.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Err)
                             Exit Try
                         End If
 
@@ -1256,17 +1256,17 @@ Public Module GetCommand
                             Wdbg("I", "Hashes {0} and {1}", ActualHash, ExpectedHash)
                             If ActualHash = ExpectedHash Then
                                 Wdbg("I", "Hashes match.")
-                                W(DoTranslation("Hashes match.", currentLang), True, ColTypes.Neutral)
+                                W(DoTranslation("Hashes match."), True, ColTypes.Neutral)
                             Else
                                 Wdbg("W", "Hashes don't match.")
-                                W(DoTranslation("Hashes don't match.", currentLang), True, ColTypes.Neutral)
+                                W(DoTranslation("Hashes don't match."), True, ColTypes.Neutral)
                             End If
                         Else
                             Wdbg("E", "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, eqargs(0), ExpectedHashLength)
-                            W(DoTranslation("Hashes are malformed.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Hashes are malformed."), True, ColTypes.Err)
                         End If
                     Else
-                        W(DoTranslation("{0} is not found.", currentLang), True, ColTypes.Err, file)
+                        W(DoTranslation("{0} is not found."), True, ColTypes.Err, file)
                     End If
                 End If
 
@@ -1282,8 +1282,8 @@ Public Module GetCommand
                         Next
                     Else
                         Dim APIKey As String
-                        W(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys.", currentLang), True, ColTypes.Neutral)
-                        W(DoTranslation("Enter your API key:", currentLang) + " ", False, ColTypes.Input)
+                        W(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."), True, ColTypes.Neutral)
+                        W(DoTranslation("Enter your API key:") + " ", False, ColTypes.Input)
                         APIKey = ReadLineNoInput("*")
                         Console.WriteLine()
                         PrintWeatherInfo(eqargs(0), APIKey)
@@ -1329,7 +1329,7 @@ Public Module GetCommand
 
             End If
             If Done = False Then
-                Throw New Exceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:", currentLang))
+                Throw New Exceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:"))
             End If
         Catch neaex As Exceptions.NotEnoughArgumentsException
             Wdbg("W", "User hasn't provided enough arguments for {0}", words(0))
@@ -1341,11 +1341,11 @@ Public Module GetCommand
         Catch ex As Exception
             EventManager.RaiseCommandError(requestedCommand, ex)
             If DebugMode = True Then
-                W(DoTranslation("Error trying to execute command", currentLang) + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang) + vbNewLine + "{2}", True, ColTypes.Err,
+                W(DoTranslation("Error trying to execute command") + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Err,
                   Err.Number, ex.Message, ex.StackTrace, words(0))
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command", currentLang) + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}", currentLang), True, ColTypes.Err, Err.Number, ex.Message, words(0))
+                W(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Err, Err.Number, ex.Message, words(0))
             End If
         End Try
         StartCommandThread.Abort()

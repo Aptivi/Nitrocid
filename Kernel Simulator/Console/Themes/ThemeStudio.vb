@@ -32,28 +32,28 @@ Module ThemeStudio
         While Not StudioExiting
             Wdbg("I", "Studio not exiting yet. Populating {0} options...", MaximumOptions)
             Console.Clear()
-            W(DoTranslation("Making a new theme ""{0}"".", currentLang) + vbNewLine, True, ColTypes.Neutral, ThemeName)
+            W(DoTranslation("Making a new theme ""{0}"".") + vbNewLine, True, ColTypes.Neutral, ThemeName)
 
             'List options
-            W("1) " + DoTranslation("Input color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedInputColor)
-            W("2) " + DoTranslation("License color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedLicenseColor)
-            W("3) " + DoTranslation("Continuable kernel error color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedContKernelErrorColor)
-            W("4) " + DoTranslation("Uncontinuable kernel error color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedUncontKernelErrorColor)
-            W("5) " + DoTranslation("Host name color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedHostNameShellColor)
-            W("6) " + DoTranslation("User name color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedUserNameShellColor)
-            W("7) " + DoTranslation("Background color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedBackgroundColor)
-            W("8) " + DoTranslation("Neutral text color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedNeutralTextColor)
-            W("9) " + DoTranslation("Command list color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedCmdListColor)
-            W("10) " + DoTranslation("Command definition color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedCmdDefColor)
-            W("11) " + DoTranslation("Stage color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedStageColor)
-            W("12) " + DoTranslation("Error color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedErrorColor)
-            W("13) " + DoTranslation("Warning color", currentLang) + ": [{0}] ", True, ColTypes.Option, SelectedWarningColor)
-            W("14) " + DoTranslation("Option color", currentLang) + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedOptionColor)
+            W("1) " + DoTranslation("Input color") + ": [{0}] ", True, ColTypes.Option, SelectedInputColor)
+            W("2) " + DoTranslation("License color") + ": [{0}] ", True, ColTypes.Option, SelectedLicenseColor)
+            W("3) " + DoTranslation("Continuable kernel error color") + ": [{0}] ", True, ColTypes.Option, SelectedContKernelErrorColor)
+            W("4) " + DoTranslation("Uncontinuable kernel error color") + ": [{0}] ", True, ColTypes.Option, SelectedUncontKernelErrorColor)
+            W("5) " + DoTranslation("Host name color") + ": [{0}] ", True, ColTypes.Option, SelectedHostNameShellColor)
+            W("6) " + DoTranslation("User name color") + ": [{0}] ", True, ColTypes.Option, SelectedUserNameShellColor)
+            W("7) " + DoTranslation("Background color") + ": [{0}] ", True, ColTypes.Option, SelectedBackgroundColor)
+            W("8) " + DoTranslation("Neutral text color") + ": [{0}] ", True, ColTypes.Option, SelectedNeutralTextColor)
+            W("9) " + DoTranslation("Command list color") + ": [{0}] ", True, ColTypes.Option, SelectedCmdListColor)
+            W("10) " + DoTranslation("Command definition color") + ": [{0}] ", True, ColTypes.Option, SelectedCmdDefColor)
+            W("11) " + DoTranslation("Stage color") + ": [{0}] ", True, ColTypes.Option, SelectedStageColor)
+            W("12) " + DoTranslation("Error color") + ": [{0}] ", True, ColTypes.Option, SelectedErrorColor)
+            W("13) " + DoTranslation("Warning color") + ": [{0}] ", True, ColTypes.Option, SelectedWarningColor)
+            W("14) " + DoTranslation("Option color") + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedOptionColor)
 
             'List saving options
-            W("15) " + DoTranslation("Save Theme to Current Directory", currentLang), True, ColTypes.Option)
-            W("16) " + DoTranslation("Save Theme to Another Directory", currentLang), True, ColTypes.Option)
-            W("17) " + DoTranslation("Exit", currentLang) + vbNewLine, True, ColTypes.Option)
+            W("15) " + DoTranslation("Save Theme to Current Directory"), True, ColTypes.Option)
+            W("16) " + DoTranslation("Save Theme to Another Directory"), True, ColTypes.Option)
+            W("17) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
 
             'Prompt user
             Wdbg("I", "Waiting for user input...")
@@ -143,7 +143,7 @@ Module ThemeStudio
                             SaveThemeToCurrentDirectory(ThemeName)
                         Case 16 'Save theme to another directory
                             Wdbg("I", "Prompting user for directory name...")
-                            W(DoTranslation("Specify directory to save theme to:", currentLang) + " [{0}] ", False, ColTypes.Input, CurrDir)
+                            W(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
                             Dim DirectoryName As String = Console.ReadLine
                             Wdbg("I", "Got directory name {0}.", DirectoryName)
                             SaveThemeToAnotherDirectory(ThemeName, DirectoryName)
@@ -153,14 +153,14 @@ Module ThemeStudio
                     End Select
                 Else
                     Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid.", currentLang), True, ColTypes.Err, NumericResponse)
-                    W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
+                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, NumericResponse)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
                     Console.ReadKey()
                 End If
             Else
                 Wdbg("W", "Answer is not numeric.")
-                W(DoTranslation("The answer must be numeric.", currentLang), True, ColTypes.Err)
-                W(DoTranslation("Press any key to go back.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("The answer must be numeric."), True, ColTypes.Err)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
                 Console.ReadKey()
             End If
         End While
@@ -176,7 +176,7 @@ Module ThemeStudio
         Console.CursorVisible = False
         While Not ColorWheelExiting
             Console.Clear()
-            W(vbNewLine + DoTranslation("Select color using ""<-"" and ""->"" keys. Press ENTER to quit. Press ""i"" to insert color number manually.", currentLang), True, ColTypes.Neutral)
+            W(vbNewLine + DoTranslation("Select color using ""<-"" and ""->"" keys. Press ENTER to quit. Press ""i"" to insert color number manually."), True, ColTypes.Neutral)
             W(vbNewLine + " <", False, ColTypes.Gray)
             WriteWhereC(CurrentColor.ToString, (Console.CursorLeft + 30 - CurrentColor.ToString.Length) / 2, Console.CursorTop, CurrentColor)
             WriteWhere(">", Console.CursorLeft + 27, Console.CursorTop, ColTypes.Gray)
@@ -195,7 +195,7 @@ Module ThemeStudio
                     CurrentColor += 1
                 End If
             ElseIf ConsoleResponse.Key = ConsoleKey.I Then
-                WriteWhere(DoTranslation("Enter color number from 0 to 255:", currentLang) + " [{0}] ", 0, Console.WindowHeight - 1, ColTypes.Input, CInt(CurrentColor))
+                WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, ColTypes.Input, CInt(CurrentColor))
                 Dim ColorNum As String = Console.ReadLine
                 If IsNumeric(ColorNum) Then
                     If ColorNum >= 0 And ColorNum <= 255 Then

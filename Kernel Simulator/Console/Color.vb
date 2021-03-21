@@ -166,7 +166,7 @@ Public Module Color
             Wdbg("I", "Saving theme")
             MakePermanent()
         Else
-            W(DoTranslation("Invalid color template {0}", currentLang), True, ColTypes.Err, theme)
+            W(DoTranslation("Invalid color template {0}"), True, ColTypes.Err, theme)
             Wdbg("E", "Theme not found.")
         End If
     End Sub
@@ -285,10 +285,10 @@ Public Module Color
                 MakePermanent()
                 Return True
             Else
-                Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.", currentLang))
+                Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid."))
             End If
         Else
-            Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config.", currentLang))
+            Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
         End If
         Return False
     End Function

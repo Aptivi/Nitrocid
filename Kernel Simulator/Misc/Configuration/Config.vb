@@ -41,7 +41,7 @@ Public Module Config
                         New IniKey(ksconf, "Set Root Password to", RootPasswd),
                         New IniKey(ksconf, "Check for Updates on Startup", CheckUpdateStart),
                         New IniKey(ksconf, "Change Culture when Switching Languages", LangChangeCulture),
-                        New IniKey(ksconf, "Language", currentLang)))
+                        New IniKey(ksconf, "Language")))
 
                 'The Colors Section
                 ksconf.Sections.Add(
@@ -366,9 +366,9 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}.", currentLang).FormatString(ex.Message))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}.").FormatString(ex.Message))
             Else
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration.", currentLang))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration."))
             End If
         End Try
         Return False
@@ -395,9 +395,9 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration: {0}.", currentLang).FormatString(ex.Message))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration: {0}.").FormatString(ex.Message))
             Else
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration.", currentLang))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration."))
             End If
         End Try
         Return False
@@ -558,7 +558,7 @@ Public Module Config
         Catch ex As Exception
             WStkTrc(ex)
             NotifyConfigError = True
-            Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}.", currentLang).FormatString(ex.Message))
+            Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}.").FormatString(ex.Message))
         End Try
         Return False
     End Function
@@ -603,7 +603,7 @@ Public Module Config
 
         'Check for updates for config
         If CheckForUpgrade() Then
-            W(DoTranslation("An upgrade to {0} is detected. Updating configuration...", currentLang), True, ColTypes.Neutral, KernelVersion)
+            W(DoTranslation("An upgrade to {0} is detected. Updating configuration..."), True, ColTypes.Neutral, KernelVersion)
             UpdateConfig()
         End If
     End Sub

@@ -26,82 +26,82 @@ Public Module HelpSystem
     ''' Updates the shell help dictionary to reflect the available commands
     ''' </summary>
     Public Sub InitHelp()
-        definitions = New Dictionary(Of String, String) From {{"adduser", DoTranslation("Adds users", currentLang)},
-                                                              {"alias", DoTranslation("Adds aliases to commands", currentLang)},
-                                                              {"arginj", DoTranslation("Injects arguments to the kernel (reboot required)", currentLang)},
-                                                              {"beep", DoTranslation("Beep in 'n' Hz and time in 'n' milliseconds", currentLang)},
-                                                              {"blockdbgdev", DoTranslation("Block a debug device by IP address", currentLang)},
-                                                              {"bsynth", DoTranslation("Loads the synth file and plays it.", currentLang)},
-                                                              {"calc", DoTranslation("Calculator to calculate expressions.", currentLang)},
+        definitions = New Dictionary(Of String, String) From {{"adduser", DoTranslation("Adds users")},
+                                                              {"alias", DoTranslation("Adds aliases to commands")},
+                                                              {"arginj", DoTranslation("Injects arguments to the kernel (reboot required)")},
+                                                              {"beep", DoTranslation("Beep in 'n' Hz and time in 'n' milliseconds")},
+                                                              {"blockdbgdev", DoTranslation("Block a debug device by IP address")},
+                                                              {"bsynth", DoTranslation("Loads the synth file and plays it.")},
+                                                              {"calc", DoTranslation("Calculator to calculate expressions.")},
                                                               {"cat", DoTranslation("Prints content of file to console")},
-                                                              {"cdbglog", DoTranslation("Deletes everything in debug log", currentLang)},
-                                                              {"chattr", DoTranslation("Changes attribute of a file", currentLang)},
-                                                              {"chdir", DoTranslation("Changes directory", currentLang)},
-                                                              {"chhostname", DoTranslation("Changes host name", currentLang)},
-                                                              {"chlang", DoTranslation("Changes language", currentLang)},
-                                                              {"chmal", DoTranslation("Changes MAL, the MOTD After Login", currentLang)},
-                                                              {"chmotd", DoTranslation("Changes MOTD, the Message Of The Day", currentLang)},
-                                                              {"choice", DoTranslation("Makes user choices", currentLang)},
-                                                              {"chpwd", DoTranslation("Changes password for current user", currentLang)},
-                                                              {"chusrname", DoTranslation("Changes user name", currentLang)},
-                                                              {"cls", DoTranslation("Clears the screen", currentLang)},
-                                                              {"copy", DoTranslation("Creates another copy of a file under different directory or name.", currentLang)},
-                                                              {"debuglog", DoTranslation("Shows debug logs", currentLang)},
-                                                              {"dirinfo", DoTranslation("Provides information about a directory", currentLang)},
-                                                              {"disconndbgdev", DoTranslation("Disconnect a debug device", currentLang)},
-                                                              {"dismissnotif", DoTranslation("Dismisses a notification", currentLang)},
-                                                              {"echo", DoTranslation("Writes text into the console", currentLang)},
-                                                              {"edit", DoTranslation("Edits a text file", currentLang)},
-                                                              {"fileinfo", DoTranslation("Provides information about a file", currentLang)},
-                                                              {"ftp", DoTranslation("Use an FTP shell to interact with servers", currentLang)},
-                                                              {"get", DoTranslation("Downloads a file to current working directory", currentLang)},
-                                                              {"help", DoTranslation("Help page", currentLang)},
-                                                              {"hwinfo", DoTranslation("Prints hardware information", currentLang)},
-                                                              {"input", DoTranslation("Allows user to enter input", currentLang)},
-                                                              {"list", DoTranslation("List file/folder contents in current folder", currentLang)},
-                                                              {"lockscreen", DoTranslation("Locks your screen with a password", currentLang)},
-                                                              {"logout", DoTranslation("Logs you out", currentLang)},
-                                                              {"loteresp", DoTranslation("Respond to love or hate comments.", currentLang)},
-                                                              {"lsdbgdev", DoTranslation("Lists debugging devices connected", currentLang)},
-                                                              {"lsmail", DoTranslation("Lists all mails in the specific user.", currentLang)},
-                                                              {"mathbee", DoTranslation("See if you can solve mathematical equations on time", currentLang)},
-                                                              {"md", DoTranslation("Creates a directory", currentLang)},
-                                                              {"mkfile", DoTranslation("Makes a new file", currentLang)},
-                                                              {"mktheme", DoTranslation("Makes a new theme", currentLang)},
-                                                              {"move", DoTranslation("Moves a file to another directory", currentLang)},
-                                                              {"netinfo", DoTranslation("Lists information about all available interfaces", currentLang)},
-                                                              {"perm", DoTranslation("Manage permissions for users", currentLang)},
-                                                              {"ping", DoTranslation("Pings an address", currentLang)},
-                                                              {"put", DoTranslation("Uploads a file to specified website", currentLang)},
-                                                              {"reboot", DoTranslation("Restarts your computer (WARNING: No syncing, because it is not a final kernel)", currentLang)},
-                                                              {"reloadconfig", DoTranslation("Reloads configuration file that is edited.", currentLang)},
-                                                              {"reloadmods", DoTranslation("Reloads mods.", currentLang)},
-                                                              {"reloadsaver", DoTranslation("Reloads screensaver file in KSMods", currentLang)},
-                                                              {"rexec", DoTranslation("Remotely executes a command to remote PC", currentLang)},
-                                                              {"rm", DoTranslation("Removes a directory or a file", currentLang)},
-                                                              {"rdebug", DoTranslation("Enables or disables remote debugging.", currentLang)},
-                                                              {"rmuser", DoTranslation("Removes a user from the list", currentLang)},
-                                                              {"savescreen", DoTranslation("Saves your screen from burn outs", currentLang)},
-                                                              {"search", DoTranslation("Searches for specified string in the provided file", currentLang)},
-                                                              {"setsaver", DoTranslation("Sets up kernel screensavers", currentLang)},
-                                                              {"setthemes", DoTranslation("Sets up kernel themes", currentLang)},
-                                                              {"settings", DoTranslation("Changes kernel configuration", currentLang)},
-                                                              {"sftp", DoTranslation("Lets you use an SSH FTP server", currentLang)},
-                                                              {"shownotifs", DoTranslation("Shows all received notifications", currentLang)},
-                                                              {"showtd", DoTranslation("Shows date and time", currentLang)},
-                                                              {"showtdzone", DoTranslation("Shows date and time in zones", currentLang)},
-                                                              {"shutdown", DoTranslation("The kernel will be shut down", currentLang)},
-                                                              {"spellbee", DoTranslation("See if you can spell words correctly on time", currentLang)},
-                                                              {"sshell", DoTranslation("Connects to an SSH server.", currentLang)},
-                                                              {"sumfile", DoTranslation("Calculates file sums.", currentLang)},
-                                                              {"sumfiles", DoTranslation("Calculates sums of files in specified directory.", currentLang)},
-                                                              {"sysinfo", DoTranslation("System information", currentLang)},
-                                                              {"unblockdbgdev", DoTranslation("Unblock a debug device by IP address", currentLang)},
+                                                              {"cdbglog", DoTranslation("Deletes everything in debug log")},
+                                                              {"chattr", DoTranslation("Changes attribute of a file")},
+                                                              {"chdir", DoTranslation("Changes directory")},
+                                                              {"chhostname", DoTranslation("Changes host name")},
+                                                              {"chlang", DoTranslation("Changes language")},
+                                                              {"chmal", DoTranslation("Changes MAL, the MOTD After Login")},
+                                                              {"chmotd", DoTranslation("Changes MOTD, the Message Of The Day")},
+                                                              {"choice", DoTranslation("Makes user choices")},
+                                                              {"chpwd", DoTranslation("Changes password for current user")},
+                                                              {"chusrname", DoTranslation("Changes user name")},
+                                                              {"cls", DoTranslation("Clears the screen")},
+                                                              {"copy", DoTranslation("Creates another copy of a file under different directory or name.")},
+                                                              {"debuglog", DoTranslation("Shows debug logs")},
+                                                              {"dirinfo", DoTranslation("Provides information about a directory")},
+                                                              {"disconndbgdev", DoTranslation("Disconnect a debug device")},
+                                                              {"dismissnotif", DoTranslation("Dismisses a notification")},
+                                                              {"echo", DoTranslation("Writes text into the console")},
+                                                              {"edit", DoTranslation("Edits a text file")},
+                                                              {"fileinfo", DoTranslation("Provides information about a file")},
+                                                              {"ftp", DoTranslation("Use an FTP shell to interact with servers")},
+                                                              {"get", DoTranslation("Downloads a file to current working directory")},
+                                                              {"help", DoTranslation("Help page")},
+                                                              {"hwinfo", DoTranslation("Prints hardware information")},
+                                                              {"input", DoTranslation("Allows user to enter input")},
+                                                              {"list", DoTranslation("List file/folder contents in current folder")},
+                                                              {"lockscreen", DoTranslation("Locks your screen with a password")},
+                                                              {"logout", DoTranslation("Logs you out")},
+                                                              {"loteresp", DoTranslation("Respond to love or hate comments.")},
+                                                              {"lsdbgdev", DoTranslation("Lists debugging devices connected")},
+                                                              {"lsmail", DoTranslation("Lists all mails in the specific user.")},
+                                                              {"mathbee", DoTranslation("See if you can solve mathematical equations on time")},
+                                                              {"md", DoTranslation("Creates a directory")},
+                                                              {"mkfile", DoTranslation("Makes a new file")},
+                                                              {"mktheme", DoTranslation("Makes a new theme")},
+                                                              {"move", DoTranslation("Moves a file to another directory")},
+                                                              {"netinfo", DoTranslation("Lists information about all available interfaces")},
+                                                              {"perm", DoTranslation("Manage permissions for users")},
+                                                              {"ping", DoTranslation("Pings an address")},
+                                                              {"put", DoTranslation("Uploads a file to specified website")},
+                                                              {"reboot", DoTranslation("Restarts your computer (WARNING: No syncing, because it is not a final kernel)")},
+                                                              {"reloadconfig", DoTranslation("Reloads configuration file that is edited.")},
+                                                              {"reloadmods", DoTranslation("Reloads mods.")},
+                                                              {"reloadsaver", DoTranslation("Reloads screensaver file in KSMods")},
+                                                              {"rexec", DoTranslation("Remotely executes a command to remote PC")},
+                                                              {"rm", DoTranslation("Removes a directory or a file")},
+                                                              {"rdebug", DoTranslation("Enables or disables remote debugging.")},
+                                                              {"rmuser", DoTranslation("Removes a user from the list")},
+                                                              {"savescreen", DoTranslation("Saves your screen from burn outs")},
+                                                              {"search", DoTranslation("Searches for specified string in the provided file")},
+                                                              {"setsaver", DoTranslation("Sets up kernel screensavers")},
+                                                              {"setthemes", DoTranslation("Sets up kernel themes")},
+                                                              {"settings", DoTranslation("Changes kernel configuration")},
+                                                              {"sftp", DoTranslation("Lets you use an SSH FTP server")},
+                                                              {"shownotifs", DoTranslation("Shows all received notifications")},
+                                                              {"showtd", DoTranslation("Shows date and time")},
+                                                              {"showtdzone", DoTranslation("Shows date and time in zones")},
+                                                              {"shutdown", DoTranslation("The kernel will be shut down")},
+                                                              {"spellbee", DoTranslation("See if you can spell words correctly on time")},
+                                                              {"sshell", DoTranslation("Connects to an SSH server.")},
+                                                              {"sumfile", DoTranslation("Calculates file sums.")},
+                                                              {"sumfiles", DoTranslation("Calculates sums of files in specified directory.")},
+                                                              {"sysinfo", DoTranslation("System information")},
+                                                              {"unblockdbgdev", DoTranslation("Unblock a debug device by IP address")},
                                                               {"unzip", DoTranslation("Extracts a ZIP archive")},
-                                                              {"update", DoTranslation("System update", currentLang)},
-                                                              {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)},
-                                                              {"verify", DoTranslation("Verifies sanity of the file", currentLang)},
-                                                              {"weather", DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang)},
+                                                              {"update", DoTranslation("System update")},
+                                                              {"usermanual", DoTranslation("Takes you to our GitHub Wiki.")},
+                                                              {"verify", DoTranslation("Verifies sanity of the file")},
+                                                              {"weather", DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.")},
                                                               {"wrap", DoTranslation("Wraps the console output")},
                                                               {"zip", DoTranslation("Creates a ZIP archive")}}
     End Sub
@@ -128,7 +128,7 @@ Public Module HelpSystem
                 For Each cmd As String In Aliases.Keys
                     W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, definitions(Aliases(cmd)))
                 Next
-                W(DoTranslation("* You can use multiple commands using the colon between commands.", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Neutral)
             Else
                 For Each cmd As String In Aliases.Keys
                     W("{0}({1}), ", False, ColTypes.HelpCmd, cmd, Aliases(cmd))
@@ -146,338 +146,338 @@ Public Module HelpSystem
 
         ElseIf command = "adduser" Then
 
-            W(DoTranslation("Usage:", currentLang) + " adduser <userName> [password] [confirm]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " adduser <userName> [password] [confirm]", True, ColTypes.Neutral)
 
         ElseIf command = "alias" Then
 
-            W(DoTranslation("Usage:", currentLang) + " alias <rem/add> <1=Shell/2=RDebug/3=FTPShell/4=SFTPShell/5=MailShell> <alias> <cmd>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " alias <rem/add> <1=Shell/2=RDebug/3=FTPShell/4=SFTPShell/5=MailShell> <alias> <cmd>", True, ColTypes.Neutral)
 
         ElseIf command = "arginj" Then
 
-            W(DoTranslation("Usage:", currentLang) + " arginj [Arguments separated by spaces]" + vbNewLine +
-              "       " + DoTranslation("where arguments will be {0}", currentLang), True, ColTypes.Neutral, String.Join(", ", AvailableArgs))
+            W(DoTranslation("Usage:") + " arginj [Arguments separated by spaces]" + vbNewLine +
+              "       " + DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs))
 
         ElseIf command = "beep" Then
 
-            W(DoTranslation("Usage:", currentLang) + " beep <37-32767 Hz> <milliseconds>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " beep <37-32767 Hz> <milliseconds>", True, ColTypes.Neutral)
 
         ElseIf command = "blockdbgdev" Then
 
-            W(DoTranslation("Usage:", currentLang) + " blockdbgdev <ipaddress>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " blockdbgdev <ipaddress>", True, ColTypes.Neutral)
 
         ElseIf command = "bsynth" Then
 
-            W(DoTranslation("Usage:", currentLang) + " bsynth <script-file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " bsynth <script-file>", True, ColTypes.Neutral)
 
         ElseIf command = "cat" Then
 
-            W(DoTranslation("Usage:", currentLang) + " cat <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " cat <file>", True, ColTypes.Neutral)
 
         ElseIf command = "calc" Then
 
-            W(DoTranslation("Usage:", currentLang) + " calc <expression>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " calc <expression>", True, ColTypes.Neutral)
 
         ElseIf command = "cdbglog" Then
 
-            W(DoTranslation("Usage:", currentLang) + " cdbglog: " + DoTranslation("Deletes everything in debug log", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " cdbglog: " + DoTranslation("Deletes everything in debug log"), True, ColTypes.Neutral)
 
         ElseIf command = "chattr" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chattr <file> +/-<attributes>", True, ColTypes.Neutral)
-            W(DoTranslation("where <attributes> is one of the following:", currentLang) + vbNewLine, True, ColTypes.Neutral)
-            W("- Normal: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a normal file", currentLang), True, ColTypes.HelpDef)                   'Normal   = 128
-            W("- ReadOnly: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a read-only file", currentLang), True, ColTypes.HelpDef)              'ReadOnly = 1
-            W("- Hidden: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a hidden file", currentLang), True, ColTypes.HelpDef)                   'Hidden   = 2
-            W("- Archive: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is an archive. Used for backups.", currentLang), True, ColTypes.HelpDef)  'Archive  = 32
+            W(DoTranslation("Usage:") + " chattr <file> +/-<attributes>", True, ColTypes.Neutral)
+            W(DoTranslation("where <attributes> is one of the following:") + vbNewLine, True, ColTypes.Neutral)
+            W("- Normal: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a normal file"), True, ColTypes.HelpDef)                   'Normal   = 128
+            W("- ReadOnly: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a read-only file"), True, ColTypes.HelpDef)              'ReadOnly = 1
+            W("- Hidden: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a hidden file"), True, ColTypes.HelpDef)                   'Hidden   = 2
+            W("- Archive: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is an archive. Used for backups."), True, ColTypes.HelpDef)  'Archive  = 32
 
         ElseIf command = "chdir" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chdir <directory/..>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " chdir <directory/..>", True, ColTypes.Neutral)
 
         ElseIf command = "chhostname" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chhostname <HostName>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " chhostname <HostName>", True, ColTypes.Neutral)
 
         ElseIf command = "chlang" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chlang <language>" + vbNewLine +
+            W(DoTranslation("Usage:") + " chlang <language>" + vbNewLine +
               "<language>: " + String.Join("/", availableLangs), True, ColTypes.Neutral)
 
         ElseIf command = "chmotd" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chmotd [Message]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " chmotd [Message]", True, ColTypes.Neutral)
 
         ElseIf command = "chmal" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chmal [Message]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " chmal [Message]", True, ColTypes.Neutral)
 
         ElseIf command = "choice" Then
 
-            W(DoTranslation("Usage:", currentLang) + " choice <$variable> <answers> <input>" + vbNewLine +
-              "       " + DoTranslation("where <$variable> is any variable that will be used to store response", currentLang) + vbNewLine +
-              "       " + DoTranslation("where <answers> are one-lettered answers of the question separated in slashes", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " choice <$variable> <answers> <input>" + vbNewLine +
+              "       " + DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
+              "       " + DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
 
         ElseIf command = "chpwd" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chpwd <Username> <UserPass> <newPass> <confirm>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " chpwd <Username> <UserPass> <newPass> <confirm>", True, ColTypes.Neutral)
 
         ElseIf command = "chusrname" Then
 
-            W(DoTranslation("Usage:", currentLang) + " chusrname <oldUserName> <newUserName>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " chusrname <oldUserName> <newUserName>", True, ColTypes.Neutral)
 
         ElseIf command = "cls" Then
 
-            W(DoTranslation("Usage:", currentLang) + " cls: " + DoTranslation("to clear screen.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " cls: " + DoTranslation("to clear screen."), True, ColTypes.Neutral)
 
         ElseIf command = "copy" Then
 
-            W(DoTranslation("Usage:", currentLang) + " copy <source> <target>: " + DoTranslation("To copy files to another directory or different name", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " copy <source> <target>: " + DoTranslation("To copy files to another directory or different name"), True, ColTypes.Neutral)
 
         ElseIf command = "debuglog" Then
 
-            W(DoTranslation("Usage:", currentLang) + " debuglog: " + DoTranslation("Shows you debug logs so you can send the log to us.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " debuglog: " + DoTranslation("Shows you debug logs so you can send the log to us."), True, ColTypes.Neutral)
 
         ElseIf command = "dirinfo" Then
 
-            W(DoTranslation("Usage:", currentLang) + " dirinfo <directory>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " dirinfo <directory>", True, ColTypes.Neutral)
 
         ElseIf command = "dismissnotif" Then
 
-            W(DoTranslation("Usage:", currentLang) + " dismissnotif <notificationNumber>: " + DoTranslation("Dismisses a notification", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " dismissnotif <notificationNumber>: " + DoTranslation("Dismisses a notification"), True, ColTypes.Neutral)
 
         ElseIf command = "disconndbgdev" Then
 
-            W(DoTranslation("Usage:", currentLang) + " disconndbgdev <ip>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " disconndbgdev <ip>", True, ColTypes.Neutral)
 
         ElseIf command = "echo" Then
 
-            W(DoTranslation("Usage:", currentLang) + " echo <text>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " echo <text>", True, ColTypes.Neutral)
 
         ElseIf command = "edit" Then
 
-            W(DoTranslation("Usage:", currentLang) + " edit <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " edit <file>", True, ColTypes.Neutral)
 
         ElseIf command = "fileinfo" Then
 
-            W(DoTranslation("Usage:", currentLang) + " fileinfo <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " fileinfo <file>", True, ColTypes.Neutral)
 
         ElseIf command = "ftp" Then
 
-            W(DoTranslation("Usage:", currentLang) + " ftp <server>: " + DoTranslation("Initializes the FTP shell.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " ftp <server>: " + DoTranslation("Initializes the FTP shell."), True, ColTypes.Neutral)
 
         ElseIf command = "get" Then
 
-            W(DoTranslation("Usage:", currentLang) + " get <URL> [username]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " get <URL> [username]", True, ColTypes.Neutral)
 
         ElseIf command = "hwinfo" Then
 
-            W(DoTranslation("Usage:", currentLang) + " hwinfo: " + DoTranslation("Prints hardware information", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " hwinfo: " + DoTranslation("Prints hardware information"), True, ColTypes.Neutral)
 
         ElseIf command = "input" Then
 
-            W(DoTranslation("Usage:", currentLang) + " input <$variable> <question>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " input <$variable> <question>", True, ColTypes.Neutral)
 
         ElseIf command = "list" Then
 
-            W(DoTranslation("Usage:", currentLang) + " list [oneDirectory]" + vbNewLine +
-              "       list: " + DoTranslation("to get current directory.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " list [oneDirectory]" + vbNewLine +
+              "       list: " + DoTranslation("to get current directory."), True, ColTypes.Neutral)
 
         ElseIf command = "loteresp" Then
 
-            W(DoTranslation("Usage:", currentLang) + " loteresp: " + DoTranslation("Respond to love or hate comments.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " loteresp: " + DoTranslation("Respond to love or hate comments."), True, ColTypes.Neutral)
 
         ElseIf command = "lsdbgdev" Then
 
-            W(DoTranslation("Usage:", currentLang) + " lsdbgdev" + vbNewLine +
-              "       lsdbgdev: " + DoTranslation("Lists all connected debugging devices.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " lsdbgdev" + vbNewLine +
+              "       lsdbgdev: " + DoTranslation("Lists all connected debugging devices."), True, ColTypes.Neutral)
 
         ElseIf command = "lsmail" Then
 
-            W(DoTranslation("Usage:", currentLang) + " lsmail [emailAddress]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " lsmail [emailAddress]", True, ColTypes.Neutral)
 
         ElseIf command = "reloadsaver" Then
 
-            W(DoTranslation("Usage:", currentLang) + " reloadsaver <modNameSS.m>" + vbNewLine +
-              "       " + DoTranslation("where modnameSS.m will be", currentLang) + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
+            W(DoTranslation("Usage:") + " reloadsaver <modNameSS.m>" + vbNewLine +
+              "       " + DoTranslation("where modnameSS.m will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
 
         ElseIf command = "lockscreen" Then
 
-            W(DoTranslation("Usage:", currentLang) + " lockscreen: " + DoTranslation("Locks your screen with the password.", currentLang) + vbNewLine +
-              "       " + DoTranslation("Friends of", currentLang) + " lockscreen: savescreen", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " lockscreen: " + DoTranslation("Locks your screen with the password.") + vbNewLine +
+              "       " + DoTranslation("Friends of") + " lockscreen: savescreen", True, ColTypes.Neutral)
 
         ElseIf command = "logout" Then
 
-            W(DoTranslation("Usage:", currentLang) + " logout: " + DoTranslation("Logs you out of the user.", currentLang) + vbNewLine +
-              "       " + DoTranslation("Friends of", currentLang) + " logout: reboot, shutdown", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " logout: " + DoTranslation("Logs you out of the user.") + vbNewLine +
+              "       " + DoTranslation("Friends of") + " logout: reboot, shutdown", True, ColTypes.Neutral)
 
         ElseIf command = "mathbee" Then
 
-            W(DoTranslation("Usage:", currentLang) + " mathbee: " + DoTranslation("See if you can solve mathematical equations on time", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " mathbee: " + DoTranslation("See if you can solve mathematical equations on time"), True, ColTypes.Neutral)
 
         ElseIf command = "md" Then
 
-            W(DoTranslation("Usage:", currentLang) + " md <anything>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " md <anything>", True, ColTypes.Neutral)
 
         ElseIf command = "mkfile" Then
 
-            W(DoTranslation("Usage:", currentLang) + " mkfile <anything>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " mkfile <anything>", True, ColTypes.Neutral)
 
         ElseIf command = "mktheme" Then
 
-            W(DoTranslation("Usage:", currentLang) + " mktheme <themeName>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " mktheme <themeName>", True, ColTypes.Neutral)
 
         ElseIf command = "move" Then
 
-            W(DoTranslation("Usage:", currentLang) + " move <source> <target>: " + DoTranslation("To move files to another directory", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " move <source> <target>: " + DoTranslation("To move files to another directory"), True, ColTypes.Neutral)
 
         ElseIf command = "netinfo" Then
 
-            W(DoTranslation("Usage:", currentLang) + " netinfo: " + DoTranslation("Get every network information", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " netinfo: " + DoTranslation("Get every network information"), True, ColTypes.Neutral)
 
         ElseIf command = "perm" Then
 
-            W(DoTranslation("Usage:", currentLang) + " perm <userName> <Administrator/Disabled> <Allow/Disallow>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " perm <userName> <Administrator/Disabled> <Allow/Disallow>", True, ColTypes.Neutral)
 
         ElseIf command = "ping" Then
 
-            W(DoTranslation("Usage:", currentLang) + " ping [times] <Address1> <Address2> ...", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " ping [times] <Address1> <Address2> ...", True, ColTypes.Neutral)
 
         ElseIf command = "put" Then
 
-            W(DoTranslation("Usage:", currentLang) + " put <FileName> <URL> [username]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " put <FileName> <URL> [username]", True, ColTypes.Neutral)
 
         ElseIf command = "rm" Then
 
-            W(DoTranslation("Usage:", currentLang) + " rm <directory/file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " rm <directory/file>", True, ColTypes.Neutral)
 
         ElseIf command = "rdebug" Then
 
-            W(DoTranslation("Usage:", currentLang) + " rdebug: " + DoTranslation("Enables or disables remote debugging.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " rdebug: " + DoTranslation("Enables or disables remote debugging."), True, ColTypes.Neutral)
 
         ElseIf command = "reboot" Then
 
-            W(DoTranslation("Usage:", currentLang) + " reboot: " + DoTranslation("Restarts your simulated computer.", currentLang) + vbNewLine +
-              "       " + DoTranslation("Friends of", currentLang) + " reboot: shutdown, logout", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " reboot: " + DoTranslation("Restarts your simulated computer.") + vbNewLine +
+              "       " + DoTranslation("Friends of") + " reboot: shutdown, logout", True, ColTypes.Neutral)
 
         ElseIf command = "reloadmods" Then
 
-            W(DoTranslation("Usage:", currentLang) + " reloadmods: " + DoTranslation("Reloads modifications.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " reloadmods: " + DoTranslation("Reloads modifications."), True, ColTypes.Neutral)
 
         ElseIf command = "reloadconfig" Then
 
-            W(DoTranslation("Usage:", currentLang) + " reloadconfig: " + DoTranslation("Reloads the configuration that is changed by the end-user or by tool.", currentLang) + vbNewLine +
-              "       " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " reloadconfig: " + DoTranslation("Reloads the configuration that is changed by the end-user or by tool.") + vbNewLine +
+              "       " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart."), True, ColTypes.Neutral)
 
         ElseIf command = "rexec" Then
 
-            W(DoTranslation("Usage:", currentLang) + " rexec <address> <command>: " + DoTranslation("Remotely executes a command to remote PC", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " rexec <address> <command>: " + DoTranslation("Remotely executes a command to remote PC"), True, ColTypes.Neutral)
 
         ElseIf command = "rmuser" Then
 
-            W(DoTranslation("Usage:", currentLang) + " rmuser <Username>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " rmuser <Username>", True, ColTypes.Neutral)
 
         ElseIf command = "savescreen" Then
 
-            W(DoTranslation("Usage:", currentLang) + " savescreen: " + DoTranslation("shows you a selected screensaver, while protecting your screen from burn outs.", currentLang) + vbNewLine +
-              "       " + DoTranslation("Friends of", currentLang) + " savescreen: lockscreen", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " savescreen: " + DoTranslation("shows you a selected screensaver, while protecting your screen from burn outs.") + vbNewLine +
+              "       " + DoTranslation("Friends of") + " savescreen: lockscreen", True, ColTypes.Neutral)
 
         ElseIf command = "search" Then
 
-            W(DoTranslation("Usage:", currentLang) + " search <StringEnclosedInDoubleQuotes> <File>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " search <StringEnclosedInDoubleQuotes> <File>", True, ColTypes.Neutral)
 
         ElseIf command = "setsaver" Then
 
-            W(DoTranslation("Usage:", currentLang) + " setsaver <modNameSS.m/{0}>", True, ColTypes.Neutral, String.Join("/", ScrnSvrdb.Keys))
+            W(DoTranslation("Usage:") + " setsaver <modNameSS.m/{0}>", True, ColTypes.Neutral, String.Join("/", ScrnSvrdb.Keys))
             If wholesslist.Length > 0 Then
-                W("       " + DoTranslation("where modnameSS.m will be", currentLang) + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
+                W("       " + DoTranslation("where modnameSS.m will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
             End If
 
         ElseIf command = "setthemes" Then
 
-            W(DoTranslation("Usage:", currentLang) + " setthemes <Theme>" + vbNewLine +
+            W(DoTranslation("Usage:") + " setthemes <Theme>" + vbNewLine +
               "       " + "<Theme>: " + String.Join(", ", colorTemplates.Keys), True, ColTypes.Neutral)
 
         ElseIf command = "settings" Then
 
-            W(DoTranslation("Usage:", currentLang) + " settings", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " settings", True, ColTypes.Neutral)
 
         ElseIf command = "sftp" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sftp <server>: " + DoTranslation("Initializes the SFTP shell.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sftp <server>: " + DoTranslation("Initializes the SFTP shell."), True, ColTypes.Neutral)
 
         ElseIf command = "shownotifs" Then
 
-            W(DoTranslation("Usage:", currentLang) + " shownotifs: " + DoTranslation("Shows all received notifications", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " shownotifs: " + DoTranslation("Shows all received notifications"), True, ColTypes.Neutral)
 
         ElseIf command = "showtd" Then
 
-            W(DoTranslation("Usage:", currentLang) + " showtd: " + DoTranslation("Shows the date and time.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " showtd: " + DoTranslation("Shows the date and time."), True, ColTypes.Neutral)
 
         ElseIf command = "showtdzone" Then
 
-            W(DoTranslation("Usage:", currentLang) + " showtdzone <timezone/all>: " + DoTranslation("Shows the date and time in zones.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " showtdzone <timezone/all>: " + DoTranslation("Shows the date and time in zones."), True, ColTypes.Neutral)
 
         ElseIf command = "shutdown" Then
 
-            W(DoTranslation("Usage:", currentLang) + " shutdown: " + DoTranslation("Shuts down your simulated computer.", currentLang) + vbNewLine +
-              "       " + DoTranslation("Friends of", currentLang) + " shutdown: reboot, logout", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " shutdown: " + DoTranslation("Shuts down your simulated computer.") + vbNewLine +
+              "       " + DoTranslation("Friends of") + " shutdown: reboot, logout", True, ColTypes.Neutral)
 
         ElseIf command = "spellbee" Then
 
-            W(DoTranslation("Usage:", currentLang) + " spellbee: " + DoTranslation("See if you can spell words correctly on time", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " spellbee: " + DoTranslation("See if you can spell words correctly on time"), True, ColTypes.Neutral)
 
         ElseIf command = "sshell" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sshell <address> <port> <username>: " + DoTranslation("Connects to an SSH server.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sshell <address> <port> <username>: " + DoTranslation("Connects to an SSH server."), True, ColTypes.Neutral)
 
         ElseIf command = "sumfile" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sumfile <MD5/SHA1/SHA256/SHA512> <file>: " + DoTranslation("Calculates file sums.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sumfile <MD5/SHA1/SHA256/SHA512> <file>: " + DoTranslation("Calculates file sums."), True, ColTypes.Neutral)
 
         ElseIf command = "sumfiles" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sumfiles <MD5/SHA1/SHA256/SHA512> <dir> [outputFile]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sumfiles <MD5/SHA1/SHA256/SHA512> <dir> [outputFile]", True, ColTypes.Neutral)
 
         ElseIf command = "sysinfo" Then
 
-            W(DoTranslation("Usage:", currentLang) + " sysinfo: " + DoTranslation("Shows system information and versions.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sysinfo: " + DoTranslation("Shows system information and versions."), True, ColTypes.Neutral)
 
         ElseIf command = "unblockdbgdev" Then
 
-            W(DoTranslation("Usage:", currentLang) + " unblockdbgdev <ipaddress>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " unblockdbgdev <ipaddress>", True, ColTypes.Neutral)
 
         ElseIf command = "unzip" Then
 
-            W(DoTranslation("Usage:", currentLang) + " unzip <zipfile> [path] [-createdir]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " unzip <zipfile> [path] [-createdir]", True, ColTypes.Neutral)
 
         ElseIf command = "update" Then
 
-            W(DoTranslation("Usage:", currentLang) + " update: " + DoTranslation("System update", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " update: " + DoTranslation("System update"), True, ColTypes.Neutral)
 
         ElseIf command = "usermanual" Then
 
-            W(DoTranslation("Usage:", currentLang) + " usermanual: " + DoTranslation("Takes you to our GitHub Wiki.", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " usermanual: " + DoTranslation("Takes you to our GitHub Wiki."), True, ColTypes.Neutral)
 
         ElseIf command = "verify" Then
 
-            W(DoTranslation("Usage:", currentLang) + " verify <MD5/SHA1/SHA256/SHA512> <calculatedhash> <hashfile/expectedhash> <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " verify <MD5/SHA1/SHA256/SHA512> <calculatedhash> <hashfile/expectedhash> <file>", True, ColTypes.Neutral)
 
         ElseIf command = "weather" Then
 
-            W(DoTranslation("Usage:", currentLang) + " weather <CityID/CityName/listcities>: " + DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang) + vbNewLine +
-                                                                                                 DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.", currentLang) + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " weather <CityID/CityName/listcities>: " + DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.") + vbNewLine +
+                                                                                                 DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
 
         ElseIf command = "wrap" Then
 
-            W(DoTranslation("Usage:", currentLang) + " wrap <command>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " wrap <command>", True, ColTypes.Neutral)
 
         ElseIf command = "zip" Then
 
-            W(DoTranslation("Usage:", currentLang) + " zip <zipfile> <path> [-fast/-nocomp] [-nobasedir]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " zip <zipfile> <path> [-fast/-nocomp] [-nobasedir]", True, ColTypes.Neutral)
 
         Else
 
-            W(DoTranslation("No help for command ""{0}"".", currentLang), True, ColTypes.Err, command)
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Err, command)
 
         End If
 

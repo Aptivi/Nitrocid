@@ -55,25 +55,25 @@ Public Module KernelTools
                     'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                     'generate a second kernel error stating that there is something wrong with the reboot time.
                     Wdbg("W", "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
-                    KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.", currentLang), Nothing, CStr(ErrorType))
+                    KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), Nothing, CStr(ErrorType))
                     StopPanicAndGoToDoublePanic = True
                 ElseIf ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False Then
                     'If the error type is unrecoverable, or double, and the rebooting is false where it should
                     'not be false, then it can deal with this issue by enabling reboot.
                     Wdbg("W", "Errors that have type {0} enforced Reboot = True.", ErrorType)
-                    W(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}.", currentLang), True, ColTypes.Uncontinuable, ErrorType)
+                    W(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}."), True, ColTypes.Uncontinuable, ErrorType)
                     Reboot = True
                 End If
                 If RebootTime > 3600 Then
                     'If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
                     Wdbg("W", "RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime)
-                    W(DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.", currentLang), True, ColTypes.Uncontinuable, ErrorType, CStr(RebootTime))
+                    W(DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute."), True, ColTypes.Uncontinuable, ErrorType, CStr(RebootTime))
                     RebootTime = 60
                 End If
             Else
                 'If the error type is other than D/F/C/U/S, then it will generate a second error.
                 Wdbg("E", "Error type {0} is not valid.", ErrorType)
-                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Error Type {0} invalid.", currentLang), Nothing, CStr(ErrorType))
+                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), Nothing, CStr(ErrorType))
                 StopPanicAndGoToDoublePanic = True
             End If
 
@@ -90,7 +90,7 @@ Public Module KernelTools
             If Description.Contains("DOUBLE PANIC: ") And ErrorType = "D" Then
                 'If the description has a double panic tag and the error type is Double
                 Wdbg("F", "Double panic caused by bug in kernel crash.")
-                W(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds...", currentLang), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
+                W(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
                 Wdbg("F", "Rebooting")
                 PowerManage("reboot")
@@ -102,24 +102,24 @@ Public Module KernelTools
             ElseIf ErrorType = "C" And Reboot = True Then
                 'Check if error is Continuable and reboot is enabled
                 Wdbg("W", "Continuable kernel errors shouldn't have Reboot = True.")
-                W(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.", currentLang) + vbNewLine +
-                  DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), True, ColTypes.Continuable, ErrorType, Description)
+                W(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.") + vbNewLine +
+                  DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
                 Console.ReadKey()
             ElseIf ErrorType = "C" And Reboot = False Then
                 'Check if error is Continuable and reboot is disabled
                 EventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
-                W(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel.", currentLang), True, ColTypes.Continuable, ErrorType, Description)
+                W(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
                 Console.ReadKey()
             ElseIf (Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C") Then
                 'If rebooting is disabled and the error type does not equal Double or Continuable
                 Wdbg("W", "Reboot is False, ErrorType is not double or continuable.")
-                W(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown.", currentLang), True, ColTypes.Uncontinuable, ErrorType, Description)
+                W(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), True, ColTypes.Uncontinuable, ErrorType, Description)
                 Console.ReadKey()
                 PowerManage("shutdown")
             Else
                 'Everything else.
                 Wdbg("F", "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
-                W(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds...", currentLang), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
+                W(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
                 PowerManage("reboot")
                 adminList.Clear()
@@ -128,9 +128,9 @@ Public Module KernelTools
         Catch ex As Exception
             If DebugMode = True Then
                 W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
-                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), ex, ex.Message)
+                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
             Else
-                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}", currentLang), ex, ex.Message)
+                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
             End If
         End Try
     End Sub
@@ -149,66 +149,66 @@ Public Module KernelTools
 
             'Write info (Header)
             Dump.AutoFlush = True
-            Dump.WriteLine(DoTranslation("----------------------------- Kernel panic dump -----------------------------", currentLang) + vbNewLine + vbNewLine +
-                           DoTranslation(">> Panic information <<", currentLang) + vbNewLine +
-                           DoTranslation("> Description: {0}", currentLang) + vbNewLine +
-                           DoTranslation("> Error type: {1}", currentLang) + vbNewLine +
-                           DoTranslation("> Date and Time: {2}", currentLang) + vbNewLine, Description, ErrorType, FormatDateTime(Date.Now, DateFormat.GeneralDate))
+            Dump.WriteLine(DoTranslation("----------------------------- Kernel panic dump -----------------------------") + vbNewLine + vbNewLine +
+                           DoTranslation(">> Panic information <<") + vbNewLine +
+                           DoTranslation("> Description: {0}") + vbNewLine +
+                           DoTranslation("> Error type: {1}") + vbNewLine +
+                           DoTranslation("> Date and Time: {2}") + vbNewLine, Description, ErrorType, FormatDateTime(Date.Now, DateFormat.GeneralDate))
 
             'Write Info (Exception)
             If Not IsNothing(Exc) Then
                 Dim Count As Integer = 1
-                Dump.WriteLine(DoTranslation(">> Exception information <<", currentLang) + vbNewLine +
-                               DoTranslation("> Exception: {0}", currentLang) + vbNewLine +
-                               DoTranslation("> Description: {1}", currentLang) + vbNewLine +
-                               DoTranslation("> HRESULT: {2}", currentLang) + vbNewLine +
-                               DoTranslation("> Source: {3}", currentLang) + vbNewLine + vbNewLine +
-                               DoTranslation("> Stack trace <", currentLang) + vbNewLine + vbNewLine +
+                Dump.WriteLine(DoTranslation(">> Exception information <<") + vbNewLine +
+                               DoTranslation("> Exception: {0}") + vbNewLine +
+                               DoTranslation("> Description: {1}") + vbNewLine +
+                               DoTranslation("> HRESULT: {2}") + vbNewLine +
+                               DoTranslation("> Source: {3}") + vbNewLine + vbNewLine +
+                               DoTranslation("> Stack trace <") + vbNewLine + vbNewLine +
                                Exc.StackTrace + vbNewLine + vbNewLine +
-                               DoTranslation(">> Inner exception {0} information <<", currentLang), Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), Exc.Message, Exc.HResult, Exc.Source)
+                               DoTranslation(">> Inner exception {0} information <<"), Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), Exc.Message, Exc.HResult, Exc.Source)
 
                 'Write info (Inner exceptions)
                 Dim InnerExc As Exception = Exc.InnerException
                 While Not InnerExc Is Nothing
                     Count += 1
-                    Dump.WriteLine(DoTranslation("> Exception: {0}", currentLang) + vbNewLine +
-                                   DoTranslation("> Description: {1}", currentLang) + vbNewLine +
-                                   DoTranslation("> HRESULT: {2}", currentLang) + vbNewLine +
-                                   DoTranslation("> Source: {3}", currentLang) + vbNewLine + vbNewLine +
-                                   DoTranslation("> Stack trace <", currentLang) + vbNewLine + vbNewLine +
+                    Dump.WriteLine(DoTranslation("> Exception: {0}") + vbNewLine +
+                                   DoTranslation("> Description: {1}") + vbNewLine +
+                                   DoTranslation("> HRESULT: {2}") + vbNewLine +
+                                   DoTranslation("> Source: {3}") + vbNewLine + vbNewLine +
+                                   DoTranslation("> Stack trace <") + vbNewLine + vbNewLine +
                                    InnerExc.StackTrace + vbNewLine, InnerExc.ToString.Substring(0, InnerExc.ToString.IndexOf(":")), InnerExc.Message, InnerExc.HResult, InnerExc.Source)
                     InnerExc = InnerExc.InnerException
                     If Not InnerExc Is Nothing Then
-                        Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<", currentLang), Count)
+                        Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<"), Count)
                     Else
-                        Dump.WriteLine(DoTranslation(">> Exception {0} is the root cause <<", currentLang) + vbNewLine, Count)
+                        Dump.WriteLine(DoTranslation(">> Exception {0} is the root cause <<") + vbNewLine, Count)
                     End If
                 End While
             Else
-                Dump.WriteLine(DoTranslation(">> No exception; might be a kernel error. <<", currentLang) + vbNewLine)
+                Dump.WriteLine(DoTranslation(">> No exception; might be a kernel error. <<") + vbNewLine)
             End If
 
             'Write info (Frames)
-            Dump.WriteLine(DoTranslation(">> Frames, files, lines, and columns <<", currentLang))
+            Dump.WriteLine(DoTranslation(">> Frames, files, lines, and columns <<"))
             Try
                 Dim ExcTrace As New StackTrace(Exc, True)
                 Dim FrameNo As Integer = 1
                 For Each Frame As StackFrame In ExcTrace.GetFrames
                     If Not (Frame.GetFileName = "" And Frame.GetFileLineNumber = 0 And Frame.GetFileColumnNumber = 0) Then
-                        Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}", currentLang), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
+                        Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}"), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
                     End If
                     FrameNo += 1
                 Next
             Catch ex As Exception
                 WStkTrc(ex)
-                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}", currentLang), ex.ToString.Substring(0, ex.ToString.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
+                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.ToString.Substring(0, ex.ToString.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
             End Try
 
             'Close stream
             Wdbg("I", "Closing file stream for dump...")
             Dump.Flush() : Dump.Close()
         Catch ex As Exception
-            W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}", currentLang), True, ColTypes.Err, Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), ex.Message)
+            W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}"), True, ColTypes.Err, Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), ex.Message)
             WStkTrc(ex)
         End Try
     End Sub
@@ -223,13 +223,13 @@ Public Module KernelTools
         Wdbg("I", "Power management has the argument of {0}", PowerMode)
         If PowerMode = "shutdown" Then
             EventManager.RaisePreShutdown()
-            W(DoTranslation("Shutting down...", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Shutting down..."), True, ColTypes.Neutral)
             ResetEverything()
             EventManager.RaisePostShutdown()
             Environment.Exit(0)
         ElseIf PowerMode = "reboot" Then
             EventManager.RaisePreReboot()
-            W(DoTranslation("Rebooting...", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
             ResetEverything()
             EventManager.RaisePostReboot()
             Console.Clear()
@@ -238,7 +238,7 @@ Public Module KernelTools
             SafeMode = False
         ElseIf PowerMode = "rebootsafe" Then
             EventManager.RaisePreReboot()
-            W(DoTranslation("Rebooting...", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
             ResetEverything()
             EventManager.RaisePostReboot()
             Console.Clear()
@@ -358,9 +358,9 @@ Public Module KernelTools
 
         'Show welcome message.
         If StartScroll Then
-            WriteSlowlyC(">> " + DoTranslation("Welcome to the kernel! - Version {0}", currentLang) + " <<", True, 10, ColTypes.Neutral, KernelVersion)
+            WriteSlowlyC(">> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, 10, ColTypes.Neutral, KernelVersion)
         Else
-            W(">> " + DoTranslation("Welcome to the kernel! - Version {0}", currentLang) + " <<", True, ColTypes.Neutral, KernelVersion)
+            W(">> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, ColTypes.Neutral, KernelVersion)
         End If
 
         'Show license
@@ -369,16 +369,16 @@ Public Module KernelTools
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
-        W("OS: " + DoTranslation("Running on {0}", currentLang), True, ColTypes.Neutral, Environment.OSVersion.ToString)
-        W("KS: " + DoTranslation("Built in {0}", currentLang), True, ColTypes.Neutral, Render(GetCompileDate()))
+        W("OS: " + DoTranslation("Running on {0}"), True, ColTypes.Neutral, Environment.OSVersion.ToString)
+        W("KS: " + DoTranslation("Built in {0}"), True, ColTypes.Neutral, Render(GetCompileDate()))
 
         'Show dev version notice
 #If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends after "NEARING" stage, change the compiler constant value to "REL" to suppress this message out of stable versions
-        W(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
+        W(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version."), True, ColTypes.Neutral)
 #ElseIf SPECIFIER = "RC" Then
-        W(DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
+        W(DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version."), True, ColTypes.Neutral)
 #ElseIf SPECIFIER = "NEARING" Then
-        W(DoTranslation("Looks like you were running the nearing-release version. While it's safer to use now, it is recommended that you stay on the stable version.", currentLang), True, ColTypes.Neutral)
+        W(DoTranslation("Looks like you were running the nearing-release version. While it's safer to use now, it is recommended that you stay on the stable version."), True, ColTypes.Neutral)
 #End If
 
         'Parse real command-line arguments
@@ -446,7 +446,7 @@ Public Module KernelTools
         Dim ksOwner As Boolean
         ksInst = New Mutex(True, "Kernel Simulator", ksOwner)
         If Not ksOwner Then
-            KernelError("F", False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference.", currentLang), Nothing)
+            KernelError("F", False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference."), Nothing)
         End If
         instanceChecked = True
     End Sub
@@ -479,15 +479,15 @@ Public Module KernelTools
     End Function
 
     Sub CheckKernelUpdates()
-        W(DoTranslation("Checking for system updates...", currentLang), True, ColTypes.Neutral)
+        W(DoTranslation("Checking for system updates..."), True, ColTypes.Neutral)
         Dim AvailableUpdates As List(Of String) = FetchKernelUpdates()
         If Not IsNothing(AvailableUpdates) And AvailableUpdates.Count > 0 Then
-            W(DoTranslation("Found new version: ", currentLang), False, ColTypes.HelpCmd)
+            W(DoTranslation("Found new version: "), False, ColTypes.HelpCmd)
             W(AvailableUpdates(0), True, ColTypes.HelpDef)
-            W(DoTranslation("You can download it at: ", currentLang), False, ColTypes.HelpCmd)
+            W(DoTranslation("You can download it at: "), False, ColTypes.HelpCmd)
             W(AvailableUpdates(1), True, ColTypes.HelpDef)
         ElseIf IsNothing(AvailableUpdates) Then
-            W(DoTranslation("Failed to check for updates.", currentLang), True, ColTypes.Err)
+            W(DoTranslation("Failed to check for updates."), True, ColTypes.Err)
         End If
     End Sub
 
@@ -532,7 +532,7 @@ Public Module KernelTools
             dt = dt.AddSeconds(compileseconds)
             dt = dt.AddHours(TimeZone.CurrentTimeZone.GetUtcOffset(dt).Hours)
         Catch ex As Exception
-            W(DoTranslation("Error while trying to get compile date of assembly {0}: {1}", currentLang), True, ColTypes.Err, Asm.CodeBase, ex.Message)
+            W(DoTranslation("Error while trying to get compile date of assembly {0}: {1}"), True, ColTypes.Err, Asm.CodeBase, ex.Message)
         End Try
 
         'Now return compile date
@@ -560,7 +560,7 @@ Public Module KernelTools
             proc.Dispose()
             EventManager.RaiseGarbageCollected()
         Catch ex As Exception
-            W(DoTranslation("Error trying to free RAM: {0} - Continuing...", currentLang), True, ColTypes.Err, ex.Message)
+            W(DoTranslation("Error trying to free RAM: {0} - Continuing..."), True, ColTypes.Err, ex.Message)
             If DebugMode = True Then
                 W(ex.StackTrace, True, ColTypes.Neutral) : Wdbg("Error freeing RAM: {0}", ex.Message) : WStkTrc(ex)
             End If

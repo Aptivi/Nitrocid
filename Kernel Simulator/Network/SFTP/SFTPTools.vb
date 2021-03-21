@@ -29,7 +29,7 @@ Public Module SFTPTools
     ''' <param name="Port">A port for the address</param>
     Public Sub SFTPPromptForPassword(ByVal user As String, ByVal Address As String, ByVal Port As Integer)
         'Prompt for password
-        W(DoTranslation("Password for {0}: ", currentLang), False, ColTypes.Input, user)
+        W(DoTranslation("Password for {0}: "), False, ColTypes.Input, user)
 
         'Get input
         SFTPPass = ReadLineNoInput("*")
@@ -46,7 +46,7 @@ Public Module SFTPTools
     ''' <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
     Public Sub SFTPTryToConnect(ByVal address As String)
         If connected = True Then
-            W(DoTranslation("You should disconnect from server before connecting to another server", currentLang), True, ColTypes.Err)
+            W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Err)
         Else
             Try
                 'Create an SFTP stream to connect to
@@ -59,7 +59,7 @@ Public Module SFTPTools
                 End If
 
                 'Prompt for username
-                W(DoTranslation("Username for {0}: ", currentLang), False, ColTypes.Input, address)
+                W(DoTranslation("Username for {0}: "), False, ColTypes.Input, address)
                 user = Console.ReadLine()
                 If user = "" Then
                     Wdbg("W", "User is not provided. Fallback to ""anonymous""")
@@ -71,10 +71,10 @@ Public Module SFTPTools
                 Wdbg("W", "Error connecting to {0}: {1}", address, ex.Message)
                 WStkTrc(ex)
                 If DebugMode = True Then
-                    W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang) + vbNewLine +
-                      DoTranslation("Stack Trace: {2}", currentLang), True, ColTypes.Err, address, ex.Message, ex.StackTrace)
+                    W(DoTranslation("Error when trying to connect to {0}: {1}") + vbNewLine +
+                      DoTranslation("Stack Trace: {2}"), True, ColTypes.Err, address, ex.Message, ex.StackTrace)
                 Else
-                    W(DoTranslation("Error when trying to connect to {0}: {1}", currentLang), True, ColTypes.Err, address, ex.Message)
+                    W(DoTranslation("Error when trying to connect to {0}: {1}"), True, ColTypes.Err, address, ex.Message)
                 End If
             End Try
         End If
@@ -85,12 +85,12 @@ Public Module SFTPTools
     ''' </summary>
     Private Sub ConnectSFTP()
         'Connect
-        W(DoTranslation("Trying to connect to {0}...", currentLang), True, ColTypes.Neutral, ClientSFTP.ConnectionInfo.Host)
+        W(DoTranslation("Trying to connect to {0}..."), True, ColTypes.Neutral, ClientSFTP.ConnectionInfo.Host)
         Wdbg("I", "Connecting to {0} with {1}...", ClientSFTP.ConnectionInfo.Host)
         ClientSFTP.Connect()
 
         'Show that it's connected
-        W(DoTranslation("Connected to {0}", currentLang), True, ColTypes.Neutral, ClientSFTP.ConnectionInfo.Host)
+        W(DoTranslation("Connected to {0}"), True, ColTypes.Neutral, ClientSFTP.ConnectionInfo.Host)
         Wdbg("I", "Connected.")
         SFTPConnected = True
 
@@ -127,7 +127,7 @@ Public Module SFTPTools
             If Not SpeedDialLines.Count = 0 Then
                 For Each SpeedDialLine As String In SpeedDialLines
                     Wdbg("I", "Speed dial line: {0}", SpeedDialLine)
-                    W(DoTranslation("Select an address to connect to:", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Select an address to connect to:"), True, ColTypes.Neutral)
                     W("{0}: {1}", True, ColTypes.Neutral, Counter, SpeedDialLine)
                     Counter += 1
                 Next
@@ -152,20 +152,20 @@ Public Module SFTPTools
                             SFTPPromptForPassword(Username, Address, Port)
                         Else
                             Wdbg("I", "Response is out-of-bounds. Retrying...")
-                            W(DoTranslation("The selection is out of range. Select between 1-{0}. Try again.", currentLang), True, ColTypes.Err, SpeedDialLines.Count)
+                            W(DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), True, ColTypes.Err, SpeedDialLines.Count)
                         End If
                     Else
                         Wdbg("W", "Response isn't numeric. IsNumeric(Answer) returned false.")
-                        W(DoTranslation("The selection is not a number. Try again.", currentLang), True, ColTypes.Err)
+                        W(DoTranslation("The selection is not a number. Try again."), True, ColTypes.Err)
                     End If
                 End While
             Else
                 Wdbg("E", "Speed dial is empty. Lines count is 0.")
-                W(DoTranslation("Speed dial is empty. Connect to a server to add an address to it.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Speed dial is empty. Connect to a server to add an address to it."), True, ColTypes.Err)
             End If
         Else
             Wdbg("E", "File doesn't exist.")
-            W(DoTranslation("Speed dial doesn't exist. Connect to a server to add an address to it.", currentLang), True, ColTypes.Err)
+            W(DoTranslation("Speed dial doesn't exist. Connect to a server to add an address to it."), True, ColTypes.Err)
         End If
     End Sub
 
