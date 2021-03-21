@@ -358,9 +358,9 @@ Public Module KernelTools
 
         'Show welcome message.
         If StartScroll Then
-            WriteSlowlyC(">> " + DoTranslation("Welcome to the kernel! - Version {0}", currentLang) + " ({1}) <<", True, 10, ColTypes.Neutral, KernelVersion, Render(GetCompileDate()))
+            WriteSlowlyC(">> " + DoTranslation("Welcome to the kernel! - Version {0}", currentLang) + " <<", True, 10, ColTypes.Neutral, KernelVersion)
         Else
-            W(">> " + DoTranslation("Welcome to the kernel! - Version {0}", currentLang) + " ({1}) <<", True, ColTypes.Neutral, KernelVersion, Render(GetCompileDate()))
+            W(">> " + DoTranslation("Welcome to the kernel! - Version {0}", currentLang) + " <<", True, ColTypes.Neutral, KernelVersion)
         End If
 
         'Show license
@@ -370,6 +370,7 @@ Public Module KernelTools
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
         W("OS: " + DoTranslation("Running on {0}", currentLang), True, ColTypes.Neutral, Environment.OSVersion.ToString)
+        W("KS: " + DoTranslation("Built in {0}", currentLang), True, ColTypes.Neutral, Render(GetCompileDate()))
 
         'Show dev version notice
 #If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends after "NEARING" stage, change the compiler constant value to "REL" to suppress this message out of stable versions
