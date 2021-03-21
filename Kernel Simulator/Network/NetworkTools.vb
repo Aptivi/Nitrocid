@@ -225,7 +225,7 @@ Public Module NetworkTools
     ''' <param name="ThrowException">Optionally throw exception</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function AddEntryToSpeedDial(ByVal Entry As String, ByVal SpeedDialType As SpeedDialType, Optional ThrowException As Boolean = True) As Boolean
-        Dim PathName As String = If(SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
+        Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
         If Not File.Exists(paths(PathName)) Then MakeFile(paths(PathName))
         Dim SpeedDialJsonContent As String = File.ReadAllText(paths(PathName))
         Dim SpeedDialToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "[]"))
