@@ -276,6 +276,7 @@
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterSlowColor.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWhereSlowColor.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWhereColor.vb" />
+    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWrappedColor.vb" />
     <Compile Include="Misc\Writers\DebugWriters.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterColor.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />
