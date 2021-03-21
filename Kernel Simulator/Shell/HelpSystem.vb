@@ -97,11 +97,13 @@ Public Module HelpSystem
                                                               {"sumfiles", DoTranslation("Calculates sums of files in specified directory.", currentLang)},
                                                               {"sysinfo", DoTranslation("System information", currentLang)},
                                                               {"unblockdbgdev", DoTranslation("Unblock a debug device by IP address", currentLang)},
+                                                              {"unzip", DoTranslation("Extracts a ZIP archive")},
                                                               {"update", DoTranslation("System update", currentLang)},
                                                               {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)},
                                                               {"verify", DoTranslation("Verifies sanity of the file", currentLang)},
                                                               {"weather", DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang)},
-                                                              {"wrap", DoTranslation("Wraps the console output")}}
+                                                              {"wrap", DoTranslation("Wraps the console output")},
+                                                              {"zip", DoTranslation("Creates a ZIP archive")}}
     End Sub
 
     ''' <summary>
@@ -444,6 +446,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " unblockdbgdev <ipaddress>", True, ColTypes.Neutral)
 
+        ElseIf command = "unzip" Then
+
+            W(DoTranslation("Usage:", currentLang) + " unzip <zipfile> [path] [-createdir]", True, ColTypes.Neutral)
+
         ElseIf command = "update" Then
 
             W(DoTranslation("Usage:", currentLang) + " update: " + DoTranslation("System update", currentLang), True, ColTypes.Neutral)
@@ -464,6 +470,10 @@ Public Module HelpSystem
         ElseIf command = "wrap" Then
 
             W(DoTranslation("Usage:", currentLang) + " wrap <command>", True, ColTypes.Neutral)
+
+        ElseIf command = "zip" Then
+
+            W(DoTranslation("Usage:", currentLang) + " zip <zipfile> <path> [-fast/-nocomp] [-nobasedir]", True, ColTypes.Neutral)
 
         Else
 

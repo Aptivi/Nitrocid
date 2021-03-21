@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.IO.Compression
 Imports System.Net.NetworkInformation
 Imports System.Text
 Imports System.Threading
@@ -1168,6 +1169,23 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "unzip" Then
+
+                If requestedCommand <> "unzip" Then
+                    Done = True
+                    If eqargs?.Count = 1 Then
+                        Dim ZipArchiveName As String = NeutralizePath(eqargs(0))
+                        ZipFile.ExtractToDirectory(ZipArchiveName, CurrDir)
+                    ElseIf eqargs?.Count > 1 Then
+                        Dim ZipArchiveName As String = NeutralizePath(eqargs(0))
+                        Dim Destination As String = NeutralizePath(eqargs(1))
+                        If eqargs?.Contains("-createdir") Then
+                            Destination = $"{NeutralizePath($"{Path.GetFileNameWithoutExtension(ZipArchiveName)}")}/{eqargs(1)}"
+                        End If
+                        ZipFile.ExtractToDirectory(ZipArchiveName, Destination)
+                    End If
+                End If
+
             ElseIf words(0) = "update" Then
 
                 Done = True
@@ -1285,6 +1303,27 @@ Public Module GetCommand
                         File.Delete(WrapOutputPath)
                     Else
                         W(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Err, String.Join(", ", WrappableCmds))
+                    End If
+                End If
+
+            ElseIf words(0) = "zip" Then
+
+                If requestedCommand <> "zip" Then
+                    If eqargs?.Count >= 2 Then
+                        Done = True
+                        Dim ZipArchiveName As String = NeutralizePath(eqargs(0))
+                        Dim Destination As String = NeutralizePath(eqargs(1))
+                        Dim ZipCompression As CompressionLevel = CompressionLevel.Optimal
+                        Dim ZipBaseDir As Boolean = True
+                        If eqargs?.Contains("-fast") Then
+                            ZipCompression = CompressionLevel.Fastest
+                        ElseIf eqargs?.Contains("-nocomp") Then
+                            ZipCompression = CompressionLevel.NoCompression
+                        End If
+                        If eqargs?.Contains("-nobasedir") Then
+                            ZipBaseDir = False
+                        End If
+                        ZipFile.CreateFromDirectory(Destination, ZipArchiveName, ZipCompression, ZipBaseDir)
                     End If
                 End If
 
