@@ -49,6 +49,7 @@ Public Module ModExecutor
     ''' </summary>
     ''' <param name="cmd">A mod command with arguments</param>
     Sub ExecuteModCommand(ByVal cmd As String)
+        EventManager.RaisePreExecuteModCommand(cmd)
         Dim parts As String() = cmd.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
         Dim args As String = ""
         Dim actualCmd As String = parts(0)
@@ -71,6 +72,7 @@ Public Module ModExecutor
                 scripts(actualCmd)(ModParts).PerformCmd(args)
             End If
         Next
+        EventManager.RaisePostExecuteModCommand(cmd)
         Wdbg("I", "Command executed successfully.")
     End Sub
 

@@ -100,6 +100,9 @@ Public Module Color
         WarningColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeWarningColor), ConsoleColors)
         OptionColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeOptionColor), ConsoleColors)
         LoadBack()
+
+        'Raise event
+        EventManager.RaiseColorReset()
     End Sub
 
     ''' <summary>
@@ -165,9 +168,15 @@ Public Module Color
             'Save and parse theme
             Wdbg("I", "Saving theme")
             MakePermanent()
+
+            'Raise event
+            EventManager.RaiseThemeSet(theme)
         Else
             W(DoTranslation("Invalid color template {0}"), True, ColTypes.Err, theme)
             Wdbg("E", "Theme not found.")
+
+            'Raise event
+            EventManager.RaiseThemeSetError(theme, "notfound")
         End If
     End Sub
 
@@ -283,11 +292,16 @@ Public Module Color
                 OptionColor = CType([Enum].Parse(GetType(ConsoleColors), OptionC), ConsoleColors)
                 LoadBack()
                 MakePermanent()
+
+                'Raise event
+                EventManager.RaiseColorSet()
                 Return True
             Else
+                EventManager.RaiseColorSetError("invalidcolors")
                 Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid."))
             End If
         Else
+            EventManager.RaiseColorSetError("nocolors")
             Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
         End If
         Return False

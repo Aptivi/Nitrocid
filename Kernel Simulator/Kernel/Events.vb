@@ -16,12 +16,15 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Public Class Events
 
     'These events are fired by their Raise<EventName>() subs and are responded by their Respond<EventName>() subs.
     Public Event KernelStarted()
     Public Event PreLogin()
     Public Event PostLogin(ByVal Username As String)
+    Public Event LoginError(ByVal Username As String, ByVal Reason As String)
     Public Event ShellInitialized()
     Public Event PreExecuteCommand(ByVal Command As String)
     Public Event PostExecuteCommand(ByVal Command As String)
@@ -80,6 +83,44 @@ Public Class Events
     Public Event TextPreExecuteCommand(ByVal Command As String)
     Public Event TextPostExecuteCommand(ByVal Command As String)
     Public Event TextCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Event NotificationSent(ByVal Notification As Notification)
+    Public Event NotificationReceived(ByVal Notification As Notification)
+    Public Event NotificationDismissed()
+    Public Event ConfigSaved()
+    Public Event ConfigSaveError(ByVal Exception As Exception)
+    Public Event ConfigRead()
+    Public Event ConfigReadError(ByVal Exception As Exception)
+    Public Event PreExecuteModCommand(ByVal Command As String)
+    Public Event PostExecuteModCommand(ByVal Command As String)
+    Public Event ModParsed(ByVal Starting As Boolean, ByVal ModFileName As String)
+    Public Event ModParseError(ByVal ModFileName As String)
+    Public Event ModFinalized(ByVal Starting As Boolean, ByVal ModFileName As String)
+    Public Event ModFinalizationFailed(ByVal ModFileName As String, ByVal Reason As String)
+    Public Event UserAdded(ByVal Username As String)
+    Public Event UserRemoved(ByVal Username As String)
+    Public Event UsernameChanged(ByVal OldUsername As String, ByVal NewUsername As String)
+    Public Event UserPasswordChanged(ByVal Username As String)
+    Public Event HardwareProbing()
+    Public Event HardwareProbed()
+    Public Event CurrentDirectoryChanged()
+    Public Event FileCreated(ByVal File As String)
+    Public Event DirectoryCreated(ByVal Directory As String)
+    Public Event FileCopied(ByVal Source As String, ByVal Destination As String)
+    Public Event DirectoryCopied(ByVal Source As String, ByVal Destination As String)
+    Public Event FileMoved(ByVal Source As String, ByVal Destination As String)
+    Public Event DirectoryMoved(ByVal Source As String, ByVal Destination As String)
+    Public Event FileRemoved(ByVal File As String)
+    Public Event DirectoryRemoved(ByVal Directory As String)
+    Public Event FileAttributeAdded(ByVal File As String, ByVal Attributes As FileAttributes)
+    Public Event FileAttributeRemoved(ByVal File As String, ByVal Attributes As FileAttributes)
+    Public Event ColorReset()
+    Public Event ThemeSet(ByVal Theme As String)
+    Public Event ThemeSetError(ByVal Theme As String, ByVal Reason As String)
+    Public Event ColorSet()
+    Public Event ColorSetError(ByVal Reason As String)
+    Public Event ThemeStudioStarted()
+    Public Event ThemeStudioExit()
+    Public Event ArgumentsInjected(ByVal InjectedArguments As String)
 
     ''' <summary>
     ''' Makes the mod respond to the event of kernel start
@@ -111,6 +152,17 @@ Public Class Events
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostLogin()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PostLogin", Username)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of login error
+    ''' </summary>
+    Public Sub RespondLoginError(ByVal Username As String, ByVal Reason As String) Handles Me.LoginError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event LoginError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("LoginError", Username, Reason)
             Next
         Next
     End Sub
@@ -752,6 +804,424 @@ Public Class Events
             Next
         Next
     End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of notification being sent
+    ''' </summary>
+    Public Sub RespondNotificationSent(ByVal Notification As Notification) Handles Me.NotificationSent
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationSent()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("NotificationSent", Notification)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of notification being received
+    ''' </summary>
+    Public Sub RespondNotificationReceived(ByVal Notification As Notification) Handles Me.NotificationReceived
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationReceived()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("NotificationReceived", Notification)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of notification being dismissed
+    ''' </summary>
+    Public Sub RespondNotificationDismissed() Handles Me.NotificationDismissed
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationDismissed()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("NotificationDismissed")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of config being saved
+    ''' </summary>
+    Public Sub RespondConfigSaved() Handles Me.ConfigSaved
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ConfigSaved()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ConfigSaved")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of config having problems saving
+    ''' </summary>
+    Public Sub RespondConfigSaveError(ByVal Exception As Exception) Handles Me.ConfigSaveError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ConfigSaveError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ConfigSaveError", Exception)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of config being read
+    ''' </summary>
+    Public Sub RespondConfigRead() Handles Me.ConfigRead
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ConfigRead()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ConfigRead")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of config having problems reading
+    ''' </summary>
+    Public Sub RespondConfigReadError(ByVal Exception As Exception) Handles Me.ConfigReadError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ConfigReadError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ConfigReadError", Exception)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of mod command pre-execution
+    ''' </summary>
+    Public Sub RespondPreExecuteModCommand(ByVal Command As String) Handles Me.PreExecuteModCommand
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PreExecuteModCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PreExecuteModCommand", Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of mod command post-execution
+    ''' </summary>
+    Public Sub RespondPostExecuteModCommand(ByVal Command As String) Handles Me.PostExecuteModCommand
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event PostExecuteModCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("PostExecuteModCommand", Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of mod being parsed
+    ''' </summary>
+    Public Sub RespondModParsed(ByVal Starting As Boolean, ByVal ModFileName As String) Handles Me.ModParsed
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ModParsed()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ModParsed", Starting, ModFileName)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of mod having problems parsing
+    ''' </summary>
+    Public Sub RespondModParseError(ByVal ModFileName As String) Handles Me.ModParseError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ModParseError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ModParseError", ModFileName)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of mod being finalized
+    ''' </summary>
+    Public Sub RespondModFinalized(ByVal Starting As Boolean, ByVal ModFileName As String) Handles Me.ModFinalized
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ModFinalized()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ModFinalized", Starting, ModFileName)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of mod having problems finalizing
+    ''' </summary>
+    Public Sub RespondModFinalizationFailed(ByVal ModFileName As String, ByVal Reason As String) Handles Me.ModFinalizationFailed
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ModFinalizationFailed()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ModFinalizationFailed", ModFileName, Reason)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of user being added
+    ''' </summary>
+    Public Sub RespondUserAdded(ByVal Username As String) Handles Me.UserAdded
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event UserAdded()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("UserAdded", Username)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of user being removed
+    ''' </summary>
+    Public Sub RespondUserRemoved(ByVal Username As String) Handles Me.UserRemoved
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event UserRemoved()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("UserRemoved", Username)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of username being changed
+    ''' </summary>
+    Public Sub RespondUsernameChanged(ByVal OldUsername As String, ByVal NewUsername As String) Handles Me.UsernameChanged
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event UsernameChanged()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("UsernameChanged", OldUsername, NewUsername)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of user password being changed
+    ''' </summary>
+    Public Sub RespondUserPasswordChanged(ByVal Username As String) Handles Me.UserPasswordChanged
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event UserPasswordChanged()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("UserPasswordChanged", Username)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of hardware probing
+    ''' </summary>
+    Public Sub RespondHardwareProbing() Handles Me.HardwareProbing
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event HardwareProbing()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("HardwareProbing")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of hardware being probed
+    ''' </summary>
+    Public Sub RespondHardwareProbed() Handles Me.HardwareProbed
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event HardwareProbed()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("HardwareProbed")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of current directory being changed
+    ''' </summary>
+    Public Sub RespondCurrentDirectoryChanged() Handles Me.CurrentDirectoryChanged
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event CurrentDirectoryChanged()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("CurrentDirectoryChanged")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of file creation
+    ''' </summary>
+    Public Sub RespondFileCreated(ByVal File As String) Handles Me.FileCreated
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FileCreated()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FileCreated", File)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of directory creation
+    ''' </summary>
+    Public Sub RespondDirectoryCreated(ByVal Directory As String) Handles Me.DirectoryCreated
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event DirectoryCreated()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("DirectoryCreated", Directory)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of file copying process
+    ''' </summary>
+    Public Sub RespondFileCopied(ByVal Source As String, ByVal Destination As String) Handles Me.FileCopied
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FileCopied()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FileCopied", Source, Destination)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of directory copying process
+    ''' </summary>
+    Public Sub RespondDirectoryCopied(ByVal Source As String, ByVal Destination As String) Handles Me.DirectoryCopied
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event DirectoryCopied()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("DirectoryCopied", Source, Destination)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of file moving process
+    ''' </summary>
+    Public Sub RespondFileMoved(ByVal Source As String, ByVal Destination As String) Handles Me.FileMoved
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FileMoved()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FileMoved", Source, Destination)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of directory moving process
+    ''' </summary>
+    Public Sub RespondDirectoryMoved(ByVal Source As String, ByVal Destination As String) Handles Me.DirectoryMoved
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event DirectoryMoved()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("DirectoryMoved", Source, Destination)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of file removal
+    ''' </summary>
+    Public Sub RespondFileRemoved(ByVal File As String) Handles Me.FileRemoved
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FileRemoved()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FileRemoved", File)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of directory removal
+    ''' </summary>
+    Public Sub RespondDirectoryRemoved(ByVal Directory As String) Handles Me.DirectoryRemoved
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event DirectoryRemoved()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("DirectoryRemoved", Directory)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of file attribute addition
+    ''' </summary>
+    Public Sub RespondFileAttributeAdded(ByVal File As String, ByVal Attributes As FileAttributes) Handles Me.FileAttributeAdded
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FileAttributeAdded()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FileAttributeAdded", File, Attributes)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of file attribute removal
+    ''' </summary>
+    Public Sub RespondFileAttributeRemoved(ByVal File As String, ByVal Attributes As FileAttributes) Handles Me.FileAttributeRemoved
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event FileAttributeRemoved()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("FileAttributeRemoved", File, Attributes)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of console colors being reset
+    ''' </summary>
+    Public Sub RespondColorReset() Handles Me.ColorReset
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ColorReset()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ColorReset")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of theme setting
+    ''' </summary>
+    Public Sub RespondThemeSet(ByVal Theme As String) Handles Me.ThemeSet
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ThemeSet()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ThemeSet", Theme)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of theme setting problem
+    ''' </summary>
+    Public Sub RespondThemeSetError(ByVal Theme As String, ByVal Reason As String) Handles Me.ThemeSetError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ThemeSetError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ThemeSetError", Theme, Reason)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of console colors being set
+    ''' </summary>
+    Public Sub RespondColorSet() Handles Me.ColorSet
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ColorSet()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ColorSet")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of console colors having problems being set
+    ''' </summary>
+    Public Sub RespondColorSetError(ByVal Reason As String) Handles Me.ColorSetError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ColorSetError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ColorSetError", Reason)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of theme studio start
+    ''' </summary>
+    Public Sub RespondThemeStudioStarted() Handles Me.ThemeStudioStarted
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ThemeStudioStarted()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ThemeStudioStarted")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of theme studio exit
+    ''' </summary>
+    Public Sub RespondThemeStudioExit() Handles Me.ThemeStudioExit
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ThemeStudioExit()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ThemeStudioExit")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of console colors having problems being set
+    ''' </summary>
+    Public Sub RespondArgumentsInjected(ByVal InjectedArguments As String) Handles Me.ArgumentsInjected
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ArgumentsInjected()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ArgumentsInjected", InjectedArguments)
+            Next
+        Next
+    End Sub
 
     'These subs are for raising events
     ''' <summary>
@@ -774,6 +1244,13 @@ Public Class Events
     Public Sub RaisePostLogin(ByVal Username As String)
         Wdbg("I", "Raising event PostLogin() and responding in RespondPostLogin()...")
         RaiseEvent PostLogin(Username)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of login error
+    ''' </summary>
+    Public Sub RaiseLoginError(ByVal Username As String, ByVal Reason As String)
+        Wdbg("I", "Raising event LoginError() and responding in RespondLoginError()...")
+        RaiseEvent LoginError(Username, Reason)
     End Sub
     ''' <summary>
     ''' Raise an event of shell initialized
@@ -1180,6 +1657,272 @@ Public Class Events
     Public Sub RaiseTextCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event TextCommandError() and responding in RespondTextCommandError()...")
         RaiseEvent TextCommandError(Command, Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of notification being sent
+    ''' </summary>
+    Public Sub RaiseNotificationSent(ByVal Notification As Notification)
+        Wdbg("I", "Raising event NotificationSent() and responding in RespondNotificationSent()...")
+        RaiseEvent NotificationSent(Notification)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of notification being received
+    ''' </summary>
+    Public Sub RaiseNotificationReceived(ByVal Notification As Notification)
+        Wdbg("I", "Raising event NotificationReceived() and responding in RespondNotificationReceived()...")
+        RaiseEvent NotificationReceived(Notification)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of notification being dismissed
+    ''' </summary>
+    Public Sub RaiseNotificationDismissed()
+        Wdbg("I", "Raising event NotificationDismissed() and responding in RespondNotificationDismissed()...")
+        RaiseEvent NotificationDismissed()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of config being saved
+    ''' </summary>
+    Public Sub RaiseConfigSaved()
+        Wdbg("I", "Raising event ConfigSaved() and responding in RespondConfigSaved()...")
+        RaiseEvent ConfigSaved()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of config having problems saving
+    ''' </summary>
+    Public Sub RaiseConfigSaveError(ByVal Exception As Exception)
+        Wdbg("I", "Raising event ConfigSaveError() and responding in RespondConfigSaveError()...")
+        RaiseEvent ConfigSaveError(Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of config being read
+    ''' </summary>
+    Public Sub RaiseConfigRead()
+        Wdbg("I", "Raising event ConfigRead() and responding in RespondConfigRead()...")
+        RaiseEvent ConfigRead()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of config having problems reading
+    ''' </summary>
+    Public Sub RaiseConfigReadError(ByVal Exception As Exception)
+        Wdbg("I", "Raising event ConfigReadError() and responding in RespondConfigReadError()...")
+        RaiseEvent ConfigReadError(Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of mod command pre-execution
+    ''' </summary>
+    Public Sub RaisePreExecuteModCommand(ByVal Command As String)
+        Wdbg("I", "Raising event PreExecuteModCommand() and responding in RespondPreExecuteModCommand()...")
+        RaiseEvent PreExecuteModCommand(Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of mod command post-execution
+    ''' </summary>
+    Public Sub RaisePostExecuteModCommand(ByVal Command As String)
+        Wdbg("I", "Raising event PostExecuteModCommand() and responding in RespondPostExecuteModCommand()...")
+        RaiseEvent PostExecuteModCommand(Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of mod being parsed
+    ''' </summary>
+    Public Sub RaiseModParsed(ByVal Starting As Boolean, ByVal ModFileName As String)
+        Wdbg("I", "Raising event ModParsed() and responding in RespondModParsed()...")
+        RaiseEvent ModParsed(Starting, ModFileName)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of mod having problems parsing
+    ''' </summary>
+    Public Sub RaiseModParseError(ByVal ModFileName As String)
+        Wdbg("I", "Raising event ModParseError() and responding in RespondModParseError()...")
+        RaiseEvent ModParseError(ModFileName)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of mod being finalized
+    ''' </summary>
+    Public Sub RaiseModFinalized(ByVal Starting As Boolean, ByVal ModFileName As String)
+        Wdbg("I", "Raising event ModFinalized() and responding in RespondModFinalized()...")
+        RaiseEvent ModFinalized(Starting, ModFileName)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of mod having problems finalizing
+    ''' </summary>
+    Public Sub RaiseModFinalizationFailed(ByVal ModFileName As String, ByVal Reason As String)
+        Wdbg("I", "Raising event ModFinalizationFailed() and responding in RespondModFinalizationFailed()...")
+        RaiseEvent ModFinalizationFailed(ModFileName, Reason)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of user being added
+    ''' </summary>
+    Public Sub RaiseUserAdded(ByVal Username As String)
+        Wdbg("I", "Raising event UserAdded() and responding in RespondUserAdded()...")
+        RaiseEvent UserAdded(Username)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of user being removed
+    ''' </summary>
+    Public Sub RaiseUserRemoved(ByVal Username As String)
+        Wdbg("I", "Raising event UserRemoved() and responding in RespondUserRemoved()...")
+        RaiseEvent UserRemoved(Username)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of username being changed
+    ''' </summary>
+    Public Sub RaiseUsernameChanged(ByVal OldUsername As String, ByVal NewUsername As String)
+        Wdbg("I", "Raising event UsernameChanged() and responding in RespondUsernameChanged()...")
+        RaiseEvent UsernameChanged(OldUsername, NewUsername)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of user password being changed
+    ''' </summary>
+    Public Sub RaiseUserPasswordChanged(ByVal Username As String)
+        Wdbg("I", "Raising event UserPasswordChanged() and responding in RespondUserPasswordChanged()...")
+        RaiseEvent UserPasswordChanged(Username)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of hardware probing
+    ''' </summary>
+    Public Sub RaiseHardwareProbing()
+        Wdbg("I", "Raising event HardwareProbing() and responding in RespondHardwareProbing()...")
+        RaiseEvent HardwareProbing()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of hardware being probed
+    ''' </summary>
+    Public Sub RaiseHardwareProbed()
+        Wdbg("I", "Raising event HardwareProbed() and responding in RespondHardwareProbed()...")
+        RaiseEvent HardwareProbed()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of current directory being changed
+    ''' </summary>
+    Public Sub RaiseCurrentDirectoryChanged()
+        Wdbg("I", "Raising event CurrentDirectoryChanged() and responding in RespondCurrentDirectoryChanged()...")
+        RaiseEvent CurrentDirectoryChanged()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of file creation
+    ''' </summary>
+    Public Sub RaiseFileCreated(ByVal File As String)
+        Wdbg("I", "Raising event FileCreated() and responding in RespondFileCreated()...")
+        RaiseEvent FileCreated(File)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of directory creation
+    ''' </summary>
+    Public Sub RaiseDirectoryCreated(ByVal Directory As String)
+        Wdbg("I", "Raising event DirectoryCreated() and responding in RespondDirectoryCreated()...")
+        RaiseEvent DirectoryCreated(Directory)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of file copying process
+    ''' </summary>
+    Public Sub RaiseFileCopied(ByVal Source As String, ByVal Destination As String)
+        Wdbg("I", "Raising event FileCopied() and responding in RespondFileCopied()...")
+        RaiseEvent FileCopied(Source, Destination)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of directory copying process
+    ''' </summary>
+    Public Sub RaiseDirectoryCopied(ByVal Source As String, ByVal Destination As String)
+        Wdbg("I", "Raising event DirectoryCopied() and responding in RespondDirectoryCopied()...")
+        RaiseEvent DirectoryCopied(Source, Destination)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of file moving process
+    ''' </summary>
+    Public Sub RaiseFileMoved(ByVal Source As String, ByVal Destination As String)
+        Wdbg("I", "Raising event FileMoved() and responding in RespondFileMoved()...")
+        RaiseEvent FileMoved(Source, Destination)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of directory moving process
+    ''' </summary>
+    Public Sub RaiseDirectoryMoved(ByVal Source As String, ByVal Destination As String)
+        Wdbg("I", "Raising event DirectoryMoved() and responding in RespondDirectoryMoved()...")
+        RaiseEvent DirectoryMoved(Source, Destination)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of file removal
+    ''' </summary>
+    Public Sub RaiseFileRemoved(ByVal File As String)
+        Wdbg("I", "Raising event FileRemoved() and responding in RespondFileRemoved()...")
+        RaiseEvent FileRemoved(File)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of directory removal
+    ''' </summary>
+    Public Sub RaiseDirectoryRemoved(ByVal Directory As String)
+        Wdbg("I", "Raising event DirectoryRemoved() and responding in RespondDirectoryRemoved()...")
+        RaiseEvent DirectoryRemoved(Directory)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of file attribute addition
+    ''' </summary>
+    Public Sub RaiseFileAttributeAdded(ByVal File As String, ByVal Attributes As FileAttributes)
+        Wdbg("I", "Raising event FileAttributeAdded() and responding in RespondFileAttributeAdded()...")
+        RaiseEvent FileAttributeAdded(File, Attributes)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of file attribute removal
+    ''' </summary>
+    Public Sub RaiseFileAttributeRemoved(ByVal File As String, ByVal Attributes As FileAttributes)
+        Wdbg("I", "Raising event FileAttributeRemoved() and responding in RespondFileAttributeRemoved()...")
+        RaiseEvent FileAttributeRemoved(File, Attributes)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of console colors being reset
+    ''' </summary>
+    Public Sub RaiseColorReset()
+        Wdbg("I", "Raising event ColorReset() and responding in RespondColorReset()...")
+        RaiseEvent ColorReset()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of theme setting
+    ''' </summary>
+    Public Sub RaiseThemeSet(ByVal Theme As String)
+        Wdbg("I", "Raising event ThemeSet() and responding in RespondThemeSet()...")
+        RaiseEvent ThemeSet(Theme)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of theme setting problem
+    ''' </summary>
+    Public Sub RaiseThemeSetError(ByVal Theme As String, ByVal Reason As String)
+        Wdbg("I", "Raising event ThemeSetError() and responding in RespondThemeSetError()...")
+        RaiseEvent ThemeSetError(Theme, Reason)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of console colors being set
+    ''' </summary>
+    Public Sub RaiseColorSet()
+        Wdbg("I", "Raising event ColorSet() and responding in RespondColorSet()...")
+        RaiseEvent ColorSet()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of console colors having problems being set
+    ''' </summary>
+    Public Sub RaiseColorSetError(ByVal Reason As String)
+        Wdbg("I", "Raising event ColorSetError() and responding in RespondColorSetError()...")
+        RaiseEvent ColorSetError(Reason)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of theme studio start
+    ''' </summary>
+    Public Sub RaiseThemeStudioStarted()
+        Wdbg("I", "Raising event ThemeStudioStarted() and responding in RespondThemeStudioStarted()...")
+        RaiseEvent ThemeStudioStarted()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of theme studio exit
+    ''' </summary>
+    Public Sub RaiseThemeStudioExit()
+        Wdbg("I", "Raising event ThemeStudioExit() and responding in RespondThemeStudioExit()...")
+        RaiseEvent ThemeStudioExit()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of console colors having problems being set
+    ''' </summary>
+    Public Sub RaiseArgumentsInjected(ByVal InjectedArguments As String)
+        Wdbg("I", "Raising event ArgumentsInjected() and responding in RespondArgumentsInjected()...")
+        RaiseEvent ArgumentsInjected(InjectedArguments)
     End Sub
 
 End Class

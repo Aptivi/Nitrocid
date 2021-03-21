@@ -131,6 +131,7 @@ Public Module UserManagement
                     Wdbg("I", "Initializing user with password")
                     InitializeUser(newUser, newPassword)
                 End If
+                EventManager.RaiseUserAdded(newUser)
                 Return True
             Catch ex As Exception
                 Wdbg("E", "Failed to create user {0}: {1}", ex.Message)
@@ -191,10 +192,13 @@ Public Module UserManagement
                         End If
                     Next
                     File.WriteAllLines(paths("Users"), UsersLines)
+
+                    'Raise event
+                    EventManager.RaiseUserRemoved(user)
                     Return True
                 Catch ex As Exception
                     Throw New Exceptions.UserManagementException(DoTranslation("Error trying to remove username.") + vbNewLine +
-                                                                          DoTranslation("Error {0}: {1}").FormatString(ex.Message))
+                                                                 DoTranslation("Error {0}: {1}").FormatString(ex.Message))
                     WStkTrc(ex)
                 End Try
             End If
@@ -223,6 +227,9 @@ Public Module UserManagement
                         End If
                     Next
                     File.WriteAllLines(paths("Users"), UsersLines)
+
+                    'Raise event
+                    EventManager.RaiseUsernameChanged(OldName, Username)
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
@@ -254,7 +261,7 @@ Public Module UserManagement
     ''' <summary>
     ''' Changes user password
     ''' </summary>
-    ''' <param name="Target">Tareget username</param>
+    ''' <param name="Target">Target username</param>
     ''' <param name="CurrentPass">Current user password</param>
     ''' <param name="NewPass">New user password</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
@@ -276,6 +283,9 @@ Public Module UserManagement
                     End If
                 Next
                 File.WriteAllLines(paths("Users"), UsersLines)
+
+                'Raise event
+                EventManager.RaiseUserPasswordChanged(Target)
                 Return True
             ElseIf adminList(signedinusrnm) And Not userword.ContainsKey(Target) Then
                 Throw New Exceptions.UserManagementException(DoTranslation("User not found"))

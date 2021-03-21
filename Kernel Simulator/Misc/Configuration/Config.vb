@@ -362,8 +362,10 @@ Public Module Config
 
             'Save Config
             ksconf.Save(paths("Configuration"))
+            EventManager.RaiseConfigSaved()
             Return True
         Catch ex As Exception
+            EventManager.RaiseConfigSaveError(ex)
             If DebugMode = True Then
                 WStkTrc(ex)
                 Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}.").FormatString(ex.Message))
@@ -551,11 +553,14 @@ Public Module Config
             If configReader.Sections("Misc").Keys("Enable text editor autosave").Value = "True" Then TextEdit_AutoSaveFlag = True Else TextEdit_AutoSaveFlag = False
             If Integer.TryParse(configReader.Sections("Misc").Keys("Text editor autosave interval").Value, 0) Then TextEdit_AutoSaveInterval = configReader.Sections("Misc").Keys("Text editor autosave interval").Value
 
+            'Raise event and return true
+            EventManager.RaiseConfigRead()
             Return True
         Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
             Wdbg("W", "Detected incompatible/old version of config. Renewing...")
             UpgradeConfig() 'Upgrades the config if there are any changes.
         Catch ex As Exception
+            EventManager.RaiseConfigReadError(ex)
             WStkTrc(ex)
             NotifyConfigError = True
             Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}.").FormatString(ex.Message))

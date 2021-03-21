@@ -76,9 +76,11 @@ Public Module Login
             If InStr(answeruser, " ") > 0 Then
                 Wdbg("W", "Spaces found in username.")
                 W(DoTranslation("Spaces are not allowed."), True, ColTypes.Err)
+                EventManager.RaiseLoginError(answeruser, "spaces")
             ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                 Wdbg("W", "Unknown characters found in username.")
                 W(DoTranslation("Special characters are not allowed."), True, ColTypes.Err)
+                EventManager.RaiseLoginError(answeruser, "specialchars")
             ElseIf userword.ContainsKey(answeruser) Then
                 Wdbg("I", "Username correct. Finding if the user is disabled...")
                 If disabledList(answeruser) = False Then
@@ -87,10 +89,12 @@ Public Module Login
                 Else
                     Wdbg("W", "User can't log in. (User is in disabled list)")
                     W(DoTranslation("User is disabled."), True, ColTypes.Err)
+                    EventManager.RaiseLoginError(answeruser, "disabled")
                 End If
             Else
                 Wdbg("E", "Username not found.")
                 W(DoTranslation("Wrong username."), True, ColTypes.Err)
+                EventManager.RaiseLoginError(answeruser, "notfound")
             End If
         End While
     End Sub
@@ -139,6 +143,7 @@ Public Module Login
                 Else
                     Wdbg("I", "Passowrd written wrong...")
                     W(DoTranslation("Wrong password."), True, ColTypes.Err)
+                    EventManager.RaiseLoginError(usernamerequested, "wrongpass")
                     If Not maintenance Then
                         If Not LockMode Then
                             Exit Sub

@@ -24,6 +24,7 @@ Module ThemeStudio
     ''' <param name="ThemeName">Theme name</param>
     Sub StartThemeStudio(ByVal ThemeName As String)
         'Inform user that we're on the studio
+        EventManager.RaiseThemeStudioStarted()
         Wdbg("I", "Starting theme studio with theme name {0}", ThemeName)
         Dim Response As String
         Dim MaximumOptions As Integer = 17
@@ -164,6 +165,8 @@ Module ThemeStudio
                 Console.ReadKey()
             End If
         End While
+
+        EventManager.RaiseThemeStudioExit()
     End Sub
 
     ''' <summary>

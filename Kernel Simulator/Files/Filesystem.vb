@@ -21,7 +21,7 @@ Imports System.Runtime.CompilerServices
 Public Module Filesystem
 
     'Variables
-    'TODO: Use Directory.SetCurrentDirectory in 0.0.20.0.
+    'TODO: Use Directory.SetCurrentDirectory in subsequent development commits
     Public CurrDir As String = ""
 
     ''' <summary>
@@ -36,6 +36,9 @@ Public Module Filesystem
         If Directory.Exists(dir) Then
             Dim Parser As New DirectoryInfo(dir)
             CurrDir = Parser.FullName.Replace("\", "/")
+
+            'Raise event
+            EventManager.RaiseCurrentDirectoryChanged()
             Return True
         Else
             Throw New DirectoryNotFoundException(DoTranslation("Directory {0} not found").FormatString(dir))
@@ -236,14 +239,23 @@ Public Module Filesystem
             If Directory.Exists(Source) Then
                 Wdbg("I", "Source and destination are directories")
                 FileIO.FileSystem.CopyDirectory(Source, Destination, True) 'There is no IO.Directory.Copy yet.
+
+                'Raise event
+                EventManager.RaiseDirectoryCopied(Source, Destination)
                 Return True
             ElseIf File.Exists(Source) And Directory.Exists(Destination) Then
                 Wdbg("I", "Source is a file and destination is a directory")
                 File.Copy(Source, Destination + "/" + FileName, True)
+
+                'Raise event
+                EventManager.RaiseFileCopied(Source, Destination + "/" + FileName)
                 Return True
             ElseIf File.Exists(Source) Then
                 Wdbg("I", "Source is a file and destination is a file")
                 File.Copy(Source, Destination, True)
+
+                'Raise event
+                EventManager.RaiseFileCopied(Source, Destination)
                 Return True
             Else
                 Wdbg("E", "Source or destination are invalid.")
@@ -290,6 +302,9 @@ Public Module Filesystem
         Wdbg("I", "New directory: {0} ({1})", NewDirectory, Directory.Exists(NewDirectory))
         If Not Directory.Exists(NewDirectory) Then
             Directory.CreateDirectory(NewDirectory)
+
+            'Raise event
+            EventManager.RaiseDirectoryCreated(NewDirectory)
             Return True
         Else
             Throw New IOException(DoTranslation("Directory {0} already exists.").FormatString(NewDirectory))
@@ -312,6 +327,9 @@ Public Module Filesystem
                 Wdbg("I", "File created")
                 NewFileStream.Close()
                 Wdbg("I", "File closed")
+
+                'Raise event
+                EventManager.RaiseFileCreated(NewFile)
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
@@ -341,14 +359,23 @@ Public Module Filesystem
             If Directory.Exists(Source) Then
                 Wdbg("I", "Source and destination are directories")
                 Directory.Move(Source, Destination)
+
+                'Raise event
+                EventManager.RaiseDirectoryMoved(Source, Destination)
                 Return True
             ElseIf File.Exists(Source) And Directory.Exists(Destination) Then
                 Wdbg("I", "Source is a file and destination is a directory")
                 File.Move(Source, Destination + "/" + FileName)
+
+                'Raise event
+                EventManager.RaiseFileMoved(Source, Destination + "/" + FileName)
                 Return True
             ElseIf File.Exists(Source) Then
                 Wdbg("I", "Source is a file and destination is a file")
                 File.Move(Source, Destination)
+
+                'Raise event
+                EventManager.RaiseFileMoved(Source, Destination)
                 Return True
             Else
                 Wdbg("E", "Source or destination are invalid.")
@@ -371,6 +398,9 @@ Public Module Filesystem
         Try
             Dim Dir As String = NeutralizePath(Target)
             Directory.Delete(Dir, True)
+
+            'Raise event
+            EventManager.RaiseDirectoryRemoved(Target)
             Return True
         Catch ex As Exception
             WStkTrc(ex)
@@ -388,6 +418,9 @@ Public Module Filesystem
         Try
             Dim Dir As String = NeutralizePath(Target)
             File.Delete(Dir)
+
+            'Raise event
+            EventManager.RaiseFileRemoved(Target)
             Return True
         Catch ex As Exception
             WStkTrc(ex)
@@ -447,6 +480,9 @@ Public Module Filesystem
             FilePath = NeutralizePath(FilePath)
             Wdbg("I", "Setting file attribute to {0}...", Attributes)
             File.SetAttributes(FilePath, Attributes)
+
+            'Raise event
+            EventManager.RaiseFileAttributeAdded(FilePath, Attributes)
             Return True
         Catch ex As Exception
             Wdbg("E", "Failed to add attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)
@@ -469,6 +505,9 @@ Public Module Filesystem
             Attrib = Attrib.RemoveAttribute(Attributes)
             Wdbg("I", "Setting file attribute to {0}...", Attrib)
             File.SetAttributes(FilePath, Attrib)
+
+            'Raise event
+            EventManager.RaiseFileAttributeRemoved(FilePath, Attributes)
             Return True
         Catch ex As Exception
             Wdbg("E", "Failed to remove attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)

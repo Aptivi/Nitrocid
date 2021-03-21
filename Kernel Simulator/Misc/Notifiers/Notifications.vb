@@ -73,6 +73,9 @@ Public Module Notifications
             Thread.Sleep(100)
             If NotifRecents.Count > OldNCount And Not InSaver Then
                 Wdbg("W", "Notification received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNCount)
+                EventManager.RaiseNotificationReceived(NotifRecents(NotifRecents.Count - 1))
+
+                'Populate title and description
                 Dim Title, Desc As String
                 Wdbg("I", "Title: {0}", NotifRecents(NotifRecents.Count - 1).Title)
                 Wdbg("I", "Desc: {0}", NotifRecents(NotifRecents.Count - 1).Desc)
@@ -80,16 +83,22 @@ Public Module Notifications
                 Desc = NotifRecents(NotifRecents.Count - 1).Desc.Truncate(36)
                 Wdbg("I", "Truncated title: {0}", Title)
                 Wdbg("I", "Truncated desc: {0}", Desc)
+                Wdbg("I", "Truncated title length: {0}", Title.Length)
+                Wdbg("I", "Truncated desc length: {0}", Desc.Length)
+
+                'Write notification to console
                 Wdbg("I", "Where to store: {0}, Title: {1}, Desc: {2}", Console.WindowWidth - 40, Console.WindowTop + 1, Console.WindowTop + 2)
                 WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop, ColTypes.Neutral)
                 WriteWhere(Title + " ".Repeat(40 - Title.Length), Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral)
                 WriteWhere(Desc + " ".Repeat(40 - Desc.Length), Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
+
+                'Beep according to priority
                 Wdbg("I", "Priority: {0}", NotifRecents(NotifRecents.Count - 1).Priority)
                 For i As Integer = 1 To NotifRecents(NotifRecents.Count - 1).Priority
                     Console.Beep()
                 Next
-                Wdbg("I", "Truncated title length: {0}", Title.Length)
-                Wdbg("I", "Truncated desc length: {0}", Desc.Length)
+
+                'Show progress
                 If NotifRecents(NotifRecents.Count - 1).Type = NotifType.Progress Then
                     Do Until NotifRecents(NotifRecents.Count - 1).Progress >= 100 Or NotifRecents(NotifRecents.Count - 1).ProgressFailed
                         Wdbg("I", "Where to store progress: {0}:{1}", Console.WindowWidth - 40, Console.WindowTop + 3)
@@ -101,6 +110,8 @@ Public Module Notifications
                         Thread.Sleep(1)
                     Loop
                 End If
+
+                'Clear the area
                 NotifClearArea(Title.Length, Desc.Length, Console.WindowWidth - 40, Console.WindowTop + 1, Console.WindowTop + 2, Console.WindowTop + 3)
             End If
             OldNCount = NotifRecents.Count
@@ -142,7 +153,10 @@ Public Module Notifications
     ''' <param name="notif">Instance of notification holder</param>
     Public Sub NotifySend(ByVal notif As Notification)
         Wdbg("I", "List contains this notification? {0}", NotifRecents.Contains(notif))
-        If Not NotifRecents.Contains(notif) Then NotifRecents.Add(notif)
+        If Not NotifRecents.Contains(notif) Then
+            NotifRecents.Add(notif)
+            EventManager.RaiseNotificationSent(notif)
+        End If
     End Sub
 
     ''' <summary>
@@ -153,6 +167,7 @@ Public Module Notifications
         Try
             NotifRecents.RemoveAt(ind)
             Wdbg("I", "Removed index {0} from notification list", ind)
+            EventManager.RaiseNotificationDismissed()
             Return True
         Catch ex As Exception
             Wdbg("E", "Error trying to dismiss notification: {0}", ex.Message)

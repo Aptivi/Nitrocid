@@ -30,6 +30,7 @@ Public Module HardwareProbe
         If Not quietProbe Then W(DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), True, ColTypes.Neutral)
 
         'We will probe hardware
+        EventManager.RaiseHardwareProbing()
         Try
             HardwareInfo = New Inxi
         Catch ex As Exception
@@ -68,6 +69,9 @@ Public Module HardwareProbe
                 ListDrivers()
             End If
         End If
+
+        'Raise event
+        EventManager.RaiseHardwareProbed()
     End Sub
 
     '----------> Hardware lists <----------

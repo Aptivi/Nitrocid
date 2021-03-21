@@ -43,6 +43,7 @@ Module ArgumentPrompt
                 argsFlag = True
             ElseIf answerargs <> Nothing And InjMode = True Then
                 argsInjected = True
+                EventManager.RaiseArgumentsInjected(answerargs)
                 W(DoTranslation("Injected arguments will be scheduled to run at next reboot."), True, ColTypes.Neutral)
             ElseIf answerargs = "q" And InjMode = True Then
                 W(DoTranslation("Argument Injection has been cancelled."), True, ColTypes.Neutral)
