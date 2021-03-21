@@ -79,6 +79,7 @@ Public Module Config
                     New IniSection(ksconf, "Shell",
                         New IniKey(ksconf, "Colored Shell", ColoredShell),
                         New IniKey(ksconf, "Simplified Help Command", simHelp),
+                        New IniKey(ksconf, "Current Directory", CurrDir),
                         New IniKey(ksconf, "Prompt Style", ShellPromptStyle),
                         New IniKey(ksconf, "FTP Prompt Style", FTPShellPromptStyle),
                         New IniKey(ksconf, "Mail Prompt Style", MailShellPromptStyle),
@@ -194,6 +195,7 @@ Public Module Config
                     New IniSection(ksconf, "Shell",
                         New IniKey(ksconf, "Colored Shell", "True"),
                         New IniKey(ksconf, "Simplified Help Command", "False"),
+                        New IniKey(ksconf, "Current Directory", paths("Home")),
                         New IniKey(ksconf, "Prompt Style", ""),
                         New IniKey(ksconf, "FTP Prompt Style", ""),
                         New IniKey(ksconf, "Mail Prompt Style", ""),
@@ -285,6 +287,7 @@ Public Module Config
             'Shell
             ksconf.Sections("Shell").TrailingComment.Text = "This section is the shell settings that lets you control whether or not to enable simplified help command and/or colored shell."
             ksconf.Sections("Shell").Keys("Simplified Help Command").TrailingComment.Text = "Simplifies the ""help"" command so it only shows available commands."
+            ksconf.Sections("Shell").Keys("Current Directory").TrailingComment.Text = "Sets the shell's current directory."
             ksconf.Sections("Shell").Keys("Colored Shell").TrailingComment.Text = "Whether or not it supports colored shell."
             ksconf.Sections("Shell").Keys("Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the main shell. Placeholders here are parsed."
             ksconf.Sections("Shell").Keys("FTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the FTP shell. Placeholders here are parsed."
@@ -480,6 +483,7 @@ Public Module Config
             'Shell Section
             Wdbg("I", "Parsing shell section...")
             If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
+            CurrDir = configReader.Sections("Shell").Keys("Current Directory").Value
             ShellPromptStyle = configReader.Sections("Shell").Keys("Prompt Style").Value
             FTPShellPromptStyle = configReader.Sections("Shell").Keys("FTP Prompt Style").Value
             MailShellPromptStyle = configReader.Sections("Shell").Keys("Mail Prompt Style").Value
