@@ -1272,6 +1272,22 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "wrap" Then
+
+                If requestedCommand <> "wrap" Then
+                    Done = True
+                    If WrappableCmds.Contains(eqargs(0).Split(" ")(0)) Then
+                        Dim WrapOutputPath As String = paths("Temp") + "/wrapoutput.txt"
+                        GetLine(False, eqargs(0), WrapOutputPath)
+                        Dim WrapOutputStream As New StreamReader(WrapOutputPath)
+                        WriteWrapped(WrapOutputStream.ReadToEnd(), True, ColTypes.Neutral)
+                        WrapOutputStream.Close()
+                        File.Delete(WrapOutputPath)
+                    Else
+                        W(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Err, String.Join(", ", WrappableCmds))
+                    End If
+                End If
+
             End If
             If Done = False Then
                 Throw New Exceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:", currentLang))

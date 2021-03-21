@@ -100,7 +100,8 @@ Public Module HelpSystem
                                                               {"update", DoTranslation("System update", currentLang)},
                                                               {"usermanual", DoTranslation("Takes you to our GitHub Wiki.", currentLang)},
                                                               {"verify", DoTranslation("Verifies sanity of the file", currentLang)},
-                                                              {"weather", DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang)}}
+                                                              {"weather", DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang)},
+                                                              {"wrap", DoTranslation("Wraps the console output")}}
     End Sub
 
     ''' <summary>
@@ -459,6 +460,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:", currentLang) + " weather <CityID/CityName/listcities>: " + DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.", currentLang) + vbNewLine +
                                                                                                  DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.", currentLang) + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
+
+        ElseIf command = "wrap" Then
+
+            W(DoTranslation("Usage:", currentLang) + " wrap <command>", True, ColTypes.Neutral)
 
         Else
 

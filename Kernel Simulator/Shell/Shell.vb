@@ -21,12 +21,25 @@ Imports System.Threading
 
 Public Module Shell
 
-    Public ColoredShell As Boolean = True                   'To fix known bug
-    Public strcommand As String                             'Written Command
-    Public ShellPromptStyle As String = ""                  'Shell prompt style
+    ''' <summary>
+    ''' Whether the shell is colored or not
+    ''' </summary>
+    Public ColoredShell As Boolean = True
+    ''' <summary>
+    ''' Written command
+    ''' </summary>
+    Public strcommand As String
+    ''' <summary>
+    ''' Shell prompt style
+    ''' </summary>
+    Public ShellPromptStyle As String = ""
+    ''' <summary>
+    ''' All mod commands
+    ''' </summary>
     Public modcmnds As New ArrayList
-
-    'Available Commands
+    ''' <summary>
+    ''' All available commands
+    ''' </summary>
     Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "shutdown", "reboot", "adduser", "chmotd",
                                             "chhostname", "showtd", "chpwd", "sysinfo", "arginj", "rmuser", "cls", "perm", "chusrname",
                                             "setthemes", "netinfo", "md", "rm", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
@@ -34,12 +47,20 @@ Public Module Shell
                                             "reloadmods", "get", "put", "lsdbgdev", "disconndbgdev", "move", "copy", "search", "sumfile", "rdebug", "spellbee",
                                             "mathbee", "loteresp", "sshell", "bsynth", "shownotifs", "dismissnotif", "rexec", "calc", "update", "sumfiles",
                                             "lsmail", "echo", "choice", "beep", "input", "mkfile", "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather",
-                                            "fileinfo", "dirinfo", "chattr", "ping", "verify", "sftp", "mktheme", "hwinfo", "cat"}
-    'Admin-Only commands
+                                            "fileinfo", "dirinfo", "chattr", "ping", "verify", "sftp", "mktheme", "hwinfo", "cat", "wrap"}
+    ''' <summary>
+    ''' All administrator-only commands
+    ''' </summary>
     Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "chpwd", "rmuser", "netinfo", "debuglog",
                                      "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
                                      "rdebug", "rexec", "update", "blockdbgdev", "unblockdbgdev", "settings"}
-    'Obsolete commands
+    ''' <summary>
+    ''' All wrappable commands
+    ''' </summary>
+    Public WrappableCmds() As String = {"cat"}
+    ''' <summary>
+    ''' All obsolete commands
+    ''' </summary>
     Public obsoleteCmds() As String = {"debuglog"}
 
     ''' <summary>
@@ -167,7 +188,7 @@ Public Module Shell
     ''' </summary>
     ''' <param name="ArgsMode">Specify if it runs using arguments</param>
     ''' <param name="strcommand">Specify command</param>
-    Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String)
+    Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String, Optional ByVal OutputPath As String = "")
         'If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
         Wdbg("I", "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", strcommand.Contains(">>>"), strcommand.Contains(">>"))
         Dim OutputTextWriter As StreamWriter
@@ -188,6 +209,15 @@ Public Module Shell
             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
             Console.SetOut(OutputTextWriter)
             strcommand = strcommand.Replace(" >> " + OutputFileName, "")
+        End If
+
+        'Checks to see if the user provided optional path
+        If Not String.IsNullOrWhiteSpace(OutputPath) Then
+            Wdbg("I", "Optional output redirection found using OutputPath ({0}).", OutputPath)
+            DefConsoleOut = Console.Out
+            OutputStream = New FileStream(NeutralizePath(OutputPath), FileMode.OpenOrCreate, FileAccess.Write)
+            OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
+            Console.SetOut(OutputTextWriter)
         End If
 
         'Reads command written by user
@@ -360,11 +390,11 @@ Public Module Shell
         End Try
         Console.Title = ConsoleTitle
 
-        'Restore console output to its original state if output redirection is used
+        'Restore console output to its original state if any
 #Disable Warning BC42104
-        If strcommand.Contains(">>>") Then
+        If DefConsoleOut IsNot Nothing Then
             Console.SetOut(DefConsoleOut)
-            OutputTextWriter.Close()
+            OutputTextWriter?.Close()
         End If
 #Enable Warning BC42104
     End Sub
