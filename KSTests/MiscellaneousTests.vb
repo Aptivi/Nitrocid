@@ -227,17 +227,6 @@ Imports KS
     End Sub
 
     ''' <summary>
-    ''' Tests synth probing
-    ''' </summary>
-    <TestMethod()> Public Sub TestProbeSynth() 'If not working on AppVeyor, remove it.
-        InitPaths()
-        CurrDir = paths("Home")
-        Dim PathToTestSynth As String = Path.GetFullPath("TestSynth.txt")
-        Dim Successful As Boolean = ProbeSynth(PathToTestSynth)
-        Assert.IsTrue(Successful, "Synth probing failed. Expected True, got {0}", Successful)
-    End Sub
-
-    ''' <summary>
     ''' Tests setting default screensaver
     ''' </summary>
     <TestMethod()> Public Sub TestSetDefaultScreensaver()

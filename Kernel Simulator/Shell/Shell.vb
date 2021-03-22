@@ -40,7 +40,7 @@ Public Module Shell
     ''' <summary>
     ''' All available commands
     ''' </summary>
-    Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "read", "shutdown", "reboot", "adduser", "chmotd",
+    Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "shutdown", "reboot", "adduser", "chmotd",
                                             "chhostname", "showtd", "chpwd", "sysinfo", "arginj", "rmuser", "cls", "perm", "chusrname",
                                             "setthemes", "netinfo", "md", "rm", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
                                             "savescreen", "lockscreen", "setsaver", "reloadsaver", "ftp", "usermanual", "cdbglog", "chlang",
@@ -62,7 +62,7 @@ Public Module Shell
     ''' <summary>
     ''' All obsolete commands
     ''' </summary>
-    Public obsoleteCmds() As String = {"debuglog"}
+    Public obsoleteCmds() As String = {"debuglog", "bsynth"}
 
     ''' <summary>
     ''' Initializes the shell.

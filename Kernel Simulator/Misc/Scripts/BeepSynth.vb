@@ -27,6 +27,7 @@ Public Module BeepSynth
     ''' <returns>True if successful, False if unsuccessful.</returns>
     ''' <exception cref="Exceptions.InvalidSynthException"></exception>
     ''' <exception cref="FileNotFoundException"></exception>
+    <Obsolete>
     Public Function ProbeSynth(ByVal file As String) As Boolean
         file = NeutralizePath(file)
         Wdbg("I", "Probing {0}...", file)
