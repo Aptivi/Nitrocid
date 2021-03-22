@@ -53,6 +53,7 @@ Public Module HelpSystem
                                                               {"echo", DoTranslation("Writes text into the console")},
                                                               {"edit", DoTranslation("Edits a text file")},
                                                               {"fileinfo", DoTranslation("Provides information about a file")},
+                                                              {"firedevents", DoTranslation("Lists all fired events")},
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers")},
                                                               {"get", DoTranslation("Downloads a file to current working directory")},
                                                               {"help", DoTranslation("Help page")},
@@ -260,6 +261,10 @@ Public Module HelpSystem
         ElseIf command = "fileinfo" Then
 
             W(DoTranslation("Usage:") + " fileinfo <file>", True, ColTypes.Neutral)
+
+        ElseIf command = "firedevents" Then
+
+            W(DoTranslation("Usage:") + " firedevents: " + DoTranslation("Lists all fired events"), True, ColTypes.Neutral)
 
         ElseIf command = "ftp" Then
 

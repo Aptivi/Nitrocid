@@ -157,7 +157,6 @@ Public Module Filesystem
 #If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
-            Wdbg("F", "Trying to access invalid path. Path was {0}", Path)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
         End If
 #End If
@@ -169,7 +168,6 @@ Public Module Filesystem
         If (IsOnWindows() And Not Path.Contains(":/")) Or (IsOnUnix() And Not Path.StartsWith("/")) Then
             Path = $"{CurrDir}/{Path}"
         End If
-        Wdbg("I", "Prototype path: {0}", Path)
 
         'Replace last occurrences of current directory of path with nothing.
         If Not CurrDir = "" Then
@@ -178,8 +176,6 @@ Public Module Filesystem
             End If
         End If
 
-        'Return final path
-        Wdbg("I", "Final path: {0}", Path)
         Return Path
     End Function
 
@@ -193,8 +189,7 @@ Public Module Filesystem
 #If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect") Or
-                                                      Source.Contains("$i30") Or Source.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
-            Wdbg("F", "Trying to access invalid path. Path was {0}", Path)
+                              Source.Contains("$i30") Or Source.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
         End If
 #End If
@@ -207,7 +202,6 @@ Public Module Filesystem
         If (IsOnWindows() And Not Path.Contains(":/")) Or (IsOnUnix() And Not Path.StartsWith("/")) Then
             Path = $"{Source}/{Path}"
         End If
-        Wdbg("I", "Prototype path: {0}", Path)
 
         'Replace last occurrences of current directory of path with nothing.
         If Not Source = "" Then
@@ -216,8 +210,6 @@ Public Module Filesystem
             End If
         End If
 
-        'Return final path
-        Wdbg("I", "Final path: {0}", Path)
         Return Path
     End Function
 

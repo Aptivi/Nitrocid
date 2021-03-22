@@ -503,6 +503,14 @@ Public Module GetCommand
                     Done = True
                 End If
 
+            ElseIf words(0) = "firedevents" Then
+
+                Done = True
+                For Each FiredEvent As String In EventManager.FiredEvents.Keys
+                    W("- {0}: ", False, ColTypes.HelpCmd, FiredEvent)
+                    W(String.Join(", ", EventManager.FiredEvents(FiredEvent)), True, ColTypes.HelpDef)
+                Next
+
             ElseIf words(0) = "ftp" Then
 
                 If requestedCommand = "ftp" Then

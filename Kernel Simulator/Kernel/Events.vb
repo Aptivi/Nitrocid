@@ -20,6 +20,12 @@ Imports System.IO
 
 Public Class Events
 
+    ''' <summary>
+    ''' Recently fired events
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property FiredEvents As New Dictionary(Of String, Object())
+
     'These events are fired by their Raise<EventName>() subs and are responded by their Respond<EventName>() subs.
     Public Event KernelStarted()
     Public Event PreLogin()
@@ -1229,6 +1235,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseStartKernel()
         Wdbg("I", "Raising event KernelStarted() and responding in RespondStartKernel()...")
+        FiredEvents.Add("KernelStarted (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent KernelStarted()
     End Sub
     ''' <summary>
@@ -1236,6 +1243,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePreLogin()
         Wdbg("I", "Raising event PreLogin() and responding in RespondPreLogin()...")
+        FiredEvents.Add("PreLogin (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent PreLogin()
     End Sub
     ''' <summary>
@@ -1243,6 +1251,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePostLogin(ByVal Username As String)
         Wdbg("I", "Raising event PostLogin() and responding in RespondPostLogin()...")
+        FiredEvents.Add("PostLogin (" + CStr(FiredEvents.Count) + ")", {Username})
         RaiseEvent PostLogin(Username)
     End Sub
     ''' <summary>
@@ -1250,6 +1259,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseLoginError(ByVal Username As String, ByVal Reason As String)
         Wdbg("I", "Raising event LoginError() and responding in RespondLoginError()...")
+        FiredEvents.Add("LoginError (" + CStr(FiredEvents.Count) + ")", {Username, Reason})
         RaiseEvent LoginError(Username, Reason)
     End Sub
     ''' <summary>
@@ -1257,6 +1267,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseShellInitialized()
         Wdbg("I", "Raising event ShellInitialized() and responding in RespondShellInitialized()...")
+        FiredEvents.Add("ShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent ShellInitialized()
     End Sub
     ''' <summary>
@@ -1264,6 +1275,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePreExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event PreExecuteCommand() and responding in RespondPreExecuteCommand()...")
+        FiredEvents.Add("PreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent PreExecuteCommand(Command)
     End Sub
     ''' <summary>
@@ -1271,6 +1283,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePostExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event PostExecuteCommand() and responding in RespondPostExecuteCommand()...")
+        FiredEvents.Add("PostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent PostExecuteCommand(Command)
     End Sub
     ''' <summary>
@@ -1278,6 +1291,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object)
         Wdbg("I", "Raising event KernelError() and responding in RespondKernelError()...")
+        FiredEvents.Add("KernelError (" + CStr(FiredEvents.Count) + ")", {ErrorType, Reboot, RebootTime, Description, Exc, Variables})
         RaiseEvent KernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
     End Sub
     ''' <summary>
@@ -1285,6 +1299,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseContKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object)
         Wdbg("I", "Raising event ContKernelError() and responding in RespondContKernelError()...")
+        FiredEvents.Add("ContKernelError (" + CStr(FiredEvents.Count) + ")", {ErrorType, Reboot, RebootTime, Description, Exc, Variables})
         RaiseEvent ContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
     End Sub
     ''' <summary>
@@ -1292,6 +1307,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePreShutdown()
         Wdbg("I", "Raising event PreShutdown() and responding in RespondPreShutdown()...")
+        FiredEvents.Add("PreShutdown (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent PreShutdown()
     End Sub
     ''' <summary>
@@ -1299,6 +1315,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePostShutdown()
         Wdbg("I", "Raising event PostShutdown() and responding in RespondPostShutdown()...")
+        FiredEvents.Add("PostShutdown (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent PostShutdown()
     End Sub
     ''' <summary>
@@ -1306,6 +1323,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePreReboot()
         Wdbg("I", "Raising event PreReboot() and responding in RespondPreReboot()...")
+        FiredEvents.Add("PreReboot (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent PreReboot()
     End Sub
     ''' <summary>
@@ -1313,6 +1331,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePostReboot()
         Wdbg("I", "Raising event PostReboot() and responding in RespondPostReboot()...")
+        FiredEvents.Add("PostReboot (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent PostReboot()
     End Sub
     ''' <summary>
@@ -1320,6 +1339,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePreShowScreensaver(ByVal Screensaver As String)
         Wdbg("I", "Raising event PreShowScreensaver() and responding in RespondPreShowScreensaver()...")
+        FiredEvents.Add("PreShowScreensaver (" + CStr(FiredEvents.Count) + ")", {Screensaver})
         RaiseEvent PreShowScreensaver(Screensaver)
     End Sub
     ''' <summary>
@@ -1327,6 +1347,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePostShowScreensaver(ByVal Screensaver As String)
         Wdbg("I", "Raising event PostShowScreensaver() and responding in RespondPostShowScreensaver()...")
+        FiredEvents.Add("PostShowScreensaver (" + CStr(FiredEvents.Count) + ")", {Screensaver})
         RaiseEvent PostShowScreensaver(Screensaver)
     End Sub
     ''' <summary>
@@ -1334,6 +1355,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePreUnlock(ByVal Screensaver As String)
         Wdbg("I", "Raising event PreUnlock() and responding in RespondPreUnlock()...")
+        FiredEvents.Add("PreUnlock (" + CStr(FiredEvents.Count) + ")", {Screensaver})
         RaiseEvent PreUnlock(Screensaver)
     End Sub
     ''' <summary>
@@ -1341,6 +1363,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePostUnlock(ByVal Screensaver As String)
         Wdbg("I", "Raising event PostUnlock() and responding in RespondPostUnlock()...")
+        FiredEvents.Add("PostUnlock (" + CStr(FiredEvents.Count) + ")", {Screensaver})
         RaiseEvent PostUnlock(Screensaver)
     End Sub
     ''' <summary>
@@ -1348,6 +1371,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event CommandError() and responding in RespondCommandError()...")
+        FiredEvents.Add("CommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent CommandError(Command, Exception)
     End Sub
     ''' <summary>
@@ -1355,6 +1379,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePreReloadConfig()
         Wdbg("I", "Raising event PreReloadConfig() and responding in RespondPreReloadConfig()...")
+        FiredEvents.Add("PreReloadConfig (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent PreReloadConfig()
     End Sub
     ''' <summary>
@@ -1362,6 +1387,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePostReloadConfig()
         Wdbg("I", "Raising event PostReloadConfig() and responding in RespondPostReloadConfig()...")
+        FiredEvents.Add("PostReloadConfig (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent PostReloadConfig()
     End Sub
     ''' <summary>
@@ -1369,6 +1395,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePlaceholderParsing(ByVal Target As String)
         Wdbg("I", "Raising event PlaceholderParsing() and responding in RespondPlaceholderParsing()...")
+        FiredEvents.Add("PlaceholderParsing (" + CStr(FiredEvents.Count) + ")", {Target})
         RaiseEvent PlaceholderParsing(Target)
     End Sub
     ''' <summary>
@@ -1376,6 +1403,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePlaceholderParsed(ByVal Target As String)
         Wdbg("I", "Raising event PlaceholderParsed() and responding in RespondPlaceholderParsed()...")
+        FiredEvents.Add("PlaceholderParsed (" + CStr(FiredEvents.Count) + ")", {Target})
         RaiseEvent PlaceholderParsed(Target)
     End Sub
     ''' <summary>
@@ -1383,6 +1411,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseGarbageCollected()
         Wdbg("I", "Raising event GarbageCollected() and responding in RespondGarbageCollected()...")
+        FiredEvents.Add("GarbageCollected (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent GarbageCollected()
     End Sub
     ''' <summary>
@@ -1390,6 +1419,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFTPShellInitialized()
         Wdbg("I", "Raising event FTPShellInitialized() and responding in RespondFTPShellInitialized()...")
+        FiredEvents.Add("FTPShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent FTPShellInitialized()
     End Sub
     ''' <summary>
@@ -1397,6 +1427,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFTPPreExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event FTPPreExecuteCommand() and responding in RespondFTPPreExecuteCommand()...")
+        FiredEvents.Add("FTPPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent FTPPreExecuteCommand(Command)
     End Sub
     ''' <summary>
@@ -1404,6 +1435,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFTPPostExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event FTPPostExecuteCommand() and responding in RespondFTPPostExecuteCommand()...")
+        FiredEvents.Add("FTPPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent FTPPostExecuteCommand(Command)
     End Sub
     ''' <summary>
@@ -1411,6 +1443,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFTPCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event FTPCommandError() and responding in RespondFTPCommandError()...")
+        FiredEvents.Add("FTPCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent FTPCommandError(Command, Exception)
     End Sub
     ''' <summary>
@@ -1418,6 +1451,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFTPPreDownload(ByVal File As String)
         Wdbg("I", "Raising event FTPPreDownload() and responding in RespondFTPPreDownload()...")
+        FiredEvents.Add("FTPPreDownload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent FTPPreDownload(File)
     End Sub
     ''' <summary>
@@ -1425,6 +1459,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFTPPostDownload(ByVal File As String, ByVal Success As Boolean)
         Wdbg("I", "Raising event FTPPostDownload() and responding in RespondFTPPostDownload()...")
+        FiredEvents.Add("FTPPostDownload (" + CStr(FiredEvents.Count) + ")", {File, Success})
         RaiseEvent FTPPostDownload(File, Success)
     End Sub
     ''' <summary>
@@ -1432,6 +1467,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFTPPreUpload(ByVal File As String)
         Wdbg("I", "Raising event FTPPreUpload() and responding in RespondFTPPreUpload()...")
+        FiredEvents.Add("FTPPreUpload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent FTPPreUpload(File)
     End Sub
     ''' <summary>
@@ -1439,6 +1475,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFTPPostUpload(ByVal File As String, ByVal Success As Boolean)
         Wdbg("I", "Raising event FTPPostUpload() and responding in RespondFTPPostUpload()...")
+        FiredEvents.Add("FTPPostUpload (" + CStr(FiredEvents.Count) + ")", {File, Success})
         RaiseEvent FTPPostUpload(File, Success)
     End Sub
     ''' <summary>
@@ -1446,6 +1483,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseIMAPShellInitialized()
         Wdbg("I", "Raising event IMAPShellInitialized() and responding in RespondIMAPShellInitialized()...")
+        FiredEvents.Add("IMAPShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent IMAPShellInitialized()
     End Sub
     ''' <summary>
@@ -1453,6 +1491,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseIMAPPreExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event IMAPPreExecuteCommand() and responding in RespondIMAPPreExecuteCommand()...")
+        FiredEvents.Add("IMAPPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent IMAPPreExecuteCommand(Command)
     End Sub
     ''' <summary>
@@ -1460,6 +1499,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseIMAPPostExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event IMAPPostExecuteCommand() and responding in RespondIMAPPostExecuteCommand()...")
+        FiredEvents.Add("IMAPPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent IMAPPostExecuteCommand(Command)
     End Sub
     ''' <summary>
@@ -1467,6 +1507,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseIMAPCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event IMAPCommandError() and responding in RespondIMAPCommandError()...")
+        FiredEvents.Add("IMAPCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent IMAPCommandError(Command, Exception)
     End Sub
     ''' <summary>
@@ -1474,6 +1515,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseRemoteDebugConnectionAccepted(ByVal IP As String)
         Wdbg("I", "Raising event RemoteDebugConnectionAccepted() and responding in RespondRemoteDebugConnectionAccepted()...")
+        FiredEvents.Add("RemoteDebugConnectionAccepted (" + CStr(FiredEvents.Count) + ")", {IP})
         RaiseEvent RemoteDebugConnectionAccepted(IP)
     End Sub
     ''' <summary>
@@ -1481,6 +1523,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseRemoteDebugConnectionDisconnected(ByVal IP As String)
         Wdbg("I", "Raising event RemoteDebugConnectionDisconnected() and responding in RespondRemoteDebugConnectionDisconnected()...")
+        FiredEvents.Add("RemoteDebugConnectionDisconnected (" + CStr(FiredEvents.Count) + ")", {IP})
         RaiseEvent RemoteDebugConnectionDisconnected(IP)
     End Sub
     ''' <summary>
@@ -1488,6 +1531,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseRemoteDebugExecuteCommand(ByVal IP As String, ByVal Command As String)
         Wdbg("I", "Raising event RemoteDebugExecuteCommand() and responding in RespondRemoteDebugExecuteCommand()...")
+        FiredEvents.Add("RemoteDebugExecuteCommand (" + CStr(FiredEvents.Count) + ")", {IP, Command})
         RaiseEvent RemoteDebugExecuteCommand(IP, Command)
     End Sub
     ''' <summary>
@@ -1495,6 +1539,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseRemoteDebugCommandError(ByVal IP As String, ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event RemoteDebugCommandError() and responding in RespondRemoteDebugCommandError()...")
+        FiredEvents.Add("RemoteDebugCommandError (" + CStr(FiredEvents.Count) + ")", {IP, Command, Exception})
         RaiseEvent RemoteDebugCommandError(IP, Command, Exception)
     End Sub
     ''' <summary>
@@ -1502,6 +1547,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseRPCCommandSent(ByVal Command As String)
         Wdbg("I", "Raising event RPCCommandSent() and responding in RespondRPCCommandSent()...")
+        FiredEvents.Add("RPCCommandSent (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent RPCCommandSent(Command)
     End Sub
     ''' <summary>
@@ -1509,6 +1555,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseRPCCommandReceived(ByVal Command As String)
         Wdbg("I", "Raising event RPCCommandReceived() and responding in RespondRPCCommandReceived()...")
+        FiredEvents.Add("RPCCommandReceived (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent RPCCommandReceived(Command)
     End Sub
     ''' <summary>
@@ -1516,6 +1563,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseRPCCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event RPCCommandError() and responding in RespondRPCCommandError()...")
+        FiredEvents.Add("RPCCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent RPCCommandError(Command, Exception)
     End Sub
     ''' <summary>
@@ -1523,6 +1571,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSFTPShellInitialized()
         Wdbg("I", "Raising event SFTPShellInitialized() and responding in RespondSFTPShellInitialized()...")
+        FiredEvents.Add("SFTPShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent SFTPShellInitialized()
     End Sub
     ''' <summary>
@@ -1530,6 +1579,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSFTPPreExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event SFTPPreExecuteCommand() and responding in RespondSFTPPreExecuteCommand()...")
+        FiredEvents.Add("SFTPPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent SFTPPreExecuteCommand(Command)
     End Sub
     ''' <summary>
@@ -1537,6 +1587,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSFTPPostExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event SFTPPostExecuteCommand() and responding in RespondSFTPPostExecuteCommand()...")
+        FiredEvents.Add("SFTPPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent SFTPPostExecuteCommand(Command)
     End Sub
     ''' <summary>
@@ -1544,6 +1595,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSFTPCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event SFTPCommandError() and responding in RespondSFTPCommandError()...")
+        FiredEvents.Add("SFTPCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent SFTPCommandError(Command, Exception)
     End Sub
     ''' <summary>
@@ -1551,6 +1603,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSFTPPreDownload(ByVal File As String)
         Wdbg("I", "Raising event SFTPPreDownload() and responding in RespondSFTPPreDownload()...")
+        FiredEvents.Add("SFTPPreDownload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent SFTPPreDownload(File)
     End Sub
     ''' <summary>
@@ -1558,6 +1611,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSFTPPostDownload(ByVal File As String)
         Wdbg("I", "Raising event SFTPPostDownload() and responding in RespondSFTPPostDownload()...")
+        FiredEvents.Add("SFTPPostDownload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent SFTPPostDownload(File)
     End Sub
     ''' <summary>
@@ -1565,6 +1619,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSFTPDownloadError(ByVal File As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event SFTPDownloadError() and responding in RespondSFTPDownloadError()...")
+        FiredEvents.Add("SFTPDownloadError (" + CStr(FiredEvents.Count) + ")", {File, Exception})
         RaiseEvent SFTPDownloadError(File, Exception)
     End Sub
     ''' <summary>
@@ -1572,6 +1627,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSFTPPreUpload(ByVal File As String)
         Wdbg("I", "Raising event SFTPPreUpload() and responding in RespondSFTPPreUpload()...")
+        FiredEvents.Add("SFTPPreUpload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent SFTPPreUpload(File)
     End Sub
     ''' <summary>
@@ -1579,6 +1635,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSFTPPostUpload(ByVal File As String)
         Wdbg("I", "Raising event SFTPPostUpload() and responding in RespondSFTPPostUpload()...")
+        FiredEvents.Add("SFTPPostUpload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent SFTPPostUpload(File)
     End Sub
     ''' <summary>
@@ -1586,6 +1643,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSFTPUploadError(ByVal File As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event SFTPUploadError() and responding in RespondSFTPUploadError()...")
+        FiredEvents.Add("SFTPUploadError (" + CStr(FiredEvents.Count) + ")", {File, Exception})
         RaiseEvent SFTPUploadError(File, Exception)
     End Sub
     ''' <summary>
@@ -1593,6 +1651,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSSHConnected(ByVal Target As String)
         Wdbg("I", "Raising event SSHConnected() and responding in RespondSSHConnected()...")
+        FiredEvents.Add("SSHConnected (" + CStr(FiredEvents.Count) + ")", {Target})
         RaiseEvent SSHConnected(Target)
     End Sub
     ''' <summary>
@@ -1600,6 +1659,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSSHDisconnected()
         Wdbg("I", "Raising event SSHDisconnected() and responding in RespondSSHDisconnected()...")
+        FiredEvents.Add("SSHDisconnected (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent SSHDisconnected()
     End Sub
     ''' <summary>
@@ -1607,6 +1667,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseSSHError(ByVal Exception As Exception)
         Wdbg("I", "Raising event SSHError() and responding in RespondSSHError()...")
+        FiredEvents.Add("SSHError (" + CStr(FiredEvents.Count) + ")", {Exception})
         RaiseEvent SSHError(Exception)
     End Sub
     ''' <summary>
@@ -1614,6 +1675,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseUESHPreExecute(ByVal Command As String)
         Wdbg("I", "Raising event UESHPreExecute() and responding in RespondUESHPreExecute()...")
+        FiredEvents.Add("UESHPreExecute (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent UESHPreExecute(Command)
     End Sub
     ''' <summary>
@@ -1621,6 +1683,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseUESHPostExecute(ByVal Command As String)
         Wdbg("I", "Raising event UESHPostExecute() and responding in RespondUESHPostExecute()...")
+        FiredEvents.Add("UESHPostExecute (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent UESHPostExecute(Command)
     End Sub
     ''' <summary>
@@ -1628,6 +1691,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseUESHError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event UESHError() and responding in RespondUESHError()...")
+        FiredEvents.Add("UESHError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent UESHError(Command, Exception)
     End Sub
     ''' <summary>
@@ -1635,6 +1699,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseTextShellInitialized()
         Wdbg("I", "Raising event TextShellInitialized() and responding in RespondTextShellInitialized()...")
+        FiredEvents.Add("TextShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent TextShellInitialized()
     End Sub
     ''' <summary>
@@ -1642,6 +1707,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseTextPreExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event TextPreExecuteCommand() and responding in RespondTextPreExecuteCommand()...")
+        FiredEvents.Add("TextPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent TextPreExecuteCommand(Command)
     End Sub
     ''' <summary>
@@ -1649,6 +1715,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseTextPostExecuteCommand(ByVal Command As String)
         Wdbg("I", "Raising event TextPostExecuteCommand() and responding in RespondTextPostExecuteCommand()...")
+        FiredEvents.Add("TextPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent TextPostExecuteCommand(Command)
     End Sub
     ''' <summary>
@@ -1656,6 +1723,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseTextCommandError(ByVal Command As String, ByVal Exception As Exception)
         Wdbg("I", "Raising event TextCommandError() and responding in RespondTextCommandError()...")
+        FiredEvents.Add("TextCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent TextCommandError(Command, Exception)
     End Sub
     ''' <summary>
@@ -1663,6 +1731,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseNotificationSent(ByVal Notification As Notification)
         Wdbg("I", "Raising event NotificationSent() and responding in RespondNotificationSent()...")
+        FiredEvents.Add("NotificationSent (" + CStr(FiredEvents.Count) + ")", {Notification})
         RaiseEvent NotificationSent(Notification)
     End Sub
     ''' <summary>
@@ -1670,6 +1739,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseNotificationReceived(ByVal Notification As Notification)
         Wdbg("I", "Raising event NotificationReceived() and responding in RespondNotificationReceived()...")
+        FiredEvents.Add("NotificationReceived (" + CStr(FiredEvents.Count) + ")", {Notification})
         RaiseEvent NotificationReceived(Notification)
     End Sub
     ''' <summary>
@@ -1677,6 +1747,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseNotificationDismissed()
         Wdbg("I", "Raising event NotificationDismissed() and responding in RespondNotificationDismissed()...")
+        FiredEvents.Add("NotificationDismissed (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent NotificationDismissed()
     End Sub
     ''' <summary>
@@ -1684,6 +1755,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseConfigSaved()
         Wdbg("I", "Raising event ConfigSaved() and responding in RespondConfigSaved()...")
+        FiredEvents.Add("ConfigSaved (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent ConfigSaved()
     End Sub
     ''' <summary>
@@ -1691,6 +1763,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseConfigSaveError(ByVal Exception As Exception)
         Wdbg("I", "Raising event ConfigSaveError() and responding in RespondConfigSaveError()...")
+        FiredEvents.Add("ConfigSaveError (" + CStr(FiredEvents.Count) + ")", {Exception})
         RaiseEvent ConfigSaveError(Exception)
     End Sub
     ''' <summary>
@@ -1698,6 +1771,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseConfigRead()
         Wdbg("I", "Raising event ConfigRead() and responding in RespondConfigRead()...")
+        FiredEvents.Add("ConfigRead (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent ConfigRead()
     End Sub
     ''' <summary>
@@ -1705,6 +1779,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseConfigReadError(ByVal Exception As Exception)
         Wdbg("I", "Raising event ConfigReadError() and responding in RespondConfigReadError()...")
+        FiredEvents.Add("ConfigReadError (" + CStr(FiredEvents.Count) + ")", {Exception})
         RaiseEvent ConfigReadError(Exception)
     End Sub
     ''' <summary>
@@ -1712,6 +1787,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePreExecuteModCommand(ByVal Command As String)
         Wdbg("I", "Raising event PreExecuteModCommand() and responding in RespondPreExecuteModCommand()...")
+        FiredEvents.Add("PreExecuteModCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent PreExecuteModCommand(Command)
     End Sub
     ''' <summary>
@@ -1719,6 +1795,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaisePostExecuteModCommand(ByVal Command As String)
         Wdbg("I", "Raising event PostExecuteModCommand() and responding in RespondPostExecuteModCommand()...")
+        FiredEvents.Add("PostExecuteModCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent PostExecuteModCommand(Command)
     End Sub
     ''' <summary>
@@ -1726,6 +1803,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseModParsed(ByVal Starting As Boolean, ByVal ModFileName As String)
         Wdbg("I", "Raising event ModParsed() and responding in RespondModParsed()...")
+        FiredEvents.Add("ModParsed (" + CStr(FiredEvents.Count) + ")", {Starting, ModFileName})
         RaiseEvent ModParsed(Starting, ModFileName)
     End Sub
     ''' <summary>
@@ -1733,6 +1811,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseModParseError(ByVal ModFileName As String)
         Wdbg("I", "Raising event ModParseError() and responding in RespondModParseError()...")
+        FiredEvents.Add("ModParseError (" + CStr(FiredEvents.Count) + ")", {ModFileName})
         RaiseEvent ModParseError(ModFileName)
     End Sub
     ''' <summary>
@@ -1740,6 +1819,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseModFinalized(ByVal Starting As Boolean, ByVal ModFileName As String)
         Wdbg("I", "Raising event ModFinalized() and responding in RespondModFinalized()...")
+        FiredEvents.Add("ModFinalized (" + CStr(FiredEvents.Count) + ")", {Starting, ModFileName})
         RaiseEvent ModFinalized(Starting, ModFileName)
     End Sub
     ''' <summary>
@@ -1747,6 +1827,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseModFinalizationFailed(ByVal ModFileName As String, ByVal Reason As String)
         Wdbg("I", "Raising event ModFinalizationFailed() and responding in RespondModFinalizationFailed()...")
+        FiredEvents.Add("ModFinalizationFailed (" + CStr(FiredEvents.Count) + ")", {ModFileName, Reason})
         RaiseEvent ModFinalizationFailed(ModFileName, Reason)
     End Sub
     ''' <summary>
@@ -1754,6 +1835,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseUserAdded(ByVal Username As String)
         Wdbg("I", "Raising event UserAdded() and responding in RespondUserAdded()...")
+        FiredEvents.Add("UserAdded (" + CStr(FiredEvents.Count) + ")", {Username})
         RaiseEvent UserAdded(Username)
     End Sub
     ''' <summary>
@@ -1761,6 +1843,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseUserRemoved(ByVal Username As String)
         Wdbg("I", "Raising event UserRemoved() and responding in RespondUserRemoved()...")
+        FiredEvents.Add("UserRemoved (" + CStr(FiredEvents.Count) + ")", {Username})
         RaiseEvent UserRemoved(Username)
     End Sub
     ''' <summary>
@@ -1768,6 +1851,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseUsernameChanged(ByVal OldUsername As String, ByVal NewUsername As String)
         Wdbg("I", "Raising event UsernameChanged() and responding in RespondUsernameChanged()...")
+        FiredEvents.Add("UsernameChanged (" + CStr(FiredEvents.Count) + ")", {OldUsername, NewUsername})
         RaiseEvent UsernameChanged(OldUsername, NewUsername)
     End Sub
     ''' <summary>
@@ -1775,6 +1859,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseUserPasswordChanged(ByVal Username As String)
         Wdbg("I", "Raising event UserPasswordChanged() and responding in RespondUserPasswordChanged()...")
+        FiredEvents.Add("UserPasswordChanged (" + CStr(FiredEvents.Count) + ")", {Username})
         RaiseEvent UserPasswordChanged(Username)
     End Sub
     ''' <summary>
@@ -1782,6 +1867,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseHardwareProbing()
         Wdbg("I", "Raising event HardwareProbing() and responding in RespondHardwareProbing()...")
+        FiredEvents.Add("HardwareProbing (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent HardwareProbing()
     End Sub
     ''' <summary>
@@ -1789,6 +1875,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseHardwareProbed()
         Wdbg("I", "Raising event HardwareProbed() and responding in RespondHardwareProbed()...")
+        FiredEvents.Add("HardwareProbed (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent HardwareProbed()
     End Sub
     ''' <summary>
@@ -1796,6 +1883,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseCurrentDirectoryChanged()
         Wdbg("I", "Raising event CurrentDirectoryChanged() and responding in RespondCurrentDirectoryChanged()...")
+        FiredEvents.Add("CurrentDirectoryChanged (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent CurrentDirectoryChanged()
     End Sub
     ''' <summary>
@@ -1803,6 +1891,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFileCreated(ByVal File As String)
         Wdbg("I", "Raising event FileCreated() and responding in RespondFileCreated()...")
+        FiredEvents.Add("FileCreated (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent FileCreated(File)
     End Sub
     ''' <summary>
@@ -1810,6 +1899,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseDirectoryCreated(ByVal Directory As String)
         Wdbg("I", "Raising event DirectoryCreated() and responding in RespondDirectoryCreated()...")
+        FiredEvents.Add("DirectoryCreated (" + CStr(FiredEvents.Count) + ")", {Directory})
         RaiseEvent DirectoryCreated(Directory)
     End Sub
     ''' <summary>
@@ -1817,6 +1907,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFileCopied(ByVal Source As String, ByVal Destination As String)
         Wdbg("I", "Raising event FileCopied() and responding in RespondFileCopied()...")
+        FiredEvents.Add("FileCopied (" + CStr(FiredEvents.Count) + ")", {Source, Destination})
         RaiseEvent FileCopied(Source, Destination)
     End Sub
     ''' <summary>
@@ -1824,6 +1915,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseDirectoryCopied(ByVal Source As String, ByVal Destination As String)
         Wdbg("I", "Raising event DirectoryCopied() and responding in RespondDirectoryCopied()...")
+        FiredEvents.Add("DirectoryCopied (" + CStr(FiredEvents.Count) + ")", {Source, Destination})
         RaiseEvent DirectoryCopied(Source, Destination)
     End Sub
     ''' <summary>
@@ -1831,6 +1923,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFileMoved(ByVal Source As String, ByVal Destination As String)
         Wdbg("I", "Raising event FileMoved() and responding in RespondFileMoved()...")
+        FiredEvents.Add("FileMoved (" + CStr(FiredEvents.Count) + ")", {Source, Destination})
         RaiseEvent FileMoved(Source, Destination)
     End Sub
     ''' <summary>
@@ -1838,6 +1931,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseDirectoryMoved(ByVal Source As String, ByVal Destination As String)
         Wdbg("I", "Raising event DirectoryMoved() and responding in RespondDirectoryMoved()...")
+        FiredEvents.Add("DirectoryMoved (" + CStr(FiredEvents.Count) + ")", {Source, Destination})
         RaiseEvent DirectoryMoved(Source, Destination)
     End Sub
     ''' <summary>
@@ -1845,6 +1939,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFileRemoved(ByVal File As String)
         Wdbg("I", "Raising event FileRemoved() and responding in RespondFileRemoved()...")
+        FiredEvents.Add("FileRemoved (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent FileRemoved(File)
     End Sub
     ''' <summary>
@@ -1852,6 +1947,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseDirectoryRemoved(ByVal Directory As String)
         Wdbg("I", "Raising event DirectoryRemoved() and responding in RespondDirectoryRemoved()...")
+        FiredEvents.Add("DirectoryRemoved (" + CStr(FiredEvents.Count) + ")", {Directory})
         RaiseEvent DirectoryRemoved(Directory)
     End Sub
     ''' <summary>
@@ -1859,6 +1955,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFileAttributeAdded(ByVal File As String, ByVal Attributes As FileAttributes)
         Wdbg("I", "Raising event FileAttributeAdded() and responding in RespondFileAttributeAdded()...")
+        FiredEvents.Add("FileAttributeAdded (" + CStr(FiredEvents.Count) + ")", {File, Attributes})
         RaiseEvent FileAttributeAdded(File, Attributes)
     End Sub
     ''' <summary>
@@ -1866,6 +1963,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseFileAttributeRemoved(ByVal File As String, ByVal Attributes As FileAttributes)
         Wdbg("I", "Raising event FileAttributeRemoved() and responding in RespondFileAttributeRemoved()...")
+        FiredEvents.Add("FileAttributeRemoved (" + CStr(FiredEvents.Count) + ")", {File, Attributes})
         RaiseEvent FileAttributeRemoved(File, Attributes)
     End Sub
     ''' <summary>
@@ -1873,6 +1971,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseColorReset()
         Wdbg("I", "Raising event ColorReset() and responding in RespondColorReset()...")
+        FiredEvents.Add("ColorReset (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent ColorReset()
     End Sub
     ''' <summary>
@@ -1880,6 +1979,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseThemeSet(ByVal Theme As String)
         Wdbg("I", "Raising event ThemeSet() and responding in RespondThemeSet()...")
+        FiredEvents.Add("ThemeSet (" + CStr(FiredEvents.Count) + ")", {Theme})
         RaiseEvent ThemeSet(Theme)
     End Sub
     ''' <summary>
@@ -1887,6 +1987,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseThemeSetError(ByVal Theme As String, ByVal Reason As String)
         Wdbg("I", "Raising event ThemeSetError() and responding in RespondThemeSetError()...")
+        FiredEvents.Add("ThemeSetError (" + CStr(FiredEvents.Count) + ")", {Theme, Reason})
         RaiseEvent ThemeSetError(Theme, Reason)
     End Sub
     ''' <summary>
@@ -1894,6 +1995,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseColorSet()
         Wdbg("I", "Raising event ColorSet() and responding in RespondColorSet()...")
+        FiredEvents.Add("ColorSet (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent ColorSet()
     End Sub
     ''' <summary>
@@ -1901,6 +2003,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseColorSetError(ByVal Reason As String)
         Wdbg("I", "Raising event ColorSetError() and responding in RespondColorSetError()...")
+        FiredEvents.Add("ColorSetError (" + CStr(FiredEvents.Count) + ")", {Reason})
         RaiseEvent ColorSetError(Reason)
     End Sub
     ''' <summary>
@@ -1908,6 +2011,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseThemeStudioStarted()
         Wdbg("I", "Raising event ThemeStudioStarted() and responding in RespondThemeStudioStarted()...")
+        FiredEvents.Add("ThemeStudioStarted (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent ThemeStudioStarted()
     End Sub
     ''' <summary>
@@ -1915,6 +2019,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseThemeStudioExit()
         Wdbg("I", "Raising event ThemeStudioExit() and responding in RespondThemeStudioExit()...")
+        FiredEvents.Add("ThemeStudioExit (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent ThemeStudioExit()
     End Sub
     ''' <summary>
@@ -1922,6 +2027,7 @@ Public Class Events
     ''' </summary>
     Public Sub RaiseArgumentsInjected(ByVal InjectedArguments As String)
         Wdbg("I", "Raising event ArgumentsInjected() and responding in RespondArgumentsInjected()...")
+        FiredEvents.Add("ArgumentsInjected (" + CStr(FiredEvents.Count) + ")", {InjectedArguments})
         RaiseEvent ArgumentsInjected(InjectedArguments)
     End Sub
 
