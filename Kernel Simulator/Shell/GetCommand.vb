@@ -506,10 +506,7 @@ Public Module GetCommand
             ElseIf words(0) = "firedevents" Then
 
                 Done = True
-                For Each FiredEvent As String In EventManager.FiredEvents.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, FiredEvent)
-                    W(String.Join(", ", EventManager.FiredEvents(FiredEvent)), True, ColTypes.HelpDef)
-                Next
+                WriteList(EventManager.FiredEvents)
 
             ElseIf words(0) = "ftp" Then
 
@@ -1284,10 +1281,7 @@ Public Module GetCommand
                     Done = True
                     If eqargs(0) = "listcities" Then
                         Dim Cities As Dictionary(Of Long, String) = ListAllCities()
-                        For Each City As Long In Cities.Keys
-                            W("- {0}:", False, ColTypes.HelpCmd, City)
-                            W(Cities(City), True, ColTypes.HelpDef)
-                        Next
+                        WriteList(Cities)
                     Else
                         Dim APIKey As String
                         W(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."), True, ColTypes.Neutral)

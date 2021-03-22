@@ -194,7 +194,7 @@ Public Module ToolPrompts
                     'Screensaver: Texts
                     W("31) [BouncingText] " + DoTranslation("Text shown") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextWrite)))
                 Case 7 'Misc
-                    MaxOptions = 9
+                    MaxOptions = 10
                     W("*) " + DoTranslation("Miscellaneous Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Show Time/Date on Upper Right Corner") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CornerTD)))
@@ -205,7 +205,8 @@ Public Module ToolPrompts
                     W("6) " + DoTranslation("Show Hidden Files") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(HiddenFiles)))
                     W("7) " + DoTranslation("Preferred Unit for Temperature") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(PreferredUnit)))
                     W("8) " + DoTranslation("Enable text editor autosave") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TextEdit_AutoSaveFlag)))
-                    W("9) " + DoTranslation("Text editor autosave interval") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(TextEdit_AutoSaveInterval)))
+                    W("9) " + DoTranslation("Text editor autosave interval") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TextEdit_AutoSaveInterval)))
+                    W("10) " + DoTranslation("Wrap list outputs") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(WrapListOutputs)))
                 Case Else 'Invalid section
                     W("*) ???" + vbNewLine, True, ColTypes.Neutral)
                     W("X) " + DoTranslation("Invalid section entered. Please go back.") + vbNewLine, True, ColTypes.Err)
@@ -871,6 +872,14 @@ Public Module ToolPrompts
                             KeyVar = NameOf(TextEdit_AutoSaveInterval)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Text editor autosave interval") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("If autosave is enabled, the text file will be saved for each ""n"" seconds."), True, ColTypes.Neutral)
+                        Case 10 'Wrap list outputs
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(WrapListOutputs)
+                            W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Wrap list outputs") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Wraps the list outputs if it seems too long for the current console geometry.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
                         Case Else
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)

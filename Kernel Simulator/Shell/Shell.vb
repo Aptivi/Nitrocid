@@ -58,7 +58,7 @@ Public Module Shell
     ''' <summary>
     ''' All wrappable commands
     ''' </summary>
-    Public WrappableCmds() As String = {"cat"}
+    Public WrappableCmds() As String = {"cat", "hwinfo", "list", "lsdbgdev", "netinfo", "showtdzone"}
     ''' <summary>
     ''' All obsolete commands
     ''' </summary>

@@ -146,6 +146,7 @@ Public Module Config
                         New IniKey(ksconf, "Preferred Unit for Temperature", PreferredUnit),
                         New IniKey(ksconf, "Enable text editor autosave", TextEdit_AutoSaveFlag),
                         New IniKey(ksconf, "Text editor autosave interval", TextEdit_AutoSaveInterval),
+                        New IniKey(ksconf, "Wrap list outputs", WrapListOutputs),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             Else '----------------------- If [Preserve] value is False, then don't preserve.
                 'The General Section
@@ -262,6 +263,7 @@ Public Module Config
                         New IniKey(ksconf, "Preferred Unit for Temperature", UnitMeasurement.Metric),
                         New IniKey(ksconf, "Enable text editor autosave", "True"),
                         New IniKey(ksconf, "Text editor autosave interval", "60"),
+                        New IniKey(ksconf, "Wrap list outputs", "False"),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
@@ -362,6 +364,7 @@ Public Module Config
             ksconf.Sections("Misc").Keys("Preferred Unit for Temperature").TrailingComment.Text = "Choose either Kelvin, Celsius, or Fahrenheit for temperature measurement."
             ksconf.Sections("Misc").Keys("Enable text editor autosave").TrailingComment.Text = "Turns on or off the text editor autosave feature."
             ksconf.Sections("Misc").Keys("Text editor autosave interval").TrailingComment.Text = "If autosave is enabled, the text file will be saved for each ""n"" seconds."
+            ksconf.Sections("Misc").Keys("Wrap list outputs").TrailingComment.Text = "Wraps the list outputs if it seems too long for the current console geometry."
 
             'Save Config
             ksconf.Save(paths("Configuration"))
@@ -427,9 +430,10 @@ Public Module Config
         Try
             '----------------------------- Important configuration -----------------------------
             'Language
-            Wdbg("I", "Language is {0}", configReader.Sections("General").Keys("Language").Value)
+            Dim ConfiguredLang As String = configReader.Sections("General").Keys("Language").Value
+            Wdbg("I", "Language is {0}", ConfiguredLang)
             If configReader.Sections("General").Keys("Change Culture when Switching Languages").Value = "True" Then LangChangeCulture = True Else LangChangeCulture = False
-            SetLang(configReader.Sections("General").Keys("Language").Value)
+            SetLang(If(String.IsNullOrWhiteSpace(ConfiguredLang), "eng", ConfiguredLang))
 
             'Colored Shell
             If configReader.Sections("Shell").Keys("Colored Shell").Value = "False" Then
@@ -556,6 +560,7 @@ Public Module Config
             PreferredUnit = configReader.Sections("Misc").Keys("Preferred Unit for Temperature").Value
             If configReader.Sections("Misc").Keys("Enable text editor autosave").Value = "True" Then TextEdit_AutoSaveFlag = True Else TextEdit_AutoSaveFlag = False
             If Integer.TryParse(configReader.Sections("Misc").Keys("Text editor autosave interval").Value, 0) Then TextEdit_AutoSaveInterval = configReader.Sections("Misc").Keys("Text editor autosave interval").Value
+            If configReader.Sections("Misc").Keys("Wrap list outputs").Value = "True" Then WrapListOutputs = True Else WrapListOutputs = False
 
             'Raise event and return true
             EventManager.RaiseConfigRead()

@@ -159,6 +159,10 @@ Module Flags
     ''' Records remote debug chat to debug log
     ''' </summary>
     Public RecordChatToDebugLog As Boolean = True
+    ''' <summary>
+    ''' Wraps the list outputs
+    ''' </summary>
+    Public WrapListOutputs As Boolean
 
     'Private flags
     ''' <summary>
