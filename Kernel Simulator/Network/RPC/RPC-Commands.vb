@@ -20,11 +20,17 @@ Imports System.Net.Sockets
 
 Public Module RPC_Commands
 
-    Dim Commands As New List(Of String) From {"<Request:Shutdown>", 'Request will be like this: <Request:Shutdown>(IP)
-                                              "<Request:Reboot>",   'Request will be like this: <Request:Reboot>(IP)
-                                              "<Request:Lock>",     'Request will be like this: <Request:Lock>(IP)
-                                              "<Request:SaveScr>",  'Request will be like this: <Request:SaveScr>(IP)
-                                              "<Request:Exec>"}     'Request will be like this: <Request:Exec>(CMD)
+    ''' <summary>
+    ''' List of RPC commands.<br/>
+    ''' <br/>&lt;Request:Shutdown&gt;: Request will be like this: &lt;Request:Shutdown&gt;(IP)
+    ''' <br/>&lt;Request:Reboot&gt;: Request will be like this: &lt;Request:Reboot&gt;(IP)
+    ''' <br/>&lt;Request:Lock&gt;: Request will be like this: &lt;Request:Lock&gt;(IP)
+    ''' <br/>&lt;Request:SaveScr&gt;: Request will be like this: &lt;Request:SaveScr&gt;(IP)
+    ''' <br/>&lt;Request:Exec&gt;: Request will be like this: &lt;Request:Exec&gt;(Lock)
+    ''' <br/>&lt;Request:Acknowledge&gt;: Request will be like this: &lt;Request:Acknowledge&gt;(IP)
+    ''' <br/>&lt;Request:Ping&gt;: Request will be like this: &lt;Request:Ping&gt;(IP)
+    ''' </summary>
+    Dim Commands As New List(Of String) From {"<Request:Shutdown>", "<Request:Reboot>", "<Request:Lock>", "<Request:SaveScr>", "<Request:Exec>", "<Request:Acknowledge>", "<Request:Ping>"}
 
     ''' <summary>
     ''' Send an RPC command to another instance of KS using the specified address
@@ -57,6 +63,12 @@ Public Module RPC_Commands
             ElseIf Cmd = "<Request:Exec>" Then
                 Wdbg("I", "Stream opened for device {0} to execute ""{1}""", IP, Arg)
                 ByteMsg = Text.Encoding.Default.GetBytes("ExecConfirm, " + Arg + vbNewLine)
+            ElseIf Cmd = "<Request:Acknowledge>" Then
+                Wdbg("I", "Stream opened for device {0}", Arg)
+                ByteMsg = Text.Encoding.Default.GetBytes("AckConfirm, " + Arg + vbNewLine)
+            ElseIf Cmd = "<Request:Ping>" Then
+                Wdbg("I", "Stream opened for device {0}", Arg)
+                ByteMsg = Text.Encoding.Default.GetBytes("PingConfirm, " + Arg + vbNewLine)
             Else
                 Wdbg("E", "Malformed request. {0}", Cmd)
                 Malformed = True
@@ -103,6 +115,12 @@ Public Module RPC_Commands
                     Else
                         Wdbg("W", "Tried to exec from remote access while not logged in. Dropping packet...")
                     End If
+                ElseIf msg.StartsWith("AckConfirm") Then
+                    Wdbg("I", "{0} says ""Hello.""", msg.Replace("AckConfirm, ", "").Replace(vbNewLine, ""))
+                ElseIf msg.StartsWith("PingConfirm") Then
+                    Dim IPAddr As String = msg.Replace("PingConfirm, ", "").Replace(vbNewLine, "")
+                    Wdbg("I", "{0} pinged this device!", IPAddr)
+                    NotifySend(New Notification With {.Title = DoTranslation("Ping!"), .Desc = DoTranslation("{0} pinged you.").FormatString(IPAddr), .Priority = NotifPriority.Low, .Type = NotifType.Normal})
                 Else
                     Wdbg("W", "Not found. Message was {0}", msg)
                 End If
