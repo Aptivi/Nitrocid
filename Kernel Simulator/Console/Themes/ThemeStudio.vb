@@ -27,7 +27,7 @@ Module ThemeStudio
         EventManager.RaiseThemeStudioStarted()
         Wdbg("I", "Starting theme studio with theme name {0}", ThemeName)
         Dim Response As String
-        Dim MaximumOptions As Integer = 17
+        Dim MaximumOptions As Integer = 19
         Dim StudioExiting As Boolean
 
         While Not StudioExiting
@@ -53,8 +53,10 @@ Module ThemeStudio
 
             'List saving options
             W("15) " + DoTranslation("Save Theme to Current Directory"), True, ColTypes.Option)
-            W("16) " + DoTranslation("Save Theme to Another Directory"), True, ColTypes.Option)
-            W("17) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
+            W("16) " + DoTranslation("Save Theme to Another Directory..."), True, ColTypes.Option)
+            W("17) " + DoTranslation("Save Theme to Current Directory as..."), True, ColTypes.Option)
+            W("18) " + DoTranslation("Save Theme to Another Directory as..."), True, ColTypes.Option)
+            W("19) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
 
             'Prompt user
             Wdbg("I", "Waiting for user input...")
@@ -67,8 +69,8 @@ Module ThemeStudio
                 Wdbg("I", "Response is numeric.")
                 Dim NumericResponse As Integer = Response
                 Wdbg("I", "Checking response...")
-                If NumericResponse >= 1 And NumericResponse <= 17 Then
-                    Wdbg("I", "Numeric response {0} is >= 1 and <= 17.", NumericResponse)
+                If NumericResponse >= 1 And NumericResponse <= MaximumOptions Then
+                    Wdbg("I", "Numeric response {0} is >= 1 and <= {0}.", NumericResponse, MaximumOptions)
                     Select Case NumericResponse
                         Case 1 'Input color
                             Dim ColorWheelReturn As Integer = ColorWheel()
@@ -142,13 +144,33 @@ Module ThemeStudio
                             End If
                         Case 15 'Save theme to current directory
                             SaveThemeToCurrentDirectory(ThemeName)
-                        Case 16 'Save theme to another directory
+                        Case 16 'Save theme to another directory...
                             Wdbg("I", "Prompting user for directory name...")
                             W(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
                             Dim DirectoryName As String = Console.ReadLine
+                            DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
                             Wdbg("I", "Got directory name {0}.", DirectoryName)
                             SaveThemeToAnotherDirectory(ThemeName, DirectoryName)
-                        Case 17 'Exit
+                        Case 17 'Save theme to current directory as...
+                            Wdbg("I", "Prompting user for theme name...")
+                            W(DoTranslation("Specify theme name:") + " [{0}] ", False, ColTypes.Input, ThemeName)
+                            Dim AltThemeName As String = Console.ReadLine
+                            AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
+                            Wdbg("I", "Got theme name {0}.", AltThemeName)
+                            SaveThemeToCurrentDirectory(AltThemeName)
+                        Case 18 'Save theme to another directory as...
+                            Wdbg("I", "Prompting user for theme and directory name...")
+                            W(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
+                            Dim DirectoryName As String = Console.ReadLine
+                            DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
+                            Wdbg("I", "Got directory name {0}.", DirectoryName)
+                            Wdbg("I", "Prompting user for theme name...")
+                            W(DoTranslation("Specify theme name:") + " [{0}] ", False, ColTypes.Input, ThemeName)
+                            Dim AltThemeName As String = Console.ReadLine
+                            AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
+                            Wdbg("I", "Got theme name {0}.", AltThemeName)
+                            SaveThemeToAnotherDirectory(AltThemeName, DirectoryName)
+                        Case 19 'Exit
                             Wdbg("I", "Exiting studio...")
                             StudioExiting = True
                     End Select
