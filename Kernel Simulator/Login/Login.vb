@@ -55,7 +55,7 @@ Public Module Login
             End If
 
             'Generate user list
-            If ShowAvailableUsers Then W(DoTranslation("Available usernames: {0}"), True, ColTypes.Neutral, String.Join(", ", userword.Keys))
+            If ShowAvailableUsers Then W(DoTranslation("Available usernames: {0}"), True, ColTypes.Neutral, String.Join(", ", ListAllUsers))
 
             'Read MOTD and MAL
             ReadMOTDFromFile(MessageType.MOTD)
