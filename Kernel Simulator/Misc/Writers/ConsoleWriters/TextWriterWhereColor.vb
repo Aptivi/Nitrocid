@@ -26,9 +26,10 @@ Module TextWriterWhereColor
     ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Left">Column number in console</param>
     ''' <param name="Top">Row number in console</param>
+    ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="colorType">A type of colors that will be changed.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWhere(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhere(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal [Return] As Boolean, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -80,7 +81,7 @@ Module TextWriterWhereColor
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
             Write(msg)
-            SetCursorPosition(OldLeft, OldTop)
+            If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If backgroundColor = ConsoleColors.Black Then ResetColor()
             If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
@@ -96,9 +97,10 @@ Module TextWriterWhereColor
     ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Left">Column number in console</param>
     ''' <param name="Top">Row number in console</param>
+    ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWhereC16(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereC16(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal [Return] As Boolean, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -115,7 +117,7 @@ Module TextWriterWhereColor
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
             Write(msg)
-            SetCursorPosition(OldLeft, OldTop)
+            If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If backgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
@@ -131,10 +133,11 @@ Module TextWriterWhereColor
     ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Left">Column number in console</param>
     ''' <param name="Top">Row number in console</param>
+    ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWhereC16(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereC16(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal [Return] As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -151,7 +154,7 @@ Module TextWriterWhereColor
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
             Write(msg)
-            SetCursorPosition(OldLeft, OldTop)
+            If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If BackgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
@@ -167,9 +170,10 @@ Module TextWriterWhereColor
     ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Left">Column number in console</param>
     ''' <param name="Top">Row number in console</param>
+    ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWhereC(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal color As ConsoleColors, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereC(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal [Return] As Boolean, ByVal color As ConsoleColors, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -189,7 +193,7 @@ Module TextWriterWhereColor
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
             Write(msg)
-            SetCursorPosition(OldLeft, OldTop)
+            If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If backgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
@@ -205,10 +209,11 @@ Module TextWriterWhereColor
     ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Left">Column number in console</param>
     ''' <param name="Top">Row number in console</param>
+    ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWhereC(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal ForegroundColor As ConsoleColors, ByVal BackgroundColor As ConsoleColors, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereC(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal [Return] As Boolean, ByVal ForegroundColor As ConsoleColors, ByVal BackgroundColor As ConsoleColors, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -228,7 +233,7 @@ Module TextWriterWhereColor
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
             Write(msg)
-            SetCursorPosition(OldLeft, OldTop)
+            If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If BackgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
@@ -244,10 +249,11 @@ Module TextWriterWhereColor
     ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Left">Column number in console</param>
     ''' <param name="Top">Row number in console</param>
+    ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="ColorRGBFG">Foreground color RGB storage</param>
     ''' <param name="ColorRGBBG">Background color RGB storage</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWhereTrueColor(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal ColorRGBFG As RGB, ByVal ColorRGBBG As RGB, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereTrueColor(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal [Return] As Boolean, ByVal ColorRGBFG As RGB, ByVal ColorRGBBG As RGB, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -267,7 +273,7 @@ Module TextWriterWhereColor
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
             Write(msg)
-            SetCursorPosition(OldLeft, OldTop)
+            If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If backgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
@@ -283,9 +289,10 @@ Module TextWriterWhereColor
     ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Left">Column number in console</param>
     ''' <param name="Top">Row number in console</param>
+    ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="ColorRGB">Color RGB storage</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWhereTrueColor(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal ColorRGB As RGB, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereTrueColor(ByVal msg As String, ByVal Left As Integer, ByVal Top As Integer, ByVal [Return] As Boolean, ByVal ColorRGB As RGB, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -305,7 +312,7 @@ Module TextWriterWhereColor
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
             Write(msg)
-            SetCursorPosition(OldLeft, OldTop)
+            If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If backgroundColor = ConsoleColors.Black Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()

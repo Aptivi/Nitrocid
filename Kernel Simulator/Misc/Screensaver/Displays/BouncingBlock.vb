@@ -57,11 +57,11 @@ Module BouncingBlockDisplay
                     Dim GreenColorNum As Integer = RandomDriver.Next(255)
                     Dim BlueColorNum As Integer = RandomDriver.Next(255)
                     Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                    WriteWhereTrueColor(" ", ColumnBlock, RowBlock, New RGB(255, 255, 255), ColorStorage)
+                    WriteWhereTrueColor(" ", ColumnBlock, RowBlock, True, New RGB(255, 255, 255), ColorStorage)
                 ElseIf BouncingBlock255Colors Then
                     Dim esc As Char = GetEsc()
                     Dim ColorNum As Integer = RandomDriver.Next(255)
-                    WriteWhereC(" ", ColumnBlock, RowBlock, ConsoleColors.White, BackgroundColor:=[Enum].Parse(GetType(ConsoleColors), ColorNum))
+                    WriteWhereC(" ", ColumnBlock, RowBlock, True, ConsoleColors.White, BackgroundColor:=[Enum].Parse(GetType(ConsoleColors), ColorNum))
                 Else
                     Dim OldColumn As Integer = Console.CursorLeft
                     Dim OldRow As Integer = Console.CursorTop

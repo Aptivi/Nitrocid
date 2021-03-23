@@ -203,8 +203,8 @@ Module ThemeStudio
             Console.Clear()
             W(vbNewLine + DoTranslation("Select color using ""<-"" and ""->"" keys. Press ENTER to quit. Press ""i"" to insert color number manually."), True, ColTypes.Neutral)
             W(vbNewLine + " <", False, ColTypes.Gray)
-            WriteWhereC(CurrentColor.ToString, (Console.CursorLeft + 30 - CurrentColor.ToString.Length) / 2, Console.CursorTop, CurrentColor)
-            WriteWhere(">", Console.CursorLeft + 27, Console.CursorTop, ColTypes.Gray)
+            WriteWhereC(CurrentColor.ToString, (Console.CursorLeft + 30 - CurrentColor.ToString.Length) / 2, Console.CursorTop, True, CurrentColor)
+            WriteWhere(">", Console.CursorLeft + 27, Console.CursorTop, True, ColTypes.Gray)
             WriteC(vbNewLine + vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, CurrentColor)
             Dim ConsoleResponse As ConsoleKeyInfo = Console.ReadKey(True)
             If ConsoleResponse.Key = ConsoleKey.LeftArrow Then
@@ -220,7 +220,7 @@ Module ThemeStudio
                     CurrentColor += 1
                 End If
             ElseIf ConsoleResponse.Key = ConsoleKey.I Then
-                WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, ColTypes.Input, CInt(CurrentColor))
+                WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, CInt(CurrentColor))
                 Dim ColorNum As String = Console.ReadLine
                 If IsNumeric(ColorNum) Then
                     If ColorNum >= 0 And ColorNum <= 255 Then

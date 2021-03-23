@@ -51,7 +51,7 @@ Module BouncingTextDisplay
                 Wdbg("I", "All clean. Bouncing Text screensaver stopped.")
                 Exit Do
             Else
-                WriteWhere(BouncingTextWrite, ColumnFirstLetter, RowText, ColTypes.Neutral)
+                WriteWhere(BouncingTextWrite, ColumnFirstLetter, RowText, True, ColTypes.Neutral)
 
                 If Direction = "BottomRight" Then
                     RowText += 1

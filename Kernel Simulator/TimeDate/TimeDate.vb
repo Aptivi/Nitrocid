@@ -44,11 +44,11 @@ Public Module TimeDate
                 If CornerTD = True And Not InSaver Then
                     oldWid = Console.WindowWidth - TimeString.Length - 1
                     oldTop = Console.WindowTop
-                    WriteWhere(TimeString, Console.WindowWidth - TimeString.Length - 1, Console.WindowTop, ColTypes.Neutral)
+                    WriteWhere(TimeString, Console.WindowWidth - TimeString.Length - 1, Console.WindowTop, True, ColTypes.Neutral)
                 End If
             End If
             Thread.Sleep(1000)
-            If oldWid <> 0 Then WriteWhere(StrDup(TimeString.Length, " "), oldWid, oldTop, ColTypes.Neutral)
+            If oldWid <> 0 Then WriteWhere(StrDup(TimeString.Length, " "), oldWid, oldTop, True, ColTypes.Neutral)
         Loop
 
     End Sub
