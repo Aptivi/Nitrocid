@@ -22,8 +22,9 @@ Imports System.Text.RegularExpressions
 Public Module UserManagement
 
     'Variables
-    Public adminList As New Dictionary(Of String, Boolean)()         'Users that are allowed to have administrative access.
-    Public disabledList As New Dictionary(Of String, Boolean)()      'Users that are unable to login
+    Public adminList As New Dictionary(Of String, Boolean)         'Users that are allowed to have administrative access.
+    Public disabledList As New Dictionary(Of String, Boolean)      'Users that are unable to login
+    Public AnonymousList As New Dictionary(Of String, Boolean)     'Users that shouldn't be listed in user list
     Public UsersWriter As StreamWriter
 
     '---------- User Management ----------
@@ -91,6 +92,10 @@ Public Module UserManagement
         Next
     End Sub
 
+    ''' <summary>
+    ''' Gets user's encrypted password
+    ''' </summary>
+    ''' <param name="User">Target User</param>
     Function GetUserEncryptedPassword(ByVal User As String)
         'Opens file stream
         Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
@@ -206,6 +211,11 @@ Public Module UserManagement
         Return False
     End Function
 
+    ''' <summary>
+    ''' Changes the username
+    ''' </summary>
+    ''' <param name="OldName">Old username</param>
+    ''' <param name="Username">New username</param>
     Public Function ChangeUsername(ByVal OldName As String, ByVal Username As String) As Boolean
         If userword.ContainsKey(OldName) Then
             If Not userword.ContainsKey(Username) Then
@@ -296,6 +306,22 @@ Public Module UserManagement
             Throw New Exceptions.UserManagementException(DoTranslation("Wrong user password."))
         End If
         Return False
+    End Function
+
+    ''' <summary>
+    ''' Lists all users and includes anonymous and disabled users if enabled.
+    ''' </summary>
+    ''' <param name="IncludeAnonymous">Include anonymous users</param>
+    ''' <param name="IncludeDisabled">Include disabled users</param>
+    Public Function ListAllUsers(Optional ByVal IncludeAnonymous As Boolean = False, Optional ByVal IncludeDisabled As Boolean = False) As List(Of String)
+        Dim UsersList As New List(Of String)(userword.Keys)
+        If Not IncludeAnonymous Then
+            UsersList.RemoveAll(New Predicate(Of String)(Function(x) AnonymousList.Keys.Contains(x) And AnonymousList(x) = True))
+        End If
+        If Not IncludeDisabled Then
+            UsersList.RemoveAll(New Predicate(Of String)(Function(x) disabledList.Keys.Contains(x) And disabledList(x) = True))
+        End If
+        Return UsersList
     End Function
 
 End Module

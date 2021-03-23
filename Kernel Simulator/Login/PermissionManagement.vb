@@ -26,6 +26,7 @@ Public Module PermissionManagement
     Public Enum PermissionType As Integer
         Administrator = 1
         Disabled
+        Anonymous
     End Enum
 
     ''' <summary>
@@ -49,21 +50,13 @@ Public Module PermissionManagement
             Wdbg("I", "Mode: {0}", PermissionMode)
             If PermissionMode = PermissionManagementMode.Allow Then
                 AddPermission(PermType, Username)
-                If PermType = PermissionType.Administrator Then
-                    W(DoTranslation("The user {0} has been added to the admin list."), True, ColTypes.Neutral, Username)
-                ElseIf PermType = PermissionType.Disabled Then
-                    W(DoTranslation("The user {0} has been added to the disabled list."), True, ColTypes.Neutral, Username)
-                End If
+                W(DoTranslation("The user {0} has been added to the ""{1}"" list."), True, ColTypes.Neutral, Username, PermType.ToString)
             ElseIf PermissionMode = PermissionManagementMode.Disallow Then
                 RemovePermission(PermType, Username)
-                If PermType = PermissionType.Administrator Then
-                    W(DoTranslation("The user {0} has been removed from the admin list."), True, ColTypes.Neutral, Username)
-                ElseIf PermType = PermissionType.Disabled Then
-                    W(DoTranslation("The user {0} has been removed from the disabled list."), True, ColTypes.Neutral, Username)
-                End If
+                W(DoTranslation("The user {0} has been removed from the ""{1}"" list."), True, ColTypes.Neutral, Username, PermType.ToString)
             Else
                 Wdbg("W", "Mode is invalid")
-                W(DoTranslation("You have found a bug in the permission system: invalid mode {0}"), True, ColTypes.Err, PermissionMode)
+                W(DoTranslation("Invalid mode {0}"), True, ColTypes.Err, PermissionMode)
             End If
         Catch ex As Exception
             If DebugMode = True Then
@@ -104,6 +97,9 @@ Public Module PermissionManagement
             ElseIf PermType = PermissionType.Disabled Then
                 disabledList(Username) = True
                 Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
+            ElseIf PermType = PermissionType.Anonymous Then
+                AnonymousList(Username) = True
+                Wdbg("I", "User {0} allowed (Anonymous): {1}", Username, AnonymousList(Username))
             Else
                 Wdbg("W", "Type is invalid")
                 Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}").FormatString(PermType))
@@ -120,6 +116,7 @@ Public Module PermissionManagement
             If UsersLines(i).StartsWith($"{Username},") Then
                 UserLine(2) = adminList(Username)
                 UserLine(3) = disabledList(Username)
+                UserLine(4) = AnonymousList(Username)
                 UsersLines(i) = UserLine.Join(",")
                 Exit For
             End If
@@ -150,11 +147,14 @@ Public Module PermissionManagement
         If userword.Keys.ToArray.Contains(Username) And Username <> signedinusrnm Then
             Wdbg("I", "Type is {0}", PermType)
             If PermType = PermissionType.Administrator Then
-                Wdbg("I", "User {0} allowed (Admin): {1}", Username, adminList(Username))
                 adminList(Username) = False
+                Wdbg("I", "User {0} allowed (Admin): {1}", Username, adminList(Username))
             ElseIf PermType = PermissionType.Disabled Then
-                Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
                 disabledList(Username) = False
+                Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
+            ElseIf PermType = PermissionType.Anonymous Then
+                AnonymousList(Username) = False
+                Wdbg("I", "User {0} allowed (Anonymous): {1}", Username, AnonymousList(Username))
             Else
                 Wdbg("W", "Type is invalid")
                 Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}").FormatString(PermType))
@@ -174,6 +174,7 @@ Public Module PermissionManagement
             If UsersLines(i).StartsWith($"{Username},") Then
                 UserLine(2) = adminList(Username)
                 UserLine(3) = disabledList(Username)
+                UserLine(4) = AnonymousList(Username)
                 UsersLines(i) = UserLine.Join(",")
                 Exit For
             End If
@@ -194,25 +195,30 @@ Public Module PermissionManagement
         If adminList.ContainsKey(OldName) = True And disabledList.ContainsKey(OldName) = True Then
             Try
                 'Store permissions
-                Dim Temporary1 As Boolean = adminList(OldName)
-                Dim Temporary2 As Boolean = disabledList(OldName)
+                Dim AdminAllowed As Boolean = adminList(OldName)
+                Dim DisabledAllowed As Boolean = disabledList(OldName)
+                Dim AnonymousAllowed As Boolean = AnonymousList(OldName)
 
                 'Remove old user entry
                 Wdbg("I", "Removing {0} from Admin List", OldName)
                 adminList.Remove(OldName)
                 Wdbg("I", "Removing {0} from Disabled List", OldName)
                 disabledList.Remove(OldName)
+                Wdbg("I", "Removing {0} from Anonymous List", OldName)
+                AnonymousList.Remove(OldName)
 
                 'Add new user entry
-                adminList.Add(Username, Temporary1)
-                Wdbg("I", "Added {0} to Admin List with value of {1}", Username, Temporary1)
-                disabledList.Add(Username, Temporary2)
-                Wdbg("I", "Added {0} to Disabled List with value of {1}", Username, Temporary2)
+                adminList.Add(Username, AdminAllowed)
+                Wdbg("I", "Added {0} to Admin List with value of {1}", Username, AdminAllowed)
+                disabledList.Add(Username, DisabledAllowed)
+                Wdbg("I", "Added {0} to Disabled List with value of {1}", Username, DisabledAllowed)
+                AnonymousList.Add(Username, AnonymousAllowed)
+                Wdbg("I", "Added {0} to Anonymous List with value of {1}", Username, AnonymousAllowed)
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
                 Throw New Exceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.") + vbNewLine +
-                                                                            DoTranslation("Error {0}: {1}").FormatString(Err.Number, ex.Message))
+                                                                   DoTranslation("Error {0}: {1}").FormatString(Err.Number, ex.Message))
             End Try
         Else
             Throw New Exceptions.PermissionManagementException(DoTranslation("One of the permission lists doesn't contain username {0}."))
@@ -231,12 +237,13 @@ Public Module PermissionManagement
             'Initialize permissions locally
             If Not adminList.ContainsKey(NewUser) Then adminList.Add(NewUser, False)
             If Not disabledList.ContainsKey(NewUser) Then disabledList.Add(NewUser, False)
+            If Not AnonymousList.ContainsKey(NewUser) Then AnonymousList.Add(NewUser, False)
 
             'Initialize permissions globally
             Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
             For i As Integer = 0 To UsersLines.Count - 1
                 If UsersLines(i).StartsWith($"{NewUser},") And UsersLines(i).AllIndexesOf(",").Count = 1 Then
-                    UsersLines(i) = UsersLines(i) + ",False,False"
+                    UsersLines(i) = UsersLines(i) + ",False,False,False"
                     Exit For
                 End If
             Next
@@ -263,8 +270,10 @@ Public Module PermissionManagement
                 Dim UserName As String = UserLine(0)
                 Dim AdminEnabled As String = UserLine(2)
                 Dim UserDisabled As String = UserLine(3)
+                Dim Anonymous As String = UserLine(4)
                 adminList(UserName) = CType(AdminEnabled, Boolean)
                 disabledList(UserName) = CType(UserDisabled, Boolean)
+                AnonymousList(UserName) = CType(Anonymous, Boolean)
             Next
             File.WriteAllLines(paths("Users"), UsersLines)
             Return True
