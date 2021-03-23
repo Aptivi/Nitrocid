@@ -218,9 +218,9 @@ Module ProgressClockDisplay
                     If Not KernelDateTime.Second = 0 Then WriteWhereC16(" ".Repeat(KernelDateTime.Second * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionSeconds, True, ConsoleColor.Black, BackgroundColor:=ColorNumSeconds)
 
                     'Print information
-                    WriteWhereC16("H: {0}/24", 4, InformationPositionHours, [Enum].Parse(GetType(ConsoleColors), ColorNumHours), KernelDateTime.Hour)
-                    WriteWhereC16("M: {0}/60", 4, InformationPositionMinutes, [Enum].Parse(GetType(ConsoleColors), ColorNumMinutes), KernelDateTime.Minute)
-                    WriteWhereC16("S: {0}/60", 4, InformationPositionSeconds, [Enum].Parse(GetType(ConsoleColors), ColorNumSeconds), KernelDateTime.Second)
+                    WriteWhereC16("H: {0}/24", 4, InformationPositionHours, True, ColorNumHours, KernelDateTime.Hour)
+                    WriteWhereC16("M: {0}/60", 4, InformationPositionMinutes, True, ColorNumMinutes, KernelDateTime.Minute)
+                    WriteWhereC16("S: {0}/60", 4, InformationPositionSeconds, True, ColorNumSeconds, KernelDateTime.Second)
 
                     'Print date information
                     WriteWhereC16(Render, Console.WindowWidth / 2 - Render.Length / 2, Console.WindowHeight - 2, True, ColorNum)
