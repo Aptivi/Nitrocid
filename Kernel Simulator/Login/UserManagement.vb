@@ -56,12 +56,9 @@ Public Module UserManagement
             'Add user globally
             UsersWriter = New StreamWriter(paths("Users"), True) With {.AutoFlush = True}
             If Not UsersLines.Count = 0 Then
-                For i As Integer = 0 To UsersLines.Count - 1
-                    If Not userword.ContainsKey(uninitUser) Then
-                        UsersWriter.WriteLine(uninitUser + "," + unpassword)
-                        Exit For
-                    End If
-                Next
+                If UsersLines.Count <> userword.Count Then
+                    UsersWriter.WriteLine(uninitUser + "," + unpassword)
+                End If
             Else
                 UsersWriter.WriteLine(uninitUser + "," + unpassword)
             End If
