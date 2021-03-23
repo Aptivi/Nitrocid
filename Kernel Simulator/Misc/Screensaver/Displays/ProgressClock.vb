@@ -126,10 +126,10 @@ Module ProgressClockDisplay
                     Dim InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds As Integer
                     If ProgressClockCycleColors Then
                         If CurrentTicks >= ProgressClockCycleColorsTicks Then
-                            ColorNumHours = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(255))
-                            ColorNumMinutes = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(255))
-                            ColorNumSeconds = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(255))
-                            ColorNum = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(255))
+                            ColorNumHours = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(1, 255))
+                            ColorNumMinutes = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(1, 255))
+                            ColorNumSeconds = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(1, 255))
+                            ColorNum = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(1, 255))
                             CurrentTicks = 0
                         End If
                     Else
@@ -178,10 +178,10 @@ Module ProgressClockDisplay
                     Dim InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds As Integer
                     If ProgressClockCycleColors Then
                         If CurrentTicks >= ProgressClockCycleColorsTicks Then
-                            ColorNumHours = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(15))
-                            ColorNumMinutes = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(15))
-                            ColorNumSeconds = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(15))
-                            ColorNum = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(15))
+                            ColorNumHours = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(1, 15))
+                            ColorNumMinutes = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(1, 15))
+                            ColorNumSeconds = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(1, 15))
+                            ColorNum = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(1, 15))
                             CurrentTicks = 0
                         End If
                     Else
