@@ -146,7 +146,7 @@ Imports KS
     <TestMethod()> Public Sub TestMoveFileToDirectory()
         InitPaths()
         CurrDir = paths("Home")
-        Dim SourcePath As String = IO.Path.GetFullPath("TestSynth.txt")
+        Dim SourcePath As String = IO.Path.GetFullPath("TestMove.txt")
         Dim TargetPath As String = "/Documents"
         Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move file ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
     End Sub
@@ -157,8 +157,8 @@ Imports KS
     <TestMethod()> Public Sub TestMoveFileToFile()
         InitPaths()
         CurrDir = paths("Home")
-        Dim SourcePath As String = "/Documents/TestSynth.txt"
-        Dim TargetPath As String = IO.Path.GetFullPath("TestSynth.txt")
+        Dim SourcePath As String = "/Documents/TestMove.txt"
+        Dim TargetPath As String = IO.Path.GetFullPath("TestMove.txt")
         Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move file ""{0}"" to file ""{1}"". Expected True, got False.", SourcePath, TargetPath)
     End Sub
 

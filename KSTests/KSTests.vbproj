@@ -98,6 +98,9 @@
     <Compile Include="NetworkTests.vb" />
     <Compile Include="InitTest.vb" />
     <Compile Include="UserTests.vb" />
+    <Content Include="TestMove.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestText.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
