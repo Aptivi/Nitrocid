@@ -104,7 +104,7 @@
     <Content Include="TestText.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestAliases.csv">
+    <Content Include="TestAliases.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

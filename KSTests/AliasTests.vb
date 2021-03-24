@@ -26,14 +26,13 @@ Imports KS
     ''' </summary>
     <TestMethod()> Public Sub TestInitAliases()
         InitPaths()
-        Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.csv")
+        Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.json")
         If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
         InitAliases()
         Assert.IsTrue(Aliases.Count > 0, "Initialization of test aliases failed. Aliases.Count is {0}. Shell aliases below:" + vbNewLine + vbNewLine +
                                          "- " + String.Join(vbNewLine + "- ", Aliases.Keys), Aliases.Count)
         Assert.IsTrue(RemoteDebugAliases.Count > 0, "Initialization of test aliases failed. RemoteDebugAliases.Count is {0}. Remote aliases below:" + vbNewLine + vbNewLine +
                                                     "- " + String.Join(vbNewLine + "- ", RemoteDebugAliases.Keys), RemoteDebugAliases.Count)
-        CloseAliasesFile()
     End Sub
 
     ''' <summary>
@@ -41,7 +40,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> Public Sub TestInitAndSaveAliases()
         InitPaths()
-        Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.csv")
+        Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.json")
         If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
         InitAliases()
         SaveAliases()
@@ -49,7 +48,6 @@ Imports KS
                                          "- " + String.Join(vbNewLine + "- ", Aliases.Keys), Aliases.Count)
         Assert.IsTrue(RemoteDebugAliases.Count > 0, "Initialization and saving of test aliases failed. RemoteDebugAliases.Count is {0}. Remote aliases below:" + vbNewLine + vbNewLine +
                                                     "- " + String.Join(vbNewLine + "- ", RemoteDebugAliases.Keys), RemoteDebugAliases.Count)
-        CloseAliasesFile()
     End Sub
 
     ''' <summary>

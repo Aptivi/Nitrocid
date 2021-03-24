@@ -1,0 +1,27 @@
+[
+  {
+    "Alias": "ls",
+    "Command": "list",
+    "Type": "Shell"
+  },
+  {
+    "Alias": "h",
+    "Command": "help",
+    "Type": "Shell"
+  },
+  {
+    "Alias": "trc",
+    "Command": "trace",
+    "Type": "Remote"
+  },
+  {
+    "Alias": "e",
+    "Command": "exit",
+    "Type": "Remote"
+  },
+  {
+    "Alias": "currld",
+    "Command": "currlocaldir",
+    "Type": "FTPShell"
+  }
+]
