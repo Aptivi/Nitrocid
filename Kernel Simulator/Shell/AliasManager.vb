@@ -16,6 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+Imports Newtonsoft.Json.Linq
+
 Public Module AliasManager
 
     Public Aliases As New Dictionary(Of String, String)
@@ -23,7 +26,6 @@ Public Module AliasManager
     Public FTPShellAliases As New Dictionary(Of String, String)
     Public MailShellAliases As New Dictionary(Of String, String)
     Public SFTPShellAliases As New Dictionary(Of String, String)
-    Private AliasStreamReader As IO.StreamReader
 
     ''' <summary>
     ''' Aliases type
@@ -36,130 +38,114 @@ Public Module AliasManager
         MailShell
     End Enum
 
-    'Alias format: {Alias Type}, {Alias Command}, {Actual Command}
-    'Example:      Shell, h, help
-    'Example 2:    Remote, e, exit
     ''' <summary>
     ''' Initializes aliases
     ''' </summary>
     Public Sub InitAliases()
         'Get all aliases from file
-        AliasStreamReader = New IO.StreamReader(paths("Aliases"))
-        While Not AliasStreamReader.EndOfStream
-            'Read line
-            Dim line As String = AliasStreamReader.ReadLine
-            Dim AliasCmd, ActualCmd As String
-            If line.StartsWith("Shell, ") Then
-                line = line.Replace("Shell, ", "")
+        If Not File.Exists(paths("Aliases")) Then MakeFile(paths("Aliases"))
+        Dim AliasJsonContent As String = File.ReadAllText(paths("Aliases"))
+        Dim AliasNameToken As JToken = JToken.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "{}"))
+        Dim AliasCmd, ActualCmd, AliasType As String
 
-                'Add alias to list from file
-                AliasCmd = line.Remove(line.IndexOf(","c))
-                ActualCmd = line.Substring(line.IndexOf(" "c) + 1)
-                If Not Aliases.ContainsKey(AliasCmd) Then
-                    Wdbg("I", "Adding ""{0}, {1}"" from aliases.csv to list...", AliasCmd, ActualCmd)
-                    Aliases.Add(AliasCmd, ActualCmd)
-                End If
-            ElseIf line.StartsWith("Remote, ") Then
-                line = line.Replace("Remote, ", "")
-
-                'Add alias to list from file
-                AliasCmd = line.Remove(line.IndexOf(","c))
-                ActualCmd = line.Substring(line.IndexOf(" "c) + 1)
-                If Not RemoteDebugAliases.ContainsKey(AliasCmd) Then
-                    Wdbg("I", "Adding ""{0}, {1}"" from aliases.csv to list...", AliasCmd, ActualCmd)
-                    RemoteDebugAliases.Add(AliasCmd, ActualCmd)
-                End If
-            ElseIf line.StartsWith("FTPShell, ") Then
-                line = line.Replace("FTPShell, ", "")
-
-                'Add alias to list from file
-                AliasCmd = line.Remove(line.IndexOf(","c))
-                ActualCmd = line.Substring(line.IndexOf(" "c) + 1)
-                If Not FTPShellAliases.ContainsKey(AliasCmd) Then
-                    Wdbg("I", "Adding ""{0}, {1}"" from aliases.csv to list...", AliasCmd, ActualCmd)
-                    FTPShellAliases.Add(AliasCmd, ActualCmd)
-                End If
-            ElseIf line.StartsWith("SFTPShell, ") Then
-                line = line.Replace("SFTPShell, ", "")
-
-                'Add alias to list from file
-                AliasCmd = line.Remove(line.IndexOf(","c))
-                ActualCmd = line.Substring(line.IndexOf(" "c) + 1)
-                If Not SFTPShellAliases.ContainsKey(AliasCmd) Then
-                    Wdbg("I", "Adding ""{0}, {1}"" from aliases.csv to list...", AliasCmd, ActualCmd)
-                    SFTPShellAliases.Add(AliasCmd, ActualCmd)
-                End If
-            ElseIf line.StartsWith("Mail, ") Then
-                line = line.Replace("Mail, ", "")
-
-                'Add alias to list from file
-                AliasCmd = line.Remove(line.IndexOf(","c))
-                ActualCmd = line.Substring(line.IndexOf(" "c) + 1)
-                If Not MailShellAliases.ContainsKey(AliasCmd) Then
-                    Wdbg("I", "Adding ""{0}, {1}"" from aliases.csv to list...", AliasCmd, ActualCmd)
-                    MailShellAliases.Add(AliasCmd, ActualCmd)
-                End If
-            Else
-                'Invalid type spotted. (General case)
-                'If you have aliases.csv which is generated on older versions of KS, it might not be up-to-date, which makes you have to
-                'prefix all the entries with the type and the comma. For example, if your aliases.csv looks like:
-                '  h, help
-                'you should change it so it looks like:
-                '  Shell, h, help
-                Wdbg("E", "Invalid type {0}", line.Remove(line.IndexOf(","c)))
-            End If
-        End While
-        AliasStreamReader.BaseStream.Seek(0, IO.SeekOrigin.Begin)
+        For Each AliasObject As JObject In AliasNameToken
+            AliasCmd = AliasObject("Alias")
+            ActualCmd = AliasObject("Command")
+            AliasType = AliasObject("Type")
+            Wdbg("I", "Adding ""{0}"" and ""{1}"" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType)
+            Select Case AliasType
+                Case "Shell"
+                    If Not Aliases.ContainsKey(AliasCmd) Then
+                        Aliases.Add(AliasCmd, ActualCmd)
+                    End If
+                Case "Remote"
+                    If Not RemoteDebugAliases.ContainsKey(AliasCmd) Then
+                        RemoteDebugAliases.Add(AliasCmd, ActualCmd)
+                    End If
+                Case "FTPShell"
+                    If Not FTPShellAliases.ContainsKey(AliasCmd) Then
+                        FTPShellAliases.Add(AliasCmd, ActualCmd)
+                    End If
+                Case "SFTPShell"
+                    If Not SFTPShellAliases.ContainsKey(AliasCmd) Then
+                        SFTPShellAliases.Add(AliasCmd, ActualCmd)
+                    End If
+                Case "Mail"
+                    If Not MailShellAliases.ContainsKey(AliasCmd) Then
+                        MailShellAliases.Add(AliasCmd, ActualCmd)
+                    End If
+                Case Else
+                    Wdbg("E", "Invalid type {0}", AliasType)
+            End Select
+        Next
     End Sub
 
     ''' <summary>
     ''' Saves aliases
     ''' </summary>
     Public Sub SaveAliases()
-        'Variables
-        Dim aliast As New List(Of String)
+        'Get all aliases from file
+        If Not File.Exists(paths("Aliases")) Then MakeFile(paths("Aliases"))
+        Dim AliasJsonContent As String = File.ReadAllText(paths("Aliases"))
+        Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
 
         'Shell aliases
         For i As Integer = 0 To Aliases.Count - 1
-            Wdbg("I", "Adding ""Shell, {0}, {1}"" from list to aliases.csv...", Aliases.Keys(i), Aliases.Values(i))
-            aliast.Add($"Shell, {Aliases.Keys(i)}, {Aliases.Values(i)}")
+            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Shell...", Aliases.Keys(i), Aliases.Values(i))
+            Dim AliasObject As New JObject From {
+                {"Alias", Aliases.Keys(i)},
+                {"Command", Aliases.Values(i)},
+                {"Type", "Shell"}
+            }
+            AliasNameToken.Add(AliasObject)
         Next
 
         'Remote Debug aliases
         For i As Integer = 0 To RemoteDebugAliases.Count - 1
-            Wdbg("I", "Adding ""Remote, {0}, {1}"" from list to aliases.csv...", RemoteDebugAliases.Keys(i), RemoteDebugAliases.Values(i))
-            aliast.Add($"Remote, {RemoteDebugAliases.Keys(i)}, {RemoteDebugAliases.Values(i)}")
+            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Remote...", RemoteDebugAliases.Keys(i), RemoteDebugAliases.Values(i))
+            Dim AliasObject As New JObject From {
+                {"Alias", RemoteDebugAliases.Keys(i)},
+                {"Command", RemoteDebugAliases.Values(i)},
+                {"Type", "Remote"}
+            }
+            AliasNameToken.Add(AliasObject)
         Next
 
         'FTP shell aliases
         For i As Integer = 0 To FTPShellAliases.Count - 1
-            Wdbg("I", "Adding ""FTPShell, {0}, {1}"" from list to aliases.csv...", FTPShellAliases.Keys(i), FTPShellAliases.Values(i))
-            aliast.Add($"FTPShell, {FTPShellAliases.Keys(i)}, {FTPShellAliases.Values(i)}")
+            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type FTPShell...", FTPShellAliases.Keys(i), FTPShellAliases.Values(i))
+            Dim AliasObject As New JObject From {
+                {"Alias", FTPShellAliases.Keys(i)},
+                {"Command", FTPShellAliases.Values(i)},
+                {"Type", "FTPShell"}
+            }
+            AliasNameToken.Add(AliasObject)
         Next
 
         'SFTP shell aliases
         For i As Integer = 0 To SFTPShellAliases.Count - 1
-            Wdbg("I", "Adding ""SFTPShell, {0}, {1}"" from list to aliases.csv...", SFTPShellAliases.Keys(i), SFTPShellAliases.Values(i))
-            aliast.Add($"SFTPShell, {SFTPShellAliases.Keys(i)}, {SFTPShellAliases.Values(i)}")
+            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type SFTPShell...", SFTPShellAliases.Keys(i), SFTPShellAliases.Values(i))
+            Dim AliasObject As New JObject From {
+                {"Alias", SFTPShellAliases.Keys(i)},
+                {"Command", SFTPShellAliases.Values(i)},
+                {"Type", "SFTPShell"}
+            }
+            AliasNameToken.Add(AliasObject)
         Next
 
         'Mail shell aliases
         For i As Integer = 0 To MailShellAliases.Count - 1
-            Wdbg("I", "Adding ""Mail, {0}, {1}"" from list to aliases.csv...", MailShellAliases.Keys(i), MailShellAliases.Values(i))
-            aliast.Add($"Mail, {MailShellAliases.Keys(i)}, {MailShellAliases.Values(i)}")
+            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Mail...", MailShellAliases.Keys(i), MailShellAliases.Values(i))
+            Dim AliasObject As New JObject From {
+                {"Alias", MailShellAliases.Keys(i)},
+                {"Command", MailShellAliases.Values(i)},
+                {"Type", "Mail"}
+            }
+            AliasNameToken.Add(AliasObject)
         Next
 
-        'Close the stream reader, write all the lines, then open the stream reader again
-        AliasStreamReader.Close()
-        IO.File.WriteAllLines(paths("Aliases"), aliast)
-        AliasStreamReader = New IO.StreamReader(paths("Aliases"))
-    End Sub
-
-    ''' <summary>
-    ''' Closes aliases file
-    ''' </summary>
-    Public Sub CloseAliasesFile()
-        AliasStreamReader.Close()
+        'Save changes
+        File.WriteAllText(paths("Aliases"), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented))
     End Sub
 
     ''' <summary>

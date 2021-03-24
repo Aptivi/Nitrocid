@@ -17,8 +17,10 @@
 Imports KS.TextWriterColor
 Imports KS.Color
 Imports KS.Kernel
+Imports KS.KernelTools
 Imports KS.RemoteDebugTools
 Imports KS.NetworkTools
+Imports KS.AliasManager
 Imports System.IO
 
 Module Converter
@@ -31,6 +33,9 @@ Module Converter
         'Initialize all needed variables
         Dim ListOfOldPaths = GetOldPaths("")
         Dim ListOfBackups = GetOldPaths("KSBackup")
+
+        'Initialize paths
+        InitPaths()
 
         'Make backup directory
         W("- Making backup directory...", True, ColTypes.Stage)
@@ -97,6 +102,79 @@ Module Converter
         End If
         Console.WriteLine()
 
+#If USERSNOTDONE = False Then
+        'Import all users to JSON
+        W("- Importing all users to Users.json...", True, ColTypes.Stage)
+        If File.Exists(ListOfBackups("Users")) Then
+            'Read all users from old file
+            W("  - Reading users from users.csv...", True, ColTypes.Neutral)
+            Dim UsersLines As String() = File.ReadAllLines(ListOfBackups("Users"))
+            W("  - {0} users found.", True, ColTypes.Neutral, UsersLines.Count)
+
+            'Add users to new format
+            For Each UsersLine As String In UsersLines
+                W("  - Adding {0} to Users.json...", True, ColTypes.Neutral, UsersLine.Split(",")(0))
+                'TODO: Not done yet.
+            Next
+        Else
+            'File not found. Skip stage.
+            W("  - Warning: users.csv not found in home directory.", True, ColTypes.Warning)
+        End If
+        Console.WriteLine()
+#End If
+
+        'Import all aliases to JSON
+        W("- Importing all aliases to Aliases.json...", True, ColTypes.Stage)
+        If File.Exists(ListOfBackups("Aliases")) Then
+            'Read all aliases from old file
+            W("  - Reading users from aliases.csv...", True, ColTypes.Neutral)
+            Dim AliasesLines As String() = File.ReadAllLines(ListOfBackups("Aliases"))
+            W("  - {0} aliases found.", True, ColTypes.Neutral, AliasesLines.Count)
+
+            'Add aliases to new format
+            For Each AliasLine As String In AliasesLines
+                Dim AliasLineSplit() As String = AliasLine.Split({", "}, StringSplitOptions.RemoveEmptyEntries)
+                Dim AliasCommand As String = AliasLineSplit(1)
+                Dim ActualCommand As String = AliasLineSplit(2)
+                Dim AliasType As String = AliasLineSplit(0)
+                W("  - Adding {0} to Aliases.json...", True, ColTypes.Neutral, AliasCommand)
+                Select Case AliasType
+                    Case "Shell"
+                        If Not Aliases.ContainsKey(AliasCommand) Then
+                            Aliases.Add(AliasCommand, ActualCommand)
+                        End If
+                    Case "Remote"
+                        If Not RemoteDebugAliases.ContainsKey(AliasCommand) Then
+                            RemoteDebugAliases.Add(AliasCommand, ActualCommand)
+                        End If
+                    Case "FTPShell"
+                        If Not FTPShellAliases.ContainsKey(AliasCommand) Then
+                            FTPShellAliases.Add(AliasCommand, ActualCommand)
+                        End If
+                    Case "SFTPShell"
+                        If Not SFTPShellAliases.ContainsKey(AliasCommand) Then
+                            SFTPShellAliases.Add(AliasCommand, ActualCommand)
+                        End If
+                    Case "Mail"
+                        If Not MailShellAliases.ContainsKey(AliasCommand) Then
+                            MailShellAliases.Add(AliasCommand, ActualCommand)
+                        End If
+                    Case Else
+                        W("  - Invalid type {0}", True, ColTypes.Err, AliasType)
+                End Select
+            Next
+            W("  - Saving aliases to Aliases.json...", True, ColTypes.Neutral)
+            SaveAliases()
+        Else
+            'File not found. Skip stage.
+            W("  - Warning: aliases.csv not found in home directory.", True, ColTypes.Warning)
+        End If
+        Console.WriteLine()
+
+        W("- That's far as we got. Enjoy!", True, ColTypes.Stage)
+        W("- Press any key to exit.", True, ColTypes.Stage)
+        Console.ReadKey(True)
+
     End Sub
 
     ''' <summary>
@@ -115,9 +193,7 @@ Module Converter
 #If CONFIGNOTDONE = False Then
             OldPaths.Add("Configuration", Environ("HOME") + $"{AppendedPath}/kernelConfig.ini")
 #End If
-#If ALIASESNOTDONE = False Then
             OldPaths.Add("Aliases", Environ("HOME") + $"{AppendedPath}/aliases.csv")
-#End If
 #If USERSNOTDONE = False Then
             OldPaths.Add("Users", Environ("HOME") + $"{AppendedPath}/users.csv")
 #End If
@@ -127,9 +203,7 @@ Module Converter
 #If CONFIGNOTDONE = False Then
             OldPaths.Add("Configuration", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/kernelConfig.ini")
 #End If
-#If ALIASESNOTDONE = False Then
             OldPaths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/aliases.csv")
-#End If
 #If USERSNOTDONE = False Then
             OldPaths.Add("Users", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/users.csv")
 #End If
@@ -153,9 +227,7 @@ Module Converter
 #If CONFIGNOTDONE = False Then
             NewPaths.Add("Configuration", Environ("HOME") + "/KernelConfig.json")
 #End If
-#If ALIASESNOTDONE = False Then
             NewPaths.Add("Aliases", Environ("HOME") + "/Aliases.json")
-#End If
 #If USERSNOTDONE = False Then
             NewPaths.Add("Users", Environ("HOME") + "/Users.json")
 #End If
@@ -165,9 +237,7 @@ Module Converter
 #If CONFIGNOTDONE = False Then
             NewPaths.Add("Configuration", Environ("USERPROFILE").Replace("\", "/") + "/KernelConfig.json")
 #End If
-#If ALIASESNOTDONE = False Then
             NewPaths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/Aliases.json")
-#End If
 #If USERSNOTDONE = False Then
             NewPaths.Add("Users", Environ("USERPROFILE").Replace("\", "/") + "/Users.json")
 #End If

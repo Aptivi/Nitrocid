@@ -19,9 +19,9 @@ if ($ConfigChoice = 0) {
     Write-Output "<*> Config files are located in $userProfile. What is removed below:"
     Write-Output "<*>  |"
     try{
-      if (Test-Path $userProfile\aliases.csv) {
-        Write-Output "<+>  |-> Aliases.........(aliases.csv)"
-        Remove-Item $userProfile\aliases.csv
+      if (Test-Path $userProfile\Aliases.json) {
+        Write-Output "<+>  |-> Aliases.........(Aliases.json)"
+        Remove-Item $userProfile\Aliases.json
       }
       if (Test-Path $userProfile\blocked_devices.csv) {
         Write-Output "<+>  |-> Blocked devices.(blocked_devices.csv)"
