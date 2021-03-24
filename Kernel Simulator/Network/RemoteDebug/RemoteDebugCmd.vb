@@ -19,6 +19,7 @@
 Imports System.IO
 
 Module RemoteDebugCmd
+
     Public DebugCmds As String() = {"trace", "username", "register", "help", "exit"}
 
     ''' <summary>
@@ -62,10 +63,19 @@ Module RemoteDebugCmd
                 End If
             ElseIf CmdName = "help" Then
                 'Help command code
-                SocketStreamWriter.WriteLine("- /trace <TraceNumber>: " + DoTranslation("Shows last stack trace on exception") + vbNewLine +
-                                             "- /username: " + DoTranslation("Shows current username in the session") + vbNewLine +
-                                             "- /register <name>: " + DoTranslation("Sets device username") + vbNewLine +
-                                             "- /exit: " + DoTranslation("Disconnects you from the debugger"))
+                If CmdArgs.Count <> 0 Then
+                    RDebugShowHelp(CmdArgs(0), SocketStreamWriter)
+                Else
+                    For Each cmd As String In RDebugDefinitions.Keys
+                        SocketStreamWriter.WriteLine("- /{0}: {1}", cmd, RDebugDefinitions(cmd))
+                    Next
+                    For Each cmd As String In RDebugModDefs.Keys
+                        SocketStreamWriter.WriteLine("- /{0}: {1}", cmd, RDebugModDefs(cmd))
+                    Next
+                    For Each cmd As String In RemoteDebugAliases.Keys
+                        SocketStreamWriter.WriteLine("- /{0}: {1}", cmd, RDebugDefinitions(RemoteDebugAliases(cmd)))
+                    Next
+                End If
             ElseIf CmdName = "exit" Then
                 'Exit command code
                 DisconnectDbgDev(Address)

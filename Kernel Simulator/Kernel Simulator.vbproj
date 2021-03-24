@@ -290,6 +290,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Network\RemoteDebug\RemoteDebugHelpSystem.vb" />
     <Compile Include="Network\SFTP\Filesystem\SFTPFilesystem.vb" />
     <Compile Include="Network\SFTP\SFTPGetCommand.vb" />
     <Compile Include="Network\SFTP\SFTPHelpSystem.vb" />

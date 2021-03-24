@@ -273,6 +273,7 @@ Public Module KernelTools
         SFTPModDefs.Clear()
         MailModCommands.Clear()
         MailModDefs.Clear()
+        RDebugModDefs.Clear()
         TextEdit_ModCommands.Clear()
         TextEdit_ModHelpEntries.Clear()
         scripts.Clear()
@@ -333,6 +334,7 @@ Public Module KernelTools
         InitFTPHelp()
         InitSFTPHelp()
         IMAPInitHelp()
+        InitRDebugHelp()
         TextEdit_UpdateHelp()
 
         'We need to create a file so InitAliases() won't give out an error
