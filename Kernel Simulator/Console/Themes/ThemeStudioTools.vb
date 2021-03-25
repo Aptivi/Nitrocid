@@ -98,6 +98,67 @@ Module ThemeStudioTools
     End Sub
 
     ''' <summary>
+    ''' Loads theme from resource and places it to the studio
+    ''' </summary>
+    ''' <param name="Theme">A theme name</param>
+    Sub LoadThemeFromResource(ByVal Theme As String)
+        'Populate theme info
+        Dim ThemeInfo As ThemeInfo
+        If Theme = "Default" Then
+            ThemeInfo = New ThemeInfo("_Default")
+        ElseIf Theme = "NFSHP-Cop" Then
+            ThemeInfo = New ThemeInfo("NFSHP_Cop")
+        ElseIf Theme = "NFSHP-Racer" Then
+            ThemeInfo = New ThemeInfo("NFSHP_Racer")
+        ElseIf Theme = "3Y-Diamond" Then
+            ThemeInfo = New ThemeInfo("_3Y_Diamond")
+        Else
+            ThemeInfo = New ThemeInfo(Theme)
+        End If
+
+        'Place information to the studio
+        SelectedInputColor = ThemeInfo.ThemeInputColor
+        SelectedLicenseColor = ThemeInfo.ThemeLicenseColor
+        SelectedContKernelErrorColor = ThemeInfo.ThemeContKernelErrorColor
+        SelectedUncontKernelErrorColor = ThemeInfo.ThemeUncontKernelErrorColor
+        SelectedHostNameShellColor = ThemeInfo.ThemeHostNameShellColor
+        SelectedUserNameShellColor = ThemeInfo.ThemeUserNameShellColor
+        SelectedBackgroundColor = ThemeInfo.ThemeBackgroundColor
+        SelectedNeutralTextColor = ThemeInfo.ThemeNeutralTextColor
+        SelectedCmdListColor = ThemeInfo.ThemeCmdListColor
+        SelectedCmdDefColor = ThemeInfo.ThemeCmdDefColor
+        SelectedStageColor = ThemeInfo.ThemeStageColor
+        SelectedErrorColor = ThemeInfo.ThemeErrorColor
+        SelectedWarningColor = ThemeInfo.ThemeWarningColor
+        SelectedOptionColor = ThemeInfo.ThemeOptionColor
+    End Sub
+
+    ''' <summary>
+    ''' Loads theme from resource and places it to the studio
+    ''' </summary>
+    ''' <param name="Theme">A theme name</param>
+    Sub LoadThemeFromFile(ByVal Theme As String)
+        'Populate theme info
+        Dim ThemeInfo As New ThemeInfo(New StreamReader(NeutralizePath(Theme).ToString))
+
+        'Place information to the studio
+        SelectedInputColor = ThemeInfo.ThemeInputColor
+        SelectedLicenseColor = ThemeInfo.ThemeLicenseColor
+        SelectedContKernelErrorColor = ThemeInfo.ThemeContKernelErrorColor
+        SelectedUncontKernelErrorColor = ThemeInfo.ThemeUncontKernelErrorColor
+        SelectedHostNameShellColor = ThemeInfo.ThemeHostNameShellColor
+        SelectedUserNameShellColor = ThemeInfo.ThemeUserNameShellColor
+        SelectedBackgroundColor = ThemeInfo.ThemeBackgroundColor
+        SelectedNeutralTextColor = ThemeInfo.ThemeNeutralTextColor
+        SelectedCmdListColor = ThemeInfo.ThemeCmdListColor
+        SelectedCmdDefColor = ThemeInfo.ThemeCmdDefColor
+        SelectedStageColor = ThemeInfo.ThemeStageColor
+        SelectedErrorColor = ThemeInfo.ThemeErrorColor
+        SelectedWarningColor = ThemeInfo.ThemeWarningColor
+        SelectedOptionColor = ThemeInfo.ThemeOptionColor
+    End Sub
+
+    ''' <summary>
     ''' Gets the full theme JSON object
     ''' </summary>
     ''' <returns>A JSON object</returns>

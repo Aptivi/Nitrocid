@@ -27,7 +27,7 @@ Module ThemeStudio
         EventManager.RaiseThemeStudioStarted()
         Wdbg("I", "Starting theme studio with theme name {0}", ThemeName)
         Dim Response As String
-        Dim MaximumOptions As Integer = 19
+        Dim MaximumOptions As Integer = 21
         Dim StudioExiting As Boolean
 
         While Not StudioExiting
@@ -51,12 +51,14 @@ Module ThemeStudio
             W("13) " + DoTranslation("Warning color") + ": [{0}] ", True, ColTypes.Option, SelectedWarningColor)
             W("14) " + DoTranslation("Option color") + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedOptionColor)
 
-            'List saving options
+            'List saving and loading options
             W("15) " + DoTranslation("Save Theme to Current Directory"), True, ColTypes.Option)
             W("16) " + DoTranslation("Save Theme to Another Directory..."), True, ColTypes.Option)
             W("17) " + DoTranslation("Save Theme to Current Directory as..."), True, ColTypes.Option)
             W("18) " + DoTranslation("Save Theme to Another Directory as..."), True, ColTypes.Option)
-            W("19) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
+            W("19) " + DoTranslation("Load Theme From File..."), True, ColTypes.Option)
+            W("20) " + DoTranslation("Load Theme From Prebuilt Themes..."), True, ColTypes.Option)
+            W("21) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
 
             'Prompt user
             Wdbg("I", "Waiting for user input...")
@@ -170,7 +172,19 @@ Module ThemeStudio
                             AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
                             Wdbg("I", "Got theme name {0}.", AltThemeName)
                             SaveThemeToAnotherDirectory(AltThemeName, DirectoryName)
-                        Case 19 'Exit
+                        Case 19 'Load Theme From File...
+                            Wdbg("I", "Prompting user for theme name...")
+                            W(DoTranslation("Specify theme file name wihout the .json extension:") + " ", False, ColTypes.Input)
+                            Dim AltThemeName As String = Console.ReadLine + ".json"
+                            Wdbg("I", "Got theme name {0}.", AltThemeName)
+                            LoadThemeFromFile(AltThemeName)
+                        Case 20 'Load Theme From Prebuilt Themes...
+                            Wdbg("I", "Prompting user for theme name...")
+                            W(DoTranslation("Specify theme name:") + " ", False, ColTypes.Input)
+                            Dim AltThemeName As String = Console.ReadLine
+                            Wdbg("I", "Got theme name {0}.", AltThemeName)
+                            LoadThemeFromResource(AltThemeName)
+                        Case 21 'Exit
                             Wdbg("I", "Exiting studio...")
                             StudioExiting = True
                     End Select
