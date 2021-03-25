@@ -87,7 +87,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ColorTests.vb" />
-    <Compile Include="HardwareTests.vb" />
     <Compile Include="LocalizationTests.vb" />
     <Compile Include="MiscellaneousTests.vb" />
     <Compile Include="AliasTests.vb" />
