@@ -243,11 +243,13 @@ Public Module Screensaver
         'Start parsing screensaver
         If FileIO.FileSystem.FileExists(modPath + file) Then
             Wdbg("I", "Parsing {0}...", file)
-            If Not file.EndsWith("SS.m") Then
-                Wdbg("W", "{0} is not a screensaver. A screensaver code should have ""SS.m"" at the end.", file)
-            Else
+            If file.EndsWith("SS.m") Or file.EndsWith(".dll") Then
                 Wdbg("W", "{0} is a valid screensaver. Generating...", file)
-                finalSaver = GenSaver(IO.File.ReadAllText(modPath + file))
+                If file.EndsWith("SS.m") Then
+                    finalSaver = GenSaver(IO.File.ReadAllText(modPath + file))
+                ElseIf file.EndsWith(".dll") Then
+                    finalSaver = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
+                End If
                 If DoneFlag = True Then
                     Wdbg("I", "{0} compiled correctly. Starting...", file)
                     finalSaver.InitSaver()
@@ -297,6 +299,8 @@ Public Module Screensaver
                         End If
                     End If
                 End If
+            Else
+                Wdbg("W", "{0} is not a screensaver. A screensaver code should have ""SS.m"" or "".dll"" at the end.", file)
             End If
         Else
             W(DoTranslation("Screensaver {0} does not exist."), True, ColTypes.Err, file)
@@ -362,10 +366,18 @@ Public Module Screensaver
                 DoneFlag = True
             End If
             Wdbg("I", "Creating instance of type...")
-            For Each t As Type In execCustomSaver.CompiledAssembly.GetTypes()
-                If t.GetInterface(GetType(ICustomSaver).Name) IsNot Nothing Then Return CType(execCustomSaver.CompiledAssembly.CreateInstance(t.Name), ICustomSaver)
-            Next
+            Return GetScreensaverInstance(execCustomSaver.CompiledAssembly)
         End Using
+    End Function
+
+    ''' <summary>
+    ''' Gets a screensaver instance from loaded assembly
+    ''' </summary>
+    ''' <param name="Assembly">An assembly</param>
+    Public Function GetScreensaverInstance(ByVal Assembly As Assembly) As ICustomSaver
+        For Each t As Type In Assembly.GetTypes()
+            If t.GetInterface(GetType(ICustomSaver).Name) IsNot Nothing Then Return CType(Assembly.CreateInstance(t.FullName), ICustomSaver)
+        Next
     End Function
 
     ''' <summary>

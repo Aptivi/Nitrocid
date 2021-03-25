@@ -143,8 +143,16 @@ Public Module ModParser
         End If
 
         'Make object type instance
-        For Each t As Type In res.CompiledAssembly.GetTypes()
-            If t.GetInterface(GetType(IScript).Name) IsNot Nothing Then Return CType(res.CompiledAssembly.CreateInstance(t.Name), IScript)
+        Return GetModInstance(res.CompiledAssembly)
+    End Function
+
+    ''' <summary>
+    ''' Gets the mod instance from compiled assembly
+    ''' </summary>
+    ''' <param name="Assembly">An assembly</param>
+    Public Function GetModInstance(ByVal Assembly As Assembly) As IScript
+        For Each t As Type In Assembly.GetTypes()
+            If t.GetInterface(GetType(IScript).Name) IsNot Nothing Then Return CType(Assembly.CreateInstance(t.FullName), IScript)
         Next
     End Function
 
@@ -194,9 +202,9 @@ Public Module ModParser
     ''' <param name="StartStop">Whether to start or stop mods</param>
     Sub StartParse(ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         modFile = modFile.Replace(modPath, "")
-        If Not modFile.EndsWith(".m") Then
-            'Ignore all mods that its file name doesn't end with .m
-            Wdbg("W", "Unsupported file type for mod file {0}.", modFile)
+        If modFile.EndsWith(".m") Then
+            Dim script As IScript = GenMod("VB.NET", IO.File.ReadAllText(modPath + modFile))
+            FinalizeMods(script, modFile, StartStop)
         ElseIf modFile.EndsWith("SS.m") Then
             'Ignore all mods that its file name ends with SS.m
             Wdbg("W", "Mod file {0} is a screensaver and is ignored.", modFile)
@@ -204,9 +212,13 @@ Public Module ModParser
             'Mod has a language of C#
             Dim script As IScript = GenMod("C#", IO.File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile, StartStop)
-        Else
-            Dim script As IScript = GenMod("VB.NET", IO.File.ReadAllText(modPath + modFile))
+        ElseIf modFile.EndsWith(".dll") Then
+            'Mod is a dynamic DLL
+            Dim script As IScript = GetModInstance(Assembly.LoadFrom(modPath + modFile))
             FinalizeMods(script, modFile, StartStop)
+        Else
+            'Ignore all mods that its file name doesn't end with .m
+            Wdbg("W", "Unsupported file type for mod file {0}.", modFile)
         End If
     End Sub
 
