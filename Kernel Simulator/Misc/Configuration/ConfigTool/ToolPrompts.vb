@@ -907,7 +907,7 @@ Public Module ToolPrompts
             Wdbg("W", "Target variable: {0}, Key Type: {1}", KeyVar, KeyType)
 
             'Prompt user
-            W("> ", False, ColTypes.Input)
+            W(If(Section = 4 And KeyNumber = 3, $"[{CurrDir}]", "") + "> ", False, ColTypes.Input)
             If KeyNumber = 2 And Section = 1.3 Then
                 AnswerString = ReadLineNoInput("*")
                 Console.WriteLine()
@@ -958,6 +958,12 @@ Public Module ToolPrompts
                 End If
             ElseIf KeyType = SettingsKeyType.SString Then
                 Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
+                If Section = 4 And KeyNumber = 3 Then 'If user is on Shell > Current Directory
+                    If String.IsNullOrWhiteSpace(AnswerString) Then
+                        Wdbg("I", "Answer is nothing but user on Shell > Current Directory. Setting to {0}...", CurrDir)
+                        AnswerString = CurrDir
+                    End If
+                End If
                 KeyFinished = True
                 SetConfigValue(KeyVar, AnswerString)
             ElseIf Section = 1.3 And KeyNumber = 3 Then
