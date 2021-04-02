@@ -27,7 +27,7 @@
     <PackageTags>kernel;simulator;vb.net</PackageTags>
     <!-- URL settings -->
     <PackageProjectUrl>https://github.com/EoflaOE/Kernel-Simulator</PackageProjectUrl>
-    <PackageIcon>iconfinder_applications-utilities_8840.png</PackageIcon>
+    <PackageIcon>OfficialAppIcon-KernelSimulator-256.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageReleaseNotes>https://github.com/EoflaOE/Kernel-Simulator/wiki/History-of-KS</PackageReleaseNotes>
     <!-- MSBuild Tags -->
@@ -107,7 +107,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>iconfinder_applications-utilities_8840.ico</ApplicationIcon>
+    <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>F1A42ADA35A42942B5F12BA2CA2FC6F3464C0BDD</ManifestCertificateThumbprint>
@@ -434,8 +434,8 @@
     <None Include="Resources\ger.txt" />
     <None Include="Resources\fre.txt" />
     <None Include="Resources\chi.txt" />
-    <None Include="iconfinder_applications-utilities_8840.ico" Pack="true" PackagePath="\" />
-    <None Include="iconfinder_applications-utilities_8840.png" Pack="true" PackagePath="\" />
+    <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
+    <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iri.txt" />
@@ -444,7 +444,9 @@
     <None Include="Resources\Themes\Windows95.json" />
     <None Include="Resources\wls.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="OfficialAppIcon-KernelSimulator-256.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PreBuildEvent>echo "Building $(ProjectName) with config $(ConfigurationName) for $(PlatformName) in $(TargetDir)..."</PreBuildEvent>
