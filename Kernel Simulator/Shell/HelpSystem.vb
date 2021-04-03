@@ -31,7 +31,6 @@ Public Module HelpSystem
                                                               {"arginj", DoTranslation("Injects arguments to the kernel (reboot required)")},
                                                               {"beep", DoTranslation("Beep in 'n' Hz and time in 'n' milliseconds")},
                                                               {"blockdbgdev", DoTranslation("Block a debug device by IP address")},
-                                                              {"bsynth", DoTranslation("Loads the synth file and plays it.")},
                                                               {"calc", DoTranslation("Calculator to calculate expressions.")},
                                                               {"cat", DoTranslation("Prints content of file to console")},
                                                               {"cdbglog", DoTranslation("Deletes everything in debug log")},
@@ -166,10 +165,6 @@ Public Module HelpSystem
         ElseIf command = "blockdbgdev" Then
 
             W(DoTranslation("Usage:") + " blockdbgdev <ipaddress>", True, ColTypes.Neutral)
-
-        ElseIf command = "bsynth" Then
-
-            W(DoTranslation("Usage:") + " bsynth <script-file>", True, ColTypes.Neutral)
 
         ElseIf command = "cat" Then
 

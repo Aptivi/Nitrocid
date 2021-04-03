@@ -184,18 +184,6 @@ Public Module GetCommand
                     Done = True
                 End If
 
-            ElseIf words(0) = "bsynth" Then
-
-                If eqargs?.Count > 0 Then
-                    Try
-                        ProbeSynth(eqargs(0))
-                    Catch ex As Exception
-                        WStkTrc(ex)
-                        W(ex.Message, True, ColTypes.Err)
-                    End Try
-                    Done = True
-                End If
-
             ElseIf words(0) = "cat" Then
 
                 If eqargs?.Count > 0 Then

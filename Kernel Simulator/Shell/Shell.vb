@@ -45,7 +45,7 @@ Public Module Shell
                                             "setthemes", "netinfo", "md", "rm", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
                                             "savescreen", "lockscreen", "setsaver", "reloadsaver", "ftp", "usermanual", "cdbglog", "chlang",
                                             "reloadmods", "get", "put", "lsdbgdev", "disconndbgdev", "move", "copy", "search", "sumfile", "rdebug", "spellbee",
-                                            "mathbee", "loteresp", "sshell", "bsynth", "shownotifs", "dismissnotif", "rexec", "calc", "update", "sumfiles",
+                                            "mathbee", "loteresp", "sshell", "shownotifs", "dismissnotif", "rexec", "calc", "update", "sumfiles",
                                             "lsmail", "echo", "choice", "beep", "input", "mkfile", "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather",
                                             "fileinfo", "dirinfo", "chattr", "ping", "verify", "sftp", "mktheme", "hwinfo", "cat", "wrap", "zip", "unzip",
                                             "firedevents", "zipshell"}
@@ -62,7 +62,7 @@ Public Module Shell
     ''' <summary>
     ''' All obsolete commands
     ''' </summary>
-    Public obsoleteCmds() As String = {"debuglog", "bsynth"}
+    Public obsoleteCmds() As String = {"debuglog"}
 
     ''' <summary>
     ''' Initializes the shell.
