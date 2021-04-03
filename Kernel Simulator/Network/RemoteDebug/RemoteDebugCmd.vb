@@ -21,6 +21,7 @@ Imports System.IO
 Module RemoteDebugCmd
 
     Public DebugCmds As String() = {"trace", "username", "register", "help", "exit"}
+    Public DebugModCmds As New ArrayList
 
     ''' <summary>
     ''' Client command parsing.

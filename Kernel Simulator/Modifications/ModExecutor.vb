@@ -42,6 +42,14 @@ Public Module ModExecutor
         ''' Text shell
         ''' </summary>
         TextShell
+        ''' <summary>
+        ''' Remote debug shell
+        ''' </summary>
+        RemoteDebugShell
+        ''' <summary>
+        ''' ZIP shell
+        ''' </summary>
+        ZIPShell
     End Enum
 
     ''' <summary>

@@ -322,6 +322,16 @@ Public Module ModParser
                         Wdbg("W", "Command {0} conflicts with available text shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                         script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                     End If
+                ElseIf script.CmdType = ModType.RemoteDebugShell Then
+                    If TextEdit_Commands.Contains(script.Cmd) Then
+                        Wdbg("W", "Command {0} conflicts with available remote debug shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                        script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                    End If
+                ElseIf script.CmdType = ModType.ZIPShell Then
+                    If TextEdit_Commands.Contains(script.Cmd) Then
+                        Wdbg("W", "Command {0} conflicts with available ZIP shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                        script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                    End If
                 End If
 
                 'See if mod can be added to command list
@@ -352,6 +362,14 @@ Public Module ModParser
                         Wdbg("I", "Adding command {0} for text editor shell...", script.Cmd)
                         If Not TextEdit_ModCommands.Contains(script.Cmd) Then TextEdit_ModCommands.Add(script.Cmd)
                         TextEdit_ModHelpEntries.AddIfNotFound(script.Cmd, script.Def)
+                    ElseIf script.CmdType = ModType.RemoteDebugShell Then
+                        Wdbg("I", "Adding command {0} for remote debug shell...", script.Cmd)
+                        If Not DebugModCmds.Contains(script.Cmd) Then DebugModCmds.Add(script.Cmd)
+                        RDebugModDefs.AddIfNotFound(script.Cmd, script.Def)
+                    ElseIf script.CmdType = ModType.ZIPShell Then
+                        Wdbg("I", "Adding command {0} for ZIP shell...", script.Cmd)
+                        If Not ZipShell_ModCommands.Contains(script.Cmd) Then ZipShell_ModCommands.Add(script.Cmd)
+                        ZipShell_ModHelpEntries.AddIfNotFound(script.Cmd, script.Def)
                     End If
                 End If
 
@@ -388,6 +406,12 @@ Public Module ModParser
         TextEdit_ModCommands.Clear()
         TextEdit_ModHelpEntries.Clear()
         Wdbg("I", "Mod commands for text editor shell cleared.")
+        DebugModCmds.Clear()
+        RDebugModDefs.Clear()
+        Wdbg("I", "Mod commands for remote debug shell cleared.")
+        ZipShell_ModCommands.Clear()
+        ZipShell_ModHelpEntries.Clear()
+        Wdbg("I", "Mod commands for ZIP shell cleared.")
         scripts.Clear()
         Wdbg("I", "Mod scripts cleared.")
 
