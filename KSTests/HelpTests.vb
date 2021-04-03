@@ -52,4 +52,12 @@ Imports KS
         Assert.IsNotNull(TextEdit_HelpEntries, "Initialization of text editor help failed. Got null.")
     End Sub
 
+    ''' <summary>
+    ''' Tests initialization of ZIP help
+    ''' </summary>
+    <TestMethod()> Public Sub TestInitZipHelp()
+        ZipShell_UpdateHelp()
+        Assert.IsNotNull(TextEdit_HelpEntries, "Initialization of ZIP help failed. Got null.")
+    End Sub
+
 End Class

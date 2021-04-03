@@ -276,6 +276,8 @@ Public Module KernelTools
         RDebugModDefs.Clear()
         TextEdit_ModCommands.Clear()
         TextEdit_ModHelpEntries.Clear()
+        ZipShell_ModCommands.Clear()
+        ZipShell_ModHelpEntries.Clear()
         scripts.Clear()
         Aliases.Clear()
         RemoteDebugAliases.Clear()
@@ -336,6 +338,7 @@ Public Module KernelTools
         IMAPInitHelp()
         InitRDebugHelp()
         TextEdit_UpdateHelp()
+        ZipShell_UpdateHelp()
 
         'We need to create a file so InitAliases() won't give out an error
         If Not File.Exists(paths("Aliases")) Then

@@ -104,7 +104,8 @@ Public Module HelpSystem
                                                               {"verify", DoTranslation("Verifies sanity of the file")},
                                                               {"weather", DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.")},
                                                               {"wrap", DoTranslation("Wraps the console output")},
-                                                              {"zip", DoTranslation("Creates a ZIP archive")}}
+                                                              {"zip", DoTranslation("Creates a ZIP archive")},
+                                                              {"zipshell", DoTranslation("Opens a ZIP archive")}}
     End Sub
 
     ''' <summary>
@@ -479,6 +480,10 @@ Public Module HelpSystem
         ElseIf command = "zip" Then
 
             W(DoTranslation("Usage:") + " zip <zipfile> <path> [-fast/-nocomp] [-nobasedir]", True, ColTypes.Neutral)
+
+        ElseIf command = "zipshell" Then
+
+            W(DoTranslation("Usage:") + " zipshell <zipfile>", True, ColTypes.Neutral)
 
         Else
 

@@ -1329,8 +1329,21 @@ Public Module GetCommand
                     End If
                 End If
 
+            ElseIf words(0) = "zipshell" Then
+
+                If eqargs?.Count >= 1 Then
+                    eqargs(0) = NeutralizePath(eqargs(0))
+                    Wdbg("I", "File path is {0} and .Exists is {0}", eqargs(0), File.Exists(eqargs(0)))
+                    If File.Exists(eqargs(0)) Then
+                        InitializeZipShell(eqargs(0))
+                    Else
+                        W(DoTranslation("File doesn't exist."), True, ColTypes.Err)
+                    End If
+                    Done = True
+                End If
+
             End If
-            If Done = False Then
+                If Done = False Then
                 Throw New Exceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:"))
             End If
         Catch neaex As Exceptions.NotEnoughArgumentsException

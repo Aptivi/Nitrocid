@@ -306,6 +306,7 @@ CHOICE:
                 InitSFTPHelp()
                 IMAPInitHelp()
                 TextEdit_UpdateHelp()
+                ZipShell_UpdateHelp()
                 ReloadGenericDefs(OldModDescGeneric)
 
                 'Update Culture if applicable

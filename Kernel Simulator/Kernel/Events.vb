@@ -127,6 +127,10 @@ Public Class Events
     Public Event ThemeStudioStarted()
     Public Event ThemeStudioExit()
     Public Event ArgumentsInjected(ByVal InjectedArguments As String)
+    Public Event ZipShellInitialized()
+    Public Event ZipPreExecuteCommand(ByVal Command As String)
+    Public Event ZipPostExecuteCommand(ByVal Command As String)
+    Public Event ZipCommandError(ByVal Command As String, ByVal Exception As Exception)
 
     ''' <summary>
     ''' Makes the mod respond to the event of kernel start
@@ -1228,6 +1232,50 @@ Public Class Events
             Next
         Next
     End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of ZIP shell initialized
+    ''' </summary>
+    Public Sub RespondZipShellInitialized() Handles Me.ZipShellInitialized
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ZipShellInitialized()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ZipShellInitialized")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of ZIP pre-command execution
+    ''' </summary>
+    Public Sub RespondZipPreExecuteCommand(ByVal Command As String) Handles Me.ZipPreExecuteCommand
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ZipPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ZipPreExecuteCommand", Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of ZIP post-command execution
+    ''' </summary>
+    Public Sub RespondZipPostExecuteCommand(ByVal Command As String) Handles Me.ZipPostExecuteCommand
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ZipPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ZipPostExecuteCommand", Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of ZIP command error
+    ''' </summary>
+    Public Sub RespondZipCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.ZipCommandError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event ZipCommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("ZipCommandError", Command, Exception)
+            Next
+        Next
+    End Sub
 
     'These subs are for raising events
     ''' <summary>
@@ -2029,6 +2077,38 @@ Public Class Events
         Wdbg("I", "Raising event ArgumentsInjected() and responding in RespondArgumentsInjected()...")
         FiredEvents.Add("ArgumentsInjected (" + CStr(FiredEvents.Count) + ")", {InjectedArguments})
         RaiseEvent ArgumentsInjected(InjectedArguments)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of ZIP shell initialized
+    ''' </summary>
+    Public Sub RaiseZipShellInitialized()
+        Wdbg("I", "Raising event ZipShellInitialized() and responding in RespondZipShellInitialized()...")
+        FiredEvents.Add("ZipShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+        RaiseEvent ZipShellInitialized()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of ZIP pre-command execution
+    ''' </summary>
+    Public Sub RaiseZipPreExecuteCommand(ByVal Command As String)
+        Wdbg("I", "Raising event ZipPreExecuteCommand() and responding in RespondZipPreExecuteCommand()...")
+        FiredEvents.Add("ZipPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+        RaiseEvent ZipPreExecuteCommand(Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of ZIP post-command execution
+    ''' </summary>
+    Public Sub RaiseZipPostExecuteCommand(ByVal Command As String)
+        Wdbg("I", "Raising event ZipPostExecuteCommand() and responding in RespondZipPostExecuteCommand()...")
+        FiredEvents.Add("ZipPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+        RaiseEvent ZipPostExecuteCommand(Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of ZIP command error
+    ''' </summary>
+    Public Sub RaiseZipCommandError(ByVal Command As String, ByVal Exception As Exception)
+        Wdbg("I", "Raising event ZipCommandError() and responding in RespondZipCommandError()...")
+        FiredEvents.Add("ZipCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
+        RaiseEvent ZipCommandError(Command, Exception)
     End Sub
 
 End Class
