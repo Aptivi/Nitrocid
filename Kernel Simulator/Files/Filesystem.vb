@@ -153,7 +153,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="Path">Target path, be it a file or a folder</param>
     ''' <returns>Absolute path</returns>
-    Public Function NeutralizePath(ByVal Path As String)
+    Public Function NeutralizePath(ByVal Path As String) As String
 #If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
