@@ -379,7 +379,7 @@ Public Module HelpSystem
 
         ElseIf command = "savescreen" Then
 
-            W(DoTranslation("Usage:") + " savescreen: " + DoTranslation("shows you a selected screensaver, while protecting your screen from burn outs.") + vbNewLine +
+            W(DoTranslation("Usage:") + " savescreen [saver]: " + DoTranslation("shows you a selected screensaver, while protecting your screen from burn outs.") + vbNewLine +
               "       " + DoTranslation("Friends of") + " savescreen: lockscreen", True, ColTypes.Neutral)
 
         ElseIf command = "search" Then

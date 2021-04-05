@@ -869,7 +869,11 @@ Public Module GetCommand
                 Case "savescreen"
 
                     Done = True
-                    ShowSavers(defSaverName)
+                    If eqargs?.Length >= 1 Then
+                        ShowSavers(eqargs(0))
+                    Else
+                        ShowSavers(defSaverName)
+                    End If
 
                 Case "search"
 
