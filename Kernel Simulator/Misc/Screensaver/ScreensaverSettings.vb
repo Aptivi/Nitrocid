@@ -76,6 +76,14 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public ProgressClockTrueColor As Boolean
     ''' <summary>
+    ''' [Lighter] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Lighter255Colors As Boolean
+    ''' <summary>
+    ''' [Lighter] Enable truecolor support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public LighterTrueColor As Boolean
+    ''' <summary>
     ''' [Disco] Enable color cycling
     ''' </summary>
     Public DiscoCycleColors As Boolean
@@ -137,11 +145,21 @@ Public Module ScreensaverSettings
     ''' [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
     ''' </summary>
     Public ProgressClockCycleColorsTicks As Long = 20
+    ''' <summary>
+    ''' [Lighter] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public LighterDelay As Integer = 100
 
     '-> Texts
     ''' <summary>
     ''' [BouncingText] Text for Bouncing Text
     ''' </summary>
     Public BouncingTextWrite As String = "Kernel Simulator"
+
+    '-> Misc
+    ''' <summary>
+    ''' [Lighter] How many positions to write before starting to blacken them?
+    ''' </summary>
+    Public LighterMaxPositions As Integer = 10
 
 End Module

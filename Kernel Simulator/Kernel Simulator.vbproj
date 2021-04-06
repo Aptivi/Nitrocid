@@ -255,6 +255,7 @@
     <Compile Include="Misc\Probers\MOTDParse.vb" />
     <Compile Include="Misc\Probers\PlaceParse.vb" />
     <Compile Include="Misc\Configuration\Config.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Lighter.vb" />
     <Compile Include="Misc\Screensaver\Displays\ProgressClock.vb" />
     <Compile Include="Misc\Screensaver\Displays\Dissolve.vb" />
     <Compile Include="Misc\Screensaver\Displays\Custom.vb" />
