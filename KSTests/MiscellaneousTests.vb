@@ -114,6 +114,34 @@ Imports KS
                                                                                    FileHashSHA512)
     End Sub
 
+    ''' <summary>
+    ''' Tests hash verification
+    ''' </summary>
+    <TestMethod()> Public Sub TestVerifyHashFromHash()
+        InitPaths()
+        Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
+        FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23)
+        FileStreamHash.Flush()
+        FileStreamHash.Close()
+        Dim FileHashMD5 As String = GetEncryptedFile(paths("Home") + "/TestSum.txt", Algorithms.MD5)
+        Dim FileHashSHA1 As String = GetEncryptedFile(paths("Home") + "/TestSum.txt", Algorithms.SHA1)
+        Dim FileHashSHA256 As String = GetEncryptedFile(paths("Home") + "/TestSum.txt", Algorithms.SHA256)
+        Dim FileHashSHA512 As String = GetEncryptedFile(paths("Home") + "/TestSum.txt", Algorithms.SHA512)
+        Try
+            Dim ResultMD5 As Boolean = VerifyHashFromHash(paths("Home") + "/TestSum.txt", Algorithms.MD5, "CD5578C85A4CF32E48D157746A90C7F6", FileHashMD5)
+            Dim ResultSHA1 As Boolean = VerifyHashFromHash(paths("Home") + "/TestSum.txt", Algorithms.SHA1, "36EBF31AF7234D6C99CA65DC4EDA524161600657", FileHashSHA1)
+            Dim ResultSHA256 As Boolean = VerifyHashFromHash(paths("Home") + "/TestSum.txt", Algorithms.SHA256, "7E6857729A34755DE8C2C9E535A8765BDE241F593BE3588B8FA6D29D949EFADA", FileHashSHA256)
+            Dim ResultSHA512 As Boolean = VerifyHashFromHash(paths("Home") + "/TestSum.txt", Algorithms.SHA512, "6DF635C184D4B131B0243D4F2BD66925A61B82A5093F573920F42D7B8474D6332FD2886920F3CA36D9206C73DD59C8F1EEA18501E6FEF15FDDA664B1ABB0E361", FileHashSHA512)
+            File.Delete(paths("Home") + "/TestSum.txt")
+            Assert.IsTrue(ResultMD5, "Hash isn't verified propertly. Got {0}", ResultMD5)
+            Assert.IsTrue(ResultSHA1, "Hash isn't verified propertly. Got {0}", ResultSHA1)
+            Assert.IsTrue(ResultSHA256, "Hash isn't verified propertly. Got {0}", ResultSHA256)
+            Assert.IsTrue(ResultSHA512, "Hash isn't verified propertly. Got {0}", ResultSHA512)
+        Catch ex As Exception
+            Assert.Fail(ex.Message)
+        End Try
+    End Sub
+
     <TestMethod> Public Sub TestGetEmptyHash()
         Assert.IsNotNull(GetEmptyHash(Algorithms.MD5))
         Assert.IsNotNull(GetEmptyHash(Algorithms.SHA1))

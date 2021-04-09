@@ -21,6 +21,7 @@ Imports KS
 
 <TestClass()> Public Class InitTest
 
+    'TODO: Restructure tests in Milestone 4
     ''' <summary>
     ''' Initialize everything that is required before starting unit tests
     ''' </summary>

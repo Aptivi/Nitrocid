@@ -147,22 +147,6 @@ Public Class Exceptions
     End Class
 
     ''' <summary>
-    ''' Thrown when synth file is invalid
-    ''' </summary>
-    Public Class InvalidSynthException
-        Inherits Exception
-        Public Sub New()
-            MyBase.New()
-        End Sub
-        Public Sub New(ByVal message As String)
-            MyBase.New(message)
-        End Sub
-        Public Sub New(ByVal message As String, ByVal e As Exception)
-            MyBase.New(message, e)
-        End Sub
-    End Class
-
-    ''' <summary>
     ''' Thrown when screensaver is nonexistent
     ''' </summary>
     Public Class NoSuchScreensaverException
@@ -422,6 +406,38 @@ Public Class Exceptions
     ''' Thrown when there is an error in SFTP network
     ''' </summary>
     Public Class SFTPNetworkException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when the specified hash is invalid
+    ''' </summary>
+    Public Class InvalidHashException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when the specified hash algorithm is invalid
+    ''' </summary>
+    Public Class InvalidHashAlgorithmException
         Inherits Exception
         Public Sub New()
             MyBase.New()
