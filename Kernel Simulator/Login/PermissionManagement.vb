@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports Newtonsoft.Json.Linq
 
 Public Module PermissionManagement
 
@@ -78,17 +79,7 @@ Public Module PermissionManagement
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function AddPermission(ByVal PermType As PermissionType, ByVal Username As String)
-        'Open users.csv file
-        Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-        Dim UserLine As String() = {}
-        For i As Integer = 0 To UsersLines.Count - 1
-            If UsersLines(i).StartsWith($"{Username},") Then
-                UserLine = UsersLines(i).Split(",")
-                Exit For
-            End If
-        Next
-
-        'Adds user into permission lists.
+        'Sets the required permissions to false.
         If userword.Keys.ToArray.Contains(Username) Then
             Wdbg("I", "Type is {0}", PermType)
             If PermType = PermissionType.Administrator Then
@@ -112,16 +103,14 @@ Public Module PermissionManagement
         End If
 
         'Save changes
-        For i As Integer = 0 To UsersLines.Count - 1
-            If UsersLines(i).StartsWith($"{Username},") Then
-                UserLine(2) = adminList(Username)
-                UserLine(3) = disabledList(Username)
-                UserLine(4) = AnonymousList(Username)
-                UsersLines(i) = UserLine.Join(",")
-                Exit For
+        For Each UserToken As JObject In UsersToken
+            If UserToken("username").ToString = Username Then
+                If Not CType(UserToken("permissions"), JArray).ToObject(GetType(List(Of String))).Contains(PermType.ToString) Then
+                    CType(UserToken("permissions"), JArray).Add(PermType.ToString)
+                End If
             End If
         Next
-        File.WriteAllLines(paths("Users"), UsersLines)
+        File.WriteAllText(paths("Users"), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
         Return True
     End Function
 
@@ -133,17 +122,7 @@ Public Module PermissionManagement
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function RemovePermission(ByVal PermType As PermissionType, ByVal Username As String)
-        'Open users.csv file
-        Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-        Dim UserLine As String() = {}
-        For i As Integer = 0 To UsersLines.Count - 1
-            If UsersLines(i).StartsWith($"{Username},") Then
-                UserLine = UsersLines(i).Split(",")
-                Exit For
-            End If
-        Next
-
-        'Adds user into permission lists.
+        'Sets the required permissions to false.
         If userword.Keys.ToArray.Contains(Username) And Username <> signedinusrnm Then
             Wdbg("I", "Type is {0}", PermType)
             If PermType = PermissionType.Administrator Then
@@ -170,16 +149,14 @@ Public Module PermissionManagement
         End If
 
         'Save changes
-        For i As Integer = 0 To UsersLines.Count - 1
-            If UsersLines(i).StartsWith($"{Username},") Then
-                UserLine(2) = adminList(Username)
-                UserLine(3) = disabledList(Username)
-                UserLine(4) = AnonymousList(Username)
-                UsersLines(i) = UserLine.Join(",")
-                Exit For
+        For Each UserToken As JObject In UsersToken
+            If UserToken("username").ToString = Username Then
+                Dim PermissionArray As List(Of String) = UserToken("permissions").ToObject(GetType(List(Of String)))
+                PermissionArray.Remove(PermType.ToString)
+                UserToken("permissions") = JArray.FromObject(PermissionArray)
             End If
         Next
-        File.WriteAllLines(paths("Users"), UsersLines)
+        File.WriteAllText(paths("Users"), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
         Return True
     End Function
 
@@ -238,16 +215,6 @@ Public Module PermissionManagement
             If Not adminList.ContainsKey(NewUser) Then adminList.Add(NewUser, False)
             If Not disabledList.ContainsKey(NewUser) Then disabledList.Add(NewUser, False)
             If Not AnonymousList.ContainsKey(NewUser) Then AnonymousList.Add(NewUser, False)
-
-            'Initialize permissions globally
-            Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-            For i As Integer = 0 To UsersLines.Count - 1
-                If UsersLines(i).StartsWith($"{NewUser},") And UsersLines(i).AllIndexesOf(",").Count = 1 Then
-                    UsersLines(i) = UsersLines(i) + ",False,False,False"
-                    Exit For
-                End If
-            Next
-            File.WriteAllLines(paths("Users"), UsersLines)
             Return True
         Catch ex As Exception
             WStkTrc(ex)
@@ -263,19 +230,22 @@ Public Module PermissionManagement
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function LoadPermissions() As Boolean
         Try
-            Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-            Dim UserLine() As String
-            For i As Integer = 0 To UsersLines.Count - 1
-                UserLine = UsersLines(i).Split(",")
-                Dim UserName As String = UserLine(0)
-                Dim AdminEnabled As String = UserLine(2)
-                Dim UserDisabled As String = UserLine(3)
-                Dim Anonymous As String = UserLine(4)
-                adminList(UserName) = CType(AdminEnabled, Boolean)
-                disabledList(UserName) = CType(UserDisabled, Boolean)
-                AnonymousList(UserName) = CType(Anonymous, Boolean)
+            For Each UserToken As JObject In UsersToken
+                Dim User As String = UserToken("username")
+                adminList(User) = False
+                disabledList(User) = False
+                AnonymousList(User) = False
+                For Each Perm As String In CType(UserToken("permissions"), JArray)
+                    Select Case Perm
+                        Case "Administrator"
+                            adminList(User) = True
+                        Case "Disabled"
+                            disabledList(User) = True
+                        Case "Anonymous"
+                            AnonymousList(User) = True
+                    End Select
+                Next
             Next
-            File.WriteAllLines(paths("Users"), UsersLines)
             Return True
         Catch ex As Exception
             WStkTrc(ex)

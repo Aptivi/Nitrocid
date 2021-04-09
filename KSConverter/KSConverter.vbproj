@@ -24,7 +24,7 @@
     <OutputPath>..\Kernel Simulator\KSBuild\</OutputPath>
     <DocumentationFile>KSConverter.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <DefineConstants>USERSNOTDONE,CONFIGNOTDONE</DefineConstants>
+    <DefineConstants>CONFIGNOTDONE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,7 +35,7 @@
     <OutputPath>..\Kernel Simulator\KSBuild\</OutputPath>
     <DocumentationFile>KSConverter.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <DefineConstants>USERSNOTDONE,CONFIGNOTDONE</DefineConstants>
+    <DefineConstants>CONFIGNOTDONE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>

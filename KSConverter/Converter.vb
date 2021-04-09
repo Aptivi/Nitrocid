@@ -21,6 +21,8 @@ Imports KS.KernelTools
 Imports KS.RemoteDebugTools
 Imports KS.NetworkTools
 Imports KS.AliasManager
+Imports KS.UserManagement
+Imports KS.PermissionManagement
 Imports System.IO
 
 Module Converter
@@ -102,7 +104,6 @@ Module Converter
         End If
         Console.WriteLine()
 
-#If USERSNOTDONE = False Then
         'Import all users to JSON
         W("- Importing all users to Users.json...", True, ColTypes.Stage)
         If File.Exists(ListOfBackups("Users")) Then
@@ -114,14 +115,22 @@ Module Converter
             'Add users to new format
             For Each UsersLine As String In UsersLines
                 W("  - Adding {0} to Users.json...", True, ColTypes.Neutral, UsersLine.Split(",")(0))
-                'TODO: Not done yet.
+                InitializeUser(UsersLine.Split(",")(0), UsersLine.Split(",")(1), False)
+                If UsersLine.Split(",")(2) = "True" Then
+                    AddPermission(PermissionType.Administrator, UsersLine.Split(",")(0))
+                End If
+                If UsersLine.Split(",")(3) = "True" Then
+                    AddPermission(PermissionType.Disabled, UsersLine.Split(",")(0))
+                End If
+                If UsersLine.Split(",")(4) = "True" Then
+                    AddPermission(PermissionType.Anonymous, UsersLine.Split(",")(0))
+                End If
             Next
         Else
             'File not found. Skip stage.
             W("  - Warning: users.csv not found in home directory.", True, ColTypes.Warning)
         End If
         Console.WriteLine()
-#End If
 
         'Import all aliases to JSON
         W("- Importing all aliases to Aliases.json...", True, ColTypes.Stage)
@@ -194,9 +203,7 @@ Module Converter
             OldPaths.Add("Configuration", Environ("HOME") + $"{AppendedPath}/kernelConfig.ini")
 #End If
             OldPaths.Add("Aliases", Environ("HOME") + $"{AppendedPath}/aliases.csv")
-#If USERSNOTDONE = False Then
             OldPaths.Add("Users", Environ("HOME") + $"{AppendedPath}/users.csv")
-#End If
             OldPaths.Add("FTPSpeedDial", Environ("HOME") + $"{AppendedPath}/ftp_speeddial.csv")
             OldPaths.Add("BlockedDevices", Environ("HOME") + $"{AppendedPath}/blocked_devices.csv")
         Else
@@ -204,9 +211,7 @@ Module Converter
             OldPaths.Add("Configuration", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/kernelConfig.ini")
 #End If
             OldPaths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/aliases.csv")
-#If USERSNOTDONE = False Then
             OldPaths.Add("Users", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/users.csv")
-#End If
             OldPaths.Add("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/ftp_speeddial.csv")
             OldPaths.Add("BlockedDevices", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/blocked_devices.csv")
         End If
@@ -228,9 +233,7 @@ Module Converter
             NewPaths.Add("Configuration", Environ("HOME") + "/KernelConfig.json")
 #End If
             NewPaths.Add("Aliases", Environ("HOME") + "/Aliases.json")
-#If USERSNOTDONE = False Then
             NewPaths.Add("Users", Environ("HOME") + "/Users.json")
-#End If
             NewPaths.Add("FTPSpeedDial", Environ("HOME") + "/FTP_SpeedDial.json")
             NewPaths.Add("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
         Else
@@ -238,9 +241,7 @@ Module Converter
             NewPaths.Add("Configuration", Environ("USERPROFILE").Replace("\", "/") + "/KernelConfig.json")
 #End If
             NewPaths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/Aliases.json")
-#If USERSNOTDONE = False Then
             NewPaths.Add("Users", Environ("USERPROFILE").Replace("\", "/") + "/Users.json")
-#End If
             NewPaths.Add("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/FTP_SpeedDial.json")
             NewPaths.Add("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
         End If

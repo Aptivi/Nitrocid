@@ -361,6 +361,9 @@ Public Module KernelTools
         'Create config file and then read it
         InitializeConfig()
 
+        'Load user token
+        LoadUserToken()
+
         If RebootRequested Then
             Exit Sub
         End If
@@ -427,7 +430,7 @@ Public Module KernelTools
             paths.AddIfNotFound("Configuration", Environ("HOME") + "/kernelConfig.ini")
             paths.AddIfNotFound("Debugging", Environ("HOME") + "/kernelDbg.log")
             paths.AddIfNotFound("Aliases", Environ("HOME") + "/Aliases.json")
-            paths.AddIfNotFound("Users", Environ("HOME") + "/users.csv")
+            paths.AddIfNotFound("Users", Environ("HOME") + "/Users.json")
             paths.AddIfNotFound("FTPSpeedDial", Environ("HOME") + "/FTP_SpeedDial.json")
             paths.AddIfNotFound("SFTPSpeedDial", Environ("HOME") + "/SFTP_SpeedDial.json")
             paths.AddIfNotFound("DebugDevNames", Environ("HOME") + "/DebugDeviceNames.json")
@@ -438,7 +441,7 @@ Public Module KernelTools
             paths.AddIfNotFound("Configuration", Environ("USERPROFILE").Replace("\", "/") + "/kernelConfig.ini")
             paths.AddIfNotFound("Debugging", Environ("USERPROFILE").Replace("\", "/") + "/kernelDbg.log")
             paths.AddIfNotFound("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/Aliases.json")
-            paths.AddIfNotFound("Users", Environ("USERPROFILE").Replace("\", "/") + "/users.csv")
+            paths.AddIfNotFound("Users", Environ("USERPROFILE").Replace("\", "/") + "/Users.json")
             paths.AddIfNotFound("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/FTP_SpeedDial.json")
             paths.AddIfNotFound("SFTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/SFTP_SpeedDial.json")
             paths.AddIfNotFound("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")

@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Text.RegularExpressions
+Imports Newtonsoft.Json.Linq
 
 Public Module UserManagement
 
@@ -25,7 +26,13 @@ Public Module UserManagement
     Public adminList As New Dictionary(Of String, Boolean)         'Users that are allowed to have administrative access.
     Public disabledList As New Dictionary(Of String, Boolean)      'Users that are unable to login
     Public AnonymousList As New Dictionary(Of String, Boolean)     'Users that shouldn't be listed in user list
-    Public UsersWriter As StreamWriter
+    Public UsersToken As JArray
+
+    Public Enum UserProperty
+        Username
+        Password
+        Permissions
+    End Enum
 
     '---------- User Management ----------
     ''' <summary>
@@ -45,30 +52,33 @@ Public Module UserManagement
                 unpassword = GetEncryptedString(unpassword, Algorithms.SHA256)
                 Wdbg("I", "Hash computed.")
             ElseIf Not Regexp.IsMatch(unpassword) Then
-                Throw New InvalidOperationException("Trying to add unencrypted password to users list. That won't work properly, since login relies on encrypted passwords.")
+                Throw New InvalidOperationException("Trying to add unencrypted password to users list.")
             End If
 
             'Add user locally
-            If Not File.Exists(paths("Users")) Then File.Create(paths("Users")).Close()
-            Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
             If Not userword.ContainsKey(uninitUser) Then userword.Add(uninitUser, unpassword)
 
             'Add user globally
-            UsersWriter = New StreamWriter(paths("Users"), True) With {.AutoFlush = True}
-            If Not UsersLines.Count = 0 Then
-                Dim UserExistsInUsersLines As Boolean
-                For UserLine As Integer = 0 To UsersLines.Count - 1
-                    If UsersLines(UserLine).StartsWith(uninitUser) Then
-                        UserExistsInUsersLines = True
+            If Not UsersToken.Count = 0 Then
+                Dim UserExists As Boolean
+                For Each UserToken As JObject In UsersToken
+                    If UserToken("username").ToString = uninitUser Then
+                        UserExists = True
                     End If
                 Next
-                If Not UserExistsInUsersLines Then
-                    UsersWriter.WriteLine(uninitUser + "," + unpassword)
+                If Not UserExists Then
+                    Dim NewUser As New JObject(New JProperty("username", uninitUser),
+                                               New JProperty("password", unpassword),
+                                               New JProperty("permissions", New JArray))
+                    UsersToken.Add(NewUser)
                 End If
             Else
-                UsersWriter.WriteLine(uninitUser + "," + unpassword)
+                Dim NewUser As New JObject(New JProperty("username", uninitUser),
+                                           New JProperty("password", unpassword),
+                                           New JProperty("permissions", New JArray))
+                UsersToken.Add(NewUser)
             End If
-            UsersWriter.Close() : UsersWriter.Dispose()
+            File.WriteAllText(paths("Users"), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
 
             'Ready permissions
             Wdbg("I", "Username {0} added. Readying permissions...", uninitUser)
@@ -76,7 +86,7 @@ Public Module UserManagement
             Return True
         Catch ex As Exception
             Throw New Exceptions.UserCreationException(DoTranslation("Error trying to add username.") + vbNewLine +
-                                                                DoTranslation("Error {0}: {1}").FormatString(ex.Message))
+                                                       DoTranslation("Error {0}: {1}").FormatString(ex.Message))
             WStkTrc(ex)
         End Try
         Return False
@@ -87,30 +97,59 @@ Public Module UserManagement
     ''' </summary>
     Public Sub InitializeUsers()
         'Opens file stream
-        Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-        Dim SplitEntries() As String
-        For Each Line As String In UsersLines
-            SplitEntries = Line.Split(",")
-            InitializeUser(SplitEntries(0), SplitEntries(1), False)
+        Dim UsersTokenContent As String = File.ReadAllText(paths("Users"))
+        Dim UninitUsersToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(UsersTokenContent), UsersTokenContent, "{}"))
+        For Each UserToken As JObject In UninitUsersToken
+            InitializeUser(UserToken("username"), UserToken("password"), False)
         Next
     End Sub
 
     ''' <summary>
-    ''' Gets user's encrypted password
+    ''' Loads user token
     ''' </summary>
-    ''' <param name="User">Target User</param>
-    Function GetUserEncryptedPassword(ByVal User As String)
-        'Opens file stream
-        Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-        Dim SplitEntries() As String
-        For Each Line As String In UsersLines
-            SplitEntries = Line.Split(",")
-            If SplitEntries(0) = User Then
-                Return SplitEntries(1)
+    Sub LoadUserToken()
+        If Not File.Exists(paths("Users")) Then File.Create(paths("Users")).Close()
+        Dim UsersTokenContent As String = File.ReadAllText(paths("Users"))
+        UsersToken = JArray.Parse(If(Not String.IsNullOrEmpty(UsersTokenContent), UsersTokenContent, "[]"))
+    End Sub
+
+    ''' <summary>
+    ''' Gets user property
+    ''' </summary>
+    ''' <param name="User">Target user</param>
+    ''' <param name="PropertyType">Property type</param>
+    ''' <returns>JSON token of user property</returns>
+    Public Function GetUserProperty(ByVal User As String, ByVal PropertyType As UserProperty) As JToken
+        For Each UserToken As JObject In UsersToken
+            If UserToken("username").ToString = User Then
+                Return UserToken.SelectToken(PropertyType.ToString.ToLower)
             End If
         Next
-        Return ""
     End Function
+
+    ''' <summary>
+    ''' Sets user property
+    ''' </summary>
+    ''' <param name="User">Target user</param>
+    ''' <param name="PropertyType">Property type</param>
+    ''' <param name="Value">Value</param>
+    Public Sub SetUserProperty(ByVal User As String, ByVal PropertyType As UserProperty, ByVal Value As String)
+        For Each UserToken As JObject In UsersToken
+            If UserToken("username").ToString = User Then
+                Select Case PropertyType
+                    Case UserProperty.Username
+                        UserToken("username") = Value
+                    Case UserProperty.Password
+                        UserToken("password") = Value
+                    Case UserProperty.Permissions
+                        Throw New NotSupportedException("Use AddPermission and RemovePermission for this.")
+                    Case Else
+                        Throw New ArgumentException("Property type is invalid")
+                End Select
+            End If
+        Next
+        File.WriteAllText(paths("Users"), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
+    End Sub
 
     ''' <summary>
     ''' Adds a new user
@@ -186,20 +225,20 @@ Public Module UserManagement
                     Wdbg("I", "Removing permissions...")
                     adminList.Remove(user)
                     disabledList.Remove(user)
+                    AnonymousList.Remove(user)
 
                     'Remove user
-                    Wdbg("I", "userword.ToBeRemoved = {0}", user)
+                    Wdbg("I", "Removing username {0}...", user)
                     userword.Remove(user)
 
-                    'Remove user from users.csv
-                    Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-                    For i As Integer = 0 To UsersLines.Count - 1
-                        If UsersLines(i).StartsWith($"{user},") Then
-                            UsersLines.RemoveAt(i)
+                    'Remove user from Users.json
+                    For Each UserToken As JObject In UsersToken
+                        If UserToken("username").ToString = user Then
+                            UserToken.Remove()
                             Exit For
                         End If
                     Next
-                    File.WriteAllLines(paths("Users"), UsersLines)
+                    File.WriteAllText(paths("Users"), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
 
                     'Raise event
                     EventManager.RaiseUserRemoved(user)
@@ -231,15 +270,8 @@ Public Module UserManagement
                     userword.Add(Username, Temporary)
                     PermissionEditForNewUser(OldName, Username)
 
-                    'Rename username in users.csv
-                    Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-                    For i As Integer = 0 To UsersLines.Count - 1
-                        If UsersLines(i).StartsWith($"{OldName},") Then
-                            UsersLines(i) = UsersLines(i).Replace(OldName, Username)
-                            Exit For
-                        End If
-                    Next
-                    File.WriteAllLines(paths("Users"), UsersLines)
+                    'Rename username in Users.json
+                    SetUserProperty(OldName, UserProperty.Username, Username)
 
                     'Raise event
                     EventManager.RaiseUsernameChanged(OldName, Username)
@@ -264,7 +296,7 @@ Public Module UserManagement
         If setRootPasswd Then
             AddUser("root", RootPasswd)
         ElseIf File.Exists(paths("Users")) Then
-            InitializeUser("root", GetUserEncryptedPassword("root"), False)
+            InitializeUser("root", GetUserProperty("root", UserProperty.Password), False)
         Else
             AddUser("root")
         End If
@@ -288,14 +320,7 @@ Public Module UserManagement
                 userword.Item(Target) = NewPass
 
                 'Change password globally
-                Dim UsersLines As List(Of String) = File.ReadAllLines(paths("Users")).ToList
-                For i As Integer = 0 To UsersLines.Count - 1
-                    If UsersLines(i).StartsWith($"{Target},") Then
-                        UsersLines(i) = UsersLines(i).Replace(CurrentPass, NewPass)
-                        Exit For
-                    End If
-                Next
-                File.WriteAllLines(paths("Users"), UsersLines)
+                SetUserProperty(Target, UserProperty.Password, NewPass)
 
                 'Raise event
                 EventManager.RaiseUserPasswordChanged(Target)
