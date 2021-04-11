@@ -29,6 +29,7 @@ Imports KS
     <AssemblyInitialize()> Public Shared Sub ReadyEverything(Context As TestContext)
         InitPaths()
         CreateConfig(False)
+        LoadUserToken()
     End Sub
 
     ''' <summary>
