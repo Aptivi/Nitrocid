@@ -52,7 +52,7 @@ Module FTPFilesystem
                         EntryBuilder.Append("/")
                     ElseIf DirListFTP.Type = FtpFileSystemObjectType.Link Then
                         EntryBuilder.Append(" >> ")
-                        EntryBuilder.Append(ClientFTP.DereferenceLink(DirListFTP).FullName)
+                        EntryBuilder.Append(DirListFTP.LinkTarget)
                     End If
                     Entries.Add(EntryBuilder.ToString)
                     EntryBuilder.Clear()
