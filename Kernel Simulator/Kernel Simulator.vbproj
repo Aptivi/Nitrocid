@@ -20,7 +20,7 @@
     </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.15.7</Version>
+    <Version>0.0.15.8</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
