@@ -82,8 +82,8 @@ Public Module TextEditGetCommand
                         If CInt(Arguments(0)) <= TextEdit_FileLines.Count Then
                             Dim Line As String = TextEdit_FileLines(LineNumber - 1)
                             Wdbg("I", "Line number: {0} ({1})", LineNumber, Line)
-                            W("- {0}: ", False, ColTypes.HelpCmd, LineNumber)
-                            W(Line, True, ColTypes.HelpDef)
+                            W("- {0}: ", False, ColTypes.ListEntry, LineNumber)
+                            W(Line, True, ColTypes.ListValue)
                         Else
                             W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Err)
                         End If
@@ -94,8 +94,8 @@ Public Module TextEditGetCommand
                 Else
                     For Each Line As String In TextEdit_FileLines
                         Wdbg("I", "Line number: {0} ({1})", LineNumber, Line)
-                        W("- {0}: ", False, ColTypes.HelpCmd, LineNumber)
-                        W(Line, True, ColTypes.HelpDef)
+                        W("- {0}: ", False, ColTypes.ListEntry, LineNumber)
+                        W(Line, True, ColTypes.ListValue)
                         LineNumber += 1
                     Next
                 End If
@@ -212,8 +212,8 @@ Public Module TextEditGetCommand
                         If CInt(Arguments(1)) <= TextEdit_FileLines.Count Then
                             For CharIndex As Integer = 0 To TextEdit_FileLines(Arguments(1)).Length - 1
                                 If TextEdit_FileLines(Arguments(1))(CharIndex) = Arguments(0) Then
-                                    W("- {0}: ", False, ColTypes.HelpCmd, CharIndex)
-                                    W("{0} ({1})", True, ColTypes.HelpDef, Arguments(0), TextEdit_FileLines(Arguments(1)))
+                                    W("- {0}: ", False, ColTypes.ListEntry, CharIndex)
+                                    W("{0} ({1})", True, ColTypes.ListValue, Arguments(0), TextEdit_FileLines(Arguments(1)))
                                 End If
                             Next
                         Else
@@ -224,8 +224,8 @@ Public Module TextEditGetCommand
                         For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
                             For CharIndex As Integer = 0 To TextEdit_FileLines(LineIndex).Length - 1
                                 If TextEdit_FileLines(LineIndex)(CharIndex) = Arguments(0) Then
-                                    W("- {0}:{1}: ", False, ColTypes.HelpCmd, LineIndex, CharIndex)
-                                    W("{0} ({1})", True, ColTypes.HelpDef, Arguments(0), TextEdit_FileLines(LineIndex))
+                                    W("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, CharIndex)
+                                    W("{0} ({1})", True, ColTypes.ListValue, Arguments(0), TextEdit_FileLines(LineIndex))
                                 End If
                             Next
                         Next

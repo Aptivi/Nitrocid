@@ -61,29 +61,29 @@ Public Module MailTransfer
             Wdbg("I", "{0} senders.", Msg.From.Count)
             For Each Address As InternetAddress In Msg.From
                 Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                W(DoTranslation("- From {0}"), True, ColTypes.HelpCmd, Address.ToString)
+                W(DoTranslation("- From {0}"), True, ColTypes.ListEntry, Address.ToString)
             Next
 
             'Print all the addresses that received the mail
             Wdbg("I", "{0} receivers.", Msg.To.Count)
             For Each Address As InternetAddress In Msg.To
                 Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                W(DoTranslation("- To {0}"), True, ColTypes.HelpCmd, Address.ToString)
+                W(DoTranslation("- To {0}"), True, ColTypes.ListEntry, Address.ToString)
             Next
 
             'Print the date and time when the user received the mail
             Wdbg("I", "Rendering time and date of {0}.", Msg.Date.DateTime.ToString)
-            W(DoTranslation("- Sent at {0} in {1}"), True, ColTypes.HelpCmd, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
+            W(DoTranslation("- Sent at {0} in {1}"), True, ColTypes.ListEntry, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
 
             'Prepare subject
             Console.WriteLine()
             Wdbg("I", "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject)
-            W($"- {Msg.Subject}", False, ColTypes.HelpCmd)
+            W($"- {Msg.Subject}", False, ColTypes.ListEntry)
 
             'Write a sign after the subject if attachments are found
             Wdbg("I", "Attachments count: {0}", Msg.Attachments.Count)
             If Msg.Attachments.Count > 0 Then
-                W(" - [*]", True, ColTypes.HelpCmd)
+                W(" - [*]", True, ColTypes.ListEntry)
             Else
                 Console.WriteLine()
             End If
@@ -112,7 +112,7 @@ Public Module MailTransfer
                                 Dim DecryptedByte(DecryptedStream.Length) As Byte
                                 DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
                                 Wdbg("I", "Written {0} bytes to buffer.", DecryptedByte.Length)
-                                W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.HelpDef)
+                                W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
                             End If
                         Next
                     End If
@@ -123,10 +123,10 @@ Public Module MailTransfer
                     Dim DecryptedByte(DecryptedStream.Length) As Byte
                     DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
                     Wdbg("I", "Written {0} bytes to buffer.", DecryptedByte.Length)
-                    W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.HelpDef)
+                    W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
                 End If
             Else
-                W(Msg.GetTextBody(TextFormat.Plain), True, ColTypes.HelpDef)
+                W(Msg.GetTextBody(TextFormat.Plain), True, ColTypes.ListValue)
             End If
             Console.WriteLine()
 

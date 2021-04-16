@@ -46,18 +46,18 @@ Public Module Config
                 'The Colors Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Colors",
-                        New IniKey(ksconf, "User Name Shell Color", userNameShellColor.ToString),
-                        New IniKey(ksconf, "Host Name Shell Color", hostNameShellColor.ToString),
-                        New IniKey(ksconf, "Continuable Kernel Error Color", contKernelErrorColor.ToString),
-                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", uncontKernelErrorColor.ToString),
-                        New IniKey(ksconf, "Text Color", neutralTextColor.ToString),
-                        New IniKey(ksconf, "License Color", licenseColor.ToString),
-                        New IniKey(ksconf, "Background Color", backgroundColor.ToString),
-                        New IniKey(ksconf, "Input Color", inputColor.ToString),
-                        New IniKey(ksconf, "Listed command in Help Color", cmdListColor.ToString),
-                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString),
-                        New IniKey(ksconf, "Kernel Stage Color", stageColor.ToString),
-                        New IniKey(ksconf, "Error Text Color", errorColor.ToString),
+                        New IniKey(ksconf, "User Name Shell Color", UserNameShellColor.ToString),
+                        New IniKey(ksconf, "Host Name Shell Color", HostNameShellColor.ToString),
+                        New IniKey(ksconf, "Continuable Kernel Error Color", ContKernelErrorColor.ToString),
+                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", UncontKernelErrorColor.ToString),
+                        New IniKey(ksconf, "Text Color", NeutralTextColor.ToString),
+                        New IniKey(ksconf, "License Color", LicenseColor.ToString),
+                        New IniKey(ksconf, "Background Color", BackgroundColor.ToString),
+                        New IniKey(ksconf, "Input Color", InputColor.ToString),
+                        New IniKey(ksconf, "List Entry Color", ListEntryColor.ToString),
+                        New IniKey(ksconf, "List Value Color", ListValueColor.ToString),
+                        New IniKey(ksconf, "Kernel Stage Color", StageColor.ToString),
+                        New IniKey(ksconf, "Error Text Color", ErrorColor.ToString),
                         New IniKey(ksconf, "Warning Text Color", WarningColor.ToString),
                         New IniKey(ksconf, "Option Color", OptionColor.ToString)))
 
@@ -167,18 +167,18 @@ Public Module Config
                 'The Colors Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Colors",
-                        New IniKey(ksconf, "User Name Shell Color", userNameShellColor.ToString),
-                        New IniKey(ksconf, "Host Name Shell Color", hostNameShellColor.ToString),
-                        New IniKey(ksconf, "Continuable Kernel Error Color", contKernelErrorColor.ToString),
-                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", uncontKernelErrorColor.ToString),
-                        New IniKey(ksconf, "Text Color", neutralTextColor.ToString),
-                        New IniKey(ksconf, "License Color", licenseColor.ToString),
-                        New IniKey(ksconf, "Background Color", backgroundColor.ToString),
-                        New IniKey(ksconf, "Input Color", inputColor.ToString),
-                        New IniKey(ksconf, "Listed command in Help Color", cmdListColor.ToString),
-                        New IniKey(ksconf, "Definition of command in Help Color", cmdDefColor.ToString),
-                        New IniKey(ksconf, "Kernel Stage Color", stageColor.ToString),
-                        New IniKey(ksconf, "Error Text Color", errorColor.ToString),
+                        New IniKey(ksconf, "User Name Shell Color", UserNameShellColor.ToString),
+                        New IniKey(ksconf, "Host Name Shell Color", HostNameShellColor.ToString),
+                        New IniKey(ksconf, "Continuable Kernel Error Color", ContKernelErrorColor.ToString),
+                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", UncontKernelErrorColor.ToString),
+                        New IniKey(ksconf, "Text Color", NeutralTextColor.ToString),
+                        New IniKey(ksconf, "License Color", LicenseColor.ToString),
+                        New IniKey(ksconf, "Background Color", BackgroundColor.ToString),
+                        New IniKey(ksconf, "Input Color", InputColor.ToString),
+                        New IniKey(ksconf, "List Entry Color", ListEntryColor.ToString),
+                        New IniKey(ksconf, "List Value Color", ListValueColor.ToString),
+                        New IniKey(ksconf, "Kernel Stage Color", StageColor.ToString),
+                        New IniKey(ksconf, "Error Text Color", ErrorColor.ToString),
                         New IniKey(ksconf, "Warning Text Color", WarningColor.ToString),
                         New IniKey(ksconf, "Option Color", OptionColor.ToString)))
 
@@ -473,9 +473,9 @@ Public Module Config
                 licenseColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("License Color").Value), ConsoleColors)
                 backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Background Color").Value), ConsoleColors)
                 inputColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColors)
-                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Listed command in help Color").Value), ConsoleColors)
-                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Definition of command in Help Color").Value), ConsoleColors)
-                stageColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Kernel Stage Color").Value), ConsoleColors)
+                ListEntryColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("List Entry Color").Value), ConsoleColors)
+                ListValueColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("List Value Color").Value), ConsoleColors)
+                StageColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Kernel Stage Color").Value), ConsoleColors)
                 errorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Error Text Color").Value), ConsoleColors)
                 WarningColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Warning Text Color").Value), ConsoleColors)
                 OptionColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Option Color").Value), ConsoleColors)

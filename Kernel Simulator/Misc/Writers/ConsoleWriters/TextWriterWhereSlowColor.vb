@@ -56,10 +56,10 @@ Module TextWriterWhereSlowColor
                     Else
                         Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
                     End If
-                ElseIf colorType = ColTypes.HelpDef Then
-                    Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
-                ElseIf colorType = ColTypes.HelpCmd Then
-                    Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
+                ElseIf colorType = ColTypes.ListValue Then
+                    Write(esc + "[38;5;" + CStr(ListValueColor) + "m")
+                ElseIf colorType = ColTypes.ListEntry Then
+                    Write(esc + "[38;5;" + CStr(ListEntryColor) + "m")
                 ElseIf colorType = ColTypes.Stage Then
                     Write(esc + "[38;5;" + CStr(stageColor) + "m")
                 ElseIf colorType = ColTypes.Err Then

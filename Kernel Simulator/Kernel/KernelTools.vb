@@ -494,10 +494,10 @@ Public Module KernelTools
         W(DoTranslation("Checking for system updates..."), True, ColTypes.Neutral)
         Dim AvailableUpdates As List(Of String) = FetchKernelUpdates()
         If Not IsNothing(AvailableUpdates) And AvailableUpdates.Count > 0 Then
-            W(DoTranslation("Found new version: "), False, ColTypes.HelpCmd)
-            W(AvailableUpdates(0), True, ColTypes.HelpDef)
-            W(DoTranslation("You can download it at: "), False, ColTypes.HelpCmd)
-            W(AvailableUpdates(1), True, ColTypes.HelpDef)
+            W(DoTranslation("Found new version: "), False, ColTypes.ListEntry)
+            W(AvailableUpdates(0), True, ColTypes.ListValue)
+            W(DoTranslation("You can download it at: "), False, ColTypes.ListEntry)
+            W(AvailableUpdates(1), True, ColTypes.ListValue)
         ElseIf IsNothing(AvailableUpdates) Then
             W(DoTranslation("Failed to check for updates."), True, ColTypes.Err)
         End If

@@ -40,12 +40,12 @@ Public Module TextEditHelpSystem
     Public Sub TextEdit_GetHelp(Optional ByVal Command As String = "")
         If Command = "" Then
             For Each HelpKey As String In TextEdit_HelpEntries.Keys
-                W("- {0}: ", False, ColTypes.HelpCmd, HelpKey)
-                W(TextEdit_HelpEntries(HelpKey), True, ColTypes.HelpDef)
+                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
+                W(TextEdit_HelpEntries(HelpKey), True, ColTypes.ListValue)
             Next
             For Each HelpKey As String In TextEdit_ModHelpEntries.Keys
-                W("- {0}: ", False, ColTypes.HelpCmd, HelpKey)
-                W(TextEdit_ModHelpEntries(HelpKey), True, ColTypes.HelpDef)
+                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
+                W(TextEdit_ModHelpEntries(HelpKey), True, ColTypes.ListValue)
             Next
         ElseIf Command = "help" Then
             W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)

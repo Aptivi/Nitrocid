@@ -56,11 +56,11 @@ Module ThemeStudioTools
     ''' <summary>
     ''' Selected command list color for new theme
     ''' </summary>
-    Friend SelectedCmdListColor As ConsoleColors = cmdListColor
+    Friend SelectedCmdListColor As ConsoleColors = ListEntryColor
     ''' <summary>
     ''' Selected command definition color for new theme
     ''' </summary>
-    Friend SelectedCmdDefColor As ConsoleColors = cmdDefColor
+    Friend SelectedCmdDefColor As ConsoleColors = ListValueColor
     ''' <summary>
     ''' Selected stage color for new theme
     ''' </summary>

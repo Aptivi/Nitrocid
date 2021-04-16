@@ -30,8 +30,8 @@ Public Module Color
         UserName = 6
         License = 7
         Gray = 8
-        HelpDef = 9
-        HelpCmd = 10
+        ListValue = 9
+        ListEntry = 10
         Stage = 11
         Err = 12
         Warning = 13
@@ -39,18 +39,18 @@ Public Module Color
     End Enum
 
     'Variables for colors used by previous versions of Kernel.
-    Public inputColor As ConsoleColors = ConsoleColors.White
-    Public licenseColor As ConsoleColors = ConsoleColors.White
-    Public contKernelErrorColor As ConsoleColors = ConsoleColors.Yellow
-    Public uncontKernelErrorColor As ConsoleColors = ConsoleColors.Red
-    Public hostNameShellColor As ConsoleColors = ConsoleColors.DarkGreen
-    Public userNameShellColor As ConsoleColors = ConsoleColors.Green
-    Public backgroundColor As ConsoleColors = ConsoleColors.Black
-    Public neutralTextColor As ConsoleColors = ConsoleColors.Gray
-    Public cmdListColor As ConsoleColors = ConsoleColors.DarkYellow
-    Public cmdDefColor As ConsoleColors = ConsoleColors.DarkGray
-    Public stageColor As ConsoleColors = ConsoleColors.Green
-    Public errorColor As ConsoleColors = ConsoleColors.Red
+    Public InputColor As ConsoleColors = ConsoleColors.White
+    Public LicenseColor As ConsoleColors = ConsoleColors.White
+    Public ContKernelErrorColor As ConsoleColors = ConsoleColors.Yellow
+    Public UncontKernelErrorColor As ConsoleColors = ConsoleColors.Red
+    Public HostNameShellColor As ConsoleColors = ConsoleColors.DarkGreen
+    Public UserNameShellColor As ConsoleColors = ConsoleColors.Green
+    Public BackgroundColor As ConsoleColors = ConsoleColors.Black
+    Public NeutralTextColor As ConsoleColors = ConsoleColors.Gray
+    Public ListEntryColor As ConsoleColors = ConsoleColors.DarkYellow
+    Public ListValueColor As ConsoleColors = ConsoleColors.DarkGray
+    Public StageColor As ConsoleColors = ConsoleColors.Green
+    Public ErrorColor As ConsoleColors = ConsoleColors.Red
     Public WarningColor As ConsoleColors = ConsoleColors.Yellow
     Public OptionColor As ConsoleColors = ConsoleColors.DarkYellow
 
@@ -85,18 +85,18 @@ Public Module Color
     Public Sub ResetColors()
         Wdbg("I", "Resetting colors")
         Dim DefInfo As New ThemeInfo("_Default")
-        inputColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeInputColor), ConsoleColors)
-        licenseColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeLicenseColor), ConsoleColors)
-        contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeContKernelErrorColor), ConsoleColors)
-        uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeUncontKernelErrorColor), ConsoleColors)
-        hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeHostNameShellColor), ConsoleColors)
-        userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeUserNameShellColor), ConsoleColors)
-        backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeBackgroundColor), ConsoleColors)
-        neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeNeutralTextColor), ConsoleColors)
-        cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeCmdListColor), ConsoleColors)
-        cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeCmdDefColor), ConsoleColors)
-        stageColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeStageColor), ConsoleColors)
-        errorColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeErrorColor), ConsoleColors)
+        InputColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeInputColor), ConsoleColors)
+        LicenseColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeLicenseColor), ConsoleColors)
+        ContKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeContKernelErrorColor), ConsoleColors)
+        UncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeUncontKernelErrorColor), ConsoleColors)
+        HostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeHostNameShellColor), ConsoleColors)
+        UserNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeUserNameShellColor), ConsoleColors)
+        BackgroundColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeBackgroundColor), ConsoleColors)
+        NeutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeNeutralTextColor), ConsoleColors)
+        ListEntryColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeCmdListColor), ConsoleColors)
+        ListValueColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeCmdDefColor), ConsoleColors)
+        StageColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeStageColor), ConsoleColors)
+        ErrorColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeErrorColor), ConsoleColors)
         WarningColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeWarningColor), ConsoleColors)
         OptionColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeOptionColor), ConsoleColors)
         LoadBack()
@@ -112,7 +112,7 @@ Public Module Color
         Try
             Wdbg("I", "Filling background with background color")
             Dim esc As Char = GetEsc()
-            Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            Console.Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
             Console.Clear()
         Catch ex As Exception
             Wdbg("E", "Failed to set background: {0}", ex.Message)
@@ -145,18 +145,18 @@ Public Module Color
             If Not theme = "Default" Then
 #Disable Warning BC42104
                 'Set colors as appropriate
-                inputColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeInputColor), ConsoleColors)
-                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeLicenseColor), ConsoleColors)
-                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeContKernelErrorColor), ConsoleColors)
-                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeUncontKernelErrorColor), ConsoleColors)
-                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeHostNameShellColor), ConsoleColors)
-                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeUserNameShellColor), ConsoleColors)
-                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeBackgroundColor), ConsoleColors)
-                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeNeutralTextColor), ConsoleColors)
-                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeCmdListColor), ConsoleColors)
-                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeCmdDefColor), ConsoleColors)
-                stageColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeStageColor), ConsoleColors)
-                errorColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeErrorColor), ConsoleColors)
+                InputColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeInputColor), ConsoleColors)
+                LicenseColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeLicenseColor), ConsoleColors)
+                ContKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeContKernelErrorColor), ConsoleColors)
+                UncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeUncontKernelErrorColor), ConsoleColors)
+                HostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeHostNameShellColor), ConsoleColors)
+                UserNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeUserNameShellColor), ConsoleColors)
+                BackgroundColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeBackgroundColor), ConsoleColors)
+                NeutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeNeutralTextColor), ConsoleColors)
+                ListEntryColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeCmdListColor), ConsoleColors)
+                ListValueColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeCmdDefColor), ConsoleColors)
+                StageColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeStageColor), ConsoleColors)
+                ErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeErrorColor), ConsoleColors)
                 WarningColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeWarningColor), ConsoleColors)
                 OptionColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeOptionColor), ConsoleColors)
 #Enable Warning BC42104
@@ -187,18 +187,18 @@ Public Module Color
         Dim ksconf As New IniFile()
         Dim configPath As String = paths("Configuration")
         ksconf.Load(configPath)
-        ksconf.Sections("Colors").Keys("User Name Shell Color").Value = userNameShellColor.ToString
-        ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = hostNameShellColor.ToString
-        ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = contKernelErrorColor.ToString
-        ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = uncontKernelErrorColor.ToString
-        ksconf.Sections("Colors").Keys("Text Color").Value = neutralTextColor.ToString
-        ksconf.Sections("Colors").Keys("License Color").Value = licenseColor.ToString
-        ksconf.Sections("Colors").Keys("Background Color").Value = backgroundColor.ToString
-        ksconf.Sections("Colors").Keys("Input Color").Value = inputColor.ToString
-        ksconf.Sections("Colors").Keys("Listed command in Help Color").Value = cmdListColor.ToString
-        ksconf.Sections("Colors").Keys("Definition of command in Help Color").Value = cmdDefColor.ToString
-        ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = stageColor.ToString
-        ksconf.Sections("Colors").Keys("Error Text Color").Value = errorColor.ToString
+        ksconf.Sections("Colors").Keys("User Name Shell Color").Value = UserNameShellColor.ToString
+        ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = HostNameShellColor.ToString
+        ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = ContKernelErrorColor.ToString
+        ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = UncontKernelErrorColor.ToString
+        ksconf.Sections("Colors").Keys("Text Color").Value = NeutralTextColor.ToString
+        ksconf.Sections("Colors").Keys("License Color").Value = LicenseColor.ToString
+        ksconf.Sections("Colors").Keys("Background Color").Value = BackgroundColor.ToString
+        ksconf.Sections("Colors").Keys("Input Color").Value = InputColor.ToString
+        ksconf.Sections("Colors").Keys("List Entry Color").Value = ListEntryColor.ToString
+        ksconf.Sections("Colors").Keys("List Value Color").Value = ListValueColor.ToString
+        ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = StageColor.ToString
+        ksconf.Sections("Colors").Keys("Error Text Color").Value = ErrorColor.ToString
         ksconf.Sections("Colors").Keys("Warning Text Color").Value = WarningColor.ToString
         ksconf.Sections("Colors").Keys("Option Color").Value = OptionColor.ToString
         ksconf.Save(configPath)
@@ -276,18 +276,18 @@ Public Module Color
                [Enum].IsDefined(GetType(ConsoleColors), BackC) And [Enum].IsDefined(GetType(ConsoleColors), NeutralTextC) And [Enum].IsDefined(GetType(ConsoleColors), CmdListC) And
                [Enum].IsDefined(GetType(ConsoleColors), CmdDefC) And [Enum].IsDefined(GetType(ConsoleColors), StageC) And [Enum].IsDefined(GetType(ConsoleColors), ErrorC) And
                [Enum].IsDefined(GetType(ConsoleColors), WarningC) And [Enum].IsDefined(GetType(ConsoleColors), OptionC) Then
-                inputColor = CType([Enum].Parse(GetType(ConsoleColors), InputC), ConsoleColors)
-                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), LicenseC), ConsoleColors)
-                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ContKernelErrorC), ConsoleColors)
-                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), UncontKernelErrorC), ConsoleColors)
-                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), HostNameC), ConsoleColors)
-                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), UserNameC), ConsoleColors)
-                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), BackC), ConsoleColors)
-                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), NeutralTextC), ConsoleColors)
-                cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), CmdListC), ConsoleColors)
-                cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), CmdDefC), ConsoleColors)
-                stageColor = CType([Enum].Parse(GetType(ConsoleColors), StageC), ConsoleColors)
-                errorColor = CType([Enum].Parse(GetType(ConsoleColors), ErrorC), ConsoleColors)
+                InputColor = CType([Enum].Parse(GetType(ConsoleColors), InputC), ConsoleColors)
+                LicenseColor = CType([Enum].Parse(GetType(ConsoleColors), LicenseC), ConsoleColors)
+                ContKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ContKernelErrorC), ConsoleColors)
+                UncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), UncontKernelErrorC), ConsoleColors)
+                HostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), HostNameC), ConsoleColors)
+                UserNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), UserNameC), ConsoleColors)
+                BackgroundColor = CType([Enum].Parse(GetType(ConsoleColors), BackC), ConsoleColors)
+                NeutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), NeutralTextC), ConsoleColors)
+                ListEntryColor = CType([Enum].Parse(GetType(ConsoleColors), CmdListC), ConsoleColors)
+                ListValueColor = CType([Enum].Parse(GetType(ConsoleColors), CmdDefC), ConsoleColors)
+                StageColor = CType([Enum].Parse(GetType(ConsoleColors), StageC), ConsoleColors)
+                ErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ErrorC), ConsoleColors)
                 WarningColor = CType([Enum].Parse(GetType(ConsoleColors), WarningC), ConsoleColors)
                 OptionColor = CType([Enum].Parse(GetType(ConsoleColors), OptionC), ConsoleColors)
                 LoadBack()

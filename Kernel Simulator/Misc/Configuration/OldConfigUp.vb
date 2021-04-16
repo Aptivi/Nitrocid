@@ -51,9 +51,9 @@ Module OldConfigUp
             ElseIf line.Contains("Input Color = ") Then
                 If ColoredShell = True Then inputColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Input Color = ", "")), ConsoleColors)
             ElseIf line.Contains("Listed command in Help Color = ") Then
-                If ColoredShell = True Then cmdListColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Listed command in Help Color = ", "")), ConsoleColors)
+                If ColoredShell = True Then ListEntryColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Listed command in Help Color = ", "")), ConsoleColors)
             ElseIf line.Contains("Definition of command in Help Color = ") Then
-                If ColoredShell = True Then cmdDefColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Definition of command in Help Color = ", "")), ConsoleColors)
+                If ColoredShell = True Then ListValueColor = CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Definition of command in Help Color = ", "")), ConsoleColors)
             ElseIf line.Contains("Change Root Password = ") Then
                 If line.Replace("Change Root Password = ", "") = "True" Then
                     setRootPasswd = True

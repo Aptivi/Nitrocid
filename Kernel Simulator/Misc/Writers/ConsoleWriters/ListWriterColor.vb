@@ -45,7 +45,7 @@ Public Module ListWriterColor
                 'Try to write list to console
                 OldTop = CursorTop
                 For Each ListEntry As TKey In List.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, ListEntry) : W("{0}", True, ColTypes.HelpDef, List(ListEntry))
+                    W("- {0}: ", False, ColTypes.ListEntry, ListEntry) : W("{0}", True, ColTypes.ListValue, List(ListEntry))
                     If Wrap Then
                         LinesMade += CursorTop - OldTop
                         OldTop = CursorTop

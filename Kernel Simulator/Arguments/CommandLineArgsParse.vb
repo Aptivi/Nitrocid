@@ -45,10 +45,10 @@ Module CommandLineArgsParse
                 ElseIf arg = "args" Then
                     argsOnBoot = True
                 ElseIf arg = "help" Then
-                    W("- testMod: ", False, ColTypes.HelpCmd) : W(DoTranslation("Tests mods by providing mod files"), True, ColTypes.HelpDef)
-                    W("- testInteractive: ", False, ColTypes.HelpCmd) : W(DoTranslation("Opens a test shell"), True, ColTypes.HelpDef)
-                    W("- debug: ", False, ColTypes.HelpCmd) : W(DoTranslation("Enables debug mode"), True, ColTypes.HelpDef)
-                    W("- args: ", False, ColTypes.HelpCmd) : W(DoTranslation("Prompts for arguments"), True, ColTypes.HelpDef)
+                    W("- testMod: ", False, ColTypes.ListEntry) : W(DoTranslation("Tests mods by providing mod files"), True, ColTypes.ListValue)
+                    W("- testInteractive: ", False, ColTypes.ListEntry) : W(DoTranslation("Opens a test shell"), True, ColTypes.ListValue)
+                    W("- debug: ", False, ColTypes.ListEntry) : W(DoTranslation("Enables debug mode"), True, ColTypes.ListValue)
+                    W("- args: ", False, ColTypes.ListEntry) : W(DoTranslation("Prompts for arguments"), True, ColTypes.ListValue)
                     W(DoTranslation("* Press any key to start the kernel or ESC to exit."), True, ColTypes.Neutral)
                     If Console.ReadKey(True).Key = ConsoleKey.Escape Then
                         Environment.Exit(0)

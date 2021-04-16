@@ -651,7 +651,7 @@ Public Module GetCommand
 
                     Done = True
                     For Each DebugDevice As String In DebugDevices.Values
-                        W($"- {DebugDevice}", True, ColTypes.HelpCmd)
+                        W($"- {DebugDevice}", True, ColTypes.ListEntry)
                     Next
 
                 Case "mathbee"
@@ -1104,7 +1104,7 @@ Public Module GetCommand
 
                     'Shows system information
                     Done = True
-                    W(DoTranslation("[ Kernel settings (Running on {0}) ]"), True, ColTypes.HelpCmd, Environment.OSVersion.ToString)
+                    W(DoTranslation("[ Kernel settings (Running on {0}) ]"), True, ColTypes.ListEntry, Environment.OSVersion.ToString)
 
                     'Kernel section
                     W(vbNewLine + DoTranslation("Kernel Version:") + " {0}" + vbNewLine +
@@ -1116,20 +1116,20 @@ Public Module GetCommand
                                   DoTranslation("Time/Date on corner:") + " {6}" + vbNewLine, True, ColTypes.Neutral, KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString)
 
                     'Hardware section
-                    W(DoTranslation("[ Hardware settings ]{0}"), True, ColTypes.HelpCmd, vbNewLine)
+                    W(DoTranslation("[ Hardware settings ]{0}"), True, ColTypes.ListEntry, vbNewLine)
                     ListDrivers()
                     W(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Neutral)
 
                     'User section
-                    W(DoTranslation("{0}[ User settings ]"), True, ColTypes.HelpCmd, vbNewLine)
+                    W(DoTranslation("{0}[ User settings ]"), True, ColTypes.ListEntry, vbNewLine)
                     W(vbNewLine + DoTranslation("Current user name:") + " {0}" + vbNewLine +
                                   DoTranslation("Current host name:") + " {1}" + vbNewLine +
                                   DoTranslation("Available usernames:") + " {2}", True, ColTypes.Neutral, signedinusrnm, HName, String.Join(", ", userword.Keys))
 
                     'Messages Section
-                    W(vbNewLine + "[ MOTD ]", True, ColTypes.HelpCmd)
+                    W(vbNewLine + "[ MOTD ]", True, ColTypes.ListEntry)
                     W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
-                    W(vbNewLine + "[ MAL ]", True, ColTypes.HelpCmd)
+                    W(vbNewLine + "[ MAL ]", True, ColTypes.ListEntry)
                     W(vbNewLine + ProbePlaces(MAL), True, ColTypes.Neutral)
 
                 Case "unblockdbgdev"

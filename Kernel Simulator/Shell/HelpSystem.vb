@@ -120,29 +120,29 @@ Public Module HelpSystem
             If simHelp = False Then
                 For Each cmd As String In definitions.Keys
                     If (Not strictCmds.Contains(cmd)) Or (strictCmds.Contains(cmd) And adminList(signedinusrnm)) Then
-                        W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, definitions(cmd))
+                        W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, definitions(cmd))
                     End If
                 Next
                 For Each cmd As String In moddefs.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, moddefs(cmd))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, moddefs(cmd))
                 Next
                 For Each cmd As String In Aliases.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, definitions(Aliases(cmd)))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, definitions(Aliases(cmd)))
                 Next
                 W(DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Neutral)
             Else
                 For Each cmd As String In Aliases.Keys
-                    W("{0}({1}), ", False, ColTypes.HelpCmd, cmd, Aliases(cmd))
+                    W("{0}({1}), ", False, ColTypes.ListEntry, cmd, Aliases(cmd))
                 Next
                 For Each cmd As String In moddefs.Keys
-                    W("{0}, ", False, ColTypes.HelpCmd, cmd)
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
                 Next
                 For Each cmd As String In availableCommands
                     If (Not strictCmds.Contains(cmd)) Or (strictCmds.Contains(cmd) And adminList(signedinusrnm)) Then
                         NormalUserCmds.Add(cmd)
                     End If
                 Next
-                W(String.Join(", ", NormalUserCmds), True, ColTypes.HelpCmd)
+                W(String.Join(", ", NormalUserCmds), True, ColTypes.ListEntry)
             End If
 
         ElseIf command = "adduser" Then
@@ -182,10 +182,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:") + " chattr <file> +/-<attributes>", True, ColTypes.Neutral)
             W(DoTranslation("where <attributes> is one of the following:") + vbNewLine, True, ColTypes.Neutral)
-            W("- Normal: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a normal file"), True, ColTypes.HelpDef)                   'Normal   = 128
-            W("- ReadOnly: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a read-only file"), True, ColTypes.HelpDef)              'ReadOnly = 1
-            W("- Hidden: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is a hidden file"), True, ColTypes.HelpDef)                   'Hidden   = 2
-            W("- Archive: ", False, ColTypes.HelpCmd) : W(DoTranslation("The file is an archive. Used for backups."), True, ColTypes.HelpDef)  'Archive  = 32
+            W("- Normal: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is a normal file"), True, ColTypes.ListValue)                   'Normal   = 128
+            W("- ReadOnly: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is a read-only file"), True, ColTypes.ListValue)              'ReadOnly = 1
+            W("- Hidden: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is a hidden file"), True, ColTypes.ListValue)                   'Hidden   = 2
+            W("- Archive: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is an archive. Used for backups."), True, ColTypes.ListValue)  'Archive  = 32
 
         ElseIf command = "chdir" Then
 

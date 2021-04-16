@@ -76,7 +76,7 @@ Public Module ZipGetCommand
                     Entries = ListZipEntries(ZipShell_CurrentArchiveDirectory)
                 End If
                 For Each Entry As ZipArchiveEntry In Entries
-                    W("- {0}: ", False, ColTypes.HelpCmd, Entry.FullName) : W("{0} ({0})", True, ColTypes.HelpDef, Entry.CompressedLength.FileSizeToString, Entry.Length.FileSizeToString)
+                    W("- {0}: ", False, ColTypes.ListEntry, Entry.FullName) : W("{0} ({0})", True, ColTypes.ListValue, Entry.CompressedLength.FileSizeToString, Entry.Length.FileSizeToString)
                 Next
             ElseIf Command = "get" Then
                 If Arguments?.Length > 0 Then

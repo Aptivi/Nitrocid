@@ -51,10 +51,10 @@ Public Module MailHelpSystem
     Public Sub IMAPShowHelp(Optional ByVal cmd As String = "")
         If cmd = "" Then
             For Each cmnd As String In MailDefinitions.Keys
-                W("- {0}: ", False, ColTypes.HelpCmd, cmnd) : W("{0}", True, ColTypes.HelpDef, MailDefinitions(cmnd))
+                W("- {0}: ", False, ColTypes.ListEntry, cmnd) : W("{0}", True, ColTypes.ListValue, MailDefinitions(cmnd))
             Next
             For Each cmnd As String In MailModDefs.Keys
-                W("- {0}: ", False, ColTypes.HelpCmd, cmnd) : W("{0}", True, ColTypes.HelpDef, MailModDefs(cmnd))
+                W("- {0}: ", False, ColTypes.ListEntry, cmnd) : W("{0}", True, ColTypes.ListValue, MailModDefs(cmnd))
             Next
         ElseIf cmd = "cd" Then
             W(DoTranslation("Usage:") + " cd <folder>: " + DoTranslation("Changes current mail directory"), True, ColTypes.Neutral)

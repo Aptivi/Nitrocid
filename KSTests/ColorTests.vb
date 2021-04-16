@@ -42,8 +42,8 @@ Imports KS
                       "- StageC = {10}" + vbNewLine +
                       "- ErrorC = {11}" + vbNewLine +
                       "- WarningC = {12}" + vbNewLine +
-                      "- OptionC = {13}", inputColor, licenseColor, contKernelErrorColor, uncontKernelErrorColor, hostNameShellColor, userNameShellColor, backgroundColor,
-                                          neutralTextColor, cmdListColor, cmdDefColor, stageColor, errorColor, WarningColor, OptionColor)
+                      "- OptionC = {13}", InputColor, LicenseColor, ContKernelErrorColor, UncontKernelErrorColor, HostNameShellColor, UserNameShellColor, BackgroundColor,
+                                          NeutralTextColor, ListEntryColor, ListValueColor, StageColor, ErrorColor, WarningColor, OptionColor)
     End Sub
 
 End Class

@@ -133,12 +133,12 @@ Public Module ToolPrompts
                     W(DoTranslation("This section lists the shell settings.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColoredShell)))
                     W("2) " + DoTranslation("Simplified Help Command") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(simHelp)))
-                    W("3) " + DoTranslation("Current Directory", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetConfigValue(NameOf(CurrDir)))
-                    W("4) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetConfigValue(NameOf(ShellPromptStyle)))
-                    W("5) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetConfigValue(NameOf(FTPShellPromptStyle)))
-                    W("6) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetConfigValue(NameOf(MailShellPromptStyle)))
-                    W("7) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.HelpCmd, GetConfigValue(NameOf(SFTPShellPromptStyle)))
-                    W("8) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.HelpCmd)
+                    W("3) " + DoTranslation("Current Directory", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(CurrDir)))
+                    W("4) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(ShellPromptStyle)))
+                    W("5) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(FTPShellPromptStyle)))
+                    W("6) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(MailShellPromptStyle)))
+                    W("7) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(SFTPShellPromptStyle)))
+                    W("8) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.ListEntry)
                 Case 5 'Network
                     MaxOptions = 9
                     W("*) " + DoTranslation("Network Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -449,76 +449,76 @@ Public Module ToolPrompts
                     W("*) " + String.Join(", ", [Enum].GetNames(GetType(ConsoleColors))) + vbNewLine, True, ColTypes.Neutral)
 
                     ' Input color
-                    W("1) " + DoTranslation("Input color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(inputColor)))
+                    W("1) " + DoTranslation("Input color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(InputColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(inputColor))
-                    KeyVars.AddOrModify(NameOf(inputColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(InputColor))
+                    KeyVars.AddOrModify(NameOf(InputColor), Response)
 
                     ' License color
-                    W("2) " + DoTranslation("License color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(licenseColor)))
+                    W("2) " + DoTranslation("License color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(LicenseColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(licenseColor))
-                    KeyVars.AddOrModify(NameOf(licenseColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(LicenseColor))
+                    KeyVars.AddOrModify(NameOf(LicenseColor), Response)
 
                     ' Continuable kernel error color
-                    W("3) " + DoTranslation("Continuable kernel error color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(contKernelErrorColor)))
+                    W("3) " + DoTranslation("Continuable kernel error color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(ContKernelErrorColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(contKernelErrorColor))
-                    KeyVars.AddOrModify(NameOf(contKernelErrorColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(ContKernelErrorColor))
+                    KeyVars.AddOrModify(NameOf(ContKernelErrorColor), Response)
 
                     ' Unontinuable kernel error color
-                    W("4) " + DoTranslation("Uncontinuable kernel error color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(uncontKernelErrorColor)))
+                    W("4) " + DoTranslation("Uncontinuable kernel error color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(UncontKernelErrorColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(uncontKernelErrorColor))
-                    KeyVars.AddOrModify(NameOf(uncontKernelErrorColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(UncontKernelErrorColor))
+                    KeyVars.AddOrModify(NameOf(UncontKernelErrorColor), Response)
 
                     ' Host name color
-                    W("5) " + DoTranslation("Host name color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(hostNameShellColor)))
+                    W("5) " + DoTranslation("Host name color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(HostNameShellColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(hostNameShellColor))
-                    KeyVars.AddOrModify(NameOf(hostNameShellColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(HostNameShellColor))
+                    KeyVars.AddOrModify(NameOf(HostNameShellColor), Response)
 
                     ' User name color
-                    W("6) " + DoTranslation("User name color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(userNameShellColor)))
+                    W("6) " + DoTranslation("User name color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(UserNameShellColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(userNameShellColor))
-                    KeyVars.AddOrModify(NameOf(userNameShellColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(UserNameShellColor))
+                    KeyVars.AddOrModify(NameOf(UserNameShellColor), Response)
 
                     ' Background color
-                    W("7) " + DoTranslation("Background color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(backgroundColor)))
+                    W("7) " + DoTranslation("Background color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(BackgroundColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(backgroundColor))
-                    KeyVars.AddOrModify(NameOf(backgroundColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(BackgroundColor))
+                    KeyVars.AddOrModify(NameOf(BackgroundColor), Response)
 
                     ' Neutral text color
-                    W("8) " + DoTranslation("Neutral text color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(neutralTextColor)))
+                    W("8) " + DoTranslation("Neutral text color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(NeutralTextColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(neutralTextColor))
-                    KeyVars.AddOrModify(NameOf(neutralTextColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(NeutralTextColor))
+                    KeyVars.AddOrModify(NameOf(NeutralTextColor), Response)
 
-                    ' Command list color
-                    W("9) " + DoTranslation("Command list color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(cmdListColor)))
+                    ' List entry color
+                    W("9) " + DoTranslation("List entry color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(ListEntryColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(cmdListColor))
-                    KeyVars.AddOrModify(NameOf(cmdListColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(ListEntryColor))
+                    KeyVars.AddOrModify(NameOf(ListEntryColor), Response)
 
-                    ' Command definition color
-                    W("10) " + DoTranslation("Command definition color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(cmdDefColor)))
+                    ' List value color
+                    W("10) " + DoTranslation("List value color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(ListValueColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(cmdDefColor))
-                    KeyVars.AddOrModify(NameOf(cmdDefColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(ListValueColor))
+                    KeyVars.AddOrModify(NameOf(ListValueColor), Response)
 
                     ' Stage color
-                    W("11) " + DoTranslation("Stage color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(stageColor)))
+                    W("11) " + DoTranslation("Stage color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(StageColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(stageColor))
-                    KeyVars.AddOrModify(NameOf(stageColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(StageColor))
+                    KeyVars.AddOrModify(NameOf(StageColor), Response)
 
                     ' Error color
-                    W("12) " + DoTranslation("Error color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(errorColor)))
+                    W("12) " + DoTranslation("Error color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(ErrorColor)))
                     Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(errorColor))
-                    KeyVars.AddOrModify(NameOf(errorColor), Response)
+                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(ErrorColor))
+                    KeyVars.AddOrModify(NameOf(ErrorColor), Response)
 
                     ' Warning color
                     W("13) " + DoTranslation("Warning color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(WarningColor)))
@@ -927,8 +927,8 @@ Public Module ToolPrompts
 #Disable Warning BC42104
                 For Each ColorType As String In KeyVars.Keys
 #Enable Warning BC42104
-                    W("   - {0}: ", False, ColTypes.HelpCmd, ColorType)
-                    W(KeyVars(ColorType), True, ColTypes.HelpDef)
+                    W("   - {0}: ", False, ColTypes.ListEntry, ColorType)
+                    W(KeyVars(ColorType), True, ColTypes.ListValue)
                 Next
                 W(vbNewLine + "*) " + DoTranslation("Answer {0} to go back. Otherwise, any answer means yes."), True, ColTypes.Neutral, MaxKeyOptions + 1)
             End If
@@ -1020,17 +1020,17 @@ Public Module ToolPrompts
                     KeyFinished = True
                 Else
                     Wdbg("I", "Setting necessary variables...")
-                    Wdbg("I", "Variables: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}.", KeyVars(NameOf(inputColor)), KeyVars(NameOf(licenseColor)), KeyVars(NameOf(contKernelErrorColor)),
-                         KeyVars(NameOf(uncontKernelErrorColor)), KeyVars(NameOf(hostNameShellColor)), KeyVars(NameOf(userNameShellColor)), KeyVars(NameOf(backgroundColor)), KeyVars(NameOf(neutralTextColor)),
-                         KeyVars(NameOf(cmdListColor)), KeyVars(NameOf(cmdDefColor)), KeyVars(NameOf(stageColor)), KeyVars(NameOf(errorColor)), KeyVars(NameOf(WarningColor)), KeyVars(NameOf(OptionColor)))
+                    Wdbg("I", "Variables: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}.", KeyVars(NameOf(InputColor)), KeyVars(NameOf(LicenseColor)), KeyVars(NameOf(ContKernelErrorColor)),
+                         KeyVars(NameOf(UncontKernelErrorColor)), KeyVars(NameOf(HostNameShellColor)), KeyVars(NameOf(UserNameShellColor)), KeyVars(NameOf(BackgroundColor)), KeyVars(NameOf(NeutralTextColor)),
+                         KeyVars(NameOf(ListEntryColor)), KeyVars(NameOf(ListValueColor)), KeyVars(NameOf(StageColor)), KeyVars(NameOf(ErrorColor)), KeyVars(NameOf(WarningColor)), KeyVars(NameOf(OptionColor)))
 
                     'This is cumbersome. This is worth an Extensification for [Enum].
-                    If SetColors([Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(inputColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(licenseColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(contKernelErrorColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(uncontKernelErrorColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(hostNameShellColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(userNameShellColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(backgroundColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(neutralTextColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(cmdListColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(cmdDefColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(stageColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(errorColor))),
+                    If SetColors([Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(InputColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(LicenseColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(ContKernelErrorColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(UncontKernelErrorColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(HostNameShellColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(UserNameShellColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(BackgroundColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(NeutralTextColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(ListEntryColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(ListValueColor))),
+                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(StageColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(ErrorColor))),
                                  [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(WarningColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(OptionColor)))) Then
                         KeyFinished = True
                     End If

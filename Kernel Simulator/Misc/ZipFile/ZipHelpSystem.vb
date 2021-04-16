@@ -33,12 +33,12 @@ Public Module ZipHelpSystem
     Public Sub ZipShell_GetHelp(Optional ByVal Command As String = "")
         If Command = "" Then
             For Each HelpKey As String In ZipShell_HelpEntries.Keys
-                W("- {0}: ", False, ColTypes.HelpCmd, HelpKey)
-                W(ZipShell_HelpEntries(HelpKey), True, ColTypes.HelpDef)
+                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
+                W(ZipShell_HelpEntries(HelpKey), True, ColTypes.ListValue)
             Next
             For Each HelpKey As String In ZipShell_ModHelpEntries.Keys
-                W("- {0}: ", False, ColTypes.HelpCmd, HelpKey)
-                W(ZipShell_ModHelpEntries(HelpKey), True, ColTypes.HelpDef)
+                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
+                W(ZipShell_ModHelpEntries(HelpKey), True, ColTypes.ListValue)
             Next
         ElseIf Command = "help" Then
             W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)

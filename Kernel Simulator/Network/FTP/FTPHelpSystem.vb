@@ -53,10 +53,10 @@ Public Module FTPHelpSystem
         If command = "" Then
             If simHelp = False Then
                 For Each cmd As String In FTPDefinitions.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, FTPDefinitions(cmd))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPDefinitions(cmd))
                 Next
                 For Each cmd As String In FTPModDefs.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, FTPModDefs(cmd))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPModDefs(cmd))
                 Next
             Else
                 W(String.Join(", ", availftpcmds), True, ColTypes.Neutral)

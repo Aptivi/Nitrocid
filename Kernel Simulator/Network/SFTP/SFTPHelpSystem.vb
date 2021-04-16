@@ -51,10 +51,10 @@ Public Module SFTPHelpSystem
         If command = "" Then
             If simHelp = False Then
                 For Each cmd As String In SFTPDefinitions.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, SFTPDefinitions(cmd))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, SFTPDefinitions(cmd))
                 Next
                 For Each cmd As String In SFTPModDefs.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, SFTPModDefs(cmd))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, SFTPModDefs(cmd))
                 Next
             Else
                 W(String.Join(", ", availsftpcmds), True, ColTypes.Neutral)
