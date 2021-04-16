@@ -1015,7 +1015,7 @@ Public Module ToolPrompts
             ElseIf KeyType = SettingsKeyType.SMultivar And MultivarCustomAction = "SetColors" Then
                 Wdbg("I", "Multiple variables, and custom action was {0}.", MultivarCustomAction)
                 Wdbg("I", "Answer was {0}", AnswerInt)
-                If AnswerInt = 13 Then 'Go Back...
+                If AnswerInt = 15 Then 'Go Back...
                     Wdbg("W", "User requested exit. Returning...")
                     KeyFinished = True
                 Else
