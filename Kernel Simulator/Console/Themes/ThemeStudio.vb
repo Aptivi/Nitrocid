@@ -114,15 +114,15 @@ Module ThemeStudio
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedNeutralTextColor = ColorWheelReturn
                             End If
-                        Case 9 'Command list color
+                        Case 9 'list entry color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedCmdListColor = ColorWheelReturn
+                                SelectedListEntryColor = ColorWheelReturn
                             End If
-                        Case 10 'Command definition color
+                        Case 10 'list value color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedCmdDefColor = ColorWheelReturn
+                                SelectedListValueColor = ColorWheelReturn
                             End If
                         Case 11 'Stage color
                             Dim ColorWheelReturn As Integer = ColorWheel()
@@ -202,50 +202,8 @@ Module ThemeStudio
             End If
         End While
 
+        'Raise event
         EventManager.RaiseThemeStudioExit()
     End Sub
-
-    ''' <summary>
-    ''' Initializes color wheel
-    ''' </summary>
-    ''' <returns></returns>
-    Function ColorWheel() As Integer
-        Dim CurrentColor As ConsoleColors = ConsoleColors.White
-        Dim ColorWheelExiting As Boolean
-        Console.CursorVisible = False
-        While Not ColorWheelExiting
-            Console.Clear()
-            W(vbNewLine + DoTranslation("Select color using ""<-"" and ""->"" keys. Press ENTER to quit. Press ""i"" to insert color number manually."), True, ColTypes.Neutral)
-            W(vbNewLine + " <", False, ColTypes.Gray)
-            WriteWhereC(CurrentColor.ToString, (Console.CursorLeft + 30 - CurrentColor.ToString.Length) / 2, Console.CursorTop, True, CurrentColor)
-            WriteWhere(">", Console.CursorLeft + 27, Console.CursorTop, True, ColTypes.Gray)
-            WriteC(vbNewLine + vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, CurrentColor)
-            Dim ConsoleResponse As ConsoleKeyInfo = Console.ReadKey(True)
-            If ConsoleResponse.Key = ConsoleKey.LeftArrow Then
-                If CurrentColor = 0 Then
-                    CurrentColor = 255
-                Else
-                    CurrentColor -= 1
-                End If
-            ElseIf ConsoleResponse.Key = ConsoleKey.RightArrow Then
-                If CurrentColor = 255 Then
-                    CurrentColor = 0
-                Else
-                    CurrentColor += 1
-                End If
-            ElseIf ConsoleResponse.Key = ConsoleKey.I Then
-                WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, CInt(CurrentColor))
-                Dim ColorNum As String = Console.ReadLine
-                If IsNumeric(ColorNum) Then
-                    If ColorNum >= 0 And ColorNum <= 255 Then
-                        CurrentColor = ColorNum
-                    End If
-                End If
-            ElseIf ConsoleResponse.Key = ConsoleKey.Enter Then
-                ColorWheelExiting = True
-            End If
-        End While
-        Return CurrentColor
-    End Function
 
 End Module

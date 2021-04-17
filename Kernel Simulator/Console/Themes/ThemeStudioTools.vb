@@ -52,15 +52,15 @@ Module ThemeStudioTools
     ''' <summary>
     ''' Selected neutral text color for new theme
     ''' </summary>
-    Friend SelectedNeutralTextColor As ConsoleColors = neutralTextColor
+    Friend SelectedNeutralTextColor As ConsoleColors = NeutralTextColor
     ''' <summary>
-    ''' Selected command list color for new theme
+    ''' Selected list entry color for new theme
     ''' </summary>
-    Friend SelectedCmdListColor As ConsoleColors = ListEntryColor
+    Friend SelectedListEntryColor As ConsoleColors = ListEntryColor
     ''' <summary>
-    ''' Selected command definition color for new theme
+    ''' Selected list value color for new theme
     ''' </summary>
-    Friend SelectedCmdDefColor As ConsoleColors = ListValueColor
+    Friend SelectedListValueColor As ConsoleColors = ListValueColor
     ''' <summary>
     ''' Selected stage color for new theme
     ''' </summary>
@@ -125,8 +125,8 @@ Module ThemeStudioTools
         SelectedUserNameShellColor = ThemeInfo.ThemeUserNameShellColor
         SelectedBackgroundColor = ThemeInfo.ThemeBackgroundColor
         SelectedNeutralTextColor = ThemeInfo.ThemeNeutralTextColor
-        SelectedCmdListColor = ThemeInfo.ThemeCmdListColor
-        SelectedCmdDefColor = ThemeInfo.ThemeCmdDefColor
+        SelectedListEntryColor = ThemeInfo.ThemeCmdListColor
+        SelectedListValueColor = ThemeInfo.ThemeCmdDefColor
         SelectedStageColor = ThemeInfo.ThemeStageColor
         SelectedErrorColor = ThemeInfo.ThemeErrorColor
         SelectedWarningColor = ThemeInfo.ThemeWarningColor
@@ -150,8 +150,8 @@ Module ThemeStudioTools
         SelectedUserNameShellColor = ThemeInfo.ThemeUserNameShellColor
         SelectedBackgroundColor = ThemeInfo.ThemeBackgroundColor
         SelectedNeutralTextColor = ThemeInfo.ThemeNeutralTextColor
-        SelectedCmdListColor = ThemeInfo.ThemeCmdListColor
-        SelectedCmdDefColor = ThemeInfo.ThemeCmdDefColor
+        SelectedListEntryColor = ThemeInfo.ThemeCmdListColor
+        SelectedListValueColor = ThemeInfo.ThemeCmdDefColor
         SelectedStageColor = ThemeInfo.ThemeStageColor
         SelectedErrorColor = ThemeInfo.ThemeErrorColor
         SelectedWarningColor = ThemeInfo.ThemeWarningColor
@@ -171,8 +171,8 @@ Module ThemeStudioTools
                            New JProperty("UserNameShellColor", SelectedUserNameShellColor.ToString),
                            New JProperty("BackgroundColor", SelectedBackgroundColor.ToString),
                            New JProperty("NeutralTextColor", SelectedNeutralTextColor.ToString),
-                           New JProperty("CmdListColor", SelectedCmdListColor.ToString),
-                           New JProperty("CmdDefColor", SelectedCmdDefColor.ToString),
+                           New JProperty("CmdListColor", SelectedListEntryColor.ToString),
+                           New JProperty("CmdDefColor", SelectedListValueColor.ToString),
                            New JProperty("StageColor", SelectedStageColor.ToString),
                            New JProperty("ErrorColor", SelectedErrorColor.ToString),
                            New JProperty("WarningColor", SelectedWarningColor.ToString),
