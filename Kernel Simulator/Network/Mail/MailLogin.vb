@@ -294,7 +294,7 @@ Module MailLogin
 
             'Initialize shell
             Wdbg("I", "Authentication succeeded. Opening shell...")
-            OpenShell(Address)
+            OpenMailShell(Address)
         Catch ex As Exception
             W(DoTranslation("Error while connecting to {0}: {1}"), True, ColTypes.Err, Address, ex.Message)
             WStkTrc(ex)

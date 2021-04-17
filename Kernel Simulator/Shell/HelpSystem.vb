@@ -93,6 +93,7 @@ Public Module HelpSystem
                                                               {"shutdown", DoTranslation("The kernel will be shut down")},
                                                               {"spellbee", DoTranslation("See if you can spell words correctly on time")},
                                                               {"sshell", DoTranslation("Connects to an SSH server.")},
+                                                              {"sshcmd", DoTranslation("Connects to an SSH server to execute a command.")},
                                                               {"sumfile", DoTranslation("Calculates file sums.")},
                                                               {"sumfiles", DoTranslation("Calculates sums of files in specified directory.")},
                                                               {"sysinfo", DoTranslation("System information")},
@@ -430,6 +431,10 @@ Public Module HelpSystem
         ElseIf command = "sshell" Then
 
             W(DoTranslation("Usage:") + " sshell <address> <port> <username>: " + DoTranslation("Connects to an SSH server."), True, ColTypes.Neutral)
+
+        ElseIf command = "sshcmd" Then
+
+            W(DoTranslation("Usage:") + " sshcmd <address> <port> <username> ""<command>"": " + DoTranslation("Connects to an SSH server to execute a command."), True, ColTypes.Neutral)
 
         ElseIf command = "sumfile" Then
 

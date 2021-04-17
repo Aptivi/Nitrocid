@@ -81,6 +81,9 @@ Public Class Events
     Public Event SFTPUploadError(ByVal File As String, ByVal Exception As Exception)
     Public Event SSHConnected(ByVal Target As String)
     Public Event SSHDisconnected()
+    Public Event SSHPreExecuteCommand(ByVal Target As String, ByVal Command As String)
+    Public Event SSHPostExecuteCommand(ByVal Target As String, ByVal Command As String)
+    Public Event SSHCommandError(ByVal Target As String, ByVal Command As String, ByVal Exception As Exception)
     Public Event SSHError(ByVal Exception As Exception)
     Public Event UESHPreExecute(ByVal Command As String)
     Public Event UESHPostExecute(ByVal Command As String)
@@ -723,6 +726,39 @@ Public Class Events
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SSHDisconnected()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SSHDisconnected")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of pre-command execution
+    ''' </summary>
+    Public Sub RespondSSHPreExecuteCommand(ByVal Target As String, ByVal Command As String) Handles Me.SSHPreExecuteCommand
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SSHPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SSHPreExecuteCommand", Target, Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of post-command execution
+    ''' </summary>
+    Public Sub RespondSSHPostExecuteCommand(ByVal Target As String, ByVal Command As String) Handles Me.SSHPostExecuteCommand
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SSHPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SSHPostExecuteCommand", Target, Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of SSH command error
+    ''' </summary>
+    Public Sub RespondSSHCommandError(ByVal Target As String, ByVal Command As String, ByVal Exception As Exception) Handles Me.SSHCommandError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event SSHCommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("SSHCommandError", Target, Command, Exception)
             Next
         Next
     End Sub
@@ -1709,6 +1745,30 @@ Public Class Events
         Wdbg("I", "Raising event SSHDisconnected() and responding in RespondSSHDisconnected()...")
         FiredEvents.Add("SSHDisconnected (" + CStr(FiredEvents.Count) + ")", {})
         RaiseEvent SSHDisconnected()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SSH pre-execute command
+    ''' </summary>
+    Public Sub RaiseSSHPreExecuteCommand(ByVal Target As String, ByVal Command As String)
+        Wdbg("I", "Raising event SSHPreExecuteCommand() and responding in RespondSSHPreExecuteCommand()...")
+        FiredEvents.Add("SSHPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+        RaiseEvent SSHPreExecuteCommand(Target, Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SSH post-execute command
+    ''' </summary>
+    Public Sub RaiseSSHPostExecuteCommand(ByVal Target As String, ByVal Command As String)
+        Wdbg("I", "Raising event SSHPostExecuteCommand() and responding in RespondSSHPostExecuteCommand()...")
+        FiredEvents.Add("SSHPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+        RaiseEvent SSHPostExecuteCommand(Target, Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of SSH command error
+    ''' </summary>
+    Public Sub RaiseSSHCommandError(ByVal Target As String, ByVal Command As String, ByVal Exception As Exception)
+        Wdbg("I", "Raising event SSHCommandError() and responding in RespondSSHCommandError()...")
+        FiredEvents.Add("SSHCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
+        RaiseEvent SSHCommandError(Target, Command, Exception)
     End Sub
     ''' <summary>
     ''' Raise an event of SSH error

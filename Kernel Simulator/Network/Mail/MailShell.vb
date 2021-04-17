@@ -35,7 +35,7 @@ Module MailShell
     ''' Initializes the shell of the mail client
     ''' </summary>
     ''' <param name="Address">An e-mail address or username. This is used to show address in command input.</param>
-    Sub OpenShell(Address As String)
+    Sub OpenMailShell(Address As String)
         'Send ping to keep the connection alive
         Dim IMAP_NoOp As New Thread(AddressOf IMAPKeepConnection)
         IMAP_NoOp.Start()

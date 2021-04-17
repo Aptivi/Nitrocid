@@ -629,7 +629,7 @@ Public Module GetCommand
                 Case "lsmail"
 
                     If KeepAlive Then
-                        OpenShell(Mail_Authentication.Domain)
+                        OpenMailShell(Mail_Authentication.Domain)
                         Done = True
                     Else
                         If eqargs?.Length = 0 Or IsNothing(eqargs) Then
@@ -996,7 +996,14 @@ Public Module GetCommand
                 Case "sshell"
 
                     If eqargs?.Length >= 3 Then
-                        InitializeSSH(eqargs(0), eqargs(1), eqargs(2))
+                        InitializeSSH(eqargs(0), eqargs(1), eqargs(2), ConnectionType.Shell)
+                        Done = True
+                    End If
+
+                Case "sshcmd"
+
+                    If eqargs?.Length >= 3 Then
+                        InitializeSSH(eqargs(0), eqargs(1), eqargs(2), ConnectionType.Command, eqargs(3))
                         Done = True
                     End If
 
