@@ -20,7 +20,6 @@ Imports System.IO
 
 Public Module HashVerifier
 
-    'TODO: Add unit tests for this
     ''' <summary>
     ''' Verifies the hash sum of a file from hashes file
     ''' </summary>

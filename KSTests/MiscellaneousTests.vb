@@ -142,6 +142,28 @@ Imports KS
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Tests hash verification from hashes file
+    ''' </summary>
+    <TestMethod()> Public Sub TestVerifyHashFromFileStdFormat()
+        Dim FileHashMD5 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5)
+        Dim FileHashSHA1 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1)
+        Dim FileHashSHA256 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256)
+        Dim FileHashSHA512 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512)
+        Try
+            Dim ResultMD5 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5, Environment.CurrentDirectory + "/TestVerifyMD5.txt", FileHashMD5)
+            Dim ResultSHA1 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1, Environment.CurrentDirectory + "/TestVerifySHA1.txt", FileHashSHA1)
+            Dim ResultSHA256 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256, Environment.CurrentDirectory + "/TestVerifySHA256.txt", FileHashSHA256)
+            Dim ResultSHA512 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512, Environment.CurrentDirectory + "/TestVerifySHA512.txt", FileHashSHA512)
+            Assert.IsTrue(ResultMD5, "Hash isn't verified propertly. Got {0}", ResultMD5)
+            Assert.IsTrue(ResultSHA1, "Hash isn't verified propertly. Got {0}", ResultSHA1)
+            Assert.IsTrue(ResultSHA256, "Hash isn't verified propertly. Got {0}", ResultSHA256)
+            Assert.IsTrue(ResultSHA512, "Hash isn't verified propertly. Got {0}", ResultSHA512)
+        Catch ex As Exception
+            Assert.Fail(ex.Message)
+        End Try
+    End Sub
+
     <TestMethod> Public Sub TestGetEmptyHash()
         Assert.IsNotNull(GetEmptyHash(Algorithms.MD5))
         Assert.IsNotNull(GetEmptyHash(Algorithms.SHA1))
