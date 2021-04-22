@@ -65,7 +65,7 @@ Public Module ToolPrompts
                 Wdbg("I", "Succeeded. Checking the answer if it points to the right direction...")
                 If AnswerInt >= 1 And AnswerInt <= 7 Then
                     Wdbg("I", "Opening section {0}...", AnswerInt)
-                    OpenSection(AnswerInt)
+                    OpenSection(AnswerString)
                 ElseIf AnswerInt = 8 Then 'Save Settings
                     Wdbg("I", "Saving settings...")
                     Try
@@ -96,7 +96,7 @@ Public Module ToolPrompts
     ''' Open section
     ''' </summary>
     ''' <param name="SectionNum">Section number</param>
-    Sub OpenSection(ByVal SectionNum As Integer)
+    Sub OpenSection(ByVal SectionNum As String)
         Dim MaxOptions As Integer = 0
         Dim SectionFinished As Boolean
         Dim AnswerString As String
@@ -106,7 +106,7 @@ Public Module ToolPrompts
             Console.Clear()
             'List options
             Select Case SectionNum
-                Case 1 'General
+                Case "1" 'General
                     MaxOptions = 5
                     W("*) " + DoTranslation("General Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.") + vbNewLine, True, ColTypes.Neutral)
@@ -115,19 +115,19 @@ Public Module ToolPrompts
                     W("3) " + DoTranslation("Change Root Password..."), True, ColTypes.Option)
                     W("4) " + DoTranslation("Check for Updates on Startup") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CheckUpdateStart)))
                     W("5) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
-                Case 2 'Hardware
+                Case "2" 'Hardware
                     MaxOptions = 1
                     W("*) " + DoTranslation("Hardware Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section changes hardware probe behavior.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Quiet Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(quietProbe)))
-                Case 3 'Login
+                Case "3" 'Login
                     MaxOptions = 3
                     W("*) " + DoTranslation("Login Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section represents the login settings. Log out of your account for the changes to take effect.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Show MOTD on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(showMOTD)))
                     W("2) " + DoTranslation("Clear Screen on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(clsOnLogin)))
                     W("3) " + DoTranslation("Show available usernames") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(ShowAvailableUsers)))
-                Case 4 'Shell
+                Case "4" 'Shell
                     MaxOptions = 8
                     W("*) " + DoTranslation("Shell Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the shell settings.") + vbNewLine, True, ColTypes.Neutral)
@@ -139,7 +139,7 @@ Public Module ToolPrompts
                     W("6) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(MailShellPromptStyle)))
                     W("7) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(SFTPShellPromptStyle)))
                     W("8) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.ListEntry)
-                Case 5 'Network
+                Case "5" 'Network
                     MaxOptions = 9
                     W("*) " + DoTranslation("Network Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
@@ -152,54 +152,102 @@ Public Module ToolPrompts
                     W("7) " + DoTranslation("Return only first FTP profile") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPFirstProfileOnly)))
                     W("8) " + DoTranslation("Show mail message preview") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShowPreview)))
                     W("9) " + DoTranslation("Record chat to debug log") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(RecordChatToDebugLog)))
-                Case 6 'Screensaver
-                    'TODO: Make this a selection for each screensaver, and move all appropriate options there.
+                Case "6" 'Screensaver
                     'TODO: Add support for custom screensavers
-                    MaxOptions = 35
+                    MaxOptions = 12
                     W("*) " + DoTranslation("Screensaver Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all the screensavers and their available settings.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Screensaver Timeout in ms") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ScrnTimeout)))
-
-                    'Screensaver: Colors
-                    W("2) [ColorMix] " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColorMix255Colors)))
-                    W("3) [Disco] " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Disco255Colors)))
-                    W("4) [GlitterColor] " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColor255Colors)))
-                    W("5) [Lines] " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Lines255Colors)))
-                    W("6) [Dissolve] " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Dissolve255Colors)))
-                    W("7) [BouncingBlock] " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingBlock255Colors)))
-                    W("8) [ProgressClock] " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClock255Colors)))
-                    W("9) [Lighter] " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Lighter255Colors)))
-                    W("10) [ColorMix] " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColorMixTrueColor)))
-                    W("11) [Disco] " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoTrueColor)))
-                    W("12) [GlitterColor] " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColorTrueColor)))
-                    W("13) [Lines] " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinesTrueColor)))
-                    W("14) [Dissolve] " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DissolveTrueColor)))
-                    W("15) [BouncingBlock] " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingBlockTrueColor)))
-                    W("16) [ProgressClock] " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockTrueColor)))
-                    W("17) [Lighter] " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterTrueColor)))
-                    W("18) [Disco] " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoCycleColors)))
-                    W("19) [ProgressClock] " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockCycleColors)))
-                    W("20) [ProgressClock] " + DoTranslation("Color of Seconds Bar") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockSecondsProgressColor)))
-                    W("21) [ProgressClock] " + DoTranslation("Color of Minutes Bar") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockMinutesProgressColor)))
-                    W("22) [ProgressClock] " + DoTranslation("Color of Hours Bar") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockHoursProgressColor)))
-                    W("23) [ProgressClock] " + DoTranslation("Color of Information") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockProgressColor)))
-
-                    'Screensaver: Delays
-                    W("24) [BouncingBlock] " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingBlockDelay)))
-                    W("25) [BouncingText] " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextDelay)))
-                    W("26) [ColorMix] " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColorMixDelay)))
-                    W("27) [Disco] " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoDelay)))
-                    W("28) [GlitterColor] " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColorDelay)))
-                    W("29) [GlitterMatrix] " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterMatrixDelay)))
-                    W("30) [Lines] " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinesDelay)))
-                    W("31) [Matrix] " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MatrixDelay)))
-                    W("32) [Lighter] " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterDelay)))
-                    W("33) [ProgressClock] " + DoTranslation("Ticks to change color") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockCycleColorsTicks)))
-
-                    'Screensaver: Texts
-                    W("34) [BouncingText] " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextWrite)))
-                    W("35) [Lighter] " + DoTranslation("Max Positions Count") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(LighterMaxPositions)))
-                Case 7 'Misc
+                    W("1) ColorMix...", True, ColTypes.Option)
+                    W("2) Matrix...", True, ColTypes.Option)
+                    W("3) GlitterMatrix...", True, ColTypes.Option)
+                    W("4) Disco...", True, ColTypes.Option)
+                    W("5) Lines...", True, ColTypes.Option)
+                    W("6) GlitterColor...", True, ColTypes.Option)
+                    W("7) BouncingText...", True, ColTypes.Option)
+                    W("8) Dissolve...", True, ColTypes.Option)
+                    W("9) BouncingBlock...", True, ColTypes.Option)
+                    W("10) ProgressClock...", True, ColTypes.Option)
+                    W("11) Lighter...", True, ColTypes.Option)
+                    W("12) " + DoTranslation("Screensaver Timeout in ms") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(ScrnTimeout)))
+                Case "6.1" 'Screensaver > ColorMix
+                    MaxOptions = 3
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " ColorMix." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColorMix255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColorMixTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(ColorMixDelay)))
+                Case "6.2" 'Screensaver > Matrix
+                    MaxOptions = 1
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > Matrix" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " Matrix." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MatrixDelay)))
+                Case "6.3" 'Screensaver > GlitterMatrix
+                    MaxOptions = 1
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterMatrix" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " GlitterMatrix." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterMatrixDelay)))
+                Case "6.4" 'Screensaver > Disco
+                    MaxOptions = 4
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > Disco" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " Disco." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Disco255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoTrueColor)))
+                    W("3) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoCycleColors)))
+                    W("4) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoDelay)))
+                Case "6.5" 'Screensaver > Lines
+                    MaxOptions = 3
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > Lines" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " Lines." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Lines255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinesTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinesDelay)))
+                Case "6.6" 'Screensaver > GlitterColor
+                    MaxOptions = 3
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterColor" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " GlitterColor." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColor255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColorTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColorDelay)))
+                Case "6.7" 'Screensaver > BouncingText
+                    MaxOptions = 2
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " BouncingText." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextDelay)))
+                    W("2) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextWrite)))
+                Case "6.8" 'Screensaver > Dissolve
+                    MaxOptions = 2
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > Dissolve" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " Dissolve." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Dissolve255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DissolveTrueColor)))
+                Case "6.9" 'Screensaver > BouncingBlock
+                    MaxOptions = 3
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingBlock" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " BouncingBlock." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingBlock255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingBlockTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingBlockDelay)))
+                Case "6.10" 'Screensaver > ProgressClock
+                    MaxOptions = 8
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " ProgressClock." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClock255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockTrueColor)))
+                    W("3) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockCycleColors)))
+                    W("4) " + DoTranslation("Color of Seconds Bar") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockSecondsProgressColor)))
+                    W("5) " + DoTranslation("Color of Minutes Bar") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockMinutesProgressColor)))
+                    W("6) " + DoTranslation("Color of Hours Bar") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockHoursProgressColor)))
+                    W("7) " + DoTranslation("Color of Information") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockProgressColor)))
+                    W("8) " + DoTranslation("Ticks to change color") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockCycleColorsTicks)))
+                Case "6.11" 'Screensaver > Lighter
+                    MaxOptions = 4
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " Lighter." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Lighter255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterDelay)))
+                    W("4) " + DoTranslation("Max Positions Count") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(LighterMaxPositions)))
+                Case "7" 'Misc
                     MaxOptions = 10
                     W("*) " + DoTranslation("Miscellaneous Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.") + vbNewLine, True, ColTypes.Neutral)
@@ -230,12 +278,15 @@ Public Module ToolPrompts
             If Integer.TryParse(AnswerString, AnswerInt) Then
                 Wdbg("I", "Succeeded. Checking the answer if it points to the right direction...")
                 If AnswerInt >= 1 And AnswerInt <= MaxOptions Then
-                    If AnswerInt = 3 And SectionNum = 1 Then
+                    If AnswerInt = 3 And SectionNum = "1" Then
                         Wdbg("I", "Tried to open special section. Opening section 1.3...")
-                        OpenKey(1.3, AnswerInt)
-                    ElseIf AnswerInt = 8 And SectionNum = 4 Then
+                        OpenKey("1.3", AnswerInt)
+                    ElseIf AnswerInt = 8 And SectionNum = "4" Then
                         Wdbg("I", "Tried to open special section. Opening section 4.8...")
-                        OpenKey(4.8, AnswerInt)
+                        OpenKey("4.8", AnswerInt)
+                    ElseIf AnswerInt <> MaxOptions And SectionNum = "6" Then
+                        Wdbg("I", "Tried to open subsection. Opening section 6.{0}...", AnswerString)
+                        OpenSection("6." + AnswerString)
                     Else
                         Wdbg("I", "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
@@ -263,7 +314,7 @@ Public Module ToolPrompts
     ''' </summary>
     ''' <param name="Section">Section number</param>
     ''' <param name="KeyNumber">Key number</param>
-    Sub OpenKey(ByVal Section As Double, ByVal KeyNumber As Integer)
+    Sub OpenKey(ByVal Section As String, ByVal KeyNumber As Integer)
         Dim MaxKeyOptions As Integer = 0
         Dim KeyFinished As Boolean
         Dim KeyType As SettingsKeyType
@@ -277,7 +328,7 @@ Public Module ToolPrompts
             Console.Clear()
             'List Keys for specified section
             Select Case Section
-                Case 1 'General
+                Case "1" 'General
                     Select Case KeyNumber
                         Case 1 'Prompt for Arguments on Boot
                             MaxKeyOptions = 2
@@ -317,7 +368,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("General Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case 1.3 'General -> Change Root Password
+                Case "1.3" 'General -> Change Root Password
                     Select Case KeyNumber
                         Case 1
                             MaxKeyOptions = 2
@@ -347,7 +398,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case 2 'Hardware
+                Case "2" 'Hardware
                     Select Case KeyNumber
                         Case 1 'Quiet Probe
                             MaxKeyOptions = 2
@@ -361,7 +412,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Hardware Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case 3 'Login
+                Case "3" 'Login
                     Select Case KeyNumber
                         Case 1 'Show MOTD on Log-in
                             MaxKeyOptions = 2
@@ -391,7 +442,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Login Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case 4 'Shell
+                Case "4" 'Shell
                     Select Case KeyNumber
                         Case 1 'Colored Shell
                             MaxKeyOptions = 2
@@ -438,7 +489,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Shell Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case 4.8 'Shell -> Custom colors
+                Case "4.8" 'Shell -> Custom colors
                     MaxKeyOptions = 14
                     KeyType = SettingsKeyType.SMultivar
                     KeyVars = New Dictionary(Of String, Object)
@@ -531,7 +582,7 @@ Public Module ToolPrompts
                     Response = Console.ReadLine
                     If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(OptionColor))
                     KeyVars.AddOrModify(NameOf(OptionColor), Response)
-                Case 5 'Network
+                Case "5" 'Network
                     Select Case KeyNumber
                         Case 1 'Debug Port
                             KeyType = SettingsKeyType.SInt
@@ -600,242 +651,308 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Network Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case 6 'Screensaver
+                Case "6" 'Screensaver
                     Select Case KeyNumber
-                        Case 1 'Screensaver Timeout in ms
+                        Case 12 'Screensaver Timeout in ms
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ScrnTimeout)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > " + DoTranslation("Screensaver Timeout in ms") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write when to launch screensaver after specified milliseconds. It must be numeric."), True, ColTypes.Neutral)
-                        Case 2 'ColorMix: Activate 255 colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(ColorMix255Colors)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ColorMix] " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates 255 color support for ColorMix.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 3 'Disco: Activate 255 colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(Disco255Colors)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Disco] " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates 255 color support for Disco.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 4 'GlitterColor: Activate 255 colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(GlitterColor255Colors)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [GlitterColor] " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates 255 color support for GlitterColor.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 5 'Lines: Activate 255 colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(Lines255Colors)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Lines] " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates 255 color support for Lines.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 6 'Dissolve: Activate 255 colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(Dissolve255Colors)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Dissolve] " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates 255 color support for Dissolve.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 7 'BouncingBlock: Activate 255 colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(BouncingBlock255Colors)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [BouncingBlock] " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates 255 color support for BouncingBlock.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 8 'ProgressClock: Activate 255 colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(ProgressClock255Colors)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ProgressClock] " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates 255 color support for ProgressClock.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 9 'Lighter: Activate 255 colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(Lighter255Colors)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Lighter] " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates 255 color support for Lighter.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 10 'ColorMix: Activate true colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(ColorMixTrueColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ColorMix] " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates true color support for ColorMix.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 11 'Disco: Activate true colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(DiscoTrueColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Disco] " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates true color support for Disco.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 12 'GlitterColor: Activate true colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(GlitterColorTrueColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [GlitterColor] " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates true color support for GlitterColor.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 13 'Lines: Activate true colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(LinesTrueColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Lines] " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates true color support for Lines.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 14 'Dissolve: Activate true colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(DissolveTrueColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Dissolve] " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates true color support for Dissolve.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 15 'BouncingBlock: Activate true colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(BouncingBlockTrueColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [BouncingBlock] " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates true color support for BouncingBlock.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 16 'ProgressClock: Activate true colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(ProgressClockTrueColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ProgressClock] " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates true color support for ProgressClock.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 17 'Lighter: Activate true colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(LighterTrueColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Lighter] " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Activates true color support for Lighter.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 18 'Disco: Cycle colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(DiscoCycleColors)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Disco] " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Disco will cycle colors when enabled. Otherwise, select random colors.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 19 'ProgressClock: Cycle colors
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(ProgressClockCycleColors)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ProgressClock] " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("ProgressClock will select random colors if it's enabled. Otherwise, use colors from config.") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
-                        Case 20 'ProgressClock: Color of Seconds Bar
-                            KeyType = SettingsKeyType.SString
-                            KeyVar = NameOf(ProgressClockSecondsProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ProgressClock] " + DoTranslation("Color of Seconds Bar") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of seconds progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
-                        Case 21 'ProgressClock: Color of Minutes Bar
-                            KeyType = SettingsKeyType.SString
-                            KeyVar = NameOf(ProgressClockMinutesProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ProgressClock] " + DoTranslation("Color of Minutes Bar") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of minutes progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
-                        Case 22 'ProgressClock: Color of Hours Bar
-                            KeyType = SettingsKeyType.SString
-                            KeyVar = NameOf(ProgressClockHoursProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ProgressClock] " + DoTranslation("Color of Hours Bar") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of hours progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
-                        Case 23 'ProgressClock: Color of Information
-                            KeyType = SettingsKeyType.SString
-                            KeyVar = NameOf(ProgressClockProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ProgressClock] " + DoTranslation("Color of Information") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of date information. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
-                        Case 24 'BouncingBlock: Delay in Milliseconds
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(BouncingBlockDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [BouncingBlock] " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 25 'BouncingText: Delay in Milliseconds
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(BouncingTextDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [BouncingText] " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 26 'ColorMix: Delay in Milliseconds
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(ColorMixDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ColorMix] " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 27 'Disco: Delay in Milliseconds
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(DiscoDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Disco] " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 28 'GlitterColor: Delay in Milliseconds
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(GlitterColorDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [GlitterColor] " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 29 'GlitterMatrix: Delay in Milliseconds
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(GlitterMatrixDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [GlitterMatrix] " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 30 'Lines: Delay in Milliseconds
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(LinesDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Lines] " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 31 'Matrix: Delay in Milliseconds
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(MatrixDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Matrix] " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 32 'Lighter: Delay in Milliseconds
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(LighterDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Lighter] " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 33 'ProgressClock: Ticks to change color
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(ProgressClockCycleColorsTicks)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [ProgressClock] " + DoTranslation("Ticks to change color") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds"), True, ColTypes.Neutral)
-                        Case 34 'BouncingText: Text shown
-                            KeyType = SettingsKeyType.SString
-                            KeyVar = NameOf(BouncingTextWrite)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [BouncingText] " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("Write any text you want shown. Shorter is better."), True, ColTypes.Neutral)
-                        Case 35 'Lighter: Max Positions Count
-                            KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(LighterMaxPositions)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > [Lighter] " + DoTranslation("Max Positions Count") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("How many positions are lit before dimming?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case 7 'Misc
+                Case "6.1" 'ColorMix
+                    Select Case KeyNumber
+                        Case 1 'ColorMix: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ColorMix255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for ColorMix.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 2 'ColorMix: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ColorMixTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for ColorMix.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 3 'ColorMix: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.2" 'Matrix
+                    Select Case KeyNumber
+                        Case 1 'Matrix: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MatrixDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Matrix > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Matrix > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.3" 'GlitterMatrix
+                    Select Case KeyNumber
+                        Case 1 'GlitterMatrix: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterMatrixDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterMatrix > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterMatrix > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.4" 'Disco
+                    Select Case KeyNumber
+                        Case 1 'Disco: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(Disco255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for Disco.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 2 'Disco: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(DiscoTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for Disco.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 3 'Disco: Cycle colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(DiscoCycleColors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Disco will cycle colors when enabled. Otherwise, select random colors.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 4 'Disco: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DiscoDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco >" + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.5" 'Lines
+                    Select Case KeyNumber
+                        Case 1 'Lines: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(Lines255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for Lines.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 2 'Lines: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(LinesTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for Lines.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 3 'Lines: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lines > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.6" 'GlitterColor
+                    Select Case KeyNumber
+                        Case 1 'GlitterColor: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(GlitterColor255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for GlitterColor.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 2 'GlitterColor: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(GlitterColorTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for GlitterColor.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 3 'GlitterColor: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lines > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.7" 'BouncingText
+                    Select Case KeyNumber
+                        Case 1 'BouncingText: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 2 'BouncingText: Text shown
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(BouncingTextWrite)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Write any text you want shown. Shorter is better."), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.8" 'Dissolve
+                    Select Case KeyNumber
+                        Case 1 'Dissolve: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(Dissolve255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for Dissolve.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 2 'Dissolve: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(DissolveTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for Dissolve.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Dissolve > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.9" 'BouncingBlock
+                    Select Case KeyNumber
+                        Case 1 'BouncingBlock: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(BouncingBlock255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for BouncingBlock.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 2 'BouncingBlock: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(BouncingBlockTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for BouncingBlock.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 3 'BouncingBlock: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingBlock > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.10" 'ProgressClock
+                    Select Case KeyNumber
+                        Case 1 'ProgressClock: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ProgressClock255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for ProgressClock.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 2 'ProgressClock: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ProgressClockTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for ProgressClock.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 3 'ProgressClock: Cycle colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ProgressClockCycleColors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("ProgressClock will select random colors if it's enabled. Otherwise, use colors from config.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 4 'ProgressClock: Color of Seconds Bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockSecondsProgressColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Seconds Bar") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("The color of seconds progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                        Case 5 'ProgressClock: Color of Minutes Bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockMinutesProgressColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Minutes Bar") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("The color of minutes progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                        Case 6 'ProgressClock: Color of Hours Bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockHoursProgressColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Hours Bar") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("The color of hours progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                        Case 7 'ProgressClock: Color of Information
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockProgressColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Information") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("The color of date information. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                        Case 8 'ProgressClock: Ticks to change color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockCycleColorsTicks)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Ticks to change color") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.11" 'Lighter
+                    Select Case KeyNumber
+                        Case 1 'Lighter: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(Lighter255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for Lighter.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 2 'Lighter: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(LighterTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for Lighter.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 3 'Lighter: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LighterDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 4 'Lighter: Max Positions Count
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LighterMaxPositions)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Max Positions Count") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many positions are lit before dimming?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "7" 'Misc
                     Select Case KeyNumber
                         Case 1 'Show Time/Date on Upper Right Corner
                             MaxKeyOptions = 2
@@ -922,7 +1039,7 @@ Public Module ToolPrompts
             End Select
 
             'If user is on color selection screen, we'll give a user a confirmation.
-            If Section = 4.8 Then
+            If Section = "4.8" Then
                 W(vbNewLine + "*) " + DoTranslation("Do these color choices look OK?"), True, ColTypes.Neutral)
 #Disable Warning BC42104
                 For Each ColorType As String In KeyVars.Keys
@@ -939,8 +1056,8 @@ Public Module ToolPrompts
             Wdbg("W", "Target variable: {0}, Key Type: {1}", KeyVar, KeyType)
 
             'Prompt user
-            W(If(Section = 4 And KeyNumber = 3, $"[{CurrDir}]", "") + "> ", False, ColTypes.Input)
-            If KeyNumber = 2 And Section = 1.3 Then
+            W(If(Section = "4" And KeyNumber = 3, $"[{CurrDir}]", "") + "> ", False, ColTypes.Input)
+            If KeyNumber = 2 And Section = "1.3" Then
                 AnswerString = ReadLineNoInput("*")
                 Console.WriteLine()
             Else
@@ -990,7 +1107,7 @@ Public Module ToolPrompts
                 End If
             ElseIf KeyType = SettingsKeyType.SString Then
                 Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
-                If Section = 4 And KeyNumber = 3 Then 'If user is on Shell > Current Directory
+                If Section = "4" And KeyNumber = 3 Then 'If user is on Shell > Current Directory
                     If String.IsNullOrWhiteSpace(AnswerString) Then
                         Wdbg("I", "Answer is nothing but user on Shell > Current Directory. Setting to {0}...", CurrDir)
                         AnswerString = CurrDir
@@ -998,7 +1115,7 @@ Public Module ToolPrompts
                 End If
                 KeyFinished = True
                 SetConfigValue(KeyVar, AnswerString)
-            ElseIf Section = 1.3 And KeyNumber = 3 Then
+            ElseIf Section = "1.3" And KeyNumber = 3 Then
                 Wdbg("I", "Answer is not numeric and the user is on the special section.")
                 If AnswerInt >= 1 And AnswerInt <= 2 Then
                     Wdbg("I", "AnswerInt is {0}. Opening key...", AnswerInt)
