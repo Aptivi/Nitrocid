@@ -1037,6 +1037,15 @@ Public Module GetCommand
                                 W(GetEncryptedFile(file, Algorithms.MD5), True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 spent.Stop()
+                            ElseIf eqargs(0) = "all" Then
+                                For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))
+                                    Dim AlgorithmEnum As Algorithms = [Enum].Parse(GetType(Algorithms), Algorithm)
+                                    Dim spent As New Stopwatch
+                                    spent.Start() 'Time when you're on a breakpoint is counted
+                                    W("{0} ({1})", True, ColTypes.Neutral, GetEncryptedFile(file, AlgorithmEnum), AlgorithmEnum)
+                                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                    spent.Stop()
+                                Next
                             Else
                                 W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Err)
                             End If
@@ -1091,6 +1100,17 @@ Public Module GetCommand
                                     W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                     FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
                                     spent.Stop()
+                                ElseIf eqargs(0) = "all" Then
+                                    For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))
+                                        Dim AlgorithmEnum As Algorithms = [Enum].Parse(GetType(Algorithms), Algorithm)
+                                        Dim spent As New Stopwatch
+                                        spent.Start() 'Time when you're on a breakpoint is counted
+                                        Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
+                                        W("{0} ({1})", True, ColTypes.Neutral, encrypted, AlgorithmEnum)
+                                        W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                        FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
+                                        spent.Stop()
+                                    Next
                                 Else
                                     W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Err)
                                     Exit For

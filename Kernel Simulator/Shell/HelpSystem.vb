@@ -438,11 +438,11 @@ Public Module HelpSystem
 
         ElseIf command = "sumfile" Then
 
-            W(DoTranslation("Usage:") + " sumfile <MD5/SHA1/SHA256/SHA512> <file>: " + DoTranslation("Calculates file sums."), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sumfile <MD5/SHA1/SHA256/SHA512/all> <file>: " + DoTranslation("Calculates file sums."), True, ColTypes.Neutral)
 
         ElseIf command = "sumfiles" Then
 
-            W(DoTranslation("Usage:") + " sumfiles <MD5/SHA1/SHA256/SHA512> <dir> [outputFile]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sumfiles <MD5/SHA1/SHA256/SHA512/all> <dir> [outputFile]", True, ColTypes.Neutral)
 
         ElseIf command = "sysinfo" Then
 
@@ -471,7 +471,7 @@ Public Module HelpSystem
         ElseIf command = "weather" Then
 
             W(DoTranslation("Usage:") + " weather <CityID/CityName/listcities>: " + DoTranslation("Shows weather info for specified city. Uses OpenWeatherMap.") + vbNewLine +
-                                                                                                 DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
+                                                                                    DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
 
         ElseIf command = "wrap" Then
 
