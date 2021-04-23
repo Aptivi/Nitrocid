@@ -51,6 +51,7 @@ Public Class Color
     ''' <exception cref="Exceptions.ColorException"></exception>
     Public Sub New(ByVal ColorSpecifier As String)
         If ColorSpecifier.Contains(";") Then
+            ColorSpecifier = ColorSpecifier.Replace("""", "")
             Dim ColorSpecifierArray() As String = ColorSpecifier.Split(";")
             If ColorSpecifierArray.Length = 3 Then
                 PlainSequence = "{0};{1};{2}".FormatString(ColorSpecifierArray(0), ColorSpecifierArray(1), ColorSpecifierArray(2))
@@ -60,6 +61,7 @@ Public Class Color
                 VTSequenceBackground.ConvertVTSequences
             End If
         ElseIf IsNumeric(ColorSpecifier) Then
+            ColorSpecifier = ColorSpecifier.Replace("""", "")
             PlainSequence = ColorSpecifier
             VTSequenceForeground = "<38;5;{0}>".FormatString(ColorSpecifier)
             VTSequenceForeground.ConvertVTSequences

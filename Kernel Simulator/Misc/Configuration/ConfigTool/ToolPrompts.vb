@@ -1224,7 +1224,7 @@ Public Module ToolPrompts
         Dim TypeOfScreensaverSettings As Type = GetType(ScreensaverSettings)
         Dim TypeOfForecast As Type = GetType(Forecast)
         Dim TypeOfMailManager As Type = GetType(MailManager)
-        Dim TypeOfColors As Type = GetType(Color)
+        Dim TypeOfColors As Type = GetType(ColorTools)
 
         'Get fields of flag modules
         Dim FieldFlags As FieldInfo = TypeOfFlags.GetField(Variable)
