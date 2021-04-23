@@ -215,6 +215,9 @@ Module TestGetCommand
 #ElseIf SPECIFIER = "REL" Then
             W("- SPECIFIER = ""REL""", True, ColTypes.Neutral)
 #End If
+#If ENABLEIMMEDIATEWINDOWDEBUG Then
+            W("- ENABLEIMMEDIATEWINDOWDEBUG", True, ColTypes.Neutral)
+#End If
         ElseIf Cmd = "help" Then
             W("- print <Color> <Line> <Message>" + vbNewLine +
               "- printf <Color> <Line> <Variable1;Variable2;Variable3;...> <Message>" + vbNewLine +

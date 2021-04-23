@@ -54,7 +54,7 @@ Module TestShell
                     Thread.Sleep(30) 'This is to fix race condition between test shell initialization and starting the event handler thread
                 End If
             Catch ex As Exception
-                W(DoTranslation("Error in unit testing: {0}"), True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Error in test shell: {0}"), True, ColTypes.Err, ex.Message)
                 Wdbg("E", "Error: {0}", ex.Message)
                 WStkTrc(ex)
             End Try
