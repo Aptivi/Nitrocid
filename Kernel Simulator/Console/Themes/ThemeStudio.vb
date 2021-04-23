@@ -77,72 +77,72 @@ Module ThemeStudio
                         Case 1 'Input color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedInputColor = ColorWheelReturn
+                                SelectedInputColor = New Color(ColorWheelReturn)
                             End If
                         Case 2 'License color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedLicenseColor = ColorWheelReturn
+                                SelectedLicenseColor = New Color(ColorWheelReturn)
                             End If
                         Case 3 'Continuable kernel error color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedContKernelErrorColor = ColorWheelReturn
+                                SelectedContKernelErrorColor = New Color(ColorWheelReturn)
                             End If
                         Case 4 'Uncontinuable kernel error color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedUncontKernelErrorColor = ColorWheelReturn
+                                SelectedUncontKernelErrorColor = New Color(ColorWheelReturn)
                             End If
                         Case 5 'Host name color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedHostNameShellColor = ColorWheelReturn
+                                SelectedHostNameShellColor = New Color(ColorWheelReturn)
                             End If
                         Case 6 'User name color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedUserNameShellColor = ColorWheelReturn
+                                SelectedUserNameShellColor = New Color(ColorWheelReturn)
                             End If
                         Case 7 'Background color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedBackgroundColor = ColorWheelReturn
+                                SelectedBackgroundColor = New Color(ColorWheelReturn)
                             End If
                         Case 8 'Neutral text color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedNeutralTextColor = ColorWheelReturn
+                                SelectedNeutralTextColor = New Color(ColorWheelReturn)
                             End If
                         Case 9 'list entry color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedListEntryColor = ColorWheelReturn
+                                SelectedListEntryColor = New Color(ColorWheelReturn)
                             End If
                         Case 10 'list value color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedListValueColor = ColorWheelReturn
+                                SelectedListValueColor = New Color(ColorWheelReturn)
                             End If
                         Case 11 'Stage color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedStageColor = ColorWheelReturn
+                                SelectedStageColor = New Color(ColorWheelReturn)
                             End If
                         Case 12 'Error color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedErrorColor = ColorWheelReturn
+                                SelectedErrorColor = New Color(ColorWheelReturn)
                             End If
                         Case 13 'Warning color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedWarningColor = ColorWheelReturn
+                                SelectedWarningColor = New Color(ColorWheelReturn)
                             End If
                         Case 14 'Option color
                             Dim ColorWheelReturn As Integer = ColorWheel()
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
-                                SelectedOptionColor = ColorWheelReturn
+                                SelectedOptionColor = New Color(ColorWheelReturn)
                             End If
                         Case 15 'Save theme to current directory
                             SaveThemeToCurrentDirectory(ThemeName)

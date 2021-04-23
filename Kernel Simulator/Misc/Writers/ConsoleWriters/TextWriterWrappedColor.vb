@@ -38,39 +38,39 @@ Public Module TextWriterWrappedColor
                 'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
                 If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
                     If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
-                        Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
+                        Write(New Color(NeutralTextColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.Continuable Then
-                        Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
+                        Write(New Color(ContKernelErrorColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.Uncontinuable Then
-                        Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
+                        Write(New Color(UncontKernelErrorColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.HostName Then
-                        Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
+                        Write(New Color(HostNameShellColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.UserName Then
-                        Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
+                        Write(New Color(UserNameShellColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.License Then
-                        Write(esc + "[38;5;" + CStr(licenseColor) + "m")
+                        Write(New Color(LicenseColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.Gray Then
-                        If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
-                            Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
+                        If BackgroundColor = ConsoleColors.DarkYellow Or BackgroundColor = ConsoleColors.Yellow Or BackgroundColor = ConsoleColors.White Then
+                            Write(New Color(NeutralTextColor).VTSequenceForeground)
                         Else
-                            Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
+                            Write(New Color(ConsoleColors.Gray).VTSequenceForeground)
                         End If
                     ElseIf colorType = ColTypes.ListValue Then
-                        Write(esc + "[38;5;" + CStr(ListValueColor) + "m")
+                        Write(New Color(ListValueColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.ListEntry Then
-                        Write(esc + "[38;5;" + CStr(ListEntryColor) + "m")
+                        Write(New Color(ListEntryColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.Stage Then
-                        Write(esc + "[38;5;" + CStr(stageColor) + "m")
+                        Write(New Color(StageColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.Err Then
-                        Write(esc + "[38;5;" + CStr(errorColor) + "m")
+                        Write(New Color(ErrorColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.Warning Then
-                        Write(esc + "[38;5;" + CStr(WarningColor) + "m")
+                        Write(New Color(WarningColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.Option Then
-                        Write(esc + "[38;5;" + CStr(OptionColor) + "m")
+                        Write(New Color(OptionColor).VTSequenceForeground)
                     Else
                         Exit Sub
                     End If
-                    Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                    Write(New Color(BackgroundColor).VTSequenceBackground)
                 End If
 
                 'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -89,7 +89,7 @@ Public Module TextWriterWrappedColor
                     End If
                 Next
                 If Line Then WriteLine()
-                If backgroundColor = ConsoleColors.Black Then ResetColor()
+                If BackgroundColor = ConsoleColors.Black Or BackgroundColor = "0;0;0" Then ResetColor()
                 If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
@@ -118,7 +118,7 @@ Public Module TextWriterWrappedColor
             Dim OldTop As Integer
             Try
                 'Try to write to console
-                Console.BackgroundColor = If(backgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), backgroundColor), ConsoleColor.Black)
+                Console.BackgroundColor = IIf(IsNumeric(New Color(BackgroundColor).PlainSequence), If(BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black), ConsoleColor.Black)
                 Console.ForegroundColor = color
 
                 'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -137,7 +137,7 @@ Public Module TextWriterWrappedColor
                     End If
                 Next
                 If Line Then WriteLine()
-                If backgroundColor = ConsoleColors.Black Then ResetColor()
+                If BackgroundColor = ConsoleColors.Black Or BackgroundColor = "0;0;0" Then ResetColor()
                 If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
@@ -158,7 +158,7 @@ Public Module TextWriterWrappedColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWrappedC16(ByVal text As Object, ByVal Line As Boolean, ByVal ForegroundColor As ConsoleColors, ByVal BackgroundColor As ConsoleColors, ByVal ParamArray vars() As Object)
+    Public Sub WriteWrappedC16(ByVal text As Object, ByVal Line As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -186,7 +186,7 @@ Public Module TextWriterWrappedColor
                     End If
                 Next
                 If Line Then WriteLine()
-                If BackgroundColor = ConsoleColors.Black Then ResetColor()
+                If BackgroundColor = ConsoleColor.Black Then ResetColor()
                 If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
@@ -206,7 +206,7 @@ Public Module TextWriterWrappedColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWrappedC(ByVal text As Object, ByVal Line As Boolean, ByVal color As ConsoleColors, ByVal ParamArray vars() As Object)
+    Public Sub WriteWrappedC(ByVal text As Object, ByVal Line As Boolean, ByVal color As Color, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -216,8 +216,8 @@ Public Module TextWriterWrappedColor
             Try
                 'Try to write to console
                 If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
-                    Write(esc + "[38;5;" + CStr(color) + "m")
-                    Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                    Write(color.VTSequenceForeground)
+                    Write(New Color(BackgroundColor).VTSequenceBackground)
                 End If
 
                 'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -236,7 +236,7 @@ Public Module TextWriterWrappedColor
                     End If
                 Next
                 If Line Then WriteLine()
-                If backgroundColor = ConsoleColors.Black Then ResetColor()
+                If BackgroundColor = ConsoleColors.Black Or BackgroundColor = "0;0;0" Then ResetColor()
                 If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
@@ -257,7 +257,7 @@ Public Module TextWriterWrappedColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWrappedC(ByVal text As Object, ByVal Line As Boolean, ByVal ForegroundColor As ConsoleColors, ByVal BackgroundColor As ConsoleColors, ByVal ParamArray vars() As Object)
+    Public Sub WriteWrappedC(ByVal text As Object, ByVal Line As Boolean, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -267,8 +267,8 @@ Public Module TextWriterWrappedColor
             Try
                 'Try to write to console
                 If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
-                    Write(esc + "[38;5;" + CStr(ForegroundColor) + "m")
-                    Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
+                    Write(ForegroundColor.VTSequenceForeground)
+                    Write(BackgroundColor.VTSequenceBackground)
                 End If
 
                 'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -287,108 +287,7 @@ Public Module TextWriterWrappedColor
                     End If
                 Next
                 If Line Then WriteLine()
-                If BackgroundColor = ConsoleColors.Black Then ResetColor()
-                If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
-            Catch ex As Exception
-                WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
-#If Not NOWRITELOCK Then
-        End SyncLock
-#End If
-    End Sub
-
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets the true colors as needed.
-    ''' </summary>
-    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="ColorRGBFG">Foreground color RGB storage</param>
-    ''' <param name="ColorRGBBG">Background color RGB storage</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWrappedTrueColor(ByVal text As Object, ByVal Line As Boolean, ByVal ColorRGBFG As RGB, ByVal ColorRGBBG As RGB, ByVal ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
-        SyncLock WriteLock
-#End If
-            Dim esc As Char = GetEsc()
-            Dim LinesMade As Integer
-            Dim OldTop As Integer
-            Try
-                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
-                    Write(esc + "[38;2;" + ColorRGBFG.ToString + "m")
-                    Write(esc + "[48;2;" + ColorRGBBG.ToString + "m")
-                End If
-
-                'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-                If text IsNot Nothing Then
-                    text = text.ToString.FormatString(vars)
-                End If
-
-                OldTop = CursorTop
-                For Each TextChar As Char In text.ToString.ToCharArray
-                    Write(TextChar)
-                    LinesMade += CursorTop - OldTop
-                    If LinesMade = WindowHeight - 1 Then
-                        ReadKey(True)
-                        OldTop = CursorTop
-                        LinesMade = 0
-                    End If
-                Next
-                If Line Then WriteLine()
-                If backgroundColor = ConsoleColors.Black Then ResetColor()
-                If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
-            Catch ex As Exception
-                WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
-#If Not NOWRITELOCK Then
-        End SyncLock
-#End If
-    End Sub
-
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets the true colors as needed.
-    ''' </summary>
-    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="ColorRGB">Color RGB storage</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWrappedTrueColor(ByVal text As Object, ByVal Line As Boolean, ByVal ColorRGB As RGB, ByVal ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
-        SyncLock WriteLock
-#End If
-            Dim esc As Char = GetEsc()
-            Dim LinesMade As Integer
-            Dim OldTop As Integer
-            Try
-                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
-                    Write(esc + "[38;2;" + ColorRGB.ToString + "m")
-                    Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                End If
-
-                'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-                If text IsNot Nothing Then
-                    text = text.ToString.FormatString(vars)
-                End If
-
-                OldTop = CursorTop
-                For Each TextChar As Char In text.ToString.ToCharArray
-                    Write(TextChar)
-                    LinesMade += CursorTop - OldTop
-                    If LinesMade = WindowHeight - 1 Then
-                        ReadKey(True)
-                        OldTop = CursorTop
-                        LinesMade = 0
-                    End If
-                Next
-                If Line Then WriteLine()
-                If backgroundColor = ConsoleColors.Black Then ResetColor()
+                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then ResetColor()
                 If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If

@@ -16,7 +16,63 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module Color
+Public Class Color
+
+    ''' <summary>
+    ''' Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property PlainSequence As String
+    ''' <summary>
+    ''' Parsable VT sequence (Foreground)
+    ''' </summary>
+    Public Property VTSequenceForeground As String
+    ''' <summary>
+    ''' Parsable VT sequence (Background)
+    ''' </summary>
+    Public Property VTSequenceBackground As String
+    ''' <summary>
+    ''' Color type
+    ''' </summary>
+    Public Property Type As ColorType
+
+    ''' <summary>
+    ''' Color type enumeration
+    ''' </summary>
+    Public Enum ColorType
+        TrueColor
+        _255Color
+    End Enum
+
+    ''' <summary>
+    ''' Makes a new instance of color class from specifier.
+    ''' </summary>
+    ''' <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, or a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
+    ''' <exception cref="Exceptions.ColorException"></exception>
+    Public Sub New(ByVal ColorSpecifier As String)
+        If ColorSpecifier.Contains(";") Then
+            Dim ColorSpecifierArray() As String = ColorSpecifier.Split(";")
+            If ColorSpecifierArray.Length = 3 Then
+                PlainSequence = "{0};{1};{2}".FormatString(ColorSpecifierArray(0), ColorSpecifierArray(1), ColorSpecifierArray(2))
+                VTSequenceForeground = "<38;2;{0}>".FormatString(PlainSequence)
+                VTSequenceForeground.ConvertVTSequences
+                VTSequenceBackground = "<48;2;{0}>".FormatString(PlainSequence)
+                VTSequenceBackground.ConvertVTSequences
+            End If
+        ElseIf IsNumeric(ColorSpecifier) Then
+            PlainSequence = ColorSpecifier
+            VTSequenceForeground = "<38;5;{0}>".FormatString(ColorSpecifier)
+            VTSequenceForeground.ConvertVTSequences
+            VTSequenceBackground = "<48;5;{0}>".FormatString(ColorSpecifier)
+            VTSequenceBackground.ConvertVTSequences
+        Else
+            Throw New Exceptions.ColorException(DoTranslation("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:") + " <R>;<G>;<B>")
+        End If
+    End Sub
+
+End Class
+
+Public Module ColorTools
 
     ''' <summary>
     ''' Enumeration for color types
@@ -39,20 +95,20 @@ Public Module Color
     End Enum
 
     'Variables for colors used by previous versions of Kernel.
-    Public InputColor As ConsoleColors = ConsoleColors.White
-    Public LicenseColor As ConsoleColors = ConsoleColors.White
-    Public ContKernelErrorColor As ConsoleColors = ConsoleColors.Yellow
-    Public UncontKernelErrorColor As ConsoleColors = ConsoleColors.Red
-    Public HostNameShellColor As ConsoleColors = ConsoleColors.DarkGreen
-    Public UserNameShellColor As ConsoleColors = ConsoleColors.Green
-    Public BackgroundColor As ConsoleColors = ConsoleColors.Black
-    Public NeutralTextColor As ConsoleColors = ConsoleColors.Gray
-    Public ListEntryColor As ConsoleColors = ConsoleColors.DarkYellow
-    Public ListValueColor As ConsoleColors = ConsoleColors.DarkGray
-    Public StageColor As ConsoleColors = ConsoleColors.Green
-    Public ErrorColor As ConsoleColors = ConsoleColors.Red
-    Public WarningColor As ConsoleColors = ConsoleColors.Yellow
-    Public OptionColor As ConsoleColors = ConsoleColors.DarkYellow
+    Public InputColor As String = New Color(ConsoleColors.White).PlainSequence
+    Public LicenseColor As String = New Color(ConsoleColors.White).PlainSequence
+    Public ContKernelErrorColor As String = New Color(ConsoleColors.Yellow).PlainSequence
+    Public UncontKernelErrorColor As String = New Color(ConsoleColors.Red).PlainSequence
+    Public HostNameShellColor As String = New Color(ConsoleColors.DarkGreen).PlainSequence
+    Public UserNameShellColor As String = New Color(ConsoleColors.Green).PlainSequence
+    Public BackgroundColor As String = New Color(ConsoleColors.Black).PlainSequence
+    Public NeutralTextColor As String = New Color(ConsoleColors.Gray).PlainSequence
+    Public ListEntryColor As String = New Color(ConsoleColors.DarkYellow).PlainSequence
+    Public ListValueColor As String = New Color(ConsoleColors.DarkGray).PlainSequence
+    Public StageColor As String = New Color(ConsoleColors.Green).PlainSequence
+    Public ErrorColor As String = New Color(ConsoleColors.Red).PlainSequence
+    Public WarningColor As String = New Color(ConsoleColors.Yellow).PlainSequence
+    Public OptionColor As String = New Color(ConsoleColors.DarkYellow).PlainSequence
 
     'Templates array (available ones)
     Public colorTemplates As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
@@ -85,20 +141,20 @@ Public Module Color
     Public Sub ResetColors()
         Wdbg("I", "Resetting colors")
         Dim DefInfo As New ThemeInfo("_Default")
-        InputColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeInputColor), ConsoleColors)
-        LicenseColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeLicenseColor), ConsoleColors)
-        ContKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeContKernelErrorColor), ConsoleColors)
-        UncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeUncontKernelErrorColor), ConsoleColors)
-        HostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeHostNameShellColor), ConsoleColors)
-        UserNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeUserNameShellColor), ConsoleColors)
-        BackgroundColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeBackgroundColor), ConsoleColors)
-        NeutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeNeutralTextColor), ConsoleColors)
-        ListEntryColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeCmdListColor), ConsoleColors)
-        ListValueColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeCmdDefColor), ConsoleColors)
-        StageColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeStageColor), ConsoleColors)
-        ErrorColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeErrorColor), ConsoleColors)
-        WarningColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeWarningColor), ConsoleColors)
-        OptionColor = CType([Enum].Parse(GetType(ConsoleColors), DefInfo.ThemeOptionColor), ConsoleColors)
+        InputColor = DefInfo.ThemeInputColor.PlainSequence
+        LicenseColor = DefInfo.ThemeLicenseColor.PlainSequence
+        ContKernelErrorColor = DefInfo.ThemeContKernelErrorColor.PlainSequence
+        UncontKernelErrorColor = DefInfo.ThemeUncontKernelErrorColor.PlainSequence
+        HostNameShellColor = DefInfo.ThemeHostNameShellColor.PlainSequence
+        UserNameShellColor = DefInfo.ThemeUserNameShellColor.PlainSequence
+        BackgroundColor = DefInfo.ThemeBackgroundColor.PlainSequence
+        NeutralTextColor = DefInfo.ThemeNeutralTextColor.PlainSequence
+        ListEntryColor = DefInfo.ThemeCmdListColor.PlainSequence
+        ListValueColor = DefInfo.ThemeCmdDefColor.PlainSequence
+        StageColor = DefInfo.ThemeStageColor.PlainSequence
+        ErrorColor = DefInfo.ThemeErrorColor.PlainSequence
+        WarningColor = DefInfo.ThemeWarningColor.PlainSequence
+        OptionColor = DefInfo.ThemeOptionColor.PlainSequence
         LoadBack()
 
         'Raise event
@@ -112,7 +168,7 @@ Public Module Color
         Try
             Wdbg("I", "Filling background with background color")
             Dim esc As Char = GetEsc()
-            Console.Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
+            Console.Write(New Color(BackgroundColor).VTSequenceBackground)
             Console.Clear()
         Catch ex As Exception
             Wdbg("E", "Failed to set background: {0}", ex.Message)
@@ -145,20 +201,20 @@ Public Module Color
             If Not theme = "Default" Then
 #Disable Warning BC42104
                 'Set colors as appropriate
-                InputColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeInputColor), ConsoleColors)
-                LicenseColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeLicenseColor), ConsoleColors)
-                ContKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeContKernelErrorColor), ConsoleColors)
-                UncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeUncontKernelErrorColor), ConsoleColors)
-                HostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeHostNameShellColor), ConsoleColors)
-                UserNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeUserNameShellColor), ConsoleColors)
-                BackgroundColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeBackgroundColor), ConsoleColors)
-                NeutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeNeutralTextColor), ConsoleColors)
-                ListEntryColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeCmdListColor), ConsoleColors)
-                ListValueColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeCmdDefColor), ConsoleColors)
-                StageColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeStageColor), ConsoleColors)
-                ErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeErrorColor), ConsoleColors)
-                WarningColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeWarningColor), ConsoleColors)
-                OptionColor = CType([Enum].Parse(GetType(ConsoleColors), ThemeInfo.ThemeOptionColor), ConsoleColors)
+                InputColor = ThemeInfo.ThemeInputColor.PlainSequence
+                LicenseColor = ThemeInfo.ThemeLicenseColor.PlainSequence
+                ContKernelErrorColor = ThemeInfo.ThemeContKernelErrorColor.PlainSequence
+                UncontKernelErrorColor = ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence
+                HostNameShellColor = ThemeInfo.ThemeHostNameShellColor.PlainSequence
+                UserNameShellColor = ThemeInfo.ThemeUserNameShellColor.PlainSequence
+                BackgroundColor = ThemeInfo.ThemeBackgroundColor.PlainSequence
+                NeutralTextColor = ThemeInfo.ThemeNeutralTextColor.PlainSequence
+                ListEntryColor = ThemeInfo.ThemeCmdListColor.PlainSequence
+                ListValueColor = ThemeInfo.ThemeCmdDefColor.PlainSequence
+                StageColor = ThemeInfo.ThemeStageColor.PlainSequence
+                ErrorColor = ThemeInfo.ThemeErrorColor.PlainSequence
+                WarningColor = ThemeInfo.ThemeWarningColor.PlainSequence
+                OptionColor = ThemeInfo.ThemeOptionColor.PlainSequence
 #Enable Warning BC42104
 
                 'Load background
@@ -187,119 +243,111 @@ Public Module Color
         Dim ksconf As New IniFile()
         Dim configPath As String = paths("Configuration")
         ksconf.Load(configPath)
-        ksconf.Sections("Colors").Keys("User Name Shell Color").Value = UserNameShellColor.ToString
-        ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = HostNameShellColor.ToString
-        ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = ContKernelErrorColor.ToString
-        ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = UncontKernelErrorColor.ToString
-        ksconf.Sections("Colors").Keys("Text Color").Value = NeutralTextColor.ToString
-        ksconf.Sections("Colors").Keys("License Color").Value = LicenseColor.ToString
-        ksconf.Sections("Colors").Keys("Background Color").Value = BackgroundColor.ToString
-        ksconf.Sections("Colors").Keys("Input Color").Value = InputColor.ToString
-        ksconf.Sections("Colors").Keys("List Entry Color").Value = ListEntryColor.ToString
-        ksconf.Sections("Colors").Keys("List Value Color").Value = ListValueColor.ToString
-        ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = StageColor.ToString
-        ksconf.Sections("Colors").Keys("Error Text Color").Value = ErrorColor.ToString
-        ksconf.Sections("Colors").Keys("Warning Text Color").Value = WarningColor.ToString
-        ksconf.Sections("Colors").Keys("Option Color").Value = OptionColor.ToString
+
+        'We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
+        ksconf.Sections("Colors").Keys("User Name Shell Color").Value = New Color(UserNameShellColor).PlainSequence
+        ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = New Color(HostNameShellColor).PlainSequence
+        ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = New Color(ContKernelErrorColor).PlainSequence
+        ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = New Color(UncontKernelErrorColor).PlainSequence
+        ksconf.Sections("Colors").Keys("Text Color").Value = New Color(NeutralTextColor).PlainSequence
+        ksconf.Sections("Colors").Keys("License Color").Value = New Color(LicenseColor).PlainSequence
+        ksconf.Sections("Colors").Keys("Background Color").Value = New Color(BackgroundColor).PlainSequence
+        ksconf.Sections("Colors").Keys("Input Color").Value = New Color(InputColor).PlainSequence
+        ksconf.Sections("Colors").Keys("List Entry Color").Value = New Color(ListEntryColor).PlainSequence
+        ksconf.Sections("Colors").Keys("List Value Color").Value = New Color(ListValueColor).PlainSequence
+        ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = New Color(StageColor).PlainSequence
+        ksconf.Sections("Colors").Keys("Error Text Color").Value = New Color(ErrorColor).PlainSequence
+        ksconf.Sections("Colors").Keys("Warning Text Color").Value = New Color(WarningColor).PlainSequence
+        ksconf.Sections("Colors").Keys("Option Color").Value = New Color(OptionColor).PlainSequence
         ksconf.Save(configPath)
     End Sub
 
     ''' <summary>
     ''' Sets custom colors. It only works if colored shell is enabled.
     ''' </summary>
-    ''' <param name="InputC">Input color</param>
-    ''' <param name="LicenseC">License color</param>
-    ''' <param name="ContKernelErrorC">Continuable kernel error color</param>
-    ''' <param name="UncontKernelErrorC">Uncontinuable kernel error color</param>
-    ''' <param name="HostNameC">Host name color</param>
-    ''' <param name="UserNameC">User name color</param>
-    ''' <param name="BackC">Background color</param>
-    ''' <param name="NeutralTextC">Neutral text color</param>
-    ''' <param name="CmdListC">Command list color</param>
-    ''' <param name="CmdDefC">Command definition color</param>
-    ''' <param name="StageC">Stage color</param>
-    ''' <param name="ErrorC">Error color</param>
+    ''' <param name="InputColor">Input color</param>
+    ''' <param name="LicenseColor">License color</param>
+    ''' <param name="ContKernelErrorColor">Continuable kernel error color</param>
+    ''' <param name="UncontKernelErrorColor">Uncontinuable kernel error color</param>
+    ''' <param name="HostNameColor">Host name color</param>
+    ''' <param name="UserNameColor">User name color</param>
+    ''' <param name="BackColor">Background color</param>
+    ''' <param name="NeutralTextColor">Neutral text color</param>
+    ''' <param name="CmdListColor">Command list color</param>
+    ''' <param name="CmdDefColor">Command definition color</param>
+    ''' <param name="StageColor">Stage color</param>
+    ''' <param name="ErrorColor">Error color</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="Exceptions.ColorException"></exception>
-    Public Function SetColors(InputC As ConsoleColors, LicenseC As ConsoleColors, ContKernelErrorC As ConsoleColors,
-                              UncontKernelErrorC As ConsoleColors, HostNameC As ConsoleColors, UserNameC As ConsoleColors,
-                              BackC As ConsoleColors, NeutralTextC As ConsoleColors, CmdListC As ConsoleColors,
-                              CmdDefC As ConsoleColors, StageC As ConsoleColors, ErrorC As ConsoleColors, WarningC As ConsoleColors,
-                              OptionC As ConsoleColors) As Boolean
+    Public Function SetColors(InputColor As String, LicenseColor As String, ContKernelErrorColor As String, UncontKernelErrorColor As String, HostNameColor As String, UserNameColor As String,
+                              BackColor As String, NeutralTextColor As String, CmdListColor As String, CmdDefColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
+                              OptionColor As String) As Boolean
+        'Check colors for null and set them to "def" if found
+        If String.IsNullOrEmpty(OptionColor) Then OptionColor = "def"
+        If String.IsNullOrEmpty(WarningColor) Then WarningColor = "def"
+        If String.IsNullOrEmpty(ErrorColor) Then ErrorColor = "def"
+        If String.IsNullOrEmpty(StageColor) Then StageColor = "def"
+        If String.IsNullOrEmpty(CmdDefColor) Then CmdDefColor = "def"
+        If String.IsNullOrEmpty(CmdListColor) Then CmdListColor = "def"
+        If String.IsNullOrEmpty(NeutralTextColor) Then NeutralTextColor = "def"
+        If String.IsNullOrEmpty(BackColor) Then BackColor = "def"
+        If String.IsNullOrEmpty(UserNameColor) Then UserNameColor = "def"
+        If String.IsNullOrEmpty(HostNameColor) Then HostNameColor = "def"
+        If String.IsNullOrEmpty(UncontKernelErrorColor) Then UncontKernelErrorColor = "def"
+        If String.IsNullOrEmpty(ContKernelErrorColor) Then ContKernelErrorColor = "def"
+        If String.IsNullOrEmpty(LicenseColor) Then LicenseColor = "def"
+        If String.IsNullOrEmpty(InputColor) Then InputColor = "def"
+
+        'Set colors
         If ColoredShell = True Then
-            If InputC = ConsoleColors.def Then
-                InputC = ConsoleColors.White
-            End If
-            If LicenseC = ConsoleColors.def Then
-                LicenseC = ConsoleColors.White
-            End If
-            If ContKernelErrorC = ConsoleColors.def Then
-                ContKernelErrorC = ConsoleColors.Yellow
-            End If
-            If UncontKernelErrorC = ConsoleColors.def Then
-                UncontKernelErrorC = ConsoleColors.Red
-            End If
-            If HostNameC = ConsoleColors.def Then
-                HostNameC = ConsoleColors.DarkGreen
-            End If
-            If UserNameC = ConsoleColors.def Then
-                UserNameC = ConsoleColors.Green
-            End If
-            If BackC = ConsoleColors.def Then
-                BackC = ConsoleColors.Black
+            'Check for defaults
+            'We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
+            If InputColor = "def" Then InputColor = New Color(ConsoleColors.White).PlainSequence
+            If LicenseColor = "def" Then LicenseColor = New Color(ConsoleColors.White).PlainSequence
+            If ContKernelErrorColor = "def" Then ContKernelErrorColor = New Color(ConsoleColors.Yellow).PlainSequence
+            If UncontKernelErrorColor = "def" Then UncontKernelErrorColor = New Color(ConsoleColors.Red).PlainSequence
+            If HostNameColor = "def" Then HostNameColor = New Color(ConsoleColors.DarkGreen).PlainSequence
+            If UserNameColor = "def" Then UserNameColor = New Color(ConsoleColors.Green).PlainSequence
+            If NeutralTextColor = "def" Then NeutralTextColor = New Color(ConsoleColors.Gray).PlainSequence
+            If CmdListColor = "def" Then CmdListColor = New Color(ConsoleColors.DarkYellow).PlainSequence
+            If CmdDefColor = "def" Then CmdDefColor = New Color(ConsoleColors.DarkGray).PlainSequence
+            If StageColor = "def" Then StageColor = New Color(ConsoleColors.Green).PlainSequence
+            If ErrorColor = "def" Then ErrorColor = New Color(ConsoleColors.Red).PlainSequence
+            If WarningColor = "def" Then WarningColor = New Color(ConsoleColors.Yellow).PlainSequence
+            If OptionColor = "def" Then OptionColor = New Color(ConsoleColors.DarkYellow).PlainSequence
+            If BackColor = "def" Then
+                BackColor = New Color(ConsoleColors.Black).PlainSequence
                 LoadBack()
             End If
-            If NeutralTextC = ConsoleColors.def Then
-                NeutralTextC = ConsoleColors.Gray
-            End If
-            If CmdListC = ConsoleColors.def Then
-                CmdListC = ConsoleColors.DarkYellow
-            End If
-            If CmdDefC = ConsoleColors.def Then
-                CmdDefC = ConsoleColors.DarkGray
-            End If
-            If StageC = ConsoleColors.def Then
-                StageC = ConsoleColors.Green
-            End If
-            If ErrorC = ConsoleColors.def Then
-                ErrorC = ConsoleColors.Red
-            End If
-            If WarningC = ConsoleColors.def Then
-                WarningC = ConsoleColors.Yellow
-            End If
-            If OptionC = ConsoleColors.def Then
-                OptionC = ConsoleColors.DarkYellow
-            End If
-            If [Enum].IsDefined(GetType(ConsoleColors), InputC) And [Enum].IsDefined(GetType(ConsoleColors), LicenseC) And [Enum].IsDefined(GetType(ConsoleColors), ContKernelErrorC) And
-               [Enum].IsDefined(GetType(ConsoleColors), UncontKernelErrorC) And [Enum].IsDefined(GetType(ConsoleColors), HostNameC) And [Enum].IsDefined(GetType(ConsoleColors), UserNameC) And
-               [Enum].IsDefined(GetType(ConsoleColors), BackC) And [Enum].IsDefined(GetType(ConsoleColors), NeutralTextC) And [Enum].IsDefined(GetType(ConsoleColors), CmdListC) And
-               [Enum].IsDefined(GetType(ConsoleColors), CmdDefC) And [Enum].IsDefined(GetType(ConsoleColors), StageC) And [Enum].IsDefined(GetType(ConsoleColors), ErrorC) And
-               [Enum].IsDefined(GetType(ConsoleColors), WarningC) And [Enum].IsDefined(GetType(ConsoleColors), OptionC) Then
-                InputColor = CType([Enum].Parse(GetType(ConsoleColors), InputC), ConsoleColors)
-                LicenseColor = CType([Enum].Parse(GetType(ConsoleColors), LicenseC), ConsoleColors)
-                ContKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ContKernelErrorC), ConsoleColors)
-                UncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), UncontKernelErrorC), ConsoleColors)
-                HostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), HostNameC), ConsoleColors)
-                UserNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), UserNameC), ConsoleColors)
-                BackgroundColor = CType([Enum].Parse(GetType(ConsoleColors), BackC), ConsoleColors)
-                NeutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), NeutralTextC), ConsoleColors)
-                ListEntryColor = CType([Enum].Parse(GetType(ConsoleColors), CmdListC), ConsoleColors)
-                ListValueColor = CType([Enum].Parse(GetType(ConsoleColors), CmdDefC), ConsoleColors)
-                StageColor = CType([Enum].Parse(GetType(ConsoleColors), StageC), ConsoleColors)
-                ErrorColor = CType([Enum].Parse(GetType(ConsoleColors), ErrorC), ConsoleColors)
-                WarningColor = CType([Enum].Parse(GetType(ConsoleColors), WarningC), ConsoleColors)
-                OptionColor = CType([Enum].Parse(GetType(ConsoleColors), OptionC), ConsoleColors)
+
+            'Set the colors
+            Try
+                ColorTools.InputColor = New Color(InputColor).PlainSequence
+                ColorTools.LicenseColor = New Color(LicenseColor).PlainSequence
+                ColorTools.ContKernelErrorColor = New Color(ContKernelErrorColor).PlainSequence
+                ColorTools.UncontKernelErrorColor = New Color(UncontKernelErrorColor).PlainSequence
+                ColorTools.HostNameShellColor = New Color(HostNameColor).PlainSequence
+                ColorTools.UserNameShellColor = New Color(UserNameColor).PlainSequence
+                ColorTools.BackgroundColor = New Color(BackColor).PlainSequence
+                ColorTools.NeutralTextColor = New Color(NeutralTextColor).PlainSequence
+                ColorTools.ListEntryColor = New Color(CmdListColor).PlainSequence
+                ColorTools.ListValueColor = New Color(CmdDefColor).PlainSequence
+                ColorTools.StageColor = New Color(StageColor).PlainSequence
+                ColorTools.ErrorColor = New Color(ErrorColor).PlainSequence
+                ColorTools.WarningColor = New Color(WarningColor).PlainSequence
+                ColorTools.OptionColor = New Color(OptionColor).PlainSequence
                 LoadBack()
                 MakePermanent()
 
                 'Raise event
                 EventManager.RaiseColorSet()
                 Return True
-            Else
+            Catch ex As Exception
+                WStkTrc(ex)
                 EventManager.RaiseColorSetError("invalidcolors")
-                Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid."))
-            End If
+                Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}".FormatString(ex.Message))
+            End Try
         Else
             EventManager.RaiseColorSetError("nocolors")
             Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
@@ -314,13 +362,14 @@ Public Module Color
     Public Function SetInputColor() As Boolean
         Dim esc As Char = GetEsc()
         If ColoredShell = True Then
-            Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-            Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            Console.Write(New Color(InputColor).VTSequenceForeground)
+            Console.Write(New Color(BackgroundColor).VTSequenceBackground)
             Return True
         End If
         Return False
     End Function
 
+    'TODO: Ensure compatibility with true color
     ''' <summary>
     ''' Initializes color wheel
     ''' </summary>
@@ -333,9 +382,9 @@ Public Module Color
             Console.Clear()
             W(vbNewLine + DoTranslation("Select color using ""<-"" and ""->"" keys. Press ENTER to quit. Press ""i"" to insert color number manually."), True, ColTypes.Neutral)
             W(vbNewLine + " <", False, ColTypes.Gray)
-            WriteWhereC(CurrentColor.ToString, (Console.CursorLeft + 30 - CurrentColor.ToString.Length) / 2, Console.CursorTop, True, CurrentColor)
+            WriteWhereC(CurrentColor.ToString, (Console.CursorLeft + 30 - CurrentColor.ToString.Length) / 2, Console.CursorTop, True, New Color(CurrentColor))
             WriteWhere(">", Console.CursorLeft + 27, Console.CursorTop, True, ColTypes.Gray)
-            WriteC(vbNewLine + vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, CurrentColor)
+            WriteC(vbNewLine + vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, New Color(CurrentColor))
             Dim ConsoleResponse As ConsoleKeyInfo = Console.ReadKey(True)
             If ConsoleResponse.Key = ConsoleKey.LeftArrow Then
                 If CurrentColor = 0 Then

@@ -24,59 +24,59 @@ Module ThemeStudioTools
     ''' <summary>
     ''' Selected input color for new theme
     ''' </summary>
-    Friend SelectedInputColor As ConsoleColors = inputColor
+    Friend SelectedInputColor As New Color(InputColor)
     ''' <summary>
     ''' Selected license color for new theme
     ''' </summary>
-    Friend SelectedLicenseColor As ConsoleColors = licenseColor
+    Friend SelectedLicenseColor As New Color(LicenseColor)
     ''' <summary>
     ''' Selected continuable kernel error color for new theme
     ''' </summary>
-    Friend SelectedContKernelErrorColor As ConsoleColors = contKernelErrorColor
+    Friend SelectedContKernelErrorColor As New Color(ContKernelErrorColor)
     ''' <summary>
     ''' Selected uncontinuable kernel error color for new theme
     ''' </summary>
-    Friend SelectedUncontKernelErrorColor As ConsoleColors = uncontKernelErrorColor
+    Friend SelectedUncontKernelErrorColor As New Color(UncontKernelErrorColor)
     ''' <summary>
     ''' Selected host name shell color for new theme
     ''' </summary>
-    Friend SelectedHostNameShellColor As ConsoleColors = hostNameShellColor
+    Friend SelectedHostNameShellColor As New Color(HostNameShellColor)
     ''' <summary>
     ''' Selected user name shell color for new theme
     ''' </summary>
-    Friend SelectedUserNameShellColor As ConsoleColors = userNameShellColor
+    Friend SelectedUserNameShellColor As New Color(UserNameShellColor)
     ''' <summary>
     ''' Selected background color for new theme
     ''' </summary>
-    Friend SelectedBackgroundColor As ConsoleColors = backgroundColor
+    Friend SelectedBackgroundColor As New Color(BackgroundColor)
     ''' <summary>
     ''' Selected neutral text color for new theme
     ''' </summary>
-    Friend SelectedNeutralTextColor As ConsoleColors = NeutralTextColor
+    Friend SelectedNeutralTextColor As New Color(NeutralTextColor)
     ''' <summary>
     ''' Selected list entry color for new theme
     ''' </summary>
-    Friend SelectedListEntryColor As ConsoleColors = ListEntryColor
+    Friend SelectedListEntryColor As New Color(ListEntryColor)
     ''' <summary>
     ''' Selected list value color for new theme
     ''' </summary>
-    Friend SelectedListValueColor As ConsoleColors = ListValueColor
+    Friend SelectedListValueColor As New Color(ListValueColor)
     ''' <summary>
     ''' Selected stage color for new theme
     ''' </summary>
-    Friend SelectedStageColor As ConsoleColors = stageColor
+    Friend SelectedStageColor As New Color(StageColor)
     ''' <summary>
     ''' Selected error color for new theme
     ''' </summary>
-    Friend SelectedErrorColor As ConsoleColors = errorColor
+    Friend SelectedErrorColor As New Color(ErrorColor)
     ''' <summary>
     ''' Selected warning color for new theme
     ''' </summary>
-    Friend SelectedWarningColor As ConsoleColors = WarningColor
+    Friend SelectedWarningColor As New Color(WarningColor)
     ''' <summary>
     ''' Selected option color for new theme
     ''' </summary>
-    Friend SelectedOptionColor As ConsoleColors = OptionColor
+    Friend SelectedOptionColor As New Color(OptionColor)
 
     ''' <summary>
     ''' Saves theme to current directory under "<paramref name="Theme"/>.json."
@@ -139,7 +139,7 @@ Module ThemeStudioTools
     ''' <param name="Theme">A theme name</param>
     Sub LoadThemeFromFile(ByVal Theme As String)
         'Populate theme info
-        Dim ThemeInfo As New ThemeInfo(New StreamReader(NeutralizePath(Theme).ToString))
+        Dim ThemeInfo As New ThemeInfo(New StreamReader(NeutralizePath(Theme)))
 
         'Place information to the studio
         SelectedInputColor = ThemeInfo.ThemeInputColor
@@ -163,20 +163,20 @@ Module ThemeStudioTools
     ''' </summary>
     ''' <returns>A JSON object</returns>
     Function GetThemeJson() As JObject
-        Return New JObject(New JProperty("InputColor", SelectedInputColor.ToString),
-                           New JProperty("LicenseColor", SelectedLicenseColor.ToString),
-                           New JProperty("ContKernelErrorColor", SelectedContKernelErrorColor.ToString),
-                           New JProperty("UncontKernelErrorColor", SelectedUncontKernelErrorColor.ToString),
-                           New JProperty("HostNameShellColor", SelectedHostNameShellColor.ToString),
-                           New JProperty("UserNameShellColor", SelectedUserNameShellColor.ToString),
-                           New JProperty("BackgroundColor", SelectedBackgroundColor.ToString),
-                           New JProperty("NeutralTextColor", SelectedNeutralTextColor.ToString),
-                           New JProperty("CmdListColor", SelectedListEntryColor.ToString),
-                           New JProperty("CmdDefColor", SelectedListValueColor.ToString),
-                           New JProperty("StageColor", SelectedStageColor.ToString),
-                           New JProperty("ErrorColor", SelectedErrorColor.ToString),
-                           New JProperty("WarningColor", SelectedWarningColor.ToString),
-                           New JProperty("OptionColor", SelectedOptionColor.ToString))
+        Return New JObject(New JProperty("InputColor", SelectedInputColor.PlainSequence),
+                           New JProperty("LicenseColor", SelectedLicenseColor.PlainSequence),
+                           New JProperty("ContKernelErrorColor", SelectedContKernelErrorColor.PlainSequence),
+                           New JProperty("UncontKernelErrorColor", SelectedUncontKernelErrorColor.PlainSequence),
+                           New JProperty("HostNameShellColor", SelectedHostNameShellColor.PlainSequence),
+                           New JProperty("UserNameShellColor", SelectedUserNameShellColor.PlainSequence),
+                           New JProperty("BackgroundColor", SelectedBackgroundColor.PlainSequence),
+                           New JProperty("NeutralTextColor", SelectedNeutralTextColor.PlainSequence),
+                           New JProperty("CmdListColor", SelectedListEntryColor.PlainSequence),
+                           New JProperty("CmdDefColor", SelectedListValueColor.PlainSequence),
+                           New JProperty("StageColor", SelectedStageColor.PlainSequence),
+                           New JProperty("ErrorColor", SelectedErrorColor.PlainSequence),
+                           New JProperty("WarningColor", SelectedWarningColor.PlainSequence),
+                           New JProperty("OptionColor", SelectedOptionColor.PlainSequence))
     End Function
 
 End Module

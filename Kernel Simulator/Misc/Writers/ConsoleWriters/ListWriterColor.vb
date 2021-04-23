@@ -121,7 +121,7 @@ Public Module ListWriterColor
     ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
     ''' <param name="ListKeyColor">A key color.</param>
     ''' <param name="ListValueColor">A value color.</param>
-    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal ListKeyColor As ConsoleColors, ByVal ListValueColor As ConsoleColors)
+    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal ListKeyColor As Color, ByVal ListValueColor As Color)
         WriteList(List, ListKeyColor, ListValueColor, WrapListOutputs)
     End Sub
 
@@ -132,7 +132,7 @@ Public Module ListWriterColor
     ''' <param name="ListKeyColor">A key color.</param>
     ''' <param name="ListValueColor">A value color.</param>
     ''' <param name="Wrap">Wraps the output as needed.</param>
-    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal ListKeyColor As ConsoleColors, ByVal ListValueColor As ConsoleColors, ByVal Wrap As Boolean)
+    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal ListKeyColor As Color, ByVal ListValueColor As Color, ByVal Wrap As Boolean)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -155,57 +155,7 @@ Public Module ListWriterColor
                         End If
                     End If
                 Next
-                If backgroundColor = ConsoleColors.Black Then ResetColor()
-            Catch ex As Exception
-                WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
-#If Not NOWRITELOCK Then
-        End SyncLock
-#End If
-    End Sub
-
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt with custom color support.
-    ''' </summary>
-    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-    ''' <param name="ListKeyColor">A key color.</param>
-    ''' <param name="ListValueColor">A value color.</param>
-    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal ListKeyColor As RGB, ByVal ListValueColor As RGB)
-        WriteList(List, ListKeyColor, ListValueColor, WrapListOutputs)
-    End Sub
-
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt with custom color support.
-    ''' </summary>
-    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-    ''' <param name="ListKeyColor">A key color.</param>
-    ''' <param name="ListValueColor">A value color.</param>
-    ''' <param name="Wrap">Wraps the output as needed.</param>
-    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal ListKeyColor As RGB, ByVal ListValueColor As RGB, ByVal Wrap As Boolean)
-#If Not NOWRITELOCK Then
-        SyncLock WriteLock
-#End If
-            Dim esc As Char = GetEsc()
-            Try
-                'Variables
-                Dim LinesMade As Integer
-                Dim OldTop As Integer
-
-                'Try to write list to console
-                OldTop = CursorTop
-                For Each ListEntry As TKey In List.Keys
-                    WriteTrueColor("- {0}: ", False, ListKeyColor, ListEntry) : WriteTrueColor("{0}", True, ListValueColor, List(ListEntry))
-                    If Wrap Then
-                        LinesMade += CursorTop - OldTop
-                        OldTop = CursorTop
-                        If LinesMade = WindowHeight - 1 Then
-                            ReadKey(True)
-                            LinesMade = 0
-                        End If
-                    End If
-                Next
-                If backgroundColor = ConsoleColors.Black Then ResetColor()
+                If BackgroundColor = ConsoleColors.Black Then ResetColor()
             Catch ex As Exception
                 WStkTrc(ex)
                 KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)

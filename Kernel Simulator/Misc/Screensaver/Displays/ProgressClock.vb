@@ -93,32 +93,32 @@ Module ProgressClockDisplay
 
 #Disable Warning BC42104
                     'Hours
-                    WriteWhereTrueColor("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 9, True, ColorStorageHours)   'Top of Hours
-                    WriteWhereTrueColor("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionHours, True, ColorStorageHours)            'Medium of Hours
-                    WriteWhereTrueColor("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 11, True, ColorStorageHours)  'Bottom of Hours
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 9, True, New Color(ColorStorageHours.ToString))   'Top of Hours
+                    WriteWhereC("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionHours, True, New Color(ColorStorageHours.ToString))            'Medium of Hours
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 11, True, New Color(ColorStorageHours.ToString))  'Bottom of Hours
 
                     'Minutes
-                    WriteWhereTrueColor("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2), True, ColorStorageMinutes)     'Top of Minutes
-                    WriteWhereTrueColor("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionMinutes, True, ColorStorageMinutes)        'Medium of Minutes
-                    WriteWhereTrueColor("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 2, True, ColorStorageMinutes) 'Bottom of Minutes
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2), True, New Color(ColorStorageMinutes.ToString))     'Top of Minutes
+                    WriteWhereC("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionMinutes, True, New Color(ColorStorageMinutes.ToString))        'Medium of Minutes
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 2, True, New Color(ColorStorageMinutes.ToString)) 'Bottom of Minutes
 
                     'Seconds
-                    WriteWhereTrueColor("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) + 9, True, ColorStorageSeconds) 'Top of Seconds
-                    WriteWhereTrueColor("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionSeconds, True, ColorStorageSeconds)        'Medium of Seconds
-                    WriteWhereTrueColor("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) + 7, True, ColorStorageSeconds) 'Bottom of Seconds
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) + 9, True, New Color(ColorStorageSeconds.ToString)) 'Top of Seconds
+                    WriteWhereC("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionSeconds, True, New Color(ColorStorageSeconds.ToString))        'Medium of Seconds
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) + 7, True, New Color(ColorStorageSeconds.ToString)) 'Bottom of Seconds
 #Enable Warning BC42104
                     'Fill progress for hours, minutes, and seconds
-                    If Not KernelDateTime.Hour = 0 Then WriteWhereTrueColor(" ".Repeat(KernelDateTime.Hour * 100 / 24 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionHours, True, New RGB(0, 0, 0), ColorStorageHours)
-                    If Not KernelDateTime.Minute = 0 Then WriteWhereTrueColor(" ".Repeat(KernelDateTime.Minute * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionMinutes, True, New RGB(0, 0, 0), ColorStorageMinutes)
-                    If Not KernelDateTime.Second = 0 Then WriteWhereTrueColor(" ".Repeat(KernelDateTime.Second * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionSeconds, True, New RGB(0, 0, 0), ColorStorageSeconds)
+                    If Not KernelDateTime.Hour = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Hour * 100 / 24 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionHours, True, New Color(New RGB(0, 0, 0).ToString), New Color(ColorStorageHours.ToString))
+                    If Not KernelDateTime.Minute = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Minute * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionMinutes, True, New Color(New RGB(0, 0, 0).ToString), New Color(ColorStorageMinutes.ToString))
+                    If Not KernelDateTime.Second = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Second * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionSeconds, True, New Color(New RGB(0, 0, 0).ToString), New Color(ColorStorageSeconds.ToString))
 
                     'Print information
-                    WriteWhereTrueColor("H: {0}/24", 4, InformationPositionHours, True, ColorStorageHours, KernelDateTime.Hour)
-                    WriteWhereTrueColor("M: {0}/60", 4, InformationPositionMinutes, True, ColorStorageMinutes, KernelDateTime.Minute)
-                    WriteWhereTrueColor("S: {0}/60", 4, InformationPositionSeconds, True, ColorStorageSeconds, KernelDateTime.Second)
+                    WriteWhereC("H: {0}/24", 4, InformationPositionHours, True, New Color(ColorStorageHours.ToString), KernelDateTime.Hour)
+                    WriteWhereC("M: {0}/60", 4, InformationPositionMinutes, True, New Color(ColorStorageMinutes.ToString), KernelDateTime.Minute)
+                    WriteWhereC("S: {0}/60", 4, InformationPositionSeconds, True, New Color(ColorStorageSeconds.ToString), KernelDateTime.Second)
 
                     'Print date information
-                    WriteWhereTrueColor(Render, Console.WindowWidth / 2 - Render.Length / 2, Console.WindowHeight - 2, True, ColorStorageSeconds)
+                    WriteWhereC(Render, Console.WindowWidth / 2 - Render.Length / 2, Console.WindowHeight - 2, True, New Color(ColorStorageSeconds.ToString))
                 ElseIf ProgressClock255Colors Then
                     Dim esc As Char = GetEsc()
                     Dim ColorNumHours, ColorNumMinutes, ColorNumSeconds, ColorNum As Integer
@@ -146,32 +146,32 @@ Module ProgressClockDisplay
                     InformationPositionSeconds = CInt(Console.WindowHeight / 2) + 6
 
                     'Hours
-                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 9, True, ColorNumHours)   'Top of Hours
-                    WriteWhereC("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionHours, True, ColorNumHours)            'Medium of Hours
-                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 11, True, ColorNumHours)  'Bottom of Hours
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 9, True, New Color(ColorNumHours))   'Top of Hours
+                    WriteWhereC("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionHours, True, New Color(ColorNumHours))            'Medium of Hours
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 11, True, New Color(ColorNumHours))  'Bottom of Hours
 
                     'Minutes
-                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2), True, ColorNumMinutes)     'Top of Minutes
-                    WriteWhereC("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionMinutes, True, ColorNumMinutes)        'Medium of Minutes
-                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 2, True, ColorNumMinutes) 'Bottom of Minutes
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2), True, New Color(ColorNumMinutes))     'Top of Minutes
+                    WriteWhereC("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionMinutes, True, New Color(ColorNumMinutes))        'Medium of Minutes
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 2, True, New Color(ColorNumMinutes)) 'Bottom of Minutes
 
                     'Seconds
-                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) + 9, True, ColorNumSeconds) 'Top of Seconds
-                    WriteWhereC("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionSeconds, True, ColorNumSeconds)        'Medium of Seconds
-                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) + 7, True, ColorNumSeconds) 'Bottom of Seconds
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) + 9, True, New Color(ColorNumSeconds)) 'Top of Seconds
+                    WriteWhereC("|" + " ".Repeat(Console.WindowWidth - 10) + "|", 4, ProgressFillPositionSeconds, True, New Color(ColorNumSeconds))        'Medium of Seconds
+                    WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) + 7, True, New Color(ColorNumSeconds)) 'Bottom of Seconds
 
                     'Fill progress for hours, minutes, and seconds
-                    If Not KernelDateTime.Hour = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Hour * 100 / 24 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionHours, True, ConsoleColors.Black, BackgroundColor:=ColorNumHours)
-                    If Not KernelDateTime.Minute = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Minute * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionMinutes, True, ConsoleColors.Black, BackgroundColor:=ColorNumMinutes)
-                    If Not KernelDateTime.Second = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Second * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionSeconds, True, ConsoleColors.Black, BackgroundColor:=ColorNumSeconds)
+                    If Not KernelDateTime.Hour = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Hour * 100 / 24 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionHours, True, New Color(ConsoleColors.Black), BackgroundColor:=New Color(ColorNumHours))
+                    If Not KernelDateTime.Minute = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Minute * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionMinutes, True, New Color(ConsoleColors.Black), BackgroundColor:=New Color(ColorNumMinutes))
+                    If Not KernelDateTime.Second = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Second * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionSeconds, True, New Color(ConsoleColors.Black), BackgroundColor:=New Color(ColorNumSeconds))
 
                     'Print information
-                    WriteWhereC("H: {0}/24", 4, InformationPositionHours, [Enum].Parse(GetType(ConsoleColors), ColorNumHours), KernelDateTime.Hour)
-                    WriteWhereC("M: {0}/60", 4, InformationPositionMinutes, [Enum].Parse(GetType(ConsoleColors), ColorNumMinutes), KernelDateTime.Minute)
-                    WriteWhereC("S: {0}/60", 4, InformationPositionSeconds, [Enum].Parse(GetType(ConsoleColors), ColorNumSeconds), KernelDateTime.Second)
+                    WriteWhereC("H: {0}/24", 4, InformationPositionHours, True, New Color(ColorNumHours), KernelDateTime.Hour)
+                    WriteWhereC("M: {0}/60", 4, InformationPositionMinutes, True, New Color(ColorNumMinutes), KernelDateTime.Minute)
+                    WriteWhereC("S: {0}/60", 4, InformationPositionSeconds, True, New Color(ColorNumSeconds), KernelDateTime.Second)
 
                     'Print date information
-                    WriteWhereC(Render, Console.WindowWidth / 2 - Render.Length / 2, Console.WindowHeight - 2, True, ColorNum)
+                    WriteWhereC(Render, Console.WindowWidth / 2 - Render.Length / 2, Console.WindowHeight - 2, True, New Color(ColorNum))
                 Else
                     Dim ColorNumHours, ColorNumMinutes, ColorNumSeconds, ColorNum As ConsoleColor
                     Dim ProgressFillPositionHours, ProgressFillPositionMinutes, ProgressFillPositionSeconds As Integer

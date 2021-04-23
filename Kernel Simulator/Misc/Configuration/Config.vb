@@ -46,20 +46,20 @@ Public Module Config
                 'The Colors Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Colors",
-                        New IniKey(ksconf, "User Name Shell Color", UserNameShellColor.ToString),
-                        New IniKey(ksconf, "Host Name Shell Color", HostNameShellColor.ToString),
-                        New IniKey(ksconf, "Continuable Kernel Error Color", ContKernelErrorColor.ToString),
-                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", UncontKernelErrorColor.ToString),
-                        New IniKey(ksconf, "Text Color", NeutralTextColor.ToString),
-                        New IniKey(ksconf, "License Color", LicenseColor.ToString),
-                        New IniKey(ksconf, "Background Color", BackgroundColor.ToString),
-                        New IniKey(ksconf, "Input Color", InputColor.ToString),
-                        New IniKey(ksconf, "List Entry Color", ListEntryColor.ToString),
-                        New IniKey(ksconf, "List Value Color", ListValueColor.ToString),
-                        New IniKey(ksconf, "Kernel Stage Color", StageColor.ToString),
-                        New IniKey(ksconf, "Error Text Color", ErrorColor.ToString),
-                        New IniKey(ksconf, "Warning Text Color", WarningColor.ToString),
-                        New IniKey(ksconf, "Option Color", OptionColor.ToString)))
+                        New IniKey(ksconf, "User Name Shell Color", UserNameShellColor),
+                        New IniKey(ksconf, "Host Name Shell Color", HostNameShellColor),
+                        New IniKey(ksconf, "Continuable Kernel Error Color", ContKernelErrorColor),
+                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", UncontKernelErrorColor),
+                        New IniKey(ksconf, "Text Color", NeutralTextColor),
+                        New IniKey(ksconf, "License Color", LicenseColor),
+                        New IniKey(ksconf, "Background Color", BackgroundColor),
+                        New IniKey(ksconf, "Input Color", InputColor),
+                        New IniKey(ksconf, "List Entry Color", ListEntryColor),
+                        New IniKey(ksconf, "List Value Color", ListValueColor),
+                        New IniKey(ksconf, "Kernel Stage Color", StageColor),
+                        New IniKey(ksconf, "Error Text Color", ErrorColor),
+                        New IniKey(ksconf, "Warning Text Color", WarningColor),
+                        New IniKey(ksconf, "Option Color", OptionColor)))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -167,20 +167,20 @@ Public Module Config
                 'The Colors Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Colors",
-                        New IniKey(ksconf, "User Name Shell Color", UserNameShellColor.ToString),
-                        New IniKey(ksconf, "Host Name Shell Color", HostNameShellColor.ToString),
-                        New IniKey(ksconf, "Continuable Kernel Error Color", ContKernelErrorColor.ToString),
-                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", UncontKernelErrorColor.ToString),
-                        New IniKey(ksconf, "Text Color", NeutralTextColor.ToString),
-                        New IniKey(ksconf, "License Color", LicenseColor.ToString),
-                        New IniKey(ksconf, "Background Color", BackgroundColor.ToString),
-                        New IniKey(ksconf, "Input Color", InputColor.ToString),
-                        New IniKey(ksconf, "List Entry Color", ListEntryColor.ToString),
-                        New IniKey(ksconf, "List Value Color", ListValueColor.ToString),
-                        New IniKey(ksconf, "Kernel Stage Color", StageColor.ToString),
-                        New IniKey(ksconf, "Error Text Color", ErrorColor.ToString),
-                        New IniKey(ksconf, "Warning Text Color", WarningColor.ToString),
-                        New IniKey(ksconf, "Option Color", OptionColor.ToString)))
+                        New IniKey(ksconf, "User Name Shell Color", UserNameShellColor),
+                        New IniKey(ksconf, "Host Name Shell Color", HostNameShellColor),
+                        New IniKey(ksconf, "Continuable Kernel Error Color", ContKernelErrorColor),
+                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", UncontKernelErrorColor),
+                        New IniKey(ksconf, "Text Color", NeutralTextColor),
+                        New IniKey(ksconf, "License Color", LicenseColor),
+                        New IniKey(ksconf, "Background Color", BackgroundColor),
+                        New IniKey(ksconf, "Input Color", InputColor),
+                        New IniKey(ksconf, "List Entry Color", ListEntryColor),
+                        New IniKey(ksconf, "List Value Color", ListValueColor),
+                        New IniKey(ksconf, "Kernel Stage Color", StageColor),
+                        New IniKey(ksconf, "Error Text Color", ErrorColor),
+                        New IniKey(ksconf, "Warning Text Color", WarningColor),
+                        New IniKey(ksconf, "Option Color", OptionColor)))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -465,20 +465,21 @@ Public Module Config
             'Colors Section
             Wdbg("I", "Loading colors...")
             If ColoredShell Then
-                userNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("User Name Shell Color").Value), ConsoleColors)
-                hostNameShellColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Host Name Shell Color").Value), ConsoleColors)
-                contKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value), ConsoleColors)
-                uncontKernelErrorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value), ConsoleColors)
-                neutralTextColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Text Color").Value), ConsoleColors)
-                licenseColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("License Color").Value), ConsoleColors)
-                backgroundColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Background Color").Value), ConsoleColors)
-                inputColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Input Color").Value), ConsoleColors)
-                ListEntryColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("List Entry Color").Value), ConsoleColors)
-                ListValueColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("List Value Color").Value), ConsoleColors)
-                StageColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Kernel Stage Color").Value), ConsoleColors)
-                errorColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Error Text Color").Value), ConsoleColors)
-                WarningColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Warning Text Color").Value), ConsoleColors)
-                OptionColor = CType([Enum].Parse(GetType(ConsoleColors), configReader.Sections("Colors").Keys("Option Color").Value), ConsoleColors)
+                'We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
+                UserNameShellColor = New Color(configReader.Sections("Colors").Keys("User Name Shell Color").Value).PlainSequence
+                HostNameShellColor = New Color(configReader.Sections("Colors").Keys("Host Name Shell Color").Value).PlainSequence
+                ContKernelErrorColor = New Color(configReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value).PlainSequence
+                UncontKernelErrorColor = New Color(configReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value).PlainSequence
+                NeutralTextColor = New Color(configReader.Sections("Colors").Keys("Text Color").Value).PlainSequence
+                LicenseColor = New Color(configReader.Sections("Colors").Keys("License Color").Value).PlainSequence
+                BackgroundColor = New Color(configReader.Sections("Colors").Keys("Background Color").Value).PlainSequence
+                InputColor = New Color(configReader.Sections("Colors").Keys("Input Color").Value).PlainSequence
+                ListEntryColor = New Color(configReader.Sections("Colors").Keys("List Entry Color").Value).PlainSequence
+                ListValueColor = New Color(configReader.Sections("Colors").Keys("List Value Color").Value).PlainSequence
+                StageColor = New Color(configReader.Sections("Colors").Keys("Kernel Stage Color").Value).PlainSequence
+                ErrorColor = New Color(configReader.Sections("Colors").Keys("Error Text Color").Value).PlainSequence
+                WarningColor = New Color(configReader.Sections("Colors").Keys("Warning Text Color").Value).PlainSequence
+                OptionColor = New Color(configReader.Sections("Colors").Keys("Option Color").Value).PlainSequence
                 LoadBack()
             End If
 

@@ -1141,14 +1141,9 @@ Public Module ToolPrompts
                          KeyVars(NameOf(UncontKernelErrorColor)), KeyVars(NameOf(HostNameShellColor)), KeyVars(NameOf(UserNameShellColor)), KeyVars(NameOf(BackgroundColor)), KeyVars(NameOf(NeutralTextColor)),
                          KeyVars(NameOf(ListEntryColor)), KeyVars(NameOf(ListValueColor)), KeyVars(NameOf(StageColor)), KeyVars(NameOf(ErrorColor)), KeyVars(NameOf(WarningColor)), KeyVars(NameOf(OptionColor)))
 
-                    'This is cumbersome. This is worth an Extensification for [Enum].
-                    If SetColors([Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(InputColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(LicenseColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(ContKernelErrorColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(UncontKernelErrorColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(HostNameShellColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(UserNameShellColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(BackgroundColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(NeutralTextColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(ListEntryColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(ListValueColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(StageColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(ErrorColor))),
-                                 [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(WarningColor))), [Enum].Parse(GetType(ConsoleColors), KeyVars(NameOf(OptionColor)))) Then
+                    If SetColors(KeyVars(NameOf(InputColor)), KeyVars(NameOf(LicenseColor)), KeyVars(NameOf(ContKernelErrorColor)), KeyVars(NameOf(UncontKernelErrorColor)), KeyVars(NameOf(HostNameShellColor)),
+                                 KeyVars(NameOf(UserNameShellColor)), KeyVars(NameOf(BackgroundColor)), KeyVars(NameOf(NeutralTextColor)), KeyVars(NameOf(ListEntryColor)), KeyVars(NameOf(ListValueColor)),
+                                 KeyVars(NameOf(StageColor)), KeyVars(NameOf(ErrorColor)), KeyVars(NameOf(WarningColor)), KeyVars(NameOf(OptionColor))) Then
                         KeyFinished = True
                     End If
                 End If

@@ -24,59 +24,59 @@ Public Class ThemeInfo
     ''' <summary>
     ''' Input color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeInputColor As ConsoleColors
+    Public ReadOnly Property ThemeInputColor As Color
     ''' <summary>
     ''' License color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeLicenseColor As ConsoleColors
+    Public ReadOnly Property ThemeLicenseColor As Color
     ''' <summary>
     ''' Continuable kernel error color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeContKernelErrorColor As ConsoleColors
+    Public ReadOnly Property ThemeContKernelErrorColor As Color
     ''' <summary>
     ''' Uncontinuable kernel error color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeUncontKernelErrorColor As ConsoleColors
+    Public ReadOnly Property ThemeUncontKernelErrorColor As Color
     ''' <summary>
     ''' Host name color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeHostNameShellColor As ConsoleColors
+    Public ReadOnly Property ThemeHostNameShellColor As Color
     ''' <summary>
     ''' User name color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeUserNameShellColor As ConsoleColors
+    Public ReadOnly Property ThemeUserNameShellColor As Color
     ''' <summary>
     ''' Background color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeBackgroundColor As ConsoleColors
+    Public ReadOnly Property ThemeBackgroundColor As Color
     ''' <summary>
     ''' Neutral text color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeNeutralTextColor As ConsoleColors
+    Public ReadOnly Property ThemeNeutralTextColor As Color
     ''' <summary>
     ''' Command list color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeCmdListColor As ConsoleColors
+    Public ReadOnly Property ThemeCmdListColor As Color
     ''' <summary>
     ''' Command definition color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeCmdDefColor As ConsoleColors
+    Public ReadOnly Property ThemeCmdDefColor As Color
     ''' <summary>
     ''' Stage color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeStageColor As ConsoleColors
+    Public ReadOnly Property ThemeStageColor As Color
     ''' <summary>
     ''' General error color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeErrorColor As ConsoleColors
+    Public ReadOnly Property ThemeErrorColor As Color
     ''' <summary>
     ''' General warning color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeWarningColor As ConsoleColors
+    Public ReadOnly Property ThemeWarningColor As Color
     ''' <summary>
     ''' Option color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeOptionColor As ConsoleColors
+    Public ReadOnly Property ThemeOptionColor As Color
 
     ''' <summary>
     ''' Generates a new theme info from KS resources
@@ -84,20 +84,20 @@ Public Class ThemeInfo
     ''' <param name="ThemeResourceName">Theme name (must match resource name)</param>
     Public Sub New(ByVal ThemeResourceName As String)
         Dim ThemeResourceJson As JToken = JToken.Parse(Evaluate("KS.My.Resources." + ThemeResourceName))
-        ThemeInputColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("InputColor").ToString)
-        ThemeLicenseColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("LicenseColor").ToString)
-        ThemeContKernelErrorColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("ContKernelErrorColor").ToString)
-        ThemeUncontKernelErrorColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("UncontKernelErrorColor").ToString)
-        ThemeHostNameShellColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("HostNameShellColor").ToString)
-        ThemeUserNameShellColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("UserNameShellColor").ToString)
-        ThemeBackgroundColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("BackgroundColor").ToString)
-        ThemeNeutralTextColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("NeutralTextColor").ToString)
-        ThemeCmdListColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("CmdListColor").ToString)
-        ThemeCmdDefColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("CmdDefColor").ToString)
-        ThemeStageColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("StageColor").ToString)
-        ThemeErrorColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("ErrorColor").ToString)
-        ThemeWarningColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("WarningColor").ToString)
-        ThemeOptionColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("OptionColor").ToString)
+        ThemeInputColor = New Color(ThemeResourceJson.SelectToken("InputColor").ToString)
+        ThemeLicenseColor = New Color(ThemeResourceJson.SelectToken("LicenseColor").ToString)
+        ThemeContKernelErrorColor = New Color(ThemeResourceJson.SelectToken("ContKernelErrorColor").ToString)
+        ThemeUncontKernelErrorColor = New Color(ThemeResourceJson.SelectToken("UncontKernelErrorColor").ToString)
+        ThemeHostNameShellColor = New Color(ThemeResourceJson.SelectToken("HostNameShellColor").ToString)
+        ThemeUserNameShellColor = New Color(ThemeResourceJson.SelectToken("UserNameShellColor").ToString)
+        ThemeBackgroundColor = New Color(ThemeResourceJson.SelectToken("BackgroundColor").ToString)
+        ThemeNeutralTextColor = New Color(ThemeResourceJson.SelectToken("NeutralTextColor").ToString)
+        ThemeCmdListColor = New Color(ThemeResourceJson.SelectToken("CmdListColor").ToString)
+        ThemeCmdDefColor = New Color(ThemeResourceJson.SelectToken("CmdDefColor").ToString)
+        ThemeStageColor = New Color(ThemeResourceJson.SelectToken("StageColor").ToString)
+        ThemeErrorColor = New Color(ThemeResourceJson.SelectToken("ErrorColor").ToString)
+        ThemeWarningColor = New Color(ThemeResourceJson.SelectToken("WarningColor").ToString)
+        ThemeOptionColor = New Color(ThemeResourceJson.SelectToken("OptionColor").ToString)
     End Sub
 
     ''' <summary>
@@ -106,20 +106,20 @@ Public Class ThemeInfo
     ''' <param name="ThemeFileStream">Theme file stream reader</param>
     Public Sub New(ByVal ThemeFileStream As StreamReader)
         Dim ThemeResourceJson As JToken = JToken.Parse(ThemeFileStream.ReadToEnd)
-        ThemeInputColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("InputColor").ToString)
-        ThemeLicenseColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("LicenseColor").ToString)
-        ThemeContKernelErrorColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("ContKernelErrorColor").ToString)
-        ThemeUncontKernelErrorColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("UncontKernelErrorColor").ToString)
-        ThemeHostNameShellColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("HostNameShellColor").ToString)
-        ThemeUserNameShellColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("UserNameShellColor").ToString)
-        ThemeBackgroundColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("BackgroundColor").ToString)
-        ThemeNeutralTextColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("NeutralTextColor").ToString)
-        ThemeCmdListColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("CmdListColor").ToString)
-        ThemeCmdDefColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("CmdDefColor").ToString)
-        ThemeStageColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("StageColor").ToString)
-        ThemeErrorColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("ErrorColor").ToString)
-        ThemeWarningColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("WarningColor").ToString)
-        ThemeOptionColor = [Enum].Parse(GetType(ConsoleColors), ThemeResourceJson.SelectToken("OptionColor").ToString)
+        ThemeInputColor = New Color(ThemeResourceJson.SelectToken("InputColor").ToString)
+        ThemeLicenseColor = New Color(ThemeResourceJson.SelectToken("LicenseColor").ToString)
+        ThemeContKernelErrorColor = New Color(ThemeResourceJson.SelectToken("ContKernelErrorColor").ToString)
+        ThemeUncontKernelErrorColor = New Color(ThemeResourceJson.SelectToken("UncontKernelErrorColor").ToString)
+        ThemeHostNameShellColor = New Color(ThemeResourceJson.SelectToken("HostNameShellColor").ToString)
+        ThemeUserNameShellColor = New Color(ThemeResourceJson.SelectToken("UserNameShellColor").ToString)
+        ThemeBackgroundColor = New Color(ThemeResourceJson.SelectToken("BackgroundColor").ToString)
+        ThemeNeutralTextColor = New Color(ThemeResourceJson.SelectToken("NeutralTextColor").ToString)
+        ThemeCmdListColor = New Color(ThemeResourceJson.SelectToken("CmdListColor").ToString)
+        ThemeCmdDefColor = New Color(ThemeResourceJson.SelectToken("CmdDefColor").ToString)
+        ThemeStageColor = New Color(ThemeResourceJson.SelectToken("StageColor").ToString)
+        ThemeErrorColor = New Color(ThemeResourceJson.SelectToken("ErrorColor").ToString)
+        ThemeWarningColor = New Color(ThemeResourceJson.SelectToken("WarningColor").ToString)
+        ThemeOptionColor = New Color(ThemeResourceJson.SelectToken("OptionColor").ToString)
     End Sub
 
 End Class
