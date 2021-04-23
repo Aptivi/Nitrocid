@@ -927,6 +927,13 @@ Public Module GetCommand
                     OpenMainPage()
                     Done = True
 
+                Case "set"
+
+                    If eqargs?.Length >= 2 Then
+                        Done = True
+                        SetVariable(eqargs(0), eqargs(1))
+                    End If
+
                 Case "sftp"
 
                     If eqargs?.Length = 0 Then

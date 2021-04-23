@@ -48,7 +48,7 @@ Public Module Shell
                                             "mathbee", "loteresp", "sshell", "shownotifs", "dismissnotif", "rexec", "calc", "update", "sumfiles",
                                             "lsmail", "echo", "choice", "beep", "input", "mkfile", "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather",
                                             "fileinfo", "dirinfo", "chattr", "ping", "verify", "sftp", "mktheme", "hwinfo", "cat", "wrap", "zip", "unzip",
-                                            "firedevents", "zipshell", "sshcmd"}
+                                            "firedevents", "zipshell", "sshcmd", "set"}
     ''' <summary>
     ''' All administrator-only commands
     ''' </summary>
@@ -261,7 +261,7 @@ Public Module Shell
                         StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
                         StartCommandThread.Start(cmdArgs)
                         StartCommandThread.Join()
-                    ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) Then
+                    ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) And Not scriptCmd.EndsWith(".uesh") Then
                         Wdbg("I", "Cmd exec {0} succeeded because file is found.", strcommand)
                         Try
                             'Create a new instance of process

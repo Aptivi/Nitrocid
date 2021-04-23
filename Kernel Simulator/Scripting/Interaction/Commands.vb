@@ -42,7 +42,7 @@ Public Module Commands
             Console.WriteLine()
 
             'Check if script variable is initialized. If not, exits the program.
-            If ScriptVariables.ContainsKey(ScriptVariable) Then
+            If ShellVariables.ContainsKey(ScriptVariable) Then
                 'Check if answer if correct.
                 If answers.Contains(answer) Then
                     SetVariable(ScriptVariable, answer)
@@ -62,7 +62,7 @@ Public Module Commands
         While True
             'Variables
             Dim Answer As String
-            Wdbg("I", "Script var: {0} ({1}), Question: {2}", ScriptVariable, ScriptVariables.ContainsKey(ScriptVariable), Question)
+            Wdbg("I", "Script var: {0} ({1}), Question: {2}", ScriptVariable, ShellVariables.ContainsKey(ScriptVariable), Question)
 
             'Ask a question
             W(Question, False, ColTypes.Input)
@@ -72,7 +72,7 @@ Public Module Commands
             Wdbg("I", "Answer: {0}", Answer)
 
             'Check if script variable is initialized. If not, exits the program.
-            If ScriptVariables.ContainsKey(ScriptVariable) Then
+            If ShellVariables.ContainsKey(ScriptVariable) Then
                 Wdbg("I", "Variable found. Setting {0} to {1}...", ScriptVariable, Answer)
                 SetVariable(ScriptVariable, Answer)
                 Exit While

@@ -44,7 +44,7 @@ Public Module UESHParse
                 'If $variable is found in string, initialize it
                 Dim SplitWords() As String = Line.Split(" ")
                 For i As Integer = 0 To SplitWords.Count - 1
-                    If Not ScriptVariables.ContainsKey(SplitWords(i)) And SplitWords(i).StartsWith("$") Then
+                    If Not ShellVariables.ContainsKey(SplitWords(i)) And SplitWords(i).StartsWith("$") Then
                         InitializeVariable(SplitWords(i))
                     End If
                 Next
@@ -63,7 +63,7 @@ Public Module UESHParse
                 Dim SplitWords() As String = Line.Split(" ")
                 For i As Integer = 0 To SplitWords.Count - 1
                     If SplitWords(i).StartsWith("$") Then
-                        Line = GetVariable(SplitWords(i), Line)
+                        Line = GetVariable(SplitWords(i).Replace("""", ""), Line)
                     End If
                 Next
 

@@ -86,6 +86,7 @@ Public Module HelpSystem
                                                               {"setsaver", DoTranslation("Sets up kernel screensavers")},
                                                               {"setthemes", DoTranslation("Sets up kernel themes")},
                                                               {"settings", DoTranslation("Changes kernel configuration")},
+                                                              {"set", DoTranslation("Sets a variable to a value in a script")},
                                                               {"sftp", DoTranslation("Lets you use an SSH FTP server")},
                                                               {"shownotifs", DoTranslation("Shows all received notifications")},
                                                               {"showtd", DoTranslation("Shows date and time")},
@@ -402,6 +403,10 @@ Public Module HelpSystem
         ElseIf command = "settings" Then
 
             W(DoTranslation("Usage:") + " settings", True, ColTypes.Neutral)
+
+        ElseIf command = "set" Then
+
+            W(DoTranslation("Usage:") + " set <$variable> <value>", True, ColTypes.Neutral)
 
         ElseIf command = "sftp" Then
 

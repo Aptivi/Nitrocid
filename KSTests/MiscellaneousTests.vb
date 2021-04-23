@@ -299,7 +299,7 @@ Imports KS
     ''' </summary>
     <TestMethod> Public Sub TestVariables()
         InitializeVariable("$test_var")
-        Assert.IsTrue(ScriptVariables.Count > 0, "Initializing variable failed. Count is {0}", ScriptVariables.Count)
+        Assert.IsTrue(ShellVariables.Count > 0, "Initializing variable failed. Count is {0}", ShellVariables.Count)
         Assert.IsTrue(SetVariable("$test_var", "test"), "Setting variable failed.")
         Dim ExpectedCommand As String = "echo test"
         Dim ActualCommand As String = GetVariable("$test_var", "echo $test_var")
