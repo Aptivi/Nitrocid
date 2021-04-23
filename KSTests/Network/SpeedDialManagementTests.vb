@@ -17,65 +17,27 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS
-Imports System.Net.NetworkInformation
 
-'Warning: Don't implement the unit tests related to downloading or uploading files. This causes AppVeyor to choke.
-<TestClass()> Public Class NetworkTests
-
-    ''' <summary>
-    ''' Tests hostname change
-    ''' </summary>
-    <TestMethod()> Public Sub TestChangeHostname()
-        InitPaths()
-        Assert.IsTrue(ChangeHostname("NewHost"), "Changing hostname failed. Expected True, got False.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests pinging
-    ''' </summary>
-    <TestMethod()> Public Sub TestPingAddress()
-        Assert.IsTrue(PingAddress("www.google.com").Status = IPStatus.Success, "Pinging failed.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests adding device to json
-    ''' </summary>
-    <TestMethod()> Public Sub TestAddDeviceToJson()
-        Assert.IsTrue(AddDeviceToJson("123.123.123.123"), "Adding device failed.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests setting device property
-    ''' </summary>
-    <TestMethod()> Public Sub TestDeviceSetProperty()
-        Assert.IsTrue(SetDeviceProperty("123.123.123.123", DeviceProperty.Name, "TestUser"), "Setting device property failed.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests getting device property
-    ''' </summary>
-    <TestMethod()> Public Sub TestGetDeviceProperty()
-        Assert.AreEqual("TestUser", GetDeviceProperty("123.123.123.123", DeviceProperty.Name), "Getting device property failed.")
-    End Sub
+<TestClass()> Public Class SpeedDialManagementTests
 
     ''' <summary>
     ''' Tests adding FTP speed dial entry
     ''' </summary>
-    <TestMethod> Public Sub TestAddEntryToFTPSpeedDial()
+    <TestMethod> <TestCategory("Management")> Public Sub TestAddEntryToFTPSpeedDial()
         Assert.IsTrue(AddEntryToSpeedDial("ftp.riken.jp,21,anonymous,None", SpeedDialType.FTP, False))
     End Sub
 
     ''' <summary>
     ''' Tests adding SFTP speed dial entry
     ''' </summary>
-    <TestMethod> Public Sub TestAddEntryToSFTPSpeedDial()
+    <TestMethod> <TestCategory("Management")> Public Sub TestAddEntryToSFTPSpeedDial()
         Assert.IsTrue(AddEntryToSpeedDial("test.rebex.net,22,demo", SpeedDialType.SFTP, False))
     End Sub
 
     ''' <summary>
     ''' Tests listing FTP speed dial entries
     ''' </summary>
-    <TestMethod> Public Sub TestListFTPSpeedDialEntries()
+    <TestMethod> <TestCategory("Management")> Public Sub TestListFTPSpeedDialEntries()
         Assert.IsTrue(ListSpeedDialEntries(SpeedDialType.FTP).Count > 0)
         Debug.WriteLine(String.Join(" | ", ListSpeedDialEntries(SpeedDialType.FTP)))
     End Sub
@@ -83,7 +45,7 @@ Imports System.Net.NetworkInformation
     ''' <summary>
     ''' Tests listing SFTP speed dial entries
     ''' </summary>
-    <TestMethod> Public Sub TestListSFTPSpeedDialEntries()
+    <TestMethod> <TestCategory("Management")> Public Sub TestListSFTPSpeedDialEntries()
         Assert.IsTrue(ListSpeedDialEntries(SpeedDialType.SFTP).Count > 0)
         Debug.WriteLine(String.Join(" | ", ListSpeedDialEntries(SpeedDialType.SFTP)))
     End Sub

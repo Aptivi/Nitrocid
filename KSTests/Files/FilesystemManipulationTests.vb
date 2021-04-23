@@ -16,59 +16,15 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports KS
 
-<TestClass()> Public Class FilesystemTests
-
-    ''' <summary>
-    ''' Gets home directory depending on platform (not a test method)
-    ''' </summary>
-    ''' <returns>Home directory</returns>
-    Public Function GetHome()
-        If Environment.OSVersion.ToString.Contains("Unix") Then
-            Return Environ("HOME").Replace("\", "/")
-        Else
-            Return Environ("USERPROFILE").Replace("\", "/")
-        End If
-    End Function
-
-    ''' <summary>
-    ''' Tests path neutralization on a folder in home directory
-    ''' </summary>
-    <TestMethod()> Public Sub TestNeutralizePaths()
-        InitPaths()
-        CurrDir = paths("Home")
-        Dim TestPath As String = "Documents"
-        Dim ExpectedPath As String = paths("Home") + "/" + TestPath
-        Dim NeutPath As String = NeutralizePath(TestPath)
-        Assert.AreEqual(ExpectedPath, NeutPath, "Path is not properly neutralized. Expected {0}, got {1}", ExpectedPath, NeutPath)
-    End Sub
-
-    ''' <summary>
-    ''' Tests path neutralization on a folder in a custom directory
-    ''' </summary>
-    <TestMethod()> Public Sub TestNeutralizePathsCustom()
-        Dim TestPath As String = "sources.list"
-        Dim TargetPath As String = "/etc/apt"
-        Dim NeutPath As String = NeutralizePath(TestPath, TargetPath)
-        Assert.AreEqual(TargetPath + "/" + TestPath, NeutPath, "Path is not properly neutralized. Expected {0}, got {1}", TargetPath + "/" + TestPath, NeutPath)
-    End Sub
-
-    ''' <summary>
-    ''' Tests current directory setting
-    ''' </summary>
-    <TestMethod()> Public Sub TestSetCurrDir()
-        InitPaths()
-        CurrDir = paths("Home")
-        Dim Path As String = paths("Home") + "/Documents"
-        Assert.IsTrue(SetCurrDir(Path), "Failed to set current path. Expected True, got False.")
-        Assert.AreEqual(Path, CurrDir, "Current path is not properly set. Expected {0}, got {1}", Path, CurrDir)
-    End Sub
+<TestClass()> Public Class FilesystemManipulationTests
 
     ''' <summary>
     ''' Tests copying directory to directory
     ''' </summary>
-    <TestMethod()> Public Sub TestCopyDirectoryToDirectory()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyDirectoryToDirectory()
         InitPaths()
         CurrDir = paths("Home")
         IO.Directory.CreateDirectory(paths("Home") + "/TestDir")
@@ -80,7 +36,7 @@ Imports KS
     ''' <summary>
     ''' Tests copying file to directory
     ''' </summary>
-    <TestMethod()> Public Sub TestCopyFileToDirectory()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyFileToDirectory()
         InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
@@ -91,7 +47,7 @@ Imports KS
     ''' <summary>
     ''' Tests copying file to file
     ''' </summary>
-    <TestMethod()> Public Sub TestCopyFileToFile()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyFileToFile()
         InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
@@ -100,20 +56,9 @@ Imports KS
     End Sub
 
     ''' <summary>
-    ''' Tests setting size parse mode
-    ''' </summary>
-    <TestMethod()> Public Sub TestSetSizeParseMode()
-        InitPaths()
-        Assert.IsTrue(SetSizeParseMode(True), "Failed to set size parse mode to True. Expected True, got False.")
-        Assert.IsTrue(SetSizeParseMode(False), "Failed to set size parse mode to False. Expected True, got False.")
-        Assert.IsTrue(SetSizeParseMode(1), "Failed to set size parse mode to True using ""1"". Expected True, got False.")
-        Assert.IsTrue(SetSizeParseMode(0), "Failed to set size parse mode to False using ""0"". Expected True, got False.")
-    End Sub
-
-    ''' <summary>
     ''' Tests making directory
     ''' </summary>
-    <TestMethod()> Public Sub TestMakeDirectory()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMakeDirectory()
         InitPaths()
         CurrDir = paths("Home")
         Assert.IsTrue(MakeDirectory("/NewDirectory"), "Failed to create new directory. Expected True, got False.")
@@ -122,7 +67,7 @@ Imports KS
     ''' <summary>
     ''' Tests making file
     ''' </summary>
-    <TestMethod()> Public Sub TestMakeFile()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMakeFile()
         InitPaths()
         CurrDir = paths("Home")
         Assert.IsTrue(MakeFile("/NewFile.txt"), "Failed to create new file. Expected True, got False.")
@@ -131,7 +76,7 @@ Imports KS
     ''' <summary>
     ''' Tests moving directory to directory
     ''' </summary>
-    <TestMethod()> Public Sub TestMoveDirectoryToDirectory()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveDirectoryToDirectory()
         InitPaths()
         CurrDir = paths("Home")
         IO.Directory.CreateDirectory(paths("Home") + "/TestMovedDir")
@@ -143,7 +88,7 @@ Imports KS
     ''' <summary>
     ''' Tests moving file to directory
     ''' </summary>
-    <TestMethod()> Public Sub TestMoveFileToDirectory()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveFileToDirectory()
         InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = IO.Path.GetFullPath("TestMove.txt")
@@ -154,7 +99,7 @@ Imports KS
     ''' <summary>
     ''' Tests moving file to file
     ''' </summary>
-    <TestMethod()> Public Sub TestMoveFileToFile()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveFileToFile()
         InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = "/Documents/TestMove.txt"
@@ -165,7 +110,7 @@ Imports KS
     ''' <summary>
     ''' Tests removing directory
     ''' </summary>
-    <TestMethod()> Public Sub TestRemoveDirectory()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestRemoveDirectory()
         InitPaths()
         CurrDir = paths("Home")
         Dim TargetPath As String = "/TestDir2"
@@ -175,7 +120,7 @@ Imports KS
     ''' <summary>
     ''' Tests removing file
     ''' </summary>
-    <TestMethod()> Public Sub TestRemoveFile()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestRemoveFile()
         InitPaths()
         CurrDir = paths("Home")
         Dim TargetPath As String = "/Documents/Text.txt"
@@ -185,7 +130,7 @@ Imports KS
     ''' <summary>
     ''' Tests searching file for string
     ''' </summary>
-    <TestMethod()> Public Sub TestSearchFileForString()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestSearchFileForString()
         InitPaths()
         CurrDir = paths("Home")
         Dim TargetPath As String = IO.Path.GetFullPath("TestText.txt")
@@ -197,7 +142,7 @@ Imports KS
     ''' <summary>
     ''' Tests adding attribute
     ''' </summary>
-    <TestMethod()> Public Sub TestAddAttribute()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestAddAttribute()
         InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
@@ -207,11 +152,20 @@ Imports KS
     ''' <summary>
     ''' Tests deleting attribute
     ''' </summary>
-    <TestMethod()> Public Sub TestDeleteAttribute()
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestDeleteAttribute()
         InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
         Assert.IsTrue(RemoveAttributeFromFile(SourcePath, IO.FileAttributes.Hidden), "Failed to remove attrbute ""Hidden"" to file. Got {0}", IO.File.GetAttributes(SourcePath))
+    End Sub
+
+    ''' <summary>
+    ''' Tests reading all lines without roadblocks
+    ''' </summary>
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestReadAllLinesNoBlock()
+        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
+        Dim LinesTestText As String() = ReadAllLinesNoBlock(PathToTestText)
+        Assert.IsInstanceOfType(LinesTestText, GetType(String()), "Reading all lines failed.")
     End Sub
 
 End Class

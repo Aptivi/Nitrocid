@@ -18,12 +18,12 @@
 
 Imports KS
 
-<TestClass()> Public Class HelpTests
+<TestClass()> Public Class HelpInitializationTests
 
     ''' <summary>
     ''' Tests initialization of FTP help
     ''' </summary>
-    <TestMethod()> Public Sub TestInitFTPHelp()
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitFTPHelp()
         InitFTPHelp()
         Assert.IsNotNull(FTPDefinitions, "Initialization of FTP help failed. Got null.")
     End Sub
@@ -31,7 +31,7 @@ Imports KS
     ''' <summary>
     ''' Tests initialization of mail help
     ''' </summary>
-    <TestMethod()> Public Sub TestInitMailHelp()
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitMailHelp()
         IMAPInitHelp()
         Assert.IsNotNull(MailDefinitions, "Initialization of mail help failed. Got null.")
     End Sub
@@ -39,7 +39,7 @@ Imports KS
     ''' <summary>
     ''' Tests initialization of shell help
     ''' </summary>
-    <TestMethod()> Public Sub TestInitShellHelp()
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitShellHelp()
         InitHelp()
         Assert.IsNotNull(definitions, "Initialization of shell help failed. Got null.")
     End Sub
@@ -47,7 +47,7 @@ Imports KS
     ''' <summary>
     ''' Tests initialization of text help
     ''' </summary>
-    <TestMethod()> Public Sub TestInitTextHelp()
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitTextHelp()
         TextEdit_UpdateHelp()
         Assert.IsNotNull(TextEdit_HelpEntries, "Initialization of text editor help failed. Got null.")
     End Sub
@@ -55,7 +55,7 @@ Imports KS
     ''' <summary>
     ''' Tests initialization of ZIP help
     ''' </summary>
-    <TestMethod()> Public Sub TestInitZipHelp()
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitZipHelp()
         ZipShell_UpdateHelp()
         Assert.IsNotNull(TextEdit_HelpEntries, "Initialization of ZIP help failed. Got null.")
     End Sub

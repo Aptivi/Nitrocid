@@ -18,20 +18,22 @@
 
 Imports KS
 
-<TestClass()> Public Class KernelTests
+<TestClass()> Public Class StringEvaluatorActionTests
 
     ''' <summary>
-    ''' Tests update fetching
+    ''' Tests variable evaluation
     ''' </summary>
-    <TestMethod()> Public Sub TestFetchKernelUpdates()
-        Assert.IsNotNull(FetchKernelUpdates, "Can't fetch kernel updates. Make sure that your Internet connection is available. Returned null.")
+    <TestMethod()> <TestCategory("Action")> Public Sub TestEvaluateString()
+        Dim Evaluated As String = Evaluate("KS.Kernel.KernelVersion")
+        Assert.IsFalse(Evaluated = "", "String evaluation failed. Got ""{0}"".", Evaluated)
     End Sub
 
     ''' <summary>
-    ''' Tests garbage collection
+    ''' Tests variable evaluation (fast)
     ''' </summary>
-    <TestMethod()> Public Sub TestGarbageCollect()
-        DisposeAll()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestEvaluateFastString()
+        Dim Evaluated As String = EvaluateFast("KernelVersion", GetType(Kernel))
+        Assert.IsFalse(Evaluated = "", "String evaluation failed. Got ""{0}"".", Evaluated)
     End Sub
 
 End Class

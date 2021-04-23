@@ -17,40 +17,14 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports System.Reflection
 Imports KS
 
-<TestClass()> Public Class MiscellaneousTests
-
-    ''' <summary>
-    ''' Tests getting value
-    ''' </summary>
-    <TestMethod()> Public Sub TestGetValue()
-        Dim Value As String = GetConfigValue("HiddenFiles")
-        Assert.IsNotNull(Value, "Value of variable HiddenFiles isn't get properly. Got null.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests setting value
-    ''' </summary>
-    <TestMethod()> Public Sub TestSetValue()
-        SetConfigValue("HiddenFiles", False)
-        Dim Value As String = GetConfigValue("HiddenFiles")
-        Assert.AreEqual(Value, "False", "Value of variable HiddenFiles isn't set properly. Got {0}", Value)
-    End Sub
-
-    ''' <summary>
-    ''' Tests getting variable
-    ''' </summary>
-    <TestMethod()> Public Sub TestGetConfigField()
-        Dim Field As FieldInfo = GetConfigField("HiddenFiles")
-        Assert.IsTrue(Field.Name = "HiddenFiles", "Field HiddenFiles isn't get properly. Name: {0}", Field.Name)
-    End Sub
+<TestClass()> Public Class EncryptionActionTests
 
     ''' <summary>
     ''' Tests string encryption
     ''' </summary>
-    <TestMethod()> Public Sub TestGetEncryptedString()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestGetEncryptedString()
         Dim TextHash As String = "Test hashing."
         Dim TextHashMD5 As String = GetEncryptedString(TextHash, Algorithms.MD5)
         Dim TextHashSHA1 As String = GetEncryptedString(TextHash, Algorithms.SHA1)
@@ -69,7 +43,7 @@ Imports KS
     ''' <summary>
     ''' Tests file encryption
     ''' </summary>
-    <TestMethod()> Public Sub TestGetEncryptedFileUsingStream()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestGetEncryptedFileUsingStream()
         InitPaths()
         Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing."), 0, 13)
@@ -93,7 +67,7 @@ Imports KS
     ''' <summary>
     ''' Tests file encryption
     ''' </summary>
-    <TestMethod()> Public Sub TestGetEncryptedFileUsingPath()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestGetEncryptedFileUsingPath()
         InitPaths()
         Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23)
@@ -117,7 +91,7 @@ Imports KS
     ''' <summary>
     ''' Tests hash verification
     ''' </summary>
-    <TestMethod()> Public Sub TestVerifyHashFromHash()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestVerifyHashFromHash()
         InitPaths()
         Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23)
@@ -145,7 +119,7 @@ Imports KS
     ''' <summary>
     ''' Tests hash verification from hashes file
     ''' </summary>
-    <TestMethod()> Public Sub TestVerifyHashFromFileStdFormat()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestVerifyHashFromFileStdFormat()
         Dim FileHashMD5 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5)
         Dim FileHashSHA1 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1)
         Dim FileHashSHA256 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256)
@@ -164,146 +138,11 @@ Imports KS
         End Try
     End Sub
 
-    <TestMethod> Public Sub TestGetEmptyHash()
+    <TestMethod> <TestCategory("Action")> Public Sub TestGetEmptyHash()
         Assert.IsNotNull(GetEmptyHash(Algorithms.MD5))
         Assert.IsNotNull(GetEmptyHash(Algorithms.SHA1))
         Assert.IsNotNull(GetEmptyHash(Algorithms.SHA256))
         Assert.IsNotNull(GetEmptyHash(Algorithms.SHA512))
-    End Sub
-
-    ''' <summary>
-    ''' Tests setting MOTD
-    ''' </summary>
-    <TestMethod()> Public Sub TestSetMOTD()
-        InitPaths()
-        SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MOTD)
-        Dim MOTDFile As New StreamReader(paths("Home") + "/MOTD.txt")
-        Assert.IsTrue(MOTDFile.ReadLine = ProbePlaces("Hello, I am on <system>"), "Setting MOTD failed.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests setting MAL
-    ''' </summary>
-    <TestMethod()> Public Sub TestSetMAL()
-        InitPaths()
-        SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MAL)
-        Dim MALFile As New StreamReader(paths("Home") + "/MAL.txt")
-        Assert.IsTrue(MALFile.ReadLine = ProbePlaces("Hello, I am on <system>"), "Setting MAL failed.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests reading MOTD from file
-    ''' </summary>
-    <TestMethod()> Public Sub TestReadMOTDFromFile()
-        InitPaths()
-        ReadMOTDFromFile(MessageType.MOTD)
-        Dim MOTDLine As String = File.ReadAllText(paths("Home") + "/MOTD.txt")
-        Assert.IsTrue(MOTDLine = MOTDMessage, "Reading MOTD failed. Got:" + vbNewLine + MOTDLine)
-    End Sub
-
-    ''' <summary>
-    ''' Tests reading MAL from file
-    ''' </summary>
-    <TestMethod()> Public Sub TestReadMALFromFile()
-        InitPaths()
-        ReadMOTDFromFile(MessageType.MAL)
-        Dim MALLine As String = File.ReadAllText(paths("Home") + "/MAL.txt")
-        Assert.IsTrue(MALLine = MAL, "Reading MAL failed. Got:" + vbNewLine + MALLine)
-    End Sub
-
-    ''' <summary>
-    ''' Tests parsing placeholders
-    ''' </summary>
-    <TestMethod()> Public Sub TestParsePlaceholders()
-        Dim UnparsedStrings As New List(Of String)
-        InitPaths() 'For some reason, ProbePlaces' event raise likes to use paths...
-        signedinusrnm = "Test"
-        Dim ParsedStrings As New List(Of String) From {
-            ProbePlaces("Username is <user>"),
-            ProbePlaces("Hostname is <host>"),
-            ProbePlaces("Short date is <shortdate>"),
-            ProbePlaces("Long date is <longdate>"),
-            ProbePlaces("Short time is <shorttime>"),
-            ProbePlaces("Long time is <longtime>"),
-            ProbePlaces("Date is <date>"),
-            ProbePlaces("Time is <time>"),
-            ProbePlaces("Timezone is <timezone>"),
-            ProbePlaces("Summer timezone is <summertimezone>"),
-            ProbePlaces("Operating system is <system>")
-        }
-        For Each ParsedString As String In ParsedStrings
-            If ParsedString.Contains("<") And ParsedString.Contains(">") Then
-                UnparsedStrings.Add(ParsedString)
-            End If
-        Next
-        Assert.IsTrue(UnparsedStrings.Count = 0, "Parsing placeholders failed. Below strings are affected:" + vbNewLine + vbNewLine +
-                                                 "- " + String.Join(vbNewLine + "- ", UnparsedStrings.ToArray))
-    End Sub
-
-    ''' <summary>
-    ''' Tests opening, saving, and closing text file
-    ''' </summary>
-    <TestMethod()> Public Sub TestOpenSaveCloseTextFile()
-        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
-        Assert.IsTrue(TextEdit_OpenTextFile(PathToTestText), "Opening text file failed. Returned False.")
-        TextEdit_FileLines.Add("Hello!")
-        Assert.IsTrue(TextEdit_SaveTextFile(False), "Saving text file failed. Returned False.")
-        Assert.IsTrue(TextEdit_CloseTextFile(), "Closing text file failed. Returned False.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests reading all lines without roadblocks
-    ''' </summary>
-    <TestMethod()> Public Sub TestReadAllLinesNoBlock()
-        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
-        Dim LinesTestText As String() = ReadAllLinesNoBlock(PathToTestText)
-        Assert.IsInstanceOfType(LinesTestText, GetType(String()), "Reading all lines failed.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests variable evaluation
-    ''' </summary>
-    <TestMethod()> Public Sub TestEvaluateString()
-        Dim Evaluated As String = Evaluate("KS.Kernel.KernelVersion")
-        Assert.IsFalse(Evaluated = "", "String evaluation failed. Got ""{0}"".", Evaluated)
-    End Sub
-
-    ''' <summary>
-    ''' Tests variable evaluation (fast)
-    ''' </summary>
-    <TestMethod()> Public Sub TestEvaluateFastString()
-        Dim Evaluated As String = EvaluateFast("KernelVersion", GetType(Kernel))
-        Assert.IsFalse(Evaluated = "", "String evaluation failed. Got ""{0}"".", Evaluated)
-    End Sub
-
-    ''' <summary>
-    ''' Tests setting default screensaver
-    ''' </summary>
-    <TestMethod()> Public Sub TestSetDefaultScreensaver()
-        InitPaths()
-        SetDefaultScreensaver("matrix")
-        Assert.IsTrue(ScrnSvrdb("matrix"), "Setting screensaver defaults failed. Expected True, got {0}", ScrnSvrdb("matrix"))
-    End Sub
-
-    ''' <summary>
-    ''' Tests unsetting default screensaver
-    ''' </summary>
-    <TestMethod()> Public Sub TestUnsetDefaultScreensaver()
-        InitPaths()
-        SetDefaultScreensaver("matrix", False)
-        Assert.IsFalse(ScrnSvrdb("matrix"), "Setting screensaver defaults failed. Expected False, got {0}", ScrnSvrdb("matrix"))
-    End Sub
-
-    ''' <summary>
-    ''' Tests initializing, setting, and getting $variable
-    ''' </summary>
-    <TestMethod> Public Sub TestVariables()
-        InitializeVariable("$test_var")
-        Assert.IsTrue(ShellVariables.Count > 0, "Initializing variable failed. Count is {0}", ShellVariables.Count)
-        Assert.IsTrue(SetVariable("$test_var", "test"), "Setting variable failed.")
-        Dim ExpectedCommand As String = "echo test"
-        Dim ActualCommand As String = GetVariable("$test_var", "echo $test_var")
-        Assert.AreEqual(ExpectedCommand, ActualCommand, "Getting variable failed ({0})", ActualCommand)
     End Sub
 
 End Class

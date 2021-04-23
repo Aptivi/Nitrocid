@@ -70,7 +70,21 @@
     <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FilesystemTests.vb" />
+    <Compile Include="Files\FilesystemNeutralizationTests.vb" />
+    <Compile Include="Files\FilesystemManipulationTests.vb" />
+    <Compile Include="Files\FilesystemSettingTests.vb" />
+    <Compile Include="Languages\LocalizationInitializationTests.vb" />
+    <Compile Include="Languages\LocalizationSettingTests.vb" />
+    <Compile Include="Login\UserPermissionManagementTests.vb" />
+    <Compile Include="Login\UserManagementTests.vb" />
+    <Compile Include="Misc\FieldManagementTests.vb" />
+    <Compile Include="Misc\EncryptionActionTests.vb" />
+    <Compile Include="Misc\MOTDSettingTests.vb" />
+    <Compile Include="Misc\MOTDManagementTests.vb" />
+    <Compile Include="Misc\PlaceholderActionTests.vb" />
+    <Compile Include="Misc\TextEditorInitializationTests.vb" />
+    <Compile Include="Misc\StringEvaluatorActionTests.vb" />
+    <Compile Include="Shell\UESHVariableTests.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -86,17 +100,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ColorTests.vb" />
-    <Compile Include="LocalizationTests.vb" />
-    <Compile Include="MiscellaneousTests.vb" />
-    <Compile Include="AliasTests.vb" />
-    <Compile Include="HelpTests.vb" />
-    <Compile Include="TimeTests.vb" />
-    <Compile Include="KernelTests.vb" />
-    <Compile Include="NotificationTests.vb" />
-    <Compile Include="NetworkTests.vb" />
+    <Compile Include="Console\ColorSettingTests.vb" />
+    <Compile Include="Languages\LocalizationActionTests.vb" />
+    <Compile Include="Misc\ScreensaverSettingTests.vb" />
+    <Compile Include="Network\NetworkActionTests.vb" />
+    <Compile Include="Network\RemoteDebugManagementTests.vb" />
+    <Compile Include="Network\SpeedDialManagementTests.vb" />
+    <Compile Include="Shell\AliasManagementTests.vb" />
+    <Compile Include="Shell\HelpInitializationTests.vb" />
+    <Compile Include="Shell\AliasInitializationTests.vb" />
+    <Compile Include="TimeDate\TimeTests.vb" />
+    <Compile Include="Kernel\KernelMiscTests.vb" />
+    <Compile Include="Misc\NotificationTests.vb" />
+    <Compile Include="Network\NetworkManipulationTests.vb" />
     <Compile Include="InitTest.vb" />
-    <Compile Include="UserTests.vb" />
+    <Compile Include="Login\UserInitializationTests.vb" />
     <Content Include="TestMove.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -155,6 +173,7 @@
       <Name>Kernel Simulator</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

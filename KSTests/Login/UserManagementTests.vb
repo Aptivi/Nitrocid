@@ -18,64 +18,29 @@
 
 Imports KS
 
-<TestClass()> Public Class UserTests
+<TestClass()> Public Class UserManagementTests
 
     ''' <summary>
     ''' Tests user addition
     ''' </summary>
-    <TestMethod()> Public Sub TestAddUser()
+    <TestMethod()> <TestCategory("Management")> Public Sub TestAddUser()
         InitPaths()
         Assert.IsTrue(AddUser("Account1"), "User addition without password failed. Expected True, got False.")
         Assert.IsTrue(AddUser("Account2", "password"), "User addition with password failed. Expected True, got False.")
     End Sub
 
     ''' <summary>
-    ''' Tests user initialization
-    ''' </summary>
-    <TestMethod()> Public Sub TestInitializeUsers()
-        InitPaths()
-        InitializeUsers()
-        Assert.IsTrue(userword.Count > 0, "User initialization failed. Got {0}.", userword.Count)
-    End Sub
-
-    ''' <summary>
     ''' Tests username change
     ''' </summary>
-    <TestMethod()> Public Sub TestChangeUser()
+    <TestMethod()> <TestCategory("Management")> Public Sub TestChangeUser()
         InitPaths()
         Assert.IsTrue(ChangeUsername("Account2", "Account3"), "Username change failed. Expected True, got False.")
     End Sub
 
     ''' <summary>
-    ''' Tests adding permissions to user
-    ''' </summary>
-    <TestMethod()> Public Sub TestPermAddUser()
-        InitPaths()
-        Assert.IsTrue(AddPermission(PermissionType.Administrator, "Account3"), "Adding user to admin permission failed. Expected True, got False.")
-        Assert.IsTrue(AddPermission(PermissionType.Disabled, "Account3"), "Adding user to disabled permission failed. Expected True, got False.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests removing permissions from user
-    ''' </summary>
-    <TestMethod()> Public Sub TestPermRemoveUser()
-        InitPaths()
-        Assert.IsTrue(RemovePermission(PermissionType.Administrator, "Account3"), "Removing user from admin permission failed. Expected True, got False.")
-        Assert.IsTrue(RemovePermission(PermissionType.Disabled, "Account3"), "Rmoving user from disabled permission failed. Expected True, got False.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests loading permissions
-    ''' </summary>
-    <TestMethod()> Public Sub TestLoadPermissions()
-        InitPaths()
-        Assert.IsTrue(LoadPermissions, "Loading permissions. Expected True, got False.")
-    End Sub
-
-    ''' <summary>
     ''' Tests removing user
     ''' </summary>
-    <TestMethod()> Public Sub TestRemoveUser()
+    <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveUser()
         InitPaths()
         Assert.IsTrue(RemoveUser("Account1"), "User removal without password failed. Expected True, got False.")
         Assert.IsTrue(RemoveUser("Account3"), "User removal with password failed. Expected True, got False.")

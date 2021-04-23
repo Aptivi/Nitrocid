@@ -19,12 +19,12 @@
 Imports System.IO
 Imports KS
 
-<TestClass()> Public Class AliasTests
+<TestClass()> Public Class AliasInitializationTests
 
     ''' <summary>
     ''' Tests alias initialization
     ''' </summary>
-    <TestMethod()> Public Sub TestInitAliases()
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitAliases()
         InitPaths()
         Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.json")
         If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
@@ -38,7 +38,7 @@ Imports KS
     ''' <summary>
     ''' Tests alias initialization and saving
     ''' </summary>
-    <TestMethod()> Public Sub TestInitAndSaveAliases()
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitAndSaveAliases()
         InitPaths()
         Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.json")
         If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
@@ -48,22 +48,6 @@ Imports KS
                                          "- " + String.Join(vbNewLine + "- ", Aliases.Keys), Aliases.Count)
         Assert.IsTrue(RemoteDebugAliases.Count > 0, "Initialization and saving of test aliases failed. RemoteDebugAliases.Count is {0}. Remote aliases below:" + vbNewLine + vbNewLine +
                                                     "- " + String.Join(vbNewLine + "- ", RemoteDebugAliases.Keys), RemoteDebugAliases.Count)
-    End Sub
-
-    ''' <summary>
-    ''' Tests alias addition
-    ''' </summary>
-    <TestMethod> Public Sub TestAddAlias()
-        Assert.IsTrue(AddAlias("ls", "list", AliasType.Shell), "Adding shell alias failed. Returned False.")
-        Assert.IsTrue(AddAlias("trc", "trace", AliasType.RDebug), "Adding remote debug alias failed. Returned False.")
-    End Sub
-
-    ''' <summary>
-    ''' Tests alias removal
-    ''' </summary>
-    <TestMethod> Public Sub TestRemoveAlias()
-        Assert.IsTrue(RemoveAlias("ls", AliasType.Shell), "Removing shell alias failed. Returned False.")
-        Assert.IsTrue(RemoveAlias("trc", AliasType.RDebug), "Removing remote debug alias failed. Returned False.")
     End Sub
 
 End Class

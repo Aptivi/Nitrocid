@@ -18,12 +18,12 @@
 
 Imports KS
 
-<TestClass()> Public Class ColorTests
+<TestClass()> Public Class ColorSettingTests
 
     ''' <summary>
     ''' Tests setting colors
     ''' </summary>
-    <TestMethod()> Public Sub TestSetColors()
+    <TestMethod()> <TestCategory("Setting")> Public Sub TestSetColors()
         InitPaths()
         Assert.IsTrue(SetColors(ConsoleColors.White, ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Red, ConsoleColors.DarkGreen, ConsoleColors.Green,
                                 ConsoleColors.Black, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkGray, ConsoleColors.Green, ConsoleColors.Red,
