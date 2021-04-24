@@ -819,6 +819,11 @@ Public Module GetCommand
                         Done = True
                     End If
 
+                Case "reportbug"
+
+                    PromptForBug()
+                    Done = True
+
                 Case "rexec"
 
                     If eqargs?.Length > 1 Then

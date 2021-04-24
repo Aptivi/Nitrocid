@@ -48,7 +48,7 @@ Public Module Shell
                                             "mathbee", "loteresp", "sshell", "shownotifs", "dismissnotif", "rexec", "calc", "update", "sumfiles",
                                             "lsmail", "echo", "choice", "beep", "input", "mkfile", "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather",
                                             "fileinfo", "dirinfo", "chattr", "ping", "verify", "sftp", "mktheme", "hwinfo", "cat", "wrap", "zip", "unzip",
-                                            "firedevents", "zipshell", "sshcmd", "set"}
+                                            "firedevents", "zipshell", "sshcmd", "set", "reportbug"}
     ''' <summary>
     ''' All administrator-only commands
     ''' </summary>

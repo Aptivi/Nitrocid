@@ -80,6 +80,7 @@ Public Module HelpSystem
                                                               {"rexec", DoTranslation("Remotely executes a command to remote PC")},
                                                               {"rm", DoTranslation("Removes a directory or a file")},
                                                               {"rdebug", DoTranslation("Enables or disables remote debugging.")},
+                                                              {"reportbug", DoTranslation("A bug reporting prompt.")},
                                                               {"rmuser", DoTranslation("Removes a user from the list")},
                                                               {"savescreen", DoTranslation("Saves your screen from burn outs")},
                                                               {"search", DoTranslation("Searches for specified string in the provided file")},
@@ -370,6 +371,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:") + " reloadconfig: " + DoTranslation("Reloads the configuration that is changed by the end-user or by tool.") + vbNewLine +
               "       " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart."), True, ColTypes.Neutral)
+
+        ElseIf command = "reportbug" Then
+
+            W(DoTranslation("Usage:") + " reportbug", True, ColTypes.Neutral)
 
         ElseIf command = "rexec" Then
 
