@@ -236,6 +236,7 @@
     <Compile Include="Console\Themes\ThemeStudio.vb" />
     <Compile Include="Console\Themes\ThemeStudioTools.vb" />
     <Compile Include="Files\Filesystem.vb" />
+    <Compile Include="Hardware\HardwareList.vb" />
     <Compile Include="Kernel\Events.vb" />
     <Compile Include="Kernel\Exceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />

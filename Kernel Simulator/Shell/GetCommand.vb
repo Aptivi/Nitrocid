@@ -1156,7 +1156,7 @@ Public Module GetCommand
 
                     'Hardware section
                     W(DoTranslation("[ Hardware settings ]{0}"), True, ColTypes.ListEntry, vbNewLine)
-                    ListDrivers()
+                    ListHardware()
                     W(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Neutral)
 
                     'User section
