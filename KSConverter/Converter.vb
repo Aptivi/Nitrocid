@@ -180,9 +180,23 @@ Module Converter
         End If
         Console.WriteLine()
 
+#If Not CONFIGNOTDONE Then
+        'Import all config to JSON
+        W("- Importing all kernel config to KernelConfig.json...", True, ColTypes.Stage)
+        If File.Exists(ListOfBackups("Configuration")) Then
+            'Read all config from old file
+            W("  - Reading config from kernelConfig.ini...", True, ColTypes.Neutral)
+            'TODO: Make config conversion here.
+        Else
+            'File not found. Skip stage.
+            W("  - Warning: kernelConfig.ini not found in home directory.", True, ColTypes.Warning)
+        End If
+        Console.WriteLine()
+
         W("- That's far as we got. Enjoy!", True, ColTypes.Stage)
         W("- Press any key to exit.", True, ColTypes.Stage)
         Console.ReadKey(True)
+#End If
 
     End Sub
 

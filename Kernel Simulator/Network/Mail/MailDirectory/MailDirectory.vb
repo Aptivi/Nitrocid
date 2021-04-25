@@ -36,7 +36,7 @@ Public Module MailDirectory
         Catch ex As Exception
             Wdbg("E", "Failed to create folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
-            Throw New Exceptions.MailException(DoTranslation("Unable to create mail folder {0}: {1}").FormatString(Directory, ex.Message))
+            Throw New Exceptions.MailException(DoTranslation("Unable to create mail folder {0}: {1}").FormatString(Directory, ex.Message), ex)
         End Try
     End Sub
 
@@ -55,7 +55,7 @@ Public Module MailDirectory
         Catch ex As Exception
             Wdbg("E", "Failed to delete folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
-            Throw New Exceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}").FormatString(Directory, ex.Message))
+            Throw New Exceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}").FormatString(Directory, ex.Message), ex)
         End Try
     End Sub
 
@@ -74,7 +74,7 @@ Public Module MailDirectory
         Catch ex As Exception
             Wdbg("E", "Failed to delete folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
-            Throw New Exceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}").FormatString(Directory, ex.Message))
+            Throw New Exceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}").FormatString(Directory, ex.Message), ex)
         End Try
     End Sub
 
@@ -93,7 +93,7 @@ Public Module MailDirectory
         Catch ex As Exception
             Wdbg("E", "Failed to open folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
-            Throw New Exceptions.MailException(DoTranslation("Unable to open mail folder {0}: {1}").FormatString(Directory, ex.Message))
+            Throw New Exceptions.MailException(DoTranslation("Unable to open mail folder {0}: {1}").FormatString(Directory, ex.Message), ex)
         End Try
     End Sub
 

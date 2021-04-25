@@ -22,7 +22,6 @@ Imports MimeKit.Cryptography
 
 Module MailLogin
 
-    'TODO: Use oauth if possible.
     'Variables
     Public IMAP_Client As New ImapClient()
     Public SMTP_Client As New SmtpClient()

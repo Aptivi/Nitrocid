@@ -73,7 +73,7 @@ Module SFTPFilesystem
                 Return Entries
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New Exceptions.SFTPFilesystemException(DoTranslation("Failed to list remote files: {0}").FormatString(ex.Message))
+                Throw New Exceptions.SFTPFilesystemException(DoTranslation("Failed to list remote files: {0}").FormatString(ex.Message), ex)
             End Try
         Else
             Throw New InvalidOperationException(DoTranslation("You should connect to server before listing all remote files."))

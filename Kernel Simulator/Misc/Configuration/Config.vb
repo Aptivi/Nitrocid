@@ -386,9 +386,9 @@ Public Module Config
             EventManager.RaiseConfigSaveError(ex)
             If DebugMode = True Then
                 WStkTrc(ex)
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}.").FormatString(ex.Message))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}.").FormatString(ex.Message), ex)
             Else
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration."))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration."), ex)
             End If
         End Try
         Return False
@@ -415,9 +415,9 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration: {0}.").FormatString(ex.Message))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration: {0}.").FormatString(ex.Message), ex)
             Else
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration."))
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration."), ex)
             End If
         End Try
         Return False
@@ -589,7 +589,7 @@ Public Module Config
             EventManager.RaiseConfigReadError(ex)
             WStkTrc(ex)
             NotifyConfigError = True
-            Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}.").FormatString(ex.Message))
+            Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}.").FormatString(ex.Message), ex)
         End Try
         Return False
     End Function

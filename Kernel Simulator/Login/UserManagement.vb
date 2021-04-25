@@ -86,7 +86,7 @@ Public Module UserManagement
             Return True
         Catch ex As Exception
             Throw New Exceptions.UserCreationException(DoTranslation("Error trying to add username.") + vbNewLine +
-                                                       DoTranslation("Error {0}: {1}").FormatString(ex.Message))
+                                                       DoTranslation("Error {0}: {1}").FormatString(ex.Message), ex)
             WStkTrc(ex)
         End Try
         Return False
@@ -183,7 +183,7 @@ Public Module UserManagement
             Catch ex As Exception
                 Wdbg("E", "Failed to create user {0}: {1}", ex.Message)
                 WStkTrc(ex)
-                Throw New Exceptions.UserCreationException(DoTranslation("usrmgr: Failed to create username {0}: {1}").FormatString(newUser, ex.Message))
+                Throw New Exceptions.UserCreationException(DoTranslation("usrmgr: Failed to create username {0}: {1}").FormatString(newUser, ex.Message), ex)
             End Try
         Else
             Wdbg("W", "User {0} already found.", newUser)
@@ -244,9 +244,9 @@ Public Module UserManagement
                     EventManager.RaiseUserRemoved(user)
                     Return True
                 Catch ex As Exception
-                    Throw New Exceptions.UserManagementException(DoTranslation("Error trying to remove username.") + vbNewLine +
-                                                                 DoTranslation("Error {0}: {1}").FormatString(ex.Message))
                     WStkTrc(ex)
+                    Throw New Exceptions.UserManagementException(DoTranslation("Error trying to remove username.") + vbNewLine +
+                                                                 DoTranslation("Error {0}: {1}").FormatString(ex.Message), ex)
                 End Try
             End If
         End If
@@ -278,7 +278,7 @@ Public Module UserManagement
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
-                    Throw New Exceptions.UserManagementException(DoTranslation("Failed to rename user. {0}").FormatString(ex.Message))
+                    Throw New Exceptions.UserManagementException(DoTranslation("Failed to rename user. {0}").FormatString(ex.Message), ex)
                 End Try
             Else
                 Throw New Exceptions.UserManagementException(DoTranslation("The new name you entered is already found."))

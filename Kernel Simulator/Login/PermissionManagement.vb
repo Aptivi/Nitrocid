@@ -195,7 +195,7 @@ Public Module PermissionManagement
             Catch ex As Exception
                 WStkTrc(ex)
                 Throw New Exceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.") + vbNewLine +
-                                                                   DoTranslation("Error {0}: {1}").FormatString(Err.Number, ex.Message))
+                                                                   DoTranslation("Error {0}: {1}").FormatString(Err.Number, ex.Message), ex)
             End Try
         Else
             Throw New Exceptions.PermissionManagementException(DoTranslation("One of the permission lists doesn't contain username {0}."))
@@ -218,7 +218,7 @@ Public Module PermissionManagement
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to initialize permissions for user {0}: {1}").FormatString(NewUser, ex.Message))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to initialize permissions for user {0}: {1}").FormatString(NewUser, ex.Message), ex)
         End Try
         Return False
     End Function
@@ -249,7 +249,7 @@ Public Module PermissionManagement
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to load permissions from file: {0}").FormatString(ex.Message))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to load permissions from file: {0}").FormatString(ex.Message), ex)
         End Try
         Return False
     End Function
