@@ -39,7 +39,7 @@ Imports KS
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyFileToDirectory()
         InitPaths()
         CurrDir = paths("Home")
-        Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
+        Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         Dim TargetPath As String = "/Documents"
         Assert.IsTrue(CopyFileOrDir(SourcePath, TargetPath), "Failed to copy file ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
     End Sub
@@ -50,7 +50,7 @@ Imports KS
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyFileToFile()
         InitPaths()
         CurrDir = paths("Home")
-        Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
+        Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         Dim TargetPath As String = "/Documents/Text.txt"
         Assert.IsTrue(CopyFileOrDir(SourcePath, TargetPath), "Failed to copy file ""{0}"" to file ""{1}"". Expected True, got False.", SourcePath, TargetPath)
     End Sub
@@ -91,7 +91,7 @@ Imports KS
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveFileToDirectory()
         InitPaths()
         CurrDir = paths("Home")
-        Dim SourcePath As String = IO.Path.GetFullPath("TestMove.txt")
+        Dim SourcePath As String = Path.GetFullPath("TestMove.txt")
         Dim TargetPath As String = "/Documents"
         Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move file ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
     End Sub
@@ -103,7 +103,7 @@ Imports KS
         InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = "/Documents/TestMove.txt"
-        Dim TargetPath As String = IO.Path.GetFullPath("TestMove.txt")
+        Dim TargetPath As String = Path.GetFullPath("TestMove.txt")
         Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move file ""{0}"" to file ""{1}"". Expected True, got False.", SourcePath, TargetPath)
     End Sub
 
@@ -133,7 +133,7 @@ Imports KS
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestSearchFileForString()
         InitPaths()
         CurrDir = paths("Home")
-        Dim TargetPath As String = IO.Path.GetFullPath("TestText.txt")
+        Dim TargetPath As String = Path.GetFullPath("TestText.txt")
         Dim Matches As List(Of String) = SearchFileForString(TargetPath, "test")
         Assert.IsNotNull(Matches, "Failed to search file for matches.")
         Assert.IsTrue(Matches.Count = 1, "Expected one instance of ""test"", got {0}", Matches.Count)
@@ -145,8 +145,8 @@ Imports KS
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestAddAttribute()
         InitPaths()
         CurrDir = paths("Home")
-        Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
-        Assert.IsTrue(AddAttributeToFile(SourcePath, IO.FileAttributes.Hidden), "Failed to add attrbute ""Hidden"" to file. Got {0}", IO.File.GetAttributes(SourcePath))
+        Dim SourcePath As String = Path.GetFullPath("TestText.txt")
+        Assert.IsTrue(AddAttributeToFile(SourcePath, FileAttributes.Hidden), "Failed to add attrbute ""Hidden"" to file. Got {0}", File.GetAttributes(SourcePath))
     End Sub
 
     ''' <summary>
@@ -155,8 +155,8 @@ Imports KS
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestDeleteAttribute()
         InitPaths()
         CurrDir = paths("Home")
-        Dim SourcePath As String = IO.Path.GetFullPath("TestText.txt")
-        Assert.IsTrue(RemoveAttributeFromFile(SourcePath, IO.FileAttributes.Hidden), "Failed to remove attrbute ""Hidden"" to file. Got {0}", IO.File.GetAttributes(SourcePath))
+        Dim SourcePath As String = Path.GetFullPath("TestText.txt")
+        Assert.IsTrue(RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden), "Failed to remove attrbute ""Hidden"" to file. Got {0}", File.GetAttributes(SourcePath))
     End Sub
 
     ''' <summary>

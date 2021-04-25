@@ -70,6 +70,9 @@
     <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Console\ColorInitializationTests.vb" />
+    <Compile Include="Console\RGBInitializationTests.vb" />
+    <Compile Include="Console\ThemeInfoInitializationTests.vb" />
     <Compile Include="Files\FilesystemNeutralizationTests.vb" />
     <Compile Include="Files\FilesystemManipulationTests.vb" />
     <Compile Include="Files\FilesystemSettingTests.vb" />
@@ -146,6 +149,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Hacker.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

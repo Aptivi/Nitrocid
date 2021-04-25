@@ -1,0 +1,16 @@
+{
+    "InputColor": "10",
+    "LicenseColor": "10",
+    "ContKernelErrorColor": "10",
+    "UncontKernelErrorColor": "10",
+    "HostNameShellColor": "10",
+    "UserNameShellColor": "10",
+    "BackgroundColor": "8",
+    "NeutralTextColor": "10",
+    "CmdListColor": "2",
+    "CmdDefColor": "10",
+    "StageColor": "2",
+    "ErrorColor": "2",
+    "WarningColor": "10",
+    "OptionColor": "2"
+}

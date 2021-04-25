@@ -22,27 +22,19 @@ Public Class Color
     ''' Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
     ''' </summary>
     ''' <returns></returns>
-    Public Property PlainSequence As String
+    Public ReadOnly Property PlainSequence As String
     ''' <summary>
     ''' Parsable VT sequence (Foreground)
     ''' </summary>
-    Public Property VTSequenceForeground As String
+    Public ReadOnly Property VTSequenceForeground As String
     ''' <summary>
     ''' Parsable VT sequence (Background)
     ''' </summary>
-    Public Property VTSequenceBackground As String
+    Public ReadOnly Property VTSequenceBackground As String
     ''' <summary>
     ''' Color type
     ''' </summary>
-    Public Property Type As ColorType
-
-    ''' <summary>
-    ''' Color type enumeration
-    ''' </summary>
-    Public Enum ColorType
-        TrueColor
-        _255Color
-    End Enum
+    Public ReadOnly Property Type As ColorType
 
     ''' <summary>
     ''' Makes a new instance of color class from specifier.
@@ -59,6 +51,7 @@ Public Class Color
                 VTSequenceForeground.ConvertVTSequences
                 VTSequenceBackground = "<48;2;{0}>".FormatString(PlainSequence)
                 VTSequenceBackground.ConvertVTSequences
+                Type = ColorType.TrueColor
             End If
         ElseIf IsNumeric(ColorSpecifier) Then
             ColorSpecifier = ColorSpecifier.Replace("""", "")
@@ -67,6 +60,7 @@ Public Class Color
             VTSequenceForeground.ConvertVTSequences
             VTSequenceBackground = "<48;5;{0}>".FormatString(ColorSpecifier)
             VTSequenceBackground.ConvertVTSequences
+            Type = ColorType._255Color
         Else
             Throw New Exceptions.ColorException(DoTranslation("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:") + " <R>;<G>;<B>")
         End If
@@ -94,6 +88,14 @@ Public Module ColorTools
         Err = 12
         Warning = 13
         [Option] = 14
+    End Enum
+
+    ''' <summary>
+    ''' Color type enumeration
+    ''' </summary>
+    Public Enum ColorType
+        TrueColor
+        _255Color
     End Enum
 
     'Variables for colors used by previous versions of Kernel.

@@ -49,7 +49,7 @@ Module DebugWriters
             CheckForExceed()
 
             'For contributors who are testing new code: Define ENABLEIMMEDITEWINDOWDEBUG for immediate debugging (Immediate Window)
-            If Not Source Is Nothing And Not LineNum = 0 Then
+            If Source IsNot Nothing And Not LineNum = 0 Then
                 'Debug to file and all connected debug devices (raw mode)
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
