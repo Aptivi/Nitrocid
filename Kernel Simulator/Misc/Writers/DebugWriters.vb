@@ -136,10 +136,20 @@ Module DebugWriters
         If DebugMode Then
             'These two vbNewLines are padding for accurate stack tracing.
             dbgStackTraces.Add($"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}")
+            Dim Inner As Exception = Ex.InnerException
+            Dim InnerNumber As Integer = 1
+            Do Until Inner Is Nothing
+                dbgStackTraces.Add($"{vbNewLine}[{InnerNumber}] {Inner.ToString.Substring(0, Inner.ToString.IndexOf(":"))}: {Inner.Message}{vbNewLine}{Inner.StackTrace}{vbNewLine}")
+                InnerNumber += 1
+                Inner = Inner.InnerException
+            Loop
 
             'Print stack trace to debugger
-            Dim StkTrcs As String() = dbgStackTraces(0).Replace(Chr(13), "").Split(Chr(10))
-            For i As Integer = 0 To StkTrcs.Length - 1
+            Dim StkTrcs As New List(Of String)
+            For i As Integer = 0 To dbgStackTraces.Count - 1
+                StkTrcs.AddRange(dbgStackTraces(i).Replace(Chr(13), "").Split(Chr(10)))
+            Next
+            For i As Integer = 0 To StkTrcs.Count - 1
                 Wdbg("E", StkTrcs(i))
             Next
         End If
