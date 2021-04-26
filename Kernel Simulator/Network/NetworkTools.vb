@@ -234,7 +234,13 @@ Public Module NetworkTools
             File.WriteAllText(paths(PathName), JsonConvert.SerializeObject(SpeedDialToken, Formatting.Indented))
             Return True
         Else
-            If ThrowException Then Throw New Exceptions.FTPNetworkException(DoTranslation("Entry already exists."))
+            If ThrowException Then
+                If SpeedDialType = SpeedDialType.FTP Then
+                    Throw New Exceptions.FTPNetworkException(DoTranslation("Entry already exists."))
+                ElseIf SpeedDialType = SpeedDialType.SFTP Then
+                    Throw New Exceptions.SFTPNetworkException(DoTranslation("Entry already exists."))
+                End If
+            End If
             Return False
         End If
     End Function

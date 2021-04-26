@@ -493,11 +493,18 @@ Public Module GetCommand
 
                 Case "ftp"
 
-                    If eqargs?.Length = 0 Then
-                        InitiateShell()
-                    Else
-                        InitiateShell(True, eqargs(0))
-                    End If
+                    Try
+                        If eqargs?.Length = 0 Then
+                            InitiateShell()
+                        Else
+                            InitiateShell(True, eqargs(0))
+                        End If
+                    Catch ftpex As Exceptions.FTPShellException
+                        W(ftpex.Message, True, ColTypes.Err)
+                    Catch ex As Exception
+                        WStkTrc(ex)
+                        W(DoTranslation("Unknown FTP shell error:") + " {0}", True, ColTypes.Err, ex.Message)
+                    End Try
                     Done = True
 
                 Case "get"
@@ -941,11 +948,18 @@ Public Module GetCommand
 
                 Case "sftp"
 
-                    If eqargs?.Length = 0 Then
-                        SFTPInitiateShell()
-                    Else
-                        SFTPInitiateShell(True, eqargs(0))
-                    End If
+                    Try
+                        If eqargs?.Length = 0 Then
+                            SFTPInitiateShell()
+                        Else
+                            SFTPInitiateShell(True, eqargs(0))
+                        End If
+                    Catch sftpex As Exceptions.SFTPShellException
+                        W(sftpex.Message, True, ColTypes.Err)
+                    Catch ex As Exception
+                        WStkTrc(ex)
+                        W(DoTranslation("Unknown SFTP shell error:") + " {0}", True, ColTypes.Err, ex.Message)
+                    End Try
                     Done = True
 
                 Case "shownotifs"

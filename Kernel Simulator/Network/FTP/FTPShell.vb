@@ -43,89 +43,94 @@ Public Module FTPShell
     ''' <param name="Address">An IP address</param>
     Public Sub InitiateShell(Optional ByVal Connects As Boolean = False, Optional ByVal Address As String = "")
         While True
-            'Complete initialization
-            If initialized = False Then
-                Wdbg("I", $"Completing initialization of FTP: {initialized}")
-                FtpTrace.AddListener(New FTPTracer)
-                FtpTrace.LogUserName = FTPLoggerUsername
-                FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
-                FtpTrace.LogIP = FTPLoggerIP
-                currDirect = paths("Home")
-                EventManager.RaiseFTPShellInitialized()
+            Try
+                'Complete initialization
+                If initialized = False Then
+                    Wdbg("I", $"Completing initialization of FTP: {initialized}")
+                    FtpTrace.AddListener(New FTPTracer)
+                    FtpTrace.LogUserName = FTPLoggerUsername
+                    FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
+                    FtpTrace.LogIP = FTPLoggerIP
+                    currDirect = paths("Home")
+                    EventManager.RaiseFTPShellInitialized()
 
-                'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:
-                'https://stackoverflow.com/a/22717063/6688914
-                AddHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                initialized = True
-            End If
-
-            'Check if the shell is going to exit
-            If ftpexit = True Then
-                Wdbg("W", "Exiting shell...")
-                connected = False
-                ClientFTP?.Disconnect()
-                ftpsite = ""
-                currDirect = ""
-                currentremoteDir = ""
-                user = ""
-                pass = ""
-                strcmd = ""
-                ftpexit = False
-                initialized = False
-                AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                Exit Sub
-            End If
-
-            'Prompt for command
-            If Not IsNothing(DefConsoleOut) Then
-                Console.SetOut(DefConsoleOut)
-            End If
-            If Not Connects Then
-                Wdbg("I", "Preparing prompt...")
-                If connected Then
-                    Wdbg("I", "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
-                    If FTPShellPromptStyle = "" Then
-                        W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, user) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, ftpsite) : W("]{0} ", False, ColTypes.Gray, currentremoteDir)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences
-                        W(ParsedPromptStyle, False, ColTypes.Gray)
-                    End If
-                Else
-                    W("{0}> ", False, ColTypes.Gray, currDirect)
+                    'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:
+                    'https://stackoverflow.com/a/22717063/6688914
+                    AddHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    initialized = True
                 End If
-            End If
 
-            'Run garbage collector
-            DisposeAll()
+                'Check if the shell is going to exit
+                If ftpexit = True Then
+                    Wdbg("W", "Exiting shell...")
+                    connected = False
+                    ClientFTP?.Disconnect()
+                    ftpsite = ""
+                    currDirect = ""
+                    currentremoteDir = ""
+                    user = ""
+                    pass = ""
+                    strcmd = ""
+                    ftpexit = False
+                    initialized = False
+                    AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    Exit Sub
+                End If
 
-            'Set input color
-            SetInputColor()
+                'Prompt for command
+                If Not IsNothing(DefConsoleOut) Then
+                    Console.SetOut(DefConsoleOut)
+                End If
+                If Not Connects Then
+                    Wdbg("I", "Preparing prompt...")
+                    If connected Then
+                        Wdbg("I", "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
+                        If FTPShellPromptStyle = "" Then
+                            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, user) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, ftpsite) : W("]{0} ", False, ColTypes.Gray, currentremoteDir)
+                        Else
+                            Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
+                            ParsedPromptStyle.ConvertVTSequences
+                            W(ParsedPromptStyle, False, ColTypes.Gray)
+                        End If
+                    Else
+                        W("{0}> ", False, ColTypes.Gray, currDirect)
+                    End If
+                End If
 
-            'Try to connect if IP address is specified.
-            If Connects Then
-                Wdbg("I", $"Currently connecting to {Address} by ""ftp (address)""...")
-                strcmd = $"connect {Address}"
-                Connects = False
-            Else
-                Wdbg("I", "Normal shell")
-                strcmd = Console.ReadLine()
-            End If
-            EventManager.RaiseFTPPreExecuteCommand(strcmd)
+                'Run garbage collector
+                DisposeAll()
 
-            'Parse command
-            If Not (strcmd = Nothing Or strcmd?.StartsWith(" ")) Then
-                FTPGetLine()
-                EventManager.RaiseFTPPostExecuteCommand(strcmd)
-            End If
+                'Set input color
+                SetInputColor()
 
-            'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
-            If IsNothing(strcmd) Then
-                Console.WriteLine()
-                Thread.Sleep(30) 'This is to fix race condition between FTP shell initialization and starting the event handler thread
-            End If
+                'Try to connect if IP address is specified.
+                If Connects Then
+                    Wdbg("I", $"Currently connecting to {Address} by ""ftp (address)""...")
+                    strcmd = $"connect {Address}"
+                    Connects = False
+                Else
+                    Wdbg("I", "Normal shell")
+                    strcmd = Console.ReadLine()
+                End If
+                EventManager.RaiseFTPPreExecuteCommand(strcmd)
+
+                'Parse command
+                If Not (strcmd = Nothing Or strcmd?.StartsWith(" ")) Then
+                    FTPGetLine()
+                    EventManager.RaiseFTPPostExecuteCommand(strcmd)
+                End If
+
+                'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
+                If IsNothing(strcmd) Then
+                    Console.WriteLine()
+                    Thread.Sleep(30) 'This is to fix race condition between FTP shell initialization and starting the event handler thread
+                End If
+            Catch ex As Exception
+                WStkTrc(ex)
+                Throw New Exceptions.FTPShellException(DoTranslation("There was an error in the FTP shell:") + " {0}".FormatString(ex.Message), ex)
+            End Try
         End While
     End Sub
 

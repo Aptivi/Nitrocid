@@ -43,85 +43,90 @@ Public Module SFTPShell
     ''' <param name="Address">An IP address</param>
     Public Sub SFTPInitiateShell(Optional ByVal Connects As Boolean = False, Optional ByVal Address As String = "")
         While True
-            'Complete initialization
-            If SFTPInitialized = False Then
-                Wdbg("I", $"Completing initialization of SFTP: {SFTPInitialized}")
-                SFTPCurrDirect = paths("Home")
-                EventManager.RaiseSFTPShellInitialized()
+            Try
+                'Complete initialization
+                If SFTPInitialized = False Then
+                    Wdbg("I", $"Completing initialization of SFTP: {SFTPInitialized}")
+                    SFTPCurrDirect = paths("Home")
+                    EventManager.RaiseSFTPShellInitialized()
 
-                'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:
-                'https://stackoverflow.com/a/22717063/6688914
-                AddHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                SFTPInitialized = True
-            End If
-
-            'Check if the shell is going to exit
-            If sftpexit = True Then
-                Wdbg("W", "Exiting shell...")
-                SFTPConnected = False
-                ClientSFTP?.Disconnect()
-                sftpsite = ""
-                SFTPCurrDirect = ""
-                SFTPCurrentRemoteDir = ""
-                SFTPUser = ""
-                SFTPPass = ""
-                SFTPStrCmd = ""
-                sftpexit = False
-                SFTPInitialized = False
-                AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                Exit Sub
-            End If
-
-            'Prompt for command
-            If Not IsNothing(DefConsoleOut) Then
-                Console.SetOut(DefConsoleOut)
-            End If
-            If Not Connects Then
-                Wdbg("I", "Preparing prompt...")
-                If SFTPConnected Then
-                    Wdbg("I", "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
-                    If SFTPShellPromptStyle = "" Then
-                        W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, SFTPUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, sftpsite) : W("]{0} ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences
-                        W(ParsedPromptStyle, False, ColTypes.Gray)
-                    End If
-                Else
-                    W("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
+                    'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:
+                    'https://stackoverflow.com/a/22717063/6688914
+                    AddHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    SFTPInitialized = True
                 End If
-            End If
 
-            'Run garbage collector
-            DisposeAll()
+                'Check if the shell is going to exit
+                If sftpexit = True Then
+                    Wdbg("W", "Exiting shell...")
+                    SFTPConnected = False
+                    ClientSFTP?.Disconnect()
+                    sftpsite = ""
+                    SFTPCurrDirect = ""
+                    SFTPCurrentRemoteDir = ""
+                    SFTPUser = ""
+                    SFTPPass = ""
+                    SFTPStrCmd = ""
+                    sftpexit = False
+                    SFTPInitialized = False
+                    AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    Exit Sub
+                End If
 
-            'Set input color
-            SetInputColor()
+                'Prompt for command
+                If Not IsNothing(DefConsoleOut) Then
+                    Console.SetOut(DefConsoleOut)
+                End If
+                If Not Connects Then
+                    Wdbg("I", "Preparing prompt...")
+                    If SFTPConnected Then
+                        Wdbg("I", "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
+                        If SFTPShellPromptStyle = "" Then
+                            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, SFTPUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, sftpsite) : W("]{0} ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
+                        Else
+                            Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
+                            ParsedPromptStyle.ConvertVTSequences
+                            W(ParsedPromptStyle, False, ColTypes.Gray)
+                        End If
+                    Else
+                        W("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
+                    End If
+                End If
 
-            'Try to connect if IP address is specified.
-            If Connects Then
-                Wdbg("I", $"Currently connecting to {Address} by ""sftp (address)""...")
-                SFTPStrCmd = $"connect {Address}"
-                Connects = False
-            Else
-                Wdbg("I", "Normal shell")
-                SFTPStrCmd = Console.ReadLine()
-            End If
-            EventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
+                'Run garbage collector
+                DisposeAll()
 
-            'Parse command
-            If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWith(" ")) Then
-                SFTPGetLine()
-                EventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
-            End If
+                'Set input color
+                SetInputColor()
 
-            'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
-            If IsNothing(SFTPStrCmd) Then
-                Console.WriteLine()
-                Thread.Sleep(30) 'This is to fix race condition between SFTP shell initialization and starting the event handler thread
-            End If
+                'Try to connect if IP address is specified.
+                If Connects Then
+                    Wdbg("I", $"Currently connecting to {Address} by ""sftp (address)""...")
+                    SFTPStrCmd = $"connect {Address}"
+                    Connects = False
+                Else
+                    Wdbg("I", "Normal shell")
+                    SFTPStrCmd = Console.ReadLine()
+                End If
+                EventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
+
+                'Parse command
+                If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWith(" ")) Then
+                    SFTPGetLine()
+                    EventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
+                End If
+
+                'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
+                If IsNothing(SFTPStrCmd) Then
+                    Console.WriteLine()
+                    Thread.Sleep(30) 'This is to fix race condition between SFTP shell initialization and starting the event handler thread
+                End If
+            Catch ex As Exception
+                WStkTrc(ex)
+                Throw New Exceptions.SFTPShellException(DoTranslation("There was an error in the SFTP shell:") + " {0}".FormatString(ex.Message), ex)
+            End Try
         End While
     End Sub
 
