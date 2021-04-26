@@ -96,7 +96,8 @@ Public Module Config
                         New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
                         New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly),
                         New IniKey(ksconf, "Show mail message preview", ShowPreview),
-                        New IniKey(ksconf, "Record chat to debug log", RecordChatToDebugLog)))
+                        New IniKey(ksconf, "Record chat to debug log", RecordChatToDebugLog),
+                        New IniKey(ksconf, "Show SSH banner", SSHBanner)))
 
                 'The Screensaver Section
                 ksconf.Sections.Add(
@@ -204,7 +205,8 @@ Public Module Config
                         New IniKey(ksconf, "Prompt Style", ""),
                         New IniKey(ksconf, "FTP Prompt Style", ""),
                         New IniKey(ksconf, "Mail Prompt Style", ""),
-                        New IniKey(ksconf, "SFTP Prompt Style", "")))
+                        New IniKey(ksconf, "SFTP Prompt Style", ""),
+                        New IniKey(ksconf, "Show SSH banner", "False")))
 
                 'The Network Section
                 ksconf.Sections.Add(
@@ -319,6 +321,7 @@ Public Module Config
             ksconf.Sections("Network").Keys("Return only first FTP profile").TrailingComment.Text = "Whether or not to return only first successful FTP profile when polling for profiles."
             ksconf.Sections("Network").Keys("Show mail message preview").TrailingComment.Text = "Whether or not to show mail message preview (body text truncated to 200 characters)."
             ksconf.Sections("Network").Keys("Record chat to debug log").TrailingComment.Text = "Records remote debug chat to debug log."
+            ksconf.Sections("Network").Keys("Show SSH banner").TrailingComment.Text = "Shows the SSH server banner on connection."
 
             'Screensaver
             ksconf.Sections("Screensaver").TrailingComment.Text = "This section is the network settings."
@@ -521,6 +524,7 @@ Public Module Config
             FTPFirstProfileOnly = configReader.Sections("Network").Keys("Return only first FTP profile").Value
             ShowPreview = configReader.Sections("Network").Keys("Show mail message preview").Value
             RecordChatToDebugLog = configReader.Sections("Network").Keys("Record chat to debug log").Value
+            SSHBanner = configReader.Sections("Network").Keys("Show SSH banner").Value
 
             'Screensaver Section
             defSaverName = configReader.Sections("Screensaver").Keys("Screensaver").Value

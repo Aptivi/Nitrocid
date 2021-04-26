@@ -16,13 +16,18 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports Renci.SshNet.Common
 
-Module SSH
+Public Module SSH
 
     ''' <summary>
     ''' Whether or not if disconnection is requested
     ''' </summary>
     Private DisconnectionRequested As Boolean
+    ''' <summary>
+    ''' Whether or not to show the SSH banner on connection
+    ''' </summary>
+    Public SSHBanner As Boolean
 
     ''' <summary>
     ''' Specifies SSH connection type
@@ -55,6 +60,7 @@ Module SSH
             'Connection
             Dim SSH As New SshClient(Address, Port, Username, Pass)
             SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30)
+            If SSHBanner Then AddHandler SSH.ConnectionInfo.AuthenticationBanner, AddressOf ShowBanner
             Wdbg("I", "Connecting to {0}...", Address)
             SSH.Connect()
 
@@ -69,6 +75,21 @@ Module SSH
             W(DoTranslation("Error trying to connect to SSH server: {0}"), True, ColTypes.Err, ex.Message)
             WStkTrc(ex)
         End Try
+    End Sub
+
+    ''' <summary>
+    ''' Shows the SSH banner
+    ''' </summary>
+    Private Sub ShowBanner(sender As Object, e As AuthenticationBannerEventArgs)
+        Wdbg("I", "Banner language: {0}", e.Language)
+        Wdbg("I", "Banner username: {0}", e.Username)
+        Wdbg("I", "Banner length: {0}", e.BannerMessage.Length)
+        Wdbg("I", "Banner:")
+        Dim BannerMessageLines() As String = e.BannerMessage.Replace(Chr(13), "").Split(Chr(10))
+        For Each BannerLine As String In BannerMessageLines
+            Wdbg("I", BannerLine)
+            W(BannerLine, True, ColTypes.Neutral)
+        Next
     End Sub
 
     ''' <summary>

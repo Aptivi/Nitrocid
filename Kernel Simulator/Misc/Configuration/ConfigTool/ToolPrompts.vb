@@ -140,7 +140,7 @@ Public Module ToolPrompts
                     W("7) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(SFTPShellPromptStyle)))
                     W("8) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.ListEntry)
                 Case "5" 'Network
-                    MaxOptions = 9
+                    MaxOptions = 10
                     W("*) " + DoTranslation("Network Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DebugPort)))
@@ -151,7 +151,8 @@ Public Module ToolPrompts
                     W("6) " + DoTranslation("Log FTP IP address") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPLoggerIP)))
                     W("7) " + DoTranslation("Return only first FTP profile") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPFirstProfileOnly)))
                     W("8) " + DoTranslation("Show mail message preview") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShowPreview)))
-                    W("9) " + DoTranslation("Record chat to debug log") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(RecordChatToDebugLog)))
+                    W("9) " + DoTranslation("Record chat to debug log") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RecordChatToDebugLog)))
+                    W("10) " + DoTranslation("Show SSH banner") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(SSHBanner)))
                 Case "6" 'Screensaver
                     'TODO: Add support for custom screensavers
                     MaxOptions = 12
@@ -490,6 +491,7 @@ Public Module ToolPrompts
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case "4.8" 'Shell -> Custom colors
+                    'TODO: Configure this to use ColorWheel once it can support true color
                     MaxKeyOptions = 14
                     KeyType = SettingsKeyType.SMultivar
                     KeyVars = New Dictionary(Of String, Object)
@@ -645,6 +647,14 @@ Public Module ToolPrompts
                             KeyVar = NameOf(RecordChatToDebugLog)
                             W("*) " + DoTranslation("Network Settings...") + DoTranslation("Record chat to debug log") + " > " + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Records remote debug chat to debug log.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 10 'Show SSH banner
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(SSHBanner)
+                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Show SSH banner") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Shows the SSH server banner on connection.") + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
                         Case Else
@@ -1209,6 +1219,7 @@ Public Module ToolPrompts
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <returns>Field information</returns>
     Public Function GetConfigField(ByVal Variable As String) As FieldInfo
+        'TODO: Be dynamic and scan all KS types
         'Get types of possible flag locations
         Dim TypeOfFlags As Type = GetType(Flags)
         Dim TypeOfKernel As Type = GetType(Kernel)
@@ -1225,6 +1236,7 @@ Public Module ToolPrompts
         Dim TypeOfForecast As Type = GetType(Forecast)
         Dim TypeOfMailManager As Type = GetType(MailManager)
         Dim TypeOfColors As Type = GetType(ColorTools)
+        Dim TypeOfSSH As Type = GetType(SSH)
 
         'Get fields of flag modules
         Dim FieldFlags As FieldInfo = TypeOfFlags.GetField(Variable)
@@ -1242,6 +1254,7 @@ Public Module ToolPrompts
         Dim FieldForecast As FieldInfo = TypeOfForecast.GetField(Variable)
         Dim FieldMailManager As FieldInfo = TypeOfMailManager.GetField(Variable)
         Dim FieldColors As FieldInfo = TypeOfColors.GetField(Variable)
+        Dim FieldSSH As FieldInfo = TypeOfSSH.GetField(Variable)
 
         'Check if any of them contains the specified variable
         If Not IsNothing(FieldFlags) Then
@@ -1274,6 +1287,8 @@ Public Module ToolPrompts
             Return FieldMailManager
         ElseIf Not IsNothing(FieldColors) Then
             Return FieldColors
+        ElseIf Not IsNothing(FieldSSH) Then
+            Return FieldSSH
         End If
     End Function
 
