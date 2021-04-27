@@ -1147,7 +1147,7 @@ Public Module ToolPrompts
                     KeyFinished = True
                 Else
                     Wdbg("I", "Setting necessary variables...")
-                    Wdbg("I", "Variables: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}.", KeyVars(NameOf(InputColor)), KeyVars(NameOf(LicenseColor)), KeyVars(NameOf(ContKernelErrorColor)),
+                    Wdbg("I", "Variables: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}.", KeyVars(NameOf(InputColor)), KeyVars(NameOf(LicenseColor)), KeyVars(NameOf(ContKernelErrorColor)),
                          KeyVars(NameOf(UncontKernelErrorColor)), KeyVars(NameOf(HostNameShellColor)), KeyVars(NameOf(UserNameShellColor)), KeyVars(NameOf(BackgroundColor)), KeyVars(NameOf(NeutralTextColor)),
                          KeyVars(NameOf(ListEntryColor)), KeyVars(NameOf(ListValueColor)), KeyVars(NameOf(StageColor)), KeyVars(NameOf(ErrorColor)), KeyVars(NameOf(WarningColor)), KeyVars(NameOf(OptionColor)))
 
