@@ -69,7 +69,7 @@ Public Module NetworkTransfer
     ''' <summary>
     ''' Uploads a file from the current working directory.
     ''' </summary>
-    ''' <param name="File">A target file name. Use <see cref="NeutralizePath(String)"/> to get full path of source.</param>
+    ''' <param name="File">A target file name. Use <see cref="NeutralizePath(String, Boolean)"/> to get full path of source.</param>
     ''' <param name="URL">A URL</param>
     ''' <param name="ShowProgress">Whether or not to show progress bar</param>
     ''' <param name="Credentials">Authentication information</param>

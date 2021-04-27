@@ -1173,7 +1173,7 @@ Public Module ToolPrompts
     ''' <param name="VariableValue">New value of variable</param>
     Public Sub SetConfigValue(ByVal Variable As String, ByVal VariableValue As Object)
         'Get field for specified variable
-        Dim TargetField As FieldInfo = GetConfigField(Variable)
+        Dim TargetField As FieldInfo = GetField(Variable)
 
         'Set the variable if found
         If Not IsNothing(TargetField) Then
@@ -1196,7 +1196,7 @@ Public Module ToolPrompts
     ''' <returns>Value of a variable</returns>
     Public Function GetConfigValue(ByVal Variable As String) As Object
         'Get field for specified variable
-        Dim TargetField As FieldInfo = GetConfigField(Variable)
+        Dim TargetField As FieldInfo = GetField(Variable)
 
         'Get the variable if found
         If Not IsNothing(TargetField) Then
@@ -1210,85 +1210,6 @@ Public Module ToolPrompts
             Wdbg("I", "Field {0} not found.", Variable)
             W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Err, Variable)
             Return Nothing
-        End If
-    End Function
-
-    ''' <summary>
-    ''' Gets a field from variable name
-    ''' </summary>
-    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
-    ''' <returns>Field information</returns>
-    Public Function GetConfigField(ByVal Variable As String) As FieldInfo
-        'TODO: Be dynamic and scan all KS types
-        'Get types of possible flag locations
-        Dim TypeOfFlags As Type = GetType(Flags)
-        Dim TypeOfKernel As Type = GetType(Kernel)
-        Dim TypeOfShell As Type = GetType(Shell)
-        Dim TypeOfFTPShell As Type = GetType(FTPShell)
-        Dim TypeOfMailShell As Type = GetType(MailShell)
-        Dim TypeOfSFTPShell As Type = GetType(SFTPShell)
-        Dim TypeOfTextEditShell As Type = GetType(TextEditShell)
-        Dim TypeOfRDebugger As Type = GetType(RemoteDebugger)
-        Dim TypeOfDebugWriters As Type = GetType(DebugWriters)
-        Dim TypeOfNetworkTools As Type = GetType(NetworkTools)
-        Dim TypeOfFilesystem As Type = GetType(Filesystem)
-        Dim TypeOfScreensaverSettings As Type = GetType(ScreensaverSettings)
-        Dim TypeOfForecast As Type = GetType(Forecast)
-        Dim TypeOfMailManager As Type = GetType(MailManager)
-        Dim TypeOfColors As Type = GetType(ColorTools)
-        Dim TypeOfSSH As Type = GetType(SSH)
-
-        'Get fields of flag modules
-        Dim FieldFlags As FieldInfo = TypeOfFlags.GetField(Variable)
-        Dim FieldKernel As FieldInfo = TypeOfKernel.GetField(Variable)
-        Dim FieldShell As FieldInfo = TypeOfShell.GetField(Variable)
-        Dim FieldFTPShell As FieldInfo = TypeOfFTPShell.GetField(Variable)
-        Dim FieldMailShell As FieldInfo = TypeOfMailShell.GetField(Variable)
-        Dim FieldSFTPShell As FieldInfo = TypeOfSFTPShell.GetField(Variable)
-        Dim FieldTextEditShell As FieldInfo = TypeOfTextEditShell.GetField(Variable)
-        Dim FieldRDebugger As FieldInfo = TypeOfRDebugger.GetField(Variable)
-        Dim FieldDebugWriters As FieldInfo = TypeOfDebugWriters.GetField(Variable)
-        Dim FieldNetworkTools As FieldInfo = TypeOfNetworkTools.GetField(Variable)
-        Dim FieldFilesystem As FieldInfo = TypeOfFilesystem.GetField(Variable)
-        Dim FieldScreensaverSettings As FieldInfo = TypeOfScreensaverSettings.GetField(Variable)
-        Dim FieldForecast As FieldInfo = TypeOfForecast.GetField(Variable)
-        Dim FieldMailManager As FieldInfo = TypeOfMailManager.GetField(Variable)
-        Dim FieldColors As FieldInfo = TypeOfColors.GetField(Variable)
-        Dim FieldSSH As FieldInfo = TypeOfSSH.GetField(Variable)
-
-        'Check if any of them contains the specified variable
-        If Not IsNothing(FieldFlags) Then
-            Return FieldFlags
-        ElseIf Not IsNothing(FieldKernel) Then
-            Return FieldKernel
-        ElseIf Not IsNothing(FieldShell) Then
-            Return FieldShell
-        ElseIf Not IsNothing(FieldFTPShell) Then
-            Return FieldFTPShell
-        ElseIf Not IsNothing(FieldMailShell) Then
-            Return FieldMailShell
-        ElseIf Not IsNothing(FieldSFTPShell) Then
-            Return FieldSFTPShell
-        ElseIf Not IsNothing(FieldTextEditShell) Then
-            Return FieldTextEditShell
-        ElseIf Not IsNothing(FieldRDebugger) Then
-            Return FieldRDebugger
-        ElseIf Not IsNothing(FieldDebugWriters) Then
-            Return FieldDebugWriters
-        ElseIf Not IsNothing(FieldNetworkTools) Then
-            Return FieldNetworkTools
-        ElseIf Not IsNothing(FieldFilesystem) Then
-            Return FieldFilesystem
-        ElseIf Not IsNothing(FieldScreensaverSettings) Then
-            Return FieldScreensaverSettings
-        ElseIf Not IsNothing(FieldForecast) Then
-            Return FieldForecast
-        ElseIf Not IsNothing(FieldMailManager) Then
-            Return FieldMailManager
-        ElseIf Not IsNothing(FieldColors) Then
-            Return FieldColors
-        ElseIf Not IsNothing(FieldSSH) Then
-            Return FieldSSH
         End If
     End Function
 

@@ -42,7 +42,7 @@ Imports KS
     ''' Tests getting variable
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestGetConfigField()
-        Dim Field As FieldInfo = GetConfigField("HiddenFiles")
+        Dim Field As FieldInfo = ToolPrompts.GetField("HiddenFiles")
         Assert.IsTrue(Field.Name = "HiddenFiles", "Field HiddenFiles isn't get properly. Name: {0}", Field.Name)
     End Sub
 

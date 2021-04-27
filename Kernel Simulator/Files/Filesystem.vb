@@ -194,7 +194,7 @@ Public Module Filesystem
     ''' <param name="Path">Target path, be it a file or a folder</param>
     ''' <param name="Source">Source path in which the target is found. Must be a directory</param>
     ''' <returns>Absolute path</returns>
-    Public Function NeutralizePath(ByVal Path As String, ByVal Source As String)
+    Public Function NeutralizePath(ByVal Path As String, ByVal Source As String, Optional ByVal Strict As Boolean = False)
 #If NTFSCorruptionFix Then
         'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
         If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect") Or
@@ -219,7 +219,16 @@ Public Module Filesystem
             End If
         End If
 
-        Return Path
+        'If strict, checks for existence of file
+        If Strict Then
+            If File.Exists(Path) Then
+                Return Path
+            Else
+                Throw New FileNotFoundException(DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path))
+            End If
+        Else
+            Return Path
+        End If
     End Function
 
     ''' <summary>

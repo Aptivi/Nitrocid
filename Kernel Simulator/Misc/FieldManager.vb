@@ -83,4 +83,23 @@ Public Module FieldManager
         End If
     End Function
 
+    ''' <summary>
+    ''' Gets a field from variable name
+    ''' </summary>
+    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+    ''' <returns>Field information</returns>
+    Public Function GetField(ByVal Variable As String) As FieldInfo
+        Dim PossibleTypes As Type()
+        Dim PossibleField As FieldInfo
+
+        'Get types of possible flag locations
+        PossibleTypes = Assembly.GetExecutingAssembly.GetTypes
+
+        'Get fields of flag modules
+        For Each PossibleType As Type In PossibleTypes
+            PossibleField = PossibleType.GetField(Variable)
+            If PossibleField IsNot Nothing Then Return PossibleField
+        Next
+    End Function
+
 End Module

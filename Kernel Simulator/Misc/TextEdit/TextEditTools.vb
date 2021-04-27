@@ -24,7 +24,7 @@ Public Module TextEditTools
     ''' <summary>
     ''' Opens the text file
     ''' </summary>
-    ''' <param name="File">Target file. We recommend you to use <see cref="NeutralizePath(String)"></see> to neutralize path.</param>
+    ''' <param name="File">Target file. We recommend you to use <see cref="NeutralizePath(String, Boolean)"></see> to neutralize path.</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function TextEdit_OpenTextFile(ByVal File As String) As Boolean
         Try

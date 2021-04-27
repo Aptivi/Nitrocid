@@ -34,7 +34,7 @@ Module ZipShell
     ''' <summary>
     ''' Initializes the ZIP shell
     ''' </summary>
-    ''' <param name="ZipFile">A ZIP file. We recommend you to use <see cref="NeutralizePath(String)"></see> to neutralize path.</param>
+    ''' <param name="ZipFile">A ZIP file. We recommend you to use <see cref="NeutralizePath(String, Boolean)"></see> to neutralize path.</param>
     Public Sub InitializeZipShell(ByVal ZipFile As String)
         'Add handler for text editor shell
         AddHandler Console.CancelKeyPress, AddressOf EditorCancelCommand

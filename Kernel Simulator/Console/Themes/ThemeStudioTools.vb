@@ -91,7 +91,7 @@ Module ThemeStudioTools
     ''' Saves theme to another directory under "<paramref name="Theme"/>.json."
     ''' </summary>
     ''' <param name="Theme">Theme name</param>
-    ''' <param name="Path">Path name. Neutralized by <see cref="NeutralizePath(String)"/></param>
+    ''' <param name="Path">Path name. Neutralized by <see cref="NeutralizePath(String, Boolean)"/></param>
     Sub SaveThemeToAnotherDirectory(ByVal Theme As String, ByVal Path As String)
         Dim ThemeJson As JObject = GetThemeJson()
         File.WriteAllText(NeutralizePath(Path + "/" + Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented))
