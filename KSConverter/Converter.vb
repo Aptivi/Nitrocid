@@ -39,6 +39,9 @@ Module Converter
         'Initialize paths
         InitPaths()
 
+        'Load user token
+        LoadUserToken()
+
         'Make backup directory
         W("- Making backup directory...", True, ColTypes.Stage)
         If Not Directory.Exists(GetHomeDirectory() + "/KSBackup") Then
