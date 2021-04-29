@@ -392,19 +392,19 @@ Public Module ColorTools
                 W(DoTranslation("Press ""t"" to switch to 255 color mode."), True, ColTypes.Neutral)
 
                 'The red color level
-                W(vbNewLine + " <", False, ColTypes.Gray)
+                W(vbNewLine + " <", False, If(CurrentRange = "R", ColTypes.Gray, ColTypes.Neutral))
                 WriteWhereC("R: {0}", (Console.CursorLeft + 30 - "R: {0}".FormatString(CurrentColorR).Length) / 2, Console.CursorTop, True, New Color("{0};0;0".FormatString(CurrentColorR)), CurrentColorR)
-                WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, True, ColTypes.Gray)
+                WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, False, If(CurrentRange = "R", ColTypes.Gray, ColTypes.Neutral))
 
                 'The green color level
-                W(vbNewLine + " <", False, ColTypes.Gray)
+                W(vbNewLine + " <", False, If(CurrentRange = "G", ColTypes.Gray, ColTypes.Neutral))
                 WriteWhereC("G: {0}", (Console.CursorLeft + 30 - "G: {0}".FormatString(CurrentColorG).Length) / 2, Console.CursorTop, True, New Color("0;{0};0".FormatString(CurrentColorG)), CurrentColorG)
-                WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, True, ColTypes.Gray)
+                WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, False, If(CurrentRange = "G", ColTypes.Gray, ColTypes.Neutral))
 
                 'The blue color level
-                W(vbNewLine + " <", False, ColTypes.Gray)
+                W(vbNewLine + " <", False, If(CurrentRange = "B", ColTypes.Gray, ColTypes.Neutral))
                 WriteWhereC("B: {0}", (Console.CursorLeft + 30 - "B: {0}".FormatString(CurrentColorB).Length) / 2, Console.CursorTop, True, New Color("0;0;{0}".FormatString(CurrentColorB)), CurrentColorB)
-                WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, True, ColTypes.Gray)
+                WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, False, If(CurrentRange = "B", ColTypes.Gray, ColTypes.Neutral))
 
                 'Show example
                 WriteC(vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, New Color("{0};{1};{2}".FormatString(CurrentColorR, CurrentColorG, CurrentColorB)))
@@ -507,7 +507,7 @@ Public Module ColorTools
                 'The color selection
                 W(vbNewLine + " <", False, ColTypes.Gray)
                 WriteWhereC(CurrentColor.ToString, (Console.CursorLeft + 30 - CurrentColor.ToString.Length) / 2, Console.CursorTop, True, New Color(CurrentColor))
-                WriteWhere(">", Console.CursorLeft + 27, Console.CursorTop, True, ColTypes.Gray)
+                WriteWhere(">", Console.CursorLeft + 27, Console.CursorTop, False, ColTypes.Gray)
 
                 'Show prompt
                 WriteC(vbNewLine + vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, New Color(CurrentColor))
