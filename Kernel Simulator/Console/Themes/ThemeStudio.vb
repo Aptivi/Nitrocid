@@ -75,72 +75,72 @@ Module ThemeStudio
                     Wdbg("I", "Numeric response {0} is >= 1 and <= {0}.", NumericResponse, MaximumOptions)
                     Select Case NumericResponse
                         Case 1 'Input color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedInputColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedInputColor = New Color(ColorWheelReturn)
                             End If
                         Case 2 'License color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedLicenseColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedLicenseColor = New Color(ColorWheelReturn)
                             End If
                         Case 3 'Continuable kernel error color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedContKernelErrorColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedContKernelErrorColor = New Color(ColorWheelReturn)
                             End If
                         Case 4 'Uncontinuable kernel error color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedUncontKernelErrorColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedUncontKernelErrorColor = New Color(ColorWheelReturn)
                             End If
                         Case 5 'Host name color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedHostNameShellColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedHostNameShellColor = New Color(ColorWheelReturn)
                             End If
                         Case 6 'User name color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedUserNameShellColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedUserNameShellColor = New Color(ColorWheelReturn)
                             End If
                         Case 7 'Background color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedBackgroundColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedBackgroundColor = New Color(ColorWheelReturn)
                             End If
                         Case 8 'Neutral text color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedNeutralTextColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedNeutralTextColor = New Color(ColorWheelReturn)
                             End If
                         Case 9 'list entry color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedListEntryColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedListEntryColor = New Color(ColorWheelReturn)
                             End If
                         Case 10 'list value color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedListValueColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedListValueColor = New Color(ColorWheelReturn)
                             End If
                         Case 11 'Stage color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedStageColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedStageColor = New Color(ColorWheelReturn)
                             End If
                         Case 12 'Error color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedErrorColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedErrorColor = New Color(ColorWheelReturn)
                             End If
                         Case 13 'Warning color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedWarningColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedWarningColor = New Color(ColorWheelReturn)
                             End If
                         Case 14 'Option color
-                            Dim ColorWheelReturn As Integer = ColorWheel()
+                            Dim ColorWheelReturn As Integer = ColorWheel(SelectedOptionColor.Type = ColorType.TrueColor)
                             If ColorWheelReturn >= 0 And ColorWheelReturn <= 255 Then
                                 SelectedOptionColor = New Color(ColorWheelReturn)
                             End If
