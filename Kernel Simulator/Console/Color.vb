@@ -376,8 +376,7 @@ Public Module ColorTools
     ''' <summary>
     ''' Initializes color wheel
     ''' </summary>
-    ''' <returns></returns>
-    Public Function ColorWheel(ByVal TrueColor As Boolean) As Integer
+    Public Function ColorWheel(ByVal TrueColor As Boolean) As String
         Dim CurrentColor As ConsoleColors = ConsoleColors.White
         Dim CurrentColorR As Integer = 0
         Dim CurrentColorG As Integer = 0
@@ -541,7 +540,12 @@ Public Module ColorTools
                 End If
             End If
         End While
-        Return CurrentColor
+
+        If TrueColor Then
+            Return "{0};{1};{2}".FormatString(CurrentColorR, CurrentColorG, CurrentColorB)
+        Else
+            Return CurrentColor
+        End If
     End Function
 
 End Module

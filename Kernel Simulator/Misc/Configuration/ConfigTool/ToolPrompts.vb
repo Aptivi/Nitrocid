@@ -27,8 +27,10 @@ Public Module ToolPrompts
         SBoolean
         SInt
         SString
+        <Obsolete>
         SMultivar
         SSelection
+        SVariant
         SMenu
     End Enum
 
@@ -139,6 +141,24 @@ Public Module ToolPrompts
                     W("6) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(MailShellPromptStyle)))
                     W("7) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(SFTPShellPromptStyle)))
                     W("8) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.ListEntry)
+                Case "4.8" 'Custom colors...
+                    MaxOptions = 14
+                    W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors...") + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lets you choose what type of color do you want to change.") + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Input color") + " [{0}] ", True, ColTypes.Option, InputColor)
+                    W("2) " + DoTranslation("License color") + " [{0}] ", True, ColTypes.Option, LicenseColor)
+                    W("3) " + DoTranslation("Continuable kernel error color") + " [{0}] ", True, ColTypes.Option, ContKernelErrorColor)
+                    W("4) " + DoTranslation("Uncontinuable kernel error color") + " [{0}] ", True, ColTypes.Option, UncontKernelErrorColor)
+                    W("5) " + DoTranslation("Host name color") + " [{0}] ", True, ColTypes.Option, HostNameShellColor)
+                    W("6) " + DoTranslation("User name color") + " [{0}] ", True, ColTypes.Option, UserNameShellColor)
+                    W("7) " + DoTranslation("Background color") + " [{0}] ", True, ColTypes.Option, BackgroundColor)
+                    W("8) " + DoTranslation("Neutral text color") + " [{0}] ", True, ColTypes.Option, NeutralTextColor)
+                    W("9) " + DoTranslation("List entry color") + " [{0}] ", True, ColTypes.Option, ListEntryColor)
+                    W("10) " + DoTranslation("List value color") + " [{0}] ", True, ColTypes.Option, ListValueColor)
+                    W("11) " + DoTranslation("Stage color") + " [{0}] ", True, ColTypes.Option, StageColor)
+                    W("12) " + DoTranslation("Error color") + " [{0}] ", True, ColTypes.Option, ErrorColor)
+                    W("13) " + DoTranslation("Warning color") + " [{0}] ", True, ColTypes.Option, WarningColor)
+                    W("14) " + DoTranslation("Option color") + " [{0}] " + vbNewLine, True, ColTypes.Option, OptionColor)
                 Case "5" 'Network
                     MaxOptions = 10
                     W("*) " + DoTranslation("Network Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -283,6 +303,9 @@ Public Module ToolPrompts
                         Wdbg("I", "Tried to open special section. Opening section 1.3...")
                         OpenKey("1.3", AnswerInt)
                     ElseIf AnswerInt = 8 And SectionNum = "4" Then
+                        Wdbg("I", "Tried to open subsection. Opening section 4.8...")
+                        OpenSection("4.8")
+                    ElseIf AnswerInt <> MaxOptions And SectionNum = "4.8" Then
                         Wdbg("I", "Tried to open special section. Opening section 4.8...")
                         OpenKey("4.8", AnswerInt)
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "6" Then
@@ -322,7 +345,8 @@ Public Module ToolPrompts
         Dim KeyVar As String = ""
         Dim KeyVars As Dictionary(Of String, Object)
         Dim MultivarCustomAction As String = ""
-        Dim AnswerString As String
+        Dim VariantValue As Object = ""
+        Dim AnswerString As String = ""
         Dim AnswerInt As Integer
 
         While Not KeyFinished
@@ -491,99 +515,64 @@ Public Module ToolPrompts
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case "4.8" 'Shell -> Custom colors
-                    'TODO: Configure this to use ColorWheel once it can support true color
-                    MaxKeyOptions = 14
-                    KeyType = SettingsKeyType.SMultivar
-                    KeyVars = New Dictionary(Of String, Object)
-                    MultivarCustomAction = "SetColors"
-                    W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors...") + vbNewLine, True, ColTypes.Neutral)
-                    Dim Response As String
-                    W("*) " + DoTranslation("Write a color as specified below:"), True, ColTypes.Neutral)
-                    W("*) " + String.Join(", ", [Enum].GetNames(GetType(ConsoleColors))) + vbNewLine, True, ColTypes.Neutral)
-
-                    ' Input color
-                    W("1) " + DoTranslation("Input color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(InputColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(InputColor))
-                    KeyVars.AddOrModify(NameOf(InputColor), Response)
-
-                    ' License color
-                    W("2) " + DoTranslation("License color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(LicenseColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(LicenseColor))
-                    KeyVars.AddOrModify(NameOf(LicenseColor), Response)
-
-                    ' Continuable kernel error color
-                    W("3) " + DoTranslation("Continuable kernel error color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(ContKernelErrorColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(ContKernelErrorColor))
-                    KeyVars.AddOrModify(NameOf(ContKernelErrorColor), Response)
-
-                    ' Unontinuable kernel error color
-                    W("4) " + DoTranslation("Uncontinuable kernel error color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(UncontKernelErrorColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(UncontKernelErrorColor))
-                    KeyVars.AddOrModify(NameOf(UncontKernelErrorColor), Response)
-
-                    ' Host name color
-                    W("5) " + DoTranslation("Host name color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(HostNameShellColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(HostNameShellColor))
-                    KeyVars.AddOrModify(NameOf(HostNameShellColor), Response)
-
-                    ' User name color
-                    W("6) " + DoTranslation("User name color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(UserNameShellColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(UserNameShellColor))
-                    KeyVars.AddOrModify(NameOf(UserNameShellColor), Response)
-
-                    ' Background color
-                    W("7) " + DoTranslation("Background color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(BackgroundColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(BackgroundColor))
-                    KeyVars.AddOrModify(NameOf(BackgroundColor), Response)
-
-                    ' Neutral text color
-                    W("8) " + DoTranslation("Neutral text color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(NeutralTextColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(NeutralTextColor))
-                    KeyVars.AddOrModify(NameOf(NeutralTextColor), Response)
-
-                    ' List entry color
-                    W("9) " + DoTranslation("List entry color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(ListEntryColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(ListEntryColor))
-                    KeyVars.AddOrModify(NameOf(ListEntryColor), Response)
-
-                    ' List value color
-                    W("10) " + DoTranslation("List value color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(ListValueColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(ListValueColor))
-                    KeyVars.AddOrModify(NameOf(ListValueColor), Response)
-
-                    ' Stage color
-                    W("11) " + DoTranslation("Stage color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(StageColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(StageColor))
-                    KeyVars.AddOrModify(NameOf(StageColor), Response)
-
-                    ' Error color
-                    W("12) " + DoTranslation("Error color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(ErrorColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(ErrorColor))
-                    KeyVars.AddOrModify(NameOf(ErrorColor), Response)
-
-                    ' Warning color
-                    W("13) " + DoTranslation("Warning color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(WarningColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(WarningColor))
-                    KeyVars.AddOrModify(NameOf(WarningColor), Response)
-
-                    ' Option color
-                    W("14) " + DoTranslation("Option color") + ": [{0}] ", False, ColTypes.Input, GetConfigValue(NameOf(OptionColor)))
-                    Response = Console.ReadLine
-                    If String.IsNullOrWhiteSpace(Response) Then Response = GetConfigValue(NameOf(OptionColor))
-                    KeyVars.AddOrModify(NameOf(OptionColor), Response)
+                    Select Case KeyNumber
+                        Case 1 'Input color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(InputColor)
+                            VariantValue = ColorWheel(New Color(InputColor).Type = ColorType.TrueColor)
+                        Case 2 'License color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(LicenseColor)
+                            VariantValue = ColorWheel(New Color(LicenseColor).Type = ColorType.TrueColor)
+                        Case 3 'Continuable kernel error color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(ContKernelErrorColor)
+                            VariantValue = ColorWheel(New Color(ContKernelErrorColor).Type = ColorType.TrueColor)
+                        Case 4 'Uncontinuable kernel error color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(UncontKernelErrorColor)
+                            VariantValue = ColorWheel(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor)
+                        Case 5 'Host name color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(HostNameShellColor)
+                            VariantValue = ColorWheel(New Color(HostNameShellColor).Type = ColorType.TrueColor)
+                        Case 6 'User name color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(UserNameShellColor)
+                            VariantValue = ColorWheel(New Color(UserNameShellColor).Type = ColorType.TrueColor)
+                        Case 7 'Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(BackgroundColor)
+                            VariantValue = ColorWheel(New Color(BackgroundColor).Type = ColorType.TrueColor)
+                        Case 8 'Neutral text color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(NeutralTextColor)
+                            VariantValue = ColorWheel(New Color(NeutralTextColor).Type = ColorType.TrueColor)
+                        Case 9 'List entry color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(ListEntryColor)
+                            VariantValue = ColorWheel(New Color(ListEntryColor).Type = ColorType.TrueColor)
+                        Case 10 'List value color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(ListValueColor)
+                            VariantValue = ColorWheel(New Color(ListValueColor).Type = ColorType.TrueColor)
+                        Case 11 'Stage color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(StageColor)
+                            VariantValue = ColorWheel(New Color(StageColor).Type = ColorType.TrueColor)
+                        Case 12 'Error color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(ErrorColor)
+                            VariantValue = ColorWheel(New Color(ErrorColor).Type = ColorType.TrueColor)
+                        Case 13 'Warning color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(WarningColor)
+                            VariantValue = ColorWheel(New Color(WarningColor).Type = ColorType.TrueColor)
+                        Case 14 'Option color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(OptionColor)
+                            VariantValue = ColorWheel(New Color(OptionColor).Type = ColorType.TrueColor)
+                    End Select
                 Case "5" 'Network
                     Select Case KeyNumber
                         Case 1 'Debug Port
@@ -1048,32 +1037,20 @@ Public Module ToolPrompts
                     W("X) " + DoTranslation("Invalid section entered. Please go back.") + vbNewLine, True, ColTypes.Err)
             End Select
 
-            'If user is on color selection screen, we'll give a user a confirmation.
-            If Section = "4.8" Then
-                W(vbNewLine + "*) " + DoTranslation("Do these color choices look OK?"), True, ColTypes.Neutral)
-#Disable Warning BC42104
-                For Each ColorType As String In KeyVars.Keys
-#Enable Warning BC42104
-                    W("   - {0}: ", False, ColTypes.ListEntry, ColorType)
-                    W(KeyVars(ColorType), True, ColTypes.ListValue)
-                Next
-                W(vbNewLine + "*) " + DoTranslation("Answer {0} to go back. Otherwise, any answer means yes."), True, ColTypes.Neutral, MaxKeyOptions + 1)
-            End If
-
             'Add an option to go back.
-            W("{0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
+            If Not KeyType = SettingsKeyType.SVariant Then W("{0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
             Wdbg("W", "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions)
-            Wdbg("W", "Target variable: {0}, Key Type: {1}", KeyVar, KeyType)
+            Wdbg("W", "Target variable: {0}, Key Type: {1}, Variant Value: {2}", KeyVar, KeyType, VariantValue)
 
             'Prompt user
             W(If(Section = "4" And KeyNumber = 3, $"[{CurrDir}]", "") + "> ", False, ColTypes.Input)
             If KeyNumber = 2 And Section = "1.3" Then
                 AnswerString = ReadLineNoInput("*")
                 Console.WriteLine()
-            Else
+            ElseIf Not KeyType = SettingsKeyType.SVariant Then
                 AnswerString = Console.ReadLine
+                Wdbg("I", "User answered {0}", AnswerString)
             End If
-            Wdbg("I", "User answered {0}", AnswerString)
 
             'Check for input
             Wdbg("I", "Is the answer numeric? {0}", IsNumeric(AnswerString))
@@ -1139,24 +1116,10 @@ Public Module ToolPrompts
                     W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
                     Console.ReadKey()
                 End If
-            ElseIf KeyType = SettingsKeyType.SMultivar And MultivarCustomAction = "SetColors" Then
-                Wdbg("I", "Multiple variables, and custom action was {0}.", MultivarCustomAction)
-                Wdbg("I", "Answer was {0}", AnswerInt)
-                If AnswerInt = 15 Then 'Go Back...
-                    Wdbg("W", "User requested exit. Returning...")
-                    KeyFinished = True
-                Else
-                    Wdbg("I", "Setting necessary variables...")
-                    Wdbg("I", "Variables: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}.", KeyVars(NameOf(InputColor)), KeyVars(NameOf(LicenseColor)), KeyVars(NameOf(ContKernelErrorColor)),
-                         KeyVars(NameOf(UncontKernelErrorColor)), KeyVars(NameOf(HostNameShellColor)), KeyVars(NameOf(UserNameShellColor)), KeyVars(NameOf(BackgroundColor)), KeyVars(NameOf(NeutralTextColor)),
-                         KeyVars(NameOf(ListEntryColor)), KeyVars(NameOf(ListValueColor)), KeyVars(NameOf(StageColor)), KeyVars(NameOf(ErrorColor)), KeyVars(NameOf(WarningColor)), KeyVars(NameOf(OptionColor)))
-
-                    If SetColors(KeyVars(NameOf(InputColor)), KeyVars(NameOf(LicenseColor)), KeyVars(NameOf(ContKernelErrorColor)), KeyVars(NameOf(UncontKernelErrorColor)), KeyVars(NameOf(HostNameShellColor)),
-                                 KeyVars(NameOf(UserNameShellColor)), KeyVars(NameOf(BackgroundColor)), KeyVars(NameOf(NeutralTextColor)), KeyVars(NameOf(ListEntryColor)), KeyVars(NameOf(ListValueColor)),
-                                 KeyVars(NameOf(StageColor)), KeyVars(NameOf(ErrorColor)), KeyVars(NameOf(WarningColor)), KeyVars(NameOf(OptionColor))) Then
-                        KeyFinished = True
-                    End If
-                End If
+            ElseIf KeyType = SettingsKeyType.SVariant Then
+                SetConfigValue(KeyVar, VariantValue)
+                Wdbg("I", "User requested exit. Returning...")
+                KeyFinished = True
             Else
                 Wdbg("W", "Answer is not valid.")
                 W(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), True, ColTypes.Err)
