@@ -46,20 +46,20 @@ Public Module Config
                 'The Colors Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Colors",
-                        New IniKey(ksconf, "User Name Shell Color", UserNameShellColor),
-                        New IniKey(ksconf, "Host Name Shell Color", HostNameShellColor),
-                        New IniKey(ksconf, "Continuable Kernel Error Color", ContKernelErrorColor),
-                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", UncontKernelErrorColor),
-                        New IniKey(ksconf, "Text Color", NeutralTextColor),
-                        New IniKey(ksconf, "License Color", LicenseColor),
-                        New IniKey(ksconf, "Background Color", BackgroundColor),
-                        New IniKey(ksconf, "Input Color", InputColor),
-                        New IniKey(ksconf, "List Entry Color", ListEntryColor),
-                        New IniKey(ksconf, "List Value Color", ListValueColor),
-                        New IniKey(ksconf, "Kernel Stage Color", StageColor),
-                        New IniKey(ksconf, "Error Text Color", ErrorColor),
-                        New IniKey(ksconf, "Warning Text Color", WarningColor),
-                        New IniKey(ksconf, "Option Color", OptionColor)))
+                        New IniKey(ksconf, "User Name Shell Color", If(New Color(UserNameShellColor).Type = ColorType.TrueColor, UserNameShellColor.EncloseByDoubleQuotes, UserNameShellColor)),
+                        New IniKey(ksconf, "Host Name Shell Color", If(New Color(HostNameShellColor).Type = ColorType.TrueColor, HostNameShellColor.EncloseByDoubleQuotes, HostNameShellColor)),
+                        New IniKey(ksconf, "Continuable Kernel Error Color", If(New Color(ContKernelErrorColor).Type = ColorType.TrueColor, ContKernelErrorColor.EncloseByDoubleQuotes, ContKernelErrorColor)),
+                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", If(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor, UncontKernelErrorColor.EncloseByDoubleQuotes, UncontKernelErrorColor)),
+                        New IniKey(ksconf, "Text Color", If(New Color(NeutralTextColor).Type = ColorType.TrueColor, NeutralTextColor.EncloseByDoubleQuotes, NeutralTextColor)),
+                        New IniKey(ksconf, "License Color", If(New Color(LicenseColor).Type = ColorType.TrueColor, LicenseColor.EncloseByDoubleQuotes, LicenseColor)),
+                        New IniKey(ksconf, "Background Color", If(New Color(BackgroundColor).Type = ColorType.TrueColor, BackgroundColor.EncloseByDoubleQuotes, BackgroundColor)),
+                        New IniKey(ksconf, "Input Color", If(New Color(InputColor).Type = ColorType.TrueColor, InputColor.EncloseByDoubleQuotes, InputColor)),
+                        New IniKey(ksconf, "List Entry Color", If(New Color(ListEntryColor).Type = ColorType.TrueColor, ListEntryColor.EncloseByDoubleQuotes, ListEntryColor)),
+                        New IniKey(ksconf, "List Value Color", If(New Color(ListValueColor).Type = ColorType.TrueColor, ListValueColor.EncloseByDoubleQuotes, ListValueColor)),
+                        New IniKey(ksconf, "Kernel Stage Color", If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)),
+                        New IniKey(ksconf, "Error Text Color", If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)),
+                        New IniKey(ksconf, "Warning Text Color", If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)),
+                        New IniKey(ksconf, "Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor))))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -168,20 +168,20 @@ Public Module Config
                 'The Colors Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Colors",
-                        New IniKey(ksconf, "User Name Shell Color", UserNameShellColor),
-                        New IniKey(ksconf, "Host Name Shell Color", HostNameShellColor),
-                        New IniKey(ksconf, "Continuable Kernel Error Color", ContKernelErrorColor),
-                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", UncontKernelErrorColor),
-                        New IniKey(ksconf, "Text Color", NeutralTextColor),
-                        New IniKey(ksconf, "License Color", LicenseColor),
-                        New IniKey(ksconf, "Background Color", BackgroundColor),
-                        New IniKey(ksconf, "Input Color", InputColor),
-                        New IniKey(ksconf, "List Entry Color", ListEntryColor),
-                        New IniKey(ksconf, "List Value Color", ListValueColor),
-                        New IniKey(ksconf, "Kernel Stage Color", StageColor),
-                        New IniKey(ksconf, "Error Text Color", ErrorColor),
-                        New IniKey(ksconf, "Warning Text Color", WarningColor),
-                        New IniKey(ksconf, "Option Color", OptionColor)))
+                        New IniKey(ksconf, "User Name Shell Color", If(New Color(UserNameShellColor).Type = ColorType.TrueColor, UserNameShellColor.EncloseByDoubleQuotes, UserNameShellColor)),
+                        New IniKey(ksconf, "Host Name Shell Color", If(New Color(HostNameShellColor).Type = ColorType.TrueColor, HostNameShellColor.EncloseByDoubleQuotes, HostNameShellColor)),
+                        New IniKey(ksconf, "Continuable Kernel Error Color", If(New Color(ContKernelErrorColor).Type = ColorType.TrueColor, ContKernelErrorColor.EncloseByDoubleQuotes, ContKernelErrorColor)),
+                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", If(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor, UncontKernelErrorColor.EncloseByDoubleQuotes, UncontKernelErrorColor)),
+                        New IniKey(ksconf, "Text Color", If(New Color(NeutralTextColor).Type = ColorType.TrueColor, NeutralTextColor.EncloseByDoubleQuotes, NeutralTextColor)),
+                        New IniKey(ksconf, "License Color", If(New Color(LicenseColor).Type = ColorType.TrueColor, LicenseColor.EncloseByDoubleQuotes, LicenseColor)),
+                        New IniKey(ksconf, "Background Color", If(New Color(BackgroundColor).Type = ColorType.TrueColor, BackgroundColor.EncloseByDoubleQuotes, BackgroundColor)),
+                        New IniKey(ksconf, "Input Color", If(New Color(InputColor).Type = ColorType.TrueColor, InputColor.EncloseByDoubleQuotes, InputColor)),
+                        New IniKey(ksconf, "List Entry Color", If(New Color(ListEntryColor).Type = ColorType.TrueColor, ListEntryColor.EncloseByDoubleQuotes, ListEntryColor)),
+                        New IniKey(ksconf, "List Value Color", If(New Color(ListValueColor).Type = ColorType.TrueColor, ListValueColor.EncloseByDoubleQuotes, ListValueColor)),
+                        New IniKey(ksconf, "Kernel Stage Color", If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)),
+                        New IniKey(ksconf, "Error Text Color", If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)),
+                        New IniKey(ksconf, "Warning Text Color", If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)),
+                        New IniKey(ksconf, "Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor))))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
