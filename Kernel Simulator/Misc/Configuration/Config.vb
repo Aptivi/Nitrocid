@@ -205,8 +205,7 @@ Public Module Config
                         New IniKey(ksconf, "Prompt Style", ""),
                         New IniKey(ksconf, "FTP Prompt Style", ""),
                         New IniKey(ksconf, "Mail Prompt Style", ""),
-                        New IniKey(ksconf, "SFTP Prompt Style", ""),
-                        New IniKey(ksconf, "Show SSH banner", "False")))
+                        New IniKey(ksconf, "SFTP Prompt Style", "")))
 
                 'The Network Section
                 ksconf.Sections.Add(
@@ -219,7 +218,8 @@ Public Module Config
                         New IniKey(ksconf, "Log FTP IP address", "False"),
                         New IniKey(ksconf, "Return only first FTP profile", "False"),
                         New IniKey(ksconf, "Show mail message preview", "False"),
-                        New IniKey(ksconf, "Record chat to debug log", "True")))
+                        New IniKey(ksconf, "Record chat to debug log", "True"),
+                        New IniKey(ksconf, "Show SSH banner", "False")))
 
                 'The Screensaver Section
                 ksconf.Sections.Add(
