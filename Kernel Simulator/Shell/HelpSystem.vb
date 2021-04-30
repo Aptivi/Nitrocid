@@ -403,7 +403,7 @@ Public Module HelpSystem
         ElseIf command = "setthemes" Then
 
             W(DoTranslation("Usage:") + " setthemes <Theme>" + vbNewLine +
-              "       " + "<Theme>: " + String.Join(", ", colorTemplates.Keys), True, ColTypes.Neutral)
+              "       " + "<Theme>: ThemeName.json, " + String.Join(", ", colorTemplates.Keys), True, ColTypes.Neutral)
 
         ElseIf command = "settings" Then
 
