@@ -1363,6 +1363,7 @@ Public Module GetCommand
     Sub CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
         If e.SpecialKey = ConsoleSpecialKey.ControlC Then
             CancelRequested = True
+            Console.WriteLine()
             DefConsoleOut = Console.Out
             Console.SetOut(StreamWriter.Null)
             e.Cancel = True

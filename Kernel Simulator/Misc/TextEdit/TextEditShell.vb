@@ -101,13 +101,4 @@ Public Module TextEditShell
         TextEdit_Exiting = False
     End Sub
 
-    Sub EditorCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            TextEdit_CommandThread.Abort()
-        End If
-    End Sub
-
 End Module

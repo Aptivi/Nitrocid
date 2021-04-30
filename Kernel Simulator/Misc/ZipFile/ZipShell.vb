@@ -37,7 +37,7 @@ Module ZipShell
     ''' <param name="ZipFile">A ZIP file. We recommend you to use <see cref="NeutralizePath(String, Boolean)"></see> to neutralize path.</param>
     Public Sub InitializeZipShell(ByVal ZipFile As String)
         'Add handler for text editor shell
-        AddHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+        AddHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
         ZipShell_CurrentDirectory = CurrDir
 
@@ -94,17 +94,8 @@ Module ZipShell
 
         'Remove handler for text editor shell
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+        RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
         ZipShell_Exiting = False
-    End Sub
-
-    Sub ZipShellCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            ZipShell_CommandThread.Abort()
-        End If
     End Sub
 
 End Module

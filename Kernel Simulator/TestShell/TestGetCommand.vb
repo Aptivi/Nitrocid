@@ -252,6 +252,7 @@ Module TestGetCommand
 
     Sub TCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
         If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            Console.WriteLine()
             DefConsoleOut = Console.Out
             Console.SetOut(StreamWriter.Null)
             e.Cancel = True

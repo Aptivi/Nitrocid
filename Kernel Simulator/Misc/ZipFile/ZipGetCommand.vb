@@ -103,8 +103,8 @@ Public Module ZipGetCommand
                 End If
             End If
 
-                'See if the command is done (passed all required arguments)
-                If Not CommandDone Then
+            'See if the command is done (passed all required arguments)
+            If Not CommandDone Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Err, Command)
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments.Length)
                 ZipShell_GetHelp(Command)
@@ -115,6 +115,16 @@ Public Module ZipGetCommand
             WStkTrc(ex)
             EventManager.RaiseTextCommandError(CommandText, ex)
         End Try
+    End Sub
+
+    Sub ZipShellCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
+        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            Console.WriteLine()
+            DefConsoleOut = Console.Out
+            Console.SetOut(StreamWriter.Null)
+            e.Cancel = True
+            ZipShell_CommandThread.Abort()
+        End If
     End Sub
 
 End Module
