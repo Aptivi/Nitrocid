@@ -927,7 +927,12 @@ Public Module GetCommand
 
                     If eqargs?.Length - 1 >= 0 Then
                         If ColoredShell = True Then
-                            TemplateSet(eqargs(0))
+                            Dim ThemePath As String = NeutralizePath(eqargs(0))
+                            If File.Exists(ThemePath) Then
+                                ApplyThemeFromFile(ThemePath)
+                            Else
+                                ApplyThemeFromResources(eqargs(0))
+                            End If
                         Else
                             W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."), True, ColTypes.Neutral)
                         End If

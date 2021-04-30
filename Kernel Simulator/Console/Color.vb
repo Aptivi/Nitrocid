@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Public Class Color
 
     ''' <summary>
@@ -183,7 +185,7 @@ Public Module ColorTools
     ''' Sets system colors according to the programmed templates
     ''' </summary>
     ''' <param name="theme">A specified theme</param>
-    Public Sub TemplateSet(ByVal theme As String)
+    Public Sub ApplyThemeFromResources(ByVal theme As String)
         Wdbg("I", "Theme: {0}", theme)
         If colorTemplates.ContainsKey(theme) Then
             Wdbg("I", "Theme found.")
@@ -205,29 +207,13 @@ Public Module ColorTools
             If Not theme = "Default" Then
 #Disable Warning BC42104
                 'Set colors as appropriate
-                InputColor = ThemeInfo.ThemeInputColor.PlainSequence
-                LicenseColor = ThemeInfo.ThemeLicenseColor.PlainSequence
-                ContKernelErrorColor = ThemeInfo.ThemeContKernelErrorColor.PlainSequence
-                UncontKernelErrorColor = ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence
-                HostNameShellColor = ThemeInfo.ThemeHostNameShellColor.PlainSequence
-                UserNameShellColor = ThemeInfo.ThemeUserNameShellColor.PlainSequence
-                BackgroundColor = ThemeInfo.ThemeBackgroundColor.PlainSequence
-                NeutralTextColor = ThemeInfo.ThemeNeutralTextColor.PlainSequence
-                ListEntryColor = ThemeInfo.ThemeCmdListColor.PlainSequence
-                ListValueColor = ThemeInfo.ThemeCmdDefColor.PlainSequence
-                StageColor = ThemeInfo.ThemeStageColor.PlainSequence
-                ErrorColor = ThemeInfo.ThemeErrorColor.PlainSequence
-                WarningColor = ThemeInfo.ThemeWarningColor.PlainSequence
-                OptionColor = ThemeInfo.ThemeOptionColor.PlainSequence
+                SetColors(ThemeInfo.ThemeInputColor.PlainSequence, ThemeInfo.ThemeLicenseColor.PlainSequence, ThemeInfo.ThemeContKernelErrorColor.PlainSequence,
+                          ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence, ThemeInfo.ThemeHostNameShellColor.PlainSequence, ThemeInfo.ThemeUserNameShellColor.PlainSequence,
+                          ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeCmdListColor.PlainSequence,
+                          ThemeInfo.ThemeCmdDefColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
+                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence)
 #Enable Warning BC42104
-
-                'Load background
-                LoadBack()
             End If
-
-            'Save and parse theme
-            Wdbg("I", "Saving theme")
-            MakePermanent()
 
             'Raise event
             EventManager.RaiseThemeSet(theme)
@@ -238,6 +224,39 @@ Public Module ColorTools
             'Raise event
             EventManager.RaiseThemeSetError(theme, "notfound")
         End If
+    End Sub
+
+    ''' <summary>
+    ''' Sets system colors according to the template file
+    ''' </summary>
+    ''' <param name="ThemeFile">Theme file</param>
+    Public Sub ApplyThemeFromFile(ByVal ThemeFile As String)
+        Try
+            Wdbg("I", "Theme file name: {0}", ThemeFile)
+            ThemeFile = NeutralizePath(ThemeFile, True)
+            Wdbg("I", "Theme file path: {0}", ThemeFile)
+
+            'Populate theme info
+            Dim ThemeInfo As New ThemeInfo(New StreamReader(ThemeFile))
+
+            If Not ThemeFile = "Default" Then
+                'Set colors as appropriate
+                SetColors(ThemeInfo.ThemeInputColor.PlainSequence, ThemeInfo.ThemeLicenseColor.PlainSequence, ThemeInfo.ThemeContKernelErrorColor.PlainSequence,
+                          ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence, ThemeInfo.ThemeHostNameShellColor.PlainSequence, ThemeInfo.ThemeUserNameShellColor.PlainSequence,
+                          ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeCmdListColor.PlainSequence,
+                          ThemeInfo.ThemeCmdDefColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
+                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence)
+            End If
+
+            'Raise event
+            EventManager.RaiseThemeSet(ThemeFile)
+        Catch ex As Exception
+            W(DoTranslation("Invalid color template {0}"), True, ColTypes.Err, ThemeFile)
+            Wdbg("E", "Theme not found.")
+
+            'Raise event
+            EventManager.RaiseThemeSetError(ThemeFile, "notfound")
+        End Try
     End Sub
 
     ''' <summary>

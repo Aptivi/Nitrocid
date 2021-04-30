@@ -453,7 +453,7 @@ Public Module Config
             'Colored Shell
             If configReader.Sections("Shell").Keys("Colored Shell").Value = "False" Then
                 Wdbg("W", "Detected uncolored shell. Removing colors...")
-                TemplateSet("LinuxUncolored")
+                ApplyThemeFromResources("LinuxUncolored")
                 ColoredShell = False
             End If
 
