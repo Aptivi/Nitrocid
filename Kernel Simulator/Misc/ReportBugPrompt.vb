@@ -54,7 +54,7 @@ Module ReportBugPrompt
             Wdbg("I", "Answer: {0}", AnswerFeature)
             If String.IsNullOrWhiteSpace(AnswerFeature) Then
                 Wdbg("W", "Text written is not valid. Returning...")
-                W(DoTranslation("You must specify a feature."), True, ColTypes.Err, AnswerKind)
+                W(DoTranslation("You must specify a feature."), True, ColTypes.Err)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
                 Console.ReadKey()
             Else
@@ -70,7 +70,7 @@ Module ReportBugPrompt
             Wdbg("I", "Answer: {0}", AnswerRequest)
             If String.IsNullOrWhiteSpace(AnswerRequest) Then
                 Wdbg("W", "Text written is not valid. Returning...")
-                W(DoTranslation("You must write your request."), True, ColTypes.Err, AnswerKind)
+                W(DoTranslation("You must write your request."), True, ColTypes.Err)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
                 Console.ReadKey()
             Else

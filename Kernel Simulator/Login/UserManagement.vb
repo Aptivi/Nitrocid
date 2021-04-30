@@ -352,4 +352,72 @@ Public Module UserManagement
         Return UsersList
     End Function
 
+    ''' <summary>
+    ''' Handles the prompts for setting up a first user
+    ''' </summary>
+    Sub FirstUserTrigger()
+        Dim [Step] As Integer = 1
+        Dim AnswerUsername As String = ""
+        Dim AnswerPassword As String = ""
+        Dim AnswerType As Integer
+
+        'First, select user name
+        W(DoTranslation("It looks like you've got no user except root. This is bad. We'll guide you how to create one."), True, ColTypes.Neutral)
+        While [Step] = 1
+            W(DoTranslation("Write your username.") + vbNewLine, True, ColTypes.Neutral)
+            W(">> ", False, ColTypes.Input)
+            AnswerUsername = Console.ReadLine
+            Wdbg("I", "Answer: {0}", AnswerUsername)
+            If String.IsNullOrWhiteSpace(AnswerUsername) Then
+                Wdbg("W", "Username is not valid. Returning...")
+                W(DoTranslation("You must write your username."), True, ColTypes.Err)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                Console.ReadKey()
+            Else
+                [Step] += 1
+            End If
+        End While
+
+        'Second, write password
+        While [Step] = 2
+            W(DoTranslation("Write your password.") + vbNewLine, True, ColTypes.Neutral)
+            W(">> ", False, ColTypes.Input)
+            AnswerPassword = ReadLineNoInput("*")
+            Wdbg("I", "Answer: {0}", AnswerPassword)
+            If String.IsNullOrWhiteSpace(AnswerPassword) Then
+                Wdbg("W", "Password is not valid. Returning...")
+                W(DoTranslation("You must write your password."), True, ColTypes.Err)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                Console.ReadKey()
+            Else
+                [Step] += 1
+            End If
+        End While
+
+        'Third, select account type
+        While [Step] = 3
+            W(DoTranslation("Select account type.") + vbNewLine, True, ColTypes.Neutral)
+            W("1) " + DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), True, ColTypes.Option)
+            W("2) " + DoTranslation("Normal User: This account type is slightly more restricted than administrators."), True, ColTypes.Option)
+            W(">> ", False, ColTypes.Input)
+            AnswerType = Val(Console.ReadKey(True).KeyChar)
+            Console.WriteLine()
+            Wdbg("I", "Answer: {0}", AnswerType)
+            Select Case AnswerType
+                Case 1, 2
+                    [Step] += 1
+                Case Else '???
+                    Wdbg("W", "Option is not valid. Returning...")
+                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, AnswerType)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                    Console.ReadKey()
+            End Select
+        End While
+
+        'Finally, create an account
+        AddUser(AnswerUsername, AnswerPassword)
+        If AnswerType = 1 Then Permission(PermissionType.Administrator, AnswerUsername, PermissionManagementMode.Allow)
+        W(DoTranslation("Congratulations! You've made a new account! To finish this off, log in as your new account."), True, ColTypes.Neutral)
+    End Sub
+
 End Module

@@ -41,11 +41,15 @@ Public Module Login
             'Fire event PreLogin
             EventManager.RaisePreLogin()
 
-            'Extremely rare under normal conditions except if modded: Check to see if there are any users
-            'TODO: Allow users to add users as part of an upcoming first-user trigger system.
-            If userword.Count = 0 Then 'Check if user amount is zero
+            'Check to see if there are any users
+            If userword.Count = 0 Then
+                'Extremely rare state reached
                 Wdbg("F", "Shell reached rare state, because userword count is 0.")
                 Throw New Exceptions.NullUsersException(DoTranslation("There are no more users remaining in the list."))
+            ElseIf userword.Count = 1 And userword.Keys(0) = "root" Then
+                'Run a first user trigger
+                Wdbg("W", "Only root is found. Triggering first user setup...")
+                FirstUserTrigger()
             End If
 
             'Clear console if clsOnLogin is set to True (If a user has enabled Clear Screen on Login)
