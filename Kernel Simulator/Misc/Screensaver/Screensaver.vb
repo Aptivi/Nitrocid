@@ -257,7 +257,18 @@ Public Module Screensaver
                 If file.EndsWith("SS.m") Then
                     finalSaver = GenSaver(IO.File.ReadAllText(modPath + file))
                 ElseIf file.EndsWith(".dll") Then
-                    finalSaver = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
+                    Try
+                        finalSaver = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
+                    Catch ex As ReflectionTypeLoadException
+                        Wdbg("E", "Error trying to load dynamic mod {0}: {1}", file, ex.Message)
+                        WStkTrc(ex)
+                        W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Err)
+                        For Each LoaderException As Exception In ex.LoaderExceptions
+                            Wdbg("E", "Loader exception: {1}", LoaderException.Message)
+                            WStkTrc(LoaderException)
+                            W(LoaderException.Message, True, ColTypes.Err)
+                        Next
+                    End Try
                 End If
                 If DoneFlag = True Then
                     Wdbg("I", "{0} compiled correctly. Starting...", file)

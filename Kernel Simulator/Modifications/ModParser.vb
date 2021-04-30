@@ -39,6 +39,10 @@ Public Module ModParser
         ''' </summary>
         Property Def As String
         ''' <summary>
+        ''' Indicates whether only admins can use this command
+        ''' </summary>
+        Property CmdRestricted As Boolean
+        ''' <summary>
         ''' Mod name
         ''' </summary>
         Property Name As String
@@ -214,8 +218,19 @@ Public Module ModParser
             FinalizeMods(script, modFile, StartStop)
         ElseIf modFile.EndsWith(".dll") Then
             'Mod is a dynamic DLL
-            Dim script As IScript = GetModInstance(Assembly.LoadFrom(modPath + modFile))
-            FinalizeMods(script, modFile, StartStop)
+            Try
+                Dim script As IScript = GetModInstance(Assembly.LoadFrom(modPath + modFile))
+                FinalizeMods(script, modFile, StartStop)
+            Catch ex As ReflectionTypeLoadException
+                Wdbg("E", "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message)
+                WStkTrc(ex)
+                W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Err)
+                For Each LoaderException As Exception In ex.LoaderExceptions
+                    Wdbg("E", "Loader exception: {1}", LoaderException.Message)
+                    WStkTrc(LoaderException)
+                    W(LoaderException.Message, True, ColTypes.Err)
+                Next
+            End Try
         Else
             'Ignore all mods that its file name doesn't end with .m
             Wdbg("W", "Unsupported file type for mod file {0}.", modFile)

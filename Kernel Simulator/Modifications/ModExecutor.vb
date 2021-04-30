@@ -76,8 +76,13 @@ Public Module ModExecutor
         End If
         For Each ModParts As String In scripts(actualCmd).Keys
             If scripts(actualCmd)(ModParts).Cmd = parts(0) Then
-                Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
-                scripts(actualCmd)(ModParts).PerformCmd(args)
+                If (scripts(actualCmd)(ModParts).CmdRestricted And adminList(signedinusrnm)) Or Not scripts(actualCmd)(ModParts).CmdRestricted Then
+                    Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
+                    scripts(actualCmd)(ModParts).PerformCmd(args)
+                Else
+                    Wdbg("E", "User {0} doesn't have permission to use {1} from {2}!", signedinusrnm, parts(0), ModParts)
+                    W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, parts(0))
+                End If
             End If
         Next
         EventManager.RaisePostExecuteModCommand(cmd)
