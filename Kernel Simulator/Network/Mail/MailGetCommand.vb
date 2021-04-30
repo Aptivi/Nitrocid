@@ -40,7 +40,7 @@ Module MailGetCommand
             .HasFieldsEnclosedInQuotes = True
         }
         FullArgsLQ = Parser.ReadFields
-        If Not FullArgsLQ Is Nothing Then
+        If FullArgsLQ IsNot Nothing Then
             For i As Integer = 0 To FullArgsLQ.Length - 1
                 FullArgsLQ(i).Replace("""", "")
             Next

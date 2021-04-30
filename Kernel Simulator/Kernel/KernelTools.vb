@@ -41,7 +41,7 @@ Public Module KernelTools
     Public Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal ParamArray Variables() As Object)
         Try
             'Unquiet
-            If Not BootArgs Is Nothing Then
+            If BootArgs IsNot Nothing Then
                 If BootArgs.Contains("quiet") Then
                     Wdbg("I", "Removing quiet...")
                     Console.SetOut(DefConsoleOut)
@@ -169,7 +169,7 @@ Public Module KernelTools
 
                 'Write info (Inner exceptions)
                 Dim InnerExc As Exception = Exc.InnerException
-                While Not InnerExc Is Nothing
+                While InnerExc IsNot Nothing
                     Count += 1
                     Dump.WriteLine(DoTranslation("> Exception: {0}") + vbNewLine +
                                    DoTranslation("> Description: {1}") + vbNewLine +
@@ -178,7 +178,7 @@ Public Module KernelTools
                                    DoTranslation("> Stack trace <") + vbNewLine + vbNewLine +
                                    InnerExc.StackTrace + vbNewLine, InnerExc.ToString.Substring(0, InnerExc.ToString.IndexOf(":")), InnerExc.Message, InnerExc.HResult, InnerExc.Source)
                     InnerExc = InnerExc.InnerException
-                    If Not InnerExc Is Nothing Then
+                    If InnerExc IsNot Nothing Then
                         Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<"), Count)
                     Else
                         Dump.WriteLine(DoTranslation(">> Exception {0} is the root cause <<") + vbNewLine, Count)
@@ -512,7 +512,7 @@ Public Module KernelTools
         'Get compile date
         asmStream = New FileStream(Path.GetFullPath(codePath.Location), FileMode.Open, FileAccess.Read)
         asmStream.Read(asmByte, 0, 2048)
-        If Not asmStream Is Nothing Then asmStream.Close()
+        If asmStream IsNot Nothing Then asmStream.Close()
 
         'We are almost there
         Dim i64 As Integer = BitConverter.ToInt32(asmByte, Offset)
@@ -536,7 +536,7 @@ Public Module KernelTools
             'Get compile date
             asmStream = New FileStream(Path.GetFullPath(codePath.Location), FileMode.Open, FileAccess.Read)
             asmStream.Read(asmByte, 0, 2048)
-            If Not asmStream Is Nothing Then asmStream.Close()
+            If asmStream IsNot Nothing Then asmStream.Close()
 
             'We are almost there
             Dim i64 As Integer = BitConverter.ToInt32(asmByte, Offset)

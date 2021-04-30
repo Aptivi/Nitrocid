@@ -44,7 +44,7 @@ Public Module SFTPGetCommand
             .HasFieldsEnclosedInQuotes = True
         }
         ArgsQ = Parser.ReadFields
-        If Not ArgsQ Is Nothing Then
+        If ArgsQ IsNot Nothing Then
             For i As Integer = 0 To ArgsQ.Length - 1
                 ArgsQ(i).Replace("""", "")
             Next

@@ -138,7 +138,7 @@ Public Module MailDirectory
         Next
 
 #Disable Warning BC42104
-        If Not Opened Is Nothing Then
+        If Opened IsNot Nothing Then
             Return Opened
         Else
             Throw New Exceptions.NoSuchMailDirectoryException(DoTranslation("Mail folder {0} not found.").FormatString(FolderString))

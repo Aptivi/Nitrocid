@@ -268,20 +268,20 @@ Public Module ColorTools
         ksconf.Load(configPath)
 
         'We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
-        ksconf.Sections("Colors").Keys("User Name Shell Color").Value = New Color(UserNameShellColor).PlainSequence
-        ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = New Color(HostNameShellColor).PlainSequence
-        ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = New Color(ContKernelErrorColor).PlainSequence
-        ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = New Color(UncontKernelErrorColor).PlainSequence
-        ksconf.Sections("Colors").Keys("Text Color").Value = New Color(NeutralTextColor).PlainSequence
-        ksconf.Sections("Colors").Keys("License Color").Value = New Color(LicenseColor).PlainSequence
-        ksconf.Sections("Colors").Keys("Background Color").Value = New Color(BackgroundColor).PlainSequence
-        ksconf.Sections("Colors").Keys("Input Color").Value = New Color(InputColor).PlainSequence
-        ksconf.Sections("Colors").Keys("List Entry Color").Value = New Color(ListEntryColor).PlainSequence
-        ksconf.Sections("Colors").Keys("List Value Color").Value = New Color(ListValueColor).PlainSequence
-        ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = New Color(StageColor).PlainSequence
-        ksconf.Sections("Colors").Keys("Error Text Color").Value = New Color(ErrorColor).PlainSequence
-        ksconf.Sections("Colors").Keys("Warning Text Color").Value = New Color(WarningColor).PlainSequence
-        ksconf.Sections("Colors").Keys("Option Color").Value = New Color(OptionColor).PlainSequence
+        ksconf.Sections("Colors").Keys("User Name Shell Color").Value = If(New Color(UserNameShellColor).Type = ColorType.TrueColor, UserNameShellColor.EncloseByDoubleQuotes, UserNameShellColor)
+        ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = If(New Color(HostNameShellColor).Type = ColorType.TrueColor, HostNameShellColor.EncloseByDoubleQuotes, HostNameShellColor)
+        ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = If(New Color(ContKernelErrorColor).Type = ColorType.TrueColor, ContKernelErrorColor.EncloseByDoubleQuotes, ContKernelErrorColor)
+        ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = If(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor, UncontKernelErrorColor.EncloseByDoubleQuotes, UncontKernelErrorColor)
+        ksconf.Sections("Colors").Keys("Text Color").Value = If(New Color(NeutralTextColor).Type = ColorType.TrueColor, NeutralTextColor.EncloseByDoubleQuotes, NeutralTextColor)
+        ksconf.Sections("Colors").Keys("License Color").Value = If(New Color(LicenseColor).Type = ColorType.TrueColor, LicenseColor.EncloseByDoubleQuotes, LicenseColor)
+        ksconf.Sections("Colors").Keys("Background Color").Value = If(New Color(BackgroundColor).Type = ColorType.TrueColor, BackgroundColor.EncloseByDoubleQuotes, BackgroundColor)
+        ksconf.Sections("Colors").Keys("Input Color").Value = If(New Color(InputColor).Type = ColorType.TrueColor, InputColor.EncloseByDoubleQuotes, InputColor)
+        ksconf.Sections("Colors").Keys("List Entry Color").Value = If(New Color(ListEntryColor).Type = ColorType.TrueColor, ListEntryColor.EncloseByDoubleQuotes, ListEntryColor)
+        ksconf.Sections("Colors").Keys("List Value Color").Value = If(New Color(ListValueColor).Type = ColorType.TrueColor, ListValueColor.EncloseByDoubleQuotes, ListValueColor)
+        ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)
+        ksconf.Sections("Colors").Keys("Error Text Color").Value = If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)
+        ksconf.Sections("Colors").Keys("Warning Text Color").Value = If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)
+        ksconf.Sections("Colors").Keys("Option Color").Value = If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)
         ksconf.Save(configPath)
     End Sub
 

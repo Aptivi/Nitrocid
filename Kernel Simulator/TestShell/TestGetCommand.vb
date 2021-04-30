@@ -41,7 +41,7 @@ Module TestGetCommand
             .HasFieldsEnclosedInQuotes = True
         }
         FullArgsQ = Parser.ReadFields.ToList
-        If Not FullArgsQ Is Nothing Then
+        If FullArgsQ IsNot Nothing Then
             For i As Integer = 0 To FullArgsQ.Count - 1
                 FullArgsQ(i).Replace("""", "")
             Next
