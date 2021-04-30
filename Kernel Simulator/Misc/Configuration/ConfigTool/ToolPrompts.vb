@@ -27,8 +27,6 @@ Public Module ToolPrompts
         SBoolean
         SInt
         SString
-        <Obsolete>
-        SMultivar
         SSelection
         SVariant
         SMenu
@@ -343,8 +341,6 @@ Public Module ToolPrompts
         Dim KeyFinished As Boolean
         Dim KeyType As SettingsKeyType
         Dim KeyVar As String = ""
-        Dim KeyVars As Dictionary(Of String, Object)
-        Dim MultivarCustomAction As String = ""
         Dim VariantValue As Object = ""
         Dim AnswerString As String = ""
         Dim AnswerInt As Integer
