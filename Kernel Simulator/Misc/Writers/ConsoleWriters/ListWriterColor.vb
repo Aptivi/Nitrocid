@@ -55,7 +55,7 @@ Public Module ListWriterColor
                         End If
                     End If
                 Next
-                If backgroundColor = ConsoleColors.Black Then ResetColor()
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
             Catch ex As Exception
                 WStkTrc(ex)
                 KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -105,7 +105,7 @@ Public Module ListWriterColor
                         End If
                     End If
                 Next
-                If backgroundColor = ConsoleColors.Black Then ResetColor()
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
             Catch ex As Exception
                 WStkTrc(ex)
                 KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -155,7 +155,7 @@ Public Module ListWriterColor
                         End If
                     End If
                 Next
-                If BackgroundColor = ConsoleColors.Black Then ResetColor()
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
             Catch ex As Exception
                 WStkTrc(ex)
                 KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)

@@ -48,7 +48,7 @@ Module TextWriterWhereColor
                 ElseIf colorType = ColTypes.License Then
                     Write(New Color(LicenseColor).VTSequenceForeground)
                 ElseIf colorType = ColTypes.Gray Then
-                    If BackgroundColor = ConsoleColors.DarkYellow Or BackgroundColor = ConsoleColors.Yellow Or BackgroundColor = ConsoleColors.White Then
+                    If BackgroundColor = New Color(ConsoleColors.DarkYellow).PlainSequence Or BackgroundColor = New Color(ConsoleColors.Yellow).PlainSequence Or BackgroundColor = New Color(ConsoleColors.White).PlainSequence Then
                         Write(New Color(NeutralTextColor).VTSequenceForeground)
                     Else
                         Write(New Color(ConsoleColors.Gray).VTSequenceForeground)
@@ -82,7 +82,7 @@ Module TextWriterWhereColor
             SetCursorPosition(Left, Top)
             Write(msg)
             If [Return] Then SetCursorPosition(OldLeft, OldTop)
-            If BackgroundColor = ConsoleColors.Black Or BackgroundColor = "0;0;0" Then ResetColor()
+            If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
             If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
             End If
@@ -118,7 +118,7 @@ Module TextWriterWhereColor
             SetCursorPosition(Left, Top)
             Write(msg)
             If [Return] Then SetCursorPosition(OldLeft, OldTop)
-            If BackgroundColor = ConsoleColors.Black Or BackgroundColor = "0;0;0" Then ResetColor()
+            If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
             End If
@@ -194,7 +194,7 @@ Module TextWriterWhereColor
             SetCursorPosition(Left, Top)
             Write(msg)
             If [Return] Then SetCursorPosition(OldLeft, OldTop)
-            If BackgroundColor = ConsoleColors.Black Or BackgroundColor = "0;0;0" Then ResetColor()
+            If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
             If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
             End If
