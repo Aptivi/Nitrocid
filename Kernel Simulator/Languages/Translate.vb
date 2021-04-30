@@ -20,7 +20,7 @@ Imports System.Globalization
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "iri", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn", "wls"}
+    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "csc", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "iri", "ita", "jpn", "jpn-T", "jvn", "kor", "kor-T", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn", "wls"}
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -95,6 +95,8 @@ Public Module Translate
                 translated = My.Resources.chi_T
             Case "cro" 'Croatian
                 translated = My.Resources.cro
+            Case "csc" 'Corsican
+                translated = My.Resources.csc
             Case "ctl" 'Catalan
                 translated = My.Resources.ctl
             Case "cze" 'Czech
@@ -123,6 +125,8 @@ Public Module Translate
                 translated = My.Resources.jpn
             Case "jpn-T" 'Japanese (translated)
                 translated = My.Resources.jpn_T
+            Case "jvn" 'Javanese
+                translated = My.Resources.jvn
             Case "kor" 'Korean (transliterated)
                 translated = My.Resources.kor
             Case "kor-T" 'Korean (translated)
@@ -358,6 +362,8 @@ CHOICE:
                 Return "Chinese (Simplified, China)"
             Case "cro"
                 Return "Croatian (Croatia)"
+            Case "csc"
+                Return "Corsican (France)"
             Case "ctl"
                 Return "Catalan (Catalan)"
             Case "cze"
@@ -384,6 +390,8 @@ CHOICE:
                 Return "Italian (Italy)"
             Case "jpn-T", "jpn"
                 Return "Japanese (Japan)"
+            Case "jvn"
+                Return "Javanese (Latin, Indonesia)"
             Case "kor-T", "kor"
                 Return "Korean (Korea)"
             Case "mal"

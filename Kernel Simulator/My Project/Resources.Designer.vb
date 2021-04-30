@@ -62,18 +62,21 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;MediumPurple4&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;DarkOliveGreen3_87d75f&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;LightSteelBlue3&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;LightSteelBlue3&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;MediumPurple4&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;SpringGreen3_00af5f&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;DarkOliveGreen3_87d75f&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;DarkOliveGreen3_87d75f&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;SpringGreen3_00af5f&quot;,
-        '''    &quot;StageColor&quot;: &quot;LightSteelBlue3&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;Lig [rest of string was truncated]&quot;;.
+        '''    &quot;InputColor&quot;: &quot;60&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;113&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;146&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;146&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;60&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;35&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;113&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;113&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;35&quot;,
+        '''    &quot;StageColor&quot;: &quot;146&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;146&quot;,
+        '''    &quot;WarningColor&quot;: &quot;146&quot;,
+        '''    &quot;OptionColor&quot;: &quot;113&quot;
+        '''}.
         '''</summary>
         Public ReadOnly Property _3Y_Diamond() As String
             Get
@@ -83,20 +86,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;White&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;White&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;Red&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;DarkGreen&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Green&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Gray&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;DarkGray&quot;,
-        '''    &quot;StageColor&quot;: &quot;Green&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;Red&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;OptionColor&quot;: &quot;DarkYellow&quot;
+        '''    &quot;InputColor&quot;: &quot;15&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;11&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;9&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;2&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;10&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;3&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;8&quot;,
+        '''    &quot;StageColor&quot;: &quot;10&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;9&quot;,
+        '''    &quot;WarningColor&quot;: &quot;11&quot;,
+        '''    &quot;OptionColor&quot;: &quot;3&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property _Default() As String
@@ -164,20 +167,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;SkyBlue3&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Violet&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;OrangeRed1&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;OrangeRed1&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;DarkOrange3&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;OrangeRed1&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Violet&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;Blue&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;MediumTurquoise&quot;,
-        '''    &quot;StageColor&quot;: &quot;MediumTurquoise&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;OrangeRed1&quot;,
-        '''    &quot;WarningColor&quot;: &quot;OrangeRed1&quot;,
-        '''    &quot;OptionColor&quot;: &quot;Blue&quot;
+        '''    &quot;InputColor&quot;: &quot;74&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;177&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;202&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;202&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;130&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;202&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;177&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;12&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;80&quot;,
+        '''    &quot;StageColor&quot;: &quot;80&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;202&quot;,
+        '''    &quot;WarningColor&quot;: &quot;202&quot;,
+        '''    &quot;OptionColor&quot;: &quot;12&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property BedOS() As String
@@ -224,20 +227,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Black&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Black&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Black&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;Black&quot;,
-        '''    &quot;HostNameShellColor&quot;:&quot;Black&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Black&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;White&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Black&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;Black&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;Black&quot;,
-        '''    &quot;StageColor&quot;: &quot;Black&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;Black&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Black&quot;,
-        '''    &quot;OptionColor&quot;: &quot;Black&quot;
+        '''    &quot;InputColor&quot;: &quot;0&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;0&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;HostNameShellColor&quot;:&quot;0&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;0&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;15&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;0&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;0&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;0&quot;,
+        '''    &quot;StageColor&quot;: &quot;0&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;WarningColor&quot;: &quot;0&quot;,
+        '''    &quot;OptionColor&quot;: &quot;0&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property BlackOnWhite() As String
@@ -248,20 +251,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Cyan&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Cyan&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Blue&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;Blue&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;Blue&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Blue&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;DarkCyan&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Cyan&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;Cyan&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;Blue&quot;,
-        '''    &quot;StageColor&quot;: &quot;Cyan&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;Blue&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Blue&quot;,
-        '''    &quot;OptionColor&quot;: &quot;Cyan&quot;
+        '''    &quot;InputColor&quot;: &quot;14&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;14&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;12&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;12&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;12&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;12&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;6&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;14&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;14&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;12&quot;,
+        '''    &quot;StageColor&quot;: &quot;14&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;12&quot;,
+        '''    &quot;WarningColor&quot;: &quot;12&quot;,
+        '''    &quot;OptionColor&quot;: &quot;14&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property Bluespire() As String
@@ -342,6 +345,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Comandi dispunibili: {0}
+        '''Scrive cumandamentu:
+        '''L&apos;iniezione di cumandamentu hè stata annullata.
+        '''Separate argumenti di avvio cù virgole senza spazi, per esempiu, &apos;motd, gpuprobe&apos;
+        '''Comandamenti separati nantu à &apos;cmdinject&apos; cù dui punti cù spazii, per esempiu, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Innota chì l&apos;argumentu &apos;debug&apos; ùn copre micca cumpletamente u kernel.
+        '''bargs: L&apos;argumentu dumandatu {0} ùn hè micca trovu.
+        '''bargs: Errore irrecuperabile in l&apos;argumentu:
+        '''Argumenti dispunibili: {0}
+        '''Argumenti  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property csc() As String
+            Get
+                Return ResourceManager.GetString("csc", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Ordres disponibles: {0}
         '''Escriu l&apos;ordre:
         '''La injecció d’ordres s’ha cancel·lat.
@@ -399,20 +420,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;White&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;White&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;White&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;White&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;Gray&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Gray&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;DeepPink3&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;White&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;White&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;White&quot;,
-        '''    &quot;StageColor&quot;: &quot;White&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;WarningColor&quot;: &quot;White&quot;,
-        '''    &quot;OptionColor&quot;: &quot;White&quot;
+        '''    &quot;InputColor&quot;: &quot;15&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;161&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;15&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;15&quot;,
+        '''    &quot;StageColor&quot;: &quot;15&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;WarningColor&quot;: &quot;15&quot;,
+        '''    &quot;OptionColor&quot;: &quot;15&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property Debian() As String
@@ -532,20 +553,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Gray&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Gray&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;Gray&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Gray&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Gray&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;Gray&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;Gray&quot;,
-        '''    &quot;StageColor&quot;: &quot;Gray&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Gray&quot;,
-        '''    &quot;OptionColor&quot;: &quot;Gray&quot;
+        '''    &quot;InputColor&quot;: &quot;7&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;7&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;3&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;7&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;7&quot;,
+        '''    &quot;StageColor&quot;: &quot;7&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;WarningColor&quot;: &quot;7&quot;,
+        '''    &quot;OptionColor&quot;: &quot;7&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property GrayOnYellow() As String
@@ -556,20 +577,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;White&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;StageColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;WarningColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;OptionColor&quot;: &quot;Yellow&quot;
+        '''    &quot;InputColor&quot;: &quot;11&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;11&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;3&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;3&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;11&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;3&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;11&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;3&quot;,
+        '''    &quot;StageColor&quot;: &quot;11&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;3&quot;,
+        '''    &quot;WarningColor&quot;: &quot;3&quot;,
+        '''    &quot;OptionColor&quot;: &quot;11&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property GTASA() As String
@@ -580,20 +601,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Green&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Green&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Green&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;Green&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;Green&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Green&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;DarkGray&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Green&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;DarkGreen&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;Green&quot;,
-        '''    &quot;StageColor&quot;: &quot;DarkGreen&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;DarkGreen&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Green&quot;,
-        '''    &quot;OptionColor&quot;: &quot;DarkGreen&quot;
+        '''    &quot;InputColor&quot;: &quot;10&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;10&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;10&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;10&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;10&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;10&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;8&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;10&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;2&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;10&quot;,
+        '''    &quot;StageColor&quot;: &quot;2&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;2&quot;,
+        '''    &quot;WarningColor&quot;: &quot;10&quot;,
+        '''    &quot;OptionColor&quot;: &quot;2&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property Hacker() As String
@@ -722,6 +743,25 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Prentah sing kasedhiya: {0}
+        '''Tulis prentah:
+        '''Injeksi komando wis dibatalake.
+        '''Pisahake argumen boot karo koma tanpa spasi, contone, &apos;motd, gpuprobe&apos;
+        '''Misahake printah &apos;cmdinject&apos; karo colon kanthi spasi, kayata, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Elinga yen argumen &apos;debug&apos; ora nutupi kernel kanthi lengkap.
+        '''bargs: Argumentasi sing dijaluk {0} ora ditemokake.
+        '''bargs: Kesalahan sing ora bisa dibalekake ing argumen:
+        '''Argumentasi sing kasedhiya: {0}
+        '''Argumen (&apos;pitulung&apos; kanggo pitulung):
+        '''Argumentasi  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property jvn() As String
+            Get
+                Return ResourceManager.GetString("jvn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to sayong ganeunghan myeonglyeong : {0}
         '''sseugi myeonglyeong :
         '''myeonglyeong ju-ib-i chwisodoeeossseubnida.
@@ -768,20 +808,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Gray&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Gray&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;Blue&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Blue&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Gray&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;White&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;Gray&quot;,
-        '''    &quot;StageColor&quot;: &quot;White&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Gray&quot;,
-        '''    &quot;OptionColor&quot;: &quot;White&quot;
+        '''    &quot;InputColor&quot;: &quot;7&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;7&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;12&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;12&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;15&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;7&quot;,
+        '''    &quot;StageColor&quot;: &quot;15&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;WarningColor&quot;: &quot;7&quot;,
+        '''    &quot;OptionColor&quot;: &quot;15&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property LinuxColoredDef() As String
@@ -792,20 +832,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Gray&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Gray&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;Gray&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Gray&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Gray&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;Gray&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;Gray&quot;,
-        '''    &quot;StageColor&quot;: &quot;Gray&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Gray&quot;,
-        '''    &quot;OptionColor&quot;: &quot;Gray&quot;
+        '''    &quot;InputColor&quot;: &quot;7&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;7&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;7&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;7&quot;,
+        '''    &quot;StageColor&quot;: &quot;7&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;WarningColor&quot;: &quot;7&quot;,
+        '''    &quot;OptionColor&quot;: &quot;7&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property LinuxUncolored() As String
@@ -871,20 +911,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;Magenta&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;Cyan&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;Magenta&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;Magenta&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;Cyan&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;Cyan&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;Grey23&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;Cyan&quot;,
-        '''  &quot;CmdListColor&quot;: &quot;Magenta&quot;,
-        '''  &quot;CmdDefColor&quot;: &quot;Cyan&quot;,
-        '''  &quot;StageColor&quot;: &quot;Magenta&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;Magenta&quot;,
-        '''  &quot;WarningColor&quot;: &quot;Magenta&quot;,
-        '''  &quot;OptionColor&quot;: &quot;Cyan&quot;
+        '''  &quot;InputColor&quot;: &quot;13&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;14&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;13&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;13&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;14&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;14&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;237&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;14&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;13&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;14&quot;,
+        '''  &quot;StageColor&quot;: &quot;13&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;13&quot;,
+        '''  &quot;WarningColor&quot;: &quot;13&quot;,
+        '''  &quot;OptionColor&quot;: &quot;14&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property NeonBreeze() As String
@@ -895,20 +935,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Red&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Blue3&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;DarkBlue&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;DarkRed_870000&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;DarkBlue&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Red&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;DarkBlue&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;DarkBlue&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;Red&quot;,
-        '''    &quot;StageColor&quot;: &quot;Red&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;DarkRed_870000&quot;,
-        '''    &quot;WarningColor&quot;: &quot;DarkBlue&quot;,
-        '''    &quot;OptionColor&quot;: &quot;DarkBlue&quot;
+        '''    &quot;InputColor&quot;: &quot;9&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;19&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;4&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;88&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;4&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;9&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;4&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;4&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;9&quot;,
+        '''    &quot;StageColor&quot;: &quot;9&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;88&quot;,
+        '''    &quot;WarningColor&quot;: &quot;4&quot;,
+        '''    &quot;OptionColor&quot;: &quot;4&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property NFSHP_Cop() As String
@@ -919,20 +959,21 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;White&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;White&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Orange4_875f00&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;DarkRed_870000&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;Orange4_875f00&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Orange3&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Gold3_d7af00&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;Orange4_875f00&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;White&quot;,
-        '''    &quot;StageColor&quot;: &quot;Yellow3_d7d700&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;DarkRed_870000&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Orange4_875f00&quot;,
-        '''    &quot;OptionColor&quot; [rest of string was truncated]&quot;;.
+        '''    &quot;InputColor&quot;: &quot;15&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;94&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;88&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;94&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;172&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;178&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;94&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;15&quot;,
+        '''    &quot;StageColor&quot;: &quot;184&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;88&quot;,
+        '''    &quot;WarningColor&quot;: &quot;94&quot;,
+        '''    &quot;OptionColor&quot;: &quot;94&quot;
+        '''}.
         '''</summary>
         Public ReadOnly Property NFSHP_Racer() As String
             Get
@@ -1034,20 +1075,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Red&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Red&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Red&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;DarkRed&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;DarkRed&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Red&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Red&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;Red&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;DarkRed&quot;,
-        '''    &quot;StageColor&quot;: &quot;Red&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;DarkRed&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Red&quot;,
-        '''    &quot;OptionColor&quot;: &quot;Red&quot;
+        '''    &quot;InputColor&quot;: &quot;9&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;9&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;9&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;1&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;1&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;9&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;9&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;9&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;1&quot;,
+        '''    &quot;StageColor&quot;: &quot;9&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;1&quot;,
+        '''    &quot;WarningColor&quot;: &quot;9&quot;,
+        '''    &quot;OptionColor&quot;: &quot;9&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property RedConsole() As String
@@ -1133,20 +1174,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;DodgerBlue1&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;DeepPink4_af005f&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;DarkGoldenrod&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;Red3&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;DodgerBlue1&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;LightSeaGreen&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;Grey11&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;DodgerBlue1&quot;,
-        '''  &quot;CmdListColor&quot;: &quot;DodgerBlue1&quot;,
-        '''  &quot;CmdDefColor&quot;: &quot;LightSeaGreen&quot;,
-        '''  &quot;StageColor&quot;: &quot;Chartreuse4&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;Red3&quot;,
-        '''  &quot;WarningColor&quot;: &quot;DarkGoldenrod&quot;,
-        '''  &quot;OptionColor&quot;: &quot;DodgerBlue1&quot;
+        '''  &quot;InputColor&quot;: &quot;33&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;125&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;136&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;124&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;33&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;37&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;234&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;33&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;33&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;37&quot;,
+        '''  &quot;StageColor&quot;: &quot;64&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;124&quot;,
+        '''  &quot;WarningColor&quot;: &quot;136&quot;,
+        '''  &quot;OptionColor&quot;: &quot;33&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property SolarizedDark() As String
@@ -1157,20 +1198,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;DodgerBlue1&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;DeepPink4_af005f&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;DarkGoldenrod&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;Red3&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;DodgerBlue1&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;LightSeaGreen&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;Cornsilk1&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;DodgerBlue1&quot;,
-        '''  &quot;CmdListColor&quot;: &quot;DodgerBlue1&quot;,
-        '''  &quot;CmdDefColor&quot;: &quot;LightSeaGreen&quot;,
-        '''  &quot;StageColor&quot;: &quot;Chartreuse4&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;Red3&quot;,
-        '''  &quot;WarningColor&quot;: &quot;DarkGoldenrod&quot;,
-        '''  &quot;OptionColor&quot;: &quot;DodgerBlue1&quot;
+        '''  &quot;InputColor&quot;: &quot;33&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;125&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;136&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;124&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;33&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;37&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;230&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;33&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;33&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;37&quot;,
+        '''  &quot;StageColor&quot;: &quot;64&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;124&quot;,
+        '''  &quot;WarningColor&quot;: &quot;136&quot;,
+        '''  &quot;OptionColor&quot;: &quot;33&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property SolarizedLight() As String
@@ -1294,19 +1335,21 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;SkyBlue3&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;SkyBlue3&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;DeepSkyBlue4_005f5f&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;DeepSkyBlue4_005f5f&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;DeepSkyBlue4_005f5f&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;SkyBlue3&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;SkyBlue3&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;DeepSkyBlue4_005f5f&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;SkyBlue3&quot;,
-        '''    &quot;StageColor&quot;: &quot;MediumTurquoise&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;DeepSkyBlue4_005f5f&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Dee [rest of string was truncated]&quot;;.
+        '''    &quot;InputColor&quot;: &quot;74&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;74&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;23&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;23&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;23&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;74&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;74&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;23&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;74&quot;,
+        '''    &quot;StageColor&quot;: &quot;80&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;23&quot;,
+        '''    &quot;WarningColor&quot;: &quot;23&quot;,
+        '''    &quot;OptionColor&quot;: &quot;23&quot;
+        '''}.
         '''</summary>
         Public ReadOnly Property TealerOS() As String
             Get
@@ -1316,20 +1359,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;Green&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;Green&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;Yellow1&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;Red&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;Green&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;Green&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;Green&quot;,
-        '''  &quot;CmdListColor&quot;: &quot;Green&quot;,
-        '''  &quot;CmdDefColor&quot;: &quot;Green&quot;,
-        '''  &quot;StageColor&quot;: &quot;Yellow1&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;Red&quot;,
-        '''  &quot;WarningColor&quot;: &quot;Yellow1&quot;,
-        '''  &quot;OptionColor&quot;: &quot;Green&quot;
+        '''  &quot;InputColor&quot;: &quot;10&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;10&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;226&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;9&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;10&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;10&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;10&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;10&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;10&quot;,
+        '''  &quot;StageColor&quot;: &quot;226&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;9&quot;,
+        '''  &quot;WarningColor&quot;: &quot;226&quot;,
+        '''  &quot;OptionColor&quot;: &quot;10&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property TrafficLight() As String
@@ -1340,20 +1383,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;White&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;White&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;White&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;White&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;Gray&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Gray&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;DeepPink4&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;White&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;White&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;White&quot;,
-        '''    &quot;StageColor&quot;: &quot;White&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;Gray&quot;,
-        '''    &quot;WarningColor&quot;: &quot;White&quot;,
-        '''    &quot;OptionColor&quot;: &quot;White&quot;
+        '''    &quot;InputColor&quot;: &quot;15&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;53&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;15&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;15&quot;,
+        '''    &quot;StageColor&quot;: &quot;15&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;WarningColor&quot;: &quot;15&quot;,
+        '''    &quot;OptionColor&quot;: &quot;15&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property Ubuntu() As String
@@ -1401,20 +1444,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;White&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;White&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;White&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;White&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;White&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;White&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;DarkCyan&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;White&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;White&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;White&quot;,
-        '''    &quot;StageColor&quot;: &quot;White&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;White&quot;,
-        '''    &quot;WarningColor&quot;: &quot;White&quot;,
-        '''    &quot;OptionColor&quot;: &quot;White&quot;
+        '''    &quot;InputColor&quot;: &quot;15&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;15&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;15&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;6&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;15&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;15&quot;,
+        '''    &quot;StageColor&quot;: &quot;15&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;WarningColor&quot;: &quot;15&quot;,
+        '''    &quot;OptionColor&quot;: &quot;15&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property Windows95() As String
@@ -1443,20 +1486,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Black&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;Black&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Black&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;Black&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;Black&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;Black&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Black&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;Black&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;Black&quot;,
-        '''    &quot;StageColor&quot;: &quot;Black&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;Black&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Black&quot;,
-        '''    &quot;OptionColor&quot;: &quot;Black&quot;
+        '''    &quot;InputColor&quot;: &quot;0&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;0&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;0&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;0&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;3&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;0&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;0&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;0&quot;,
+        '''    &quot;StageColor&quot;: &quot;0&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;WarningColor&quot;: &quot;0&quot;,
+        '''    &quot;OptionColor&quot;: &quot;0&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property YellowBG() As String
@@ -1467,20 +1510,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;Black&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;StageColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;DarkYellow&quot;,
-        '''    &quot;WarningColor&quot;: &quot;Yellow&quot;,
-        '''    &quot;OptionColor&quot;: &quot;Yellow&quot;
+        '''    &quot;InputColor&quot;: &quot;11&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;3&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;11&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;11&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;3&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;3&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;11&quot;,
+        '''    &quot;CmdListColor&quot;: &quot;11&quot;,
+        '''    &quot;CmdDefColor&quot;: &quot;3&quot;,
+        '''    &quot;StageColor&quot;: &quot;11&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;3&quot;,
+        '''    &quot;WarningColor&quot;: &quot;11&quot;,
+        '''    &quot;OptionColor&quot;: &quot;11&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property YellowFG() As String

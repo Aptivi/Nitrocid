@@ -1,0 +1,961 @@
+Comandi dispunibili: {0}
+Scrive cumandamentu:
+L'iniezione di cumandamentu hè stata annullata.
+Separate argumenti di avvio cù virgole senza spazi, per esempiu, 'motd, gpuprobe'
+Comandamenti separati nantu à 'cmdinject' cù dui punti cù spazii, per esempiu, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Innota chì l'argumentu 'debug' ùn copre micca cumpletamente u kernel.
+bargs: L'argumentu dumandatu {0} ùn hè micca trovu.
+bargs: Errore irrecuperabile in l'argumentu:
+Argumenti dispunibili: {0}
+Argumenti ('aiutu' per aiutu):
+L'argumenti iniettati saranu pianificati per esse eseguiti à u prossimu riavvio.
+Argument Injection hè stata annullata.
+Errore durante l'analisi di veri argumenti di riga di cummanda: {0}
+Modellu di culore invalidu {0}
+Default
+Persunalizata
+hwprobe: U vostru hardware serà probatu. Aspettate per piacè ...
+hwprobe: Ferramenta digià pruvatu.
+hwprobe: U hardware ùn hè micca pruvatu. Sonda aduprendu 'hwprobe'
+CPU: Unu o più di i nuclei CPU ùn sò micca stati pruvati. Mustrà infurmazione quantunque ...
+RAM: Unu o più di i chips RAM ùn sò micca stati pruvati. Mustrà infurmazione quantunque ...
+HDD: Unu o più di i discu duru ùn sò micca stati pruvati. Mustrà infurmazione quantunque ...
+CPU: Numaru tutale di processori: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: Slots aduprati (per nomi): {0}
+RAM: Slots aduprati (per numeri): {0} / {1} ({2}%)
+RAM: U statu di sonda hè obsoletu è serà eliminatu in futura versione.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} cilindri | {5} capi | {6} settori
+HDD: CHS: {3} cilindri | {4} capi | {5} settori
+hwprobe: A sonda ùn hè micca supportata perchè ùn hè micca pensata per fà esaminà probers in Unix.
+Inserite a password di amministratore per a manutenzione.
+Ùn ci hè più utilizatori restanti in a lista.
+Errore di u Kernel durante u boot: {0}
+DOPPIA PANICA: U tempu di riavviu supera u tempu massimu permessu di {0} errore di riavviamentu. Avete trovu un bug di kernel.
+[{0}] panicu: Reboot attivatu per via chì u livellu d'errore hè {0}.
+[{0}] panicu: Tempu di riavvià: {1} secondi, supera 1 ora. Hè impostu à 1 minutu.
+DOPPIA PANICA: Errore Tipu {0} invalidu.
+[{0}] dpanic: {1} - Reboot in {2} seconde ...
+[{0}] panicu: Reboot disattivatu per via chì u livellu d'errore hè {0}.
+[{0}] panicu: {1} - Pulsà qualsiasi chjave per cuntinuà à aduprà u kernel.
+[{0}] panicu: {1} - Pulsà qualsiasi chjave per spegne.
+[{0}] panicu: {1} - Riavvià in {2} secondi ...
+DOPPIA PANICA: Bug di u kernel: {0}
+Spegnendu ...
+Ripartendu ...
+---===+++> Benvenutu à u kernel | Versione {0} <+++===---
+Un'altra istanza di Kernel Simulator hè in esecuzione. Spegnimentu in casu di interferenza.
+L'utilizatore {0} hè statu aghjuntu à a lista amministrativa.
+L'utilizatore {0} hè statu aghjuntu à a lista disattivata.
+Fallimentu à aghjunghje l'utente in e liste di permessi: tipu invalidu {0}
+Fallimentu à aghjunghje l'utente in e liste di permessi: utilizatore invalidu {0}
+L'utilizatore {0} hè statu cacciatu da a lista amministrativa.
+L'utilizatore {0} hè statu cacciatu da a lista disattivata.
+Fallimentu à caccià l'utilizatore da e liste di permessi: tipu invalidu {0}
+Site digià cunnettatu.
+Fallimentu à caccià l'utilizatore da e liste di permessi: utilizatore invalidu {0}
+Avete trovu un bug in u sistema di permissione: modu invalidu {0}
+Avete trovu un bug, o u permessu chì avete pruvatu à aghjunghje o rimuovere hè dighjà fattu, o altru errore.
+Errore {0}: {1}
+Avete trovu un bug, o l'autorizazione chì avete pruvatu à mudificà per un novu utilizatore hà fiascatu.
+Nomi d'utilizatori dispunibili: {0}
+Nome d'utilizatore:
+I spazii ùn sò micca permessi.
+I caratteri speciali ùn sò micca permessi.
+Password di {0}:
+Password sbagliatu.
+L'utilizatore hè disattivatu.
+Nome d'utilizatore sbagliatu.
+Errore à pruvà d'analizà i segnaposti. {0} - Traccia di pila:
+Errore à pruvà d'analizà i segnaposti. {0}
+Errore pruvendu à aghjunghje nome d'utilizatore.
+usrmgr: Creendu u nome d'utilizatore {0} ...
+Nome d'utilizatore in biancu.
+Utente {0} micca truvatu.
+L'utilizatore {0} ùn hè micca permessu di esse cacciatu.
+L'Usuariu {0} hè dighjà cunnettatu. Scunnettatevi è cunnettate cum'è un altru amministratore.
+Utente {0} cacciatu.
+Errore pruvendu à caccià u nome d'utilizatore.
+{0} di {1} = {2}
+U tentativu di dividisce per cero ùn hè micca permessu.
+Ci hè statu un suspettatu tentativu di calculà chì hà purtatu à un overflow.
+Ci hè un errore durante u calculu: {0}
+{0} ùn pò micca esse cunvertitu in {1}.
+O a fonte
+ o destinazione
+ ùn esiste micca in u servitore.
+{0} à {1}: {2}
+Errore pruvendu à cunvertisce da {0} in {1}: {2}
+Errore
+U screensaver dumandatu {0} ùn hè micca trovu.
+{0} hè statu inizializatu bè.
+{0} ùn hà micca inizializatu. U codice di screensaver puderia avè avutu un errore durante l'inizializazione.
+U screensaver {0} ùn esiste micca.
+{0} hè piazzatu à u screensaver predefinitu.
+Screensaver {0} micca truvatu in a basa di dati. Verificate u nome è riprovate.
+U screensaver ùn pò micca esse caricatu per via di e seguenti:
+Ci hè un grave errore quandu si stampa u testu.
+Ci hè un errore chì prova à creà a cunfigurazione.
+Ci hè un errore chì prova à creà a cunfigurazione: {0}
+Un aghjurnamentu da {0} à {1} hè statu rilevatu. Aghjurnendu a cunfigurazione ...
+Ci hè un errore pruvendu à aghjurnà a cunfigurazione: {0}.
+Ci hè un errore pruvendu à aghjurnà a cunfigurazione.
+Ci hè un errore pruvendu à leghje a cunfigurazione.
+Ci hè un errore pruvendu à leghje a cunfigurazione: {0}
+Errore pruvendu à liberà RAM: {0} - Cuntinuendu ...
+Mod ùn pò micca esse caricatu per via di i seguenti:
+mod: Caricendu mods ...
+mod: Fermendu mods ...
+Mod {0} ùn hà micca u nome. Verificate u codice fonte.
+Mod {0} ùn hà micca a versione.
+{0} v {1} principiatu
+Nisuna definizione per u cumandimu {0}.
+Cumandamentu definitu da
+Duvete disconnettersi da u servitore prima di cunnessione à un altru servitore
+Nome d'utilizatore per {0}:
+Password per {0}:
+Cunnessu à {0}
+Errore quandu pruvate à cunnette vi à {0}: {1}
+Stack Trace: {2}
+Intrite un servitore FTP.
+U repertoriu lucale {0} ùn esiste micca.
+Entre un annuariu lucale. ".." per vultà in daretu.
+Repertoriu {0} micca truvatu.
+Ingressu un repertoriu remotu. ".." per vultà in daretu
+Duvete cunnette vi à un servitore prima di cambià u cartulare
+Annuariu lucale: {0}
+Annunziu à distanza: {0}
+Duvete cunnette vi à u servitore prima di uttene u repertoriu remoto attuale
+Eliminazione di u fugliale {0} ...
+Site sicuru di vulè sguassà u fugliale {0} <y/n>?
+File cancellatu {0}
+Duvete cunnette vi à u servitore cù privilegi amministrativi prima di fà a cancellazione.
+Entre un schedariu da caccià.
+Duvete avè permessi amministrativi nantu à u vostru nome d'utilizatore cunnessu per pudè rimuovere.
+Scullatu da {0}
+Ùn site micca cunnessu à un servitore
+Scaricamentu di u fugliale {0} ...
+File scaricatu {0}.
+U scaricamentu hà fiascatu per u fugliale {0} perchè u schedariu lucale hè curruttu.
+Duvete cunnette vi à u servitore prima di fà a trasmissione.
+Intrite un fugliale per scaricà in u repertoriu lucale.
+{0} KB | Mudificatu in: {1}
+Duvete cunnette vi à u servitore prima di listà tutti i fugliali remoti.
+Rinominendu u fugliale {0} in {1} ...
+Rinominatu cù successu
+Inserite un fugliale è u novu nome di fugliale.
+Caricamentu di u fugliale {0} ...
+Caricatu u schedariu {0}
+Ingressu un fugliale per carica in u repertoriu remoto. carica <file> <directory>
+Errore à pruvà d'eseguisce u cumandimu FTP
+(Internu:
+{0} cartulare, {1} fugliali
+(Accessu denegatu)
+{0} KB, Creatu in {1} {2}, Mudificatu in {3} {4}
+Ottiene l'annuariu lucale attuale
+Ottiene l'annuariu remotu attuale
+Cunnette à un servitore FTP (deve principià cù "ftp://" o "ftps://")
+Cambia u repertoriu lucale da scaricà o da caricà
+Cambia u repertoriu luntanu da scaricà da o caricare in
+Elimina u fugliale remotu da u servitore
+Disconnette da u servitore
+Scaricate u fugliale remotu in u repertoriu lucale cù binariu o testu
+Esce da u shell FTP è torna à u kernel
+Mostra schermu d'aiutu
+Elenca u repertoriu lucale
+Elenca u repertoriu remotu
+Rinomina u fugliale specificu o l'annuariu
+Carica u fugliale lucale in u repertoriu luntanu aduprendu binariu o testu
+Ci hè statu un errore in u shell FTP.
+Missaghju FTP: U cumandimu dumandatu {0} ùn hè micca trovu. Vede "aiutu" per un elencu di cumandamenti dispunibuli specificati nantu à u shell FTP.
+net: Uttenuta risposta da {0} in {1} ms
+Scadutu, disconnessu, o servore offline.
+net: U nome di u vostru urdinatore in rete hè {0}
+net: U vostru nome di host hè {1}
+net: Sembra chì l'urdinatori sianu in u duminiu o gruppu di travagliu:
+net: WiFi o Ethernet hè disconnessu.
+net: Sembra chì l'urdinatori sò cunnessi sottu:
+net: Indirizzu Router: {0}
+Fiascu d'ottene pruprietà per l'adattatore {0}
+Numeru di Adattatore:
+Nome di l'adattatore:
+Unità Massima di Trasmissione: {2} Unità
+DHCP attivatu:
+Paquets non unicast:
+Pacchetti Unicast:
+Errore pacchetti entranti / uscenti:
+Alias ​​ùn pò micca esse u listessu nome cum'è un cumandamentu.
+Cumandamentu micca truvatu per alias à {0}.
+Aliasing {0} à {1} hè pruibitu cumpletamente.
+Pudete avà lancià "{0}" cum'è cumanda: "{1}".
+Ùn pudete più aduprà "{0}" cum'è cumanda "{1}".
+Alias ​​{0} ùn hè micca trovu per esse cacciatu.
+Modu invalidu {0}.
+L'argumenti iniettati, {0}, seranu previsti per esecutà à u prossimu riavvio.
+Ùn ci era micca abbastanza argumenti. Vede quì sottu per l'usu:
+Repertoriu {0} micca truvatu
+Nome di l'ospite in biancu.
+Cambiendu da: {0} à {1} ...
+Messaghju biancu di u ghjornu.
+Blank MAL Dopu à u login.
+Cambiendu MAL da {0} à {1} ...
+Password d'utente sbagliata.
+E password ùn currispondenu micca.
+U nome d'utilizatore hè statu cambiatu in {0}!
+U novu nome inseritu hè dighjà trovu.
+Listing PC ùn hè ancu supportatu in Unix.
+Alias ​​chì sò pruibiti: {0}
+{0} ùn hè micca truvatu.
+Cunfigurazione ricaricata. Puderete bisognu di riavviare u kernel per chì alcuni cambiamenti entrinu in vigore.
+Tuttu hè resettatu à i paràmetri nurmali.
+Unu o più di i culori ùn sò micca validi.
+I culori ùn sò micca dispunibili. Attiva a cunchiglia culurita in a cunfigurazione di u kernel.
+Screensaver {0} micca truvatu.
+[ Impostazioni di u kernel (Funziona cù {0}) ]
+Versione Kernel:
+Modu Debug:
+Conchiglia Culurita:
+Argumenti nantu à u Boot:
+Cumandamentu d'aiutu simplificatu:
+MOTD à l'Accessu:
+Ora / Data à l'angulu:
+Ferramentu sundatu:
+Tema attuale:
+[ Impostazioni hardware ] {0}
+{0} [ Impostazioni utente ]
+Nome d'utente attuale:
+Nome attuale di l'ospite:
+Nomi d'utilizatori dispunibili:
+Nome di l'òspite di l'urdinatore:
+{0} [ Impostazioni missaghji ]
+Codice surghjente:
+Copyright (c)
+Licenza
+prisenti
+Errore à pruvà d'eseguisce u cumandamentu
+Aghjunghje utilizatori (solu l'amministratori ponu accede à questu cumandamentu)
+Aghjunghje aliasi à i cumandamenti (solu l'amministratori ponu accede à questu cumandamentu)
+Injecta argumenti à u kernel (riavviamentu necessariu, amministratori solu)
+Calculatrice simplice
+Cambia l'annuariu
+Cambia u nome di l'ospitu (solu amministratori)
+Cambia MAL, u MOTD Dopu l'Accessu (Amministratori solu)
+Cambiamenti MOTD, u Messaghju Di u Ghjornu (Amministratori solu)
+Cambia a password per l'utilizatore attuale
+Cambia u nome d'utilizatore (solu amministratori)
+Cancella u schermu
+Cunvertisce muneta
+Mostra log di debug (solu amministratori)
+Aduprate una shell FTP per interagisce cù i servitori
+Pagina d'aiutu
+Sonda hardware manualmente (Una volta in u kernel 'nohwprobe')
+Elencà u cuntenutu di u fugliale / cartulare in u cartulare attuale
+Ricarica u fugliale di screensaver in %USERPROFILE%\KSMods
+Blocca u vostru schermu cù una password
+Scunnette vi
+Elenca tutti i dispositivi di rete chì hè in linea (è offline in i duminii)
+Elenca tutti l'indirizzi di rete in host
+Elenca tutti l'indirizzi di rete in host cù l'arburu
+Crea un repertoriu
+Elenca informazioni nantu à tutte l'interfacce dispunibili
+Mostra una lista pruibita di aliasi
+Gestite i permessi per l'utilizatori (solu l'amministratori ponu accede à questu cumandamentu)
+Verificate per vede se l'indirizzu specificatu hè dispunibule
+Scrive u cuntenutu di u fugliale in a cunsola
+Riavvia u vostru urdinatore (ATTENZIONE: Nisuna sincronizazione, perchè ùn hè micca un kernel finale)
+Ricarica u fugliale di cunfigurazione chì hè editatu.
+Elimina un repertoriu
+Elimina un utilizatore da a lista (Amministratori solu)
+Salvà u vostru schermu da burn outs
+Calculatrice scientifica. U convertitore di unità hè separatu per un altru cumandamentu
+Imposta i culori di u kernel
+Imposta screensaver di u kernel
+Imposta temi di kernel
+Mostra aliasi
+Mostra MOTD dopu u login impostatu da l'utente o u kernel
+Mostra u messagiu di u ghjornu stabilitu da l'utilizatore o u kernel
+Mostra a data è l'ora
+Mostra a data è l'ora in e zone
+U kernel serà chjusu
+Infurmazione di u sistema
+Convertitore di unità chì hè separatu da scicalc.
+Mostra dipendenze open source usate
+Un manuale d'usu assai descrittivu.
+* Pudete aduprà più cumandamenti aduprendu i dui punti trà cumandamenti.
+Comandi dispunibili:
+Mod cumanda:
+Aliasi à i cumandamenti:
+Utilizazione:
+Argumenti separati da virgule
+induve l'argumenti saranu {0}
+pè ottene l'annuariu attuale
+In quale fonte è destinazione hè un 3 caratteri MAIUSCULI di un tasso di cambio
+Elencu di tutti l'ID è i nomi:
+Vi mostra debug logs per pudè invià u log à noi.
+Inizializza u shell FTP.
+Sonde hardware (Funziona solu quandu u hardware ùn hè micca sundatu è hwprobe ùn hè micca eseguitu).
+Elenca l'infurmazioni di rete, è ancu ogni urdinatore cunnessu à una rete.
+Amichi di
+Elenca l'infurmazioni di a rete, è ancu tutti l'urdinatori cunnessi à una rete, in forma d'arburu.
+Elenca l'infurmazioni di rete, è ancu ogni urdinatore.
+induve serà modnameSS.m
+Blocca u vostru schermu cù a password.
+Scurdate vi di l'utilizatore.
+Uttenite ogni infurmazione di rete
+Riavvia u vostru urdinatore simulatu.
+Ricarica a configurazione chì hè cambiata da l'utente finale o da l'utensile.
+I culori ùn necessitanu micca di riavviare, ma a maiò parte di i parametri richiedenu di riavviare
+vi mostra un screensaver selezionatu, mentre prutegge u vostru schermu da i burn out.
+Mostra a data è l'ora.
+Mostra a data è l'ora in e zone.
+Spegni u vostru urdinatore simulatu.
+Mostra l'infurmazioni di u sistema è e versioni.
+Mostra bibliuteche open source aduprate
+Ci hè statu un errore in u cunchju.
+Ùn avete micca permessu per aduprà {0}
+Missaghju Shell: U cumandimu dumandatu {0} ùn hè micca permessu di esecutà in modu di mantenimentu.
+Missaghju Shell: U cumandimu dumandatu {0} ùn hè micca trovu. Vede "aiutu" per i cumandamenti dispunibili.
+Missaghju Shell: U cumandimu {0} ùn hè micca permessu di esecutà à l'accessu.
+Missaghju Shell: U cumandimu dumandatu {0} ùn hè micca trovu.
+Errore à pruvà d'eseguisce u cumandamentu.
+datetime: U tempu hè {0}
+datetime: Oghje hè {0}
+datetime: Fusula Oraria: {0}
+- Tempu di {0}: {1}
+per cancellà u schermu.
+Pare chì a pagina di manuale {0} ùn sia micca truvata.
+Ci hè un errore quandu si prova à caricà a pagina manuale {0} perchè {1}.
+Questa pagina di manuale hè incompleta per i seguenti motivi:
+Pulsà qualsiasi chjave per continuà ...
+ Œ œ {0} parolle | Revisione v {1} | {2} sezzioni
+Stu titulu di pagina manuale ùn hè micca scrittu
+Sta pagina di manuale ({0}) ùn cuntene nisun testu di u corpu. Eliminazione di a pagina ...
+Sta pagina di manuale ({0}) ùn cuntene nisuna sezzione. Eliminazione di a pagina ...
+Funziona annantu à {0}
+Ùn site micca autorizatu per avè infurmazione per {0}.
+Questu cumandamentu hè obsoletu è serà eliminatu in una futura versione.
+Ùn site micca autorizatu à cambià a password di {0} perchè u target era un amministratore.
+Cunvertisce a quantità di soldi da paese in paese
+Valute:
+usrmgr: Nome d'utilizatore {0} hè dighjà trovu
+Inserite a vostra chjave API:
+Impussibule di uttene urdinatori. Se site in esecuzione l'ultima versione di Windows 10, avete bisognu di attivà SMBv1. Stu protocolu hè quantunque insicuru è circheremu di risolve stu prublema.
+Elimina tuttu in u registru di debug
+Ottiene versioni SSE
+Lingua invalida
+Cambia lingua
+Ùn pudete micca avè libcpanel-json-xs-perl installatu nantu à u vostru sistema. Fighjate à u vostru gestore di pacchetti per l'installazione. Per i sistemi Debian (è derivati), pudete vulete lancià "sudo apt install libcpanel-json-xs-perl" in l'emulatore di u terminal. Più dettagli di un errore:
+----------------------------- Kernel panic dump ------------------------------
+>> Infurmazione di panicu <<
+> Descrizzione: {0}
+> Tipu d'errore: {1}
+> Data è Ora: {2}
+>> Informazioni d'eccezione <<
+> Eccezione: {0}
+> Descrizzione: {1}
+> HRESULT: {2}
+> Fonte: {3}
+> Stack trace <
+>> Incezione eccezziunale {0} infurmazione <<
+>> L'eccezzione {0} hè a causa radica <<
+>> Micca eccezzioni; puderia esse un errore di u kernel. <<
+>> Cornici, fugliali, linee è colonne <<
+> Cornice {0}: Fichier: {1} | Linea: {2} | Culonna: {3}
+> Ci hè un errore quandu si prova à uttene infurmazioni di quadru. {0}: {1}
+Avete stabilitu a lingua di u vostru sistema à qualcosa chì ùn sia micca l'inglese. Scusate per l'inconvenientu, ma pare chì Google è u so traduttore sianu assai strani nantu à a traduzzione di blocchi di codice per qualsiasi lingua di prugrammazione. Mentre riparemu tutti i blocchi di codici per e pagine di manuali tradutti, vi prupunimu di apre un bigliettu per Google Translate per traduce blocchi di codici chì ùn sò micca destinati à esse tradutti, è di impostà a lingua di u vostru sistema in Inglese se u parlate.
+Ricarica mods.
+Mods ricaricati.
+Benvenutu in Kernel!
+Cunnessu cù successu cum'è <utilizatore>
+MOTD / MAL hè validu, ma u tipu di messaghju ùn hè micca validu. Assumendu MOTD ...
+Pruvatu à leghje MOTD / MAL chì hè di u tipu di messaghju invalidu.
+Mentre mantene una cunnessione stabile, scarica {0} in {1} ...
+U scaricamentu hè compiu.
+U scaricamentu hà fiascatu in pruvà {0}: {1}
+Per piacè aduprate "ftp" se vulete scaricà i fugliali da u servitore FTP.
+Scaricate un fugliale in u cartulare di travagliu attuale
+Scumpite un dispositivu di debug
+Elenca i dispositivi di debugging cunnessi
+Dispositivu di debug {0} micca truvatu.
+Dispositiu {0} disconnessu.
+Errore in cunnessione: {0}
+Debug ascultà annantu à tutti l'indirizzi aduprendu u portu {0}.
+Nisun argumentu specificatu. Suggerimentu: Specificate più argumenti separati da spazi
+Alias ​​hà digià trovu: {0}
+Log di debug eliminatu. Tutti i dispositivi di debugging cunnessi ponu ancu vede missaghji.
+A rimozione di u registru di debug hà fiascatu: {0}
+Cambià u cartulare hà fiascatu: {0}
+U nome d'utilizatore hè sbagliatu
+Specificate l'indirizzu
+Impussibule di caccià u repertoriu: {0}
+U fuso orariu hè specificatu in modu incorrettu.
+Selezzione di prufilu invalidu.
+Pruvendu à cunnette vi cù {0} cù u prufilu {1} ...
+Errore in a prova unitaria: {0}
+Cumandamentu {0} micca truvatu. Vede u cumandimu "aiutu" per a lista di cumandamenti.
+Fallimentu à ottene e pruprietà IPv6 per l'adattatore {0}. Cuntinuendu ...
+Infurmazione IPv4:
+Infurmazione IPv6:
+L'Adattatore {0} ùn sustene micca IPv6. Cuntinuendu ...
+L'adattatore {0} ùn supporta micca IPv4. Sonda hà fiascatu.
+Sembra chì stavate currendu a versione di sviluppu di u kernel. Mentre pudete vede l'aspetti, hè spessu aggiornatu è puderia introduce bug. Hè cunsigliatu di stà nantu à a versione stabile.
+A lingua chì avete sceltu cuntene duie varianti. Sceglite unu:
+1. Traslitteratu
+2. Traduttu
+Sceglite a vostra scelta:
+Scelta invalida. Prova dinò.
+Ùn site micca autorizatu à definisce l'annuariu attuale à {0}: {1}
+U permessu {0} hà fiascatu
+U percorsu chì avete specificatu hè troppu longu.
+Ùn site micca autorizatu à elencà in {0}: {1}
+Errore mentre cuntrollava u CPU: {0}
+Errore mentre cuntrollava RAM: {0}
+Errore mentre cuntrollava u HDD: {0}
+CPU: AVVERTENZA: SSE2 serà necessariu in futuri impegni di sviluppu.
+Dump raccuglieru d'infurmazioni hè cascatu quandu si prova à uttene infurmazione nantu à {0}: {1}
+Errore mentre pruvava à ottene a data di compilazione di l'assemblea {0}: {1}
+Errore quandu si prova à mette MOTD / MAL: {0}
+Errore quandu si prova à uttene MOTD / MAL: {0}
+Ci hè una eccezzione di riferenza nulla annantu à {0}: {1}
+Ci hè una eccezzione di riferenza nulla nantu à {0}: {1} - Traccia di a pila:
+Errore quandu si prova à avvià u screensaver, per via di un'operazione invalida.
+U ricaricamentu ùn hè micca permessu in modu sicuru.
+L'analisi di mods ùn sò micca permessi in modu sicuru.
+Analizate u repertoriu sanu per a dimensione o solu i fugliali in quellu attuale.
+Elenca tutti i dispositivi di debugging cunnessi.
+Errore quandu si prova à definisce u modu di analisi. Verificate u valore è riprovate. S'ellu hè currettu, vedi a traccia di stack quandu u debugging di u kernel hè attivatu.
+Piazzà cù successu.
+U percorsu ùn hè nè un schedariu nè un repertoriu.
+Crea una altra copia di un fugliale cù un altru repertoriu o nome.
+Move un fugliale à un altru repertoriu
+Per cupià i fugliali in un altru repertoriu o nome sfarente
+Per spustà i fugliali in un altru repertoriu
+Partita {0} ({1}): {2}
+Partita {0}: {1}
+Tempu passatu: {0} millisecondi
+Fabbricante: {0}
+Mudellu: {0}
+Capacità: {0} ({1}, {2}, {3})
+Tipu d'interfaccia: {0}
+Numeru di Drive: {0}
+Flag di boot: {0} ({1})
+Spartimentu fisicu: {0}
+Bandiera primaria: {0}
+Dimensione: {0} GB
+Spartizione logica: {0}
+Cumpressatu: {0}
+Nome: {0}
+Sistema di schedariu: {0}
+Capacità: {0} GB senza {1} GB
+Elencu tutte e partizioni logiche in tutte e unità.
+Elenca tutte e unità sonde.
+Elenca tutte e partizioni sonde in una unità specifica (è tutte e partizioni logiche in tutte e unità).
+Calcula e somme di i fugliali.
+Vi porta à u nostru GitHub Wiki.
+Algoritmu di crittografia invalidu.
+Attiva o disabilita u debugging à distanza.
+Inizializazione di u sistema di fugliali ...
+Ottiene voci installate
+Imposta a voce predefinita
+Parla a vostra stringa cù a voce predefinita
+Voce {0}: {1} ({2})
+Voce invalida.
+Voce set
+Vede se pudete ortografà e parolle currettamente à tempu
+Vede se pudete risolve l'equazioni matematiche à tempu
+Risponde à i cumenti d'amore o d'odi.
+Sì qualchissia hà fattu stu cummentariu à a vostra video:
+Cumu risponderebbe?
+Selezzione invalida. Andendu à u prossimu cummentariu ...
+Avete ghjustu ripurtatu u cummentariu d'amore!
+Avete ghjustu rispostu à u cummentariu d'odiu!
+Perfettu! U cummentariu di {0} serà cacciatu per què.
+Perfettu! {0} apprezzarà i vostri ringraziamenti.
+Scrivite "GetMeOut" per surtite.
+Scrittu perfettamente!
+Scritta in modu incorrettu.
+Risolta perfettamente!
+Risoltu in modu incorrettu.
+{0} MB di {1} MB scaricatu.
+RPC hè dighjà in esecuzione.
+RPC ascultendu nant'à tutti l'indirizzi aduprendu u portu {0}.
+Principià RPC ...
+Cunnette à un servitore SSH.
+Inserite a password per {0}:
+SSH Disconnected.
+Carica u fugliale di sintesi è u ghjoca.
+U schedariu scrittu {0} ùn esiste micca.
+U fugliale ùn hè micca un schedariu di scrittore synth.
+Impussibule di pruvà una linea di sintesi.
+Stringa viota specificata
+Impussibule di mette a codepage. A lingua pò ùn vede micca bè.
+Debugging micca attivatu.
+{0} ùn hè più messu à u screensaver predefinitu.
+Grazie! Questu hè interessante.
+Tuttu u mondu sustene u vostru video per questu.
+Aghju datu u fugliale speciale in u vostru e-mail per u vostru prossimu video.
+State à sente, odiatori, prova à aiutà ci, micca à scam.
+Ùn sò quantu ringraziu eiu è i mo amichi per stu video.
+Ti tengu caru per stu video.
+Continuate, ùn piantate micca.
+Vi aiuteraghju à ghjunghje à 1M abbonati!
+I mo amichi anu riparatu u so urdinatore per via di voi.
+Awful scherzu! Aghju chjusu u PC di u mo nemicu.
+À l'odiatori: CESSATE DI ODIÀ SU DI LI
+À l'odii: OPERATI
+Nimu ùn si n'avvederà avà grazia à a vostra guida d'ocultu d'ogetti
+Smarreraghju di guardà i vostri video. Abbunatu persu.
+Chì ghjè stu? Questu hè micca chjaru.
+Stu video hè u peghju!
+Tuttu u mondu riporta stu video!
+I mo amichi sò in furia cun voi!
+I amanti ti odiaranu avà per questu.
+U vostru amicu ti odiarà per questu.
+Questa burla mi hà fattu annullà a vostra sottoscrizione.
+Missione fallita, Rispettu -, Abbonatu -
+Smette di fà stu tippu di video !!!
+Riturnate à u vostru travagliu, i vostri video sò i peghju!
+Avemu pregiudiziu annantu à stu video.
+Aliasing {0} à {1} hè pruibitu.
+Errore pruvendu à scartà a nutificazione: {0}
+Mostra tutte e notifiche ricevute
+Respinge una notificazione
+A nutificazione hè stata scartata cù successu.
+Paquets (entranti):
+Pacchetti (in uscita):
+Errori in i pacchetti ricevuti:
+Proprietà generale IPv6
+Proprietà generale IPv4
+Esegue remotamente un cumandamentu per PC remoto
+- tappa 1: inizializazione di u sistema
+- Tappa 2: Rilevazione hardware
+- Tappa 2: Gestione interna di u nome d'utilizatore
+- Tappa 3: Rilevazione di mods è screensaver
+- Tappa 4: Raccolta di i rifiuti
+- Tappa 4: Cunnessu
+Nanzu à a raccolta di rifiuti: {0} byte
+Dopu à a racolta di i rifiuti: {0} bytes
+Errore à l'iniziu di RPC: {0}
+Sembra chì stavate currendu a versione candidata di rilasciu. Hè cunsigliatu di stà nantu à a versione stabile.
+Sembra chì a populazione di u sistema di fugliali piglia troppu tempu.
+Tipu invàlidu {0}.
+Capacità: {0}
+Partizione Count: {0}
+Dimensione: {0}
+Adupratu: {0}
+U Directory {0} esiste dighjà.
+Errore quandu si prova à cunnette vi à {0}: Tempu di cunnessione o cunnessione persa
+Calculatrice per calculà spressioni.
+Errore in calculu.
+Capacità: {0} GB ({1}, {2}, {3})
+Sembra chì stavate currendu a versione di prossima versione. Mentre hè più sicuru per aduprà avà, hè cunsigliatu di stà nantu à a versione stabile.
+Actualizazione di u sistema
+Verificate l'aghjurnamenti di u sistema ...
+Trovata nova versione:
+Pudete scaricallu à:
+Fiascu di verificà l'aghjurnamenti: {0}
+Log di debug micca truvatu
+Nisuna nutificazione recente
+Ricerche per stringa specificata in u fugliale furnitu
+Calcula somme di fugliali in u repertoriu specificatu.
+Elenca tutti i mail in l'usu specificu.
+Inserite u nome d'utilizatore o l'indirizzu mail:
+Inserite a chjave:
+Inserite l'indirizzu di u servitore è u portu (<indirizzu> o <indirizzu>:[portu]):
+Errore mentre a cunnessione à {0}: {1}
+Cunnessu à {0} ...
+Autenticazione ...
+Esce da u shell IMAP
+Lista di cumandamenti
+Scaricà i missaghji è li liste
+Apre un missaghju
+A pagina ùn pò micca esse negativa o zero.
+A pagina ùn hè micca un valore numericu.
+U numeru di missaghju ùn pò esse negativu o zeru.
+U numeru di missaghju ùn hè micca un valore numericu.
+- Da {0}
+- À {0}
+- Mandatu à {0} in {1}
+U messagiu specificatu ùn hè micca truvatu.
+U debug remoto ùn hà micca pussutu principià: {0}
+Errore durante l'esecuzione di u cumandimu IMAP: {0}
+Preparendu i profili ... Puderia piglià parechji minuti ...
+Nome Host, Nome d'utilizatore, Tipu di Dati, Codificazione, Crittografia, Protocolli
+Errore à pruvà d'eseguisce u script: {0}
+Scrive testu in a cunsula
+Faci scelte di l'utilizatori
+Beep in 'n' Hz è u tempu in 'n' millisecondi
+induve <$ variabile> hè qualsiasi variabile chì serà aduprata per archivà a risposta
+A frequenza deve esse numerica. Se hè numericu, assicuratevi chì sia> = 37 è <= 32767.
+U tempu deve esse numericu.
+induve <risposte> sò risposte à una lettera di a quistione siparate in slashes
+Errore à pruvà di cunnette vi à u servore SSH: {0}
+Blank MOTD Dopu Login.
+Permette à l'utilizatore d'entrà input
+Cambia u cartulare mail attuale
+Impussibule d'apre u cartulare mail {0}: {1}
+Elenca i repertorii in u vostru indirizzu mail
+Utilizza l'infurmazioni da u Dialu Rapidu per cunnette vi rapidamente à qualsiasi rete
+Sceglite un indirizzu per cunnette vi:
+A selezzione hè fora di portata. Sceglite trà 1- {0}. Prova dinò.
+A selezzione ùn hè micca un numeru. Prova dinò.
+Durante a validazione di u certificatu, ci sò errori di certificatu. Pò esse a prima volta chì site cunnessu à u servitore o chì u certificatu puderia esse scadutu. Eccu un errore:
+Site sicuru di vulè cunnette vi?
+Risposta invalida. Pruvate torna.
+A marcatura rapida hè viota. Cunnette vi à un servitore per aghjunghje un indirizzu.
+A marcatura rapida ùn esiste micca. Cunnette vi à un servitore per aghjunghje un indirizzu.
+Inserite l'indirizzu è u portu di u servitore IMAP (<indirizzu> o <indirizzu>:[portu]):
+Inserite l'indirizzu è u portu di u servitore SMTP (<indirizzu> o <indirizzu>:[portu]):
+Vi dumanda di riempie i campi richiesti per mandà un missaghju à un indirizzu
+Manda un missaghju à un indirizzu
+Inserite l'indirizzu mail di u destinatariu:
+Ingressu u sughjettu:
+Inserite u vostru messagiu sottu. Scrivite "EOF" per cunfirmà.
+Mandendu missaghju ...
+Missaghju mandatu.
+Errore di mandatu di u messagiu: {0}
+Indirizzu e-mail invalidu. Assicuratevi chì avete scrittu l'indirizzu currettamente è chì currisponde à u furmatu di l'esempiu indicatu:
+Elimina un missaghju
+Elimina tutti i missaghji da u destinatariu
+Missaghju {0} da {1} sguassatu da {2}. {3} missaghji chì restanu da analisà.
+Missaghju {0} da {1} sguassatu da a inbox. {2} missaghji chì restanu da analisà.
+Edita un fugliale di testu
+Face un novu schedariu
+U schedariu esiste dighjà.
+Errore pruvendu à creà un schedariu: {0}
+Impussibule di apre u fugliale. Esce da u shell ...
+U cumandamentu di l'editore di testu specificatu ùn hè micca truvatu.
+Elenca i cumandamenti dispunibili
+Esce da l'editore di testu è salva cambiamenti micca salvati
+Stampa u cuntenutu di u fugliale cù numeri di linea in a cunsola
+Aghjusta una nova linea cun testu à a fine di u fugliale
+Elimina u numeru di linea specificatu
+Sostituisce una parolla o una frase cù un'altra
+Elimina una parolla o una frase da u numeru di linea
+Elimina un caratteru da u numeru di caratteri in a linea specificata
+Linia eliminata.
+U numeru di linea specificatu {0} ùn hè micca un numeru validu.
+L'argumenti richiesti ùn sò micca passati à u cumandimu {0}
+Errore pruvendu à lancià u cumandu: {0}
+Corsa in modu sicuru. Saltendu a tappa ...
+>> Debug remoto è Chat: versione
+>> U vostru indirizzu hè {0}.
+>> U vostru nome hè {0}.
+Cumandamentu {0} micca truvatu. Aduprate "/help" per vede a lista.
+Indice {0} invalidu. Ci hè {1} tracce di stack. L'indice hè basatu à zero, allora pruvate à sottrae da 1.
+Nisuna traccia di stack
+Mostra l'ultima traccia di stack à eccezione
+Mostra u nome d'utilizatore attuale in a sessione
+Vi disconnette da u debugger
+Sblocca un dispositivu di debug per indirizzu IP
+Bluccà un dispositivu di debug per indirizzu IP
+{0} pò avà raghjunghje torna u debug remotu.
+{0} ùn hè ancu bluccatu.
+Errore durante u caricamentu di i paràmetri
+Ci hè un errore mentre si carica i paràmetri. Pudete avè bisognu di verificà u fugliale di paràmetri.
+- Tappa 2: Rilevazione di mods è screensaver
+- Tappa 3: Accedi
+Selezziunà a sezzione:
+Selezziunà l'opzione:
+Impostazioni Generali ...
+Impostazioni Hardware ...
+Impostazioni di cunnessione ...
+Impostazioni Shell ...
+Impostazioni di rete ...
+Impostazioni Varie ...
+Salvà Impostazioni
+Esci
+L'opzione specificata {0} hè invalida.
+A risposta deve esse numerica.
+Prompt per Argumenti in Boot
+Trigger di Modu di Mantenimentu
+Cambia a Root Password ...
+Verificate per Updates à Startup
+Sonda tranquilla
+Slots RAM di sonda
+Mostra MOTD à l'Accessu
+Scherma Chjaru nantu à l'Accessu
+Mostra i nomi d'utilizatori dispunibili
+Conchiglia Culurita
+Cumandamentu d'aiutu simplificatu
+Debug Portu
+Debug remoto Default Nick Prefiss
+Scaricate Riprova Tempi
+Registrà u nome d'utilizatore FTP
+Log indirizzu IP FTP
+Ritorna solu u primu prufilu FTP
+Mostra l'ora / a data in l'angulu superiore drittu
+Screensaver Timeout in ms
+Quota Dimensione Debug in Bytes
+Modu parse Size
+Marquee à u startup
+Longu Tempu è Data
+Mustrà i fugliali piattati
+Sezione invalida entrata. Per piacè torna.
+Riturnà...
+Attivà
+Disattivà
+Numeru chjave invalidu inseritu. Per piacè torna.
+Scrivite a password di root da stabilisce. Ùn v'inchietate; a password hè mustrata cum'è stelle.
+Attivate "Cambia Password Root" per aduprà sta opzione. Per piacè torna.
+Cambia a Root Password?
+Set Password Root ...
+Scrivite un portu di debugger remoto. Deve esse numericu, è ùn deve esse dighjà adupratu. Inutili, u debugger remoto ùn puderà micca apre u portu.
+Scrivite u prefissu di soprannomu di debug remota predeterminatu.
+Scrivite quante volte u cumandimu "uttene" deve riprova i scaricamenti falliti. Deve esse numericu.
+Scrivite quandu lancià u screensaver dopu millisecondi specificati. Deve esse numericu.
+Scrivite quanti bytes ponu u magazinu di log di debug. Deve esse numericu.
+A risposta pò esse micca negativa.
+A risposta hè invalida. Verificate per assicurassi chì a risposta sia numerica per e entrate di configurazione chì necessitanu numeri cum'è risposte.
+A Variabile {0} ùn si trova nant'à alcunu di i moduli.
+Cambia a cunfigurazione di u kernel
+Impostazioni di u Screensaver ...
+Attivate 255 culori
+Vulete stà cunnessu?
+Scelta invalida. Assumendu nò ...
+Nisuna mods rilevata. Saltendu a tappa ...
+Cambia Cultura quandu Cambia di Lingua
+Testu mustratu
+Scrivite qualsiasi testu chì vulete esse mostratu. Più cortu hè megliu.
+Fallimentu à u caricamentu di {0}
+Scaricamentu hà fiascatu per u schedariu {0}: {1}
+Errore durante l'esecuzione di u cumandamentu di debug remoto {0}: {1}
+Aghjusta utilizatori
+Aggiunge aliasi à i cumandamenti
+Injecta argumenti à u kernel (riavviatu necessariu)
+Cambia u nome di l'ospite
+Cambia MAL, u MOTD Dopu Login
+Cambiamenti MOTD, u Messaghju Di u Ghjornu
+Cambia u nome d'utilizatore
+Mostra log di debug
+Gestite i permessi per l'utilizatori
+Ricarica u fugliale di screensaver in KSMods
+Elimina un utilizatore da a lista
+Eliminatu l'alias {0} cù successu.
+Impussibule di verificà l'aggiornamenti.
+Ùn ci hè più utilizatori chì fermanu in a lista.
+Impussibule di definisce a lingua.
+Errore pruvendu à scartà a notificazione
+Un aghjurnamentu à {0} hè rilevatu. Aghjurnendu a cunfigurazione ...
+usrmgr: Fiascu di creà u nome d'utilizatore {0}: {1}
+Fiascu di rinominà l'usu. {0}
+Una di e liste di permessi ùn cuntene micca u nome d'utilizatore {0}.
+Fallimentu à caricà i permessi da u fugliale: {0}
+Fiascu di cambià u nome di l'òspite: {0}
+Utente micca truvatu
+Fallimentu à cambià a parolla d'intesa di u nome d'utilizatore: {0}
+Impussibule di cupià u schedariu o u cartulare: {0}
+Impussibule di spustà u schedariu o u cartulare: {0}
+Impussibule di truvà u fugliale chì currisponde à a stringa "{0}": {1}
+Scaricamentu hà fiascatu per u schedariu {0}.
+Impussibule di elencà i fugliali remoti: {0}
+Entre un schedariu o un cartulare da caccià. Duvete avè permessi amministrativi nantu à u vostru contu per pudè rimuovere.
+Site sicuru di vulè sguassà {0} <y/n>?
+Sguassà {0} ...
+{0} ùn si trova micca in u servitore.
+Tutte e mail fatte da {0} sò cacciate bè.
+Fallimentu à caccià tutte e mail fatte da {0}.
+Errore di inviu di u messagiu.
+Trascendu {0} à {1} ...
+Sposta bè
+Sposta u fugliale o u cartulare in un altru fugliale o annuariu. Pudete ancu aduprà quellu per rinominà i fugliali.
+Impussibule di spustà {0} à {1}.
+Ingressu un percorsu fonte è un percorsu di destinazione.
+Copia {0} in {1} ...
+Copiatu cù successu
+Copia u fugliale o u cartulare in un altru schedariu o annuariu.
+Impussibule di cupià {0} in {1}.
+Move un messagiu
+Sposta tutti i messaghji da u destinatariu
+Tutte e mail fatte da {0} sò sposte bè.
+Fiascu di spustà tutte e mail fatte da {0}.
+Missaghju {0} da {1} spustatu da {2}. {3} missaghji chì restanu da analisà.
+Missaghju {0} da {1} spustatu. {3} missaghji chì restanu da analisà.
+Mostra l'infurmazioni meteorologiche per a cità specificata. Utilizza OpenWeatherMap.
+- Infurmazioni meteo per {0} -
+Meteo: {0}
+Temperatura: {0} ({1} unità)
+Si sente cum'è: {0} ({1} unità)
+Pressione: {0}
+Umidità: {0}
+Pudete uttene a vostra propria chjave API à https://home.openweathermap.org/api_keys.
+Pudete sempre cunsultà http://bulk.openweathermap.org/sample/city.list.json.gz per l'elencu di e cità cù i so ID.
+Unità Preferita per a Temperatura
+Kelvin
+Imperiale (Fahrenheit)
+Metricu (Celsius)
+Pone u kernel in modo da vi dumanda per l'argumentu à u boot.
+Triggers modalità di manutenzione. Questu disabilita più conti.
+Ogni startup, hà da verificà l'aghjurnamenti.
+Quandu cambiate di lingua, cambiate u nome di u mese, u calendariu, ecc.
+Se u kernel hè iniziatu, stabilirà a password di root.
+Mantene i messaghji di sonda hardware in silenziu.
+S'ellu hè attivatu, pruvarà i slot di RAM cù a RAM.
+Mostra u Messaghju di u Ghjornu prima di vede a schermata di login.
+Schermà chjaru prima di visualizà a schermata di login.
+Mostra l'utenti dispunibili se attivatu.
+Dà u supportu di culore di u kernel
+Cumandamentu d'aiutu simplificatu per tutte e cunchiglie
+Sia o micca di registrà u nome d'utilizatore FTP
+Sia o micca per registrà l'indirizzu FTP IP.
+Sceglite u primu prufilu solu quandu si cunnette.
+Attiva 255 supportu di culore per ColorMix.
+Attiva 255 supportu di culore per Disco.
+Attiva 255 supportu di culore per GlitterColor.
+Attiva 255 supportu di culore per e Linee.
+L'ora è a data seranu mustrate in l'angulu in alto à diritta di u schermu
+S'ellu hè attivatu, u kernel analizarà tuttu u cartulare per a so dimensione tutale. Altrò, analiserà solu a superficia.
+Permette l'ochju à l'iniziu
+L'ora è a data seranu più longhi, mostrendu i nomi di u mese sanu, ecc.
+Mostra i fugliali piattati.
+Sceglite a vostra unità preferita per a temperatura (questu vale solu per u cumandimu "meteo")
+Mod {0} fermatu
+{0} v {1} fermatu
+Mod {0} ùn hà micca u nome di a parte. L'analisi di u Mod hà fiascatu. Verificate u codice fonte.
+Mod {0} ùn hà micca u cumandu. L'analisi di u Mod hà fiascatu. Verificate u codice fonte.
+Duvete attivà u modu di debug prima di pudè cancellà u log di debug.
+{0} novi missaghji sò ghjunti in inbox.
+Aprite "lsmail" per vedeli.
+Primariu: {2} Bootable: {3} Partizione di Boot: {4}
+Impussibule di caccià u fugliale: {0}
+Elimina un repertoriu o un schedariu
+Ùn pò micca caccià {0} perchè ùn esiste micca.
+Ùn pudete micca avè inxi installatu nantu à u vostru sistema. Fighjate à u vostru gestore di pacchetti per l'installazione. Per i sistemi Debian (è derivati), pudete vulete lancià "sudo apt install inxi libcpanel-json-xs-perl" in l'emulatore di u terminal.
+Lingua stabilita cù successu à {0}!
+Pulsà CTRL + C per surtite.
+Dà infurmazione nantu à un schedariu
+Dà infurmazione nantu à un repertoriu
+Ùn pudemu micca avè infurmazione nantu à u repertoriu inesistente.
+Ùn pudemu micca avè infurmazione nantu à u fugliale inesistente.
+Nome sanu: {0}
+Tempu di creazione: {0}
+Ultimu tempu d'accessu: {0}
+Ultima ora di scrittura: {0}
+Attributi: {0}
+Repertoriu parente: {0}
+Induve truvà: {0}
+Dimensione di u schedariu: {0}
+Cambia l'attributu di un schedariu
+File micca truvatu.
+induve <attributi> hè unu di i seguenti:
+U schedariu hè un schedariu nurmale
+U schedariu hè un schedariu di sola lettura
+U schedariu hè un schedariu piattu
+U schedariu hè un archiviu. Adupratu per i backup.
+L'attributu "{0}" hè invalidu.
+Attributu hè statu aghjuntu cù successu.
+L'attributu hè statu cacciatu bè.
+Fallimentu à aghjunghje l'attributu.
+Fiascu à caccià l'attributu.
+Sostituisce una parolla o una frase cù un'altra in una linea
+U nivellu di culore rossu hè superatu. Era {0}.
+U nivellu di culore verde hà superatu. Era {0}.
+U nivellu di culore turchinu hè superatu. Era {0}.
+Attivate i culori veri
+Attiva u veru sustegnu di culore per ColorMix.
+Attiva u veru sustegnu di culore per Disco.
+Attiva u veru sustegnu di culore per GlitterColor.
+Attiva u veru sustegnu di culore per e Line.
+Fiascu di sbloccà {0}.
+{0} hè dighjà bluccatu.
+{0} ùn pò micca unisce si à u debug remotu avà.
+Fiascu à bluccà {0}.
+Culori di ciclu
+A Discoteca cicculerà i culori quandu hè attivata. Inutili, selezziunate culori aleatorii.
+Inserite i percorsi di l'archivi in ​​annessi. Pulsà ENTER nantu à una strada bianca per cunfirmà.
+Apre un missaghju criptatu
+Scrive a chjave per ID chjave {0}
+Manda un missaghju criptatu à un indirizzu
+Vi dumanda di riempie i campi richiesti per invià un missaghju crittografatu à un indirizzu
+Scaricamentu da {0} ...
+Mostra a barra di prugressu mentre scaricate o carica da u cumandamentu "uttene" o "mette"
+S'ellu hè veru, face "ottene" o "mette" mostra a barra di prugressu mentre si scarica o si carica.
+Carica un fugliale nantu à u situ web specificatu
+Ping un indirizzu
+Caricamentu di {0} in {1} ...
+Caricamentu hè compiu.
+Per piacè aduprate "ftp" se vulete carregà i fugliali in u servitore FTP.
+Caricamentu hà fiascatu in pruvà {0}: {1}
+{0} MB di {1} MB caricati.
+Scrivite quante volte u cumandimu "mette" duveria riprova i caricamenti falliti. Deve esse numericu.
+L'indirizzu ùn pò micca esse viotu.
+Fallimentu à ping {0}: {1}
+Ping hà riesciutu in {0} ms.
+U numeru di linea specificatu ùn pò micca esse più grande di l'ultimu numeru di linea di file.
+Si sente cum'è: {0}
+Temperatura: {0}
+Velocità di u ventu: {0}
+Direzzione di u ventu: {0}
+Primariu: {2} | Bootable: {3} | Partizione di boot: {4}
+Attiva u supportu di culore 255 per Dissolve.
+Attiva u veru supportu di culore per Dissolve.
+Pulsà qualsiasi chjave per retrocede.
+Impussibule di creà u cartulare mail {0}: {1}
+Face un cartulare in u cartulare di travagliu attuale
+Elimina un cartulare da u cartulare di travagliu attuale
+Cartulare mail {0} micca truvatu.
+Impussibule di sguassà u cartulare mail {0}: {1}
+{0}, Creatu in {1} {2}, Mudificatu in {3} {4}
+Verifica a sanità di u fugliale
+I hash sò malformati.
+Hash ùn currispondenu micca.
+Partita Hashes.
+Rinomina un cartulare
+Questa sezione elenca tutte e impostazioni generali di u kernel, principalmente per mantene u kernel.
+Questa sezione cambia u comportamentu di a sonda hardware.
+Sta sezzione riprisenta i paràmetri di cunnessione. Scunnettate vi di u vostru contu per chì i cambiamenti entrinu in vigore.
+Questa sezione elenca i paràmetri di shell.
+Questa sezione elenca i parametri di rete, cum'è a shell FTP, i parametri di cumandamentu relativi à a rete, è i parametri di debug remoto.
+Questa sezione elenca tutti i screensaver è e so impostazioni dispunibili.
+Impostazioni chì ùn si adattanu micca à e so sezzioni adatte sbarcanu quì.
+Prove mods furnendu file mod
+Apre una cunchiglia di prova
+Permette u modu di debug
+Invita per argumenti
+* Pulsà qualsiasi chjave per avvià u kernel o ESC per surtite.
+Fallimentu à inizià "{0}": {1}
+Mostra anteprima di u messagiu mail
+Quandu si listanu messaghji mail, mostranu l'anteprima di u corpu.
+Sonda hardware in cache. Mustrà infurmazione quantunque ...
+Capacità: {0} GB
+Culori persunalizati ...
+Scrivite un culore cumu specificatu sottu:
+Culore di ingressu
+Culore di licenza
+Culore d'errore di kernel continuu
+Culore d'errore di kernel incontinuable
+Culore di nome d'ospite
+Culore di nome d'utilizatore
+Culore di fondu
+Culore di testu neutru
+Culore di a lista di cumandamenti
+Culore di definizione di cumanda
+Culore di scena
+Culore d'errore
+Queste scelte di culore parenu OK?
+Rispondi {0} per retrocede. Altrimenti, ogni risposta significa iè.
+Stile Prompt FTP
+Stile di Prompt Mail
+Stile Prompt SFTP
+Attiva 255 supportu di culore per BouncingBlock.
+Attiva u veru sustegnu di culore per BouncingBlock.
+Pruvendu à accede à u percorsu invalidu.
+Cancella u fugliale di testu
+Esce da l'editore di testu
+Dumanda un caratteru in una linea specificata o tutte e linee
+U numeru di caratteri specificatu {0} ùn hè micca un numeru validu.
+U cuntrollu per l'aghjurnamenti hè disattivatu perchè site in esecuzione una versione di sviluppu.
+Attiva o disattiva a funzione di salvataghju automatica di l'editore di testu.
+Se u salvamentu automaticu hè attivatu, u fugliale di testu serà salvatu per ogni "n" seconde.
+Attivà u salvatore autore di l'editore di testu
+Editore di testu intervallu di salvata automatica
+Salva u fugliale
+Arregistrà u chat per debug log
+Registra chat di debug remoto per log di debug.
+Ritardu in Millisecondi
+Quanti millisecondi da aspettà prima di fà a prossima scrittura?
+Permette di aduprà un servitore FTP SSH
+Nisun aiutu per u cumandimu "{0}".

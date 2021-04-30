@@ -453,6 +453,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="OfficialAppIcon-KernelSimulator-256.ico" />
+    <None Include="Resources\jvn.txt" />
+    <None Include="Resources\csc.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
