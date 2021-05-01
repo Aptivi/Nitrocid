@@ -206,15 +206,16 @@ Public Module ModParser
     ''' <param name="StartStop">Whether to start or stop mods</param>
     Sub StartParse(ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         modFile = modFile.Replace(modPath, "")
-        If modFile.EndsWith(".m") Then
-            Dim script As IScript = GenMod("VB.NET", IO.File.ReadAllText(modPath + modFile))
-            FinalizeMods(script, modFile, StartStop)
-        ElseIf modFile.EndsWith("SS.m") Then
+        If modFile.EndsWith("SS.m") Then
             'Ignore all mods that its file name ends with SS.m
             Wdbg("W", "Mod file {0} is a screensaver and is ignored.", modFile)
         ElseIf modFile.EndsWith("CS.m") Then
             'Mod has a language of C#
             Dim script As IScript = GenMod("C#", IO.File.ReadAllText(modPath + modFile))
+            FinalizeMods(script, modFile, StartStop)
+        ElseIf modFile.EndsWith(".m") Then
+            'Mod has a language of VB.NET
+            Dim script As IScript = GenMod("VB.NET", IO.File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile, StartStop)
         ElseIf modFile.EndsWith(".dll") Then
             'Mod is a dynamic DLL
