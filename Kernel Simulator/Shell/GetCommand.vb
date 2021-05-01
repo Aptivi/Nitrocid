@@ -804,7 +804,7 @@ Public Module GetCommand
                         PowerManage("reboot")
                     End If
 
-                Case "rebootmods"
+                Case "reloadmods"
 
                     'Reload mods
                     Done = True
