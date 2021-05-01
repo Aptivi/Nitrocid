@@ -176,7 +176,6 @@ Public Module ToolPrompts
                     W("9) " + DoTranslation("Record chat to debug log") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RecordChatToDebugLog)))
                     W("10) " + DoTranslation("Show SSH banner") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(SSHBanner)))
                 Case "6" 'Screensaver
-                    'TODO: Add support for custom screensavers
                     MaxOptions = 12
                     W("*) " + DoTranslation("Screensaver Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all the screensavers and their available settings.") + vbNewLine, True, ColTypes.Neutral)
@@ -204,7 +203,7 @@ Public Module ToolPrompts
                     Next
 
                     'Populate general screensaver settings
-                    W("{0}) " + DoTranslation("Screensaver Timeout in ms") + " [{0}]" + vbNewLine, True, ColTypes.Option, MaxOptions, GetConfigValue(NameOf(ScrnTimeout)))
+                    W("{0}) " + DoTranslation("Screensaver Timeout in ms") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(ScrnTimeout)))
                 Case "6.1" 'Screensaver > ColorMix
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix" + vbNewLine, True, ColTypes.Neutral)
@@ -341,6 +340,9 @@ Public Module ToolPrompts
                         Wdbg("I", "Tried to open subsection. Opening section 6.{0}...", AnswerString)
                         Wdbg("I", "Arguments: AnswerInt: {0}, ConfigurableScreensavers: {1}", AnswerInt, ConfigurableScreensavers.Count)
                         OpenSection("6." + AnswerString, AnswerInt, ConfigurableScreensavers)
+                    ElseIf AnswerInt = MaxOptions And SectionNum = "6" Then
+                        Wdbg("I", "Opening key {0} from section {1} with argument {2}...", AnswerInt, SectionNum)
+                        OpenKey(SectionNum, AnswerInt, MaxOptions)
                     Else
                         Wdbg("I", "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
@@ -368,7 +370,7 @@ Public Module ToolPrompts
     ''' </summary>
     ''' <param name="Section">Section number</param>
     ''' <param name="KeyNumber">Key number</param>
-    Sub OpenKey(ByVal Section As String, ByVal KeyNumber As Integer)
+    Sub OpenKey(ByVal Section As String, ByVal KeyNumber As Integer, ParamArray KeyParameters() As Object)
         Dim MaxKeyOptions As Integer = 0
         Dim KeyFinished As Boolean
         Dim KeyType As SettingsKeyType
@@ -696,7 +698,7 @@ Public Module ToolPrompts
                     End Select
                 Case "6" 'Screensaver
                     Select Case KeyNumber
-                        Case 12 'Screensaver Timeout in ms
+                        Case KeyParameters(0) 'Screensaver Timeout in ms
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ScrnTimeout)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > " + DoTranslation("Screensaver Timeout in ms") + vbNewLine, True, ColTypes.Neutral)
