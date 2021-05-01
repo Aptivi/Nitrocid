@@ -282,7 +282,7 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterTrueColor)))
                     W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterDelay)))
                     W("4) " + DoTranslation("Max Positions Count") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(LighterMaxPositions)))
-                Case "6." + $"{SectionParameters(0)}" 'Screensaver > a custom saver
+                Case "6." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), "12")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - 11 - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
                     Dim OptionNumber As Integer = 1
@@ -624,23 +624,23 @@ Public Module ToolPrompts
                         Case 1 'Debug Port
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DebugPort)
-                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Debug Port") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Debug Port") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port."), True, ColTypes.Neutral)
                         Case 2 'Download Retry Times
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DRetries)
-                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Download Retry Times") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Download Retry Times") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how many times the ""get"" command should retry failed downloads. It must be numeric."), True, ColTypes.Neutral)
                         Case 3 'Upload Retry Times
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(URetries)
-                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Upload Retry Times") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Upload Retry Times") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how many times the ""put"" command should retry failed uploads. It must be numeric."), True, ColTypes.Neutral)
                         Case 4 'Show progress bar while downloading or uploading from "get" or "put" command
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowProgress)
-                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If true, it makes ""get"" or ""put"" show the progress bar while downloading or uploading.") + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
@@ -648,7 +648,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPLoggerUsername)
-                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Log FTP username") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Log FTP username") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Whether or not to log FTP username.") + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
@@ -656,7 +656,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPLoggerIP)
-                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Log FTP IP address") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Log FTP IP address") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Whether or not to log FTP IP address.") + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
@@ -664,7 +664,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPFirstProfileOnly)
-                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Return only first FTP profile") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Return only first FTP profile") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Pick the first profile only when connecting.") + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
@@ -672,7 +672,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowPreview)
-                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Show mail message preview") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Show mail message preview") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("When listing mail messages, show body preview.") + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
@@ -680,7 +680,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(RecordChatToDebugLog)
-                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Record chat to debug log") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Record chat to debug log") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Records remote debug chat to debug log.") + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
@@ -688,7 +688,7 @@ Public Module ToolPrompts
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(SSHBanner)
-                            W("*) " + DoTranslation("Network Settings...") + DoTranslation("Show SSH banner") + " > " + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Show SSH banner") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Shows the SSH server banner on connection.") + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
@@ -997,7 +997,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case "6." + $"{SectionParts(1)}" 'Custom saver
+                Case "6." + $"{If(SectionParts.Length > 1, SectionParts(1), "12")}" 'Custom saver
                     Dim SaverIndex As Integer = SectionParts(1) - 11 - 1
                     Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).SaverSettings
                     Dim KeyIndex As Integer = KeyNumber - 1
