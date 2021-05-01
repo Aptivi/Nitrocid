@@ -21,7 +21,6 @@ Imports System.Runtime.CompilerServices
 Public Module Filesystem
 
     'Variables
-    'TODO: Use Directory.SetCurrentDirectory in subsequent development commits
     Public CurrDir As String = paths("Home")
 
     ''' <summary>
