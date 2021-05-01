@@ -96,11 +96,15 @@ Public Module ToolPrompts
     ''' Open section
     ''' </summary>
     ''' <param name="SectionNum">Section number</param>
-    Sub OpenSection(ByVal SectionNum As String)
+    Sub OpenSection(ByVal SectionNum As String, ParamArray SectionParameters() As Object)
+        'General variables
         Dim MaxOptions As Integer = 0
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
+
+        'Section-specific variables
+        Dim ConfigurableScreensavers As New List(Of String)
 
         While Not SectionFinished
             Console.Clear()
@@ -176,6 +180,8 @@ Public Module ToolPrompts
                     MaxOptions = 12
                     W("*) " + DoTranslation("Screensaver Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all the screensavers and their available settings.") + vbNewLine, True, ColTypes.Neutral)
+
+                    'Populate kernel screensavers
                     W("1) ColorMix...", True, ColTypes.Option)
                     W("2) Matrix...", True, ColTypes.Option)
                     W("3) GlitterMatrix...", True, ColTypes.Option)
@@ -187,7 +193,18 @@ Public Module ToolPrompts
                     W("9) BouncingBlock...", True, ColTypes.Option)
                     W("10) ProgressClock...", True, ColTypes.Option)
                     W("11) Lighter...", True, ColTypes.Option)
-                    W("12) " + DoTranslation("Screensaver Timeout in ms") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(ScrnTimeout)))
+
+                    'Populate custom screensavers
+                    For Each CustomSaver As String In CSvrdb.Keys
+                        If CSvrdb(CustomSaver).SaverSettings?.Count >= 1 Then
+                            ConfigurableScreensavers.Add(CustomSaver)
+                            W("{0}) {1}...", True, ColTypes.Option, MaxOptions, CustomSaver)
+                            MaxOptions += 1
+                        End If
+                    Next
+
+                    'Populate general screensaver settings
+                    W("{0}) " + DoTranslation("Screensaver Timeout in ms") + " [{0}]" + vbNewLine, True, ColTypes.Option, MaxOptions, GetConfigValue(NameOf(ScrnTimeout)))
                 Case "6.1" 'Screensaver > ColorMix
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix" + vbNewLine, True, ColTypes.Neutral)
@@ -266,6 +283,20 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterTrueColor)))
                     W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterDelay)))
                     W("4) " + DoTranslation("Max Positions Count") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(LighterMaxPositions)))
+                Case "6." + $"{SectionParameters(0)}" 'Screensaver > a custom saver
+                    Dim SaverIndex As Integer = SectionParameters(0) - 11 - 1
+                    Dim Configurables As List(Of String) = SectionParameters(1)
+                    Dim OptionNumber As Integer = 1
+                    If CSvrdb(Configurables(SaverIndex)).SaverSettings IsNot Nothing Then
+                        MaxOptions = CSvrdb(Configurables(SaverIndex)).SaverSettings.Count
+                        W("*) " + DoTranslation("Screensaver Settings...") + " > {0}" + vbNewLine, True, ColTypes.Neutral, Configurables(SaverIndex))
+                        W(DoTranslation("This section lists screensaver settings for") + " {0}." + vbNewLine, True, ColTypes.Neutral, Configurables(SaverIndex))
+                        For Each Setting As String In CSvrdb(Configurables(SaverIndex)).SaverSettings.Keys
+                            W("{0}) {1} [{2}]", True, ColTypes.Option, OptionNumber, Setting, CSvrdb(Configurables(SaverIndex)).SaverSettings(Setting))
+                            OptionNumber += 1
+                        Next
+                        Console.WriteLine()
+                    End If
                 Case "7" 'Misc
                     MaxOptions = 10
                     W("*) " + DoTranslation("Miscellaneous Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -308,7 +339,8 @@ Public Module ToolPrompts
                         OpenKey("4.8", AnswerInt)
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "6" Then
                         Wdbg("I", "Tried to open subsection. Opening section 6.{0}...", AnswerString)
-                        OpenSection("6." + AnswerString)
+                        Wdbg("I", "Arguments: AnswerInt: {0}, ConfigurableScreensavers: {1}", AnswerInt, ConfigurableScreensavers.Count)
+                        OpenSection("6." + AnswerString, AnswerInt, ConfigurableScreensavers)
                     Else
                         Wdbg("I", "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
@@ -342,8 +374,10 @@ Public Module ToolPrompts
         Dim KeyType As SettingsKeyType
         Dim KeyVar As String = ""
         Dim VariantValue As Object = ""
+        Dim VariantValueFromExternalPrompt As Boolean
         Dim AnswerString As String = ""
         Dim AnswerInt As Integer
+        Dim SectionParts() As String = Section.Split(".")
 
         While Not KeyFinished
             Console.Clear()
@@ -515,58 +549,72 @@ Public Module ToolPrompts
                         Case 1 'Input color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(InputColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(InputColor).Type = ColorType.TrueColor)
                         Case 2 'License color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(LicenseColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(LicenseColor).Type = ColorType.TrueColor)
                         Case 3 'Continuable kernel error color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ContKernelErrorColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(ContKernelErrorColor).Type = ColorType.TrueColor)
                         Case 4 'Uncontinuable kernel error color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(UncontKernelErrorColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor)
                         Case 5 'Host name color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(HostNameShellColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(HostNameShellColor).Type = ColorType.TrueColor)
                         Case 6 'User name color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(UserNameShellColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(UserNameShellColor).Type = ColorType.TrueColor)
                         Case 7 'Background color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(BackgroundColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(BackgroundColor).Type = ColorType.TrueColor)
                         Case 8 'Neutral text color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(NeutralTextColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(NeutralTextColor).Type = ColorType.TrueColor)
                         Case 9 'List entry color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ListEntryColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(ListEntryColor).Type = ColorType.TrueColor)
                         Case 10 'List value color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ListValueColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(ListValueColor).Type = ColorType.TrueColor)
                         Case 11 'Stage color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(StageColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(StageColor).Type = ColorType.TrueColor)
                         Case 12 'Error color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ErrorColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(ErrorColor).Type = ColorType.TrueColor)
                         Case 13 'Warning color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(WarningColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(WarningColor).Type = ColorType.TrueColor)
                         Case 14 'Option color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(OptionColor)
+                            VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(OptionColor).Type = ColorType.TrueColor)
                     End Select
                 Case "5" 'Network
@@ -947,6 +995,19 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
+                Case "6." + $"{SectionParts(1)}" 'Custom saver
+                    Dim SaverIndex As Integer = SectionParts(1) - 11 - 1
+                    Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).SaverSettings
+                    Dim KeyIndex As Integer = KeyNumber - 1
+                    If KeyIndex <= SaverSettings.Count - 1 Then
+                        KeyType = SettingsKeyType.SVariant
+                        KeyVar = CSvrdb.Values(SaverIndex).SaverSettings.Keys(KeyIndex)
+                        W("*) " + DoTranslation("Screensaver Settings...") + " > {0} > {1}" + vbNewLine, True, ColTypes.Neutral, CSvrdb.Keys(SaverIndex), SaverSettings.Keys(KeyIndex))
+                        W("*) " + DoTranslation("Consult the screensaver manual or source code for information."), True, ColTypes.Neutral)
+                    Else
+                        W("*) " + DoTranslation("Screensaver Settings...") + " > {0} > ???" + vbNewLine, True, ColTypes.Neutral, CSvrdb.Keys(SaverIndex))
+                        W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End If
                 Case "7" 'Misc
                     Select Case KeyNumber
                         Case 1 'Show Time/Date on Upper Right Corner
@@ -1043,6 +1104,9 @@ Public Module ToolPrompts
             If KeyNumber = 2 And Section = "1.3" Then
                 AnswerString = ReadLineNoInput("*")
                 Console.WriteLine()
+            ElseIf KeyType = SettingsKeyType.SVariant And Not VariantValueFromExternalPrompt Then
+                VariantValue = Console.ReadLine
+                Wdbg("I", "User answered {0}", VariantValue)
             ElseIf Not KeyType = SettingsKeyType.SVariant Then
                 AnswerString = Console.ReadLine
                 Wdbg("I", "User answered {0}", AnswerString)
@@ -1111,6 +1175,18 @@ Public Module ToolPrompts
                     W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, AnswerInt)
                     W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
                     Console.ReadKey()
+                End If
+            ElseIf SectionParts.Length > 1 Then
+                If Section = "6." + SectionParts(1) And SectionParts(1) > 11 And KeyType = SettingsKeyType.SVariant Then
+                    Dim SaverIndex As Integer = SectionParts(1) - 11 - 1
+                    Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).SaverSettings
+                    SaverSettings(KeyVar) = VariantValue
+                    Wdbg("I", "User requested exit. Returning...")
+                    KeyFinished = True
+                ElseIf KeyType = SettingsKeyType.SVariant Then
+                    SetConfigValue(KeyVar, VariantValue)
+                    Wdbg("I", "User requested exit. Returning...")
+                    KeyFinished = True
                 End If
             ElseIf KeyType = SettingsKeyType.SVariant Then
                 SetConfigValue(KeyVar, VariantValue)

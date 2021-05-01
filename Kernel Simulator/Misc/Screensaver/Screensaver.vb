@@ -77,8 +77,8 @@ Public Module Screensaver
         ''' <summary>
         ''' Settings for custom screensaver
         ''' </summary>
-        ''' <returns>A set of leys and values holding settings for the screensaver</returns>
-        Property SaverSettings As Dictionary(Of String, String)
+        ''' <returns>A set of keys and values holding settings for the screensaver</returns>
+        Property SaverSettings As Dictionary(Of String, Object)
     End Interface
 
     ''' <summary>

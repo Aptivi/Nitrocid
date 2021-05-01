@@ -19,7 +19,7 @@
 Imports System.ComponentModel
 Imports System.Threading
 
-Module CustomDisplay
+Public Module CustomDisplay
 
     Public WithEvents Custom As New BackgroundWorker
 
@@ -44,8 +44,8 @@ Module CustomDisplay
                 e.Cancel = True
                 Console.Clear()
                 Dim esc As Char = GetEsc()
-                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Console.Write(esc + "[38;5;" + CStr(InputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Custom screensaver stopped.")
