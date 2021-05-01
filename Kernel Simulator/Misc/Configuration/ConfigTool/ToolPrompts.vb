@@ -203,7 +203,7 @@ Public Module ToolPrompts
                     Next
 
                     'Populate general screensaver settings
-                    W("{0}) " + DoTranslation("Screensaver Timeout in ms") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(ScrnTimeout)))
+                    W("{0}) " + DoTranslation("Screensaver Timeout in ms") + " [{1}]" + vbNewLine, True, ColTypes.Option, MaxOptions, GetConfigValue(NameOf(ScrnTimeout)))
                 Case "6.1" 'Screensaver > ColorMix
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix" + vbNewLine, True, ColTypes.Neutral)
