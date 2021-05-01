@@ -170,29 +170,38 @@ Public Module ModParser
         If Not SafeMode Then
             If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
             Dim count As Integer = FileIO.FileSystem.GetFiles(modPath).Count
-            If (count <> 0) And StartStop = True Then
-                W(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
-                Wdbg("I", "Mods are being loaded. Total mods with screensavers = {0}", count)
-            ElseIf (count <> 0) And StartStop = False Then
-                W(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
-                Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
-            End If
-            If StartStop = False Then
-                For Each script As Dictionary(Of String, IScript) In scripts.Values
-                    Wdbg("I", "Stopping... Mod name: {0}", scripts.GetKeyFromValue(script))
-                    For Each ScriptPart As String In script.Keys
-                        Wdbg("I", "Stopping part {0} v{1}", script(ScriptPart).ModPart, script(ScriptPart).Version)
-                        script(ScriptPart).StopMod()
-                        If script(ScriptPart).Name <> "" And script(ScriptPart).Version <> "" Then
-                            W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, script(ScriptPart).ModPart, script(ScriptPart).Version)
-                        End If
+            Wdbg("I", "Files count: {0}", count)
+            If count <> 0 Then
+                If StartStop Then
+                    W(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
+                    Wdbg("I", "Mods are being loaded. Total mods with screensavers = {0}", count)
+                ElseIf Not StartStop Then
+                    W(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
+                    Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
+                End If
+                If Not StartStop Then
+                    For Each script As Dictionary(Of String, IScript) In scripts.Values
+                        Wdbg("I", "Stopping... Mod name: {0}", scripts.GetKeyFromValue(script))
+                        For Each ScriptPart As String In script.Keys
+                            Wdbg("I", "Stopping part {0} v{1}", script(ScriptPart).ModPart, script(ScriptPart).Version)
+                            script(ScriptPart).StopMod()
+                            If script(ScriptPart).Name <> "" And script(ScriptPart).Version <> "" Then
+                                W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, script(ScriptPart).ModPart, script(ScriptPart).Version)
+                            End If
+                        Next
+                        W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, scripts.GetKeyFromValue(script))
                     Next
-                    W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, scripts.GetKeyFromValue(script))
-                Next
+                    For Each Screensaver As String In CSvrdb.Keys
+                        ScrnSvrdb.Remove(Screensaver)
+                    Next
+                    CSvrdb.Clear()
+                Else
+                    For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
+                        StartParse(modFile.Replace("\", "/"), StartStop)
+                    Next
+                End If
             Else
-                For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
-                    StartParse(modFile.Replace("\", "/"), StartStop)
-                Next
+                W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
             End If
         Else
             W(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Err)
@@ -207,14 +216,17 @@ Public Module ModParser
     Sub StartParse(ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         modFile = modFile.Replace(modPath, "")
         If modFile.EndsWith("SS.m") Then
-            'Ignore all mods that its file name ends with SS.m
-            Wdbg("W", "Mod file {0} is a screensaver and is ignored.", modFile)
+            'Mod is a screensaver
+            Wdbg("W", "Mod file {0} is a screensaver.", modFile)
+            CompileCustom(modFile)
         ElseIf modFile.EndsWith("CS.m") Then
             'Mod has a language of C#
+            Wdbg("I", "Mod language is C# from extension ""CS.m""")
             Dim script As IScript = GenMod("C#", IO.File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile, StartStop)
         ElseIf modFile.EndsWith(".m") Then
             'Mod has a language of VB.NET
+            Wdbg("I", "Mod language is VB.NET from extension "".m""")
             Dim script As IScript = GenMod("VB.NET", IO.File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile, StartStop)
         ElseIf modFile.EndsWith(".dll") Then
@@ -437,11 +449,6 @@ Public Module ModParser
 
         'Start all mods
         ParseMods(True)
-        Dim modPath As String = paths("Mods")
-        For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
-            Wdbg("I", "Reloading mod {0}", modFile.Replace(modPath, ""))
-            CompileCustom(modFile.Replace(modPath, ""))
-        Next
         Wdbg("I", "All mods restarted.")
     End Sub
 

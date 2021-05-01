@@ -99,15 +99,6 @@ Public Module Kernel
                 Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
                     ParseMods(True)
-                    Dim modPath As String = paths("Mods")
-                    Dim ModFiles = FileIO.FileSystem.GetFiles(modPath)
-                    If Not ModFiles.Count = 0 Then
-                        For Each modFile As String In ModFiles
-                            CompileCustom(modFile.Replace(modPath, ""))
-                        Next
-                    Else
-                        W(DoTranslation("No mods detected. Skipping stage..."), True, ColTypes.Neutral)
-                    End If
                 Else
                     W(DoTranslation("Running in safe mode. Skipping stage..."), True, ColTypes.Neutral)
                 End If
