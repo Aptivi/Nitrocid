@@ -1127,6 +1127,9 @@ Public Module ToolPrompts
                         Enumerable.Append(TargetList, AnswerString)
                         Wdbg("I", "Added answer {0} to list.", AnswerString)
                     Loop
+                Else
+                    AnswerString = Console.ReadLine
+                    Wdbg("I", "User answered {0}", AnswerString)
                 End If
             End If
 
