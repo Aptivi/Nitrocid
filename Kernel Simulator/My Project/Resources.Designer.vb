@@ -147,6 +147,78 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;184;204;82&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;92;103;115&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;255;119;51&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;255;51;51&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;54;163;217&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;230;182;115&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;15;20;25&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;230;225;207&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;54;163;217&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;230;182;115&quot;,
+        '''  &quot;StageColor&quot;: &quot;255;180;84&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;255;51;51&quot;,
+        '''  &quot;WarningColor&quot;: &quot;255;119;51&quot;,
+        '''  &quot;OptionColor&quot;: &quot;149;230;203&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property AyuDark() As String
+            Get
+                Return ResourceManager.GetString("AyuDark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;134;179;0&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;171;176;182&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;255;119;51&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;255;51;51&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;54;163;217&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;230;182;115&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;250;250;250&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;92;103;115&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;54;163;217&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;230;182;115&quot;,
+        '''  &quot;StageColor&quot;: &quot;242;151;24&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;255;51;51&quot;,
+        '''  &quot;WarningColor&quot;: &quot;255;119;51&quot;,
+        '''  &quot;OptionColor&quot;: &quot;76;191;153&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property AyuLight() As String
+            Get
+                Return ResourceManager.GetString("AyuLight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;187;230;126&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;92;103;115&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;255;174;87&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;255;51;51&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;92;207;230&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;255;196;76&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;33;39;51&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;217;215;206&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;92;207;230&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;255;196;76&quot;,
+        '''  &quot;StageColor&quot;: &quot;255;213;127&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;255;51;51&quot;,
+        '''  &quot;WarningColor&quot;: &quot;255;174;87&quot;,
+        '''  &quot;OptionColor&quot;: &quot;149;230;203&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property AyuMirage() As String
+            Get
+                Return ResourceManager.GetString("AyuMirage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Mövcud əmrlər: {0}
         '''Komanda yazın:
         '''Komanda inyeksiyası ləğv edildi.
@@ -1174,20 +1246,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;33&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;125&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;136&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;124&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;33&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;37&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;234&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;33&quot;,
-        '''  &quot;CmdListColor&quot;: &quot;33&quot;,
-        '''  &quot;CmdDefColor&quot;: &quot;37&quot;,
-        '''  &quot;StageColor&quot;: &quot;64&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;124&quot;,
-        '''  &quot;WarningColor&quot;: &quot;136&quot;,
-        '''  &quot;OptionColor&quot;: &quot;33&quot;
+        '''  &quot;InputColor&quot;: &quot;38;139;210&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;211;54;130&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;181;137;0&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;211;1;2&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;38;139;210&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;42;161;152&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;0;43;54&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;38;139;210&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;38;139;210&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;42;161;152&quot;,
+        '''  &quot;StageColor&quot;: &quot;133;153;0&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;211;1;2&quot;,
+        '''  &quot;WarningColor&quot;: &quot;181;137;0&quot;,
+        '''  &quot;OptionColor&quot;: &quot;38;139;210&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property SolarizedDark() As String
@@ -1198,20 +1270,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;33&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;125&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;136&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;124&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;33&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;37&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;230&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;33&quot;,
-        '''  &quot;CmdListColor&quot;: &quot;33&quot;,
-        '''  &quot;CmdDefColor&quot;: &quot;37&quot;,
-        '''  &quot;StageColor&quot;: &quot;64&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;124&quot;,
-        '''  &quot;WarningColor&quot;: &quot;136&quot;,
-        '''  &quot;OptionColor&quot;: &quot;33&quot;
+        '''  &quot;InputColor&quot;: &quot;38;139;210&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;211;54;130&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;181;137;0&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;211;1;2&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;38;139;210&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;42;161;152&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;253;246;227&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;38;139;210&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;38;139;210&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;42;161;152&quot;,
+        '''  &quot;StageColor&quot;: &quot;133;153;0&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;211;1;2&quot;,
+        '''  &quot;WarningColor&quot;: &quot;181;137;0&quot;,
+        '''  &quot;OptionColor&quot;: &quot;38;139;210&quot;
         '''}.
         '''</summary>
         Public ReadOnly Property SolarizedLight() As String
