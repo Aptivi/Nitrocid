@@ -84,7 +84,7 @@ Public Module Shell
                     Wdbg("I", "Probing injected commands using GetLine(True)...")
                     GetLine(True, "")
 
-                    'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes.
+                    'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
                     Console.CursorVisible = True
 
                     'Write a prompt
@@ -168,12 +168,12 @@ Public Module Shell
             If adminList(signedinusrnm) = True Then
                 W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, signedinusrnm) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0} # ", False, ColTypes.Gray, CurrDir)
             ElseIf maintenance Then
-                W("Maintenance Mode> ", False, ColTypes.Gray)
+                W(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
             Else
                 W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, signedinusrnm) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0} $ ", False, ColTypes.Gray, CurrDir)
             End If
         Else
-            W("Maintenance Mode> ", False, ColTypes.Gray)
+            W(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
         End If
 
     End Sub
