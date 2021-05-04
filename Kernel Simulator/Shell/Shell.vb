@@ -34,6 +34,10 @@ Public Module Shell
     ''' </summary>
     Public ShellPromptStyle As String = ""
     ''' <summary>
+    ''' Specifies where to lookup for executables in these paths. Same as in PATH implementation.
+    ''' </summary>
+    Public PathsToLookup As String = Environ("PATH")
+    ''' <summary>
     ''' All mod commands
     ''' </summary>
     Public modcmnds As New ArrayList

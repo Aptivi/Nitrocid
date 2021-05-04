@@ -581,4 +581,61 @@ Public Module Filesystem
         Return AllLnList.ToArray
     End Function
 
+    ''' <summary>
+    ''' Gets the lookup path list
+    ''' </summary>
+    Public Function GetPathList() As List(Of String)
+        Return PathsToLookup.Split(If(IsOnUnix(), ":", ";")).ToList
+    End Function
+
+    ''' <summary>
+    ''' Adds a (non-)neutralized path to lookup
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function AddToPathLookup(ByVal Path As String) As Boolean
+        Dim LookupPaths As List(Of String) = GetPathList()
+        Path = NeutralizePath(Path)
+        LookupPaths.Add(Path)
+        PathsToLookup = String.Join(If(IsOnUnix(), ":", ";"), LookupPaths)
+        Return True
+    End Function
+
+    ''' <summary>
+    ''' Adds a (non-)neutralized path to lookup
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function AddToPathLookup(ByVal Path As String, ByVal RootPath As String) As Boolean
+        Dim LookupPaths As List(Of String) = GetPathList()
+        Path = NeutralizePath(Path, RootPath)
+        LookupPaths.Add(Path)
+        PathsToLookup = String.Join(If(IsOnUnix(), ":", ";"), LookupPaths)
+        Return True
+    End Function
+
+    ''' <summary>
+    ''' Removes an existing (non-)neutralized path from lookup
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function RemoveFromPathLookup(ByVal Path As String) As Boolean
+        Dim LookupPaths As List(Of String) = GetPathList()
+        Dim Returned As Boolean
+        Path = NeutralizePath(Path)
+        Returned = LookupPaths.Remove(Path)
+        PathsToLookup = String.Join(If(IsOnUnix(), ":", ";"), LookupPaths)
+        Return Returned
+    End Function
+
+    ''' <summary>
+    ''' Removes an existing (non-)neutralized path from lookup
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function RemoveFromPathLookup(ByVal Path As String, ByVal RootPath As String) As Boolean
+        Dim LookupPaths As List(Of String) = GetPathList()
+        Dim Returned As Boolean
+        Path = NeutralizePath(Path, RootPath)
+        Returned = LookupPaths.Remove(Path)
+        PathsToLookup = String.Join(If(IsOnUnix(), ":", ";"), LookupPaths)
+        Return Returned
+    End Function
+
 End Module

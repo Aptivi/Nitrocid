@@ -28,6 +28,7 @@ Public Module ToolPrompts
         SInt
         SString
         SSelection
+        SList
         SVariant
         SMenu
     End Enum
@@ -132,17 +133,18 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Clear Screen on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(clsOnLogin)))
                     W("3) " + DoTranslation("Show available usernames") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(ShowAvailableUsers)))
                 Case "4" 'Shell
-                    MaxOptions = 8
+                    MaxOptions = 9
                     W("*) " + DoTranslation("Shell Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the shell settings.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColoredShell)))
                     W("2) " + DoTranslation("Simplified Help Command") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(simHelp)))
                     W("3) " + DoTranslation("Current Directory", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CurrDir)))
-                    W("4) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShellPromptStyle)))
-                    W("5) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPShellPromptStyle)))
-                    W("6) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MailShellPromptStyle)))
-                    W("7) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SFTPShellPromptStyle)))
-                    W("8) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Option)
+                    W("4) " + DoTranslation("Lookup Directories", currentLang) + " [{0}]", True, ColTypes.Option, PathsToLookup.Length)
+                    W("5) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShellPromptStyle)))
+                    W("6) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPShellPromptStyle)))
+                    W("7) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MailShellPromptStyle)))
+                    W("8) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SFTPShellPromptStyle)))
+                    W("9) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Option)
                 Case "4.8" 'Custom colors...
                     MaxOptions = 14
                     W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors...") + vbNewLine, True, ColTypes.Neutral)
@@ -330,12 +332,12 @@ Public Module ToolPrompts
                     If AnswerInt = 3 And SectionNum = "1" Then
                         Wdbg("I", "Tried to open special section. Opening section 1.3...")
                         OpenKey("1.3", AnswerInt)
-                    ElseIf AnswerInt = 8 And SectionNum = "4" Then
-                        Wdbg("I", "Tried to open subsection. Opening section 4.8...")
-                        OpenSection("4.8")
-                    ElseIf AnswerInt <> MaxOptions And SectionNum = "4.8" Then
-                        Wdbg("I", "Tried to open special section. Opening section 4.8...")
-                        OpenKey("4.8", AnswerInt)
+                    ElseIf AnswerInt = 9 And SectionNum = "4" Then
+                        Wdbg("I", "Tried to open subsection. Opening section 4.9...")
+                        OpenSection("4.9")
+                    ElseIf AnswerInt <> MaxOptions And SectionNum = "4.9" Then
+                        Wdbg("I", "Tried to open special section. Opening section 4.9...")
+                        OpenKey("4.9", AnswerInt)
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "6" Then
                         Wdbg("I", "Tried to open subsection. Opening section 6.{0}...", AnswerString)
                         Wdbg("I", "Arguments: AnswerInt: {0}, ConfigurableScreensavers: {1}", AnswerInt, ConfigurableScreensavers.Count)
@@ -380,6 +382,8 @@ Public Module ToolPrompts
         Dim AnswerString As String = ""
         Dim AnswerInt As Integer
         Dim SectionParts() As String = Section.Split(".")
+        Dim ListJoinString As String = ""
+        Dim TargetList As IEnumerable(Of Object)
 
         While Not KeyFinished
             Console.Clear()
@@ -522,22 +526,29 @@ Public Module ToolPrompts
                             KeyVar = NameOf(CurrDir)
                             W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Current Directory") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Sets the shell's current directory. Write an absolute path to any existing directory."), True, ColTypes.Neutral)
-                        Case 4 'Prompt Style
+                        Case 4 'Lookup Directories
+                            KeyType = SettingsKeyType.SList
+                            KeyVar = NameOf(PathsToLookup)
+                            ListJoinString = ":"
+                            TargetList = GetPathList()
+                            W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Lookup Directories") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write ""q"". Write a minus sign next to the path to remove an existing directory."), True, ColTypes.Neutral)
+                        Case 5 'Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(ShellPromptStyle)
                             W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Prompt Style") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
-                        Case 5 'FTP Prompt Style
+                        Case 6 'FTP Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(FTPShellPromptStyle)
                             W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("FTP Prompt Style") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
-                        Case 6 'Mail Prompt Style
+                        Case 7 'Mail Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(MailShellPromptStyle)
                             W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Mail Prompt Style") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
-                        Case 7 'SFTP Prompt Style
+                        Case 8 'SFTP Prompt Style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(SFTPShellPromptStyle)
                             W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("SFTP Prompt Style") + vbNewLine, True, ColTypes.Neutral)
@@ -546,7 +557,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Shell Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case "4.8" 'Shell -> Custom colors
+                Case "4.9" 'Shell -> Custom colors
                     Select Case KeyNumber
                         Case 1 'Input color
                             KeyType = SettingsKeyType.SVariant
@@ -1110,8 +1121,13 @@ Public Module ToolPrompts
                 VariantValue = Console.ReadLine
                 Wdbg("I", "User answered {0}", VariantValue)
             ElseIf Not KeyType = SettingsKeyType.SVariant Then
-                AnswerString = Console.ReadLine
-                Wdbg("I", "User answered {0}", AnswerString)
+                If KeyType = SettingsKeyType.SList Then
+                    Do Until AnswerString = "q"
+                        AnswerString = Console.ReadLine
+                        Enumerable.Append(TargetList, AnswerString)
+                        Wdbg("I", "Added answer {0} to list.", AnswerString)
+                    Loop
+                End If
             End If
 
             'Check for input
@@ -1164,6 +1180,10 @@ Public Module ToolPrompts
                 End If
                 KeyFinished = True
                 SetConfigValue(KeyVar, AnswerString)
+            ElseIf KeyType = SettingsKeyType.SList Then
+                Wdbg("I", "Answer is not numeric and key is of the List type. Adding answers to the list...")
+                KeyFinished = True
+                SetConfigValue(KeyVar, String.Join(ListJoinString, TargetList))
             ElseIf Section = "1.3" And KeyNumber = 3 Then
                 Wdbg("I", "Answer is not numeric and the user is on the special section.")
                 If AnswerInt >= 1 And AnswerInt <= 2 Then

@@ -81,6 +81,7 @@ Public Module Config
                         New IniKey(ksconf, "Colored Shell", ColoredShell),
                         New IniKey(ksconf, "Simplified Help Command", simHelp),
                         New IniKey(ksconf, "Current Directory", CurrDir),
+                        New IniKey(ksconf, "Lookup Directories", PathsToLookup.EncloseByDoubleQuotes),
                         New IniKey(ksconf, "Prompt Style", ShellPromptStyle),
                         New IniKey(ksconf, "FTP Prompt Style", FTPShellPromptStyle),
                         New IniKey(ksconf, "Mail Prompt Style", MailShellPromptStyle),
@@ -203,6 +204,7 @@ Public Module Config
                         New IniKey(ksconf, "Colored Shell", "True"),
                         New IniKey(ksconf, "Simplified Help Command", "False"),
                         New IniKey(ksconf, "Current Directory", paths("Home")),
+                        New IniKey(ksconf, "Lookup Directories", Environ("PATH").EncloseByDoubleQuotes),
                         New IniKey(ksconf, "Prompt Style", ""),
                         New IniKey(ksconf, "FTP Prompt Style", ""),
                         New IniKey(ksconf, "Mail Prompt Style", ""),
@@ -302,6 +304,7 @@ Public Module Config
             ksconf.Sections("Shell").Keys("Simplified Help Command").TrailingComment.Text = "Simplifies the ""help"" command so it only shows available commands."
             ksconf.Sections("Shell").Keys("Current Directory").TrailingComment.Text = "Sets the shell's current directory."
             ksconf.Sections("Shell").Keys("Colored Shell").TrailingComment.Text = "Whether or not it supports colored shell."
+            ksconf.Sections("Shell").Keys("Lookup Directories").TrailingComment.Text = "Group of paths separated by the colon. It works the same as PATH."
             ksconf.Sections("Shell").Keys("Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the main shell. Placeholders here are parsed."
             ksconf.Sections("Shell").Keys("FTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the FTP shell. Placeholders here are parsed."
             ksconf.Sections("Shell").Keys("Mail Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the mail shell. Placeholders here are parsed."
@@ -505,6 +508,7 @@ Public Module Config
             Wdbg("I", "Parsing shell section...")
             If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
             CurrDir = configReader.Sections("Shell").Keys("Current Directory").Value
+            PathsToLookup = configReader.Sections("Shell").Keys("Lookup Directories").Value
             ShellPromptStyle = configReader.Sections("Shell").Keys("Prompt Style").Value
             FTPShellPromptStyle = configReader.Sections("Shell").Keys("FTP Prompt Style").Value
             MailShellPromptStyle = configReader.Sections("Shell").Keys("Mail Prompt Style").Value
