@@ -51,7 +51,7 @@ Module TextWriterWhereSlowColor
                 ElseIf colorType = ColTypes.License Then
                     Write(New Color(LicenseColor).VTSequenceForeground)
                 ElseIf colorType = ColTypes.Gray Then
-                    If BackgroundColor = New Color(ConsoleColors.DarkYellow).PlainSequence Or BackgroundColor = New Color(ConsoleColors.Yellow).PlainSequence Or BackgroundColor = New Color(ConsoleColors.White).PlainSequence Then
+                    If New Color(BackgroundColor).IsDark Then
                         Write(New Color(NeutralTextColor).VTSequenceForeground)
                     Else
                         Write(New Color(ConsoleColors.Gray).VTSequenceForeground)

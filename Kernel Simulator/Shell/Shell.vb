@@ -141,13 +141,8 @@ Public Module Shell
                         EventManager.RaisePostExecuteCommand(strcommand)
                     End If
                 Catch ex As Exception
-                    If DebugMode = True Then
-                        W(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}" + vbNewLine + "{2}", True, ColTypes.Err,
-                          Err.Number, ex.Message, ex.StackTrace)
-                        WStkTrc(ex)
-                    Else
-                        W(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}", True, ColTypes.Err, Err.Number, ex.Message)
-                    End If
+                    WStkTrc(ex)
+                    W(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}", True, ColTypes.Err, Err.Number, ex.Message)
                     Continue While
                 End Try
             End If
