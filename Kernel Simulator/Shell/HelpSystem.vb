@@ -117,35 +117,34 @@ Public Module HelpSystem
     Public Sub ShowHelp(Optional ByVal command As String = "")
 
         Dim wholesslist As String() = IO.Directory.GetFiles(paths("Mods"), "*SS.m", IO.SearchOption.TopDirectoryOnly)
-        Dim NormalUserCmds As New List(Of String)
         If command = "" Then
 
             If simHelp = False Then
+                W(DoTranslation("General commands:"), True, ColTypes.Neutral)
                 For Each cmd As String In definitions.Keys
                     If (Not strictCmds.Contains(cmd)) Or (strictCmds.Contains(cmd) And adminList(signedinusrnm)) Then
                         W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, definitions(cmd))
                     End If
                 Next
+                W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
                 For Each cmd As String In moddefs.Keys
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, moddefs(cmd))
                 Next
+                W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
                 For Each cmd As String In Aliases.Keys
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, definitions(Aliases(cmd)))
                 Next
                 W(DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Neutral)
             Else
-                For Each cmd As String In Aliases.Keys
-                    W("{0}({1}), ", False, ColTypes.ListEntry, cmd, Aliases(cmd))
+                For Each cmd As String In availableCommands
+                    If (Not strictCmds.Contains(cmd)) Or (strictCmds.Contains(cmd) And adminList(signedinusrnm)) Then
+                        W("{0}, ", False, ColTypes.ListEntry, cmd)
+                    End If
                 Next
                 For Each cmd As String In moddefs.Keys
                     W("{0}, ", False, ColTypes.ListEntry, cmd)
                 Next
-                For Each cmd As String In availableCommands
-                    If (Not strictCmds.Contains(cmd)) Or (strictCmds.Contains(cmd) And adminList(signedinusrnm)) Then
-                        NormalUserCmds.Add(cmd)
-                    End If
-                Next
-                W(String.Join(", ", NormalUserCmds), True, ColTypes.ListEntry)
+                W(String.Join(", ", Aliases.Keys), True, ColTypes.ListEntry)
             End If
 
         ElseIf command = "adduser" Then
