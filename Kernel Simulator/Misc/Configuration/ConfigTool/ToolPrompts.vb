@@ -137,12 +137,12 @@ Public Module ToolPrompts
                     W(DoTranslation("This section lists the shell settings.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColoredShell)))
                     W("2) " + DoTranslation("Simplified Help Command") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(simHelp)))
-                    W("3) " + DoTranslation("Current Directory", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(CurrDir)))
-                    W("4) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(ShellPromptStyle)))
-                    W("5) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(FTPShellPromptStyle)))
-                    W("6) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(MailShellPromptStyle)))
-                    W("7) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.ListEntry, GetConfigValue(NameOf(SFTPShellPromptStyle)))
-                    W("8) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.ListEntry)
+                    W("3) " + DoTranslation("Current Directory", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CurrDir)))
+                    W("4) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShellPromptStyle)))
+                    W("5) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPShellPromptStyle)))
+                    W("6) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MailShellPromptStyle)))
+                    W("7) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SFTPShellPromptStyle)))
+                    W("8) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Option)
                 Case "4.8" 'Custom colors...
                     MaxOptions = 14
                     W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors...") + vbNewLine, True, ColTypes.Neutral)
