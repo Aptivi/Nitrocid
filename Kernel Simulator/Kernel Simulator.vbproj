@@ -44,7 +44,7 @@
       <dependency id="Newtonsoft.Json" version="13.0.1" />
       <dependency id="SSH.NET" version="2020.0.1" />
       <dependency id="MailKit" version="2.11.1" />
-      <dependency id="Extensification" version="2021.4.2" />
+      <dependency id="Extensification" version="2021.4.2.1" />
       <dependency id="Inxi.NET" version="2021.2.1" />
     </Dependencies>
     <!-- KS Nuget Information End -->
@@ -171,7 +171,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Extensification">
-      <Version>2021.4.2</Version>
+      <Version>2021.4.2.1</Version>
     </PackageReference>
     <PackageReference Include="FluentFTP">
       <Version>33.1.5</Version>
