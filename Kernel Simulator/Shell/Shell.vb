@@ -278,6 +278,7 @@ Public Module Shell
                                                                                   .UseShellExecute = False}
                             CommandProcess.StartInfo = CommandProcessStart
                             AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
+                            AddHandler CommandProcess.ErrorDataReceived, AddressOf ExecutableOutput
 
                             'Start the process
                             Wdbg("I", "Starting...")
