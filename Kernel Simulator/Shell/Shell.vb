@@ -68,6 +68,10 @@ Public Module Shell
     ''' </summary>
     Public WrappableCmds() As String = {"cat", "hwinfo", "list", "lsdbgdev", "netinfo", "showtdzone"}
     ''' <summary>
+    ''' All commands that can't be run on maintenance mode
+    ''' </summary>
+    Public NoMaintenanceCmds() As String = {"logout"}
+    ''' <summary>
     ''' All obsolete commands
     ''' </summary>
     Public obsoleteCmds() As String = {"debuglog"}
@@ -200,7 +204,7 @@ Public Module Shell
             Wdbg("I", "Output redirection found with append.")
             DefConsoleOut = Console.Out
             Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 2)
-            OutputStream = New FileStream(CurrDir + "/" + OutputFileName, FileMode.Append, FileAccess.Write)
+            OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.Append, FileAccess.Write)
             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
             Console.SetOut(OutputTextWriter)
             strcommand = strcommand.Replace(" >>> " + OutputFileName, "")
@@ -208,7 +212,7 @@ Public Module Shell
             Wdbg("I", "Output redirection found with overwrite.")
             DefConsoleOut = Console.Out
             Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 2)
-            OutputStream = New FileStream(CurrDir + "/" + OutputFileName, FileMode.OpenOrCreate, FileAccess.Write)
+            OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.OpenOrCreate, FileAccess.Write)
             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
             Console.SetOut(OutputTextWriter)
             strcommand = strcommand.Replace(" >> " + OutputFileName, "")
@@ -251,11 +255,11 @@ Public Module Shell
                     If adminList(signedinusrnm) = False And strictCmds.Contains(strcommand) = True Then
                         Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
                         W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, strcommand)
-                    ElseIf maintenance = True And strcommand.Contains("logout") Then
-                        Wdbg("W", "Cmd exec {0} failed: In maintenance mode. Assertion of input.Contains(""logout"") is True", strcommand)
+                    ElseIf maintenance = True And NoMaintenanceCmds.Contains(strcommand) Then
+                        Wdbg("W", "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", strcommand)
                         W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Err, strcommand)
                     ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(strcommand) = True) Or availableCommands.Contains(strcommand) Then
-                        Wdbg("I", "Cmd exec {0} succeeded", strcommand)
+                        Wdbg("I", "Cmd exec {0} succeeded. Running with {1}", strcommand, cmdArgs)
                         StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
                         StartCommandThread.Start(cmdArgs)
                         StartCommandThread.Join()
