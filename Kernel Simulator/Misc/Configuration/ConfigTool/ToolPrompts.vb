@@ -139,7 +139,7 @@ Public Module ToolPrompts
                     W("1) " + DoTranslation("Colored Shell") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColoredShell)))
                     W("2) " + DoTranslation("Simplified Help Command") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(simHelp)))
                     W("3) " + DoTranslation("Current Directory", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CurrDir)))
-                    W("4) " + DoTranslation("Lookup Directories", currentLang) + " [{0}]", True, ColTypes.Option, PathsToLookup.Length)
+                    W("4) " + DoTranslation("Lookup Directories", currentLang) + " [{0}]", True, ColTypes.Option, PathsToLookup.Split(PathLookupDelimiter).Length)
                     W("5) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShellPromptStyle)))
                     W("6) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPShellPromptStyle)))
                     W("7) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MailShellPromptStyle)))
@@ -384,6 +384,7 @@ Public Module ToolPrompts
         Dim SectionParts() As String = Section.Split(".")
         Dim ListJoinString As String = ""
         Dim TargetList As IEnumerable(Of Object)
+        Dim NeutralizePaths As Boolean
 
         While Not KeyFinished
             Console.Clear()
@@ -529,8 +530,9 @@ Public Module ToolPrompts
                         Case 4 'Lookup Directories
                             KeyType = SettingsKeyType.SList
                             KeyVar = NameOf(PathsToLookup)
-                            ListJoinString = ":"
+                            ListJoinString = PathLookupDelimiter
                             TargetList = GetPathList()
+                            NeutralizePaths = True
                             W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Lookup Directories") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write ""q"". Write a minus sign next to the path to remove an existing directory."), True, ColTypes.Neutral)
                         Case 5 'Prompt Style
@@ -1119,16 +1121,24 @@ Public Module ToolPrompts
                 Console.WriteLine()
             ElseIf KeyType = SettingsKeyType.SVariant And Not VariantValueFromExternalPrompt Then
                 VariantValue = Console.ReadLine
+                If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
                 Wdbg("I", "User answered {0}", VariantValue)
             ElseIf Not KeyType = SettingsKeyType.SVariant Then
                 If KeyType = SettingsKeyType.SList Then
+#Disable Warning BC42104
                     Do Until AnswerString = "q"
                         AnswerString = Console.ReadLine
-                        Enumerable.Append(TargetList, AnswerString)
-                        Wdbg("I", "Added answer {0} to list.", AnswerString)
+                        If Not AnswerString = "q" Then
+                            If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
+                            TargetList = Enumerable.Append(TargetList, AnswerString)
+                            Wdbg("I", "Added answer {0} to list.", AnswerString)
+                            W("> ", False, ColTypes.Input)
+                        End If
                     Loop
+#Enable Warning BC42104
                 Else
                     AnswerString = Console.ReadLine
+                    If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
                     Wdbg("I", "User answered {0}", AnswerString)
                 End If
             End If

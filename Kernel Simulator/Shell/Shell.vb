@@ -38,6 +38,10 @@ Public Module Shell
     ''' </summary>
     Public PathsToLookup As String = Environ("PATH")
     ''' <summary>
+    ''' Path lookup delimiter, depending on the operating system
+    ''' </summary>
+    Public ReadOnly PathLookupDelimiter As String = If(IsOnUnix(), ":", ";")
+    ''' <summary>
     ''' All mod commands
     ''' </summary>
     Public modcmnds As New ArrayList
@@ -227,16 +231,6 @@ Public Module Shell
 
                     'Parse script command (if any)
                     Dim scriptArgs As List(Of String) = strcommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
-                    Dim scriptCmd As String = scriptArgs(0)
-                    If scriptCmd.StartsWith("""") And scriptCmd.EndsWith("""") Then
-                        scriptCmd = scriptCmd.Replace("""", "")
-                    End If
-                    If Not scriptCmd.EndsWith(".uesh") Then
-                        scriptCmd += ".uesh"
-                    End If
-                    If IsOnWindows() Then
-                        scriptCmd = scriptCmd.ReplaceAll({"\", "/", ":", "?", "*", """", "<", ">", "|"}, "")
-                    End If
                     scriptArgs.RemoveAt(0)
 
                     'Get the index of the first space
@@ -246,6 +240,12 @@ Public Module Shell
                     If indexCmd = -1 Then indexCmd = strcommand.Count
                     strcommand = strcommand.Substring(0, indexCmd)
                     Wdbg("I", "Finished indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
+
+                    'Scan PATH for file existence and set file name as needed
+                    Dim TargetFile As String = ""
+                    Dim TargetFileName As String
+                    FileExistsInPath(strcommand, TargetFile)
+                    TargetFileName = Path.GetFileName(TargetFile)
 
                     'Check to see if a user is able to execute a command
                     If adminList(signedinusrnm) = False And strictCmds.Contains(strcommand) = True Then
@@ -259,17 +259,20 @@ Public Module Shell
                         StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
                         StartCommandThread.Start(cmdArgs)
                         StartCommandThread.Join()
-                    ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) And Not scriptCmd.EndsWith(".uesh") Then
+                    ElseIf File.Exists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
                         Wdbg("I", "Cmd exec {0} succeeded because file is found.", strcommand)
                         Try
                             'Create a new instance of process
-                            Wdbg("I", "Command: {0}, Arguments: {1}", Path.GetFullPath(CurrDir + "/" + strcommand), cmdArgs.Replace(strcommand, ""))
+                            cmdArgs = cmdArgs.Replace(TargetFileName, "")
+                            'TODO: Once the bug from Extensification is fixed, remove the null check.
+                            If Not String.IsNullOrEmpty(cmdArgs) Then cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
+                            Wdbg("I", "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
                             Dim CommandProcess As New Process
                             Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
                                                                                   .RedirectStandardOutput = True,
                                                                                   .RedirectStandardError = True,
-                                                                                  .FileName = Path.GetFullPath(CurrDir + "/" + strcommand),
-                                                                                  .Arguments = cmdArgs.Replace(strcommand, ""),
+                                                                                  .FileName = TargetFile,
+                                                                                  .Arguments = cmdArgs,
                                                                                   .CreateNoWindow = True,
                                                                                   .WindowStyle = ProcessWindowStyle.Hidden,
                                                                                   .UseShellExecute = False}
@@ -287,9 +290,9 @@ Public Module Shell
                             W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Err, strcommand, ex.Message)
                             WStkTrc(ex)
                         End Try
-                    ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + scriptCmd)) And scriptCmd.EndsWith(".uesh") Then
-                        Wdbg("I", "Cmd exec {0} succeeded because it's a UESH script.", scriptCmd)
-                        Execute(Path.GetFullPath(CurrDir + "/" + scriptCmd), scriptArgs.Join(" "))
+                    ElseIf File.Exists(TargetFile) And TargetFile.EndsWith(".uesh") Then
+                        Wdbg("I", "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
+                        Execute(TargetFile, scriptArgs.Join(" "))
                     Else
                         Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
                         W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Err, strcommand)

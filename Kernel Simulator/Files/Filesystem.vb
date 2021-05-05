@@ -585,7 +585,7 @@ Public Module Filesystem
     ''' Gets the lookup path list
     ''' </summary>
     Public Function GetPathList() As List(Of String)
-        Return PathsToLookup.Split(If(IsOnUnix(), ":", ";")).ToList
+        Return PathsToLookup.Split(PathLookupDelimiter).ToList
     End Function
 
     ''' <summary>
@@ -596,7 +596,7 @@ Public Module Filesystem
         Dim LookupPaths As List(Of String) = GetPathList()
         Path = NeutralizePath(Path)
         LookupPaths.Add(Path)
-        PathsToLookup = String.Join(If(IsOnUnix(), ":", ";"), LookupPaths)
+        PathsToLookup = String.Join(PathLookupDelimiter, LookupPaths)
         Return True
     End Function
 
@@ -608,7 +608,7 @@ Public Module Filesystem
         Dim LookupPaths As List(Of String) = GetPathList()
         Path = NeutralizePath(Path, RootPath)
         LookupPaths.Add(Path)
-        PathsToLookup = String.Join(If(IsOnUnix(), ":", ";"), LookupPaths)
+        PathsToLookup = String.Join(PathLookupDelimiter, LookupPaths)
         Return True
     End Function
 
@@ -621,7 +621,7 @@ Public Module Filesystem
         Dim Returned As Boolean
         Path = NeutralizePath(Path)
         Returned = LookupPaths.Remove(Path)
-        PathsToLookup = String.Join(If(IsOnUnix(), ":", ";"), LookupPaths)
+        PathsToLookup = String.Join(PathLookupDelimiter, LookupPaths)
         Return Returned
     End Function
 
@@ -634,8 +634,27 @@ Public Module Filesystem
         Dim Returned As Boolean
         Path = NeutralizePath(Path, RootPath)
         Returned = LookupPaths.Remove(Path)
-        PathsToLookup = String.Join(If(IsOnUnix(), ":", ";"), LookupPaths)
+        PathsToLookup = String.Join(PathLookupDelimiter, LookupPaths)
         Return Returned
+    End Function
+
+    ''' <summary>
+    ''' Checks to see if the file exists in PATH and writes the result (path to file) to a string variable, if any.
+    ''' </summary>
+    ''' <param name="FilePath">A full path to file or just a file name</param>
+    ''' <param name="Result">The neutralized path</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function FileExistsInPath(ByVal FilePath As String, ByRef Result As String) As Boolean
+        Dim LookupPaths As List(Of String) = GetPathList()
+        Dim ResultingPath As String
+        For Each LookupPath As String In LookupPaths
+            ResultingPath = NeutralizePath(FilePath, LookupPath)
+            If File.Exists(ResultingPath) Then
+                Result = ResultingPath
+                Return True
+            End If
+        Next
+        Return False
     End Function
 
 End Module

@@ -168,4 +168,102 @@ Imports KS
         Assert.IsInstanceOfType(LinesTestText, GetType(String()), "Reading all lines failed.")
     End Sub
 
+    ''' <summary>
+    ''' Tests getting lookup path list
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestGetPathList()
+        Assert.IsNotNull(GetPathList)
+        Assert.IsTrue(GetPathList.Count <> 0)
+    End Sub
+
+    ''' <summary>
+    ''' Tests adding a neutralized path to lookup
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestAddToPathLookupNeutralized()
+        Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
+        Dim NeutralizedPath As String = NeutralizePath(Path)
+        Assert.IsTrue(AddToPathLookup(NeutralizedPath))
+        Assert.IsTrue(PathsToLookup.Contains(NeutralizedPath))
+    End Sub
+
+    ''' <summary>
+    ''' Tests adding a non-neutralized path to lookup
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestAddToPathLookupNonNeutralized()
+        Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
+        Dim NeutralizedPath As String = NeutralizePath(Path)
+        Assert.IsTrue(AddToPathLookup(Path))
+        Assert.IsTrue(PathsToLookup.Contains(NeutralizedPath))
+    End Sub
+
+    ''' <summary>
+    ''' Tests adding a neutralized path to lookup with the root path specified
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestAddToPathLookupNeutralizedWithRootPath()
+        Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
+        Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
+        Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
+        Assert.IsTrue(AddToPathLookup(NeutralizedPath, RootPath))
+        Assert.IsTrue(PathsToLookup.Contains(NeutralizedPath))
+    End Sub
+
+    ''' <summary>
+    ''' Tests adding a non-neutralized path to lookup with the root path specified
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestAddToPathLookupNonNeutralizedWithRootPath()
+        Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
+        Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
+        Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
+        Assert.IsTrue(AddToPathLookup(Path, RootPath))
+        Assert.IsTrue(PathsToLookup.Contains(NeutralizedPath))
+    End Sub
+
+    ''' <summary>
+    ''' Tests removing a neutralized path to lookup
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestRemoveFromPathLookupNeutralized()
+        Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
+        Dim NeutralizedPath As String = NeutralizePath(Path)
+        Assert.IsTrue(RemoveFromPathLookup(NeutralizedPath))
+    End Sub
+
+    ''' <summary>
+    ''' Tests removing a non-neutralized path to lookup
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestRemoveFromPathLookupNonNeutralized()
+        Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
+        Dim NeutralizedPath As String = NeutralizePath(Path)
+        Assert.IsTrue(RemoveFromPathLookup(Path))
+    End Sub
+
+    ''' <summary>
+    ''' Tests removing a neutralized path to lookup with the root path specified
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestRemoveFromPathLookupNeutralizedWithRootPath()
+        Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
+        Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
+        Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
+        Assert.IsTrue(RemoveFromPathLookup(NeutralizedPath, RootPath))
+    End Sub
+
+    ''' <summary>
+    ''' Tests removing a non-neutralized path to lookup with the root path specified
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestRemoveFromPathLookupNonNeutralizedWithRootPath()
+        Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
+        Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
+        Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
+        Assert.IsTrue(RemoveFromPathLookup(Path, RootPath))
+    End Sub
+
+    ''' <summary>
+    ''' Tests checking to see if the file exists in any of the lookup paths
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestFileExistsInPath()
+        Dim Path As String = If(IsOnWindows(), "netstat.exe", "bash")
+        Dim NeutralizedPath As String = ""
+        Assert.IsTrue(FileExistsInPath(Path, NeutralizedPath))
+        Assert.IsNotNull(NeutralizedPath)
+    End Sub
+
 End Class

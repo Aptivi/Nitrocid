@@ -508,7 +508,7 @@ Public Module Config
             Wdbg("I", "Parsing shell section...")
             If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
             CurrDir = configReader.Sections("Shell").Keys("Current Directory").Value
-            PathsToLookup = configReader.Sections("Shell").Keys("Lookup Directories").Value
+            PathsToLookup = configReader.Sections("Shell").Keys("Lookup Directories").Value.ReleaseDoubleQuotes
             ShellPromptStyle = configReader.Sections("Shell").Keys("Prompt Style").Value
             FTPShellPromptStyle = configReader.Sections("Shell").Keys("FTP Prompt Style").Value
             MailShellPromptStyle = configReader.Sections("Shell").Keys("Mail Prompt Style").Value
