@@ -1289,7 +1289,7 @@ Public Module GetCommand
                         Done = True
                         If WrappableCmds.Contains(eqargs(0).Split(" ")(0)) Then
                             Dim WrapOutputPath As String = paths("Temp") + "/wrapoutput.txt"
-                            GetLine(False, eqargs(0), WrapOutputPath)
+                            GetLine(False, eqargs(0), False, WrapOutputPath)
                             Dim WrapOutputStream As New StreamReader(WrapOutputPath)
                             WriteWrapped(WrapOutputStream.ReadToEnd(), True, ColTypes.Neutral)
                             WrapOutputStream.Close()

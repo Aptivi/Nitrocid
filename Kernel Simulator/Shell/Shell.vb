@@ -195,7 +195,9 @@ Public Module Shell
     ''' </summary>
     ''' <param name="ArgsMode">Specify if it runs using arguments</param>
     ''' <param name="strcommand">Specify command</param>
-    Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String, Optional ByVal OutputPath As String = "")
+    ''' <param name="OutputPath">Optional (non-)neutralized output path</param>
+    ''' <param name="IsInvokedByKernelArgument">Indicates whether it was invoked by kernel argument parse (for internal use only)</param>
+    Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String, Optional ByVal IsInvokedByKernelArgument As Boolean = False, Optional ByVal OutputPath As String = "")
         'If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
         Wdbg("I", "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", strcommand.Contains(">>>"), strcommand.Contains(">>"))
         Dim OutputTextWriter As StreamWriter
@@ -258,6 +260,9 @@ Public Module Shell
                     ElseIf maintenance = True And NoMaintenanceCmds.Contains(strcommand) Then
                         Wdbg("W", "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", strcommand)
                         W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Err, strcommand)
+                    ElseIf IsInvokedByKernelArgument And (strcommand.StartsWith("logout") Or strcommand.StartsWith("shutdown") Or strcommand.StartsWith("reboot")) Then
+                        Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", strcommand)
+                        W(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Err, strcommand)
                     ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(strcommand) = True) Or availableCommands.Contains(strcommand) Then
                         Wdbg("I", "Cmd exec {0} succeeded. Running with {1}", strcommand, cmdArgs)
                         StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
@@ -306,84 +311,7 @@ Public Module Shell
             ElseIf ArgsMode = True And CommandFlag = True Then
                 CommandFlag = False
                 For Each cmd In argcmds
-                    Console.Title = $"{ConsoleTitle} - {cmd}"
-                    Dim scriptArgs As List(Of String) = cmd.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
-                    Dim scriptCmd As String = scriptArgs(0)
-                    If scriptCmd.StartsWith("""") And scriptCmd.EndsWith("""") Then
-                        scriptCmd = scriptCmd.Replace("""", "")
-                    End If
-                    If Not scriptCmd.EndsWith(".uesh") Then
-                        scriptCmd += ".uesh"
-                    End If
-                    If IsOnWindows() Then
-                        scriptCmd = scriptCmd.ReplaceAll({"\", "/", ":", "?", "*", """", "<", ">", "|"}, "")
-                    End If
-                    scriptArgs.RemoveAt(0)
-
-                    'Get the index of the first space
-                    Dim indexCmd As Integer = cmd.IndexOf(" ")
-                    Dim cmdArgs As String = cmd 'Command with args
-                    Wdbg("I", "Prototype indexCmd and cmd: {0}, {1}", indexCmd, cmd)
-                    If indexCmd = -1 Then indexCmd = cmd.Count
-                    cmd = cmd.Substring(0, indexCmd)
-                    Wdbg("I", "Finished indexCmd and cmd: {0}, {1}", indexCmd, cmd)
-
-                    'Check to see if a user is able to execute a command
-                    If availableCommands.Contains(cmd) Then
-                        If Not (cmdArgs = Nothing Or cmdArgs.StartsWith(" ") = True) Then
-                            If adminList(signedinusrnm) = True And strictCmds.Contains(cmd) = True Then
-                                Wdbg("W", "Cmd exec {0} succeeded", cmd)
-                                StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
-                                StartCommandThread.Start(cmdArgs)
-                                StartCommandThread.Join()
-                            ElseIf adminList(signedinusrnm) = False And strictCmds.Contains(cmd) = True Then
-                                Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", cmd)
-                                W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, cmd)
-                            ElseIf cmd = "logout" Or cmd = "shutdown" Or cmd = "reboot" Then
-                                Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", cmd)
-                                W(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Err, cmd)
-                            ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) Then
-                                Wdbg("I", "Cmd exec {0} succeeded because file is found.", strcommand)
-                                Try
-                                    'Create a new instance of process
-                                    Wdbg("I", "Command: {0}, Arguments: {1}", Path.GetFullPath(CurrDir + "/" + strcommand), cmdArgs.Replace(strcommand, ""))
-                                    Dim CommandProcess As New Process
-                                    Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
-                                                                                          .RedirectStandardOutput = True,
-                                                                                          .RedirectStandardError = True,
-                                                                                          .FileName = Path.GetFullPath(CurrDir + "/" + strcommand),
-                                                                                          .Arguments = cmdArgs.Replace(strcommand, ""),
-                                                                                          .CreateNoWindow = True,
-                                                                                          .WindowStyle = ProcessWindowStyle.Hidden,
-                                                                                          .UseShellExecute = False}
-                                    CommandProcess.StartInfo = CommandProcessStart
-                                    AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
-
-                                    'Start the process
-                                    Wdbg("I", "Starting...")
-                                    CommandProcess.Start()
-                                    CommandProcess.BeginOutputReadLine()
-                                    CommandProcess.BeginErrorReadLine()
-                                    CommandProcess.WaitForExit()
-                                Catch ex As Exception
-                                    Wdbg("E", "Failed to start process: {0}", ex.Message)
-                                    W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Err, strcommand, ex.Message)
-                                    WStkTrc(ex)
-                                End Try
-                            ElseIf File.Exists(Path.GetFullPath(CurrDir + "/" + strcommand)) And strcommand.EndsWith(".uesh") Then
-                                Wdbg("I", "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
-                                Execute(Path.GetFullPath(CurrDir + "/" + strcommand), scriptArgs.Join(" "))
-                            Else
-                                Wdbg("I", "Cmd exec {0} succeeded", cmd)
-                                StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
-                                StartCommandThread.Start(cmdArgs)
-                                StartCommandThread.Join()
-                            End If
-                        End If
-                    Else
-                        Wdbg("W", "Cmd exec {0} failed: availableCmds.Contains({0}) is False", cmd)
-                        W(DoTranslation("Shell message: The requested command {0} is not found."), True, ColTypes.Err, cmd)
-                    End If
+                    GetLine(False, cmd, True)
                 Next
             End If
         Catch ex As Exception
