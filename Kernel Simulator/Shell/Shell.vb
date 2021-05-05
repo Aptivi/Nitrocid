@@ -273,8 +273,7 @@ Public Module Shell
                         Try
                             'Create a new instance of process
                             cmdArgs = cmdArgs.Replace(TargetFileName, "")
-                            'TODO: Once the bug from Extensification is fixed, remove the null check.
-                            If Not String.IsNullOrEmpty(cmdArgs) Then cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
+                            cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
                             Wdbg("I", "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
                             Dim CommandProcess As New Process
                             Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,

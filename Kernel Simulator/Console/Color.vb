@@ -53,9 +53,9 @@ Public Class Color
             Dim ColorSpecifierArray() As String = ColorSpecifier.Split(";")
             If ColorSpecifierArray.Length = 3 Then
                 PlainSequence = "{0};{1};{2}".FormatString(ColorSpecifierArray(0), ColorSpecifierArray(1), ColorSpecifierArray(2))
-                VTSequenceForeground = "<38;2;{0}>".FormatString(PlainSequence)
+                VTSequenceForeground = "<38;2;{0}m>".FormatString(PlainSequence)
                 VTSequenceForeground.ConvertVTSequences
-                VTSequenceBackground = "<48;2;{0}>".FormatString(PlainSequence)
+                VTSequenceBackground = "<48;2;{0}m>".FormatString(PlainSequence)
                 VTSequenceBackground.ConvertVTSequences
                 Type = ColorType.TrueColor
                 IsDark = ColorSpecifierArray(0) + 0.2126 + ColorSpecifierArray(1) + 0.7152 + ColorSpecifierArray(2) + 0.0722 > 255 / 2
@@ -63,9 +63,9 @@ Public Class Color
         ElseIf IsNumeric(ColorSpecifier) Then
             ColorSpecifier = ColorSpecifier.Replace("""", "")
             PlainSequence = ColorSpecifier
-            VTSequenceForeground = "<38;5;{0}>".FormatString(ColorSpecifier)
+            VTSequenceForeground = "<38;5;{0}m>".FormatString(ColorSpecifier)
             VTSequenceForeground.ConvertVTSequences
-            VTSequenceBackground = "<48;5;{0}>".FormatString(ColorSpecifier)
+            VTSequenceBackground = "<48;5;{0}m>".FormatString(ColorSpecifier)
             VTSequenceBackground.ConvertVTSequences
             Type = ColorType._255Color
             'TODO: Implement IsDark for 255 colors
