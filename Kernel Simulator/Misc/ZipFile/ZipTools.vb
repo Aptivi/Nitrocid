@@ -52,7 +52,9 @@ Public Module ZipTools
     Public Function ExtractZipFileEntry(ByVal Target As String, ByVal Where As String) As Boolean
         If String.IsNullOrWhiteSpace(Target) Then Throw New ArgumentException(DoTranslation("Can't extract nothing."))
         If String.IsNullOrWhiteSpace(Where) Then Where = ZipShell_CurrentDirectory
-        Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.GetEntry(ZipShell_CurrentArchiveDirectory + "/" + Target)
+        Dim AbsoluteTarget As String = ZipShell_CurrentArchiveDirectory + "/" + Target
+        If AbsoluteTarget.StartsWith("/") Then AbsoluteTarget = AbsoluteTarget.RemoveLetter(0)
+        Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.GetEntry(AbsoluteTarget)
         Wdbg("I", "Target: {0}, Where: {1}", Target, Where + "/" + ZipEntry.Name)
         ZipEntry.ExtractToFile(Where + "/" + ZipEntry.Name, True)
         Return True
