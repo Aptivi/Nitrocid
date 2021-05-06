@@ -49,15 +49,26 @@ Public Module ZipTools
     ''' </summary>
     ''' <param name="Target">Target file in an archive</param>
     ''' <param name="Where">Where in the local filesystem to extract?</param>
-    Public Function ExtractZipFileEntry(ByVal Target As String, ByVal Where As String) As Boolean
+    Public Function ExtractZipFileEntry(ByVal Target As String, ByVal Where As String, Optional ByVal FullTargetPath As Boolean = False) As Boolean
         If String.IsNullOrWhiteSpace(Target) Then Throw New ArgumentException(DoTranslation("Can't extract nothing."))
         If String.IsNullOrWhiteSpace(Where) Then Where = ZipShell_CurrentDirectory
+
+        'Define absolute target
         Dim AbsoluteTarget As String = ZipShell_CurrentArchiveDirectory + "/" + Target
         If AbsoluteTarget.StartsWith("/") Then AbsoluteTarget = AbsoluteTarget.RemoveLetter(0)
+        Wdbg("I", "Target: {0}, AbsoluteTarget: {1}", Target, AbsoluteTarget)
+
+        'Define local destination while getting an entry from target
+        Dim LocalDestination As String = Where + "/"
         Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.GetEntry(AbsoluteTarget)
-        Wdbg("I", "Target: {0}, Where: {1}", Target, Where + "/" + ZipEntry.Name)
-        Directory.CreateDirectory(Where)
-        ZipEntry.ExtractToFile(Where + "/" + ZipEntry.Name, True)
+        If FullTargetPath Then
+            LocalDestination += ZipEntry.FullName.Replace(ZipEntry.Name, "")
+        End If
+        Wdbg("I", "Where: {0}", LocalDestination)
+
+        'Try to extract file
+        Directory.CreateDirectory(LocalDestination)
+        ZipEntry.ExtractToFile(LocalDestination + ZipEntry.Name, True)
         Return True
     End Function
 

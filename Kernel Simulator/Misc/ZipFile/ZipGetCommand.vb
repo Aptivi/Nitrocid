@@ -82,10 +82,14 @@ Public Module ZipGetCommand
                 If Arguments?.Length > 0 Then
                     CommandDone = True
                     Dim Where As String = ""
+                    Dim Absolute As Boolean
                     If Arguments?.Length > 1 Then
-                        Where = NeutralizePath(Arguments(1))
+                        If Not Arguments(1) = "-absolute" Then Where = NeutralizePath(Arguments(1))
+                        If Arguments?.Contains("-absolute") Then
+                            Absolute = True
+                        End If
                     End If
-                    ExtractZipFileEntry(Arguments(0), Where)
+                    ExtractZipFileEntry(Arguments(0), Where, Absolute)
                 End If
             ElseIf Command = "chdir" Then
                 If Arguments?.Length > 0 Then

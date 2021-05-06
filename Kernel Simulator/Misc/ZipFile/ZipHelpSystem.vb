@@ -51,7 +51,7 @@ Public Module ZipHelpSystem
         ElseIf Command = "list" Then
             W(DoTranslation("Usage:") + " list [directory]", True, ColTypes.Neutral)
         ElseIf Command = "get" Then
-            W(DoTranslation("Usage:") + " get <entry> [where]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " get <entry> [where] [-absolute]", True, ColTypes.Neutral)
         End If
     End Sub
 
