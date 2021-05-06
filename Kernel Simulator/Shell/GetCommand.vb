@@ -602,6 +602,9 @@ Public Module GetCommand
                     W("  - " + DoTranslation("RAM used:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.UsedMemory)
                     Console.WriteLine()
 
+                    'We're done.
+                    Done = True
+
                 Case "input"
 
                     If eqargs?.Length > 1 Then
