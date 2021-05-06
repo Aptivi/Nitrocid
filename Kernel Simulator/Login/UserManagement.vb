@@ -383,6 +383,7 @@ Public Module UserManagement
             W(DoTranslation("Write your password.") + vbNewLine, True, ColTypes.Neutral)
             W(">> ", False, ColTypes.Input)
             AnswerPassword = ReadLineNoInput("*")
+            Console.WriteLine()
             Wdbg("I", "Answer: {0}", AnswerPassword)
             If String.IsNullOrWhiteSpace(AnswerPassword) Then
                 Wdbg("W", "Password is not valid. Returning...")
