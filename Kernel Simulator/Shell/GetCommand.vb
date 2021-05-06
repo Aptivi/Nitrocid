@@ -1214,9 +1214,10 @@ Public Module GetCommand
                     ElseIf eqargs?.Length > 1 Then
                         Done = True
                         Dim ZipArchiveName As String = NeutralizePath(eqargs(0))
-                        Dim Destination As String = NeutralizePath(eqargs(1))
+                        Dim Destination As String = If(Not eqargs(1) = "-createdir", NeutralizePath(eqargs(1)), "")
                         If eqargs?.Contains("-createdir") Then
-                            Destination = $"{NeutralizePath($"{Path.GetFileNameWithoutExtension(ZipArchiveName)}")}/{eqargs(1)}"
+                            Destination = $"{If(Not eqargs(1) = "-createdir", NeutralizePath(eqargs(1)), "")}/{If(Not eqargs(1) = "-createdir", Path.GetFileNameWithoutExtension(ZipArchiveName), NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}"
+                            If Destination(0) = "/" Then Destination = Destination.RemoveLetter(0)
                         End If
                         ZipFile.ExtractToDirectory(ZipArchiveName, Destination)
                     End If
