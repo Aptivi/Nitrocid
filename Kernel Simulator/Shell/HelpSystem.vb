@@ -127,14 +127,16 @@ Public Module HelpSystem
                     End If
                 Next
                 W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
+                If moddefs.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
                 For Each cmd As String In moddefs.Keys
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, moddefs(cmd))
                 Next
                 W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
+                If Aliases.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
                 For Each cmd As String In Aliases.Keys
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, definitions(Aliases(cmd)))
                 Next
-                W(DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Neutral)
+                W(vbNewLine + DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Neutral)
             Else
                 For Each cmd As String In availableCommands
                     If (Not strictCmds.Contains(cmd)) Or (strictCmds.Contains(cmd) And adminList(signedinusrnm)) Then
