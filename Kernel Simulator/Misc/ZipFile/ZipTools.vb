@@ -56,6 +56,7 @@ Public Module ZipTools
         If AbsoluteTarget.StartsWith("/") Then AbsoluteTarget = AbsoluteTarget.RemoveLetter(0)
         Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.GetEntry(AbsoluteTarget)
         Wdbg("I", "Target: {0}, Where: {1}", Target, Where + "/" + ZipEntry.Name)
+        Directory.CreateDirectory(Where)
         ZipEntry.ExtractToFile(Where + "/" + ZipEntry.Name, True)
         Return True
     End Function
