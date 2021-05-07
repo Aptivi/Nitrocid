@@ -547,10 +547,10 @@ Public Module GetCommand
                         W("  - " + DoTranslation("Drive ID:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).ID)
                         W("  - " + DoTranslation("Drive partition count:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Partitions.Count)
                         For PartitionIndex As Integer = 0 To HardwareInfo.Hardware.HDD(Drive).Partitions.Count - 1
-                            W("    - [{0}] " + DoTranslation("Partition ID:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).ID)
-                            W("    - [{0}] " + DoTranslation("Partition filesystem:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).FileSystem)
-                            W("    - [{0}] " + DoTranslation("Partition size:") + " {1}", True, ColTypes.Neutral, PartitionIndex, If(IsOnUnix(), HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size, CLng(HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size).FileSizeToString))
-                            W("    - [{0}] " + DoTranslation("Partition used:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Used)
+                            W("    - [{0}] " + DoTranslation("Partition ID:") + " {1}", True, ColTypes.Neutral, PartitionIndex + 1, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).ID)
+                            W("    - [{0}] " + DoTranslation("Partition filesystem:") + " {1}", True, ColTypes.Neutral, PartitionIndex + 1, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).FileSystem)
+                            W("    - [{0}] " + DoTranslation("Partition size:") + " {1}", True, ColTypes.Neutral, PartitionIndex + 1, If(IsOnUnix(), HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size, CLng(HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size).FileSizeToString))
+                            W("    - [{0}] " + DoTranslation("Partition used:") + " {1}", True, ColTypes.Neutral, PartitionIndex + 1, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Used)
                         Next
                         Console.WriteLine()
                     Next
