@@ -71,9 +71,9 @@ Public Module FTPGetCommand
                     W(DoTranslation("Enter an FTP server."), True, ColTypes.Neutral)
                 End If
             ElseIf words(0) = "changelocaldir" Or words(0) = "cdl" Then
-                FTPChangeLocalDir(strArgs)
+                FTPChangeLocalDir(ArgsQ(0))
             ElseIf words(0) = "changeremotedir" Or words(0) = "cdr" Then
-                FTPChangeRemoteDir(strArgs)
+                FTPChangeRemoteDir(ArgsQ(0))
             ElseIf words(0) = "copy" Or words(0) = "cp" Then
                 If RequiredArgumentsProvided Then
                     If connected Then
@@ -101,15 +101,15 @@ Public Module FTPGetCommand
                 If RequiredArgumentsProvided Then
                     If connected = True Then
                         'Print a message
-                        W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, strArgs)
+                        W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, ArgsQ(0))
 
                         'Make a confirmation message so user will not accidentally delete a file or folder
-                        W(DoTranslation("Are you sure you want to delete {0} <y/n>?"), False, ColTypes.Input, strArgs)
+                        W(DoTranslation("Are you sure you want to delete {0} <y/n>?"), False, ColTypes.Input, ArgsQ(0))
                         Dim answer As String = Console.ReadKey.KeyChar
                         Console.WriteLine()
 
                         Try
-                            FTPDeleteRemote(strArgs)
+                            FTPDeleteRemote(ArgsQ(0))
                         Catch ex As Exception
                             W(ex.Message, True, ColTypes.Err)
                         End Try
@@ -136,13 +136,13 @@ Public Module FTPGetCommand
                 End If
             ElseIf words(0) = "download" Or words(0) = "get" Then
                 If RequiredArgumentsProvided Then
-                    W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, strArgs)
-                    If FTPGetFile(strArgs) Then
+                    W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, ArgsQ(0))
+                    If FTPGetFile(ArgsQ(0)) Then
                         Console.WriteLine()
-                        W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, strArgs)
+                        W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, ArgsQ(0))
                     Else
                         Console.WriteLine()
-                        W(DoTranslation("Download failed for file {0}."), True, ColTypes.Err, strArgs)
+                        W(DoTranslation("Download failed for file {0}."), True, ColTypes.Err, ArgsQ(0))
                     End If
                 Else
                     W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Err)
@@ -160,10 +160,10 @@ Public Module FTPGetCommand
                 If cmd = "listlocal" Or cmd = "lsl" Then
                     List(CurrDir)
                 Else
-                    List(strArgs)
+                    List(ArgsQ(0))
                 End If
             ElseIf words(0) = "listremote" Or words(0) = "lsr" Then
-                Dim Entries As List(Of String) = FTPListRemote(strArgs)
+                Dim Entries As List(Of String) = FTPListRemote(ArgsQ(0))
                 For Each Entry As String In Entries
                     W(Entry, True, ColTypes.ListEntry)
                 Next
@@ -190,15 +190,15 @@ Public Module FTPGetCommand
                 End If
             ElseIf words(0) = "upload" Or words(0) = "put" Then
                 If RequiredArgumentsProvided Then
-                    W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, strArgs)
+                    W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, ArgsQ(0))
 
                     'Begin the uploading process
-                    If FTPUploadFile(strArgs) Then
+                    If FTPUploadFile(ArgsQ(0)) Then
                         Console.WriteLine()
-                        W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Neutral, strArgs)
+                        W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Neutral, ArgsQ(0))
                     Else
                         Console.WriteLine()
-                        W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, strArgs)
+                        W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, ArgsQ(0))
                     End If
                 Else
                     W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>"), True, ColTypes.Err)
