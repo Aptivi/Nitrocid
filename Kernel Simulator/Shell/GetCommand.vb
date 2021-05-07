@@ -67,6 +67,8 @@ Public Module GetCommand
                 eqargs(i).Replace("""", "")
             Next
             RequiredArgumentsProvided = eqargs?.Length >= Shell.Commands(Command).MinimumArguments
+        ElseIf Shell.Commands(Command).ArgumentsRequired And eqargs Is Nothing Then
+            RequiredArgumentsProvided = False
         End If
 
         '4a. Debug: get all arguments from eqargs()
@@ -95,11 +97,11 @@ Public Module GetCommand
 
                 Case "adduser"
 
-                    If requestedCommand <> "adduser" Then
-                        If RequiredArgumentsProvided Then
+                    If RequiredArgumentsProvided Then
+                        If eqargs?.Length = 1 Then
                             W(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, eqargs(0))
                             AddUser(eqargs(0))
-                        ElseIf RequiredArgumentsProvided Then
+                        ElseIf eqargs?.Length > 2 Then
                             If eqargs(1) = eqargs(2) Then
                                 W(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, eqargs(0))
                                 AddUser(eqargs(0), eqargs(1))
@@ -111,14 +113,14 @@ Public Module GetCommand
 
                 Case "alias"
 
-                    If requestedCommand <> "alias" Then
-                        If RequiredArgumentsProvided Then
+                    If RequiredArgumentsProvided Then
+                        If eqargs?.Length > 3 Then
                             If eqargs(0) = "add" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug Or eqargs(1) = AliasType.FTPShell Or eqargs(1) = AliasType.SFTPShell Or eqargs(1) = AliasType.MailShell) Then
                                 ManageAlias(eqargs(0), eqargs(1), eqargs(2), eqargs(3))
                             Else
                                 W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, eqargs(1))
                             End If
-                        ElseIf RequiredArgumentsProvided Then
+                        ElseIf eqargs?.Length = 3 Then
                             If eqargs(0) = "rem" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug Or eqargs(1) = AliasType.FTPShell Or eqargs(1) = AliasType.SFTPShell Or eqargs(1) = AliasType.MailShell) Then
                                 ManageAlias(eqargs(0), eqargs(1), eqargs(2))
                             Else
@@ -288,7 +290,7 @@ Public Module GetCommand
 
                 Case "chmotd"
 
-                    If RequiredArgumentsProvided Then
+                    If eqargs?.Length > 0 Then
                         If strArgs = "" Then
                             W(DoTranslation("Blank message of the day."), True, ColTypes.Err)
                         Else
@@ -299,12 +301,11 @@ Public Module GetCommand
                         InitializeTextShell(paths("Home") + "/MOTD.txt")
                         W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
                         ReadMOTDFromFile(MessageType.MOTD)
-
                     End If
 
                 Case "chmal"
 
-                    If RequiredArgumentsProvided Then
+                    If eqargs?.Length > 0 Then
                         If strArgs = "" Then
                             W(DoTranslation("Blank MAL After Login."), True, ColTypes.Err)
                         Else
@@ -463,7 +464,7 @@ Public Module GetCommand
                 Case "ftp"
 
                     Try
-                        If eqargs?.Length = 0 Then
+                        If eqargs?.Length = 0 Or IsNothing(eqargs) Then
                             InitiateShell()
                         Else
                             InitiateShell(True, eqargs(0))
@@ -887,7 +888,7 @@ Public Module GetCommand
                 Case "sftp"
 
                     Try
-                        If eqargs?.Length = 0 Then
+                        If eqargs?.Length = 0 Or IsNothing(eqargs) Then
                             SFTPInitiateShell()
                         Else
                             SFTPInitiateShell(True, eqargs(0))
@@ -1127,7 +1128,7 @@ Public Module GetCommand
 
                 Case "unzip"
 
-                    If RequiredArgumentsProvided Then
+                    If RequiredArgumentsProvided And eqargs?.Length = 1 Then
                         Dim ZipArchiveName As String = NeutralizePath(eqargs(0))
                         ZipFile.ExtractToDirectory(ZipArchiveName, CurrDir)
                     ElseIf RequiredArgumentsProvided And eqargs?.Length > 1 Then

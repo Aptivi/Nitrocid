@@ -31,13 +31,17 @@ Public Module SFTPGetCommand
     ''' </summary>
     ''' <param name="cmd">A command. It may come with arguments</param>
     Public Sub ExecuteCommand(ByVal cmd As String)
-
+        'Variables
         Dim RequiredArgumentsProvided As Boolean = True
+
+        'Get command and arguments
         Dim index As Integer = cmd.IndexOf(" ")
         If index = -1 Then index = cmd.Length
         Dim words = cmd.Split({" "c})
         Dim strArgs As String = cmd.Substring(index)
         If Not index = cmd.Length Then strArgs = strArgs.Substring(1)
+
+        'Parse arguments
         Dim ArgsQ() As String
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
         Dim Parser As New TextFieldParser(TStream) With {
@@ -49,7 +53,9 @@ Public Module SFTPGetCommand
             For i As Integer = 0 To ArgsQ.Length - 1
                 ArgsQ(i).Replace("""", "")
             Next
-            RequiredArgumentsProvided = ArgsQ?.Length >= SFTPCommands(words(0)).MinimumArguments
+            RequiredArgumentsProvided = ArgsQ?.Length >= FTPCommands(words(0)).MinimumArguments
+        ElseIf FTPCommands(words(0)).ArgumentsRequired And ArgsQ Is Nothing Then
+            RequiredArgumentsProvided = False
         End If
 
         'Command code

@@ -147,7 +147,7 @@ Public Module ZipTools
         If String.IsNullOrWhiteSpace(Target) Then Target = ZipShell_CurrentDirectory
         If Directory.Exists(NeutralizePath(Target, ZipShell_CurrentDirectory)) Then
             Wdbg("I", "{0} found. Changing...", Target)
-            ZipShell_CurrentArchiveDirectory = Target
+            ZipShell_CurrentDirectory = Target
             Return True
         Else
             Wdbg("E", "{0} not found.", Target)

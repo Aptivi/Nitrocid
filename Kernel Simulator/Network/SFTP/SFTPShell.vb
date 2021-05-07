@@ -29,7 +29,7 @@ Public Module SFTPShell
                                                                         {"cdl", New CommandInfo("cdl", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
                                                                         {"cdr", New CommandInfo("cdr", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
                                                                         {"delete", New CommandInfo("delete", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
-                                                                        {"del", New CommandInfo("del", ShellCommandType.SFTPShell, True, 2, False, False, False, False)},
+                                                                        {"del", New CommandInfo("del", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
                                                                         {"disconnect", New CommandInfo("disconnect", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
                                                                         {"download", New CommandInfo("download", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
                                                                         {"exit", New CommandInfo("exit", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},

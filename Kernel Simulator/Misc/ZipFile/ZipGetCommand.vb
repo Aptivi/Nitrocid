@@ -32,10 +32,21 @@ Public Module ZipGetCommand
             'Indicator if required arguments are provided
             Dim RequiredArgumentsProvided As Boolean = True
 
+            'Get the index of the first space
+            Dim index As Integer = CommandText.IndexOf(" ")
+            If index = -1 Then index = CommandText.Length
+            Wdbg("I", "Index: {0}", index)
+
+            'Get the String Of arguments
+            Dim strArgs As String = CommandText.Substring(index)
+            Wdbg("I", "Prototype strArgs: {0}", strArgs)
+            If Not index = CommandText.Length Then strArgs = strArgs.Substring(1)
+            Wdbg("I", "Finished strArgs: {0}", strArgs)
+
             'Separate between command and arguments specified
             Dim Command As String = CommandText.Split(" ")(0)
             Dim Arguments() As String
-            Dim TStream As New MemoryStream(Encoding.Default.GetBytes(CommandText))
+            Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
             Dim Parser As New TextFieldParser(TStream) With {
                 .Delimiters = {" "},
                 .HasFieldsEnclosedInQuotes = True
@@ -46,12 +57,9 @@ Public Module ZipGetCommand
                     Arguments(i).Replace("""", "")
                 Next
                 RequiredArgumentsProvided = Arguments?.Length >= ZipShell_Commands(Command).MinimumArguments
+            ElseIf ZipShell_Commands(Command).ArgumentsRequired And Arguments Is Nothing Then
+                RequiredArgumentsProvided = False
             End If
-
-            'Remove first entry from array
-            Dim ArgumentsList As List(Of String) = Arguments.ToList
-            ArgumentsList.Remove(Command)
-            Arguments = ArgumentsList.ToArray
 
             'Try to parse command
             If Command = "help" Then
@@ -105,7 +113,7 @@ Public Module ZipGetCommand
             'See if the command is done (passed all required arguments)
             If ZipShell_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Err, Command)
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments.Length)
+                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments?.Length)
                 ZipShell_GetHelp(Command)
             End If
         Catch ex As Exception

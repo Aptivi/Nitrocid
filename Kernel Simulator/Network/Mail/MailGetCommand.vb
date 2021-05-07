@@ -45,7 +45,9 @@ Module MailGetCommand
             For i As Integer = 0 To FullArgsLQ.Length - 1
                 FullArgsLQ(i).Replace("""", "")
             Next
-            RequiredArgsProvided = FullArgsLQ?.Length >= Shell.Commands(cmd).MinimumArguments
+            RequiredArgsProvided = FullArgsLQ?.Length >= MailCommands(cmd).MinimumArguments
+        ElseIf MailCommands(cmd).ArgumentsRequired And FullArgsLQ Is Nothing Then
+            RequiredArgsProvided = False
         End If
         Wdbg("I", "Arguments with enclosed quotes count: {0}", FullArgsLQ?.Count)
 

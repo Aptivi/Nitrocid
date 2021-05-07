@@ -53,7 +53,9 @@ Public Module FTPGetCommand
             For i As Integer = 0 To ArgsQ.Length - 1
                 ArgsQ(i).Replace("""", "")
             Next
-            RequiredArgumentsProvided = ArgsQ?.Length >= FTPCommands(Command).MinimumArguments
+            RequiredArgumentsProvided = ArgsQ?.Length >= FTPCommands(words(0)).MinimumArguments
+        ElseIf FTPCommands(words(0)).ArgumentsRequired And ArgsQ Is Nothing Then
+            RequiredArgumentsProvided = False
         End If
 
         'Command code
