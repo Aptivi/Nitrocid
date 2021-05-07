@@ -663,11 +663,13 @@ Public Module GetCommand
                     If RequiredArgumentsProvided Then
                         'If the pinged address is actually a number of times
                         Dim PingTimes As Integer = 4
+                        Dim StepsToSkip As Integer = 0
                         If IsNumeric(eqargs(0)) Then
                             Wdbg("I", "eqargs(0) is numeric. Assuming number of times: {0}", eqargs(0))
                             PingTimes = eqargs(0)
+                            StepsToSkip = 1
                         End If
-                        For Each PingedAddress As String In eqargs.Skip(1)
+                        For Each PingedAddress As String In eqargs.Skip(StepsToSkip)
                             If PingedAddress <> "" Then
                                 W(">> {0}", True, ColTypes.Stage, PingedAddress)
                                 For CurrentTime As Integer = 1 To PingTimes
