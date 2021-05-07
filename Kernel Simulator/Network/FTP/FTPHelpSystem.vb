@@ -61,33 +61,33 @@ Public Module FTPHelpSystem
             Else
                 W(String.Join(", ", FTPCommands.Keys), True, ColTypes.Neutral)
             End If
-        ElseIf command = ("currlocaldir" Or "pwdl") Then
+        ElseIf command = "currlocaldir" Or command = "pwdl" Then
             W(DoTranslation("Usage:") + " currlocaldir or pwdl", True, ColTypes.Neutral)
-        ElseIf command = ("currremotedir" Or "pwdr") Then
+        ElseIf command = "currremotedir" Or command = "pwdr" Then
             W(DoTranslation("Usage:") + " currremotedir or pwdr", True, ColTypes.Neutral)
         ElseIf command = "connect" Then
             W(DoTranslation("Usage:") + " connect <server>", True, ColTypes.Neutral)
-        ElseIf command = ("changelocaldir" Or "cdl") Then
+        ElseIf command = "changelocaldir" Or command = "cdl" Then
             W(DoTranslation("Usage:") + " changelocaldir <directory> or cdl <directory>", True, ColTypes.Neutral)
-        ElseIf command = ("changeremotedir" Or "cdr") Then
+        ElseIf command = "changeremotedir" Or command = "cdr" Then
             W(DoTranslation("Usage:") + " changeremotedir <directory> or cdr <directory>", True, ColTypes.Neutral)
-        ElseIf command = ("copy" Or "cp") Then
+        ElseIf command = "copy" Or command = "cp" Then
             W(DoTranslation("Usage:") + " copy <sourcefileordir> <targetfileordir> or cp <sourcefileordir> <targetfileordir>", True, ColTypes.Neutral)
-        ElseIf command = ("delete" Or "del") Then
+        ElseIf command = "delete" Or command = "del" Then
             W(DoTranslation("Usage:") + " delete <file> or del <file>", True, ColTypes.Neutral)
         ElseIf command = "disconnect" Then
             W(DoTranslation("Usage:") + " disconnect", True, ColTypes.Neutral)
-        ElseIf command = ("download" Or "get") Then
+        ElseIf command = "download" Or command = "get" Then
             W(DoTranslation("Usage:") + " download <file> or get <file>", True, ColTypes.Neutral)
         ElseIf command = "exit" Then
             W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
-        ElseIf command = ("listlocal" Or "lsl") Then
+        ElseIf command = "listlocal" Or command = "lsl" Then
             W(DoTranslation("Usage:") + " listlocal [dir] or lsl [dir]", True, ColTypes.Neutral)
-        ElseIf command = ("listremote" Or "ldr") Then
+        ElseIf command = "listremote" Or command = "ldr" Then
             W(DoTranslation("Usage:") + " listremote [dir] or lsr [dir]", True, ColTypes.Neutral)
-        ElseIf command = ("move" Or "mv") Then
+        ElseIf command = "move" Or command = "mv" Then
             W(DoTranslation("Usage:") + " move <sourcefileordir> <targetfileordir> or ren <sourcefileordir> <targetfileordir>", True, ColTypes.Neutral)
-        ElseIf command = ("upload" Or "put") Then
+        ElseIf command = "upload" Or command = "put" Then
             W(DoTranslation("Usage:") + " upload <file> or put <file>", True, ColTypes.Neutral)
         ElseIf command = "quickconnect" Then
             W(DoTranslation("Usage:") + " quickconnect", True, ColTypes.Neutral)
