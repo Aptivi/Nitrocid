@@ -115,6 +115,10 @@ IFCANCEL:
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(130)
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
+                Console.WriteLine()
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
+                Thread.Sleep(50)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("Dumping NTLM Hash...")
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(4000)
@@ -128,6 +132,10 @@ IFCANCEL:
                 WriteSlowly("ntlm.py decrypt Hash.txt", False, 160)
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(215)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
+                Console.WriteLine()
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
+                Thread.Sleep(50)
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("Trying to decrypt...")
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
@@ -143,6 +151,10 @@ IFCANCEL:
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(115)
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
+                Console.WriteLine()
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
+                Thread.Sleep(50)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("Microsoft Windows [Version 10.0.18362.449]" + vbNewLine +
                                   "(c) 2019 Microsoft Corporation. All rights reserved." + vbNewLine)
                 Console.Write("Z:\ENT\Private\EM>")
@@ -152,6 +164,10 @@ IFCANCEL:
                 WriteSlowly("shutdown /s /fw /t 00 /m \\LOGON-HANDLER", False, 130)
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Thread.Sleep(115)
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
+                Console.WriteLine()
+                If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
+                Thread.Sleep(50)
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
                 Console.WriteLine("LOGON-HANDLER: System shutdown is initiated.")
                 If HackUserFromAD.CancellationPending Then GoTo IFCANCEL
