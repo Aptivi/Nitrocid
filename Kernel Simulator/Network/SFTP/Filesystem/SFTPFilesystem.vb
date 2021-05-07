@@ -129,7 +129,7 @@ Module SFTPFilesystem
                     Throw New Exceptions.SFTPFilesystemException(DoTranslation("Directory {0} not found.").FormatString(Directory))
                 End If
             Else
-                Throw New ArgumentNullException(DoTranslation("Enter a remote directory. "".."" to go back"))
+                Throw New ArgumentNullException(Directory, DoTranslation("Enter a remote directory. "".."" to go back"))
             End If
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to a server before changing directory"))
@@ -160,7 +160,7 @@ Module SFTPFilesystem
                 Throw New Exceptions.SFTPFilesystemException(DoTranslation("Local directory {0} doesn't exist.").FormatString(Directory))
             End If
         Else
-            Throw New ArgumentNullException(DoTranslation("Enter a local directory. "".."" to go back."))
+            Throw New ArgumentNullException(Directory, DoTranslation("Enter a local directory. "".."" to go back."))
         End If
         Return False
     End Function
