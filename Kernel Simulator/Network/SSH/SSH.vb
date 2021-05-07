@@ -44,6 +44,94 @@ Public Module SSH
     End Enum
 
     ''' <summary>
+    ''' Gets connection info from the information that the user provided (with prompts)
+    ''' </summary>
+    ''' <param name="Address">An IP address or hostname</param>
+    ''' <param name="Port">A port of the SSH/SFTP server. It's usually 22</param>
+    ''' <param name="Username">A username to authenticate with</param>
+    Public Function GetConnectionInfo(ByVal Address As String, ByVal Port As Integer, ByVal Username As String) As ConnectionInfo
+
+        'Authentication
+        Wdbg("I", "Address: {0}:{1}, Username: {2}", Address, Port, Username)
+        Dim AuthenticationMethods As New List(Of AuthenticationMethod)
+        Dim Answer As Integer
+        While True
+            'Ask for authentication method
+            W(DoTranslation("How do you want to authenticate?") + vbNewLine, True, ColTypes.Neutral)
+            W("1) " + DoTranslation("Private key file"), True, ColTypes.Option)
+            W("2) " + DoTranslation("Password") + vbNewLine, True, ColTypes.Option)
+            W(">> ", False, ColTypes.Input)
+            Answer = Val(Console.ReadKey(True).KeyChar)
+            Console.WriteLine()
+
+            'Check for answer
+            Select Case Answer
+                Case 1, 2
+                    Exit While
+                Case Else
+                    Wdbg("W", "Option is not valid. Returning...")
+                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, Answer)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                    Console.ReadKey()
+            End Select
+        End While
+
+        Select Case Answer
+            Case 1 'Private key file
+                Dim AuthFiles As New List(Of PrivateKeyFile)
+
+                'Prompt user
+                While True
+                    Dim PrivateKeyFile, PrivateKeyPassphrase As String
+                    Dim PrivateKeyAuth As PrivateKeyFile
+
+                    'Ask for location
+                    W(DoTranslation("Enter the location of the private key for {0}. Write ""q"" to finish adding keys: "), False, ColTypes.Input, Username)
+                    PrivateKeyFile = Console.ReadLine()
+                    PrivateKeyFile = NeutralizePath(PrivateKeyFile)
+                    If File.Exists(PrivateKeyFile) Then
+                        'Ask for passphrase
+                        W(DoTranslation("Enter the passphrase for key {0}: "), False, ColTypes.Input, PrivateKeyFile)
+                        PrivateKeyPassphrase = ReadLineNoInput("*")
+                        Console.WriteLine()
+
+                        'Add authentication method
+                        Try
+                            If String.IsNullOrEmpty(PrivateKeyPassphrase) Then
+                                PrivateKeyAuth = New PrivateKeyFile(PrivateKeyFile)
+                            Else
+                                PrivateKeyAuth = New PrivateKeyFile(PrivateKeyFile, PrivateKeyPassphrase)
+                            End If
+                            AuthFiles.Add(PrivateKeyAuth)
+                        Catch ex As Exception
+                            WStkTrc(ex)
+                            Wdbg("E", "Error trying to add private key authentication method: {0}", ex.Message)
+                            W(DoTranslation("Error trying to add private key:") + " {0}", True, ColTypes.Err, ex.Message)
+                        End Try
+                    ElseIf PrivateKeyFile.EndsWith("/q") Then
+                        Exit While
+                    Else
+                        W(DoTranslation("Key file {0} doesn't exist."), True, ColTypes.Err, PrivateKeyFile)
+                    End If
+                End While
+
+                'Add authentication method
+                AuthenticationMethods.Add(New PrivateKeyAuthenticationMethod(Username, AuthFiles.ToArray))
+            Case 2 'Password
+                Dim Pass As String
+
+                'Ask for password
+                W(DoTranslation("Enter the password for {0}: "), False, ColTypes.Input, Username)
+                Pass = ReadLineNoInput("*")
+                Console.WriteLine()
+
+                'Add authentication method
+                AuthenticationMethods.Add(New PasswordAuthenticationMethod(Username, Pass))
+        End Select
+        Return New ConnectionInfo(Address, Port, Username, AuthenticationMethods.ToArray)
+    End Function
+
+    ''' <summary>
     ''' Opens a session to specified address using the specified port and the username
     ''' </summary>
     ''' <param name="Address">An IP address or hostname</param>
@@ -51,86 +139,8 @@ Public Module SSH
     ''' <param name="Username">A username to authenticate with</param>
     Sub InitializeSSH(ByVal Address As String, ByVal Port As Integer, ByVal Username As String, ByVal Connection As ConnectionType, Optional ByVal Command As String = "")
         Try
-            'Authentication
-            Wdbg("I", "Address: {0}:{1}, Username: {2}", Address, Port, Username)
-            Dim AuthenticationMethods As New List(Of AuthenticationMethod)
-            Dim Answer As Integer = 0
-            While True
-                'Ask for authentication method
-                W(DoTranslation("How do you want to authenticate?") + vbNewLine, True, ColTypes.Neutral)
-                W("1) " + DoTranslation("Private key file"), True, ColTypes.Option)
-                W("2) " + DoTranslation("Password") + vbNewLine, True, ColTypes.Option)
-                W(">> ", False, ColTypes.Input)
-                Answer = Val(Console.ReadKey(True).KeyChar)
-                Console.WriteLine()
-
-                'Check for answer
-                Select Case Answer
-                    Case 1, 2
-                        Exit While
-                    Case Else
-                        Wdbg("W", "Option is not valid. Returning...")
-                        W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, Answer)
-                        W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
-                        Console.ReadKey()
-                End Select
-            End While
-
-            Select Case Answer
-                Case 1 'Private key file
-                    Dim AuthFiles As New List(Of PrivateKeyFile)
-
-                    'Prompt user
-                    While True
-                        Dim PrivateKeyFile, PrivateKeyPassphrase As String
-                        Dim PrivateKeyAuth As PrivateKeyFile
-
-                        'Ask for location
-                        W(DoTranslation("Enter the location of the private key for {0}. Write ""q"" to finish adding keys: "), False, ColTypes.Input, Username)
-                        PrivateKeyFile = Console.ReadLine()
-                        PrivateKeyFile = NeutralizePath(PrivateKeyFile)
-                        If File.Exists(PrivateKeyFile) Then
-                            'Ask for passphrase
-                            W(DoTranslation("Enter the passphrase for key {0}: "), False, ColTypes.Input, PrivateKeyFile)
-                            PrivateKeyPassphrase = ReadLineNoInput("*")
-                            Console.WriteLine()
-
-                            'Add authentication method
-                            Try
-                                If String.IsNullOrEmpty(PrivateKeyPassphrase) Then
-                                    PrivateKeyAuth = New PrivateKeyFile(PrivateKeyFile)
-                                Else
-                                    PrivateKeyAuth = New PrivateKeyFile(PrivateKeyFile, PrivateKeyPassphrase)
-                                End If
-                                AuthFiles.Add(PrivateKeyAuth)
-                            Catch ex As Exception
-                                WStkTrc(ex)
-                                Wdbg("E", "Error trying to add private key authentication method: {0}", ex.Message)
-                                W(DoTranslation("Error trying to add private key:") + " {0}", True, ColTypes.Err, ex.Message)
-                            End Try
-                        ElseIf PrivateKeyFile.EndsWith("/q") Then
-                            Exit While
-                        Else
-                            W(DoTranslation("Key file {0} doesn't exist."), True, ColTypes.Err, PrivateKeyFile)
-                        End If
-                    End While
-
-                    'Add authentication method
-                    AuthenticationMethods.Add(New PrivateKeyAuthenticationMethod(Username, AuthFiles.ToArray))
-                Case 2 'Password
-                    Dim Pass As String
-
-                    'Ask for password
-                    W(DoTranslation("Enter the password for {0}: "), False, ColTypes.Input, Username)
-                    Pass = ReadLineNoInput("*")
-                    Console.WriteLine()
-
-                    'Add authentication method
-                    AuthenticationMethods.Add(New PasswordAuthenticationMethod(Username, Pass))
-            End Select
-
             'Connection
-            Dim SSH As New SshClient(New ConnectionInfo(Address, Port, Username, AuthenticationMethods.ToArray))
+            Dim SSH As New SshClient(GetConnectionInfo(Address, Port, Username))
             SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30)
             If SSHBanner Then AddHandler SSH.ConnectionInfo.AuthenticationBanner, AddressOf ShowBanner
             Wdbg("I", "Connecting to {0}...", Address)

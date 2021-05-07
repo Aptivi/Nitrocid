@@ -22,25 +22,6 @@ Imports Newtonsoft.Json.Linq
 Public Module SFTPTools
 
     ''' <summary>
-    ''' Prompts user for a password
-    ''' </summary>
-    ''' <param name="user">A user name</param>
-    ''' <param name="Address">A host address</param>
-    ''' <param name="Port">A port for the address</param>
-    Public Sub SFTPPromptForPassword(ByVal user As String, ByVal Address As String, ByVal Port As Integer)
-        'Prompt for password
-        W(DoTranslation("Password for {0}: "), False, ColTypes.Input, user)
-
-        'Get input
-        SFTPPass = ReadLineNoInput("*")
-        Console.WriteLine()
-        ClientSFTP = New SftpClient(Address, Port, user, SFTPPass)
-
-        'Connect to FTP
-        ConnectSFTP()
-    End Sub
-
-    ''' <summary>
     ''' Tries to connect to the FTP server
     ''' </summary>
     ''' <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
@@ -66,7 +47,11 @@ Public Module SFTPTools
                     user = "anonymous"
                 End If
 
-                SFTPPromptForPassword(user, SftpHost, SftpPort)
+                'Make a new instance of SftpClient
+                ClientSFTP = New SftpClient(GetConnectionInfo(SftpHost, SftpPort, user))
+
+                'Connect to SFTP
+                ConnectSFTP()
             Catch ex As Exception
                 Wdbg("W", "Error connecting to {0}: {1}", address, ex.Message)
                 WStkTrc(ex)
@@ -149,7 +134,8 @@ Public Module SFTPTools
                             Dim Port As String = ChosenLineSeparation(1)
                             Dim Username As String = ChosenLineSeparation(2)
                             Wdbg("I", "Address: {0}, Port: {1}, Username: {2}", Address, Port, Username)
-                            SFTPPromptForPassword(Username, Address, Port)
+                            ClientSFTP = New SftpClient(GetConnectionInfo(Address, Port, Username))
+                            ConnectSFTP()
                         Else
                             Wdbg("I", "Response is out-of-bounds. Retrying...")
                             W(DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), True, ColTypes.Err, SpeedDialLines.Count)
