@@ -108,6 +108,8 @@ Public Module ZipGetCommand
                         W(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Err, Arguments(0))
                     End If
                 End If
+            ElseIf Command = "cdir" Then
+                W(ZipShell_CurrentDirectory, True, ColTypes.Neutral)
             End If
 
             'See if the command is done (passed all required arguments)

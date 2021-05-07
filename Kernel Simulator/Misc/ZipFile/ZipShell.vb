@@ -24,7 +24,8 @@ Module ZipShell
 
     'Variables
     Public ZipShell_Exiting As Boolean
-    Public ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"chdir", New CommandInfo("chdir", ShellCommandType.ZIPShell, True, 1, False, False, False, False)},
+    Public ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"cdir", New CommandInfo("cdir", ShellCommandType.ZIPShell, False, 0, False, False, False, False)},
+                                                                             {"chdir", New CommandInfo("chdir", ShellCommandType.ZIPShell, True, 1, False, False, False, False)},
                                                                              {"chadir", New CommandInfo("chadir", ShellCommandType.ZIPShell, True, 1, False, False, False, False)},
                                                                              {"exit", New CommandInfo("exit", ShellCommandType.ZIPShell, False, 0, False, False, False, False)},
                                                                              {"get", New CommandInfo("get", ShellCommandType.ZIPShell, True, 1, False, False, False, False)},

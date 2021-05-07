@@ -25,6 +25,7 @@ Public Module ZipHelpSystem
         ZipShell_HelpEntries = New Dictionary(Of String, String) From {{"help", DoTranslation("Lists available commands")},
                                                                        {"exit", DoTranslation("Exits the ZIP shell")},
                                                                        {"chdir", DoTranslation("Changes directory")},
+                                                                       {"cdir", DoTranslation("Gets current local directory")},
                                                                        {"chadir", DoTranslation("Changes archive directory")},
                                                                        {"list", DoTranslation("Lists all files inside the archive")},
                                                                        {"get", DoTranslation("Extracts a file to a specified directory or a current directory")}}
@@ -46,6 +47,8 @@ Public Module ZipHelpSystem
             W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
         ElseIf Command = "chdir" Then
             W(DoTranslation("Usage:") + " chdir <directory>", True, ColTypes.Neutral)
+        ElseIf Command = "cdir" Then
+            W(DoTranslation("Usage:") + " cdir", True, ColTypes.Neutral)
         ElseIf Command = "chadir" Then
             W(DoTranslation("Usage:") + " chadir <archivedirectory>", True, ColTypes.Neutral)
         ElseIf Command = "list" Then
