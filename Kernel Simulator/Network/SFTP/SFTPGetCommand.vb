@@ -150,7 +150,7 @@ Public Module SFTPGetCommand
             ElseIf words(0) = "listremote" Or words(0) = "lsr" Then
                 Dim Entries As List(Of String) = SFTPListRemote(strArgs)
                 For Each Entry As String In Entries
-                    W(Entry, True, ColTypes.Neutral)
+                    W(Entry, True, ColTypes.ListEntry)
                 Next
             ElseIf words(0) = "quickconnect" Then
                 If Not connected Then
